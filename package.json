@@ -1,0 +1,41 @@
+{
+  "name": "excalibur",
+  "version": "0.0.1",
+  "description": "Accessible, responsive UI component library based on Bootstrap.",
+  "main": "dist/excalibur.min.js",
+  "author": "arizzitano",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "build-docs": "NODE_ENV=doc webpack",
+    "lint": "eslint .",
+    "prestart": "install-self-peers",
+    "start": "BABEL_ENV=webpack webpack-dev-server --config ./webpack.dev.config.js --watch"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "prop-types": "^15.5.8",
+    "react-router-dom": "^4.1.1",
+    "reactstrap": "^4.5.0"
+  },
+  "devDependencies": {
+    "@team-griffin/install-self-peers": "^1.0.0",
+    "babel-cli": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-config-edx": "^2.0.1",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.4"
+  },
+  "peerDependencies": {
+    "react": "^15.5.4",
+    "react-addons-css-transition-group": "^15.5.2",
+    "react-addons-transition-group": "^15.5.2",
+    "react-dom": "^15.5.4"
+  }
+}
