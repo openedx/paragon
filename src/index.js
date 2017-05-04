@@ -1,5 +1,9 @@
-import Button from './Button';
+import SelectInput from './SelectInput';
+import TabInterface from './TabInterface';
+import TextInput from './TextInput';
 
 export {
-  Button
+  SelectInput,
+  TabInterface,
+  TextInput
 };

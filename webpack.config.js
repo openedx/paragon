@@ -31,6 +31,14 @@ module.exports = {
       amd: 'react-addons-transition-group',
       root: ['React', 'addons', 'TransitionGroup'],
     },
+  },
+  {
+    'react-addons-css-transition-group': {
+      commonjs: 'react-addons-css-transition-group',
+      commonjs2: 'react-addons-css-transition-group',
+      amd: 'react-addons-css-transition-group',
+      root: ['React', 'addons', 'CSSTransitionGroup'],
+    },
   }],
   module: {
     rules: [
@@ -40,7 +48,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env'],
+            presets: ['env', 'babili'],
           },
         },
       },
