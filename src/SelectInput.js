@@ -37,11 +37,34 @@ class SelectInput extends React.Component {
     this.props.onChange(event.target.value);
   }
 
+  getOption(option, i) {
+    let { label, value } = option;
+
+    if (typeof option === 'string') {
+      label = value = option;
+    }
+
+    return (
+      <option value={value} key={`option-${i}`}>{label}</option>
+    );
+  }
+
   getOptions() {
-    return this.props.options.map(option => {
-      return (
-        <option>{option}</option>
-      );
+    return this.props.options.map((option, i) => {
+      let section;
+      if (option.options) {
+        const groupOpts = option.options.map((opt, j) => {
+          return this.getOption(opt, j);
+        });
+        section = (
+          <optgroup label={option.label} key={`group-${i}`}>
+            {groupOpts}
+          </optgroup>
+        );
+      } else {
+        section = this.getOption(option, i);
+      }
+      return section;
     });
   }
 
@@ -56,7 +79,7 @@ class SelectInput extends React.Component {
           id={this.state.uuid}
           type="select"
           name={this.props.name}
-          value={this.props.value}
+          value={this.state.value}
           aria-describedby={descriptionId}
           onChange={this.handleChange}
         >
@@ -71,7 +94,10 @@ class SelectInput extends React.Component {
 SelectInput.propTypes = {
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.string,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
   description: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element

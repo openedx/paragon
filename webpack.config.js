@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  devtool: 'source-map',
   entry: path.resolve('./src/index.js'),
   output: {
     path: path.resolve('./dist'),
@@ -45,12 +46,15 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['env', 'babili'],
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['env', 'babili'],
+            },
           },
-        },
+          { loader: 'source-map-loader' },
+        ]
       },
     ],
   },
