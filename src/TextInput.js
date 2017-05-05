@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Input, Label } from 'reactstrap';
+import { Input, Label, FormGroup, FormFeedback, FormText } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 import { newId } from './utils';
@@ -9,25 +9,40 @@ class TextInput extends React.Component {
     super(props);
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
     this.state = {
       uuid: newId('textInput'),
-      value: this.props.value
+      value: this.props.value,
+      isValid: true,
+      validationMessage: ''
     };
   }
 
   getDescriptionElements() {
-    let descriptionElements = {};
-    if (this.props.description) {
-      const descriptionId = `description-${this.state.uuid}"`;
-
-      descriptionElements = {
+    let descriptionElements = {},
         descriptionId,
-        description: (
-          <span className="input-description" id={descriptionId}>
-            {this.props.description}
-          </span>
-        )
-      }
+        descriptionMessages = [];
+    if (this.props.description) {
+      descriptionId = `description-${this.state.uuid}`;
+      descriptionMessages.push(
+        <FormText id={descriptionId} key="0">
+          {this.props.description}
+        </FormText>
+      );
+    }
+    if (!this.state.isValid) {
+      const errorId = `error-${this.state.uuid}`;
+      descriptionId = `${errorId} ${descriptionId}`
+      descriptionMessages = [(
+        <FormFeedback id={errorId} key="1">
+          {this.state.validationMessage}
+        </FormFeedback>),
+        ...descriptionMessages
+      ];
+    }
+    descriptionElements = {
+      descriptionId,
+      description: descriptionMessages
     }
     return descriptionElements;
   }
@@ -37,22 +52,34 @@ class TextInput extends React.Component {
     this.props.onChange(event.target.value, this.props.name);
   }
 
+  handleBlur(event) {
+    if (this.props.validator) {
+      this.setState(this.props.validator);
+    }
+  }
+
   render() {
-    const { descriptionId, description } = this.getDescriptionElements();
+    const { descriptionId, description } = this.getDescriptionElements(),
+          inputState = (!this.state.isValid) ? 'warning' : '';
 
     return (
       <div className={this.props.className}>
-        <Label for={this.state.uuid}>{this.props.label}</Label>
-        <Input
-          id={this.state.uuid}
-          type="text"
-          name={this.props.name}
-          value={this.state.value}
-          placeholder={this.props.placeholder}
-          aria-describedby={descriptionId}
-          onChange={this.handleChange}
-        />
-        {description}
+        <FormGroup color={inputState}>
+          <Label for={this.state.uuid}>{this.props.label}</Label>
+          <Input
+            id={this.state.uuid}
+            type="text"
+            name={this.props.name}
+            value={this.state.value}
+            placeholder={this.props.placeholder}
+            aria-describedby={descriptionId}
+            onChange={this.handleChange}
+            onBlur={this.handleBlur}
+            aria-invalid={!this.state.isValid}
+            state={inputState}
+          />
+          {description}
+        </FormGroup>
       </div>
     );
   }
