@@ -34,7 +34,7 @@ class SelectInput extends React.Component {
 
   handleChange(event) {
     this.setState({value: event.target.value});
-    this.props.onChange(event.target.value);
+    this.props.onChange(event.target.value, this.props.name);
   }
 
   getOption(option, i) {
