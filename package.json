@@ -6,12 +6,12 @@
   "author": "arizzitano",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
-    "build-docs": "install-self-peers && webpack --config ./webpack.docs.config.js",
+    "build": "NODE_ENV=production webpack",
+    "build-docs": "NODE_ENV=docs && install-self-peers && webpack",
     "lint": "eslint .",
     "prestart": "install-self-peers",
     "poststop": "yarn install",
-    "start": "BABEL_ENV=webpack webpack-dev-server --config ./webpack.dev.config.js --watch"
+    "start": "BABEL_ENV=webpack webpack-dev-server --watch"
   },
   "dependencies": {
     "classnames": "^2.2.5",
