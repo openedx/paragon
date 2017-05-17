@@ -66,10 +66,12 @@ const asInput = (WrappedComponent) => {
     }
 
     handleBlur(event) {
+      const val = event.target.value;
+
       if (this.props.validator) {
-        this.setState(this.props.validator);
+        this.setState(this.props.validator(val));
       }
-      this.props.onBlur(event.target.value, this.props.name);
+      this.props.onBlur(val, this.props.name);
     }
 
     handleChange(event) {
@@ -103,11 +105,11 @@ const asInput = (WrappedComponent) => {
 
   NewComponent.defaultProps = {
     onChange: () => {},
+    onBlur: () => {},
     value: '',
     description: undefined,
     disabled: false,
     required: false,
-    validator: () => {},
   };
 
   return NewComponent;

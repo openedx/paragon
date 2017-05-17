@@ -23,7 +23,7 @@ storiesOf('TextInput', module)
       name="username"
       label="Username"
       description="The unique name that identifies you throughout the site."
-      validate={(value) => {
+      validator={(value) => {
         let feedback = { isValid: true };
         if (value.length < 3) {
           feedback = {
@@ -96,5 +96,30 @@ storiesOf('SelectInput', module)
           ],
         },
       ]}
+    />
+  ))
+  .add('with validation', () => (
+    <SelectInput
+      name="skittles"
+      label="Favorite Color"
+      options={[
+        '',
+        'red',
+        'orange',
+        'yellow',
+        'green',
+        'blue',
+        'purple',
+      ]}
+      validator={value => {
+        let feedback = { isValid: true };
+        if (!value) {
+          feedback = {
+            isValid: false,
+            validationMessage: 'Please make a selection.',
+          };
+        }
+        return feedback;
+      }}
     />
   ));
