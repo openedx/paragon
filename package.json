@@ -7,11 +7,11 @@
   "license": "MIT",
   "scripts": {
     "build": "NODE_ENV=production webpack",
-    "build-docs": "NODE_ENV=docs && install-self-peers && webpack",
+    "build-storybook": "build-storybook",
     "lint": "eslint .",
     "prestart": "install-self-peers",
     "poststop": "yarn install",
-    "start": "BABEL_ENV=webpack webpack-dev-server --watch"
+    "start": "start-storybook -p 6006"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -19,9 +19,11 @@
     "reactstrap": "^4.5.0"
   },
   "devDependencies": {
+    "@kadira/storybook": "^2.21.0",
     "@team-griffin/install-self-peers": "^1.0.0",
     "babel-cli": "^6.24.1",
     "babel-loader": "^7.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-babili": "^0.0.12",
     "babel-preset-env": "^1.4.0",
     "babel-preset-react": "^6.24.1",

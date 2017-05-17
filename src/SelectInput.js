@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Input, Label } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-import { newId } from './utils';
+import newId from './utils/newId';
 
 class SelectInput extends React.Component {
   constructor(props) {
