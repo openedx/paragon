@@ -1,7 +1,7 @@
 import React from 'react';
 import { Input } from 'reactstrap';
 
-import asInput from './utils/asInput';
+import asInput, { inputProps } from './utils/asInput';
 
 function TextField(props) {
   return (
@@ -15,11 +15,14 @@ function TextField(props) {
       onChange={props.onChange}
       onBlur={props.onBlur}
       aria-invalid={!props.isValid}
+      disabled={props.disabled}
       required={props.required}
       state={props.inputState}
     />
   );
 }
+
+TextField.propTypes = inputProps;
 
 const TextInput = asInput(TextField);
 

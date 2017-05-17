@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
-import { newId } from './utils';
+import { newId } from './utils/newId';
 
 class TabInterface extends React.Component {
   constructor(props) {
@@ -35,13 +35,14 @@ class TabInterface extends React.Component {
   buildLabels() {
     return this.props.tabLabels.map((label, i) => {
       const selected = this.state.activeTab === i;
+      const labelId = this.genLabelId(i);
 
       return (
         <NavItem
           aria-selected={selected}
           aria-controls={this.genPanelId(i)}
-          id={this.genLabelId(i)}
-          key={i}
+          id={labelId}
+          key={labelId}
           role="tab"
           tabIndex={selected ? 0 : -1}
         >
@@ -59,13 +60,14 @@ class TabInterface extends React.Component {
   buildPanels() {
     return this.props.panels.map((panel, i) => {
       const selected = this.state.activeTab === i;
+      const panelId = this.genPanelId(i);
 
       return (
         <TabPane
           aria-hidden={!selected}
           aria-labelledby={this.genLabelId(i)}
-          id={this.genPanelId(i)}
-          key={i}
+          id={panelId}
+          key={panelId}
           role="tabpanel"
           tabId={i}
         >
@@ -76,11 +78,11 @@ class TabInterface extends React.Component {
   }
 
   render() {
-    const labels = this.buildLabels(),
-      panels = this.buildPanels();
+    const labels = this.buildLabels();
+    const panels = this.buildPanels();
 
     return (
-      <div className={this.props.className}>
+      <div>
         <Nav tabs role="tablist">
           {labels}
         </Nav>

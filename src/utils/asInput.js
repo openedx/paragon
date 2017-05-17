@@ -6,6 +6,20 @@ import newId from './newId';
 
 const getDisplayName = WrappedComponent => WrappedComponent.displayName || WrappedComponent.name || 'Component';
 
+export const inputProps = {
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string,
+  description: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+  ]),
+  disabled: PropTypes.bool,
+  required: PropTypes.bool,
+  onChange: PropTypes.func,
+  validator: PropTypes.func,
+};
+
 const asInput = (WrappedComponent) => {
   class NewComponent extends React.Component {
     constructor(props) {
@@ -24,22 +38,10 @@ const asInput = (WrappedComponent) => {
       };
     }
 
-    handleChange(event) {
-      this.setState({ value: event.target.value });
-      this.props.onChange(event.target.value, this.props.name);
-    }
-
-    handleBlur(event) {
-      if (this.props.validator) {
-        this.setState(this.props.validator);
-      }
-    }
-
     getDescriptions() {
       // possible future work: multiple feedback msgs?
-      const errorId = `error-${this.state.id}`,
-        descriptionId = `description-${this.state.id}`;
-
+      const errorId = `error-${this.state.id}`;
+      const descriptionId = `description-${this.state.id}`;
       const desc = {};
 
       if (!this.state.isValid) {
@@ -61,6 +63,18 @@ const asInput = (WrappedComponent) => {
       }
 
       return desc;
+    }
+
+    handleBlur(event) {
+      if (this.props.validator) {
+        this.setState(this.props.validator);
+      }
+      this.props.onBlur(event.target.value, this.props.name);
+    }
+
+    handleChange(event) {
+      this.setState({ value: event.target.value });
+      this.props.onChange(event.target.value, this.props.name);
     }
 
     render() {
@@ -85,22 +99,15 @@ const asInput = (WrappedComponent) => {
 
   NewComponent.displayName = `asInput(${getDisplayName(WrappedComponent)})`;
 
-  NewComponent.propTypes = {
-    label: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    value: PropTypes.string,
-    description: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.element,
-    ]),
-    disabled: PropTypes.bool,
-    required: PropTypes.bool,
-    onChange: PropTypes.func,
-  };
+  NewComponent.propTypes = inputProps;
 
   NewComponent.defaultProps = {
     onChange: () => {},
     value: '',
+    description: undefined,
+    disabled: false,
+    required: false,
+    validator: () => {},
   };
 
   return NewComponent;
