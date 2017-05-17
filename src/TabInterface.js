@@ -12,14 +12,14 @@ class TabInterface extends React.Component {
     this.toggle = this.toggle.bind(this);
     this.state = {
       activeTab: 0,
-      uuid: newId('tabInterface')
+      uuid: newId('tabInterface'),
     };
   }
 
   toggle(tab) {
     if (this.state.activeTab !== tab) {
       this.setState({
-        activeTab: tab
+        activeTab: tab,
       });
     }
   }
@@ -77,7 +77,7 @@ class TabInterface extends React.Component {
 
   render() {
     const labels = this.buildLabels(),
-          panels = this.buildPanels();
+      panels = this.buildPanels();
 
     return (
       <div className={this.props.className}>
@@ -95,7 +95,7 @@ class TabInterface extends React.Component {
 // TODO: custom validator that ensures tabLabels and panels are the same length
 TabInterface.propTypes = {
   tabLabels: PropTypes.array.isRequired,
-  panels: PropTypes.array.isRequired
+  panels: PropTypes.array.isRequired,
 };
 
 export default TabInterface;

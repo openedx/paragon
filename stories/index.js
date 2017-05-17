@@ -7,7 +7,7 @@ import Welcome from './Welcome';
 
 storiesOf('Welcome', module)
   .add('to Storybook', () => (
-    <Welcome showApp={linkTo('Button')}/>
+    <Welcome showApp={linkTo('Button')} />
   ));
 
 storiesOf('TextInput', module)
@@ -28,8 +28,8 @@ storiesOf('TextInput', module)
         if (value.length < 3) {
           feedback = {
             isValid: false,
-            validationMessage: 'Username must be at least 3 characters in length.'
-          }
+            validationMessage: 'Username must be at least 3 characters in length.',
+          };
         }
         return feedback;
       }}
@@ -46,7 +46,7 @@ storiesOf('SelectInput', module)
         'apple',
         'orange',
         'strawberry',
-        'banana'
+        'banana',
       ]}
     />
   ))
@@ -56,12 +56,12 @@ storiesOf('SelectInput', module)
       label="New England States"
       value="RI"
       options={[
-        {label: 'Connecticut', value: 'CN'},
-        {label: 'Maine', value: 'ME'},
-        {label: 'Massachusetts', value: 'MA'},
-        {label: 'New Hampshire', value: 'NH'},
-        {label: 'Rhode Island', value: 'RI'},
-        {label: 'Vermont', value: 'VT'},
+        { label: 'Connecticut', value: 'CN' },
+        { label: 'Maine', value: 'ME' },
+        { label: 'Massachusetts', value: 'MA' },
+        { label: 'New Hampshire', value: 'NH' },
+        { label: 'Rhode Island', value: 'RI' },
+        { label: 'Vermont', value: 'VT' },
       ]}
     />
   ))
@@ -74,25 +74,25 @@ storiesOf('SelectInput', module)
         {
           label: 'New England States',
           options: [
-            {label: 'Connecticut', value: 'CN'},
-            {label: 'Maine', value: 'ME'},
-            {label: 'Massachusetts', value: 'MA'},
-            {label: 'New Hampshire', value: 'NH'},
-            {label: 'Rhode Island', value: 'RI'},
-            {label: 'Vermont', value: 'VT'},
+            { label: 'Connecticut', value: 'CN' },
+            { label: 'Maine', value: 'ME' },
+            { label: 'Massachusetts', value: 'MA' },
+            { label: 'New Hampshire', value: 'NH' },
+            { label: 'Rhode Island', value: 'RI' },
+            { label: 'Vermont', value: 'VT' },
           ],
         },
         {
           label: 'Mid Atlantic States',
           options: [
-            {label: 'Delaware', value: 'DE'},
-            {label: 'Maryland', value: 'MD'},
-            {label: 'New Jersey', value: 'NJ'},
-            {label: 'New York', value: 'NY'},
-            {label: 'Pennsylvania', value: 'PA'},
-            {label: 'Virginia', value: 'VA'},
-            {label: 'Washington, DC', value: 'DC'},
-            {label: 'West Virginia', value: 'WV'},
+            { label: 'Delaware', value: 'DE' },
+            { label: 'Maryland', value: 'MD' },
+            { label: 'New Jersey', value: 'NJ' },
+            { label: 'New York', value: 'NY' },
+            { label: 'Pennsylvania', value: 'PA' },
+            { label: 'Virginia', value: 'VA' },
+            { label: 'Washington, DC', value: 'DC' },
+            { label: 'West Virginia', value: 'WV' },
           ],
         },
       ]}

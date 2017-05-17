@@ -5,5 +5,5 @@ import TextInput from './TextInput';
 export {
   SelectInput,
   TabInterface,
-  TextInput
+  TextInput,
 };

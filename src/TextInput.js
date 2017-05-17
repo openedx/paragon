@@ -3,7 +3,7 @@ import { Input } from 'reactstrap';
 
 import asInput from './utils/asInput';
 
-function TextField (props) {
+function TextField(props) {
   return (
     <Input
       id={props.id}
@@ -25,7 +25,7 @@ const TextInput = asInput(TextField);
 
 TextInput.defaultProps = {
   onChange: () => {},
-  value: ''
+  value: '',
 };
 
 export default TextInput;

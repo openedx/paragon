@@ -11,7 +11,7 @@ class SelectInput extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.state = {
       uuid: newId('textInput'),
-      value: this.props.value
+      value: this.props.value,
     };
   }
 
@@ -26,14 +26,14 @@ class SelectInput extends React.Component {
           <span className="input-description" id={descriptionId}>
             {this.props.description}
           </span>
-        )
-      }
+        ),
+      };
     }
     return descriptionElements;
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({ value: event.target.value });
     this.props.onChange(event.target.value, this.props.name);
   }
 
@@ -53,9 +53,7 @@ class SelectInput extends React.Component {
     return this.props.options.map((option, i) => {
       let section;
       if (option.options) {
-        const groupOpts = option.options.map((opt, j) => {
-          return this.getOption(opt, j);
-        });
+        const groupOpts = option.options.map((opt, j) => this.getOption(opt, j));
         section = (
           <optgroup label={option.label} key={`group-${i}`}>
             {groupOpts}
@@ -70,7 +68,7 @@ class SelectInput extends React.Component {
 
   render() {
     const { descriptionId, description } = this.getDescriptionElements(),
-          options = this.getOptions();
+      options = this.getOptions();
 
     return (
       <div className={this.props.className}>
@@ -96,19 +94,19 @@ SelectInput.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.number
+    PropTypes.number,
   ]),
   description: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.element
+    PropTypes.element,
   ]),
   options: PropTypes.array.isRequired,
   disabled: PropTypes.bool,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
 };
 
 SelectInput.defaultProps = {
-  onChange: () => {}
+  onChange: () => {},
 };
 
 export default SelectInput;

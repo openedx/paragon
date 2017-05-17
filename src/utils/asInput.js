@@ -4,11 +4,9 @@ import { Label, FormGroup, FormFeedback, FormText } from 'reactstrap';
 
 import newId from './newId';
 
-const getDisplayName = WrappedComponent => {
-  return WrappedComponent.displayName || WrappedComponent.name || 'Component';
-};
+const getDisplayName = WrappedComponent => WrappedComponent.displayName || WrappedComponent.name || 'Component';
 
-const asInput = WrappedComponent => {
+const asInput = (WrappedComponent) => {
   class NewComponent extends React.Component {
     constructor(props) {
       super(props);
@@ -17,7 +15,7 @@ const asInput = WrappedComponent => {
 
       const id = newId('textInput');
       this.state = {
-        id: id,
+        id,
         value: this.props.value,
         isValid: true,
         describedBy: [],
@@ -27,7 +25,7 @@ const asInput = WrappedComponent => {
     }
 
     handleChange(event) {
-      this.setState({value: event.target.value});
+      this.setState({ value: event.target.value });
       this.props.onChange(event.target.value, this.props.name);
     }
 
@@ -40,9 +38,9 @@ const asInput = WrappedComponent => {
     getDescriptions() {
       // possible future work: multiple feedback msgs?
       const errorId = `error-${this.state.id}`,
-            descriptionId = `description-${this.state.id}`;
+        descriptionId = `description-${this.state.id}`;
 
-      let desc = {};
+      const desc = {};
 
       if (!this.state.isValid) {
         desc.error = (
@@ -93,11 +91,11 @@ const asInput = WrappedComponent => {
     value: PropTypes.string,
     description: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.element
+      PropTypes.element,
     ]),
     disabled: PropTypes.bool,
     required: PropTypes.bool,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
   };
 
   return NewComponent;
