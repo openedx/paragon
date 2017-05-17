@@ -23,9 +23,4 @@ function TextField(props) {
 
 const TextInput = asInput(TextField);
 
-TextInput.defaultProps = {
-  onChange: () => {},
-  value: '',
-};
-
 export default TextInput;

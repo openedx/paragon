@@ -98,6 +98,11 @@ const asInput = (WrappedComponent) => {
     onChange: PropTypes.func,
   };
 
+  NewComponent.defaultProps = {
+    onChange: () => {},
+    value: '',
+  };
+
   return NewComponent;
 };
 
