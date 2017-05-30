@@ -100,7 +100,7 @@ storiesOf('SelectInput', module)
   ))
   .add('with validation', () => (
     <SelectInput
-      name="skittles"
+      name="color"
       label="Favorite Color"
       options={[
         '',

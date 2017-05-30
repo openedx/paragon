@@ -86,8 +86,8 @@ const additionalConfig = {
     entry: path.resolve('./src/index.js'),
     output: {
       path: path.resolve('./dist'),
-      filename: 'excalibur.min.js',
-      library: 'excalibur',
+      filename: 'paragon.min.js',
+      library: 'paragon',
       libraryTarget: 'umd',
     },
     externals: [{
