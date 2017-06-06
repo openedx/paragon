@@ -91,3 +91,8 @@ storiesOf('InputSelect', module)
       }}
     />
   ));
+
+storiesOf('Dropdown', module)
+  .add('with validation', () => (
+    <Dropdown />
+  ));
