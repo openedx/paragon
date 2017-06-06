@@ -19,7 +19,7 @@ const base = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
         use: [
           {
@@ -56,30 +56,6 @@ const additionalConfig = {
           loaders: [
             'babel-loader?cacheDirectory',
           ],
-        },
-      ],
-    },
-  },
-  // docs builds the doc site for production.
-  docs: {
-    plugins: [
-      new StaticSiteGeneratorPlugin('main', [
-        '/',
-        '/header/',
-        '/inputs/',
-      ], {}),
-    ],
-    module: {
-      rules: [
-        {
-          test: /\.js$/,
-          exclude: /(node_modules|bower_components)/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: ['env'],
-            },
-          },
         },
       ],
     },
