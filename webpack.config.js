@@ -1,5 +1,4 @@
 const path = require('path');
-const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 
 const env = process.env.NODE_ENV || 'dev';
 
