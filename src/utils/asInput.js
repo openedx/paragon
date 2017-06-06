@@ -17,6 +17,7 @@ export const inputProps = {
   disabled: PropTypes.bool,
   required: PropTypes.bool,
   onChange: PropTypes.func,
+  onBlur: PropTypes.func,
   validator: PropTypes.func,
 };
 
@@ -110,6 +111,7 @@ const asInput = (WrappedComponent) => {
     description: undefined,
     disabled: false,
     required: false,
+    validator: undefined,
   };
 
   return NewComponent;

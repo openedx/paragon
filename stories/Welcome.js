@@ -34,49 +34,25 @@ const styles = {
   },
 };
 
-export default class Welcome extends React.Component {
-  showApp(e) {
-    e.preventDefault();
-    if (this.props.showApp) this.props.showApp();
-  }
-
-  render() {
-    return (
-      <div style={styles.main}>
-        <h1>Welcome to STORYBOOK</h1>
-        <p>
-          This is a UI component dev environment for your app.
-        </p>
-        <p>
-          We've added some basic stories inside the <code style={styles.code}>src/stories</code> directory.
-          <br />
-          A story is a single state of one or more UI components. You can have as many stories as you want.
-          <br />
-          (Basically a story is like a visual test case.)
-        </p>
-        <p>
-          See these sample <a style={styles.link} href='#' onClick={this.showApp.bind(this)}>stories</a> for a component called <code style={styles.code}>Button</code>.
-        </p>
-        <p>
-          Just like that, you can add your own components as stories.
-          <br />
-          You can also edit those components and see changes right away.
-          <br />
-          (Try editing the <code style={styles.code}>Button</code> component
-          located at <code style={styles.code}>src/stories/Button.js</code>.)
-        </p>
-        <p>
-          This is just one thing you can do with Storybook.
-          <br />
-          Have a look at the <a style={styles.link} href="https://github.com/kadirahq/react-storybook" target="_blank">React Storybook</a> repo for more information.
-        </p>
-        <p style={styles.note}>
-          <b>NOTE:</b>
-          <br />
-          Have a look at the <code style={styles.code}>.storybook/webpack.config.js</code> to add webpack
-          loaders and plugins you are using in this project.
-        </p>
-      </div>
-    );
-  }
+export default function Welcome() {
+  return (
+    <div style={styles.main}>
+      <h1>Paragon</h1>
+      <p>
+        This is a documentation and demo space for the Paragon accessible UI Component
+        library. Better docs coming soon, but for now, check out our existing components
+        via the links to the left-hand side.
+      </p>
+      <p>
+        Documentation generated with <a
+          style={styles.link}
+          href="https://github.com/kadirahq/react-storybook"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          React Storybook
+        </a>.
+      </p>
+    </div>
+  );
 }

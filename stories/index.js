@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf, action, linkTo } from '@kadira/storybook';
+import { storiesOf, linkTo } from '@kadira/storybook';
 
 import TextInput from '../src/TextInput';
 import SelectInput from '../src/SelectInput';
@@ -111,7 +111,7 @@ storiesOf('SelectInput', module)
         'blue',
         'purple',
       ]}
-      validator={value => {
+      validator={(value) => {
         let feedback = { isValid: true };
         if (!value) {
           feedback = {
