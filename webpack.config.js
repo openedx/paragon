@@ -13,6 +13,9 @@ const base = {
     path: path.resolve('./docs'),
     libraryTarget: 'umd',
   },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   module: {
     rules: [
       {

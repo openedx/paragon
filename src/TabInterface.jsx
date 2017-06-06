@@ -96,8 +96,11 @@ class TabInterface extends React.Component {
 
 // TODO: custom validator that ensures tabLabels and panels are the same length
 TabInterface.propTypes = {
-  tabLabels: PropTypes.array.isRequired,
-  panels: PropTypes.array.isRequired,
+  tabLabels: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.String),
+    PropTypes.arrayOf(PropTypes.Element),
+  ]).isRequired,
+  panels: PropTypes.arrayOf(PropTypes.Element).isRequired,
 };
 
 export default TabInterface;
