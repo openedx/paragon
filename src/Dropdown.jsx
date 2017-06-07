@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 
 const classes = {
@@ -33,7 +32,7 @@ export default class Dropdown extends React.Component {
     this.toggle = this.toggle.bind(this);
 
     this.state = {
-      open: false
+      open: false,
     };
   }
 
@@ -60,8 +59,7 @@ export default class Dropdown extends React.Component {
   }
 
   handleDocumentClick(e) {
-    const container = ReactDOM.findDOMNode(this);
-    if (container.contains(e.target) && container !== e.target) {
+    if (this.container.contains(e.target) && this.container !== e.target) {
       return;
     }
     this.toggle();
@@ -78,32 +76,35 @@ export default class Dropdown extends React.Component {
 
   toggle() {
     this.setState({
-      open: !this.state.open
+      open: !this.state.open,
     });
   }
 
   render() {
     const props = {
-      title: 'Settings'
+      title: 'Settings',
     };
 
     return (
       <div>
-        <div className={classNames([
-          classes.dropdown,
-          {[classes.show]: this.state.open}
-        ])}>
+        <div
+          className={classNames([
+            classes.dropdown,
+          { [classes.show]: this.state.open },
+          ])}
+          ref={(container) => { this.container = container; }}
+        >
           <button
             aria-expanded={this.state.open}
             aria-haspopup="true"
             className={classNames([
               classes.toggle,
-              {[classes.active]: this.state.open}
+              { [classes.active]: this.state.open },
             ])}
             onClick={this.toggle}
             onKeyDown={this.handleToggleKeyDown}
             type="button"
-            ref={(toggleElem) => {this.toggleElem = toggleElem;}}
+            ref={(toggleElem) => { this.toggleElem = toggleElem; }}
           >
             {props.title}
           </button>
@@ -113,13 +114,13 @@ export default class Dropdown extends React.Component {
             className={classes.menu}
             role="menu"
           >
-            <li role="none" className={classes.menuItem}>
-              <a role="menuitem" href="http://google.com" ref={(firstItem) => {this.firstItem = firstItem;}}>Option 1</a>
+            <li className={classes.menuItem}>
+              <a role="menuitem" href="http://google.com" ref={(firstItem) => { this.firstItem = firstItem; }}>Option 1</a>
             </li>
-            <li role="none" className={classes.menuItem}>
+            <li className={classes.menuItem}>
               <a role="menuitem" href="http://google.com">Option 2</a>
             </li>
-            <li role="none" className={classes.menuItem}>
+            <li className={classes.menuItem}>
               <a role="menuitem" href="http://google.com">Option 3</a>
             </li>
           </ul>

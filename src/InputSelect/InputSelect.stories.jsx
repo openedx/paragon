@@ -93,6 +93,6 @@ storiesOf('InputSelect', module)
   ));
 
 storiesOf('Dropdown', module)
-  .add('with validation', () => (
+  .add('basic usage', () => (
     <Dropdown />
   ));
