@@ -11,8 +11,6 @@
     "deploy-storybook": "storybook-to-ghpages",
     "lint": "eslint --ext .js --ext .jsx .",
     "precommit": "yarn run lint",
-    "prestart": "install-self-peers",
-    "poststop": "yarn install",
     "start": "start-storybook -p 6006"
   },
   "dependencies": {
@@ -27,7 +25,6 @@
   "devDependencies": {
     "@kadira/storybook": "^2.21.0",
     "@kadira/storybook-deployer": "^1.2.0",
-    "@team-griffin/install-self-peers": "^1.0.0",
     "babel-cli": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
