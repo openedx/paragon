@@ -16,14 +16,10 @@
     "test-storybook": "storyshots"
   },
   "dependencies": {
-    "@storybook/addons": "^3.0.0",
-    "@storybook/channels": "^3.0.0",
-    "@storybook/react": "^3.0.1",
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-test-renderer": "^15.5.4",
     "react-transition-group": "^1.1.2",
     "reactstrap": "^4.6.2"
   },
