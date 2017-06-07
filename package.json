@@ -12,11 +12,13 @@
     "lint": "eslint --ext .js --ext .jsx .",
     "precommit": "yarn run lint",
     "start": "start-storybook -p 6006",
-    "test": "jest"
+    "test": "jest",
+    "test-storybook": "storyshots"
   },
   "dependencies": {
     "@storybook/addons": "^3.0.0",
     "@storybook/channels": "^3.0.0",
+    "@storybook/react": "^3.0.1",
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
@@ -28,6 +30,7 @@
   "devDependencies": {
     "@kadira/storybook": "^2.35.3",
     "@kadira/storybook-deployer": "^1.2.0",
+    "@kadira/storyshots": "^2.1.0",
     "@storybook/addon-storyshots": "^3.0.0",
     "babel-cli": "^6.24.1",
     "babel-loader": "^7.0.0",
