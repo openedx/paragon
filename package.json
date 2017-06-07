@@ -11,19 +11,22 @@
     "deploy-storybook": "storybook-to-ghpages",
     "lint": "eslint --ext .js --ext .jsx .",
     "precommit": "yarn run lint",
-    "start": "start-storybook -p 6006"
+    "start": "start-storybook -p 6006",
+    "test": "jest",
+    "test-storybook": "storyshots"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
-    "react-transition-group": "^1.1.2",
     "react-dom": "^15.5.4",
+    "react-transition-group": "^1.1.2",
     "reactstrap": "^4.6.2"
   },
   "devDependencies": {
-    "@kadira/storybook": "^2.21.0",
+    "@kadira/storybook": "^2.35.3",
     "@kadira/storybook-deployer": "^1.2.0",
+    "@kadira/storyshots": "^2.1.0",
     "babel-cli": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
@@ -37,6 +40,7 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
     "husky": "^0.13.4",
+    "jest": "^20.0.4",
     "react-router-dom": "^4.1.1",
     "source-map-loader": "^0.2.1",
     "webpack": "^2.4.1",
