@@ -132,6 +132,6 @@ storiesOf('CheckBox', module)
       name="checkbox"
       label="CheckBox"
       describedBy="checkbox"
-      checkLabel="check me out"
+      checkLabel="check me out!"
     />
   ));
