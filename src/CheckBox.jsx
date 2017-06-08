@@ -1,44 +1,45 @@
 import React from 'react';
-import { Input } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-import asInput, { inputProps } from './utils/asInput';
+import { inputProps } from './utils/asInput';
+
 
 class CheckBox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pressed: "false"
+      pressed: 'false',
     };
   }
 
   handleClick() {
-    if (this.state.pressed == "true") {
+    if (this.state.pressed === 'true') {
       this.setState({
-        pressed: "false",
-    }) } else {
+        pressed: 'false',
+      });
+    } else {
       this.setState({
-        pressed: "true"
+        pressed: 'true',
       });
     }
   }
 
 
   render() {
-    const props = {...this.props};
+    const props = { ...this.props };
 
     return (
       <form>
-        <label class="form-check-label">
+        <label htmlFor={props.checkLabel} className="form-check-label">
           <input
             type="checkbox"
-            class="form-check-input"
+            className="form-check-input"
             name={props.name}
-            aria-descrivedby={props.describedby}
+            aria-describedby={props.describedby}
             aria-checked={this.state.pressed}
-            tabindex="0"
+            tabIndex="0"
             onClick={() => this.handleClick()}
-            />
+          />
           {props.checkLabel}
         </label>
       </form>
@@ -48,7 +49,7 @@ class CheckBox extends React.Component {
 
 CheckBox.propTypes = {
   ...inputProps,
-  checkLabel : PropTypes.string.isRequired
+  checkLabel: PropTypes.string.isRequired,
 };
 
 export default CheckBox;

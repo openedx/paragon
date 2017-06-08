@@ -4,7 +4,7 @@ import { storiesOf, linkTo } from '@kadira/storybook';
 
 import TextInput from '../src/TextInput';
 import SelectInput from '../src/SelectInput';
-import CheckBox from '../src/CheckBox'
+import CheckBox from '../src/CheckBox';
 import Welcome from './Welcome';
 
 storiesOf('Welcome', module)
@@ -126,12 +126,12 @@ storiesOf('SelectInput', module)
     />
   ));
 
-  storiesOf('CheckBox', module)
-    .add('basic usage', () => (
-      <CheckBox
-        name="checkbox"
-        label="CheckBox"
-        describedBy="checkbox"
-        checkLabel="check me out"
-        />
-    ));
+storiesOf('CheckBox', module)
+  .add('basic usage', () => (
+    <CheckBox
+      name="checkbox"
+      label="CheckBox"
+      describedBy="checkbox"
+      checkLabel="check me out"
+    />
+  ));
