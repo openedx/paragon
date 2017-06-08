@@ -27,7 +27,7 @@ class CheckBox extends React.Component {
 
   render() {
     const props = { ...this.props };
- 
+
     return (
       <form>
         <label htmlFor={props.checkLabel} className="form-check-label">
