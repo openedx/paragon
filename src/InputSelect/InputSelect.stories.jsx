@@ -94,5 +94,21 @@ storiesOf('InputSelect', module)
 
 storiesOf('Dropdown', module)
   .add('basic usage', () => (
-    <Dropdown />
+    <Dropdown
+      title="Search Engines"
+      menuItems={[
+        {
+          label: 'Google',
+          href: 'https://google.com',
+        },
+        {
+          label: 'DuckDuckGo',
+          href: 'https://duckduckgo.com',
+        },
+        {
+          label: 'Yahoo',
+          href: 'https://yahoo.com',
+        },
+      ]}
+    />
   ));

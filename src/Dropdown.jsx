@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 const classes = {
   dropdown: 'dropdown',
@@ -19,18 +20,26 @@ const triggerKeys = {
   closeMenu: [
     'Escape',
   ],
+  navigateDown: [
+    'ArrowDown',
+  ],
+  navigateUp: [
+    'ArrowUp',
+  ],
 };
 
-export default class Dropdown extends React.Component {
+class Dropdown extends React.Component {
   constructor(props) {
     super(props);
 
     this.addEvents = this.addEvents.bind(this);
     this.handleDocumentClick = this.handleDocumentClick.bind(this);
     this.handleToggleKeyDown = this.handleToggleKeyDown.bind(this);
+    this.handleMenuKeyDown = this.handleMenuKeyDown.bind(this);
     this.removeEvents = this.removeEvents.bind(this);
     this.toggle = this.toggle.bind(this);
 
+    this.menuItems = [];
     this.state = {
       open: false,
     };
@@ -46,7 +55,7 @@ export default class Dropdown extends React.Component {
 
   componentDidUpdate() {
     if (this.state.open) {
-      this.firstItem.focus();
+      this.menuItems[0].focus();
     }
   }
 
@@ -65,6 +74,12 @@ export default class Dropdown extends React.Component {
     this.toggle();
   }
 
+  handleMenuKeyDown(e) {
+    if (this.state.open && triggerKeys.closeMenu.indexOf(e.key) > -1) {
+      this.toggle();
+    }
+  }
+
   handleToggleKeyDown(e) {
     if (!this.state.open && triggerKeys.openMenu.indexOf(e.key) > -1) {
       this.toggle();
@@ -80,52 +95,67 @@ export default class Dropdown extends React.Component {
     });
   }
 
+  generateMenuItems(menuItems) {
+    return menuItems.map((menuItem, i) => (
+      <li className={classes.menuItem} key={i}>
+        <a
+          role="menuitem"
+          href={menuItem.href}
+          onKeyDown={this.handleMenuKeyDown}
+          ref={(item) => {
+            this.menuItems[i] = item;
+          }}
+        >
+          {menuItem.label}
+        </a>
+      </li>
+    ));
+  }
+
   render() {
-    const props = {
-      title: 'Settings',
-    };
+    const menuItems = this.generateMenuItems(this.props.menuItems);
 
     return (
-      <div>
-        <div
+      <div
+        className={classNames([
+          classes.dropdown,
+        { [classes.show]: this.state.open },
+        ])}
+        ref={(container) => { this.container = container; }}
+      >
+        <button
+          aria-expanded={this.state.open}
+          aria-haspopup="true"
           className={classNames([
-            classes.dropdown,
-          { [classes.show]: this.state.open },
+            classes.toggle,
+            { [classes.active]: this.state.open },
           ])}
-          ref={(container) => { this.container = container; }}
+          onClick={this.toggle}
+          onKeyDown={this.handleToggleKeyDown}
+          type="button"
+          ref={(toggleElem) => { this.toggleElem = toggleElem; }}
         >
-          <button
-            aria-expanded={this.state.open}
-            aria-haspopup="true"
-            className={classNames([
-              classes.toggle,
-              { [classes.active]: this.state.open },
-            ])}
-            onClick={this.toggle}
-            onKeyDown={this.handleToggleKeyDown}
-            type="button"
-            ref={(toggleElem) => { this.toggleElem = toggleElem; }}
-          >
-            {props.title}
-          </button>
-          <ul
-            aria-label={props.title}
-            aria-hidden={!this.state.open}
-            className={classes.menu}
-            role="menu"
-          >
-            <li className={classes.menuItem}>
-              <a role="menuitem" href="http://google.com" ref={(firstItem) => { this.firstItem = firstItem; }}>Option 1</a>
-            </li>
-            <li className={classes.menuItem}>
-              <a role="menuitem" href="http://google.com">Option 2</a>
-            </li>
-            <li className={classes.menuItem}>
-              <a role="menuitem" href="http://google.com">Option 3</a>
-            </li>
-          </ul>
-        </div>
+          {this.props.title}
+        </button>
+        <ul
+          aria-label={this.props.title}
+          aria-hidden={!this.state.open}
+          className={classes.menu}
+          role="menu"
+        >
+          {menuItems}
+        </ul>
       </div>
     );
   }
 }
+
+Dropdown.propTypes = {
+  title: PropTypes.string.isRequired,
+  menuItems: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    href: PropTypes.string,
+  })).isRequired,
+};
+
+export default Dropdown;
