@@ -134,4 +134,13 @@ storiesOf('CheckBox', module)
       describedBy="checkbox"
       checkLabel="check me out!"
     />
+  ))
+  .add('disabled', () => (
+    <CheckBox
+      name="checkbox"
+      label="CheckBox"
+      describedBy="checkbox"
+      checkLabel="you cannot check me out"
+      disabled="true"
+    />
   ));

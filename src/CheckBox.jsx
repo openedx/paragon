@@ -39,6 +39,7 @@ class CheckBox extends React.Component {
             aria-checked={this.state.pressed}
             tabIndex="0"
             onClick={() => this.handleClick()}
+            disabled={props.disabled}
           />
           {props.checkLabel}
         </label>
