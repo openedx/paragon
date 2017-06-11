@@ -110,5 +110,14 @@ storiesOf('Dropdown', module)
           href: 'https://yahoo.com',
         },
       ]}
+      classes={{
+        dropdown: 'dropdown',
+        active: 'active',
+        toggle: 'btn dropdown-toggle',
+        screenreader: 'sr-only',
+        show: 'show',
+        menu: 'dropdown-menu',
+        menuItem: 'dropdown-item',
+      }}
     />
   ));

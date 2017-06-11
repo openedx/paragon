@@ -2,33 +2,18 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const classes = {
-  dropdown: 'dropdown',
-  active: 'active',
-  toggle: 'btn dropdown-toggle',
-  screenreader: 'sr-only',
-  show: 'show',
-  menu: 'dropdown-menu',
-  menuItem: 'dropdown-item',
-};
-
 const triggerKeys = {
-  openMenu: [
-    'ArrowDown',
-    'Space',
-  ],
-  closeMenu: [
-    'Escape',
-  ],
-  navigateDown: [
-    'ArrowDown',
-  ],
-  navigateUp: [
-    'ArrowUp',
-  ],
+  OPEN_MENU: ['ArrowDown', 'Space'],
+  CLOSE_MENU: ['Escape'],
+  NAVIGATE_DOWN: ['ArrowDown', 'Tab'],
+  NAVIGATE_UP: ['ArrowUp'],
 };
 
 class Dropdown extends React.Component {
+  static isTriggerKey(action, keyName) {
+    return triggerKeys[action].indexOf(keyName) > -1;
+  }
+
   constructor(props) {
     super(props);
 
@@ -42,6 +27,7 @@ class Dropdown extends React.Component {
     this.menuItems = [];
     this.state = {
       open: false,
+      focusIndex: 0,
     };
   }
 
@@ -55,7 +41,7 @@ class Dropdown extends React.Component {
 
   componentDidUpdate() {
     if (this.state.open) {
-      this.menuItems[0].focus();
+      this.menuItems[this.state.focusIndex].focus();
     }
   }
 
@@ -68,22 +54,32 @@ class Dropdown extends React.Component {
   }
 
   handleDocumentClick(e) {
-    if (this.container.contains(e.target) && this.container !== e.target) {
+    if (this.container && this.container.contains(e.target) && this.container !== e.target) {
       return;
     }
     this.toggle();
   }
 
   handleMenuKeyDown(e) {
-    if (this.state.open && triggerKeys.closeMenu.indexOf(e.key) > -1) {
+    e.preventDefault();
+    if (this.isTriggerKey('CLOSE_MENU', e.key)) {
       this.toggle();
+    } else if (this.isTriggerKey('NAVIGATE_DOWN', e.key)) {
+      this.setState({
+        focusIndex: (this.state.focusIndex + 1) % this.props.menuItems.length,
+      });
+    } else if (this.isTriggerKey('NAVIGATE_UP', e.key)) {
+      this.setState({
+        focusIndex: ((this.state.focusIndex - 1) + this.props.menuItems.length) %
+                    this.props.menuItems.length,
+      });
     }
   }
 
   handleToggleKeyDown(e) {
-    if (!this.state.open && triggerKeys.openMenu.indexOf(e.key) > -1) {
+    if (!this.state.open && this.isTriggerKey('OPEN_MENU', e.key)) {
       this.toggle();
-    } else if (this.state.open && triggerKeys.closeMenu.indexOf(e.key) > -1) {
+    } else if (this.state.open && this.isTriggerKey('CLOSE_MENU', e.key)) {
       this.toggle();
       this.toggleElem.focus();
     }
@@ -92,12 +88,13 @@ class Dropdown extends React.Component {
   toggle() {
     this.setState({
       open: !this.state.open,
+      focusIndex: 0,
     });
   }
 
   generateMenuItems(menuItems) {
     return menuItems.map((menuItem, i) => (
-      <li className={classes.menuItem} key={i}>
+      <li className={this.props.classes.menuItem} key={i}>
         <a
           role="menuitem"
           href={menuItem.href}
@@ -105,6 +102,7 @@ class Dropdown extends React.Component {
           ref={(item) => {
             this.menuItems[i] = item;
           }}
+          tabIndex="-1"
         >
           {menuItem.label}
         </a>
@@ -114,6 +112,7 @@ class Dropdown extends React.Component {
 
   render() {
     const menuItems = this.generateMenuItems(this.props.menuItems);
+    const classes = this.props.classes;
 
     return (
       <div
@@ -156,6 +155,19 @@ Dropdown.propTypes = {
     label: PropTypes.string,
     href: PropTypes.string,
   })).isRequired,
+  classes: PropTypes.shape().optional,
+};
+
+Dropdown.defaultProps = {
+  classes: {
+    dropdown: 'dropdown',
+    active: 'active',
+    toggle: 'btn dropdown-toggle',
+    screenreader: 'sr-only',
+    show: 'show',
+    menu: 'dropdown-menu',
+    menuItem: 'dropdown-item',
+  },
 };
 
 export default Dropdown;
