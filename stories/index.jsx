@@ -133,6 +133,7 @@ storiesOf('CheckBox', module)
       label="CheckBox"
       describedBy="checkbox"
       checkLabel="check me out!"
+      checked="false"
     />
   ))
   .add('disabled', () => (
@@ -141,6 +142,16 @@ storiesOf('CheckBox', module)
       label="CheckBox"
       describedBy="checkbox"
       checkLabel="you cannot check me out"
-      disabled="true"
+      checked="false"
+      disable="true"
+    />
+  ))
+  .add('default checked', () => (
+    <CheckBox
+      name="checkbox"
+      label="CheckBox"
+      describedBy="checkbox"
+      checkLabel="(un)check me out"
+      checked="true"
     />
   ));
