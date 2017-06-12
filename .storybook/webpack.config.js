@@ -5,14 +5,25 @@
 // IMPORTANT
 // When you add this file, we won't add the default configurations which is similar
 // to "React Create App". This only has babel loader to load JavaScript.
+const path = require('path');
 
 module.exports = {
-  plugins: [
-    // your custom plugins
-  ],
   module: {
-    loaders: [
-      // add your custom loaders.
-    ],
+    rules: [{
+      test: /\.scss$/,
+      use: [
+        {loader: 'style-loader'},
+        {loader: 'css-loader'},
+        {
+          loader: 'sass-loader',
+          options: {
+            data: '@import "variables"; @import "mixins";',
+            includePaths: [
+              path.join(__dirname, '../'),
+            ],
+          },
+        },
+      ],
+    }],
   },
 };

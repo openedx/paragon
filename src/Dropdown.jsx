@@ -2,6 +2,8 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
+import 'bootstrap/scss/_dropdown.scss';
+
 const triggerKeys = {
   OPEN_MENU: ['ArrowDown', 'Space'],
   CLOSE_MENU: ['Escape'],

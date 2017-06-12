@@ -16,6 +16,7 @@
     "test": "jest --coverage"
   },
   "dependencies": {
+    "bootstrap": "4.0.0-alpha.6",
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
@@ -38,6 +39,7 @@
     "babel-preset-react": "^6.24.1",
     "coveralls": "^2.13.1",
     "enzyme": "^2.8.2",
+    "css-loader": "^0.28.4",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-config-edx": "^2.0.1",
@@ -46,9 +48,12 @@
     "eslint-plugin-react": "^6.10.3",
     "husky": "^0.13.4",
     "jest": "^20.0.4",
+    "node-sass": "^4.5.3",
     "react-router-dom": "^4.1.1",
     "react-test-renderer": "^15.6.1",
+    "sass-loader": "^6.0.5",
     "source-map-loader": "^0.2.1",
+    "style-loader": "^0.18.2",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.4"
   }
