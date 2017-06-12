@@ -113,7 +113,7 @@ storiesOf('Dropdown', module)
       classes={{
         dropdown: 'dropdown',
         active: 'active',
-        toggle: 'btn dropdown-toggle',
+        toggle: 'btn btn-secondary border-0 dropdown-toggle',
         screenreader: 'sr-only',
         show: 'show',
         menu: 'dropdown-menu',
