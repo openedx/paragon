@@ -1,8 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-
 import 'bootstrap/scss/_dropdown.scss';
+
+import Button from './Button';
 
 const triggerKeys = {
   OPEN_MENU: ['ArrowDown', 'Space'],
@@ -96,7 +97,7 @@ class Dropdown extends React.Component {
 
   generateMenuItems(menuItems) {
     return menuItems.map((menuItem, i) => (
-      <li className={this.props.classes.menuItem} key={i}>
+      <li styleName='dropdown-item' key={i}>
         <a
           role="menuitem"
           href={menuItem.href}
@@ -114,34 +115,29 @@ class Dropdown extends React.Component {
 
   render() {
     const menuItems = this.generateMenuItems(this.props.menuItems);
-    const classes = this.props.classes;
 
     return (
       <div
-        className={classNames([
-          classes.dropdown,
-        { [classes.show]: this.state.open },
+        styleName={classNames([
+          'dropdown',
+        { show: this.state.open },
         ])}
         ref={(container) => { this.container = container; }}
       >
-        <button
+        <Button
           aria-expanded={this.state.open}
           aria-haspopup="true"
-          className={classNames([
-            classes.toggle,
-            { [classes.active]: this.state.open },
-          ])}
+          display={this.props.title}
+          className="dropdown-toggle"
           onClick={this.toggle}
           onKeyDown={this.handleToggleKeyDown}
           type="button"
           ref={(toggleElem) => { this.toggleElem = toggleElem; }}
-        >
-          {this.props.title}
-        </button>
+        />
         <ul
           aria-label={this.props.title}
           aria-hidden={!this.state.open}
-          className={classes.menu}
+          styleName='dropdown-menu'
           role="menu"
         >
           {menuItems}
@@ -157,21 +153,6 @@ Dropdown.propTypes = {
     label: PropTypes.string,
     href: PropTypes.string,
   })).isRequired,
-  classes: PropTypes.shape,
-};
-
-Dropdown.defaultProps = {
-  classes: {
-    dropdown: 'dropdown',
-    active: 'active',
-    toggle: 'btn btn-secondary dropdown-toggle',
-    screenreader: 'sr-only',
-    show: 'show',
-    menu: 'dropdown-menu',
-    menuActive: null,
-    menuItem: 'dropdown-item',
-    menuWrapper: null,
-  },
 };
 
 export default Dropdown;

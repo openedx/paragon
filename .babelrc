@@ -7,5 +7,14 @@
     }],
     "babel-preset-react"
   ],
-  "plugins": ["transform-object-rest-spread"]
+  "plugins": [
+    "transform-object-rest-spread",
+    ["babel-plugin-react-css-modules", {
+      "webpackHotModuleReloading": true,
+      "filetypes": {
+        ".scss": "postcss-scss"
+      },
+      "generateScopedName": '[name]__[local]___[hash:base64:5]'
+    }]
+  ]
 }

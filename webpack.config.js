@@ -1,4 +1,5 @@
 const path = require('path');
+const BabiliPlugin = require('babili-webpack-plugin');
 
 const env = process.env.NODE_ENV || 'dev';
 
@@ -15,6 +16,9 @@ const base = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  plugins: [
+    new BabiliPlugin(),
+  ],
   module: {
     rules: [
       {
@@ -30,41 +34,43 @@ const base = {
           { loader: 'source-map-loader' },
         ],
       },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[name]__[local]___[hash:base64:5]',
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              data: '@import "variables"; @import "mixins";',
+              includePaths: [
+                path.join(__dirname, './node_modules/bootstrap/scss'),
+              ],
+            },
+          },
+        ],
+      },
     ],
   },
 };
 
 const additionalConfig = {
-  // dev runs the doc site locally.
-  dev: {
-    devServer: {
-      contentBase: path.resolve('./docs'),
-      historyApiFallback: true,
-      stats: {
-        chunks: false,
-      },
-    },
-    node: {
-      fs: 'empty',
-    },
-    module: {
-      loaders: [
-        {
-          test: /\.(js|jsx)$/,
-          exclude: /node_modules/,
-          loaders: [
-            'babel-loader?cacheDirectory',
-          ],
-        },
-      ],
-    },
-  },
   // production builds the library for external consumption
   production: {
-    entry: path.resolve('./src/index.js'),
+    entry: {
+      Dropdown: path.resolve('./src/Dropdown.jsx'),
+    },
     output: {
       path: path.resolve('./dist'),
-      filename: 'paragon.min.js',
+      filename: '[name].js',
       library: 'paragon',
       libraryTarget: 'umd',
     },
