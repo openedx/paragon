@@ -115,7 +115,6 @@ class Dropdown extends React.Component {
 
   render() {
     const menuItems = this.generateMenuItems(this.props.menuItems);
-
     return (
       <div
         styleName={classNames([
