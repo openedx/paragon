@@ -1,8 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import 'bootstrap/scss/_dropdown.scss';
+import dd from 'bootstrap/scss/_dropdown.scss';
+import borders from 'bootstrap/scss/utilities/_borders.scss';
 
+import pc from './utils/base-styles.scss';
 import Button from './Button';
 
 const triggerKeys = {
@@ -97,7 +99,7 @@ class Dropdown extends React.Component {
 
   generateMenuItems(menuItems) {
     return menuItems.map((menuItem, i) => (
-      <li styleName='dropdown-item' key={i}>
+      <li className={dd['dropdown-item']} key={i}>
         <a
           role="menuitem"
           href={menuItem.href}
@@ -117,26 +119,31 @@ class Dropdown extends React.Component {
     const menuItems = this.generateMenuItems(this.props.menuItems);
     return (
       <div
-        styleName={classNames([
-          'dropdown',
-        { show: this.state.open },
+        className={classNames([
+          pc['paragon-component'],
+          dd.dropdown,
+        { [dd.show]: this.state.open },
         ])}
         ref={(container) => { this.container = container; }}
       >
         <Button
           aria-expanded={this.state.open}
           aria-haspopup="true"
+          buttonType="secondary"
           display={this.props.title}
-          className="dropdown-toggle"
           onClick={this.toggle}
           onKeyDown={this.handleToggleKeyDown}
+          classNames={[
+            borders['border-0'],
+            dd['dropdown-toggle'],
+          ]}
           type="button"
           ref={(toggleElem) => { this.toggleElem = toggleElem; }}
         />
         <ul
           aria-label={this.props.title}
           aria-hidden={!this.state.open}
-          styleName='dropdown-menu'
+          className={dd['dropdown-menu']}
           role="menu"
         >
           {menuItems}
