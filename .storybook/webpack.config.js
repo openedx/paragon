@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  devtool: "source-map",
   module: {
     rules: [
       {
@@ -14,6 +15,7 @@ module.exports = {
             options: {
               modules: true,
               localIdentName: '[name]__[local]___[hash:base64:5]',
+              sourceMap: true,
             },
           },
           {
@@ -23,6 +25,7 @@ module.exports = {
               includePaths: [
                 path.join(__dirname, '../node_modules/bootstrap/scss'),
               ],
+              sourceMap: true,
             },
           },
         ],

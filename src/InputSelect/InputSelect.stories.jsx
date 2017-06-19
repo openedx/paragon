@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
@@ -92,32 +91,4 @@ storiesOf('InputSelect', module)
     />
   ));
 
-storiesOf('Dropdown', module)
-  .add('basic usage', () => (
-    <Dropdown
-      title="Search Engines"
-      menuItems={[
-        {
-          label: 'Google',
-          href: 'https://google.com',
-        },
-        {
-          label: 'DuckDuckGo',
-          href: 'https://duckduckgo.com',
-        },
-        {
-          label: 'Yahoo',
-          href: 'https://yahoo.com',
-        },
-      ]}
-      classes={{
-        dropdown: 'dropdown',
-        active: 'active',
-        toggle: 'dropdown-toggle',
-        screenreader: 'sr-only',
-        show: 'show',
-        menu: 'dropdown-menu',
-        menuItem: 'dropdown-item',
-      }}
-    />
-  ));
+dropdownStories();
