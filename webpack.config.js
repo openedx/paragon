@@ -50,9 +50,9 @@ const base = {
           {
             loader: 'sass-loader',
             options: {
-              data: '@import "variables"; @import "mixins";',
+              data: '@import "paragon-reset";',
               includePaths: [
-                path.join(__dirname, './node_modules/bootstrap/scss'),
+                path.join(__dirname, './src/utils'),
               ],
             },
           },

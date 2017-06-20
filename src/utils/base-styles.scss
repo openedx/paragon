@@ -1,4 +1,7 @@
 .paragon-component {
+    @import "~bootstrap/scss/_normalize";
+    @import "~bootstrap/scss/_reboot";
+
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     box-sizing: border-box;
@@ -12,7 +15,4 @@
     margin: 0;
     color: $body-color;
     background-color: $body-bg;
-
-    @import "~bootstrap/scss/_reboot";
-    @import "~bootstrap/scss/_normalize";
 }
