@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { inputProps } from './utils/asInput';
 
@@ -7,33 +6,31 @@ import { inputProps } from './utils/asInput';
 class CheckBox extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleClick = this.handleClick.bind(this);
     if (props.checked === 'true') {
       this.state = {
-        pressed: props.checked,
         checked: true,
       };
     } else {
       this.state = {
-        pressed: props.checked,
         checked: false,
       };
     }
   }
 
   handleClick() {
-    if (this.state.pressed === 'true') {
+    if (this.state.checked === true) {
       this.setState({
-        pressed: 'false',
         checked: false,
       });
     } else {
       this.setState({
-        pressed: 'true',
         checked: true,
       });
     }
-    if (this.props.fun) {
-      this.props.fun();
+    if (this.props.onChange) {
+      this.props.onChange();
     }
   }
 
@@ -42,29 +39,23 @@ class CheckBox extends React.Component {
     const props = { ...this.props };
 
     return (
-      <form>
-        <label htmlFor={props.checkLabel} className="form-check-label">
-          <input
-            name={props.name}
-            type="checkbox"
-            defaultChecked={this.state.checked}
-            className="form-check-input"
-            aria-describedby={props.describedby}
-            aria-checked={this.state.pressed}
-            tabIndex="0"
-            onClick={() => this.handleClick()}
-            disabled={props.disable}
-          />
-          {props.checkLabel}
-        </label>
-      </form>
+      <label htmlFor={props.checkLabel}>
+        <input
+          name={props.name}
+          type="checkbox"
+          defaultChecked={this.state.checked}
+          aria-describedby={props.describedby}
+          aria-checked={this.state.checked}
+          tabIndex="0"
+          onClick={this.handleClick}
+          disabled={props.disabled}
+        />
+        {props.label}
+      </label>
     );
   }
 }
 
-CheckBox.propTypes = {
-  ...inputProps,
-  checkLabel: PropTypes.string.isRequired,
-};
+CheckBox.propTypes = inputProps;
 
 export default CheckBox;

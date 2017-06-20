@@ -130,28 +130,34 @@ storiesOf('CheckBox', module)
   .add('basic usage', () => (
     <CheckBox
       name="checkbox"
-      label="CheckBox"
       describedBy="checkbox"
-      checkLabel="check me out!"
+      label="check me out!"
       checked="false"
     />
   ))
   .add('disabled', () => (
     <CheckBox
       name="checkbox"
-      label="CheckBox"
       describedBy="checkbox"
-      checkLabel="you cannot check me out"
+      label="you cannot check me out"
       checked="false"
-      disable="true"
+      disabled="true"
     />
   ))
   .add('default checked', () => (
     <CheckBox
       name="checkbox"
-      label="CheckBox"
       describedBy="checkbox"
-      checkLabel="(un)check me out"
+      label="(un)check me out"
       checked="true"
+    />
+  ))
+  .add('call a function', () => (
+    <CheckBox
+      name="checkbox"
+      describedBy="checkbox"
+      label="check out the console"
+      checked="false"
+      onChange={() => console.log('the checkbox changed state')}
     />
   ));
