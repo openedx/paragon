@@ -1,4 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-console */
 import React from 'react';
 import { storiesOf, linkTo } from '@kadira/storybook';
 
@@ -141,7 +142,7 @@ storiesOf('CheckBox', module)
       describedBy="checkbox"
       label="you cannot check me out"
       checked="false"
-      disabled="true"
+      disabled
     />
   ))
   .add('default checked', () => (

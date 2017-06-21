@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { inputProps } from './utils/asInput';
+import newId from './utils/newId';
 
 
 class CheckBox extends React.Component {
@@ -12,12 +13,15 @@ class CheckBox extends React.Component {
       this.onChange = this.props.onChange.bind(this);
     }
 
+    const id = newId('checkbox');
     if (props.checked === 'true') {
       this.state = {
+        id,
         checked: true,
       };
     } else {
       this.state = {
+        id,
         checked: false,
       };
     }
@@ -33,7 +37,7 @@ class CheckBox extends React.Component {
         checked: true,
       });
     }
-    if(this.onChange) {
+    if (this.onChange) {
       this.onChange();
     }
   }
@@ -43,8 +47,9 @@ class CheckBox extends React.Component {
     const props = { ...this.props };
 
     return (
-      <label>
+      <label htmlFor={this.state.id}>
         <input
+          id={this.state.id}
           name={props.name}
           type="checkbox"
           defaultChecked={this.state.checked}

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import CheckBox from '../src/CheckBox';
@@ -10,8 +11,8 @@ describe('<CheckBox />', () => {
         describedBy="this is a checkbox"
         label="check me out!"
         checked="false"
-      />
-    )
+      />,
+  );
 
     expect(wrapper.find('[name="checkbox"]').exists()).toEqual(true);
     expect(wrapper.find('[type="checkbox"]').exists()).toEqual(true);
@@ -42,7 +43,7 @@ describe('<CheckBox />', () => {
     expect(wrapper.find('[aria-checked=true]').exists()).toEqual(false);
   });
 
-  it('check that callback function is triggered when clicked', ()=> {
+  it('check that callback function is triggered when clicked', () => {
     const wrapper = shallow(
       <CheckBox
         name="checkbox"
@@ -84,7 +85,7 @@ describe('<CheckBox />', () => {
         describedBy="checkbox"
         label="I am disabled"
         checked="false"
-        disabled={true}
+        disabled
       />,
     );
 
