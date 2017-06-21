@@ -8,6 +8,10 @@ class CheckBox extends React.Component {
     super(props);
 
     this.handleClick = this.handleClick.bind(this);
+    if (this.props.onChange) {
+      this.onChange = this.props.onChange.bind(this);
+    }
+
     if (props.checked === 'true') {
       this.state = {
         checked: true,
@@ -29,8 +33,8 @@ class CheckBox extends React.Component {
         checked: true,
       });
     }
-    if (this.props.onChange) {
-      this.props.onChange();
+    if(this.onChange) {
+      this.onChange();
     }
   }
 
@@ -39,12 +43,12 @@ class CheckBox extends React.Component {
     const props = { ...this.props };
 
     return (
-      <label htmlFor={props.checkLabel}>
+      <label>
         <input
           name={props.name}
           type="checkbox"
           defaultChecked={this.state.checked}
-          aria-describedby={props.describedby}
+          aria-describedby={props.describedBy}
           aria-checked={this.state.checked}
           tabIndex="0"
           onClick={this.handleClick}
