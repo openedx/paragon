@@ -23,6 +23,8 @@ function Button(props) {
       onClick={props.onClick}
       onKeyDown={props.onKeyDown}
       type={props.type}
+      ref={props.inputRef}
+      {...props}
     >
       {props.display}
     </button>
@@ -33,6 +35,7 @@ Button.propTypes = {
   buttonType: PropTypes.string,
   classNames: PropTypes.arrayOf(PropTypes.string),
   display: PropTypes.string.isRequired,
+  inputRef: PropTypes.func,
   onBlur: PropTypes.func,
   onClick: PropTypes.func,
   onKeyDown: PropTypes.func,
@@ -42,6 +45,7 @@ Button.propTypes = {
 Button.defaultProps = {
   buttonType: undefined,
   classNames: [],
+  inputRef: () => {},
   onBlur: () => {},
   onClick: () => {},
   onKeyDown: () => {},

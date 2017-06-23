@@ -47,6 +47,8 @@ class Dropdown extends React.Component {
   componentDidUpdate() {
     if (this.state.open) {
       this.menuItems[this.state.focusIndex].focus();
+    } else if (this.toggleElem) {
+      this.toggleElem.focus();
     }
   }
 
@@ -86,7 +88,6 @@ class Dropdown extends React.Component {
       this.toggle();
     } else if (this.state.open && Dropdown.isTriggerKey('CLOSE_MENU', e.key)) {
       this.toggle();
-      this.toggleElem.focus();
     }
   }
 
@@ -138,7 +139,7 @@ class Dropdown extends React.Component {
             dd['dropdown-toggle'],
           ]}
           type="button"
-          ref={(toggleElem) => { this.toggleElem = toggleElem; }}
+          inputRef={(toggleElem) => { this.toggleElem = toggleElem; }}
         />
         <ul
           aria-label={this.props.title}
