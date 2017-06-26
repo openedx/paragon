@@ -5,20 +5,14 @@ import PropTypes from 'prop-types';
 import buttons from 'bootstrap/scss/_buttons.scss';
 
 function Button(props) {
-  const classes = [
-    buttons.btn,
-  ];
-
-  if (props.buttonType) {
-    classes.push(buttons[`btn-${props.buttonType}`]);
-  }
-
   return (
     <button
       className={classNames([
-        ...classes,
+        buttons.btn,
         ...props.classNames,
-      ])}
+      ], {
+        [buttons[`btn-${props.buttonType}`]]: props.buttonType !== undefined,
+      })}
       onBlur={props.onBlur}
       onClick={props.onClick}
       onKeyDown={props.onKeyDown}

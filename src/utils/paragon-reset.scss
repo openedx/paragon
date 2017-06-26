@@ -3,6 +3,10 @@
 
 // Variable Overrides
 
+$font-family-base: inherit;
+$font-family-sans-serif: inherit;
+$font-family-serif: inherit;
+
 // Because Bootstrap styles are based on rems, the root HTML element's
 // font size determines the size of the components. Because the consumer
 // may want to render Paragon components alongside existing UI, we provide
