@@ -3,9 +3,9 @@ import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
-import { newId } from './utils/newId';
+import { newId } from '../utils/newId';
 
-class TabInterface extends React.Component {
+class Tabs extends React.Component {
   constructor(props) {
     super(props);
 
@@ -95,7 +95,7 @@ class TabInterface extends React.Component {
 }
 
 // TODO: custom validator that ensures tabLabels and panels are the same length
-TabInterface.propTypes = {
+Tabs.propTypes = {
   tabLabels: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.String),
     PropTypes.arrayOf(PropTypes.Element),
@@ -103,4 +103,4 @@ TabInterface.propTypes = {
   panels: PropTypes.arrayOf(PropTypes.Element).isRequired,
 };
 
-export default TabInterface;
+export default Tabs;
