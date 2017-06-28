@@ -1,0 +1,25 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-console */
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+
+storiesOf('Paragon', module)
+  .add('Welcome', () => (
+    <div>
+      <h1>💎 Paragon</h1>
+      <p>
+        This is a documentation and demo space for the Paragon accessible UI component
+        library. Better docs coming soon, but for now, check out our existing components
+        via the links to the left-hand side.
+      </p>
+      <p>
+        Documentation generated with <a
+          href="https://github.com/kadirahq/react-storybook"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          React Storybook
+        </a>.
+      </p>
+    </div>
+  ));

@@ -1,9 +1,17 @@
 import { configure } from '@storybook/react';
+import { setOptions } from '@storybook/addon-options';
 
-const req = require.context('../src', true, /\.stories\.jsx$/)
+setOptions({
+  name: '💎 PARAGON',
+  url: 'https://github.com/edx/paragon',
+  showDownPanel: false,
+});
+
+const req = require.context('../src', true, /\.stories\.jsx$/);
 
 function loadStories() {
-  req.keys().forEach((filename) => req(filename))
+  require('./Paragon.stories.jsx');
+  req.keys().forEach((filename) => req(filename));
 }
 
 configure(loadStories, module);
