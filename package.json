@@ -12,8 +12,7 @@
     "lint": "eslint --ext .js --ext .jsx .",
     "precommit": "yarn run lint",
     "start": "start-storybook -p 6006",
-    "test": "jest",
-    "test-storybook": "storyshots"
+    "test": "jest"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -25,7 +24,6 @@
   },
   "devDependencies": {
     "@kadira/storybook-deployer": "^1.2.0",
-    "@kadira/storyshots": "^2.1.0",
     "@storybook/addon-options": "^3.1.6",
     "@storybook/addon-storyshots": "^3.1.7",
     "@storybook/react": "3.1.3",
