@@ -1,9 +1,11 @@
-import SelectInput from './SelectInput';
-import TabInterface from './TabInterface';
-import TextInput from './TextInput';
+import CheckBox from './CheckBox';
+import InputSelect from './InputSelect';
+import InputText from './InputText';
+import Tabs from './Tabs';
 
 export {
-  SelectInput,
-  TabInterface,
-  TextInput,
+  CheckBox,
+  InputSelect,
+  InputText,
+  Tabs,
 };

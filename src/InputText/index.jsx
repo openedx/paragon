@@ -1,9 +1,9 @@
 import React from 'react';
 import { Input } from 'reactstrap';
 
-import asInput, { inputProps } from './utils/asInput';
+import asInput, { inputProps } from '../utils/asInput';
 
-function TextField(props) {
+function Text(props) {
   return (
     <Input
       id={props.id}
@@ -22,8 +22,8 @@ function TextField(props) {
   );
 }
 
-TextField.propTypes = inputProps;
+Text.propTypes = inputProps;
 
-const TextInput = asInput(TextField);
+const InputText = asInput(Text);
 
-export default TextInput;
+export default InputText;

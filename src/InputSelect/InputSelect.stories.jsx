@@ -1,47 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-console */
 import React from 'react';
-import { storiesOf, linkTo } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 
-import TextInput from '../src/TextInput';
-import SelectInput from '../src/SelectInput';
-import CheckBox from '../src/CheckBox';
-import Welcome from './Welcome';
+import InputSelect from './index';
 
-storiesOf('Welcome', module)
-  .add('to Storybook', () => (
-    <Welcome showApp={linkTo('Button')} />
-  ));
-
-storiesOf('TextInput', module)
-  .add('minimal usage', () => (
-    <TextInput
-      name="name"
-      label="First Name"
-      value="Foo Bar"
-    />
-  ))
-  .add('validation', () => (
-    <TextInput
-      name="username"
-      label="Username"
-      description="The unique name that identifies you throughout the site."
-      validator={(value) => {
-        let feedback = { isValid: true };
-        if (value.length < 3) {
-          feedback = {
-            isValid: false,
-            validationMessage: 'Username must be at least 3 characters in length.',
-          };
-        }
-        return feedback;
-      }}
-    />
-  ));
-
-storiesOf('SelectInput', module)
+storiesOf('InputSelect', module)
   .add('basic usage', () => (
-    <SelectInput
+    <InputSelect
       name="fruits"
       label="Fruits"
       value="strawberry"
@@ -54,7 +19,7 @@ storiesOf('SelectInput', module)
     />
   ))
   .add('separate labels and values', () => (
-    <SelectInput
+    <InputSelect
       name="new-england-states"
       label="New England States"
       value="RI"
@@ -69,7 +34,7 @@ storiesOf('SelectInput', module)
     />
   ))
   .add('separate option groups', () => (
-    <SelectInput
+    <InputSelect
       name="northeast-states"
       label="Northeast States"
       value="MD"
@@ -102,7 +67,7 @@ storiesOf('SelectInput', module)
     />
   ))
   .add('with validation', () => (
-    <SelectInput
+    <InputSelect
       name="color"
       label="Favorite Color"
       options={[
@@ -124,41 +89,5 @@ storiesOf('SelectInput', module)
         }
         return feedback;
       }}
-    />
-  ));
-
-storiesOf('CheckBox', module)
-  .add('basic usage', () => (
-    <CheckBox
-      name="checkbox"
-      describedBy="checkbox"
-      label="check me out!"
-      checked="false"
-    />
-  ))
-  .add('disabled', () => (
-    <CheckBox
-      name="checkbox"
-      describedBy="checkbox"
-      label="you cannot check me out"
-      checked="false"
-      disabled
-    />
-  ))
-  .add('default checked', () => (
-    <CheckBox
-      name="checkbox"
-      describedBy="checkbox"
-      label="(un)check me out"
-      checked="true"
-    />
-  ))
-  .add('call a function', () => (
-    <CheckBox
-      name="checkbox"
-      describedBy="checkbox"
-      label="check out the console"
-      checked="false"
-      onChange={() => console.log('the checkbox changed state')}
     />
   ));

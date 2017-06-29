@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { inputProps } from './utils/asInput';
-import newId from './utils/newId';
-
+import { inputProps } from '../utils/asInput';
+import newId from '../utils/newId';
 
 class CheckBox extends React.Component {
   constructor(props) {

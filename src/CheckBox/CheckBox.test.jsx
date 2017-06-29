@@ -1,7 +1,8 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-console */
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import CheckBox from '../src/CheckBox';
+import CheckBox from './index';
 
 describe('<CheckBox />', () => {
   it('attributes are set correctly', () => {

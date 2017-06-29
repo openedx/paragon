@@ -2,7 +2,7 @@ import React from 'react';
 import { Input } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-import asInput, { inputProps } from './utils/asInput';
+import asInput, { inputProps } from '../utils/asInput';
 
 class Select extends React.Component {
   static getOption(option, i) {
@@ -63,11 +63,11 @@ Select.propTypes = {
   ]).isRequired,
 };
 
-const SelectInput = asInput(Select);
+const InputSelect = asInput(Select);
 
-SelectInput.propTypes = {
-  ...SelectInput.propTypes,
+InputSelect.propTypes = {
+  ...InputSelect.propTypes,
   ...Select.propTypes,
 };
 
-export default SelectInput;
+export default InputSelect;
