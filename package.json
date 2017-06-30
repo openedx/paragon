@@ -2,7 +2,7 @@
   "name": "paragon",
   "version": "0.0.1",
   "description": "Accessible, responsive UI component library based on Bootstrap.",
-  "main": "dist/paragon.min.js",
+  "main": "src/index.js",
   "author": "arizzitano",
   "license": "MIT",
   "scripts": {
@@ -16,6 +16,7 @@
     "test": "jest --coverage"
   },
   "dependencies": {
+    "bootstrap": "4.0.0-alpha.6",
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
@@ -36,7 +37,9 @@
     "babel-preset-env": "^1.4.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "babili-webpack-plugin": "^0.1.1",
     "coveralls": "^2.13.1",
+    "css-loader": "^0.28.4",
     "enzyme": "^2.8.2",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
@@ -45,11 +48,26 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
     "husky": "^0.13.4",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^20.0.4",
+    "node-sass": "^4.5.3",
+    "postcss-scss": "^1.0.1",
     "react-router-dom": "^4.1.1",
     "react-test-renderer": "^15.6.1",
+    "sass-loader": "^6.0.5",
     "source-map-loader": "^0.2.1",
+    "style-loader": "^0.18.2",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.4"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|scss)$": "identity-obj-proxy"
+    },
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "(.stories)\\.(jsx)$"
+    ]
   }
 }

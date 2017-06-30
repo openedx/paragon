@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unused-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Label, FormGroup, FormFeedback, FormText } from 'reactstrap';
+import { FormGroup, FormFeedback, FormText } from 'reactstrap';
 
 import newId from './newId';
 
@@ -86,7 +86,7 @@ const asInput = (WrappedComponent) => {
 
       return (
         <FormGroup>
-          <Label for={this.state.id}>{this.props.label}</Label>
+          <label htmlFor={this.state.id}>{this.props.label}</label>
           <WrappedComponent
             {...this.props}
             {...this.state}

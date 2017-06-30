@@ -76,12 +76,81 @@ exports[`Storyshots CheckBox disabled 1`] = `
 </label>
 `;
 
+exports[`Storyshots Dropdown basic usage 1`] = `
+<div
+  className="paragon-component dropdown"
+>
+  <button
+    aria-expanded={false}
+    aria-haspopup="true"
+    buttonType="secondary"
+    className="btn border-0 dropdown-toggle btn-secondary"
+    classNames={
+      Array [
+        "border-0",
+        "dropdown-toggle",
+      ]
+    }
+    display="Search Engines"
+    inputRef={[Function]}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    Search Engines
+  </button>
+  <ul
+    aria-hidden={true}
+    aria-label="Search Engines"
+    className="dropdown-menu"
+    role="menu"
+  >
+    <li
+      className="dropdown-item"
+    >
+      <a
+        href="https://google.com"
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Google
+      </a>
+    </li>
+    <li
+      className="dropdown-item"
+    >
+      <a
+        href="https://duckduckgo.com"
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        DuckDuckGo
+      </a>
+    </li>
+    <li
+      className="dropdown-item"
+    >
+      <a
+        href="https://yahoo.com"
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Yahoo
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
 exports[`Storyshots InputSelect basic usage 1`] = `
 <div
   className="form-group"
 >
   <label
-    className=""
     htmlFor="textInput5"
   >
     Fruits
@@ -124,7 +193,6 @@ exports[`Storyshots InputSelect separate labels and values 1`] = `
   className="form-group"
 >
   <label
-    className=""
     htmlFor="textInput6"
   >
     New England States
@@ -177,7 +245,6 @@ exports[`Storyshots InputSelect separate option groups 1`] = `
   className="form-group"
 >
   <label
-    className=""
     htmlFor="textInput7"
   >
     Northeast States
@@ -278,7 +345,6 @@ exports[`Storyshots InputSelect with validation 1`] = `
   className="form-group"
 >
   <label
-    className=""
     htmlFor="textInput8"
   >
     Favorite Color
@@ -336,7 +402,6 @@ exports[`Storyshots InputText minimal usage 1`] = `
   className="form-group"
 >
   <label
-    className=""
     htmlFor="textInput9"
   >
     First Name
@@ -363,7 +428,6 @@ exports[`Storyshots InputText validation 1`] = `
   className="form-group"
 >
   <label
-    className=""
     htmlFor="textInput10"
   >
     Username
