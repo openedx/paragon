@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import dd from 'bootstrap/scss/_dropdown.scss';
 import borders from 'bootstrap/scss/utilities/_borders.scss';
 
-import pc from './utils/base-styles.scss';
-import Button from './Button';
+import pc from '../utils/base-styles.scss';
+import Button from '../Button';
 
 const triggerKeys = {
   OPEN_MENU: ['ArrowDown', 'Space'],
