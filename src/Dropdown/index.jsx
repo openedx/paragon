@@ -7,7 +7,7 @@ import borders from 'bootstrap/scss/utilities/_borders.scss';
 import pc from '../utils/base-styles.scss';
 import Button from '../Button';
 
-const triggerKeys = {
+export const triggerKeys = {
   OPEN_MENU: ['ArrowDown', 'Space'],
   CLOSE_MENU: ['Escape'],
   NAVIGATE_DOWN: ['ArrowDown', 'Tab'],
@@ -45,7 +45,7 @@ class Dropdown extends React.Component {
   }
 
   componentDidUpdate() {
-    if (this.state.open && this.menuItems.length > 0) {
+    if (this.state.open) {
       this.menuItems[this.state.focusIndex].focus();
     } else if (this.toggleElem) {
       this.toggleElem.focus();

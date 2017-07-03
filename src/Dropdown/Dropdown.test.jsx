@@ -1,8 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
-import Dropdown from './index';
+import Dropdown, { triggerKeys } from './index';
 
 const props = {
   title: 'Example',
@@ -12,48 +12,55 @@ const props = {
   ],
 };
 
+const menuOpen = (isOpen, wrapper) => {
+  expect(wrapper.hasClass('show')).toEqual(isOpen);
+  expect(wrapper.find('[type="button"]').prop('aria-expanded')).toEqual(isOpen);
+  expect(wrapper.find('[aria-hidden=false]').exists()).toEqual(isOpen);
+};
+
 describe('<Dropdown />', () => {
-  it('renders correctly', () => {
+  describe('renders', () => {
     const wrapper = shallow(
       <Dropdown
         {...props}
       />,
     );
-
     const menu = wrapper.find('ul');
     const button = wrapper.find('[type="button"]');
 
-    expect(button.exists()).toEqual(true);
-    expect(button.prop('aria-expanded')).toEqual(false);
+    it('with menu and toggle', () => {
+      expect(button.exists()).toEqual(true);
+      expect(menu.prop('aria-label')).toEqual(props.title);
+      expect(menu.exists()).toEqual(true);
+      expect(menu.find('li')).toHaveLength(2);
+    });
 
-    expect(menu.exists()).toEqual(true);
-    expect(menu.find('li')).toHaveLength(2);
-    expect(menu.prop('aria-label')).toEqual(props.title);
-    expect(menu.prop('aria-hidden')).toEqual(true);
+    it('with menu closed', () => {
+      menuOpen(false, wrapper);
+    });
   });
 
-  it('renders correctly', () => {
-    const wrapper = shallow(
-      <Dropdown
-        {...props}
-      />,
-    );
+  describe('opens', () => {
+    it('on click', () => {
+      const wrapper = mount(
+        <Dropdown
+          {...props}
+        />,
+      );
+      wrapper.find('[type="button"]').simulate('click');
+      menuOpen(true, wrapper);
+    });
 
-    expect(wrapper.find('[type="button"]').exists()).toEqual(true);
-    expect(wrapper.find('li')).toHaveLength(2);
-    expect(wrapper.find('[aria-expanded=false]').exists()).toEqual(true);
-  });
-
-  it('opens on click', () => {
-    const wrapper = shallow(
-      <Dropdown
-        {...props}
-      />,
-    );
-
-    const button = wrapper.find('[type="button"]');
-
-    button.simulate('click');
-    expect(wrapper.find('[aria-hidden=false]').exists()).toEqual(true);
+    triggerKeys.OPEN_MENU.forEach((key) => {
+      it(`on ${key}`, () => {
+        const wrapper = mount(
+          <Dropdown
+            {...props}
+          />,
+        );
+        wrapper.find('[type="button"]').simulate('keyDown', { key });
+        menuOpen(true, wrapper);
+      });
+    });
   });
 });
