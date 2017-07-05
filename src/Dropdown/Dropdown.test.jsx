@@ -63,4 +63,29 @@ describe('<Dropdown />', () => {
       });
     });
   });
+
+  describe('closes', () => {
+    let wrapper;
+
+    beforeEach(() => {
+      wrapper = mount(
+        <Dropdown
+          {...props}
+        />,
+      );
+      wrapper.find('[type="button"]').simulate('click');
+    });
+
+    it('on click', () => {
+      wrapper.find('[type="button"]').simulate('click');
+      menuOpen(false, wrapper);
+    });
+
+    triggerKeys.CLOSE_MENU.forEach((key) => {
+      it(`on ${key}`, () => {
+        wrapper.find('[type="button"]').simulate('keyDown', { key });
+        menuOpen(false, wrapper);
+      });
+    });
+  });
 });
