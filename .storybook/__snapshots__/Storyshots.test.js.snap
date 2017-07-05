@@ -83,16 +83,7 @@ exports[`Storyshots Dropdown basic usage 1`] = `
   <button
     aria-expanded={false}
     aria-haspopup="true"
-    buttonType="secondary"
     className="btn border-0 dropdown-toggle btn-secondary"
-    classNames={
-      Array [
-        "border-0",
-        "dropdown-toggle",
-      ]
-    }
-    display="Search Engines"
-    inputRef={[Function]}
     onBlur={[Function]}
     onClick={[Function]}
     onKeyDown={[Function]}

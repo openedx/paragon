@@ -5,11 +5,23 @@ import PropTypes from 'prop-types';
 import buttons from 'bootstrap/scss/_buttons.scss';
 
 function Button(props) {
+  const {
+    buttonType,
+    className,
+    display,
+    inputRef,
+    onBlur,
+    onClick,
+    onKeyDown,
+    type,
+    ...other
+  } = props;
+
   return (
     <button
       className={classNames([
         buttons.btn,
-        ...props.classNames,
+        ...props.className,
       ], {
         [buttons[`btn-${props.buttonType}`]]: props.buttonType !== undefined,
       })}
@@ -18,7 +30,7 @@ function Button(props) {
       onKeyDown={props.onKeyDown}
       type={props.type}
       ref={props.inputRef}
-      {...props}
+      {...other}
     >
       {props.display}
     </button>
@@ -27,7 +39,7 @@ function Button(props) {
 
 Button.propTypes = {
   buttonType: PropTypes.string,
-  classNames: PropTypes.arrayOf(PropTypes.string),
+  className: PropTypes.arrayOf(PropTypes.string),
   display: PropTypes.string.isRequired,
   inputRef: PropTypes.func,
   onBlur: PropTypes.func,
@@ -38,7 +50,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   buttonType: undefined,
-  classNames: [],
+  className: [],
   inputRef: () => {},
   onBlur: () => {},
   onClick: () => {},

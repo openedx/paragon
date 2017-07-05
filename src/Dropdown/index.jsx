@@ -134,7 +134,7 @@ class Dropdown extends React.Component {
           display={this.props.title}
           onClick={this.toggle}
           onKeyDown={this.handleToggleKeyDown}
-          classNames={[
+          className={[
             borders['border-0'],
             dd['dropdown-toggle'],
           ]}
