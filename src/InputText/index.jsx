@@ -1,7 +1,7 @@
 import React from 'react';
 import { Input } from 'reactstrap';
 
-import asInput, { inputProps } from '../utils/asInput';
+import asInput, { inputProps } from '../asInput';
 
 function Text(props) {
   return (
