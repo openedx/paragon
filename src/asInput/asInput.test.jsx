@@ -3,7 +3,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import asInput from './index';
+import asInput, { getDisplayName } from './index';
 
 function testComponent(props) {
   return (
@@ -22,6 +22,14 @@ const baseProps = {
   label: 'test component',
   description: 'i am a test component',
 };
+
+describe('getDisplayName', () => {
+  it('returns the proper display name', () => {
+    expect(getDisplayName({ displayName: 'foo' })).toEqual('foo');
+    expect(getDisplayName({ name: 'bar' })).toEqual('bar');
+    expect(getDisplayName({})).toEqual('Component');
+  });
+});
 
 describe('asInput()', () => {
   it('renders', () => {

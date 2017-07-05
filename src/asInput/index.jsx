@@ -5,7 +5,8 @@ import { FormGroup, FormFeedback, FormText } from 'reactstrap';
 
 import newId from '../utils/newId';
 
-const getDisplayName = WrappedComponent => WrappedComponent.displayName || WrappedComponent.name || 'Component';
+export const getDisplayName = WrappedComponent =>
+  WrappedComponent.displayName || WrappedComponent.name || 'Component';
 
 export const inputProps = {
   label: PropTypes.string.isRequired,
