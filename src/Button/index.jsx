@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import buttons from 'bootstrap/scss/_buttons.scss';
+import styles from './Button.scss';
 
 function Button(props) {
   const {
@@ -20,19 +20,19 @@ function Button(props) {
   return (
     <button
       className={classNames([
-        buttons.btn,
-        ...props.className,
+        styles.btn,
+        ...className.map(cn => styles[cn]),
       ], {
-        [buttons[`btn-${props.buttonType}`]]: props.buttonType !== undefined,
+        [styles[`btn-${buttonType}`]]: buttonType !== undefined,
       })}
-      onBlur={props.onBlur}
-      onClick={props.onClick}
-      onKeyDown={props.onKeyDown}
-      type={props.type}
-      ref={props.inputRef}
+      onBlur={onBlur}
+      onClick={onClick}
+      onKeyDown={onKeyDown}
+      type={type}
+      ref={inputRef}
       {...other}
     >
-      {props.display}
+      {display}
     </button>
   );
 }

@@ -1,9 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import dd from 'bootstrap/scss/_dropdown.scss';
-import borders from 'bootstrap/scss/utilities/_borders.scss';
 
+import styles from './Dropdown.scss';
 import pc from '../utils/base-styles.scss';
 import Button from '../Button';
 
@@ -100,7 +99,7 @@ class Dropdown extends React.Component {
 
   generateMenuItems(menuItems) {
     return menuItems.map((menuItem, i) => (
-      <li className={dd['dropdown-item']} key={i}>
+      <li className={styles['dropdown-item']} key={i}>
         <a
           role="menuitem"
           href={menuItem.href}
@@ -122,8 +121,8 @@ class Dropdown extends React.Component {
       <div
         className={classNames([
           pc['paragon-component'],
-          dd.dropdown,
-        { [dd.show]: this.state.open },
+          styles.dropdown,
+        { [styles.show]: this.state.open },
         ])}
         ref={(container) => { this.container = container; }}
       >
@@ -135,8 +134,8 @@ class Dropdown extends React.Component {
           onClick={this.toggle}
           onKeyDown={this.handleToggleKeyDown}
           className={[
-            borders['border-0'],
-            dd['dropdown-toggle'],
+            'btn-borderless',
+            styles['dropdown-toggle'],
           ]}
           type="button"
           inputRef={(toggleElem) => { this.toggleElem = toggleElem; }}
@@ -144,7 +143,7 @@ class Dropdown extends React.Component {
         <ul
           aria-label={this.props.title}
           aria-hidden={!this.state.open}
-          className={dd['dropdown-menu']}
+          className={styles['dropdown-menu']}
           role="menu"
         >
           {menuItems}
