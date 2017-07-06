@@ -1,5 +1,4 @@
 /* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-console */
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import CheckBox from './index';
@@ -45,16 +44,16 @@ describe('<CheckBox />', () => {
   });
 
   it('check that callback function is triggered when clicked', () => {
+    const spy = jest.fn();
     const wrapper = shallow(
       <CheckBox
         name="checkbox"
         descibedBy="checkbox"
         label="check me out!"
         checked="false"
-        onChange={() => console.log('the checkbox changed state')}
+        onChange={spy}
       />,
     );
-    const spy = jest.spyOn(wrapper.instance(), 'onChange');
 
     expect(spy).toHaveBeenCalledTimes(0);
     wrapper.find('input').simulate('click');

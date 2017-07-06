@@ -3,9 +3,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormGroup, FormFeedback, FormText } from 'reactstrap';
 
-import newId from './newId';
+import newId from '../utils/newId';
 
-const getDisplayName = WrappedComponent => WrappedComponent.displayName || WrappedComponent.name || 'Component';
+export const getDisplayName = WrappedComponent =>
+  WrappedComponent.displayName || WrappedComponent.name || 'Component';
 
 export const inputProps = {
   label: PropTypes.string.isRequired,
@@ -29,7 +30,7 @@ const asInput = (WrappedComponent) => {
       this.handleChange = this.handleChange.bind(this);
       this.handleBlur = this.handleBlur.bind(this);
 
-      const id = newId('textInput');
+      const id = newId('asInput');
       this.state = {
         id,
         value: this.props.value,
