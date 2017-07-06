@@ -1,6 +1,6 @@
 # Paragon
 
-[![Build Status](https://travis-ci.org/edx/paragon.svg?branch=master)](https://travis-ci.org/edx/paragon) [![Coverage Status](https://coveralls.io/repos/github/edx/paragon/badge.svg?branch=master)](https://coveralls.io/github/edx/paragon?branch=master) [![Greenkeeper badge](https://badges.greenkeeper.io/edx/paragon.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/edx/paragon.svg?branch=master)](https://travis-ci.org/edx/paragon) [![Greenkeeper badge](https://badges.greenkeeper.io/edx/paragon.svg)](https://greenkeeper.io/)
 
 Paragon provides accessible React components for use within the Open edX platform and beyond.
 
