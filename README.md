@@ -17,7 +17,7 @@ http://paragon.cool
 [Yarn](https://yarnpkg.com) is recommended for installation.
 
 ```
-$ git clone git@github.com:arizzitano/paragon.git
+$ git clone git@github.com:edx/paragon.git
 $ cd paragon
 $ yarn install
 $ yarn run start
