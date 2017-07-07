@@ -1,9 +1,9 @@
 /* eslint-disable react/no-unused-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormGroup, FormFeedback, FormText } from 'reactstrap';
 
 import newId from '../utils/newId';
+import styles from './asInput.scss';
 
 export const getDisplayName = WrappedComponent =>
   WrappedComponent.displayName || WrappedComponent.name || 'Component';
@@ -21,6 +21,7 @@ export const inputProps = {
   onChange: PropTypes.func,
   onBlur: PropTypes.func,
   validator: PropTypes.func,
+  className: PropTypes.arrayOf(PropTypes.string),
 };
 
 const asInput = (WrappedComponent) => {
@@ -49,18 +50,18 @@ const asInput = (WrappedComponent) => {
 
       if (!this.state.isValid) {
         desc.error = (
-          <FormFeedback id={errorId} key="0">
+          <div className={styles['form-control-feedback']} id={errorId} key="0">
             {this.state.validationMessage}
-          </FormFeedback>
+          </div>
         );
         desc.describedBy = errorId;
       }
 
       if (this.props.description) {
         desc.description = (
-          <FormText id={descriptionId} key="1">
+          <small className={styles['form-text']} id={descriptionId} key="1">
             {this.props.description}
-          </FormText>
+          </small>
         );
         desc.describedBy = `${desc.describedBy} ${descriptionId}`.trim();
       }
@@ -86,18 +87,22 @@ const asInput = (WrappedComponent) => {
       const { description, error, describedBy } = this.getDescriptions();
 
       return (
-        <FormGroup>
+        <div className={styles['form-group']}>
           <label htmlFor={this.state.id}>{this.props.label}</label>
           <WrappedComponent
             {...this.props}
             {...this.state}
+            className={[
+              styles['form-control'],
+              ...this.props.className,
+            ]}
             describedBy={describedBy}
             onChange={this.handleChange}
             onBlur={this.handleBlur}
           />
           {error}
           {description}
-        </FormGroup>
+        </div>
       );
     }
   }
@@ -114,6 +119,7 @@ const asInput = (WrappedComponent) => {
     disabled: false,
     required: false,
     validator: undefined,
+    className: [],
   };
 
   return NewComponent;

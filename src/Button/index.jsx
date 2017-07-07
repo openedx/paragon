@@ -20,8 +20,8 @@ function Button(props) {
   return (
     <button
       className={classNames([
+        ...className,
         styles.btn,
-        ...className.map(cn => styles[cn]),
       ], {
         [styles[`btn-${buttonType}`]]: buttonType !== undefined,
       })}

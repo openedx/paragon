@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input } from 'reactstrap';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 import asInput, { inputProps } from '../asInput';
@@ -40,8 +40,9 @@ class Select extends React.Component {
     const options = this.getOptions();
 
     return (
-      <Input
+      <select
         id={props.id}
+        className={classNames(props.className)}
         type="select"
         name={props.name}
         value={props.value}
@@ -50,7 +51,7 @@ class Select extends React.Component {
         onBlur={props.onBlur}
       >
         {options}
-      </Input>
+      </select>
     );
   }
 }

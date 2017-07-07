@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 import styles from './Dropdown.scss';
-import pc from '../utils/base-styles.scss';
 import Button from '../Button';
 
 export const triggerKeys = {
@@ -120,7 +119,6 @@ class Dropdown extends React.Component {
     return (
       <div
         className={classNames([
-          pc['paragon-component'],
           styles.dropdown,
         { [styles.show]: this.state.open },
         ])}
@@ -134,7 +132,7 @@ class Dropdown extends React.Component {
           onClick={this.toggle}
           onKeyDown={this.handleToggleKeyDown}
           className={[
-            'btn-borderless',
+            styles['btn-borderless'],
             styles['dropdown-toggle'],
           ]}
           type="button"
