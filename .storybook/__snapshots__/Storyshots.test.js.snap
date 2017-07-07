@@ -78,12 +78,12 @@ exports[`Storyshots CheckBox disabled 1`] = `
 
 exports[`Storyshots Dropdown basic usage 1`] = `
 <div
-  className="paragon-component dropdown"
+  className="dropdown"
 >
   <button
     aria-expanded={false}
     aria-haspopup="true"
-    className="btn border-0 dropdown-toggle btn-secondary"
+    className="btn-borderless dropdown-toggle btn btn-secondary"
     onBlur={[Function]}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -153,6 +153,7 @@ exports[`Storyshots InputSelect basic usage 1`] = `
     name="fruits"
     onBlur={[Function]}
     onChange={[Function]}
+    type="select"
     value="strawberry"
   >
     <option
@@ -195,6 +196,7 @@ exports[`Storyshots InputSelect separate labels and values 1`] = `
     name="new-england-states"
     onBlur={[Function]}
     onChange={[Function]}
+    type="select"
     value="RI"
   >
     <option
@@ -247,6 +249,7 @@ exports[`Storyshots InputSelect separate option groups 1`] = `
     name="northeast-states"
     onBlur={[Function]}
     onChange={[Function]}
+    type="select"
     value="MD"
   >
     <optgroup
@@ -347,6 +350,7 @@ exports[`Storyshots InputSelect with validation 1`] = `
     name="color"
     onBlur={[Function]}
     onChange={[Function]}
+    type="select"
     value=""
   >
     <option
@@ -448,31 +452,135 @@ exports[`Storyshots InputText validation 1`] = `
 
 exports[`Storyshots Paragon Welcome 1`] = `
 <div
+  className="css-jail"
   style={
     Object {
-      "fontFamily": "\\"Helvetica Neue\\", Helvetica, \\"Segoe UI\\", Arial, freesans, sans-serif",
-      "lineHeight": 1.4,
-      "margin": 15,
-      "maxWidth": 600,
+      "fontFamily": "sans-serif",
     }
   }
 >
-  <h1>
-    💎 Paragon
-  </h1>
-  <p>
-    This is a documentation and demo space for the Paragon accessible UI component library. Better docs coming soon, but for now, check out our existing components via the links to the left-hand side.
-  </p>
-  <p>
-    Documentation generated with 
-    <a
-      href="https://github.com/kadirahq/react-storybook"
-      rel="noopener noreferrer"
-      target="_blank"
+  <div
+    style={
+      Object {
+        "fontFamily": "\\"Helvetica Neue\\", Helvetica, \\"Segoe UI\\", Arial, freesans, sans-serif",
+        "lineHeight": 1.4,
+        "margin": 15,
+        "maxWidth": 600,
+      }
+    }
+  >
+    <h1>
+      💎 Paragon
+    </h1>
+    <p>
+      This is a documentation and demo space for the Paragon accessible UI component library. Better docs coming soon, but for now, check out our existing components via the links to the left-hand side.
+    </p>
+    <p>
+      Documentation generated with 
+      <a
+        href="https://github.com/kadirahq/react-storybook"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        React Storybook
+      </a>
+      .
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Tabs minimal usage 1`] = `
+<div>
+  <ul
+    className="nav nav-tabs"
+    role="tablist"
+  >
+    <li
+      className="nav-item"
+      id="tab-label-tabInterface11-0"
     >
-      React Storybook
-    </a>
-    .
-  </p>
+      <a
+        aria-controls="tab-panel-tabInterface11-0"
+        aria-selected={true}
+        className="nav-link active"
+        onClick={[Function]}
+        role="tab"
+        tabIndex={0}
+      >
+        Panel 1
+      </a>
+    </li>
+    <li
+      className="nav-item"
+      id="tab-label-tabInterface11-1"
+    >
+      <a
+        aria-controls="tab-panel-tabInterface11-1"
+        aria-selected={false}
+        className="nav-link"
+        onClick={[Function]}
+        role="tab"
+        tabIndex={-1}
+      >
+        Panel 2
+      </a>
+    </li>
+    <li
+      className="nav-item"
+      id="tab-label-tabInterface11-2"
+    >
+      <a
+        aria-controls="tab-panel-tabInterface11-2"
+        aria-selected={false}
+        className="nav-link"
+        onClick={[Function]}
+        role="tab"
+        tabIndex={-1}
+      >
+        Panel 3
+      </a>
+    </li>
+  </ul>
+  <div
+    className="tab-content"
+  >
+    <div
+      aria-hidden={false}
+      aria-labelledby="tab-label-tabInterface11-0"
+      className="tab-pane active"
+      id="tab-panel-tabInterface11-0"
+      role="tabpanel"
+      tabId={0}
+    >
+      <div>
+        Hello I am the first panel
+      </div>
+    </div>
+    <div
+      aria-hidden={true}
+      aria-labelledby="tab-label-tabInterface11-1"
+      className="tab-pane"
+      id="tab-panel-tabInterface11-1"
+      role="tabpanel"
+      tabId={1}
+    >
+      <div>
+        Hello I am the second panel
+      </div>
+    </div>
+    <div
+      aria-hidden={true}
+      aria-labelledby="tab-label-tabInterface11-2"
+      className="tab-pane"
+      id="tab-panel-tabInterface11-2"
+      role="tabpanel"
+      tabId={2}
+    >
+      <div>
+        Hello I am the third panel
+      </div>
+    </div>
+  </div>
 </div>
 `;
