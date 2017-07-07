@@ -490,7 +490,7 @@ exports[`Storyshots Paragon Welcome 1`] = `
 </div>
 `;
 
-exports[`Storyshots Tabs minimal usage 1`] = `
+exports[`Storyshots Tabs basic usage 1`] = `
 <div>
   <ul
     className="nav nav-tabs"
@@ -551,7 +551,6 @@ exports[`Storyshots Tabs minimal usage 1`] = `
       className="tab-pane active"
       id="tab-panel-tabInterface11-0"
       role="tabpanel"
-      tabId={0}
     >
       <div>
         Hello I am the first panel
@@ -563,7 +562,6 @@ exports[`Storyshots Tabs minimal usage 1`] = `
       className="tab-pane"
       id="tab-panel-tabInterface11-1"
       role="tabpanel"
-      tabId={1}
     >
       <div>
         Hello I am the second panel
@@ -575,7 +573,6 @@ exports[`Storyshots Tabs minimal usage 1`] = `
       className="tab-pane"
       id="tab-panel-tabInterface11-2"
       role="tabpanel"
-      tabId={2}
     >
       <div>
         Hello I am the third panel

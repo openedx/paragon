@@ -62,7 +62,7 @@ class Tabs extends React.Component {
   }
 
   buildPanels() {
-    return this.props.panels.map((panel, i) => {
+    return this.props.children.map((panel, i) => {
       const selected = this.state.activeTab === i;
       const panelId = this.genPanelId(i);
 
@@ -77,7 +77,6 @@ class Tabs extends React.Component {
           id={panelId}
           key={panelId}
           role="tabpanel"
-          tabId={i}
         >
           {panel}
         </div>
@@ -114,7 +113,7 @@ Tabs.propTypes = {
     PropTypes.arrayOf(PropTypes.string),
     PropTypes.arrayOf(PropTypes.element),
   ]).isRequired,
-  panels: PropTypes.arrayOf(PropTypes.element).isRequired,
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
 };
 
 export default Tabs;
