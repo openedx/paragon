@@ -1,9 +1,9 @@
 import React from 'react';
-import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import { newId } from '../utils/newId';
+import styles from './Tabs.scss';
+import newId from '../utils/newId';
 
 class Tabs extends React.Component {
   constructor(props) {
@@ -33,46 +33,53 @@ class Tabs extends React.Component {
   }
 
   buildLabels() {
-    return this.props.tabLabels.map((label, i) => {
+    return this.props.labels.map((label, i) => {
       const selected = this.state.activeTab === i;
       const labelId = this.genLabelId(i);
 
       return (
-        <NavItem
-          aria-selected={selected}
-          aria-controls={this.genPanelId(i)}
+        <li
+          className={styles['nav-item']}
           id={labelId}
           key={labelId}
-          role="tab"
-          tabIndex={selected ? 0 : -1}
         >
-          <NavLink
-            className={classnames({ active: selected })}
+          <a
+            aria-selected={selected}
+            aria-controls={this.genPanelId(i)}
+            className={classNames(
+              styles['nav-link'],
+              { [styles.active]: selected },
+            )}
             onClick={() => { this.toggle(i); }}
+            role="tab"
+            tabIndex={selected ? 0 : -1}
           >
             {label}
-          </NavLink>
-        </NavItem>
+          </a>
+        </li>
       );
     });
   }
 
   buildPanels() {
-    return this.props.panels.map((panel, i) => {
+    return this.props.children.map((panel, i) => {
       const selected = this.state.activeTab === i;
       const panelId = this.genPanelId(i);
 
       return (
-        <TabPane
+        <div
           aria-hidden={!selected}
           aria-labelledby={this.genLabelId(i)}
+          className={classNames(
+            styles['tab-pane'],
+            { [styles.active]: selected },
+          )}
           id={panelId}
           key={panelId}
           role="tabpanel"
-          tabId={i}
         >
           {panel}
-        </TabPane>
+        </div>
       );
     });
   }
@@ -83,24 +90,30 @@ class Tabs extends React.Component {
 
     return (
       <div>
-        <Nav tabs role="tablist">
+        <ul
+          className={classNames([
+            styles.nav,
+            styles['nav-tabs'],
+          ])}
+          role="tablist"
+        >
           {labels}
-        </Nav>
-        <TabContent activeTab={this.state.activeTab}>
+        </ul>
+        <div className={styles['tab-content']}>
           {panels}
-        </TabContent>
+        </div>
       </div>
     );
   }
 }
 
-// TODO: custom validator that ensures tabLabels and panels are the same length
+// TODO: custom validator that ensures labels and panels are the same length
 Tabs.propTypes = {
-  tabLabels: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.String),
-    PropTypes.arrayOf(PropTypes.Element),
+  labels: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.string),
+    PropTypes.arrayOf(PropTypes.element),
   ]).isRequired,
-  panels: PropTypes.arrayOf(PropTypes.Element).isRequired,
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
 };
 
 export default Tabs;

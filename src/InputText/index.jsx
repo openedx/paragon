@@ -1,12 +1,13 @@
 import React from 'react';
-import { Input } from 'reactstrap';
+import classNames from 'classnames';
 
 import asInput, { inputProps } from '../asInput';
 
 function Text(props) {
   return (
-    <Input
+    <input
       id={props.id}
+      className={classNames(props.className)}
       type="text"
       name={props.name}
       value={props.value}
@@ -17,7 +18,6 @@ function Text(props) {
       aria-invalid={!props.isValid}
       disabled={props.disabled}
       required={props.required}
-      state={props.inputState}
     />
   );
 }

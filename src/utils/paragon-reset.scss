@@ -17,7 +17,7 @@ $font-family-serif: inherit;
 // similar, so we don't have to hardcode the overrides.
 
 // (font size on root element / default (16px))
-$base-rem-size: 0.625;
+$base-rem-size: 1 !default;
 
 $spacer: $spacer / $base-rem-size;
 $font-size-base: $font-size-base / $base-rem-size;
