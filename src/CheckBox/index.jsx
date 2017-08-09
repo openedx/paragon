@@ -1,15 +1,15 @@
 import React from 'react';
 
-import { inputProps } from '../asInput';
+import asInput, { inputProps } from '../asInput';
 import newId from '../utils/newId';
 
-class CheckBox extends React.Component {
+class Check extends React.Component {
   constructor(props) {
     super(props);
 
     this.handleClick = this.handleClick.bind(this);
-    if (this.props.onChange) {
-      this.onChange = this.props.onChange.bind(this);
+    if (this.props.onChangeState) {
+      this.onChangeState = this.props.onChangeState.bind(this);
     }
 
     const id = newId('checkbox');
@@ -36,8 +36,8 @@ class CheckBox extends React.Component {
         checked: true,
       });
     }
-    if (this.onChange) {
-      this.onChange();
+    if (this.onChangeState) {
+      this.onChangeState();
     }
   }
 
@@ -46,24 +46,26 @@ class CheckBox extends React.Component {
     const props = { ...this.props };
 
     return (
-      <label htmlFor={this.state.id}>
-        <input
-          id={this.state.id}
-          name={props.name}
-          type="checkbox"
-          defaultChecked={this.state.checked}
-          aria-describedby={props.describedBy}
-          aria-checked={this.state.checked}
-          tabIndex="0"
-          onClick={this.handleClick}
-          disabled={props.disabled}
-        />
-        {props.label}
-      </label>
+      <input
+        id={props.id}
+        type="checkbox"
+        name={props.name}
+        defaultChecked={this.state.checked}
+        aria-checked={this.state.checked}
+        onClick={this.handleClick}
+        disabled={props.disabled}
+      />
     );
   }
 }
 
-CheckBox.propTypes = inputProps;
+Check.propTypes = inputProps;
+
+const CheckBox = asInput(Check, false);
+
+CheckBox.propTupes = {
+  ...Check.propTypes,
+  ...CheckBox.propTypes,
+};
 
 export default CheckBox;

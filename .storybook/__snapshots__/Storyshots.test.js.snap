@@ -1,79 +1,87 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots CheckBox basic usage 1`] = `
-<label
-  htmlFor="checkbox1"
+<div
+  className="form-group"
 >
   <input
     aria-checked={false}
-    aria-describedby="checkbox"
     defaultChecked={false}
-    disabled={undefined}
-    id="checkbox1"
+    disabled={false}
+    id="asInput1"
     name="checkbox"
     onClick={[Function]}
-    tabIndex="0"
     type="checkbox"
   />
-  check me out!
-</label>
+  <label
+    htmlFor="asInput1"
+  >
+    check me out!
+  </label>
+</div>
 `;
 
 exports[`Storyshots CheckBox call a function 1`] = `
-<label
-  htmlFor="checkbox4"
+<div
+  className="form-group"
 >
   <input
     aria-checked={false}
-    aria-describedby="checkbox"
     defaultChecked={false}
-    disabled={undefined}
-    id="checkbox4"
+    disabled={false}
+    id="asInput7"
     name="checkbox"
     onClick={[Function]}
-    tabIndex="0"
     type="checkbox"
   />
-  check out the console
-</label>
+  <label
+    htmlFor="asInput7"
+  >
+    check out the console
+  </label>
+</div>
 `;
 
 exports[`Storyshots CheckBox default checked 1`] = `
-<label
-  htmlFor="checkbox3"
+<div
+  className="form-group"
 >
   <input
     aria-checked={true}
-    aria-describedby="checkbox"
     defaultChecked={true}
-    disabled={undefined}
-    id="checkbox3"
+    disabled={false}
+    id="asInput5"
     name="checkbox"
     onClick={[Function]}
-    tabIndex="0"
     type="checkbox"
   />
-  (un)check me out
-</label>
+  <label
+    htmlFor="asInput5"
+  >
+    (un)check me out
+  </label>
+</div>
 `;
 
 exports[`Storyshots CheckBox disabled 1`] = `
-<label
-  htmlFor="checkbox2"
+<div
+  className="form-group"
 >
   <input
     aria-checked={false}
-    aria-describedby="checkbox"
     defaultChecked={false}
     disabled={true}
-    id="checkbox2"
+    id="asInput3"
     name="checkbox"
     onClick={[Function]}
-    tabIndex="0"
     type="checkbox"
   />
-  you cannot check me out
-</label>
+  <label
+    htmlFor="asInput3"
+  >
+    you cannot check me out
+  </label>
+</div>
 `;
 
 exports[`Storyshots Dropdown basic usage 1`] = `
@@ -142,14 +150,14 @@ exports[`Storyshots InputSelect basic usage 1`] = `
   className="form-group"
 >
   <label
-    htmlFor="asInput5"
+    htmlFor="asInput9"
   >
     Fruits
   </label>
   <select
     aria-describedby={undefined}
     className="form-control"
-    id="asInput5"
+    id="asInput9"
     name="fruits"
     onBlur={[Function]}
     onChange={[Function]}
@@ -185,14 +193,14 @@ exports[`Storyshots InputSelect separate labels and values 1`] = `
   className="form-group"
 >
   <label
-    htmlFor="asInput6"
+    htmlFor="asInput10"
   >
     New England States
   </label>
   <select
     aria-describedby={undefined}
     className="form-control"
-    id="asInput6"
+    id="asInput10"
     name="new-england-states"
     onBlur={[Function]}
     onChange={[Function]}
@@ -238,14 +246,14 @@ exports[`Storyshots InputSelect separate option groups 1`] = `
   className="form-group"
 >
   <label
-    htmlFor="asInput7"
+    htmlFor="asInput11"
   >
     Northeast States
   </label>
   <select
     aria-describedby={undefined}
     className="form-control"
-    id="asInput7"
+    id="asInput11"
     name="northeast-states"
     onBlur={[Function]}
     onChange={[Function]}
@@ -339,14 +347,14 @@ exports[`Storyshots InputSelect with validation 1`] = `
   className="form-group"
 >
   <label
-    htmlFor="asInput8"
+    htmlFor="asInput12"
   >
     Favorite Color
   </label>
   <select
     aria-describedby={undefined}
     className="form-control"
-    id="asInput8"
+    id="asInput12"
     name="color"
     onBlur={[Function]}
     onChange={[Function]}
@@ -397,7 +405,7 @@ exports[`Storyshots InputText minimal usage 1`] = `
   className="form-group"
 >
   <label
-    htmlFor="asInput9"
+    htmlFor="asInput13"
   >
     First Name
   </label>
@@ -406,7 +414,7 @@ exports[`Storyshots InputText minimal usage 1`] = `
     aria-invalid={false}
     className="form-control"
     disabled={false}
-    id="asInput9"
+    id="asInput13"
     name="name"
     onBlur={[Function]}
     onChange={[Function]}
@@ -423,16 +431,16 @@ exports[`Storyshots InputText validation 1`] = `
   className="form-group"
 >
   <label
-    htmlFor="asInput10"
+    htmlFor="asInput14"
   >
     Username
   </label>
   <input
-    aria-describedby="undefined description-asInput10"
+    aria-describedby="undefined description-asInput14"
     aria-invalid={false}
     className="form-control"
     disabled={false}
-    id="asInput10"
+    id="asInput14"
     name="username"
     onBlur={[Function]}
     onChange={[Function]}
@@ -443,7 +451,7 @@ exports[`Storyshots InputText validation 1`] = `
   />
   <small
     className="form-text"
-    id="description-asInput10"
+    id="description-asInput14"
   >
     The unique name that identifies you throughout the site.
   </small>
@@ -498,10 +506,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
   >
     <li
       className="nav-item"
-      id="tab-label-tabInterface11-0"
+      id="tab-label-tabInterface15-0"
     >
       <a
-        aria-controls="tab-panel-tabInterface11-0"
+        aria-controls="tab-panel-tabInterface15-0"
         aria-selected={true}
         className="nav-link active"
         onClick={[Function]}
@@ -513,10 +521,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </li>
     <li
       className="nav-item"
-      id="tab-label-tabInterface11-1"
+      id="tab-label-tabInterface15-1"
     >
       <a
-        aria-controls="tab-panel-tabInterface11-1"
+        aria-controls="tab-panel-tabInterface15-1"
         aria-selected={false}
         className="nav-link"
         onClick={[Function]}
@@ -528,10 +536,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </li>
     <li
       className="nav-item"
-      id="tab-label-tabInterface11-2"
+      id="tab-label-tabInterface15-2"
     >
       <a
-        aria-controls="tab-panel-tabInterface11-2"
+        aria-controls="tab-panel-tabInterface15-2"
         aria-selected={false}
         className="nav-link"
         onClick={[Function]}
@@ -547,9 +555,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
   >
     <div
       aria-hidden={false}
-      aria-labelledby="tab-label-tabInterface11-0"
+      aria-labelledby="tab-label-tabInterface15-0"
       className="tab-pane active"
-      id="tab-panel-tabInterface11-0"
+      id="tab-panel-tabInterface15-0"
       role="tabpanel"
     >
       <div>
@@ -558,9 +566,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </div>
     <div
       aria-hidden={true}
-      aria-labelledby="tab-label-tabInterface11-1"
+      aria-labelledby="tab-label-tabInterface15-1"
       className="tab-pane"
-      id="tab-panel-tabInterface11-1"
+      id="tab-panel-tabInterface15-1"
       role="tabpanel"
     >
       <div>
@@ -569,9 +577,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </div>
     <div
       aria-hidden={true}
-      aria-labelledby="tab-label-tabInterface11-2"
+      aria-labelledby="tab-label-tabInterface15-2"
       className="tab-pane"
-      id="tab-panel-tabInterface11-2"
+      id="tab-panel-tabInterface15-2"
       role="tabpanel"
     >
       <div>
