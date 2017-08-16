@@ -13,29 +13,16 @@ class Check extends React.Component {
     }
 
     const id = newId('checkbox');
-    if (props.checked === 'true') {
-      this.state = {
-        id,
-        checked: true,
-      };
-    } else {
-      this.state = {
-        id,
-        checked: false,
-      };
-    }
+    this.state = {
+      id,
+      checked: props.checked || false,
+    };
   }
 
   handleClick() {
-    if (this.state.checked === true) {
-      this.setState({
-        checked: false,
-      });
-    } else {
-      this.setState({
-        checked: true,
-      });
-    }
+    this.setState({
+      checked: !this.state.checked,
+    });
     if (this.onChangeState) {
       this.onChangeState();
     }
@@ -63,9 +50,8 @@ Check.propTypes = inputProps;
 
 const CheckBox = asInput(Check, false);
 
-CheckBox.propTupes = {
+CheckBox.propTypes = {
   ...Check.propTypes,
-  ...CheckBox.propTypes,
 };
 
 export default CheckBox;

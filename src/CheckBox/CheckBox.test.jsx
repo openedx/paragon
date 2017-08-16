@@ -9,7 +9,6 @@ describe('<CheckBox />', () => {
       <CheckBox
         name="checkbox"
         label="check me out!"
-        checked="false"
       />,
   );
 
@@ -24,7 +23,6 @@ describe('<CheckBox />', () => {
       <CheckBox
         name="checkbox"
         label="check me out!"
-        checked="false"
       />,
       );
 
@@ -45,7 +43,6 @@ describe('<CheckBox />', () => {
       <CheckBox
         name="checkbox"
         label="check me out!"
-        checked="false"
         onChangeState={spy}
       />,
     );
@@ -60,7 +57,7 @@ describe('<CheckBox />', () => {
       <CheckBox
         name="checkbox"
         label="I start checked"
-        checked="true"
+        checked
       />,
     );
 
@@ -77,7 +74,6 @@ describe('<CheckBox />', () => {
       <CheckBox
         name="checkbox"
         label="I am disabled"
-        checked="false"
         disabled
       />,
     );

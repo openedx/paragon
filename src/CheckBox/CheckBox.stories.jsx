@@ -12,14 +12,12 @@ storiesOf('CheckBox', module)
     <CheckBox
       name="checkbox"
       label="check me out!"
-      checked="false"
     />
   ))
   .add('disabled', () => (
     <CheckBox
       name="checkbox"
       label="you cannot check me out"
-      checked="false"
       disabled={boolean('disabled', true)}
     />
   ))
@@ -27,14 +25,13 @@ storiesOf('CheckBox', module)
     <CheckBox
       name="checkbox"
       label="(un)check me out"
-      checked="true"
+      checked
     />
   ))
   .add('call a function', () => (
     <CheckBox
       name="checkbox"
       label="check out the console"
-      checked="false"
       onChangeState={() => console.log('the checkbox changed state')}
     />
   ));
