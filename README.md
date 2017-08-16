@@ -6,7 +6,7 @@ Paragon provides accessible React components for use within the Open edX platfor
 
 <img src="http://i.imgur.com/uxTl3L3.gif" width="200" alt="sparkly 8-bit diamond" />
 
-Components' markup, keyboard triggers, and behavior are based on the [WAI-ARIA 1.1 Authoring Practices](https://www.w3.org/TR/wai-aria-practices-1.1/). Components are styled with [Bootstrap 4](https://v4-alpha.getbootstrap.com/) via CSS Modules. Documentation/demo site is available at http://paragon.cool.
+Components' markup, keyboard triggers, and behavior are based on the [WAI-ARIA 1.1 Authoring Practices](https://www.w3.org/TR/wai-aria-practices-1.1/). Components are styled with [Bootstrap 4](https://v4-alpha.getbootstrap.com/) via CSS Modules. Documentation/demo site is available at http://edx.github.io/paragon.
 
 ## Development
 
