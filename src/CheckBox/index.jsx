@@ -1,16 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import asInput, { inputProps } from '../asInput';
+import asInput from '../asInput';
 import newId from '../utils/newId';
 
 class Check extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleClick = this.handleClick.bind(this);
-    if (this.props.onChangeState) {
-      this.onChangeState = this.props.onChangeState.bind(this);
-    }
+    this.onChange = this.onChange.bind(this);
 
     const id = newId('checkbox');
     this.state = {
@@ -19,13 +17,11 @@ class Check extends React.Component {
     };
   }
 
-  handleClick() {
+  onChange(event) {
     this.setState({
       checked: !this.state.checked,
     });
-    if (this.onChangeState) {
-      this.onChangeState();
-    }
+    this.props.onChange(event);
   }
 
 
@@ -39,18 +35,27 @@ class Check extends React.Component {
         name={props.name}
         defaultChecked={this.state.checked}
         aria-checked={this.state.checked}
-        onClick={this.handleClick}
+        onChange={this.onChange}
         disabled={props.disabled}
       />
     );
   }
 }
 
-Check.propTypes = inputProps;
+Check.propTypes = {
+  checked: PropTypes.bool,
+  onChange: PropTypes.func,
+};
+
+Check.defaultProps = {
+  checked: false,
+  onChange: () => {},
+};
 
 const CheckBox = asInput(Check, false);
 
 CheckBox.propTypes = {
+  ...CheckBox.propTypes,
   ...Check.propTypes,
 };
 

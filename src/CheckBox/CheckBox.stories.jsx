@@ -32,6 +32,6 @@ storiesOf('CheckBox', module)
     <CheckBox
       name="checkbox"
       label="check out the console"
-      onChangeState={() => console.log('the checkbox changed state')}
+      onChange={() => console.log('the checkbox changed state')}
     />
   ));

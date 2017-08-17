@@ -10,7 +10,7 @@ exports[`Storyshots CheckBox basic usage 1`] = `
     disabled={false}
     id="asInput1"
     name="checkbox"
-    onClick={[Function]}
+    onChange={[Function]}
     type="checkbox"
   />
   <label
@@ -31,7 +31,7 @@ exports[`Storyshots CheckBox call a function 1`] = `
     disabled={false}
     id="asInput7"
     name="checkbox"
-    onClick={[Function]}
+    onChange={[Function]}
     type="checkbox"
   />
   <label
@@ -52,7 +52,7 @@ exports[`Storyshots CheckBox default checked 1`] = `
     disabled={false}
     id="asInput5"
     name="checkbox"
-    onClick={[Function]}
+    onChange={[Function]}
     type="checkbox"
   />
   <label
@@ -73,7 +73,7 @@ exports[`Storyshots CheckBox disabled 1`] = `
     disabled={true}
     id="asInput3"
     name="checkbox"
-    onClick={[Function]}
+    onChange={[Function]}
     type="checkbox"
   />
   <label

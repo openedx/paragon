@@ -28,11 +28,11 @@ describe('<CheckBox />', () => {
 
     expect(wrapper.find('[aria-checked=false]').exists()).toEqual(true);
 
-    wrapper.find('[type="checkbox"]').simulate('click');
+    wrapper.find('[type="checkbox"]').simulate('change');
     expect(wrapper.find('[aria-checked=false]').exists()).toEqual(false);
     expect(wrapper.find('[aria-checked=true]').exists()).toEqual(true);
 
-    wrapper.find('[type="checkbox"]').simulate('click');
+    wrapper.find('[type="checkbox"]').simulate('change');
     expect(wrapper.find('[aria-checked=false]').exists()).toEqual(true);
     expect(wrapper.find('[aria-checked=true]').exists()).toEqual(false);
   });
@@ -43,12 +43,12 @@ describe('<CheckBox />', () => {
       <CheckBox
         name="checkbox"
         label="check me out!"
-        onChangeState={spy}
+        onChange={spy}
       />,
     );
 
     expect(spy).toHaveBeenCalledTimes(0);
-    wrapper.find('input').simulate('click');
+    wrapper.find('input').simulate('change');
     expect(spy).toHaveBeenCalledTimes(1);
   });
 
@@ -64,7 +64,7 @@ describe('<CheckBox />', () => {
     expect(wrapper.find('[defaultChecked=true]').exists()).toEqual(true);
     expect(wrapper.find('[aria-checked=true]').exists()).toEqual(true);
 
-    wrapper.find('input').simulate('click');
+    wrapper.find('input').simulate('change');
     expect(wrapper.find('[defaultChecked=false]').exists()).toEqual(true);
     expect(wrapper.find('[aria-checked=false]').exists()).toEqual(true);
   });
@@ -78,11 +78,9 @@ describe('<CheckBox />', () => {
       />,
     );
 
-    expect(wrapper.find('[defaultChecked=false]').exists()).toEqual(true);
-    expect(wrapper.find('[aria-checked=false]').exists()).toEqual(true);
+    expect(wrapper.props().disabled).toEqual(true);
 
-    wrapper.find('input').simulate('click');
-    expect(wrapper.find('[defaultChecked=false]').exists()).toEqual(true);
-    expect(wrapper.find('[aria-checked=false]').exists()).toEqual(true);
+    wrapper.find('input').simulate('change');
+    expect(wrapper.props().disabled).toEqual(true);
   });
 });
