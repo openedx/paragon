@@ -54,9 +54,4 @@ Check.defaultProps = {
 
 const CheckBox = asInput(Check, false);
 
-CheckBox.propTypes = {
-  ...CheckBox.propTypes,
-  ...Check.propTypes,
-};
-
 export default CheckBox;
