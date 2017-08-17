@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import asInput from '../asInput';
-import newId from '../utils/newId';
 
 class Check extends React.Component {
   constructor(props) {
@@ -10,9 +9,7 @@ class Check extends React.Component {
 
     this.onChange = this.onChange.bind(this);
 
-    const id = newId('checkbox');
     this.state = {
-      id,
       checked: props.checked || false,
     };
   }
