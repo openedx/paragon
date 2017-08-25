@@ -3,13 +3,9 @@ language: node_js
 node_js:
   - 6
 
-before_script:
-  - greenkeeper-lockfile-update
-
 script:
   - npm run lint
   - npm run test
 
 after_script:
-  - greenkeeper-lockfile-upload
   - npm run coveralls
