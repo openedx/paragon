@@ -52,7 +52,7 @@ const base = {
             options: {
               data: '@import "paragon-reset";',
               includePaths: [
-                path.join(__dirname, './src/utils'),
+                path.join(__dirname, './packages/utils'),
                 path.join(__dirname, './node_modules'),
               ],
             },

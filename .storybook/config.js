@@ -2,7 +2,7 @@ import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 
-import CssJail from '../src/CssJail';
+import CssJail from '../packages/CssJail';
 
 setTimeout(() => setOptions({
   name: '💎 PARAGON',
@@ -10,7 +10,7 @@ setTimeout(() => setOptions({
   showDownPanel: true,
 }), 1000);
 
-const req = require.context('../src', true, /\.stories\.jsx$/);
+const req = require.context('../packages', true, /\.stories\.jsx$/);
 
 addDecorator(story => (
   <CssJail>
