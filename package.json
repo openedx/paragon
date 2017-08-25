@@ -1,6 +1,6 @@
 {
   "name": "paragon",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Accessible, responsive UI component library based on Bootstrap.",
   "author": "arizzitano",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "deploy-storybook": "storybook-to-ghpages",
     "lint": "eslint --ext .js --ext .jsx .",
-    "precommit": "yarn run lint",
+    "precommit": "npm run lint",
     "snapshot": "jest --updateSnapshot",
     "start": "start-storybook -p 6006",
     "test": "jest --coverage"
