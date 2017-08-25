@@ -9,7 +9,11 @@
     "react/no-array-index-key": "off"
   },
   "settings": {
-    "import/resolver": "webpack"
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"]
+      }
+    }
   },
   "env": {
     "jest": true
