@@ -1,6 +1,7 @@
 {
   "name": "@arizzitano/button",
-  "version": "0.0.1",
+  "entry": "dist/index.js",
+  "version": "0.0.0",
   "description": "Accessible button component from edX's Paragon library",
   "license": "MIT",
   "dependencies": {

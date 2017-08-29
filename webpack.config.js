@@ -6,11 +6,13 @@ const env = process.env.NODE_ENV || 'dev';
 const base = {
   devtool: 'source-map',
   entry: {
-    main: path.resolve('./docs/App.js'),
+    Button: path.resolve('./packages/Button/index.jsx'),
+    Dropdown: path.resolve('./packages/Dropdown/index.jsx'),
   },
   output: {
-    filename: 'bundle.js',
-    path: path.resolve('./docs'),
+    path: path.resolve(__dirname, './packages'),
+    filename: '[name]/dist/index.js',
+    library: 'paragon',
     libraryTarget: 'umd',
   },
   resolve: {
