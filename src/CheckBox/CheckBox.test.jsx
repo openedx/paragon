@@ -10,7 +10,7 @@ describe('<CheckBox />', () => {
         name="checkbox"
         label="check me out!"
       />,
-  );
+    );
 
     expect(wrapper.find('[name="checkbox"]').exists()).toEqual(true);
     expect(wrapper.find('[type="checkbox"]').exists()).toEqual(true);
@@ -24,7 +24,7 @@ describe('<CheckBox />', () => {
         name="checkbox"
         label="check me out!"
       />,
-      );
+    );
 
     expect(wrapper.find('[aria-checked=false]').exists()).toEqual(true);
 
