@@ -48,8 +48,14 @@ describe('<CheckBox />', () => {
     );
 
     expect(spy).toHaveBeenCalledTimes(0);
-    wrapper.find('input').simulate('change');
+    // check
+    wrapper.find('input').simulate('change', { target: { checked: true, type: 'checkbox' } });
     expect(spy).toHaveBeenCalledTimes(1);
+    expect(spy).toHaveBeenLastCalledWith(true, 'checkbox');
+    // uncheck
+    wrapper.find('input').simulate('change', { target: { checked: false, type: 'checkbox' } });
+    expect(spy).toHaveBeenCalledTimes(2);
+    expect(spy).toHaveBeenLastCalledWith(false, 'checkbox');
   });
 
   it('checks if start state can be set to checked', () => {
