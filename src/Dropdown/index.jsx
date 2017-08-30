@@ -120,7 +120,7 @@ class Dropdown extends React.Component {
       <div
         className={classNames([
           styles.dropdown,
-        { [styles.show]: this.state.open },
+          { [styles.show]: this.state.open },
         ])}
         ref={(container) => { this.container = container; }}
       >

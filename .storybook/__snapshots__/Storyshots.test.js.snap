@@ -1,79 +1,87 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots CheckBox basic usage 1`] = `
-<label
-  htmlFor="checkbox1"
+<div
+  className="form-group"
 >
   <input
     aria-checked={false}
-    aria-describedby="checkbox"
     defaultChecked={false}
-    disabled={undefined}
-    id="checkbox1"
+    disabled={false}
+    id="asInput1"
     name="checkbox"
-    onClick={[Function]}
-    tabIndex="0"
+    onChange={[Function]}
     type="checkbox"
   />
-  check me out!
-</label>
+  <label
+    htmlFor="asInput1"
+  >
+    check me out!
+  </label>
+</div>
 `;
 
 exports[`Storyshots CheckBox call a function 1`] = `
-<label
-  htmlFor="checkbox4"
+<div
+  className="form-group"
 >
   <input
     aria-checked={false}
-    aria-describedby="checkbox"
     defaultChecked={false}
-    disabled={undefined}
-    id="checkbox4"
+    disabled={false}
+    id="asInput4"
     name="checkbox"
-    onClick={[Function]}
-    tabIndex="0"
+    onChange={[Function]}
     type="checkbox"
   />
-  check out the console
-</label>
+  <label
+    htmlFor="asInput4"
+  >
+    check out the console
+  </label>
+</div>
 `;
 
 exports[`Storyshots CheckBox default checked 1`] = `
-<label
-  htmlFor="checkbox3"
+<div
+  className="form-group"
 >
   <input
     aria-checked={true}
-    aria-describedby="checkbox"
     defaultChecked={true}
-    disabled={undefined}
-    id="checkbox3"
+    disabled={false}
+    id="asInput3"
     name="checkbox"
-    onClick={[Function]}
-    tabIndex="0"
+    onChange={[Function]}
     type="checkbox"
   />
-  (un)check me out
-</label>
+  <label
+    htmlFor="asInput3"
+  >
+    (un)check me out
+  </label>
+</div>
 `;
 
 exports[`Storyshots CheckBox disabled 1`] = `
-<label
-  htmlFor="checkbox2"
+<div
+  className="form-group"
 >
   <input
     aria-checked={false}
-    aria-describedby="checkbox"
     defaultChecked={false}
     disabled={true}
-    id="checkbox2"
+    id="asInput2"
     name="checkbox"
-    onClick={[Function]}
-    tabIndex="0"
+    onChange={[Function]}
     type="checkbox"
   />
-  you cannot check me out
-</label>
+  <label
+    htmlFor="asInput2"
+  >
+    you cannot check me out
+  </label>
+</div>
 `;
 
 exports[`Storyshots Dropdown basic usage 1`] = `

@@ -24,7 +24,7 @@ export const inputProps = {
   className: PropTypes.arrayOf(PropTypes.string),
 };
 
-const asInput = (WrappedComponent) => {
+const asInput = (WrappedComponent, labelFirst = true) => {
   class NewComponent extends React.Component {
     constructor(props) {
       super(props);
@@ -85,10 +85,9 @@ const asInput = (WrappedComponent) => {
 
     render() {
       const { description, error, describedBy } = this.getDescriptions();
-
       return (
         <div className={styles['form-group']}>
-          <label htmlFor={this.state.id}>{this.props.label}</label>
+          {labelFirst && <label htmlFor={this.state.id}>{this.props.label}</label>}
           <WrappedComponent
             {...this.props}
             {...this.state}
@@ -100,6 +99,7 @@ const asInput = (WrappedComponent) => {
             onChange={this.handleChange}
             onBlur={this.handleBlur}
           />
+          {!labelFirst && <label htmlFor={this.state.id}>{this.props.label}</label>}
           {error}
           {description}
         </div>

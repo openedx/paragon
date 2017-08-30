@@ -7,7 +7,7 @@ import CssJail from '../src/CssJail';
 setOptions({
   name: '💎 PARAGON',
   url: 'https://github.com/edx/paragon',
-  showDownPanel: false,
+  showDownPanel: true,
 });
 
 const req = require.context('../src', true, /\.stories\.jsx$/);

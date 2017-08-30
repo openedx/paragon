@@ -1,44 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import { inputProps } from '../asInput';
-import newId from '../utils/newId';
+import asInput from '../asInput';
 
-class CheckBox extends React.Component {
+class Check extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleClick = this.handleClick.bind(this);
-    if (this.props.onChange) {
-      this.onChange = this.props.onChange.bind(this);
-    }
+    this.onChange = this.onChange.bind(this);
 
-    const id = newId('checkbox');
-    if (props.checked === 'true') {
-      this.state = {
-        id,
-        checked: true,
-      };
-    } else {
-      this.state = {
-        id,
-        checked: false,
-      };
-    }
+    this.state = {
+      checked: props.checked || false,
+    };
   }
 
-  handleClick() {
-    if (this.state.checked === true) {
-      this.setState({
-        checked: false,
-      });
-    } else {
-      this.setState({
-        checked: true,
-      });
-    }
-    if (this.onChange) {
-      this.onChange();
-    }
+  onChange(event) {
+    this.setState({
+      checked: !this.state.checked,
+    });
+    this.props.onChange(event);
   }
 
 
@@ -46,24 +26,29 @@ class CheckBox extends React.Component {
     const props = { ...this.props };
 
     return (
-      <label htmlFor={this.state.id}>
-        <input
-          id={this.state.id}
-          name={props.name}
-          type="checkbox"
-          defaultChecked={this.state.checked}
-          aria-describedby={props.describedBy}
-          aria-checked={this.state.checked}
-          tabIndex="0"
-          onClick={this.handleClick}
-          disabled={props.disabled}
-        />
-        {props.label}
-      </label>
+      <input
+        id={props.id}
+        type="checkbox"
+        name={props.name}
+        defaultChecked={this.state.checked}
+        aria-checked={this.state.checked}
+        onChange={this.onChange}
+        disabled={props.disabled}
+      />
     );
   }
 }
 
-CheckBox.propTypes = inputProps;
+Check.propTypes = {
+  checked: PropTypes.bool,
+  onChange: PropTypes.func,
+};
+
+Check.defaultProps = {
+  checked: false,
+  onChange: () => {},
+};
+
+const CheckBox = asInput(Check, false);
 
 export default CheckBox;
