@@ -80,8 +80,10 @@ const asInput = (WrappedComponent, labelFirst = true) => {
 
     handleChange(event) {
       this.setState({ value: event.target.value });
-      this.props.onChange(event.target.type === 'checkbox' ? event.target.checked : event.target.value,
-                          this.props.name);
+      this.props.onChange(
+        event.target.type === 'checkbox' ? event.target.checked : event.target.value,
+        this.props.name,
+      );
     }
 
     render() {
