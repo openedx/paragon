@@ -10,6 +10,7 @@ The following parameters can optionally be passed into a checkbox component:
 * `checked` (`Boolean`): `true` if the default state should be checked, `false` otherwise
 * `disabled` (`Boolean`): `true` if the checkbox should be disabled, `false` otherwise
 * `onChange`: function to be called when the checkbox changes state
+  * Function will be called with the arguments: `checked` (`Boolean`), `name` (`String`)
 
 The implementation of the checkbox contains the following functions:
 * `constructor()`: The constructor sets the `id` for the checkbox and sets whether the initial state should be checked or unchecked
