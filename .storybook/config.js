@@ -4,11 +4,11 @@ import { setOptions } from '@storybook/addon-options';
 
 import CssJail from '../src/CssJail';
 
-setOptions({
+setTimeout(() => setOptions({
   name: '💎 PARAGON',
   url: 'https://github.com/edx/paragon',
-  showDownPanel: true,
-});
+  showDownPanel: false,
+}), 1000);
 
 const req = require.context('../src', true, /\.stories\.jsx$/);
 
