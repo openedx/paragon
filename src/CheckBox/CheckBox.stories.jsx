@@ -16,7 +16,7 @@ storiesOf('CheckBox', module)
     <CheckBox
       name="checkbox"
       label="you cannot check me out"
-      disabled={true}
+      disabled
     />
   ))
   .add('default checked', () => (
