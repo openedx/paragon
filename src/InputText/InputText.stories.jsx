@@ -1,16 +1,14 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text } from '@storybook/addon-knobs';
 
 import InputText from './index';
 
 storiesOf('InputText', module)
-  .addDecorator(withKnobs)
   .add('minimal usage', () => (
     <InputText
       name="name"
-      label={text('label', 'First Name')}
+      label="First Name"
       value="Foo Bar"
     />
   ))
@@ -18,7 +16,7 @@ storiesOf('InputText', module)
     <InputText
       name="username"
       label="Username"
-      description={text('description', 'The unique name that identifies you throughout the site.')}
+      description="The unique name that identifies you throughout the site."
       validator={(value) => {
         let feedback = { isValid: true };
         if (value.length < 3) {
