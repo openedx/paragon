@@ -46,7 +46,7 @@ const base = {
             loader: 'css-loader',
             options: {
               modules: true,
-              localIdentName: '[name]__[local]___[hash:base64:5]',
+              localIdentName: 'paragon__[name]__[local]___[hash:base64:5]',
             },
           },
           {
