@@ -1,11 +1,11 @@
 {
   "name": "@arizzitano/dropdown",
   "entry": "dist/index.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Accessible dropdown component from edX's Paragon library",
   "license": "MIT",
   "dependencies": {
-    "@arizzitano/button": "^0.0.1",
+    "@arizzitano/button": "^0.0.2",
     "bootstrap": "4.0.0-alpha.6",
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
