@@ -53,6 +53,7 @@ const base = {
               data: '@import "paragon-reset";',
               includePaths: [
                 path.join(__dirname, './src/utils'),
+                path.join(__dirname, './node_modules'),
               ],
             },
           },
