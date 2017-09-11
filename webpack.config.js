@@ -1,9 +1,7 @@
 const path = require('path');
 const BabiliPlugin = require('babili-webpack-plugin');
 
-const env = process.env.NODE_ENV || 'dev';
-
-const base = {
+module.exports = {
   devtool: 'source-map',
   entry: {
     Button: path.resolve('./packages/Button/index.jsx'),
@@ -63,53 +61,36 @@ const base = {
       },
     ],
   },
-};
-
-const additionalConfig = {
-  // production builds the library for external consumption
-  production: {
-    entry: {
-      Dropdown: path.resolve('./src/Dropdown.jsx'),
+  externals: [{
+    react: {
+      root: 'React',
+      commonjs2: 'react',
+      commonjs: 'react',
+      amd: 'react',
     },
-    output: {
-      path: path.resolve('./dist'),
-      filename: '[name].js',
-      library: 'paragon',
-      libraryTarget: 'umd',
-    },
-    externals: [{
-      react: {
-        root: 'React',
-        commonjs2: 'react',
-        commonjs: 'react',
-        amd: 'react',
-      },
-    },
-    {
-      'react-dom': {
-        root: 'ReactDOM',
-        commonjs2: 'react-dom',
-        commonjs: 'react-dom',
-        amd: 'react-dom',
-      },
-    },
-    {
-      'react-addons-transition-group': {
-        commonjs: 'react-addons-transition-group',
-        commonjs2: 'react-addons-transition-group',
-        amd: 'react-addons-transition-group',
-        root: ['React', 'addons', 'TransitionGroup'],
-      },
-    },
-    {
-      'react-addons-css-transition-group': {
-        commonjs: 'react-addons-css-transition-group',
-        commonjs2: 'react-addons-css-transition-group',
-        amd: 'react-addons-css-transition-group',
-        root: ['React', 'addons', 'CSSTransitionGroup'],
-      },
-    }],
   },
+  {
+    'react-dom': {
+      root: 'ReactDOM',
+      commonjs2: 'react-dom',
+      commonjs: 'react-dom',
+      amd: 'react-dom',
+    },
+  },
+  {
+    'react-addons-transition-group': {
+      commonjs: 'react-addons-transition-group',
+      commonjs2: 'react-addons-transition-group',
+      amd: 'react-addons-transition-group',
+      root: ['React', 'addons', 'TransitionGroup'],
+    },
+  },
+  {
+    'react-addons-css-transition-group': {
+      commonjs: 'react-addons-css-transition-group',
+      commonjs2: 'react-addons-css-transition-group',
+      amd: 'react-addons-css-transition-group',
+      root: ['React', 'addons', 'CSSTransitionGroup'],
+    },
+  }],
 };
-
-module.exports = Object.assign(base, additionalConfig[env]);
