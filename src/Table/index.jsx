@@ -49,7 +49,6 @@ class Table extends React.Component {
     return (
       <table className={classNames(
         styles.table,
-        styles['table-responsive'],
         ...this.props.className.map(className => styles[className]),
       )}
       >

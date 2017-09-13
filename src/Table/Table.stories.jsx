@@ -69,4 +69,12 @@ storiesOf('Table', module)
       caption="Famous Internet Cats"
       headingClassName={['thead-default']}
     />
+  ))
+  .add('responsive', () => (
+    <Table
+      data={catData}
+      columns={catColumns}
+      caption="Famous Internet Cats"
+      className={['table-responsive']}
+    />
   ));

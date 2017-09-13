@@ -500,7 +500,7 @@ exports[`Storyshots Paragon Welcome 1`] = `
 
 exports[`Storyshots Table default heading 1`] = `
 <table
-  className="table table-responsive"
+  className="table"
 >
   <caption>
     Famous Internet Cats
@@ -586,9 +586,97 @@ exports[`Storyshots Table default heading 1`] = `
 </table>
 `;
 
+exports[`Storyshots Table responsive 1`] = `
+<table
+  className="table table-responsive"
+>
+  <caption>
+    Famous Internet Cats
+  </caption>
+  <thead
+    className=""
+  >
+    <tr>
+      <th
+        scope="col"
+      >
+        Name
+      </th>
+      <th
+        scope="col"
+      >
+        Famous For
+      </th>
+      <th
+        scope="col"
+      >
+        Coat Color
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Lil Bub
+      </td>
+      <td>
+        weird tongue
+      </td>
+      <td>
+        brown tabby
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Grumpy Cat
+      </td>
+      <td>
+        serving moods
+      </td>
+      <td>
+        siamese
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Smoothie
+      </td>
+      <td>
+        modeling
+      </td>
+      <td>
+        orange tabby
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Maru
+      </td>
+      <td>
+        being a lovable oaf
+      </td>
+      <td>
+        brown tabby
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Keyboard Cat
+      </td>
+      <td>
+        piano virtuoso
+      </td>
+      <td>
+        orange tabby
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
 exports[`Storyshots Table table-striped 1`] = `
 <table
-  className="table table-responsive table-striped"
+  className="table table-striped"
 >
   <caption>
     Famous Internet Cats
@@ -676,7 +764,7 @@ exports[`Storyshots Table table-striped 1`] = `
 
 exports[`Storyshots Table unstyled 1`] = `
 <table
-  className="table table-responsive"
+  className="table"
 >
   <caption>
     Famous Internet Cats
