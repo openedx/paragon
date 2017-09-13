@@ -500,7 +500,7 @@ exports[`Storyshots Paragon Welcome 1`] = `
 
 exports[`Storyshots Table default heading 1`] = `
 <table
-  className="table"
+  className="table table-responsive"
 >
   <caption>
     Famous Internet Cats
@@ -588,7 +588,7 @@ exports[`Storyshots Table default heading 1`] = `
 
 exports[`Storyshots Table table-striped 1`] = `
 <table
-  className="table table-striped"
+  className="table table-responsive table-striped"
 >
   <caption>
     Famous Internet Cats
@@ -676,7 +676,7 @@ exports[`Storyshots Table table-striped 1`] = `
 
 exports[`Storyshots Table unstyled 1`] = `
 <table
-  className="table"
+  className="table table-responsive"
 >
   <caption>
     Famous Internet Cats
