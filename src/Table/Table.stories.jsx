@@ -31,7 +31,7 @@ const catData = [
   },
 ];
 
-const catHeadings = [
+const catColumns = [
   {
     label: 'Name',
     key: 'name',
@@ -50,14 +50,14 @@ storiesOf('Table', module)
   .add('unstyled', () => (
     <Table
       data={catData}
-      headings={catHeadings}
+      columns={catColumns}
       caption="Famous Internet Cats"
     />
   ))
   .add('table-striped', () => (
     <Table
       data={catData}
-      headings={catHeadings}
+      columns={catColumns}
       caption="Famous Internet Cats"
       className={['table-striped']}
     />
@@ -65,7 +65,7 @@ storiesOf('Table', module)
   .add('default heading', () => (
     <Table
       data={catData}
-      headings={catHeadings}
+      columns={catColumns}
       caption="Famous Internet Cats"
       headingClassName={['thead-default']}
     />

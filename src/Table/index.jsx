@@ -18,12 +18,12 @@ class Table extends React.Component {
       )}
       >
         <tr>
-          {this.props.headings.map(heading => (
+          {this.props.columns.map(col => (
             <th
-              key={heading.key}
+              key={col.key}
               scope="col"
             >
-              {heading.label}
+              {col.label}
             </th>
           ))}
         </tr>
@@ -36,8 +36,8 @@ class Table extends React.Component {
       <tbody>
         {this.props.data.map((row, i) => (
           <tr key={i}>
-            {this.props.headings.map(heading => (
-              <td key={heading.key}>{row[heading.key]}</td>
+            {this.props.columns.map(col => (
+              <td key={col.key}>{row[col.key]}</td>
             ))}
           </tr>
         ))}
@@ -67,7 +67,7 @@ Table.propTypes = {
   ]),
   className: PropTypes.arrayOf(PropTypes.string),
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
-  headings: PropTypes.arrayOf(PropTypes.shape({
+  columns: PropTypes.arrayOf(PropTypes.shape({
     key: PropTypes.string.isRequired,
     label: PropTypes.oneOfType([
       PropTypes.string,

@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 import Table from './index';
 
 const props = {
-  headings: [
+  columns: [
     { key: 'num', label: 'Number' },
     { key: 'x2', label: 'Number * 2' },
     { key: 'sq', label: 'Number Squared' },
@@ -25,15 +25,15 @@ describe('<Table />', () => {
       />,
     );
 
-    it('with display headings in the right order', () => {
+    it('with display columns in the right order', () => {
       wrapper.find('th').forEach((th, i) => {
-        expect(th.text()).toEqual(props.headings[i].label);
+        expect(th.text()).toEqual(props.columns[i].label);
       });
     });
 
-    it('with data in the same order as the headings', () => {
+    it('with data in the same order as the columns', () => {
       wrapper.find('tr').at(1).find('td').forEach((td, i) => {
-        expect(Number(td.text())).toEqual(props.data[0][props.headings[i].key]);
+        expect(Number(td.text())).toEqual(props.data[0][props.columns[i].key]);
       });
     });
   });
