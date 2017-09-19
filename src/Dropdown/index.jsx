@@ -126,12 +126,11 @@ class Dropdown extends React.Component {
         <Button
           aria-expanded={this.state.open}
           aria-haspopup="true"
-          buttonType="secondary"
+          buttonType={this.props.buttonType}
           display={this.props.title}
           onClick={this.toggle}
           onKeyDown={this.handleToggleKeyDown}
           className={[
-            styles['btn-borderless'],
             styles['dropdown-toggle'],
           ]}
           type="button"
@@ -154,11 +153,16 @@ class Dropdown extends React.Component {
 }
 
 Dropdown.propTypes = {
-  title: PropTypes.string.isRequired,
+  buttonType: PropTypes.string,
   menuItems: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     href: PropTypes.string,
   })).isRequired,
+  title: PropTypes.string.isRequired,
+};
+
+Dropdown.defaultProps = {
+  buttonType: 'light',
 };
 
 export default Dropdown;

@@ -91,7 +91,7 @@ exports[`Storyshots Dropdown basic usage 1`] = `
   <button
     aria-expanded={false}
     aria-haspopup="true"
-    className="btn-borderless dropdown-toggle btn btn-secondary"
+    className="dropdown-toggle btn btn-light"
     onBlur={[Function]}
     onClick={[Function]}
     onKeyDown={[Function]}
