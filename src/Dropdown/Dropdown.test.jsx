@@ -26,14 +26,14 @@ describe('<Dropdown />', () => {
         {...props}
       />,
     );
-    const menu = wrapper.find('ul');
+    const menu = wrapper.find('.dropdown-menu');
     const button = wrapper.find('[type="button"]');
 
     it('with menu and toggle', () => {
       expect(button.exists()).toEqual(true);
       expect(menu.prop('aria-label')).toEqual(props.title);
       expect(menu.exists()).toEqual(true);
-      expect(menu.find('li')).toHaveLength(props.menuItems.length);
+      expect(menu.find('a')).toHaveLength(props.menuItems.length);
     });
 
     it('with menu closed', () => {
@@ -110,7 +110,7 @@ describe('<Dropdown />', () => {
       { attachTo: div },
     );
     wrapper.find('[type="button"]').simulate('click');
-    document.querySelector('ul').click();
+    document.querySelector('.dropdown-menu').click();
     menuOpen(true, wrapper);
   });
 
