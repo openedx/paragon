@@ -98,19 +98,18 @@ class Dropdown extends React.Component {
 
   generateMenuItems(menuItems) {
     return menuItems.map((menuItem, i) => (
-      <li className={styles['dropdown-item']} key={i}>
-        <a
-          role="menuitem"
-          href={menuItem.href}
-          onKeyDown={this.handleMenuKeyDown}
-          ref={(item) => {
-            this.menuItems[i] = item;
-          }}
-          tabIndex="-1"
-        >
-          {menuItem.label}
-        </a>
-      </li>
+      <a
+        className={styles['dropdown-item']}
+        href={menuItem.href}
+        key={i}
+        onKeyDown={this.handleMenuKeyDown}
+        ref={(item) => {
+          this.menuItems[i] = item;
+        }}
+        role="menuitem"
+      >
+        {menuItem.label}
+      </a>
     ));
   }
 
@@ -138,14 +137,17 @@ class Dropdown extends React.Component {
           type="button"
           inputRef={(toggleElem) => { this.toggleElem = toggleElem; }}
         />
-        <ul
+        <div
           aria-label={this.props.title}
           aria-hidden={!this.state.open}
-          className={styles['dropdown-menu']}
+          className={classNames([
+            styles['dropdown-menu'],
+            { [styles.show]: this.state.open },
+          ])}
           role="menu"
         >
           {menuItems}
-        </ul>
+        </div>
       </div>
     );
   }
