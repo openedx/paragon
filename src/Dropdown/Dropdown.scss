@@ -1,5 +1,13 @@
 @import "~bootstrap/scss/_dropdown";
 
-.btn-borderless {
-    border: 0 !important;
+// Trying to patch this upstream, then this can
+// be removed.
+// https://github.com/twbs/bootstrap/pull/23990
+.show {
+  > a:focus {
+    outline-width: 2px;
+    outline-style: solid;
+    outline-color: Highlight;
+    outline: -webkit-focus-ring-color auto 5px;
+  }
 }

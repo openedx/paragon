@@ -91,7 +91,7 @@ exports[`Storyshots Dropdown basic usage 1`] = `
   <button
     aria-expanded={false}
     aria-haspopup="true"
-    className="btn-borderless dropdown-toggle btn btn-secondary"
+    className="dropdown-toggle btn btn-light"
     onBlur={[Function]}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -99,49 +99,37 @@ exports[`Storyshots Dropdown basic usage 1`] = `
   >
     Search Engines
   </button>
-  <ul
+  <div
     aria-hidden={true}
     aria-label="Search Engines"
     className="dropdown-menu"
     role="menu"
   >
-    <li
+    <a
       className="dropdown-item"
+      href="https://google.com"
+      onKeyDown={[Function]}
+      role="menuitem"
     >
-      <a
-        href="https://google.com"
-        onKeyDown={[Function]}
-        role="menuitem"
-        tabIndex="-1"
-      >
-        Google
-      </a>
-    </li>
-    <li
+      Google
+    </a>
+    <a
       className="dropdown-item"
+      href="https://duckduckgo.com"
+      onKeyDown={[Function]}
+      role="menuitem"
     >
-      <a
-        href="https://duckduckgo.com"
-        onKeyDown={[Function]}
-        role="menuitem"
-        tabIndex="-1"
-      >
-        DuckDuckGo
-      </a>
-    </li>
-    <li
+      DuckDuckGo
+    </a>
+    <a
       className="dropdown-item"
+      href="https://yahoo.com"
+      onKeyDown={[Function]}
+      role="menuitem"
     >
-      <a
-        href="https://yahoo.com"
-        onKeyDown={[Function]}
-        role="menuitem"
-        tabIndex="-1"
-      >
-        Yahoo
-      </a>
-    </li>
-  </ul>
+      Yahoo
+    </a>
+  </div>
 </div>
 `;
 
