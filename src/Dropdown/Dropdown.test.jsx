@@ -149,6 +149,16 @@ describe('<Dropdown />', () => {
       });
     });
 
+    describe('invalid key in open menu', () => {
+      it('test', () => {
+        menuOpen(true, wrapper);
+        expect(wrapper.find('a').at(0).matchesElement(document.activeElement)).toEqual(true);
+        wrapper.find('a').at(0).simulate('keyDown', { key: 'q' });
+        menuOpen(true, wrapper);
+        expect(wrapper.find('a').at(0).matchesElement(document.activeElement)).toEqual(true);
+      });
+    });
+
     it('first menu item after looping through', () => {
       wrapper.find('a').at(0).simulate('keyDown', { key: triggerKeys.NAVIGATE_DOWN[0] });
       wrapper.find('a').at(1).simulate('keyDown', { key: triggerKeys.NAVIGATE_DOWN[0] });
@@ -156,9 +166,29 @@ describe('<Dropdown />', () => {
       expect(wrapper.find('a').at(0).matchesElement(document.activeElement)).toEqual(true);
     });
 
-    it('toggle on close', () => {
-      wrapper.find('a').at(0).simulate('keyDown', { key: triggerKeys.CLOSE_MENU[0] });
-      expect(wrapper.find('[type="button"]').matchesElement(document.activeElement)).toEqual(true);
+    describe('toggle', () => {
+      it('toggle on close', () => {
+        wrapper.find('a').at(0).simulate('keyDown', { key: triggerKeys.CLOSE_MENU[0] });
+        expect(wrapper.find('[type="button"]').matchesElement(document.activeElement)).toEqual(true);
+      });
+
+      it('does not toggle with invalid key', () => {
+        wrapper = mount(
+          <Dropdown
+            {...props}
+          />,
+        );
+
+        menuOpen(false, wrapper);
+        // open and close button to get focus on button
+        wrapper.find('[type="button"]').simulate('click');
+        wrapper.find('[type="button"]').simulate('click');
+        expect(wrapper.find('[type="button"]').matchesElement(document.activeElement)).toEqual(true);
+
+        wrapper.find('[type="button"]').simulate('keyDown', { key: 'q' });
+        menuOpen(false, wrapper);
+        expect(wrapper.find('[type="button"]').matchesElement(document.activeElement)).toEqual(true);
+      });
     });
   });
 });
