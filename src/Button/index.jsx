@@ -37,7 +37,7 @@ function Button(props) {
   );
 }
 
-Button.propTypes = {
+export const buttonPropTypes = {
   buttonType: PropTypes.string,
   className: PropTypes.arrayOf(PropTypes.string),
   display: PropTypes.string.isRequired,
@@ -47,6 +47,8 @@ Button.propTypes = {
   onKeyDown: PropTypes.func,
   type: PropTypes.string,
 };
+
+Button.propTypes = buttonPropTypes;
 
 Button.defaultProps = {
   buttonType: undefined,
