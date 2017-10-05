@@ -1,5 +1,5 @@
 const path = require('path');
-const BabiliPlugin = require('babili-webpack-plugin');
+const MinifyPlugin = require('babel-minify-webpack-plugin');
 
 const env = process.env.NODE_ENV || 'dev';
 
@@ -17,7 +17,7 @@ const base = {
     extensions: ['.js', '.jsx'],
   },
   plugins: [
-    new BabiliPlugin(),
+    new MinifyPlugin(),
   ],
   module: {
     rules: [
@@ -28,7 +28,7 @@ const base = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['env', 'babili'],
+              presets: ['env', 'minify'],
             },
           },
           { loader: 'source-map-loader' },

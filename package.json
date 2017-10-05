@@ -1,6 +1,6 @@
 {
-  "name": "paragon",
-  "version": "0.0.1",
+  "name": "@edx/paragon",
+  "version": "0.1.0",
   "description": "Accessible, responsive UI component library based on Bootstrap.",
   "main": "src/index.js",
   "author": "arizzitano",
@@ -11,17 +11,18 @@
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "deploy-storybook": "storybook-to-ghpages",
     "lint": "eslint --ext .js --ext .jsx .",
-    "precommit": "yarn run lint",
+    "precommit": "npm run lint",
     "snapshot": "jest --updateSnapshot",
     "start": "start-storybook -p 6006",
     "test": "jest --coverage"
   },
   "dependencies": {
+    "@edx/edx-bootstrap": "^0.3.3",
     "classnames": "^2.2.5",
-    "edx-bootstrap": "^0.2.1",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-proptype-conditional-require": "^1.0.4"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.12",
@@ -32,12 +33,11 @@
     "babel-cli": "^6.24.1",
     "babel-jest": "^21.0.0",
     "babel-loader": "^7.0.0",
+    "babel-minify": "^0.2.0",
+    "babel-minify-webpack-plugin": "^0.2.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-preset-babili": "^0.1.4",
     "babel-preset-env": "^1.4.0",
-    "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "babili-webpack-plugin": "^0.1.1",
     "coveralls": "^3.0.0",
     "css-loader": "^0.28.4",
     "enzyme": "^2.8.2",

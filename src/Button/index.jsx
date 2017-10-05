@@ -10,6 +10,7 @@ function Button(props) {
     className,
     display,
     inputRef,
+    isClose,
     onBlur,
     onClick,
     onKeyDown,
@@ -24,6 +25,8 @@ function Button(props) {
         styles.btn,
       ], {
         [styles[`btn-${buttonType}`]]: buttonType !== undefined,
+      }, {
+        [styles.close]: isClose,
       })}
       onBlur={onBlur}
       onClick={onClick}
@@ -40,8 +43,9 @@ function Button(props) {
 export const buttonPropTypes = {
   buttonType: PropTypes.string,
   className: PropTypes.arrayOf(PropTypes.string),
-  display: PropTypes.string.isRequired,
+  display: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   inputRef: PropTypes.func,
+  isClose: PropTypes.bool,
   onBlur: PropTypes.func,
   onClick: PropTypes.func,
   onKeyDown: PropTypes.func,
@@ -54,6 +58,7 @@ Button.defaultProps = {
   buttonType: undefined,
   className: [],
   inputRef: () => {},
+  isClose: false,
   onBlur: () => {},
   onClick: () => {},
   onKeyDown: () => {},

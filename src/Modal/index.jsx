@@ -96,7 +96,7 @@ class Modal extends React.Component {
             <div className={styles['modal-header']}>
               <h5 className={styles['modal-title']} id={this.headerId}>{this.props.title}</h5>
               <Button
-                display="&times;"
+                display={<span aria-hidden="true">&times;</span>}
                 aria-label={this.props.closeText}
                 buttonType="light"
                 onClick={this.close}
