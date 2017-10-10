@@ -10,12 +10,12 @@ Components' markup, keyboard triggers, and behavior are based on the [WAI-ARIA 1
 
 ## Development
 
-First, clone the repo and install dependencies. You must be running Node 6 or newer. We recommend [Yarn](https://yarnpkg.com) for installation.
+First, clone the repo and install dependencies. You must be running Node 6 or newer.
 
 ```
 $ git clone git@github.com:edx/paragon.git
 $ cd paragon
-$ yarn install
+$ npm install
 ```
 
 ### Storybook
@@ -25,7 +25,7 @@ Paragon uses [Storybook](https://storybook.js.org/) to generate and serve its do
 To start the Storybook server locally, run the following:
 
 ```
-$ yarn run start
+$ npm run start
 ```
 
 Storybook will serve at http://localhost:6006. It's important to note that the Storybook server uses its own [webpack config file](https://github.com/edx/paragon/blob/master/.storybook/webpack.config.js) which is separate from the project root config.
@@ -43,7 +43,7 @@ Make sure to define PropTypes and DefaultProps on your components, using the [pr
 Paragon runs ESLint as a pre-commit hook. If your code fails linting, you will not be able to commit. To avoid hitting a giant-wall-of-linter-failures when you try to commit, we recommend [configuring your editor to run ESLint](http://eslint.org/docs/user-guide/integrations). To run ESLint in the console at any time, run the following:
 
 ```
-$ yarn run lint
+$ npm run lint
 ```
 
 Paragon's ESLint config is based off [eslint-config-edx](https://github.com/edx/eslint-config-edx/tree/master/packages/eslint-config-edx), which itself is based off [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb). Paragon uses ESLint 3 (and will upgrade to v4 as soon as eslint-config-airbnb releases a supported version), which itself comes with a number of built-in rules. This configuration is highly opinionated and may contain some rules with which you aren't yet familiar, like [comma-dangle](http://eslint.org/docs/rules/comma-dangle), but rest assured, you're writing modern, best-practice JS 💅
@@ -63,7 +63,7 @@ Paragon also uses Airbnb's [Enzyme](http://airbnb.io/enzyme/) library to help re
 To run the unit tests, run:
 
 ```
-yarn run test
+npm run test
 ```
 
 To add unit tests for a component, create a file in your component's directory named `<ComponentName>.test.js`. Jest will automatically pick up this file and run the tests as part of the suite. Take a look at [Dropdown.test.jsx](https://github.com/edx/paragon/blob/master/src/Dropdown/Dropdown.test.jsx) or [CheckBox.test.jsx](https://github.com/edx/paragon/blob/master/src/CheckBox/CheckBox.test.jsx) for examples of good component unit tests.
@@ -75,7 +75,7 @@ Jest has built-in [snapshot testing](http://facebook.github.io/jest/docs/en/snap
 When you modify components or stories (or add new components or stories), make sure to update the snapshots or else the snapshot tests will fail. It's easy to do -- just run:
 
 ```
-$ yarn run snapshot
+$ npm run snapshot
 ```
 
 If the snapshot tests fail, it's generally pretty easy to tell whether it's happening because of a bug or because the snapshots need to be updated. Don't be afraid to inspect the test output for clues!

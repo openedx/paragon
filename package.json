@@ -11,7 +11,7 @@
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "deploy-storybook": "storybook-to-ghpages",
     "lint": "eslint --ext .js --ext .jsx .",
-    "precommit": "yarn run lint",
+    "precommit": "npm run lint",
     "snapshot": "jest --updateSnapshot",
     "start": "start-storybook -p 6006",
     "test": "jest --coverage"
