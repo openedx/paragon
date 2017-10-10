@@ -14,7 +14,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: true,
-              localIdentName: '[name]__[local]___[hash:base64:5]',
+              localIdentName: 'paragon__[name]__[local]___[hash:base64:5]',
               sourceMap: true,
             },
           },
@@ -23,8 +23,8 @@ module.exports = {
             options: {
               data: '@import "paragon-reset";',
               includePaths: [
-                  path.join(__dirname, '../src/utils'),
-                  path.join(__dirname, '../node_modules'),
+                path.join(__dirname, '../packages/utils'),
+                path.join(__dirname, '../node_modules'),
               ],
               sourceMap: true,
             },

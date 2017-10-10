@@ -1,16 +1,16 @@
 const path = require('path');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
 
-const env = process.env.NODE_ENV || 'dev';
-
-const base = {
+module.exports = {
   devtool: 'source-map',
   entry: {
-    main: path.resolve('./docs/App.js'),
+    Button: path.resolve('./packages/Button/index.jsx'),
+    Dropdown: path.resolve('./packages/Dropdown/index.jsx'),
   },
   output: {
-    filename: 'bundle.js',
-    path: path.resolve('./docs'),
+    path: path.resolve(__dirname, './packages'),
+    filename: '[name]/dist/index.js',
+    library: 'paragon',
     libraryTarget: 'umd',
   },
   resolve: {
@@ -44,7 +44,7 @@ const base = {
             loader: 'css-loader',
             options: {
               modules: true,
-              localIdentName: '[name]__[local]___[hash:base64:5]',
+              localIdentName: 'paragon__[name]__[local]___[hash:base64:5]',
             },
           },
           {
@@ -52,7 +52,7 @@ const base = {
             options: {
               data: '@import "paragon-reset";',
               includePaths: [
-                path.join(__dirname, './src/utils'),
+                path.join(__dirname, './packages/utils'),
                 path.join(__dirname, './node_modules'),
               ],
             },
@@ -61,53 +61,36 @@ const base = {
       },
     ],
   },
-};
-
-const additionalConfig = {
-  // production builds the library for external consumption
-  production: {
-    entry: {
-      Dropdown: path.resolve('./src/Dropdown.jsx'),
+  externals: [{
+    react: {
+      root: 'React',
+      commonjs2: 'react',
+      commonjs: 'react',
+      amd: 'react',
     },
-    output: {
-      path: path.resolve('./dist'),
-      filename: '[name].js',
-      library: 'paragon',
-      libraryTarget: 'umd',
-    },
-    externals: [{
-      react: {
-        root: 'React',
-        commonjs2: 'react',
-        commonjs: 'react',
-        amd: 'react',
-      },
-    },
-    {
-      'react-dom': {
-        root: 'ReactDOM',
-        commonjs2: 'react-dom',
-        commonjs: 'react-dom',
-        amd: 'react-dom',
-      },
-    },
-    {
-      'react-addons-transition-group': {
-        commonjs: 'react-addons-transition-group',
-        commonjs2: 'react-addons-transition-group',
-        amd: 'react-addons-transition-group',
-        root: ['React', 'addons', 'TransitionGroup'],
-      },
-    },
-    {
-      'react-addons-css-transition-group': {
-        commonjs: 'react-addons-css-transition-group',
-        commonjs2: 'react-addons-css-transition-group',
-        amd: 'react-addons-css-transition-group',
-        root: ['React', 'addons', 'CSSTransitionGroup'],
-      },
-    }],
   },
+  {
+    'react-dom': {
+      root: 'ReactDOM',
+      commonjs2: 'react-dom',
+      commonjs: 'react-dom',
+      amd: 'react-dom',
+    },
+  },
+  {
+    'react-addons-transition-group': {
+      commonjs: 'react-addons-transition-group',
+      commonjs2: 'react-addons-transition-group',
+      amd: 'react-addons-transition-group',
+      root: ['React', 'addons', 'TransitionGroup'],
+    },
+  },
+  {
+    'react-addons-css-transition-group': {
+      commonjs: 'react-addons-css-transition-group',
+      commonjs2: 'react-addons-css-transition-group',
+      amd: 'react-addons-css-transition-group',
+      root: ['React', 'addons', 'CSSTransitionGroup'],
+    },
+  }],
 };
-
-module.exports = Object.assign(base, additionalConfig[env]);

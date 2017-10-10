@@ -1,8 +1,7 @@
 {
   "name": "paragon",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Accessible, responsive UI component library based on Bootstrap.",
-  "main": "src/index.js",
   "author": "arizzitano",
   "license": "MIT",
   "scripts": {
@@ -11,7 +10,8 @@
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "deploy-storybook": "storybook-to-ghpages",
     "lint": "eslint --ext .js --ext .jsx .",
-    "precommit": "yarn run lint",
+    "precommit": "npm run lint",
+    "pretest": "lerna bootstrap",
     "snapshot": "jest --updateSnapshot",
     "start": "start-storybook -p 6006",
     "test": "jest --coverage"
@@ -46,10 +46,10 @@
     "eslint-import-resolver-webpack": "^0.8.1",
     "eslint-plugin-jsx-a11y": "^5.1.0",
     "eslint-plugin-react": "^7.1.0",
-    "greenkeeper-lockfile": "^1.7.1",
     "husky": "^0.14.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^21.0.1",
+    "lerna": "^2.1.0",
     "node-sass": "^4.5.3",
     "postcss-scss": "^1.0.1",
     "react-router-dom": "^4.1.1",
@@ -61,6 +61,12 @@
     "webpack-dev-server": "^2.4.4"
   },
   "jest": {
+    "transform": {
+      "\\.(js|jsx)$": "babel-jest"
+    },
+    "moduleDirectories": [
+      "node_modules"
+    ],
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|scss)$": "identity-obj-proxy"
