@@ -29,7 +29,7 @@ storiesOf('CheckBox', module)
   .add('call a function', () => (
     <CheckBox
       name="checkbox"
-      label="check out the action tab"
+      label="check out the action logger"
       onChange={action('Checkbox.onChange')}
     />
   ));
