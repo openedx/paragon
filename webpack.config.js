@@ -1,114 +1,111 @@
 const path = require('path');
-const MinifyPlugin = require('babel-minify-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const env = process.env.NODE_ENV || 'dev';
+// we build the library for two different build targets:
+// static (with scoped styles) and themeable (with stock,
+// overrideable classnames)
+const targetProperties = [{
+  baseDirectory: 'static',
+  localIdentName: 'paragon__[local]',
+},
+{
+  baseDirectory: 'themeable',
+  localIdentName: '[local]',
+}];
 
-const base = {
+module.exports = targetProperties.map(config => ({
   devtool: 'source-map',
   entry: {
-    polyfill: 'babel-polyfill',
-    main: path.resolve('./docs/App.js'),
+    paragon: path.resolve('./src/index.js'),
   },
   output: {
-    filename: 'bundle.js',
-    path: path.resolve('./docs'),
+    filename: `${config.baseDirectory}/index.js`,
+    library: 'paragon',
     libraryTarget: 'umd',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
   },
   plugins: [
-    new MinifyPlugin(),
+    new UglifyJsPlugin({
+      sourceMap: true,
+    }),
+    new ExtractTextPlugin(`${config.baseDirectory}/paragon.min.css`),
   ],
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         use: [
           {
             loader: 'babel-loader',
             options: {
-              presets: ['env', 'minify'],
+              presets: ['env'],
             },
           },
           { loader: 'source-map-loader' },
         ],
       },
       {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              localIdentName: '[name]__[local]___[hash:base64:5]',
+        test: /\.scss|\.css$/,
+        use: ExtractTextPlugin.extract({
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true,
+                localIdentName: config.localIdentName,
+                sourceMap: true,
+                minimize: true,
+              },
             },
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              data: '@import "paragon-reset";',
-              includePaths: [
-                path.join(__dirname, './src/utils'),
-                path.join(__dirname, './node_modules'),
-              ],
+            {
+              loader: 'sass-loader',
+              options: {
+                data: '@import "paragon-reset";',
+                includePaths: [
+                  path.join(__dirname, './src/utils'),
+                  path.join(__dirname, './node_modules'),
+                ],
+                sourceMap: true,
+              },
             },
-          },
-        ],
+          ],
+        }),
+      },
+      {
+        test: /\.(woff2?|ttf|svg|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file-loader',
+        options: {
+          outputPath: `${config.baseDirectory}/`,
+        },
       },
     ],
   },
-};
-
-const additionalConfig = {
-  // production builds the library for external consumption
-  production: {
-    entry: {
-      Dropdown: path.resolve('./src/Dropdown.jsx'),
+  externals: [{
+    react: {
+      root: 'React',
+      commonjs2: 'react',
+      commonjs: 'react',
+      amd: 'react',
     },
-    output: {
-      path: path.resolve('./dist'),
-      filename: '[name].js',
-      library: 'paragon',
-      libraryTarget: 'umd',
-    },
-    externals: [{
-      react: {
-        root: 'React',
-        commonjs2: 'react',
-        commonjs: 'react',
-        amd: 'react',
-      },
-    },
-    {
-      'react-dom': {
-        root: 'ReactDOM',
-        commonjs2: 'react-dom',
-        commonjs: 'react-dom',
-        amd: 'react-dom',
-      },
-    },
-    {
-      'react-addons-transition-group': {
-        commonjs: 'react-addons-transition-group',
-        commonjs2: 'react-addons-transition-group',
-        amd: 'react-addons-transition-group',
-        root: ['React', 'addons', 'TransitionGroup'],
-      },
-    },
-    {
-      'react-addons-css-transition-group': {
-        commonjs: 'react-addons-css-transition-group',
-        commonjs2: 'react-addons-css-transition-group',
-        amd: 'react-addons-css-transition-group',
-        root: ['React', 'addons', 'CSSTransitionGroup'],
-      },
-    }],
   },
-};
-
-module.exports = Object.assign(base, additionalConfig[env]);
+  {
+    'react-dom': {
+      root: 'ReactDOM',
+      commonjs2: 'react-dom',
+      commonjs: 'react-dom',
+      amd: 'react-dom',
+    },
+  },
+  {
+    'react-transition-group': {
+      root: 'ReactTransitionGroup',
+      commonjs2: 'react-transition-group',
+      commonjs: 'react-transition-group',
+      amd: 'react-transition-group',
+    },
+  }],
+}));
