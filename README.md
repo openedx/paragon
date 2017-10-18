@@ -13,6 +13,34 @@ Paragon provides accessible React components for use within the Open edX platfor
 
 Components' markup, keyboard triggers, and behavior are based on the [WAI-ARIA 1.1 Authoring Practices](https://www.w3.org/TR/wai-aria-practices-1.1/). Components are styled with [Bootstrap 4](https://v4-alpha.getbootstrap.com/) via CSS Modules. Documentation/demo site is available at http://edx.github.io/paragon.
 
+## Usage
+
+Paragon requires React 16 or higher. To install Paragon into your project:
+
+```
+npm i --save @edx/paragon
+```
+
+Since Paragon is a React library, components must be rendered with React and ReactDOM. This doesn't mean the entire page has to be rendered with React. You can read up about rendering React into a page within the [official ReactDOM documentation](https://reactjs.org/docs/react-dom.html).
+
+### Component API
+
+API documentation for each component is available below:
+
+- (asInput)[src/asInput]
+- (Button)[src/Button]
+- (CheckBox)[src/CheckBox]
+- (Dropdown)[src/Dropdown]
+- (Hyperlink)[src/Hyperlink]
+- (InputSelect)[src/InputSelect]
+- (InputText)[src/InputText]
+- (Modal)[src/Modal]
+- (RadioButtonGroup)[src/RadioButtonGroup]
+- (StatusAlert)[src/StatusAlert]
+- (Table)[src/Table]
+- (Tabs)[src/Tabs]
+- (TextArea)[src/TextArea]
+
 ## Development
 
 First, clone the repo and install dependencies. You must be running Node 6 or newer.
