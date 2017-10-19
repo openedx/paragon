@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 import styles from './Table.scss';
+import Button from '../Button';
 
 class Table extends React.Component {
   getCaption() {
@@ -20,10 +21,14 @@ class Table extends React.Component {
         <tr>
           {this.props.columns.map(col => (
             <th
+              className={classNames({ sortable: col.sortable })}
               key={col.key}
               scope="col"
             >
-              {col.label}
+              <Button display={
+                <span> {col.label}</span>
+              }
+              />
             </th>
           ))}
         </tr>
@@ -73,6 +78,11 @@ Table.propTypes = {
       PropTypes.string,
       PropTypes.element,
     ]).isRequired,
+    // is there a way to require sort if sortable is true? do we just want to keep it
+    // as asc or desc or allow for someone to have custom sorting?
+    // https://www.w3.org/TR/wai-aria/states_and_properties#aria-sort
+    sortable: PropTypes.bool,
+    sort: PropTypes.string,
   })).isRequired,
   headingClassName: PropTypes.arrayOf(PropTypes.string),
 };
