@@ -1010,6 +1010,116 @@ exports[`Storyshots Paragon Welcome 1`] = `
 </div>
 `;
 
+exports[`Storyshots RadioButtonGroup selected minimal usage 1`] = `
+<div
+  aria-label="Radio Button Group"
+  onChange={[Function]}
+  role="radiogroup"
+  tabIndex={-1}
+>
+  <div>
+    <input
+      aria-checked={false}
+      data-index={0}
+      defaultChecked={false}
+      name="rbg"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="radio"
+      value="jaebaebae"
+    />
+    First Value
+  </div>
+  <div>
+    <input
+      aria-checked={true}
+      data-index={1}
+      defaultChecked={true}
+      name="rbg"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="radio"
+      value="value2"
+    />
+    Second Value
+  </div>
+  <div>
+    <input
+      aria-checked={false}
+      data-index={2}
+      defaultChecked={false}
+      name="rbg"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="radio"
+      value="value3"
+    />
+    Third Value
+  </div>
+</div>
+`;
+
+exports[`Storyshots RadioButtonGroup unselected minimal usage 1`] = `
+<div
+  aria-label="Radio Button Group"
+  onChange={[Function]}
+  role="radiogroup"
+  tabIndex={-1}
+>
+  <div>
+    <input
+      aria-checked={false}
+      data-index={0}
+      defaultChecked={false}
+      name="rbg"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="radio"
+      value="jaebaebae"
+    />
+    First Value
+  </div>
+  <div>
+    <input
+      aria-checked={false}
+      data-index={1}
+      defaultChecked={false}
+      name="rbg"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="radio"
+      value="value2"
+    />
+    Second Value
+  </div>
+  <div>
+    <input
+      aria-checked={false}
+      data-index={2}
+      defaultChecked={false}
+      name="rbg"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="radio"
+      value="value3"
+    />
+    Third Value
+  </div>
+</div>
+`;
+
 exports[`Storyshots StatusAlert Non-dismissible alert 1`] = `
 <div
   className="alert fade alert-danger show"

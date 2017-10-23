@@ -1,6 +1,6 @@
 {
   "name": "@edx/paragon",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Accessible, responsive UI component library based on Bootstrap.",
   "main": "src/index.js",
   "author": "arizzitano",
@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.12",
+    "@storybook/addon-console": "^1.0.0",
     "@storybook/addon-options": "^3.2.6",
     "@storybook/addon-storyshots": "^3.2.8",
     "@storybook/react": "3.2.11",
