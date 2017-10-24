@@ -8,7 +8,7 @@ function Button(props) {
   const {
     buttonType,
     className,
-    display,
+    label,
     inputRef,
     isClose,
     onBlur,
@@ -35,7 +35,7 @@ function Button(props) {
       ref={inputRef}
       {...other}
     >
-      {display}
+      {label}
     </button>
   );
 }
@@ -43,7 +43,7 @@ function Button(props) {
 export const buttonPropTypes = {
   buttonType: PropTypes.string,
   className: PropTypes.arrayOf(PropTypes.string),
-  display: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   inputRef: PropTypes.func,
   isClose: PropTypes.bool,
   onBlur: PropTypes.func,

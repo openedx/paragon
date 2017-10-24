@@ -10,8 +10,8 @@ Provides a button component that can be customized and handle multiple event han
 ### `className` (string array; optional)
 `className` specifies Bootstrap class names to apply to the button. See [Bootstrap's buttons documentation](https://getbootstrap.com/docs/4.0/components/buttons/) for a list of applicable class names. The default is an empty array.
 
-### `display` (string; required)
-`display` specifies the text that is displayed within the button.
+### `label` (string; required)
+`label` specifies the text that is displayed within the button.
 
 ### `inputRef` (function; optional)
 `inputRef` is a function that defines a reference for the button. An example `inputRef` from the calling component could look something like: `inputRef={(input) => { this.button = input; }}`. The default is an empty function.
