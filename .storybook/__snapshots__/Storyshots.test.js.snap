@@ -1226,16 +1226,19 @@ exports[`Storyshots Table default heading 1`] = `
   >
     <tr>
       <th
+        className={undefined}
         scope="col"
       >
         Name
       </th>
       <th
+        className={undefined}
         scope="col"
       >
         Famous For
       </th>
       <th
+        className={undefined}
         scope="col"
       >
         Coat Color
@@ -1314,16 +1317,19 @@ exports[`Storyshots Table responsive 1`] = `
   >
     <tr>
       <th
+        className={undefined}
         scope="col"
       >
         Name
       </th>
       <th
+        className={undefined}
         scope="col"
       >
         Famous For
       </th>
       <th
+        className={undefined}
         scope="col"
       >
         Coat Color
@@ -1390,6 +1396,157 @@ exports[`Storyshots Table responsive 1`] = `
 </table>
 `;
 
+exports[`Storyshots Table sortable 1`] = `
+<table
+  className="table table-responsive"
+>
+  <caption>
+    Famous Internet Cats
+  </caption>
+  <thead
+    className=""
+  >
+    <tr>
+      <th
+        className="sortable"
+        scope="col"
+      >
+        <button
+          className="btn"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          <span>
+            Name
+            <span
+              className="sr-only"
+            >
+               
+              sort descending
+            </span>
+             
+            <span
+              className="fa fa-sort-desc"
+            />
+          </span>
+        </button>
+      </th>
+      <th
+        className="sortable"
+        scope="col"
+      >
+        <button
+          className="btn"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          <span>
+            Famous For
+            <span
+              className="sr-only"
+            >
+               
+              click to sort
+            </span>
+             
+            <span
+              className="fa fa-sort"
+            />
+          </span>
+        </button>
+      </th>
+      <th
+        className="sortable"
+        scope="col"
+      >
+        <button
+          className="btn"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          <span>
+            Coat Color
+            <span
+              className="sr-only"
+            >
+               
+              click to sort
+            </span>
+             
+            <span
+              className="fa fa-sort"
+            />
+          </span>
+        </button>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Smoothie
+      </td>
+      <td>
+        modeling
+      </td>
+      <td>
+        orange tabby
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Maru
+      </td>
+      <td>
+        being a lovable oaf
+      </td>
+      <td>
+        brown tabby
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Lil Bub
+      </td>
+      <td>
+        weird tongue
+      </td>
+      <td>
+        brown tabby
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Keyboard Cat
+      </td>
+      <td>
+        piano virtuoso
+      </td>
+      <td>
+        orange tabby
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Grumpy Cat
+      </td>
+      <td>
+        serving moods
+      </td>
+      <td>
+        siamese
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
 exports[`Storyshots Table table-striped 1`] = `
 <table
   className="table table-striped"
@@ -1402,16 +1559,19 @@ exports[`Storyshots Table table-striped 1`] = `
   >
     <tr>
       <th
+        className={undefined}
         scope="col"
       >
         Name
       </th>
       <th
+        className={undefined}
         scope="col"
       >
         Famous For
       </th>
       <th
+        className={undefined}
         scope="col"
       >
         Coat Color
@@ -1490,16 +1650,19 @@ exports[`Storyshots Table unstyled 1`] = `
   >
     <tr>
       <th
+        className={undefined}
         scope="col"
       >
         Name
       </th>
       <th
+        className={undefined}
         scope="col"
       >
         Famous For
       </th>
       <th
+        className={undefined}
         scope="col"
       >
         Coat Color
