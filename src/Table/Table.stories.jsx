@@ -46,6 +46,17 @@ const catColumns = [
   },
 ];
 
+const sort = function sort(firstElement, secondElement, key, direction) {
+  const directionIsAsc = direction === 'asc';
+
+  if (firstElement[key] > secondElement[key]) {
+    return directionIsAsc ? 1 : -1;
+  } else if (firstElement[key] < secondElement[key]) {
+    return directionIsAsc ? -1 : 1;
+  }
+  return 0;
+};
+
 storiesOf('Table', module)
   .add('unstyled', () => (
     <Table
@@ -77,4 +88,24 @@ storiesOf('Table', module)
       caption="Famous Internet Cats"
       className={['table-responsive']}
     />
-  ));
+  ))
+  .add('sortable', () => {
+    const catDataSortable = catData.slice();
+
+    return (<Table
+      data={catDataSortable.sort((firstElement, secondElement) => sort(firstElement, secondElement, catColumns[0].key, 'desc'))}
+      columns={catColumns.map(column => ({
+        ...column,
+        columnSortable: true,
+        onSort(direction) {
+          catDataSortable.sort((firstElement, secondElement) =>
+            sort(firstElement, secondElement, column.key, direction));
+        },
+      }))}
+      caption="Famous Internet Cats"
+      className={['table-responsive']}
+      tableSortable
+      defaultSortedColumn={catColumns[0].key}
+      defaultSortDirection="desc"
+    />);
+  });
