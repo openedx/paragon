@@ -1,11 +1,11 @@
 const path = require('path');
 
 module.exports = {
-  devtool: "source-map",
+  devtool: 'source-map',
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.scss|\.css$/,
         use: [
           {
             loader: 'style-loader',
@@ -23,13 +23,17 @@ module.exports = {
             options: {
               data: '@import "paragon-reset";',
               includePaths: [
-                  path.join(__dirname, '../src/utils'),
-                  path.join(__dirname, '../node_modules'),
+                path.join(__dirname, '../src/utils'),
+                path.join(__dirname, '../node_modules'),
               ],
               sourceMap: true,
             },
           },
         ],
+      },
+      {
+        test: /\.(woff2?|ttf|svg|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file-loader',
       },
     ],
   },
