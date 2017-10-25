@@ -33,8 +33,6 @@ const sortableColumnProps = {
 
 const sortableColumns = props.columns.map(column => ({
   ...column,
-  // columnSortable: column.key !== 'sq',
-  // onSort: () => {},
   ...sortableColumnProps[column.key],
 }));
 
