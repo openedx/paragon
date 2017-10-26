@@ -127,7 +127,7 @@ class Dropdown extends React.Component {
           aria-expanded={this.state.open}
           aria-haspopup="true"
           buttonType={this.props.buttonType}
-          display={this.props.title}
+          label={this.props.title}
           onClick={this.toggle}
           onKeyDown={this.handleToggleKeyDown}
           className={[

@@ -37,7 +37,7 @@ class ModalWrapper extends React.Component {
         />
         <Button
           onClick={this.openModal}
-          display="Click me to open a modal!"
+          label="Click me to open a modal!"
           buttonType="light"
           inputRef={(input) => { this.button = input; }}
         />
@@ -71,15 +71,15 @@ storiesOf('Modal', module)
       body="Modal body."
       buttons={[
         <Button
-          display="Blue button!"
+          label="Blue button!"
           buttonType="primary"
         />,
         {
-          display: 'Red button!',
+          label: 'Red button!',
           buttonType: 'danger',
         },
         <Button
-          display="Green button!"
+          label="Green button!"
           buttonType="success"
         />,
       ]}
@@ -93,7 +93,7 @@ storiesOf('Modal', module)
       body="Custom body!"
       buttons={[
         <Button
-          display="Dark button!"
+          label="Dark button!"
           buttonType="dark"
         />,
       ]}
@@ -107,7 +107,7 @@ storiesOf('Modal', module)
       body="Modal body."
       buttons={[
         <Button
-          display="Click me and check the console!"
+          label="Click me and check the console!"
           buttonType="light"
           onClick={action('button-click')}
         />,
@@ -142,7 +142,7 @@ storiesOf('Modal', module)
             label="E-Mail Address"
           />
           <Button
-            display="Get my facts!"
+            label="Get my facts!"
           />
         </div>
       )}

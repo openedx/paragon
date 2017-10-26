@@ -24,15 +24,15 @@ describe('<Modal />', () => {
   describe('correct rendering', () => {
     const buttons = [
       <Button
-        display="Blue button!"
+        label="Blue button!"
         buttonType="primary"
       />,
       {
-        display: 'Red button!',
+        label: 'Red button!',
         buttonType: 'danger',
       },
       <Button
-        display="Green button!"
+        label="Green button!"
         buttonType="success"
       />,
     ];

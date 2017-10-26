@@ -96,7 +96,7 @@ class Modal extends React.Component {
             <div className={styles['modal-header']}>
               <h5 className={styles['modal-title']} id={this.headerId}>{this.props.title}</h5>
               <Button
-                display={<span aria-hidden="true">&times;</span>}
+                label={<span aria-hidden="true">&times;</span>}
                 aria-label={this.props.closeText}
                 buttonType="light"
                 onClick={this.close}
@@ -110,7 +110,7 @@ class Modal extends React.Component {
             <div className={styles['modal-footer']}>
               {this.renderButtons()}
               <Button
-                display={this.props.closeText}
+                label={this.props.closeText}
                 buttonType="secondary"
                 onClick={this.close}
                 inputRef={(input) => { this.closeButton = input; }}
