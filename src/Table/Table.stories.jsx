@@ -103,7 +103,6 @@ storiesOf('Table', module)
         },
       }))}
       caption="Famous Internet Cats"
-      className={['table-responsive']}
       tableSortable
       defaultSortedColumn={catColumns[0].key}
       defaultSortDirection="desc"
