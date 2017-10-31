@@ -11,16 +11,10 @@ class Table extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = props.tableSortable ?
-      {
-        sortedColumn: this.props.defaultSortedColumn,
-        sortDirection: this.props.defaultSortDirection,
-      }
-      :
-      {
-        sortedColumn: '',
-        sortDirection: '',
-      };
+    this.state = {
+      sortedColumn: props.tableSortable ? this.props.defaultSortedColumn : '',
+      sortDirection: props.tableSortable ? this.props.defaultSortDirection : '',
+    };
 
     this.onSortClick = this.onSortClick.bind(this);
   }
@@ -30,16 +24,12 @@ class Table extends React.Component {
 
     if (this.state.sortedColumn === columnKey) {
       newDirection = (this.state.sortDirection === 'desc' ? 'asc' : 'desc');
-
-      this.setState({
-        sortDirection: newDirection,
-      });
-    } else {
-      this.setState({
-        sortedColumn: columnKey,
-        sortDirection: newDirection,
-      });
     }
+
+    this.setState({
+      sortedColumn: columnKey,
+      sortDirection: newDirection,
+    });
 
     const currentlySortedColumn = this.props.columns.find(
       column => (columnKey === column.key));
@@ -52,13 +42,13 @@ class Table extends React.Component {
     );
   }
 
-  getHeadingText(columnKey) {
+  getSortButtonScreenReaderText(columnKey) {
     let text = '';
 
     if (this.state.sortedColumn === columnKey) {
-      text = this.state.sortDirection === 'desc' ? 'sort descending' : 'sort ascending';
+      text = this.props.sortButtonsScreenReaderText[this.state.sortDirection];
     } else {
-      text = 'click to sort';
+      text = this.props.sortButtonsScreenReaderText[''];
     }
 
     return text;
@@ -66,19 +56,8 @@ class Table extends React.Component {
 
   /* eslint-disable class-methods-use-this */
   getSortIcon(sortDirection) {
-    let sortIconClassName = '';
+    const sortIconClassName = ['fa-sort', sortDirection].filter(n => n).join('-');
 
-    switch (sortDirection) {
-      case 'asc':
-        sortIconClassName = 'fa-sort-asc';
-        break;
-      case 'desc':
-        sortIconClassName = 'fa-sort-desc';
-        break;
-      default:
-        sortIconClassName = 'fa-sort';
-        break;
-    }
     return (<span
       className={classNames(FontAwesomeStyles.fa, FontAwesomeStyles[sortIconClassName])}
     />);
@@ -93,7 +72,7 @@ class Table extends React.Component {
               {column.label}
               <span className={classNames(styles['sr-only'])}>
                 {' '}
-                {this.getHeadingText(column.key)}
+                {this.getSortButtonScreenReaderText(column.key)}
               </span>
               {' '}
               {this.getSortIcon(column.key === this.state.sortedColumn ? this.state.sortDirection : '')}
@@ -114,9 +93,7 @@ class Table extends React.Component {
         <tr>
           {this.props.columns.map(col => (
             <th
-              className={this.props.tableSortable ?
-                classNames({ sortable: col.columnSortable }) :
-                undefined}
+              className={this.props.tableSortable ? classNames({ sortable: col.columnSortable }) : ''}
               key={col.key}
               scope="col"
             >
@@ -179,6 +156,7 @@ Table.propTypes = {
   defaultSortedColumn: isRequiredIf(PropTypes.string, props => props.tableSortable),
   /* eslint-disable react/require-default-props */
   defaultSortDirection: isRequiredIf(PropTypes.string, props => props.tableSortable),
+  sortButtonsScreenReaderText: isRequiredIf(PropTypes.object, props => props.columnSortable),
 };
 
 Table.defaultProps = {
@@ -186,6 +164,11 @@ Table.defaultProps = {
   className: [],
   headingClassName: [],
   tableSortable: false,
+  sortButtonsScreenReaderText: {
+    asc: 'sort ascending',
+    desc: 'sort descending',
+    '': 'click to sort',
+  },
 };
 
 export default Table;
