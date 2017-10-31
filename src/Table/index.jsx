@@ -67,7 +67,7 @@ class Table extends React.Component {
     return (
       this.props.tableSortable && column.columnSortable ?
         <Button
-          display={
+          label={
             <span>
               {column.label}
               <span className={classNames(styles['sr-only'])}>
