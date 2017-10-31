@@ -54,7 +54,6 @@ class Table extends React.Component {
     return text;
   }
 
-  /* eslint-disable class-methods-use-this */
   getSortIcon(sortDirection) {
     const sortIconClassName = ['fa-sort', sortDirection].filter(n => n).join('-');
 
