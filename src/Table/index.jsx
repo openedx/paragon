@@ -161,8 +161,7 @@ Table.propTypes = {
       desc: PropTypes.string,
       defaultText: PropTypes.string,
     }),
-    props => props.tableSortable)
-  ,
+    props => props.tableSortable),
 };
 
 Table.defaultProps = {
