@@ -1,6 +1,6 @@
 {
   "name": "@edx/paragon",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Accessible, responsive UI component library based on Bootstrap.",
   "main": "src/index.js",
   "author": "arizzitano",
@@ -19,6 +19,7 @@
   "dependencies": {
     "@edx/edx-bootstrap": "^0.4.0",
     "classnames": "^2.2.5",
+    "font-awesome": "^4.7.0",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -43,10 +44,11 @@
     "enzyme": "^2.8.2",
     "eslint": "^4.5.0",
     "eslint-config-airbnb": "^15.0.1",
-    "eslint-config-edx": "^4.0.0",
+    "eslint-config-edx": "^4.0.1",
     "eslint-import-resolver-webpack": "^0.8.1",
     "eslint-plugin-jsx-a11y": "^5.1.0",
     "eslint-plugin-react": "^7.1.0",
+    "file-loader": "^1.1.4",
     "greenkeeper-lockfile": "^1.7.1",
     "husky": "^0.14.1",
     "identity-obj-proxy": "^3.0.0",
