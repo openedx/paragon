@@ -43,12 +43,12 @@ class Table extends React.Component {
   }
 
   getSortButtonScreenReaderText(columnKey) {
-    let text = '';
+    let text;
 
     if (this.state.sortedColumn === columnKey) {
       text = this.props.sortButtonsScreenReaderText[this.state.sortDirection];
     } else {
-      text = this.props.sortButtonsScreenReaderText[''];
+      text = this.props.sortButtonsScreenReaderText.defaultText;
     }
 
     return text;
@@ -155,7 +155,14 @@ Table.propTypes = {
   defaultSortedColumn: isRequiredIf(PropTypes.string, props => props.tableSortable),
   /* eslint-disable react/require-default-props */
   defaultSortDirection: isRequiredIf(PropTypes.string, props => props.tableSortable),
-  sortButtonsScreenReaderText: isRequiredIf(PropTypes.object, props => props.columnSortable),
+  sortButtonsScreenReaderText: isRequiredIf(
+    PropTypes.shape({
+      asc: PropTypes.string,
+      desc: PropTypes.string,
+      defaultText: PropTypes.string,
+    }),
+    props => props.tableSortable)
+  ,
 };
 
 Table.defaultProps = {
@@ -166,7 +173,7 @@ Table.defaultProps = {
   sortButtonsScreenReaderText: {
     asc: 'sort ascending',
     desc: 'sort descending',
-    '': 'click to sort',
+    defaultText: 'click to sort',
   },
 };
 

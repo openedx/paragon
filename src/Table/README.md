@@ -7,8 +7,8 @@ Provides a very basic table component with col-scoped headings displayed in the 
 ### `columns` (object array; required)
 `columns` specifies the order and contents of the table's columns and provides display strings for each column's heading. It is composed of an ordered array of objects. Each object contains the following keys:
 
-1. `label` (string or element; required) contains the display string for each column's heading
-2. `key` (string; required) maps that label to its corresponding datum for each row in `data`, to ensure table data are displayed in their appropriate columns
+1. `label` (string or element; required) contains the display string for each column's heading.
+2. `key` (string; required) maps that label to its corresponding datum for each row in `data`, to ensure table data are displayed in their appropriate columns.
 3. `columnSortable` (boolean; optional) specifies at the column-level whether the column is sortable. If `columnSortable` is `true`, a sort button will be rendered in the column table heading. It is only required if `tableSortable` is set to `true`.
 4. `onSort` (function; conditionally required) specifies what function is called when a sortable column is clicked. It is only required if the column's `columnSortable` is set to `true`.
 
@@ -34,3 +34,12 @@ Specifies Bootstrap class names to apply to the table heading. Options are detai
 
 ### `tableSortable` (boolean; optional)
 Specifies whether the table is sortable. This setting supercedes column-level sortability, so if it is `false`, no sortable components will be rendered.
+
+### `sortButtonsScreenReaderText` (object; conditionally required)
+Specifies the screen reader only text that accompanies the sort buttons for sortable columns. It takes the form of an object containing the following keys:
+
+1. `asc`: (string) specifies the screen reader only text for sort buttons in the ascending state.
+2. `desc`: (string) specifies the screen reader only text for sort buttons in the descending state.
+3. `defaultText`: (string) specifies the screen reader only text for sort buttons that are not engaged.
+
+It is only required if `tableSortable` is set to `true`.
