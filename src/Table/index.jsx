@@ -63,24 +63,28 @@ class Table extends React.Component {
   }
 
   getTableHeading(column) {
-    return (
-      this.props.tableSortable && column.columnSortable ?
-        <Button
-          label={
-            <span>
-              {column.label}
-              <span className={classNames(styles['sr-only'])}>
-                {' '}
-                {this.getSortButtonScreenReaderText(column.key)}
-              </span>
+    let heading;
+    if (this.props.tableSortable && column.columnSortable) {
+      heading = (<Button
+        label={
+          <span>
+            {column.label}
+            <span className={classNames(styles['sr-only'])}>
               {' '}
-              {this.getSortIcon(column.key === this.state.sortedColumn ? this.state.sortDirection : '')}
-            </span>}
-          onClick={() => this.onSortClick(column.key)}
-        />
-        :
-        column.label
-    );
+              {this.getSortButtonScreenReaderText(column.key)}
+            </span>
+            {' '}
+            {this.getSortIcon(column.key === this.state.sortedColumn ? this.state.sortDirection : '')}
+          </span>}
+        onClick={() => this.onSortClick(column.key)}
+      />);
+    } else if (column.hideHeader) {
+      heading = (<span className={classNames(styles['sr-only'])} />);
+    } else {
+      heading = column.label;
+    }
+
+    return heading;
   }
 
   getHeadings() {
