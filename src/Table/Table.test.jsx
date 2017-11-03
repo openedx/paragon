@@ -9,11 +9,12 @@ const props = {
     { key: 'num', label: 'Number' },
     { key: 'x2', label: 'Number * 2' },
     { key: 'sq', label: 'Number Squared' },
+    { key: 'i', label: 'Imaginary Number' },
   ],
   data: [
-    { sq: 1, num: 1, x2: 2 },
-    { sq: 4, num: 2, x2: 4 },
-    { sq: 9, num: 3, x2: 6 },
+    { sq: 1, num: 1, x2: 2, i: 'i' },
+    { sq: 4, num: 2, x2: 4, i: '2i' },
+    { sq: 9, num: 3, x2: 6, i: '3i' },
   ],
 };
 
@@ -28,6 +29,10 @@ const sortableColumnProps = {
   },
   sq: {
     columnSortable: false,
+  },
+  i: {
+    columnSortable: false,
+    hideHeader: true,
   },
 };
 
@@ -60,7 +65,9 @@ describe('<Table />', () => {
 
     it('with data in the same order as the columns', () => {
       wrapper.find('tr').at(1).find('td').forEach((td, i) => {
-        expect(Number(td.text())).toEqual(props.data[0][props.columns[i].key]);
+        let parsed = Number(td.text());
+        if (isNaN(parsed)) { parsed = td.text(); }
+        expect(parsed).toEqual(props.data[0][props.columns[i].key]);
       });
     });
 
@@ -147,7 +154,7 @@ describe('<Table />', () => {
     it('with correct initial sort icons', () => {
       const buttons = wrapper.find('button');
 
-      expect(buttons.find('.fa')).toHaveLength(sortableProps.columns.length - 1);
+      expect(buttons.find('.fa')).toHaveLength(sortableProps.columns.length - 2);
       expect(buttons.at(0).find('.fa-sort-desc')).toHaveLength(1);
       expect(buttons.at(1).find('.fa-sort')).toHaveLength(1);
     });
