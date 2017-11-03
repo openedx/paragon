@@ -1241,7 +1241,9 @@ exports[`Storyshots Table default heading 1`] = `
         className=""
         scope="col"
       >
-        Coat Color
+        <span
+          className="sr-only"
+        />
       </th>
     </tr>
   </thead>
@@ -1332,7 +1334,9 @@ exports[`Storyshots Table responsive 1`] = `
         className=""
         scope="col"
       >
-        Coat Color
+        <span
+          className="sr-only"
+        />
       </th>
     </tr>
   </thead>
@@ -1434,56 +1438,18 @@ exports[`Storyshots Table sortable 1`] = `
         </button>
       </th>
       <th
-        className="sortable"
+        className=""
         scope="col"
       >
-        <button
-          className="btn"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          <span>
-            Famous For
-            <span
-              className="sr-only"
-            >
-               
-              click to sort
-            </span>
-             
-            <span
-              className="fa fa-sort"
-            />
-          </span>
-        </button>
+        Famous For
       </th>
       <th
-        className="sortable"
+        className=""
         scope="col"
       >
-        <button
-          className="btn"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          <span>
-            Coat Color
-            <span
-              className="sr-only"
-            >
-               
-              click to sort
-            </span>
-             
-            <span
-              className="fa fa-sort"
-            />
-          </span>
-        </button>
+        <span
+          className="sr-only"
+        />
       </th>
     </tr>
   </thead>
@@ -1574,7 +1540,9 @@ exports[`Storyshots Table table-striped 1`] = `
         className=""
         scope="col"
       >
-        Coat Color
+        <span
+          className="sr-only"
+        />
       </th>
     </tr>
   </thead>
@@ -1665,7 +1633,9 @@ exports[`Storyshots Table unstyled 1`] = `
         className=""
         scope="col"
       >
-        Coat Color
+        <span
+          className="sr-only"
+        />
       </th>
     </tr>
   </thead>

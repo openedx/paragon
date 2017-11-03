@@ -35,14 +35,21 @@ const catColumns = [
   {
     label: 'Name',
     key: 'name',
+    columnSortable: true,
+    onSort: () => {},
   },
   {
     label: 'Famous For',
     key: 'famous_for',
+    columnSortable: false,
+    onSort: () => {},
   },
   {
     label: 'Coat Color',
     key: 'color',
+    columnSortable: false,
+    hideHeader: true,
+    onSort: () => {},
   },
 ];
 
@@ -96,7 +103,6 @@ storiesOf('Table', module)
       data={catDataSortable.sort((firstElement, secondElement) => sort(firstElement, secondElement, catColumns[0].key, 'desc'))}
       columns={catColumns.map(column => ({
         ...column,
-        columnSortable: true,
         onSort(direction) {
           catDataSortable.sort((firstElement, secondElement) =>
             sort(firstElement, secondElement, column.key, direction));
