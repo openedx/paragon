@@ -4,6 +4,7 @@ import Dropdown from './Dropdown';
 import InputSelect from './InputSelect';
 import InputText from './InputText';
 import Tabs from './Tabs';
+import RadioButtonGroup, { RadioButton } from './RadioButtonGroup';
 
 export {
   Button,
@@ -12,4 +13,6 @@ export {
   InputSelect,
   InputText,
   Tabs,
+  RadioButtonGroup,
+  RadioButton,
 };
