@@ -1,37 +1,54 @@
+/* eslint-disable react/no-multi-comp */
+
 import React from 'react';
 import PropTypes from 'prop-types';
+import ElementPropTypes from 'react-element-proptypes';
 
-function RadioButton(props) {
-  const {
-    children,
-    index,
-    isChecked,
-    name,
-    onBlur,
-    onClick,
-    onFocus,
-    onKeyDown,
-    value,
-    ...other
-  } = props;
+class RadioButton extends React.PureComponent {
+  constructor(props) {
+    super(props);
 
-  return (
-    <div>
-      <input
-        type={'radio'}
-        name={name}
-        aria-checked={isChecked}
-        defaultChecked={isChecked}
-        value={value}
-        data-index={index}
-        onBlur={event => onBlur(event)}
-        onClick={event => onClick(event)}
-        onFocus={event => onFocus(event)}
-        onKeyDown={event => onKeyDown(event)}
-        {...other}
-      />{children}
-    </div>
-  );
+    const {
+      onBlur,
+      onClick,
+      onFocus,
+      onKeyDown,
+    } = props;
+
+    this.onBlur = onBlur.bind(this);
+    this.onClick = onClick.bind(this);
+    this.onFocus = onFocus.bind(this);
+    this.onKeyDown = onKeyDown.bind(this);
+  }
+
+  render() {
+    const {
+      children,
+      index,
+      isChecked,
+      name,
+      value,
+      ...other
+    } = this.props;
+
+    return (
+      <div>
+        <input
+          type={'radio'}
+          name={name}
+          aria-checked={isChecked}
+          defaultChecked={isChecked}
+          value={value}
+          data-index={index}
+          onBlur={this.onBlur}
+          onClick={this.onClick}
+          onFocus={this.onFocus}
+          onKeyDown={this.onKeyDown}
+          {...other}
+        />{children}
+      </div>
+    );
+  }
 }
 
 
@@ -40,6 +57,8 @@ class RadioButtonGroup extends React.Component {
     super();
     // Bind the method to the component context
     this.renderChildren = this.renderChildren.bind(this);
+    this.onChange = this.onChange.bind(this);
+
     this.state = {
       selectedIndex: props.selectedIndex,
     };
@@ -57,15 +76,24 @@ class RadioButtonGroup extends React.Component {
 
 
   renderChildren() {
-    return React.Children.map((this.props.children), (child, index) =>
+    const {
+      children,
+      name,
+      onBlur,
+      onClick,
+      onFocus,
+      onKeyDown,
+    } = this.props;
+
+    return React.Children.map((children), (child, index) =>
       React.cloneElement(child, {
-        name: this.props.name,
+        name,
         value: child.props.value,
         isChecked: index === this.state.selectedIndex,
-        onBlur: this.props.onBlur,
-        onClick: this.props.onClick,
-        onFocus: this.props.onFocus,
-        onKeyDown: this.props.onKeyDown,
+        onBlur,
+        onClick,
+        onFocus,
+        onKeyDown,
         index,
       }),
     );
@@ -89,7 +117,7 @@ class RadioButtonGroup extends React.Component {
       <div
         role={'radiogroup'}
         aria-label={label}
-        onChange={event => this.onChange(event)}
+        onChange={this.onChange}
         tabIndex={-1}
         {...other}
       >
@@ -141,7 +169,7 @@ RadioButtonGroup.defaultProps = {
 };
 
 RadioButtonGroup.propTypes = {
-  children: PropTypes.arrayOf(RadioButton).isRequired,
+  children: PropTypes.arrayOf(ElementPropTypes.elementOfType(RadioButton)).isRequired,
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
