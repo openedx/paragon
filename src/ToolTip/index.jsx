@@ -35,17 +35,27 @@ export default class Tooltip extends React.Component {
     //     <Button
     //       label={<span>Mouse over me for a tooltip!</span>}
     //     />
-        // {this.state.mouseOver && <span className={classNames(styles['tooltip-inner'], styles['tooltip-bottom'])}>Tooltip text</span>}
+    // {this.state.mouseOver && <span className={classNames(styles['tooltip-inner'],
+    // styles['tooltip-bottom'])}>Tooltip text</span>}
     //   </div>
     // );
     return (
-      <div className={classNames(styles.tooltip, styles.show)} role="tooltip" onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut}>
+      <div
+        className={classNames(styles.tooltip, styles.show)}
+        role="tooltip"
+        onMouseOver={this.handleMouseOver}
+        onMouseOut={this.handleMouseOut}
+      >
         {this.props.children}
         <Button
           label="Tooltip!"
         />
-        <div className={classNames(styles['arrow'])} />
-        {this.state.mouseOver && <div className={classNames(styles['tooltip-inner'])}>I am the tooltip!</div>}
+
+        <div className={classNames(styles.arrow)} />
+        {this.state.mouseOver && <div className={classNames(styles['tooltip-inner'])}>
+          I am the tooltip!
+          {this.props.toolTipText}
+        </div>}
       </div>
     );
   }
@@ -54,7 +64,7 @@ export default class Tooltip extends React.Component {
 
 Tooltip.propTypes = {
   toolTipText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
-  toolTipPosition: PropTypes.string.isRequired,
+  // toolTipPosition: PropTypes.string.isRequired,
   children: PropTypes.element.isRequired,
 };
 
