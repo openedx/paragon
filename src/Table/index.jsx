@@ -152,6 +152,7 @@ Table.propTypes = {
     ]).isRequired,
     columnSortable: isRequiredIf(PropTypes.bool, props => props.tableSortable),
     onSort: isRequiredIf(PropTypes.func, props => props.columnSortable),
+    hideHeader: PropTypes.bool,
   })).isRequired,
   headingClassName: PropTypes.arrayOf(PropTypes.string),
   tableSortable: PropTypes.bool,
