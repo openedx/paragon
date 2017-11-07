@@ -1,7 +1,15 @@
 const path = require('path');
+const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 
 module.exports = {
-  devtool: 'source-map',
+  plugins: [
+    new WebpackBuildNotifierPlugin({
+      title: 'Paragon Storybook Build',
+      warningSound: true,
+      failureSound: true,
+    }),
+  ],
+  devtool: "source-map",
   module: {
     rules: [
       {
