@@ -4,40 +4,65 @@ import PropTypes from 'prop-types';
 
 import styles from './Button.scss';
 
-function Button(props) {
-  const {
-    buttonType,
-    className,
-    label,
-    inputRef,
-    isClose,
-    onBlur,
-    onClick,
-    onKeyDown,
-    type,
-    ...other
-  } = props;
+class Button extends React.Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <button
-      className={classNames([
-        ...className,
-        styles.btn,
-      ], {
-        [styles[`btn-${buttonType}`]]: buttonType !== undefined,
-      }, {
-        [styles.close]: isClose,
-      })}
-      onBlur={onBlur}
-      onClick={onClick}
-      onKeyDown={onKeyDown}
-      type={type}
-      ref={inputRef}
-      {...other}
-    >
-      {label}
-    </button>
-  );
+    const {
+      onBlur,
+      onKeyDown,
+    } = props;
+
+    this.onBlur = onBlur.bind(this);
+    this.onKeyDown = onKeyDown.bind(this);
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick() {
+    this.buttonRef.focus();
+    this.props.onClick();
+  }
+
+  getRefs(input) {
+    this.props.inputRef(input);
+    this.buttonRef = input;
+  }
+
+  render() {
+    const {
+      buttonType,
+      className,
+      label,
+      inputRef,
+      isClose,
+      onBlur,
+      onClick,
+      onKeyDown,
+      type,
+      ...other
+    } = this.props;
+
+    return (
+      <button
+        className={classNames([
+          ...this.props.className,
+          styles.btn,
+        ], {
+          [styles[`btn-${this.props.buttonType}`]]: this.props.buttonType !== undefined,
+        }, {
+          [styles.close]: this.props.isClose,
+        })}
+        onBlur={this.props.onBlur}
+        onClick={this.onClick}
+        onKeyDown={this.props.onKeyDown}
+        type={this.props.type}
+        ref={(input) => { this.getRefs(input); }}
+        {...other}
+      >
+        {this.props.label}
+      </button>
+    );
+  }
 }
 
 export const buttonPropTypes = {
