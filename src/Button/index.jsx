@@ -18,9 +18,9 @@ class Button extends React.Component {
     this.onClick = this.onClick.bind(this);
   }
 
-  onClick() {
+  onClick(e) {
     this.buttonRef.focus();
-    this.props.onClick();
+    this.props.onClick(e);
   }
 
   getRefs(input) {
