@@ -15,8 +15,8 @@ class Button extends React.Component {
 
     this.onBlur = onBlur.bind(this);
     this.onKeyDown = onKeyDown.bind(this);
-    this.onClick = this.onClick.bind(this);
 
+    this.onClick = this.onClick.bind(this);
     this.setRefs = this.setRefs.bind(this);
   }
 
