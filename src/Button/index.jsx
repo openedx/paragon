@@ -16,14 +16,23 @@ class Button extends React.Component {
     this.onBlur = onBlur.bind(this);
     this.onKeyDown = onKeyDown.bind(this);
     this.onClick = this.onClick.bind(this);
+
+    this.setRefs = this.setRefs.bind(this);
   }
 
+  /*
+    The button component is given focus explicitly in its onClick to account
+    for the fact that an HTML <button> element in Firefox and Safari does not get
+    focus on onClick.
+
+    See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button.
+  */
   onClick(e) {
     this.buttonRef.focus();
     this.props.onClick(e);
   }
 
-  getRefs(input) {
+  setRefs(input) {
     this.props.inputRef(input);
     this.buttonRef = input;
   }
@@ -45,18 +54,18 @@ class Button extends React.Component {
     return (
       <button
         className={classNames([
-          ...this.props.className,
+          ...this.className,
           styles.btn,
         ], {
-          [styles[`btn-${this.props.buttonType}`]]: this.props.buttonType !== undefined,
+          [styles[`btn-${this.buttonType}`]]: this.buttonType !== undefined,
         }, {
-          [styles.close]: this.props.isClose,
+          [styles.close]: this.isClose,
         })}
-        onBlur={this.props.onBlur}
+        onBlur={this.onBlur}
         onClick={this.onClick}
-        onKeyDown={this.props.onKeyDown}
-        type={this.props.type}
-        ref={(input) => { this.getRefs(input); }}
+        onKeyDown={this.onKeyDown}
+        type={this.type}
+        ref={this.setRefs}
         {...other}
       >
         {this.props.label}
