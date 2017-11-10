@@ -1,6 +1,6 @@
 {
   "name": "@edx/paragon",
-  "version": "1.1.7",
+  "version": "0.0.0-development",
   "description": "Accessible, responsive UI component library based on Bootstrap.",
   "main": "src/index.js",
   "author": "arizzitano",
@@ -13,6 +13,8 @@
     "deploy-storybook": "storybook-to-ghpages",
     "lint": "eslint --ext .js --ext .jsx .",
     "precommit": "npm run lint",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "snapshot": "jest --updateSnapshot",
     "start": "start-storybook -p 6006",
     "test": "jest --coverage"
@@ -32,6 +34,7 @@
     "@storybook/addon-console": "^1.0.0",
     "@storybook/addon-options": "^3.2.6",
     "@storybook/addon-storyshots": "^3.2.8",
+    "@storybook/channels": "^3.2.15",
     "@storybook/react": "^3.2.12",
     "@storybook/storybook-deployer": "^2.0.0",
     "babel-cli": "^6.24.1",
@@ -42,8 +45,10 @@
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.4.0",
     "babel-preset-react": "^6.24.1",
+    "commitizen": "^2.9.6",
     "coveralls": "^3.0.0",
     "css-loader": "^0.28.4",
+    "cz-conventional-changelog": "^2.1.0",
     "enzyme": "^2.8.2",
     "eslint": "^4.5.0",
     "eslint-config-airbnb": "^15.0.1",
@@ -61,6 +66,7 @@
     "react-router-dom": "^4.1.1",
     "react-test-renderer": "^15.6.1",
     "sass-loader": "^6.0.5",
+    "semantic-release": "^8.2.0",
     "source-map-loader": "^0.2.1",
     "style-loader": "^0.19.0",
     "webpack": "^3.0.0",
@@ -76,5 +82,10 @@
       "/node_modules/",
       "(.stories)\\.(jsx)$"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
