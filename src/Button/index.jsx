@@ -16,8 +16,8 @@ class Button extends React.Component {
     this.onBlur = onBlur.bind(this);
     this.onKeyDown = onKeyDown.bind(this);
 
-    this.onClick = this.onClick.bind(this);
     this.setRefs = this.setRefs.bind(this);
+    this.onClick = this.onClick.bind(this);
   }
 
   /*
@@ -33,8 +33,8 @@ class Button extends React.Component {
   }
 
   setRefs(input) {
-    this.props.inputRef(input);
     this.buttonRef = input;
+    this.props.inputRef(input);
   }
 
   render() {
@@ -44,29 +44,27 @@ class Button extends React.Component {
       label,
       inputRef,
       isClose,
-      onBlur,
-      onClick,
-      onKeyDown,
       type,
       ...other
     } = this.props;
 
     return (
       <button
+        {...other}
         className={classNames([
           ...className,
           styles.btn,
         ], {
           [styles[`btn-${buttonType}`]]: buttonType !== undefined,
         }, {
-          [styles.close]: isClose,
+          [styles.close]: this.props.isClose,
         })}
-        onBlur={onBlur}
-        onClick={onClick}
-        onKeyDown={onKeyDown}
+        onBlur={this.onBlur}
+        onClick={this.onClick}
+        onKeyDown={this.onKeyDown}
         type={type}
         ref={this.setRefs}
-        {...other}
+
       >
         {this.props.label}
       </button>
@@ -94,8 +92,8 @@ Button.defaultProps = {
   inputRef: () => {},
   isClose: false,
   onBlur: () => {},
-  onClick: () => {},
   onKeyDown: () => {},
+  onClick: () => {},
   type: 'button',
 };
 
