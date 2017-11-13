@@ -133,6 +133,54 @@ exports[`Storyshots Dropdown basic usage 1`] = `
 </div>
 `;
 
+exports[`Storyshots HyperLink minimal usage 1`] = `
+<a
+  href="https://en.wikipedia.org/wiki/Hyperlink"
+  onClick={[Function]}
+  target="_self"
+>
+  edX.org
+</a>
+`;
+
+exports[`Storyshots HyperLink with blank target 1`] = `
+<a
+  href="https://www.edx.org"
+  onClick={[Function]}
+  target="_blank"
+>
+  edX.org
+  <span>
+     
+    <span
+      aria-hidden={false}
+      aria-label="Opens in a new window"
+      className="fa fa-external-link"
+      title="Opens in a new window"
+    />
+  </span>
+</a>
+`;
+
+exports[`Storyshots HyperLink with onClick 1`] = `
+<a
+  href="https://www.edx.org"
+  onClick={[Function]}
+  target="_blank"
+>
+  edX.org
+  <span>
+     
+    <span
+      aria-hidden={false}
+      aria-label="Opens in a new window"
+      className="fa fa-external-link"
+      title="Opens in a new window"
+    />
+  </span>
+</a>
+`;
+
 exports[`Storyshots InputSelect basic usage 1`] = `
 <div
   className="form-group"
