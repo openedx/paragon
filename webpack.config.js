@@ -6,6 +6,7 @@ const env = process.env.NODE_ENV || 'dev';
 const base = {
   devtool: 'source-map',
   entry: {
+    polyfill: 'babel-polyfill',
     main: path.resolve('./docs/App.js'),
   },
   output: {

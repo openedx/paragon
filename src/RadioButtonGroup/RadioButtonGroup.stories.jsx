@@ -40,23 +40,23 @@ const onKeyDown = (event) => {
 storiesOf('RadioButtonGroup', module)
   .add('unselected minimal usage', () => (
     <RadioButtonGroup
-      name={'rbg'}
-      label={'Radio Button Group'}
+      name="rbg"
+      label="Radio Button Group"
       onBlur={action('Radio Button Blur')}
       onChange={onChange}
       onClick={onClick}
       onFocus={onFocus}
       onKeyDown={onKeyDown}
     >
-      <RadioButton value={'jaebaebae'}>First Value</RadioButton>
-      <RadioButton value={'value2'}>Second Value</RadioButton>
-      <RadioButton value={'value3'}>Third Value</RadioButton>
+      <RadioButton value="jaebaebae">First Value</RadioButton>
+      <RadioButton value="value2">Second Value</RadioButton>
+      <RadioButton value="value3">Third Value</RadioButton>
     </RadioButtonGroup>
   ))
   .add('selected minimal usage', () => (
     <RadioButtonGroup
-      name={'rbg'}
-      label={'Radio Button Group'}
+      name="rbg"
+      label="Radio Button Group"
       onBlur={action('Radio Button Blur')}
       onChange={onChange}
       onClick={onClick}
@@ -64,8 +64,8 @@ storiesOf('RadioButtonGroup', module)
       onKeyDown={onKeyDown}
       selectedIndex={1}
     >
-      <RadioButton value={'jaebaebae'}>First Value</RadioButton>
-      <RadioButton value={'value2'}>Second Value</RadioButton>
-      <RadioButton value={'value3'}>Third Value</RadioButton>
+      <RadioButton value="jaebaebae">First Value</RadioButton>
+      <RadioButton value="value2">Second Value</RadioButton>
+      <RadioButton value="value3">Third Value</RadioButton>
     </RadioButtonGroup>
   ));

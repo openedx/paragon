@@ -19,22 +19,22 @@ const onClick = (event) => {
 storiesOf('HyperLink', module)
   .add('minimal usage', () => (
     <Hyperlink
-      destination={'https://en.wikipedia.org/wiki/Hyperlink'}
-      content={'edX.org'}
+      destination="https://en.wikipedia.org/wiki/Hyperlink"
+      content="edX.org"
     />
   ))
   .add('with blank target', () => (
     <Hyperlink
-      destination={'https://www.edx.org'}
-      content={'edX.org'}
-      target={'_blank'}
+      destination="https://www.edx.org"
+      content="edX.org"
+      target="_blank"
     />
   ))
   .add('with onClick', () => (
     <Hyperlink
-      destination={'https://www.edx.org'}
-      content={'edX.org'}
-      target={'_blank'}
+      destination="https://www.edx.org"
+      content="edX.org"
+      target="_blank"
       onClick={onClick}
     />
   ));

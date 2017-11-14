@@ -51,11 +51,7 @@ const sortableProps = {
 
 describe('<Table />', () => {
   describe('renders', () => {
-    const wrapper = shallow(
-      <Table
-        {...props}
-      />,
-    );
+    const wrapper = shallow(<Table {...props} />);
 
     it('with display columns in the right order', () => {
       wrapper.find('th').forEach((th, i) => {
@@ -78,12 +74,7 @@ describe('<Table />', () => {
   });
 
   describe('that is non-sortable renders', () => {
-    const wrapper = mount(
-      <Table
-        {...sortableProps}
-        tableSortable={false}
-      />,
-    );
+    const wrapper = mount(<Table {...sortableProps} tableSortable={false} />);
 
     it('without sortable columns', () => {
       const tableHeadings = wrapper.find('th');
@@ -105,11 +96,7 @@ describe('<Table />', () => {
   });
 
   describe('that is sortable and has mixed columns renders', () => {
-    let wrapper = shallow(
-      <Table
-        {...sortableProps}
-      />,
-    );
+    let wrapper = shallow(<Table {...sortableProps} />);
 
     it('with sortable classname on correct headings', () => {
       const tableHeadings = wrapper.find('th');
@@ -140,11 +127,7 @@ describe('<Table />', () => {
       expect(wrapper.state('sortDirection')).toEqual(sortableProps.defaultSortDirection);
     });
 
-    wrapper = mount(
-      <Table
-        {...sortableProps}
-      />,
-    );
+    wrapper = mount(<Table {...sortableProps} />);
 
     it('with correct column buttons', () => {
       const buttons = wrapper.find('button');
@@ -167,11 +150,7 @@ describe('<Table />', () => {
     let x2Spy;
 
     beforeEach(() => {
-      wrapper = mount(
-        <Table
-          {...sortableProps}
-        />,
-      );
+      wrapper = mount(<Table {...sortableProps} />);
 
       buttons = wrapper.find('button');
       numSpy = jest.fn();
@@ -183,6 +162,7 @@ describe('<Table />', () => {
 
     it('changes sort icons appropriately on click', () => {
       buttons.at(0).simulate('click');
+      buttons = wrapper.find('button');
 
       expect(buttons.at(0).find('.fa')).toHaveLength(1);
       expect(buttons.at(0).find('.fa-sort-asc')).toHaveLength(1);
@@ -195,6 +175,7 @@ describe('<Table />', () => {
       expect(buttons.at(1).find('.fa-sort')).toHaveLength(1);
 
       buttons.at(1).simulate('click');
+      buttons = wrapper.find('button');
 
       expect(buttons.at(0).find('.fa')).toHaveLength(1);
       expect(buttons.at(0).find('.fa-sort-asc')).toHaveLength(0);
@@ -211,6 +192,7 @@ describe('<Table />', () => {
       const headings = wrapper.find('.sr-only');
 
       buttons.at(0).simulate('click');
+      buttons = wrapper.find('button');
 
       expect(headings.at(0).text()).toEqual(' sort ascending');
       expect(headings.at(1).text()).toEqual(' click to sort');
@@ -223,16 +205,19 @@ describe('<Table />', () => {
 
     it('changes state appropriately on click', () => {
       buttons.at(0).simulate('click');
+      buttons = wrapper.find('button');
 
       expect(wrapper.state('sortedColumn')).toEqual(sortableProps.defaultSortedColumn);
       expect(wrapper.state('sortDirection')).toEqual('asc');
 
       buttons.at(0).simulate('click');
+      buttons = wrapper.find('button');
 
       expect(wrapper.state('sortedColumn')).toEqual(sortableProps.defaultSortedColumn);
       expect(wrapper.state('sortDirection')).toEqual('desc');
 
       buttons.at(1).simulate('click');
+      buttons = wrapper.find('button');
 
       expect(wrapper.state('sortedColumn')).toEqual(sortableProps.columns[1].key);
       expect(wrapper.state('sortDirection')).toEqual('desc');
@@ -243,6 +228,7 @@ describe('<Table />', () => {
       expect(x2Spy).toHaveBeenCalledTimes(0);
 
       buttons.at(0).simulate('click');
+      buttons = wrapper.find('button');
 
       expect(numSpy).toHaveBeenCalledTimes(1);
       expect(x2Spy).toHaveBeenCalledTimes(0);
@@ -250,6 +236,7 @@ describe('<Table />', () => {
       expect(numSpy).toBeCalledWith('asc');
 
       buttons.at(0).simulate('click');
+      buttons = wrapper.find('button');
 
       expect(numSpy).toHaveBeenCalledTimes(2);
       expect(x2Spy).toHaveBeenCalledTimes(0);
@@ -257,6 +244,7 @@ describe('<Table />', () => {
       expect(numSpy).toBeCalledWith('desc');
 
       buttons.at(1).simulate('click');
+      buttons = wrapper.find('button');
 
       expect(numSpy).toHaveBeenCalledTimes(2);
       expect(x2Spy).toHaveBeenCalledTimes(1);

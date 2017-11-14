@@ -37,9 +37,7 @@ describe('asInput()', () => {
       ...baseProps,
       value: 'foofoo',
     };
-    const wrapper = mount(
-      <InputTestComponent {...props} />,
-    );
+    const wrapper = mount(<InputTestComponent {...props} />);
     expect(wrapper.find('label').text()).toEqual(props.label);
     expect(wrapper.find('#description-asInput1').text()).toEqual(props.description);
     expect(wrapper.state('value')).toEqual(props.value);
@@ -52,9 +50,7 @@ describe('asInput()', () => {
         ...baseProps,
         onBlur: spy,
       };
-      const wrapper = mount(
-        <InputTestComponent {...props} />,
-      );
+      const wrapper = mount(<InputTestComponent {...props} />);
       wrapper.find('input').simulate('blur');
       expect(spy).toHaveBeenCalledTimes(1);
     });
@@ -65,9 +61,7 @@ describe('asInput()', () => {
         ...baseProps,
         onChange: spy,
       };
-      const wrapper = mount(
-        <InputTestComponent {...props} />,
-      );
+      const wrapper = mount(<InputTestComponent {...props} />);
       wrapper.find('input').simulate('change');
       expect(spy).toHaveBeenCalledTimes(1);
     });
@@ -80,9 +74,7 @@ describe('asInput()', () => {
           ...baseProps,
           validator: spy,
         };
-        const wrapper = mount(
-          <InputTestComponent {...props} />,
-        );
+        const wrapper = mount(<InputTestComponent {...props} />);
         wrapper.find('input').simulate('blur');
         expect(spy).toHaveBeenCalledTimes(1);
       });
@@ -98,9 +90,7 @@ describe('asInput()', () => {
           ...baseProps,
           validator: spy,
         };
-        const wrapper = mount(
-          <InputTestComponent {...props} />,
-        );
+        const wrapper = mount(<InputTestComponent {...props} />);
         wrapper.find('input').simulate('blur');
         expect(spy).toHaveBeenCalledTimes(1);
         const err = wrapper.find('.form-control-feedback');
