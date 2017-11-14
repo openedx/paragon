@@ -5,12 +5,7 @@ import CheckBox from './index';
 
 describe('<CheckBox />', () => {
   it('attributes are set correctly', () => {
-    const wrapper = mount(
-      <CheckBox
-        name="checkbox"
-        label="check me out!"
-      />,
-    );
+    const wrapper = mount(<CheckBox name="checkbox" label="check me out!" />);
 
     expect(wrapper.find('[name="checkbox"]').exists()).toEqual(true);
     expect(wrapper.find('[type="checkbox"]').exists()).toEqual(true);
@@ -19,12 +14,7 @@ describe('<CheckBox />', () => {
   });
 
   it('aria-label changes after click', () => {
-    const wrapper = mount(
-      <CheckBox
-        name="checkbox"
-        label="check me out!"
-      />,
-    );
+    const wrapper = mount(<CheckBox name="checkbox" label="check me out!" />);
 
     expect(wrapper.find('[aria-checked=false]').exists()).toEqual(true);
 
@@ -39,13 +29,7 @@ describe('<CheckBox />', () => {
 
   it('check that callback function is triggered when clicked', () => {
     const spy = jest.fn();
-    const wrapper = mount(
-      <CheckBox
-        name="checkbox"
-        label="check me out!"
-        onChange={spy}
-      />,
-    );
+    const wrapper = mount(<CheckBox name="checkbox" label="check me out!"onChange={spy} />);
 
     expect(spy).toHaveBeenCalledTimes(0);
     // check
@@ -59,13 +43,7 @@ describe('<CheckBox />', () => {
   });
 
   it('checks if start state can be set to checked', () => {
-    const wrapper = mount(
-      <CheckBox
-        name="checkbox"
-        label="I start checked"
-        checked
-      />,
-    );
+    const wrapper = mount(<CheckBox name="checkbox" label="I start checked" checked />);
 
     expect(wrapper.find('[defaultChecked=true]').exists()).toEqual(true);
     expect(wrapper.find('[aria-checked=true]').exists()).toEqual(true);
@@ -76,13 +54,7 @@ describe('<CheckBox />', () => {
   });
 
   it('checkbox can be disabled', () => {
-    const wrapper = mount(
-      <CheckBox
-        name="checkbox"
-        label="I am disabled"
-        disabled
-      />,
-    );
+    const wrapper = mount(<CheckBox name="checkbox" label="I am disabled" disabled />);
 
     expect(wrapper.props().disabled).toEqual(true);
 

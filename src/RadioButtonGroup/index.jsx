@@ -34,7 +34,7 @@ class RadioButton extends React.PureComponent {
     return (
       <div>
         <input
-          type={'radio'}
+          type="radio"
           name={name}
           aria-checked={isChecked}
           defaultChecked={isChecked}
@@ -95,8 +95,7 @@ class RadioButtonGroup extends React.Component {
         onFocus,
         onKeyDown,
         index,
-      }),
-    );
+      }));
   }
 
   render() {
@@ -115,7 +114,7 @@ class RadioButtonGroup extends React.Component {
 
     return (
       <div
-        role={'radiogroup'}
+        role="radiogroup"
         aria-label={label}
         onChange={this.onChange}
         tabIndex={-1}
