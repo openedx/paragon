@@ -63,7 +63,7 @@ class Button extends React.Component {
         onClick={this.onClick}
         onKeyDown={this.onKeyDown}
         type={type}
-        ref={this.setRefs}
+        ref={input => this.setRefs(input)}
 
       >
         {this.props.label}
