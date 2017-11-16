@@ -15,9 +15,8 @@ class Button extends React.Component {
 
     this.onBlur = onBlur.bind(this);
     this.onKeyDown = onKeyDown.bind(this);
-
-    this.setRefs = this.setRefs.bind(this);
     this.onClick = this.onClick.bind(this);
+    this.setRefs = this.setRefs.bind(this);
   }
 
   /*
@@ -32,6 +31,14 @@ class Button extends React.Component {
     this.props.onClick(e);
   }
 
+  /*
+    The button component needs a ref to itself to be able to force
+    focus in its onClick function (buttonRef). It also needs to accept
+    a callback function from parent components to give those parents
+    a reference to their child button (e.g. for the modal component).
+    Therefore, both have been wrapped in a function bound on the class,
+    since one cannot set two ref attributes on a component.
+  */
   setRefs(input) {
     this.buttonRef = input;
     this.props.inputRef(input);
@@ -42,9 +49,9 @@ class Button extends React.Component {
       buttonType,
       className,
       label,
-      inputRef,
       isClose,
       type,
+      inputRef,
       ...other
     } = this.props;
 
@@ -63,7 +70,7 @@ class Button extends React.Component {
         onClick={this.onClick}
         onKeyDown={this.onKeyDown}
         type={type}
-        ref={input => this.setRefs(input)}
+        ref={this.setRefs}
 
       >
         {this.props.label}

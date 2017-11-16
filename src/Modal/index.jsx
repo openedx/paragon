@@ -12,6 +12,9 @@ class Modal extends React.Component {
 
     this.close = this.close.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.setXButton = this.setXButton.bind(this);
+    this.setCloseButton = this.setCloseButton.bind(this);
+
     this.headerId = newId();
 
     this.state = {
@@ -40,6 +43,14 @@ class Modal extends React.Component {
   close() {
     this.setState({ open: false });
     this.props.onClose();
+  }
+
+  setXButton(input) {
+    this.xButton = input;
+  }
+
+  setCloseButton(input) {
+    this.closeButton = input;
   }
 
   handleKeyDown(e) {
@@ -100,7 +111,7 @@ class Modal extends React.Component {
                 aria-label={this.props.closeText}
                 buttonType="light"
                 onClick={this.close}
-                inputRef={(input) => { this.xButton = input; }}
+                inputRef={this.setXButton}
                 onKeyDown={this.handleKeyDown}
               />
             </div>
@@ -113,7 +124,7 @@ class Modal extends React.Component {
                 label={this.props.closeText}
                 buttonType="secondary"
                 onClick={this.close}
-                inputRef={(input) => { this.closeButton = input; }}
+                inputRef={this.setCloseButton}
                 onKeyDown={this.handleKeyDown}
               />
             </div>
