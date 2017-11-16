@@ -45,20 +45,35 @@ class Button extends React.Component {
   }
 
   render() {
+    const {
+      buttonType,
+      className,
+      label,
+      isClose,
+      type,
+      /* inputRef is not used directly in the render, but it needs to be assigned
+        here to prevent it from being passed to the HTML button component as part
+        of other.
+      */
+      inputRef,
+      ...other
+    } = this.props;
+
     return (
       <button
+        {...other}
         className={classNames([
-          ...this.props.className,
+          ...className,
           styles.btn,
         ], {
-          [styles[`btn-${this.props.buttonType}`]]: this.props.buttonType !== undefined,
+          [styles[`btn-${buttonType}`]]: buttonType !== undefined,
         }, {
           [styles.close]: this.props.isClose,
         })}
         onBlur={this.onBlur}
         onClick={this.onClick}
         onKeyDown={this.onKeyDown}
-        type={this.props.type}
+        type={type}
         ref={this.setRefs}
 
       >
@@ -88,8 +103,8 @@ Button.defaultProps = {
   inputRef: () => {},
   isClose: false,
   onBlur: () => {},
-  onClick: () => {},
   onKeyDown: () => {},
+  onClick: () => {},
   type: 'button',
 };
 
