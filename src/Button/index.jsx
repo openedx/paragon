@@ -74,8 +74,8 @@ export const buttonPropTypes = {
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   inputRef: PropTypes.func,
   isClose: PropTypes.bool,
-  onClick: PropTypes.func,
   onBlur: PropTypes.func,
+  onClick: PropTypes.func,
   onKeyDown: PropTypes.func,
   type: PropTypes.string,
 };
@@ -88,8 +88,8 @@ Button.defaultProps = {
   inputRef: () => {},
   isClose: false,
   onBlur: () => {},
-  onKeyDown: () => {},
   onClick: () => {},
+  onKeyDown: () => {},
   type: 'button',
 };
 
