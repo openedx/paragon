@@ -23,12 +23,12 @@ describe('<Button />', () => {
   it('renders', () => {
     expect(button).toHaveLength(1);
   });
-  it('puts focus on button', () => {
+  it('puts focus on button on click', () => {
     expect(button.matchesElement(document.activeElement)).toEqual(false);
     button.simulate('click');
     expect(button.at(0).matchesElement(document.activeElement)).toEqual(true);
   });
-  it('calls onClick prop', () => {
+  it('calls onClick prop on click', () => {
     const onClickSpy = jest.fn();
     wrapper.setProps({ onClick: onClickSpy });
 
