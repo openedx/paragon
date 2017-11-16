@@ -40,17 +40,17 @@ class Modal extends React.Component {
     }
   }
 
-  close() {
-    this.setState({ open: false });
-    this.props.onClose();
-  }
-
   setXButton(input) {
     this.xButton = input;
   }
 
   setCloseButton(input) {
     this.closeButton = input;
+  }
+
+  close() {
+    this.setState({ open: false });
+    this.props.onClose();
   }
 
   handleKeyDown(e) {
