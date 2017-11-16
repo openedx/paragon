@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Button basic usage 1`] = `
+<button
+  className="btn"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  type="button"
+>
+  Click me and check the console!
+</button>
+`;
+
 exports[`Storyshots CheckBox basic usage 1`] = `
 <div
   className="form-group"
