@@ -68,7 +68,7 @@ class Button extends React.Component {
         ], {
           [styles[`btn-${buttonType}`]]: buttonType !== undefined,
         }, {
-          [styles.close]: this.props.isClose,
+          [styles.close]: isClose,
         })}
         onBlur={this.onBlur}
         onClick={this.onClick}
