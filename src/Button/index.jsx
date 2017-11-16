@@ -45,31 +45,21 @@ class Button extends React.Component {
   }
 
   render() {
-    const {
-      buttonType,
-      className,
-      label,
-      isClose,
-      type,
-      inputRef,
-      ...other
-    } = this.props;
-
     return (
       <button
-        {...other}
+        // {...other}
         className={classNames([
-          ...className,
+          ...this.props.className,
           styles.btn,
         ], {
-          [styles[`btn-${buttonType}`]]: buttonType !== undefined,
+          [styles[`btn-${this.props.buttonType}`]]: this.props.buttonType !== undefined,
         }, {
           [styles.close]: this.props.isClose,
         })}
         onBlur={this.onBlur}
         onClick={this.onClick}
         onKeyDown={this.onKeyDown}
-        type={type}
+        type={this.props.type}
         ref={this.setRefs}
 
       >
