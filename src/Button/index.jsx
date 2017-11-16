@@ -47,7 +47,6 @@ class Button extends React.Component {
   render() {
     return (
       <button
-        // {...other}
         className={classNames([
           ...this.props.className,
           styles.btn,
@@ -75,8 +74,8 @@ export const buttonPropTypes = {
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   inputRef: PropTypes.func,
   isClose: PropTypes.bool,
-  onBlur: PropTypes.func,
   onClick: PropTypes.func,
+  onBlur: PropTypes.func,
   onKeyDown: PropTypes.func,
   type: PropTypes.string,
 };
