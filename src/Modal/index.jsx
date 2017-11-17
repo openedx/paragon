@@ -99,8 +99,23 @@ class Modal extends React.Component {
   }
 
   render() {
+    const { open } = this.state;
+
     return (
-      <div className={classNames(styles.modal, styles.show, { [styles['modal-open']]: this.state.open })} role="dialog" aria-modal aria-labelledby={this.headerId}>
+      <div
+        className={classNames(
+          styles.modal,
+          {
+            [styles['modal-open']]: open,
+            [styles['modal-backdrop']]: open,
+            [styles.show]: open,
+            [styles.fade]: !open,
+          },
+        )}
+        role="dialog"
+        aria-modal
+        aria-labelledby={this.headerId}
+      >
         <div className={styles['modal-dialog']}>
           <div className={styles['modal-content']}>
             <div className={styles['modal-header']}>

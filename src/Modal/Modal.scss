@@ -1,5 +1,14 @@
+@import "~bootstrap/scss/_variables";
 @import "~bootstrap/scss/_modal";
 
 .modal-open {
     display: block;
+}
+
+.modal-backdrop {
+  background-color: rgba(0,0,0,0.3);
+
+  // Fade for backdrop
+  &.fade { opacity: 0; }
+  &.show { opacity: 1; }
 }
