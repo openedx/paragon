@@ -1602,6 +1602,7 @@ exports[`Storyshots Table sortable 1`] = `
             </span>
              
             <span
+              aria-hidden={true}
               className="fa fa-sort-desc"
             />
           </span>

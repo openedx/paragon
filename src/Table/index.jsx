@@ -59,6 +59,7 @@ class Table extends React.Component {
 
     return (<span
       className={classNames(FontAwesomeStyles.fa, FontAwesomeStyles[sortIconClassName])}
+      aria-hidden
     />);
   }
 
