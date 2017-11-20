@@ -5,7 +5,10 @@
   "main": "src/index.js",
   "author": "arizzitano",
   "license": "MIT",
-  "repository": "https://github.com/edx/paragon/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edx/paragon.git"
+  },
   "scripts": {
     "build": "NODE_ENV=production webpack",
     "build-storybook": "build-storybook",

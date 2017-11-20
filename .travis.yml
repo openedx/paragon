@@ -23,4 +23,4 @@ script:
 after_success:
   - npm run semantic-release
   - npm run coveralls
-  - npm run deploy-storybook
+  - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then npm run deploy-storybook; fi
