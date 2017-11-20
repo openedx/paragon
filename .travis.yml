@@ -20,6 +20,7 @@ script:
   - npm run lint
   - npm run test
 
-after_script:
-  - npm run coveralls
+after_success:
   - npm run semantic-release
+  - npm run coveralls
+  - npm run deploy-storybook
