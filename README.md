@@ -1,7 +1,11 @@
 # Paragon
 
 [![Build Status](https://travis-ci.org/edx/paragon.svg?branch=master)](https://travis-ci.org/edx/paragon) [![Coveralls](https://img.shields.io/coveralls/edx/paragon.svg?branch=master)](https://coveralls.io/github/edx/paragon) [![Greenkeeper badge](https://badges.greenkeeper.io/edx/paragon.svg)](https://greenkeeper.io/)
-[![npm version](https://badge.fury.io/js/%40edx%2Fparagon.svg)](https://badge.fury.io/js/%40edx%2Fparagon)
+[![npm_version](https://img.shields.io/npm/v/@edx/paragon.svg)](@edx/paragon)
+[![npm_downloads](https://img.shields.io/npm/dt/@edx/paragon.svg)](@edx/paragon)
+[![license](https://img.shields.io/npm/l/@edx/paragon.svg)](@edx/paragon)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+
 
 Paragon provides accessible React components for use within the Open edX platform and beyond.
 
