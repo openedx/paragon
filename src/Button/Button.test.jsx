@@ -12,11 +12,9 @@ describe('<Button />', () => {
   let button;
 
   beforeEach(() => {
-    wrapper = mount(
-      <Button
-        {...defaultProps}
-      />,
-    );
+    wrapper = mount(<Button
+      {...defaultProps}
+    />);
 
     button = wrapper.find('button');
   });
@@ -26,7 +24,8 @@ describe('<Button />', () => {
   it('puts focus on button on click', () => {
     expect(button.matchesElement(document.activeElement)).toEqual(false);
     button.simulate('click');
-    expect(button.at(0).matchesElement(document.activeElement)).toEqual(true);
+    button = wrapper.find('button');
+    expect(button.at(0).html()).toEqual(document.activeElement.outerHTML);
   });
   it('calls onClick prop on click', () => {
     const onClickSpy = jest.fn();

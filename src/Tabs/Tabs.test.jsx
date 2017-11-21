@@ -1,7 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import Tabs from './index';
 
 const props = {
@@ -29,21 +28,13 @@ const tabSelectedAtIndex = (index, wrapper) => {
 
 describe('<Tabs />', () => {
   it('renders with first tab selected', () => {
-    const wrapper = shallow(
-      <Tabs
-        {...props}
-      />,
-    );
+    const wrapper = shallow(<Tabs {...props} />);
     tabSelectedAtIndex(0, wrapper);
   });
 
   describe('switches tab selection', () => {
     it('on click', () => {
-      const wrapper = shallow(
-        <Tabs
-          {...props}
-        />,
-      );
+      const wrapper = shallow(<Tabs {...props} />);
       wrapper.find('a').forEach((node, i) => {
         node.simulate('click');
         tabSelectedAtIndex(i, wrapper);

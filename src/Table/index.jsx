@@ -31,8 +31,7 @@ class Table extends React.Component {
       sortDirection: newDirection,
     });
 
-    const currentlySortedColumn = this.props.columns.find(
-      column => (columnKey === column.key));
+    const currentlySortedColumn = this.props.columns.find(column => (columnKey === column.key));
     currentlySortedColumn.onSort(newDirection);
   }
 
@@ -90,9 +89,8 @@ class Table extends React.Component {
 
   getHeadings() {
     return (
-      <thead className={classNames(
-        ...this.props.headingClassName.map(className => styles[className]),
-      )}
+      <thead
+        className={classNames(...this.props.headingClassName.map(className => styles[className]))}
       >
         <tr>
           {this.props.columns.map(col => (
@@ -167,7 +165,8 @@ Table.propTypes = {
       desc: PropTypes.string,
       defaultText: PropTypes.string,
     }),
-    props => props.tableSortable),
+    props => props.tableSortable,
+  ),
 };
 
 Table.defaultProps = {
