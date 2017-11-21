@@ -5,6 +5,7 @@ import InputSelect from './InputSelect';
 import InputText from './InputText';
 import Tabs from './Tabs';
 import RadioButtonGroup, { RadioButton } from './RadioButtonGroup';
+import Hyperlink from './Hyperlink';
 
 export {
   Button,
@@ -15,4 +16,5 @@ export {
   Tabs,
   RadioButtonGroup,
   RadioButton,
+  Hyperlink,
 };
