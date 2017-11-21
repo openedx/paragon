@@ -24,11 +24,12 @@
   },
   "dependencies": {
     "@edx/edx-bootstrap": "^0.4.2",
+    "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.5",
     "font-awesome": "^4.7.0",
     "prop-types": "^15.5.8",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0",
     "react-element-proptypes": "^1.0.0",
     "react-proptype-conditional-require": "^1.0.4"
   },
@@ -37,8 +38,8 @@
     "@storybook/addon-console": "^1.0.0",
     "@storybook/addon-options": "^3.2.6",
     "@storybook/addon-storyshots": "^3.2.8",
-    "@storybook/channels": "^3.2.15",
-    "@storybook/react": "^3.2.12",
+    "@storybook/channels": "^3.2.16",
+    "@storybook/react": "^3.2.16",
     "@storybook/storybook-deployer": "^2.0.0",
     "babel-cli": "^6.24.1",
     "babel-jest": "^21.0.0",
@@ -52,9 +53,10 @@
     "coveralls": "^3.0.0",
     "css-loader": "^0.28.4",
     "cz-conventional-changelog": "^2.1.0",
-    "enzyme": "^2.8.2",
+    "enzyme": "^3.1.1",
+    "enzyme-adapter-react-16": "^1.0.4",
     "eslint": "^4.5.0",
-    "eslint-config-airbnb": "^15.0.1",
+    "eslint-config-airbnb": "^16.0.0",
     "eslint-config-edx": "^4.0.1",
     "eslint-import-resolver-webpack": "^0.8.1",
     "eslint-plugin-jsx-a11y": "^5.1.0",
@@ -67,7 +69,7 @@
     "node-sass": "^4.5.3",
     "postcss-scss": "^1.0.1",
     "react-router-dom": "^4.1.1",
-    "react-test-renderer": "^15.6.1",
+    "react-test-renderer": "^16.1.0",
     "sass-loader": "^6.0.5",
     "semantic-release": "^8.2.0",
     "source-map-loader": "^0.2.1",
@@ -77,6 +79,9 @@
     "webpack-dev-server": "^2.4.4"
   },
   "jest": {
+    "setupFiles": [
+      "./src/setupTest.js"
+    ],
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|scss)$": "identity-obj-proxy"

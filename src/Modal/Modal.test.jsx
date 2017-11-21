@@ -1,12 +1,13 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { mount } from 'enzyme';
+
 import Modal from './index';
 import Button from '../Button';
 
 
 const modalOpen = (isOpen, wrapper) => {
-  expect(wrapper.hasClass('modal-open')).toEqual(isOpen);
+  expect(wrapper.childAt(0).hasClass('modal-open')).toEqual(isOpen);
   expect(wrapper.state('open')).toEqual(isOpen);
 };
 const title = 'Modal title';
@@ -38,11 +39,7 @@ describe('<Modal />', () => {
     ];
 
     it('renders default buttons', () => {
-      wrapper = mount(
-        <Modal
-          {...defaultProps}
-        />,
-      );
+      wrapper = mount(<Modal {...defaultProps} />);
       const modalTitle = wrapper.find('.modal-title');
       const modalBody = wrapper.find('.modal-body');
 
@@ -52,36 +49,21 @@ describe('<Modal />', () => {
     });
 
     it('renders custom buttons', () => {
-      wrapper = mount(
-        <Modal
-          {...defaultProps}
-          buttons={buttons}
-        />,
-      );
+      wrapper = mount(<Modal {...defaultProps} buttons={buttons} />);
       expect(wrapper.find('button')).toHaveLength(buttons.length + 2);
     });
   });
 
   describe('props received correctly', () => {
     it('component receives props', () => {
-      wrapper = mount(
-        <Modal
-          title={title}
-          body={body}
-          onClose={() => {}}
-        />,
-      );
+      wrapper = mount(<Modal title={title} body={body} onClose={() => {}} />);
 
       modalOpen(false, wrapper);
       wrapper.setProps({ open: true });
       modalOpen(true, wrapper);
     });
     it('component receives props and ignores prop change', () => {
-      wrapper = mount(
-        <Modal
-          {...defaultProps}
-        />,
-      );
+      wrapper = mount(<Modal {...defaultProps} />);
 
       modalOpen(true, wrapper);
       wrapper.setProps({ title: 'Changed modal title' });
@@ -91,11 +73,7 @@ describe('<Modal />', () => {
 
   describe('close functions properly', () => {
     beforeEach(() => {
-      wrapper = mount(
-        <Modal
-          {...defaultProps}
-        />,
-      );
+      wrapper = mount(<Modal {...defaultProps} />);
     });
 
     it('closes when x button pressed', () => {
@@ -118,12 +96,10 @@ describe('<Modal />', () => {
     it('calls callback function on close', () => {
       const spy = jest.fn();
 
-      wrapper = mount(
-        <Modal
-          {...defaultProps}
-          onClose={spy}
-        />,
-      );
+      wrapper = mount(<Modal
+        {...defaultProps}
+        onClose={spy}
+      />);
 
       expect(spy).toHaveBeenCalledTimes(0);
 
@@ -134,29 +110,29 @@ describe('<Modal />', () => {
   });
   describe('invalid keystrokes do nothing', () => {
     beforeEach(() => {
-      wrapper = mount(
-        <Modal
-          {...defaultProps}
-        />,
-      );
+      wrapper = mount(<Modal
+        {...defaultProps}
+      />);
     });
 
     it('does nothing on invalid keystroke q', () => {
-      const buttons = wrapper.find('button');
+      let buttons = wrapper.find('button');
 
-      expect(buttons.at(0).matchesElement(document.activeElement)).toEqual(true);
+      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
       modalOpen(true, wrapper);
       buttons.at(0).simulate('keyDown', { key: 'q' });
-      expect(buttons.at(0).matchesElement(document.activeElement)).toEqual(true);
+      buttons = wrapper.find('button');
+
+      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
       modalOpen(true, wrapper);
     });
     it('does nothing on invalid keystroke + ctrl', () => {
       const buttons = wrapper.find('button');
 
-      expect(buttons.at(0).matchesElement(document.activeElement)).toEqual(true);
+      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
       modalOpen(true, wrapper);
       buttons.at(0).simulate('keyDown', { key: 'Tab', ctrlKey: true });
-      expect(buttons.at(0).matchesElement(document.activeElement)).toEqual(true);
+      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
       modalOpen(true, wrapper);
     });
   });
@@ -164,35 +140,31 @@ describe('<Modal />', () => {
     let buttons;
 
     beforeEach(() => {
-      wrapper = mount(
-        <Modal
-          {...defaultProps}
-        />,
-      );
+      wrapper = mount(<Modal {...defaultProps} />);
 
       buttons = wrapper.find('button');
     });
 
     it('has correct initial focus', () => {
-      expect(buttons.at(0).matchesElement(document.activeElement)).toEqual(true);
+      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
     });
     it('has reset focus after close and reopen', () => {
-      expect(buttons.at(0).matchesElement(document.activeElement)).toEqual(true);
+      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
       wrapper.setProps({ open: false });
       modalOpen(false, wrapper);
       wrapper.setProps({ open: true });
       modalOpen(true, wrapper);
-      expect(buttons.at(0).matchesElement(document.activeElement)).toEqual(true);
+      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
     });
     it('traps focus forwards on tab keystroke', () => {
-      expect(buttons.at(0).matchesElement(document.activeElement)).toEqual(true);
+      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
       buttons.last().simulate('keyDown', { key: 'Tab' });
-      expect(buttons.at(0).matchesElement(document.activeElement)).toEqual(true);
+      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
     });
     it('traps focus backwards on shift + tab keystroke', () => {
-      expect(buttons.at(0).matchesElement(document.activeElement)).toEqual(true);
+      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
       buttons.at(0).simulate('keyDown', { key: 'Tab', shiftKey: true });
-      expect(buttons.last().matchesElement(document.activeElement)).toEqual(true);
+      expect(buttons.last().html()).toEqual(document.activeElement.outerHTML);
     });
   });
 });
