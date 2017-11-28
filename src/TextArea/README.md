@@ -1,6 +1,6 @@
 # TextArea
 
-Provides an input component called TextArea that gives users a reusable input field.
+Provides an input component called TextArea that gives users a reusable textarea field.
 
 ## API
 
