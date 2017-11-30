@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-console */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
 import CheckBox from './index';
 
@@ -29,7 +29,7 @@ storiesOf('CheckBox', module)
   .add('call a function', () => (
     <CheckBox
       name="checkbox"
-      label="check out the console"
-      onChange={() => console.log('the checkbox changed state')}
+      label="check out the action logger"
+      onChange={action('Checkbox.onChange')}
     />
   ));
