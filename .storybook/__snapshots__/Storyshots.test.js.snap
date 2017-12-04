@@ -1961,3 +1961,87 @@ exports[`Storyshots Tabs basic usage 1`] = `
   </div>
 </div>
 `;
+
+exports[`Storyshots Textarea minimal usage 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="asInput20"
+  >
+    First Name
+  </label>
+  <textarea
+    aria-describedby={undefined}
+    aria-invalid={false}
+    className="form-control"
+    disabled={false}
+    id="asInput20"
+    name="name"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder={undefined}
+    required={false}
+    type="text"
+    value="Foo Bar"
+  />
+</div>
+`;
+
+exports[`Storyshots Textarea scrollable 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="asInput21"
+  >
+    Information
+  </label>
+  <textarea
+    aria-describedby={undefined}
+    aria-invalid={false}
+    className="form-control"
+    disabled={false}
+    id="asInput21"
+    name="name"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder={undefined}
+    required={false}
+    type="text"
+    value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  />
+</div>
+`;
+
+exports[`Storyshots Textarea validation 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="asInput22"
+  >
+    Username
+  </label>
+  <textarea
+    aria-describedby="undefined description-asInput22"
+    aria-invalid={false}
+    className="form-control"
+    disabled={false}
+    id="asInput22"
+    name="username"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder={undefined}
+    required={false}
+    type="text"
+    value=""
+  />
+  <small
+    className="form-text"
+    id="description-asInput22"
+  >
+    The unique name that identifies you throughout the site.
+  </small>
+</div>
+`;
