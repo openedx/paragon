@@ -14,9 +14,10 @@
     "build-storybook": "build-storybook",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "deploy-storybook": "storybook-to-ghpages",
+    "gc": "commit",
     "lint": "eslint --ext .js --ext .jsx .",
     "precommit": "npm run lint",
-    "commit": "git-cz",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "snapshot": "jest --updateSnapshot",
     "start": "start-storybook -p 6006",
@@ -34,6 +35,10 @@
     "react-proptype-conditional-require": "^1.0.4"
   },
   "devDependencies": {
+    "@commitlint/cli": "^4.3.0",
+    "@commitlint/config-angular": "^4.3.0",
+    "@commitlint/prompt": "^5.0.1",
+    "@commitlint/prompt-cli": "^5.0.1",
     "@storybook/addon-actions": "^3.2.12",
     "@storybook/addon-console": "^1.0.0",
     "@storybook/addon-options": "^3.2.6",
@@ -49,10 +54,8 @@
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.4.0",
     "babel-preset-react": "^6.24.1",
-    "commitizen": "^2.9.6",
     "coveralls": "^3.0.0",
     "css-loader": "^0.28.4",
-    "cz-conventional-changelog": "^2.1.0",
     "enzyme": "^3.1.1",
     "enzyme-adapter-react-16": "^1.0.4",
     "eslint": "^4.5.0",
@@ -90,10 +93,5 @@
       "/node_modules/",
       "(.stories)\\.(jsx)$"
     ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
   }
 }
