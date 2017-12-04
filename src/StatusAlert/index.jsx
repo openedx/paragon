@@ -32,7 +32,7 @@ class StatusAlert extends React.Component {
   }
 
   componentDidUpdate(prevState) {
-    if (this.state.open && !prevState.open) {
+    if (this.state.open && !prevState.open && this.xButton) {
       this.xButton.focus();
     }
   }
