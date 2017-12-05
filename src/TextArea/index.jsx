@@ -18,6 +18,7 @@ function Text(props) {
       disabled={props.disabled}
       required={props.required}
       ref={props.inputRef}
+      themes={['danger']}
     />
   );
 }
