@@ -92,8 +92,8 @@ const asInput = (WrappedComponent, labelFirst = true) => {
         <div className={styles['form-group']}>
           {labelFirst && <label htmlFor={this.state.id}>{this.props.label}</label>}
           <WrappedComponent
-            {...this.props}
             {...this.state}
+            {...this.props}
             className={[
               styles['form-control'],
               ...this.props.className,

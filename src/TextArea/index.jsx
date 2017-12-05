@@ -8,7 +8,7 @@ function Text(props) {
     <textarea
       id={props.id}
       className={classNames(props.className)}
-      type="text"
+      type={props.type || 'text'}
       name={props.name}
       value={props.value}
       placeholder={props.placeholder}

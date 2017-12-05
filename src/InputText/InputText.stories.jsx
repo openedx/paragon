@@ -10,6 +10,7 @@ storiesOf('InputText', module)
       name="name"
       label="First Name"
       value="Foo Bar"
+      id="name"
     />
   ))
   .add('validation', () => (
