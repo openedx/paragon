@@ -8,6 +8,7 @@ import asInput, { getDisplayName } from './index';
 function testComponent(props) {
   return (
     <input
+      id={props.id}
       defaultValue={props.value}
       onBlur={props.onBlur}
       onChange={props.onChange}
@@ -41,6 +42,43 @@ describe('asInput()', () => {
     expect(wrapper.find('label').text()).toEqual(props.label);
     expect(wrapper.find('#description-asInput1').text()).toEqual(props.description);
     expect(wrapper.state('value')).toEqual(props.value);
+  });
+
+  it('creates generic prop id', () => {
+    const props = {
+      ...baseProps,
+    };
+    const wrapper = mount(<InputTestComponent {...props} />);
+    expect(wrapper.state('id')).toContain('asInput');
+    expect(wrapper.find('label').prop('id')).toContain('asInput');
+    expect(wrapper.find('input').prop('id')).toContain('asInput');
+    expect(wrapper.find('small').prop('id')).toContain('asInput');
+  });
+
+  it('creates generic prop id when passed undefined id value', () => {
+    const testId = undefined;
+    const props = {
+      ...baseProps,
+      id: testId,
+    };
+    const wrapper = mount(<InputTestComponent {...props} />);
+    expect(wrapper.state('id')).toContain('asInput');
+    expect(wrapper.find('label').prop('id')).toContain('asInput');
+    expect(wrapper.find('input').prop('id')).toContain('asInput');
+    expect(wrapper.find('small').prop('id')).toContain('asInput');
+  });
+
+  it('uses passed in prop id', () => {
+    const testId = 'testId';
+    const props = {
+      ...baseProps,
+      id: testId,
+    };
+    const wrapper = mount(<InputTestComponent {...props} />);
+    expect(wrapper.state('id')).toEqual(testId);
+    expect(wrapper.find('label').prop('id')).toEqual(`label-${testId}`);
+    expect(wrapper.find('input').prop('id')).toEqual(testId);
+    expect(wrapper.find('small').prop('id')).toEqual(`description-${testId}`);
   });
 
   describe('fires', () => {
