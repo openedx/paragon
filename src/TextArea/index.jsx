@@ -17,6 +17,7 @@ function Text(props) {
       aria-invalid={!props.isValid}
       disabled={props.disabled}
       required={props.required}
+      ref={props.inputRef}
     />
   );
 }

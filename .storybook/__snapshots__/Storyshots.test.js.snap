@@ -452,6 +452,60 @@ exports[`Storyshots InputSelect with validation 1`] = `
 </div>
 `;
 
+exports[`Storyshots InputText focus test 1`] = `
+<div>
+  <div
+    className="alert fade alert-dismissible alert-info show"
+    hidden={false}
+    role="alert"
+  >
+    <button
+      aria-label="Close"
+      className="btn close"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+      >
+        ×
+      </span>
+    </button>
+    <div
+      className="alert-dialog"
+    >
+      Close me to input data!
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      htmlFor="data"
+      id="label-data"
+    >
+      Data Input
+    </label>
+    <input
+      aria-describedby={undefined}
+      aria-invalid={false}
+      className="form-control"
+      disabled={false}
+      id="data"
+      name="data"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder={undefined}
+      required={false}
+      type="text"
+      value=""
+    />
+  </div>
+</div>
+`;
+
 exports[`Storyshots InputText minimal usage 1`] = `
 <div
   className="form-group"
