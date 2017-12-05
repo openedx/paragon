@@ -28,4 +28,22 @@ storiesOf('InputText', module)
         return feedback;
       }}
     />
+  ))
+  .add('validation with danger theme', () => (
+    <InputText
+      name="username"
+      label="Username"
+      description="The unique name that identifies you throughout the site."
+      validator={(value) => {
+        let feedback = { isValid: true };
+        if (value.length < 3) {
+          feedback = {
+            isValid: false,
+            validationMessage: 'Username must be at least 3 characters in length.',
+          };
+        }
+        return feedback;
+      }}
+      theme={['danger']}
+    />
   ));
