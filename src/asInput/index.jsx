@@ -32,7 +32,7 @@ const asInput = (WrappedComponent, labelFirst = true) => {
       this.handleChange = this.handleChange.bind(this);
       this.handleBlur = this.handleBlur.bind(this);
 
-      const id = this.props.id ? this.props.id : newId('asInput');
+      const id = this.props.id || newId('asInput');
       this.state = {
         id,
         value: this.props.value,
@@ -118,7 +118,7 @@ const asInput = (WrappedComponent, labelFirst = true) => {
   NewComponent.defaultProps = {
     onChange: () => {},
     onBlur: () => {},
-    id: undefined,
+    id: newId('asInput'),
     value: '',
     description: undefined,
     disabled: false,
