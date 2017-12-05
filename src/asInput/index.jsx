@@ -1,6 +1,8 @@
 /* eslint-disable react/no-unused-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
 
 import newId from '../utils/newId';
 import styles from './asInput.scss';
@@ -23,6 +25,7 @@ export const inputProps = {
   onBlur: PropTypes.func,
   validator: PropTypes.func,
   className: PropTypes.arrayOf(PropTypes.string),
+  themes: PropTypes.arrayOf(PropTypes.string),
 };
 
 const asInput = (WrappedComponent, labelFirst = true) => {
@@ -50,9 +53,19 @@ const asInput = (WrappedComponent, labelFirst = true) => {
       const desc = {};
 
       if (!this.state.isValid) {
+        const hasDangerTheme = this.hasDangerTheme();
+
         desc.error = (
-          <div className={styles['form-control-feedback']} id={errorId} key="0">
-            {this.state.validationMessage}
+          <div className={classNames(styles['form-control-feedback'], { [styles['invalid-feedback']]: hasDangerTheme })} id={errorId} key="0">
+            { hasDangerTheme &&
+            <span
+              className={classNames(FontAwesomeStyles.fa, FontAwesomeStyles['fa-exclamation-circle'], styles['fa-icon-spacing'])}
+              aria-hidden
+            />
+            }
+            <span>
+              {this.state.validationMessage}
+            </span>
           </div>
         );
         desc.describedBy = errorId;
@@ -68,6 +81,10 @@ const asInput = (WrappedComponent, labelFirst = true) => {
       }
 
       return desc;
+    }
+
+    hasDangerTheme() {
+      return this.props.themes.includes('danger');
     }
 
     handleBlur(event) {
@@ -95,10 +112,11 @@ const asInput = (WrappedComponent, labelFirst = true) => {
           <WrappedComponent
             {...this.props}
             {...this.state}
-            className={[
+            className={[classNames(
               styles['form-control'],
-              ...this.props.className,
-            ]}
+              { [styles['is-invalid']]: !this.state.isValid && this.hasDangerTheme() },
+              { ...this.props.className },
+            )]}
             describedBy={describedBy}
             onChange={this.handleChange}
             onBlur={this.handleBlur}
@@ -125,6 +143,7 @@ const asInput = (WrappedComponent, labelFirst = true) => {
     required: false,
     validator: undefined,
     className: [],
+    themes: [],
   };
 
   return NewComponent;
