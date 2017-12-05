@@ -199,6 +199,7 @@ exports[`Storyshots InputSelect basic usage 1`] = `
 >
   <label
     htmlFor="asInput5"
+    id="label-asInput5"
   >
     Fruits
   </label>
@@ -242,6 +243,7 @@ exports[`Storyshots InputSelect separate labels and values 1`] = `
 >
   <label
     htmlFor="asInput6"
+    id="label-asInput6"
   >
     New England States
   </label>
@@ -295,6 +297,7 @@ exports[`Storyshots InputSelect separate option groups 1`] = `
 >
   <label
     htmlFor="asInput7"
+    id="label-asInput7"
   >
     Northeast States
   </label>
@@ -396,6 +399,7 @@ exports[`Storyshots InputSelect with validation 1`] = `
 >
   <label
     htmlFor="asInput8"
+    id="label-asInput8"
   >
     Favorite Color
   </label>
@@ -454,6 +458,7 @@ exports[`Storyshots InputText minimal usage 1`] = `
 >
   <label
     htmlFor="asInput9"
+    id="label-asInput9"
   >
     First Name
   </label>
@@ -479,16 +484,17 @@ exports[`Storyshots InputText validation 1`] = `
   className="form-group"
 >
   <label
-    htmlFor="asInput10"
+    htmlFor="username"
+    id="label-username"
   >
     Username
   </label>
   <input
-    aria-describedby="undefined description-asInput10"
+    aria-describedby="undefined description-username"
     aria-invalid={false}
     className="form-control"
     disabled={false}
-    id="asInput10"
+    id="username"
     name="username"
     onBlur={[Function]}
     onChange={[Function]}
@@ -499,7 +505,7 @@ exports[`Storyshots InputText validation 1`] = `
   />
   <small
     className="form-text"
-    id="description-asInput10"
+    id="description-username"
   >
     The unique name that identifies you throughout the site.
   </small>
@@ -508,7 +514,7 @@ exports[`Storyshots InputText validation 1`] = `
 
 exports[`Storyshots Modal basic usage 1`] = `
 <div
-  aria-labelledby="id11"
+  aria-labelledby="id10"
   aria-modal={true}
   className="modal show modal-open"
   role="dialog"
@@ -524,7 +530,7 @@ exports[`Storyshots Modal basic usage 1`] = `
       >
         <h5
           className="modal-title"
-          id="id11"
+          id="id10"
         >
           Modal title.
         </h5>
@@ -570,7 +576,7 @@ exports[`Storyshots Modal basic usage 1`] = `
 
 exports[`Storyshots Modal configurable buttons 1`] = `
 <div
-  aria-labelledby="id12"
+  aria-labelledby="id11"
   aria-modal={true}
   className="modal show modal-open"
   role="dialog"
@@ -586,7 +592,7 @@ exports[`Storyshots Modal configurable buttons 1`] = `
       >
         <h5
           className="modal-title"
-          id="id12"
+          id="id11"
         >
           Modal title.
         </h5>
@@ -659,7 +665,7 @@ exports[`Storyshots Modal configurable buttons 1`] = `
 
 exports[`Storyshots Modal configurable buttons that perform actions 1`] = `
 <div
-  aria-labelledby="id14"
+  aria-labelledby="id13"
   aria-modal={true}
   className="modal show modal-open"
   role="dialog"
@@ -675,7 +681,7 @@ exports[`Storyshots Modal configurable buttons that perform actions 1`] = `
       >
         <h5
           className="modal-title"
-          id="id14"
+          id="id13"
         >
           Modal title.
         </h5>
@@ -730,7 +736,7 @@ exports[`Storyshots Modal configurable buttons that perform actions 1`] = `
 
 exports[`Storyshots Modal configurable close button 1`] = `
 <div
-  aria-labelledby="id15"
+  aria-labelledby="id14"
   aria-modal={true}
   className="modal show modal-open"
   role="dialog"
@@ -746,7 +752,7 @@ exports[`Storyshots Modal configurable close button 1`] = `
       >
         <h5
           className="modal-title"
-          id="id15"
+          id="id14"
         >
           Modal title.
         </h5>
@@ -792,7 +798,7 @@ exports[`Storyshots Modal configurable close button 1`] = `
 
 exports[`Storyshots Modal configurable title and body 1`] = `
 <div
-  aria-labelledby="id13"
+  aria-labelledby="id12"
   aria-modal={true}
   className="modal show modal-open"
   role="dialog"
@@ -808,7 +814,7 @@ exports[`Storyshots Modal configurable title and body 1`] = `
       >
         <h5
           className="modal-title"
-          id="id13"
+          id="id12"
         >
           Custom title!
         </h5>
@@ -864,7 +870,7 @@ exports[`Storyshots Modal configurable title and body 1`] = `
 exports[`Storyshots Modal modal invoked via a button 1`] = `
 <div>
   <div
-    aria-labelledby="id16"
+    aria-labelledby="id15"
     aria-modal={true}
     className="modal show"
     role="dialog"
@@ -880,7 +886,7 @@ exports[`Storyshots Modal modal invoked via a button 1`] = `
         >
           <h5
             className="modal-title"
-            id="id16"
+            id="id15"
           >
             I am the modal!
           </h5>
@@ -936,7 +942,7 @@ exports[`Storyshots Modal modal invoked via a button 1`] = `
 
 exports[`Storyshots Modal modal with element body 1`] = `
 <div
-  aria-labelledby="id17"
+  aria-labelledby="id16"
   aria-modal={true}
   className="modal show modal-open"
   role="dialog"
@@ -952,7 +958,7 @@ exports[`Storyshots Modal modal with element body 1`] = `
       >
         <h5
           className="modal-title"
-          id="id17"
+          id="id16"
         >
           Modal title.
         </h5>
@@ -982,7 +988,8 @@ exports[`Storyshots Modal modal with element body 1`] = `
             className="form-group"
           >
             <label
-              htmlFor="asInput18"
+              htmlFor="asInput17"
+              id="label-asInput17"
             >
               E-Mail Address
             </label>
@@ -991,7 +998,7 @@ exports[`Storyshots Modal modal with element body 1`] = `
               aria-invalid={false}
               className="form-control"
               disabled={false}
-              id="asInput18"
+              id="asInput17"
               name="e-mail"
               onBlur={[Function]}
               onChange={[Function]}
@@ -1878,10 +1885,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
   >
     <li
       className="nav-item"
-      id="tab-label-tabInterface19-0"
+      id="tab-label-tabInterface18-0"
     >
       <a
-        aria-controls="tab-panel-tabInterface19-0"
+        aria-controls="tab-panel-tabInterface18-0"
         aria-selected={true}
         className="nav-link active"
         onClick={[Function]}
@@ -1893,10 +1900,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </li>
     <li
       className="nav-item"
-      id="tab-label-tabInterface19-1"
+      id="tab-label-tabInterface18-1"
     >
       <a
-        aria-controls="tab-panel-tabInterface19-1"
+        aria-controls="tab-panel-tabInterface18-1"
         aria-selected={false}
         className="nav-link"
         onClick={[Function]}
@@ -1908,10 +1915,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </li>
     <li
       className="nav-item"
-      id="tab-label-tabInterface19-2"
+      id="tab-label-tabInterface18-2"
     >
       <a
-        aria-controls="tab-panel-tabInterface19-2"
+        aria-controls="tab-panel-tabInterface18-2"
         aria-selected={false}
         className="nav-link"
         onClick={[Function]}
@@ -1927,9 +1934,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
   >
     <div
       aria-hidden={false}
-      aria-labelledby="tab-label-tabInterface19-0"
+      aria-labelledby="tab-label-tabInterface18-0"
       className="tab-pane active"
-      id="tab-panel-tabInterface19-0"
+      id="tab-panel-tabInterface18-0"
       role="tabpanel"
     >
       <div>
@@ -1938,9 +1945,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </div>
     <div
       aria-hidden={true}
-      aria-labelledby="tab-label-tabInterface19-1"
+      aria-labelledby="tab-label-tabInterface18-1"
       className="tab-pane"
-      id="tab-panel-tabInterface19-1"
+      id="tab-panel-tabInterface18-1"
       role="tabpanel"
     >
       <div>
@@ -1949,9 +1956,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </div>
     <div
       aria-hidden={true}
-      aria-labelledby="tab-label-tabInterface19-2"
+      aria-labelledby="tab-label-tabInterface18-2"
       className="tab-pane"
-      id="tab-panel-tabInterface19-2"
+      id="tab-panel-tabInterface18-2"
       role="tabpanel"
     >
       <div>
@@ -1967,9 +1974,36 @@ exports[`Storyshots Textarea minimal usage 1`] = `
   className="form-group"
 >
   <label
-    htmlFor="asInput20"
+    htmlFor="asInput19"
+    id="label-asInput19"
   >
     First Name
+  </label>
+  <textarea
+    aria-describedby={undefined}
+    aria-invalid={false}
+    className="form-control"
+    disabled={false}
+    id="asInput19"
+    name="name"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder={undefined}
+    required={false}
+    value="Foo Bar"
+  />
+</div>
+`;
+
+exports[`Storyshots Textarea scrollable 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="asInput20"
+    id="label-asInput20"
+  >
+    Information
   </label>
   <textarea
     aria-describedby={undefined}
@@ -1982,33 +2016,6 @@ exports[`Storyshots Textarea minimal usage 1`] = `
     onChange={[Function]}
     placeholder={undefined}
     required={false}
-    type="text"
-    value="Foo Bar"
-  />
-</div>
-`;
-
-exports[`Storyshots Textarea scrollable 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="asInput21"
-  >
-    Information
-  </label>
-  <textarea
-    aria-describedby={undefined}
-    aria-invalid={false}
-    className="form-control"
-    disabled={false}
-    id="asInput21"
-    name="name"
-    onBlur={[Function]}
-    onChange={[Function]}
-    placeholder={undefined}
-    required={false}
-    type="text"
     value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   />
 </div>
@@ -2019,27 +2026,27 @@ exports[`Storyshots Textarea validation 1`] = `
   className="form-group"
 >
   <label
-    htmlFor="asInput22"
+    htmlFor="asInput21"
+    id="label-asInput21"
   >
     Username
   </label>
   <textarea
-    aria-describedby="undefined description-asInput22"
+    aria-describedby="undefined description-asInput21"
     aria-invalid={false}
     className="form-control"
     disabled={false}
-    id="asInput22"
+    id="asInput21"
     name="username"
     onBlur={[Function]}
     onChange={[Function]}
     placeholder={undefined}
     required={false}
-    type="text"
     value=""
   />
   <small
     className="form-text"
-    id="description-asInput22"
+    id="description-asInput21"
   >
     The unique name that identifies you throughout the site.
   </small>

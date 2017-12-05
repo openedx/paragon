@@ -11,6 +11,7 @@ export const getDisplayName = WrappedComponent =>
 export const inputProps = {
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  id: PropTypes.string,
   value: PropTypes.string,
   description: PropTypes.oneOfType([
     PropTypes.string,
@@ -31,7 +32,7 @@ const asInput = (WrappedComponent, labelFirst = true) => {
       this.handleChange = this.handleChange.bind(this);
       this.handleBlur = this.handleBlur.bind(this);
 
-      const id = newId('asInput');
+      const id = this.props.id ? this.props.id : newId('asInput');
       this.state = {
         id,
         value: this.props.value,
@@ -90,10 +91,10 @@ const asInput = (WrappedComponent, labelFirst = true) => {
       const { description, error, describedBy } = this.getDescriptions();
       return (
         <div className={styles['form-group']}>
-          {labelFirst && <label htmlFor={this.state.id}>{this.props.label}</label>}
+          {labelFirst && <label id={`label-${this.state.id}`} htmlFor={this.state.id}>{this.props.label}</label>}
           <WrappedComponent
-            {...this.state}
             {...this.props}
+            {...this.state}
             className={[
               styles['form-control'],
               ...this.props.className,
@@ -117,6 +118,7 @@ const asInput = (WrappedComponent, labelFirst = true) => {
   NewComponent.defaultProps = {
     onChange: () => {},
     onBlur: () => {},
+    id: undefined,
     value: '',
     description: undefined,
     disabled: false,

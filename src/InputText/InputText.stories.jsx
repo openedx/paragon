@@ -10,11 +10,11 @@ storiesOf('InputText', module)
       name="name"
       label="First Name"
       value="Foo Bar"
-      id="name"
     />
   ))
   .add('validation', () => (
     <InputText
+      id="username"
       name="username"
       label="Username"
       description="The unique name that identifies you throughout the site."
