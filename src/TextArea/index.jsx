@@ -8,7 +8,6 @@ function Text(props) {
     <textarea
       id={props.id}
       className={classNames(props.className)}
-      type="text"
       name={props.name}
       value={props.value}
       placeholder={props.placeholder}
@@ -18,6 +17,7 @@ function Text(props) {
       aria-invalid={!props.isValid}
       disabled={props.disabled}
       required={props.required}
+      ref={props.inputRef}
     />
   );
 }
