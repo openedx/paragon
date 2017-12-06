@@ -49,6 +49,7 @@ class Select extends React.Component {
         aria-describedby={props.describedBy}
         onChange={props.onChange}
         onBlur={props.onBlur}
+        ref={props.inputRef}
       >
         {options}
       </select>
