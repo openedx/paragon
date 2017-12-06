@@ -499,6 +499,7 @@ exports[`Storyshots InputText focus test 1`] = `
       onChange={[Function]}
       placeholder={undefined}
       required={false}
+      themes={Array []}
       type="text"
       value=""
     />
@@ -527,6 +528,7 @@ exports[`Storyshots InputText minimal usage 1`] = `
     onChange={[Function]}
     placeholder={undefined}
     required={false}
+    themes={Array []}
     type="text"
     value="Foo Bar"
   />
@@ -554,12 +556,51 @@ exports[`Storyshots InputText validation 1`] = `
     onChange={[Function]}
     placeholder={undefined}
     required={false}
+    themes={Array []}
     type="text"
     value=""
   />
   <small
     className="form-text"
     id="description-username"
+  >
+    The unique name that identifies you throughout the site.
+  </small>
+</div>
+`;
+
+exports[`Storyshots InputText validation with danger theme 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="asInput3"
+    id="label-asInput3"
+  >
+    Username
+  </label>
+  <input
+    aria-describedby="undefined description-asInput3"
+    aria-invalid={false}
+    className="form-control"
+    disabled={false}
+    id="asInput3"
+    name="username"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder={undefined}
+    required={false}
+    themes={
+      Array [
+        "danger",
+      ]
+    }
+    type="text"
+    value=""
+  />
+  <small
+    className="form-text"
+    id="description-asInput3"
   >
     The unique name that identifies you throughout the site.
   </small>
@@ -1058,6 +1099,7 @@ exports[`Storyshots Modal modal with element body 1`] = `
               onChange={[Function]}
               placeholder={undefined}
               required={false}
+              themes={Array []}
               type="text"
               value=""
             />
@@ -2044,6 +2086,11 @@ exports[`Storyshots Textarea minimal usage 1`] = `
     onChange={[Function]}
     placeholder={undefined}
     required={false}
+    themes={
+      Array [
+        "danger",
+      ]
+    }
     value="Foo Bar"
   />
 </div>
@@ -2070,6 +2117,11 @@ exports[`Storyshots Textarea scrollable 1`] = `
     onChange={[Function]}
     placeholder={undefined}
     required={false}
+    themes={
+      Array [
+        "danger",
+      ]
+    }
     value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   />
 </div>
@@ -2096,6 +2148,11 @@ exports[`Storyshots Textarea validation 1`] = `
     onChange={[Function]}
     placeholder={undefined}
     required={false}
+    themes={
+      Array [
+        "danger",
+      ]
+    }
     value=""
   />
   <small

@@ -117,23 +117,47 @@ describe('asInput()', () => {
         expect(spy).toHaveBeenCalledTimes(1);
       });
 
-      it('and displays error message when invalid', () => {
-        const spy = jest.fn();
-        const validationResult = {
-          isValid: false,
-          validationMessage: 'Invalid!!1',
-        };
-        spy.mockReturnValueOnce(validationResult);
-        const props = {
-          ...baseProps,
-          validator: spy,
-        };
-        const wrapper = mount(<InputTestComponent {...props} />);
-        wrapper.find('input').simulate('blur');
-        expect(spy).toHaveBeenCalledTimes(1);
-        const err = wrapper.find('.form-control-feedback');
-        expect(err.exists()).toEqual(true);
-        expect(err.text()).toEqual(validationResult.validationMessage);
+      describe('and display error message when invalid', () => {
+        let spy;
+        let validationResult;
+        let wrapper;
+
+        beforeEach(() => {
+          spy = jest.fn();
+          validationResult = {
+            isValid: false,
+            validationMessage: 'Invalid!!1',
+          };
+          spy.mockReturnValueOnce(validationResult);
+          const props = {
+            ...baseProps,
+            validator: spy,
+          };
+          wrapper = mount(<InputTestComponent {...props} />);
+        });
+        it('without theme', () => {
+          wrapper.find('input').simulate('blur');
+          expect(spy).toHaveBeenCalledTimes(1);
+          const err = wrapper.find('.form-control-feedback');
+          expect(err.exists()).toEqual(true);
+          expect(err.text()).toEqual(validationResult.validationMessage);
+        });
+        it('with danger theme', () => {
+          wrapper.setProps({ themes: ['danger'] });
+          wrapper.find('input').simulate('blur');
+          expect(spy).toHaveBeenCalledTimes(1);
+          const err = wrapper.find('.form-control-feedback');
+          expect(err.exists()).toEqual(true);
+          expect(err.text()).toEqual(validationResult.validationMessage);
+          // expect(err.hasClass('invalid-feedback')).toEqual(true);
+
+          const dangerIcon = wrapper.find('.fa-exclamation-circle');
+          expect(dangerIcon.exists()).toEqual(true);
+          expect(dangerIcon.hasClass('fa')).toEqual(true);
+
+          const inputElement = wrapper.find('.form-control');
+          expect(inputElement.hasClass('is-invalid')).toEqual(true);
+        });
       });
     });
   });
