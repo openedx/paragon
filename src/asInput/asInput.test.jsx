@@ -55,8 +55,8 @@ describe('asInput()', () => {
     expect(wrapper.find('small').prop('id')).toContain('asInput');
   });
 
-  it('creates generic prop id when passed undefined id value', () => {
-    const testId = undefined;
+  it('creates generic prop id when passed null id value', () => {
+    const testId = null;
     const props = {
       ...baseProps,
       id: testId,
