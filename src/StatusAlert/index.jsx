@@ -37,6 +37,10 @@ class StatusAlert extends React.Component {
     }
   }
 
+  focus() {
+    this.xButton.focus();
+  }
+
   close() {
     this.setState({ open: false });
     this.props.onClose();
