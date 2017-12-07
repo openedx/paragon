@@ -38,7 +38,6 @@ const asInput = (WrappedComponent, labelFirst = true) => {
       const id = this.props.id ? this.props.id : newId('asInput');
       this.state = {
         id,
-        value: this.props.value,
         isValid: true,
         describedBy: [],
         errorId: `error-${id}`,
@@ -97,7 +96,6 @@ const asInput = (WrappedComponent, labelFirst = true) => {
     }
 
     handleChange(event) {
-      this.setState({ value: event.target.value });
       this.props.onChange(
         event.target.type === 'checkbox' ? event.target.checked : event.target.value,
         this.props.name,
