@@ -2,6 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import StatusAlert from './index';
+import Button from '../Button';
 
 const statusAlertOpen = (isOpen, wrapper) => {
   expect(wrapper.childAt(0).hasClass('show')).toEqual(isOpen);
@@ -112,6 +113,24 @@ describe('<StatusAlert />', () => {
       buttons.at(0).simulate('keyDown', { key: 'Tab', ctrlKey: true });
       expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
       statusAlertOpen(true, wrapper);
+    });
+  });
+  describe('focus functions properly', () => {
+    it('focus function changes focus', () => {
+      wrapper = mount(<div>
+        <Button label="test" />
+        <StatusAlert {...defaultProps} />
+      </div>);
+
+      const buttons = wrapper.find('button');
+
+      // move focus away from default StatusAlert xButton
+      buttons.at(0).simulate('click');
+      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
+
+      const statusAlert = wrapper.find('StatusAlert').instance();
+      statusAlert.focus();
+      expect(buttons.at(1).html()).toEqual(document.activeElement.outerHTML);
     });
   });
 });
