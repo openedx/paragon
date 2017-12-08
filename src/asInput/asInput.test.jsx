@@ -41,7 +41,7 @@ describe('asInput()', () => {
     const wrapper = mount(<InputTestComponent {...props} />);
     expect(wrapper.find('label').text()).toEqual(props.label);
     expect(wrapper.find('#description-asInput1').text()).toEqual(props.description);
-    expect(wrapper.state('value')).toEqual(props.value);
+    expect(wrapper.prop('value')).toEqual(props.value);
   });
 
   it('creates generic prop id', () => {
@@ -79,6 +79,21 @@ describe('asInput()', () => {
     expect(wrapper.find('label').prop('id')).toEqual(`label-${testId}`);
     expect(wrapper.find('input').prop('id')).toEqual(testId);
     expect(wrapper.find('small').prop('id')).toEqual(`description-${testId}`);
+  });
+
+  it('overrides state value when props value changes', () => {
+    const initValue = 'foofoo';
+    const newValue = 'barbar';
+    const props = {
+      ...baseProps,
+      value: initValue,
+    };
+    const wrapper = mount(<InputTestComponent {...props} />);
+    expect(wrapper.state('value')).toEqual(initValue);
+    wrapper.setProps({
+      value: newValue,
+    });
+    expect(wrapper.state('value')).toEqual(newValue);
   });
 
   describe('fires', () => {
@@ -149,7 +164,7 @@ describe('asInput()', () => {
           const err = wrapper.find('.form-control-feedback');
           expect(err.exists()).toEqual(true);
           expect(err.text()).toEqual(validationResult.validationMessage);
-          // expect(err.hasClass('invalid-feedback')).toEqual(true);
+          expect(err.hasClass('invalid-feedback')).toEqual(true);
 
           const dangerIcon = wrapper.find('.fa-exclamation-circle');
           expect(dangerIcon.exists()).toEqual(true);

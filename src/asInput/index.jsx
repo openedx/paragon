@@ -46,6 +46,14 @@ const asInput = (WrappedComponent, labelFirst = true) => {
       };
     }
 
+    componentWillReceiveProps(nextProps) {
+      if (nextProps.value !== this.props.value) {
+        this.setState({
+          value: nextProps.value,
+        });
+      }
+    }
+
     getDescriptions() {
       // possible future work: multiple feedback msgs?
       const errorId = `error-${this.state.id}`;
