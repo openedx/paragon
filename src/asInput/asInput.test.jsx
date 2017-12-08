@@ -81,6 +81,21 @@ describe('asInput()', () => {
     expect(wrapper.find('small').prop('id')).toEqual(`description-${testId}`);
   });
 
+  it('overrides state value when props value changes', () => {
+    const initValue = 'foofoo';
+    const newValue = 'barbar';
+    const props = {
+      ...baseProps,
+      value: initValue,
+    };
+    const wrapper = mount(<InputTestComponent {...props} />);
+    expect(wrapper.state('value')).toEqual(initValue);
+    wrapper.setProps({
+      value: newValue,
+    });
+    expect(wrapper.state('value')).toEqual(newValue);
+  });
+
   describe('fires', () => {
     it('blur handler', () => {
       const spy = jest.fn();
