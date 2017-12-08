@@ -10,7 +10,7 @@ class FocusInputWrapper extends React.Component {
     super(props);
     this.state = { open: true };
 
-    this.resetStatusAlertWrapperState = this.resetStatusAlertWrapperState.bind(this);
+    this.resetStatusAlertWrapKperState = this.resetStatusAlertWrapperState.bind(this);
   }
 
   resetStatusAlertWrapperState() {
@@ -31,6 +31,7 @@ class FocusInputWrapper extends React.Component {
           id="data"
           name="data"
           label="Data Input"
+          value="foobar"
           inputRef={(input) => { this.inputForm = input; }}
         />
       </div>
