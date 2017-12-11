@@ -159,16 +159,22 @@ describe('asInput()', () => {
         });
         it('with danger theme', () => {
           wrapper.setProps({ themes: ['danger'] });
+          validationResult.dangerIconDescription = 'Error';
           wrapper.find('input').simulate('blur');
           expect(spy).toHaveBeenCalledTimes(1);
           const err = wrapper.find('.form-control-feedback');
           expect(err.exists()).toEqual(true);
-          expect(err.text()).toEqual(validationResult.validationMessage);
+          expect(err.text()).toEqual(validationResult.dangerIconDescription +
+                                     validationResult.validationMessage);
           expect(err.hasClass('invalid-feedback')).toEqual(true);
 
           const dangerIcon = wrapper.find('.fa-exclamation-circle');
           expect(dangerIcon.exists()).toEqual(true);
           expect(dangerIcon.hasClass('fa')).toEqual(true);
+
+          const dangerIconDescription = err.find('.sr-only');
+          expect(dangerIconDescription.exists()).toEqual(true);
+          expect(dangerIconDescription.text()).toEqual(validationResult.dangerIconDescription);
 
           const inputElement = wrapper.find('.form-control');
           expect(inputElement.hasClass('is-invalid')).toEqual(true);

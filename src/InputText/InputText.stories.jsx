@@ -76,6 +76,7 @@ storiesOf('InputText', module)
           feedback = {
             isValid: false,
             validationMessage: 'Username must be at least 3 characters in length.',
+            dangerIconDescription: 'Error',
           };
         }
         return feedback;

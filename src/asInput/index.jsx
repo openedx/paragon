@@ -64,12 +64,30 @@ const asInput = (WrappedComponent, labelFirst = true) => {
         const hasDangerTheme = this.hasDangerTheme();
 
         desc.error = (
-          <div className={classNames(styles['form-control-feedback'], { [styles['invalid-feedback']]: hasDangerTheme })} id={errorId} key="0">
+          <div
+            className={classNames(
+              styles['form-control-feedback'],
+              { [styles['invalid-feedback']]: hasDangerTheme },
+            )}
+            id={errorId}
+            key="0"
+          >
             { hasDangerTheme &&
-            <span
-              className={classNames(FontAwesomeStyles.fa, FontAwesomeStyles['fa-exclamation-circle'], styles['fa-icon-spacing'])}
-              aria-hidden
-            />
+            <span>
+              <span
+                className={classNames(
+                  FontAwesomeStyles.fa,
+                  FontAwesomeStyles['fa-exclamation-circle'],
+                  styles['fa-icon-spacing'],
+                )}
+                aria-hidden
+              />
+              <span
+                className={classNames(styles['sr-only'])}
+              >
+                {this.state.dangerIconDescription}
+              </span>
+            </span>
             }
             <span>
               {this.state.validationMessage}
