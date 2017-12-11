@@ -1,10 +1,14 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 import styles from './Modal.scss';
 import Button, { buttonPropTypes } from '../Button';
 import newId from '../utils/newId';
+
+const modalRootId = 'modal-root';
+let modalRoot = document.getElementById(modalRootId);
 
 class Modal extends React.Component {
   constructor(props) {
@@ -16,6 +20,13 @@ class Modal extends React.Component {
     this.setCloseButton = this.setCloseButton.bind(this);
 
     this.headerId = newId();
+    this.el = document.createElement('div');
+
+    if (!modalRoot) {
+      modalRoot = document.createElement('div');
+      modalRoot.id = modalRootId;
+      document.body.appendChild(modalRoot);
+    }
 
     this.state = {
       open: props.open,
@@ -23,6 +34,7 @@ class Modal extends React.Component {
   }
 
   componentDidMount() {
+    modalRoot.appendChild(this.el);
     if (this.xButton) {
       this.xButton.focus();
     }
@@ -38,6 +50,10 @@ class Modal extends React.Component {
     if (this.state.open && !prevState.open) {
       this.xButton.focus();
     }
+  }
+
+  componentWillUnmount() {
+    modalRoot.removeChild(this.el);
   }
 
   setXButton(input) {
@@ -98,7 +114,7 @@ class Modal extends React.Component {
     return body;
   }
 
-  render() {
+  renderModal() {
     const { open } = this.state;
 
     return (
@@ -145,6 +161,13 @@ class Modal extends React.Component {
           </div>
         </div>
       </div>
+    );
+  }
+
+  render() {
+    return ReactDOM.createPortal(
+      this.renderModal(),
+      this.el,
     );
   }
 }
