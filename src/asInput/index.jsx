@@ -60,20 +60,23 @@ const asInput = (WrappedComponent, labelFirst = true) => {
       const descriptionId = `description-${this.state.id}`;
       const desc = {};
 
-      if (!this.state.isValid) {
-        const hasDangerTheme = this.hasDangerTheme();
+      const hasDangerTheme = this.hasDangerTheme();
 
-        desc.error = (
-          <div
-            className={classNames(
-              styles['form-control-feedback'],
-              { [styles['invalid-feedback']]: hasDangerTheme },
-            )}
-            id={errorId}
-            key="0"
-          >
-            { hasDangerTheme &&
-            <span>
+      desc.error = (
+        <div
+          className={classNames(
+            styles['form-control-feedback'],
+            { [styles['invalid-feedback']]: hasDangerTheme },
+          )}
+          id={errorId}
+          key="0"
+          aria-live="polite"
+        >
+          { this.state.isValid ? (
+            <span />
+          ) : [
+            (hasDangerTheme &&
+            <span key="0">
               <span
                 className={classNames(
                   FontAwesomeStyles.fa,
@@ -88,14 +91,14 @@ const asInput = (WrappedComponent, labelFirst = true) => {
                 {this.state.dangerIconDescription}
               </span>
             </span>
-            }
-            <span>
+            ),
+            <span key="1">
               {this.state.validationMessage}
-            </span>
-          </div>
-        );
-        desc.describedBy = errorId;
-      }
+            </span>,
+          ]}
+        </div>
+      );
+      desc.describedBy = errorId;
 
       if (this.props.description) {
         desc.description = (
