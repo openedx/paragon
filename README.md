@@ -73,6 +73,18 @@ npm run test
 
 To add unit tests for a component, create a file in your component's directory named `<ComponentName>.test.js`. Jest will automatically pick up this file and run the tests as part of the suite. Take a look at [Dropdown.test.jsx](https://github.com/edx/paragon/blob/master/src/Dropdown/Dropdown.test.jsx) or [CheckBox.test.jsx](https://github.com/edx/paragon/blob/master/src/CheckBox/CheckBox.test.jsx) for examples of good component unit tests.
 
+#### Run Unit Tests in Chrome DevTools Inspector
+
+To run the unit tests in the Chrome DevTools inspector, run:
+
+```
+npm run debug-test
+```
+
+Then, open `chrome://inspect` in your Chrome browser and select the "node_modules/.bin/jest" target to open the Chrome DevTools. You can set breakpoints in Chrome DevTools or insert a `debugger;` statement into the code to pause execution at that point.
+
+![Screenshot of Chrome on the chrome://inspect page](docs/inspect-chrome-jest.png)
+
 ### Snapshot Testing
 
 Jest has built-in [snapshot testing](http://facebook.github.io/jest/docs/en/snapshot-testing.html#snapshot-testing-with-jest) functionality which serves as a good means of smoketesting components to ensure they render in a predictable way. Paragon's Jest snapshots are automatically generated from components' Storybook stories using the [Storyshots addon](https://github.com/storybooks/storybook/blob/4b6a93acfbaf044d85dd8ee7a7671239ea1ba01d/addons/storyshots/README.md) -- pretty cool, huh?
