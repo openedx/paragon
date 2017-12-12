@@ -88,3 +88,75 @@ If the snapshot tests fail, it's generally pretty easy to tell whether it's happ
 ### Coverage
 
 Paragon measures code coverage using Jest's built-in `--coverage` flag (which I believe uses istanbul under the hood) and report it via [Coveralls](https://coveralls.io/github/edx/paragon). Shoot for 100% test coverage on your PRs, but use your best judgment if you're really struggling to cover those last few lines. At the very least, don't *reduce* total coverage. Coveralls will fail your build if your PR reduces coverage.
+
+## Semantic Release
+
+Paragon uses the [`semantic-release` package](https://github.com/semantic-release/semantic-release) to automate its release process (creating Git tags, creating GitHub releases, and publishing to NPM).
+
+### Commit Messages
+
+[`semantic-release` analyzes commit messages to determine whether to create a `major`, `minor`, or `patch` release](https://github.com/semantic-release/semantic-release#default-commit-message-format) (or to skip a release).
+Paragon currently uses [the default commit analyzer release rules](https://github.com/semantic-release/commit-analyzer/blob/master/lib/default-release-rules.js#L8-L11) which means that there are **4** commit types that will trigger a release:
+1. `feat` (`minor` release)
+2. `fix` (`patch` release)
+3. `perf` (`patch` release)
+4. `breaking` (`major` release)
+
+#### `Angular` Commit Message Convention
+
+Paragon currently uses [the `Angular` commit message convention](https://gist.github.com/stephenparish/9941e89d80e2bc58a153). As documented in the previously linked gist, a commit that follows the `Angular` commit message convention has four parts:
+1. A `type` - is this commit a `feat`, `fix`, `chore`, `docs`, etc.? There is a set of `type` values to choose from, but again, **only the `feat`, `fix`, `perf`, and `breaking`** `type` values will trigger a release.
+2. A `scope` - what is this commit impacting? Did you fix a bug in the `Hyperlink` component? Did you add a new feature to the `RadioButtonGroup` component? Currently, the `scope` must be lower-case and `-` separated though switching this to being `camelCase` is currently being investigated.
+3. A `subject` - provide a short description of _what_ your change is.
+  * use imperative, present tense language (so `change` not `changed` or `changes`)
+  * don't capitalize the first letter
+  * don't add a period (`.`) at the end
+  * there is a 50 character limit
+4. A `body` (optional) - add more detail about your change
+5. A `footer` (optional)
+  * > All breaking changes have to be mentioned in footer with the description of the change, justification and migration notes - [`Angular` commit message specification](https://gist.github.com/stephenparish/9941e89d80e2bc58a153#breaking-changes)
+
+##### Examples
+This will lead to a patch version bump
+> fix(someComponent): fix tab accessibility issue in someComponent
+
+This will lead to a minor version bump
+> feat(newComponent): add newComponent`
+
+This will lead to a patch version bump - note the body
+>fix(anotherComponent): fix escape key accessibility issue
+>
+> Unable to clear anotherComponent's popup using escape key.
+> By updating the onKeyPress event handler to close popup window on escape key press, accessibility issue was resolved.
+
+
+#### Using `commitlint` in Paragon
+
+Paragon uses the [`commitlint`](https://github.com/marionebl/commitlint) package to lint commit messages. Paragon currently has [a `commit message` hook](https://github.com/edx/paragon/blob/master/package.json#L20) that runs `commitlint`'s, well, commit linting, on the given commit message using the configuration specified in [`commitlint.config.js`](https://github.com/edx/paragon/blob/master/commitlint.config.js). If a commit message fails linting, the commit associated with that message does not end up getting committed.
+
+`commitlint` also comes with [a helpful CLI](https://github.com/marionebl/commitlint/tree/master/@commitlint/cli) that walks one through the entire semantic commit process. This CLI can be triggered by running the `npm run gc` command.
+
+![example-commitlint](https://media.giphy.com/media/3ohs7H8y9Qi7HOHWko/giphy.gif)
+
+As noted above, the only required fields are **`type`, `scope`, and `subject`**. The `body` and `footer` can be skipped through the CLI by typing `:skip`.
+
+### Pull Requests
+
+Since all pull requests should be `squashed` / `rebased` down to a single semantically-formatted commit, it is recommended that **all pull requests have a title that matches the commit message**. This way, whether you're merging a pull request, squashing and merging a pull request, or rebasing and merging a pull request, the correct commit message will be analyzed by `semantic-release`.
+
+### Merging, Building, and Releasing
+
+> When `semantic-release` is set up it will do that after every successful continuous integration build of your master branch (or any other branch you specify) and publish the new version for you
+> - [`semantic-release` README](https://github.com/semantic-release/semantic-release)
+
+Release-related activity only happens
+1. After a successful Travis build on `master` ([the `semantic-release` NPM command is only executed as part of the `after_success` Travis hook](https://github.com/edx/paragon/blob/master/.travis.yml#L21-L22).)
+2. If commit(s) exist with a format that would trigger a release
+
+If a release occurs, a new GitHub release should be found with relevant notes that are parsed from commits associated with that release.
+
+So for the following release
+![example-release](https://imgur.com/RqFG7ND.png)
+the commit message for that release was `fix(asinput): Override state value when props value changes`, and a new `patch` release was created with release notes from the commit message.
+
+After a GitHub release is created, the package is then published to NPM.
