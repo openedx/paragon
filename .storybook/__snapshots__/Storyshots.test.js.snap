@@ -30,6 +30,13 @@ exports[`Storyshots CheckBox basic usage 1`] = `
   >
     check me out!
   </label>
+  <div
+    aria-live="polite"
+    className="form-control-feedback"
+    id="error-asInput1"
+  >
+    <span />
+  </div>
 </div>
 `;
 
@@ -51,6 +58,13 @@ exports[`Storyshots CheckBox call a function 1`] = `
   >
     check out the console
   </label>
+  <div
+    aria-live="polite"
+    className="form-control-feedback"
+    id="error-asInput1"
+  >
+    <span />
+  </div>
 </div>
 `;
 
@@ -72,6 +86,13 @@ exports[`Storyshots CheckBox default checked 1`] = `
   >
     (un)check me out
   </label>
+  <div
+    aria-live="polite"
+    className="form-control-feedback"
+    id="error-asInput1"
+  >
+    <span />
+  </div>
 </div>
 `;
 
@@ -93,6 +114,13 @@ exports[`Storyshots CheckBox disabled 1`] = `
   >
     you cannot check me out
   </label>
+  <div
+    aria-live="polite"
+    className="form-control-feedback"
+    id="error-asInput1"
+  >
+    <span />
+  </div>
 </div>
 `;
 
@@ -204,7 +232,7 @@ exports[`Storyshots InputSelect basic usage 1`] = `
     Fruits
   </label>
   <select
-    aria-describedby={undefined}
+    aria-describedby="error-asInput2"
     className="form-control"
     id="asInput2"
     name="fruits"
@@ -234,6 +262,13 @@ exports[`Storyshots InputSelect basic usage 1`] = `
       banana
     </option>
   </select>
+  <div
+    aria-live="polite"
+    className="form-control-feedback"
+    id="error-asInput2"
+  >
+    <span />
+  </div>
 </div>
 `;
 
@@ -248,7 +283,7 @@ exports[`Storyshots InputSelect separate labels and values 1`] = `
     New England States
   </label>
   <select
-    aria-describedby={undefined}
+    aria-describedby="error-asInput2"
     className="form-control"
     id="asInput2"
     name="new-england-states"
@@ -288,6 +323,13 @@ exports[`Storyshots InputSelect separate labels and values 1`] = `
       Vermont
     </option>
   </select>
+  <div
+    aria-live="polite"
+    className="form-control-feedback"
+    id="error-asInput2"
+  >
+    <span />
+  </div>
 </div>
 `;
 
@@ -302,7 +344,7 @@ exports[`Storyshots InputSelect separate option groups 1`] = `
     Northeast States
   </label>
   <select
-    aria-describedby={undefined}
+    aria-describedby="error-asInput2"
     className="form-control"
     id="asInput2"
     name="northeast-states"
@@ -390,6 +432,13 @@ exports[`Storyshots InputSelect separate option groups 1`] = `
       </option>
     </optgroup>
   </select>
+  <div
+    aria-live="polite"
+    className="form-control-feedback"
+    id="error-asInput2"
+  >
+    <span />
+  </div>
 </div>
 `;
 
@@ -404,7 +453,7 @@ exports[`Storyshots InputSelect with validation 1`] = `
     Favorite Color
   </label>
   <select
-    aria-describedby={undefined}
+    aria-describedby="error-asInput2"
     className="form-control"
     id="asInput2"
     name="color"
@@ -449,6 +498,13 @@ exports[`Storyshots InputSelect with validation 1`] = `
       purple
     </option>
   </select>
+  <div
+    aria-live="polite"
+    className="form-control-feedback"
+    id="error-asInput2"
+  >
+    <span />
+  </div>
 </div>
 `;
 
@@ -489,7 +545,7 @@ exports[`Storyshots InputText focus test 1`] = `
       Data Input
     </label>
     <input
-      aria-describedby={undefined}
+      aria-describedby="error-data"
       aria-invalid={false}
       className="form-control"
       disabled={false}
@@ -503,6 +559,13 @@ exports[`Storyshots InputText focus test 1`] = `
       type="text"
       value=""
     />
+    <div
+      aria-live="polite"
+      className="form-control-feedback"
+      id="error-data"
+    >
+      <span />
+    </div>
   </div>
 </div>
 `;
@@ -518,7 +581,7 @@ exports[`Storyshots InputText minimal usage 1`] = `
     First Name
   </label>
   <input
-    aria-describedby={undefined}
+    aria-describedby="error-asInput3"
     aria-invalid={false}
     className="form-control"
     disabled={false}
@@ -532,6 +595,13 @@ exports[`Storyshots InputText minimal usage 1`] = `
     type="text"
     value="Foo Bar"
   />
+  <div
+    aria-live="polite"
+    className="form-control-feedback"
+    id="error-asInput3"
+  >
+    <span />
+  </div>
 </div>
 `;
 
@@ -546,7 +616,7 @@ exports[`Storyshots InputText validation 1`] = `
     Username
   </label>
   <input
-    aria-describedby="undefined description-username"
+    aria-describedby="error-username description-username"
     aria-invalid={false}
     className="form-control"
     disabled={false}
@@ -560,6 +630,13 @@ exports[`Storyshots InputText validation 1`] = `
     type="text"
     value=""
   />
+  <div
+    aria-live="polite"
+    className="form-control-feedback"
+    id="error-username"
+  >
+    <span />
+  </div>
   <small
     className="form-text"
     id="description-username"
@@ -580,7 +657,7 @@ exports[`Storyshots InputText validation with danger theme 1`] = `
     Username
   </label>
   <input
-    aria-describedby="undefined description-asInput3"
+    aria-describedby="error-asInput3 description-asInput3"
     aria-invalid={false}
     className="form-control"
     disabled={false}
@@ -598,6 +675,13 @@ exports[`Storyshots InputText validation with danger theme 1`] = `
     type="text"
     value=""
   />
+  <div
+    aria-live="polite"
+    className="form-control-feedback invalid-feedback"
+    id="error-asInput3"
+  >
+    <span />
+  </div>
   <small
     className="form-text"
     id="description-asInput3"
@@ -1089,7 +1173,7 @@ exports[`Storyshots Modal modal with element body 1`] = `
               E-Mail Address
             </label>
             <input
-              aria-describedby={undefined}
+              aria-describedby="error-asInput3"
               aria-invalid={false}
               className="form-control"
               disabled={false}
@@ -1103,6 +1187,13 @@ exports[`Storyshots Modal modal with element body 1`] = `
               type="text"
               value=""
             />
+            <div
+              aria-live="polite"
+              className="form-control-feedback"
+              id="error-asInput3"
+            >
+              <span />
+            </div>
           </div>
           <button
             className="btn"
@@ -2076,7 +2167,7 @@ exports[`Storyshots Textarea minimal usage 1`] = `
     First Name
   </label>
   <textarea
-    aria-describedby={undefined}
+    aria-describedby="error-asInput4"
     aria-invalid={false}
     className="form-control"
     disabled={false}
@@ -2093,6 +2184,13 @@ exports[`Storyshots Textarea minimal usage 1`] = `
     }
     value="Foo Bar"
   />
+  <div
+    aria-live="polite"
+    className="form-control-feedback"
+    id="error-asInput4"
+  >
+    <span />
+  </div>
 </div>
 `;
 
@@ -2107,7 +2205,7 @@ exports[`Storyshots Textarea scrollable 1`] = `
     Information
   </label>
   <textarea
-    aria-describedby={undefined}
+    aria-describedby="error-asInput4"
     aria-invalid={false}
     className="form-control"
     disabled={false}
@@ -2124,6 +2222,13 @@ exports[`Storyshots Textarea scrollable 1`] = `
     }
     value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   />
+  <div
+    aria-live="polite"
+    className="form-control-feedback"
+    id="error-asInput4"
+  >
+    <span />
+  </div>
 </div>
 `;
 
@@ -2138,7 +2243,7 @@ exports[`Storyshots Textarea validation 1`] = `
     Username
   </label>
   <textarea
-    aria-describedby="undefined description-asInput4"
+    aria-describedby="error-asInput4 description-asInput4"
     aria-invalid={false}
     className="form-control"
     disabled={false}
@@ -2155,6 +2260,13 @@ exports[`Storyshots Textarea validation 1`] = `
     }
     value=""
   />
+  <div
+    aria-live="polite"
+    className="form-control-feedback"
+    id="error-asInput4"
+  >
+    <span />
+  </div>
   <small
     className="form-text"
     id="description-asInput4"

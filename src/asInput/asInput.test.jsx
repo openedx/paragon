@@ -150,6 +150,7 @@ describe('asInput()', () => {
           };
           wrapper = mount(<InputTestComponent {...props} />);
         });
+
         it('without theme', () => {
           wrapper.find('input').simulate('blur');
           expect(spy).toHaveBeenCalledTimes(1);
@@ -157,18 +158,31 @@ describe('asInput()', () => {
           expect(err.exists()).toEqual(true);
           expect(err.text()).toEqual(validationResult.validationMessage);
         });
+
         it('with danger theme', () => {
           wrapper.setProps({ themes: ['danger'] });
-          wrapper.find('input').simulate('blur');
-          expect(spy).toHaveBeenCalledTimes(1);
+          validationResult.dangerIconDescription = 'Error';
+
+          // error div exists on the page when form is loaded
           const err = wrapper.find('.form-control-feedback');
           expect(err.exists()).toEqual(true);
-          expect(err.text()).toEqual(validationResult.validationMessage);
           expect(err.hasClass('invalid-feedback')).toEqual(true);
+          expect(err.prop('aria-live')).toEqual('polite');
+          expect(err.text()).toEqual('');
+
+          wrapper.find('input').simulate('blur');
+          expect(spy).toHaveBeenCalledTimes(1);
+          expect(err.exists()).toEqual(true);
+          expect(err.text()).toEqual(validationResult.dangerIconDescription +
+                                     validationResult.validationMessage);
 
           const dangerIcon = wrapper.find('.fa-exclamation-circle');
           expect(dangerIcon.exists()).toEqual(true);
           expect(dangerIcon.hasClass('fa')).toEqual(true);
+
+          const dangerIconDescription = wrapper.find('.sr-only');
+          expect(dangerIconDescription.exists()).toEqual(true);
+          expect(dangerIconDescription.text()).toEqual(validationResult.dangerIconDescription);
 
           const inputElement = wrapper.find('.form-control');
           expect(inputElement.hasClass('is-invalid')).toEqual(true);
