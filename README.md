@@ -158,8 +158,7 @@ Since all pull requests should be `squashed` / `rebased` down to a single semant
 
 ### Merging, Building, and Releasing
 
-> When `semantic-release` is set up it will do that after every successful continuous integration build of your master branch (or any other branch you specify) and publish the new version for you
-> - [`semantic-release` README](https://github.com/semantic-release/semantic-release)
+> When `semantic-release` is set up it will do that after every successful continuous integration build of your master branch (or any other branch you specify) and publish the new version for you - [`semantic-release` README](https://github.com/semantic-release/semantic-release)
 
 Release-related activity only happens
 1. After a successful Travis build on `master` ([the `semantic-release` NPM command is only executed as part of the `after_success` Travis hook](https://github.com/edx/paragon/blob/master/.travis.yml#L21-L22).)
