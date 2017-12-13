@@ -226,15 +226,15 @@ exports[`Storyshots InputSelect basic usage 1`] = `
   className="form-group"
 >
   <label
-    htmlFor="asInput2"
-    id="label-asInput2"
+    htmlFor="asInput1"
+    id="label-asInput1"
   >
     Fruits
   </label>
   <select
-    aria-describedby="error-asInput2"
+    aria-describedby="error-asInput1"
     className="form-control"
-    id="asInput2"
+    id="asInput1"
     name="fruits"
     onBlur={[Function]}
     onChange={[Function]}
@@ -265,7 +265,7 @@ exports[`Storyshots InputSelect basic usage 1`] = `
   <div
     aria-live="polite"
     className="form-control-feedback"
-    id="error-asInput2"
+    id="error-asInput1"
   >
     <span />
   </div>
@@ -277,15 +277,15 @@ exports[`Storyshots InputSelect separate labels and values 1`] = `
   className="form-group"
 >
   <label
-    htmlFor="asInput2"
-    id="label-asInput2"
+    htmlFor="asInput1"
+    id="label-asInput1"
   >
     New England States
   </label>
   <select
-    aria-describedby="error-asInput2"
+    aria-describedby="error-asInput1"
     className="form-control"
-    id="asInput2"
+    id="asInput1"
     name="new-england-states"
     onBlur={[Function]}
     onChange={[Function]}
@@ -326,7 +326,7 @@ exports[`Storyshots InputSelect separate labels and values 1`] = `
   <div
     aria-live="polite"
     className="form-control-feedback"
-    id="error-asInput2"
+    id="error-asInput1"
   >
     <span />
   </div>
@@ -338,15 +338,15 @@ exports[`Storyshots InputSelect separate option groups 1`] = `
   className="form-group"
 >
   <label
-    htmlFor="asInput2"
-    id="label-asInput2"
+    htmlFor="asInput1"
+    id="label-asInput1"
   >
     Northeast States
   </label>
   <select
-    aria-describedby="error-asInput2"
+    aria-describedby="error-asInput1"
     className="form-control"
-    id="asInput2"
+    id="asInput1"
     name="northeast-states"
     onBlur={[Function]}
     onChange={[Function]}
@@ -435,7 +435,7 @@ exports[`Storyshots InputSelect separate option groups 1`] = `
   <div
     aria-live="polite"
     className="form-control-feedback"
-    id="error-asInput2"
+    id="error-asInput1"
   >
     <span />
   </div>
@@ -447,15 +447,15 @@ exports[`Storyshots InputSelect with validation 1`] = `
   className="form-group"
 >
   <label
-    htmlFor="asInput2"
-    id="label-asInput2"
+    htmlFor="asInput1"
+    id="label-asInput1"
   >
     Favorite Color
   </label>
   <select
-    aria-describedby="error-asInput2"
+    aria-describedby="error-asInput1"
     className="form-control"
-    id="asInput2"
+    id="asInput1"
     name="color"
     onBlur={[Function]}
     onChange={[Function]}
@@ -501,7 +501,7 @@ exports[`Storyshots InputSelect with validation 1`] = `
   <div
     aria-live="polite"
     className="form-control-feedback"
-    id="error-asInput2"
+    id="error-asInput1"
   >
     <span />
   </div>
@@ -575,17 +575,17 @@ exports[`Storyshots InputText minimal usage 1`] = `
   className="form-group"
 >
   <label
-    htmlFor="asInput3"
-    id="label-asInput3"
+    htmlFor="asInput1"
+    id="label-asInput1"
   >
     First Name
   </label>
   <input
-    aria-describedby="error-asInput3"
+    aria-describedby="error-asInput1"
     aria-invalid={false}
     className="form-control"
     disabled={false}
-    id="asInput3"
+    id="asInput1"
     name="name"
     onBlur={[Function]}
     onChange={[Function]}
@@ -598,7 +598,7 @@ exports[`Storyshots InputText minimal usage 1`] = `
   <div
     aria-live="polite"
     className="form-control-feedback"
-    id="error-asInput3"
+    id="error-asInput1"
   >
     <span />
   </div>
@@ -651,17 +651,17 @@ exports[`Storyshots InputText validation with danger theme 1`] = `
   className="form-group"
 >
   <label
-    htmlFor="asInput3"
-    id="label-asInput3"
+    htmlFor="asInput1"
+    id="label-asInput1"
   >
     Username
   </label>
   <input
-    aria-describedby="error-asInput3 description-asInput3"
+    aria-describedby="error-asInput1 description-asInput1"
     aria-invalid={false}
     className="form-control"
     disabled={false}
-    id="asInput3"
+    id="asInput1"
     name="username"
     onBlur={[Function]}
     onChange={[Function]}
@@ -678,13 +678,13 @@ exports[`Storyshots InputText validation with danger theme 1`] = `
   <div
     aria-live="polite"
     className="form-control-feedback invalid-feedback"
-    id="error-asInput3"
+    id="error-asInput1"
   >
     <span />
   </div>
   <small
     className="form-text"
-    id="description-asInput3"
+    id="description-asInput1"
   >
     The unique name that identifies you throughout the site.
   </small>
@@ -693,7 +693,7 @@ exports[`Storyshots InputText validation with danger theme 1`] = `
 
 exports[`Storyshots Modal basic usage 1`] = `
 <div
-  aria-labelledby="id5"
+  aria-labelledby="id2"
   aria-modal={true}
   className="modal show modal-open"
   role="dialog"
@@ -709,7 +709,7 @@ exports[`Storyshots Modal basic usage 1`] = `
       >
         <h5
           className="modal-title"
-          id="id5"
+          id="id2"
         >
           Modal title.
         </h5>
@@ -755,7 +755,7 @@ exports[`Storyshots Modal basic usage 1`] = `
 
 exports[`Storyshots Modal configurable buttons 1`] = `
 <div
-  aria-labelledby="id6"
+  aria-labelledby="id3"
   aria-modal={true}
   className="modal show modal-open"
   role="dialog"
@@ -771,7 +771,7 @@ exports[`Storyshots Modal configurable buttons 1`] = `
       >
         <h5
           className="modal-title"
-          id="id6"
+          id="id3"
         >
           Modal title.
         </h5>
@@ -844,7 +844,7 @@ exports[`Storyshots Modal configurable buttons 1`] = `
 
 exports[`Storyshots Modal configurable buttons that perform actions 1`] = `
 <div
-  aria-labelledby="id8"
+  aria-labelledby="id5"
   aria-modal={true}
   className="modal show modal-open"
   role="dialog"
@@ -860,7 +860,7 @@ exports[`Storyshots Modal configurable buttons that perform actions 1`] = `
       >
         <h5
           className="modal-title"
-          id="id8"
+          id="id5"
         >
           Modal title.
         </h5>
@@ -915,7 +915,7 @@ exports[`Storyshots Modal configurable buttons that perform actions 1`] = `
 
 exports[`Storyshots Modal configurable close button 1`] = `
 <div
-  aria-labelledby="id9"
+  aria-labelledby="id6"
   aria-modal={true}
   className="modal show modal-open"
   role="dialog"
@@ -931,7 +931,7 @@ exports[`Storyshots Modal configurable close button 1`] = `
       >
         <h5
           className="modal-title"
-          id="id9"
+          id="id6"
         >
           Modal title.
         </h5>
@@ -977,7 +977,7 @@ exports[`Storyshots Modal configurable close button 1`] = `
 
 exports[`Storyshots Modal configurable title and body 1`] = `
 <div
-  aria-labelledby="id7"
+  aria-labelledby="id4"
   aria-modal={true}
   className="modal show modal-open"
   role="dialog"
@@ -993,7 +993,7 @@ exports[`Storyshots Modal configurable title and body 1`] = `
       >
         <h5
           className="modal-title"
-          id="id7"
+          id="id4"
         >
           Custom title!
         </h5>
@@ -1049,7 +1049,7 @@ exports[`Storyshots Modal configurable title and body 1`] = `
 exports[`Storyshots Modal modal invoked via a button 1`] = `
 <div>
   <div
-    aria-labelledby="id10"
+    aria-labelledby="id7"
     aria-modal={true}
     className="modal show"
     role="dialog"
@@ -1065,7 +1065,7 @@ exports[`Storyshots Modal modal invoked via a button 1`] = `
         >
           <h5
             className="modal-title"
-            id="id10"
+            id="id7"
           >
             I am the modal!
           </h5>
@@ -1121,7 +1121,7 @@ exports[`Storyshots Modal modal invoked via a button 1`] = `
 
 exports[`Storyshots Modal modal with element body 1`] = `
 <div
-  aria-labelledby="id11"
+  aria-labelledby="id8"
   aria-modal={true}
   className="modal show modal-open"
   role="dialog"
@@ -1137,7 +1137,7 @@ exports[`Storyshots Modal modal with element body 1`] = `
       >
         <h5
           className="modal-title"
-          id="id11"
+          id="id8"
         >
           Modal title.
         </h5>
@@ -1167,17 +1167,17 @@ exports[`Storyshots Modal modal with element body 1`] = `
             className="form-group"
           >
             <label
-              htmlFor="asInput3"
-              id="label-asInput3"
+              htmlFor="asInput1"
+              id="label-asInput1"
             >
               E-Mail Address
             </label>
             <input
-              aria-describedby="error-asInput3"
+              aria-describedby="error-asInput1"
               aria-invalid={false}
               className="form-control"
               disabled={false}
-              id="asInput3"
+              id="asInput1"
               name="e-mail"
               onBlur={[Function]}
               onChange={[Function]}
@@ -1190,7 +1190,7 @@ exports[`Storyshots Modal modal with element body 1`] = `
             <div
               aria-live="polite"
               className="form-control-feedback"
-              id="error-asInput3"
+              id="error-asInput1"
             >
               <span />
             </div>
@@ -2072,10 +2072,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
   >
     <li
       className="nav-item"
-      id="tab-label-tabInterface12-0"
+      id="tab-label-tabInterface9-0"
     >
       <a
-        aria-controls="tab-panel-tabInterface12-0"
+        aria-controls="tab-panel-tabInterface9-0"
         aria-selected={true}
         className="nav-link active"
         onClick={[Function]}
@@ -2087,10 +2087,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </li>
     <li
       className="nav-item"
-      id="tab-label-tabInterface12-1"
+      id="tab-label-tabInterface9-1"
     >
       <a
-        aria-controls="tab-panel-tabInterface12-1"
+        aria-controls="tab-panel-tabInterface9-1"
         aria-selected={false}
         className="nav-link"
         onClick={[Function]}
@@ -2102,10 +2102,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </li>
     <li
       className="nav-item"
-      id="tab-label-tabInterface12-2"
+      id="tab-label-tabInterface9-2"
     >
       <a
-        aria-controls="tab-panel-tabInterface12-2"
+        aria-controls="tab-panel-tabInterface9-2"
         aria-selected={false}
         className="nav-link"
         onClick={[Function]}
@@ -2121,9 +2121,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
   >
     <div
       aria-hidden={false}
-      aria-labelledby="tab-label-tabInterface12-0"
+      aria-labelledby="tab-label-tabInterface9-0"
       className="tab-pane active"
-      id="tab-panel-tabInterface12-0"
+      id="tab-panel-tabInterface9-0"
       role="tabpanel"
     >
       <div>
@@ -2132,9 +2132,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </div>
     <div
       aria-hidden={true}
-      aria-labelledby="tab-label-tabInterface12-1"
+      aria-labelledby="tab-label-tabInterface9-1"
       className="tab-pane"
-      id="tab-panel-tabInterface12-1"
+      id="tab-panel-tabInterface9-1"
       role="tabpanel"
     >
       <div>
@@ -2143,9 +2143,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </div>
     <div
       aria-hidden={true}
-      aria-labelledby="tab-label-tabInterface12-2"
+      aria-labelledby="tab-label-tabInterface9-2"
       className="tab-pane"
-      id="tab-panel-tabInterface12-2"
+      id="tab-panel-tabInterface9-2"
       role="tabpanel"
     >
       <div>
@@ -2161,17 +2161,17 @@ exports[`Storyshots Textarea minimal usage 1`] = `
   className="form-group"
 >
   <label
-    htmlFor="asInput4"
-    id="label-asInput4"
+    htmlFor="asInput1"
+    id="label-asInput1"
   >
     First Name
   </label>
   <textarea
-    aria-describedby="error-asInput4"
+    aria-describedby="error-asInput1"
     aria-invalid={false}
     className="form-control"
     disabled={false}
-    id="asInput4"
+    id="asInput1"
     name="name"
     onBlur={[Function]}
     onChange={[Function]}
@@ -2187,7 +2187,7 @@ exports[`Storyshots Textarea minimal usage 1`] = `
   <div
     aria-live="polite"
     className="form-control-feedback"
-    id="error-asInput4"
+    id="error-asInput1"
   >
     <span />
   </div>
@@ -2199,17 +2199,17 @@ exports[`Storyshots Textarea scrollable 1`] = `
   className="form-group"
 >
   <label
-    htmlFor="asInput4"
-    id="label-asInput4"
+    htmlFor="asInput1"
+    id="label-asInput1"
   >
     Information
   </label>
   <textarea
-    aria-describedby="error-asInput4"
+    aria-describedby="error-asInput1"
     aria-invalid={false}
     className="form-control"
     disabled={false}
-    id="asInput4"
+    id="asInput1"
     name="name"
     onBlur={[Function]}
     onChange={[Function]}
@@ -2225,7 +2225,7 @@ exports[`Storyshots Textarea scrollable 1`] = `
   <div
     aria-live="polite"
     className="form-control-feedback"
-    id="error-asInput4"
+    id="error-asInput1"
   >
     <span />
   </div>
@@ -2237,17 +2237,17 @@ exports[`Storyshots Textarea validation 1`] = `
   className="form-group"
 >
   <label
-    htmlFor="asInput4"
-    id="label-asInput4"
+    htmlFor="asInput1"
+    id="label-asInput1"
   >
     Username
   </label>
   <textarea
-    aria-describedby="error-asInput4 description-asInput4"
+    aria-describedby="error-asInput1 description-asInput1"
     aria-invalid={false}
     className="form-control"
     disabled={false}
-    id="asInput4"
+    id="asInput1"
     name="username"
     onBlur={[Function]}
     onChange={[Function]}
@@ -2263,13 +2263,13 @@ exports[`Storyshots Textarea validation 1`] = `
   <div
     aria-live="polite"
     className="form-control-feedback"
-    id="error-asInput4"
+    id="error-asInput1"
   >
     <span />
   </div>
   <small
     className="form-text"
-    id="description-asInput4"
+    id="description-asInput1"
   >
     The unique name that identifies you throughout the site.
   </small>

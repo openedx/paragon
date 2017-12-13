@@ -1,7 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
-import asInput, { inputProps } from '../asInput';
+
+import asInput, { inputProps, defaultProps } from '../asInput';
 
 function Text(props) {
   return (
@@ -24,7 +26,22 @@ function Text(props) {
   );
 }
 
-Text.propTypes = inputProps;
+const textPropTypes = {
+  type: PropTypes.string,
+  describedBy: PropTypes.string,
+  isValid: PropTypes.bool,
+  inputRef: PropTypes.func,
+};
+
+const textDefaultProps = {
+  type: 'text',
+  describedBy: '',
+  isValid: true,
+  inputRef: () => {},
+};
+
+Text.propTypes = { ...textPropTypes, ...inputProps };
+Text.defaultProps = { ...textDefaultProps, ...defaultProps };
 
 const InputText = asInput(Text);
 
