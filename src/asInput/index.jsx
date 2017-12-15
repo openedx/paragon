@@ -1,4 +1,6 @@
 /* eslint-disable react/no-unused-prop-types */
+/* eslint-disable react/no-multi-comp */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -6,6 +8,58 @@ import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
 
 import newId from '../utils/newId';
 import styles from './asInput.scss';
+
+class FeedbackMessage extends React.Component {
+  getId() {
+    return `error-${this.props.identifier}`;
+  }
+
+  getWarning() {
+    return (
+      <span key="0">
+        <span
+          className={classNames(
+            FontAwesomeStyles.fa,
+            FontAwesomeStyles['fa-exclamation-circle'],
+            styles['fa-icon-spacing'],
+          )}
+          aria-hidden
+        />
+        <span className={styles['sr-only']} >
+          {this.props.warningIconDescription}
+        </span>
+      </span>
+    );
+  }
+
+  getMessage() {
+    const errors = [];
+
+    if (this.props.showWarning) {
+      errors.push(this.getWarning());
+    }
+
+    errors.push(<span key="1">{this.props.feedback}</span>);
+
+    return errors;
+  }
+
+  render() {
+    return (
+      <div
+        className={classNames(
+          styles['form-control-feedback'],
+          { [styles['invalid-feedback']]: this.props.showWarning },
+        )}
+        id={this.getId()}
+        key="0"
+        aria-live="polite"
+      >
+        { this.getMessage() }
+      </div>
+    );
+  }
+}
 
 export const getDisplayName = WrappedComponent =>
   WrappedComponent.displayName || WrappedComponent.name || 'Component';
@@ -62,42 +116,16 @@ const asInput = (WrappedComponent, labelFirst = true) => {
 
       const hasDangerTheme = this.hasDangerTheme();
 
-      desc.error = (
-        <div
-          className={classNames(
-            styles['form-control-feedback'],
-            { [styles['invalid-feedback']]: hasDangerTheme },
-          )}
-          id={errorId}
-          key="0"
-          aria-live="polite"
-        >
-          { this.state.isValid ? (
-            <span />
-          ) : [
-            (hasDangerTheme &&
-            <span key="0">
-              <span
-                className={classNames(
-                  FontAwesomeStyles.fa,
-                  FontAwesomeStyles['fa-exclamation-circle'],
-                  styles['fa-icon-spacing'],
-                )}
-                aria-hidden
-              />
-              <span
-                className={classNames(styles['sr-only'])}
-              >
-                {this.state.dangerIconDescription}
-              </span>
-            </span>
-            ),
-            <span key="1">
-              {this.state.validationMessage}
-            </span>,
-          ]}
-        </div>
+      const message = (
+        <FeedbackMessage
+          identifier={this.state.id}
+          showWarning={hasDangerTheme}
+          warningIconDescription={this.state.dangerIconDescription}
+          feedback={this.state.validationMessage}
+        />
       );
+
+      desc.error = message;
       desc.describedBy = errorId;
 
       if (this.props.description) {
@@ -173,6 +201,14 @@ const asInput = (WrappedComponent, labelFirst = true) => {
     validator: undefined,
     className: [],
     themes: [],
+  };
+
+  FeedbackMessage.propTypes = {
+    identifier: PropTypes.string.isRequired,
+    warningIconDescription: PropTypes.string.isRequired,
+    errorMessage: PropTypes.string.isRequired,
+    showWarning: PropTypes.bool.isRequired,
+    feedback: PropTypes.string.isRequired,
   };
 
   return NewComponent;
