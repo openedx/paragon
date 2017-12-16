@@ -1,3 +1,8 @@
+// TODO: @jaebradley fix these eslint errors
+
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';

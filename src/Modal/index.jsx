@@ -89,13 +89,12 @@ class Modal extends React.Component {
   }
 
   renderBody() {
-    let body;
+    let { body } = this.props;
 
-    if (typeof this.props.body === 'string') {
-      body = <p>{this.props.body}</p>;
-    } else {
-      body = this.props.body;
+    if (typeof body === 'string') {
+      body = <p>{body}</p>;
     }
+
     return body;
   }
 
