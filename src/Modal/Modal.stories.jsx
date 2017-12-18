@@ -51,10 +51,6 @@ ModalWrapper.propTypes = {
   body: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
 };
 
-ModalWrapper.defaultProps = {
-  open: false,
-};
-
 storiesOf('Modal', module)
   .add('basic usage', () => (
     <Modal

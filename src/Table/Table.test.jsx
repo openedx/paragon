@@ -12,9 +12,15 @@ const props = {
     { key: 'i', label: 'Imaginary Number' },
   ],
   data: [
-    { sq: 1, num: 1, x2: 2, i: 'i' },
-    { sq: 4, num: 2, x2: 4, i: '2i' },
-    { sq: 9, num: 3, x2: 6, i: '3i' },
+    {
+      sq: 1, num: 1, x2: 2, i: 'i',
+    },
+    {
+      sq: 4, num: 2, x2: 4, i: '2i',
+    },
+    {
+      sq: 9, num: 3, x2: 6, i: '3i',
+    },
   ],
 };
 
@@ -62,7 +68,7 @@ describe('<Table />', () => {
     it('with data in the same order as the columns', () => {
       wrapper.find('tr').at(1).find('td').forEach((td, i) => {
         let parsed = Number(td.text());
-        if (isNaN(parsed)) { parsed = td.text(); }
+        if (Number.isNaN(parsed)) { parsed = td.text(); }
         expect(parsed).toEqual(props.data[0][props.columns[i].key]);
       });
     });
