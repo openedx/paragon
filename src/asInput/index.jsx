@@ -28,6 +28,19 @@ export const inputProps = {
   themes: PropTypes.arrayOf(PropTypes.string),
 };
 
+export const defaultProps = {
+  onChange: () => {},
+  onBlur: () => {},
+  id: newId('asInput'),
+  value: '',
+  description: undefined,
+  disabled: false,
+  required: false,
+  validator: undefined,
+  className: [],
+  themes: [],
+};
+
 const asInput = (WrappedComponent, labelFirst = true) => {
   class NewComponent extends React.Component {
     constructor(props) {
@@ -162,18 +175,7 @@ const asInput = (WrappedComponent, labelFirst = true) => {
 
   NewComponent.propTypes = inputProps;
 
-  NewComponent.defaultProps = {
-    onChange: () => {},
-    onBlur: () => {},
-    id: newId('asInput'),
-    value: '',
-    description: undefined,
-    disabled: false,
-    required: false,
-    validator: undefined,
-    className: [],
-    themes: [],
-  };
+  NewComponent.defaultProps = defaultProps;
 
   return NewComponent;
 };
