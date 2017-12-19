@@ -55,6 +55,12 @@ describe('<Modal />', () => {
       wrapper = mount(<Modal {...defaultProps} buttons={buttons} />);
       expect(wrapper.find('button')).toHaveLength(buttons.length + 2);
     });
+
+    it('renders element body', () => {
+      const bodyElement = <div id="test">i am an element</div>;
+      wrapper = mount(<Modal {...defaultProps} body={bodyElement} />);
+      expect(wrapper.find('#test')).toHaveLength(1);
+    });
   });
 
   describe('props received correctly', () => {
@@ -169,5 +175,12 @@ describe('<Modal />', () => {
       buttons.at(0).simulate('keyDown', { key: 'Tab', shiftKey: true });
       expect(buttons.last().html()).toEqual(document.activeElement.outerHTML);
     });
+  });
+
+  it('removes element from document on unmount', () => {
+    wrapper = mount(<Modal {...defaultProps} />);
+    expect(wrapper.find('.modal')).toHaveLength(1);
+    wrapper.unmount();
+    expect(wrapper.find('.modal')).toHaveLength(0);
   });
 });
