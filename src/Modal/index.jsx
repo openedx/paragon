@@ -2,9 +2,12 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
+import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
 import styles from './Modal.scss';
 import Button, { buttonPropTypes } from '../Button';
+import Icon from '../Icon';
 import newId from '../utils/newId';
+import Variant from '../utils/constants';
 
 class Modal extends React.Component {
   constructor(props) {
@@ -48,6 +51,50 @@ class Modal extends React.Component {
     this.closeButton = input;
   }
 
+  getVariantIconClassName() {
+    const { variant } = this.props;
+    let variantIconClassName;
+
+    switch (variant.status) {
+      case Variant.status.WARNING:
+        variantIconClassName = classNames(
+          FontAwesomeStyles.fa,
+          FontAwesomeStyles['fa-exclamation-triangle'],
+          FontAwesomeStyles['fa-3x'],
+          styles[`text-${variant.status.toLowerCase()}`],
+        );
+        break;
+      default:
+        break;
+    }
+
+    return variantIconClassName;
+  }
+
+  getVariantGridBody(body) {
+    const { variant } = this.props;
+
+    return (
+      <div className={styles['container-fluid']}>
+        <div className={styles.row}>
+          <div className={styles['col-md-10']}>
+            <div>
+              {body}
+            </div>
+          </div>
+          <div className={styles.col}>
+            <Icon
+              id={newId(`Modal-${variant.status}`)}
+              className={[
+                this.getVariantIconClassName(),
+              ]}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   close() {
     this.setState({ open: false });
     this.props.onClose();
@@ -89,10 +136,15 @@ class Modal extends React.Component {
   }
 
   renderBody() {
+    const { variant } = this.props;
     let { body } = this.props;
 
     if (typeof body === 'string') {
       body = <p>{body}</p>;
+    }
+
+    if (variant.status) {
+      body = this.getVariantGridBody(body);
     }
 
     return body;
@@ -119,7 +171,7 @@ class Modal extends React.Component {
         <div className={styles['modal-dialog']}>
           <div className={styles['modal-content']}>
             <div className={styles['modal-header']}>
-              <h5 className={styles['modal-title']} id={this.headerId}>{this.props.title}</h5>
+              <h2 className={styles['modal-title']} id={this.headerId}>{this.props.title}</h2>
               <Button
                 label={<span aria-hidden="true">&times;</span>}
                 aria-label={this.props.closeText}
@@ -159,12 +211,16 @@ Modal.propTypes = {
   ])),
   closeText: PropTypes.string,
   onClose: PropTypes.func.isRequired,
+  variant: PropTypes.shape({
+    status: PropTypes.string,
+  }),
 };
 
 Modal.defaultProps = {
   open: false,
   buttons: [],
   closeText: 'Close',
+  variant: {},
 };
 
 

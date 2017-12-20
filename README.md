@@ -46,6 +46,7 @@ Demo implementations of each component are viewable at the Paragon doc site at h
 - [CheckBox](src/CheckBox)
 - [Dropdown](src/Dropdown)
 - [Hyperlink](src/Hyperlink)
+- [Icon](src/Icon)
 - [InputSelect](src/InputSelect)
 - [InputText](src/InputText)
 - [Modal](src/Modal)
