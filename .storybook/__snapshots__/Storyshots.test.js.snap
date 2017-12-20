@@ -695,7 +695,7 @@ exports[`Storyshots Modal basic usage 1`] = `
 <div
   aria-labelledby="id2"
   aria-modal={true}
-  className="modal show modal-open"
+  className="modal modal-open modal-backdrop show"
   role="dialog"
 >
   <div
@@ -757,7 +757,7 @@ exports[`Storyshots Modal configurable buttons 1`] = `
 <div
   aria-labelledby="id3"
   aria-modal={true}
-  className="modal show modal-open"
+  className="modal modal-open modal-backdrop show"
   role="dialog"
 >
   <div
@@ -846,7 +846,7 @@ exports[`Storyshots Modal configurable buttons that perform actions 1`] = `
 <div
   aria-labelledby="id5"
   aria-modal={true}
-  className="modal show modal-open"
+  className="modal modal-open modal-backdrop show"
   role="dialog"
 >
   <div
@@ -917,7 +917,7 @@ exports[`Storyshots Modal configurable close button 1`] = `
 <div
   aria-labelledby="id6"
   aria-modal={true}
-  className="modal show modal-open"
+  className="modal modal-open modal-backdrop show"
   role="dialog"
 >
   <div
@@ -979,7 +979,7 @@ exports[`Storyshots Modal configurable title and body 1`] = `
 <div
   aria-labelledby="id4"
   aria-modal={true}
-  className="modal show modal-open"
+  className="modal modal-open modal-backdrop show"
   role="dialog"
 >
   <div
@@ -1051,7 +1051,7 @@ exports[`Storyshots Modal modal invoked via a button 1`] = `
   <div
     aria-labelledby="id7"
     aria-modal={true}
-    className="modal show"
+    className="modal fade"
     role="dialog"
   >
     <div
@@ -1123,7 +1123,7 @@ exports[`Storyshots Modal modal with element body 1`] = `
 <div
   aria-labelledby="id8"
   aria-modal={true}
-  className="modal show modal-open"
+  className="modal modal-open modal-backdrop show"
   role="dialog"
 >
   <div

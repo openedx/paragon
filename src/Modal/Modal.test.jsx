@@ -7,7 +7,10 @@ import Button from '../Button';
 
 
 const modalOpen = (isOpen, wrapper) => {
-  expect(wrapper.childAt(0).hasClass('modal-open')).toEqual(isOpen);
+  expect(wrapper.find('.modal').hasClass('modal-open')).toEqual(isOpen);
+  expect(wrapper.find('.modal').hasClass('modal-backdrop')).toEqual(isOpen);
+  expect(wrapper.find('.modal').hasClass('show')).toEqual(isOpen);
+  expect(wrapper.find('.modal').hasClass('fade')).toEqual(!isOpen);
   expect(wrapper.state('open')).toEqual(isOpen);
 };
 const title = 'Modal title';
