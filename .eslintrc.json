@@ -1,5 +1,5 @@
 {
-  "extends": ["eslint-config-airbnb", "eslint-config-edx"],
+  "extends": ["eslint-config-edx"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -9,7 +9,11 @@
     "react/no-array-index-key": "off"
   },
   "settings": {
-    "import/resolver": "webpack"
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"]
+      }
+    }
   },
   "env": {
     "jest": true

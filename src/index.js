@@ -1,20 +1,30 @@
+import asInput from './asInput';
 import Button from './Button';
 import CheckBox from './CheckBox';
 import Dropdown from './Dropdown';
+import Hyperlink from './Hyperlink';
 import InputSelect from './InputSelect';
 import InputText from './InputText';
-import Tabs from './Tabs';
+import Modal from './Modal';
 import RadioButtonGroup, { RadioButton } from './RadioButtonGroup';
-import Hyperlink from './Hyperlink';
+import StatusAlert from './StatusAlert';
+import Table from './Table';
+import Tabs from './Tabs';
+import TextArea from './TextArea';
 
 export {
+  asInput,
   Button,
   CheckBox,
   Dropdown,
+  Hyperlink,
   InputSelect,
   InputText,
-  Tabs,
+  Modal,
   RadioButtonGroup,
   RadioButton,
-  Hyperlink,
+  StatusAlert,
+  Table,
+  Tabs,
+  TextArea,
 };
