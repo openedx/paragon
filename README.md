@@ -23,23 +23,37 @@ npm i --save @edx/paragon
 
 Since Paragon is a React library, components must be rendered with React and ReactDOM. This doesn't mean the entire page has to be rendered with React. You can read up about rendering React into a page within the [official ReactDOM documentation](https://reactjs.org/docs/react-dom.html).
 
-### Component API
+### Export Targets
 
-API documentation for each component is available below:
+Paragon's production build ships with two different export targets:
 
-- (asInput)[src/asInput]
-- (Button)[src/Button]
-- (CheckBox)[src/CheckBox]
-- (Dropdown)[src/Dropdown]
-- (Hyperlink)[src/Hyperlink]
-- (InputSelect)[src/InputSelect]
-- (InputText)[src/InputText]
-- (Modal)[src/Modal]
-- (RadioButtonGroup)[src/RadioButtonGroup]
-- (StatusAlert)[src/StatusAlert]
-- (Table)[src/Table]
-- (Tabs)[src/Tabs]
-- (TextArea)[src/TextArea]
+**`themeable`**: This is the default export intended for use within Bootstrap 4 pages. Components ship with stock Bootstrap classnames and can accept Bootstrap themes. This build assumes Bootstrap/Font Awesome are already available on the consuming page. You should not need to add any additional stylesheets -- just plug and go. Import syntax is as follows:
+
+`import { ComponentName } from '@edx/paragon';`
+
+**`static`**: The static build is intended for use within legacy pages not styled with Bootstrap 4. Component classnames are namespaced with the `paragon__` prefix so as not to conflict with existing classnames defined elsewhere on the page. Be cognizant of poorly scoped legacy rules (e.g. a rule for all `input` or `h1` tags), which can still affect Paragon components. This build comes with its own stylesheet, available at `/static/paragon.min.css`. You must include this stylesheet on any page that uses Paragon components. Components can be imported thus:
+
+`import { ComponentName } from '@edx/paragon/static';`
+
+Because of the additional weight of the `static` stylesheet (>100k), the `static` target exports should be used sparingly. If possible, consuming pages should be converted to standard Bootstrap instead.
+
+### Components
+
+Demo implementations of each component are viewable at the Paragon doc site at https://edx.github.io/paragon. API documentation for each component is available below:
+
+- [asInput](src/asInput)
+- [Button](src/Button)
+- [CheckBox](src/CheckBox)
+- [Dropdown](src/Dropdown)
+- [Hyperlink](src/Hyperlink)
+- [InputSelect](src/InputSelect)
+- [InputText](src/InputText)
+- [Modal](src/Modal)
+- [RadioButtonGroup](src/RadioButtonGroup)
+- [StatusAlert](src/StatusAlert)
+- [Table](src/Table)
+- [Tabs](src/Tabs)
+- [TextArea](src/TextArea)
 
 ## Development
 
