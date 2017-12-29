@@ -4,7 +4,7 @@ import { mount } from 'enzyme';
 
 import Modal from './index';
 import Button from '../Button';
-
+import Variant from '../utils/constants';
 
 const modalOpen = (isOpen, wrapper) => {
   expect(wrapper.find('.modal').hasClass('modal-open')).toEqual(isOpen);
@@ -54,6 +54,30 @@ describe('<Modal />', () => {
     it('renders custom buttons', () => {
       wrapper = mount(<Modal {...defaultProps} buttons={buttons} />);
       expect(wrapper.find('button')).toHaveLength(buttons.length + 2);
+    });
+
+    it('renders Warning Variant', () => {
+      wrapper = mount(<Modal {...defaultProps} variant={{ status: Variant.status.WARNING }} />);
+
+      const modalBody = wrapper.find('.modal-body');
+      expect(modalBody.childAt(0).hasClass('container-fluid')).toEqual(true);
+      expect(modalBody.find('p').text()).toEqual(body);
+
+      const icon = modalBody.find('Icon');
+      expect(icon.hasClass('fa')).toEqual(true);
+      expect(icon.hasClass('fa-exclamation-triangle')).toEqual(true);
+      expect(icon.hasClass('fa-3x')).toEqual(true);
+      expect(icon.hasClass('text-warning')).toEqual(true);
+    });
+
+    it('renders invalid Variant properly', () => {
+      wrapper = mount(<Modal {...defaultProps} variant={{ status: 'foo' }} />);
+      const modalTitle = wrapper.find('.modal-title');
+      const modalBody = wrapper.find('.modal-body');
+
+      expect(modalTitle.text()).toEqual(title);
+      expect(modalBody.text()).toEqual(body);
+      expect(wrapper.find('button')).toHaveLength(2);
     });
   });
 
