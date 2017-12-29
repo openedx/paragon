@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import Modal from './index';
 import Button from '../Button';
 import InputText from '../InputText';
+import Variant from '../utils/constants';
 
 class ModalWrapper extends React.Component {
   constructor(props) {
@@ -143,5 +144,23 @@ storiesOf('Modal', module)
         </div>
       )}
       onClose={() => {}}
+    />
+  ))
+  .add('modal with warning theme', () => (
+    <Modal
+      open
+      title="Warning Modal"
+      body={(
+        <p>Be careful! It is dangerous ahead.</p>
+      )}
+      closeText="Run Away!"
+      buttons={[
+        <Button
+          label="Continue anyway..."
+          buttonType="light"
+        />,
+      ]}
+      onClose={() => {}}
+      variant={{ status: Variant.status.WARNING }}
     />
   ));
