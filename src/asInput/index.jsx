@@ -41,7 +41,7 @@ export const defaultProps = {
   themes: [],
 };
 
-const asInput = (WrappedComponent, labelFirst = true) => {
+const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => {
   class NewComponent extends React.Component {
     constructor(props) {
       super(props);
@@ -125,8 +125,31 @@ const asInput = (WrappedComponent, labelFirst = true) => {
       return desc;
     }
 
+    getLabel() {
+      return (
+        <label
+          id={`label-${this.state.id}`}
+          htmlFor={this.state.id}
+          className={[classNames({
+            [styles['form-check-label']]: this.isGroupedInput(),
+          })]}
+        >
+          {this.props.label}
+        </label>
+      );
+    }
+
     hasDangerTheme() {
       return this.props.themes.includes('danger');
+    }
+
+    isGroupedInput() {
+      switch (inputType) {
+        case 'checkbox':
+          return true;
+        default:
+          return false;
+      }
     }
 
     handleBlur(event) {
@@ -149,21 +172,28 @@ const asInput = (WrappedComponent, labelFirst = true) => {
     render() {
       const { description, error, describedBy } = this.getDescriptions();
       return (
-        <div className={styles['form-group']}>
-          {labelFirst && <label id={`label-${this.state.id}`} htmlFor={this.state.id}>{this.props.label}</label>}
+        <div className={[classNames({
+            [styles['form-group']]: !this.isGroupedInput(),
+            [styles['form-check']]: this.isGroupedInput(),
+          })]}
+        >
+          {labelFirst && this.getLabel()}
           <WrappedComponent
             {...this.props}
             {...this.state}
             className={[classNames(
-              styles['form-control'],
-              { [styles['is-invalid']]: !this.state.isValid && this.hasDangerTheme() },
+              {
+                [styles['form-control']]: !this.isGroupedInput(),
+                [styles['form-check-input']]: this.isGroupedInput(),
+                [styles['is-invalid']]: !this.state.isValid && this.hasDangerTheme(),
+              },
               { ...this.props.className },
             )]}
             describedBy={describedBy}
             onChange={this.handleChange}
             onBlur={this.handleBlur}
           />
-          {!labelFirst && <label htmlFor={this.state.id}>{this.props.label}</label>}
+          {!labelFirst && this.getLabel()}
           {error}
           {description}
         </div>

@@ -14,10 +14,19 @@ exports[`Storyshots Button basic usage 1`] = `
 
 exports[`Storyshots CheckBox basic usage 1`] = `
 <div
-  className="form-group"
+  className={
+    Array [
+      "form-check",
+    ]
+  }
 >
   <input
     aria-checked={false}
+    className={
+      Array [
+        "form-check-input",
+      ]
+    }
     defaultChecked={false}
     disabled={false}
     id="asInput1"
@@ -26,7 +35,13 @@ exports[`Storyshots CheckBox basic usage 1`] = `
     type="checkbox"
   />
   <label
+    className={
+      Array [
+        "form-check-label",
+      ]
+    }
     htmlFor="asInput1"
+    id="label-asInput1"
   >
     check me out!
   </label>
@@ -42,10 +57,19 @@ exports[`Storyshots CheckBox basic usage 1`] = `
 
 exports[`Storyshots CheckBox call a function 1`] = `
 <div
-  className="form-group"
+  className={
+    Array [
+      "form-check",
+    ]
+  }
 >
   <input
     aria-checked={false}
+    className={
+      Array [
+        "form-check-input",
+      ]
+    }
     defaultChecked={false}
     disabled={false}
     id="asInput1"
@@ -54,7 +78,13 @@ exports[`Storyshots CheckBox call a function 1`] = `
     type="checkbox"
   />
   <label
+    className={
+      Array [
+        "form-check-label",
+      ]
+    }
     htmlFor="asInput1"
+    id="label-asInput1"
   >
     check out the console
   </label>
@@ -70,10 +100,19 @@ exports[`Storyshots CheckBox call a function 1`] = `
 
 exports[`Storyshots CheckBox default checked 1`] = `
 <div
-  className="form-group"
+  className={
+    Array [
+      "form-check",
+    ]
+  }
 >
   <input
     aria-checked={true}
+    className={
+      Array [
+        "form-check-input",
+      ]
+    }
     defaultChecked={true}
     disabled={false}
     id="asInput1"
@@ -82,7 +121,13 @@ exports[`Storyshots CheckBox default checked 1`] = `
     type="checkbox"
   />
   <label
+    className={
+      Array [
+        "form-check-label",
+      ]
+    }
     htmlFor="asInput1"
+    id="label-asInput1"
   >
     (un)check me out
   </label>
@@ -98,10 +143,19 @@ exports[`Storyshots CheckBox default checked 1`] = `
 
 exports[`Storyshots CheckBox disabled 1`] = `
 <div
-  className="form-group"
+  className={
+    Array [
+      "form-check",
+    ]
+  }
 >
   <input
     aria-checked={false}
+    className={
+      Array [
+        "form-check-input",
+      ]
+    }
     defaultChecked={false}
     disabled={true}
     id="asInput1"
@@ -110,7 +164,13 @@ exports[`Storyshots CheckBox disabled 1`] = `
     type="checkbox"
   />
   <label
+    className={
+      Array [
+        "form-check-label",
+      ]
+    }
     htmlFor="asInput1"
+    id="label-asInput1"
   >
     you cannot check me out
   </label>
@@ -120,6 +180,133 @@ exports[`Storyshots CheckBox disabled 1`] = `
     id="error-asInput1"
   >
     <span />
+  </div>
+</div>
+`;
+
+exports[`Storyshots CheckBoxGroup basic usage 1`] = `
+<div
+  className="form-group"
+>
+  <div
+    className={
+      Array [
+        "form-check",
+      ]
+    }
+  >
+    <input
+      aria-checked={false}
+      className={
+        Array [
+          "form-check-input",
+        ]
+      }
+      defaultChecked={false}
+      disabled={false}
+      id="checkbox1"
+      name="basicCheckBox"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <label
+      className={
+        Array [
+          "form-check-label",
+        ]
+      }
+      htmlFor="checkbox1"
+      id="label-checkbox1"
+    >
+      CheckBox 1
+    </label>
+    <div
+      aria-live="polite"
+      className="form-control-feedback"
+      id="error-checkbox1"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className={
+      Array [
+        "form-check",
+      ]
+    }
+  >
+    <input
+      aria-checked={false}
+      className={
+        Array [
+          "form-check-input",
+        ]
+      }
+      defaultChecked={false}
+      disabled={false}
+      id="checkbox2"
+      name="basicCheckBox"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <label
+      className={
+        Array [
+          "form-check-label",
+        ]
+      }
+      htmlFor="checkbox2"
+      id="label-checkbox2"
+    >
+      CheckBox 2
+    </label>
+    <div
+      aria-live="polite"
+      className="form-control-feedback"
+      id="error-checkbox2"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className={
+      Array [
+        "form-check",
+      ]
+    }
+  >
+    <input
+      aria-checked={false}
+      className={
+        Array [
+          "form-check-input",
+        ]
+      }
+      defaultChecked={false}
+      disabled={false}
+      id="checkbox3"
+      name="basicCheckBox"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <label
+      className={
+        Array [
+          "form-check-label",
+        ]
+      }
+      htmlFor="checkbox3"
+      id="label-checkbox3"
+    >
+      CheckBox 3
+    </label>
+    <div
+      aria-live="polite"
+      className="form-control-feedback"
+      id="error-checkbox3"
+    >
+      <span />
+    </div>
   </div>
 </div>
 `;
@@ -248,9 +435,18 @@ exports[`Storyshots Icon with screenreader text 1`] = `
 
 exports[`Storyshots InputSelect basic usage 1`] = `
 <div
-  className="form-group"
+  className={
+    Array [
+      "form-group",
+    ]
+  }
 >
   <label
+    className={
+      Array [
+        "",
+      ]
+    }
     htmlFor="asInput1"
     id="label-asInput1"
   >
@@ -299,9 +495,18 @@ exports[`Storyshots InputSelect basic usage 1`] = `
 
 exports[`Storyshots InputSelect separate labels and values 1`] = `
 <div
-  className="form-group"
+  className={
+    Array [
+      "form-group",
+    ]
+  }
 >
   <label
+    className={
+      Array [
+        "",
+      ]
+    }
     htmlFor="asInput1"
     id="label-asInput1"
   >
@@ -360,9 +565,18 @@ exports[`Storyshots InputSelect separate labels and values 1`] = `
 
 exports[`Storyshots InputSelect separate option groups 1`] = `
 <div
-  className="form-group"
+  className={
+    Array [
+      "form-group",
+    ]
+  }
 >
   <label
+    className={
+      Array [
+        "",
+      ]
+    }
     htmlFor="asInput1"
     id="label-asInput1"
   >
@@ -469,9 +683,18 @@ exports[`Storyshots InputSelect separate option groups 1`] = `
 
 exports[`Storyshots InputSelect with validation 1`] = `
 <div
-  className="form-group"
+  className={
+    Array [
+      "form-group",
+    ]
+  }
 >
   <label
+    className={
+      Array [
+        "",
+      ]
+    }
     htmlFor="asInput1"
     id="label-asInput1"
   >
@@ -561,9 +784,18 @@ exports[`Storyshots InputText focus test 1`] = `
     </div>
   </div>
   <div
-    className="form-group"
+    className={
+      Array [
+        "form-group",
+      ]
+    }
   >
     <label
+      className={
+        Array [
+          "",
+        ]
+      }
       htmlFor="data"
       id="label-data"
     >
@@ -597,9 +829,18 @@ exports[`Storyshots InputText focus test 1`] = `
 
 exports[`Storyshots InputText minimal usage 1`] = `
 <div
-  className="form-group"
+  className={
+    Array [
+      "form-group",
+    ]
+  }
 >
   <label
+    className={
+      Array [
+        "",
+      ]
+    }
     htmlFor="asInput1"
     id="label-asInput1"
   >
@@ -632,9 +873,18 @@ exports[`Storyshots InputText minimal usage 1`] = `
 
 exports[`Storyshots InputText validation 1`] = `
 <div
-  className="form-group"
+  className={
+    Array [
+      "form-group",
+    ]
+  }
 >
   <label
+    className={
+      Array [
+        "",
+      ]
+    }
     htmlFor="username"
     id="label-username"
   >
@@ -673,9 +923,18 @@ exports[`Storyshots InputText validation 1`] = `
 
 exports[`Storyshots InputText validation with danger theme 1`] = `
 <div
-  className="form-group"
+  className={
+    Array [
+      "form-group",
+    ]
+  }
 >
   <label
+    className={
+      Array [
+        "",
+      ]
+    }
     htmlFor="asInput1"
     id="label-asInput1"
   >
@@ -1189,9 +1448,18 @@ exports[`Storyshots Modal modal with element body 1`] = `
             Enter your e-mail address to receive free cat facts!
           </p>
           <div
-            className="form-group"
+            className={
+              Array [
+                "form-group",
+              ]
+            }
           >
             <label
+              className={
+                Array [
+                  "",
+                ]
+              }
               htmlFor="asInput1"
               id="label-asInput1"
             >
@@ -2279,9 +2547,18 @@ exports[`Storyshots Tabs basic usage 1`] = `
 
 exports[`Storyshots Textarea minimal usage 1`] = `
 <div
-  className="form-group"
+  className={
+    Array [
+      "form-group",
+    ]
+  }
 >
   <label
+    className={
+      Array [
+        "",
+      ]
+    }
     htmlFor="asInput1"
     id="label-asInput1"
   >
@@ -2317,9 +2594,18 @@ exports[`Storyshots Textarea minimal usage 1`] = `
 
 exports[`Storyshots Textarea scrollable 1`] = `
 <div
-  className="form-group"
+  className={
+    Array [
+      "form-group",
+    ]
+  }
 >
   <label
+    className={
+      Array [
+        "",
+      ]
+    }
     htmlFor="asInput1"
     id="label-asInput1"
   >
@@ -2355,9 +2641,18 @@ exports[`Storyshots Textarea scrollable 1`] = `
 
 exports[`Storyshots Textarea validation 1`] = `
 <div
-  className="form-group"
+  className={
+    Array [
+      "form-group",
+    ]
+  }
 >
   <label
+    className={
+      Array [
+        "",
+      ]
+    }
     htmlFor="asInput1"
     id="label-asInput1"
   >
