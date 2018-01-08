@@ -28,6 +28,7 @@ class Check extends React.Component {
     return (
       <input
         id={props.id}
+        className={props.className}
         type="checkbox"
         name={props.name}
         defaultChecked={this.state.checked}
@@ -49,6 +50,6 @@ Check.defaultProps = {
   onChange: () => {},
 };
 
-const CheckBox = asInput(Check, false);
+const CheckBox = asInput(Check, 'checkbox', false);
 
 export default CheckBox;

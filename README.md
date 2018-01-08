@@ -44,6 +44,7 @@ Demo implementations of each component are viewable at the Paragon doc site at h
 - [asInput](src/asInput)
 - [Button](src/Button)
 - [CheckBox](src/CheckBox)
+- [CheckBoxGroup](src/CheckBoxGroup)
 - [Dropdown](src/Dropdown)
 - [Hyperlink](src/Hyperlink)
 - [Icon](src/Icon)
