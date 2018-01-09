@@ -138,6 +138,8 @@ describe('<Table />', () => {
     it('with correct column buttons', () => {
       const buttons = wrapper.find('button');
       expect(buttons).toHaveLength(2);
+      expect(buttons.at(0).hasClass('btn-header')).toBe(true);
+      expect(buttons.at(1).hasClass('btn-header')).toBe(true);
     });
 
     it('with correct initial sort icons', () => {
