@@ -66,7 +66,7 @@ class Table extends React.Component {
     let heading;
     if (this.props.tableSortable && column.columnSortable) {
       heading = (<Button
-        className={[classNames(styles['btn-header'])]}
+        className={[styles['btn-header']]}
         label={
           <span>
             {column.label}
