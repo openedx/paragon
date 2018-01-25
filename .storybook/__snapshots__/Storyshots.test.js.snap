@@ -22,12 +22,12 @@ exports[`Storyshots CheckBox basic usage 1`] = `
 >
   <input
     aria-checked={false}
+    checked={false}
     className={
       Array [
         "form-check-input",
       ]
     }
-    defaultChecked={false}
     disabled={false}
     id="asInput1"
     name="checkbox"
@@ -65,12 +65,12 @@ exports[`Storyshots CheckBox call a function 1`] = `
 >
   <input
     aria-checked={false}
+    checked={false}
     className={
       Array [
         "form-check-input",
       ]
     }
-    defaultChecked={false}
     disabled={false}
     id="asInput1"
     name="checkbox"
@@ -98,6 +98,60 @@ exports[`Storyshots CheckBox call a function 1`] = `
 </div>
 `;
 
+exports[`Storyshots CheckBox controlled 1`] = `
+<div>
+  <button
+    className="btn btn-light"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    Click me to toggle the check box!
+  </button>
+  <div
+    className={
+      Array [
+        "form-check",
+      ]
+    }
+  >
+    <input
+      aria-checked={false}
+      checked={false}
+      className={
+        Array [
+          "form-check-input",
+        ]
+      }
+      disabled={false}
+      id="asInput1"
+      name="checkbox"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <label
+      className={
+        Array [
+          "form-check-label",
+        ]
+      }
+      htmlFor="asInput1"
+      id="label-asInput1"
+    >
+      
+    </label>
+    <div
+      aria-live="polite"
+      className="form-control-feedback"
+      id="error-asInput1"
+    >
+      <span />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots CheckBox default checked 1`] = `
 <div
   className={
@@ -108,12 +162,12 @@ exports[`Storyshots CheckBox default checked 1`] = `
 >
   <input
     aria-checked={true}
+    checked={true}
     className={
       Array [
         "form-check-input",
       ]
     }
-    defaultChecked={true}
     disabled={false}
     id="asInput1"
     name="checkbox"
@@ -151,12 +205,12 @@ exports[`Storyshots CheckBox disabled 1`] = `
 >
   <input
     aria-checked={false}
+    checked={false}
     className={
       Array [
         "form-check-input",
       ]
     }
-    defaultChecked={false}
     disabled={true}
     id="asInput1"
     name="checkbox"
@@ -197,12 +251,12 @@ exports[`Storyshots CheckBoxGroup basic usage 1`] = `
   >
     <input
       aria-checked={false}
+      checked={false}
       className={
         Array [
           "form-check-input",
         ]
       }
-      defaultChecked={false}
       disabled={false}
       id="checkbox1"
       name="basicCheckBox"
@@ -237,12 +291,12 @@ exports[`Storyshots CheckBoxGroup basic usage 1`] = `
   >
     <input
       aria-checked={false}
+      checked={false}
       className={
         Array [
           "form-check-input",
         ]
       }
-      defaultChecked={false}
       disabled={false}
       id="checkbox2"
       name="basicCheckBox"
@@ -277,12 +331,12 @@ exports[`Storyshots CheckBoxGroup basic usage 1`] = `
   >
     <input
       aria-checked={false}
+      checked={false}
       className={
         Array [
           "form-check-input",
         ]
       }
-      defaultChecked={false}
       disabled={false}
       id="checkbox3"
       name="basicCheckBox"
