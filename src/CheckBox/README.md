@@ -7,7 +7,7 @@ The following parameters should be passed into every checkbox component:
 * `label` (`String`): label to be placed next to the checkbox
 
 The following parameters can optionally be passed into a checkbox component:
-* `checked` (`Boolean`): `true` if the default state should be checked, `false` otherwise
+* `checked` (`Boolean`): `true` if the state should be checked, `false` otherwise. This prop can be used to manage the Checkbox more directly, overriding the default Checkbox checked state.
 * `disabled` (`Boolean`): `true` if the checkbox should be disabled, `false` otherwise
 * `onChange`: function to be called when the checkbox changes state
   * Function will be called with the arguments: `checked` (`Boolean`), `name` (`String`)
