@@ -4,6 +4,42 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import CheckBox from './index';
+import Button from '../Button';
+
+class CheckBoxWrapper extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.toggleCheckBox = this.toggleCheckBox.bind(this);
+
+    this.state = {
+      checked: false,
+    };
+  }
+
+  toggleCheckBox() {
+    this.setState({
+      checked: !this.state.checked,
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <Button
+          onClick={this.toggleCheckBox}
+          label="Click me to toggle the check box!"
+          buttonType="light"
+        />
+        <CheckBox
+          name="checkbox"
+          label=""
+          checked={this.state.checked}
+        />
+      </div>
+    );
+  }
+}
 
 storiesOf('CheckBox', module)
   .add('basic usage', () => (
@@ -32,4 +68,7 @@ storiesOf('CheckBox', module)
       label="check out the console"
       onChange={() => console.log('the checkbox changed state')}
     />
+  ))
+  .add('controlled', () => (
+    <CheckBoxWrapper />
   ));
