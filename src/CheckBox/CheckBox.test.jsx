@@ -9,7 +9,7 @@ describe('<CheckBox />', () => {
 
     expect(wrapper.find('[name="checkbox"]').exists()).toEqual(true);
     expect(wrapper.find('[type="checkbox"]').exists()).toEqual(true);
-    expect(wrapper.find('[defaultChecked=false]').exists()).toEqual(true);
+    expect(wrapper.find('[checked=false]').exists()).toEqual(true);
     expect(wrapper.find('[aria-checked=false]').exists()).toEqual(true);
   });
 
@@ -45,11 +45,11 @@ describe('<CheckBox />', () => {
   it('checks if start state can be set to checked', () => {
     const wrapper = mount(<CheckBox name="checkbox" label="I start checked" checked />);
 
-    expect(wrapper.find('[defaultChecked=true]').exists()).toEqual(true);
+    expect(wrapper.find('[checked=true]').exists()).toEqual(true);
     expect(wrapper.find('[aria-checked=true]').exists()).toEqual(true);
 
     wrapper.find('input').simulate('change');
-    expect(wrapper.find('[defaultChecked=false]').exists()).toEqual(true);
+    expect(wrapper.find('[checked=false]').exists()).toEqual(true);
     expect(wrapper.find('[aria-checked=false]').exists()).toEqual(true);
   });
 
@@ -60,5 +60,18 @@ describe('<CheckBox />', () => {
 
     wrapper.find('input').simulate('change');
     expect(wrapper.props().disabled).toEqual(true);
+  });
+
+  it('overrides state value when props value changes', () => {
+    const wrapper = mount(<CheckBox name="checkbox" label="I start checked" checked />);
+    expect(wrapper.find('[checked=true]').exists()).toEqual(true);
+    expect(wrapper.find('[aria-checked=true]').exists()).toEqual(true);
+
+    wrapper.setProps({
+      checked: false,
+    });
+
+    expect(wrapper.find('[checked=true]').exists()).toEqual(false);
+    expect(wrapper.find('[aria-checked=true]').exists()).toEqual(false);
   });
 });

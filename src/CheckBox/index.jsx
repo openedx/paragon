@@ -14,13 +14,20 @@ class Check extends React.Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.checked !== this.props.checked) {
+      this.setState({
+        checked: nextProps.checked,
+      });
+    }
+  }
+
   onChange(event) {
     this.setState({
       checked: !this.state.checked,
     });
     this.props.onChange(event);
   }
-
 
   render() {
     const props = { ...this.props };
@@ -31,7 +38,7 @@ class Check extends React.Component {
         className={props.className}
         type="checkbox"
         name={props.name}
-        defaultChecked={this.state.checked}
+        checked={this.state.checked}
         aria-checked={this.state.checked}
         onChange={this.onChange}
         disabled={props.disabled}
