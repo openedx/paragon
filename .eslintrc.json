@@ -6,7 +6,8 @@
     }
   },
   "rules": {
-    "react/no-array-index-key": "off"
+    "react/no-array-index-key": "off",
+    "compat/compat": "error"
   },
   "settings": {
     "import/resolver": {
@@ -16,8 +17,10 @@
     }
   },
   "env": {
-    "jest": true
+    "jest": true,
+    "browser": true
   },
+  "plugins": ["compat"],
   "overrides": {
     "files": ["*.stories.jsx", "*.test.jsx"],
     "rules": {
