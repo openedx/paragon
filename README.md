@@ -152,11 +152,26 @@ Paragon uses the [`semantic-release` package](https://github.com/semantic-releas
 ### Commit Messages
 
 [`semantic-release` analyzes commit messages to determine whether to create a `major`, `minor`, or `patch` release](https://github.com/semantic-release/semantic-release#default-commit-message-format) (or to skip a release).
-Paragon currently uses [the default commit analyzer release rules](https://github.com/semantic-release/commit-analyzer/blob/master/lib/default-release-rules.js#L8-L11) which means that there are **4** commit types that will trigger a release:
+Paragon currently uses [the default conventional Angular changelog rules](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular) which means that there are **3** commit types that will trigger a release:
 1. `feat` (`minor` release)
 2. `fix` (`patch` release)
 3. `perf` (`patch` release)
-4. `breaking` (`major` release)
+
+#### Breaking Changes
+
+Any of the previous `3` commit types **combined with `BREAKING CHANGE` in the commit message body** will trigger a `major` version release.
+
+##### Example Breaking Change commit message
+
+```
+perf(pencil): remove graphiteWidth option
+
+BREAKING CHANGE: The graphiteWidth option has been removed. The default graphite width of 10mm is always used for performance reason.
+```
+
+##### Example Release Notes
+
+![alt-image](https://i.imgur.com/hk2qkic.png)
 
 #### `Angular` Commit Message Convention
 
