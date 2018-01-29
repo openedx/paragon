@@ -881,6 +881,54 @@ exports[`Storyshots InputText focus test 1`] = `
 </div>
 `;
 
+exports[`Storyshots InputText label as element 1`] = `
+<div
+  className={
+    Array [
+      "form-group",
+    ]
+  }
+>
+  <label
+    className={
+      Array [
+        "",
+      ]
+    }
+    htmlFor="asInput1"
+    id="label-asInput1"
+  >
+    <span
+      lang="en"
+    >
+      Element
+    </span>
+  </label>
+  <input
+    aria-describedby="error-asInput1"
+    aria-invalid={false}
+    className="form-control"
+    disabled={false}
+    id="asInput1"
+    name="username"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder={undefined}
+    required={false}
+    themes={Array []}
+    type="text"
+    value="Label is wrapped in language span"
+  />
+  <div
+    aria-live="polite"
+    className="form-control-feedback"
+    id="error-asInput1"
+  >
+    <span />
+  </div>
+</div>
+`;
+
 exports[`Storyshots InputText minimal usage 1`] = `
 <div
   className={
@@ -1571,7 +1619,7 @@ exports[`Storyshots Modal modal with element body 1`] = `
 </div>
 `;
 
-exports[`Storyshots Modal modal with warning theme 1`] = `
+exports[`Storyshots Modal modal with warning variant 1`] = `
 <div
   aria-labelledby="id10"
   aria-modal={true}
@@ -2595,6 +2643,57 @@ exports[`Storyshots Tabs basic usage 1`] = `
         Hello I am the third panel
       </div>
     </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Textarea label as element 1`] = `
+<div
+  className={
+    Array [
+      "form-group",
+    ]
+  }
+>
+  <label
+    className={
+      Array [
+        "",
+      ]
+    }
+    htmlFor="asInput1"
+    id="label-asInput1"
+  >
+    <span
+      lang="en"
+    >
+      Element
+    </span>
+  </label>
+  <textarea
+    aria-describedby="error-asInput1"
+    aria-invalid={false}
+    className="form-control"
+    disabled={false}
+    id="asInput1"
+    name="username"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder={undefined}
+    required={false}
+    themes={
+      Array [
+        "danger",
+      ]
+    }
+    value="Label is wrapped in language span"
+  />
+  <div
+    aria-live="polite"
+    className="form-control-feedback"
+    id="error-asInput1"
+  >
+    <span />
   </div>
 </div>
 `;

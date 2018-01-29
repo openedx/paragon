@@ -146,7 +146,7 @@ storiesOf('Modal', module)
       onClose={() => {}}
     />
   ))
-  .add('modal with warning theme', () => (
+  .add('modal with warning variant', () => (
     <Modal
       open
       title="Warning Modal"

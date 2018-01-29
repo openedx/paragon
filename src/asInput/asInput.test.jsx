@@ -81,6 +81,18 @@ describe('asInput()', () => {
     expect(wrapper.find('small').prop('id')).toEqual(`description-${testId}`);
   });
 
+  it('uses label as element type', () => {
+    const testLabel = (<span lang="en">Label</span>);
+    const props = {
+      ...baseProps,
+      label: testLabel,
+    };
+    const wrapper = mount(<InputTestComponent {...props} />);
+    expect(wrapper.find('label').children()).toHaveLength(1);
+    expect(wrapper.find('label').children().at(0).text()).toEqual('Label');
+    expect(wrapper.find('label').children().at(0).prop('lang')).toEqual('en');
+  });
+
   it('overrides state value when props value changes', () => {
     const initValue = 'foofoo';
     const newValue = 'barbar';
