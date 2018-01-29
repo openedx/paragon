@@ -13,8 +13,8 @@ Handles all necessary props that are related to Input typed components.
 ### `disabled` (boolean; optional)
 `disabled` specifies if the component is disabled. The default type is false.
 
-### `label` (string; required)
-`label` specifies the label to be used for the overarching form-group. It appears above the input component.
+### `label` (string or element; required)
+`label` specifies the label to be used for the overarching form-group. This can be a string or element type. It appears above the input component by default.
 
 ### `name` (string; required)
 `name` specifies the value for the name property within the component.
