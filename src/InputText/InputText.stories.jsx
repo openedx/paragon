@@ -84,6 +84,13 @@ storiesOf('InputText', module)
       themes={['danger']}
     />
   ))
+  .add('label as element', () => (
+    <InputText
+      name="username"
+      label={<span lang="en">Element</span>}
+      value="Label is wrapped in language span"
+    />
+  ))
   .add('focus test', () => (
     <FocusInputWrapper />
   ));
