@@ -11,7 +11,7 @@ export const getDisplayName = WrappedComponent =>
   WrappedComponent.displayName || WrappedComponent.name || 'Component';
 
 export const inputProps = {
-  label: PropTypes.string.isRequired,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   name: PropTypes.string.isRequired,
   id: PropTypes.string,
   value: PropTypes.string,

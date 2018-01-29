@@ -45,4 +45,11 @@ storiesOf('Textarea', module)
         return feedback;
       }}
     />
+  ))
+  .add('label as element', () => (
+    <TextArea
+      name="username"
+      label={<span lang="en">Element</span>}
+      value="Label is wrapped in language span"
+    />
   ));
