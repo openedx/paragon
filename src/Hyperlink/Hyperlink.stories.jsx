@@ -37,4 +37,10 @@ storiesOf('HyperLink', module)
       target="_blank"
       onClick={onClick}
     />
+  ))
+  .add('with icon as content', () => (
+    <Hyperlink
+      destination="https://www.edx.org"
+      content={(<span className="fa fa-book" />)}
+    />
   ));
