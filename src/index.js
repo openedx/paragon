@@ -6,6 +6,7 @@ import Dropdown from './Dropdown';
 import Hyperlink from './Hyperlink';
 import InputSelect from './InputSelect';
 import InputText from './InputText';
+import MailtoLink from './MailtoLink';
 import Modal from './Modal';
 import RadioButtonGroup, { RadioButton } from './RadioButtonGroup';
 import StatusAlert from './StatusAlert';
@@ -23,6 +24,7 @@ export {
   Hyperlink,
   InputSelect,
   InputText,
+  MailtoLink,
   Modal,
   RadioButtonGroup,
   RadioButton,

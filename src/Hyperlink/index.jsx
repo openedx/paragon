@@ -51,7 +51,7 @@ Hyperlink.defaultProps = {
 
 Hyperlink.propTypes = {
   destination: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
+  content: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   target: PropTypes.string,
   onClick: PropTypes.func,
   externalLinkAlternativeText: isRequiredIf(PropTypes.string, props => props.target === '_blank'),
