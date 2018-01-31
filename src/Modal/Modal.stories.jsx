@@ -146,6 +146,15 @@ storiesOf('Modal', module)
       onClose={() => {}}
     />
   ))
+  .add('modal with element closeText', () => (
+    <Modal
+      open
+      title="Modal title."
+      body="Modal body."
+      onClose={() => {}}
+      closeText={(<span lang="en">Cancel</span>)}
+    />
+  ))
   .add('modal with warning variant', () => (
     <Modal
       open

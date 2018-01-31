@@ -209,7 +209,7 @@ Modal.propTypes = {
     PropTypes.element,
     PropTypes.shape(buttonPropTypes),
   ])),
-  closeText: PropTypes.string,
+  closeText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   onClose: PropTypes.func.isRequired,
   variant: PropTypes.shape({
     status: PropTypes.string,

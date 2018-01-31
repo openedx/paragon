@@ -56,6 +56,19 @@ describe('<Modal />', () => {
       expect(wrapper.find('button')).toHaveLength(buttons.length + 2);
     });
 
+    it('uses element type as closeText', () => {
+      const testLabel = (<span lang="en">Cancel</span>);
+      const props = {
+        ...defaultProps,
+        closeText: testLabel,
+      };
+      wrapper = mount(<Modal {...defaultProps} closeText={testLabel} />);
+      // TODO: these will likely fail the first time around
+      expect(wrapper.find('label').children()).toHaveLength(1);
+      expect(wrapper.find('label').children().at(0).text()).toEqual('Cancel');
+      expect(wrapper.find('label').children().at(0).prop('lang')).toEqual('en');
+      });
+
     it('renders Warning Variant', () => {
       wrapper = mount(<Modal {...defaultProps} variant={{ status: Variant.status.WARNING }} />);
 
