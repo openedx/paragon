@@ -443,6 +443,18 @@ exports[`Storyshots HyperLink with blank target 1`] = `
 </a>
 `;
 
+exports[`Storyshots HyperLink with icon as content 1`] = `
+<a
+  href="https://www.edx.org"
+  onClick={[Function]}
+  target="_self"
+>
+  <span
+    className="fa fa-book"
+  />
+</a>
+`;
+
 exports[`Storyshots HyperLink with onClick 1`] = `
 <a
   href="https://www.edx.org"
@@ -1075,6 +1087,96 @@ exports[`Storyshots InputText validation with danger theme 1`] = `
     The unique name that identifies you throughout the site.
   </small>
 </div>
+`;
+
+exports[`Storyshots MailtoLink minimal usage 1`] = `
+<a
+  href="mailto:edx@example.com"
+  onClick={null}
+  target="_self"
+>
+  edx@example.com
+</a>
+`;
+
+exports[`Storyshots MailtoLink with blank target 1`] = `
+<a
+  href="mailto:edx@example.com"
+  onClick={null}
+  target="_blank"
+>
+  edx@example.com
+  <span>
+     
+    <span
+      aria-hidden={false}
+      aria-label={undefined}
+      className="fa fa-external-link"
+      title="Opens in a new window"
+    />
+  </span>
+</a>
+`;
+
+exports[`Storyshots MailtoLink with cc and bcc 1`] = `
+<a
+  href="mailto:?bcc=edx%40example.com&cc=edx%40example.com"
+  onClick={null}
+  target="_self"
+>
+  Moar mail, this time with cc and bcc
+</a>
+`;
+
+exports[`Storyshots MailtoLink with multiple cc and bcc 1`] = `
+<a
+  href="mailto:?bcc=foo%40example.com%2Cbar%40example.com%2Cbaz%40example.com&cc=foo%40example.com%2Cbar%40example.com%2Cbaz%40example.com"
+  onClick={null}
+  target="_self"
+>
+  edx@example.com
+</a>
+`;
+
+exports[`Storyshots MailtoLink with multiple recipients and mail icon 1`] = `
+<a
+  href="mailto:foo@example.com,bar@example.com,baz@example.com"
+  onClick={null}
+  target="_self"
+>
+  <span
+    className="fa fa-envelope"
+  />
+</a>
+`;
+
+exports[`Storyshots MailtoLink with onClick 1`] = `
+<a
+  href="mailto:edx@example.com"
+  onClick={[Function]}
+  target="_blank"
+>
+  edx@example.com
+  <span>
+     
+    <span
+      aria-hidden={false}
+      aria-label={undefined}
+      className="fa fa-external-link"
+      title="Opens in a new window"
+    />
+  </span>
+</a>
+`;
+
+exports[`Storyshots MailtoLink with subject and body 1`] = `
+<a
+  href="mailto:edx@example.com?body=This%20mailto%20component%20is%20awesome%21&subject=Check%20out%20this%20mailto%20component%21"
+  onClick={null}
+  target="_self"
+>
+  email with subject and body
+</a>
 `;
 
 exports[`Storyshots Modal basic usage 1`] = `
