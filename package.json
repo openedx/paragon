@@ -21,6 +21,7 @@
     "prepublishOnly": "npm run build",
     "semantic-release": "semantic-release",
     "snapshot": "jest --updateSnapshot",
+    "storybook": "build-storybook -o .out",
     "start": "start-storybook -p 6006",
     "test": "jest --coverage",
     "travis-deploy-once": "travis-deploy-once"
