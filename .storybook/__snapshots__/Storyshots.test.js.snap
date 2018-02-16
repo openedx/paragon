@@ -2745,6 +2745,503 @@ exports[`Storyshots InputSelect with validation 1`] = `
 </div>
 `;
 
+exports[`Storyshots InputText different textual input types 1`] = `
+<form>
+  <div
+    className={
+      Array [
+        "form-group",
+      ]
+    }
+  >
+    <label
+      className={
+        Array [
+          "",
+        ]
+      }
+      htmlFor="asInput1"
+      id="label-asInput1"
+    >
+      Search
+    </label>
+    <input
+      aria-describedby="error-asInput1"
+      aria-invalid={false}
+      className="form-control"
+      disabled={false}
+      id="asInput1"
+      name="search"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder={undefined}
+      required={false}
+      themes={Array []}
+      type="search"
+      value="what is paragon"
+    />
+    <div
+      aria-live="polite"
+      className="form-control-feedback"
+      id="error-asInput1"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className={
+      Array [
+        "form-group",
+      ]
+    }
+  >
+    <label
+      className={
+        Array [
+          "",
+        ]
+      }
+      htmlFor="asInput1"
+      id="label-asInput1"
+    >
+      Email
+    </label>
+    <input
+      aria-describedby="error-asInput1"
+      aria-invalid={false}
+      className="form-control"
+      disabled={false}
+      id="asInput1"
+      name="email"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder={undefined}
+      required={false}
+      themes={Array []}
+      type="email"
+      value="paragon@edx.org"
+    />
+    <div
+      aria-live="polite"
+      className="form-control-feedback"
+      id="error-asInput1"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className={
+      Array [
+        "form-group",
+      ]
+    }
+  >
+    <label
+      className={
+        Array [
+          "",
+        ]
+      }
+      htmlFor="asInput1"
+      id="label-asInput1"
+    >
+      Url
+    </label>
+    <input
+      aria-describedby="error-asInput1"
+      aria-invalid={false}
+      className="form-control"
+      disabled={false}
+      id="asInput1"
+      name="url"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder={undefined}
+      required={false}
+      themes={Array []}
+      type="url"
+      value="https://edx.github.io/paragon"
+    />
+    <div
+      aria-live="polite"
+      className="form-control-feedback"
+      id="error-asInput1"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className={
+      Array [
+        "form-group",
+      ]
+    }
+  >
+    <label
+      className={
+        Array [
+          "",
+        ]
+      }
+      htmlFor="asInput1"
+      id="label-asInput1"
+    >
+      Telephone
+    </label>
+    <input
+      aria-describedby="error-asInput1"
+      aria-invalid={false}
+      className="form-control"
+      disabled={false}
+      id="asInput1"
+      name="telephone"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder={undefined}
+      required={false}
+      themes={Array []}
+      type="tel"
+      value="1-(555)-555-5555"
+    />
+    <div
+      aria-live="polite"
+      className="form-control-feedback"
+      id="error-asInput1"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className={
+      Array [
+        "form-group",
+      ]
+    }
+  >
+    <label
+      className={
+        Array [
+          "",
+        ]
+      }
+      htmlFor="asInput1"
+      id="label-asInput1"
+    >
+      Password
+    </label>
+    <input
+      aria-describedby="error-asInput1"
+      aria-invalid={false}
+      className="form-control"
+      disabled={false}
+      id="asInput1"
+      name="password"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder={undefined}
+      required={false}
+      themes={Array []}
+      type="password"
+      value="hunter2"
+    />
+    <div
+      aria-live="polite"
+      className="form-control-feedback"
+      id="error-asInput1"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className={
+      Array [
+        "form-group",
+      ]
+    }
+  >
+    <label
+      className={
+        Array [
+          "",
+        ]
+      }
+      htmlFor="asInput1"
+      id="label-asInput1"
+    >
+      Number
+    </label>
+    <input
+      aria-describedby="error-asInput1"
+      aria-invalid={false}
+      className="form-control"
+      disabled={false}
+      id="asInput1"
+      name="number"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder={undefined}
+      required={false}
+      themes={Array []}
+      type="number"
+      value="42"
+    />
+    <div
+      aria-live="polite"
+      className="form-control-feedback"
+      id="error-asInput1"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className={
+      Array [
+        "form-group",
+      ]
+    }
+  >
+    <label
+      className={
+        Array [
+          "",
+        ]
+      }
+      htmlFor="asInput1"
+      id="label-asInput1"
+    >
+      Date and time
+    </label>
+    <input
+      aria-describedby="error-asInput1"
+      aria-invalid={false}
+      className="form-control"
+      disabled={false}
+      id="asInput1"
+      name="datetime-local"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder={undefined}
+      required={false}
+      themes={Array []}
+      type="datetime-local"
+      value="2017-04-27T13:45:00"
+    />
+    <div
+      aria-live="polite"
+      className="form-control-feedback"
+      id="error-asInput1"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className={
+      Array [
+        "form-group",
+      ]
+    }
+  >
+    <label
+      className={
+        Array [
+          "",
+        ]
+      }
+      htmlFor="asInput1"
+      id="label-asInput1"
+    >
+      Date
+    </label>
+    <input
+      aria-describedby="error-asInput1"
+      aria-invalid={false}
+      className="form-control"
+      disabled={false}
+      id="asInput1"
+      name="date"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder={undefined}
+      required={false}
+      themes={Array []}
+      type="date"
+      value="2017-04-27"
+    />
+    <div
+      aria-live="polite"
+      className="form-control-feedback"
+      id="error-asInput1"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className={
+      Array [
+        "form-group",
+      ]
+    }
+  >
+    <label
+      className={
+        Array [
+          "",
+        ]
+      }
+      htmlFor="asInput1"
+      id="label-asInput1"
+    >
+      Month
+    </label>
+    <input
+      aria-describedby="error-asInput1"
+      aria-invalid={false}
+      className="form-control"
+      disabled={false}
+      id="asInput1"
+      name="month"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder={undefined}
+      required={false}
+      themes={Array []}
+      type="month"
+      value="2017-04"
+    />
+    <div
+      aria-live="polite"
+      className="form-control-feedback"
+      id="error-asInput1"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className={
+      Array [
+        "form-group",
+      ]
+    }
+  >
+    <label
+      className={
+        Array [
+          "",
+        ]
+      }
+      htmlFor="asInput1"
+      id="label-asInput1"
+    >
+      Week
+    </label>
+    <input
+      aria-describedby="error-asInput1"
+      aria-invalid={false}
+      className="form-control"
+      disabled={false}
+      id="asInput1"
+      name="week"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder={undefined}
+      required={false}
+      themes={Array []}
+      type="week"
+      value="2017-W33"
+    />
+    <div
+      aria-live="polite"
+      className="form-control-feedback"
+      id="error-asInput1"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className={
+      Array [
+        "form-group",
+      ]
+    }
+  >
+    <label
+      className={
+        Array [
+          "",
+        ]
+      }
+      htmlFor="asInput1"
+      id="label-asInput1"
+    >
+      Time
+    </label>
+    <input
+      aria-describedby="error-asInput1"
+      aria-invalid={false}
+      className="form-control"
+      disabled={false}
+      id="asInput1"
+      name="time"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder={undefined}
+      required={false}
+      themes={Array []}
+      type="time"
+      value="13:45:00"
+    />
+    <div
+      aria-live="polite"
+      className="form-control-feedback"
+      id="error-asInput1"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className={
+      Array [
+        "form-group",
+      ]
+    }
+  >
+    <label
+      className={
+        Array [
+          "",
+        ]
+      }
+      htmlFor="asInput1"
+      id="label-asInput1"
+    >
+      Color
+    </label>
+    <input
+      aria-describedby="error-asInput1"
+      aria-invalid={false}
+      className="form-control"
+      disabled={false}
+      id="asInput1"
+      name="color"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder={undefined}
+      required={false}
+      themes={Array []}
+      type="color"
+      value="#BF472C"
+    />
+    <div
+      aria-live="polite"
+      className="form-control-feedback"
+      id="error-asInput1"
+    >
+      <span />
+    </div>
+  </div>
+</form>
+`;
+
 exports[`Storyshots InputText focus test 1`] = `
 <div>
   <div
