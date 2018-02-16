@@ -157,7 +157,7 @@ Paragon currently uses [the default conventional Angular changelog rules](https:
 2. `fix` (`patch` release)
 3. `perf` (`patch` release)
 
-There are other commit types that will not trigger a release that you can use at your own discretion. Suggested prefixes are `docs`, `chore`, `style`, `refactor`, and `test` for non-changelog related tasks.
+[There are other commit types](https://github.com/marionebl/commitlint/blob/master/%40commitlint/config-angular-type-enum/index.js#L1-L12) that will not trigger a release that you can use at your own discretion. Suggested prefixes are `docs`, `chore`, `style`, `refactor`, and `test` for non-changelog related tasks.
 
 #### Breaking Changes
 
