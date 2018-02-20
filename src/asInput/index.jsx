@@ -26,6 +26,7 @@ export const inputProps = {
   validator: PropTypes.func,
   className: PropTypes.arrayOf(PropTypes.string),
   themes: PropTypes.arrayOf(PropTypes.string),
+  inline: PropTypes.bool,
 };
 
 export const defaultProps = {
@@ -39,6 +40,7 @@ export const defaultProps = {
   validator: undefined,
   className: [],
   themes: [],
+  inline: false,
 };
 
 const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => {
@@ -174,6 +176,7 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       return (
         <div className={[classNames({
             [styles['form-group']]: !this.isGroupedInput(),
+            [styles['form-inline']]: !this.isGroupedInput() && this.props.inline,
             [styles['form-check']]: this.isGroupedInput(),
           })]}
         >

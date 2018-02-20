@@ -201,5 +201,15 @@ describe('asInput()', () => {
         });
       });
     });
+
+    it('displayed inline', () => {
+      const props = {
+        ...baseProps,
+        inline: true,
+      };
+      const wrapper = mount(<InputTestComponent {...props} />);
+      const input = wrapper.find('.form-group');
+      expect(input.hasClass('form-inline')).toEqual(true);
+    });
   });
 });

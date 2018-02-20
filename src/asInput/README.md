@@ -16,6 +16,9 @@ Handles all necessary props that are related to Input typed components.
 ### `label` (string or element; required)
 `label` specifies the label to be used for the overarching form-group. This can be a string or element type. It appears above the input component by default.
 
+### `inline` (boolean; optional)
+`inline` specifies if the form-group will be displayed inline (label and input elements on the same line). The default is false.
+
 ### `name` (string; required)
 `name` specifies the value for the name property within the component.
 

@@ -169,4 +169,12 @@ storiesOf('InputText', module)
         type="color"
       />
     </form>
+  ))
+  .add('displayed inline', () => (
+    <InputText
+      name="username"
+      label="Username"
+      value="foobar"
+      inline
+    />
   ));
