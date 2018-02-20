@@ -3242,6 +3242,50 @@ exports[`Storyshots InputText different textual input types 1`] = `
 </form>
 `;
 
+exports[`Storyshots InputText displayed inline 1`] = `
+<div
+  className={
+    Array [
+      "form-group form-inline",
+    ]
+  }
+>
+  <label
+    className={
+      Array [
+        "",
+      ]
+    }
+    htmlFor="asInput1"
+    id="label-asInput1"
+  >
+    Username
+  </label>
+  <input
+    aria-describedby="error-asInput1"
+    aria-invalid={false}
+    className="form-control"
+    disabled={false}
+    id="asInput1"
+    name="username"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder={undefined}
+    required={false}
+    themes={Array []}
+    type="text"
+    value="foobar"
+  />
+  <div
+    aria-live="polite"
+    className="form-control-feedback"
+    id="error-asInput1"
+  >
+    <span />
+  </div>
+</div>
+`;
+
 exports[`Storyshots InputText focus test 1`] = `
 <div>
   <div
