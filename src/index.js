@@ -4,6 +4,7 @@ import CheckBox from './CheckBox';
 import CheckBoxGroup from './CheckBoxGroup';
 import Dropdown from './Dropdown';
 import Hyperlink from './Hyperlink';
+import Icon from './Icon';
 import InputSelect from './InputSelect';
 import InputText from './InputText';
 import MailtoLink from './MailtoLink';
@@ -22,6 +23,7 @@ export {
   CheckBoxGroup,
   Dropdown,
   Hyperlink,
+  Icon,
   InputSelect,
   InputText,
   MailtoLink,
