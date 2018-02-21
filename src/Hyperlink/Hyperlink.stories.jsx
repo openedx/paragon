@@ -1,6 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies, no-console */
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { storiesOf, addDecorator } from '@storybook/react'; // eslint-disable-line no-unused-vars
+import centered from '@storybook/addon-centered';
+import { checkA11y } from '@storybook/addon-a11y';
 import { action } from '@storybook/addon-actions';
 import { setConsoleOptions } from '@storybook/addon-console';
 import { withInfo } from '@storybook/addon-info';
@@ -19,27 +21,29 @@ const onClick = (event) => {
   action('HyperLink Click');
 };
 
-const wrapComponent = component => (
-  withInfo({ styles: FontAwesomeStyles }, README)(() => component)
-);
-
 storiesOf('HyperLink', module)
-  .add('minimal usage', wrapComponent(<Hyperlink
-    destination="https://en.wikipedia.org/wiki/Hyperlink"
-    content="edX.org"
-  />))
-  .add('with blank target', wrapComponent(<Hyperlink
-    destination="https://www.edx.org"
-    content="edX.org"
-    target="_blank"
-  />))
-  .add('with onClick', wrapComponent(<Hyperlink
-    destination="https://www.edx.org"
-    content="edX.org"
-    target="_blank"
-    onClick={onClick}
-  />))
-  .add('with icon as content', wrapComponent(<Hyperlink
-    destination="https://www.edx.org"
-    content={(<span className="fa fa-book" />)}
-  />));
+  .addDecorator((story, context) => withInfo({ styles: FontAwesomeStyles }, README)(story)(context))
+  .addDecorator(centered)
+  .addDecorator(checkA11y)
+  .add('minimal usage', () => <Hyperlink destination="https://en.wikipedia.org/wiki/Hyperlink" content="edX.org" />)
+  .add('with blank target', () => (
+    <Hyperlink
+      destination="https://www.edx.org"
+      content="edX.org"
+      target="_blank"
+    />
+  ))
+  .add('with onClick', () => (
+    <Hyperlink
+      destination="https://www.edx.org"
+      content="edX.org"
+      target="_blank"
+      onClick={onClick}
+    />
+  ))
+  .add('with icon as content', () => (
+    <Hyperlink
+      destination="https://www.edx.org"
+      content={(<span className="fa fa-book" />)}
+    />
+  ));
