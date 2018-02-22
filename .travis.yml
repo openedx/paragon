@@ -10,6 +10,7 @@ notifications:
     recipients:
       - arizzitano@edx.org
       - jbradley@edx.org
+    on_success: never
     on_failure: always
   hipchat:
     rooms:
