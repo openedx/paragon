@@ -21,3 +21,6 @@ Provides a basic modal component with customizable title, body, and footer butto
 
 ### `onClose` (function; required)
 `onClose` is a function that is called on close. It can be used to perform actions upon closing of the modal, such as restoring focus to the previous logical focusable element.
+
+### `parentSelector` (string; optional)
+`parentSelector` is the selector for an element in the dom which the modal should be rendered under. It uses querySelector to find the first element that matches that selector, and then creates a react portal to a div underneath the parent element. 

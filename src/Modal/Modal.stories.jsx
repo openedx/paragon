@@ -34,6 +34,7 @@ class ModalWrapper extends React.Component {
           open={this.state.open}
           title={this.props.title}
           body={this.props.body}
+          parentSelector={this.props.parentSelector}
           onClose={this.resetModalWrapperState}
         />
         <Button
@@ -50,6 +51,11 @@ class ModalWrapper extends React.Component {
 ModalWrapper.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   body: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  parentSelector: PropTypes.string,
+};
+
+ModalWrapper.defaultProps = {
+  parentSelector: 'body',
 };
 
 storiesOf('Modal', module)
@@ -163,4 +169,51 @@ storiesOf('Modal', module)
       onClose={() => {}}
       variant={{ status: Variant.status.WARNING }}
     />
+  ))
+  .add('modal inside special div', () => (
+    <div>
+      <div>
+        <div className="special-div" />
+      </div>
+      <ModalWrapper
+        title="I am the modal!"
+        body="I was invoked by a button!"
+        parentSelector=".special-div"
+      />
+    </div>
+  ))
+  .add('two modals with the same target', () => (
+    <div>
+      <div>
+        <div className="target-div" />
+      </div>
+      <ModalWrapper
+        title="I am the first modal!"
+        body="I target one"
+        parentSelector=".target-div"
+      />
+      <ModalWrapper
+        title="I am the second modal!"
+        body="I target one"
+        parentSelector=".target-div"
+      />
+    </div>
+  ))
+  .add('two modals with seperate targets', () => (
+    <div>
+      <div>
+        <div className="target-div-one" />
+        <div className="target-div-two" />
+      </div>
+      <ModalWrapper
+        title="I am the first modal!"
+        body="I target one"
+        parentSelector=".target-div-one"
+      />
+      <ModalWrapper
+        title="I am the second modal!"
+        body="I target two"
+        parentSelector=".target-div-two"
+      />
+    </div>
   ));

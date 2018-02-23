@@ -7,8 +7,8 @@ import Button from '../Button';
 import Variant from '../utils/constants';
 
 const modalOpen = (isOpen, wrapper) => {
-  expect(wrapper.find('.modal').hasClass('modal-open')).toEqual(isOpen);
-  expect(wrapper.find('.modal').hasClass('modal-backdrop')).toEqual(isOpen);
+  expect(wrapper.find('.modal').hasClass('d-block')).toEqual(isOpen);
+  expect(wrapper.find('.modal-backdrop').exists()).toEqual(isOpen);
   expect(wrapper.find('.modal').hasClass('show')).toEqual(isOpen);
   expect(wrapper.find('.modal').hasClass('fade')).toEqual(!isOpen);
   expect(wrapper.state('open')).toEqual(isOpen);
