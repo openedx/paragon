@@ -20734,710 +20734,6 @@ exports[`Storyshots MailtoLink with subject and body 1`] = `
 </div>
 `;
 
-exports[`Storyshots Modal basic usage 1`] = `
-<div
-  aria-labelledby="id33"
-  aria-modal={true}
-  className="modal modal-open modal-backdrop show"
-  role="dialog"
->
-  <div
-    className="modal-dialog"
-  >
-    <div
-      className="modal-content"
-    >
-      <div
-        className="modal-header"
-      >
-        <h2
-          className="modal-title"
-          id="id33"
-        >
-          Modal title.
-        </h2>
-        <button
-          aria-label="Close"
-          className="p-1 btn"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          <div>
-            <span
-              aria-hidden={true}
-              className="fa fa-times"
-              id="Icon1"
-            />
-          </div>
-        </button>
-      </div>
-      <div
-        className="modal-body"
-      >
-        <p>
-          Modal body.
-        </p>
-      </div>
-      <div
-        className="modal-footer"
-      >
-        <button
-          className="btn btn-outline-primary"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Modal configurable buttons 1`] = `
-<div
-  aria-labelledby="id34"
-  aria-modal={true}
-  className="modal modal-open modal-backdrop show"
-  role="dialog"
->
-  <div
-    className="modal-dialog"
-  >
-    <div
-      className="modal-content"
-    >
-      <div
-        className="modal-header"
-      >
-        <h2
-          className="modal-title"
-          id="id34"
-        >
-          Modal title.
-        </h2>
-        <button
-          aria-label="Close"
-          className="p-1 btn"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          <div>
-            <span
-              aria-hidden={true}
-              className="fa fa-times"
-              id="Icon1"
-            />
-          </div>
-        </button>
-      </div>
-      <div
-        className="modal-body"
-      >
-        <p>
-          Modal body.
-        </p>
-      </div>
-      <div
-        className="modal-footer"
-      >
-        <button
-          className="btn btn-primary"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          Blue button!
-        </button>
-        <button
-          className="btn btn-danger"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          Red button!
-        </button>
-        <button
-          className="btn btn-success"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          Green button!
-        </button>
-        <button
-          className="btn btn-outline-primary"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Modal configurable buttons that perform actions 1`] = `
-<div
-  aria-labelledby="id36"
-  aria-modal={true}
-  className="modal modal-open modal-backdrop show"
-  role="dialog"
->
-  <div
-    className="modal-dialog"
-  >
-    <div
-      className="modal-content"
-    >
-      <div
-        className="modal-header"
-      >
-        <h2
-          className="modal-title"
-          id="id36"
-        >
-          Modal title.
-        </h2>
-        <button
-          aria-label="Close"
-          className="p-1 btn"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          <div>
-            <span
-              aria-hidden={true}
-              className="fa fa-times"
-              id="Icon1"
-            />
-          </div>
-        </button>
-      </div>
-      <div
-        className="modal-body"
-      >
-        <p>
-          Modal body.
-        </p>
-      </div>
-      <div
-        className="modal-footer"
-      >
-        <button
-          className="btn btn-light"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          Click me and check the console!
-        </button>
-        <button
-          className="btn btn-outline-primary"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Modal configurable close button 1`] = `
-<div
-  aria-labelledby="id37"
-  aria-modal={true}
-  className="modal modal-open modal-backdrop show"
-  role="dialog"
->
-  <div
-    className="modal-dialog"
-  >
-    <div
-      className="modal-content"
-    >
-      <div
-        className="modal-header"
-      >
-        <h2
-          className="modal-title"
-          id="id37"
-        >
-          Modal title.
-        </h2>
-        <button
-          aria-label="SHOO!"
-          className="p-1 btn"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          <div>
-            <span
-              aria-hidden={true}
-              className="fa fa-times"
-              id="Icon1"
-            />
-          </div>
-        </button>
-      </div>
-      <div
-        className="modal-body"
-      >
-        <p>
-          Modal body.
-        </p>
-      </div>
-      <div
-        className="modal-footer"
-      >
-        <button
-          className="btn btn-outline-primary"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          SHOO!
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Modal configurable title and body 1`] = `
-<div
-  aria-labelledby="id35"
-  aria-modal={true}
-  className="modal modal-open modal-backdrop show"
-  role="dialog"
->
-  <div
-    className="modal-dialog"
-  >
-    <div
-      className="modal-content"
-    >
-      <div
-        className="modal-header"
-      >
-        <h2
-          className="modal-title"
-          id="id35"
-        >
-          Custom title!
-        </h2>
-        <button
-          aria-label="Close"
-          className="p-1 btn"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          <div>
-            <span
-              aria-hidden={true}
-              className="fa fa-times"
-              id="Icon1"
-            />
-          </div>
-        </button>
-      </div>
-      <div
-        className="modal-body"
-      >
-        <p>
-          Custom body!
-        </p>
-      </div>
-      <div
-        className="modal-footer"
-      >
-        <button
-          className="btn btn-dark"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          Dark button!
-        </button>
-        <button
-          className="btn btn-outline-primary"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Modal modal invoked via a button 1`] = `
-<div>
-  <div
-    aria-labelledby="id38"
-    aria-modal={true}
-    className="modal fade"
-    role="dialog"
-  >
-    <div
-      className="modal-dialog"
-    >
-      <div
-        className="modal-content"
-      >
-        <div
-          className="modal-header"
-        >
-          <h2
-            className="modal-title"
-            id="id38"
-          >
-            I am the modal!
-          </h2>
-          <button
-            aria-label="Close"
-            className="p-1 btn"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            type="button"
-          >
-            <div>
-              <span
-                aria-hidden={true}
-                className="fa fa-times"
-                id="Icon1"
-              />
-            </div>
-          </button>
-        </div>
-        <div
-          className="modal-body"
-        >
-          <p>
-            I was invoked by a button!
-          </p>
-        </div>
-        <div
-          className="modal-footer"
-        >
-          <button
-            className="btn btn-outline-primary"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            type="button"
-          >
-            Close
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="btn btn-light"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    type="button"
-  >
-    Click me to open a modal!
-  </button>
-</div>
-`;
-
-exports[`Storyshots Modal modal with element body 1`] = `
-<div
-  aria-labelledby="id39"
-  aria-modal={true}
-  className="modal modal-open modal-backdrop show"
-  role="dialog"
->
-  <div
-    className="modal-dialog"
-  >
-    <div
-      className="modal-content"
-    >
-      <div
-        className="modal-header"
-      >
-        <h2
-          className="modal-title"
-          id="id39"
-        >
-          Modal title.
-        </h2>
-        <button
-          aria-label="Close"
-          className="p-1 btn"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          <div>
-            <span
-              aria-hidden={true}
-              className="fa fa-times"
-              id="Icon1"
-            />
-          </div>
-        </button>
-      </div>
-      <div
-        className="modal-body"
-      >
-        <div>
-          <p>
-            Enter your e-mail address to receive free cat facts!
-          </p>
-          <div
-            className={
-              Array [
-                "form-group",
-              ]
-            }
-          >
-            <label
-              className={
-                Array [
-                  "",
-                ]
-              }
-              htmlFor="asInput40"
-              id="label-asInput40"
-            >
-              E-Mail Address
-            </label>
-            <input
-              aria-describedby="error-asInput40"
-              aria-invalid={false}
-              autoComplete="on"
-              className="form-control is-invalid-nodanger"
-              disabled={false}
-              id="asInput40"
-              name="e-mail"
-              onBlur={[Function]}
-              onChange={[Function]}
-              placeholder={undefined}
-              required={false}
-              themes={Array []}
-              type="text"
-              value=""
-            />
-            <div
-              aria-live="polite"
-              className="invalid-feedback invalid-feedback-nodanger"
-              id="error-asInput40"
-            >
-              <span />
-            </div>
-          </div>
-          <button
-            className="btn"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            type="button"
-          >
-            Get my facts!
-          </button>
-        </div>
-      </div>
-      <div
-        className="modal-footer"
-      >
-        <button
-          className="btn btn-outline-primary"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Modal modal with warning variant 1`] = `
-<div
-  aria-labelledby="id42"
-  aria-modal={true}
-  className="modal modal-open modal-backdrop show"
-  role="dialog"
->
-  <div
-    className="modal-dialog"
-  >
-    <div
-      className="modal-content"
-    >
-      <div
-        className="modal-header"
-      >
-        <h2
-          className="modal-title"
-          id="id42"
-        >
-          Warning Modal
-        </h2>
-        <button
-          aria-label="Run Away!"
-          className="p-1 btn"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          <div>
-            <span
-              aria-hidden={true}
-              className="fa fa-times"
-              id="Icon1"
-            />
-          </div>
-        </button>
-      </div>
-      <div
-        className="modal-body"
-      >
-        <div
-          className="container-fluid"
-        >
-          <div
-            className="row"
-          >
-            <div
-              className="col-md-10"
-            >
-              <div>
-                <p>
-                  Be careful! It is dangerous ahead.
-                </p>
-              </div>
-            </div>
-            <div
-              className="col"
-            >
-              <div>
-                <span
-                  aria-hidden={true}
-                  className="fa fa-exclamation-triangle fa-3x text-warning"
-                  id="Modal-WARNING43"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="modal-footer"
-      >
-        <button
-          className="btn btn-light"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          Continue anyway...
-        </button>
-        <button
-          className="btn btn-outline-primary"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          Run Away!
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Modal modal without a close button in the header 1`] = `
-<div
-  aria-labelledby="id41"
-  aria-modal={true}
-  className="modal modal-open modal-backdrop show"
-  role="dialog"
-  tabIndex="-1"
->
-  <div
-    className="modal-dialog"
-  >
-    <div
-      className="modal-content"
-    >
-      <div
-        className="modal-header"
-      >
-        <h2
-          className="modal-title"
-          id="id41"
-        >
-          Modal title.
-        </h2>
-      </div>
-      <div
-        className="modal-body"
-      >
-        <p>
-          Modal body.
-        </p>
-      </div>
-      <div
-        className="modal-footer"
-      >
-        <button
-          className="btn btn-outline-primary"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Paragon Welcome 1`] = `
 <div
   className="css-jail"
@@ -25708,10 +25004,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
   >
     <li
       className="nav-item"
-      id="tab-label-tabInterface44-0"
+      id="tab-label-tabInterface33-0"
     >
       <a
-        aria-controls="tab-panel-tabInterface44-0"
+        aria-controls="tab-panel-tabInterface33-0"
         aria-selected={true}
         className="nav-link active"
         onClick={[Function]}
@@ -25723,10 +25019,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </li>
     <li
       className="nav-item"
-      id="tab-label-tabInterface44-1"
+      id="tab-label-tabInterface33-1"
     >
       <a
-        aria-controls="tab-panel-tabInterface44-1"
+        aria-controls="tab-panel-tabInterface33-1"
         aria-selected={false}
         className="nav-link"
         onClick={[Function]}
@@ -25738,10 +25034,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </li>
     <li
       className="nav-item"
-      id="tab-label-tabInterface44-2"
+      id="tab-label-tabInterface33-2"
     >
       <a
-        aria-controls="tab-panel-tabInterface44-2"
+        aria-controls="tab-panel-tabInterface33-2"
         aria-selected={false}
         className="nav-link"
         onClick={[Function]}
@@ -25757,9 +25053,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
   >
     <div
       aria-hidden={false}
-      aria-labelledby="tab-label-tabInterface44-0"
+      aria-labelledby="tab-label-tabInterface33-0"
       className="tab-pane active"
-      id="tab-panel-tabInterface44-0"
+      id="tab-panel-tabInterface33-0"
       role="tabpanel"
     >
       <div>
@@ -25768,9 +25064,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </div>
     <div
       aria-hidden={true}
-      aria-labelledby="tab-label-tabInterface44-1"
+      aria-labelledby="tab-label-tabInterface33-1"
       className="tab-pane"
-      id="tab-panel-tabInterface44-1"
+      id="tab-panel-tabInterface33-1"
       role="tabpanel"
     >
       <div>
@@ -25779,9 +25075,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </div>
     <div
       aria-hidden={true}
-      aria-labelledby="tab-label-tabInterface44-2"
+      aria-labelledby="tab-label-tabInterface33-2"
       className="tab-pane"
-      id="tab-panel-tabInterface44-2"
+      id="tab-panel-tabInterface33-2"
       role="tabpanel"
     >
       <div>
@@ -25806,8 +25102,8 @@ exports[`Storyshots Textarea label as element 1`] = `
         "",
       ]
     }
-    htmlFor="asInput48"
-    id="label-asInput48"
+    htmlFor="asInput37"
+    id="label-asInput37"
   >
     <span
       lang="en"
@@ -25816,11 +25112,11 @@ exports[`Storyshots Textarea label as element 1`] = `
     </span>
   </label>
   <textarea
-    aria-describedby="error-asInput48"
+    aria-describedby="error-asInput37"
     aria-invalid={false}
     className="form-control is-invalid-nodanger"
     disabled={false}
-    id="asInput48"
+    id="asInput37"
     name="username"
     onBlur={[Function]}
     onChange={[Function]}
@@ -25836,7 +25132,7 @@ exports[`Storyshots Textarea label as element 1`] = `
   <div
     aria-live="polite"
     className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput48"
+    id="error-asInput37"
   >
     <span />
   </div>
@@ -25857,17 +25153,17 @@ exports[`Storyshots Textarea minimal usage 1`] = `
         "",
       ]
     }
-    htmlFor="asInput45"
-    id="label-asInput45"
+    htmlFor="asInput34"
+    id="label-asInput34"
   >
     First Name
   </label>
   <textarea
-    aria-describedby="error-asInput45"
+    aria-describedby="error-asInput34"
     aria-invalid={false}
     className="form-control is-invalid-nodanger"
     disabled={false}
-    id="asInput45"
+    id="asInput34"
     name="name"
     onBlur={[Function]}
     onChange={[Function]}
@@ -25883,7 +25179,7 @@ exports[`Storyshots Textarea minimal usage 1`] = `
   <div
     aria-live="polite"
     className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput45"
+    id="error-asInput34"
   >
     <span />
   </div>
@@ -25904,17 +25200,17 @@ exports[`Storyshots Textarea scrollable 1`] = `
         "",
       ]
     }
-    htmlFor="asInput46"
-    id="label-asInput46"
+    htmlFor="asInput35"
+    id="label-asInput35"
   >
     Information
   </label>
   <textarea
-    aria-describedby="error-asInput46"
+    aria-describedby="error-asInput35"
     aria-invalid={false}
     className="form-control is-invalid-nodanger"
     disabled={false}
-    id="asInput46"
+    id="asInput35"
     name="name"
     onBlur={[Function]}
     onChange={[Function]}
@@ -25930,7 +25226,7 @@ exports[`Storyshots Textarea scrollable 1`] = `
   <div
     aria-live="polite"
     className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput46"
+    id="error-asInput35"
   >
     <span />
   </div>
@@ -25951,17 +25247,17 @@ exports[`Storyshots Textarea validation 1`] = `
         "",
       ]
     }
-    htmlFor="asInput47"
-    id="label-asInput47"
+    htmlFor="asInput36"
+    id="label-asInput36"
   >
     Username
   </label>
   <textarea
-    aria-describedby="error-asInput47 description-asInput47"
+    aria-describedby="error-asInput36 description-asInput36"
     aria-invalid={false}
     className="form-control is-invalid-nodanger"
     disabled={false}
-    id="asInput47"
+    id="asInput36"
     name="username"
     onBlur={[Function]}
     onChange={[Function]}
@@ -25977,13 +25273,13 @@ exports[`Storyshots Textarea validation 1`] = `
   <div
     aria-live="polite"
     className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput47"
+    id="error-asInput36"
   >
     <span />
   </div>
   <small
     className="form-text"
-    id="description-asInput47"
+    id="description-asInput36"
   >
     The unique name that identifies you throughout the site.
   </small>
