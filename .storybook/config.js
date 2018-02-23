@@ -6,7 +6,7 @@ import { setDefaults } from '@storybook/addon-info';
 import CssJail from '../src/CssJail';
 
 setDefaults({
-  inline: true,
+  inline: false,
   header: true,
   source: true,
 });
