@@ -5,6 +5,7 @@ node_js:
 cache:
   directories:
     - ~/.npm
+    - node_modules
 notifications:
   email:
     recipients:
@@ -16,7 +17,7 @@ notifications:
     rooms:
       secure: iAwlvLMl/Qfv/wI4vbwpo3B0X/f+F5gL+sra0IBf3/wgaY8BuE/PzxrIP+PAF31nAil5gGD3LQvQ/vk/CZhkWgkQGQndK2aYHhUaSmJbCLtIwg6NX+YBz34vGZJawQzf3BDOglx6new+OYjAZtbP0noyMCL6hwp3HmflT+OMI6rhUU35dwQ4GjGSPYkjtdQZHosT5zcungpaBuGRtnUVKPLWBaa1Wl9NK3Vp9GEq5TaR7xg7wNk6dDnMXiHHxb5xp8acFWpf3yCX7NCouW6oWaFx/o4/SvGUFL9hr2pW7yKVEc59spaI/aZ8LNm94iIgFImlTAYdtErmjJytZORgt6AFF90Fbe38ntFjVdo2F/8/qgzzn+GkknPyYXZC/io2jX5919WZLQg2nOAqQyDUa5m0k11YfC7h0E+FldbJKcDmI9CWfzhGJGTXIaQCSkRq2tWfUC9mxO7ssZl+B3u9Ywv+F22QYF46bfsJP+PsLYXDBBDLnCD+zfuOaxP9RPiqRMEkM1QYFlNX0Kl1YsN3a2SparzjWbuKA63HTCMBL+f4npeYI6fkPHxDeligFUzlMeJIWKBnh7T5ZaHMR1B9icq7HOzPuEQ8LChgkeymGsvoU2euH8nbCmHiWafbGAZp39FDKj68YoFdUX3sV8xn9/INyU6j+C4NtKCPFfbC33E=
 before_install:
-  - npm install -g npm@5
+  - npm install -g npm@5.6
   - npm install -g greenkeeper-lockfile@1
 jobs:
   include:
@@ -27,7 +28,10 @@ jobs:
       before_script: greenkeeper-lockfile-update
       after_script: greenkeeper-lockfile-upload
     - stage: deploy
+      if: branch = master
       script:
         - npm run travis-deploy-once "npm run semantic-release"
-        - npm run coveralls
         - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then npm run deploy-storybook-ci; fi
+    - stage: code coverage
+      script:
+        - npm run coveralls
