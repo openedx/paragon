@@ -22,15 +22,14 @@ before_install:
 env:
   - COMMAND: "lint"
   - COMMAND: "test"
+
+before_script: greenkeeper-lockfile-update
+after_script: greenkeeper-lockfile-upload
+script: "npm run $COMMAND"
+after_success: npm run coveralls
+
 jobs:
   include:
-    - stage: test
-      script:
-        - "npm run $COMMAND"
-      before_script: greenkeeper-lockfile-update
-      after_script: greenkeeper-lockfile-upload
-      after_success:
-        - npm run coveralls
     - stage: deploy
       if: branch = master
       script:
