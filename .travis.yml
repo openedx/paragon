@@ -20,12 +20,12 @@ before_install:
   - npm install -g npm@5.6
   - npm install -g greenkeeper-lockfile@1
 env:
-  - COMMAND: "lint"
-  - COMMAND: "test"
+  - COMMAND=lint
+  - COMMAND=test
 
 before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
-script: "npm run $COMMAND"
+script: npm run $COMMAND
 after_success: npm run coveralls
 
 jobs:
