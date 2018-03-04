@@ -1,5 +1,4 @@
 const path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 // we build the library for two different build targets:
@@ -15,6 +14,7 @@ const targetProperties = [{
 }];
 
 module.exports = targetProperties.map(config => ({
+  mode: 'production',
   devtool: 'source-map',
   entry: {
     paragon: path.resolve('./src/index.js'),
@@ -28,9 +28,6 @@ module.exports = targetProperties.map(config => ({
     extensions: ['.js', '.jsx'],
   },
   plugins: [
-    new UglifyJsPlugin({
-      sourceMap: true,
-    }),
     new ExtractTextPlugin(`${config.baseDirectory}/paragon.min.css`),
   ],
   module: {
