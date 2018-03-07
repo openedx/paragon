@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies, no-console */
 import React from 'react';
-import { storiesOf, addDecorator } from '@storybook/react'; // eslint-disable-line no-unused-vars
+import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { checkA11y } from '@storybook/addon-a11y';
 import { action } from '@storybook/addon-actions';
