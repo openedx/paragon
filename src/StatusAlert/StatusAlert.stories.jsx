@@ -1,11 +1,13 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-console */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import centered from '@storybook/addon-centered';
+import { checkA11y } from '@storybook/addon-a11y';
+import { withInfo } from '@storybook/addon-info';
 import PropTypes from 'prop-types';
 
 import StatusAlert from './index';
 import Button from '../Button';
+import README from './README.md';
 
 class StatusAlertWrapper extends React.Component {
   constructor(props) {
@@ -57,6 +59,9 @@ StatusAlertWrapper.defaultProps = {
 };
 
 storiesOf('StatusAlert', module)
+  .addDecorator((story, context) => withInfo({}, README)(story)(context))
+  .addDecorator(centered)
+  .addDecorator(checkA11y)
   .add('basic usage', () => (
     <StatusAlert
       dialog="You have a status alert!"
