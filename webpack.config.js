@@ -41,9 +41,6 @@ module.exports = targetProperties.map(config => ({
         use: [
           {
             loader: 'babel-loader',
-            options: {
-              presets: ['env'],
-            },
           },
           { loader: 'source-map-loader' },
         ],
