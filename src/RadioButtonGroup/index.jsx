@@ -39,6 +39,7 @@ class RadioButton extends React.PureComponent {
           aria-checked={isChecked}
           defaultChecked={isChecked}
           value={value}
+          aria-label={children}
           data-index={index}
           onBlur={this.onBlur}
           onClick={this.onClick}
