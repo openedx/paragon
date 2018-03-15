@@ -6,3 +6,7 @@
   @extend .p-0;
   font-weight: $font-weight-bold;
 }
+
+.table th, .table td {
+  word-wrap: break-word;
+}

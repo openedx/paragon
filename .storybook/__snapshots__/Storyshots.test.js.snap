@@ -4909,7 +4909,9 @@ exports[`Storyshots Table default heading 1`] = `
   <thead
     className="thead-default"
   >
-    <tr>
+    <tr
+      className=""
+    >
       <th
         className=""
         scope="col"
@@ -4933,59 +4935,272 @@ exports[`Storyshots Table default heading 1`] = `
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Lil Bub
       </td>
-      <td>
+      <td
+        className=""
+      >
         weird tongue
       </td>
-      <td>
+      <td
+        className=""
+      >
         brown tabby
       </td>
     </tr>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Grumpy Cat
       </td>
-      <td>
+      <td
+        className=""
+      >
         serving moods
       </td>
-      <td>
+      <td
+        className=""
+      >
         siamese
       </td>
     </tr>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Smoothie
       </td>
-      <td>
+      <td
+        className=""
+      >
         modeling
       </td>
-      <td>
+      <td
+        className=""
+      >
         orange tabby
       </td>
     </tr>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Maru
       </td>
-      <td>
+      <td
+        className=""
+      >
         being a lovable oaf
       </td>
-      <td>
+      <td
+        className=""
+      >
         brown tabby
       </td>
     </tr>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Keyboard Cat
       </td>
-      <td>
+      <td
+        className=""
+      >
         piano virtuoso
       </td>
-      <td>
+      <td
+        className=""
+      >
         orange tabby
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
+        Long Cat
+      </td>
+      <td
+        className=""
+      >
+        being loooooooooooooooooooooooooooooooooooooooooooooooooooooong
+      </td>
+      <td
+        className=""
+      >
+        russian white
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Storyshots Table fixed 1`] = `
+<table
+  className="table"
+>
+  <caption>
+    Famous Internet Cats
+  </caption>
+  <thead
+    className=""
+  >
+    <tr
+      className="d-flex"
+    >
+      <th
+        className="col-3"
+        scope="col"
+      >
+        Name
+      </th>
+      <th
+        className="col-6"
+        scope="col"
+      >
+        Famous For
+      </th>
+      <th
+        className="col-3"
+        scope="col"
+      >
+        <span
+          className="sr-only"
+        />
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      className="d-flex"
+    >
+      <td
+        className="col-3"
+      >
+        Lil Bub
+      </td>
+      <td
+        className="col-6"
+      >
+        weird tongue
+      </td>
+      <td
+        className="col-3"
+      >
+        brown tabby
+      </td>
+    </tr>
+    <tr
+      className="d-flex"
+    >
+      <td
+        className="col-3"
+      >
+        Grumpy Cat
+      </td>
+      <td
+        className="col-6"
+      >
+        serving moods
+      </td>
+      <td
+        className="col-3"
+      >
+        siamese
+      </td>
+    </tr>
+    <tr
+      className="d-flex"
+    >
+      <td
+        className="col-3"
+      >
+        Smoothie
+      </td>
+      <td
+        className="col-6"
+      >
+        modeling
+      </td>
+      <td
+        className="col-3"
+      >
+        orange tabby
+      </td>
+    </tr>
+    <tr
+      className="d-flex"
+    >
+      <td
+        className="col-3"
+      >
+        Maru
+      </td>
+      <td
+        className="col-6"
+      >
+        being a lovable oaf
+      </td>
+      <td
+        className="col-3"
+      >
+        brown tabby
+      </td>
+    </tr>
+    <tr
+      className="d-flex"
+    >
+      <td
+        className="col-3"
+      >
+        Keyboard Cat
+      </td>
+      <td
+        className="col-6"
+      >
+        piano virtuoso
+      </td>
+      <td
+        className="col-3"
+      >
+        orange tabby
+      </td>
+    </tr>
+    <tr
+      className="d-flex"
+    >
+      <td
+        className="col-3"
+      >
+        Long Cat
+      </td>
+      <td
+        className="col-6"
+      >
+        being loooooooooooooooooooooooooooooooooooooooooooooooooooooong
+      </td>
+      <td
+        className="col-3"
+      >
+        russian white
       </td>
     </tr>
   </tbody>
@@ -5002,7 +5217,9 @@ exports[`Storyshots Table responsive 1`] = `
   <thead
     className=""
   >
-    <tr>
+    <tr
+      className=""
+    >
       <th
         className=""
         scope="col"
@@ -5026,59 +5243,118 @@ exports[`Storyshots Table responsive 1`] = `
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Lil Bub
       </td>
-      <td>
+      <td
+        className=""
+      >
         weird tongue
       </td>
-      <td>
+      <td
+        className=""
+      >
         brown tabby
       </td>
     </tr>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Grumpy Cat
       </td>
-      <td>
+      <td
+        className=""
+      >
         serving moods
       </td>
-      <td>
+      <td
+        className=""
+      >
         siamese
       </td>
     </tr>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Smoothie
       </td>
-      <td>
+      <td
+        className=""
+      >
         modeling
       </td>
-      <td>
+      <td
+        className=""
+      >
         orange tabby
       </td>
     </tr>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Maru
       </td>
-      <td>
+      <td
+        className=""
+      >
         being a lovable oaf
       </td>
-      <td>
+      <td
+        className=""
+      >
         brown tabby
       </td>
     </tr>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Keyboard Cat
       </td>
-      <td>
+      <td
+        className=""
+      >
         piano virtuoso
       </td>
-      <td>
+      <td
+        className=""
+      >
         orange tabby
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
+        Long Cat
+      </td>
+      <td
+        className=""
+      >
+        being loooooooooooooooooooooooooooooooooooooooooooooooooooooong
+      </td>
+      <td
+        className=""
+      >
+        russian white
       </td>
     </tr>
   </tbody>
@@ -5095,7 +5371,9 @@ exports[`Storyshots Table sortable 1`] = `
   <thead
     className=""
   >
-    <tr>
+    <tr
+      className=""
+    >
       <th
         className="sortable"
         scope="col"
@@ -5140,58 +5418,117 @@ exports[`Storyshots Table sortable 1`] = `
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Smoothie
       </td>
-      <td>
+      <td
+        className=""
+      >
         modeling
       </td>
-      <td>
+      <td
+        className=""
+      >
         orange tabby
       </td>
     </tr>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Maru
       </td>
-      <td>
+      <td
+        className=""
+      >
         being a lovable oaf
       </td>
-      <td>
+      <td
+        className=""
+      >
         brown tabby
       </td>
     </tr>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
+        Long Cat
+      </td>
+      <td
+        className=""
+      >
+        being loooooooooooooooooooooooooooooooooooooooooooooooooooooong
+      </td>
+      <td
+        className=""
+      >
+        russian white
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Lil Bub
       </td>
-      <td>
+      <td
+        className=""
+      >
         weird tongue
       </td>
-      <td>
+      <td
+        className=""
+      >
         brown tabby
       </td>
     </tr>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Keyboard Cat
       </td>
-      <td>
+      <td
+        className=""
+      >
         piano virtuoso
       </td>
-      <td>
+      <td
+        className=""
+      >
         orange tabby
       </td>
     </tr>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Grumpy Cat
       </td>
-      <td>
+      <td
+        className=""
+      >
         serving moods
       </td>
-      <td>
+      <td
+        className=""
+      >
         siamese
       </td>
     </tr>
@@ -5209,7 +5546,9 @@ exports[`Storyshots Table table-striped 1`] = `
   <thead
     className=""
   >
-    <tr>
+    <tr
+      className=""
+    >
       <th
         className=""
         scope="col"
@@ -5233,59 +5572,118 @@ exports[`Storyshots Table table-striped 1`] = `
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Lil Bub
       </td>
-      <td>
+      <td
+        className=""
+      >
         weird tongue
       </td>
-      <td>
+      <td
+        className=""
+      >
         brown tabby
       </td>
     </tr>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Grumpy Cat
       </td>
-      <td>
+      <td
+        className=""
+      >
         serving moods
       </td>
-      <td>
+      <td
+        className=""
+      >
         siamese
       </td>
     </tr>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Smoothie
       </td>
-      <td>
+      <td
+        className=""
+      >
         modeling
       </td>
-      <td>
+      <td
+        className=""
+      >
         orange tabby
       </td>
     </tr>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Maru
       </td>
-      <td>
+      <td
+        className=""
+      >
         being a lovable oaf
       </td>
-      <td>
+      <td
+        className=""
+      >
         brown tabby
       </td>
     </tr>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Keyboard Cat
       </td>
-      <td>
+      <td
+        className=""
+      >
         piano virtuoso
       </td>
-      <td>
+      <td
+        className=""
+      >
         orange tabby
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
+        Long Cat
+      </td>
+      <td
+        className=""
+      >
+        being loooooooooooooooooooooooooooooooooooooooooooooooooooooong
+      </td>
+      <td
+        className=""
+      >
+        russian white
       </td>
     </tr>
   </tbody>
@@ -5302,7 +5700,9 @@ exports[`Storyshots Table unstyled 1`] = `
   <thead
     className=""
   >
-    <tr>
+    <tr
+      className=""
+    >
       <th
         className=""
         scope="col"
@@ -5326,59 +5726,118 @@ exports[`Storyshots Table unstyled 1`] = `
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Lil Bub
       </td>
-      <td>
+      <td
+        className=""
+      >
         weird tongue
       </td>
-      <td>
+      <td
+        className=""
+      >
         brown tabby
       </td>
     </tr>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Grumpy Cat
       </td>
-      <td>
+      <td
+        className=""
+      >
         serving moods
       </td>
-      <td>
+      <td
+        className=""
+      >
         siamese
       </td>
     </tr>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Smoothie
       </td>
-      <td>
+      <td
+        className=""
+      >
         modeling
       </td>
-      <td>
+      <td
+        className=""
+      >
         orange tabby
       </td>
     </tr>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Maru
       </td>
-      <td>
+      <td
+        className=""
+      >
         being a lovable oaf
       </td>
-      <td>
+      <td
+        className=""
+      >
         brown tabby
       </td>
     </tr>
-    <tr>
-      <td>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
         Keyboard Cat
       </td>
-      <td>
+      <td
+        className=""
+      >
         piano virtuoso
       </td>
-      <td>
+      <td
+        className=""
+      >
         orange tabby
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
+        Long Cat
+      </td>
+      <td
+        className=""
+      >
+        being loooooooooooooooooooooooooooooooooooooooooooooooooooooong
+      </td>
+      <td
+        className=""
+      >
+        russian white
       </td>
     </tr>
   </tbody>
