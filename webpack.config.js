@@ -37,7 +37,11 @@ module.exports = targetProperties.map(config => ({
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules)/,
+        include: [
+          path.resolve(__dirname, 'src'),
+          // isemail needs to be transpiled to es5: https://github.com/hapijs/isemail/issues/158
+          path.resolve(__dirname, 'node_modules/isemail'),
+        ],
         use: [
           {
             loader: 'babel-loader',
