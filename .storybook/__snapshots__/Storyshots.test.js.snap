@@ -4328,6 +4328,68 @@ exports[`Storyshots InputSelect basic usage 1`] = `
   <select
     aria-describedby="error-asInput1"
     className="form-control"
+    disabled={false}
+    id="asInput1"
+    name="fruits"
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="select"
+    value="strawberry"
+  >
+    <option
+      value="apple"
+    >
+      apple
+    </option>
+    <option
+      value="orange"
+    >
+      orange
+    </option>
+    <option
+      value="strawberry"
+    >
+      strawberry
+    </option>
+    <option
+      value="banana"
+    >
+      banana
+    </option>
+  </select>
+  <div
+    aria-live="polite"
+    className="form-control-feedback"
+    id="error-asInput1"
+  >
+    <span />
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputSelect disabled usage 1`] = `
+<div
+  className={
+    Array [
+      "form-group",
+    ]
+  }
+>
+  <label
+    className={
+      Array [
+        "",
+      ]
+    }
+    htmlFor="asInput1"
+    id="label-asInput1"
+  >
+    Fruits
+  </label>
+  <select
+    aria-describedby="error-asInput1"
+    className="form-control"
+    disabled={true}
     id="asInput1"
     name="fruits"
     onBlur={[Function]}
@@ -4388,6 +4450,7 @@ exports[`Storyshots InputSelect separate labels and values 1`] = `
   <select
     aria-describedby="error-asInput1"
     className="form-control"
+    disabled={false}
     id="asInput1"
     name="new-england-states"
     onBlur={[Function]}
@@ -4458,6 +4521,7 @@ exports[`Storyshots InputSelect separate option groups 1`] = `
   <select
     aria-describedby="error-asInput1"
     className="form-control"
+    disabled={false}
     id="asInput1"
     name="northeast-states"
     onBlur={[Function]}
@@ -4576,6 +4640,7 @@ exports[`Storyshots InputSelect with validation 1`] = `
   <select
     aria-describedby="error-asInput1"
     className="form-control"
+    disabled={false}
     id="asInput1"
     name="color"
     onBlur={[Function]}

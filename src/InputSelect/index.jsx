@@ -50,6 +50,7 @@ class Select extends React.Component {
         onChange={props.onChange}
         onBlur={props.onBlur}
         ref={props.inputRef}
+        disabled={props.disabled}
       >
         {options}
       </select>
