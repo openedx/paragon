@@ -90,4 +90,18 @@ storiesOf('InputSelect', module)
         return feedback;
       }}
     />
+  ))
+  .add('disabled usage', () => (
+    <InputSelect
+      name="fruits"
+      label="Fruits"
+      value="strawberry"
+      options={[
+        'apple',
+        'orange',
+        'strawberry',
+        'banana',
+      ]}
+      disabled
+    />
   ));
