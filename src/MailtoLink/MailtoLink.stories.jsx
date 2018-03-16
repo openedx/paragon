@@ -1,10 +1,14 @@
-/* eslint-disable import/no-extraneous-dependencies, no-console */
+/* eslint-disable no-console */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { setConsoleOptions } from '@storybook/addon-console';
+import { withInfo } from '@storybook/addon-info';
+import centered from '@storybook/addon-centered';
+import { checkA11y } from '@storybook/addon-a11y';
 
 import MailtoLink from './index';
+import README from './README.md';
 
 setConsoleOptions({
   panelExclude: ['warn', 'error'],
@@ -17,6 +21,9 @@ const onClick = (event) => {
 };
 
 storiesOf('MailtoLink', module)
+  .addDecorator((story, context) => withInfo({}, README)(story)(context))
+  .addDecorator(centered)
+  .addDecorator(checkA11y)
   .add('minimal usage', () => (
     <MailtoLink
       to="edx@example.com"
@@ -36,12 +43,6 @@ storiesOf('MailtoLink', module)
       content="edx@example.com"
       target="_blank"
       onClick={onClick}
-    />
-  ))
-  .add('with multiple recipients and mail icon', () => (
-    <MailtoLink
-      to={['foo@example.com', 'bar@example.com', 'baz@example.com']}
-      content={(<span className="fa fa-envelope" />)}
     />
   ))
   .add('with subject and body', () => (
