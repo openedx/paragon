@@ -129,6 +129,7 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
 
     getLabel() {
       return (
+        // eslint-disable-next-line jsx-a11y/label-has-for
         <label
           id={`label-${this.state.id}`}
           htmlFor={this.state.id}
