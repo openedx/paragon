@@ -93,10 +93,13 @@ class Table extends React.Component {
       <thead
         className={classNames(...this.props.headingClassName.map(className => styles[className]))}
       >
-        <tr>
+        <tr className={classNames({ 'd-flex': this.props.hasFixedColumnWidths })}>
           {this.props.columns.map(col => (
             <th
-              className={this.props.tableSortable ? classNames({ sortable: col.columnSortable }) : ''}
+              className={classNames(
+                { sortable: this.props.tableSortable && col.columnSortable },
+                this.props.hasFixedColumnWidths ? col.width : null,
+              )}
               key={col.key}
               scope="col"
             >
@@ -112,9 +115,14 @@ class Table extends React.Component {
     return (
       <tbody>
         {this.props.data.map((row, i) => (
-          <tr key={i}>
-            {this.props.columns.map(col => (
-              <td key={col.key}>{row[col.key]}</td>
+          <tr key={i} className={classNames({ 'd-flex': this.props.hasFixedColumnWidths })}>
+            {this.props.columns.map(({ key, width }) => (
+              <td
+                key={key}
+                className={classNames(this.props.hasFixedColumnWidths ? width : null)}
+              >
+                {row[key]}
+              </td>
             ))}
           </tr>
         ))}
@@ -153,9 +161,11 @@ Table.propTypes = {
     columnSortable: isRequiredIf(PropTypes.bool, props => props.tableSortable),
     onSort: isRequiredIf(PropTypes.func, props => props.columnSortable),
     hideHeader: PropTypes.bool,
+    width: isRequiredIf(PropTypes.string, props => props.hasFixedColumnWidths),
   })).isRequired,
   headingClassName: PropTypes.arrayOf(PropTypes.string),
   tableSortable: PropTypes.bool,
+  hasFixedColumnWidths: PropTypes.bool,
   /* eslint-disable react/require-default-props */
   defaultSortedColumn: isRequiredIf(PropTypes.string, props => props.tableSortable),
   /* eslint-disable react/require-default-props */
@@ -175,6 +185,7 @@ Table.defaultProps = {
   className: [],
   headingClassName: [],
   tableSortable: false,
+  hasFixedColumnWidths: false,
   sortButtonsScreenReaderText: {
     asc: 'sort ascending',
     desc: 'sort descending',

@@ -29,6 +29,11 @@ const catData = [
     color: 'orange tabby',
     famous_for: 'piano virtuoso',
   },
+  {
+    name: 'Long Cat',
+    color: 'russian white',
+    famous_for: 'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+  },
 ];
 
 const catColumns = [
@@ -37,12 +42,14 @@ const catColumns = [
     key: 'name',
     columnSortable: true,
     onSort: () => {},
+    width: 'col-3',
   },
   {
     label: 'Famous For',
     key: 'famous_for',
     columnSortable: false,
     onSort: () => {},
+    width: 'col-6',
   },
   {
     label: 'Coat Color',
@@ -50,6 +57,7 @@ const catColumns = [
     columnSortable: false,
     hideHeader: true,
     onSort: () => {},
+    width: 'col-3',
   },
 ];
 
@@ -113,4 +121,12 @@ storiesOf('Table', module)
       defaultSortedColumn={catColumns[0].key}
       defaultSortDirection="desc"
     />);
-  });
+  })
+  .add('fixed', () => (
+    <Table
+      data={catData}
+      columns={catColumns}
+      caption="Famous Internet Cats"
+      hasFixedColumnWidths
+    />
+  ));
