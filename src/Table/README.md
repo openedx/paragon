@@ -12,6 +12,7 @@ Provides a very basic table component with col-scoped headings displayed in the 
 3. `columnSortable` (boolean; optional) specifies at the column-level whether the column is sortable. If `columnSortable` is `true`, a sort button will be rendered in the column table heading. It is only required if `tableSortable` is set to `true`.
 4. `onSort` (function; conditionally required) specifies what function is called when a sortable column is clicked. It is only required if the column's `columnSortable` is set to `true`.
 5. `hideHeader` (boolean; optional) specifies at the column-level whether the column label is visible. A column that is sortable cannot have its label be hidden.
+6. `width` (string; conditionally required) only if `hasFixedColumnWidths` is set to `true`, the `<td>` elements' `class` attributes will be set to this value. This allows restricting columns to specific widths. See [Bootstrap's grid documentation](https://getbootstrap.com/docs/4.0/layout/grid/) for `col` class names that can be used.
 
 The order of objects in `columns` specifies the order of the columns in the table.
 
@@ -24,16 +25,16 @@ Specifies the key of the column that is sorted by default. It is only required i
 ### `defaultSortDirection` (string; conditionally required)
 Specifies the direction the `defaultSortedColumn` is sorted in by default; it will typically be either 'asc' or 'desc'. It is only required if `tableSortable` is set to `true`.
 
-### `caption` (string or element; optional)
+### `caption` (string or element; optional, default: `null`)
 Specifies a descriptive caption to be applied to the entire table.
 
-### `className` (string array; optional)
+### `className` (string array; optional; default: `[]`)
 Specifies Bootstrap class names to apply to the table. See [Bootstrap's table documentation](https://getbootstrap.com/docs/4.0/content/tables/) for a list of applicable class names.
 
-### `headingClassName` (string array; optional)
+### `headingClassName` (string array; optional; default: `[]`)
 Specifies Bootstrap class names to apply to the table heading. Options are detailed in [Bootstrap's docs](https://getbootstrap.com/docs/4.0/content/tables/#table-head-options).
 
-### `tableSortable` (boolean; optional)
+### `tableSortable` (boolean; optional; default: `false`)
 Specifies whether the table is sortable. This setting supercedes column-level sortability, so if it is `false`, no sortable components will be rendered.
 
 ### `sortButtonsScreenReaderText` (object; conditionally required)
@@ -44,3 +45,16 @@ Specifies the screen reader only text that accompanies the sort buttons for sort
 3. `defaultText`: (string) specifies the screen reader only text for sort buttons that are not engaged.
 
 It is only required if `tableSortable` is set to `true`.
+
+Default:
+
+```javascript
+{
+  asc: 'sort ascending',
+  desc: 'sort descending',
+  defaultText: 'click to sort',
+}
+```
+
+### `hasFixedColumnWidths` (boolean; optional; default: `false`)
+Specifies whether the table's columns have fixed widths. Every element in `columns` must define a `width` if this is `true`.

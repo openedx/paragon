@@ -55,6 +55,29 @@ const sortableProps = {
   defaultSortDirection: 'desc',
 };
 
+const fixedColumnProps = {
+  num: { width: 'col-4' },
+  x2: { width: 'col-2' },
+  sq: { width: 'col-3' },
+  i: { width: 'col-3' },
+};
+
+const fixedColumns = props.columns.map(column => ({
+  ...column,
+  ...fixedColumnProps[column.key],
+}));
+
+const fixedProps = {
+  ...props,
+  columns: fixedColumns,
+  hasFixedColumnWidths: true,
+};
+
+const propsWithColWidths = {
+  ...props,
+  columns: fixedColumns,
+};
+
 describe('<Table />', () => {
   describe('renders', () => {
     const wrapper = shallow(<Table {...props} />);
@@ -258,6 +281,48 @@ describe('<Table />', () => {
       expect(x2Spy).toHaveBeenCalledTimes(1);
 
       expect(x2Spy).toBeCalledWith('desc');
+    });
+  });
+  describe('that is fixed', () => {
+    const wrapper = shallow(<Table {...fixedProps} />);
+
+    it('with col width classnames on headings', () => {
+      const tableHeadings = wrapper.find('th');
+
+      expect(tableHeadings).toHaveLength(fixedProps.columns.length);
+      expect(tableHeadings.at(0).hasClass('col-4')).toEqual(true);
+      expect(tableHeadings.at(1).hasClass('col-2')).toEqual(true);
+      expect(tableHeadings.at(2).hasClass('col-3')).toEqual(true);
+    });
+
+    it('with col width classnames on cells', () => {
+      const tableCells = wrapper.find('td');
+
+      expect(tableCells).toHaveLength(fixedProps.columns.length * fixedProps.data.length);
+      expect(tableCells.at(0).hasClass('col-4')).toEqual(true);
+      expect(tableCells.at(1).hasClass('col-2')).toEqual(true);
+      expect(tableCells.at(2).hasClass('col-3')).toEqual(true);
+    });
+  });
+  describe('that is not fixed with col widths', () => {
+    const wrapper = shallow(<Table {...propsWithColWidths} />);
+
+    it('with no col width classnames on headings', () => {
+      const tableHeadings = wrapper.find('th');
+
+      expect(tableHeadings).toHaveLength(fixedProps.columns.length);
+      expect(tableHeadings.at(0).hasClass('col-4')).toEqual(false);
+      expect(tableHeadings.at(1).hasClass('col-2')).toEqual(false);
+      expect(tableHeadings.at(2).hasClass('col-3')).toEqual(false);
+    });
+
+    it('with no col width classnames on cells', () => {
+      const tableCells = wrapper.find('td');
+
+      expect(tableCells).toHaveLength(fixedProps.columns.length * fixedProps.data.length);
+      expect(tableCells.at(0).hasClass('col-4')).toEqual(false);
+      expect(tableCells.at(1).hasClass('col-2')).toEqual(false);
+      expect(tableCells.at(2).hasClass('col-3')).toEqual(false);
     });
   });
 });
