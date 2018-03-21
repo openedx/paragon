@@ -216,4 +216,14 @@ storiesOf('Modal', module)
         parentSelector=".target-div-two"
       />
     </div>
+  ))
+  .add('modal with non existant parentSelector', () => (
+    <div>
+      <div className="target-div" />
+      <ModalWrapper
+        title="I am the first modal!"
+        body="I target one"
+        parentSelector=".no-element-matches-this-selector"
+      />
+    </div>
   ));
