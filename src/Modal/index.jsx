@@ -29,6 +29,9 @@ class Modal extends React.Component {
 
   componentDidMount() {
     this.parentElement = document.querySelector(this.props.parentSelector);
+    if (parentSelector === null){
+      throw new Error('Modal recieved invalid parentSelector, no matching element found')
+    }
     this.parentElement.appendChild(this.el);
 
     if (this.xButton) {
