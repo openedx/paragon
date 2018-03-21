@@ -91,7 +91,10 @@ class Table extends React.Component {
   getHeadings() {
     return (
       <thead
-        className={classNames(...this.props.headingClassName.map(className => styles[className]))}
+        className={classNames(
+          ...this.props.headingClassName.map(className => styles[className]),
+          { 'd-inline': this.props.hasFixedColumnWidths },
+        )}
       >
         <tr className={classNames({ 'd-flex': this.props.hasFixedColumnWidths })}>
           {this.props.columns.map(col => (
@@ -113,7 +116,7 @@ class Table extends React.Component {
 
   getBody() {
     return (
-      <tbody>
+      <tbody className={classNames({ 'd-inline': this.props.hasFixedColumnWidths })}>
         {this.props.data.map((row, i) => (
           <tr key={i} className={classNames({ 'd-flex': this.props.hasFixedColumnWidths })}>
             {this.props.columns.map(({ key, width }) => (
