@@ -58,3 +58,5 @@ Default:
 
 ### `hasFixedColumnWidths` (boolean; optional; default: `false`)
 Specifies whether the table's columns have fixed widths. Every element in `columns` must define a `width` if this is `true`.
+
+**WARNING: The styling for fixed column widths does not work in IE11.**
