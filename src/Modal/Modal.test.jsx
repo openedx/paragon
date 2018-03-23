@@ -134,6 +134,13 @@ describe('<Modal />', () => {
       wrapper.find('button').at(0).simulate('click');
       expect(spy).toHaveBeenCalledTimes(1);
     });
+    it('reopens after closed', () => {
+      modalOpen(true, wrapper);
+      wrapper.find('button').at(0).simulate('click');
+      modalOpen(false, wrapper);
+      wrapper.setProps({ open: true });
+      modalOpen(true, wrapper);
+    });
   });
   describe('invalid keystrokes do nothing', () => {
     beforeEach(() => {
