@@ -31,9 +31,9 @@ class Modal extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.open !== this.props.open) {
-      this.setState({ open: nextProps.open });
+  componentWillReceiveProps({ open }) {
+    if (open !== this.state.open) {
+      this.setState({ open });
     }
   }
 
