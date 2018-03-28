@@ -13954,7 +13954,9 @@ exports[`Storyshots Table default heading 1`] = `
       </th>
     </tr>
   </thead>
-  <tbody>
+  <tbody
+    className=""
+  >
     <tr
       className=""
     >
@@ -14081,7 +14083,7 @@ exports[`Storyshots Table fixed 1`] = `
     Famous Internet Cats
   </caption>
   <thead
-    className=""
+    className="d-inline"
   >
     <tr
       className="d-flex"
@@ -14108,7 +14110,9 @@ exports[`Storyshots Table fixed 1`] = `
       </th>
     </tr>
   </thead>
-  <tbody>
+  <tbody
+    className="d-inline"
+  >
     <tr
       className="d-flex"
     >
@@ -14262,7 +14266,9 @@ exports[`Storyshots Table responsive 1`] = `
       </th>
     </tr>
   </thead>
-  <tbody>
+  <tbody
+    className=""
+  >
     <tr
       className=""
     >
@@ -14437,7 +14443,9 @@ exports[`Storyshots Table sortable 1`] = `
       </th>
     </tr>
   </thead>
-  <tbody>
+  <tbody
+    className=""
+  >
     <tr
       className=""
     >
@@ -14591,7 +14599,9 @@ exports[`Storyshots Table table-striped 1`] = `
       </th>
     </tr>
   </thead>
-  <tbody>
+  <tbody
+    className=""
+  >
     <tr
       className=""
     >
@@ -14745,7 +14755,9 @@ exports[`Storyshots Table unstyled 1`] = `
       </th>
     </tr>
   </thead>
-  <tbody>
+  <tbody
+    className=""
+  >
     <tr
       className=""
     >

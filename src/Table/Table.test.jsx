@@ -303,6 +303,15 @@ describe('<Table />', () => {
       expect(tableCells.at(1).hasClass('col-2')).toEqual(true);
       expect(tableCells.at(2).hasClass('col-3')).toEqual(true);
     });
+    it('with fixed-related classnames on head, body, and rows', () => {
+      const thead = wrapper.find('thead');
+      const tbody = wrapper.find('tbody');
+      const tr = wrapper.find('tr');
+
+      expect(thead.hasClass('d-inline')).toEqual(true);
+      expect(tbody.hasClass('d-inline')).toEqual(true);
+      expect(tr.at(0).hasClass('d-flex')).toEqual(true);
+    });
   });
   describe('that is not fixed with col widths', () => {
     const wrapper = shallow(<Table {...propsWithColWidths} />);
@@ -323,6 +332,15 @@ describe('<Table />', () => {
       expect(tableCells.at(0).hasClass('col-4')).toEqual(false);
       expect(tableCells.at(1).hasClass('col-2')).toEqual(false);
       expect(tableCells.at(2).hasClass('col-3')).toEqual(false);
+    });
+    it('with no fixed-related classnames on head, body, and rows', () => {
+      const thead = wrapper.find('thead');
+      const tbody = wrapper.find('tbody');
+      const tr = wrapper.find('tr');
+
+      expect(thead.hasClass('d-inline')).toEqual(false);
+      expect(tbody.hasClass('d-inline')).toEqual(false);
+      expect(tr.at(0).hasClass('d-flex')).toEqual(false);
     });
   });
 });
