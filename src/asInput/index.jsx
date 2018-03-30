@@ -24,6 +24,8 @@ export const inputProps = {
   onChange: PropTypes.func,
   onBlur: PropTypes.func,
   validator: PropTypes.func,
+  isValid: PropTypes.bool,
+  validationMessage: PropTypes.string,
   className: PropTypes.arrayOf(PropTypes.string),
   themes: PropTypes.arrayOf(PropTypes.string),
   inline: PropTypes.bool,
@@ -38,6 +40,8 @@ export const defaultProps = {
   disabled: false,
   required: false,
   validator: undefined,
+  isValid: true,
+  validationMessage: '',
   className: [],
   themes: [],
   inline: false,
@@ -51,10 +55,13 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       this.handleBlur = this.handleBlur.bind(this);
 
       const id = this.props.id ? this.props.id : newId('asInput');
+      const isValid = this.props.validator ? true : this.props.isValid;
+      const validationMessage = this.props.validator ? '' : this.props.validationMessage;
       this.state = {
         id,
         value: this.props.value,
-        isValid: true,
+        isValid,
+        validationMessage,
         describedBy: [],
         errorId: `error-${id}`,
         descriptionId: `description-${id}`,
@@ -62,10 +69,23 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
     }
 
     componentWillReceiveProps(nextProps) {
+      const updatedState = {};
       if (nextProps.value !== this.props.value) {
-        this.setState({
-          value: nextProps.value,
-        });
+        updatedState.value = nextProps.value;
+      }
+      if (nextProps.isValid !== this.props.isValid && !nextProps.validator) {
+        updatedState.isValid = nextProps.isValid;
+      }
+      if (nextProps.validationMessage !== this.props.validationMessage && !nextProps.validator) {
+        updatedState.validationMessage = nextProps.validationMessage;
+      }
+      // If validator goes away, revert to props
+      if (nextProps.validator !== this.props.validator && !nextProps.validator) {
+        updatedState.isValid = nextProps.isValid;
+        updatedState.validationMessage = nextProps.validationMessage;
+      }
+      if (Object.keys(updatedState).length > 0) {
+        this.setState(updatedState);
       }
     }
 
