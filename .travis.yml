@@ -18,6 +18,9 @@ notifications:
 before_install:
 - npm install -g npm@5
 - npm install -g greenkeeper-lockfile@1
+install:
+  - npm i -g npm@5.7.1 # this should be deleted once 5.7.X is out of "pre-release"
+  - npm ci             # instead of default npm install 
 before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
 script:
