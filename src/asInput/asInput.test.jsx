@@ -131,6 +131,78 @@ describe('asInput()', () => {
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
+    describe('validation properties', () => {
+      it('ignores props if validator is defined', () => {
+        const spy = jest.fn();
+        spy.mockReturnValue({ isValid: false });
+        const props = {
+          ...baseProps,
+          validator: spy,
+          isValid: false,
+        };
+        const wrapper = mount(<InputTestComponent {...props} />);
+        expect(wrapper.state('isValid')).toEqual(true); // default is true, ignoring our prop
+
+        wrapper.setProps({ isValid: true });
+        wrapper.find('input').simulate('blur'); // trigger validation
+        expect(wrapper.state('isValid')).toEqual(false); // validator set false, ignoring our prop
+
+        wrapper.setProps({ isValid: true });
+        expect(wrapper.state('isValid')).toEqual(false); // resetting prop changes nothing
+      });
+
+      it('ignores validationMessage prop if validator is defined', () => {
+        const spy = jest.fn();
+        spy.mockReturnValue({ validationMessage: 'Spy' });
+        const props = {
+          ...baseProps,
+          validator: spy,
+          validationMessage: 'Prop',
+        };
+        const wrapper = mount(<InputTestComponent {...props} />);
+        expect(wrapper.state('validationMessage')).toEqual(''); // default is '', ignoring our prop
+
+        wrapper.find('input').simulate('blur'); // trigger validation
+        expect(wrapper.state('validationMessage')).toEqual('Spy'); // validator set Spy, ignoring our prop
+
+        wrapper.setProps({ validationMessage: 'Reset' });
+        expect(wrapper.state('validationMessage')).toEqual('Spy'); // resetting prop changes nothing
+      });
+
+      it('uses props if validator becomes undefined', () => {
+        const spy = jest.fn();
+        spy.mockReturnValue({ validationMessage: 'Spy' });
+        const props = {
+          ...baseProps,
+          validator: spy,
+          isValid: false,
+          validationMessage: 'Prop',
+        };
+        const wrapper = mount(<InputTestComponent {...props} />);
+        expect(wrapper.state('validationMessage')).toEqual('');
+
+        wrapper.setProps({ validator: null });
+        expect(wrapper.state('validationMessage')).toEqual('Prop');
+      });
+
+      it('uses isValid to display validation message', () => {
+        const props = {
+          ...baseProps,
+          isValid: false,
+          validationMessage: 'Nope!',
+        };
+        const wrapper = mount(<InputTestComponent {...props} />);
+        const err = wrapper.find('.form-control-feedback');
+        expect(err.text()).toEqual('Nope!');
+
+        wrapper.setProps({ validationMessage: 'New Message' });
+        expect(err.text()).toEqual('New Message');
+
+        wrapper.setProps({ isValid: true });
+        expect(err.text()).toEqual('');
+      });
+    });
+
     describe('validator', () => {
       it('on blur', () => {
         const spy = jest.fn();
