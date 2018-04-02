@@ -40,5 +40,5 @@ Handles all necessary props that are related to Input typed components.
 ### `validationMessage` (string; optional)
 `validationMessage` specifies the message to display when `isValid` is false.  Only used if `validator` is not specified. The default is an empty string.
 
-### `value` (string; optional)
+### `value` (string or number; optional)
 `value` specifies the value for the value property within the component. The default is an empty string.

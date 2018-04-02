@@ -8924,17 +8924,17 @@ exports[`Storyshots InputText different textual input types 1`] = `
           "",
         ]
       }
-      htmlFor="asInput1"
-      id="label-asInput1"
+      htmlFor="input-search"
+      id="label-input-search"
     >
       Search
     </label>
     <input
-      aria-describedby="error-asInput1"
+      aria-describedby="error-input-search"
       aria-invalid={false}
       className="form-control"
       disabled={false}
-      id="asInput1"
+      id="input-search"
       name="search"
       onBlur={[Function]}
       onChange={[Function]}
@@ -8947,7 +8947,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
     <div
       aria-live="polite"
       className="form-control-feedback"
-      id="error-asInput1"
+      id="error-input-search"
     >
       <span />
     </div>
@@ -8965,17 +8965,17 @@ exports[`Storyshots InputText different textual input types 1`] = `
           "",
         ]
       }
-      htmlFor="asInput1"
-      id="label-asInput1"
+      htmlFor="input-email"
+      id="label-input-email"
     >
       Email
     </label>
     <input
-      aria-describedby="error-asInput1"
+      aria-describedby="error-input-email"
       aria-invalid={false}
       className="form-control"
       disabled={false}
-      id="asInput1"
+      id="input-email"
       name="email"
       onBlur={[Function]}
       onChange={[Function]}
@@ -8988,7 +8988,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
     <div
       aria-live="polite"
       className="form-control-feedback"
-      id="error-asInput1"
+      id="error-input-email"
     >
       <span />
     </div>
@@ -9006,17 +9006,17 @@ exports[`Storyshots InputText different textual input types 1`] = `
           "",
         ]
       }
-      htmlFor="asInput1"
-      id="label-asInput1"
+      htmlFor="input-url"
+      id="label-input-url"
     >
       Url
     </label>
     <input
-      aria-describedby="error-asInput1"
+      aria-describedby="error-input-url"
       aria-invalid={false}
       className="form-control"
       disabled={false}
-      id="asInput1"
+      id="input-url"
       name="url"
       onBlur={[Function]}
       onChange={[Function]}
@@ -9029,7 +9029,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
     <div
       aria-live="polite"
       className="form-control-feedback"
-      id="error-asInput1"
+      id="error-input-url"
     >
       <span />
     </div>
@@ -9047,17 +9047,17 @@ exports[`Storyshots InputText different textual input types 1`] = `
           "",
         ]
       }
-      htmlFor="asInput1"
-      id="label-asInput1"
+      htmlFor="input-tel"
+      id="label-input-tel"
     >
       Telephone
     </label>
     <input
-      aria-describedby="error-asInput1"
+      aria-describedby="error-input-tel"
       aria-invalid={false}
       className="form-control"
       disabled={false}
-      id="asInput1"
+      id="input-tel"
       name="telephone"
       onBlur={[Function]}
       onChange={[Function]}
@@ -9070,7 +9070,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
     <div
       aria-live="polite"
       className="form-control-feedback"
-      id="error-asInput1"
+      id="error-input-tel"
     >
       <span />
     </div>
@@ -9088,17 +9088,17 @@ exports[`Storyshots InputText different textual input types 1`] = `
           "",
         ]
       }
-      htmlFor="asInput1"
-      id="label-asInput1"
+      htmlFor="input-password"
+      id="label-input-password"
     >
       Password
     </label>
     <input
-      aria-describedby="error-asInput1"
+      aria-describedby="error-input-password"
       aria-invalid={false}
       className="form-control"
       disabled={false}
-      id="asInput1"
+      id="input-password"
       name="password"
       onBlur={[Function]}
       onChange={[Function]}
@@ -9111,7 +9111,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
     <div
       aria-live="polite"
       className="form-control-feedback"
-      id="error-asInput1"
+      id="error-input-password"
     >
       <span />
     </div>
@@ -9129,17 +9129,17 @@ exports[`Storyshots InputText different textual input types 1`] = `
           "",
         ]
       }
-      htmlFor="asInput1"
-      id="label-asInput1"
+      htmlFor="input-number"
+      id="label-input-number"
     >
       Number
     </label>
     <input
-      aria-describedby="error-asInput1"
+      aria-describedby="error-input-number"
       aria-invalid={false}
       className="form-control"
       disabled={false}
-      id="asInput1"
+      id="input-number"
       name="number"
       onBlur={[Function]}
       onChange={[Function]}
@@ -9147,12 +9147,12 @@ exports[`Storyshots InputText different textual input types 1`] = `
       required={false}
       themes={Array []}
       type="number"
-      value="42"
+      value={42}
     />
     <div
       aria-live="polite"
       className="form-control-feedback"
-      id="error-asInput1"
+      id="error-input-number"
     >
       <span />
     </div>
@@ -9170,17 +9170,17 @@ exports[`Storyshots InputText different textual input types 1`] = `
           "",
         ]
       }
-      htmlFor="asInput1"
-      id="label-asInput1"
+      htmlFor="input-datetime-local"
+      id="label-input-datetime-local"
     >
       Date and time
     </label>
     <input
-      aria-describedby="error-asInput1"
+      aria-describedby="error-input-datetime-local"
       aria-invalid={false}
       className="form-control"
       disabled={false}
-      id="asInput1"
+      id="input-datetime-local"
       name="datetime-local"
       onBlur={[Function]}
       onChange={[Function]}
@@ -9193,7 +9193,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
     <div
       aria-live="polite"
       className="form-control-feedback"
-      id="error-asInput1"
+      id="error-input-datetime-local"
     >
       <span />
     </div>
@@ -9211,17 +9211,17 @@ exports[`Storyshots InputText different textual input types 1`] = `
           "",
         ]
       }
-      htmlFor="asInput1"
-      id="label-asInput1"
+      htmlFor="input-date"
+      id="label-input-date"
     >
       Date
     </label>
     <input
-      aria-describedby="error-asInput1"
+      aria-describedby="error-input-date"
       aria-invalid={false}
       className="form-control"
       disabled={false}
-      id="asInput1"
+      id="input-date"
       name="date"
       onBlur={[Function]}
       onChange={[Function]}
@@ -9234,7 +9234,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
     <div
       aria-live="polite"
       className="form-control-feedback"
-      id="error-asInput1"
+      id="error-input-date"
     >
       <span />
     </div>
@@ -9252,17 +9252,17 @@ exports[`Storyshots InputText different textual input types 1`] = `
           "",
         ]
       }
-      htmlFor="asInput1"
-      id="label-asInput1"
+      htmlFor="input-month"
+      id="label-input-month"
     >
       Month
     </label>
     <input
-      aria-describedby="error-asInput1"
+      aria-describedby="error-input-month"
       aria-invalid={false}
       className="form-control"
       disabled={false}
-      id="asInput1"
+      id="input-month"
       name="month"
       onBlur={[Function]}
       onChange={[Function]}
@@ -9275,7 +9275,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
     <div
       aria-live="polite"
       className="form-control-feedback"
-      id="error-asInput1"
+      id="error-input-month"
     >
       <span />
     </div>
@@ -9293,17 +9293,17 @@ exports[`Storyshots InputText different textual input types 1`] = `
           "",
         ]
       }
-      htmlFor="asInput1"
-      id="label-asInput1"
+      htmlFor="input-week"
+      id="label-input-week"
     >
       Week
     </label>
     <input
-      aria-describedby="error-asInput1"
+      aria-describedby="error-input-week"
       aria-invalid={false}
       className="form-control"
       disabled={false}
-      id="asInput1"
+      id="input-week"
       name="week"
       onBlur={[Function]}
       onChange={[Function]}
@@ -9316,7 +9316,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
     <div
       aria-live="polite"
       className="form-control-feedback"
-      id="error-asInput1"
+      id="error-input-week"
     >
       <span />
     </div>
@@ -9334,17 +9334,17 @@ exports[`Storyshots InputText different textual input types 1`] = `
           "",
         ]
       }
-      htmlFor="asInput1"
-      id="label-asInput1"
+      htmlFor="input-time"
+      id="label-input-time"
     >
       Time
     </label>
     <input
-      aria-describedby="error-asInput1"
+      aria-describedby="error-input-time"
       aria-invalid={false}
       className="form-control"
       disabled={false}
-      id="asInput1"
+      id="input-time"
       name="time"
       onBlur={[Function]}
       onChange={[Function]}
@@ -9357,7 +9357,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
     <div
       aria-live="polite"
       className="form-control-feedback"
-      id="error-asInput1"
+      id="error-input-time"
     >
       <span />
     </div>
@@ -9375,17 +9375,17 @@ exports[`Storyshots InputText different textual input types 1`] = `
           "",
         ]
       }
-      htmlFor="asInput1"
-      id="label-asInput1"
+      htmlFor="input-color"
+      id="label-input-color"
     >
       Color
     </label>
     <input
-      aria-describedby="error-asInput1"
+      aria-describedby="error-input-color"
       aria-invalid={false}
       className="form-control"
       disabled={false}
-      id="asInput1"
+      id="input-color"
       name="color"
       onBlur={[Function]}
       onChange={[Function]}
@@ -9398,7 +9398,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
     <div
       aria-live="polite"
       className="form-control-feedback"
-      id="error-asInput1"
+      id="error-input-color"
     >
       <span />
     </div>
