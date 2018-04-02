@@ -173,9 +173,9 @@ class Modal extends React.Component {
             <div className={styles['modal-header']}>
               <h2 className={styles['modal-title']} id={this.headerId}>{this.props.title}</h2>
               <Button
-                label={<span aria-hidden="true">&times;</span>}
+                label={<Icon className={['fa', 'fa-times']} />}
+                className={['p-1']}
                 aria-label={this.props.closeText}
-                buttonType="light"
                 onClick={this.close}
                 inputRef={this.setXButton}
                 onKeyDown={this.handleKeyDown}
@@ -188,7 +188,7 @@ class Modal extends React.Component {
               {this.renderButtons()}
               <Button
                 label={this.props.closeText}
-                buttonType="secondary"
+                buttonType="outline-primary"
                 onClick={this.close}
                 inputRef={this.setCloseButton}
                 onKeyDown={this.handleKeyDown}
