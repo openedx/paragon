@@ -14283,17 +14283,19 @@ exports[`Storyshots Modal basic usage 1`] = `
         </h2>
         <button
           aria-label="Close"
-          className="btn btn-light"
+          className="p-1 btn"
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
           type="button"
         >
-          <span
-            aria-hidden="true"
-          >
-            ×
-          </span>
+          <div>
+            <span
+              aria-hidden={true}
+              className="fa fa-times"
+              id="Icon2"
+            />
+          </div>
         </button>
       </div>
       <div
@@ -14307,7 +14309,7 @@ exports[`Storyshots Modal basic usage 1`] = `
         className="modal-footer"
       >
         <button
-          className="btn btn-secondary"
+          className="btn btn-outline-primary"
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -14345,17 +14347,19 @@ exports[`Storyshots Modal configurable buttons 1`] = `
         </h2>
         <button
           aria-label="Close"
-          className="btn btn-light"
+          className="p-1 btn"
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
           type="button"
         >
-          <span
-            aria-hidden="true"
-          >
-            ×
-          </span>
+          <div>
+            <span
+              aria-hidden={true}
+              className="fa fa-times"
+              id="Icon2"
+            />
+          </div>
         </button>
       </div>
       <div
@@ -14396,7 +14400,7 @@ exports[`Storyshots Modal configurable buttons 1`] = `
           Green button!
         </button>
         <button
-          className="btn btn-secondary"
+          className="btn btn-outline-primary"
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -14434,17 +14438,19 @@ exports[`Storyshots Modal configurable buttons that perform actions 1`] = `
         </h2>
         <button
           aria-label="Close"
-          className="btn btn-light"
+          className="p-1 btn"
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
           type="button"
         >
-          <span
-            aria-hidden="true"
-          >
-            ×
-          </span>
+          <div>
+            <span
+              aria-hidden={true}
+              className="fa fa-times"
+              id="Icon2"
+            />
+          </div>
         </button>
       </div>
       <div
@@ -14467,7 +14473,7 @@ exports[`Storyshots Modal configurable buttons that perform actions 1`] = `
           Click me and check the console!
         </button>
         <button
-          className="btn btn-secondary"
+          className="btn btn-outline-primary"
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -14505,17 +14511,19 @@ exports[`Storyshots Modal configurable close button 1`] = `
         </h2>
         <button
           aria-label="SHOO!"
-          className="btn btn-light"
+          className="p-1 btn"
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
           type="button"
         >
-          <span
-            aria-hidden="true"
-          >
-            ×
-          </span>
+          <div>
+            <span
+              aria-hidden={true}
+              className="fa fa-times"
+              id="Icon2"
+            />
+          </div>
         </button>
       </div>
       <div
@@ -14529,7 +14537,7 @@ exports[`Storyshots Modal configurable close button 1`] = `
         className="modal-footer"
       >
         <button
-          className="btn btn-secondary"
+          className="btn btn-outline-primary"
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -14567,17 +14575,19 @@ exports[`Storyshots Modal configurable title and body 1`] = `
         </h2>
         <button
           aria-label="Close"
-          className="btn btn-light"
+          className="p-1 btn"
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
           type="button"
         >
-          <span
-            aria-hidden="true"
-          >
-            ×
-          </span>
+          <div>
+            <span
+              aria-hidden={true}
+              className="fa fa-times"
+              id="Icon2"
+            />
+          </div>
         </button>
       </div>
       <div
@@ -14600,7 +14610,7 @@ exports[`Storyshots Modal configurable title and body 1`] = `
           Dark button!
         </button>
         <button
-          className="btn btn-secondary"
+          className="btn btn-outline-primary"
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -14639,17 +14649,19 @@ exports[`Storyshots Modal modal invoked via a button 1`] = `
           </h2>
           <button
             aria-label="Close"
-            className="btn btn-light"
+            className="p-1 btn"
             onBlur={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
           >
-            <span
-              aria-hidden="true"
-            >
-              ×
-            </span>
+            <div>
+              <span
+                aria-hidden={true}
+                className="fa fa-times"
+                id="Icon2"
+              />
+            </div>
           </button>
         </div>
         <div
@@ -14663,7 +14675,7 @@ exports[`Storyshots Modal modal invoked via a button 1`] = `
           className="modal-footer"
         >
           <button
-            className="btn btn-secondary"
+            className="btn btn-outline-primary"
             onBlur={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
@@ -14711,17 +14723,19 @@ exports[`Storyshots Modal modal with element body 1`] = `
         </h2>
         <button
           aria-label="Close"
-          className="btn btn-light"
+          className="p-1 btn"
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
           type="button"
         >
-          <span
-            aria-hidden="true"
-          >
-            ×
-          </span>
+          <div>
+            <span
+              aria-hidden={true}
+              className="fa fa-times"
+              id="Icon2"
+            />
+          </div>
         </button>
       </div>
       <div
@@ -14787,7 +14801,7 @@ exports[`Storyshots Modal modal with element body 1`] = `
         className="modal-footer"
       >
         <button
-          className="btn btn-secondary"
+          className="btn btn-outline-primary"
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -14825,17 +14839,19 @@ exports[`Storyshots Modal modal with warning variant 1`] = `
         </h2>
         <button
           aria-label="Run Away!"
-          className="btn btn-light"
+          className="p-1 btn"
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
           type="button"
         >
-          <span
-            aria-hidden="true"
-          >
-            ×
-          </span>
+          <div>
+            <span
+              aria-hidden={true}
+              className="fa fa-times"
+              id="Icon2"
+            />
+          </div>
         </button>
       </div>
       <div
@@ -14883,7 +14899,7 @@ exports[`Storyshots Modal modal with warning variant 1`] = `
           Continue anyway...
         </button>
         <button
-          className="btn btn-secondary"
+          className="btn btn-outline-primary"
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
