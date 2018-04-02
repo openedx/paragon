@@ -2,9 +2,13 @@
 /* eslint-disable no-console */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import centered from '@storybook/addon-centered';
+import { checkA11y } from '@storybook/addon-a11y';
+import { withInfo } from '@storybook/addon-info';
 
 import CheckBox from './index';
 import Button from '../Button';
+import README from './README.md';
 
 class CheckBoxWrapper extends React.Component {
   constructor(props) {
@@ -33,7 +37,7 @@ class CheckBoxWrapper extends React.Component {
         />
         <CheckBox
           name="checkbox"
-          label=""
+          label="click the button"
           checked={this.state.checked}
         />
       </div>
@@ -42,6 +46,9 @@ class CheckBoxWrapper extends React.Component {
 }
 
 storiesOf('CheckBox', module)
+  .addDecorator((story, context) => withInfo({}, README)(story)(context))
+  .addDecorator(centered)
+  .addDecorator(checkA11y)
   .add('basic usage', () => (
     <CheckBox
       name="checkbox"
