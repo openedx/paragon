@@ -64,11 +64,11 @@ class StatusAlert extends React.Component {
   }
 
   renderDismissible() {
-    const { dismissible } = this.props;
+    const { closeButtonAriaLabel, dismissible } = this.props;
 
     return (dismissible) ? (
       <Button
-        aria-label="Close"
+        aria-label={closeButtonAriaLabel}
         inputRef={(input) => { this.xButton = input; }}
         onClick={this.close}
         onKeyDown={this.handleKeyDown}
@@ -110,6 +110,7 @@ StatusAlert.propTypes = {
   dialog: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   dismissible: PropTypes.bool,
   /* eslint-disable react/require-default-props */
+  closeButtonAriaLabel: PropTypes.string,
   onClose: isRequiredIf(PropTypes.func, props => props.dismissible),
   open: PropTypes.bool,
 };
@@ -117,6 +118,7 @@ StatusAlert.propTypes = {
 StatusAlert.defaultProps = {
   alertType: 'warning',
   className: [],
+  closeButtonAriaLabel: 'Close',
   dismissible: true,
   open: false,
 };
