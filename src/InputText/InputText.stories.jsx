@@ -1,7 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import centered from '@storybook/addon-centered';
+import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
 
+import Button from '../Button';
+import Icon from '../Icon';
 import InputText from './index';
 import StatusAlert from '../StatusAlert';
 
@@ -40,6 +44,7 @@ class FocusInputWrapper extends React.Component {
 
 
 storiesOf('InputText', module)
+  .addDecorator(centered)
   .add('minimal usage', () => (
     <InputText
       name="name"
@@ -189,4 +194,72 @@ storiesOf('InputText', module)
       value="foobar"
       inline
     />
+  ))
+  .add('with input group addons', () => (
+    <form>
+      <InputText
+        name="username"
+        label="Username"
+        value="foobar"
+        inputGroupPrepend={(
+          <div className="input-group-text">
+            {'@'}
+          </div>
+        )}
+      />
+      <InputText
+        name="username"
+        label="Username"
+        value="foobar"
+        inputGroupAppend={(
+          <div className="input-group-text">
+            {'@example.com'}
+          </div>
+        )}
+      />
+      <InputText
+        name="money"
+        label="Money"
+        type="number"
+        value={1000}
+        inputGroupPrepend={(
+          <div className="input-group-text">
+            {'$'}
+          </div>
+        )}
+        inputGroupAppend={(
+          <div className="input-group-text">
+            {'.00'}
+          </div>
+        )}
+      />
+      <InputText
+        name="search"
+        label="Search"
+        value="what is paragon"
+        inputGroupAppend={(
+          <Button
+            label="Go"
+            buttonType="outline-secondary"
+          />
+        )}
+      />
+      <InputText
+        name="password"
+        label="Password"
+        value="secret"
+        inputGroupAppend={(
+          <div className="input-group-text">
+            <Icon
+              id="checkmark"
+              className={[
+                FontAwesomeStyles.fa,
+                FontAwesomeStyles['fa-check'],
+              ]}
+              screenReaderText="Checkmark"
+            />
+          </div>
+        )}
+      />
+    </form>
   ));
