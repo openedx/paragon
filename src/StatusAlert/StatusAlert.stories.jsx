@@ -88,6 +88,15 @@ storiesOf('StatusAlert', module)
       open
     />
   ))
+  .add('alert with a custom aria-label on the close button', () => (
+    <StatusAlert
+      alertType="info"
+      dialog="Some very specific information."
+      onClose={() => {}}
+      open
+      closeButtonAriaLabel="Dismiss this very specific information."
+    />
+  ))
   .add('Non-dismissible alert', () => (
     <StatusAlert
       alertType="danger"
