@@ -25,7 +25,7 @@ export const inputProps = {
   onBlur: PropTypes.func,
   validator: PropTypes.func,
   isValid: PropTypes.bool,
-  validationMessage: PropTypes.string,
+  validationMessage: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   className: PropTypes.arrayOf(PropTypes.string),
   themes: PropTypes.arrayOf(PropTypes.string),
   inline: PropTypes.bool,

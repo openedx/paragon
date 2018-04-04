@@ -37,7 +37,7 @@ Handles all necessary props that are related to Input typed components.
 ### `isValid` (boolean; optional)
 `isValid` specifies whether the current input has validated correctly. Consider updating this from an `onBlur` handler. Only used if `validator` is not specified. The default is true.
 
-### `validationMessage` (string; optional)
+### `validationMessage` (string or element; optional)
 `validationMessage` specifies the message to display when `isValid` is false.  Only used if `validator` is not specified. The default is an empty string.
 
 ### `value` (string or number; optional)

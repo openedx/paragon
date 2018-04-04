@@ -185,6 +185,17 @@ describe('asInput()', () => {
         expect(wrapper.state('validationMessage')).toEqual('Prop');
       });
 
+      it('uses validationMessage as element type', () => {
+        const testMessage = (<span lang="en">Validation Message</span>);
+        const props = {
+          ...baseProps,
+          isValid: false,
+          validationMessage: testMessage,
+        };
+        const wrapper = mount(<InputTestComponent {...props} />);
+        expect(wrapper.state('validationMessage')).toEqual(testMessage);
+      });
+
       it('uses isValid to display validation message', () => {
         const props = {
           ...baseProps,
