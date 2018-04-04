@@ -15,6 +15,7 @@ export const inputProps = {
   name: PropTypes.string.isRequired,
   id: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  dangerIconDescription: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   description: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
@@ -25,7 +26,7 @@ export const inputProps = {
   onBlur: PropTypes.func,
   validator: PropTypes.func,
   isValid: PropTypes.bool,
-  validationMessage: PropTypes.string,
+  validationMessage: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   className: PropTypes.arrayOf(PropTypes.string),
   themes: PropTypes.arrayOf(PropTypes.string),
   inline: PropTypes.bool,
@@ -36,6 +37,7 @@ export const defaultProps = {
   onBlur: () => {},
   id: newId('asInput'),
   value: '',
+  dangerIconDescription: '',
   description: undefined,
   disabled: false,
   required: false,
@@ -57,11 +59,13 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       const id = this.props.id ? this.props.id : newId('asInput');
       const isValid = this.props.validator ? true : this.props.isValid;
       const validationMessage = this.props.validator ? '' : this.props.validationMessage;
+      const dangerIconDescription = this.props.validator ? '' : this.props.dangerIconDescription;
       this.state = {
         id,
         value: this.props.value,
         isValid,
         validationMessage,
+        dangerIconDescription,
         describedBy: [],
         errorId: `error-${id}`,
         descriptionId: `description-${id}`,
@@ -79,10 +83,15 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       if (nextProps.validationMessage !== this.props.validationMessage && !nextProps.validator) {
         updatedState.validationMessage = nextProps.validationMessage;
       }
+      if (nextProps.dangerIconDescription !== this.props.dangerIconDescription &&
+          !nextProps.validator) {
+        updatedState.dangerIconDescription = nextProps.dangerIconDescription;
+      }
       // If validator goes away, revert to props
       if (nextProps.validator !== this.props.validator && !nextProps.validator) {
         updatedState.isValid = nextProps.isValid;
         updatedState.validationMessage = nextProps.validationMessage;
+        updatedState.dangerIconDescription = nextProps.dangerIconDescription;
       }
       if (Object.keys(updatedState).length > 0) {
         this.setState(updatedState);

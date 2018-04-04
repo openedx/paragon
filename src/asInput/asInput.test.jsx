@@ -169,6 +169,24 @@ describe('asInput()', () => {
         expect(wrapper.state('validationMessage')).toEqual('Spy'); // resetting prop changes nothing
       });
 
+      it('ignores dangerIconDescription prop if validator is defined', () => {
+        const spy = jest.fn();
+        spy.mockReturnValue({ dangerIconDescription: 'Spy' });
+        const props = {
+          ...baseProps,
+          validator: spy,
+          dangerIconDescription: 'Prop',
+        };
+        const wrapper = mount(<InputTestComponent {...props} />);
+        expect(wrapper.state('dangerIconDescription')).toEqual(''); // default is '', ignoring our prop
+
+        wrapper.find('input').simulate('blur'); // trigger validation
+        expect(wrapper.state('dangerIconDescription')).toEqual('Spy'); // validator set Spy, ignoring our prop
+
+        wrapper.setProps({ dangerIconDescription: 'Reset' });
+        expect(wrapper.state('dangerIconDescription')).toEqual('Spy'); // resetting prop changes nothing
+      });
+
       it('uses props if validator becomes undefined', () => {
         const spy = jest.fn();
         spy.mockReturnValue({ validationMessage: 'Spy' });
@@ -177,12 +195,26 @@ describe('asInput()', () => {
           validator: spy,
           isValid: false,
           validationMessage: 'Prop',
+          dangerIconDescription: 'Prop',
         };
         const wrapper = mount(<InputTestComponent {...props} />);
         expect(wrapper.state('validationMessage')).toEqual('');
+        expect(wrapper.state('dangerIconDescription')).toEqual('');
 
         wrapper.setProps({ validator: null });
         expect(wrapper.state('validationMessage')).toEqual('Prop');
+        expect(wrapper.state('dangerIconDescription')).toEqual('Prop');
+      });
+
+      it('uses validationMessage as element type', () => {
+        const testMessage = (<span lang="en">Validation Message</span>);
+        const props = {
+          ...baseProps,
+          isValid: false,
+          validationMessage: testMessage,
+        };
+        const wrapper = mount(<InputTestComponent {...props} />);
+        expect(wrapper.state('validationMessage')).toEqual(testMessage);
       });
 
       it('uses isValid to display validation message', () => {
@@ -197,6 +229,28 @@ describe('asInput()', () => {
 
         wrapper.setProps({ validationMessage: 'New Message' });
         expect(err.text()).toEqual('New Message');
+
+        wrapper.setProps({ isValid: true });
+        expect(err.text()).toEqual('');
+      });
+
+      it('uses isValid to display validation message and danger icon with danger theme', () => {
+        const props = {
+          ...baseProps,
+          themes: ['danger'],
+          isValid: false,
+          validationMessage: 'Nope!',
+          dangerIconDescription: 'Error ',
+        };
+        const wrapper = mount(<InputTestComponent {...props} />);
+        const err = wrapper.find('.form-control-feedback');
+        expect(err.text()).toEqual('Error Nope!');
+
+        wrapper.setProps({ validationMessage: 'New Message' });
+        expect(err.text()).toEqual('Error New Message');
+
+        wrapper.setProps({ dangerIconDescription: 'Danger, Will Robinson! ' });
+        expect(err.text()).toEqual('Danger, Will Robinson! New Message');
 
         wrapper.setProps({ isValid: true });
         expect(err.text()).toEqual('');
