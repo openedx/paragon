@@ -172,7 +172,7 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
     }
 
     hasDangerTheme() {
-      return this.props.themes.includes('danger');
+      return this.props.themes.indexOf('danger') >= 0;
     }
 
     isGroupedInput() {
