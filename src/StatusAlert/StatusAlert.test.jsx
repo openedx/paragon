@@ -34,6 +34,14 @@ describe('<StatusAlert />', () => {
       expect(statusAlertDialog.text()).toEqual(dialog);
       expect(wrapper.find('button')).toHaveLength(0);
     });
+
+    it('renders custom aria-label view', () => {
+      const customLabel = 'Dismiss this alert post-haste!';
+      wrapper = mount(<StatusAlert {...defaultProps} closeButtonAriaLabel={customLabel} />);
+      const button = wrapper.find('button').at(0);
+
+      expect(button.prop('aria-label')).toEqual(customLabel);
+    });
   });
 
   describe('props received correctly', () => {
