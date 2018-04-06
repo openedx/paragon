@@ -30,6 +30,8 @@ export const inputProps = {
   className: PropTypes.arrayOf(PropTypes.string),
   themes: PropTypes.arrayOf(PropTypes.string),
   inline: PropTypes.bool,
+  inputGroupPrepend: PropTypes.element,
+  inputGroupAppend: PropTypes.element,
 };
 
 export const defaultProps = {
@@ -47,6 +49,8 @@ export const defaultProps = {
   className: [],
   themes: [],
   inline: false,
+  inputGroupPrepend: undefined,
+  inputGroupAppend: undefined,
 };
 
 const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => {
@@ -55,6 +59,7 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       super(props);
       this.handleChange = this.handleChange.bind(this);
       this.handleBlur = this.handleBlur.bind(this);
+      this.renderInput = this.renderInput.bind(this);
 
       const id = this.props.id ? this.props.id : newId('asInput');
       const isValid = this.props.validator ? true : this.props.isValid;
@@ -201,6 +206,26 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       );
     }
 
+    renderInput(describedBy) {
+      return (
+        <WrappedComponent
+          {...this.props}
+          {...this.state}
+          className={[classNames(
+            {
+              [styles['form-control']]: !this.isGroupedInput(),
+              [styles['form-check-input']]: this.isGroupedInput(),
+              [styles['is-invalid']]: !this.state.isValid && this.hasDangerTheme(),
+            },
+            { ...this.props.className },
+          )]}
+          describedBy={describedBy}
+          onChange={this.handleChange}
+          onBlur={this.handleBlur}
+        />
+      );
+    }
+
     render() {
       const { description, error, describedBy } = this.getDescriptions();
       return (
@@ -211,21 +236,17 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
           })]}
         >
           {labelFirst && this.getLabel()}
-          <WrappedComponent
-            {...this.props}
-            {...this.state}
-            className={[classNames(
-              {
-                [styles['form-control']]: !this.isGroupedInput(),
-                [styles['form-check-input']]: this.isGroupedInput(),
-                [styles['is-invalid']]: !this.state.isValid && this.hasDangerTheme(),
-              },
-              { ...this.props.className },
-            )]}
-            describedBy={describedBy}
-            onChange={this.handleChange}
-            onBlur={this.handleBlur}
-          />
+          {this.props.inputGroupPrepend || this.props.inputGroupAppend ? (
+            <div className={styles['input-group']}>
+              <div className={styles['input-group-prepend']}>
+                {this.props.inputGroupPrepend}
+              </div>
+              {this.renderInput(describedBy)}
+              <div className={styles['input-group-append']}>
+                {this.props.inputGroupAppend}
+              </div>
+            </div>
+          ) : this.renderInput(describedBy)}
           {!labelFirst && this.getLabel()}
           {error}
           {description}

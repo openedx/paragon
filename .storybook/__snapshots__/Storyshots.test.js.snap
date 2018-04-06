@@ -1551,6 +1551,56 @@ exports[`Storyshots CheckBox basic usage 1`] = `
                         className="css-d52hbj"
                       />
                     </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        inputGroupPrepend
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        inputGroupAppend
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -2487,6 +2537,56 @@ exports[`Storyshots CheckBox call a function 1`] = `
                           </span>
                           }
                         </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        inputGroupPrepend
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        inputGroupAppend
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
                       </td>
                       <td
                         className="css-d52hbj"
@@ -3707,6 +3807,56 @@ exports[`Storyshots CheckBox default checked 1`] = `
                         className="css-d52hbj"
                       />
                     </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        inputGroupPrepend
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        inputGroupAppend
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -4623,6 +4773,56 @@ exports[`Storyshots CheckBox disabled 1`] = `
                           </span>
                           }
                         </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        inputGroupPrepend
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        inputGroupAppend
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
                       </td>
                       <td
                         className="css-d52hbj"
@@ -9054,612 +9254,684 @@ exports[`Storyshots InputSelect with validation 1`] = `
 `;
 
 exports[`Storyshots InputText different textual input types 1`] = `
-<form>
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": 0,
+      "display": "flex",
+      "justifyContent": "center",
+      "left": 0,
+      "overflow": "auto",
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
   <div
-    className={
-      Array [
-        "form-group",
-      ]
+    style={
+      Object {
+        "margin": "auto",
+      }
     }
   >
-    <label
-      className={
-        Array [
-          "",
-        ]
-      }
-      htmlFor="input-search"
-      id="label-input-search"
-    >
-      Search
-    </label>
-    <input
-      aria-describedby="error-input-search"
-      aria-invalid={false}
-      className="form-control"
-      disabled={false}
-      id="input-search"
-      name="search"
-      onBlur={[Function]}
-      onChange={[Function]}
-      placeholder={undefined}
-      required={false}
-      themes={Array []}
-      type="search"
-      value="what is paragon"
-    />
-    <div
-      aria-live="polite"
-      className="form-control-feedback"
-      id="error-input-search"
-    >
-      <span />
-    </div>
+    <form>
+      <div
+        className={
+          Array [
+            "form-group",
+          ]
+        }
+      >
+        <label
+          className={
+            Array [
+              "",
+            ]
+          }
+          htmlFor="input-search"
+          id="label-input-search"
+        >
+          Search
+        </label>
+        <input
+          aria-describedby="error-input-search"
+          aria-invalid={false}
+          className="form-control"
+          disabled={false}
+          id="input-search"
+          name="search"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          required={false}
+          themes={Array []}
+          type="search"
+          value="what is paragon"
+        />
+        <div
+          aria-live="polite"
+          className="form-control-feedback"
+          id="error-input-search"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        className={
+          Array [
+            "form-group",
+          ]
+        }
+      >
+        <label
+          className={
+            Array [
+              "",
+            ]
+          }
+          htmlFor="input-email"
+          id="label-input-email"
+        >
+          Email
+        </label>
+        <input
+          aria-describedby="error-input-email"
+          aria-invalid={false}
+          className="form-control"
+          disabled={false}
+          id="input-email"
+          name="email"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          required={false}
+          themes={Array []}
+          type="email"
+          value="paragon@edx.org"
+        />
+        <div
+          aria-live="polite"
+          className="form-control-feedback"
+          id="error-input-email"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        className={
+          Array [
+            "form-group",
+          ]
+        }
+      >
+        <label
+          className={
+            Array [
+              "",
+            ]
+          }
+          htmlFor="input-url"
+          id="label-input-url"
+        >
+          Url
+        </label>
+        <input
+          aria-describedby="error-input-url"
+          aria-invalid={false}
+          className="form-control"
+          disabled={false}
+          id="input-url"
+          name="url"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          required={false}
+          themes={Array []}
+          type="url"
+          value="https://edx.github.io/paragon"
+        />
+        <div
+          aria-live="polite"
+          className="form-control-feedback"
+          id="error-input-url"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        className={
+          Array [
+            "form-group",
+          ]
+        }
+      >
+        <label
+          className={
+            Array [
+              "",
+            ]
+          }
+          htmlFor="input-tel"
+          id="label-input-tel"
+        >
+          Telephone
+        </label>
+        <input
+          aria-describedby="error-input-tel"
+          aria-invalid={false}
+          className="form-control"
+          disabled={false}
+          id="input-tel"
+          name="telephone"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          required={false}
+          themes={Array []}
+          type="tel"
+          value="1-(555)-555-5555"
+        />
+        <div
+          aria-live="polite"
+          className="form-control-feedback"
+          id="error-input-tel"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        className={
+          Array [
+            "form-group",
+          ]
+        }
+      >
+        <label
+          className={
+            Array [
+              "",
+            ]
+          }
+          htmlFor="input-password"
+          id="label-input-password"
+        >
+          Password
+        </label>
+        <input
+          aria-describedby="error-input-password"
+          aria-invalid={false}
+          className="form-control"
+          disabled={false}
+          id="input-password"
+          name="password"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          required={false}
+          themes={Array []}
+          type="password"
+          value="hunter2"
+        />
+        <div
+          aria-live="polite"
+          className="form-control-feedback"
+          id="error-input-password"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        className={
+          Array [
+            "form-group",
+          ]
+        }
+      >
+        <label
+          className={
+            Array [
+              "",
+            ]
+          }
+          htmlFor="input-number"
+          id="label-input-number"
+        >
+          Number
+        </label>
+        <input
+          aria-describedby="error-input-number"
+          aria-invalid={false}
+          className="form-control"
+          disabled={false}
+          id="input-number"
+          name="number"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          required={false}
+          themes={Array []}
+          type="number"
+          value={42}
+        />
+        <div
+          aria-live="polite"
+          className="form-control-feedback"
+          id="error-input-number"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        className={
+          Array [
+            "form-group",
+          ]
+        }
+      >
+        <label
+          className={
+            Array [
+              "",
+            ]
+          }
+          htmlFor="input-datetime-local"
+          id="label-input-datetime-local"
+        >
+          Date and time
+        </label>
+        <input
+          aria-describedby="error-input-datetime-local"
+          aria-invalid={false}
+          className="form-control"
+          disabled={false}
+          id="input-datetime-local"
+          name="datetime-local"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          required={false}
+          themes={Array []}
+          type="datetime-local"
+          value="2017-04-27T13:45:00"
+        />
+        <div
+          aria-live="polite"
+          className="form-control-feedback"
+          id="error-input-datetime-local"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        className={
+          Array [
+            "form-group",
+          ]
+        }
+      >
+        <label
+          className={
+            Array [
+              "",
+            ]
+          }
+          htmlFor="input-date"
+          id="label-input-date"
+        >
+          Date
+        </label>
+        <input
+          aria-describedby="error-input-date"
+          aria-invalid={false}
+          className="form-control"
+          disabled={false}
+          id="input-date"
+          name="date"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          required={false}
+          themes={Array []}
+          type="date"
+          value="2017-04-27"
+        />
+        <div
+          aria-live="polite"
+          className="form-control-feedback"
+          id="error-input-date"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        className={
+          Array [
+            "form-group",
+          ]
+        }
+      >
+        <label
+          className={
+            Array [
+              "",
+            ]
+          }
+          htmlFor="input-month"
+          id="label-input-month"
+        >
+          Month
+        </label>
+        <input
+          aria-describedby="error-input-month"
+          aria-invalid={false}
+          className="form-control"
+          disabled={false}
+          id="input-month"
+          name="month"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          required={false}
+          themes={Array []}
+          type="month"
+          value="2017-04"
+        />
+        <div
+          aria-live="polite"
+          className="form-control-feedback"
+          id="error-input-month"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        className={
+          Array [
+            "form-group",
+          ]
+        }
+      >
+        <label
+          className={
+            Array [
+              "",
+            ]
+          }
+          htmlFor="input-week"
+          id="label-input-week"
+        >
+          Week
+        </label>
+        <input
+          aria-describedby="error-input-week"
+          aria-invalid={false}
+          className="form-control"
+          disabled={false}
+          id="input-week"
+          name="week"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          required={false}
+          themes={Array []}
+          type="week"
+          value="2017-W33"
+        />
+        <div
+          aria-live="polite"
+          className="form-control-feedback"
+          id="error-input-week"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        className={
+          Array [
+            "form-group",
+          ]
+        }
+      >
+        <label
+          className={
+            Array [
+              "",
+            ]
+          }
+          htmlFor="input-time"
+          id="label-input-time"
+        >
+          Time
+        </label>
+        <input
+          aria-describedby="error-input-time"
+          aria-invalid={false}
+          className="form-control"
+          disabled={false}
+          id="input-time"
+          name="time"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          required={false}
+          themes={Array []}
+          type="time"
+          value="13:45:00"
+        />
+        <div
+          aria-live="polite"
+          className="form-control-feedback"
+          id="error-input-time"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        className={
+          Array [
+            "form-group",
+          ]
+        }
+      >
+        <label
+          className={
+            Array [
+              "",
+            ]
+          }
+          htmlFor="input-color"
+          id="label-input-color"
+        >
+          Color
+        </label>
+        <input
+          aria-describedby="error-input-color"
+          aria-invalid={false}
+          className="form-control"
+          disabled={false}
+          id="input-color"
+          name="color"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          required={false}
+          themes={Array []}
+          type="color"
+          value="#BF472C"
+        />
+        <div
+          aria-live="polite"
+          className="form-control-feedback"
+          id="error-input-color"
+        >
+          <span />
+        </div>
+      </div>
+    </form>
   </div>
-  <div
-    className={
-      Array [
-        "form-group",
-      ]
-    }
-  >
-    <label
-      className={
-        Array [
-          "",
-        ]
-      }
-      htmlFor="input-email"
-      id="label-input-email"
-    >
-      Email
-    </label>
-    <input
-      aria-describedby="error-input-email"
-      aria-invalid={false}
-      className="form-control"
-      disabled={false}
-      id="input-email"
-      name="email"
-      onBlur={[Function]}
-      onChange={[Function]}
-      placeholder={undefined}
-      required={false}
-      themes={Array []}
-      type="email"
-      value="paragon@edx.org"
-    />
-    <div
-      aria-live="polite"
-      className="form-control-feedback"
-      id="error-input-email"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className={
-      Array [
-        "form-group",
-      ]
-    }
-  >
-    <label
-      className={
-        Array [
-          "",
-        ]
-      }
-      htmlFor="input-url"
-      id="label-input-url"
-    >
-      Url
-    </label>
-    <input
-      aria-describedby="error-input-url"
-      aria-invalid={false}
-      className="form-control"
-      disabled={false}
-      id="input-url"
-      name="url"
-      onBlur={[Function]}
-      onChange={[Function]}
-      placeholder={undefined}
-      required={false}
-      themes={Array []}
-      type="url"
-      value="https://edx.github.io/paragon"
-    />
-    <div
-      aria-live="polite"
-      className="form-control-feedback"
-      id="error-input-url"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className={
-      Array [
-        "form-group",
-      ]
-    }
-  >
-    <label
-      className={
-        Array [
-          "",
-        ]
-      }
-      htmlFor="input-tel"
-      id="label-input-tel"
-    >
-      Telephone
-    </label>
-    <input
-      aria-describedby="error-input-tel"
-      aria-invalid={false}
-      className="form-control"
-      disabled={false}
-      id="input-tel"
-      name="telephone"
-      onBlur={[Function]}
-      onChange={[Function]}
-      placeholder={undefined}
-      required={false}
-      themes={Array []}
-      type="tel"
-      value="1-(555)-555-5555"
-    />
-    <div
-      aria-live="polite"
-      className="form-control-feedback"
-      id="error-input-tel"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className={
-      Array [
-        "form-group",
-      ]
-    }
-  >
-    <label
-      className={
-        Array [
-          "",
-        ]
-      }
-      htmlFor="input-password"
-      id="label-input-password"
-    >
-      Password
-    </label>
-    <input
-      aria-describedby="error-input-password"
-      aria-invalid={false}
-      className="form-control"
-      disabled={false}
-      id="input-password"
-      name="password"
-      onBlur={[Function]}
-      onChange={[Function]}
-      placeholder={undefined}
-      required={false}
-      themes={Array []}
-      type="password"
-      value="hunter2"
-    />
-    <div
-      aria-live="polite"
-      className="form-control-feedback"
-      id="error-input-password"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className={
-      Array [
-        "form-group",
-      ]
-    }
-  >
-    <label
-      className={
-        Array [
-          "",
-        ]
-      }
-      htmlFor="input-number"
-      id="label-input-number"
-    >
-      Number
-    </label>
-    <input
-      aria-describedby="error-input-number"
-      aria-invalid={false}
-      className="form-control"
-      disabled={false}
-      id="input-number"
-      name="number"
-      onBlur={[Function]}
-      onChange={[Function]}
-      placeholder={undefined}
-      required={false}
-      themes={Array []}
-      type="number"
-      value={42}
-    />
-    <div
-      aria-live="polite"
-      className="form-control-feedback"
-      id="error-input-number"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className={
-      Array [
-        "form-group",
-      ]
-    }
-  >
-    <label
-      className={
-        Array [
-          "",
-        ]
-      }
-      htmlFor="input-datetime-local"
-      id="label-input-datetime-local"
-    >
-      Date and time
-    </label>
-    <input
-      aria-describedby="error-input-datetime-local"
-      aria-invalid={false}
-      className="form-control"
-      disabled={false}
-      id="input-datetime-local"
-      name="datetime-local"
-      onBlur={[Function]}
-      onChange={[Function]}
-      placeholder={undefined}
-      required={false}
-      themes={Array []}
-      type="datetime-local"
-      value="2017-04-27T13:45:00"
-    />
-    <div
-      aria-live="polite"
-      className="form-control-feedback"
-      id="error-input-datetime-local"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className={
-      Array [
-        "form-group",
-      ]
-    }
-  >
-    <label
-      className={
-        Array [
-          "",
-        ]
-      }
-      htmlFor="input-date"
-      id="label-input-date"
-    >
-      Date
-    </label>
-    <input
-      aria-describedby="error-input-date"
-      aria-invalid={false}
-      className="form-control"
-      disabled={false}
-      id="input-date"
-      name="date"
-      onBlur={[Function]}
-      onChange={[Function]}
-      placeholder={undefined}
-      required={false}
-      themes={Array []}
-      type="date"
-      value="2017-04-27"
-    />
-    <div
-      aria-live="polite"
-      className="form-control-feedback"
-      id="error-input-date"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className={
-      Array [
-        "form-group",
-      ]
-    }
-  >
-    <label
-      className={
-        Array [
-          "",
-        ]
-      }
-      htmlFor="input-month"
-      id="label-input-month"
-    >
-      Month
-    </label>
-    <input
-      aria-describedby="error-input-month"
-      aria-invalid={false}
-      className="form-control"
-      disabled={false}
-      id="input-month"
-      name="month"
-      onBlur={[Function]}
-      onChange={[Function]}
-      placeholder={undefined}
-      required={false}
-      themes={Array []}
-      type="month"
-      value="2017-04"
-    />
-    <div
-      aria-live="polite"
-      className="form-control-feedback"
-      id="error-input-month"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className={
-      Array [
-        "form-group",
-      ]
-    }
-  >
-    <label
-      className={
-        Array [
-          "",
-        ]
-      }
-      htmlFor="input-week"
-      id="label-input-week"
-    >
-      Week
-    </label>
-    <input
-      aria-describedby="error-input-week"
-      aria-invalid={false}
-      className="form-control"
-      disabled={false}
-      id="input-week"
-      name="week"
-      onBlur={[Function]}
-      onChange={[Function]}
-      placeholder={undefined}
-      required={false}
-      themes={Array []}
-      type="week"
-      value="2017-W33"
-    />
-    <div
-      aria-live="polite"
-      className="form-control-feedback"
-      id="error-input-week"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className={
-      Array [
-        "form-group",
-      ]
-    }
-  >
-    <label
-      className={
-        Array [
-          "",
-        ]
-      }
-      htmlFor="input-time"
-      id="label-input-time"
-    >
-      Time
-    </label>
-    <input
-      aria-describedby="error-input-time"
-      aria-invalid={false}
-      className="form-control"
-      disabled={false}
-      id="input-time"
-      name="time"
-      onBlur={[Function]}
-      onChange={[Function]}
-      placeholder={undefined}
-      required={false}
-      themes={Array []}
-      type="time"
-      value="13:45:00"
-    />
-    <div
-      aria-live="polite"
-      className="form-control-feedback"
-      id="error-input-time"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className={
-      Array [
-        "form-group",
-      ]
-    }
-  >
-    <label
-      className={
-        Array [
-          "",
-        ]
-      }
-      htmlFor="input-color"
-      id="label-input-color"
-    >
-      Color
-    </label>
-    <input
-      aria-describedby="error-input-color"
-      aria-invalid={false}
-      className="form-control"
-      disabled={false}
-      id="input-color"
-      name="color"
-      onBlur={[Function]}
-      onChange={[Function]}
-      placeholder={undefined}
-      required={false}
-      themes={Array []}
-      type="color"
-      value="#BF472C"
-    />
-    <div
-      aria-live="polite"
-      className="form-control-feedback"
-      id="error-input-color"
-    >
-      <span />
-    </div>
-  </div>
-</form>
+</div>
 `;
 
 exports[`Storyshots InputText displayed inline 1`] = `
 <div
-  className={
-    Array [
-      "form-group form-inline",
-    ]
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": 0,
+      "display": "flex",
+      "justifyContent": "center",
+      "left": 0,
+      "overflow": "auto",
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+    }
   }
 >
-  <label
-    className={
-      Array [
-        "",
-      ]
-    }
-    htmlFor="asInput1"
-    id="label-asInput1"
-  >
-    Username
-  </label>
-  <input
-    aria-describedby="error-asInput1"
-    aria-invalid={false}
-    className="form-control"
-    disabled={false}
-    id="asInput1"
-    name="username"
-    onBlur={[Function]}
-    onChange={[Function]}
-    placeholder={undefined}
-    required={false}
-    themes={Array []}
-    type="text"
-    value="foobar"
-  />
   <div
-    aria-live="polite"
-    className="form-control-feedback"
-    id="error-asInput1"
+    style={
+      Object {
+        "margin": "auto",
+      }
+    }
   >
-    <span />
+    <div
+      className={
+        Array [
+          "form-group form-inline",
+        ]
+      }
+    >
+      <label
+        className={
+          Array [
+            "",
+          ]
+        }
+        htmlFor="asInput1"
+        id="label-asInput1"
+      >
+        Username
+      </label>
+      <input
+        aria-describedby="error-asInput1"
+        aria-invalid={false}
+        className="form-control"
+        disabled={false}
+        id="asInput1"
+        name="username"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder={undefined}
+        required={false}
+        themes={Array []}
+        type="text"
+        value="foobar"
+      />
+      <div
+        aria-live="polite"
+        className="form-control-feedback"
+        id="error-asInput1"
+      >
+        <span />
+      </div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots InputText focus test 1`] = `
-<div>
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": 0,
+      "display": "flex",
+      "justifyContent": "center",
+      "left": 0,
+      "overflow": "auto",
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
   <div
-    className="alert fade alert-dismissible alert-info show"
-    hidden={false}
-    role="alert"
-  >
-    <button
-      aria-label="Close"
-      className="btn close"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      type="button"
-    >
-      <span
-        aria-hidden="true"
-      >
-        ×
-      </span>
-    </button>
-    <div
-      className="alert-dialog"
-    >
-      Close me to input data!
-    </div>
-  </div>
-  <div
-    className={
-      Array [
-        "form-group",
-      ]
+    style={
+      Object {
+        "margin": "auto",
+      }
     }
   >
-    <label
-      className={
-        Array [
-          "",
-        ]
-      }
-      htmlFor="data"
-      id="label-data"
-    >
-      Data Input
-    </label>
-    <input
-      aria-describedby="error-data"
-      aria-invalid={false}
-      className="form-control"
-      disabled={false}
-      id="data"
-      name="data"
-      onBlur={[Function]}
-      onChange={[Function]}
-      placeholder={undefined}
-      required={false}
-      themes={Array []}
-      type="text"
-      value=""
-    />
-    <div
-      aria-live="polite"
-      className="form-control-feedback"
-      id="error-data"
-    >
-      <span />
+    <div>
+      <div
+        className="alert fade alert-dismissible alert-info show"
+        hidden={false}
+        role="alert"
+      >
+        <button
+          aria-label="Close"
+          className="btn close"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          <span
+            aria-hidden="true"
+          >
+            ×
+          </span>
+        </button>
+        <div
+          className="alert-dialog"
+        >
+          Close me to input data!
+        </div>
+      </div>
+      <div
+        className={
+          Array [
+            "form-group",
+          ]
+        }
+      >
+        <label
+          className={
+            Array [
+              "",
+            ]
+          }
+          htmlFor="data"
+          id="label-data"
+        >
+          Data Input
+        </label>
+        <input
+          aria-describedby="error-data"
+          aria-invalid={false}
+          className="form-control"
+          disabled={false}
+          id="data"
+          name="data"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          required={false}
+          themes={Array []}
+          type="text"
+          value=""
+        />
+        <div
+          aria-live="polite"
+          className="form-control-feedback"
+          id="error-data"
+        >
+          <span />
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -9667,197 +9939,628 @@ exports[`Storyshots InputText focus test 1`] = `
 
 exports[`Storyshots InputText label as element 1`] = `
 <div
-  className={
-    Array [
-      "form-group",
-    ]
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": 0,
+      "display": "flex",
+      "justifyContent": "center",
+      "left": 0,
+      "overflow": "auto",
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+    }
   }
 >
-  <label
-    className={
-      Array [
-        "",
-      ]
-    }
-    htmlFor="asInput1"
-    id="label-asInput1"
-  >
-    <span
-      lang="en"
-    >
-      Element
-    </span>
-  </label>
-  <input
-    aria-describedby="error-asInput1"
-    aria-invalid={false}
-    className="form-control"
-    disabled={false}
-    id="asInput1"
-    name="username"
-    onBlur={[Function]}
-    onChange={[Function]}
-    placeholder={undefined}
-    required={false}
-    themes={Array []}
-    type="text"
-    value="Label is wrapped in language span"
-  />
   <div
-    aria-live="polite"
-    className="form-control-feedback"
-    id="error-asInput1"
+    style={
+      Object {
+        "margin": "auto",
+      }
+    }
   >
-    <span />
+    <div
+      className={
+        Array [
+          "form-group",
+        ]
+      }
+    >
+      <label
+        className={
+          Array [
+            "",
+          ]
+        }
+        htmlFor="asInput1"
+        id="label-asInput1"
+      >
+        <span
+          lang="en"
+        >
+          Element
+        </span>
+      </label>
+      <input
+        aria-describedby="error-asInput1"
+        aria-invalid={false}
+        className="form-control"
+        disabled={false}
+        id="asInput1"
+        name="username"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder={undefined}
+        required={false}
+        themes={Array []}
+        type="text"
+        value="Label is wrapped in language span"
+      />
+      <div
+        aria-live="polite"
+        className="form-control-feedback"
+        id="error-asInput1"
+      >
+        <span />
+      </div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots InputText minimal usage 1`] = `
 <div
-  className={
-    Array [
-      "form-group",
-    ]
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": 0,
+      "display": "flex",
+      "justifyContent": "center",
+      "left": 0,
+      "overflow": "auto",
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+    }
   }
 >
-  <label
-    className={
-      Array [
-        "",
-      ]
-    }
-    htmlFor="asInput1"
-    id="label-asInput1"
-  >
-    First Name
-  </label>
-  <input
-    aria-describedby="error-asInput1"
-    aria-invalid={false}
-    className="form-control"
-    disabled={false}
-    id="asInput1"
-    name="name"
-    onBlur={[Function]}
-    onChange={[Function]}
-    placeholder={undefined}
-    required={false}
-    themes={Array []}
-    type="text"
-    value="Foo Bar"
-  />
   <div
-    aria-live="polite"
-    className="form-control-feedback"
-    id="error-asInput1"
+    style={
+      Object {
+        "margin": "auto",
+      }
+    }
   >
-    <span />
+    <div
+      className={
+        Array [
+          "form-group",
+        ]
+      }
+    >
+      <label
+        className={
+          Array [
+            "",
+          ]
+        }
+        htmlFor="asInput1"
+        id="label-asInput1"
+      >
+        First Name
+      </label>
+      <input
+        aria-describedby="error-asInput1"
+        aria-invalid={false}
+        className="form-control"
+        disabled={false}
+        id="asInput1"
+        name="name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder={undefined}
+        required={false}
+        themes={Array []}
+        type="text"
+        value="Foo Bar"
+      />
+      <div
+        aria-live="polite"
+        className="form-control-feedback"
+        id="error-asInput1"
+      >
+        <span />
+      </div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots InputText validation 1`] = `
 <div
-  className={
-    Array [
-      "form-group",
-    ]
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": 0,
+      "display": "flex",
+      "justifyContent": "center",
+      "left": 0,
+      "overflow": "auto",
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+    }
   }
 >
-  <label
-    className={
-      Array [
-        "",
-      ]
-    }
-    htmlFor="username"
-    id="label-username"
-  >
-    Username
-  </label>
-  <input
-    aria-describedby="error-username description-username"
-    aria-invalid={false}
-    className="form-control"
-    disabled={false}
-    id="username"
-    name="username"
-    onBlur={[Function]}
-    onChange={[Function]}
-    placeholder={undefined}
-    required={false}
-    themes={Array []}
-    type="text"
-    value=""
-  />
   <div
-    aria-live="polite"
-    className="form-control-feedback"
-    id="error-username"
+    style={
+      Object {
+        "margin": "auto",
+      }
+    }
   >
-    <span />
+    <div
+      className={
+        Array [
+          "form-group",
+        ]
+      }
+    >
+      <label
+        className={
+          Array [
+            "",
+          ]
+        }
+        htmlFor="username"
+        id="label-username"
+      >
+        Username
+      </label>
+      <input
+        aria-describedby="error-username description-username"
+        aria-invalid={false}
+        className="form-control"
+        disabled={false}
+        id="username"
+        name="username"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder={undefined}
+        required={false}
+        themes={Array []}
+        type="text"
+        value=""
+      />
+      <div
+        aria-live="polite"
+        className="form-control-feedback"
+        id="error-username"
+      >
+        <span />
+      </div>
+      <small
+        className="form-text"
+        id="description-username"
+      >
+        The unique name that identifies you throughout the site.
+      </small>
+    </div>
   </div>
-  <small
-    className="form-text"
-    id="description-username"
-  >
-    The unique name that identifies you throughout the site.
-  </small>
 </div>
 `;
 
 exports[`Storyshots InputText validation with danger theme 1`] = `
 <div
-  className={
-    Array [
-      "form-group",
-    ]
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": 0,
+      "display": "flex",
+      "justifyContent": "center",
+      "left": 0,
+      "overflow": "auto",
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+    }
   }
 >
-  <label
-    className={
-      Array [
-        "",
-      ]
-    }
-    htmlFor="asInput1"
-    id="label-asInput1"
-  >
-    Username
-  </label>
-  <input
-    aria-describedby="error-asInput1 description-asInput1"
-    aria-invalid={false}
-    className="form-control"
-    disabled={false}
-    id="asInput1"
-    name="username"
-    onBlur={[Function]}
-    onChange={[Function]}
-    placeholder={undefined}
-    required={false}
-    themes={
-      Array [
-        "danger",
-      ]
-    }
-    type="text"
-    value=""
-  />
   <div
-    aria-live="polite"
-    className="form-control-feedback invalid-feedback"
-    id="error-asInput1"
+    style={
+      Object {
+        "margin": "auto",
+      }
+    }
   >
-    <span />
+    <div
+      className={
+        Array [
+          "form-group",
+        ]
+      }
+    >
+      <label
+        className={
+          Array [
+            "",
+          ]
+        }
+        htmlFor="asInput1"
+        id="label-asInput1"
+      >
+        Username
+      </label>
+      <input
+        aria-describedby="error-asInput1 description-asInput1"
+        aria-invalid={false}
+        className="form-control"
+        disabled={false}
+        id="asInput1"
+        name="username"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder={undefined}
+        required={false}
+        themes={
+          Array [
+            "danger",
+          ]
+        }
+        type="text"
+        value=""
+      />
+      <div
+        aria-live="polite"
+        className="form-control-feedback invalid-feedback"
+        id="error-asInput1"
+      >
+        <span />
+      </div>
+      <small
+        className="form-text"
+        id="description-asInput1"
+      >
+        The unique name that identifies you throughout the site.
+      </small>
+    </div>
   </div>
-  <small
-    className="form-text"
-    id="description-asInput1"
+</div>
+`;
+
+exports[`Storyshots InputText with input group addons 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": 0,
+      "display": "flex",
+      "justifyContent": "center",
+      "left": 0,
+      "overflow": "auto",
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+      }
+    }
   >
-    The unique name that identifies you throughout the site.
-  </small>
+    <form>
+      <div
+        className={
+          Array [
+            "form-group",
+          ]
+        }
+      >
+        <label
+          className={
+            Array [
+              "",
+            ]
+          }
+          htmlFor="asInput1"
+          id="label-asInput1"
+        >
+          Username
+        </label>
+        <div
+          className="input-group"
+        >
+          <div
+            className="input-group-prepend"
+          >
+            <div
+              className="input-group-text"
+            >
+              @
+            </div>
+          </div>
+          <input
+            aria-describedby="error-asInput1"
+            aria-invalid={false}
+            className="form-control"
+            disabled={false}
+            id="asInput1"
+            name="username"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder={undefined}
+            required={false}
+            themes={Array []}
+            type="text"
+            value="foobar"
+          />
+          <div
+            className="input-group-append"
+          />
+        </div>
+        <div
+          aria-live="polite"
+          className="form-control-feedback"
+          id="error-asInput1"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        className={
+          Array [
+            "form-group",
+          ]
+        }
+      >
+        <label
+          className={
+            Array [
+              "",
+            ]
+          }
+          htmlFor="asInput1"
+          id="label-asInput1"
+        >
+          Username
+        </label>
+        <div
+          className="input-group"
+        >
+          <div
+            className="input-group-prepend"
+          />
+          <input
+            aria-describedby="error-asInput1"
+            aria-invalid={false}
+            className="form-control"
+            disabled={false}
+            id="asInput1"
+            name="username"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder={undefined}
+            required={false}
+            themes={Array []}
+            type="text"
+            value="foobar"
+          />
+          <div
+            className="input-group-append"
+          >
+            <div
+              className="input-group-text"
+            >
+              @example.com
+            </div>
+          </div>
+        </div>
+        <div
+          aria-live="polite"
+          className="form-control-feedback"
+          id="error-asInput1"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        className={
+          Array [
+            "form-group",
+          ]
+        }
+      >
+        <label
+          className={
+            Array [
+              "",
+            ]
+          }
+          htmlFor="asInput1"
+          id="label-asInput1"
+        >
+          Money
+        </label>
+        <div
+          className="input-group"
+        >
+          <div
+            className="input-group-prepend"
+          >
+            <div
+              className="input-group-text"
+            >
+              $
+            </div>
+          </div>
+          <input
+            aria-describedby="error-asInput1"
+            aria-invalid={false}
+            className="form-control"
+            disabled={false}
+            id="asInput1"
+            name="money"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder={undefined}
+            required={false}
+            themes={Array []}
+            type="number"
+            value={1000}
+          />
+          <div
+            className="input-group-append"
+          >
+            <div
+              className="input-group-text"
+            >
+              .00
+            </div>
+          </div>
+        </div>
+        <div
+          aria-live="polite"
+          className="form-control-feedback"
+          id="error-asInput1"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        className={
+          Array [
+            "form-group",
+          ]
+        }
+      >
+        <label
+          className={
+            Array [
+              "",
+            ]
+          }
+          htmlFor="asInput1"
+          id="label-asInput1"
+        >
+          Search
+        </label>
+        <div
+          className="input-group"
+        >
+          <div
+            className="input-group-prepend"
+          />
+          <input
+            aria-describedby="error-asInput1"
+            aria-invalid={false}
+            className="form-control"
+            disabled={false}
+            id="asInput1"
+            name="search"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder={undefined}
+            required={false}
+            themes={Array []}
+            type="text"
+            value="what is paragon"
+          />
+          <div
+            className="input-group-append"
+          >
+            <button
+              className="btn btn-outline-secondary"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              type="button"
+            >
+              Go
+            </button>
+          </div>
+        </div>
+        <div
+          aria-live="polite"
+          className="form-control-feedback"
+          id="error-asInput1"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        className={
+          Array [
+            "form-group",
+          ]
+        }
+      >
+        <label
+          className={
+            Array [
+              "",
+            ]
+          }
+          htmlFor="asInput1"
+          id="label-asInput1"
+        >
+          Password
+        </label>
+        <div
+          className="input-group"
+        >
+          <div
+            className="input-group-prepend"
+          />
+          <input
+            aria-describedby="error-asInput1"
+            aria-invalid={false}
+            className="form-control"
+            disabled={false}
+            id="asInput1"
+            name="password"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder={undefined}
+            required={false}
+            themes={Array []}
+            type="text"
+            value="secret"
+          />
+          <div
+            className="input-group-append"
+          >
+            <div
+              className="input-group-text"
+            >
+              <div>
+                <span
+                  aria-hidden={true}
+                  className="fa fa-check"
+                  id="checkmark"
+                />
+                <span
+                  className="sr-only"
+                >
+                  Checkmark
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-live="polite"
+          className="form-control-feedback"
+          id="error-asInput1"
+        >
+          <span />
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 `;
 

@@ -337,5 +337,68 @@ describe('asInput()', () => {
       const input = wrapper.find('.form-group');
       expect(input.hasClass('form-inline')).toEqual(true);
     });
+
+    describe('input group addons', () => {
+      it('does not create an input-group div if no input group addons are given', () => {
+        const wrapper = mount(<InputTestComponent {...baseProps} />);
+        const input = wrapper.find('.form-group');
+        expect(input.find('.input-group').exists()).toEqual(false);
+      });
+
+      it('displays inputGroupPrepend', () => {
+        const props = {
+          ...baseProps,
+          inputGroupPrepend: (
+            <div className="input-group-text">
+              {'$'}
+            </div>
+          ),
+        };
+        const wrapper = mount(<InputTestComponent {...props} />);
+        const input = wrapper.find('.form-group');
+        expect(input.find('.input-group').exists()).toEqual(true);
+        expect(input.find('.input-group-prepend').exists()).toEqual(true);
+        expect(input.find('.input-group-prepend').text()).toEqual('$');
+      });
+
+      it('displays inputGroupAppend', () => {
+        const props = {
+          ...baseProps,
+          inputGroupAppend: (
+            <div className="input-group-text">
+              {'.00'}
+            </div>
+          ),
+        };
+        const wrapper = mount(<InputTestComponent {...props} />);
+        const input = wrapper.find('.form-group');
+        expect(input.find('.input-group').exists()).toEqual(true);
+        expect(input.find('.input-group-append').exists()).toEqual(true);
+        expect(input.find('.input-group-append').text()).toEqual('.00');
+      });
+
+      it('displays both inputGroupPrepend and inputGroupAppend', () => {
+        const props = {
+          ...baseProps,
+          inputGroupPrepend: (
+            <div className="input-group-text">
+              {'$'}
+            </div>
+          ),
+          inputGroupAppend: (
+            <div className="input-group-text">
+              {'.00'}
+            </div>
+          ),
+        };
+        const wrapper = mount(<InputTestComponent {...props} />);
+        const input = wrapper.find('.form-group');
+        expect(input.find('.input-group').exists()).toEqual(true);
+        expect(input.find('.input-group-prepend').exists()).toEqual(true);
+        expect(input.find('.input-group-prepend').text()).toEqual('$');
+        expect(input.find('.input-group-append').exists()).toEqual(true);
+        expect(input.find('.input-group-append').text()).toEqual('.00');
+      });
+    });
   });
 });
