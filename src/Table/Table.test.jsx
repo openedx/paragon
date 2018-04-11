@@ -105,6 +105,19 @@ describe('<Table />', () => {
   describe('that is non-sortable renders', () => {
     const wrapper = mount(<Table {...sortableProps} tableSortable={false} />);
 
+    it('it sets column headers correctly even with hidden prop', () => {
+      const tableHeadings = wrapper.find('th');
+      let hiddenHeader;
+
+      tableHeadings.forEach((th, i) => {
+        expect(th.text()).toEqual(sortableProps.columns[i].label);
+        if (sortableProps.columns[i].hideHeader) {
+          hiddenHeader = sortableProps.columns[i].label;
+        }
+      });
+      expect(tableHeadings.find('span').text()).toEqual(hiddenHeader);
+    });
+
     it('without sortable columns', () => {
       const tableHeadings = wrapper.find('th');
 
