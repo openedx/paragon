@@ -80,7 +80,7 @@ class Table extends React.Component {
         onClick={() => this.onSortClick(column.key)}
       />);
     } else if (column.hideHeader) {
-      heading = (<span className={classNames(styles['sr-only'])} />);
+      heading = (<span className={classNames(styles['sr-only'])}>{column.label}</span>);
     } else {
       heading = column.label;
     }
