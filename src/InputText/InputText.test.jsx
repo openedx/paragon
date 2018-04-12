@@ -44,5 +44,13 @@ describe('<InputText />', () => {
       const input = wrapper.find('input').at(0);
       expect(input.prop('type')).toEqual(type);
     });
+
+    it('should render with the autocomplete property if set', () => {
+      const wrapper = mount(<InputText {...props} autoComplete="off" />);
+      expect(wrapper.find('input')).toHaveLength(1);
+
+      const input = wrapper.find('input').at(0);
+      expect(input.prop('autoComplete')).toEqual('off');
+    });
   });
 });
