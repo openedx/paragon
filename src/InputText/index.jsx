@@ -18,6 +18,7 @@ function Text(props) {
       onChange={props.onChange}
       onBlur={props.onBlur}
       aria-invalid={!props.isValid}
+      autoComplete={props.autoComplete}
       disabled={props.disabled}
       required={props.required}
       ref={props.inputRef}
@@ -30,6 +31,7 @@ const textPropTypes = {
   type: PropTypes.string,
   describedBy: PropTypes.string,
   isValid: PropTypes.bool,
+  autoComplete: PropTypes.string,
   inputRef: PropTypes.func,
 };
 
@@ -37,6 +39,7 @@ const textDefaultProps = {
   type: 'text',
   describedBy: '',
   isValid: true,
+  autoComplete: 'on',
   inputRef: () => {},
 };
 
