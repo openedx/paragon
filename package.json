@@ -20,6 +20,7 @@
     "is-es5": "es-check es5 ./themable/*.js ./static/*.js",
     "lint": "eslint --ext .js --ext .jsx .",
     "precommit": "npm run lint",
+    "prepare": "npm run build",
     "prepublishOnly": "npm run build",
     "semantic-release": "semantic-release",
     "snapshot": "jest --updateSnapshot",
