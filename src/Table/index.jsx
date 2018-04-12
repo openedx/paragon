@@ -175,9 +175,18 @@ Table.propTypes = {
   defaultSortDirection: isRequiredIf(PropTypes.string, props => props.tableSortable),
   sortButtonsScreenReaderText: isRequiredIf(
     PropTypes.shape({
-      asc: PropTypes.string,
-      desc: PropTypes.string,
-      defaultText: PropTypes.string,
+      asc: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.element,
+      ]),
+      desc: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.element,
+      ]),
+      defaultText: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.element,
+      ]),
     }),
     props => props.tableSortable,
   ),
