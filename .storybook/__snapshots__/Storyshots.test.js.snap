@@ -9298,6 +9298,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
         <input
           aria-describedby="error-input-search"
           aria-invalid={false}
+          autoComplete="on"
           className="form-control"
           disabled={false}
           id="input-search"
@@ -9339,6 +9340,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
         <input
           aria-describedby="error-input-email"
           aria-invalid={false}
+          autoComplete="on"
           className="form-control"
           disabled={false}
           id="input-email"
@@ -9380,6 +9382,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
         <input
           aria-describedby="error-input-url"
           aria-invalid={false}
+          autoComplete="on"
           className="form-control"
           disabled={false}
           id="input-url"
@@ -9421,6 +9424,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
         <input
           aria-describedby="error-input-tel"
           aria-invalid={false}
+          autoComplete="on"
           className="form-control"
           disabled={false}
           id="input-tel"
@@ -9462,6 +9466,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
         <input
           aria-describedby="error-input-password"
           aria-invalid={false}
+          autoComplete="on"
           className="form-control"
           disabled={false}
           id="input-password"
@@ -9503,6 +9508,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
         <input
           aria-describedby="error-input-number"
           aria-invalid={false}
+          autoComplete="on"
           className="form-control"
           disabled={false}
           id="input-number"
@@ -9544,6 +9550,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
         <input
           aria-describedby="error-input-datetime-local"
           aria-invalid={false}
+          autoComplete="on"
           className="form-control"
           disabled={false}
           id="input-datetime-local"
@@ -9585,6 +9592,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
         <input
           aria-describedby="error-input-date"
           aria-invalid={false}
+          autoComplete="on"
           className="form-control"
           disabled={false}
           id="input-date"
@@ -9626,6 +9634,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
         <input
           aria-describedby="error-input-month"
           aria-invalid={false}
+          autoComplete="on"
           className="form-control"
           disabled={false}
           id="input-month"
@@ -9667,6 +9676,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
         <input
           aria-describedby="error-input-week"
           aria-invalid={false}
+          autoComplete="on"
           className="form-control"
           disabled={false}
           id="input-week"
@@ -9708,6 +9718,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
         <input
           aria-describedby="error-input-time"
           aria-invalid={false}
+          autoComplete="on"
           className="form-control"
           disabled={false}
           id="input-time"
@@ -9749,6 +9760,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
         <input
           aria-describedby="error-input-color"
           aria-invalid={false}
+          autoComplete="on"
           className="form-control"
           disabled={false}
           id="input-color"
@@ -9818,6 +9830,7 @@ exports[`Storyshots InputText displayed inline 1`] = `
       <input
         aria-describedby="error-asInput1"
         aria-invalid={false}
+        autoComplete="on"
         className="form-control"
         disabled={false}
         id="asInput1"
@@ -9912,6 +9925,7 @@ exports[`Storyshots InputText focus test 1`] = `
         <input
           aria-describedby="error-data"
           aria-invalid={false}
+          autoComplete="on"
           className="form-control"
           disabled={false}
           id="data"
@@ -9985,6 +9999,7 @@ exports[`Storyshots InputText label as element 1`] = `
       <input
         aria-describedby="error-asInput1"
         aria-invalid={false}
+        autoComplete="on"
         className="form-control"
         disabled={false}
         id="asInput1"
@@ -10053,6 +10068,7 @@ exports[`Storyshots InputText minimal usage 1`] = `
       <input
         aria-describedby="error-asInput1"
         aria-invalid={false}
+        autoComplete="on"
         className="form-control"
         disabled={false}
         id="asInput1"
@@ -10121,6 +10137,7 @@ exports[`Storyshots InputText validation 1`] = `
       <input
         aria-describedby="error-username description-username"
         aria-invalid={false}
+        autoComplete="on"
         className="form-control"
         disabled={false}
         id="username"
@@ -10195,6 +10212,7 @@ exports[`Storyshots InputText validation with danger theme 1`] = `
       <input
         aria-describedby="error-asInput1 description-asInput1"
         aria-invalid={false}
+        autoComplete="on"
         className="form-control"
         disabled={false}
         id="asInput1"
@@ -10286,6 +10304,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
           <input
             aria-describedby="error-asInput1"
             aria-invalid={false}
+            autoComplete="on"
             className="form-control"
             disabled={false}
             id="asInput1"
@@ -10337,6 +10356,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
           <input
             aria-describedby="error-asInput1"
             aria-invalid={false}
+            autoComplete="on"
             className="form-control"
             disabled={false}
             id="asInput1"
@@ -10400,6 +10420,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
           <input
             aria-describedby="error-asInput1"
             aria-invalid={false}
+            autoComplete="on"
             className="form-control"
             disabled={false}
             id="asInput1"
@@ -10457,6 +10478,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
           <input
             aria-describedby="error-asInput1"
             aria-invalid={false}
+            autoComplete="on"
             className="form-control"
             disabled={false}
             id="asInput1"
@@ -10518,6 +10540,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
           <input
             aria-describedby="error-asInput1"
             aria-invalid={false}
+            autoComplete="on"
             className="form-control"
             disabled={false}
             id="asInput1"
@@ -15613,6 +15636,7 @@ exports[`Storyshots Modal modal with element body 1`] = `
             <input
               aria-describedby="error-asInput1"
               aria-invalid={false}
+              autoComplete="on"
               className="form-control"
               disabled={false}
               id="asInput1"
