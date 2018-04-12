@@ -4,6 +4,9 @@ Handles all necessary props that are related to Input typed components.
 
 ## API
 
+### `autoComplete` (string; optional)
+`autoComplete` specifies whether or not an input field should have autocomplete enabled. It allows the browser to predict the value. When a user starts to type in a field, the browser should display options to fill in the field, based on earlier typed values. The default value is 'on'.
+
 ### `className` (string array; optional)
 `className` specifies Bootstrap class names to apply to the input component. The default is an empty array.
 
