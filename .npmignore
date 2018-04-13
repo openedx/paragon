@@ -4,3 +4,10 @@
 node_modules
 npm-debug.log
 .travis.yml
+.babelrc
+.eslintignore
+.eslintrc.json
+commitlint.config.js
+webpack.config.js
+**.test.js
+**.stories.js
