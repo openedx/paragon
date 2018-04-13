@@ -15133,11 +15133,15 @@ exports[`Storyshots Modal basic usage 1`] = `
 <div
   aria-labelledby="id3"
   aria-modal={true}
-  className="modal modal-open modal-backdrop show"
   role="dialog"
 >
   <div
-    className="modal-dialog"
+    className="modal-backdrop"
+    onClick={[Function]}
+    role="presentation"
+  />
+  <div
+    className="modal modal-dialog modal-open show"
   >
     <div
       className="modal-content"
@@ -15197,11 +15201,15 @@ exports[`Storyshots Modal configurable buttons 1`] = `
 <div
   aria-labelledby="id4"
   aria-modal={true}
-  className="modal modal-open modal-backdrop show"
   role="dialog"
 >
   <div
-    className="modal-dialog"
+    className="modal-backdrop"
+    onClick={[Function]}
+    role="presentation"
+  />
+  <div
+    className="modal modal-dialog modal-open show"
   >
     <div
       className="modal-content"
@@ -15288,11 +15296,15 @@ exports[`Storyshots Modal configurable buttons that perform actions 1`] = `
 <div
   aria-labelledby="id6"
   aria-modal={true}
-  className="modal modal-open modal-backdrop show"
   role="dialog"
 >
   <div
-    className="modal-dialog"
+    className="modal-backdrop"
+    onClick={[Function]}
+    role="presentation"
+  />
+  <div
+    className="modal modal-dialog modal-open show"
   >
     <div
       className="modal-content"
@@ -15361,11 +15373,15 @@ exports[`Storyshots Modal configurable close button 1`] = `
 <div
   aria-labelledby="id7"
   aria-modal={true}
-  className="modal modal-open modal-backdrop show"
   role="dialog"
 >
   <div
-    className="modal-dialog"
+    className="modal-backdrop"
+    onClick={[Function]}
+    role="presentation"
+  />
+  <div
+    className="modal modal-dialog modal-open show"
   >
     <div
       className="modal-content"
@@ -15425,11 +15441,15 @@ exports[`Storyshots Modal configurable title and body 1`] = `
 <div
   aria-labelledby="id5"
   aria-modal={true}
-  className="modal modal-open modal-backdrop show"
   role="dialog"
 >
   <div
-    className="modal-dialog"
+    className="modal-backdrop"
+    onClick={[Function]}
+    role="presentation"
+  />
+  <div
+    className="modal modal-dialog modal-open show"
   >
     <div
       className="modal-content"
@@ -15499,11 +15519,15 @@ exports[`Storyshots Modal modal invoked via a button 1`] = `
   <div
     aria-labelledby="id8"
     aria-modal={true}
-    className="modal fade"
     role="dialog"
   >
     <div
-      className="modal-dialog"
+      className=""
+      onClick={[Function]}
+      role="presentation"
+    />
+    <div
+      className="modal modal-dialog fade"
     >
       <div
         className="modal-content"
@@ -15573,11 +15597,15 @@ exports[`Storyshots Modal modal with element body 1`] = `
 <div
   aria-labelledby="id9"
   aria-modal={true}
-  className="modal modal-open modal-backdrop show"
   role="dialog"
 >
   <div
-    className="modal-dialog"
+    className="modal-backdrop"
+    onClick={[Function]}
+    role="presentation"
+  />
+  <div
+    className="modal modal-dialog modal-open show"
   >
     <div
       className="modal-content"
@@ -15690,11 +15718,15 @@ exports[`Storyshots Modal modal with warning variant 1`] = `
 <div
   aria-labelledby="id10"
   aria-modal={true}
-  className="modal modal-open modal-backdrop show"
   role="dialog"
 >
   <div
-    className="modal-dialog"
+    className="modal-backdrop"
+    onClick={[Function]}
+    role="presentation"
+  />
+  <div
+    className="modal modal-dialog modal-open show"
   >
     <div
       className="modal-content"
