@@ -155,6 +155,14 @@ class Modal extends React.Component {
 
     return (
       <div
+        className={classNames(
+          styles.modal,
+          {
+            [styles['modal-open']]: open,
+            [styles.show]: open,
+            [styles.fade]: !open,
+          },
+        )}
         role="dialog"
         aria-modal
         aria-labelledby={this.headerId}
