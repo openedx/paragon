@@ -224,7 +224,7 @@ describe('asInput()', () => {
           validationMessage: 'Nope!',
         };
         const wrapper = mount(<InputTestComponent {...props} />);
-        const err = wrapper.find('.form-control-feedback');
+        const err = wrapper.find('.invalid-feedback');
         expect(err.text()).toEqual('Nope!');
 
         wrapper.setProps({ validationMessage: 'New Message' });
@@ -243,7 +243,7 @@ describe('asInput()', () => {
           dangerIconDescription: 'Error ',
         };
         const wrapper = mount(<InputTestComponent {...props} />);
-        const err = wrapper.find('.form-control-feedback');
+        const err = wrapper.find('.invalid-feedback');
         expect(err.text()).toEqual('Error Nope!');
 
         wrapper.setProps({ validationMessage: 'New Message' });
@@ -292,7 +292,7 @@ describe('asInput()', () => {
         it('without theme', () => {
           wrapper.find('input').simulate('blur');
           expect(spy).toHaveBeenCalledTimes(1);
-          const err = wrapper.find('.form-control-feedback');
+          const err = wrapper.find('.invalid-feedback');
           expect(err.exists()).toEqual(true);
           expect(err.text()).toEqual(validationResult.validationMessage);
         });
@@ -302,7 +302,7 @@ describe('asInput()', () => {
           validationResult.dangerIconDescription = 'Error';
 
           // error div exists on the page when form is loaded
-          const err = wrapper.find('.form-control-feedback');
+          const err = wrapper.find('.invalid-feedback');
           expect(err.exists()).toEqual(true);
           expect(err.hasClass('invalid-feedback')).toEqual(true);
           expect(err.prop('aria-live')).toEqual('polite');

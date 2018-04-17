@@ -2,10 +2,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
 
 import newId from '../utils/newId';
 import styles from './asInput.scss';
+import ValidationMessage from '../ValidationMessage/index';
+import Variant from '../utils/constants';
 
 export const getDisplayName = WrappedComponent =>
   WrappedComponent.displayName || WrappedComponent.name || 'Component';
@@ -37,7 +38,7 @@ export const inputProps = {
 export const defaultProps = {
   onChange: () => {},
   onBlur: () => {},
-  id: newId('asInput'),
+  id: undefined,
   value: '',
   dangerIconDescription: '',
   description: undefined,
@@ -109,43 +110,17 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       const descriptionId = `description-${this.state.id}`;
       const desc = {};
 
-      const hasDangerTheme = this.hasDangerTheme();
-
+      // TODO: refactor this component to use Variants instead of the themes array.
       desc.error = (
-        <div
-          className={classNames(
-            styles['form-control-feedback'],
-            { [styles['invalid-feedback']]: hasDangerTheme },
-          )}
+        <ValidationMessage
           id={errorId}
-          key="0"
-          aria-live="polite"
-        >
-          { this.state.isValid ? (
-            <span />
-          ) : [
-            (hasDangerTheme &&
-            <span key="0">
-              <span
-                className={classNames(
-                  FontAwesomeStyles.fa,
-                  FontAwesomeStyles['fa-exclamation-circle'],
-                  styles['fa-icon-spacing'],
-                )}
-                aria-hidden
-              />
-              <span
-                className={classNames(styles['sr-only'])}
-              >
-                {this.state.dangerIconDescription}
-              </span>
-            </span>
-            ),
-            <span key="1">
-              {this.state.validationMessage}
-            </span>,
-          ]}
-        </div>
+          isValid={this.state.isValid}
+          invalidMessage={this.state.validationMessage}
+          variant={{
+            status: this.hasDangerTheme() ? Variant.status.DANGER : Variant.status.INFO,
+          }}
+          variantIconDescription={this.state.dangerIconDescription}
+        />
       );
       desc.describedBy = errorId;
 
@@ -217,7 +192,8 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
             {
               [styles['form-control']]: !this.isGroupedInput(),
               [styles['form-check-input']]: this.isGroupedInput(),
-              [styles['is-invalid']]: !this.state.isValid && this.hasDangerTheme(),
+              [styles['is-invalid']]: !this.state.isValid,
+              [styles['is-invalid-nodanger']]: !this.hasDangerTheme(),
             },
             className,
           ).trim()]}
