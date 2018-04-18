@@ -146,6 +146,15 @@ storiesOf('Modal', module)
       onClose={() => {}}
     />
   ))
+  .add('modal without a close button in the header', () => (
+    <Modal
+      open
+      title="Modal title."
+      body="Modal body."
+      onClose={() => {}}
+      renderHeaderCloseButton={false}
+    />
+  ))
   .add('modal with warning variant', () => (
     <Modal
       open

@@ -15688,7 +15688,7 @@ exports[`Storyshots Modal modal with element body 1`] = `
 
 exports[`Storyshots Modal modal with warning variant 1`] = `
 <div
-  aria-labelledby="id10"
+  aria-labelledby="id11"
   aria-modal={true}
   className="modal modal-open modal-backdrop show"
   role="dialog"
@@ -15704,7 +15704,7 @@ exports[`Storyshots Modal modal with warning variant 1`] = `
       >
         <h2
           className="modal-title"
-          id="id10"
+          id="id11"
         >
           Warning Modal
         </h2>
@@ -15750,7 +15750,7 @@ exports[`Storyshots Modal modal with warning variant 1`] = `
                 <span
                   aria-hidden={true}
                   className="fa fa-exclamation-triangle fa-3x text-warning"
-                  id="Modal-WARNING11"
+                  id="Modal-WARNING12"
                 />
               </div>
             </div>
@@ -15777,6 +15777,55 @@ exports[`Storyshots Modal modal with warning variant 1`] = `
           type="button"
         >
           Run Away!
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Modal modal without a close button in the header 1`] = `
+<div
+  aria-labelledby="id10"
+  aria-modal={true}
+  className="modal modal-open modal-backdrop show"
+  role="dialog"
+  tabIndex="-1"
+>
+  <div
+    className="modal-dialog"
+  >
+    <div
+      className="modal-content"
+    >
+      <div
+        className="modal-header"
+      >
+        <h2
+          className="modal-title"
+          id="id10"
+        >
+          Modal title.
+        </h2>
+      </div>
+      <div
+        className="modal-body"
+      >
+        <p>
+          Modal body.
+        </p>
+      </div>
+      <div
+        className="modal-footer"
+      >
+        <button
+          className="btn btn-outline-primary"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          Close
         </button>
       </div>
     </div>
@@ -20026,10 +20075,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
   >
     <li
       className="nav-item"
-      id="tab-label-tabInterface12-0"
+      id="tab-label-tabInterface13-0"
     >
       <a
-        aria-controls="tab-panel-tabInterface12-0"
+        aria-controls="tab-panel-tabInterface13-0"
         aria-selected={true}
         className="nav-link active"
         onClick={[Function]}
@@ -20041,10 +20090,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </li>
     <li
       className="nav-item"
-      id="tab-label-tabInterface12-1"
+      id="tab-label-tabInterface13-1"
     >
       <a
-        aria-controls="tab-panel-tabInterface12-1"
+        aria-controls="tab-panel-tabInterface13-1"
         aria-selected={false}
         className="nav-link"
         onClick={[Function]}
@@ -20056,10 +20105,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </li>
     <li
       className="nav-item"
-      id="tab-label-tabInterface12-2"
+      id="tab-label-tabInterface13-2"
     >
       <a
-        aria-controls="tab-panel-tabInterface12-2"
+        aria-controls="tab-panel-tabInterface13-2"
         aria-selected={false}
         className="nav-link"
         onClick={[Function]}
@@ -20075,9 +20124,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
   >
     <div
       aria-hidden={false}
-      aria-labelledby="tab-label-tabInterface12-0"
+      aria-labelledby="tab-label-tabInterface13-0"
       className="tab-pane active"
-      id="tab-panel-tabInterface12-0"
+      id="tab-panel-tabInterface13-0"
       role="tabpanel"
     >
       <div>
@@ -20086,9 +20135,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </div>
     <div
       aria-hidden={true}
-      aria-labelledby="tab-label-tabInterface12-1"
+      aria-labelledby="tab-label-tabInterface13-1"
       className="tab-pane"
-      id="tab-panel-tabInterface12-1"
+      id="tab-panel-tabInterface13-1"
       role="tabpanel"
     >
       <div>
@@ -20097,9 +20146,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </div>
     <div
       aria-hidden={true}
-      aria-labelledby="tab-label-tabInterface12-2"
+      aria-labelledby="tab-label-tabInterface13-2"
       className="tab-pane"
-      id="tab-panel-tabInterface12-2"
+      id="tab-panel-tabInterface13-2"
       role="tabpanel"
     >
       <div>
