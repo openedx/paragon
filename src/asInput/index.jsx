@@ -207,6 +207,8 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
     }
 
     renderInput(describedBy) {
+      const { className } = this.props;
+
       return (
         <WrappedComponent
           {...this.props}
@@ -217,8 +219,8 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
               [styles['form-check-input']]: this.isGroupedInput(),
               [styles['is-invalid']]: !this.state.isValid && this.hasDangerTheme(),
             },
-            { ...this.props.className },
-          )]}
+            className,
+          ).trim()]}
           describedBy={describedBy}
           onChange={this.handleChange}
           onBlur={this.handleBlur}
