@@ -52,5 +52,15 @@ describe('<InputText />', () => {
       const input = wrapper.find('input').at(0);
       expect(input.prop('autoComplete')).toEqual('off');
     });
+
+    it('should render with custom classNames if set', () => {
+      const wrapper = mount(<InputText {...props} className={['first', 'last']} />);
+      expect(wrapper.find('input')).toHaveLength(1);
+
+      const input = wrapper.find('input').at(0);
+      expect(input.prop('type')).toEqual('text');
+      expect(input.hasClass('first')).toEqual(true);
+      expect(input.hasClass('last')).toEqual(true);
+    });
   });
 });
