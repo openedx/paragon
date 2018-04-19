@@ -56,6 +56,22 @@ describe('<Modal />', () => {
       expect(wrapper.find('button')).toHaveLength(buttons.length + 2);
     });
 
+    it('render of the footer close button is optional', () => {
+      wrapper = mount(<Modal
+        {...defaultProps}
+        buttons={buttons}
+        renderFooterCloseButton={false}
+      />);
+
+      const modalHeader = wrapper.find('.modal-header');
+      const modalFooter = wrapper.find('.modal-footer');
+      const customButtonCount = buttons.length;
+
+      expect(modalHeader.find('button')).toHaveLength(1);
+      expect(modalFooter.find('button')).toHaveLength(customButtonCount);
+      expect(wrapper.find('button')).toHaveLength(customButtonCount + 1);
+    });
+
     it('renders Warning Variant', () => {
       wrapper = mount(<Modal {...defaultProps} variant={{ status: Variant.status.WARNING }} />);
 
@@ -89,6 +105,7 @@ describe('<Modal />', () => {
       wrapper.setProps({ open: true });
       modalOpen(true, wrapper);
     });
+
     it('component receives props and ignores prop change', () => {
       wrapper = mount(<Modal {...defaultProps} />);
 
@@ -142,6 +159,7 @@ describe('<Modal />', () => {
       modalOpen(true, wrapper);
     });
   });
+
   describe('invalid keystrokes do nothing', () => {
     beforeEach(() => {
       wrapper = mount(<Modal
@@ -170,6 +188,7 @@ describe('<Modal />', () => {
       modalOpen(true, wrapper);
     });
   });
+
   describe('focus changes correctly', () => {
     let buttons;
 
@@ -182,6 +201,7 @@ describe('<Modal />', () => {
     it('has correct initial focus', () => {
       expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
     });
+
     it('has reset focus after close and reopen', () => {
       expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
       wrapper.setProps({ open: false });
@@ -190,11 +210,13 @@ describe('<Modal />', () => {
       modalOpen(true, wrapper);
       expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
     });
+
     it('traps focus forwards on tab keystroke', () => {
       expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
       buttons.last().simulate('keyDown', { key: 'Tab' });
       expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
     });
+
     it('traps focus backwards on shift + tab keystroke', () => {
       expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
       buttons.at(0).simulate('keyDown', { key: 'Tab', shiftKey: true });

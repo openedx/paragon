@@ -15286,7 +15286,7 @@ exports[`Storyshots Modal configurable buttons 1`] = `
 
 exports[`Storyshots Modal configurable buttons that perform actions 1`] = `
 <div
-  aria-labelledby="id6"
+  aria-labelledby="id7"
   aria-modal={true}
   className="modal modal-open modal-backdrop show"
   role="dialog"
@@ -15302,7 +15302,7 @@ exports[`Storyshots Modal configurable buttons that perform actions 1`] = `
       >
         <h2
           className="modal-title"
-          id="id6"
+          id="id7"
         >
           Modal title.
         </h2>
@@ -15357,9 +15357,9 @@ exports[`Storyshots Modal configurable buttons that perform actions 1`] = `
 </div>
 `;
 
-exports[`Storyshots Modal configurable close button 1`] = `
+exports[`Storyshots Modal configurable buttons without close button 1`] = `
 <div
-  aria-labelledby="id7"
+  aria-labelledby="id5"
   aria-modal={true}
   className="modal modal-open modal-backdrop show"
   role="dialog"
@@ -15375,7 +15375,89 @@ exports[`Storyshots Modal configurable close button 1`] = `
       >
         <h2
           className="modal-title"
-          id="id7"
+          id="id5"
+        >
+          Modal title.
+        </h2>
+        <button
+          aria-label="Close"
+          className="p-1 btn"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          <div>
+            <span
+              aria-hidden={true}
+              className="fa fa-times"
+              id="Icon2"
+            />
+          </div>
+        </button>
+      </div>
+      <div
+        className="modal-body"
+      >
+        <p>
+          Modal body.
+        </p>
+      </div>
+      <div
+        className="modal-footer"
+      >
+        <button
+          className="btn btn-primary"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          Blue button!
+        </button>
+        <button
+          className="btn btn-danger"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          Red button!
+        </button>
+        <button
+          className="btn btn-success"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          Green button!
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Modal configurable close button 1`] = `
+<div
+  aria-labelledby="id8"
+  aria-modal={true}
+  className="modal modal-open modal-backdrop show"
+  role="dialog"
+>
+  <div
+    className="modal-dialog"
+  >
+    <div
+      className="modal-content"
+    >
+      <div
+        className="modal-header"
+      >
+        <h2
+          className="modal-title"
+          id="id8"
         >
           Modal title.
         </h2>
@@ -15423,7 +15505,7 @@ exports[`Storyshots Modal configurable close button 1`] = `
 
 exports[`Storyshots Modal configurable title and body 1`] = `
 <div
-  aria-labelledby="id5"
+  aria-labelledby="id6"
   aria-modal={true}
   className="modal modal-open modal-backdrop show"
   role="dialog"
@@ -15439,7 +15521,7 @@ exports[`Storyshots Modal configurable title and body 1`] = `
       >
         <h2
           className="modal-title"
-          id="id5"
+          id="id6"
         >
           Custom title!
         </h2>
@@ -15497,7 +15579,7 @@ exports[`Storyshots Modal configurable title and body 1`] = `
 exports[`Storyshots Modal modal invoked via a button 1`] = `
 <div>
   <div
-    aria-labelledby="id8"
+    aria-labelledby="id9"
     aria-modal={true}
     className="modal fade"
     role="dialog"
@@ -15513,7 +15595,7 @@ exports[`Storyshots Modal modal invoked via a button 1`] = `
         >
           <h2
             className="modal-title"
-            id="id8"
+            id="id9"
           >
             I am the modal!
           </h2>
@@ -15571,7 +15653,7 @@ exports[`Storyshots Modal modal invoked via a button 1`] = `
 
 exports[`Storyshots Modal modal with element body 1`] = `
 <div
-  aria-labelledby="id9"
+  aria-labelledby="id10"
   aria-modal={true}
   className="modal modal-open modal-backdrop show"
   role="dialog"
@@ -15587,7 +15669,7 @@ exports[`Storyshots Modal modal with element body 1`] = `
       >
         <h2
           className="modal-title"
-          id="id9"
+          id="id10"
         >
           Modal title.
         </h2>
@@ -15688,7 +15770,7 @@ exports[`Storyshots Modal modal with element body 1`] = `
 
 exports[`Storyshots Modal modal with warning variant 1`] = `
 <div
-  aria-labelledby="id10"
+  aria-labelledby="id11"
   aria-modal={true}
   className="modal modal-open modal-backdrop show"
   role="dialog"
@@ -15704,7 +15786,7 @@ exports[`Storyshots Modal modal with warning variant 1`] = `
       >
         <h2
           className="modal-title"
-          id="id10"
+          id="id11"
         >
           Warning Modal
         </h2>
@@ -15750,7 +15832,7 @@ exports[`Storyshots Modal modal with warning variant 1`] = `
                 <span
                   aria-hidden={true}
                   className="fa fa-exclamation-triangle fa-3x text-warning"
-                  id="Modal-WARNING11"
+                  id="Modal-WARNING12"
                 />
               </div>
             </div>
@@ -20026,10 +20108,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
   >
     <li
       className="nav-item"
-      id="tab-label-tabInterface12-0"
+      id="tab-label-tabInterface13-0"
     >
       <a
-        aria-controls="tab-panel-tabInterface12-0"
+        aria-controls="tab-panel-tabInterface13-0"
         aria-selected={true}
         className="nav-link active"
         onClick={[Function]}
@@ -20041,10 +20123,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </li>
     <li
       className="nav-item"
-      id="tab-label-tabInterface12-1"
+      id="tab-label-tabInterface13-1"
     >
       <a
-        aria-controls="tab-panel-tabInterface12-1"
+        aria-controls="tab-panel-tabInterface13-1"
         aria-selected={false}
         className="nav-link"
         onClick={[Function]}
@@ -20056,10 +20138,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </li>
     <li
       className="nav-item"
-      id="tab-label-tabInterface12-2"
+      id="tab-label-tabInterface13-2"
     >
       <a
-        aria-controls="tab-panel-tabInterface12-2"
+        aria-controls="tab-panel-tabInterface13-2"
         aria-selected={false}
         className="nav-link"
         onClick={[Function]}
@@ -20075,9 +20157,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
   >
     <div
       aria-hidden={false}
-      aria-labelledby="tab-label-tabInterface12-0"
+      aria-labelledby="tab-label-tabInterface13-0"
       className="tab-pane active"
-      id="tab-panel-tabInterface12-0"
+      id="tab-panel-tabInterface13-0"
       role="tabpanel"
     >
       <div>
@@ -20086,9 +20168,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </div>
     <div
       aria-hidden={true}
-      aria-labelledby="tab-label-tabInterface12-1"
+      aria-labelledby="tab-label-tabInterface13-1"
       className="tab-pane"
-      id="tab-panel-tabInterface12-1"
+      id="tab-panel-tabInterface13-1"
       role="tabpanel"
     >
       <div>
@@ -20097,9 +20179,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </div>
     <div
       aria-hidden={true}
-      aria-labelledby="tab-label-tabInterface12-2"
+      aria-labelledby="tab-label-tabInterface13-2"
       className="tab-pane"
-      id="tab-panel-tabInterface12-2"
+      id="tab-panel-tabInterface13-2"
       role="tabpanel"
     >
       <div>
