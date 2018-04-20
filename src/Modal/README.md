@@ -21,3 +21,6 @@ Provides a basic modal component with customizable title, body, and footer butto
 
 ### `onClose` (function; required)
 `onClose` is a function that is called on close. It can be used to perform actions upon closing of the modal, such as restoring focus to the previous logical focusable element.
+
+### `renderFooterCloseButton` (boolean; optional)
+`renderFooterCloseButton` specifies whether a close button is rendered in the modal footer. It defaults to true.

@@ -16,7 +16,7 @@ class Modal extends React.Component {
     this.close = this.close.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.setXButton = this.setXButton.bind(this);
-    this.setCloseButton = this.setCloseButton.bind(this);
+    this.setLastFocusableElement = this.setLastFocusableElement.bind(this);
 
     this.headerId = newId();
 
@@ -47,8 +47,8 @@ class Modal extends React.Component {
     this.xButton = input;
   }
 
-  setCloseButton(input) {
-    this.closeButton = input;
+  setLastFocusableElement(input) {
+    this.lastFocusableElement = input;
   }
 
   getVariantIconClassName() {
@@ -107,9 +107,9 @@ class Modal extends React.Component {
       if (e.shiftKey) {
         if (e.target === this.xButton) {
           e.preventDefault();
-          this.closeButton.focus();
+          this.lastFocusableElement.focus();
         }
-      } else if (e.target === this.closeButton) {
+      } else if (e.target === this.lastFocusableElement) {
         e.preventDefault();
         this.xButton.focus();
       }
@@ -117,7 +117,10 @@ class Modal extends React.Component {
   }
 
   renderButtons() {
-    return this.props.buttons.map((button, i) => {
+    const { buttons, renderFooterCloseButton } = this.props;
+    const buttonCount = buttons.length;
+
+    return buttons.map((button, i) => {
       let buttonElement = button;
       let buttonProps = button.props;
 
@@ -125,10 +128,13 @@ class Modal extends React.Component {
         buttonProps = button;
       }
 
+      const isLast = buttonCount === i + 1;
+
       buttonElement = (<Button
         {...buttonProps}
         key={i}
         onKeyDown={this.handleKeyDown}
+        {...(!renderFooterCloseButton && isLast) ? { inputRef: this.setLastFocusableElement } : {}}
       />);
 
       return buttonElement;
@@ -152,6 +158,7 @@ class Modal extends React.Component {
 
   render() {
     const { open } = this.state;
+    const { renderFooterCloseButton } = this.props;
 
     return (
       <div
@@ -186,13 +193,15 @@ class Modal extends React.Component {
             </div>
             <div className={styles['modal-footer']}>
               {this.renderButtons()}
-              <Button
-                label={this.props.closeText}
-                buttonType="outline-primary"
-                onClick={this.close}
-                inputRef={this.setCloseButton}
-                onKeyDown={this.handleKeyDown}
-              />
+              { renderFooterCloseButton &&
+                <Button
+                  label={this.props.closeText}
+                  buttonType="outline-primary"
+                  onClick={this.close}
+                  inputRef={this.setLastFocusableElement}
+                  onKeyDown={this.handleKeyDown}
+                />
+              }
             </div>
           </div>
         </div>
@@ -214,6 +223,7 @@ Modal.propTypes = {
   variant: PropTypes.shape({
     status: PropTypes.string,
   }),
+  renderFooterCloseButton: PropTypes.bool,
 };
 
 Modal.defaultProps = {
@@ -221,6 +231,7 @@ Modal.defaultProps = {
   buttons: [],
   closeText: 'Close',
   variant: {},
+  renderFooterCloseButton: true,
 };
 
 

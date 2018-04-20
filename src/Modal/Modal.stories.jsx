@@ -83,6 +83,29 @@ storiesOf('Modal', module)
       onClose={() => {}}
     />
   ))
+  .add('configurable buttons without close button', () => (
+    <Modal
+      open
+      title="Modal title."
+      body="Modal body."
+      buttons={[
+        <Button
+          label="Blue button!"
+          buttonType="primary"
+        />,
+        {
+          label: 'Red button!',
+          buttonType: 'danger',
+        },
+        <Button
+          label="Green button!"
+          buttonType="success"
+        />,
+      ]}
+      onClose={() => {}}
+      renderFooterCloseButton={false}
+    />
+  ))
   .add('configurable title and body', () => (
     <Modal
       open
