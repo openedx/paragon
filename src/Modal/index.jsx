@@ -15,7 +15,7 @@ class Modal extends React.Component {
 
     this.close = this.close.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.setXButton = this.setXButton.bind(this);
+    this.setFirstFocusableElement = this.setFirstFocusableElement.bind(this);
     this.setCloseButton = this.setCloseButton.bind(this);
 
     this.headerId = newId();
@@ -26,8 +26,8 @@ class Modal extends React.Component {
   }
 
   componentDidMount() {
-    if (this.xButton) {
-      this.xButton.focus();
+    if (this.firstFocusableElement) {
+      this.firstFocusableElement.focus();
     }
   }
 
@@ -39,12 +39,12 @@ class Modal extends React.Component {
 
   componentDidUpdate(prevState) {
     if (this.state.open && !prevState.open) {
-      this.xButton.focus();
+      this.firstFocusableElement.focus();
     }
   }
 
-  setXButton(input) {
-    this.xButton = input;
+  setFirstFocusableElement(input) {
+    this.firstFocusableElement = input;
   }
 
   setCloseButton(input) {
@@ -105,13 +105,13 @@ class Modal extends React.Component {
       this.close();
     } else if (e.key === 'Tab') {
       if (e.shiftKey) {
-        if (e.target === this.xButton) {
+        if (e.target === this.firstFocusableElement) {
           e.preventDefault();
           this.closeButton.focus();
         }
       } else if (e.target === this.closeButton) {
         e.preventDefault();
-        this.xButton.focus();
+        this.firstFocusableElement.focus();
       }
     }
   }
@@ -152,6 +152,7 @@ class Modal extends React.Component {
 
   render() {
     const { open } = this.state;
+    const { renderHeaderCloseButton } = this.props;
 
     return (
       <div
@@ -167,19 +168,23 @@ class Modal extends React.Component {
         role="dialog"
         aria-modal
         aria-labelledby={this.headerId}
+        {...(!renderHeaderCloseButton ? { tabIndex: '-1' } : {})}
+        {...(!renderHeaderCloseButton ? { ref: this.setFirstFocusableElement } : {})}
       >
         <div className={styles['modal-dialog']}>
           <div className={styles['modal-content']}>
             <div className={styles['modal-header']}>
               <h2 className={styles['modal-title']} id={this.headerId}>{this.props.title}</h2>
-              <Button
-                label={<Icon className={['fa', 'fa-times']} />}
-                className={['p-1']}
-                aria-label={this.props.closeText}
-                onClick={this.close}
-                inputRef={this.setXButton}
-                onKeyDown={this.handleKeyDown}
-              />
+              { renderHeaderCloseButton &&
+                <Button
+                  label={<Icon className={['fa', 'fa-times']} />}
+                  className={['p-1']}
+                  aria-label={this.props.closeText}
+                  onClick={this.close}
+                  inputRef={this.setFirstFocusableElement}
+                  onKeyDown={this.handleKeyDown}
+                />
+              }
             </div>
             <div className={styles['modal-body']}>
               {this.renderBody()}
@@ -214,6 +219,7 @@ Modal.propTypes = {
   variant: PropTypes.shape({
     status: PropTypes.string,
   }),
+  renderHeaderCloseButton: PropTypes.bool,
 };
 
 Modal.defaultProps = {
@@ -221,6 +227,7 @@ Modal.defaultProps = {
   buttons: [],
   closeText: 'Close',
   variant: {},
+  renderHeaderCloseButton: true,
 };
 
 

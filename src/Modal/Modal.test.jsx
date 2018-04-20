@@ -79,6 +79,16 @@ describe('<Modal />', () => {
       expect(modalBody.text()).toEqual(body);
       expect(wrapper.find('button')).toHaveLength(2);
     });
+
+    it('render of the header close button is optional', () => {
+      wrapper = mount(<Modal {...defaultProps} renderHeaderCloseButton={false} />);
+      const modalHeader = wrapper.find('.modal-header');
+      const modalFooter = wrapper.find('.modal-footer');
+
+      expect(modalHeader.find('button')).toHaveLength(0);
+      expect(modalFooter.find('button')).toHaveLength(1);
+      expect(wrapper.find('button')).toHaveLength(1);
+    });
   });
 
   describe('props received correctly', () => {
