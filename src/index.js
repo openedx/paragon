@@ -3,6 +3,7 @@ import Button from './Button';
 import CheckBox from './CheckBox';
 import CheckBoxGroup from './CheckBoxGroup';
 import Dropdown from './Dropdown';
+import Fieldset from './Fieldset';
 import Hyperlink from './Hyperlink';
 import Icon from './Icon';
 import InputSelect from './InputSelect';
@@ -22,6 +23,7 @@ export {
   CheckBox,
   CheckBoxGroup,
   Dropdown,
+  Fieldset,
   Hyperlink,
   Icon,
   InputSelect,

@@ -1,0 +1,10 @@
+@import "~bootstrap/scss/_forms";
+@import "~bootstrap/scss/utilities/_screenreaders.scss";
+
+.form-control.is-invalid ~ .invalid-feedback-nodanger {
+  color: $body-color;
+}
+
+.fa-icon-spacing {
+    padding: 0px 5px 0px 0px;
+}

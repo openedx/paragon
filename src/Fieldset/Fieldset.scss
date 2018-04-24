@@ -1,0 +1,18 @@
+@import "~bootstrap/scss/_forms";
+@import '~bootstrap/scss/utilities/_borders';
+@import "~bootstrap/scss/utilities/_screenreaders.scss";
+@import '~bootstrap/scss/utilities/_spacing';
+
+.paragon-fieldset {
+  @extend .mb-4;
+
+  fieldset legend {
+    width: auto;
+    margin-bottom: 0;
+  }
+}
+
+.form-control.is-invalid.is-invalid-nodanger {
+  @include form-control-focus();
+  border-color: $input-border-color;
+}
