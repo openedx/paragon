@@ -8,9 +8,9 @@ import Variant from '../utils/constants';
 
 const modalOpen = (isOpen, wrapper) => {
   expect(wrapper.find('.modal').hasClass('modal-open')).toEqual(isOpen);
-  expect(wrapper.find('.modal').hasClass('modal-backdrop')).toEqual(isOpen);
   expect(wrapper.find('.modal').hasClass('show')).toEqual(isOpen);
   expect(wrapper.find('.modal').hasClass('fade')).toEqual(!isOpen);
+  expect(wrapper.find('.modal-backdrop').length > 0).toEqual(isOpen);
   expect(wrapper.state('open')).toEqual(isOpen);
 };
 const title = 'Modal title';
@@ -130,6 +130,13 @@ describe('<Modal />', () => {
       wrapper.find('button').at(0).simulate('keyDown', { key: 'Escape' });
       modalOpen(false, wrapper);
     });
+
+    it('closes when a user clicks outside of the modal', () => {
+      modalOpen(true, wrapper);
+      wrapper.find('.modal-backdrop').at(0).simulate('click');
+      modalOpen(false, wrapper);
+    });
+
     it('calls callback function on close', () => {
       const spy = jest.fn();
 
@@ -144,6 +151,7 @@ describe('<Modal />', () => {
       wrapper.find('button').at(0).simulate('click');
       expect(spy).toHaveBeenCalledTimes(1);
     });
+
     it('reopens after closed', () => {
       modalOpen(true, wrapper);
       wrapper.find('button').at(0).simulate('click');
@@ -152,6 +160,7 @@ describe('<Modal />', () => {
       modalOpen(true, wrapper);
     });
   });
+
   describe('invalid keystrokes do nothing', () => {
     beforeEach(() => {
       wrapper = mount(<Modal
@@ -180,6 +189,7 @@ describe('<Modal />', () => {
       modalOpen(true, wrapper);
     });
   });
+
   describe('focus changes correctly', () => {
     let buttons;
 

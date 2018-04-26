@@ -160,7 +160,6 @@ class Modal extends React.Component {
           styles.modal,
           {
             [styles['modal-open']]: open,
-            [styles['modal-backdrop']]: open,
             [styles.show]: open,
             [styles.fade]: !open,
           },
@@ -171,7 +170,22 @@ class Modal extends React.Component {
         {...(!renderHeaderCloseButton ? { tabIndex: '-1' } : {})}
         {...(!renderHeaderCloseButton ? { ref: this.setFirstFocusableElement } : {})}
       >
-        <div className={styles['modal-dialog']}>
+        <div
+          className={classNames({ [styles['modal-backdrop']]: open })}
+          role="presentation"
+          onClick={this.close}
+        />
+        <div
+          className={classNames(
+            styles.modal,
+            styles['modal-dialog'],
+            {
+              [styles['modal-open']]: open,
+              [styles.show]: open,
+              [styles.fade]: !open,
+            },
+          )}
+        >
           <div className={styles['modal-content']}>
             <div className={styles['modal-header']}>
               <h2 className={styles['modal-title']} id={this.headerId}>{this.props.title}</h2>
