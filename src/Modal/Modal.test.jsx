@@ -1,14 +1,52 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { mount } from 'enzyme';
 
 import Modal from './index';
 import Button from '../Button';
 import Variant from '../utils/constants';
 
+class ErrorBoundary extends React.Component {
+  // Used to test Errors thrown during invalid props tests
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  componentDidCatch(error, info) {
+    // Display fallback UI
+    this.setState({ hasError: true, error, info });
+  }
+
+  render() {
+    if (this.state.hasError && this.state.error && this.state.info) {
+      // You can render any custom fallback UI
+      return (
+        <h1 className="error-occured">
+          An Error Occurred.
+        </h1>
+      );
+    }
+    return this.props.children;
+  }
+}
+ErrorBoundary.propTypes = {
+  children: PropTypes.node,
+};
+ErrorBoundary.defaultProps = {
+  children: null,
+};
+
+const ErrorWrappedModal = props => (
+  <ErrorBoundary>
+    <Modal {...props} />
+  </ErrorBoundary>
+);
+
 const modalOpen = (isOpen, wrapper) => {
-  expect(wrapper.find('.modal').hasClass('modal-open')).toEqual(isOpen);
-  expect(wrapper.find('.modal').hasClass('modal-backdrop')).toEqual(isOpen);
+  expect(wrapper.find('.modal').hasClass('d-block')).toEqual(isOpen);
+  expect(wrapper.find('.modal-backdrop').exists()).toEqual(isOpen);
   expect(wrapper.find('.modal').hasClass('show')).toEqual(isOpen);
   expect(wrapper.find('.modal').hasClass('fade')).toEqual(!isOpen);
   expect(wrapper.state('open')).toEqual(isOpen);
@@ -92,6 +130,14 @@ describe('<Modal />', () => {
   });
 
   describe('props received correctly', () => {
+    beforeEach(() => {
+      // This is a gross hack to suppress error logs in the invalid parentSelector test
+      jest.spyOn(console, 'error');
+      global.console.error.mockImplementation(() => {});
+    });
+    afterEach(() => {
+      global.console.error.mockRestore();
+    });
     it('component receives props', () => {
       wrapper = mount(<Modal title={title} body={body} onClose={() => {}} />);
 
@@ -105,6 +151,13 @@ describe('<Modal />', () => {
       modalOpen(true, wrapper);
       wrapper.setProps({ title: 'Changed modal title' });
       modalOpen(true, wrapper);
+    });
+    it('throws an error when an invalid parentSelector prop is passed', () => {
+      wrapper = mount(<ErrorWrappedModal
+        {...defaultProps}
+        parentSelector="this-selector-does-not-exist"
+      />);
+      expect(wrapper.find('.error-occured')).toHaveLength(1);
     });
   });
 

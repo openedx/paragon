@@ -7,7 +7,10 @@ jest.mock("react-dom", () => {
     render: () => null,
     unmountComponentAtNode: () => null,
     findDOMNode: () => null,
+    createPortal: () => null,
   };
 });
 
-initStoryshots();
+initStoryshots({
+  storyKindRegex: /^((?!.*?Modal).)*$/,
+});
