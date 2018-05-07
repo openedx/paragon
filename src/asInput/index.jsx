@@ -31,8 +31,8 @@ export const inputProps = {
   className: PropTypes.arrayOf(PropTypes.string),
   themes: PropTypes.arrayOf(PropTypes.string),
   inline: PropTypes.bool,
-  inputGroupPrepend: PropTypes.element,
-  inputGroupAppend: PropTypes.element,
+  inputGroupPrepend: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element]),
+  inputGroupAppend: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element]),
 };
 
 export const defaultProps = {
@@ -136,6 +136,17 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       return desc;
     }
 
+    getAddons({ addonElements, type }) {
+      if (Array.isArray(addonElements)) {
+        return addonElements.map((addon, index) =>
+          React.cloneElement(
+            addon,
+            { key: this.generateInputGroupAddonKey({ prefix: type, index }) },
+          ));
+      }
+      return addonElements;
+    }
+
     getLabel() {
       return (
         // eslint-disable-next-line jsx-a11y/label-has-for
@@ -181,6 +192,10 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       );
     }
 
+    generateInputGroupAddonKey({ prefix, index }) {
+      return `${this.state.id}-${prefix}-${index}`;
+    }
+
     renderInput(describedBy) {
       const { className } = this.props;
 
@@ -204,6 +219,22 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       );
     }
 
+    renderInputGroupAppend() {
+      return (
+        <div className={styles['input-group-append']}>
+          {this.getAddons({ type: 'append', addonElements: this.props.inputGroupAppend })}
+        </div>
+      );
+    }
+
+    renderInputGroupPrepend() {
+      return (
+        <div className={styles['input-group-prepend']}>
+          {this.getAddons({ type: 'prepend', addonElements: this.props.inputGroupPrepend })}
+        </div>
+      );
+    }
+
     render() {
       const { description, error, describedBy } = this.getDescriptions();
       return (
@@ -216,13 +247,9 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
           {labelFirst && this.getLabel()}
           {this.props.inputGroupPrepend || this.props.inputGroupAppend ? (
             <div className={styles['input-group']}>
-              <div className={styles['input-group-prepend']}>
-                {this.props.inputGroupPrepend}
-              </div>
+              {this.renderInputGroupPrepend()}
               {this.renderInput(describedBy)}
-              <div className={styles['input-group-append']}>
-                {this.props.inputGroupAppend}
-              </div>
+              {this.renderInputGroupAppend()}
             </div>
           ) : this.renderInput(describedBy)}
           {!labelFirst && this.getLabel()}

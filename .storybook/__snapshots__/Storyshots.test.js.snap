@@ -16050,7 +16050,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
           htmlFor="asInput32"
           id="label-asInput32"
         >
-          Password
+          Username
         </label>
         <div
           className="input-group"
@@ -16065,6 +16065,84 @@ exports[`Storyshots InputText with input group addons 1`] = `
             className="form-control is-invalid-nodanger"
             disabled={false}
             id="asInput32"
+            name="username"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder={undefined}
+            required={false}
+            themes={Array []}
+            type="text"
+            value="foobar"
+          />
+          <div
+            className="input-group-append"
+          >
+            <div
+              className="input-group-text"
+            >
+              <div>
+                <span
+                  aria-hidden={true}
+                  className="fa fa-check"
+                  id="checkmark"
+                />
+                <span
+                  className="sr-only"
+                >
+                  Checkmark
+                </span>
+              </div>
+            </div>
+            <button
+              className="btn btn-outline-secondary"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              type="button"
+            >
+              Go
+            </button>
+          </div>
+        </div>
+        <div
+          aria-live="polite"
+          className="invalid-feedback invalid-feedback-nodanger"
+          id="error-asInput32"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        className={
+          Array [
+            "form-group",
+          ]
+        }
+      >
+        <label
+          className={
+            Array [
+              "",
+            ]
+          }
+          htmlFor="asInput33"
+          id="label-asInput33"
+        >
+          Password
+        </label>
+        <div
+          className="input-group"
+        >
+          <div
+            className="input-group-prepend"
+          />
+          <input
+            aria-describedby="error-asInput33"
+            aria-invalid={false}
+            autoComplete="on"
+            className="form-control is-invalid-nodanger"
+            disabled={false}
+            id="asInput33"
             name="password"
             onBlur={[Function]}
             onChange={[Function]}
@@ -16098,7 +16176,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
         <div
           aria-live="polite"
           className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput32"
+          id="error-asInput33"
         >
           <span />
         </div>
@@ -25004,10 +25082,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
   >
     <li
       className="nav-item"
-      id="tab-label-tabInterface33-0"
+      id="tab-label-tabInterface34-0"
     >
       <a
-        aria-controls="tab-panel-tabInterface33-0"
+        aria-controls="tab-panel-tabInterface34-0"
         aria-selected={true}
         className="nav-link active"
         onClick={[Function]}
@@ -25019,10 +25097,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </li>
     <li
       className="nav-item"
-      id="tab-label-tabInterface33-1"
+      id="tab-label-tabInterface34-1"
     >
       <a
-        aria-controls="tab-panel-tabInterface33-1"
+        aria-controls="tab-panel-tabInterface34-1"
         aria-selected={false}
         className="nav-link"
         onClick={[Function]}
@@ -25034,10 +25112,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </li>
     <li
       className="nav-item"
-      id="tab-label-tabInterface33-2"
+      id="tab-label-tabInterface34-2"
     >
       <a
-        aria-controls="tab-panel-tabInterface33-2"
+        aria-controls="tab-panel-tabInterface34-2"
         aria-selected={false}
         className="nav-link"
         onClick={[Function]}
@@ -25053,9 +25131,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
   >
     <div
       aria-hidden={false}
-      aria-labelledby="tab-label-tabInterface33-0"
+      aria-labelledby="tab-label-tabInterface34-0"
       className="tab-pane active"
-      id="tab-panel-tabInterface33-0"
+      id="tab-panel-tabInterface34-0"
       role="tabpanel"
     >
       <div>
@@ -25064,9 +25142,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </div>
     <div
       aria-hidden={true}
-      aria-labelledby="tab-label-tabInterface33-1"
+      aria-labelledby="tab-label-tabInterface34-1"
       className="tab-pane"
-      id="tab-panel-tabInterface33-1"
+      id="tab-panel-tabInterface34-1"
       role="tabpanel"
     >
       <div>
@@ -25075,9 +25153,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </div>
     <div
       aria-hidden={true}
-      aria-labelledby="tab-label-tabInterface33-2"
+      aria-labelledby="tab-label-tabInterface34-2"
       className="tab-pane"
-      id="tab-panel-tabInterface33-2"
+      id="tab-panel-tabInterface34-2"
       role="tabpanel"
     >
       <div>
@@ -25102,8 +25180,8 @@ exports[`Storyshots Textarea label as element 1`] = `
         "",
       ]
     }
-    htmlFor="asInput37"
-    id="label-asInput37"
+    htmlFor="asInput38"
+    id="label-asInput38"
   >
     <span
       lang="en"
@@ -25112,11 +25190,11 @@ exports[`Storyshots Textarea label as element 1`] = `
     </span>
   </label>
   <textarea
-    aria-describedby="error-asInput37"
+    aria-describedby="error-asInput38"
     aria-invalid={false}
     className="form-control is-invalid-nodanger"
     disabled={false}
-    id="asInput37"
+    id="asInput38"
     name="username"
     onBlur={[Function]}
     onChange={[Function]}
@@ -25132,7 +25210,7 @@ exports[`Storyshots Textarea label as element 1`] = `
   <div
     aria-live="polite"
     className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput37"
+    id="error-asInput38"
   >
     <span />
   </div>
@@ -25153,17 +25231,17 @@ exports[`Storyshots Textarea minimal usage 1`] = `
         "",
       ]
     }
-    htmlFor="asInput34"
-    id="label-asInput34"
+    htmlFor="asInput35"
+    id="label-asInput35"
   >
     First Name
   </label>
   <textarea
-    aria-describedby="error-asInput34"
+    aria-describedby="error-asInput35"
     aria-invalid={false}
     className="form-control is-invalid-nodanger"
     disabled={false}
-    id="asInput34"
+    id="asInput35"
     name="name"
     onBlur={[Function]}
     onChange={[Function]}
@@ -25179,7 +25257,7 @@ exports[`Storyshots Textarea minimal usage 1`] = `
   <div
     aria-live="polite"
     className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput34"
+    id="error-asInput35"
   >
     <span />
   </div>
@@ -25200,17 +25278,17 @@ exports[`Storyshots Textarea scrollable 1`] = `
         "",
       ]
     }
-    htmlFor="asInput35"
-    id="label-asInput35"
+    htmlFor="asInput36"
+    id="label-asInput36"
   >
     Information
   </label>
   <textarea
-    aria-describedby="error-asInput35"
+    aria-describedby="error-asInput36"
     aria-invalid={false}
     className="form-control is-invalid-nodanger"
     disabled={false}
-    id="asInput35"
+    id="asInput36"
     name="name"
     onBlur={[Function]}
     onChange={[Function]}
@@ -25226,7 +25304,7 @@ exports[`Storyshots Textarea scrollable 1`] = `
   <div
     aria-live="polite"
     className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput35"
+    id="error-asInput36"
   >
     <span />
   </div>
@@ -25247,17 +25325,17 @@ exports[`Storyshots Textarea validation 1`] = `
         "",
       ]
     }
-    htmlFor="asInput36"
-    id="label-asInput36"
+    htmlFor="asInput37"
+    id="label-asInput37"
   >
     Username
   </label>
   <textarea
-    aria-describedby="error-asInput36 description-asInput36"
+    aria-describedby="error-asInput37 description-asInput37"
     aria-invalid={false}
     className="form-control is-invalid-nodanger"
     disabled={false}
-    id="asInput36"
+    id="asInput37"
     name="username"
     onBlur={[Function]}
     onChange={[Function]}
@@ -25273,13 +25351,13 @@ exports[`Storyshots Textarea validation 1`] = `
   <div
     aria-live="polite"
     className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput36"
+    id="error-asInput37"
   >
     <span />
   </div>
   <small
     className="form-text"
-    id="description-asInput36"
+    id="description-asInput37"
   >
     The unique name that identifies you throughout the site.
   </small>

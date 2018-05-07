@@ -399,6 +399,48 @@ describe('asInput()', () => {
         expect(input.find('.input-group-append').exists()).toEqual(true);
         expect(input.find('.input-group-append').text()).toEqual('.00');
       });
+
+      it('displays multiple inputGroupAppend elements', () => {
+        const props = {
+          ...baseProps,
+          inputGroupAppend: [
+            <div className="input-group-text">
+              {'.00'}
+            </div>,
+            <div className="input-group-text">
+              <button className="btn">Go</button>
+            </div>,
+          ],
+        };
+        const wrapper = mount(<InputTestComponent {...props} />);
+        const input = wrapper.find('.form-group');
+        expect(input.find('.input-group').exists()).toEqual(true);
+        expect(input.find('.input-group-append').exists()).toEqual(true);
+        expect(input.find('.input-group-append').children()).toHaveLength(2);
+        expect(input.find('.input-group-append').childAt(0).text()).toEqual('.00');
+        expect(input.find('.input-group-append').childAt(1).text()).toEqual('Go');
+      });
+
+      it('displays multiple inputGroupPrepend elements', () => {
+        const props = {
+          ...baseProps,
+          inputGroupPrepend: [
+            <div className="input-group-text">
+              {'$'}
+            </div>,
+            <div className="input-group-text">
+              {'0.'}
+            </div>,
+          ],
+        };
+        const wrapper = mount(<InputTestComponent {...props} />);
+        const input = wrapper.find('.form-group');
+        expect(input.find('.input-group').exists()).toEqual(true);
+        expect(input.find('.input-group-prepend').exists()).toEqual(true);
+        expect(input.find('.input-group-prepend').children()).toHaveLength(2);
+        expect(input.find('.input-group-prepend').childAt(0).text()).toEqual('$');
+        expect(input.find('.input-group-prepend').childAt(1).text()).toEqual('0.');
+      });
     });
   });
 });
