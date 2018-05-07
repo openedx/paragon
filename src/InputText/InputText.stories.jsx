@@ -245,6 +245,27 @@ storiesOf('InputText', module)
         )}
       />
       <InputText
+        name="username"
+        label="Username"
+        value="foobar"
+        inputGroupAppend={[
+          <div className="input-group-text">
+            <Icon
+              id="checkmark"
+              className={[
+                FontAwesomeStyles.fa,
+                FontAwesomeStyles['fa-check'],
+              ]}
+              screenReaderText="Checkmark"
+            />
+          </div>,
+          <Button
+            label="Go"
+            buttonType="outline-secondary"
+          />,
+        ]}
+      />
+      <InputText
         name="password"
         label="Password"
         value="secret"
