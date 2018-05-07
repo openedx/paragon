@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 
 import Fieldset from './index';
 import newId from '../utils/newId';
-import ValidationMessage from '../ValidationMessage';
+import InvalidMessage from '../InvalidMessage';
 import Variant from '../utils/constants';
 
 const dangerVariant = {
@@ -50,7 +50,7 @@ describe('Fieldset', () => {
     const legendElem = fieldset.find('legend');
     expect(legendElem.text()).toEqual(legend);
     expect(fieldset.text()).toEqual(legend + children);
-    const feedback = wrapper.find(ValidationMessage);
+    const feedback = wrapper.find(InvalidMessage);
     expect(feedback.prop('id')).toEqual(`error-${id}`);
   });
   it('renders with auto-generated id if not specified', () => {
@@ -59,17 +59,17 @@ describe('Fieldset', () => {
       id: undefined,
     };
     wrapper = mount(<Fieldset {...props} />);
-    const feedback = wrapper.find(ValidationMessage);
+    const feedback = wrapper.find(InvalidMessage);
     expect(feedback.prop('id')).toEqual('error-fieldset1');
   });
   it('renders invalidMessage when isValid is false', () => {
     wrapper.setProps({ isValid: false });
-    const feedback = wrapper.find(ValidationMessage);
+    const feedback = wrapper.find(InvalidMessage);
     expect(feedback.prop('invalidMessage')).toEqual(invalidMessage);
   });
   it('renders with danger variant when isValid is false and variant is DANGER', () => {
     wrapper.setProps({ isValid: false, variant: dangerVariant });
-    const feedback = wrapper.find(ValidationMessage);
+    const feedback = wrapper.find(InvalidMessage);
     expect(feedback.hasClass('invalid-feedback-nodanger')).toEqual(false);
     expect(feedback.prop('variantIconDescription')).toEqual(variantIconDescription);
     expect(feedback.prop('invalidMessage')).toEqual(invalidMessage);
@@ -78,27 +78,27 @@ describe('Fieldset', () => {
   it('receives new id when a valid one is passed to props', () => {
     const nextId = 'new-id';
     let fieldset = wrapper.find('fieldset.form-control');
-    let feedback = wrapper.find(ValidationMessage);
+    let feedback = wrapper.find(InvalidMessage);
     expect(fieldset.prop('aria-describedby')).toEqual(`error-${id}`);
     expect(feedback.prop('id')).toEqual(`error-${id}`);
 
     wrapper.setProps({ id: nextId });
     fieldset = wrapper.find('fieldset.form-control');
-    feedback = wrapper.find(ValidationMessage);
+    feedback = wrapper.find(InvalidMessage);
     expect(fieldset.prop('aria-describedby')).toEqual(`error-${nextId}`);
     expect(feedback.prop('id')).toEqual(`error-${nextId}`);
   });
   it('auto-generates new id when an invalid one is passed to props', () => {
     const nextId = '';
     let fieldset = wrapper.find('fieldset.form-control');
-    let feedback = wrapper.find(ValidationMessage);
+    let feedback = wrapper.find(InvalidMessage);
     expect(fieldset.prop('aria-describedby')).toEqual(`error-${id}`);
     expect(feedback.prop('id')).toEqual(`error-${id}`);
 
     wrapper.setProps({ id: nextId });
     expect(newId).toHaveBeenCalledWith('fieldset');
     fieldset = wrapper.find('fieldset.form-control');
-    feedback = wrapper.find(ValidationMessage);
+    feedback = wrapper.find(InvalidMessage);
     expect(fieldset.prop('aria-describedby')).toEqual(`error-${mockedNextId}`);
     expect(feedback.prop('id')).toEqual(`error-${mockedNextId}`);
   });

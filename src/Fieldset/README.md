@@ -11,7 +11,7 @@ Wraps many inputs in a border and allows validating them as one form control.
 `className` specifies Bootstrap class names to apply to the input component. The default is an empty array.
 
 ### `id` (string; optional)
-`id` specifies a unique identifier for the fieldset.  It will be used to create an id for the ValidationMessage that is referenced by an `aria-describedby` on the `fieldset`. The default is an auto-generated id of the form `fieldsetN` where N is an auto-incremented integer.
+`id` specifies a unique identifier for the fieldset.  It will be used to create an id for the InvalidMessage that is referenced by an `aria-describedby` on the `fieldset`. The default is an auto-generated id of the form `fieldsetN` where N is an auto-incremented integer.
 
 ### `invalidMessage` (string or element; optional)
 `invalidMessage` specifies the message to display immediately below the fieldset outside the border when `isValid` is false. The default is an empty string.

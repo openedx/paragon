@@ -151,22 +151,22 @@ describe('asInput()', () => {
         expect(wrapper.state('isValid')).toEqual(false); // resetting prop changes nothing
       });
 
-      it('ignores validationMessage prop if validator is defined', () => {
+      it('ignores invalidMessage prop if validator is defined', () => {
         const spy = jest.fn();
-        spy.mockReturnValue({ validationMessage: 'Spy' });
+        spy.mockReturnValue({ invalidMessage: 'Spy' });
         const props = {
           ...baseProps,
           validator: spy,
-          validationMessage: 'Prop',
+          invalidMessage: 'Prop',
         };
         const wrapper = mount(<InputTestComponent {...props} />);
-        expect(wrapper.state('validationMessage')).toEqual(''); // default is '', ignoring our prop
+        expect(wrapper.state('invalidMessage')).toEqual(''); // default is '', ignoring our prop
 
         wrapper.find('input').simulate('blur'); // trigger validation
-        expect(wrapper.state('validationMessage')).toEqual('Spy'); // validator set Spy, ignoring our prop
+        expect(wrapper.state('invalidMessage')).toEqual('Spy'); // validator set Spy, ignoring our prop
 
-        wrapper.setProps({ validationMessage: 'Reset' });
-        expect(wrapper.state('validationMessage')).toEqual('Spy'); // resetting prop changes nothing
+        wrapper.setProps({ invalidMessage: 'Reset' });
+        expect(wrapper.state('invalidMessage')).toEqual('Spy'); // resetting prop changes nothing
       });
 
       it('ignores dangerIconDescription prop if validator is defined', () => {
@@ -189,64 +189,64 @@ describe('asInput()', () => {
 
       it('uses props if validator becomes undefined', () => {
         const spy = jest.fn();
-        spy.mockReturnValue({ validationMessage: 'Spy' });
+        spy.mockReturnValue({ invalidMessage: 'Spy' });
         const props = {
           ...baseProps,
           validator: spy,
           isValid: false,
-          validationMessage: 'Prop',
+          invalidMessage: 'Prop',
           dangerIconDescription: 'Prop',
         };
         const wrapper = mount(<InputTestComponent {...props} />);
-        expect(wrapper.state('validationMessage')).toEqual('');
+        expect(wrapper.state('invalidMessage')).toEqual('');
         expect(wrapper.state('dangerIconDescription')).toEqual('');
 
         wrapper.setProps({ validator: null });
-        expect(wrapper.state('validationMessage')).toEqual('Prop');
+        expect(wrapper.state('invalidMessage')).toEqual('Prop');
         expect(wrapper.state('dangerIconDescription')).toEqual('Prop');
       });
 
-      it('uses validationMessage as element type', () => {
-        const testMessage = (<span lang="en">Validation Message</span>);
+      it('uses invalidMessage as element type', () => {
+        const testMessage = (<span lang="en">Invalid Message</span>);
         const props = {
           ...baseProps,
           isValid: false,
-          validationMessage: testMessage,
+          invalidMessage: testMessage,
         };
         const wrapper = mount(<InputTestComponent {...props} />);
-        expect(wrapper.state('validationMessage')).toEqual(testMessage);
+        expect(wrapper.state('invalidMessage')).toEqual(testMessage);
       });
 
-      it('uses isValid to display validation message', () => {
+      it('uses isValid to display invalid message', () => {
         const props = {
           ...baseProps,
           isValid: false,
-          validationMessage: 'Nope!',
+          invalidMessage: 'Nope!',
         };
         const wrapper = mount(<InputTestComponent {...props} />);
         const err = wrapper.find('.invalid-feedback');
         expect(err.text()).toEqual('Nope!');
 
-        wrapper.setProps({ validationMessage: 'New Message' });
+        wrapper.setProps({ invalidMessage: 'New Message' });
         expect(err.text()).toEqual('New Message');
 
         wrapper.setProps({ isValid: true });
         expect(err.text()).toEqual('');
       });
 
-      it('uses isValid to display validation message and danger icon with danger theme', () => {
+      it('uses isValid to display invalid message and danger icon with danger theme', () => {
         const props = {
           ...baseProps,
           themes: ['danger'],
           isValid: false,
-          validationMessage: 'Nope!',
+          invalidMessage: 'Nope!',
           dangerIconDescription: 'Error ',
         };
         const wrapper = mount(<InputTestComponent {...props} />);
         const err = wrapper.find('.invalid-feedback');
         expect(err.text()).toEqual('Error Nope!');
 
-        wrapper.setProps({ validationMessage: 'New Message' });
+        wrapper.setProps({ invalidMessage: 'New Message' });
         expect(err.text()).toEqual('Error New Message');
 
         wrapper.setProps({ dangerIconDescription: 'Danger, Will Robinson! ' });
@@ -279,7 +279,7 @@ describe('asInput()', () => {
           spy = jest.fn();
           validationResult = {
             isValid: false,
-            validationMessage: 'Invalid!!1',
+            invalidMessage: 'Invalid!!1',
           };
           spy.mockReturnValueOnce(validationResult);
           const props = {
@@ -294,7 +294,7 @@ describe('asInput()', () => {
           expect(spy).toHaveBeenCalledTimes(1);
           const err = wrapper.find('.invalid-feedback');
           expect(err.exists()).toEqual(true);
-          expect(err.text()).toEqual(validationResult.validationMessage);
+          expect(err.text()).toEqual(validationResult.invalidMessage);
         });
 
         it('with danger theme', () => {
@@ -312,7 +312,7 @@ describe('asInput()', () => {
           expect(spy).toHaveBeenCalledTimes(1);
           expect(err.exists()).toEqual(true);
           expect(err.text()).toEqual(validationResult.dangerIconDescription +
-                                     validationResult.validationMessage);
+                                     validationResult.invalidMessage);
 
           const dangerIcon = wrapper.find('.fa-exclamation-circle');
           expect(dangerIcon.exists()).toEqual(true);

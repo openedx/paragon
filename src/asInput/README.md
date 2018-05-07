@@ -11,7 +11,7 @@ Handles all necessary props that are related to Input typed components.
 `className` specifies Bootstrap class names to apply to the input component. The default is an empty array.
 
 ### `dangerIconDescription` (string or element; optional)
-`dangerIconDescription` can be used to provide a screen-reader description of the "exclamation" icon used in the validation message displayed when `isValid` is false and `themes` includes "danger". Only used if `validator` is not specified. The default is an empty string.
+`dangerIconDescription` can be used to provide a screen-reader description of the "exclamation" icon used in the invalid message displayed when `isValid` is false and `themes` includes "danger". Only used if `validator` is not specified. The default is an empty string.
 
 ### `description` (string or element; optional)
 `description` can be used to provide a longer description of the component.  It will show up below the input component specified. The default is an empty string.
@@ -59,7 +59,7 @@ Handles all necessary props that are related to Input typed components.
     if (value.length < 3) {
       feedback = {
         isValid: false,
-        validationMessage: 'Username must be at least 3 characters in length.',
+        invalidMessage: 'Username must be at least 3 characters in length.',
         dangerIconDescription: 'Error',
       };
     }
@@ -72,8 +72,8 @@ Handles all necessary props that are related to Input typed components.
 ### `isValid` (boolean; optional)
 `isValid` specifies whether the current input has validated correctly. Consider updating this from an `onBlur` handler. Only used if `validator` is not specified. The default is true.
 
-### `validationMessage` (string or element; optional)
-`validationMessage` specifies the message to display when `isValid` is false.  Only used if `validator` is not specified. The default is an empty string.
+### `invalidMessage` (string or element; optional)
+`invalidMessage` specifies the message to display when `isValid` is false.  Only used if `validator` is not specified. The default is an empty string.
 
 ### `value` (string or number; optional)
 `value` specifies the value for the value property within the component. The default is an empty string.

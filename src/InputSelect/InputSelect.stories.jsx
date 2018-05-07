@@ -84,7 +84,7 @@ storiesOf('InputSelect', module)
         if (!value) {
           feedback = {
             isValid: false,
-            validationMessage: 'Please make a selection.',
+            invalidMessage: 'Please make a selection.',
           };
         }
         return feedback;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import ValidationMessage from './index';
+import InvalidMessage from './index';
 import Variant from '../utils/constants';
 
 const dangerVariant = {
@@ -23,14 +23,14 @@ const baseProps = {
   variantIconDescription,
 };
 
-describe('ValidationMessage', () => {
+describe('InvalidMessage', () => {
   let wrapper;
 
   beforeEach(() => {
     const props = {
       ...baseProps,
     };
-    wrapper = mount(<ValidationMessage {...props} />);
+    wrapper = mount(<InvalidMessage {...props} />);
   });
   it('renders', () => {
     const feedback = wrapper.find('.invalid-feedback');

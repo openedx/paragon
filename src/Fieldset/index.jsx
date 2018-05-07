@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import newId from '../utils/newId';
 import styles from './Fieldset.scss';
-import ValidationMessage from '../ValidationMessage/index';
+import InvalidMessage from '../InvalidMessage/index';
 import Variant from '../utils/constants';
 
 const inputProps = {
@@ -87,7 +87,7 @@ class Fieldset extends React.Component {
           <legend className={styles['p-1']}>{legend}</legend>
           {children}
         </fieldset>
-        <ValidationMessage
+        <InvalidMessage
           id={errorId}
           isValid={isValid}
           invalidMessage={invalidMessage}

@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 import newId from '../utils/newId';
 import styles from './asInput.scss';
-import ValidationMessage from '../ValidationMessage/index';
+import InvalidMessage from '../InvalidMessage';
 import Variant from '../utils/constants';
 
 export const getDisplayName = WrappedComponent =>
@@ -27,7 +27,7 @@ export const inputProps = {
   onBlur: PropTypes.func,
   validator: PropTypes.func,
   isValid: PropTypes.bool,
-  validationMessage: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  invalidMessage: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   className: PropTypes.arrayOf(PropTypes.string),
   themes: PropTypes.arrayOf(PropTypes.string),
   inline: PropTypes.bool,
@@ -46,7 +46,7 @@ export const defaultProps = {
   required: false,
   validator: undefined,
   isValid: true,
-  validationMessage: '',
+  invalidMessage: '',
   className: [],
   themes: [],
   inline: false,
@@ -64,13 +64,13 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
 
       const id = this.props.id ? this.props.id : newId('asInput');
       const isValid = this.props.validator ? true : this.props.isValid;
-      const validationMessage = this.props.validator ? '' : this.props.validationMessage;
+      const invalidMessage = this.props.validator ? '' : this.props.invalidMessage;
       const dangerIconDescription = this.props.validator ? '' : this.props.dangerIconDescription;
       this.state = {
         id,
         value: this.props.value,
         isValid,
-        validationMessage,
+        invalidMessage,
         dangerIconDescription,
         describedBy: [],
         errorId: `error-${id}`,
@@ -86,8 +86,8 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       if (nextProps.isValid !== this.props.isValid && !nextProps.validator) {
         updatedState.isValid = nextProps.isValid;
       }
-      if (nextProps.validationMessage !== this.props.validationMessage && !nextProps.validator) {
-        updatedState.validationMessage = nextProps.validationMessage;
+      if (nextProps.invalidMessage !== this.props.invalidMessage && !nextProps.validator) {
+        updatedState.invalidMessage = nextProps.invalidMessage;
       }
       if (nextProps.dangerIconDescription !== this.props.dangerIconDescription &&
           !nextProps.validator) {
@@ -96,7 +96,7 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       // If validator goes away, revert to props
       if (nextProps.validator !== this.props.validator && !nextProps.validator) {
         updatedState.isValid = nextProps.isValid;
-        updatedState.validationMessage = nextProps.validationMessage;
+        updatedState.invalidMessage = nextProps.invalidMessage;
         updatedState.dangerIconDescription = nextProps.dangerIconDescription;
       }
       if (Object.keys(updatedState).length > 0) {
@@ -112,10 +112,10 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
 
       // TODO: refactor this component to use Variants instead of the themes array.
       desc.error = (
-        <ValidationMessage
+        <InvalidMessage
           id={errorId}
           isValid={this.state.isValid}
-          invalidMessage={this.state.validationMessage}
+          invalidMessage={this.state.invalidMessage}
           variant={{
             status: this.hasDangerTheme() ? Variant.status.DANGER : Variant.status.INFO,
           }}

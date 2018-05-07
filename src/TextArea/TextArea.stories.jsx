@@ -39,7 +39,7 @@ storiesOf('Textarea', module)
         if (value.length < 3) {
           feedback = {
             isValid: false,
-            validationMessage: 'Username must be at least 3 characters in length.',
+            invalidMessage: 'Username must be at least 3 characters in length.',
           };
         }
         return feedback;

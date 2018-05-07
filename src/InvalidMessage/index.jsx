@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
 
-import styles from './ValidationMessage.scss';
+import styles from './InvalidMessage.scss';
 import Variant from '../utils/constants';
 
 const inputProps = {
@@ -28,7 +28,7 @@ const defaultProps = {
   variantIconDescription: '',
 };
 
-class ValidationMessage extends React.Component {
+class InvalidMessage extends React.Component {
   getVariantFeedbackClassName() {
     const { variant } = this.props;
     let className;
@@ -108,7 +108,7 @@ class ValidationMessage extends React.Component {
   }
 }
 
-ValidationMessage.propTypes = inputProps;
-ValidationMessage.defaultProps = defaultProps;
+InvalidMessage.propTypes = inputProps;
+InvalidMessage.defaultProps = defaultProps;
 
-export default ValidationMessage;
+export default InvalidMessage;
