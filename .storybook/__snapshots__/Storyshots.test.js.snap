@@ -20736,41 +20736,25 @@ exports[`Storyshots MailtoLink with subject and body 1`] = `
 
 exports[`Storyshots Paragon Welcome 1`] = `
 <div
-  className="css-jail"
-  style={
-    Object {
-      "fontFamily": "sans-serif",
-    }
-  }
+  className="titlediv"
 >
-  <div
-    style={
-      Object {
-        "fontFamily": "\\"Helvetica Neue\\", Helvetica, \\"Segoe UI\\", Arial, freesans, sans-serif",
-        "lineHeight": 1.4,
-        "margin": 15,
-        "maxWidth": 600,
-      }
-    }
-  >
-    <h1>
-      💎 Paragon
-    </h1>
-    <p>
-      This is a documentation and demo space for the Paragon accessible UI component library. Better docs coming soon, but for now, check out our existing components via the links to the left-hand side.
-    </p>
-    <p>
-      Documentation generated with 
-      <a
-        href="https://github.com/kadirahq/react-storybook"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        React Storybook
-      </a>
-      .
-    </p>
-  </div>
+  <h1>
+    💎 Paragon
+  </h1>
+  <p>
+    This is a documentation and demo space for the Paragon accessible UI component library. Better docs coming soon, but for now, check out our existing components via the links to the left-hand side.
+  </p>
+  <p>
+    Documentation generated with 
+    <a
+      href="https://github.com/kadirahq/react-storybook"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      React Storybook
+    </a>
+    .
+  </p>
 </div>
 `;
 
