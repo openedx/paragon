@@ -24,6 +24,7 @@ export const inputProps = {
   disabled: PropTypes.bool,
   required: PropTypes.bool,
   onChange: PropTypes.func,
+  onKeyPress: PropTypes.func,
   onBlur: PropTypes.func,
   validator: PropTypes.func,
   isValid: PropTypes.bool,
@@ -38,6 +39,7 @@ export const inputProps = {
 export const defaultProps = {
   onChange: () => {},
   onBlur: () => {},
+  onKeyPress: () => {},
   id: undefined,
   value: '',
   dangerIconDescription: '',
@@ -60,6 +62,7 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       super(props);
       this.handleChange = this.handleChange.bind(this);
       this.handleBlur = this.handleBlur.bind(this);
+      this.handleKeyPress = this.handleKeyPress.bind(this);
       this.renderInput = this.renderInput.bind(this);
 
       const id = this.props.id ? this.props.id : newId('asInput');
@@ -153,9 +156,9 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
         <label
           id={`label-${this.state.id}`}
           htmlFor={this.state.id}
-          className={[classNames({
+          className={classNames({
             [styles['form-check-label']]: this.isGroupedInput(),
-          })]}
+          })}
         >
           {this.props.label}
         </label>
@@ -192,6 +195,10 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       );
     }
 
+    handleKeyPress(event) {
+      this.props.onKeyPress(event, this.props.name);
+    }
+
     generateInputGroupAddonKey({ prefix, index }) {
       return `${this.state.id}-${prefix}-${index}`;
     }
@@ -215,6 +222,7 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
           describedBy={describedBy}
           onChange={this.handleChange}
           onBlur={this.handleBlur}
+          onKeyPress={this.handleKeyPress}
         />
       );
     }
@@ -238,15 +246,15 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
     render() {
       const { description, error, describedBy } = this.getDescriptions();
       return (
-        <div className={[classNames({
-            [styles['form-group']]: !this.isGroupedInput(),
-            [styles['form-inline']]: !this.isGroupedInput() && this.props.inline,
-            [styles['form-check']]: this.isGroupedInput(),
-          })]}
+        <div className={classNames({
+          [styles['form-group']]: !this.isGroupedInput(),
+          [styles['form-inline']]: !this.isGroupedInput() && this.props.inline,
+          [styles['form-check']]: this.isGroupedInput(),
+        })}
         >
           {labelFirst && this.getLabel()}
           {this.props.inputGroupPrepend || this.props.inputGroupAppend ? (
-            <div className={styles['input-group']}>
+            <div className={classNames(styles['input-group'])}>
               {this.renderInputGroupPrepend()}
               {this.renderInput(describedBy)}
               {this.renderInputGroupAppend()}

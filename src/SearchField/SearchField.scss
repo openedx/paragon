@@ -1,0 +1,77 @@
+@import "~bootstrap/scss/_variables";
+@import "~bootstrap/scss/utilities/_borders";
+@import "~bootstrap/scss/utilities/_spacing";
+@import "~bootstrap/scss/_buttons";
+
+$search-field-clear-btn-width: 30px;
+$search-field-border-radius: 30px;
+
+.search-field {
+    transition: $input-transition;
+    border-radius: $search-field-border-radius;
+    box-shadow: $input-box-shadow;
+
+    .form-group {
+        margin-bottom: 0;
+    }
+
+    .input-group {
+        flex: 1 1 0;
+    }
+
+    label {
+        margin: 0;
+        padding-left: 20px;
+        padding-right: 10px;
+    }
+    
+    button:last-child {
+        border-radius: $search-field-border-radius;
+    }
+}
+
+.search-field__focused {
+    border-color: $blue !important;
+    box-shadow: $input-focus-box-shadow;
+}
+
+.search-field__input {
+    background: none;
+    border: 0;
+    box-shadow: none !important;
+    padding-left: 0;
+    padding-right: 0;
+
+    &:focus {
+        background: none;
+    }
+}
+    
+.search-field__no-clear-btn {
+    padding-right: ($search-field-clear-btn-width + 1px + $border-width * 2);
+}
+
+.search-field__search-btn {
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0;
+    transition: border-color 0.15s ease-in-out;
+    padding: 10px 15px 10px 12px;
+    color: $gray-600;
+    background: none;
+    margin-left: 0;
+    
+    &:not(:disabled):hover,
+    &:not(:disabled):focus {
+        background: #F2F8FB;
+        color: $blue;
+    }
+}
+
+.search-field__clear-btn {
+    width: $search-field-clear-btn-width;
+    justify-content: center;
+    color: $gray-600;
+    border: 0;
+    background: none;
+}
