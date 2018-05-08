@@ -25,10 +25,10 @@ Handles all necessary props that are related to Input typed components.
 ### `inline` (boolean; optional)
 `inline` specifies if the form-group will be displayed inline (label and input elements on the same line). The default is false.
 
-### `inputGroupAppend` (element, element array, optional)
+### `inputGroupAppend` (element or element array; optional)
 `inputGroupAppend` specifies the element(s) to display inline to the right of the input. See [the Bootstrap docs](https://getbootstrap.com/docs/4.0/components/input-group/) for more info on input groups. The default is `undefined`.
 
-### `inputGroupPrepend` (element, element array, optional)
+### `inputGroupPrepend` (element or element array; optional)
 `inputGroupPrepend` specifies the element(s) to display inline to the left of the input. See [the Bootstrap docs](https://getbootstrap.com/docs/4.0/components/input-group/) for more info on input groups. The default is `undefined`.
 
 ### `name` (string; required)

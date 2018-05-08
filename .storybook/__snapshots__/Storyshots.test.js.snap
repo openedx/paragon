@@ -697,11 +697,7 @@ exports[`Storyshots CheckBox basic usage 1`] = `
         }
       >
         <div
-          className={
-            Array [
-              "form-check",
-            ]
-          }
+          className="form-check"
         >
           <input
             aria-checked={false}
@@ -718,11 +714,7 @@ exports[`Storyshots CheckBox basic usage 1`] = `
             type="checkbox"
           />
           <label
-            className={
-              Array [
-                "form-check-label",
-              ]
-            }
+            className="form-check-label"
             htmlFor="asInput2"
             id="label-asInput2"
           >
@@ -1324,6 +1316,43 @@ exports[`Storyshots CheckBox basic usage 1`] = `
                       <td
                         className="css-1ygfcef"
                       >
+                        onKeyPress
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onKeyPress()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
                         onBlur
                       </td>
                       <td
@@ -1663,11 +1692,7 @@ exports[`Storyshots CheckBox call a function 1`] = `
         }
       >
         <div
-          className={
-            Array [
-              "form-check",
-            ]
-          }
+          className="form-check"
         >
           <input
             aria-checked={false}
@@ -1684,11 +1709,7 @@ exports[`Storyshots CheckBox call a function 1`] = `
             type="checkbox"
           />
           <label
-            className={
-              Array [
-                "form-check-label",
-              ]
-            }
+            className="form-check-label"
             htmlFor="asInput5"
             id="label-asInput5"
           >
@@ -2318,6 +2339,43 @@ exports[`Storyshots CheckBox call a function 1`] = `
                       <td
                         className="css-1ygfcef"
                       >
+                        onKeyPress
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onKeyPress()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
                         onBlur
                       </td>
                       <td
@@ -2667,11 +2725,7 @@ exports[`Storyshots CheckBox controlled 1`] = `
             Click me to toggle the check box!
           </button>
           <div
-            className={
-              Array [
-                "form-check",
-              ]
-            }
+            className="form-check"
           >
             <input
               aria-checked={false}
@@ -2688,11 +2742,7 @@ exports[`Storyshots CheckBox controlled 1`] = `
               type="checkbox"
             />
             <label
-              className={
-                Array [
-                  "form-check-label",
-                ]
-              }
+              className="form-check-label"
               htmlFor="asInput6"
               id="label-asInput6"
             >
@@ -2965,11 +3015,7 @@ exports[`Storyshots CheckBox default checked 1`] = `
         }
       >
         <div
-          className={
-            Array [
-              "form-check",
-            ]
-          }
+          className="form-check"
         >
           <input
             aria-checked={true}
@@ -2986,11 +3032,7 @@ exports[`Storyshots CheckBox default checked 1`] = `
             type="checkbox"
           />
           <label
-            className={
-              Array [
-                "form-check-label",
-              ]
-            }
+            className="form-check-label"
             htmlFor="asInput4"
             id="label-asInput4"
           >
@@ -3600,6 +3642,43 @@ exports[`Storyshots CheckBox default checked 1`] = `
                       <td
                         className="css-1ygfcef"
                       >
+                        onKeyPress
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onKeyPress()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
                         onBlur
                       </td>
                       <td
@@ -3939,11 +4018,7 @@ exports[`Storyshots CheckBox disabled 1`] = `
         }
       >
         <div
-          className={
-            Array [
-              "form-check",
-            ]
-          }
+          className="form-check"
         >
           <input
             aria-checked={false}
@@ -3960,11 +4035,7 @@ exports[`Storyshots CheckBox disabled 1`] = `
             type="checkbox"
           />
           <label
-            className={
-              Array [
-                "form-check-label",
-              ]
-            }
+            className="form-check-label"
             htmlFor="asInput3"
             id="label-asInput3"
           >
@@ -4574,6 +4645,43 @@ exports[`Storyshots CheckBox disabled 1`] = `
                       <td
                         className="css-1ygfcef"
                       >
+                        onKeyPress
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onKeyPress()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
                         onBlur
                       </td>
                       <td
@@ -4885,11 +4993,7 @@ exports[`Storyshots CheckBoxGroup basic usage 1`] = `
   className="form-group"
 >
   <div
-    className={
-      Array [
-        "form-check",
-      ]
-    }
+    className="form-check"
   >
     <input
       aria-checked={false}
@@ -4906,11 +5010,7 @@ exports[`Storyshots CheckBoxGroup basic usage 1`] = `
       type="checkbox"
     />
     <label
-      className={
-        Array [
-          "form-check-label",
-        ]
-      }
+      className="form-check-label"
       htmlFor="checkbox1"
       id="label-checkbox1"
     >
@@ -4925,11 +5025,7 @@ exports[`Storyshots CheckBoxGroup basic usage 1`] = `
     </div>
   </div>
   <div
-    className={
-      Array [
-        "form-check",
-      ]
-    }
+    className="form-check"
   >
     <input
       aria-checked={false}
@@ -4946,11 +5042,7 @@ exports[`Storyshots CheckBoxGroup basic usage 1`] = `
       type="checkbox"
     />
     <label
-      className={
-        Array [
-          "form-check-label",
-        ]
-      }
+      className="form-check-label"
       htmlFor="checkbox2"
       id="label-checkbox2"
     >
@@ -4965,11 +5057,7 @@ exports[`Storyshots CheckBoxGroup basic usage 1`] = `
     </div>
   </div>
   <div
-    className={
-      Array [
-        "form-check",
-      ]
-    }
+    className="form-check"
   >
     <input
       aria-checked={false}
@@ -4986,11 +5074,7 @@ exports[`Storyshots CheckBoxGroup basic usage 1`] = `
       type="checkbox"
     />
     <label
-      className={
-        Array [
-          "form-check-label",
-        ]
-      }
+      className="form-check-label"
       htmlFor="checkbox3"
       id="label-checkbox3"
     >
@@ -5711,18 +5795,10 @@ exports[`Storyshots Fieldset basic usage 1`] = `
                 Name
               </legend>
               <div
-                className={
-                  Array [
-                    "form-group",
-                  ]
-                }
+                className="form-group"
               >
                 <label
-                  className={
-                    Array [
-                      "",
-                    ]
-                  }
+                  className=""
                   htmlFor="asInput8"
                   id="label-asInput8"
                 >
@@ -5738,6 +5814,7 @@ exports[`Storyshots Fieldset basic usage 1`] = `
                   name="firstName"
                   onBlur={[Function]}
                   onChange={[Function]}
+                  onKeyPress={[Function]}
                   placeholder={undefined}
                   required={false}
                   themes={Array []}
@@ -5753,18 +5830,10 @@ exports[`Storyshots Fieldset basic usage 1`] = `
                 </div>
               </div>
               <div
-                className={
-                  Array [
-                    "form-group",
-                  ]
-                }
+                className="form-group"
               >
                 <label
-                  className={
-                    Array [
-                      "",
-                    ]
-                  }
+                  className=""
                   htmlFor="asInput9"
                   id="label-asInput9"
                 >
@@ -5780,6 +5849,7 @@ exports[`Storyshots Fieldset basic usage 1`] = `
                   name="lastName"
                   onBlur={[Function]}
                   onChange={[Function]}
+                  onKeyPress={[Function]}
                   placeholder={undefined}
                   required={false}
                   themes={Array []}
@@ -6959,6 +7029,43 @@ exports[`Storyshots Fieldset basic usage 1`] = `
                       <td
                         className="css-1ygfcef"
                       >
+                        onKeyPress
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onKeyPress()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
                         onBlur
                       </td>
                       <td
@@ -7313,18 +7420,10 @@ exports[`Storyshots Fieldset client-side validation of fieldset 1`] = `
                 Name
               </legend>
               <div
-                className={
-                  Array [
-                    "form-group",
-                  ]
-                }
+                className="form-group"
               >
                 <label
-                  className={
-                    Array [
-                      "",
-                    ]
-                  }
+                  className=""
                   htmlFor="asInput17"
                   id="label-asInput17"
                 >
@@ -7340,6 +7439,7 @@ exports[`Storyshots Fieldset client-side validation of fieldset 1`] = `
                   name="firstName"
                   onBlur={[Function]}
                   onChange={[Function]}
+                  onKeyPress={[Function]}
                   placeholder={undefined}
                   required={false}
                   themes={Array []}
@@ -7355,18 +7455,10 @@ exports[`Storyshots Fieldset client-side validation of fieldset 1`] = `
                 </div>
               </div>
               <div
-                className={
-                  Array [
-                    "form-group",
-                  ]
-                }
+                className="form-group"
               >
                 <label
-                  className={
-                    Array [
-                      "",
-                    ]
-                  }
+                  className=""
                   htmlFor="asInput18"
                   id="label-asInput18"
                 >
@@ -7382,6 +7474,7 @@ exports[`Storyshots Fieldset client-side validation of fieldset 1`] = `
                   name="lastName"
                   onBlur={[Function]}
                   onChange={[Function]}
+                  onKeyPress={[Function]}
                   placeholder={undefined}
                   required={false}
                   themes={Array []}
@@ -7682,18 +7775,10 @@ exports[`Storyshots Fieldset invalid 1`] = `
                 Name
               </legend>
               <div
-                className={
-                  Array [
-                    "form-group",
-                  ]
-                }
+                className="form-group"
               >
                 <label
-                  className={
-                    Array [
-                      "",
-                    ]
-                  }
+                  className=""
                   htmlFor="asInput11"
                   id="label-asInput11"
                 >
@@ -7709,6 +7794,7 @@ exports[`Storyshots Fieldset invalid 1`] = `
                   name="firstName"
                   onBlur={[Function]}
                   onChange={[Function]}
+                  onKeyPress={[Function]}
                   placeholder={undefined}
                   required={false}
                   themes={Array []}
@@ -7724,18 +7810,10 @@ exports[`Storyshots Fieldset invalid 1`] = `
                 </div>
               </div>
               <div
-                className={
-                  Array [
-                    "form-group",
-                  ]
-                }
+                className="form-group"
               >
                 <label
-                  className={
-                    Array [
-                      "",
-                    ]
-                  }
+                  className=""
                   htmlFor="asInput12"
                   id="label-asInput12"
                 >
@@ -7751,6 +7829,7 @@ exports[`Storyshots Fieldset invalid 1`] = `
                   name="lastName"
                   onBlur={[Function]}
                   onChange={[Function]}
+                  onKeyPress={[Function]}
                   placeholder={undefined}
                   required={false}
                   themes={Array []}
@@ -8985,6 +9064,43 @@ exports[`Storyshots Fieldset invalid 1`] = `
                       <td
                         className="css-1ygfcef"
                       >
+                        onKeyPress
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onKeyPress()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
                         onBlur
                       </td>
                       <td
@@ -9337,18 +9453,10 @@ exports[`Storyshots Fieldset invalid with danger theme 1`] = `
                 Name
               </legend>
               <div
-                className={
-                  Array [
-                    "form-group",
-                  ]
-                }
+                className="form-group"
               >
                 <label
-                  className={
-                    Array [
-                      "",
-                    ]
-                  }
+                  className=""
                   htmlFor="asInput14"
                   id="label-asInput14"
                 >
@@ -9364,6 +9472,7 @@ exports[`Storyshots Fieldset invalid with danger theme 1`] = `
                   name="firstName"
                   onBlur={[Function]}
                   onChange={[Function]}
+                  onKeyPress={[Function]}
                   placeholder={undefined}
                   required={false}
                   themes={Array []}
@@ -9379,18 +9488,10 @@ exports[`Storyshots Fieldset invalid with danger theme 1`] = `
                 </div>
               </div>
               <div
-                className={
-                  Array [
-                    "form-group",
-                  ]
-                }
+                className="form-group"
               >
                 <label
-                  className={
-                    Array [
-                      "",
-                    ]
-                  }
+                  className=""
                   htmlFor="asInput15"
                   id="label-asInput15"
                 >
@@ -9406,6 +9507,7 @@ exports[`Storyshots Fieldset invalid with danger theme 1`] = `
                   name="lastName"
                   onBlur={[Function]}
                   onChange={[Function]}
+                  onKeyPress={[Function]}
                   placeholder={undefined}
                   required={false}
                   themes={Array []}
@@ -10730,6 +10832,43 @@ exports[`Storyshots Fieldset invalid with danger theme 1`] = `
                             }
                           >
                             onChange()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onKeyPress
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onKeyPress()
                           </span>
                           }
                         </span>
@@ -14388,18 +14527,10 @@ exports[`Storyshots Icon with screenreader text 1`] = `
 
 exports[`Storyshots InputSelect basic usage 1`] = `
 <div
-  className={
-    Array [
-      "form-group",
-    ]
-  }
+  className="form-group"
 >
   <label
-    className={
-      Array [
-        "",
-      ]
-    }
+    className=""
     htmlFor="asInput19"
     id="label-asInput19"
   >
@@ -14449,18 +14580,10 @@ exports[`Storyshots InputSelect basic usage 1`] = `
 
 exports[`Storyshots InputSelect disabled usage 1`] = `
 <div
-  className={
-    Array [
-      "form-group",
-    ]
-  }
+  className="form-group"
 >
   <label
-    className={
-      Array [
-        "",
-      ]
-    }
+    className=""
     htmlFor="asInput23"
     id="label-asInput23"
   >
@@ -14510,18 +14633,10 @@ exports[`Storyshots InputSelect disabled usage 1`] = `
 
 exports[`Storyshots InputSelect separate labels and values 1`] = `
 <div
-  className={
-    Array [
-      "form-group",
-    ]
-  }
+  className="form-group"
 >
   <label
-    className={
-      Array [
-        "",
-      ]
-    }
+    className=""
     htmlFor="asInput20"
     id="label-asInput20"
   >
@@ -14581,18 +14696,10 @@ exports[`Storyshots InputSelect separate labels and values 1`] = `
 
 exports[`Storyshots InputSelect separate option groups 1`] = `
 <div
-  className={
-    Array [
-      "form-group",
-    ]
-  }
+  className="form-group"
 >
   <label
-    className={
-      Array [
-        "",
-      ]
-    }
+    className=""
     htmlFor="asInput21"
     id="label-asInput21"
   >
@@ -14700,18 +14807,10 @@ exports[`Storyshots InputSelect separate option groups 1`] = `
 
 exports[`Storyshots InputSelect with validation 1`] = `
 <div
-  className={
-    Array [
-      "form-group",
-    ]
-  }
+  className="form-group"
 >
   <label
-    className={
-      Array [
-        "",
-      ]
-    }
+    className=""
     htmlFor="asInput22"
     id="label-asInput22"
   >
@@ -14799,18 +14898,10 @@ exports[`Storyshots InputText different textual input types 1`] = `
   >
     <form>
       <div
-        className={
-          Array [
-            "form-group",
-          ]
-        }
+        className="form-group"
       >
         <label
-          className={
-            Array [
-              "",
-            ]
-          }
+          className=""
           htmlFor="input-search"
           id="label-input-search"
         >
@@ -14826,6 +14917,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
           name="search"
           onBlur={[Function]}
           onChange={[Function]}
+          onKeyPress={[Function]}
           placeholder={undefined}
           required={false}
           themes={Array []}
@@ -14841,18 +14933,10 @@ exports[`Storyshots InputText different textual input types 1`] = `
         </div>
       </div>
       <div
-        className={
-          Array [
-            "form-group",
-          ]
-        }
+        className="form-group"
       >
         <label
-          className={
-            Array [
-              "",
-            ]
-          }
+          className=""
           htmlFor="input-email"
           id="label-input-email"
         >
@@ -14868,6 +14952,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
           name="email"
           onBlur={[Function]}
           onChange={[Function]}
+          onKeyPress={[Function]}
           placeholder={undefined}
           required={false}
           themes={Array []}
@@ -14883,18 +14968,10 @@ exports[`Storyshots InputText different textual input types 1`] = `
         </div>
       </div>
       <div
-        className={
-          Array [
-            "form-group",
-          ]
-        }
+        className="form-group"
       >
         <label
-          className={
-            Array [
-              "",
-            ]
-          }
+          className=""
           htmlFor="input-url"
           id="label-input-url"
         >
@@ -14910,6 +14987,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
           name="url"
           onBlur={[Function]}
           onChange={[Function]}
+          onKeyPress={[Function]}
           placeholder={undefined}
           required={false}
           themes={Array []}
@@ -14925,18 +15003,10 @@ exports[`Storyshots InputText different textual input types 1`] = `
         </div>
       </div>
       <div
-        className={
-          Array [
-            "form-group",
-          ]
-        }
+        className="form-group"
       >
         <label
-          className={
-            Array [
-              "",
-            ]
-          }
+          className=""
           htmlFor="input-tel"
           id="label-input-tel"
         >
@@ -14952,6 +15022,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
           name="telephone"
           onBlur={[Function]}
           onChange={[Function]}
+          onKeyPress={[Function]}
           placeholder={undefined}
           required={false}
           themes={Array []}
@@ -14967,18 +15038,10 @@ exports[`Storyshots InputText different textual input types 1`] = `
         </div>
       </div>
       <div
-        className={
-          Array [
-            "form-group",
-          ]
-        }
+        className="form-group"
       >
         <label
-          className={
-            Array [
-              "",
-            ]
-          }
+          className=""
           htmlFor="input-password"
           id="label-input-password"
         >
@@ -14994,6 +15057,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
           name="password"
           onBlur={[Function]}
           onChange={[Function]}
+          onKeyPress={[Function]}
           placeholder={undefined}
           required={false}
           themes={Array []}
@@ -15009,18 +15073,10 @@ exports[`Storyshots InputText different textual input types 1`] = `
         </div>
       </div>
       <div
-        className={
-          Array [
-            "form-group",
-          ]
-        }
+        className="form-group"
       >
         <label
-          className={
-            Array [
-              "",
-            ]
-          }
+          className=""
           htmlFor="input-number"
           id="label-input-number"
         >
@@ -15036,6 +15092,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
           name="number"
           onBlur={[Function]}
           onChange={[Function]}
+          onKeyPress={[Function]}
           placeholder={undefined}
           required={false}
           themes={Array []}
@@ -15051,18 +15108,10 @@ exports[`Storyshots InputText different textual input types 1`] = `
         </div>
       </div>
       <div
-        className={
-          Array [
-            "form-group",
-          ]
-        }
+        className="form-group"
       >
         <label
-          className={
-            Array [
-              "",
-            ]
-          }
+          className=""
           htmlFor="input-datetime-local"
           id="label-input-datetime-local"
         >
@@ -15078,6 +15127,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
           name="datetime-local"
           onBlur={[Function]}
           onChange={[Function]}
+          onKeyPress={[Function]}
           placeholder={undefined}
           required={false}
           themes={Array []}
@@ -15093,18 +15143,10 @@ exports[`Storyshots InputText different textual input types 1`] = `
         </div>
       </div>
       <div
-        className={
-          Array [
-            "form-group",
-          ]
-        }
+        className="form-group"
       >
         <label
-          className={
-            Array [
-              "",
-            ]
-          }
+          className=""
           htmlFor="input-date"
           id="label-input-date"
         >
@@ -15120,6 +15162,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
           name="date"
           onBlur={[Function]}
           onChange={[Function]}
+          onKeyPress={[Function]}
           placeholder={undefined}
           required={false}
           themes={Array []}
@@ -15135,18 +15178,10 @@ exports[`Storyshots InputText different textual input types 1`] = `
         </div>
       </div>
       <div
-        className={
-          Array [
-            "form-group",
-          ]
-        }
+        className="form-group"
       >
         <label
-          className={
-            Array [
-              "",
-            ]
-          }
+          className=""
           htmlFor="input-month"
           id="label-input-month"
         >
@@ -15162,6 +15197,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
           name="month"
           onBlur={[Function]}
           onChange={[Function]}
+          onKeyPress={[Function]}
           placeholder={undefined}
           required={false}
           themes={Array []}
@@ -15177,18 +15213,10 @@ exports[`Storyshots InputText different textual input types 1`] = `
         </div>
       </div>
       <div
-        className={
-          Array [
-            "form-group",
-          ]
-        }
+        className="form-group"
       >
         <label
-          className={
-            Array [
-              "",
-            ]
-          }
+          className=""
           htmlFor="input-week"
           id="label-input-week"
         >
@@ -15204,6 +15232,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
           name="week"
           onBlur={[Function]}
           onChange={[Function]}
+          onKeyPress={[Function]}
           placeholder={undefined}
           required={false}
           themes={Array []}
@@ -15219,18 +15248,10 @@ exports[`Storyshots InputText different textual input types 1`] = `
         </div>
       </div>
       <div
-        className={
-          Array [
-            "form-group",
-          ]
-        }
+        className="form-group"
       >
         <label
-          className={
-            Array [
-              "",
-            ]
-          }
+          className=""
           htmlFor="input-time"
           id="label-input-time"
         >
@@ -15246,6 +15267,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
           name="time"
           onBlur={[Function]}
           onChange={[Function]}
+          onKeyPress={[Function]}
           placeholder={undefined}
           required={false}
           themes={Array []}
@@ -15261,18 +15283,10 @@ exports[`Storyshots InputText different textual input types 1`] = `
         </div>
       </div>
       <div
-        className={
-          Array [
-            "form-group",
-          ]
-        }
+        className="form-group"
       >
         <label
-          className={
-            Array [
-              "",
-            ]
-          }
+          className=""
           htmlFor="input-color"
           id="label-input-color"
         >
@@ -15288,6 +15302,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
           name="color"
           onBlur={[Function]}
           onChange={[Function]}
+          onKeyPress={[Function]}
           placeholder={undefined}
           required={false}
           themes={Array []}
@@ -15331,18 +15346,10 @@ exports[`Storyshots InputText displayed inline 1`] = `
     }
   >
     <div
-      className={
-        Array [
-          "form-group form-inline",
-        ]
-      }
+      className="form-group form-inline"
     >
       <label
-        className={
-          Array [
-            "",
-          ]
-        }
+        className=""
         htmlFor="asInput27"
         id="label-asInput27"
       >
@@ -15358,6 +15365,7 @@ exports[`Storyshots InputText displayed inline 1`] = `
         name="username"
         onBlur={[Function]}
         onChange={[Function]}
+        onKeyPress={[Function]}
         placeholder={undefined}
         required={false}
         themes={Array []}
@@ -15426,18 +15434,10 @@ exports[`Storyshots InputText focus test 1`] = `
         </div>
       </div>
       <div
-        className={
-          Array [
-            "form-group",
-          ]
-        }
+        className="form-group"
       >
         <label
-          className={
-            Array [
-              "",
-            ]
-          }
+          className=""
           htmlFor="data"
           id="label-data"
         >
@@ -15453,6 +15453,7 @@ exports[`Storyshots InputText focus test 1`] = `
           name="data"
           onBlur={[Function]}
           onChange={[Function]}
+          onKeyPress={[Function]}
           placeholder={undefined}
           required={false}
           themes={Array []}
@@ -15496,18 +15497,10 @@ exports[`Storyshots InputText label as element 1`] = `
     }
   >
     <div
-      className={
-        Array [
-          "form-group",
-        ]
-      }
+      className="form-group"
     >
       <label
-        className={
-          Array [
-            "",
-          ]
-        }
+        className=""
         htmlFor="asInput26"
         id="label-asInput26"
       >
@@ -15527,6 +15520,7 @@ exports[`Storyshots InputText label as element 1`] = `
         name="username"
         onBlur={[Function]}
         onChange={[Function]}
+        onKeyPress={[Function]}
         placeholder={undefined}
         required={false}
         themes={Array []}
@@ -15569,18 +15563,10 @@ exports[`Storyshots InputText minimal usage 1`] = `
     }
   >
     <div
-      className={
-        Array [
-          "form-group",
-        ]
-      }
+      className="form-group"
     >
       <label
-        className={
-          Array [
-            "",
-          ]
-        }
+        className=""
         htmlFor="asInput24"
         id="label-asInput24"
       >
@@ -15596,6 +15582,7 @@ exports[`Storyshots InputText minimal usage 1`] = `
         name="name"
         onBlur={[Function]}
         onChange={[Function]}
+        onKeyPress={[Function]}
         placeholder={undefined}
         required={false}
         themes={Array []}
@@ -15638,18 +15625,10 @@ exports[`Storyshots InputText validation 1`] = `
     }
   >
     <div
-      className={
-        Array [
-          "form-group",
-        ]
-      }
+      className="form-group"
     >
       <label
-        className={
-          Array [
-            "",
-          ]
-        }
+        className=""
         htmlFor="username"
         id="label-username"
       >
@@ -15665,6 +15644,7 @@ exports[`Storyshots InputText validation 1`] = `
         name="username"
         onBlur={[Function]}
         onChange={[Function]}
+        onKeyPress={[Function]}
         placeholder={undefined}
         required={false}
         themes={Array []}
@@ -15713,18 +15693,10 @@ exports[`Storyshots InputText validation with danger theme 1`] = `
     }
   >
     <div
-      className={
-        Array [
-          "form-group",
-        ]
-      }
+      className="form-group"
     >
       <label
-        className={
-          Array [
-            "",
-          ]
-        }
+        className=""
         htmlFor="asInput25"
         id="label-asInput25"
       >
@@ -15740,6 +15712,7 @@ exports[`Storyshots InputText validation with danger theme 1`] = `
         name="username"
         onBlur={[Function]}
         onChange={[Function]}
+        onKeyPress={[Function]}
         placeholder={undefined}
         required={false}
         themes={
@@ -15793,18 +15766,10 @@ exports[`Storyshots InputText with input group addons 1`] = `
   >
     <form>
       <div
-        className={
-          Array [
-            "form-group",
-          ]
-        }
+        className="form-group"
       >
         <label
-          className={
-            Array [
-              "",
-            ]
-          }
+          className=""
           htmlFor="asInput28"
           id="label-asInput28"
         >
@@ -15832,6 +15797,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
             name="username"
             onBlur={[Function]}
             onChange={[Function]}
+            onKeyPress={[Function]}
             placeholder={undefined}
             required={false}
             themes={Array []}
@@ -15851,18 +15817,10 @@ exports[`Storyshots InputText with input group addons 1`] = `
         </div>
       </div>
       <div
-        className={
-          Array [
-            "form-group",
-          ]
-        }
+        className="form-group"
       >
         <label
-          className={
-            Array [
-              "",
-            ]
-          }
+          className=""
           htmlFor="asInput29"
           id="label-asInput29"
         >
@@ -15884,6 +15842,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
             name="username"
             onBlur={[Function]}
             onChange={[Function]}
+            onKeyPress={[Function]}
             placeholder={undefined}
             required={false}
             themes={Array []}
@@ -15909,18 +15868,10 @@ exports[`Storyshots InputText with input group addons 1`] = `
         </div>
       </div>
       <div
-        className={
-          Array [
-            "form-group",
-          ]
-        }
+        className="form-group"
       >
         <label
-          className={
-            Array [
-              "",
-            ]
-          }
+          className=""
           htmlFor="asInput30"
           id="label-asInput30"
         >
@@ -15948,6 +15899,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
             name="money"
             onBlur={[Function]}
             onChange={[Function]}
+            onKeyPress={[Function]}
             placeholder={undefined}
             required={false}
             themes={Array []}
@@ -15973,18 +15925,10 @@ exports[`Storyshots InputText with input group addons 1`] = `
         </div>
       </div>
       <div
-        className={
-          Array [
-            "form-group",
-          ]
-        }
+        className="form-group"
       >
         <label
-          className={
-            Array [
-              "",
-            ]
-          }
+          className=""
           htmlFor="asInput31"
           id="label-asInput31"
         >
@@ -16006,6 +15950,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
             name="search"
             onBlur={[Function]}
             onChange={[Function]}
+            onKeyPress={[Function]}
             placeholder={undefined}
             required={false}
             themes={Array []}
@@ -16035,18 +15980,10 @@ exports[`Storyshots InputText with input group addons 1`] = `
         </div>
       </div>
       <div
-        className={
-          Array [
-            "form-group",
-          ]
-        }
+        className="form-group"
       >
         <label
-          className={
-            Array [
-              "",
-            ]
-          }
+          className=""
           htmlFor="asInput32"
           id="label-asInput32"
         >
@@ -16068,6 +16005,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
             name="username"
             onBlur={[Function]}
             onChange={[Function]}
+            onKeyPress={[Function]}
             placeholder={undefined}
             required={false}
             themes={Array []}
@@ -16113,18 +16051,10 @@ exports[`Storyshots InputText with input group addons 1`] = `
         </div>
       </div>
       <div
-        className={
-          Array [
-            "form-group",
-          ]
-        }
+        className="form-group"
       >
         <label
-          className={
-            Array [
-              "",
-            ]
-          }
+          className=""
           htmlFor="asInput33"
           id="label-asInput33"
         >
@@ -16146,6 +16076,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
             name="password"
             onBlur={[Function]}
             onChange={[Function]}
+            onKeyPress={[Function]}
             placeholder={undefined}
             required={false}
             themes={Array []}
@@ -23873,6 +23804,3901 @@ exports[`Storyshots RadioButtonGroup unselected minimal usage 1`] = `
 </div>
 `;
 
+exports[`Storyshots SearchField basic usage 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": 0,
+      "display": "flex",
+      "justifyContent": "center",
+      "left": 0,
+      "overflow": "auto",
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+      }
+    }
+  >
+    <div>
+      <div
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
+      >
+        <div
+          className="border search-field"
+          onBlur={[Function]}
+          onFocus={[Function]}
+        >
+          <div
+            className="form-group form-inline"
+          >
+            <label
+              className=""
+              htmlFor="asInput34"
+              id="label-asInput34"
+            >
+              Search:
+            </label>
+            <div
+              className="input-group"
+            >
+              <div
+                className="input-group-prepend"
+              />
+              <input
+                aria-describedby="error-asInput34"
+                aria-invalid={false}
+                autoComplete="off"
+                className="form-control is-invalid-nodanger search-field__input search-field__no-clear-btn"
+                disabled={false}
+                id="asInput34"
+                name="search"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyPress={[Function]}
+                placeholder=""
+                required={false}
+                themes={Array []}
+                type="search"
+                value=""
+              />
+              <div
+                className="input-group-append"
+              >
+                <button
+                  className="search-field__search-btn btn"
+                  disabled={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  <div>
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-search"
+                      id="Icon1"
+                    />
+                    <span
+                      className="sr-only"
+                    >
+                      Submit search
+                    </span>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              aria-live="polite"
+              className="invalid-feedback invalid-feedback-nodanger"
+              id="error-asInput34"
+            >
+              <span />
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#28c",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
+      <div
+        style={
+          Object {
+            "background": "white",
+            "bottom": 0,
+            "display": "none",
+            "left": 0,
+            "overflow": "auto",
+            "padding": "0 40px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+            "zIndex": 99999,
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "background": "#28c",
+              "border": "none",
+              "borderRadius": "0 0 0 5px",
+              "color": "#fff",
+              "cursor": "pointer",
+              "display": "block",
+              "fontFamily": "sans-serif",
+              "fontSize": "12px",
+              "padding": "5px 15px",
+              "position": "fixed",
+              "right": 0,
+              "top": 0,
+            }
+          }
+          type="button"
+        >
+          ×
+        </button>
+        <div
+          style={undefined}
+        >
+          <div
+            style={
+              Object {
+                "WebkitFontSmoothing": "antialiased",
+                "backgroundColor": "#fff",
+                "border": "1px solid #eee",
+                "borderRadius": "2px",
+                "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
+                "color": "#444",
+                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                "fontSize": "15px",
+                "fontWeight": 300,
+                "lineHeight": 1.45,
+                "marginBottom": "20px",
+                "marginTop": "20px",
+                "padding": "20px 40px 40px",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "borderBottom": "1px solid #eee",
+                  "marginBottom": 10,
+                  "paddingTop": 10,
+                }
+              }
+            >
+              <h1
+                style={
+                  Object {
+                    "fontSize": "35px",
+                    "margin": 0,
+                    "padding": 0,
+                  }
+                }
+              >
+                SearchField
+              </h1>
+              <h2
+                style={
+                  Object {
+                    "fontSize": "22px",
+                    "fontWeight": 400,
+                    "margin": "0 0 10px 0",
+                    "padding": 0,
+                  }
+                }
+              >
+                basic usage
+              </h2>
+            </div>
+            
+            <div>
+              <h1
+                style={
+                  Object {
+                    "borderBottom": "1px solid #EEE",
+                    "fontSize": "25px",
+                    "margin": "20px 0 0 0",
+                    "padding": "0 0 5px 0",
+                  }
+                }
+              >
+                Story Source
+              </h1>
+              <pre
+                className="css-4akams"
+              >
+                <div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      SearchField
+                    </span>
+                    <span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          onSubmit
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                search-submitted()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                         
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                </div>
+                <button
+                  className="css-gydez8"
+                  onClick={[Function]}
+                >
+                  <div
+                    className="css-kv47nt"
+                  >
+                    <div
+                      style={
+                        Object {
+                          "marginBottom": 6,
+                        }
+                      }
+                    >
+                      Copied!
+                    </div>
+                    <div>
+                      Copy
+                    </div>
+                  </div>
+                </button>
+              </pre>
+            </div>
+            <div>
+              <h1
+                style={
+                  Object {
+                    "borderBottom": "1px solid #EEE",
+                    "fontSize": "25px",
+                    "margin": "20px 0 0 0",
+                    "padding": "0 0 5px 0",
+                  }
+                }
+              >
+                Prop Types
+              </h1>
+              <div>
+                <h2
+                  style={
+                    Object {
+                      "margin": "20px 0 0 0",
+                    }
+                  }
+                >
+                  "
+                  SearchField
+                  " Component
+                </h2>
+                <table
+                  className="css-1ytzlk7"
+                >
+                  <thead>
+                    <tr>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        property
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        propType
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        required
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        default
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        description
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onSubmit
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        yes
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        inputLabel
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          Search:
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onBlur
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onBlur()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onChange
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onChange()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onFocus
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onFocus()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        placeholder
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        screenReaderText
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              clearButton
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Clear search
+                              "
+                            </span>
+                            , 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              searchButton
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Submit search
+                              "
+                            </span>
+                            }
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        value
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots SearchField with callbacks 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": 0,
+      "display": "flex",
+      "justifyContent": "center",
+      "left": 0,
+      "overflow": "auto",
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+      }
+    }
+  >
+    <div>
+      <div
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
+      >
+        <div
+          className="border search-field"
+          onBlur={[Function]}
+          onFocus={[Function]}
+        >
+          <div
+            className="form-group form-inline"
+          >
+            <label
+              className=""
+              htmlFor="asInput38"
+              id="label-asInput38"
+            >
+              Search:
+            </label>
+            <div
+              className="input-group"
+            >
+              <div
+                className="input-group-prepend"
+              />
+              <input
+                aria-describedby="error-asInput38"
+                aria-invalid={false}
+                autoComplete="off"
+                className="form-control is-invalid-nodanger search-field__input search-field__no-clear-btn"
+                disabled={false}
+                id="asInput38"
+                name="search"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyPress={[Function]}
+                placeholder=""
+                required={false}
+                themes={Array []}
+                type="search"
+                value=""
+              />
+              <div
+                className="input-group-append"
+              >
+                <button
+                  className="search-field__search-btn btn"
+                  disabled={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  <div>
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-search"
+                      id="Icon1"
+                    />
+                    <span
+                      className="sr-only"
+                    >
+                      Submit search
+                    </span>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              aria-live="polite"
+              className="invalid-feedback invalid-feedback-nodanger"
+              id="error-asInput38"
+            >
+              <span />
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#28c",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
+      <div
+        style={
+          Object {
+            "background": "white",
+            "bottom": 0,
+            "display": "none",
+            "left": 0,
+            "overflow": "auto",
+            "padding": "0 40px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+            "zIndex": 99999,
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "background": "#28c",
+              "border": "none",
+              "borderRadius": "0 0 0 5px",
+              "color": "#fff",
+              "cursor": "pointer",
+              "display": "block",
+              "fontFamily": "sans-serif",
+              "fontSize": "12px",
+              "padding": "5px 15px",
+              "position": "fixed",
+              "right": 0,
+              "top": 0,
+            }
+          }
+          type="button"
+        >
+          ×
+        </button>
+        <div
+          style={undefined}
+        >
+          <div
+            style={
+              Object {
+                "WebkitFontSmoothing": "antialiased",
+                "backgroundColor": "#fff",
+                "border": "1px solid #eee",
+                "borderRadius": "2px",
+                "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
+                "color": "#444",
+                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                "fontSize": "15px",
+                "fontWeight": 300,
+                "lineHeight": 1.45,
+                "marginBottom": "20px",
+                "marginTop": "20px",
+                "padding": "20px 40px 40px",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "borderBottom": "1px solid #eee",
+                  "marginBottom": 10,
+                  "paddingTop": 10,
+                }
+              }
+            >
+              <h1
+                style={
+                  Object {
+                    "fontSize": "35px",
+                    "margin": 0,
+                    "padding": 0,
+                  }
+                }
+              >
+                SearchField
+              </h1>
+              <h2
+                style={
+                  Object {
+                    "fontSize": "22px",
+                    "fontWeight": 400,
+                    "margin": "0 0 10px 0",
+                    "padding": 0,
+                  }
+                }
+              >
+                with callbacks
+              </h2>
+            </div>
+            
+            <div>
+              <h1
+                style={
+                  Object {
+                    "borderBottom": "1px solid #EEE",
+                    "fontSize": "25px",
+                    "margin": "20px 0 0 0",
+                    "padding": "0 0 5px 0",
+                  }
+                }
+              >
+                Story Source
+              </h1>
+              <pre
+                className="css-4akams"
+              >
+                <div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      SearchField
+                    </span>
+                    <span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onSubmit
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                search-submitted()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onChange
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                value-changed()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onFocus
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                search-focused()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onBlur
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                search-blurred()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <br />
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                </div>
+                <button
+                  className="css-gydez8"
+                  onClick={[Function]}
+                >
+                  <div
+                    className="css-kv47nt"
+                  >
+                    <div
+                      style={
+                        Object {
+                          "marginBottom": 6,
+                        }
+                      }
+                    >
+                      Copied!
+                    </div>
+                    <div>
+                      Copy
+                    </div>
+                  </div>
+                </button>
+              </pre>
+            </div>
+            <div>
+              <h1
+                style={
+                  Object {
+                    "borderBottom": "1px solid #EEE",
+                    "fontSize": "25px",
+                    "margin": "20px 0 0 0",
+                    "padding": "0 0 5px 0",
+                  }
+                }
+              >
+                Prop Types
+              </h1>
+              <div>
+                <h2
+                  style={
+                    Object {
+                      "margin": "20px 0 0 0",
+                    }
+                  }
+                >
+                  "
+                  SearchField
+                  " Component
+                </h2>
+                <table
+                  className="css-1ytzlk7"
+                >
+                  <thead>
+                    <tr>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        property
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        propType
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        required
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        default
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        description
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onSubmit
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        yes
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        inputLabel
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          Search:
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onBlur
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onBlur()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onChange
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onChange()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onFocus
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onFocus()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        placeholder
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        screenReaderText
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              clearButton
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Clear search
+                              "
+                            </span>
+                            , 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              searchButton
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Submit search
+                              "
+                            </span>
+                            }
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        value
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots SearchField with custom label and screenreader text 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": 0,
+      "display": "flex",
+      "justifyContent": "center",
+      "left": 0,
+      "overflow": "auto",
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+      }
+    }
+  >
+    <div>
+      <div
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
+      >
+        <div
+          className="border search-field"
+          onBlur={[Function]}
+          onFocus={[Function]}
+        >
+          <div
+            className="form-group form-inline"
+          >
+            <label
+              className=""
+              htmlFor="asInput39"
+              id="label-asInput39"
+            >
+              Buscar:
+            </label>
+            <div
+              className="input-group"
+            >
+              <div
+                className="input-group-prepend"
+              />
+              <input
+                aria-describedby="error-asInput39"
+                aria-invalid={false}
+                autoComplete="off"
+                className="form-control is-invalid-nodanger search-field__input search-field__no-clear-btn"
+                disabled={false}
+                id="asInput39"
+                name="search"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyPress={[Function]}
+                placeholder=""
+                required={false}
+                themes={Array []}
+                type="search"
+                value=""
+              />
+              <div
+                className="input-group-append"
+              >
+                <button
+                  className="search-field__search-btn btn"
+                  disabled={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  <div>
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-search"
+                      id="Icon1"
+                    />
+                    <span
+                      className="sr-only"
+                    >
+                      Enviar búsqueda
+                    </span>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              aria-live="polite"
+              className="invalid-feedback invalid-feedback-nodanger"
+              id="error-asInput39"
+            >
+              <span />
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#28c",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
+      <div
+        style={
+          Object {
+            "background": "white",
+            "bottom": 0,
+            "display": "none",
+            "left": 0,
+            "overflow": "auto",
+            "padding": "0 40px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+            "zIndex": 99999,
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "background": "#28c",
+              "border": "none",
+              "borderRadius": "0 0 0 5px",
+              "color": "#fff",
+              "cursor": "pointer",
+              "display": "block",
+              "fontFamily": "sans-serif",
+              "fontSize": "12px",
+              "padding": "5px 15px",
+              "position": "fixed",
+              "right": 0,
+              "top": 0,
+            }
+          }
+          type="button"
+        >
+          ×
+        </button>
+        <div
+          style={undefined}
+        >
+          <div
+            style={
+              Object {
+                "WebkitFontSmoothing": "antialiased",
+                "backgroundColor": "#fff",
+                "border": "1px solid #eee",
+                "borderRadius": "2px",
+                "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
+                "color": "#444",
+                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                "fontSize": "15px",
+                "fontWeight": 300,
+                "lineHeight": 1.45,
+                "marginBottom": "20px",
+                "marginTop": "20px",
+                "padding": "20px 40px 40px",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "borderBottom": "1px solid #eee",
+                  "marginBottom": 10,
+                  "paddingTop": 10,
+                }
+              }
+            >
+              <h1
+                style={
+                  Object {
+                    "fontSize": "35px",
+                    "margin": 0,
+                    "padding": 0,
+                  }
+                }
+              >
+                SearchField
+              </h1>
+              <h2
+                style={
+                  Object {
+                    "fontSize": "22px",
+                    "fontWeight": 400,
+                    "margin": "0 0 10px 0",
+                    "padding": 0,
+                  }
+                }
+              >
+                with custom label and screenreader text
+              </h2>
+            </div>
+            
+            <div>
+              <h1
+                style={
+                  Object {
+                    "borderBottom": "1px solid #EEE",
+                    "fontSize": "25px",
+                    "margin": "20px 0 0 0",
+                    "padding": "0 0 5px 0",
+                  }
+                }
+              >
+                Story Source
+              </h1>
+              <pre
+                className="css-4akams"
+              >
+                <div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      SearchField
+                    </span>
+                    <span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          onSubmit
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                search-submitted()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          inputLabel
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Buscar:
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          screenReaderText
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  clearButton
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  Borrar búsqueda
+                                  "
+                                </span>
+                                , 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  searchButton
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  Enviar búsqueda
+                                  "
+                                </span>
+                                }
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                         
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                </div>
+                <button
+                  className="css-gydez8"
+                  onClick={[Function]}
+                >
+                  <div
+                    className="css-kv47nt"
+                  >
+                    <div
+                      style={
+                        Object {
+                          "marginBottom": 6,
+                        }
+                      }
+                    >
+                      Copied!
+                    </div>
+                    <div>
+                      Copy
+                    </div>
+                  </div>
+                </button>
+              </pre>
+            </div>
+            <div>
+              <h1
+                style={
+                  Object {
+                    "borderBottom": "1px solid #EEE",
+                    "fontSize": "25px",
+                    "margin": "20px 0 0 0",
+                    "padding": "0 0 5px 0",
+                  }
+                }
+              >
+                Prop Types
+              </h1>
+              <div>
+                <h2
+                  style={
+                    Object {
+                      "margin": "20px 0 0 0",
+                    }
+                  }
+                >
+                  "
+                  SearchField
+                  " Component
+                </h2>
+                <table
+                  className="css-1ytzlk7"
+                >
+                  <thead>
+                    <tr>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        property
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        propType
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        required
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        default
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        description
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onSubmit
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        yes
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        inputLabel
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          Search:
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onBlur
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onBlur()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onChange
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onChange()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onFocus
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onFocus()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        placeholder
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        screenReaderText
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              clearButton
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Clear search
+                              "
+                            </span>
+                            , 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              searchButton
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Submit search
+                              "
+                            </span>
+                            }
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        value
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots SearchField with placeholder 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": 0,
+      "display": "flex",
+      "justifyContent": "center",
+      "left": 0,
+      "overflow": "auto",
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+      }
+    }
+  >
+    <div>
+      <div
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
+      >
+        <div
+          className="border search-field"
+          onBlur={[Function]}
+          onFocus={[Function]}
+        >
+          <div
+            className="form-group form-inline"
+          >
+            <label
+              className=""
+              htmlFor="asInput35"
+              id="label-asInput35"
+            >
+              Search:
+            </label>
+            <div
+              className="input-group"
+            >
+              <div
+                className="input-group-prepend"
+              />
+              <input
+                aria-describedby="error-asInput35"
+                aria-invalid={false}
+                autoComplete="off"
+                className="form-control is-invalid-nodanger search-field__input search-field__no-clear-btn"
+                disabled={false}
+                id="asInput35"
+                name="search"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyPress={[Function]}
+                placeholder="Search"
+                required={false}
+                themes={Array []}
+                type="search"
+                value=""
+              />
+              <div
+                className="input-group-append"
+              >
+                <button
+                  className="search-field__search-btn btn"
+                  disabled={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  <div>
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-search"
+                      id="Icon1"
+                    />
+                    <span
+                      className="sr-only"
+                    >
+                      Submit search
+                    </span>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              aria-live="polite"
+              className="invalid-feedback invalid-feedback-nodanger"
+              id="error-asInput35"
+            >
+              <span />
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#28c",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
+      <div
+        style={
+          Object {
+            "background": "white",
+            "bottom": 0,
+            "display": "none",
+            "left": 0,
+            "overflow": "auto",
+            "padding": "0 40px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+            "zIndex": 99999,
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "background": "#28c",
+              "border": "none",
+              "borderRadius": "0 0 0 5px",
+              "color": "#fff",
+              "cursor": "pointer",
+              "display": "block",
+              "fontFamily": "sans-serif",
+              "fontSize": "12px",
+              "padding": "5px 15px",
+              "position": "fixed",
+              "right": 0,
+              "top": 0,
+            }
+          }
+          type="button"
+        >
+          ×
+        </button>
+        <div
+          style={undefined}
+        >
+          <div
+            style={
+              Object {
+                "WebkitFontSmoothing": "antialiased",
+                "backgroundColor": "#fff",
+                "border": "1px solid #eee",
+                "borderRadius": "2px",
+                "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
+                "color": "#444",
+                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                "fontSize": "15px",
+                "fontWeight": 300,
+                "lineHeight": 1.45,
+                "marginBottom": "20px",
+                "marginTop": "20px",
+                "padding": "20px 40px 40px",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "borderBottom": "1px solid #eee",
+                  "marginBottom": 10,
+                  "paddingTop": 10,
+                }
+              }
+            >
+              <h1
+                style={
+                  Object {
+                    "fontSize": "35px",
+                    "margin": 0,
+                    "padding": 0,
+                  }
+                }
+              >
+                SearchField
+              </h1>
+              <h2
+                style={
+                  Object {
+                    "fontSize": "22px",
+                    "fontWeight": 400,
+                    "margin": "0 0 10px 0",
+                    "padding": 0,
+                  }
+                }
+              >
+                with placeholder
+              </h2>
+            </div>
+            
+            <div>
+              <h1
+                style={
+                  Object {
+                    "borderBottom": "1px solid #EEE",
+                    "fontSize": "25px",
+                    "margin": "20px 0 0 0",
+                    "padding": "0 0 5px 0",
+                  }
+                }
+              >
+                Story Source
+              </h1>
+              <pre
+                className="css-4akams"
+              >
+                <div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      SearchField
+                    </span>
+                    <span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          onSubmit
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                search-submitted()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          placeholder
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Search
+                              "
+                            </span>
+                          </span>
+                        </span>
+                         
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                </div>
+                <button
+                  className="css-gydez8"
+                  onClick={[Function]}
+                >
+                  <div
+                    className="css-kv47nt"
+                  >
+                    <div
+                      style={
+                        Object {
+                          "marginBottom": 6,
+                        }
+                      }
+                    >
+                      Copied!
+                    </div>
+                    <div>
+                      Copy
+                    </div>
+                  </div>
+                </button>
+              </pre>
+            </div>
+            <div>
+              <h1
+                style={
+                  Object {
+                    "borderBottom": "1px solid #EEE",
+                    "fontSize": "25px",
+                    "margin": "20px 0 0 0",
+                    "padding": "0 0 5px 0",
+                  }
+                }
+              >
+                Prop Types
+              </h1>
+              <div>
+                <h2
+                  style={
+                    Object {
+                      "margin": "20px 0 0 0",
+                    }
+                  }
+                >
+                  "
+                  SearchField
+                  " Component
+                </h2>
+                <table
+                  className="css-1ytzlk7"
+                >
+                  <thead>
+                    <tr>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        property
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        propType
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        required
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        default
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        description
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onSubmit
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        yes
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        inputLabel
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          Search:
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onBlur
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onBlur()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onChange
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onChange()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onFocus
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onFocus()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        placeholder
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        screenReaderText
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              clearButton
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Clear search
+                              "
+                            </span>
+                            , 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              searchButton
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Submit search
+                              "
+                            </span>
+                            }
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        value
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots SearchField with value 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": 0,
+      "display": "flex",
+      "justifyContent": "center",
+      "left": 0,
+      "overflow": "auto",
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+      }
+    }
+  >
+    <div>
+      <div
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
+      >
+        <div
+          className="border search-field"
+          onBlur={[Function]}
+          onFocus={[Function]}
+        >
+          <div
+            className="form-group form-inline"
+          >
+            <label
+              className=""
+              htmlFor="asInput37"
+              id="label-asInput37"
+            >
+              Search:
+            </label>
+            <div
+              className="input-group"
+            >
+              <div
+                className="input-group-prepend"
+              />
+              <input
+                aria-describedby="error-asInput37"
+                aria-invalid={false}
+                autoComplete="off"
+                className="form-control is-invalid-nodanger search-field__input"
+                disabled={false}
+                id="asInput37"
+                name="search"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyPress={[Function]}
+                placeholder="Search"
+                required={false}
+                themes={Array []}
+                type="search"
+                value="foobar"
+              />
+              <div
+                className="input-group-append"
+              >
+                <button
+                  className="search-field__clear-btn ml-1 btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  <small>
+                    <div>
+                      <span
+                        aria-hidden={true}
+                        className="fa fa-times"
+                        id="icon-SearchField36"
+                      />
+                      <span
+                        className="sr-only"
+                      >
+                        Clear search
+                      </span>
+                    </div>
+                  </small>
+                </button>
+                <button
+                  className="search-field__search-btn border-left btn"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  <div>
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-search"
+                      id="Icon1"
+                    />
+                    <span
+                      className="sr-only"
+                    >
+                      Submit search
+                    </span>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              aria-live="polite"
+              className="invalid-feedback invalid-feedback-nodanger"
+              id="error-asInput37"
+            >
+              <span />
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#28c",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
+      <div
+        style={
+          Object {
+            "background": "white",
+            "bottom": 0,
+            "display": "none",
+            "left": 0,
+            "overflow": "auto",
+            "padding": "0 40px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+            "zIndex": 99999,
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "background": "#28c",
+              "border": "none",
+              "borderRadius": "0 0 0 5px",
+              "color": "#fff",
+              "cursor": "pointer",
+              "display": "block",
+              "fontFamily": "sans-serif",
+              "fontSize": "12px",
+              "padding": "5px 15px",
+              "position": "fixed",
+              "right": 0,
+              "top": 0,
+            }
+          }
+          type="button"
+        >
+          ×
+        </button>
+        <div
+          style={undefined}
+        >
+          <div
+            style={
+              Object {
+                "WebkitFontSmoothing": "antialiased",
+                "backgroundColor": "#fff",
+                "border": "1px solid #eee",
+                "borderRadius": "2px",
+                "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
+                "color": "#444",
+                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                "fontSize": "15px",
+                "fontWeight": 300,
+                "lineHeight": 1.45,
+                "marginBottom": "20px",
+                "marginTop": "20px",
+                "padding": "20px 40px 40px",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "borderBottom": "1px solid #eee",
+                  "marginBottom": 10,
+                  "paddingTop": 10,
+                }
+              }
+            >
+              <h1
+                style={
+                  Object {
+                    "fontSize": "35px",
+                    "margin": 0,
+                    "padding": 0,
+                  }
+                }
+              >
+                SearchField
+              </h1>
+              <h2
+                style={
+                  Object {
+                    "fontSize": "22px",
+                    "fontWeight": 400,
+                    "margin": "0 0 10px 0",
+                    "padding": 0,
+                  }
+                }
+              >
+                with value
+              </h2>
+            </div>
+            
+            <div>
+              <h1
+                style={
+                  Object {
+                    "borderBottom": "1px solid #EEE",
+                    "fontSize": "25px",
+                    "margin": "20px 0 0 0",
+                    "padding": "0 0 5px 0",
+                  }
+                }
+              >
+                Story Source
+              </h1>
+              <pre
+                className="css-4akams"
+              >
+                <div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      SearchField
+                    </span>
+                    <span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          onSubmit
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                search-submitted()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          placeholder
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Search
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          value
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              foobar
+                              "
+                            </span>
+                          </span>
+                        </span>
+                         
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                </div>
+                <button
+                  className="css-gydez8"
+                  onClick={[Function]}
+                >
+                  <div
+                    className="css-kv47nt"
+                  >
+                    <div
+                      style={
+                        Object {
+                          "marginBottom": 6,
+                        }
+                      }
+                    >
+                      Copied!
+                    </div>
+                    <div>
+                      Copy
+                    </div>
+                  </div>
+                </button>
+              </pre>
+            </div>
+            <div>
+              <h1
+                style={
+                  Object {
+                    "borderBottom": "1px solid #EEE",
+                    "fontSize": "25px",
+                    "margin": "20px 0 0 0",
+                    "padding": "0 0 5px 0",
+                  }
+                }
+              >
+                Prop Types
+              </h1>
+              <div>
+                <h2
+                  style={
+                    Object {
+                      "margin": "20px 0 0 0",
+                    }
+                  }
+                >
+                  "
+                  SearchField
+                  " Component
+                </h2>
+                <table
+                  className="css-1ytzlk7"
+                >
+                  <thead>
+                    <tr>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        property
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        propType
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        required
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        default
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        description
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onSubmit
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        yes
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        inputLabel
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          Search:
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onBlur
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onBlur()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onChange
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onChange()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onFocus
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onFocus()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        placeholder
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        screenReaderText
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              clearButton
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Clear search
+                              "
+                            </span>
+                            , 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              searchButton
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Submit search
+                              "
+                            </span>
+                            }
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        value
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots StatusAlert Non-dismissible alert 1`] = `
 <div
   className="alert fade alert-danger show"
@@ -25082,10 +28908,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
   >
     <li
       className="nav-item"
-      id="tab-label-tabInterface34-0"
+      id="tab-label-tabInterface40-0"
     >
       <a
-        aria-controls="tab-panel-tabInterface34-0"
+        aria-controls="tab-panel-tabInterface40-0"
         aria-selected={true}
         className="nav-link active"
         onClick={[Function]}
@@ -25097,10 +28923,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </li>
     <li
       className="nav-item"
-      id="tab-label-tabInterface34-1"
+      id="tab-label-tabInterface40-1"
     >
       <a
-        aria-controls="tab-panel-tabInterface34-1"
+        aria-controls="tab-panel-tabInterface40-1"
         aria-selected={false}
         className="nav-link"
         onClick={[Function]}
@@ -25112,10 +28938,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </li>
     <li
       className="nav-item"
-      id="tab-label-tabInterface34-2"
+      id="tab-label-tabInterface40-2"
     >
       <a
-        aria-controls="tab-panel-tabInterface34-2"
+        aria-controls="tab-panel-tabInterface40-2"
         aria-selected={false}
         className="nav-link"
         onClick={[Function]}
@@ -25131,9 +28957,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
   >
     <div
       aria-hidden={false}
-      aria-labelledby="tab-label-tabInterface34-0"
+      aria-labelledby="tab-label-tabInterface40-0"
       className="tab-pane active"
-      id="tab-panel-tabInterface34-0"
+      id="tab-panel-tabInterface40-0"
       role="tabpanel"
     >
       <div>
@@ -25142,9 +28968,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </div>
     <div
       aria-hidden={true}
-      aria-labelledby="tab-label-tabInterface34-1"
+      aria-labelledby="tab-label-tabInterface40-1"
       className="tab-pane"
-      id="tab-panel-tabInterface34-1"
+      id="tab-panel-tabInterface40-1"
       role="tabpanel"
     >
       <div>
@@ -25153,9 +28979,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
     </div>
     <div
       aria-hidden={true}
-      aria-labelledby="tab-label-tabInterface34-2"
+      aria-labelledby="tab-label-tabInterface40-2"
       className="tab-pane"
-      id="tab-panel-tabInterface34-2"
+      id="tab-panel-tabInterface40-2"
       role="tabpanel"
     >
       <div>
@@ -25168,20 +28994,12 @@ exports[`Storyshots Tabs basic usage 1`] = `
 
 exports[`Storyshots Textarea label as element 1`] = `
 <div
-  className={
-    Array [
-      "form-group",
-    ]
-  }
+  className="form-group"
 >
   <label
-    className={
-      Array [
-        "",
-      ]
-    }
-    htmlFor="asInput38"
-    id="label-asInput38"
+    className=""
+    htmlFor="asInput44"
+    id="label-asInput44"
   >
     <span
       lang="en"
@@ -25190,11 +29008,11 @@ exports[`Storyshots Textarea label as element 1`] = `
     </span>
   </label>
   <textarea
-    aria-describedby="error-asInput38"
+    aria-describedby="error-asInput44"
     aria-invalid={false}
     className="form-control is-invalid-nodanger"
     disabled={false}
-    id="asInput38"
+    id="asInput44"
     name="username"
     onBlur={[Function]}
     onChange={[Function]}
@@ -25210,7 +29028,7 @@ exports[`Storyshots Textarea label as element 1`] = `
   <div
     aria-live="polite"
     className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput38"
+    id="error-asInput44"
   >
     <span />
   </div>
@@ -25219,29 +29037,21 @@ exports[`Storyshots Textarea label as element 1`] = `
 
 exports[`Storyshots Textarea minimal usage 1`] = `
 <div
-  className={
-    Array [
-      "form-group",
-    ]
-  }
+  className="form-group"
 >
   <label
-    className={
-      Array [
-        "",
-      ]
-    }
-    htmlFor="asInput35"
-    id="label-asInput35"
+    className=""
+    htmlFor="asInput41"
+    id="label-asInput41"
   >
     First Name
   </label>
   <textarea
-    aria-describedby="error-asInput35"
+    aria-describedby="error-asInput41"
     aria-invalid={false}
     className="form-control is-invalid-nodanger"
     disabled={false}
-    id="asInput35"
+    id="asInput41"
     name="name"
     onBlur={[Function]}
     onChange={[Function]}
@@ -25257,7 +29067,7 @@ exports[`Storyshots Textarea minimal usage 1`] = `
   <div
     aria-live="polite"
     className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput35"
+    id="error-asInput41"
   >
     <span />
   </div>
@@ -25266,29 +29076,21 @@ exports[`Storyshots Textarea minimal usage 1`] = `
 
 exports[`Storyshots Textarea scrollable 1`] = `
 <div
-  className={
-    Array [
-      "form-group",
-    ]
-  }
+  className="form-group"
 >
   <label
-    className={
-      Array [
-        "",
-      ]
-    }
-    htmlFor="asInput36"
-    id="label-asInput36"
+    className=""
+    htmlFor="asInput42"
+    id="label-asInput42"
   >
     Information
   </label>
   <textarea
-    aria-describedby="error-asInput36"
+    aria-describedby="error-asInput42"
     aria-invalid={false}
     className="form-control is-invalid-nodanger"
     disabled={false}
-    id="asInput36"
+    id="asInput42"
     name="name"
     onBlur={[Function]}
     onChange={[Function]}
@@ -25304,7 +29106,7 @@ exports[`Storyshots Textarea scrollable 1`] = `
   <div
     aria-live="polite"
     className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput36"
+    id="error-asInput42"
   >
     <span />
   </div>
@@ -25313,29 +29115,21 @@ exports[`Storyshots Textarea scrollable 1`] = `
 
 exports[`Storyshots Textarea validation 1`] = `
 <div
-  className={
-    Array [
-      "form-group",
-    ]
-  }
+  className="form-group"
 >
   <label
-    className={
-      Array [
-        "",
-      ]
-    }
-    htmlFor="asInput37"
-    id="label-asInput37"
+    className=""
+    htmlFor="asInput43"
+    id="label-asInput43"
   >
     Username
   </label>
   <textarea
-    aria-describedby="error-asInput37 description-asInput37"
+    aria-describedby="error-asInput43 description-asInput43"
     aria-invalid={false}
     className="form-control is-invalid-nodanger"
     disabled={false}
-    id="asInput37"
+    id="asInput43"
     name="username"
     onBlur={[Function]}
     onChange={[Function]}
@@ -25351,13 +29145,13 @@ exports[`Storyshots Textarea validation 1`] = `
   <div
     aria-live="polite"
     className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput37"
+    id="error-asInput43"
   >
     <span />
   </div>
   <small
     className="form-text"
-    id="description-asInput37"
+    id="description-asInput43"
   >
     The unique name that identifies you throughout the site.
   </small>

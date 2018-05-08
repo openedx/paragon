@@ -16,6 +16,7 @@ function Text(props) {
       placeholder={props.placeholder}
       aria-describedby={props.describedBy}
       onChange={props.onChange}
+      onKeyPress={props.onKeyPress}
       onBlur={props.onBlur}
       aria-invalid={!props.isValid}
       autoComplete={props.autoComplete}

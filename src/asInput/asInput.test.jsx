@@ -12,6 +12,7 @@ function testComponent(props) {
       defaultValue={props.value}
       onBlur={props.onBlur}
       onChange={props.onChange}
+      onKeyPress={props.onKeyPress}
     />
   );
 }
@@ -128,6 +129,17 @@ describe('asInput()', () => {
       };
       const wrapper = mount(<InputTestComponent {...props} />);
       wrapper.find('input').simulate('change');
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
+
+    it('keypress handler', () => {
+      const spy = jest.fn();
+      const props = {
+        ...baseProps,
+        onKeyPress: spy,
+      };
+      const wrapper = mount(<InputTestComponent {...props} />);
+      wrapper.find('input').simulate('keypress');
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
