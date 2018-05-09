@@ -135,9 +135,11 @@ describe('<Modal />', () => {
       jest.spyOn(console, 'error');
       global.console.error.mockImplementation(() => {});
     });
+
     afterEach(() => {
       global.console.error.mockRestore();
     });
+
     it('component receives props', () => {
       wrapper = mount(<Modal title={title} body={body} onClose={() => {}} />);
 
@@ -145,6 +147,7 @@ describe('<Modal />', () => {
       wrapper.setProps({ open: true });
       modalOpen(true, wrapper);
     });
+
     it('component receives props and ignores prop change', () => {
       wrapper = mount(<Modal {...defaultProps} />);
 
@@ -152,6 +155,7 @@ describe('<Modal />', () => {
       wrapper.setProps({ title: 'Changed modal title' });
       modalOpen(true, wrapper);
     });
+
     it('throws an error when an invalid parentSelector prop is passed', () => {
       wrapper = mount(<ErrorWrappedModal
         {...defaultProps}
@@ -183,6 +187,13 @@ describe('<Modal />', () => {
       wrapper.find('button').at(0).simulate('keyDown', { key: 'Escape' });
       modalOpen(false, wrapper);
     });
+
+    it('closes when a user clicks outside of the modal', () => {
+      modalOpen(true, wrapper);
+      wrapper.find('.modal-backdrop').at(0).simulate('click');
+      modalOpen(false, wrapper);
+    });
+
     it('calls callback function on close', () => {
       const spy = jest.fn();
 
@@ -197,6 +208,7 @@ describe('<Modal />', () => {
       wrapper.find('button').at(0).simulate('click');
       expect(spy).toHaveBeenCalledTimes(1);
     });
+
     it('reopens after closed', () => {
       modalOpen(true, wrapper);
       wrapper.find('button').at(0).simulate('click');
@@ -223,6 +235,7 @@ describe('<Modal />', () => {
       expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
       modalOpen(true, wrapper);
     });
+
     it('does nothing on invalid keystroke + ctrl', () => {
       const buttons = wrapper.find('button');
 
@@ -245,6 +258,7 @@ describe('<Modal />', () => {
     it('has correct initial focus', () => {
       expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
     });
+
     it('has reset focus after close and reopen', () => {
       expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
       wrapper.setProps({ open: false });
@@ -253,11 +267,13 @@ describe('<Modal />', () => {
       modalOpen(true, wrapper);
       expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
     });
+
     it('traps focus forwards on tab keystroke', () => {
       expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
       buttons.last().simulate('keyDown', { key: 'Tab' });
       expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
     });
+
     it('traps focus backwards on shift + tab keystroke', () => {
       expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
       buttons.at(0).simulate('keyDown', { key: 'Tab', shiftKey: true });
