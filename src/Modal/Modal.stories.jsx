@@ -225,4 +225,12 @@ storiesOf('Modal', module)
         parentSelector=".target-div-two"
       />
     </div>
+  ))
+  .add('modal with overflowing content', () => (
+    <Modal
+      open
+      title="Modal title."
+      body={'Overflowing body. '.repeat(600)}
+      onClose={() => {}}
+    />
   ));
