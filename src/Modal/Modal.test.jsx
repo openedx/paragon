@@ -127,6 +127,36 @@ describe('<Modal />', () => {
       expect(modalFooter.find('button')).toHaveLength(1);
       expect(wrapper.find('button')).toHaveLength(1);
     });
+
+    it('renders with IE11-specific styling when IE11 is detected', () => {
+      const { MSInputMethodContext } = global;
+      const { documentMode } = global.document;
+
+      // mimic IE11
+      global.MSInputMethodContext = true;
+      global.document.documentMode = true;
+      wrapper = mount(<Modal {...defaultProps} />);
+      const modal = wrapper.find('.modal');
+      expect(modal.hasClass('is-ie11')).toEqual(true);
+
+      global.MSInputMethodContext = MSInputMethodContext;
+      global.document.documentMode = documentMode;
+    });
+
+    it('renders without IE11-specific styling when IE11 is not detected', () => {
+      const { MSInputMethodContext } = global;
+      const { documentMode } = global.document;
+
+      // mimic non-IE11 browser
+      global.MSInputMethodContext = false;
+      global.document.documentMode = false;
+      wrapper = mount(<Modal {...defaultProps} />);
+      const modal = wrapper.find('.modal');
+      expect(modal.hasClass('is-ie11')).toEqual(false);
+
+      global.MSInputMethodContext = MSInputMethodContext;
+      global.document.documentMode = documentMode;
+    });
   });
 
   describe('props received correctly', () => {

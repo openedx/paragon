@@ -22,6 +22,9 @@ class Modal extends React.Component {
     this.headerId = newId();
     this.el = document.createElement('div');
 
+    // Sets true for IE11, false otherwise: https://stackoverflow.com/a/22082397/6620612
+    this.isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+
     this.state = {
       open: props.open,
     };
@@ -93,7 +96,7 @@ class Modal extends React.Component {
               {body}
             </div>
           </div>
-          <div className={styles.col}>
+          <div className={styles['col-md-2']}>
             <Icon
               id={newId(`Modal-${variant.status}`)}
               className={[
@@ -183,6 +186,7 @@ class Modal extends React.Component {
               [styles['d-block']]: open,
               [styles.show]: open,
               [styles.fade]: !open,
+              [styles['is-ie11']]: this.isIE11,
             },
           )}
           role="dialog"
