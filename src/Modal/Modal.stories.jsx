@@ -1,10 +1,12 @@
+import { action } from '@storybook/addon-actions';
+import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
+import PropTypes from 'prop-types';
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import PropTypes from 'prop-types';
 
 import Modal from './index';
 import Button from '../Button';
+import Icon from '../Icon';
 import InputText from '../InputText';
 import Variant from '../utils/constants';
 
@@ -118,12 +120,28 @@ storiesOf('Modal', module)
       onClose={() => {}}
     />
   ))
-  .add('configurable close button', () => (
+  .add('configurable close button string', () => (
     <Modal
       open
       title="Modal title."
       body="Modal body."
       closeText="SHOO!"
+      onClose={() => {}}
+    />
+  ))
+  .add('configurable close button element', () => (
+    <Modal
+      open
+      title="Modal title."
+      body="Modal body."
+      closeText={
+        <Icon
+          className={[
+            FontAwesomeStyles.fa,
+            FontAwesomeStyles['fa-ship'],
+          ]}
+          screenReaderText="Close"
+        />}
       onClose={() => {}}
     />
   ))

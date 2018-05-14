@@ -16,7 +16,7 @@ Provides a basic modal component with customizable title, body, and footer butto
 ### `buttons` (element or shape in form of buttonPropTypes array; optional)
 `buttons` is an array of either elements or shapes that take the form of the buttonPropTypes. See the [buttonPropTypes](https://github.com/edx/paragon/blob/master/src/Button/index.jsx#L40) for a list of acceptable props to pass as part of a button.
 
-### `closeText` (string; optional)
+### `closeText` (string or element; optional)
 `closeText` specifies the display text of the default Close button. It defaults to "Close".
 
 ### `onClose` (function; required)

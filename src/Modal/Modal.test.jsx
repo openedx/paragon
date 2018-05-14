@@ -59,6 +59,7 @@ const defaultProps = {
   open: true,
   onClose: () => {},
 };
+const closeText = 'GO AWAY!';
 
 let wrapper;
 
@@ -126,6 +127,28 @@ describe('<Modal />', () => {
       expect(modalHeader.find('button')).toHaveLength(0);
       expect(modalFooter.find('button')).toHaveLength(1);
       expect(wrapper.find('button')).toHaveLength(1);
+    });
+
+    it('renders custom close button string', () => {
+      wrapper = mount(<Modal {...defaultProps} closeText={closeText} />);
+      const modalFooter = wrapper.find('.modal-footer');
+      const closeButton = modalFooter.find('button');
+
+      expect(closeButton).toHaveLength(1);
+      expect(closeButton.children()).toHaveLength(0);
+      expect(closeButton.text()).toEqual(closeText);
+    });
+
+    it('renders custom close button element', () => {
+      const closeElem = <span>{closeText}</span>;
+      wrapper = mount(<Modal {...defaultProps} closeText={closeElem} />);
+      const modalFooter = wrapper.find('.modal-footer');
+      const closeButton = modalFooter.find('button');
+
+      expect(closeButton).toHaveLength(1);
+      expect(closeButton.children()).toHaveLength(1);
+      expect(closeButton.find('span')).toHaveLength(1);
+      expect(closeButton.text()).toEqual(closeText);
     });
 
     it('renders with IE11-specific styling when IE11 is detected', () => {
