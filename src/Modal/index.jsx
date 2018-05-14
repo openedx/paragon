@@ -20,7 +20,6 @@ class Modal extends React.Component {
     this.setCloseButton = this.setCloseButton.bind(this);
 
     this.headerId = newId();
-    this.el = document.createElement('div');
 
     // Sets true for IE11, false otherwise: https://stackoverflow.com/a/22082397/6620612
     this.isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
@@ -34,11 +33,12 @@ class Modal extends React.Component {
     if (this.firstFocusableElement) {
       this.firstFocusableElement.focus();
     }
-    this.parentElement = document.querySelector(this.props.parentSelector);
-    if (this.parentElement === null) {
-      throw new Error(`Modal recieved invalid parentSelector: ${this.props.parentSelector}, no matching element found`);
+    if (this.props.parentSelector) {
+      this.parentElement = document.querySelector(this.props.parentSelector);
+      if (this.parentElement === null) {
+        throw new Error(`Modal recieved invalid parentSelector: ${this.props.parentSelector}, no matching element found`);
+      }
     }
-    this.parentElement.appendChild(this.el);
   }
 
   componentWillReceiveProps({ open }) {
@@ -51,10 +51,6 @@ class Modal extends React.Component {
     if (this.state.open && !prevState.open) {
       this.firstFocusableElement.focus();
     }
-  }
-
-  componentWillUnmount() {
-    ReactDOM.unmountComponentAtNode(this.parentElement);
   }
 
   setFirstFocusableElement(input) {
@@ -168,7 +164,7 @@ class Modal extends React.Component {
     const { renderHeaderCloseButton } = this.props;
 
     return (
-      <div>
+      <React.Fragment>
         <div
           className={classNames({
             [styles['modal-backdrop']]: open,
@@ -224,15 +220,18 @@ class Modal extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 
   render() {
-    return ReactDOM.createPortal(
-      this.renderModal(),
-      this.el,
-    );
+    if (this.parentElement) {
+      return ReactDOM.createPortal(
+        this.renderModal(),
+        this.parentElement,
+      );
+    }
+    return this.renderModal();
   }
 }
 
@@ -255,7 +254,7 @@ Modal.propTypes = {
 
 Modal.defaultProps = {
   open: false,
-  parentSelector: 'body',
+  parentSelector: undefined,
   buttons: [],
   closeText: 'Close',
   variant: {},

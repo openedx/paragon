@@ -57,7 +57,7 @@ ModalWrapper.propTypes = {
 };
 
 ModalWrapper.defaultProps = {
-  parentSelector: 'body',
+  parentSelector: undefined,
 };
 
 storiesOf('Modal', module)
@@ -198,7 +198,7 @@ storiesOf('Modal', module)
     />
   ))
   .add('modal inside special div', () => (
-    <div>
+    <React.Fragment>
       <div>
         <div className="special-div" />
       </div>
@@ -207,10 +207,10 @@ storiesOf('Modal', module)
         body="I was invoked by a button!"
         parentSelector=".special-div"
       />
-    </div>
+    </React.Fragment>
   ))
   .add('two modals with the same target', () => (
-    <div>
+    <React.Fragment>
       <div>
         <div className="target-div" />
       </div>
@@ -224,10 +224,10 @@ storiesOf('Modal', module)
         body="I target one"
         parentSelector=".target-div"
       />
-    </div>
+    </React.Fragment>
   ))
   .add('two modals with seperate targets', () => (
-    <div>
+    <React.Fragment>
       <div>
         <div className="target-div-one" />
         <div className="target-div-two" />
@@ -242,7 +242,7 @@ storiesOf('Modal', module)
         body="I target two"
         parentSelector=".target-div-two"
       />
-    </div>
+    </React.Fragment>
   ))
   .add('modal with overflowing content', () => (
     <Modal
