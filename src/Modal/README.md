@@ -26,4 +26,7 @@ Provides a basic modal component with customizable title, body, and footer butto
 `renderHeaderCloseButton` specifies whether a close button is rendered in the modal header. It defaults to true.
 
 ### `parentSelector` (string; optional)
-`parentSelector` is the selector for an element in the dom which the modal should be rendered under. It uses querySelector to find the first element that matches that selector, and then creates a react portal to a div underneath the parent element. 
+`parentSelector` is the selector for an element in the dom which the modal should be rendered under. It uses querySelector to find the first element that matches that selector, and then creates a react portal to a div underneath the parent element.
+
+### `wrapperClass` (string; optional)
+`wrapperClass` is a class name that can be added to the wrapper div for the modal to enable CSS customization.

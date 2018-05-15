@@ -95,6 +95,12 @@ describe('<Modal />', () => {
       expect(wrapper.find('button')).toHaveLength(buttons.length + 2);
     });
 
+    it('renders a custom wrapper class', () => {
+      const customClass = 'my-modal-wrapper';
+      wrapper = mount(<Modal {...defaultProps} wrapperClass={customClass} />);
+      expect(wrapper.childAt(0).hasClass(customClass)).toEqual(true);
+    });
+
     it('renders Warning Variant', () => {
       wrapper = mount(<Modal {...defaultProps} variant={{ status: Variant.status.WARNING }} />);
 

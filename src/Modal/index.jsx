@@ -165,10 +165,10 @@ class Modal extends React.Component {
 
   renderModal() {
     const { open } = this.state;
-    const { renderHeaderCloseButton } = this.props;
+    const { renderHeaderCloseButton, wrapperClass } = this.props;
 
     return (
-      <div>
+      <div className={wrapperClass}>
         <div
           className={classNames({
             [styles['modal-backdrop']]: open,
@@ -251,6 +251,7 @@ Modal.propTypes = {
     status: PropTypes.string,
   }),
   renderHeaderCloseButton: PropTypes.bool,
+  wrapperClass: PropTypes.string,
 };
 
 Modal.defaultProps = {
@@ -260,6 +261,7 @@ Modal.defaultProps = {
   closeText: 'Close',
   variant: {},
   renderHeaderCloseButton: true,
+  wrapperClass: '',
 };
 
 
