@@ -32,4 +32,14 @@ storiesOf('Dropdown', module)
         },
       ]}
     />
+  ))
+  .add('menu items as elements', () => (
+    <Dropdown
+      title="Search Engines"
+      menuItems={[
+        <a href="http://www.google.com">Google</a>,
+        <a href="http://www.duckduckgo.com">DuckDuckGo</a>,
+        <a href="http://www.yahoo.com">Yahoo</a>,
+      ]}
+    />
   ));

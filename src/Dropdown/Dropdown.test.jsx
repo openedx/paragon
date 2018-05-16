@@ -1,8 +1,33 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { mount, shallow } from 'enzyme';
 
 import Dropdown, { triggerKeys } from './index';
+
+class Link extends React.Component {
+  render() {
+    const { to, children, innerRef } = this.props;
+    return (
+      <a
+        ref={innerRef}
+        href={to}
+      >
+        {children}
+      </a>
+    );
+  }
+}
+
+Link.propTypes = {
+  to: PropTypes.string.isRequired,
+  innerRef: PropTypes.func,
+  children: PropTypes.node.isRequired,
+};
+
+Link.defaultProps = {
+  innerRef: null,
+};
 
 const props = {
   title: 'Example',
@@ -82,6 +107,13 @@ describe('<Dropdown />', () => {
         menuOpen(false, wrapper);
       });
 
+      it(`on menu item ${key}`, () => {
+        wrapper.find('a').at(0).simulate('keyDown', { key });
+        menuOpen(false, wrapper);
+      });
+    });
+
+    triggerKeys.SELECT_MENU_ITEM.forEach((key) => {
       it(`on menu item ${key}`, () => {
         wrapper.find('a').at(0).simulate('keyDown', { key });
         menuOpen(false, wrapper);
@@ -176,5 +208,23 @@ describe('<Dropdown />', () => {
         expect(wrapper.find('Button').html()).toEqual(document.activeElement.outerHTML);
       });
     });
+  });
+
+  it('accepts menuItems prop with array of elements', () => {
+    const wrapper = mount((
+      <Dropdown
+        {...props}
+        menuItems={[
+          <Link to="http://www.google.com">Google</Link>,
+          <Link to="http://www.duckduckgo.com">DuckDuckGo</Link>,
+          <Link to="http://www.yahoo.com">Yahoo</Link>,
+        ]}
+      />
+    ));
+
+    menuOpen(false, wrapper);
+    wrapper.find('Button').simulate('click');
+    menuOpen(true, wrapper);
+    expect(wrapper.find('a')).toHaveLength(3);
   });
 });
