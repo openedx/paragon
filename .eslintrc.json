@@ -7,7 +7,12 @@
   },
   "rules": {
     "react/no-array-index-key": "off",
-    "compat/compat": "error"
+    "compat/compat": "error",
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "a" ],
+      "specialLink": [ "hrefLeft", "hrefRight" ],
+      "aspects": [ "noHref", "invalidHref", "preferButton" ]
+    }]
   },
   "settings": {
     "import/resolver": {

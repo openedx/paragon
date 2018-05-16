@@ -6,10 +6,11 @@ import styles from './Dropdown.scss';
 import Button from '../Button';
 
 export const triggerKeys = {
-  OPEN_MENU: ['ArrowDown', 'Space'],
+  OPEN_MENU: ['ArrowDown'],
   CLOSE_MENU: ['Escape'],
   NAVIGATE_DOWN: ['ArrowDown', 'Tab'],
   NAVIGATE_UP: ['ArrowUp'],
+  SELECT_MENU_ITEM: ['Enter', ' '],
 };
 
 class Dropdown extends React.Component {
@@ -69,6 +70,11 @@ class Dropdown extends React.Component {
     e.preventDefault();
     if (Dropdown.isTriggerKey('CLOSE_MENU', e.key)) {
       this.toggle();
+    } else if (Dropdown.isTriggerKey('SELECT_MENU_ITEM', e.key)) {
+      e.target.click();
+      this.setState({
+        open: false,
+      });
     } else if (Dropdown.isTriggerKey('NAVIGATE_DOWN', e.key)) {
       this.setState({
         focusIndex: (this.state.focusIndex + 1) % this.props.menuItems.length,
@@ -97,24 +103,35 @@ class Dropdown extends React.Component {
   }
 
   generateMenuItems(menuItems) {
-    return menuItems.map((menuItem, i) => (
-      <a
-        className={styles['dropdown-item']}
-        href={menuItem.href}
-        key={i}
-        onKeyDown={this.handleMenuKeyDown}
-        ref={(item) => {
-          this.menuItems[i] = item;
-        }}
-        role="menuitem"
-      >
-        {menuItem.label}
-      </a>
-    ));
+    return menuItems.map((menuItem, i) => {
+      if (React.isValidElement(menuItem)) {
+        const refKey = menuItem.type.name === 'Link' ? 'innerRef' : 'ref';
+        const cloneProps = {
+          [`${refKey}`]: (item) => { this.menuItems[i] = item; },
+          className: styles['dropdown-item'],
+          key: i,
+          onKeyDown: this.handleMenuKeyDown,
+        };
+        return React.cloneElement(menuItem, cloneProps);
+      }
+      return (
+        <a
+          className={styles['dropdown-item']}
+          href={menuItem.href}
+          key={i}
+          onKeyDown={this.handleMenuKeyDown}
+          ref={(item) => {
+            this.menuItems[i] = item;
+          }}
+          role="menuitem"
+        >
+          {menuItem.label}
+        </a>
+      );
+    });
   }
 
   render() {
-    const menuItems = this.generateMenuItems(this.props.menuItems);
     return (
       <div
         className={classNames([
@@ -145,7 +162,7 @@ class Dropdown extends React.Component {
           ])}
           role="menu"
         >
-          {menuItems}
+          {this.generateMenuItems(this.props.menuItems)}
         </div>
       </div>
     );
@@ -154,10 +171,13 @@ class Dropdown extends React.Component {
 
 Dropdown.propTypes = {
   buttonType: PropTypes.string,
-  menuItems: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string,
-    href: PropTypes.string,
-  })).isRequired,
+  menuItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      href: PropTypes.string,
+    }),
+    PropTypes.element,
+  ).isRequired,
   title: PropTypes.string.isRequired,
 };
 
