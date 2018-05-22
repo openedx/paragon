@@ -11,6 +11,7 @@ import InputText from './InputText';
 import MailtoLink from './MailtoLink';
 import Modal from './Modal';
 import RadioButtonGroup, { RadioButton } from './RadioButtonGroup';
+import SearchField from './SearchField';
 import StatusAlert from './StatusAlert';
 import Table from './Table';
 import Tabs from './Tabs';
@@ -32,6 +33,7 @@ export {
   Modal,
   RadioButtonGroup,
   RadioButton,
+  SearchField,
   StatusAlert,
   Table,
   Tabs,
