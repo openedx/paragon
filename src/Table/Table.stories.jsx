@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { checkA11y } from '@storybook/addon-a11y';
 import { withInfo } from '@storybook/addon-info';
+import { withReadme } from 'storybook-readme';
 
 import Table from './index';
 import README from './README.md';
@@ -77,9 +78,10 @@ const sort = function sort(firstElement, secondElement, key, direction) {
 };
 
 storiesOf('Table', module)
-  .addDecorator((story, context) => withInfo({}, README)(story)(context))
+  .addDecorator((story, context) => withInfo()(story)(context))
   .addDecorator(centered)
   .addDecorator(checkA11y)
+  .addDecorator(withReadme(README))
   .add('unstyled', () => (
     <Table
       data={catData}
