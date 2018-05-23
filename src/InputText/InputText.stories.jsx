@@ -2,12 +2,17 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
+import { checkA11y } from '@storybook/addon-a11y';
+import { withInfo } from '@storybook/addon-info';
+import { withReadme } from 'storybook-readme';
+
 import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
 
 import Button from '../Button';
 import Icon from '../Icon';
 import InputText from './index';
 import StatusAlert from '../StatusAlert';
+import README from './README.md';
 
 class FocusInputWrapper extends React.Component {
   constructor(props) {
@@ -44,7 +49,10 @@ class FocusInputWrapper extends React.Component {
 
 
 storiesOf('InputText', module)
+  .addDecorator((story, context) => withInfo()(story)(context))
   .addDecorator(centered)
+  .addDecorator(checkA11y)
+  .addDecorator(withReadme(README))
   .add('minimal usage', () => (
     <InputText
       name="name"
