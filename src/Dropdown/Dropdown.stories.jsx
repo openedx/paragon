@@ -4,14 +4,16 @@ import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { checkA11y } from '@storybook/addon-a11y';
 import { withInfo } from '@storybook/addon-info';
+import { withReadme } from 'storybook-readme';
 
 import Dropdown from './index';
 import README from './README.md';
 
 storiesOf('Dropdown', module)
-  .addDecorator((story, context) => withInfo({}, README)(story)(context))
+  .addDecorator((story, context) => withInfo()(story)(context))
   .addDecorator(centered)
   .addDecorator(checkA11y)
+  .addDecorator(withReadme(README))
   .add('basic usage', () => (
     <Dropdown
       title="Search Engines"

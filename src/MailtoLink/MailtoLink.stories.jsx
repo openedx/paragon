@@ -6,6 +6,7 @@ import { setConsoleOptions } from '@storybook/addon-console';
 import { withInfo } from '@storybook/addon-info';
 import centered from '@storybook/addon-centered';
 import { checkA11y } from '@storybook/addon-a11y';
+import { withReadme } from 'storybook-readme';
 
 import MailtoLink from './index';
 import README from './README.md';
@@ -21,9 +22,10 @@ const onClick = (event) => {
 };
 
 storiesOf('MailtoLink', module)
-  .addDecorator((story, context) => withInfo({}, README)(story)(context))
+  .addDecorator((story, context) => withInfo()(story)(context))
   .addDecorator(centered)
   .addDecorator(checkA11y)
+  .addDecorator(withReadme(README))
   .add('minimal usage', () => (
     <MailtoLink
       to="edx@example.com"
