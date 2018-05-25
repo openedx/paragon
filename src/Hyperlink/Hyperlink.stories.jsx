@@ -6,7 +6,10 @@ import { checkA11y } from '@storybook/addon-a11y';
 import { action } from '@storybook/addon-actions';
 import { setConsoleOptions } from '@storybook/addon-console';
 import { withInfo } from '@storybook/addon-info';
-import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
+import { withReadme } from 'storybook-readme';
+
+import 'font-awesome/css/font-awesome.min.css';
+
 import README from './README.md';
 
 import Hyperlink from './index';
@@ -22,9 +25,10 @@ const onClick = (event) => {
 };
 
 storiesOf('HyperLink', module)
-  .addDecorator((story, context) => withInfo({ styles: FontAwesomeStyles }, README)(story)(context))
+  .addDecorator((story, context) => withInfo()(story)(context))
   .addDecorator(centered)
   .addDecorator(checkA11y)
+  .addDecorator(withReadme(README))
   .add('minimal usage', () => <Hyperlink destination="https://en.wikipedia.org/wiki/Hyperlink" content="edX.org" />)
   .add('with blank target', () => (
     <Hyperlink
