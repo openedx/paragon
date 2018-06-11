@@ -10,6 +10,8 @@ import Icon from '../Icon';
 import newId from '../utils/newId';
 import Variant from '../utils/constants';
 
+const closeModalButtonId = 'paragonCloseModalButton';
+
 class Modal extends React.Component {
   constructor(props) {
     super(props);
@@ -202,7 +204,7 @@ class Modal extends React.Component {
                 <Button
                   label={<Icon className={['fa', 'fa-times']} />}
                   className={['p-1']}
-                  aria-label={this.props.closeText}
+                  aria-labelledby={closeModalButtonId}
                   onClick={this.close}
                   inputRef={this.setFirstFocusableElement}
                   onKeyDown={this.handleKeyDown}
@@ -215,6 +217,7 @@ class Modal extends React.Component {
             <div className={styles['modal-footer']}>
               {this.renderButtons()}
               <Button
+                id={closeModalButtonId}
                 label={this.props.closeText}
                 buttonType="secondary"
                 onClick={this.close}
