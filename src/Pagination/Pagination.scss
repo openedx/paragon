@@ -1,0 +1,18 @@
+@import "~bootstrap/scss/_pagination";
+@import "~bootstrap/scss/_buttons";
+@import "~bootstrap/scss/_variables";
+@import "~bootstrap/scss/utilities/_spacing";
+@import "~bootstrap/scss/utilities/_borders";
+
+.page-link {
+    border-color: $pagination-border-color !important;
+    border-radius: 0 !important;
+    
+    div {
+        display: inline-block;
+    }
+}
+
+.page-item > .btn {
+    transition: none;
+}
