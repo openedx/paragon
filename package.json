@@ -39,7 +39,9 @@
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
     "react-element-proptypes": "^1.0.0",
-    "react-proptype-conditional-require": "^1.0.4"
+    "react-proptype-conditional-require": "^1.0.4",
+    "react-responsive": "^4.1.0",
+    "sanitize-html": "^1.18.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^6.0.2",
@@ -110,7 +112,8 @@
     "coveragePathIgnorePatterns": [
       "/.storybook/",
       "/node_modules/",
-      "(.stories)\\.(jsx)$"
+      "(.stories)\\.(jsx)$",
+      "\\.(mock.js)$"
     ],
     "transformIgnorePatterns": [
       "/node_modules/(?!lodash-es/.*)"

@@ -63,8 +63,8 @@ class Button extends React.Component {
       <button
         {...other}
         className={classNames([
-          ...className,
           styles.btn,
+          ...className,
         ], {
           [styles[`btn-${buttonType}`]]: buttonType !== undefined,
         }, {
