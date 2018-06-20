@@ -33714,6 +33714,384 @@ exports[`Storyshots InputText with input group addons 1`] = `
 </div>
 `;
 
+exports[`Storyshots ListBox basic usage 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": 0,
+      "display": "flex",
+      "justifyContent": "center",
+      "left": 0,
+      "overflow": "auto",
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+      }
+    }
+  >
+    <div
+      aria-activedescendant={null}
+      className="list-group"
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      role="listbox"
+      tabIndex={0}
+    >
+      <div
+        aria-selected={false}
+        className="list-group-item list-group-item-action"
+        id="list-box-option-0"
+        onMouseDown={[Function]}
+        onSelect={[Function]}
+        role="option"
+      >
+        Apple
+      </div>
+      <div
+        aria-selected={false}
+        className="list-group-item list-group-item-action"
+        id="list-box-option-1"
+        onMouseDown={[Function]}
+        onSelect={[Function]}
+        role="option"
+      >
+        Orange
+      </div>
+      <div
+        aria-selected={false}
+        className="list-group-item list-group-item-action"
+        id="list-box-option-2"
+        onMouseDown={[Function]}
+        onSelect={[Function]}
+        role="option"
+      >
+        Strawberry
+      </div>
+      <div
+        aria-selected={false}
+        className="list-group-item list-group-item-action"
+        id="list-box-option-3"
+        onMouseDown={[Function]}
+        onSelect={[Function]}
+        role="option"
+      >
+        Banana
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ListBox using onSelect prop 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": 0,
+      "display": "flex",
+      "justifyContent": "center",
+      "left": 0,
+      "overflow": "auto",
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+      }
+    }
+  >
+    <span
+      aria-live="polite"
+    >
+      Selected Fruit:
+      <span
+        arialabelledby="list-box-option-null"
+      >
+        
+      </span>
+    </span>
+    <div
+      aria-activedescendant={null}
+      className="list-group"
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      role="listbox"
+      style={
+        Object {
+          "width": "200px",
+        }
+      }
+      tabIndex={0}
+    >
+      <div
+        aria-selected={false}
+        className="list-group-item list-group-item-action"
+        id="list-box-option-0"
+        onMouseDown={[Function]}
+        onSelect={[Function]}
+        role="option"
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        Apple
+      </div>
+      <div
+        aria-selected={false}
+        className="list-group-item list-group-item-action"
+        id="list-box-option-1"
+        onMouseDown={[Function]}
+        onSelect={[Function]}
+        role="option"
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        Orange
+      </div>
+      <div
+        aria-selected={false}
+        className="list-group-item list-group-item-action"
+        id="list-box-option-2"
+        onMouseDown={[Function]}
+        onSelect={[Function]}
+        role="option"
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        Strawberry
+      </div>
+      <div
+        aria-selected={false}
+        className="list-group-item list-group-item-action"
+        id="list-box-option-3"
+        onMouseDown={[Function]}
+        onSelect={[Function]}
+        role="option"
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        Banana
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ListBox using selectedOptionIndex prop 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": 0,
+      "display": "flex",
+      "justifyContent": "center",
+      "left": 0,
+      "overflow": "auto",
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+      }
+    }
+  >
+    <button
+      className="btn btn-primary"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    >
+      Click me to reset your selected fruit!
+    </button>
+    <div
+      aria-activedescendant={null}
+      className="list-group"
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      role="listbox"
+      style={
+        Object {
+          "margin": "10px",
+        }
+      }
+      tabIndex={0}
+    >
+      <div
+        aria-selected={false}
+        className="list-group-item list-group-item-action"
+        id="list-box-option-0"
+        onMouseDown={[Function]}
+        onSelect={[Function]}
+        role="option"
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        Apple
+      </div>
+      <div
+        aria-selected={false}
+        className="list-group-item list-group-item-action"
+        id="list-box-option-1"
+        onMouseDown={[Function]}
+        onSelect={[Function]}
+        role="option"
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        Orange
+      </div>
+      <div
+        aria-selected={false}
+        className="list-group-item list-group-item-action"
+        id="list-box-option-2"
+        onMouseDown={[Function]}
+        onSelect={[Function]}
+        role="option"
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        Strawberry
+      </div>
+      <div
+        aria-selected={false}
+        className="list-group-item list-group-item-action"
+        id="list-box-option-3"
+        onMouseDown={[Function]}
+        onSelect={[Function]}
+        role="option"
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        Banana
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ListBox using tag prop 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": 0,
+      "display": "flex",
+      "justifyContent": "center",
+      "left": 0,
+      "overflow": "auto",
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+      }
+    }
+  >
+    <div>
+      This is an ordered list!
+    </div>
+    <ol
+      aria-activedescendant={null}
+      className="list-group"
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      role="listbox"
+      tabIndex={0}
+    >
+      <li
+        aria-selected={false}
+        className="list-group-item list-group-item-action"
+        id="list-box-option-0"
+        onMouseDown={[Function]}
+        onSelect={[Function]}
+        role="option"
+      >
+        Apple
+      </li>
+      <li
+        aria-selected={false}
+        className="list-group-item list-group-item-action"
+        id="list-box-option-1"
+        onMouseDown={[Function]}
+        onSelect={[Function]}
+        role="option"
+      >
+        <div>
+          Orange
+        </div>
+      </li>
+      <li
+        aria-selected={false}
+        className="list-group-item list-group-item-action"
+        id="list-box-option-2"
+        onMouseDown={[Function]}
+        onSelect={[Function]}
+        role="option"
+      >
+        Strawberry
+      </li>
+      <li
+        aria-selected={false}
+        className="list-group-item list-group-item-action"
+        id="list-box-option-3"
+        onMouseDown={[Function]}
+        onSelect={[Function]}
+        role="option"
+      >
+        Banana
+      </li>
+    </ol>
+  </div>
+</div>
+`;
+
 exports[`Storyshots MailtoLink minimal usage 1`] = `
 <div
   style={
