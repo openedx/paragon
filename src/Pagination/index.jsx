@@ -38,6 +38,12 @@ class Pagination extends React.Component {
     }
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    // Update only when the props and currentPage state changes to avoid re-render
+    // if only the pageButtonSelected state is changed.
+    return nextProps !== this.props || nextState.currentPage !== this.state.currentPage;
+  }
+
   componentDidUpdate() {
     const { currentPage, pageButtonSelected } = this.state;
     const currentPageRef = this.pageRefs[currentPage];
