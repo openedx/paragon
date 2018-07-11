@@ -11,6 +11,8 @@ class Table extends React.Component {
   constructor(props) {
     super(props);
 
+    this.sortButtonRefs = {};
+
     this.state = {
       sortedColumn: props.tableSortable ? this.props.defaultSortedColumn : '',
       sortDirection: props.tableSortable ? this.props.defaultSortDirection : '',
@@ -78,6 +80,7 @@ class Table extends React.Component {
             {this.getSortIcon(column.key === this.state.sortedColumn ? this.state.sortDirection : '')}
           </span>}
         onClick={() => this.onSortClick(column.key)}
+        ref={(element) => { this.sortButtonRefs[column.key] = element; }}
       />);
     } else if (column.hideHeader) {
       heading = (<span className={classNames(styles['sr-only'])}>{column.label}</span>);
