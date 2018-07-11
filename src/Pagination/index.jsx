@@ -23,7 +23,7 @@ class Pagination extends React.Component {
 
     this.state = {
       currentPage: this.props.currentPage,
-      previousNextButtonClicked: false,
+      pageButtonSelected: false,
     };
   }
 
@@ -39,19 +39,24 @@ class Pagination extends React.Component {
   }
 
   componentDidUpdate() {
-    const { currentPage, previousNextButtonClicked } = this.state;
+    const { currentPage, pageButtonSelected } = this.state;
     const currentPageRef = this.pageRefs[currentPage];
 
-    if (currentPageRef && !previousNextButtonClicked) {
+    if (currentPageRef && pageButtonSelected) {
       currentPageRef.focus();
+      this.setPageButtonSelectedState(false);
     }
+  }
+
+  setPageButtonSelectedState(value) {
+    this.setState({ pageButtonSelected: value });
   }
 
   handlePageSelect(page) {
     if (page !== this.state.currentPage) {
       this.setState({
         currentPage: page,
-        previousNextButtonClicked: false,
+        pageButtonSelected: true,
       });
       this.props.onPageSelect(page);
     }
@@ -60,17 +65,12 @@ class Pagination extends React.Component {
   handlePreviousNextButtonClick(page) {
     const { pageCount } = this.props;
 
-    this.setState({
-      currentPage: page,
-      previousNextButtonClicked: true,
-    });
-
     if (page === 1) {
       this.nextButtonRef.focus();
     } else if (page === pageCount) {
       this.previousButtonRef.focus();
     }
-
+    this.setState({ currentPage: page });
     this.props.onPageSelect(page);
   }
 
