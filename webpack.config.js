@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -32,6 +33,9 @@ module.exports = targetProperties.map(config => ({
       sourceMap: true,
     }),
     new ExtractTextPlugin(`${config.baseDirectory}/paragon.min.css`),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+    }),
   ],
   module: {
     rules: [
