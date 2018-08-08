@@ -105,9 +105,8 @@ class Dropdown extends React.Component {
   generateMenuItems(menuItems) {
     return menuItems.map((menuItem, i) => {
       if (React.isValidElement(menuItem)) {
-        const refKey = menuItem.type.name === 'Link' ? 'innerRef' : 'ref';
         const cloneProps = {
-          [`${refKey}`]: (item) => { this.menuItems[i] = item; },
+          ref: (item) => { this.menuItems[i] = item; },
           className: styles['dropdown-item'],
           key: i,
           onKeyDown: this.handleMenuKeyDown,
