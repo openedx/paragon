@@ -2,6 +2,8 @@
 
 Provides a dropdown component that will maintain focus and keyboard navigation on an array of `menuItems` that is passed in.
 
+Note: When passing in a component to `menuItems` that uses a prop other than `ref` for access to a focusable DOM element (such as the `Link` component from `react-router`, which uses `innerRef`), it's recommended to wrap the component in another component that exposes it's own focus method.
+
 ## API
 
 ### `buttonType` (string; optional)

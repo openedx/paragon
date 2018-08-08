@@ -1,33 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import PropTypes from 'prop-types';
 import { mount, shallow } from 'enzyme';
 
 import Dropdown, { triggerKeys } from './index';
-
-class Link extends React.Component {
-  render() {
-    const { to, children, innerRef } = this.props;
-    return (
-      <a
-        ref={innerRef}
-        href={to}
-      >
-        {children}
-      </a>
-    );
-  }
-}
-
-Link.propTypes = {
-  to: PropTypes.string.isRequired,
-  innerRef: PropTypes.func,
-  children: PropTypes.node.isRequired,
-};
-
-Link.defaultProps = {
-  innerRef: null,
-};
 
 const props = {
   title: 'Example',
@@ -215,9 +190,9 @@ describe('<Dropdown />', () => {
       <Dropdown
         {...props}
         menuItems={[
-          <Link to="http://www.google.com">Google</Link>,
-          <Link to="http://www.duckduckgo.com">DuckDuckGo</Link>,
-          <Link to="http://www.yahoo.com">Yahoo</Link>,
+          <a href="http://www.google.com">Google</a>,
+          <a href="http://www.duckduckgo.com">DuckDuckGo</a>,
+          <a href="http://www.yahoo.com">Yahoo</a>,
         ]}
       />
     ));
