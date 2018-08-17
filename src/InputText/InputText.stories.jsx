@@ -60,6 +60,14 @@ storiesOf('InputText', module)
       value="Foo Bar"
     />
   ))
+  .add('read only', () => (
+    <InputText
+      name="inputState"
+      label="Input State"
+      value="Read Only"
+      readOnly
+    />
+  ))
   .add('validation', () => (
     <InputText
       id="username"

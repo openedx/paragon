@@ -21,6 +21,7 @@ function Text(props) {
       aria-invalid={!props.isValid}
       autoComplete={props.autoComplete}
       disabled={props.disabled}
+      readOnly={props.readOnly}
       required={props.required}
       ref={props.inputRef}
       themes={props.themes}
@@ -34,6 +35,7 @@ const textPropTypes = {
   isValid: PropTypes.bool,
   autoComplete: PropTypes.string,
   inputRef: PropTypes.func,
+  readOnly: PropTypes.bool,
 };
 
 const textDefaultProps = {
@@ -42,6 +44,7 @@ const textDefaultProps = {
   isValid: true,
   autoComplete: 'on',
   inputRef: () => {},
+  readOnly: false,
 };
 
 Text.propTypes = { ...textPropTypes, ...inputProps };

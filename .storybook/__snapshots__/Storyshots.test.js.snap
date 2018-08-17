@@ -7668,6 +7668,7 @@ exports[`Storyshots Fieldset basic usage 1`] = `
                   onChange={[Function]}
                   onKeyPress={[Function]}
                   placeholder={undefined}
+                  readOnly={false}
                   required={false}
                   themes={Array []}
                   type="text"
@@ -7703,6 +7704,7 @@ exports[`Storyshots Fieldset basic usage 1`] = `
                   onChange={[Function]}
                   onKeyPress={[Function]}
                   placeholder={undefined}
+                  readOnly={false}
                   required={false}
                   themes={Array []}
                   type="text"
@@ -9293,6 +9295,7 @@ exports[`Storyshots Fieldset client-side validation of fieldset 1`] = `
                   onChange={[Function]}
                   onKeyPress={[Function]}
                   placeholder={undefined}
+                  readOnly={false}
                   required={false}
                   themes={Array []}
                   type="text"
@@ -9328,6 +9331,7 @@ exports[`Storyshots Fieldset client-side validation of fieldset 1`] = `
                   onChange={[Function]}
                   onKeyPress={[Function]}
                   placeholder={undefined}
+                  readOnly={false}
                   required={false}
                   themes={Array []}
                   type="text"
@@ -9648,6 +9652,7 @@ exports[`Storyshots Fieldset invalid 1`] = `
                   onChange={[Function]}
                   onKeyPress={[Function]}
                   placeholder={undefined}
+                  readOnly={false}
                   required={false}
                   themes={Array []}
                   type="text"
@@ -9683,6 +9688,7 @@ exports[`Storyshots Fieldset invalid 1`] = `
                   onChange={[Function]}
                   onKeyPress={[Function]}
                   placeholder={undefined}
+                  readOnly={false}
                   required={false}
                   themes={Array []}
                   type="text"
@@ -11326,6 +11332,7 @@ exports[`Storyshots Fieldset invalid with danger theme 1`] = `
                   onChange={[Function]}
                   onKeyPress={[Function]}
                   placeholder={undefined}
+                  readOnly={false}
                   required={false}
                   themes={Array []}
                   type="text"
@@ -11361,6 +11368,7 @@ exports[`Storyshots Fieldset invalid with danger theme 1`] = `
                   onChange={[Function]}
                   onKeyPress={[Function]}
                   placeholder={undefined}
+                  readOnly={false}
                   required={false}
                   themes={Array []}
                   type="text"
@@ -22843,6 +22851,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
               onChange={[Function]}
               onKeyPress={[Function]}
               placeholder={undefined}
+              readOnly={false}
               required={false}
               themes={Array []}
               type="search"
@@ -22878,6 +22887,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
               onChange={[Function]}
               onKeyPress={[Function]}
               placeholder={undefined}
+              readOnly={false}
               required={false}
               themes={Array []}
               type="email"
@@ -22913,6 +22923,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
               onChange={[Function]}
               onKeyPress={[Function]}
               placeholder={undefined}
+              readOnly={false}
               required={false}
               themes={Array []}
               type="url"
@@ -22948,6 +22959,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
               onChange={[Function]}
               onKeyPress={[Function]}
               placeholder={undefined}
+              readOnly={false}
               required={false}
               themes={Array []}
               type="tel"
@@ -22983,6 +22995,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
               onChange={[Function]}
               onKeyPress={[Function]}
               placeholder={undefined}
+              readOnly={false}
               required={false}
               themes={Array []}
               type="password"
@@ -23018,6 +23031,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
               onChange={[Function]}
               onKeyPress={[Function]}
               placeholder={undefined}
+              readOnly={false}
               required={false}
               themes={Array []}
               type="number"
@@ -23053,6 +23067,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
               onChange={[Function]}
               onKeyPress={[Function]}
               placeholder={undefined}
+              readOnly={false}
               required={false}
               themes={Array []}
               type="datetime-local"
@@ -23088,6 +23103,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
               onChange={[Function]}
               onKeyPress={[Function]}
               placeholder={undefined}
+              readOnly={false}
               required={false}
               themes={Array []}
               type="date"
@@ -23123,6 +23139,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
               onChange={[Function]}
               onKeyPress={[Function]}
               placeholder={undefined}
+              readOnly={false}
               required={false}
               themes={Array []}
               type="month"
@@ -23158,6 +23175,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
               onChange={[Function]}
               onKeyPress={[Function]}
               placeholder={undefined}
+              readOnly={false}
               required={false}
               themes={Array []}
               type="week"
@@ -23193,6 +23211,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
               onChange={[Function]}
               onKeyPress={[Function]}
               placeholder={undefined}
+              readOnly={false}
               required={false}
               themes={Array []}
               type="time"
@@ -23228,6 +23247,7 @@ exports[`Storyshots InputText different textual input types 1`] = `
               onChange={[Function]}
               onKeyPress={[Function]}
               placeholder={undefined}
+              readOnly={false}
               required={false}
               themes={Array []}
               type="color"
@@ -26349,23 +26369,24 @@ exports[`Storyshots InputText displayed inline 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput27"
-            id="label-asInput27"
+            htmlFor="asInput28"
+            id="label-asInput28"
           >
             Username
           </label>
           <input
-            aria-describedby="error-asInput27"
+            aria-describedby="error-asInput28"
             aria-invalid={false}
             autoComplete="on"
             className="form-control is-invalid-nodanger"
             disabled={false}
-            id="asInput27"
+            id="asInput28"
             name="username"
             onBlur={[Function]}
             onChange={[Function]}
             onKeyPress={[Function]}
             placeholder={undefined}
+            readOnly={false}
             required={false}
             themes={Array []}
             type="text"
@@ -26374,7 +26395,7 @@ exports[`Storyshots InputText displayed inline 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput27"
+            id="error-asInput28"
           >
             <span />
           </div>
@@ -27437,6 +27458,7 @@ exports[`Storyshots InputText focus test 1`] = `
               onChange={[Function]}
               onKeyPress={[Function]}
               placeholder={undefined}
+              readOnly={false}
               required={false}
               themes={Array []}
               type="text"
@@ -27713,8 +27735,8 @@ exports[`Storyshots InputText label as element 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput26"
-            id="label-asInput26"
+            htmlFor="asInput27"
+            id="label-asInput27"
           >
             <span
               lang="en"
@@ -27723,17 +27745,18 @@ exports[`Storyshots InputText label as element 1`] = `
             </span>
           </label>
           <input
-            aria-describedby="error-asInput26"
+            aria-describedby="error-asInput27"
             aria-invalid={false}
             autoComplete="on"
             className="form-control is-invalid-nodanger"
             disabled={false}
-            id="asInput26"
+            id="asInput27"
             name="username"
             onBlur={[Function]}
             onChange={[Function]}
             onKeyPress={[Function]}
             placeholder={undefined}
+            readOnly={false}
             required={false}
             themes={Array []}
             type="text"
@@ -27742,7 +27765,7 @@ exports[`Storyshots InputText label as element 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput26"
+            id="error-asInput27"
           >
             <span />
           </div>
@@ -28760,6 +28783,7 @@ exports[`Storyshots InputText minimal usage 1`] = `
             onChange={[Function]}
             onKeyPress={[Function]}
             placeholder={undefined}
+            readOnly={false}
             required={false}
             themes={Array []}
             type="text"
@@ -29731,6 +29755,1052 @@ exports[`Storyshots InputText minimal usage 1`] = `
 </div>
 `;
 
+exports[`Storyshots InputText read only 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": 0,
+      "display": "flex",
+      "justifyContent": "center",
+      "left": 0,
+      "overflow": "auto",
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+      }
+    }
+  >
+    <div>
+      <div
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
+      >
+        <div
+          className="form-group"
+        >
+          <label
+            className=""
+            htmlFor="asInput25"
+            id="label-asInput25"
+          >
+            Input State
+          </label>
+          <input
+            aria-describedby="error-asInput25"
+            aria-invalid={false}
+            autoComplete="on"
+            className="form-control is-invalid-nodanger"
+            disabled={false}
+            id="asInput25"
+            name="inputState"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onKeyPress={[Function]}
+            placeholder={undefined}
+            readOnly={true}
+            required={false}
+            themes={Array []}
+            type="text"
+            value="Read Only"
+          />
+          <div
+            aria-live="polite"
+            className="invalid-feedback invalid-feedback-nodanger"
+            id="error-asInput25"
+          >
+            <span />
+          </div>
+        </div>
+      </div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#28c",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
+      <div
+        style={
+          Object {
+            "background": "white",
+            "bottom": 0,
+            "display": "none",
+            "left": 0,
+            "overflow": "auto",
+            "padding": "0 40px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+            "zIndex": 99999,
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "background": "#28c",
+              "border": "none",
+              "borderRadius": "0 0 0 5px",
+              "color": "#fff",
+              "cursor": "pointer",
+              "display": "block",
+              "fontFamily": "sans-serif",
+              "fontSize": "12px",
+              "padding": "5px 15px",
+              "position": "fixed",
+              "right": 0,
+              "top": 0,
+            }
+          }
+          type="button"
+        >
+          ×
+        </button>
+        <div
+          style={undefined}
+        >
+          <div
+            style={
+              Object {
+                "WebkitFontSmoothing": "antialiased",
+                "backgroundColor": "#fff",
+                "border": "1px solid #eee",
+                "borderRadius": "2px",
+                "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
+                "color": "#444",
+                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                "fontSize": "15px",
+                "fontWeight": 300,
+                "lineHeight": 1.45,
+                "marginBottom": "20px",
+                "marginTop": "20px",
+                "padding": "20px 40px 40px",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "borderBottom": "1px solid #eee",
+                  "marginBottom": 10,
+                  "paddingTop": 10,
+                }
+              }
+            >
+              <h1
+                style={
+                  Object {
+                    "fontSize": "35px",
+                    "margin": 0,
+                    "padding": 0,
+                  }
+                }
+              >
+                InputText
+              </h1>
+              <h2
+                style={
+                  Object {
+                    "fontSize": "22px",
+                    "fontWeight": 400,
+                    "margin": "0 0 10px 0",
+                    "padding": 0,
+                  }
+                }
+              >
+                read only
+              </h2>
+            </div>
+            
+            <div>
+              <h1
+                style={
+                  Object {
+                    "borderBottom": "1px solid #EEE",
+                    "fontSize": "25px",
+                    "margin": "20px 0 0 0",
+                    "padding": "0 0 5px 0",
+                  }
+                }
+              >
+                Story Source
+              </h1>
+              <pre
+                className="css-4akams"
+              >
+                <div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      asInput(Text)
+                    </span>
+                    <span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          name
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              inputState
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Input State
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          value
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Read Only
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          readOnly
+                        </span>
+                        <br />
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                </div>
+                <button
+                  className="css-gydez8"
+                  onClick={[Function]}
+                >
+                  <div
+                    className="css-kv47nt"
+                  >
+                    <div
+                      style={
+                        Object {
+                          "marginBottom": 6,
+                        }
+                      }
+                    >
+                      Copied!
+                    </div>
+                    <div>
+                      Copy
+                    </div>
+                  </div>
+                </button>
+              </pre>
+            </div>
+            <div>
+              <h1
+                style={
+                  Object {
+                    "borderBottom": "1px solid #EEE",
+                    "fontSize": "25px",
+                    "margin": "20px 0 0 0",
+                    "padding": "0 0 5px 0",
+                  }
+                }
+              >
+                Prop Types
+              </h1>
+              <div>
+                <h2
+                  style={
+                    Object {
+                      "margin": "20px 0 0 0",
+                    }
+                  }
+                >
+                  "
+                  asInput(Text)
+                  " Component
+                </h2>
+                <table
+                  className="css-1ytzlk7"
+                >
+                  <thead>
+                    <tr>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        property
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        propType
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        required
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        default
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        description
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        label
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        yes
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        name
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        yes
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        id
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        value
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        dangerIconDescription
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        description
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        disabled
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#a11",
+                              }
+                            }
+                          >
+                            false
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        required
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#a11",
+                              }
+                            }
+                          >
+                            false
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onChange
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onChange()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onKeyPress
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onKeyPress()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onBlur
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onBlur()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        validator
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        isValid
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#a11",
+                              }
+                            }
+                          >
+                            true
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        validationMessage
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        className
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            [
+                            ]
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        themes
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            [
+                            ]
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        inline
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#a11",
+                              }
+                            }
+                          >
+                            false
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        inputGroupPrepend
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        inputGroupAppend
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots InputText validation 1`] = `
 <div
   style={
@@ -29785,6 +30855,7 @@ exports[`Storyshots InputText validation 1`] = `
             onChange={[Function]}
             onKeyPress={[Function]}
             placeholder={undefined}
+            readOnly={false}
             required={false}
             themes={Array []}
             type="text"
@@ -30869,23 +31940,24 @@ exports[`Storyshots InputText validation with danger theme 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput25"
-            id="label-asInput25"
+            htmlFor="asInput26"
+            id="label-asInput26"
           >
             Username
           </label>
           <input
-            aria-describedby="error-asInput25 description-asInput25"
+            aria-describedby="error-asInput26 description-asInput26"
             aria-invalid={false}
             autoComplete="on"
             className="form-control"
             disabled={false}
-            id="asInput25"
+            id="asInput26"
             name="username"
             onBlur={[Function]}
             onChange={[Function]}
             onKeyPress={[Function]}
             placeholder={undefined}
+            readOnly={false}
             required={false}
             themes={
               Array [
@@ -30898,13 +31970,13 @@ exports[`Storyshots InputText validation with danger theme 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback"
-            id="error-asInput25"
+            id="error-asInput26"
           >
             <span />
           </div>
           <small
             className="form-text"
-            id="description-asInput25"
+            id="description-asInput26"
           >
             The unique name that identifies you throughout the site.
           </small>
@@ -31989,8 +33061,8 @@ exports[`Storyshots InputText with input group addons 1`] = `
           >
             <label
               className=""
-              htmlFor="asInput28"
-              id="label-asInput28"
+              htmlFor="asInput29"
+              id="label-asInput29"
             >
               Username
             </label>
@@ -32007,51 +33079,6 @@ exports[`Storyshots InputText with input group addons 1`] = `
                 </div>
               </div>
               <input
-                aria-describedby="error-asInput28"
-                aria-invalid={false}
-                autoComplete="on"
-                className="form-control is-invalid-nodanger"
-                disabled={false}
-                id="asInput28"
-                name="username"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onKeyPress={[Function]}
-                placeholder={undefined}
-                required={false}
-                themes={Array []}
-                type="text"
-                value="foobar"
-              />
-              <div
-                className="input-group-append"
-              />
-            </div>
-            <div
-              aria-live="polite"
-              className="invalid-feedback invalid-feedback-nodanger"
-              id="error-asInput28"
-            >
-              <span />
-            </div>
-          </div>
-          <div
-            className="form-group"
-          >
-            <label
-              className=""
-              htmlFor="asInput29"
-              id="label-asInput29"
-            >
-              Username
-            </label>
-            <div
-              className="input-group"
-            >
-              <div
-                className="input-group-prepend"
-              />
-              <input
                 aria-describedby="error-asInput29"
                 aria-invalid={false}
                 autoComplete="on"
@@ -32063,6 +33090,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
                 onChange={[Function]}
                 onKeyPress={[Function]}
                 placeholder={undefined}
+                readOnly={false}
                 required={false}
                 themes={Array []}
                 type="text"
@@ -32070,13 +33098,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
               />
               <div
                 className="input-group-append"
-              >
-                <div
-                  className="input-group-text"
-                >
-                  @example.com
-                </div>
-              </div>
+              />
             </div>
             <div
               aria-live="polite"
@@ -32094,20 +33116,14 @@ exports[`Storyshots InputText with input group addons 1`] = `
               htmlFor="asInput30"
               id="label-asInput30"
             >
-              Money
+              Username
             </label>
             <div
               className="input-group"
             >
               <div
                 className="input-group-prepend"
-              >
-                <div
-                  className="input-group-text"
-                >
-                  $
-                </div>
-              </div>
+              />
               <input
                 aria-describedby="error-asInput30"
                 aria-invalid={false}
@@ -32115,15 +33131,16 @@ exports[`Storyshots InputText with input group addons 1`] = `
                 className="form-control is-invalid-nodanger"
                 disabled={false}
                 id="asInput30"
-                name="money"
+                name="username"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onKeyPress={[Function]}
                 placeholder={undefined}
+                readOnly={false}
                 required={false}
                 themes={Array []}
-                type="number"
-                value={1000}
+                type="text"
+                value="foobar"
               />
               <div
                 className="input-group-append"
@@ -32131,7 +33148,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
                 <div
                   className="input-group-text"
                 >
-                  .00
+                  @example.com
                 </div>
               </div>
             </div>
@@ -32151,6 +33168,64 @@ exports[`Storyshots InputText with input group addons 1`] = `
               htmlFor="asInput31"
               id="label-asInput31"
             >
+              Money
+            </label>
+            <div
+              className="input-group"
+            >
+              <div
+                className="input-group-prepend"
+              >
+                <div
+                  className="input-group-text"
+                >
+                  $
+                </div>
+              </div>
+              <input
+                aria-describedby="error-asInput31"
+                aria-invalid={false}
+                autoComplete="on"
+                className="form-control is-invalid-nodanger"
+                disabled={false}
+                id="asInput31"
+                name="money"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyPress={[Function]}
+                placeholder={undefined}
+                readOnly={false}
+                required={false}
+                themes={Array []}
+                type="number"
+                value={1000}
+              />
+              <div
+                className="input-group-append"
+              >
+                <div
+                  className="input-group-text"
+                >
+                  .00
+                </div>
+              </div>
+            </div>
+            <div
+              aria-live="polite"
+              className="invalid-feedback invalid-feedback-nodanger"
+              id="error-asInput31"
+            >
+              <span />
+            </div>
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              className=""
+              htmlFor="asInput32"
+              id="label-asInput32"
+            >
               Search
             </label>
             <div
@@ -32160,17 +33235,18 @@ exports[`Storyshots InputText with input group addons 1`] = `
                 className="input-group-prepend"
               />
               <input
-                aria-describedby="error-asInput31"
+                aria-describedby="error-asInput32"
                 aria-invalid={false}
                 autoComplete="on"
                 className="form-control is-invalid-nodanger"
                 disabled={false}
-                id="asInput31"
+                id="asInput32"
                 name="search"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onKeyPress={[Function]}
                 placeholder={undefined}
+                readOnly={false}
                 required={false}
                 themes={Array []}
                 type="text"
@@ -32193,7 +33269,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
             <div
               aria-live="polite"
               className="invalid-feedback invalid-feedback-nodanger"
-              id="error-asInput31"
+              id="error-asInput32"
             >
               <span />
             </div>
@@ -32203,8 +33279,8 @@ exports[`Storyshots InputText with input group addons 1`] = `
           >
             <label
               className=""
-              htmlFor="asInput32"
-              id="label-asInput32"
+              htmlFor="asInput33"
+              id="label-asInput33"
             >
               Username
             </label>
@@ -32215,17 +33291,18 @@ exports[`Storyshots InputText with input group addons 1`] = `
                 className="input-group-prepend"
               />
               <input
-                aria-describedby="error-asInput32"
+                aria-describedby="error-asInput33"
                 aria-invalid={false}
                 autoComplete="on"
                 className="form-control is-invalid-nodanger"
                 disabled={false}
-                id="asInput32"
+                id="asInput33"
                 name="username"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onKeyPress={[Function]}
                 placeholder={undefined}
+                readOnly={false}
                 required={false}
                 themes={Array []}
                 type="text"
@@ -32264,7 +33341,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
             <div
               aria-live="polite"
               className="invalid-feedback invalid-feedback-nodanger"
-              id="error-asInput32"
+              id="error-asInput33"
             >
               <span />
             </div>
@@ -32274,8 +33351,8 @@ exports[`Storyshots InputText with input group addons 1`] = `
           >
             <label
               className=""
-              htmlFor="asInput33"
-              id="label-asInput33"
+              htmlFor="asInput34"
+              id="label-asInput34"
             >
               Password
             </label>
@@ -32286,17 +33363,18 @@ exports[`Storyshots InputText with input group addons 1`] = `
                 className="input-group-prepend"
               />
               <input
-                aria-describedby="error-asInput33"
+                aria-describedby="error-asInput34"
                 aria-invalid={false}
                 autoComplete="on"
                 className="form-control is-invalid-nodanger"
                 disabled={false}
-                id="asInput33"
+                id="asInput34"
                 name="password"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onKeyPress={[Function]}
                 placeholder={undefined}
+                readOnly={false}
                 required={false}
                 themes={Array []}
                 type="text"
@@ -32326,7 +33404,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
             <div
               aria-live="polite"
               className="invalid-feedback invalid-feedback-nodanger"
-              id="error-asInput33"
+              id="error-asInput34"
             >
               <span />
             </div>
@@ -39300,7 +40378,7 @@ exports[`Storyshots Pagination basic usage 1`] = `
                     <span
                       aria-hidden={true}
                       className="fa fa-chevron-left mr-2"
-                      id="pagination-34"
+                      id="pagination-35"
                     />
                   </div>
                   Previous
@@ -39326,7 +40404,7 @@ exports[`Storyshots Pagination basic usage 1`] = `
                     <span
                       aria-hidden={true}
                       className="fa fa-chevron-right ml-2"
-                      id="pagination-36"
+                      id="pagination-37"
                     />
                   </div>
                 </div>
@@ -40034,7 +41112,7 @@ exports[`Storyshots Pagination with custom element labels 1`] = `
                     <span
                       aria-hidden={true}
                       className="fa fa-chevron-left mr-2"
-                      id="pagination-47"
+                      id="pagination-48"
                     />
                   </div>
                   <span>
@@ -40064,7 +41142,7 @@ exports[`Storyshots Pagination with custom element labels 1`] = `
                     <span
                       aria-hidden={true}
                       className="fa fa-chevron-right ml-2"
-                      id="pagination-49"
+                      id="pagination-50"
                     />
                   </div>
                 </div>
@@ -40886,7 +41964,7 @@ exports[`Storyshots Pagination with custom string labels 1`] = `
                     <span
                       aria-hidden={true}
                       className="fa fa-chevron-left mr-2"
-                      id="pagination-44"
+                      id="pagination-45"
                     />
                   </div>
                   Anterior
@@ -40912,7 +41990,7 @@ exports[`Storyshots Pagination with custom string labels 1`] = `
                     <span
                       aria-hidden={true}
                       className="fa fa-chevron-right ml-2"
-                      id="pagination-46"
+                      id="pagination-47"
                     />
                   </div>
                 </div>
@@ -41731,7 +42809,7 @@ exports[`Storyshots Pagination with initial page selected 1`] = `
                     <span
                       aria-hidden={true}
                       className="fa fa-chevron-left mr-2"
-                      id="pagination-37"
+                      id="pagination-38"
                     />
                   </div>
                   Previous
@@ -41757,7 +42835,7 @@ exports[`Storyshots Pagination with initial page selected 1`] = `
                     <span
                       aria-hidden={true}
                       className="fa fa-chevron-right ml-2"
-                      id="pagination-40"
+                      id="pagination-41"
                     />
                   </div>
                 </div>
@@ -42505,7 +43583,7 @@ exports[`Storyshots Pagination with max pages displayed 1`] = `
                     <span
                       aria-hidden={true}
                       className="fa fa-chevron-left mr-2"
-                      id="pagination-41"
+                      id="pagination-42"
                     />
                   </div>
                   Previous
@@ -42531,7 +43609,7 @@ exports[`Storyshots Pagination with max pages displayed 1`] = `
                     <span
                       aria-hidden={true}
                       className="fa fa-chevron-right ml-2"
-                      id="pagination-43"
+                      id="pagination-44"
                     />
                   </div>
                 </div>
@@ -46317,8 +47395,8 @@ exports[`Storyshots SearchField basic usage 1`] = `
           >
             <label
               className=""
-              htmlFor="asInput50"
-              id="label-asInput50"
+              htmlFor="asInput51"
+              id="label-asInput51"
             >
               Search:
             </label>
@@ -46329,17 +47407,18 @@ exports[`Storyshots SearchField basic usage 1`] = `
                 className="input-group-prepend"
               />
               <input
-                aria-describedby="error-asInput50"
+                aria-describedby="error-asInput51"
                 aria-invalid={false}
                 autoComplete="off"
                 className="form-control is-invalid-nodanger search-field__input search-field__no-clear-btn"
                 disabled={false}
-                id="asInput50"
+                id="asInput51"
                 name="search"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onKeyPress={[Function]}
                 placeholder=""
+                readOnly={false}
                 required={false}
                 themes={Array []}
                 type="search"
@@ -46374,7 +47453,7 @@ exports[`Storyshots SearchField basic usage 1`] = `
             <div
               aria-live="polite"
               className="invalid-feedback invalid-feedback-nodanger"
-              id="error-asInput50"
+              id="error-asInput51"
             >
               <span />
             </div>
@@ -47036,8 +48115,8 @@ exports[`Storyshots SearchField with callbacks 1`] = `
           >
             <label
               className=""
-              htmlFor="asInput54"
-              id="label-asInput54"
+              htmlFor="asInput55"
+              id="label-asInput55"
             >
               Search:
             </label>
@@ -47048,17 +48127,18 @@ exports[`Storyshots SearchField with callbacks 1`] = `
                 className="input-group-prepend"
               />
               <input
-                aria-describedby="error-asInput54"
+                aria-describedby="error-asInput55"
                 aria-invalid={false}
                 autoComplete="off"
                 className="form-control is-invalid-nodanger search-field__input search-field__no-clear-btn"
                 disabled={false}
-                id="asInput54"
+                id="asInput55"
                 name="search"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onKeyPress={[Function]}
                 placeholder=""
+                readOnly={false}
                 required={false}
                 themes={Array []}
                 type="search"
@@ -47093,7 +48173,7 @@ exports[`Storyshots SearchField with callbacks 1`] = `
             <div
               aria-live="polite"
               className="invalid-feedback invalid-feedback-nodanger"
-              id="error-asInput54"
+              id="error-asInput55"
             >
               <span />
             </div>
@@ -47851,8 +48931,8 @@ exports[`Storyshots SearchField with custom label and screenreader text 1`] = `
           >
             <label
               className=""
-              htmlFor="asInput55"
-              id="label-asInput55"
+              htmlFor="asInput56"
+              id="label-asInput56"
             >
               Buscar:
             </label>
@@ -47863,17 +48943,18 @@ exports[`Storyshots SearchField with custom label and screenreader text 1`] = `
                 className="input-group-prepend"
               />
               <input
-                aria-describedby="error-asInput55"
+                aria-describedby="error-asInput56"
                 aria-invalid={false}
                 autoComplete="off"
                 className="form-control is-invalid-nodanger search-field__input search-field__no-clear-btn"
                 disabled={false}
-                id="asInput55"
+                id="asInput56"
                 name="search"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onKeyPress={[Function]}
                 placeholder=""
+                readOnly={false}
                 required={false}
                 themes={Array []}
                 type="search"
@@ -47908,7 +48989,7 @@ exports[`Storyshots SearchField with custom label and screenreader text 1`] = `
             <div
               aria-live="polite"
               className="invalid-feedback invalid-feedback-nodanger"
-              id="error-asInput55"
+              id="error-asInput56"
             >
               <span />
             </div>
@@ -48671,8 +49752,8 @@ exports[`Storyshots SearchField with placeholder 1`] = `
           >
             <label
               className=""
-              htmlFor="asInput51"
-              id="label-asInput51"
+              htmlFor="asInput52"
+              id="label-asInput52"
             >
               Search:
             </label>
@@ -48683,17 +49764,18 @@ exports[`Storyshots SearchField with placeholder 1`] = `
                 className="input-group-prepend"
               />
               <input
-                aria-describedby="error-asInput51"
+                aria-describedby="error-asInput52"
                 aria-invalid={false}
                 autoComplete="off"
                 className="form-control is-invalid-nodanger search-field__input search-field__no-clear-btn"
                 disabled={false}
-                id="asInput51"
+                id="asInput52"
                 name="search"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onKeyPress={[Function]}
                 placeholder="Search"
+                readOnly={false}
                 required={false}
                 themes={Array []}
                 type="search"
@@ -48728,7 +49810,7 @@ exports[`Storyshots SearchField with placeholder 1`] = `
             <div
               aria-live="polite"
               className="invalid-feedback invalid-feedback-nodanger"
-              id="error-asInput51"
+              id="error-asInput52"
             >
               <span />
             </div>
@@ -49417,8 +50499,8 @@ exports[`Storyshots SearchField with value 1`] = `
           >
             <label
               className=""
-              htmlFor="asInput53"
-              id="label-asInput53"
+              htmlFor="asInput54"
+              id="label-asInput54"
             >
               Search:
             </label>
@@ -49429,17 +50511,18 @@ exports[`Storyshots SearchField with value 1`] = `
                 className="input-group-prepend"
               />
               <input
-                aria-describedby="error-asInput53"
+                aria-describedby="error-asInput54"
                 aria-invalid={false}
                 autoComplete="off"
                 className="form-control is-invalid-nodanger search-field__input"
                 disabled={false}
-                id="asInput53"
+                id="asInput54"
                 name="search"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onKeyPress={[Function]}
                 placeholder="Search"
+                readOnly={false}
                 required={false}
                 themes={Array []}
                 type="search"
@@ -49460,7 +50543,7 @@ exports[`Storyshots SearchField with value 1`] = `
                       <span
                         aria-hidden={true}
                         className="fa fa-times"
-                        id="icon-SearchField52"
+                        id="icon-SearchField53"
                       />
                       <span
                         className="sr-only"
@@ -49496,7 +50579,7 @@ exports[`Storyshots SearchField with value 1`] = `
             <div
               aria-live="polite"
               className="invalid-feedback invalid-feedback-nodanger"
-              id="error-asInput53"
+              id="error-asInput54"
             >
               <span />
             </div>
@@ -64070,10 +65153,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
           >
             <li
               className="nav-item"
-              id="tab-label-tabInterface56-0"
+              id="tab-label-tabInterface57-0"
             >
               <a
-                aria-controls="tab-panel-tabInterface56-0"
+                aria-controls="tab-panel-tabInterface57-0"
                 aria-selected={true}
                 className="nav-link active"
                 onClick={[Function]}
@@ -64085,10 +65168,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
             </li>
             <li
               className="nav-item"
-              id="tab-label-tabInterface56-1"
+              id="tab-label-tabInterface57-1"
             >
               <a
-                aria-controls="tab-panel-tabInterface56-1"
+                aria-controls="tab-panel-tabInterface57-1"
                 aria-selected={false}
                 className="nav-link"
                 onClick={[Function]}
@@ -64100,10 +65183,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
             </li>
             <li
               className="nav-item"
-              id="tab-label-tabInterface56-2"
+              id="tab-label-tabInterface57-2"
             >
               <a
-                aria-controls="tab-panel-tabInterface56-2"
+                aria-controls="tab-panel-tabInterface57-2"
                 aria-selected={false}
                 className="nav-link"
                 onClick={[Function]}
@@ -64119,9 +65202,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
           >
             <div
               aria-hidden={false}
-              aria-labelledby="tab-label-tabInterface56-0"
+              aria-labelledby="tab-label-tabInterface57-0"
               className="tab-pane active"
-              id="tab-panel-tabInterface56-0"
+              id="tab-panel-tabInterface57-0"
               role="tabpanel"
             >
               <div>
@@ -64130,9 +65213,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
             </div>
             <div
               aria-hidden={true}
-              aria-labelledby="tab-label-tabInterface56-1"
+              aria-labelledby="tab-label-tabInterface57-1"
               className="tab-pane"
-              id="tab-panel-tabInterface56-1"
+              id="tab-panel-tabInterface57-1"
               role="tabpanel"
             >
               <div>
@@ -64141,9 +65224,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
             </div>
             <div
               aria-hidden={true}
-              aria-labelledby="tab-label-tabInterface56-2"
+              aria-labelledby="tab-label-tabInterface57-2"
               className="tab-pane"
-              id="tab-panel-tabInterface56-2"
+              id="tab-panel-tabInterface57-2"
               role="tabpanel"
             >
               <div>
@@ -64794,8 +65877,8 @@ exports[`Storyshots Textarea label as element 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput60"
-            id="label-asInput60"
+            htmlFor="asInput61"
+            id="label-asInput61"
           >
             <span
               lang="en"
@@ -64804,11 +65887,11 @@ exports[`Storyshots Textarea label as element 1`] = `
             </span>
           </label>
           <textarea
-            aria-describedby="error-asInput60"
+            aria-describedby="error-asInput61"
             aria-invalid={false}
             className="form-control is-invalid-nodanger"
             disabled={false}
-            id="asInput60"
+            id="asInput61"
             name="username"
             onBlur={[Function]}
             onChange={[Function]}
@@ -64824,7 +65907,7 @@ exports[`Storyshots Textarea label as element 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput60"
+            id="error-asInput61"
           >
             <span />
           </div>
@@ -65825,17 +66908,17 @@ exports[`Storyshots Textarea minimal usage 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput57"
-            id="label-asInput57"
+            htmlFor="asInput58"
+            id="label-asInput58"
           >
             First Name
           </label>
           <textarea
-            aria-describedby="error-asInput57"
+            aria-describedby="error-asInput58"
             aria-invalid={false}
             className="form-control is-invalid-nodanger"
             disabled={false}
-            id="asInput57"
+            id="asInput58"
             name="name"
             onBlur={[Function]}
             onChange={[Function]}
@@ -65851,7 +66934,7 @@ exports[`Storyshots Textarea minimal usage 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput57"
+            id="error-asInput58"
           >
             <span />
           </div>
@@ -66851,17 +67934,17 @@ exports[`Storyshots Textarea scrollable 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput58"
-            id="label-asInput58"
+            htmlFor="asInput59"
+            id="label-asInput59"
           >
             Information
           </label>
           <textarea
-            aria-describedby="error-asInput58"
+            aria-describedby="error-asInput59"
             aria-invalid={false}
             className="form-control is-invalid-nodanger"
             disabled={false}
-            id="asInput58"
+            id="asInput59"
             name="name"
             onBlur={[Function]}
             onChange={[Function]}
@@ -66877,7 +67960,7 @@ exports[`Storyshots Textarea scrollable 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput58"
+            id="error-asInput59"
           >
             <span />
           </div>
@@ -67877,17 +68960,17 @@ exports[`Storyshots Textarea validation 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput59"
-            id="label-asInput59"
+            htmlFor="asInput60"
+            id="label-asInput60"
           >
             Username
           </label>
           <textarea
-            aria-describedby="error-asInput59 description-asInput59"
+            aria-describedby="error-asInput60 description-asInput60"
             aria-invalid={false}
             className="form-control is-invalid-nodanger"
             disabled={false}
-            id="asInput59"
+            id="asInput60"
             name="username"
             onBlur={[Function]}
             onChange={[Function]}
@@ -67903,13 +68986,13 @@ exports[`Storyshots Textarea validation 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput59"
+            id="error-asInput60"
           >
             <span />
           </div>
           <small
             className="form-text"
-            id="description-asInput59"
+            id="description-asInput60"
           >
             The unique name that identifies you throughout the site.
           </small>
