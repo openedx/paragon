@@ -62,5 +62,15 @@ describe('<InputText />', () => {
       expect(input.hasClass('first')).toEqual(true);
       expect(input.hasClass('last')).toEqual(true);
     });
+
+    it('should not be readOnly if the readOnly property is not set', () => {
+      const wrapper = mount(<InputText {...props} />);
+      expect(wrapper.props().readOnly).toBeUndefined();
+    });
+
+    it('should render with the readOnly property if set', () => {
+      const wrapper = mount(<InputText {...props} readOnly />);
+      expect(wrapper.props().readOnly).toEqual(true);
+    });
   });
 });
