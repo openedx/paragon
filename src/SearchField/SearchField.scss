@@ -10,6 +10,7 @@ $search-field-border-radius: 30px;
     transition: $input-transition;
     border-radius: $search-field-border-radius;
     box-shadow: $input-box-shadow;
+    background: #ffffff;
 
     .form-group {
         margin-bottom: 0;
@@ -28,50 +29,50 @@ $search-field-border-radius: 30px;
     button:last-child {
         border-radius: $search-field-border-radius;
     }
-}
 
-.search-field__focused {
-    border-color: $blue !important;
-    box-shadow: $input-focus-box-shadow;
-}
-
-.search-field__input {
-    background: none;
-    border: 0;
-    box-shadow: none !important;
-    padding-left: 0;
-    padding-right: 0;
-
-    &:focus {
+    &.focused {
+        border-color: $blue;
+        box-shadow: $input-focus-box-shadow;
+    }
+    
+    .input {
+        background: none;
+        border: 0;
+        box-shadow: none;
+        padding-left: 0;
+        padding-right: 0;
+    
+        &:focus {
+            background: none;
+        }
+    }
+        
+    .no-clear-btn {
+        padding-right: ($search-field-clear-btn-width + 1px + $border-width * 2);
+    }
+    
+    .search-btn {
+        border-top: 0;
+        border-right: 0;
+        border-bottom: 0;
+        transition: border-color 0.15s ease-in-out;
+        padding: 10px 15px 10px 12px;
+        color: $gray-600;
+        background: none;
+        margin-left: 0;
+        
+        &:not(:disabled):hover,
+        &:not(:disabled):focus {
+            background: #F2F8FB;
+            color: $blue;
+        }
+    }
+    
+    .clear-btn {
+        width: $search-field-clear-btn-width;
+        justify-content: center;
+        color: $gray-600;
+        border: 0;
         background: none;
     }
-}
-    
-.search-field__no-clear-btn {
-    padding-right: ($search-field-clear-btn-width + 1px + $border-width * 2);
-}
-
-.search-field__search-btn {
-    border-top: 0;
-    border-right: 0;
-    border-bottom: 0;
-    transition: border-color 0.15s ease-in-out;
-    padding: 10px 15px 10px 12px;
-    color: $gray-600;
-    background: none;
-    margin-left: 0;
-    
-    &:not(:disabled):hover,
-    &:not(:disabled):focus {
-        background: #F2F8FB;
-        color: $blue;
-    }
-}
-
-.search-field__clear-btn {
-    width: $search-field-clear-btn-width;
-    justify-content: center;
-    color: $gray-600;
-    border: 0;
-    background: none;
 }
