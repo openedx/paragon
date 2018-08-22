@@ -65146,59 +65146,56 @@ exports[`Storyshots Tabs basic usage 1`] = `
           }
         }
       >
-        <div>
-          <ul
+        <div
+          className="tabs"
+        >
+          <div
             className="nav nav-tabs"
             role="tablist"
           >
-            <li
-              className="nav-item"
+            <button
+              aria-controls="tab-panel-tabInterface57-0"
+              aria-selected={true}
+              className="btn nav-link nav-item active"
               id="tab-label-tabInterface57-0"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              type="button"
             >
-              <a
-                aria-controls="tab-panel-tabInterface57-0"
-                aria-selected={true}
-                className="nav-link active"
-                onClick={[Function]}
-                role="tab"
-                tabIndex={0}
-              >
-                Panel 1
-              </a>
-            </li>
-            <li
-              className="nav-item"
+              Panel 1
+            </button>
+            <button
+              aria-controls="tab-panel-tabInterface57-1"
+              aria-selected={false}
+              className="btn nav-link nav-item"
               id="tab-label-tabInterface57-1"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              type="button"
             >
-              <a
-                aria-controls="tab-panel-tabInterface57-1"
-                aria-selected={false}
-                className="nav-link"
-                onClick={[Function]}
-                role="tab"
-                tabIndex={-1}
-              >
-                Panel 2
-              </a>
-            </li>
-            <li
-              className="nav-item"
+              Panel 2
+            </button>
+            <button
+              aria-controls="tab-panel-tabInterface57-2"
+              aria-selected={false}
+              className="btn nav-link nav-item"
               id="tab-label-tabInterface57-2"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              type="button"
             >
-              <a
-                aria-controls="tab-panel-tabInterface57-2"
-                aria-selected={false}
-                className="nav-link"
-                onClick={[Function]}
-                role="tab"
-                tabIndex={-1}
-              >
-                Panel 3
-              </a>
-            </li>
-          </ul>
+              Panel 3
+            </button>
+          </div>
           <div
             className="tab-content"
+            role="tabpanel"
           >
             <div
               aria-hidden={false}
