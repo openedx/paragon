@@ -17,7 +17,7 @@ const props = {
 };
 
 const tabSelectedAtIndex = (index, wrapper) => {
-  wrapper.find('a').forEach((node, i) => {
+  wrapper.find('button').forEach((node, i) => {
     expect(node.prop('aria-selected')).toEqual(i === index);
   });
 
@@ -35,7 +35,7 @@ describe('<Tabs />', () => {
   describe('switches tab selection', () => {
     it('on click', () => {
       const wrapper = shallow(<Tabs {...props} />);
-      wrapper.find('a').forEach((node, i) => {
+      wrapper.find('button').forEach((node, i) => {
         node.simulate('click');
         tabSelectedAtIndex(i, wrapper);
       });
