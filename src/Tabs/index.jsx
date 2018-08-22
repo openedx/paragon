@@ -7,6 +7,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
+import Button from '../Button';
 import styles from './Tabs.scss';
 import newId from '../utils/newId';
 
@@ -43,25 +44,20 @@ class Tabs extends React.Component {
       const labelId = this.genLabelId(i);
 
       return (
-        <li
-          className={styles['nav-item']}
+        <Button
+          role="tab"
+          aria-selected={selected}
+          aria-controls={this.genPanelId(i)}
           id={labelId}
           key={labelId}
-        >
-          <a
-            aria-selected={selected}
-            aria-controls={this.genPanelId(i)}
-            className={classNames(
-              styles['nav-link'],
-              { [styles.active]: selected },
-            )}
-            onClick={() => { this.toggle(i); }}
-            role="tab"
-            tabIndex={selected ? 0 : -1}
-          >
-            {label}
-          </a>
-        </li>
+          onClick={() => { this.toggle(i); }}
+          className={classNames(
+            styles['nav-link'],
+            styles['nav-item'],
+            { [styles.active]: selected },
+          ).split(' ')}
+          label={label}
+        />
       );
     });
   }
@@ -94,17 +90,17 @@ class Tabs extends React.Component {
     const panels = this.buildPanels();
 
     return (
-      <div>
-        <ul
+      <div className="tabs">
+        <div
+          role="tablist"
           className={classNames([
             styles.nav,
             styles['nav-tabs'],
           ])}
-          role="tablist"
         >
           {labels}
-        </ul>
-        <div className={styles['tab-content']}>
+        </div>
+        <div role="tabpanel" className={styles['tab-content']}>
           {panels}
         </div>
       </div>
