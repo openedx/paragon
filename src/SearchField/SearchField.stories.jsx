@@ -38,6 +38,7 @@ storiesOf('SearchField', module)
       onChange={action('value-changed')}
       onFocus={action('search-focused')}
       onBlur={action('search-blurred')}
+      onClear={action('search-cleared')}
     />
   ))
   .add('with custom label and screenreader text', () => (

@@ -127,6 +127,18 @@ describe('<SearchField />', () => {
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
+    it('clear handler', () => {
+      const spy = jest.fn();
+      const props = {
+        ...baseProps,
+        onClear: spy,
+      };
+      const wrapper = mount(<SearchField {...props} />);
+      wrapper.find('input').simulate('change', { target: { value: 'foobar' } });
+      wrapper.find('.input-group-append button').first().simulate('click');
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
+
     it('submit handler on click', () => {
       const spy = jest.fn();
       const props = {

@@ -14,6 +14,7 @@ const defaultProps = {
   inputLabel: 'Search:',
   onBlur: () => {},
   onChange: () => {},
+  onClear: () => {},
   onFocus: () => {},
   placeholder: '',
   screenReaderText: {
@@ -28,6 +29,7 @@ const propTypes = {
   inputLabel: PropTypes.string,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
+  onClear: PropTypes.func,
   onFocus: PropTypes.func,
   placeholder: PropTypes.string,
   screenReaderText: PropTypes.shape({
@@ -133,8 +135,8 @@ class SearchField extends React.Component {
   }
 
   handleClear() {
-    this.setState({ value: '' });
-    this.props.onChange('');
+    this.handleChange('');
+    this.props.onClear();
     this.textInput.focus();
   }
 
