@@ -47410,7 +47410,7 @@ exports[`Storyshots SearchField basic usage 1`] = `
                 aria-describedby="error-asInput51"
                 aria-invalid={false}
                 autoComplete="off"
-                className="form-control is-invalid-nodanger search-field__input search-field__no-clear-btn"
+                className="form-control is-invalid-nodanger input no-clear-btn"
                 disabled={false}
                 id="asInput51"
                 name="search"
@@ -47428,7 +47428,7 @@ exports[`Storyshots SearchField basic usage 1`] = `
                 className="input-group-append"
               >
                 <button
-                  className="btn search-field__search-btn"
+                  className="btn search-btn"
                   disabled={true}
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -48130,7 +48130,7 @@ exports[`Storyshots SearchField with callbacks 1`] = `
                 aria-describedby="error-asInput55"
                 aria-invalid={false}
                 autoComplete="off"
-                className="form-control is-invalid-nodanger search-field__input search-field__no-clear-btn"
+                className="form-control is-invalid-nodanger input no-clear-btn"
                 disabled={false}
                 id="asInput55"
                 name="search"
@@ -48148,7 +48148,7 @@ exports[`Storyshots SearchField with callbacks 1`] = `
                 className="input-group-append"
               >
                 <button
-                  className="btn search-field__search-btn"
+                  className="btn search-btn"
                   disabled={true}
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -48946,7 +48946,7 @@ exports[`Storyshots SearchField with custom label and screenreader text 1`] = `
                 aria-describedby="error-asInput56"
                 aria-invalid={false}
                 autoComplete="off"
-                className="form-control is-invalid-nodanger search-field__input search-field__no-clear-btn"
+                className="form-control is-invalid-nodanger input no-clear-btn"
                 disabled={false}
                 id="asInput56"
                 name="search"
@@ -48964,7 +48964,7 @@ exports[`Storyshots SearchField with custom label and screenreader text 1`] = `
                 className="input-group-append"
               >
                 <button
-                  className="btn search-field__search-btn"
+                  className="btn search-btn"
                   disabled={true}
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -49767,7 +49767,7 @@ exports[`Storyshots SearchField with placeholder 1`] = `
                 aria-describedby="error-asInput52"
                 aria-invalid={false}
                 autoComplete="off"
-                className="form-control is-invalid-nodanger search-field__input search-field__no-clear-btn"
+                className="form-control is-invalid-nodanger input no-clear-btn"
                 disabled={false}
                 id="asInput52"
                 name="search"
@@ -49785,7 +49785,7 @@ exports[`Storyshots SearchField with placeholder 1`] = `
                 className="input-group-append"
               >
                 <button
-                  className="btn search-field__search-btn"
+                  className="btn search-btn"
                   disabled={true}
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -50514,7 +50514,7 @@ exports[`Storyshots SearchField with value 1`] = `
                 aria-describedby="error-asInput54"
                 aria-invalid={false}
                 autoComplete="off"
-                className="form-control is-invalid-nodanger search-field__input"
+                className="form-control is-invalid-nodanger input"
                 disabled={false}
                 id="asInput54"
                 name="search"
@@ -50532,7 +50532,7 @@ exports[`Storyshots SearchField with value 1`] = `
                 className="input-group-append"
               >
                 <button
-                  className="btn search-field__clear-btn ml-1"
+                  className="btn clear-btn ml-1"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -50554,7 +50554,7 @@ exports[`Storyshots SearchField with value 1`] = `
                   </small>
                 </button>
                 <button
-                  className="btn search-field__search-btn border-left"
+                  className="btn search-btn border-left"
                   disabled={false}
                   onBlur={[Function]}
                   onClick={[Function]}
