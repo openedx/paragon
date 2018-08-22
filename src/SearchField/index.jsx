@@ -70,7 +70,7 @@ class SearchField extends React.Component {
     const buttons = [
       <Button
         className={[classNames(
-          styles['search-field__search-btn'],
+          styles['search-btn'],
           {
             [styles['border-left']]: !isFocused && inputTextHasValue,
             [styles['btn-outline-primary']]: isFocused && inputTextHasValue,
@@ -89,7 +89,7 @@ class SearchField extends React.Component {
       buttons.unshift((
         <Button
           className={[classNames(
-            styles['search-field__clear-btn'],
+            styles['clear-btn'],
             styles['ml-1'],
           )]}
           label={(
@@ -159,7 +159,7 @@ class SearchField extends React.Component {
           styles.border,
           styles['search-field'],
           {
-            [styles['search-field__focused']]: isFocused,
+            [styles.focused]: isFocused,
           },
         )}
         onFocus={this.handleFocus}
@@ -167,9 +167,9 @@ class SearchField extends React.Component {
       >
         <InputText
           className={[classNames(
-            styles['search-field__input'],
+            styles.input,
             {
-              [styles['search-field__no-clear-btn']]: !this.inputTextHasValue(),
+              [styles['no-clear-btn']]: !this.inputTextHasValue(),
             },
           )]}
           name="search"
