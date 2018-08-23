@@ -31,7 +31,7 @@ $search-field-border-radius: 30px;
     }
 
     &.focused {
-        border-color: $blue;
+        border-color: $blue !important;
         box-shadow: $input-focus-box-shadow;
     }
     
