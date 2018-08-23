@@ -47873,6 +47873,43 @@ exports[`Storyshots SearchField basic usage 1`] = `
                       <td
                         className="css-1ygfcef"
                       >
+                        onClear
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onClear()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
                         onFocus
                       </td>
                       <td
@@ -48455,6 +48492,37 @@ exports[`Storyshots SearchField with callbacks 1`] = `
                             </span>
                           </span>
                         </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onClear
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                search-cleared()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
                         <br />
                       </span>
                     </span>
@@ -48677,6 +48745,43 @@ exports[`Storyshots SearchField with callbacks 1`] = `
                             }
                           >
                             onChange()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onClear
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onClear()
                           </span>
                           }
                         </span>
@@ -49510,6 +49615,43 @@ exports[`Storyshots SearchField with custom label and screenreader text 1`] = `
                       <td
                         className="css-1ygfcef"
                       >
+                        onClear
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onClear()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
                         onFocus
                       </td>
                       <td
@@ -50245,6 +50387,43 @@ exports[`Storyshots SearchField with placeholder 1`] = `
                             }
                           >
                             onChange()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onClear
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onClear()
                           </span>
                           }
                         </span>
@@ -51041,6 +51220,43 @@ exports[`Storyshots SearchField with value 1`] = `
                             }
                           >
                             onChange()
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        onClear
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onClear()
                           </span>
                           }
                         </span>
