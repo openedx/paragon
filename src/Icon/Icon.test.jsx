@@ -17,7 +17,8 @@ describe('<Icon />', () => {
   describe('props received correctly', () => {
     it('receives required props', () => {
       wrapper = mount(<Icon className={classNames} />);
-      const iconSpan = wrapper.find('span');
+      const iconSpans = wrapper.find('span');
+      const iconSpan = iconSpans.at(1);
 
       expect(iconSpan.prop('id')).toContain('Icon');
       expect(iconSpan.hasClass(classNames[0])).toEqual(true);
@@ -26,7 +27,8 @@ describe('<Icon />', () => {
     it('handles null id properly', () => {
       const nullId = null;
       wrapper = mount(<Icon id={nullId} className={classNames} />);
-      const iconSpan = wrapper.find('span');
+      const iconSpans = wrapper.find('span');
+      const iconSpan = iconSpans.at(1);
 
       expect(iconSpan.prop('id')).toContain('Icon');
       expect(iconSpan.hasClass(classNames[0])).toEqual(true);
@@ -36,9 +38,9 @@ describe('<Icon />', () => {
       wrapper = mount(<Icon id={testId} className={classNames} screenReaderText={srTest} />);
       const iconSpans = wrapper.find('span');
 
-      expect(iconSpans.length).toEqual(2);
-      expect(iconSpans.at(0).prop('id')).toEqual(testId);
-      expect(iconSpans.at(1).hasClass('sr-only')).toEqual(true);
+      expect(iconSpans.length).toEqual(3);
+      expect(iconSpans.at(1).prop('id')).toEqual(testId);
+      expect(iconSpans.at(2).hasClass('sr-only')).toEqual(true);
     });
   });
 });
