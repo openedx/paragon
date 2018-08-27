@@ -22,6 +22,7 @@ const defaultProps = {
     searchButton: 'Submit search',
   },
   value: '',
+  inputRef: null,
 };
 
 const propTypes = {
@@ -37,6 +38,7 @@ const propTypes = {
     searchButton: PropTypes.string.isRequired,
   }),
   value: PropTypes.string,
+  inputRef: PropTypes.string,
 };
 
 class SearchField extends React.Component {
@@ -48,7 +50,7 @@ class SearchField extends React.Component {
       value: this.props.value,
     };
 
-    this.textInput = null;
+    this.inputRef = this.props.inputRef;
     this.searchButton = null;
 
     this.handleFocus = this.handleFocus.bind(this);
@@ -137,7 +139,7 @@ class SearchField extends React.Component {
   handleClear() {
     this.handleChange('');
     this.props.onClear();
-    this.textInput.focus();
+    this.inputRef.focus();
   }
 
   handleKeyPress(event) {
@@ -185,7 +187,7 @@ class SearchField extends React.Component {
           onChange={this.handleChange}
           onKeyPress={this.handleKeyPress}
           inputGroupAppend={this.getSearchActionButtons()}
-          inputRef={(input) => { this.textInput = input; }}
+          inputRef={(input) => { if (!this.inputRef) { this.inputRef = input; } }}
         />
       </div>
     );
