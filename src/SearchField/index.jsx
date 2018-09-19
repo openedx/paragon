@@ -26,15 +26,15 @@ const defaultProps = {
 
 const propTypes = {
   onSubmit: PropTypes.func.isRequired,
-  inputLabel: PropTypes.string,
+  inputLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
   onClear: PropTypes.func,
   onFocus: PropTypes.func,
   placeholder: PropTypes.string,
   screenReaderText: PropTypes.shape({
-    clearButton: PropTypes.string.isRequired,
-    searchButton: PropTypes.string.isRequired,
+    clearButton: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+    searchButton: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   }),
   value: PropTypes.string,
 };
