@@ -15391,13 +15391,11 @@ exports[`Storyshots Icon basic usage 1`] = `
           }
         }
       >
-        <span>
-          <span
-            aria-hidden={true}
-            className="fa fa-birthday-cake fa-4x"
-            id="Icon1"
-          />
-        </span>
+        <span
+          aria-hidden={true}
+          className="fa fa-birthday-cake fa-4x"
+          id="Icon1"
+        />
       </div>
       <button
         onClick={[Function]}
@@ -15879,17 +15877,15 @@ exports[`Storyshots Icon with screenreader text 1`] = `
           }
         }
       >
-        <span>
-          <span
-            aria-hidden={true}
-            className="fa fa-smile-o fa-4x"
-            id="SampleIcon"
-          />
-          <span
-            className="sr-only"
-          >
-            Happy Icon
-          </span>
+        <span
+          aria-hidden={true}
+          className="fa fa-smile-o fa-4x"
+          id="SampleIcon"
+        />
+        <span
+          className="sr-only"
+        >
+          Happy Icon
         </span>
       </div>
       <button
@@ -33323,17 +33319,15 @@ exports[`Storyshots InputText with input group addons 1`] = `
                 <div
                   className="input-group-text"
                 >
-                  <span>
-                    <span
-                      aria-hidden={true}
-                      className="fa fa-check"
-                      id="checkmark"
-                    />
-                    <span
-                      className="sr-only"
-                    >
-                      Checkmark
-                    </span>
+                  <span
+                    aria-hidden={true}
+                    className="fa fa-check"
+                    id="checkmark"
+                  />
+                  <span
+                    className="sr-only"
+                  >
+                    Checkmark
                   </span>
                 </div>
                 <button
@@ -33395,17 +33389,15 @@ exports[`Storyshots InputText with input group addons 1`] = `
                 <div
                   className="input-group-text"
                 >
-                  <span>
-                    <span
-                      aria-hidden={true}
-                      className="fa fa-check"
-                      id="checkmark"
-                    />
-                    <span
-                      className="sr-only"
-                    >
-                      Checkmark
-                    </span>
+                  <span
+                    aria-hidden={true}
+                    className="fa fa-check"
+                    id="checkmark"
+                  />
+                  <span
+                    className="sr-only"
+                  >
+                    Checkmark
                   </span>
                 </div>
               </div>
@@ -40383,13 +40375,11 @@ exports[`Storyshots Pagination basic usage 1`] = `
                 type="button"
               >
                 <div>
-                  <span>
-                    <span
-                      aria-hidden={true}
-                      className="fa fa-chevron-left mr-2"
-                      id="pagination-35"
-                    />
-                  </span>
+                  <span
+                    aria-hidden={true}
+                    className="fa fa-chevron-left mr-2"
+                    id="pagination-35"
+                  />
                   Previous
                 </div>
               </button>
@@ -40409,13 +40399,11 @@ exports[`Storyshots Pagination basic usage 1`] = `
               >
                 <div>
                   Next
-                  <span>
-                    <span
-                      aria-hidden={true}
-                      className="fa fa-chevron-right ml-2"
-                      id="pagination-37"
-                    />
-                  </span>
+                  <span
+                    aria-hidden={true}
+                    className="fa fa-chevron-right ml-2"
+                    id="pagination-37"
+                  />
                 </div>
               </button>
             </li>
@@ -41117,13 +41105,11 @@ exports[`Storyshots Pagination with custom element labels 1`] = `
                 type="button"
               >
                 <div>
-                  <span>
-                    <span
-                      aria-hidden={true}
-                      className="fa fa-chevron-left mr-2"
-                      id="pagination-48"
-                    />
-                  </span>
+                  <span
+                    aria-hidden={true}
+                    className="fa fa-chevron-left mr-2"
+                    id="pagination-48"
+                  />
                   <span>
                     Anterior
                   </span>
@@ -41147,13 +41133,11 @@ exports[`Storyshots Pagination with custom element labels 1`] = `
                   <span>
                     Siguiente
                   </span>
-                  <span>
-                    <span
-                      aria-hidden={true}
-                      className="fa fa-chevron-right ml-2"
-                      id="pagination-50"
-                    />
-                  </span>
+                  <span
+                    aria-hidden={true}
+                    className="fa fa-chevron-right ml-2"
+                    id="pagination-50"
+                  />
                 </div>
               </button>
             </li>
@@ -41969,13 +41953,11 @@ exports[`Storyshots Pagination with custom string labels 1`] = `
                 type="button"
               >
                 <div>
-                  <span>
-                    <span
-                      aria-hidden={true}
-                      className="fa fa-chevron-left mr-2"
-                      id="pagination-45"
-                    />
-                  </span>
+                  <span
+                    aria-hidden={true}
+                    className="fa fa-chevron-left mr-2"
+                    id="pagination-45"
+                  />
                   Anterior
                 </div>
               </button>
@@ -41995,13 +41977,11 @@ exports[`Storyshots Pagination with custom string labels 1`] = `
               >
                 <div>
                   Siguiente
-                  <span>
-                    <span
-                      aria-hidden={true}
-                      className="fa fa-chevron-right ml-2"
-                      id="pagination-47"
-                    />
-                  </span>
+                  <span
+                    aria-hidden={true}
+                    className="fa fa-chevron-right ml-2"
+                    id="pagination-47"
+                  />
                 </div>
               </button>
             </li>
@@ -42814,13 +42794,11 @@ exports[`Storyshots Pagination with initial page selected 1`] = `
                 type="button"
               >
                 <div>
-                  <span>
-                    <span
-                      aria-hidden={true}
-                      className="fa fa-chevron-left mr-2"
-                      id="pagination-38"
-                    />
-                  </span>
+                  <span
+                    aria-hidden={true}
+                    className="fa fa-chevron-left mr-2"
+                    id="pagination-38"
+                  />
                   Previous
                 </div>
               </button>
@@ -42840,13 +42818,11 @@ exports[`Storyshots Pagination with initial page selected 1`] = `
               >
                 <div>
                   Next
-                  <span>
-                    <span
-                      aria-hidden={true}
-                      className="fa fa-chevron-right ml-2"
-                      id="pagination-41"
-                    />
-                  </span>
+                  <span
+                    aria-hidden={true}
+                    className="fa fa-chevron-right ml-2"
+                    id="pagination-41"
+                  />
                 </div>
               </button>
             </li>
@@ -43588,13 +43564,11 @@ exports[`Storyshots Pagination with max pages displayed 1`] = `
                 type="button"
               >
                 <div>
-                  <span>
-                    <span
-                      aria-hidden={true}
-                      className="fa fa-chevron-left mr-2"
-                      id="pagination-42"
-                    />
-                  </span>
+                  <span
+                    aria-hidden={true}
+                    className="fa fa-chevron-left mr-2"
+                    id="pagination-42"
+                  />
                   Previous
                 </div>
               </button>
@@ -43614,13 +43588,11 @@ exports[`Storyshots Pagination with max pages displayed 1`] = `
               >
                 <div>
                   Next
-                  <span>
-                    <span
-                      aria-hidden={true}
-                      className="fa fa-chevron-right ml-2"
-                      id="pagination-44"
-                    />
-                  </span>
+                  <span
+                    aria-hidden={true}
+                    className="fa fa-chevron-right ml-2"
+                    id="pagination-44"
+                  />
                 </div>
               </button>
             </li>
@@ -47444,17 +47416,15 @@ exports[`Storyshots SearchField basic usage 1`] = `
                   onKeyDown={[Function]}
                   type="button"
                 >
-                  <span>
-                    <span
-                      aria-hidden={true}
-                      className="fa fa-search"
-                      id="Icon1"
-                    />
-                    <span
-                      className="sr-only"
-                    >
-                      Submit search
-                    </span>
+                  <span
+                    aria-hidden={true}
+                    className="fa fa-search"
+                    id="Icon1"
+                  />
+                  <span
+                    className="sr-only"
+                  >
+                    Submit search
                   </span>
                 </button>
               </div>
@@ -48201,17 +48171,15 @@ exports[`Storyshots SearchField with callbacks 1`] = `
                   onKeyDown={[Function]}
                   type="button"
                 >
-                  <span>
-                    <span
-                      aria-hidden={true}
-                      className="fa fa-search"
-                      id="Icon1"
-                    />
-                    <span
-                      className="sr-only"
-                    >
-                      Submit search
-                    </span>
+                  <span
+                    aria-hidden={true}
+                    className="fa fa-search"
+                    id="Icon1"
+                  />
+                  <span
+                    className="sr-only"
+                  >
+                    Submit search
                   </span>
                 </button>
               </div>
@@ -49085,17 +49053,15 @@ exports[`Storyshots SearchField with custom label and screenreader text 1`] = `
                   onKeyDown={[Function]}
                   type="button"
                 >
-                  <span>
-                    <span
-                      aria-hidden={true}
-                      className="fa fa-search"
-                      id="Icon1"
-                    />
-                    <span
-                      className="sr-only"
-                    >
-                      Enviar búsqueda
-                    </span>
+                  <span
+                    aria-hidden={true}
+                    className="fa fa-search"
+                    id="Icon1"
+                  />
+                  <span
+                    className="sr-only"
+                  >
+                    Enviar búsqueda
                   </span>
                 </button>
               </div>
@@ -49943,17 +49909,15 @@ exports[`Storyshots SearchField with placeholder 1`] = `
                   onKeyDown={[Function]}
                   type="button"
                 >
-                  <span>
-                    <span
-                      aria-hidden={true}
-                      className="fa fa-search"
-                      id="Icon1"
-                    />
-                    <span
-                      className="sr-only"
-                    >
-                      Submit search
-                    </span>
+                  <span
+                    aria-hidden={true}
+                    className="fa fa-search"
+                    id="Icon1"
+                  />
+                  <span
+                    className="sr-only"
+                  >
+                    Submit search
                   </span>
                 </button>
               </div>
@@ -50727,17 +50691,15 @@ exports[`Storyshots SearchField with value 1`] = `
                   type="button"
                 >
                   <small>
-                    <span>
-                      <span
-                        aria-hidden={true}
-                        className="fa fa-times"
-                        id="icon-SearchField53"
-                      />
-                      <span
-                        className="sr-only"
-                      >
-                        Clear search
-                      </span>
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-times"
+                      id="icon-SearchField53"
+                    />
+                    <span
+                      className="sr-only"
+                    >
+                      Clear search
                     </span>
                   </small>
                 </button>
@@ -50749,17 +50711,15 @@ exports[`Storyshots SearchField with value 1`] = `
                   onKeyDown={[Function]}
                   type="button"
                 >
-                  <span>
-                    <span
-                      aria-hidden={true}
-                      className="fa fa-search"
-                      id="Icon1"
-                    />
-                    <span
-                      className="sr-only"
-                    >
-                      Submit search
-                    </span>
+                  <span
+                    aria-hidden={true}
+                    className="fa fa-search"
+                    id="Icon1"
+                  />
+                  <span
+                    className="sr-only"
+                  >
+                    Submit search
                   </span>
                 </button>
               </div>
