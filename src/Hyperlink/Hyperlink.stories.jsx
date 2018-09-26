@@ -13,6 +13,7 @@ import 'font-awesome/css/font-awesome.min.css';
 import README from './README.md';
 
 import Hyperlink from './index';
+import Icon from '../Icon/index';
 
 setConsoleOptions({
   panelExclude: ['warn', 'error'],
@@ -48,6 +49,11 @@ storiesOf('HyperLink', module)
   .add('with icon as content', () => (
     <Hyperlink
       destination="https://www.edx.org"
-      content={(<span className="fa fa-book" />)}
+      content={(
+        <Icon
+          id="SampleIcon"
+          className={['fa', 'fa-book']}
+          screenReaderText="Visit edX Home"
+        />)}
     />
   ));

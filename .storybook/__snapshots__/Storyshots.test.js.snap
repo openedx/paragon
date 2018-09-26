@@ -14214,9 +14214,18 @@ exports[`Storyshots HyperLink with icon as content 1`] = `
           onClick={[Function]}
           target="_self"
         >
-          <span
-            className="fa fa-book"
-          />
+          <span>
+            <span
+              aria-hidden={true}
+              className="fa fa-book"
+              id="SampleIcon"
+            />
+            <span
+              className="sr-only"
+            >
+              Visit edX Home
+            </span>
+          </span>
         </a>
       </div>
       <button
@@ -14419,7 +14428,7 @@ exports[`Storyshots HyperLink with icon as content 1`] = `
                                   }
                                 }
                               >
-                                &lt;span /&gt;
+                                &lt;Icon /&gt;
                               </span>
                               }
                             </span>
