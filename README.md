@@ -45,6 +45,7 @@ Demo implementations of each component are viewable at the Paragon doc site at h
 - [Button](src/Button)
 - [CheckBox](src/CheckBox)
 - [CheckBoxGroup](src/CheckBoxGroup)
+- [Collapsible](src/Collapsible)
 - [Dropdown](src/Dropdown)
 - [Hyperlink](src/Hyperlink)
 - [Icon](src/Icon)
