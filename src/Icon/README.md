@@ -16,5 +16,5 @@ Provides the ability to have a basic accessibility friendly Icon. The Icon has `
 ### `hidden` (boolean; optional)
 `hidden` is a boolean that determines the value of `aria-hidden` attribute on the Icon span, this value is `true` by default.
 
-### `screenReaderText` (string; optional)
-`screenReaderText` is a string that will be used on a secondary span leveraging the `sr-only` style for screenreader only text, this value is `undefined` by default.
+### `screenReaderText` (string; optional, but recommended)
+`screenReaderText` is a string that will be used on a secondary span leveraging the `sr-only` style for screenreader only text, this value is `undefined` by default. This value is recommended for use unless the Icon is being used in a way that is purely decorative or provides no additional context for screen reader users. This field should be thought of the same way an `alt` attribute would be used for `image` tags.
