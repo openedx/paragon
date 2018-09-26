@@ -7,7 +7,7 @@ import newId from '../utils/newId';
 
 function Icon(props) {
   return (
-    <span>
+    <React.Fragment>
       <span
         id={props.id ? props.id : newId('Icon')}
         className={classNames(props.className)}
@@ -18,7 +18,7 @@ function Icon(props) {
           {props.screenReaderText}
         </span>
       }
-    </span>
+    </React.Fragment>
   );
 }
 
