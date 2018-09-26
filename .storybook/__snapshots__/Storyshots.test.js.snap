@@ -48,15 +48,15 @@ exports[`Storyshots Breadcrumb basic usage 1`] = `
               </a>
             </li>
             <li
+              aria-label="spacer"
               className="list-inline-item"
+              role="presentation"
             >
-              <span>
-                <span
-                  aria-hidden={true}
-                  className="fa fa-chevron-right"
-                  id="Icon1"
-                />
-              </span>
+              <span
+                aria-hidden={true}
+                className="fa fa-chevron-right"
+                id="Icon1"
+              />
             </li>
             <li
               className="list-inline-item"
@@ -68,15 +68,15 @@ exports[`Storyshots Breadcrumb basic usage 1`] = `
               </a>
             </li>
             <li
+              aria-label="spacer"
               className="list-inline-item"
+              role="presentation"
             >
-              <span>
-                <span
-                  aria-hidden={true}
-                  className="fa fa-chevron-right"
-                  id="Icon1"
-                />
-              </span>
+              <span
+                aria-hidden={true}
+                className="fa fa-chevron-right"
+                id="Icon1"
+              />
             </li>
             <li
               className="list-inline-item"
@@ -679,15 +679,15 @@ exports[`Storyshots Breadcrumb with activeLabel 1`] = `
               </a>
             </li>
             <li
+              aria-label="spacer"
               className="list-inline-item"
+              role="presentation"
             >
-              <span>
-                <span
-                  aria-hidden={true}
-                  className="fa fa-chevron-right"
-                  id="Icon1"
-                />
-              </span>
+              <span
+                aria-hidden={true}
+                className="fa fa-chevron-right"
+                id="Icon1"
+              />
             </li>
             <li
               className="list-inline-item"
@@ -699,15 +699,15 @@ exports[`Storyshots Breadcrumb with activeLabel 1`] = `
               </a>
             </li>
             <li
+              aria-label="spacer"
               className="list-inline-item"
+              role="presentation"
             >
-              <span>
-                <span
-                  aria-hidden={true}
-                  className="fa fa-chevron-right"
-                  id="Icon1"
-                />
-              </span>
+              <span
+                aria-hidden={true}
+                className="fa fa-chevron-right"
+                id="Icon1"
+              />
             </li>
             <li
               className="list-inline-item"
@@ -719,15 +719,15 @@ exports[`Storyshots Breadcrumb with activeLabel 1`] = `
               </a>
             </li>
             <li
+              aria-label="spacer"
               className="list-inline-item"
+              role="presentation"
             >
-              <span>
-                <span
-                  aria-hidden={true}
-                  className="fa fa-chevron-right"
-                  id="Icon1"
-                />
-              </span>
+              <span
+                aria-hidden={true}
+                className="fa fa-chevron-right"
+                id="Icon1"
+              />
             </li>
             <li
               className="list-inline-item"
@@ -1353,7 +1353,9 @@ exports[`Storyshots Breadcrumb with custom spacer 1`] = `
               </a>
             </li>
             <li
+              aria-label="spacer"
               className="list-inline-item"
+              role="presentation"
             >
               <span
                 className="custom-spacer"
@@ -1371,7 +1373,9 @@ exports[`Storyshots Breadcrumb with custom spacer 1`] = `
               </a>
             </li>
             <li
+              aria-label="spacer"
               className="list-inline-item"
+              role="presentation"
             >
               <span
                 className="custom-spacer"
@@ -16174,17 +16178,15 @@ exports[`Storyshots HyperLink with icon as content 1`] = `
           onClick={[Function]}
           target="_self"
         >
-          <span>
-            <span
-              aria-hidden={true}
-              className="fa fa-book"
-              id="SampleIcon"
-            />
-            <span
-              className="sr-only"
-            >
-              Visit edX Home
-            </span>
+          <span
+            aria-hidden={true}
+            className="fa fa-book"
+            id="SampleIcon"
+          />
+          <span
+            className="sr-only"
+          >
+            Visit edX Home
           </span>
         </a>
       </div>
