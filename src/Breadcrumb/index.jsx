@@ -5,7 +5,9 @@ import classNames from 'classnames';
 import styles from './Breadcrumb.scss';
 import Icon from '../Icon';
 
-const Breadcrumbs = ({ links, activeLabel, spacer }) => {
+const Breadcrumbs = ({
+  links, activeLabel, spacer, clickHandler,
+}) => {
   const linkCount = links.length;
 
   return (
@@ -13,7 +15,9 @@ const Breadcrumbs = ({ links, activeLabel, spacer }) => {
       <ol className={classNames(styles['list-inline'])}>
         {links.map(({ url, label }, i) => (
           <React.Fragment key={url}>
-            <li className={classNames(styles['list-inline-item'])}><a href={url}>{label}</a></li>
+            <li className={classNames(styles['list-inline-item'])}>
+              <a href={url} {...(clickHandler && { onClick: clickHandler })}>{label}</a>
+            </li>
             {(activeLabel || ((i + 1) < linkCount)) &&
               <li className={classNames(styles['list-inline-item'])} role="presentation" aria-label="spacer">
                 {spacer || <Icon className={['fa', 'fa-chevron-right']} />}
@@ -34,11 +38,13 @@ Breadcrumbs.propTypes = {
   })).isRequired,
   activeLabel: PropTypes.string,
   spacer: PropTypes.element,
+  clickHandler: PropTypes.func,
 };
 
 Breadcrumbs.defaultProps = {
   activeLabel: undefined,
   spacer: undefined,
+  clickHandler: undefined,
 };
 
 export default Breadcrumbs;

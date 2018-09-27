@@ -40,4 +40,13 @@ storiesOf('Breadcrumb', module)
       links={sampleLinks}
       spacer={<span className="custom-spacer">/</span>}
     />
+  ))
+  .add('with custom click handler', () => (
+    <Breadcrumb
+      links={sampleLinks}
+      clickHandler={(event) => {
+        event.preventDefault();
+        console.log(`${event.target.getAttribute('href')} clicked`); // eslint-disable-line no-console
+      }}
+    />
   ));
