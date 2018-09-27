@@ -619,6 +619,31 @@ exports[`Storyshots Breadcrumb basic usage 1`] = `
                         className="css-d52hbj"
                       />
                     </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        clickHandler
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -1293,6 +1318,718 @@ exports[`Storyshots Breadcrumb with activeLabel 1`] = `
                         className="css-d52hbj"
                       />
                     </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        clickHandler
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Breadcrumb with custom click handler 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": 0,
+      "display": "flex",
+      "justifyContent": "center",
+      "left": 0,
+      "overflow": "auto",
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+      }
+    }
+  >
+    <div>
+      <div
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
+      >
+        <nav
+          aria-label="breadcrumb"
+        >
+          <ol
+            className="list-inline"
+          >
+            <li
+              className="list-inline-item"
+            >
+              <a
+                href="/link-1"
+                onClick={[Function]}
+              >
+                Link 1
+              </a>
+            </li>
+            <li
+              aria-label="spacer"
+              className="list-inline-item"
+              role="presentation"
+            >
+              <span
+                aria-hidden={true}
+                className="fa fa-chevron-right"
+                id="Icon1"
+              />
+            </li>
+            <li
+              className="list-inline-item"
+            >
+              <a
+                href="/link-2"
+                onClick={[Function]}
+              >
+                Link 2
+              </a>
+            </li>
+            <li
+              aria-label="spacer"
+              className="list-inline-item"
+              role="presentation"
+            >
+              <span
+                aria-hidden={true}
+                className="fa fa-chevron-right"
+                id="Icon1"
+              />
+            </li>
+            <li
+              className="list-inline-item"
+            >
+              <a
+                href="/link-3"
+                onClick={[Function]}
+              >
+                Link 3
+              </a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#28c",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
+      <div
+        style={
+          Object {
+            "background": "white",
+            "bottom": 0,
+            "display": "none",
+            "left": 0,
+            "overflow": "auto",
+            "padding": "0 40px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+            "zIndex": 99999,
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "background": "#28c",
+              "border": "none",
+              "borderRadius": "0 0 0 5px",
+              "color": "#fff",
+              "cursor": "pointer",
+              "display": "block",
+              "fontFamily": "sans-serif",
+              "fontSize": "12px",
+              "padding": "5px 15px",
+              "position": "fixed",
+              "right": 0,
+              "top": 0,
+            }
+          }
+          type="button"
+        >
+          ×
+        </button>
+        <div
+          style={undefined}
+        >
+          <div
+            style={
+              Object {
+                "WebkitFontSmoothing": "antialiased",
+                "backgroundColor": "#fff",
+                "border": "1px solid #eee",
+                "borderRadius": "2px",
+                "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
+                "color": "#444",
+                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                "fontSize": "15px",
+                "fontWeight": 300,
+                "lineHeight": 1.45,
+                "marginBottom": "20px",
+                "marginTop": "20px",
+                "padding": "20px 40px 40px",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "borderBottom": "1px solid #eee",
+                  "marginBottom": 10,
+                  "paddingTop": 10,
+                }
+              }
+            >
+              <h1
+                style={
+                  Object {
+                    "fontSize": "35px",
+                    "margin": 0,
+                    "padding": 0,
+                  }
+                }
+              >
+                Breadcrumb
+              </h1>
+              <h2
+                style={
+                  Object {
+                    "fontSize": "22px",
+                    "fontWeight": 400,
+                    "margin": "0 0 10px 0",
+                    "padding": 0,
+                  }
+                }
+              >
+                with custom click handler
+              </h2>
+            </div>
+            
+            <div>
+              <h1
+                style={
+                  Object {
+                    "borderBottom": "1px solid #EEE",
+                    "fontSize": "25px",
+                    "margin": "20px 0 0 0",
+                    "padding": "0 0 5px 0",
+                  }
+                }
+              >
+                Story Source
+              </h1>
+              <pre
+                className="css-4akams"
+              >
+                <div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      Breadcrumbs
+                    </span>
+                    <span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          links
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                [
+                                <span>
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      label
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      Link 1
+                                      "
+                                    </span>
+                                    , 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      url
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      /link-1
+                                      "
+                                    </span>
+                                    }
+                                  </span>
+                                  }
+                                </span>
+                                , 
+                                <span>
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      label
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      Link 2
+                                      "
+                                    </span>
+                                    , 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      url
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      /link-2
+                                      "
+                                    </span>
+                                    }
+                                  </span>
+                                  }
+                                </span>
+                                , 
+                                <span>
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      label
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      Link 3
+                                      "
+                                    </span>
+                                    , 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      url
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      /link-3
+                                      "
+                                    </span>
+                                    }
+                                  </span>
+                                  }
+                                </span>
+                                ]
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          clickHandler
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                clickHandler()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                         
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                </div>
+                <button
+                  className="css-gydez8"
+                  onClick={[Function]}
+                >
+                  <div
+                    className="css-kv47nt"
+                  >
+                    <div
+                      style={
+                        Object {
+                          "marginBottom": 6,
+                        }
+                      }
+                    >
+                      Copied!
+                    </div>
+                    <div>
+                      Copy
+                    </div>
+                  </div>
+                </button>
+              </pre>
+            </div>
+            <div>
+              <h1
+                style={
+                  Object {
+                    "borderBottom": "1px solid #EEE",
+                    "fontSize": "25px",
+                    "margin": "20px 0 0 0",
+                    "padding": "0 0 5px 0",
+                  }
+                }
+              >
+                Prop Types
+              </h1>
+              <div>
+                <h2
+                  style={
+                    Object {
+                      "margin": "20px 0 0 0",
+                    }
+                  }
+                >
+                  "
+                  Breadcrumbs
+                  " Component
+                </h2>
+                <table
+                  className="css-1ytzlk7"
+                >
+                  <thead>
+                    <tr>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        property
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        propType
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        required
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        default
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        description
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        links
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        yes
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        activeLabel
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        spacer
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        clickHandler
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -1932,6 +2669,31 @@ exports[`Storyshots Breadcrumb with custom spacer 1`] = `
                         className="css-1ygfcef"
                       >
                         spacer
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        clickHandler
                       </td>
                       <td
                         className="css-1ygfcef"
