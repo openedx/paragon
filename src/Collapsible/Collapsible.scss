@@ -19,10 +19,10 @@ $collapsible-border: 1px solid silver;
   }
 
   .collapsible-body {
+    visibility: collapse;
     overflow: hidden;
     padding: 0 10px;
     max-height: 0;
-    opacity: 0;
     transition: all 0.3s ease;
   }
 
@@ -30,8 +30,8 @@ $collapsible-border: 1px solid silver;
     border: $collapsible-border;
 
     .collapsible-body {
-      max-height: none;
-      opacity: 1;
+      visibility: visible;
+      max-height: max-content;
       padding: 15px 10px;
     }
 
@@ -42,8 +42,8 @@ $collapsible-border: 1px solid silver;
 
   &.expanded {
     .collapsible-body {
-      max-height: none;
-      opacity: 1;
+      visibility: visible;
+      max-height: max-content;
     }
   }
 }

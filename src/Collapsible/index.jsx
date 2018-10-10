@@ -94,7 +94,7 @@ class Collapsible extends React.Component {
           { [styles.open]: isOpen || isExpanded },
           )]}
         >
-          {(isOpen || isExpanded) && children}
+          {children}
         </div>
       </div>
     );
