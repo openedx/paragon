@@ -5,6 +5,9 @@ optionally has the ability to display without the open/close button based on the
 screen size. The collapsible functionality mimics that of an accordion section,
 with the exception that multiple collapsibles can be open at the same time.
 
+Note: The CSS is required for the hide/show functionality and animations to
+work properly.
+
 ## API
 
 ### `children` (object; required)
