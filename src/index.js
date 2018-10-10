@@ -2,6 +2,7 @@ import asInput from './asInput';
 import Button from './Button';
 import CheckBox from './CheckBox';
 import CheckBoxGroup from './CheckBoxGroup';
+import Collapsible from './Collapsible';
 import Dropdown from './Dropdown';
 import Fieldset from './Fieldset';
 import Hyperlink from './Hyperlink';
@@ -34,6 +35,7 @@ export {
   Button,
   CheckBox,
   CheckBoxGroup,
+  Collapsible,
   Dropdown,
   ExtraLarge,
   ExtraSmall,
