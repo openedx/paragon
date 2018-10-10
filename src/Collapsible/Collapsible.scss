@@ -1,0 +1,49 @@
+// Variables
+$collapsible-border: 1px solid silver;
+
+.collapsible {
+  border-radius: 4px;
+
+  .btn-collapsible {
+    border: $collapsible-border;
+    white-space: normal;
+
+    &:hover,
+    &:focus {
+      background-color: #f5f8ff;
+    }
+  }
+
+  .btn-collapsible.open {
+    border: none;
+  }
+
+  .collapsible-body {
+    overflow: hidden;
+    padding: 0 10px;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  &.open {
+    border: $collapsible-border;
+
+    .collapsible-body {
+      max-height: none;
+      opacity: 1;
+      padding: 15px 10px;
+    }
+
+    .btn-collapsible {
+      background-color: white;
+    }
+  }
+
+  &.expanded {
+    .collapsible-body {
+      max-height: none;
+      opacity: 1;
+    }
+  }
+}
