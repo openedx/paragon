@@ -41,6 +41,13 @@ describe('<Collapsible />', () => {
         expect(wrapper.find('.collapsible-body.open').exists()).toEqual(true);
       });
 
+      it('changes the isOpen state if the isOpen prop changes', () => {
+        const wrapper = mount(<Collapsible {...defaultProps} isOpen />);
+        expect(wrapper.instance().state.isOpen).toBe(true);
+        wrapper.setProps({ isOpen: false });
+        expect(wrapper.instance().state.isOpen).toBe(false);
+      });
+
       it('renders the title on the open/close button', () => {
         const wrapper = mount(<Collapsible {...defaultProps} />);
 

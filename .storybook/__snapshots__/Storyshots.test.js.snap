@@ -7460,7 +7460,11 @@ exports[`Storyshots Collapsible basic usage without resizing 1`] = `
               "collapsible-body",
             ]
           }
-        />
+        >
+          <p>
+            Your stuff goes here
+          </p>
+        </div>
       </div>
     </div>
     <button
