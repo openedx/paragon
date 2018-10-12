@@ -24,6 +24,22 @@ class Collapsible extends React.Component {
     }
   }
 
+  /**
+   * "Note that you may call setState() immediately in componentDidUpdate() but,
+   * it must be wrapped in a conditional check against the previous props, or
+   * you'll cause an infinite loop."
+   * See https://reactjs.org/docs/react-component.html#componentdidupdate for
+   * more information.
+   */
+  componentDidUpdate(prevProps) {
+    /* eslint-disable react/no-did-update-set-state */
+    if (this.props.isOpen !== prevProps.isOpen) {
+      this.setState({
+        isOpen: this.props.isOpen,
+      });
+    }
+  }
+
   componentWillUnmount() {
     if (this.props.isCollapsible) {
       window.removeEventListener('resize', this.handleResize);
@@ -94,7 +110,7 @@ class Collapsible extends React.Component {
           { [styles.open]: isOpen || isExpanded },
           )]}
         >
-          {(isOpen || isExpanded) && children}
+          {children}
         </div>
       </div>
     );
