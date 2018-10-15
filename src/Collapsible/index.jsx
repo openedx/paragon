@@ -57,9 +57,9 @@ class Collapsible extends React.Component {
   }
 
   handleClick() {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    });
+    const isOpen = !this.state.isOpen;
+    this.setState({ isOpen });
+    this.props.onToggle(isOpen);
   }
 
   render() {
@@ -122,6 +122,7 @@ Collapsible.propTypes = {
   expandedTitle: PropTypes.element,
   isCollapsible: PropTypes.func,
   isOpen: PropTypes.bool,
+  onToggle: PropTypes.func,
   title: PropTypes.string.isRequired,
 };
 
@@ -129,6 +130,7 @@ Collapsible.defaultProps = {
   expandedTitle: undefined,
   isCollapsible: undefined,
   isOpen: false,
+  onToggle: () => {},
 };
 
 export default Collapsible;

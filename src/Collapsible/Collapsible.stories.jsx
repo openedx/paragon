@@ -46,4 +46,12 @@ storiesOf('Collapsible', module)
     <Collapsible title="Click me to expand" isOpen>
       <p>Your stuff goes here</p>
     </Collapsible>
+  ))
+  .add('fires onToggle callback when toggled', () => (
+    <Collapsible
+      title="Click me to expand"
+      onToggle={isOpen => console.log(`this.state.isOpen = ${isOpen}`)} // eslint-disable-line no-console
+    >
+      <p>Your stuff goes here</p>
+    </Collapsible>
   ));
