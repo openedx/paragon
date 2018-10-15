@@ -44,3 +44,6 @@ button for non-desktop screens.
 
 If no function is given, the collapsible does not handle resizing and will
 always show the open/close button.
+
+### `onToggle` (function; optional)
+`onToggle` is an optional callback that is trigged when the Collapsible components is opened or closed. A boolean is passed to the callback with the value of `isOpen` from the component's state.

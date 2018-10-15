@@ -77,6 +77,21 @@ describe('<Collapsible />', () => {
       expect(wrapper.find('button').prop('aria-expanded')).toEqual(true);
       expect(wrapper.find('.collapsible-body.open').exists()).toEqual(true);
     });
+
+    it('calls the onToggle callback correctly', () => {
+      const spy = jest.fn();
+      const wrapper = mount(<Collapsible {...defaultProps} onToggle={spy} />);
+
+      expect(spy).toHaveBeenCalledTimes(0);
+
+      wrapper.find('button').simulate('click');
+      expect(spy).toHaveBeenCalledTimes(1);
+      expect(spy).toHaveBeenCalledWith(true);
+
+      wrapper.find('button').simulate('click');
+      expect(spy).toHaveBeenCalledTimes(2);
+      expect(spy).toHaveBeenCalledWith(false);
+    });
   });
 
   describe('with resizing', () => {
