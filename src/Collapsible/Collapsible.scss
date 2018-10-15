@@ -15,21 +15,20 @@ $collapsible-border: 1px solid silver;
     white-space: normal;
     background-color: white;
 
-    &:hover,
-    &:focus {
+    &:hover {
       background-color: #f5f8ff;
     }
   }
 
   .btn-collapsible.open {
-    border: none;
+    border: 1px solid transparent;
   }
 
   .collapsible-body {
     visibility: collapse;
     opacity: 0;
     overflow: hidden;
-    padding: 0 10px;
+    padding: 0 15px;
     max-height: 0;
     transition: all 0.3s ease;
   }
@@ -41,7 +40,7 @@ $collapsible-border: 1px solid silver;
       visibility: visible;
       opacity: 1;
       max-height: 99999px; // Set to a very high number since we don't know how large the body will be
-      padding: 15px 10px;
+      padding: 15px;
     }
 
     .btn-collapsible {
