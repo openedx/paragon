@@ -14,3 +14,6 @@ Note: When passing in a component to `menuItems` that uses a prop other than `re
 
 ### `title` (string; required)
 `title` specifies the text that is displayed within the original dropdown button.
+
+### `iconElement` (element; optional)
+`iconElement` specifies the icon to be displayed alongside the dropdown.
