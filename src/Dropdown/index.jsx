@@ -131,14 +131,21 @@ class Dropdown extends React.Component {
   }
 
   render() {
+    const hasIconElement = React.isValidElement(this.props.iconElement);
+
     return (
       <div
         className={classNames([
           styles.dropdown,
-          { [styles.show]: this.state.open },
+          { [styles.show]: this.state.open, 'has-icon': hasIconElement },
         ])}
         ref={(container) => { this.container = container; }}
       >
+        { hasIconElement &&
+          <div className="icon-container">
+            {React.cloneElement(this.props.iconElement)}
+          </div>
+        }
         <Button
           aria-expanded={this.state.open}
           aria-haspopup="true"
@@ -170,6 +177,7 @@ class Dropdown extends React.Component {
 
 Dropdown.propTypes = {
   buttonType: PropTypes.string,
+  iconElement: PropTypes.element,
   menuItems: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,
@@ -182,6 +190,7 @@ Dropdown.propTypes = {
 
 Dropdown.defaultProps = {
   buttonType: 'light',
+  iconElement: undefined,
 };
 
 export default Dropdown;
