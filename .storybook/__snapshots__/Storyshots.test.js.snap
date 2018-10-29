@@ -55,7 +55,7 @@ exports[`Storyshots Breadcrumb basic usage 1`] = `
               <span
                 aria-hidden={true}
                 className="fa fa-chevron-right"
-                id="Icon1"
+                id="spacer-0"
               />
             </li>
             <li
@@ -75,7 +75,7 @@ exports[`Storyshots Breadcrumb basic usage 1`] = `
               <span
                 aria-hidden={true}
                 className="fa fa-chevron-right"
-                id="Icon1"
+                id="spacer-1"
               />
             </li>
             <li
@@ -711,7 +711,7 @@ exports[`Storyshots Breadcrumb with activeLabel 1`] = `
               <span
                 aria-hidden={true}
                 className="fa fa-chevron-right"
-                id="Icon1"
+                id="spacer-0"
               />
             </li>
             <li
@@ -731,7 +731,7 @@ exports[`Storyshots Breadcrumb with activeLabel 1`] = `
               <span
                 aria-hidden={true}
                 className="fa fa-chevron-right"
-                id="Icon1"
+                id="spacer-1"
               />
             </li>
             <li
@@ -751,7 +751,7 @@ exports[`Storyshots Breadcrumb with activeLabel 1`] = `
               <span
                 aria-hidden={true}
                 className="fa fa-chevron-right"
-                id="Icon1"
+                id="spacer-2"
               />
             </li>
             <li
@@ -1411,7 +1411,7 @@ exports[`Storyshots Breadcrumb with custom click handler 1`] = `
               <span
                 aria-hidden={true}
                 className="fa fa-chevron-right"
-                id="Icon1"
+                id="spacer-0"
               />
             </li>
             <li
@@ -1432,7 +1432,7 @@ exports[`Storyshots Breadcrumb with custom click handler 1`] = `
               <span
                 aria-hidden={true}
                 className="fa fa-chevron-right"
-                id="Icon1"
+                id="spacer-1"
               />
             </li>
             <li

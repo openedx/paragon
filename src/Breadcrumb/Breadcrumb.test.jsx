@@ -18,19 +18,6 @@ const baseProps = {
       url: '/link-3',
     },
   ],
-  activeCourseRun: {
-    start: '',
-    end: '',
-    enrollment_start: '',
-    pacing_type: '',
-    status: '',
-    min_effort: 1,
-    max_effort: 10,
-    weeks_to_complete: 5,
-    availability: '',
-    staff: [],
-  },
-  uuid: '123abc',
 };
 
 describe('<Breadcrumb />', () => {
@@ -45,7 +32,7 @@ describe('<Breadcrumb />', () => {
   });
 
   it('renders with links and active label', () => {
-    const label = 'Link 4';
+    const label = 'Current Page';
     wrapper = mount(<Breadcrumb {...baseProps} activeLabel={label} />);
 
     const list = wrapper.find('ol li');
@@ -64,5 +51,19 @@ describe('<Breadcrumb />', () => {
     expect(list.length).toEqual(5);
     expect(list.find('a').length).toEqual(3);
     expect(list.find('.custom-spacer').length).toEqual(2);
+  });
+
+  it('fires the passed in click handler', () => {
+    const clickHandler = jest.fn();
+    wrapper = mount(<Breadcrumb {...baseProps} clickHandler={clickHandler} />);
+
+    const list = wrapper.find('ol li');
+    expect(list.length).toEqual(5);
+
+    const links = list.find('a');
+    expect(links.length).toEqual(3);
+
+    links.first().simulate('click');
+    expect(clickHandler).toHaveBeenCalled();
   });
 });

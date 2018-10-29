@@ -20,7 +20,7 @@ const Breadcrumbs = ({
             </li>
             {(activeLabel || ((i + 1) < linkCount)) &&
               <li className={classNames(styles['list-inline-item'])} role="presentation" aria-label="spacer">
-                {spacer || <Icon className={['fa', 'fa-chevron-right']} />}
+                {spacer || <Icon className={['fa', 'fa-chevron-right']} id={`spacer-${i}`} />}
               </li>
             }
           </React.Fragment>
