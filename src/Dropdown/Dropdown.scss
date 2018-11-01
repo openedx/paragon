@@ -1,4 +1,8 @@
 @import "~bootstrap/scss/_dropdown";
+@import "~bootstrap/scss/utilities/_borders";
+@import "~bootstrap/scss/utilities/_display";
+@import "~bootstrap/scss/utilities/_flex";
+@import "~bootstrap/scss/utilities/_background";
 
 // Trying to patch this upstream, then this can
 // be removed.
@@ -13,27 +17,13 @@
 }
 
 .dropdown.has-icon {
-  display: flex;
-  border: 1px solid $gray-400;
-  border-radius: 3px;
-
-  button {
-    color: #636c72;
-    background: #ffffff !important;
-    border: none;
-  }
-
-  div.icon-container {
-    display: flex;
-    height: 40px;
-    width: 40px;
-    align-items: center;
-    justify-content: center;
-    padding: 1px;
-    border-right: 1px solid $gray-400;
+  .icon-container {
+    max-width: 40px;
+    box-sizing: content-box;
 
     img {
       max-width: 100%;
+      height: auto;
     }
   }
 }
