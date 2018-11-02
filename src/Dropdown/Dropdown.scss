@@ -1,4 +1,8 @@
 @import "~bootstrap/scss/_dropdown";
+@import "~bootstrap/scss/utilities/_borders";
+@import "~bootstrap/scss/utilities/_display";
+@import "~bootstrap/scss/utilities/_flex";
+@import "~bootstrap/scss/utilities/_background";
 
 // Trying to patch this upstream, then this can
 // be removed.
@@ -9,5 +13,17 @@
     outline-style: solid;
     outline-color: Highlight;
     outline: -webkit-focus-ring-color auto 5px;
+  }
+}
+
+.dropdown.has-icon {
+  .icon-container {
+    max-width: 40px;
+    box-sizing: content-box;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
   }
 }

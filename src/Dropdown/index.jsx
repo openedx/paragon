@@ -131,37 +131,74 @@ class Dropdown extends React.Component {
   }
 
   render() {
+    const { open } = this.state;
+    const {
+      buttonType,
+      iconElement,
+      menuItems,
+      title,
+    } = this.props;
+    const hasIconElement = React.isValidElement(iconElement);
+
     return (
       <div
         className={classNames([
           styles.dropdown,
-          { [styles.show]: this.state.open },
+          {
+            [styles.show]: open,
+            [styles['has-icon']]: hasIconElement,
+            [styles.rounded]: hasIconElement,
+            [styles.border]: hasIconElement,
+            [styles['d-flex']]: hasIconElement,
+            [styles['bg-white']]: hasIconElement,
+          },
         ])}
         ref={(container) => { this.container = container; }}
       >
+        { hasIconElement &&
+          <div
+            className={[classNames([
+              styles['icon-container'],
+              styles['d-flex'],
+              styles['align-items-center'],
+              styles['justify-content-center'],
+              styles['border-right'],
+            ])]}
+          >
+            {React.cloneElement(iconElement, {
+              className: iconElement.props && Array.isArray(iconElement.props.className) ?
+                [...iconElement.props.className, styles['rounded-left']] : styles['rounded-left'],
+            })}
+          </div>
+        }
         <Button
-          aria-expanded={this.state.open}
+          aria-expanded={open}
           aria-haspopup="true"
-          buttonType={this.props.buttonType}
-          label={this.props.title}
+          buttonType={buttonType}
+          label={title}
           onClick={this.toggle}
           onKeyDown={this.handleToggleKeyDown}
-          className={[
+          className={[classNames([
             styles['dropdown-toggle'],
-          ]}
+            {
+              [styles['border-0']]: hasIconElement,
+              [styles['rounded-0']]: hasIconElement,
+              [styles['bg-white']]: hasIconElement,
+            },
+          ])]}
           type="button"
           inputRef={(toggleElem) => { this.toggleElem = toggleElem; }}
         />
         <div
-          aria-label={this.props.title}
-          aria-hidden={!this.state.open}
+          aria-label={title}
+          aria-hidden={!open}
           className={classNames([
             styles['dropdown-menu'],
-            { [styles.show]: this.state.open },
+            { [styles.show]: open },
           ])}
           role="menu"
         >
-          {this.generateMenuItems(this.props.menuItems)}
+          {this.generateMenuItems(menuItems)}
         </div>
       </div>
     );
@@ -170,6 +207,7 @@ class Dropdown extends React.Component {
 
 Dropdown.propTypes = {
   buttonType: PropTypes.string,
+  iconElement: PropTypes.element,
   menuItems: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,
@@ -182,6 +220,7 @@ Dropdown.propTypes = {
 
 Dropdown.defaultProps = {
   buttonType: 'light',
+  iconElement: undefined,
 };
 
 export default Dropdown;
