@@ -7,6 +7,7 @@ import { withInfo } from '@storybook/addon-info';
 import { withReadme } from 'storybook-readme';
 
 import Dropdown from './index';
+import Icon from '../Icon';
 import README from './README.md';
 
 storiesOf('Dropdown', module)
@@ -40,6 +41,26 @@ storiesOf('Dropdown', module)
         <a href="http://www.google.com">Google</a>,
         <a href="http://www.duckduckgo.com">DuckDuckGo</a>,
         <a href="http://www.yahoo.com">Yahoo</a>,
+      ]}
+    />
+  ))
+  .add('with icon element', () => (
+    <Dropdown
+      title="Search Engines"
+      iconElement={<Icon className={['fa', 'fa-user', 'px-3']} />}
+      menuItems={[
+        {
+          label: 'Google',
+          href: 'https://google.com',
+        },
+        {
+          label: 'DuckDuckGo',
+          href: 'https://duckduckgo.com',
+        },
+        {
+          label: 'Yahoo',
+          href: 'https://yahoo.com',
+        },
       ]}
     />
   ));

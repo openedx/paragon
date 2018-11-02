@@ -3,6 +3,7 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 
 import Dropdown, { triggerKeys } from './index';
+import Icon from '../Icon';
 
 const props = {
   title: 'Example',
@@ -201,5 +202,33 @@ describe('<Dropdown />', () => {
     wrapper.find('Button').simulate('click');
     menuOpen(true, wrapper);
     expect(wrapper.find('a')).toHaveLength(3);
+  });
+
+  describe('iconElement', () => {
+    it('renders the <img> as icon element', () => {
+      const url = 'https://raw.githubusercontent.com/edx/edx-platform/master/lms/static/images/profiles/default_50.png';
+      const altText = 'Avatar icon for profile';
+      const withIconUrlProps = {
+        ...props,
+        iconElement: <img src={url} alt={altText} />,
+      };
+      const wrapper = shallow(<Dropdown {...withIconUrlProps} />);
+      const avatarIcon = wrapper.find('.icon-container');
+
+      expect(avatarIcon.exists()).toEqual(true);
+      expect(avatarIcon.find('img').prop('src')).toEqual(url);
+      expect(avatarIcon.find('img').prop('alt')).toEqual(altText);
+    });
+
+    it('renders the <Icon> as icon element', () => {
+      const withIconUrlProps = {
+        ...props,
+        iconElement: <Icon className={['fa', 'fa-2x', 'fa-user']} />,
+      };
+      const wrapper = shallow(<Dropdown {...withIconUrlProps} />);
+      const avatarIcon = wrapper.find('.icon-container');
+
+      expect(avatarIcon.exists()).toEqual(true);
+    });
   });
 });
