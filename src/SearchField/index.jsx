@@ -10,41 +10,13 @@ import Button from '../Button';
 
 import styles from './SearchField.scss';
 
-const defaultProps = {
-  inputLabel: 'Search:',
-  onBlur: () => {},
-  onChange: () => {},
-  onClear: () => {},
-  onFocus: () => {},
-  placeholder: '',
-  screenReaderText: {
-    clearButton: 'Clear search',
-    searchButton: 'Submit search',
-  },
-  value: '',
-};
-
-const propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-  inputLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  onClear: PropTypes.func,
-  onFocus: PropTypes.func,
-  placeholder: PropTypes.string,
-  screenReaderText: PropTypes.shape({
-    clearButton: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
-    searchButton: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
-  }),
-  value: PropTypes.string,
-};
-
 class SearchField extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       isFocused: false,
+      hasSubmitted: false,
       value: this.props.value,
     };
 
@@ -59,9 +31,11 @@ class SearchField extends React.Component {
     this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.value !== this.props.value) {
-      this.setState({ value: nextProps.value });
+  componentDidUpdate(prevProps) {
+    const { value } = this.props;
+
+    if (value !== prevProps.value) {
+      this.setState({ value }); // eslint-disable-line react/no-did-update-set-state
     }
   }
 
@@ -74,8 +48,8 @@ class SearchField extends React.Component {
         className={[classNames(
           styles['search-btn'],
           {
-            [styles['border-left']]: !isFocused && inputTextHasValue,
-            [styles['btn-outline-primary']]: isFocused && inputTextHasValue,
+            [styles['border-left']]: !isFocused && this.shouldRenderClearButton(),
+            [styles['btn-outline-primary']]: isFocused && this.shouldRenderClearButton(),
           },
         )]}
         label={
@@ -87,7 +61,7 @@ class SearchField extends React.Component {
       />,
     ];
 
-    if (inputTextHasValue) {
+    if (this.shouldRenderClearButton()) {
       buttons.unshift((
         <Button
           className={[classNames(
@@ -119,6 +93,11 @@ class SearchField extends React.Component {
     return value && value.length > 0;
   }
 
+  shouldRenderClearButton() {
+    const { hasSubmitted } = this.state;
+    return hasSubmitted || this.inputTextHasValue();
+  }
+
   handleFocus(event) {
     this.setState({ isFocused: true });
     this.props.onFocus(event);
@@ -138,6 +117,7 @@ class SearchField extends React.Component {
     this.handleChange('');
     this.props.onClear();
     this.textInput.focus();
+    this.setState({ hasSubmitted: false });
   }
 
   handleKeyPress(event) {
@@ -150,6 +130,7 @@ class SearchField extends React.Component {
     const { value } = this.state;
     this.searchButton.focus();
     this.props.onSubmit(value);
+    this.setState({ hasSubmitted: true });
   }
 
   render() {
@@ -171,7 +152,7 @@ class SearchField extends React.Component {
           className={[classNames(
             styles.input,
             {
-              [styles['no-clear-btn']]: !this.inputTextHasValue(),
+              [styles['no-clear-btn']]: !this.shouldRenderClearButton(),
             },
           )]}
           name="search"
@@ -192,7 +173,33 @@ class SearchField extends React.Component {
   }
 }
 
-SearchField.propTypes = propTypes;
-SearchField.defaultProps = defaultProps;
+SearchField.defaultProps = {
+  inputLabel: 'Search:',
+  onBlur: () => {},
+  onChange: () => {},
+  onClear: () => {},
+  onFocus: () => {},
+  placeholder: '',
+  screenReaderText: {
+    clearButton: 'Clear search',
+    searchButton: 'Submit search',
+  },
+  value: '',
+};
+
+SearchField.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  inputLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  onBlur: PropTypes.func,
+  onChange: PropTypes.func,
+  onClear: PropTypes.func,
+  onFocus: PropTypes.func,
+  placeholder: PropTypes.string,
+  screenReaderText: PropTypes.shape({
+    clearButton: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+    searchButton: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  }),
+  value: PropTypes.string,
+};
 
 export default SearchField;
