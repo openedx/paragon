@@ -203,7 +203,7 @@ class Pagination extends React.Component {
     return (
       <li
         className={classNames(
-          'page-item',
+          styles['page-item'],
           {
             [styles.disabled]: isFirstPage,
           },
@@ -258,7 +258,7 @@ class Pagination extends React.Component {
         className={classNames(
           styles['page-item'],
           {
-            disabled: isLastPage,
+            [styles.disabled]: isLastPage,
           },
         )}
       >
@@ -292,7 +292,7 @@ class Pagination extends React.Component {
     const { buttonLabels, pageCount } = this.props;
     return (
       <div
-        className="sr-only"
+        className={classNames(styles['sr-only'])}
         aria-live="polite"
         aria-relevant="text"
         aria-atomic
