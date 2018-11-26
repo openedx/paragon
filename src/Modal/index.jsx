@@ -10,7 +10,7 @@ import Icon from '../Icon';
 import newId from '../utils/newId';
 import Variant from '../utils/constants';
 
-const closeModalButtonId = 'paragonCloseModalButton';
+const closeModalButtonId = newId('paragonCloseModalButton');
 
 class Modal extends React.Component {
   constructor(props) {
@@ -38,7 +38,7 @@ class Modal extends React.Component {
     }
     this.parentElement = document.querySelector(this.props.parentSelector);
     if (this.parentElement === null) {
-      throw new Error(`Modal recieved invalid parentSelector: ${this.props.parentSelector}, no matching element found`);
+      throw new Error(`Modal received invalid parentSelector: ${this.props.parentSelector}, no matching element found`);
     }
     this.parentElement.appendChild(this.el);
   }
@@ -111,9 +111,15 @@ class Modal extends React.Component {
     );
   }
 
-  close() {
-    this.setState({ open: false });
-    this.props.onClose();
+  close(e) {
+    if (e) {
+      e.stopPropagation();
+    }
+
+    if (!e || e.target.classList.contains('js-close-modal-on-click')) {
+      this.setState({ open: false });
+      this.props.onClose();
+    }
   }
 
   handleKeyDown(e) {
@@ -178,52 +184,59 @@ class Modal extends React.Component {
             [styles.fade]: !open,
           })}
           role="presentation"
-          onClick={this.close}
         />
         <div
           className={classNames(
             styles.modal,
+            'js-close-modal-on-click',
             {
-              [styles['modal-dialog']]: open,
-              [styles['d-block']]: open,
               [styles.show]: open,
               [styles.fade]: !open,
+              [styles['d-block']]: open,
               [styles['is-ie11']]: this.isIE11,
             },
           )}
-          role="dialog"
-          aria-modal
-          aria-labelledby={this.headerId}
-          {...(!renderHeaderCloseButton ? { tabIndex: '-1' } : {})}
-          {...(!renderHeaderCloseButton ? { ref: this.setFirstFocusableElement } : {})}
+          role="presentation"
+          onClick={this.close}
         >
-          <div className={styles['modal-content']}>
-            <div className={styles['modal-header']}>
-              <h2 className={styles['modal-title']} id={this.headerId}>{this.props.title}</h2>
-              { renderHeaderCloseButton &&
+          <div
+            className={classNames({
+              [styles['modal-dialog']]: open,
+            })}
+            role="dialog"
+            aria-modal
+            aria-labelledby={this.headerId}
+            {...(!renderHeaderCloseButton ? { tabIndex: '-1' } : {})}
+            {...(!renderHeaderCloseButton ? { ref: this.setFirstFocusableElement } : {})}
+          >
+            <div className={styles['modal-content']}>
+              <div className={styles['modal-header']}>
+                <h2 className={styles['modal-title']} id={this.headerId}>{this.props.title}</h2>
+                { renderHeaderCloseButton &&
                 <Button
-                  label={<Icon className={['fa', 'fa-times']} />}
-                  className={['p-1']}
+                  label={<Icon className={['fa', 'fa-times', 'js-close-modal-on-click']} />}
+                  className={['p-1', 'js-close-modal-on-click']}
                   aria-labelledby={closeModalButtonId}
                   onClick={this.close}
                   inputRef={this.setFirstFocusableElement}
                   onKeyDown={this.handleKeyDown}
                 />
               }
-            </div>
-            <div className={styles['modal-body']}>
-              {this.renderBody()}
-            </div>
-            <div className={styles['modal-footer']}>
-              {this.renderButtons()}
-              <Button
-                id={closeModalButtonId}
-                label={this.props.closeText}
-                buttonType="secondary"
-                onClick={this.close}
-                inputRef={this.setCloseButton}
-                onKeyDown={this.handleKeyDown}
-              />
+              </div>
+              <div className={styles['modal-body']}>
+                {this.renderBody()}
+              </div>
+              <div className={styles['modal-footer']}>
+                {this.renderButtons()}
+                <Button
+                  label={this.props.closeText}
+                  buttonType="secondary"
+                  className={['js-close-modal-on-click']}
+                  onClick={this.close}
+                  inputRef={this.setCloseButton}
+                  onKeyDown={this.handleKeyDown}
+                />
+              </div>
             </div>
           </div>
         </div>

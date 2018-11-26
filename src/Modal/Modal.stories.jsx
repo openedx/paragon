@@ -261,4 +261,12 @@ storiesOf('Modal', module)
       body={'Overflowing body. '.repeat(600)}
       onClose={() => {}}
     />
+  ))
+  .add('modal with custom onclose funtion', () => (
+    <Modal
+      open
+      title="Modal title."
+      body="Click close and see what happens ;)"
+      onClose={action('Look, things happened!')}
+    />
   ));
