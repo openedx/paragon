@@ -243,7 +243,7 @@ describe('<Modal />', () => {
 
     it('closes when a user clicks outside of the modal', () => {
       modalOpen(true, wrapper);
-      wrapper.find('.modal-backdrop').at(0).simulate('click');
+      wrapper.find('.modal').at(0).simulate('click');
       modalOpen(false, wrapper);
     });
 
