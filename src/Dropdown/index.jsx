@@ -43,10 +43,10 @@ class Dropdown extends React.Component {
     }
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState) {
     if (this.state.open) {
       this.menuItems[this.state.focusIndex].focus();
-    } else if (this.toggleElem) {
+    } else if (prevState.open && this.toggleElem) {
       this.toggleElem.focus();
     }
   }
