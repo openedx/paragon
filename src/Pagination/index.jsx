@@ -292,7 +292,7 @@ class Pagination extends React.Component {
     const { buttonLabels, pageCount } = this.props;
     return (
       <div
-        className={classNames(styles['sr-only'])}
+        className={styles['sr-only']}
         aria-live="polite"
         aria-relevant="text"
         aria-atomic
