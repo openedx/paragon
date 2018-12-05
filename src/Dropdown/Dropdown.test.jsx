@@ -22,7 +22,7 @@ const menuOpen = (isOpen, wrapper) => {
 
 describe('<Dropdown />', () => {
   describe('renders', () => {
-    const wrapper = shallow(<Dropdown {...props} />);
+    const wrapper = mount(<Dropdown {...props} />);
     const menu = wrapper.find('.dropdown-menu');
     const button = wrapper.find('Button');
 
@@ -35,6 +35,12 @@ describe('<Dropdown />', () => {
 
     it('with menu closed', () => {
       menuOpen(false, wrapper);
+    });
+
+    it('does not get focus when updated', () => {
+      const activeElementHtml = document.activeElement.outerHTML;
+      wrapper.instance().forceUpdate();
+      expect(activeElementHtml).toEqual(document.activeElement.outerHTML);
     });
   });
 
@@ -168,6 +174,8 @@ describe('<Dropdown />', () => {
 
       it('does not toggle with invalid key', () => {
         wrapper = mount(<Dropdown {...props} />);
+        // resetting focus
+        wrapper.find('Button').getDOMNode().focus();
 
         menuOpen(false, wrapper);
         // open and close button to get focus on button
