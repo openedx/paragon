@@ -16,6 +16,7 @@ import Modal from './Modal';
 import Pagination from './Pagination';
 import RadioButtonGroup, { RadioButton } from './RadioButtonGroup';
 import {
+  breakpoints,
   ExtraSmall,
   Small,
   Medium,
@@ -28,10 +29,12 @@ import StatusAlert from './StatusAlert';
 import Table from './Table';
 import Tabs from './Tabs';
 import TextArea from './TextArea';
+import ValidationMessage from './ValidationMessage';
 import Variant from './utils/constants';
 
 export {
   asInput,
+  breakpoints,
   Button,
   CheckBox,
   CheckBoxGroup,
@@ -60,5 +63,6 @@ export {
   Table,
   Tabs,
   TextArea,
+  ValidationMessage,
   Variant,
 };
