@@ -120,12 +120,15 @@ class Table extends React.Component {
         {this.props.data.map((row, i) => (
           <tr key={i} className={classNames({ 'd-flex': this.props.hasFixedColumnWidths })}>
             {this.props.columns.map(({ key, width }) => (
-              <td
-                key={key}
-                className={classNames(this.props.hasFixedColumnWidths ? width : null)}
-              >
-                {row[key]}
-              </td>
+              React.createElement(
+                (key === this.props.rowHeaderColumnKey) ? 'th' : 'td',
+                {
+                  key,
+                  className: classNames(this.props.hasFixedColumnWidths ? width : null),
+                  scope: (key === this.props.rowHeaderColumnKey) ? 'row' : null,
+                },
+                row[key],
+              )
             ))}
           </tr>
         ))}
@@ -181,6 +184,7 @@ Table.propTypes = {
     }),
     props => props.tableSortable,
   ),
+  rowHeaderColumnKey: PropTypes.string,
 };
 
 Table.defaultProps = {

@@ -356,4 +356,20 @@ describe('<Table />', () => {
       expect(tr.at(0).hasClass('d-flex')).toEqual(false);
     });
   });
+  describe('renders row headers', () => {
+    const wrapper = shallow(<Table {...props} rowHeaderColumnKey="num" />);
+
+    it('with the row header as th with row scope', () => {
+      wrapper.find('tbody').at(0).find('th').forEach((th) => {
+        expect(th.getElement().key).toEqual('num');
+        expect(th.prop('scope')).toEqual('row');
+      });
+    });
+
+    it('with all other columns unchanged', () => {
+      wrapper.find('tbody').at(0).find('td').forEach((th) => {
+        expect(th.getElement().key).not.toEqual('num');
+      });
+    });
+  });
 });
