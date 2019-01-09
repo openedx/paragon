@@ -46,6 +46,7 @@ class Select extends React.Component {
         type="select"
         name={props.name}
         value={props.value}
+        aria-label={props.ariaLabel}
         aria-describedby={props.describedBy}
         onChange={props.onChange}
         onBlur={props.onBlur}

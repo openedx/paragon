@@ -9,3 +9,6 @@ Provides an selector component called InputSelect that allows for various select
 
 ### `options` (string array or object array; required)
 `options` specifies the list of options that the component will allow users to select from.  This can be a simple array of strings, listing their options.  It can also be an array containing more complex object in order to show the options in a grouped format.
+
+### `ariaLabel` (string; optional)
+`ariaLabel` specifies the aria-label for the input element.

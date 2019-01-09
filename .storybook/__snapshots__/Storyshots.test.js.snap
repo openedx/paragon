@@ -8413,79 +8413,6 @@ exports[`Storyshots CheckBoxGroup basic usage 1`] = `
                   }
                 >
                   "
-                  CheckBoxGroup
-                  " Component
-                </h2>
-                <table
-                  className="css-1ytzlk7"
-                >
-                  <thead>
-                    <tr>
-                      <th
-                        className="css-d52hbj"
-                      >
-                        property
-                      </th>
-                      <th
-                        className="css-d52hbj"
-                      >
-                        propType
-                      </th>
-                      <th
-                        className="css-d52hbj"
-                      >
-                        required
-                      </th>
-                      <th
-                        className="css-d52hbj"
-                      >
-                        default
-                      </th>
-                      <th
-                        className="css-d52hbj"
-                      >
-                        description
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        children
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        yes
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div>
-                <h2
-                  style={
-                    Object {
-                      "margin": "20px 0 0 0",
-                    }
-                  }
-                >
-                  "
                   asInput(Check)
                   " Component
                 </h2>
@@ -9130,6 +9057,79 @@ exports[`Storyshots CheckBoxGroup basic usage 1`] = `
                         className="css-d52hbj"
                       >
                         -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div>
+                <h2
+                  style={
+                    Object {
+                      "margin": "20px 0 0 0",
+                    }
+                  }
+                >
+                  "
+                  CheckBoxGroup
+                  " Component
+                </h2>
+                <table
+                  className="css-1ytzlk7"
+                >
+                  <thead>
+                    <tr>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        property
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        propType
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        required
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        default
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        description
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        children
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        yes
                       </td>
                       <td
                         className="css-d52hbj"
@@ -14584,357 +14584,6 @@ exports[`Storyshots Fieldset basic usage 1`] = `
                   }
                 >
                   "
-                  Fieldset
-                  " Component
-                </h2>
-                <table
-                  className="css-1ytzlk7"
-                >
-                  <thead>
-                    <tr>
-                      <th
-                        className="css-d52hbj"
-                      >
-                        property
-                      </th>
-                      <th
-                        className="css-d52hbj"
-                      >
-                        propType
-                      </th>
-                      <th
-                        className="css-d52hbj"
-                      >
-                        required
-                      </th>
-                      <th
-                        className="css-d52hbj"
-                      >
-                        default
-                      </th>
-                      <th
-                        className="css-d52hbj"
-                      >
-                        description
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        legend
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        yes
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        children
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        <span>
-                          {
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            null
-                          </span>
-                          }
-                        </span>
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        className
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#22a",
-                              "wordBreak": "break-word",
-                            }
-                          }
-                        >
-                          "
-                          
-                          "
-                        </span>
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        id
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#22a",
-                              "wordBreak": "break-word",
-                            }
-                          }
-                        >
-                          "
-                          
-                          "
-                        </span>
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        isValid
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        <span>
-                          {
-                          <span
-                            style={
-                              Object {
-                                "color": "#a11",
-                              }
-                            }
-                          >
-                            true
-                          </span>
-                          }
-                        </span>
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        invalidMessage
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#22a",
-                              "wordBreak": "break-word",
-                            }
-                          }
-                        >
-                          "
-                          
-                          "
-                        </span>
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        variant
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        <span>
-                          {
-                          <span
-                            style={
-                              Object {
-                                "color": "#666",
-                              }
-                            }
-                          >
-                            {
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              status
-                            </span>
-                            : 
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
-                            >
-                              "
-                              INFO
-                              "
-                            </span>
-                            }
-                          </span>
-                          }
-                        </span>
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        variantIconDescription
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#22a",
-                              "wordBreak": "break-word",
-                            }
-                          }
-                        >
-                          "
-                          
-                          "
-                        </span>
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div>
-                <h2
-                  style={
-                    Object {
-                      "margin": "20px 0 0 0",
-                    }
-                  }
-                >
-                  "
                   asInput(Text)
                   " Component
                 </h2>
@@ -15584,6 +15233,357 @@ exports[`Storyshots Fieldset basic usage 1`] = `
                         className="css-d52hbj"
                       >
                         -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div>
+                <h2
+                  style={
+                    Object {
+                      "margin": "20px 0 0 0",
+                    }
+                  }
+                >
+                  "
+                  Fieldset
+                  " Component
+                </h2>
+                <table
+                  className="css-1ytzlk7"
+                >
+                  <thead>
+                    <tr>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        property
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        propType
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        required
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        default
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        description
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        legend
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        yes
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        children
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            null
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        className
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        id
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        isValid
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#a11",
+                              }
+                            }
+                          >
+                            true
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        invalidMessage
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        variant
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              status
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              INFO
+                              "
+                            </span>
+                            }
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        variantIconDescription
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
                       </td>
                       <td
                         className="css-d52hbj"
@@ -16623,357 +16623,6 @@ exports[`Storyshots Fieldset invalid 1`] = `
                   }
                 >
                   "
-                  Fieldset
-                  " Component
-                </h2>
-                <table
-                  className="css-1ytzlk7"
-                >
-                  <thead>
-                    <tr>
-                      <th
-                        className="css-d52hbj"
-                      >
-                        property
-                      </th>
-                      <th
-                        className="css-d52hbj"
-                      >
-                        propType
-                      </th>
-                      <th
-                        className="css-d52hbj"
-                      >
-                        required
-                      </th>
-                      <th
-                        className="css-d52hbj"
-                      >
-                        default
-                      </th>
-                      <th
-                        className="css-d52hbj"
-                      >
-                        description
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        legend
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        yes
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        children
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        <span>
-                          {
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            null
-                          </span>
-                          }
-                        </span>
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        className
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#22a",
-                              "wordBreak": "break-word",
-                            }
-                          }
-                        >
-                          "
-                          
-                          "
-                        </span>
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        id
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#22a",
-                              "wordBreak": "break-word",
-                            }
-                          }
-                        >
-                          "
-                          
-                          "
-                        </span>
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        isValid
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        <span>
-                          {
-                          <span
-                            style={
-                              Object {
-                                "color": "#a11",
-                              }
-                            }
-                          >
-                            true
-                          </span>
-                          }
-                        </span>
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        invalidMessage
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#22a",
-                              "wordBreak": "break-word",
-                            }
-                          }
-                        >
-                          "
-                          
-                          "
-                        </span>
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        variant
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        <span>
-                          {
-                          <span
-                            style={
-                              Object {
-                                "color": "#666",
-                              }
-                            }
-                          >
-                            {
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              status
-                            </span>
-                            : 
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
-                            >
-                              "
-                              INFO
-                              "
-                            </span>
-                            }
-                          </span>
-                          }
-                        </span>
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        variantIconDescription
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#22a",
-                              "wordBreak": "break-word",
-                            }
-                          }
-                        >
-                          "
-                          
-                          "
-                        </span>
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div>
-                <h2
-                  style={
-                    Object {
-                      "margin": "20px 0 0 0",
-                    }
-                  }
-                >
-                  "
                   asInput(Text)
                   " Component
                 </h2>
@@ -17623,6 +17272,357 @@ exports[`Storyshots Fieldset invalid 1`] = `
                         className="css-d52hbj"
                       >
                         -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div>
+                <h2
+                  style={
+                    Object {
+                      "margin": "20px 0 0 0",
+                    }
+                  }
+                >
+                  "
+                  Fieldset
+                  " Component
+                </h2>
+                <table
+                  className="css-1ytzlk7"
+                >
+                  <thead>
+                    <tr>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        property
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        propType
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        required
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        default
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        description
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        legend
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        yes
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        children
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            null
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        className
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        id
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        isValid
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#a11",
+                              }
+                            }
+                          >
+                            true
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        invalidMessage
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        variant
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              status
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              INFO
+                              "
+                            </span>
+                            }
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        variantIconDescription
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
                       </td>
                       <td
                         className="css-d52hbj"
@@ -18405,357 +18405,6 @@ exports[`Storyshots Fieldset invalid with danger theme 1`] = `
                   }
                 >
                   "
-                  Fieldset
-                  " Component
-                </h2>
-                <table
-                  className="css-1ytzlk7"
-                >
-                  <thead>
-                    <tr>
-                      <th
-                        className="css-d52hbj"
-                      >
-                        property
-                      </th>
-                      <th
-                        className="css-d52hbj"
-                      >
-                        propType
-                      </th>
-                      <th
-                        className="css-d52hbj"
-                      >
-                        required
-                      </th>
-                      <th
-                        className="css-d52hbj"
-                      >
-                        default
-                      </th>
-                      <th
-                        className="css-d52hbj"
-                      >
-                        description
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        legend
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        yes
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        children
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        <span>
-                          {
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            null
-                          </span>
-                          }
-                        </span>
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        className
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#22a",
-                              "wordBreak": "break-word",
-                            }
-                          }
-                        >
-                          "
-                          
-                          "
-                        </span>
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        id
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#22a",
-                              "wordBreak": "break-word",
-                            }
-                          }
-                        >
-                          "
-                          
-                          "
-                        </span>
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        isValid
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        <span>
-                          {
-                          <span
-                            style={
-                              Object {
-                                "color": "#a11",
-                              }
-                            }
-                          >
-                            true
-                          </span>
-                          }
-                        </span>
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        invalidMessage
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#22a",
-                              "wordBreak": "break-word",
-                            }
-                          }
-                        >
-                          "
-                          
-                          "
-                        </span>
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        variant
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        <span>
-                          {
-                          <span
-                            style={
-                              Object {
-                                "color": "#666",
-                              }
-                            }
-                          >
-                            {
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              status
-                            </span>
-                            : 
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
-                            >
-                              "
-                              INFO
-                              "
-                            </span>
-                            }
-                          </span>
-                          }
-                        </span>
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                    <tr>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        variantIconDescription
-                      </td>
-                      <td
-                        className="css-1ygfcef"
-                      >
-                        <span />
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        -
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#22a",
-                              "wordBreak": "break-word",
-                            }
-                          }
-                        >
-                          "
-                          
-                          "
-                        </span>
-                      </td>
-                      <td
-                        className="css-d52hbj"
-                      />
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div>
-                <h2
-                  style={
-                    Object {
-                      "margin": "20px 0 0 0",
-                    }
-                  }
-                >
-                  "
                   asInput(Text)
                   " Component
                 </h2>
@@ -19405,6 +19054,357 @@ exports[`Storyshots Fieldset invalid with danger theme 1`] = `
                         className="css-d52hbj"
                       >
                         -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div>
+                <h2
+                  style={
+                    Object {
+                      "margin": "20px 0 0 0",
+                    }
+                  }
+                >
+                  "
+                  Fieldset
+                  " Component
+                </h2>
+                <table
+                  className="css-1ytzlk7"
+                >
+                  <thead>
+                    <tr>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        property
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        propType
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        required
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        default
+                      </th>
+                      <th
+                        className="css-d52hbj"
+                      >
+                        description
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        legend
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        yes
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        children
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            null
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        className
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        id
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        isValid
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#a11",
+                              }
+                            }
+                          >
+                            true
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        invalidMessage
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        variant
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              status
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              INFO
+                              "
+                            </span>
+                            }
+                          </span>
+                          }
+                        </span>
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      />
+                    </tr>
+                    <tr>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        variantIconDescription
+                      </td>
+                      <td
+                        className="css-1ygfcef"
+                      >
+                        <span />
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        -
+                      </td>
+                      <td
+                        className="css-d52hbj"
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          "
+                          
+                          "
+                        </span>
                       </td>
                       <td
                         className="css-d52hbj"
@@ -22807,6 +22807,7 @@ exports[`Storyshots InputSelect basic usage 1`] = `
           </label>
           <select
             aria-describedby="error-asInput20"
+            aria-label={undefined}
             className="form-control is-invalid-nodanger"
             disabled={false}
             id="asInput20"
@@ -23953,6 +23954,7 @@ exports[`Storyshots InputSelect disabled usage 1`] = `
           </label>
           <select
             aria-describedby="error-asInput24"
+            aria-label="Fruits"
             className="form-control is-invalid-nodanger"
             disabled={true}
             id="asInput24"
@@ -24183,6 +24185,36 @@ exports[`Storyshots InputSelect disabled usage 1`] = `
                           style={Object {}}
                         >
                           label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Fruits
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          ariaLabel
                         </span>
                         <span>
                           =
@@ -25110,6 +25142,7 @@ exports[`Storyshots InputSelect separate labels and values 1`] = `
           </label>
           <select
             aria-describedby="error-asInput21"
+            aria-label={undefined}
             className="form-control is-invalid-nodanger"
             disabled={false}
             id="asInput21"
@@ -26407,6 +26440,7 @@ exports[`Storyshots InputSelect separate option groups 1`] = `
           </label>
           <select
             aria-describedby="error-asInput22"
+            aria-label={undefined}
             className="form-control is-invalid-nodanger"
             disabled={false}
             id="asInput22"
@@ -28056,6 +28090,7 @@ exports[`Storyshots InputSelect with validation 1`] = `
           </label>
           <select
             aria-describedby="error-asInput23"
+            aria-label={undefined}
             className="form-control is-invalid-nodanger"
             disabled={false}
             id="asInput23"
