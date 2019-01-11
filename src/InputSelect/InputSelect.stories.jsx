@@ -114,4 +114,16 @@ storiesOf('InputSelect', module)
       ]}
       disabled
     />
+  ))
+  .add('with disabled option', () => (
+    <InputSelect
+      name="fruits"
+      label="Fruits"
+      value="strawberry"
+      options={[
+        { label: 'apple', value: 'apple' },
+        { label: 'orange', value: 'orange', disabled: true },
+        { label: 'banana', value: 'banana', disabled: true },
+      ]}
+    />
   ));

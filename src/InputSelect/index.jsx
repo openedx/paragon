@@ -6,6 +6,7 @@ import asInput, { inputProps } from '../asInput';
 
 class Select extends React.Component {
   static getOption(option, i) {
+    const { disabled } = option;
     let { label, value } = option;
 
     if (typeof option === 'string') {
@@ -14,7 +15,13 @@ class Select extends React.Component {
     }
 
     return (
-      <option value={value} key={`option-${i}`}>{label}</option>
+      <option
+        key={`option-${i}`}
+        value={value}
+        disabled={disabled}
+      >
+        {label}
+      </option>
     );
   }
 
