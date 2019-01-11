@@ -104,6 +104,7 @@ storiesOf('InputSelect', module)
     <InputSelect
       name="fruits"
       label="Fruits"
+      ariaLabel="Fruits"
       value="strawberry"
       options={[
         'apple',

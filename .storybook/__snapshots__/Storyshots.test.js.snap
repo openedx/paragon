@@ -22807,6 +22807,7 @@ exports[`Storyshots InputSelect basic usage 1`] = `
           </label>
           <select
             aria-describedby="error-asInput20"
+            aria-label={undefined}
             className="form-control is-invalid-nodanger"
             disabled={false}
             id="asInput20"
@@ -23957,6 +23958,7 @@ exports[`Storyshots InputSelect disabled usage 1`] = `
           </label>
           <select
             aria-describedby="error-asInput24"
+            aria-label="Fruits"
             className="form-control is-invalid-nodanger"
             disabled={true}
             id="asInput24"
@@ -24191,6 +24193,36 @@ exports[`Storyshots InputSelect disabled usage 1`] = `
                           style={Object {}}
                         >
                           label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Fruits
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          ariaLabel
                         </span>
                         <span>
                           =
@@ -25118,6 +25150,7 @@ exports[`Storyshots InputSelect separate labels and values 1`] = `
           </label>
           <select
             aria-describedby="error-asInput21"
+            aria-label={undefined}
             className="form-control is-invalid-nodanger"
             disabled={false}
             id="asInput21"
@@ -26421,6 +26454,7 @@ exports[`Storyshots InputSelect separate option groups 1`] = `
           </label>
           <select
             aria-describedby="error-asInput22"
+            aria-label={undefined}
             className="form-control is-invalid-nodanger"
             disabled={false}
             id="asInput22"
@@ -28084,6 +28118,7 @@ exports[`Storyshots InputSelect with disabled option 1`] = `
           </label>
           <select
             aria-describedby="error-asInput25"
+            aria-label={undefined}
             className="form-control is-invalid-nodanger"
             disabled={false}
             id="asInput25"
@@ -29415,6 +29450,7 @@ exports[`Storyshots InputSelect with validation 1`] = `
           </label>
           <select
             aria-describedby="error-asInput23"
+            aria-label={undefined}
             className="form-control is-invalid-nodanger"
             disabled={false}
             id="asInput23"
