@@ -60,3 +60,7 @@ Default:
 Specifies whether the table's columns have fixed widths. Every element in `columns` must define a `width` if this is `true`.
 
 **WARNING: The styling for fixed column widths does not work in IE11.**
+
+### `rowHeaderColumnKey` (string; optional)
+Specifies the key for the column that should act as a row header. Rather than rendering as `<td>` elements,
+cells in this column will render as `<th scope="row">` 
