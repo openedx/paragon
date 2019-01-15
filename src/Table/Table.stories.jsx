@@ -138,4 +138,12 @@ storiesOf('Table', module)
       caption="Famous Internet Cats"
       hasFixedColumnWidths
     />
+  ))
+  .add('row header', () => (
+    <Table
+      data={catData}
+      columns={catColumns}
+      caption="Famous Internet Cats"
+      rowHeaderColumnKey="name"
+    />
   ));
