@@ -59,6 +59,7 @@ class Select extends React.Component {
         onBlur={props.onBlur}
         ref={props.inputRef}
         disabled={props.disabled}
+        required={props.required}
       >
         {options}
       </select>

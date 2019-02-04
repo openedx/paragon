@@ -22814,6 +22814,7 @@ exports[`Storyshots InputSelect basic usage 1`] = `
             name="fruits"
             onBlur={[Function]}
             onChange={[Function]}
+            required={false}
             type="select"
             value="strawberry"
           >
@@ -23965,6 +23966,7 @@ exports[`Storyshots InputSelect disabled usage 1`] = `
             name="fruits"
             onBlur={[Function]}
             onChange={[Function]}
+            required={false}
             type="select"
             value="strawberry"
           >
@@ -25157,6 +25159,7 @@ exports[`Storyshots InputSelect separate labels and values 1`] = `
             name="new-england-states"
             onBlur={[Function]}
             onChange={[Function]}
+            required={false}
             type="select"
             value="RI"
           >
@@ -26461,6 +26464,7 @@ exports[`Storyshots InputSelect separate option groups 1`] = `
             name="northeast-states"
             onBlur={[Function]}
             onChange={[Function]}
+            required={false}
             type="select"
             value="MD"
           >
@@ -28125,6 +28129,7 @@ exports[`Storyshots InputSelect with disabled option 1`] = `
             name="fruits"
             onBlur={[Function]}
             onChange={[Function]}
+            required={false}
             type="select"
             value="strawberry"
           >
@@ -29457,6 +29462,7 @@ exports[`Storyshots InputSelect with validation 1`] = `
             name="color"
             onBlur={[Function]}
             onChange={[Function]}
+            required={false}
             type="select"
             value=""
           >
