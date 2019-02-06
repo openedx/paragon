@@ -1,4 +1,5 @@
 import asInput from './asInput';
+import Breadcrumb from './Breadcrumb';
 import Button from './Button';
 import CheckBox from './CheckBox';
 import CheckBoxGroup from './CheckBoxGroup';
@@ -34,6 +35,7 @@ import Variant from './utils/constants';
 
 export {
   asInput,
+  Breadcrumb,
   breakpoints,
   Button,
   CheckBox,
