@@ -18,8 +18,8 @@ Decision
 
 The architecture team will own Paragon to the extent that it will:
 
-- With the help of UX, accessibility, and product, document the requirements and best practices for updates and additions to Paragon's reusable components. ("I want to help you help me help you.")
-- Ensure that UX, accessibility, and product are given the opportunity to vett and sign off on changes to the library. ("Going once, going twice...")
+- With the help of UX, Accessibility, and Product, document the requirements and best practices for updates and additions to Paragon's reusable components. ("I want to help you help me help you.")
+- Ensure that UX, Accessibility, and Product are given the opportunity to vet and sign off on changes to the library. ("Going once, going twice...")
 - Review Paragon pull requests with an eye toward ensuring that Paragon continues to be a flexible, consistent library of reusable components that fulfill our needs across the organization. ("Have you considered...")
 - Lead the charge on improving and fleshing out Paragon with the above goals in mind. ("Here, use this!")
 
