@@ -11,9 +11,9 @@ Context
 
 Paragon components exist for a variety of use cases, are React-based, and are currently styled using Bootstrap-compatible CSS class names. All known usages of Paragon are backed by Bootstrap. Reactstrap is a React-based component library that provides implementations of Bootstrap's components.
 
-Paragon's strength is found in its ability to be modifyied to meet our accessibility and functionality requirements above and beyond what any third-party component library might contain.  In addition, Paragon is the home for  edX-specific reusable components that would never be found in a generic component library.
+Paragon's strength is found in its ability to be modified to meet our accessibility and functionality requirements above and beyond what any third-party component library might contain.  In addition, Paragon is the home for  edX-specific reusable components that would never be found in a generic component library.
 
-Reactstrap's strength is found in its consistent, flexible, and comprehensive components (it's API, effectively) and its more-or-less complete set of implementations of Bootstrap's various 'component' styles.
+Reactstrap's strength is found in its consistent, flexible, and comprehensive components (its API, effectively) and its more-or-less complete set of implementations of Bootstrap's various 'component' styles.
 
 Both have something to offer us.
 
@@ -26,7 +26,7 @@ This will be accomplished via one of several methods depending on the nature and
 
 For Reactstrap components:
 
-- Reactstrap components which are deemed production-ready will be exposed as an export of Paragon as-is, making them immediately available as "paragon components" in consuming front-ends.
+- Reactstrap components which are deemed production-ready will be exposed as an export of Paragon as-is, making them immediately available as "Paragon components" in consuming front-ends.
 - Reactstrap components that do not conform to our UX guidelines can be excluded from the Paragon exports, effectively hiding them so they're not erroneously used.
 - Reactstrap components that have significant deficiencies that prevent them from being production-ready, but would otherwise be desirable, can be handled in one of two ways:
   - They can be augmented via a custom wrapper in Paragon, improving their functionality and making them production-ready and exportable.
