@@ -4,7 +4,7 @@
 Status
 ------
 
-Proposed
+Accepted
 
 Context
 -------
@@ -16,7 +16,7 @@ Meanwhile, the architecture team has been tasked with improving our codebase's o
 Decision
 --------
 
-The architecture team will own Paragon to the extent that it will:
+The architecture team (`Arch Team Homepage <https://openedx.atlassian.net/wiki/spaces/AC/pages/439353453/Architecture%2BTeam>`_) will own Paragon to the extent that it will:
 
 - With the help of UX, Accessibility, and Product, document the requirements and best practices for updates and additions to Paragon's reusable components. ("I want to help you help me help you.")
 - Ensure that UX, Accessibility, and Product are given the opportunity to vet and sign off on changes to the library. ("Going once, going twice...")
@@ -28,7 +28,7 @@ Consequences
 
 Establishing clear ownership roles and review criteria for Paragon should help ensure that code quality remains high, and that changes to the library are less likely to result in bugs and unexpected breaking changes. In addition, this ownership structure dovetails well with the architecture team's stated goal of improving our front end systems' approachability, extensibility, and the time to market of IDAs built on Paragon.
 
-This ownership will, of course, take up some of the architecture team's time above and beyond their current responsibilities. That said, documenting and disseminating the process and considerations for updating Paragon should help alleviate some of that strain by allowing pull request authors to do much of the due diligence themselves.
+This ownership will, of course, take up some of the architecture team's time to coordinate. That said, documenting and disseminating the process and considerations for updating Paragon should help alleviate some of that strain by allowing pull request authors to do much of the due diligence themselves.
 
 References
 ----------

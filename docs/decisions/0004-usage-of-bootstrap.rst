@@ -4,7 +4,7 @@
 Status
 ------
 
-Proposed
+Accepted
 
 Context
 -------
@@ -18,7 +18,7 @@ Furthermore, Paragon makes use of Bootstrap utility class names for its styling.
 Decision
 --------
 
-Paragon will formally be backed by Bootstrap, which is mostly just an affirmation of what's already happening. The exact import/module relationship between Paragon and Bootstrap can be handled in a separate ADR. More specifically, Paragon will be backed by edx-bootstrap, which has already been updated with input from the UX team.  Paragon components should make use of Bootstrap's utility classes wherever possible, rather than creating custom styling.
+Paragon will formally be backed by Bootstrap, which is mostly just an affirmation of what's already happening. The exact import/module relationship between Paragon and Bootstrap can be handled in a separate ADR. More specifically, Paragon will be backed by edx-bootstrap, which has already been updated with input from the UX team. Paragon components should make use of Bootstrap's utility classes wherever possible, rather than creating custom styling.
 
 Consequences
 ------------
