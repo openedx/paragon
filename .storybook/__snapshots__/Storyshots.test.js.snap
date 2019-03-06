@@ -3434,22 +3434,22 @@ exports[`Storyshots CheckBox basic usage 1`] = `
               ]
             }
             disabled={false}
-            id="asInput3"
+            id="id1"
             name="checkbox"
             onChange={[Function]}
             type="checkbox"
           />
           <label
             className="form-check-label"
-            htmlFor="asInput3"
-            id="label-asInput3"
+            htmlFor="id1"
+            id="label-id1"
           >
             check me out!
           </label>
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput3"
+            id="error-id1"
           >
             <span />
           </div>
@@ -4429,22 +4429,22 @@ exports[`Storyshots CheckBox call a function 1`] = `
               ]
             }
             disabled={false}
-            id="asInput6"
+            id="id1"
             name="checkbox"
             onChange={[Function]}
             type="checkbox"
           />
           <label
             className="form-check-label"
-            htmlFor="asInput6"
-            id="label-asInput6"
+            htmlFor="id1"
+            id="label-id1"
           >
             check out the console
           </label>
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput6"
+            id="error-id1"
           >
             <span />
           </div>
@@ -5462,22 +5462,22 @@ exports[`Storyshots CheckBox controlled 1`] = `
                 ]
               }
               disabled={false}
-              id="asInput7"
+              id="id1"
               name="checkbox"
               onChange={[Function]}
               type="checkbox"
             />
             <label
               className="form-check-label"
-              htmlFor="asInput7"
-              id="label-asInput7"
+              htmlFor="id1"
+              id="label-id1"
             >
               click the button
             </label>
             <div
               aria-live="polite"
               className="invalid-feedback invalid-feedback-nodanger"
-              id="error-asInput7"
+              id="error-id1"
             >
               <span />
             </div>
@@ -5752,22 +5752,22 @@ exports[`Storyshots CheckBox default checked 1`] = `
               ]
             }
             disabled={false}
-            id="asInput5"
+            id="id1"
             name="checkbox"
             onChange={[Function]}
             type="checkbox"
           />
           <label
             className="form-check-label"
-            htmlFor="asInput5"
-            id="label-asInput5"
+            htmlFor="id1"
+            id="label-id1"
           >
             (un)check me out
           </label>
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput5"
+            id="error-id1"
           >
             <span />
           </div>
@@ -6755,22 +6755,22 @@ exports[`Storyshots CheckBox disabled 1`] = `
               ]
             }
             disabled={true}
-            id="asInput4"
+            id="id1"
             name="checkbox"
             onChange={[Function]}
             type="checkbox"
           />
           <label
             className="form-check-label"
-            htmlFor="asInput4"
-            id="label-asInput4"
+            htmlFor="id1"
+            id="label-id1"
           >
             you cannot check me out
           </label>
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput4"
+            id="error-id1"
           >
             <span />
           </div>
@@ -10212,7 +10212,7 @@ exports[`Storyshots Collapsible basic usage without resizing 1`] = `
             <span
               aria-hidden={true}
               className="ml-2 float-right collapsible-icon fa fa-angle-down"
-              id="Icon1"
+              id="id1"
             />
             Click me to expand
           </div>
@@ -10818,7 +10818,7 @@ exports[`Storyshots Collapsible fires onToggle callback when toggled 1`] = `
             <span
               aria-hidden={true}
               className="ml-2 float-right collapsible-icon fa fa-angle-down"
-              id="Icon1"
+              id="id1"
             />
             Click me to expand
           </div>
@@ -11452,7 +11452,7 @@ exports[`Storyshots Collapsible initially open collapsible 1`] = `
             <span
               aria-hidden={true}
               className="ml-2 float-right collapsible-icon fa fa-angle-up"
-              id="Icon1"
+              id="id1"
             />
             Click me to expand
           </div>
@@ -13297,7 +13297,7 @@ exports[`Storyshots Dropdown with icon element 1`] = `
             <span
               aria-hidden={true}
               className="fa fa-user px-3 rounded-left"
-              id="Icon1"
+              id="id1"
             />
           </div>
           <button
@@ -14013,7 +14013,7 @@ exports[`Storyshots Fieldset basic usage 1`] = `
             className="paragon-fieldset"
           >
             <fieldset
-              aria-describedby="error-fieldset8"
+              aria-describedby="error-id1"
               className="form-control p-3 is-invalid-nodanger"
             >
               <legend
@@ -14026,18 +14026,18 @@ exports[`Storyshots Fieldset basic usage 1`] = `
               >
                 <label
                   className=""
-                  htmlFor="asInput9"
-                  id="label-asInput9"
+                  htmlFor="id1"
+                  id="label-id1"
                 >
                   First Name
                 </label>
                 <input
-                  aria-describedby="error-asInput9"
+                  aria-describedby="error-id1"
                   aria-invalid={false}
                   autoComplete="on"
                   className="form-control is-invalid-nodanger"
                   disabled={false}
-                  id="asInput9"
+                  id="id1"
                   name="firstName"
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -14052,7 +14052,7 @@ exports[`Storyshots Fieldset basic usage 1`] = `
                 <div
                   aria-live="polite"
                   className="invalid-feedback invalid-feedback-nodanger"
-                  id="error-asInput9"
+                  id="error-id1"
                 >
                   <span />
                 </div>
@@ -14062,18 +14062,18 @@ exports[`Storyshots Fieldset basic usage 1`] = `
               >
                 <label
                   className=""
-                  htmlFor="asInput10"
-                  id="label-asInput10"
+                  htmlFor="id1"
+                  id="label-id1"
                 >
                   Last Name
                 </label>
                 <input
-                  aria-describedby="error-asInput10"
+                  aria-describedby="error-id1"
                   aria-invalid={false}
                   autoComplete="on"
                   className="form-control is-invalid-nodanger"
                   disabled={false}
-                  id="asInput10"
+                  id="id1"
                   name="lastName"
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -14088,7 +14088,7 @@ exports[`Storyshots Fieldset basic usage 1`] = `
                 <div
                   aria-live="polite"
                   className="invalid-feedback invalid-feedback-nodanger"
-                  id="error-asInput10"
+                  id="error-id1"
                 >
                   <span />
                 </div>
@@ -14097,7 +14097,7 @@ exports[`Storyshots Fieldset basic usage 1`] = `
             <div
               aria-live="polite"
               className="invalid-feedback invalid-feedback-nodanger"
-              id="error-fieldset8"
+              id="error-id1"
             >
               <span />
             </div>
@@ -15640,7 +15640,7 @@ exports[`Storyshots Fieldset client-side validation of fieldset 1`] = `
             className="paragon-fieldset"
           >
             <fieldset
-              aria-describedby="error-fieldset17"
+              aria-describedby="error-id1"
               className="form-control p-3"
             >
               <legend
@@ -15653,18 +15653,18 @@ exports[`Storyshots Fieldset client-side validation of fieldset 1`] = `
               >
                 <label
                   className=""
-                  htmlFor="asInput18"
-                  id="label-asInput18"
+                  htmlFor="id1"
+                  id="label-id1"
                 >
                   First Name
                 </label>
                 <input
-                  aria-describedby="error-asInput18"
+                  aria-describedby="error-id1"
                   aria-invalid={false}
                   autoComplete="on"
                   className="form-control is-invalid-nodanger"
                   disabled={false}
-                  id="asInput18"
+                  id="id1"
                   name="firstName"
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -15679,7 +15679,7 @@ exports[`Storyshots Fieldset client-side validation of fieldset 1`] = `
                 <div
                   aria-live="polite"
                   className="invalid-feedback invalid-feedback-nodanger"
-                  id="error-asInput18"
+                  id="error-id1"
                 >
                   <span />
                 </div>
@@ -15689,18 +15689,18 @@ exports[`Storyshots Fieldset client-side validation of fieldset 1`] = `
               >
                 <label
                   className=""
-                  htmlFor="asInput19"
-                  id="label-asInput19"
+                  htmlFor="id1"
+                  id="label-id1"
                 >
                   Last Name
                 </label>
                 <input
-                  aria-describedby="error-asInput19"
+                  aria-describedby="error-id1"
                   aria-invalid={false}
                   autoComplete="on"
                   className="form-control is-invalid-nodanger"
                   disabled={false}
-                  id="asInput19"
+                  id="id1"
                   name="lastName"
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -15715,7 +15715,7 @@ exports[`Storyshots Fieldset client-side validation of fieldset 1`] = `
                 <div
                   aria-live="polite"
                   className="invalid-feedback invalid-feedback-nodanger"
-                  id="error-asInput19"
+                  id="error-id1"
                 >
                   <span />
                 </div>
@@ -15724,7 +15724,7 @@ exports[`Storyshots Fieldset client-side validation of fieldset 1`] = `
             <div
               aria-live="polite"
               className="invalid-feedback"
-              id="error-fieldset17"
+              id="error-id1"
             >
               <span />
             </div>
@@ -15997,7 +15997,7 @@ exports[`Storyshots Fieldset invalid 1`] = `
             className="paragon-fieldset"
           >
             <fieldset
-              aria-describedby="error-fieldset11"
+              aria-describedby="error-id1"
               className="form-control p-3 is-invalid is-invalid-nodanger"
             >
               <legend
@@ -16010,18 +16010,18 @@ exports[`Storyshots Fieldset invalid 1`] = `
               >
                 <label
                   className=""
-                  htmlFor="asInput12"
-                  id="label-asInput12"
+                  htmlFor="id1"
+                  id="label-id1"
                 >
                   First Name
                 </label>
                 <input
-                  aria-describedby="error-asInput12"
+                  aria-describedby="error-id1"
                   aria-invalid={false}
                   autoComplete="on"
                   className="form-control is-invalid-nodanger"
                   disabled={false}
-                  id="asInput12"
+                  id="id1"
                   name="firstName"
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -16036,7 +16036,7 @@ exports[`Storyshots Fieldset invalid 1`] = `
                 <div
                   aria-live="polite"
                   className="invalid-feedback invalid-feedback-nodanger"
-                  id="error-asInput12"
+                  id="error-id1"
                 >
                   <span />
                 </div>
@@ -16046,18 +16046,18 @@ exports[`Storyshots Fieldset invalid 1`] = `
               >
                 <label
                   className=""
-                  htmlFor="asInput13"
-                  id="label-asInput13"
+                  htmlFor="id1"
+                  id="label-id1"
                 >
                   Last Name
                 </label>
                 <input
-                  aria-describedby="error-asInput13"
+                  aria-describedby="error-id1"
                   aria-invalid={false}
                   autoComplete="on"
                   className="form-control is-invalid-nodanger"
                   disabled={false}
-                  id="asInput13"
+                  id="id1"
                   name="lastName"
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -16072,7 +16072,7 @@ exports[`Storyshots Fieldset invalid 1`] = `
                 <div
                   aria-live="polite"
                   className="invalid-feedback invalid-feedback-nodanger"
-                  id="error-asInput13"
+                  id="error-id1"
                 >
                   <span />
                 </div>
@@ -16081,7 +16081,7 @@ exports[`Storyshots Fieldset invalid 1`] = `
             <div
               aria-live="polite"
               className="invalid-feedback invalid-feedback-nodanger"
-              id="error-fieldset11"
+              id="error-id1"
             >
               This is invalid!
             </div>
@@ -17677,7 +17677,7 @@ exports[`Storyshots Fieldset invalid with danger theme 1`] = `
             className="paragon-fieldset"
           >
             <fieldset
-              aria-describedby="error-fieldset14"
+              aria-describedby="error-id1"
               className="form-control p-3 is-invalid"
             >
               <legend
@@ -17690,18 +17690,18 @@ exports[`Storyshots Fieldset invalid with danger theme 1`] = `
               >
                 <label
                   className=""
-                  htmlFor="asInput15"
-                  id="label-asInput15"
+                  htmlFor="id1"
+                  id="label-id1"
                 >
                   First Name
                 </label>
                 <input
-                  aria-describedby="error-asInput15"
+                  aria-describedby="error-id1"
                   aria-invalid={false}
                   autoComplete="on"
                   className="form-control is-invalid-nodanger"
                   disabled={false}
-                  id="asInput15"
+                  id="id1"
                   name="firstName"
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -17716,7 +17716,7 @@ exports[`Storyshots Fieldset invalid with danger theme 1`] = `
                 <div
                   aria-live="polite"
                   className="invalid-feedback invalid-feedback-nodanger"
-                  id="error-asInput15"
+                  id="error-id1"
                 >
                   <span />
                 </div>
@@ -17726,18 +17726,18 @@ exports[`Storyshots Fieldset invalid with danger theme 1`] = `
               >
                 <label
                   className=""
-                  htmlFor="asInput16"
-                  id="label-asInput16"
+                  htmlFor="id1"
+                  id="label-id1"
                 >
                   Last Name
                 </label>
                 <input
-                  aria-describedby="error-asInput16"
+                  aria-describedby="error-id1"
                   aria-invalid={false}
                   autoComplete="on"
                   className="form-control is-invalid-nodanger"
                   disabled={false}
-                  id="asInput16"
+                  id="id1"
                   name="lastName"
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -17752,7 +17752,7 @@ exports[`Storyshots Fieldset invalid with danger theme 1`] = `
                 <div
                   aria-live="polite"
                   className="invalid-feedback invalid-feedback-nodanger"
-                  id="error-asInput16"
+                  id="error-id1"
                 >
                   <span />
                 </div>
@@ -17761,7 +17761,7 @@ exports[`Storyshots Fieldset invalid with danger theme 1`] = `
             <div
               aria-live="polite"
               className="invalid-feedback"
-              id="error-fieldset14"
+              id="error-id1"
             >
               <span
                 aria-hidden={true}
@@ -21767,7 +21767,7 @@ exports[`Storyshots Icon basic usage 1`] = `
         <span
           aria-hidden={true}
           className="fa fa-birthday-cake fa-4x"
-          id="Icon1"
+          id="id1"
         />
       </div>
       <button
@@ -22111,7 +22111,7 @@ exports[`Storyshots Icon basic usage 1`] = `
                           }
                         >
                           "
-                          Icon1
+                          id1
                           "
                         </span>
                       </td>
@@ -22656,7 +22656,7 @@ exports[`Storyshots Icon with screenreader text 1`] = `
                           }
                         >
                           "
-                          Icon1
+                          id1
                           "
                         </span>
                       </td>
@@ -22800,17 +22800,17 @@ exports[`Storyshots InputSelect basic usage 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput20"
-            id="label-asInput20"
+            htmlFor="id1"
+            id="label-id1"
           >
             Fruits
           </label>
           <select
-            aria-describedby="error-asInput20"
+            aria-describedby="error-id1"
             aria-label={undefined}
             className="form-control is-invalid-nodanger"
             disabled={false}
-            id="asInput20"
+            id="id1"
             name="fruits"
             onBlur={[Function]}
             onChange={[Function]}
@@ -22846,7 +22846,7 @@ exports[`Storyshots InputSelect basic usage 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput20"
+            id="error-id1"
           >
             <span />
           </div>
@@ -23952,17 +23952,17 @@ exports[`Storyshots InputSelect disabled usage 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput24"
-            id="label-asInput24"
+            htmlFor="id1"
+            id="label-id1"
           >
             Fruits
           </label>
           <select
-            aria-describedby="error-asInput24"
+            aria-describedby="error-id1"
             aria-label="Fruits"
             className="form-control is-invalid-nodanger"
             disabled={true}
-            id="asInput24"
+            id="id1"
             name="fruits"
             onBlur={[Function]}
             onChange={[Function]}
@@ -23998,7 +23998,7 @@ exports[`Storyshots InputSelect disabled usage 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput24"
+            id="error-id1"
           >
             <span />
           </div>
@@ -25145,17 +25145,17 @@ exports[`Storyshots InputSelect separate labels and values 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput21"
-            id="label-asInput21"
+            htmlFor="id1"
+            id="label-id1"
           >
             New England States
           </label>
           <select
-            aria-describedby="error-asInput21"
+            aria-describedby="error-id1"
             aria-label={undefined}
             className="form-control is-invalid-nodanger"
             disabled={false}
-            id="asInput21"
+            id="id1"
             name="new-england-states"
             onBlur={[Function]}
             onChange={[Function]}
@@ -25203,7 +25203,7 @@ exports[`Storyshots InputSelect separate labels and values 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput21"
+            id="error-id1"
           >
             <span />
           </div>
@@ -26450,17 +26450,17 @@ exports[`Storyshots InputSelect separate option groups 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput22"
-            id="label-asInput22"
+            htmlFor="id1"
+            id="label-id1"
           >
             Northeast States
           </label>
           <select
-            aria-describedby="error-asInput22"
+            aria-describedby="error-id1"
             aria-label={undefined}
             className="form-control is-invalid-nodanger"
             disabled={false}
-            id="asInput22"
+            id="id1"
             name="northeast-states"
             onBlur={[Function]}
             onChange={[Function]}
@@ -26564,7 +26564,7 @@ exports[`Storyshots InputSelect separate option groups 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput22"
+            id="error-id1"
           >
             <span />
           </div>
@@ -28115,17 +28115,17 @@ exports[`Storyshots InputSelect with disabled option 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput25"
-            id="label-asInput25"
+            htmlFor="id1"
+            id="label-id1"
           >
             Fruits
           </label>
           <select
-            aria-describedby="error-asInput25"
+            aria-describedby="error-id1"
             aria-label={undefined}
             className="form-control is-invalid-nodanger"
             disabled={false}
-            id="asInput25"
+            id="id1"
             name="fruits"
             onBlur={[Function]}
             onChange={[Function]}
@@ -28155,7 +28155,7 @@ exports[`Storyshots InputSelect with disabled option 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput25"
+            id="error-id1"
           >
             <span />
           </div>
@@ -29448,17 +29448,17 @@ exports[`Storyshots InputSelect with validation 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput23"
-            id="label-asInput23"
+            htmlFor="id1"
+            id="label-id1"
           >
             Favorite Color
           </label>
           <select
-            aria-describedby="error-asInput23"
+            aria-describedby="error-id1"
             aria-label={undefined}
             className="form-control is-invalid-nodanger"
             disabled={false}
-            id="asInput23"
+            id="id1"
             name="color"
             onBlur={[Function]}
             onChange={[Function]}
@@ -29512,7 +29512,7 @@ exports[`Storyshots InputSelect with validation 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput23"
+            id="error-id1"
           >
             <span />
           </div>
@@ -34155,18 +34155,18 @@ exports[`Storyshots InputText displayed inline 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput30"
-            id="label-asInput30"
+            htmlFor="id1"
+            id="label-id1"
           >
             Username
           </label>
           <input
-            aria-describedby="error-asInput30"
+            aria-describedby="error-id1"
             aria-invalid={false}
             autoComplete="on"
             className="form-control is-invalid-nodanger"
             disabled={false}
-            id="asInput30"
+            id="id1"
             name="username"
             onBlur={[Function]}
             onChange={[Function]}
@@ -34181,7 +34181,7 @@ exports[`Storyshots InputText displayed inline 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput30"
+            id="error-id1"
           >
             <span />
           </div>
@@ -35521,8 +35521,8 @@ exports[`Storyshots InputText label as element 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput29"
-            id="label-asInput29"
+            htmlFor="id1"
+            id="label-id1"
           >
             <span
               lang="en"
@@ -35531,12 +35531,12 @@ exports[`Storyshots InputText label as element 1`] = `
             </span>
           </label>
           <input
-            aria-describedby="error-asInput29"
+            aria-describedby="error-id1"
             aria-invalid={false}
             autoComplete="on"
             className="form-control is-invalid-nodanger"
             disabled={false}
-            id="asInput29"
+            id="id1"
             name="username"
             onBlur={[Function]}
             onChange={[Function]}
@@ -35551,7 +35551,7 @@ exports[`Storyshots InputText label as element 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput29"
+            id="error-id1"
           >
             <span />
           </div>
@@ -36552,18 +36552,18 @@ exports[`Storyshots InputText minimal usage 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput26"
-            id="label-asInput26"
+            htmlFor="id1"
+            id="label-id1"
           >
             First Name
           </label>
           <input
-            aria-describedby="error-asInput26"
+            aria-describedby="error-id1"
             aria-invalid={false}
             autoComplete="on"
             className="form-control is-invalid-nodanger"
             disabled={false}
-            id="asInput26"
+            id="id1"
             name="name"
             onBlur={[Function]}
             onChange={[Function]}
@@ -36578,7 +36578,7 @@ exports[`Storyshots InputText minimal usage 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput26"
+            id="error-id1"
           >
             <span />
           </div>
@@ -37578,18 +37578,18 @@ exports[`Storyshots InputText read only 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput27"
-            id="label-asInput27"
+            htmlFor="id1"
+            id="label-id1"
           >
             Input State
           </label>
           <input
-            aria-describedby="error-asInput27"
+            aria-describedby="error-id1"
             aria-invalid={false}
             autoComplete="on"
             className="form-control is-invalid-nodanger"
             disabled={false}
-            id="asInput27"
+            id="id1"
             name="inputState"
             onBlur={[Function]}
             onChange={[Function]}
@@ -37604,7 +37604,7 @@ exports[`Storyshots InputText read only 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput27"
+            id="error-id1"
           >
             <span />
           </div>
@@ -39726,18 +39726,18 @@ exports[`Storyshots InputText validation with danger theme 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput28"
-            id="label-asInput28"
+            htmlFor="id1"
+            id="label-id1"
           >
             Username
           </label>
           <input
-            aria-describedby="error-asInput28 description-asInput28"
+            aria-describedby="error-id1 description-id1"
             aria-invalid={false}
             autoComplete="on"
             className="form-control"
             disabled={false}
-            id="asInput28"
+            id="id1"
             name="username"
             onBlur={[Function]}
             onChange={[Function]}
@@ -39756,13 +39756,13 @@ exports[`Storyshots InputText validation with danger theme 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback"
-            id="error-asInput28"
+            id="error-id1"
           >
             <span />
           </div>
           <small
             className="form-text"
-            id="description-asInput28"
+            id="description-id1"
           >
             The unique name that identifies you throughout the site.
           </small>
@@ -40847,8 +40847,8 @@ exports[`Storyshots InputText with input group addons 1`] = `
           >
             <label
               className=""
-              htmlFor="asInput31"
-              id="label-asInput31"
+              htmlFor="id1"
+              id="label-id1"
             >
               Username
             </label>
@@ -40865,12 +40865,12 @@ exports[`Storyshots InputText with input group addons 1`] = `
                 </div>
               </div>
               <input
-                aria-describedby="error-asInput31"
+                aria-describedby="error-id1"
                 aria-invalid={false}
                 autoComplete="on"
                 className="form-control is-invalid-nodanger"
                 disabled={false}
-                id="asInput31"
+                id="id1"
                 name="username"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -40889,7 +40889,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
             <div
               aria-live="polite"
               className="invalid-feedback invalid-feedback-nodanger"
-              id="error-asInput31"
+              id="error-id1"
             >
               <span />
             </div>
@@ -40899,8 +40899,8 @@ exports[`Storyshots InputText with input group addons 1`] = `
           >
             <label
               className=""
-              htmlFor="asInput32"
-              id="label-asInput32"
+              htmlFor="id1"
+              id="label-id1"
             >
               Username
             </label>
@@ -40911,12 +40911,12 @@ exports[`Storyshots InputText with input group addons 1`] = `
                 className="input-group-prepend"
               />
               <input
-                aria-describedby="error-asInput32"
+                aria-describedby="error-id1"
                 aria-invalid={false}
                 autoComplete="on"
                 className="form-control is-invalid-nodanger"
                 disabled={false}
-                id="asInput32"
+                id="id1"
                 name="username"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -40941,7 +40941,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
             <div
               aria-live="polite"
               className="invalid-feedback invalid-feedback-nodanger"
-              id="error-asInput32"
+              id="error-id1"
             >
               <span />
             </div>
@@ -40951,8 +40951,8 @@ exports[`Storyshots InputText with input group addons 1`] = `
           >
             <label
               className=""
-              htmlFor="asInput33"
-              id="label-asInput33"
+              htmlFor="id1"
+              id="label-id1"
             >
               Money
             </label>
@@ -40969,12 +40969,12 @@ exports[`Storyshots InputText with input group addons 1`] = `
                 </div>
               </div>
               <input
-                aria-describedby="error-asInput33"
+                aria-describedby="error-id1"
                 aria-invalid={false}
                 autoComplete="on"
                 className="form-control is-invalid-nodanger"
                 disabled={false}
-                id="asInput33"
+                id="id1"
                 name="money"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -40999,7 +40999,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
             <div
               aria-live="polite"
               className="invalid-feedback invalid-feedback-nodanger"
-              id="error-asInput33"
+              id="error-id1"
             >
               <span />
             </div>
@@ -41009,8 +41009,8 @@ exports[`Storyshots InputText with input group addons 1`] = `
           >
             <label
               className=""
-              htmlFor="asInput34"
-              id="label-asInput34"
+              htmlFor="id1"
+              id="label-id1"
             >
               Search
             </label>
@@ -41021,12 +41021,12 @@ exports[`Storyshots InputText with input group addons 1`] = `
                 className="input-group-prepend"
               />
               <input
-                aria-describedby="error-asInput34"
+                aria-describedby="error-id1"
                 aria-invalid={false}
                 autoComplete="on"
                 className="form-control is-invalid-nodanger"
                 disabled={false}
-                id="asInput34"
+                id="id1"
                 name="search"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -41055,7 +41055,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
             <div
               aria-live="polite"
               className="invalid-feedback invalid-feedback-nodanger"
-              id="error-asInput34"
+              id="error-id1"
             >
               <span />
             </div>
@@ -41065,8 +41065,8 @@ exports[`Storyshots InputText with input group addons 1`] = `
           >
             <label
               className=""
-              htmlFor="asInput35"
-              id="label-asInput35"
+              htmlFor="id1"
+              id="label-id1"
             >
               Username
             </label>
@@ -41077,12 +41077,12 @@ exports[`Storyshots InputText with input group addons 1`] = `
                 className="input-group-prepend"
               />
               <input
-                aria-describedby="error-asInput35"
+                aria-describedby="error-id1"
                 aria-invalid={false}
                 autoComplete="on"
                 className="form-control is-invalid-nodanger"
                 disabled={false}
-                id="asInput35"
+                id="id1"
                 name="username"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -41125,7 +41125,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
             <div
               aria-live="polite"
               className="invalid-feedback invalid-feedback-nodanger"
-              id="error-asInput35"
+              id="error-id1"
             >
               <span />
             </div>
@@ -41135,8 +41135,8 @@ exports[`Storyshots InputText with input group addons 1`] = `
           >
             <label
               className=""
-              htmlFor="asInput36"
-              id="label-asInput36"
+              htmlFor="id1"
+              id="label-id1"
             >
               Password
             </label>
@@ -41147,12 +41147,12 @@ exports[`Storyshots InputText with input group addons 1`] = `
                 className="input-group-prepend"
               />
               <input
-                aria-describedby="error-asInput36"
+                aria-describedby="error-id1"
                 aria-invalid={false}
                 autoComplete="on"
                 className="form-control is-invalid-nodanger"
                 disabled={false}
-                id="asInput36"
+                id="id1"
                 name="password"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -41186,7 +41186,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
             <div
               aria-live="polite"
               className="invalid-feedback invalid-feedback-nodanger"
-              id="error-asInput36"
+              id="error-id1"
             >
               <span />
             </div>
@@ -48159,7 +48159,7 @@ exports[`Storyshots Pagination basic usage 1`] = `
                   <span
                     aria-hidden={true}
                     className="fa fa-chevron-left mr-2"
-                    id="pagination-37"
+                    id="id1"
                   />
                   Previous
                 </div>
@@ -48276,7 +48276,7 @@ exports[`Storyshots Pagination basic usage 1`] = `
                   <span
                     aria-hidden={true}
                     className="fa fa-chevron-right ml-2"
-                    id="pagination-39"
+                    id="id1"
                   />
                 </div>
               </button>
@@ -48982,7 +48982,7 @@ exports[`Storyshots Pagination with custom element labels 1`] = `
                   <span
                     aria-hidden={true}
                     className="fa fa-chevron-left mr-2"
-                    id="pagination-50"
+                    id="id1"
                   />
                   <span>
                     Anterior
@@ -49103,7 +49103,7 @@ exports[`Storyshots Pagination with custom element labels 1`] = `
                   <span
                     aria-hidden={true}
                     className="fa fa-chevron-right ml-2"
-                    id="pagination-52"
+                    id="id1"
                   />
                 </div>
               </button>
@@ -49923,7 +49923,7 @@ exports[`Storyshots Pagination with custom string labels 1`] = `
                   <span
                     aria-hidden={true}
                     className="fa fa-chevron-left mr-2"
-                    id="pagination-47"
+                    id="id1"
                   />
                   Anterior
                 </div>
@@ -50040,7 +50040,7 @@ exports[`Storyshots Pagination with custom string labels 1`] = `
                   <span
                     aria-hidden={true}
                     className="fa fa-chevron-right ml-2"
-                    id="pagination-49"
+                    id="id1"
                   />
                 </div>
               </button>
@@ -50857,7 +50857,7 @@ exports[`Storyshots Pagination with initial page selected 1`] = `
                   <span
                     aria-hidden={true}
                     className="fa fa-chevron-left mr-2"
-                    id="pagination-40"
+                    id="id1"
                   />
                   Previous
                 </div>
@@ -50969,7 +50969,7 @@ exports[`Storyshots Pagination with initial page selected 1`] = `
                   <span
                     aria-hidden={true}
                     className="fa fa-chevron-right ml-2"
-                    id="pagination-43"
+                    id="id1"
                   />
                 </div>
               </button>
@@ -51715,7 +51715,7 @@ exports[`Storyshots Pagination with max pages displayed 1`] = `
                   <span
                     aria-hidden={true}
                     className="fa fa-chevron-left mr-2"
-                    id="pagination-44"
+                    id="id1"
                   />
                   Previous
                 </div>
@@ -51860,7 +51860,7 @@ exports[`Storyshots Pagination with max pages displayed 1`] = `
                   <span
                     aria-hidden={true}
                     className="fa fa-chevron-right ml-2"
-                    id="pagination-46"
+                    id="id1"
                   />
                 </div>
               </button>
@@ -55645,8 +55645,8 @@ exports[`Storyshots SearchField basic usage 1`] = `
           >
             <label
               className=""
-              htmlFor="asInput53"
-              id="label-asInput53"
+              htmlFor="id1"
+              id="label-id1"
             >
               Search:
             </label>
@@ -55657,12 +55657,12 @@ exports[`Storyshots SearchField basic usage 1`] = `
                 className="input-group-prepend"
               />
               <input
-                aria-describedby="error-asInput53"
+                aria-describedby="error-id1"
                 aria-invalid={false}
                 autoComplete="off"
                 className="form-control is-invalid-nodanger input no-clear-btn"
                 disabled={false}
-                id="asInput53"
+                id="id1"
                 name="search"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -55688,7 +55688,7 @@ exports[`Storyshots SearchField basic usage 1`] = `
                   <span
                     aria-hidden={true}
                     className="fa fa-search"
-                    id="Icon1"
+                    id="id1"
                   />
                   <span
                     className="sr-only"
@@ -55701,7 +55701,7 @@ exports[`Storyshots SearchField basic usage 1`] = `
             <div
               aria-live="polite"
               className="invalid-feedback invalid-feedback-nodanger"
-              id="error-asInput53"
+              id="error-id1"
             >
               <span />
             </div>
@@ -56400,8 +56400,8 @@ exports[`Storyshots SearchField with callbacks 1`] = `
           >
             <label
               className=""
-              htmlFor="asInput57"
-              id="label-asInput57"
+              htmlFor="id1"
+              id="label-id1"
             >
               Search:
             </label>
@@ -56412,12 +56412,12 @@ exports[`Storyshots SearchField with callbacks 1`] = `
                 className="input-group-prepend"
               />
               <input
-                aria-describedby="error-asInput57"
+                aria-describedby="error-id1"
                 aria-invalid={false}
                 autoComplete="off"
                 className="form-control is-invalid-nodanger input no-clear-btn"
                 disabled={false}
-                id="asInput57"
+                id="id1"
                 name="search"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -56443,7 +56443,7 @@ exports[`Storyshots SearchField with callbacks 1`] = `
                   <span
                     aria-hidden={true}
                     className="fa fa-search"
-                    id="Icon1"
+                    id="id1"
                   />
                   <span
                     className="sr-only"
@@ -56456,7 +56456,7 @@ exports[`Storyshots SearchField with callbacks 1`] = `
             <div
               aria-live="polite"
               className="invalid-feedback invalid-feedback-nodanger"
-              id="error-asInput57"
+              id="error-id1"
             >
               <span />
             </div>
@@ -57282,8 +57282,8 @@ exports[`Storyshots SearchField with custom label and screenreader text 1`] = `
           >
             <label
               className=""
-              htmlFor="asInput58"
-              id="label-asInput58"
+              htmlFor="id1"
+              id="label-id1"
             >
               Buscar:
             </label>
@@ -57294,12 +57294,12 @@ exports[`Storyshots SearchField with custom label and screenreader text 1`] = `
                 className="input-group-prepend"
               />
               <input
-                aria-describedby="error-asInput58"
+                aria-describedby="error-id1"
                 aria-invalid={false}
                 autoComplete="off"
                 className="form-control is-invalid-nodanger input no-clear-btn"
                 disabled={false}
-                id="asInput58"
+                id="id1"
                 name="search"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -57325,7 +57325,7 @@ exports[`Storyshots SearchField with custom label and screenreader text 1`] = `
                   <span
                     aria-hidden={true}
                     className="fa fa-search"
-                    id="Icon1"
+                    id="id1"
                   />
                   <span
                     className="sr-only"
@@ -57338,7 +57338,7 @@ exports[`Storyshots SearchField with custom label and screenreader text 1`] = `
             <div
               aria-live="polite"
               className="invalid-feedback invalid-feedback-nodanger"
-              id="error-asInput58"
+              id="error-id1"
             >
               <span />
             </div>
@@ -58138,8 +58138,8 @@ exports[`Storyshots SearchField with placeholder 1`] = `
           >
             <label
               className=""
-              htmlFor="asInput54"
-              id="label-asInput54"
+              htmlFor="id1"
+              id="label-id1"
             >
               Search:
             </label>
@@ -58150,12 +58150,12 @@ exports[`Storyshots SearchField with placeholder 1`] = `
                 className="input-group-prepend"
               />
               <input
-                aria-describedby="error-asInput54"
+                aria-describedby="error-id1"
                 aria-invalid={false}
                 autoComplete="off"
                 className="form-control is-invalid-nodanger input no-clear-btn"
                 disabled={false}
-                id="asInput54"
+                id="id1"
                 name="search"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -58181,7 +58181,7 @@ exports[`Storyshots SearchField with placeholder 1`] = `
                   <span
                     aria-hidden={true}
                     className="fa fa-search"
-                    id="Icon1"
+                    id="id1"
                   />
                   <span
                     className="sr-only"
@@ -58194,7 +58194,7 @@ exports[`Storyshots SearchField with placeholder 1`] = `
             <div
               aria-live="polite"
               className="invalid-feedback invalid-feedback-nodanger"
-              id="error-asInput54"
+              id="error-id1"
             >
               <span />
             </div>
@@ -58920,8 +58920,8 @@ exports[`Storyshots SearchField with value 1`] = `
           >
             <label
               className=""
-              htmlFor="asInput56"
-              id="label-asInput56"
+              htmlFor="id1"
+              id="label-id1"
             >
               Search:
             </label>
@@ -58932,12 +58932,12 @@ exports[`Storyshots SearchField with value 1`] = `
                 className="input-group-prepend"
               />
               <input
-                aria-describedby="error-asInput56"
+                aria-describedby="error-id1"
                 aria-invalid={false}
                 autoComplete="off"
                 className="form-control is-invalid-nodanger input"
                 disabled={false}
-                id="asInput56"
+                id="id1"
                 name="search"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -58963,7 +58963,7 @@ exports[`Storyshots SearchField with value 1`] = `
                     <span
                       aria-hidden={true}
                       className="fa fa-times"
-                      id="icon-SearchField55"
+                      id="id1"
                     />
                     <span
                       className="sr-only"
@@ -58983,7 +58983,7 @@ exports[`Storyshots SearchField with value 1`] = `
                   <span
                     aria-hidden={true}
                     className="fa fa-search"
-                    id="Icon1"
+                    id="id1"
                   />
                   <span
                     className="sr-only"
@@ -58996,7 +58996,7 @@ exports[`Storyshots SearchField with value 1`] = `
             <div
               aria-live="polite"
               className="invalid-feedback invalid-feedback-nodanger"
-              id="error-asInput56"
+              id="error-id1"
             >
               <span />
             </div>
@@ -75379,10 +75379,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
             role="tablist"
           >
             <button
-              aria-controls="tab-panel-tabInterface59-0"
+              aria-controls="tab-panel-id1-0"
               aria-selected={true}
               className="btn nav-link nav-item active"
-              id="tab-label-tabInterface59-0"
+              id="tab-label-id1-0"
               onBlur={[Function]}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -75392,10 +75392,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
               Panel 1
             </button>
             <button
-              aria-controls="tab-panel-tabInterface59-1"
+              aria-controls="tab-panel-id1-1"
               aria-selected={false}
               className="btn nav-link nav-item"
-              id="tab-label-tabInterface59-1"
+              id="tab-label-id1-1"
               onBlur={[Function]}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -75405,10 +75405,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
               Panel 2
             </button>
             <button
-              aria-controls="tab-panel-tabInterface59-2"
+              aria-controls="tab-panel-id1-2"
               aria-selected={false}
               className="btn nav-link nav-item"
-              id="tab-label-tabInterface59-2"
+              id="tab-label-id1-2"
               onBlur={[Function]}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -75424,9 +75424,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
           >
             <div
               aria-hidden={false}
-              aria-labelledby="tab-label-tabInterface59-0"
+              aria-labelledby="tab-label-id1-0"
               className="tab-pane active"
-              id="tab-panel-tabInterface59-0"
+              id="tab-panel-id1-0"
               role="tabpanel"
             >
               <div>
@@ -75435,9 +75435,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
             </div>
             <div
               aria-hidden={true}
-              aria-labelledby="tab-label-tabInterface59-1"
+              aria-labelledby="tab-label-id1-1"
               className="tab-pane"
-              id="tab-panel-tabInterface59-1"
+              id="tab-panel-id1-1"
               role="tabpanel"
             >
               <div>
@@ -75446,9 +75446,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
             </div>
             <div
               aria-hidden={true}
-              aria-labelledby="tab-label-tabInterface59-2"
+              aria-labelledby="tab-label-id1-2"
               className="tab-pane"
-              id="tab-panel-tabInterface59-2"
+              id="tab-panel-id1-2"
               role="tabpanel"
             >
               <div>
@@ -76099,8 +76099,8 @@ exports[`Storyshots Textarea label as element 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput63"
-            id="label-asInput63"
+            htmlFor="id1"
+            id="label-id1"
           >
             <span
               lang="en"
@@ -76109,11 +76109,11 @@ exports[`Storyshots Textarea label as element 1`] = `
             </span>
           </label>
           <textarea
-            aria-describedby="error-asInput63"
+            aria-describedby="error-id1"
             aria-invalid={false}
             className="form-control is-invalid-nodanger"
             disabled={false}
-            id="asInput63"
+            id="id1"
             name="username"
             onBlur={[Function]}
             onChange={[Function]}
@@ -76129,7 +76129,7 @@ exports[`Storyshots Textarea label as element 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput63"
+            id="error-id1"
           >
             <span />
           </div>
@@ -77130,17 +77130,17 @@ exports[`Storyshots Textarea minimal usage 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput60"
-            id="label-asInput60"
+            htmlFor="id1"
+            id="label-id1"
           >
             First Name
           </label>
           <textarea
-            aria-describedby="error-asInput60"
+            aria-describedby="error-id1"
             aria-invalid={false}
             className="form-control is-invalid-nodanger"
             disabled={false}
-            id="asInput60"
+            id="id1"
             name="name"
             onBlur={[Function]}
             onChange={[Function]}
@@ -77156,7 +77156,7 @@ exports[`Storyshots Textarea minimal usage 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput60"
+            id="error-id1"
           >
             <span />
           </div>
@@ -78156,17 +78156,17 @@ exports[`Storyshots Textarea scrollable 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput61"
-            id="label-asInput61"
+            htmlFor="id1"
+            id="label-id1"
           >
             Information
           </label>
           <textarea
-            aria-describedby="error-asInput61"
+            aria-describedby="error-id1"
             aria-invalid={false}
             className="form-control is-invalid-nodanger"
             disabled={false}
-            id="asInput61"
+            id="id1"
             name="name"
             onBlur={[Function]}
             onChange={[Function]}
@@ -78182,7 +78182,7 @@ exports[`Storyshots Textarea scrollable 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput61"
+            id="error-id1"
           >
             <span />
           </div>
@@ -79182,17 +79182,17 @@ exports[`Storyshots Textarea validation 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput62"
-            id="label-asInput62"
+            htmlFor="id1"
+            id="label-id1"
           >
             Username
           </label>
           <textarea
-            aria-describedby="error-asInput62 description-asInput62"
+            aria-describedby="error-id1 description-id1"
             aria-invalid={false}
             className="form-control is-invalid-nodanger"
             disabled={false}
-            id="asInput62"
+            id="id1"
             name="username"
             onBlur={[Function]}
             onChange={[Function]}
@@ -79208,13 +79208,13 @@ exports[`Storyshots Textarea validation 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput62"
+            id="error-id1"
           >
             <span />
           </div>
           <small
             className="form-text"
-            id="description-asInput62"
+            id="description-id1"
           >
             The unique name that identifies you throughout the site.
           </small>

@@ -4,10 +4,14 @@ import newId from './newId';
 import getTextFromElement from './getTextFromElement';
 
 describe('newId', () => {
-  it('increments on each call', () => {
-    expect(newId()).toEqual('id1');
-    expect(newId('foo-')).toEqual('foo-2');
-    expect(newId('bar-')).toEqual('bar-3');
+  it('produces a new id on each call', () => {
+    const generatedIds = [];
+    const range = [...Array(10).keys()];
+
+    range.forEach(() => generatedIds.push(newId()));
+
+    // Verify that all of the generated ids are unique
+    expect(new Set(generatedIds).size === generatedIds.length).toBe(true);
   });
 });
 
