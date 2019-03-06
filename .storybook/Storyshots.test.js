@@ -12,6 +12,9 @@ jest.mock("react-dom", () => {
   };
 });
 
+// Mock newId so that snapshots of id attributes don't change every time
+jest.mock("../src/utils/newId", () => () => 'id1');
+
 initStoryshots({
   storyKindRegex: /^((?!.*?Modal).)*$/,
 });
