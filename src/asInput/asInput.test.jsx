@@ -41,7 +41,7 @@ describe('asInput()', () => {
     };
     const wrapper = mount(<InputTestComponent {...props} />);
     expect(wrapper.find('label').text()).toEqual(props.label);
-    expect(wrapper.find(`#description-${wrapper.state('id')}`).text()).toEqual(props.description);
+    expect(wrapper.find('#description-asInput1').text()).toEqual(props.description);
     expect(wrapper.prop('value')).toEqual(props.value);
   });
 
