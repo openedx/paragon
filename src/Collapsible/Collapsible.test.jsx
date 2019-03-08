@@ -92,6 +92,14 @@ describe('<Collapsible />', () => {
       expect(spy).toHaveBeenCalledTimes(2);
       expect(spy).toHaveBeenCalledWith(false);
     });
+
+    it('uses iconId if it is supplied', () => {
+      const iconId = 'icon-id';
+      const wrapper = mount(<Collapsible {...defaultProps} iconId={iconId} />);
+
+      const icon = wrapper.find('Icon');
+      expect(icon.prop('id')).toEqual(iconId);
+    });
   });
 
   describe('with resizing', () => {

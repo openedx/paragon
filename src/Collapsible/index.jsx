@@ -66,6 +66,7 @@ class Collapsible extends React.Component {
     const {
       children,
       expandedTitle,
+      iconId,
       title,
     } = this.props;
 
@@ -91,6 +92,7 @@ class Collapsible extends React.Component {
             label={
               <div className="collapsible-title">
                 <Icon
+                  id={iconId}
                   className={[classNames(
                     'ml-2 float-right collapsible-icon',
                     {
@@ -120,6 +122,7 @@ class Collapsible extends React.Component {
 Collapsible.propTypes = {
   children: PropTypes.instanceOf(Object).isRequired,
   expandedTitle: PropTypes.element,
+  iconId: PropTypes.string,
   isCollapsible: PropTypes.func,
   isOpen: PropTypes.bool,
   onToggle: PropTypes.func,
@@ -128,6 +131,7 @@ Collapsible.propTypes = {
 
 Collapsible.defaultProps = {
   expandedTitle: undefined,
+  iconId: '',
   isCollapsible: undefined,
   isOpen: false,
   onToggle: () => {},
