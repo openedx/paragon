@@ -31,6 +31,10 @@ resize to determine whether to display the collapsible or regular view. The
 example below demonstrates a collapsible that will only show the open/close
 button for non-desktop screens.
 
+### `iconId` (string; optional)
+`iconId` is the id attribute that is passed to the icon on the collapsible.
+Defaults to the empty string.
+
 ```jsx
 <Collapsible
   title="Collapsible"
