@@ -8,8 +8,7 @@ cache:
 notifications:
   email:
     recipients:
-    - arizzitano@edx.org
-    - jbradley@edx.org
+    - abutterworth@edx.org
     on_success: never
     on_failure: always
   hipchat:
