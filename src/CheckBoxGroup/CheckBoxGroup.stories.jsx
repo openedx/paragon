@@ -2,8 +2,7 @@
 /* eslint-disable no-console */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered';
-import { checkA11y } from '@storybook/addon-a11y';
+import { withA11y } from '@storybook/addon-a11y';
 import { withInfo } from '@storybook/addon-info';
 import { withReadme } from 'storybook-readme';
 
@@ -13,9 +12,8 @@ import CheckBox from '../CheckBox';
 import README from './README.md';
 
 storiesOf('CheckBoxGroup', module)
-  .addDecorator((story, context) => withInfo()(story)(context))
-  .addDecorator(centered)
-  .addDecorator(checkA11y)
+  .addDecorator(withInfo)
+  .addDecorator(withA11y)
   .addDecorator(withReadme(README))
   .add('basic usage', () => (
     <CheckBoxGroup>

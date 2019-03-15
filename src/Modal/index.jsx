@@ -139,21 +139,17 @@ class Modal extends React.Component {
   }
 
   renderButtons() {
-    return this.props.buttons.map((button, i) => {
-      let buttonElement = button;
-      let buttonProps = button.props;
+    return this.props.buttons.map((button) => {
+      // button is either a Button component that we want clone or a set of props
+      const buttonProps = button.type === Button ? button.props : button;
 
-      if (button.type !== Button) {
-        buttonProps = button;
-      }
-
-      buttonElement = (<Button
-        {...buttonProps}
-        key={i}
-        onKeyDown={this.handleKeyDown}
-      />);
-
-      return buttonElement;
+      return (
+        <Button
+          {...buttonProps}
+          key={buttonProps.label}
+          onKeyDown={this.handleKeyDown}
+        />
+      );
     });
   }
 

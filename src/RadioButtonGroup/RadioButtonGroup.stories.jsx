@@ -1,8 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies, no-console */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered';
-import { checkA11y } from '@storybook/addon-a11y';
+import { withA11y } from '@storybook/addon-a11y';
 import { action } from '@storybook/addon-actions';
 import { setConsoleOptions } from '@storybook/addon-console';
 import { withInfo } from '@storybook/addon-info';
@@ -44,9 +43,8 @@ const onKeyDown = (event) => {
 };
 
 storiesOf('RadioButtonGroup', module)
-  .addDecorator((story, context) => withInfo()(story)(context))
-  .addDecorator(centered)
-  .addDecorator(checkA11y)
+  .addDecorator(withInfo)
+  .addDecorator(withA11y)
   .addDecorator(withReadme(README))
   .add('unselected minimal usage', () => (
     <RadioButtonGroup

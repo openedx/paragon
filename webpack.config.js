@@ -1,7 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 
 // we build the library for two different build targets:
 // static (with scoped styles) and themeable (with stock,
@@ -32,11 +33,25 @@ module.exports = targetProperties.map(config => ({
     new UglifyJsPlugin({
       sourceMap: true,
     }),
-    new ExtractTextPlugin(`${config.baseDirectory}/paragon.min.css`),
+    new MiniCssExtractPlugin({
+      filename: `${config.baseDirectory}/paragon.min.css`,
+    }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     }),
   ],
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: 'styles',
+          test: /\.css$/,
+          chunks: 'all',
+          enforce: true
+        }
+      }
+    }
+  },
   module: {
     rules: [
       {
@@ -51,30 +66,28 @@ module.exports = targetProperties.map(config => ({
       },
       {
         test: /\.scss|\.css$/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                modules: true,
-                localIdentName: config.localIdentName,
-                sourceMap: true,
-                minimize: true,
-              },
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: config.localIdentName,
+              sourceMap: true,
             },
-            {
-              loader: 'sass-loader',
-              options: {
-                data: '@import "paragon-reset";',
-                includePaths: [
-                  path.join(__dirname, './src/utils'),
-                  path.join(__dirname, './node_modules'),
-                ],
-                sourceMap: true,
-              },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              data: '@import "paragon-reset";',
+              includePaths: [
+                path.join(__dirname, './src/utils'),
+                path.join(__dirname, './node_modules'),
+              ],
+              sourceMap: true,
             },
-          ],
-        }),
+          },
+        ],
       },
       {
         test: /\.(woff2?|ttf|svg|eot)(\?v=\d+\.\d+\.\d+)?$/,
