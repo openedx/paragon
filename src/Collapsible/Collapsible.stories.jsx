@@ -1,18 +1,12 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withA11y } from '@storybook/addon-a11y';
-import { withInfo } from '@storybook/addon-info';
-import { withReadme } from 'storybook-readme';
 import README from './README.md';
 
 import Collapsible from './index';
 import { breakpoints } from '../Responsive';
 
 storiesOf('Collapsible', module)
-  .addDecorator(withInfo)
-  .addDecorator(withA11y)
-  .addDecorator(withReadme(README))
+  .addParameters({ info: { text: README } })
   .add('basic usage without resizing', () => (
     <Collapsible title="Click me to expand">
       <p>Your stuff goes here</p>

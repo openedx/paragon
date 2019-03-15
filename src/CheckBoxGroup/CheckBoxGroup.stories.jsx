@@ -1,10 +1,5 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-console */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withA11y } from '@storybook/addon-a11y';
-import { withInfo } from '@storybook/addon-info';
-import { withReadme } from 'storybook-readme';
 
 import CheckBoxGroup from './index';
 import CheckBox from '../CheckBox';
@@ -12,9 +7,7 @@ import CheckBox from '../CheckBox';
 import README from './README.md';
 
 storiesOf('CheckBoxGroup', module)
-  .addDecorator(withInfo)
-  .addDecorator(withA11y)
-  .addDecorator(withReadme(README))
+  .addParameters({ info: { text: README } })
   .add('basic usage', () => (
     <CheckBoxGroup>
       <CheckBox

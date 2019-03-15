@@ -1,17 +1,11 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withA11y } from '@storybook/addon-a11y';
-import { withInfo } from '@storybook/addon-info';
-import { withReadme } from 'storybook-readme';
 
 import InputSelect from './index';
 import README from './README.md';
 
 storiesOf('InputSelect', module)
-  .addDecorator(withInfo)
-  .addDecorator(withA11y)
-  .addDecorator(withReadme(README))
+  .addParameters({ info: { text: README } })
   .add('basic usage', () => (
     <InputSelect
       name="fruits"

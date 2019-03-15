@@ -23,6 +23,14 @@
       "specialLink": [ "to" ]
     }]
   },
+  "overrides": [
+    {
+      "files": ["*.stories.jsx"],
+      "rules": {
+        "no-console": "off"
+      }
+    }
+  ],
   "env": {
     "jest": true
   },

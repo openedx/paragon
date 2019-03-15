@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 import newId from '../utils/newId';
 import styles from './Fieldset.scss';
+
 import ValidationMessage from '../ValidationMessage/index';
 import Variant from '../utils/constants';
 

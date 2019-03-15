@@ -1,18 +1,12 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withA11y } from '@storybook/addon-a11y';
-import { withInfo } from '@storybook/addon-info';
-import { withReadme } from 'storybook-readme';
 
 import TextArea from './index';
 
 import README from './README.md';
 
 storiesOf('Textarea', module)
-  .addDecorator(withInfo)
-  .addDecorator(withA11y)
-  .addDecorator(withReadme(README))
+  .addParameters({ info: { text: README } })
   .add('minimal usage', () => (
     <TextArea
       name="name"

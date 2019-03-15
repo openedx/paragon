@@ -1,8 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withA11y } from '@storybook/addon-a11y';
-import { withInfo } from '@storybook/addon-info';
-import { withReadme } from 'storybook-readme';
 
 import Table from './index';
 import README from './README.md';
@@ -77,9 +74,7 @@ const sort = function sort(firstElement, secondElement, key, direction) {
 };
 
 storiesOf('Table', module)
-  .addDecorator(withInfo)
-  .addDecorator(withA11y)
-  .addDecorator(withReadme(README))
+  .addParameters({ info: { text: README } })
   .add('unstyled', () => (
     <Table
       data={catData}

@@ -1,11 +1,8 @@
-import { action } from '@storybook/addon-actions';
 import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withA11y } from '@storybook/addon-a11y';
-import { withInfo } from '@storybook/addon-info';
-import { withReadme } from 'storybook-readme';
+import { action } from '@storybook/addon-actions';
 
 import Modal from './index';
 import Button from '../Button';
@@ -66,9 +63,7 @@ ModalWrapper.defaultProps = {
 };
 
 storiesOf('Modal', module)
-  .addDecorator(withInfo)
-  .addDecorator(withA11y)
-  .addDecorator(withReadme(README))
+  .addParameters({ info: { text: README } })
   .add('basic usage', () => (
     <Modal
       open

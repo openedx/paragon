@@ -1,15 +1,20 @@
 import React from 'react';
 import { addParameters, addDecorator, configure } from '@storybook/react';
+import { setConsoleOptions } from '@storybook/addon-console';
+import { withInfo } from '@storybook/addon-info';
 
 // Style applied to all stories
 import "bootstrap/scss/bootstrap.scss";
 
+setConsoleOptions({
+  panelExclude: ['warn', 'error'],
+});
 
 // Option defaults:
 addParameters({
   options: {
-    name: '💎 PARAGON',
-    url: 'https://github.com/edx/paragon',
+    brandTitle: '💎 PARAGON',
+    brandUrl: 'https://github.com/edx/paragon',
     /**
      * show story component as full screen
      * @type {Boolean}
@@ -83,6 +88,7 @@ addParameters({
 });
 
 
+addDecorator(withInfo);
 addDecorator(storyFn => <div className="p-5">{storyFn()}</div>);
 
 

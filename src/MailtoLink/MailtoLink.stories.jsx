@@ -2,17 +2,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { setConsoleOptions } from '@storybook/addon-console';
-import { withInfo } from '@storybook/addon-info';
-import { withA11y } from '@storybook/addon-a11y';
-import { withReadme } from 'storybook-readme';
 
 import MailtoLink from './index';
 import README from './README.md';
-
-setConsoleOptions({
-  panelExclude: ['warn', 'error'],
-});
 
 const onClick = (event) => {
   console.log(`onClick fired for ${event.target}`);
@@ -21,9 +13,7 @@ const onClick = (event) => {
 };
 
 storiesOf('MailtoLink', module)
-  .addDecorator(withInfo)
-  .addDecorator(withA11y)
-  .addDecorator(withReadme(README))
+  .addParameters({ info: { text: README } })
   .add('minimal usage', () => (
     <MailtoLink
       to="edx@example.com"

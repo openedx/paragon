@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/no-multi-comp */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
@@ -143,7 +142,7 @@ storiesOf('ListBox', module)
     </ListBox>
   ))
   .add('using tag prop', () => (
-    <React.Fragment>
+    <div>
       <div>This is an ordered list!</div>
       <ListBox tag="ol">
         <ListBoxOption tag="li">
@@ -159,7 +158,7 @@ storiesOf('ListBox', module)
           Banana
         </ListBoxOption>
       </ListBox>
-    </React.Fragment>
+    </div>
   ))
   .add('using onSelect prop', () => (
     <ListBoxWrapperForOnSelect />

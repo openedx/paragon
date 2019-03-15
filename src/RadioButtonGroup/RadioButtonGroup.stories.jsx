@@ -1,19 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies, no-console */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withA11y } from '@storybook/addon-a11y';
 import { action } from '@storybook/addon-actions';
-import { setConsoleOptions } from '@storybook/addon-console';
-import { withInfo } from '@storybook/addon-info';
-import { withReadme } from 'storybook-readme';
 
 import README from './README.md';
 
 import RadioButtonGroup, { RadioButton } from './index';
-
-setConsoleOptions({
-  panelExclude: ['warn', 'error'],
-});
 
 const onChange = (event) => {
   console.log(`onChange fired for ${event.target.value}`);
@@ -43,9 +35,7 @@ const onKeyDown = (event) => {
 };
 
 storiesOf('RadioButtonGroup', module)
-  .addDecorator(withInfo)
-  .addDecorator(withA11y)
-  .addDecorator(withReadme(README))
+  .addParameters({ info: { text: README } })
   .add('unselected minimal usage', () => (
     <RadioButtonGroup
       name="rbg"

@@ -1,11 +1,6 @@
-/* eslint-disable import/no-extraneous-dependencies, no-console */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withA11y } from '@storybook/addon-a11y';
 import { action } from '@storybook/addon-actions';
-import { setConsoleOptions } from '@storybook/addon-console';
-import { withInfo } from '@storybook/addon-info';
-import { withReadme } from 'storybook-readme';
 
 import 'font-awesome/css/font-awesome.min.css';
 
@@ -14,9 +9,6 @@ import README from './README.md';
 import Hyperlink from './index';
 import Icon from '../Icon/index';
 
-setConsoleOptions({
-  panelExclude: ['warn', 'error'],
-});
 
 const onClick = (event) => {
   console.log(`onClick fired for ${event.target}`);
@@ -25,9 +17,7 @@ const onClick = (event) => {
 };
 
 storiesOf('HyperLink', module)
-  .addDecorator(withInfo)
-  .addDecorator(withA11y)
-  .addDecorator(withReadme(README))
+  .addParameters({ info: { text: README } })
   .add('minimal usage', () => <Hyperlink destination="https://en.wikipedia.org/wiki/Hyperlink" content="edX.org" />)
   .add('with blank target', () => (
     <Hyperlink

@@ -1,8 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withA11y } from '@storybook/addon-a11y';
-import { withInfo } from '@storybook/addon-info';
-import { withReadme } from 'storybook-readme';
 
 import Fieldset from './index';
 import InputText from '../InputText/index';
@@ -74,9 +71,7 @@ class ValidatedForm extends React.Component {
 }
 
 storiesOf('Fieldset', module)
-  .addDecorator(withInfo)
-  .addDecorator(withA11y)
-  .addDecorator(withReadme(README))
+  .addParameters({ info: { text: README } })
   .add('basic usage', () => (
     <form>
       <Fieldset

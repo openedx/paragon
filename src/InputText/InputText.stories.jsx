@@ -1,9 +1,5 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withA11y } from '@storybook/addon-a11y';
-import { withInfo } from '@storybook/addon-info';
-import { withReadme } from 'storybook-readme';
 
 import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
 
@@ -48,9 +44,7 @@ class FocusInputWrapper extends React.Component {
 
 
 storiesOf('InputText', module)
-  .addDecorator(withInfo)
-  .addDecorator(withA11y)
-  .addDecorator(withReadme(README))
+  .addParameters({ info: { text: README } })
   .add('minimal usage', () => (
     <InputText
       name="name"

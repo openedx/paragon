@@ -1,10 +1,5 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-console */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withA11y } from '@storybook/addon-a11y';
-import { withInfo } from '@storybook/addon-info';
-import { withReadme } from 'storybook-readme';
 
 import CheckBox from './index';
 import Button from '../Button';
@@ -46,9 +41,7 @@ class CheckBoxWrapper extends React.Component {
 }
 
 storiesOf('CheckBox', module)
-  .addDecorator(withInfo)
-  .addDecorator(withA11y)
-  .addDecorator(withReadme(README))
+  .addParameters({ info: { text: README } })
   .add('basic usage', () => (
     <CheckBox
       name="checkbox"
