@@ -6,7 +6,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.scss|\.css$/,
         loaders: [
           {
             loader: 'style-loader',
@@ -32,6 +32,10 @@ module.exports = {
           },
         ],
         include: path.resolve(__dirname, '../'),
+      },
+      {
+        test: /\.(woff2?|ttf|svg|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file-loader',
       },
     ],
   },
