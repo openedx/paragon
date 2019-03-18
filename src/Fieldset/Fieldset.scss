@@ -6,6 +6,10 @@
 .paragon-fieldset {
   @extend .mb-4;
 
+  .form-control {
+    height: auto;
+  }
+
   fieldset legend {
     width: auto;
     margin-bottom: 0;
