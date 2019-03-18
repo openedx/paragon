@@ -73,7 +73,6 @@ module.exports = targetProperties.map(config => ({
             options: {
               modules: true,
               localIdentName: config.localIdentName,
-              sourceMap: true,
             },
           },
           {
@@ -84,7 +83,6 @@ module.exports = targetProperties.map(config => ({
                 path.join(__dirname, './src/utils'),
                 path.join(__dirname, './node_modules'),
               ],
-              sourceMap: true,
             },
           },
         ],
