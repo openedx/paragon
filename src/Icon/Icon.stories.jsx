@@ -8,13 +8,13 @@ storiesOf('Icon', module)
   .addParameters({ info: { text: README } })
   .add('basic usage', () => (
     <Icon
-      className="fa fa-birthday-cake fa-4x"
+      className={['fa', 'fa-birthday-cake', 'fa-4x']}
     />
   ))
   .add('with screenreader text', () => (
     <Icon
       id="SampleIcon"
-      className="fa fa-smile-o fa-4x"
+      className={['fa', 'fa-smile-o', 'fa-4x']}
       screenReaderText="Happy Icon"
     />
   ));
