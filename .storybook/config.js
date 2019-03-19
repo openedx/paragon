@@ -22,10 +22,10 @@ addParameters({
   },
 });
 
-
-addDecorator(withInfo);
-addDecorator(storyFn => <div className="p-5">{storyFn()}</div>);
-
+if (process.env.NODE_ENV !== 'test') {
+  addDecorator(withInfo);
+  addDecorator(storyFn => <div className="p-5">{storyFn()}</div>);
+}
 
 const req = require.context('../src', true, /\.stories\.jsx$/);
 
