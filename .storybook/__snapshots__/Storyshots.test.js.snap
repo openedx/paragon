@@ -3483,89 +3483,102 @@ exports[`Storyshots Button basic usage 1`] = `
               }
             >
               <div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 18,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
+                <div>
+                  <div
                     style={
                       Object {
-                        "color": "#444",
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
                       }
                     }
                   >
-                    &lt;
-                    Button
-                  </span>
-                  <span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;
+                      Button
+                    </span>
                     <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        label
-                      </span>
                       <span>
-                        =
+                         
                         <span
                           style={Object {}}
                         >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            Click me and check the console!
-                          </span>
-                          "
+                          onClick
                         </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#170",
+                                }
+                              }
+                            >
+                              action
+                            </span>
+                            }
+                          </span>
+                        </span>
+                        
                       </span>
                     </span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        onClick
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          {
-                          <span
-                            style={
-                              Object {
-                                "color": "#170",
-                              }
-                            }
-                          >
-                            action
-                          </span>
-                          }
-                        </span>
-                      </span>
-                       
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &gt;
                     </span>
-                  </span>
-                  <span
+                  </div>
+                  <div
                     style={
                       Object {
-                        "color": "#444",
+                        "paddingLeft": 33,
+                        "paddingRight": 3,
                       }
                     }
                   >
-                    /&gt;
-                  </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      Click me and check the console!
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;/
+                      Button
+                      &gt;
+                    </span>
+                  </div>
                 </div>
               </div>
               <button
@@ -3770,58 +3783,6 @@ exports[`Storyshots Button basic usage 1`] = `
                         [
                         ]
                       </span>
-                    </td>
-                    <td
-                      style={
-                        Object {
-                          "paddingRight": 10,
-                          "verticalAlign": "top",
-                        }
-                      }
-                    />
-                  </tr>
-                  <tr>
-                    <td
-                      style={
-                        Object {
-                          "paddingRight": 10,
-                          "verticalAlign": "top",
-                        }
-                      }
-                    >
-                      label
-                    </td>
-                    <td
-                      style={
-                        Object {
-                          "paddingRight": 10,
-                          "verticalAlign": "top",
-                        }
-                      }
-                    >
-                      <span>
-                        other
-                      </span>
-                    </td>
-                    <td
-                      style={
-                        Object {
-                          "paddingRight": 10,
-                          "verticalAlign": "top",
-                        }
-                      }
-                    >
-                      yes
-                    </td>
-                    <td
-                      style={
-                        Object {
-                          "paddingRight": 10,
-                          "verticalAlign": "top",
-                        }
-                      }
-                    >
-                      -
                     </td>
                     <td
                       style={
@@ -4146,6 +4107,110 @@ exports[`Storyshots Button basic usage 1`] = `
                       <span>
                         button
                       </span>
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    />
+                  </tr>
+                  <tr>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      label
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    />
+                  </tr>
+                  <tr>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      children
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
                     </td>
                     <td
                       style={

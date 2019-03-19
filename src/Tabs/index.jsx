@@ -56,8 +56,9 @@ class Tabs extends React.Component {
             styles['nav-item'],
             { [styles.active]: selected },
           ).split(' ')}
-          label={label}
-        />
+        >
+          {label}
+        </Button>
       );
     });
   }

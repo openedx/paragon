@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
+import propShim from '../propShim';
 import styles from './Button.scss';
 
 class Button extends React.Component {
@@ -77,7 +78,7 @@ class Button extends React.Component {
         ref={this.setRefs}
 
       >
-        {this.props.label}
+        {propShim(this.props, 'children', 'label', 'Button')}
       </button>
     );
   }
@@ -86,19 +87,24 @@ class Button extends React.Component {
 export const buttonPropTypes = {
   buttonType: PropTypes.string,
   className: PropTypes.arrayOf(PropTypes.string),
-  label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   inputRef: PropTypes.func,
   isClose: PropTypes.bool,
   onBlur: PropTypes.func,
   onClick: PropTypes.func,
   onKeyDown: PropTypes.func,
   type: PropTypes.string,
+
+  // Deprecated (children should be required after removal)
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };
 
 Button.propTypes = buttonPropTypes;
 
 Button.defaultProps = {
   buttonType: undefined,
+  label: undefined,
+  children: undefined,
   className: [],
   inputRef: () => {},
   isClose: false,

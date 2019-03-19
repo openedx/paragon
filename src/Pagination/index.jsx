@@ -130,10 +130,11 @@ class Pagination extends React.Component {
         <Button
           className={[styles['page-link']]}
           aria-label={ariaLabel}
-          label={page.toString()}
           inputRef={(element) => { this.pageRefs[page] = element; }}
           onClick={() => { this.handlePageSelect(page); }}
-        />
+        >
+          {page.toString()}
+        </Button>
       </li>
     );
   }
@@ -212,24 +213,23 @@ class Pagination extends React.Component {
         <Button
           className={['previous', styles['page-link']]}
           aria-label={ariaLabel}
-          label={
-            <div>
-              <Icon
-                id={newId('pagination-')}
-                className={[
-                  FontAwesomeStyles.fa,
-                  FontAwesomeStyles['fa-chevron-left'],
-                  styles['mr-2'],
-                ]}
-              />
-              {buttonLabels.previous}
-            </div>
-          }
           tabIndex={isFirstPage ? '-1' : undefined}
           onClick={() => { this.handlePreviousNextButtonClick(previousPage); }}
           inputRef={(element) => { this.previousButtonRef = element; }}
           disabled={isFirstPage}
-        />
+        >
+          <div>
+            <Icon
+              id={newId('pagination-')}
+              className={[
+                FontAwesomeStyles.fa,
+                FontAwesomeStyles['fa-chevron-left'],
+                styles['mr-2'],
+              ]}
+            />
+            {buttonLabels.previous}
+          </div>
+        </Button>
       </li>
     );
   }
@@ -265,24 +265,23 @@ class Pagination extends React.Component {
         <Button
           className={['next', styles['page-link']]}
           aria-label={ariaLabel}
-          label={
-            <div>
-              {buttonLabels.next}
-              <Icon
-                id={newId('pagination-')}
-                className={[
-                  FontAwesomeStyles.fa,
-                  FontAwesomeStyles['fa-chevron-right'],
-                  styles['ml-2'],
-                ]}
-              />
-            </div>
-          }
           tabIndex={isLastPage ? '-1' : undefined}
           onClick={() => { this.handlePreviousNextButtonClick(nextPage); }}
           inputRef={(element) => { this.nextButtonRef = element; }}
           disabled={isLastPage}
-        />
+        >
+          <div>
+            {buttonLabels.next}
+            <Icon
+              id={newId('pagination-')}
+              className={[
+                FontAwesomeStyles.fa,
+                FontAwesomeStyles['fa-chevron-right'],
+                styles['ml-2'],
+              ]}
+            />
+          </div>
+        </Button>
       </li>
     );
   }

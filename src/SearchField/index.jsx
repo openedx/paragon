@@ -44,21 +44,22 @@ class SearchField extends React.Component {
     const { screenReaderText } = this.props;
     const inputTextHasValue = this.inputTextHasValue();
     const buttons = [
-      <Button
-        className={[classNames(
-          styles['search-btn'],
-          {
-            [styles['border-left']]: !isFocused && this.shouldRenderClearButton(),
-            [styles['btn-outline-primary']]: isFocused && this.shouldRenderClearButton(),
-          },
-        )]}
-        label={
+      (
+        <Button
+          className={[classNames(
+            styles['search-btn'],
+            {
+              [styles['border-left']]: !isFocused && this.shouldRenderClearButton(),
+              [styles['btn-outline-primary']]: isFocused && this.shouldRenderClearButton(),
+            },
+          )]}
+          disabled={!inputTextHasValue}
+          inputRef={(input) => { this.searchButton = input; }}
+          onClick={this.handleSubmit}
+        >
           <Icon className={['fa', 'fa-search']} screenReaderText={screenReaderText.searchButton} />
-        }
-        disabled={!inputTextHasValue}
-        inputRef={(input) => { this.searchButton = input; }}
-        onClick={this.handleSubmit}
-      />,
+        </Button>
+      ),
     ];
 
     if (this.shouldRenderClearButton()) {
@@ -68,20 +69,19 @@ class SearchField extends React.Component {
             styles['clear-btn'],
             styles['ml-1'],
           )]}
-          label={(
-            <small>
-              <Icon
-                className={[classNames(
-                  FontAwesomeStyles.fa,
-                  FontAwesomeStyles['fa-times'],
-                )]}
-                id={newId('icon-SearchField')}
-                screenReaderText={screenReaderText.clearButton}
-              />
-            </small>
-          )}
           onClick={this.handleClear}
-        />
+        >
+          <small>
+            <Icon
+              className={[classNames(
+                FontAwesomeStyles.fa,
+                FontAwesomeStyles['fa-times'],
+              )]}
+              id={newId('icon-SearchField')}
+              screenReaderText={screenReaderText.clearButton}
+            />
+          </small>
+        </Button>
       ));
     }
 

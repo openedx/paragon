@@ -175,7 +175,6 @@ class Dropdown extends React.Component {
           aria-expanded={open}
           aria-haspopup="true"
           buttonType={buttonType}
-          label={title}
           onClick={this.toggle}
           onKeyDown={this.handleToggleKeyDown}
           className={[classNames([
@@ -188,7 +187,9 @@ class Dropdown extends React.Component {
           ])]}
           type="button"
           inputRef={(toggleElem) => { this.toggleElem = toggleElem; }}
-        />
+        >
+          {title}
+        </Button>
         <div
           aria-label={title}
           aria-hidden={!open}

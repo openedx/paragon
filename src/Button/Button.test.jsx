@@ -2,19 +2,13 @@ import React from 'react';
 import { mount } from 'enzyme';
 import Button from './index';
 
-const defaultProps = {
-  label: 'Click me!',
-};
 
 describe('<Button />', () => {
   let wrapper;
   let button;
 
   beforeEach(() => {
-    wrapper = mount(<Button
-      {...defaultProps}
-    />);
-
+    wrapper = mount(<Button>Click me!</Button>);
     button = wrapper.find('button');
   });
   it('renders', () => {

@@ -146,9 +146,11 @@ class Modal extends React.Component {
       return (
         <Button
           {...buttonProps}
-          key={buttonProps.label}
+          key={buttonProps.label || buttonProps.children}
           onKeyDown={this.handleKeyDown}
-        />
+        >
+          {buttonProps.label}
+        </Button>
       );
     });
   }
@@ -210,13 +212,14 @@ class Modal extends React.Component {
                 <h2 className={styles['modal-title']} id={this.headerId}>{this.props.title}</h2>
                 { renderHeaderCloseButton &&
                 <Button
-                  label={<Icon className={['fa', 'fa-times', 'js-close-modal-on-click']} />}
                   className={['p-1', 'js-close-modal-on-click']}
                   aria-labelledby={closeModalButtonId}
                   onClick={this.close}
                   inputRef={this.setFirstFocusableElement}
                   onKeyDown={this.handleKeyDown}
-                />
+                >
+                  <Icon className={['fa', 'fa-times', 'js-close-modal-on-click']} />
+                </Button>
               }
               </div>
               <div className={styles['modal-body']}>
@@ -225,13 +228,14 @@ class Modal extends React.Component {
               <div className={styles['modal-footer']}>
                 {this.renderButtons()}
                 <Button
-                  label={this.props.closeText}
                   buttonType="secondary"
                   className={['js-close-modal-on-click']}
                   onClick={this.close}
                   inputRef={this.setCloseButton}
                   onKeyDown={this.handleKeyDown}
-                />
+                >
+                  {this.props.closeText}
+                </Button>
               </div>
             </div>
           </div>

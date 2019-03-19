@@ -125,7 +125,7 @@ describe('<StatusAlert />', () => {
   });
   describe('focus functions properly', () => {
     it('focus function changes focus', () => {
-      wrapper = mount(<div><Button label="test" /><StatusAlert {...defaultProps} /></div>);
+      wrapper = mount(<div><Button>test</Button><StatusAlert {...defaultProps} /></div>);
 
       const buttons = wrapper.find('button');
 

@@ -246,10 +246,7 @@ storiesOf('InputText', module)
         label="Search"
         value="what is paragon"
         inputGroupAppend={(
-          <Button
-            label="Go"
-            buttonType="outline-secondary"
-          />
+          <Button buttonType="outline-secondary">Go</Button>
         )}
       />
       <InputText
@@ -267,10 +264,7 @@ storiesOf('InputText', module)
               screenReaderText="Checkmark"
             />
           </div>,
-          <Button
-            label="Go"
-            buttonType="outline-secondary"
-          />,
+          <Button buttonType="outline-secondary">Go</Button>,
         ]}
       />
       <InputText
