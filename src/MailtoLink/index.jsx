@@ -4,6 +4,7 @@ import emailPropType from 'email-prop-type';
 import isRequiredIf from 'react-proptype-conditional-require';
 import mailtoLink from 'mailto-link';
 
+import propShim from '../propShim';
 import Hyperlink from '../Hyperlink';
 
 const MailtoLink = (props) => {
@@ -20,21 +21,21 @@ const MailtoLink = (props) => {
     ...other
   } = props;
 
-  const externalLinkAlternativeText = externalLink.alternativeLink;
-  const externalLinkTitle = externalLink.title;
   const destination = mailtoLink({
     to, cc, bcc, subject, body,
   });
 
-  return Hyperlink({
-    destination,
-    content,
+  const linkProps = {
     target,
     onClick,
-    externalLinkAlternativeText,
-    externalLinkTitle,
+    destination,
+    externalLinkAlternativeText: externalLink.alternativeLink,
+    externalLinkTitle: externalLink.title,
+    children: propShim(props, 'children', 'content', 'MailtoLink'),
     ...other,
-  });
+  };
+
+  return Hyperlink(linkProps);
 };
 
 MailtoLink.defaultProps = {
@@ -49,10 +50,14 @@ MailtoLink.defaultProps = {
     alternativeText: 'Opens in a new window',
     title: 'Opens in a new window',
   },
+  content: undefined,
+  children: undefined,
 };
 
 MailtoLink.propTypes = {
-  content: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  content: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  // Children should be marked required after removing content
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   to: PropTypes.oneOfType([PropTypes.arrayOf(emailPropType), emailPropType]),
   cc: PropTypes.oneOfType([PropTypes.arrayOf(emailPropType), emailPropType]),
   bcc: PropTypes.oneOfType([PropTypes.arrayOf(emailPropType), emailPropType]),

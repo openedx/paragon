@@ -9,7 +9,6 @@ const content = 'content';
 const destination = 'destination';
 const onClick = () => {};
 const props = {
-  content,
   destination,
   onClick,
 };
@@ -24,7 +23,7 @@ const externalLinkProps = {
 
 describe('correct rendering', () => {
   it('renders Hyperlink', () => {
-    const wrapper = shallow(<Hyperlink {...props} />);
+    const wrapper = shallow(<Hyperlink {...props}>{content}</Hyperlink>);
     expect(wrapper.type()).toEqual('a');
     expect(wrapper).toHaveLength(1);
 
@@ -38,7 +37,7 @@ describe('correct rendering', () => {
   });
 
   it('renders external Hyperlink', () => {
-    const wrapper = mount(<Hyperlink {...externalLinkProps} />);
+    const wrapper = mount(<Hyperlink {...externalLinkProps}>{content}</Hyperlink>);
 
     expect(wrapper.find('span')).toHaveLength(2);
 
@@ -58,7 +57,7 @@ describe('event handlers are triggered correctly', () => {
   beforeEach(() => { spy = jest.fn(); });
 
   it('should fire onClick', () => {
-    const wrapper = mount(<Hyperlink {...props} onClick={spy} />);
+    const wrapper = mount(<Hyperlink {...props} onClick={spy}>{content}</Hyperlink>);
     expect(spy).toHaveBeenCalledTimes(0);
     wrapper.simulate('click');
     expect(spy).toHaveBeenCalledTimes(1);

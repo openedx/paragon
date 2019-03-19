@@ -9,7 +9,7 @@ const subject = 'subject';
 const body = 'body';
 const content = 'content';
 
-const baseProps = { subject, body, content };
+const baseProps = { subject, body };
 
 describe('correct rendering', () => {
   it('renders MailtoLink with single to, cc, and bcc recipient', () => {
@@ -19,7 +19,9 @@ describe('correct rendering', () => {
         to={emailAddress}
         cc={emailAddress}
         bcc={emailAddress}
-      />
+      >
+        {content}
+      </MailtoLink>
     );
     const wrapper = shallow(singleRecipientLink);
 
@@ -33,7 +35,9 @@ describe('correct rendering', () => {
         to={emailAddresses}
         cc={emailAddresses}
         bcc={emailAddresses}
-      />
+      >
+        {content}
+      </MailtoLink>
     );
     const wrapper = shallow(multiRecipientLink);
 
@@ -41,7 +45,7 @@ describe('correct rendering', () => {
   });
 
   it('renders empty mailtoLink', () => {
-    const wrapper = shallow(<MailtoLink content={content} />);
+    const wrapper = shallow(<MailtoLink>{content}</MailtoLink>);
 
     expect(wrapper.prop('href')).toEqual('mailto:');
   });

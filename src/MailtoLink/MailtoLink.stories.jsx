@@ -15,45 +15,47 @@ const onClick = (event) => {
 storiesOf('MailtoLink', module)
   .addParameters({ info: { text: README } })
   .add('minimal usage', () => (
-    <MailtoLink
-      to="edx@example.com"
-      content="edx@example.com"
-    />
+    <MailtoLink to="edx@example.com">edx@example.com</MailtoLink>
   ))
   .add('with blank target', () => (
     <MailtoLink
       to="edx@example.com"
-      content="edx@example.com"
       target="_blank"
-    />
+    >
+      edx@example.com
+    </MailtoLink>
   ))
   .add('with onClick', () => (
     <MailtoLink
       to="edx@example.com"
-      content="edx@example.com"
       target="_blank"
       onClick={onClick}
-    />
+    >
+      edx@example.com
+    </MailtoLink>
   ))
   .add('with subject and body', () => (
     <MailtoLink
       to="edx@example.com"
       subject="Check out this mailto component!"
       body="This mailto component is awesome!"
-      content="email with subject and body"
-    />
+    >
+      email with subject and body
+    </MailtoLink>
   ))
   .add('with cc and bcc', () => (
     <MailtoLink
       cc="edx@example.com"
       bcc="edx@example.com"
-      content="Moar mail, this time with cc and bcc"
-    />
+    >
+      Moar mail, this time with cc and bcc
+    </MailtoLink>
   ))
   .add('with multiple cc and bcc', () => (
     <MailtoLink
       cc={['foo@example.com', 'bar@example.com', 'baz@example.com']}
       bcc={['foo@example.com', 'bar@example.com', 'baz@example.com']}
-      content="edx@example.com"
-    />
+    >
+      edx@example.com
+    </MailtoLink>
   ));

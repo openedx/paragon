@@ -18,30 +18,27 @@ const onClick = (event) => {
 
 storiesOf('HyperLink', module)
   .addParameters({ info: { text: README } })
-  .add('minimal usage', () => <Hyperlink destination="https://en.wikipedia.org/wiki/Hyperlink" content="edX.org" />)
+  .add('minimal usage', () => <Hyperlink destination="https://en.wikipedia.org/wiki/Hyperlink">edX.org</Hyperlink>)
   .add('with blank target', () => (
-    <Hyperlink
-      destination="https://www.edx.org"
-      content="edX.org"
-      target="_blank"
-    />
+    <Hyperlink destination="https://www.edx.org" target="_blank">edX.org</Hyperlink>
   ))
   .add('with onClick', () => (
     <Hyperlink
       destination="https://www.edx.org"
-      content="edX.org"
       target="_blank"
       onClick={onClick}
-    />
+    >
+      edX.org
+    </Hyperlink>
   ))
   .add('with icon as content', () => (
     <Hyperlink
       destination="https://www.edx.org"
-      content={(
-        <Icon
-          id="SampleIcon"
-          className={['fa', 'fa-book']}
-          screenReaderText="Visit edX Home"
-        />)}
-    />
+    >
+      <Icon
+        id="SampleIcon"
+        className={['fa', 'fa-book']}
+        screenReaderText="Visit edX Home"
+      />
+    </Hyperlink>
   ));

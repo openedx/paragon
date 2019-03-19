@@ -4,6 +4,8 @@ import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
 import PropTypes from 'prop-types';
 import isRequiredIf from 'react-proptype-conditional-require';
 
+import propShim from '../propShim';
+
 function Hyperlink(props) {
   const {
     destination,
@@ -37,7 +39,9 @@ function Hyperlink(props) {
       target={target}
       onClick={onClick}
       {...other}
-    >{content}{externalLinkIcon}
+    >
+      {propShim(props, 'children', 'content', 'Hyperlink')}
+      {externalLinkIcon}
     </a>
   );
 }
@@ -47,11 +51,14 @@ Hyperlink.defaultProps = {
   onClick: () => {},
   externalLinkAlternativeText: 'Opens in a new window',
   externalLinkTitle: 'Opens in a new window',
+  content: undefined,
+  children: undefined,
 };
 
 Hyperlink.propTypes = {
   destination: PropTypes.string.isRequired,
-  content: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  content: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   target: PropTypes.string,
   onClick: PropTypes.func,
   externalLinkAlternativeText: isRequiredIf(PropTypes.string, props => props.target === '_blank'),
