@@ -20,7 +20,6 @@ describe('<Icon />', () => {
       const iconSpans = wrapper.find('span');
       const iconSpan = iconSpans.at(0);
 
-      expect(iconSpan.prop('id')).toContain('Icon');
       expect(iconSpan.hasClass(classNames[0])).toEqual(true);
       expect(iconSpan.hasClass(classNames[1])).toEqual(true);
     });
@@ -30,7 +29,6 @@ describe('<Icon />', () => {
       const iconSpans = wrapper.find('span');
       const iconSpan = iconSpans.at(0);
 
-      expect(iconSpan.prop('id')).toContain('Icon');
       expect(iconSpan.hasClass(classNames[0])).toEqual(true);
       expect(iconSpan.hasClass(classNames[1])).toEqual(true);
     });

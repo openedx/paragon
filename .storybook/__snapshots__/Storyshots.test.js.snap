@@ -4257,22 +4257,22 @@ exports[`Storyshots CheckBox basic usage 1`] = `
             ]
           }
           disabled={false}
-          id="asInput3"
+          id="asInput2"
           name="checkbox"
           onChange={[Function]}
           type="checkbox"
         />
         <label
           className="form-check-label"
-          htmlFor="asInput3"
-          id="label-asInput3"
+          htmlFor="asInput2"
+          id="label-asInput2"
         >
           check me out!
         </label>
         <div
           aria-live="polite"
           className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput3"
+          id="error-asInput2"
         >
           <span />
         </div>
@@ -5722,22 +5722,22 @@ exports[`Storyshots CheckBox call a function 1`] = `
             ]
           }
           disabled={false}
-          id="asInput6"
+          id="asInput5"
           name="checkbox"
           onChange={[Function]}
           type="checkbox"
         />
         <label
           className="form-check-label"
-          htmlFor="asInput6"
-          id="label-asInput6"
+          htmlFor="asInput5"
+          id="label-asInput5"
         >
           check out the console
         </label>
         <div
           aria-live="polite"
           className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput6"
+          id="error-asInput5"
         >
           <span />
         </div>
@@ -7223,22 +7223,22 @@ exports[`Storyshots CheckBox controlled 1`] = `
               ]
             }
             disabled={false}
-            id="asInput7"
+            id="asInput6"
             name="checkbox"
             onChange={[Function]}
             type="checkbox"
           />
           <label
             className="form-check-label"
-            htmlFor="asInput7"
-            id="label-asInput7"
+            htmlFor="asInput6"
+            id="label-asInput6"
           >
             click the button
           </label>
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput7"
+            id="error-asInput6"
           >
             <span />
           </div>
@@ -7564,22 +7564,22 @@ exports[`Storyshots CheckBox default checked 1`] = `
             ]
           }
           disabled={false}
-          id="asInput5"
+          id="asInput4"
           name="checkbox"
           onChange={[Function]}
           type="checkbox"
         />
         <label
           className="form-check-label"
-          htmlFor="asInput5"
-          id="label-asInput5"
+          htmlFor="asInput4"
+          id="label-asInput4"
         >
           (un)check me out
         </label>
         <div
           aria-live="polite"
           className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput5"
+          id="error-asInput4"
         >
           <span />
         </div>
@@ -9037,22 +9037,22 @@ exports[`Storyshots CheckBox disabled 1`] = `
             ]
           }
           disabled={true}
-          id="asInput4"
+          id="asInput3"
           name="checkbox"
           onChange={[Function]}
           type="checkbox"
         />
         <label
           className="form-check-label"
-          htmlFor="asInput4"
-          id="label-asInput4"
+          htmlFor="asInput3"
+          id="label-asInput3"
         >
           you cannot check me out
         </label>
         <div
           aria-live="polite"
           className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput4"
+          id="error-asInput3"
         >
           <span />
         </div>
@@ -13739,7 +13739,7 @@ exports[`Storyshots Collapsible basic usage without resizing 1`] = `
             <span
               aria-hidden={true}
               className="ml-2 float-right collapsible-icon fa fa-angle-down"
-              id="Icon8"
+              id=""
             />
             Click me to expand
           </div>
@@ -14623,7 +14623,7 @@ exports[`Storyshots Collapsible fires onToggle callback when toggled 1`] = `
             <span
               aria-hidden={true}
               className="ml-2 float-right collapsible-icon fa fa-angle-down"
-              id="Icon11"
+              id=""
             />
             Click me to expand
           </div>
@@ -15533,7 +15533,7 @@ exports[`Storyshots Collapsible initially open collapsible 1`] = `
             <span
               aria-hidden={true}
               className="ml-2 float-right collapsible-icon fa fa-angle-up"
-              id="Icon10"
+              id=""
             />
             Click me to expand
           </div>
@@ -17920,7 +17920,6 @@ exports[`Storyshots Dropdown with icon element 1`] = `
           <span
             aria-hidden={true}
             className="fa fa-user px-3 rounded-left"
-            id="Icon1"
           />
         </div>
         <button
@@ -18773,7 +18772,7 @@ exports[`Storyshots Fieldset basic usage 1`] = `
           className="paragon-fieldset"
         >
           <fieldset
-            aria-describedby="error-fieldset12"
+            aria-describedby="error-fieldset7"
             className="form-control p-3 is-invalid-nodanger"
           >
             <legend
@@ -18786,18 +18785,18 @@ exports[`Storyshots Fieldset basic usage 1`] = `
             >
               <label
                 className=""
-                htmlFor="asInput13"
-                id="label-asInput13"
+                htmlFor="asInput8"
+                id="label-asInput8"
               >
                 First Name
               </label>
               <input
-                aria-describedby="error-asInput13"
+                aria-describedby="error-asInput8"
                 aria-invalid={false}
                 autoComplete="on"
                 className="form-control is-invalid-nodanger"
                 disabled={false}
-                id="asInput13"
+                id="asInput8"
                 name="firstName"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -18811,7 +18810,7 @@ exports[`Storyshots Fieldset basic usage 1`] = `
               <div
                 aria-live="polite"
                 className="invalid-feedback invalid-feedback-nodanger"
-                id="error-asInput13"
+                id="error-asInput8"
               >
                 <span />
               </div>
@@ -18821,18 +18820,18 @@ exports[`Storyshots Fieldset basic usage 1`] = `
             >
               <label
                 className=""
-                htmlFor="asInput14"
-                id="label-asInput14"
+                htmlFor="asInput9"
+                id="label-asInput9"
               >
                 Last Name
               </label>
               <input
-                aria-describedby="error-asInput14"
+                aria-describedby="error-asInput9"
                 aria-invalid={false}
                 autoComplete="on"
                 className="form-control is-invalid-nodanger"
                 disabled={false}
-                id="asInput14"
+                id="asInput9"
                 name="lastName"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -18846,7 +18845,7 @@ exports[`Storyshots Fieldset basic usage 1`] = `
               <div
                 aria-live="polite"
                 className="invalid-feedback invalid-feedback-nodanger"
-                id="error-asInput14"
+                id="error-asInput9"
               >
                 <span />
               </div>
@@ -18855,7 +18854,7 @@ exports[`Storyshots Fieldset basic usage 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-fieldset12"
+            id="error-fieldset7"
           >
             <span />
           </div>
@@ -21022,7 +21021,7 @@ exports[`Storyshots Fieldset client-side validation of fieldset 1`] = `
           className="paragon-fieldset"
         >
           <fieldset
-            aria-describedby="error-fieldset21"
+            aria-describedby="error-fieldset16"
             className="form-control p-3"
           >
             <legend
@@ -21035,18 +21034,18 @@ exports[`Storyshots Fieldset client-side validation of fieldset 1`] = `
             >
               <label
                 className=""
-                htmlFor="asInput22"
-                id="label-asInput22"
+                htmlFor="asInput17"
+                id="label-asInput17"
               >
                 First Name
               </label>
               <input
-                aria-describedby="error-asInput22"
+                aria-describedby="error-asInput17"
                 aria-invalid={false}
                 autoComplete="on"
                 className="form-control is-invalid-nodanger"
                 disabled={false}
-                id="asInput22"
+                id="asInput17"
                 name="firstName"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -21060,7 +21059,7 @@ exports[`Storyshots Fieldset client-side validation of fieldset 1`] = `
               <div
                 aria-live="polite"
                 className="invalid-feedback invalid-feedback-nodanger"
-                id="error-asInput22"
+                id="error-asInput17"
               >
                 <span />
               </div>
@@ -21070,18 +21069,18 @@ exports[`Storyshots Fieldset client-side validation of fieldset 1`] = `
             >
               <label
                 className=""
-                htmlFor="asInput23"
-                id="label-asInput23"
+                htmlFor="asInput18"
+                id="label-asInput18"
               >
                 Last Name
               </label>
               <input
-                aria-describedby="error-asInput23"
+                aria-describedby="error-asInput18"
                 aria-invalid={false}
                 autoComplete="on"
                 className="form-control is-invalid-nodanger"
                 disabled={false}
-                id="asInput23"
+                id="asInput18"
                 name="lastName"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -21095,7 +21094,7 @@ exports[`Storyshots Fieldset client-side validation of fieldset 1`] = `
               <div
                 aria-live="polite"
                 className="invalid-feedback invalid-feedback-nodanger"
-                id="error-asInput23"
+                id="error-asInput18"
               >
                 <span />
               </div>
@@ -21104,7 +21103,7 @@ exports[`Storyshots Fieldset client-side validation of fieldset 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback"
-            id="error-fieldset21"
+            id="error-fieldset16"
           >
             <span />
           </div>
@@ -21422,7 +21421,7 @@ exports[`Storyshots Fieldset invalid 1`] = `
           className="paragon-fieldset"
         >
           <fieldset
-            aria-describedby="error-fieldset15"
+            aria-describedby="error-fieldset10"
             className="form-control p-3 is-invalid is-invalid-nodanger"
           >
             <legend
@@ -21435,18 +21434,18 @@ exports[`Storyshots Fieldset invalid 1`] = `
             >
               <label
                 className=""
-                htmlFor="asInput16"
-                id="label-asInput16"
+                htmlFor="asInput11"
+                id="label-asInput11"
               >
                 First Name
               </label>
               <input
-                aria-describedby="error-asInput16"
+                aria-describedby="error-asInput11"
                 aria-invalid={false}
                 autoComplete="on"
                 className="form-control is-invalid-nodanger"
                 disabled={false}
-                id="asInput16"
+                id="asInput11"
                 name="firstName"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -21460,7 +21459,7 @@ exports[`Storyshots Fieldset invalid 1`] = `
               <div
                 aria-live="polite"
                 className="invalid-feedback invalid-feedback-nodanger"
-                id="error-asInput16"
+                id="error-asInput11"
               >
                 <span />
               </div>
@@ -21470,18 +21469,18 @@ exports[`Storyshots Fieldset invalid 1`] = `
             >
               <label
                 className=""
-                htmlFor="asInput17"
-                id="label-asInput17"
+                htmlFor="asInput12"
+                id="label-asInput12"
               >
                 Last Name
               </label>
               <input
-                aria-describedby="error-asInput17"
+                aria-describedby="error-asInput12"
                 aria-invalid={false}
                 autoComplete="on"
                 className="form-control is-invalid-nodanger"
                 disabled={false}
-                id="asInput17"
+                id="asInput12"
                 name="lastName"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -21495,7 +21494,7 @@ exports[`Storyshots Fieldset invalid 1`] = `
               <div
                 aria-live="polite"
                 className="invalid-feedback invalid-feedback-nodanger"
-                id="error-asInput17"
+                id="error-asInput12"
               >
                 <span />
               </div>
@@ -21504,7 +21503,7 @@ exports[`Storyshots Fieldset invalid 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-fieldset15"
+            id="error-fieldset10"
           >
             This is invalid!
           </div>
@@ -23722,7 +23721,7 @@ exports[`Storyshots Fieldset invalid with danger theme 1`] = `
           className="paragon-fieldset"
         >
           <fieldset
-            aria-describedby="error-fieldset18"
+            aria-describedby="error-fieldset13"
             className="form-control p-3 is-invalid"
           >
             <legend
@@ -23735,18 +23734,18 @@ exports[`Storyshots Fieldset invalid with danger theme 1`] = `
             >
               <label
                 className=""
-                htmlFor="asInput19"
-                id="label-asInput19"
+                htmlFor="asInput14"
+                id="label-asInput14"
               >
                 First Name
               </label>
               <input
-                aria-describedby="error-asInput19"
+                aria-describedby="error-asInput14"
                 aria-invalid={false}
                 autoComplete="on"
                 className="form-control is-invalid-nodanger"
                 disabled={false}
-                id="asInput19"
+                id="asInput14"
                 name="firstName"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -23760,7 +23759,7 @@ exports[`Storyshots Fieldset invalid with danger theme 1`] = `
               <div
                 aria-live="polite"
                 className="invalid-feedback invalid-feedback-nodanger"
-                id="error-asInput19"
+                id="error-asInput14"
               >
                 <span />
               </div>
@@ -23770,18 +23769,18 @@ exports[`Storyshots Fieldset invalid with danger theme 1`] = `
             >
               <label
                 className=""
-                htmlFor="asInput20"
-                id="label-asInput20"
+                htmlFor="asInput15"
+                id="label-asInput15"
               >
                 Last Name
               </label>
               <input
-                aria-describedby="error-asInput20"
+                aria-describedby="error-asInput15"
                 aria-invalid={false}
                 autoComplete="on"
                 className="form-control is-invalid-nodanger"
                 disabled={false}
-                id="asInput20"
+                id="asInput15"
                 name="lastName"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -23795,7 +23794,7 @@ exports[`Storyshots Fieldset invalid with danger theme 1`] = `
               <div
                 aria-live="polite"
                 className="invalid-feedback invalid-feedback-nodanger"
-                id="error-asInput20"
+                id="error-asInput15"
               >
                 <span />
               </div>
@@ -23804,7 +23803,7 @@ exports[`Storyshots Fieldset invalid with danger theme 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback"
-            id="error-fieldset18"
+            id="error-fieldset13"
           >
             <span
               aria-hidden={true}
@@ -26322,90 +26321,103 @@ exports[`Storyshots HyperLink minimal usage 1`] = `
               }
             >
               <div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 18,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
+                <div>
+                  <div
                     style={
                       Object {
-                        "color": "#444",
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
                       }
                     }
                   >
-                    &lt;
-                    Hyperlink
-                  </span>
-                  <span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;
+                      Hyperlink
+                    </span>
                     <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        destination
-                      </span>
                       <span>
-                        =
+                         
                         <span
                           style={Object {}}
                         >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            https://en.wikipedia.org/wiki/Hyperlink
-                          </span>
-                          "
+                          destination
                         </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              https://en.wikipedia.org/wiki/Hyperlink
+                            </span>
+                            "
+                          </span>
+                        </span>
+                        
                       </span>
                     </span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        content
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            edX.org
-                          </span>
-                          "
-                        </span>
-                      </span>
-                       
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &gt;
                     </span>
-                  </span>
-                  <span
+                  </div>
+                  <div
                     style={
                       Object {
-                        "color": "#444",
+                        "paddingLeft": 33,
+                        "paddingRight": 3,
                       }
                     }
                   >
-                    /&gt;
-                  </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      edX.org
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;/
+                      Hyperlink
+                      &gt;
+                    </span>
+                  </div>
                 </div>
               </div>
               <button
@@ -26596,7 +26608,59 @@ exports[`Storyshots HyperLink minimal usage 1`] = `
                         }
                       }
                     >
-                      yes
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    />
+                  </tr>
+                  <tr>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      children
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
                     </td>
                     <td
                       style={
@@ -27071,117 +27135,130 @@ exports[`Storyshots HyperLink with blank target 1`] = `
               }
             >
               <div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 18,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
+                <div>
+                  <div
                     style={
                       Object {
-                        "color": "#444",
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
                       }
                     }
                   >
-                    &lt;
-                    Hyperlink
-                  </span>
-                  <span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;
+                      Hyperlink
+                    </span>
                     <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        destination
-                      </span>
                       <span>
-                        =
+                         
                         <span
                           style={Object {}}
                         >
-                          "
+                          destination
+                        </span>
+                        <span>
+                          =
                           <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
+                            style={Object {}}
                           >
-                            https://www.edx.org
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              https://www.edx.org
+                            </span>
+                            "
                           </span>
-                          "
                         </span>
                       </span>
-                    </span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        content
-                      </span>
                       <span>
-                        =
+                         
                         <span
                           style={Object {}}
                         >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            edX.org
-                          </span>
-                          "
+                          target
                         </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              _blank
+                            </span>
+                            "
+                          </span>
+                        </span>
+                        
                       </span>
                     </span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        target
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            _blank
-                          </span>
-                          "
-                        </span>
-                      </span>
-                       
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &gt;
                     </span>
-                  </span>
-                  <span
+                  </div>
+                  <div
                     style={
                       Object {
-                        "color": "#444",
+                        "paddingLeft": 33,
+                        "paddingRight": 3,
                       }
                     }
                   >
-                    /&gt;
-                  </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      edX.org
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;/
+                      Hyperlink
+                      &gt;
+                    </span>
+                  </div>
                 </div>
               </div>
               <button
@@ -27372,7 +27449,59 @@ exports[`Storyshots HyperLink with blank target 1`] = `
                         }
                       }
                     >
-                      yes
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    />
+                  </tr>
+                  <tr>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      children
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
                     </td>
                     <td
                       style={
@@ -27847,89 +27976,222 @@ exports[`Storyshots HyperLink with icon as content 1`] = `
               }
             >
               <div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 18,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
+                <div>
+                  <div
                     style={
                       Object {
-                        "color": "#444",
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
                       }
                     }
                   >
-                    &lt;
-                    Hyperlink
-                  </span>
-                  <span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;
+                      Hyperlink
+                    </span>
                     <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        destination
-                      </span>
                       <span>
-                        =
+                         
                         <span
                           style={Object {}}
                         >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            https://www.edx.org
-                          </span>
-                          "
+                          destination
                         </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              https://www.edx.org
+                            </span>
+                            "
+                          </span>
+                        </span>
+                        
                       </span>
                     </span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        content
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          {
-                          <span
-                            style={
-                              Object {
-                                "color": "#666",
-                              }
-                            }
-                          >
-                            &lt;Icon /&gt;
-                          </span>
-                          }
-                        </span>
-                      </span>
-                       
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &gt;
                     </span>
-                  </span>
-                  <span
+                  </div>
+                  <div
                     style={
                       Object {
-                        "color": "#444",
+                        "paddingLeft": 33,
+                        "paddingRight": 3,
                       }
                     }
                   >
-                    /&gt;
-                  </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;
+                      Icon
+                    </span>
+                    <span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          id
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              SampleIcon
+                            </span>
+                            "
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          className
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              [
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'fa'
+                                </span>
+                              </span>
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'fa-book'
+                                </span>
+                              </span>
+                              ]
+                            </span>
+                            }
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          screenReaderText
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              Visit edX Home
+                            </span>
+                            "
+                          </span>
+                        </span>
+                         
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;/
+                      Hyperlink
+                      &gt;
+                    </span>
+                  </div>
                 </div>
               </div>
               <button
@@ -28120,7 +28382,59 @@ exports[`Storyshots HyperLink with icon as content 1`] = `
                         }
                       }
                     >
-                      yes
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    />
+                  </tr>
+                  <tr>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      children
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
                     </td>
                     <td
                       style={
@@ -28347,6 +28661,235 @@ exports[`Storyshots HyperLink with icon as content 1`] = `
                       <span>
                         Opens in a new window
                       </span>
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    />
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div>
+              <h3
+                style={
+                  Object {
+                    "margin": "20px 0 0 0",
+                  }
+                }
+              >
+                "
+                Icon
+                " Component
+              </h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th
+                      style={
+                        Object {
+                          "textAlign": "left",
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      property
+                    </th>
+                    <th
+                      style={
+                        Object {
+                          "textAlign": "left",
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      propType
+                    </th>
+                    <th
+                      style={
+                        Object {
+                          "textAlign": "left",
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      required
+                    </th>
+                    <th
+                      style={
+                        Object {
+                          "textAlign": "left",
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      default
+                    </th>
+                    <th
+                      style={
+                        Object {
+                          "textAlign": "left",
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      description
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      className
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      yes
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    />
+                  </tr>
+                  <tr>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      hidden
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      <span>
+                        bool
+                      </span>
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      <span>
+                        true
+                      </span>
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    />
+                  </tr>
+                  <tr>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      screenReaderText
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
                     </td>
                     <td
                       style={
@@ -28595,155 +29138,156 @@ exports[`Storyshots HyperLink with onClick 1`] = `
               }
             >
               <div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 18,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
+                <div>
+                  <div
                     style={
                       Object {
-                        "color": "#444",
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
                       }
                     }
                   >
-                    &lt;
-                    Hyperlink
-                  </span>
-                  <span>
-                    <span>
-                      <span>
-                        <br />
-                          
-                      </span>
-                      <span
-                        style={Object {}}
-                      >
-                        destination
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            https://www.edx.org
-                          </span>
-                          "
-                        </span>
-                      </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;
+                      Hyperlink
                     </span>
                     <span>
                       <span>
-                        <br />
-                          
-                      </span>
-                      <span
-                        style={Object {}}
-                      >
-                        content
-                      </span>
-                      <span>
-                        =
+                         
                         <span
                           style={Object {}}
                         >
-                          "
+                          destination
+                        </span>
+                        <span>
+                          =
                           <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
+                            style={Object {}}
                           >
-                            edX.org
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              https://www.edx.org
+                            </span>
+                            "
                           </span>
-                          "
                         </span>
                       </span>
-                    </span>
-                    <span>
                       <span>
-                        <br />
-                          
-                      </span>
-                      <span
-                        style={Object {}}
-                      >
-                        target
-                      </span>
-                      <span>
-                        =
+                         
                         <span
                           style={Object {}}
                         >
-                          "
+                          target
+                        </span>
+                        <span>
+                          =
                           <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
+                            style={Object {}}
                           >
-                            _blank
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              _blank
+                            </span>
+                            "
                           </span>
-                          "
                         </span>
                       </span>
-                    </span>
-                    <span>
                       <span>
-                        <br />
-                          
-                      </span>
-                      <span
-                        style={Object {}}
-                      >
-                        onClick
-                      </span>
-                      <span>
-                        =
+                         
                         <span
                           style={Object {}}
                         >
-                          {
-                          <span
-                            style={
-                              Object {
-                                "color": "#170",
-                              }
-                            }
-                          >
-                            onClick
-                          </span>
-                          }
+                          onClick
                         </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#170",
+                                }
+                              }
+                            >
+                              onClick
+                            </span>
+                            }
+                          </span>
+                        </span>
+                        
                       </span>
-                      <br />
                     </span>
-                  </span>
-                  <span
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &gt;
+                    </span>
+                  </div>
+                  <div
                     style={
                       Object {
-                        "color": "#444",
+                        "paddingLeft": 33,
+                        "paddingRight": 3,
                       }
                     }
                   >
-                    /&gt;
-                  </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      edX.org
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;/
+                      Hyperlink
+                      &gt;
+                    </span>
+                  </div>
                 </div>
               </div>
               <button
@@ -28934,7 +29478,59 @@ exports[`Storyshots HyperLink with onClick 1`] = `
                         }
                       }
                     >
-                      yes
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    />
+                  </tr>
+                  <tr>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      children
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
                     </td>
                     <td
                       style={
@@ -29198,7 +29794,6 @@ exports[`Storyshots Icon basic usage 1`] = `
       <span
         aria-hidden={true}
         className="fa fa-birthday-cake fa-4x"
-        id="Icon1"
       />
     </div>
     <button
@@ -29581,60 +30176,6 @@ exports[`Storyshots Icon basic usage 1`] = `
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td
-                      style={
-                        Object {
-                          "paddingRight": 10,
-                          "verticalAlign": "top",
-                        }
-                      }
-                    >
-                      id
-                    </td>
-                    <td
-                      style={
-                        Object {
-                          "paddingRight": 10,
-                          "verticalAlign": "top",
-                        }
-                      }
-                    >
-                      <span>
-                        string
-                      </span>
-                    </td>
-                    <td
-                      style={
-                        Object {
-                          "paddingRight": 10,
-                          "verticalAlign": "top",
-                        }
-                      }
-                    >
-                      -
-                    </td>
-                    <td
-                      style={
-                        Object {
-                          "paddingRight": 10,
-                          "verticalAlign": "top",
-                        }
-                      }
-                    >
-                      <span>
-                        Icon1
-                      </span>
-                    </td>
-                    <td
-                      style={
-                        Object {
-                          "paddingRight": 10,
-                          "verticalAlign": "top",
-                        }
-                      }
-                    />
-                  </tr>
                   <tr>
                     <td
                       style={
@@ -30271,60 +30812,6 @@ exports[`Storyshots Icon with screenreader text 1`] = `
                         }
                       }
                     >
-                      id
-                    </td>
-                    <td
-                      style={
-                        Object {
-                          "paddingRight": 10,
-                          "verticalAlign": "top",
-                        }
-                      }
-                    >
-                      <span>
-                        string
-                      </span>
-                    </td>
-                    <td
-                      style={
-                        Object {
-                          "paddingRight": 10,
-                          "verticalAlign": "top",
-                        }
-                      }
-                    >
-                      -
-                    </td>
-                    <td
-                      style={
-                        Object {
-                          "paddingRight": 10,
-                          "verticalAlign": "top",
-                        }
-                      }
-                    >
-                      <span>
-                        Icon1
-                      </span>
-                    </td>
-                    <td
-                      style={
-                        Object {
-                          "paddingRight": 10,
-                          "verticalAlign": "top",
-                        }
-                      }
-                    />
-                  </tr>
-                  <tr>
-                    <td
-                      style={
-                        Object {
-                          "paddingRight": 10,
-                          "verticalAlign": "top",
-                        }
-                      }
-                    >
                       className
                     </td>
                     <td
@@ -30503,16 +30990,16 @@ exports[`Storyshots InputSelect basic usage 1`] = `
       >
         <label
           className=""
-          htmlFor="asInput24"
-          id="label-asInput24"
+          htmlFor="asInput19"
+          id="label-asInput19"
         >
           Fruits
         </label>
         <select
-          aria-describedby="error-asInput24"
+          aria-describedby="error-asInput19"
           className="form-control is-invalid-nodanger"
           disabled={false}
-          id="asInput24"
+          id="asInput19"
           name="fruits"
           onBlur={[Function]}
           onChange={[Function]}
@@ -30544,7 +31031,7 @@ exports[`Storyshots InputSelect basic usage 1`] = `
         <div
           aria-live="polite"
           className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput24"
+          id="error-asInput19"
         >
           <span />
         </div>
@@ -32142,17 +32629,17 @@ exports[`Storyshots InputSelect disabled usage 1`] = `
       >
         <label
           className=""
-          htmlFor="asInput28"
-          id="label-asInput28"
+          htmlFor="asInput23"
+          id="label-asInput23"
         >
           Fruits
         </label>
         <select
-          aria-describedby="error-asInput28"
+          aria-describedby="error-asInput23"
           aria-label="Fruits"
           className="form-control is-invalid-nodanger"
           disabled={true}
-          id="asInput28"
+          id="asInput23"
           name="fruits"
           onBlur={[Function]}
           onChange={[Function]}
@@ -32184,7 +32671,7 @@ exports[`Storyshots InputSelect disabled usage 1`] = `
         <div
           aria-live="polite"
           className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput28"
+          id="error-asInput23"
         >
           <span />
         </div>
@@ -33823,16 +34310,16 @@ exports[`Storyshots InputSelect separate labels and values 1`] = `
       >
         <label
           className=""
-          htmlFor="asInput25"
-          id="label-asInput25"
+          htmlFor="asInput20"
+          id="label-asInput20"
         >
           New England States
         </label>
         <select
-          aria-describedby="error-asInput25"
+          aria-describedby="error-asInput20"
           className="form-control is-invalid-nodanger"
           disabled={false}
-          id="asInput25"
+          id="asInput20"
           name="new-england-states"
           onBlur={[Function]}
           onChange={[Function]}
@@ -33874,7 +34361,7 @@ exports[`Storyshots InputSelect separate labels and values 1`] = `
         <div
           aria-live="polite"
           className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput25"
+          id="error-asInput20"
         >
           <span />
         </div>
@@ -35607,16 +36094,16 @@ exports[`Storyshots InputSelect separate option groups 1`] = `
       >
         <label
           className=""
-          htmlFor="asInput26"
-          id="label-asInput26"
+          htmlFor="asInput21"
+          id="label-asInput21"
         >
           Northeast States
         </label>
         <select
-          aria-describedby="error-asInput26"
+          aria-describedby="error-asInput21"
           className="form-control is-invalid-nodanger"
           disabled={false}
-          id="asInput26"
+          id="asInput21"
           name="northeast-states"
           onBlur={[Function]}
           onChange={[Function]}
@@ -35706,7 +36193,7 @@ exports[`Storyshots InputSelect separate option groups 1`] = `
         <div
           aria-live="polite"
           className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput26"
+          id="error-asInput21"
         >
           <span />
         </div>
@@ -37755,16 +38242,16 @@ exports[`Storyshots InputSelect with disabled option 1`] = `
       >
         <label
           className=""
-          htmlFor="asInput29"
-          id="label-asInput29"
+          htmlFor="asInput24"
+          id="label-asInput24"
         >
           Fruits
         </label>
         <select
-          aria-describedby="error-asInput29"
+          aria-describedby="error-asInput24"
           className="form-control is-invalid-nodanger"
           disabled={false}
-          id="asInput29"
+          id="asInput24"
           name="fruits"
           onBlur={[Function]}
           onChange={[Function]}
@@ -37793,7 +38280,7 @@ exports[`Storyshots InputSelect with disabled option 1`] = `
         <div
           aria-live="polite"
           className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput29"
+          id="error-asInput24"
         >
           <span />
         </div>
@@ -39542,16 +40029,16 @@ exports[`Storyshots InputSelect with validation 1`] = `
       >
         <label
           className=""
-          htmlFor="asInput27"
-          id="label-asInput27"
+          htmlFor="asInput22"
+          id="label-asInput22"
         >
           Favorite Color
         </label>
         <select
-          aria-describedby="error-asInput27"
+          aria-describedby="error-asInput22"
           className="form-control is-invalid-nodanger"
           disabled={false}
-          id="asInput27"
+          id="asInput22"
           name="color"
           onBlur={[Function]}
           onChange={[Function]}
@@ -39598,7 +40085,7 @@ exports[`Storyshots InputSelect with validation 1`] = `
         <div
           aria-live="polite"
           className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput27"
+          id="error-asInput22"
         >
           <span />
         </div>
@@ -45198,18 +45685,18 @@ exports[`Storyshots InputText displayed inline 1`] = `
       >
         <label
           className=""
-          htmlFor="asInput34"
-          id="label-asInput34"
+          htmlFor="asInput29"
+          id="label-asInput29"
         >
           Username
         </label>
         <input
-          aria-describedby="error-asInput34"
+          aria-describedby="error-asInput29"
           aria-invalid={false}
           autoComplete="on"
           className="form-control is-invalid-nodanger"
           disabled={false}
-          id="asInput34"
+          id="asInput29"
           name="username"
           onBlur={[Function]}
           onChange={[Function]}
@@ -45223,7 +45710,7 @@ exports[`Storyshots InputText displayed inline 1`] = `
         <div
           aria-live="polite"
           className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput34"
+          id="error-asInput29"
         >
           <span />
         </div>
@@ -47105,8 +47592,8 @@ exports[`Storyshots InputText label as element 1`] = `
       >
         <label
           className=""
-          htmlFor="asInput33"
-          id="label-asInput33"
+          htmlFor="asInput28"
+          id="label-asInput28"
         >
           <span
             lang="en"
@@ -47115,12 +47602,12 @@ exports[`Storyshots InputText label as element 1`] = `
           </span>
         </label>
         <input
-          aria-describedby="error-asInput33"
+          aria-describedby="error-asInput28"
           aria-invalid={false}
           autoComplete="on"
           className="form-control is-invalid-nodanger"
           disabled={false}
-          id="asInput33"
+          id="asInput28"
           name="username"
           onBlur={[Function]}
           onChange={[Function]}
@@ -47134,7 +47621,7 @@ exports[`Storyshots InputText label as element 1`] = `
         <div
           aria-live="polite"
           className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput33"
+          id="error-asInput28"
         >
           <span />
         </div>
@@ -48614,18 +49101,18 @@ exports[`Storyshots InputText minimal usage 1`] = `
       >
         <label
           className=""
-          htmlFor="asInput30"
-          id="label-asInput30"
+          htmlFor="asInput25"
+          id="label-asInput25"
         >
           First Name
         </label>
         <input
-          aria-describedby="error-asInput30"
+          aria-describedby="error-asInput25"
           aria-invalid={false}
           autoComplete="on"
           className="form-control is-invalid-nodanger"
           disabled={false}
-          id="asInput30"
+          id="asInput25"
           name="name"
           onBlur={[Function]}
           onChange={[Function]}
@@ -48639,7 +49126,7 @@ exports[`Storyshots InputText minimal usage 1`] = `
         <div
           aria-live="polite"
           className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput30"
+          id="error-asInput25"
         >
           <span />
         </div>
@@ -50120,18 +50607,18 @@ exports[`Storyshots InputText read only 1`] = `
       >
         <label
           className=""
-          htmlFor="asInput31"
-          id="label-asInput31"
+          htmlFor="asInput26"
+          id="label-asInput26"
         >
           Input State
         </label>
         <input
-          aria-describedby="error-asInput31"
+          aria-describedby="error-asInput26"
           aria-invalid={false}
           autoComplete="on"
           className="form-control is-invalid-nodanger"
           disabled={false}
-          id="asInput31"
+          id="asInput26"
           name="inputState"
           onBlur={[Function]}
           onChange={[Function]}
@@ -50145,7 +50632,7 @@ exports[`Storyshots InputText read only 1`] = `
         <div
           aria-live="polite"
           className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput31"
+          id="error-asInput26"
         >
           <span />
         </div>
@@ -53226,18 +53713,18 @@ exports[`Storyshots InputText validation with danger theme 1`] = `
       >
         <label
           className=""
-          htmlFor="asInput32"
-          id="label-asInput32"
+          htmlFor="asInput27"
+          id="label-asInput27"
         >
           Username
         </label>
         <input
-          aria-describedby="error-asInput32 description-asInput32"
+          aria-describedby="error-asInput27 description-asInput27"
           aria-invalid={false}
           autoComplete="on"
           className="form-control"
           disabled={false}
-          id="asInput32"
+          id="asInput27"
           name="username"
           onBlur={[Function]}
           onChange={[Function]}
@@ -53255,13 +53742,13 @@ exports[`Storyshots InputText validation with danger theme 1`] = `
         <div
           aria-live="polite"
           className="invalid-feedback"
-          id="error-asInput32"
+          id="error-asInput27"
         >
           <span />
         </div>
         <small
           className="form-text"
-          id="description-asInput32"
+          id="description-asInput27"
         >
           The unique name that identifies you throughout the site.
         </small>
@@ -54823,8 +55310,8 @@ exports[`Storyshots InputText with input group addons 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput35"
-            id="label-asInput35"
+            htmlFor="asInput30"
+            id="label-asInput30"
           >
             Username
           </label>
@@ -54841,12 +55328,12 @@ exports[`Storyshots InputText with input group addons 1`] = `
               </div>
             </div>
             <input
-              aria-describedby="error-asInput35"
+              aria-describedby="error-asInput30"
               aria-invalid={false}
               autoComplete="on"
               className="form-control is-invalid-nodanger"
               disabled={false}
-              id="asInput35"
+              id="asInput30"
               name="username"
               onBlur={[Function]}
               onChange={[Function]}
@@ -54864,7 +55351,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput35"
+            id="error-asInput30"
           >
             <span />
           </div>
@@ -54874,8 +55361,8 @@ exports[`Storyshots InputText with input group addons 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput36"
-            id="label-asInput36"
+            htmlFor="asInput31"
+            id="label-asInput31"
           >
             Username
           </label>
@@ -54886,12 +55373,12 @@ exports[`Storyshots InputText with input group addons 1`] = `
               className="input-group-prepend"
             />
             <input
-              aria-describedby="error-asInput36"
+              aria-describedby="error-asInput31"
               aria-invalid={false}
               autoComplete="on"
               className="form-control is-invalid-nodanger"
               disabled={false}
-              id="asInput36"
+              id="asInput31"
               name="username"
               onBlur={[Function]}
               onChange={[Function]}
@@ -54915,7 +55402,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput36"
+            id="error-asInput31"
           >
             <span />
           </div>
@@ -54925,8 +55412,8 @@ exports[`Storyshots InputText with input group addons 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput37"
-            id="label-asInput37"
+            htmlFor="asInput32"
+            id="label-asInput32"
           >
             Money
           </label>
@@ -54943,12 +55430,12 @@ exports[`Storyshots InputText with input group addons 1`] = `
               </div>
             </div>
             <input
-              aria-describedby="error-asInput37"
+              aria-describedby="error-asInput32"
               aria-invalid={false}
               autoComplete="on"
               className="form-control is-invalid-nodanger"
               disabled={false}
-              id="asInput37"
+              id="asInput32"
               name="money"
               onBlur={[Function]}
               onChange={[Function]}
@@ -54972,7 +55459,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput37"
+            id="error-asInput32"
           >
             <span />
           </div>
@@ -54982,8 +55469,8 @@ exports[`Storyshots InputText with input group addons 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput38"
-            id="label-asInput38"
+            htmlFor="asInput33"
+            id="label-asInput33"
           >
             Search
           </label>
@@ -54994,12 +55481,12 @@ exports[`Storyshots InputText with input group addons 1`] = `
               className="input-group-prepend"
             />
             <input
-              aria-describedby="error-asInput38"
+              aria-describedby="error-asInput33"
               aria-invalid={false}
               autoComplete="on"
               className="form-control is-invalid-nodanger"
               disabled={false}
-              id="asInput38"
+              id="asInput33"
               name="search"
               onBlur={[Function]}
               onChange={[Function]}
@@ -55027,7 +55514,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput38"
+            id="error-asInput33"
           >
             <span />
           </div>
@@ -55037,8 +55524,8 @@ exports[`Storyshots InputText with input group addons 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput39"
-            id="label-asInput39"
+            htmlFor="asInput34"
+            id="label-asInput34"
           >
             Username
           </label>
@@ -55049,12 +55536,12 @@ exports[`Storyshots InputText with input group addons 1`] = `
               className="input-group-prepend"
             />
             <input
-              aria-describedby="error-asInput39"
+              aria-describedby="error-asInput34"
               aria-invalid={false}
               autoComplete="on"
               className="form-control is-invalid-nodanger"
               disabled={false}
-              id="asInput39"
+              id="asInput34"
               name="username"
               onBlur={[Function]}
               onChange={[Function]}
@@ -55096,7 +55583,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput39"
+            id="error-asInput34"
           >
             <span />
           </div>
@@ -55106,8 +55593,8 @@ exports[`Storyshots InputText with input group addons 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput40"
-            id="label-asInput40"
+            htmlFor="asInput35"
+            id="label-asInput35"
           >
             Password
           </label>
@@ -55118,12 +55605,12 @@ exports[`Storyshots InputText with input group addons 1`] = `
               className="input-group-prepend"
             />
             <input
-              aria-describedby="error-asInput40"
+              aria-describedby="error-asInput35"
               aria-invalid={false}
               autoComplete="on"
               className="form-control is-invalid-nodanger"
               disabled={false}
-              id="asInput40"
+              id="asInput35"
               name="password"
               onBlur={[Function]}
               onChange={[Function]}
@@ -55156,7 +55643,7 @@ exports[`Storyshots InputText with input group addons 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput40"
+            id="error-asInput35"
           >
             <span />
           </div>
@@ -61241,90 +61728,103 @@ exports[`Storyshots MailtoLink minimal usage 1`] = `
               }
             >
               <div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 18,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
+                <div>
+                  <div
                     style={
                       Object {
-                        "color": "#444",
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
                       }
                     }
                   >
-                    &lt;
-                    MailtoLink
-                  </span>
-                  <span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;
+                      MailtoLink
+                    </span>
                     <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        to
-                      </span>
                       <span>
-                        =
+                         
                         <span
                           style={Object {}}
                         >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            edx@example.com
-                          </span>
-                          "
+                          to
                         </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              edx@example.com
+                            </span>
+                            "
+                          </span>
+                        </span>
+                        
                       </span>
                     </span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        content
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            edx@example.com
-                          </span>
-                          "
-                        </span>
-                      </span>
-                       
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &gt;
                     </span>
-                  </span>
-                  <span
+                  </div>
+                  <div
                     style={
                       Object {
-                        "color": "#444",
+                        "paddingLeft": 33,
+                        "paddingRight": 3,
                       }
                     }
                   >
-                    /&gt;
-                  </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      edx@example.com
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;/
+                      MailtoLink
+                      &gt;
+                    </span>
+                  </div>
                 </div>
               </div>
               <button
@@ -61463,7 +61963,59 @@ exports[`Storyshots MailtoLink minimal usage 1`] = `
                         }
                       }
                     >
-                      yes
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    />
+                  </tr>
+                  <tr>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      children
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
                     </td>
                     <td
                       style={
@@ -62166,117 +62718,130 @@ exports[`Storyshots MailtoLink with blank target 1`] = `
               }
             >
               <div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 18,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
+                <div>
+                  <div
                     style={
                       Object {
-                        "color": "#444",
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
                       }
                     }
                   >
-                    &lt;
-                    MailtoLink
-                  </span>
-                  <span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;
+                      MailtoLink
+                    </span>
                     <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        to
-                      </span>
                       <span>
-                        =
+                         
                         <span
                           style={Object {}}
                         >
-                          "
+                          to
+                        </span>
+                        <span>
+                          =
                           <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
+                            style={Object {}}
                           >
-                            edx@example.com
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              edx@example.com
+                            </span>
+                            "
                           </span>
-                          "
                         </span>
                       </span>
-                    </span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        content
-                      </span>
                       <span>
-                        =
+                         
                         <span
                           style={Object {}}
                         >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            edx@example.com
-                          </span>
-                          "
+                          target
                         </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              _blank
+                            </span>
+                            "
+                          </span>
+                        </span>
+                        
                       </span>
                     </span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        target
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            _blank
-                          </span>
-                          "
-                        </span>
-                      </span>
-                       
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &gt;
                     </span>
-                  </span>
-                  <span
+                  </div>
+                  <div
                     style={
                       Object {
-                        "color": "#444",
+                        "paddingLeft": 33,
+                        "paddingRight": 3,
                       }
                     }
                   >
-                    /&gt;
-                  </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      edx@example.com
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;/
+                      MailtoLink
+                      &gt;
+                    </span>
+                  </div>
                 </div>
               </div>
               <button
@@ -62415,7 +62980,59 @@ exports[`Storyshots MailtoLink with blank target 1`] = `
                         }
                       }
                     >
-                      yes
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    />
+                  </tr>
+                  <tr>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      children
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
                     </td>
                     <td
                       style={
@@ -63110,117 +63727,130 @@ exports[`Storyshots MailtoLink with cc and bcc 1`] = `
               }
             >
               <div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 18,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
+                <div>
+                  <div
                     style={
                       Object {
-                        "color": "#444",
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
                       }
                     }
                   >
-                    &lt;
-                    MailtoLink
-                  </span>
-                  <span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;
+                      MailtoLink
+                    </span>
                     <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        cc
-                      </span>
                       <span>
-                        =
+                         
                         <span
                           style={Object {}}
                         >
-                          "
+                          cc
+                        </span>
+                        <span>
+                          =
                           <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
+                            style={Object {}}
                           >
-                            edx@example.com
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              edx@example.com
+                            </span>
+                            "
                           </span>
-                          "
                         </span>
                       </span>
-                    </span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        bcc
-                      </span>
                       <span>
-                        =
+                         
                         <span
                           style={Object {}}
                         >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            edx@example.com
-                          </span>
-                          "
+                          bcc
                         </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              edx@example.com
+                            </span>
+                            "
+                          </span>
+                        </span>
+                        
                       </span>
                     </span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        content
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            Moar mail, this time with cc and bcc
-                          </span>
-                          "
-                        </span>
-                      </span>
-                       
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &gt;
                     </span>
-                  </span>
-                  <span
+                  </div>
+                  <div
                     style={
                       Object {
-                        "color": "#444",
+                        "paddingLeft": 33,
+                        "paddingRight": 3,
                       }
                     }
                   >
-                    /&gt;
-                  </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      Moar mail, this time with cc and bcc
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;/
+                      MailtoLink
+                      &gt;
+                    </span>
+                  </div>
                 </div>
               </div>
               <button
@@ -63359,7 +63989,59 @@ exports[`Storyshots MailtoLink with cc and bcc 1`] = `
                         }
                       }
                     >
-                      yes
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    />
+                  </tr>
+                  <tr>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      children
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
                     </td>
                     <td
                       style={
@@ -64054,193 +64736,206 @@ exports[`Storyshots MailtoLink with multiple cc and bcc 1`] = `
               }
             >
               <div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 18,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
+                <div>
+                  <div
                     style={
                       Object {
-                        "color": "#444",
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
                       }
                     }
                   >
-                    &lt;
-                    MailtoLink
-                  </span>
-                  <span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;
+                      MailtoLink
+                    </span>
                     <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        cc
-                      </span>
                       <span>
-                        =
+                         
                         <span
                           style={Object {}}
                         >
-                          {
+                          cc
+                        </span>
+                        <span>
+                          =
                           <span
-                            style={
-                              Object {
-                                "color": "#666",
-                              }
-                            }
+                            style={Object {}}
                           >
-                            [
-                            <span>
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
                                 }
-                              >
-                                'foo@example.com'
-                              </span>
-                            </span>
-                            ,
-                            <span>
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
+                              }
+                            >
+                              [
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
                                   }
-                                }
-                              >
-                                'bar@example.com'
+                                >
+                                  'foo@example.com'
+                                </span>
                               </span>
-                            </span>
-                            ,
-                            <span>
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
                                   }
-                                }
-                              >
-                                'baz@example.com'
+                                >
+                                  'bar@example.com'
+                                </span>
                               </span>
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'baz@example.com'
+                                </span>
+                              </span>
+                              ]
                             </span>
-                            ]
+                            }
                           </span>
-                          }
                         </span>
                       </span>
-                    </span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        bcc
-                      </span>
                       <span>
-                        =
+                         
                         <span
                           style={Object {}}
                         >
-                          {
-                          <span
-                            style={
-                              Object {
-                                "color": "#666",
-                              }
-                            }
-                          >
-                            [
-                            <span>
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'foo@example.com'
-                              </span>
-                            </span>
-                            ,
-                            <span>
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'bar@example.com'
-                              </span>
-                            </span>
-                            ,
-                            <span>
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'baz@example.com'
-                              </span>
-                            </span>
-                            ]
-                          </span>
-                          }
+                          bcc
                         </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              [
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'foo@example.com'
+                                </span>
+                              </span>
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'bar@example.com'
+                                </span>
+                              </span>
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'baz@example.com'
+                                </span>
+                              </span>
+                              ]
+                            </span>
+                            }
+                          </span>
+                        </span>
+                        
                       </span>
                     </span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        content
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            edx@example.com
-                          </span>
-                          "
-                        </span>
-                      </span>
-                       
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &gt;
                     </span>
-                  </span>
-                  <span
+                  </div>
+                  <div
                     style={
                       Object {
-                        "color": "#444",
+                        "paddingLeft": 33,
+                        "paddingRight": 3,
                       }
                     }
                   >
-                    /&gt;
-                  </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      edx@example.com
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;/
+                      MailtoLink
+                      &gt;
+                    </span>
+                  </div>
                 </div>
               </div>
               <button
@@ -64379,7 +65074,59 @@ exports[`Storyshots MailtoLink with multiple cc and bcc 1`] = `
                         }
                       }
                     >
-                      yes
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    />
+                  </tr>
+                  <tr>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      children
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
                     </td>
                     <td
                       style={
@@ -65082,155 +65829,156 @@ exports[`Storyshots MailtoLink with onClick 1`] = `
               }
             >
               <div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 18,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
+                <div>
+                  <div
                     style={
                       Object {
-                        "color": "#444",
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
                       }
                     }
                   >
-                    &lt;
-                    MailtoLink
-                  </span>
-                  <span>
-                    <span>
-                      <span>
-                        <br />
-                          
-                      </span>
-                      <span
-                        style={Object {}}
-                      >
-                        to
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            edx@example.com
-                          </span>
-                          "
-                        </span>
-                      </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;
+                      MailtoLink
                     </span>
                     <span>
                       <span>
-                        <br />
-                          
-                      </span>
-                      <span
-                        style={Object {}}
-                      >
-                        content
-                      </span>
-                      <span>
-                        =
+                         
                         <span
                           style={Object {}}
                         >
-                          "
+                          to
+                        </span>
+                        <span>
+                          =
                           <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
+                            style={Object {}}
                           >
-                            edx@example.com
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              edx@example.com
+                            </span>
+                            "
                           </span>
-                          "
                         </span>
                       </span>
-                    </span>
-                    <span>
                       <span>
-                        <br />
-                          
-                      </span>
-                      <span
-                        style={Object {}}
-                      >
-                        target
-                      </span>
-                      <span>
-                        =
+                         
                         <span
                           style={Object {}}
                         >
-                          "
+                          target
+                        </span>
+                        <span>
+                          =
                           <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
+                            style={Object {}}
                           >
-                            _blank
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              _blank
+                            </span>
+                            "
                           </span>
-                          "
                         </span>
                       </span>
-                    </span>
-                    <span>
                       <span>
-                        <br />
-                          
-                      </span>
-                      <span
-                        style={Object {}}
-                      >
-                        onClick
-                      </span>
-                      <span>
-                        =
+                         
                         <span
                           style={Object {}}
                         >
-                          {
-                          <span
-                            style={
-                              Object {
-                                "color": "#170",
-                              }
-                            }
-                          >
-                            onClick
-                          </span>
-                          }
+                          onClick
                         </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#170",
+                                }
+                              }
+                            >
+                              onClick
+                            </span>
+                            }
+                          </span>
+                        </span>
+                        
                       </span>
-                      <br />
                     </span>
-                  </span>
-                  <span
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &gt;
+                    </span>
+                  </div>
+                  <div
                     style={
                       Object {
-                        "color": "#444",
+                        "paddingLeft": 33,
+                        "paddingRight": 3,
                       }
                     }
                   >
-                    /&gt;
-                  </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      edx@example.com
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;/
+                      MailtoLink
+                      &gt;
+                    </span>
+                  </div>
                 </div>
               </div>
               <button
@@ -65369,7 +66117,59 @@ exports[`Storyshots MailtoLink with onClick 1`] = `
                         }
                       }
                     >
-                      yes
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    />
+                  </tr>
+                  <tr>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      children
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
                     </td>
                     <td
                       style={
@@ -66064,156 +66864,157 @@ exports[`Storyshots MailtoLink with subject and body 1`] = `
               }
             >
               <div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 18,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
+                <div>
+                  <div
                     style={
                       Object {
-                        "color": "#444",
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
                       }
                     }
                   >
-                    &lt;
-                    MailtoLink
-                  </span>
-                  <span>
-                    <span>
-                      <span>
-                        <br />
-                          
-                      </span>
-                      <span
-                        style={Object {}}
-                      >
-                        to
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            edx@example.com
-                          </span>
-                          "
-                        </span>
-                      </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;
+                      MailtoLink
                     </span>
                     <span>
                       <span>
-                        <br />
-                          
-                      </span>
-                      <span
-                        style={Object {}}
-                      >
-                        subject
-                      </span>
-                      <span>
-                        =
+                         
                         <span
                           style={Object {}}
                         >
-                          "
+                          to
+                        </span>
+                        <span>
+                          =
                           <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
+                            style={Object {}}
                           >
-                            Check out this mailto component!
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              edx@example.com
+                            </span>
+                            "
                           </span>
-                          "
                         </span>
                       </span>
-                    </span>
-                    <span>
                       <span>
-                        <br />
-                          
-                      </span>
-                      <span
-                        style={Object {}}
-                      >
-                        body
-                      </span>
-                      <span>
-                        =
+                         
                         <span
                           style={Object {}}
                         >
-                          "
+                          subject
+                        </span>
+                        <span>
+                          =
                           <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
+                            style={Object {}}
                           >
-                            This mailto component is awesome!
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              Check out this mailto component!
+                            </span>
+                            "
                           </span>
-                          "
                         </span>
                       </span>
-                    </span>
-                    <span>
                       <span>
-                        <br />
-                          
-                      </span>
-                      <span
-                        style={Object {}}
-                      >
-                        content
-                      </span>
-                      <span>
-                        =
+                         
                         <span
                           style={Object {}}
                         >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            email with subject and body
-                          </span>
-                          "
+                          body
                         </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              This mailto component is awesome!
+                            </span>
+                            "
+                          </span>
+                        </span>
+                        
                       </span>
-                      <br />
                     </span>
-                  </span>
-                  <span
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &gt;
+                    </span>
+                  </div>
+                  <div
                     style={
                       Object {
-                        "color": "#444",
+                        "paddingLeft": 33,
+                        "paddingRight": 3,
                       }
                     }
                   >
-                    /&gt;
-                  </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      email with subject and body
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;/
+                      MailtoLink
+                      &gt;
+                    </span>
+                  </div>
                 </div>
               </div>
               <button
@@ -66352,7 +67153,59 @@ exports[`Storyshots MailtoLink with subject and body 1`] = `
                         }
                       }
                     >
-                      yes
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    />
+                  </tr>
+                  <tr>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      children
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                          "verticalAlign": "top",
+                        }
+                      }
+                    >
+                      -
                     </td>
                     <td
                       style={
@@ -66884,7 +67737,7 @@ exports[`Storyshots Pagination basic usage 1`] = `
                 <span
                   aria-hidden={true}
                   className="fa fa-chevron-left mr-2"
-                  id="pagination-41"
+                  id="pagination-36"
                 />
                 Previous
               </div>
@@ -66907,7 +67760,7 @@ exports[`Storyshots Pagination basic usage 1`] = `
                 <span
                   aria-hidden={true}
                   className="fa fa-chevron-right ml-2"
-                  id="pagination-43"
+                  id="pagination-38"
                 />
               </div>
             </button>
@@ -67825,7 +68678,7 @@ exports[`Storyshots Pagination with custom element labels 1`] = `
                 <span
                   aria-hidden={true}
                   className="fa fa-chevron-left mr-2"
-                  id="pagination-54"
+                  id="pagination-49"
                 />
                 <span>
                   Anterior
@@ -67852,7 +68705,7 @@ exports[`Storyshots Pagination with custom element labels 1`] = `
                 <span
                   aria-hidden={true}
                   className="fa fa-chevron-right ml-2"
-                  id="pagination-56"
+                  id="pagination-51"
                 />
               </div>
             </button>
@@ -68902,7 +69755,7 @@ exports[`Storyshots Pagination with custom string labels 1`] = `
                 <span
                   aria-hidden={true}
                   className="fa fa-chevron-left mr-2"
-                  id="pagination-51"
+                  id="pagination-46"
                 />
                 Anterior
               </div>
@@ -68925,7 +69778,7 @@ exports[`Storyshots Pagination with custom string labels 1`] = `
                 <span
                   aria-hidden={true}
                   className="fa fa-chevron-right ml-2"
-                  id="pagination-53"
+                  id="pagination-48"
                 />
               </div>
             </button>
@@ -69977,7 +70830,7 @@ exports[`Storyshots Pagination with initial page selected 1`] = `
                 <span
                   aria-hidden={true}
                   className="fa fa-chevron-left mr-2"
-                  id="pagination-44"
+                  id="pagination-39"
                 />
                 Previous
               </div>
@@ -70000,7 +70853,7 @@ exports[`Storyshots Pagination with initial page selected 1`] = `
                 <span
                   aria-hidden={true}
                   className="fa fa-chevron-right ml-2"
-                  id="pagination-47"
+                  id="pagination-42"
                 />
               </div>
             </button>
@@ -70956,7 +71809,7 @@ exports[`Storyshots Pagination with max pages displayed 1`] = `
                 <span
                   aria-hidden={true}
                   className="fa fa-chevron-left mr-2"
-                  id="pagination-48"
+                  id="pagination-43"
                 />
                 Previous
               </div>
@@ -70979,7 +71832,7 @@ exports[`Storyshots Pagination with max pages displayed 1`] = `
                 <span
                   aria-hidden={true}
                   className="fa fa-chevron-right ml-2"
-                  id="pagination-50"
+                  id="pagination-45"
                 />
               </div>
             </button>
@@ -76990,8 +77843,8 @@ exports[`Storyshots SearchField basic usage 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput57"
-            id="label-asInput57"
+            htmlFor="asInput52"
+            id="label-asInput52"
           >
             Search:
           </label>
@@ -77002,12 +77855,12 @@ exports[`Storyshots SearchField basic usage 1`] = `
               className="input-group-prepend"
             />
             <input
-              aria-describedby="error-asInput57"
+              aria-describedby="error-asInput52"
               aria-invalid={false}
               autoComplete="off"
               className="form-control is-invalid-nodanger input no-clear-btn"
               disabled={false}
-              id="asInput57"
+              id="asInput52"
               name="search"
               onBlur={[Function]}
               onChange={[Function]}
@@ -77033,7 +77886,6 @@ exports[`Storyshots SearchField basic usage 1`] = `
                 <span
                   aria-hidden={true}
                   className="fa fa-search"
-                  id="Icon1"
                 />
                 <span
                   className="sr-only"
@@ -77046,7 +77898,7 @@ exports[`Storyshots SearchField basic usage 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput57"
+            id="error-asInput52"
           >
             <span />
           </div>
@@ -77946,8 +78798,8 @@ exports[`Storyshots SearchField with callbacks 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput61"
-            id="label-asInput61"
+            htmlFor="asInput56"
+            id="label-asInput56"
           >
             Search:
           </label>
@@ -77958,12 +78810,12 @@ exports[`Storyshots SearchField with callbacks 1`] = `
               className="input-group-prepend"
             />
             <input
-              aria-describedby="error-asInput61"
+              aria-describedby="error-asInput56"
               aria-invalid={false}
               autoComplete="off"
               className="form-control is-invalid-nodanger input no-clear-btn"
               disabled={false}
-              id="asInput61"
+              id="asInput56"
               name="search"
               onBlur={[Function]}
               onChange={[Function]}
@@ -77989,7 +78841,6 @@ exports[`Storyshots SearchField with callbacks 1`] = `
                 <span
                   aria-hidden={true}
                   className="fa fa-search"
-                  id="Icon1"
                 />
                 <span
                   className="sr-only"
@@ -78002,7 +78853,7 @@ exports[`Storyshots SearchField with callbacks 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput61"
+            id="error-asInput56"
           >
             <span />
           </div>
@@ -79021,8 +79872,8 @@ exports[`Storyshots SearchField with custom label and screenreader text 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput62"
-            id="label-asInput62"
+            htmlFor="asInput57"
+            id="label-asInput57"
           >
             Buscar:
           </label>
@@ -79033,12 +79884,12 @@ exports[`Storyshots SearchField with custom label and screenreader text 1`] = `
               className="input-group-prepend"
             />
             <input
-              aria-describedby="error-asInput62"
+              aria-describedby="error-asInput57"
               aria-invalid={false}
               autoComplete="off"
               className="form-control is-invalid-nodanger input no-clear-btn"
               disabled={false}
-              id="asInput62"
+              id="asInput57"
               name="search"
               onBlur={[Function]}
               onChange={[Function]}
@@ -79064,7 +79915,6 @@ exports[`Storyshots SearchField with custom label and screenreader text 1`] = `
                 <span
                   aria-hidden={true}
                   className="fa fa-search"
-                  id="Icon1"
                 />
                 <span
                   className="sr-only"
@@ -79077,7 +79927,7 @@ exports[`Storyshots SearchField with custom label and screenreader text 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput62"
+            id="error-asInput57"
           >
             <span />
           </div>
@@ -80076,8 +80926,8 @@ exports[`Storyshots SearchField with placeholder 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput58"
-            id="label-asInput58"
+            htmlFor="asInput53"
+            id="label-asInput53"
           >
             Search:
           </label>
@@ -80088,12 +80938,12 @@ exports[`Storyshots SearchField with placeholder 1`] = `
               className="input-group-prepend"
             />
             <input
-              aria-describedby="error-asInput58"
+              aria-describedby="error-asInput53"
               aria-invalid={false}
               autoComplete="off"
               className="form-control is-invalid-nodanger input no-clear-btn"
               disabled={false}
-              id="asInput58"
+              id="asInput53"
               name="search"
               onBlur={[Function]}
               onChange={[Function]}
@@ -80119,7 +80969,6 @@ exports[`Storyshots SearchField with placeholder 1`] = `
                 <span
                   aria-hidden={true}
                   className="fa fa-search"
-                  id="Icon1"
                 />
                 <span
                   className="sr-only"
@@ -80132,7 +80981,7 @@ exports[`Storyshots SearchField with placeholder 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput58"
+            id="error-asInput53"
           >
             <span />
           </div>
@@ -81059,8 +81908,8 @@ exports[`Storyshots SearchField with value 1`] = `
         >
           <label
             className=""
-            htmlFor="asInput60"
-            id="label-asInput60"
+            htmlFor="asInput55"
+            id="label-asInput55"
           >
             Search:
           </label>
@@ -81071,12 +81920,12 @@ exports[`Storyshots SearchField with value 1`] = `
               className="input-group-prepend"
             />
             <input
-              aria-describedby="error-asInput60"
+              aria-describedby="error-asInput55"
               aria-invalid={false}
               autoComplete="off"
               className="form-control is-invalid-nodanger input"
               disabled={false}
-              id="asInput60"
+              id="asInput55"
               name="search"
               onBlur={[Function]}
               onChange={[Function]}
@@ -81102,7 +81951,7 @@ exports[`Storyshots SearchField with value 1`] = `
                   <span
                     aria-hidden={true}
                     className="fa fa-times"
-                    id="icon-SearchField59"
+                    id="icon-SearchField54"
                   />
                   <span
                     className="sr-only"
@@ -81122,7 +81971,6 @@ exports[`Storyshots SearchField with value 1`] = `
                 <span
                   aria-hidden={true}
                   className="fa fa-search"
-                  id="Icon1"
                 />
                 <span
                   className="sr-only"
@@ -81135,7 +81983,7 @@ exports[`Storyshots SearchField with value 1`] = `
           <div
             aria-live="polite"
             className="invalid-feedback invalid-feedback-nodanger"
-            id="error-asInput60"
+            id="error-asInput55"
           >
             <span />
           </div>
@@ -101692,10 +102540,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
           role="tablist"
         >
           <button
-            aria-controls="tab-panel-tabInterface63-0"
+            aria-controls="tab-panel-tabInterface58-0"
             aria-selected={true}
             className="btn nav-link nav-item active"
-            id="tab-label-tabInterface63-0"
+            id="tab-label-tabInterface58-0"
             onBlur={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
@@ -101705,10 +102553,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
             Panel 1
           </button>
           <button
-            aria-controls="tab-panel-tabInterface63-1"
+            aria-controls="tab-panel-tabInterface58-1"
             aria-selected={false}
             className="btn nav-link nav-item"
-            id="tab-label-tabInterface63-1"
+            id="tab-label-tabInterface58-1"
             onBlur={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
@@ -101718,10 +102566,10 @@ exports[`Storyshots Tabs basic usage 1`] = `
             Panel 2
           </button>
           <button
-            aria-controls="tab-panel-tabInterface63-2"
+            aria-controls="tab-panel-tabInterface58-2"
             aria-selected={false}
             className="btn nav-link nav-item"
-            id="tab-label-tabInterface63-2"
+            id="tab-label-tabInterface58-2"
             onBlur={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
@@ -101737,9 +102585,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
         >
           <div
             aria-hidden={false}
-            aria-labelledby="tab-label-tabInterface63-0"
+            aria-labelledby="tab-label-tabInterface58-0"
             className="tab-pane active"
-            id="tab-panel-tabInterface63-0"
+            id="tab-panel-tabInterface58-0"
             role="tabpanel"
           >
             <div>
@@ -101748,9 +102596,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
           </div>
           <div
             aria-hidden={true}
-            aria-labelledby="tab-label-tabInterface63-1"
+            aria-labelledby="tab-label-tabInterface58-1"
             className="tab-pane"
-            id="tab-panel-tabInterface63-1"
+            id="tab-panel-tabInterface58-1"
             role="tabpanel"
           >
             <div>
@@ -101759,9 +102607,9 @@ exports[`Storyshots Tabs basic usage 1`] = `
           </div>
           <div
             aria-hidden={true}
-            aria-labelledby="tab-label-tabInterface63-2"
+            aria-labelledby="tab-label-tabInterface58-2"
             className="tab-pane"
-            id="tab-panel-tabInterface63-2"
+            id="tab-panel-tabInterface58-2"
             role="tabpanel"
           >
             <div>
@@ -102577,8 +103425,8 @@ exports[`Storyshots Textarea label as element 1`] = `
       >
         <label
           className=""
-          htmlFor="asInput67"
-          id="label-asInput67"
+          htmlFor="asInput62"
+          id="label-asInput62"
         >
           <span
             lang="en"
@@ -102587,11 +103435,11 @@ exports[`Storyshots Textarea label as element 1`] = `
           </span>
         </label>
         <textarea
-          aria-describedby="error-asInput67"
+          aria-describedby="error-asInput62"
           aria-invalid={false}
           className="form-control is-invalid-nodanger"
           disabled={false}
-          id="asInput67"
+          id="asInput62"
           name="username"
           onBlur={[Function]}
           onChange={[Function]}
@@ -102606,7 +103454,7 @@ exports[`Storyshots Textarea label as element 1`] = `
         <div
           aria-live="polite"
           className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput67"
+          id="error-asInput62"
         >
           <span />
         </div>
@@ -104042,17 +104890,17 @@ exports[`Storyshots Textarea minimal usage 1`] = `
       >
         <label
           className=""
-          htmlFor="asInput64"
-          id="label-asInput64"
+          htmlFor="asInput59"
+          id="label-asInput59"
         >
           First Name
         </label>
         <textarea
-          aria-describedby="error-asInput64"
+          aria-describedby="error-asInput59"
           aria-invalid={false}
           className="form-control is-invalid-nodanger"
           disabled={false}
-          id="asInput64"
+          id="asInput59"
           name="name"
           onBlur={[Function]}
           onChange={[Function]}
@@ -104067,7 +104915,7 @@ exports[`Storyshots Textarea minimal usage 1`] = `
         <div
           aria-live="polite"
           className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput64"
+          id="error-asInput59"
         >
           <span />
         </div>
@@ -105504,17 +106352,17 @@ exports[`Storyshots Textarea scrollable 1`] = `
       >
         <label
           className=""
-          htmlFor="asInput65"
-          id="label-asInput65"
+          htmlFor="asInput60"
+          id="label-asInput60"
         >
           Information
         </label>
         <textarea
-          aria-describedby="error-asInput65"
+          aria-describedby="error-asInput60"
           aria-invalid={false}
           className="form-control is-invalid-nodanger"
           disabled={false}
-          id="asInput65"
+          id="asInput60"
           name="name"
           onBlur={[Function]}
           onChange={[Function]}
@@ -105529,7 +106377,7 @@ exports[`Storyshots Textarea scrollable 1`] = `
         <div
           aria-live="polite"
           className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput65"
+          id="error-asInput60"
         >
           <span />
         </div>
@@ -106966,17 +107814,17 @@ exports[`Storyshots Textarea validation 1`] = `
       >
         <label
           className=""
-          htmlFor="asInput66"
-          id="label-asInput66"
+          htmlFor="asInput61"
+          id="label-asInput61"
         >
           Username
         </label>
         <textarea
-          aria-describedby="error-asInput66 description-asInput66"
+          aria-describedby="error-asInput61 description-asInput61"
           aria-invalid={false}
           className="form-control is-invalid-nodanger"
           disabled={false}
-          id="asInput66"
+          id="asInput61"
           name="username"
           onBlur={[Function]}
           onChange={[Function]}
@@ -106991,13 +107839,13 @@ exports[`Storyshots Textarea validation 1`] = `
         <div
           aria-live="polite"
           className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput66"
+          id="error-asInput61"
         >
           <span />
         </div>
         <small
           className="form-text"
-          id="description-asInput66"
+          id="description-asInput61"
         >
           The unique name that identifies you throughout the site.
         </small>

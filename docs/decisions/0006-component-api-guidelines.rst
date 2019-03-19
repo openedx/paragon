@@ -22,6 +22,9 @@ When creating a component that should have content use children instead of a pro
 className
 Whenever we wish to allow consumers of a component to add a class name, the prop should be named className (not classNames) and should expect a string (not an array).
 
+Auto generation of Ids
+Avoid auto generating ids where unneccessary. Be aware that auto generation of ids may cause issues with snapshot tests in consuming apps.
+
 
 Consequences
 ------------
