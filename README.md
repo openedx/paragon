@@ -31,9 +31,9 @@ Paragon's production build ships with two different export targets:
 
 `import { ComponentName } from '@edx/paragon';`
 
-**`static`**: The static build is intended for use within legacy pages not styled with Bootstrap 4. Component classnames are namespaced with the `paragon__` prefix so as not to conflict with existing classnames defined elsewhere on the page. Be cognizant of poorly scoped legacy rules (e.g. a rule for all `input` or `h1` tags), which can still affect Paragon components. This build comes with its own stylesheet, available at `/dist/static/paragon.min.css`. You must include this stylesheet on any page that uses Paragon components. Components can be imported thus:
+**`static`**: The static build is intended for use within legacy pages not styled with Bootstrap 4. Component classnames are namespaced with the `paragon__` prefix so as not to conflict with existing classnames defined elsewhere on the page. Be cognizant of poorly scoped legacy rules (e.g. a rule for all `input` or `h1` tags), which can still affect Paragon components. This build comes with its own stylesheet, available at `/static/paragon.min.css`. You must include this stylesheet on any page that uses Paragon components. Components can be imported thus:
 
-`import { ComponentName } from '@edx/paragon/dist/static';`
+`import { ComponentName } from '@edx/paragon/static';`
 
 Because of the additional weight of the `static` stylesheet (>100k), the `static` target exports should be used sparingly. If possible, consuming pages should be converted to standard Bootstrap instead.
 

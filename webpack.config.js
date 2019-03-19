@@ -22,6 +22,7 @@ module.exports = targetProperties.map(config => ({
     filename: `${config.baseDirectory}/index.js`,
     library: 'paragon',
     libraryTarget: 'umd',
+    path: __dirname,
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -49,7 +50,12 @@ module.exports = targetProperties.map(config => ({
     new MiniCssExtractPlugin({
       filename: `${config.baseDirectory}/paragon.min.css`,
     }),
-    new CleanWebpackPlugin(), // Cleans the dist directory before each build
+    // Be careful here. Our output path is the root of this project
+    // so without this config, CleanWebpackPlugin will destroy the project
+    // We should change the output path to dist/ in the next major version.
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ['themeable/**/*', 'static/**/*'],
+    }),
   ],
   module: {
     rules: [
