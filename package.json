@@ -8,6 +8,12 @@
     "type": "git",
     "url": "https://github.com/edx/paragon.git"
   },
+  "files": [
+    "/static",
+    "/themeable",
+    "/dist",
+    "/src"
+  ],
   "scripts": {
     "build": "webpack --mode production",
     "build-storybook": "build-storybook",
