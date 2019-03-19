@@ -22,7 +22,7 @@
     "deploy-storybook": "storybook-to-ghpages",
     "deploy-storybook-ci": "storybook-to-ghpages --ci",
     "gc": "commit",
-    "is-es5": "es-check es5 './dist/**/*.js'",
+    "is-es5": "es-check es5 ./themeable/*.js ./static/*.js",
     "lint": "eslint --ext .js --ext .jsx .",
     "prepublishOnly": "npm run build",
     "semantic-release": "semantic-release",
