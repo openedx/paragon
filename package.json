@@ -93,7 +93,6 @@
     "webpack-cli": "^3.3.0"
   },
   "jest": {
-    "testURL": "http://localhost/",
     "transform": {
       "^.+\\.md?$": "markdown-loader-jest",
       "^.+\\.jsx?$": "babel-jest"
