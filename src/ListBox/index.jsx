@@ -103,10 +103,7 @@ export default class ListBox extends React.Component {
 }
 
 ListBox.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element,
-  ]).isRequired,
+  children: PropTypes.node.isRequired,
   className: PropTypes.string,
   selectedOptionIndex: nonNegativeInteger,
   tag: PropTypes.string,
