@@ -17,7 +17,6 @@
   "scripts": {
     "build": "webpack --mode production",
     "build-storybook": "build-storybook",
-    "commit": "commit",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage",
     "deploy-storybook": "storybook-to-ghpages",
