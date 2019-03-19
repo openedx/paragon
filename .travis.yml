@@ -8,7 +8,7 @@ cache:
 notifications:
   email:
     recipients:
-    - abutterworth@edx.org
+    - paragon@edx.org
     on_success: never
     on_failure: always
   hipchat:
