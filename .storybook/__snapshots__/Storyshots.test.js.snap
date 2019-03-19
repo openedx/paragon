@@ -3091,10 +3091,10 @@ Array [
 `;
 
 exports[`Storyshots ListBox using tag prop 1`] = `
-<div>
+Array [
   <div>
     This is an ordered list!
-  </div>
+  </div>,
   <ol
     aria-activedescendant={null}
     className="list-group"
@@ -3145,8 +3145,8 @@ exports[`Storyshots ListBox using tag prop 1`] = `
     >
       Banana
     </li>
-  </ol>
-</div>
+  </ol>,
+]
 `;
 
 exports[`Storyshots MailtoLink minimal usage 1`] = `

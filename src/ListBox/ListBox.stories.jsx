@@ -142,7 +142,7 @@ storiesOf('ListBox', module)
     </ListBox>
   ))
   .add('using tag prop', () => (
-    <div>
+    <React.Fragment>
       <div>This is an ordered list!</div>
       <ListBox tag="ol">
         <ListBoxOption tag="li">
@@ -158,7 +158,7 @@ storiesOf('ListBox', module)
           Banana
         </ListBoxOption>
       </ListBox>
-    </div>
+    </React.Fragment>
   ))
   .add('using onSelect prop', () => (
     <ListBoxWrapperForOnSelect />
