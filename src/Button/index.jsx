@@ -2,7 +2,8 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import propShim from '../propShim';
+import withDeprecation from '../withDeprecation';
+
 import styles from './Button.scss';
 
 class Button extends React.Component {
@@ -49,7 +50,6 @@ class Button extends React.Component {
     const {
       buttonType,
       className,
-      label,
       isClose,
       type,
       /* inputRef is not used directly in the render, but it needs to be assigned
@@ -65,7 +65,7 @@ class Button extends React.Component {
         {...other}
         className={classNames([
           styles.btn,
-          ...className,
+          className,
         ], {
           [styles[`btn-${buttonType}`]]: buttonType !== undefined,
         }, {
@@ -78,7 +78,7 @@ class Button extends React.Component {
         ref={this.setRefs}
 
       >
-        {propShim(this.props, 'children', 'label', 'Button')}
+        {this.props.children}
       </button>
     );
   }
@@ -86,26 +86,21 @@ class Button extends React.Component {
 
 export const buttonPropTypes = {
   buttonType: PropTypes.string,
-  className: PropTypes.arrayOf(PropTypes.string),
+  className: PropTypes.string,
   inputRef: PropTypes.func,
   isClose: PropTypes.bool,
   onBlur: PropTypes.func,
   onClick: PropTypes.func,
   onKeyDown: PropTypes.func,
   type: PropTypes.string,
-
-  // Deprecated (children should be required after removal)
-  label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
 };
 
 Button.propTypes = buttonPropTypes;
 
 Button.defaultProps = {
   buttonType: undefined,
-  label: undefined,
-  children: undefined,
-  className: [],
+  className: null,
   inputRef: () => {},
   isClose: false,
   onBlur: () => {},
@@ -114,4 +109,15 @@ Button.defaultProps = {
   type: 'button',
 };
 
-export default Button;
+export default withDeprecation(Button, {
+  label: {
+    deprType: 'renamed',
+    newName: 'children',
+  },
+  className: {
+    deprType: 'format',
+    expect: value => typeof value === 'string',
+    transform: value => (Array.isArray(value) ? value.join(' ') : value),
+    message: 'It should be a string.',
+  },
+});

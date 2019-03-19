@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
 import styles from './Modal.scss';
-import Button, { buttonPropTypes } from '../Button';
+import Button from '../Button';
 import Icon from '../Icon';
 import newId from '../utils/newId';
 import Variant from '../utils/constants';
@@ -149,7 +149,7 @@ class Modal extends React.Component {
           key={buttonProps.label || buttonProps.children}
           onKeyDown={this.handleKeyDown}
         >
-          {buttonProps.label}
+          {buttonProps.children || buttonProps.label}
         </Button>
       );
     });
@@ -259,7 +259,7 @@ Modal.propTypes = {
   body: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   buttons: PropTypes.arrayOf(PropTypes.oneOfType([
     PropTypes.element,
-    PropTypes.shape(buttonPropTypes),
+    PropTypes.object, // eslint-disable-line no-object-props
   ])),
   closeText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   onClose: PropTypes.func.isRequired,

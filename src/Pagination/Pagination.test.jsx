@@ -59,8 +59,8 @@ describe('<Pagination />', () => {
         currentPage: 2,
       };
       const wrapper = mount(<Pagination {...props} />);
-      wrapper.find('.previous').simulate('click');
-      expect(wrapper.find('.next').instance()).toEqual(document.activeElement);
+      wrapper.find('.previous').hostNodes().simulate('click');
+      expect(wrapper.find('.next').hostNodes().instance()).toEqual(document.activeElement);
     });
 
     it('should change focus to previous button if next page is last page', () => {
@@ -69,8 +69,8 @@ describe('<Pagination />', () => {
         currentPage: baseProps.pageCount - 1,
       };
       const wrapper = mount(<Pagination {...props} />);
-      wrapper.find('.next').simulate('click');
-      expect(wrapper.find('.previous').instance()).toEqual(document.activeElement);
+      wrapper.find('.next').hostNodes().simulate('click');
+      expect(wrapper.find('.previous').hostNodes().instance()).toEqual(document.activeElement);
     });
   });
 
@@ -151,7 +151,7 @@ describe('<Pagination />', () => {
       };
       const wrapper = mount(<Pagination {...props} />);
       wrapper.setProps({ currentPage: 2 });
-      wrapper.find('.previous').simulate('click');
+      wrapper.find('.previous').hostNodes().simulate('click');
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
@@ -162,7 +162,7 @@ describe('<Pagination />', () => {
         onPageSelect: spy,
       };
       const wrapper = mount(<Pagination {...props} />);
-      wrapper.find('.next').simulate('click');
+      wrapper.find('.next').hostNodes().simulate('click');
       expect(spy).toHaveBeenCalledTimes(1);
     });
   });

@@ -28,4 +28,16 @@ describe('<Button />', () => {
     button.simulate('click');
     expect(onClickSpy).toHaveBeenCalledTimes(1);
   });
+  it('works with deprecated api', () => {
+    wrapper = mount((
+      <Button
+        className={['one', 'two']}
+        label="Click me and check the console!"
+      />
+    ));
+
+    const onClickSpy = jest.fn();
+    wrapper.setProps({ onClick: onClickSpy });
+    expect(onClickSpy).toHaveBeenCalledTimes(0);
+  });
 });
