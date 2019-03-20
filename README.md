@@ -26,8 +26,21 @@ In your JSX files:
 import { ComponentName } from '@edx/paragon';
 ```
 
-Since Paragon is a React library, components must be rendered with React and ReactDOM. This doesn't mean the entire page has to be rendered with React. You can read up about rendering React into a page within the [official ReactDOM documentation](https://reactjs.org/docs/react-dom.html).
+And in your SCSS file:
+```
+import '~bootstrap/scss/bootstrap'; // Or other inclusion of bootstrap
+import '~@edx/paragon/src/index.scss';
+```
+This file contains style modifications for all paragon components. It is not large and is the simplest way to include Paragon styles. Note
 
+* It does not include bootstrap. You must include that yourself.
+* It must be included after bootstrap functions, variables, and mixins
+
+
+If you are not using SCSS you can include a minified CSS file that also does not include bootstrap:
+```
+import '~@edx/paragon/dist/paragon.min.css';
+```
 
 ### Legacy Export Target [Removed]
 

@@ -5,7 +5,10 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 
 module.exports = {
-  entry: './src/index.js',
+  entry: [
+    './src/index.js',
+    './src/index.scss',
+  ],
   output: {
     filename: 'paragon.js',
     library: 'paragon',
@@ -53,15 +56,11 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: {
-              modules: true,
-              localIdentName: '[local]',
-            },
           },
           {
             loader: 'sass-loader',
             options: {
-              data: '@import "paragon-reset";',
+              data: '@import "bootstrap-variables";',
               includePaths: [
                 path.join(__dirname, './src/utils'),
                 path.join(__dirname, './node_modules'),

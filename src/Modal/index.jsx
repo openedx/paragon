@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import 'font-awesome/css/font-awesome.min.css';
-import './Modal.scss';
 import Button, { buttonPropTypes } from '../Button';
 import Icon from '../Icon';
 import newId from '../utils/newId';

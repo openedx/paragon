@@ -1,6 +1,5 @@
 import { between } from 'airbnb-prop-types';
 import classNames from 'classnames';
-import 'font-awesome/css/font-awesome.min.css';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -9,8 +8,6 @@ import { ExtraSmall, LargerThanExtraSmall } from '../Responsive';
 import getTextFromElement from '../utils/getTextFromElement';
 import Icon from '../Icon';
 import newId from '../utils/newId';
-
-import './Pagination.scss';
 
 class Pagination extends React.Component {
   constructor(props) {

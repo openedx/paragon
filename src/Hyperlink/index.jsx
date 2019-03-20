@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-import 'font-awesome/css/font-awesome.min.css';
 import PropTypes from 'prop-types';
 import isRequiredIf from 'react-proptype-conditional-require';
 

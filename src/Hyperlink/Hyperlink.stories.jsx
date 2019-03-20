@@ -2,7 +2,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import 'font-awesome/css/font-awesome.min.css';
 
 import README from './README.md';
 

@@ -8,7 +8,6 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
-import './Tabs.scss';
 import newId from '../utils/newId';
 
 class Tabs extends React.Component {

@@ -14,17 +14,13 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: true,
-              localIdentName: '[local]',
               sourceMap: true,
             },
           },
           {
             loader: 'sass-loader',
             options: {
-              data: '@import "paragon-reset";',
               includePaths: [
-                path.join(__dirname, '../src/utils'),
                 path.join(__dirname, '../node_modules'),
               ],
               sourceMap: true,

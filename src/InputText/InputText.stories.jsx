@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import 'font-awesome/css/font-awesome.min.css';
 
 import Button from '../Button';
 import Icon from '../Icon';

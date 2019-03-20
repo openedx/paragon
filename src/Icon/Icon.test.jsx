@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import 'font-awesome/css/font-awesome.min.css';
 import Icon from './index';
 
 const testId = 'testId';

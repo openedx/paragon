@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import 'font-awesome/css/font-awesome.min.css';
 
 import newId from '../utils/newId';
 import Icon from '../Icon';
 import InputText from '../InputText';
 import Button from '../Button';
 
-import './SearchField.scss';
 
 class SearchField extends React.Component {
   constructor(props) {

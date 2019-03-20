@@ -3,7 +3,6 @@ import { nonNegativeInteger } from 'airbnb-prop-types';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import './ListBox.scss';
 
 export default class ListBox extends React.Component {
   constructor(props) {

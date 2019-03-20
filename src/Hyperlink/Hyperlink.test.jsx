@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import classNames from 'classnames';
-import 'font-awesome/css/font-awesome.min.css';
 
 import Hyperlink from './index';
 

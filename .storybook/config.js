@@ -4,7 +4,7 @@ import { setConsoleOptions } from '@storybook/addon-console';
 import { withInfo } from '@storybook/addon-info';
 
 // Style applied to all stories
-import "bootstrap/scss/bootstrap.scss";
+import "./style.scss";
 
 setConsoleOptions({
   panelExclude: ['warn', 'error'],

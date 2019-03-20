@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import 'font-awesome/css/font-awesome.min.css';
 
-import './ValidationMessage.scss';
 import Variant from '../utils/constants';
 
 const inputProps = {

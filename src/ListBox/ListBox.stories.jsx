@@ -1,7 +1,6 @@
 /* eslint-disable react/no-multi-comp */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import 'bootstrap/scss/utilities/_screenreaders.scss';
 
 import Button from '../Button';
 import ListBox from '../ListBox';

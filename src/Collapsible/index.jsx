@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Button from '../Button';
 import Icon from '../Icon';
 
-import './Collapsible.scss';
 
 class Collapsible extends React.Component {
   constructor(props) {

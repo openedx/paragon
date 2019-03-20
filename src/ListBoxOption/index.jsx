@@ -2,7 +2,6 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import './ListBoxOption.scss';
 
 export default class ListBoxOption extends React.Component {
   constructor(props) {

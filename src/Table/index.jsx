@@ -1,10 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
-import 'font-awesome/css/font-awesome.min.css';
 import isRequiredIf from 'react-proptype-conditional-require';
 import PropTypes from 'prop-types';
 
-import './Table.scss';
 import Button from '../Button';
 
 class Table extends React.Component {

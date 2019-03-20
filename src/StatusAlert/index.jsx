@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import isRequiredIf from 'react-proptype-conditional-require';
 
-import './StatusAlert.scss';
 import Button from '../Button';
 
 class StatusAlert extends React.Component {

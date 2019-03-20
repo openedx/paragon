@@ -2,7 +2,6 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import './Icon.scss';
 import newId from '../utils/newId';
 
 function Icon(props) {

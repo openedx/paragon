@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import newId from '../utils/newId';
-import './asInput.scss';
 import ValidationMessage from '../ValidationMessage/index';
 import Variant from '../utils/constants';
 
