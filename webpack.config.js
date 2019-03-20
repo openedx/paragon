@@ -5,12 +5,12 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 
 module.exports = {
-  entry: [
-    './src/index.js',
-    './src/index.scss',
-  ],
+  entry: {
+    paragon: './src/index.js',
+    style: './src/index.scss',
+  },
   output: {
-    filename: 'paragon.js',
+    filename: '[name].js',
     library: 'paragon',
     libraryTarget: 'umd',
   },
