@@ -1,20 +1,13 @@
 const path = require('path');
-const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 
+// This config is merged with Storybook's default
+// https://storybook.js.org/docs/configurations/custom-webpack-config/#extend-mode
 module.exports = {
-  plugins: [
-    new WebpackBuildNotifierPlugin({
-      title: 'Paragon Storybook Build',
-      warningSound: true,
-      failureSound: true,
-    }),
-  ],
-  devtool: "source-map",
   module: {
     rules: [
       {
         test: /\.scss|\.css$/,
-        use: [
+        loaders: [
           {
             loader: 'style-loader',
           },
@@ -38,6 +31,7 @@ module.exports = {
             },
           },
         ],
+        include: path.resolve(__dirname, '../'),
       },
       {
         test: /\.(woff2?|ttf|svg|eot)(\?v=\d+\.\d+\.\d+)?$/,

@@ -118,6 +118,7 @@ class Table extends React.Component {
     return (
       <tbody className={classNames({ 'd-inline': this.props.hasFixedColumnWidths })}>
         {this.props.data.map((row, i) => (
+          // eslint-disable-next-line react/no-array-index-key
           <tr key={i} className={classNames({ 'd-flex': this.props.hasFixedColumnWidths })}>
             {this.props.columns.map(({ key, width }) => (
               React.createElement(

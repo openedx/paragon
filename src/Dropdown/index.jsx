@@ -117,7 +117,7 @@ class Dropdown extends React.Component {
         <a
           className={styles['dropdown-item']}
           href={menuItem.href}
-          key={i}
+          key={menuItem.href}
           onKeyDown={this.handleMenuKeyDown}
           ref={(item) => {
             this.menuItems[i] = item;
