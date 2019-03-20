@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import styles from './Icon.scss';
+import './Icon.scss';
 import newId from '../utils/newId';
 
 function Icon(props) {
@@ -14,7 +14,7 @@ function Icon(props) {
         aria-hidden={props.hidden}
       />
       { props.screenReaderText &&
-        <span className={classNames(styles['sr-only'])}>
+        <span className={classNames('sr-only')}>
           {props.screenReaderText}
         </span>
       }

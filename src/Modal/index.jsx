@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
-import styles from './Modal.scss';
+import 'font-awesome/css/font-awesome.min.css';
+import './Modal.scss';
 import Button, { buttonPropTypes } from '../Button';
 import Icon from '../Icon';
 import newId from '../utils/newId';
@@ -74,10 +74,10 @@ class Modal extends React.Component {
     switch (variant.status) {
       case Variant.status.WARNING:
         variantIconClassName = classNames(
-          FontAwesomeStyles.fa,
-          FontAwesomeStyles['fa-exclamation-triangle'],
-          FontAwesomeStyles['fa-3x'],
-          styles[`text-${variant.status.toLowerCase()}`],
+          'fa',
+          'fa-exclamation-triangle',
+          'fa-3x',
+          `text-${variant.status.toLowerCase()}`,
         );
         break;
       default:
@@ -91,14 +91,14 @@ class Modal extends React.Component {
     const { variant } = this.props;
 
     return (
-      <div className={styles['container-fluid']}>
-        <div className={styles.row}>
-          <div className={styles['col-md-10']}>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-md-10">
             <div>
               {body}
             </div>
           </div>
-          <div className={styles['col-md-2']}>
+          <div className="col-md-2">
             <Icon
               id={newId(`Modal-${variant.status}`)}
               className={[
@@ -175,21 +175,21 @@ class Modal extends React.Component {
       <div>
         <div
           className={classNames({
-            [styles['modal-backdrop']]: open,
-            [styles.show]: open,
-            [styles.fade]: !open,
+            'modal-backdrop': open,
+            show: open,
+            fade: !open,
           })}
           role="presentation"
         />
         <div
           className={classNames(
-            styles.modal,
+            'modal',
             'js-close-modal-on-click',
             {
-              [styles.show]: open,
-              [styles.fade]: !open,
-              [styles['d-block']]: open,
-              [styles['is-ie11']]: this.isIE11,
+              show: open,
+              fade: !open,
+              'd-block': open,
+              'is-ie11': this.isIE11,
             },
           )}
           role="presentation"
@@ -197,7 +197,7 @@ class Modal extends React.Component {
         >
           <div
             className={classNames({
-              [styles['modal-dialog']]: open,
+              'modal-dialog': open,
             })}
             role="dialog"
             aria-modal
@@ -205,9 +205,9 @@ class Modal extends React.Component {
             {...(!renderHeaderCloseButton ? { tabIndex: '-1' } : {})}
             {...(!renderHeaderCloseButton ? { ref: this.setFirstFocusableElement } : {})}
           >
-            <div className={styles['modal-content']}>
-              <div className={styles['modal-header']}>
-                <h2 className={styles['modal-title']} id={this.headerId}>{this.props.title}</h2>
+            <div className="modal-content">
+              <div className="modal-header">
+                <h2 className="modal-title" id={this.headerId}>{this.props.title}</h2>
                 { renderHeaderCloseButton &&
                 <Button
                   label={<Icon className={['fa', 'fa-times', 'js-close-modal-on-click']} />}
@@ -219,10 +219,10 @@ class Modal extends React.Component {
                 />
               }
               </div>
-              <div className={styles['modal-body']}>
+              <div className="modal-body">
                 {this.renderBody()}
               </div>
-              <div className={styles['modal-footer']}>
+              <div className="modal-footer">
                 {this.renderButtons()}
                 <Button
                   label={this.props.closeText}

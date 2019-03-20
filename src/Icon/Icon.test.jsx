@@ -1,13 +1,13 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
+import 'font-awesome/css/font-awesome.min.css';
 import Icon from './index';
 
 const testId = 'testId';
 const classNames = [
-  FontAwesomeStyles.fa,
-  FontAwesomeStyles['fa-check'],
+  'fa',
+  'fa-check',
 ];
 const srTest = 'srTest';
 

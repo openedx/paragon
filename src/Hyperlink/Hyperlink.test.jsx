@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import classNames from 'classnames';
-import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
+import 'font-awesome/css/font-awesome.min.css';
 
 import Hyperlink from './index';
 
@@ -46,7 +46,7 @@ describe('correct rendering', () => {
 
     expect(icon.prop('aria-hidden')).toEqual(false);
     expect(icon.prop('className'))
-      .toEqual(classNames(FontAwesomeStyles.fa, FontAwesomeStyles['fa-external-link']));
+      .toEqual(classNames('fa', 'fa-external-link'));
     expect(icon.prop('aria-label')).toEqual(externalLinkAlternativeText);
     expect(icon.prop('title')).toEqual(externalLinkTitle);
   });

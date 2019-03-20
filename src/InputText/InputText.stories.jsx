@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
+import 'font-awesome/css/font-awesome.min.css';
 
 import Button from '../Button';
 import Icon from '../Icon';
@@ -261,8 +261,8 @@ storiesOf('InputText', module)
             <Icon
               id="checkmark"
               className={[
-                FontAwesomeStyles.fa,
-                FontAwesomeStyles['fa-check'],
+                'fa',
+                'fa-check',
               ]}
               screenReaderText="Checkmark"
             />
@@ -282,8 +282,8 @@ storiesOf('InputText', module)
             <Icon
               id="checkmark"
               className={[
-                FontAwesomeStyles.fa,
-                FontAwesomeStyles['fa-check'],
+                'fa',
+                'fa-check',
               ]}
               screenReaderText="Checkmark"
             />

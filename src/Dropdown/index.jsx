@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import styles from './Dropdown.scss';
+import './Dropdown.scss';
 import Button from '../Button';
 
 export const triggerKeys = {
@@ -107,7 +107,7 @@ class Dropdown extends React.Component {
       if (React.isValidElement(menuItem)) {
         const cloneProps = {
           ref: (item) => { this.menuItems[i] = item; },
-          className: styles['dropdown-item'],
+          className: 'dropdown-item',
           key: i,
           onKeyDown: this.handleMenuKeyDown,
         };
@@ -115,7 +115,7 @@ class Dropdown extends React.Component {
       }
       return (
         <a
-          className={styles['dropdown-item']}
+          className="dropdown-item"
           href={menuItem.href}
           key={menuItem.href}
           onKeyDown={this.handleMenuKeyDown}
@@ -143,14 +143,14 @@ class Dropdown extends React.Component {
     return (
       <div
         className={classNames([
-          styles.dropdown,
+          'dropdown',
           {
-            [styles.show]: open,
-            [styles['has-icon']]: hasIconElement,
-            [styles.rounded]: hasIconElement,
-            [styles.border]: hasIconElement,
-            [styles['d-flex']]: hasIconElement,
-            [styles['bg-white']]: hasIconElement,
+            show: open,
+            'has-icon': hasIconElement,
+            rounded: hasIconElement,
+            border: hasIconElement,
+            'd-flex': hasIconElement,
+            'bg-white': hasIconElement,
           },
         ])}
         ref={(container) => { this.container = container; }}
@@ -158,16 +158,16 @@ class Dropdown extends React.Component {
         { hasIconElement &&
           <div
             className={[classNames([
-              styles['icon-container'],
-              styles['d-flex'],
-              styles['align-items-center'],
-              styles['justify-content-center'],
-              styles['border-right'],
+              'icon-container',
+              'd-flex',
+              'align-items-center',
+              'justify-content-center',
+              'border-right',
             ])]}
           >
             {React.cloneElement(iconElement, {
               className: iconElement.props && Array.isArray(iconElement.props.className) ?
-                [...iconElement.props.className, styles['rounded-left']] : styles['rounded-left'],
+                [...iconElement.props.className, 'rounded-left'] : 'rounded-left',
             })}
           </div>
         }
@@ -179,11 +179,11 @@ class Dropdown extends React.Component {
           onClick={this.toggle}
           onKeyDown={this.handleToggleKeyDown}
           className={[classNames([
-            styles['dropdown-toggle'],
+            'dropdown-toggle',
             {
-              [styles['border-0']]: hasIconElement,
-              [styles['rounded-0']]: hasIconElement,
-              [styles['bg-white']]: hasIconElement,
+              'border-0': hasIconElement,
+              'rounded-0': hasIconElement,
+              'bg-white': hasIconElement,
             },
           ])]}
           type="button"
@@ -193,8 +193,8 @@ class Dropdown extends React.Component {
           aria-label={title}
           aria-hidden={!open}
           className={classNames([
-            styles['dropdown-menu'],
-            { [styles.show]: open },
+            'dropdown-menu',
+            { show: open },
           ])}
           role="menu"
         >

@@ -3,7 +3,7 @@ import { nonNegativeInteger } from 'airbnb-prop-types';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import styles from './ListBox.scss';
+import './ListBox.scss';
 
 export default class ListBox extends React.Component {
   constructor(props) {
@@ -90,7 +90,7 @@ export default class ListBox extends React.Component {
       this.props.tag,
       {
         'aria-activedescendant': this.state.selectedOptionIndex === null ? null : `list-box-option-${this.state.selectedOptionIndex}`,
-        className: classNames([styles['list-group'], this.props.className]),
+        className: classNames(['list-group', this.props.className]),
         onFocus: this.onFocus,
         onKeyDown: this.onKeyDown,
         role: 'listbox',

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import isRequiredIf from 'react-proptype-conditional-require';
 
-import styles from './StatusAlert.scss';
+import './StatusAlert.scss';
 import Button from '../Button';
 
 class StatusAlert extends React.Component {
@@ -85,14 +85,14 @@ class StatusAlert extends React.Component {
       <div
         className={classNames([
           ...className,
-          styles.alert,
-          styles.fade,
+          'alert',
+          'fade',
         ], {
-          [styles['alert-dismissible']]: dismissible,
+          'alert-dismissible': dismissible,
         }, {
-          [styles[`alert-${alertType}`]]: alertType !== undefined,
+          [`alert-${alertType}`]: alertType !== undefined,
         }, {
-          [styles.show]: this.state.open,
+          show: this.state.open,
         })}
         role="alert"
         hidden={!this.state.open}

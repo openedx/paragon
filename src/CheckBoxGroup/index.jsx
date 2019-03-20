@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './CheckBoxGroup.scss';
+import './CheckBoxGroup.scss';
 
 function CheckBoxGroup(props) {
   return (
-    <div className={styles['form-group']}>
+    <div className="form-group">
       {props.children}
     </div>
   );
