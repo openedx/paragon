@@ -4,7 +4,6 @@ import emailPropType from 'email-prop-type';
 import isRequiredIf from 'react-proptype-conditional-require';
 import mailtoLink from 'mailto-link';
 
-import propShim from '../propShim';
 import Hyperlink from '../Hyperlink';
 
 const MailtoLink = (props) => {
@@ -31,11 +30,10 @@ const MailtoLink = (props) => {
     destination,
     externalLinkAlternativeText: externalLink.alternativeLink,
     externalLinkTitle: externalLink.title,
-    children: propShim(props, 'children', 'content', 'MailtoLink'),
     ...other,
   };
 
-  return Hyperlink(linkProps);
+  return <Hyperlink {...linkProps}>{props.children}</Hyperlink>;
 };
 
 MailtoLink.defaultProps = {

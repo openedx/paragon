@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import classNames from 'classnames';
 import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
 
@@ -23,17 +23,19 @@ const externalLinkProps = {
 
 describe('correct rendering', () => {
   it('renders Hyperlink', () => {
-    const wrapper = shallow(<Hyperlink {...props}>{content}</Hyperlink>);
-    expect(wrapper.type()).toEqual('a');
+    const wrapper = mount(<Hyperlink {...props}>{content}</Hyperlink>);
+    expect(wrapper.find('a').hostNodes().length).toEqual(1);
     expect(wrapper).toHaveLength(1);
 
-    expect(wrapper.prop('children')).toEqual([content, undefined]);
-    expect(wrapper.prop('href')).toEqual(destination);
-    expect(wrapper.prop('target')).toEqual('_self');
-    expect(wrapper.prop('onClick')).toEqual(onClick);
+    const anchor = wrapper.find('a').hostNodes();
 
-    expect(wrapper.find('span')).toHaveLength(0);
-    expect(wrapper.find('i')).toHaveLength(0);
+    expect(anchor.prop('children')).toEqual([content, undefined]);
+    expect(anchor.prop('href')).toEqual(destination);
+    expect(anchor.prop('target')).toEqual('_self');
+    expect(anchor.prop('onClick')).toEqual(onClick);
+
+    expect(anchor.find('span')).toHaveLength(0);
+    expect(anchor.find('i')).toHaveLength(0);
   });
 
   it('renders external Hyperlink', () => {

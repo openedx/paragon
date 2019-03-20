@@ -4,12 +4,12 @@ import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
 import PropTypes from 'prop-types';
 import isRequiredIf from 'react-proptype-conditional-require';
 
-import propShim from '../propShim';
+import withDeprecation from '../withDeprecation';
 
 function Hyperlink(props) {
   const {
-    destination,
-    content,
+    href,
+    children,
     target,
     onClick,
     externalLinkAlternativeText,
@@ -34,13 +34,8 @@ function Hyperlink(props) {
   }
 
   return (
-    <a
-      href={destination}
-      target={target}
-      onClick={onClick}
-      {...other}
-    >
-      {propShim(props, 'children', 'content', 'Hyperlink')}
+    <a href={href} target={target} onClick={onClick} {...other}>
+      {children}
       {externalLinkIcon}
     </a>
   );
@@ -51,18 +46,24 @@ Hyperlink.defaultProps = {
   onClick: () => {},
   externalLinkAlternativeText: 'Opens in a new window',
   externalLinkTitle: 'Opens in a new window',
-  content: undefined,
-  children: undefined,
 };
 
 Hyperlink.propTypes = {
-  destination: PropTypes.string.isRequired,
-  content: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  href: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   target: PropTypes.string,
   onClick: PropTypes.func,
   externalLinkAlternativeText: isRequiredIf(PropTypes.string, props => props.target === '_blank'),
   externalLinkTitle: isRequiredIf(PropTypes.string, props => props.target === '_blank'),
 };
 
-export default Hyperlink;
+export default withDeprecation(Hyperlink, {
+  content: {
+    deprType: 'renamed',
+    newName: 'children',
+  },
+  destination: {
+    deprType: 'renamed',
+    newName: 'href',
+  },
+});
