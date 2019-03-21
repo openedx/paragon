@@ -563,21 +563,13 @@ exports[`Storyshots CheckBoxGroup basic usage 1`] = `
 exports[`Storyshots Collapsible basic usage with resizing 1`] = `
 <div>
   <div
-    className={
-      Array [
-        "collapsible expanded",
-      ]
-    }
+    className="collapsible expanded"
   >
     <h2>
       Try resizing the screen to medium or small
     </h2>
     <div
-      className={
-        Array [
-          "collapsible-body open",
-        ]
-      }
+      className="collapsible-body open"
     >
       <div>
         <h3>
@@ -602,11 +594,7 @@ exports[`Storyshots Collapsible basic usage with resizing 1`] = `
 
 exports[`Storyshots Collapsible basic usage without resizing 1`] = `
 <div
-  className={
-    Array [
-      "collapsible",
-    ]
-  }
+  className="collapsible"
 >
   <button
     aria-expanded={false}
@@ -628,11 +616,7 @@ exports[`Storyshots Collapsible basic usage without resizing 1`] = `
     </div>
   </button>
   <div
-    className={
-      Array [
-        "collapsible-body",
-      ]
-    }
+    className="collapsible-body"
   >
     <p>
       Your stuff goes here
@@ -643,11 +627,7 @@ exports[`Storyshots Collapsible basic usage without resizing 1`] = `
 
 exports[`Storyshots Collapsible fires onToggle callback when toggled 1`] = `
 <div
-  className={
-    Array [
-      "collapsible",
-    ]
-  }
+  className="collapsible"
 >
   <button
     aria-expanded={false}
@@ -669,11 +649,7 @@ exports[`Storyshots Collapsible fires onToggle callback when toggled 1`] = `
     </div>
   </button>
   <div
-    className={
-      Array [
-        "collapsible-body",
-      ]
-    }
+    className="collapsible-body"
   >
     <p>
       Your stuff goes here
@@ -684,11 +660,7 @@ exports[`Storyshots Collapsible fires onToggle callback when toggled 1`] = `
 
 exports[`Storyshots Collapsible initially open collapsible 1`] = `
 <div
-  className={
-    Array [
-      "collapsible open",
-    ]
-  }
+  className="collapsible open"
 >
   <button
     aria-expanded={true}
@@ -710,11 +682,7 @@ exports[`Storyshots Collapsible initially open collapsible 1`] = `
     </div>
   </button>
   <div
-    className={
-      Array [
-        "collapsible-body open",
-      ]
-    }
+    className="collapsible-body open"
   >
     <p>
       Your stuff goes here
@@ -823,11 +791,7 @@ exports[`Storyshots Dropdown with icon element 1`] = `
   className="dropdown has-icon rounded border d-flex bg-white"
 >
   <div
-    className={
-      Array [
-        "icon-container d-flex align-items-center justify-content-center border-right",
-      ]
-    }
+    className="icon-container d-flex align-items-center justify-content-center border-right"
   >
     <span
       aria-hidden={true}

@@ -72,11 +72,11 @@ class Collapsible extends React.Component {
     const { isExpanded, isOpen } = this.state;
 
     return (
-      <div className={[classNames(
+      <div className={classNames(
         'collapsible',
         { open: isOpen && !isExpanded },
         { expanded: isExpanded },
-        )]}
+        )}
       >
         {isExpanded ? (
           expandedTitle
@@ -106,10 +106,10 @@ class Collapsible extends React.Component {
             onClick={this.handleClick}
           />
         )}
-        <div className={[classNames(
+        <div className={classNames(
           'collapsible-body',
           { open: isOpen || isExpanded },
-          )]}
+          )}
         >
           {children}
         </div>

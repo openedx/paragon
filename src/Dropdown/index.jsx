@@ -156,13 +156,13 @@ class Dropdown extends React.Component {
       >
         { hasIconElement &&
           <div
-            className={[classNames([
+            className={classNames([
               'icon-container',
               'd-flex',
               'align-items-center',
               'justify-content-center',
               'border-right',
-            ])]}
+            ])}
           >
             {React.cloneElement(iconElement, {
               className: iconElement.props && Array.isArray(iconElement.props.className) ?
