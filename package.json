@@ -2,15 +2,13 @@
   "name": "@edx/paragon",
   "version": "0.0.0-development",
   "description": "Accessible, responsive UI component library based on Bootstrap.",
-  "main": "themeable/index.js",
+  "main": "dist/paragon.js",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/edx/paragon.git"
   },
   "files": [
-    "/static",
-    "/themeable",
     "/dist",
     "/src"
   ],
@@ -22,7 +20,7 @@
     "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage",
     "deploy-storybook": "storybook-to-ghpages",
     "deploy-storybook-ci": "storybook-to-ghpages --ci",
-    "is-es5": "es-check es5 ./themeable/*.js ./static/*.js",
+    "is-es5": "es-check es5 ./dist/*.js",
     "lint": "eslint --ext .js --ext .jsx .",
     "prepublishOnly": "npm run build",
     "semantic-release": "semantic-release",

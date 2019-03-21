@@ -21,17 +21,17 @@ Paragon requires React 16 or higher. To install Paragon into your project:
 npm i --save @edx/paragon
 ```
 
+In your JSX files:
+```
+import { ComponentName } from '@edx/paragon';
+```
+
 Since Paragon is a React library, components must be rendered with React and ReactDOM. This doesn't mean the entire page has to be rendered with React. You can read up about rendering React into a page within the [official ReactDOM documentation](https://reactjs.org/docs/react-dom.html).
 
-### Export Targets
 
-Paragon's production build ships with two different export targets:
+### Legacy Export Target [Removed]
 
-**`themeable`**: This is the default export intended for use within Bootstrap 4 pages. Components ship with stock Bootstrap classnames and can accept Bootstrap themes. This build assumes Bootstrap/Font Awesome are already available on the consuming page. You should not need to add any additional stylesheets -- just plug and go. Import syntax is as follows:
-
-`import { ComponentName } from '@edx/paragon';`
-
-**`static`**: The static build is intended for use within legacy pages not styled with Bootstrap 4. Component classnames are namespaced with the `paragon__` prefix so as not to conflict with existing classnames defined elsewhere on the page. Be cognizant of poorly scoped legacy rules (e.g. a rule for all `input` or `h1` tags), which can still affect Paragon components. This build comes with its own stylesheet, available at `/static/paragon.min.css`. You must include this stylesheet on any page that uses Paragon components. Components can be imported thus:
+**`static [Removed in version 4.0]`**: The static build is intended for use within legacy pages not styled with Bootstrap 4. Component classnames are namespaced with the `paragon__` prefix so as not to conflict with existing classnames defined elsewhere on the page. Be cognizant of poorly scoped legacy rules (e.g. a rule for all `input` or `h1` tags), which can still affect Paragon components. This build comes with its own stylesheet, available at `/static/paragon.min.css`. You must include this stylesheet on any page that uses Paragon components. Components can be imported thus:
 
 `import { ComponentName } from '@edx/paragon/static';`
 
