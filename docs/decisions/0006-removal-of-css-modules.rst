@@ -16,7 +16,7 @@ A resulting complication of using CSS Modules is that each component JSX file mu
 Decision
 --------
 
-Remove our usage of CSS Modules. If we find a need to have CSS modules in the future we should look at other solutions. Concretely this decision includes this changes:
+Remove our usage of CSS Modules. If we find a need to have CSS modules in the future we should look at other solutions. Concretely this decision includes these changes:
 
 * Remove all SCSS imports in Paragon components (JSX).
 * Delete SCSS files that had no other purpose than to supply namespaced class names
