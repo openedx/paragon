@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
 
-import styles from './ValidationMessage.scss';
 import Variant from '../utils/constants';
 
 const inputProps = {
@@ -35,7 +33,7 @@ class ValidationMessage extends React.Component {
 
     switch (variant.status) {
       case Variant.status.INFO:
-        className = styles['invalid-feedback-nodanger'];
+        className = 'invalid-feedback-nodanger';
         break;
       default:
         break;
@@ -57,14 +55,14 @@ class ValidationMessage extends React.Component {
           <React.Fragment>
             <span
               className={classNames(
-                FontAwesomeStyles.fa,
-                FontAwesomeStyles['fa-exclamation-circle'],
-                styles['fa-icon-spacing'],
+                'fa',
+                'fa-exclamation-circle',
+                'fa-icon-spacing',
               )}
               aria-hidden
             />
             <span
-              className={classNames(styles['sr-only'])}
+              className={classNames('sr-only')}
             >
               {variantIconDescription}
             </span>
@@ -88,7 +86,7 @@ class ValidationMessage extends React.Component {
     return (
       <div
         className={classNames(
-          styles['invalid-feedback'],
+          'invalid-feedback',
           this.getVariantFeedbackClassName(),
           className,
         )}

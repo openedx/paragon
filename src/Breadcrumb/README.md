@@ -1,5 +1,3 @@
-# Breadcrumb
-
 Provides a basic breadcrumb component.
 
 ## API

@@ -2,7 +2,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import ElementPropTypes from 'react-element-proptypes';
 
 class RadioButton extends React.PureComponent {
   constructor(props) {
@@ -169,7 +168,7 @@ RadioButtonGroup.defaultProps = {
 };
 
 RadioButtonGroup.propTypes = {
-  children: PropTypes.arrayOf(ElementPropTypes.elementOfType(RadioButton)).isRequired,
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
