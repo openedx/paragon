@@ -2,7 +2,6 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import styles from './Button.scss';
 
 class Button extends React.Component {
   constructor(props) {
@@ -63,12 +62,12 @@ class Button extends React.Component {
       <button
         {...other}
         className={classNames([
-          styles.btn,
+          'btn',
           ...className,
         ], {
-          [styles[`btn-${buttonType}`]]: buttonType !== undefined,
+          [`btn-${buttonType}`]: buttonType !== undefined,
         }, {
-          [styles.close]: isClose,
+          close: isClose,
         })}
         onBlur={this.onBlur}
         onClick={this.onClick}

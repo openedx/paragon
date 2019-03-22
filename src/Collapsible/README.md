@@ -31,23 +31,12 @@ resize to determine whether to display the collapsible or regular view. The
 example below demonstrates a collapsible that will only show the open/close
 button for non-desktop screens.
 
+If no function is given, the collapsible does not handle resizing and will
+always show the open/close button.
+
 ### `iconId` (string; optional)
 `iconId` is the id attribute that is passed to the icon on the collapsible.
 Defaults to the empty string.
-
-```jsx
-<Collapsible
-  title="Collapsible"
-  expandedTitle={<h2>Collapsible</h2>}
-  isCollapsible={() => window.matchMedia('(min-width: 992px)').matches}
->
-  <p>Child 1</p>
-  <p>Child 2</p>
-</Collapsible>
-```
-
-If no function is given, the collapsible does not handle resizing and will
-always show the open/close button.
 
 ### `onToggle` (function; optional)
 `onToggle` is an optional callback that is trigged when the Collapsible components is opened or closed. A boolean is passed to the callback with the value of `isOpen` from the component's state.
