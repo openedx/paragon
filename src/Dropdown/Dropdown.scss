@@ -1,21 +1,3 @@
-@import "~bootstrap/scss/_dropdown";
-@import "~bootstrap/scss/utilities/_borders";
-@import "~bootstrap/scss/utilities/_display";
-@import "~bootstrap/scss/utilities/_flex";
-@import "~bootstrap/scss/utilities/_background";
-
-// Trying to patch this upstream, then this can
-// be removed.
-// https://github.com/twbs/bootstrap/pull/23990
-.show {
-  > a:focus {
-    outline-width: 2px;
-    outline-style: solid;
-    outline-color: Highlight;
-    outline: -webkit-focus-ring-color auto 5px;
-  }
-}
-
 .dropdown.has-icon {
   .icon-container {
     max-width: 40px;

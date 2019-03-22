@@ -1,9 +1,5 @@
-@import "~bootstrap/scss/_tables";
-@import "~bootstrap/scss/utilities/_screenreaders.scss";
-@import "~bootstrap/scss/utilities/_spacing.scss";
-
 .btn-header {
-  @extend .p-0;
+  padding: 0;
   font-weight: $font-weight-bold;
 }
 

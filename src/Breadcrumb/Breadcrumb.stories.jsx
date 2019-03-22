@@ -1,10 +1,5 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered';
-import { checkA11y } from '@storybook/addon-a11y';
-import { withInfo } from '@storybook/addon-info';
-import { withReadme } from 'storybook-readme';
 
 import Breadcrumb from './index';
 import README from './README.md';
@@ -26,10 +21,7 @@ const sampleLinks = [
 ];
 
 storiesOf('Breadcrumb', module)
-  .addDecorator((story, context) => withInfo()(story)(context))
-  .addDecorator(centered)
-  .addDecorator(checkA11y)
-  .addDecorator(withReadme(README))
+  .addParameters({ info: { text: README } })
   .add('basic usage', () => (
     <Breadcrumb links={sampleLinks} />
   ))
