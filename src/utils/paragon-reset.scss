@@ -1,0 +1,101 @@
+@import '~@edx/edx-bootstrap/sass/open-edx/theme';
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+// Variable Overrides
+
+$font-family-base: inherit;
+$font-family-sans-serif: inherit;
+$font-family-serif: inherit;
+
+// Because Bootstrap styles are based on rems, the root HTML element's
+// font size determines the size of the components. Because the consumer
+// may want to render Paragon components alongside existing UI, we provide
+// the option to scale all rem-based variables within Paragon based on
+// their own base rem value.
+
+// It's worth looking into doing this on-the-fly via postcss or something
+// similar, so we don't have to hardcode the overrides.
+
+// (font size on root element / default (16px))
+$base-rem-size: 1 !default;
+
+$spacer: $spacer / $base-rem-size;
+$font-size-base: $font-size-base / $base-rem-size;
+$font-size-lg: $font-size-lg / $base-rem-size;
+$font-size-sm: $font-size-sm / $base-rem-size;
+$h1-font-size: $h1-font-size / $base-rem-size;
+$h2-font-size: $h2-font-size / $base-rem-size;
+$h3-font-size: $h3-font-size / $base-rem-size;
+$h4-font-size: $h4-font-size / $base-rem-size;
+$h5-font-size: $h5-font-size / $base-rem-size;
+$h6-font-size: $h6-font-size / $base-rem-size;
+$display1-size: $display1-size / $base-rem-size;
+$display2-size: $display2-size / $base-rem-size;
+$display3-size: $display3-size / $base-rem-size;
+$display4-size: $display4-size / $base-rem-size;
+$lead-font-size: $lead-font-size / $base-rem-size;
+$kbd-box-shadow: $kbd-box-shadow / $base-rem-size;
+$border-radius: $border-radius / $base-rem-size;
+$border-radius-lg: $border-radius-lg / $base-rem-size;
+$border-radius-sm: $border-radius-sm / $base-rem-size;
+$table-cell-padding: $table-cell-padding / $base-rem-size;
+$table-cell-padding-sm: $table-cell-padding-sm / $base-rem-size;
+$btn-block-spacing-y: $btn-block-spacing-y / $base-rem-size;
+$input-btn-padding-x: $input-btn-padding-x / $base-rem-size;
+$input-btn-padding-y: $input-btn-padding-y / $base-rem-size;
+$input-btn-padding-x-sm: $input-btn-padding-x-sm / $base-rem-size;
+$input-btn-padding-y-sm: $input-btn-padding-y-sm / $base-rem-size;
+$input-btn-padding-x-lg: $input-btn-padding-x-lg / $base-rem-size;
+$input-btn-padding-y-lg: $input-btn-padding-y-lg / $base-rem-size;
+$form-text-margin-top: $form-text-margin-top / $base-rem-size;
+$form-check-input-gutter: $form-check-input-gutter / $base-rem-size;
+$form-check-input-margin-y: $form-check-input-margin-y / $base-rem-size;
+$form-check-input-margin-x: $form-check-input-margin-x / $base-rem-size;
+$form-check-inline-margin-x: $form-check-inline-margin-x / $base-rem-size;
+$custom-control-gutter: $custom-control-gutter / $base-rem-size;
+$custom-control-spacer-x: $custom-control-spacer-x / $base-rem-size;
+$custom-control-indicator-size: $custom-control-indicator-size / $base-rem-size;
+$custom-control-indicator-box-shadow: $custom-control-indicator-box-shadow / $base-rem-size;
+$custom-select-padding-x: $custom-select-padding-x / $base-rem-size;
+$custom-select-padding-y: $custom-select-padding-y / $base-rem-size;
+$custom-select-indicator-padding: $custom-select-indicator-padding / $base-rem-size;
+$custom-file-height: $custom-file-height / $base-rem-size;
+$custom-file-focus-box-shadow: $custom-file-focus-box-shadow / $base-rem-size;
+$custom-file-padding-x: $custom-file-padding-x / $base-rem-size;
+$custom-file-padding-y: $custom-file-padding-y / $base-rem-size;
+$custom-file-box-shadow: $custom-file-box-shadow / $base-rem-size;
+$dropdown-min-width: $dropdown-min-width / $base-rem-size;
+$dropdown-padding-y: $dropdown-padding-y / $base-rem-size;
+$dropdown-spacer: $dropdown-spacer / $base-rem-size;
+$dropdown-box-shadow: $dropdown-box-shadow / $base-rem-size;
+$dropdown-item-padding-x: $dropdown-item-padding-x / $base-rem-size;
+$dropdown-item-padding-y: $dropdown-item-padding-y / $base-rem-size;
+$navbar-brand-padding-y: $navbar-brand-padding-y / $base-rem-size;
+$navbar-toggler-padding-x: $navbar-toggler-padding-x / $base-rem-size;
+$navbar-toggler-padding-y: $navbar-toggler-padding-y / $base-rem-size;
+$pagination-padding-x: $pagination-padding-x / $base-rem-size;
+$pagination-padding-y: $pagination-padding-y / $base-rem-size;
+$pagination-padding-x-sm: $pagination-padding-x-sm / $base-rem-size;
+$pagination-padding-y-sm: $pagination-padding-y-sm / $base-rem-size;
+$pagination-padding-x-lg: $pagination-padding-x-lg / $base-rem-size;
+$pagination-padding-y-lg: $pagination-padding-y-lg / $base-rem-size;
+$jumbotron-padding: $jumbotron-padding / $base-rem-size;
+$card-spacer-x: $card-spacer-x / $base-rem-size;
+$card-spacer-y: $card-spacer-y / $base-rem-size;
+$card-img-overlay-padding: $card-img-overlay-padding / $base-rem-size;
+$card-columns-gap: $card-columns-gap / $base-rem-size;
+$badge-pill-border-radius: $badge-pill-border-radius / $base-rem-size;
+$alert-padding-x: $alert-padding-x / $base-rem-size;
+$alert-padding-y: $alert-padding-y / $base-rem-size;
+$progress-height: $progress-height / $base-rem-size;
+$progress-font-size: $progress-font-size / $base-rem-size;
+$progress-box-shadow: $progress-box-shadow / $base-rem-size;
+$list-group-item-padding-x: $list-group-item-padding-x / $base-rem-size;
+$list-group-item-padding-y: $list-group-item-padding-y / $base-rem-size;
+$thumbnail-padding: $thumbnail-padding / $base-rem-size;
+$breadcrumb-padding-y: $breadcrumb-padding-y / $base-rem-size;
+$breadcrumb-padding-x: $breadcrumb-padding-x / $base-rem-size;
+$breadcrumb-item-padding: $breadcrumb-item-padding / $base-rem-size;
+$kbd-padding-x: $kbd-padding-x / $base-rem-size;
+$kbd-padding-y: $kbd-padding-y / $base-rem-size;
