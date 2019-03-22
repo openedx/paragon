@@ -1,10 +1,8 @@
 import classNames from 'classnames';
-import { elementType, nonNegativeInteger, or } from 'airbnb-prop-types';
+import { nonNegativeInteger } from 'airbnb-prop-types';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import ListBoxOption from '../ListBoxOption';
-import styles from './ListBox.scss';
 
 export default class ListBox extends React.Component {
   constructor(props) {
@@ -91,7 +89,7 @@ export default class ListBox extends React.Component {
       this.props.tag,
       {
         'aria-activedescendant': this.state.selectedOptionIndex === null ? null : `list-box-option-${this.state.selectedOptionIndex}`,
-        className: classNames([styles['list-group'], this.props.className]),
+        className: classNames(['list-group', this.props.className]),
         onFocus: this.onFocus,
         onKeyDown: this.onKeyDown,
         role: 'listbox',
@@ -104,10 +102,7 @@ export default class ListBox extends React.Component {
 }
 
 ListBox.propTypes = {
-  children: or([
-    elementType(ListBoxOption),
-    PropTypes.arrayOf(elementType(ListBoxOption)),
-  ]).isRequired,
+  children: PropTypes.node.isRequired,
   className: PropTypes.string,
   selectedOptionIndex: nonNegativeInteger,
   tag: PropTypes.string,

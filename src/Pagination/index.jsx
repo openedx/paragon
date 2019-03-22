@@ -1,6 +1,5 @@
 import { between } from 'airbnb-prop-types';
 import classNames from 'classnames';
-import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -9,8 +8,6 @@ import { ExtraSmall, LargerThanExtraSmall } from '../Responsive';
 import getTextFromElement from '../utils/getTextFromElement';
 import Icon from '../Icon';
 import newId from '../utils/newId';
-
-import styles from './Pagination.scss';
 
 class Pagination extends React.Component {
   constructor(props) {
@@ -83,15 +80,15 @@ class Pagination extends React.Component {
   renderEllipsisButton() {
     return (
       <li
-        className={classNames([styles['page-item'], styles.disabled])}
+        className={classNames(['page-item', 'disabled'])}
         key={newId('pagination-ellipsis-')}
       >
         <span
           className={classNames([
-            styles.btn,
-            styles['page-link'],
-            styles['ml-0'],
-            styles['border-0'],
+            'btn',
+            'page-link',
+            'ml-0',
+            'border-0',
           ])}
         >
           ...
@@ -120,15 +117,15 @@ class Pagination extends React.Component {
     return (
       <li
         className={classNames([
-          styles['page-item'],
+          'page-item',
           {
-            [styles.active]: active,
+            active,
           },
         ])}
         key={page}
       >
         <Button
-          className={[styles['page-link']]}
+          className={['page-link']}
           aria-label={ariaLabel}
           label={page.toString()}
           inputRef={(element) => { this.pageRefs[page] = element; }}
@@ -163,15 +160,15 @@ class Pagination extends React.Component {
 
     return (
       <li
-        className={classNames([styles['page-item'], styles.disabled])}
+        className={classNames(['page-item', 'disabled'])}
         key={currentPage}
       >
         <span
           className={classNames([
-            styles.btn,
-            styles['page-link'],
-            styles['mx-2'],
-            styles['border-0'],
+            'btn',
+            'page-link',
+            'mx-2',
+            'border-0',
           ])}
           aria-label={ariaLabel}
         >
@@ -203,23 +200,23 @@ class Pagination extends React.Component {
     return (
       <li
         className={classNames(
-          styles['page-item'],
+          'page-item',
           {
-            [styles.disabled]: isFirstPage,
+            disabled: isFirstPage,
           },
         )}
       >
         <Button
-          className={['previous', styles['page-link']]}
+          className={['previous', 'page-link']}
           aria-label={ariaLabel}
           label={
             <div>
               <Icon
                 id={newId('pagination-')}
                 className={[
-                  FontAwesomeStyles.fa,
-                  FontAwesomeStyles['fa-chevron-left'],
-                  styles['mr-2'],
+                  'fa',
+                  'fa-chevron-left',
+                  'mr-2',
                 ]}
               />
               {buttonLabels.previous}
@@ -256,14 +253,14 @@ class Pagination extends React.Component {
     return (
       <li
         className={classNames(
-          styles['page-item'],
+          'page-item',
           {
-            [styles.disabled]: isLastPage,
+            disabled: isLastPage,
           },
         )}
       >
         <Button
-          className={['next', styles['page-link']]}
+          className={['next', 'page-link']}
           aria-label={ariaLabel}
           label={
             <div>
@@ -271,9 +268,9 @@ class Pagination extends React.Component {
               <Icon
                 id={newId('pagination-')}
                 className={[
-                  FontAwesomeStyles.fa,
-                  FontAwesomeStyles['fa-chevron-right'],
-                  styles['ml-2'],
+                  'fa',
+                  'fa-chevron-right',
+                  'ml-2',
                 ]}
               />
             </div>
@@ -292,7 +289,7 @@ class Pagination extends React.Component {
     const { buttonLabels, pageCount } = this.props;
     return (
       <div
-        className={styles['sr-only']}
+        className="sr-only"
         aria-live="polite"
         aria-relevant="text"
         aria-atomic
@@ -368,7 +365,7 @@ class Pagination extends React.Component {
         className={this.props.className}
       >
         {this.renderScreenReaderSection()}
-        <ul className={styles.pagination}>
+        <ul className="pagination">
           {this.renderPreviousButton()}
           <ExtraSmall>
             {this.renderPageOfCountButton()}
