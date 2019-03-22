@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 import asInput, { inputProps } from '../asInput';
+import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
 class Select extends React.Component {
   static getOption(option, i) {
@@ -75,11 +76,19 @@ Select.propTypes = {
   ]).isRequired,
 };
 
-const InputSelect = asInput(Select);
+const InputSelect = asInput(withDeprecatedProps(Select, {
+  className: {
+    deprType: DEPR_TYPES.FORMAT,
+    expect: value => typeof value === 'string',
+    transform: value => (Array.isArray(value) ? value.join(' ') : value),
+    message: 'It should be a string.',
+  },
+}));
 
 InputSelect.propTypes = {
   ...InputSelect.propTypes,
   ...Select.propTypes,
 };
+
 
 export default InputSelect;

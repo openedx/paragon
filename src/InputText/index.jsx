@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 
 import asInput, { inputProps, defaultProps } from '../asInput';
+import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
+
 
 function Text(props) {
   return (
@@ -50,6 +52,13 @@ const textDefaultProps = {
 Text.propTypes = { ...textPropTypes, ...inputProps };
 Text.defaultProps = { ...textDefaultProps, ...defaultProps };
 
-const InputText = asInput(Text);
+const InputText = asInput(withDeprecatedProps(Text, {
+  className: {
+    deprType: DEPR_TYPES.FORMAT,
+    expect: value => typeof value === 'string',
+    transform: value => (Array.isArray(value) ? value.join(' ') : value),
+    message: 'It should be a string.',
+  },
+}));
 
 export default InputText;

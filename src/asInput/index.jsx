@@ -6,6 +6,8 @@ import classNames from 'classnames';
 import newId from '../utils/newId';
 import ValidationMessage from '../ValidationMessage/index';
 import Variant from '../utils/constants';
+import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
+
 
 export const getDisplayName = WrappedComponent =>
   WrappedComponent.displayName || WrappedComponent.name || 'Component';
@@ -28,7 +30,7 @@ export const inputProps = {
   validator: PropTypes.func,
   isValid: PropTypes.bool,
   validationMessage: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  className: PropTypes.arrayOf(PropTypes.string),
+  className: PropTypes.string,
   themes: PropTypes.arrayOf(PropTypes.string),
   inline: PropTypes.bool,
   inputGroupPrepend: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element]),
@@ -48,7 +50,7 @@ export const defaultProps = {
   validator: undefined,
   isValid: true,
   validationMessage: '',
-  className: [],
+  className: undefined,
   themes: [],
   inline: false,
   inputGroupPrepend: undefined,
@@ -273,7 +275,14 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
 
   NewComponent.defaultProps = defaultProps;
 
-  return NewComponent;
+  return withDeprecatedProps(NewComponent, {
+    className: {
+      deprType: DEPR_TYPES.FORMAT,
+      expect: value => typeof value === 'string',
+      transform: value => (Array.isArray(value) ? value.join(' ') : value),
+      message: 'It should be a string.',
+    },
+  });
 };
 
 export default asInput;
