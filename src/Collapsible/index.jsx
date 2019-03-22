@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Button from '../Button';
 import Icon from '../Icon';
 
+import styles from './Collapsible.scss';
 
 class Collapsible extends React.Component {
   constructor(props) {
@@ -72,11 +73,11 @@ class Collapsible extends React.Component {
     const { isExpanded, isOpen } = this.state;
 
     return (
-      <div className={classNames(
+      <div className={[classNames(
         'collapsible',
-        { open: isOpen && !isExpanded },
-        { expanded: isExpanded },
-        )}
+        { [styles.open]: isOpen && !isExpanded },
+        { [styles.expanded]: isExpanded },
+        )]}
       >
         {isExpanded ? (
           expandedTitle
@@ -85,8 +86,8 @@ class Collapsible extends React.Component {
             aria-expanded={isOpen}
             className={[classNames(
               'btn-block text-left',
-              'btn-collapsible',
-              { open: isOpen },
+              styles['btn-collapsible'],
+              { [styles.open]: isOpen },
             )]}
             label={
               <div className="collapsible-title">
@@ -106,10 +107,10 @@ class Collapsible extends React.Component {
             onClick={this.handleClick}
           />
         )}
-        <div className={classNames(
+        <div className={[classNames(
           'collapsible-body',
-          { open: isOpen || isExpanded },
-          )}
+          { [styles.open]: isOpen || isExpanded },
+          )]}
         >
           {children}
         </div>

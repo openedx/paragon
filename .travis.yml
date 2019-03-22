@@ -1,14 +1,15 @@
 language: node_js
 node_js:
-- 10
 - 8
+- 6
 cache:
   directories:
   - "~/.npm"
 notifications:
   email:
     recipients:
-    - paragon@edx.org
+    - arizzitano@edx.org
+    - jbradley@edx.org
     on_success: never
     on_failure: always
   hipchat:
