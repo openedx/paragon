@@ -1,7 +1,12 @@
+import { action } from '@storybook/addon-actions';
+import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
 import PropTypes from 'prop-types';
 import React from 'react';
+import centered from '@storybook/addon-centered';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import { checkA11y } from '@storybook/addon-a11y';
+import { withInfo } from '@storybook/addon-info';
+import { withReadme } from 'storybook-readme';
 
 import Modal from './index';
 import Button from '../Button';
@@ -62,7 +67,10 @@ ModalWrapper.defaultProps = {
 };
 
 storiesOf('Modal', module)
-  .addParameters({ info: { text: README } })
+  .addDecorator((story, context) => withInfo()(story)(context))
+  .addDecorator(centered)
+  .addDecorator(checkA11y)
+  .addDecorator(withReadme(README))
   .add('basic usage', () => (
     <Modal
       open
@@ -139,8 +147,8 @@ storiesOf('Modal', module)
       closeText={
         <Icon
           className={[
-            'fa',
-            'fa-ship',
+            FontAwesomeStyles.fa,
+            FontAwesomeStyles['fa-ship'],
           ]}
           screenReaderText="Close"
         />}

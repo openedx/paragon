@@ -1,81 +1,112 @@
 const path = require('path');
+const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+// we build the library for two different build targets:
+// static (with scoped styles) and themeable (with stock,
+// overrideable classnames)
+const targetProperties = [{
+  baseDirectory: 'static',
+  localIdentName: 'paragon__[local]',
+},
+{
+  baseDirectory: 'themeable',
+  localIdentName: '[local]',
+}];
 
-module.exports = {
+module.exports = targetProperties.map(config => ({
+  devtool: 'source-map',
   entry: {
-    paragon: './src/index.js',
-    style: './src/index.scss',
+    paragon: path.resolve('./src/index.js'),
   },
   output: {
-    filename: '[name].js',
+    filename: `${config.baseDirectory}/index.js`,
     library: 'paragon',
     libraryTarget: 'umd',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
   },
-  externals: {
-    react: {
-      commonjs: 'react',
-      commonjs2: 'react',
-      amd: 'React',
-      root: 'React',
-    },
-    'react-dom': {
-      commonjs: 'react-dom',
-      commonjs2: 'react-dom',
-      amd: 'ReactDOM',
-      root: 'ReactDOM',
-    },
-  },
   plugins: [
-    new UglifyJsPlugin(),
-    new MiniCssExtractPlugin({
-      filename: 'paragon.min.css',
+    new UglifyJsPlugin({
+      sourceMap: true,
     }),
-    // Be careful here. Our output path is the root of this project
-    // so without this config, CleanWebpackPlugin will destroy the project
-    // We should change the output path to dist/ in the next major version.
-    new CleanWebpackPlugin(),
+    new ExtractTextPlugin(`${config.baseDirectory}/paragon.min.css`),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+    }),
   ],
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
+        exclude: /(node_modules)/,
+        use: [
+          {
+            loader: 'babel-loader',
+          },
+          { loader: 'source-map-loader' },
+        ],
       },
       {
         test: /\.scss|\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              data: '@import "bootstrap-variables";',
-              includePaths: [
-                path.join(__dirname, './src/utils'),
-                path.join(__dirname, './node_modules'),
-              ],
+        use: ExtractTextPlugin.extract({
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true,
+                localIdentName: config.localIdentName,
+                sourceMap: true,
+                minimize: true,
+              },
             },
-          },
-        ],
+            {
+              loader: 'sass-loader',
+              options: {
+                data: '@import "paragon-reset";',
+                includePaths: [
+                  path.join(__dirname, './src/utils'),
+                  path.join(__dirname, './node_modules'),
+                ],
+                sourceMap: true,
+              },
+            },
+          ],
+        }),
       },
       {
         test: /\.(woff2?|ttf|svg|eot)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader',
         options: {
-          outputPath: 'assets',
+          outputPath: `${config.baseDirectory}/`,
         },
       },
     ],
   },
-};
+  externals: [{
+    react: {
+      root: 'React',
+      commonjs2: 'react',
+      commonjs: 'react',
+      amd: 'react',
+    },
+  },
+  {
+    'react-dom': {
+      root: 'ReactDOM',
+      commonjs2: 'react-dom',
+      commonjs: 'react-dom',
+      amd: 'react-dom',
+    },
+  },
+  {
+    'react-transition-group': {
+      root: 'ReactTransitionGroup',
+      commonjs2: 'react-transition-group',
+      commonjs: 'react-transition-group',
+      amd: 'react-transition-group',
+    },
+  }],
+}));

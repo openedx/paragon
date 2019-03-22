@@ -1,0 +1,15 @@
+.paragon-component {
+    @import "~bootstrap/scss/_reboot";
+
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
+    line-height: 1.15;
+
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    line-height: $line-height-base;
+    margin: 0;
+    color: $body-color;
+    background-color: $body-bg;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import styles from './Breadcrumb.scss';
 import Icon from '../Icon';
 
 const Breadcrumbs = ({
@@ -11,20 +12,20 @@ const Breadcrumbs = ({
 
   return (
     <nav aria-label="breadcrumb">
-      <ol className={classNames('list-inline')}>
+      <ol className={classNames(styles['list-inline'])}>
         {links.map(({ url, label }, i) => (
           <React.Fragment key={url}>
-            <li className={classNames('list-inline-item')}>
+            <li className={classNames(styles['list-inline-item'])}>
               <a href={url} {...(clickHandler && { onClick: clickHandler })}>{label}</a>
             </li>
             {(activeLabel || ((i + 1) < linkCount)) &&
-              <li className={classNames('list-inline-item')} role="presentation" aria-label="spacer">
+              <li className={classNames(styles['list-inline-item'])} role="presentation" aria-label="spacer">
                 {spacer || <Icon className={['fa', 'fa-chevron-right']} id={`spacer-${i}`} />}
               </li>
             }
           </React.Fragment>
         ))}
-        {activeLabel && <li className={classNames('list-inline-item')} key="active">{activeLabel}</li>}
+        {activeLabel && <li className={classNames(styles['list-inline-item'])} key="active">{activeLabel}</li>}
       </ol>
     </nav>
   );
