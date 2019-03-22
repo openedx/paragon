@@ -5,8 +5,9 @@ import StatusAlert from './index';
 import Button from '../Button';
 
 const statusAlertOpen = (isOpen, wrapper) => {
-  expect(wrapper.childAt(0).hasClass('show')).toEqual(isOpen);
-  expect(wrapper.state('open')).toEqual(isOpen);
+  // console.log(wrapper.debug())
+  expect(wrapper.find('.alert').hasClass('show')).toEqual(isOpen);
+  expect(wrapper.find('StatusAlert').state('open')).toEqual(isOpen);
 };
 const dialog = 'Status Alert dialog';
 const defaultProps = {
