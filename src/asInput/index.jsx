@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import newId from '../utils/newId';
+import styles from './asInput.scss';
 import ValidationMessage from '../ValidationMessage/index';
 import Variant from '../utils/constants';
 
@@ -128,7 +129,7 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
 
       if (this.props.description) {
         desc.description = (
-          <small className="form-text" id={descriptionId} key="1">
+          <small className={styles['form-text']} id={descriptionId} key="1">
             {this.props.description}
           </small>
         );
@@ -156,7 +157,7 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
           id={`label-${this.state.id}`}
           htmlFor={this.state.id}
           className={classNames({
-            'form-check-label': this.isGroupedInput(),
+            [styles['form-check-label']]: this.isGroupedInput(),
           })}
         >
           {this.props.label}
@@ -211,10 +212,10 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
           {...this.state}
           className={[classNames(
             {
-              'form-control': !this.isGroupedInput(),
-              'form-check-input': this.isGroupedInput(),
-              'is-invalid': !this.state.isValid,
-              'is-invalid-nodanger': !this.hasDangerTheme(),
+              [styles['form-control']]: !this.isGroupedInput(),
+              [styles['form-check-input']]: this.isGroupedInput(),
+              [styles['is-invalid']]: !this.state.isValid,
+              [styles['is-invalid-nodanger']]: !this.hasDangerTheme(),
             },
             className,
           ).trim()]}
@@ -228,7 +229,7 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
 
     renderInputGroupAppend() {
       return (
-        <div className="input-group-append">
+        <div className={styles['input-group-append']}>
           {this.getAddons({ type: 'append', addonElements: this.props.inputGroupAppend })}
         </div>
       );
@@ -236,7 +237,7 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
 
     renderInputGroupPrepend() {
       return (
-        <div className="input-group-prepend">
+        <div className={styles['input-group-prepend']}>
           {this.getAddons({ type: 'prepend', addonElements: this.props.inputGroupPrepend })}
         </div>
       );
@@ -246,14 +247,14 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       const { description, error, describedBy } = this.getDescriptions();
       return (
         <div className={classNames({
-          'form-group': !this.isGroupedInput(),
-          'form-inline': !this.isGroupedInput() && this.props.inline,
-          'form-check': this.isGroupedInput(),
+          [styles['form-group']]: !this.isGroupedInput(),
+          [styles['form-inline']]: !this.isGroupedInput() && this.props.inline,
+          [styles['form-check']]: this.isGroupedInput(),
         })}
         >
           {labelFirst && this.getLabel()}
           {this.props.inputGroupPrepend || this.props.inputGroupAppend ? (
-            <div className={classNames('input-group')}>
+            <div className={classNames(styles['input-group'])}>
               {this.renderInputGroupPrepend()}
               {this.renderInput(describedBy)}
               {this.renderInputGroupAppend()}

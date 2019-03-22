@@ -1,3 +1,6 @@
+@import "~bootstrap/scss/_forms";
+@import "~bootstrap/scss/utilities/_screenreaders.scss";
+
 .form-control.is-invalid ~ .invalid-feedback-nodanger {
   color: $body-color;
 }

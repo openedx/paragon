@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
+import styles from './ListBoxOption.scss';
 
 export default class ListBoxOption extends React.Component {
   constructor(props) {
@@ -44,8 +45,8 @@ export default class ListBoxOption extends React.Component {
       {
         'aria-selected': isSelected,
         className: classNames(
-          'list-group-item',
-          'list-group-item-action',
+          styles['list-group-item'],
+          styles['list-group-item-action'],
           {
             active: this.props.isSelected,
           },

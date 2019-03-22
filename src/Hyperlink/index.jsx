@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
 import PropTypes from 'prop-types';
 import isRequiredIf from 'react-proptype-conditional-require';
 
@@ -21,7 +22,7 @@ function Hyperlink(props) {
       // Space between content and icon
       <span>{' '}
         <span
-          className={classNames('fa', 'fa-external-link')}
+          className={classNames(FontAwesomeStyles.fa, FontAwesomeStyles['fa-external-link'])}
           aria-hidden={false}
           aria-label={externalLinkAlternativeText}
           title={externalLinkTitle}
