@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
 
 import newId from '../utils/newId';
 import Icon from '../Icon';
 import InputText from '../InputText';
 import Button from '../Button';
 
-import styles from './SearchField.scss';
 
 class SearchField extends React.Component {
   constructor(props) {
@@ -46,10 +44,10 @@ class SearchField extends React.Component {
     const buttons = [
       <Button
         className={[classNames(
-          styles['search-btn'],
+          'search-btn',
           {
-            [styles['border-left']]: !isFocused && this.shouldRenderClearButton(),
-            [styles['btn-outline-primary']]: isFocused && this.shouldRenderClearButton(),
+            'border-left': !isFocused && this.shouldRenderClearButton(),
+            'btn-outline-primary': isFocused && this.shouldRenderClearButton(),
           },
         )]}
         label={
@@ -65,15 +63,15 @@ class SearchField extends React.Component {
       buttons.unshift((
         <Button
           className={[classNames(
-            styles['clear-btn'],
-            styles['ml-1'],
+            'clear-btn',
+            'ml-1',
           )]}
           label={(
             <small>
               <Icon
                 className={[classNames(
-                  FontAwesomeStyles.fa,
-                  FontAwesomeStyles['fa-times'],
+                  'fa',
+                  'fa-times',
                 )]}
                 id={newId('icon-SearchField')}
                 screenReaderText={screenReaderText.clearButton}
@@ -139,10 +137,10 @@ class SearchField extends React.Component {
     return (
       <div
         className={classNames(
-          styles.border,
-          styles['search-field'],
+          'border',
+          'search-field',
           {
-            [styles.focused]: isFocused,
+            focused: isFocused,
           },
         )}
         onFocus={this.handleFocus}
@@ -150,9 +148,9 @@ class SearchField extends React.Component {
       >
         <InputText
           className={[classNames(
-            styles.input,
+            'input',
             {
-              [styles['no-clear-btn']]: !this.shouldRenderClearButton(),
+              'no-clear-btn': !this.shouldRenderClearButton(),
             },
           )]}
           name="search"
