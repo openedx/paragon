@@ -3134,6 +3134,7 @@ exports[`Storyshots MailtoLink with blank target 1`] = `
      
     <span
       aria-hidden={false}
+      aria-label="Opens in a new window"
       className="fa fa-external-link"
       title="Opens in a new window"
     />
@@ -3172,6 +3173,7 @@ exports[`Storyshots MailtoLink with onClick 1`] = `
      
     <span
       aria-hidden={false}
+      aria-label="Opens in a new window"
       className="fa fa-external-link"
       title="Opens in a new window"
     />
