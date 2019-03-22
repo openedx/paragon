@@ -1,9 +1,6 @@
-/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/no-multi-comp */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered';
-import 'bootstrap/scss/utilities/_screenreaders.scss';
 
 import Button from '../Button';
 import ListBox from '../ListBox';
@@ -127,7 +124,6 @@ class ListBoxWrapperForSelectedOptionIndex extends React.Component {
 }
 
 storiesOf('ListBox', module)
-  .addDecorator(centered)
   .add('basic usage', () => (
     <ListBox>
       <ListBoxOption>
