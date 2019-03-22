@@ -1,30 +1,33 @@
 import React from 'react';
-import { configure, addDecorator } from '@storybook/react';
-import { setOptions } from '@storybook/addon-options';
-import { setDefaults } from '@storybook/addon-info';
+import { addParameters, addDecorator, configure } from '@storybook/react';
+import { setConsoleOptions } from '@storybook/addon-console';
+import { withInfo } from '@storybook/addon-info';
 
-import CssJail from '../src/CssJail';
+// Style applied to all stories
+import "./style.scss";
 
-setDefaults({
-  inline: false,
-  header: true,
-  source: true,
+setConsoleOptions({
+  panelExclude: ['warn', 'error'],
 });
 
-setTimeout(() => setOptions({
-  name: '💎 PARAGON',
-  url: 'https://github.com/edx/paragon',
-  showDownPanel: true,
-  downPanelInRight: true,
-}), 1000);
+// Option defaults:
+addParameters({
+  options: {
+    brandTitle: '💎 PARAGON',
+    brandUrl: 'https://github.com/edx/paragon',
+  },
+  info: {
+    inline: false,
+    source: true,
+  },
+});
+
+
+addDecorator(withInfo);
+addDecorator(storyFn => <div className="p-5">{storyFn()}</div>);
+
 
 const req = require.context('../src', true, /\.stories\.jsx$/);
-
-addDecorator(story => (
-  <CssJail>
-    {story()}
-  </CssJail>
-));
 
 function loadStories() {
   require('./Paragon.stories.jsx');
