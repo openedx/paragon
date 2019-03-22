@@ -100,7 +100,7 @@ Button.propTypes = buttonPropTypes;
 
 Button.defaultProps = {
   buttonType: undefined,
-  className: null,
+  className: undefined,
   inputRef: () => {},
   isClose: false,
   onBlur: () => {},

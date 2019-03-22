@@ -190,7 +190,7 @@ Table.propTypes = {
 
 Table.defaultProps = {
   caption: null,
-  className: null,
+  className: undefined,
   headingClassName: [],
   tableSortable: false,
   hasFixedColumnWidths: false,

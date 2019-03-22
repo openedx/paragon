@@ -17,7 +17,7 @@ const inputProps = {
 };
 
 const defaultProps = {
-  className: '',
+  className: undefined,
   isValid: true,
   invalidMessage: '',
   variant: {

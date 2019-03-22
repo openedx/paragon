@@ -3192,7 +3192,6 @@ exports[`Storyshots MailtoLink with subject and body 1`] = `
 exports[`Storyshots Pagination basic usage 1`] = `
 <nav
   aria-label="pagination navigation"
-  className=""
 >
   <div
     aria-atomic={true}
@@ -3257,7 +3256,6 @@ exports[`Storyshots Pagination basic usage 1`] = `
 exports[`Storyshots Pagination with custom element labels 1`] = `
 <nav
   aria-label="pagination navigation"
-  className=""
 >
   <div
     aria-atomic={true}
@@ -3326,7 +3324,6 @@ exports[`Storyshots Pagination with custom element labels 1`] = `
 exports[`Storyshots Pagination with custom string labels 1`] = `
 <nav
   aria-label="pagination navigation"
-  className=""
 >
   <div
     aria-atomic={true}
@@ -3391,7 +3388,6 @@ exports[`Storyshots Pagination with custom string labels 1`] = `
 exports[`Storyshots Pagination with initial page selected 1`] = `
 <nav
   aria-label="pagination navigation"
-  className=""
 >
   <div
     aria-atomic={true}
@@ -3455,7 +3451,6 @@ exports[`Storyshots Pagination with initial page selected 1`] = `
 exports[`Storyshots Pagination with max pages displayed 1`] = `
 <nav
   aria-label="pagination navigation"
-  className=""
 >
   <div
     aria-atomic={true}

@@ -118,7 +118,7 @@ StatusAlert.propTypes = {
 
 StatusAlert.defaultProps = {
   alertType: 'warning',
-  className: null,
+  className: undefined,
   closeButtonAriaLabel: 'Close',
   dismissible: true,
   open: false,
