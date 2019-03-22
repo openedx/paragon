@@ -1,3 +1,8 @@
+@import "~bootstrap/scss/_forms";
+@import "~bootstrap/scss/mixins/_forms";
+@import "~bootstrap/scss/utilities/_screenreaders.scss";
+@import '~bootstrap/scss/input-group';
+
 .form-control.is-invalid.is-invalid-nodanger {
   border-color: $input-border-color;
 }

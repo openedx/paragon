@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import styles from './CssJail.scss';
 
 function CssJail({ children }) {
   return (
     <div
       style={{ fontFamily: 'sans-serif' }}
-      className="css-jail"
+      className={styles['css-jail']}
     >
       {children}
     </div>

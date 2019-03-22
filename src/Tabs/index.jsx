@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
+import styles from './Tabs.scss';
 import newId from '../utils/newId';
 
 class Tabs extends React.Component {
@@ -51,9 +52,9 @@ class Tabs extends React.Component {
           key={labelId}
           onClick={() => { this.toggle(i); }}
           className={classNames(
-            'nav-link',
-            'nav-item',
-            { active: selected },
+            styles['nav-link'],
+            styles['nav-item'],
+            { [styles.active]: selected },
           ).split(' ')}
           label={label}
         />
@@ -71,8 +72,8 @@ class Tabs extends React.Component {
           aria-hidden={!selected}
           aria-labelledby={this.genLabelId(i)}
           className={classNames(
-            'tab-pane',
-            { active: selected },
+            styles['tab-pane'],
+            { [styles.active]: selected },
           )}
           id={panelId}
           key={panelId}
@@ -93,13 +94,13 @@ class Tabs extends React.Component {
         <div
           role="tablist"
           className={classNames([
-            'nav',
-            'nav-tabs',
+            styles.nav,
+            styles['nav-tabs'],
           ])}
         >
           {labels}
         </div>
-        <div role="tabpanel" className="tab-content">
+        <div role="tabpanel" className={styles['tab-content']}>
           {panels}
         </div>
       </div>
