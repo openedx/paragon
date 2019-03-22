@@ -1,11 +1,9 @@
+// TODO: @jaebradley refactor this when Jest issue (https://github.com/facebook/jest/issues/4545#issuecomment-333004504) is patched
+// eslint-disable-next-line no-unused-vars
+import raf from './tempPolyfills'; // need to import this first to ignore warnings
+// eslint-disable-next-line import/no-extraneous-dependencies, import/first
 import Enzyme from 'enzyme';
+// eslint-disable-next-line import/no-extraneous-dependencies, import/first
 import Adapter from 'enzyme-adapter-react-16';
-import registerRequireContextHook from 'babel-plugin-require-context-hook/register';
-
-// Polyfill Webpack's require.context function for our test environment.
-// It is currently used in .storybook/config.js. See this for more info:
-// https://www.npmjs.com/package/@storybook/addon-storyshots#configure-jest-to-work-with-webpacks-requirecontext
-registerRequireContextHook();
-
 
 Enzyme.configure({ adapter: new Adapter() });

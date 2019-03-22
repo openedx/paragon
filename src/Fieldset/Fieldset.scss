@@ -1,9 +1,10 @@
-.paragon-fieldset {
-  margin-bottom: $spacer * 1.5;
+@import "~bootstrap/scss/_forms";
+@import '~bootstrap/scss/utilities/_borders';
+@import "~bootstrap/scss/utilities/_screenreaders.scss";
+@import '~bootstrap/scss/utilities/_spacing';
 
-  .form-control {
-    height: auto;
-  }
+.paragon-fieldset {
+  @extend .mb-4;
 
   fieldset legend {
     width: auto;

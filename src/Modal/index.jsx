@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
+import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
+import styles from './Modal.scss';
 import Button, { buttonPropTypes } from '../Button';
 import Icon from '../Icon';
 import newId from '../utils/newId';
@@ -72,10 +74,10 @@ class Modal extends React.Component {
     switch (variant.status) {
       case Variant.status.WARNING:
         variantIconClassName = classNames(
-          'fa',
-          'fa-exclamation-triangle',
-          'fa-3x',
-          `text-${variant.status.toLowerCase()}`,
+          FontAwesomeStyles.fa,
+          FontAwesomeStyles['fa-exclamation-triangle'],
+          FontAwesomeStyles['fa-3x'],
+          styles[`text-${variant.status.toLowerCase()}`],
         );
         break;
       default:
@@ -89,14 +91,14 @@ class Modal extends React.Component {
     const { variant } = this.props;
 
     return (
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-10">
+      <div className={styles['container-fluid']}>
+        <div className={styles.row}>
+          <div className={styles['col-md-10']}>
             <div>
               {body}
             </div>
           </div>
-          <div className="col-md-2">
+          <div className={styles['col-md-2']}>
             <Icon
               id={newId(`Modal-${variant.status}`)}
               className={[
@@ -137,17 +139,21 @@ class Modal extends React.Component {
   }
 
   renderButtons() {
-    return this.props.buttons.map((button) => {
-      // button is either a Button component that we want clone or a set of props
-      const buttonProps = button.type === Button ? button.props : button;
+    return this.props.buttons.map((button, i) => {
+      let buttonElement = button;
+      let buttonProps = button.props;
 
-      return (
-        <Button
-          {...buttonProps}
-          key={buttonProps.label}
-          onKeyDown={this.handleKeyDown}
-        />
-      );
+      if (button.type !== Button) {
+        buttonProps = button;
+      }
+
+      buttonElement = (<Button
+        {...buttonProps}
+        key={i}
+        onKeyDown={this.handleKeyDown}
+      />);
+
+      return buttonElement;
     });
   }
 
@@ -173,21 +179,21 @@ class Modal extends React.Component {
       <div>
         <div
           className={classNames({
-            'modal-backdrop': open,
-            show: open,
-            fade: !open,
+            [styles['modal-backdrop']]: open,
+            [styles.show]: open,
+            [styles.fade]: !open,
           })}
           role="presentation"
         />
         <div
           className={classNames(
-            'modal',
+            styles.modal,
             'js-close-modal-on-click',
             {
-              show: open,
-              fade: !open,
-              'd-block': open,
-              'is-ie11': this.isIE11,
+              [styles.show]: open,
+              [styles.fade]: !open,
+              [styles['d-block']]: open,
+              [styles['is-ie11']]: this.isIE11,
             },
           )}
           role="presentation"
@@ -195,7 +201,7 @@ class Modal extends React.Component {
         >
           <div
             className={classNames({
-              'modal-dialog': open,
+              [styles['modal-dialog']]: open,
             })}
             role="dialog"
             aria-modal
@@ -203,9 +209,9 @@ class Modal extends React.Component {
             {...(!renderHeaderCloseButton ? { tabIndex: '-1' } : {})}
             {...(!renderHeaderCloseButton ? { ref: this.setFirstFocusableElement } : {})}
           >
-            <div className="modal-content">
-              <div className="modal-header">
-                <h2 className="modal-title" id={this.headerId}>{this.props.title}</h2>
+            <div className={styles['modal-content']}>
+              <div className={styles['modal-header']}>
+                <h2 className={styles['modal-title']} id={this.headerId}>{this.props.title}</h2>
                 { renderHeaderCloseButton &&
                 <Button
                   label={<Icon className={['fa', 'fa-times', 'js-close-modal-on-click']} />}
@@ -217,10 +223,10 @@ class Modal extends React.Component {
                 />
               }
               </div>
-              <div className="modal-body">
+              <div className={styles['modal-body']}>
                 {this.renderBody()}
               </div>
-              <div className="modal-footer">
+              <div className={styles['modal-footer']}>
                 {this.renderButtons()}
                 <Button
                   label={this.props.closeText}

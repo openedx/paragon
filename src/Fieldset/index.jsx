@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import newId from '../utils/newId';
-
+import styles from './Fieldset.scss';
 import ValidationMessage from '../ValidationMessage/index';
 import Variant from '../utils/constants';
 
@@ -52,7 +52,7 @@ class Fieldset extends React.Component {
 
     switch (variant.status) {
       case Variant.status.INFO:
-        className = 'is-invalid-nodanger';
+        className = styles['is-invalid-nodanger'];
         break;
       default:
         break;
@@ -73,18 +73,18 @@ class Fieldset extends React.Component {
     } = this.props;
     const errorId = `error-${this.state.id}`;
     return (
-      <div className="paragon-fieldset">
+      <div className={styles['paragon-fieldset']}>
         <fieldset
           className={classNames(
-            'form-control',
-            'p-3',
+            styles['form-control'],
+            styles['p-3'],
             { 'is-invalid': !isValid },
             this.getVariantClassName(),
             className,
           )}
           aria-describedby={errorId}
         >
-          <legend className="p-1">{legend}</legend>
+          <legend className={styles['p-1']}>{legend}</legend>
           {children}
         </fieldset>
         <ValidationMessage

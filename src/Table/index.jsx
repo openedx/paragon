@@ -1,8 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
+import FontAwesomeStyles from 'font-awesome/css/font-awesome.min.css';
 import isRequiredIf from 'react-proptype-conditional-require';
 import PropTypes from 'prop-types';
 
+import styles from './Table.scss';
 import Button from '../Button';
 
 class Table extends React.Component {
@@ -55,7 +57,7 @@ class Table extends React.Component {
     const sortIconClassName = ['fa-sort', sortDirection].filter(n => n).join('-');
 
     return (<span
-      className={classNames('fa', sortIconClassName)}
+      className={classNames(FontAwesomeStyles.fa, FontAwesomeStyles[sortIconClassName])}
       aria-hidden
     />);
   }
@@ -64,11 +66,11 @@ class Table extends React.Component {
     let heading;
     if (this.props.tableSortable && column.columnSortable) {
       heading = (<Button
-        className={['btn-header']}
+        className={[styles['btn-header']]}
         label={
           <span>
             {column.label}
-            <span className={classNames('sr-only')}>
+            <span className={classNames(styles['sr-only'])}>
               {' '}
               {this.getSortButtonScreenReaderText(column.key)}
             </span>
@@ -78,7 +80,7 @@ class Table extends React.Component {
         onClick={() => this.onSortClick(column.key)}
       />);
     } else if (column.hideHeader) {
-      heading = (<span className={classNames('sr-only')}>{column.label}</span>);
+      heading = (<span className={classNames(styles['sr-only'])}>{column.label}</span>);
     } else {
       heading = column.label;
     }
@@ -90,7 +92,7 @@ class Table extends React.Component {
     return (
       <thead
         className={classNames(
-          ...this.props.headingClassName,
+          ...this.props.headingClassName.map(className => styles[className]),
           { 'd-inline': this.props.hasFixedColumnWidths },
         )}
       >
@@ -116,7 +118,6 @@ class Table extends React.Component {
     return (
       <tbody className={classNames({ 'd-inline': this.props.hasFixedColumnWidths })}>
         {this.props.data.map((row, i) => (
-          // eslint-disable-next-line react/no-array-index-key
           <tr key={i} className={classNames({ 'd-flex': this.props.hasFixedColumnWidths })}>
             {this.props.columns.map(({ key, width }) => (
               React.createElement(
@@ -138,8 +139,8 @@ class Table extends React.Component {
   render() {
     return (
       <table className={classNames(
-        'table',
-        ...this.props.className,
+        styles.table,
+        ...this.props.className.map(className => styles[className]),
       )}
       >
         {this.getCaption()}
