@@ -5,7 +5,6 @@ import StatusAlert from './index';
 import Button from '../Button';
 
 const statusAlertOpen = (isOpen, wrapper) => {
-  // console.log(wrapper.debug())
   expect(wrapper.find('.alert').hasClass('show')).toEqual(isOpen);
   expect(wrapper.find('StatusAlert').state('open')).toEqual(isOpen);
 };
