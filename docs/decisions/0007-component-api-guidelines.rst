@@ -4,7 +4,7 @@
 Status
 ------
 
-Proposed with this PR
+Accepted
 
 Context
 -------
