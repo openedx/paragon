@@ -65,7 +65,7 @@ function withDeprecatedProps(WrappedComponent, deprecatedProps) {
 
       return (
         <WrappedComponent {...transformedProps}>
-          {children}
+          {this.props.children || children /* eslint-disable-line react/prop-types */}
         </WrappedComponent>
       );
     }
