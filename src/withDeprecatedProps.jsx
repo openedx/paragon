@@ -59,13 +59,9 @@ function withDeprecatedProps(WrappedComponent, deprecatedProps) {
       return acc;
     }
     render() {
-      const transformedProps = Object
+      const { children, ...transformedProps } = Object
         .keys(this.props)
         .reduce(this.transformProps, {});
-
-      // eslint-disable-next-line react/prop-types
-      const children = this.props.children || transformedProps.children;
-      delete transformedProps.children;
 
       return (
         <WrappedComponent {...transformedProps}>
