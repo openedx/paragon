@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import isRequiredIf from 'react-proptype-conditional-require';
 
 import Button from '../Button';
+import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
+
 
 class StatusAlert extends React.Component {
   constructor(props) {
@@ -83,7 +85,7 @@ class StatusAlert extends React.Component {
     return (
       <div
         className={classNames([
-          ...className,
+          className,
           'alert',
           'fade',
         ], {
@@ -105,7 +107,7 @@ class StatusAlert extends React.Component {
 
 StatusAlert.propTypes = {
   alertType: PropTypes.string,
-  className: PropTypes.arrayOf(PropTypes.string),
+  className: PropTypes.string,
   dialog: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   dismissible: PropTypes.bool,
   /* eslint-disable react/require-default-props */
@@ -116,10 +118,17 @@ StatusAlert.propTypes = {
 
 StatusAlert.defaultProps = {
   alertType: 'warning',
-  className: [],
+  className: undefined,
   closeButtonAriaLabel: 'Close',
   dismissible: true,
   open: false,
 };
 
-export default StatusAlert;
+export default withDeprecatedProps(StatusAlert, {
+  className: {
+    deprType: DEPR_TYPES.FORMAT,
+    expect: value => typeof value === 'string',
+    transform: value => (Array.isArray(value) ? value.join(' ') : value),
+    message: 'It should be a string.',
+  },
+});

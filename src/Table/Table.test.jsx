@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 
 import Table from './index';
 
@@ -79,7 +79,7 @@ const propsWithColWidths = {
 
 describe('<Table />', () => {
   describe('renders', () => {
-    const wrapper = shallow(<Table {...props} />);
+    const wrapper = mount(<Table {...props} />).find('Table');
 
     it('with display columns in the right order', () => {
       wrapper.find('th').forEach((th, i) => {
@@ -102,10 +102,11 @@ describe('<Table />', () => {
   });
 
   describe('that is non-sortable renders', () => {
-    const wrapper = mount(<Table {...sortableProps} tableSortable={false} />);
+    const wrapper = mount(<Table {...sortableProps} tableSortable={false} />).find('Table');
 
     it('it sets column headers correctly even with hidden prop', () => {
       const tableHeadings = wrapper.find('th');
+
       let hiddenHeader;
 
       tableHeadings.forEach((th, i) => {
@@ -137,7 +138,7 @@ describe('<Table />', () => {
   });
 
   describe('that is sortable and has mixed columns renders', () => {
-    let wrapper = shallow(<Table {...sortableProps} />);
+    let wrapper = mount(<Table {...sortableProps} />).find('Table');
 
     it('with sortable classname on correct headings', () => {
       const tableHeadings = wrapper.find('th');
@@ -164,8 +165,8 @@ describe('<Table />', () => {
     });
 
     it('with correct initial state', () => {
-      expect(wrapper.state('sortedColumn')).toEqual(sortableProps.defaultSortedColumn);
-      expect(wrapper.state('sortDirection')).toEqual(sortableProps.defaultSortDirection);
+      expect(wrapper.find('Table').state('sortedColumn')).toEqual(sortableProps.defaultSortedColumn);
+      expect(wrapper.find('Table').state('sortDirection')).toEqual(sortableProps.defaultSortDirection);
     });
 
     wrapper = mount(<Table {...sortableProps} />);
@@ -250,20 +251,20 @@ describe('<Table />', () => {
       buttons.at(0).simulate('click');
       buttons = wrapper.find('button');
 
-      expect(wrapper.state('sortedColumn')).toEqual(sortableProps.defaultSortedColumn);
-      expect(wrapper.state('sortDirection')).toEqual('asc');
+      expect(wrapper.find('Table').state('sortedColumn')).toEqual(sortableProps.defaultSortedColumn);
+      expect(wrapper.find('Table').state('sortDirection')).toEqual('asc');
 
       buttons.at(0).simulate('click');
       buttons = wrapper.find('button');
 
-      expect(wrapper.state('sortedColumn')).toEqual(sortableProps.defaultSortedColumn);
-      expect(wrapper.state('sortDirection')).toEqual('desc');
+      expect(wrapper.find('Table').state('sortedColumn')).toEqual(sortableProps.defaultSortedColumn);
+      expect(wrapper.find('Table').state('sortDirection')).toEqual('desc');
 
       buttons.at(1).simulate('click');
       buttons = wrapper.find('button');
 
-      expect(wrapper.state('sortedColumn')).toEqual(sortableProps.columns[1].key);
-      expect(wrapper.state('sortDirection')).toEqual('desc');
+      expect(wrapper.find('Table').state('sortedColumn')).toEqual(sortableProps.columns[1].key);
+      expect(wrapper.find('Table').state('sortDirection')).toEqual('desc');
     });
 
     it('calls onSort function correctly on click', () => {
@@ -296,7 +297,7 @@ describe('<Table />', () => {
     });
   });
   describe('that is fixed', () => {
-    const wrapper = shallow(<Table {...fixedProps} />);
+    const wrapper = mount(<Table {...fixedProps} />);
 
     it('with col width classnames on headings', () => {
       const tableHeadings = wrapper.find('th');
@@ -326,7 +327,7 @@ describe('<Table />', () => {
     });
   });
   describe('that is not fixed with col widths', () => {
-    const wrapper = shallow(<Table {...propsWithColWidths} />);
+    const wrapper = mount(<Table {...propsWithColWidths} />);
 
     it('with no col width classnames on headings', () => {
       const tableHeadings = wrapper.find('th');
@@ -356,7 +357,7 @@ describe('<Table />', () => {
     });
   });
   describe('renders row headers', () => {
-    const wrapper = shallow(<Table {...props} rowHeaderColumnKey="num" />);
+    const wrapper = mount(<Table {...props} rowHeaderColumnKey="num" />);
 
     it('with the row header as th with row scope', () => {
       wrapper.find('tbody').at(0).find('th').forEach((th) => {

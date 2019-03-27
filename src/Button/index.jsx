@@ -2,6 +2,8 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
+import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
+
 
 class Button extends React.Component {
   constructor(props) {
@@ -63,7 +65,7 @@ class Button extends React.Component {
         {...other}
         className={classNames([
           'btn',
-          ...className,
+          className,
         ], {
           [`btn-${buttonType}`]: buttonType !== undefined,
         }, {
@@ -84,7 +86,7 @@ class Button extends React.Component {
 
 export const buttonPropTypes = {
   buttonType: PropTypes.string,
-  className: PropTypes.arrayOf(PropTypes.string),
+  className: PropTypes.string,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   inputRef: PropTypes.func,
   isClose: PropTypes.bool,
@@ -98,7 +100,7 @@ Button.propTypes = buttonPropTypes;
 
 Button.defaultProps = {
   buttonType: undefined,
-  className: [],
+  className: undefined,
   inputRef: () => {},
   isClose: false,
   onBlur: () => {},
@@ -107,4 +109,11 @@ Button.defaultProps = {
   type: 'button',
 };
 
-export default Button;
+export default withDeprecatedProps(Button, {
+  className: {
+    deprType: DEPR_TYPES.FORMAT,
+    expect: value => typeof value === 'string',
+    transform: value => (Array.isArray(value) ? value.join(' ') : value),
+    message: 'It should be a string.',
+  },
+});
