@@ -388,7 +388,7 @@ Pagination.defaultProps = {
     currentPage: 'Current Page',
     pageOfCount: 'of',
   },
-  className: '',
+  className: undefined,
   currentPage: 1,
   maxPagesDisplayed: 7,
 };

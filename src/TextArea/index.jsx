@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 
 import asInput, { inputProps } from '../asInput';
+import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
 function Text(props) {
   return (
@@ -25,6 +26,13 @@ function Text(props) {
 
 Text.propTypes = inputProps;
 
-const TextArea = asInput(Text);
+const TextArea = asInput(withDeprecatedProps(Text, {
+  className: {
+    deprType: DEPR_TYPES.FORMAT,
+    expect: value => typeof value === 'string',
+    transform: value => (Array.isArray(value) ? value.join(' ') : value),
+    message: 'It should be a string.',
+  },
+}));
 
 export default TextArea;

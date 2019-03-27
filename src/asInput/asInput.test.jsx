@@ -49,7 +49,7 @@ describe('asInput()', () => {
       ...baseProps,
     };
     const wrapper = mount(<InputTestComponent {...props} />);
-    expect(wrapper.state('id')).toContain('asInput');
+    expect(wrapper.find('asInput(testComponent)').state('id')).toContain('asInput');
     expect(wrapper.find('label').prop('id')).toContain('asInput');
     expect(wrapper.find('input').prop('id')).toContain('asInput');
     expect(wrapper.find('small').prop('id')).toContain('asInput');
@@ -62,7 +62,7 @@ describe('asInput()', () => {
       id: testId,
     };
     const wrapper = mount(<InputTestComponent {...props} />);
-    expect(wrapper.state('id')).toContain('asInput');
+    expect(wrapper.find('asInput(testComponent)').state('id')).toContain('asInput');
     expect(wrapper.find('label').prop('id')).toContain('asInput');
     expect(wrapper.find('input').prop('id')).toContain('asInput');
     expect(wrapper.find('small').prop('id')).toContain('asInput');
@@ -75,7 +75,7 @@ describe('asInput()', () => {
       id: testId,
     };
     const wrapper = mount(<InputTestComponent {...props} />);
-    expect(wrapper.state('id')).toEqual(testId);
+    expect(wrapper.find('asInput(testComponent)').state('id')).toEqual(testId);
     expect(wrapper.find('label').prop('id')).toEqual(`label-${testId}`);
     expect(wrapper.find('input').prop('id')).toEqual(testId);
     expect(wrapper.find('small').prop('id')).toEqual(`description-${testId}`);
@@ -101,11 +101,11 @@ describe('asInput()', () => {
       value: initValue,
     };
     const wrapper = mount(<InputTestComponent {...props} />);
-    expect(wrapper.state('value')).toEqual(initValue);
+    expect(wrapper.find('asInput(testComponent)').state('value')).toEqual(initValue);
     wrapper.setProps({
       value: newValue,
     });
-    expect(wrapper.state('value')).toEqual(newValue);
+    expect(wrapper.find('asInput(testComponent)').state('value')).toEqual(newValue);
   });
 
   describe('fires', () => {
@@ -152,14 +152,14 @@ describe('asInput()', () => {
           isValid: false,
         };
         const wrapper = mount(<InputTestComponent {...props} />);
-        expect(wrapper.state('isValid')).toEqual(true); // default is true, ignoring our prop
+        expect(wrapper.find('asInput(testComponent)').state('isValid')).toEqual(true); // default is true, ignoring our prop
 
         wrapper.setProps({ isValid: true });
         wrapper.find('input').simulate('blur'); // trigger validation
-        expect(wrapper.state('isValid')).toEqual(false); // validator set false, ignoring our prop
+        expect(wrapper.find('asInput(testComponent)').state('isValid')).toEqual(false); // validator set false, ignoring our prop
 
         wrapper.setProps({ isValid: true });
-        expect(wrapper.state('isValid')).toEqual(false); // resetting prop changes nothing
+        expect(wrapper.find('asInput(testComponent)').state('isValid')).toEqual(false); // resetting prop changes nothing
       });
 
       it('ignores validationMessage prop if validator is defined', () => {
@@ -171,13 +171,13 @@ describe('asInput()', () => {
           validationMessage: 'Prop',
         };
         const wrapper = mount(<InputTestComponent {...props} />);
-        expect(wrapper.state('validationMessage')).toEqual(''); // default is '', ignoring our prop
+        expect(wrapper.find('asInput(testComponent)').state('validationMessage')).toEqual(''); // default is '', ignoring our prop
 
         wrapper.find('input').simulate('blur'); // trigger validation
-        expect(wrapper.state('validationMessage')).toEqual('Spy'); // validator set Spy, ignoring our prop
+        expect(wrapper.find('asInput(testComponent)').state('validationMessage')).toEqual('Spy'); // validator set Spy, ignoring our prop
 
         wrapper.setProps({ validationMessage: 'Reset' });
-        expect(wrapper.state('validationMessage')).toEqual('Spy'); // resetting prop changes nothing
+        expect(wrapper.find('asInput(testComponent)').state('validationMessage')).toEqual('Spy'); // resetting prop changes nothing
       });
 
       it('ignores dangerIconDescription prop if validator is defined', () => {
@@ -189,13 +189,13 @@ describe('asInput()', () => {
           dangerIconDescription: 'Prop',
         };
         const wrapper = mount(<InputTestComponent {...props} />);
-        expect(wrapper.state('dangerIconDescription')).toEqual(''); // default is '', ignoring our prop
+        expect(wrapper.find('asInput(testComponent)').state('dangerIconDescription')).toEqual(''); // default is '', ignoring our prop
 
         wrapper.find('input').simulate('blur'); // trigger validation
-        expect(wrapper.state('dangerIconDescription')).toEqual('Spy'); // validator set Spy, ignoring our prop
+        expect(wrapper.find('asInput(testComponent)').state('dangerIconDescription')).toEqual('Spy'); // validator set Spy, ignoring our prop
 
         wrapper.setProps({ dangerIconDescription: 'Reset' });
-        expect(wrapper.state('dangerIconDescription')).toEqual('Spy'); // resetting prop changes nothing
+        expect(wrapper.find('asInput(testComponent)').state('dangerIconDescription')).toEqual('Spy'); // resetting prop changes nothing
       });
 
       it('uses props if validator becomes undefined', () => {
@@ -209,12 +209,12 @@ describe('asInput()', () => {
           dangerIconDescription: 'Prop',
         };
         const wrapper = mount(<InputTestComponent {...props} />);
-        expect(wrapper.state('validationMessage')).toEqual('');
-        expect(wrapper.state('dangerIconDescription')).toEqual('');
+        expect(wrapper.find('asInput(testComponent)').state('validationMessage')).toEqual('');
+        expect(wrapper.find('asInput(testComponent)').state('dangerIconDescription')).toEqual('');
 
         wrapper.setProps({ validator: null });
-        expect(wrapper.state('validationMessage')).toEqual('Prop');
-        expect(wrapper.state('dangerIconDescription')).toEqual('Prop');
+        expect(wrapper.find('asInput(testComponent)').state('validationMessage')).toEqual('Prop');
+        expect(wrapper.find('asInput(testComponent)').state('dangerIconDescription')).toEqual('Prop');
       });
 
       it('uses validationMessage as element type', () => {
@@ -225,7 +225,7 @@ describe('asInput()', () => {
           validationMessage: testMessage,
         };
         const wrapper = mount(<InputTestComponent {...props} />);
-        expect(wrapper.state('validationMessage')).toEqual(testMessage);
+        expect(wrapper.find('asInput(testComponent)').state('validationMessage')).toEqual(testMessage);
       });
 
       it('uses isValid to display validation message', () => {

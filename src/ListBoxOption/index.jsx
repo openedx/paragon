@@ -71,7 +71,7 @@ ListBoxOption.propTypes = {
 };
 
 ListBoxOption.defaultProps = {
-  className: '',
+  className: undefined,
   index: undefined,
   isSelected: false,
   tag: 'div',

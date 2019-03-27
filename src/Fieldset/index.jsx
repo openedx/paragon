@@ -23,7 +23,7 @@ const inputProps = {
 
 const defaultProps = {
   children: null,
-  className: '',
+  className: undefined,
   id: '',
   isValid: true,
   invalidMessage: '',
