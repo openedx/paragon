@@ -4,6 +4,8 @@ import isRequiredIf from 'react-proptype-conditional-require';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
+import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
+
 
 class Table extends React.Component {
   constructor(props) {
@@ -139,7 +141,7 @@ class Table extends React.Component {
     return (
       <table className={classNames(
         'table',
-        ...this.props.className,
+        this.props.className,
       )}
       >
         {this.getCaption()}
@@ -155,7 +157,7 @@ Table.propTypes = {
     PropTypes.string,
     PropTypes.element,
   ]),
-  className: PropTypes.arrayOf(PropTypes.string),
+  className: PropTypes.string,
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
   columns: PropTypes.arrayOf(PropTypes.shape({
     key: PropTypes.string.isRequired,
@@ -188,7 +190,7 @@ Table.propTypes = {
 
 Table.defaultProps = {
   caption: null,
-  className: [],
+  className: undefined,
   headingClassName: [],
   tableSortable: false,
   hasFixedColumnWidths: false,
@@ -199,4 +201,12 @@ Table.defaultProps = {
   },
 };
 
-export default Table;
+
+export default withDeprecatedProps(Table, {
+  className: {
+    deprType: DEPR_TYPES.FORMAT,
+    expect: value => typeof value === 'string',
+    transform: value => (Array.isArray(value) ? value.join(' ') : value),
+    message: 'It should be a string.',
+  },
+});
