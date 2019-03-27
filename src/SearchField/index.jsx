@@ -2,202 +2,118 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import newId from '../utils/newId';
 import Icon from '../Icon';
-import InputText from '../InputText';
-import Button from '../Button';
 
 
 class SearchField extends React.Component {
   constructor(props) {
     super(props);
 
+    this.form = React.createRef();
+
     this.state = {
       isFocused: false,
-      hasSubmitted: false,
-      value: this.props.value,
+      value: this.props.initialValue,
     };
-
-    this.textInput = null;
-    this.searchButton = null;
 
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleClear = this.handleClear.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
-  componentDidUpdate(prevProps) {
-    const { value } = this.props;
-
-    if (value !== prevProps.value) {
-      this.setState({ value }); // eslint-disable-line react/no-did-update-set-state
-    }
-  }
-
-  getSearchActionButtons() {
-    const { isFocused } = this.state;
-    const { screenReaderText } = this.props;
-    const inputTextHasValue = this.inputTextHasValue();
-    const buttons = [
-      <Button
-        className={[classNames(
-          'search-btn',
-          {
-            'border-left': !isFocused && this.shouldRenderClearButton(),
-            'btn-outline-primary': isFocused && this.shouldRenderClearButton(),
-          },
-        )]}
-        label={
-          <Icon className={['fa', 'fa-search']} screenReaderText={screenReaderText.searchButton} />
-        }
-        disabled={!inputTextHasValue}
-        inputRef={(input) => { this.searchButton = input; }}
-        onClick={this.handleSubmit}
-      />,
-    ];
-
-    if (this.shouldRenderClearButton()) {
-      buttons.unshift((
-        <Button
-          className={[classNames(
-            'clear-btn',
-            'ml-1',
-          )]}
-          label={(
-            <small>
-              <Icon
-                className={[classNames(
-                  'fa',
-                  'fa-times',
-                )]}
-                id={newId('icon-SearchField')}
-                screenReaderText={screenReaderText.clearButton}
-              />
-            </small>
-          )}
-          onClick={this.handleClear}
-        />
-      ));
-    }
-
-    return buttons;
-  }
-
-  inputTextHasValue() {
-    const { value } = this.state;
-    return value && value.length > 0;
-  }
-
-  shouldRenderClearButton() {
-    const { hasSubmitted } = this.state;
-    return hasSubmitted || this.inputTextHasValue();
-  }
-
-  handleFocus(event) {
+  handleFocus(e) {
     this.setState({ isFocused: true });
-    this.props.onFocus(event);
+    if (this.props.onFocus) this.props.onFocus(e);
   }
 
-  handleBlur(event) {
+  handleBlur(e) {
     this.setState({ isFocused: false });
-    this.props.onBlur(event);
+    if (this.props.onBlur) this.props.onBlur(e);
   }
 
-  handleChange(value) {
-    this.setState({ value });
-    this.props.onChange(value);
+  handleChange(e) {
+    this.setState({ value: e.target.value });
+    if (this.props.onChange) this.props.onChange(e.target.value);
   }
 
-  handleClear() {
-    this.handleChange('');
-    this.props.onClear();
-    this.textInput.focus();
-    this.setState({ hasSubmitted: false });
-  }
-
-  handleKeyPress(event) {
-    if (event.key === 'Enter' && this.inputTextHasValue()) {
-      this.handleSubmit();
-    }
-  }
-
-  handleSubmit() {
-    const { value } = this.state;
-    this.searchButton.focus();
-    this.props.onSubmit(value);
-    this.setState({ hasSubmitted: true });
+  handleSubmit(e) {
+    e.preventDefault();
+    if (this.props.onSubmit) this.props.onSubmit(new FormData(this.form));
   }
 
   render() {
-    const { isFocused, value } = this.state;
-    const { inputLabel, placeholder } = this.props;
+    const {
+      className,
+      inputId,
+      label,
+      submitLabel,
+      initialValue,
+      ...other
+    } = this.props;
+
+    const {
+      value,
+      isFocused,
+    } = this.state;
+
     return (
-      <div
+      <form
+        onSubmit={this.handleSubmit}
+        ref={this.form}
         className={classNames(
-          'border',
-          'search-field',
+          'paragon-search-field',
+          'form-control d-inline-block w-auto',
+          className,
           {
-            focused: isFocused,
+            focus: isFocused,
           },
         )}
-        onFocus={this.handleFocus}
-        onBlur={this.handleBlur}
+        {...other}
       >
-        <InputText
-          className={[classNames(
-            'input',
-            {
-              'no-clear-btn': !this.shouldRenderClearButton(),
-            },
-          )]}
-          name="search"
-          autoComplete="off"
-          label={inputLabel}
-          placeholder={placeholder}
-          value={value}
-          role="searchbox"
-          type="search"
-          inline
-          onChange={this.handleChange}
-          onKeyPress={this.handleKeyPress}
-          inputGroupAppend={this.getSearchActionButtons()}
-          inputRef={(input) => { this.textInput = input; }}
-        />
-      </div>
+        <label htmlFor={inputId}>
+          <span>{label}</span>
+          &nbsp;
+          <input
+            id={inputId}
+            name="query"
+            type="search"
+            value={value}
+            onChange={this.handleChange}
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur}
+            autoComplete="off"
+          />
+        </label>
+        <button type="submit" aria-label={submitLabel}>
+          <Icon className="fa fa-search" />
+        </button>
+      </form>
     );
   }
 }
 
 SearchField.defaultProps = {
-  inputLabel: 'Search:',
-  onBlur: () => {},
-  onChange: () => {},
-  onClear: () => {},
-  onFocus: () => {},
-  placeholder: '',
-  screenReaderText: {
-    clearButton: 'Clear search',
-    searchButton: 'Submit search',
-  },
-  value: '',
+  label: 'Search:',
+  inputId: 'search',
+  submitLabel: 'Submit Search',
+  onBlur: undefined,
+  onChange: undefined,
+  onFocus: undefined,
+  initialValue: undefined,
+  className: undefined,
 };
 
 SearchField.propTypes = {
+  inputId: PropTypes.string,
   onSubmit: PropTypes.func.isRequired,
-  inputLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  label: PropTypes.node,
+  submitLabel: PropTypes.string,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
-  onClear: PropTypes.func,
   onFocus: PropTypes.func,
-  placeholder: PropTypes.string,
-  screenReaderText: PropTypes.shape({
-    clearButton: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
-    searchButton: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
-  }),
-  value: PropTypes.string,
+  initialValue: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default SearchField;
