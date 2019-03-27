@@ -1,6 +1,5 @@
 
-.paragon-search-field {
-
+.pg__search-field {
   &.form-control {
     padding: 0 $input-height 0 0;
     border-radius: $rounded-pill;
@@ -58,7 +57,8 @@
     background: transparent;
   }
 
-  .form-control-sm {
+  &.form-control-sm {
+    padding: 0 $input-height-sm 0 0;
     label {
       padding: 0 .25em 0 $input-padding-x-sm*1.25;
     }
@@ -66,7 +66,8 @@
       padding: 0 $input-padding-x-sm*1.25;
     }
   }
-  .form-control-lg {
+  &.form-control-lg {
+    padding: 0 $input-height-lg 0 0;
     label {
       padding: 0 .25em 0 $input-padding-x-lg*1.25;
     }

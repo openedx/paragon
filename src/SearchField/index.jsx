@@ -62,8 +62,8 @@ class SearchField extends React.Component {
         onSubmit={this.handleSubmit}
         ref={this.form}
         className={classNames(
-          'paragon-search-field',
-          'form-control d-inline-block w-auto',
+          'pg__search-field',
+          'form-control',
           className,
           {
             focus: isFocused,
