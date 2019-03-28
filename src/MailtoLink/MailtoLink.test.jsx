@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 import MailtoLink from './index';
 
@@ -21,7 +21,7 @@ describe('correct rendering', () => {
         bcc={emailAddress}
       />
     );
-    const wrapper = shallow(singleRecipientLink);
+    const wrapper = mount(singleRecipientLink).find('a');
 
     expect(wrapper.prop('href')).toEqual('mailto:edx@example.com?bcc=edx%40example.com&body=body&cc=edx%40example.com&subject=subject');
   });
@@ -35,13 +35,13 @@ describe('correct rendering', () => {
         bcc={emailAddresses}
       />
     );
-    const wrapper = shallow(multiRecipientLink);
+    const wrapper = mount(multiRecipientLink).find('a');
 
     expect(wrapper.prop('href')).toEqual('mailto:foo@example.com,bar@example.com,baz@example.com?bcc=foo%40example.com%2Cbar%40example.com%2Cbaz%40example.com&body=body&cc=foo%40example.com%2Cbar%40example.com%2Cbaz%40example.com&subject=subject');
   });
 
   it('renders empty mailtoLink', () => {
-    const wrapper = shallow(<MailtoLink content={content} />);
+    const wrapper = mount(<MailtoLink content={content} />).find('a');
 
     expect(wrapper.prop('href')).toEqual('mailto:');
   });

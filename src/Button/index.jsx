@@ -49,7 +49,7 @@ class Button extends React.Component {
     const {
       buttonType,
       className,
-      label,
+      children,
       isClose,
       type,
       /* inputRef is not used directly in the render, but it needs to be assigned
@@ -78,7 +78,7 @@ class Button extends React.Component {
         ref={this.setRefs}
 
       >
-        {this.props.label}
+        {children}
       </button>
     );
   }
@@ -87,7 +87,7 @@ class Button extends React.Component {
 export const buttonPropTypes = {
   buttonType: PropTypes.string,
   className: PropTypes.string,
-  label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  children: PropTypes.node.isRequired,
   inputRef: PropTypes.func,
   isClose: PropTypes.bool,
   onBlur: PropTypes.func,
@@ -110,6 +110,10 @@ Button.defaultProps = {
 };
 
 export default withDeprecatedProps(Button, {
+  label: {
+    deprType: DEPR_TYPES.MOVED,
+    newName: 'children',
+  },
   className: {
     deprType: DEPR_TYPES.FORMAT,
     expect: value => typeof value === 'string',
