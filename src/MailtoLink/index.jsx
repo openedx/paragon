@@ -5,6 +5,8 @@ import isRequiredIf from 'react-proptype-conditional-require';
 import mailtoLink from 'mailto-link';
 
 import Hyperlink from '../Hyperlink';
+import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
+
 
 const MailtoLink = (props) => {
   const {
@@ -13,7 +15,7 @@ const MailtoLink = (props) => {
     bcc,
     subject,
     body,
-    content,
+    children,
     target,
     onClick,
     externalLink,
@@ -26,15 +28,16 @@ const MailtoLink = (props) => {
     to, cc, bcc, subject, body,
   });
 
-  return Hyperlink({
+  const hyperlinkProps = {
     destination,
-    content,
     target,
     onClick,
     externalLinkAlternativeText,
     externalLinkTitle,
     ...other,
-  });
+  };
+
+  return <Hyperlink {...hyperlinkProps}>{children}</Hyperlink>;
 };
 
 MailtoLink.defaultProps = {
@@ -52,7 +55,7 @@ MailtoLink.defaultProps = {
 };
 
 MailtoLink.propTypes = {
-  content: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  children: PropTypes.node.isRequired,
   to: PropTypes.oneOfType([PropTypes.arrayOf(emailPropType), emailPropType]),
   cc: PropTypes.oneOfType([PropTypes.arrayOf(emailPropType), emailPropType]),
   bcc: PropTypes.oneOfType([PropTypes.arrayOf(emailPropType), emailPropType]),
@@ -66,4 +69,10 @@ MailtoLink.propTypes = {
   }),
 };
 
-export default MailtoLink;
+
+export default withDeprecatedProps(MailtoLink, {
+  content: {
+    deprType: DEPR_TYPES.MOVED,
+    newName: 'children',
+  },
+});

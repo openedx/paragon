@@ -3,10 +3,13 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import isRequiredIf from 'react-proptype-conditional-require';
 
+import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
+
+
 function Hyperlink(props) {
   const {
     destination,
-    content,
+    children,
     target,
     onClick,
     externalLinkAlternativeText,
@@ -36,7 +39,7 @@ function Hyperlink(props) {
       target={target}
       onClick={onClick}
       {...other}
-    >{content}{externalLinkIcon}
+    >{children}{externalLinkIcon}
     </a>
   );
 }
@@ -50,11 +53,16 @@ Hyperlink.defaultProps = {
 
 Hyperlink.propTypes = {
   destination: PropTypes.string.isRequired,
-  content: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  children: PropTypes.node.isRequired,
   target: PropTypes.string,
   onClick: PropTypes.func,
   externalLinkAlternativeText: isRequiredIf(PropTypes.string, props => props.target === '_blank'),
   externalLinkTitle: isRequiredIf(PropTypes.string, props => props.target === '_blank'),
 };
 
-export default Hyperlink;
+export default withDeprecatedProps(Hyperlink, {
+  content: {
+    deprType: DEPR_TYPES.MOVED,
+    newName: 'children',
+  },
+});
