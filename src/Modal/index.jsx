@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import Button, { buttonPropTypes } from '../Button';
+import Button from '../Button';
 import Icon from '../Icon';
 import newId from '../utils/newId';
 import Variant from '../utils/constants';
@@ -253,7 +253,7 @@ Modal.propTypes = {
   body: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   buttons: PropTypes.arrayOf(PropTypes.oneOfType([
     PropTypes.element,
-    PropTypes.shape(buttonPropTypes),
+    PropTypes.object, // TODO: Only accept nodes in the future
   ])),
   closeText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   onClose: PropTypes.func.isRequired,

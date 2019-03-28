@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import classNames from 'classnames';
 
 import Hyperlink from './index';
@@ -23,8 +23,7 @@ const externalLinkProps = {
 
 describe('correct rendering', () => {
   it('renders Hyperlink', () => {
-    const wrapper = shallow(<Hyperlink {...props} />);
-    expect(wrapper.type()).toEqual('a');
+    const wrapper = mount(<Hyperlink {...props} />).find('a');
     expect(wrapper).toHaveLength(1);
 
     expect(wrapper.prop('children')).toEqual([content, undefined]);
