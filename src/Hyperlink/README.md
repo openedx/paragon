@@ -12,7 +12,7 @@
 
 ### `target` (string; optional)
 
-`target` specifies where the link should open. The default behavior is `_self`, which means that the URL will be loaded into the same browsing context as the current one
+`target` specifies where the link should open. The default behavior is `_self`, which means that the URL will be loaded into the same browsing context as the current one. If the target is `_blank` (opening a new window) `rel='noopener'` will be added to the anchor tag to prevent any potential [reverse tabnabbing attack](https://www.owasp.org/index.php/Reverse_Tabnabbing).
 
 ### `onClick` (function; optional)
 
