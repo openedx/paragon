@@ -15,6 +15,7 @@ addParameters({
   options: {
     brandTitle: '💎 PARAGON',
     brandUrl: 'https://github.com/edx/paragon',
+    showPanel: true,
   },
   info: {
     inline: true,

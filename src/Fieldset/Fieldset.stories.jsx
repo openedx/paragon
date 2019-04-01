@@ -70,7 +70,7 @@ class ValidatedForm extends React.Component {
   }
 }
 
-storiesOf('Fieldset', module)
+storiesOf('User Input|Fieldset', module)
   .addParameters({ info: { text: README } })
   .add('basic usage', () => (
     <form>

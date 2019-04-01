@@ -1,265 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Breadcrumb basic usage 1`] = `
-<nav
-  aria-label="breadcrumb"
->
-  <ol
-    className="list-inline"
-  >
-    <li
-      className="list-inline-item"
-    >
-      <a
-        href="/link-1"
-      >
-        Link 1
-      </a>
-    </li>
-    <li
-      aria-label="spacer"
-      className="list-inline-item"
-      role="presentation"
-    >
-      <span
-        aria-hidden={true}
-        className="fa fa-chevron-right"
-        id="spacer-0"
-      />
-    </li>
-    <li
-      className="list-inline-item"
-    >
-      <a
-        href="/link-2"
-      >
-        Link 2
-      </a>
-    </li>
-    <li
-      aria-label="spacer"
-      className="list-inline-item"
-      role="presentation"
-    >
-      <span
-        aria-hidden={true}
-        className="fa fa-chevron-right"
-        id="spacer-1"
-      />
-    </li>
-    <li
-      className="list-inline-item"
-    >
-      <a
-        href="/link-3"
-      >
-        Link 3
-      </a>
-    </li>
-  </ol>
-</nav>
-`;
-
-exports[`Storyshots Breadcrumb with activeLabel 1`] = `
-<nav
-  aria-label="breadcrumb"
->
-  <ol
-    className="list-inline"
-  >
-    <li
-      className="list-inline-item"
-    >
-      <a
-        href="/link-1"
-      >
-        Link 1
-      </a>
-    </li>
-    <li
-      aria-label="spacer"
-      className="list-inline-item"
-      role="presentation"
-    >
-      <span
-        aria-hidden={true}
-        className="fa fa-chevron-right"
-        id="spacer-0"
-      />
-    </li>
-    <li
-      className="list-inline-item"
-    >
-      <a
-        href="/link-2"
-      >
-        Link 2
-      </a>
-    </li>
-    <li
-      aria-label="spacer"
-      className="list-inline-item"
-      role="presentation"
-    >
-      <span
-        aria-hidden={true}
-        className="fa fa-chevron-right"
-        id="spacer-1"
-      />
-    </li>
-    <li
-      className="list-inline-item"
-    >
-      <a
-        href="/link-3"
-      >
-        Link 3
-      </a>
-    </li>
-    <li
-      aria-label="spacer"
-      className="list-inline-item"
-      role="presentation"
-    >
-      <span
-        aria-hidden={true}
-        className="fa fa-chevron-right"
-        id="spacer-2"
-      />
-    </li>
-    <li
-      className="list-inline-item"
-    >
-      Link 4
-    </li>
-  </ol>
-</nav>
-`;
-
-exports[`Storyshots Breadcrumb with custom click handler 1`] = `
-<nav
-  aria-label="breadcrumb"
->
-  <ol
-    className="list-inline"
-  >
-    <li
-      className="list-inline-item"
-    >
-      <a
-        href="/link-1"
-        onClick={[Function]}
-      >
-        Link 1
-      </a>
-    </li>
-    <li
-      aria-label="spacer"
-      className="list-inline-item"
-      role="presentation"
-    >
-      <span
-        aria-hidden={true}
-        className="fa fa-chevron-right"
-        id="spacer-0"
-      />
-    </li>
-    <li
-      className="list-inline-item"
-    >
-      <a
-        href="/link-2"
-        onClick={[Function]}
-      >
-        Link 2
-      </a>
-    </li>
-    <li
-      aria-label="spacer"
-      className="list-inline-item"
-      role="presentation"
-    >
-      <span
-        aria-hidden={true}
-        className="fa fa-chevron-right"
-        id="spacer-1"
-      />
-    </li>
-    <li
-      className="list-inline-item"
-    >
-      <a
-        href="/link-3"
-        onClick={[Function]}
-      >
-        Link 3
-      </a>
-    </li>
-  </ol>
-</nav>
-`;
-
-exports[`Storyshots Breadcrumb with custom spacer 1`] = `
-<nav
-  aria-label="breadcrumb"
->
-  <ol
-    className="list-inline"
-  >
-    <li
-      className="list-inline-item"
-    >
-      <a
-        href="/link-1"
-      >
-        Link 1
-      </a>
-    </li>
-    <li
-      aria-label="spacer"
-      className="list-inline-item"
-      role="presentation"
-    >
-      <span
-        className="custom-spacer"
-      >
-        /
-      </span>
-    </li>
-    <li
-      className="list-inline-item"
-    >
-      <a
-        href="/link-2"
-      >
-        Link 2
-      </a>
-    </li>
-    <li
-      aria-label="spacer"
-      className="list-inline-item"
-      role="presentation"
-    >
-      <span
-        className="custom-spacer"
-      >
-        /
-      </span>
-    </li>
-    <li
-      className="list-inline-item"
-    >
-      <a
-        href="/link-3"
-      >
-        Link 3
-      </a>
-    </li>
-  </ol>
-</nav>
-`;
-
-exports[`Storyshots Button basic usage 1`] = `
+exports[`Storyshots Basics|Button basic usage 1`] = `
 <button
   className="btn"
   onBlur={[Function]}
@@ -271,293 +12,176 @@ exports[`Storyshots Button basic usage 1`] = `
 </button>
 `;
 
-exports[`Storyshots CheckBox basic usage 1`] = `
-<div
-  className="form-check"
+exports[`Storyshots Basics|HyperLink minimal usage 1`] = `
+<a
+  href="https://en.wikipedia.org/wiki/Hyperlink"
+  onClick={[Function]}
+  target="_self"
 >
-  <input
-    aria-checked={false}
-    checked={false}
-    className={
-      Array [
-        "form-check-input is-invalid-nodanger",
-      ]
-    }
-    disabled={false}
-    id="asInput3"
-    name="checkbox"
-    onChange={[Function]}
-    type="checkbox"
-  />
-  <label
-    className="form-check-label"
-    htmlFor="asInput3"
-    id="label-asInput3"
-  >
-    check me out!
-  </label>
-  <div
-    aria-live="polite"
-    className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput3"
-  >
-    <span />
-  </div>
-</div>
+  edX.org
+</a>
 `;
 
-exports[`Storyshots CheckBox call a function 1`] = `
-<div
-  className="form-check"
+exports[`Storyshots Basics|HyperLink with blank target 1`] = `
+<a
+  href="https://www.edx.org"
+  onClick={[Function]}
+  rel="noopener"
+  target="_blank"
 >
-  <input
-    aria-checked={false}
-    checked={false}
-    className={
-      Array [
-        "form-check-input is-invalid-nodanger",
-      ]
-    }
-    disabled={false}
-    id="asInput6"
-    name="checkbox"
-    onChange={[Function]}
-    type="checkbox"
-  />
-  <label
-    className="form-check-label"
-    htmlFor="asInput6"
-    id="label-asInput6"
-  >
-    check out the console
-  </label>
-  <div
-    aria-live="polite"
-    className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput6"
-  >
-    <span />
-  </div>
-</div>
-`;
-
-exports[`Storyshots CheckBox controlled 1`] = `
-<div>
-  <button
-    className="btn btn-light"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    type="button"
-  >
-    Click me to toggle the check box!
-  </button>
-  <div
-    className="form-check"
-  >
-    <input
-      aria-checked={false}
-      checked={false}
-      className={
-        Array [
-          "form-check-input is-invalid-nodanger",
-        ]
-      }
-      disabled={false}
-      id="asInput7"
-      name="checkbox"
-      onChange={[Function]}
-      type="checkbox"
+  edX.org
+  <span>
+     
+    <span
+      aria-hidden={false}
+      aria-label="Opens in a new window"
+      className="fa fa-external-link"
+      title="Opens in a new window"
     />
-    <label
-      className="form-check-label"
-      htmlFor="asInput7"
-      id="label-asInput7"
-    >
-      click the button
-    </label>
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-asInput7"
-    >
-      <span />
-    </div>
-  </div>
-</div>
+  </span>
+</a>
 `;
 
-exports[`Storyshots CheckBox default checked 1`] = `
-<div
-  className="form-check"
+exports[`Storyshots Basics|HyperLink with icon as content 1`] = `
+<a
+  href="https://www.edx.org"
+  onClick={[Function]}
+  target="_self"
 >
-  <input
-    aria-checked={true}
-    checked={true}
-    className={
-      Array [
-        "form-check-input is-invalid-nodanger",
-      ]
-    }
-    disabled={false}
-    id="asInput5"
-    name="checkbox"
-    onChange={[Function]}
-    type="checkbox"
+  <span
+    aria-hidden={true}
+    className="fa fa-book"
+    id="SampleIcon"
   />
-  <label
-    className="form-check-label"
-    htmlFor="asInput5"
-    id="label-asInput5"
+  <span
+    className="sr-only"
   >
-    (un)check me out
-  </label>
-  <div
-    aria-live="polite"
-    className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput5"
-  >
-    <span />
-  </div>
-</div>
+    Visit edX Home
+  </span>
+</a>
 `;
 
-exports[`Storyshots CheckBox disabled 1`] = `
-<div
-  className="form-check"
+exports[`Storyshots Basics|HyperLink with onClick 1`] = `
+<a
+  href="https://www.edx.org"
+  onClick={[Function]}
+  rel="noopener"
+  target="_blank"
 >
-  <input
-    aria-checked={false}
-    checked={false}
-    className={
-      Array [
-        "form-check-input is-invalid-nodanger",
-      ]
-    }
-    disabled={true}
-    id="asInput4"
-    name="checkbox"
-    onChange={[Function]}
-    type="checkbox"
-  />
-  <label
-    className="form-check-label"
-    htmlFor="asInput4"
-    id="label-asInput4"
-  >
-    you cannot check me out
-  </label>
-  <div
-    aria-live="polite"
-    className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput4"
-  >
-    <span />
-  </div>
-</div>
+  edX.org
+  <span>
+     
+    <span
+      aria-hidden={false}
+      aria-label="Opens in a new window"
+      className="fa fa-external-link"
+      title="Opens in a new window"
+    />
+  </span>
+</a>
 `;
 
-exports[`Storyshots CheckBoxGroup basic usage 1`] = `
-<div
-  className="form-group"
+exports[`Storyshots Basics|Icon basic usage 1`] = `
+<span
+  aria-hidden={true}
+  className="fa fa-birthday-cake fa-4x"
+  id="Icon1"
+/>
+`;
+
+exports[`Storyshots Basics|Icon with screenreader text 1`] = `
+Array [
+  <span
+    aria-hidden={true}
+    className="fa fa-smile-o fa-4x"
+    id="SampleIcon"
+  />,
+  <span
+    className="sr-only"
+  >
+    Happy Icon
+  </span>,
+]
+`;
+
+exports[`Storyshots Basics|MailtoLink minimal usage 1`] = `
+<a
+  href="mailto:edx@example.com"
+  onClick={null}
+  target="_self"
 >
-  <div
-    className="form-check"
-  >
-    <input
-      aria-checked={false}
-      checked={false}
-      className={
-        Array [
-          "form-check-input is-invalid-nodanger",
-        ]
-      }
-      disabled={false}
-      id="checkbox1"
-      name="basicCheckBox1"
-      onChange={[Function]}
-      type="checkbox"
+  edx@example.com
+</a>
+`;
+
+exports[`Storyshots Basics|MailtoLink with blank target 1`] = `
+<a
+  href="mailto:edx@example.com"
+  onClick={null}
+  rel="noopener"
+  target="_blank"
+>
+  edx@example.com
+  <span>
+     
+    <span
+      aria-hidden={false}
+      aria-label="Opens in a new window"
+      className="fa fa-external-link"
+      title="Opens in a new window"
     />
-    <label
-      className="form-check-label"
-      htmlFor="checkbox1"
-      id="label-checkbox1"
-    >
-      CheckBox 1
-    </label>
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-checkbox1"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className="form-check"
-  >
-    <input
-      aria-checked={false}
-      checked={false}
-      className={
-        Array [
-          "form-check-input is-invalid-nodanger",
-        ]
-      }
-      disabled={false}
-      id="checkbox2"
-      name="basicCheckBox2"
-      onChange={[Function]}
-      type="checkbox"
+  </span>
+</a>
+`;
+
+exports[`Storyshots Basics|MailtoLink with cc and bcc 1`] = `
+<a
+  href="mailto:?bcc=edx%40example.com&cc=edx%40example.com"
+  onClick={null}
+  target="_self"
+>
+  Moar mail, this time with cc and bcc
+</a>
+`;
+
+exports[`Storyshots Basics|MailtoLink with multiple cc and bcc 1`] = `
+<a
+  href="mailto:?bcc=foo%40example.com%2Cbar%40example.com%2Cbaz%40example.com&cc=foo%40example.com%2Cbar%40example.com%2Cbaz%40example.com"
+  onClick={null}
+  target="_self"
+>
+  edx@example.com
+</a>
+`;
+
+exports[`Storyshots Basics|MailtoLink with onClick 1`] = `
+<a
+  href="mailto:edx@example.com"
+  onClick={[Function]}
+  rel="noopener"
+  target="_blank"
+>
+  edx@example.com
+  <span>
+     
+    <span
+      aria-hidden={false}
+      aria-label="Opens in a new window"
+      className="fa fa-external-link"
+      title="Opens in a new window"
     />
-    <label
-      className="form-check-label"
-      htmlFor="checkbox2"
-      id="label-checkbox2"
-    >
-      CheckBox 2
-    </label>
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-checkbox2"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className="form-check"
-  >
-    <input
-      aria-checked={false}
-      checked={false}
-      className={
-        Array [
-          "form-check-input is-invalid-nodanger",
-        ]
-      }
-      disabled={false}
-      id="checkbox3"
-      name="basicCheckBox3"
-      onChange={[Function]}
-      type="checkbox"
-    />
-    <label
-      className="form-check-label"
-      htmlFor="checkbox3"
-      id="label-checkbox3"
-    >
-      CheckBox 3
-    </label>
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-checkbox3"
-    >
-      <span />
-    </div>
-  </div>
-</div>
+  </span>
+</a>
+`;
+
+exports[`Storyshots Basics|MailtoLink with subject and body 1`] = `
+<a
+  href="mailto:edx@example.com?body=This%20mailto%20component%20is%20awesome%21&subject=Check%20out%20this%20mailto%20component%21"
+  onClick={null}
+  target="_self"
+>
+  email with subject and body
+</a>
 `;
 
 exports[`Storyshots Collapsible basic usage with resizing 1`] = `
@@ -689,2142 +313,6 @@ exports[`Storyshots Collapsible initially open collapsible 1`] = `
     </p>
   </div>
 </div>
-`;
-
-exports[`Storyshots Dropdown basic usage 1`] = `
-<div
-  className="dropdown"
->
-  <button
-    aria-expanded={false}
-    aria-haspopup="true"
-    className="btn dropdown-toggle btn-light"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    type="button"
-  >
-    Search Engines
-  </button>
-  <div
-    aria-hidden={true}
-    aria-label="Search Engines"
-    className="dropdown-menu"
-    role="menu"
-  >
-    <a
-      className="dropdown-item"
-      href="https://google.com"
-      onKeyDown={[Function]}
-      role="menuitem"
-    >
-      Google
-    </a>
-    <a
-      className="dropdown-item"
-      href="https://duckduckgo.com"
-      onKeyDown={[Function]}
-      role="menuitem"
-    >
-      DuckDuckGo
-    </a>
-    <a
-      className="dropdown-item"
-      href="https://yahoo.com"
-      onKeyDown={[Function]}
-      role="menuitem"
-    >
-      Yahoo
-    </a>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Dropdown menu items as elements 1`] = `
-<div
-  className="dropdown"
->
-  <button
-    aria-expanded={false}
-    aria-haspopup="true"
-    className="btn dropdown-toggle btn-light"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    type="button"
-  >
-    Search Engines
-  </button>
-  <div
-    aria-hidden={true}
-    aria-label="Search Engines"
-    className="dropdown-menu"
-    role="menu"
-  >
-    <a
-      className="dropdown-item"
-      href="http://www.google.com"
-      onKeyDown={[Function]}
-    >
-      Google
-    </a>
-    <a
-      className="dropdown-item"
-      href="http://www.duckduckgo.com"
-      onKeyDown={[Function]}
-    >
-      DuckDuckGo
-    </a>
-    <a
-      className="dropdown-item"
-      href="http://www.yahoo.com"
-      onKeyDown={[Function]}
-    >
-      Yahoo
-    </a>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Dropdown with icon element 1`] = `
-<div
-  className="dropdown has-icon rounded border d-flex bg-white"
->
-  <div
-    className="icon-container d-flex align-items-center justify-content-center border-right"
-  >
-    <span
-      aria-hidden={true}
-      className="fa fa-user px-3 rounded-left"
-      id="Icon1"
-    />
-  </div>
-  <button
-    aria-expanded={false}
-    aria-haspopup="true"
-    className="btn dropdown-toggle border-0 rounded-0 bg-white btn-light"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    type="button"
-  >
-    Search Engines
-  </button>
-  <div
-    aria-hidden={true}
-    aria-label="Search Engines"
-    className="dropdown-menu"
-    role="menu"
-  >
-    <a
-      className="dropdown-item"
-      href="https://google.com"
-      onKeyDown={[Function]}
-      role="menuitem"
-    >
-      Google
-    </a>
-    <a
-      className="dropdown-item"
-      href="https://duckduckgo.com"
-      onKeyDown={[Function]}
-      role="menuitem"
-    >
-      DuckDuckGo
-    </a>
-    <a
-      className="dropdown-item"
-      href="https://yahoo.com"
-      onKeyDown={[Function]}
-      role="menuitem"
-    >
-      Yahoo
-    </a>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Fieldset basic usage 1`] = `
-<form>
-  <div
-    className="paragon-fieldset"
-  >
-    <fieldset
-      aria-describedby="error-fieldset12"
-      className="form-control p-3 is-invalid-nodanger"
-    >
-      <legend
-        className="p-1"
-      >
-        Name
-      </legend>
-      <div
-        className="form-group"
-      >
-        <label
-          className=""
-          htmlFor="asInput13"
-          id="label-asInput13"
-        >
-          First Name
-        </label>
-        <input
-          aria-describedby="error-asInput13"
-          aria-invalid={false}
-          autoComplete="on"
-          className="form-control is-invalid-nodanger"
-          disabled={false}
-          id="asInput13"
-          name="firstName"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onKeyPress={[Function]}
-          readOnly={false}
-          required={false}
-          themes={Array []}
-          type="text"
-          value=""
-        />
-        <div
-          aria-live="polite"
-          className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput13"
-        >
-          <span />
-        </div>
-      </div>
-      <div
-        className="form-group"
-      >
-        <label
-          className=""
-          htmlFor="asInput14"
-          id="label-asInput14"
-        >
-          Last Name
-        </label>
-        <input
-          aria-describedby="error-asInput14"
-          aria-invalid={false}
-          autoComplete="on"
-          className="form-control is-invalid-nodanger"
-          disabled={false}
-          id="asInput14"
-          name="lastName"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onKeyPress={[Function]}
-          readOnly={false}
-          required={false}
-          themes={Array []}
-          type="text"
-          value=""
-        />
-        <div
-          aria-live="polite"
-          className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput14"
-        >
-          <span />
-        </div>
-      </div>
-    </fieldset>
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-fieldset12"
-    >
-      <span />
-    </div>
-  </div>
-</form>
-`;
-
-exports[`Storyshots Fieldset client-side validation of fieldset 1`] = `
-<form
-  onSubmit={[Function]}
->
-  <div
-    className="paragon-fieldset"
-  >
-    <fieldset
-      aria-describedby="error-fieldset21"
-      className="form-control p-3"
-    >
-      <legend
-        className="p-1"
-      >
-        Name
-      </legend>
-      <div
-        className="form-group"
-      >
-        <label
-          className=""
-          htmlFor="asInput22"
-          id="label-asInput22"
-        >
-          First Name
-        </label>
-        <input
-          aria-describedby="error-asInput22"
-          aria-invalid={false}
-          autoComplete="on"
-          className="form-control is-invalid-nodanger"
-          disabled={false}
-          id="asInput22"
-          name="firstName"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onKeyPress={[Function]}
-          readOnly={false}
-          required={false}
-          themes={Array []}
-          type="text"
-          value=""
-        />
-        <div
-          aria-live="polite"
-          className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput22"
-        >
-          <span />
-        </div>
-      </div>
-      <div
-        className="form-group"
-      >
-        <label
-          className=""
-          htmlFor="asInput23"
-          id="label-asInput23"
-        >
-          Last Name
-        </label>
-        <input
-          aria-describedby="error-asInput23"
-          aria-invalid={false}
-          autoComplete="on"
-          className="form-control is-invalid-nodanger"
-          disabled={false}
-          id="asInput23"
-          name="lastName"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onKeyPress={[Function]}
-          readOnly={false}
-          required={false}
-          themes={Array []}
-          type="text"
-          value=""
-        />
-        <div
-          aria-live="polite"
-          className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput23"
-        >
-          <span />
-        </div>
-      </div>
-    </fieldset>
-    <div
-      aria-live="polite"
-      className="invalid-feedback"
-      id="error-fieldset21"
-    >
-      <span />
-    </div>
-  </div>
-  <input
-    className="btn btn-primary"
-    type="submit"
-    value="Submit"
-  />
-</form>
-`;
-
-exports[`Storyshots Fieldset invalid 1`] = `
-<form>
-  <div
-    className="paragon-fieldset"
-  >
-    <fieldset
-      aria-describedby="error-fieldset15"
-      className="form-control p-3 is-invalid is-invalid-nodanger"
-    >
-      <legend
-        className="p-1"
-      >
-        Name
-      </legend>
-      <div
-        className="form-group"
-      >
-        <label
-          className=""
-          htmlFor="asInput16"
-          id="label-asInput16"
-        >
-          First Name
-        </label>
-        <input
-          aria-describedby="error-asInput16"
-          aria-invalid={false}
-          autoComplete="on"
-          className="form-control is-invalid-nodanger"
-          disabled={false}
-          id="asInput16"
-          name="firstName"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onKeyPress={[Function]}
-          readOnly={false}
-          required={false}
-          themes={Array []}
-          type="text"
-          value=""
-        />
-        <div
-          aria-live="polite"
-          className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput16"
-        >
-          <span />
-        </div>
-      </div>
-      <div
-        className="form-group"
-      >
-        <label
-          className=""
-          htmlFor="asInput17"
-          id="label-asInput17"
-        >
-          Last Name
-        </label>
-        <input
-          aria-describedby="error-asInput17"
-          aria-invalid={false}
-          autoComplete="on"
-          className="form-control is-invalid-nodanger"
-          disabled={false}
-          id="asInput17"
-          name="lastName"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onKeyPress={[Function]}
-          readOnly={false}
-          required={false}
-          themes={Array []}
-          type="text"
-          value=""
-        />
-        <div
-          aria-live="polite"
-          className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput17"
-        >
-          <span />
-        </div>
-      </div>
-    </fieldset>
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-fieldset15"
-    >
-      This is invalid!
-    </div>
-  </div>
-</form>
-`;
-
-exports[`Storyshots Fieldset invalid with danger theme 1`] = `
-<form>
-  <div
-    className="paragon-fieldset"
-  >
-    <fieldset
-      aria-describedby="error-fieldset18"
-      className="form-control p-3 is-invalid"
-    >
-      <legend
-        className="p-1"
-      >
-        Name
-      </legend>
-      <div
-        className="form-group"
-      >
-        <label
-          className=""
-          htmlFor="asInput19"
-          id="label-asInput19"
-        >
-          First Name
-        </label>
-        <input
-          aria-describedby="error-asInput19"
-          aria-invalid={false}
-          autoComplete="on"
-          className="form-control is-invalid-nodanger"
-          disabled={false}
-          id="asInput19"
-          name="firstName"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onKeyPress={[Function]}
-          readOnly={false}
-          required={false}
-          themes={Array []}
-          type="text"
-          value=""
-        />
-        <div
-          aria-live="polite"
-          className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput19"
-        >
-          <span />
-        </div>
-      </div>
-      <div
-        className="form-group"
-      >
-        <label
-          className=""
-          htmlFor="asInput20"
-          id="label-asInput20"
-        >
-          Last Name
-        </label>
-        <input
-          aria-describedby="error-asInput20"
-          aria-invalid={false}
-          autoComplete="on"
-          className="form-control is-invalid-nodanger"
-          disabled={false}
-          id="asInput20"
-          name="lastName"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onKeyPress={[Function]}
-          readOnly={false}
-          required={false}
-          themes={Array []}
-          type="text"
-          value=""
-        />
-        <div
-          aria-live="polite"
-          className="invalid-feedback invalid-feedback-nodanger"
-          id="error-asInput20"
-        >
-          <span />
-        </div>
-      </div>
-    </fieldset>
-    <div
-      aria-live="polite"
-      className="invalid-feedback"
-      id="error-fieldset18"
-    >
-      <span
-        aria-hidden={true}
-        className="fa fa-exclamation-circle fa-icon-spacing"
-      />
-      <span
-        className="sr-only"
-      >
-        Error
-      </span>
-      This is invalid!
-    </div>
-  </div>
-</form>
-`;
-
-exports[`Storyshots HyperLink minimal usage 1`] = `
-<a
-  href="https://en.wikipedia.org/wiki/Hyperlink"
-  onClick={[Function]}
-  target="_self"
->
-  edX.org
-</a>
-`;
-
-exports[`Storyshots HyperLink with blank target 1`] = `
-<a
-  href="https://www.edx.org"
-  onClick={[Function]}
-  rel="noopener"
-  target="_blank"
->
-  edX.org
-  <span>
-     
-    <span
-      aria-hidden={false}
-      aria-label="Opens in a new window"
-      className="fa fa-external-link"
-      title="Opens in a new window"
-    />
-  </span>
-</a>
-`;
-
-exports[`Storyshots HyperLink with icon as content 1`] = `
-<a
-  href="https://www.edx.org"
-  onClick={[Function]}
-  target="_self"
->
-  <span
-    aria-hidden={true}
-    className="fa fa-book"
-    id="SampleIcon"
-  />
-  <span
-    className="sr-only"
-  >
-    Visit edX Home
-  </span>
-</a>
-`;
-
-exports[`Storyshots HyperLink with onClick 1`] = `
-<a
-  href="https://www.edx.org"
-  onClick={[Function]}
-  rel="noopener"
-  target="_blank"
->
-  edX.org
-  <span>
-     
-    <span
-      aria-hidden={false}
-      aria-label="Opens in a new window"
-      className="fa fa-external-link"
-      title="Opens in a new window"
-    />
-  </span>
-</a>
-`;
-
-exports[`Storyshots Icon basic usage 1`] = `
-<span
-  aria-hidden={true}
-  className="fa fa-birthday-cake fa-4x"
-  id="Icon1"
-/>
-`;
-
-exports[`Storyshots Icon with screenreader text 1`] = `
-Array [
-  <span
-    aria-hidden={true}
-    className="fa fa-smile-o fa-4x"
-    id="SampleIcon"
-  />,
-  <span
-    className="sr-only"
-  >
-    Happy Icon
-  </span>,
-]
-`;
-
-exports[`Storyshots InputSelect basic usage 1`] = `
-<div
-  className="form-group"
->
-  <label
-    className=""
-    htmlFor="asInput24"
-    id="label-asInput24"
-  >
-    Fruits
-  </label>
-  <select
-    aria-describedby="error-asInput24"
-    className="form-control is-invalid-nodanger"
-    disabled={false}
-    id="asInput24"
-    name="fruits"
-    onBlur={[Function]}
-    onChange={[Function]}
-    required={false}
-    type="select"
-    value="strawberry"
-  >
-    <option
-      value="apple"
-    >
-      apple
-    </option>
-    <option
-      value="orange"
-    >
-      orange
-    </option>
-    <option
-      value="strawberry"
-    >
-      strawberry
-    </option>
-    <option
-      value="banana"
-    >
-      banana
-    </option>
-  </select>
-  <div
-    aria-live="polite"
-    className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput24"
-  >
-    <span />
-  </div>
-</div>
-`;
-
-exports[`Storyshots InputSelect disabled usage 1`] = `
-<div
-  className="form-group"
->
-  <label
-    className=""
-    htmlFor="asInput28"
-    id="label-asInput28"
-  >
-    Fruits
-  </label>
-  <select
-    aria-describedby="error-asInput28"
-    aria-label="Fruits"
-    className="form-control is-invalid-nodanger"
-    disabled={true}
-    id="asInput28"
-    name="fruits"
-    onBlur={[Function]}
-    onChange={[Function]}
-    required={false}
-    type="select"
-    value="strawberry"
-  >
-    <option
-      value="apple"
-    >
-      apple
-    </option>
-    <option
-      value="orange"
-    >
-      orange
-    </option>
-    <option
-      value="strawberry"
-    >
-      strawberry
-    </option>
-    <option
-      value="banana"
-    >
-      banana
-    </option>
-  </select>
-  <div
-    aria-live="polite"
-    className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput28"
-  >
-    <span />
-  </div>
-</div>
-`;
-
-exports[`Storyshots InputSelect separate labels and values 1`] = `
-<div
-  className="form-group"
->
-  <label
-    className=""
-    htmlFor="asInput25"
-    id="label-asInput25"
-  >
-    New England States
-  </label>
-  <select
-    aria-describedby="error-asInput25"
-    className="form-control is-invalid-nodanger"
-    disabled={false}
-    id="asInput25"
-    name="new-england-states"
-    onBlur={[Function]}
-    onChange={[Function]}
-    required={false}
-    type="select"
-    value="RI"
-  >
-    <option
-      value="CN"
-    >
-      Connecticut
-    </option>
-    <option
-      value="ME"
-    >
-      Maine
-    </option>
-    <option
-      value="MA"
-    >
-      Massachusetts
-    </option>
-    <option
-      value="NH"
-    >
-      New Hampshire
-    </option>
-    <option
-      value="RI"
-    >
-      Rhode Island
-    </option>
-    <option
-      value="VT"
-    >
-      Vermont
-    </option>
-  </select>
-  <div
-    aria-live="polite"
-    className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput25"
-  >
-    <span />
-  </div>
-</div>
-`;
-
-exports[`Storyshots InputSelect separate option groups 1`] = `
-<div
-  className="form-group"
->
-  <label
-    className=""
-    htmlFor="asInput26"
-    id="label-asInput26"
-  >
-    Northeast States
-  </label>
-  <select
-    aria-describedby="error-asInput26"
-    className="form-control is-invalid-nodanger"
-    disabled={false}
-    id="asInput26"
-    name="northeast-states"
-    onBlur={[Function]}
-    onChange={[Function]}
-    required={false}
-    type="select"
-    value="MD"
-  >
-    <optgroup
-      label="New England States"
-    >
-      <option
-        value="CN"
-      >
-        Connecticut
-      </option>
-      <option
-        value="ME"
-      >
-        Maine
-      </option>
-      <option
-        value="MA"
-      >
-        Massachusetts
-      </option>
-      <option
-        value="NH"
-      >
-        New Hampshire
-      </option>
-      <option
-        value="RI"
-      >
-        Rhode Island
-      </option>
-      <option
-        value="VT"
-      >
-        Vermont
-      </option>
-    </optgroup>
-    <optgroup
-      label="Mid Atlantic States"
-    >
-      <option
-        value="DE"
-      >
-        Delaware
-      </option>
-      <option
-        value="MD"
-      >
-        Maryland
-      </option>
-      <option
-        value="NJ"
-      >
-        New Jersey
-      </option>
-      <option
-        value="NY"
-      >
-        New York
-      </option>
-      <option
-        value="PA"
-      >
-        Pennsylvania
-      </option>
-      <option
-        value="VA"
-      >
-        Virginia
-      </option>
-      <option
-        value="DC"
-      >
-        Washington, DC
-      </option>
-      <option
-        value="WV"
-      >
-        West Virginia
-      </option>
-    </optgroup>
-  </select>
-  <div
-    aria-live="polite"
-    className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput26"
-  >
-    <span />
-  </div>
-</div>
-`;
-
-exports[`Storyshots InputSelect with disabled option 1`] = `
-<div
-  className="form-group"
->
-  <label
-    className=""
-    htmlFor="asInput29"
-    id="label-asInput29"
-  >
-    Fruits
-  </label>
-  <select
-    aria-describedby="error-asInput29"
-    className="form-control is-invalid-nodanger"
-    disabled={false}
-    id="asInput29"
-    name="fruits"
-    onBlur={[Function]}
-    onChange={[Function]}
-    required={false}
-    type="select"
-    value="strawberry"
-  >
-    <option
-      value="apple"
-    >
-      apple
-    </option>
-    <option
-      disabled={true}
-      value="orange"
-    >
-      orange
-    </option>
-    <option
-      disabled={true}
-      value="banana"
-    >
-      banana
-    </option>
-  </select>
-  <div
-    aria-live="polite"
-    className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput29"
-  >
-    <span />
-  </div>
-</div>
-`;
-
-exports[`Storyshots InputSelect with validation 1`] = `
-<div
-  className="form-group"
->
-  <label
-    className=""
-    htmlFor="asInput27"
-    id="label-asInput27"
-  >
-    Favorite Color
-  </label>
-  <select
-    aria-describedby="error-asInput27"
-    className="form-control is-invalid-nodanger"
-    disabled={false}
-    id="asInput27"
-    name="color"
-    onBlur={[Function]}
-    onChange={[Function]}
-    required={false}
-    type="select"
-    value=""
-  >
-    <option
-      value=""
-    >
-      
-    </option>
-    <option
-      value="red"
-    >
-      red
-    </option>
-    <option
-      value="orange"
-    >
-      orange
-    </option>
-    <option
-      value="yellow"
-    >
-      yellow
-    </option>
-    <option
-      value="green"
-    >
-      green
-    </option>
-    <option
-      value="blue"
-    >
-      blue
-    </option>
-    <option
-      value="purple"
-    >
-      purple
-    </option>
-  </select>
-  <div
-    aria-live="polite"
-    className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput27"
-  >
-    <span />
-  </div>
-</div>
-`;
-
-exports[`Storyshots InputText different textual input types 1`] = `
-<form>
-  <div
-    className="form-group"
-  >
-    <label
-      className=""
-      htmlFor="input-search"
-      id="label-input-search"
-    >
-      Search
-    </label>
-    <input
-      aria-describedby="error-input-search"
-      aria-invalid={false}
-      autoComplete="on"
-      className="form-control is-invalid-nodanger"
-      disabled={false}
-      id="input-search"
-      name="search"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onKeyPress={[Function]}
-      readOnly={false}
-      required={false}
-      themes={Array []}
-      type="search"
-      value="what is paragon"
-    />
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-input-search"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className="form-group"
-  >
-    <label
-      className=""
-      htmlFor="input-email"
-      id="label-input-email"
-    >
-      Email
-    </label>
-    <input
-      aria-describedby="error-input-email"
-      aria-invalid={false}
-      autoComplete="on"
-      className="form-control is-invalid-nodanger"
-      disabled={false}
-      id="input-email"
-      name="email"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onKeyPress={[Function]}
-      readOnly={false}
-      required={false}
-      themes={Array []}
-      type="email"
-      value="paragon@edx.org"
-    />
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-input-email"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className="form-group"
-  >
-    <label
-      className=""
-      htmlFor="input-url"
-      id="label-input-url"
-    >
-      Url
-    </label>
-    <input
-      aria-describedby="error-input-url"
-      aria-invalid={false}
-      autoComplete="on"
-      className="form-control is-invalid-nodanger"
-      disabled={false}
-      id="input-url"
-      name="url"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onKeyPress={[Function]}
-      readOnly={false}
-      required={false}
-      themes={Array []}
-      type="url"
-      value="https://edx.github.io/paragon"
-    />
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-input-url"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className="form-group"
-  >
-    <label
-      className=""
-      htmlFor="input-tel"
-      id="label-input-tel"
-    >
-      Telephone
-    </label>
-    <input
-      aria-describedby="error-input-tel"
-      aria-invalid={false}
-      autoComplete="on"
-      className="form-control is-invalid-nodanger"
-      disabled={false}
-      id="input-tel"
-      name="telephone"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onKeyPress={[Function]}
-      readOnly={false}
-      required={false}
-      themes={Array []}
-      type="tel"
-      value="1-(555)-555-5555"
-    />
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-input-tel"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className="form-group"
-  >
-    <label
-      className=""
-      htmlFor="input-password"
-      id="label-input-password"
-    >
-      Password
-    </label>
-    <input
-      aria-describedby="error-input-password"
-      aria-invalid={false}
-      autoComplete="on"
-      className="form-control is-invalid-nodanger"
-      disabled={false}
-      id="input-password"
-      name="password"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onKeyPress={[Function]}
-      readOnly={false}
-      required={false}
-      themes={Array []}
-      type="password"
-      value="hunter2"
-    />
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-input-password"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className="form-group"
-  >
-    <label
-      className=""
-      htmlFor="input-number"
-      id="label-input-number"
-    >
-      Number
-    </label>
-    <input
-      aria-describedby="error-input-number"
-      aria-invalid={false}
-      autoComplete="on"
-      className="form-control is-invalid-nodanger"
-      disabled={false}
-      id="input-number"
-      name="number"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onKeyPress={[Function]}
-      readOnly={false}
-      required={false}
-      themes={Array []}
-      type="number"
-      value={42}
-    />
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-input-number"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className="form-group"
-  >
-    <label
-      className=""
-      htmlFor="input-datetime-local"
-      id="label-input-datetime-local"
-    >
-      Date and time
-    </label>
-    <input
-      aria-describedby="error-input-datetime-local"
-      aria-invalid={false}
-      autoComplete="on"
-      className="form-control is-invalid-nodanger"
-      disabled={false}
-      id="input-datetime-local"
-      name="datetime-local"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onKeyPress={[Function]}
-      readOnly={false}
-      required={false}
-      themes={Array []}
-      type="datetime-local"
-      value="2017-04-27T13:45:00"
-    />
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-input-datetime-local"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className="form-group"
-  >
-    <label
-      className=""
-      htmlFor="input-date"
-      id="label-input-date"
-    >
-      Date
-    </label>
-    <input
-      aria-describedby="error-input-date"
-      aria-invalid={false}
-      autoComplete="on"
-      className="form-control is-invalid-nodanger"
-      disabled={false}
-      id="input-date"
-      name="date"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onKeyPress={[Function]}
-      readOnly={false}
-      required={false}
-      themes={Array []}
-      type="date"
-      value="2017-04-27"
-    />
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-input-date"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className="form-group"
-  >
-    <label
-      className=""
-      htmlFor="input-month"
-      id="label-input-month"
-    >
-      Month
-    </label>
-    <input
-      aria-describedby="error-input-month"
-      aria-invalid={false}
-      autoComplete="on"
-      className="form-control is-invalid-nodanger"
-      disabled={false}
-      id="input-month"
-      name="month"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onKeyPress={[Function]}
-      readOnly={false}
-      required={false}
-      themes={Array []}
-      type="month"
-      value="2017-04"
-    />
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-input-month"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className="form-group"
-  >
-    <label
-      className=""
-      htmlFor="input-week"
-      id="label-input-week"
-    >
-      Week
-    </label>
-    <input
-      aria-describedby="error-input-week"
-      aria-invalid={false}
-      autoComplete="on"
-      className="form-control is-invalid-nodanger"
-      disabled={false}
-      id="input-week"
-      name="week"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onKeyPress={[Function]}
-      readOnly={false}
-      required={false}
-      themes={Array []}
-      type="week"
-      value="2017-W33"
-    />
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-input-week"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className="form-group"
-  >
-    <label
-      className=""
-      htmlFor="input-time"
-      id="label-input-time"
-    >
-      Time
-    </label>
-    <input
-      aria-describedby="error-input-time"
-      aria-invalid={false}
-      autoComplete="on"
-      className="form-control is-invalid-nodanger"
-      disabled={false}
-      id="input-time"
-      name="time"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onKeyPress={[Function]}
-      readOnly={false}
-      required={false}
-      themes={Array []}
-      type="time"
-      value="13:45:00"
-    />
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-input-time"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className="form-group"
-  >
-    <label
-      className=""
-      htmlFor="input-color"
-      id="label-input-color"
-    >
-      Color
-    </label>
-    <input
-      aria-describedby="error-input-color"
-      aria-invalid={false}
-      autoComplete="on"
-      className="form-control is-invalid-nodanger"
-      disabled={false}
-      id="input-color"
-      name="color"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onKeyPress={[Function]}
-      readOnly={false}
-      required={false}
-      themes={Array []}
-      type="color"
-      value="#BF472C"
-    />
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-input-color"
-    >
-      <span />
-    </div>
-  </div>
-</form>
-`;
-
-exports[`Storyshots InputText displayed inline 1`] = `
-<div
-  className="form-group form-inline"
->
-  <label
-    className=""
-    htmlFor="asInput34"
-    id="label-asInput34"
-  >
-    Username
-  </label>
-  <input
-    aria-describedby="error-asInput34"
-    aria-invalid={false}
-    autoComplete="on"
-    className="form-control is-invalid-nodanger"
-    disabled={false}
-    id="asInput34"
-    name="username"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onKeyPress={[Function]}
-    readOnly={false}
-    required={false}
-    themes={Array []}
-    type="text"
-    value="foobar"
-  />
-  <div
-    aria-live="polite"
-    className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput34"
-  >
-    <span />
-  </div>
-</div>
-`;
-
-exports[`Storyshots InputText focus test 1`] = `
-<div>
-  <div
-    className="alert fade alert-dismissible alert-info show"
-    hidden={false}
-    role="alert"
-  >
-    <button
-      aria-label="Close"
-      className="btn close"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      type="button"
-    >
-      <span
-        aria-hidden="true"
-      >
-        ×
-      </span>
-    </button>
-    <div
-      className="alert-dialog"
-    >
-      Close me to input data!
-    </div>
-  </div>
-  <div
-    className="form-group"
-  >
-    <label
-      className=""
-      htmlFor="data"
-      id="label-data"
-    >
-      Data Input
-    </label>
-    <input
-      aria-describedby="error-data"
-      aria-invalid={false}
-      autoComplete="on"
-      className="form-control is-invalid-nodanger"
-      disabled={false}
-      id="data"
-      name="data"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onKeyPress={[Function]}
-      readOnly={false}
-      required={false}
-      themes={Array []}
-      type="text"
-      value=""
-    />
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-data"
-    >
-      <span />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots InputText label as element 1`] = `
-<div
-  className="form-group"
->
-  <label
-    className=""
-    htmlFor="asInput33"
-    id="label-asInput33"
-  >
-    <span
-      lang="en"
-    >
-      Element
-    </span>
-  </label>
-  <input
-    aria-describedby="error-asInput33"
-    aria-invalid={false}
-    autoComplete="on"
-    className="form-control is-invalid-nodanger"
-    disabled={false}
-    id="asInput33"
-    name="username"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onKeyPress={[Function]}
-    readOnly={false}
-    required={false}
-    themes={Array []}
-    type="text"
-    value="Label is wrapped in language span"
-  />
-  <div
-    aria-live="polite"
-    className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput33"
-  >
-    <span />
-  </div>
-</div>
-`;
-
-exports[`Storyshots InputText minimal usage 1`] = `
-<div
-  className="form-group"
->
-  <label
-    className=""
-    htmlFor="asInput30"
-    id="label-asInput30"
-  >
-    First Name
-  </label>
-  <input
-    aria-describedby="error-asInput30"
-    aria-invalid={false}
-    autoComplete="on"
-    className="form-control is-invalid-nodanger"
-    disabled={false}
-    id="asInput30"
-    name="name"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onKeyPress={[Function]}
-    readOnly={false}
-    required={false}
-    themes={Array []}
-    type="text"
-    value="Foo Bar"
-  />
-  <div
-    aria-live="polite"
-    className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput30"
-  >
-    <span />
-  </div>
-</div>
-`;
-
-exports[`Storyshots InputText read only 1`] = `
-<div
-  className="form-group"
->
-  <label
-    className=""
-    htmlFor="asInput31"
-    id="label-asInput31"
-  >
-    Input State
-  </label>
-  <input
-    aria-describedby="error-asInput31"
-    aria-invalid={false}
-    autoComplete="on"
-    className="form-control is-invalid-nodanger"
-    disabled={false}
-    id="asInput31"
-    name="inputState"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onKeyPress={[Function]}
-    readOnly={true}
-    required={false}
-    themes={Array []}
-    type="text"
-    value="Read Only"
-  />
-  <div
-    aria-live="polite"
-    className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput31"
-  >
-    <span />
-  </div>
-</div>
-`;
-
-exports[`Storyshots InputText validation 1`] = `
-<div
-  className="form-group"
->
-  <label
-    className=""
-    htmlFor="username"
-    id="label-username"
-  >
-    Username
-  </label>
-  <input
-    aria-describedby="error-username description-username"
-    aria-invalid={false}
-    autoComplete="on"
-    className="form-control is-invalid-nodanger"
-    disabled={false}
-    id="username"
-    name="username"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onKeyPress={[Function]}
-    readOnly={false}
-    required={false}
-    themes={Array []}
-    type="text"
-    value=""
-  />
-  <div
-    aria-live="polite"
-    className="invalid-feedback invalid-feedback-nodanger"
-    id="error-username"
-  >
-    <span />
-  </div>
-  <small
-    className="form-text"
-    id="description-username"
-  >
-    The unique name that identifies you throughout the site.
-  </small>
-</div>
-`;
-
-exports[`Storyshots InputText validation with danger theme 1`] = `
-<div
-  className="form-group"
->
-  <label
-    className=""
-    htmlFor="asInput32"
-    id="label-asInput32"
-  >
-    Username
-  </label>
-  <input
-    aria-describedby="error-asInput32 description-asInput32"
-    aria-invalid={false}
-    autoComplete="on"
-    className="form-control"
-    disabled={false}
-    id="asInput32"
-    name="username"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onKeyPress={[Function]}
-    readOnly={false}
-    required={false}
-    themes={
-      Array [
-        "danger",
-      ]
-    }
-    type="text"
-    value=""
-  />
-  <div
-    aria-live="polite"
-    className="invalid-feedback"
-    id="error-asInput32"
-  >
-    <span />
-  </div>
-  <small
-    className="form-text"
-    id="description-asInput32"
-  >
-    The unique name that identifies you throughout the site.
-  </small>
-</div>
-`;
-
-exports[`Storyshots InputText with input group addons 1`] = `
-<form>
-  <div
-    className="form-group"
-  >
-    <label
-      className=""
-      htmlFor="asInput35"
-      id="label-asInput35"
-    >
-      Username
-    </label>
-    <div
-      className="input-group"
-    >
-      <div
-        className="input-group-prepend"
-      >
-        <div
-          className="input-group-text"
-        >
-          @
-        </div>
-      </div>
-      <input
-        aria-describedby="error-asInput35"
-        aria-invalid={false}
-        autoComplete="on"
-        className="form-control is-invalid-nodanger"
-        disabled={false}
-        id="asInput35"
-        name="username"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onKeyPress={[Function]}
-        readOnly={false}
-        required={false}
-        themes={Array []}
-        type="text"
-        value="foobar"
-      />
-      <div
-        className="input-group-append"
-      />
-    </div>
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-asInput35"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className="form-group"
-  >
-    <label
-      className=""
-      htmlFor="asInput36"
-      id="label-asInput36"
-    >
-      Username
-    </label>
-    <div
-      className="input-group"
-    >
-      <div
-        className="input-group-prepend"
-      />
-      <input
-        aria-describedby="error-asInput36"
-        aria-invalid={false}
-        autoComplete="on"
-        className="form-control is-invalid-nodanger"
-        disabled={false}
-        id="asInput36"
-        name="username"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onKeyPress={[Function]}
-        readOnly={false}
-        required={false}
-        themes={Array []}
-        type="text"
-        value="foobar"
-      />
-      <div
-        className="input-group-append"
-      >
-        <div
-          className="input-group-text"
-        >
-          @example.com
-        </div>
-      </div>
-    </div>
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-asInput36"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className="form-group"
-  >
-    <label
-      className=""
-      htmlFor="asInput37"
-      id="label-asInput37"
-    >
-      Money
-    </label>
-    <div
-      className="input-group"
-    >
-      <div
-        className="input-group-prepend"
-      >
-        <div
-          className="input-group-text"
-        >
-          $
-        </div>
-      </div>
-      <input
-        aria-describedby="error-asInput37"
-        aria-invalid={false}
-        autoComplete="on"
-        className="form-control is-invalid-nodanger"
-        disabled={false}
-        id="asInput37"
-        name="money"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onKeyPress={[Function]}
-        readOnly={false}
-        required={false}
-        themes={Array []}
-        type="number"
-        value={1000}
-      />
-      <div
-        className="input-group-append"
-      >
-        <div
-          className="input-group-text"
-        >
-          .00
-        </div>
-      </div>
-    </div>
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-asInput37"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className="form-group"
-  >
-    <label
-      className=""
-      htmlFor="asInput38"
-      id="label-asInput38"
-    >
-      Search
-    </label>
-    <div
-      className="input-group"
-    >
-      <div
-        className="input-group-prepend"
-      />
-      <input
-        aria-describedby="error-asInput38"
-        aria-invalid={false}
-        autoComplete="on"
-        className="form-control is-invalid-nodanger"
-        disabled={false}
-        id="asInput38"
-        name="search"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onKeyPress={[Function]}
-        readOnly={false}
-        required={false}
-        themes={Array []}
-        type="text"
-        value="what is paragon"
-      />
-      <div
-        className="input-group-append"
-      >
-        <button
-          className="btn btn-outline-secondary"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          Go
-        </button>
-      </div>
-    </div>
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-asInput38"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className="form-group"
-  >
-    <label
-      className=""
-      htmlFor="asInput39"
-      id="label-asInput39"
-    >
-      Username
-    </label>
-    <div
-      className="input-group"
-    >
-      <div
-        className="input-group-prepend"
-      />
-      <input
-        aria-describedby="error-asInput39"
-        aria-invalid={false}
-        autoComplete="on"
-        className="form-control is-invalid-nodanger"
-        disabled={false}
-        id="asInput39"
-        name="username"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onKeyPress={[Function]}
-        readOnly={false}
-        required={false}
-        themes={Array []}
-        type="text"
-        value="foobar"
-      />
-      <div
-        className="input-group-append"
-      >
-        <div
-          className="input-group-text"
-        >
-          <span
-            aria-hidden={true}
-            className="fa fa-check"
-            id="checkmark"
-          />
-          <span
-            className="sr-only"
-          >
-            Checkmark
-          </span>
-        </div>
-        <button
-          className="btn btn-outline-secondary"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          Go
-        </button>
-      </div>
-    </div>
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-asInput39"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className="form-group"
-  >
-    <label
-      className=""
-      htmlFor="asInput40"
-      id="label-asInput40"
-    >
-      Password
-    </label>
-    <div
-      className="input-group"
-    >
-      <div
-        className="input-group-prepend"
-      />
-      <input
-        aria-describedby="error-asInput40"
-        aria-invalid={false}
-        autoComplete="on"
-        className="form-control is-invalid-nodanger"
-        disabled={false}
-        id="asInput40"
-        name="password"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onKeyPress={[Function]}
-        readOnly={false}
-        required={false}
-        themes={Array []}
-        type="text"
-        value="secret"
-      />
-      <div
-        className="input-group-append"
-      >
-        <div
-          className="input-group-text"
-        >
-          <span
-            aria-hidden={true}
-            className="fa fa-check"
-            id="checkmark"
-          />
-          <span
-            className="sr-only"
-          >
-            Checkmark
-          </span>
-        </div>
-      </div>
-    </div>
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-asInput40"
-    >
-      <span />
-    </div>
-  </div>
-</form>
 `;
 
 exports[`Storyshots ListBox basic usage 1`] = `
@@ -3115,87 +603,419 @@ Array [
 ]
 `;
 
-exports[`Storyshots MailtoLink minimal usage 1`] = `
-<a
-  href="mailto:edx@example.com"
-  onClick={null}
-  target="_self"
+exports[`Storyshots Navigation|Breadcrumb basic usage 1`] = `
+<nav
+  aria-label="breadcrumb"
 >
-  edx@example.com
-</a>
+  <ol
+    className="list-inline"
+  >
+    <li
+      className="list-inline-item"
+    >
+      <a
+        href="/link-1"
+      >
+        Link 1
+      </a>
+    </li>
+    <li
+      aria-label="spacer"
+      className="list-inline-item"
+      role="presentation"
+    >
+      <span
+        aria-hidden={true}
+        className="fa fa-chevron-right"
+        id="spacer-0"
+      />
+    </li>
+    <li
+      className="list-inline-item"
+    >
+      <a
+        href="/link-2"
+      >
+        Link 2
+      </a>
+    </li>
+    <li
+      aria-label="spacer"
+      className="list-inline-item"
+      role="presentation"
+    >
+      <span
+        aria-hidden={true}
+        className="fa fa-chevron-right"
+        id="spacer-1"
+      />
+    </li>
+    <li
+      className="list-inline-item"
+    >
+      <a
+        href="/link-3"
+      >
+        Link 3
+      </a>
+    </li>
+  </ol>
+</nav>
 `;
 
-exports[`Storyshots MailtoLink with blank target 1`] = `
-<a
-  href="mailto:edx@example.com"
-  onClick={null}
-  rel="noopener"
-  target="_blank"
+exports[`Storyshots Navigation|Breadcrumb with activeLabel 1`] = `
+<nav
+  aria-label="breadcrumb"
 >
-  edx@example.com
-  <span>
-     
+  <ol
+    className="list-inline"
+  >
+    <li
+      className="list-inline-item"
+    >
+      <a
+        href="/link-1"
+      >
+        Link 1
+      </a>
+    </li>
+    <li
+      aria-label="spacer"
+      className="list-inline-item"
+      role="presentation"
+    >
+      <span
+        aria-hidden={true}
+        className="fa fa-chevron-right"
+        id="spacer-0"
+      />
+    </li>
+    <li
+      className="list-inline-item"
+    >
+      <a
+        href="/link-2"
+      >
+        Link 2
+      </a>
+    </li>
+    <li
+      aria-label="spacer"
+      className="list-inline-item"
+      role="presentation"
+    >
+      <span
+        aria-hidden={true}
+        className="fa fa-chevron-right"
+        id="spacer-1"
+      />
+    </li>
+    <li
+      className="list-inline-item"
+    >
+      <a
+        href="/link-3"
+      >
+        Link 3
+      </a>
+    </li>
+    <li
+      aria-label="spacer"
+      className="list-inline-item"
+      role="presentation"
+    >
+      <span
+        aria-hidden={true}
+        className="fa fa-chevron-right"
+        id="spacer-2"
+      />
+    </li>
+    <li
+      className="list-inline-item"
+    >
+      Link 4
+    </li>
+  </ol>
+</nav>
+`;
+
+exports[`Storyshots Navigation|Breadcrumb with custom click handler 1`] = `
+<nav
+  aria-label="breadcrumb"
+>
+  <ol
+    className="list-inline"
+  >
+    <li
+      className="list-inline-item"
+    >
+      <a
+        href="/link-1"
+        onClick={[Function]}
+      >
+        Link 1
+      </a>
+    </li>
+    <li
+      aria-label="spacer"
+      className="list-inline-item"
+      role="presentation"
+    >
+      <span
+        aria-hidden={true}
+        className="fa fa-chevron-right"
+        id="spacer-0"
+      />
+    </li>
+    <li
+      className="list-inline-item"
+    >
+      <a
+        href="/link-2"
+        onClick={[Function]}
+      >
+        Link 2
+      </a>
+    </li>
+    <li
+      aria-label="spacer"
+      className="list-inline-item"
+      role="presentation"
+    >
+      <span
+        aria-hidden={true}
+        className="fa fa-chevron-right"
+        id="spacer-1"
+      />
+    </li>
+    <li
+      className="list-inline-item"
+    >
+      <a
+        href="/link-3"
+        onClick={[Function]}
+      >
+        Link 3
+      </a>
+    </li>
+  </ol>
+</nav>
+`;
+
+exports[`Storyshots Navigation|Breadcrumb with custom spacer 1`] = `
+<nav
+  aria-label="breadcrumb"
+>
+  <ol
+    className="list-inline"
+  >
+    <li
+      className="list-inline-item"
+    >
+      <a
+        href="/link-1"
+      >
+        Link 1
+      </a>
+    </li>
+    <li
+      aria-label="spacer"
+      className="list-inline-item"
+      role="presentation"
+    >
+      <span
+        className="custom-spacer"
+      >
+        /
+      </span>
+    </li>
+    <li
+      className="list-inline-item"
+    >
+      <a
+        href="/link-2"
+      >
+        Link 2
+      </a>
+    </li>
+    <li
+      aria-label="spacer"
+      className="list-inline-item"
+      role="presentation"
+    >
+      <span
+        className="custom-spacer"
+      >
+        /
+      </span>
+    </li>
+    <li
+      className="list-inline-item"
+    >
+      <a
+        href="/link-3"
+      >
+        Link 3
+      </a>
+    </li>
+  </ol>
+</nav>
+`;
+
+exports[`Storyshots Navigation|Dropdown basic usage 1`] = `
+<div
+  className="dropdown"
+>
+  <button
+    aria-expanded={false}
+    aria-haspopup="true"
+    className="btn dropdown-toggle btn-light"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    Search Engines
+  </button>
+  <div
+    aria-hidden={true}
+    aria-label="Search Engines"
+    className="dropdown-menu"
+    role="menu"
+  >
+    <a
+      className="dropdown-item"
+      href="https://google.com"
+      onKeyDown={[Function]}
+      role="menuitem"
+    >
+      Google
+    </a>
+    <a
+      className="dropdown-item"
+      href="https://duckduckgo.com"
+      onKeyDown={[Function]}
+      role="menuitem"
+    >
+      DuckDuckGo
+    </a>
+    <a
+      className="dropdown-item"
+      href="https://yahoo.com"
+      onKeyDown={[Function]}
+      role="menuitem"
+    >
+      Yahoo
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Navigation|Dropdown menu items as elements 1`] = `
+<div
+  className="dropdown"
+>
+  <button
+    aria-expanded={false}
+    aria-haspopup="true"
+    className="btn dropdown-toggle btn-light"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    Search Engines
+  </button>
+  <div
+    aria-hidden={true}
+    aria-label="Search Engines"
+    className="dropdown-menu"
+    role="menu"
+  >
+    <a
+      className="dropdown-item"
+      href="http://www.google.com"
+      onKeyDown={[Function]}
+    >
+      Google
+    </a>
+    <a
+      className="dropdown-item"
+      href="http://www.duckduckgo.com"
+      onKeyDown={[Function]}
+    >
+      DuckDuckGo
+    </a>
+    <a
+      className="dropdown-item"
+      href="http://www.yahoo.com"
+      onKeyDown={[Function]}
+    >
+      Yahoo
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Navigation|Dropdown with icon element 1`] = `
+<div
+  className="dropdown has-icon rounded border d-flex bg-white"
+>
+  <div
+    className="icon-container d-flex align-items-center justify-content-center border-right"
+  >
     <span
-      aria-hidden={false}
-      aria-label="Opens in a new window"
-      className="fa fa-external-link"
-      title="Opens in a new window"
+      aria-hidden={true}
+      className="fa fa-user px-3 rounded-left"
+      id="Icon1"
     />
-  </span>
-</a>
+  </div>
+  <button
+    aria-expanded={false}
+    aria-haspopup="true"
+    className="btn dropdown-toggle border-0 rounded-0 bg-white btn-light"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    Search Engines
+  </button>
+  <div
+    aria-hidden={true}
+    aria-label="Search Engines"
+    className="dropdown-menu"
+    role="menu"
+  >
+    <a
+      className="dropdown-item"
+      href="https://google.com"
+      onKeyDown={[Function]}
+      role="menuitem"
+    >
+      Google
+    </a>
+    <a
+      className="dropdown-item"
+      href="https://duckduckgo.com"
+      onKeyDown={[Function]}
+      role="menuitem"
+    >
+      DuckDuckGo
+    </a>
+    <a
+      className="dropdown-item"
+      href="https://yahoo.com"
+      onKeyDown={[Function]}
+      role="menuitem"
+    >
+      Yahoo
+    </a>
+  </div>
+</div>
 `;
 
-exports[`Storyshots MailtoLink with cc and bcc 1`] = `
-<a
-  href="mailto:?bcc=edx%40example.com&cc=edx%40example.com"
-  onClick={null}
-  target="_self"
->
-  Moar mail, this time with cc and bcc
-</a>
-`;
-
-exports[`Storyshots MailtoLink with multiple cc and bcc 1`] = `
-<a
-  href="mailto:?bcc=foo%40example.com%2Cbar%40example.com%2Cbaz%40example.com&cc=foo%40example.com%2Cbar%40example.com%2Cbaz%40example.com"
-  onClick={null}
-  target="_self"
->
-  edx@example.com
-</a>
-`;
-
-exports[`Storyshots MailtoLink with onClick 1`] = `
-<a
-  href="mailto:edx@example.com"
-  onClick={[Function]}
-  rel="noopener"
-  target="_blank"
->
-  edx@example.com
-  <span>
-     
-    <span
-      aria-hidden={false}
-      aria-label="Opens in a new window"
-      className="fa fa-external-link"
-      title="Opens in a new window"
-    />
-  </span>
-</a>
-`;
-
-exports[`Storyshots MailtoLink with subject and body 1`] = `
-<a
-  href="mailto:edx@example.com?body=This%20mailto%20component%20is%20awesome%21&subject=Check%20out%20this%20mailto%20component%21"
-  onClick={null}
-  target="_self"
->
-  email with subject and body
-</a>
-`;
-
-exports[`Storyshots Pagination basic usage 1`] = `
+exports[`Storyshots Navigation|Pagination basic usage 1`] = `
 <nav
   aria-label="pagination navigation"
 >
@@ -3259,7 +1079,7 @@ exports[`Storyshots Pagination basic usage 1`] = `
 </nav>
 `;
 
-exports[`Storyshots Pagination with custom element labels 1`] = `
+exports[`Storyshots Navigation|Pagination with custom element labels 1`] = `
 <nav
   aria-label="pagination navigation"
 >
@@ -3327,7 +1147,7 @@ exports[`Storyshots Pagination with custom element labels 1`] = `
 </nav>
 `;
 
-exports[`Storyshots Pagination with custom string labels 1`] = `
+exports[`Storyshots Navigation|Pagination with custom string labels 1`] = `
 <nav
   aria-label="pagination navigation"
 >
@@ -3391,7 +1211,7 @@ exports[`Storyshots Pagination with custom string labels 1`] = `
 </nav>
 `;
 
-exports[`Storyshots Pagination with initial page selected 1`] = `
+exports[`Storyshots Navigation|Pagination with initial page selected 1`] = `
 <nav
   aria-label="pagination navigation"
 >
@@ -3454,7 +1274,7 @@ exports[`Storyshots Pagination with initial page selected 1`] = `
 </nav>
 `;
 
-exports[`Storyshots Pagination with max pages displayed 1`] = `
+exports[`Storyshots Navigation|Pagination with max pages displayed 1`] = `
 <nav
   aria-label="pagination navigation"
 >
@@ -3518,512 +1338,90 @@ exports[`Storyshots Pagination with max pages displayed 1`] = `
 </nav>
 `;
 
-exports[`Storyshots RadioButtonGroup selected minimal usage 1`] = `
+exports[`Storyshots Navigation|Tabs basic usage 1`] = `
 <div
-  aria-label="Radio Button Group"
-  onChange={[Function]}
-  role="radiogroup"
-  tabIndex={-1}
->
-  <div>
-    <input
-      aria-checked={false}
-      aria-label="First Value"
-      data-index={0}
-      defaultChecked={false}
-      name="rbg"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      type="radio"
-      value="jaebaebae"
-    />
-    First Value
-  </div>
-  <div>
-    <input
-      aria-checked={true}
-      aria-label="Second Value"
-      data-index={1}
-      defaultChecked={true}
-      name="rbg"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      type="radio"
-      value="value2"
-    />
-    Second Value
-  </div>
-  <div>
-    <input
-      aria-checked={false}
-      aria-label="Third Value"
-      data-index={2}
-      defaultChecked={false}
-      name="rbg"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      type="radio"
-      value="value3"
-    />
-    Third Value
-  </div>
-</div>
-`;
-
-exports[`Storyshots RadioButtonGroup unselected minimal usage 1`] = `
-<div
-  aria-label="Radio Button Group"
-  onChange={[Function]}
-  role="radiogroup"
-  tabIndex={-1}
->
-  <div>
-    <input
-      aria-checked={false}
-      aria-label="First Value"
-      data-index={0}
-      defaultChecked={false}
-      name="rbg"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      type="radio"
-      value="jaebaebae"
-    />
-    First Value
-  </div>
-  <div>
-    <input
-      aria-checked={false}
-      aria-label="Second Value"
-      data-index={1}
-      defaultChecked={false}
-      name="rbg"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      type="radio"
-      value="value2"
-    />
-    Second Value
-  </div>
-  <div>
-    <input
-      aria-checked={false}
-      aria-label="Third Value"
-      data-index={2}
-      defaultChecked={false}
-      name="rbg"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      type="radio"
-      value="value3"
-    />
-    Third Value
-  </div>
-</div>
-`;
-
-exports[`Storyshots SearchField basic usage 1`] = `
-<div
-  className="border search-field"
-  onBlur={[Function]}
-  onFocus={[Function]}
+  className="tabs"
 >
   <div
-    className="form-group form-inline"
+    className="nav nav-tabs"
+    role="tablist"
   >
-    <label
-      className=""
-      htmlFor="asInput57"
-      id="label-asInput57"
+    <button
+      aria-controls="tab-panel-tabInterface63-0"
+      aria-selected={true}
+      className="btn nav-link nav-item active"
+      id="tab-label-tabInterface63-0"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="tab"
+      type="button"
     >
-      Search:
-    </label>
+      Panel 1
+    </button>
+    <button
+      aria-controls="tab-panel-tabInterface63-1"
+      aria-selected={false}
+      className="btn nav-link nav-item"
+      id="tab-label-tabInterface63-1"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="tab"
+      type="button"
+    >
+      Panel 2
+    </button>
+    <button
+      aria-controls="tab-panel-tabInterface63-2"
+      aria-selected={false}
+      className="btn nav-link nav-item"
+      id="tab-label-tabInterface63-2"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="tab"
+      type="button"
+    >
+      Panel 3
+    </button>
+  </div>
+  <div
+    className="tab-content"
+    role="tabpanel"
+  >
     <div
-      className="input-group"
+      aria-hidden={false}
+      aria-labelledby="tab-label-tabInterface63-0"
+      className="tab-pane active"
+      id="tab-panel-tabInterface63-0"
+      role="tabpanel"
     >
-      <div
-        className="input-group-prepend"
-      />
-      <input
-        aria-describedby="error-asInput57"
-        aria-invalid={false}
-        autoComplete="off"
-        className="form-control is-invalid-nodanger input no-clear-btn"
-        disabled={false}
-        id="asInput57"
-        name="search"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onKeyPress={[Function]}
-        placeholder=""
-        readOnly={false}
-        required={false}
-        themes={Array []}
-        type="search"
-        value=""
-      />
-      <div
-        className="input-group-append"
-      >
-        <button
-          className="btn search-btn"
-          disabled={true}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          <span
-            aria-hidden={true}
-            className="fa fa-search"
-            id="Icon1"
-          />
-          <span
-            className="sr-only"
-          >
-            Submit search
-          </span>
-        </button>
+      <div>
+        Hello I am the first panel
       </div>
     </div>
     <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-asInput57"
+      aria-hidden={true}
+      aria-labelledby="tab-label-tabInterface63-1"
+      className="tab-pane"
+      id="tab-panel-tabInterface63-1"
+      role="tabpanel"
     >
-      <span />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots SearchField with callbacks 1`] = `
-<div
-  className="border search-field"
-  onBlur={[Function]}
-  onFocus={[Function]}
->
-  <div
-    className="form-group form-inline"
-  >
-    <label
-      className=""
-      htmlFor="asInput61"
-      id="label-asInput61"
-    >
-      Search:
-    </label>
-    <div
-      className="input-group"
-    >
-      <div
-        className="input-group-prepend"
-      />
-      <input
-        aria-describedby="error-asInput61"
-        aria-invalid={false}
-        autoComplete="off"
-        className="form-control is-invalid-nodanger input no-clear-btn"
-        disabled={false}
-        id="asInput61"
-        name="search"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onKeyPress={[Function]}
-        placeholder=""
-        readOnly={false}
-        required={false}
-        themes={Array []}
-        type="search"
-        value=""
-      />
-      <div
-        className="input-group-append"
-      >
-        <button
-          className="btn search-btn"
-          disabled={true}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          <span
-            aria-hidden={true}
-            className="fa fa-search"
-            id="Icon1"
-          />
-          <span
-            className="sr-only"
-          >
-            Submit search
-          </span>
-        </button>
+      <div>
+        Hello I am the second panel
       </div>
     </div>
     <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-asInput61"
+      aria-hidden={true}
+      aria-labelledby="tab-label-tabInterface63-2"
+      className="tab-pane"
+      id="tab-panel-tabInterface63-2"
+      role="tabpanel"
     >
-      <span />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots SearchField with custom label and screenreader text 1`] = `
-<div
-  className="border search-field"
-  onBlur={[Function]}
-  onFocus={[Function]}
->
-  <div
-    className="form-group form-inline"
-  >
-    <label
-      className=""
-      htmlFor="asInput62"
-      id="label-asInput62"
-    >
-      Buscar:
-    </label>
-    <div
-      className="input-group"
-    >
-      <div
-        className="input-group-prepend"
-      />
-      <input
-        aria-describedby="error-asInput62"
-        aria-invalid={false}
-        autoComplete="off"
-        className="form-control is-invalid-nodanger input no-clear-btn"
-        disabled={false}
-        id="asInput62"
-        name="search"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onKeyPress={[Function]}
-        placeholder=""
-        readOnly={false}
-        required={false}
-        themes={Array []}
-        type="search"
-        value=""
-      />
-      <div
-        className="input-group-append"
-      >
-        <button
-          className="btn search-btn"
-          disabled={true}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          <span
-            aria-hidden={true}
-            className="fa fa-search"
-            id="Icon1"
-          />
-          <span
-            className="sr-only"
-          >
-            Enviar búsqueda
-          </span>
-        </button>
+      <div>
+        Hello I am the third panel
       </div>
-    </div>
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-asInput62"
-    >
-      <span />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots SearchField with placeholder 1`] = `
-<div
-  className="border search-field"
-  onBlur={[Function]}
-  onFocus={[Function]}
->
-  <div
-    className="form-group form-inline"
-  >
-    <label
-      className=""
-      htmlFor="asInput58"
-      id="label-asInput58"
-    >
-      Search:
-    </label>
-    <div
-      className="input-group"
-    >
-      <div
-        className="input-group-prepend"
-      />
-      <input
-        aria-describedby="error-asInput58"
-        aria-invalid={false}
-        autoComplete="off"
-        className="form-control is-invalid-nodanger input no-clear-btn"
-        disabled={false}
-        id="asInput58"
-        name="search"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onKeyPress={[Function]}
-        placeholder="Search"
-        readOnly={false}
-        required={false}
-        themes={Array []}
-        type="search"
-        value=""
-      />
-      <div
-        className="input-group-append"
-      >
-        <button
-          className="btn search-btn"
-          disabled={true}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          <span
-            aria-hidden={true}
-            className="fa fa-search"
-            id="Icon1"
-          />
-          <span
-            className="sr-only"
-          >
-            Submit search
-          </span>
-        </button>
-      </div>
-    </div>
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-asInput58"
-    >
-      <span />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots SearchField with value 1`] = `
-<div
-  className="border search-field"
-  onBlur={[Function]}
-  onFocus={[Function]}
->
-  <div
-    className="form-group form-inline"
-  >
-    <label
-      className=""
-      htmlFor="asInput60"
-      id="label-asInput60"
-    >
-      Search:
-    </label>
-    <div
-      className="input-group"
-    >
-      <div
-        className="input-group-prepend"
-      />
-      <input
-        aria-describedby="error-asInput60"
-        aria-invalid={false}
-        autoComplete="off"
-        className="form-control is-invalid-nodanger input"
-        disabled={false}
-        id="asInput60"
-        name="search"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onKeyPress={[Function]}
-        placeholder="Search"
-        readOnly={false}
-        required={false}
-        themes={Array []}
-        type="search"
-        value="foobar"
-      />
-      <div
-        className="input-group-append"
-      >
-        <button
-          className="btn clear-btn ml-1"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          <small>
-            <span
-              aria-hidden={true}
-              className="fa fa-times"
-              id="icon-SearchField59"
-            />
-            <span
-              className="sr-only"
-            >
-              Clear search
-            </span>
-          </small>
-        </button>
-        <button
-          className="btn search-btn border-left"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          <span
-            aria-hidden={true}
-            className="fa fa-search"
-            id="Icon1"
-          />
-          <span
-            className="sr-only"
-          >
-            Submit search
-          </span>
-        </button>
-      </div>
-    </div>
-    <div
-      aria-live="polite"
-      className="invalid-feedback invalid-feedback-nodanger"
-      id="error-asInput60"
-    >
-      <span />
     </div>
   </div>
 </div>
@@ -5514,96 +2912,2698 @@ exports[`Storyshots Table unstyled 1`] = `
 </table>
 `;
 
-exports[`Storyshots Tabs basic usage 1`] = `
+exports[`Storyshots User Input|CheckBox basic usage 1`] = `
 <div
-  className="tabs"
+  className="form-check"
 >
-  <div
-    className="nav nav-tabs"
-    role="tablist"
+  <input
+    aria-checked={false}
+    checked={false}
+    className={
+      Array [
+        "form-check-input is-invalid-nodanger",
+      ]
+    }
+    disabled={false}
+    id="asInput3"
+    name="checkbox"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="form-check-label"
+    htmlFor="asInput3"
+    id="label-asInput3"
   >
-    <button
-      aria-controls="tab-panel-tabInterface63-0"
-      aria-selected={true}
-      className="btn nav-link nav-item active"
-      id="tab-label-tabInterface63-0"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      role="tab"
-      type="button"
-    >
-      Panel 1
-    </button>
-    <button
-      aria-controls="tab-panel-tabInterface63-1"
-      aria-selected={false}
-      className="btn nav-link nav-item"
-      id="tab-label-tabInterface63-1"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      role="tab"
-      type="button"
-    >
-      Panel 2
-    </button>
-    <button
-      aria-controls="tab-panel-tabInterface63-2"
-      aria-selected={false}
-      className="btn nav-link nav-item"
-      id="tab-label-tabInterface63-2"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      role="tab"
-      type="button"
-    >
-      Panel 3
-    </button>
+    check me out!
+  </label>
+  <div
+    aria-live="polite"
+    className="invalid-feedback invalid-feedback-nodanger"
+    id="error-asInput3"
+  >
+    <span />
   </div>
-  <div
-    className="tab-content"
-    role="tabpanel"
+</div>
+`;
+
+exports[`Storyshots User Input|CheckBox call a function 1`] = `
+<div
+  className="form-check"
+>
+  <input
+    aria-checked={false}
+    checked={false}
+    className={
+      Array [
+        "form-check-input is-invalid-nodanger",
+      ]
+    }
+    disabled={false}
+    id="asInput6"
+    name="checkbox"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="form-check-label"
+    htmlFor="asInput6"
+    id="label-asInput6"
   >
-    <div
-      aria-hidden={false}
-      aria-labelledby="tab-label-tabInterface63-0"
-      className="tab-pane active"
-      id="tab-panel-tabInterface63-0"
-      role="tabpanel"
+    check out the console
+  </label>
+  <div
+    aria-live="polite"
+    className="invalid-feedback invalid-feedback-nodanger"
+    id="error-asInput6"
+  >
+    <span />
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|CheckBox controlled 1`] = `
+<div>
+  <button
+    className="btn btn-light"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    Click me to toggle the check box!
+  </button>
+  <div
+    className="form-check"
+  >
+    <input
+      aria-checked={false}
+      checked={false}
+      className={
+        Array [
+          "form-check-input is-invalid-nodanger",
+        ]
+      }
+      disabled={false}
+      id="asInput7"
+      name="checkbox"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <label
+      className="form-check-label"
+      htmlFor="asInput7"
+      id="label-asInput7"
     >
-      <div>
-        Hello I am the first panel
-      </div>
-    </div>
+      click the button
+    </label>
     <div
-      aria-hidden={true}
-      aria-labelledby="tab-label-tabInterface63-1"
-      className="tab-pane"
-      id="tab-panel-tabInterface63-1"
-      role="tabpanel"
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-asInput7"
     >
-      <div>
-        Hello I am the second panel
-      </div>
-    </div>
-    <div
-      aria-hidden={true}
-      aria-labelledby="tab-label-tabInterface63-2"
-      className="tab-pane"
-      id="tab-panel-tabInterface63-2"
-      role="tabpanel"
-    >
-      <div>
-        Hello I am the third panel
-      </div>
+      <span />
     </div>
   </div>
 </div>
 `;
 
-exports[`Storyshots Textarea label as element 1`] = `
+exports[`Storyshots User Input|CheckBox default checked 1`] = `
+<div
+  className="form-check"
+>
+  <input
+    aria-checked={true}
+    checked={true}
+    className={
+      Array [
+        "form-check-input is-invalid-nodanger",
+      ]
+    }
+    disabled={false}
+    id="asInput5"
+    name="checkbox"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="form-check-label"
+    htmlFor="asInput5"
+    id="label-asInput5"
+  >
+    (un)check me out
+  </label>
+  <div
+    aria-live="polite"
+    className="invalid-feedback invalid-feedback-nodanger"
+    id="error-asInput5"
+  >
+    <span />
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|CheckBox disabled 1`] = `
+<div
+  className="form-check"
+>
+  <input
+    aria-checked={false}
+    checked={false}
+    className={
+      Array [
+        "form-check-input is-invalid-nodanger",
+      ]
+    }
+    disabled={true}
+    id="asInput4"
+    name="checkbox"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="form-check-label"
+    htmlFor="asInput4"
+    id="label-asInput4"
+  >
+    you cannot check me out
+  </label>
+  <div
+    aria-live="polite"
+    className="invalid-feedback invalid-feedback-nodanger"
+    id="error-asInput4"
+  >
+    <span />
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|CheckBoxGroup basic usage 1`] = `
+<div
+  className="form-group"
+>
+  <div
+    className="form-check"
+  >
+    <input
+      aria-checked={false}
+      checked={false}
+      className={
+        Array [
+          "form-check-input is-invalid-nodanger",
+        ]
+      }
+      disabled={false}
+      id="checkbox1"
+      name="basicCheckBox1"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <label
+      className="form-check-label"
+      htmlFor="checkbox1"
+      id="label-checkbox1"
+    >
+      CheckBox 1
+    </label>
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-checkbox1"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className="form-check"
+  >
+    <input
+      aria-checked={false}
+      checked={false}
+      className={
+        Array [
+          "form-check-input is-invalid-nodanger",
+        ]
+      }
+      disabled={false}
+      id="checkbox2"
+      name="basicCheckBox2"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <label
+      className="form-check-label"
+      htmlFor="checkbox2"
+      id="label-checkbox2"
+    >
+      CheckBox 2
+    </label>
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-checkbox2"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className="form-check"
+  >
+    <input
+      aria-checked={false}
+      checked={false}
+      className={
+        Array [
+          "form-check-input is-invalid-nodanger",
+        ]
+      }
+      disabled={false}
+      id="checkbox3"
+      name="basicCheckBox3"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <label
+      className="form-check-label"
+      htmlFor="checkbox3"
+      id="label-checkbox3"
+    >
+      CheckBox 3
+    </label>
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-checkbox3"
+    >
+      <span />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|Fieldset basic usage 1`] = `
+<form>
+  <div
+    className="paragon-fieldset"
+  >
+    <fieldset
+      aria-describedby="error-fieldset12"
+      className="form-control p-3 is-invalid-nodanger"
+    >
+      <legend
+        className="p-1"
+      >
+        Name
+      </legend>
+      <div
+        className="form-group"
+      >
+        <label
+          className=""
+          htmlFor="asInput13"
+          id="label-asInput13"
+        >
+          First Name
+        </label>
+        <input
+          aria-describedby="error-asInput13"
+          aria-invalid={false}
+          autoComplete="on"
+          className="form-control is-invalid-nodanger"
+          disabled={false}
+          id="asInput13"
+          name="firstName"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onKeyPress={[Function]}
+          readOnly={false}
+          required={false}
+          themes={Array []}
+          type="text"
+          value=""
+        />
+        <div
+          aria-live="polite"
+          className="invalid-feedback invalid-feedback-nodanger"
+          id="error-asInput13"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          className=""
+          htmlFor="asInput14"
+          id="label-asInput14"
+        >
+          Last Name
+        </label>
+        <input
+          aria-describedby="error-asInput14"
+          aria-invalid={false}
+          autoComplete="on"
+          className="form-control is-invalid-nodanger"
+          disabled={false}
+          id="asInput14"
+          name="lastName"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onKeyPress={[Function]}
+          readOnly={false}
+          required={false}
+          themes={Array []}
+          type="text"
+          value=""
+        />
+        <div
+          aria-live="polite"
+          className="invalid-feedback invalid-feedback-nodanger"
+          id="error-asInput14"
+        >
+          <span />
+        </div>
+      </div>
+    </fieldset>
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-fieldset12"
+    >
+      <span />
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots User Input|Fieldset client-side validation of fieldset 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <div
+    className="paragon-fieldset"
+  >
+    <fieldset
+      aria-describedby="error-fieldset21"
+      className="form-control p-3"
+    >
+      <legend
+        className="p-1"
+      >
+        Name
+      </legend>
+      <div
+        className="form-group"
+      >
+        <label
+          className=""
+          htmlFor="asInput22"
+          id="label-asInput22"
+        >
+          First Name
+        </label>
+        <input
+          aria-describedby="error-asInput22"
+          aria-invalid={false}
+          autoComplete="on"
+          className="form-control is-invalid-nodanger"
+          disabled={false}
+          id="asInput22"
+          name="firstName"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onKeyPress={[Function]}
+          readOnly={false}
+          required={false}
+          themes={Array []}
+          type="text"
+          value=""
+        />
+        <div
+          aria-live="polite"
+          className="invalid-feedback invalid-feedback-nodanger"
+          id="error-asInput22"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          className=""
+          htmlFor="asInput23"
+          id="label-asInput23"
+        >
+          Last Name
+        </label>
+        <input
+          aria-describedby="error-asInput23"
+          aria-invalid={false}
+          autoComplete="on"
+          className="form-control is-invalid-nodanger"
+          disabled={false}
+          id="asInput23"
+          name="lastName"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onKeyPress={[Function]}
+          readOnly={false}
+          required={false}
+          themes={Array []}
+          type="text"
+          value=""
+        />
+        <div
+          aria-live="polite"
+          className="invalid-feedback invalid-feedback-nodanger"
+          id="error-asInput23"
+        >
+          <span />
+        </div>
+      </div>
+    </fieldset>
+    <div
+      aria-live="polite"
+      className="invalid-feedback"
+      id="error-fieldset21"
+    >
+      <span />
+    </div>
+  </div>
+  <input
+    className="btn btn-primary"
+    type="submit"
+    value="Submit"
+  />
+</form>
+`;
+
+exports[`Storyshots User Input|Fieldset invalid 1`] = `
+<form>
+  <div
+    className="paragon-fieldset"
+  >
+    <fieldset
+      aria-describedby="error-fieldset15"
+      className="form-control p-3 is-invalid is-invalid-nodanger"
+    >
+      <legend
+        className="p-1"
+      >
+        Name
+      </legend>
+      <div
+        className="form-group"
+      >
+        <label
+          className=""
+          htmlFor="asInput16"
+          id="label-asInput16"
+        >
+          First Name
+        </label>
+        <input
+          aria-describedby="error-asInput16"
+          aria-invalid={false}
+          autoComplete="on"
+          className="form-control is-invalid-nodanger"
+          disabled={false}
+          id="asInput16"
+          name="firstName"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onKeyPress={[Function]}
+          readOnly={false}
+          required={false}
+          themes={Array []}
+          type="text"
+          value=""
+        />
+        <div
+          aria-live="polite"
+          className="invalid-feedback invalid-feedback-nodanger"
+          id="error-asInput16"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          className=""
+          htmlFor="asInput17"
+          id="label-asInput17"
+        >
+          Last Name
+        </label>
+        <input
+          aria-describedby="error-asInput17"
+          aria-invalid={false}
+          autoComplete="on"
+          className="form-control is-invalid-nodanger"
+          disabled={false}
+          id="asInput17"
+          name="lastName"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onKeyPress={[Function]}
+          readOnly={false}
+          required={false}
+          themes={Array []}
+          type="text"
+          value=""
+        />
+        <div
+          aria-live="polite"
+          className="invalid-feedback invalid-feedback-nodanger"
+          id="error-asInput17"
+        >
+          <span />
+        </div>
+      </div>
+    </fieldset>
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-fieldset15"
+    >
+      This is invalid!
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots User Input|Fieldset invalid with danger theme 1`] = `
+<form>
+  <div
+    className="paragon-fieldset"
+  >
+    <fieldset
+      aria-describedby="error-fieldset18"
+      className="form-control p-3 is-invalid"
+    >
+      <legend
+        className="p-1"
+      >
+        Name
+      </legend>
+      <div
+        className="form-group"
+      >
+        <label
+          className=""
+          htmlFor="asInput19"
+          id="label-asInput19"
+        >
+          First Name
+        </label>
+        <input
+          aria-describedby="error-asInput19"
+          aria-invalid={false}
+          autoComplete="on"
+          className="form-control is-invalid-nodanger"
+          disabled={false}
+          id="asInput19"
+          name="firstName"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onKeyPress={[Function]}
+          readOnly={false}
+          required={false}
+          themes={Array []}
+          type="text"
+          value=""
+        />
+        <div
+          aria-live="polite"
+          className="invalid-feedback invalid-feedback-nodanger"
+          id="error-asInput19"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          className=""
+          htmlFor="asInput20"
+          id="label-asInput20"
+        >
+          Last Name
+        </label>
+        <input
+          aria-describedby="error-asInput20"
+          aria-invalid={false}
+          autoComplete="on"
+          className="form-control is-invalid-nodanger"
+          disabled={false}
+          id="asInput20"
+          name="lastName"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onKeyPress={[Function]}
+          readOnly={false}
+          required={false}
+          themes={Array []}
+          type="text"
+          value=""
+        />
+        <div
+          aria-live="polite"
+          className="invalid-feedback invalid-feedback-nodanger"
+          id="error-asInput20"
+        >
+          <span />
+        </div>
+      </div>
+    </fieldset>
+    <div
+      aria-live="polite"
+      className="invalid-feedback"
+      id="error-fieldset18"
+    >
+      <span
+        aria-hidden={true}
+        className="fa fa-exclamation-circle fa-icon-spacing"
+      />
+      <span
+        className="sr-only"
+      >
+        Error
+      </span>
+      This is invalid!
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots User Input|InputSelect basic usage 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className=""
+    htmlFor="asInput24"
+    id="label-asInput24"
+  >
+    Fruits
+  </label>
+  <select
+    aria-describedby="error-asInput24"
+    className="form-control is-invalid-nodanger"
+    disabled={false}
+    id="asInput24"
+    name="fruits"
+    onBlur={[Function]}
+    onChange={[Function]}
+    required={false}
+    type="select"
+    value="strawberry"
+  >
+    <option
+      value="apple"
+    >
+      apple
+    </option>
+    <option
+      value="orange"
+    >
+      orange
+    </option>
+    <option
+      value="strawberry"
+    >
+      strawberry
+    </option>
+    <option
+      value="banana"
+    >
+      banana
+    </option>
+  </select>
+  <div
+    aria-live="polite"
+    className="invalid-feedback invalid-feedback-nodanger"
+    id="error-asInput24"
+  >
+    <span />
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|InputSelect disabled usage 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className=""
+    htmlFor="asInput28"
+    id="label-asInput28"
+  >
+    Fruits
+  </label>
+  <select
+    aria-describedby="error-asInput28"
+    aria-label="Fruits"
+    className="form-control is-invalid-nodanger"
+    disabled={true}
+    id="asInput28"
+    name="fruits"
+    onBlur={[Function]}
+    onChange={[Function]}
+    required={false}
+    type="select"
+    value="strawberry"
+  >
+    <option
+      value="apple"
+    >
+      apple
+    </option>
+    <option
+      value="orange"
+    >
+      orange
+    </option>
+    <option
+      value="strawberry"
+    >
+      strawberry
+    </option>
+    <option
+      value="banana"
+    >
+      banana
+    </option>
+  </select>
+  <div
+    aria-live="polite"
+    className="invalid-feedback invalid-feedback-nodanger"
+    id="error-asInput28"
+  >
+    <span />
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|InputSelect separate labels and values 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className=""
+    htmlFor="asInput25"
+    id="label-asInput25"
+  >
+    New England States
+  </label>
+  <select
+    aria-describedby="error-asInput25"
+    className="form-control is-invalid-nodanger"
+    disabled={false}
+    id="asInput25"
+    name="new-england-states"
+    onBlur={[Function]}
+    onChange={[Function]}
+    required={false}
+    type="select"
+    value="RI"
+  >
+    <option
+      value="CN"
+    >
+      Connecticut
+    </option>
+    <option
+      value="ME"
+    >
+      Maine
+    </option>
+    <option
+      value="MA"
+    >
+      Massachusetts
+    </option>
+    <option
+      value="NH"
+    >
+      New Hampshire
+    </option>
+    <option
+      value="RI"
+    >
+      Rhode Island
+    </option>
+    <option
+      value="VT"
+    >
+      Vermont
+    </option>
+  </select>
+  <div
+    aria-live="polite"
+    className="invalid-feedback invalid-feedback-nodanger"
+    id="error-asInput25"
+  >
+    <span />
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|InputSelect separate option groups 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className=""
+    htmlFor="asInput26"
+    id="label-asInput26"
+  >
+    Northeast States
+  </label>
+  <select
+    aria-describedby="error-asInput26"
+    className="form-control is-invalid-nodanger"
+    disabled={false}
+    id="asInput26"
+    name="northeast-states"
+    onBlur={[Function]}
+    onChange={[Function]}
+    required={false}
+    type="select"
+    value="MD"
+  >
+    <optgroup
+      label="New England States"
+    >
+      <option
+        value="CN"
+      >
+        Connecticut
+      </option>
+      <option
+        value="ME"
+      >
+        Maine
+      </option>
+      <option
+        value="MA"
+      >
+        Massachusetts
+      </option>
+      <option
+        value="NH"
+      >
+        New Hampshire
+      </option>
+      <option
+        value="RI"
+      >
+        Rhode Island
+      </option>
+      <option
+        value="VT"
+      >
+        Vermont
+      </option>
+    </optgroup>
+    <optgroup
+      label="Mid Atlantic States"
+    >
+      <option
+        value="DE"
+      >
+        Delaware
+      </option>
+      <option
+        value="MD"
+      >
+        Maryland
+      </option>
+      <option
+        value="NJ"
+      >
+        New Jersey
+      </option>
+      <option
+        value="NY"
+      >
+        New York
+      </option>
+      <option
+        value="PA"
+      >
+        Pennsylvania
+      </option>
+      <option
+        value="VA"
+      >
+        Virginia
+      </option>
+      <option
+        value="DC"
+      >
+        Washington, DC
+      </option>
+      <option
+        value="WV"
+      >
+        West Virginia
+      </option>
+    </optgroup>
+  </select>
+  <div
+    aria-live="polite"
+    className="invalid-feedback invalid-feedback-nodanger"
+    id="error-asInput26"
+  >
+    <span />
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|InputSelect with disabled option 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className=""
+    htmlFor="asInput29"
+    id="label-asInput29"
+  >
+    Fruits
+  </label>
+  <select
+    aria-describedby="error-asInput29"
+    className="form-control is-invalid-nodanger"
+    disabled={false}
+    id="asInput29"
+    name="fruits"
+    onBlur={[Function]}
+    onChange={[Function]}
+    required={false}
+    type="select"
+    value="strawberry"
+  >
+    <option
+      value="apple"
+    >
+      apple
+    </option>
+    <option
+      disabled={true}
+      value="orange"
+    >
+      orange
+    </option>
+    <option
+      disabled={true}
+      value="banana"
+    >
+      banana
+    </option>
+  </select>
+  <div
+    aria-live="polite"
+    className="invalid-feedback invalid-feedback-nodanger"
+    id="error-asInput29"
+  >
+    <span />
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|InputSelect with validation 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className=""
+    htmlFor="asInput27"
+    id="label-asInput27"
+  >
+    Favorite Color
+  </label>
+  <select
+    aria-describedby="error-asInput27"
+    className="form-control is-invalid-nodanger"
+    disabled={false}
+    id="asInput27"
+    name="color"
+    onBlur={[Function]}
+    onChange={[Function]}
+    required={false}
+    type="select"
+    value=""
+  >
+    <option
+      value=""
+    >
+      
+    </option>
+    <option
+      value="red"
+    >
+      red
+    </option>
+    <option
+      value="orange"
+    >
+      orange
+    </option>
+    <option
+      value="yellow"
+    >
+      yellow
+    </option>
+    <option
+      value="green"
+    >
+      green
+    </option>
+    <option
+      value="blue"
+    >
+      blue
+    </option>
+    <option
+      value="purple"
+    >
+      purple
+    </option>
+  </select>
+  <div
+    aria-live="polite"
+    className="invalid-feedback invalid-feedback-nodanger"
+    id="error-asInput27"
+  >
+    <span />
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|InputText different textual input types 1`] = `
+<form>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="input-search"
+      id="label-input-search"
+    >
+      Search
+    </label>
+    <input
+      aria-describedby="error-input-search"
+      aria-invalid={false}
+      autoComplete="on"
+      className="form-control is-invalid-nodanger"
+      disabled={false}
+      id="input-search"
+      name="search"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      readOnly={false}
+      required={false}
+      themes={Array []}
+      type="search"
+      value="what is paragon"
+    />
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-input-search"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="input-email"
+      id="label-input-email"
+    >
+      Email
+    </label>
+    <input
+      aria-describedby="error-input-email"
+      aria-invalid={false}
+      autoComplete="on"
+      className="form-control is-invalid-nodanger"
+      disabled={false}
+      id="input-email"
+      name="email"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      readOnly={false}
+      required={false}
+      themes={Array []}
+      type="email"
+      value="paragon@edx.org"
+    />
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-input-email"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="input-url"
+      id="label-input-url"
+    >
+      Url
+    </label>
+    <input
+      aria-describedby="error-input-url"
+      aria-invalid={false}
+      autoComplete="on"
+      className="form-control is-invalid-nodanger"
+      disabled={false}
+      id="input-url"
+      name="url"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      readOnly={false}
+      required={false}
+      themes={Array []}
+      type="url"
+      value="https://edx.github.io/paragon"
+    />
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-input-url"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="input-tel"
+      id="label-input-tel"
+    >
+      Telephone
+    </label>
+    <input
+      aria-describedby="error-input-tel"
+      aria-invalid={false}
+      autoComplete="on"
+      className="form-control is-invalid-nodanger"
+      disabled={false}
+      id="input-tel"
+      name="telephone"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      readOnly={false}
+      required={false}
+      themes={Array []}
+      type="tel"
+      value="1-(555)-555-5555"
+    />
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-input-tel"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="input-password"
+      id="label-input-password"
+    >
+      Password
+    </label>
+    <input
+      aria-describedby="error-input-password"
+      aria-invalid={false}
+      autoComplete="on"
+      className="form-control is-invalid-nodanger"
+      disabled={false}
+      id="input-password"
+      name="password"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      readOnly={false}
+      required={false}
+      themes={Array []}
+      type="password"
+      value="hunter2"
+    />
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-input-password"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="input-number"
+      id="label-input-number"
+    >
+      Number
+    </label>
+    <input
+      aria-describedby="error-input-number"
+      aria-invalid={false}
+      autoComplete="on"
+      className="form-control is-invalid-nodanger"
+      disabled={false}
+      id="input-number"
+      name="number"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      readOnly={false}
+      required={false}
+      themes={Array []}
+      type="number"
+      value={42}
+    />
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-input-number"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="input-datetime-local"
+      id="label-input-datetime-local"
+    >
+      Date and time
+    </label>
+    <input
+      aria-describedby="error-input-datetime-local"
+      aria-invalid={false}
+      autoComplete="on"
+      className="form-control is-invalid-nodanger"
+      disabled={false}
+      id="input-datetime-local"
+      name="datetime-local"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      readOnly={false}
+      required={false}
+      themes={Array []}
+      type="datetime-local"
+      value="2017-04-27T13:45:00"
+    />
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-input-datetime-local"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="input-date"
+      id="label-input-date"
+    >
+      Date
+    </label>
+    <input
+      aria-describedby="error-input-date"
+      aria-invalid={false}
+      autoComplete="on"
+      className="form-control is-invalid-nodanger"
+      disabled={false}
+      id="input-date"
+      name="date"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      readOnly={false}
+      required={false}
+      themes={Array []}
+      type="date"
+      value="2017-04-27"
+    />
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-input-date"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="input-month"
+      id="label-input-month"
+    >
+      Month
+    </label>
+    <input
+      aria-describedby="error-input-month"
+      aria-invalid={false}
+      autoComplete="on"
+      className="form-control is-invalid-nodanger"
+      disabled={false}
+      id="input-month"
+      name="month"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      readOnly={false}
+      required={false}
+      themes={Array []}
+      type="month"
+      value="2017-04"
+    />
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-input-month"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="input-week"
+      id="label-input-week"
+    >
+      Week
+    </label>
+    <input
+      aria-describedby="error-input-week"
+      aria-invalid={false}
+      autoComplete="on"
+      className="form-control is-invalid-nodanger"
+      disabled={false}
+      id="input-week"
+      name="week"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      readOnly={false}
+      required={false}
+      themes={Array []}
+      type="week"
+      value="2017-W33"
+    />
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-input-week"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="input-time"
+      id="label-input-time"
+    >
+      Time
+    </label>
+    <input
+      aria-describedby="error-input-time"
+      aria-invalid={false}
+      autoComplete="on"
+      className="form-control is-invalid-nodanger"
+      disabled={false}
+      id="input-time"
+      name="time"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      readOnly={false}
+      required={false}
+      themes={Array []}
+      type="time"
+      value="13:45:00"
+    />
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-input-time"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="input-color"
+      id="label-input-color"
+    >
+      Color
+    </label>
+    <input
+      aria-describedby="error-input-color"
+      aria-invalid={false}
+      autoComplete="on"
+      className="form-control is-invalid-nodanger"
+      disabled={false}
+      id="input-color"
+      name="color"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      readOnly={false}
+      required={false}
+      themes={Array []}
+      type="color"
+      value="#BF472C"
+    />
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-input-color"
+    >
+      <span />
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots User Input|InputText displayed inline 1`] = `
+<div
+  className="form-group form-inline"
+>
+  <label
+    className=""
+    htmlFor="asInput34"
+    id="label-asInput34"
+  >
+    Username
+  </label>
+  <input
+    aria-describedby="error-asInput34"
+    aria-invalid={false}
+    autoComplete="on"
+    className="form-control is-invalid-nodanger"
+    disabled={false}
+    id="asInput34"
+    name="username"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onKeyPress={[Function]}
+    readOnly={false}
+    required={false}
+    themes={Array []}
+    type="text"
+    value="foobar"
+  />
+  <div
+    aria-live="polite"
+    className="invalid-feedback invalid-feedback-nodanger"
+    id="error-asInput34"
+  >
+    <span />
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|InputText focus test 1`] = `
+<div>
+  <div
+    className="alert fade alert-dismissible alert-info show"
+    hidden={false}
+    role="alert"
+  >
+    <button
+      aria-label="Close"
+      className="btn close"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+      >
+        ×
+      </span>
+    </button>
+    <div
+      className="alert-dialog"
+    >
+      Close me to input data!
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="data"
+      id="label-data"
+    >
+      Data Input
+    </label>
+    <input
+      aria-describedby="error-data"
+      aria-invalid={false}
+      autoComplete="on"
+      className="form-control is-invalid-nodanger"
+      disabled={false}
+      id="data"
+      name="data"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      readOnly={false}
+      required={false}
+      themes={Array []}
+      type="text"
+      value=""
+    />
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-data"
+    >
+      <span />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|InputText label as element 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className=""
+    htmlFor="asInput33"
+    id="label-asInput33"
+  >
+    <span
+      lang="en"
+    >
+      Element
+    </span>
+  </label>
+  <input
+    aria-describedby="error-asInput33"
+    aria-invalid={false}
+    autoComplete="on"
+    className="form-control is-invalid-nodanger"
+    disabled={false}
+    id="asInput33"
+    name="username"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onKeyPress={[Function]}
+    readOnly={false}
+    required={false}
+    themes={Array []}
+    type="text"
+    value="Label is wrapped in language span"
+  />
+  <div
+    aria-live="polite"
+    className="invalid-feedback invalid-feedback-nodanger"
+    id="error-asInput33"
+  >
+    <span />
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|InputText minimal usage 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className=""
+    htmlFor="asInput30"
+    id="label-asInput30"
+  >
+    First Name
+  </label>
+  <input
+    aria-describedby="error-asInput30"
+    aria-invalid={false}
+    autoComplete="on"
+    className="form-control is-invalid-nodanger"
+    disabled={false}
+    id="asInput30"
+    name="name"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onKeyPress={[Function]}
+    readOnly={false}
+    required={false}
+    themes={Array []}
+    type="text"
+    value="Foo Bar"
+  />
+  <div
+    aria-live="polite"
+    className="invalid-feedback invalid-feedback-nodanger"
+    id="error-asInput30"
+  >
+    <span />
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|InputText read only 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className=""
+    htmlFor="asInput31"
+    id="label-asInput31"
+  >
+    Input State
+  </label>
+  <input
+    aria-describedby="error-asInput31"
+    aria-invalid={false}
+    autoComplete="on"
+    className="form-control is-invalid-nodanger"
+    disabled={false}
+    id="asInput31"
+    name="inputState"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onKeyPress={[Function]}
+    readOnly={true}
+    required={false}
+    themes={Array []}
+    type="text"
+    value="Read Only"
+  />
+  <div
+    aria-live="polite"
+    className="invalid-feedback invalid-feedback-nodanger"
+    id="error-asInput31"
+  >
+    <span />
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|InputText validation 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className=""
+    htmlFor="username"
+    id="label-username"
+  >
+    Username
+  </label>
+  <input
+    aria-describedby="error-username description-username"
+    aria-invalid={false}
+    autoComplete="on"
+    className="form-control is-invalid-nodanger"
+    disabled={false}
+    id="username"
+    name="username"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onKeyPress={[Function]}
+    readOnly={false}
+    required={false}
+    themes={Array []}
+    type="text"
+    value=""
+  />
+  <div
+    aria-live="polite"
+    className="invalid-feedback invalid-feedback-nodanger"
+    id="error-username"
+  >
+    <span />
+  </div>
+  <small
+    className="form-text"
+    id="description-username"
+  >
+    The unique name that identifies you throughout the site.
+  </small>
+</div>
+`;
+
+exports[`Storyshots User Input|InputText validation with danger theme 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className=""
+    htmlFor="asInput32"
+    id="label-asInput32"
+  >
+    Username
+  </label>
+  <input
+    aria-describedby="error-asInput32 description-asInput32"
+    aria-invalid={false}
+    autoComplete="on"
+    className="form-control"
+    disabled={false}
+    id="asInput32"
+    name="username"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onKeyPress={[Function]}
+    readOnly={false}
+    required={false}
+    themes={
+      Array [
+        "danger",
+      ]
+    }
+    type="text"
+    value=""
+  />
+  <div
+    aria-live="polite"
+    className="invalid-feedback"
+    id="error-asInput32"
+  >
+    <span />
+  </div>
+  <small
+    className="form-text"
+    id="description-asInput32"
+  >
+    The unique name that identifies you throughout the site.
+  </small>
+</div>
+`;
+
+exports[`Storyshots User Input|InputText with input group addons 1`] = `
+<form>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="asInput35"
+      id="label-asInput35"
+    >
+      Username
+    </label>
+    <div
+      className="input-group"
+    >
+      <div
+        className="input-group-prepend"
+      >
+        <div
+          className="input-group-text"
+        >
+          @
+        </div>
+      </div>
+      <input
+        aria-describedby="error-asInput35"
+        aria-invalid={false}
+        autoComplete="on"
+        className="form-control is-invalid-nodanger"
+        disabled={false}
+        id="asInput35"
+        name="username"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onKeyPress={[Function]}
+        readOnly={false}
+        required={false}
+        themes={Array []}
+        type="text"
+        value="foobar"
+      />
+      <div
+        className="input-group-append"
+      />
+    </div>
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-asInput35"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="asInput36"
+      id="label-asInput36"
+    >
+      Username
+    </label>
+    <div
+      className="input-group"
+    >
+      <div
+        className="input-group-prepend"
+      />
+      <input
+        aria-describedby="error-asInput36"
+        aria-invalid={false}
+        autoComplete="on"
+        className="form-control is-invalid-nodanger"
+        disabled={false}
+        id="asInput36"
+        name="username"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onKeyPress={[Function]}
+        readOnly={false}
+        required={false}
+        themes={Array []}
+        type="text"
+        value="foobar"
+      />
+      <div
+        className="input-group-append"
+      >
+        <div
+          className="input-group-text"
+        >
+          @example.com
+        </div>
+      </div>
+    </div>
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-asInput36"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="asInput37"
+      id="label-asInput37"
+    >
+      Money
+    </label>
+    <div
+      className="input-group"
+    >
+      <div
+        className="input-group-prepend"
+      >
+        <div
+          className="input-group-text"
+        >
+          $
+        </div>
+      </div>
+      <input
+        aria-describedby="error-asInput37"
+        aria-invalid={false}
+        autoComplete="on"
+        className="form-control is-invalid-nodanger"
+        disabled={false}
+        id="asInput37"
+        name="money"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onKeyPress={[Function]}
+        readOnly={false}
+        required={false}
+        themes={Array []}
+        type="number"
+        value={1000}
+      />
+      <div
+        className="input-group-append"
+      >
+        <div
+          className="input-group-text"
+        >
+          .00
+        </div>
+      </div>
+    </div>
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-asInput37"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="asInput38"
+      id="label-asInput38"
+    >
+      Search
+    </label>
+    <div
+      className="input-group"
+    >
+      <div
+        className="input-group-prepend"
+      />
+      <input
+        aria-describedby="error-asInput38"
+        aria-invalid={false}
+        autoComplete="on"
+        className="form-control is-invalid-nodanger"
+        disabled={false}
+        id="asInput38"
+        name="search"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onKeyPress={[Function]}
+        readOnly={false}
+        required={false}
+        themes={Array []}
+        type="text"
+        value="what is paragon"
+      />
+      <div
+        className="input-group-append"
+      >
+        <button
+          className="btn btn-outline-secondary"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          Go
+        </button>
+      </div>
+    </div>
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-asInput38"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="asInput39"
+      id="label-asInput39"
+    >
+      Username
+    </label>
+    <div
+      className="input-group"
+    >
+      <div
+        className="input-group-prepend"
+      />
+      <input
+        aria-describedby="error-asInput39"
+        aria-invalid={false}
+        autoComplete="on"
+        className="form-control is-invalid-nodanger"
+        disabled={false}
+        id="asInput39"
+        name="username"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onKeyPress={[Function]}
+        readOnly={false}
+        required={false}
+        themes={Array []}
+        type="text"
+        value="foobar"
+      />
+      <div
+        className="input-group-append"
+      >
+        <div
+          className="input-group-text"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-check"
+            id="checkmark"
+          />
+          <span
+            className="sr-only"
+          >
+            Checkmark
+          </span>
+        </div>
+        <button
+          className="btn btn-outline-secondary"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          Go
+        </button>
+      </div>
+    </div>
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-asInput39"
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="asInput40"
+      id="label-asInput40"
+    >
+      Password
+    </label>
+    <div
+      className="input-group"
+    >
+      <div
+        className="input-group-prepend"
+      />
+      <input
+        aria-describedby="error-asInput40"
+        aria-invalid={false}
+        autoComplete="on"
+        className="form-control is-invalid-nodanger"
+        disabled={false}
+        id="asInput40"
+        name="password"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onKeyPress={[Function]}
+        readOnly={false}
+        required={false}
+        themes={Array []}
+        type="text"
+        value="secret"
+      />
+      <div
+        className="input-group-append"
+      >
+        <div
+          className="input-group-text"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-check"
+            id="checkmark"
+          />
+          <span
+            className="sr-only"
+          >
+            Checkmark
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-asInput40"
+    >
+      <span />
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots User Input|RadioButtonGroup selected minimal usage 1`] = `
+<div
+  aria-label="Radio Button Group"
+  onChange={[Function]}
+  role="radiogroup"
+  tabIndex={-1}
+>
+  <div>
+    <input
+      aria-checked={false}
+      aria-label="First Value"
+      data-index={0}
+      defaultChecked={false}
+      name="rbg"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="radio"
+      value="jaebaebae"
+    />
+    First Value
+  </div>
+  <div>
+    <input
+      aria-checked={true}
+      aria-label="Second Value"
+      data-index={1}
+      defaultChecked={true}
+      name="rbg"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="radio"
+      value="value2"
+    />
+    Second Value
+  </div>
+  <div>
+    <input
+      aria-checked={false}
+      aria-label="Third Value"
+      data-index={2}
+      defaultChecked={false}
+      name="rbg"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="radio"
+      value="value3"
+    />
+    Third Value
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|RadioButtonGroup unselected minimal usage 1`] = `
+<div
+  aria-label="Radio Button Group"
+  onChange={[Function]}
+  role="radiogroup"
+  tabIndex={-1}
+>
+  <div>
+    <input
+      aria-checked={false}
+      aria-label="First Value"
+      data-index={0}
+      defaultChecked={false}
+      name="rbg"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="radio"
+      value="jaebaebae"
+    />
+    First Value
+  </div>
+  <div>
+    <input
+      aria-checked={false}
+      aria-label="Second Value"
+      data-index={1}
+      defaultChecked={false}
+      name="rbg"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="radio"
+      value="value2"
+    />
+    Second Value
+  </div>
+  <div>
+    <input
+      aria-checked={false}
+      aria-label="Third Value"
+      data-index={2}
+      defaultChecked={false}
+      name="rbg"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="radio"
+      value="value3"
+    />
+    Third Value
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|SearchField basic usage 1`] = `
+<div
+  className="border search-field"
+  onBlur={[Function]}
+  onFocus={[Function]}
+>
+  <div
+    className="form-group form-inline"
+  >
+    <label
+      className=""
+      htmlFor="asInput57"
+      id="label-asInput57"
+    >
+      Search:
+    </label>
+    <div
+      className="input-group"
+    >
+      <div
+        className="input-group-prepend"
+      />
+      <input
+        aria-describedby="error-asInput57"
+        aria-invalid={false}
+        autoComplete="off"
+        className="form-control is-invalid-nodanger input no-clear-btn"
+        disabled={false}
+        id="asInput57"
+        name="search"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onKeyPress={[Function]}
+        placeholder=""
+        readOnly={false}
+        required={false}
+        themes={Array []}
+        type="search"
+        value=""
+      />
+      <div
+        className="input-group-append"
+      >
+        <button
+          className="btn search-btn"
+          disabled={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-search"
+            id="Icon1"
+          />
+          <span
+            className="sr-only"
+          >
+            Submit search
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-asInput57"
+    >
+      <span />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|SearchField with callbacks 1`] = `
+<div
+  className="border search-field"
+  onBlur={[Function]}
+  onFocus={[Function]}
+>
+  <div
+    className="form-group form-inline"
+  >
+    <label
+      className=""
+      htmlFor="asInput61"
+      id="label-asInput61"
+    >
+      Search:
+    </label>
+    <div
+      className="input-group"
+    >
+      <div
+        className="input-group-prepend"
+      />
+      <input
+        aria-describedby="error-asInput61"
+        aria-invalid={false}
+        autoComplete="off"
+        className="form-control is-invalid-nodanger input no-clear-btn"
+        disabled={false}
+        id="asInput61"
+        name="search"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onKeyPress={[Function]}
+        placeholder=""
+        readOnly={false}
+        required={false}
+        themes={Array []}
+        type="search"
+        value=""
+      />
+      <div
+        className="input-group-append"
+      >
+        <button
+          className="btn search-btn"
+          disabled={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-search"
+            id="Icon1"
+          />
+          <span
+            className="sr-only"
+          >
+            Submit search
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-asInput61"
+    >
+      <span />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|SearchField with custom label and screenreader text 1`] = `
+<div
+  className="border search-field"
+  onBlur={[Function]}
+  onFocus={[Function]}
+>
+  <div
+    className="form-group form-inline"
+  >
+    <label
+      className=""
+      htmlFor="asInput62"
+      id="label-asInput62"
+    >
+      Buscar:
+    </label>
+    <div
+      className="input-group"
+    >
+      <div
+        className="input-group-prepend"
+      />
+      <input
+        aria-describedby="error-asInput62"
+        aria-invalid={false}
+        autoComplete="off"
+        className="form-control is-invalid-nodanger input no-clear-btn"
+        disabled={false}
+        id="asInput62"
+        name="search"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onKeyPress={[Function]}
+        placeholder=""
+        readOnly={false}
+        required={false}
+        themes={Array []}
+        type="search"
+        value=""
+      />
+      <div
+        className="input-group-append"
+      >
+        <button
+          className="btn search-btn"
+          disabled={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-search"
+            id="Icon1"
+          />
+          <span
+            className="sr-only"
+          >
+            Enviar búsqueda
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-asInput62"
+    >
+      <span />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|SearchField with placeholder 1`] = `
+<div
+  className="border search-field"
+  onBlur={[Function]}
+  onFocus={[Function]}
+>
+  <div
+    className="form-group form-inline"
+  >
+    <label
+      className=""
+      htmlFor="asInput58"
+      id="label-asInput58"
+    >
+      Search:
+    </label>
+    <div
+      className="input-group"
+    >
+      <div
+        className="input-group-prepend"
+      />
+      <input
+        aria-describedby="error-asInput58"
+        aria-invalid={false}
+        autoComplete="off"
+        className="form-control is-invalid-nodanger input no-clear-btn"
+        disabled={false}
+        id="asInput58"
+        name="search"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onKeyPress={[Function]}
+        placeholder="Search"
+        readOnly={false}
+        required={false}
+        themes={Array []}
+        type="search"
+        value=""
+      />
+      <div
+        className="input-group-append"
+      >
+        <button
+          className="btn search-btn"
+          disabled={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-search"
+            id="Icon1"
+          />
+          <span
+            className="sr-only"
+          >
+            Submit search
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-asInput58"
+    >
+      <span />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|SearchField with value 1`] = `
+<div
+  className="border search-field"
+  onBlur={[Function]}
+  onFocus={[Function]}
+>
+  <div
+    className="form-group form-inline"
+  >
+    <label
+      className=""
+      htmlFor="asInput60"
+      id="label-asInput60"
+    >
+      Search:
+    </label>
+    <div
+      className="input-group"
+    >
+      <div
+        className="input-group-prepend"
+      />
+      <input
+        aria-describedby="error-asInput60"
+        aria-invalid={false}
+        autoComplete="off"
+        className="form-control is-invalid-nodanger input"
+        disabled={false}
+        id="asInput60"
+        name="search"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onKeyPress={[Function]}
+        placeholder="Search"
+        readOnly={false}
+        required={false}
+        themes={Array []}
+        type="search"
+        value="foobar"
+      />
+      <div
+        className="input-group-append"
+      >
+        <button
+          className="btn clear-btn ml-1"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          <small>
+            <span
+              aria-hidden={true}
+              className="fa fa-times"
+              id="icon-SearchField59"
+            />
+            <span
+              className="sr-only"
+            >
+              Clear search
+            </span>
+          </small>
+        </button>
+        <button
+          className="btn search-btn border-left"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-search"
+            id="Icon1"
+          />
+          <span
+            className="sr-only"
+          >
+            Submit search
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      aria-live="polite"
+      className="invalid-feedback invalid-feedback-nodanger"
+      id="error-asInput60"
+    >
+      <span />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|Textarea label as element 1`] = `
 <div
   className="form-group"
 >
@@ -5645,7 +5645,7 @@ exports[`Storyshots Textarea label as element 1`] = `
 </div>
 `;
 
-exports[`Storyshots Textarea minimal usage 1`] = `
+exports[`Storyshots User Input|Textarea minimal usage 1`] = `
 <div
   className="form-group"
 >
@@ -5683,7 +5683,7 @@ exports[`Storyshots Textarea minimal usage 1`] = `
 </div>
 `;
 
-exports[`Storyshots Textarea scrollable 1`] = `
+exports[`Storyshots User Input|Textarea scrollable 1`] = `
 <div
   className="form-group"
 >
@@ -5721,7 +5721,7 @@ exports[`Storyshots Textarea scrollable 1`] = `
 </div>
 `;
 
-exports[`Storyshots Textarea validation 1`] = `
+exports[`Storyshots User Input|Textarea validation 1`] = `
 <div
   className="form-group"
 >
