@@ -53,7 +53,7 @@ describe('correct rendering', () => {
 describe('security', () => {
   it('prevents reverse tabnabbing for links with target="_blank"', () => {
     const wrapper = mount(<Hyperlink {...externalLinkProps} />);
-    expect(wrapper.find('a').prop('rel')).toEqual('noopener noreferrer');
+    expect(wrapper.find('a').prop('rel')).toEqual('noopener');
   });
 });
 

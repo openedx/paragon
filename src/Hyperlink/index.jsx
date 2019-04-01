@@ -21,7 +21,7 @@ function Hyperlink(props) {
 
   if (target === '_blank') {
     // Add this rel attribute to prevent Reverse Tabnabbing
-    other.rel = 'noopener noreferrer';
+    other.rel = other.rel ? `noopener ${other.rel}` : 'noopener';
 
     externalLinkIcon = (
       // Space between content and icon
