@@ -1,4 +1,4 @@
-This component is a passthrough from the very excellent [Reactstrap project](https://reactstrap.github.io/).
+These layout components are passthroughs from the very excellent [Reactstrap project](https://reactstrap.github.io/).
 
 For more information see:
 

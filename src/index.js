@@ -10,6 +10,7 @@ import Hyperlink from './Hyperlink';
 import Icon from './Icon';
 import InputSelect from './InputSelect';
 import InputText from './InputText';
+import { Container, Row, Col } from './Layout';
 import ListBox from './ListBox';
 import ListBoxOption from './ListBoxOption';
 import MailtoLink from './MailtoLink';
@@ -40,7 +41,9 @@ export {
   Button,
   CheckBox,
   CheckBoxGroup,
+  Col,
   Collapsible,
+  Container,
   Dropdown,
   ExtraLarge,
   ExtraSmall,
@@ -59,6 +62,7 @@ export {
   Pagination,
   RadioButtonGroup,
   RadioButton,
+  Row,
   SearchField,
   Small,
   StatusAlert,

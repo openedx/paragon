@@ -315,6 +315,46 @@ exports[`Storyshots Collapsible initially open collapsible 1`] = `
 </div>
 `;
 
+exports[`Storyshots Layout regular 1`] = `
+<div
+  className="border container"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="border text-center col"
+    >
+      Column
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="border text-center col"
+    >
+      Column
+    </div>
+    <div
+      className="border text-center col"
+    >
+      Column
+    </div>
+    <div
+      className="border text-center col"
+    >
+      Column
+    </div>
+    <div
+      className="border text-center col"
+    >
+      Column
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots ListBox basic usage 1`] = `
 <div
   aria-activedescendant={null}

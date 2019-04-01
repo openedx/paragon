@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Container from './index';
+import { Container, Row, Col } from './index';
 
 
 describe('correct rendering', () => {
@@ -9,10 +9,12 @@ describe('correct rendering', () => {
     const wrapper = mount(<Container />).find('.container');
     expect(wrapper).toHaveLength(1);
   });
-
-  it('renders fluid Container', () => {
-    const wrapper = mount(<Container fluid />).find('.container-fluid');
-
+  it('renders Row', () => {
+    const wrapper = mount(<Row />).find('.row');
+    expect(wrapper).toHaveLength(1);
+  });
+  it('renders Column', () => {
+    const wrapper = mount(<Col />).find('.col');
     expect(wrapper).toHaveLength(1);
   });
 });
