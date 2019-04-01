@@ -20,6 +20,9 @@ function Hyperlink(props) {
   let externalLinkIcon;
 
   if (target === '_blank') {
+    // Add this rel attribute to prevent Reverse Tabnabbing
+    other.rel = other.rel ? `noopener ${other.rel}` : 'noopener';
+
     externalLinkIcon = (
       // Space between content and icon
       <span>{' '}

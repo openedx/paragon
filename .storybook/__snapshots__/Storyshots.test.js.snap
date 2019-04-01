@@ -1258,6 +1258,7 @@ exports[`Storyshots HyperLink with blank target 1`] = `
 <a
   href="https://www.edx.org"
   onClick={[Function]}
+  rel="noopener"
   target="_blank"
 >
   edX.org
@@ -1296,6 +1297,7 @@ exports[`Storyshots HyperLink with onClick 1`] = `
 <a
   href="https://www.edx.org"
   onClick={[Function]}
+  rel="noopener"
   target="_blank"
 >
   edX.org
@@ -3127,6 +3129,7 @@ exports[`Storyshots MailtoLink with blank target 1`] = `
 <a
   href="mailto:edx@example.com"
   onClick={null}
+  rel="noopener"
   target="_blank"
 >
   edx@example.com
@@ -3166,6 +3169,7 @@ exports[`Storyshots MailtoLink with onClick 1`] = `
 <a
   href="mailto:edx@example.com"
   onClick={[Function]}
+  rel="noopener"
   target="_blank"
 >
   edx@example.com
