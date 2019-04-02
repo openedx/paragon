@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import InputSelect from './index';
 import README from './README.md';
 
-storiesOf('InputSelect', module)
+storiesOf('User Input|InputSelect', module)
   .addParameters({ info: { text: README } })
   .add('basic usage', () => (
     <InputSelect

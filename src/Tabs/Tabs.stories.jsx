@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import Tabs from './index';
 import README from './README.md';
 
-storiesOf('Tabs', module)
+storiesOf('Navigation|Tabs', module)
   .addParameters({ info: { text: README } })
   .add('basic usage', () => (
     <Tabs

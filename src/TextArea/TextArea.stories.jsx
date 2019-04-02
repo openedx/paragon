@@ -5,7 +5,7 @@ import TextArea from './index';
 
 import README from './README.md';
 
-storiesOf('Textarea', module)
+storiesOf('User Input|Textarea', module)
   .addParameters({ info: { text: README } })
   .add('minimal usage', () => (
     <TextArea
