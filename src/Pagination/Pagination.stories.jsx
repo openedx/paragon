@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import Pagination from './index';
 import README from './README.md';
 
-storiesOf('Pagination', module)
+storiesOf('Navigation|Pagination', module)
   .addParameters({ info: { text: README } })
   .add('basic usage', () => (
     <Pagination

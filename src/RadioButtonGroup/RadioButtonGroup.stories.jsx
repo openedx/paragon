@@ -34,7 +34,7 @@ const onKeyDown = (event) => {
   action('Radio Button Key Press');
 };
 
-storiesOf('RadioButtonGroup', module)
+storiesOf('User Input|RadioButtonGroup', module)
   .addParameters({ info: { text: README } })
   .add('unselected minimal usage', () => (
     <RadioButtonGroup

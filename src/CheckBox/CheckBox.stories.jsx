@@ -40,7 +40,7 @@ class CheckBoxWrapper extends React.Component {
   }
 }
 
-storiesOf('CheckBox', module)
+storiesOf('User Input|CheckBox', module)
   .addParameters({ info: { text: README } })
   .add('basic usage', () => (
     <CheckBox

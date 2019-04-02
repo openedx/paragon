@@ -3,7 +3,17 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 
-storiesOf('Paragon', module)
+storiesOf(' |Paragon', module)
+  // Option defaults:
+.addParameters({
+  options: {
+    showPanel: false,
+  },
+  info: {
+    disable: true,
+  },
+})
+
   .add('Welcome', () => (
     <div>
       <h1>💎 Paragon</h1>
@@ -23,3 +33,9 @@ storiesOf('Paragon', module)
       </p>
     </div>
   ));
+
+// These are here to force storybook to order groups
+// in this order rather than alphabetically
+storiesOf('Basics', module).add('noop', () => {});
+storiesOf('Navigation', module).add('noop', () => {});
+storiesOf('User Input', module).add('noop', () => {});
