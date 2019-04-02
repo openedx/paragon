@@ -6,7 +6,7 @@ import CheckBox from '../CheckBox';
 
 import README from './README.md';
 
-storiesOf('CheckBoxGroup', module)
+storiesOf('User Input|CheckBoxGroup', module)
   .addParameters({ info: { text: README } })
   .add('basic usage', () => (
     <CheckBoxGroup>

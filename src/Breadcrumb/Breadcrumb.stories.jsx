@@ -20,7 +20,7 @@ const sampleLinks = [
   },
 ];
 
-storiesOf('Breadcrumb', module)
+storiesOf('Navigation|Breadcrumb', module)
   .addParameters({ info: { text: README } })
   .add('basic usage', () => (
     <Breadcrumb links={sampleLinks} />

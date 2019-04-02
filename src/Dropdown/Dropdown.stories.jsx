@@ -5,7 +5,7 @@ import Dropdown from './index';
 import Icon from '../Icon';
 import README from './README.md';
 
-storiesOf('Dropdown', module)
+storiesOf('Navigation|Dropdown', module)
   .addParameters({ info: { text: README } })
   .add('basic usage', () => (
     <Dropdown

@@ -5,7 +5,7 @@ import README from './README.md';
 
 import Button from './index';
 
-storiesOf('Button', module)
+storiesOf('Basics|Button', module)
   .addParameters({ info: { text: README } })
   .add('basic usage', () => (
     <Button

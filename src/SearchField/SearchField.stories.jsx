@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import SearchField from './index';
 import README from './README.md';
 
-storiesOf('SearchField', module)
+storiesOf('User Input|SearchField', module)
   .addParameters({ info: { text: README } })
   .add('basic usage', () => (
     <SearchField

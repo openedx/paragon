@@ -15,16 +15,18 @@ addParameters({
   options: {
     brandTitle: '💎 PARAGON',
     brandUrl: 'https://github.com/edx/paragon',
+    showPanel: true,
   },
   info: {
-    inline: false,
+    inline: true,
+    header: false,
     source: true,
   },
 });
 
 
+addDecorator(storyFn => <div className="p-5 mt-3">{storyFn()}</div>);
 addDecorator(withInfo);
-addDecorator(storyFn => <div className="p-5">{storyFn()}</div>);
 
 
 const req = require.context('../src', true, /\.stories\.jsx$/);

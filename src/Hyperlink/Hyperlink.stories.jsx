@@ -15,7 +15,7 @@ const onClick = (event) => {
   action('HyperLink Click');
 };
 
-storiesOf('HyperLink', module)
+storiesOf('Basics|HyperLink', module)
   .addParameters({ info: { text: README } })
   .add('minimal usage', () => <Hyperlink destination="https://en.wikipedia.org/wiki/Hyperlink" content="edX.org" />)
   .add('with blank target', () => (

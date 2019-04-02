@@ -42,7 +42,7 @@ class FocusInputWrapper extends React.Component {
 }
 
 
-storiesOf('InputText', module)
+storiesOf('User Input|InputText', module)
   .addParameters({ info: { text: README } })
   .add('minimal usage', () => (
     <InputText

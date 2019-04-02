@@ -12,7 +12,7 @@ const onClick = (event) => {
   action('MailtoLink Click');
 };
 
-storiesOf('MailtoLink', module)
+storiesOf('Basics|MailtoLink', module)
   .addParameters({ info: { text: README } })
   .add('minimal usage', () => (
     <MailtoLink
