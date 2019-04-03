@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import '../utils/reactResponsive.mock';
+import '../__mocks__/reactResponsive.mock';
 
 import {
   breakpoints,
