@@ -1,5 +1,203 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Basics|AsyncActionButton basic usage 1`] = `
+<div>
+  <button
+    aria-live="assertive"
+    className="btn pgn__async-action-btn pgn__async-action-btn-state-default btn-primary mr-2"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    <span
+      className="d-flex align-items-center justify-content-center"
+    >
+      Saved
+    </span>
+  </button>
+  <button
+    aria-live="assertive"
+    className="btn pgn__async-action-btn pgn__async-action-btn-state-pending btn-primary mr-2 disabled"
+    disabled={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    <span
+      className="d-flex align-items-center justify-content-center"
+    >
+      <span
+        className="pgn__async-action-btn-icon"
+      >
+        <span
+          aria-hidden={true}
+          className="icon fa fa-spinner fa-spin"
+          id="Icon1"
+        />
+      </span>
+      Saving
+    </span>
+  </button>
+  <button
+    aria-live="assertive"
+    className="btn pgn__async-action-btn pgn__async-action-btn-state-complete btn-primary mr-2 disabled"
+    disabled={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    <span
+      className="d-flex align-items-center justify-content-center"
+    >
+      <span
+        className="pgn__async-action-btn-icon"
+      >
+        <span
+          aria-hidden={true}
+          className="icon fa fa-check-circle"
+          id="Icon1"
+        />
+      </span>
+      Saved
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Basics|AsyncActionButton custom icons and disable during state 1`] = `
+Array [
+  <button
+    aria-live="assertive"
+    className="btn pgn__async-action-btn pgn__async-action-btn-state-default btn-primary mr-2"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    <span
+      className="d-flex align-items-center justify-content-center"
+    >
+      <span
+        className="pgn__async-action-btn-icon"
+      >
+        <span
+          aria-hidden={true}
+          className="fa fa-download"
+          id="Icon1"
+        />
+      </span>
+      Download
+    </span>
+  </button>,
+  <button
+    aria-live="assertive"
+    className="btn pgn__async-action-btn pgn__async-action-btn-state-pending btn-primary mr-2 disabled"
+    disabled={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    <span
+      className="d-flex align-items-center justify-content-center"
+    >
+      <span
+        className="pgn__async-action-btn-icon"
+      >
+        <span
+          aria-hidden={true}
+          className="fa fa-spinner fa-spin"
+          id="Icon1"
+        />
+      </span>
+      Downloading
+    </span>
+  </button>,
+  <button
+    aria-live="assertive"
+    className="btn pgn__async-action-btn pgn__async-action-btn-state-complete btn-primary mr-2"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    <span
+      className="d-flex align-items-center justify-content-center"
+    >
+      <span
+        className="pgn__async-action-btn-icon"
+      >
+        <span
+          aria-hidden={true}
+          className="fa fa-check"
+          id="Icon1"
+        />
+      </span>
+      Downloaded
+    </span>
+  </button>,
+]
+`;
+
+exports[`Storyshots Basics|AsyncActionButton custom states 1`] = `
+Array [
+  <button
+    aria-live="assertive"
+    className="btn pgn__async-action-btn pgn__async-action-btn-state-unedited btn-primary mr-2 disabled"
+    disabled={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    <span
+      className="d-flex align-items-center justify-content-center"
+    >
+      <span
+        className="pgn__async-action-btn-icon"
+      >
+        <span
+          aria-hidden={true}
+          className="fa fa-save"
+          id="Icon1"
+        />
+      </span>
+      Save (no changes)
+    </span>
+  </button>,
+  <button
+    aria-live="assertive"
+    className="btn pgn__async-action-btn pgn__async-action-btn-state-edited btn-primary mr-2"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    <span
+      className="d-flex align-items-center justify-content-center"
+    >
+      <span
+        className="pgn__async-action-btn-icon"
+      >
+        <span
+          aria-hidden={true}
+          className="fa fa-save"
+          id="Icon1"
+        />
+      </span>
+      Save Changes
+    </span>
+  </button>,
+]
+`;
+
 exports[`Storyshots Basics|Button basic usage 1`] = `
 <button
   className="btn"
