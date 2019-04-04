@@ -4,7 +4,7 @@
 Status
 ------
 
-Superseded in ADR-0008
+Superseded by ADR-0008
 
 Context
 -------
