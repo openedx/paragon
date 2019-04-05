@@ -47,7 +47,7 @@ function ValidationFormGroup(props) {
         'is-invalid': invalid,
         'is-valid': valid,
       }),
-      // This is a non-standard use of classnames, but it's exactly the same use case.
+      // This is a non-standard use of the classNames package, but it's exactly the same use case.
       'aria-describedby': classNames(child.props['aria-describedby'], {
         [`${id}-help-text`]: Boolean(helpText),
         [`${id}-invalid-feedback`]: invalid && invalidMessage,
