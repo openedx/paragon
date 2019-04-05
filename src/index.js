@@ -26,6 +26,7 @@ import {
   LargerThanExtraSmall,
 } from './Responsive';
 import SearchField from './SearchField';
+import StatefulButton from './StatefulButton';
 import StatusAlert from './StatusAlert';
 import Table from './Table';
 import Tabs from './Tabs';
@@ -62,6 +63,7 @@ export {
   RadioButton,
   SearchField,
   Small,
+  StatefulButton,
   StatusAlert,
   Table,
   Tabs,

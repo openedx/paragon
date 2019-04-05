@@ -2,6 +2,7 @@ import React from 'react';
 import { addParameters, addDecorator, configure } from '@storybook/react';
 import { setConsoleOptions } from '@storybook/addon-console';
 import { withInfo } from '@storybook/addon-info';
+import { SyntaxHighlighter } from '@storybook/components';
 
 // Style applied to all stories
 import "./style.scss";
@@ -21,6 +22,13 @@ addParameters({
     inline: true,
     header: false,
     source: true,
+    components: {
+      code: function({language, code}) {
+        return (
+          <SyntaxHighlighter language="jsx" format={false} copyable={false}>{code}</SyntaxHighlighter>
+        );
+      },
+    }
   },
 });
 
