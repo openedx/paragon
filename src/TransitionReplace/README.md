@@ -46,3 +46,5 @@ TransitionReplace uses [CSSTransition from the ReactTransitionGroup package](htt
   transition: opacity 300ms ease;
 }
 ```
+
+If you change the timing in CSS you should also match it using the `enterDuration` and `exitDuration` props.

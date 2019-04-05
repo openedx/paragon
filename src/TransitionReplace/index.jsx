@@ -10,8 +10,10 @@ const propTypes = {
   exitDuration: PropTypes.number,
   className: PropTypes.string,
   onChildEnter: PropTypes.func,
+  onChildEntering: PropTypes.func,
   onChildEntered: PropTypes.func,
   onChildExit: PropTypes.func,
+  onChildExiting: PropTypes.func,
   onChildExited: PropTypes.func,
   transitionStyles: PropTypes.shape({
     entering: PropTypes.object,
@@ -28,8 +30,10 @@ const defaultProps = {
   exitDuration: 300,
   className: undefined,
   onChildEnter: undefined,
+  onChildEntering: undefined,
   onChildEntered: undefined,
   onChildExit: undefined,
+  onChildExiting: undefined,
   onChildExited: undefined,
   transitionStyles: {},
   transitionClassNames: 'pgn__transition-replace',
@@ -46,6 +50,7 @@ class TransitionReplace extends React.Component {
     this.onChildEntering = this.onChildEntering.bind(this);
     this.onChildEntered = this.onChildEntered.bind(this);
     this.onChildExit = this.onChildExit.bind(this);
+    this.onChildExiting = this.onChildExiting.bind(this);
     this.onChildExited = this.onChildExited.bind(this);
   }
 
@@ -69,6 +74,7 @@ class TransitionReplace extends React.Component {
 
   onChildEntering(htmlNode) {
     this.setState({ height: htmlNode.offsetHeight });
+    if (this.props.onChildEntering) this.props.onChildEntering(htmlNode);
   }
 
   onChildEntered(htmlNode) {
@@ -79,6 +85,10 @@ class TransitionReplace extends React.Component {
   onChildExit(htmlNode) {
     this.setState({ height: htmlNode.offsetHeight });
     if (this.props.onChildExit) this.props.onChildExit(htmlNode);
+  }
+
+  onChildExiting(htmlNode) {
+    if (this.props.onChildExiting) this.props.onChildExiting(htmlNode);
   }
 
   onChildExited(htmlNode) {
@@ -123,6 +133,7 @@ class TransitionReplace extends React.Component {
         onEntering={this.onChildEntering}
         onEntered={this.onChildEntered}
         onExit={this.onChildExit}
+        onExiting={this.onChildExiting}
         onExited={this.onChildExited}
         classNames={this.props.transitionClassNames}
       >
