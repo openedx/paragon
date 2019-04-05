@@ -1,10 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import AsyncActionButton from './index';
+import StatefulButton from './index';
 import Icon from '../Icon';
 
-describe('AsyncActionButton', () => {
+describe('StatefulButton', () => {
   it('renders basic usage', () => {
     const props = {
       labels: {
@@ -16,9 +16,9 @@ describe('AsyncActionButton', () => {
     };
     const tree = renderer.create((
       <div>
-        <AsyncActionButton {...props} />
-        <AsyncActionButton state="pending" {...props} />
-        <AsyncActionButton state="complete" {...props} />
+        <StatefulButton {...props} />
+        <StatefulButton state="pending" {...props} />
+        <StatefulButton state="complete" {...props} />
       </div>
     )).toJSON();
     expect(tree).toMatchSnapshot();
@@ -41,9 +41,9 @@ describe('AsyncActionButton', () => {
     };
     const tree = renderer.create((
       <React.Fragment>
-        <AsyncActionButton state="default" {...downloadButtonProps} />
-        <AsyncActionButton state="pending" {...downloadButtonProps} />
-        <AsyncActionButton state="complete" {...downloadButtonProps} />
+        <StatefulButton state="default" {...downloadButtonProps} />
+        <StatefulButton state="pending" {...downloadButtonProps} />
+        <StatefulButton state="complete" {...downloadButtonProps} />
       </React.Fragment>
     )).toJSON();
     expect(tree).toMatchSnapshot();
@@ -64,8 +64,8 @@ describe('AsyncActionButton', () => {
     };
     const tree = renderer.create((
       <React.Fragment>
-        <AsyncActionButton state="unedited" {...buttonProps} />
-        <AsyncActionButton state="edited" {...buttonProps} />
+        <StatefulButton state="unedited" {...buttonProps} />
+        <StatefulButton state="edited" {...buttonProps} />
       </React.Fragment>
     )).toJSON();
     expect(tree).toMatchSnapshot();

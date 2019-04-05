@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AsyncActionButton renders basic usage 1`] = `
+exports[`StatefulButton renders basic usage 1`] = `
 <div>
   <button
     aria-live="assertive"
-    className="btn pgn__async-action-btn pgn__async-action-btn-state-default btn-primary mr-2"
+    className="btn pgn__stateful-btn pgn__stateful-btn-state-default btn-primary mr-2"
     disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
@@ -19,7 +19,7 @@ exports[`AsyncActionButton renders basic usage 1`] = `
   </button>
   <button
     aria-live="assertive"
-    className="btn pgn__async-action-btn pgn__async-action-btn-state-pending btn-primary mr-2 disabled"
+    className="btn pgn__stateful-btn pgn__stateful-btn-state-pending btn-primary mr-2 disabled"
     disabled={true}
     onBlur={[Function]}
     onClick={[Function]}
@@ -30,7 +30,7 @@ exports[`AsyncActionButton renders basic usage 1`] = `
       className="d-flex align-items-center justify-content-center"
     >
       <span
-        className="pgn__async-action-btn-icon"
+        className="pgn__stateful-btn-icon"
       >
         <span
           aria-hidden={true}
@@ -43,7 +43,7 @@ exports[`AsyncActionButton renders basic usage 1`] = `
   </button>
   <button
     aria-live="assertive"
-    className="btn pgn__async-action-btn pgn__async-action-btn-state-complete btn-primary mr-2 disabled"
+    className="btn pgn__stateful-btn pgn__stateful-btn-state-complete btn-primary mr-2 disabled"
     disabled={true}
     onBlur={[Function]}
     onClick={[Function]}
@@ -54,7 +54,7 @@ exports[`AsyncActionButton renders basic usage 1`] = `
       className="d-flex align-items-center justify-content-center"
     >
       <span
-        className="pgn__async-action-btn-icon"
+        className="pgn__stateful-btn-icon"
       >
         <span
           aria-hidden={true}
@@ -68,11 +68,11 @@ exports[`AsyncActionButton renders basic usage 1`] = `
 </div>
 `;
 
-exports[`AsyncActionButton renders custom icons and disable during state 1`] = `
+exports[`StatefulButton renders custom icons and disable during state 1`] = `
 Array [
   <button
     aria-live="assertive"
-    className="btn pgn__async-action-btn pgn__async-action-btn-state-default btn-primary mr-2"
+    className="btn pgn__stateful-btn pgn__stateful-btn-state-default btn-primary mr-2"
     disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
@@ -83,7 +83,7 @@ Array [
       className="d-flex align-items-center justify-content-center"
     >
       <span
-        className="pgn__async-action-btn-icon"
+        className="pgn__stateful-btn-icon"
       >
         <span
           aria-hidden={true}
@@ -96,7 +96,7 @@ Array [
   </button>,
   <button
     aria-live="assertive"
-    className="btn pgn__async-action-btn pgn__async-action-btn-state-pending btn-primary mr-2 disabled"
+    className="btn pgn__stateful-btn pgn__stateful-btn-state-pending btn-primary mr-2 disabled"
     disabled={true}
     onBlur={[Function]}
     onClick={[Function]}
@@ -107,7 +107,7 @@ Array [
       className="d-flex align-items-center justify-content-center"
     >
       <span
-        className="pgn__async-action-btn-icon"
+        className="pgn__stateful-btn-icon"
       >
         <span
           aria-hidden={true}
@@ -120,7 +120,7 @@ Array [
   </button>,
   <button
     aria-live="assertive"
-    className="btn pgn__async-action-btn pgn__async-action-btn-state-complete btn-primary mr-2"
+    className="btn pgn__stateful-btn pgn__stateful-btn-state-complete btn-primary mr-2"
     disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
@@ -131,7 +131,7 @@ Array [
       className="d-flex align-items-center justify-content-center"
     >
       <span
-        className="pgn__async-action-btn-icon"
+        className="pgn__stateful-btn-icon"
       >
         <span
           aria-hidden={true}
@@ -145,11 +145,11 @@ Array [
 ]
 `;
 
-exports[`AsyncActionButton renders custom states 1`] = `
+exports[`StatefulButton renders custom states 1`] = `
 Array [
   <button
     aria-live="assertive"
-    className="btn pgn__async-action-btn pgn__async-action-btn-state-unedited btn-primary mr-2 disabled"
+    className="btn pgn__stateful-btn pgn__stateful-btn-state-unedited btn-primary mr-2 disabled"
     disabled={true}
     onBlur={[Function]}
     onClick={[Function]}
@@ -160,7 +160,7 @@ Array [
       className="d-flex align-items-center justify-content-center"
     >
       <span
-        className="pgn__async-action-btn-icon"
+        className="pgn__stateful-btn-icon"
       >
         <span
           aria-hidden={true}
@@ -173,7 +173,7 @@ Array [
   </button>,
   <button
     aria-live="assertive"
-    className="btn pgn__async-action-btn pgn__async-action-btn-state-edited btn-primary mr-2"
+    className="btn pgn__stateful-btn pgn__stateful-btn-state-edited btn-primary mr-2"
     disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
@@ -184,7 +184,7 @@ Array [
       className="d-flex align-items-center justify-content-center"
     >
       <span
-        className="pgn__async-action-btn-icon"
+        className="pgn__stateful-btn-icon"
       >
         <span
           aria-hidden={true}

@@ -26,7 +26,7 @@ const defaultProps = {
 };
 
 
-function AsyncActionButton({
+function StatefulButton({
   className,
   state,
   labels,
@@ -42,15 +42,15 @@ function AsyncActionButton({
       aria-live="assertive"
       disabled={isDisabled}
       className={classNames(
-        'pgn__async-action-btn',
-        `pgn__async-action-btn-state-${state}`,
+        'pgn__stateful-btn',
+        `pgn__stateful-btn-state-${state}`,
         className,
         { disabled: isDisabled },
-      ).split(' ')}
+      )}
       {...attributes}
     >
       <span className="d-flex align-items-center justify-content-center">
-        {icon ? <span className="pgn__async-action-btn-icon">{icon}</span> : null}
+        {icon ? <span className="pgn__stateful-btn-icon">{icon}</span> : null}
         {labels[state] !== undefined ? labels[state] : labels.default}
       </span>
     </Button>
@@ -58,8 +58,8 @@ function AsyncActionButton({
 }
 
 
-AsyncActionButton.propTypes = propTypes;
-AsyncActionButton.defaultProps = defaultProps;
+StatefulButton.propTypes = propTypes;
+StatefulButton.defaultProps = defaultProps;
 
 
-export default AsyncActionButton;
+export default StatefulButton;

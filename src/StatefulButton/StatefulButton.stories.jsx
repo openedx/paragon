@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import AsyncActionButton from './index';
+import StatefulButton from './index';
 import Icon from '../Icon';
 import README from './README.md';
 
-storiesOf('Basics|AsyncActionButton', module)
+storiesOf('Basics|StatefulButton', module)
   .addParameters({ info: { text: README } })
   .add('basic usage', () => {
     const props = {
@@ -18,9 +18,9 @@ storiesOf('Basics|AsyncActionButton', module)
     };
     return (
       <div>
-        <AsyncActionButton {...props} />
-        <AsyncActionButton state="pending" {...props} />
-        <AsyncActionButton state="complete" {...props} />
+        <StatefulButton {...props} />
+        <StatefulButton state="pending" {...props} />
+        <StatefulButton state="complete" {...props} />
       </div>
     );
   })
@@ -41,9 +41,9 @@ storiesOf('Basics|AsyncActionButton', module)
     };
     return (
       <React.Fragment>
-        <AsyncActionButton state="default" {...downloadButtonProps} />
-        <AsyncActionButton state="pending" {...downloadButtonProps} />
-        <AsyncActionButton state="complete" {...downloadButtonProps} />
+        <StatefulButton state="default" {...downloadButtonProps} />
+        <StatefulButton state="pending" {...downloadButtonProps} />
+        <StatefulButton state="complete" {...downloadButtonProps} />
       </React.Fragment>
     );
   })
@@ -62,8 +62,8 @@ storiesOf('Basics|AsyncActionButton', module)
     };
     return (
       <React.Fragment>
-        <AsyncActionButton state="unedited" {...buttonProps} />
-        <AsyncActionButton state="edited" {...buttonProps} />
+        <StatefulButton state="unedited" {...buttonProps} />
+        <StatefulButton state="edited" {...buttonProps} />
       </React.Fragment>
     );
   });

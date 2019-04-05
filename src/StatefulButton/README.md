@@ -1,4 +1,4 @@
-# Async Action Button
+# Stateful Button
 
 A button that can display different states. Each state has:
 
@@ -15,7 +15,7 @@ Button states can be whatever you want them to be, but default icons exist for:
 Control the state with the `state` prop. Example usage:
 
 ```jsx
-<AsyncActionButton
+<StatefulButton
   state="pending"
   labels={{
     default: 'Download',
