@@ -30,6 +30,7 @@ import StatusAlert from './StatusAlert';
 import Table from './Table';
 import Tabs from './Tabs';
 import TextArea from './TextArea';
+import ValidationFormGroup from './ValidationFormGroup';
 import ValidationMessage from './ValidationMessage';
 import Variant from './utils/constants';
 
@@ -65,6 +66,7 @@ export {
   Table,
   Tabs,
   TextArea,
+  ValidationFormGroup,
   ValidationMessage,
   Variant,
 };
