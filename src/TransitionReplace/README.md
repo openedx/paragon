@@ -15,7 +15,7 @@ TransitionReplace expects only one child at any time. Swap content inside the co
       <button type="submit">Save</button>
     </form>
   ): (
-    <div>
+    <div key="other">
       <h4>First Name</h4>
       <p>{name}</p>
     </div>
