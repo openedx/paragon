@@ -5764,3 +5764,129 @@ exports[`Storyshots User Input|Textarea validation 1`] = `
   </small>
 </div>
 `;
+
+exports[`Storyshots User Input|Validation Form Group basic usage 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="firstName"
+  >
+    First Name
+  </label>
+  <input
+    aria-describedby="firstName-help-text"
+    className="form-control"
+    id="firstName"
+    name="first-name"
+    onChange={[Function]}
+    type="text"
+    value="Casey"
+  />
+  <small
+    className="form-text text-muted"
+    id="firstName-help-text"
+  >
+    This is your name.
+  </small>
+</div>
+`;
+
+exports[`Storyshots User Input|Validation Form Group invalid message 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="firstName"
+  >
+    First Name
+  </label>
+  <input
+    aria-describedby="firstName-invalid-feedback"
+    className="form-control is-invalid"
+    id="firstName"
+    name="first-name"
+    onChange={[Function]}
+    type="text"
+    value="Casey"
+  />
+  <div
+    className="invalid-feedback"
+    id="firstName-invalid-feedback"
+  >
+    Wrong!
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|Validation Form Group valid message 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="firstName"
+  >
+    First Name
+  </label>
+  <input
+    aria-describedby="firstName-valid-feedback"
+    className="form-control is-valid"
+    id="firstName"
+    name="first-name"
+    onChange={[Function]}
+    type="text"
+    value="Casey"
+  />
+  <div
+    className="valid-feedback"
+    id="firstName-valid-feedback"
+  >
+    What a nice name!
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|Validation Form Group with any kind of input 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="weatherToday"
+  >
+    How is the weather today?
+  </label>
+  <select
+    aria-describedby="weatherToday-help-text weatherToday-valid-feedback"
+    className="form-control is-valid"
+    id="weatherToday"
+    name="weather"
+    onChange={[Function]}
+    value="Sunny"
+  >
+    <option>
+      Sunny
+    </option>
+    <option>
+      Cloudy
+    </option>
+    <option>
+      Rainy
+    </option>
+    <option>
+      Snowy
+    </option>
+  </select>
+  <small
+    className="form-text text-muted"
+    id="weatherToday-help-text"
+  >
+    Look out the window to see.
+  </small>
+  <div
+    className="valid-feedback"
+    id="weatherToday-valid-feedback"
+  >
+    Correct!
+  </div>
+</div>
+`;
