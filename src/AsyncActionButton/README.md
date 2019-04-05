@@ -29,7 +29,6 @@ Control the state with the `state` prop. Example usage:
   }}
   disabledStates=['pending']
   className='btn-primary mr-2'
-  ...
 />
 ```
 
