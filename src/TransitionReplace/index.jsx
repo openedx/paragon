@@ -99,7 +99,7 @@ class TransitionReplace extends React.Component {
   renderChildTransition(child) {
     if (!child.key && process.env.NODE_ENV === 'development') {
       // eslint-disable-next-line no-console
-      console.warn("TransitionReplace: A child is missing a 'key' prop. Key's are required for any child of this component.");
+      console.warn("TransitionReplace: A child is missing a 'key' prop. Keys are required for any child of this component.");
     }
     // Makes the exiting and entering children occupy the same space
     // SCSS handles the crossfade so it can be easily overridden
