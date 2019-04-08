@@ -155,12 +155,13 @@ class TransitionReplace extends React.Component {
   render() {
     return (
       <TransitionGroup
-        className={classNames('pgn-transition-replace-group', this.props.className)}
-        style={{
-          position: 'relative',
-          overflow: this.state.height === null ? null : 'hidden',
-          height: this.state.height,
-        }}
+        className={classNames(
+          'pgn-transition-replace-group',
+          'position-relative',
+          { 'overflow-hidden': this.state.height !== null },
+          this.props.className,
+        )}
+        style={{ height: this.state.height }}
       >
         {React.Children.map(this.props.children, this.renderChildTransition, this)}
       </TransitionGroup>

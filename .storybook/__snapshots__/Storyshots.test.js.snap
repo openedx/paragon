@@ -3129,12 +3129,10 @@ Array [
       }
     >
       <div
-        className="pgn-transition-replace-group"
+        className="pgn-transition-replace-group position-relative"
         style={
           Object {
             "height": null,
-            "overflow": null,
-            "position": "relative",
           }
         }
       >
@@ -3160,12 +3158,10 @@ Array [
     </div>
   </div>,
   <div
-    className="pgn-transition-replace-group"
+    className="pgn-transition-replace-group position-relative"
     style={
       Object {
         "height": null,
-        "overflow": null,
-        "position": "relative",
       }
     }
   />,
