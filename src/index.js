@@ -32,6 +32,7 @@ import Table from './Table';
 import Tabs from './Tabs';
 import TextArea from './TextArea';
 import ValidationFormGroup from './ValidationFormGroup';
+import TransitionReplace from './TransitionReplace';
 import ValidationMessage from './ValidationMessage';
 import Variant from './utils/constants';
 
@@ -69,6 +70,7 @@ export {
   Tabs,
   TextArea,
   ValidationFormGroup,
+  TransitionReplace,
   ValidationMessage,
   Variant,
 };
