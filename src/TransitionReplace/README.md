@@ -48,3 +48,9 @@ TransitionReplace uses [CSSTransition from the ReactTransitionGroup package](htt
 ```
 
 If you change the timing in CSS you should also match it using the `enterDuration` and `exitDuration` props.
+
+
+#### Note:
+
+Children are not required. When this component is empty, the a child inserted into it will not transition the height (from zero). No "replacement" transition will occur and new content will pop in like a normal insert. This behaviour makes it easier to work with asyncronously loaded content (for example: during the first load you don't have to do any special handling).
+
