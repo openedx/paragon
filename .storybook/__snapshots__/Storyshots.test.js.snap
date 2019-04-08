@@ -3110,6 +3110,64 @@ exports[`Storyshots Table unstyled 1`] = `
 </table>
 `;
 
+exports[`Storyshots TransitionReplace basic usage 1`] = `
+Array [
+  <div>
+    <button
+      className="btn btn-primary mb-2"
+      onClick={[Function]}
+    >
+      Next Quote
+    </button>
+    <div
+      style={
+        Object {
+          "background": "#eee",
+          "maxWidth": "15rem",
+          "padding": "1rem",
+        }
+      }
+    >
+      <div
+        className="pgn-transition-replace-group position-relative"
+        style={
+          Object {
+            "height": null,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "padding": ".1px 0",
+            }
+          }
+        >
+          <blockquote
+            className="h2 m-0"
+          >
+            <p>
+              You know the golden rule, don’t you boy? Those who have the gold make the rules.
+            </p>
+            <footer>
+              — Crazy hunch-backed old guy in Aladdin
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="pgn-transition-replace-group position-relative"
+    style={
+      Object {
+        "height": null,
+      }
+    }
+  />,
+]
+`;
+
 exports[`Storyshots User Input|CheckBox basic usage 1`] = `
 <div
   className="form-check"

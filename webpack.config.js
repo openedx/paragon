@@ -30,6 +30,12 @@ module.exports = {
       amd: 'ReactDOM',
       root: 'ReactDOM',
     },
+    'react-transition-group': {
+      commonjs: 'react-transition-group',
+      commonjs2: 'react-transition-group',
+      amd: 'ReactTransitionGroup',
+      root: 'ReactTransitionGroup',
+    },
   },
   plugins: [
     new UglifyJsPlugin(),
