@@ -109,7 +109,7 @@ Button.defaultProps = {
   type: 'button',
 };
 
-export default withDeprecatedProps(Button, {
+export default withDeprecatedProps(Button, 'Button', {
   label: {
     deprType: DEPR_TYPES.MOVED,
     newName: 'children',

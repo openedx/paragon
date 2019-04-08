@@ -26,7 +26,7 @@ function Text(props) {
 
 Text.propTypes = inputProps;
 
-const TextArea = asInput(withDeprecatedProps(Text, {
+const TextArea = asInput(withDeprecatedProps(Text, 'TextArea', {
   className: {
     deprType: DEPR_TYPES.FORMAT,
     expect: value => typeof value === 'string',

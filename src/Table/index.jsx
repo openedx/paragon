@@ -202,7 +202,7 @@ Table.defaultProps = {
 };
 
 
-export default withDeprecatedProps(Table, {
+export default withDeprecatedProps(Table, 'Table', {
   className: {
     deprType: DEPR_TYPES.FORMAT,
     expect: value => typeof value === 'string',
