@@ -13,7 +13,7 @@
     "/src"
   ],
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "webpack --mode production --display-modules",
     "build-storybook": "build-storybook",
     "commit": "commit",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
