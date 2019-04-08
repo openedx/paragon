@@ -13,7 +13,7 @@
     "/src"
   ],
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "webpack --mode production --display-modules",
     "build-storybook": "build-storybook",
     "commit": "commit",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
@@ -39,6 +39,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-proptype-conditional-require": "^1.0.4",
+    "react-transition-group": "^2.8.0",
     "react-responsive": "^6.1.1",
     "sanitize-html": "^1.20.0"
   },
