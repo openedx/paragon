@@ -124,7 +124,7 @@ StatusAlert.defaultProps = {
   open: false,
 };
 
-export default withDeprecatedProps(StatusAlert, {
+export default withDeprecatedProps(StatusAlert, 'StatusAlert', {
   className: {
     deprType: DEPR_TYPES.FORMAT,
     expect: value => typeof value === 'string',

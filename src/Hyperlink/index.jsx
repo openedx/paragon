@@ -63,7 +63,7 @@ Hyperlink.propTypes = {
   externalLinkTitle: isRequiredIf(PropTypes.string, props => props.target === '_blank'),
 };
 
-export default withDeprecatedProps(Hyperlink, {
+export default withDeprecatedProps(Hyperlink, 'Hyperlink', {
   content: {
     deprType: DEPR_TYPES.MOVED,
     newName: 'children',
