@@ -70,7 +70,7 @@ MailtoLink.propTypes = {
 };
 
 
-export default withDeprecatedProps(MailtoLink, {
+export default withDeprecatedProps(MailtoLink, 'MailtoLink', {
   content: {
     deprType: DEPR_TYPES.MOVED,
     newName: 'children',

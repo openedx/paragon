@@ -36,7 +36,7 @@ Icon.defaultProps = {
   screenReaderText: undefined,
 };
 
-export default withDeprecatedProps(Icon, {
+export default withDeprecatedProps(Icon, 'Icon', {
   className: {
     deprType: DEPR_TYPES.FORMAT,
     expect: value => typeof value === 'string',

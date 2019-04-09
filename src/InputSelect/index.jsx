@@ -76,7 +76,7 @@ Select.propTypes = {
   ]).isRequired,
 };
 
-const InputSelect = asInput(withDeprecatedProps(Select, {
+const InputSelect = asInput(withDeprecatedProps(Select, 'InputSelect', {
   className: {
     deprType: DEPR_TYPES.FORMAT,
     expect: value => typeof value === 'string',
