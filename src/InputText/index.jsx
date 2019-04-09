@@ -52,7 +52,7 @@ const textDefaultProps = {
 Text.propTypes = { ...textPropTypes, ...inputProps };
 Text.defaultProps = { ...textDefaultProps, ...defaultProps };
 
-const InputText = asInput(withDeprecatedProps(Text, {
+const InputText = asInput(withDeprecatedProps(Text, 'InputText', {
   className: {
     deprType: DEPR_TYPES.FORMAT,
     expect: value => typeof value === 'string',

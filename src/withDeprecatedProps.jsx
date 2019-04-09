@@ -7,12 +7,8 @@ export const DEPR_TYPES = {
   FORMAT: 'FORMAT',
 };
 
-function getDisplayName(WrappedComponent) {
-  return WrappedComponent.displayName || WrappedComponent.name || 'Component';
-}
 
-
-function withDeprecatedProps(WrappedComponent, deprecatedProps) {
+function withDeprecatedProps(WrappedComponent, componentName, deprecatedProps) {
   class WithDeprecatedProps extends React.Component {
     constructor(props) {
       super(props);
@@ -20,8 +16,9 @@ function withDeprecatedProps(WrappedComponent, deprecatedProps) {
     }
 
     warn(message) {
-      if (process.env.NODE_ENV !== 'development') return;
-      console.warn(`[Deprecated] ${message}`);
+      if (process.env.NODE_ENV === 'development' || (window && window.PARAGON_ENV === 'development')) {
+        if (console) console.warn(`[Deprecated] ${message}`);
+      }
     }
 
     transformProps(acc, propName) {
@@ -40,12 +37,12 @@ function withDeprecatedProps(WrappedComponent, deprecatedProps) {
 
       switch (deprType) {
         case DEPR_TYPES.MOVED:
-          this.warn(`${getDisplayName(WrappedComponent)}: The prop '${propName}' has been moved to '${newName}'.`);
+          this.warn(`${componentName}: The prop '${propName}' has been moved to '${newName}'.`);
           acc[newName] = this.props[propName];
           break;
         case DEPR_TYPES.FORMAT:
           if (!expect(this.props[propName])) {
-            this.warn(`${getDisplayName(WrappedComponent)}: The prop '${propName}' expects a new format. ${message}`);
+            this.warn(`${componentName}: The prop '${propName}' expects a new format. ${message}`);
             acc[propName] = transform(this.props[propName]);
           } else {
             acc[propName] = this.props[propName];
@@ -71,7 +68,7 @@ function withDeprecatedProps(WrappedComponent, deprecatedProps) {
     }
   }
 
-  WithDeprecatedProps.displayName = `WithDeprecatedProps(${getDisplayName(WrappedComponent)})`;
+  WithDeprecatedProps.displayName = `withDeprecatedProps(${componentName})`;
 
   return WithDeprecatedProps;
 }

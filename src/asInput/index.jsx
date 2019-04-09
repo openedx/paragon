@@ -275,7 +275,7 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
 
   NewComponent.defaultProps = defaultProps;
 
-  return withDeprecatedProps(NewComponent, {
+  return withDeprecatedProps(NewComponent, 'asInput', {
     className: {
       deprType: DEPR_TYPES.FORMAT,
       expect: value => typeof value === 'string',
