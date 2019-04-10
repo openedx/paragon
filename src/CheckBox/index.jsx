@@ -30,18 +30,13 @@ class Check extends React.Component {
   }
 
   render() {
-    const props = { ...this.props };
-
     return (
       <input
-        id={props.id}
-        className={props.className}
+        {...this.props}
         type="checkbox"
-        name={props.name}
         checked={this.state.checked}
         aria-checked={this.state.checked}
         onChange={this.onChange}
-        disabled={props.disabled}
       />
     );
   }

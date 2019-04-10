@@ -5,20 +5,21 @@ import asInput, { inputProps } from '../asInput';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
 function Text(props) {
+  const {
+    className,
+    describedBy,
+    inputRef,
+    isValid,
+    ...others
+  } = props;
+
   return (
     <textarea
-      id={props.id}
-      className={classNames(props.className)}
-      name={props.name}
-      value={props.value}
-      placeholder={props.placeholder}
-      aria-describedby={props.describedBy}
-      onChange={props.onChange}
-      onBlur={props.onBlur}
-      aria-invalid={!props.isValid}
-      disabled={props.disabled}
-      required={props.required}
-      ref={props.inputRef}
+      {...others}
+      className={classNames(className)}
+      aria-describedby={describedBy}
+      aria-invalid={!isValid}
+      ref={inputRef}
       themes={['danger']}
     />
   );
