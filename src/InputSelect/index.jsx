@@ -44,23 +44,23 @@ class Select extends React.Component {
   }
 
   render() {
-    const props = { ...this.props };
+    const {
+      ariaLabel,
+      className,
+      describedBy,
+      inputRef,
+      ...others
+    } = this.props;
     const options = this.getOptions();
 
     return (
       <select
-        id={props.id}
-        className={classNames(props.className)}
+        {...others}
+        className={classNames(className)}
         type="select"
-        name={props.name}
-        value={props.value}
-        aria-label={props.ariaLabel}
-        aria-describedby={props.describedBy}
-        onChange={props.onChange}
-        onBlur={props.onBlur}
-        ref={props.inputRef}
-        disabled={props.disabled}
-        required={props.required}
+        aria-label={ariaLabel}
+        aria-describedby={describedBy}
+        ref={inputRef}
       >
         {options}
       </select>

@@ -8,25 +8,23 @@ import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
 
 function Text(props) {
+  const {
+    className,
+    describedBy,
+    inputRef,
+    isValid,
+    type,
+    ...others
+  } = props;
+
   return (
     <input
-      id={props.id}
-      className={classNames(props.className)}
-      type={props.type || 'text'}
-      name={props.name}
-      value={props.value}
-      placeholder={props.placeholder}
-      aria-describedby={props.describedBy}
-      onChange={props.onChange}
-      onKeyPress={props.onKeyPress}
-      onBlur={props.onBlur}
-      aria-invalid={!props.isValid}
-      autoComplete={props.autoComplete}
-      disabled={props.disabled}
-      readOnly={props.readOnly}
-      required={props.required}
-      ref={props.inputRef}
-      themes={props.themes}
+      {...others}
+      className={classNames(className)}
+      type={type || 'text'}
+      aria-describedby={describedBy}
+      aria-invalid={!isValid}
+      ref={inputRef}
     />
   );
 }
