@@ -194,6 +194,16 @@ storiesOf('User Input|InputText', module)
       />
     </form>
   ))
+  .add('price with step', () => (
+    <InputText
+      name="price"
+      label="Price"
+      type="number"
+      value={3.50}
+      min={0}
+      step={0.01}
+    />
+  ))
   .add('displayed inline', () => (
     <InputText
       name="username"
