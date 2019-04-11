@@ -9,6 +9,12 @@ module.exports = {
     paragon: './src/index.js',
     style: './src/index.scss',
   },
+  optimization: {
+    nodeEnv: false,
+  },
+  node: {
+    process: false,
+  },
   output: {
     filename: '[name].js',
     library: 'paragon',

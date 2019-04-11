@@ -16,7 +16,7 @@ function withDeprecatedProps(WrappedComponent, componentName, deprecatedProps) {
     }
 
     warn(message) {
-      if (process.env.NODE_ENV === 'development' || (window && window.PARAGON_ENV === 'development')) {
+      if (process.env.NODE_ENV === 'development') {
         if (console) console.warn(`[Deprecated] ${message}`);
       }
     }
