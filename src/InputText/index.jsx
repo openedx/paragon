@@ -14,6 +14,20 @@ function Text(props) {
     inputRef,
     isValid,
     type,
+    // Pull these out from props so html attrs can be passed through
+    // eslint-disable no-unused-vars
+    validator,
+    themes,
+    inline,
+    inputGroupPrepend,
+    inputGroupAppend,
+    label,
+    dangerIconDescription,
+    description,
+    validationMessage,
+    errorId,
+    descriptionId,
+    // eslint-enable no-unused-vars
     ...others
   } = props;
 
