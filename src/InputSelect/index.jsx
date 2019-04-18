@@ -49,6 +49,21 @@ class Select extends React.Component {
       className,
       describedBy,
       inputRef,
+      // Pull these out from props so html attrs can be passed through
+      // eslint-disable no-unused-vars
+      validator,
+      isValid,
+      themes,
+      inline,
+      inputGroupPrepend,
+      inputGroupAppend,
+      label,
+      dangerIconDescription,
+      description,
+      validationMessage,
+      errorId,
+      descriptionId,
+      // eslint-enable no-unused-vars
       ...others
     } = this.props;
     const options = this.getOptions();
