@@ -3,8 +3,10 @@ import { storiesOf } from '@storybook/react';
 
 
 import Input from './index';
+import README from './README.md';
 
 storiesOf('User Input|Input', module)
+  .addParameters({ info: { text: README } })
   .add('minimal usage', () => (
     <div>
       <div className="form-group">
@@ -34,7 +36,6 @@ storiesOf('User Input|Input', module)
           defaultValue="Hammock semiotics pok pok jianbing venmo, crucifix taiyaki stumptown irony ennui knausgaard bitters synth slow-carb iPhone."
         />
       </div>
-
       <div className="form-group">
         <Input type="text" defaultValue="Some text input" />
       </div>

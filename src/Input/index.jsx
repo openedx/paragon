@@ -15,42 +15,49 @@ const getClassNameForType = (inputType) => {
   return 'form-control';
 };
 
-const renderOptions = options => options.map(({ value, label, group }) => {
+const renderOptions = options => options.map(({
+  value,
+  label,
+  group,
+  ...others
+}) => {
   if (group) {
     return (
-      <optgroup key={`opt-group-${label}`} label={label}>
+      <optgroup key={`opt-group-${label}`} label={label} {...others}>
         {renderOptions(group)}
       </optgroup>
     );
   }
-  return <option key={value} value={value}>{label}</option>;
+  return <option key={value} value={value} {...others}>{label}</option>;
 });
 
 
-function Input({
-  type,
-  className,
-  children,
-  options,
-  ...attrs
-}) {
-  const htmlTag = getHTMLTagForType(type);
+// More on forwarding refs here:
+// https://reactjs.org/docs/forwarding-refs.html#displaying-a-custom-name-in-devtools
 
-  return React.createElement(
-    htmlTag,
-    {
-      className: classNames(getClassNameForType(type), className),
-      type: htmlTag === 'input' ? type : undefined,
-      ...attrs,
-    },
-    (type === 'select' && options) ? renderOptions(options) : children,
-  );
-}
+const Input = React.forwardRef((props, ref) => {
+  const {
+    type,
+    className,
+    options,
+    ...attrs
+  } = props;
+  const htmlTag = getHTMLTagForType(type);
+  const htmlProps = {
+    className: classNames(getClassNameForType(type), className),
+    type: htmlTag === 'input' ? type : undefined,
+    ...attrs,
+    ref,
+  };
+  const htmlChildren = type === 'select' ? renderOptions(options) : null;
+
+  return React.createElement(htmlTag, htmlProps, htmlChildren);
+});
+
 
 Input.propTypes = {
   type: PropTypes.string.isRequired,
   className: PropTypes.string,
-  children: PropTypes.node, // Should accept only <option> and <optgroup>
   options: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.string,
@@ -63,8 +70,8 @@ Input.propTypes = {
 
 Input.defaultProps = {
   className: undefined,
-  children: undefined,
-  options: undefined,
+  options: [],
 };
+
 
 export default Input;
