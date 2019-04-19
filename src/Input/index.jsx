@@ -16,14 +16,11 @@ const getClassNameForType = (inputType) => {
 };
 
 const renderOptions = options => options.map(({
-  value,
-  label,
-  group,
-  ...attributes
+  value, label, group, ...attributes
 }) => {
   if (group) {
     return (
-      <optgroup key={`opt-group-${label}`} label={label} {...attributes}>
+      <optgroup key={`optgroup-${label}`} label={label} {...attributes}>
         {renderOptions(group)}
       </optgroup>
     );
@@ -37,10 +34,7 @@ const renderOptions = options => options.map(({
 
 const Input = React.forwardRef((props, ref) => {
   const {
-    type,
-    className,
-    options,
-    ...attributes
+    type, className, options, ...attributes
   } = props;
   const htmlTag = getHTMLTagForType(type);
   const htmlProps = {
