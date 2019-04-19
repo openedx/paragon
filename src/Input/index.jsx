@@ -19,16 +19,16 @@ const renderOptions = options => options.map(({
   value,
   label,
   group,
-  ...others
+  ...attributes
 }) => {
   if (group) {
     return (
-      <optgroup key={`opt-group-${label}`} label={label} {...others}>
+      <optgroup key={`opt-group-${label}`} label={label} {...attributes}>
         {renderOptions(group)}
       </optgroup>
     );
   }
-  return <option key={value} value={value} {...others}>{label}</option>;
+  return <option key={value} value={value} {...attributes}>{label}</option>;
 });
 
 
@@ -40,13 +40,13 @@ const Input = React.forwardRef((props, ref) => {
     type,
     className,
     options,
-    ...attrs
+    ...attributes
   } = props;
   const htmlTag = getHTMLTagForType(type);
   const htmlProps = {
     className: classNames(getClassNameForType(type), className),
     type: htmlTag === 'input' ? type : undefined,
-    ...attrs,
+    ...attributes,
     ref,
   };
   const htmlChildren = type === 'select' ? renderOptions(options) : null;
@@ -61,9 +61,11 @@ Input.propTypes = {
   options: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.string,
+    disabled: PropTypes.bool,
     group: PropTypes.arrayOf(PropTypes.shape({
       label: PropTypes.string,
       value: PropTypes.string,
+      disabled: PropTypes.bool,
     })),
   })),
 };
