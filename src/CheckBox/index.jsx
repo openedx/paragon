@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import asInput, { inputProps, defaultProps } from '../asInput';
+import asInput from '../asInput';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
+
 
 class Check extends React.Component {
   constructor(props) {
@@ -32,51 +33,35 @@ class Check extends React.Component {
 
   render() {
     const {
-      describedBy,
-      // Pull these out from props so html attrs can be passed through
-      // eslint-disable no-unused-vars
-      onChange,
-      isValid,
-      validator,
-      themes,
-      inline,
-      inputGroupPrepend,
-      inputGroupAppend,
-      label,
-      dangerIconDescription,
-      description,
-      validationMessage,
-      errorId,
-      descriptionId,
-      // eslint-enable no-unused-vars
+      inputRef,
       ...others
     } = this.props;
     return (
       <input
         {...others}
         type="checkbox"
+        ref={inputRef}
         checked={this.state.checked}
         aria-checked={this.state.checked}
-        aria-describedby={describedBy}
         onChange={this.onChange}
       />
     );
   }
 }
 
+
 Check.propTypes = {
-  ...inputProps,
   checked: PropTypes.bool,
   onChange: PropTypes.func,
-  describedBy: PropTypes.string,
+  inputRef: PropTypes.func,
 };
 
 Check.defaultProps = {
-  ...defaultProps,
   checked: false,
   onChange: () => {},
-  describedBy: undefined,
+  inputRef: undefined,
 };
+
 
 const CheckBox = asInput(withDeprecatedProps(Check, 'Checkbox', {
   className: {

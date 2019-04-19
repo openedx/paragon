@@ -3175,12 +3175,9 @@ exports[`Storyshots User Input|CheckBox basic usage 1`] = `
   <input
     aria-checked={false}
     aria-describedby="error-asInput3"
+    aria-invalid={false}
     checked={false}
-    className={
-      Array [
-        "form-check-input is-invalid-nodanger",
-      ]
-    }
+    className="form-check-input is-invalid-nodanger"
     disabled={false}
     id="asInput3"
     name="checkbox"
@@ -3215,12 +3212,9 @@ exports[`Storyshots User Input|CheckBox call a function 1`] = `
   <input
     aria-checked={false}
     aria-describedby="error-asInput6"
+    aria-invalid={false}
     checked={false}
-    className={
-      Array [
-        "form-check-input is-invalid-nodanger",
-      ]
-    }
+    className="form-check-input is-invalid-nodanger"
     disabled={false}
     id="asInput6"
     name="checkbox"
@@ -3265,12 +3259,9 @@ exports[`Storyshots User Input|CheckBox controlled 1`] = `
     <input
       aria-checked={false}
       aria-describedby="error-asInput7"
+      aria-invalid={false}
       checked={false}
-      className={
-        Array [
-          "form-check-input is-invalid-nodanger",
-        ]
-      }
+      className="form-check-input is-invalid-nodanger"
       disabled={false}
       id="asInput7"
       name="checkbox"
@@ -3306,12 +3297,9 @@ exports[`Storyshots User Input|CheckBox default checked 1`] = `
   <input
     aria-checked={true}
     aria-describedby="error-asInput5"
+    aria-invalid={false}
     checked={true}
-    className={
-      Array [
-        "form-check-input is-invalid-nodanger",
-      ]
-    }
+    className="form-check-input is-invalid-nodanger"
     disabled={false}
     id="asInput5"
     name="checkbox"
@@ -3346,12 +3334,9 @@ exports[`Storyshots User Input|CheckBox disabled 1`] = `
   <input
     aria-checked={false}
     aria-describedby="error-asInput4"
+    aria-invalid={false}
     checked={false}
-    className={
-      Array [
-        "form-check-input is-invalid-nodanger",
-      ]
-    }
+    className="form-check-input is-invalid-nodanger"
     disabled={true}
     id="asInput4"
     name="checkbox"
@@ -3389,12 +3374,9 @@ exports[`Storyshots User Input|CheckBoxGroup basic usage 1`] = `
     <input
       aria-checked={false}
       aria-describedby="error-checkbox1"
+      aria-invalid={false}
       checked={false}
-      className={
-        Array [
-          "form-check-input is-invalid-nodanger",
-        ]
-      }
+      className="form-check-input is-invalid-nodanger"
       disabled={false}
       id="checkbox1"
       name="basicCheckBox1"
@@ -3426,12 +3408,9 @@ exports[`Storyshots User Input|CheckBoxGroup basic usage 1`] = `
     <input
       aria-checked={false}
       aria-describedby="error-checkbox2"
+      aria-invalid={false}
       checked={false}
-      className={
-        Array [
-          "form-check-input is-invalid-nodanger",
-        ]
-      }
+      className="form-check-input is-invalid-nodanger"
       disabled={false}
       id="checkbox2"
       name="basicCheckBox2"
@@ -3463,12 +3442,9 @@ exports[`Storyshots User Input|CheckBoxGroup basic usage 1`] = `
     <input
       aria-checked={false}
       aria-describedby="error-checkbox3"
+      aria-invalid={false}
       checked={false}
-      className={
-        Array [
-          "form-check-input is-invalid-nodanger",
-        ]
-      }
+      className="form-check-input is-invalid-nodanger"
       disabled={false}
       id="checkbox3"
       name="basicCheckBox3"
@@ -3524,7 +3500,6 @@ exports[`Storyshots User Input|Fieldset basic usage 1`] = `
         <input
           aria-describedby="error-asInput13"
           aria-invalid={false}
-          autoComplete="on"
           className="form-control is-invalid-nodanger"
           disabled={false}
           id="asInput13"
@@ -3532,7 +3507,6 @@ exports[`Storyshots User Input|Fieldset basic usage 1`] = `
           onBlur={[Function]}
           onChange={[Function]}
           onKeyPress={[Function]}
-          readOnly={false}
           required={false}
           type="text"
           value=""
@@ -3558,7 +3532,6 @@ exports[`Storyshots User Input|Fieldset basic usage 1`] = `
         <input
           aria-describedby="error-asInput14"
           aria-invalid={false}
-          autoComplete="on"
           className="form-control is-invalid-nodanger"
           disabled={false}
           id="asInput14"
@@ -3566,7 +3539,6 @@ exports[`Storyshots User Input|Fieldset basic usage 1`] = `
           onBlur={[Function]}
           onChange={[Function]}
           onKeyPress={[Function]}
-          readOnly={false}
           required={false}
           type="text"
           value=""
@@ -3620,7 +3592,6 @@ exports[`Storyshots User Input|Fieldset client-side validation of fieldset 1`] =
         <input
           aria-describedby="error-asInput22"
           aria-invalid={false}
-          autoComplete="on"
           className="form-control is-invalid-nodanger"
           disabled={false}
           id="asInput22"
@@ -3628,7 +3599,6 @@ exports[`Storyshots User Input|Fieldset client-side validation of fieldset 1`] =
           onBlur={[Function]}
           onChange={[Function]}
           onKeyPress={[Function]}
-          readOnly={false}
           required={false}
           type="text"
           value=""
@@ -3654,7 +3624,6 @@ exports[`Storyshots User Input|Fieldset client-side validation of fieldset 1`] =
         <input
           aria-describedby="error-asInput23"
           aria-invalid={false}
-          autoComplete="on"
           className="form-control is-invalid-nodanger"
           disabled={false}
           id="asInput23"
@@ -3662,7 +3631,6 @@ exports[`Storyshots User Input|Fieldset client-side validation of fieldset 1`] =
           onBlur={[Function]}
           onChange={[Function]}
           onKeyPress={[Function]}
-          readOnly={false}
           required={false}
           type="text"
           value=""
@@ -3719,7 +3687,6 @@ exports[`Storyshots User Input|Fieldset invalid 1`] = `
         <input
           aria-describedby="error-asInput16"
           aria-invalid={false}
-          autoComplete="on"
           className="form-control is-invalid-nodanger"
           disabled={false}
           id="asInput16"
@@ -3727,7 +3694,6 @@ exports[`Storyshots User Input|Fieldset invalid 1`] = `
           onBlur={[Function]}
           onChange={[Function]}
           onKeyPress={[Function]}
-          readOnly={false}
           required={false}
           type="text"
           value=""
@@ -3753,7 +3719,6 @@ exports[`Storyshots User Input|Fieldset invalid 1`] = `
         <input
           aria-describedby="error-asInput17"
           aria-invalid={false}
-          autoComplete="on"
           className="form-control is-invalid-nodanger"
           disabled={false}
           id="asInput17"
@@ -3761,7 +3726,6 @@ exports[`Storyshots User Input|Fieldset invalid 1`] = `
           onBlur={[Function]}
           onChange={[Function]}
           onKeyPress={[Function]}
-          readOnly={false}
           required={false}
           type="text"
           value=""
@@ -3813,7 +3777,6 @@ exports[`Storyshots User Input|Fieldset invalid with danger theme 1`] = `
         <input
           aria-describedby="error-asInput19"
           aria-invalid={false}
-          autoComplete="on"
           className="form-control is-invalid-nodanger"
           disabled={false}
           id="asInput19"
@@ -3821,7 +3784,6 @@ exports[`Storyshots User Input|Fieldset invalid with danger theme 1`] = `
           onBlur={[Function]}
           onChange={[Function]}
           onKeyPress={[Function]}
-          readOnly={false}
           required={false}
           type="text"
           value=""
@@ -3847,7 +3809,6 @@ exports[`Storyshots User Input|Fieldset invalid with danger theme 1`] = `
         <input
           aria-describedby="error-asInput20"
           aria-invalid={false}
-          autoComplete="on"
           className="form-control is-invalid-nodanger"
           disabled={false}
           id="asInput20"
@@ -3855,7 +3816,6 @@ exports[`Storyshots User Input|Fieldset invalid with danger theme 1`] = `
           onBlur={[Function]}
           onChange={[Function]}
           onKeyPress={[Function]}
-          readOnly={false}
           required={false}
           type="text"
           value=""
@@ -3902,6 +3862,7 @@ exports[`Storyshots User Input|InputSelect basic usage 1`] = `
   </label>
   <select
     aria-describedby="error-asInput24"
+    aria-invalid={false}
     className="form-control is-invalid-nodanger"
     disabled={false}
     id="asInput24"
@@ -3965,6 +3926,7 @@ exports[`Storyshots User Input|InputSelect disabled usage 1`] = `
   </label>
   <select
     aria-describedby="error-asInput28"
+    aria-invalid={false}
     aria-label="Fruits"
     className="form-control is-invalid-nodanger"
     disabled={true}
@@ -4029,6 +3991,7 @@ exports[`Storyshots User Input|InputSelect separate labels and values 1`] = `
   </label>
   <select
     aria-describedby="error-asInput25"
+    aria-invalid={false}
     className="form-control is-invalid-nodanger"
     disabled={false}
     id="asInput25"
@@ -4122,6 +4085,7 @@ exports[`Storyshots User Input|InputSelect separate option groups 1`] = `
   </label>
   <select
     aria-describedby="error-asInput26"
+    aria-invalid={false}
     className="form-control is-invalid-nodanger"
     disabled={false}
     id="asInput26"
@@ -4305,6 +4269,7 @@ exports[`Storyshots User Input|InputSelect with disabled option 1`] = `
   </label>
   <select
     aria-describedby="error-asInput29"
+    aria-invalid={false}
     className="form-control is-invalid-nodanger"
     disabled={false}
     id="asInput29"
@@ -4375,6 +4340,7 @@ exports[`Storyshots User Input|InputSelect with validation 1`] = `
   </label>
   <select
     aria-describedby="error-asInput27"
+    aria-invalid={false}
     className="form-control is-invalid-nodanger"
     disabled={false}
     id="asInput27"
@@ -4458,7 +4424,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-search"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
       disabled={false}
       id="input-search"
@@ -4466,7 +4431,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
       type="search"
       value="what is paragon"
@@ -4492,7 +4456,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-email"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
       disabled={false}
       id="input-email"
@@ -4500,7 +4463,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
       type="email"
       value="paragon@edx.org"
@@ -4526,7 +4488,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-url"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
       disabled={false}
       id="input-url"
@@ -4534,7 +4495,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
       type="url"
       value="https://edx.github.io/paragon"
@@ -4560,7 +4520,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-tel"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
       disabled={false}
       id="input-tel"
@@ -4568,7 +4527,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
       type="tel"
       value="1-(555)-555-5555"
@@ -4594,7 +4552,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-password"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
       disabled={false}
       id="input-password"
@@ -4602,7 +4559,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
       type="password"
       value="hunter2"
@@ -4628,7 +4584,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-number"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
       disabled={false}
       id="input-number"
@@ -4636,7 +4591,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
       type="number"
       value={42}
@@ -4662,7 +4616,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-datetime-local"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
       disabled={false}
       id="input-datetime-local"
@@ -4670,7 +4623,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
       type="datetime-local"
       value="2017-04-27T13:45:00"
@@ -4696,7 +4648,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-date"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
       disabled={false}
       id="input-date"
@@ -4704,7 +4655,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
       type="date"
       value="2017-04-27"
@@ -4730,7 +4680,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-month"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
       disabled={false}
       id="input-month"
@@ -4738,7 +4687,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
       type="month"
       value="2017-04"
@@ -4764,7 +4712,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-week"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
       disabled={false}
       id="input-week"
@@ -4772,7 +4719,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
       type="week"
       value="2017-W33"
@@ -4798,7 +4744,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-time"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
       disabled={false}
       id="input-time"
@@ -4806,7 +4751,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
       type="time"
       value="13:45:00"
@@ -4832,7 +4776,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-color"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
       disabled={false}
       id="input-color"
@@ -4840,7 +4783,6 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
       type="color"
       value="#BF472C"
@@ -4870,7 +4812,6 @@ exports[`Storyshots User Input|InputText displayed inline 1`] = `
   <input
     aria-describedby="error-asInput35"
     aria-invalid={false}
-    autoComplete="on"
     className="form-control is-invalid-nodanger"
     disabled={false}
     id="asInput35"
@@ -4878,7 +4819,6 @@ exports[`Storyshots User Input|InputText displayed inline 1`] = `
     onBlur={[Function]}
     onChange={[Function]}
     onKeyPress={[Function]}
-    readOnly={false}
     required={false}
     type="text"
     value="foobar"
@@ -4933,7 +4873,6 @@ exports[`Storyshots User Input|InputText focus test 1`] = `
     <input
       aria-describedby="error-data"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
       disabled={false}
       id="data"
@@ -4941,7 +4880,6 @@ exports[`Storyshots User Input|InputText focus test 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
       type="text"
       value=""
@@ -4975,7 +4913,6 @@ exports[`Storyshots User Input|InputText label as element 1`] = `
   <input
     aria-describedby="error-asInput33"
     aria-invalid={false}
-    autoComplete="on"
     className="form-control is-invalid-nodanger"
     disabled={false}
     id="asInput33"
@@ -4983,7 +4920,6 @@ exports[`Storyshots User Input|InputText label as element 1`] = `
     onBlur={[Function]}
     onChange={[Function]}
     onKeyPress={[Function]}
-    readOnly={false}
     required={false}
     type="text"
     value="Label is wrapped in language span"
@@ -5012,7 +4948,6 @@ exports[`Storyshots User Input|InputText minimal usage 1`] = `
   <input
     aria-describedby="error-asInput30"
     aria-invalid={false}
-    autoComplete="on"
     className="form-control is-invalid-nodanger"
     disabled={false}
     id="asInput30"
@@ -5020,7 +4955,6 @@ exports[`Storyshots User Input|InputText minimal usage 1`] = `
     onBlur={[Function]}
     onChange={[Function]}
     onKeyPress={[Function]}
-    readOnly={false}
     required={false}
     type="text"
     value="Foo Bar"
@@ -5049,7 +4983,6 @@ exports[`Storyshots User Input|InputText price with step 1`] = `
   <input
     aria-describedby="error-asInput34"
     aria-invalid={false}
-    autoComplete="on"
     className="form-control is-invalid-nodanger"
     disabled={false}
     id="asInput34"
@@ -5058,7 +4991,6 @@ exports[`Storyshots User Input|InputText price with step 1`] = `
     onBlur={[Function]}
     onChange={[Function]}
     onKeyPress={[Function]}
-    readOnly={false}
     required={false}
     step={0.01}
     type="number"
@@ -5088,7 +5020,6 @@ exports[`Storyshots User Input|InputText read only 1`] = `
   <input
     aria-describedby="error-asInput31"
     aria-invalid={false}
-    autoComplete="on"
     className="form-control is-invalid-nodanger"
     disabled={false}
     id="asInput31"
@@ -5125,7 +5056,6 @@ exports[`Storyshots User Input|InputText validation 1`] = `
   <input
     aria-describedby="error-username description-username"
     aria-invalid={false}
-    autoComplete="on"
     className="form-control is-invalid-nodanger"
     disabled={false}
     id="username"
@@ -5133,7 +5063,6 @@ exports[`Storyshots User Input|InputText validation 1`] = `
     onBlur={[Function]}
     onChange={[Function]}
     onKeyPress={[Function]}
-    readOnly={false}
     required={false}
     type="text"
     value=""
@@ -5168,7 +5097,6 @@ exports[`Storyshots User Input|InputText validation with danger theme 1`] = `
   <input
     aria-describedby="error-asInput32 description-asInput32"
     aria-invalid={false}
-    autoComplete="on"
     className="form-control"
     disabled={false}
     id="asInput32"
@@ -5176,7 +5104,6 @@ exports[`Storyshots User Input|InputText validation with danger theme 1`] = `
     onBlur={[Function]}
     onChange={[Function]}
     onKeyPress={[Function]}
-    readOnly={false}
     required={false}
     type="text"
     value=""
@@ -5224,7 +5151,6 @@ exports[`Storyshots User Input|InputText with input group addons 1`] = `
       <input
         aria-describedby="error-asInput36"
         aria-invalid={false}
-        autoComplete="on"
         className="form-control is-invalid-nodanger"
         disabled={false}
         id="asInput36"
@@ -5232,7 +5158,6 @@ exports[`Storyshots User Input|InputText with input group addons 1`] = `
         onBlur={[Function]}
         onChange={[Function]}
         onKeyPress={[Function]}
-        readOnly={false}
         required={false}
         type="text"
         value="foobar"
@@ -5268,7 +5193,6 @@ exports[`Storyshots User Input|InputText with input group addons 1`] = `
       <input
         aria-describedby="error-asInput37"
         aria-invalid={false}
-        autoComplete="on"
         className="form-control is-invalid-nodanger"
         disabled={false}
         id="asInput37"
@@ -5276,7 +5200,6 @@ exports[`Storyshots User Input|InputText with input group addons 1`] = `
         onBlur={[Function]}
         onChange={[Function]}
         onKeyPress={[Function]}
-        readOnly={false}
         required={false}
         type="text"
         value="foobar"
@@ -5324,7 +5247,6 @@ exports[`Storyshots User Input|InputText with input group addons 1`] = `
       <input
         aria-describedby="error-asInput38"
         aria-invalid={false}
-        autoComplete="on"
         className="form-control is-invalid-nodanger"
         disabled={false}
         id="asInput38"
@@ -5332,7 +5254,6 @@ exports[`Storyshots User Input|InputText with input group addons 1`] = `
         onBlur={[Function]}
         onChange={[Function]}
         onKeyPress={[Function]}
-        readOnly={false}
         required={false}
         type="number"
         value={1000}
@@ -5374,7 +5295,6 @@ exports[`Storyshots User Input|InputText with input group addons 1`] = `
       <input
         aria-describedby="error-asInput39"
         aria-invalid={false}
-        autoComplete="on"
         className="form-control is-invalid-nodanger"
         disabled={false}
         id="asInput39"
@@ -5382,7 +5302,6 @@ exports[`Storyshots User Input|InputText with input group addons 1`] = `
         onBlur={[Function]}
         onChange={[Function]}
         onKeyPress={[Function]}
-        readOnly={false}
         required={false}
         type="text"
         value="what is paragon"
@@ -5428,7 +5347,6 @@ exports[`Storyshots User Input|InputText with input group addons 1`] = `
       <input
         aria-describedby="error-asInput40"
         aria-invalid={false}
-        autoComplete="on"
         className="form-control is-invalid-nodanger"
         disabled={false}
         id="asInput40"
@@ -5436,7 +5354,6 @@ exports[`Storyshots User Input|InputText with input group addons 1`] = `
         onBlur={[Function]}
         onChange={[Function]}
         onKeyPress={[Function]}
-        readOnly={false}
         required={false}
         type="text"
         value="foobar"
@@ -5496,7 +5413,6 @@ exports[`Storyshots User Input|InputText with input group addons 1`] = `
       <input
         aria-describedby="error-asInput41"
         aria-invalid={false}
-        autoComplete="on"
         className="form-control is-invalid-nodanger"
         disabled={false}
         id="asInput41"
@@ -5504,7 +5420,6 @@ exports[`Storyshots User Input|InputText with input group addons 1`] = `
         onBlur={[Function]}
         onChange={[Function]}
         onKeyPress={[Function]}
-        readOnly={false}
         required={false}
         type="text"
         value="secret"
@@ -5689,7 +5604,6 @@ exports[`Storyshots User Input|SearchField basic usage 1`] = `
         onChange={[Function]}
         onKeyPress={[Function]}
         placeholder=""
-        readOnly={false}
         required={false}
         role="searchbox"
         type="search"
@@ -5764,7 +5678,6 @@ exports[`Storyshots User Input|SearchField with callbacks 1`] = `
         onChange={[Function]}
         onKeyPress={[Function]}
         placeholder=""
-        readOnly={false}
         required={false}
         role="searchbox"
         type="search"
@@ -5839,7 +5752,6 @@ exports[`Storyshots User Input|SearchField with custom label and screenreader te
         onChange={[Function]}
         onKeyPress={[Function]}
         placeholder=""
-        readOnly={false}
         required={false}
         role="searchbox"
         type="search"
@@ -5914,7 +5826,6 @@ exports[`Storyshots User Input|SearchField with placeholder 1`] = `
         onChange={[Function]}
         onKeyPress={[Function]}
         placeholder="Search"
-        readOnly={false}
         required={false}
         role="searchbox"
         type="search"
@@ -5989,7 +5900,6 @@ exports[`Storyshots User Input|SearchField with value 1`] = `
         onChange={[Function]}
         onKeyPress={[Function]}
         placeholder="Search"
-        readOnly={false}
         required={false}
         role="searchbox"
         type="search"
@@ -6076,11 +5986,6 @@ exports[`Storyshots User Input|Textarea label as element 1`] = `
     onChange={[Function]}
     onKeyPress={[Function]}
     required={false}
-    themes={
-      Array [
-        "danger",
-      ]
-    }
     value="Label is wrapped in language span"
   />
   <div
@@ -6115,11 +6020,6 @@ exports[`Storyshots User Input|Textarea minimal usage 1`] = `
     onChange={[Function]}
     onKeyPress={[Function]}
     required={false}
-    themes={
-      Array [
-        "danger",
-      ]
-    }
     value="Foo Bar"
   />
   <div
@@ -6154,11 +6054,6 @@ exports[`Storyshots User Input|Textarea scrollable 1`] = `
     onChange={[Function]}
     onKeyPress={[Function]}
     required={false}
-    themes={
-      Array [
-        "danger",
-      ]
-    }
     value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   />
   <div
@@ -6193,11 +6088,6 @@ exports[`Storyshots User Input|Textarea validation 1`] = `
     onChange={[Function]}
     onKeyPress={[Function]}
     required={false}
-    themes={
-      Array [
-        "danger",
-      ]
-    }
     value=""
   />
   <div
