@@ -1,56 +1,41 @@
 import React from 'react';
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-
-import asInput, { inputProps, defaultProps } from '../asInput';
+import asInput from '../asInput';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
 
 function Text(props) {
+  const {
+    className,
+    inputRef,
+    type,
+    ...others
+  } = props;
+
   return (
     <input
-      id={props.id}
-      className={classNames(props.className)}
-      type={props.type || 'text'}
-      name={props.name}
-      value={props.value}
-      placeholder={props.placeholder}
-      aria-describedby={props.describedBy}
-      onChange={props.onChange}
-      onKeyPress={props.onKeyPress}
-      onBlur={props.onBlur}
-      aria-invalid={!props.isValid}
-      autoComplete={props.autoComplete}
-      disabled={props.disabled}
-      readOnly={props.readOnly}
-      required={props.required}
-      ref={props.inputRef}
-      themes={props.themes}
+      {...others}
+      className={className}
+      type={type || 'text'}
+      ref={inputRef}
     />
   );
 }
 
-const textPropTypes = {
-  type: PropTypes.string,
-  describedBy: PropTypes.string,
-  isValid: PropTypes.bool,
-  autoComplete: PropTypes.string,
+
+Text.propTypes = {
+  className: PropTypes.string,
   inputRef: PropTypes.func,
-  readOnly: PropTypes.bool,
+  type: PropTypes.string,
 };
 
-const textDefaultProps = {
+Text.defaultProps = {
+  className: undefined,
+  inputRef: undefined,
   type: 'text',
-  describedBy: '',
-  isValid: true,
-  autoComplete: 'on',
-  inputRef: () => {},
-  readOnly: false,
 };
 
-Text.propTypes = { ...textPropTypes, ...inputProps };
-Text.defaultProps = { ...textDefaultProps, ...defaultProps };
 
 const InputText = asInput(withDeprecatedProps(Text, 'InputText', {
   className: {
