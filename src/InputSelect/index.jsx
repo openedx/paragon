@@ -1,9 +1,9 @@
 import React from 'react';
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import asInput, { inputProps } from '../asInput';
+import asInput from '../asInput';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
+
 
 class Select extends React.Component {
   static getOption(option, i) {
@@ -45,25 +45,8 @@ class Select extends React.Component {
 
   render() {
     const {
-      ariaLabel,
       className,
-      describedBy,
       inputRef,
-      // Pull these out from props so html attrs can be passed through
-      // eslint-disable no-unused-vars
-      validator,
-      isValid,
-      themes,
-      inline,
-      inputGroupPrepend,
-      inputGroupAppend,
-      label,
-      dangerIconDescription,
-      description,
-      validationMessage,
-      errorId,
-      descriptionId,
-      // eslint-enable no-unused-vars
       ...others
     } = this.props;
     const options = this.getOptions();
@@ -71,10 +54,8 @@ class Select extends React.Component {
     return (
       <select
         {...others}
-        className={classNames(className)}
+        className={className}
         type="select"
-        aria-label={ariaLabel}
-        aria-describedby={describedBy}
         ref={inputRef}
       >
         {options}
@@ -83,13 +64,21 @@ class Select extends React.Component {
   }
 }
 
+
 Select.propTypes = {
-  ...inputProps,
+  className: PropTypes.string,
+  inputRef: PropTypes.func,
   options: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.string),
     PropTypes.arrayOf(PropTypes.object),
   ]).isRequired,
 };
+
+Select.defaultProps = {
+  className: undefined,
+  inputRef: undefined,
+};
+
 
 const InputSelect = asInput(withDeprecatedProps(Select, 'InputSelect', {
   className: {
@@ -99,11 +88,5 @@ const InputSelect = asInput(withDeprecatedProps(Select, 'InputSelect', {
     message: 'It should be a string.',
   },
 }));
-
-InputSelect.propTypes = {
-  ...InputSelect.propTypes,
-  ...Select.propTypes,
-};
-
 
 export default InputSelect;
