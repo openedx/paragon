@@ -35,6 +35,8 @@ export const inputProps = {
   inline: PropTypes.bool,
   inputGroupPrepend: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element]),
   inputGroupAppend: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element]),
+  type: PropTypes.string,
+  inputRef: PropTypes.func,
 };
 
 export const defaultProps = {
@@ -55,6 +57,8 @@ export const defaultProps = {
   inline: false,
   inputGroupPrepend: undefined,
   inputGroupAppend: undefined,
+  type: undefined,
+  inputRef: undefined,
 };
 
 const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => {
@@ -76,9 +80,6 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
         isValid,
         validationMessage,
         dangerIconDescription,
-        describedBy: [],
-        errorId: `error-${id}`,
-        descriptionId: `description-${id}`,
       };
     }
 
@@ -190,6 +191,7 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
 
     handleChange(event) {
       this.setState({ value: event.target.value });
+
       this.props.onChange(
         event.target.type === 'checkbox' ? event.target.checked : event.target.value,
         this.props.name,
@@ -205,12 +207,29 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
     }
 
     renderInput(describedBy) {
-      const { className } = this.props;
+      const {
+        className,
+        inputRef,
+        type,
+        isValid,
+        // unused
+        validator,
+        themes,
+        inline,
+        inputGroupPrepend,
+        inputGroupAppend,
+        label,
+        dangerIconDescription,
+        description,
+        validationMessage,
+        ...others
+      } = this.props;
 
       return (
         <WrappedComponent
-          {...this.props}
-          {...this.state}
+          {...others}
+          id={this.state.id}
+          value={this.state.value}
           className={[classNames(
             {
               'form-control': !this.isGroupedInput(),
@@ -220,10 +239,13 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
             },
             className,
           ).trim()]}
-          describedBy={describedBy}
+          aria-describedby={describedBy}
+          aria-invalid={!isValid}
           onChange={this.handleChange}
           onBlur={this.handleBlur}
           onKeyPress={this.handleKeyPress}
+          type={type}
+          inputRef={inputRef}
         />
       );
     }
@@ -281,6 +303,10 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       expect: value => typeof value === 'string',
       transform: value => (Array.isArray(value) ? value.join(' ') : value),
       message: 'It should be a string.',
+    },
+    ariaLabel: {
+      deprType: DEPR_TYPES.MOVED,
+      newName: 'aria-label',
     },
   });
 };

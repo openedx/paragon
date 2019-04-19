@@ -3174,29 +3174,18 @@ exports[`Storyshots User Input|CheckBox basic usage 1`] = `
 >
   <input
     aria-checked={false}
+    aria-describedby="error-asInput3"
+    aria-invalid={false}
     checked={false}
-    className={
-      Array [
-        "form-check-input is-invalid-nodanger",
-      ]
-    }
-    dangerIconDescription=""
-    describedBy="error-asInput3"
-    descriptionId="description-asInput3"
+    className="form-check-input is-invalid-nodanger"
     disabled={false}
-    errorId="error-asInput3"
     id="asInput3"
-    inline={false}
-    isValid={true}
-    label="check me out!"
     name="checkbox"
     onBlur={[Function]}
     onChange={[Function]}
     onKeyPress={[Function]}
     required={false}
-    themes={Array []}
     type="checkbox"
-    validationMessage=""
     value=""
   />
   <label
@@ -3222,29 +3211,18 @@ exports[`Storyshots User Input|CheckBox call a function 1`] = `
 >
   <input
     aria-checked={false}
+    aria-describedby="error-asInput6"
+    aria-invalid={false}
     checked={false}
-    className={
-      Array [
-        "form-check-input is-invalid-nodanger",
-      ]
-    }
-    dangerIconDescription=""
-    describedBy="error-asInput6"
-    descriptionId="description-asInput6"
+    className="form-check-input is-invalid-nodanger"
     disabled={false}
-    errorId="error-asInput6"
     id="asInput6"
-    inline={false}
-    isValid={true}
-    label="check out the console"
     name="checkbox"
     onBlur={[Function]}
     onChange={[Function]}
     onKeyPress={[Function]}
     required={false}
-    themes={Array []}
     type="checkbox"
-    validationMessage=""
     value=""
   />
   <label
@@ -3280,29 +3258,18 @@ exports[`Storyshots User Input|CheckBox controlled 1`] = `
   >
     <input
       aria-checked={false}
+      aria-describedby="error-asInput7"
+      aria-invalid={false}
       checked={false}
-      className={
-        Array [
-          "form-check-input is-invalid-nodanger",
-        ]
-      }
-      dangerIconDescription=""
-      describedBy="error-asInput7"
-      descriptionId="description-asInput7"
+      className="form-check-input is-invalid-nodanger"
       disabled={false}
-      errorId="error-asInput7"
       id="asInput7"
-      inline={false}
-      isValid={true}
-      label="click the button"
       name="checkbox"
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
       required={false}
-      themes={Array []}
       type="checkbox"
-      validationMessage=""
       value=""
     />
     <label
@@ -3329,29 +3296,18 @@ exports[`Storyshots User Input|CheckBox default checked 1`] = `
 >
   <input
     aria-checked={true}
+    aria-describedby="error-asInput5"
+    aria-invalid={false}
     checked={true}
-    className={
-      Array [
-        "form-check-input is-invalid-nodanger",
-      ]
-    }
-    dangerIconDescription=""
-    describedBy="error-asInput5"
-    descriptionId="description-asInput5"
+    className="form-check-input is-invalid-nodanger"
     disabled={false}
-    errorId="error-asInput5"
     id="asInput5"
-    inline={false}
-    isValid={true}
-    label="(un)check me out"
     name="checkbox"
     onBlur={[Function]}
     onChange={[Function]}
     onKeyPress={[Function]}
     required={false}
-    themes={Array []}
     type="checkbox"
-    validationMessage=""
     value=""
   />
   <label
@@ -3377,29 +3333,18 @@ exports[`Storyshots User Input|CheckBox disabled 1`] = `
 >
   <input
     aria-checked={false}
+    aria-describedby="error-asInput4"
+    aria-invalid={false}
     checked={false}
-    className={
-      Array [
-        "form-check-input is-invalid-nodanger",
-      ]
-    }
-    dangerIconDescription=""
-    describedBy="error-asInput4"
-    descriptionId="description-asInput4"
+    className="form-check-input is-invalid-nodanger"
     disabled={true}
-    errorId="error-asInput4"
     id="asInput4"
-    inline={false}
-    isValid={true}
-    label="you cannot check me out"
     name="checkbox"
     onBlur={[Function]}
     onChange={[Function]}
     onKeyPress={[Function]}
     required={false}
-    themes={Array []}
     type="checkbox"
-    validationMessage=""
     value=""
   />
   <label
@@ -3428,29 +3373,18 @@ exports[`Storyshots User Input|CheckBoxGroup basic usage 1`] = `
   >
     <input
       aria-checked={false}
+      aria-describedby="error-checkbox1"
+      aria-invalid={false}
       checked={false}
-      className={
-        Array [
-          "form-check-input is-invalid-nodanger",
-        ]
-      }
-      dangerIconDescription=""
-      describedBy="error-checkbox1"
-      descriptionId="description-checkbox1"
+      className="form-check-input is-invalid-nodanger"
       disabled={false}
-      errorId="error-checkbox1"
       id="checkbox1"
-      inline={false}
-      isValid={true}
-      label="CheckBox 1"
       name="basicCheckBox1"
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
       required={false}
-      themes={Array []}
       type="checkbox"
-      validationMessage=""
       value=""
     />
     <label
@@ -3473,29 +3407,18 @@ exports[`Storyshots User Input|CheckBoxGroup basic usage 1`] = `
   >
     <input
       aria-checked={false}
+      aria-describedby="error-checkbox2"
+      aria-invalid={false}
       checked={false}
-      className={
-        Array [
-          "form-check-input is-invalid-nodanger",
-        ]
-      }
-      dangerIconDescription=""
-      describedBy="error-checkbox2"
-      descriptionId="description-checkbox2"
+      className="form-check-input is-invalid-nodanger"
       disabled={false}
-      errorId="error-checkbox2"
       id="checkbox2"
-      inline={false}
-      isValid={true}
-      label="CheckBox 2"
       name="basicCheckBox2"
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
       required={false}
-      themes={Array []}
       type="checkbox"
-      validationMessage=""
       value=""
     />
     <label
@@ -3518,29 +3441,18 @@ exports[`Storyshots User Input|CheckBoxGroup basic usage 1`] = `
   >
     <input
       aria-checked={false}
+      aria-describedby="error-checkbox3"
+      aria-invalid={false}
       checked={false}
-      className={
-        Array [
-          "form-check-input is-invalid-nodanger",
-        ]
-      }
-      dangerIconDescription=""
-      describedBy="error-checkbox3"
-      descriptionId="description-checkbox3"
+      className="form-check-input is-invalid-nodanger"
       disabled={false}
-      errorId="error-checkbox3"
       id="checkbox3"
-      inline={false}
-      isValid={true}
-      label="CheckBox 3"
       name="basicCheckBox3"
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
       required={false}
-      themes={Array []}
       type="checkbox"
-      validationMessage=""
       value=""
     />
     <label
@@ -3588,24 +3500,15 @@ exports[`Storyshots User Input|Fieldset basic usage 1`] = `
         <input
           aria-describedby="error-asInput13"
           aria-invalid={false}
-          autoComplete="on"
           className="form-control is-invalid-nodanger"
-          dangerIconDescription=""
-          descriptionId="description-asInput13"
           disabled={false}
-          errorId="error-asInput13"
           id="asInput13"
-          inline={false}
-          label="First Name"
           name="firstName"
           onBlur={[Function]}
           onChange={[Function]}
           onKeyPress={[Function]}
-          readOnly={false}
           required={false}
-          themes={Array []}
           type="text"
-          validationMessage=""
           value=""
         />
         <div
@@ -3629,24 +3532,15 @@ exports[`Storyshots User Input|Fieldset basic usage 1`] = `
         <input
           aria-describedby="error-asInput14"
           aria-invalid={false}
-          autoComplete="on"
           className="form-control is-invalid-nodanger"
-          dangerIconDescription=""
-          descriptionId="description-asInput14"
           disabled={false}
-          errorId="error-asInput14"
           id="asInput14"
-          inline={false}
-          label="Last Name"
           name="lastName"
           onBlur={[Function]}
           onChange={[Function]}
           onKeyPress={[Function]}
-          readOnly={false}
           required={false}
-          themes={Array []}
           type="text"
-          validationMessage=""
           value=""
         />
         <div
@@ -3698,24 +3592,15 @@ exports[`Storyshots User Input|Fieldset client-side validation of fieldset 1`] =
         <input
           aria-describedby="error-asInput22"
           aria-invalid={false}
-          autoComplete="on"
           className="form-control is-invalid-nodanger"
-          dangerIconDescription=""
-          descriptionId="description-asInput22"
           disabled={false}
-          errorId="error-asInput22"
           id="asInput22"
-          inline={false}
-          label="First Name"
           name="firstName"
           onBlur={[Function]}
           onChange={[Function]}
           onKeyPress={[Function]}
-          readOnly={false}
           required={false}
-          themes={Array []}
           type="text"
-          validationMessage=""
           value=""
         />
         <div
@@ -3739,24 +3624,15 @@ exports[`Storyshots User Input|Fieldset client-side validation of fieldset 1`] =
         <input
           aria-describedby="error-asInput23"
           aria-invalid={false}
-          autoComplete="on"
           className="form-control is-invalid-nodanger"
-          dangerIconDescription=""
-          descriptionId="description-asInput23"
           disabled={false}
-          errorId="error-asInput23"
           id="asInput23"
-          inline={false}
-          label="Last Name"
           name="lastName"
           onBlur={[Function]}
           onChange={[Function]}
           onKeyPress={[Function]}
-          readOnly={false}
           required={false}
-          themes={Array []}
           type="text"
-          validationMessage=""
           value=""
         />
         <div
@@ -3811,24 +3687,15 @@ exports[`Storyshots User Input|Fieldset invalid 1`] = `
         <input
           aria-describedby="error-asInput16"
           aria-invalid={false}
-          autoComplete="on"
           className="form-control is-invalid-nodanger"
-          dangerIconDescription=""
-          descriptionId="description-asInput16"
           disabled={false}
-          errorId="error-asInput16"
           id="asInput16"
-          inline={false}
-          label="First Name"
           name="firstName"
           onBlur={[Function]}
           onChange={[Function]}
           onKeyPress={[Function]}
-          readOnly={false}
           required={false}
-          themes={Array []}
           type="text"
-          validationMessage=""
           value=""
         />
         <div
@@ -3852,24 +3719,15 @@ exports[`Storyshots User Input|Fieldset invalid 1`] = `
         <input
           aria-describedby="error-asInput17"
           aria-invalid={false}
-          autoComplete="on"
           className="form-control is-invalid-nodanger"
-          dangerIconDescription=""
-          descriptionId="description-asInput17"
           disabled={false}
-          errorId="error-asInput17"
           id="asInput17"
-          inline={false}
-          label="Last Name"
           name="lastName"
           onBlur={[Function]}
           onChange={[Function]}
           onKeyPress={[Function]}
-          readOnly={false}
           required={false}
-          themes={Array []}
           type="text"
-          validationMessage=""
           value=""
         />
         <div
@@ -3919,24 +3777,15 @@ exports[`Storyshots User Input|Fieldset invalid with danger theme 1`] = `
         <input
           aria-describedby="error-asInput19"
           aria-invalid={false}
-          autoComplete="on"
           className="form-control is-invalid-nodanger"
-          dangerIconDescription=""
-          descriptionId="description-asInput19"
           disabled={false}
-          errorId="error-asInput19"
           id="asInput19"
-          inline={false}
-          label="First Name"
           name="firstName"
           onBlur={[Function]}
           onChange={[Function]}
           onKeyPress={[Function]}
-          readOnly={false}
           required={false}
-          themes={Array []}
           type="text"
-          validationMessage=""
           value=""
         />
         <div
@@ -3960,24 +3809,15 @@ exports[`Storyshots User Input|Fieldset invalid with danger theme 1`] = `
         <input
           aria-describedby="error-asInput20"
           aria-invalid={false}
-          autoComplete="on"
           className="form-control is-invalid-nodanger"
-          dangerIconDescription=""
-          descriptionId="description-asInput20"
           disabled={false}
-          errorId="error-asInput20"
           id="asInput20"
-          inline={false}
-          label="Last Name"
           name="lastName"
           onBlur={[Function]}
           onChange={[Function]}
           onKeyPress={[Function]}
-          readOnly={false}
           required={false}
-          themes={Array []}
           type="text"
-          validationMessage=""
           value=""
         />
         <div
@@ -4022,15 +3862,10 @@ exports[`Storyshots User Input|InputSelect basic usage 1`] = `
   </label>
   <select
     aria-describedby="error-asInput24"
+    aria-invalid={false}
     className="form-control is-invalid-nodanger"
-    dangerIconDescription=""
-    descriptionId="description-asInput24"
     disabled={false}
-    errorId="error-asInput24"
     id="asInput24"
-    inline={false}
-    isValid={true}
-    label="Fruits"
     name="fruits"
     onBlur={[Function]}
     onChange={[Function]}
@@ -4044,9 +3879,7 @@ exports[`Storyshots User Input|InputSelect basic usage 1`] = `
       ]
     }
     required={false}
-    themes={Array []}
     type="select"
-    validationMessage=""
     value="strawberry"
   >
     <option
@@ -4093,16 +3926,11 @@ exports[`Storyshots User Input|InputSelect disabled usage 1`] = `
   </label>
   <select
     aria-describedby="error-asInput28"
+    aria-invalid={false}
     aria-label="Fruits"
     className="form-control is-invalid-nodanger"
-    dangerIconDescription=""
-    descriptionId="description-asInput28"
     disabled={true}
-    errorId="error-asInput28"
     id="asInput28"
-    inline={false}
-    isValid={true}
-    label="Fruits"
     name="fruits"
     onBlur={[Function]}
     onChange={[Function]}
@@ -4116,9 +3944,7 @@ exports[`Storyshots User Input|InputSelect disabled usage 1`] = `
       ]
     }
     required={false}
-    themes={Array []}
     type="select"
-    validationMessage=""
     value="strawberry"
   >
     <option
@@ -4165,15 +3991,10 @@ exports[`Storyshots User Input|InputSelect separate labels and values 1`] = `
   </label>
   <select
     aria-describedby="error-asInput25"
+    aria-invalid={false}
     className="form-control is-invalid-nodanger"
-    dangerIconDescription=""
-    descriptionId="description-asInput25"
     disabled={false}
-    errorId="error-asInput25"
     id="asInput25"
-    inline={false}
-    isValid={true}
-    label="New England States"
     name="new-england-states"
     onBlur={[Function]}
     onChange={[Function]}
@@ -4207,9 +4028,7 @@ exports[`Storyshots User Input|InputSelect separate labels and values 1`] = `
       ]
     }
     required={false}
-    themes={Array []}
     type="select"
-    validationMessage=""
     value="RI"
   >
     <option
@@ -4266,15 +4085,10 @@ exports[`Storyshots User Input|InputSelect separate option groups 1`] = `
   </label>
   <select
     aria-describedby="error-asInput26"
+    aria-invalid={false}
     className="form-control is-invalid-nodanger"
-    dangerIconDescription=""
-    descriptionId="description-asInput26"
     disabled={false}
-    errorId="error-asInput26"
     id="asInput26"
-    inline={false}
-    isValid={true}
-    label="Northeast States"
     name="northeast-states"
     onBlur={[Function]}
     onChange={[Function]}
@@ -4350,9 +4164,7 @@ exports[`Storyshots User Input|InputSelect separate option groups 1`] = `
       ]
     }
     required={false}
-    themes={Array []}
     type="select"
-    validationMessage=""
     value="MD"
   >
     <optgroup
@@ -4457,15 +4269,10 @@ exports[`Storyshots User Input|InputSelect with disabled option 1`] = `
   </label>
   <select
     aria-describedby="error-asInput29"
+    aria-invalid={false}
     className="form-control is-invalid-nodanger"
-    dangerIconDescription=""
-    descriptionId="description-asInput29"
     disabled={false}
-    errorId="error-asInput29"
     id="asInput29"
-    inline={false}
-    isValid={true}
-    label="Fruits"
     name="fruits"
     onBlur={[Function]}
     onChange={[Function]}
@@ -4489,9 +4296,7 @@ exports[`Storyshots User Input|InputSelect with disabled option 1`] = `
       ]
     }
     required={false}
-    themes={Array []}
     type="select"
-    validationMessage=""
     value="strawberry"
   >
     <option
@@ -4535,15 +4340,10 @@ exports[`Storyshots User Input|InputSelect with validation 1`] = `
   </label>
   <select
     aria-describedby="error-asInput27"
+    aria-invalid={false}
     className="form-control is-invalid-nodanger"
-    dangerIconDescription=""
-    descriptionId="description-asInput27"
     disabled={false}
-    errorId="error-asInput27"
     id="asInput27"
-    inline={false}
-    isValid={true}
-    label="Favorite Color"
     name="color"
     onBlur={[Function]}
     onChange={[Function]}
@@ -4560,10 +4360,7 @@ exports[`Storyshots User Input|InputSelect with validation 1`] = `
       ]
     }
     required={false}
-    themes={Array []}
     type="select"
-    validationMessage=""
-    validator={[Function]}
     value=""
   >
     <option
@@ -4627,24 +4424,15 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-search"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
-      dangerIconDescription=""
-      descriptionId="description-input-search"
       disabled={false}
-      errorId="error-input-search"
       id="input-search"
-      inline={false}
-      label="Search"
       name="search"
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
-      themes={Array []}
       type="search"
-      validationMessage=""
       value="what is paragon"
     />
     <div
@@ -4668,24 +4456,15 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-email"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
-      dangerIconDescription=""
-      descriptionId="description-input-email"
       disabled={false}
-      errorId="error-input-email"
       id="input-email"
-      inline={false}
-      label="Email"
       name="email"
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
-      themes={Array []}
       type="email"
-      validationMessage=""
       value="paragon@edx.org"
     />
     <div
@@ -4709,24 +4488,15 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-url"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
-      dangerIconDescription=""
-      descriptionId="description-input-url"
       disabled={false}
-      errorId="error-input-url"
       id="input-url"
-      inline={false}
-      label="Url"
       name="url"
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
-      themes={Array []}
       type="url"
-      validationMessage=""
       value="https://edx.github.io/paragon"
     />
     <div
@@ -4750,24 +4520,15 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-tel"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
-      dangerIconDescription=""
-      descriptionId="description-input-tel"
       disabled={false}
-      errorId="error-input-tel"
       id="input-tel"
-      inline={false}
-      label="Telephone"
       name="telephone"
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
-      themes={Array []}
       type="tel"
-      validationMessage=""
       value="1-(555)-555-5555"
     />
     <div
@@ -4791,24 +4552,15 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-password"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
-      dangerIconDescription=""
-      descriptionId="description-input-password"
       disabled={false}
-      errorId="error-input-password"
       id="input-password"
-      inline={false}
-      label="Password"
       name="password"
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
-      themes={Array []}
       type="password"
-      validationMessage=""
       value="hunter2"
     />
     <div
@@ -4832,24 +4584,15 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-number"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
-      dangerIconDescription=""
-      descriptionId="description-input-number"
       disabled={false}
-      errorId="error-input-number"
       id="input-number"
-      inline={false}
-      label="Number"
       name="number"
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
-      themes={Array []}
       type="number"
-      validationMessage=""
       value={42}
     />
     <div
@@ -4873,24 +4616,15 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-datetime-local"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
-      dangerIconDescription=""
-      descriptionId="description-input-datetime-local"
       disabled={false}
-      errorId="error-input-datetime-local"
       id="input-datetime-local"
-      inline={false}
-      label="Date and time"
       name="datetime-local"
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
-      themes={Array []}
       type="datetime-local"
-      validationMessage=""
       value="2017-04-27T13:45:00"
     />
     <div
@@ -4914,24 +4648,15 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-date"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
-      dangerIconDescription=""
-      descriptionId="description-input-date"
       disabled={false}
-      errorId="error-input-date"
       id="input-date"
-      inline={false}
-      label="Date"
       name="date"
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
-      themes={Array []}
       type="date"
-      validationMessage=""
       value="2017-04-27"
     />
     <div
@@ -4955,24 +4680,15 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-month"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
-      dangerIconDescription=""
-      descriptionId="description-input-month"
       disabled={false}
-      errorId="error-input-month"
       id="input-month"
-      inline={false}
-      label="Month"
       name="month"
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
-      themes={Array []}
       type="month"
-      validationMessage=""
       value="2017-04"
     />
     <div
@@ -4996,24 +4712,15 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-week"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
-      dangerIconDescription=""
-      descriptionId="description-input-week"
       disabled={false}
-      errorId="error-input-week"
       id="input-week"
-      inline={false}
-      label="Week"
       name="week"
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
-      themes={Array []}
       type="week"
-      validationMessage=""
       value="2017-W33"
     />
     <div
@@ -5037,24 +4744,15 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-time"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
-      dangerIconDescription=""
-      descriptionId="description-input-time"
       disabled={false}
-      errorId="error-input-time"
       id="input-time"
-      inline={false}
-      label="Time"
       name="time"
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
-      themes={Array []}
       type="time"
-      validationMessage=""
       value="13:45:00"
     />
     <div
@@ -5078,24 +4776,15 @@ exports[`Storyshots User Input|InputText different textual input types 1`] = `
     <input
       aria-describedby="error-input-color"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
-      dangerIconDescription=""
-      descriptionId="description-input-color"
       disabled={false}
-      errorId="error-input-color"
       id="input-color"
-      inline={false}
-      label="Color"
       name="color"
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
-      themes={Array []}
       type="color"
-      validationMessage=""
       value="#BF472C"
     />
     <div
@@ -5123,24 +4812,15 @@ exports[`Storyshots User Input|InputText displayed inline 1`] = `
   <input
     aria-describedby="error-asInput35"
     aria-invalid={false}
-    autoComplete="on"
     className="form-control is-invalid-nodanger"
-    dangerIconDescription=""
-    descriptionId="description-asInput35"
     disabled={false}
-    errorId="error-asInput35"
     id="asInput35"
-    inline={true}
-    label="Username"
     name="username"
     onBlur={[Function]}
     onChange={[Function]}
     onKeyPress={[Function]}
-    readOnly={false}
     required={false}
-    themes={Array []}
     type="text"
-    validationMessage=""
     value="foobar"
   />
   <div
@@ -5193,24 +4873,15 @@ exports[`Storyshots User Input|InputText focus test 1`] = `
     <input
       aria-describedby="error-data"
       aria-invalid={false}
-      autoComplete="on"
       className="form-control is-invalid-nodanger"
-      dangerIconDescription=""
-      descriptionId="description-data"
       disabled={false}
-      errorId="error-data"
       id="data"
-      inline={false}
-      label="Data Input"
       name="data"
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      readOnly={false}
       required={false}
-      themes={Array []}
       type="text"
-      validationMessage=""
       value=""
     />
     <div
@@ -5242,30 +4913,15 @@ exports[`Storyshots User Input|InputText label as element 1`] = `
   <input
     aria-describedby="error-asInput33"
     aria-invalid={false}
-    autoComplete="on"
     className="form-control is-invalid-nodanger"
-    dangerIconDescription=""
-    descriptionId="description-asInput33"
     disabled={false}
-    errorId="error-asInput33"
     id="asInput33"
-    inline={false}
-    label={
-      <span
-        lang="en"
-      >
-        Element
-      </span>
-    }
     name="username"
     onBlur={[Function]}
     onChange={[Function]}
     onKeyPress={[Function]}
-    readOnly={false}
     required={false}
-    themes={Array []}
     type="text"
-    validationMessage=""
     value="Label is wrapped in language span"
   />
   <div
@@ -5292,24 +4948,15 @@ exports[`Storyshots User Input|InputText minimal usage 1`] = `
   <input
     aria-describedby="error-asInput30"
     aria-invalid={false}
-    autoComplete="on"
     className="form-control is-invalid-nodanger"
-    dangerIconDescription=""
-    descriptionId="description-asInput30"
     disabled={false}
-    errorId="error-asInput30"
     id="asInput30"
-    inline={false}
-    label="First Name"
     name="name"
     onBlur={[Function]}
     onChange={[Function]}
     onKeyPress={[Function]}
-    readOnly={false}
     required={false}
-    themes={Array []}
     type="text"
-    validationMessage=""
     value="Foo Bar"
   />
   <div
@@ -5336,26 +4983,17 @@ exports[`Storyshots User Input|InputText price with step 1`] = `
   <input
     aria-describedby="error-asInput34"
     aria-invalid={false}
-    autoComplete="on"
     className="form-control is-invalid-nodanger"
-    dangerIconDescription=""
-    descriptionId="description-asInput34"
     disabled={false}
-    errorId="error-asInput34"
     id="asInput34"
-    inline={false}
-    label="Price"
     min={0}
     name="price"
     onBlur={[Function]}
     onChange={[Function]}
     onKeyPress={[Function]}
-    readOnly={false}
     required={false}
     step={0.01}
-    themes={Array []}
     type="number"
-    validationMessage=""
     value={3.5}
   />
   <div
@@ -5382,24 +5020,16 @@ exports[`Storyshots User Input|InputText read only 1`] = `
   <input
     aria-describedby="error-asInput31"
     aria-invalid={false}
-    autoComplete="on"
     className="form-control is-invalid-nodanger"
-    dangerIconDescription=""
-    descriptionId="description-asInput31"
     disabled={false}
-    errorId="error-asInput31"
     id="asInput31"
-    inline={false}
-    label="Input State"
     name="inputState"
     onBlur={[Function]}
     onChange={[Function]}
     onKeyPress={[Function]}
     readOnly={true}
     required={false}
-    themes={Array []}
     type="text"
-    validationMessage=""
     value="Read Only"
   />
   <div
@@ -5426,26 +5056,15 @@ exports[`Storyshots User Input|InputText validation 1`] = `
   <input
     aria-describedby="error-username description-username"
     aria-invalid={false}
-    autoComplete="on"
     className="form-control is-invalid-nodanger"
-    dangerIconDescription=""
-    description="The unique name that identifies you throughout the site."
-    descriptionId="description-username"
     disabled={false}
-    errorId="error-username"
     id="username"
-    inline={false}
-    label="Username"
     name="username"
     onBlur={[Function]}
     onChange={[Function]}
     onKeyPress={[Function]}
-    readOnly={false}
     required={false}
-    themes={Array []}
     type="text"
-    validationMessage=""
-    validator={[Function]}
     value=""
   />
   <div
@@ -5478,30 +5097,15 @@ exports[`Storyshots User Input|InputText validation with danger theme 1`] = `
   <input
     aria-describedby="error-asInput32 description-asInput32"
     aria-invalid={false}
-    autoComplete="on"
     className="form-control"
-    dangerIconDescription=""
-    description="The unique name that identifies you throughout the site."
-    descriptionId="description-asInput32"
     disabled={false}
-    errorId="error-asInput32"
     id="asInput32"
-    inline={false}
-    label="Username"
     name="username"
     onBlur={[Function]}
     onChange={[Function]}
     onKeyPress={[Function]}
-    readOnly={false}
     required={false}
-    themes={
-      Array [
-        "danger",
-      ]
-    }
     type="text"
-    validationMessage=""
-    validator={[Function]}
     value=""
   />
   <div
@@ -5547,31 +5151,15 @@ exports[`Storyshots User Input|InputText with input group addons 1`] = `
       <input
         aria-describedby="error-asInput36"
         aria-invalid={false}
-        autoComplete="on"
         className="form-control is-invalid-nodanger"
-        dangerIconDescription=""
-        descriptionId="description-asInput36"
         disabled={false}
-        errorId="error-asInput36"
         id="asInput36"
-        inline={false}
-        inputGroupPrepend={
-          <div
-            className="input-group-text"
-          >
-            @
-          </div>
-        }
-        label="Username"
         name="username"
         onBlur={[Function]}
         onChange={[Function]}
         onKeyPress={[Function]}
-        readOnly={false}
         required={false}
-        themes={Array []}
         type="text"
-        validationMessage=""
         value="foobar"
       />
       <div
@@ -5605,31 +5193,15 @@ exports[`Storyshots User Input|InputText with input group addons 1`] = `
       <input
         aria-describedby="error-asInput37"
         aria-invalid={false}
-        autoComplete="on"
         className="form-control is-invalid-nodanger"
-        dangerIconDescription=""
-        descriptionId="description-asInput37"
         disabled={false}
-        errorId="error-asInput37"
         id="asInput37"
-        inline={false}
-        inputGroupAppend={
-          <div
-            className="input-group-text"
-          >
-            @example.com
-          </div>
-        }
-        label="Username"
         name="username"
         onBlur={[Function]}
         onChange={[Function]}
         onKeyPress={[Function]}
-        readOnly={false}
         required={false}
-        themes={Array []}
         type="text"
-        validationMessage=""
         value="foobar"
       />
       <div
@@ -5675,38 +5247,15 @@ exports[`Storyshots User Input|InputText with input group addons 1`] = `
       <input
         aria-describedby="error-asInput38"
         aria-invalid={false}
-        autoComplete="on"
         className="form-control is-invalid-nodanger"
-        dangerIconDescription=""
-        descriptionId="description-asInput38"
         disabled={false}
-        errorId="error-asInput38"
         id="asInput38"
-        inline={false}
-        inputGroupAppend={
-          <div
-            className="input-group-text"
-          >
-            .00
-          </div>
-        }
-        inputGroupPrepend={
-          <div
-            className="input-group-text"
-          >
-            $
-          </div>
-        }
-        label="Money"
         name="money"
         onBlur={[Function]}
         onChange={[Function]}
         onKeyPress={[Function]}
-        readOnly={false}
         required={false}
-        themes={Array []}
         type="number"
-        validationMessage=""
         value={1000}
       />
       <div
@@ -5746,30 +5295,15 @@ exports[`Storyshots User Input|InputText with input group addons 1`] = `
       <input
         aria-describedby="error-asInput39"
         aria-invalid={false}
-        autoComplete="on"
         className="form-control is-invalid-nodanger"
-        dangerIconDescription=""
-        descriptionId="description-asInput39"
         disabled={false}
-        errorId="error-asInput39"
         id="asInput39"
-        inline={false}
-        inputGroupAppend={
-          <withDeprecatedProps(Button)
-            buttonType="outline-secondary"
-            label="Go"
-          />
-        }
-        label="Search"
         name="search"
         onBlur={[Function]}
         onChange={[Function]}
         onKeyPress={[Function]}
-        readOnly={false}
         required={false}
-        themes={Array []}
         type="text"
-        validationMessage=""
         value="what is paragon"
       />
       <div
@@ -5813,46 +5347,15 @@ exports[`Storyshots User Input|InputText with input group addons 1`] = `
       <input
         aria-describedby="error-asInput40"
         aria-invalid={false}
-        autoComplete="on"
         className="form-control is-invalid-nodanger"
-        dangerIconDescription=""
-        descriptionId="description-asInput40"
         disabled={false}
-        errorId="error-asInput40"
         id="asInput40"
-        inline={false}
-        inputGroupAppend={
-          Array [
-            <div
-              className="input-group-text"
-            >
-              <withDeprecatedProps(Icon)
-                className={
-                  Array [
-                    "fa",
-                    "fa-check",
-                  ]
-                }
-                id="checkmark"
-                screenReaderText="Checkmark"
-              />
-            </div>,
-            <withDeprecatedProps(Button)
-              buttonType="outline-secondary"
-              label="Go"
-            />,
-          ]
-        }
-        label="Username"
         name="username"
         onBlur={[Function]}
         onChange={[Function]}
         onKeyPress={[Function]}
-        readOnly={false}
         required={false}
-        themes={Array []}
         type="text"
-        validationMessage=""
         value="foobar"
       />
       <div
@@ -5910,40 +5413,15 @@ exports[`Storyshots User Input|InputText with input group addons 1`] = `
       <input
         aria-describedby="error-asInput41"
         aria-invalid={false}
-        autoComplete="on"
         className="form-control is-invalid-nodanger"
-        dangerIconDescription=""
-        descriptionId="description-asInput41"
         disabled={false}
-        errorId="error-asInput41"
         id="asInput41"
-        inline={false}
-        inputGroupAppend={
-          <div
-            className="input-group-text"
-          >
-            <withDeprecatedProps(Icon)
-              className={
-                Array [
-                  "fa",
-                  "fa-check",
-                ]
-              }
-              id="checkmark"
-              screenReaderText="Checkmark"
-            />
-          </div>
-        }
-        label="Password"
         name="password"
         onBlur={[Function]}
         onChange={[Function]}
         onKeyPress={[Function]}
-        readOnly={false}
         required={false}
-        themes={Array []}
         type="text"
-        validationMessage=""
         value="secret"
       />
       <div
@@ -6119,49 +5597,16 @@ exports[`Storyshots User Input|SearchField basic usage 1`] = `
         aria-invalid={false}
         autoComplete="off"
         className="form-control is-invalid-nodanger input no-clear-btn"
-        dangerIconDescription=""
-        descriptionId="description-asInput58"
         disabled={false}
-        errorId="error-asInput58"
         id="asInput58"
-        inline={true}
-        inputGroupAppend={
-          Array [
-            <withDeprecatedProps(Button)
-              className={
-                Array [
-                  "search-btn",
-                ]
-              }
-              disabled={true}
-              inputRef={[Function]}
-              label={
-                <withDeprecatedProps(Icon)
-                  className={
-                    Array [
-                      "fa",
-                      "fa-search",
-                    ]
-                  }
-                  screenReaderText="Submit search"
-                />
-              }
-              onClick={[Function]}
-            />,
-          ]
-        }
-        label="Search:"
         name="search"
         onBlur={[Function]}
         onChange={[Function]}
         onKeyPress={[Function]}
         placeholder=""
-        readOnly={false}
         required={false}
         role="searchbox"
-        themes={Array []}
         type="search"
-        validationMessage=""
         value=""
       />
       <div
@@ -6226,49 +5671,16 @@ exports[`Storyshots User Input|SearchField with callbacks 1`] = `
         aria-invalid={false}
         autoComplete="off"
         className="form-control is-invalid-nodanger input no-clear-btn"
-        dangerIconDescription=""
-        descriptionId="description-asInput62"
         disabled={false}
-        errorId="error-asInput62"
         id="asInput62"
-        inline={true}
-        inputGroupAppend={
-          Array [
-            <withDeprecatedProps(Button)
-              className={
-                Array [
-                  "search-btn",
-                ]
-              }
-              disabled={true}
-              inputRef={[Function]}
-              label={
-                <withDeprecatedProps(Icon)
-                  className={
-                    Array [
-                      "fa",
-                      "fa-search",
-                    ]
-                  }
-                  screenReaderText="Submit search"
-                />
-              }
-              onClick={[Function]}
-            />,
-          ]
-        }
-        label="Search:"
         name="search"
         onBlur={[Function]}
         onChange={[Function]}
         onKeyPress={[Function]}
         placeholder=""
-        readOnly={false}
         required={false}
         role="searchbox"
-        themes={Array []}
         type="search"
-        validationMessage=""
         value=""
       />
       <div
@@ -6333,49 +5745,16 @@ exports[`Storyshots User Input|SearchField with custom label and screenreader te
         aria-invalid={false}
         autoComplete="off"
         className="form-control is-invalid-nodanger input no-clear-btn"
-        dangerIconDescription=""
-        descriptionId="description-asInput63"
         disabled={false}
-        errorId="error-asInput63"
         id="asInput63"
-        inline={true}
-        inputGroupAppend={
-          Array [
-            <withDeprecatedProps(Button)
-              className={
-                Array [
-                  "search-btn",
-                ]
-              }
-              disabled={true}
-              inputRef={[Function]}
-              label={
-                <withDeprecatedProps(Icon)
-                  className={
-                    Array [
-                      "fa",
-                      "fa-search",
-                    ]
-                  }
-                  screenReaderText="Enviar búsqueda"
-                />
-              }
-              onClick={[Function]}
-            />,
-          ]
-        }
-        label="Buscar:"
         name="search"
         onBlur={[Function]}
         onChange={[Function]}
         onKeyPress={[Function]}
         placeholder=""
-        readOnly={false}
         required={false}
         role="searchbox"
-        themes={Array []}
         type="search"
-        validationMessage=""
         value=""
       />
       <div
@@ -6440,49 +5819,16 @@ exports[`Storyshots User Input|SearchField with placeholder 1`] = `
         aria-invalid={false}
         autoComplete="off"
         className="form-control is-invalid-nodanger input no-clear-btn"
-        dangerIconDescription=""
-        descriptionId="description-asInput59"
         disabled={false}
-        errorId="error-asInput59"
         id="asInput59"
-        inline={true}
-        inputGroupAppend={
-          Array [
-            <withDeprecatedProps(Button)
-              className={
-                Array [
-                  "search-btn",
-                ]
-              }
-              disabled={true}
-              inputRef={[Function]}
-              label={
-                <withDeprecatedProps(Icon)
-                  className={
-                    Array [
-                      "fa",
-                      "fa-search",
-                    ]
-                  }
-                  screenReaderText="Submit search"
-                />
-              }
-              onClick={[Function]}
-            />,
-          ]
-        }
-        label="Search:"
         name="search"
         onBlur={[Function]}
         onChange={[Function]}
         onKeyPress={[Function]}
         placeholder="Search"
-        readOnly={false}
         required={false}
         role="searchbox"
-        themes={Array []}
         type="search"
-        validationMessage=""
         value=""
       />
       <div
@@ -6547,70 +5893,16 @@ exports[`Storyshots User Input|SearchField with value 1`] = `
         aria-invalid={false}
         autoComplete="off"
         className="form-control is-invalid-nodanger input"
-        dangerIconDescription=""
-        descriptionId="description-asInput61"
         disabled={false}
-        errorId="error-asInput61"
         id="asInput61"
-        inline={true}
-        inputGroupAppend={
-          Array [
-            <withDeprecatedProps(Button)
-              className={
-                Array [
-                  "clear-btn ml-1",
-                ]
-              }
-              label={
-                <small>
-                  <withDeprecatedProps(Icon)
-                    className={
-                      Array [
-                        "fa fa-times",
-                      ]
-                    }
-                    id="icon-SearchField60"
-                    screenReaderText="Clear search"
-                  />
-                </small>
-              }
-              onClick={[Function]}
-            />,
-            <withDeprecatedProps(Button)
-              className={
-                Array [
-                  "search-btn border-left",
-                ]
-              }
-              disabled={false}
-              inputRef={[Function]}
-              label={
-                <withDeprecatedProps(Icon)
-                  className={
-                    Array [
-                      "fa",
-                      "fa-search",
-                    ]
-                  }
-                  screenReaderText="Submit search"
-                />
-              }
-              onClick={[Function]}
-            />,
-          ]
-        }
-        label="Search:"
         name="search"
         onBlur={[Function]}
         onChange={[Function]}
         onKeyPress={[Function]}
         placeholder="Search"
-        readOnly={false}
         required={false}
         role="searchbox"
-        themes={Array []}
         type="search"
-        validationMessage=""
         value="foobar"
       />
       <div
@@ -6687,30 +5979,13 @@ exports[`Storyshots User Input|Textarea label as element 1`] = `
     aria-describedby="error-asInput68"
     aria-invalid={false}
     className="form-control is-invalid-nodanger"
-    dangerIconDescription=""
-    descriptionId="description-asInput68"
     disabled={false}
-    errorId="error-asInput68"
     id="asInput68"
-    inline={false}
-    label={
-      <span
-        lang="en"
-      >
-        Element
-      </span>
-    }
     name="username"
     onBlur={[Function]}
     onChange={[Function]}
     onKeyPress={[Function]}
     required={false}
-    themes={
-      Array [
-        "danger",
-      ]
-    }
-    validationMessage=""
     value="Label is wrapped in language span"
   />
   <div
@@ -6738,24 +6013,13 @@ exports[`Storyshots User Input|Textarea minimal usage 1`] = `
     aria-describedby="error-asInput65"
     aria-invalid={false}
     className="form-control is-invalid-nodanger"
-    dangerIconDescription=""
-    descriptionId="description-asInput65"
     disabled={false}
-    errorId="error-asInput65"
     id="asInput65"
-    inline={false}
-    label="First Name"
     name="name"
     onBlur={[Function]}
     onChange={[Function]}
     onKeyPress={[Function]}
     required={false}
-    themes={
-      Array [
-        "danger",
-      ]
-    }
-    validationMessage=""
     value="Foo Bar"
   />
   <div
@@ -6783,24 +6047,13 @@ exports[`Storyshots User Input|Textarea scrollable 1`] = `
     aria-describedby="error-asInput66"
     aria-invalid={false}
     className="form-control is-invalid-nodanger"
-    dangerIconDescription=""
-    descriptionId="description-asInput66"
     disabled={false}
-    errorId="error-asInput66"
     id="asInput66"
-    inline={false}
-    label="Information"
     name="name"
     onBlur={[Function]}
     onChange={[Function]}
     onKeyPress={[Function]}
     required={false}
-    themes={
-      Array [
-        "danger",
-      ]
-    }
-    validationMessage=""
     value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   />
   <div
@@ -6828,26 +6081,13 @@ exports[`Storyshots User Input|Textarea validation 1`] = `
     aria-describedby="error-asInput67 description-asInput67"
     aria-invalid={false}
     className="form-control is-invalid-nodanger"
-    dangerIconDescription=""
-    description="The unique name that identifies you throughout the site."
-    descriptionId="description-asInput67"
     disabled={false}
-    errorId="error-asInput67"
     id="asInput67"
-    inline={false}
-    label="Username"
     name="username"
     onBlur={[Function]}
     onChange={[Function]}
     onKeyPress={[Function]}
     required={false}
-    themes={
-      Array [
-        "danger",
-      ]
-    }
-    validationMessage=""
-    validator={[Function]}
     value=""
   />
   <div

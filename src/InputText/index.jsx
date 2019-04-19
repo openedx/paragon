@@ -1,18 +1,14 @@
 import React from 'react';
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-
-import asInput, { inputProps, defaultProps } from '../asInput';
+import asInput from '../asInput';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
 
 function Text(props) {
   const {
     className,
-    describedBy,
     inputRef,
-    isValid,
     type,
     ...others
   } = props;
@@ -20,35 +16,26 @@ function Text(props) {
   return (
     <input
       {...others}
-      className={classNames(className)}
+      className={className}
       type={type || 'text'}
-      aria-describedby={describedBy}
-      aria-invalid={!isValid}
       ref={inputRef}
     />
   );
 }
 
-const textPropTypes = {
-  type: PropTypes.string,
-  describedBy: PropTypes.string,
-  isValid: PropTypes.bool,
-  autoComplete: PropTypes.string,
+
+Text.propTypes = {
+  className: PropTypes.string,
   inputRef: PropTypes.func,
-  readOnly: PropTypes.bool,
+  type: PropTypes.string,
 };
 
-const textDefaultProps = {
+Text.defaultProps = {
+  className: undefined,
+  inputRef: undefined,
   type: 'text',
-  describedBy: '',
-  isValid: true,
-  autoComplete: 'on',
-  inputRef: () => {},
-  readOnly: false,
 };
 
-Text.propTypes = { ...textPropTypes, ...inputProps };
-Text.defaultProps = { ...textDefaultProps, ...defaultProps };
 
 const InputText = asInput(withDeprecatedProps(Text, 'InputText', {
   className: {
