@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import asInput from '../asInput';
+import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
+
 
 class Check extends React.Component {
   constructor(props) {
@@ -30,33 +32,44 @@ class Check extends React.Component {
   }
 
   render() {
-    const props = { ...this.props };
-
+    const {
+      inputRef,
+      ...others
+    } = this.props;
     return (
       <input
-        id={props.id}
-        className={props.className}
+        {...others}
         type="checkbox"
-        name={props.name}
+        ref={inputRef}
         checked={this.state.checked}
         aria-checked={this.state.checked}
         onChange={this.onChange}
-        disabled={props.disabled}
       />
     );
   }
 }
 
+
 Check.propTypes = {
   checked: PropTypes.bool,
   onChange: PropTypes.func,
+  inputRef: PropTypes.func,
 };
 
 Check.defaultProps = {
   checked: false,
   onChange: () => {},
+  inputRef: undefined,
 };
 
-const CheckBox = asInput(Check, 'checkbox', false);
+
+const CheckBox = asInput(withDeprecatedProps(Check, 'Checkbox', {
+  className: {
+    deprType: DEPR_TYPES.FORMAT,
+    expect: value => typeof value === 'string',
+    transform: value => (Array.isArray(value) ? value.join(' ') : value),
+    message: 'It should be a string.',
+  },
+}), 'checkbox', false);
 
 export default CheckBox;
