@@ -28,7 +28,7 @@ describe('<CheckBox />', () => {
 
   it('check that callback function is triggered when clicked', () => {
     const spy = jest.fn();
-    const wrapper = mount(<CheckBox name="checkbox" label="check me out!"onChange={spy} />);
+    const wrapper = mount(<CheckBox name="checkbox" label="check me out!" onChange={spy} />);
 
     expect(spy).toHaveBeenCalledTimes(0);
     // check
