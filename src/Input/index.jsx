@@ -29,24 +29,47 @@ const renderOptions = options => options.map(({
 });
 
 
-// More on forwarding refs here:
-// https://reactjs.org/docs/forwarding-refs.html#displaying-a-custom-name-in-devtools
+class Input extends React.Component {
+  constructor(props) {
+    super(props);
 
-const Input = React.forwardRef((props, ref) => {
-  const {
-    type, className, options, ...attributes
-  } = props;
-  const htmlTag = getHTMLTagForType(type);
-  const htmlProps = {
-    className: classNames(getClassNameForType(type), className),
-    type: htmlTag === 'input' ? type : undefined,
-    ...attributes,
-    ref,
-  };
-  const htmlChildren = type === 'select' ? renderOptions(options) : null;
+    this.innerRef = props.innerRef; // eslint-disable-line react/prop-types
+    if (process.env.NODE_ENV === 'development' && !this.innerRef) {
+      this.innerRef = React.createRef();
+    }
+  }
 
-  return React.createElement(htmlTag, htmlProps, htmlChildren);
-});
+  componentDidMount() {
+    this.checkHasLabel();
+  }
+
+  checkHasLabel() {
+    if (process.env.NODE_ENV !== 'development') return;
+
+    // eslint-disable-next-line react/prop-types
+    const hasLabel = (this.innerRef.current.labels.length > 0) || this.props['aria-label'];
+    if (hasLabel) return;
+
+    // eslint-disable-next-line no-console
+    if (console) console.warn('Input[a11y]: There is no associated label for this Input');
+  }
+
+  render() {
+    const {
+      type, className, options, innerRef, ...attributes // eslint-disable-line react/prop-types
+    } = this.props;
+    const htmlTag = getHTMLTagForType(type);
+    const htmlProps = {
+      className: classNames(getClassNameForType(type), className),
+      type: htmlTag === 'input' ? type : undefined,
+      ...attributes,
+      ref: this.innerRef,
+    };
+    const htmlChildren = type === 'select' ? renderOptions(options) : null;
+
+    return React.createElement(htmlTag, htmlProps, htmlChildren);
+  }
+}
 
 
 Input.propTypes = {
@@ -70,4 +93,8 @@ Input.defaultProps = {
 };
 
 
-export default Input;
+// Using React.forwardRef – more on forwarding refs here:
+// https://reactjs.org/docs/forwarding-refs.html
+
+// eslint-disable-next-line react/no-multi-comp
+export default React.forwardRef((props, ref) => <Input innerRef={ref} {...props} />);
