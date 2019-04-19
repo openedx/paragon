@@ -1,45 +1,37 @@
 import React from 'react';
-import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
-import asInput, { inputProps } from '../asInput';
+import asInput from '../asInput';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
+
 
 function Text(props) {
   const {
     className,
-    describedBy,
     inputRef,
-    isValid,
-    // Pull these out from props so html attrs can be passed through
-    // eslint-disable no-unused-vars
-    validator,
-    themes,
-    inline,
-    inputGroupPrepend,
-    inputGroupAppend,
-    label,
-    dangerIconDescription,
-    description,
-    validationMessage,
-    errorId,
-    descriptionId,
-    // eslint-enable no-unused-vars
     ...others
   } = props;
 
   return (
     <textarea
       {...others}
-      className={classNames(className)}
-      aria-describedby={describedBy}
-      aria-invalid={!isValid}
+      className={className}
       ref={inputRef}
-      themes={['danger']}
     />
   );
 }
 
-Text.propTypes = inputProps;
+
+Text.propTypes = {
+  className: PropTypes.string,
+  inputRef: PropTypes.func,
+};
+
+Text.defaultProps = {
+  className: undefined,
+  inputRef: undefined,
+};
+
 
 const TextArea = asInput(withDeprecatedProps(Text, 'TextArea', {
   className: {
