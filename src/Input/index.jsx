@@ -3,69 +3,74 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 
-const getHTMLTagForType = (type) => {
-  if (type === 'select' || type === 'textarea') return type;
-  return 'input';
-};
-
-const getClassNameForType = (inputType) => {
-  if (inputType === 'file') return 'form-control-file';
-  if (inputType === 'checkbox') return 'form-check-input';
-  if (inputType === 'radio') return 'form-check-input';
-  return 'form-control';
-};
-
-const renderOptions = options => options.map(({
-  value, label, group, ...attributes
-}) => {
-  if (group) {
-    return (
-      <optgroup key={`optgroup-${label}`} label={label} {...attributes}>
-        {renderOptions(group)}
-      </optgroup>
-    );
-  }
-  return <option key={value} value={value} {...attributes}>{label}</option>;
-});
-
-
 class Input extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.innerRef = props.innerRef; // eslint-disable-line react/prop-types
-    if (process.env.NODE_ENV === 'development' && !this.innerRef) {
-      this.innerRef = React.createRef();
+  componentDidMount() {
+    if (process.env.NODE_ENV === 'development') {
+      this.checkHasLabel();
     }
   }
 
-  componentDidMount() {
-    this.checkHasLabel();
+  getHTMLTagForType() {
+    const { type } = this.props;
+    if (type === 'select' || type === 'textarea') return type;
+    return 'input';
+  }
+
+  getClassNameForType() {
+    const { type } = this.props;
+    if (type === 'file') return 'form-control-file';
+    if (type === 'checkbox') return 'form-check-input';
+    if (type === 'radio') return 'form-check-input';
+    return 'form-control';
+  }
+
+  getRef(forwardedRef) {
+    if (process.env.NODE_ENV !== 'development') return forwardedRef;
+    if (forwardedRef) return forwardedRef;
+    if (!this.innerRef) this.innerRef = React.createRef();
+    return this.innerRef;
   }
 
   checkHasLabel() {
-    if (process.env.NODE_ENV !== 'development') return;
+    const htmlNode = this.getRef().current;
 
-    // eslint-disable-next-line react/prop-types
-    const hasLabel = (this.innerRef.current.labels.length > 0) || this.props['aria-label'];
-    if (hasLabel) return;
+    if (htmlNode.labels.length > 0) return;
+    if (htmlNode.getAttribute('aria-label') !== null) return;
 
     // eslint-disable-next-line no-console
     if (console) console.warn('Input[a11y]: There is no associated label for this Input');
+  }
+
+  renderOptions(options) {
+    return options.map((option) => {
+      const {
+        value, label, group, ...attributes
+      } = option;
+
+      if (group) {
+        return (
+          <optgroup key={`optgroup-${label}`} label={label} {...attributes}>
+            {this.renderOptions(group)}
+          </optgroup>
+        );
+      }
+      return <option key={value} value={value} {...attributes}>{label}</option>;
+    }, this);
   }
 
   render() {
     const {
       type, className, options, innerRef, ...attributes // eslint-disable-line react/prop-types
     } = this.props;
-    const htmlTag = getHTMLTagForType(type);
+
+    const htmlTag = this.getHTMLTagForType();
     const htmlProps = {
-      className: classNames(getClassNameForType(type), className),
+      className: classNames(this.getClassNameForType(), className),
       type: htmlTag === 'input' ? type : undefined,
       ...attributes,
-      ref: this.innerRef,
+      ref: this.getRef(innerRef),
     };
-    const htmlChildren = type === 'select' ? renderOptions(options) : null;
+    const htmlChildren = type === 'select' ? this.renderOptions(options) : null;
 
     return React.createElement(htmlTag, htmlProps, htmlChildren);
   }
