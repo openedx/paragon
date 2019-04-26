@@ -17,11 +17,15 @@ class Input extends React.Component {
   }
 
   getClassNameForType() {
-    const { type } = this.props;
-    if (type === 'file') return 'form-control-file';
-    if (type === 'checkbox') return 'form-check-input';
-    if (type === 'radio') return 'form-check-input';
-    return 'form-control';
+    switch (this.props.type) {
+      case 'file':
+        return 'form-control-file';
+      case 'checkbox':
+      case 'radio':
+        return 'form-check-input';
+      default:
+        return 'form-control';
+    }
   }
 
   getRef(forwardedRef) {
@@ -78,15 +82,40 @@ class Input extends React.Component {
 
 
 Input.propTypes = {
-  type: PropTypes.string.isRequired,
+  type: PropTypes.oneOf([
+    'textarea',
+    'select',
+    'checkbox',
+    'color',
+    'date',
+    'datetime',
+    'datetime-local',
+    'email',
+    'file',
+    'hidden',
+    'image',
+    'month',
+    'number',
+    'password',
+    'radio',
+    'range',
+    'reset',
+    'search',
+    'submit',
+    'tel',
+    'text',
+    'time',
+    'url',
+    'week',
+  ]).isRequired,
   className: PropTypes.string,
   options: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string,
-    value: PropTypes.string,
+    label: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     disabled: PropTypes.bool,
     group: PropTypes.arrayOf(PropTypes.shape({
-      label: PropTypes.string,
-      value: PropTypes.string,
+      label: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       disabled: PropTypes.bool,
     })),
   })),
@@ -97,9 +126,6 @@ Input.defaultProps = {
   options: [],
 };
 
-
-// Using React.forwardRef – more on forwarding refs here:
-// https://reactjs.org/docs/forwarding-refs.html
 
 // eslint-disable-next-line react/no-multi-comp
 export default React.forwardRef((props, ref) => <Input innerRef={ref} {...props} />);
