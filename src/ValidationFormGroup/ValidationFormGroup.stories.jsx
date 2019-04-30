@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import ValidationFormGroup from './index';
+import Input from '../Input';
 import README from './README.md';
 
 storiesOf('User Input|Validation Form Group', module)
@@ -12,8 +13,7 @@ storiesOf('User Input|Validation Form Group', module)
       helpText="This is your name."
     >
       <label htmlFor="firstName">First Name</label>
-      <input
-        className="form-control"
+      <Input
         type="text"
         id="firstName"
         name="first-name"
@@ -29,8 +29,7 @@ storiesOf('User Input|Validation Form Group', module)
       invalidMessage="Wrong!"
     >
       <label htmlFor="firstName">First Name</label>
-      <input
-        className="form-control"
+      <Input
         type="text"
         id="firstName"
         name="first-name"
@@ -46,8 +45,7 @@ storiesOf('User Input|Validation Form Group', module)
       validMessage="What a nice name!"
     >
       <label htmlFor="firstName">First Name</label>
-      <input
-        className="form-control"
+      <Input
         type="text"
         id="firstName"
         name="first-name"
