@@ -3849,6 +3849,105 @@ exports[`Storyshots User Input|Fieldset invalid with danger theme 1`] = `
 </form>
 `;
 
+exports[`Storyshots User Input|Input minimal usage 1`] = `
+<div>
+  <div
+    className="form-group"
+  >
+    <select
+      className="form-control"
+      defaultValue="Foo Bar"
+    >
+      <option
+        value="Foo Bar"
+      >
+        Foo Bar
+      </option>
+      <option
+        value="Foos Bar"
+      >
+        Bar foo
+      </option>
+      <option
+        value="Foo sBar"
+      >
+        FoBaro
+      </option>
+      <option
+        value="Foo ssBar"
+      >
+        Farboo
+      </option>
+      <optgroup
+        label="But there is more"
+      >
+        <option
+          value="vFoo Bar"
+        >
+          Foov Bar
+        </option>
+        <option
+          value="vFoos Bar"
+        >
+          Barv foo
+        </option>
+        <option
+          value="vFoo sBar"
+        >
+          FoBarov
+        </option>
+        <option
+          value="vFoo ssBar"
+        >
+          Farboov
+        </option>
+      </optgroup>
+    </select>
+  </div>
+  <div
+    className="form-group"
+  >
+    <textarea
+      className="form-control"
+      defaultValue="Hammock semiotics pok pok jianbing venmo, crucifix taiyaki stumptown irony ennui knausgaard bitters synth slow-carb iPhone."
+    />
+  </div>
+  <div
+    className="form-group"
+  >
+    <input
+      className="form-control"
+      defaultValue="Some text input"
+      type="text"
+    />
+  </div>
+  <div
+    className="form-group"
+  >
+    <input
+      className="form-control"
+      type="date"
+    />
+  </div>
+  <div
+    className="form-group"
+  >
+    <input
+      className="form-control-file"
+      type="file"
+    />
+  </div>
+  <div
+    className="form-group"
+  >
+    <input
+      className="form-control"
+      type="range"
+    />
+  </div>
+</div>
+`;
+
 exports[`Storyshots User Input|InputSelect basic usage 1`] = `
 <div
   className="form-group"

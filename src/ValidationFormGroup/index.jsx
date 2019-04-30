@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
+import Input from '../Input';
 
 const propTypes = {
   for: PropTypes.string.isRequired,
@@ -39,7 +39,7 @@ function ValidationFormGroup(props) {
 
   const renderChildren = () => React.Children.map(children, (child) => {
     // Any non-user input element should pass through unmodified
-    if (['input', 'textarea', 'select'].indexOf(child.type) === -1) return child;
+    if (['input', 'textarea', 'select', Input].indexOf(child.type) === -1) return child;
 
     // Add validation class names and describedby values to input element
     return React.cloneElement(child, {
