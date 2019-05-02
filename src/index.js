@@ -8,6 +8,7 @@ import Dropdown from './Dropdown';
 import Fieldset from './Fieldset';
 import Hyperlink from './Hyperlink';
 import Icon from './Icon';
+import Input from './Input';
 import InputSelect from './InputSelect';
 import InputText from './InputText';
 import ListBox from './ListBox';
@@ -50,6 +51,7 @@ export {
   Fieldset,
   Hyperlink,
   Icon,
+  Input,
   InputSelect,
   InputText,
   Large,
