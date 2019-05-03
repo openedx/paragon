@@ -23,7 +23,7 @@ class Modal extends React.Component {
     this.el = document.createElement('div');
 
     // Sets true for IE11, false otherwise: https://stackoverflow.com/a/22082397/6620612
-    this.isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+    this.isIE11 = !!global.MSInputMethodContext && !!document.documentMode;
 
     this.state = {
       open: props.open,
