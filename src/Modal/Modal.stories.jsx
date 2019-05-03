@@ -16,60 +16,52 @@ class ModalWrapper extends React.Component {
     super(props);
 
     this.openModal = this.openModal.bind(this);
-    this.resetModalWrapperState = this.resetModalWrapperState.bind(this);
-
-    this.state = { open: false };
+    this.closeModal = this.closeModal.bind(this);
+    this.state = { open: true };
   }
 
   openModal() {
     this.setState({ open: true });
   }
 
-  resetModalWrapperState() {
-    this.setState({ open: false });
-    this.button.focus();
+  closeModal() {
+   this.setState({ open: false }); 
   }
 
   render() {
     return (
       <div>
+        <Button className="btn-primary" onClick={this.openModal}>Open Modal</Button>
         <Modal
+          title="Modal title"
+          ariaLabel="Test Modal"
+          closeButtonAriaLabel="Close"
+          onClickClose={this.closeModal}
           open={this.state.open}
-          title={this.props.title}
-          body={this.props.body}
-          parentSelector={this.props.parentSelector}
-          onClose={this.resetModalWrapperState}
-        />
-        <Button
-          onClick={this.openModal}
-          label="Click me to open a modal!"
-          buttonType="light"
-          inputRef={(input) => { this.button = input; }}
-        />
+        >
+          <Modal.Body>
+            Body content and forms and stuff.
+          </Modal.Body>
+          <Modal.Footer>
+            <Button className="btn-primary">
+              Okay
+            </Button>
+            <Button onClick={this.closeModal} className="btn-outline-primary">
+              Cancel
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </div>
     );
   }
 }
 
-ModalWrapper.propTypes = {
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
-  body: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
-  parentSelector: PropTypes.string,
-};
-
-ModalWrapper.defaultProps = {
-  parentSelector: 'body',
-};
 
 storiesOf('Modal', module)
   .addParameters({ info: { text: README } })
   .add('basic usage', () => (
-    <Modal
-      open
-      title="Modal title."
-      body="Modal body."
-      onClose={() => {}}
-    />
+    <ModalWrapper>
+    </ModalWrapper>
   ))
   .add('configurable buttons', () => (
     <Modal

@@ -1,275 +1,257 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
+import FocusLock, { AutoFocusInside } from 'react-focus-lock';
 import PropTypes from 'prop-types';
 
-import Button from '../Button';
-import Icon from '../Icon';
-import newId from '../utils/newId';
-import Variant from '../utils/constants';
-
-const closeModalButtonId = newId('paragonCloseModalButton');
 
 class Modal extends React.Component {
   constructor(props) {
     super(props);
 
-    this.close = this.close.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.setFirstFocusableElement = this.setFirstFocusableElement.bind(this);
-    this.setCloseButton = this.setCloseButton.bind(this);
-
-    this.headerId = newId();
-    this.el = document.createElement('div');
+    this.handleModalClick = this.handleModalClick.bind(this);
 
     // Sets true for IE11, false otherwise: https://stackoverflow.com/a/22082397/6620612
     this.isIE11 = !!global.MSInputMethodContext && !!document.documentMode;
-
-    this.state = {
-      open: props.open,
-    };
   }
 
-  componentDidMount() {
-    if (this.firstFocusableElement) {
-      this.firstFocusableElement.focus();
-    }
-    this.parentElement = document.querySelector(this.props.parentSelector);
-    if (this.parentElement === null) {
-      throw new Error(`Modal received invalid parentSelector: ${this.props.parentSelector}, no matching element found`);
-    }
-    this.parentElement.appendChild(this.el);
+  componentWillReceiveProps() {
+    // If props would be open, body should get class .modal-open
+    // document.body.classList.add('modal-open');
   }
 
-  componentWillReceiveProps({ open }) {
-    if (open !== this.state.open) {
-      this.setState({ open });
-    }
-  }
-
-  componentDidUpdate(prevState) {
-    if (this.state.open && !prevState.open) {
-      this.firstFocusableElement.focus();
+  componentDidUpdate() {
+    const bodyHasModalOpenClass = document.body.classList.contains('modal-open');
+    if (this.props.open && !bodyHasModalOpenClass) {
+      document.body.classList.add('modal-open');
+    } else if (!this.props.open && bodyHasModalOpenClass) {
+      document.body.classList.remove('modal-open');
     }
   }
 
   componentWillUnmount() {
-    ReactDOM.unmountComponentAtNode(this.parentElement);
-  }
-
-  setFirstFocusableElement(input) {
-    this.firstFocusableElement = input;
-  }
-
-  setCloseButton(input) {
-    this.closeButton = input;
-  }
-
-  getVariantIconClassName() {
-    const { variant } = this.props;
-    let variantIconClassName;
-
-    switch (variant.status) {
-      case Variant.status.WARNING:
-        variantIconClassName = classNames(
-          'fa',
-          'fa-exclamation-triangle',
-          'fa-3x',
-          `text-${variant.status.toLowerCase()}`,
-        );
-        break;
-      default:
-        break;
-    }
-
-    return variantIconClassName;
-  }
-
-  getVariantGridBody(body) {
-    const { variant } = this.props;
-
-    return (
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-10">
-            <div>
-              {body}
-            </div>
-          </div>
-          <div className="col-md-2">
-            <Icon
-              id={newId(`Modal-${variant.status}`)}
-              className={[
-                this.getVariantIconClassName(),
-              ]}
-            />
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  close(e) {
-    if (e) {
-      e.stopPropagation();
-    }
-
-    if (!e || e.target.classList.contains('js-close-modal-on-click')) {
-      this.setState({ open: false });
-      this.props.onClose();
-    }
+    // Remove portal
+    // ReactDOM.unmountComponentAtNode(this.parentElement); ???
   }
 
   handleKeyDown(e) {
     if (e.key === 'Escape') {
-      this.close();
-    } else if (e.key === 'Tab') {
-      if (e.shiftKey) {
-        if (e.target === this.firstFocusableElement) {
-          e.preventDefault();
-          this.closeButton.focus();
-        }
-      } else if (e.target === this.closeButton) {
-        e.preventDefault();
-        this.firstFocusableElement.focus();
-      }
+      e.preventDefault();
+      e.stopPropagation();
+      this.props.onClickClose(e);
     }
   }
 
-  renderButtons() {
-    return this.props.buttons.map((button) => {
-      // button is either a Button component that we want clone or a set of props
-      const buttonProps = button.type === Button ? button.props : button;
+  handleModalClick(e) {
+    if (e.target === e.currentTarget) {
+      this.props.onClickClose(e);
+    }
+  }
 
-      return (
-        <Button
-          {...buttonProps}
-          key={buttonProps.label}
-          onKeyDown={this.handleKeyDown}
+  renderModalBackdrop() {
+    const { open } = this.props;
+
+    if (!open) return null;
+
+    return (
+      <div
+        className={classNames('modal-backdrop', {
+          show: open,
+          fade: !open,
+        })}
+      />
+    );
+  }
+
+  renderModalHeader() {
+    if (this.props.renderModalHeader) {
+      return this.props.renderModalHeader();
+    }
+
+    return (
+      <Modal.Header>
+        {this.props.headerIcon}
+        <Modal.Title>
+          {this.props.title}
+        </Modal.Title>
+        <Modal.CloseButton
+          ariaLabel={this.props.closeButtonAriaLabel}
+          onClick={this.props.onClickClose}
         />
-      );
-    });
-  }
-
-  renderBody() {
-    const { variant } = this.props;
-    let { body } = this.props;
-
-    if (typeof body === 'string') {
-      body = <p>{body}</p>;
-    }
-
-    if (variant.status) {
-      body = this.getVariantGridBody(body);
-    }
-    return body;
+      </Modal.Header>
+    );
   }
 
   renderModal() {
-    const { open } = this.state;
-    const { renderHeaderCloseButton } = this.props;
-
+    const {
+      open,
+      className,
+      ariaLabel,
+      children,
+      returnFocusOnClose,
+    } = this.props;
     return (
       <div>
+        {this.renderModalBackdrop()}
+
         <div
-          className={classNames({
-            'modal-backdrop': open,
-            show: open,
-            fade: !open,
+          className={classNames('modal', className, {
+            'd-block': open,
+            fade: !open
           })}
-          role="presentation"
-        />
-        <div
-          className={classNames(
-            'modal',
-            'js-close-modal-on-click',
-            {
-              show: open,
-              fade: !open,
-              'd-block': open,
-              'is-ie11': this.isIE11,
-            },
-          )}
-          role="presentation"
-          onClick={this.close}
+          onClick={this.handleModalClick}
         >
-          <div
-            className={classNames({
-              'modal-dialog': open,
-            })}
-            role="dialog"
-            aria-modal
-            aria-labelledby={this.headerId}
-            {...(!renderHeaderCloseButton ? { tabIndex: '-1' } : {})}
-            {...(!renderHeaderCloseButton ? { ref: this.setFirstFocusableElement } : {})}
-          >
-            <div className="modal-content">
-              <div className="modal-header">
-                <h2 className="modal-title" id={this.headerId}>{this.props.title}</h2>
-                { renderHeaderCloseButton &&
-                <Button
-                  label={<Icon className={['fa', 'fa-times', 'js-close-modal-on-click']} />}
-                  className={['p-1', 'js-close-modal-on-click']}
-                  aria-labelledby={closeModalButtonId}
-                  onClick={this.close}
-                  inputRef={this.setFirstFocusableElement}
-                  onKeyDown={this.handleKeyDown}
-                />
-              }
-              </div>
-              <div className="modal-body">
-                {this.renderBody()}
-              </div>
-              <div className="modal-footer">
-                {this.renderButtons()}
-                <Button
-                  label={this.props.closeText}
-                  buttonType="secondary"
-                  className={['js-close-modal-on-click']}
-                  onClick={this.close}
-                  inputRef={this.setCloseButton}
-                  onKeyDown={this.handleKeyDown}
-                />
+          <FocusLock disabled={!open} returnFocus={returnFocusOnClose}>
+            <div
+              className="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+              role="dialog"
+              aria-modal
+              aria-label={ariaLabel}
+              onKeyDown={this.handleKeyDown}
+            >
+              <div className="modal-content">
+                {this.renderModalHeader()}
+                <AutoFocusInside>
+                  {children}
+                </AutoFocusInside>
               </div>
             </div>
-          </div>
+          </FocusLock>
         </div>
       </div>
     );
   }
 
   render() {
-    return ReactDOM.createPortal(
-      this.renderModal(),
-      this.el,
-    );
+    return ReactDOM.createPortal(this.renderModal(), this.props.portalNode);
   }
 }
 
+
+/**
+ * The functional components that follow serve for
+ * ease of development, removing the need to recall
+ * class names and structure of the modal.
+ *
+ * <Modal>
+ *   <Modal.Header>
+ *     <Modal.Title />
+ *     <Modal.CloseButton />
+ *   </Modal.Header>
+ *
+ *   <Modal.Body />
+ *
+ *   <Modal.Footer />
+ * </<Modal>
+ */
+
+const commonProps = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+};
+const commonDefaultProps = {
+  className: undefined,
+};
+
+
+Modal.Header = ({ children, className, ...others }) => (
+  <div className={classNames('modal-header', className)}>{children}</div>
+);
+
+Modal.Header.propTypes = commonProps;
+Modal.Header.defaultProps = commonDefaultProps;
+
+
+Modal.Title = props => {
+  const { children, tag, className, ...others } = props;
+  return React.createElement(tag, {
+      className: classNames('modal-title', className),
+      ...others,
+    },
+    children,
+  );
+};
+
+Modal.Title.propTypes = {
+  tag: PropTypes.string,
+  ...commonProps,
+};
+
+Modal.Title.defaultProps = {
+  tag: 'h1',
+  ...commonDefaultProps,
+};
+
+
+Modal.CloseButton = props => {
+  const { className, ariaLabel, onClick, ...others} = props;
+  return (
+    <button
+      className={classNames('close', className)}
+      aria-label={ariaLabel}
+      {...others}
+      onClick={onClick}
+    >
+      <span aria-hidden="true">×</span>
+    </button>
+  );
+};
+
+Modal.CloseButton.propTypes = {
+  ariaLabel: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  className: PropTypes.string,
+};
+
+Modal.CloseButton.defaultProps = {
+  className: undefined,
+};
+
+
+Modal.Body = ({ children, className, ...others }) => (
+  <div className={classNames('modal-body', className)}>
+    {children}
+  </div>
+);
+
+Modal.Body.propTypes = commonProps;
+Modal.Body.defaultProps = commonDefaultProps;
+
+
+Modal.Footer = ({ children, className, ...others }) => (
+  <div className={classNames('modal-footer', className)}>
+    {children}
+  </div>
+);
+
+Modal.Footer.propTypes = commonProps;
+Modal.Footer.defaultProps = commonDefaultProps;
+
+
+
 Modal.propTypes = {
   open: PropTypes.bool,
-  parentSelector: PropTypes.string,
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
-  body: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
-  buttons: PropTypes.arrayOf(PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.object, // TODO: Only accept nodes in the future
-  ])),
-  closeText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  onClose: PropTypes.func.isRequired,
-  variant: PropTypes.shape({
-    status: PropTypes.string,
-  }),
-  renderHeaderCloseButton: PropTypes.bool,
+  title: PropTypes.node.isRequired,
+  children: PropTypes.node,
+  className: PropTypes.string,
+  ariaLabel: PropTypes.string.isRequired,
+  closeButtonAriaLabel: PropTypes.string.isRequired,
+  onClickClose: PropTypes.func.isRequired,
+  returnFocusOnClose: PropTypes.bool,
+  portalNode: PropTypes.object,
+  headerIcon: PropTypes.node,
+  renderModalHeader: PropTypes.func,
 };
 
 Modal.defaultProps = {
   open: false,
-  parentSelector: 'body',
-  buttons: [],
-  closeText: 'Close',
-  variant: {},
-  renderHeaderCloseButton: true,
+  children: undefined,
+  className: undefined,
+  returnFocusOnClose: true,
+  portalNode: document.body,
+  headerIcon: undefined,
+  renderModalHeader: undefined,
 };
 
 
