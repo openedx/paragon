@@ -18,7 +18,7 @@ storiesOf('Collapsible', module)
         expandedTitle={<h2>Try resizing the screen to medium or small</h2>}
         title="Try resizing the screen to large"
         isCollapsible={() => global.innerWidth >= breakpoints.large.minWidth ||
-          window.matchMedia(`(min-width: ${breakpoints.large.minWidth}px)`).matches}
+          global.matchMedia(`(min-width: ${breakpoints.large.minWidth}px)`).matches}
       >
         <div>
           <h3>You can fit lots of things in here</h3>

@@ -19,6 +19,7 @@ module.exports = {
     filename: '[name].js',
     library: 'paragon',
     libraryTarget: 'umd',
+    globalObject: 'typeof self !== \'undefined\' ? self : this',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
