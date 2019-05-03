@@ -19,7 +19,7 @@ class Collapsible extends React.Component {
   componentDidMount() {
     if (this.props.isCollapsible) {
       this.handleResize();
-      window.addEventListener('resize', this.handleResize.bind(this));
+      global.addEventListener('resize', this.handleResize.bind(this));
     }
   }
 
@@ -41,7 +41,7 @@ class Collapsible extends React.Component {
 
   componentWillUnmount() {
     if (this.props.isCollapsible) {
-      window.removeEventListener('resize', this.handleResize);
+      global.removeEventListener('resize', this.handleResize);
     }
   }
 
