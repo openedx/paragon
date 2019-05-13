@@ -43,6 +43,7 @@ function StatefulButton({
   return (
     <Button
       aria-live="assertive"
+      aria-disabled={isDisabled}
       className={classNames(
         'pgn__stateful-btn',
         `pgn__stateful-btn-state-${state}`,
