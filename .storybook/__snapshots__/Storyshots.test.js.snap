@@ -187,9 +187,9 @@ exports[`Storyshots Basics|MailtoLink with subject and body 1`] = `
 exports[`Storyshots Basics|StatefulButton basic usage 1`] = `
 <div>
   <button
+    aria-disabled={false}
     aria-live="assertive"
     className="btn pgn__stateful-btn pgn__stateful-btn-state-default btn-primary mr-2"
-    disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -202,9 +202,9 @@ exports[`Storyshots Basics|StatefulButton basic usage 1`] = `
     </span>
   </button>
   <button
+    aria-disabled={true}
     aria-live="assertive"
     className="btn pgn__stateful-btn pgn__stateful-btn-state-pending btn-primary mr-2 disabled"
-    disabled={true}
     onBlur={[Function]}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -226,9 +226,9 @@ exports[`Storyshots Basics|StatefulButton basic usage 1`] = `
     </span>
   </button>
   <button
+    aria-disabled={true}
     aria-live="assertive"
     className="btn pgn__stateful-btn pgn__stateful-btn-state-complete btn-primary mr-2 disabled"
-    disabled={true}
     onBlur={[Function]}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -255,9 +255,9 @@ exports[`Storyshots Basics|StatefulButton basic usage 1`] = `
 exports[`Storyshots Basics|StatefulButton custom icons and disable during state 1`] = `
 Array [
   <button
+    aria-disabled={false}
     aria-live="assertive"
     className="btn pgn__stateful-btn pgn__stateful-btn-state-default btn-primary mr-2"
-    disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -279,9 +279,9 @@ Array [
     </span>
   </button>,
   <button
+    aria-disabled={true}
     aria-live="assertive"
     className="btn pgn__stateful-btn pgn__stateful-btn-state-pending btn-primary mr-2 disabled"
-    disabled={true}
     onBlur={[Function]}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -303,9 +303,9 @@ Array [
     </span>
   </button>,
   <button
+    aria-disabled={false}
     aria-live="assertive"
     className="btn pgn__stateful-btn pgn__stateful-btn-state-complete btn-primary mr-2"
-    disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -332,9 +332,9 @@ Array [
 exports[`Storyshots Basics|StatefulButton custom states 1`] = `
 Array [
   <button
+    aria-disabled={true}
     aria-live="assertive"
     className="btn pgn__stateful-btn pgn__stateful-btn-state-unedited btn-primary mr-2 disabled"
-    disabled={true}
     onBlur={[Function]}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -356,9 +356,9 @@ Array [
     </span>
   </button>,
   <button
+    aria-disabled={false}
     aria-live="assertive"
     className="btn pgn__stateful-btn pgn__stateful-btn-state-edited btn-primary mr-2"
-    disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
     onKeyDown={[Function]}
