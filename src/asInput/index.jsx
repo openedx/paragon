@@ -230,7 +230,7 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
           {...others}
           id={this.state.id}
           value={this.state.value}
-          className={[classNames(
+          className={classNames(
             {
               'form-control': !this.isGroupedInput(),
               'form-check-input': this.isGroupedInput(),
@@ -238,7 +238,7 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
               'is-invalid-nodanger': !this.hasDangerTheme(),
             },
             className,
-          ).trim()]}
+          )}
           aria-describedby={describedBy}
           aria-invalid={!isValid}
           onChange={this.handleChange}

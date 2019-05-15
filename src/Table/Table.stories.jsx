@@ -87,7 +87,7 @@ storiesOf('Table', module)
       data={catData}
       columns={catColumns}
       caption="Famous Internet Cats"
-      className={['table-striped']}
+      className="table-striped"
     />
   ))
   .add('default heading', () => (
@@ -103,7 +103,7 @@ storiesOf('Table', module)
       data={catData}
       columns={catColumns}
       caption="Famous Internet Cats"
-      className={['table-responsive']}
+      className="table-responsive"
     />
   ))
   .add('sortable', () => {

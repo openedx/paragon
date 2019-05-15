@@ -43,43 +43,35 @@ class SearchField extends React.Component {
     const inputTextHasValue = this.inputTextHasValue();
     const buttons = [
       <Button
-        className={[classNames(
+        className={classNames(
           'search-btn',
           {
             'border-left': !isFocused && this.shouldRenderClearButton(),
             'btn-outline-primary': isFocused && this.shouldRenderClearButton(),
           },
-        )]}
-        label={
-          <Icon className={['fa', 'fa-search']} screenReaderText={screenReaderText.searchButton} />
-        }
+        )}
         disabled={!inputTextHasValue}
         inputRef={(input) => { this.searchButton = input; }}
         onClick={this.handleSubmit}
-      />,
+      >
+        <Icon className="fa fa-search" screenReaderText={screenReaderText.searchButton} />
+      </Button>,
     ];
 
     if (this.shouldRenderClearButton()) {
       buttons.unshift((
         <Button
-          className={[classNames(
-            'clear-btn',
-            'ml-1',
-          )]}
-          label={(
-            <small>
-              <Icon
-                className={[classNames(
-                  'fa',
-                  'fa-times',
-                )]}
-                id={newId('icon-SearchField')}
-                screenReaderText={screenReaderText.clearButton}
-              />
-            </small>
-          )}
+          className="clear-btn ml-1"
           onClick={this.handleClear}
-        />
+        >
+          <small>
+            <Icon
+              className="fa fa-times"
+              id={newId('icon-SearchField')}
+              screenReaderText={screenReaderText.clearButton}
+            />
+          </small>
+        </Button>
       ));
     }
 
@@ -147,12 +139,12 @@ class SearchField extends React.Component {
         onBlur={this.handleBlur}
       >
         <InputText
-          className={[classNames(
+          className={classNames(
             'input',
             {
               'no-clear-btn': !this.shouldRenderClearButton(),
             },
-          )]}
+          )}
           name="search"
           autoComplete="off"
           label={inputLabel}

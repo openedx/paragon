@@ -27,9 +27,10 @@ class CheckBoxWrapper extends React.Component {
       <div>
         <Button
           onClick={this.toggleCheckBox}
-          label="Click me to toggle the check box!"
           buttonType="light"
-        />
+        >
+          Click me to toggle the check box!
+        </Button>
         <CheckBox
           name="checkbox"
           label="click the button"

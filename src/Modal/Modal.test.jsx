@@ -27,18 +27,12 @@ let wrapper;
 describe('<Modal />', () => {
   describe('correct rendering', () => {
     const buttons = [
-      <Button
-        label="Blue button!"
-        buttonType="primary"
-      />,
+      <Button buttonType="primary">Blue button!</Button>,
       {
         label: 'Red button!',
         buttonType: 'danger',
       },
-      <Button
-        label="Green button!"
-        buttonType="success"
-      />,
+      <Button buttonType="success">Green button!</Button>,
     ];
 
     it('renders default buttons', () => {
