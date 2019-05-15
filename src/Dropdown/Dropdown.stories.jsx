@@ -39,7 +39,7 @@ storiesOf('Navigation|Dropdown', module)
   .add('with icon element', () => (
     <Dropdown
       title="Search Engines"
-      iconElement={<Icon className={['fa', 'fa-user', 'px-3']} />}
+      iconElement={<Icon className="fa fa-user px-3" />}
       menuItems={[
         {
           label: 'Google',

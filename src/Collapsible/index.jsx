@@ -83,28 +83,27 @@ class Collapsible extends React.Component {
         ) : (
           <Button
             aria-expanded={isOpen}
-            className={[classNames(
+            className={classNames(
               'btn-block text-left',
               'btn-collapsible',
               { open: isOpen },
-            )]}
-            label={
-              <div className="collapsible-title">
-                <Icon
-                  id={iconId}
-                  className={[classNames(
-                    'ml-2 float-right collapsible-icon',
-                    {
-                      'fa fa-angle-up': isOpen,
-                      'fa fa-angle-down': !isOpen,
-                    },
-                  )]}
-                />
-                {title}
-              </div>
-            }
+            )}
             onClick={this.handleClick}
-          />
+          >
+            <div className="collapsible-title">
+              <Icon
+                id={iconId}
+                className={classNames(
+                  'ml-2 float-right collapsible-icon',
+                  {
+                    'fa fa-angle-up': isOpen,
+                    'fa fa-angle-down': !isOpen,
+                  },
+                )}
+              />
+              {title}
+            </div>
+          </Button>
         )}
         <div className={classNames(
           'collapsible-body',

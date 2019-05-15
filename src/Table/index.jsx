@@ -65,9 +65,11 @@ class Table extends React.Component {
   getTableHeading(column) {
     let heading;
     if (this.props.tableSortable && column.columnSortable) {
-      heading = (<Button
-        className={['btn-header']}
-        label={
+      heading = (
+        <Button
+          className="btn-header"
+          onClick={() => this.onSortClick(column.key)}
+        >
           <span>
             {column.label}
             <span className={classNames('sr-only')}>
@@ -76,9 +78,9 @@ class Table extends React.Component {
             </span>
             {' '}
             {this.getSortIcon(column.key === this.state.sortedColumn ? this.state.sortDirection : '')}
-          </span>}
-        onClick={() => this.onSortClick(column.key)}
-      />);
+          </span>
+        </Button>
+      );
     } else if (column.hideHeader) {
       heading = (<span className={classNames('sr-only')}>{column.label}</span>);
     } else {

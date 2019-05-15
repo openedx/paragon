@@ -2,7 +2,7 @@
 
 exports[`Storyshots Basics|Button basic usage 1`] = `
 <button
-  className="btn"
+  className="btn btn-primary"
   onBlur={[Function]}
   onClick={[Function]}
   onKeyDown={[Function]}

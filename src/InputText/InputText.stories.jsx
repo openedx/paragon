@@ -256,9 +256,10 @@ storiesOf('User Input|InputText', module)
         value="what is paragon"
         inputGroupAppend={(
           <Button
-            label="Go"
             buttonType="outline-secondary"
-          />
+          >
+            Go
+          </Button>
         )}
       />
       <InputText
@@ -269,17 +270,15 @@ storiesOf('User Input|InputText', module)
           <div className="input-group-text">
             <Icon
               id="checkmark"
-              className={[
-                'fa',
-                'fa-check',
-              ]}
+              className="fa fa-check"
               screenReaderText="Checkmark"
             />
           </div>,
           <Button
-            label="Go"
             buttonType="outline-secondary"
-          />,
+          >
+            Go
+          </Button>,
         ]}
       />
       <InputText
@@ -290,10 +289,7 @@ storiesOf('User Input|InputText', module)
           <div className="input-group-text">
             <Icon
               id="checkmark"
-              className={[
-                'fa',
-                'fa-check',
-              ]}
+              className="fa fa-check"
               screenReaderText="Checkmark"
             />
           </div>

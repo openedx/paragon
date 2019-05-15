@@ -141,7 +141,7 @@ class Dropdown extends React.Component {
 
     return (
       <div
-        className={classNames([
+        className={classNames(
           'dropdown',
           {
             show: open,
@@ -151,22 +151,21 @@ class Dropdown extends React.Component {
             'd-flex': hasIconElement,
             'bg-white': hasIconElement,
           },
-        ])}
+        )}
         ref={(container) => { this.container = container; }}
       >
         { hasIconElement &&
           <div
-            className={classNames([
+            className={classNames(
               'icon-container',
               'd-flex',
               'align-items-center',
               'justify-content-center',
               'border-right',
-            ])}
+            )}
           >
             {React.cloneElement(iconElement, {
-              className: iconElement.props && Array.isArray(iconElement.props.className) ?
-                [...iconElement.props.className, 'rounded-left'] : 'rounded-left',
+              className: iconElement.props ? classNames(iconElement.props.className, 'rounded-left') : null,
             })}
           </div>
         }
@@ -174,27 +173,28 @@ class Dropdown extends React.Component {
           aria-expanded={open}
           aria-haspopup="true"
           buttonType={buttonType}
-          label={title}
           onClick={this.toggle}
           onKeyDown={this.handleToggleKeyDown}
-          className={[classNames([
+          className={classNames(
             'dropdown-toggle',
             {
               'border-0': hasIconElement,
               'rounded-0': hasIconElement,
               'bg-white': hasIconElement,
             },
-          ])]}
+          )}
           type="button"
           inputRef={(toggleElem) => { this.toggleElem = toggleElem; }}
-        />
+        >
+          {title}
+        </Button>
         <div
           aria-label={title}
           aria-hidden={!open}
-          className={classNames([
+          className={classNames(
             'dropdown-menu',
             { show: open },
-          ])}
+          )}
           role="menu"
         >
           {this.generateMenuItems(menuItems)}

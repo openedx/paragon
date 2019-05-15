@@ -50,13 +50,12 @@ class Tabs extends React.Component {
           id={labelId}
           key={labelId}
           onClick={() => { this.toggle(i); }}
-          className={classNames(
-            'nav-link',
-            'nav-item',
-            { active: selected },
-          ).split(' ')}
-          label={label}
-        />
+          className={classNames('nav-link nav-item', {
+            active: selected,
+          })}
+        >
+          {label}
+        </Button>
       );
     });
   }

@@ -37,10 +37,11 @@ class StatusAlertWrapper extends React.Component {
         />
         <Button
           onClick={this.openStatusAlert}
-          label="Click me to open a Status Alert!"
           buttonType="light"
           inputRef={(input) => { this.button = input; }}
-        />
+        >
+          Click me to open a Status Alert!
+        </Button>
       </div>
     );
   }
