@@ -99,9 +99,7 @@ class Modal extends React.Component {
           <div className="col-md-2">
             <Icon
               id={newId(`Modal-${variant.status}`)}
-              className={[
-                this.getVariantIconClassName(),
-              ]}
+              className={this.getVariantIconClassName()}
             />
           </div>
         </div>
@@ -139,14 +137,23 @@ class Modal extends React.Component {
   renderButtons() {
     return this.props.buttons.map((button) => {
       // button is either a Button component that we want clone or a set of props
-      const buttonProps = button.type === Button ? button.props : button;
+      if (button.type === Button) {
+        return React.cloneElement(button, {
+          key: button.props.children,
+          onKeyDown: this.handleKeyDown,
+        });
+      }
+
+      const { label, ...buttonProps } = button;
 
       return (
         <Button
           {...buttonProps}
-          key={buttonProps.label}
+          key={label}
           onKeyDown={this.handleKeyDown}
-        />
+        >
+          {label}
+        </Button>
       );
     });
   }
@@ -208,13 +215,14 @@ class Modal extends React.Component {
                 <h2 className="modal-title" id={this.headerId}>{this.props.title}</h2>
                 { renderHeaderCloseButton &&
                 <Button
-                  label={<Icon className={['fa', 'fa-times', 'js-close-modal-on-click']} />}
-                  className={['p-1', 'js-close-modal-on-click']}
+                  className="p-1 js-close-modal-on-click"
                   aria-labelledby={closeModalButtonId}
                   onClick={this.close}
                   inputRef={this.setFirstFocusableElement}
                   onKeyDown={this.handleKeyDown}
-                />
+                >
+                  <Icon className="fa fa-times js-close-modal-on-click" />
+                </Button>
               }
               </div>
               <div className="modal-body">
@@ -223,13 +231,14 @@ class Modal extends React.Component {
               <div className="modal-footer">
                 {this.renderButtons()}
                 <Button
-                  label={this.props.closeText}
                   buttonType="secondary"
-                  className={['js-close-modal-on-click']}
+                  className="js-close-modal-on-click"
                   onClick={this.close}
                   inputRef={this.setCloseButton}
                   onKeyDown={this.handleKeyDown}
-                />
+                >
+                  {this.props.closeText}
+                </Button>
               </div>
             </div>
           </div>
