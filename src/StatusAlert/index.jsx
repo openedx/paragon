@@ -73,9 +73,10 @@ class StatusAlert extends React.Component {
         inputRef={(input) => { this.xButton = input; }}
         onClick={this.close}
         onKeyDown={this.handleKeyDown}
-        label={<span aria-hidden="true">&times;</span>}
         isClose
-      />
+      >
+        <span aria-hidden="true">&times;</span>
+      </Button>
     ) : null;
   }
 

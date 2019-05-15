@@ -42,10 +42,11 @@ class ModalWrapper extends React.Component {
         />
         <Button
           onClick={this.openModal}
-          label="Click me to open a modal!"
           buttonType="light"
           inputRef={(input) => { this.button = input; }}
-        />
+        >
+          Click me to open a modal!
+        </Button>
       </div>
     );
   }
@@ -77,18 +78,12 @@ storiesOf('Modal', module)
       title="Modal title."
       body="Modal body."
       buttons={[
-        <Button
-          label="Blue button!"
-          buttonType="primary"
-        />,
+        <Button buttonType="primary">Blue button!</Button>,
         {
           label: 'Red button!',
           buttonType: 'danger',
         },
-        <Button
-          label="Green button!"
-          buttonType="success"
-        />,
+        <Button buttonType="success">Green button!</Button>,
       ]}
       onClose={() => {}}
     />
@@ -99,10 +94,7 @@ storiesOf('Modal', module)
       title="Custom title!"
       body="Custom body!"
       buttons={[
-        <Button
-          label="Dark button!"
-          buttonType="dark"
-        />,
+        <Button buttonType="dark">Dark button!</Button>,
       ]}
       onClose={() => {}}
     />
@@ -114,10 +106,11 @@ storiesOf('Modal', module)
       body="Modal body."
       buttons={[
         <Button
-          label="Click me and check the console!"
           buttonType="light"
           onClick={action('button-click')}
-        />,
+        >
+          Click me and check the console!
+        </Button>,
       ]}
       onClose={() => {}}
     />
@@ -138,10 +131,7 @@ storiesOf('Modal', module)
       body="Modal body."
       closeText={
         <Icon
-          className={[
-            'fa',
-            'fa-ship',
-          ]}
+          className="fa fa-ship"
           screenReaderText="Close"
         />}
       onClose={() => {}}
@@ -164,9 +154,7 @@ storiesOf('Modal', module)
             name="e-mail"
             label="E-Mail Address"
           />
-          <Button
-            label="Get my facts!"
-          />
+          <Button>Get my facts!</Button>
         </div>
       )}
       onClose={() => {}}
@@ -190,10 +178,7 @@ storiesOf('Modal', module)
       )}
       closeText="Run Away!"
       buttons={[
-        <Button
-          label="Continue anyway..."
-          buttonType="light"
-        />,
+        <Button buttonType="light">Continue anyway...</Button>,
       ]}
       onClose={() => {}}
       variant={{ status: Variant.status.WARNING }}

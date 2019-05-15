@@ -125,12 +125,13 @@ class Pagination extends React.Component {
         key={page}
       >
         <Button
-          className={['page-link']}
+          className="page-link"
           aria-label={ariaLabel}
-          label={page.toString()}
           inputRef={(element) => { this.pageRefs[page] = element; }}
           onClick={() => { this.handlePageSelect(page); }}
-        />
+        >
+          {page.toString()}
+        </Button>
       </li>
     );
   }
@@ -207,26 +208,21 @@ class Pagination extends React.Component {
         )}
       >
         <Button
-          className={['previous', 'page-link']}
+          className="previous page-link"
           aria-label={ariaLabel}
-          label={
-            <div>
-              <Icon
-                id={newId('pagination-')}
-                className={[
-                  'fa',
-                  'fa-chevron-left',
-                  'mr-2',
-                ]}
-              />
-              {buttonLabels.previous}
-            </div>
-          }
           tabIndex={isFirstPage ? '-1' : undefined}
           onClick={() => { this.handlePreviousNextButtonClick(previousPage); }}
           inputRef={(element) => { this.previousButtonRef = element; }}
           disabled={isFirstPage}
-        />
+        >
+          <div>
+            <Icon
+              id={newId('pagination-')}
+              className="fa fa-chevron-left mr-2"
+            />
+            {buttonLabels.previous}
+          </div>
+        </Button>
       </li>
     );
   }
@@ -260,26 +256,21 @@ class Pagination extends React.Component {
         )}
       >
         <Button
-          className={['next', 'page-link']}
+          className="next page-link"
           aria-label={ariaLabel}
-          label={
-            <div>
-              {buttonLabels.next}
-              <Icon
-                id={newId('pagination-')}
-                className={[
-                  'fa',
-                  'fa-chevron-right',
-                  'ml-2',
-                ]}
-              />
-            </div>
-          }
           tabIndex={isLastPage ? '-1' : undefined}
           onClick={() => { this.handlePreviousNextButtonClick(nextPage); }}
           inputRef={(element) => { this.nextButtonRef = element; }}
           disabled={isLastPage}
-        />
+        >
+          <div>
+            {buttonLabels.next}
+            <Icon
+              id={newId('pagination-')}
+              className="fa fa-chevron-right ml-2"
+            />
+          </div>
+        </Button>
       </li>
     );
   }

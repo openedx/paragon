@@ -109,9 +109,10 @@ class ListBoxWrapperForSelectedOptionIndex extends React.Component {
       <React.Fragment>
         <Button
           buttonType="primary"
-          label="Click me to reset your selected fruit!"
           onClick={this.onButtonClick}
-        />
+        >
+          Click me to reset your selected fruit!
+        </Button>
         <ListBox
           selectedOptionIndex={this.state.reset ? null : undefined}
           style={{ margin: '10px' }}
