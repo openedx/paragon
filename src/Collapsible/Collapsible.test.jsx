@@ -1,5 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { faChevronCircleUp, faChevronCircleDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { breakpoints } from '../Responsive';
 import '../__mocks__/reactResponsive.mock';
 
@@ -93,12 +96,20 @@ describe('<Collapsible />', () => {
       expect(spy).toHaveBeenCalledWith(false);
     });
 
-    it('uses iconId if it is supplied', () => {
-      const iconId = 'icon-id';
-      const wrapper = mount(<Collapsible {...defaultProps} iconId={iconId} />);
+    it('uses icon elements if they are supplied', () => {
+      const wrapper = mount((
+        <Collapsible
+          {...defaultProps}
+          icons={{
+            expanded: <FontAwesomeIcon icon={faChevronCircleUp} />,
+            collapsed: <FontAwesomeIcon icon={faChevronCircleDown} />,
+          }}
+        />
+      ));
 
-      const icon = wrapper.find('Icon');
-      expect(icon.prop('id')).toEqual(iconId);
+      expect(wrapper.find('FontAwesomeIcon').prop('icon').iconName).toEqual('chevron-circle-down');
+      wrapper.find('.btn-collapsible').first().simulate('click');
+      expect(wrapper.find('FontAwesomeIcon').prop('icon').iconName).toEqual('chevron-circle-up');
     });
   });
 
