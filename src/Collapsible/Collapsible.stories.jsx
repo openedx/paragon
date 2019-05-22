@@ -1,5 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { faChevronCircleDown, faChevronCircleUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import README from './README.md';
 
 import Collapsible from './index';
@@ -40,6 +43,17 @@ storiesOf('Collapsible', module)
     <Collapsible
       title="Click me to expand"
       onToggle={isOpen => console.log(`this.state.isOpen = ${isOpen}`)} // eslint-disable-line no-console
+    >
+      <p>Your stuff goes here</p>
+    </Collapsible>
+  ))
+  .add('with custom icon', () => (
+    <Collapsible
+      title="Click me to expand"
+      icons={{
+        expanded: <FontAwesomeIcon className="text-primary" icon={faChevronCircleUp} />,
+        collapsed: <FontAwesomeIcon className="text-primary" icon={faChevronCircleDown} />,
+      }}
     >
       <p>Your stuff goes here</p>
     </Collapsible>

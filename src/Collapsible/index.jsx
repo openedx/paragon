@@ -1,9 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import Button from '../Button';
-import Icon from '../Icon';
+import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import Button from '../Button';
 
 class Collapsible extends React.Component {
   constructor(props) {
@@ -31,8 +32,8 @@ class Collapsible extends React.Component {
    * more information.
    */
   componentDidUpdate(prevProps) {
-    /* eslint-disable react/no-did-update-set-state */
     if (this.props.isOpen !== prevProps.isOpen) {
+      // eslint-disable-next-line react/no-did-update-set-state
       this.setState({
         isOpen: this.props.isOpen,
       });
@@ -61,11 +62,21 @@ class Collapsible extends React.Component {
     this.props.onToggle(isOpen);
   }
 
+  renderIcon() {
+    const { icons } = this.props;
+    const { isOpen } = this.state;
+
+    if (icons) {
+      return isOpen ? icons.expanded : icons.collapsed;
+    }
+
+    return <FontAwesomeIcon icon={isOpen ? faAngleUp : faAngleDown} />;
+  }
+
   render() {
     const {
       children,
       expandedTitle,
-      iconId,
       title,
     } = this.props;
 
@@ -90,18 +101,9 @@ class Collapsible extends React.Component {
             )}
             onClick={this.handleClick}
           >
-            <div className="collapsible-title">
-              <Icon
-                id={iconId}
-                className={classNames(
-                  'ml-2 float-right collapsible-icon',
-                  {
-                    'fa fa-angle-up': isOpen,
-                    'fa fa-angle-down': !isOpen,
-                  },
-                )}
-              />
+            <div className="collapsible-title d-flex align-items-center justify-content-between">
               {title}
+              {this.renderIcon()}
             </div>
           </Button>
         )}
@@ -120,7 +122,10 @@ class Collapsible extends React.Component {
 Collapsible.propTypes = {
   children: PropTypes.instanceOf(Object).isRequired,
   expandedTitle: PropTypes.element,
-  iconId: PropTypes.string,
+  icons: PropTypes.shape({
+    expanded: PropTypes.element.isRequired,
+    collapsed: PropTypes.element.isRequired,
+  }),
   isCollapsible: PropTypes.func,
   isOpen: PropTypes.bool,
   onToggle: PropTypes.func,
@@ -129,7 +134,7 @@ Collapsible.propTypes = {
 
 Collapsible.defaultProps = {
   expandedTitle: undefined,
-  iconId: '',
+  icons: null,
   isCollapsible: undefined,
   isOpen: false,
   onToggle: () => {},
