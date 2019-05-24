@@ -6331,12 +6331,12 @@ exports[`Storyshots User Input|Validation Form Group invalid message 1`] = `
     type="text"
     value="Casey"
   />
-  <div
+  <strong
     className="invalid-feedback"
     id="firstName-invalid-feedback"
   >
     Wrong!
-  </div>
+  </strong>
 </div>
 `;
 
