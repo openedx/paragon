@@ -75,12 +75,12 @@ exports[`ValidationFormGroup renders an invalid message 1`] = `
   >
     This is your first name.
   </small>
-  <div
+  <strong
     className="invalid-feedback"
     id="firstName-invalid-feedback"
   >
     This is not your name.
-  </div>
+  </strong>
 </div>
 `;
 
