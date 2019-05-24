@@ -61,12 +61,29 @@ function ValidationFormGroup(props) {
     return <small id={`${id}-help-text`} className="form-text text-muted">{text}</small>;
   };
 
-  const renderFeedback = (message, state) => {
+  /**
+   * The red text conveys semantic emphasis using color and font weight. For WCAG 2.1, the
+   * semantics need to be exposed programmatically as well. To do this, we use <strong/>
+   * elements and attach the formatting classes to them.
+   */
+  const renderInvalidFeedback = (message) => {
+    if (!message) return null;
+    return (
+      <strong
+        id={`${id}-invalid-feedback`}
+        className="invalid-feedback"
+      >
+        {message}
+      </strong>
+    );
+  };
+
+  const renderValidFeedback = (message) => {
     if (!message) return null;
     return (
       <div
-        className={`${state}-feedback`}
-        id={`${id}-${state}-feedback`}
+        className="valid-feedback"
+        id={`${id}-valid-feedback`}
       >
         {message}
       </div>
@@ -77,8 +94,8 @@ function ValidationFormGroup(props) {
     <div className={classNames('form-group', className)}>
       {renderChildren()}
       {renderHelpText(helpText)}
-      {renderFeedback(invalidMessage, 'invalid')}
-      {renderFeedback(validMessage, 'valid')}
+      {renderInvalidFeedback(invalidMessage)}
+      {renderValidFeedback(validMessage)}
     </div>
   );
 }
