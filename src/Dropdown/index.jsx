@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-
 import Button from '../Button';
 
 export const triggerKeys = {
@@ -19,113 +18,79 @@ class Dropdown extends React.Component {
 
   constructor(props) {
     super(props);
-
-    this.addEvents = this.addEvents.bind(this);
-    this.handleDocumentClick = this.handleDocumentClick.bind(this);
-    this.handleToggleKeyDown = this.handleToggleKeyDown.bind(this);
-    this.handleMenuKeyDown = this.handleMenuKeyDown.bind(this);
-    this.removeEvents = this.removeEvents.bind(this);
-    this.toggle = this.toggle.bind(this);
-
-    this.menuItems = [];
     this.state = {
       open: false,
-      focusIndex: 0,
+      // focusIndex: 0,
     };
   }
 
-  componentWillUpdate(_, nextState) {
-    if (nextState.open) {
-      this.addEvents();
-    } else {
-      this.removeEvents();
-    }
+  componentDidMount = () => {
+    this.addEvents();
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (this.state.open) {
-      this.menuItems[this.state.focusIndex].focus();
-    } else if (prevState.open && this.toggleElem) {
-      this.toggleElem.focus();
-    }
+  // componentDidUpdate = (prevProps, prevState) => {
+  //   if (this.state.open) {
+  //     this.menuItems[this.state.focusIndex].focus();
+  //   } else if (prevState.open && this.toggleElem) {
+  //     this.toggleElem.focus();
+  //   }
+  // }
+
+  componentWillUnmount = () => {
+    // remove open and close events
+    this.removeEvents();
   }
 
-  addEvents() {
+  addEvents = () => {
     document.addEventListener('click', this.handleDocumentClick, true);
   }
 
-  removeEvents() {
+  removeEvents = () => {
     document.removeEventListener('click', this.handleDocumentClick, true);
   }
 
-  handleDocumentClick(e) {
+  handleDocumentClick = (e) => {
     if (this.container && this.container.contains(e.target) && this.container !== e.target) {
       return;
     }
-    this.toggle();
-  }
-
-  handleMenuKeyDown(e) {
-    e.preventDefault();
-    if (Dropdown.isTriggerKey('CLOSE_MENU', e.key)) {
-      this.toggle();
-    } else if (Dropdown.isTriggerKey('SELECT_MENU_ITEM', e.key)) {
-      e.target.click();
-      this.setState({
-        open: false,
-      });
-    } else if (Dropdown.isTriggerKey('NAVIGATE_DOWN', e.key)) {
-      this.setState({
-        focusIndex: (this.state.focusIndex + 1) % this.props.menuItems.length,
-      });
-    } else if (Dropdown.isTriggerKey('NAVIGATE_UP', e.key)) {
-      this.setState({
-        focusIndex: ((this.state.focusIndex - 1) + this.props.menuItems.length) %
-                    this.props.menuItems.length,
-      });
-    }
-  }
-
-  handleToggleKeyDown(e) {
-    if (!this.state.open && Dropdown.isTriggerKey('OPEN_MENU', e.key)) {
-      this.toggle();
-    } else if (this.state.open && Dropdown.isTriggerKey('CLOSE_MENU', e.key)) {
+    if (this.state.open) {
       this.toggle();
     }
   }
 
-  toggle() {
+  // handleMenuKeyDown = (e) => {
+  //   e.preventDefault();
+  //   if (Dropdown.isTriggerKey('CLOSE_MENU', e.key)) {
+  //     this.toggle();
+  //   } else if (Dropdown.isTriggerKey('SELECT_MENU_ITEM', e.key)) {
+  //     e.target.click();
+  //     this.setState({
+  //       open: false,
+  //     });
+  //   } else if (Dropdown.isTriggerKey('NAVIGATE_DOWN', e.key)) {
+  //     this.setState({
+  //       focusIndex: (this.state.focusIndex + 1) % this.props.menuItems.length,
+  //     });
+  //   } else if (Dropdown.isTriggerKey('NAVIGATE_UP', e.key)) {
+  //     this.setState({
+  //       focusIndex: ((this.state.focusIndex - 1) + this.props.menuItems.length) %
+  //                   this.props.menuItems.length,
+  //     });
+  //   }
+  // }
+  //
+  // handleToggleKeyDown = (e) => {
+  //   if (!this.state.open && Dropdown.isTriggerKey('OPEN_MENU', e.key)) {
+  //     this.toggle();
+  //   } else if (this.state.open && Dropdown.isTriggerKey('CLOSE_MENU', e.key)) {
+  //     this.toggle();
+  //   }
+  // }
+
+  toggle = () => {
     this.setState({
       open: !this.state.open,
-      focusIndex: 0,
-    });
-  }
-
-  generateMenuItems(menuItems) {
-    return menuItems.map((menuItem, i) => {
-      if (React.isValidElement(menuItem)) {
-        const cloneProps = {
-          ref: (item) => { this.menuItems[i] = item; },
-          className: 'dropdown-item',
-          key: i,
-          onKeyDown: this.handleMenuKeyDown,
-        };
-        return React.cloneElement(menuItem, cloneProps);
-      }
-      return (
-        <a
-          className="dropdown-item"
-          href={menuItem.href}
-          key={menuItem.href}
-          onKeyDown={this.handleMenuKeyDown}
-          ref={(item) => {
-            this.menuItems[i] = item;
-          }}
-          role="menuitem"
-        >
-          {menuItem.label}
-        </a>
-      );
+      // focusIndex: 0,
     });
   }
 
@@ -134,8 +99,7 @@ class Dropdown extends React.Component {
     const {
       buttonType,
       iconElement,
-      menuItems,
-      title,
+      buttonContent,
     } = this.props;
     const hasIconElement = React.isValidElement(iconElement);
 
@@ -186,40 +150,31 @@ class Dropdown extends React.Component {
           type="button"
           inputRef={(toggleElem) => { this.toggleElem = toggleElem; }}
         >
-          {title}
+          {buttonContent}
         </Button>
-        <div
-          aria-label={title}
-          aria-hidden={!open}
-          className={classNames(
-            'dropdown-menu',
-            { show: open },
-          )}
-          role="menu"
-        >
-          {this.generateMenuItems(menuItems)}
-        </div>
+        {this.state.open && (
+          <div className="dropdown-menu show">
+            {this.props.children}
+          </div>
+        )}
+
       </div>
     );
   }
 }
 
 Dropdown.propTypes = {
+  children: PropTypes.node,
   buttonType: PropTypes.string,
   iconElement: PropTypes.element,
-  menuItems: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string,
-      href: PropTypes.string,
-    }),
-    PropTypes.element,
-  ).isRequired,
-  title: PropTypes.string.isRequired,
+  buttonContent: PropTypes.string,
 };
 
 Dropdown.defaultProps = {
+  children: null,
   buttonType: 'light',
   iconElement: undefined,
+  buttonContent: 'Dropdown Name',
 };
 
 export default Dropdown;
