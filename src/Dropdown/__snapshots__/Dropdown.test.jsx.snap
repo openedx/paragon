@@ -1,0 +1,263 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dropdown /> Backwards compatibility renders menu items as elements 1`] = `
+<div
+  className="dropdown"
+>
+  <button
+    aria-expanded={false}
+    aria-haspopup="true"
+    className="btn dropdown-toggle btn-light"
+    id="pgn__dropdown-trigger-6"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    Search Engines
+  </button>
+  <div
+    aria-hidden={true}
+    aria-labelledby="pgn__dropdown-trigger-6"
+    className="dropdown-menu"
+    onKeyDown={[Function]}
+    role="menu"
+  >
+    <a
+      className="dropdown-item"
+      href="http://www.google.com"
+    >
+      Google
+    </a>
+    <a
+      className="dropdown-item"
+      href="http://www.duckduckgo.com"
+    >
+      DuckDuckGo
+    </a>
+    <a
+      className="dropdown-item"
+      href="http://www.yahoo.com"
+    >
+      Yahoo
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<Dropdown /> Backwards compatibility renders the basic usage 1`] = `
+<div
+  className="dropdown"
+>
+  <button
+    aria-expanded={false}
+    aria-haspopup="true"
+    className="btn dropdown-toggle btn-light"
+    id="pgn__dropdown-trigger-5"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    Search Engines
+  </button>
+  <div
+    aria-hidden={true}
+    aria-labelledby="pgn__dropdown-trigger-5"
+    className="dropdown-menu"
+    onKeyDown={[Function]}
+    role="menu"
+  >
+    <a
+      className="dropdown-item"
+      href="https://google.com"
+    >
+      Google
+    </a>
+    <a
+      className="dropdown-item"
+      href="https://duckduckgo.com"
+    >
+      DuckDuckGo
+    </a>
+    <a
+      className="dropdown-item"
+      href="https://yahoo.com"
+    >
+      Yahoo
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<Dropdown /> Backwards compatibility renders with icon element 1`] = `
+<div
+  className="dropdown"
+>
+  <button
+    aria-expanded={false}
+    aria-haspopup="true"
+    className="btn dropdown-toggle btn-light"
+    id="pgn__dropdown-trigger-7"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    <span>
+      <span
+        aria-hidden={true}
+        className="fa fa-user px-3"
+        id="Icon1"
+      />
+      Search Engines
+    </span>
+  </button>
+  <div
+    aria-hidden={true}
+    aria-labelledby="pgn__dropdown-trigger-7"
+    className="dropdown-menu"
+    onKeyDown={[Function]}
+    role="menu"
+  >
+    <a
+      className="dropdown-item"
+      href="https://google.com"
+    >
+      Google
+    </a>
+    <a
+      className="dropdown-item"
+      href="https://duckduckgo.com"
+    >
+      DuckDuckGo
+    </a>
+    <a
+      className="dropdown-item"
+      href="https://yahoo.com"
+    >
+      Yahoo
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<Dropdown /> Rendering renders the happy path 1`] = `
+<div
+  className="dropdown"
+>
+  <button
+    aria-expanded={false}
+    aria-haspopup="true"
+    className="btn dropdown-toggle btn-light"
+    id="pgn__dropdown-trigger-2"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    Trigger Label
+  </button>
+  <div
+    aria-hidden={true}
+    aria-labelledby="pgn__dropdown-trigger-2"
+    className="dropdown-menu"
+    onKeyDown={[Function]}
+    role="menu"
+  >
+    <a
+      className="dropdown-item"
+      href="https://google.com"
+    >
+      Google
+    </a>
+    <a
+      className="dropdown-item"
+      href="https://duckduckgo.com"
+    >
+      DuckDuckGo
+    </a>
+    <a
+      className="dropdown-item"
+      href="https://yahoo.com"
+    >
+      Yahoo
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<Dropdown /> Rendering renders when there is html content in the trigger button 1`] = `
+<div
+  className="dropdown"
+>
+  <button
+    aria-expanded={false}
+    aria-haspopup="true"
+    className="btn dropdown-toggle btn-light"
+    id="pgn__dropdown-trigger-3"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    <span>
+      Trigger Label
+    </span>
+  </button>
+  <div
+    aria-hidden={true}
+    aria-labelledby="pgn__dropdown-trigger-3"
+    className="dropdown-menu"
+    onKeyDown={[Function]}
+    role="menu"
+  >
+    <a
+      className="dropdown-item"
+      href="https://google.com"
+    >
+      Google
+    </a>
+    <a
+      className="dropdown-item"
+      href="https://duckduckgo.com"
+    >
+      DuckDuckGo
+    </a>
+    <a
+      className="dropdown-item"
+      href="https://yahoo.com"
+    >
+      Yahoo
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<Dropdown /> Rendering renders with custom menu content 1`] = `
+<div
+  className="dropdown"
+>
+  <button
+    aria-expanded={false}
+    aria-haspopup="true"
+    className="btn dropdown-toggle btn-light"
+    id="pgn__dropdown-trigger-4"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    Trigger Label
+  </button>
+  <div
+    aria-hidden={true}
+    aria-labelledby="pgn__dropdown-trigger-4"
+    className="dropdown-menu"
+    onKeyDown={[Function]}
+    role="menu"
+  >
+    Custom Content
+  </div>
+</div>
+`;

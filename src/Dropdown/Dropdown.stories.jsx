@@ -9,50 +9,38 @@ storiesOf('Navigation|Dropdown', module)
   .addParameters({ info: { text: README } })
   .add('basic usage', () => (
     <Dropdown
-      title="Search Engines"
-      menuItems={[
-        {
-          label: 'Google',
-          href: 'https://google.com',
-        },
-        {
-          label: 'DuckDuckGo',
-          href: 'https://duckduckgo.com',
-        },
-        {
-          label: 'Yahoo',
-          href: 'https://yahoo.com',
-        },
-      ]}
-    />
-  ))
-  .add('menu items as elements', () => (
-    <Dropdown
-      title="Search Engines"
-      menuItems={[
-        <a href="http://www.google.com">Google</a>,
-        <a href="http://www.duckduckgo.com">DuckDuckGo</a>,
-        <a href="http://www.yahoo.com">Yahoo</a>,
-      ]}
-    />
+      buttonContent="Search Engines"
+    >
+      <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
+      <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
+      <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
+    </Dropdown>
   ))
   .add('with icon element', () => (
     <Dropdown
-      title="Search Engines"
-      iconElement={<Icon className="fa fa-user px-3" />}
-      menuItems={[
-        {
-          label: 'Google',
-          href: 'https://google.com',
-        },
-        {
-          label: 'DuckDuckGo',
-          href: 'https://duckduckgo.com',
-        },
-        {
-          label: 'Yahoo',
-          href: 'https://yahoo.com',
-        },
-      ]}
-    />
+      buttonContent={<span><Icon className="fa fa-user pr-3" alt="" />Search Engines</span>}
+    >
+      <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
+      <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
+      <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
+    </Dropdown>
+  ))
+  .add('with caret/chevron', () => (
+    <React.Fragment>
+      <Dropdown
+        className="mb-3"
+        buttonContent={<span>Search Engines<Icon className="fa fa-caret-down pl-3" alt="" /></span>}
+      >
+        <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
+        <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
+        <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
+      </Dropdown>
+      <Dropdown
+        buttonContent={<span>Search Engines<Icon className="fa fa-angle-down pl-3" alt="" /></span>}
+      >
+        <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
+        <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
+        <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
+      </Dropdown>
+    </React.Fragment>
   ));

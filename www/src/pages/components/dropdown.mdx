@@ -15,8 +15,72 @@ import PropsTable from '../../components/PropsTable';
 
 # Dropdown
 
+## TODO New Desired API
+```jsx
+<Dropdown>
+  <Dropdown.Button>
+    Search Engines
+    <Icon className="fa fa-caret-down pl-3" alt="" />
+  </Dropdown.Button>
+  
+  <Dropdown.Menu>
+    <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
+    <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
+    <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
+```
+
 
 ##### basic usage
+
+```jsx live=true
+<Dropdown
+  buttonContent="Search Engines"
+>
+  <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
+  <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
+  <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
+</Dropdown>
+```
+
+
+##### with icon element
+
+```jsx live=true
+<Dropdown
+  buttonContent={<span><Icon className="fa fa-user pr-3" alt="" />Search Engines</span>}
+>
+  <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
+  <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
+  <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
+</Dropdown>
+```
+
+
+##### with caret/chevron
+
+```jsx live=true
+<React.Fragment>
+  <Dropdown
+    className="mb-3"
+    buttonContent={<span>Search Engines<Icon className="fa fa-caret-down pl-3" alt="" /></span>}
+  >
+    <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
+    <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
+    <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
+  </Dropdown>
+  <Dropdown
+    buttonContent={<span>Search Engines<Icon className="fa fa-angle-down pl-3" alt="" /></span>}
+  >
+    <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
+    <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
+    <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
+  </Dropdown>
+</React.Fragment>
+```
+
+##### (Deprecated) basic usage
 
 ```jsx live=true
 <Dropdown
@@ -39,7 +103,7 @@ import PropsTable from '../../components/PropsTable';
 ```
 
 
-##### menu items as elements
+##### (Deprecated) menu items as elements
 
 ```jsx live=true
 <Dropdown
@@ -53,7 +117,7 @@ import PropsTable from '../../components/PropsTable';
 ```
 
 
-##### with icon element
+##### (Deprecated) with icon element
 
 ```jsx live=true
 <Dropdown
@@ -80,10 +144,15 @@ import PropsTable from '../../components/PropsTable';
 
 <StaticQuery
   query={graphql`query {
-    componentMetadata(displayName: { eq: "Dropdown" }) { ...ComponentDocGenData }
+    dropdown: componentMetadata(displayName: { eq: "Dropdown" }) { ...ComponentDocGenData }
+    dropdownItem: componentMetadata(displayName: { eq: "DropdownItem" }) { ...ComponentDocGenData }
   }`}
-  render={({ componentMetadata }) => {
-    if (componentMetadata == null) return null;
-    return <PropsTable propMetaData={componentMetadata.props} />;
+  render={({ dropdown, dropdownItem }) => {
+    return (
+      <div>
+        {dropdown ? <PropsTable propMetaData={dropdown.props} /> : null}
+        {dropdownItem ? <PropsTable propMetaData={dropdownItem.props} /> : null}
+      </div>
+    )
   }}
 />
