@@ -130,5 +130,11 @@
       "commit-msg": "commitlint -e $GIT_PARAMS",
       "pre-commit": "npm run lint"
     }
+  },
+  "release": {
+    "branch": "next"
+  },
+  "publishConfig": {
+    "tag": "next"
   }
 }
