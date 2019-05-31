@@ -114,10 +114,14 @@ Tabs.Label = ({
 
 Tabs.Label.propTypes = {
   label: PropTypes.string.isRequired,
-  selected: PropTypes.string.isRequired,
+  selected: PropTypes.bool,
   toggle: PropTypes.func.isRequired,
-  labelId: PropTypes.number.isRequired,
+  labelId: PropTypes.string.isRequired,
   idx: PropTypes.number.isRequired,
+};
+
+Tabs.Label.defaultProps = {
+  selected: false,
 };
 
 Tabs.Panel = ({ selected, panelId, content }) => (
@@ -137,9 +141,15 @@ Tabs.Panel = ({ selected, panelId, content }) => (
 );
 
 Tabs.Panel.propTypes = {
-  selected: PropTypes.string.isRequired,
-  panelId: PropTypes.number.isRequired,
-  content: PropTypes.string.isRequired,
+  selected: PropTypes.bool,
+  panelId: PropTypes.string,
+  content: PropTypes.string,
+};
+
+Tabs.Panel.defaultProps = {
+  selected: false,
+  panelId: '',
+  content: undefined,
 };
 // TODO: custom validator that ensures labels and panels are the same length
 
