@@ -131,10 +131,10 @@
       "pre-commit": "npm run lint"
     }
   },
-  "release": {
-    "branch": "next"
-  },
   "publishConfig": {
     "tag": "next"
+  },
+  "release": {
+    "branch": "next"
   }
 }
