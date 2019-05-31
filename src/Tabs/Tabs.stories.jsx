@@ -7,15 +7,9 @@ import README from './README.md';
 storiesOf('Navigation|Tabs', module)
   .addParameters({ info: { text: README } })
   .add('basic usage', () => (
-    <Tabs
-      labels={[
-        'Panel 1',
-        'Panel 2',
-        'Panel 3',
-      ]}
-    >
-      <div>Hello I am the first panel</div>
-      <div>Hello I am the second panel</div>
-      <div>Hello I am the third panel</div>
+    <Tabs>
+      <Tabs.Panel label="one">Hello I am the first panel</Tabs.Panel>
+      <Tabs.Panel label="two">Hello I am the second panel</Tabs.Panel>
+      <Tabs.Panel label="three">Hello I am the third panel</Tabs.Panel>
     </Tabs>
   ));
