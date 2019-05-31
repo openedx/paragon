@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class DropdownItem extends React.PureComponent {
+  componentDidMount = () => {
+    this.item.focus();
+  }
   render() {
     const {
       itemLink,
@@ -10,7 +13,7 @@ class DropdownItem extends React.PureComponent {
 
     return (
       <React.Fragment>
-        <a className="dropdown-item" href={itemLink}>{itemContent}</a>
+        <a className="dropdown-item" href={itemLink} ref={(item) => { this.dropdownItem = item; }}>{itemContent}</a>
       </React.Fragment>
     );
   }

@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 
@@ -20,37 +19,30 @@ class Dropdown extends React.Component {
     super(props);
     this.state = {
       open: false,
-      // focusIndex: 0,
+      focusIndex: 0,
     };
   }
 
   componentDidMount = () => {
-    this.addEvents();
-  }
-
-  // componentDidUpdate = (prevProps, prevState) => {
-  //   if (this.state.open) {
-  //     this.menuItems[this.state.focusIndex].focus();
-  //   } else if (prevState.open && this.toggleElem) {
-  //     this.toggleElem.focus();
-  //   }
-  // }
-
-  componentWillUnmount = () => {
-    // remove open and close events
-    this.removeEvents();
-  }
-
-  addEvents = () => {
     document.addEventListener('click', this.handleDocumentClick, true);
   }
 
-  removeEvents = () => {
+  componentDidUpdate = (prevProps, prevState) => {
+    // const menuItem = this.props.children[this.state.focusIndex].props;
+    if (this.state.open) {
+      // menuItem.focus();
+    } else if (prevState.open && this.toggleElem) {
+      this.toggleElem.focus();
+    }
+  }
+
+  componentWillUnmount = () => {
     document.removeEventListener('click', this.handleDocumentClick, true);
   }
 
   handleDocumentClick = (e) => {
     if (this.container && this.container.contains(e.target) && this.container !== e.target) {
+      this.disableScroll();
       return;
     }
     if (this.state.open) {
@@ -58,39 +50,43 @@ class Dropdown extends React.Component {
     }
   }
 
-  // handleMenuKeyDown = (e) => {
-  //   e.preventDefault();
-  //   if (Dropdown.isTriggerKey('CLOSE_MENU', e.key)) {
-  //     this.toggle();
-  //   } else if (Dropdown.isTriggerKey('SELECT_MENU_ITEM', e.key)) {
-  //     e.target.click();
-  //     this.setState({
-  //       open: false,
-  //     });
-  //   } else if (Dropdown.isTriggerKey('NAVIGATE_DOWN', e.key)) {
-  //     this.setState({
-  //       focusIndex: (this.state.focusIndex + 1) % this.props.menuItems.length,
-  //     });
-  //   } else if (Dropdown.isTriggerKey('NAVIGATE_UP', e.key)) {
-  //     this.setState({
-  //       focusIndex: ((this.state.focusIndex - 1) + this.props.menuItems.length) %
-  //                   this.props.menuItems.length,
-  //     });
-  //   }
-  // }
-  //
-  // handleToggleKeyDown = (e) => {
-  //   if (!this.state.open && Dropdown.isTriggerKey('OPEN_MENU', e.key)) {
-  //     this.toggle();
-  //   } else if (this.state.open && Dropdown.isTriggerKey('CLOSE_MENU', e.key)) {
-  //     this.toggle();
-  //   }
-  // }
+  disableScroll = () => {
+    document.body.style.overflow = 'hidden';
+  }
+
+  handleMenuKeyDown = (e) => {
+    e.preventDefault();
+    if (Dropdown.isTriggerKey('CLOSE_MENU', e.key)) {
+      this.toggle();
+    } else if (Dropdown.isTriggerKey('SELECT_MENU_ITEM', e.key)) {
+      e.target.click();
+      this.setState({
+        open: false,
+      });
+    } else if (Dropdown.isTriggerKey('NAVIGATE_DOWN', e.key)) {
+      this.setState({
+        focusIndex: (this.state.focusIndex + 1) % this.props.children.length,
+      });
+    } else if (Dropdown.isTriggerKey('NAVIGATE_UP', e.key)) {
+      this.setState({
+        focusIndex: ((this.state.focusIndex - 1) + this.props.children.length) %
+                    this.props.children.length,
+      });
+    }
+  }
+
+  handleToggleKeyDown = (e) => {
+    if (!this.state.open && Dropdown.isTriggerKey('OPEN_MENU', e.key)) {
+      this.toggle();
+    } else if (this.state.open && Dropdown.isTriggerKey('CLOSE_MENU', e.key)) {
+      this.toggle();
+    }
+  }
 
   toggle = () => {
     this.setState({
       open: !this.state.open,
-      // focusIndex: 0,
+      focusIndex: 0,
     });
   }
 
@@ -98,62 +94,30 @@ class Dropdown extends React.Component {
     const { open } = this.state;
     const {
       buttonType,
-      iconElement,
+      buttonClassName,
       buttonContent,
     } = this.props;
-    const hasIconElement = React.isValidElement(iconElement);
 
     return (
       <div
-        className={classNames(
-          'dropdown',
-          {
-            show: open,
-            'has-icon': hasIconElement,
-            rounded: hasIconElement,
-            border: hasIconElement,
-            'd-flex': hasIconElement,
-            'bg-white': hasIconElement,
-          },
-        )}
+        className={this.state.open ? 'dropdown show' : 'dropdown'}
         ref={(container) => { this.container = container; }}
       >
-        { hasIconElement &&
-          <div
-            className={classNames(
-              'icon-container',
-              'd-flex',
-              'align-items-center',
-              'justify-content-center',
-              'border-right',
-            )}
-          >
-            {React.cloneElement(iconElement, {
-              className: iconElement.props ? classNames(iconElement.props.className, 'rounded-left') : null,
-            })}
-          </div>
-        }
         <Button
           aria-expanded={open}
           aria-haspopup="true"
+          className={buttonClassName}
           buttonType={buttonType}
           onClick={this.toggle}
           onKeyDown={this.handleToggleKeyDown}
-          className={classNames(
-            'dropdown-toggle',
-            {
-              'border-0': hasIconElement,
-              'rounded-0': hasIconElement,
-              'bg-white': hasIconElement,
-            },
-          )}
           type="button"
+          focusIndex={this.state.focusIndex}
           inputRef={(toggleElem) => { this.toggleElem = toggleElem; }}
         >
           {buttonContent}
         </Button>
         {this.state.open && (
-          <div className="dropdown-menu show">
+          <div className="dropdown-menu show" aria-label="primary">
             {this.props.children}
           </div>
         )}
@@ -166,14 +130,14 @@ class Dropdown extends React.Component {
 Dropdown.propTypes = {
   children: PropTypes.node,
   buttonType: PropTypes.string,
-  iconElement: PropTypes.element,
+  buttonClassName: PropTypes.string,
   buttonContent: PropTypes.string,
 };
 
 Dropdown.defaultProps = {
   children: null,
   buttonType: 'light',
-  iconElement: undefined,
+  buttonClassName: 'dropdown-toggle',
   buttonContent: 'Dropdown Name',
 };
 

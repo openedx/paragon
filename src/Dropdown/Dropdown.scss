@@ -1,11 +1,23 @@
-.dropdown.has-icon {
-  .icon-container {
-    max-width: 40px;
-    box-sizing: content-box;
+// .dropdown.has-icon {
+//   .icon-container {
+//     max-width: 40px;
+//     box-sizing: content-box;
+//
+//     img {
+//       max-width: 100%;
+//       height: auto;
+//     }
+//   }
+// }
 
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-  }
+.dropdown button {
+  margin-bottom: 1rem;
+}
+
+.icon-left {
+  padding-right: 1rem;
+}
+
+.icon-right {
+  padding-left: 1rem;
 }
