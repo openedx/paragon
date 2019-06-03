@@ -7,9 +7,8 @@ class Dropdown extends React.Component {
     super(props);
     this.state = {
       open: false,
-      focusIndex: 0,
     };
-    this.dropdownItem = React.createRef();
+    this.dropdownItemRef = React.createRef();
   }
 
   componentDidMount = () => {
@@ -26,6 +25,26 @@ class Dropdown extends React.Component {
     document.removeEventListener('click', this.handleDocumentClick, true);
   }
 
+  getFocusableElements = () => {
+    const elements = 'button:not([disabled]), [href]:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])';
+    return this.dropdownItemRef.current.querySelectorAll(elements);
+  }
+
+  focusNext = () => {
+    const allFocusableElements = Array.from(this.getFocusableElements());
+    const activeIndex = allFocusableElements.indexOf(document.activeElement);
+    const nextIndex = (activeIndex + 1) % allFocusableElements.length;
+    allFocusableElements[nextIndex].focus();
+  }
+
+  focusPrevious = () => {
+    const allFocusableElements = Array.from(this.getFocusableElements());
+    const activeIndex = allFocusableElements.indexOf(document.activeElement);
+    const previousIndex =
+      ((activeIndex - 1) + allFocusableElements.length) % allFocusableElements.length;
+    allFocusableElements[previousIndex].focus();
+  }
+
   handleDocumentClick = (e) => {
     if (this.container && this.container.contains(e.target) && this.container !== e.target) {
       return;
@@ -35,14 +54,18 @@ class Dropdown extends React.Component {
     }
   }
 
-  handleMenuKeyDown = () => {
-    console.log('handleMenuKeyDown');
-    // on key up and down, preventDefault
-    // prevent component from knowing the event happened to stop window from scrolling
+  handleMenuKeyDown = (e) => {
+    e.preventDefault();
+    if (e.key === 'Escape') {
+      this.toggle();
+    } else if (e.key === 'ArrowDown' || 'Tab') {
+      this.focusNext();
+    } else if (e.key === 'ArrowUp') {
+      this.focusPrevious();
+    }
   }
 
-  handleToggleKeyDown = (e) => {
-    console.log('handleToggleKeyDown', e.key);
+  handleToggleOpen = (e) => {
     if (e.key === 'Enter' || e.key === 'ArrowDown') {
       this.toggle();
     } else if (this.state.open && e.key === 'Escape') {
@@ -53,7 +76,6 @@ class Dropdown extends React.Component {
   toggle = () => {
     this.setState({
       open: !this.state.open,
-      focusIndex: 0,
     });
   }
 
@@ -65,6 +87,7 @@ class Dropdown extends React.Component {
       buttonContent,
       ...other
     } = this.props;
+
     return (
       <div
         className={this.state.open ? 'dropdown show' : 'dropdown'}
@@ -77,15 +100,14 @@ class Dropdown extends React.Component {
           className={buttonClassName}
           buttonType={buttonType}
           onClick={this.toggle}
-          onKeyDown={this.handleToggleKeyDown}
+          onKeyDown={this.handleToggleOpen}
           type="button"
-          focusIndex={this.state.focusIndex}
           inputRef={(toggleElem) => { this.toggleElem = toggleElem; }}
         >
           {buttonContent}
         </Button>
         {this.state.open && (
-          <div className="dropdown-menu show" aria-label={buttonContent} aria-hidden={!open} role="menu">
+          <div className="dropdown-menu show" aria-label={buttonContent} aria-hidden={!open} role="menu" ref={this.dropdownItemRef} onKeyDown={this.handleMenuKeyDown}>
             {this.props.children}
           </div>
         )}
@@ -96,17 +118,15 @@ class Dropdown extends React.Component {
 }
 
 Dropdown.propTypes = {
-  children: PropTypes.node,
   buttonType: PropTypes.string,
   buttonClassName: PropTypes.string,
-  buttonContent: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  buttonContent: PropTypes.string.isRequired,
 };
 
 Dropdown.defaultProps = {
-  children: null,
   buttonType: 'light',
   buttonClassName: 'dropdown-toggle',
-  buttonContent: 'Dropdown Name',
 };
 
 export default Dropdown;

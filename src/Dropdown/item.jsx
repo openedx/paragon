@@ -19,7 +19,7 @@ class DropdownItem extends React.PureComponent {
     } = this.props;
 
     return (
-      <a {...other} className="dropdown-item" href={itemLink} ref={this.itemRef} onKeyDown={this.handleMenuKeyDown} >{itemContent}</a>
+      <a {...other} className="dropdown-item" href={itemLink} ref={this.itemRef}>{itemContent}</a>
     );
   }
 }
