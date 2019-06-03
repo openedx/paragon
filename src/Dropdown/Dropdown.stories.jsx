@@ -6,10 +6,6 @@ import DropdownItem from './item';
 import Icon from '../Icon';
 import README from './README.md';
 
-// 'basic usage'
-// 'menu items as elements'
-// 'with icon element'
-
 storiesOf('Navigation|Dropdown', module)
   .addParameters({ info: { text: README } })
   .add('basic usage', () => (
@@ -17,7 +13,7 @@ storiesOf('Navigation|Dropdown', module)
       buttonClassName="dropdown-toggle"
       buttonContent={<span>Search Engines</span>}
     >
-      <DropdownItem itemLink="https://google.com" itemContent="Google" ref={(child) => { this.childItem = child; }} />
+      <DropdownItem itemLink="https://google.com" itemContent="Google" />
       <DropdownItem itemLink="https://duckduckgo.com" itemContent="DuckDuckGo" />
       <DropdownItem itemLink="https://yahoo.com" itemContent="Yahoo" />
     </Dropdown>
