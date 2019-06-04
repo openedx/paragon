@@ -7,6 +7,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
+import Button from '../Button';
 import newId from '../utils/newId';
 
 class Tabs extends React.Component {
@@ -14,7 +15,6 @@ class Tabs extends React.Component {
     super(props);
 
     this.toggle = this.toggle.bind(this);
-
     this.state = {
       activeTab: 0,
       uuid: newId('tabInterface'),
@@ -37,120 +37,129 @@ class Tabs extends React.Component {
     return `tab-panel-${this.state.uuid}-${index}`;
   }
 
-  render() {
-    const { children } = this.props;
-    return (
-      <div className="tabs">
-        <div className={classNames('nav', 'nav-tabs')} role="tablist">
-          {
-          children.map((child, i) => {
-          const { label } = child.props;
-          const selected = this.state.activeTab === i;
-          const labelId = this.genLabelId(i);
+  buildLabels() {
+    const { labels } = this.props.tabs;
+    return labels.map((label, i) => {
+      const labelId = this.genLabelId(i);
+      const panelId = this.genPanelId(i);
 
-            return (
-              <Tabs.Label
-                label={label}
-                idx={i}
-                selected={selected}
-                labelId={labelId}
-                toggle={this.toggle}
-                key={labelId}
-              />
-            );
-          })
-        }
-        </div>
-        <div className="tabs-content">
-          {
-            children.map((child, i) => {
-              const content = child.props.children;
-              const selected = this.state.activeTab === i;
-              const panelId = this.genPanelId(i);
-              if (this.state.activeTab === i) {
-                return (
-                  <Tabs.Panel
-                    selected={selected}
-                    panelId={panelId}
-                    content={content}
-                  >
-                  </Tabs.Panel>
-                );
-              }
-                return undefined;
-            })
-          }
-        </div>
-      </div>
-    );
+      return (
+        <Tabs.Label
+          labelId={labelId}
+          panelId={panelId}
+          label={label}
+          index={i}
+          activeTab={this.state.activeTab}
+          toggle={this.toggle}
+        />
+      );
+    });
   }
+x
+buildPanels() {
+  const { contents } = this.props.tabs;
+  return contents.map((panel, i) => {
+    const panelId = this.genPanelId(i);
+    const labelId = this.genLabelId(i);
+
+    return (
+      <Tabs.Panel
+        labelId={labelId}
+        panelId={panelId}
+        panel={panel}
+        index={i}
+        activeTab={this.state.activeTab}
+      />
+    );
+  });
 }
 
+render() {
+  const labels = this.buildLabels();
+  const panels = this.buildPanels();
+
+  return (
+    <div className="tabs">
+      <div
+        role="tablist"
+        className={classNames([
+            'nav',
+            'nav-tabs',
+          ])}
+      >
+        {labels}
+      </div>
+      <div role="tabpanel" className="tab-content">
+        {panels}
+      </div>
+    </div>
+  );
+}
+}
 
 Tabs.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  tabs: PropTypes.element.isRequired,
 };
 
-Tabs.Label = ({
-  label, idx, selected, labelId, toggle,
-}) => (
-
-  <button
-    type="button"
-    role="tab"
-    aria-selected={selected}
-    aria-controls={labelId}
-    id={labelId}
-    onClick={() => { toggle(idx); }}
-    className={classNames('nav-link', 'nav-item', 'btn', {
-      active: selected,
-    })}
-    key={label}
-  >
-    {label}
-  </button>
-
-);
-
-Tabs.Label.propTypes = {
-  label: PropTypes.string.isRequired,
-  selected: PropTypes.bool,
-  toggle: PropTypes.func.isRequired,
-  labelId: PropTypes.string.isRequired,
-  idx: PropTypes.number.isRequired,
-};
-
-Tabs.Label.defaultProps = {
-  selected: false,
-};
-
-Tabs.Panel = ({ selected, panelId, content }) => (
-  <div
-    aria-hidden={!selected}
-    aria-labelledby={panelId}
-    className={classNames(
-    'tab-pane', 'fade', 'show active',
-    { active: selected },
-  )}
-    id={panelId}
-    key={panelId}
-    role="tabpanel"
-  >
-    {content}
-  </div>
-);
-
-Tabs.Panel.propTypes = {
-  selected: PropTypes.bool,
-  panelId: PropTypes.string,
-  content: PropTypes.string,
-};
-
-Tabs.Panel.defaultProps = {
-  selected: false,
-  panelId: '',
-  content: undefined,
-};
 // TODO: custom validator that ensures labels and panels are the same length
 
 export default Tabs;
+
+Tabs.Label = ({
+  labelId, panelId, label, index, activeTab, toggle,
+}) => {
+  const selected = index === activeTab;
+  return (
+    <Button
+      role="tab"
+      aria-selected={selected}
+      aria-controls={panelId}
+      id={labelId}
+      key={labelId}
+      onClick={() => { toggle(index); }}
+      className={classNames('nav-link nav-item', {
+        active: selected,
+      })}
+    >
+      {label}
+    </Button>
+  );
+};
+
+Tabs.Label.propTypes = {
+  labelId: PropTypes.string.isRequired,
+  panelId: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  index: PropTypes.string.isRequired,
+  activeTab: PropTypes.string.isRequired,
+  toggle: PropTypes.func.isRequired,
+};
+
+Tabs.Panel = ({
+  labelId, panelId, panel, index, activeTab,
+}) => {
+  const selected = index === activeTab;
+  return (
+    <div
+      aria-hidden={!selected}
+      aria-labelledby={labelId}
+      className={classNames(
+        'tab-pane',
+        { active: selected },
+      )}
+      id={panelId}
+      key={panelId}
+      role="tabpanel"
+    >
+      {panel}
+    </div>
+  );
+};
+
+Tabs.Panel.propTypes = {
+  labelId: PropTypes.string.isRequired,
+  panelId: PropTypes.string.isRequired,
+  panel: PropTypes.string.isRequired,
+  index: PropTypes.string.isRequired,
+  activeTab: PropTypes.string.isRequired,
+};
