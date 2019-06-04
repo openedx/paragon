@@ -49,6 +49,7 @@ class Tabs extends React.Component {
           panelId={panelId}
           label={label}
           index={i}
+          key={label}
           activeTab={this.state.activeTab}
           toggle={this.toggle}
         />
@@ -67,6 +68,7 @@ class Tabs extends React.Component {
           labelId={labelId}
           panelId={panelId}
           panel={panel}
+          key={panel}
           index={i}
           activeTab={this.state.activeTab}
         />
@@ -130,7 +132,7 @@ Tabs.Label.propTypes = {
   labelId: PropTypes.string.isRequired,
   panelId: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  index: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
   activeTab: PropTypes.number.isRequired,
   toggle: PropTypes.func.isRequired,
 };
@@ -151,7 +153,9 @@ Tabs.Panel = ({
       key={panelId}
       role="tabpanel"
     >
-      {panel}
+      <div>
+        {panel}
+      </div>
     </div>
   );
 };
@@ -160,6 +164,6 @@ Tabs.Panel.propTypes = {
   labelId: PropTypes.string.isRequired,
   panelId: PropTypes.string.isRequired,
   panel: PropTypes.string.isRequired,
-  index: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
   activeTab: PropTypes.number.isRequired,
 };
