@@ -2,17 +2,13 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Tabs from './index';
 
+const tabOne = { label: 'first', panel: 'I am the first' };
+const tabTwo = { label: 'second', panel: 'I am the second' };
+const tabThree = { label: 'third', panel: 'I am the third' };
+
+
 const props = {
-  labels: [
-    'first',
-    'second',
-    'third',
-  ],
-  children: [
-    <div>first</div>,
-    <div>second</div>,
-    <div>third</div>,
-  ],
+  tabs: [tabOne, tabTwo, tabThree],
 };
 
 const tabSelectedAtIndex = (index, wrapper) => {

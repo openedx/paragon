@@ -38,8 +38,8 @@ class Tabs extends React.Component {
   }
 
   buildLabels() {
-    const { labels } = this.props.tabs;
-    return labels.map((label, i) => {
+    return this.props.tabs.map((tab, i) => {
+      const { label } = tab;
       const labelId = this.genLabelId(i);
       const panelId = this.genPanelId(i);
 
@@ -55,50 +55,50 @@ class Tabs extends React.Component {
       );
     });
   }
-x
-buildPanels() {
-  const { contents } = this.props.tabs;
-  return contents.map((panel, i) => {
-    const panelId = this.genPanelId(i);
-    const labelId = this.genLabelId(i);
+
+  buildPanels() {
+    return this.props.tabs.map((tab, i) => {
+      const { panel } = tab;
+      const panelId = this.genPanelId(i);
+      const labelId = this.genLabelId(i);
+
+      return (
+        <Tabs.Panel
+          labelId={labelId}
+          panelId={panelId}
+          panel={panel}
+          index={i}
+          activeTab={this.state.activeTab}
+        />
+      );
+    });
+  }
+
+  render() {
+    const labels = this.buildLabels();
+    const panels = this.buildPanels();
 
     return (
-      <Tabs.Panel
-        labelId={labelId}
-        panelId={panelId}
-        panel={panel}
-        index={i}
-        activeTab={this.state.activeTab}
-      />
-    );
-  });
-}
-
-render() {
-  const labels = this.buildLabels();
-  const panels = this.buildPanels();
-
-  return (
-    <div className="tabs">
-      <div
-        role="tablist"
-        className={classNames([
+      <div className="tabs">
+        <div
+          role="tablist"
+          className={classNames([
             'nav',
             'nav-tabs',
           ])}
-      >
-        {labels}
+        >
+          {labels}
+        </div>
+        <div role="tabpanel" className="tab-content">
+          {panels}
+        </div>
       </div>
-      <div role="tabpanel" className="tab-content">
-        {panels}
-      </div>
-    </div>
-  );
-}
+    );
+  }
 }
 
 Tabs.propTypes = {
-  tabs: PropTypes.element.isRequired,
+  tabs: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)).isRequired,
 };
 
 // TODO: custom validator that ensures labels and panels are the same length
@@ -131,7 +131,7 @@ Tabs.Label.propTypes = {
   panelId: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   index: PropTypes.string.isRequired,
-  activeTab: PropTypes.string.isRequired,
+  activeTab: PropTypes.number.isRequired,
   toggle: PropTypes.func.isRequired,
 };
 
@@ -161,5 +161,5 @@ Tabs.Panel.propTypes = {
   panelId: PropTypes.string.isRequired,
   panel: PropTypes.string.isRequired,
   index: PropTypes.string.isRequired,
-  activeTab: PropTypes.string.isRequired,
+  activeTab: PropTypes.number.isRequired,
 };
