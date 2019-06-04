@@ -32,9 +32,10 @@ class StatusAlertWrapper extends React.Component {
         <StatusAlert
           alertType={this.props.alertType}
           open={this.state.open}
-          dialog={this.props.dialog}
           onClose={this.resetStatusAlertWrapperState}
-        />
+        >
+          {this.props.children}
+        </StatusAlert>
         <Button
           onClick={this.openStatusAlert}
           buttonType="light"
@@ -49,7 +50,7 @@ class StatusAlertWrapper extends React.Component {
 
 StatusAlertWrapper.propTypes = {
   alertType: PropTypes.string,
-  dialog: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
 
 };
 
@@ -61,74 +62,75 @@ storiesOf('StatusAlert', module)
   .addParameters({ info: { text: README } })
   .add('basic usage', () => (
     <StatusAlert
-      dialog="You have a status alert!"
       onClose={() => {}}
       open
-    />
+    >You have a status alert!
+    </StatusAlert>
   ))
   .add('success alert', () => (
     <StatusAlert
       alertType="success"
-      dialog="Success!"
       onClose={() => {}}
       open
-    />
+    >Success!
+    </StatusAlert>
   ))
   .add('danger alert', () => (
     <StatusAlert
       alertType="danger"
-      dialog="Error!"
       onClose={() => {}}
       open
-    />
+    >Error!
+    </StatusAlert>
   ))
   .add('informational alert', () => (
     <StatusAlert
       alertType="info"
-      dialog="Get some info here!"
       onClose={() => {}}
       open
-    />
+    >Get some info here!
+    </StatusAlert>
   ))
   .add('alert with a custom aria-label on the close button', () => (
     <StatusAlert
       alertType="info"
-      dialog="Some very specific information."
       onClose={() => {}}
       open
       closeButtonAriaLabel="Dismiss this very specific information."
-    />
+    >Some very specific information.
+    </StatusAlert>
   ))
   .add('Non-dismissible alert', () => (
     <StatusAlert
       alertType="danger"
       dismissible={false}
-      dialog="You can't get rid of me!"
       open
-    />
+    >You cant get rid of me!
+    </StatusAlert>
   ))
   .add('alert invoked via a button', () => (
     <StatusAlertWrapper
       alertType="success"
-      dialog="Success! You triggered the alert!"
-    />
+    > Success! You triggered the alert!
+    </StatusAlertWrapper>
   ))
   .add('alert with a link', () => (
     <StatusAlert
       alertType="info"
-      dialog={(
-        <div>
-          <span>Love cats? </span>
-          <a
-            href="https://www.factretriever.com/cat-facts"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Click me!
-          </a>
-        </div>
-      )}
       onClose={() => {}}
       open
-    />
+    >{(
+      <div>
+        <span>Love cats? </span>
+        <a
+          href="https://www.factretriever.com/cat-facts"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Click me!
+        </a>
+      </div>
+    )}
+
+    </StatusAlert>
   ));

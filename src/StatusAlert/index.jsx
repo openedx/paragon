@@ -55,11 +55,9 @@ class StatusAlert extends React.Component {
   }
 
   renderDialog() {
-    const { dialog } = this.props;
-
     return (
       <div className="alert-dialog">
-        { dialog }
+        { this.props.children }
       </div>
     );
   }
@@ -109,7 +107,7 @@ class StatusAlert extends React.Component {
 StatusAlert.propTypes = {
   alertType: PropTypes.string,
   className: PropTypes.string,
-  dialog: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   dismissible: PropTypes.bool,
   /* eslint-disable react/require-default-props */
   closeButtonAriaLabel: PropTypes.string,
