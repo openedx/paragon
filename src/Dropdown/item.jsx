@@ -2,36 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class DropdownItem extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.itemRef = React.createRef();
-  }
-
-  componentDidMount = () => {
-    const firstItem = this.itemRef.current.offsetParent.childNodes[0];
-    firstItem.focus();
-  }
   render() {
     const {
-      itemLink,
-      itemContent,
+      type,
+      children,
       ...other
     } = this.props;
 
-    return (
-      <a {...other} className="dropdown-item" href={itemLink} ref={this.itemRef}>{itemContent}</a>
+    const item = React.createElement(
+      type,
+      {
+        ...other,
+        className: 'dropdown-item',
+      },
+      children,
     );
+    return item;
   }
 }
 
 DropdownItem.propTypes = {
-  itemLink: PropTypes.string,
-  itemContent: PropTypes.string,
+  type: PropTypes.string,
+  children: PropTypes.node,
 };
 
 DropdownItem.defaultProps = {
-  itemLink: null,
-  itemContent: 'Item',
+  type: 'a',
+  children: undefined,
 };
 
 export default DropdownItem;

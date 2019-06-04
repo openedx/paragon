@@ -13,9 +13,9 @@ storiesOf('Navigation|Dropdown', module)
       buttonClassName="dropdown-toggle"
       buttonContent={<span>Search Engines</span>}
     >
-      <DropdownItem itemLink="https://google.com" itemContent="Google" />
-      <DropdownItem itemLink="https://duckduckgo.com" itemContent="DuckDuckGo" />
-      <DropdownItem itemLink="https://yahoo.com" itemContent="Yahoo" />
+      <DropdownItem href="https://google.com">Google</DropdownItem>
+      <DropdownItem href="https://duckduckgo.com">DuckDuckGo</DropdownItem>
+      <DropdownItem href="https://yahoo.com">Yahoo</DropdownItem>
     </Dropdown>
   ))
   .add('with icon element', () => (
@@ -23,9 +23,9 @@ storiesOf('Navigation|Dropdown', module)
       buttonClassName="dropdown-toggle"
       buttonContent={<span><Icon className="fa fa-user icon-left" alt="icon-user" />Search Engines</span>}
     >
-      <DropdownItem itemLink="https://google.com" itemContent="Google" />
-      <DropdownItem itemLink="https://duckduckgo.com" itemContent="DuckDuckGo" />
-      <DropdownItem itemLink="https://yahoo.com" itemContent="Yahoo" />
+      <DropdownItem href="https://google.com">Google</DropdownItem>
+      <DropdownItem href="https://duckduckgo.com">DuckDuckGo</DropdownItem>
+      <DropdownItem href="https://yahoo.com">Yahoo</DropdownItem>
     </Dropdown>
   ))
   .add('with caret/chevron', () => (
@@ -34,17 +34,17 @@ storiesOf('Navigation|Dropdown', module)
         buttonClassName="dropdown-toggle"
         buttonContent={<span>Search Engines<Icon className="fa fa-caret-down icon-right" alt="icon-caret" /></span>}
       >
-        <DropdownItem itemLink="https://google.com" itemContent="Google" />
-        <DropdownItem itemLink="https://duckduckgo.com" itemContent="DuckDuckGo" />
-        <DropdownItem itemLink="https://yahoo.com" itemContent="Yahoo" />
+        <DropdownItem href="https://google.com">Google</DropdownItem>
+        <DropdownItem href="https://duckduckgo.com">DuckDuckGo</DropdownItem>
+        <DropdownItem href="https://yahoo.com">Yahoo</DropdownItem>
       </Dropdown>
       <Dropdown
         buttonClassName="dropdown-toggle"
         buttonContent={<span>Search Engines<Icon className="fa fa-angle-down icon-right" alt="icon-caret" /></span>}
       >
-        <DropdownItem itemLink="https://google.com" itemContent="Google" />
-        <DropdownItem itemLink="https://duckduckgo.com" itemContent="DuckDuckGo" />
-        <DropdownItem itemLink="https://yahoo.com" itemContent="Yahoo" />
+        <DropdownItem href="https://google.com">Google</DropdownItem>
+        <DropdownItem href="https://duckduckgo.com">DuckDuckGo</DropdownItem>
+        <DropdownItem href="https://yahoo.com">Yahoo</DropdownItem>
       </Dropdown>
     </React.Fragment>
   ));

@@ -14,3 +14,8 @@ Note: When passing in a component to `DropdownItem` that uses a prop other than 
 
 ### `buttonContent` (string; required)
 `buttonContent` specifies the text that is displayed within the original dropdown button. Can have an 'icon' element to be displayed alongside the text.
+
+## Subcomponents
+
+### `type` (string; optional)
+`type` is used to determine the type of tag to be rendered. Default is an <a></a> tag.
