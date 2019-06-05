@@ -10,7 +10,7 @@ storiesOf('Navigation|Dropdown', module)
   .addParameters({ info: { text: README } })
   .add('basic usage', () => (
     <Dropdown
-      buttonClassName="dropdown-toggle"
+      buttonClassName="dropdown-toggle btn-light"
       buttonContent={<span>Search Engines</span>}
     >
       <DropdownItem href="https://google.com">Google</DropdownItem>
@@ -20,7 +20,7 @@ storiesOf('Navigation|Dropdown', module)
   ))
   .add('with icon element', () => (
     <Dropdown
-      buttonClassName="dropdown-toggle"
+      buttonClassName="dropdown-toggle btn-light"
       buttonContent={<span><Icon className="fa fa-user icon-left" alt="icon-user" />Search Engines</span>}
     >
       <DropdownItem href="https://google.com">Google</DropdownItem>
@@ -31,7 +31,7 @@ storiesOf('Navigation|Dropdown', module)
   .add('with caret/chevron', () => (
     <React.Fragment>
       <Dropdown
-        buttonClassName="dropdown-toggle"
+        buttonClassName="dropdown-toggle btn-light"
         buttonContent={<span>Search Engines<Icon className="fa fa-caret-down icon-right" alt="icon-caret" /></span>}
       >
         <DropdownItem href="https://google.com">Google</DropdownItem>

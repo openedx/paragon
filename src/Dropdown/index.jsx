@@ -8,16 +8,16 @@ class Dropdown extends React.Component {
     this.state = {
       open: false,
     };
-    this.dropdownItemRef = React.createRef();
-  }
-
-  componentDidMount = () => {
-    document.addEventListener('click', this.handleDocumentClick, true);
+    this.menuItems = React.createRef();
   }
 
   componentDidUpdate = (prevProps, prevState) => {
-    if (prevState.open && this.toggleElem) {
-      this.toggleElem.focus();
+    if (prevState.open !== this.state.open) {
+      if (this.state.open) {
+        this.focusFirst();
+      } else {
+        this.toggleButton.focus();
+      }
     }
   }
 
@@ -27,7 +27,7 @@ class Dropdown extends React.Component {
 
   getFocusableElements = () => {
     const selector = 'button:not([disabled]), [href]:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])';
-    return this.dropdownItemRef.current.querySelectorAll(selector);
+    return this.menuItems.current.querySelectorAll(selector);
   }
 
   focusFirst = () => {
@@ -59,32 +59,40 @@ class Dropdown extends React.Component {
   }
 
   handleMenuKeyDown = (e) => {
-    e.preventDefault();
-    if (e.key === 'ArrowUp') {
-      this.focusPrevious();
-    } else if (e.key === 'ArrowDown' || 'Tab') {
-      this.focusNext();
-    }
-    if (e.key === 'Escape') {
-      this.toggle();
+    switch (e.key) {
+      case 'ArrowUp':
+        e.preventDefault();
+        this.focusPrevious();
+        break;
+      case 'ArrowDown' || 'Tab':
+        e.preventDefault();
+        this.focusNext();
+        break;
+      case 'Escape':
+        e.stopPropagation();
+        this.toggle();
+        break;
+      default:
+        return null;
     }
   }
 
   open = () => {
-    setTimeout(() => { this.focusFirst(); }, 1);
+    // adding event listener here so the user can close dropdown on click outside of the dropdown
+    document.addEventListener('click', this.handleDocumentClick, true);
     this.setState({
       open: true,
     });
   }
 
   close = () => {
+    document.removeEventListener('click', this.handleDocumentClick, true);
     this.setState({
       open: false,
     });
   }
 
   toggle = () => {
-    // conditional here for open close, but could be on Button onClick
     if (this.state.open) {
       this.close();
     } else {
@@ -95,7 +103,6 @@ class Dropdown extends React.Component {
   render() {
     const { open } = this.state;
     const {
-      buttonType,
       buttonClassName,
       buttonContent,
       ...other
@@ -111,14 +118,14 @@ class Dropdown extends React.Component {
           aria-expanded={open}
           aria-haspopup="true"
           className={buttonClassName}
-          buttonType={buttonType}
           onClick={this.toggle}
           type="button"
-          inputRef={(toggleElem) => { this.toggleElem = toggleElem; }}
+          inputRef={(toggleButton) => { this.toggleButton = toggleButton; }}
         >
           {buttonContent}
         </Button>
-        <div className={this.state.open ? 'dropdown-menu show' : 'dropdown-menu'} aria-label={buttonContent} aria-hidden={!open} role="menu" ref={this.dropdownItemRef} onKeyDown={this.handleMenuKeyDown}>
+        {/* eslint-disable-next-line jsx-a11y/interactive-supports-focus */}
+        <div className={this.state.open ? 'dropdown-menu show' : 'dropdown-menu'} aria-label={buttonContent} aria-hidden={!open} role="menu" ref={this.menuItems} onKeyDown={this.handleMenuKeyDown}>
           {this.props.children}
         </div>
       </div>
@@ -127,14 +134,12 @@ class Dropdown extends React.Component {
 }
 
 Dropdown.propTypes = {
-  buttonType: PropTypes.string,
   buttonClassName: PropTypes.string,
   children: PropTypes.node.isRequired,
   buttonContent: PropTypes.string.isRequired,
 };
 
 Dropdown.defaultProps = {
-  buttonType: 'light',
   buttonClassName: 'dropdown-toggle',
 };
 
