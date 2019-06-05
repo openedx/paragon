@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 
 class ExampleStatusWrapper extends React.Component {
@@ -29,3 +30,8 @@ class ExampleStatusWrapper extends React.Component {
 }
 
 export default ExampleStatusWrapper;
+
+
+ExampleStatusWrapper.propTypes = {
+  children: PropTypes.element.isRequired,
+};
