@@ -44,19 +44,19 @@ class Tabs extends React.Component {
       const panelId = this.genPanelId(i);
       const isSelected = this.state.activeTab === i;
       return (
-        <Button
+        <button
           role="tab"
           aria-selected={isSelected}
           aria-controls={panelId}
           id={labelId}
           key={labelId}
           onClick={() => { this.toggle(i); }}
-          className={classNames('nav-link nav-item', {
+          className={classNames('nav-link nav-item btn', {
           active: isSelected,
         })}
         >
           {label}
-        </Button>
+        </button>
 
       );
     });
