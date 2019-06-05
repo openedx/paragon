@@ -6,8 +6,6 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-
-import Button from '../Button';
 import newId from '../utils/newId';
 
 class Tabs extends React.Component {
