@@ -49,14 +49,14 @@ class Dropdown extends React.Component {
     allFocusableElements[previousIndex].focus();
   }
 
-  // handleDocumentClick = (e) => {
-  //   if (this.container && this.container.contains(e.target) && this.container !== e.target) {
-  //     return;
-  //   }
-  //   if (this.state.open) {
-  //     // this.toggle();
-  //   }
-  // }
+  handleDocumentClick = (e) => {
+    if (this.container && this.container.contains(e.target) && this.container !== e.target) {
+      return;
+    }
+    if (this.state.open) {
+      this.toggle();
+    }
+  }
 
   handleMenuKeyDown = (e) => {
     e.preventDefault();
@@ -70,30 +70,14 @@ class Dropdown extends React.Component {
     }
   }
 
-  // refactor to Open() and Close() set state on each function
-  // settimeout on Open
-  // handleToggleOpen = (e) => {
-  //   if (e.key === 'Enter' || e.key === 'ArrowDown') {
-  //     console.log('enter pressed');
-  //     this.setState({
-  //       open: true,
-  //     });
-  //   } else if (this.state.open && e.key === 'Escape') {
-  //     console.log('escape pressed');
-  //     this.setState({
-  //       open: false,
-  //     });
-  //   }
-  // }
-
-  open = (e) => {
+  open = () => {
     setTimeout(() => { this.focusFirst(); }, 1);
     this.setState({
       open: true,
     });
   }
 
-  close = (e) => {
+  close = () => {
     this.setState({
       open: false,
     });
@@ -106,9 +90,6 @@ class Dropdown extends React.Component {
     } else {
       this.open();
     }
-    // this.setState({
-    //   open: !this.state.open,
-    // });
   }
 
   render() {
