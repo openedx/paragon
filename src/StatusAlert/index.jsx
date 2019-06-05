@@ -11,40 +11,14 @@ class StatusAlert extends React.Component {
   constructor(props) {
     super(props);
 
-    this.close = this.close.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.renderDialog = this.renderDialog.bind(this);
-
-    this.state = {
-      open: props.open,
-    };
   }
 
   componentDidMount() {
     if (this.xButton) {
       this.xButton.focus();
     }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.open !== this.props.open) {
-      this.setState({ open: nextProps.open });
-    }
-  }
-
-  componentDidUpdate(prevState) {
-    if (this.state.open && !prevState.open && this.xButton) {
-      this.xButton.focus();
-    }
-  }
-
-  focus() {
-    this.xButton.focus();
-  }
-
-  close() {
-    this.setState({ open: false });
-    this.props.onClose();
   }
 
   handleKeyDown(e) {
@@ -62,14 +36,14 @@ class StatusAlert extends React.Component {
     );
   }
 
-  renderDismissible() {
-    const { closeButtonAriaLabel, dismissible } = this.props;
+  renderDismissibleButton() {
+    const { closeButtonAriaLabel, dismissible, onClose } = this.props;
 
     return (dismissible) ? (
       <Button
         aria-label={closeButtonAriaLabel}
         inputRef={(input) => { this.xButton = input; }}
-        onClick={this.close}
+        onClick={onClose}
         onKeyDown={this.handleKeyDown}
         isClose
       >
@@ -79,7 +53,9 @@ class StatusAlert extends React.Component {
   }
 
   render() {
-    const { alertType, className, dismissible } = this.props;
+    const {
+      alertType, className, dismissible, open,
+    } = this.props;
 
     return (
       <div
@@ -92,12 +68,12 @@ class StatusAlert extends React.Component {
         }, {
           [`alert-${alertType}`]: alertType !== undefined,
         }, {
-          show: this.state.open,
+          show: open,
         })}
         role="alert"
-        hidden={!this.state.open}
+        hidden={!open}
       >
-        {this.renderDismissible()}
+        {this.renderDismissibleButton()}
         {this.renderDialog()}
       </div>
     );

@@ -6,24 +6,19 @@ import StatusAlert from './index';
 import Button from '../Button';
 
 import README from './README.md';
+import ExampleStatusWrapper from './ExampleStatusWrapper';
 
 class StatusAlertWrapper extends React.Component {
   constructor(props) {
     super(props);
-
-    this.openStatusAlert = this.openStatusAlert.bind(this);
-    this.resetStatusAlertWrapperState = this.resetStatusAlertWrapperState.bind(this);
-
     this.state = { open: false };
+    this.toggleAlert = this.toggleAlert.bind(this);
   }
 
-  openStatusAlert() {
-    this.setState({ open: true });
-  }
-
-  resetStatusAlertWrapperState() {
-    this.setState({ open: false });
-    this.button.focus();
+  toggleAlert() {
+    this.setState({
+      open: !this.state.open,
+    });
   }
 
   render() {
@@ -32,12 +27,12 @@ class StatusAlertWrapper extends React.Component {
         <StatusAlert
           alertType={this.props.alertType}
           open={this.state.open}
-          onClose={this.resetStatusAlertWrapperState}
+          onClose={this.toggleAlert}
         >
           {this.props.children}
         </StatusAlert>
         <Button
-          onClick={this.openStatusAlert}
+          onClick={this.toggleAlert}
           buttonType="light"
           inputRef={(input) => { this.button = input; }}
         >
@@ -61,52 +56,53 @@ StatusAlertWrapper.defaultProps = {
 storiesOf('StatusAlert', module)
   .addParameters({ info: { text: README } })
   .add('basic usage', () => (
-    <StatusAlert
-      onClose={() => {}}
-      open
-    >You have a status alert!
-    </StatusAlert>
+    <ExampleStatusWrapper>
+      <StatusAlert>
+        You have a status alert!
+      </StatusAlert>
+    </ExampleStatusWrapper>
   ))
   .add('success alert', () => (
-    <StatusAlert
-      alertType="success"
-      onClose={() => {}}
-      open
-    >Success!
-    </StatusAlert>
+    <ExampleStatusWrapper>
+      <StatusAlert
+        alertType="success"
+      >Success!
+      </StatusAlert>
+    </ExampleStatusWrapper >
   ))
   .add('danger alert', () => (
-    <StatusAlert
-      alertType="danger"
-      onClose={() => {}}
-      open
-    >Error!
-    </StatusAlert>
+    <ExampleStatusWrapper>
+      <StatusAlert
+        alertType="danger"
+      >Error!
+      </StatusAlert>
+    </ExampleStatusWrapper>
   ))
   .add('informational alert', () => (
-    <StatusAlert
-      alertType="info"
-      onClose={() => {}}
-      open
-    >Get some info here!
-    </StatusAlert>
+    <ExampleStatusWrapper>
+      <StatusAlert
+        alertType="info"
+      >Get some info here!
+      </StatusAlert>
+    </ExampleStatusWrapper>
   ))
   .add('alert with a custom aria-label on the close button', () => (
-    <StatusAlert
-      alertType="info"
-      onClose={() => {}}
-      open
-      closeButtonAriaLabel="Dismiss this very specific information."
-    >Some very specific information.
-    </StatusAlert>
+    <ExampleStatusWrapper>
+      <StatusAlert
+        alertType="info"
+        closeButtonAriaLabel="Dismiss this very specific information."
+      >Some very specific information.
+      </StatusAlert>
+    </ExampleStatusWrapper>
   ))
   .add('Non-dismissible alert', () => (
-    <StatusAlert
-      alertType="danger"
-      dismissible={false}
-      open
-    >You cant get rid of me!
-    </StatusAlert>
+    <ExampleStatusWrapper>
+      <StatusAlert
+        alertType="danger"
+        dismissible={false}
+      >You cant get rid of me!
+      </StatusAlert>
+    </ExampleStatusWrapper>
   ))
   .add('alert invoked via a button', () => (
     <StatusAlertWrapper
@@ -115,22 +111,22 @@ storiesOf('StatusAlert', module)
     </StatusAlertWrapper>
   ))
   .add('alert with a link', () => (
-    <StatusAlert
-      alertType="info"
-      onClose={() => {}}
-      open
-    >{(
-      <div>
-        <span>Love cats? </span>
-        <a
-          href="https://www.factretriever.com/cat-facts"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Click me!
-        </a>
-      </div>
-    )}
+    <ExampleStatusWrapper>
+      <StatusAlert
+        alertType="info"
+      >{(
+        <div>
+          <span>Love cats? </span>
+          <a
+            href="https://www.factretriever.com/cat-facts"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+        Click me!
+          </a>
+        </div>
+  )}
 
-    </StatusAlert>
+      </StatusAlert>
+    </ExampleStatusWrapper>
   ));
