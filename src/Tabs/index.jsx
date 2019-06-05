@@ -81,9 +81,7 @@ class Tabs extends React.Component {
           key={panelId}
           role="tabpanel"
         >
-          <div>
-            {panel}
-          </div>
+          {panel}
         </div>
       );
     });
