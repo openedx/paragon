@@ -1,18 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBell, faExclamationTriangle, faCat } from '@fortawesome/free-solid-svg-icons';
-
 
 import StatusAlert from './index';
 import StatusAlertWrapperWithButton from './StatusAlertWrapperWithButton';
+import Icon from '../Icon';
 
 import README from './README.md';
 
-const bell = <FontAwesomeIcon icon={faBell} />;
-const alarm = <FontAwesomeIcon icon={faExclamationTriangle} />;
-const cat = <FontAwesomeIcon icon={faCat} />;
+const bell = <Icon className={['fa', 'fa-bell']} />;
+const alarm = <Icon className={['fa', 'fa-exclamation-triangle']} />;
+const cat = <Icon className={['fa', 'fa-cat']} />;
 
 class ExampleStatusWrapper extends React.Component {
   constructor(props) {

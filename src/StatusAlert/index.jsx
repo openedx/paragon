@@ -6,10 +6,6 @@ import isRequiredIf from 'react-proptype-conditional-require';
 import Button from '../Button';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
-const iconStyle = {
-  paddingRight: '5px',
-};
-
 class StatusAlert extends React.Component {
   constructor(props) {
     super(props);
@@ -68,7 +64,7 @@ class StatusAlert extends React.Component {
       >
 
         {this.renderDismissibleButton()}
-        {icon ? <span style={iconStyle}>{icon}</span> : null}
+        {icon ? <span>{icon}</span> : null}
         <span className="alert-dialog">
           { this.props.children }
         </span>
