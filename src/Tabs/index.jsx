@@ -32,7 +32,7 @@ class Tabs extends React.Component {
   }
 
   genContentId(index) {
-    return `tab-canel-${this.state.uuid}-${index}`;
+    return `tab-content-${this.state.uuid}-${index}`;
   }
 
   buildLabels() {
@@ -49,7 +49,7 @@ class Tabs extends React.Component {
           id={labelId}
           key={labelId}
           onClick={() => { this.toggle(i); }}
-          className={classNames('nav-link nav-item btn', {
+          className={classNames('btn nav-link nav-item', {
           active: isSelected,
         })}
         >

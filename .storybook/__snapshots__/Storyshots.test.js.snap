@@ -1706,6 +1706,101 @@ exports[`Storyshots Navigation|Tabs basic usage 1`] = `
 </div>
 `;
 
+exports[`Storyshots Navigation|Tabs passing elements as props 1`] = `
+<div
+  className="tabs"
+>
+  <div
+    className="nav nav-tabs"
+    role="tablist"
+  >
+    <button
+      aria-controls="tab-canel-tabInterface61-0"
+      aria-selected={true}
+      className="nav-link nav-item btn active"
+      id="tab-label-tabInterface61-0"
+      onClick={[Function]}
+      role="tab"
+    >
+      Panel 1
+    </button>
+    <button
+      aria-controls="tab-canel-tabInterface61-1"
+      aria-selected={false}
+      className="nav-link nav-item btn"
+      id="tab-label-tabInterface61-1"
+      onClick={[Function]}
+      role="tab"
+    >
+      Panel 2
+    </button>
+    <button
+      aria-controls="tab-canel-tabInterface61-2"
+      aria-selected={false}
+      className="nav-link nav-item btn"
+      id="tab-label-tabInterface61-2"
+      onClick={[Function]}
+      role="tab"
+    >
+      Panel 3
+    </button>
+  </div>
+  <div
+    className="tab-content"
+    role="tabpanel"
+  >
+    <div
+      aria-hidden={false}
+      aria-labelledby="tab-label-tabInterface61-0"
+      className="tab-pane active"
+      id="tab-canel-tabInterface61-0"
+      role="tabpanel"
+    >
+      <div>
+        <p>
+          Panel 1 paragraph 1 with an element as props
+        </p>
+        <p>
+          Panel 1 paragraph 2 with an element as props
+        </p>
+      </div>
+    </div>
+    <div
+      aria-hidden={true}
+      aria-labelledby="tab-label-tabInterface61-1"
+      className="tab-pane"
+      id="tab-canel-tabInterface61-1"
+      role="tabpanel"
+    >
+      <div>
+        <p>
+          Panel 2 paragraph 1 with an element as props
+        </p>
+        <p>
+          Panel 2 paragraph 2 with an element as props
+        </p>
+      </div>
+    </div>
+    <div
+      aria-hidden={true}
+      aria-labelledby="tab-label-tabInterface61-2"
+      className="tab-pane"
+      id="tab-canel-tabInterface61-2"
+      role="tabpanel"
+    >
+      <div>
+        <p>
+          Panel 3 paragraph 1 with an element as props
+        </p>
+        <p>
+          Panel 3 paragraph 2 with an element as props
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots StatusAlert Non-dismissible alert 1`] = `
 <div
   className="alert fade alert-danger show"
