@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import isRequiredIf from 'react-proptype-conditional-require';
 
 import Button from '../Button';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
@@ -10,6 +9,7 @@ class StatusAlert extends React.Component {
   constructor(props) {
     super(props);
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.close = this.close.bind(this);
   }
 
   componentDidMount() {
@@ -25,14 +25,19 @@ class StatusAlert extends React.Component {
     }
   }
 
+  close() {
+    this.props.toggleAlert();
+    if (this.props.onClose) this.props.onClose();
+  }
+
   renderDismissibleButton() {
-    const { closeButtonAriaLabel, dismissible, onClose } = this.props;
+    const { closeButtonAriaLabel, dismissible } = this.props;
 
     return (dismissible) ? (
       <Button
         aria-label={closeButtonAriaLabel}
         inputRef={(input) => { this.xButton = input; }}
-        onClick={onClose}
+        onClick={this.close}
         onKeyDown={this.handleKeyDown}
         isClose
       >
@@ -43,7 +48,7 @@ class StatusAlert extends React.Component {
 
   render() {
     const {
-      alertType, className, dismissible, open, icon,
+      alertType, className, dismissible, isOpen, icon,
     } = this.props;
 
     return (
@@ -57,10 +62,10 @@ class StatusAlert extends React.Component {
         }, {
           [`alert-${alertType}`]: alertType !== undefined,
         }, {
-          show: open,
+          show: isOpen,
         })}
         role="alert"
-        hidden={!open}
+        hidden={!isOpen}
       >
 
         {this.renderDismissibleButton()}
@@ -80,9 +85,10 @@ StatusAlert.propTypes = {
   dismissible: PropTypes.bool,
   /* eslint-disable react/require-default-props */
   closeButtonAriaLabel: PropTypes.string,
-  onClose: isRequiredIf(PropTypes.func, props => props.dismissible),
-  open: PropTypes.bool,
+  onClose: PropTypes.func,
   icon: PropTypes.string,
+  isOpen: PropTypes.bool.isRequired,
+  toggleAlert: PropTypes.func.isRequired,
 };
 
 StatusAlert.defaultProps = {
@@ -90,8 +96,8 @@ StatusAlert.defaultProps = {
   className: undefined,
   closeButtonAriaLabel: 'Close',
   dismissible: true,
-  open: false,
   icon: null,
+  onClose: null,
 };
 
 export default withDeprecatedProps(StatusAlert, 'StatusAlert', {

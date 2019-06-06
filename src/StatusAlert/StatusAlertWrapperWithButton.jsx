@@ -7,20 +7,20 @@ import Button from '../Button';
 class StatusAlertWrapperWithButton extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { open: false };
+    this.state = { isOpen: false };
     this.toggleAlert = this.toggleAlert.bind(this);
   }
 
   toggleAlert() {
     this.setState({
-      open: !this.state.open,
+      isOpen: !this.state.isOpen,
     });
   }
 
   render() {
     const children = React.Children.map(this.props.children, child => React.cloneElement(child, {
-      onClose: this.toggleAlert,
-      open: this.state.open,
+      toggleAlert: this.toggleAlert,
+      isOpen: this.state.isOpen,
     }));
 
     return (

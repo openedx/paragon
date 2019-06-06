@@ -15,20 +15,20 @@ const cat = <Icon className={['fa', 'fa-cat']} />;
 class ExampleStatusWrapper extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { open: true };
+    this.state = { isOpen: true };
     this.toggleAlert = this.toggleAlert.bind(this);
   }
 
   toggleAlert() {
     this.setState({
-      open: !this.state.open,
+      isOpen: !this.state.isOpen,
     });
   }
 
   render() {
     const children = React.Children.map(this.props.children, child => React.cloneElement(child, {
-      open: this.state.open,
-      onClose: this.toggleAlert,
+      isOpen: this.state.isOpen,
+      toggleAlert: this.toggleAlert,
     }));
 
     return (

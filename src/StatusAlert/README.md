@@ -19,5 +19,5 @@ Provides a status alert component with customizable dialog options. StatusAlert 
 ### `onClose` (function; conditionally required)
 `onClose` is a function that is called on close. It can be used to perform actions upon closing of the status alert, such as restoring focus to the previous logical focusable element.  It is only required if `dismissible` is set to `true` and not required if the alert is not `dismissible`.
 
-### `open` (boolean; optional)
-`open` specifies whether the status alert renders open or closed on the initial render. It defaults to false.
+### `isOpen` (boolean; required)
+`isOpen` specifies whether the status alert renders open or closed on the initial render. State of isOpen should be maintained in the parent component.
