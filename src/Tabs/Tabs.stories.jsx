@@ -10,13 +10,13 @@ storiesOf('Navigation|Tabs', module)
     <Tabs
       tabs={[{
         label: 'Panel 1',
-        panel: 'Hello I am the first panel',
+        content: 'Hello I am the first panel',
       }, {
         label: 'Panel 2',
-        panel: 'Hello I am the second panel',
+        content: 'Hello I am the second panel',
       }, {
         label: 'Panel 3',
-        panel: 'Hello I am the third panel',
+        content: 'Hello I am the third panel',
       }]}
     />
   ));

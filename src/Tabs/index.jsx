@@ -31,21 +31,21 @@ class Tabs extends React.Component {
     return `tab-label-${this.state.uuid}-${index}`;
   }
 
-  genPanelId(index) {
-    return `tab-panel-${this.state.uuid}-${index}`;
+  genContentId(index) {
+    return `tab-canel-${this.state.uuid}-${index}`;
   }
 
   buildLabels() {
     return this.props.tabs.map((tab, i) => {
       const { label } = tab;
       const labelId = this.genLabelId(i);
-      const panelId = this.genPanelId(i);
+      const contentId = this.genContentId(i);
       const isSelected = this.state.activeTab === i;
       return (
         <button
           role="tab"
           aria-selected={isSelected}
-          aria-controls={panelId}
+          aria-controls={contentId}
           id={labelId}
           key={labelId}
           onClick={() => { this.toggle(i); }}
@@ -60,10 +60,10 @@ class Tabs extends React.Component {
     });
   }
 
-  buildPanels() {
+  buildContents() {
     return this.props.tabs.map((tab, i) => {
-      const { panel } = tab;
-      const panelId = this.genPanelId(i);
+      const { content } = tab;
+      const contentId = this.genContentId(i);
       const labelId = this.genLabelId(i);
       const isSelected = this.state.activeTab === i;
 
@@ -75,11 +75,11 @@ class Tabs extends React.Component {
           'tab-pane',
           { active: isSelected },
         )}
-          id={panelId}
-          key={panelId}
+          id={contentId}
+          key={contentId}
           role="tabpanel"
         >
-          {panel}
+          {content}
         </div>
       );
     });
@@ -87,7 +87,7 @@ class Tabs extends React.Component {
 
   render() {
     const labels = this.buildLabels();
-    const panels = this.buildPanels();
+    const contents = this.buildContents();
 
     return (
       <div className="tabs">
@@ -101,7 +101,7 @@ class Tabs extends React.Component {
           {labels}
         </div>
         <div role="tabpanel" className="tab-content">
-          {panels}
+          {contents}
         </div>
       </div>
     );
