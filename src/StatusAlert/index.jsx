@@ -6,13 +6,14 @@ import isRequiredIf from 'react-proptype-conditional-require';
 import Button from '../Button';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
+const iconStyle = {
+  paddingRight: '5px',
+};
 
 class StatusAlert extends React.Component {
   constructor(props) {
     super(props);
-
     this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.renderDialog = this.renderDialog.bind(this);
   }
 
   componentDidMount() {
@@ -26,14 +27,6 @@ class StatusAlert extends React.Component {
       e.preventDefault();
       this.close();
     }
-  }
-
-  renderDialog() {
-    return (
-      <div className="alert-dialog">
-        { this.props.children }
-      </div>
-    );
   }
 
   renderDismissibleButton() {
@@ -54,7 +47,7 @@ class StatusAlert extends React.Component {
 
   render() {
     const {
-      alertType, className, dismissible, open,
+      alertType, className, dismissible, open, icon,
     } = this.props;
 
     return (
@@ -73,8 +66,12 @@ class StatusAlert extends React.Component {
         role="alert"
         hidden={!open}
       >
+
         {this.renderDismissibleButton()}
-        {this.renderDialog()}
+        {icon ? <span style={iconStyle}>{icon}</span> : null}
+        <span className="alert-dialog">
+          { this.props.children }
+        </span>
       </div>
     );
   }
@@ -89,6 +86,7 @@ StatusAlert.propTypes = {
   closeButtonAriaLabel: PropTypes.string,
   onClose: isRequiredIf(PropTypes.func, props => props.dismissible),
   open: PropTypes.bool,
+  icon: PropTypes.string,
 };
 
 StatusAlert.defaultProps = {
@@ -97,6 +95,7 @@ StatusAlert.defaultProps = {
   closeButtonAriaLabel: 'Close',
   dismissible: true,
   open: false,
+  icon: null,
 };
 
 export default withDeprecatedProps(StatusAlert, 'StatusAlert', {

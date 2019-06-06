@@ -1,17 +1,23 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBell, faExclamationTriangle, faCat } from '@fortawesome/free-solid-svg-icons';
+
 
 import StatusAlert from './index';
-import Button from '../Button';
+import StatusAlertWrapperWithButton from './StatusAlertWrapperWithButton';
 
 import README from './README.md';
-import ExampleStatusWrapper from './ExampleStatusWrapper';
 
-class StatusAlertWrapper extends React.Component {
+const bell = <FontAwesomeIcon icon={faBell} />;
+const alarm = <FontAwesomeIcon icon={faExclamationTriangle} />;
+const cat = <FontAwesomeIcon icon={faCat} />;
+
+class ExampleStatusWrapper extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { open: false };
+    this.state = { open: true };
     this.toggleAlert = this.toggleAlert.bind(this);
   }
 
@@ -22,42 +28,28 @@ class StatusAlertWrapper extends React.Component {
   }
 
   render() {
+    const children = React.Children.map(this.props.children, child => React.cloneElement(child, {
+      open: this.state.open,
+      onClose: this.toggleAlert,
+    }));
+
     return (
       <div>
-        <StatusAlert
-          alertType={this.props.alertType}
-          open={this.state.open}
-          onClose={this.toggleAlert}
-        >
-          {this.props.children}
-        </StatusAlert>
-        <Button
-          onClick={this.toggleAlert}
-          buttonType="light"
-          inputRef={(input) => { this.button = input; }}
-        >
-          Click me to open a Status Alert!
-        </Button>
+        {children}
       </div>
     );
   }
 }
 
-StatusAlertWrapper.propTypes = {
-  alertType: PropTypes.string,
-  children: PropTypes.string.isRequired,
 
+ExampleStatusWrapper.propTypes = {
+  children: PropTypes.element.isRequired,
 };
-
-StatusAlertWrapper.defaultProps = {
-  alertType: 'warning',
-};
-
 storiesOf('StatusAlert', module)
   .addParameters({ info: { text: README } })
   .add('basic usage', () => (
     <ExampleStatusWrapper>
-      <StatusAlert>
+      <StatusAlert icon={bell}>
         You have a status alert!
       </StatusAlert>
     </ExampleStatusWrapper>
@@ -66,6 +58,7 @@ storiesOf('StatusAlert', module)
     <ExampleStatusWrapper>
       <StatusAlert
         alertType="success"
+        icon={bell}
       >Success!
       </StatusAlert>
     </ExampleStatusWrapper >
@@ -74,6 +67,7 @@ storiesOf('StatusAlert', module)
     <ExampleStatusWrapper>
       <StatusAlert
         alertType="danger"
+        icon={alarm}
       >Error!
       </StatusAlert>
     </ExampleStatusWrapper>
@@ -82,6 +76,7 @@ storiesOf('StatusAlert', module)
     <ExampleStatusWrapper>
       <StatusAlert
         alertType="info"
+        icon={bell}
       >Get some info here!
       </StatusAlert>
     </ExampleStatusWrapper>
@@ -90,6 +85,7 @@ storiesOf('StatusAlert', module)
     <ExampleStatusWrapper>
       <StatusAlert
         alertType="info"
+        icon={bell}
         closeButtonAriaLabel="Dismiss this very specific information."
       >Some very specific information.
       </StatusAlert>
@@ -99,23 +95,29 @@ storiesOf('StatusAlert', module)
     <ExampleStatusWrapper>
       <StatusAlert
         alertType="danger"
+        icon={alarm}
         dismissible={false}
       >You cant get rid of me!
       </StatusAlert>
     </ExampleStatusWrapper>
   ))
   .add('alert invoked via a button', () => (
-    <StatusAlertWrapper
-      alertType="success"
-    > Success! You triggered the alert!
-    </StatusAlertWrapper>
+    <StatusAlertWrapperWithButton>
+      <StatusAlert
+        alertType="success"
+        icon={bell}
+      >
+      Success! You triggered the alert!
+      </StatusAlert>
+    </StatusAlertWrapperWithButton>
   ))
   .add('alert with a link', () => (
     <ExampleStatusWrapper>
       <StatusAlert
         alertType="info"
+        icon={cat}
       >{(
-        <div>
+        <span>
           <span>Love cats? </span>
           <a
             href="https://www.factretriever.com/cat-facts"
@@ -124,7 +126,7 @@ storiesOf('StatusAlert', module)
           >
         Click me!
           </a>
-        </div>
+        </span>
   )}
 
       </StatusAlert>
