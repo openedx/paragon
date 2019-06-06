@@ -111,7 +111,7 @@ class Tabs extends React.Component {
 Tabs.propTypes = {
   tabs: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string.isRequired,
-    content: PropTypes.oneOf([PropTypes.string, PropTypes.element]).isRequired,
+    content: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   })).isRequired,
 };
 

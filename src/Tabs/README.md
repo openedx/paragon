@@ -1,6 +1,6 @@
 # Tabs
 
-Provides the ability for a Tab view that allows for switching between tabs to view panels within a page.
+Provides the ability for a Tab view that allows for switching between tabs to view content within a page.
 
 ## API
 
