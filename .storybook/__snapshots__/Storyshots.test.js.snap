@@ -1707,24 +1707,118 @@ exports[`Storyshots Navigation|Tabs basic usage 1`] = `
 `;
 
 exports[`Storyshots StatusAlert Non-dismissible alert 1`] = `
-<div
-  className="alert fade alert-danger show"
-  hidden={false}
-  role="alert"
->
+<div>
   <div
-    className="alert-dialog"
+    className="alert fade alert-danger show"
+    hidden={false}
+    role="alert"
   >
-    You can't get rid of me!
+    <span>
+      <span
+        aria-hidden={true}
+        className="fa fa-exclamation-triangle"
+        id="Icon1"
+      />
+    </span>
+    <span
+      className="alert-dialog"
+    >
+      You cant get rid of me!
+    </span>
   </div>
 </div>
 `;
 
 exports[`Storyshots StatusAlert alert invoked via a button 1`] = `
 <div>
+  <div>
+    <div
+      className="alert fade alert-dismissible alert-success"
+      hidden={true}
+      role="alert"
+    >
+      <button
+        aria-label="Close"
+        className="btn close"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        type="button"
+      >
+        <span
+          aria-hidden="true"
+        >
+          ×
+        </span>
+      </button>
+      <span>
+        <span
+          aria-hidden={true}
+          className="fa fa-bell"
+          id="Icon1"
+        />
+      </span>
+      <span
+        className="alert-dialog"
+      >
+        Success! You triggered the alert!
+      </span>
+    </div>
+  </div>
+  <button
+    className="btn btn-light"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    Click me to open a Status Alert!
+  </button>
+</div>
+`;
+
+exports[`Storyshots StatusAlert alert with a custom aria-label on the close button 1`] = `
+<div>
   <div
-    className="alert fade alert-dismissible alert-success"
-    hidden={true}
+    className="alert fade alert-dismissible alert-info show"
+    hidden={false}
+    role="alert"
+  >
+    <button
+      aria-label="Dismiss this very specific information."
+      className="btn close"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+      >
+        ×
+      </span>
+    </button>
+    <span>
+      <span
+        aria-hidden={true}
+        className="fa fa-bell"
+        id="Icon1"
+      />
+    </span>
+    <span
+      className="alert-dialog"
+    >
+      Some very specific information.
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots StatusAlert alert with a link 1`] = `
+<div>
+  <div
+    className="alert fade alert-dismissible alert-info show"
+    hidden={false}
     role="alert"
   >
     <button
@@ -1741,199 +1835,177 @@ exports[`Storyshots StatusAlert alert invoked via a button 1`] = `
         ×
       </span>
     </button>
-    <div
+    <span>
+      <span
+        aria-hidden={true}
+        className="fa fa-cat"
+        id="Icon1"
+      />
+    </span>
+    <span
       className="alert-dialog"
     >
-      Success! You triggered the alert!
-    </div>
-  </div>
-  <button
-    className="btn btn-light"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    type="button"
-  >
-    Click me to open a Status Alert!
-  </button>
-</div>
-`;
-
-exports[`Storyshots StatusAlert alert with a custom aria-label on the close button 1`] = `
-<div
-  className="alert fade alert-dismissible alert-info show"
-  hidden={false}
-  role="alert"
->
-  <button
-    aria-label="Dismiss this very specific information."
-    className="btn close"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    type="button"
-  >
-    <span
-      aria-hidden="true"
-    >
-      ×
-    </span>
-  </button>
-  <div
-    className="alert-dialog"
-  >
-    Some very specific information.
-  </div>
-</div>
-`;
-
-exports[`Storyshots StatusAlert alert with a link 1`] = `
-<div
-  className="alert fade alert-dismissible alert-info show"
-  hidden={false}
-  role="alert"
->
-  <button
-    aria-label="Close"
-    className="btn close"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    type="button"
-  >
-    <span
-      aria-hidden="true"
-    >
-      ×
-    </span>
-  </button>
-  <div
-    className="alert-dialog"
-  >
-    <div>
       <span>
-        Love cats? 
+        <span>
+          Love cats? 
+        </span>
+        <a
+          href="https://www.factretriever.com/cat-facts"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Click me!
+        </a>
       </span>
-      <a
-        href="https://www.factretriever.com/cat-facts"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        Click me!
-      </a>
-    </div>
+    </span>
   </div>
 </div>
 `;
 
 exports[`Storyshots StatusAlert basic usage 1`] = `
-<div
-  className="alert fade alert-dismissible alert-warning show"
-  hidden={false}
-  role="alert"
->
-  <button
-    aria-label="Close"
-    className="btn close"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    type="button"
-  >
-    <span
-      aria-hidden="true"
-    >
-      ×
-    </span>
-  </button>
+<div>
   <div
-    className="alert-dialog"
+    className="alert fade alert-dismissible alert-warning show"
+    hidden={false}
+    role="alert"
   >
-    You have a status alert!
+    <button
+      aria-label="Close"
+      className="btn close"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+      >
+        ×
+      </span>
+    </button>
+    <span>
+      <span
+        aria-hidden={true}
+        className="fa fa-bell"
+        id="Icon1"
+      />
+    </span>
+    <span
+      className="alert-dialog"
+    >
+      You have a status alert!
+    </span>
   </div>
 </div>
 `;
 
 exports[`Storyshots StatusAlert danger alert 1`] = `
-<div
-  className="alert fade alert-dismissible alert-danger show"
-  hidden={false}
-  role="alert"
->
-  <button
-    aria-label="Close"
-    className="btn close"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    type="button"
-  >
-    <span
-      aria-hidden="true"
-    >
-      ×
-    </span>
-  </button>
+<div>
   <div
-    className="alert-dialog"
+    className="alert fade alert-dismissible alert-danger show"
+    hidden={false}
+    role="alert"
   >
-    Error!
+    <button
+      aria-label="Close"
+      className="btn close"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+      >
+        ×
+      </span>
+    </button>
+    <span>
+      <span
+        aria-hidden={true}
+        className="fa fa-exclamation-triangle"
+        id="Icon1"
+      />
+    </span>
+    <span
+      className="alert-dialog"
+    >
+      Error!
+    </span>
   </div>
 </div>
 `;
 
 exports[`Storyshots StatusAlert informational alert 1`] = `
-<div
-  className="alert fade alert-dismissible alert-info show"
-  hidden={false}
-  role="alert"
->
-  <button
-    aria-label="Close"
-    className="btn close"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    type="button"
-  >
-    <span
-      aria-hidden="true"
-    >
-      ×
-    </span>
-  </button>
+<div>
   <div
-    className="alert-dialog"
+    className="alert fade alert-dismissible alert-info show"
+    hidden={false}
+    role="alert"
   >
-    Get some info here!
+    <button
+      aria-label="Close"
+      className="btn close"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+      >
+        ×
+      </span>
+    </button>
+    <span>
+      <span
+        aria-hidden={true}
+        className="fa fa-bell"
+        id="Icon1"
+      />
+    </span>
+    <span
+      className="alert-dialog"
+    >
+      Get some info here!
+    </span>
   </div>
 </div>
 `;
 
 exports[`Storyshots StatusAlert success alert 1`] = `
-<div
-  className="alert fade alert-dismissible alert-success show"
-  hidden={false}
-  role="alert"
->
-  <button
-    aria-label="Close"
-    className="btn close"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    type="button"
-  >
-    <span
-      aria-hidden="true"
-    >
-      ×
-    </span>
-  </button>
+<div>
   <div
-    className="alert-dialog"
+    className="alert fade alert-dismissible alert-success show"
+    hidden={false}
+    role="alert"
   >
-    Success!
+    <button
+      aria-label="Close"
+      className="btn close"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+      >
+        ×
+      </span>
+    </button>
+    <span>
+      <span
+        aria-hidden={true}
+        className="fa fa-bell"
+        id="Icon1"
+      />
+    </span>
+    <span
+      className="alert-dialog"
+    >
+      Success!
+    </span>
   </div>
 </div>
 `;
@@ -5016,8 +5088,8 @@ exports[`Storyshots User Input|InputText displayed inline 1`] = `
 exports[`Storyshots User Input|InputText focus test 1`] = `
 <div>
   <div
-    className="alert fade alert-dismissible alert-info show"
-    hidden={false}
+    className="alert fade alert-dismissible alert-info"
+    hidden={true}
     role="alert"
   >
     <button
@@ -5034,11 +5106,9 @@ exports[`Storyshots User Input|InputText focus test 1`] = `
         ×
       </span>
     </button>
-    <div
+    <span
       className="alert-dialog"
-    >
-      Close me to input data!
-    </div>
+    />
   </div>
   <div
     className="form-group"
