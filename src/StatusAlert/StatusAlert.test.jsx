@@ -6,13 +6,14 @@ import Button from '../Button';
 
 const statusAlertOpen = (isOpen, wrapper) => {
   expect(wrapper.find('.alert').hasClass('show')).toEqual(isOpen);
-  expect(wrapper.find('StatusAlert').state('open')).toEqual(isOpen);
 };
+
 const dialog = 'Status Alert dialog';
 const defaultProps = {
-  dialog,
+  children: dialog,
+  toggleAlert: () => {},
   onClose: () => {},
-  open: true,
+  isOpen: true,
 };
 
 let wrapper;
@@ -44,12 +45,14 @@ describe('<StatusAlert />', () => {
     });
   });
 
+
   describe('props received correctly', () => {
     it('component receives props', () => {
-      wrapper = mount(<StatusAlert dialog={dialog} onClose={() => {}} />);
+      wrapper =
+      mount(<StatusAlert onClose={() => {}} >{dialog}</StatusAlert>);
 
       statusAlertOpen(false, wrapper);
-      wrapper.setProps({ open: true });
+      wrapper.setProps({ isOpen: true });
       statusAlertOpen(true, wrapper);
     });
 
@@ -63,36 +66,35 @@ describe('<StatusAlert />', () => {
   });
 
   describe('close functions properly', () => {
-    beforeEach(() => {
-      wrapper = mount(<StatusAlert {...defaultProps} />);
-    });
-
     it('closes when x button pressed', () => {
-      statusAlertOpen(true, wrapper);
+      const closeFn = jest.fn();
+      wrapper = mount(<StatusAlert {...defaultProps} toggleAlert={closeFn} />);
+      expect(closeFn).toHaveBeenCalledTimes(0);
       wrapper.find('button').at(0).simulate('click');
-      statusAlertOpen(false, wrapper);
+      expect(closeFn).toHaveBeenCalledTimes(1);
     });
 
     it('closes when Enter key pressed', () => {
-      statusAlertOpen(true, wrapper);
+      const closeFn = jest.fn();
+      wrapper = mount(<StatusAlert {...defaultProps} toggleAlert={closeFn} />);
+      expect(closeFn).toHaveBeenCalledTimes(0);
       wrapper.find('button').at(0).simulate('keyDown', { key: 'Enter' });
-      statusAlertOpen(false, wrapper);
+      expect(closeFn).toHaveBeenCalledTimes(1);
     });
 
     it('closes when Escape key pressed', () => {
-      statusAlertOpen(true, wrapper);
+      const closeFn = jest.fn();
+      wrapper = mount(<StatusAlert {...defaultProps} toggleAlert={closeFn} />);
+      expect(closeFn).toHaveBeenCalledTimes(0);
       wrapper.find('button').at(0).simulate('keyDown', { key: 'Escape' });
-      statusAlertOpen(false, wrapper);
+      expect(closeFn).toHaveBeenCalledTimes(1);
     });
 
     it('calls callback function on close', () => {
       const spy = jest.fn();
-
       wrapper = mount(<StatusAlert {...defaultProps} onClose={spy} />);
 
       expect(spy).toHaveBeenCalledTimes(0);
-
-      // press X button
       wrapper.find('button').at(0).simulate('click');
       expect(spy).toHaveBeenCalledTimes(1);
     });
@@ -132,9 +134,7 @@ describe('<StatusAlert />', () => {
       // move focus away from default StatusAlert xButton
       buttons.at(0).simulate('click');
       expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
-
-      const statusAlert = wrapper.find('StatusAlert').instance();
-      statusAlert.focus();
+      buttons.at(1).simulate('click');
       expect(buttons.at(1).html()).toEqual(document.activeElement.outerHTML);
     });
   });
