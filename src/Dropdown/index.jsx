@@ -144,3 +144,26 @@ Dropdown.defaultProps = {
 };
 
 export default Dropdown;
+
+Dropdown.Item = props => {
+  const { type, children, ...other } = props;
+  const item = React.createElement(
+    type,
+    {
+      ...other,
+      className: 'dropdown-item',
+    },
+    children,
+  );
+  return item;
+};
+
+Dropdown.Item.propTypes = {
+  type: PropTypes.string,
+  children: PropTypes.node,
+};
+
+Dropdown.Item.defaultProps = {
+  type: 'a',
+  children: undefined,
+};
