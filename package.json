@@ -107,7 +107,8 @@
       "/node_modules/",
       "src/setupTest.js",
       "src/index.js",
-      "/tests/"
+      "/tests/",
+      "/dist/"
     ],
     "transformIgnorePatterns": [
       "/node_modules/(?!(@edx/paragon)/).*/"
