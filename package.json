@@ -1,8 +1,9 @@
 {
   "name": "@edx/paragon",
+  "sideEffects": false,
   "version": "0.0.0-development",
   "description": "Accessible, responsive UI component library based on Bootstrap.",
-  "main": "dist/paragon.js",
+  "main": "dist/index.js",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
@@ -13,14 +14,13 @@
     "/src"
   ],
   "scripts": {
-    "build": "webpack --mode production --display-modules",
+    "build": "babel src --out-dir dist --source-maps",
     "build-storybook": "build-storybook",
     "commit": "commit",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage",
     "deploy-storybook": "storybook-to-ghpages",
     "deploy-storybook-ci": "storybook-to-ghpages --ci",
-    "is-es5": "es-check es5 ./dist/*.js",
     "lint": "eslint --ext .js --ext .jsx .",
     "prepublishOnly": "npm run build",
     "semantic-release": "semantic-release",
@@ -47,7 +47,9 @@
     "sanitize-html": "^1.20.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
     "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
@@ -70,12 +72,9 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-react": "^6.24.1",
     "bootstrap": "^4.3.1",
-    "clean-webpack-plugin": "^2.0.1",
     "coveralls": "^3.0.3",
-    "css-loader": "^2.1.1",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
-    "es-check": "^5.0.0",
     "eslint-config-edx": "^4.0.4",
     "greenkeeper-lockfile": "^1.15.1",
     "husky": "^2.0.0",
@@ -83,18 +82,11 @@
     "jest": "^24.5.0",
     "jest-cli": "^24.7.1",
     "markdown-loader-jest": "^0.1.1",
-    "mini-css-extract-plugin": "^0.6.0",
     "node-sass": "^4.11.0",
     "react-test-renderer": "^16.8.6",
-    "sass-loader": "^7.1.0",
     "semantic-release": "^15.13.3",
-    "source-map-loader": "^0.2.4",
     "storybook-readme": "^5.0.2",
-    "style-loader": "^0.23.1",
-    "travis-deploy-once": "^5.0.11",
-    "uglifyjs-webpack-plugin": "^2.1.2",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0"
+    "travis-deploy-once": "^5.0.11"
   },
   "jest": {
     "transform": {
