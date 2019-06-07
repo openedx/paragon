@@ -49,11 +49,11 @@ describe('<StatusAlert />', () => {
   describe('props received correctly', () => {
     it('component receives props', () => {
       wrapper =
-      mount(<StatusAlert onClose={() => {}} >{dialog}</StatusAlert>);
+      mount(<StatusAlert {...defaultProps} onClose={() => {}} />);
 
-      statusAlertOpen(false, wrapper);
-      wrapper.setProps({ isOpen: true });
       statusAlertOpen(true, wrapper);
+      wrapper.setProps({ isOpen: false });
+      statusAlertOpen(false, wrapper);
     });
 
     it('component receives props and ignores prop change', () => {

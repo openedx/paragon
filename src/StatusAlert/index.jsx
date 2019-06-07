@@ -86,7 +86,7 @@ StatusAlert.propTypes = {
   /* eslint-disable react/require-default-props */
   closeButtonAriaLabel: PropTypes.string,
   onClose: PropTypes.func,
-  icon: PropTypes.string,
+  icon: PropTypes.element,
   isOpen: PropTypes.bool.isRequired,
   toggleAlert: PropTypes.func.isRequired,
 };
