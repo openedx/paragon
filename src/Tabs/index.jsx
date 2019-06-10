@@ -55,7 +55,6 @@ class Tabs extends React.Component {
         >
           {label}
         </button>
-
       );
     });
   }
