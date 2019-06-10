@@ -3,16 +3,16 @@ import { shallow } from 'enzyme';
 import Tabs from './index';
 
 const props = {
-  labels: [
-    'first',
-    'second',
-    'third',
-  ],
-  children: [
-    <div>first</div>,
-    <div>second</div>,
-    <div>third</div>,
-  ],
+  tabs: [{
+    label: 'First',
+    content: 'I am the first',
+  }, {
+    label: 'Second',
+    content: 'I am the second',
+  }, {
+    label: 'Third',
+    content: 'I am the third',
+  }],
 };
 
 const tabSelectedAtIndex = (index, wrapper) => {

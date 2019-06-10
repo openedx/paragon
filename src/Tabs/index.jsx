@@ -6,8 +6,6 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-
-import Button from '../Button';
 import newId from '../utils/newId';
 
 class Tabs extends React.Component {
@@ -33,51 +31,54 @@ class Tabs extends React.Component {
     return `tab-label-${this.state.uuid}-${index}`;
   }
 
-  genPanelId(index) {
-    return `tab-panel-${this.state.uuid}-${index}`;
+  genContentId(index) {
+    return `tab-content-${this.state.uuid}-${index}`;
   }
 
   buildLabels() {
-    return this.props.labels.map((label, i) => {
-      const selected = this.state.activeTab === i;
+    return this.props.tabs.map((tab, i) => {
+      const { label } = tab;
       const labelId = this.genLabelId(i);
-
+      const contentId = this.genContentId(i);
+      const isSelected = this.state.activeTab === i;
       return (
-        <Button
+        <button
           role="tab"
-          aria-selected={selected}
-          aria-controls={this.genPanelId(i)}
+          aria-selected={isSelected}
+          aria-controls={contentId}
           id={labelId}
           key={labelId}
           onClick={() => { this.toggle(i); }}
-          className={classNames('nav-link nav-item', {
-            active: selected,
-          })}
+          className={classNames('btn nav-link nav-item', {
+          active: isSelected,
+        })}
         >
           {label}
-        </Button>
+        </button>
       );
     });
   }
 
-  buildPanels() {
-    return this.props.children.map((panel, i) => {
-      const selected = this.state.activeTab === i;
-      const panelId = this.genPanelId(i);
+  buildContents() {
+    return this.props.tabs.map((tab, i) => {
+      const { content } = tab;
+      const contentId = this.genContentId(i);
+      const labelId = this.genLabelId(i);
+      const isSelected = this.state.activeTab === i;
 
       return (
         <div
-          aria-hidden={!selected}
-          aria-labelledby={this.genLabelId(i)}
+          aria-hidden={!isSelected}
+          aria-labelledby={labelId}
           className={classNames(
-            'tab-pane',
-            { active: selected },
-          )}
-          id={panelId}
-          key={panelId}
+          'tab-pane',
+          { active: isSelected },
+        )}
+          id={contentId}
+          key={contentId}
           role="tabpanel"
         >
-          {panel}
+          {content}
         </div>
       );
     });
@@ -85,7 +86,7 @@ class Tabs extends React.Component {
 
   render() {
     const labels = this.buildLabels();
-    const panels = this.buildPanels();
+    const contents = this.buildContents();
 
     return (
       <div className="tabs">
@@ -99,20 +100,18 @@ class Tabs extends React.Component {
           {labels}
         </div>
         <div role="tabpanel" className="tab-content">
-          {panels}
+          {contents}
         </div>
       </div>
     );
   }
 }
 
-// TODO: custom validator that ensures labels and panels are the same length
 Tabs.propTypes = {
-  labels: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.string),
-    PropTypes.arrayOf(PropTypes.element),
-  ]).isRequired,
-  children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  tabs: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    content: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  })).isRequired,
 };
 
 export default Tabs;
