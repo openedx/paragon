@@ -1626,41 +1626,32 @@ exports[`Storyshots Navigation|Tabs basic usage 1`] = `
     role="tablist"
   >
     <button
-      aria-controls="tab-panel-tabInterface60-0"
+      aria-controls="tab-content-tabInterface60-0"
       aria-selected={true}
       className="btn nav-link nav-item active"
       id="tab-label-tabInterface60-0"
-      onBlur={[Function]}
       onClick={[Function]}
-      onKeyDown={[Function]}
       role="tab"
-      type="button"
     >
       Panel 1
     </button>
     <button
-      aria-controls="tab-panel-tabInterface60-1"
+      aria-controls="tab-content-tabInterface60-1"
       aria-selected={false}
       className="btn nav-link nav-item"
       id="tab-label-tabInterface60-1"
-      onBlur={[Function]}
       onClick={[Function]}
-      onKeyDown={[Function]}
       role="tab"
-      type="button"
     >
       Panel 2
     </button>
     <button
-      aria-controls="tab-panel-tabInterface60-2"
+      aria-controls="tab-content-tabInterface60-2"
       aria-selected={false}
       className="btn nav-link nav-item"
       id="tab-label-tabInterface60-2"
-      onBlur={[Function]}
       onClick={[Function]}
-      onKeyDown={[Function]}
       role="tab"
-      type="button"
     >
       Panel 3
     </button>
@@ -1673,34 +1664,28 @@ exports[`Storyshots Navigation|Tabs basic usage 1`] = `
       aria-hidden={false}
       aria-labelledby="tab-label-tabInterface60-0"
       className="tab-pane active"
-      id="tab-panel-tabInterface60-0"
+      id="tab-content-tabInterface60-0"
       role="tabpanel"
     >
-      <div>
-        Hello I am the first panel
-      </div>
+      Hello I am the first panel
     </div>
     <div
       aria-hidden={true}
       aria-labelledby="tab-label-tabInterface60-1"
       className="tab-pane"
-      id="tab-panel-tabInterface60-1"
+      id="tab-content-tabInterface60-1"
       role="tabpanel"
     >
-      <div>
-        Hello I am the second panel
-      </div>
+      Hello I am the second panel
     </div>
     <div
       aria-hidden={true}
       aria-labelledby="tab-label-tabInterface60-2"
       className="tab-pane"
-      id="tab-panel-tabInterface60-2"
+      id="tab-content-tabInterface60-2"
       role="tabpanel"
     >
-      <div>
-        Hello I am the third panel
-      </div>
+      Hello I am the third panel
     </div>
   </div>
 </div>
@@ -1715,9 +1700,9 @@ exports[`Storyshots Navigation|Tabs passing elements as props 1`] = `
     role="tablist"
   >
     <button
-      aria-controls="tab-canel-tabInterface61-0"
+      aria-controls="tab-content-tabInterface61-0"
       aria-selected={true}
-      className="nav-link nav-item btn active"
+      className="btn nav-link nav-item active"
       id="tab-label-tabInterface61-0"
       onClick={[Function]}
       role="tab"
@@ -1725,9 +1710,9 @@ exports[`Storyshots Navigation|Tabs passing elements as props 1`] = `
       Panel 1
     </button>
     <button
-      aria-controls="tab-canel-tabInterface61-1"
+      aria-controls="tab-content-tabInterface61-1"
       aria-selected={false}
-      className="nav-link nav-item btn"
+      className="btn nav-link nav-item"
       id="tab-label-tabInterface61-1"
       onClick={[Function]}
       role="tab"
@@ -1735,9 +1720,9 @@ exports[`Storyshots Navigation|Tabs passing elements as props 1`] = `
       Panel 2
     </button>
     <button
-      aria-controls="tab-canel-tabInterface61-2"
+      aria-controls="tab-content-tabInterface61-2"
       aria-selected={false}
-      className="nav-link nav-item btn"
+      className="btn nav-link nav-item"
       id="tab-label-tabInterface61-2"
       onClick={[Function]}
       role="tab"
@@ -1753,7 +1738,7 @@ exports[`Storyshots Navigation|Tabs passing elements as props 1`] = `
       aria-hidden={false}
       aria-labelledby="tab-label-tabInterface61-0"
       className="tab-pane active"
-      id="tab-canel-tabInterface61-0"
+      id="tab-content-tabInterface61-0"
       role="tabpanel"
     >
       <div>
@@ -1769,7 +1754,7 @@ exports[`Storyshots Navigation|Tabs passing elements as props 1`] = `
       aria-hidden={true}
       aria-labelledby="tab-label-tabInterface61-1"
       className="tab-pane"
-      id="tab-canel-tabInterface61-1"
+      id="tab-content-tabInterface61-1"
       role="tabpanel"
     >
       <div>
@@ -1785,7 +1770,7 @@ exports[`Storyshots Navigation|Tabs passing elements as props 1`] = `
       aria-hidden={true}
       aria-labelledby="tab-label-tabInterface61-2"
       className="tab-pane"
-      id="tab-canel-tabInterface61-2"
+      id="tab-content-tabInterface61-2"
       role="tabpanel"
     >
       <div>
@@ -6241,8 +6226,8 @@ exports[`Storyshots User Input|Textarea label as element 1`] = `
 >
   <label
     className=""
-    htmlFor="asInput64"
-    id="label-asInput64"
+    htmlFor="asInput65"
+    id="label-asInput65"
   >
     <span
       lang="en"
@@ -6251,11 +6236,11 @@ exports[`Storyshots User Input|Textarea label as element 1`] = `
     </span>
   </label>
   <textarea
-    aria-describedby="error-asInput64"
+    aria-describedby="error-asInput65"
     aria-invalid={false}
     className="form-control is-invalid-nodanger"
     disabled={false}
-    id="asInput64"
+    id="asInput65"
     name="username"
     onBlur={[Function]}
     onChange={[Function]}
@@ -6266,7 +6251,7 @@ exports[`Storyshots User Input|Textarea label as element 1`] = `
   <div
     aria-live="polite"
     className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput64"
+    id="error-asInput65"
   >
     <span />
   </div>
@@ -6279,44 +6264,10 @@ exports[`Storyshots User Input|Textarea minimal usage 1`] = `
 >
   <label
     className=""
-    htmlFor="asInput61"
-    id="label-asInput61"
-  >
-    First Name
-  </label>
-  <textarea
-    aria-describedby="error-asInput61"
-    aria-invalid={false}
-    className="form-control is-invalid-nodanger"
-    disabled={false}
-    id="asInput61"
-    name="name"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onKeyPress={[Function]}
-    required={false}
-    value="Foo Bar"
-  />
-  <div
-    aria-live="polite"
-    className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput61"
-  >
-    <span />
-  </div>
-</div>
-`;
-
-exports[`Storyshots User Input|Textarea scrollable 1`] = `
-<div
-  className="form-group"
->
-  <label
-    className=""
     htmlFor="asInput62"
     id="label-asInput62"
   >
-    Information
+    First Name
   </label>
   <textarea
     aria-describedby="error-asInput62"
@@ -6329,12 +6280,46 @@ exports[`Storyshots User Input|Textarea scrollable 1`] = `
     onChange={[Function]}
     onKeyPress={[Function]}
     required={false}
-    value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    value="Foo Bar"
   />
   <div
     aria-live="polite"
     className="invalid-feedback invalid-feedback-nodanger"
     id="error-asInput62"
+  >
+    <span />
+  </div>
+</div>
+`;
+
+exports[`Storyshots User Input|Textarea scrollable 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className=""
+    htmlFor="asInput63"
+    id="label-asInput63"
+  >
+    Information
+  </label>
+  <textarea
+    aria-describedby="error-asInput63"
+    aria-invalid={false}
+    className="form-control is-invalid-nodanger"
+    disabled={false}
+    id="asInput63"
+    name="name"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onKeyPress={[Function]}
+    required={false}
+    value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  />
+  <div
+    aria-live="polite"
+    className="invalid-feedback invalid-feedback-nodanger"
+    id="error-asInput63"
   >
     <span />
   </div>
@@ -6347,17 +6332,17 @@ exports[`Storyshots User Input|Textarea validation 1`] = `
 >
   <label
     className=""
-    htmlFor="asInput63"
-    id="label-asInput63"
+    htmlFor="asInput64"
+    id="label-asInput64"
   >
     Username
   </label>
   <textarea
-    aria-describedby="error-asInput63 description-asInput63"
+    aria-describedby="error-asInput64 description-asInput64"
     aria-invalid={false}
     className="form-control is-invalid-nodanger"
     disabled={false}
-    id="asInput63"
+    id="asInput64"
     name="username"
     onBlur={[Function]}
     onChange={[Function]}
@@ -6368,13 +6353,13 @@ exports[`Storyshots User Input|Textarea validation 1`] = `
   <div
     aria-live="polite"
     className="invalid-feedback invalid-feedback-nodanger"
-    id="error-asInput63"
+    id="error-asInput64"
   >
     <span />
   </div>
   <small
     className="form-text"
-    id="description-asInput63"
+    id="description-asInput64"
   >
     The unique name that identifies you throughout the site.
   </small>
