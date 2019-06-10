@@ -12,9 +12,7 @@ class StatusAlertWrapperWithButton extends React.Component {
   }
 
   toggleAlert() {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    });
+    this.setState(prevState => ({ isOpen: !prevState.isOpen }));
   }
 
   render() {
