@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
 import Button from '../Button';
 
 class Dropdown extends React.Component {
@@ -11,7 +13,7 @@ class Dropdown extends React.Component {
     this.menuItems = React.createRef();
   }
 
-  componentDidUpdate = (prevProps, prevState) => {
+  componentDidUpdate(prevProps, prevState) {
     if (prevState.open !== this.state.open) {
       if (this.state.open) {
         this.focusFirst();
@@ -25,23 +27,23 @@ class Dropdown extends React.Component {
     document.removeEventListener('click', this.handleDocumentClick, true);
   }
 
-  getFocusableElements = () => {
+  getFocusableElements() {
     const selector = 'button:not([disabled]), [href]:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])';
     return this.menuItems.current.querySelectorAll(selector);
   }
 
-  focusFirst = () => {
+  focusFirst() {
     this.getFocusableElements()[0].focus();
   }
 
-  focusNext = () => {
+  focusNext() {
     const allFocusableElements = Array.from(this.getFocusableElements());
     const activeIndex = allFocusableElements.indexOf(document.activeElement);
     const nextIndex = (activeIndex + 1) % allFocusableElements.length;
     allFocusableElements[nextIndex].focus();
   }
 
-  focusPrevious = () => {
+  focusPrevious() {
     const allFocusableElements = Array.from(this.getFocusableElements());
     const activeIndex = allFocusableElements.indexOf(document.activeElement);
     const previousIndex =
@@ -54,7 +56,7 @@ class Dropdown extends React.Component {
       return;
     }
     if (this.state.open) {
-      this.toggle();
+      this.close();
     }
   }
 
@@ -75,6 +77,7 @@ class Dropdown extends React.Component {
       default:
         return null;
     }
+    return null;
   }
 
   open = () => {
@@ -101,7 +104,6 @@ class Dropdown extends React.Component {
   }
 
   render() {
-    const { open } = this.state;
     const {
       buttonClassName,
       buttonContent,
@@ -110,12 +112,18 @@ class Dropdown extends React.Component {
 
     return (
       <div
-        className={this.state.open ? 'dropdown show' : 'dropdown'}
+        className={classNames(
+          'dropdown',
+          'mb-2',
+          {
+            show: this.state.open,
+          },
+        )}
         ref={(container) => { this.container = container; }}
       >
         <Button
           {...other}
-          aria-expanded={open}
+          aria-expanded={this.state.open}
           aria-haspopup="true"
           className={buttonClassName}
           onClick={this.toggle}
@@ -125,7 +133,7 @@ class Dropdown extends React.Component {
           {buttonContent}
         </Button>
         {/* eslint-disable-next-line jsx-a11y/interactive-supports-focus */}
-        <div className={this.state.open ? 'dropdown-menu show' : 'dropdown-menu'} aria-label={buttonContent} aria-hidden={!open} role="menu" ref={this.menuItems} onKeyDown={this.handleMenuKeyDown}>
+        <div className={this.state.open ? 'dropdown-menu show' : 'dropdown-menu'} aria-label={buttonContent} aria-hidden={!this.state.open} role="menu" ref={this.menuItems} onKeyDown={this.handleMenuKeyDown}>
           {this.props.children}
         </div>
       </div>
@@ -145,13 +153,15 @@ Dropdown.defaultProps = {
 
 export default Dropdown;
 
-Dropdown.Item = props => {
-  const { type, children, ...other } = props;
+Dropdown.Item = (props) => {
+  const {
+    tag, children, itemClassName, ...other
+  } = props;
   const item = React.createElement(
-    type,
+    tag,
     {
       ...other,
-      className: 'dropdown-item',
+      className: itemClassName,
     },
     children,
   );
@@ -164,6 +174,6 @@ Dropdown.Item.propTypes = {
 };
 
 Dropdown.Item.defaultProps = {
-  type: 'a',
+  tag: 'a',
   children: undefined,
 };
