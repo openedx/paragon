@@ -17,6 +17,3 @@ Note: When passing in a component to `Item` that uses a prop other than `ref` fo
 
 ### `tag` (string; optional)
 `tag` is used to determine the type of tag to be rendered. Default is an <a></a> tag.
-
-### `itemClassName` (string; optional)
-`itemClassName` is used to determine the item's class. See [Bootstrap's dropdown documentation](https://getbootstrap.com/docs/4.0/components/dropdowns/) for applicable classNames.
