@@ -1149,7 +1149,7 @@ exports[`Storyshots Navigation|Dropdown basic usage 1`] = `
     aria-expanded={false}
     aria-haspopup="true"
     className="btn dropdown-toggle btn-light"
-    id="trigger-test"
+    id="pgn__dropdown-trigger-0"
     onBlur={[Function]}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -1159,7 +1159,7 @@ exports[`Storyshots Navigation|Dropdown basic usage 1`] = `
   </button>
   <div
     aria-hidden={true}
-    aria-labelledby="trigger-test"
+    aria-labelledby="pgn__dropdown-trigger-0"
     className="dropdown-menu"
     onKeyDown={[Function]}
     role="menu"
@@ -1195,7 +1195,7 @@ Array [
       aria-expanded={false}
       aria-haspopup="true"
       className="btn dropdown-toggle btn-light"
-      id="trigger-test"
+      id="pgn__dropdown-trigger-2"
       onBlur={[Function]}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -1212,7 +1212,7 @@ Array [
     </button>
     <div
       aria-hidden={true}
-      aria-labelledby="trigger-test"
+      aria-labelledby="pgn__dropdown-trigger-2"
       className="dropdown-menu"
       onKeyDown={[Function]}
       role="menu"
@@ -1244,7 +1244,7 @@ Array [
       aria-expanded={false}
       aria-haspopup="true"
       className="btn dropdown-toggle btn-light"
-      id="trigger-test"
+      id="pgn__dropdown-trigger-3"
       onBlur={[Function]}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -1261,7 +1261,7 @@ Array [
     </button>
     <div
       aria-hidden={true}
-      aria-labelledby="trigger-test"
+      aria-labelledby="pgn__dropdown-trigger-3"
       className="dropdown-menu"
       onKeyDown={[Function]}
       role="menu"
@@ -1297,7 +1297,7 @@ exports[`Storyshots Navigation|Dropdown with icon element 1`] = `
     aria-expanded={false}
     aria-haspopup="true"
     className="btn dropdown-toggle btn-light"
-    id="trigger-test"
+    id="pgn__dropdown-trigger-1"
     onBlur={[Function]}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -1314,7 +1314,7 @@ exports[`Storyshots Navigation|Dropdown with icon element 1`] = `
   </button>
   <div
     aria-hidden={true}
-    aria-labelledby="trigger-test"
+    aria-labelledby="pgn__dropdown-trigger-1"
     className="dropdown-menu"
     onKeyDown={[Function]}
     role="menu"

@@ -13,11 +13,10 @@ class Dropdown extends React.Component {
       open: false,
     };
 
-    // Used for aria labelling. Do not use in test to prevent breaking
-    // snapshots unintentionally
-    this.dropdownId = process.env.NODE_ENV === 'test' ? 'test' : Dropdown.idCounter;
-    Dropdown.idCounter += 1; // increment the id counter so the next id can be unique
-    this.triggerId = `trigger-${this.dropdownId}`;
+    // Used for aria labelling. Increment the id counter so the next id can be unique
+    this.uniqueId = Dropdown.idCounter;
+    Dropdown.idCounter += 1;
+    this.triggerId = `pgn__dropdown-trigger-${this.uniqueId}`;
 
     this.menuItems = React.createRef();
   }
