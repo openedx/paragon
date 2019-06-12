@@ -1236,6 +1236,123 @@ exports[`Storyshots Navigation|Dropdown menu items as elements 1`] = `
 </div>
 `;
 
+exports[`Storyshots Navigation|Dropdown with caret/chevron 1`] = `
+Array [
+  <div
+    className="dropdown mb-3"
+  >
+    <button
+      aria-expanded={false}
+      aria-haspopup="true"
+      className="btn dropdown-toggle btn-light"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    >
+      <span>
+        Search Engines
+        <span
+          aria-hidden={true}
+          className="fa fa-caret-down pl-3"
+          id="Icon1"
+        />
+      </span>
+    </button>
+    <div
+      aria-hidden={true}
+      aria-label={
+        <span>
+          Search Engines
+          <withDeprecatedProps(Icon)
+            alt=""
+            className="fa fa-caret-down pl-3"
+          />
+        </span>
+      }
+      className="dropdown-menu"
+      onKeyDown={[Function]}
+      role="menu"
+    >
+      <a
+        className="dropdown-item"
+        href="https://google.com"
+      >
+        Google
+      </a>
+      <a
+        className="dropdown-item"
+        href="https://duckduckgo.com"
+      >
+        DuckDuckGo
+      </a>
+      <a
+        className="dropdown-item"
+        href="https://yahoo.com"
+      >
+        Yahoo
+      </a>
+    </div>
+  </div>,
+  <div
+    className="dropdown"
+  >
+    <button
+      aria-expanded={false}
+      aria-haspopup="true"
+      className="btn dropdown-toggle btn-light"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    >
+      <span>
+        Search Engines
+        <span
+          aria-hidden={true}
+          className="fa fa-angle-down pl-3"
+          id="Icon1"
+        />
+      </span>
+    </button>
+    <div
+      aria-hidden={true}
+      aria-label={
+        <span>
+          Search Engines
+          <withDeprecatedProps(Icon)
+            alt=""
+            className="fa fa-angle-down pl-3"
+          />
+        </span>
+      }
+      className="dropdown-menu"
+      onKeyDown={[Function]}
+      role="menu"
+    >
+      <a
+        className="dropdown-item"
+        href="https://google.com"
+      >
+        Google
+      </a>
+      <a
+        className="dropdown-item"
+        href="https://duckduckgo.com"
+      >
+        DuckDuckGo
+      </a>
+      <a
+        className="dropdown-item"
+        href="https://yahoo.com"
+      >
+        Yahoo
+      </a>
+    </div>
+  </div>,
+]
+`;
+
 exports[`Storyshots Navigation|Dropdown with icon element 1`] = `
 <div
   className="dropdown has-icon rounded border d-flex bg-white"

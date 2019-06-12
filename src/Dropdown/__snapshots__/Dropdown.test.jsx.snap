@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dropdown /> Rendering renders the happy path 1`] = `
+<div
+  className="dropdown"
+>
+  <button
+    aria-expanded={false}
+    aria-haspopup="true"
+    className="btn dropdown-toggle btn-light"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    Trigger Label
+  </button>
+  <div
+    aria-hidden={true}
+    aria-label="Trigger Label"
+    className="dropdown-menu"
+    onKeyDown={[Function]}
+    role="menu"
+  >
+    <a
+      className="dropdown-item"
+      href="https://google.com"
+    >
+      Google
+    </a>
+    <a
+      className="dropdown-item"
+      href="https://duckduckgo.com"
+    >
+      DuckDuckGo
+    </a>
+    <a
+      className="dropdown-item"
+      href="https://yahoo.com"
+    >
+      Yahoo
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<Dropdown /> Rendering renders when there is html content in the trigger button 1`] = `
+<div
+  className="dropdown"
+>
+  <button
+    aria-expanded={false}
+    aria-haspopup="true"
+    className="btn dropdown-toggle btn-light"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    <span>
+      Trigger Label
+    </span>
+  </button>
+  <div
+    aria-hidden={true}
+    aria-label={
+      <span>
+        Trigger Label
+      </span>
+    }
+    className="dropdown-menu"
+    onKeyDown={[Function]}
+    role="menu"
+  >
+    <a
+      className="dropdown-item"
+      href="https://google.com"
+    >
+      Google
+    </a>
+    <a
+      className="dropdown-item"
+      href="https://duckduckgo.com"
+    >
+      DuckDuckGo
+    </a>
+    <a
+      className="dropdown-item"
+      href="https://yahoo.com"
+    >
+      Yahoo
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<Dropdown /> Rendering renders with custom menu content 1`] = `
+<div
+  className="dropdown"
+>
+  <button
+    aria-expanded={false}
+    aria-haspopup="true"
+    className="btn dropdown-toggle btn-light"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    Trigger Label
+  </button>
+  <div
+    aria-hidden={true}
+    aria-label="Trigger Label"
+    className="dropdown-menu"
+    onKeyDown={[Function]}
+    role="menu"
+  >
+    Custom Content
+  </div>
+</div>
+`;
