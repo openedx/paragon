@@ -1,0 +1,40 @@
+import { Link } from 'gatsby'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import heroImage from '../images/paragon-icon.png';
+import { Input, Button } from '~paragon-react';
+
+<SEO title="Home" keywords={['paragon', 'pattern library', 'react']} />
+
+# Welcome
+
+<p><img src={heroImage} /></p>
+
+Welcome to the new Gatsby doc site for Paragon.
+
+<p>
+  <Input
+    type="textarea"
+    placeholder="This is a paragon textarea"
+  />
+</p>
+<p>
+  <Button className="btn-primary">Neato!</Button>
+</p>
+
+And the source:
+
+```
+  <p>
+    <Input
+      type="textarea"
+      placeholder="This is a paragon textarea"
+    />
+  </p>
+  <p>
+    <Button className="btn-primary">Neato!</Button>
+  </p>
+```
+<p>
+  <Link to="/page-2/">Go to page 2</Link>
+</p>
