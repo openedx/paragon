@@ -1149,6 +1149,7 @@ exports[`Storyshots Navigation|Dropdown basic usage 1`] = `
     aria-expanded={false}
     aria-haspopup="true"
     className="btn dropdown-toggle btn-light"
+    id="trigger-test"
     onBlur={[Function]}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -1158,77 +1159,26 @@ exports[`Storyshots Navigation|Dropdown basic usage 1`] = `
   </button>
   <div
     aria-hidden={true}
-    aria-label="Search Engines"
+    aria-labelledby="trigger-test"
     className="dropdown-menu"
+    onKeyDown={[Function]}
     role="menu"
   >
     <a
       className="dropdown-item"
       href="https://google.com"
-      onKeyDown={[Function]}
-      role="menuitem"
     >
       Google
     </a>
     <a
       className="dropdown-item"
       href="https://duckduckgo.com"
-      onKeyDown={[Function]}
-      role="menuitem"
     >
       DuckDuckGo
     </a>
     <a
       className="dropdown-item"
       href="https://yahoo.com"
-      onKeyDown={[Function]}
-      role="menuitem"
-    >
-      Yahoo
-    </a>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Navigation|Dropdown menu items as elements 1`] = `
-<div
-  className="dropdown"
->
-  <button
-    aria-expanded={false}
-    aria-haspopup="true"
-    className="btn dropdown-toggle btn-light"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    type="button"
-  >
-    Search Engines
-  </button>
-  <div
-    aria-hidden={true}
-    aria-label="Search Engines"
-    className="dropdown-menu"
-    role="menu"
-  >
-    <a
-      className="dropdown-item"
-      href="http://www.google.com"
-      onKeyDown={[Function]}
-    >
-      Google
-    </a>
-    <a
-      className="dropdown-item"
-      href="http://www.duckduckgo.com"
-      onKeyDown={[Function]}
-    >
-      DuckDuckGo
-    </a>
-    <a
-      className="dropdown-item"
-      href="http://www.yahoo.com"
-      onKeyDown={[Function]}
     >
       Yahoo
     </a>
@@ -1245,6 +1195,7 @@ Array [
       aria-expanded={false}
       aria-haspopup="true"
       className="btn dropdown-toggle btn-light"
+      id="trigger-test"
       onBlur={[Function]}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -1261,15 +1212,7 @@ Array [
     </button>
     <div
       aria-hidden={true}
-      aria-label={
-        <span>
-          Search Engines
-          <withDeprecatedProps(Icon)
-            alt=""
-            className="fa fa-caret-down pl-3"
-          />
-        </span>
-      }
+      aria-labelledby="trigger-test"
       className="dropdown-menu"
       onKeyDown={[Function]}
       role="menu"
@@ -1301,6 +1244,7 @@ Array [
       aria-expanded={false}
       aria-haspopup="true"
       className="btn dropdown-toggle btn-light"
+      id="trigger-test"
       onBlur={[Function]}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -1317,15 +1261,7 @@ Array [
     </button>
     <div
       aria-hidden={true}
-      aria-label={
-        <span>
-          Search Engines
-          <withDeprecatedProps(Icon)
-            alt=""
-            className="fa fa-angle-down pl-3"
-          />
-        </span>
-      }
+      aria-labelledby="trigger-test"
       className="dropdown-menu"
       onKeyDown={[Function]}
       role="menu"
@@ -1355,55 +1291,49 @@ Array [
 
 exports[`Storyshots Navigation|Dropdown with icon element 1`] = `
 <div
-  className="dropdown has-icon rounded border d-flex bg-white"
+  className="dropdown"
 >
-  <div
-    className="icon-container d-flex align-items-center justify-content-center border-right"
-  >
-    <span
-      aria-hidden={true}
-      className="fa fa-user px-3 rounded-left"
-      id="Icon1"
-    />
-  </div>
   <button
     aria-expanded={false}
     aria-haspopup="true"
-    className="btn dropdown-toggle border-0 rounded-0 bg-white btn-light"
+    className="btn dropdown-toggle btn-light"
+    id="trigger-test"
     onBlur={[Function]}
     onClick={[Function]}
     onKeyDown={[Function]}
     type="button"
   >
-    Search Engines
+    <span>
+      <span
+        aria-hidden={true}
+        className="fa fa-user pr-3"
+        id="Icon1"
+      />
+      Search Engines
+    </span>
   </button>
   <div
     aria-hidden={true}
-    aria-label="Search Engines"
+    aria-labelledby="trigger-test"
     className="dropdown-menu"
+    onKeyDown={[Function]}
     role="menu"
   >
     <a
       className="dropdown-item"
       href="https://google.com"
-      onKeyDown={[Function]}
-      role="menuitem"
     >
       Google
     </a>
     <a
       className="dropdown-item"
       href="https://duckduckgo.com"
-      onKeyDown={[Function]}
-      role="menuitem"
     >
       DuckDuckGo
     </a>
     <a
       className="dropdown-item"
       href="https://yahoo.com"
-      onKeyDown={[Function]}
-      role="menuitem"
     >
       Yahoo
     </a>

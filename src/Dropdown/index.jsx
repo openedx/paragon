@@ -5,11 +5,20 @@ import classNames from 'classnames';
 import Button from '../Button';
 
 class Dropdown extends React.Component {
+  static idCounter = 0; // For creating unique ids
+
   constructor(props) {
     super(props);
     this.state = {
       open: false,
     };
+
+    // Used for aria labelling. Do not use in test to prevent breaking
+    // snapshots unintentionally
+    this.dropdownId = process.env.NODE_ENV === 'test' ? 'test' : Dropdown.idCounter;
+    Dropdown.idCounter += 1; // increment the id counter so the next id can be unique
+    this.triggerId = `trigger-${this.dropdownId}`;
+
     this.menuItems = React.createRef();
   }
 
@@ -137,6 +146,7 @@ class Dropdown extends React.Component {
           )}
           aria-expanded={this.state.open}
           aria-haspopup="true"
+          id={this.triggerId}
           onClick={this.toggle}
           type="button"
           inputRef={(toggleButton) => { this.toggleButton = toggleButton; }}
@@ -151,7 +161,7 @@ class Dropdown extends React.Component {
               show: this.state.open,
             },
           )}
-          aria-label={buttonContent}
+          aria-labelledby={this.triggerId}
           aria-hidden={!this.state.open}
           role="menu"
           ref={this.menuItems}

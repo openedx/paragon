@@ -8,6 +8,7 @@ exports[`<Dropdown /> Rendering renders the happy path 1`] = `
     aria-expanded={false}
     aria-haspopup="true"
     className="btn dropdown-toggle btn-light"
+    id="trigger-test"
     onBlur={[Function]}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -17,7 +18,7 @@ exports[`<Dropdown /> Rendering renders the happy path 1`] = `
   </button>
   <div
     aria-hidden={true}
-    aria-label="Trigger Label"
+    aria-labelledby="trigger-test"
     className="dropdown-menu"
     onKeyDown={[Function]}
     role="menu"
@@ -52,6 +53,7 @@ exports[`<Dropdown /> Rendering renders when there is html content in the trigge
     aria-expanded={false}
     aria-haspopup="true"
     className="btn dropdown-toggle btn-light"
+    id="trigger-test"
     onBlur={[Function]}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -63,11 +65,7 @@ exports[`<Dropdown /> Rendering renders when there is html content in the trigge
   </button>
   <div
     aria-hidden={true}
-    aria-label={
-      <span>
-        Trigger Label
-      </span>
-    }
+    aria-labelledby="trigger-test"
     className="dropdown-menu"
     onKeyDown={[Function]}
     role="menu"
@@ -102,6 +100,7 @@ exports[`<Dropdown /> Rendering renders with custom menu content 1`] = `
     aria-expanded={false}
     aria-haspopup="true"
     className="btn dropdown-toggle btn-light"
+    id="trigger-test"
     onBlur={[Function]}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -111,7 +110,7 @@ exports[`<Dropdown /> Rendering renders with custom menu content 1`] = `
   </button>
   <div
     aria-hidden={true}
-    aria-label="Trigger Label"
+    aria-labelledby="trigger-test"
     className="dropdown-menu"
     onKeyDown={[Function]}
     role="menu"
