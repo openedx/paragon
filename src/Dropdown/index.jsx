@@ -67,13 +67,20 @@ class Dropdown extends React.Component {
         this.focusPrevious();
         break;
       case 'ArrowDown':
-      case 'Tab':
         e.preventDefault();
         this.focusNext();
         break;
+      case 'Tab':
+        e.preventDefault();
+        if (e.shiftKey) {
+          this.focusPrevious();
+        } else {
+          this.focusNext();
+        }
+        break;
       case 'Escape':
         e.stopPropagation();
-        this.toggle();
+        this.close();
         break;
       default:
         break;
