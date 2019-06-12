@@ -23,7 +23,7 @@ class Dropdown extends React.Component {
     }
   }
 
-  componentWillUnmount = () => {
+  componentWillUnmount() {
     document.removeEventListener('click', this.handleDocumentClick, true);
   }
 
@@ -76,12 +76,11 @@ class Dropdown extends React.Component {
         this.toggle();
         break;
       default:
-        return null;
+        break;
     }
-    return null;
   }
 
-  open = () => {
+  open() {
     // adding event listener here so the user can close dropdown on click outside of the dropdown
     document.addEventListener('click', this.handleDocumentClick, true);
     this.setState({
@@ -89,7 +88,7 @@ class Dropdown extends React.Component {
     });
   }
 
-  close = () => {
+  close() {
     document.removeEventListener('click', this.handleDocumentClick, true);
     this.setState({
       open: false,
@@ -125,9 +124,12 @@ class Dropdown extends React.Component {
         ref={(container) => { this.container = container; }}
       >
         <Button
+          className={classNames(
+            'dropdown-toggle',
+            buttonClassName,
+          )}
           aria-expanded={this.state.open}
           aria-haspopup="true"
-          className={buttonClassName}
           onClick={this.toggle}
           type="button"
           inputRef={(toggleButton) => { this.toggleButton = toggleButton; }}
@@ -138,7 +140,6 @@ class Dropdown extends React.Component {
         <div
           className={classNames(
             'dropdown-menu',
-            className,
             {
               show: this.state.open,
             },
@@ -164,8 +165,8 @@ Dropdown.propTypes = {
 };
 
 Dropdown.defaultProps = {
-  buttonClassName: 'dropdown-toggle',
-  className: 'dropdown',
+  className: null,
+  buttonClassName: 'btn-light',
 };
 
 export default Dropdown;
@@ -178,7 +179,10 @@ Dropdown.Item = (props) => {
     tag,
     {
       ...other,
-      className,
+      className: classNames(
+        'dropdown-item',
+        className,
+      ),
     },
     children,
   );
@@ -194,5 +198,5 @@ Dropdown.Item.propTypes = {
 Dropdown.Item.defaultProps = {
   tag: 'a',
   children: undefined,
-  className: 'dropdown-item',
+  className: null,
 };
