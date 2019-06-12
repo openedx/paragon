@@ -161,7 +161,7 @@ Dropdown.propTypes = {
   className: PropTypes.string,
   buttonClassName: PropTypes.string,
   children: PropTypes.node.isRequired,
-  buttonContent: PropTypes.string.isRequired,
+  buttonContent: PropTypes.node.isRequired,
 };
 
 Dropdown.defaultProps = {
