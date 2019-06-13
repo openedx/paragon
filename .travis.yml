@@ -28,7 +28,7 @@ after_success:
 - npm run coveralls
 - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then
     npm run build-docs;
-    npm run deploy-storybook-ci -- --existing-output-dir=.out;
+    npm run deploy-storybook-ci -- --existing-output-dir=storybook-static;
   fi
 env:
   global:
