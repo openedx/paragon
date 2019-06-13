@@ -27,9 +27,10 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "clean": "gatsby clean",
     "develop": "gatsby develop",
-    "start": "npm run develop",
     "lint": "eslint --ext .js --ext .jsx .",
+    "start": "npm run develop",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
