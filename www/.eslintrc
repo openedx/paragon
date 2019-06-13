@@ -1,0 +1,23 @@
+{
+  "extends": "eslint-config-edx",
+  "parser": "babel-eslint",
+  "settings": {
+    "import/resolver": {
+      "alias": [
+        ["~paragon-react", "../src"]
+      ]
+    }
+  },
+  "rules": {
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/issues/340#issuecomment-338424908
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "specialLink": [ "to" ]
+    }],
+    "jsx-a11y/label-has-for": [ 2, {
+      "components": [ "label" ],
+      "required": "id",
+      "allowChildren": false
+    }]
+  }
+}
