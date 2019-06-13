@@ -11,9 +11,6 @@ notifications:
     - paragon@edx.org
     on_success: never
     on_failure: always
-  hipchat:
-    rooms:
-      secure: mo7HtlCFqDnlpuiwJsRmLEoALyjovE0fGnX6GXCYHZ33MzULeohHKD12XM724iU/GiWApibv+5bB5BtmaGnQ/0ksFk/T+Aclczi5N0meYidexnf47hUMPvq6wrj2gogvmh+qwMj5+Xz4HTmgJUoUcBnRrDPIPBYAA5S1IT+pBZS6U24rVs3Hu/dOwKuTKDopGSnPOtZNUmq8/8DZzu5SXQdxLoBk2JjuiZvoKCuesDK15/MMEHBZj9vSIWHXlIE+5LzriGtzv13xsPLUpx0mBTs8oM/NFhIjRk7BrWlNjFMeG92M58yvilnJqJZNAQkNANfdO+F5AKYOnXurieRFGZ2eRVlh3qBt/zTgXNJ1xjKkknLXQu15xJ6YniE7AJ2Qsj3bU/UigPeYBl02I1c0lUaV74cvlxyAukyvuSKzrh2TuyoR7k7wU0sQHrJDRLawXvMXTmJLLY8EKVyCXk+fbQmgm4PXp0cc5DBt09dHtc89V2XPonkhn9jz/lS4i0a/WGh+IjRp7uyRwkRPm1r3ul8Itobpzj3WgXmRpCwTpURuGbkaGMe+PJBr6Hk0ZsVtz8V5+2TLovsODJb249cWpo1qfjpRcfhNhYyGaXMAgH1IR+Hr+foo07x++nW2ILkjruTdFGD782sCX+2nCP5M4yWbKZ4MtcLGcwIEIxw3++k=
 before_install:
 - npm install -g npm@5
 - npm install -g greenkeeper-lockfile@1
@@ -29,8 +26,10 @@ script:
 after_success:
 - npm run travis-deploy-once "npm run semantic-release"
 - npm run coveralls
-- if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then npm
-  run deploy-storybook-ci; fi
+- if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then
+    npm run build-docs;
+    npm run deploy-storybook-ci -- --existing-output-dir=.out;
+  fi
 env:
   global:
   - secure: lRoWu+w079UgwrPn3qR0OEiSTFVDIRUH47aXkjOTIlXGd9IF+NAdPiv1yBhszdO52qi2ivhF1W7JuFwRe7L2Hw2UypWLtQY6iq/mLJ4wL1RsbvPLAplJKZgkdYBZuBvvnMwd7lgFmmV0SPGhcdt9ttNsWF30678iFFIYnqVBEUe0whjb4B4yjqxNaTB3O/aQNaQiwWsBIpri3rIUP6/1vst0AhKFyePMNpLa8LIyDpZmu+ICTn/+5WYhM+9Dm+Z0IdVF09UlCHDCrv+xS0elpx2u+GLOVnuAGZS82wVHH+1+QoANMXs8NYQfp+YXtf5voWIi9UmdftMjAv6Xa2ZoitsCMPC0lKhNUex2grS+lBTPUgJ7QJLksXWHJX/9NgsHcd+zEyjUAeeqpTjUiLWbjfc5VoL5da9JEryWgEFPsCYy6vnh7llVcAQiUTa6rkY4dXmrpZCuDX76KoXPa+OtazX1VGg2ThWJe0Bw9Zfwc4rmFg5sJjtcsbicqZOpIKW2HkLNR2l+3nlqEQz7OI/dVzjKmeF5Zw7Q5BsIxsGGT8ZzjIssAb5Y/l7S9tmAfa5vOK8xU29Roez1vTSBoyFrKm2RW5s8hsvhrnIAJV7cm8/IG7iLP1F5YfwuMsQTZqFtyxL/P9fDpmDk3n7MR9WFVsF+3qZ9eFk3kjYimEs6V6A=
