@@ -29,9 +29,13 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
+    "lint": "eslint --ext .js --ext .jsx .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-edx": "^4.0.4",
     "eslint-import-resolver-alias": "^1.1.2"
   },
   "repository": {
