@@ -16,7 +16,7 @@
     "build": "webpack --mode production --display-modules",
     "build-docs": "build-storybook && npm run build-gatsby && npm run move-gatsby",
     "build-storybook": "build-storybook",
-    "build-gatsby": "cd ./www && \"$npm_execpath\" run env -- gatsby build --prefix-paths",
+    "build-gatsby": "cd ./www && \"$npm_execpath\" install && \"$npm_execpath\" run build",
     "commit": "commit",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage",
