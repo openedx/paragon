@@ -13,7 +13,7 @@
     "/src"
   ],
   "scripts": {
-    "build": "webpack --mode production --display-modules",
+    "build": "webpack --mode production --display-modules && node build-scss.js",
     "build-docs": "build-storybook && npm run build-gatsby && npm run move-gatsby",
     "build-storybook": "build-storybook",
     "build-gatsby": "cd ./www && \"$npm_execpath\" install && \"$npm_execpath\" run build",
