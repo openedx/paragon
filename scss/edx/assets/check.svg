@@ -1,0 +1,8 @@
+<svg viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <path d="M5.09466064,10.9659888 L0.219660645,6.09098877 C-0.0732202148,5.79810791 -0.0732202148,5.32323486 0.219660645,5.03032471 L1.28029541,3.96966064 C1.57317627,3.67675049 2.04807861,3.67675049 2.34095947,3.96966064 L5.62499268,7.25366455 L12.6590259,0.219660645 C12.9519067,-0.0732202148 13.4268091,-0.0732202148 13.7196899,0.219660645 L14.7803247,1.28032471 C15.0732056,1.57320557 15.0732056,2.04807861 14.7803247,2.34098877 L6.15532471,10.9660181 C5.86241455,11.2588989 5.3875415,11.2588989 5.09466064,10.9659888 L5.09466064,10.9659888 Z" id="path-1"></path>
+    <filter x="-46.7%" y="-44.7%" width="193.3%" height="225.2%" filterUnits="objectBoundingBox" id="filter-3">
+        <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+        <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+        <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.3 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+    </filter>
+</svg>
