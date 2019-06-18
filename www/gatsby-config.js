@@ -34,5 +34,15 @@ module.exports = {
         component: require.resolve('./src/components/layout.jsx'),
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'src',
+        path: `${__dirname}/../src`,
+      },
+    },
+    // Note this will throw a warning about conflicting field types during build, but it is O.K.
+    // https://github.com/gatsbyjs/gatsby/issues/7027
+    'gatsby-transformer-react-docgen',
   ],
 };

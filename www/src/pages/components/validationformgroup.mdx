@@ -1,12 +1,12 @@
 import { StaticQuery, graphql } from 'gatsby';
-import { Input, Button } from '~paragon-react';
+import { ValidationFormGroup } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
 
-# Button
+# ValidationFormGroup
 
 <StaticQuery
   query={graphql`query {
-    componentMetadata(displayName: { eq: "Button" }) { ...ComponentDocGenData }
+    componentMetadata(displayName: { eq: "ValidationFormGroup" }) { ...ComponentDocGenData }
   }`}
   render={({ componentMetadata }) => {
     if (componentMetadata == null) return null;

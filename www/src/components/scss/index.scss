@@ -19,3 +19,15 @@ code {
   display: block;
   padding: 1rem;
 }
+
+.base-type {
+  & + .base-type {
+    margin-left: .25em;
+  }
+  display: inline-block;
+  background: #eee;
+  padding: 0 .25em;
+  font-family: SFMono-Regular, Menlo, Monaco, "Courier New", monospace;
+  font-size: .8em;
+  vertical-align: middle;
+}

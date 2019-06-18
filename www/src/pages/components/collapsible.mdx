@@ -1,12 +1,12 @@
 import { StaticQuery, graphql } from 'gatsby';
-import { Input, Button } from '~paragon-react';
+import { Collapsible } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
 
-# Button
+# Collapsible
 
 <StaticQuery
   query={graphql`query {
-    componentMetadata(displayName: { eq: "Button" }) { ...ComponentDocGenData }
+    componentMetadata(displayName: { eq: "Collapsible" }) { ...ComponentDocGenData }
   }`}
   render={({ componentMetadata }) => {
     if (componentMetadata == null) return null;
