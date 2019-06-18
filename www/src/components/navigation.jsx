@@ -20,6 +20,7 @@ const menu = [
     section: 'COMPONENTS',
     items: [
       { title: 'Button', url: 'components/button' },
+      { title: 'Input', url: 'components/input' },
     ],
   },
 ];

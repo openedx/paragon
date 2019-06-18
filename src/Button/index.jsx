@@ -87,6 +87,9 @@ class Button extends React.Component {
 export const buttonPropTypes = {
   buttonType: PropTypes.string,
   className: PropTypes.string,
+  /**
+   * Description of prop "bar" (a custom validation function).
+   */
   children: PropTypes.node.isRequired,
   inputRef: PropTypes.func,
   isClose: PropTypes.bool,
