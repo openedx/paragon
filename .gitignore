@@ -6,3 +6,8 @@ coverage
 jest*
 dist
 .vscode
+storybook-static
+
+# gatsby files
+www/.cache/
+www/public
