@@ -11,9 +11,6 @@ module.exports = {
     'gatsby-plugin-sass',
     {
       resolve: 'gatsby-mdx',
-      options: {
-        defaultLayouts: { default: path.resolve('./src/components/layout.jsx') },
-      },
     },
     'gatsby-plugin-react-helmet',
     {
@@ -28,6 +25,13 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'src/images/paragon-icon.png',
+      },
+    },
+    {
+      // Using the layout plugin to prevent re-renders of nav between routes
+      resolve: 'gatsby-plugin-layout',
+      options: {
+        component: require.resolve('./src/components/layout.jsx'),
       },
     },
   ],
