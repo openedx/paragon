@@ -30,4 +30,4 @@ var edxResult = sass.renderSync({
   importer: tildaImporter,
 });
 
-fs.writeFileSync('./dist/edx-theme.css', edxResult.css);
+fs.writeFileSync('./dist/edx-paragon.css', edxResult.css);
