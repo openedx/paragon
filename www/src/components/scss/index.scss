@@ -1,0 +1,21 @@
+@import "~font-awesome/css/font-awesome.min.css";
+@import '~@edx/edx-bootstrap/scss/edx/theme';
+@import "~paragon-react/index.scss";
+
+@import "./layout";
+@import "./hero";
+
+
+// Typography
+
+.pgn-doc__main-content {
+  h1, h2, h3, h4, h5 {
+    margin-top: 2em;
+  }
+}
+
+code {
+  background: #eee;
+  display: block;
+  padding: 1rem;
+}

@@ -6,35 +6,67 @@ import { Input, Button } from '~paragon-react';
 
 <SEO title="Home" keywords={['paragon', 'pattern library', 'react']} />
 
-# Welcome
+<div className="pgn-doc__module-flush pgn-doc_hero">
+  <div className="pgn-doc__hero-bg" />
+  <h1>Paragon</h1>
+  <p className="lead">
+    A library of patterns and guides for building quality user experiences.
+  </p>
+</div>
 
-<p><img src={heroImage} /></p>
-
-Welcome to the new Gatsby doc site for Paragon.
+#### Sketch Library
 
 <p>
-  <Input
-    type="textarea"
-    placeholder="This is a paragon textarea"
-  />
-</p>
-<p>
-  <Button className="btn-primary">Neato!</Button>
+  <Button className="btn-lg btn-primary"><s>Download Paragon.sketch</s> (coming soon)</Button>
 </p>
 
-And the source:
+#### Technical Usage
+
+Paragon components require React 16 or higher. To install Paragon into your project:
+
+In terminal:
 
 ```
-  <p>
-    <Input
-      type="textarea"
-      placeholder="This is a paragon textarea"
-    />
-  </p>
-  <p>
-    <Button className="btn-primary">Neato!</Button>
-  </p>
+npm i --save @edx/paragon
 ```
-<p>
-  <Link to="/page-2/">Go to page 2</Link>
-</p>
+
+In your React project:
+
+```
+import { ComponentName } from '@edx/paragon';
+```
+
+#### SCSS Foundation
+
+Usage for Open edX and others:
+
+```
+// ... Any custom SCSS variables should be defined here
+@import "~@edx/paragon/scss/core/core.scss';
+```
+
+Usage on edx.org:
+
+```
+@import "~@edx/paragon/scss/theme/edx.scss';
+```
+
+#### CSS Foundation
+
+If you are not using SCSS you can use the pre-built CSS.
+
+Usage for Open edX and others:
+
+```
+// ... Any custom SCSS variables should be defined here
+@import "~@edx/paragon/dist/paragon.css';
+```
+
+Usage on edx.org:
+
+```
+@import "~@edx/paragon/dist/edx-paragon.css";
+```
+
+
+
