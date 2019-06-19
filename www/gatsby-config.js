@@ -11,6 +11,19 @@ module.exports = {
     'gatsby-plugin-sass',
     {
       resolve: 'gatsby-mdx',
+      options: {
+        extensions: ['.mdx'],
+        defaultLayouts: {
+          default: require.resolve('./src/components/mdx-layout.jsx'),
+        },
+        // gatsbyRemarkPlugins: [
+        //     {
+        //         resolve: 'gatsby-remark-copy-linked-files',
+        //         options: { ignoreFileExtensions: [] },
+        //     },
+        //     { resolve: 'gatsby-remark-smartypants', options: {} },
+        // ],
+      },
     },
     'gatsby-plugin-react-helmet',
     {

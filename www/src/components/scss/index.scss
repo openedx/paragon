@@ -4,6 +4,7 @@
 
 @import "./layout";
 @import "./hero";
+@import "./code-block";
 
 
 // Typography
@@ -14,10 +15,8 @@
   }
 }
 
-code {
-  background: #eee;
-  display: block;
-  padding: 1rem;
+.btn + .btn {
+  margin-left: .5em;
 }
 
 .base-type {

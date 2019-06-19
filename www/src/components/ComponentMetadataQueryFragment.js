@@ -20,8 +20,6 @@ export const query = graphql`
         text
       }
     }
-    description {
-      text
-    }
+    description
   }
 `;

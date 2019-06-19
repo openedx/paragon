@@ -4,6 +4,72 @@ import PropsTable from '../../components/PropsTable';
 
 # Input
 
+
+##### Text
+
+```jsx live=true
+<Input type="text" defaultValue="Some text input" />
+```
+
+
+##### Select
+
+```jsx live=true
+<Input
+  type="select"
+  defaultValue="Foo Bar"
+  options={[
+    { value: 'Foo Bar', label: 'Foo Bar' },
+    { value: 'Foos Bar', label: 'Bar foo' },
+    { value: 'Foo sBar', label: 'FoBaro' },
+    { value: 'Foo ssBar', label: 'Farboo' },
+    {
+      label: 'But there is more',
+      group: [
+        { value: 'vFoo Bar', label: 'Foov Bar' },
+        { value: 'vFoos Bar', label: 'Barv foo' },
+        { value: 'vFoo sBar', label: 'FoBarov' },
+        { value: 'vFoo ssBar', label: 'Farboov' },
+      ],
+    },
+  ]}
+/>
+```
+
+
+##### Textarea
+
+```jsx live=true
+<Input
+  type="textarea"
+  defaultValue="Hammock semiotics pok pok jianbing venmo, crucifix taiyaki stumptown irony ennui knausgaard bitters synth slow-carb iPhone."
+/>
+```
+
+
+##### Date
+
+```jsx live=true
+<Input type="date" />
+```
+
+
+##### File
+
+```jsx live=true
+<Input type="file" />
+```
+
+
+##### Range
+
+```jsx live=true
+<Input type="range" />
+```
+
+
+##### Props
+
 <StaticQuery
   query={graphql`query {
     componentMetadata(displayName: { eq: "Input" }) { ...ComponentDocGenData }

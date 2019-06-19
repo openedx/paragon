@@ -4,58 +4,45 @@ import PropsTable from '../../components/PropsTable';
 
 # Breadcrumbs
 
-<Breadcrumb links={[
-  {
-    label: 'Link 1',
-    url: '/link-1',
-  },
-  {
-    label: 'Link 2',
-    url: '/link-2',
-  },
-  {
-    label: 'Link 3',
-    url: '/link-3',
-  },
-]} 
+##### Basic Usage
+
+```jsx live=true
+<Breadcrumb
+  links={[
+    { label: 'Link 1', url: '/link-1' },
+    { label: 'Link 2', url: '/link-2' },
+    { label: 'Link 3', url: '/link-3' },
+  ]}
 />
+```
 
+##### With active label
 
-<Breadcrumb links={[
-  {
-    label: 'Link 1',
-    url: '/link-1',
-  },
-  {
-    label: 'Link 2',
-    url: '/link-2',
-  },
-  {
-    label: 'Link 3',
-    url: '/link-3',
-  },
-]} 
-activeLabel="Link 4"
+```jsx live=true
+<Breadcrumb
+  links={[
+    { label: 'Link 1', url: '/link-1' },
+    { label: 'Link 2', url: '/link-2' },
+    { label: 'Link 3', url: '/link-3' },
+  ]}
+  activeLabel="Link 4"
 />
+```
 
+##### With custom spacer
 
-<Breadcrumb links={[
-  {
-    label: 'Link 1',
-    url: '/link-1',
-  },
-  {
-    label: 'Link 2',
-    url: '/link-2',
-  },
-  {
-    label: 'Link 3',
-    url: '/link-3',
-  },
-]} 
-spacer={<span className="custom-spacer">/</span>}
+```jsx live=true
+<Breadcrumb
+  links={[
+    { label: 'Link 1', url: '/link-1' },
+    { label: 'Link 2', url: '/link-2' },
+    { label: 'Link 3', url: '/link-3' },
+  ]}
+  spacer={<span className="custom-spacer">/</span>}
 />
+```
 
+##### Props
 
 <StaticQuery
   query={graphql`query {

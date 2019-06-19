@@ -32,7 +32,6 @@ const menu = [
       { title: 'InputSelect', url: 'components/inputselect' },
       { title: 'InputText', url: 'components/inputtext' },
       { title: 'ListBox', url: 'components/listbox' },
-      { title: 'ListBoxOption', url: 'components/listboxoption' },
       { title: 'MailtoLink', url: 'components/mailtolink' },
       { title: 'Pagination', url: 'components/pagination' },
       { title: 'RadioButtonGroup', url: 'components/radiobuttongroup' },
@@ -45,7 +44,6 @@ const menu = [
       { title: 'TextArea', url: 'components/textarea' },
       { title: 'TransitionReplace', url: 'components/transitionreplace' },
       { title: 'ValidationFormGroup', url: 'components/validationformgroup' },
-      { title: 'ValidationMessage', url: 'components/validationmessage' },
     ],
   },
 ];

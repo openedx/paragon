@@ -2,7 +2,50 @@ import { StaticQuery, graphql } from 'gatsby';
 import { Input, Button } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
 
+
 # Button
+
+
+##### Basic Usage
+
+```jsx live=true
+<Button className="btn-primary">Hello World!</Button>
+```
+
+##### Color Variants
+
+```jsx live=true
+<div>
+  <Button className="btn-primary">Primary</Button>
+  <Button className="btn-secondary">Indigo</Button>
+  <Button className="btn-success">Success</Button>
+  <Button className="btn-danger">Danger</Button>
+</div>
+```
+
+##### Outline Variants
+
+```jsx live=true
+<div>
+  <Button className="btn-outline-primary">Primary</Button>
+  <Button className="btn-outline-secondary">Indigo</Button>
+  <Button className="btn-outline-success">Success</Button>
+  <Button className="btn-outline-danger">Danger</Button>
+</div>
+```
+
+##### Inverse Variants
+
+```jsx live=true
+<div className="bg-program-masters p-3">
+  <Button className="btn-inverse-primary">Primary</Button>
+  <Button className="btn-inverse-secondary">Indigo</Button>
+  <Button className="btn-inverse-success">Success</Button>
+  <Button className="btn-inverse-danger">Danger</Button>
+</div>
+```
+
+##### Props
 
 <StaticQuery
   query={graphql`query {
