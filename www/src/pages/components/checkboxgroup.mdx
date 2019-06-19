@@ -1,12 +1,12 @@
 import { StaticQuery, graphql } from 'gatsby';
-import { Input, Button } from '~paragon-react';
+import { CheckBoxGroup } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
 
-# Button
+# CheckBoxGroup
 
 <StaticQuery
   query={graphql`query {
-    componentMetadata(displayName: { eq: "Button" }) { ...ComponentDocGenData }
+    componentMetadata(displayName: { eq: "CheckBoxGroup" }) { ...ComponentDocGenData }
   }`}
   render={({ componentMetadata }) => {
     if (componentMetadata == null) return null;

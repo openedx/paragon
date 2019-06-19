@@ -1,15 +1,15 @@
 import { StaticQuery, graphql } from 'gatsby';
-
 import { Input, Button } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
 
-
+# Input
 
 <StaticQuery
   query={graphql`query {
     componentMetadata(displayName: { eq: "Input" }) { ...ComponentDocGenData }
   }`}
-  render={({ componentMetadata }) => (
-    <PropsTable propMetaData={componentMetadata.props} />
-  )}
+  render={({ componentMetadata }) => {
+    if (componentMetadata == null) return null;
+    return <PropsTable propMetaData={componentMetadata.props} />;
+  }}
 />
