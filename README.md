@@ -1,99 +1,85 @@
 # Paragon
 
-[![Build Status](https://travis-ci.org/edx/paragon.svg?branch=master)](https://travis-ci.org/edx/paragon) [![Coveralls](https://img.shields.io/coveralls/edx/paragon.svg?branch=master)](https://coveralls.io/github/edx/paragon) [![Greenkeeper badge](https://badges.greenkeeper.io/edx/paragon.svg)](https://greenkeeper.io/)
-[![npm_version](https://img.shields.io/npm/v/@edx/paragon.svg)](@edx/paragon)
-[![npm_downloads](https://img.shields.io/npm/dt/@edx/paragon.svg)](@edx/paragon)
-[![license](https://img.shields.io/npm/l/@edx/paragon.svg)](@edx/paragon)
-[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![npm_version](https://img.shields.io/npm/v/@edx/paragon.svg)](@edx/paragon) [![Build Status](https://travis-ci.org/edx/paragon.svg?branch=master)](https://travis-ci.org/edx/paragon) [![Coveralls](https://img.shields.io/coveralls/edx/paragon.svg?branch=master)](https://coveralls.io/github/edx/paragon)
 
+Paragon is a pattern library containing [accessible](https://www.w3.org/WAI/standards-guidelines/aria/) React components and a SCSS foundation built on Twitter Bootstrap. Paragon is developed for the Open edX platform.
 
-Paragon provides accessible React components for use within the Open edX platform and beyond.
+Documentation lives at http://edx.github.io/paragon.
 
-<img src="http://i.imgur.com/uxTl3L3.gif" width="200" alt="sparkly 8-bit diamond" />
-
-Components' markup, keyboard triggers, and behavior are based on the [WAI-ARIA 1.1 Authoring Practices](https://www.w3.org/TR/wai-aria-practices-1.1/). Components are styled with [Bootstrap 4](https://v4-alpha.getbootstrap.com/) via CSS Modules. Documentation/demo site is available at http://edx.github.io/paragon.
 
 ## Usage
 
-Paragon requires React 16 or higher. To install Paragon into your project:
+### React Components
+
+Paragon components require React 16 or higher. To install Paragon into your project:
+
+In terminal:
 
 ```
 npm i --save @edx/paragon
 ```
 
-In your JSX files:
+In your React project:
+
 ```
 import { ComponentName } from '@edx/paragon';
 ```
 
-And in your SCSS file:
-```
-import '~bootstrap/scss/bootstrap'; // Or other inclusion of bootstrap
-import '~@edx/paragon/src/index.scss';
-```
-This file contains style modifications for all paragon components. It is not large and is the simplest way to include Paragon styles. Note
+#### SCSS Foundation
 
-* It does not include bootstrap. You must include that yourself.
-* It must be included after bootstrap functions, variables, and mixins
+Usage for Open edX and others:
 
-
-If you are not using SCSS you can include a minified CSS file that also does not include bootstrap:
 ```
-import '~@edx/paragon/dist/paragon.min.css';
+// ... Any custom SCSS variables should be defined here
+@import "~@edx/paragon/scss/core/core.scss';
 ```
 
-### Legacy Export Target [Removed]
+Usage on edx.org:
 
-**`static [Removed in version 4.0]`**: The static build is intended for use within legacy pages not styled with Bootstrap 4. Component classnames are namespaced with the `paragon__` prefix so as not to conflict with existing classnames defined elsewhere on the page. Be cognizant of poorly scoped legacy rules (e.g. a rule for all `input` or `h1` tags), which can still affect Paragon components. This build comes with its own stylesheet, available at `/static/paragon.min.css`. You must include this stylesheet on any page that uses Paragon components. Components can be imported thus:
+```
+@import "~@edx/paragon/scss/theme/edx.scss';
+```
 
-`import { ComponentName } from '@edx/paragon/static';`
+#### CSS Foundation
 
-Because of the additional weight of the `static` stylesheet (>100k), the `static` target exports should be used sparingly. If possible, consuming pages should be converted to standard Bootstrap instead.
+If you are not using SCSS you can use the pre-built CSS.
 
-### Components
+Usage for Open edX and others:
 
-Demo implementations of each component are viewable at the Paragon doc site at https://edx.github.io/paragon. API documentation for each component is available below:
+```
+// ... Any custom SCSS variables should be defined here
+@import "~@edx/paragon/dist/paragon.css';
+```
 
-- [asInput](src/asInput)
-- [Button](src/Button)
-- [CheckBox](src/CheckBox)
-- [CheckBoxGroup](src/CheckBoxGroup)
-- [Collapsible](src/Collapsible)
-- [Dropdown](src/Dropdown)
-- [Hyperlink](src/Hyperlink)
-- [Icon](src/Icon)
-- [InputSelect](src/InputSelect)
-- [InputText](src/InputText)
-- [Modal](src/Modal)
-- [RadioButtonGroup](src/RadioButtonGroup)
-- [StatusAlert](src/StatusAlert)
-- [Table](src/Table)
-- [Tabs](src/Tabs)
-- [TextArea](src/TextArea)
+Usage on edx.org:
+
+```
+@import "~@edx/paragon/dist/edx-paragon.css";
+```
+
+
 
 ## Development
 
-First, clone the repo and install dependencies. You must be running Node 6 or newer.
+First, clone the repo and install dependencies. You must be running Node 8 or newer.
 
 ```
-$ git clone git@github.com:edx/paragon.git
-$ cd paragon
-$ npm install
+git clone git@github.com:edx/paragon.git
+cd paragon
+npm install
 ```
 
 ### Storybook
 
-Paragon uses [Storybook](https://storybook.js.org/) to generate and serve its documentation/demo site. Storybook also serves as an excellent sandbox space to develop new components or modify existing ones. For each component, developers write React code "stories" demonstrating different ways to invoke it in order to show off its functionality. Storybook renders all the stories within its own runtime as interactive chunks of UI.
-
-To start the Storybook server locally, run the following:
+Paragon uses [Storybook](https://storybook.js.org/) to generate and serve its documentation/demo site. Storybook also serves as an excellent sandbox space to develop new components or modify existing ones. To start the Storybook server locally, run the following:
 
 ```
-$ npm run start
+$ npm start
 ```
 
-Storybook will serve at http://localhost:6006. It's important to note that the Storybook server uses its own [webpack config file](https://github.com/edx/paragon/blob/master/.storybook/webpack.config.js) which is separate from the project root config.
+Storybook will be served at http://localhost:6006.
 
-### Adding a Component
+## Contributing
 
 To add a new component, create a directory within /src named `<ComponentName>` (use UpperCamelCase, per [Airbnb's React best practices](https://github.com/airbnb/javascript/tree/master/react)). Define your component (using the same `<ComponentName>` as the class name) within a file in this directory named `index.jsx`.
 
@@ -184,65 +170,3 @@ perf(pencil): remove graphiteWidth option
 
 BREAKING CHANGE: The graphiteWidth option has been removed. The default graphite width of 10mm is always used for performance reason.
 ```
-
-##### Example Release Notes
-
-![alt-image](https://i.imgur.com/hk2qkic.png)
-
-#### `Angular` Commit Message Convention
-
-Paragon currently uses [the `Angular` commit message convention](https://gist.github.com/stephenparish/9941e89d80e2bc58a153). As documented in the previously linked gist, a commit that follows the `Angular` commit message convention has four parts:
-1. A `type` - is this commit a `feat`, `fix`, `chore`, `docs`, etc.? There is a set of `type` values to choose from, but again, **only the `feat`, `fix`, `perf`, and `breaking`** `type` values will trigger a release.
-2. A `scope` - what is this commit impacting? Did you fix a bug in the `Hyperlink` component? Did you add a new feature to the `RadioButtonGroup` component? Currently, the `scope` must be lower-case and `-` separated though switching this to being `camelCase` is currently being investigated.
-3. A `subject` - provide a short description of _what_ your change is.
-  * use imperative, present tense language (so `change` not `changed` or `changes`)
-  * don't capitalize the first letter
-  * don't add a period (`.`) at the end
-  * there is a 50 character limit
-4. A `body` (optional) - add more detail about your change
-5. A `footer` (optional)
-  * > All breaking changes have to be mentioned in footer with the description of the change, justification and migration notes - [`Angular` commit message specification](https://gist.github.com/stephenparish/9941e89d80e2bc58a153#breaking-changes)
-
-##### Examples
-This will lead to a patch version bump
-> fix(someComponent): fix tab accessibility issue in someComponent
-
-This will lead to a minor version bump
-> feat(newComponent): add newComponent`
-
-This will lead to a patch version bump - note the body
->fix(anotherComponent): fix escape key accessibility issue
->
-> Unable to clear anotherComponent's popup using escape key.
-> By updating the onKeyPress event handler to close popup window on escape key press, accessibility issue was resolved.
-
-
-#### Using `commitlint` in Paragon
-
-Paragon uses the [`commitlint`](https://github.com/marionebl/commitlint) package to lint commit messages. Paragon currently has [a `commit message` hook](https://github.com/edx/paragon/blob/master/package.json#L20) that runs `commitlint`'s, well, commit linting, on the given commit message using the configuration specified in [`commitlint.config.js`](https://github.com/edx/paragon/blob/master/commitlint.config.js). If a commit message fails linting, the commit associated with that message does not end up getting committed.
-
-`commitlint` also comes with [a helpful CLI](https://github.com/marionebl/commitlint/tree/master/@commitlint/cli) that walks one through the entire semantic commit process. This CLI can be triggered by running the `npm run gc` command.
-
-![example-commitlint](https://media.giphy.com/media/3ohs7H8y9Qi7HOHWko/giphy.gif)
-
-As noted above, the only required fields are **`type`, `scope`, and `subject`**. The `body` and `footer` can be skipped through the CLI by typing `:skip`.
-
-### Pull Requests
-
-Since all pull requests should be `squashed` / `rebased` down to a single semantically-formatted commit, it is recommended that **all pull requests have a title that matches the commit message**. This way, whether you're merging a pull request, squashing and merging a pull request, or rebasing and merging a pull request, the correct commit message will be analyzed by `semantic-release`.
-
-### Merging, Building, and Releasing
-
-> When `semantic-release` is set up it will do that after every successful continuous integration build of your master branch (or any other branch you specify) and publish the new version for you - [`semantic-release` README](https://github.com/semantic-release/semantic-release)
-
-Release-related activity only happens
-1. After a successful Travis build on `master` ([the `semantic-release` NPM command is only executed as part of the `after_success` Travis hook](https://github.com/edx/paragon/blob/master/.travis.yml#L21-L22).)
-2. If commit(s) exist with a format that would trigger a release
-
-If a release occurs, a new GitHub release should be found with relevant notes that are parsed from commits associated with that release.
-
-So for the following release
-![example-release](https://imgur.com/RqFG7ND.png)
-the commit message for that release was `fix(asinput): Override state value when props value changes`, and a new `patch` release was created with release notes from the commit message.
-
-After a GitHub release is created, the package is then published to NPM.
