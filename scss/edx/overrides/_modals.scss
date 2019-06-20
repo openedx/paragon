@@ -1,0 +1,10 @@
+.modal-content {
+  box-shadow: $box-shadow;
+  border: solid 1px #d6dbe0;
+}
+
+.modal-footer {
+  justify-content: flex-start;
+  padding-bottom: 1.75rem;
+  padding-top: 0.75rem;
+}

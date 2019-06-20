@@ -7,6 +7,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     resolve: {
       alias: {
         '~paragon-react': path.resolve(__dirname, '../src'),
+        '~paragon-style': path.resolve(__dirname, '../scss'),
       },
     },
   });

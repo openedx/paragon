@@ -1,13 +1,10 @@
-const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 
 module.exports = {
   entry: {
     paragon: './src/index.js',
-    style: './src/index.scss',
   },
   optimization: {
     nodeEnv: false,
@@ -46,9 +43,6 @@ module.exports = {
   },
   plugins: [
     new UglifyJsPlugin(),
-    new MiniCssExtractPlugin({
-      filename: 'paragon.min.css',
-    }),
     // Be careful here. Our output path is the root of this project
     // so without this config, CleanWebpackPlugin will destroy the project
     // We should change the output path to dist/ in the next major version.
@@ -62,25 +56,6 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         },
-      },
-      {
-        test: /\.scss|\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              data: '@import "bootstrap-variables";',
-              includePaths: [
-                path.join(__dirname, './src/utils'),
-                path.join(__dirname, './node_modules'),
-              ],
-            },
-          },
-        ],
       },
       {
         test: /\.(woff2?|ttf|svg|eot)(\?v=\d+\.\d+\.\d+)?$/,
