@@ -1,0 +1,56 @@
+import { StaticQuery, graphql } from 'gatsby';
+import { Hyperlink } from '~paragon-react';
+import PropsTable from '../../components/PropsTable';
+
+# Hyperlink
+
+##### minimal usage
+
+```jsx live=true
+<Hyperlink destination="https://en.wikipedia.org/wiki/Hyperlink">edX.org</Hyperlink>
+```
+
+##### with blank target
+
+```jsx live=true
+<Hyperlink destination="https://www.edx.org" target="_blank">edX.org</Hyperlink>
+```
+
+##### with onClick
+
+```jsx live=true
+<Hyperlink
+  destination="https://www.edx.org"
+  target="_blank"
+  onClick={(e) => {
+    e.preventDefault();
+    console.log('click');
+  }}
+>
+  edX.org
+</Hyperlink>
+```
+
+##### with icon
+
+```jsx live=true
+<Hyperlink destination="https://www.edx.org">
+  <Icon
+    id="SampleIcon"
+    className="fa fa-book"
+    screenReaderText="Visit edX Home"
+  />
+</Hyperlink>
+```
+
+##### Props
+
+<StaticQuery
+  query={graphql`query {
+    componentMetadata(displayName: { eq: "Hyperlink" }) { ...ComponentDocGenData }
+  }`}
+  render={({ componentMetadata }) => {
+    if (componentMetadata == null) return null;
+    return <PropsTable propMetaData={componentMetadata.props} />;
+  }}
+/>

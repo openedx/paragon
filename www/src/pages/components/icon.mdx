@@ -1,0 +1,17 @@
+import { StaticQuery, graphql } from 'gatsby';
+import { Icon } from '~paragon-react';
+import PropsTable from '../../components/PropsTable';
+
+# Icon
+
+##### Props
+
+<StaticQuery
+  query={graphql`query {
+    componentMetadata(displayName: { eq: "Icon" }) { ...ComponentDocGenData }
+  }`}
+  render={({ componentMetadata }) => {
+    if (componentMetadata == null) return null;
+    return <PropsTable propMetaData={componentMetadata.props} />;
+  }}
+/>
