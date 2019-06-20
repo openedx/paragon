@@ -16,10 +16,6 @@ export const query = graphql`
       required
       docblock
       doclets
-      description {
-        text
-      }
     }
-    description
   }
 `;
