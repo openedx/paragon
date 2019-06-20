@@ -1,0 +1,32 @@
+@import "~font-awesome/css/font-awesome.min.css";
+@import '~@edx/edx-bootstrap/scss/edx/theme';
+@import "~paragon-react/index.scss";
+
+@import "./layout";
+@import "./hero";
+@import "./code-block";
+
+
+// Typography
+
+.pgn-doc__main-content {
+  h1, h2, h3, h4, h5 {
+    margin-top: 2em;
+  }
+}
+
+.btn + .btn {
+  margin-left: .5em;
+}
+
+.base-type {
+  & + .base-type {
+    margin-left: .25em;
+  }
+  display: inline-block;
+  background: #eee;
+  padding: 0 .25em;
+  font-family: SFMono-Regular, Menlo, Monaco, "Courier New", monospace;
+  font-size: .8em;
+  vertical-align: middle;
+}

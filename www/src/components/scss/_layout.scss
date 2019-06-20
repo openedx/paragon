@@ -1,0 +1,58 @@
+.pgn-doc_container {
+  padding-left: 256px;
+}
+
+.pgn-doc__navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 256px;
+  overflow: auto;
+  background: #FFFFFF;
+  box-shadow: 1px 0 4px 0 rgba(0,0,0,0.15);
+  padding: 3rem 0;
+
+  &:after {
+    height: 6rem;
+    content: '';
+    position: fixed;
+    width: 256px;
+    bottom: 0;
+    pointer-events: none;
+    background: linear-gradient(to top, rgba(255,255,255, .9) 20%, transparent);
+  }
+
+  .nav {
+    margin-bottom: 3rem;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    display: block;
+    &.active {
+      background: #F2F2F2;
+    }
+  }
+
+  .pgn-doc__nav-section-header {
+    padding: 0.5rem 1.5rem;
+    opacity: 0.4;
+    font-family: Roboto-Regular;
+    font-size: 13px;
+    color: #3A3E47;
+    letter-spacing: 2px;
+  }
+}
+
+.pgn-doc__main-content {
+  max-width: 1024px;
+  padding: 0 6rem 6rem;
+}
+
+.pgn-doc__module-flush {
+  margin: 0 -6rem;
+  padding: 0 6rem;
+}
