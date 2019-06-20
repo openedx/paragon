@@ -1,0 +1,31 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+h1,
+.h1 {
+  letter-spacing: -0.025em;
+}
+
+h2,
+.h2 {
+  font-weight: $font-weight-normal;
+  letter-spacing: -0.0125em;
+}
+
+h3,
+h4,
+h5,
+h6,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: $font-family-sans-serif;
+}
+

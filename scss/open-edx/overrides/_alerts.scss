@@ -1,0 +1,42 @@
+.alert {
+  padding: 0.75rem 0.75rem;
+}
+
+.alert-success,
+.alert-danger,
+.alert-warning,
+.alert-info {
+  border: none;
+  color: $body-color;
+
+  .alert-link {
+    color: $body-color;
+  }
+}
+
+.alert-success {
+  background: $fill-success;
+}
+
+.alert-danger {
+  background: $fill-danger;
+}
+
+.alert-warning {
+  background: $fill-warning;
+}
+
+.alert-info {
+  background: $fill-info;
+}
+
+
+.alert-dismissible .close {
+  color: $link-color;
+  opacity: 1;
+  padding: 0.65rem 1rem;
+
+  @include hover {
+    color: $link-hover-color;
+  }
+}
