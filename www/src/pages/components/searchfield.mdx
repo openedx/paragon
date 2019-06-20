@@ -1,0 +1,75 @@
+import { StaticQuery, graphql } from 'gatsby';
+import { SearchField } from '~paragon-react';
+import PropsTable from '../../components/PropsTable';
+
+# SearchField
+
+
+##### basic usage
+
+```jsx live=true
+<SearchField
+  onSubmit={() => console.log('search-submitted')}
+/>
+```
+
+
+##### with placeholder
+
+```jsx live=true
+<SearchField
+  onSubmit={() => console.log('search-submitted')}
+  placeholder="Search"
+/>
+```
+
+
+##### with value
+
+```jsx live=true
+<SearchField
+  onSubmit={() => console.log('search-submitted')}
+  placeholder="Search"
+  value="foobar"
+/>
+```
+
+
+##### with callbacks
+
+```jsx live=true
+<SearchField
+  onSubmit={() => console.log('search-submitted')}
+  onChange={() => console.log('value-changed')}
+  onFocus={() => console.log('search-focused')}
+  onBlur={() => console.log('search-blurred')}
+  onClear={() => console.log('search-cleared')}
+/>
+```
+
+
+##### with custom label and screenreader text
+
+```jsx live=true
+<SearchField
+  onSubmit={() => console.log('search-submitted')}
+  inputLabel="Buscar:"
+  screenReaderText={{
+    clearButton: 'Borrar búsqueda',
+    searchButton: 'Enviar búsqueda',
+  }}
+/>
+```
+
+
+##### Props
+
+<StaticQuery
+  query={graphql`query {
+    componentMetadata(displayName: { eq: "SearchField" }) { ...ComponentDocGenData }
+  }`}
+  render={({ componentMetadata }) => {
+    if (componentMetadata == null) return null;
+    return <PropsTable propMetaData={componentMetadata.props} />;
+  }}
+/>

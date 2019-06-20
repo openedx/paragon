@@ -12,7 +12,10 @@ module.exports = {
     {
       resolve: 'gatsby-mdx',
       options: {
-        defaultLayouts: { default: path.resolve('./src/components/layout.jsx') },
+        extensions: ['.mdx'],
+        defaultLayouts: {
+          default: require.resolve('./src/components/mdx-layout.jsx'),
+        },
       },
     },
     'gatsby-plugin-react-helmet',
@@ -30,5 +33,22 @@ module.exports = {
         icon: 'src/images/paragon-icon.png',
       },
     },
+    {
+      // Using the layout plugin to prevent re-renders of nav sidebar between routes
+      resolve: 'gatsby-plugin-layout',
+      options: {
+        component: require.resolve('./src/components/layout.jsx'),
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'src',
+        path: `${__dirname}/../src`,
+      },
+    },
+    // Note this will throw a warning about conflicting field types during build, but it is O.K.
+    // https://github.com/gatsbyjs/gatsby/issues/7027
+    'gatsby-transformer-react-docgen',
   ],
 };
