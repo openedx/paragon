@@ -38,6 +38,7 @@ const menu = [
       { title: 'InputSelect', url: 'components/inputselect' },
       { title: 'InputText', url: 'components/inputtext' },
       { title: 'ListBox', url: 'components/listbox' },
+      { title: 'Modal', url: 'components/modal' },
       { title: 'MailtoLink', url: 'components/mailtolink' },
       { title: 'Pagination', url: 'components/pagination' },
       { title: 'RadioButtonGroup', url: 'components/radiobuttongroup' },
