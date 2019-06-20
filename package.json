@@ -13,7 +13,7 @@
     "/src"
   ],
   "scripts": {
-    "build": "webpack --mode production --display-modules",
+    "build": "webpack --mode production --display-modules && node build-scss.js",
     "build-docs": "build-storybook && npm run build-gatsby && npm run move-gatsby",
     "build-storybook": "build-storybook",
     "build-gatsby": "cd ./www && \"$npm_execpath\" install && \"$npm_execpath\" run build",
@@ -86,7 +86,6 @@
     "jest": "^24.5.0",
     "jest-cli": "^24.7.1",
     "markdown-loader-jest": "^0.1.1",
-    "mini-css-extract-plugin": "^0.6.0",
     "node-sass": "^4.11.0",
     "react-test-renderer": "^16.8.6",
     "sass-loader": "^7.1.0",
