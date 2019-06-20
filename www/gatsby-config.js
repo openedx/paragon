@@ -16,13 +16,6 @@ module.exports = {
         defaultLayouts: {
           default: require.resolve('./src/components/mdx-layout.jsx'),
         },
-        // gatsbyRemarkPlugins: [
-        //     {
-        //         resolve: 'gatsby-remark-copy-linked-files',
-        //         options: { ignoreFileExtensions: [] },
-        //     },
-        //     { resolve: 'gatsby-remark-smartypants', options: {} },
-        // ],
       },
     },
     'gatsby-plugin-react-helmet',
