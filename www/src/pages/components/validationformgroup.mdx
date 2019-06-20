@@ -1,8 +1,28 @@
+---
+title: "ValidationFormGroup"
+type: "component"
+status: "Stable"
+designStatus: "Done"
+devStatus: "Done"
+notes: ""
+---
+
 import { StaticQuery, graphql } from 'gatsby';
 import { ValidationFormGroup } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
 
 # ValidationFormGroup
+
+
+Handles bootstrap style field validation and handles related aria attributes.
+
+Manages the rendering of bootstrap-style:
+- Help text
+- Valid and invalid feedback
+
+For children of type input, textarea, and select:
+- Appends bootstrap validation class names
+- Appends aria-describedby attributes (for help text and feedback)
 
 
 ##### basic usage
