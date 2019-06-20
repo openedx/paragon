@@ -190,16 +190,3 @@ class ListBoxWrapperForSelectedOptionIndex extends React.Component {
     return <PropsTable propMetaData={componentMetadata.props} />;
   }}
 />
-
-
-##### ListBoxOption Props
-
-<StaticQuery
-  query={graphql`query {
-    componentMetadata(displayName: { eq: "ListBoxOption" }) { ...ComponentDocGenData }
-  }`}
-  render={({ componentMetadata }) => {
-    if (componentMetadata == null) return null;
-    return <PropsTable propMetaData={componentMetadata.props} />;
-  }}
-/>
