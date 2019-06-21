@@ -10,7 +10,8 @@
   },
   "files": [
     "/dist",
-    "/src"
+    "/src",
+    "/scss"
   ],
   "scripts": {
     "build": "webpack --mode production --display-modules && node build-scss.js",
