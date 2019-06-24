@@ -2,4 +2,31 @@
 title: Typography
 ---
 
+import { graphql } from 'gatsby';
+import { Table } from '~paragon-react';
+import getCssSelectors from '../../utils/getCssSelectors.js';
+import CSSUtilitiesTable from '../../components/CSSUtilitiesTable';
+
 # Typography
+
+
+### Text Utilities
+
+<CSSUtilitiesTable
+  showExample
+  selectors={getCssSelectors(props.data.textUtilities.nodes)}
+/>
+
+export const pageQuery = graphql`
+{
+  textUtilities: allCssUtilityClasses(
+    filter: {isUtility: {eq: true}, declarations: {regex: "/^(?!color)/"}, selector: {regex: "/(^text)|(^font)/"}},
+    sort: {fields: selector, order: ASC}
+  ) {
+    nodes {
+      selector
+      declarations
+    }
+  }
+}
+`;
