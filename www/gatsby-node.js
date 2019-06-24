@@ -22,7 +22,7 @@ function createCssUtilityClassNodes({ actions, createNodeId, createContentDigest
   const compiledCSS = sass
       .renderSync({
         file: path.resolve(__dirname, '../scss/edx/utilities-only.scss'),
-        // Resolve tildas the way webpack would in our base npm project 
+        // Resolve tildes the way webpack would in our base npm project 
         importer: function(url, prev, done) {
           if (url[0] === '~') {
             url = path.resolve(__dirname, '../node_modules', url.substr(1));
