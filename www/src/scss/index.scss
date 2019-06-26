@@ -12,6 +12,15 @@
   h1, h2, h3, h4, h5 {
     margin-top: 2em;
   }
+  
+  // Typography Page
+
+  .demo-georgia {
+    font-family: 'Georgia', serif !important;
+  }
+  .demo-roboto {
+    font-family: 'Roboto', sans-serif !important;
+  }
 }
 
 .btn + .btn {
