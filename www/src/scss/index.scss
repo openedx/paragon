@@ -29,3 +29,7 @@
   font-size: .8em;
   vertical-align: middle;
 }
+
+.mobile-type {
+  @include mobile-type;
+}

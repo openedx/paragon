@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import Navigation from './navigation';
 import InternalMDXRenderer from 'gatsby-mdx/mdx-renderer';
 
-import './scss/index.scss';
+import '../scss/index.scss';
 
 import {MDXProvider} from '@mdx-js/react'
 import CodeBlock from './CodeBlock'
