@@ -1,5 +1,4 @@
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
 
 const menu = [
@@ -56,7 +55,7 @@ const menu = [
 ];
 
 
-const Navigation = ({ siteTitle }) => (
+const Navigation = () => (
   <div className="pgn-doc__navigation">
     <div className="pgn-doc__navigation-slide">
       {menu.map(({ section, items }) => (
@@ -76,17 +75,8 @@ const Navigation = ({ siteTitle }) => (
           ))}
         </nav>
       ))}
-   </div>
-</div>
+    </div>
+  </div>
 );
-
-
-Navigation.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Navigation.defaultProps = {
-  siteTitle: '',
-};
 
 export default Navigation;

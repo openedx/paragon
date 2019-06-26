@@ -8,10 +8,8 @@ const getCssSelectors = (nodes, regExpStr) => {
     return nodes;
   }
 
-  var regex = RegExp(regExpStr);
+  const regex = RegExp(regExpStr);
   return nodes.filter(rule => regex.test(rule.selector));
 };
-    // props.data.all.edges.find(({ node }) => node.atomicFileName === fileName)
-    //     .node.atomicClasses;
 
 export default getCssSelectors;

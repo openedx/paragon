@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby';
 
+// eslint-disable-next-line import/prefer-default-export
 export const query = graphql`
   fragment ComponentDocGenData on ComponentMetadata {
     displayName
