@@ -6,12 +6,10 @@ exports[`<Dropdown /> Backwards compatibility renders menu items as elements 1`]
 >
   <button
     aria-expanded={false}
-    aria-haspopup="true"
-    className="btn dropdown-toggle btn-light"
+    aria-haspopup={true}
+    className="dropdown-toggle btn btn-light"
     id="pgn__dropdown-trigger-6"
-    onBlur={[Function]}
     onClick={[Function]}
-    onKeyDown={[Function]}
     type="button"
   >
     Search Engines
@@ -51,12 +49,10 @@ exports[`<Dropdown /> Backwards compatibility renders the basic usage 1`] = `
 >
   <button
     aria-expanded={false}
-    aria-haspopup="true"
-    className="btn dropdown-toggle btn-light"
+    aria-haspopup={true}
+    className="dropdown-toggle btn btn-light"
     id="pgn__dropdown-trigger-5"
-    onBlur={[Function]}
     onClick={[Function]}
-    onKeyDown={[Function]}
     type="button"
   >
     Search Engines
@@ -96,22 +92,18 @@ exports[`<Dropdown /> Backwards compatibility renders with icon element 1`] = `
 >
   <button
     aria-expanded={false}
-    aria-haspopup="true"
-    className="btn dropdown-toggle btn-light"
+    aria-haspopup={true}
+    className="dropdown-toggle btn btn-light"
     id="pgn__dropdown-trigger-7"
-    onBlur={[Function]}
     onClick={[Function]}
-    onKeyDown={[Function]}
     type="button"
   >
-    <span>
-      <span
-        aria-hidden={true}
-        className="fa fa-user px-3"
-        id="Icon1"
-      />
-      Search Engines
-    </span>
+    <span
+      aria-hidden={true}
+      className="fa fa-user px-3"
+      id="Icon1"
+    />
+    Search Engines
   </button>
   <div
     aria-hidden={true}
@@ -148,15 +140,13 @@ exports[`<Dropdown /> Rendering renders the happy path 1`] = `
 >
   <button
     aria-expanded={false}
-    aria-haspopup="true"
-    className="btn dropdown-toggle btn-light"
+    aria-haspopup={true}
+    className="dropdown-toggle btn btn-light"
     id="pgn__dropdown-trigger-2"
-    onBlur={[Function]}
     onClick={[Function]}
-    onKeyDown={[Function]}
     type="button"
   >
-    Trigger Label
+    Search Engines
   </button>
   <div
     aria-hidden={true}
@@ -193,17 +183,13 @@ exports[`<Dropdown /> Rendering renders when there is html content in the trigge
 >
   <button
     aria-expanded={false}
-    aria-haspopup="true"
-    className="btn dropdown-toggle btn-light"
+    aria-haspopup={true}
+    className="dropdown-toggle btn btn-light"
     id="pgn__dropdown-trigger-3"
-    onBlur={[Function]}
     onClick={[Function]}
-    onKeyDown={[Function]}
     type="button"
   >
-    <span>
-      Trigger Label
-    </span>
+    Search Engines
   </button>
   <div
     aria-hidden={true}
@@ -238,26 +224,6 @@ exports[`<Dropdown /> Rendering renders with custom menu content 1`] = `
 <div
   className="dropdown"
 >
-  <button
-    aria-expanded={false}
-    aria-haspopup="true"
-    className="btn dropdown-toggle btn-light"
-    id="pgn__dropdown-trigger-4"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    type="button"
-  >
-    Trigger Label
-  </button>
-  <div
-    aria-hidden={true}
-    aria-labelledby="pgn__dropdown-trigger-4"
-    className="dropdown-menu"
-    onKeyDown={[Function]}
-    role="menu"
-  >
-    Custom Content
-  </div>
+  Custom Content
 </div>
 `;

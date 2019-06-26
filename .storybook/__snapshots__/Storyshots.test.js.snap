@@ -1147,12 +1147,10 @@ exports[`Storyshots Navigation|Dropdown basic usage 1`] = `
 >
   <button
     aria-expanded={false}
-    aria-haspopup="true"
-    className="btn dropdown-toggle btn-light"
+    aria-haspopup={true}
+    className="dropdown-toggle btn btn-light"
     id="pgn__dropdown-trigger-0"
-    onBlur={[Function]}
     onClick={[Function]}
-    onKeyDown={[Function]}
     type="button"
   >
     Search Engines
@@ -1193,22 +1191,18 @@ Array [
   >
     <button
       aria-expanded={false}
-      aria-haspopup="true"
-      className="btn dropdown-toggle btn-light"
+      aria-haspopup={true}
+      className="dropdown-toggle btn btn-light"
       id="pgn__dropdown-trigger-2"
-      onBlur={[Function]}
       onClick={[Function]}
-      onKeyDown={[Function]}
       type="button"
     >
-      <span>
-        Search Engines
-        <span
-          aria-hidden={true}
-          className="fa fa-caret-down pl-3"
-          id="Icon1"
-        />
-      </span>
+      Search Engines
+      <span
+        aria-hidden={true}
+        className="fa fa-caret-down pl-3"
+        id="Icon1"
+      />
     </button>
     <div
       aria-hidden={true}
@@ -1242,22 +1236,18 @@ Array [
   >
     <button
       aria-expanded={false}
-      aria-haspopup="true"
-      className="btn dropdown-toggle btn-light"
+      aria-haspopup={true}
+      className="dropdown-toggle btn btn-light"
       id="pgn__dropdown-trigger-3"
-      onBlur={[Function]}
       onClick={[Function]}
-      onKeyDown={[Function]}
       type="button"
     >
-      <span>
-        Search Engines
-        <span
-          aria-hidden={true}
-          className="fa fa-angle-down pl-3"
-          id="Icon1"
-        />
-      </span>
+      Search Engines
+      <span
+        aria-hidden={true}
+        className="fa fa-angle-down pl-3"
+        id="Icon1"
+      />
     </button>
     <div
       aria-hidden={true}
@@ -1295,22 +1285,18 @@ exports[`Storyshots Navigation|Dropdown with icon element 1`] = `
 >
   <button
     aria-expanded={false}
-    aria-haspopup="true"
-    className="btn dropdown-toggle btn-light"
+    aria-haspopup={true}
+    className="dropdown-toggle btn btn-light"
     id="pgn__dropdown-trigger-1"
-    onBlur={[Function]}
     onClick={[Function]}
-    onKeyDown={[Function]}
     type="button"
   >
-    <span>
-      <span
-        aria-hidden={true}
-        className="fa fa-user pr-3"
-        id="Icon1"
-      />
-      Search Engines
-    </span>
+    <span
+      aria-hidden={true}
+      className="fa fa-user pr-3"
+      id="Icon1"
+    />
+    Search Engines
   </button>
   <div
     aria-hidden={true}

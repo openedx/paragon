@@ -11,15 +11,20 @@ const props = {
 
 const menuContent = (
   <React.Fragment>
-    <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
-    <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
-    <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
+    <Dropdown.Button>
+      Search Engines
+    </Dropdown.Button>
+    <Dropdown.Menu>
+      <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
+      <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
+      <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
+    </Dropdown.Menu>
   </React.Fragment>
 );
 
 const menuOpen = (isOpen, wrapper) => {
   expect(wrapper.find('.dropdown').hasClass('show')).toEqual(isOpen);
-  expect(wrapper.find('Button').prop('aria-expanded')).toEqual(isOpen);
+  expect(wrapper.find('button').prop('aria-expanded')).toEqual(isOpen);
   expect(wrapper.find('[aria-hidden=false]').exists()).toEqual(isOpen);
 };
 
@@ -55,7 +60,7 @@ describe('<Dropdown />', () => {
 
   describe('Mouse Interactions', () => {
     const wrapper = mount(<Dropdown {...props}>{menuContent}</Dropdown>);
-    const menuTrigger = wrapper.find('Button');
+    const menuTrigger = wrapper.find('button');
     const menuContainer = wrapper.find('.dropdown-menu');
     const menuItems = wrapper.find('.dropdown-menu a');
 
@@ -95,7 +100,7 @@ describe('<Dropdown />', () => {
   describe('Keyboard Interactions', () => {
     // Note: menuContent has three items
     const wrapper = mount(<Dropdown {...props}>{menuContent}</Dropdown>);
-    const menuTrigger = wrapper.find('Button');
+    const menuTrigger = wrapper.find('button');
     const menuContainer = wrapper.find('.dropdown-menu');
     const menuItems = wrapper.find('.dropdown-menu a');
 
