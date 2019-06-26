@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import Navigation from './navigation';
 
-import './scss/index.scss';
+import '../scss/index.scss';
 
 
 const Layout = ({ children }) => (

@@ -1,13 +1,10 @@
-
 import React from 'react';
-import { Link } from 'gatsby';
 import { StaticQuery, graphql } from 'gatsby';
-import Layout from '../components/layout';
-import { ComponentStatus } from '../components/doc-elements';
 import { Table } from '~paragon-react';
-import SEO from '../components/seo'
+import { ComponentStatus } from '../components/doc-elements';
+import SEO from '../components/seo';
 
-export default function() {
+export default function () {
   return (
     <div>
       <SEO title="Status" />
@@ -34,21 +31,21 @@ export default function() {
         render={({ allMdx }) => {
           if (!allMdx || !allMdx.nodes) return null;
           const components = allMdx.nodes.map(({ frontmatter }) => frontmatter);
-          
+
           return (
             <Table
               className="pgn-doc__status-table"
-              data={components.map(({ title, status, designStatus, devStatus, notes }) => ({
+              data={components.map(({
+                title, status, designStatus, devStatus, notes,
+              }) => ({
                 name: (
                   <div>
-                    
                     <h6>{title} <ComponentStatus status={status} /></h6>
                     <pre>{notes}</pre>
                   </div>
                 ),
                 designStatus: <ComponentStatus status={designStatus} />,
                 devStatus: <ComponentStatus status={devStatus} />,
-                
               }))}
               columns={[
                 {
@@ -67,7 +64,7 @@ export default function() {
                   width: 'col-3',
                 },
               ]}
-            /> 
+            />
           );
         }}
       />
