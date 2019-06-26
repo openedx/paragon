@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
+import PropTypes from 'prop-types';
 
 export default class MeasuredItem extends React.Component {
   constructor(props) {
@@ -41,3 +41,17 @@ export default class MeasuredItem extends React.Component {
     );
   }
 }
+
+MeasuredItem.propTypes = {
+  properties: PropTypes.arrayOf(PropTypes.string),
+  renderBefore: PropTypes.func,
+  renderAfter: PropTypes.func,
+  children: PropTypes.node.isRequired,
+};
+
+MeasuredItem.defaultProps = {
+  properties: [],
+  renderBefore: undefined,
+  renderAfter: undefined,
+};
+
