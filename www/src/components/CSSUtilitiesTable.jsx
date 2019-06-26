@@ -1,13 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Table } from '~paragon-react';
 
-function CSSUtilitiesTable(props) {
+function CSSUtilitiesTable({ selectors, showExample }) {
   return (
     <Table
       className="pgn-doc__status-table"
-      data={props.selectors.map(({ selector, declarations }) => ({
+      data={selectors.map(({ selector, declarations }) => ({
         selector: <code>.{selector}</code>,
-        example: props.showExample ? (
+        example: showExample ? (
           <p
             style={{
               margin: '-.25em 0',
@@ -15,7 +16,8 @@ function CSSUtilitiesTable(props) {
               padding: '.25em .5em',
               border: 'solid 1px transparent',
             }}
-            className={selector}>
+            className={selector}
+          >
             Aa Bb Cc
           </p>
         ) : null,
@@ -43,9 +45,21 @@ function CSSUtilitiesTable(props) {
           hideHeader: true,
         },
       ]}
-    /> 
-
+    />
   );
 }
+
+CSSUtilitiesTable.propTypes = {
+  selectors: PropTypes.arrayOf(PropTypes.shape({
+    selector: PropTypes.string,
+    declarations: PropTypes.arrayOf(PropTypes.string),
+  })),
+  showExample: PropTypes.bool,
+};
+
+CSSUtilitiesTable.defaultProps = {
+  selectors: [],
+  showExample: false,
+};
 
 export default CSSUtilitiesTable;
