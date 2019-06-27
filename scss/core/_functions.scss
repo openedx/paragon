@@ -1,0 +1,30 @@
+//
+// BOOTSTRAP FUNCTION OVERRIDE
+// Request a theme color level
+//
+
+@function theme-color($color-name: "primary", $variant: "default") {
+  $level: map-get($color-variant-levels, $variant);
+  $level: 500 !default;
+
+  @if map-has-key($theme-color-levels, "#{$color-name}-#{$level}") {
+    @return map-get($theme-color-levels, "#{$color-name}-#{$level}");
+  }
+
+
+  @if map-has-key($theme-colors, $color-name) {
+    $color: map-get($theme-colors, $color-name);
+
+    @if (map-has-key($color-variant-level-shifts, $variant)) {
+      $shift: map-get($color-variant-level-shifts, $variant);
+      $hue: map-get($shift, "hue");
+      $saturation: map-get($shift, "saturation");
+      $lightness: map-get($shift, "lightness");
+      @return adjust-color($color, $lightness: $lightness, $saturation: $saturation, $hue: $hue);
+    }
+
+    @return map-get($theme-colors, $color-name);
+  }
+  
+  @return $gray;
+}

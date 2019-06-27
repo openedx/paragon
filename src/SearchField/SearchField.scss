@@ -52,21 +52,21 @@ $search-field-border-radius: 30px;
         border-bottom: 0;
         transition: border-color 0.15s ease-in-out;
         padding: 10px 15px 10px 12px;
-        color: $gray-600;
+        color: theme-color("gray", "text");
         background: none;
         margin-left: 0;
         
         &:not(:disabled):hover,
         &:not(:disabled):focus {
             background: #F2F8FB;
-            color: $blue;
+            color: theme-color("primary", "text");
         }
     }
     
     .clear-btn {
         width: $search-field-clear-btn-width;
         justify-content: center;
-        color: $gray-600;
+        color: theme-color("gray", "text");
         border: 0;
         background: none;
     }
