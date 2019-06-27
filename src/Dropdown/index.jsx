@@ -304,28 +304,12 @@ const DropdownWithDeprecatedProps = withDeprecatedProps(Dropdown, 'Dropdown', {
     newName: 'children',
     transform: (menuItems, allProps) => {
       if (!Array.isArray(menuItems)) return null;
-      if (React.isValidElement(allProps.iconElement)) {
-        return (
-          <React.Fragment>
-            <Dropdown.Button>{allProps.iconElement}{allProps.title}</Dropdown.Button>
-            <Dropdown.Menu>
-              {menuItems.map((menuItem, i) => {
-                /* eslint-disable react/no-array-index-key */
-                if (React.isValidElement(menuItem)) {
-                  return React.cloneElement(menuItem, {
-                    className: 'dropdown-item',
-                    key: i,
-                  });
-                }
-              return <Dropdown.Item key={i} href={menuItem.href}>{menuItem.label}</Dropdown.Item>;
-            /* eslint-enable react/no-array-index-key */
-            })}
-            </Dropdown.Menu>
-          </React.Fragment>);
-      }
       return (
         <React.Fragment>
-          <Dropdown.Button>{allProps.title}</Dropdown.Button>
+          <Dropdown.Button>
+            {React.isValidElement(allProps.iconElement) ? allProps.iconElement : null }
+            {allProps.title}
+          </Dropdown.Button>
           <Dropdown.Menu>
             {menuItems.map((menuItem, i) => {
             /* eslint-disable react/no-array-index-key */
@@ -339,8 +323,7 @@ const DropdownWithDeprecatedProps = withDeprecatedProps(Dropdown, 'Dropdown', {
             /* eslint-enable react/no-array-index-key */
             })}
           </Dropdown.Menu>
-        </React.Fragment>
-      );
+        </React.Fragment>);
     },
   },
   title: {
