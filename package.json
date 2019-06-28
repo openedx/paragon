@@ -119,7 +119,12 @@
       "/node_modules/",
       "src/setupTest.js",
       "src/index.js",
-      "/tests/"
+      "/tests/",
+      "/www/"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/www/"
     ],
     "transformIgnorePatterns": [
       "/node_modules/(?!(@edx/paragon)/).*/"

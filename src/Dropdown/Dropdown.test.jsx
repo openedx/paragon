@@ -5,10 +5,6 @@ import renderer from 'react-test-renderer';
 import Dropdown from './index';
 import Icon from '../Icon';
 
-const props = {
-  buttonContent: 'Trigger Label',
-};
-
 const menuContent = (
   <React.Fragment>
     <Dropdown.Button>
@@ -32,7 +28,7 @@ describe('<Dropdown />', () => {
   describe('Rendering', () => {
     it('renders the happy path', () => {
       const tree = renderer.create((
-        <Dropdown {...props}>
+        <Dropdown>
           {menuContent}
         </Dropdown>
       )).toJSON();
@@ -41,7 +37,7 @@ describe('<Dropdown />', () => {
 
     it('renders when there is html content in the trigger button', () => {
       const tree = renderer.create((
-        <Dropdown buttonContent={(<span>Trigger Label</span>)}>
+        <Dropdown>
           {menuContent}
         </Dropdown>
       )).toJSON();
@@ -50,7 +46,7 @@ describe('<Dropdown />', () => {
 
     it('renders with custom menu content', () => {
       const tree = renderer.create((
-        <Dropdown {...props}>
+        <Dropdown>
           Custom Content
         </Dropdown>
       )).toJSON();
@@ -59,7 +55,7 @@ describe('<Dropdown />', () => {
   });
 
   describe('Mouse Interactions', () => {
-    const wrapper = mount(<Dropdown {...props}>{menuContent}</Dropdown>);
+    const wrapper = mount(<Dropdown>{menuContent}</Dropdown>);
     const menuTrigger = wrapper.find('button');
     const menuContainer = wrapper.find('.dropdown-menu');
     const menuItems = wrapper.find('.dropdown-menu a');
@@ -96,10 +92,9 @@ describe('<Dropdown />', () => {
     });
   });
 
-
   describe('Keyboard Interactions', () => {
     // Note: menuContent has three items
-    const wrapper = mount(<Dropdown {...props}>{menuContent}</Dropdown>);
+    const wrapper = mount(<Dropdown>{menuContent}</Dropdown>);
     const menuTrigger = wrapper.find('button');
     const menuContainer = wrapper.find('.dropdown-menu');
     const menuItems = wrapper.find('.dropdown-menu a');
