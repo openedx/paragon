@@ -3,10 +3,8 @@
     [
       "@babel/preset-env",
       {
-        "targets": {
-          "browsers": ["last 2 versions", "ie 11"]
-        }
-      }
+        "modules": false
+      },
     ],
     "@babel/preset-react"
   ],
@@ -16,7 +14,13 @@
   ],
   "env": {
     "test": {
-      "plugins": ["require-context-hook", "@babel/plugin-proposal-class-properties"]
+      "plugins": ["require-context-hook", "@babel/plugin-proposal-class-properties"],
+      "presets": [
+        [
+          "@babel/preset-env",
+        ],
+        "@babel/preset-react"
+      ],
     }
   }
 }
