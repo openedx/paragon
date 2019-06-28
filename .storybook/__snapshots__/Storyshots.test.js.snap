@@ -1147,42 +1147,35 @@ exports[`Storyshots Navigation|Dropdown basic usage 1`] = `
 >
   <button
     aria-expanded={false}
-    aria-haspopup="true"
-    className="btn dropdown-toggle btn-light"
-    onBlur={[Function]}
+    aria-haspopup={true}
+    className="dropdown-toggle btn btn-light"
+    id="pgn__dropdown-trigger-0"
     onClick={[Function]}
-    onKeyDown={[Function]}
-    type="button"
   >
     Search Engines
   </button>
   <div
     aria-hidden={true}
-    aria-label="Search Engines"
+    aria-labelledby="pgn__dropdown-trigger-0"
     className="dropdown-menu"
+    onKeyDown={[Function]}
     role="menu"
   >
     <a
       className="dropdown-item"
       href="https://google.com"
-      onKeyDown={[Function]}
-      role="menuitem"
     >
       Google
     </a>
     <a
       className="dropdown-item"
       href="https://duckduckgo.com"
-      onKeyDown={[Function]}
-      role="menuitem"
     >
       DuckDuckGo
     </a>
     <a
       className="dropdown-item"
       href="https://yahoo.com"
-      onKeyDown={[Function]}
-      role="menuitem"
     >
       Yahoo
     </a>
@@ -1190,103 +1183,139 @@ exports[`Storyshots Navigation|Dropdown basic usage 1`] = `
 </div>
 `;
 
-exports[`Storyshots Navigation|Dropdown menu items as elements 1`] = `
+exports[`Storyshots Navigation|Dropdown with caret/chevron 1`] = `
+Array [
+  <div
+    className="dropdown mb-3"
+  >
+    <button
+      aria-expanded={false}
+      aria-haspopup={true}
+      className="dropdown-toggle btn btn-light"
+      id="pgn__dropdown-trigger-2"
+      onClick={[Function]}
+    >
+      Search Engines
+      <span
+        aria-hidden={true}
+        className="fa fa-caret-down pl-3"
+        id="Icon1"
+      />
+    </button>
+    <div
+      aria-hidden={true}
+      aria-labelledby="pgn__dropdown-trigger-2"
+      className="dropdown-menu"
+      onKeyDown={[Function]}
+      role="menu"
+    >
+      <a
+        className="dropdown-item"
+        href="https://google.com"
+      >
+        Google
+      </a>
+      <a
+        className="dropdown-item"
+        href="https://duckduckgo.com"
+      >
+        DuckDuckGo
+      </a>
+      <a
+        className="dropdown-item"
+        href="https://yahoo.com"
+      >
+        Yahoo
+      </a>
+    </div>
+  </div>,
+  <div
+    className="dropdown"
+  >
+    <button
+      aria-expanded={false}
+      aria-haspopup={true}
+      className="dropdown-toggle btn btn-light"
+      id="pgn__dropdown-trigger-3"
+      onClick={[Function]}
+    >
+      Search Engines
+      <span
+        aria-hidden={true}
+        className="fa fa-angle-down pl-3"
+        id="Icon1"
+      />
+    </button>
+    <div
+      aria-hidden={true}
+      aria-labelledby="pgn__dropdown-trigger-3"
+      className="dropdown-menu"
+      onKeyDown={[Function]}
+      role="menu"
+    >
+      <a
+        className="dropdown-item"
+        href="https://google.com"
+      >
+        Google
+      </a>
+      <a
+        className="dropdown-item"
+        href="https://duckduckgo.com"
+      >
+        DuckDuckGo
+      </a>
+      <a
+        className="dropdown-item"
+        href="https://yahoo.com"
+      >
+        Yahoo
+      </a>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots Navigation|Dropdown with icon element 1`] = `
 <div
   className="dropdown"
 >
   <button
     aria-expanded={false}
-    aria-haspopup="true"
-    className="btn dropdown-toggle btn-light"
-    onBlur={[Function]}
+    aria-haspopup={true}
+    className="dropdown-toggle btn btn-light"
+    id="pgn__dropdown-trigger-1"
     onClick={[Function]}
-    onKeyDown={[Function]}
-    type="button"
-  >
-    Search Engines
-  </button>
-  <div
-    aria-hidden={true}
-    aria-label="Search Engines"
-    className="dropdown-menu"
-    role="menu"
-  >
-    <a
-      className="dropdown-item"
-      href="http://www.google.com"
-      onKeyDown={[Function]}
-    >
-      Google
-    </a>
-    <a
-      className="dropdown-item"
-      href="http://www.duckduckgo.com"
-      onKeyDown={[Function]}
-    >
-      DuckDuckGo
-    </a>
-    <a
-      className="dropdown-item"
-      href="http://www.yahoo.com"
-      onKeyDown={[Function]}
-    >
-      Yahoo
-    </a>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Navigation|Dropdown with icon element 1`] = `
-<div
-  className="dropdown has-icon rounded border d-flex bg-white"
->
-  <div
-    className="icon-container d-flex align-items-center justify-content-center border-right"
   >
     <span
       aria-hidden={true}
-      className="fa fa-user px-3 rounded-left"
+      className="fa fa-user pr-3"
       id="Icon1"
     />
-  </div>
-  <button
-    aria-expanded={false}
-    aria-haspopup="true"
-    className="btn dropdown-toggle border-0 rounded-0 bg-white btn-light"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    type="button"
-  >
     Search Engines
   </button>
   <div
     aria-hidden={true}
-    aria-label="Search Engines"
+    aria-labelledby="pgn__dropdown-trigger-1"
     className="dropdown-menu"
+    onKeyDown={[Function]}
     role="menu"
   >
     <a
       className="dropdown-item"
       href="https://google.com"
-      onKeyDown={[Function]}
-      role="menuitem"
     >
       Google
     </a>
     <a
       className="dropdown-item"
       href="https://duckduckgo.com"
-      onKeyDown={[Function]}
-      role="menuitem"
     >
       DuckDuckGo
     </a>
     <a
       className="dropdown-item"
       href="https://yahoo.com"
-      onKeyDown={[Function]}
-      role="menuitem"
     >
       Yahoo
     </a>

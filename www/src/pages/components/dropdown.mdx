@@ -15,8 +15,69 @@ import PropsTable from '../../components/PropsTable';
 
 # Dropdown
 
-
 ##### basic usage
+
+```jsx live=true
+<Dropdown>
+  <Dropdown.Button>
+    Search Engines
+  </Dropdown.Button>
+  <Dropdown.Menu>
+    <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
+    <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
+    <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
+```
+
+
+##### with icon element
+
+```jsx live=true
+<Dropdown>
+  <Dropdown.Button>
+    <Icon className="fa fa-user pr-3" alt="" />
+    Search Engines
+  </Dropdown.Button>
+  <Dropdown.Menu>
+    <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
+    <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
+    <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
+```
+
+
+##### with caret/chevron
+
+```jsx live=true
+<React.Fragment>
+  <Dropdown className="mb-3">
+    <Dropdown.Button>
+      Search Engines
+      <Icon className="fa fa-caret-down pl-3" alt="" />
+    </Dropdown.Button>
+    <Dropdown.Menu>
+      <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
+      <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
+      <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
+  <Dropdown>
+    <Dropdown.Button>
+      Search Engines
+      <Icon className="fa fa-angle-down pl-3" alt="" />
+    </Dropdown.Button>
+    <Dropdown.Menu>
+      <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
+      <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
+      <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
+</React.Fragment>
+```
+
+##### (Deprecated) basic usage
 
 ```jsx live=true
 <Dropdown
@@ -39,7 +100,7 @@ import PropsTable from '../../components/PropsTable';
 ```
 
 
-##### menu items as elements
+##### (Deprecated) menu items as elements
 
 ```jsx live=true
 <Dropdown
@@ -53,12 +114,12 @@ import PropsTable from '../../components/PropsTable';
 ```
 
 
-##### with icon element
+##### (Deprecated) with icon element
 
 ```jsx live=true
 <Dropdown
   title="Search Engines"
-  iconElement={<Icon className="fa fa-user px-3" />}
+  iconElement={<Icon className="fa fa-user pr-3" />}
   menuItems={[
     {
       label: 'Google',
@@ -80,10 +141,22 @@ import PropsTable from '../../components/PropsTable';
 
 <StaticQuery
   query={graphql`query {
-    componentMetadata(displayName: { eq: "Dropdown" }) { ...ComponentDocGenData }
+    dropdown: componentMetadata(displayName: { eq: "Dropdown" }) { ...ComponentDocGenData }
+    dropdownItem: componentMetadata(displayName: { eq: "DropdownItem" }) { ...ComponentDocGenData }
+    dropdownButton: componentMetadata(displayName: { eq: "DropdownButton" }) { ...ComponentDocGenData }
+    dropdownMenu: componentMetadata(displayName: { eq: "DropdownMenu" }) { ...ComponentDocGenData }
   }`}
-  render={({ componentMetadata }) => {
-    if (componentMetadata == null) return null;
-    return <PropsTable propMetaData={componentMetadata.props} />;
+  render={({ dropdown, dropdownItem, dropdownButton, dropdownMenu }) => {
+    return (
+      <div>
+        {dropdown ? <PropsTable propMetaData={dropdown.props} /> : null}
+        <h4>Dropdown.Button</h4>
+        {dropdownButton ? <PropsTable propMetaData={dropdownButton.props} /> : null}
+        <h4>Dropdown.Menu</h4>
+        {dropdownMenu ? <PropsTable propMetaData={dropdownMenu.props} /> : null}
+        <h4>Dropdown.Item</h4>
+        {dropdownItem ? <PropsTable propMetaData={dropdownItem.props} /> : null}
+      </div>
+    )
   }}
 />
