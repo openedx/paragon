@@ -24,6 +24,7 @@ class Dropdown extends React.Component {
     Dropdown.idCounter += 1;
     this.triggerId = `pgn__dropdown-trigger-${this.uniqueId}`;
 
+    this.containerRef = React.createRef();
     this.menuRef = React.createRef();
     this.buttonRef = React.createRef();
   }
@@ -70,7 +71,7 @@ class Dropdown extends React.Component {
   }
 
   handleDocumentClick = (e) => {
-    if (this.container && this.container.contains(e.target) && this.container !== e.target) {
+    if (this.containerRef.current.contains(e.target) && this.containerRef.current !== e.target) {
       return;
     }
     if (this.state.open) {
@@ -129,41 +130,27 @@ class Dropdown extends React.Component {
   }
 
   render() {
-    const {
-      buttonClassName,
-      buttonContent,
-      className,
-      children,
-      ...other
-    } = this.props;
+    const { children, ...other } = this.props;
 
     return (
       <div
         {...other}
         className={classNames(
           'dropdown',
-          className,
-          {
-            show: this.state.open,
-          },
+          { show: this.state.open },
+          other.className,
         )}
-        ref={(container) => { this.container = container; }}
+        ref={this.containerRef}
       >
         <Provider
           value={{
+            buttonRef: this.buttonRef,
+            handleMenuKeyDown: this.handleMenuKeyDown,
+            isOpen: this.state.open,
+            menuRef: this.menuRef,
             toggle: this.toggle,
             triggerId: this.triggerId,
-            buttonRef: this.buttonRef,
-            ariaExpanded: this.state.open,
-            ariaHasPopup: true,
-            className: classNames({
-                show: this.state.open,
-              }),
-            handleMenuKeyDown: this.handleMenuKeyDown,
-            menuRef: this.menuRef,
-            ariaLabelledBy: this.triggerId,
-            ariaHidden: !this.state.open,
-              }}
+          }}
         >
           {children}
         </Provider>
@@ -173,16 +160,14 @@ class Dropdown extends React.Component {
 }
 
 Dropdown.propTypes = {
-  className: PropTypes.string,
-  buttonClassName: PropTypes.string,
   children: PropTypes.node.isRequired,
-  buttonContent: PropTypes.node.isRequired,
 };
 
-Dropdown.defaultProps = {
-  className: null,
-  buttonClassName: 'btn-light',
-};
+
+Dropdown.Item = DropdownItem;
+Dropdown.Button = DropdownButton;
+Dropdown.Menu = DropdownMenu;
+
 
 const DropdownWithDeprecatedProps = withDeprecatedProps(Dropdown, 'Dropdown', {
   menuItems: {
@@ -210,7 +195,8 @@ const DropdownWithDeprecatedProps = withDeprecatedProps(Dropdown, 'Dropdown', {
             /* eslint-enable react/no-array-index-key */
             })}
           </DropdownMenu>
-        </React.Fragment>);
+        </React.Fragment>
+      );
     },
   },
   title: {
@@ -229,11 +215,9 @@ const DropdownWithDeprecatedProps = withDeprecatedProps(Dropdown, 'Dropdown', {
 
 DropdownWithDeprecatedProps.propTypes = Dropdown.propTypes;
 DropdownWithDeprecatedProps.defaultProps = Dropdown.defaultProps;
-DropdownWithDeprecatedProps.Item = DropdownItem;
-DropdownWithDeprecatedProps.Button = DropdownButton;
-DropdownWithDeprecatedProps.Menu = DropdownMenu;
+DropdownWithDeprecatedProps.Item = Dropdown.Item;
+DropdownWithDeprecatedProps.Button = Dropdown.Button;
+DropdownWithDeprecatedProps.Menu = Dropdown.Menu;
 
-// Dropdown.Button = DropdownButton;
-// export const DropdownConsumer = DropdownContext.Consumer;
 export { Provider, Consumer };
 export default DropdownWithDeprecatedProps;
