@@ -1,12 +1,14 @@
-import React, { createContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import DropdownButton from './DropdownButton';
+import DropdownMenu from './DropdownMenu';
+import DropdownItem from './DropdownItem';
 
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
-const context = createContext({});
-
-const { Provider, Consumer } = context;
+const { Provider, Consumer } = React.createContext();
+// const DropdownContext = React.createContext();
 
 class Dropdown extends React.Component {
   static idCounter = 0; // For creating unique ids
@@ -182,121 +184,6 @@ Dropdown.defaultProps = {
   buttonClassName: 'btn-light',
 };
 
-const DropdownButton = ({ children, className, ...other }) =>
-  (
-    <Consumer>
-      {({
-        toggle,
-        buttonRef,
-        triggerId,
-        ariaExpanded,
-        ariaHasPopup,
-      }) => (
-        <button
-          {...other}
-          id={triggerId}
-          aria-expanded={ariaExpanded}
-          aria-haspopup={ariaHasPopup}
-          ref={buttonRef}
-          className={classNames(
-            'dropdown-toggle',
-            'btn',
-            className,
-          )}
-          onClick={toggle}
-        >
-          {children}
-        </button>
-            )}
-    </Consumer>
-  );
-
-DropdownButton.propTypes = {
-  type: PropTypes.string,
-  children: PropTypes.node,
-  className: PropTypes.string,
-};
-
-DropdownButton.defaultProps = {
-  type: 'button',
-  children: undefined,
-  className: 'btn-light',
-};
-
-Dropdown.Button = DropdownButton;
-
-const DropdownMenu = ({ children, ...other }) =>
-  (
-    <Consumer>
-      {({
-        className,
-        handleMenuKeyDown,
-        menuRef,
-        ariaLabelledBy,
-        ariaHidden,
-      }) => (
-        /* eslint-disable-next-line jsx-a11y/interactive-supports-focus */
-        <div
-          {...other}
-          aria-labelledby={ariaLabelledBy}
-          aria-hidden={ariaHidden}
-          ref={menuRef}
-          className={classNames(
-            'dropdown-menu',
-            className,
-          )}
-          role="menu"
-          onKeyDown={handleMenuKeyDown}
-        >
-          {children}
-        </div>
-      )}
-    </Consumer>
-  );
-
-DropdownMenu.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-};
-
-DropdownMenu.defaultProps = {
-  children: undefined,
-  className: null,
-};
-
-Dropdown.Menu = DropdownMenu;
-
-const DropdownItem = (props) => {
-  const {
-    type, children, className, ...other
-  } = props;
-  return React.createElement(
-    type,
-    {
-      ...other,
-      className: classNames(
-        'dropdown-item',
-        className,
-      ),
-    },
-    children,
-  );
-};
-
-DropdownItem.propTypes = {
-  type: PropTypes.string,
-  children: PropTypes.node,
-  className: PropTypes.string,
-};
-
-DropdownItem.defaultProps = {
-  type: 'a',
-  children: undefined,
-  className: null,
-};
-
-Dropdown.Item = DropdownItem;
-
 const DropdownWithDeprecatedProps = withDeprecatedProps(Dropdown, 'Dropdown', {
   menuItems: {
     deprType: DEPR_TYPES.MOVED_AND_FORMAT,
@@ -306,11 +193,11 @@ const DropdownWithDeprecatedProps = withDeprecatedProps(Dropdown, 'Dropdown', {
       if (!Array.isArray(menuItems)) return null;
       return (
         <React.Fragment>
-          <Dropdown.Button>
+          <DropdownButton>
             {React.isValidElement(allProps.iconElement) ? allProps.iconElement : null }
             {allProps.title}
-          </Dropdown.Button>
-          <Dropdown.Menu>
+          </DropdownButton>
+          <DropdownMenu>
             {menuItems.map((menuItem, i) => {
             /* eslint-disable react/no-array-index-key */
             if (React.isValidElement(menuItem)) {
@@ -319,10 +206,10 @@ const DropdownWithDeprecatedProps = withDeprecatedProps(Dropdown, 'Dropdown', {
                 key: i,
               });
             }
-            return <Dropdown.Item key={i} href={menuItem.href}>{menuItem.label}</Dropdown.Item>;
+            return <DropdownItem key={i} href={menuItem.href}>{menuItem.label}</DropdownItem>;
             /* eslint-enable react/no-array-index-key */
             })}
-          </Dropdown.Menu>
+          </DropdownMenu>
         </React.Fragment>);
     },
   },
@@ -342,9 +229,11 @@ const DropdownWithDeprecatedProps = withDeprecatedProps(Dropdown, 'Dropdown', {
 
 DropdownWithDeprecatedProps.propTypes = Dropdown.propTypes;
 DropdownWithDeprecatedProps.defaultProps = Dropdown.defaultProps;
-DropdownWithDeprecatedProps.Item = Dropdown.Item;
-DropdownWithDeprecatedProps.Button = Dropdown.Button;
-DropdownWithDeprecatedProps.Menu = Dropdown.Menu;
+DropdownWithDeprecatedProps.Item = DropdownItem;
+DropdownWithDeprecatedProps.Button = DropdownButton;
+DropdownWithDeprecatedProps.Menu = DropdownMenu;
 
-
+// Dropdown.Button = DropdownButton;
+// export const DropdownConsumer = DropdownContext.Consumer;
+export { Provider, Consumer };
 export default DropdownWithDeprecatedProps;

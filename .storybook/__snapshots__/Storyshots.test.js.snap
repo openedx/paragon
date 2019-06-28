@@ -1151,7 +1151,6 @@ exports[`Storyshots Navigation|Dropdown basic usage 1`] = `
     className="dropdown-toggle btn btn-light"
     id="pgn__dropdown-trigger-0"
     onClick={[Function]}
-    type="button"
   >
     Search Engines
   </button>
@@ -1195,7 +1194,6 @@ Array [
       className="dropdown-toggle btn btn-light"
       id="pgn__dropdown-trigger-2"
       onClick={[Function]}
-      type="button"
     >
       Search Engines
       <span
@@ -1240,7 +1238,6 @@ Array [
       className="dropdown-toggle btn btn-light"
       id="pgn__dropdown-trigger-3"
       onClick={[Function]}
-      type="button"
     >
       Search Engines
       <span
@@ -1289,7 +1286,6 @@ exports[`Storyshots Navigation|Dropdown with icon element 1`] = `
     className="dropdown-toggle btn btn-light"
     id="pgn__dropdown-trigger-1"
     onClick={[Function]}
-    type="button"
   >
     <span
       aria-hidden={true}
