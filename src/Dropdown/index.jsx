@@ -1,225 +1,223 @@
 import React from 'react';
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import DropdownButton from './DropdownButton';
+import DropdownMenu from './DropdownMenu';
+import DropdownItem from './DropdownItem';
 
-import Button from '../Button';
+import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
-export const triggerKeys = {
-  OPEN_MENU: ['ArrowDown'],
-  CLOSE_MENU: ['Escape'],
-  NAVIGATE_DOWN: ['ArrowDown', 'Tab'],
-  NAVIGATE_UP: ['ArrowUp'],
-  SELECT_MENU_ITEM: ['Enter', ' '],
-};
+const { Provider, Consumer } = React.createContext();
+// const DropdownContext = React.createContext();
 
 class Dropdown extends React.Component {
-  static isTriggerKey(action, keyName) {
-    return triggerKeys[action].indexOf(keyName) > -1;
-  }
+  static idCounter = 0; // For creating unique ids
 
   constructor(props) {
     super(props);
-
-    this.addEvents = this.addEvents.bind(this);
-    this.handleDocumentClick = this.handleDocumentClick.bind(this);
-    this.handleToggleKeyDown = this.handleToggleKeyDown.bind(this);
-    this.handleMenuKeyDown = this.handleMenuKeyDown.bind(this);
-    this.removeEvents = this.removeEvents.bind(this);
-    this.toggle = this.toggle.bind(this);
-
-    this.menuItems = [];
     this.state = {
       open: false,
-      focusIndex: 0,
     };
-  }
 
-  componentWillUpdate(_, nextState) {
-    if (nextState.open) {
-      this.addEvents();
-    } else {
-      this.removeEvents();
-    }
+    // Used for aria labelling. Increment the id counter so the next id can be unique
+    this.uniqueId = Dropdown.idCounter;
+    Dropdown.idCounter += 1;
+    this.triggerId = `pgn__dropdown-trigger-${this.uniqueId}`;
+
+    this.containerRef = React.createRef();
+    this.menuRef = React.createRef();
+    this.buttonRef = React.createRef();
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.open) {
-      this.menuItems[this.state.focusIndex].focus();
-    } else if (prevState.open && this.toggleElem) {
-      this.toggleElem.focus();
+    if (prevState.open !== this.state.open) {
+      if (this.state.open) {
+        this.focusFirst();
+      } else {
+        this.buttonRef.current.focus();
+      }
     }
   }
 
-  addEvents() {
-    document.addEventListener('click', this.handleDocumentClick, true);
-  }
-
-  removeEvents() {
+  componentWillUnmount() {
     document.removeEventListener('click', this.handleDocumentClick, true);
   }
 
-  handleDocumentClick(e) {
-    if (this.container && this.container.contains(e.target) && this.container !== e.target) {
+  getFocusableElements() {
+    const selector = 'button:not([disabled]), [href]:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])';
+    return Array.from(this.menuRef.current.querySelectorAll(selector));
+  }
+
+  focusFirst() {
+    const focusableElements = this.getFocusableElements();
+    if (focusableElements.length) focusableElements[0].focus();
+  }
+
+  focusNext() {
+    const allFocusableElements = this.getFocusableElements();
+    if (allFocusableElements.length === 0) return;
+    const activeIndex = allFocusableElements.indexOf(document.activeElement);
+    const nextIndex = (activeIndex + 1) % allFocusableElements.length;
+    allFocusableElements[nextIndex].focus();
+  }
+
+  focusPrevious() {
+    const allFocusableElements = this.getFocusableElements();
+    if (allFocusableElements.length === 0) return;
+    const activeIndex = allFocusableElements.indexOf(document.activeElement);
+    const previousIndex =
+      ((activeIndex - 1) + allFocusableElements.length) % allFocusableElements.length;
+    allFocusableElements[previousIndex].focus();
+  }
+
+  handleDocumentClick = (e) => {
+    if (this.containerRef.current.contains(e.target) && this.containerRef.current !== e.target) {
       return;
     }
-    this.toggle();
-  }
-
-  handleMenuKeyDown(e) {
-    e.preventDefault();
-    if (Dropdown.isTriggerKey('CLOSE_MENU', e.key)) {
-      this.toggle();
-    } else if (Dropdown.isTriggerKey('SELECT_MENU_ITEM', e.key)) {
-      e.target.click();
-      this.setState({
-        open: false,
-      });
-    } else if (Dropdown.isTriggerKey('NAVIGATE_DOWN', e.key)) {
-      this.setState({
-        focusIndex: (this.state.focusIndex + 1) % this.props.menuItems.length,
-      });
-    } else if (Dropdown.isTriggerKey('NAVIGATE_UP', e.key)) {
-      this.setState({
-        focusIndex: ((this.state.focusIndex - 1) + this.props.menuItems.length) %
-                    this.props.menuItems.length,
-      });
+    if (this.state.open) {
+      this.close();
     }
   }
 
-  handleToggleKeyDown(e) {
-    if (!this.state.open && Dropdown.isTriggerKey('OPEN_MENU', e.key)) {
-      this.toggle();
-    } else if (this.state.open && Dropdown.isTriggerKey('CLOSE_MENU', e.key)) {
-      this.toggle();
+  handleMenuKeyDown = (e) => {
+    switch (e.key) {
+      case 'ArrowUp':
+        e.preventDefault();
+        this.focusPrevious();
+        break;
+      case 'ArrowDown':
+        e.preventDefault();
+        this.focusNext();
+        break;
+      case 'Tab':
+        e.preventDefault();
+        if (e.shiftKey) {
+          this.focusPrevious();
+        } else {
+          this.focusNext();
+        }
+        break;
+      case 'Escape':
+        e.stopPropagation();
+        this.close();
+        break;
+      default:
+        break;
     }
   }
 
-  toggle() {
+  open() {
+    // adding event listener here so the user can close dropdown on click outside of the dropdown
+    document.addEventListener('click', this.handleDocumentClick, true);
     this.setState({
-      open: !this.state.open,
-      focusIndex: 0,
+      open: true,
     });
   }
 
-  generateMenuItems(menuItems) {
-    return menuItems.map((menuItem, i) => {
-      if (React.isValidElement(menuItem)) {
-        const cloneProps = {
-          ref: (item) => { this.menuItems[i] = item; },
-          className: 'dropdown-item',
-          key: i,
-          onKeyDown: this.handleMenuKeyDown,
-        };
-        return React.cloneElement(menuItem, cloneProps);
-      }
-      return (
-        <a
-          className="dropdown-item"
-          href={menuItem.href}
-          key={menuItem.href}
-          onKeyDown={this.handleMenuKeyDown}
-          ref={(item) => {
-            this.menuItems[i] = item;
-          }}
-          role="menuitem"
-        >
-          {menuItem.label}
-        </a>
-      );
+  close() {
+    document.removeEventListener('click', this.handleDocumentClick, true);
+    this.setState({
+      open: false,
     });
+  }
+
+  toggle = () => {
+    if (this.state.open) {
+      this.close();
+    } else {
+      this.open();
+    }
   }
 
   render() {
-    const { open } = this.state;
-    const {
-      buttonType,
-      iconElement,
-      menuItems,
-      title,
-    } = this.props;
-    const hasIconElement = React.isValidElement(iconElement);
+    const { children, ...other } = this.props;
 
     return (
       <div
+        {...other}
         className={classNames(
           'dropdown',
-          {
-            show: open,
-            'has-icon': hasIconElement,
-            rounded: hasIconElement,
-            border: hasIconElement,
-            'd-flex': hasIconElement,
-            'bg-white': hasIconElement,
-          },
+          { show: this.state.open },
+          other.className,
         )}
-        ref={(container) => { this.container = container; }}
+        ref={this.containerRef}
       >
-        { hasIconElement &&
-          <div
-            className={classNames(
-              'icon-container',
-              'd-flex',
-              'align-items-center',
-              'justify-content-center',
-              'border-right',
-            )}
-          >
-            {React.cloneElement(iconElement, {
-              className: iconElement.props ? classNames(iconElement.props.className, 'rounded-left') : null,
-            })}
-          </div>
-        }
-        <Button
-          aria-expanded={open}
-          aria-haspopup="true"
-          buttonType={buttonType}
-          onClick={this.toggle}
-          onKeyDown={this.handleToggleKeyDown}
-          className={classNames(
-            'dropdown-toggle',
-            {
-              'border-0': hasIconElement,
-              'rounded-0': hasIconElement,
-              'bg-white': hasIconElement,
-            },
-          )}
-          type="button"
-          inputRef={(toggleElem) => { this.toggleElem = toggleElem; }}
+        <Provider
+          value={{
+            buttonRef: this.buttonRef,
+            handleMenuKeyDown: this.handleMenuKeyDown,
+            isOpen: this.state.open,
+            menuRef: this.menuRef,
+            toggle: this.toggle,
+            triggerId: this.triggerId,
+          }}
         >
-          {title}
-        </Button>
-        <div
-          aria-label={title}
-          aria-hidden={!open}
-          className={classNames(
-            'dropdown-menu',
-            { show: open },
-          )}
-          role="menu"
-        >
-          {this.generateMenuItems(menuItems)}
-        </div>
+          {children}
+        </Provider>
       </div>
     );
   }
 }
 
 Dropdown.propTypes = {
-  buttonType: PropTypes.string,
-  iconElement: PropTypes.element,
-  menuItems: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string,
-      href: PropTypes.string,
-    }),
-    PropTypes.element,
-  ).isRequired,
-  title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
-Dropdown.defaultProps = {
-  buttonType: 'light',
-  iconElement: undefined,
-};
 
-export default Dropdown;
+Dropdown.Item = DropdownItem;
+Dropdown.Button = DropdownButton;
+Dropdown.Menu = DropdownMenu;
+
+
+const DropdownWithDeprecatedProps = withDeprecatedProps(Dropdown, 'Dropdown', {
+  menuItems: {
+    deprType: DEPR_TYPES.MOVED_AND_FORMAT,
+    message: 'They should be components sent as children.',
+    newName: 'children',
+    transform: (menuItems, allProps) => {
+      if (!Array.isArray(menuItems)) return null;
+      return (
+        <React.Fragment>
+          <DropdownButton>
+            {React.isValidElement(allProps.iconElement) ? allProps.iconElement : null }
+            {allProps.title}
+          </DropdownButton>
+          <DropdownMenu>
+            {menuItems.map((menuItem, i) => {
+            /* eslint-disable react/no-array-index-key */
+            if (React.isValidElement(menuItem)) {
+              return React.cloneElement(menuItem, {
+                className: 'dropdown-item',
+                key: i,
+              });
+            }
+            return <DropdownItem key={i} href={menuItem.href}>{menuItem.label}</DropdownItem>;
+            /* eslint-enable react/no-array-index-key */
+            })}
+          </DropdownMenu>
+        </React.Fragment>
+      );
+    },
+  },
+  title: {
+    deprType: DEPR_TYPES.REMOVED,
+    message: 'It should be specified inside the Dropdown.Button component',
+  },
+  buttonType: {
+    deprType: DEPR_TYPES.REMOVED,
+    message: 'It should be specified as a className prop',
+  },
+  iconElement: {
+    deprType: DEPR_TYPES.REMOVED,
+    message: 'It should be specified inside the buttonContent prop.',
+  },
+});
+
+DropdownWithDeprecatedProps.propTypes = Dropdown.propTypes;
+DropdownWithDeprecatedProps.defaultProps = Dropdown.defaultProps;
+DropdownWithDeprecatedProps.Item = Dropdown.Item;
+DropdownWithDeprecatedProps.Button = Dropdown.Button;
+DropdownWithDeprecatedProps.Menu = Dropdown.Menu;
+
+export { Provider, Consumer };
+export default DropdownWithDeprecatedProps;

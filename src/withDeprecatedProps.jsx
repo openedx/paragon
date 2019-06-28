@@ -4,7 +4,9 @@ import React from 'react';
 
 export const DEPR_TYPES = {
   MOVED: 'MOVED',
+  REMOVED: 'REMOVED',
   FORMAT: 'FORMAT',
+  MOVED_AND_FORMAT: 'MOVED_AND_FORMAT',
 };
 
 
@@ -40,13 +42,20 @@ function withDeprecatedProps(WrappedComponent, componentName, deprecatedProps) {
           this.warn(`${componentName}: The prop '${propName}' has been moved to '${newName}'.`);
           acc[newName] = this.props[propName];
           break;
+        case DEPR_TYPES.REMOVED:
+          this.warn(`${componentName}: The prop '${propName}' has been removed. '${message}'`);
+          break;
         case DEPR_TYPES.FORMAT:
           if (!expect(this.props[propName])) {
             this.warn(`${componentName}: The prop '${propName}' expects a new format. ${message}`);
-            acc[propName] = transform(this.props[propName]);
+            acc[propName] = transform(this.props[propName], this.props);
           } else {
             acc[propName] = this.props[propName];
           }
+          break;
+        case DEPR_TYPES.MOVED_AND_FORMAT:
+          this.warn(`${componentName}: The prop '${propName}' has been moved to '${newName}' and expects a new format. ${message}`);
+          acc[newName] = transform(this.props[propName], this.props);
           break;
         default:
           acc[propName] = this.props[propName];
