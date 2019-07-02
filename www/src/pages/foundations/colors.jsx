@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 import classNames from 'classnames';
-
+import SEO from '../../components/seo';
 
 const utilityClasses = {
   bg: (color, level) => (level ? `bg-${color}-${level}` : `bg-${color}`),
@@ -34,18 +34,23 @@ function parseColors(cssSelectors) {
   if (colorsAreParsed) return;
 
   cssSelectors.forEach(({ selector, declarations }) => {
-    // All fit this shape: "background-color: #fff !important;"
+    // All delcarations fit this shape: "background-color: #fff !important;"
     const declarationFragments = declarations[0].split(' ');
     selectorColors[selector] = declarationFragments.length ? declarationFragments[1] : null;
   });
 }
 
-// eslint-disable-next-line import/prefer-default-export
-export default function ColorSystem({ cssSelectors }) {
-  parseColors(cssSelectors);
+// eslint-disable-next-line react/prop-types
+export default function ({ data }) {
+  parseColors(data.allCssUtilityClasses.nodes);
 
   return (
     <div>
+
+      <SEO title="Colors" />
+
+      <h1>Colors</h1>
+
       <h3>Pallete</h3>
       <p>
         Below is an exhaustive set of UI colors. Colors for brands,
@@ -123,7 +128,7 @@ export default function ColorSystem({ cssSelectors }) {
               {[
                 'background', 'disabled-border', 'border', 'icon', 'active-border', 'focus',
                 'graphic', 'default', 'light-text', 'hover', 'text', 'active', 'dark-text',
-              ].map((element) => <code className="mr-2">{element}</code>)}
+              ].map(element => <code className="mr-2">{element}</code>)}
             </td>
           </tr>
         </tbody>
@@ -131,11 +136,11 @@ export default function ColorSystem({ cssSelectors }) {
 
       <h6>Example</h6>
       <code className="d-block mb-2 bg-gray-100 p-3">
-        border: solid 1px <strong>theme-color("gray", "border")</strong>;
+        border: solid 1px <strong>theme-color(&ldquo;gray&rdquo;, &ldquo;border&rdquo;)</strong>;
       </code>
 
       <code className="d-block mb-4 bg-gray-100 p-3">
-        border: solid 1px <strong>theme-color("gray", 300)</strong>;
+        border: solid 1px <strong>theme-color(&ldquo;gray&rdquo;, 300)</strong>;
       </code>
 
       <h3>CSS Class Utilties</h3>
@@ -298,9 +303,18 @@ export default function ColorSystem({ cssSelectors }) {
   );
 }
 
-ColorSystem.propTypes = {
-  cssSelectors: PropTypes.arrayOf(PropTypes.shape({
-    selector: PropTypes.string,
-    declarations: PropTypes.arrayOf(PropTypes.string),
-  })).isRequired,
-};
+
+export const query = graphql`
+{
+  allCssUtilityClasses(
+    filter: {declarations: {regex: "/color/"}, isUtility: {eq: true}},
+    sort: {fields: selector, order: ASC}
+  ) {
+    nodes {
+      selector
+      declarations
+    }
+    distinct(field: selector)
+  }
+}
+`;
