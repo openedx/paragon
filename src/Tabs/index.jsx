@@ -42,19 +42,21 @@ class Tabs extends React.Component {
       const contentId = this.genContentId(i);
       const isSelected = this.state.activeTab === i;
       return (
-        <button
-          role="tab"
-          aria-selected={isSelected}
-          aria-controls={contentId}
-          id={labelId}
-          key={labelId}
-          onClick={() => { this.toggle(i); }}
-          className={classNames('btn nav-link nav-item', {
-          active: isSelected,
+        <li key={labelId}>
+          <button
+            role="tab"
+            aria-selected={isSelected}
+            aria-controls={contentId}
+            id={labelId}
+            onClick={() => { this.toggle(i); }}
+            className={classNames('nav-link nav-item', {
+              active: isSelected,
+              'border-bottom-0': !isSelected,
         })}
-        >
-          {label}
-        </button>
+          >
+            {label}
+          </button>
+        </li>
       );
     });
   }
@@ -90,7 +92,7 @@ class Tabs extends React.Component {
 
     return (
       <div className="tabs">
-        <div
+        <ul
           role="tablist"
           className={classNames([
             'nav',
@@ -98,7 +100,7 @@ class Tabs extends React.Component {
           ])}
         >
           {labels}
-        </div>
+        </ul>
         <div role="tabpanel" className="tab-content">
           {contents}
         </div>
