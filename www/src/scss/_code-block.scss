@@ -1,0 +1,13 @@
+.pgn-doc__code-block {
+  margin-bottom: 1rem;
+}
+.pgn-doc__code-block-preview {
+  padding: 1rem 0;
+}
+.pgn-doc__code-block-editor {
+  border-radius: 4px;
+}
+.pgn-doc__code-block-error {
+  padding: .5rem;
+  background: $fill-danger;
+}

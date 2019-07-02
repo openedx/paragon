@@ -1,0 +1,48 @@
+---
+title: Colors
+---
+
+import { graphql } from 'gatsby';
+import { Table } from '~paragon-react';
+import getCssSelectors from '../../utils/getCssSelectors.js';
+import CSSUtilitiesTable from '../../components/CSSUtilitiesTable';
+
+# Colors
+
+
+### Backgrounds
+
+<CSSUtilitiesTable
+  showExample
+  selectors={getCssSelectors(props.data.allCssUtilityClasses.nodes, /^bg/)}
+/>
+
+### Text
+
+<CSSUtilitiesTable
+  showExample
+  selectors={getCssSelectors(props.data.allCssUtilityClasses.nodes, /^text/)}
+/>
+
+### Borders
+
+<CSSUtilitiesTable
+  showExample
+  selectors={getCssSelectors(props.data.allCssUtilityClasses.nodes, /^border/)}
+/>
+
+
+export const pageQuery = graphql`
+{
+  allCssUtilityClasses(
+    filter: {declarations: {regex: "/color/"}, isUtility: {eq: true}},
+    sort: {fields: selector, order: ASC}
+  ) {
+    nodes {
+      selector
+      declarations
+    }
+    distinct(field: selector)
+  }
+}
+`;

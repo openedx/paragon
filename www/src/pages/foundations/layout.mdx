@@ -1,0 +1,62 @@
+---
+title: Layout
+---
+
+import { graphql } from 'gatsby';
+import { Table } from '~paragon-react';
+import getCssSelectors from '../../utils/getCssSelectors.js';
+import CSSUtilitiesTable from '../../components/CSSUtilitiesTable';
+
+
+# Layout
+
+
+### Grid 
+
+
+### Display Utilities
+
+<CSSUtilitiesTable selectors={getCssSelectors(props.data.displayUtilities.nodes)} />
+
+### Position
+
+<CSSUtilitiesTable selectors={getCssSelectors(props.data.positionUtilities.nodes)} />
+
+### Flexbox
+
+<CSSUtilitiesTable selectors={getCssSelectors(props.data.flexUtilities.nodes)} />
+
+
+### Misc Layout
+
+<CSSUtilitiesTable selectors={getCssSelectors(props.data.miscUtilities.nodes)} />
+
+
+export const pageQuery = graphql`
+{
+  flexUtilities: allCssUtilityClasses(filter: {declarations: {regex: "/flex/"}, isUtility: {eq: true}}) {
+    nodes {
+      selector
+      declarations
+    }
+  }
+  displayUtilities: allCssUtilityClasses(filter: {declarations: {regex: "/display/"}, isUtility: {eq: true}}) {
+    nodes {
+      selector
+      declarations
+    }
+  }
+  positionUtilities: allCssUtilityClasses(filter: {selector: {regex: "/(^fixed-)|(position)/"}}) {
+    nodes {
+      selector
+      declarations
+    }
+  }
+  miscUtilities: allCssUtilityClasses(filter: {declarations: {regex: "/(float)|(overflow)/"}, isUtility: {eq: true}}) {
+    nodes {
+      selector
+      declarations
+    }
+  }
+}
+`;

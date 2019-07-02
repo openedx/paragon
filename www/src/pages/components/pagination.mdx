@@ -1,0 +1,101 @@
+---
+title: "Pagination"
+type: "component"
+status: "Needs Work"
+designStatus: "Done"
+devStatus: "To Do"
+notes: |
+    Breaks if given 5000 pages.
+    Overly complex implementation.
+    Remove baked in english strings 
+---
+
+import { StaticQuery, graphql } from 'gatsby';
+import { Pagination } from '~paragon-react';
+import PropsTable from '../../components/PropsTable';
+
+# Pagination
+
+
+##### basic usage
+
+```jsx live=true
+<Pagination
+  paginationLabel="pagination navigation"
+  pageCount={20}
+  onPageSelect={() => console.log("page selected")}
+/>
+```
+
+
+##### with initial page selected
+
+```jsx live=true
+<Pagination
+  paginationLabel="pagination navigation"
+  pageCount={20}
+  currentPage={15}
+  onPageSelect={() => console.log("page selected")}
+/>
+```
+
+
+##### with max pages displayed
+
+```jsx live=true
+<Pagination
+  paginationLabel="pagination navigation"
+  pageCount={20}
+  onPageSelect={() => console.log("page selected")}
+  maxPagesDisplayed={9}
+/>
+```
+
+
+##### with custom string labels
+
+```jsx live=true
+<Pagination
+  paginationLabel="pagination navigation"
+  pageCount={20}
+  onPageSelect={() => console.log("page selected")}
+  buttonLabels={{
+    previous: 'Anterior',
+    next: 'Siguiente',
+    page: 'Página',
+    currentPage: 'Página actual',
+    pageOfCount: 'de',
+  }}
+/>
+```
+
+
+##### with custom element labels
+
+```jsx live=true
+<Pagination
+  paginationLabel="pagination navigation"
+  pageCount={20}
+  onPageSelect={() => console.log("page selected")}
+  buttonLabels={{
+    previous: <span>Anterior</span>,
+    next: <span>Siguiente</span>,
+    page: <span>Página</span>,
+    currentPage: <span>Página actual</span>,
+    pageOfCount: <span>de</span>,
+  }}
+/>
+```
+
+
+##### Props
+
+<StaticQuery
+  query={graphql`query {
+    componentMetadata(displayName: { eq: "Pagination" }) { ...ComponentDocGenData }
+  }`}
+  render={({ componentMetadata }) => {
+    if (componentMetadata == null) return null;
+    return <PropsTable propMetaData={componentMetadata.props} />;
+  }}
+/>

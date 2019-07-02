@@ -1,0 +1,51 @@
+---
+title: "CheckboxGroup"
+type: "component"
+status: "Needs Work"
+designStatus: "To Do"
+devStatus: "To Do"
+notes: |
+    Refactor to use Input component and refresh checkbox designs
+---
+
+import { StaticQuery, graphql } from 'gatsby';
+import { CheckBoxGroup } from '~paragon-react';
+import PropsTable from '../../components/PropsTable';
+
+# CheckBoxGroup
+
+
+##### Basic Usage
+
+```jsx live=true
+<CheckBoxGroup>
+  <CheckBox
+    id="checkbox1"
+    name="basicCheckBox1"
+    label="CheckBox 1"
+  />
+  <CheckBox
+    id="checkbox2"
+    name="basicCheckBox2"
+    label="CheckBox 2"
+  />
+  <CheckBox
+    id="checkbox3"
+    name="basicCheckBox3"
+    label="CheckBox 3"
+  />
+</CheckBoxGroup>
+```
+
+
+##### Props
+
+<StaticQuery
+  query={graphql`query {
+    componentMetadata(displayName: { eq: "CheckBoxGroup" }) { ...ComponentDocGenData }
+  }`}
+  render={({ componentMetadata }) => {
+    if (componentMetadata == null) return null;
+    return <PropsTable propMetaData={componentMetadata.props} />;
+  }}
+/>

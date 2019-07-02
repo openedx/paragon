@@ -28,18 +28,19 @@ class Input extends React.Component {
     }
   }
 
-  getRef(forwardedRef) {
+  setRef(forwardedRef) {
+    // In production just return the optional forwardedRef
     if (process.env.NODE_ENV !== 'development') return forwardedRef;
-    if (forwardedRef) return forwardedRef;
-    if (!this.innerRef) this.innerRef = React.createRef();
-    return this.innerRef;
+
+    return (element) => {
+      if (forwardedRef) forwardedRef.current = element; // eslint-disable-line no-param-reassign
+      this.inputEl = element;
+    };
   }
 
   checkHasLabel() {
-    const htmlNode = this.getRef().current;
-
-    if (htmlNode.labels.length > 0) return;
-    if (htmlNode.getAttribute('aria-label') !== null) return;
+    if (this.inputEl.labels.length > 0) return;
+    if (this.inputEl.getAttribute('aria-label') !== null) return;
 
     // eslint-disable-next-line no-console
     if (console) console.warn('Input[a11y]: There is no associated label for this Input');
@@ -64,7 +65,7 @@ class Input extends React.Component {
 
   render() {
     const {
-      type, className, options, innerRef, ...attributes // eslint-disable-line react/prop-types
+      type, className, options, forwardedRef, ...attributes // eslint-disable-line react/prop-types
     } = this.props;
 
     const htmlTag = this.getHTMLTagForType();
@@ -72,7 +73,7 @@ class Input extends React.Component {
       className: classNames(this.getClassNameForType(), className),
       type: htmlTag === 'input' ? type : undefined,
       ...attributes,
-      ref: this.getRef(innerRef),
+      ref: this.setRef(forwardedRef),
     };
     const htmlChildren = type === 'select' ? this.renderOptions(options) : null;
 
@@ -128,4 +129,8 @@ Input.defaultProps = {
 
 
 // eslint-disable-next-line react/no-multi-comp
-export default React.forwardRef((props, ref) => <Input innerRef={ref} {...props} />);
+const InputWithRefForwarding = React.forwardRef((props, ref) => (
+  <Input forwardedRef={ref} {...props} />
+));
+
+export default InputWithRefForwarding;

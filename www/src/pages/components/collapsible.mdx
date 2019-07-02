@@ -1,0 +1,78 @@
+---
+title: "Collapsible"
+type: "component"
+status: "Needs Work"
+designStatus: "To Do"
+devStatus: "To Do"
+notes: |
+    Transition to fully uncontrolled component and add imperative .open().
+    Remove use of Button component, it breaks with new styles.
+    Assess removing the responsive toggle to stay expanded.
+---
+
+import { StaticQuery, graphql } from 'gatsby';
+import { Collapsible } from '~paragon-react';
+import PropsTable from '../../components/PropsTable';
+
+# Collapsible
+
+
+##### basic usage without resizing
+
+```jsx live=true
+<Collapsible title="Click me to expand">
+  <p>Your stuff goes here</p>
+</Collapsible>
+```
+
+##### basic usage with resizing
+
+[TODO]
+
+
+##### initially open collapsible
+
+```jsx live=true
+<Collapsible title="Click me to expand" isOpen>
+  <p>Your stuff goes here</p>
+</Collapsible>
+```
+
+
+##### fires onToggle callback when toggled
+
+```jsx live=true
+<Collapsible
+  title="Click me to expand"
+  onToggle={isOpen => console.log(`this.state.isOpen = ${isOpen}`)} // eslint-disable-line no-console
+>
+  <p>Your stuff goes here</p>
+</Collapsible>
+```
+
+
+##### with custom icon
+
+```jsx live=true
+<Collapsible
+  title="Click me to expand"
+  icons={{
+    expanded: <FontAwesomeIcon className="text-primary" icon={faChevronCircleUp} />,
+    collapsed: <FontAwesomeIcon className="text-primary" icon={faChevronCircleDown} />,
+  }}
+>
+  <p>Your stuff goes here</p>
+</Collapsible>
+```
+
+##### Props
+
+<StaticQuery
+  query={graphql`query {
+    componentMetadata(displayName: { eq: "Collapsible" }) { ...ComponentDocGenData }
+  }`}
+  render={({ componentMetadata }) => {
+    if (componentMetadata == null) return null;
+    return <PropsTable propMetaData={componentMetadata.props} />;
+  }}
+/>

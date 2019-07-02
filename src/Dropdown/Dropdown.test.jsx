@@ -1,241 +1,208 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import renderer from 'react-test-renderer';
 
-import Dropdown, { triggerKeys } from './index';
+import Dropdown from './index';
 import Icon from '../Icon';
 
-const props = {
-  title: 'Example',
-  menuItems: [
-    { label: 'Example 1', href: 'http://example1.com' },
-    { label: 'Example 2', href: 'http://example2.com' },
-    { label: 'Example 3', href: 'http://example3.com' },
-  ],
-};
+const menuContent = (
+  <React.Fragment>
+    <Dropdown.Button>
+      Search Engines
+    </Dropdown.Button>
+    <Dropdown.Menu>
+      <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
+      <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
+      <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
+    </Dropdown.Menu>
+  </React.Fragment>
+);
 
 const menuOpen = (isOpen, wrapper) => {
-  expect(wrapper.childAt(0).hasClass('show')).toEqual(isOpen);
-  expect(wrapper.find('Button').prop('aria-expanded')).toEqual(isOpen);
+  expect(wrapper.find('.dropdown').hasClass('show')).toEqual(isOpen);
+  expect(wrapper.find('button').prop('aria-expanded')).toEqual(isOpen);
   expect(wrapper.find('[aria-hidden=false]').exists()).toEqual(isOpen);
 };
 
 describe('<Dropdown />', () => {
-  describe('renders', () => {
-    const wrapper = mount(<Dropdown {...props} />);
-    const menu = wrapper.find('.dropdown-menu');
-    const button = wrapper.find('Button');
-
-    it('with menu and toggle', () => {
-      expect(button.exists()).toEqual(true);
-      expect(menu.prop('aria-label')).toEqual(props.title);
-      expect(menu.exists()).toEqual(true);
-      expect(menu.find('a')).toHaveLength(props.menuItems.length);
+  describe('Rendering', () => {
+    it('renders the happy path', () => {
+      const tree = renderer.create((
+        <Dropdown>
+          {menuContent}
+        </Dropdown>
+      )).toJSON();
+      expect(tree).toMatchSnapshot();
     });
 
-    it('with menu closed', () => {
-      menuOpen(false, wrapper);
+    it('renders when there is html content in the trigger button', () => {
+      const tree = renderer.create((
+        <Dropdown>
+          {menuContent}
+        </Dropdown>
+      )).toJSON();
+      expect(tree).toMatchSnapshot();
     });
 
-    it('does not get focus when updated', () => {
-      const activeElementHtml = document.activeElement.outerHTML;
-      wrapper.instance().forceUpdate();
-      expect(activeElementHtml).toEqual(document.activeElement.outerHTML);
+    it('renders with custom menu content', () => {
+      const tree = renderer.create((
+        <Dropdown>
+          Custom Content
+        </Dropdown>
+      )).toJSON();
+      expect(tree).toMatchSnapshot();
     });
   });
 
-  describe('opens', () => {
-    let wrapper;
+  describe('Mouse Interactions', () => {
+    const wrapper = mount(<Dropdown>{menuContent}</Dropdown>);
+    const menuTrigger = wrapper.find('button');
+    const menuContainer = wrapper.find('.dropdown-menu');
+    const menuItems = wrapper.find('.dropdown-menu a');
 
-    beforeEach(() => {
-      wrapper = mount(<Dropdown {...props} />);
-    });
-
-    it('on toggle click', () => {
-      wrapper.find('Button').simulate('click');
+    it('opens on trigger click', () => {
+      menuTrigger.simulate('click'); // Open
       menuOpen(true, wrapper);
     });
 
-    triggerKeys.OPEN_MENU.forEach((key) => {
-      it(`on ${key}`, () => {
-        wrapper.find('Button').simulate('keyDown', { key });
-        menuOpen(true, wrapper);
-      });
-    });
-  });
-
-  describe('closes', () => {
-    let wrapper;
-
-    beforeEach(() => {
-      wrapper = mount(<Dropdown {...props} />);
-      wrapper.find('Button').simulate('click');
+    it('should focus on the first item after opening', () => {
+      expect(menuItems.first().is(':focus')).toBe(true);
     });
 
-    it('on toggle click', () => {
-      wrapper.find('Button').simulate('click');
+    it('does not close on click inside the menu', () => {
+      menuContainer.simulate('click'); // Do nothing
+      menuOpen(true, wrapper);
+    });
+
+    it('closes on trigger click', () => {
+      menuTrigger.simulate('click'); // Close
       menuOpen(false, wrapper);
     });
 
-    it('on document click', () => {
-      document.querySelector('body').click();
-      wrapper.update();
+    it('should focus on the trigger button after closing', () => {
+      expect(menuTrigger.is(':focus')).toBe(true);
+    });
+
+    it('closes on document click when open', () => {
+      menuTrigger.simulate('click'); // Open
+      menuOpen(true, wrapper);
+      document.dispatchEvent(new MouseEvent('click'));
+      wrapper.update(); // Let react re-render
+      menuOpen(false, wrapper);
+    });
+  });
+
+  describe('Keyboard Interactions', () => {
+    // Note: menuContent has three items
+    const wrapper = mount(<Dropdown>{menuContent}</Dropdown>);
+    const menuTrigger = wrapper.find('button');
+    const menuContainer = wrapper.find('.dropdown-menu');
+    const menuItems = wrapper.find('.dropdown-menu a');
+
+    it('opens on click', () => {
+      menuTrigger.simulate('click'); // Open
+      menuOpen(true, wrapper);
+    });
+
+    it('should focus on the first item after opening', () => {
+      expect(menuItems.first().is(':focus')).toBe(true);
+    });
+
+    it('should focus the next item after ArrowDown keyDown', () => {
+      menuContainer.simulate('keyDown', { key: 'ArrowDown' });
+      expect(menuItems.at(1).is(':focus')).toBe(true);
+    });
+
+    it('should focus the next item after Tab keyDown', () => {
+      menuContainer.simulate('keyDown', { key: 'Tab' });
+      expect(menuItems.at(2).is(':focus')).toBe(true);
+    });
+
+    it('should loop focus to the first item after Tab keyDown on last item', () => {
+      menuContainer.simulate('keyDown', { key: 'Tab' });
+      expect(menuItems.at(0).is(':focus')).toBe(true);
+    });
+
+    it('should loop focus to the last item after ArrowUp keyDown on first item', () => {
+      menuContainer.simulate('keyDown', { key: 'ArrowUp' });
+      expect(menuItems.at(2).is(':focus')).toBe(true);
+    });
+
+    it('should focus the previous item after Shift + Tab keyDown', () => {
+      menuContainer.simulate('keyDown', { key: 'Tab', shiftKey: true });
+      expect(menuItems.at(1).is(':focus')).toBe(true);
+    });
+
+    it('should close the menu on Escape keyDown', () => {
+      menuContainer.simulate('keyDown', { key: 'Escape' });
       menuOpen(false, wrapper);
     });
 
-    triggerKeys.CLOSE_MENU.forEach((key) => {
-      it(`on button ${key}`, () => {
-        wrapper.find('Button').simulate('keyDown', { key });
-        menuOpen(false, wrapper);
-      });
-
-      it(`on menu item ${key}`, () => {
-        wrapper.find('a').at(0).simulate('keyDown', { key });
-        menuOpen(false, wrapper);
-      });
-    });
-
-    triggerKeys.SELECT_MENU_ITEM.forEach((key) => {
-      it(`on menu item ${key}`, () => {
-        wrapper.find('a').at(0).simulate('keyDown', { key });
-        menuOpen(false, wrapper);
-      });
+    it('should focus on the trigger button after closing', () => {
+      expect(menuTrigger.is(':focus')).toBe(true);
     });
   });
 
-  it('does not close when document click is inside the menu', () => {
-    const div = document.createElement('div');
-    document.body.appendChild(div);
-    const wrapper = mount(
-      <Dropdown
-        {...props}
-      />,
-      { attachTo: div },
-    );
-    wrapper.find('Button').simulate('click');
-    document.querySelector('.dropdown-menu').click();
-    menuOpen(true, wrapper);
-  });
-
-  describe('focuses', () => {
-    let wrapper;
-
-    beforeEach(() => {
-      wrapper = mount(<Dropdown {...props} />);
-      wrapper.find('Button').simulate('click');
+  describe('Backwards compatibility', () => {
+    it('renders the basic usage', () => {
+      const tree = renderer.create((
+        <Dropdown
+          title="Search Engines"
+          menuItems={[
+            {
+              label: 'Google',
+              href: 'https://google.com',
+            },
+            {
+              label: 'DuckDuckGo',
+              href: 'https://duckduckgo.com',
+            },
+            {
+              label: 'Yahoo',
+              href: 'https://yahoo.com',
+            },
+          ]}
+        />
+      )).toJSON();
+      expect(tree).toMatchSnapshot();
     });
 
-    it('first menu item on open', () => {
-      expect(wrapper.find('a').at(0).html()).toEqual(document.activeElement.outerHTML);
+    it('renders menu items as elements', () => {
+      const tree = renderer.create((
+        <Dropdown
+          title="Search Engines"
+          menuItems={[
+            <a href="http://www.google.com">Google</a>,
+            <a href="http://www.duckduckgo.com">DuckDuckGo</a>,
+            <a href="http://www.yahoo.com">Yahoo</a>,
+          ]}
+        />
+      )).toJSON();
+      expect(tree).toMatchSnapshot();
     });
 
-    describe('forward in list', () => {
-      triggerKeys.NAVIGATE_DOWN.forEach((key) => {
-        it(`on ${key}`, () => {
-          wrapper.find('a').at(0).simulate('keyDown', { key });
-          expect(wrapper.find('a').at(1).html()).toEqual(document.activeElement.outerHTML);
-        });
-      });
-    });
-
-    describe('backward in list', () => {
-      triggerKeys.NAVIGATE_UP.forEach((key) => {
-        it(`on ${key}`, () => {
-          wrapper.find('a').at(0).simulate('keyDown', { key: triggerKeys.NAVIGATE_DOWN[0] });
-          wrapper.find('a').at(1).simulate('keyDown', { key });
-          expect(wrapper.find('a').at(0).html()).toEqual(document.activeElement.outerHTML);
-        });
-      });
-    });
-
-    describe('invalid key in open menu', () => {
-      it('test', () => {
-        menuOpen(true, wrapper);
-        expect(wrapper.find('a').at(0).html()).toEqual(document.activeElement.outerHTML);
-        wrapper.find('a').at(0).simulate('keyDown', { key: 'q' });
-        menuOpen(true, wrapper);
-        expect(wrapper.find('a').at(0).html()).toEqual(document.activeElement.outerHTML);
-      });
-    });
-
-    it('first menu item after looping through', () => {
-      wrapper.find('a').at(0).simulate('keyDown', { key: triggerKeys.NAVIGATE_DOWN[0] });
-      wrapper.find('a').at(1).simulate('keyDown', { key: triggerKeys.NAVIGATE_DOWN[0] });
-      wrapper.find('a').at(2).simulate('keyDown', { key: triggerKeys.NAVIGATE_DOWN[0] });
-      expect(wrapper.find('a').at(0).html()).toEqual(document.activeElement.outerHTML);
-    });
-
-    describe('toggle', () => {
-      it('toggle on close', () => {
-        wrapper.find('a').at(0).simulate('keyDown', { key: triggerKeys.CLOSE_MENU[0] });
-        wrapper.instance().forceUpdate();
-        expect(wrapper.find('Button').html()).toEqual(document.activeElement.outerHTML);
-      });
-
-      it('does not toggle with invalid key', () => {
-        wrapper = mount(<Dropdown {...props} />);
-        // resetting focus
-        wrapper.find('Button').getDOMNode().focus();
-
-        menuOpen(false, wrapper);
-        // open and close button to get focus on button
-        wrapper.find('Button').prop('onClick');
-        wrapper.instance().forceUpdate();
-
-        wrapper.find('Button').prop('onClick');
-        wrapper.instance().forceUpdate();
-
-        expect(wrapper.find('Button').html()).toEqual(document.activeElement.outerHTML);
-
-        wrapper.find('Button').simulate('keyDown', { key: 'q' });
-        menuOpen(false, wrapper);
-        expect(wrapper.find('Button').html()).toEqual(document.activeElement.outerHTML);
-      });
-    });
-  });
-
-  it('accepts menuItems prop with array of elements', () => {
-    const wrapper = mount((
-      <Dropdown
-        {...props}
-        menuItems={[
-          <a href="http://www.google.com">Google</a>,
-          <a href="http://www.duckduckgo.com">DuckDuckGo</a>,
-          <a href="http://www.yahoo.com">Yahoo</a>,
-        ]}
-      />
-    ));
-
-    menuOpen(false, wrapper);
-    wrapper.find('Button').simulate('click');
-    menuOpen(true, wrapper);
-    expect(wrapper.find('a')).toHaveLength(3);
-  });
-
-  describe('iconElement', () => {
-    it('renders the <img> as icon element', () => {
-      const url = 'https://raw.githubusercontent.com/edx/edx-platform/master/lms/static/images/profiles/default_50.png';
-      const altText = 'Avatar icon for profile';
-      const withIconUrlProps = {
-        ...props,
-        iconElement: <img src={url} alt={altText} />,
-      };
-      const wrapper = shallow(<Dropdown {...withIconUrlProps} />);
-      const avatarIcon = wrapper.find('.icon-container');
-
-      expect(avatarIcon.exists()).toEqual(true);
-      expect(avatarIcon.find('img').prop('src')).toEqual(url);
-      expect(avatarIcon.find('img').prop('alt')).toEqual(altText);
-    });
-
-    it('renders the <Icon> as icon element', () => {
-      const withIconUrlProps = {
-        ...props,
-        iconElement: <Icon className={['fa', 'fa-2x', 'fa-user']} />,
-      };
-      const wrapper = shallow(<Dropdown {...withIconUrlProps} />);
-      const avatarIcon = wrapper.find('.icon-container');
-
-      expect(avatarIcon.exists()).toEqual(true);
+    it('renders with icon element', () => {
+      const tree = renderer.create((
+        <Dropdown
+          title="Search Engines"
+          iconElement={<Icon className="fa fa-user px-3" />}
+          menuItems={[
+            {
+              label: 'Google',
+              href: 'https://google.com',
+            },
+            {
+              label: 'DuckDuckGo',
+              href: 'https://duckduckgo.com',
+            },
+            {
+              label: 'Yahoo',
+              href: 'https://yahoo.com',
+            },
+          ]}
+        />
+      )).toJSON();
+      expect(tree).toMatchSnapshot();
     });
   });
 });

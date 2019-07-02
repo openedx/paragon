@@ -1,0 +1,162 @@
+---
+title: "Dropdown"
+type: "component"
+status: "Needs Work"
+designStatus: "Done"
+devStatus: "In Progress"
+notes: |
+    Simplifying implementation.
+    Fix event handling bug.
+---
+
+import { StaticQuery, graphql } from 'gatsby';
+import { Dropdown } from '~paragon-react';
+import PropsTable from '../../components/PropsTable';
+
+# Dropdown
+
+##### basic usage
+
+```jsx live=true
+<Dropdown>
+  <Dropdown.Button>
+    Search Engines
+  </Dropdown.Button>
+  <Dropdown.Menu>
+    <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
+    <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
+    <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
+```
+
+
+##### with icon element
+
+```jsx live=true
+<Dropdown>
+  <Dropdown.Button>
+    <Icon className="fa fa-user pr-3" alt="" />
+    Search Engines
+  </Dropdown.Button>
+  <Dropdown.Menu>
+    <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
+    <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
+    <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
+```
+
+
+##### with caret/chevron
+
+```jsx live=true
+<React.Fragment>
+  <Dropdown className="mb-3">
+    <Dropdown.Button>
+      Search Engines
+      <Icon className="fa fa-caret-down pl-3" alt="" />
+    </Dropdown.Button>
+    <Dropdown.Menu>
+      <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
+      <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
+      <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
+  <Dropdown>
+    <Dropdown.Button>
+      Search Engines
+      <Icon className="fa fa-angle-down pl-3" alt="" />
+    </Dropdown.Button>
+    <Dropdown.Menu>
+      <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
+      <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
+      <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
+</React.Fragment>
+```
+
+##### (Deprecated) basic usage
+
+```jsx live=true
+<Dropdown
+  title="Search Engines"
+  menuItems={[
+    {
+      label: 'Google',
+      href: 'https://google.com',
+    },
+    {
+      label: 'DuckDuckGo',
+      href: 'https://duckduckgo.com',
+    },
+    {
+      label: 'Yahoo',
+      href: 'https://yahoo.com',
+    },
+  ]}
+/>
+```
+
+
+##### (Deprecated) menu items as elements
+
+```jsx live=true
+<Dropdown
+  title="Search Engines"
+  menuItems={[
+    <a href="http://www.google.com">Google</a>,
+    <a href="http://www.duckduckgo.com">DuckDuckGo</a>,
+    <a href="http://www.yahoo.com">Yahoo</a>,
+  ]}
+/>
+```
+
+
+##### (Deprecated) with icon element
+
+```jsx live=true
+<Dropdown
+  title="Search Engines"
+  iconElement={<Icon className="fa fa-user pr-3" />}
+  menuItems={[
+    {
+      label: 'Google',
+      href: 'https://google.com',
+    },
+    {
+      label: 'DuckDuckGo',
+      href: 'https://duckduckgo.com',
+    },
+    {
+      label: 'Yahoo',
+      href: 'https://yahoo.com',
+    },
+  ]}
+/>
+```
+
+##### Props
+
+<StaticQuery
+  query={graphql`query {
+    dropdown: componentMetadata(displayName: { eq: "Dropdown" }) { ...ComponentDocGenData }
+    dropdownItem: componentMetadata(displayName: { eq: "DropdownItem" }) { ...ComponentDocGenData }
+    dropdownButton: componentMetadata(displayName: { eq: "DropdownButton" }) { ...ComponentDocGenData }
+    dropdownMenu: componentMetadata(displayName: { eq: "DropdownMenu" }) { ...ComponentDocGenData }
+  }`}
+  render={({ dropdown, dropdownItem, dropdownButton, dropdownMenu }) => {
+    return (
+      <div>
+        {dropdown ? <PropsTable propMetaData={dropdown.props} /> : null}
+        <h4>Dropdown.Button</h4>
+        {dropdownButton ? <PropsTable propMetaData={dropdownButton.props} /> : null}
+        <h4>Dropdown.Menu</h4>
+        {dropdownMenu ? <PropsTable propMetaData={dropdownMenu.props} /> : null}
+        <h4>Dropdown.Item</h4>
+        {dropdownItem ? <PropsTable propMetaData={dropdownItem.props} /> : null}
+      </div>
+    )
+  }}
+/>

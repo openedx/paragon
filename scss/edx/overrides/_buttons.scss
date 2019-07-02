@@ -1,0 +1,91 @@
+.btn {
+  text-decoration: none;
+}
+
+.btn-link {
+  text-decoration: $link-decoration;
+
+  &.hover,
+  &:hover, {
+    text-decoration: $link-hover-decoration;
+  }
+
+  &.focus,
+  &:focus {
+    outline: 1px dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    text-decoration: $link-hover-decoration;
+  }
+}
+
+// Add focus outlines to all of them. Box shadow focus is turned off in variables.
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color},
+  .btn-outline-#{$color},
+  .btn-inverse-#{$color} {
+    &:not(:disabled):not(.disabled),
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    &:active,
+    &.active {
+      &.focus,
+      &:focus {
+        position: relative;
+        &:before {
+          content: '';
+          position: absolute;
+          top: -6px;
+          left: -6px;
+          bottom: -6px;
+          right: -6px;
+          border:solid 2px saturate(blend-transparent($value, white, 0.65), 10%);
+          border-radius: 40rem;
+        }
+        box-shadow: none;
+      }
+    }
+  }
+
+  .btn-#{$color} {
+    &:hover {
+      background: darken($value, 10%);
+    }
+  }
+
+  .btn-outline-#{$color} {
+    &:hover {
+      color: darken($value, 10%);
+      border-color: darken($value, 10%);
+      background: desaturate(blend-transparent($value, white, 0.065), 5%);
+    }
+    &:not(:disabled):not(.disabled) {
+      &:active,
+      &.active {
+        color: darken($value, 10%);
+        border-color: darken($value, 10%);
+        background: desaturate(blend-transparent($value, white, 0.065), 5%);
+      }
+    }
+  }
+
+  .btn-inverse-#{$color} {
+    &:hover {
+      color: darken($value, 10%);
+      background: desaturate(blend-transparent($value, white, 0.065), 5%);
+    }
+    &:not(:disabled):not(.disabled),
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    &:active,
+    &.active {
+      &:focus,
+      &.focus {
+        border-color: transparent;
+        &:before {
+          border:solid 2px rgba(white, .75);
+        }
+      }
+    }
+  }
+}

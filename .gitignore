@@ -5,4 +5,10 @@ npm-debug.log
 coverage
 jest*
 dist
+storybook-static
 .vscode
+
+# gatsby files
+www/.cache/
+www/public
+

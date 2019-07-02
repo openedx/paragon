@@ -1,0 +1,18 @@
+.pgn-doc_hero {
+  margin: -5rem -6rem -3rem;
+  padding: 5rem 6rem 3rem;
+  position: relative;
+}
+.pgn-doc__hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url(../images/paragon-icon.png);
+  background-repeat: no-repeat;
+  background-size: auto 340px;
+  background-position: -120px 100%;
+  z-index: -1;
+  opacity: .2;
+}

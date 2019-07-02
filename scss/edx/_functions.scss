@@ -1,0 +1,13 @@
+@function blend-transparent($foreground, $background, $fg-opacity, $bg-opacity: 1) {
+  // https://en.wikipedia.org/wiki/Alpha_compositing#Alpha_blending
+  // Adapted from: https://gist.github.com/jdudek/54c80e27510b9b13d4447f803869118f
+
+  $opacity: $fg-opacity + $bg-opacity * (1 - $fg-opacity);
+  $factor: $bg-opacity * (1 - $fg-opacity);
+
+  $red:   (red($foreground)   * $fg-opacity + red($background)   * $factor) / $opacity;
+  $green: (green($foreground) * $fg-opacity + green($background) * $factor) / $opacity;
+  $blue:  (blue($foreground)  * $fg-opacity + blue($background)  * $factor) / $opacity;
+
+  @return rgba($red, $green, $blue, $opacity);
+}

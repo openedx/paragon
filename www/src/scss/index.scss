@@ -1,0 +1,44 @@
+@import "~font-awesome/css/font-awesome.min.css";
+@import "~paragon-style/edx/theme.scss";
+
+@import "./layout";
+@import "./hero";
+@import "./code-block";
+@import "./status-table";
+
+// Typography
+
+.pgn-doc__main-content {
+  h1, h2, h3, h4, h5 {
+    margin-top: 2em;
+  }
+  
+  // Typography Page
+
+  .demo-georgia {
+    font-family: 'Georgia', serif !important;
+  }
+  .demo-roboto {
+    font-family: 'Roboto', sans-serif !important;
+  }
+}
+
+.btn + .btn {
+  margin-left: .5em;
+}
+
+.base-type {
+  & + .base-type {
+    margin-left: .25em;
+  }
+  display: inline-block;
+  background: #eee;
+  padding: 0 .25em;
+  font-family: SFMono-Regular, Menlo, Monaco, "Courier New", monospace;
+  font-size: .8em;
+  vertical-align: middle;
+}
+
+.mobile-type {
+  @include mobile-type;
+}

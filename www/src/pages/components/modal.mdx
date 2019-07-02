@@ -1,0 +1,171 @@
+---
+title: "Modal"
+type: "component"
+status: "Needs Work"
+designStatus: "Done"
+devStatus: "To Do"
+notes: |
+     Overly complex implementation
+     Too opinionated in design/structure
+---
+
+import { StaticQuery, graphql } from 'gatsby';
+import { MailtoLink } from '~paragon-react';
+import PropsTable from '../../components/PropsTable';
+
+
+# Modal
+
+
+##### Example Usage
+
+```jsx
+class ModalWrapper extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.openModal = this.openModal.bind(this);
+    this.resetModalWrapperState = this.resetModalWrapperState.bind(this);
+
+    this.state = { open: false };
+  }
+
+  openModal() {
+    this.setState({ open: true });
+  }
+
+  resetModalWrapperState() {
+    this.setState({ open: false });
+    this.button.focus();
+  }
+
+  render() {
+    return (
+      <div>
+        <Modal
+          open={this.state.open}
+          title="Modal title."
+          body={(
+            <div>
+              <p>Enter your e-mail address to receive free cat facts!</p>
+              <InputText
+                name="e-mail"
+                label="E-Mail Address"
+              />
+            </div>
+          )}
+          parentSelector={this.props.parentSelector}
+          onClose={this.resetModalWrapperState}
+          buttons={[
+            <Button buttonType="success">Green button!</Button>,
+          ]}
+        />
+        <Button
+          onClick={this.openModal}
+          buttonType="light"
+          inputRef={(input) => { this.button = input; }}
+        >
+          Click me to open a modal!
+        </Button>
+      </div>
+    );
+  }
+}
+```
+
+
+##### configurable buttons
+
+```jsx
+<Modal
+  open
+  title="Modal title."
+  body="Modal body."
+  buttons={[
+    <Button buttonType="primary">Blue button!</Button>,
+    {
+      label: 'Red button!',
+      buttonType: 'danger',
+    },
+    <Button buttonType="success">Green button!</Button>,
+  ]}
+  onClose={() => {}}
+/>
+```
+
+
+##### configurable title and body
+
+```jsx
+<Modal
+  open
+  title="Custom title!"
+  body="Custom body!"
+  buttons={[
+    <Button buttonType="dark">Dark button!</Button>,
+  ]}
+  onClose={() => {}}
+/>
+```
+
+
+##### configurable buttons that perform actions
+
+```jsx
+<Modal
+  open
+  title="Modal title."
+  body="Modal body."
+  buttons={[
+    <Button
+      buttonType="light"
+      onClick={action('button-click')}
+    >
+      Click me and check the console!
+    </Button>,
+  ]}
+  onClose={() => {}}
+/>
+```
+
+
+##### configurable close button string
+
+```jsx
+<Modal
+  open
+  title="Modal title."
+  body="Modal body."
+  closeText="SHOO!"
+  onClose={() => {}}
+/>
+```
+
+
+##### configurable close button element
+
+```jsx
+<Modal
+  open
+  title="Modal title."
+  body="Modal body."
+  closeText={
+    <Icon
+      className="fa fa-ship"
+      screenReaderText="Close"
+    />}
+  onClose={() => {}}
+/>
+```
+
+##### Props
+
+<StaticQuery
+  query={graphql`query {
+    componentMetadata(displayName: { eq: "Modal" }) { ...ComponentDocGenData }
+  }`}
+  render={({ componentMetadata }) => {
+    if (componentMetadata == null) return null;
+    return <PropsTable propMetaData={componentMetadata.props} />;
+  }}
+/>
