@@ -7,7 +7,6 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import Button from '../Button';
 import newId from '../utils/newId';
 
 class Tabs extends React.Component {
@@ -43,19 +42,21 @@ class Tabs extends React.Component {
       const labelId = this.genLabelId(i);
 
       return (
-        <Button
-          role="tab"
-          aria-selected={selected}
-          aria-controls={this.genPanelId(i)}
-          id={labelId}
-          key={labelId}
-          onClick={() => { this.toggle(i); }}
-          className={classNames('nav-link nav-item', {
+        <li key={labelId}>
+          <button
+            role="tab"
+            aria-selected={selected}
+            aria-controls={this.genPanelId(i)}
+            id={labelId}
+            onClick={() => { this.toggle(i); }}
+            className={classNames('nav-link nav-item', {
             active: selected,
+            'border-bottom-0': !selected,
           })}
-        >
-          {label}
-        </Button>
+          >
+            {label}
+          </button>
+        </li>
       );
     });
   }
@@ -89,7 +90,7 @@ class Tabs extends React.Component {
 
     return (
       <div className="tabs">
-        <div
+        <ul
           role="tablist"
           className={classNames([
             'nav',
@@ -97,7 +98,7 @@ class Tabs extends React.Component {
           ])}
         >
           {labels}
-        </div>
+        </ul>
         <div role="tabpanel" className="tab-content">
           {panels}
         </div>
@@ -105,7 +106,6 @@ class Tabs extends React.Component {
     );
   }
 }
-
 // TODO: custom validator that ensures labels and panels are the same length
 Tabs.propTypes = {
   labels: PropTypes.oneOfType([
