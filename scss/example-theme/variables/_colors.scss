@@ -66,12 +66,10 @@ $theme-colors: map-merge(
     "warning":    $warning,
     "danger":     $danger,
     "light":      $light,
-    "dark":       $dark,
-    "gray":  $gray-500,
+    "dark":       $dark
   ),
   $theme-colors
 );
-
 
 
 $theme-color-levels: (
@@ -88,35 +86,13 @@ $theme-color-levels: (
 ) !default;
 
 
-$color-levels: () !default;
-$color-levels: map-merge(
-  (
-    100: ( "mix-color": white, "percent": 94% ),
-    200: ( "mix-color": white, "percent": 75% ),
-    300: ( "mix-color": white, "percent": 50% ),
-    500: ( "mix-color": white, "percent": 0% ),
-    700: ( "mix-color": black, "percent": 20% ),
-    900: ( "mix-color": black, "percent": 30% ),
-  ),
-  $color-levels
-);
-
-$element-color-levels: () !default;
-$element-color-levels: map-merge(
-  (
-    "background": 100,
-    "disabled-border": 100,
-    "border": 200,
-    "icon": 300,
-    "active-border": 300,
-    "focus": 300,
-    "graphic": 300,
-    "default": 500,
-    "light-text": 500,
-    "hover": 700,
-    "text": 700,
-    "active": 900,
-    "dark-text": 900,
-  ),
-  $element-color-levels
-);
+// This map is identical to the core default.
+// It is used to generate shades of a theme-color
+$color-levels: (
+  100: ( "mix-color": white, "percent": 94% ),
+  200: ( "mix-color": white, "percent": 75% ),
+  300: ( "mix-color": white, "percent": 50% ),
+  500: ( "mix-color": white, "percent": 0% ),
+  700: ( "mix-color": black, "percent": 20% ),
+  900: ( "mix-color": black, "percent": 30% ),
+) !default;

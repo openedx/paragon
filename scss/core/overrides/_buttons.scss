@@ -70,7 +70,7 @@ fieldset:disabled a.btn {
       $active-border
     );
 
-    @include button-focus(theme-color($color, "icon"));
+    @include button-focus(theme-color($color, "focus"));
   }
 
   .btn-outline-#{$color} {
@@ -92,7 +92,7 @@ fieldset:disabled a.btn {
       $active-border,
     );
 
-    @include button-focus(theme-color($color, "icon"));
+    @include button-focus(theme-color($color, "focus"));
   }
 
   .btn-inverse-#{$color} {
@@ -149,7 +149,7 @@ fieldset:disabled a.btn {
 
 .btn-light,
 .btn-dark {
-  @include button-focus(theme-color("primary", "icon"));
+  @include button-focus(theme-color("primary", "focus"));
 }
 
 

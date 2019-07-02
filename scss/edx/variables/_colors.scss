@@ -66,57 +66,57 @@ $theme-colors: map-merge(
     "warning":    $warning,
     "danger":     $danger,
     "light":      $light,
-    "dark":       $dark,
-    "gray":  $gray-500,
+    "dark":       $dark
   ),
   $theme-colors
 );
 
 
+$theme-color-levels: () !default;
 
-$theme-color-levels: (
-  // Color levels include 100, 200, 300, 500, 700, 900 by default
-  // These values will override any calculation made from the values
-  // defined in $color-levels below. Example definition:
-  //
-  // "primary-100": #f4f7ff,
-  // "primary-200": #D8EDF8,
-  // "primary-300": #6c83cd,
-  // "primary-500": $primary,
-  // "primary-700": #1a337b,
-  // "primary-900": #03195c,
-) !default;
-
-
-$color-levels: () !default;
-$color-levels: map-merge(
+$theme-color-levels: map-merge(
   (
-    100: ( "mix-color": white, "percent": 94% ),
-    200: ( "mix-color": white, "percent": 75% ),
-    300: ( "mix-color": white, "percent": 50% ),
-    500: ( "mix-color": white, "percent": 0% ),
-    700: ( "mix-color": black, "percent": 20% ),
-    900: ( "mix-color": black, "percent": 30% ),
-  ),
-  $color-levels
-);
+    "gray-100": $gray-100,
+    "gray-200": $gray-200,
+    "gray-300": $gray-300,
+    "gray-500": $gray-500,
+    "gray-700": $gray-700,
+    "gray-900": $gray-900,
 
-$element-color-levels: () !default;
-$element-color-levels: map-merge(
-  (
-    "background": 100,
-    "disabled-border": 100,
-    "border": 200,
-    "icon": 300,
-    "active-border": 300,
-    "focus": 300,
-    "graphic": 300,
-    "default": 500,
-    "light-text": 500,
-    "hover": 700,
-    "text": 700,
-    "active": 900,
-    "dark-text": 900,
+    "primary-100": #f4f7ff,
+    "primary-200": #D8EDF8,
+    "primary-300": #6c83cd,
+    "primary-500": $primary,
+    "primary-700": #1a337b,
+    "primary-900": #03195c,
+
+    "success-100": #F2FAF7,
+    "success-200": #BBE6D7,
+    "success-300": #30A171,
+    "success-500": $success,
+    "success-700": #175B3C,
+    "success-900": #0F4D0F,
+
+    "info-100": #EFF8FA,
+    "info-200": #9CD2E6,
+    "info-300": #1C8DBE,
+    "info-500": $info,
+    "info-700": #004972,
+    "info-900": #002F4A,
+
+    "danger-100": #FCF1F4,
+    "danger-200": #F3A9BE,
+    "danger-300": #E4406E,
+    "danger-500": $danger,
+    "danger-700": #942947,
+    "danger-900": #691B30,
+
+    "warning-100": #fffaed,
+    "warning-200": #FFD875,
+    "warning-300": #FFBF18,
+    "warning-500": $warning,
+    "warning-700": #996B00,
+    "warning-900": #7A5500,
   ),
-  $element-color-levels
+  $theme-color-levels
 );

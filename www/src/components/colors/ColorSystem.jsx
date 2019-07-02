@@ -71,8 +71,9 @@ export default function ColorSystem({ cssSelectors }) {
                 />
                 {unusedLevels.includes(level) ? null : (
                   <div style={{ lineHeight: 1 }} className="mt-1">
-                    <code className="mb-0 d-block text-lowercase text-gray-700">
-                      ${themeName}-{level}
+                    <code className="mb-0 d-flex justify-content-between text-lowercase text-gray-700">
+                      <span>{themeName}</span>
+                      <span>{level}</span>
                     </code>
                     <code
                       style={{ fontSize: '65%' }}
@@ -89,7 +90,55 @@ export default function ColorSystem({ cssSelectors }) {
       ))}
 
 
-      <h3>SCSS Variables and CSS Class Utilties</h3>
+      <h3>SCSS Color Usage</h3>
+      <p>
+        Include these colors in scss files using the mixin.
+      </p>
+
+      <code className="d-block mb-4 lead bg-gray-100 p-3">
+        theme-color($color-name, $variant)
+      </code>
+
+      <table className="table pgn-doc__table">
+        <tbody>
+          <tr>
+            <td>
+              <strong>Color Name</strong><br />
+              A theme color
+            </td>
+            <td>
+              {colors.map(({ themeName }) => <code className="mr-2">{themeName}</code>)}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Variant</strong><br />
+              <p>A number level or element type</p>
+            </td>
+            <td>
+              <strong className="d-block">Levels </strong>
+              {levels.map(({ level }) => <code className="mr-2">{level}</code>)}
+              <br />
+              <strong className="d-block">Element types </strong>
+              {[
+                'background', 'disabled-border', 'border', 'icon', 'active-border', 'focus',
+                'graphic', 'default', 'light-text', 'hover', 'text', 'active', 'dark-text',
+              ].map((element) => <code className="mr-2">{element}</code>)}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h6>Example</h6>
+      <code className="d-block mb-2 bg-gray-100 p-3">
+        border: solid 1px <strong>theme-color("gray", "border")</strong>;
+      </code>
+
+      <code className="d-block mb-4 bg-gray-100 p-3">
+        border: solid 1px <strong>theme-color("gray", 300)</strong>;
+      </code>
+
+      <h3>CSS Class Utilties</h3>
       <p>Utility classes for backgrounds, borders, and text colors follow the format below:</p>
       <p><code>{'.{use}-{color}-{level}'}</code></p>
       <table className="table w-50">

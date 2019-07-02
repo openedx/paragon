@@ -1,16 +1,12 @@
 // Add background, border and text color utilities
 // for all theme color levels.
 
-@each $color, $value in $theme-color-levels {
-  @include bg-variant(".bg-#{$color}", $value);
-}
-
-@each $color, $value in $theme-color-levels {
-  @include text-emphasis-variant(".text-#{$color}", $value);
-}
-
-@each $color, $value in $theme-color-levels {
-  .border-#{$color} {
-    border-color: $value !important;
+@each $color, $value in $theme-colors {
+  @each $level, $color-shift in $color-levels {
+    @include bg-variant(".bg-#{$color}-#{$level}", theme-color($color, $level));
+    @include text-emphasis-variant(".text-#{$color}-#{$level}", theme-color($color, $level));
+    .border-#{$color}-#{$level} {
+      border-color: theme-color($color, $level) !important;
+    }
   }
 }
