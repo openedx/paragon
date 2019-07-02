@@ -21,6 +21,7 @@
   .demo-roboto {
     font-family: 'Roboto', sans-serif !important;
   }
+
 }
 
 .btn + .btn {
@@ -41,4 +42,8 @@
 
 .mobile-type {
   @include mobile-type;
+}
+
+input[type=range] {
+  cursor: pointer;
 }
