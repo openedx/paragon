@@ -30,7 +30,6 @@
       background: $gray-100 !important;
     }
   }
-
 }
 
 .btn + .btn {
@@ -51,4 +50,8 @@
 
 .mobile-type {
   @include mobile-type;
+}
+
+input[type=range] {
+  cursor: pointer;
 }
