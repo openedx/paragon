@@ -51,7 +51,6 @@ class Tabs extends React.Component {
             onClick={() => { this.toggle(i); }}
             className={classNames('nav-link nav-item', {
             active: selected,
-            'border-bottom-0': !selected,
           })}
           >
             {label}
