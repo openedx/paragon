@@ -15,7 +15,7 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "build": "rm -rf ./dist && ./node_modules/.bin/babel src --out-dir dist --source-maps --copy-files --ignore **/*.test.jsx,**/*.stories.jsx,**/__mocks__,**/setupTest.js && rm ./dist/**/*.stories.jsx && rm ./dist/**/*.test.jsx && node build-scss.js",
+    "build": "make build",
     "build-docs": "build-storybook && npm run build-gatsby && npm run move-gatsby",
     "build-storybook": "build-storybook",
     "build-gatsby": "cd ./www && \"$npm_execpath\" install && \"$npm_execpath\" run build",
