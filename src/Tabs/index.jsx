@@ -107,10 +107,7 @@ class Tabs extends React.Component {
 }
 // TODO: custom validator that ensures labels and panels are the same length
 Tabs.propTypes = {
-  labels: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.string),
-    PropTypes.arrayOf(PropTypes.element),
-  ]).isRequired,
+  labels: PropTypes.arrayOf(PropTypes.node).isRequired,
   children: PropTypes.arrayOf(PropTypes.element).isRequired,
 };
 
