@@ -26,9 +26,10 @@ import PropsTable from '../../components/PropsTable';
 ```jsx live=true
 <div>
   <Button className="btn-primary">Primary</Button>
-  <Button className="btn-secondary">Indigo</Button>
   <Button className="btn-success">Success</Button>
   <Button className="btn-danger">Danger</Button>
+  <Button className="btn-light">Light</Button>
+  <Button className="btn-dark">Dark</Button>
 </div>
 ```
 
@@ -37,7 +38,6 @@ import PropsTable from '../../components/PropsTable';
 ```jsx live=true
 <div>
   <Button className="btn-outline-primary">Primary</Button>
-  <Button className="btn-outline-secondary">Indigo</Button>
   <Button className="btn-outline-success">Success</Button>
   <Button className="btn-outline-danger">Danger</Button>
 </div>
@@ -46,11 +46,19 @@ import PropsTable from '../../components/PropsTable';
 ##### Inverse Variants
 
 ```jsx live=true
-<div className="bg-program-masters p-3">
+<div className="bg-gray-700 p-3">
   <Button className="btn-inverse-primary">Primary</Button>
-  <Button className="btn-inverse-secondary">Indigo</Button>
   <Button className="btn-inverse-success">Success</Button>
   <Button className="btn-inverse-danger">Danger</Button>
+</div>
+```
+##### Link Variant
+
+```jsx live=true
+<div className="bg-gray-200 p-3">
+  <Button className="btn-link">Link with button container</Button>
+  <br />
+  <Button className="btn-link px-0">Button with no horizontal padding</Button>
 </div>
 ```
 
