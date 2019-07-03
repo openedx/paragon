@@ -61,7 +61,7 @@ export default function () {
         Margin utilities are structured as <code>{'.m{direction}-{level}'}</code>.
         Negative numbers are represented
         as <code>n1</code>, <code>n2</code>, <code>n3</code>, etc.
-        Choose a direction and space level to change the
+        Choose a direction and spacing level to change the
         margin applied to the center block below.
       </p>
       <div className="border p-4">
@@ -91,7 +91,7 @@ export default function () {
             className="d-block"
             htmlFor="set-size"
           >
-            <span className="d-block text-center">Space Level: { size }</span>
+            <span className="d-block text-center">Spacing Level: { size }</span>
             <div className="d-flex align-items-center" style={{ maxWidth: '20rem' }}>
               -5
               <Input
