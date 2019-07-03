@@ -34,7 +34,7 @@ function parseColors(cssSelectors) {
   if (colorsAreParsed) return;
 
   cssSelectors.forEach(({ selector, declarations }) => {
-    // All delcarations fit this shape: "background-color: #fff !important;"
+    // All declarations fit this shape: "background-color: #fff !important;"
     const declarationFragments = declarations[0].split(' ');
     selectorColors[selector] = declarationFragments.length ? declarationFragments[1] : null;
   });
@@ -51,7 +51,8 @@ export default function ({ data }) {
 
       <h1>Colors</h1>
 
-      <h3>Pallete</h3>
+      <h3>Palette</h3>
+
       <p>
         Below is an exhaustive set of UI colors. Colors for brands,
         illustrations, or graphics are not included.
