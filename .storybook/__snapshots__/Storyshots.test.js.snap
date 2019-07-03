@@ -1650,50 +1650,47 @@ exports[`Storyshots Navigation|Tabs basic usage 1`] = `
 <div
   className="tabs"
 >
-  <div
+  <ul
     className="nav nav-tabs"
     role="tablist"
   >
-    <button
-      aria-controls="tab-panel-tabInterface60-0"
-      aria-selected={true}
-      className="btn nav-link nav-item active"
-      id="tab-label-tabInterface60-0"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      role="tab"
-      type="button"
-    >
-      Panel 1
-    </button>
-    <button
-      aria-controls="tab-panel-tabInterface60-1"
-      aria-selected={false}
-      className="btn nav-link nav-item"
-      id="tab-label-tabInterface60-1"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      role="tab"
-      type="button"
-    >
-      Panel 2
-    </button>
-    <button
-      aria-controls="tab-panel-tabInterface60-2"
-      aria-selected={false}
-      className="btn nav-link nav-item"
-      id="tab-label-tabInterface60-2"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      role="tab"
-      type="button"
-    >
-      Panel 3
-    </button>
-  </div>
+    <li>
+      <button
+        aria-controls="tab-panel-tabInterface60-0"
+        aria-selected={true}
+        className="nav-link nav-item active"
+        id="tab-label-tabInterface60-0"
+        onClick={[Function]}
+        role="tab"
+      >
+        Panel 1
+      </button>
+    </li>
+    <li>
+      <button
+        aria-controls="tab-panel-tabInterface60-1"
+        aria-selected={false}
+        className="nav-link nav-item"
+        id="tab-label-tabInterface60-1"
+        onClick={[Function]}
+        role="tab"
+      >
+        Panel 2
+      </button>
+    </li>
+    <li>
+      <button
+        aria-controls="tab-panel-tabInterface60-2"
+        aria-selected={false}
+        className="nav-link nav-item"
+        id="tab-label-tabInterface60-2"
+        onClick={[Function]}
+        role="tab"
+      >
+        Panel 3
+      </button>
+    </li>
+  </ul>
   <div
     className="tab-content"
     role="tabpanel"
