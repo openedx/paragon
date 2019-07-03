@@ -22,6 +22,14 @@
     font-family: 'Roboto', sans-serif !important;
   }
 
+  // Colors Page
+  .pgn-doc__swatch {
+    height: 3rem;
+    @extend .rounded;
+    &.unused-level {
+      background: $gray-100 !important;
+    }
+  }
 }
 
 .btn + .btn {
