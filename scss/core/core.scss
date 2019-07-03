@@ -1,6 +1,11 @@
 @import "~bootstrap/scss/functions";
+@import "functions"; // After bootstrap's so we can override.
+
+@import "variables"; // Before bootstrap's defaults.
 @import "~bootstrap/scss/variables";
+
 @import "~bootstrap/scss/mixins";
+@import "mixins"; // After bootstrap's so we can override.
 
 @import "~bootstrap/scss/root";
 @import "~bootstrap/scss/reboot";
@@ -10,7 +15,7 @@
 @import "~bootstrap/scss/grid";
 @import "~bootstrap/scss/tables";
 @import "~bootstrap/scss/forms";
-@import "~bootstrap/scss/buttons";
+@import "overrides/buttons";
 @import "~bootstrap/scss/transitions";
 @import "~bootstrap/scss/dropdown";
 @import "~bootstrap/scss/button-group";
@@ -23,7 +28,7 @@
 @import "~bootstrap/scss/pagination";
 @import "~bootstrap/scss/badge";
 @import "~bootstrap/scss/jumbotron";
-@import "~bootstrap/scss/alert";
+@import "overrides/alert";
 @import "~bootstrap/scss/progress";
 @import "~bootstrap/scss/media";
 @import "~bootstrap/scss/list-group";

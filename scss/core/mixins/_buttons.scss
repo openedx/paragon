@@ -1,0 +1,160 @@
+// 
+// OVERRIDE FROM BOOTSTRAP
+// We do this to better control active and focus states.
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+
+@mixin button-variant($background, $border, $hover-background: darken($background, 7.5%), $hover-border: darken($border, 10%), $active-background: darken($background, 10%), $active-border: darken($border, 12.5%)) {
+  color: color-yiq($background);
+  @include gradient-bg($background);
+  border-color: $border;
+  @include box-shadow($btn-box-shadow);
+
+  @include hover {
+    color: color-yiq($hover-background);
+    @include gradient-bg($hover-background);
+    border-color: $hover-border;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    color: color-yiq($background);
+    background-color: $background;
+    border-color: $border;
+    // Remove CSS gradients if they're enabled
+    @if $enable-gradients {
+      background-image: none;
+    }
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: color-yiq($active-background);
+    background-color: $active-background;
+    @if $enable-gradients {
+      background-image: none; // Remove the gradient for the pressed/active state
+    }
+    border-color: $active-border;
+  }
+}
+
+// OVERRIDE FROM BOOTSTRAP
+// We do this to better control active and focus states.
+@mixin button-outline-variant($color, $color-hover: color-yiq($color), $active-background: $color, $active-border: $color) {
+  color: $color;
+  border-color: $color;
+
+  @include hover {
+    color: $color-hover;
+    background-color: $active-background;
+    border-color: $active-border;
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $color;
+    background-color: transparent;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: color-yiq($active-background);
+    background-color: $active-background;
+    border-color: $active-border;
+  }
+}
+
+// OVERRIDE FROM BOOTSTRAP
+// No changes made. We do this to keep all button related mixins together,
+//
+// Button sizes
+@mixin button-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
+  padding: $padding-y $padding-x;
+  @include font-size($font-size);
+  line-height: $line-height;
+  // Manually declare to provide an override to the browser default
+  @include border-radius($border-radius, 0);
+}
+
+
+// ------------------------
+// BELOW ARE EDX EXTENSIONS
+// ------------------------
+
+
+//
+// A new variant of button (inverse)
+//
+@mixin button-inverse-variant($color, $background: color-yiq($color), $active-background: $color, $active-border: $color) {
+  color: $color;
+  border-color: transparent;
+  background-color: $background;
+
+  @include hover {
+    color: darken($color, 7.5%);
+    background-color: darken($background, 7.5%);
+    border-color: transparent;
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $color;
+    background-color: transparent;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: darken($color, 10%);
+    background: #eee;
+  }
+}
+
+@mixin button-focus($ring-color) {
+  &.focus,
+  &:focus {
+    position: relative;
+    outline: 0;
+    box-shadow: none;
+
+    $distance: $btn-focus-width + $btn-focus-gap;
+    $distance-include-btn-border: $distance + $btn-border-width;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -1 * $distance-include-btn-border;
+      right: -1 * $distance-include-btn-border;
+      bottom: -1 * $distance-include-btn-border;
+      left: -1 * $distance-include-btn-border;
+      border:solid $btn-focus-width $ring-color;
+      border-radius: calc(#{$btn-border-radius} + #{$distance});
+    }
+    &.btn-lg:before {
+      border-radius: calc(#{$btn-border-radius-lg} + #{$distance});
+    }
+    &.btn-sm:before {
+      border-radius: calc(#{$btn-border-radius-sm} + #{$distance});
+    }
+
+    &:active,
+    &.active {
+      &:before {
+        opacity: .75;
+      }
+    }
+
+    // Disabled buttons should not have focus rings
+    &:disabled,
+    &.disabled {
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
