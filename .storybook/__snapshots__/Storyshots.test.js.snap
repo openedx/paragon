@@ -1670,7 +1670,7 @@ exports[`Storyshots Navigation|Tabs basic usage 1`] = `
       <button
         aria-controls="tab-panel-tabInterface60-1"
         aria-selected={false}
-        className="nav-link nav-item border-bottom-0"
+        className="nav-link nav-item"
         id="tab-label-tabInterface60-1"
         onClick={[Function]}
         role="tab"
@@ -1682,7 +1682,7 @@ exports[`Storyshots Navigation|Tabs basic usage 1`] = `
       <button
         aria-controls="tab-panel-tabInterface60-2"
         aria-selected={false}
-        className="nav-link nav-item border-bottom-0"
+        className="nav-link nav-item"
         id="tab-label-tabInterface60-2"
         onClick={[Function]}
         role="tab"
