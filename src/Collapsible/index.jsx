@@ -1,143 +1,209 @@
-import React from 'react';
+import React, { useContext, useCallback } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import TransitionReplace from '../TransitionReplace';
 
-import Button from '../Button';
+const CollapsibleContext = React.createContext();
 
 class Collapsible extends React.Component {
+  static getDerivedStateFromProps(props) {
+    if (props.open !== undefined) {
+      return {
+        // Since this method fires on both props and state changes, local updates
+        // to the controlled value will be ignored, because the props version
+        // always overrides it. In this case, this is exactly what we want.
+        isOpen: props.open,
+      };
+    }
+    return null;
+  }
+
   constructor(props) {
     super(props);
+
     this.state = {
-      isExpanded: false,
-      isOpen: props.isOpen,
+      isOpen: props.open !== undefined ? props.open : props.defaultOpen,
     };
-
-    this.handleClick = this.handleClick.bind(this);
   }
 
-  componentDidMount() {
-    if (this.props.isCollapsible) {
-      this.handleResize();
-      global.addEventListener('resize', this.handleResize.bind(this));
+  open = () => {
+    this.setState({ isOpen: true });
+    if (this.props.onOpen) this.props.onOpen();
+  }
+
+  close = () => {
+    this.setState({ isOpen: false });
+    if (this.props.onClose) this.props.onClose();
+  }
+
+  toggle = () => {
+    if (this.state.isOpen) {
+      this.close();
+    } else {
+      this.open();
     }
-  }
-
-  /**
-   * "Note that you may call setState() immediately in componentDidUpdate() but,
-   * it must be wrapped in a conditional check against the previous props, or
-   * you'll cause an infinite loop."
-   * See https://reactjs.org/docs/react-component.html#componentdidupdate for
-   * more information.
-   */
-  componentDidUpdate(prevProps) {
-    if (this.props.isOpen !== prevProps.isOpen) {
-      // eslint-disable-next-line react/no-did-update-set-state
-      this.setState({
-        isOpen: this.props.isOpen,
-      });
-    }
-  }
-
-  componentWillUnmount() {
-    if (this.props.isCollapsible) {
-      global.removeEventListener('resize', this.handleResize);
-    }
-  }
-
-  handleResize() {
-    const { isExpanded } = this.state;
-
-    if (isExpanded !== this.props.isCollapsible()) {
-      this.setState({
-        isExpanded: !isExpanded,
-      });
-    }
-  }
-
-  handleClick() {
-    const isOpen = !this.state.isOpen;
-    this.setState({ isOpen });
-    this.props.onToggle(isOpen);
-  }
-
-  renderIcon() {
-    const { icons } = this.props;
-    const { isOpen } = this.state;
-
-    if (icons) {
-      return isOpen ? icons.expanded : icons.collapsed;
-    }
-
-    return <FontAwesomeIcon icon={isOpen ? faAngleUp : faAngleDown} />;
+    if (this.props.onToggle) this.props.onToggle(this.state.isOpen);
   }
 
   render() {
     const {
       children,
-      expandedTitle,
-      title,
+      className,
+      ...props
     } = this.props;
 
-    const { isExpanded, isOpen } = this.state;
+    // Unneeded for passthrough props
+    delete props.defaultOpen;
+    delete props.onToggle;
+    delete props.onOpen;
+    delete props.onClose;
 
     return (
-      <div className={classNames(
-        'collapsible',
-        { open: isOpen && !isExpanded },
-        { expanded: isExpanded },
-        )}
+      <div
+        {...props}
+        className={classNames('pgn_collapsible', className, {
+          'is-open': this.state.isOpen,
+        })}
       >
-        {isExpanded ? (
-          expandedTitle
-        ) : (
-          <Button
-            aria-expanded={isOpen}
-            className={classNames(
-              'btn-block text-left',
-              'btn-collapsible',
-              { open: isOpen },
-            )}
-            onClick={this.handleClick}
-          >
-            <div className="collapsible-title d-flex align-items-center justify-content-between">
-              {title}
-              {this.renderIcon()}
-            </div>
-          </Button>
-        )}
-        <div className={classNames(
-          'collapsible-body',
-          { open: isOpen || isExpanded },
-          )}
+        <CollapsibleContext.Provider
+          value={{
+            isOpen: this.state.isOpen,
+            open: this.open,
+            close: this.close,
+            toggle: this.toggle,
+          }}
         >
           {children}
-        </div>
+        </CollapsibleContext.Provider>
       </div>
     );
   }
 }
 
 Collapsible.propTypes = {
-  children: PropTypes.instanceOf(Object).isRequired,
-  expandedTitle: PropTypes.element,
-  icons: PropTypes.shape({
-    expanded: PropTypes.element.isRequired,
-    collapsed: PropTypes.element.isRequired,
-  }),
-  isCollapsible: PropTypes.func,
-  isOpen: PropTypes.bool,
+  children: PropTypes.node,
+  className: PropTypes.string,
+  defaultOpen: PropTypes.bool,
+  open: PropTypes.bool,
   onToggle: PropTypes.func,
-  title: PropTypes.string.isRequired,
+  onOpen: PropTypes.func,
+  onClose: PropTypes.func,
+};
+Collapsible.defaultProps = {
+  children: undefined,
+  className: 'collapsible',
+  defaultOpen: false,
+  open: undefined,
+  onToggle: undefined,
+  onOpen: undefined,
+  onClose: undefined,
 };
 
-Collapsible.defaultProps = {
-  expandedTitle: undefined,
-  icons: null,
-  isCollapsible: undefined,
-  isOpen: false,
-  onToggle: () => {},
+
+function CollapsibleTrigger({
+  tag, children, openOnly, closeOnly, ...props
+}) {
+  const { isOpen, toggle } = useContext(CollapsibleContext);
+
+  const handleClick = useCallback((e) => {
+    if (props.onClick) props.onClick(e);
+    if ((isOpen && openOnly) || (!isOpen && closeOnly)) return; // No-op
+    toggle(e);
+  });
+
+  const handleKeyDown = useCallback((e) => {
+    if (props.onKeyDown) props.onKeyDown(e);
+    if ((isOpen && openOnly) || (!isOpen && closeOnly)) return; // No-op
+    if (e.key === 'Enter') toggle(e);
+  });
+
+  return React.createElement(tag, {
+    ...props,
+    onClick: handleClick,
+    onKeyDown: handleKeyDown,
+    role: 'button',
+    tabIndex: 0,
+    'aria-expanded': isOpen,
+  }, children);
+}
+
+CollapsibleTrigger.propTypes = {
+  children: PropTypes.node,
+  tag: PropTypes.string,
+  openOnly: PropTypes.bool,
+  closeOnly: PropTypes.bool,
+  onClick: PropTypes.func,
+  onKeyDown: PropTypes.func,
 };
+CollapsibleTrigger.defaultProps = {
+  children: undefined,
+  tag: 'div',
+  openOnly: false,
+  closeOnly: false,
+  onClick: undefined,
+  onKeyDown: undefined,
+};
+
+Collapsible.Trigger = CollapsibleTrigger;
+
+
+function CollapsibleBody({
+  children, transitionWrapper, tag, ...props
+}) {
+  const { isOpen } = useContext(CollapsibleContext);
+
+  const content = isOpen ?
+    React.createElement(tag, { key: 'body', ...props }, children) :
+    <div key="empty" />;
+
+  if (transitionWrapper) {
+    return React.cloneElement(transitionWrapper, {}, content);
+  }
+
+  /* istanbul ignore next */
+  return <TransitionReplace>{content}</TransitionReplace>;
+}
+
+CollapsibleBody.propTypes = {
+  children: PropTypes.node,
+  tag: PropTypes.string,
+  transitionWrapper: PropTypes.element,
+};
+CollapsibleBody.defaultProps = {
+  children: undefined,
+  tag: 'div',
+  transitionWrapper: undefined,
+};
+
+Collapsible.Body = CollapsibleBody;
+
+
+function CollapsibleVisible({
+  children,
+  whenOpen: visibleWhenOpen,
+  whenClosed: visibleWhenClosed,
+}) {
+  const { isOpen } = useContext(CollapsibleContext);
+
+  if ((visibleWhenOpen && isOpen) || (visibleWhenClosed && !isOpen)) {
+    return <React.Fragment>{children}</React.Fragment>;
+  }
+
+  return null;
+}
+
+CollapsibleVisible.propTypes = {
+  children: PropTypes.node,
+  whenOpen: PropTypes.bool,
+  whenClosed: PropTypes.bool,
+};
+CollapsibleVisible.defaultProps = {
+  children: undefined,
+  whenOpen: false,
+  whenClosed: false,
+};
+
+Collapsible.Visible = CollapsibleVisible;
+
 
 export default Collapsible;
