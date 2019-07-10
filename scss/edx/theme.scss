@@ -3,3 +3,17 @@
 @import "variables";
 @import "../core/core";
 @import "overrides";
+
+
+.collapsible {
+  @extend .shadow;
+}
+.collapsible-toggle {
+  border-bottom: none;
+  &:hover {
+    background-color: theme-color('primary', 'background');
+  }
+}
+.collapsible-body {
+  padding-top: $card-spacer-y / 2;
+}

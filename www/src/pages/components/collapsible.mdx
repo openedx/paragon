@@ -19,11 +19,21 @@ import PropsTable from '../../components/PropsTable';
 
 ##### basic usage without resizing
 
-```jsx live=true
-<Collapsible title="Click me to expand">
-  <p>Your stuff goes here</p>
+
+<Collapsible>
+  <Collapsible.Toggle
+    className="collapsible-toggle d-flex align-items-center"
+  >
+    <h4 className="m-0 mr-auto">I'm a heading</h4>
+    <Collapsible.Opened>x</Collapsible.Opened>
+    <Collapsible.Closed>+</Collapsible.Closed>
+  </Collapsible.Toggle>
+  <Collapsible.Body>
+    Your stuff goes here
+    <Collapsible.CloseButton>X (close)</Collapsible.CloseButton>
+  </Collapsible.Body>
 </Collapsible>
-```
+
 
 ##### basic usage with resizing
 

@@ -1,143 +1,206 @@
-import React from 'react';
+import React, { useState, useContext, useCallback } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Button from '../Button';
+import TransitionReplace from '../TransitionReplace';
+
+const CollapsibleContext = React.createContext();
 
 class Collapsible extends React.Component {
+  static idCounter = 0; // For creating unique ids
+
   constructor(props) {
     super(props);
+
     this.state = {
-      isExpanded: false,
-      isOpen: props.isOpen,
-    };
-
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  componentDidMount() {
-    if (this.props.isCollapsible) {
-      this.handleResize();
-      global.addEventListener('resize', this.handleResize.bind(this));
+      isOpen: false,
     }
   }
 
-  /**
-   * "Note that you may call setState() immediately in componentDidUpdate() but,
-   * it must be wrapped in a conditional check against the previous props, or
-   * you'll cause an infinite loop."
-   * See https://reactjs.org/docs/react-component.html#componentdidupdate for
-   * more information.
-   */
-  componentDidUpdate(prevProps) {
-    if (this.props.isOpen !== prevProps.isOpen) {
-      // eslint-disable-next-line react/no-did-update-set-state
-      this.setState({
-        isOpen: this.props.isOpen,
-      });
-    }
+  open = () => {
+    this.setState({ isOpen: true });
   }
 
-  componentWillUnmount() {
-    if (this.props.isCollapsible) {
-      global.removeEventListener('resize', this.handleResize);
-    }
+  close = () => {
+    this.setState({ isOpen: false });
   }
 
-  handleResize() {
-    const { isExpanded } = this.state;
-
-    if (isExpanded !== this.props.isCollapsible()) {
-      this.setState({
-        isExpanded: !isExpanded,
-      });
-    }
-  }
-
-  handleClick() {
-    const isOpen = !this.state.isOpen;
-    this.setState({ isOpen });
-    this.props.onToggle(isOpen);
-  }
-
-  renderIcon() {
-    const { icons } = this.props;
-    const { isOpen } = this.state;
-
-    if (icons) {
-      return isOpen ? icons.expanded : icons.collapsed;
-    }
-
-    return <FontAwesomeIcon icon={isOpen ? faAngleUp : faAngleDown} />;
+  toggle = () => {
+    this.setState({ isOpen: !this.state.isOpen });
   }
 
   render() {
     const {
       children,
-      expandedTitle,
-      title,
+      className,
+      ...props
     } = this.props;
 
-    const { isExpanded, isOpen } = this.state;
-
     return (
-      <div className={classNames(
-        'collapsible',
-        { open: isOpen && !isExpanded },
-        { expanded: isExpanded },
-        )}
+      <div
+        {...props}
+        className={classNames(className, {
+          'is-expanded': this.state.isOpen
+        })}
       >
-        {isExpanded ? (
-          expandedTitle
-        ) : (
-          <Button
-            aria-expanded={isOpen}
-            className={classNames(
-              'btn-block text-left',
-              'btn-collapsible',
-              { open: isOpen },
-            )}
-            onClick={this.handleClick}
-          >
-            <div className="collapsible-title d-flex align-items-center justify-content-between">
-              {title}
-              {this.renderIcon()}
-            </div>
-          </Button>
-        )}
-        <div className={classNames(
-          'collapsible-body',
-          { open: isOpen || isExpanded },
-          )}
+        <CollapsibleContext.Provider
+          value={{
+            isOpen: this.state.isOpen,
+            open: this.open,
+            close: this.close,
+            toggle: this.toggle,
+          }}
         >
           {children}
-        </div>
+        </CollapsibleContext.Provider>
       </div>
     );
   }
 }
 
 Collapsible.propTypes = {
-  children: PropTypes.instanceOf(Object).isRequired,
-  expandedTitle: PropTypes.element,
-  icons: PropTypes.shape({
-    expanded: PropTypes.element.isRequired,
-    collapsed: PropTypes.element.isRequired,
-  }),
-  isCollapsible: PropTypes.func,
-  isOpen: PropTypes.bool,
-  onToggle: PropTypes.func,
-  title: PropTypes.string.isRequired,
+  children: PropTypes.node,
+  className: PropTypes.string,
+};
+Collapsible.defaultProps = {
+  children: undefined,
+  className: 'collapsible',
 };
 
-Collapsible.defaultProps = {
-  expandedTitle: undefined,
-  icons: null,
-  isCollapsible: undefined,
-  isOpen: false,
-  onToggle: () => {},
+
+function CollapsibleToggle(props) {
+  const {
+    isOpen,
+    open,
+    close,
+    toggle,
+  } = useContext(CollapsibleContext);
+
+  const handleClick = useCallback((e) => {
+    if (props.onClick) {
+      props.onClick(e);
+    }
+    toggle(e);
+  });
+  const handleKeyDown = useCallback((e) => {
+    if (props.onKeyDown) {
+      props.onKeyDown(e);
+    }
+
+    if (e.key === 'Enter') {
+      toggle(e);
+    }
+  });
+
+  return (
+    <div
+      role="button"
+      tabIndex={0}
+      {...props}
+      className={classNames(props.className, {
+        expanded: isOpen,
+      })}
+      onClick={handleClick}
+      onKeyDown={handleKeyDown}>
+      {props.children}
+    </div>
+  )
+}
+
+CollapsibleToggle.propTypes = {
+  className: PropTypes.string,
 };
+
+CollapsibleToggle.defaultProps = {
+  className: 'collapsible-toggle',
+};
+
+Collapsible.Toggle = CollapsibleToggle;
+
+function CollapsibleBody({ children, tag, ...props }) {
+  const { isOpen } = useContext(CollapsibleContext);
+
+  const content = isOpen ?
+    React.createElement(tag, { key: 'body', ...props }, children) :
+    <div key="empty" />;
+
+  return (
+    <TransitionReplace>{content}</TransitionReplace>
+  )
+}
+
+CollapsibleBody.propTypes = {
+  children: PropTypes.node,
+  tag: PropTypes.string,
+};
+CollapsibleBody.defaultProps = {
+  children: undefined,
+  tag: 'div',
+  className: 'collapsible-body',
+};
+
+Collapsible.Body = CollapsibleBody;
+
+
+function CollapsibleCloseButton(props) {
+  const { isOpen, close } = useContext(CollapsibleContext);
+
+  return (
+    <div className="collapse-close-button" onClick={close}>
+      {props.children}
+    </div>
+  );
+}
+
+Collapsible.CloseButton = CollapsibleCloseButton;
+
+
+function CollapsibleOpenButton(props) {
+  const { isOpen, open } = useContext(CollapsibleContext);
+
+  return (
+    <div className="collapse-open-button" onClick={open}>
+      {props.children}
+    </div>
+  );
+}
+
+Collapsible.OpenButton = CollapsibleOpenButton;
+
+
+
+function CollapsibleOpened({ children }) {
+  const { isOpen } = useContext(CollapsibleContext);
+  if (!isOpen) return null;
+  return <React.Fragment>{children}</React.Fragment>;
+}
+
+CollapsibleOpened.propTypes = {
+  children: PropTypes.node,
+};
+CollapsibleOpened.defaultProps = {
+  children: undefined,
+};
+
+Collapsible.Opened = CollapsibleOpened;
+
+
+function CollapsibleClosed({ children }) {
+  const { isOpen } = useContext(CollapsibleContext);
+  if (isOpen) return null;
+  return <React.Fragment>{children}</React.Fragment>;
+}
+
+CollapsibleClosed.propTypes = {
+  children: PropTypes.node,
+};
+CollapsibleClosed.defaultProps = {
+  children: undefined,
+};
+
+Collapsible.Closed = CollapsibleClosed;
+
 
 export default Collapsible;
