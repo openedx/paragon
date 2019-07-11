@@ -382,214 +382,51 @@ Array [
 ]
 `;
 
-exports[`Storyshots Collapsible basic usage with resizing 1`] = `
-<div>
-  <div
-    className="collapsible expanded"
-  >
-    <h2>
-      Try resizing the screen to medium or small
-    </h2>
-    <div
-      className="collapsible-body open"
-    >
-      <div>
-        <h3>
-          You can fit lots of things in here
-        </h3>
-        <ul>
-          <li>
-            1 thing
-          </li>
-          <li>
-            2 things
-          </li>
-          <li>
-            3 things
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Collapsible basic usage without resizing 1`] = `
+exports[`Storyshots Collapsible usage 1`] = `
 <div
-  className="collapsible"
+  className="pgn_collapsible collapsible-card"
 >
-  <button
+  <div
     aria-expanded={false}
-    className="btn btn-block text-left btn-collapsible"
-    onBlur={[Function]}
+    className="collapsible-card-header d-flex align-items-center"
     onClick={[Function]}
     onKeyDown={[Function]}
-    type="button"
+    role="button"
+    tabIndex={0}
   >
-    <div
-      className="collapsible-title d-flex align-items-center justify-content-between"
+    <h4
+      className="flex-grow-1"
     >
-      Click me to expand
-      <svg
-        aria-hidden="true"
-        className="svg-inline--fa fa-angle-down fa-w-10 "
-        data-icon="angle-down"
-        data-prefix="fas"
-        focusable="false"
-        role="img"
-        style={Object {}}
-        viewBox="0 0 320 512"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-          fill="currentColor"
-          style={Object {}}
-        />
-      </svg>
-    </div>
-  </button>
-  <div
-    className="collapsible-body"
-  >
-    <p>
-      Your stuff goes here
-    </p>
+      A heading
+    </h4>
+    <span
+      aria-hidden={true}
+      className="collapsible-card-header-icon"
+    >
+      <span
+        aria-hidden={true}
+        className="fa fa-chevron-down"
+        id="Icon1"
+      />
+    </span>
   </div>
-</div>
-`;
-
-exports[`Storyshots Collapsible fires onToggle callback when toggled 1`] = `
-<div
-  className="collapsible"
->
-  <button
-    aria-expanded={false}
-    className="btn btn-block text-left btn-collapsible"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    type="button"
+  <div
+    className="pgn-transition-replace-group position-relative"
+    style={
+      Object {
+        "height": null,
+      }
+    }
   >
     <div
-      className="collapsible-title d-flex align-items-center justify-content-between"
+      style={
+        Object {
+          "padding": ".1px 0",
+        }
+      }
     >
-      Click me to expand
-      <svg
-        aria-hidden="true"
-        className="svg-inline--fa fa-angle-down fa-w-10 "
-        data-icon="angle-down"
-        data-prefix="fas"
-        focusable="false"
-        role="img"
-        style={Object {}}
-        viewBox="0 0 320 512"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-          fill="currentColor"
-          style={Object {}}
-        />
-      </svg>
+      <div />
     </div>
-  </button>
-  <div
-    className="collapsible-body"
-  >
-    <p>
-      Your stuff goes here
-    </p>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Collapsible initially open collapsible 1`] = `
-<div
-  className="collapsible open"
->
-  <button
-    aria-expanded={true}
-    className="btn btn-block text-left btn-collapsible open"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    type="button"
-  >
-    <div
-      className="collapsible-title d-flex align-items-center justify-content-between"
-    >
-      Click me to expand
-      <svg
-        aria-hidden="true"
-        className="svg-inline--fa fa-angle-up fa-w-10 "
-        data-icon="angle-up"
-        data-prefix="fas"
-        focusable="false"
-        role="img"
-        style={Object {}}
-        viewBox="0 0 320 512"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-          fill="currentColor"
-          style={Object {}}
-        />
-      </svg>
-    </div>
-  </button>
-  <div
-    className="collapsible-body open"
-  >
-    <p>
-      Your stuff goes here
-    </p>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Collapsible with custom icon 1`] = `
-<div
-  className="collapsible"
->
-  <button
-    aria-expanded={false}
-    className="btn btn-block text-left btn-collapsible"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    type="button"
-  >
-    <div
-      className="collapsible-title d-flex align-items-center justify-content-between"
-    >
-      Click me to expand
-      <svg
-        aria-hidden="true"
-        className="svg-inline--fa fa-chevron-circle-down fa-w-16 text-primary"
-        data-icon="chevron-circle-down"
-        data-prefix="fas"
-        focusable="false"
-        role="img"
-        style={Object {}}
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM273 369.9l135.5-135.5c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L256 285.1 154.4 183.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L239 369.9c9.4 9.4 24.6 9.4 34 0z"
-          fill="currentColor"
-          style={Object {}}
-        />
-      </svg>
-    </div>
-  </button>
-  <div
-    className="collapsible-body"
-  >
-    <p>
-      Your stuff goes here
-    </p>
   </div>
 </div>
 `;

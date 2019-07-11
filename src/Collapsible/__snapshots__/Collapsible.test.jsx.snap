@@ -16,7 +16,7 @@ exports[`<Collapsible /> Controlled Rendering renders closed by default 1`] = `
     <h4
       className="flex-grow-1"
     >
-      I'm a heading
+      A heading
     </h4>
     <span
       aria-hidden={true}
@@ -53,11 +53,10 @@ exports[`<Collapsible /> Controlled Rendering renders closed by default 1`] = `
 
 exports[`<Collapsible /> Controlled Rendering renders open by default 1`] = `
 <div
-  className="pgn_collapsible collapsible is-open"
-  open={true}
+  className="pgn_collapsible collapsible"
 >
   <div
-    aria-expanded={true}
+    aria-expanded={false}
     className="trigger d-flex align-items-center"
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -67,17 +66,17 @@ exports[`<Collapsible /> Controlled Rendering renders open by default 1`] = `
     <h4
       className="flex-grow-1"
     >
-      I'm a heading
+      A heading
     </h4>
     <span
       aria-hidden={true}
       className="collapsible-card-header-icon"
     >
-      -
+      +
     </span>
   </div>
   <div
-    aria-expanded={true}
+    aria-expanded={false}
     className="close-only"
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -87,7 +86,7 @@ exports[`<Collapsible /> Controlled Rendering renders open by default 1`] = `
     Close
   </div>
   <div
-    aria-expanded={true}
+    aria-expanded={false}
     className="open-only"
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -97,13 +96,7 @@ exports[`<Collapsible /> Controlled Rendering renders open by default 1`] = `
     Open
   </div>
   <div>
-    <div>
-      <p
-        className="example-content"
-      >
-        Example content
-      </p>
-    </div>
+    <div />
   </div>
 </div>
 `;
@@ -123,7 +116,7 @@ exports[`<Collapsible /> Uncontrolled Rendering renders closed by default 1`] = 
     <h4
       className="flex-grow-1"
     >
-      I'm a heading
+      A heading
     </h4>
     <span
       aria-hidden={true}
@@ -173,7 +166,7 @@ exports[`<Collapsible /> Uncontrolled Rendering renders open by default 1`] = `
     <h4
       className="flex-grow-1"
     >
-      I'm a heading
+      A heading
     </h4>
     <span
       aria-hidden={true}

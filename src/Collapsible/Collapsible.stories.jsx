@@ -1,60 +1,37 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { faChevronCircleDown, faChevronCircleUp } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-import README from './README.md';
 
 import Collapsible from './index';
-import { breakpoints } from '../Responsive';
+import Icon from '../Icon';
 
 storiesOf('Collapsible', module)
-  .addParameters({ info: { text: README } })
-  .add('basic usage without resizing', () => (
-    <Collapsible title="Click me to expand">
-      <p>Your stuff goes here</p>
-    </Collapsible>
-  ))
-  .add('basic usage with resizing', () => (
-    <div>
-      <Collapsible
-        expandedTitle={<h2>Try resizing the screen to medium or small</h2>}
-        title="Try resizing the screen to large"
-        isCollapsible={() => global.innerWidth >= breakpoints.large.minWidth ||
-          global.matchMedia(`(min-width: ${breakpoints.large.minWidth}px)`).matches}
-      >
-        <div>
-          <h3>You can fit lots of things in here</h3>
-          <ul>
-            <li>1 thing</li>
-            <li>2 things</li>
-            <li>3 things</li>
-          </ul>
-        </div>
-      </Collapsible>
-    </div>
-  ))
-  .add('initially open collapsible', () => (
-    <Collapsible title="Click me to expand" isOpen>
-      <p>Your stuff goes here</p>
-    </Collapsible>
-  ))
-  .add('fires onToggle callback when toggled', () => (
+  .add('usage', () => (
     <Collapsible
-      title="Click me to expand"
-      onToggle={isOpen => console.log(`this.state.isOpen = ${isOpen}`)} // eslint-disable-line no-console
+      className="collapsible-card"
+      onToggle={isOpen => console.log('Collapsible toggled and open is: ', isOpen)}
+      onOpen={() => console.log('Collapsible opened.')}
+      onClose={() => console.log('Collapsible closed.')}
     >
-      <p>Your stuff goes here</p>
-    </Collapsible>
-  ))
-  .add('with custom icon', () => (
-    <Collapsible
-      title="Click me to expand"
-      icons={{
-        expanded: <FontAwesomeIcon className="text-primary" icon={faChevronCircleUp} />,
-        collapsed: <FontAwesomeIcon className="text-primary" icon={faChevronCircleDown} />,
-      }}
-    >
-      <p>Your stuff goes here</p>
+      <Collapsible.Trigger className="collapsible-card-header d-flex align-items-center">
+        <h4 className="flex-grow-1">A heading</h4>
+
+        <span className="collapsible-card-header-icon" aria-hidden>
+          <Collapsible.Visible whenClosed>
+            <Icon className="fa fa-chevron-down" />
+          </Collapsible.Visible>
+
+          <Collapsible.Visible whenOpen>
+            <Icon className="fa fa-chevron-up" />
+          </Collapsible.Visible>
+        </span>
+      </Collapsible.Trigger>
+
+      <Collapsible.Body className="collapsible-card-body">
+        <p>Your stuff goes here.</p>
+
+        <Collapsible.Trigger closeOnly tag="a" className="btn btn-outline-primary">
+          Close
+        </Collapsible.Trigger>
+      </Collapsible.Body>
     </Collapsible>
   ));
