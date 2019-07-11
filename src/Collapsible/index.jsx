@@ -1,32 +1,48 @@
-import React, { useState, useContext, useCallback } from 'react';
+import React, { useContext, useCallback } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-
 import TransitionReplace from '../TransitionReplace';
-
 
 const CollapsibleContext = React.createContext();
 
-
 class Collapsible extends React.Component {
+  static getDerivedStateFromProps(props) {
+    if (props.open !== undefined) {
+      return {
+        // Since this method fires on both props and state changes, local updates
+        // to the controlled value will be ignored, because the props version
+        // always overrides it. In this case, this is exactly what we want.
+        isOpen: props.open,
+      };
+    }
+    return null;
+  }
+
   constructor(props) {
     super(props);
 
     this.state = {
-      isOpen: false,
-    }
+      isOpen: props.open !== undefined ? props.open : props.defaultOpen,
+    };
   }
 
   open = () => {
     this.setState({ isOpen: true });
+    if (this.props.onOpen) this.props.onOpen();
   }
 
   close = () => {
     this.setState({ isOpen: false });
+    if (this.props.onClose) this.props.onClose();
   }
 
   toggle = () => {
-    this.setState({ isOpen: !this.state.isOpen });
+    if (this.state.isOpen) {
+      this.close();
+    } else {
+      this.open();
+    }
+    if (this.props.onToggle) this.props.onToggle(this.state.isOpen);
   }
 
   render() {
@@ -36,11 +52,17 @@ class Collapsible extends React.Component {
       ...props
     } = this.props;
 
+    // Unneeded for passthrough props
+    delete props.defaultOpen;
+    delete props.onToggle;
+    delete props.onOpen;
+    delete props.onClose;
+
     return (
       <div
         {...props}
         className={classNames('pgn_collapsible', className, {
-          'is-expanded': this.state.isOpen
+          'is-open': this.state.isOpen,
         })}
       >
         <CollapsibleContext.Provider
@@ -61,26 +83,37 @@ class Collapsible extends React.Component {
 Collapsible.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
+  defaultOpen: PropTypes.bool,
+  open: PropTypes.bool,
+  onToggle: PropTypes.func,
+  onOpen: PropTypes.func,
+  onClose: PropTypes.func,
 };
 Collapsible.defaultProps = {
   children: undefined,
   className: 'collapsible',
+  defaultOpen: false,
+  open: undefined,
+  onToggle: undefined,
+  onOpen: undefined,
+  onClose: undefined,
 };
 
 
-function CollapsibleToggle({ tag, children, ...props }) {
-  const {
-    isOpen,
-    toggle,
-  } = useContext(CollapsibleContext);
+function CollapsibleTrigger({
+  tag, children, openOnly, closeOnly, ...props
+}) {
+  const { isOpen, toggle } = useContext(CollapsibleContext);
 
   const handleClick = useCallback((e) => {
     if (props.onClick) props.onClick(e);
+    if ((isOpen && openOnly) || (!isOpen && closeOnly)) return; // No-op
     toggle(e);
   });
 
   const handleKeyDown = useCallback((e) => {
     if (props.onKeyDown) props.onKeyDown(e);
+    if ((isOpen && openOnly) || (!isOpen && closeOnly)) return; // No-op
     if (e.key === 'Enter') toggle(e);
   });
 
@@ -94,17 +127,24 @@ function CollapsibleToggle({ tag, children, ...props }) {
   }, children);
 }
 
-CollapsibleToggle.propTypes = {
+CollapsibleTrigger.propTypes = {
   children: PropTypes.node,
   tag: PropTypes.string,
+  openOnly: PropTypes.bool,
+  closeOnly: PropTypes.bool,
+  onClick: PropTypes.func,
+  onKeyDown: PropTypes.func,
 };
-CollapsibleToggle.defaultProps = {
+CollapsibleTrigger.defaultProps = {
   children: undefined,
   tag: 'div',
+  openOnly: false,
+  closeOnly: false,
+  onClick: undefined,
+  onKeyDown: undefined,
 };
 
-Collapsible.Toggle = CollapsibleToggle;
-
+Collapsible.Trigger = CollapsibleTrigger;
 
 
 function CollapsibleBody({ children, tag, ...props }) {
@@ -114,9 +154,7 @@ function CollapsibleBody({ children, tag, ...props }) {
     React.createElement(tag, { key: 'body', ...props }, children) :
     <div key="empty" />;
 
-  return (
-    <TransitionReplace>{content}</TransitionReplace>
-  )
+  return <TransitionReplace>{content}</TransitionReplace>;
 }
 
 CollapsibleBody.propTypes = {
@@ -126,118 +164,37 @@ CollapsibleBody.propTypes = {
 CollapsibleBody.defaultProps = {
   children: undefined,
   tag: 'div',
-  className: 'collapsible-body',
 };
 
 Collapsible.Body = CollapsibleBody;
 
 
-
-
-function CollapsibleClose({ tag, children, ...props }) {
-  const { isOpen, close } = useContext(CollapsibleContext);
-
-  const handleClick = useCallback((e) => {
-    if (props.onClick) props.onClick(e);
-    close(e);
-  });
-
-  const handleKeyDown = useCallback((e) => {
-    if (props.onKeyDown) props.onKeyDown(e);
-    if (e.key === 'Enter') close(e);
-  });
-
-  return React.createElement(tag, {
-    ...props,
-    onClick: handleClick,
-    onKeyDown: handleKeyDown,
-    role: 'button',
-    tabIndex: 0,
-    'aria-expanded': isOpen,
-  }, children);
-}
-
-CollapsibleClose.propTypes = {
-  tag: PropTypes.string,
-};
-CollapsibleClose.defaultProps = {
-  tag: 'a',
-};
-
-Collapsible.Close = CollapsibleClose;
-
-
-
-
-function CollapsibleOpen({ tag, children, ...props }) {
-  const { isOpen, open } = useContext(CollapsibleContext);
-
-  const handleClick = useCallback((e) => {
-    if (props.onClick) props.onClick(e);
-    open(e);
-  });
-
-  const handleKeyDown = useCallback((e) => {
-    if (props.onKeyDown) props.onKeyDown(e);
-    if (e.key === 'Enter') open(e);
-  });
-
-  return React.createElement(tag, {
-    ...props,
-    onClick: handleClick,
-    onKeyDown: handleKeyDown,
-    role: 'button',
-    tabIndex: 0,
-    'aria-expanded': isOpen,
-  }, children);
-}
-
-CollapsibleOpen.propTypes = {
-  tag: PropTypes.string,
-};
-CollapsibleOpen.defaultProps = {
-  tag: 'a',
-};
-
-Collapsible.Open = CollapsibleOpen;
-
-
-
-
-function CollapsibleOpened({ children }) {
+function CollapsibleVisible({
+  children,
+  whenOpen: visibleWhenOpen,
+  whenClosed: visibleWhenClosed,
+}) {
   const { isOpen } = useContext(CollapsibleContext);
-  if (!isOpen) return null;
-  return <React.Fragment>{children}</React.Fragment>;
+
+  if ((visibleWhenOpen && isOpen) || (visibleWhenClosed && !isOpen)) {
+    return <React.Fragment>{children}</React.Fragment>;
+  }
+
+  return null;
 }
 
-CollapsibleOpened.propTypes = {
+CollapsibleVisible.propTypes = {
   children: PropTypes.node,
+  whenOpen: PropTypes.bool,
+  whenClosed: PropTypes.bool,
 };
-CollapsibleOpened.defaultProps = {
+CollapsibleVisible.defaultProps = {
   children: undefined,
+  whenOpen: false,
+  whenClosed: false,
 };
 
-Collapsible.Opened = CollapsibleOpened;
-
-
-
-
-function CollapsibleClosed({ children }) {
-  const { isOpen } = useContext(CollapsibleContext);
-  if (isOpen) return null;
-  return <React.Fragment>{children}</React.Fragment>;
-}
-
-CollapsibleClosed.propTypes = {
-  children: PropTypes.node,
-};
-CollapsibleClosed.defaultProps = {
-  children: undefined,
-};
-
-Collapsible.Closed = CollapsibleClosed;
-
-
+Collapsible.Visible = CollapsibleVisible;
 
 
 export default Collapsible;

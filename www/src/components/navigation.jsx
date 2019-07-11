@@ -24,7 +24,6 @@ const menu = [
   {
     section: 'COMPONENTS',
     items: [
-      { title: 'Accordion', url: '/components/accordion' },
       { title: 'Breadcrumbs', url: '/components/breadcrumbs' },
       { title: 'Button', url: '/components/button' },
       { title: 'Checkbox', url: '/components/checkbox' },

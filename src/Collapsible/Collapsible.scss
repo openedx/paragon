@@ -20,11 +20,20 @@ $collapsible-border: 1px solid silver;
   transition: border-color 100ms ease 150ms;
   cursor: pointer;
 
-  &.expanded {
+  & > * {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  &[aria-expanded] {
     border-radius: $card-inner-border-radius $card-inner-border-radius 0 0;
     border-color: $card-border-color;
     transition: none;
   }
+}
+.collapsible-card-header-icon {
+  float: right;
+  padding-left: $card-spacer-x;
 }
 
 .collapsible-card-body {
