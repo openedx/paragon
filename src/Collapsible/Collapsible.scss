@@ -1,11 +1,19 @@
 // Local Variables
 $collapsible-border: 1px solid silver;
 
-.collapsible {
+// .collapsible {
+// }
+.pgn_collapsible {
+  [role="button"] {
+    cursor: pointer;
+  }
+}
+
+.collapsible-card {
   @extend .card;
 }
 
-.collapsible-toggle {
+.collapsible-card-header {
   padding: $card-spacer-y $card-spacer-x;
   border-radius: $card-inner-border-radius;
   border-bottom: $card-border-width solid transparent;
@@ -19,8 +27,11 @@ $collapsible-border: 1px solid silver;
   }
 }
 
-.collapsible-body {
+.collapsible-card-body {
   @extend .card-body;
+  & > *:last-child {
+    margin-bottom: 0;
+  }
 }
 
 // .collapsible {

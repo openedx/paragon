@@ -1,16 +1,14 @@
 import React, { useState, useContext, useCallback } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import TransitionReplace from '../TransitionReplace';
 
+
 const CollapsibleContext = React.createContext();
 
-class Collapsible extends React.Component {
-  static idCounter = 0; // For creating unique ids
 
+class Collapsible extends React.Component {
   constructor(props) {
     super(props);
 
@@ -41,7 +39,7 @@ class Collapsible extends React.Component {
     return (
       <div
         {...props}
-        className={classNames(className, {
+        className={classNames('pgn_collapsible', className, {
           'is-expanded': this.state.isOpen
         })}
       >
@@ -70,54 +68,44 @@ Collapsible.defaultProps = {
 };
 
 
-function CollapsibleToggle(props) {
+function CollapsibleToggle({ tag, children, ...props }) {
   const {
     isOpen,
-    open,
-    close,
     toggle,
   } = useContext(CollapsibleContext);
 
   const handleClick = useCallback((e) => {
-    if (props.onClick) {
-      props.onClick(e);
-    }
+    if (props.onClick) props.onClick(e);
     toggle(e);
   });
-  const handleKeyDown = useCallback((e) => {
-    if (props.onKeyDown) {
-      props.onKeyDown(e);
-    }
 
-    if (e.key === 'Enter') {
-      toggle(e);
-    }
+  const handleKeyDown = useCallback((e) => {
+    if (props.onKeyDown) props.onKeyDown(e);
+    if (e.key === 'Enter') toggle(e);
   });
 
-  return (
-    <div
-      role="button"
-      tabIndex={0}
-      {...props}
-      className={classNames(props.className, {
-        expanded: isOpen,
-      })}
-      onClick={handleClick}
-      onKeyDown={handleKeyDown}>
-      {props.children}
-    </div>
-  )
+  return React.createElement(tag, {
+    ...props,
+    onClick: handleClick,
+    onKeyDown: handleKeyDown,
+    role: 'button',
+    tabIndex: 0,
+    'aria-expanded': isOpen,
+  }, children);
 }
 
 CollapsibleToggle.propTypes = {
-  className: PropTypes.string,
+  children: PropTypes.node,
+  tag: PropTypes.string,
 };
-
 CollapsibleToggle.defaultProps = {
-  className: 'collapsible-toggle',
+  children: undefined,
+  tag: 'div',
 };
 
 Collapsible.Toggle = CollapsibleToggle;
+
+
 
 function CollapsibleBody({ children, tag, ...props }) {
   const { isOpen } = useContext(CollapsibleContext);
@@ -144,30 +132,75 @@ CollapsibleBody.defaultProps = {
 Collapsible.Body = CollapsibleBody;
 
 
-function CollapsibleCloseButton(props) {
+
+
+function CollapsibleClose({ tag, children, ...props }) {
   const { isOpen, close } = useContext(CollapsibleContext);
 
-  return (
-    <div className="collapse-close-button" onClick={close}>
-      {props.children}
-    </div>
-  );
+  const handleClick = useCallback((e) => {
+    if (props.onClick) props.onClick(e);
+    close(e);
+  });
+
+  const handleKeyDown = useCallback((e) => {
+    if (props.onKeyDown) props.onKeyDown(e);
+    if (e.key === 'Enter') close(e);
+  });
+
+  return React.createElement(tag, {
+    ...props,
+    onClick: handleClick,
+    onKeyDown: handleKeyDown,
+    role: 'button',
+    tabIndex: 0,
+    'aria-expanded': isOpen,
+  }, children);
 }
 
-Collapsible.CloseButton = CollapsibleCloseButton;
+CollapsibleClose.propTypes = {
+  tag: PropTypes.string,
+};
+CollapsibleClose.defaultProps = {
+  tag: 'a',
+};
+
+Collapsible.Close = CollapsibleClose;
 
 
-function CollapsibleOpenButton(props) {
+
+
+function CollapsibleOpen({ tag, children, ...props }) {
   const { isOpen, open } = useContext(CollapsibleContext);
 
-  return (
-    <div className="collapse-open-button" onClick={open}>
-      {props.children}
-    </div>
-  );
+  const handleClick = useCallback((e) => {
+    if (props.onClick) props.onClick(e);
+    open(e);
+  });
+
+  const handleKeyDown = useCallback((e) => {
+    if (props.onKeyDown) props.onKeyDown(e);
+    if (e.key === 'Enter') open(e);
+  });
+
+  return React.createElement(tag, {
+    ...props,
+    onClick: handleClick,
+    onKeyDown: handleKeyDown,
+    role: 'button',
+    tabIndex: 0,
+    'aria-expanded': isOpen,
+  }, children);
 }
 
-Collapsible.OpenButton = CollapsibleOpenButton;
+CollapsibleOpen.propTypes = {
+  tag: PropTypes.string,
+};
+CollapsibleOpen.defaultProps = {
+  tag: 'a',
+};
+
+Collapsible.Open = CollapsibleOpen;
+
 
 
 
@@ -187,6 +220,8 @@ CollapsibleOpened.defaultProps = {
 Collapsible.Opened = CollapsibleOpened;
 
 
+
+
 function CollapsibleClosed({ children }) {
   const { isOpen } = useContext(CollapsibleContext);
   if (isOpen) return null;
@@ -201,6 +236,8 @@ CollapsibleClosed.defaultProps = {
 };
 
 Collapsible.Closed = CollapsibleClosed;
+
+
 
 
 export default Collapsible;
