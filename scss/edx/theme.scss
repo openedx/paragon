@@ -3,19 +3,3 @@
 @import "variables";
 @import "../core/core";
 @import "overrides";
-
-
-.collapsible-card {
-  @extend .shadow;
-}
-.collapsible-card-header {
-  border-bottom: none;
-
-  &:hover,
-  &.expanded {
-    background-color: theme-color('primary', 'background');
-  }
-}
-.collapsible-card-body {
-  padding-top: $card-spacer-y / 2;
-}
