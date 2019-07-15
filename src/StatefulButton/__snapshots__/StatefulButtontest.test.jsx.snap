@@ -59,7 +59,7 @@ exports[`StatefulButton renders basic usage 1`] = `
         <span
           aria-hidden={true}
           className="icon fa fa-check-circle"
-          id="Icon1"
+          id="Icon2"
         />
       </span>
       Saved
@@ -88,7 +88,7 @@ Array [
         <span
           aria-hidden={true}
           className="fa fa-download"
-          id="Icon1"
+          id="Icon3"
         />
       </span>
       Download
@@ -112,7 +112,7 @@ Array [
         <span
           aria-hidden={true}
           className="fa fa-spinner fa-spin"
-          id="Icon1"
+          id="Icon4"
         />
       </span>
       Downloading
@@ -136,7 +136,7 @@ Array [
         <span
           aria-hidden={true}
           className="fa fa-check"
-          id="Icon1"
+          id="Icon5"
         />
       </span>
       Downloaded
@@ -165,7 +165,7 @@ Array [
         <span
           aria-hidden={true}
           className="fa fa-save"
-          id="Icon1"
+          id="Icon6"
         />
       </span>
       Save (no changes)
@@ -189,7 +189,7 @@ Array [
         <span
           aria-hidden={true}
           className="fa fa-save"
-          id="Icon1"
+          id="Icon7"
         />
       </span>
       Save Changes

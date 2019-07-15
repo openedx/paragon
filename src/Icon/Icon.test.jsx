@@ -33,6 +33,18 @@ describe('<Icon />', () => {
       expect(iconSpan.hasClass(classNames[0])).toEqual(true);
       expect(iconSpan.hasClass(classNames[1])).toEqual(true);
     });
+    it('generates unique ids when no id is provided', () => {
+      wrapper = mount(<><Icon className={classNames} /><Icon className={classNames} /></>);
+      const iconSpans = wrapper.find('span');
+      const iconSpan1 = iconSpans.at(0);
+      const iconSpan2 = iconSpans.at(1);
+      const id1 = iconSpan1.prop('id');
+      const id2 = iconSpan2.prop('id');
+
+      expect(id1).toContain('Icon');
+      expect(id2).toContain('Icon');
+      expect(id1).not.toEqual(id2);
+    });
     it('handles screenReaderText correctly', () => {
       wrapper = mount(<Icon id={testId} className={classNames} screenReaderText={srTest} />);
       const iconSpans = wrapper.find('span');

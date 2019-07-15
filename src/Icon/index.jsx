@@ -31,7 +31,7 @@ Icon.propTypes = {
 };
 
 Icon.defaultProps = {
-  id: newId('Icon'),
+  id: undefined,
   hidden: true,
   screenReaderText: undefined,
 };
