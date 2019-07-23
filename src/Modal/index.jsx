@@ -198,7 +198,7 @@ class Modal extends React.Component {
             },
           )}
           role="presentation"
-          onClick={this.close}
+          onMouseDown={this.close}
         >
           <div
             className={classNames({
