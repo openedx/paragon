@@ -48,8 +48,11 @@ Usage for Open edX and others:
 Usage on edx.org:
 
 ```scss
-@import "~@edx/paragon/scss/theme/edx.scss';
+@import "~@edx/paragon/scss/edx/theme.scss';
+@import '~@edx/paragon/scss/edx/fonts.scss'; // Roboto
 ```
+
+Note that including the fonts (Roboto) will affect performance.  In some micro-frontends you may choose not to load the custom font - this is a decision we've made for edx/frontend-app-payment, for instance, to keep it highly performant.
 
 #### CSS Foundation
 
