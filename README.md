@@ -31,14 +31,17 @@ Usage for Open edX and others:
 
 ```
 // ... Any custom SCSS variables should be defined here
-@import "~@edx/paragon/scss/core/core.scss';
+@import '~@edx/paragon/scss/core/core.scss';
 ```
 
 Usage on edx.org:
 
 ```
-@import "~@edx/paragon/scss/theme/edx.scss';
+@import '~@edx/paragon/scss/edx/theme.scss';
+@import '~@edx/paragon/scss/edx/fonts.scss'; // Roboto
 ```
+
+Note that including the fonts (Roboto) will affect performance.  In some micro-frontends you may choose not to load the custom font - this is a decision we've made for edx/frontend-app-payment, for instance, to keep it highly performant.
 
 #### CSS Foundation
 
@@ -173,6 +176,6 @@ BREAKING CHANGE: The graphiteWidth option has been removed. The default graphite
 
 ## Treeshaking
 
-Paragon is distributed on npm as ES6 modules.  This means that webpack can use treeshaking on any Paragon components that a consuming app is not using, resulting in greatly reduced bundle sizes.  
+Paragon is distributed on npm as ES6 modules.  This means that webpack can use treeshaking on any Paragon components that a consuming app is not using, resulting in greatly reduced bundle sizes.
 
 To get treeshaking to work, your app may require some updates - most notably, Babel 7.  See this PR for an example of the changes necessary to update an app to take advantage of treeshaking with Paragon: https://github.com/edx/frontend-app-payment/pull/48
