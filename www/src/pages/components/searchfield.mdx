@@ -1,28 +1,34 @@
 ---
-title: "SearchField"
-type: "component"
-status: "Needs Work"
-designStatus: "To Do"
-devStatus: "To Do"
+title: 'SearchField'
+type: 'component'
+status: 'Needs Work'
+designStatus: 'To Do'
+devStatus: 'To Do'
 notes: |
-    Needs more flexibility. Too opinionated in design/structure.
+  Needs more flexibility. Too opinionated in design/structure.
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
+import get from 'lodash/get';
 import { SearchField } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
+import SingleComponentStatus from '../../components/singleComponentStatus';
 
 # SearchField
 
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
 
 ##### basic usage
 
 ```jsx live=true
-<SearchField
-  onSubmit={() => console.log('search-submitted')}
+<SearchField 
+  onSubmit={() => console.log('search-submitted')} 
 />
 ```
-
 
 ##### with placeholder
 
@@ -33,7 +39,6 @@ import PropsTable from '../../components/PropsTable';
 />
 ```
 
-
 ##### with value
 
 ```jsx live=true
@@ -43,7 +48,6 @@ import PropsTable from '../../components/PropsTable';
   value="foobar"
 />
 ```
-
 
 ##### with callbacks
 
@@ -56,7 +60,6 @@ import PropsTable from '../../components/PropsTable';
   onClear={() => console.log('search-cleared')}
 />
 ```
-
 
 ##### with custom label and screenreader text
 
@@ -71,13 +74,16 @@ import PropsTable from '../../components/PropsTable';
 />
 ```
 
-
 ##### Props
 
 <StaticQuery
-  query={graphql`query {
-    componentMetadata(displayName: { eq: "SearchField" }) { ...ComponentDocGenData }
-  }`}
+  query={graphql`
+    query {
+      componentMetadata(displayName: { eq: "SearchField" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
   render={({ componentMetadata }) => {
     if (componentMetadata == null) return null;
     return <PropsTable propMetaData={componentMetadata.props} />;

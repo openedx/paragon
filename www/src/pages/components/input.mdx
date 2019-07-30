@@ -1,29 +1,35 @@
 ---
-title: "Input"
-type: "component"
-status: "Stable"
-designStatus: "Done"
-devStatus: "Done"
-notes: ""
+title: 'Input'
+type: 'component'
+status: 'Stable'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: ''
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
-import { Input, Button } from '~paragon-react';
+import get from 'lodash/get';
+import { Input } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
+import SingleComponentStatus from '../../components/singleComponentStatus';
 
 # Input
+
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
 
 A component for all user input. It is responsible for rendering select, textarea, and inputs of any type with the appropriate bootstrap class name.
 
 Extra props supplied to Input will be passed through to the html node.
-
 
 ##### Text
 
 ```jsx live=true
 <Input type="text" defaultValue="Some text input" />
 ```
-
 
 ##### Select
 
@@ -49,7 +55,6 @@ Extra props supplied to Input will be passed through to the html node.
 />
 ```
 
-
 ##### Textarea
 
 ```jsx live=true
@@ -59,13 +64,11 @@ Extra props supplied to Input will be passed through to the html node.
 />
 ```
 
-
 ##### Date
 
 ```jsx live=true
 <Input type="date" />
 ```
-
 
 ##### File
 
@@ -73,20 +76,22 @@ Extra props supplied to Input will be passed through to the html node.
 <Input type="file" />
 ```
 
-
 ##### Range
 
 ```jsx live=true
 <Input type="range" />
 ```
 
-
 ##### Props
 
 <StaticQuery
-  query={graphql`query {
-    componentMetadata(displayName: { eq: "Input" }) { ...ComponentDocGenData }
-  }`}
+  query={graphql`
+    query {
+      componentMetadata(displayName: { eq: "Input" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
   render={({ componentMetadata }) => {
     if (componentMetadata == null) return null;
     return <PropsTable propMetaData={componentMetadata.props} />;

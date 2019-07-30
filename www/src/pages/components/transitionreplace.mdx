@@ -1,17 +1,25 @@
 ---
-title: "TransitionReplace"
-type: "component"
-status: "Stable"
-designStatus: "Done"
-devStatus: "Done"
-notes: ""
+title: 'TransitionReplace'
+type: 'component'
+status: 'Stable'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: ''
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
+import get from 'lodash/get';
 import { TransitionReplace } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
+import SingleComponentStatus from '../../components/singleComponentStatus';
 
 # TransitionReplace
+
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
 
 Manages a transition when replacing content. By default this component will transition the height and do a cross-fade. The transition can be customized.
 
@@ -21,7 +29,6 @@ TransitionReplace expects only one child at any time. Swap content inside the co
 
 ```jsx live=true
 () => {
-
   const [isEditing, setIsEditing] = useState(false);
 
   return (
@@ -32,7 +39,7 @@ TransitionReplace expects only one child at any time. Swap content inside the co
             <label htmlFor="name">First Name</label>
             <Input type="text" value="some name" />
           </form>
-        ): (
+        ) : (
           <div key="other">
             <h4 className="mt-0">First Name</h4>
             <p>Some name</p>
@@ -40,10 +47,12 @@ TransitionReplace expects only one child at any time. Swap content inside the co
           </div>
         )}
       </TransitionReplace>
-      <Button className="btn-primary" onClick={() => setIsEditing(!isEditing)}>Toggle</Button>
+      <Button className="btn-primary" onClick={() => setIsEditing(!isEditing)}>
+        Toggle
+      </Button>
     </div>
   );
-}
+};
 ```
 
 **IMPORTANT NOTE: You must provide the `key` prop for all children**, even when only rendering a single item. This is how React will determine that a child is new rather than just updated.
@@ -72,44 +81,38 @@ TransitionReplace uses [CSSTransition from the ReactTransitionGroup package](htt
 
 If you change the timing in CSS you should also match it using the `enterDuration` and `exitDuration` props.
 
-
 #### Note:
 
 Children are not required. When this component is empty, the a child inserted into it will not transition the height (from zero). No "replacement" transition will occur and new content will pop in like a normal insert. This behaviour makes it easier to work with asyncronously loaded content (for example: during the first load you don't have to do any special handling).
-
 
 ##### Example
 
 ```jsx live=true
 function DemoTransitionReplace() {
   const contentOptions = [
-    (
-      <blockquote className="h2 m-0" key={0}>
-        <p>You know the golden rule, don’t you boy? Those who have the gold make the rules.</p>
-        <footer>— Crazy hunch-backed old guy in Aladdin</footer>
-      </blockquote>
-    ),
-    (
-      <blockquote className="m-0" key={1}>
-        <p>People say nothing is impossible, but I do nothing every day.</p>
-        <footer>— A. A. Milne</footer>
-      </blockquote>
-    ),
-    (
-      <blockquote className="h2 m-0" key={2}>
-        <p>
-          I won’t go into a big spiel about reincarnation, but the first time I was in the
-          Gucci store in Chicago was the closest I’ve ever felt to home.
-        </p>
-        <footer>— Kanye</footer>
-      </blockquote>
-    ),
-    (
-      <blockquote className="m-0" key={3}>
-        <p>The first time I see a jogger smiling, I’ll consider it.</p>
-        <footer>— Joan Rivers</footer>
-      </blockquote>
-    ),
+    <blockquote className="h2 m-0" key={0}>
+      <p>
+        You know the golden rule, don’t you boy? Those who have the gold make
+        the rules.
+      </p>
+      <footer>— Crazy hunch-backed old guy in Aladdin</footer>
+    </blockquote>,
+    <blockquote className="m-0" key={1}>
+      <p>People say nothing is impossible, but I do nothing every day.</p>
+      <footer>— A. A. Milne</footer>
+    </blockquote>,
+    <blockquote className="h2 m-0" key={2}>
+      <p>
+        I won’t go into a big spiel about reincarnation, but the first time I
+        was in the Gucci store in Chicago was the closest I’ve ever felt to
+        home.
+      </p>
+      <footer>— Kanye</footer>
+    </blockquote>,
+    <blockquote className="m-0" key={3}>
+      <p>The first time I see a jogger smiling, I’ll consider it.</p>
+      <footer>— Joan Rivers</footer>
+    </blockquote>,
   ];
 
   const [currentContentIndex, setCurrentContentIndex] = useState(0);
@@ -119,7 +122,9 @@ function DemoTransitionReplace() {
 
   return (
     <div>
-      <button className="btn btn-primary mb-2" onClick={changeContent}>Next Quote</button>
+      <button className="btn btn-primary mb-2" onClick={changeContent}>
+        Next Quote
+      </button>
       <div
         style={{
           background: '#eee',
@@ -139,9 +144,13 @@ function DemoTransitionReplace() {
 ##### Props
 
 <StaticQuery
-  query={graphql`query {
-    componentMetadata(displayName: { eq: "TransitionReplace" }) { ...ComponentDocGenData }
-  }`}
+  query={graphql`
+    query {
+      componentMetadata(displayName: { eq: "TransitionReplace" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
   render={({ componentMetadata }) => {
     if (componentMetadata == null) return null;
     return <PropsTable propMetaData={componentMetadata.props} />;

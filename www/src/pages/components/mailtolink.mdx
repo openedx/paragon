@@ -1,57 +1,54 @@
 ---
-title: "MailtoLink"
-type: "component"
-status: "Needs Work"
-designStatus: "Done"
-devStatus: "To Do"
+title: 'MailtoLink'
+type: 'component'
+status: 'Needs Work'
+designStatus: 'Done'
+devStatus: 'To Do'
 notes: |
-    Remove unnecessary props. 
-    Remove baked in English strings.
-    Use React.forwardRef for ref forwarding
+  Remove unnecessary props. 
+  Remove baked in English strings.
+  Use React.forwardRef for ref forwarding
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
+import get from 'lodash/get';
 import { MailtoLink } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
+import SingleComponentStatus from '../../components/singleComponentStatus';
 
 # MailtoLink
 
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
 
 ##### minimal usage
 
 ```jsx live=true
-<MailtoLink
-  to="edx@example.com"
->
-  edx@example.com
-</MailtoLink>
+<MailtoLink to="edx@example.com">edx@example.com</MailtoLink>
 ```
-
 
 ##### with blank target
 
 ```jsx live=true
-<MailtoLink
-  to="edx@example.com"
-  target="_blank"
->
+<MailtoLink to="edx@example.com" target="_blank">
   edx@example.com
 </MailtoLink>
 ```
 
-
 ##### with onClick
 
 ```jsx live=true
-<MailtoLink
-  to="edx@example.com"
-  target="_blank"
+<MailtoLink 
+  to="edx@example.com" 
+  target="_blank" 
   onClick={onClick}
 >
   edx@example.com
 </MailtoLink>
 ```
-
 
 ##### with subject and body
 
@@ -65,18 +62,16 @@ import PropsTable from '../../components/PropsTable';
 </MailtoLink>
 ```
 
-
 ##### with cc and bcc
 
 ```jsx live=true
-<MailtoLink
-  cc="edx@example.com"
+<MailtoLink 
+  cc="edx@example.com" 
   bcc="edx@example.com"
 >
   Moar mail, this time with cc and bcc
 </MailtoLink>
 ```
-
 
 ##### with multiple cc and bcc
 
@@ -89,13 +84,16 @@ import PropsTable from '../../components/PropsTable';
 </MailtoLink>
 ```
 
-
 ##### Props
 
 <StaticQuery
-  query={graphql`query {
-    componentMetadata(displayName: { eq: "MailtoLink" }) { ...ComponentDocGenData }
-  }`}
+  query={graphql`
+    query {
+      componentMetadata(displayName: { eq: "MailtoLink" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
   render={({ componentMetadata }) => {
     if (componentMetadata == null) return null;
     return <PropsTable propMetaData={componentMetadata.props} />;

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown';
 
 
 const renderType = ({ name, value }) => { // eslint-disable-line
@@ -64,7 +65,7 @@ const PropsTable = (props) => {
             <tr key={key}>
               <td>
                 <span className="d-block">{name}</span>
-                {description ? <p className="text-muted mb-0">{description.text}</p> : null}
+                {description ? <ReactMarkdown className="text-muted mb-0">{description.text}</ReactMarkdown> : null}
               </td>
               <td>{type ? renderType(type) : ''}</td>
               <td>{required ? 'required' : 'optional'}</td>
