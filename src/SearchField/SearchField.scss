@@ -68,20 +68,9 @@ $search-field-border-radius: 30px;
     }
 
     .search-btn {
-        border-top: 0;
-        border-right: 0;
-        border-bottom: 0;
-        transition: border-color 0.15s ease-in-out;
-        padding: 10px 15px 10px 12px;
-        color: theme-color("gray", "text");
-        background: none;
-        margin-left: 0;
-
-        &:not(:disabled):hover,
-        &:not(:disabled):focus {
-            background: #F2F8FB;
-            color: theme-color("primary", "text");
-        }
+       border-style: none;
+       background: none;
+       padding-right: 1.0rem;
     }
 
     .clear-btn {
