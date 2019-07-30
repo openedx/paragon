@@ -5819,12 +5819,9 @@ exports[`Storyshots User Input|SearchField basic usage 1`] = `
         className="input-group-append"
       >
         <button
-          className="btn search-btn"
+          className="search-btn"
           disabled={true}
-          onBlur={[Function]}
           onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
         >
           <span
             aria-hidden={true}
@@ -5893,12 +5890,9 @@ exports[`Storyshots User Input|SearchField with callbacks 1`] = `
         className="input-group-append"
       >
         <button
-          className="btn search-btn"
+          className="search-btn"
           disabled={true}
-          onBlur={[Function]}
           onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
         >
           <span
             aria-hidden={true}
@@ -5967,12 +5961,9 @@ exports[`Storyshots User Input|SearchField with custom label and screenreader te
         className="input-group-append"
       >
         <button
-          className="btn search-btn"
+          className="search-btn"
           disabled={true}
-          onBlur={[Function]}
           onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
         >
           <span
             aria-hidden={true}
@@ -6041,12 +6032,9 @@ exports[`Storyshots User Input|SearchField with placeholder 1`] = `
         className="input-group-append"
       >
         <button
-          className="btn search-btn"
+          className="search-btn"
           disabled={true}
-          onBlur={[Function]}
           onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
         >
           <span
             aria-hidden={true}
@@ -6115,11 +6103,8 @@ exports[`Storyshots User Input|SearchField with value 1`] = `
         className="input-group-append"
       >
         <button
-          className="btn clear-btn ml-1"
-          onBlur={[Function]}
+          className="clear-btn ml-1"
           onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
         >
           <small>
             <span
@@ -6135,12 +6120,9 @@ exports[`Storyshots User Input|SearchField with value 1`] = `
           </small>
         </button>
         <button
-          className="btn search-btn border-left"
+          className="search-btn"
           disabled={false}
-          onBlur={[Function]}
           onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
         >
           <span
             aria-hidden={true}
