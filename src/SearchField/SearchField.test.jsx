@@ -88,7 +88,7 @@ describe('<SearchField />', () => {
     };
     const wrapper = mount(<SearchField {...props} />);
     wrapper.find('input').simulate('change', { target: { value: 'foobar' } });
-    const searchActionButtons = wrapper.find('Button');
+    const searchActionButtons = wrapper.find('button');
     expect(searchActionButtons.first().find('Icon').prop('screenReaderText')).toEqual(screenReaderText.clearButton);
     expect(searchActionButtons.last().find('Icon').prop('screenReaderText')).toEqual(screenReaderText.searchButton);
   });

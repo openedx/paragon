@@ -5,8 +5,6 @@ import classNames from 'classnames';
 import newId from '../utils/newId';
 import Icon from '../Icon';
 import InputText from '../InputText';
-import Button from '../Button';
-
 
 class SearchField extends React.Component {
   constructor(props) {
@@ -19,7 +17,7 @@ class SearchField extends React.Component {
     };
 
     this.textInput = null;
-    this.searchButton = null;
+    this.searchButton = React.createRef();
 
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
@@ -38,29 +36,22 @@ class SearchField extends React.Component {
   }
 
   getSearchActionButtons() {
-    const { isFocused } = this.state;
     const { screenReaderText } = this.props;
     const inputTextHasValue = this.inputTextHasValue();
     const buttons = [
-      <Button
-        className={classNames(
-          'search-btn',
-          {
-            'border-left': !isFocused && this.shouldRenderClearButton(),
-            'btn-outline-primary': isFocused && this.shouldRenderClearButton(),
-          },
-        )}
+      <button
+        className="search-btn"
         disabled={!inputTextHasValue}
-        inputRef={(input) => { this.searchButton = input; }}
+        ref={this.searchButton}
         onClick={this.handleSubmit}
       >
         <Icon className="fa fa-search" screenReaderText={screenReaderText.searchButton} />
-      </Button>,
+      </button>,
     ];
 
     if (this.shouldRenderClearButton()) {
       buttons.unshift((
-        <Button
+        <button
           className="clear-btn ml-1"
           onClick={this.handleClear}
         >
@@ -71,7 +62,7 @@ class SearchField extends React.Component {
               screenReaderText={screenReaderText.clearButton}
             />
           </small>
-        </Button>
+        </button>
       ));
     }
 
@@ -118,7 +109,7 @@ class SearchField extends React.Component {
 
   handleSubmit() {
     const { value } = this.state;
-    this.searchButton.focus();
+    this.searchButton.current.focus();
     this.props.onSubmit(value);
     this.setState({ hasSubmitted: true });
   }
