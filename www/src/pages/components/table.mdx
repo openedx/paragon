@@ -1,19 +1,26 @@
 ---
-title: "Table"
-type: "component"
-status: "Reassessing"
-designStatus: "TBD"
-devStatus: "TBD"
+title: 'Table'
+type: 'component'
+status: 'Reassessing'
+designStatus: 'TBD'
+devStatus: 'TBD'
 notes: |
-    Potentially does too much work. Consider if should be multiple components: Table, TableHeader, SortableTable, etc.
+  Potentially does too much work. Consider if should be multiple components: Table, TableHeader, SortableTable, etc.
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
+import get from 'lodash/get';
 import { Table } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
+import SingleComponentStatus from '../../components/singleComponentStatus';
 
 # Table
 
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
 
 ##### unstyled
 
@@ -48,7 +55,8 @@ import PropsTable from '../../components/PropsTable';
     {
       name: 'Long Cat',
       color: 'russian white',
-      famous_for: 'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+      famous_for:
+        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
     },
   ]}
   columns={[
@@ -78,7 +86,6 @@ import PropsTable from '../../components/PropsTable';
   caption="Famous Internet Cats"
 />
 ```
-
 
 ##### table-striped
 
@@ -113,7 +120,8 @@ import PropsTable from '../../components/PropsTable';
     {
       name: 'Long Cat',
       color: 'russian white',
-      famous_for: 'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+      famous_for:
+        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
     },
   ]}
   columns={[
@@ -144,7 +152,6 @@ import PropsTable from '../../components/PropsTable';
   className="table-striped"
 />
 ```
-
 
 ##### default heading
 
@@ -179,7 +186,8 @@ import PropsTable from '../../components/PropsTable';
     {
       name: 'Long Cat',
       color: 'russian white',
-      famous_for: 'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+      famous_for:
+        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
     },
   ]}
   columns={[
@@ -210,7 +218,6 @@ import PropsTable from '../../components/PropsTable';
   headingClassName={['thead-default']}
 />
 ```
-
 
 ##### responsive
 
@@ -245,7 +252,8 @@ import PropsTable from '../../components/PropsTable';
     {
       name: 'Long Cat',
       color: 'russian white',
-      famous_for: 'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+      famous_for:
+        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
     },
   ]}
   columns={[
@@ -276,7 +284,6 @@ import PropsTable from '../../components/PropsTable';
   className="table-responsive"
 />
 ```
-
 
 ##### sortable
 
@@ -311,7 +318,8 @@ import PropsTable from '../../components/PropsTable';
     {
       name: 'Long Cat',
       color: 'russian white',
-      famous_for: 'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+      famous_for:
+        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
     },
   ];
 
@@ -339,7 +347,7 @@ import PropsTable from '../../components/PropsTable';
       width: 'col-3',
     },
   ];
-  
+
   const sort = function sort(firstElement, secondElement, key, direction) {
     const directionIsAsc = direction === 'asc';
 
@@ -353,159 +361,170 @@ import PropsTable from '../../components/PropsTable';
 
   const catDataSortable = catData.slice();
 
-  return (<Table
-    data={catDataSortable.sort((firstElement, secondElement) => sort(firstElement, secondElement, catColumns[0].key, 'desc'))}
-    columns={catColumns.map(column => ({
-      ...column,
-      onSort(direction) {
-        catDataSortable.sort((firstElement, secondElement) =>
-          sort(firstElement, secondElement, column.key, direction));
-      },
-    }))}
-    caption="Famous Internet Cats"
-    tableSortable
-    defaultSortedColumn={catColumns[0].key}
-    defaultSortDirection="desc"
-  />);
-}
+  return (
+    <Table
+      data={catDataSortable.sort((firstElement, secondElement) =>
+        sort(firstElement, secondElement, catColumns[0].key, 'desc'),
+      )}
+      columns={catColumns.map(column => ({
+        ...column,
+        onSort(direction) {
+          catDataSortable.sort((firstElement, secondElement) =>
+            sort(firstElement, secondElement, column.key, direction),
+          );
+        },
+      }))}
+      caption="Famous Internet Cats"
+      tableSortable
+      defaultSortedColumn={catColumns[0].key}
+      defaultSortDirection="desc"
+    />
+  );
+};
 ```
 
 ##### fixed
 
 ```jsx live=true
-  <Table
-    data={[
-      {
-        name: 'Lil Bub',
-        color: 'brown tabby',
-        famous_for: 'weird tongue',
-      },
-      {
-        name: 'Grumpy Cat',
-        color: 'siamese',
-        famous_for: 'serving moods',
-      },
-      {
-        name: 'Smoothie',
-        color: 'orange tabby',
-        famous_for: 'modeling',
-      },
-      {
-        name: 'Maru',
-        color: 'brown tabby',
-        famous_for: 'being a lovable oaf',
-      },
-      {
-        name: 'Keyboard Cat',
-        color: 'orange tabby',
-        famous_for: 'piano virtuoso',
-      },
-      {
-        name: 'Long Cat',
-        color: 'russian white',
-        famous_for: 'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
-      },
-    ]}
-    columns={[
-      {
-        label: 'Name',
-        key: 'name',
-        columnSortable: true,
-        onSort: () => {},
-        width: 'col-3',
-      },
-      {
-        label: 'Famous For',
-        key: 'famous_for',
-        columnSortable: false,
-        onSort: () => {},
-        width: 'col-6',
-      },
-      {
-        label: 'Coat Color',
-        key: 'color',
-        columnSortable: false,
-        hideHeader: true,
-        onSort: () => {},
-        width: 'col-3',
-      },
-    ]}
-    caption="Famous Internet Cats"
-    hasFixedColumnWidths
-  />
+<Table
+  data={[
+    {
+      name: 'Lil Bub',
+      color: 'brown tabby',
+      famous_for: 'weird tongue',
+    },
+    {
+      name: 'Grumpy Cat',
+      color: 'siamese',
+      famous_for: 'serving moods',
+    },
+    {
+      name: 'Smoothie',
+      color: 'orange tabby',
+      famous_for: 'modeling',
+    },
+    {
+      name: 'Maru',
+      color: 'brown tabby',
+      famous_for: 'being a lovable oaf',
+    },
+    {
+      name: 'Keyboard Cat',
+      color: 'orange tabby',
+      famous_for: 'piano virtuoso',
+    },
+    {
+      name: 'Long Cat',
+      color: 'russian white',
+      famous_for:
+        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+    },
+  ]}
+  columns={[
+    {
+      label: 'Name',
+      key: 'name',
+      columnSortable: true,
+      onSort: () => {},
+      width: 'col-3',
+    },
+    {
+      label: 'Famous For',
+      key: 'famous_for',
+      columnSortable: false,
+      onSort: () => {},
+      width: 'col-6',
+    },
+    {
+      label: 'Coat Color',
+      key: 'color',
+      columnSortable: false,
+      hideHeader: true,
+      onSort: () => {},
+      width: 'col-3',
+    },
+  ]}
+  caption="Famous Internet Cats"
+  hasFixedColumnWidths
+/>
 ```
-
 
 ##### row header
 
 ```jsx live=true
-  <Table
-    data={[
-      {
-        name: 'Lil Bub',
-        color: 'brown tabby',
-        famous_for: 'weird tongue',
-      },
-      {
-        name: 'Grumpy Cat',
-        color: 'siamese',
-        famous_for: 'serving moods',
-      },
-      {
-        name: 'Smoothie',
-        color: 'orange tabby',
-        famous_for: 'modeling',
-      },
-      {
-        name: 'Maru',
-        color: 'brown tabby',
-        famous_for: 'being a lovable oaf',
-      },
-      {
-        name: 'Keyboard Cat',
-        color: 'orange tabby',
-        famous_for: 'piano virtuoso',
-      },
-      {
-        name: 'Long Cat',
-        color: 'russian white',
-        famous_for: 'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
-      },
-    ]}
-    columns={[
-      {
-        label: 'Name',
-        key: 'name',
-        columnSortable: true,
-        onSort: () => {},
-        width: 'col-3',
-      },
-      {
-        label: 'Famous For',
-        key: 'famous_for',
-        columnSortable: false,
-        onSort: () => {},
-        width: 'col-6',
-      },
-      {
-        label: 'Coat Color',
-        key: 'color',
-        columnSortable: false,
-        hideHeader: true,
-        onSort: () => {},
-        width: 'col-3',
-      },
-    ]}
-    caption="Famous Internet Cats"
-    rowHeaderColumnKey="name"
-  />
+<Table
+  data={[
+    {
+      name: 'Lil Bub',
+      color: 'brown tabby',
+      famous_for: 'weird tongue',
+    },
+    {
+      name: 'Grumpy Cat',
+      color: 'siamese',
+      famous_for: 'serving moods',
+    },
+    {
+      name: 'Smoothie',
+      color: 'orange tabby',
+      famous_for: 'modeling',
+    },
+    {
+      name: 'Maru',
+      color: 'brown tabby',
+      famous_for: 'being a lovable oaf',
+    },
+    {
+      name: 'Keyboard Cat',
+      color: 'orange tabby',
+      famous_for: 'piano virtuoso',
+    },
+    {
+      name: 'Long Cat',
+      color: 'russian white',
+      famous_for:
+        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+    },
+  ]}
+  columns={[
+    {
+      label: 'Name',
+      key: 'name',
+      columnSortable: true,
+      onSort: () => {},
+      width: 'col-3',
+    },
+    {
+      label: 'Famous For',
+      key: 'famous_for',
+      columnSortable: false,
+      onSort: () => {},
+      width: 'col-6',
+    },
+    {
+      label: 'Coat Color',
+      key: 'color',
+      columnSortable: false,
+      hideHeader: true,
+      onSort: () => {},
+      width: 'col-3',
+    },
+  ]}
+  caption="Famous Internet Cats"
+  rowHeaderColumnKey="name"
+/>
 ```
+
 ##### Props
 
 <StaticQuery
-  query={graphql`query {
-    componentMetadata(displayName: { eq: "Table" }) { ...ComponentDocGenData }
-  }`}
+  query={graphql`
+    query {
+      componentMetadata(displayName: { eq: "Table" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
   render={({ componentMetadata }) => {
     if (componentMetadata == null) return null;
     return <PropsTable propMetaData={componentMetadata.props} />;

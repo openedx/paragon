@@ -7,9 +7,38 @@ import Button from '../Button';
 
 const propTypes = {
   className: PropTypes.string,
+  /**
+   * Each state has:
+
+- A label (required)
+- An icon
+- an option to be disabled
+
+Control the state with the `state` prop. Example usage:
+
+```jsx
+<StatefulButton
+  state="pending"
+  labels={{
+    default: 'Download',
+    pending: 'Downloading',
+    complete: 'Downloaded',
+  }}
+  icons={{
+    default: <Icon className="fa fa-download" />,
+    pending: <Icon className="fa fa-spinner fa-spin" />,
+    complete: <Icon className="fa fa-check" />,
+  }}
+  disabledStates=['pending']
+  className='btn-primary mr-2'
+/>
+``` */
   state: PropTypes.string,
+  /** Required. Each state has a `label`. */
   labels: PropTypes.objectOf(PropTypes.node).isRequired,
+  /** Required. Each state has an `icon`. */
   icons: PropTypes.objectOf(PropTypes.node),
+  /** Required. Each state has a `disabledState` */
   disabledStates: PropTypes.arrayOf(PropTypes.string),
   onClick: PropTypes.func,
 };

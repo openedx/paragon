@@ -1,57 +1,60 @@
 ---
-title: "StatusAlert"
-type: "component"
-status: "Needs Work"
-designStatus: "Done"
-devStatus: "In Progress"
+title: 'StatusAlert'
+type: 'component'
+status: 'Needs Work'
+designStatus: 'Done'
+devStatus: 'In Progress'
 notes: |
-    Used deprecated lifecycle method
-    Should be controlled or uncontrolled – not both.
-    Props need renaming. Should use children over prop.
+  Used deprecated lifecycle method
+  Should be controlled or uncontrolled – not both.
+  Props need renaming. Should use children over prop.
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
+import get from 'lodash/get';
 import { StatusAlert } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
+import SingleComponentStatus from '../../components/singleComponentStatus';
 
 # StatusAlert
 
-
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
 
 ##### basic usage
 
 ```jsx live=true
-<StatusAlert
-  dialog="You have a status alert!"
-  onClose={() => {}}
-  open
+<StatusAlert 
+  dialog="You have a status alert!" 
+  onClose={() => {}} 
+  open 
 />
 ```
-
 
 ##### success alert
 
 ```jsx live=true
-<StatusAlert
-  alertType="success"
-  dialog="Success!"
-  onClose={() => {}}
-  open
+<StatusAlert 
+  alertType="success" 
+  dialog="Success!" 
+  onClose={() => {}} 
+  open 
 />
 ```
-
 
 ##### danger alert
 
 ```jsx live=true
-<StatusAlert
-  alertType="danger"
-  dialog="Error!"
-  onClose={() => {}}
-  open
+<StatusAlert 
+  alertType="danger" 
+  dialog="Error!" 
+  onClose={() => {}} 
+  open 
 />
 ```
-
 
 ##### informational alert
 
@@ -63,7 +66,6 @@ import PropsTable from '../../components/PropsTable';
   open
 />
 ```
-
 
 ##### alert with a custom aria-label on the close button
 
@@ -77,7 +79,6 @@ import PropsTable from '../../components/PropsTable';
 />
 ```
 
-
 ##### Non-dismissible alert
 
 ```jsx live=true
@@ -89,17 +90,17 @@ import PropsTable from '../../components/PropsTable';
 />
 ```
 
-
 ##### alert invoked via a button
 
 ```jsx live=true
-
 class StatusAlertWrapper extends React.Component {
   constructor(props) {
     super(props);
 
     this.openStatusAlert = this.openStatusAlert.bind(this);
-    this.resetStatusAlertWrapperState = this.resetStatusAlertWrapperState.bind(this);
+    this.resetStatusAlertWrapperState = this.resetStatusAlertWrapperState.bind(
+      this,
+    );
 
     this.state = { open: false };
   }
@@ -125,7 +126,9 @@ class StatusAlertWrapper extends React.Component {
         <Button
           onClick={this.openStatusAlert}
           buttonType="light"
-          inputRef={(input) => { this.button = input; }}
+          inputRef={input => {
+            this.button = input;
+          }}
         >
           Click me to open a Status Alert!
         </Button>
@@ -135,13 +138,12 @@ class StatusAlertWrapper extends React.Component {
 }
 ```
 
-
 ##### alert with a link
 
 ```jsx live=true
 <StatusAlert
   alertType="info"
-  dialog={(
+  dialog={
     <div>
       <span>Love cats? </span>
       <a
@@ -152,19 +154,22 @@ class StatusAlertWrapper extends React.Component {
         Click me!
       </a>
     </div>
-  )}
+  }
   onClose={() => {}}
   open
 />
 ```
 
-
 ##### Props
 
 <StaticQuery
-  query={graphql`query {
-    componentMetadata(displayName: { eq: "StatusAlert" }) { ...ComponentDocGenData }
-  }`}
+  query={graphql`
+    query {
+      componentMetadata(displayName: { eq: "StatusAlert" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
   render={({ componentMetadata }) => {
     if (componentMetadata == null) return null;
     return <PropsTable propMetaData={componentMetadata.props} />;
