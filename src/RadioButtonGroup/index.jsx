@@ -1,5 +1,5 @@
 /* eslint-disable react/no-multi-comp */
-
+/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -169,13 +169,21 @@ RadioButtonGroup.defaultProps = {
 
 RadioButtonGroup.propTypes = {
   children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  /** specifies the `aria-label` value for the `RadioButtonGroup` */
   label: PropTypes.string.isRequired,
+  /** specifies the `name` value for the `RadioButtonGroup` so that no more than one `RadioButton` can be selected at any given time */
   name: PropTypes.string.isRequired,
+  /** specifies the callback for the `onBlur` event for each `RadioButton` within the group. The default value is a no-op function. */
   onBlur: PropTypes.func,
+  /** specifies the callback for the onChange event for each RadioButton within the group. The default value is a no-op function. */
   onChange: PropTypes.func,
+  /** specifies the callback for the `onClick` event for each `RadioButton` within the group. The default value is a no-op function. */
   onClick: PropTypes.func,
+  /** specifies the callback for the `onFocus` event for each `RadioButton` within the group. The default value is a no-op function. */
   onFocus: PropTypes.func,
+  /** specifies the callback for the `onKeyDown` event for each `RadioButton` within the group. The default value is a no-op function. */
   onKeyDown: PropTypes.func,
+  /** specifies which `RadioButton` is initially selected. The default value is `undefined` which signifies that no `RadioButton` is initially selected. */
   selectedIndex: PropTypes.number,
 };
 

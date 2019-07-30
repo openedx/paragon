@@ -1,30 +1,36 @@
 ---
-title: "TextArea"
-type: "component"
-status: "Deprecate Soon"
-designStatus: "TBD"
-devStatus: "To Do"
+title: 'TextArea'
+type: 'component'
+status: 'Deprecate Soon'
+designStatus: 'TBD'
+devStatus: 'To Do'
 notes: |
-    Replaced by Input and ValidationFormGroup
+  Replaced by Input and ValidationFormGroup
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
+import get from 'lodash/get';
 import { TextArea } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
+import SingleComponentStatus from '../../components/singleComponentStatus';
 
 # TextArea
 
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
 
 ##### minimal usage
 
 ```jsx live=true
-<TextArea
-  name="name"
-  label="First Name"
-  value="Foo Bar"
+<TextArea 
+  name="name" 
+  label="First Name" 
+  value="Foo Bar" 
 />
 ```
-
 
 ##### scrollable
 
@@ -36,7 +42,6 @@ import PropsTable from '../../components/PropsTable';
 />
 ```
 
-
 ##### validation
 
 ```jsx live=true
@@ -44,7 +49,7 @@ import PropsTable from '../../components/PropsTable';
   name="username"
   label="Username"
   description="The unique name that identifies you throughout the site."
-  validator={(value) => {
+  validator={value => {
     let feedback = { isValid: true };
     if (value.length < 3) {
       feedback = {
@@ -57,7 +62,6 @@ import PropsTable from '../../components/PropsTable';
 />
 ```
 
-
 ##### label as element
 
 ```jsx live=true
@@ -68,13 +72,16 @@ import PropsTable from '../../components/PropsTable';
 />
 ```
 
-
 ##### Props
 
 <StaticQuery
-  query={graphql`query {
-    componentMetadata(displayName: { eq: "Text" }) { ...ComponentDocGenData }
-  }`}
+  query={graphql`
+    query {
+      componentMetadata(displayName: { eq: "Text" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
   render={({ componentMetadata }) => {
     if (componentMetadata == null) return null;
     return <PropsTable propMetaData={componentMetadata.props} />;
