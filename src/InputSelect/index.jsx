@@ -26,10 +26,6 @@ class Select extends React.Component {
     );
   }
 
-  componentDidMount() {
-    console.log('this is the ref', this.props.inputRef);
-  }
-
   getOptions() {
     return this.props.options.map((option, i) => {
       let section;
