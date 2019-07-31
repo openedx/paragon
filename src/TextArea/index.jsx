@@ -24,7 +24,10 @@ function Text(props) {
 
 Text.propTypes = {
   className: PropTypes.string,
-  inputRef: PropTypes.func,
+  inputRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  ]),
 };
 
 Text.defaultProps = {

@@ -36,7 +36,10 @@ export const inputProps = {
   inputGroupPrepend: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element]),
   inputGroupAppend: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element]),
   type: PropTypes.string,
-  inputRef: PropTypes.func,
+  inputRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  ]),
 };
 
 export const defaultProps = {
