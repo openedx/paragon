@@ -53,7 +53,10 @@ class Check extends React.Component {
 Check.propTypes = {
   checked: PropTypes.bool,
   onChange: PropTypes.func,
-  inputRef: PropTypes.func,
+  inputRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  ]),
 };
 
 Check.defaultProps = {
