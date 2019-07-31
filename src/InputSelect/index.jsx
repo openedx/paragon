@@ -26,6 +26,10 @@ class Select extends React.Component {
     );
   }
 
+  componentDidMount() {
+    console.log('this is the ref', this.props.inputRef);
+  }
+
   getOptions() {
     return this.props.options.map((option, i) => {
       let section;
@@ -67,7 +71,10 @@ class Select extends React.Component {
 
 Select.propTypes = {
   className: PropTypes.string,
-  inputRef: PropTypes.func,
+  inputRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  ]),
   options: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.string),
     PropTypes.arrayOf(PropTypes.object),
