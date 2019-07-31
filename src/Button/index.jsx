@@ -88,7 +88,10 @@ export const buttonPropTypes = {
   buttonType: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
-  inputRef: PropTypes.func,
+  inputRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  ]),
   isClose: PropTypes.bool,
   onBlur: PropTypes.func,
   onClick: PropTypes.func,
