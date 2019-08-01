@@ -28,7 +28,7 @@ Text.propTypes = {
   className: PropTypes.string,
   inputRef: PropTypes.oneOfType([
     PropTypes.func,
-    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+    PropTypes.shape({ current: PropTypes.instanceOf(PropTypes.element) }),
   ]),
   type: PropTypes.string,
 };

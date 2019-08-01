@@ -69,7 +69,7 @@ Select.propTypes = {
   className: PropTypes.string,
   inputRef: PropTypes.oneOfType([
     PropTypes.func,
-    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+    PropTypes.shape({ current: PropTypes.instanceOf(PropTypes.element) }),
   ]),
   options: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.string),

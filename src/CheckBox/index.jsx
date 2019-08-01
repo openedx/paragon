@@ -55,7 +55,7 @@ Check.propTypes = {
   onChange: PropTypes.func,
   inputRef: PropTypes.oneOfType([
     PropTypes.func,
-    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+    PropTypes.shape({ current: PropTypes.instanceOf(PropTypes.element) }),
   ]),
 };
 

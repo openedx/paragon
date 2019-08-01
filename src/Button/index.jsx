@@ -90,7 +90,7 @@ export const buttonPropTypes = {
   children: PropTypes.node.isRequired,
   inputRef: PropTypes.oneOfType([
     PropTypes.func,
-    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+    PropTypes.shape({ current: PropTypes.instanceOf(PropTypes.element) }),
   ]),
   isClose: PropTypes.bool,
   onBlur: PropTypes.func,
