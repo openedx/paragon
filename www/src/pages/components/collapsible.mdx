@@ -4,7 +4,7 @@ type: "component"
 status: "Stable"
 designStatus: "Needs Review"
 devStatus: "Done"
-notes: 
+notes:
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
@@ -32,7 +32,7 @@ import PropsTable from '../../components/PropsTable';
   <Collapsible.Trigger className="collapsible-card-header">
     <h4>I'm a heading</h4>
   </Collapsible.Trigger>
-  
+
   <Collapsible.Body className="collapsible-card-body">
     <p>Your stuff goes here.</p>
   </Collapsible.Body>
@@ -56,7 +56,7 @@ import PropsTable from '../../components/PropsTable';
       </Collapsible.Visible>
     </span>
   </Collapsible.Trigger>
-  
+
   <Collapsible.Body className="collapsible-card-body">
     <p>Your stuff goes here.</p>
   </Collapsible.Body>
@@ -82,7 +82,7 @@ Add `defaultOpen` to the top level `<Collapsible />` component.
       </Collapsible.Visible>
     </span>
   </Collapsible.Trigger>
-  
+
   <Collapsible.Body className="collapsible-card-body">
     <p>Your stuff goes here.</p>
   </Collapsible.Body>
@@ -110,7 +110,7 @@ that will only close the collapsible.
       </Collapsible.Visible>
     </span>
   </Collapsible.Trigger>
-  
+
   <Collapsible.Body className="collapsible-card-body">
     <p>Your stuff goes here.</p>
 
@@ -146,7 +146,7 @@ See the developer console for logging.
       </Collapsible.Visible>
     </span>
   </Collapsible.Trigger>
-  
+
   <Collapsible.Body className="collapsible-card-body">
     <p>Your stuff goes here.</p>
 
@@ -182,7 +182,7 @@ function() {
           </Collapsible.Visible>
         </span>
       </Collapsible.Trigger>
-      
+
       <Collapsible.Body className="collapsible-card-body">
         <p>Your stuff goes here.</p>
 
@@ -199,7 +199,7 @@ function() {
 
 If you need to open or close the Collapsible intermittently due to an event,
 such as loading the page or clicking a link, you can open or close
-an **uncontrolled** Collapsible by getting a ref to the component and calling 
+an **uncontrolled** Collapsible by getting a ref to the component and calling
 `collapsibleRef.open()` or `collapsibleRef.close()`. The internal state of
 the component will be updated accordingly.
 
