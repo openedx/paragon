@@ -136,8 +136,8 @@ class Modal extends React.Component {
 
   renderButtons() {
     return this.props.buttons.map((button) => {
-      // button is either a Button component that we want clone or a set of props
-      if (button.type === Button) {
+      // button is either a React component that we want clone or a set of props
+      if (React.isValidElement(button)) {
         return React.cloneElement(button, {
           key: button.props.children,
           onKeyDown: this.handleKeyDown,
