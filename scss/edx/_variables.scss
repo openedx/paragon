@@ -21,3 +21,8 @@ $btn-border-radius-sm:        50rem !default; // rounded pill
 
 $btn-focus-width: 2px !default;
 $btn-focus-gap: 2px !default;
+
+$input-btn-focus-width:       1px !default;
+$input-btn-focus-color:       map-get($theme-color-levels, "primary-300") !default;
+$input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-color !default;
+
