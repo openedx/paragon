@@ -1,3 +1,8 @@
+import { ChevronUp, ChevronDown, ChevronRight, ChevronLeft } from './Icons';
+
+export const Icons = {
+  ChevronUp, ChevronDown, ChevronRight, ChevronLeft,
+};
 export { default as asInput } from './asInput';
 export { default as Breadcrumb } from './Breadcrumb';
 export { default as Button } from './Button';

@@ -2,7 +2,6 @@ import React, { useContext, useCallback } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import TransitionReplace from '../TransitionReplace';
-import ChevronDown from '../icons/ChevronDown';
 
 const CollapsibleContext = React.createContext();
 
@@ -66,7 +65,6 @@ class Collapsible extends React.Component {
           'is-open': this.state.isOpen,
         })}
       >
-        <ChevronDown viewBox="0 0 1792 1792" />
         <CollapsibleContext.Provider
           value={{
             isOpen: this.state.isOpen,

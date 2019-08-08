@@ -9,6 +9,7 @@ notes:
 
 import { StaticQuery, graphql } from 'gatsby';
 import { Collapsible } from '~paragon-react';
+import { Icons } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
 
 # Collapsible
@@ -18,7 +19,7 @@ import PropsTable from '../../components/PropsTable';
 ```jsx live=true
 <Collapsible>
   <Collapsible.Trigger tag="a">Toggle Collapsible</Collapsible.Trigger>
-
+  {console.log(Icons, Collapsible)}
   <Collapsible.Body>
     <p>Your stuff goes here</p>
   </Collapsible.Body>
@@ -48,11 +49,11 @@ import PropsTable from '../../components/PropsTable';
 
     <span className="collapsible-card-header-icon" aria-hidden>
       <Collapsible.Visible whenClosed>
-        <Icon className="fa fa-chevron-down" />
+        <Icons.ChevronDown />
       </Collapsible.Visible>
 
       <Collapsible.Visible whenOpen>
-        <Icon className="fa fa-chevron-up" />
+        <Icons.ChevronUp />
       </Collapsible.Visible>
     </span>
   </Collapsible.Trigger>
@@ -74,11 +75,11 @@ Add `defaultOpen` to the top level `<Collapsible />` component.
 
     <span className="collapsible-card-header-icon" aria-hidden>
       <Collapsible.Visible whenClosed>
-        <Icon className="fa fa-chevron-down" />
+        <Icons.ChevronDown />
       </Collapsible.Visible>
 
       <Collapsible.Visible whenOpen>
-        <Icon className="fa fa-chevron-up" />
+        <Icons.ChevronUp />
       </Collapsible.Visible>
     </span>
   </Collapsible.Trigger>
@@ -102,11 +103,11 @@ that will only close the collapsible.
 
     <span className="collapsible-card-header-icon" aria-hidden>
       <Collapsible.Visible whenClosed>
-        <Icon className="fa fa-chevron-down" />
+        <Icons.ChevronDown />
       </Collapsible.Visible>
 
       <Collapsible.Visible whenOpen>
-        <Icon className="fa fa-chevron-up" />
+        <Icons.ChevronUp />
       </Collapsible.Visible>
     </span>
   </Collapsible.Trigger>
@@ -138,11 +139,11 @@ See the developer console for logging.
 
     <span className="collapsible-card-header-icon" aria-hidden>
       <Collapsible.Visible whenClosed>
-        <Icon className="fa fa-chevron-down" />
+        <Icons.ChevronDown />
       </Collapsible.Visible>
 
       <Collapsible.Visible whenOpen>
-        <Icon className="fa fa-chevron-up" />
+        <Icons.ChevronUp />
       </Collapsible.Visible>
     </span>
   </Collapsible.Trigger>
@@ -174,11 +175,11 @@ function() {
 
         <span className="collapsible-card-header-icon" aria-hidden>
           <Collapsible.Visible whenClosed>
-            <Icon className="fa fa-chevron-down" />
+            <Icons.ChevronDown />
           </Collapsible.Visible>
 
           <Collapsible.Visible whenOpen>
-            <Icon className="fa fa-chevron-up" />
+            <Icons.ChevronUp />
           </Collapsible.Visible>
         </span>
       </Collapsible.Trigger>

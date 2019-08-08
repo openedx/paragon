@@ -1,30 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ChevronDown = ({ viewBox, height, ...other }) => (
-  <div>
-    <svg
-      aria-hidden="true"
-      role="img"
-      xmlns="http://www.w3.org/2000/svg"
-      height={height}
-      viewBox={viewBox}
-      {...other}
-    >
-      <path
-        d="M1683 808l-742 741q-19 19-45 19t-45-19l-742-741q-19-19-19-45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 165q19 19 19 45.5t-19 45.5z"
-      />
-    </svg>
-  </div>
+const ChevronDown = ({ height, ...other }) => (
+  <svg
+    height={height}
+    viewBox="0 0 24 24"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    {...other}
+  >
+    <polygon points="12 12.8284271 16.2426407 8.58578644 17.6568542 10 12 15.6568542 6.34314575 10 7.75735931 8.58578644 12 12.8284271" />
+  </svg>
 );
 
 ChevronDown.propTypes = {
-  viewBox: PropTypes.string.isRequired,
   height: PropTypes.string,
 };
 
 ChevronDown.defaultProps = {
-  height: '1em',
+  height: '2rem',
 };
 
 export default ChevronDown;
