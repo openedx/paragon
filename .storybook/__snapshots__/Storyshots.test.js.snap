@@ -384,32 +384,16 @@ Array [
 
 exports[`Storyshots Collapsible usage 1`] = `
 <div
-  className="pgn_collapsible collapsible-card"
+  className="pgn_collapsible collapsible-card collapsible-card"
 >
   <div
     aria-expanded={false}
-    className="collapsible-card-header d-flex align-items-center"
+    className="collapsible-card-header"
     onClick={[Function]}
     onKeyDown={[Function]}
     role="button"
     tabIndex={0}
-  >
-    <h4
-      className="flex-grow-1"
-    >
-      A heading
-    </h4>
-    <span
-      aria-hidden={true}
-      className="collapsible-card-header-icon"
-    >
-      <span
-        aria-hidden={true}
-        className="fa fa-chevron-down"
-        id="Icon1"
-      />
-    </span>
-  </div>
+  />
   <div
     className="pgn-transition-replace-group position-relative"
     style={

@@ -14,22 +14,37 @@ import PropsTable from '../../components/PropsTable';
 
 # Collapsible
 
+##### Default Collapsible
+
+```jsx live=true
+<Collapsible title="I'm not a heading">
+    <p>Your stuff goes here.</p>
+</Collapsible>
+```
+
+##### Default Collapsible with Heading
+
+```jsx live=true
+<Collapsible title={<h4>I'm a heading</h4>}>
+    <p>Your stuff goes here.</p>
+</Collapsible>
+```
+
 ##### Basic usage (no styling)
 
 ```jsx live=true
-<Collapsible>
+<Collapsible.Advanced>
   <Collapsible.Trigger tag="a">Toggle Collapsible</Collapsible.Trigger>
-  {console.log(Icons, Collapsible)}
   <Collapsible.Body>
     <p>Your stuff goes here</p>
   </Collapsible.Body>
-</Collapsible>
+</Collapsible.Advanced>
 ```
 
 ##### Styling: Card
 
 ```jsx live=true
-<Collapsible className="collapsible-card">
+<Collapsible.Advanced className="collapsible-card">
   <Collapsible.Trigger className="collapsible-card-header">
     <h4>I'm a heading</h4>
   </Collapsible.Trigger>
@@ -37,23 +52,23 @@ import PropsTable from '../../components/PropsTable';
   <Collapsible.Body className="collapsible-card-body">
     <p>Your stuff goes here.</p>
   </Collapsible.Body>
-</Collapsible>
+</Collapsible.Advanced>
 ```
 
 ##### Styling: Card with Icon
 
 ```jsx live=true
-<Collapsible className="collapsible-card">
+<Collapsible.Advanced className="collapsible-card">
   <Collapsible.Trigger className="collapsible-card-header d-flex align-items-center">
     <h4 className="flex-grow-1">I'm a heading</h4>
 
     <span className="collapsible-card-header-icon" aria-hidden>
       <Collapsible.Visible whenClosed>
-        <Icons.ChevronDown />
+        <Icons.ChevronDown width="2rem" height="2rem"/>
       </Collapsible.Visible>
 
       <Collapsible.Visible whenOpen>
-        <Icons.ChevronUp />
+        <Icons.ChevronUp width="2rem" height="2rem"/>
       </Collapsible.Visible>
     </span>
   </Collapsible.Trigger>
@@ -61,7 +76,7 @@ import PropsTable from '../../components/PropsTable';
   <Collapsible.Body className="collapsible-card-body">
     <p>Your stuff goes here.</p>
   </Collapsible.Body>
-</Collapsible>
+</Collapsible.Advanced>
 ```
 
 ##### Default Open
@@ -69,17 +84,17 @@ import PropsTable from '../../components/PropsTable';
 Add `defaultOpen` to the top level `<Collapsible />` component.
 
 ```jsx live=true
-<Collapsible className="collapsible-card" defaultOpen>
+<Collapsible.Advanced className="collapsible-card" defaultOpen>
   <Collapsible.Trigger className="collapsible-card-header d-flex align-items-center">
     <h4 className="flex-grow-1">I'm a heading</h4>
 
     <span className="collapsible-card-header-icon" aria-hidden>
       <Collapsible.Visible whenClosed>
-        <Icons.ChevronDown />
+        <Icons.ChevronDown width="2rem" height="2rem"/>
       </Collapsible.Visible>
 
       <Collapsible.Visible whenOpen>
-        <Icons.ChevronUp />
+        <Icons.ChevronUp width="2rem" height="2rem"/>
       </Collapsible.Visible>
     </span>
   </Collapsible.Trigger>
@@ -87,7 +102,7 @@ Add `defaultOpen` to the top level `<Collapsible />` component.
   <Collapsible.Body className="collapsible-card-body">
     <p>Your stuff goes here.</p>
   </Collapsible.Body>
-</Collapsible>
+</Collapsible.Advanced>
 ```
 
 
@@ -97,17 +112,17 @@ Add the `closeOnly` prop to a `<Collapsible.Trigger />` to make a button
 that will only close the collapsible.
 
 ```jsx live=true
-<Collapsible className="collapsible-card" defaultOpen>
+<Collapsible.Advanced className="collapsible-card" defaultOpen>
   <Collapsible.Trigger className="collapsible-card-header d-flex align-items-center">
     <h4 className="flex-grow-1">I'm a heading</h4>
 
     <span className="collapsible-card-header-icon" aria-hidden>
       <Collapsible.Visible whenClosed>
-        <Icons.ChevronDown />
+        <Icons.ChevronDown width="2rem" height="2rem"/>
       </Collapsible.Visible>
 
       <Collapsible.Visible whenOpen>
-        <Icons.ChevronUp />
+        <Icons.ChevronUp width="2rem" height="2rem"/>
       </Collapsible.Visible>
     </span>
   </Collapsible.Trigger>
@@ -119,7 +134,7 @@ that will only close the collapsible.
       Close
     </Collapsible.Trigger>
   </Collapsible.Body>
-</Collapsible>
+</Collapsible.Advanced>
 ```
 
 
@@ -128,7 +143,7 @@ that will only close the collapsible.
 See the developer console for logging.
 
 ```jsx live=true
-<Collapsible
+<Collapsible.Advanced
   className="collapsible-card"
   onToggle={(isOpen) => console.log('Collapsible toggled and open is: ', isOpen)}
   onOpen={() => console.log('Collapsible opened.')}
@@ -139,11 +154,11 @@ See the developer console for logging.
 
     <span className="collapsible-card-header-icon" aria-hidden>
       <Collapsible.Visible whenClosed>
-        <Icons.ChevronDown />
+        <Icons.ChevronDown width="2rem" height="2rem"/>
       </Collapsible.Visible>
 
       <Collapsible.Visible whenOpen>
-        <Icons.ChevronUp />
+        <Icons.ChevronUp width="2rem" height="2rem"/>
       </Collapsible.Visible>
     </span>
   </Collapsible.Trigger>
@@ -155,7 +170,7 @@ See the developer console for logging.
       Close
     </Collapsible.Trigger>
   </Collapsible.Body>
-</Collapsible>
+</Collapsible.Advanced>
 ```
 
 ### Controlled usage
@@ -165,7 +180,7 @@ function() {
   const [collapseIsOpen, setCollapseOpen] = React.useState(true);
 
   return (
-    <Collapsible
+    <Collapsible.Advanced
       open={collapseIsOpen}
       onToggle={isOpen => setCollapseOpen(!isOpen)}
       className="collapsible-card"
@@ -175,11 +190,11 @@ function() {
 
         <span className="collapsible-card-header-icon" aria-hidden>
           <Collapsible.Visible whenClosed>
-            <Icons.ChevronDown />
+            <Icons.ChevronDown width="2rem" height="2rem"/>
           </Collapsible.Visible>
 
           <Collapsible.Visible whenOpen>
-            <Icons.ChevronUp />
+            <Icons.ChevronUp width="2rem" height="2rem"/>
           </Collapsible.Visible>
         </span>
       </Collapsible.Trigger>
@@ -191,7 +206,7 @@ function() {
           Close
         </Collapsible.Trigger>
       </Collapsible.Body>
-    </Collapsible>
+    </Collapsible.Advanced>
   );
 }
 ```
