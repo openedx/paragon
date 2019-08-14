@@ -9,11 +9,14 @@
 }
 
 .collapsible-card-header {
-  padding: $card-spacer-y $card-spacer-x;
+  padding: $input-btn-padding-y $card-spacer-x;
   border-radius: $card-inner-border-radius;
   border-bottom: $card-border-width solid transparent;
   transition: border-color 100ms ease 150ms;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   & > * {
     margin-bottom: 0;
@@ -25,6 +28,7 @@
     border-color: $card-border-color;
     transition: none;
   }
+
 }
 .collapsible-card-header-icon {
   float: right;
