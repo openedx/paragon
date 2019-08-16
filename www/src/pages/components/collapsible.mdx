@@ -14,10 +14,19 @@ import PropsTable from '../../components/PropsTable';
 
 # Collapsible
 
+##### Styling: Basic
+The `styling` prop at the top level `<Collapsible />` component determines if the collapsible has basic styling, card, or card with heading.
+
+```jsx live=true
+<Collapsible title="Toggle Collapsible" styling="basic" >
+  <p>Your stuff goes here.</p>
+</Collapsible>
+```
+
 ##### Default Collapsible
 
 ```jsx live=true
-<Collapsible title="I'm not a heading">
+<Collapsible title="I'm not a heading" styling="card">
     <p>Your stuff goes here.</p>
 </Collapsible>
 ```
@@ -25,7 +34,7 @@ import PropsTable from '../../components/PropsTable';
 ##### Default Collapsible with Heading
 
 ```jsx live=true
-<Collapsible title={<h4>I'm a heading</h4>}>
+<Collapsible title="I'm a heading" styling="card-large">
     <p>Your stuff goes here.</p>
 </Collapsible>
 ```
@@ -41,36 +50,20 @@ import PropsTable from '../../components/PropsTable';
 </Collapsible.Advanced>
 ```
 
-##### Styling: Card
-
-```jsx live=true
-<Collapsible.Advanced className="collapsible-card">
-  <Collapsible.Trigger className="collapsible-card-header">
-    <h4>I'm a heading</h4>
-  </Collapsible.Trigger>
-
-  <Collapsible.Body className="collapsible-card-body">
-    <p>Your stuff goes here.</p>
-  </Collapsible.Body>
-</Collapsible.Advanced>
-```
-
 ##### Styling: Card with Icon
 
 ```jsx live=true
 <Collapsible.Advanced className="collapsible-card">
-  <Collapsible.Trigger className="collapsible-card-header d-flex align-items-center">
-    <h4 className="flex-grow-1">I'm a heading</h4>
+  <Collapsible.Trigger className="collapsible-card-header collapsible-card-large d-flex align-items-center">
+    <h5 className="flex-grow-1">I'm a heading</h5>
 
-    <span className="collapsible-card-header-icon" aria-hidden>
       <Collapsible.Visible whenClosed>
-        <Icons.ChevronDown width="2rem" height="2rem"/>
+        <Icons.Plus className="collapsible-card-header-icon" />
       </Collapsible.Visible>
 
       <Collapsible.Visible whenOpen>
-        <Icons.ChevronUp width="2rem" height="2rem"/>
+        <Icons.Minus className="collapsible-card-header-icon" />
       </Collapsible.Visible>
-    </span>
   </Collapsible.Trigger>
 
   <Collapsible.Body className="collapsible-card-body">
@@ -85,21 +78,19 @@ Add `defaultOpen` to the top level `<Collapsible />` component.
 
 ```jsx live=true
 <Collapsible.Advanced className="collapsible-card" defaultOpen>
-  <Collapsible.Trigger className="collapsible-card-header d-flex align-items-center">
-    <h4 className="flex-grow-1">I'm a heading</h4>
+  <Collapsible.Trigger className="collapsible-card-header collapsible-card-large d-flex align-items-center">
+    <h5 className="flex-grow-1">I'm a heading</h5>
 
-    <span className="collapsible-card-header-icon" aria-hidden>
       <Collapsible.Visible whenClosed>
-        <Icons.ChevronDown width="2rem" height="2rem"/>
+        <Icons.Plus className="collapsible-card-header-icon" />
       </Collapsible.Visible>
 
       <Collapsible.Visible whenOpen>
-        <Icons.ChevronUp width="2rem" height="2rem"/>
+        <Icons.Minus className="collapsible-card-header-icon" />
       </Collapsible.Visible>
-    </span>
   </Collapsible.Trigger>
 
-  <Collapsible.Body className="collapsible-card-body">
+  <Collapsible.Body className="collapsible-card-body-large">
     <p>Your stuff goes here.</p>
   </Collapsible.Body>
 </Collapsible.Advanced>
@@ -113,21 +104,19 @@ that will only close the collapsible.
 
 ```jsx live=true
 <Collapsible.Advanced className="collapsible-card" defaultOpen>
-  <Collapsible.Trigger className="collapsible-card-header d-flex align-items-center">
-    <h4 className="flex-grow-1">I'm a heading</h4>
+  <Collapsible.Trigger className="collapsible-card-header collapsible-card-large d-flex align-items-center">
+    <h5 className="flex-grow-1">I'm a heading</h5>
 
-    <span className="collapsible-card-header-icon" aria-hidden>
       <Collapsible.Visible whenClosed>
-        <Icons.ChevronDown width="2rem" height="2rem"/>
+        <Icons.Plus className="collapsible-card-header-icon" />
       </Collapsible.Visible>
 
       <Collapsible.Visible whenOpen>
-        <Icons.ChevronUp width="2rem" height="2rem"/>
+        <Icons.Minus className="collapsible-card-header-icon" />
       </Collapsible.Visible>
-    </span>
   </Collapsible.Trigger>
 
-  <Collapsible.Body className="collapsible-card-body">
+  <Collapsible.Body className="collapsible-card-body-large">
     <p>Your stuff goes here.</p>
 
     <Collapsible.Trigger closeOnly tag="a" className="btn btn-outline-primary">
@@ -149,21 +138,19 @@ See the developer console for logging.
   onOpen={() => console.log('Collapsible opened.')}
   onClose={() => console.log('Collapsible closed.')}
 >
-  <Collapsible.Trigger className="collapsible-card-header d-flex align-items-center">
-    <h4 className="flex-grow-1">I'm a heading</h4>
+  <Collapsible.Trigger className="collapsible-card-header collapsible-card-large d-flex align-items-center">
+    <h5 className="flex-grow-1">I'm a heading</h5>
 
-    <span className="collapsible-card-header-icon" aria-hidden>
       <Collapsible.Visible whenClosed>
-        <Icons.ChevronDown width="2rem" height="2rem"/>
+        <Icons.Plus className="collapsible-card-header-icon" />
       </Collapsible.Visible>
 
       <Collapsible.Visible whenOpen>
-        <Icons.ChevronUp width="2rem" height="2rem"/>
+        <Icons.Minus className="collapsible-card-header-icon" />
       </Collapsible.Visible>
-    </span>
   </Collapsible.Trigger>
 
-  <Collapsible.Body className="collapsible-card-body">
+  <Collapsible.Body className="collapsible-card-body-large">
     <p>Your stuff goes here.</p>
 
     <Collapsible.Trigger closeOnly tag="a" className="btn btn-outline-primary">
@@ -185,21 +172,19 @@ function() {
       onToggle={isOpen => setCollapseOpen(!isOpen)}
       className="collapsible-card"
     >
-      <Collapsible.Trigger className="collapsible-card-header d-flex align-items-center">
-        <h4 className="flex-grow-1">I'm a heading</h4>
+      <Collapsible.Trigger className="collapsible-card-header collapsible-card-large d-flex align-items-center">
+        <h5 className="flex-grow-1">I'm a heading</h5>
 
-        <span className="collapsible-card-header-icon" aria-hidden>
           <Collapsible.Visible whenClosed>
-            <Icons.ChevronDown width="2rem" height="2rem"/>
+            <Icons.Plus className="collapsible-card-header-icon" />
           </Collapsible.Visible>
 
           <Collapsible.Visible whenOpen>
-            <Icons.ChevronUp width="2rem" height="2rem"/>
+            <Icons.Minus className="collapsible-card-header-icon" />
           </Collapsible.Visible>
-        </span>
       </Collapsible.Trigger>
 
-      <Collapsible.Body className="collapsible-card-body">
+      <Collapsible.Body className="collapsible-card-body-large">
         <p>Your stuff goes here.</p>
 
         <Collapsible.Trigger closeOnly tag="a" className="btn btn-outline-primary">
@@ -233,11 +218,11 @@ the component will be updated accordingly.
     return (
       <div>
         {collapsible ? <PropsTable propMetaData={collapsible.props} /> : null}
-        <h4>Collapsible.Trigger</h4>
+        <h5>Collapsible.Trigger</h5>
         {collapsibleTrigger ? <PropsTable propMetaData={collapsibleTrigger.props} /> : null}
-        <h4>Collapsible.Body</h4>
+        <h5>Collapsible.Body</h5>
         {collapsibleBody ? <PropsTable propMetaData={collapsibleBody.props} /> : null}
-        <h4>Collapsible.Visible</h4>
+        <h5>Collapsible.Visible</h5>
         {collapsibleVisible ? <PropsTable propMetaData={collapsibleVisible.props} /> : null}
       </div>
     )
