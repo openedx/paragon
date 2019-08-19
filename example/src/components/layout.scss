@@ -1,0 +1,7 @@
+@import "~paragon-style/edx/theme.scss";
+@import "@edx/frontend-component-site-header/src/index.scss";
+
+.site-main {
+  padding-top: $spacer * 2;
+  padding-bottom: $spacer * 2;
+}
