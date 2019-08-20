@@ -8,7 +8,6 @@ import DropdownItem from './DropdownItem';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
 const { Provider, Consumer } = React.createContext();
-// const DropdownContext = React.createContext();
 
 class Dropdown extends React.Component {
   static idCounter = 0; // For creating unique ids

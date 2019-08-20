@@ -1,78 +1,236 @@
 ---
 title: "Collapsible"
 type: "component"
-status: "Needs Work"
-designStatus: "To Do"
-devStatus: "To Do"
-notes: |
-    Transition to fully uncontrolled component and add imperative .open().
-    Remove use of Button component, it breaks with new styles.
-    Assess removing the responsive toggle to stay expanded.
+status: "Stable"
+designStatus: "Needs Review"
+devStatus: "Done"
+notes:
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
 import { Collapsible } from '~paragon-react';
+import { Icons } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
 
 # Collapsible
 
+### Basic Usage
 
-##### basic usage without resizing
+The `styling` prop at the top level `<Collapsible />` component determines if the collapsible has basic styling, card, or card with heading.
 
-```jsx live=true
-<Collapsible title="Click me to expand">
-  <p>Your stuff goes here</p>
-</Collapsible>
-```
-
-##### basic usage with resizing
-
-[TODO]
-
-
-##### initially open collapsible
-
-```jsx live=true
-<Collapsible title="Click me to expand" isOpen>
-  <p>Your stuff goes here</p>
-</Collapsible>
-```
-
-
-##### fires onToggle callback when toggled
+##### Basic Style `<Collapsible styling="basic" />`
 
 ```jsx live=true
 <Collapsible
-  title="Click me to expand"
-  onToggle={isOpen => console.log(`this.state.isOpen = ${isOpen}`)} // eslint-disable-line no-console
+  styling="basic"
+  title="Toggle Collapsible"
 >
-  <p>Your stuff goes here</p>
+  <p>Your stuff goes here.</p>
 </Collapsible>
 ```
 
+##### Card Style `<Collapsible styling="card" />`
 
-##### with custom icon
+This is the default style if no `styling` prop is supplied.
 
 ```jsx live=true
 <Collapsible
-  title="Click me to expand"
-  icons={{
-    expanded: <FontAwesomeIcon className="text-primary" icon={faChevronCircleUp} />,
-    collapsed: <FontAwesomeIcon className="text-primary" icon={faChevronCircleDown} />,
-  }}
+  styling="card"
+  title={<p><strong>Toggle Collapsible</strong></p>}
+  className="shadow"
 >
-  <p>Your stuff goes here</p>
+  <p>Your stuff goes here.</p>
 </Collapsible>
 ```
+
+##### Large Card Style `<Collapsible styling="card-lg" />`
+
+```jsx live=true
+<Collapsible
+  styling="card-lg"
+  title={<h5>Toggle Collapsible</h5>}
+  className="shadow"
+>
+  <p>Your stuff goes here.</p>
+</Collapsible>
+```
+
+##### Card with custom icons `<Collapsible styling="card-lg" />`
+
+```jsx live=true
+<Collapsible
+  styling="card"
+  title={<p><strong>Toggle Collapsible</strong></p>}
+  iconWhenOpen={<span>CLOSE SESAME</span>}
+  iconWhenClosed={<span>OPEN SESAME</span>}
+  className="shadow"
+>
+  <p>Your stuff goes here.</p>
+</Collapsible>
+```
+
+##### Default Open
+
+```jsx live=true
+<Collapsible title="I'm not a heading" className="shadow" defaultOpen>
+  <p>Your stuff goes here.</p>
+</Collapsible>
+```
+
+<hr/>
+
+### Advanced Usage
+
+For needs that deviate from the three styles above, use `<Collapsible.Advanced />`
+
+##### Bare minimum
+
+```jsx live=true
+<Collapsible.Advanced>
+  <Collapsible.Trigger>
+    Toggle Collapsible
+  </Collapsible.Trigger>
+  <Collapsible.Body>
+    <p>Your stuff goes here</p>
+  </Collapsible.Body>
+</Collapsible.Advanced>
+```
+
+##### Card style with advanced usage
+
+```jsx live=true
+<Collapsible.Advanced className="collapsible-card">
+  <Collapsible.Trigger className="collapsible-trigger d-flex">
+    <span className="flex-grow-1">This is the title</span>
+    <Collapsible.Visible whenClosed> + </Collapsible.Visible>
+    <Collapsible.Visible whenOpen> - </Collapsible.Visible>
+  </Collapsible.Trigger>
+
+  <Collapsible.Body className="collapsible-body">
+    The content
+  </Collapsible.Body>
+</Collapsible.Advanced>
+```
+
+##### With a close button
+
+```jsx live=true
+<Collapsible.Advanced className="collapsible-card" defaultOpen>
+  <Collapsible.Trigger className="collapsible-trigger d-flex">
+    <span className="flex-grow-1">This is the title</span>
+    <Collapsible.Visible whenClosed> + </Collapsible.Visible>
+    <Collapsible.Visible whenOpen> - </Collapsible.Visible>
+  </Collapsible.Trigger>
+
+  <Collapsible.Body className="collapsible-body">
+    <p>The content</p>
+
+    <Collapsible.Trigger closeOnly tag="a" className="btn btn-outline-primary">
+      Close
+    </Collapsible.Trigger>
+  </Collapsible.Body>
+</Collapsible.Advanced>
+```
+
+
+##### onOpen, onClose and onToggle callbacks
+
+See the developer console for logging.
+
+```jsx live=true
+<Collapsible.Advanced
+  className="collapsible-card-lg"
+  onToggle={(isOpen) => console.log('Collapsible toggled and open is: ', isOpen)}
+  onOpen={() => console.log('Collapsible opened.')}
+  onClose={() => console.log('Collapsible closed.')}
+>
+  <Collapsible.Trigger className="collapsible-trigger">
+    <h5 className="flex-grow-1">I'm a heading</h5>
+
+      <Collapsible.Visible whenClosed>
+        +
+      </Collapsible.Visible>
+
+      <Collapsible.Visible whenOpen>
+        -
+      </Collapsible.Visible>
+  </Collapsible.Trigger>
+
+  <Collapsible.Body className="collapsible-body">
+    <p>Your stuff goes here.</p>
+
+    <Collapsible.Trigger closeOnly tag="a" className="btn btn-outline-primary">
+      Close
+    </Collapsible.Trigger>
+  </Collapsible.Body>
+</Collapsible.Advanced>
+```
+
+### Controlled usage
+
+```jsx live=true
+function() {
+  const [collapseIsOpen, setCollapseOpen] = React.useState(true);
+
+  return (
+    <Collapsible.Advanced
+      open={collapseIsOpen}
+      onToggle={isOpen => setCollapseOpen(!isOpen)}
+      className="collapsible-card"
+    >
+      <Collapsible.Trigger className="collapsible-trigger">
+        <h5 className="flex-grow-1">I'm a heading</h5>
+
+          <Collapsible.Visible whenClosed>
+            +
+          </Collapsible.Visible>
+
+          <Collapsible.Visible whenOpen>
+            -
+          </Collapsible.Visible>
+      </Collapsible.Trigger>
+
+      <Collapsible.Body className="collapsible-body">
+        <p>Your stuff goes here.</p>
+
+        <Collapsible.Trigger closeOnly tag="a" className="btn btn-outline-primary">
+          Close
+        </Collapsible.Trigger>
+      </Collapsible.Body>
+    </Collapsible.Advanced>
+  );
+}
+```
+
+### Imperative methods
+
+If you need to open or close the Collapsible intermittently due to an event,
+such as loading the page or clicking a link, you can open or close
+an **uncontrolled** Collapsible by getting a ref to the component and calling
+`collapsibleRef.open()` or `collapsibleRef.close()`. The internal state of
+the component will be updated accordingly.
+
 
 ##### Props
 
 <StaticQuery
   query={graphql`query {
-    componentMetadata(displayName: { eq: "Collapsible" }) { ...ComponentDocGenData }
+    collapsible: componentMetadata(displayName: { eq: "Collapsible" }) { ...ComponentDocGenData }
+    collapsibleTrigger: componentMetadata(displayName: { eq: "CollapsibleTrigger" }) { ...ComponentDocGenData }
+    collapsibleBody: componentMetadata(displayName: { eq: "CollapsibleBody" }) { ...ComponentDocGenData }
+    collapsibleVisible: componentMetadata(displayName: { eq: "CollapsibleVisible" }) { ...ComponentDocGenData }
   }`}
-  render={({ componentMetadata }) => {
-    if (componentMetadata == null) return null;
-    return <PropsTable propMetaData={componentMetadata.props} />;
+  render={({ collapsible, collapsibleTrigger, collapsibleBody, collapsibleVisible }) => {
+    return (
+      <div>
+        {collapsible ? <PropsTable propMetaData={collapsible.props} /> : null}
+        <h5>Collapsible.Trigger</h5>
+        {collapsibleTrigger ? <PropsTable propMetaData={collapsibleTrigger.props} /> : null}
+        <h5>Collapsible.Body</h5>
+        {collapsibleBody ? <PropsTable propMetaData={collapsibleBody.props} /> : null}
+        <h5>Collapsible.Visible</h5>
+        {collapsibleVisible ? <PropsTable propMetaData={collapsibleVisible.props} /> : null}
+      </div>
+    )
   }}
 />

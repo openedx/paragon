@@ -9,10 +9,16 @@
 // Typography
 
 .pgn-doc__main-content {
-  h1, h2, h3, h4, h5 {
-    margin-top: 2em;
+  h1 {
+    margin: 4rem 0;
   }
-  
+
+  & > div {
+    & > h1, & > h2, & > h3, & > h4, & > h5 {
+      margin-top: 2em;
+    }
+  }
+
   // Typography Page
 
   .demo-georgia {

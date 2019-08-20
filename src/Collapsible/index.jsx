@@ -1,143 +1,79 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faPlusCircle,
+  faMinusCircle,
+  faPlus,
+  faMinus,
+} from '@fortawesome/free-solid-svg-icons';
 
-import Button from '../Button';
+import CollapsibleAdvanced from './CollapsibleAdvanced';
+import CollapsibleBody from './CollapsibleBody';
+import CollapsibleTrigger from './CollapsibleTrigger';
+import CollapsibleVisible from './CollapsibleVisible';
 
-class Collapsible extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isExpanded: false,
-      isOpen: props.isOpen,
-    };
+const styleIcons = {
+  basic: {
+    iconWhenClosed: <FontAwesomeIcon icon={faPlusCircle} />,
+    iconWhenOpen: <FontAwesomeIcon icon={faMinusCircle} />,
+  },
+  // card and card-lg use the defaults specified in defaultProps
+};
 
-    this.handleClick = this.handleClick.bind(this);
-  }
+const Collapsible = React.forwardRef((props, ref) => {
+  const {
+    children,
+    className,
+    title,
+    styling,
+    iconWhenClosed,
+    iconWhenOpen,
+    ...other
+  } = props;
 
-  componentDidMount() {
-    if (this.props.isCollapsible) {
-      this.handleResize();
-      global.addEventListener('resize', this.handleResize.bind(this));
-    }
-  }
+  const icons = Object.assign({ iconWhenClosed, iconWhenOpen }, styleIcons[styling]);
+  const titleElement = React.isValidElement(title) ? title : <span>{title}</span>;
 
-  /**
-   * "Note that you may call setState() immediately in componentDidUpdate() but,
-   * it must be wrapped in a conditional check against the previous props, or
-   * you'll cause an infinite loop."
-   * See https://reactjs.org/docs/react-component.html#componentdidupdate for
-   * more information.
-   */
-  componentDidUpdate(prevProps) {
-    if (this.props.isOpen !== prevProps.isOpen) {
-      // eslint-disable-next-line react/no-did-update-set-state
-      this.setState({
-        isOpen: this.props.isOpen,
-      });
-    }
-  }
+  return (
+    <Collapsible.Advanced
+      {...other}
+      className={classNames(className, `collapsible-${styling}`)}
+      ref={ref}
+    >
+      <Collapsible.Trigger className="collapsible-trigger">
+        {titleElement}
+        <span className="ml-2">
+          <Collapsible.Visible whenClosed>{icons.iconWhenClosed}</Collapsible.Visible>
+          <Collapsible.Visible whenOpen>{icons.iconWhenOpen}</Collapsible.Visible>
+        </span>
+      </Collapsible.Trigger>
 
-  componentWillUnmount() {
-    if (this.props.isCollapsible) {
-      global.removeEventListener('resize', this.handleResize);
-    }
-  }
-
-  handleResize() {
-    const { isExpanded } = this.state;
-
-    if (isExpanded !== this.props.isCollapsible()) {
-      this.setState({
-        isExpanded: !isExpanded,
-      });
-    }
-  }
-
-  handleClick() {
-    const isOpen = !this.state.isOpen;
-    this.setState({ isOpen });
-    this.props.onToggle(isOpen);
-  }
-
-  renderIcon() {
-    const { icons } = this.props;
-    const { isOpen } = this.state;
-
-    if (icons) {
-      return isOpen ? icons.expanded : icons.collapsed;
-    }
-
-    return <FontAwesomeIcon icon={isOpen ? faAngleUp : faAngleDown} />;
-  }
-
-  render() {
-    const {
-      children,
-      expandedTitle,
-      title,
-    } = this.props;
-
-    const { isExpanded, isOpen } = this.state;
-
-    return (
-      <div className={classNames(
-        'collapsible',
-        { open: isOpen && !isExpanded },
-        { expanded: isExpanded },
-        )}
-      >
-        {isExpanded ? (
-          expandedTitle
-        ) : (
-          <Button
-            aria-expanded={isOpen}
-            className={classNames(
-              'btn-block text-left',
-              'btn-collapsible',
-              { open: isOpen },
-            )}
-            onClick={this.handleClick}
-          >
-            <div className="collapsible-title d-flex align-items-center justify-content-between">
-              {title}
-              {this.renderIcon()}
-            </div>
-          </Button>
-        )}
-        <div className={classNames(
-          'collapsible-body',
-          { open: isOpen || isExpanded },
-          )}
-        >
-          {children}
-        </div>
-      </div>
-    );
-  }
-}
+      <Collapsible.Body className="collapsible-body">{children}</Collapsible.Body>
+    </Collapsible.Advanced>
+  );
+});
 
 Collapsible.propTypes = {
-  children: PropTypes.instanceOf(Object).isRequired,
-  expandedTitle: PropTypes.element,
-  icons: PropTypes.shape({
-    expanded: PropTypes.element.isRequired,
-    collapsed: PropTypes.element.isRequired,
-  }),
-  isCollapsible: PropTypes.func,
-  isOpen: PropTypes.bool,
-  onToggle: PropTypes.func,
-  title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  title: PropTypes.node.isRequired,
+  styling: PropTypes.oneOf(['basic', 'card', 'card-lg']),
+  iconWhenClosed: PropTypes.element,
+  iconWhenOpen: PropTypes.element,
+};
+Collapsible.defaultProps = {
+  className: undefined,
+  styling: 'card',
+  iconWhenClosed: <FontAwesomeIcon icon={faPlus} />,
+  iconWhenOpen: <FontAwesomeIcon icon={faMinus} />,
+
 };
 
-Collapsible.defaultProps = {
-  expandedTitle: undefined,
-  icons: null,
-  isCollapsible: undefined,
-  isOpen: false,
-  onToggle: () => {},
-};
+Collapsible.Advanced = CollapsibleAdvanced;
+Collapsible.Body = CollapsibleBody;
+Collapsible.Trigger = CollapsibleTrigger;
+Collapsible.Visible = CollapsibleVisible;
 
 export default Collapsible;
