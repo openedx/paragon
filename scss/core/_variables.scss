@@ -754,6 +754,13 @@ $card-columns-gap:                  1.25rem !default;
 $card-columns-margin:               $card-spacer-y !default;
 
 
+// Collapsible
+
+$collapsible-card-spacer-y:               .45rem !default;
+$collapsible-card-spacer-x:               .75rem !default;
+$collapsible-card-spacer-y-lg:         $card-spacer-y !default;
+$collapsible-card-spacer-x-lg:         $card-spacer-x !default;
+
 // Tooltips
 
 $tooltip-font-size:                 $font-size-sm !default;

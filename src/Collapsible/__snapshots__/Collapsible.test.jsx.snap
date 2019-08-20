@@ -1,0 +1,208 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Collapsible /> Controlled Rendering renders closed by default 1`] = `
+<div
+  className="pgn_collapsible"
+  open={false}
+>
+  <div
+    aria-expanded={false}
+    className="trigger d-flex align-items-center"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    <h4
+      className="flex-grow-1"
+    >
+      A heading
+    </h4>
+    <span
+      aria-hidden={true}
+      className="collapsible-card-header-icon"
+    >
+      +
+    </span>
+  </div>
+  <div
+    aria-expanded={false}
+    className="close-only"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    Close
+  </div>
+  <div
+    aria-expanded={false}
+    className="open-only"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    Open
+  </div>
+  <div>
+    <div />
+  </div>
+</div>
+`;
+
+exports[`<Collapsible /> Controlled Rendering renders open by default 1`] = `
+<div
+  className="pgn_collapsible"
+>
+  <div
+    aria-expanded={false}
+    className="trigger d-flex align-items-center"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    <h4
+      className="flex-grow-1"
+    >
+      A heading
+    </h4>
+    <span
+      aria-hidden={true}
+      className="collapsible-card-header-icon"
+    >
+      +
+    </span>
+  </div>
+  <div
+    aria-expanded={false}
+    className="close-only"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    Close
+  </div>
+  <div
+    aria-expanded={false}
+    className="open-only"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    Open
+  </div>
+  <div>
+    <div />
+  </div>
+</div>
+`;
+
+exports[`<Collapsible /> Uncontrolled Rendering renders closed by default 1`] = `
+<div
+  className="pgn_collapsible"
+>
+  <div
+    aria-expanded={false}
+    className="trigger d-flex align-items-center"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    <h4
+      className="flex-grow-1"
+    >
+      A heading
+    </h4>
+    <span
+      aria-hidden={true}
+      className="collapsible-card-header-icon"
+    >
+      +
+    </span>
+  </div>
+  <div
+    aria-expanded={false}
+    className="close-only"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    Close
+  </div>
+  <div
+    aria-expanded={false}
+    className="open-only"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    Open
+  </div>
+  <div>
+    <div />
+  </div>
+</div>
+`;
+
+exports[`<Collapsible /> Uncontrolled Rendering renders open by default 1`] = `
+<div
+  className="pgn_collapsible is-open"
+>
+  <div
+    aria-expanded={true}
+    className="trigger d-flex align-items-center"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    <h4
+      className="flex-grow-1"
+    >
+      A heading
+    </h4>
+    <span
+      aria-hidden={true}
+      className="collapsible-card-header-icon"
+    >
+      -
+    </span>
+  </div>
+  <div
+    aria-expanded={true}
+    className="close-only"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    Close
+  </div>
+  <div
+    aria-expanded={true}
+    className="open-only"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    Open
+  </div>
+  <div>
+    <div>
+      <p
+        className="example-content"
+      >
+        Example content
+      </p>
+    </div>
+  </div>
+</div>
+`;
