@@ -14,30 +14,27 @@ import CollapsibleBody from './CollapsibleBody';
 import CollapsibleTrigger from './CollapsibleTrigger';
 import CollapsibleVisible from './CollapsibleVisible';
 
-const styles = {
+const styleIcons = {
   basic: {
     iconWhenClosed: <FontAwesomeIcon icon={faPlusCircle} />,
     iconWhenOpen: <FontAwesomeIcon icon={faMinusCircle} />,
-    renderTitle: title => <span className="mr-2">{title}</span>,
   },
-  card: {
-    iconWhenClosed: <FontAwesomeIcon icon={faPlus} />,
-    iconWhenOpen: <FontAwesomeIcon icon={faMinus} />,
-    renderTitle: title => <p><strong>{title}</strong></p>,
-  },
-  'card-lg': {
-    iconWhenClosed: <FontAwesomeIcon icon={faPlus} />,
-    iconWhenOpen: <FontAwesomeIcon icon={faMinus} />,
-    renderTitle: title => <h5>{title}</h5>,
-  },
+  // card and card-lg use the defaults specified in defaultProps
 };
 
 const Collapsible = React.forwardRef((props, ref) => {
   const {
-    children, className, title, styling, ...other
+    children,
+    className,
+    title,
+    styling,
+    iconWhenClosed,
+    iconWhenOpen,
+    ...other
   } = props;
 
-  const style = styles[styling] || styles.card;
+  const icons = Object.assign({ iconWhenClosed, iconWhenOpen }, styleIcons[styling]);
+  const titleElement = React.isValidElement(title) ? title : <span>{title}</span>;
 
   return (
     <Collapsible.Advanced
@@ -46,9 +43,11 @@ const Collapsible = React.forwardRef((props, ref) => {
       ref={ref}
     >
       <Collapsible.Trigger className="collapsible-trigger">
-        { style.renderTitle(title) }
-        <Collapsible.Visible whenClosed>{style.iconWhenClosed}</Collapsible.Visible>
-        <Collapsible.Visible whenOpen>{style.iconWhenOpen}</Collapsible.Visible>
+        {titleElement}
+        <span className="ml-2">
+          <Collapsible.Visible whenClosed>{icons.iconWhenClosed}</Collapsible.Visible>
+          <Collapsible.Visible whenOpen>{icons.iconWhenOpen}</Collapsible.Visible>
+        </span>
       </Collapsible.Trigger>
 
       <Collapsible.Body className="collapsible-body">{children}</Collapsible.Body>
@@ -59,12 +58,17 @@ const Collapsible = React.forwardRef((props, ref) => {
 Collapsible.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.node.isRequired,
   styling: PropTypes.oneOf(['basic', 'card', 'card-lg']),
+  iconWhenClosed: PropTypes.element,
+  iconWhenOpen: PropTypes.element,
 };
 Collapsible.defaultProps = {
   className: undefined,
   styling: 'card',
+  iconWhenClosed: <FontAwesomeIcon icon={faPlus} />,
+  iconWhenOpen: <FontAwesomeIcon icon={faMinus} />,
+
 };
 
 Collapsible.Advanced = CollapsibleAdvanced;

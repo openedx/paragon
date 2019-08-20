@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+
 import { CollapsibleContext } from './CollapsibleAdvanced';
 import TransitionReplace from '../TransitionReplace';
 
@@ -8,6 +9,9 @@ function CollapsibleBody({
 }) {
   const { isOpen } = useContext(CollapsibleContext);
 
+  // Keys are added to these elements so that TransitionReplace
+  // will recognize them as unique components and perform the
+  // transition properly.
   const content = isOpen ?
     React.createElement(tag, { key: 'body', ...props }, children) :
     <div key="empty" />;
@@ -15,7 +19,6 @@ function CollapsibleBody({
   if (transitionWrapper) {
     return React.cloneElement(transitionWrapper, {}, content);
   }
-
   /* istanbul ignore next */
   return <TransitionReplace>{content}</TransitionReplace>;
 }
@@ -25,6 +28,7 @@ CollapsibleBody.propTypes = {
   tag: PropTypes.string,
   transitionWrapper: PropTypes.element,
 };
+
 CollapsibleBody.defaultProps = {
   children: undefined,
   tag: 'div',

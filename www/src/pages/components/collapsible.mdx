@@ -36,7 +36,7 @@ This is the default style if no `styling` prop is supplied.
 ```jsx live=true
 <Collapsible
   styling="card"
-  title="I'm not a heading"
+  title={<p><strong>Toggle Collapsible</strong></p>}
   className="shadow"
 >
   <p>Your stuff goes here.</p>
@@ -48,7 +48,21 @@ This is the default style if no `styling` prop is supplied.
 ```jsx live=true
 <Collapsible
   styling="card-lg"
-  title="I'm a heading"
+  title={<h5>Toggle Collapsible</h5>}
+  className="shadow"
+>
+  <p>Your stuff goes here.</p>
+</Collapsible>
+```
+
+##### Card with custom icons `<Collapsible styling="card-lg" />`
+
+```jsx live=true
+<Collapsible
+  styling="card"
+  title={<p><strong>Toggle Collapsible</strong></p>}
+  iconWhenOpen={<span>CLOSE SESAME</span>}
+  iconWhenClosed={<span>OPEN SESAME</span>}
   className="shadow"
 >
   <p>Your stuff goes here.</p>

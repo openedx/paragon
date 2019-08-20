@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+
 import { CollapsibleContext } from './CollapsibleAdvanced';
 
 function CollapsibleVisible({
@@ -8,11 +9,11 @@ function CollapsibleVisible({
   whenClosed: visibleWhenClosed,
 }) {
   const { isOpen } = useContext(CollapsibleContext);
+  const isVisible = (isOpen && visibleWhenOpen) || (!isOpen && visibleWhenClosed);
 
-  if ((visibleWhenOpen && isOpen) || (visibleWhenClosed && !isOpen)) {
+  if (isVisible) {
     return <React.Fragment>{children}</React.Fragment>;
   }
-
   return null;
 }
 
@@ -21,6 +22,7 @@ CollapsibleVisible.propTypes = {
   whenOpen: PropTypes.bool,
   whenClosed: PropTypes.bool,
 };
+
 CollapsibleVisible.defaultProps = {
   children: undefined,
   whenOpen: false,

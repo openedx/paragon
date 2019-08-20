@@ -27,12 +27,18 @@ class CollapsibleAdvanced extends React.Component {
 
   open = () => {
     this.setState({ isOpen: true });
-    if (this.props.onOpen) this.props.onOpen();
+
+    if (this.props.onOpen) {
+      this.props.onOpen();
+    }
   }
 
   close = () => {
     this.setState({ isOpen: false });
-    if (this.props.onClose) this.props.onClose();
+
+    if (this.props.onClose) {
+      this.props.onClose();
+    }
   }
 
   toggle = () => {
@@ -41,7 +47,10 @@ class CollapsibleAdvanced extends React.Component {
     } else {
       this.open();
     }
-    if (this.props.onToggle) this.props.onToggle(this.state.isOpen);
+
+    if (this.props.onToggle) {
+      this.props.onToggle(this.state.isOpen);
+    }
   }
 
   render() {
@@ -88,16 +97,15 @@ CollapsibleAdvanced.propTypes = {
   onOpen: PropTypes.func,
   onClose: PropTypes.func,
 };
+
 CollapsibleAdvanced.defaultProps = {
   children: undefined,
-  className: 'collapsible',
+  className: undefined,
   defaultOpen: false,
   open: undefined,
   onToggle: undefined,
   onOpen: undefined,
   onClose: undefined,
 };
-
-// export const CollapsibleConsumer = CollapsibleContext.Consumer;
 
 export default CollapsibleAdvanced;
