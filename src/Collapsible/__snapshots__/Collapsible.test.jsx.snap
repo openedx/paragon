@@ -2,7 +2,7 @@
 
 exports[`<Collapsible /> Controlled Rendering renders closed by default 1`] = `
 <div
-  className="pgn_collapsible collapsible"
+  className="pgn_collapsible"
   open={false}
 >
   <div
@@ -53,7 +53,7 @@ exports[`<Collapsible /> Controlled Rendering renders closed by default 1`] = `
 
 exports[`<Collapsible /> Controlled Rendering renders open by default 1`] = `
 <div
-  className="pgn_collapsible collapsible"
+  className="pgn_collapsible"
 >
   <div
     aria-expanded={false}
@@ -103,7 +103,7 @@ exports[`<Collapsible /> Controlled Rendering renders open by default 1`] = `
 
 exports[`<Collapsible /> Uncontrolled Rendering renders closed by default 1`] = `
 <div
-  className="pgn_collapsible collapsible"
+  className="pgn_collapsible"
 >
   <div
     aria-expanded={false}
@@ -153,7 +153,7 @@ exports[`<Collapsible /> Uncontrolled Rendering renders closed by default 1`] = 
 
 exports[`<Collapsible /> Uncontrolled Rendering renders open by default 1`] = `
 <div
-  className="pgn_collapsible collapsible is-open"
+  className="pgn_collapsible is-open"
 >
   <div
     aria-expanded={true}
