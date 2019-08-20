@@ -2,7 +2,6 @@ import React, { useContext, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { CollapsibleContext } from './CollapsibleAdvanced';
 
-
 function CollapsibleTrigger({
   tag, children, openOnly, closeOnly, ...props
 }) {

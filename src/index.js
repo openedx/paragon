@@ -1,17 +1,3 @@
-import { ChevronUp, ChevronDown, ChevronRight, ChevronLeft, Minus, MinusCircle, Plus, PlusCircle, Times, TimesCircle } from './Icons';
-
-export const Icons = {
-  ChevronUp,
-  ChevronDown,
-  ChevronRight,
-  ChevronLeft,
-  Minus,
-  MinusCircle,
-  Plus,
-  PlusCircle,
-  Times,
-  TimesCircle,
-};
 export { default as asInput } from './asInput';
 export { default as Breadcrumb } from './Breadcrumb';
 export { default as Button } from './Button';

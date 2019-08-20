@@ -9,62 +9,95 @@
 }
 
 .collapsible-card-header {
-  border-radius: $card-inner-border-radius;
-  border-bottom: $card-border-width solid transparent;
-  transition: border-color 100ms ease 150ms;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  & > * {
-    margin-bottom: 0;
-    margin-top: 0;
-  }
-
-  &[aria-expanded] {
-    border-radius: $card-inner-border-radius $card-inner-border-radius 0 0;
-    border-color: $card-border-color;
-    transition: none;
-  }
 }
 
-.collapsible-card-basic {
-  padding: $collapsible-card-spacer-y $collapsible-card-spacer-x;
+.collapsible-card {
+  @extend .card;
+  .collapsible-trigger {
+    padding: $collapsible-card-spacer-y $collapsible-card-spacer-x;
+    border-radius: $card-inner-border-radius;
+    border-bottom: $card-border-width solid transparent;
+    transition: border-color 100ms ease 150ms;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & > * {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+
+    &[aria-expanded="true"] {
+      border-radius: $card-inner-border-radius $card-inner-border-radius 0 0;
+      border-color: $card-border-color;
+      transition: none;
+    }
+  }
+  .collapsible-body {
+    @extend .card-body;
+    padding: $collapsible-card-spacer-y $collapsible-card-spacer-x;
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
-.collapsible-card-large {
-  padding: $collapsible-card-spacer-y-large $collapsible-card-spacer-x-large;
+.collapsible-card-lg {
+  @extend .card;
+  .collapsible-trigger {
+    padding: $collapsible-card-spacer-y-lg $collapsible-card-spacer-x-lg;
+    border-radius: $card-inner-border-radius;
+    border-bottom: $card-border-width solid transparent;
+    transition: border-color 100ms ease 150ms;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & > * {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+
+    &[aria-expanded="true"] {
+      border-radius: $card-inner-border-radius $card-inner-border-radius 0 0;
+      border-color: $card-border-color;
+      transition: none;
+    }
+  }
+  .collapsible-body {
+    @extend .card-body;
+    padding: $collapsible-card-spacer-y-lg $collapsible-card-spacer-x-lg;
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .collapsible-basic {
-  display: flex;
-  align-items: center;
-  text-decoration: underline;
-  color: #23419f;
-  .icon-basic {
-    margin-left: 0.5em;
+  .collapsible-trigger {
+    display: flex;
+    align-items: center;
+    text-decoration: underline;
+    color: #23419f;
+    .icon-basic {
+      margin-left: 0.5em;
+    }
   }
 }
 
-.collapsible-card-header-icon {
-  float: right;
-  padding-left: $card-spacer-x;
-}
+// .collapsible-card-header-icon {
+//   float: right;
+//   padding-left: $card-spacer-x;
+// }
 
-.collapsible-card-body {
-  @extend .card-body;
-  padding: $collapsible-card-spacer-y $collapsible-card-spacer-x;
-  & > *:last-child {
-    margin-bottom: 0;
-  }
-}
 
-.collapsible-card-body-large {
-  @extend .collapsible-card-body;
-  padding: $collapsible-card-spacer-y-large $collapsible-card-spacer-x-large;
+// // .collapsible-card-body-lg {
+// //   @extend .collapsible-card-body;
+// //   padding: $collapsible-card-spacer-y-lg $collapsible-card-spacer-x-lg;
 
-}
+// // }
 
-svg {
-  fill: currentColor;
-}
+// svg {
+//   fill: currentColor;
+// }

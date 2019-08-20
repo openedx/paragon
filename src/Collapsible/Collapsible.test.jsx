@@ -39,17 +39,17 @@ describe('<Collapsible />', () => {
   describe('Uncontrolled Rendering', () => {
     it('renders closed by default', () => {
       const tree = renderer.create((
-        <Collapsible>
+        <Collapsible.Advanced>
           {collapsibleContent}
-        </Collapsible>
+        </Collapsible.Advanced>
       )).toJSON();
       expect(tree).toMatchSnapshot();
     });
     it('renders open by default', () => {
       const tree = renderer.create((
-        <Collapsible defaultOpen>
+        <Collapsible.Advanced defaultOpen>
           {collapsibleContent}
-        </Collapsible>
+        </Collapsible.Advanced>
       )).toJSON();
       expect(tree).toMatchSnapshot();
     });
@@ -58,24 +58,24 @@ describe('<Collapsible />', () => {
   describe('Controlled Rendering', () => {
     it('renders closed by default', () => {
       const tree = renderer.create((
-        <Collapsible open={false}>
+        <Collapsible.Advanced open={false}>
           {collapsibleContent}
-        </Collapsible>
+        </Collapsible.Advanced>
       )).toJSON();
       expect(tree).toMatchSnapshot();
     });
     it('renders open by default', () => {
       const tree = renderer.create((
-        <Collapsible>
+        <Collapsible.Advanced>
           {collapsibleContent}
-        </Collapsible>
+        </Collapsible.Advanced>
       )).toJSON();
       expect(tree).toMatchSnapshot();
     });
   });
 
   describe('Imperative Methods', () => {
-    const wrapper = mount(<Collapsible>{collapsibleContent}</Collapsible>);
+    const wrapper = mount(<Collapsible.Advanced>{collapsibleContent}</Collapsible.Advanced>);
     const collapsible = wrapper.instance();
 
     collapsibleIsClosed(wrapper);
@@ -94,7 +94,7 @@ describe('<Collapsible />', () => {
   });
 
   describe('Mouse Interactions', () => {
-    const wrapper = mount(<Collapsible>{collapsibleContent}</Collapsible>);
+    const wrapper = mount(<Collapsible.Advanced>{collapsibleContent}</Collapsible.Advanced>);
     const collapsible = wrapper.instance();
     const trigger = wrapper.find('.trigger[role="button"]');
     const closeOnlyTrigger = wrapper.find('.close-only[role="button"]');
@@ -140,7 +140,7 @@ describe('<Collapsible />', () => {
   });
 
   describe('Keyboard Interactions', () => {
-    const wrapper = mount(<Collapsible>{collapsibleContent}</Collapsible>);
+    const wrapper = mount(<Collapsible.Advanced>{collapsibleContent}</Collapsible.Advanced>);
     const collapsible = wrapper.instance();
     const trigger = wrapper.find('.trigger[role="button"]');
     const closeOnlyTrigger = wrapper.find('.close-only[role="button"]');

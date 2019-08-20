@@ -14,110 +14,102 @@ import PropsTable from '../../components/PropsTable';
 
 # Collapsible
 
-##### Styling: Basic
+### Basic Usage
+
 The `styling` prop at the top level `<Collapsible />` component determines if the collapsible has basic styling, card, or card with heading.
 
+##### Basic Style `<Collapsible styling="basic" />`
+
 ```jsx live=true
-<Collapsible title="Toggle Collapsible" styling="basic" >
+<Collapsible
+  styling="basic"
+  title="Toggle Collapsible"
+>
   <p>Your stuff goes here.</p>
 </Collapsible>
 ```
 
-##### Default Collapsible
+##### Card Style `<Collapsible styling="card" />`
+
+This is the default style if no `styling` prop is supplied.
 
 ```jsx live=true
-<Collapsible title="I'm not a heading" styling="card">
-    <p>Your stuff goes here.</p>
+<Collapsible
+  styling="card"
+  title="I'm not a heading"
+  className="shadow"
+>
+  <p>Your stuff goes here.</p>
 </Collapsible>
 ```
 
-##### Default Collapsible with Heading
+##### Large Card Style `<Collapsible styling="card-lg" />`
 
 ```jsx live=true
-<Collapsible title="I'm a heading" styling="card-large">
-    <p>Your stuff goes here.</p>
+<Collapsible
+  styling="card-lg"
+  title="I'm a heading"
+  className="shadow"
+>
+  <p>Your stuff goes here.</p>
 </Collapsible>
 ```
 
-##### Basic usage (no styling)
+##### Default Open
+
+```jsx live=true
+<Collapsible title="I'm not a heading" className="shadow" defaultOpen>
+  <p>Your stuff goes here.</p>
+</Collapsible>
+```
+
+<hr/>
+
+### Advanced Usage
+
+For needs that deviate from the three styles above, use `<Collapsible.Advanced />`
+
+##### Bare minimum
 
 ```jsx live=true
 <Collapsible.Advanced>
-  <Collapsible.Trigger tag="a">Toggle Collapsible</Collapsible.Trigger>
+  <Collapsible.Trigger>
+    Toggle Collapsible
+  </Collapsible.Trigger>
   <Collapsible.Body>
     <p>Your stuff goes here</p>
   </Collapsible.Body>
 </Collapsible.Advanced>
 ```
 
-##### Styling: Card with Icon
+##### Card style with advanced usage
 
 ```jsx live=true
 <Collapsible.Advanced className="collapsible-card">
-  <Collapsible.Trigger className="collapsible-card-header collapsible-card-large d-flex align-items-center">
-    <h5 className="flex-grow-1">I'm a heading</h5>
-
-      <Collapsible.Visible whenClosed>
-        <Icons.Plus className="collapsible-card-header-icon" />
-      </Collapsible.Visible>
-
-      <Collapsible.Visible whenOpen>
-        <Icons.Minus className="collapsible-card-header-icon" />
-      </Collapsible.Visible>
+  <Collapsible.Trigger className="collapsible-trigger d-flex">
+    <span className="flex-grow-1">This is the title</span>
+    <Collapsible.Visible whenClosed> + </Collapsible.Visible>
+    <Collapsible.Visible whenOpen> - </Collapsible.Visible>
   </Collapsible.Trigger>
 
-  <Collapsible.Body className="collapsible-card-body">
-    <p>Your stuff goes here.</p>
+  <Collapsible.Body className="collapsible-body">
+    The content
   </Collapsible.Body>
 </Collapsible.Advanced>
 ```
 
-##### Default Open
-
-Add `defaultOpen` to the top level `<Collapsible />` component.
+##### With a close button
 
 ```jsx live=true
 <Collapsible.Advanced className="collapsible-card" defaultOpen>
-  <Collapsible.Trigger className="collapsible-card-header collapsible-card-large d-flex align-items-center">
-    <h5 className="flex-grow-1">I'm a heading</h5>
-
-      <Collapsible.Visible whenClosed>
-        <Icons.Plus className="collapsible-card-header-icon" />
-      </Collapsible.Visible>
-
-      <Collapsible.Visible whenOpen>
-        <Icons.Minus className="collapsible-card-header-icon" />
-      </Collapsible.Visible>
+  <Collapsible.Trigger className="collapsible-trigger d-flex">
+    <span className="flex-grow-1">This is the title</span>
+    <Collapsible.Visible whenClosed> + </Collapsible.Visible>
+    <Collapsible.Visible whenOpen> - </Collapsible.Visible>
   </Collapsible.Trigger>
 
-  <Collapsible.Body className="collapsible-card-body-large">
-    <p>Your stuff goes here.</p>
-  </Collapsible.Body>
-</Collapsible.Advanced>
-```
-
-
-##### With Close Button
-
-Add the `closeOnly` prop to a `<Collapsible.Trigger />` to make a button
-that will only close the collapsible.
-
-```jsx live=true
-<Collapsible.Advanced className="collapsible-card" defaultOpen>
-  <Collapsible.Trigger className="collapsible-card-header collapsible-card-large d-flex align-items-center">
-    <h5 className="flex-grow-1">I'm a heading</h5>
-
-      <Collapsible.Visible whenClosed>
-        <Icons.Plus className="collapsible-card-header-icon" />
-      </Collapsible.Visible>
-
-      <Collapsible.Visible whenOpen>
-        <Icons.Minus className="collapsible-card-header-icon" />
-      </Collapsible.Visible>
-  </Collapsible.Trigger>
-
-  <Collapsible.Body className="collapsible-card-body-large">
-    <p>Your stuff goes here.</p>
+  <Collapsible.Body className="collapsible-body">
+    <p>The content</p>
 
     <Collapsible.Trigger closeOnly tag="a" className="btn btn-outline-primary">
       Close
@@ -133,24 +125,24 @@ See the developer console for logging.
 
 ```jsx live=true
 <Collapsible.Advanced
-  className="collapsible-card"
+  className="collapsible-card-lg"
   onToggle={(isOpen) => console.log('Collapsible toggled and open is: ', isOpen)}
   onOpen={() => console.log('Collapsible opened.')}
   onClose={() => console.log('Collapsible closed.')}
 >
-  <Collapsible.Trigger className="collapsible-card-header collapsible-card-large d-flex align-items-center">
+  <Collapsible.Trigger className="collapsible-trigger">
     <h5 className="flex-grow-1">I'm a heading</h5>
 
       <Collapsible.Visible whenClosed>
-        <Icons.Plus className="collapsible-card-header-icon" />
+        +
       </Collapsible.Visible>
 
       <Collapsible.Visible whenOpen>
-        <Icons.Minus className="collapsible-card-header-icon" />
+        -
       </Collapsible.Visible>
   </Collapsible.Trigger>
 
-  <Collapsible.Body className="collapsible-card-body-large">
+  <Collapsible.Body className="collapsible-body">
     <p>Your stuff goes here.</p>
 
     <Collapsible.Trigger closeOnly tag="a" className="btn btn-outline-primary">
@@ -172,19 +164,19 @@ function() {
       onToggle={isOpen => setCollapseOpen(!isOpen)}
       className="collapsible-card"
     >
-      <Collapsible.Trigger className="collapsible-card-header collapsible-card-large d-flex align-items-center">
+      <Collapsible.Trigger className="collapsible-trigger">
         <h5 className="flex-grow-1">I'm a heading</h5>
 
           <Collapsible.Visible whenClosed>
-            <Icons.Plus className="collapsible-card-header-icon" />
+            +
           </Collapsible.Visible>
 
           <Collapsible.Visible whenOpen>
-            <Icons.Minus className="collapsible-card-header-icon" />
+            -
           </Collapsible.Visible>
       </Collapsible.Trigger>
 
-      <Collapsible.Body className="collapsible-card-body-large">
+      <Collapsible.Body className="collapsible-body">
         <p>Your stuff goes here.</p>
 
         <Collapsible.Trigger closeOnly tag="a" className="btn btn-outline-primary">

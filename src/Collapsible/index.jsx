@@ -1,55 +1,57 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import * as Icons from '../Icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faPlusCircle,
+  faMinusCircle,
+  faPlus,
+  faMinus,
+} from '@fortawesome/free-solid-svg-icons';
+
 import CollapsibleAdvanced from './CollapsibleAdvanced';
 import CollapsibleBody from './CollapsibleBody';
 import CollapsibleTrigger from './CollapsibleTrigger';
 import CollapsibleVisible from './CollapsibleVisible';
+
+const styles = {
+  basic: {
+    iconWhenClosed: <FontAwesomeIcon icon={faPlusCircle} />,
+    iconWhenOpen: <FontAwesomeIcon icon={faMinusCircle} />,
+    renderTitle: title => <span className="mr-2">{title}</span>,
+  },
+  card: {
+    iconWhenClosed: <FontAwesomeIcon icon={faPlus} />,
+    iconWhenOpen: <FontAwesomeIcon icon={faMinus} />,
+    renderTitle: title => <p><strong>{title}</strong></p>,
+  },
+  'card-lg': {
+    iconWhenClosed: <FontAwesomeIcon icon={faPlus} />,
+    iconWhenOpen: <FontAwesomeIcon icon={faMinus} />,
+    renderTitle: title => <h5>{title}</h5>,
+  },
+};
 
 const Collapsible = React.forwardRef((props, ref) => {
   const {
     children, className, title, styling, ...other
   } = props;
 
-  const isBasic = styling === 'basic';
-  const isCard = styling === 'card';
-  const isCardWithHeading = styling === 'card-large';
-
-  const renderTitle = () => {
-    switch (styling) {
-      case 'basic':
-        return <span>{title}</span>;
-      case 'card':
-        return <p><strong>{title}</strong></p>;
-      case 'card-large':
-        return <h5>{title}</h5>;
-      default:
-        return null;
-    }
-  };
+  const style = styles[styling] || styles.card;
 
   return (
     <Collapsible.Advanced
       {...other}
-      className={classNames({ 'collapsible-card': !isBasic }, className)}
-      forwardedRef={ref}
+      className={classNames(className, `collapsible-${styling}`)}
+      ref={ref}
     >
-      <Collapsible.Trigger
-        className={classNames({
-          'collapsible-card-header': !isBasic, 'collapsible-card-basic': isCard, 'collapsible-card-large': isCardWithHeading, 'collapsible-basic': isBasic,
-        })}
-      >
-        { renderTitle(styling) }
-        <Collapsible.Visible whenClosed>
-          { isBasic ? <Icons.PlusCircle height="1rem" width="1rem" className="icon-basic" /> : <Icons.Plus className="collapsible-card-header-icon" /> }
-        </Collapsible.Visible>
-        <Collapsible.Visible whenOpen>
-          { isBasic ? <Icons.MinusCircle height="1rem" width="1rem" className="icon-basic" /> : <Icons.Minus className="collapsible-card-header-icon" /> }
-        </Collapsible.Visible>
+      <Collapsible.Trigger className="collapsible-trigger">
+        { style.renderTitle(title) }
+        <Collapsible.Visible whenClosed>{style.iconWhenClosed}</Collapsible.Visible>
+        <Collapsible.Visible whenOpen>{style.iconWhenOpen}</Collapsible.Visible>
       </Collapsible.Trigger>
 
-      <Collapsible.Body className={classNames({ 'collapsible-card-body': isCard, 'collapsible-card-body-large': isCardWithHeading })}>{children}</Collapsible.Body>
+      <Collapsible.Body className="collapsible-body">{children}</Collapsible.Body>
     </Collapsible.Advanced>
   );
 });
@@ -58,10 +60,10 @@ Collapsible.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   title: PropTypes.string.isRequired,
-  styling: PropTypes.string,
+  styling: PropTypes.oneOf(['basic', 'card', 'card-lg']),
 };
 Collapsible.defaultProps = {
-  className: 'collapsible',
+  className: undefined,
   styling: 'card',
 };
 
