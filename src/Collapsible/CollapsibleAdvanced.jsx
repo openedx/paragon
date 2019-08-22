@@ -49,7 +49,8 @@ class CollapsibleAdvanced extends React.Component {
     }
 
     if (this.props.onToggle) {
-      this.props.onToggle(this.state.isOpen);
+      const newIsOpenState = !this.state.isOpen;
+      this.props.onToggle(newIsOpenState);
     }
   }
 
