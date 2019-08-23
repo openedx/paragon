@@ -1,21 +1,27 @@
 ---
-title: "Modal"
-type: "component"
-status: "Needs Work"
-designStatus: "Done"
-devStatus: "To Do"
+title: 'Modal'
+type: 'component'
+status: 'Needs Work'
+designStatus: 'Done'
+devStatus: 'To Do'
 notes: |
-     Overly complex implementation
-     Too opinionated in design/structure
+  Overly complex implementation
+  Too opinionated in design/structure
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
-import { MailtoLink } from '~paragon-react';
+import get from 'lodash/get';
+import { Modal } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
-
+import SingleComponentStatus from '../../components/singleComponentStatus';
 
 # Modal
 
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
 
 ##### Example Usage
 
@@ -45,25 +51,27 @@ class ModalWrapper extends React.Component {
         <Modal
           open={this.state.open}
           title="Modal title."
-          body={(
+          body={
             <div>
               <p>Enter your e-mail address to receive free cat facts!</p>
-              <InputText
-                name="e-mail"
-                label="E-Mail Address"
+              <InputText 
+                name="e-mail" 
+                label="E-Mail Address" 
               />
             </div>
-          )}
+          }
           parentSelector={this.props.parentSelector}
           onClose={this.resetModalWrapperState}
           buttons={[
-            <Button buttonType="success">Green button!</Button>,
+            <Button buttonType="success">Green button!</Button>
           ]}
         />
         <Button
           onClick={this.openModal}
           buttonType="light"
-          inputRef={(input) => { this.button = input; }}
+          inputRef={input => {
+            this.button = input;
+          }}
         >
           Click me to open a modal!
         </Button>
@@ -72,7 +80,6 @@ class ModalWrapper extends React.Component {
   }
 }
 ```
-
 
 ##### configurable buttons
 
@@ -93,7 +100,6 @@ class ModalWrapper extends React.Component {
 />
 ```
 
-
 ##### configurable title and body
 
 ```jsx
@@ -102,12 +108,11 @@ class ModalWrapper extends React.Component {
   title="Custom title!"
   body="Custom body!"
   buttons={[
-    <Button buttonType="dark">Dark button!</Button>,
+    <Button buttonType="dark">Dark button!</Button>
   ]}
   onClose={() => {}}
 />
 ```
-
 
 ##### configurable buttons that perform actions
 
@@ -117,8 +122,8 @@ class ModalWrapper extends React.Component {
   title="Modal title."
   body="Modal body."
   buttons={[
-    <Button
-      buttonType="light"
+    <Button 
+      buttonType="light" 
       onClick={action('button-click')}
     >
       Click me and check the console!
@@ -127,7 +132,6 @@ class ModalWrapper extends React.Component {
   onClose={() => {}}
 />
 ```
-
 
 ##### configurable close button string
 
@@ -141,7 +145,6 @@ class ModalWrapper extends React.Component {
 />
 ```
 
-
 ##### configurable close button element
 
 ```jsx
@@ -150,10 +153,11 @@ class ModalWrapper extends React.Component {
   title="Modal title."
   body="Modal body."
   closeText={
-    <Icon
-      className="fa fa-ship"
-      screenReaderText="Close"
-    />}
+    <Icon 
+      className="fa fa-ship" 
+      screenReaderText="Close" 
+    />
+  }
   onClose={() => {}}
 />
 ```
@@ -161,9 +165,13 @@ class ModalWrapper extends React.Component {
 ##### Props
 
 <StaticQuery
-  query={graphql`query {
-    componentMetadata(displayName: { eq: "Modal" }) { ...ComponentDocGenData }
-  }`}
+  query={graphql`
+    query {
+      componentMetadata(displayName: { eq: "Modal" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
   render={({ componentMetadata }) => {
     if (componentMetadata == null) return null;
     return <PropsTable propMetaData={componentMetadata.props} />;

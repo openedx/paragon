@@ -1,44 +1,53 @@
 ---
-title: "Checkbox"
-type: "component"
-status: "Deprecate Soon"
-designStatus: "TBD"
-devStatus: "To Do"
+title: 'Checkbox'
+type: 'component'
+status: 'Deprecate Soon'
+designStatus: 'TBD'
+devStatus: 'To Do'
 notes: |
-    Replaced by Input and ValidationFormGroup
+  Replaced by Input and ValidationFormGroup
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
+import get from 'lodash/get';
+import { CheckBox } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
+import SingleComponentStatus from '../../components/singleComponentStatus';
 
-# Check
+# Checkbox
 
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
 
 ##### Basic usage
+
 ```jsx live=true
-<CheckBox
-  name="checkbox"
-  label="check me out!"
+<CheckBox 
+  name="checkbox" 
+  label="check me out!" 
 />
 ```
 
 ##### Disabled
 
 ```jsx live=true
-<CheckBox
-  name="checkbox"
-  label="you cannot check me out"
-  disabled
+<CheckBox 
+  name="checkbox" 
+  label="you cannot check me out" 
+  disabled 
 />
 ```
 
 ##### Default checked
 
 ```jsx live=true
-<CheckBox
-  name="checkbox"
-  label="(un)check me out"
-  checked
+<CheckBox 
+  name="checkbox" 
+  label="(un)check me out" 
+  checked 
 />
 ```
 
@@ -96,9 +105,13 @@ class CheckBoxWrapper extends React.Component {
 ##### Props
 
 <StaticQuery
-  query={graphql`query {
-    componentMetadata(displayName: { eq: "Check" }) { ...ComponentDocGenData }
-  }`}
+  query={graphql`
+    query {
+      componentMetadata(displayName: { eq: "Check" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
   render={({ componentMetadata }) => {
     if (componentMetadata == null) return null;
     return <PropsTable propMetaData={componentMetadata.props} />;

@@ -1,43 +1,53 @@
 ---
-title: "Tabs"
-type: "component"
-status: "Needs Work"
-designStatus: "Done"
-devStatus: "In Progress"
+title: 'Tabs'
+type: 'component'
+status: 'Needs Work'
+designStatus: 'Done'
+devStatus: 'In Progress'
 notes: |
-    Overly complex implementation. New styles break layout.
+  Overly complex implementation. New styles break layout.
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
+import get from 'lodash/get';
 import { Tabs } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
+import SingleComponentStatus from '../../components/singleComponentStatus';
 
 # Tabs
 
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
 
 ##### Basic Usage
 
 ```jsx live=true
-  <Tabs
-    labels={[
-      'Panel 1',
-      'Panel 2',
-      'Panel 3',
-    ]}
-  >
-    <div>Hello I am the first panel</div>
-    <div>Hello I am the second panel</div>
-    <div>Hello I am the third panel</div>
-  </Tabs>
+<Tabs 
+  labels={[
+    'Panel 1', 
+    'Panel 2', 
+    'Panel 3'
+  ]}
+>
+  <div>Hello I am the first panel</div>
+  <div>Hello I am the second panel</div>
+  <div>Hello I am the third panel</div>
+</Tabs>
 ```
-
 
 ##### Props
 
 <StaticQuery
-  query={graphql`query {
-    componentMetadata(displayName: { eq: "Tabs" }) { ...ComponentDocGenData }
-  }`}
+  query={graphql`
+    query {
+      componentMetadata(displayName: { eq: "Tabs" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
   render={({ componentMetadata }) => {
     if (componentMetadata == null) return null;
     return <PropsTable propMetaData={componentMetadata.props} />;

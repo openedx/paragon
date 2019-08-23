@@ -31,12 +31,20 @@ const Breadcrumbs = ({
 };
 
 Breadcrumbs.propTypes = {
+  /** an array of objects with the properties `label` and `url` as strings. */
   links: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     url: PropTypes.string,
   })).isRequired,
+  /** allows to add a label that is not a link to the end of the breadcrumb.
+   * Defaults to `undefined`.
+ */
   activeLabel: PropTypes.string,
+  /** allows to add a custom element between the breadcrumb items.
+   * Defaults to `>` rendered using the `Icon` component. */
   spacer: PropTypes.element,
+  /** allows to add a custom function to be called `onClick` of a breadcrumb link.
+   * The use case for this is for adding custom analytics to the component. */
   clickHandler: PropTypes.func,
 };
 

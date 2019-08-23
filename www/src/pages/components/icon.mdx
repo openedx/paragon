@@ -1,24 +1,36 @@
 ---
-title: "Icon"
-type: "component"
-status: "Reassessing"
-designStatus: "TBD"
-devStatus: "TBD"
-notes: "Reconcile purpose of this component with use of FontAwesome"
+title: 'Icon'
+type: 'component'
+status: 'Reassessing'
+designStatus: 'TBD'
+devStatus: 'TBD'
+notes: 'Reconcile purpose of this component with use of FontAwesome'
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
+import get from 'lodash/get';
 import { Icon } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
+import SingleComponentStatus from '../../components/singleComponentStatus';
 
 # Icon
+
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
 
 ##### Props
 
 <StaticQuery
-  query={graphql`query {
-    componentMetadata(displayName: { eq: "Icon" }) { ...ComponentDocGenData }
-  }`}
+  query={graphql`
+    query {
+      componentMetadata(displayName: { eq: "Icon" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
   render={({ componentMetadata }) => {
     if (componentMetadata == null) return null;
     return <PropsTable propMetaData={componentMetadata.props} />;

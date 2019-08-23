@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { between } from 'airbnb-prop-types';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
@@ -385,9 +386,36 @@ Pagination.defaultProps = {
 };
 
 Pagination.propTypes = {
+  /** specifies a callback function that is executed when the user selects a page button or the `Previous`/`Next` buttons. For example:
+
+```jsx
+<Pagination onPageSelect={(pageNumber) => { console.log(pageNumber); } />
+``` */
   onPageSelect: PropTypes.func.isRequired,
+  /** specifies the total number of pages in the `Pagination` component. */
   pageCount: PropTypes.number.isRequired,
+  /** specifies the `aria-label` for the `<nav>` element that wraps the pagination button list. */
   paginationLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  /** specifies the labels to use for the `Previous`/`Next` buttons as well as the various parts of `aria-label` on the page buttons for accessibility. All button labels accept both string or elements. The button label options are as follows:
+
+* `previous`: Text for the `Previous` button;
+* `next`: Text for the `Next` button;
+* `page`: Text in the `aria-label` on page buttons to describe the button (e.g., "**Page** 1");
+* `currentPage`: Text to depict the selected page in the `aria-label`
+on page buttons (e.g., "Page 1, **Current Page**");
+* `pageOfCount`: Text that separates the current page and total page count
+for the mobile UI (e.g., "Page 1 **of** 20").
+
+The default is:
+```javascript
+{
+    previous: 'Previous',
+    next: 'Next',
+    page: 'Page',
+    currentPage: 'Current Page',
+    pageOfCount: 'of',
+}
+``` */
   buttonLabels: PropTypes.shape({
     previous: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     next: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
@@ -395,8 +423,11 @@ Pagination.propTypes = {
     currentPage: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     pageOfCount: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   }),
+  /** specifies any class name(s) for the `Pagination` component. The default is an empty string. */
   className: PropTypes.string,
+  /** specifies the page that the `Pagination` component will automatically select. The default is `1`. */
   currentPage: PropTypes.number,
+  /** specifies the number of page buttons to display in between the `Previous` and `Next` buttons. This number also includes any ellipses in the total count. Also, to ensure that at least one clickable page button is shown when both ellipses are displayed, this value must be greater than `4`.  The default is `7`. */
   maxPagesDisplayed: between({ gt: 4 }),
 };
 
