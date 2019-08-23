@@ -1,65 +1,64 @@
 ---
-title: "Fieldset"
-type: "component"
-status: "Deprecate Soon"
-designStatus: "TBD"
-devStatus: "To Do"
+title: 'Fieldset'
+type: 'component'
+status: 'Deprecate Soon'
+designStatus: 'TBD'
+devStatus: 'To Do'
 notes: |
-    Unneeded. Used in one place (studio-frontend/src/components/EditImageModal/index.jsx)
+  Unneeded. Used in one place (studio-frontend/src/components/EditImageModal/index.jsx)
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
+import get from 'lodash/get';
 import { Fieldset } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
+import SingleComponentStatus from '../../components/singleComponentStatus';
 
 # Fieldset
 
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
 
 ##### basic usage
 
 ```jsx live=true
 <form>
-  <Fieldset
-    legend="Name"
-  >
-    <InputText
-      name="firstName"
-      label="First Name"
-      value=""
+  <Fieldset legend="Name">
+    <InputText 
+      name="firstName" 
+      label="First Name" 
+      value="" 
     />
-    <InputText
-      name="lastName"
-      label="Last Name"
-      value=""
+    <InputText 
+      name="lastName" 
+      label="Last Name" 
+      value="" 
     />
   </Fieldset>
 </form>
 ```
-
 
 ##### invalid
 
 ```jsx live=true
 <form>
-  <Fieldset
-    legend="Name"
-    invalidMessage="This is invalid!"
-    isValid={false}
-  >
+  <Fieldset legend="Name" invalidMessage="This is invalid!" isValid={false}>
     <InputText
-      name="firstName"
-      label="First Name"
-      value=""
+      name="firstName" 
+      label="First Name" 
+      value="" 
     />
-    <InputText
-      name="lastName"
-      label="Last Name"
-      value=""
+    <InputText 
+      name="lastName" 
+      label="Last Name" 
+      value="" 
     />
   </Fieldset>
 </form>
 ```
-
 
 ##### invalid with danger theme
 
@@ -74,25 +73,23 @@ import PropsTable from '../../components/PropsTable';
     }}
     variantIconDescription="Error"
   >
-    <InputText
-      name="firstName"
-      label="First Name"
-      value=""
+    <InputText 
+      name="firstName" 
+      label="First Name" 
+      value="" 
     />
-    <InputText
-      name="lastName"
-      label="Last Name"
-      value=""
+    <InputText 
+      name="lastName" 
+      label="Last Name" 
+      value="" 
     />
   </Fieldset>
 </form>
 ```
 
-
 ##### Validated Form
 
 ```jsx live=true
-
 class ValidatedForm extends React.Component {
   constructor(props) {
     super(props);
@@ -107,7 +104,10 @@ class ValidatedForm extends React.Component {
   }
 
   handleSubmit(event) {
-    if (this.firstInputRef.value.length === 0 && this.secondInputRef.value.length === 0) {
+    if (
+      this.firstInputRef.value.length === 0 &&
+      this.secondInputRef.value.length === 0
+    ) {
       this.setState({
         isValid: false,
       });
@@ -121,9 +121,7 @@ class ValidatedForm extends React.Component {
 
   render() {
     return (
-      <form
-        onSubmit={this.handleSubmit}
-      >
+      <form onSubmit={this.handleSubmit}>
         <Fieldset
           legend="Name"
           invalidMessage="Please enter at least one name."
@@ -137,20 +135,20 @@ class ValidatedForm extends React.Component {
             name="firstName"
             label="First Name"
             value=""
-            inputRef={(ref) => { this.firstInputRef = ref; }}
+            inputRef={ref => {
+              this.firstInputRef = ref;
+            }}
           />
           <InputText
             name="lastName"
             label="Last Name"
             value=""
-            inputRef={(ref) => { this.secondInputRef = ref; }}
+            inputRef={ref => {
+              this.secondInputRef = ref;
+            }}
           />
         </Fieldset>
-        <input
-          type="submit"
-          className="btn btn-primary"
-          value="Submit"
-        />
+        <input type="submit" className="btn btn-primary" value="Submit" />
       </form>
     );
   }
@@ -160,9 +158,13 @@ class ValidatedForm extends React.Component {
 ##### Props
 
 <StaticQuery
-  query={graphql`query {
-    componentMetadata(displayName: { eq: "Fieldset" }) { ...ComponentDocGenData }
-  }`}
+  query={graphql`
+    query {
+      componentMetadata(displayName: { eq: "Fieldset" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
   render={({ componentMetadata }) => {
     if (componentMetadata == null) return null;
     return <PropsTable propMetaData={componentMetadata.props} />;

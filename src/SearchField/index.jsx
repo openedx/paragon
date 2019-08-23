@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -169,17 +170,46 @@ SearchField.defaultProps = {
 };
 
 SearchField.propTypes = {
+  /** specifies a callback function for when the `SearchField` is submitted by the user. For example:
+
+```jsx
+<SearchField onSubmit={(value) => { console.log(value); } />
+``` */
   onSubmit: PropTypes.func.isRequired,
+  /** specifies the label to use for the input field (e.g., for i18n translations). The default is "Search:". */
   inputLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  /** specifies a callback function for when the user loses focus in the `SearchField` component. The default is an empty function. For example:
+
+```jsx
+<SearchField onBlur={(value) => { console.log(value); }} />
+``` */
   onBlur: PropTypes.func,
+  /** specifies a callback function for when the value in `SearchField` is changed by the user. The default is an empty function. For example:
+  ```jsx
+<SearchField onBlur={(value) => { console.log(value); }} />
+```
+  */
   onChange: PropTypes.func,
+  /** specifies a callback function for when the value in `SearchField` is changed by the user. The default is an empty function. For example:
+  ```jsx
+<SearchField onClear={(value) => { console.log(value); }} />
+```
+  */
   onClear: PropTypes.func,
+  /** specifies a callback function for when the user focuses in the `SearchField` component. The default is an empty function. For example:
+
+```jsx
+<SearchField onFocus={(value) => { console.log(value); } />
+``` */
   onFocus: PropTypes.func,
+  /** specifies the placeholder text for the input. The default is an empty string. */
   placeholder: PropTypes.string,
+  /** specifies the screenreader text for both the clear and search buttons (e.g., for i18n translations). The default is `{ clearButton: 'Clear search', searchButton: 'Submit search' }`. */
   screenReaderText: PropTypes.shape({
     clearButton: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
     searchButton: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   }),
+  /** specifies the initial value for the input. The default is an empty string. */
   value: PropTypes.string,
 };
 

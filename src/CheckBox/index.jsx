@@ -51,8 +51,12 @@ class Check extends React.Component {
 
 
 Check.propTypes = {
+  // eslint-disable-next-line max-len
+  /** (`Boolean`): `true` if the state should be checked, `false` otherwise. This prop can be used to manage the Checkbox more directly, overriding the default Checkbox checked state. */
   checked: PropTypes.bool,
+  /** (`Boolean`): `true` if the checkbox should be disabled, `false` otherwise */
   onChange: PropTypes.func,
+  /** function to be called when the checkbox changes state */
   inputRef: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.shape({ current: PropTypes.instanceOf(PropTypes.element) }),

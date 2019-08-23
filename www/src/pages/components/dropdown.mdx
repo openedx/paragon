@@ -1,19 +1,27 @@
 ---
-title: "Dropdown"
-type: "component"
-status: "Needs Work"
-designStatus: "Done"
-devStatus: "In Progress"
+title: 'Dropdown'
+type: 'component'
+status: 'Needs Work'
+designStatus: 'Done'
+devStatus: 'In Progress'
 notes: |
-    Simplifying implementation.
-    Fix event handling bug.
+  Simplifying implementation.
+  Fix event handling bug.
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
+import get from 'lodash/get';
 import { Dropdown } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
+import SingleComponentStatus from '../../components/singleComponentStatus';
 
 # Dropdown
+
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
 
 ##### basic usage
 
@@ -30,7 +38,6 @@ import PropsTable from '../../components/PropsTable';
 </Dropdown>
 ```
 
-
 ##### with icon element
 
 ```jsx live=true
@@ -46,7 +53,6 @@ import PropsTable from '../../components/PropsTable';
   </Dropdown.Menu>
 </Dropdown>
 ```
-
 
 ##### with caret/chevron
 
@@ -99,7 +105,6 @@ import PropsTable from '../../components/PropsTable';
 />
 ```
 
-
 ##### (Deprecated) menu items as elements
 
 ```jsx live=true
@@ -112,7 +117,6 @@ import PropsTable from '../../components/PropsTable';
   ]}
 />
 ```
-
 
 ##### (Deprecated) with icon element
 
@@ -140,23 +144,35 @@ import PropsTable from '../../components/PropsTable';
 ##### Props
 
 <StaticQuery
-  query={graphql`query {
-    dropdown: componentMetadata(displayName: { eq: "Dropdown" }) { ...ComponentDocGenData }
-    dropdownItem: componentMetadata(displayName: { eq: "DropdownItem" }) { ...ComponentDocGenData }
-    dropdownButton: componentMetadata(displayName: { eq: "DropdownButton" }) { ...ComponentDocGenData }
-    dropdownMenu: componentMetadata(displayName: { eq: "DropdownMenu" }) { ...ComponentDocGenData }
-  }`}
+  query={graphql`
+    query {
+      dropdown: componentMetadata(displayName: { eq: "Dropdown" }) {
+        ...ComponentDocGenData
+      }
+      dropdownItem: componentMetadata(displayName: { eq: "DropdownItem" }) {
+        ...ComponentDocGenData
+      }
+      dropdownButton: componentMetadata(displayName: { eq: "DropdownButton" }) {
+        ...ComponentDocGenData
+      }
+      dropdownMenu: componentMetadata(displayName: { eq: "DropdownMenu" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
   render={({ dropdown, dropdownItem, dropdownButton, dropdownMenu }) => {
     return (
       <div>
         {dropdown ? <PropsTable propMetaData={dropdown.props} /> : null}
         <h4>Dropdown.Button</h4>
-        {dropdownButton ? <PropsTable propMetaData={dropdownButton.props} /> : null}
+        {dropdownButton ? (
+          <PropsTable propMetaData={dropdownButton.props} />
+        ) : null}
         <h4>Dropdown.Menu</h4>
         {dropdownMenu ? <PropsTable propMetaData={dropdownMenu.props} /> : null}
         <h4>Dropdown.Item</h4>
         {dropdownItem ? <PropsTable propMetaData={dropdownItem.props} /> : null}
       </div>
-    )
+    );
   }}
 />
