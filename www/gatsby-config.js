@@ -6,7 +6,7 @@ module.exports = {
     description: 'Documentation for Paragon Pattern Library',
   },
   // Match the location of the site on github pages
-  pathPrefix: '/paragon/v2',
+  pathPrefix: '/paragon',
   plugins: [
     'gatsby-plugin-sass',
     {
