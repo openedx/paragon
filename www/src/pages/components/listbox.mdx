@@ -1,19 +1,25 @@
 ---
-title: "ListBox"
-type: "component"
-status: "Deprecate Soon"
-designStatus: "TBD"
-devStatus: "To Do"
-notes: "Not used anywhere in code on Github. Consult design."
+title: 'ListBox'
+type: 'component'
+status: 'Deprecate Soon'
+designStatus: 'TBD'
+devStatus: 'To Do'
+notes: 'Not used anywhere in code on Github. Consult design.'
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
+import get from 'lodash/get';
 import { ListBox } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
+import SingleComponentStatus from '../../components/singleComponentStatus';
 
 # ListBox
 
-
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
 
 ##### basic usage
 
@@ -33,7 +39,6 @@ import PropsTable from '../../components/PropsTable';
   </ListBoxOption>
 </ListBox>
 ```
-
 
 ##### using tag prop
 
@@ -56,7 +61,6 @@ import PropsTable from '../../components/PropsTable';
   </ListBox>
 </React.Fragment>
 ```
-
 
 ##### using onSelect prop
 
@@ -106,12 +110,17 @@ class ListBoxWrapperForOnSelect extends React.Component {
       <React.Fragment>
         <span aria-live="polite">
           Selected Fruit:
-          {this.state.selectedOptionIndex === undefined ?
-            <span className="sr-only">none</span> :
-            <span arialabelledby={`list-box-option-${this.state.selectedOptionIndex}`} >
+          {this.state.selectedOptionIndex === undefined ? (
+            <span className="sr-only">none</span>
+          ) : (
+            <span
+              arialabelledby={`list-box-option-${
+                this.state.selectedOptionIndex
+              }`}
+            >
               {this.getSelectedFruitEmoji(this.state.selectedOption)}
             </span>
-          }
+          )}
         </span>
         <ListBox style={{ width: '200px' }}>
           {children}
@@ -121,7 +130,6 @@ class ListBoxWrapperForOnSelect extends React.Component {
   }
 }
 ```
-
 
 ##### using selectedOptionIndex prop
 
@@ -170,10 +178,7 @@ class ListBoxWrapperForSelectedOptionIndex extends React.Component {
 
     return (
       <React.Fragment>
-        <Button
-          buttonType="primary"
-          onClick={this.onButtonClick}
-        >
+        <Button buttonType="primary" onClick={this.onButtonClick}>
           Click me to reset your selected fruit!
         </Button>
         <ListBox
@@ -191,9 +196,13 @@ class ListBoxWrapperForSelectedOptionIndex extends React.Component {
 ##### Props
 
 <StaticQuery
-  query={graphql`query {
-    componentMetadata(displayName: { eq: "ListBox" }) { ...ComponentDocGenData }
-  }`}
+  query={graphql`
+    query {
+      componentMetadata(displayName: { eq: "ListBox" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
   render={({ componentMetadata }) => {
     if (componentMetadata == null) return null;
     return <PropsTable propMetaData={componentMetadata.props} />;

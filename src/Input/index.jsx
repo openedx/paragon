@@ -43,13 +43,18 @@ class Input extends React.Component {
     if (this.inputEl.getAttribute('aria-label') !== null) return;
 
     // eslint-disable-next-line no-console
-    if (console) console.warn('Input[a11y]: There is no associated label for this Input');
+    if (console) {
+      console.warn('Input[a11y]: There is no associated label for this Input');
+    }
   }
 
   renderOptions(options) {
     return options.map((option) => {
       const {
-        value, label, group, ...attributes
+        value,
+        label,
+        group,
+        ...attributes
       } = option;
 
       if (group) {
@@ -59,13 +64,21 @@ class Input extends React.Component {
           </optgroup>
         );
       }
-      return <option key={value} value={value} {...attributes}>{label}</option>;
+      return (
+        <option key={value} value={value} {...attributes}>
+          {label}
+        </option>
+      );
     }, this);
   }
 
   render() {
     const {
-      type, className, options, forwardedRef, ...attributes // eslint-disable-line react/prop-types
+      type,
+      className,
+      options,
+      forwardedRef, // eslint-disable-line react/prop-types
+      ...attributes // eslint-disable-line react/prop-types
     } = this.props;
 
     const htmlTag = this.getHTMLTagForType();
@@ -81,8 +94,9 @@ class Input extends React.Component {
   }
 }
 
-
 Input.propTypes = {
+  /** specifies the type of component.
+   * One of select, textarea, or any valid type for an html input tag. */
   type: PropTypes.oneOf([
     'textarea',
     'select',
@@ -109,7 +123,9 @@ Input.propTypes = {
     'url',
     'week',
   ]).isRequired,
+  /** specifies the className in addition to a bootstrap class name. */
   className: PropTypes.string,
+  /** should be used to specify the options of an Input of type select */
   options: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -126,7 +142,6 @@ Input.defaultProps = {
   className: undefined,
   options: [],
 };
-
 
 // eslint-disable-next-line react/no-multi-comp
 const InputWithRefForwarding = React.forwardRef((props, ref) => (

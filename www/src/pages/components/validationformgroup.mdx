@@ -1,35 +1,43 @@
 ---
-title: "ValidationFormGroup"
-type: "component"
-status: "Stable"
-designStatus: "Done"
-devStatus: "Done"
-notes: ""
+title: 'ValidationFormGroup'
+type: 'component'
+status: 'Stable'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: ''
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
+import get from 'lodash/get';
 import { ValidationFormGroup } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
+import SingleComponentStatus from '../../components/singleComponentStatus';
 
 # ValidationFormGroup
 
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
 
 Handles bootstrap style field validation and handles related aria attributes.
 
 Manages the rendering of bootstrap-style:
+
 - Help text
 - Valid and invalid feedback
 
 For children of type input, textarea, and select:
+
 - Appends bootstrap validation class names
 - Appends aria-describedby attributes (for help text and feedback)
-
 
 ##### basic usage
 
 ```jsx live=true
-<ValidationFormGroup
-  for="firstName"
+<ValidationFormGroup 
+  for="firstName" 
   helpText="This is your name."
 >
   <label htmlFor="firstName">First Name</label>
@@ -43,13 +51,12 @@ For children of type input, textarea, and select:
 </ValidationFormGroup>
 ```
 
-
 ##### invalid message
 
 ```jsx live=true
-<ValidationFormGroup
-  for="firstName"
-  invalid
+<ValidationFormGroup 
+  for="firstName" 
+  invalid 
   invalidMessage="Wrong!"
 >
   <label htmlFor="firstName">First Name</label>
@@ -63,13 +70,12 @@ For children of type input, textarea, and select:
 </ValidationFormGroup>
 ```
 
-
 ##### valid message
 
 ```jsx live=true
-<ValidationFormGroup
-  for="firstName"
-  valid
+<ValidationFormGroup 
+  for="firstName" 
+  valid 
   validMessage="What a nice name!"
 >
   <label htmlFor="firstName">First Name</label>
@@ -82,7 +88,6 @@ For children of type input, textarea, and select:
   />
 </ValidationFormGroup>
 ```
-
 
 ##### with any kind of input
 
@@ -112,9 +117,13 @@ For children of type input, textarea, and select:
 ##### Props
 
 <StaticQuery
-  query={graphql`query {
-    componentMetadata(displayName: { eq: "ValidationFormGroup" }) { ...ComponentDocGenData }
-  }`}
+  query={graphql`
+    query {
+      componentMetadata(displayName: { eq: "ValidationFormGroup" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
   render={({ componentMetadata }) => {
     if (componentMetadata == null) return null;
     return <PropsTable propMetaData={componentMetadata.props} />;

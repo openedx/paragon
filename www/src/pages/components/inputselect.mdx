@@ -1,19 +1,28 @@
 ---
-title: "InputSelect"
-type: "component"
-status: "Deprecate Soon"
-designStatus: "TBD"
-devStatus: "To Do"
+title: 'InputSelect'
+type: 'component'
+status: 'Deprecate Soon'
+designStatus: 'TBD'
+devStatus: 'To Do'
 notes: |
-    Replaced by Input and ValidationFormGroup
+  Replaced by Input and ValidationFormGroup
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
+import get from 'lodash/get';
 import { InputSelect } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
+import SingleComponentStatus from '../../components/singleComponentStatus';
 
 # InputSelect
 
+
+
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
 
 ##### basic usage
 
@@ -23,14 +32,13 @@ import PropsTable from '../../components/PropsTable';
   label="Fruits"
   value="strawberry"
   options={[
-    'apple',
-    'orange',
-    'strawberry',
+    'apple', 
+    'orange', 
+    'strawberry', 
     'banana',
   ]}
 />
 ```
-
 
 ##### separate labels and values
 
@@ -49,7 +57,6 @@ import PropsTable from '../../components/PropsTable';
   ]}
 />
 ```
-
 
 ##### separate option groups
 
@@ -87,23 +94,14 @@ import PropsTable from '../../components/PropsTable';
 />
 ```
 
-
 ##### with validation
 
 ```jsx live=true
 <InputSelect
   name="color"
   label="Favorite Color"
-  options={[
-    '',
-    'red',
-    'orange',
-    'yellow',
-    'green',
-    'blue',
-    'purple',
-  ]}
-  validator={(value) => {
+  options={['', 'red', 'orange', 'yellow', 'green', 'blue', 'purple']}
+  validator={value => {
     let feedback = { isValid: true };
     if (!value) {
       feedback = {
@@ -116,7 +114,6 @@ import PropsTable from '../../components/PropsTable';
 />
 ```
 
-
 ##### disabled usage
 
 ```jsx live=true
@@ -125,16 +122,15 @@ import PropsTable from '../../components/PropsTable';
   label="Fruits"
   aria-label="Fruits"
   value="strawberry"
-  options={[
-    'apple',
-    'orange',
-    'strawberry',
+  options={['
+    apple', 
+    'orange', 
+    'strawberry', 
     'banana',
   ]}
   disabled
 />
 ```
-
 
 ##### with disabled option
 
@@ -154,9 +150,13 @@ import PropsTable from '../../components/PropsTable';
 ##### Props
 
 <StaticQuery
-  query={graphql`query {
-    componentMetadata(displayName: { eq: "InputSelect" }) { ...ComponentDocGenData }
-  }`}
+  query={graphql`
+    query {
+      componentMetadata(displayName: { eq: "InputSelect" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
   render={({ componentMetadata }) => {
     if (componentMetadata == null) return null;
     return <PropsTable propMetaData={componentMetadata.props} />;

@@ -1,29 +1,35 @@
 ---
-title: "RadioButtonGroup"
-type: "component"
-status: "Needs Work"
-designStatus: "To Do"
-devStatus: "To Do"
+title: 'RadioButtonGroup'
+type: 'component'
+status: 'Needs Work'
+designStatus: 'To Do'
+devStatus: 'To Do'
 notes: |
-    Refactor to use Input component
-    and refresh checkbox designs
+  Refactor to use Input component
+  and refresh checkbox designs
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
+import get from 'lodash/get';
 import { RadioButtonGroup } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
+import SingleComponentStatus from '../../components/singleComponentStatus';
 
 # RadioButtonGroup
 
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
 
 ##### unselected minimal usage
 
 ```jsx live=true
-
 <RadioButtonGroup
   name="rbg"
   label="Radio Button Group"
-  onBlur={() => console.log("blurred")}
+  onBlur={() => console.log('blurred')}
   onChange={() => console.log('onChange')}
   onClick={() => console.log('onClick')}
   onFocus={() => console.log('onFocus')}
@@ -35,15 +41,13 @@ import PropsTable from '../../components/PropsTable';
 </RadioButtonGroup>
 ```
 
-
 ##### selected minimal usage
 
 ```jsx live=true
-
 <RadioButtonGroup
   name="rbg-2"
   label="Radio Button Group"
-  onBlur={() => console.log("blurred")}
+  onBlur={() => console.log('blurred')}
   onChange={() => console.log('onChange')}
   onClick={() => console.log('onClick')}
   onFocus={() => console.log('onFocus')}
@@ -56,13 +60,16 @@ import PropsTable from '../../components/PropsTable';
 </RadioButtonGroup>
 ```
 
-
 ##### Props
 
 <StaticQuery
-  query={graphql`query {
-    componentMetadata(displayName: { eq: "RadioButtonGroup" }) { ...ComponentDocGenData }
-  }`}
+  query={graphql`
+    query {
+      componentMetadata(displayName: { eq: "RadioButtonGroup" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
   render={({ componentMetadata }) => {
     if (componentMetadata == null) return null;
     return <PropsTable propMetaData={componentMetadata.props} />;

@@ -1,19 +1,27 @@
 ---
-title: "Hyperlink"
-type: "component"
-status: "Needs Work"
-designStatus: "Done"
-devStatus: "To Do"
+title: 'Hyperlink'
+type: 'component'
+status: 'Needs Work'
+designStatus: 'Done'
+devStatus: 'To Do'
 notes: |
-    Improve prop naming. Deprecate content prop.
-    Use React.forwardRef for ref forwarding.
+  Improve prop naming. Deprecate content prop.
+  Use React.forwardRef for ref forwarding.
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
+import get from 'lodash/get';
 import { Hyperlink } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
+import SingleComponentStatus from '../../components/singleComponentStatus';
 
 # Hyperlink
+
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
 
 ##### minimal usage
 
@@ -24,7 +32,9 @@ import PropsTable from '../../components/PropsTable';
 ##### with blank target
 
 ```jsx live=true
-<Hyperlink destination="https://www.edx.org" target="_blank">edX.org</Hyperlink>
+<Hyperlink destination="https://www.edx.org" target="_blank">
+  edX.org
+</Hyperlink>
 ```
 
 ##### with onClick
@@ -33,7 +43,7 @@ import PropsTable from '../../components/PropsTable';
 <Hyperlink
   destination="https://www.edx.org"
   target="_blank"
-  onClick={(e) => {
+  onClick={e => {
     e.preventDefault();
     console.log('click');
   }}
@@ -57,9 +67,13 @@ import PropsTable from '../../components/PropsTable';
 ##### Props
 
 <StaticQuery
-  query={graphql`query {
-    componentMetadata(displayName: { eq: "Hyperlink" }) { ...ComponentDocGenData }
-  }`}
+  query={graphql`
+    query {
+      componentMetadata(displayName: { eq: "Hyperlink" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
   render={({ componentMetadata }) => {
     if (componentMetadata == null) return null;
     return <PropsTable propMetaData={componentMetadata.props} />;
