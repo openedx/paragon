@@ -11,7 +11,7 @@ notifications:
     on_success: never
     on_failure: always
 before_install:
-- npm install -g npm@5
+- npm install -g npm@6
 - npm install -g greenkeeper-lockfile@1
 install:
   - npm install
