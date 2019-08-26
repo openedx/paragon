@@ -70,17 +70,10 @@ First, clone the repo and install dependencies. You must be running Node 8 or ne
 git clone git@github.com:edx/paragon.git
 cd paragon
 npm install
+npm start
 ```
 
-### Storybook
-
-Paragon uses [Storybook](https://storybook.js.org/) to generate and serve its documentation/demo site. Storybook also serves as an excellent sandbox space to develop new components or modify existing ones. To start the Storybook server locally, run the following:
-
-```
-$ npm start
-```
-
-Storybook will be served at http://localhost:6006.
+The doc site will be running at `http://localhost:8000`
 
 ## Contributing
 
@@ -134,7 +127,7 @@ Then, open `chrome://inspect` in your Chrome browser and select the "node_module
 
 ### Snapshot Testing
 
-Jest has built-in [snapshot testing](http://facebook.github.io/jest/docs/en/snapshot-testing.html#snapshot-testing-with-jest) functionality which serves as a good means of smoketesting components to ensure they render in a predictable way. Paragon's Jest snapshots are automatically generated from components' Storybook stories using the [Storyshots addon](https://github.com/storybooks/storybook/blob/4b6a93acfbaf044d85dd8ee7a7671239ea1ba01d/addons/storyshots/README.md) -- pretty cool, huh?
+Jest has built-in [snapshot testing](http://facebook.github.io/jest/docs/en/snapshot-testing.html#snapshot-testing-with-jest) functionality which serves as a good means of smoketesting components to ensure they render in a predictable way.
 
 When you modify components or stories (or add new components or stories), make sure to update the snapshots or else the snapshot tests will fail. It's easy to do -- just run:
 
