@@ -42,8 +42,8 @@ class Input extends React.Component {
     if (this.inputEl.labels.length > 0) return;
     if (this.inputEl.getAttribute('aria-label') !== null) return;
 
-    // eslint-disable-next-line no-console
     if (console) {
+      // eslint-disable-next-line no-console
       console.warn('Input[a11y]: There is no associated label for this Input');
     }
   }
