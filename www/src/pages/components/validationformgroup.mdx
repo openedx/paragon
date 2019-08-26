@@ -11,7 +11,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import get from 'lodash/get';
 import { ValidationFormGroup } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
-import SingleComponentStatus from '../../components/singleComponentStatus';
+import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 # ValidationFormGroup
 
@@ -36,8 +36,8 @@ For children of type input, textarea, and select:
 ##### basic usage
 
 ```jsx live=true
-<ValidationFormGroup 
-  for="firstName" 
+<ValidationFormGroup
+  for="firstName"
   helpText="This is your name."
 >
   <label htmlFor="firstName">First Name</label>
@@ -54,9 +54,9 @@ For children of type input, textarea, and select:
 ##### invalid message
 
 ```jsx live=true
-<ValidationFormGroup 
-  for="firstName" 
-  invalid 
+<ValidationFormGroup
+  for="firstName"
+  invalid
   invalidMessage="Wrong!"
 >
   <label htmlFor="firstName">First Name</label>
@@ -73,9 +73,9 @@ For children of type input, textarea, and select:
 ##### valid message
 
 ```jsx live=true
-<ValidationFormGroup 
-  for="firstName" 
-  valid 
+<ValidationFormGroup
+  for="firstName"
+  valid
   validMessage="What a nice name!"
 >
   <label htmlFor="firstName">First Name</label>

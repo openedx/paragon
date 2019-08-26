@@ -1,33 +1,24 @@
 language: node_js
-node_js:
-  - 12
-cache:
-  directories:
-  - "~/.npm"
+node_js: 12
 notifications:
   email:
     recipients:
-    - paragon@edx.org
-    on_success: never
-    on_failure: always
-before_install:
-- npm install -g npm@6
-- npm install -g greenkeeper-lockfile@1
+      - paragon@edx.org
 install:
   - npm install
-before_script: greenkeeper-lockfile-update
-after_script: greenkeeper-lockfile-upload
 script:
-- npm run lint
-- npm run test
-- npm run build
+  - npm run lint
+  - npm run test
+  - npm run build
+  - npm run build-docs
 after_success:
-- npm run travis-deploy-once "npm run semantic-release"
-- npm run coveralls
-- if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then
-    npm run deploy;
-  fi
-env:
-  global:
-  - secure: lRoWu+w079UgwrPn3qR0OEiSTFVDIRUH47aXkjOTIlXGd9IF+NAdPiv1yBhszdO52qi2ivhF1W7JuFwRe7L2Hw2UypWLtQY6iq/mLJ4wL1RsbvPLAplJKZgkdYBZuBvvnMwd7lgFmmV0SPGhcdt9ttNsWF30678iFFIYnqVBEUe0whjb4B4yjqxNaTB3O/aQNaQiwWsBIpri3rIUP6/1vst0AhKFyePMNpLa8LIyDpZmu+ICTn/+5WYhM+9Dm+Z0IdVF09UlCHDCrv+xS0elpx2u+GLOVnuAGZS82wVHH+1+QoANMXs8NYQfp+YXtf5voWIi9UmdftMjAv6Xa2ZoitsCMPC0lKhNUex2grS+lBTPUgJ7QJLksXWHJX/9NgsHcd+zEyjUAeeqpTjUiLWbjfc5VoL5da9JEryWgEFPsCYy6vnh7llVcAQiUTa6rkY4dXmrpZCuDX76KoXPa+OtazX1VGg2ThWJe0Bw9Zfwc4rmFg5sJjtcsbicqZOpIKW2HkLNR2l+3nlqEQz7OI/dVzjKmeF5Zw7Q5BsIxsGGT8ZzjIssAb5Y/l7S9tmAfa5vOK8xU29Roez1vTSBoyFrKm2RW5s8hsvhrnIAJV7cm8/IG7iLP1F5YfwuMsQTZqFtyxL/P9fDpmDk3n7MR9WFVsF+3qZ9eFk3kjYimEs6V6A=
-  - secure: OaULWxRa/SNJ9TpNEnw0M1fK4wQO8pvuYS1uhWwEG7eQ3znIxx5HoKqfOOcO21sTvYlQS+Bts4K/BhKLGzkinynBJQLAIvlorju0vdwg2LIXdcSTeGAEGNf2veDYxs8ICJjuyINCxd0F90qdO38OyDzWpfrsayZpfgS0dXCE40szZe8F+nL0xVl/A7N692EebofGcwOd2usH16wMz5fkO57xbwL0pA1qz7AHpYDH9+cGS0Lu78cbxR746bEyxbbXCjbQvVhp0lp5mTxp2Snk1P5EixfdJuO7myZIo7TqKQWDAdH1k26m828krElpQ5OtZIbrkGsLnGkw1UXo6jZE/wF/OR8Gc64Jd5N4+AjtQ+1PYggC7AtLkd5ePkho0ofselnd40sYNYXkB1qitpwKx21YeOkF8oUHDnXxr7ekjz640eqWeRvmDMtVjukNRARVidPrJdhuweUVFkEHXSm7tK8bgKzsYMNea2oXbmEce880Tzy2SmhwjKNezDDMyI7k+1N7IM7lMac7BamMPlrpV4n4wYTzXWqPigzmWhbuO4eVNRdq8IRzEB9WfORMLEAuBEx6AcxmegdVxCxraj/kGv8/gZPLHWkVTg6qD81Vm2a5VIcoweXSjmIF/lmFmrhqjZy8G+qIA1M4TzbLggmXxMjr0a6d5atmC59JeT9xGZc=
+  - npm run semantic-release
+  - npm run coveralls
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GH_TOKEN
+  keep_history: false
+  local_dir: ./www/public
+  on:
+    branch: master
