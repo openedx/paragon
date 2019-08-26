@@ -12,7 +12,7 @@ script:
   - npm run build
   - npm run build-docs
 after_success:
-  - npm run travis-deploy-once "npm run semantic-release"
+  - npm run semantic-release
   - npm run coveralls
 deploy:
   provider: pages
