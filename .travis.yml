@@ -8,23 +8,25 @@ notifications:
   email:
     recipients:
       - paragon@edx.org
-    on_success: never
-    on_failure: always
 install:
   - npm install
-script:
-  - npm run lint
-  - npm run test
-  - npm run build
-  - npm run build-docs
-after_success:
-  - npm run travis-deploy-once "npm run semantic-release"
-  - npm run coveralls
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GH_TOKEN
-  keep_history: false
-  local_dir: ./www/public
-  on:
-    branch: abutterworth/test
+jobs:
+  include:
+    - stage: test and build
+      script: npm run lint
+      script: npm run test
+      script: npm run build
+      script: npm run build-docs
+    - stage: deploy documentation
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GH_TOKEN
+        keep_history: false
+        local_dir: ./www/public
+        on:
+          branch: abutterworth/test
+    - stage: npm release
+      script:
+        - npm run semantic-release
+        - npm run coveralls
