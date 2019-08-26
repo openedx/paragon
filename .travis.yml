@@ -1,35 +1,24 @@
 language: node_js
-node_js:
-  - 12
-cache:
-  directories:
-    - "~/.npm"
+node_js: 12
 notifications:
   email:
     recipients:
       - paragon@edx.org
 install:
   - npm install
-jobs:
-  include:
-    - stage: test and build
-      script: npm run lint
-    - # stage: test
-      script: npm run test
-    - # stage: test
-      script: npm run build
-    - stage: deploy documentation
-      script: npm run build-docs
-      deploy:
-        provider: pages
-        skip_cleanup: true
-        github_token: $GH_TOKEN
-        keep_history: false
-        local_dir: ./www/public
-        on:
-          branch: abutterworth/test
-    - stage: npm release
-      script:
-        - npm run build
-        - npm run semantic-release
-        - npm run coveralls
+script:
+  - npm run lint
+  - npm run test
+  - npm run build
+  - npm run build-docs
+after_success:
+  - npm run travis-deploy-once "npm run semantic-release"
+  - npm run coveralls
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GH_TOKEN
+  keep_history: false
+  local_dir: ./www/public
+  on:
+    branch: abutterworth/test
