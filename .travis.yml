@@ -14,10 +14,12 @@ jobs:
   include:
     - stage: test and build
       script: npm run lint
+    - # stage: test
       script: npm run test
+    - # stage: test
       script: npm run build
-      script: npm run build-docs
     - stage: deploy documentation
+      script: npm run build-docs
       deploy:
         provider: pages
         skip_cleanup: true
@@ -28,5 +30,6 @@ jobs:
           branch: abutterworth/test
     - stage: npm release
       script:
+        - npm run build
         - npm run semantic-release
         - npm run coveralls
