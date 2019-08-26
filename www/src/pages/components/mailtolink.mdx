@@ -5,7 +5,7 @@ status: 'Needs Work'
 designStatus: 'Done'
 devStatus: 'To Do'
 notes: |
-  Remove unnecessary props. 
+  Remove unnecessary props.
   Remove baked in English strings.
   Use React.forwardRef for ref forwarding
 ---
@@ -14,7 +14,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import get from 'lodash/get';
 import { MailtoLink } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
-import SingleComponentStatus from '../../components/singleComponentStatus';
+import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 # MailtoLink
 
@@ -41,9 +41,9 @@ import SingleComponentStatus from '../../components/singleComponentStatus';
 ##### with onClick
 
 ```jsx live=true
-<MailtoLink 
-  to="edx@example.com" 
-  target="_blank" 
+<MailtoLink
+  to="edx@example.com"
+  target="_blank"
   onClick={onClick}
 >
   edx@example.com
@@ -65,8 +65,8 @@ import SingleComponentStatus from '../../components/singleComponentStatus';
 ##### with cc and bcc
 
 ```jsx live=true
-<MailtoLink 
-  cc="edx@example.com" 
+<MailtoLink
+  cc="edx@example.com"
   bcc="edx@example.com"
 >
   Moar mail, this time with cc and bcc
