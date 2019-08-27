@@ -14,7 +14,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import get from 'lodash/get';
 import { StatusAlert } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
-import SingleComponentStatus from '../../components/singleComponentStatus';
+import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 # StatusAlert
 
@@ -27,32 +27,32 @@ import SingleComponentStatus from '../../components/singleComponentStatus';
 ##### basic usage
 
 ```jsx live=true
-<StatusAlert 
-  dialog="You have a status alert!" 
-  onClose={() => {}} 
-  open 
+<StatusAlert
+  dialog="You have a status alert!"
+  onClose={() => {}}
+  open
 />
 ```
 
 ##### success alert
 
 ```jsx live=true
-<StatusAlert 
-  alertType="success" 
-  dialog="Success!" 
-  onClose={() => {}} 
-  open 
+<StatusAlert
+  alertType="success"
+  dialog="Success!"
+  onClose={() => {}}
+  open
 />
 ```
 
 ##### danger alert
 
 ```jsx live=true
-<StatusAlert 
-  alertType="danger" 
-  dialog="Error!" 
-  onClose={() => {}} 
-  open 
+<StatusAlert
+  alertType="danger"
+  dialog="Error!"
+  onClose={() => {}}
+  open
 />
 ```
 
