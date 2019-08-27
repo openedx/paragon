@@ -21,11 +21,10 @@
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage",
     "lint": "eslint --ext .js --ext .jsx .",
-    "postinstall": "cd ./www && \"$npm_execpath\" i",
     "prepublishOnly": "npm run build",
     "semantic-release": "semantic-release",
     "snapshot": "jest --updateSnapshot",
-    "start": "cd ./www && \"$npm_execpath\" start",
+    "start": "echo 'To start the Paragon documentation site: cd www/ && npm i && npm start'",
     "test": "jest --coverage"
   },
   "dependencies": {
