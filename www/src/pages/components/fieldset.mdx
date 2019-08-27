@@ -12,7 +12,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import get from 'lodash/get';
 import { Fieldset } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
-import SingleComponentStatus from '../../components/singleComponentStatus';
+import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 # Fieldset
 
@@ -27,15 +27,15 @@ import SingleComponentStatus from '../../components/singleComponentStatus';
 ```jsx live=true
 <form>
   <Fieldset legend="Name">
-    <InputText 
-      name="firstName" 
-      label="First Name" 
-      value="" 
+    <InputText
+      name="firstName"
+      label="First Name"
+      value=""
     />
-    <InputText 
-      name="lastName" 
-      label="Last Name" 
-      value="" 
+    <InputText
+      name="lastName"
+      label="Last Name"
+      value=""
     />
   </Fieldset>
 </form>
@@ -47,14 +47,14 @@ import SingleComponentStatus from '../../components/singleComponentStatus';
 <form>
   <Fieldset legend="Name" invalidMessage="This is invalid!" isValid={false}>
     <InputText
-      name="firstName" 
-      label="First Name" 
-      value="" 
+      name="firstName"
+      label="First Name"
+      value=""
     />
-    <InputText 
-      name="lastName" 
-      label="Last Name" 
-      value="" 
+    <InputText
+      name="lastName"
+      label="Last Name"
+      value=""
     />
   </Fieldset>
 </form>
@@ -73,15 +73,15 @@ import SingleComponentStatus from '../../components/singleComponentStatus';
     }}
     variantIconDescription="Error"
   >
-    <InputText 
-      name="firstName" 
-      label="First Name" 
-      value="" 
+    <InputText
+      name="firstName"
+      label="First Name"
+      value=""
     />
-    <InputText 
-      name="lastName" 
-      label="Last Name" 
-      value="" 
+    <InputText
+      name="lastName"
+      label="Last Name"
+      value=""
     />
   </Fieldset>
 </form>

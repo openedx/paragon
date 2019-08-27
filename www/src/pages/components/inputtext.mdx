@@ -12,7 +12,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import get from 'lodash/get';
 import { InputText } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
-import SingleComponentStatus from '../../components/singleComponentStatus';
+import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 # InputText
 
@@ -267,7 +267,7 @@ class FocusInputWrapper extends React.Component {
     label="Search"
     value="what is paragon"
     inputGroupAppend={(
-      <Button 
+      <Button
         buttonType="outline-secondary"
       >
         Go
@@ -286,7 +286,7 @@ class FocusInputWrapper extends React.Component {
           screenReaderText="Checkmark"
         />
       </div>,
-      <Button 
+      <Button
         buttonType="outline-secondary"
       >
         Go

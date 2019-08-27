@@ -28,14 +28,6 @@
       "allowChildren": false
     }]
   },
-  "overrides": [
-    {
-      "files": ["*.stories.jsx"],
-      "rules": {
-        "no-console": "off"
-      }
-    }
-  ],
   "env": {
     "jest": true
   },

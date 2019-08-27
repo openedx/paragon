@@ -12,7 +12,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import get from 'lodash/get';
 import { SearchField } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
-import SingleComponentStatus from '../../components/singleComponentStatus';
+import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 # SearchField
 
@@ -25,8 +25,8 @@ import SingleComponentStatus from '../../components/singleComponentStatus';
 ##### basic usage
 
 ```jsx live=true
-<SearchField 
-  onSubmit={() => console.log('search-submitted')} 
+<SearchField
+  onSubmit={() => console.log('search-submitted')}
 />
 ```
 
