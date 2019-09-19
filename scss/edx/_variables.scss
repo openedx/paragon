@@ -1,9 +1,14 @@
 @import "variables/colors";
 
+// Typography
+
 $font-family-sans-serif:      "Roboto", "Helvetica Neue", Arial, sans-serif !default;
 $font-family-serif:           "Georgia", serif !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, "Courier New", monospace !default;
 $font-family-base:            $font-family-sans-serif !default;
+
+$small-font-size:             87.5% !default;
+
 
 //
 // Buttons
@@ -26,3 +31,34 @@ $input-btn-focus-width:       1px !default;
 $input-btn-focus-color:       map-get($theme-color-levels, "primary-300") !default;
 $input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-color !default;
 
+
+// Forms
+
+$form-text-margin-top:                  .25rem !default;
+
+
+// Form validation
+
+$form-feedback-margin-top:          $form-text-margin-top !default;
+$form-feedback-font-size:           $small-font-size !default;
+$form-feedback-valid-color:         theme-color("success") !default;
+$form-feedback-invalid-color:       theme-color("danger") !default;
+
+$form-feedback-icon-valid-color:    $form-feedback-valid-color !default;
+$form-feedback-icon-valid:          str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='2 2 20 20'%3e%3cpath fill='#{$form-feedback-icon-valid-color}' d='M12,2 C17.5228475,2 22,6.4771525 22,12 C22,17.5228475 17.5228475,22 12,22 C6.4771525,22 2,17.5228475 2,12 C2,6.4771525 6.4771525,2 12,2 Z M17.5208153,8.03553391 L10.4497475,15.1066017 L6.91421356,11.5710678 L5.5,12.9852814 L10.4497475,17.9350288 L18.9350288,9.44974747 L17.5208153,8.03553391 Z'/%3e%3c/svg%3e"), "#", "%23") !default;
+$form-feedback-icon-invalid-color:  $form-feedback-invalid-color !default;
+$form-feedback-icon-invalid:        str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='#{$form-feedback-icon-invalid-color}' viewBox='2 2 20 20'%3e%3cpath d='M12,2 C17.5228475,2 22,6.4771525 22,12 C22,17.5228475 17.5228475,22 12,22 C6.4771525,22 2,17.5228475 2,12 C2,6.4771525 6.4771525,2 12,2 Z M13.25,15.5 L10.75,15.5 C10.6119288,15.5 10.5,15.6119288 10.5,15.75 L10.5,15.75 L10.5,18.25 C10.5,18.3880712 10.6119288,18.5 10.75,18.5 L10.75,18.5 L13.25,18.5 C13.3880712,18.5 13.5,18.3880712 13.5,18.25 L13.5,18.25 L13.5,15.75 C13.5,15.6119288 13.3880712,15.5 13.25,15.5 L13.25,15.5 Z M13.492539,5.5 L10.5001113,5.50010806 C10.3620998,5.50416722 10.2535099,5.61933826 10.2575691,5.75734976 L10.2575691,5.75734976 L10.4928632,13.7573498 C10.4968382,13.8925005 10.607546,14 10.7427552,14 L10.7427552,14 L13.2572448,14 C13.392454,14 13.5031618,13.8925005 13.5071368,13.7573498 L13.5071368,13.7573498 L13.7424309,5.75734976 L13.7424309,5.75734976 C13.742539,5.61192881 13.6306101,5.5 13.492539,5.5 L13.492539,5.5 Z' /%3e%3c/svg%3E"), "#", "%23") !default;
+
+$form-validation-states: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$form-validation-states: map-merge(
+  (
+    "valid": (
+      "color": $form-feedback-valid-color
+    ),
+    "invalid": (
+      "color": $form-feedback-invalid-color
+    ),
+  ),
+  $form-validation-states
+);

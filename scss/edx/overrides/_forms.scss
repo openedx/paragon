@@ -1,0 +1,20 @@
+.valid-feedback,
+.invalid-feedback {
+  color: $body-color;
+  font-weight: 400;
+
+  &:before {
+    content: '';
+    height:1rem;
+    width:1rem;
+    display: inline-block;
+    vertical-align: text-bottom;
+    margin-right: .3em;
+  }
+}
+.valid-feedback:before {
+  background-image: $form-feedback-icon-valid;
+}
+.invalid-feedback:before {
+  background-image: $form-feedback-icon-invalid;
+}
