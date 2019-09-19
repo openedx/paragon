@@ -1,5 +1,10 @@
 @import "variables/colors";
 
+// Options
+
+$enable-validation-icons:                     false !default;
+
+
 // Typography
 
 $font-family-sans-serif:      "Roboto", "Helvetica Neue", Arial, sans-serif !default;
@@ -54,10 +59,12 @@ $form-validation-states: () !default;
 $form-validation-states: map-merge(
   (
     "valid": (
-      "color": $form-feedback-valid-color
+      "color": $form-feedback-valid-color,
+      "icon": $form-feedback-icon-valid
     ),
     "invalid": (
-      "color": $form-feedback-invalid-color
+      "color": $form-feedback-invalid-color,
+      "icon": $form-feedback-icon-invalid
     ),
   ),
   $form-validation-states

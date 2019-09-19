@@ -1,20 +1,39 @@
-.valid-feedback,
-.invalid-feedback {
-  color: $body-color;
-  font-weight: 400;
+// This loop is modeled after the loop in bootstrap's _forms.scss
+// which calls a mixin, form-validation-state($state, $color, $icon).
+// We make several overrides here for icons and focus states.
+@each $state, $data in $form-validation-states {
+  $color: map-get($data, color);
+  $icon: map-get($data, icon);
 
-  &:before {
-    content: '';
-    height:1rem;
-    width:1rem;
-    display: inline-block;
-    vertical-align: text-bottom;
-    margin-right: .3em;
+  // Do not use validation color for feedback text
+  // Add the validation icon to feedback text
+  .#{$state}-feedback {
+    color: $body-color;
+    font-weight: 400;
+    &:before {
+      background-image: $icon;
+      content: '';
+      height:1rem;
+      width:1rem;
+      display: inline-block;
+      vertical-align: text-bottom;
+      margin-right: .3em;
+    }
   }
-}
-.valid-feedback:before {
-  background-image: $form-feedback-icon-valid;
-}
-.invalid-feedback:before {
-  background-image: $form-feedback-icon-invalid;
+
+  // Override focus states, use the standard focus
+  // instead of a generated color.
+  .form-control {
+    .was-validated &:#{$state},
+    &.is-#{$state} {
+      @include form-control-focus();
+    }
+  }
+
+  .custom-select {
+    .was-validated &:#{$state},
+    &.is-#{$state} {
+      @include form-control-focus();
+    }
+  }
 }
