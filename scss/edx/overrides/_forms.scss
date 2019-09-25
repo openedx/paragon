@@ -26,14 +26,20 @@
   .form-control {
     .was-validated &:#{$state},
     &.is-#{$state} {
-      @include form-control-focus();
+      &:focus {
+        border-color: $color;
+        box-shadow: 0 0 0 $input-focus-width $color;
+      }
     }
   }
 
   .custom-select {
     .was-validated &:#{$state},
     &.is-#{$state} {
-      @include form-control-focus();
+      &:focus {
+        border-color: $color;
+        box-shadow: 0 0 0 $input-focus-width $color;
+      }
     }
   }
 }
