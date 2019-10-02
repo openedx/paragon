@@ -9,8 +9,6 @@ import Icon from '../Icon';
 import newId from '../utils/newId';
 import Variant from '../utils/constants';
 
-const closeModalButtonId = newId('paragonCloseModalButton');
-
 class Modal extends React.Component {
   constructor(props) {
     super(props);
@@ -20,6 +18,7 @@ class Modal extends React.Component {
     this.setFirstFocusableElement = this.setFirstFocusableElement.bind(this);
     this.setCloseButton = this.setCloseButton.bind(this);
 
+    this.closeModalButtonId = newId('paragonCloseModalButton');
     this.headerId = newId();
     this.el = document.createElement('div');
 
@@ -214,17 +213,17 @@ class Modal extends React.Component {
             <div className="modal-content">
               <div className="modal-header">
                 <h2 className="modal-title" id={this.headerId}>{this.props.title}</h2>
-                { renderHeaderCloseButton &&
-                <Button
-                  className="p-1 js-close-modal-on-click"
-                  aria-labelledby={closeModalButtonId}
-                  onClick={this.close}
-                  inputRef={this.setFirstFocusableElement}
-                  onKeyDown={this.handleKeyDown}
-                >
-                  <Icon className="fa fa-times js-close-modal-on-click" />
-                </Button>
-              }
+                {renderHeaderCloseButton && (
+                  <Button
+                    className="p-1 js-close-modal-on-click"
+                    aria-labelledby={this.closeModalButtonId}
+                    onClick={this.close}
+                    inputRef={this.setFirstFocusableElement}
+                    onKeyDown={this.handleKeyDown}
+                  >
+                    <Icon className="fa fa-times js-close-modal-on-click" />
+                  </Button>
+                )}
               </div>
               <div className="modal-body">
                 {this.renderBody()}
@@ -232,6 +231,7 @@ class Modal extends React.Component {
               <div className="modal-footer">
                 {this.renderButtons()}
                 <Button
+                  id={this.closeModalButtonId}
                   buttonType="secondary"
                   className="js-close-modal-on-click"
                   onClick={this.close}
