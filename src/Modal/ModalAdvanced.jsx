@@ -15,16 +15,7 @@ import ModalCloseButton from './ModalCloseButton';
 import ModalOpenButton from './ModalOpenButton';
 import ModalContext from './ModalContext';
 
-// export const ModalContext = React.createContext();
-
-class Modal extends React.Component {
-  static Header = ModalHeader;
-  static Body = ModalBody;
-  static Footer = ModalFooter;
-  static CloseButton = ModalCloseButton;
-  static OpenButton = ModalOpenButton;
-  static Title = ModalTitle;
-
+class ModalAdvanced extends React.Component {
   constructor(props) {
     super(props);
 
@@ -66,31 +57,6 @@ class Modal extends React.Component {
     this.modalRoot.removeChild(this.el);
   }
 
-  renderDialog() {
-    return (
-      <ModalDialog>
-        <Modal.Header>
-          <Modal.Title>Modal title</Modal.Title>
-          <Modal.CloseButton>
-            <span aria-hidden="true">&times;</span>
-          </Modal.CloseButton>
-        </Modal.Header>
-        <Modal.Body>
-          {this.props.children}
-          <div style={{height:'250vh'}} />
-        </Modal.Body>
-        <Modal.Footer>
-          <button className="btn btn-primary">
-            Save changes
-          </button>
-          <Modal.CloseButton className="btn btn-outline-primary">
-            Close
-          </Modal.CloseButton>
-        </Modal.Footer>
-      </ModalDialog>
-    );
-  }
-
   render() {
     return (
       <ModalContext.Provider value={{
@@ -100,13 +66,13 @@ class Modal extends React.Component {
         modalLabelId: this.modalLabelId,
       }}>
         <Modal.OpenButton type="button">OPEN ME</Modal.OpenButton>
-        {ReactDOM.createPortal(this.renderDialog(), this.el)}
+        {ReactDOM.createPortal(this.props.children, this.el)}
       </ModalContext.Provider>
     );
   }
 }
 
-Modal.propTypes = {
+ModalAdvanced.propTypes = {
   open: PropTypes.bool,
   parentSelector: PropTypes.string,
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
@@ -124,7 +90,7 @@ Modal.propTypes = {
   defaultOpen: PropTypes.bool,
 };
 
-Modal.defaultProps = {
+ModalAdvanced.defaultProps = {
   open: false,
   defaultOpen: true,
   parentSelector: 'body',
@@ -135,4 +101,4 @@ Modal.defaultProps = {
 };
 
 
-export default Modal;
+export default ModalAdvanced;

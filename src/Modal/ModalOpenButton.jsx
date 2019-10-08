@@ -1,7 +1,7 @@
 import React, { useContext, useCallback } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { ModalContext } from './index';
+import ModalContext from './ModalContext';
 
 const ModalOpenButton = ({
   children, tag, onClick, ...props

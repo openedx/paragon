@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { ModalContext } from './index';
+import ModalContext from './ModalContext';
 
 const ModalTitle = ({
   children, tag, className, id, ...props
