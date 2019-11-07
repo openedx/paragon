@@ -9,7 +9,7 @@ import {
   faMinus,
 } from '@fortawesome/free-solid-svg-icons';
 
-import CollapsibleAdvanced from './CollapsibleAdvanced';
+import CollapsibleAdvanced, { CollapsibleContext } from './CollapsibleAdvanced';
 import CollapsibleBody from './CollapsibleBody';
 import CollapsibleTrigger from './CollapsibleTrigger';
 import CollapsibleVisible from './CollapsibleVisible';
@@ -75,5 +75,6 @@ Collapsible.Advanced = CollapsibleAdvanced;
 Collapsible.Body = CollapsibleBody;
 Collapsible.Trigger = CollapsibleTrigger;
 Collapsible.Visible = CollapsibleVisible;
+Collapsible.Context = CollapsibleContext;
 
 export default Collapsible;
