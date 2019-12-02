@@ -94,7 +94,9 @@ Modal.Dialog = (props) => {
   const { close, isOpen } = useContext(Modal.Context);
   const wrappedChildren = (
     <div className="modal-content">
-      {children}
+      <FocusOn onClickOutside={close} onEscapeKey={close}>
+        {children}
+      </FocusOn>
     </div>
   );
 
@@ -103,18 +105,9 @@ Modal.Dialog = (props) => {
   }
 
   return (
-    <div
-        className="modal d-block"
-        tabIndex="-1"
-        role="dialog"
-      >
-        <FocusOn
-        onClickOutside={close}
-        onEscapeKey={close}
-        >
-          {React.createElement(htmlType, combinedProps, wrappedChildren)}
-        </FocusOn>
-      </div>
+    <div className="modal d-block" role="dialog">
+      {React.createElement(htmlType, combinedProps, wrappedChildren)}
+    </div>
   );
 };
 Modal.Dialog.defaultProps = {
