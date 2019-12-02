@@ -3,8 +3,7 @@ import React, { useEffect, useState, useContext, forwardRef, useImperativeHandle
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-
-
+import { FocusOn } from 'react-focus-on';
 
 const Modal = ({ children, isOpen, setIsOpen }) => {
   const open = useCallback(setIsOpen.bind(null, true), [setIsOpen]);
@@ -92,7 +91,7 @@ Modal.Dialog = (props) => {
     className: classNames(baseClassName, className),
     ...attrs,
   };
-  const { isOpen } = useContext(Modal.Context);
+  const { close, isOpen } = useContext(Modal.Context);
   const wrappedChildren = (
     <div className="modal-content">
       {children}
@@ -105,18 +104,17 @@ Modal.Dialog = (props) => {
 
   return (
     <div
-      id="exampleModalLive"
-      class="modal fade show"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLiveLabel"
-      style={{
-        display: isOpen ? 'block' : 'block',
-        pointerEvents: 'none'
-      }}
-    >
-      {React.createElement(htmlType, combinedProps, wrappedChildren)}
-    </div>
+        className="modal d-block"
+        tabIndex="-1"
+        role="dialog"
+      >
+        <FocusOn
+        onClickOutside={close}
+        onEscapeKey={close}
+        >
+          {React.createElement(htmlType, combinedProps, wrappedChildren)}
+        </FocusOn>
+      </div>
   );
 };
 Modal.Dialog.defaultProps = {
