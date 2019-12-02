@@ -1,295 +1,411 @@
 /* eslint-disable max-len */
-import React from 'react';
+import React, { useEffect, useState, useContext, forwardRef, useImperativeHandle, useCallback } from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import Button from '../Button';
-import Icon from '../Icon';
-import newId from '../utils/newId';
-import Variant from '../utils/constants';
 
-class Modal extends React.Component {
-  constructor(props) {
-    super(props);
 
-    this.close = this.close.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.setFirstFocusableElement = this.setFirstFocusableElement.bind(this);
-    this.setCloseButton = this.setCloseButton.bind(this);
+const Modal = ({ children, isOpen, setIsOpen }) => {
+  const open = useCallback(setIsOpen.bind(null, true), [setIsOpen]);
+  const close = useCallback(setIsOpen.bind(null, false), [setIsOpen]);
 
-    this.closeModalButtonId = newId('paragonCloseModalButton');
-    this.headerId = newId();
-    this.el = document.createElement('div');
+  return ReactDOM.createPortal((
+    <>
+      <Modal.Context.Provider value={{ isOpen, setIsOpen, open, close }}>
+        {children}
+      </Modal.Context.Provider>
+    </>
+  ), document.body);
+};
+Modal.Context = React.createContext();
 
-    // Sets true for IE11, false otherwise: https://stackoverflow.com/a/22082397/6620612
-    this.isIE11 = !!global.MSInputMethodContext && !!document.documentMode;
 
-    this.state = {
-      open: props.open,
-    };
-  }
-
-  componentDidMount() {
-    if (this.firstFocusableElement) {
-      this.firstFocusableElement.focus();
-    }
-    this.parentElement = document.querySelector(this.props.parentSelector);
-    if (this.parentElement === null) {
-      throw new Error(`Modal received invalid parentSelector: ${this.props.parentSelector}, no matching element found`);
-    }
-    this.parentElement.appendChild(this.el);
-  }
-
-  componentWillReceiveProps({ open }) {
-    if (open !== this.state.open) {
-      this.setState({ open });
-    }
-  }
-
-  componentDidUpdate(prevState) {
-    if (this.state.open && !prevState.open) {
-      this.firstFocusableElement.focus();
-    }
-  }
-
-  componentWillUnmount() {
-    ReactDOM.unmountComponentAtNode(this.parentElement);
-  }
-
-  setFirstFocusableElement(input) {
-    this.firstFocusableElement = input;
-  }
-
-  setCloseButton(input) {
-    this.closeButton = input;
-  }
-
-  getVariantIconClassName() {
-    const { variant } = this.props;
-    let variantIconClassName;
-
-    switch (variant.status) {
-      case Variant.status.WARNING:
-        variantIconClassName = classNames(
-          'fa',
-          'fa-exclamation-triangle',
-          'fa-3x',
-          `text-${variant.status.toLowerCase()}`,
-        );
-        break;
-      default:
-        break;
-    }
-
-    return variantIconClassName;
-  }
-
-  getVariantGridBody(body) {
-    const { variant } = this.props;
-
-    return (
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-10">
-            <div>
-              {body}
-            </div>
-          </div>
-          <div className="col-md-2">
-            <Icon
-              id={newId(`Modal-${variant.status}`)}
-              className={this.getVariantIconClassName()}
-            />
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  close(e) {
-    if (e) {
-      e.stopPropagation();
-    }
-
-    if (!e || e.target.classList.contains('js-close-modal-on-click')) {
-      this.setState({ open: false });
-      this.props.onClose();
-    }
-  }
-
-  handleKeyDown(e) {
-    if (e.key === 'Escape') {
-      this.close();
-    } else if (e.key === 'Tab') {
-      if (e.shiftKey) {
-        if (e.target === this.firstFocusableElement) {
-          e.preventDefault();
-          this.closeButton.focus();
-        }
-      } else if (e.target === this.closeButton) {
-        e.preventDefault();
-        this.firstFocusableElement.focus();
-      }
-    }
-  }
-
-  renderButtons() {
-    return this.props.buttons.map((button) => {
-      // button is either a React component that we want clone or a set of props
-      if (React.isValidElement(button)) {
-        return React.cloneElement(button, {
-          key: button.props.children,
-          onKeyDown: this.handleKeyDown,
-        });
-      }
-
-      const { label, ...buttonProps } = button;
-
-      return (
-        <Button
-          {...buttonProps}
-          key={label}
-          onKeyDown={this.handleKeyDown}
-        >
-          {label}
-        </Button>
-      );
-    });
-  }
-
-  renderBody() {
-    const { variant } = this.props;
-    let { body } = this.props;
-
-    if (typeof body === 'string') {
-      body = <p>{body}</p>;
-    }
-
-    if (variant.status) {
-      body = this.getVariantGridBody(body);
-    }
-    return body;
-  }
-
-  renderModal() {
-    const { open } = this.state;
-    const { renderHeaderCloseButton } = this.props;
-
-    return (
-      <div>
-        <div
-          className={classNames({
-            'modal-backdrop': open,
-            show: open,
-            fade: !open,
-          })}
-          role="presentation"
-        />
-        <div
-          className={classNames(
-            'modal',
-            'js-close-modal-on-click',
-            {
-              show: open,
-              fade: !open,
-              'd-block': open,
-              'is-ie11': this.isIE11,
-            },
-          )}
-          role="presentation"
-          onMouseDown={this.close}
-        >
-          <div
-            className={classNames({
-              'modal-dialog': open,
-            })}
-            role="dialog"
-            aria-modal
-            aria-labelledby={this.headerId}
-            {...(!renderHeaderCloseButton ? { tabIndex: '-1' } : {})}
-            {...(!renderHeaderCloseButton ? { ref: this.setFirstFocusableElement } : {})}
-          >
-            <div className="modal-content">
-              <div className="modal-header">
-                <h2 className="modal-title" id={this.headerId}>{this.props.title}</h2>
-                {renderHeaderCloseButton && (
-                  <Button
-                    className="p-1 js-close-modal-on-click"
-                    aria-labelledby={this.closeModalButtonId}
-                    onClick={this.close}
-                    inputRef={this.setFirstFocusableElement}
-                    onKeyDown={this.handleKeyDown}
-                  >
-                    <Icon className="fa fa-times js-close-modal-on-click" />
-                  </Button>
-                )}
-              </div>
-              <div className="modal-body">
-                {this.renderBody()}
-              </div>
-              <div className="modal-footer">
-                {this.renderButtons()}
-                <Button
-                  id={this.closeModalButtonId}
-                  buttonType="secondary"
-                  className="js-close-modal-on-click"
-                  onClick={this.close}
-                  inputRef={this.setCloseButton}
-                  onKeyDown={this.handleKeyDown}
-                >
-                  {this.props.closeText}
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  render() {
-    return ReactDOM.createPortal(
-      this.renderModal(),
-      this.el,
-    );
-  }
-}
-
-Modal.propTypes = {
-  /** specifies whether the modal renders open or closed on the initial render. It defaults to false. */
-  open: PropTypes.bool,
-  /** is the selector for an element in the dom which the modal should be rendered under. It uses querySelector to find the first element that matches that selector, and then creates a react portal to a div underneath the parent element.
+/**
+ * The modal backdrop
  */
-  parentSelector: PropTypes.string,
-  /** a string or an element that is rendered inside of the modal title, above the modal body. */
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
-  /** a string or an element that is rendered inside of the modal body, between the title and the footer. */
-  body: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
-  /** an array of either elements or shapes that take the form of the buttonPropTypes. See the [buttonPropTypes](https://github.com/edx/paragon/blob/master/src/Button/index.jsx#L40) for a list of acceptable props to pass as part of a button. */
-  buttons: PropTypes.arrayOf(PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.object, // TODO: Only accept nodes in the future
-  ])),
-  /** specifies the display text of the default Close button. It defaults to "Close". */
-  closeText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  /** a function that is called on close. It can be used to perform actions upon closing of the modal, such as restoring focus to the previous logical focusable element. */
-  onClose: PropTypes.func.isRequired,
-  variant: PropTypes.shape({
-    status: PropTypes.string,
-  }),
-  /** specifies whether a close button is rendered in the modal header. It defaults to true. */
-  renderHeaderCloseButton: PropTypes.bool,
+Modal.Backdrop = ({ tag, children, ...props }) => {
+  const { close, isOpen } = useContext(Modal.Context);
+  const { className, onClick, ...attrs } = props;
+  attrs.className = classNames('modal-backdrop', className);
+  attrs.onClick = useCallback((e) => {
+    close();
+    if (onClick) {
+      onClick(e);
+    }
+  }, [close, onClick]);
+  if (!isOpen) {
+    return null;
+  }
+  return React.createElement(tag, attrs, children);
 };
 
-Modal.defaultProps = {
-  open: false,
-  parentSelector: 'body',
-  buttons: [],
-  closeText: 'Close',
-  variant: {},
-  renderHeaderCloseButton: true,
+Modal.Backdrop.propTypes = {
+  tag: PropTypes.string,
+  children: PropTypes.node,
+  onClick: PropTypes.func,
+  className: PropTypes.func,
 };
+
+Modal.Backdrop.defaultProps = {
+  tag: 'div',
+  children: null,
+  onClick: undefined,
+  className: undefined,
+};
+
+
+/**
+ * The modal close button
+ */
+Modal.CloseButton = ({ tag, children, ...props }) => {
+  const { close } = useContext(Modal.Context);
+  const { className, onClick, ...attrs } = props;
+  attrs.className = classNames('modal-close-button', className);
+  attrs.onClick = useCallback((e) => {
+    close();
+    if (onClick) {
+      onClick(e);
+    }
+  }, [close, onClick]);
+  return React.createElement(tag, attrs, children);
+};
+
+Modal.CloseButton.propTypes = {
+  tag: PropTypes.string,
+  children: PropTypes.node,
+  onClick: PropTypes.func,
+  className: PropTypes.func,
+};
+
+Modal.CloseButton.defaultProps = {
+  tag: 'button',
+  children: null,
+  onClick: undefined,
+  className: undefined,
+};
+
+
+Modal.Dialog = (props) => {
+  const { htmlType, children, baseClassName, className, ...attrs } = props;
+  const combinedProps = {
+    className: classNames(baseClassName, className),
+    ...attrs,
+  };
+  const { isOpen } = useContext(Modal.Context);
+  const wrappedChildren = (
+    <div className="modal-content">
+      {children}
+    </div>
+  );
+
+  if (!isOpen) {
+    return null;
+  }
+
+  return (
+    <div
+      id="exampleModalLive"
+      class="modal fade show"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLiveLabel"
+      style={{
+        display: isOpen ? 'block' : 'block',
+        pointerEvents: 'none'
+      }}
+    >
+      {React.createElement(htmlType, combinedProps, wrappedChildren)}
+    </div>
+  );
+};
+Modal.Dialog.defaultProps = {
+  htmlType: 'div',
+  baseClassName: 'modal-dialog',
+};
+
+
+/**
+ * The modal header
+ */
+Modal.Header = ({ tag, children, ...props }) => {
+  const { className, ...attrs } = props;
+  attrs.className = classNames('modal-header', className);
+  return React.createElement(tag, attrs, children);
+};
+
+Modal.Header.propTypes = {
+  tag: PropTypes.string,
+  children: PropTypes.node,
+  className: PropTypes.func,
+};
+
+Modal.Header.defaultProps = {
+  tag: 'div',
+  children: null,
+  className: undefined,
+};
+
+
+/**
+ * The modal title
+ */
+Modal.Title = ({ tag, children, ...props }) => {
+  const { className, ...attrs } = props;
+  attrs.className = classNames('modal-title', className);
+  return React.createElement(tag, attrs, children);
+};
+
+Modal.Title.propTypes = {
+  tag: PropTypes.string,
+  children: PropTypes.node,
+  className: PropTypes.func,
+};
+
+Modal.Title.defaultProps = {
+  tag: 'h5',
+  children: null,
+  className: undefined,
+};
+
+
+/**
+ * The modal body
+ */
+Modal.Body = ({ tag, children, ...props }) => {
+  const { className, ...attrs } = props;
+  attrs.className = classNames('modal-body', className);
+  return React.createElement(tag, attrs, children);
+};
+
+Modal.Body.propTypes = {
+  tag: PropTypes.string,
+  children: PropTypes.node,
+  className: PropTypes.func,
+};
+
+Modal.Body.defaultProps = {
+  tag: 'div',
+  children: null,
+  className: undefined,
+};
+
+
+/**
+ * The modal footer
+ */
+Modal.Footer = ({ tag, children, ...props }) => {
+  const { className, ...attrs } = props;
+  attrs.className = classNames('modal-footer', className);
+  return React.createElement(tag, attrs, children);
+};
+
+Modal.Footer.propTypes = {
+  tag: PropTypes.string,
+  children: PropTypes.node,
+  className: PropTypes.func,
+};
+
+Modal.Footer.defaultProps = {
+  tag: 'div',
+  children: null,
+  className: undefined,
+};
+
+
 
 
 export default Modal;
+// const Modal = forwardRef(({
+//   mountNode = document.body,
+//   defaultIsOpen = false,
+//   isOpen: propsIsOpen,
+//   handleOpen,
+//   handleClose,
+//   handleToggle,
+//   children,
+//   ...props
+// }, ref) => {
+//   const [
+//     isOpen, setIsOpen, open, close, toggle,
+//   ] = useToggleState(defaultIsOpen, handleOpen, handleClose, handleToggle);
+
+//   // Combo controlled/uncontrolled.
+//   if (propsIsOpen !== undefined && propsIsOpen !== isOpen) {
+//     setIsOpen(propsIsOpen);
+//   }
+
+//   useImperativeHandle(ref, () => ({ open, close }), []);
+
+//   const modalProps = { isOpen, setIsOpen, open, close, toggle, mountNode };
+//   return (
+//     <Modal.Advanced {...modalProps}>
+//       <Modal.Dialog>
+//         <Modal.Header>
+//           <Modal.Title></Modal.Title>
+//           <Modal.Trigger close>close</Modal.Trigger>
+//         </Modal.Header>
+//         <Modal.Body>
+//           {children}
+//         </Modal.Body>
+//         <Modal.Footer>
+//           <Modal.Trigger open>Open</Modal.Trigger>
+//           <Modal.Trigger close>close</Modal.Trigger>
+//           <Modal.Trigger toggle>toggle</Modal.Trigger>
+//         </Modal.Footer>
+//       </Modal.Dialog>
+//     </Modal.Advanced>
+//   );
+// });
+// Modal.Context = React.createContext();
+
+// Modal.Advanced = ({ 
+//   children,
+//   mountNode = document.body,
+//   baseClassName = 'modal',
+//   className,
+//   isOpen,
+//   setIsOpen,
+//   open,
+//   close,
+//   toggle,
+//   ...attrs
+// }) => {
+//   return ReactDOM.createPortal((
+//     <>
+//       <Modal.Context.Provider value={{ isOpen, setIsOpen, open, close, toggle }}>
+//         <Modal.Backdrop />
+//         <div className={classNames(baseClassName, className)} {...attrs}>
+//           {children}
+//         </div>
+//       </Modal.Context.Provider>
+//     </>
+//   ), mountNode);
+// }
+// Modal.Backdrop = () => {
+//   const { isOpen } = useContext(Modal.Context);
+//   const className = classNames('modal-backdrop', { 'fade show': isOpen });
+//   return <div className={className} />;
+// }
+
+
+// Modal.Dialog = ({ children, tagName, baseClassName, ...props }) => {
+//   const className = classNames(baseClassName, props.className);
+//   const elementProps = { ...props, className };
+//   return React.createElement(tagName, elementProps, (
+//     <div className="modal-content">
+//       {children}
+//     </div>
+//   ));
+// };
+// Modal.Dialog.propTypes = {
+//   tagName: PropTypes.string,
+//   baseClassName: PropTypes.string,
+//   children: PropTypes.node.isRequired,
+// };
+// Modal.Dialog.defaultProps = {
+//   tagName: 'div',
+//   baseClassName: 'modal-dialog d-block',
+// };
+
+
+// Modal.Header = ({ children, tagName, baseClassName, ...props }) => {
+//   const className = classNames(baseClassName, props.className);
+//   const elementProps = { ...props, className };
+//   return React.createElement(tagName, elementProps, children);
+// };
+// Modal.Header.propTypes = {
+//   tagName: PropTypes.string,
+//   baseClassName: PropTypes.string,
+//   children: PropTypes.node.isRequired,
+// };
+// Modal.Header.defaultProps = {
+//   tagName: 'div',
+//   baseClassName: 'modal-header',
+// };
+
+
+// Modal.Title = ({ children, tagName, baseClassName, ...props }) => {
+//   const className = classNames(baseClassName, props.className);
+//   const elementProps = { ...props, className };
+//   return React.createElement(tagName, elementProps, children);
+// };
+// Modal.Title.propTypes = {
+//   tagName: PropTypes.string,
+//   baseClassName: PropTypes.string,
+//   children: PropTypes.node.isRequired,
+// };
+// Modal.Title.defaultProps = {
+//   tagName: 'div',
+//   baseClassName: 'modal-title',
+// };
+
+
+// Modal.Body = ({ children, tagName, baseClassName, ...props }) => {
+//   const className = classNames(baseClassName, props.className);
+//   const elementProps = { ...props, className };
+//   return React.createElement(tagName, elementProps, children);
+// };
+// Modal.Body.propTypes = {
+//   tagName: PropTypes.string,
+//   baseClassName: PropTypes.string,
+//   children: PropTypes.node.isRequired,
+// };
+// Modal.Body.defaultProps = {
+//   tagName: 'div',
+//   baseClassName: 'modal-body',
+// };
+
+
+// Modal.Footer = ({ children, tagName, baseClassName, ...props }) => {
+//   const className = classNames(baseClassName, props.className);
+//   const elementProps = { ...props, className };
+//   return React.createElement(tagName, elementProps, children);
+// };
+// Modal.Footer.propTypes = {
+//   tagName: PropTypes.string,
+//   baseClassName: PropTypes.string,
+//   children: PropTypes.node.isRequired,
+// };
+// Modal.Footer.defaultProps = {
+//   tagName: 'div',
+//   baseClassName: 'modal-footer',
+// };
+
+
+// Modal.Trigger = ({ children, tagName, baseClassName, onClick, open, close, toggle, ...props }) => {
+//   const { isOpen, open: openModal, close: closeModal, toggle: toggleModal } = useContext(Modal.Context);
+//   const test = useContext(Modal.Context);
+//   console.log(test)
+//   const className = classNames(baseClassName, props.className);
+//   const elementProps = {
+//     ...props,
+//     className,
+//     onClick: (e) => {
+//       if (toggle) {
+//         toggleModal();
+//       } else if (isOpen && close) {
+//         closeModal();
+//       } else if (!isOpen && open) {
+//         openModal();
+//       }
+
+//       if (onClick) {
+//         onClick(e);
+//       }
+//     }
+//   };
+//   return React.createElement(tagName, elementProps, children);
+// };
+// Modal.Trigger.propTypes = {
+//   tagName: PropTypes.string,
+//   baseClassName: PropTypes.string,
+//   children: PropTypes.node.isRequired,
+// };
+// Modal.Trigger.defaultProps = {
+//   tagName: 'div',
+//   baseClassName: 'modal-trigger',
+// };
+
+
+// export default Modal;

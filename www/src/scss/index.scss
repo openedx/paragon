@@ -1,5 +1,5 @@
 @import "~font-awesome/css/font-awesome.min.css";
-@import "~paragon-style/edx/theme.scss";
+@import "~paragon-style/core/core.scss";
 
 @import "./layout";
 @import "./hero";
@@ -55,7 +55,7 @@
 }
 
 .mobile-type {
-  @include mobile-type;
+  // @include mobile-type;
 }
 
 input[type=range] {

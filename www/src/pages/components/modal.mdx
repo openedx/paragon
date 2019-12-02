@@ -11,7 +11,7 @@ notes: |
 
 import { StaticQuery, graphql } from 'gatsby';
 import get from 'lodash/get';
-import { Modal } from '~paragon-react';
+import { Modal, Button } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
 import SingleComponentStatus from '../../components/SingleComponentStatus';
 
@@ -22,6 +22,23 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
     get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
   }
 />
+
+<Modal isOpen={true}>
+  <div className="modal-dialog">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h4 className="modal-title">This modal</h4>
+        <button>x</button>
+      </div>
+      <div className="modal-body">
+        The content of the modal.
+      </div>
+      <div className="modal-footer">
+        <Button className="btn-primary">close</Button>
+      </div>
+    </div>
+  </div>
+</Modal>
 
 ##### Example Usage
 

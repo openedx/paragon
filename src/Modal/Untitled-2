@@ -1,0 +1,15 @@
+
+  return (
+    <ToggleContext.Provider value={toggleState}>
+      <Portal root={document.body}>
+        <Shade />
+        <Dialog>
+          <Modal>
+            <ToggleContext.CloseButton>
+              Close
+            <ToggleContext.CloseButton>
+          </Modal>
+        </Dialog>
+      </Portal>
+    </ToggleContext.Provider>
+  );

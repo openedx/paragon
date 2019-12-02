@@ -1,0 +1,27 @@
+.modal-dialog {
+  position: relative;
+  z-index: 2000;
+}
+.modal-footer {
+  justify-content: flex-start;
+}
+.modal-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  $icon-color: rgba(0,0,0,.75);
+  background-image: str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='#{$icon-color}' viewBox='2 2 20 20'%3e%%3Cpolygon points='16.9497475 8.46446609 13.4142136 12 16.9497475 15.5355339 15.5355339 16.9497475 12 13.4142136 8.46446609 16.9497475 7.05025253 15.5355339 10.5857864 12 7.05025253 8.46446609 8.46446609 7.05025253 12 10.5857864 15.5355339 7.05025253' /%3E%3C/svg%3E"), "#", "%23");
+  background-size: 1.5rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  height: 1.5rem;
+  width: 1.5rem;
+  // background-color: rgba(0,0,0,.075);
+  border-radius: 50%;
+  border: none;
+  opacity: .75;
+  &:hover, &:focus {
+    opacity: 1;
+  }
+}
