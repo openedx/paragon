@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import { useState, useCallback } from 'react';
 
 const useToggleState = (defaultIsActive = false, ...handlers) => {

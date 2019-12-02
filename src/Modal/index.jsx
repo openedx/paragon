@@ -8,14 +8,18 @@ import { FocusOn } from 'react-focus-on';
 const Modal = ({ children, isOpen, setIsOpen }) => {
   const open = useCallback(setIsOpen.bind(null, true), [setIsOpen]);
   const close = useCallback(setIsOpen.bind(null, false), [setIsOpen]);
+  const contextValue = {
+    isOpen, setIsOpen, open, close,
+  };
 
-  return ReactDOM.createPortal((
-    <>
-      <Modal.Context.Provider value={{ isOpen, setIsOpen, open, close }}>
+  return ReactDOM.createPortal(
+    (
+      <Modal.Context.Provider value={contextValue}>
         {children}
       </Modal.Context.Provider>
-    </>
-  ), document.body);
+    ),
+    document.body,
+  );
 };
 
 Modal.Context = React.createContext();
@@ -87,9 +91,11 @@ Modal.CloseButton.defaultProps = {
 
 
 Modal.Dialog = (props) => {
-  const { htmlType, children, baseClassName, className, ...attrs } = props;
+  const {
+    tag, children, className, ...attrs
+  } = props;
   const combinedProps = {
-    className: classNames(baseClassName, className),
+    className: classNames('modal-dialog', className),
     ...attrs,
   };
   const { close, isOpen } = useContext(Modal.Context);
@@ -107,13 +113,21 @@ Modal.Dialog = (props) => {
 
   return (
     <div className="modal d-block" role="dialog">
-      {React.createElement(htmlType, combinedProps, wrappedChildren)}
+      {React.createElement(tag, combinedProps, wrappedChildren)}
     </div>
   );
 };
+
+Modal.Dialog.propTypes = {
+  tag: PropTypes.string,
+  children: PropTypes.node,
+  className: PropTypes.func,
+};
+
 Modal.Dialog.defaultProps = {
-  htmlType: 'div',
-  baseClassName: 'modal-dialog',
+  tag: 'div',
+  children: null,
+  className: undefined,
 };
 
 
