@@ -3,8 +3,8 @@
 
 @each $color, $value in $theme-colors {
   @each $level, $color-shift in $color-levels {
-    @include bg-variant(".bg-#{$color}-#{$level}", theme-color($color, $level));
-    @include text-emphasis-variant(".text-#{$color}-#{$level}", theme-color($color, $level));
+    @include bg-variant(".bg-#{$color}-#{$level}", theme-color($color, $level), true);
+    @include text-emphasis-variant(".text-#{$color}-#{$level}", theme-color($color, $level), true);
     .border-#{$color}-#{$level} {
       border-color: theme-color($color, $level) !important;
     }
