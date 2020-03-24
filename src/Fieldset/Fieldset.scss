@@ -12,6 +12,6 @@
 }
 
 .form-control.is-invalid.is-invalid-nodanger {
-  @include form-control-focus();
+  @include form-control-focus(true);
   border-color: $input-border-color;
 }
