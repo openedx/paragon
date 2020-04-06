@@ -217,10 +217,7 @@ class Pagination extends React.Component {
           disabled={isFirstPage}
         >
           <div>
-            <Icon
-              id={newId('pagination-')}
-              className="fa fa-chevron-left mr-2"
-            />
+            {leftChevron}
             {buttonLabels.previous}
           </div>
         </Button>
@@ -266,10 +263,7 @@ class Pagination extends React.Component {
         >
           <div>
             {buttonLabels.next}
-            <Icon
-              id={newId('pagination-')}
-              className="fa fa-chevron-right ml-2"
-            />
+            {rightChevron}    
           </div>
         </Button>
       </li>
@@ -374,6 +368,8 @@ class Pagination extends React.Component {
 
 Pagination.defaultProps = {
   buttonLabels: {
+    leftChevron: <Icon id={newId('pagination-')} className="fa fa-chevron-left mr-2"/>,
+    rightChevron: <Icon id={newId('pagination-')} className="fa fa-chevron-right ml-2"/>,
     previous: 'Previous',
     next: 'Next',
     page: 'Page',
@@ -398,6 +394,8 @@ Pagination.propTypes = {
   paginationLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   /** specifies the labels to use for the `Previous`/`Next` buttons as well as the various parts of `aria-label` on the page buttons for accessibility. All button labels accept both string or elements. The button label options are as follows:
 
+* `leftChevron`: Element for the `leftChevron` symbol;
+* `rightChevron`: Element for the `rightChevron` symbol;
 * `previous`: Text for the `Previous` button;
 * `next`: Text for the `Next` button;
 * `page`: Text in the `aria-label` on page buttons to describe the button (e.g., "**Page** 1");
@@ -408,7 +406,9 @@ for the mobile UI (e.g., "Page 1 **of** 20").
 
 The default is:
 ```javascript
-{
+{   
+    leftChevron: <Icon id={newId('pagination-')} className="fa fa-chevron-left mr-2"/>,
+    rightChevron: <Icon id={newId('pagination-')} className="fa fa-chevron-right ml-2"/>,
     previous: 'Previous',
     next: 'Next',
     page: 'Page',
@@ -417,6 +417,8 @@ The default is:
 }
 ``` */
   buttonLabels: PropTypes.shape({
+    leftChevron: PropTypes.element,
+    rightChevron: PropTypes.element,
     previous: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     next: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     page: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
