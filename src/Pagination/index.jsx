@@ -217,7 +217,7 @@ class Pagination extends React.Component {
           disabled={isFirstPage}
         >
           <div>
-            {leftChevron}
+            {buttonLabels.leftChevron}
             {buttonLabels.previous}
           </div>
         </Button>
@@ -263,7 +263,7 @@ class Pagination extends React.Component {
         >
           <div>
             {buttonLabels.next}
-            {rightChevron}    
+            {buttonLabels.rightChevron}
           </div>
         </Button>
       </li>
@@ -368,8 +368,8 @@ class Pagination extends React.Component {
 
 Pagination.defaultProps = {
   buttonLabels: {
-    leftChevron: <Icon id={newId('pagination-')} className="fa fa-chevron-left mr-2"/>,
-    rightChevron: <Icon id={newId('pagination-')} className="fa fa-chevron-right ml-2"/>,
+    leftChevron: <Icon id={newId('pagination-')} className="fa fa-chevron-left mr-2" />,
+    rightChevron: <Icon id={newId('pagination-')} className="fa fa-chevron-right ml-2" />,
     previous: 'Previous',
     next: 'Next',
     page: 'Page',
@@ -406,7 +406,7 @@ for the mobile UI (e.g., "Page 1 **of** 20").
 
 The default is:
 ```javascript
-{   
+{
     leftChevron: <Icon id={newId('pagination-')} className="fa fa-chevron-left mr-2"/>,
     rightChevron: <Icon id={newId('pagination-')} className="fa fa-chevron-right ml-2"/>,
     previous: 'Previous',
