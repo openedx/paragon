@@ -90,6 +90,20 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 />
 ```
 
+##### with custom right and left chevrons
+
+```jsx live=true
+<Pagination
+  paginationLabel="pagination navigation"
+  pageCount={20}
+  onPageSelect={() => console.log('page selected')}
+  buttonLabel={{
+    leftChevron: <svg viewBox="0 0 32 32" style="width: 15px;" aria-hidden="true"><path d="M14.19 16.005l7.869 7.868-2.129 2.129-9.996-9.997L19.937 6.002l2.127 2.129z"/></svg>
+    rightChevron: <svg viewBox="0 0 32 32" style="width: 15px;" aria-hidden="true"><path d="M18.629 15.997l-7.083-7.081L13.462 7l8.997 8.997L13.457 25l-1.916-1.916z"/></svg>
+  }}
+/>
+```
+
 ##### Props
 
 <StaticQuery
