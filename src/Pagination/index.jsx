@@ -427,7 +427,7 @@ The default is:
   currentPage: PropTypes.number,
   /** specifies the number of page buttons to display in between the `Previous` and `Next` buttons. This number also includes any ellipses in the total count. Also, to ensure that at least one clickable page button is shown when both ellipses are displayed, this value must be greater than `4`.  The default is `7`. */
   maxPagesDisplayed: between({ gt: 4 }),
-  // allows user to replace default fa-css chevrons
+  /** specifies icons used to signal previous and next page. can be an element, string, symbol, etc. default is chevrons rendered using fa-css. */
   icons: PropTypes.shape({
     leftIcon: PropTypes.node,
     rightIcon: PropTypes.node,
