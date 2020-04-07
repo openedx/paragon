@@ -181,7 +181,7 @@ class Pagination extends React.Component {
   }
 
   renderPreviousButton() {
-    const { buttonLabels } = this.props;
+    const { buttonLabels, icons } = this.props;
     const { currentPage } = this.state;
     const isFirstPage = currentPage === 1;
     const previousPage = isFirstPage ? null : currentPage - 1;
@@ -217,7 +217,7 @@ class Pagination extends React.Component {
           disabled={isFirstPage}
         >
           <div>
-            {buttonLabels.leftChevron}
+            {icons.leftIcon}
             {buttonLabels.previous}
           </div>
         </Button>
@@ -226,7 +226,7 @@ class Pagination extends React.Component {
   }
 
   renderNextButton() {
-    const { buttonLabels, pageCount } = this.props;
+    const { buttonLabels, pageCount, icons } = this.props;
     const { currentPage } = this.state;
     const isLastPage = currentPage === pageCount;
     const nextPage = isLastPage ? null : currentPage + 1;
@@ -263,7 +263,7 @@ class Pagination extends React.Component {
         >
           <div>
             {buttonLabels.next}
-            {buttonLabels.rightChevron}
+            {icons.rightIcon}
           </div>
         </Button>
       </li>
@@ -367,9 +367,11 @@ class Pagination extends React.Component {
 }
 
 Pagination.defaultProps = {
+  icons: {
+    leftIcon: <Icon className="fa fa-chevron-left mr-2" />,
+    rightIcon: <Icon className="fa fa-chevron-right ml-2" />,
+  },
   buttonLabels: {
-    leftChevron: <Icon className="fa fa-chevron-left mr-2" />,
-    rightChevron: <Icon className="fa fa-chevron-right ml-2" />,
     previous: 'Previous',
     next: 'Next',
     page: 'Page',
@@ -394,8 +396,6 @@ Pagination.propTypes = {
   paginationLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   /** specifies the labels to use for the `Previous`/`Next` buttons as well as the various parts of `aria-label` on the page buttons for accessibility. All button labels accept both string or elements. The button label options are as follows:
 
-* `leftChevron`: Element for the `leftChevron` symbol;
-* `rightChevron`: Element for the `rightChevron` symbol;
 * `previous`: Text for the `Previous` button;
 * `next`: Text for the `Next` button;
 * `page`: Text in the `aria-label` on page buttons to describe the button (e.g., "**Page** 1");
@@ -407,8 +407,6 @@ for the mobile UI (e.g., "Page 1 **of** 20").
 The default is:
 ```javascript
 {
-    leftChevron: <Icon id={newId('pagination-')} className="fa fa-chevron-left mr-2"/>,
-    rightChevron: <Icon id={newId('pagination-')} className="fa fa-chevron-right ml-2"/>,
     previous: 'Previous',
     next: 'Next',
     page: 'Page',
@@ -417,8 +415,6 @@ The default is:
 }
 ``` */
   buttonLabels: PropTypes.shape({
-    leftChevron: PropTypes.node,
-    rightChevron: PropTypes.node,
     previous: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     next: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     page: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
@@ -431,6 +427,11 @@ The default is:
   currentPage: PropTypes.number,
   /** specifies the number of page buttons to display in between the `Previous` and `Next` buttons. This number also includes any ellipses in the total count. Also, to ensure that at least one clickable page button is shown when both ellipses are displayed, this value must be greater than `4`.  The default is `7`. */
   maxPagesDisplayed: between({ gt: 4 }),
+  // allows user to replace default fa-css chevrons
+  icons: PropTypes.shape({
+    leftIcon: PropTypes.node,
+    rightIcon: PropTypes.node,
+  }),
 };
 
 export default Pagination;
