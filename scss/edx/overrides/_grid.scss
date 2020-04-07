@@ -8,3 +8,10 @@
   padding-left: $grid-gutter-width;
   padding-right: $grid-gutter-width;
 }
+
+$container-max-widths: map-merge(
+  (
+    xl: 1140px + 2 * $grid-gutter-width,
+  ),
+  $container-max-widths
+);
