@@ -1,6 +1,17 @@
-.container,
-.container-fluid {
-  max-width: 1140px;
+.container {
   padding-left: $grid-gutter-width;
   padding-right: $grid-gutter-width;
 }
+
+.container-fluid {
+  max-width: 1140px + 2 * $grid-gutter-width;
+  padding-left: $grid-gutter-width;
+  padding-right: $grid-gutter-width;
+}
+
+$container-max-widths: map-merge(
+  (
+    xl: 1140px + 2 * $grid-gutter-width,
+  ),
+  $container-max-widths
+);
