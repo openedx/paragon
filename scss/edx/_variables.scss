@@ -1,5 +1,14 @@
 @import "variables/colors";
 
+// Overriding breakpoint
+
+$container-max-widths: map-merge(
+  (
+    xl: 1140px + 2 * $grid-gutter-width,
+  ),
+  $container-max-widths
+);
+
 // Options
 
 $enable-validation-icons:                     false !default;

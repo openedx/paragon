@@ -368,8 +368,8 @@ class Pagination extends React.Component {
 
 Pagination.defaultProps = {
   buttonLabels: {
-    leftChevron: <Icon id={newId('pagination-')} className="fa fa-chevron-left mr-2" />,
-    rightChevron: <Icon id={newId('pagination-')} className="fa fa-chevron-right ml-2" />,
+    leftChevron: <Icon className="fa fa-chevron-left mr-2" />,
+    rightChevron: <Icon className="fa fa-chevron-right ml-2" />,
     previous: 'Previous',
     next: 'Next',
     page: 'Page',
@@ -417,8 +417,8 @@ The default is:
 }
 ``` */
   buttonLabels: PropTypes.shape({
-    leftChevron: PropTypes.element,
-    rightChevron: PropTypes.element,
+    leftChevron: PropTypes.node,
+    rightChevron: PropTypes.node,
     previous: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     next: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     page: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
