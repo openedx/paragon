@@ -3,28 +3,8 @@
   padding-right: $grid-gutter-width;
 }
 
-@media (min-width: 1200px) {
-  .container,
-  .container-sm,
-  .container-md,
-  .container-lg,
-  .container-xl {
-    max-width: 1140px + 2 * $grid-gutter-width;
-  }
-  .modal-xl {
-  	max-width: 1140px + 2 * $grid-gutter-width;
-  }
-}
-
 .container-fluid {
   max-width: 1140px + 2 * $grid-gutter-width;
   padding-left: $grid-gutter-width;
   padding-right: $grid-gutter-width;
 }
-
-$container-max-widths: map-merge(
-  (
-    xl: 1140px + 2 * $grid-gutter-width,
-  ),
-  $container-max-widths
-);
