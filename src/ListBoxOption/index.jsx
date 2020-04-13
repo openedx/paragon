@@ -10,7 +10,8 @@ export default class ListBoxOption extends React.Component {
     this.onMouseDown = this.onMouseDown.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (!this.props.isSelected && nextProps.isSelected) {
       this.props.onSelect();
     }

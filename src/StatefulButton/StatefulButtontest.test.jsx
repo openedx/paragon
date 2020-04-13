@@ -40,11 +40,11 @@ describe('StatefulButton', () => {
       className: 'btn-primary mr-2',
     };
     const tree = renderer.create((
-      <React.Fragment>
+      <>
         <StatefulButton state="default" {...downloadButtonProps} />
         <StatefulButton state="pending" {...downloadButtonProps} />
         <StatefulButton state="complete" {...downloadButtonProps} />
-      </React.Fragment>
+      </>
     )).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -63,10 +63,10 @@ describe('StatefulButton', () => {
       className: 'btn-primary mr-2',
     };
     const tree = renderer.create((
-      <React.Fragment>
+      <>
         <StatefulButton state="unedited" {...buttonProps} />
         <StatefulButton state="edited" {...buttonProps} />
-      </React.Fragment>
+      </>
     )).toJSON();
     expect(tree).toMatchSnapshot();
   });

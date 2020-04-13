@@ -61,6 +61,7 @@ class Button extends React.Component {
     } = this.props;
 
     return (
+      // eslint-disable-next-line react/button-has-type
       <button
         {...other}
         className={classNames([
@@ -76,7 +77,6 @@ class Button extends React.Component {
         onKeyDown={this.onKeyDown}
         type={type}
         ref={this.setRefs}
-
       >
         {children}
       </button>

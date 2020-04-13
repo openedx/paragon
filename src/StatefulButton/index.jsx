@@ -88,7 +88,7 @@ function StatefulButton({
           return;
         }
 
-        if (onClick) onClick(e);
+        if (onClick) { onClick(e); }
       }}
       {...attributes}
     >

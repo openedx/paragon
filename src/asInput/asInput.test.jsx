@@ -322,8 +322,8 @@ describe('asInput()', () => {
           wrapper.find('input').simulate('blur');
           expect(spy).toHaveBeenCalledTimes(1);
           expect(err.exists()).toEqual(true);
-          expect(err.text()).toEqual(validationResult.dangerIconDescription +
-                                     validationResult.validationMessage);
+          expect(err.text()).toEqual(validationResult.dangerIconDescription
+                                     + validationResult.validationMessage);
 
           const dangerIcon = wrapper.find('.fa-exclamation-circle');
           expect(dangerIcon.exists()).toEqual(true);
@@ -361,7 +361,7 @@ describe('asInput()', () => {
           ...baseProps,
           inputGroupPrepend: (
             <div className="input-group-text">
-              {'$'}
+              $
             </div>
           ),
         };
@@ -377,7 +377,7 @@ describe('asInput()', () => {
           ...baseProps,
           inputGroupAppend: (
             <div className="input-group-text">
-              {'.00'}
+              .00
             </div>
           ),
         };
@@ -393,12 +393,12 @@ describe('asInput()', () => {
           ...baseProps,
           inputGroupPrepend: (
             <div className="input-group-text">
-              {'$'}
+              $
             </div>
           ),
           inputGroupAppend: (
             <div className="input-group-text">
-              {'.00'}
+              .00
             </div>
           ),
         };
@@ -416,10 +416,10 @@ describe('asInput()', () => {
           ...baseProps,
           inputGroupAppend: [
             <div className="input-group-text">
-              {'.00'}
+              .00
             </div>,
             <div className="input-group-text">
-              <button className="btn">Go</button>
+              <button type="button" className="btn">Go</button>
             </div>,
           ],
         };
@@ -437,10 +437,10 @@ describe('asInput()', () => {
           ...baseProps,
           inputGroupPrepend: [
             <div className="input-group-text">
-              {'$'}
+              $
             </div>,
             <div className="input-group-text">
-              {'0.'}
+              0.
             </div>,
           ],
         };

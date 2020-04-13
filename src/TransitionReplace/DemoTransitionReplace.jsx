@@ -40,7 +40,7 @@ export default function DemoTransitionReplace() {
 
   return (
     <div>
-      <button className="btn btn-primary mb-2" onClick={changeContent}>Next Quote</button>
+      <button type="button" className="btn btn-primary mb-2" onClick={changeContent}>Next Quote</button>
       <div
         style={{
           background: '#eee',

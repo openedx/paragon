@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import renderer from 'react-test-renderer';
 
@@ -5,7 +6,7 @@ import ValidationFormGroup from './index';
 
 describe('ValidationFormGroup', () => {
   const labelAndInputComponents = (
-    <React.Fragment>
+    <>
       <label htmlFor="firstName">First Name</label>
       <input
         className="form-control"
@@ -15,7 +16,7 @@ describe('ValidationFormGroup', () => {
         value="Adam"
         onChange={() => {}}
       />
-    </React.Fragment>
+    </>
   );
 
   it('renders', () => {

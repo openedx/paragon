@@ -47,27 +47,6 @@ class Dropdown extends React.Component {
     return Array.from(this.menuRef.current.querySelectorAll(selector));
   }
 
-  focusFirst() {
-    const focusableElements = this.getFocusableElements();
-    if (focusableElements.length) focusableElements[0].focus();
-  }
-
-  focusNext() {
-    const allFocusableElements = this.getFocusableElements();
-    if (allFocusableElements.length === 0) return;
-    const activeIndex = allFocusableElements.indexOf(document.activeElement);
-    const nextIndex = (activeIndex + 1) % allFocusableElements.length;
-    allFocusableElements[nextIndex].focus();
-  }
-
-  focusPrevious() {
-    const allFocusableElements = this.getFocusableElements();
-    if (allFocusableElements.length === 0) return;
-    const activeIndex = allFocusableElements.indexOf(document.activeElement);
-    const previousIndex =
-      ((activeIndex - 1) + allFocusableElements.length) % allFocusableElements.length;
-    allFocusableElements[previousIndex].focus();
-  }
 
   handleDocumentClick = (e) => {
     if (this.containerRef.current.contains(e.target) && this.containerRef.current !== e.target) {
@@ -105,12 +84,12 @@ class Dropdown extends React.Component {
     }
   }
 
-  open() {
-    // adding event listener here so the user can close dropdown on click outside of the dropdown
-    document.addEventListener('click', this.handleDocumentClick, true);
-    this.setState({
-      open: true,
-    });
+  toggle = () => {
+    if (this.state.open) {
+      this.close();
+    } else {
+      this.open();
+    }
   }
 
   close() {
@@ -120,12 +99,33 @@ class Dropdown extends React.Component {
     });
   }
 
-  toggle = () => {
-    if (this.state.open) {
-      this.close();
-    } else {
-      this.open();
-    }
+  open() {
+    // adding event listener here so the user can close dropdown on click outside of the dropdown
+    document.addEventListener('click', this.handleDocumentClick, true);
+    this.setState({
+      open: true,
+    });
+  }
+
+  focusFirst() {
+    const focusableElements = this.getFocusableElements();
+    if (focusableElements.length) { focusableElements[0].focus(); }
+  }
+
+  focusNext() {
+    const allFocusableElements = this.getFocusableElements();
+    if (allFocusableElements.length === 0) { return; }
+    const activeIndex = allFocusableElements.indexOf(document.activeElement);
+    const nextIndex = (activeIndex + 1) % allFocusableElements.length;
+    allFocusableElements[nextIndex].focus();
+  }
+
+  focusPrevious() {
+    const allFocusableElements = this.getFocusableElements();
+    if (allFocusableElements.length === 0) { return; }
+    const activeIndex = allFocusableElements.indexOf(document.activeElement);
+    const previousIndex = ((activeIndex - 1) + allFocusableElements.length) % allFocusableElements.length;
+    allFocusableElements[previousIndex].focus();
   }
 
   render() {
@@ -174,9 +174,9 @@ const DropdownWithDeprecatedProps = withDeprecatedProps(Dropdown, 'Dropdown', {
     message: 'They should be components sent as children.',
     newName: 'children',
     transform: (menuItems, allProps) => {
-      if (!Array.isArray(menuItems)) return null;
+      if (!Array.isArray(menuItems)) { return null; }
       return (
-        <React.Fragment>
+        <>
           <DropdownButton>
             {React.isValidElement(allProps.iconElement) ? allProps.iconElement : null }
             {allProps.title}
@@ -184,17 +184,17 @@ const DropdownWithDeprecatedProps = withDeprecatedProps(Dropdown, 'Dropdown', {
           <DropdownMenu>
             {menuItems.map((menuItem, i) => {
             /* eslint-disable react/no-array-index-key */
-            if (React.isValidElement(menuItem)) {
-              return React.cloneElement(menuItem, {
-                className: 'dropdown-item',
-                key: i,
-              });
-            }
-            return <DropdownItem key={i} href={menuItem.href}>{menuItem.label}</DropdownItem>;
+              if (React.isValidElement(menuItem)) {
+                return React.cloneElement(menuItem, {
+                  className: 'dropdown-item',
+                  key: i,
+                });
+              }
+              return <DropdownItem key={i} href={menuItem.href}>{menuItem.label}</DropdownItem>;
             /* eslint-enable react/no-array-index-key */
             })}
           </DropdownMenu>
-        </React.Fragment>
+        </>
       );
     },
   },

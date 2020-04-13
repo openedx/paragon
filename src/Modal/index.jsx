@@ -41,7 +41,8 @@ class Modal extends React.Component {
     this.parentElement.appendChild(this.el);
   }
 
-  componentWillReceiveProps({ open }) {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps({ open }) {
     if (open !== this.state.open) {
       this.setState({ open });
     }

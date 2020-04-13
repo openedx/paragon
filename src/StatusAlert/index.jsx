@@ -27,7 +27,8 @@ class StatusAlert extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.open !== this.props.open) {
       this.setState({ open: nextProps.open });
     }

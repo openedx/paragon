@@ -33,7 +33,7 @@ const Collapsible = React.forwardRef((props, ref) => {
     ...other
   } = props;
 
-  const icons = Object.assign({ iconWhenClosed, iconWhenOpen }, styleIcons[styling]);
+  const icons = { iconWhenClosed, iconWhenOpen, ...styleIcons[styling] };
   const titleElement = React.isValidElement(title) ? title : <span>{title}</span>;
 
   return (

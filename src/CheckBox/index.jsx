@@ -16,7 +16,8 @@ class Check extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.checked !== this.props.checked) {
       this.setState({
         checked: nextProps.checked,
@@ -25,9 +26,9 @@ class Check extends React.Component {
   }
 
   onChange(event) {
-    this.setState({
-      checked: !this.state.checked,
-    });
+    this.setState(currentState => ({
+      checked: !currentState.checked,
+    }));
     this.props.onChange(event);
   }
 

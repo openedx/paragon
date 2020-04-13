@@ -69,31 +69,31 @@ class TransitionReplace extends React.Component {
   // 3. onChildExited       (reset the height to null)
 
   onChildEnter(htmlNode) {
-    if (this.props.onChildEnter) this.props.onChildEnter(htmlNode);
+    if (this.props.onChildEnter) { this.props.onChildEnter(htmlNode); }
   }
 
   onChildEntering(htmlNode) {
     this.setState({ height: htmlNode.offsetHeight });
-    if (this.props.onChildEntering) this.props.onChildEntering(htmlNode);
+    if (this.props.onChildEntering) { this.props.onChildEntering(htmlNode); }
   }
 
   onChildEntered(htmlNode) {
     this.setState({ height: null });
-    if (this.props.onChildEntered) this.props.onChildEntered(htmlNode);
+    if (this.props.onChildEntered) { this.props.onChildEntered(htmlNode); }
   }
 
   onChildExit(htmlNode) {
     this.setState({ height: htmlNode.offsetHeight });
-    if (this.props.onChildExit) this.props.onChildExit(htmlNode);
+    if (this.props.onChildExit) { this.props.onChildExit(htmlNode); }
   }
 
   onChildExiting(htmlNode) {
-    if (this.props.onChildExiting) this.props.onChildExiting(htmlNode);
+    if (this.props.onChildExiting) { this.props.onChildExiting(htmlNode); }
   }
 
   onChildExited(htmlNode) {
     this.setState({ height: null });
-    if (this.props.onChildExited) this.props.onChildExited(htmlNode);
+    if (this.props.onChildExited) { this.props.onChildExited(htmlNode); }
   }
 
   renderChildTransition(child) {

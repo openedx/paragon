@@ -11,6 +11,7 @@ const DropdownButton = ({ children, className, ...other }) => (
       toggle,
       triggerId,
     }) => (
+      // eslint-disable-next-line react/button-has-type
       <button
         {...other}
         id={classNames(triggerId, other.id)}

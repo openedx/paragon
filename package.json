@@ -16,7 +16,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "make build",
-    "build-docs": "cd ./www && \"$npm_execpath\" install && \"$npm_execpath\" run build",
+    "docs": "cd ./www && \"$npm_execpath\" install && \"$npm_execpath\" run build",
     "commit": "commit",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage",
@@ -49,65 +49,19 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.3.4",
-    "@babel/plugin-proposal-class-properties": "^7.4.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
-    "@babel/preset-env": "^7.3.4",
-    "@babel/preset-react": "^7.0.0",
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-angular": "^7.5.0",
     "@commitlint/prompt-cli": "^7.5.0",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^24.5.0",
-    "babel-loader": "^8.0.6",
-    "coveralls": "^3.0.3",
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.11.2",
-    "eslint-config-edx": "^4.0.4",
+    "@edx/frontend-build": "^5.0.4",
+    "codecov": "3.6.5",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "husky": "^2.0.0",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^24.5.0",
-    "jest-cli": "^24.7.1",
     "markdown-loader-jest": "^0.1.1",
-    "node-sass": "^4.12.0",
-    "react-test-renderer": "^16.8.6",
-    "sass-loader": "^7.1.0",
-    "semantic-release": "^15.13.14",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.md?$": "markdown-loader-jest",
-      "^.+\\.jsx?$": "babel-jest"
-    },
-    "setupFiles": [
-      "./src/setupTest.js"
-    ],
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|scss)$": "identity-obj-proxy"
-    },
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
-    ],
-    "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "src/setupTest.js",
-      "src/index.js",
-      "/tests/",
-      "/www/",
-      "/dist/"
-    ],
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/www/",
-      "/dist/"
-    ],
-    "transformIgnorePatterns": [
-      "/node_modules/(?!(@edx/paragon)/).*/"
-    ]
+    "react-dom": "^16.8.6",
+    "react-test-renderer": "^16.8.6"
   },
   "browserslist": [
     "last 2 versions",

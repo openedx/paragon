@@ -57,10 +57,12 @@ class Table extends React.Component {
   getSortIcon(sortDirection) {
     const sortIconClassName = ['fa-sort', sortDirection].filter(n => n).join('-');
 
-    return (<span
-      className={classNames('fa', sortIconClassName)}
-      aria-hidden
-    />);
+    return (
+      <span
+        className={classNames('fa', sortIconClassName)}
+        aria-hidden
+      />
+    );
   }
 
   getTableHeading(column) {

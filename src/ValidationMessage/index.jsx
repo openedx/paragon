@@ -52,7 +52,7 @@ class ValidationMessage extends React.Component {
     switch (variant.status) {
       case Variant.status.DANGER:
         icon = (
-          <React.Fragment>
+          <>
             <span
               className={classNames(
                 'fa',
@@ -66,7 +66,7 @@ class ValidationMessage extends React.Component {
             >
               {variantIconDescription}
             </span>
-          </React.Fragment>
+          </>
         );
         break;
       default:
@@ -95,12 +95,13 @@ class ValidationMessage extends React.Component {
       >
         { isValid ? (
           <span />
-        ) :
-          <React.Fragment>
-            {this.getVariantIcon()}
-            {invalidMessage}
-          </React.Fragment>
-        }
+        )
+          : (
+            <>
+              {this.getVariantIcon()}
+              {invalidMessage}
+            </>
+          )}
       </div>
     );
   }

@@ -8,18 +8,19 @@ import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
 function Icon(props) {
   return (
-    <React.Fragment>
+    <>
       <span
         id={props.id ? props.id : newId('Icon')}
         className={props.className}
         aria-hidden={props.hidden}
       />
-      { props.screenReaderText &&
+      { props.screenReaderText
+        && (
         <span className={classNames('sr-only')}>
           {props.screenReaderText}
         </span>
-      }
-    </React.Fragment>
+        )}
+    </>
   );
 }
 

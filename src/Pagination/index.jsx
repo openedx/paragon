@@ -25,10 +25,11 @@ class Pagination extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (
-      nextProps.currentPage !== this.props.currentPage ||
-      nextProps.currentPage !== this.state.currentPage
+      nextProps.currentPage !== this.props.currentPage
+      || nextProps.currentPage !== this.state.currentPage
     ) {
       this.setState({
         currentPage: nextProps.currentPage,
@@ -106,12 +107,13 @@ class Pagination extends React.Component {
       <div>
         {buttonLabels.page}
         {` ${page}`}
-        {active &&
+        {active
+          && (
           <span>
             {', '}
             {buttonLabels.currentPage}
           </span>
-        }
+          )}
       </div>
     ));
 
@@ -189,13 +191,14 @@ class Pagination extends React.Component {
     const ariaLabel = getTextFromElement((
       <div>
         {buttonLabels.previous}
-        {previousPage &&
+        {previousPage
+          && (
           <span>
             {', '}
             {buttonLabels.page}
             {` ${previousPage}`}
           </span>
-        }
+          )}
       </div>
     ));
 
@@ -234,13 +237,14 @@ class Pagination extends React.Component {
     const ariaLabel = getTextFromElement((
       <div>
         {buttonLabels.next}
-        {nextPage &&
+        {nextPage
+          && (
           <span>
             {', '}
             {buttonLabels.page}
             {` ${nextPage}`}
           </span>
-        }
+          )}
       </div>
     ));
 

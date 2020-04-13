@@ -17,11 +17,11 @@ const Breadcrumbs = ({
             <li className={classNames('list-inline-item')}>
               <a href={url} {...(clickHandler && { onClick: clickHandler })}>{label}</a>
             </li>
-            {(activeLabel || ((i + 1) < linkCount)) &&
+            {(activeLabel || ((i + 1) < linkCount)) && (
               <li className={classNames('list-inline-item')} role="presentation" aria-label="spacer">
                 {spacer || <Icon className="fa fa-chevron-right" id={`spacer-${i}`} />}
               </li>
-            }
+            )}
           </React.Fragment>
         ))}
         {activeLabel && <li className={classNames('list-inline-item')} key="active">{activeLabel}</li>}

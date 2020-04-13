@@ -19,7 +19,7 @@ function withDeprecatedProps(WrappedComponent, componentName, deprecatedProps) {
 
     warn(message) {
       if (process.env.NODE_ENV === 'development') {
-        if (console) console.warn(`[Deprecated] ${message}`);
+        if (console) { console.warn(`[Deprecated] ${message}`); }
       }
     }
 
@@ -64,6 +64,7 @@ function withDeprecatedProps(WrappedComponent, componentName, deprecatedProps) {
 
       return acc;
     }
+
     render() {
       const { children, ...transformedProps } = Object
         .keys(this.props)

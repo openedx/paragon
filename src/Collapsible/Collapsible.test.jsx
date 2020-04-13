@@ -1,11 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
-import Collapsible from '../Collapsible';
+import Collapsible from '.';
 
 
 const collapsibleContent = (
-  <React.Fragment>
+  <>
     <Collapsible.Trigger className="trigger d-flex align-items-center">
       <h4 className="flex-grow-1">A heading</h4>
 
@@ -23,7 +23,7 @@ const collapsibleContent = (
         Example content
       </p>
     </Collapsible.Body>
-  </React.Fragment>
+  </>
 );
 
 const collapsibleIsOpen = (wrapper) => {

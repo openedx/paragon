@@ -17,7 +17,8 @@ export default class ListBox extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const { selectedOptionIndex } = nextProps;
 
     if (this.shouldUpdateSelectedOptionIndex(selectedOptionIndex)) {
@@ -69,12 +70,11 @@ export default class ListBox extends React.Component {
   }
 
   renderChildren() {
-    return React.Children.map(this.props.children, (child, index) =>
-      React.cloneElement(child, {
-        index,
-        isSelected: index === this.state.selectedOptionIndex,
-        onSelect: () => { this.setState({ selectedOptionIndex: index }); child.props.onSelect(); },
-      }));
+    return React.Children.map(this.props.children, (child, index) => React.cloneElement(child, {
+      index,
+      isSelected: index === this.state.selectedOptionIndex,
+      onSelect: () => { this.setState({ selectedOptionIndex: index }); child.props.onSelect(); },
+    }));
   }
 
   render() {
