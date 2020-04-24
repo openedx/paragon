@@ -1,40 +1,119 @@
 /* eslint-disable max-len */
-import React from 'react';
+import React, { useRef, createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-import SearchFieldAdvanced, { SearchFieldContext } from './SearchFieldAdvanced';
-import SearchFieldLabel from './SearchFieldLabel';
-import SearchFieldInput from './SearchFieldInput';
-import SearchFieldClearButton from './SearchFieldClearButton';
-import SearchFieldSubmitButton from './SearchFieldSubmitButton';
+import newId from '../utils/newId';
 
-const SearchField = (props) => {
+export const SearchFieldContext = createContext();
+
+const SearchFieldAdvanced = (props) => {
   const {
-    label,
-    placeholder,
-    ...others
+    children,
+    className,
+    screenReaderText,
+    icons,
+    onSubmit,
+    onClear,
+    onChange,
+    onBlur,
+    onFocus,
+    value: initialValue,
   } = props;
 
+  const [hasFocus, setHasFocus] = useState(false);
+  const [value, setValue] = useState(initialValue);
+
+  const isInitialMount = useRef(true);
+  const inputId = useRef(`${newId('pgn-searchfield-input-')}`);
+  const inputRef = useRef();
+  const submitButtonRef = useRef();
+
+  useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+    } else {
+      onChange(value);
+    }
+  }, [value]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onSubmit(value);
+    if (submitButtonRef && submitButtonRef.current) {
+      submitButtonRef.current.focus();
+    }
+  };
+
+  const handleClear = () => {
+    setValue('');
+    onClear();
+    if (inputRef && inputRef.current) {
+      inputRef.current.focus();
+    }
+  };
+
+  const handleFocus = (event) => {
+    setHasFocus(true);
+    onFocus(event);
+  };
+
+  const handleBlur = (event) => {
+    setHasFocus(false);
+    onBlur(event);
+  };
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
   return (
-    <SearchField.Advanced {...others}>
-      <SearchField.Label>{label}</SearchField.Label>
-      <SearchField.Input placeholder={placeholder} />
-      <SearchField.ClearButton />
-      <SearchField.SubmitButton />
-    </SearchField.Advanced>
+    <div
+      className={classNames(
+        'pgn-searchfield',
+        'd-flex border rounded',
+        { 'has-focus': hasFocus },
+        className,
+      )}
+    >
+      <form
+        role="search"
+        onSubmit={handleSubmit}
+        className="d-flex align-items-center w-100"
+      >
+        <SearchFieldContext.Provider
+          value={{
+            inputId,
+            screenReaderText,
+            icons,
+            value,
+            handleClear,
+            handleFocus,
+            handleBlur,
+            handleChange,
+            refs: {
+              input: inputRef,
+              submitButton: submitButtonRef,
+            },
+          }}
+        >
+          {children}
+        </SearchFieldContext.Provider>
+      </form>
+    </div>
   );
 };
 
-SearchField.propTypes = {
+SearchFieldAdvanced.propTypes = {
+  /** specifies the nested child elements. At a minimum, `SearchField.Label` and `SearchField.Input` are required. */
+  children: PropTypes.node.isRequired,
   /** specifies a callback function for when the `SearchField` is submitted by the user. For example:
   ```jsx
   <SearchField onSubmit={(value) => { console.log(value); } />
   ``` */
   onSubmit: PropTypes.func.isRequired,
-  /** specifies the label to use for the input field (e.g., for i18n translations). */
-  label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   /** specifies a custom class name. */
   className: PropTypes.string,
   /** specifies a callback function for when the user loses focus in the `SearchField` component. The default is an empty function. For example:
@@ -57,8 +136,6 @@ SearchField.propTypes = {
   <SearchField onFocus={event => console.log(event)} />
   ``` */
   onFocus: PropTypes.func,
-  /** specifies the placeholder text for the input. */
-  placeholder: PropTypes.string,
   /** specifies the screenreader text for both the clear and submit buttons (e.g., for i18n translations). The default is `{ label: 'search', clearButton: 'clear search', searchButton: 'submit search' }`. */
   screenReaderText: PropTypes.shape({
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
@@ -74,9 +151,7 @@ SearchField.propTypes = {
   }),
 };
 
-SearchField.defaultProps = {
-  label: undefined,
-  placeholder: undefined,
+SearchFieldAdvanced.defaultProps = {
   className: undefined,
   value: '',
   screenReaderText: {
@@ -94,11 +169,4 @@ SearchField.defaultProps = {
   onClear: () => {},
 };
 
-SearchField.Advanced = SearchFieldAdvanced;
-SearchField.Label = SearchFieldLabel;
-SearchField.Input = SearchFieldInput;
-SearchField.ClearButton = SearchFieldClearButton;
-SearchField.SubmitButton = SearchFieldSubmitButton;
-SearchField.Context = SearchFieldContext;
-
-export default SearchField;
+export default SearchFieldAdvanced;
