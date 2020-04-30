@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import classNames from 'classnames';
 
 import { SearchFieldContext } from './SearchFieldAdvanced';
 
@@ -8,11 +7,12 @@ const SearchFieldClearButton = () => {
     screenReaderText, icons, value,
   } = useContext(SearchFieldContext);
 
+  if (!value) {
+    return null;
+  }
+
   return (
-    <button
-      type="reset"
-      className={classNames('btn px-2', { 'd-none': !value })}
-    >
+    <button type="reset" className="btn">
       {icons.clear}
       <span className="sr-only">{screenReaderText.clearButton}</span>
     </button>

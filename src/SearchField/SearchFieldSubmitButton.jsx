@@ -8,7 +8,7 @@ const SearchFieldSubmitButton = () => {
   return (
     <button
       type="submit"
-      className="btn px-2"
+      className="btn"
       ref={refs.submitButton}
     >
       {icons.submit}

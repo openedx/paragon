@@ -18,4 +18,9 @@
     label.has-label-text {
         padding-left: 0.75rem;
     }
+
+    .btn[type="submit"],
+    .btn[type="reset"] {
+        @extend .px-2;
+    }
 }

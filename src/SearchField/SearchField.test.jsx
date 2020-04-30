@@ -142,9 +142,9 @@ describe('<SearchField /> with basic usage', () => {
     it('should be visible with input value', () => {
       const props = { ...baseProps };
       const wrapper = mount(<SearchField {...props} />);
-      expect(wrapper.find('button[type="reset"]').hasClass('d-none')).toEqual(true);
+      expect(wrapper.find('button[type="reset"]').exists()).toBeFalsy();
       wrapper.find('input').simulate('change', { target: { value: 'foobar' } });
-      expect(wrapper.find('button[type="reset"]').hasClass('d-none')).toEqual(false);
+      expect(wrapper.find('button[type="reset"]').exists()).toBeTruthy();
     });
 
     it('should clear input value when clicked', () => {

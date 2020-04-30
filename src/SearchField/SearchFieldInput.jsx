@@ -5,23 +5,19 @@ import Input from '../Input';
 import { SearchFieldContext } from './SearchFieldAdvanced';
 
 const SearchFieldInput = (props) => {
-  const { className, ...others } = props;
-
   const {
     inputId, value, handleChange, handleFocus, handleBlur, refs,
   } = useContext(SearchFieldContext);
 
   return (
     <Input
-      {...others}
+      {...props}
       ref={refs.input}
       type="text"
       role="searchbox"
       id={inputId.current}
       name="searchfield-input"
-      className={className}
       value={value}
-      autoComplete="off"
       onFocus={handleFocus}
       onBlur={handleBlur}
       onChange={handleChange}
