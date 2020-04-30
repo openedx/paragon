@@ -5,14 +5,13 @@ import { SearchFieldContext } from './SearchFieldAdvanced';
 
 const SearchFieldClearButton = () => {
   const {
-    screenReaderText, icons, value, handleClear,
+    screenReaderText, icons, value,
   } = useContext(SearchFieldContext);
 
   return (
     <button
       type="reset"
       className={classNames('btn px-2', { 'd-none': !value })}
-      onClick={handleClear}
     >
       {icons.clear}
       <span className="sr-only">{screenReaderText.clearButton}</span>

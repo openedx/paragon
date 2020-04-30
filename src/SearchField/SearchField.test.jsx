@@ -123,7 +123,7 @@ describe('<SearchField /> with basic usage', () => {
       const props = { ...baseProps, onClear: spy };
       const wrapper = mount(<SearchField {...props} />);
       wrapper.find('input').simulate('change', { target: { value: 'foobar' } });
-      wrapper.find('button[type="reset"]').simulate('click');
+      wrapper.find('button[type="reset"]').simulate('reset');
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
@@ -152,7 +152,7 @@ describe('<SearchField /> with basic usage', () => {
       const wrapper = mount(<SearchField {...props} />);
       wrapper.find('input').simulate('change', { target: { value: 'foobar' } });
       expect(wrapper.find('input').prop('value')).toEqual('foobar');
-      wrapper.find('button[type="reset"]').simulate('click');
+      wrapper.find('button[type="reset"]').simulate('reset');
       expect(wrapper.find('input').prop('value')).toEqual('');
     });
   });

@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
 import Input from '../Input';
 import { SearchFieldContext } from './SearchFieldAdvanced';
@@ -16,11 +15,11 @@ const SearchFieldInput = (props) => {
     <Input
       {...others}
       ref={refs.input}
-      type="search"
+      type="text"
       role="searchbox"
       id={inputId.current}
       name="searchfield-input"
-      className={classNames(className, 'border-0')}
+      className={className}
       value={value}
       autoComplete="off"
       onFocus={handleFocus}

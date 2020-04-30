@@ -21,6 +21,7 @@ const SearchFieldAdvanced = (props) => {
     onBlur,
     onFocus,
     value: initialValue,
+    formAriaLabel,
   } = props;
 
   const [hasFocus, setHasFocus] = useState(false);
@@ -72,8 +73,7 @@ const SearchFieldAdvanced = (props) => {
   return (
     <div
       className={classNames(
-        'pgn-searchfield',
-        'd-flex border rounded',
+        'pgn__searchfield', 'd-flex',
         { 'has-focus': hasFocus },
         className,
       )}
@@ -81,7 +81,9 @@ const SearchFieldAdvanced = (props) => {
       <form
         role="search"
         onSubmit={handleSubmit}
+        onReset={handleClear}
         className="d-flex align-items-center w-100"
+        aria-label={formAriaLabel}
       >
         <SearchFieldContext.Provider
           value={{
@@ -89,7 +91,6 @@ const SearchFieldAdvanced = (props) => {
             screenReaderText,
             icons,
             value,
-            handleClear,
             handleFocus,
             handleBlur,
             handleChange,
@@ -149,10 +150,13 @@ SearchFieldAdvanced.propTypes = {
     submit: PropTypes.element.isRequired,
     clear: PropTypes.element,
   }),
+  /** specifies the aria-label attribute on the form element. This is useful if you use the `SearchField` component more than once on a page. */
+  formAriaLabel: PropTypes.string,
 };
 
 SearchFieldAdvanced.defaultProps = {
   className: undefined,
+  formAriaLabel: undefined,
   value: '',
   screenReaderText: {
     label: 'search',

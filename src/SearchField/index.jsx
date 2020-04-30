@@ -72,12 +72,15 @@ SearchField.propTypes = {
     submit: PropTypes.element.isRequired,
     clear: PropTypes.element,
   }),
+  /** specifies the aria-label attribute on the form element. This is useful if you use the `SearchField` component more than once on a page. */
+  formAriaLabel: PropTypes.string,
 };
 
 SearchField.defaultProps = {
   label: undefined,
   placeholder: undefined,
   className: undefined,
+  formAriaLabel: undefined,
   value: '',
   screenReaderText: {
     label: 'search',
