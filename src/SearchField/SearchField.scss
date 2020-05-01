@@ -1,83 +1,26 @@
-$search-field-clear-btn-width: 30px;
-$search-field-border-radius: 30px;
-
-.search-field {
+.pgn__searchfield {
+    @extend .border;
+    @extend .rounded;
     transition: $input-transition;
-    border-radius: $search-field-border-radius;
-    box-shadow: $input-box-shadow;
-    background: #ffffff;
 
-    .form-group {
-        margin-bottom: 0;
-    }
-
-    .input-group {
-        flex: 1 1 0;
-
-        //clear browser 'x' from Internet Explorer
-        input[type=search]::-ms-clear {
-          display: none;
-          width : 0;
-          height: 0;
-        }
-        input[type=search]::-ms-reveal {
-          display: none;
-          width : 0;
-          height: 0;
-        }
-
-        //clear browser 'x' from Chrome
-        input[type="search"]::-webkit-search-decoration,
-        input[type="search"]::-webkit-search-cancel-button,
-        input[type="search"]::-webkit-search-results-button,
-        input[type="search"]::-webkit-search-results-decoration {
-          display: none;
-        }
-    }
-
-    label {
-        margin: 0;
-        padding-left: 20px;
-        padding-right: 10px;
-    }
-
-    button:last-child {
-        border-radius: $search-field-border-radius;
-    }
-
-    &.focused {
-        border-color: $blue !important;
+    &.has-focus {
         box-shadow: $input-focus-box-shadow;
     }
 
-    .input {
-        background: none;
-        border: 0;
-        box-shadow: none;
-        padding-left: 0;
-        padding-right: 0;
-        margin-top: 0.15rem;
+    .form-control {
+        @extend .border-0;
 
         &:focus {
-            background: none;
+            box-shadow: none;
         }
     }
 
-    .no-clear-btn {
-        padding-right: ($search-field-clear-btn-width + 1px + $border-width * 2);
+    label.has-label-text {
+        padding-left: 0.75rem;
     }
 
-    .search-btn {
-       border-style: none;
-       background: none;
-       padding-right: 1.0rem;
-    }
-
-    .clear-btn {
-        width: $search-field-clear-btn-width;
-        justify-content: center;
-        color: theme-color("gray", "text");
-        border: 0;
-        background: none;
+    .btn[type="submit"],
+    .btn[type="reset"] {
+        @extend .px-2;
     }
 }
