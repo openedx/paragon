@@ -15,7 +15,11 @@ Paragon is built on top of the Bootstrap CSS Framework. The Paragon React compon
 
 ADR 5 Made the case for adoption of Reactstrap. ADR 8 abandoned the idea because adopting Reactstrap "comes at the cost of abstracting away raw html and introducing yet another API to learn and remember." Since then, we have added very few homegrown components. Designers and engineers are often needing components that exist in Bootstrap but not built as Paragon components.
 
-By not building these components ourselves and not adopting third-party React components, we are wasting time and generating confusion in the edX organization.
+By not building these components ourselves and not adopting third-party React components, we are wasting time and generating confusion in the edX organization. Examples:
+
+- The Modal component in Paragon is not flexible enough to meet the needs of our squads today. It has been a known issue for over a year, but we have been unable to prioritize it. The recent Prospectus Search page contains a custom-built Modal component used at a mobile screen size for changing filters. The Learner Portal is adding a similar component. In both cases, work done to satisfy a11y requirements needs in the original component needs to be rebuilt and reconfirmed.
+- There are several components that exist in Bootstrap that are frequently asked about (Badges, Tooltips, etc) that require repeated discussion, discovery, or custom work to support. If Paragon supported them these issues would be resolved.
+
 
 React-bootstrap is a mature component library with full coverage of Bootstrap components. Component design in react-bootstrap is similar to Paragon's more recent approach to component design reflected in Dropdown and Collapsible. We judge react-bootstrap to be a high-quality library with healthy activity.
 
