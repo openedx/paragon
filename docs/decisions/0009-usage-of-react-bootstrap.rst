@@ -23,8 +23,7 @@ React-bootstrap is a mature component library with full coverage of Bootstrap co
 Decision
 --------
 
-We will include react-bootstrap components in Paragon. Paragon will continue to contain custom-written components, but for any component that exists in react-bootstrap we will use the react-bootstrap version instead of building our own. This will provide us comprehensive coverage of Bootstrap features in react and allow us to focus on adding value by creating components outside the scope of Bootstrap.
-
+We will include react-bootstrap components in Paragon. Paragon will continue to contain custom-written components, but for any component that exists in react-bootstrap we will use the react-bootstrap version instead of building our own. This will provide us comprehensive coverage of Bootstrap features in React and allow us to focus on adding value by creating components outside the scope of Bootstrap.
 
 This will be accomplished by:
 
