@@ -55,6 +55,7 @@ This decision will replace all components in the Paragon react library except:
 - Hyperlink
 - Icon
 - MailtoLink
+- Pagination
 - Responsive
 - SearchField
 - StatefulButton
