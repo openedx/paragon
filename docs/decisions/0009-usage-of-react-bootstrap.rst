@@ -5,7 +5,7 @@
 Status
 ------
 
-Adopted
+Accepted
 
 
 Context
