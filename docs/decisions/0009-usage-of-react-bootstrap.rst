@@ -36,7 +36,7 @@ This will be accomplished by:
 
   - Include an interactive demo of the component in use, similar to today's components.
   - The API will not be documented on the Paragon doc-site for now. (see next bullet)
-  -  Include links to the component doc on react-bootstrap documentation site. We do this, aware that some day in the future react-bootstrap will upgrade to Bootstrap 5 and change the doc site. They did this for the switch from Bootstrap 3 to Bootstrap 4. The Bootstrap 3 doc site moved urls, but is still on the web. When that happens we will update our documentation to the new location.
+  - Include links to the component doc on react-bootstrap documentation site. We do this, aware that some day in the future react-bootstrap will upgrade to Bootstrap 5 and change the doc site. They did this for the switch from Bootstrap 3 to Bootstrap 4. The Bootstrap 3 doc site moved urls, but is still on the web. When that happens we will update our documentation to the new location.
 
 Other notes:
 
