@@ -23,7 +23,7 @@ React-bootstrap is a mature component library with full coverage of Bootstrap co
 Decision
 --------
 
-We will include react-bootstrap components in Paragon. Paragon will continue to contain custom-written components, but for any component that exists in react-boostrap we will use the react-bootstrap version instead of building our own. This will provide us comprehensive coverage of Bootstrap features in react and allow us to focus on adding value by creating components outside the scope of Bootstrap.
+We will include react-bootstrap components in Paragon. Paragon will continue to contain custom-written components, but for any component that exists in react-bootstrap we will use the react-bootstrap version instead of building our own. This will provide us comprehensive coverage of Bootstrap features in react and allow us to focus on adding value by creating components outside the scope of Bootstrap.
 
 
 This will be accomplished by:
@@ -40,7 +40,7 @@ This will be accomplished by:
 
 Other notes:
 
-- As we build new components outside the scope of Bootstrap, we will likely want to use other components to compose larger ones. For example, we may use Buttons and Cards in a CourseCard component. When we do this we must import the components from Paragon's shell components and not react-bootstrap directly. Importing from local Paragon component shells and not react-boostrap will keep dependencies on react-bootstrap components in a single place, making future architectural changes easier.
+- As we build new components outside the scope of Bootstrap, we will likely want to use other components to compose larger ones. For example, we may use Buttons and Cards in a CourseCard component. When we do this we must import the components from Paragon's shell components and not react-bootstrap directly. Importing from local Paragon component shells and not react-bootstrap will keep dependencies on react-bootstrap components in a single place, making future architectural changes easier.
 
 - We will ensure that the method in which we include react-bootstrap components is not a single, grouped import. It should be capable of being tree-shaken.
 
