@@ -1,5 +1,5 @@
-5. Usage of Reactstrap
-----------------------
+5. Usage of React-Bootstrap
+---------------------------
 
 
 Status
