@@ -52,15 +52,15 @@ We have many components that will be replaced by react-bootstrap components. For
 
 This decision will replace all components in the Paragon react library except:
 
-  - Collapsible
-  - Hyperlink
-  - Icon
-  - MailtoLink
-  - Responsive
-  - SearchField
-  - StatefulButton
-  - ValidationFormGroup
-  - TransitionReplace
+- Collapsible
+- Hyperlink
+- Icon
+- MailtoLink
+- Responsive
+- SearchField
+- StatefulButton
+- ValidationFormGroup
+- TransitionReplace
 
 References
 ----------
