@@ -47,6 +47,7 @@ Other notes:
 
 - We will ensure that the method in which we include react-bootstrap components is not a single, grouped import. It should be capable of being tree-shaken.
 
+- This decision has no impact on how Paragon styles are managed or included. React-bootstrap, like Paragon, simply relies upon Bootstrap CSS to be present on the page. From the react-bootstrap docs: "Because React-Bootstrap doesn't depend on a very precise version of Bootstrap, we don't ship with any included CSS."
 
 Consequences
 ------------
