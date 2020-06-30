@@ -33,6 +33,10 @@ const SearchFieldAdvanced = (props) => {
   const submitButtonRef = useRef();
 
   useEffect(() => {
+    setValue(initialValue);
+  }, [initialValue]);
+
+  useEffect(() => {
     if (isInitialMount.current) {
       isInitialMount.current = false;
     } else {
