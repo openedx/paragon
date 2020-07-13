@@ -70,6 +70,7 @@ This decision will replace all components in the Paragon react library except:
 - TransitionReplace
 
 Following this decision there will be a pull request containing 18 components that pass our initial a11y audit:
+
 - Alerts
 - Badge
 - Buttons
