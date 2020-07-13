@@ -35,7 +35,9 @@ This will be accomplished by:
 
 2. Components will be passed-through from react-bootstrap by adding shell components in Paragon. (e.g. Modal.js in Paragon will simply include Modal from react-bootstrap and re-export it). This will provide us flexibility to swap the implementation in the future or enforce a11y rules if needed.
 
-3. Documentation for components included from react-bootstrap will:
+3. For react-bootstrap components that need changes to satisfy accessibility requirements, we will make upstream changes in the react-bootstrap project and if the component is needed urgently we may enforce a11y rules in the shim component in Paragon.
+
+4. Documentation for components included from react-bootstrap will:
 
   - Include an interactive demo of the component in use, similar to today's components.
   - The API will not be documented on the Paragon doc-site for now. (see next bullet)
@@ -66,6 +68,26 @@ This decision will replace all components in the Paragon react library except:
 - StatefulButton
 - ValidationFormGroup
 - TransitionReplace
+
+Following this decision there will be a pull request containing 18 components that pass our initial a11y audit:
+- Alerts
+- Badge
+- Buttons
+- Button Group
+- Cards
+- Carousel
+- Dropdowns
+- Input Group
+- Images
+- Figures
+- Jumbotron
+- Navbars
+- Overlays
+- Popover
+- Progress
+- Tabs
+- ToolTips
+- Toasts
 
 References
 ----------
