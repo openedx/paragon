@@ -4,7 +4,7 @@
 Status
 ------
 
-Draft
+Superseded by ADR-0009
 
 Context
 -------
