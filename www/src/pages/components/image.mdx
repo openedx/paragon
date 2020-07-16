@@ -1,0 +1,45 @@
+---
+title: 'Image'
+type: 'component'
+status: 'Stable'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: |
+  A pass through from react-bootstrap
+---
+
+import get from 'lodash/get';
+import SingleComponentStatus from '../../components/SingleComponentStatus';
+
+# Image
+
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
+
+<p style={{ fontSize: '1.5em' }}>
+  This is a pass through component from React-Bootstrap.<br/>
+  <a href="https://react-bootstrap.github.io/components/images/" target="_blank">
+    See React-Bootstrap for documentation.
+  </a>
+</p>
+
+##### Basic Usage
+
+```jsx live=true
+<Container>
+  <Row>
+    <Col xs={6} md={4}>
+      <Image src={generateCustomPlaceholderURL(180, 180)} rounded />
+    </Col>
+    <Col xs={6} md={4}>
+      <Image src={generateCustomPlaceholderURL(180, 180)} roundedCircle />
+    </Col>
+    <Col xs={6} md={4}>
+      <Image src={generateCustomPlaceholderURL(180, 180)} thumbnail />
+    </Col>
+  </Row>
+</Container>
+```
