@@ -58,7 +58,7 @@ const menu = [
       { title: 'RadioButtonGroup', url: '/components/radiobuttongroup' },
       { title: 'Responsive', url: '/components/responsive' },
       { title: 'SearchField', url: '/components/searchfield' },
-      { title: 'Spinner', url: '/components/spinnner' },
+      { title: 'Spinner', url: '/components/spinner' },
       { title: 'StatefulButton', url: '/components/statefulbutton' },
       { title: 'StatusAlert', url: '/components/statusalert' },
       { title: 'Table', url: '/components/table' },
