@@ -88,15 +88,6 @@ export { default as Container } from 'react-bootstrap/Container';
 export { default as Image } from 'react-bootstrap/Image';
 export { default as Figure } from 'react-bootstrap/Figure';
 export { default as InputGroup } from 'react-bootstrap/InputGroup';
-export { default as Jumbotron } from 'react-bootstrap/Jumbotron';
-/*
-  TODO: ListGroup
-  ally defect: It looks like they're intending to use this for navigation
-  (like a tabset) but there are not semantics and nothing is actionable.
-
-export { default as ListGroup } from 'react-bootstrap/ListGroup';
-export { default as ListGroupItem } from 'react-bootstrap/ListGroupItem';
-*/
 export { default as Media } from 'react-bootstrap/Media';
 /*
   TODO: Modal
@@ -135,8 +126,10 @@ export { default as SplitButton } from 'react-bootstrap/SplitButton';
 export { default as Tab } from 'react-bootstrap/Tab';
 export { default as TabContainer } from 'react-bootstrap/TabContainer';
 export { default as TabContent } from 'react-bootstrap/TabContent';
-// TODO
-// export { default as Table } from 'react-bootstrap/Table';
+/*
+  TODO: Decide if this table should be used instead of the current Paragon component
+  export { default as Table } from 'react-bootstrap/Table';
+*/
 export { default as TabPane } from 'react-bootstrap/TabPane';
 // TODO: create shim – export { default as Tabs } from 'react-bootstrap/Tabs';
 export { default as Toast } from 'react-bootstrap/Toast';

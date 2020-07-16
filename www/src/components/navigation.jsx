@@ -45,7 +45,6 @@ const menu = [
       { title: 'InputSelect', url: '/components/inputselect' },
       { title: 'InputText', url: '/components/inputtext' },
       { title: 'Image', url: '/components/image' },
-      { title: 'Jumbotron', url: '/components/jumbotron' },
       { title: 'ListBox', url: '/components/listbox' },
       { title: 'Modal', url: '/components/modal' },
       { title: 'MailtoLink', url: '/components/mailtolink' },
