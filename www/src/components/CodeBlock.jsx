@@ -4,6 +4,7 @@ import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/duotoneDark';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import * as ParagonReact from '~paragon-react';
+import { generateCustomPlaceholderURL } from 'react-placeholder-image';
 
 function CodeBlock({ children, className, live }) {
   const language = className ? className.replace(/language-/, '') : 'jsx';
@@ -13,7 +14,7 @@ function CodeBlock({ children, className, live }) {
       <div className="pgn-doc__code-block">
         <LiveProvider
           code={children}
-          scope={{ ...ParagonReact, useState }}
+          scope={{ ...ParagonReact, useState, generateCustomPlaceholderURL }}
           theme={theme}
         >
           <LivePreview className="pgn-doc__code-block-preview" />
