@@ -24,6 +24,7 @@ const menu = [
   {
     section: 'COMPONENTS',
     items: [
+      { title: 'Accordion (coming soon)', url: '/components/accordion' },
       { title: 'Alert', url: '/components/alert' },
       { title: 'Badge', url: '/components/badge' },
       { title: 'Breadcrumbs', url: '/components/breadcrumbs' },
