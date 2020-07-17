@@ -4,7 +4,7 @@ export { default as Button } from './Button'; // TODO: shim from react-bootstrap
 export { default as CheckBox } from './CheckBox';
 export { default as CheckBoxGroup } from './CheckBoxGroup';
 export { default as Collapsible } from './Collapsible';
-export { default as Dropdown } from './Dropdown'; // TODO: shim from by react-bootstrap
+export { default as Dropdown } from './Dropdown'; // TODO: shim from react-bootstrap
 export { default as Fieldset } from './Fieldset';
 export { default as Hyperlink } from './Hyperlink';
 export { default as Icon } from './Icon';
