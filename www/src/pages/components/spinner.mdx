@@ -1,0 +1,33 @@
+---
+title: 'Spinner'
+type: 'component'
+status: 'Stable'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: |
+
+---
+
+import get from 'lodash/get';
+import SingleComponentStatus from '../../components/SingleComponentStatus';
+
+# Spinner
+
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
+
+<p style={{ fontSize: '1.5em' }}>
+  This is a pass through component from React-Bootstrap.<br/>
+  <a href="https://react-bootstrap.github.io/components/spinners" target="_blank">
+    See React-Bootstrap for documentation.
+  </a>
+</p>
+
+##### Basic Usage
+
+```jsx live=true
+<Spinner animation="border" variant="primary" />
+```
