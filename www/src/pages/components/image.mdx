@@ -26,20 +26,32 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
   </a>
 </p>
 
-##### Basic Usage
+##### Basic Styles
 
 ```jsx live=true
-<Container>
-  <Row>
-    <Col xs={6} md={4}>
-      <Image src={generateCustomPlaceholderURL(180, 180)} rounded />
-    </Col>
-    <Col xs={6} md={4}>
-      <Image src={generateCustomPlaceholderURL(180, 180)} roundedCircle />
-    </Col>
-    <Col xs={6} md={4}>
-      <Image src={generateCustomPlaceholderURL(180, 180)} thumbnail />
-    </Col>
-  </Row>
-</Container>
+<>
+  <Image
+    className="mr-2"
+    src="https://source.unsplash.com/100x100/?nature,flower"
+    rounded
+  />
+  <Image
+    className="mr-2"
+    src="https://source.unsplash.com/100x100/?nature,flower"
+    roundedCircle
+  />
+  <Image
+    className="mr-2"
+    src="https://source.unsplash.com/100x100/?nature,flower"
+    thumbnail
+  />
+</>
 ```
+
+##### Fluid Sizing
+
+```jsx live=true
+<Image src="https://source.unsplash.com/1600x800/?nature,flower" fluid />
+```
+
+
