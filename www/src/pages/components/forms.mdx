@@ -1,0 +1,101 @@
+---
+title: 'Forms'
+type: 'component'
+status: 'Stable'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: |
+
+---
+
+import get from 'lodash/get';
+import SingleComponentStatus from '../../components/SingleComponentStatus';
+
+# Forms
+
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
+
+<p style={{ fontSize: '1.5em' }}>
+  This is a pass through component from React-Bootstrap.<br/>
+  <a href="https://react-bootstrap.github.io/components/forms/" target="_blank">
+    See React-Bootstrap for documentation.
+  </a>
+</p>
+
+##### Basic Usage
+
+```jsx live=true
+<Form>
+  <Form.Row>
+    <Form.Group as={Col} controlId="formGridEmail">
+      <Form.Label>Email</Form.Label>
+      <Form.Control type="email" placeholder="Enter email" aria-describedby="emailHelpBlock" />
+      <Form.Text id="emailHelpBlock" muted>
+        This is the email that we'll send emails to.
+      </Form.Text>
+    </Form.Group>
+
+    <Form.Group as={Col} controlId="formGridPassword">
+      <Form.Label>Password</Form.Label>
+      <Form.Control className="is-invalid" type="password" placeholder="Password" aria-describedby="passwordFeedback" />
+      <Form.Control.Feedback id="passwordFeedback" type="invalid">
+        We don't like that password. Try a different one.
+      </Form.Control.Feedback>
+    </Form.Group>
+  </Form.Row>
+
+  <Form.Group controlId="formGridAddress1">
+    <Form.Label>Address</Form.Label>
+    <Form.Control className="is-valid" placeholder="1234 Main St" aria-describedby="addressFeedback" />
+    <Form.Control.Feedback id="addressFeedback" type="valid">
+      This is a nice place!
+    </Form.Control.Feedback>
+  </Form.Group>
+
+  <Form.Row>
+    <Form.Group as={Col} controlId="formGridCity">
+      <Form.Label>City</Form.Label>
+      <Form.Control />
+    </Form.Group>
+
+    <Form.Group as={Col} controlId="formGridState">
+      <Form.Label>State</Form.Label>
+      <Form.Control as="select" defaultValue="Choose...">
+        <option>Choose...</option>
+        <option>...</option>
+      </Form.Control>
+    </Form.Group>
+
+    <Form.Group as={Col} controlId="formGridZip">
+      <Form.Label>Zip</Form.Label>
+      <Form.Control />
+    </Form.Group>
+  </Form.Row>
+
+  <Form.Group controlId="formSwitch">
+    <Form.Check
+      type="switch"
+      id="custom-switch"
+      label="Check this switch"
+    />
+    <Form.Check
+      disabled
+      type="switch"
+      label="disabled switch"
+      id="disabled-custom-switch"
+    />
+  </Form.Group>
+
+  <Form.Group id="formGridCheckbox">
+    <Form.Check type="checkbox" id="formGridCheckboxCheck" label="Check me out" />
+  </Form.Group>
+
+  <Button className="btn-primary" type="submit">
+    Submit
+  </Button>
+</Form>
+```
