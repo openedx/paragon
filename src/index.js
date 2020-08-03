@@ -1,10 +1,31 @@
+/* eslint-disable import/first */
+
+// Conflicting Components
+import Button from 'react-bootstrap/Button';
+import ButtonDeprecated from './Button';
+
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownDeprecated from './Dropdown';
+
+import Tabs from 'react-bootstrap/Tabs';
+import TabsDeprecated from './Tabs';
+
+// Add deprecated components as subcomponents of their replacements
+Button.Deprecated = ButtonDeprecated;
+Dropdown.Deprecated = DropdownDeprecated;
+Tabs.Deprecated = TabsDeprecated;
+
+export {
+  Button,
+  Dropdown,
+  Tabs,
+};
+
 export { default as asInput } from './asInput';
 export { default as Breadcrumb } from './Breadcrumb';
-export { default as Button } from './Button'; // TODO: shim from react-bootstrap
 export { default as CheckBox } from './CheckBox';
 export { default as CheckBoxGroup } from './CheckBoxGroup';
 export { default as Collapsible } from './Collapsible';
-export { default as Dropdown } from './Dropdown'; // TODO: shim from react-bootstrap
 export { default as Fieldset } from './Fieldset';
 export { default as Hyperlink } from './Hyperlink';
 export { default as Icon } from './Icon';
@@ -30,7 +51,6 @@ export { default as SearchField } from './SearchField';
 export { default as StatefulButton } from './StatefulButton';
 export { default as StatusAlert } from './StatusAlert';
 export { default as Table } from './Table';
-export { default as Tabs } from './Tabs'; // TODO: shim from react-bootstrap
 export { default as TextArea } from './TextArea';
 export { default as ValidationFormGroup } from './ValidationFormGroup';
 export { default as TransitionReplace } from './TransitionReplace';
@@ -61,7 +81,6 @@ export { default as Badge } from 'react-bootstrap/Badge';
 export { default as Breadcrumb } from 'react-bootstrap/Breadcrumb';
 export { default as BreadcrumbItem } from 'react-bootstrap/BreadcrumbItem';
 */
-// TODO: create shim – export { default as Button } from 'react-bootstrap/Button';
 export { default as ButtonGroup } from 'react-bootstrap/ButtonGroup';
 export { default as ButtonToolbar } from 'react-bootstrap/ButtonToolbar';
 export { default as Card } from 'react-bootstrap/Card';
@@ -74,7 +93,6 @@ export { default as CarouselItem } from 'react-bootstrap/CarouselItem';
 export { default as CloseButton } from 'react-bootstrap/CloseButton';
 export { default as Col } from 'react-bootstrap/Col';
 export { default as Collapse } from 'react-bootstrap/Collapse';
-// TODO: create shim – export { default as Dropdown } from 'react-bootstrap/Dropdown';
 export { default as DropdownButton } from 'react-bootstrap/DropdownButton';
 export { default as Fade } from 'react-bootstrap/Fade';
 export { default as Form } from 'react-bootstrap/Form';
@@ -131,7 +149,6 @@ export { default as TabContent } from 'react-bootstrap/TabContent';
   export { default as Table } from 'react-bootstrap/Table';
 */
 export { default as TabPane } from 'react-bootstrap/TabPane';
-// TODO: create shim – export { default as Tabs } from 'react-bootstrap/Tabs';
 export { default as Toast } from 'react-bootstrap/Toast';
 export { default as ToastBody } from 'react-bootstrap/ToastBody';
 export { default as ToastHeader } from 'react-bootstrap/ToastHeader';
