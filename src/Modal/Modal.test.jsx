@@ -2,7 +2,7 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 
 import Modal from './index';
-import Button from '../Button';
+import { Button } from '../';
 import Variant from '../utils/constants';
 
 const modalOpen = (isOpen, wrapper) => {
@@ -27,12 +27,12 @@ let wrapper;
 describe('<Modal />', () => {
   describe('correct rendering', () => {
     const buttons = [
-      <Button buttonType="primary">Blue button!</Button>,
+      <Button.Deprecated buttonType="primary">Blue button!</Button.Deprecated>,
       {
         label: 'Red button!',
         buttonType: 'danger',
       },
-      <Button buttonType="success">Green button!</Button>,
+      <Button.Deprecated buttonType="success">Green button!</Button.Deprecated>,
     ];
 
     it('renders default buttons', () => {

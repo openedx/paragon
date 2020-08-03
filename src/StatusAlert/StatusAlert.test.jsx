@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import StatusAlert from './index';
-import Button from '../Button';
+import { Button } from '../index';
 
 const statusAlertOpen = (isOpen, wrapper) => {
   expect(wrapper.find('.alert').hasClass('show')).toEqual(isOpen);
@@ -125,7 +125,7 @@ describe('<StatusAlert />', () => {
   });
   describe('focus functions properly', () => {
     it('focus function changes focus', () => {
-      wrapper = mount(<div><Button label="test" /><StatusAlert {...defaultProps} /></div>);
+      wrapper = mount(<div><Button.Deprecated label="test" /><StatusAlert {...defaultProps} /></div>);
 
       const buttons = wrapper.find('button');
 
