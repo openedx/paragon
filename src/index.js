@@ -1,31 +1,10 @@
-/* eslint-disable import/first */
-
-// Conflicting Components
-import Button from 'react-bootstrap/Button';
-import ButtonDeprecated from './Button';
-
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownDeprecated from './Dropdown';
-
-import Tabs from 'react-bootstrap/Tabs';
-import TabsDeprecated from './Tabs';
-
-// Add deprecated components as subcomponents of their replacements
-Button.Deprecated = ButtonDeprecated;
-Dropdown.Deprecated = DropdownDeprecated;
-Tabs.Deprecated = TabsDeprecated;
-
-export {
-  Button,
-  Dropdown,
-  Tabs,
-};
-
 export { default as asInput } from './asInput';
 export { default as Breadcrumb } from './Breadcrumb';
+export { default as Button } from './Button';
 export { default as CheckBox } from './CheckBox';
 export { default as CheckBoxGroup } from './CheckBoxGroup';
 export { default as Collapsible } from './Collapsible';
+export { default as Dropdown } from './Dropdown';
 export { default as Fieldset } from './Fieldset';
 export { default as Hyperlink } from './Hyperlink';
 export { default as Icon } from './Icon';
@@ -51,6 +30,7 @@ export { default as SearchField } from './SearchField';
 export { default as StatefulButton } from './StatefulButton';
 export { default as StatusAlert } from './StatusAlert';
 export { default as Table } from './Table';
+export { default as Tabs } from './Tabs';
 export { default as TextArea } from './TextArea';
 export { default as ValidationFormGroup } from './ValidationFormGroup';
 export { default as TransitionReplace } from './TransitionReplace';
