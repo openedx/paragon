@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import isRequiredIf from 'react-proptype-conditional-require';
 import PropTypes from 'prop-types';
 
-import Button from '../Button';
+import { Button } from '../';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
 

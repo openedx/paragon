@@ -38,10 +38,6 @@
   }
 }
 
-.btn + .btn {
-  margin-left: .5em;
-}
-
 .base-type {
   & + .base-type {
     margin-left: .25em;

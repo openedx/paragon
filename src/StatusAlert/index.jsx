@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import isRequiredIf from 'react-proptype-conditional-require';
 
-import Button from '../Button';
+import { Button } from '../';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
 
@@ -69,7 +69,7 @@ class StatusAlert extends React.Component {
     const { closeButtonAriaLabel, dismissible } = this.props;
 
     return (dismissible) ? (
-      <Button
+      <Button.Deprecated
         aria-label={closeButtonAriaLabel}
         inputRef={(input) => { this.xButton = input; }}
         onClick={this.close}
@@ -77,7 +77,7 @@ class StatusAlert extends React.Component {
         isClose
       >
         <span aria-hidden="true">&times;</span>
-      </Button>
+      </Button.Deprecated>
     ) : null;
   }
 
