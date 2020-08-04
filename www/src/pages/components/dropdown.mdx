@@ -1,11 +1,11 @@
 ---
 title: 'Dropdown'
 type: 'component'
-status: 'Needs Work'
+status: 'Stable'
 designStatus: 'Done'
 devStatus: 'TO DO'
 notes: |
-  TODO: shim from react-bootstrap
+  TODO: Remove subcomponent of deprecated implementation soon
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
@@ -22,70 +22,75 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
   }
 />
 
-##### basic usage
+<p style={{ fontSize: '1.5em' }}>
+  This is a pass through component from React-Bootstrap.<br/>
+  <a href="https://react-bootstrap.github.io/components/dropdowns/" target="_blank" rel="noopener noreferrer">
+    See React-Bootstrap for documentation.
+  </a>
+</p>
 
-```jsx live=true
+##### basic usage
+```jsx live
+<DropdownButton id="dropdown-basic-button" title="Dropdown button">
+  <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+  <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+  <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+</DropdownButton>
+```
+
+##### advanced usage
+
+```jsx live
 <Dropdown>
-  <Dropdown.Button>
-    Search Engines
-  </Dropdown.Button>
+  <Dropdown.Toggle variant="success" id="dropdown-basic">
+    Dropdown Button
+  </Dropdown.Toggle>
+
   <Dropdown.Menu>
-    <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
-    <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
-    <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
+    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
   </Dropdown.Menu>
 </Dropdown>
+```
+
+***
+
+##### Dropdown.Deprecated
+
+```jsx live=true
+<Dropdown.Deprecated>
+  <Dropdown.Deprecated.Button>
+    Search Engines
+  </Dropdown.Deprecated.Button>
+  <Dropdown.Deprecated.Menu>
+    <Dropdown.Deprecated.Item href="https://google.com">Google</Dropdown.Deprecated.Item>
+    <Dropdown.Deprecated.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Deprecated.Item>
+    <Dropdown.Deprecated.Item href="https://yahoo.com">Yahoo</Dropdown.Deprecated.Item>
+  </Dropdown.Deprecated.Menu>
+</Dropdown.Deprecated>
 ```
 
 ##### with icon element
 
 ```jsx live=true
-<Dropdown>
-  <Dropdown.Button>
+<Dropdown.Deprecated>
+  <Dropdown.Deprecated.Button>
     <Icon className="fa fa-user pr-3" alt="" />
     Search Engines
-  </Dropdown.Button>
-  <Dropdown.Menu>
-    <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
-    <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
-    <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
-```
-
-##### with caret/chevron
-
-```jsx live=true
-<React.Fragment>
-  <Dropdown className="mb-3">
-    <Dropdown.Button>
-      Search Engines
-      <Icon className="fa fa-caret-down pl-3" alt="" />
-    </Dropdown.Button>
-    <Dropdown.Menu>
-      <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
-      <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
-      <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
-    </Dropdown.Menu>
-  </Dropdown>
-  <Dropdown>
-    <Dropdown.Button>
-      Search Engines
-      <Icon className="fa fa-angle-down pl-3" alt="" />
-    </Dropdown.Button>
-    <Dropdown.Menu>
-      <Dropdown.Item href="https://google.com">Google</Dropdown.Item>
-      <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
-      <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
-    </Dropdown.Menu>
-  </Dropdown>
-</React.Fragment>
+  </Dropdown.Deprecated.Button>
+  <Dropdown.Deprecated.Menu>
+    <Dropdown.Deprecated.Item href="https://google.com">Google</Dropdown.Deprecated.Item>
+    <Dropdown.Deprecated.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Deprecated.Item>
+    <Dropdown.Deprecated.Item href="https://yahoo.com">Yahoo</Dropdown.Deprecated.Item>
+  </Dropdown.Deprecated.Menu>
+</Dropdown.Deprecated>
 ```
 
 ##### (Deprecated) basic usage
 
 ```jsx live=true
-<Dropdown
+<Dropdown.Deprecated
   title="Search Engines"
   menuItems={[
     {
@@ -107,7 +112,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 ##### (Deprecated) menu items as elements
 
 ```jsx live=true
-<Dropdown
+<Dropdown.Deprecated
   title="Search Engines"
   menuItems={[
     <a href="http://www.google.com">Google</a>,
@@ -120,7 +125,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 ##### (Deprecated) with icon element
 
 ```jsx live=true
-<Dropdown
+<Dropdown.Deprecated
   title="Search Engines"
   iconElement={<Icon className="fa fa-user pr-3" />}
   menuItems={[

@@ -12,7 +12,8 @@ describe('StatefulButton', () => {
         pending: 'Saving',
         complete: 'Saved',
       },
-      className: 'btn-primary mr-2',
+      className: 'mr-2',
+      variant: 'primary',
     };
     const tree = renderer.create((
       <div>
@@ -37,7 +38,8 @@ describe('StatefulButton', () => {
         complete: <Icon className="fa fa-check" />,
       },
       disabledStates: ['pending'],
-      className: 'btn-primary mr-2',
+      className: 'mr-2',
+      variant: 'primary',
     };
     const tree = renderer.create((
       <React.Fragment>
@@ -60,7 +62,8 @@ describe('StatefulButton', () => {
         edited: <Icon className="fa fa-save" />,
       },
       disabledStates: ['unedited'],
-      className: 'btn-primary mr-2',
+      className: 'mr-2',
+      variant: 'primary',
     };
     const tree = renderer.create((
       <React.Fragment>
