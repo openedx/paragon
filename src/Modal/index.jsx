@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import Button from '../Button';
+import { Button } from '../';
 import Icon from '../Icon';
 import newId from '../utils/newId';
 import Variant from '../utils/constants';
@@ -147,13 +147,13 @@ class Modal extends React.Component {
       const { label, ...buttonProps } = button;
 
       return (
-        <Button
+        <Button.Deprecated
           {...buttonProps}
           key={label}
           onKeyDown={this.handleKeyDown}
         >
           {label}
-        </Button>
+        </Button.Deprecated>
       );
     });
   }
@@ -214,7 +214,7 @@ class Modal extends React.Component {
               <div className="modal-header">
                 <h2 className="modal-title" id={this.headerId}>{this.props.title}</h2>
                 {renderHeaderCloseButton && (
-                  <Button
+                  <Button.Deprecated
                     className="p-1 js-close-modal-on-click"
                     aria-labelledby={this.closeModalButtonId}
                     onClick={this.close}
@@ -222,7 +222,7 @@ class Modal extends React.Component {
                     onKeyDown={this.handleKeyDown}
                   >
                     <Icon className="fa fa-times js-close-modal-on-click" />
-                  </Button>
+                  </Button.Deprecated>
                 )}
               </div>
               <div className="modal-body">
@@ -230,7 +230,7 @@ class Modal extends React.Component {
               </div>
               <div className="modal-footer">
                 {this.renderButtons()}
-                <Button
+                <Button.Deprecated
                   id={this.closeModalButtonId}
                   buttonType="secondary"
                   className="js-close-modal-on-click"
@@ -239,7 +239,7 @@ class Modal extends React.Component {
                   onKeyDown={this.handleKeyDown}
                 >
                   {this.props.closeText}
-                </Button>
+                </Button.Deprecated>
               </div>
             </div>
           </div>

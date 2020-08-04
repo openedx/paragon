@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
 import Dropdown from './index';
-import Icon from '../Icon';
+import Icon from '../../Icon';
 
 const menuContent = (
   <React.Fragment>

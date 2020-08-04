@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Button from '../Button';
+import { Button } from '../';
 import { ExtraSmall, LargerThanExtraSmall } from '../Responsive';
 import getTextFromElement from '../utils/getTextFromElement';
 import Icon from '../Icon';
@@ -125,14 +125,14 @@ class Pagination extends React.Component {
         ])}
         key={page}
       >
-        <Button
+        <Button.Deprecated
           className="page-link"
           aria-label={ariaLabel}
           inputRef={(element) => { this.pageRefs[page] = element; }}
           onClick={() => { this.handlePageSelect(page); }}
         >
           {page.toString()}
-        </Button>
+        </Button.Deprecated>
       </li>
     );
   }
@@ -208,7 +208,7 @@ class Pagination extends React.Component {
           },
         )}
       >
-        <Button
+        <Button.Deprecated
           className="previous page-link"
           aria-label={ariaLabel}
           tabIndex={isFirstPage ? '-1' : undefined}
@@ -220,7 +220,7 @@ class Pagination extends React.Component {
             {icons.leftIcon}
             {buttonLabels.previous}
           </div>
-        </Button>
+        </Button.Deprecated>
       </li>
     );
   }
@@ -253,7 +253,7 @@ class Pagination extends React.Component {
           },
         )}
       >
-        <Button
+        <Button.Deprecated
           className="next page-link"
           aria-label={ariaLabel}
           tabIndex={isLastPage ? '-1' : undefined}
@@ -265,7 +265,7 @@ class Pagination extends React.Component {
             {buttonLabels.next}
             {icons.rightIcon}
           </div>
-        </Button>
+        </Button.Deprecated>
       </li>
     );
   }

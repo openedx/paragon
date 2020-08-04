@@ -5,10 +5,9 @@ exports[`StatefulButton renders basic usage 1`] = `
   <button
     aria-disabled={false}
     aria-live="assertive"
-    className="btn pgn__stateful-btn pgn__stateful-btn-state-default btn-primary mr-2"
-    onBlur={[Function]}
+    className="pgn__stateful-btn pgn__stateful-btn-state-default mr-2 btn btn-primary"
+    disabled={false}
     onClick={[Function]}
-    onKeyDown={[Function]}
     type="button"
   >
     <span
@@ -20,10 +19,9 @@ exports[`StatefulButton renders basic usage 1`] = `
   <button
     aria-disabled={true}
     aria-live="assertive"
-    className="btn pgn__stateful-btn pgn__stateful-btn-state-pending btn-primary mr-2 disabled"
-    onBlur={[Function]}
+    className="pgn__stateful-btn pgn__stateful-btn-state-pending mr-2 disabled btn btn-primary"
+    disabled={false}
     onClick={[Function]}
-    onKeyDown={[Function]}
     type="button"
   >
     <span
@@ -44,10 +42,9 @@ exports[`StatefulButton renders basic usage 1`] = `
   <button
     aria-disabled={true}
     aria-live="assertive"
-    className="btn pgn__stateful-btn pgn__stateful-btn-state-complete btn-primary mr-2 disabled"
-    onBlur={[Function]}
+    className="pgn__stateful-btn pgn__stateful-btn-state-complete mr-2 disabled btn btn-primary"
+    disabled={false}
     onClick={[Function]}
-    onKeyDown={[Function]}
     type="button"
   >
     <span
@@ -73,10 +70,9 @@ Array [
   <button
     aria-disabled={false}
     aria-live="assertive"
-    className="btn pgn__stateful-btn pgn__stateful-btn-state-default btn-primary mr-2"
-    onBlur={[Function]}
+    className="pgn__stateful-btn pgn__stateful-btn-state-default mr-2 btn btn-primary"
+    disabled={false}
     onClick={[Function]}
-    onKeyDown={[Function]}
     type="button"
   >
     <span
@@ -97,10 +93,9 @@ Array [
   <button
     aria-disabled={true}
     aria-live="assertive"
-    className="btn pgn__stateful-btn pgn__stateful-btn-state-pending btn-primary mr-2 disabled"
-    onBlur={[Function]}
+    className="pgn__stateful-btn pgn__stateful-btn-state-pending mr-2 disabled btn btn-primary"
+    disabled={false}
     onClick={[Function]}
-    onKeyDown={[Function]}
     type="button"
   >
     <span
@@ -121,10 +116,9 @@ Array [
   <button
     aria-disabled={false}
     aria-live="assertive"
-    className="btn pgn__stateful-btn pgn__stateful-btn-state-complete btn-primary mr-2"
-    onBlur={[Function]}
+    className="pgn__stateful-btn pgn__stateful-btn-state-complete mr-2 btn btn-primary"
+    disabled={false}
     onClick={[Function]}
-    onKeyDown={[Function]}
     type="button"
   >
     <span
@@ -150,10 +144,9 @@ Array [
   <button
     aria-disabled={true}
     aria-live="assertive"
-    className="btn pgn__stateful-btn pgn__stateful-btn-state-unedited btn-primary mr-2 disabled"
-    onBlur={[Function]}
+    className="pgn__stateful-btn pgn__stateful-btn-state-unedited mr-2 disabled btn btn-primary"
+    disabled={false}
     onClick={[Function]}
-    onKeyDown={[Function]}
     type="button"
   >
     <span
@@ -174,10 +167,9 @@ Array [
   <button
     aria-disabled={false}
     aria-live="assertive"
-    className="btn pgn__stateful-btn pgn__stateful-btn-state-edited btn-primary mr-2"
-    onBlur={[Function]}
+    className="pgn__stateful-btn pgn__stateful-btn-state-edited mr-2 btn btn-primary"
+    disabled={false}
     onClick={[Function]}
-    onKeyDown={[Function]}
     type="button"
   >
     <span
