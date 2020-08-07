@@ -68,7 +68,7 @@ class Table extends React.Component {
     if (this.props.tableSortable && column.columnSortable) {
       heading = (
         <Button
-          className="btn-header"
+          variant="header"
           onClick={() => this.onSortClick(column.key)}
         >
           <span>
