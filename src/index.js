@@ -36,6 +36,7 @@ export { default as ValidationFormGroup } from './ValidationFormGroup';
 export { default as TransitionReplace } from './TransitionReplace';
 export { default as ValidationMessage } from './ValidationMessage';
 export { default as Variant } from './utils/constants';
+export { default as useWindowSize } from './hooks/useWindowSize';
 
 // Pass through components from react-bootstrap
 

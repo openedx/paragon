@@ -70,6 +70,12 @@ const menu = [
       { title: 'ValidationFormGroup', url: '/components/validationformgroup' },
     ],
   },
+  {
+    section: 'HOOKS',
+    items: [
+      { title: 'useWindowSize', url: '/hooks/useWindowSize' },
+    ],
+  },
 ];
 
 
