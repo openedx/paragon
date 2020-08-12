@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import InternalMDXRenderer from 'gatsby-mdx/mdx-renderer';
+import { MDXRenderer as InternalMDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from '@mdx-js/react';
 import CodeBlock from './CodeBlock';
 

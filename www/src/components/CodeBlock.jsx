@@ -46,12 +46,13 @@ function CodeBlock({ children, className, live }) {
 
 CodeBlock.propTypes = {
   children: PropTypes.string.isRequired,
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
   live: PropTypes.bool,
 };
 
 CodeBlock.defaultProps = {
   live: false,
+  className: '',
 };
 
 export default CodeBlock;

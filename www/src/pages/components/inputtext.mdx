@@ -24,19 +24,19 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 ##### minimal usage
 
-```jsx live=true
+```jsx live
 <InputText name="name" label="First Name" value="Foo Bar" />
 ```
 
 ##### read only
 
-```jsx live=true
+```jsx live
 <InputText name="inputState" label="Input State" value="Read Only" readOnly />
 ```
 
 ##### validation
 
-```jsx live=true
+```jsx live
 <InputText
   id="username"
   name="username"
@@ -57,7 +57,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 ##### validation with danger theme
 
-```jsx live=true
+```jsx live
 <InputText
   name="username"
   label="Username"
@@ -79,7 +79,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 ##### label as element
 
-```jsx live=true
+```jsx live
 <InputText
   name="username"
   label={<span lang="en">Element</span>}
@@ -89,7 +89,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 ##### focus test
 
-```jsx live=true
+```jsx live
 class FocusInputWrapper extends React.Component {
   constructor(props) {
     super(props);
@@ -130,7 +130,7 @@ class FocusInputWrapper extends React.Component {
 
 ##### different textual input types
 
-```jsx live=true
+```jsx live
 <form>
   <InputText
     name="search"
@@ -221,7 +221,7 @@ class FocusInputWrapper extends React.Component {
 
 ##### price with step
 
-```jsx live=true
+```jsx live
 <InputText
   name="price"
   label="Price"
@@ -234,13 +234,13 @@ class FocusInputWrapper extends React.Component {
 
 ##### displayed inline
 
-```jsx live=true
+```jsx live
 <InputText name="username" label="Username" value="foobar" inline />
 ```
 
 ##### with input group addons
 
-```jsx live=true
+```jsx live
 <form>
   <InputText
     name="username"
