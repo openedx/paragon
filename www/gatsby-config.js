@@ -10,7 +10,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-sass',
     {
-      resolve: 'gatsby-mdx',
+      resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.mdx'],
         defaultLayouts: {
