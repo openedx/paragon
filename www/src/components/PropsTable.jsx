@@ -8,18 +8,18 @@ const renderType = ({ name, value }) => { // eslint-disable-line
     case 'shape':
       return <ShapeProp shape={value} />;
     case 'union':
-      return <span>{value.map(v => renderType(v))}</span>;
+      return <span key={name}>{value.map(v => renderType(v))}</span>;
     case 'arrayOf':
-      return <span>[ {renderType(value)} ]</span>;
+      return <span key={name}>[ {renderType(value)} ]</span>;
     case 'enum':
       return (
-        <span>
+        <span key={name}>
           <span className="base-type">{name}</span>:
           {typeof value === 'string' ? value : value.map(item => item.value).join(', ')}
         </span>
       );
     default:
-      return <span className="base-type">{name}</span>;
+      return <span key={name} className="base-type">{name}</span>;
   }
 };
 
@@ -28,7 +28,7 @@ const ShapeProp = ({ shape }) => (
   <React.Fragment>
     {'{'}
     {Object.entries(shape).map(([k, v]) => (
-      <span className="d-block ml-3">{k}: {renderType(v)},</span>
+      <span key={k} className="d-block ml-3">{k}: {renderType(v)},</span>
     ))}
     {'}'}
   </React.Fragment>
@@ -81,7 +81,7 @@ const PropsTable = (props) => {
 
 PropsTable.propTypes = {
   /** this is the `metadata.props` field of what metadata you get from the react-docgen-loader.  */
-  propMetaData: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  propMetaData: PropTypes.oneOfType([PropTypes.object, PropTypes.array]) // eslint-disable-line react/forbid-prop-types
 };
 
 PropsTable.defaultProps = {

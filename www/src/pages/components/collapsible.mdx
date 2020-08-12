@@ -27,7 +27,7 @@ The `styling` prop at the top level `<Collapsible />` component determines if th
 
 ##### Basic Style `<Collapsible styling="basic" />`
 
-```jsx live=true
+```jsx live
 <Collapsible
   styling="basic"
   title="Toggle Collapsible"
@@ -40,7 +40,7 @@ The `styling` prop at the top level `<Collapsible />` component determines if th
 
 This is the default style if no `styling` prop is supplied.
 
-```jsx live=true
+```jsx live
 <Collapsible
   styling="card"
   title={<p><strong>Toggle Collapsible</strong></p>}
@@ -52,7 +52,7 @@ This is the default style if no `styling` prop is supplied.
 
 ##### Large Card Style `<Collapsible styling="card-lg" />`
 
-```jsx live=true
+```jsx live
 <Collapsible
   styling="card-lg"
   title={<h5>Toggle Collapsible</h5>}
@@ -64,7 +64,7 @@ This is the default style if no `styling` prop is supplied.
 
 ##### Card with custom icons `<Collapsible styling="card-lg" />`
 
-```jsx live=true
+```jsx live
 <Collapsible
   styling="card"
   title={<p><strong>Toggle Collapsible</strong></p>}
@@ -78,7 +78,7 @@ This is the default style if no `styling` prop is supplied.
 
 ##### Default Open
 
-```jsx live=true
+```jsx live
 <Collapsible title="I'm not a heading" className="shadow" defaultOpen>
   <p>Your stuff goes here.</p>
 </Collapsible>
@@ -92,7 +92,7 @@ For needs that deviate from the three styles above, use `<Collapsible.Advanced /
 
 ##### Bare minimum
 
-```jsx live=true
+```jsx live
 <Collapsible.Advanced>
   <Collapsible.Trigger>
     Toggle Collapsible
@@ -105,7 +105,7 @@ For needs that deviate from the three styles above, use `<Collapsible.Advanced /
 
 ##### Card style with advanced usage
 
-```jsx live=true
+```jsx live
 <Collapsible.Advanced className="collapsible-card">
   <Collapsible.Trigger className="collapsible-trigger d-flex">
     <span className="flex-grow-1">This is the title</span>
@@ -121,7 +121,7 @@ For needs that deviate from the three styles above, use `<Collapsible.Advanced /
 
 ##### With a close button
 
-```jsx live=true
+```jsx live
 <Collapsible.Advanced className="collapsible-card" defaultOpen>
   <Collapsible.Trigger className="collapsible-trigger d-flex">
     <span className="flex-grow-1">This is the title</span>
@@ -144,7 +144,7 @@ For needs that deviate from the three styles above, use `<Collapsible.Advanced /
 
 See the developer console for logging.
 
-```jsx live=true
+```jsx live
 <Collapsible.Advanced
   className="collapsible-card-lg"
   onToggle={(isOpen) => console.log('Collapsible toggled and open is: ', isOpen)}
@@ -175,7 +175,7 @@ See the developer console for logging.
 
 ### Controlled usage
 
-```jsx live=true
+```jsx live
 function() {
   const [collapseIsOpen, setCollapseOpen] = React.useState(true);
 

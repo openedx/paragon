@@ -24,7 +24,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 ##### basic usage
 
-```jsx live=true
+```jsx live
 <StatusAlert
   dialog="You have a status alert!"
   onClose={() => {}}
@@ -34,7 +34,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 ##### success alert
 
-```jsx live=true
+```jsx live
 <StatusAlert
   alertType="success"
   dialog="Success!"
@@ -45,7 +45,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 ##### danger alert
 
-```jsx live=true
+```jsx live
 <StatusAlert
   alertType="danger"
   dialog="Error!"
@@ -56,7 +56,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 ##### informational alert
 
-```jsx live=true
+```jsx live
 <StatusAlert
   alertType="info"
   dialog="Get some info here!"
@@ -67,7 +67,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 ##### alert with a custom aria-label on the close button
 
-```jsx live=true
+```jsx live
 <StatusAlert
   alertType="info"
   dialog="Some very specific information."
@@ -79,7 +79,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 ##### Non-dismissible alert
 
-```jsx live=true
+```jsx live
 <StatusAlert
   alertType="danger"
   dismissible={false}
@@ -90,7 +90,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 ##### alert invoked via a button
 
-```jsx live=true
+```jsx live
 class StatusAlertWrapper extends React.Component {
   constructor(props) {
     super(props);
@@ -138,7 +138,7 @@ class StatusAlertWrapper extends React.Component {
 
 ##### alert with a link
 
-```jsx live=true
+```jsx live
 <StatusAlert
   alertType="info"
   dialog={
