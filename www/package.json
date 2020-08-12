@@ -5,6 +5,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.16",
     "@mdx-js/react": "^1.6.16",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "classnames": "^2.2.6",
     "gatsby": "^2.3.24",
     "gatsby-plugin-layout": "^1.0.15",
@@ -43,7 +44,7 @@
   "devDependencies": {
     "babel-eslint": "^10.0.1",
     "css": "^2.2.4",
-    "eslint": "^5.16.0",
+    "eslint": "^7.6.0",
     "eslint-config-edx": "^4.0.4",
     "eslint-import-resolver-alias": "^1.1.2"
   },

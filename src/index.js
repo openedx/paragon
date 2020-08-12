@@ -8,6 +8,7 @@ export { default as Dropdown } from './Dropdown';
 export { default as Fieldset } from './Fieldset';
 export { default as Hyperlink } from './Hyperlink';
 export { default as Icon } from './Icon';
+export { default as IconButton } from './IconButton';
 export { default as Input } from './Input';
 export { default as InputSelect } from './InputSelect';
 export { default as InputText } from './InputText';
