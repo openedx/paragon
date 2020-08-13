@@ -61,27 +61,60 @@ Usage on edx.org:
 ```
 
 
+## Contributing & Development
 
-## Development
-
-First, clone the repo and install dependencies. You must be running Node 8 or newer.
+To add a new component, create a file `src/MyComponent/index.jsx`. Define your component (using the same `<MyComponent>` as the class name) in this file. Example:
 
 ```
-git clone git@github.com:edx/paragon.git
-cd paragon
-npm install
-npm start
+// src/MyComponent/index.jsx
+import React from 'react';
+import PropTypes from 'prop-types';
+
+const MyComponent = ({ children, className }) => {
+  // ...
+  return (
+    <p className={className}>
+      {children}
+    </p>
+  );
+}
+
+MyComponent.propTypes = {
+  className: PropTypes.string.isRequired,
+}
+
+export default MyComponent;
+
 ```
 
-The doc site will be running at `http://localhost:8000`
+### Set up your workbench
+To see your component in action, you need to run the documentation site locally and add a new page. The documentation site is a [Gatsby](https://www.gatsbyjs.org/) application located in the `www/` folder. 
 
-## Contributing
+##### Run the documentation site:
 
-To add a new component, create a directory within /src named `<ComponentName>` (use UpperCamelCase, per [Airbnb's React best practices](https://github.com/airbnb/javascript/tree/master/react)). Define your component (using the same `<ComponentName>` as the class name) within a file in this directory named `index.jsx`.
+1. Install node modules in the root project
+  `npm install`
 
-To see your component in action, you will need to create a new Storybook story for it. Create a file within your component's directory named `<ComponentName>.stories.js`. Check out [InputSelect.stories.jsx](https://github.com/edx/paragon/blob/master/src/InputSelect/InputSelect.stories.jsx) for an example of some good stories. Storybook will automatically pick up this file and serve its stories -- you should be able to see them linked from the left-hand menu.
+2. Install node modules in the Gatsby project
+  `cd www && npm install`
 
-Make sure to define PropTypes and DefaultProps on your components, using the [prop-types package](https://github.com/facebook/prop-types). PropTypes provide a clear API for your component and help consumers invoke it properly within their own code. In terms of functionality, ship an MVP component up-front. Don't make it do any more than is necessary. It's easy to add new functionality later on as needed, but it's much harder to remove functionality once we've released a component.
+3. Run the documentation dev server
+  `npm start`
+
+4. Visit the documentation at [http://localhost:8000](http://localhost:8000)
+
+##### Add a page for your new component
+
+1. Make a copy of `www/src/pages/components/_my-component.mdx` and rename to match your component. Use kebab-case.
+
+2. Add your new page to the navigation by making an addition to `www/src/components/navigation.jsx`. Note that the url of your new page is determined by its file name. A file at `www/src/pages/components/my-new-component.mdx` would generate a page at the path `components/my-new-component`.
+
+You should see your changes reflected at [http://localhost:8000](http://localhost:8000).
+
+Note: Live code blocks in mdx files are created by adding a live attribute (See `_my-component.mdx` for an example). The code inside this code block does not share scope with the MDX file it lives in. It's parsed and rendered inside `www/src/components/CodeBlock.jsx`. All Paragon components are added to the scope of these code blocks by default. If you need to add something to the scope (a React hook for example) you can do so in `CodeBlock.jsx`.
+
+3. Use your new doc page as the workbench for your component. It will auto refresh as you make changes.
+
 
 ### ESLint
 
