@@ -1,0 +1,40 @@
+---
+title: 'My Component'
+type: 'component'
+status: 'None'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: |
+  This is a demo page. Copy this file to add a new page to the documentation
+---
+
+import get from 'lodash/get';
+import SingleComponentStatus from '../../components/SingleComponentStatus';
+
+# MyComponent
+
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
+
+Add a description of the new component in [MDX](https://mdxjs.com/): Markdown or JSX.
+
+
+
+##### Interactive Code Block
+
+```jsx live
+<>
+  <Button variant="primary">Primary</Badge>
+</>
+```
+
+##### Static Code Block
+
+```jsx
+<>
+  <Button variant="primary">Primary</Button>
+</>
+```
