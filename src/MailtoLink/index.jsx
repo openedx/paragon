@@ -23,7 +23,7 @@ const MailtoLink = (props) => {
     ...other
   } = props;
 
-  const externalLinkAlternativeText = externalLink.alternativeLink;
+  const externalLinkAlternativeText = externalLink.alternativeText;
   const externalLinkTitle = externalLink.title;
   const destination = mailtoLink({
     to, cc, bcc, subject, body,

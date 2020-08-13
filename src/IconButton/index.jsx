@@ -21,6 +21,7 @@ const IconButton = ({
     icon,
     iconClassNames,
     onClick,
+    key: icon.iconName,
     variant,
   };
   const overlayTrigger = ['hover', 'focus'];
@@ -61,7 +62,12 @@ IconButton.propTypes = {
   /** Changes icon styles for dark background */
   invertColors: PropTypes.bool,
   /** Accepts a React fontawesome icon. https://fontawesome.com/how-to-use/on-the-web/using-with/react */
-  icon: PropTypes.shape({}).isRequired,
+  icon: PropTypes.shape({
+    prefix: PropTypes.string,
+    iconName: PropTypes.string,
+    // eslint-disable-next-line react/forbid-prop-types
+    icon: PropTypes.array,
+  }).isRequired,
   /** Extra class names that will be added to the icon */
   iconClassNames: PropTypes.string,
   /** Click handler for the button */
