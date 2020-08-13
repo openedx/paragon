@@ -87,6 +87,16 @@ export default MyComponent;
 
 ```
 
+Next, add your component to the exports in `src/index.js`. Example:
+
+```
+...
+
+export { default as MyComponent } from './MyComponent';
+
+...
+```
+
 ### Set up your workbench
 To see your component in action, you need to run the documentation site locally and add a new page. The documentation site is a [Gatsby](https://www.gatsbyjs.org/) application located in the `www/` folder. 
 
