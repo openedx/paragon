@@ -117,8 +117,8 @@ To see your component in action, you need to run the documentation site locally 
 
 1. Make a copy of `www/src/pages/components/_my-component.mdx` and rename to match your component. Use kebab-case.
 
-2. Add your new page to the navigation by making an addition to `www/src/components/navigation.jsx`. Note that the url of your new page is determined by its file name. A file at `www/src/pages/components/my-new-component.mdx` would generate a page at the path `components/my-new-component`.
-  You should see your changes reflected at [http://localhost:8000](http://localhost:8000).
+2. Add your new page to the navigation by making an addition to `www/src/components/navigation.jsx`. Note that the url of your new page is determined by its file name. A file at `www/src/pages/components/my-new-component.mdx` would generate a page at the path `components/my-new-component`.  
+  You should see your changes reflected at [http://localhost:8000](http://localhost:8000).  
   Note: Live code blocks in mdx files are created by adding a live attribute (See `_my-component.mdx` for an example). The code inside this code block does not share scope with the MDX file it lives in. It's parsed and rendered inside `www/src/components/CodeBlock.jsx`. All Paragon components are added to the scope of these code blocks by default. If you need to add something to the scope (a React hook for example) you can do so in `CodeBlock.jsx`.
 
 3. Use your new doc page as the workbench for your component. It will auto refresh as you make changes.
