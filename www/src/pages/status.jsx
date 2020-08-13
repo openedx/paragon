@@ -30,7 +30,8 @@ export default function () {
         }`}
         render={({ allMdx }) => {
           if (!allMdx || !allMdx.nodes) return null;
-          const components = allMdx.nodes.map(({ frontmatter }) => frontmatter);
+          const components = allMdx.nodes.map(({ frontmatter }) => frontmatter)
+            .filter(({ title }) => title !== 'My Component');
 
           return (
             <Table
