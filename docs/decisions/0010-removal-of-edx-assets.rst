@@ -34,7 +34,7 @@ Cons:
 Decision
 --------
 
-We will create a new project for edX.org branding. It will include the edX theme and other edX brand assets. Paragon will no longer have any specific tie to edX,org visuals. The new structure
+We will create a new project for edX.org branding. It will include the edX theme and other edX brand assets. Paragon will no longer have any specific tie to edx.org visuals. The new structure:
 
 Paragon:
   - SCSS framework based on Bootstrap
