@@ -53,7 +53,10 @@ edX Brand:
 Merges to edX Brand trigger work to:
   - Build and deploy a version of the Paragon documentation with the edX.org theme at https://paragon.edx.org
 
-This structure has pros and cons as well:
+Consequences
+------------
+
+This new structure has pros and cons as well:
 
 Pros:
   - The edX theme is decoupled from Paragon. Adopting theme updates is easier for teams.
@@ -63,12 +66,16 @@ Pros:
 
 Cons:
   - Two documentation sites one for edX and one for Paragon makes for some additional CI complexity.
-  - edX.org theme changes may be more difficult to see during development. We will need to determine an efficient way to do this.
+  - edX.org theme changes may be more difficult to see during development.
 
-Consequences
-------------
+**How does this affect theming in microfrontend applications?** MFEs will need need to import a theme.scss file and a Paragon SCSS file instead of the single edx/theme.scss file that many import today. No other impacts to development should occur.
 
-This change will simplify this Paragon and make it easier to use for the general public. It will also help edX teams update the themes of their edX applications more quickly and help them theme applications in a way similar to what Open edX operators will need to do.
+**When developing Paragon components, how can I see what they look like with the edX theme applied?** By default the Paragon documentation/workbench site won't display the edX theme. We will add a way to run the doc site locally with the edX theme applied. At first, this may be a simple piece of documentation about where to edit the theme for the documentation site.
+
+**How will the theme be developed and previewed?** The brand project will contain a scss theme. We will add documentation about how to run the documentation site locally with a local version of the edX theme.
+
+Ultimately, the changes in this ADR will simplify Paragon and make it easier to use for the general public. It will also help edX teams update the themes of their edX applications more quickly and help them theme applications in a way similar to what Open edX operators will need to do.
+
 
 References
 ----------
