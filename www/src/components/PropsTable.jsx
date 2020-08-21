@@ -3,23 +3,34 @@ import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 
 
+let lastIds = {};
+
+const newId = (prefix = 'id') => {
+  if (lastIds[prefix]) {
+    lastIds[prefix] += 1
+  } else {
+    lastIds[prefix] = 1
+  }
+  return `${prefix}${lastIds[prefix]}`;
+};
+
 const renderType = ({ name, value }) => { // eslint-disable-line
   switch (name) {
     case 'shape':
       return <ShapeProp shape={value} />;
     case 'union':
-      return <span key={name}>{value.map(v => renderType(v))}</span>;
+      return <span key={newId(name)}>{value.map(v => renderType(v))}</span>;
     case 'arrayOf':
-      return <span key={name}>[ {renderType(value)} ]</span>;
+      return <span key={newId(name)}>[ {renderType(value)} ]</span>;
     case 'enum':
       return (
-        <span key={name}>
+        <span key={newId(name)}>
           <span className="base-type">{name}</span>:
           {typeof value === 'string' ? value : value.map(item => item.value).join(', ')}
         </span>
       );
     default:
-      return <span key={name} className="base-type">{name}</span>;
+      return <span key={newId(name)} className="base-type">{name}</span>;
   }
 };
 
