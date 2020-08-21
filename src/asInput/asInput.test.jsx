@@ -361,7 +361,7 @@ describe('asInput()', () => {
           ...baseProps,
           inputGroupPrepend: (
             <div className="input-group-text">
-              {'$'}
+              $
             </div>
           ),
         };
@@ -377,7 +377,7 @@ describe('asInput()', () => {
           ...baseProps,
           inputGroupAppend: (
             <div className="input-group-text">
-              {'.00'}
+              .00
             </div>
           ),
         };
@@ -393,12 +393,12 @@ describe('asInput()', () => {
           ...baseProps,
           inputGroupPrepend: (
             <div className="input-group-text">
-              {'$'}
+              $
             </div>
           ),
           inputGroupAppend: (
             <div className="input-group-text">
-              {'.00'}
+              .00
             </div>
           ),
         };
@@ -416,7 +416,7 @@ describe('asInput()', () => {
           ...baseProps,
           inputGroupAppend: [
             <div className="input-group-text">
-              {'.00'}
+              .00
             </div>,
             <div className="input-group-text">
               <button className="btn">Go</button>
@@ -437,10 +437,10 @@ describe('asInput()', () => {
           ...baseProps,
           inputGroupPrepend: [
             <div className="input-group-text">
-              {'$'}
+              $
             </div>,
             <div className="input-group-text">
-              {'0.'}
+              0.
             </div>,
           ],
         };

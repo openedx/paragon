@@ -1,0 +1,55 @@
+$icon-button-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "warning": $warning,
+    "danger": $danger
+) !default;
+$icon-button-hover-size: 1.6em !default;
+// keep the icon focus circle inside it's parent element
+$icon-button-margin: .3em !default;
+$icon-button-refwrapper-size: $icon-button-hover-size + $icon-button-margin !default;
+
+$icon-color-dark: white !default;
+
+.iconbutton-hover {
+    width: $icon-button-hover-size;
+    height: $icon-button-hover-size;
+    border-radius: $icon-button-hover-size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    margin: 0 $icon-button-margin;
+    cursor: pointer;
+
+    &:active {
+        transform: scale(0.9);
+    }
+
+    @each $name, $color in $icon-button-colors {
+        &__#{$name} {
+            @include button-focus($color);
+            color: $color;
+        }
+        &__#{$name}:hover {
+            background-color: $color;
+            color: $icon-color-dark;
+        }
+        &__#{$name}--dark {
+            @include button-focus($icon-color-dark);
+            color: $icon-color-dark;
+
+            &:hover {
+                background-color: $icon-color-dark;
+                color: $color;
+            }
+        }
+    }
+}
+
+.iconbutton-refwrapper {
+    height: $icon-button-refwrapper-size;
+    width: $icon-button-refwrapper-size;
+}

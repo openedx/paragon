@@ -15,11 +15,13 @@ const propTypes = {
   onChildExit: PropTypes.func,
   onChildExiting: PropTypes.func,
   onChildExited: PropTypes.func,
+  /* eslint-disable react/forbid-prop-types */
   transitionStyles: PropTypes.shape({
     entering: PropTypes.object,
     entered: PropTypes.object,
     exiting: PropTypes.object,
     exited: PropTypes.object,
+  /* eslint-enable react/forbid-prop-types */
   }),
   transitionClassNames: PropTypes.string,
 };
