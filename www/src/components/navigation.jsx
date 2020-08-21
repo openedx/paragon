@@ -41,6 +41,7 @@ const menu = [
       { title: 'Forms', url: '/components/forms' },
       { title: 'Hyperlink', url: '/components/hyperlink' },
       { title: 'Icon', url: '/components/icon' },
+      { title: 'IconButton', url: '/components/icon-button' },
       { title: 'Input', url: '/components/input' },
       { title: 'Input Group', url: '/components/input-group' },
       { title: 'InputSelect', url: '/components/inputselect' },
@@ -68,6 +69,12 @@ const menu = [
       { title: 'Toast', url: '/components/toast' },
       { title: 'TransitionReplace', url: '/components/transitionreplace' },
       { title: 'ValidationFormGroup', url: '/components/validationformgroup' },
+    ],
+  },
+  {
+    section: 'HOOKS',
+    items: [
+      { title: 'useWindowSize', url: '/hooks/useWindowSize' },
     ],
   },
 ];

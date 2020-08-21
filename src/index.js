@@ -8,6 +8,7 @@ export { default as Dropdown } from './Dropdown';
 export { default as Fieldset } from './Fieldset';
 export { default as Hyperlink } from './Hyperlink';
 export { default as Icon } from './Icon';
+export { default as IconButton } from './IconButton';
 export { default as Input } from './Input';
 export { default as InputSelect } from './InputSelect';
 export { default as InputText } from './InputText';
@@ -36,6 +37,7 @@ export { default as ValidationFormGroup } from './ValidationFormGroup';
 export { default as TransitionReplace } from './TransitionReplace';
 export { default as ValidationMessage } from './ValidationMessage';
 export { default as Variant } from './utils/constants';
+export { default as useWindowSize } from './hooks/useWindowSize';
 
 // Pass through components from react-bootstrap
 

@@ -5,8 +5,8 @@ module.exports = {
     title: 'Paragon Documentation',
     description: 'Documentation for Paragon Pattern Library',
   },
-  // Match the location of the site on github pages
-  pathPrefix: '/paragon',
+  // Match the location of the site on github pages if no path prefix is specified
+  pathPrefix: 'PATH_PREFIX' in process.env ? process.env.PATH_PREFIX : '/paragon',
   plugins: [
     'gatsby-plugin-sass',
     {

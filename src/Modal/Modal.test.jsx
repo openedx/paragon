@@ -88,9 +88,7 @@ describe('<Modal />', () => {
       wrapper = mount(<Modal {...defaultProps} closeText={closeText} />);
       const modalFooter = wrapper.find('.modal-footer');
       const closeButton = modalFooter.find('button');
-
       expect(closeButton).toHaveLength(1);
-      expect(closeButton.children()).toHaveLength(0);
       expect(closeButton.text()).toEqual(closeText);
     });
 
