@@ -174,7 +174,7 @@ class Modal extends React.Component {
 
   renderModal() {
     const { open } = this.state;
-    const { renderHeaderCloseButton } = this.props;
+    const { renderHeaderCloseButton, dialogClassName } = this.props;
 
     return (
       <div>
@@ -201,9 +201,12 @@ class Modal extends React.Component {
           onMouseDown={this.close}
         >
           <div
-            className={classNames({
-              'modal-dialog': open,
-            })}
+            className={classNames(
+              {
+                'modal-dialog': open,
+              },
+              dialogClassName,
+            )}
             role="dialog"
             aria-modal
             aria-labelledby={this.headerId}
@@ -280,6 +283,10 @@ Modal.propTypes = {
   }),
   /** specifies whether a close button is rendered in the modal header. It defaults to true. */
   renderHeaderCloseButton: PropTypes.bool,
+  /**
+   * Specifies optional classes to add to the element with the '.modal-dialog' class.  See Bootstrap documentation for possible classes.  Some options: modal-lg, modal-sm, modal-dialog-centered
+   */
+  dialogClassName: PropTypes.string,
 };
 
 Modal.defaultProps = {
@@ -289,6 +296,7 @@ Modal.defaultProps = {
   closeText: 'Close',
   variant: {},
   renderHeaderCloseButton: true,
+  dialogClassName: undefined,
 };
 
 
