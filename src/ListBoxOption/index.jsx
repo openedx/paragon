@@ -2,7 +2,6 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-
 export default class ListBoxOption extends React.Component {
   constructor(props) {
     super(props);
@@ -10,6 +9,8 @@ export default class ListBoxOption extends React.Component {
     this.onMouseDown = this.onMouseDown.bind(this);
   }
 
+  // TODO: Move to getDerivedStateFromProps
+  // eslint-disable-next-line react/no-deprecated
   componentWillReceiveProps(nextProps) {
     if (!this.props.isSelected && nextProps.isSelected) {
       this.props.onSelect();

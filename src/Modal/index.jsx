@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import { Button } from '../';
+import { Button } from '..';
 import Icon from '../Icon';
 import newId from '../utils/newId';
 import Variant from '../utils/constants';
@@ -41,6 +41,7 @@ class Modal extends React.Component {
     this.parentElement.appendChild(this.el);
   }
 
+  // eslint-disable-next-line react/no-deprecated
   componentWillReceiveProps({ open }) {
     if (open !== this.state.open) {
       this.setState({ open });
@@ -298,6 +299,5 @@ Modal.defaultProps = {
   renderHeaderCloseButton: true,
   dialogClassName: undefined,
 };
-
 
 export default Modal;

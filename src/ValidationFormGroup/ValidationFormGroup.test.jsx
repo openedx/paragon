@@ -5,7 +5,7 @@ import ValidationFormGroup from './index';
 
 describe('ValidationFormGroup', () => {
   const labelAndInputComponents = (
-    <React.Fragment>
+    <>
       <label htmlFor="firstName">First Name</label>
       <input
         className="form-control"
@@ -15,7 +15,7 @@ describe('ValidationFormGroup', () => {
         value="Adam"
         onChange={() => {}}
       />
-    </React.Fragment>
+    </>
   );
 
   it('renders', () => {

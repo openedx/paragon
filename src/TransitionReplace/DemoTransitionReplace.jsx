@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import TransitionReplace from './index';
 
-
 export default function DemoTransitionReplace() {
   const contentOptions = [
     (
@@ -40,6 +39,7 @@ export default function DemoTransitionReplace() {
 
   return (
     <div>
+      {/*  eslint-disable-next-line react/button-has-type */}
       <button className="btn btn-primary mb-2" onClick={changeContent}>Next Quote</button>
       <div
         style={{

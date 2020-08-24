@@ -8,9 +8,7 @@ import ValidationMessage from '../ValidationMessage/index';
 import Variant from '../utils/constants';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
-
-export const getDisplayName = WrappedComponent =>
-  WrappedComponent.displayName || WrappedComponent.name || 'Component';
+export const getDisplayName = WrappedComponent => WrappedComponent.displayName || WrappedComponent.name || 'Component';
 
 export const inputProps = {
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
@@ -86,6 +84,8 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       };
     }
 
+    // move to getDerivedStateFromProps
+    // eslint-disable-next-line react/no-deprecated
     componentWillReceiveProps(nextProps) {
       const updatedState = {};
       if (nextProps.value !== this.props.value) {
@@ -97,8 +97,8 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       if (nextProps.validationMessage !== this.props.validationMessage && !nextProps.validator) {
         updatedState.validationMessage = nextProps.validationMessage;
       }
-      if (nextProps.dangerIconDescription !== this.props.dangerIconDescription &&
-          !nextProps.validator) {
+      if (nextProps.dangerIconDescription !== this.props.dangerIconDescription
+          && !nextProps.validator) {
         updatedState.dangerIconDescription = nextProps.dangerIconDescription;
       }
       // If validator goes away, revert to props
@@ -146,11 +146,10 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
 
     getAddons({ addonElements, type }) {
       if (Array.isArray(addonElements)) {
-        return addonElements.map((addon, index) =>
-          React.cloneElement(
-            addon,
-            { key: this.generateInputGroupAddonKey({ prefix: type, index }) },
-          ));
+        return addonElements.map((addon, index) => React.cloneElement(
+          addon,
+          { key: this.generateInputGroupAddonKey({ prefix: type, index }) },
+        ));
       }
       return addonElements;
     }

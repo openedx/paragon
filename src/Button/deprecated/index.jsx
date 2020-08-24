@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 import withDeprecatedProps, { DEPR_TYPES } from '../../withDeprecatedProps';
 
-
 class Button extends React.Component {
   constructor(props) {
     super(props);
@@ -74,6 +73,7 @@ class Button extends React.Component {
         onBlur={this.onBlur}
         onClick={this.onClick}
         onKeyDown={this.onKeyDown}
+        // eslint-disable-next-line react/button-has-type
         type={type}
         ref={this.setRefs}
 

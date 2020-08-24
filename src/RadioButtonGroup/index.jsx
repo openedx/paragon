@@ -1,5 +1,4 @@
-/* eslint-disable react/no-multi-comp */
-/* eslint-disable max-len */
+/* eslint-disable react/no-multi-comp, max-classes-per-file, max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -51,7 +50,6 @@ class RadioButton extends React.PureComponent {
   }
 }
 
-
 class RadioButtonGroup extends React.Component {
   constructor(props) {
     super();
@@ -74,7 +72,6 @@ class RadioButtonGroup extends React.Component {
     this.props.onChange(event);
   }
 
-
   renderChildren() {
     const {
       children,
@@ -85,17 +82,16 @@ class RadioButtonGroup extends React.Component {
       onKeyDown,
     } = this.props;
 
-    return React.Children.map((children), (child, index) =>
-      React.cloneElement(child, {
-        name,
-        value: child.props.value,
-        isChecked: index === this.state.selectedIndex,
-        onBlur,
-        onClick,
-        onFocus,
-        onKeyDown,
-        index,
-      }));
+    return React.Children.map((children), (child, index) => React.cloneElement(child, {
+      name,
+      value: child.props.value,
+      isChecked: index === this.state.selectedIndex,
+      onBlur,
+      onClick,
+      onFocus,
+      onKeyDown,
+      index,
+    }));
   }
 
   render() {
@@ -125,7 +121,6 @@ class RadioButtonGroup extends React.Component {
     );
   }
 }
-
 
 RadioButton.defaultProps = {
   children: undefined,

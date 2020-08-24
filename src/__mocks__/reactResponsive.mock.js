@@ -16,8 +16,8 @@ jest.mock('react-responsive', () => {
   const MockMediaQuery = (props = mockMediaQueryProps) => {
     const defaultWidth = mockWindow.innerWidth;
     const defaultHeight = mockWindow.innerHeight;
-    const values = Object.assign({}, { width: defaultWidth, height: defaultHeight }, props.values);
-    const newProps = Object.assign({}, props, { values });
+    const values = { width: defaultWidth, height: defaultHeight, ...props.values };
+    const newProps = { ...props, values };
 
     return mockReact.createElement(MediaQuery, newProps);
   };

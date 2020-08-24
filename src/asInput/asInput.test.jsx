@@ -322,8 +322,8 @@ describe('asInput()', () => {
           wrapper.find('input').simulate('blur');
           expect(spy).toHaveBeenCalledTimes(1);
           expect(err.exists()).toEqual(true);
-          expect(err.text()).toEqual(validationResult.dangerIconDescription +
-                                     validationResult.validationMessage);
+          expect(err.text()).toEqual(validationResult.dangerIconDescription
+                                     + validationResult.validationMessage);
 
           const dangerIcon = wrapper.find('.fa-exclamation-circle');
           expect(dangerIcon.exists()).toEqual(true);
@@ -419,7 +419,7 @@ describe('asInput()', () => {
               .00
             </div>,
             <div className="input-group-text">
-              <button className="btn">Go</button>
+              <button type="button" className="btn">Go</button>
             </div>,
           ],
         };

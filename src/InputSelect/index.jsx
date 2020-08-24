@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import asInput from '../asInput';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
-
 class Select extends React.Component {
   static getOption(option, i) {
     const { disabled } = option;
@@ -64,7 +63,6 @@ class Select extends React.Component {
   }
 }
 
-
 Select.propTypes = {
   className: PropTypes.string,
   inputRef: PropTypes.oneOfType([
@@ -81,7 +79,6 @@ Select.defaultProps = {
   className: undefined,
   inputRef: undefined,
 };
-
 
 const InputSelect = asInput(withDeprecatedProps(Select, 'InputSelect', {
   className: {

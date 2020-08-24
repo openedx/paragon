@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+// eslint-disable-next-line import/no-cycle
 import { Consumer } from './index';
 
 const DropdownButton = ({ children, className, ...other }) => (
@@ -16,6 +17,7 @@ const DropdownButton = ({ children, className, ...other }) => (
         id={classNames(triggerId, other.id)}
         aria-expanded={isOpen}
         aria-haspopup
+        type="button"
         ref={buttonRef}
         className={classNames(
           'dropdown-toggle',

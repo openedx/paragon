@@ -12,6 +12,7 @@ const SearchFieldClearButton = () => {
   }
 
   return (
+    // eslint-disable-next-line react/button-has-type
     <button type="reset" className="btn">
       {icons.clear}
       <span className="sr-only">{screenReaderText.clearButton}</span>

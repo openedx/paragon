@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+// eslint-disable-next-line import/no-cycle
 import { Consumer } from './index';
 
 const DropdownMenu = ({ children, ...other }) => (
