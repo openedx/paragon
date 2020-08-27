@@ -76,7 +76,7 @@ IconButton.propTypes = {
   /** Location of overlay relative to the icon */
   overlayPlacement: PropTypes.oneOf(['top', 'right', 'left', 'bottom']),
   /** Type of button (uses Bootstrap options) */
-  variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger']),
+  variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'light', 'dark']),
 };
 
 export default IconButton;

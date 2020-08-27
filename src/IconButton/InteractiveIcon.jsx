@@ -24,18 +24,18 @@ const InteractiveIcon = ({
     onKeyDown: handleKeyDown,
   } : {};
 
-  const darkHoverClass = invertColors ? `iconbutton-hover__${variant}--dark` : '';
-  const darkIconClass = invertColors ? `iconbutton__${variant}--dark` : '';
+  const invertedHoverClass = invertColors ? `iconbutton-hover__${variant}--invert` : '';
+  const invertedIconClass = invertColors ? `iconbutton__${variant}--invert` : '';
 
   return (
     <div
-      className={`iconbutton-hover ${darkHoverClass} iconbutton-hover__${variant}`}
+      className={`iconbutton-hover ${invertedHoverClass} iconbutton-hover__${variant}`}
       {...buttonProps}
       // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={0}
     >
       <FontAwesomeIcon
-        className={`iconbutton iconbutton__${variant} ${darkIconClass} ${iconClassNames}`}
+        className={`iconbutton iconbutton__${variant} ${invertedIconClass} ${iconClassNames}`}
         icon={icon}
         alt={alt}
       />
@@ -61,7 +61,7 @@ InteractiveIcon.propTypes = {
   /** Function executed on click */
   onClick: PropTypes.func,
   /** Type of button (uses Bootstrap options) */
-  variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger']),
+  variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'light', 'dark']),
 };
 
 export default InteractiveIcon;

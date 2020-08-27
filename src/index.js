@@ -33,6 +33,7 @@ export { default as StatusAlert } from './StatusAlert';
 export { default as Table } from './Table';
 export { default as Tabs } from './Tabs';
 export { default as TextArea } from './TextArea';
+export { default as Toast } from './Toast';
 export { default as ValidationFormGroup } from './ValidationFormGroup';
 export { default as TransitionReplace } from './TransitionReplace';
 export { default as ValidationMessage } from './ValidationMessage';
@@ -131,9 +132,6 @@ export { default as TabContent } from 'react-bootstrap/TabContent';
   export { default as Table } from 'react-bootstrap/Table';
 */
 export { default as TabPane } from 'react-bootstrap/TabPane';
-export { default as Toast } from 'react-bootstrap/Toast';
-export { default as ToastBody } from 'react-bootstrap/ToastBody';
-export { default as ToastHeader } from 'react-bootstrap/ToastHeader';
 export { default as ToggleButton } from 'react-bootstrap/ToggleButton';
 export { default as ToggleButtonGroup } from 'react-bootstrap/ToggleButtonGroup';
 export { default as Tooltip } from 'react-bootstrap/Tooltip';

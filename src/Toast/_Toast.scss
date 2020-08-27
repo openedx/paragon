@@ -1,0 +1,54 @@
+$toast-paragraph-padding: .4375rem;
+
+.toast {
+  background-color: $toast-background-color;
+  box-shadow: $toast-box-shadow;
+  margin: 0;
+  min-width: $toast-max-width;
+  padding: .5rem .5rem .5rem 1.25rem;
+  position: relative;
+  radius: $toast-border-radius;
+  z-index: 2;
+
+  .btn {
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+
+    &-toast-action {
+      background-color: $dark;
+      color: $white;
+      border-color: $white;
+
+      &:hover {
+        background-color: $white;
+        color: $dark;
+        border-color: $white;
+      }
+    }
+  }
+
+  .toast-header {
+    align-items: start;
+    border-bottom: 0;
+    justify-content: space-between;
+    padding: 0;
+
+    p {
+      font-size: $small-font-size;
+      margin: 0 1.5rem 0 0;
+      max-width: 320px;
+      padding-top: $toast-paragraph-padding;
+      padding-bottom: $toast-paragraph-padding;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    max-width: 100%;
+  }
+
+  @media only screen and (min-width: 768px) {
+    bottom: .625rem;
+    left: .625rem;
+    max-width: $toast-max-width;
+  }
+}
