@@ -2,7 +2,6 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-
 class Input extends React.Component {
   componentDidMount() {
     if (process.env.NODE_ENV === 'development') {
@@ -12,7 +11,7 @@ class Input extends React.Component {
 
   getHTMLTagForType() {
     const { type } = this.props;
-    if (type === 'select' || type === 'textarea') return type;
+    if (type === 'select' || type === 'textarea') { return type; }
     return 'input';
   }
 
@@ -30,17 +29,17 @@ class Input extends React.Component {
 
   setRef(forwardedRef) {
     // In production just return the optional forwardedRef
-    if (process.env.NODE_ENV !== 'development') return forwardedRef;
+    if (process.env.NODE_ENV !== 'development') { return forwardedRef; }
 
     return (element) => {
-      if (forwardedRef) forwardedRef.current = element; // eslint-disable-line no-param-reassign
+      if (forwardedRef) { forwardedRef.current = element; } // eslint-disable-line no-param-reassign
       this.inputEl = element;
     };
   }
 
   checkHasLabel() {
-    if (this.inputEl.labels.length > 0) return;
-    if (this.inputEl.getAttribute('aria-label') !== null) return;
+    if (this.inputEl.labels.length > 0) { return; }
+    if (this.inputEl.getAttribute('aria-label') !== null) { return; }
 
     if (console) {
       // eslint-disable-next-line no-console

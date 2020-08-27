@@ -12,7 +12,7 @@ function CollapsibleVisible({
   const isVisible = (isOpen && visibleWhenOpen) || (!isOpen && visibleWhenClosed);
 
   if (isVisible) {
-    return <React.Fragment>{children}</React.Fragment>;
+    return <>{children}</>;
   }
   return null;
 }

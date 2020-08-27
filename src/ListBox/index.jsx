@@ -4,7 +4,6 @@ import { nonNegativeInteger } from 'airbnb-prop-types';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-
 export default class ListBox extends React.Component {
   constructor(props) {
     super(props);
@@ -17,6 +16,8 @@ export default class ListBox extends React.Component {
     };
   }
 
+  // TODO: move to getDerivedStateFromProps (or other method)
+  // eslint-disable-next-line react/no-deprecated
   componentWillReceiveProps(nextProps) {
     const { selectedOptionIndex } = nextProps;
 
@@ -69,12 +70,11 @@ export default class ListBox extends React.Component {
   }
 
   renderChildren() {
-    return React.Children.map(this.props.children, (child, index) =>
-      React.cloneElement(child, {
-        index,
-        isSelected: index === this.state.selectedOptionIndex,
-        onSelect: () => { this.setState({ selectedOptionIndex: index }); child.props.onSelect(); },
-      }));
+    return React.Children.map(this.props.children, (child, index) => React.cloneElement(child, {
+      index,
+      isSelected: index === this.state.selectedOptionIndex,
+      onSelect: () => { this.setState({ selectedOptionIndex: index }); child.props.onSelect(); },
+    }));
   }
 
   render() {

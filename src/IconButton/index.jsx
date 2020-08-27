@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { OverlayTrigger } from '../';
+import { OverlayTrigger } from '..';
 import InteractiveIcon from './InteractiveIcon';
-
 
 const IconButton = ({
   alt,

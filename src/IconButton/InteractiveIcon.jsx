@@ -39,7 +39,8 @@ const InteractiveIcon = ({
         icon={icon}
         alt={alt}
       />
-    </div>);
+    </div>
+  );
 };
 
 InteractiveIcon.defaultProps = {

@@ -39,6 +39,7 @@ class Fieldset extends React.Component {
     this.state = { id: props.id || newId('fieldset') };
   }
 
+  // eslint-disable-next-line react/no-deprecated
   componentWillReceiveProps(nextProps) {
     // TODO: use getDerivedStateFromProps when upgraded to React 16.3+
     if (nextProps.id !== this.props.id) {

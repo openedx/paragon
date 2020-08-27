@@ -8,7 +8,6 @@ import mailtoLink from 'mailto-link';
 import Hyperlink from '../Hyperlink';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
-
 const MailtoLink = (props) => {
   const {
     to,
@@ -77,7 +76,6 @@ MailtoLink.propTypes = {
     title: isRequiredIf(PropTypes.string, props => props.target === '_blank'),
   }),
 };
-
 
 export default withDeprecatedProps(MailtoLink, 'MailtoLink', {
   content: {

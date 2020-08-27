@@ -4,7 +4,6 @@ import { mount } from 'enzyme';
 
 import TransitionReplace from './index';
 
-
 function TestReplacement({ showContentA, ...props }) {
   return (
     <TransitionReplace {...props}>

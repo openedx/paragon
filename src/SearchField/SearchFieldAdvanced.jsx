@@ -1,5 +1,7 @@
 /* eslint-disable max-len */
-import React, { useRef, createContext, useState, useEffect } from 'react';
+import React, {
+  useRef, createContext, useState, useEffect,
+} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
