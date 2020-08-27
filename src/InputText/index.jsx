@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import asInput from '../asInput';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
-
 function Text(props) {
   const {
     className,
@@ -23,7 +22,6 @@ function Text(props) {
   );
 }
 
-
 Text.propTypes = {
   className: PropTypes.string,
   inputRef: PropTypes.oneOfType([
@@ -38,7 +36,6 @@ Text.defaultProps = {
   inputRef: undefined,
   type: 'text',
 };
-
 
 const InputText = asInput(withDeprecatedProps(Text, 'InputText', {
   className: {

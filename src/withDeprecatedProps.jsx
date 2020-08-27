@@ -1,14 +1,12 @@
 /* eslint no-console: 0 */
 import React from 'react';
 
-
 export const DEPR_TYPES = {
   MOVED: 'MOVED',
   REMOVED: 'REMOVED',
   FORMAT: 'FORMAT',
   MOVED_AND_FORMAT: 'MOVED_AND_FORMAT',
 };
-
 
 function withDeprecatedProps(WrappedComponent, componentName, deprecatedProps) {
   class WithDeprecatedProps extends React.Component {
@@ -19,7 +17,7 @@ function withDeprecatedProps(WrappedComponent, componentName, deprecatedProps) {
 
     warn(message) {
       if (process.env.NODE_ENV === 'development') {
-        if (console) console.warn(`[Deprecated] ${message}`);
+        if (console) { console.warn(`[Deprecated] ${message}`); }
       }
     }
 
@@ -64,6 +62,7 @@ function withDeprecatedProps(WrappedComponent, componentName, deprecatedProps) {
 
       return acc;
     }
+
     render() {
       const { children, ...transformedProps } = Object
         .keys(this.props)

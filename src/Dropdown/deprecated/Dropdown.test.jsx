@@ -6,7 +6,7 @@ import Dropdown from './index';
 import Icon from '../../Icon';
 
 const menuContent = (
-  <React.Fragment>
+  <>
     <Dropdown.Button>
       Search Engines
     </Dropdown.Button>
@@ -15,7 +15,7 @@ const menuContent = (
       <Dropdown.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Item>
       <Dropdown.Item href="https://yahoo.com">Yahoo</Dropdown.Item>
     </Dropdown.Menu>
-  </React.Fragment>
+  </>
 );
 
 const menuOpen = (isOpen, wrapper) => {

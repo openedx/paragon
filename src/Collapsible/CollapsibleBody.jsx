@@ -12,9 +12,9 @@ function CollapsibleBody({
   // Keys are added to these elements so that TransitionReplace
   // will recognize them as unique components and perform the
   // transition properly.
-  const content = isOpen ?
-    React.createElement(tag, { key: 'body', ...props }, children) :
-    <div key="empty" />;
+  const content = isOpen
+    ? React.createElement(tag, { key: 'body', ...props }, children)
+    : <div key="empty" />;
 
   if (transitionWrapper) {
     return React.cloneElement(transitionWrapper, {}, content);

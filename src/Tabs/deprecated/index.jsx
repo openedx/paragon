@@ -42,6 +42,7 @@ class Tabs extends React.Component {
 
       return (
         <li key={labelId}>
+          {/* eslint-disable-next-line react/button-has-type */}
           <button
             role="tab"
             aria-selected={selected}
@@ -49,8 +50,8 @@ class Tabs extends React.Component {
             id={labelId}
             onClick={() => { this.toggle(i); }}
             className={classNames('nav-link nav-item', {
-            active: selected,
-          })}
+              active: selected,
+            })}
           >
             {label}
           </button>

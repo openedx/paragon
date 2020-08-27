@@ -9,7 +9,6 @@ const FakeComponent = () => {
   return <div>{height} {width}</div>;
 };
 
-
 describe('useWindowSize hook', () => {
   const { innerHeight, innerWidth } = global;
   afterEach(() => {

@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import asInput from '../asInput';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
-
 class Check extends React.Component {
   constructor(props) {
     super(props);
@@ -16,6 +15,7 @@ class Check extends React.Component {
     };
   }
 
+  // eslint-disable-next-line react/no-deprecated
   componentWillReceiveProps(nextProps) {
     if (nextProps.checked !== this.props.checked) {
       this.setState({
@@ -25,9 +25,9 @@ class Check extends React.Component {
   }
 
   onChange(event) {
-    this.setState({
-      checked: !this.state.checked,
-    });
+    this.setState(prevState => ({
+      checked: !prevState.checked,
+    }));
     this.props.onChange(event);
   }
 
@@ -49,7 +49,6 @@ class Check extends React.Component {
   }
 }
 
-
 Check.propTypes = {
   // eslint-disable-next-line max-len
   /** (`Boolean`): `true` if the state should be checked, `false` otherwise. This prop can be used to manage the Checkbox more directly, overriding the default Checkbox checked state. */
@@ -68,7 +67,6 @@ Check.defaultProps = {
   onChange: () => {},
   inputRef: undefined,
 };
-
 
 const CheckBox = asInput(withDeprecatedProps(Check, 'Checkbox', {
   className: {

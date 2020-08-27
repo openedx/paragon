@@ -24,7 +24,6 @@ const defaultProps = {
   className: undefined,
 };
 
-
 function ValidationFormGroup(props) {
   const {
     className,
@@ -39,7 +38,7 @@ function ValidationFormGroup(props) {
 
   const renderChildren = () => React.Children.map(children, (child) => {
     // Any non-user input element should pass through unmodified
-    if (['input', 'textarea', 'select', Input].indexOf(child.type) === -1) return child;
+    if (['input', 'textarea', 'select', Input].indexOf(child.type) === -1) { return child; }
 
     // Add validation class names and describedby values to input element
     return React.cloneElement(child, {
@@ -57,7 +56,7 @@ function ValidationFormGroup(props) {
   });
 
   const renderHelpText = (text) => {
-    if (!text) return null;
+    if (!text) { return null; }
     return <small id={`${id}-help-text`} className="form-text text-muted">{text}</small>;
   };
 
@@ -67,7 +66,7 @@ function ValidationFormGroup(props) {
    * elements and attach the formatting classes to them.
    */
   const renderInvalidFeedback = (message) => {
-    if (!message) return null;
+    if (!message) { return null; }
     return (
       <strong
         id={`${id}-invalid-feedback`}
@@ -79,7 +78,7 @@ function ValidationFormGroup(props) {
   };
 
   const renderValidFeedback = (message) => {
-    if (!message) return null;
+    if (!message) { return null; }
     return (
       <div
         className="valid-feedback"
@@ -100,9 +99,7 @@ function ValidationFormGroup(props) {
   );
 }
 
-
 ValidationFormGroup.propTypes = propTypes;
 ValidationFormGroup.defaultProps = defaultProps;
-
 
 export default ValidationFormGroup;
