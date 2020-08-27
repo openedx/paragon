@@ -2,7 +2,7 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 
 import Modal from './index';
-import { Button } from '../';
+import { Button } from '..';
 import Variant from '../utils/constants';
 
 const modalOpen = (isOpen, wrapper) => {

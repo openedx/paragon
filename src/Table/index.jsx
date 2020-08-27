@@ -4,9 +4,8 @@ import classNames from 'classnames';
 import isRequiredIf from 'react-proptype-conditional-require';
 import PropTypes from 'prop-types';
 
-import { Button } from '../';
+import { Button } from '..';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
-
 
 class Table extends React.Component {
   constructor(props) {
@@ -57,10 +56,12 @@ class Table extends React.Component {
   getSortIcon(sortDirection) {
     const sortIconClassName = ['fa-sort', sortDirection].filter(n => n).join('-');
 
-    return (<span
-      className={classNames('fa', sortIconClassName)}
-      aria-hidden
-    />);
+    return (
+      <span
+        className={classNames('fa', sortIconClassName)}
+        aria-hidden
+      />
+    );
   }
 
   getTableHeading(column) {
@@ -249,7 +250,6 @@ Table.defaultProps = {
     defaultText: 'click to sort',
   },
 };
-
 
 export default withDeprecatedProps(Table, 'Table', {
   className: {

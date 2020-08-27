@@ -1,5 +1,5 @@
 {
-  "extends": "eslint-config-edx",
+  "extends": "@edx/eslint-config",
   "parser": "babel-eslint",
   "rules": {
     "import/no-extraneous-dependencies": [

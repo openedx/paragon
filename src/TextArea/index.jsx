@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import asInput from '../asInput';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
-
 function Text(props) {
   const {
     className,
@@ -22,7 +21,6 @@ function Text(props) {
   );
 }
 
-
 Text.propTypes = {
   className: PropTypes.string,
   /** specifies all of the properties that are necessary from the included `asInput` component.  Please see details for input requirements within that component.
@@ -37,7 +35,6 @@ Text.defaultProps = {
   className: undefined,
   inputRef: undefined,
 };
-
 
 const TextArea = asInput(withDeprecatedProps(Text, 'TextArea', {
   className: {

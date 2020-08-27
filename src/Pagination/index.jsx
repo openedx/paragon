@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { Button } from '../';
+import { Button } from '..';
 import { ExtraSmall, LargerThanExtraSmall } from '../Responsive';
 import getTextFromElement from '../utils/getTextFromElement';
 import Icon from '../Icon';
@@ -25,10 +25,12 @@ class Pagination extends React.Component {
     };
   }
 
+  // TODO: Move to getDerivedStateFromProps
+  // eslint-disable-next-line react/no-deprecated
   componentWillReceiveProps(nextProps) {
     if (
-      nextProps.currentPage !== this.props.currentPage ||
-      nextProps.currentPage !== this.state.currentPage
+      nextProps.currentPage !== this.props.currentPage
+      || nextProps.currentPage !== this.state.currentPage
     ) {
       this.setState({
         currentPage: nextProps.currentPage,
@@ -106,12 +108,13 @@ class Pagination extends React.Component {
       <div>
         {buttonLabels.page}
         {` ${page}`}
-        {active &&
+        {active
+          && (
           <span>
             {', '}
             {buttonLabels.currentPage}
           </span>
-        }
+          )}
       </div>
     ));
 
@@ -189,13 +192,14 @@ class Pagination extends React.Component {
     const ariaLabel = getTextFromElement((
       <div>
         {buttonLabels.previous}
-        {previousPage &&
+        {previousPage
+          && (
           <span>
             {', '}
             {buttonLabels.page}
             {` ${previousPage}`}
           </span>
-        }
+          )}
       </div>
     ));
 
@@ -234,13 +238,14 @@ class Pagination extends React.Component {
     const ariaLabel = getTextFromElement((
       <div>
         {buttonLabels.next}
-        {nextPage &&
+        {nextPage
+          && (
           <span>
             {', '}
             {buttonLabels.page}
             {` ${nextPage}`}
           </span>
-        }
+          )}
       </div>
     ));
 

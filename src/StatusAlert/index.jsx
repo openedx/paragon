@@ -4,9 +4,8 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import isRequiredIf from 'react-proptype-conditional-require';
 
-import { Button } from '../';
+import { Button } from '..';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
-
 
 class StatusAlert extends React.Component {
   constructor(props) {
@@ -27,6 +26,8 @@ class StatusAlert extends React.Component {
     }
   }
 
+  // TODO: Move to getDerivedStateFromProps
+  // eslint-disable-next-line react/no-deprecated
   componentWillReceiveProps(nextProps) {
     if (nextProps.open !== this.props.open) {
       this.setState({ open: nextProps.open });

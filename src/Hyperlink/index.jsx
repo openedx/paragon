@@ -5,7 +5,6 @@ import isRequiredIf from 'react-proptype-conditional-require';
 
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
-
 function Hyperlink(props) {
   const {
     destination,

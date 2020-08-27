@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Icon from '../Icon';
-import { Button } from '../';
-
+import { Button } from '..';
 
 const propTypes = {
   className: PropTypes.string,
@@ -56,7 +55,6 @@ const defaultProps = {
   onClick: undefined,
 };
 
-
 function StatefulButton({
   className,
   state,
@@ -88,7 +86,7 @@ function StatefulButton({
           return;
         }
 
-        if (onClick) onClick(e);
+        if (onClick) { onClick(e); }
       }}
       {...attributes}
     >
@@ -100,9 +98,7 @@ function StatefulButton({
   );
 }
 
-
 StatefulButton.propTypes = propTypes;
 StatefulButton.defaultProps = defaultProps;
-
 
 export default StatefulButton;
