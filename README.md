@@ -63,6 +63,8 @@ Usage on edx.org:
 
 ## Contributing & Development
 
+See the [code of conduct](https://github.com/edx/.github/blob/master/CODE_OF_CONDUCT.md).
+
 To add a new component, create a file `src/MyComponent/index.jsx`. Define your component (using the same `<MyComponent>` as the class name) in this file. Example:
 
 ```
