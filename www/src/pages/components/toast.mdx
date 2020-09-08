@@ -1,14 +1,15 @@
 ---
 title: 'Toast'
 type: 'component'
-status: 'Stable'
-designStatus: 'TO DO'
-devStatus: 'TO DO'
-notes: |
-  Getting a design update soon
+status: 'New'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: ''
 ---
 
+import { StaticQuery, graphql } from 'gatsby';
 import get from 'lodash/get';
+import PropsTable from '../../components/PropsTable';
 import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 # Toast
@@ -18,30 +19,6 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
     get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
   }
 />
-
-<p style={{ fontSize: '1.5em' }}>
-  This is a pass through component from React-Bootstrap.<br/>
-  <a href="https://react-bootstrap.github.io/components/toasts" target="_blank" rel="noopener noreferrer">
-    See React-Bootstrap for documentation.
-  </a>
-</p>
-
-##### Basic Markup
-
-```jsx live
-<Toast>
-  <Toast.Header>
-    <img
-      src="https://source.unsplash.com/20x20/?portrait"
-      className="rounded mr-2"
-      alt=""
-    />
-    <strong className="mr-auto">Bootstrap</strong>
-    <small>11 mins ago</small>
-  </Toast.Header>
-  <Toast.Body>Hello, world! This is a toast message.</Toast.Body>
-</Toast>
-```
 
 ##### Basic Usage
 
@@ -54,27 +31,78 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
       <Toast
         onClose={() => setShow(false)}
         show={show}
-        delay={3000}
-        autohide
-        style={{
-          position: 'fixed',
-          bottom: '1rem',
-          left: '1rem',
-        }}
       >
-        <Toast.Header>
-          <img
-            src="https://source.unsplash.com/20x20/?portrait"
-            className="rounded mr-2"
-            alt=""
-          />
-          <strong className="mr-auto">Bootstrap</strong>
-          <small>11 mins ago</small>
-        </Toast.Header>
-        <Toast.Body>Woohoo, you're reading this text in a Toast!</Toast.Body>
+        Example of a basic Toast.
       </Toast>
-      <Button className="btn-primary" onClick={() => setShow(true)}>Show Toast</Button>
+
+      <Button variant="primary" onClick={() => setShow(true)}>Show Toast</Button>
     </>
   );
 }
 ```
+
+##### With Button
+
+```jsx live
+() => {
+  const [show, setShow] = useState(false);
+
+  return (
+    <>
+      <Toast
+        action={{
+          label: "Optional Button",
+          onClick: () => console.log('You clicked the action button.')
+        }}
+        onClose={() => setShow(false)}
+        show={show}
+      >
+        Success! Example of a Toast with a button.
+      </Toast>
+
+      <Button variant="primary" onClick={() => setShow(true)}>Show Toast</Button>
+    </>
+  );
+}
+```
+
+##### With Link
+
+```jsx live
+() => {
+  const [show, setShow] = useState(false);
+
+  return (
+    <>
+      <Toast
+        action={{
+          label: "Optional Link",
+          href: "#"
+        }}
+        onClose={() => setShow(false)}
+        show={show}
+      >
+        Success! Example of a Toast with a link.
+      </Toast>
+
+      <Button variant="primary" onClick={() => setShow(true)}>Show Toast</Button>
+    </>
+  );
+}
+```
+
+##### Props
+
+<StaticQuery
+  query={graphql`
+    query {
+      componentMetadata(displayName: { eq: "Toast" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
+  render={({ componentMetadata }) => {
+    if (componentMetadata == null) return null;
+    return <PropsTable propMetaData={componentMetadata.props} />;
+  }}
+/>

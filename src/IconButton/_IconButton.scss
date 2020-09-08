@@ -3,14 +3,16 @@ $icon-button-colors: (
     "secondary": $secondary,
     "success": $success,
     "warning": $warning,
-    "danger": $danger
+    "danger": $danger,
+    "light": $light,
+    "dark": $dark
 ) !default;
-$icon-button-hover-size: 1.6em !default;
+$icon-button-hover-size: 2rem !default;
 // keep the icon focus circle inside it's parent element
-$icon-button-margin: .3em !default;
+$icon-button-margin: .75rem !default;
 $icon-button-refwrapper-size: $icon-button-hover-size + $icon-button-margin !default;
 
-$icon-color-dark: white !default;
+$icon-color-invert: white !default;
 
 .iconbutton-hover {
     width: $icon-button-hover-size;
@@ -21,7 +23,7 @@ $icon-color-dark: white !default;
     align-items: center;
     text-align: center;
     position: relative;
-    margin: 0 $icon-button-margin;
+    margin: 0;
     cursor: pointer;
 
     &:active {
@@ -35,14 +37,14 @@ $icon-color-dark: white !default;
         }
         &__#{$name}:hover {
             background-color: $color;
-            color: $icon-color-dark;
+            color: $icon-color-invert;
         }
-        &__#{$name}--dark {
-            @include button-focus($icon-color-dark);
-            color: $icon-color-dark;
+        &__#{$name}--invert {
+            @include button-focus($icon-color-invert);
+            color: $icon-color-invert;
 
             &:hover {
-                background-color: $icon-color-dark;
+                background-color: $icon-color-invert;
                 color: $color;
             }
         }
@@ -52,4 +54,5 @@ $icon-color-dark: white !default;
 .iconbutton-refwrapper {
     height: $icon-button-refwrapper-size;
     width: $icon-button-refwrapper-size;
+    padding: $icon-button-margin * 0.5;
 }
