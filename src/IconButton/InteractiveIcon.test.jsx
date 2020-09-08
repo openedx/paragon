@@ -19,15 +19,15 @@ describe('<InteractiveIcon />', () => {
     expect(faIcon.prop('icon')).toEqual(icon);
     expect(faIcon.prop('alt')).toEqual(alt);
   });
-  it('should not render with --dark classnames if invertColors is set', () => {
+  it('should not render with --invert classnames if invertColors is false', () => {
     const wrapper = shallow(<InteractiveIcon {...props} />);
-    expect(wrapper.find(`.iconbutton-hover__${variant}--dark`)).toHaveLength(0);
-    expect(wrapper.find(`.iconbutton__${variant}--dark`)).toHaveLength(0);
+    expect(wrapper.find(`.iconbutton-hover__${variant}--invert`)).toHaveLength(0);
+    expect(wrapper.find(`.iconbutton__${variant}--invert`)).toHaveLength(0);
   });
-  it('should render with --dark classnames if invertColors is true', () => {
+  it('should render with --invert classnames if invertColors is true', () => {
     const wrapper = shallow(<InteractiveIcon {...props} invertColors />);
-    expect(wrapper.find(`.iconbutton-hover__${variant}--dark`)).toHaveLength(1);
-    expect(wrapper.find(`.iconbutton__${variant}--dark`)).toHaveLength(1);
+    expect(wrapper.find(`.iconbutton-hover__${variant}--invert`)).toHaveLength(1);
+    expect(wrapper.find(`.iconbutton__${variant}--invert`)).toHaveLength(1);
   });
   it('should add the icon class names if it receives them', () => {
     const wrapper = shallow(<InteractiveIcon {...props} iconClassNames="foo bar" />);
