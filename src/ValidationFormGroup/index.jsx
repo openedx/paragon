@@ -2,14 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Input from '../Input';
+import { FormControl } from '..';
 
 const propTypes = {
+  /** Id of the form input that the validation is for */
   for: PropTypes.string.isRequired,
+  /** Additional classnames for this component */
   className: PropTypes.string,
+  /** Determines if invalid styles / message will be shown */
   invalid: PropTypes.bool,
+  /** Determines if invalid styles / message will be shown */
   valid: PropTypes.bool,
+  /** Message to display on valid input */
   validMessage: PropTypes.node,
+  /** Message to display on invalid input */
   invalidMessage: PropTypes.node,
+  /** Help text for the form input */
   helpText: PropTypes.node,
   children: PropTypes.node,
 };
@@ -38,7 +46,7 @@ function ValidationFormGroup(props) {
 
   const renderChildren = () => React.Children.map(children, (child) => {
     // Any non-user input element should pass through unmodified
-    if (['input', 'textarea', 'select', Input].indexOf(child.type) === -1) { return child; }
+    if (['input', 'textarea', 'select', Input, FormControl].indexOf(child.type) === -1) { return child; }
 
     // Add validation class names and describedby values to input element
     return React.cloneElement(child, {
