@@ -1,11 +1,9 @@
 ---
 title: 'ValidationFormGroup'
 type: 'component'
-status: 'Needs Work'
+status: 'Stable'
 designStatus: 'Done'
-devStatus: 'TO DO'
-notes: |
-  Needs update to make it compatible with Form.Control components
+devStatus: 'Done'
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
@@ -93,6 +91,7 @@ For children of type input, textarea, and select:
 ##### with any kind of input
 
 ```jsx live
+<>
 <ValidationFormGroup
   for="weatherToday"
   helpText="Look out the window to see."
@@ -113,6 +112,15 @@ For children of type input, textarea, and select:
     <option>Snowy</option>
   </select>
 </ValidationFormGroup>
+<ValidationFormGroup
+  for="weatherTomorrow"
+  helpText="Incoming weather."
+  invalid
+  invalidMessage="No good!"
+>
+  <Form.Control type='text' value='Cloudy' />
+</ValidationFormGroup>
+</>
 ```
 
 ##### Props

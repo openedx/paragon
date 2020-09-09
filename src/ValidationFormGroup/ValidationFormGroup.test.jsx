@@ -1,7 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 
 import ValidationFormGroup from './index';
+import Input from '../Input';
+import { FormControl, Form } from '..';
 
 describe('ValidationFormGroup', () => {
   const labelAndInputComponents = (
@@ -87,5 +90,56 @@ describe('ValidationFormGroup', () => {
       </ValidationFormGroup>
     )).toJSON();
     expect(tree).toMatchSnapshot();
+  });
+  [
+    { Component: Input, name: 'Input' },
+    { Component: FormControl, name: 'FormControl' },
+    { Component: Form.Control, name: 'Form.Control' },
+  ].forEach(({ Component, name }) => {
+    const formControlId = 'bestForm';
+    const formControlHelp = 'So helpful';
+    const validMessage = 'Valid feedback';
+    const invalidMessage = 'Exterminate, Exterminate';
+
+    it(`renders a ${name} child with the correct aria attributes and helptext`, () => {
+      const wrapper = shallow(
+        <ValidationFormGroup
+          for={formControlId}
+          helpText={formControlHelp}
+          validMessage={validMessage}
+          valid
+        >
+          <Component id={formControlId} />
+        </ValidationFormGroup>,
+      );
+      expect(wrapper.find(Component).props()['aria-describedby']).toEqual(`${formControlId}-help-text ${formControlId}-valid-feedback`);
+      expect(wrapper.find(`#${formControlId}-help-text`).text()).toEqual(formControlHelp);
+    });
+    it(`renders a ${name} child with the correct valid message`, () => {
+      const wrapper = shallow(
+        <ValidationFormGroup
+          for={formControlId}
+          helpText={formControlHelp}
+          validMessage={validMessage}
+          valid
+        >
+          <Component id={formControlId} />
+        </ValidationFormGroup>,
+      );
+      expect(wrapper.find(`#${formControlId}-valid-feedback`).text()).toEqual(validMessage);
+    });
+    it(`renders a ${name} child with the correct invalid message`, () => {
+      const wrapper = shallow(
+        <ValidationFormGroup
+          for={formControlId}
+          helpText={formControlHelp}
+          invalidMessage={invalidMessage}
+          invalid
+        >
+          <Component id={formControlId} />
+        </ValidationFormGroup>,
+      );
+      expect(wrapper.find(`#${formControlId}-invalid-feedback`).text()).toEqual(invalidMessage);
+    });
   });
 });
