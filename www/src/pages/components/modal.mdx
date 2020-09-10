@@ -63,12 +63,12 @@ class ModalWrapper extends React.Component {
           parentSelector={this.props.parentSelector}
           onClose={this.resetModalWrapperState}
           buttons={[
-            <Button buttonType="success">Green button!</Button>
+            <Button variant="success">Green button!</Button>
           ]}
         />
         <Button
           onClick={this.openModal}
-          buttonType="light"
+          variant="light"
           inputRef={input => {
             this.button = input;
           }}
@@ -89,12 +89,12 @@ class ModalWrapper extends React.Component {
   title="Modal title."
   body="Modal body."
   buttons={[
-    <Button buttonType="primary">Blue button!</Button>,
+    <Button variant="primary">Blue button!</Button>,
     {
       label: 'Red button!',
       buttonType: 'danger',
     },
-    <Button buttonType="success">Green button!</Button>,
+    <Button variant="success">Green button!</Button>,
   ]}
   onClose={() => {}}
 />
@@ -108,7 +108,7 @@ class ModalWrapper extends React.Component {
   title="Custom title!"
   body="Custom body!"
   buttons={[
-    <Button buttonType="dark">Dark button!</Button>
+    <Button variant="dark">Dark button!</Button>
   ]}
   onClose={() => {}}
 />
@@ -123,7 +123,7 @@ class ModalWrapper extends React.Component {
   body="Modal body."
   buttons={[
     <Button
-      buttonType="light"
+      variant="light"
       onClick={action('button-click')}
     >
       Click me and check the console!
