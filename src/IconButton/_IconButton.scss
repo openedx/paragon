@@ -42,6 +42,7 @@ $icon-color-invert: white !default;
         &__#{$name}--invert {
             @include button-focus($icon-color-invert);
             color: $icon-color-invert;
+            background-color: $color;
 
             &:hover {
                 background-color: $icon-color-invert;
@@ -55,4 +56,7 @@ $icon-color-invert: white !default;
     height: $icon-button-refwrapper-size;
     width: $icon-button-refwrapper-size;
     padding: $icon-button-margin * 0.5;
+    button {
+        border: none;
+    }
 }

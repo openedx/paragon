@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { OverlayTrigger } from '..';
-import InteractiveIcon from './InteractiveIcon';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const IconButton = ({
   alt,
@@ -10,53 +9,39 @@ const IconButton = ({
   icon,
   iconClassNames,
   onClick,
-  overlay,
-  overlayPlacement,
   variant,
 }) => {
-  const iconProps = {
-    alt,
-    invertColors,
-    icon,
-    iconClassNames,
-    onClick,
-    key: icon.iconName,
-    variant,
-  };
-  const overlayTrigger = ['hover', 'focus'];
-  // if there's not a click handler, click should trigger the popover;
-  if (!onClick) {
-    overlayTrigger.push('click');
-  }
+  const invertedHoverClass = invertColors ? `iconbutton-hover__${variant}--invert` : '';
+  const invertedIconClass = invertColors ? `iconbutton__${variant}--invert` : '';
 
-  if (overlay) {
-    return (
-      <OverlayTrigger
-        trigger={overlayTrigger}
-        placement={overlayPlacement}
-        flip
-        overlay={overlay}
+  return (
+    <div className="iconbutton-refwrapper">
+      <button
+        aria-label={alt}
+        className={`iconbutton-hover ${invertedHoverClass} iconbutton-hover__${variant}`}
+        onClick={onClick}
+        type="button"
       >
-        <div className="iconbutton-refwrapper">
-          <InteractiveIcon {...iconProps} />
-        </div>
-      </OverlayTrigger>
-    );
-  }
-  return (<InteractiveIcon {...iconProps} />);
+        <FontAwesomeIcon
+          className={`iconbutton iconbutton__${variant} ${invertedIconClass} ${iconClassNames}`}
+          icon={icon}
+          alt={alt}
+        />
+      </button>
+    </div>
+  );
 };
 
 IconButton.defaultProps = {
-  overlayPlacement: 'right',
   iconClassNames: '',
-  onClick: null,
   invertColors: false,
-  overlay: null,
   variant: 'primary',
 };
 
 IconButton.propTypes = {
-  /** Alt text for your icon  */
+  /** Alt text for your icon. For best practice, avoid using alt text to describe
+   * the image in the IconButton. Instead, we recommend describing the function
+   * of the button. */
   alt: PropTypes.string.isRequired,
   /** Changes icon styles for dark background */
   invertColors: PropTypes.bool,
@@ -70,10 +55,7 @@ IconButton.propTypes = {
   /** Extra class names that will be added to the icon */
   iconClassNames: PropTypes.string,
   /** Click handler for the button */
-  onClick: PropTypes.func,
-  overlay: PropTypes.node,
-  /** Location of overlay relative to the icon */
-  overlayPlacement: PropTypes.oneOf(['top', 'right', 'left', 'bottom']),
+  onClick: PropTypes.func.isRequired,
   /** Type of button (uses Bootstrap options) */
   variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'light', 'dark']),
 };
