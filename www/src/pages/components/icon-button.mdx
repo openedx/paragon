@@ -23,59 +23,50 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 />
 
 ##### Basic Usage
-<p>Hover or focus on the icon to see the popover text. Add a click handler if desired.</p>
 
 ```jsx live
-<div style={{display: 'flex'}}>
-<IconButton
-  icon={FontAwesome.faTimes}
-  alt='bold x'
-  overlay={<Popover><PopoverContent>Change the window size to change where the popover appears.</PopoverContent></Popover>}
-  onClick={() => console.log("You clicked the x!")}
-  key="primary"
-/>
-<IconButton
-  icon={FontAwesome.faTimes}
-  alt='bold x'
-  overlay={<Popover><PopoverContent>Change the window size to change where the popover appears.</PopoverContent></Popover>}
-  onClick={() => console.log("You clicked the warning x!")}
-  key="warning"
-  variant="warning"
-/>
-<IconButton
-  icon={FontAwesome.faTimes}
-  alt='bold x'
-  overlay={<Popover><PopoverContent>Change the window size to change where the popover appears.</PopoverContent></Popover>}
-  onClick={() => console.log("You clicked the success x!")}
-  key="success"
-  variant="success"
-/>
-</div>
+() => {
+  const icon = FontAwesome.faTimes;
+
+  return (
+    <div className="d-flex">
+      <IconButton icon={icon} alt='Close' onClick={() => {}} variant="primary" />
+      <IconButton icon={icon} alt='Close' onClick={() => {}} variant="secondary" />
+      <IconButton icon={icon} alt='Close' onClick={() => {}} variant="success" />
+      <IconButton icon={icon} alt='Close' onClick={() => {}} variant="warning" />
+      <IconButton icon={icon} alt='Close' onClick={() => {}} variant="danger" />
+      <IconButton icon={icon} alt='Close' onClick={() => {}} variant="light" />
+      <IconButton icon={icon} alt='Close' onClick={() => {}} variant="dark" />
+    </div>
+  );
+}
 ```
 
-```jsx live
-<div style={{backgroundColor: 'black', height: '6em', padding: '1em', color: 'white'}} >
-  <p>On a dark background</p>
-  <IconButton
-    icon={FontAwesome.faCoffee}
-    alt='stylized coffee mug'
-    invertColors={true}
-    onClick={() => console.log("You clicked coffee")}
-    variant='danger'
-  />
-</div>
-```
-
-<p>You can use a Tooltip or Popover component for the overlay. Icons without click handlers will show/hide the popover on click.</p>
+##### Inverted Colors
 
 ```jsx live
-<IconButton
-   icon={FontAwesome.faInfoCircle}
-   alt='lowercase i in a dark circle'
-   overlay={<Tooltip>You can use a Tooltip or Popover for the overlay</Tooltip>}
-   overlayPlacement='top'
-   variant='secondary'
-/>
+() => {
+  const variants = ["primary", "secondary", "success", "warning", "danger", "light", "dark"]
+
+  return (
+    <div className="d-flex">
+      {variants.map((variant) => {
+        return (
+          <div class={`bg-${variant} p-2 m-2`}>
+            <IconButton
+              key={variant}
+              icon={FontAwesome.faBars}
+              alt='Menu'
+              onClick={() => console.log("You clicked the menu button")}
+              variant={variant}
+              invertColors={true}
+            />
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 ```
 
 ##### Props
