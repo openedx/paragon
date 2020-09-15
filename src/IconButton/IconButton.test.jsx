@@ -1,51 +1,64 @@
 import React from 'react';
+import { shallow, mount } from 'enzyme';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
-import { mount } from 'enzyme';
-import { Popover, OverlayTrigger } from '../index';
 import IconButton from './index';
-import InteractiveIcon from './InteractiveIcon';
 
 describe('<IconButton />', () => {
-  const defaultAltText = 'infoooo';
+  const alt = 'alternative';
+  const icon = faInfoCircle;
+  const variant = 'secondary';
   const props = {
-    icon: faInfoCircle,
-    alt: defaultAltText,
-    overlay: <Popover>Foo</Popover>,
-    overlayPlacement: 'left',
+    alt,
+    icon,
+    variant,
   };
-  it('passes the correct props to the OverlayTrigger', () => {
-    const wrapper = mount((
-      <IconButton
-        {...props}
-        onClick={() => {}}
-      />));
-    const overlayT = wrapper.find(OverlayTrigger);
-    expect(overlayT.prop('trigger')).toEqual(['hover', 'focus']);
-    expect(overlayT.prop('placement')).toEqual(props.overlayPlacement);
-    expect(overlayT.prop('overlay')).toEqual(props.overlay);
+  it('passes the icon and alt text to the icon', () => {
+    const wrapper = shallow(<IconButton {...props} onClick={() => {}} />);
+    const faIcon = wrapper.find(FontAwesomeIcon).at(0);
+    expect(faIcon.prop('icon')).toEqual(icon);
+    expect(faIcon.prop('alt')).toEqual(alt);
   });
-  it('adds click to the triggers popover if there is no click handler', () => {
-    const wrapper = mount((
-      <IconButton
-        {...props}
-      />));
-    const overlayT = wrapper.find(OverlayTrigger);
-    expect(overlayT.prop('trigger')).toEqual(['hover', 'focus', 'click']);
+  it('should not render with --invert classnames if invertColors is false', () => {
+    const wrapper = shallow(<IconButton {...props} onClick={() => {}} />);
+    expect(wrapper.find(`.iconbutton-hover__${variant}--invert`)).toHaveLength(0);
+    expect(wrapper.find(`.iconbutton__${variant}--invert`)).toHaveLength(0);
   });
-  it('passes the correct props to InteractiveIcon', () => {
-    const onClickHandler = () => {};
-    const wrapper = mount((
-      <IconButton
-        {...props}
-        invertColors
-        iconClassNames="foo"
-        onClick={onClickHandler}
-      />));
-    const icon = wrapper.find(InteractiveIcon);
-    expect(icon.prop('alt')).toEqual(defaultAltText);
-    expect(icon.prop('icon')).toEqual(faInfoCircle);
-    expect(icon.prop('invertColors')).toEqual(true);
-    expect(icon.prop('iconClassNames')).toEqual('foo');
-    expect(icon.prop('onClick')).toEqual(onClickHandler);
+  it('should render with --invert classnames if invertColors is true', () => {
+    const wrapper = shallow(<IconButton {...props} onClick={() => {}} invertColors />);
+    expect(wrapper.find(`.iconbutton-hover__${variant}--invert`)).toHaveLength(1);
+    expect(wrapper.find(`.iconbutton__${variant}--invert`)).toHaveLength(1);
+  });
+  it('should add the icon class names if it receives them', () => {
+    const wrapper = shallow(<IconButton {...props} onClick={() => {}} iconClassNames="foo bar" />);
+    expect(wrapper.find('.foo')).toHaveLength(1);
+    expect(wrapper.find('.bar')).toHaveLength(1);
+  });
+  describe('onClick', () => {
+    it('performs the onClick action when clicked', () => {
+      const spy = jest.fn();
+      const wrapper = mount((<IconButton {...props} onClick={spy} />));
+      expect(spy).toHaveBeenCalledTimes(0);
+      wrapper.props().onClick();
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
+    it('only clicks one icon at a time', () => {
+      const spy1 = jest.fn();
+      const spy2 = jest.fn();
+      const wrapper = mount((
+        <div>
+          <IconButton {...props} onClick={spy1} />
+          <IconButton {...props} onClick={spy2} />
+        </div>
+      ));
+      const icon1 = wrapper.find(IconButton).at(0);
+      icon1.props().onClick();
+      expect(spy1).toHaveBeenCalledTimes(1);
+      expect(spy2).toHaveBeenCalledTimes(0);
+      const icon2 = wrapper.find(IconButton).at(1);
+      icon2.props().onClick();
+      expect(spy1).toHaveBeenCalledTimes(1);
+      expect(spy2).toHaveBeenCalledTimes(1);
+    });
   });
 });
