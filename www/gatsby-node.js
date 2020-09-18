@@ -29,8 +29,8 @@ function createCssUtilityClassNodes({ actions, createNodeId, createContentDigest
   // We convert to CSS first since we prefer the real values over tokens.
   const compiledCSS = sass
       .renderSync({
-        file: path.resolve(__dirname, '../scss/edx/utilities-only.scss'),
-        // Resolve tildes the way webpack would in our base npm project 
+        file: path.resolve(__dirname, '../scss/core/utilities-only.scss'),
+        // Resolve tildes the way webpack would in our base npm project
         importer: function(url, prev, done) {
           if (url[0] === '~') {
             url = path.resolve(__dirname, '../node_modules', url.substr(1));
@@ -44,13 +44,13 @@ function createCssUtilityClassNodes({ actions, createNodeId, createContentDigest
   sheet.rules.forEach(({
     selectors, position, declarations,
   }) => {
-    if (!selectors) return; 
+    if (!selectors) return;
 
     selectors.forEach((selector) => {
       if (selector[0] !== '.') return; // classes only
 
       selector = selector.substr(1);
-      
+
       const nodeData = {
         selector,
         declarations: declarations.map(({ property, value }) => `${property}: ${value};`),
