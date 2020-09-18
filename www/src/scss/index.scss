@@ -1,5 +1,12 @@
 @import "~font-awesome/css/font-awesome.min.css";
-@import "~paragon-style/edx/theme.scss";
+
+// These imports are non-standard because of how this documentation
+// site consumes Paragon inside the same project. Refer to the docs
+// for the standard method of inclusion.
+@import "~paragon-style/edx/fonts.scss";
+@import "~paragon-style/edx/_variables.scss";
+@import "~paragon-style/core/core.scss";
+@import "~paragon-style/edx/_overrides.scss";
 
 @import "./layout";
 @import "./hero";
