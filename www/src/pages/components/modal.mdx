@@ -25,7 +25,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 ##### Example Usage
 
-```jsx
+```jsx live
 class ModalWrapper extends React.Component {
   constructor(props) {
     super(props);
@@ -34,6 +34,8 @@ class ModalWrapper extends React.Component {
     this.resetModalWrapperState = this.resetModalWrapperState.bind(this);
 
     this.state = { open: false };
+    this.button = React.createRef();
+
   }
 
   openModal() {
@@ -42,7 +44,7 @@ class ModalWrapper extends React.Component {
 
   resetModalWrapperState() {
     this.setState({ open: false });
-    this.button.focus();
+    this.button.current.focus();
   }
 
   render() {
@@ -69,9 +71,7 @@ class ModalWrapper extends React.Component {
         <Button
           onClick={this.openModal}
           variant="light"
-          inputRef={input => {
-            this.button = input;
-          }}
+          ref={this.button}
         >
           Click me to open a modal!
         </Button>
