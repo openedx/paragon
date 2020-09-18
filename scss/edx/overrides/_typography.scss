@@ -43,27 +43,3 @@ small,
 .small {
   line-height: 1.428571428571429; // 20px
 }
-
-@mixin mobile-type {
-  .display-1,
-  .display-2,
-  .display-3,
-  .display-4,
-  h1, .h1 {
-    font-size: 2rem;
-    line-height: $headings-line-height;
-  }
-  h2, .h2 {
-    font-size: 1.75rem;
-  }
-  h3, .h3 {
-    font-size: 1.5rem;
-  }
-  h4, .h4 {
-    font-size: 1.375rem;
-  }
-}
-
-@media (max-width: map-get($grid-breakpoints, "sm")) {
-  @include mobile-type;
-}
