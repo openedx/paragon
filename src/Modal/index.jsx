@@ -20,10 +20,10 @@ class Modal extends React.Component {
 
     this.closeModalButtonId = newId('paragonCloseModalButton');
     this.headerId = newId();
-    this.el = global.createElement('div');
+    this.el = document.createElement('div');
 
     // Sets true for IE11, false otherwise: https://stackoverflow.com/a/22082397/6620612
-    this.isIE11 = !!global.MSInputMethodContext && !!global.documentMode;
+    this.isIE11 = !!global.MSInputMethodContext && !!document.documentMode;
 
     this.state = {
       open: props.open,
@@ -34,7 +34,7 @@ class Modal extends React.Component {
     if (this.firstFocusableElement) {
       this.firstFocusableElement.focus();
     }
-    this.parentElement = global.querySelector(this.props.parentSelector);
+    this.parentElement = document.querySelector(this.props.parentSelector);
     if (this.parentElement === null) {
       throw new Error(`Modal received invalid parentSelector: ${this.props.parentSelector}, no matching element found`);
     }
