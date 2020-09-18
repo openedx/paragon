@@ -4,13 +4,17 @@ const path = require('path');
 const sass = require('node-sass');
 const css = require('css');
 
+const themeLocation = 'USE_BRAND_THEME' in process.env
+  ? path.resolve(__dirname, '../scss/edx')
+  : path.resolve(__dirname, 'src/scss/stub-theme');
+
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
         '~paragon-react': path.resolve(__dirname, '../src'),
         '~paragon-style': path.resolve(__dirname, '../scss'),
-        '~paragon-theme': path.resolve(__dirname, '../scss/edx'),
+        '~paragon-theme': themeLocation,
         // Prevent multiple copies of react getting loaded
         // paragon react components would naturally import
         // react and react-dom from the node_modules folder
