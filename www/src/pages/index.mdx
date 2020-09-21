@@ -41,38 +41,21 @@ import { ComponentName } from '@edx/paragon';
 
 #### SCSS Foundation
 
-Usage for Open edX and others:
+Usage with no theme:
 
 ```scss
-// ... Any custom SCSS variables should be defined here
-@import "~@edx/paragon/scss/core/core.scss';
+@import "@edx/paragon/scss/core/core.scss";
 ```
 
-Usage on edx.org:
+Usage with a theme:
 
 ```scss
-@import "~@edx/paragon/scss/edx/theme.scss';
-@import '~@edx/paragon/scss/edx/fonts.scss'; // Roboto
+@import "@my-brand/fonts.scss";
+@import "@my-brand/variables.scss";
+// Import the Paragon core after setting brand-themed variables.
+@import "@edx/paragon/scss/core/core.scss";
+// Import brand overrides after the Paragon core.
+@import "@my-brand/overrides.scss";
 ```
 
-Note that including the fonts (Roboto) will affect performance.  In some micro-frontends you may choose not to load the custom font - this is a decision we've made for edx/frontend-app-payment, for instance, to keep it highly performant.
-
-#### CSS Foundation
-
-If you are not using SCSS you can use the pre-built CSS.
-
-Usage for Open edX and others:
-
-```scss
-// ... Any custom SCSS variables should be defined here
-@import "~@edx/paragon/dist/paragon.css';
-```
-
-Usage on edx.org:
-
-```scss
-@import "~@edx/paragon/dist/edx-paragon.css";
-```
-
-
-
+Note that including fonts will affect load performance.  In some pages you may choose not to load the custom font.
