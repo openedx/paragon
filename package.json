@@ -17,6 +17,7 @@
   "scripts": {
     "build": "make build",
     "build-docs": "cd ./www && \"$npm_execpath\" install && \"$npm_execpath\" run build",
+    "build-docs:with-theme": "cd ./www && \"$npm_execpath\" install && \"$npm_execpath\" run build:with-theme",
     "commit": "commit",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage",

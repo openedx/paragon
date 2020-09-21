@@ -1,5 +1,12 @@
 @import "~font-awesome/css/font-awesome.min.css";
-@import "~paragon-style/edx/theme.scss";
+
+// These imports are non-standard because of how this documentation
+// site consumes Paragon inside the same project. Refer to the docs
+// for the standard method of inclusion.
+@import "~paragon-theme/fonts.scss";
+@import "~paragon-theme/_variables.scss";
+@import "~paragon-style/core/core.scss";
+@import "~paragon-theme/_overrides.scss";
 
 @import "./layout";
 @import "./hero";
@@ -17,15 +24,6 @@
     & > h1, & > h2, & > h3, & > h4, & > h5 {
       margin-top: 2em;
     }
-  }
-
-  // Typography Page
-
-  .demo-georgia {
-    font-family: 'Georgia', serif !important;
-  }
-  .demo-roboto {
-    font-family: 'Roboto', sans-serif !important;
   }
 
   // Colors Page

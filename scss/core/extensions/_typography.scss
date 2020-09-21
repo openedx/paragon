@@ -1,0 +1,28 @@
+@mixin mobile-type {
+  .display-1,
+  .display-2,
+  .display-3,
+  .display-4,
+  h1, .h1 {
+    font-size: $h1-mobile-font-size;
+  }
+  h2, .h2 {
+    font-size: $h2-mobile-font-size;
+  }
+  h3, .h3 {
+    font-size: $h3-mobile-font-size;
+  }
+  h4, .h4 {
+    font-size: $h4-mobile-font-size;
+  }
+  h5, .h5 {
+    font-size: $h5-mobile-font-size;
+  }
+  h6, .h6 {
+    font-size: $h6-mobile-font-size;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, "sm")) {
+  @include mobile-type;
+}
