@@ -18,9 +18,21 @@ npm start
 
 Edits made to react components in `src/` will be hot-reloaded in this doc site.
 
-## A note about .mdx files 
+## Developing with a theme applied
 
-MDX is a flavor of Markdown that affords writing JSX directly inside markdown files. For more information visit the website: [https://mdxjs.com/](https://mdxjs.com/). 
+1. Run
+```sh
+npm run develop:with-theme
+```
+
+(Coming soon) Control the theme used by installing a custom brand under the npm alias `@edx/brand`.
+```sh
+npm i @edx/brand@file:~/my-brand
+```
+
+## A note about .mdx files
+
+MDX is a flavor of Markdown that affords writing JSX directly inside markdown files. For more information visit the website: [https://mdxjs.com/](https://mdxjs.com/).
 
 Syntax highlighting:
 

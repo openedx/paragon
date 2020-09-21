@@ -35,8 +35,10 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build --prefix-paths",
+    "build:with-theme": "USE_BRAND_THEME=1 gatsby build --prefix-paths",
     "clean": "gatsby clean",
     "develop": "gatsby develop",
+    "develop:with-theme": "USE_BRAND_THEME=1 gatsby develop",
     "lint": "eslint --ext .js --ext .jsx .",
     "start": "npm run develop",
     "test": "echo \"Error: no test specified\" && exit 1"

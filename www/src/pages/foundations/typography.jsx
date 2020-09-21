@@ -39,15 +39,6 @@ export default function () {
 
       <h1>Typography</h1>
 
-      <h2>Type</h2>
-      <p>Georgia is our headline attention getter. Roboto is our UI workhorse.</p>
-
-      <p className="demo-georgia h1">Georgia Bold</p>
-      <p className="demo-roboto h1">Roboto Bold</p>
-      <p className="demo-roboto h1" style={{ fontWeight: '500' }}>Roboto Medium</p>
-      <p className="demo-roboto h1 font-weight-normal">Roboto Regular</p>
-
-
       <table className="w-100 table pgn-doc__status-table">
         <tbody>
           <tr>
