@@ -240,7 +240,7 @@ class Modal extends React.Component {
               </div>
               <div className={footerClass}>
                 {this.renderButtons()}
-                { renderDefaultCloseButton && (
+                {renderDefaultCloseButton && (
                   <Button.Deprecated
                     id={this.closeModalButtonId}
                     buttonType="secondary"
