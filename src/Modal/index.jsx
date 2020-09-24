@@ -175,8 +175,11 @@ class Modal extends React.Component {
 
   renderModal() {
     const { open } = this.state;
-    const { renderHeaderCloseButton, dialogClassName } = this.props;
-
+    const {
+      dialogClassName,
+      renderDefaultCloseButton,
+      renderHeaderCloseButton,
+    } = this.props;
     return (
       <div>
         <div
@@ -234,16 +237,18 @@ class Modal extends React.Component {
               </div>
               <div className="modal-footer">
                 {this.renderButtons()}
-                <Button.Deprecated
-                  id={this.closeModalButtonId}
-                  buttonType="secondary"
-                  className="js-close-modal-on-click"
-                  onClick={this.close}
-                  inputRef={this.setCloseButton}
-                  onKeyDown={this.handleKeyDown}
-                >
-                  {this.props.closeText}
-                </Button.Deprecated>
+                {renderDefaultCloseButton && (
+                  <Button.Deprecated
+                    id={this.closeModalButtonId}
+                    buttonType="secondary"
+                    className="js-close-modal-on-click"
+                    onClick={this.close}
+                    inputRef={this.setCloseButton}
+                    onKeyDown={this.handleKeyDown}
+                  >
+                    {this.props.closeText}
+                  </Button.Deprecated>
+                )}
               </div>
             </div>
           </div>
@@ -282,6 +287,8 @@ Modal.propTypes = {
   variant: PropTypes.shape({
     status: PropTypes.string,
   }),
+  /** specifies whether the default close button is rendered in the footer. It defaults to true. */
+  renderDefaultCloseButton: PropTypes.bool,
   /** specifies whether a close button is rendered in the modal header. It defaults to true. */
   renderHeaderCloseButton: PropTypes.bool,
   /**
@@ -296,6 +303,7 @@ Modal.defaultProps = {
   buttons: [],
   closeText: 'Close',
   variant: {},
+  renderDefaultCloseButton: true,
   renderHeaderCloseButton: true,
   dialogClassName: undefined,
 };
