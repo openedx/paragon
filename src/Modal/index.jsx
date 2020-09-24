@@ -176,13 +176,10 @@ class Modal extends React.Component {
   renderModal() {
     const { open } = this.state;
     const {
-      alignButtonsRight,
       dialogClassName,
       renderDefaultCloseButton,
       renderHeaderCloseButton,
     } = this.props;
-    const justifyClass = alignButtonsRight ? 'justify-content-end' : 'justify-content-start';
-    const footerClass = classNames('modal-footer', justifyClass);
     return (
       <div>
         <div
@@ -238,7 +235,7 @@ class Modal extends React.Component {
               <div className="modal-body">
                 {this.renderBody()}
               </div>
-              <div className={footerClass}>
+              <div className="modal-footer">
                 {this.renderButtons()}
                 {renderDefaultCloseButton && (
                   <Button.Deprecated
@@ -283,8 +280,6 @@ Modal.propTypes = {
     PropTypes.element,
     PropTypes.object, // TODO: Only accept nodes in the future
   ])),
-  /** whether the footer buttons are aligned right. It defaults to true, buttons are aligned left if false. */
-  alignButtonsRight: PropTypes.bool,
   /** specifies the display text of the default Close button. It defaults to "Close". */
   closeText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   /** a function that is called on close. It can be used to perform actions upon closing of the modal, such as restoring focus to the previous logical focusable element. */
@@ -306,7 +301,6 @@ Modal.defaultProps = {
   open: false,
   parentSelector: 'body',
   buttons: [],
-  alignButtonsRight: true,
   closeText: 'Close',
   variant: {},
   renderDefaultCloseButton: true,
