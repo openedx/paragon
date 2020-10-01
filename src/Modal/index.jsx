@@ -249,13 +249,14 @@ class Modal extends React.Component {
   }
 
   render() {
-    if (this.el) {
-      return ReactDOM.createPortal(
-        this.renderModal(),
-        this.el,
-      );
+    if (!this.el) {
+      return null;
     }
-    return null;
+
+    return ReactDOM.createPortal(
+      this.renderModal(),
+      this.el,
+    );
   }
 }
 
