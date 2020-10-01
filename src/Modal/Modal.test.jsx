@@ -18,7 +18,7 @@ const defaultProps = {
   title,
   body,
   open: true,
-  onClose: () => {},
+  onClose: () => { },
 };
 const closeText = 'GO AWAY!';
 
@@ -84,6 +84,16 @@ describe('<Modal />', () => {
       expect(wrapper.find('button')).toHaveLength(1);
     });
 
+    it('render of the default footer close button is optional', () => {
+      wrapper = mount(<Modal {...defaultProps} renderDefaultCloseButton={false} />);
+      const modalHeader = wrapper.find('.modal-header');
+      const modalFooter = wrapper.find('.modal-footer');
+
+      expect(modalHeader.find('button')).toHaveLength(1);
+      expect(modalFooter.find('button')).toHaveLength(0);
+      expect(wrapper.find('button')).toHaveLength(1);
+    });
+
     it('renders custom close button string', () => {
       wrapper = mount(<Modal {...defaultProps} closeText={closeText} />);
       const modalFooter = wrapper.find('.modal-footer');
@@ -139,7 +149,7 @@ describe('<Modal />', () => {
     beforeEach(() => {
       // This is a gross hack to suppress error logs in the invalid parentSelector test
       jest.spyOn(console, 'error');
-      global.console.error.mockImplementation(() => {});
+      global.console.error.mockImplementation(() => { });
     });
 
     afterEach(() => {
@@ -147,10 +157,11 @@ describe('<Modal />', () => {
     });
 
     it('component receives props', () => {
-      wrapper = mount(<Modal title={title} body={body} onClose={() => {}} />);
+      wrapper = mount(<Modal {...defaultProps} open={false} />);
 
       modalOpen(false, wrapper);
       wrapper.setProps({ open: true });
+      wrapper.update();
       modalOpen(true, wrapper);
     });
 
@@ -159,6 +170,7 @@ describe('<Modal />', () => {
 
       modalOpen(true, wrapper);
       wrapper.setProps({ title: 'Changed modal title' });
+      wrapper.update();
       modalOpen(true, wrapper);
     });
 
@@ -189,18 +201,6 @@ describe('<Modal />', () => {
       modalOpen(false, wrapper);
     });
 
-    it('closes when Escape key pressed', () => {
-      modalOpen(true, wrapper);
-      wrapper.find('button').at(0).simulate('keyDown', { key: 'Escape' });
-      modalOpen(false, wrapper);
-    });
-
-    it('closes when a user clicks outside of the modal', () => {
-      modalOpen(true, wrapper);
-      wrapper.find('.modal').at(0).simulate('mouseDown');
-      modalOpen(false, wrapper);
-    });
-
     it('calls callback function on close', () => {
       const spy = jest.fn();
 
@@ -221,38 +221,11 @@ describe('<Modal />', () => {
       wrapper.find('button').at(0).simulate('click');
       modalOpen(false, wrapper);
       wrapper.setProps({ open: true });
+      wrapper.update();
       modalOpen(true, wrapper);
     });
   });
-  describe('invalid keystrokes do nothing', () => {
-    beforeEach(() => {
-      wrapper = mount(<Modal
-        {...defaultProps}
-      />);
-    });
 
-    it('does nothing on invalid keystroke q', () => {
-      let buttons = wrapper.find('button');
-
-      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
-      modalOpen(true, wrapper);
-      buttons.at(0).simulate('keyDown', { key: 'q' });
-      buttons = wrapper.find('button');
-
-      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
-      modalOpen(true, wrapper);
-    });
-
-    it('does nothing on invalid keystroke + ctrl', () => {
-      const buttons = wrapper.find('button');
-
-      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
-      modalOpen(true, wrapper);
-      buttons.at(0).simulate('keyDown', { key: 'Tab', ctrlKey: true });
-      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
-      modalOpen(true, wrapper);
-    });
-  });
   describe('focus changes correctly', () => {
     let buttons;
 
@@ -269,22 +242,36 @@ describe('<Modal />', () => {
     it('has reset focus after close and reopen', () => {
       expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
       wrapper.setProps({ open: false });
+      wrapper.update();
       modalOpen(false, wrapper);
       wrapper.setProps({ open: true });
+      wrapper.update();
       modalOpen(true, wrapper);
       expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
     });
 
-    it('traps focus forwards on tab keystroke', () => {
-      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
-      buttons.last().simulate('keyDown', { key: 'Tab' });
-      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
+    it('has focus on input in modal body', () => {
+      wrapper = mount((
+        <Modal
+          {...defaultProps}
+          // hide the header/footer close buttons so there's nothing tabbable in the modal
+          renderDefaultCloseButton={false}
+          renderHeaderCloseButton={false}
+          body={<div><input /></div>}
+        />
+      ));
+      expect(wrapper.find('input').html()).toEqual(document.activeElement.outerHTML);
     });
 
-    it('traps focus backwards on shift + tab keystroke', () => {
-      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
-      buttons.at(0).simulate('keyDown', { key: 'Tab', shiftKey: true });
-      expect(buttons.last().html()).toEqual(document.activeElement.outerHTML);
+    it('has focus on `.modal-content` when nothing else is tabbable', () => {
+      wrapper = mount((
+        <Modal
+          {...defaultProps}
+          renderDefaultCloseButton={false}
+          renderHeaderCloseButton={false}
+        />
+      ));
+      expect(wrapper.find('.modal-content').html()).toEqual(document.activeElement.outerHTML);
     });
   });
 });
