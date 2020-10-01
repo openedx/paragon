@@ -3,6 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import { FocusOn } from 'react-focus-on';
+import { tabbable } from 'tabbable';
 
 import { Button } from '..';
 import Icon from '../Icon';
@@ -14,16 +16,15 @@ class Modal extends React.Component {
     super(props);
 
     this.close = this.close.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.setFirstFocusableElement = this.setFirstFocusableElement.bind(this);
-    this.setCloseButton = this.setCloseButton.bind(this);
 
-    this.closeModalButtonId = newId('paragonCloseModalButton');
     this.headerId = newId();
-    this.el = document.createElement('div');
+    this.modalBodyRef = React.createRef();
 
-    // Sets true for IE11, false otherwise: https://stackoverflow.com/a/22082397/6620612
-    this.isIE11 = !!global.MSInputMethodContext && !!document.documentMode;
+    if (typeof document !== 'undefined') {
+      this.el = document.createElement('div');
+      // Sets true for IE11, false otherwise: https://stackoverflow.com/a/22082397/6620612
+      this.isIE11 = !!global.MSInputMethodContext && !!document.documentMode;
+    }
 
     this.state = {
       open: props.open,
@@ -31,39 +32,24 @@ class Modal extends React.Component {
   }
 
   componentDidMount() {
-    if (this.firstFocusableElement) {
-      this.firstFocusableElement.focus();
-    }
-    this.parentElement = document.querySelector(this.props.parentSelector);
+    const { parentSelector } = this.props;
+    this.parentElement = document.querySelector(parentSelector);
     if (this.parentElement === null) {
-      throw new Error(`Modal received invalid parentSelector: ${this.props.parentSelector}, no matching element found`);
+      throw new Error(`Modal received invalid parentSelector: ${parentSelector}, no matching element found`);
     }
     this.parentElement.appendChild(this.el);
   }
 
-  // eslint-disable-next-line react/no-deprecated
-  componentWillReceiveProps({ open }) {
-    if (open !== this.state.open) {
+  componentDidUpdate(prevProps, prevState) {
+    const { open } = this.props;
+    if (open !== prevProps.open || open !== prevState.open) {
+      // eslint-disable-next-line react/no-did-update-set-state
       this.setState({ open });
-    }
-  }
-
-  componentDidUpdate(prevState) {
-    if (this.state.open && !prevState.open) {
-      this.firstFocusableElement.focus();
     }
   }
 
   componentWillUnmount() {
     ReactDOM.unmountComponentAtNode(this.parentElement);
-  }
-
-  setFirstFocusableElement(input) {
-    this.firstFocusableElement = input;
-  }
-
-  setCloseButton(input) {
-    this.closeButton = input;
   }
 
   getVariantIconClassName() {
@@ -108,31 +94,25 @@ class Modal extends React.Component {
     );
   }
 
+  getTabbableBodyElements() {
+    if (this.modalBodyRef?.current) {
+      return tabbable(this.modalBodyRef.current);
+    }
+    return [];
+  }
+
+  isValidVariantStatus() {
+    const { variant } = this.props;
+    return Object.values(Variant.status).includes(variant.status);
+  }
+
   close(e) {
     if (e) {
       e.stopPropagation();
     }
 
-    if (!e || e.target.classList.contains('js-close-modal-on-click')) {
-      this.setState({ open: false });
-      this.props.onClose();
-    }
-  }
-
-  handleKeyDown(e) {
-    if (e.key === 'Escape') {
-      this.close();
-    } else if (e.key === 'Tab') {
-      if (e.shiftKey) {
-        if (e.target === this.firstFocusableElement) {
-          e.preventDefault();
-          this.closeButton.focus();
-        }
-      } else if (e.target === this.closeButton) {
-        e.preventDefault();
-        this.firstFocusableElement.focus();
-      }
-    }
+    this.setState({ open: false });
+    this.props.onClose();
   }
 
   renderButtons() {
@@ -141,7 +121,6 @@ class Modal extends React.Component {
       if (React.isValidElement(button)) {
         return React.cloneElement(button, {
           key: button.props.children,
-          onKeyDown: this.handleKeyDown,
         });
       }
 
@@ -151,7 +130,6 @@ class Modal extends React.Component {
         <Button.Deprecated
           {...buttonProps}
           key={label}
-          onKeyDown={this.handleKeyDown}
         >
           {label}
         </Button.Deprecated>
@@ -160,16 +138,16 @@ class Modal extends React.Component {
   }
 
   renderBody() {
-    const { variant } = this.props;
     let { body } = this.props;
 
     if (typeof body === 'string') {
       body = <p>{body}</p>;
     }
 
-    if (variant.status) {
+    if (this.isValidVariantStatus()) {
       body = this.getVariantGridBody(body);
     }
+
     return body;
   }
 
@@ -179,9 +157,21 @@ class Modal extends React.Component {
       dialogClassName,
       renderDefaultCloseButton,
       renderHeaderCloseButton,
+      buttons,
+      closeText,
+      title,
     } = this.props;
+
+    const hasTabbableElements = (
+      renderDefaultCloseButton
+      || renderHeaderCloseButton
+      || buttons.length > 0
+      || this.getTabbableBodyElements().length > 0
+    );
+    const renderModalFooter = renderDefaultCloseButton || buttons.length > 0;
+
     return (
-      <div>
+      <>
         <div
           className={classNames({
             'modal-backdrop': open,
@@ -193,7 +183,6 @@ class Modal extends React.Component {
         <div
           className={classNames(
             'modal',
-            'js-close-modal-on-click',
             {
               show: open,
               fade: !open,
@@ -202,7 +191,6 @@ class Modal extends React.Component {
             },
           )}
           role="presentation"
-          onMouseDown={this.close}
         >
           <div
             className={classNames(
@@ -214,50 +202,57 @@ class Modal extends React.Component {
             role="dialog"
             aria-modal
             aria-labelledby={this.headerId}
-            {...(!renderHeaderCloseButton ? { tabIndex: '-1' } : {})}
-            {...(!renderHeaderCloseButton ? { ref: this.setFirstFocusableElement } : {})}
           >
-            <div className="modal-content">
-              <div className="modal-header">
-                <h2 className="modal-title" id={this.headerId}>{this.props.title}</h2>
-                {renderHeaderCloseButton && (
-                  <Button.Deprecated
-                    className="p-1 js-close-modal-on-click"
-                    aria-labelledby={this.closeModalButtonId}
-                    onClick={this.close}
-                    inputRef={this.setFirstFocusableElement}
-                    onKeyDown={this.handleKeyDown}
-                  >
-                    <Icon className="fa fa-times js-close-modal-on-click" />
-                  </Button.Deprecated>
+            <FocusOn
+              enabled={open}
+              onClickOutside={this.close}
+              onEscapeKey={this.close}
+            >
+              <div
+                className="modal-content"
+                // if the modal doesn't contain any tabbable elements, make this element programmatically focusable.
+                {...(!hasTabbableElements ? { tabIndex: -1 } : {})}
+              >
+                <div className="modal-header">
+                  <h2 className="modal-title" id={this.headerId}>{title}</h2>
+                  {renderHeaderCloseButton && (
+                    <Button.Deprecated
+                      className="p-1"
+                      onClick={this.close}
+                    >
+                      <Icon className="fa fa-times" screenReaderText={closeText} />
+                    </Button.Deprecated>
+                  )}
+                </div>
+                <div className="modal-body" ref={this.modalBodyRef}>
+                  {this.renderBody()}
+                </div>
+                {renderModalFooter && (
+                  <div className="modal-footer">
+                    {renderDefaultCloseButton && (
+                      <Button
+                        variant="link"
+                        onClick={this.close}
+                      >
+                        {closeText}
+                      </Button>
+                    )}
+                    {this.renderButtons()}
+                  </div>
                 )}
               </div>
-              <div className="modal-body">
-                {this.renderBody()}
-              </div>
-              <div className="modal-footer">
-                {this.renderButtons()}
-                {renderDefaultCloseButton && (
-                  <Button.Deprecated
-                    id={this.closeModalButtonId}
-                    buttonType="secondary"
-                    className="js-close-modal-on-click"
-                    onClick={this.close}
-                    inputRef={this.setCloseButton}
-                    onKeyDown={this.handleKeyDown}
-                  >
-                    {this.props.closeText}
-                  </Button.Deprecated>
-                )}
-              </div>
-            </div>
+            </FocusOn>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 
   render() {
+    if (!this.el) {
+      return null;
+    }
+
     return ReactDOM.createPortal(
       this.renderModal(),
       this.el,
