@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 import newId from '../utils/newId';
@@ -13,12 +12,11 @@ function Icon(props) {
         className={props.className}
         aria-hidden={props.hidden}
       />
-      { props.screenReaderText
-        && (
-        <span className={classNames('sr-only')}>
+      {props.screenReaderText && (
+        <span className="sr-only">
           {props.screenReaderText}
         </span>
-        )}
+      )}
     </>
   );
 }
@@ -34,9 +32,9 @@ Icon.propTypes = {
   /** a boolean that determines the value of `aria-hidden` attribute on the Icon span, this value is `true` by default. */
   hidden: PropTypes.bool,
   // eslint-disable-next-line max-len
-  /** a string that will be used on a secondary span leveraging the `sr-only` style for screenreader only text, this value is `undefined` by default. This value is recommended for use unless the Icon is being used in a way that is purely decorative or provides no additional context for screen reader users. This field should be thought of the same way an `alt` attribute would be used for `image` tags.
+  /** a string or an element that will be used on a secondary span leveraging the `sr-only` style for screenreader only text, this value is `undefined` by default. This value is recommended for use unless the Icon is being used in a way that is purely decorative or provides no additional context for screen reader users. This field should be thought of the same way an `alt` attribute would be used for `image` tags.
    */
-  screenReaderText: PropTypes.string,
+  screenReaderText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };
 
 Icon.defaultProps = {
