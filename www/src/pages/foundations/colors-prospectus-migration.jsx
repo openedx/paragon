@@ -80,7 +80,7 @@ const prospectusColors = [
   {
     "name": "$whitesmoke",
     "color": "#f5f5f5",
-    "paragonColor": '',
+    "paragonColor": 'gray-100',
     "uses": 0,
     "description": ""
   },
@@ -101,21 +101,21 @@ const prospectusColors = [
   {
     "name": "$very-light-grey",
     "color": "#f3f3f4",
-    "paragonColor": '',
+    "paragonColor": 'gray-100',
     "uses": 0,
     "description": ""
   },
   {
     "name": "$very-light-blue",
     "color": "#edf3ff",
-    "paragonColor": '',
+    "paragonColor": 'primary-100',
     "uses": 0,
     "description": ""
   },
   {
     "name": "$border-grey",
     "color": "#f2f2f2",
-    "paragonColor": '',
+    "paragonColor": 'gray-100',
     "uses": 0,
     "description": ""
   },
@@ -150,7 +150,7 @@ const prospectusColors = [
   {
     "name": "$white-lilac",
     "color": "#ede7f1",
-    "paragonColor": '',
+    "paragonColor": 'none',
     "uses": 0,
     "description": ""
   },
