@@ -178,7 +178,7 @@ const prospectusColors = [
   {
     "name": "$silver",
     "color": "#d6dbe0",
-    "paragonColor": '',
+    "paragonColor": 'gray-200',
     "uses": 0,
     "description": ""
   },
