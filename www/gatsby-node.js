@@ -34,7 +34,9 @@ function createCssUtilityClassNodes({ actions, createNodeId, createContentDigest
   // We convert to CSS first since we prefer the real values over tokens.
   const compiledCSS = sass
       .renderSync({
-        file: path.resolve(__dirname, '../scss/core/utilities-only.scss'),
+        file: 'USE_BRAND_THEME' in process.env
+          ? path.resolve(__dirname, '../scss/edx/utilities-only.scss')
+          : path.resolve(__dirname, '../scss/core/utilities-only.scss'),
         // Resolve tildes the way webpack would in our base npm project
         importer: function(url, prev, done) {
           if (url[0] === '~') {
