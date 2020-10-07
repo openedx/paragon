@@ -33,6 +33,7 @@ $icon-color-invert: white !default;
     @each $name, $color in $icon-button-colors {
         &__#{$name} {
             @include button-focus($color);
+            background-color: $icon-color-invert;
             color: $color;
         }
         &__#{$name}:hover {
@@ -41,8 +42,8 @@ $icon-color-invert: white !default;
         }
         &__#{$name}--invert {
             @include button-focus($icon-color-invert);
-            color: $icon-color-invert;
             background-color: $color;
+            color: $icon-color-invert;
 
             &:hover {
                 background-color: $icon-color-invert;
