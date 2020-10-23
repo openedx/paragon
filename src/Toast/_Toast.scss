@@ -37,7 +37,7 @@ $toast-paragraph-padding: .4375rem;
       font-size: $small-font-size;
       margin: 0 1.5rem 0 0;
       max-width: 320px;
-      padding-top: $toast-paragraph-padding;
+      padding-top: $toast-paragraph-padding * 2;
       padding-bottom: $toast-paragraph-padding;
     }
   }
