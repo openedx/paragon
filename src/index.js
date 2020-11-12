@@ -40,6 +40,7 @@ export { default as Toast } from './Toast';
 export { default as ValidationFormGroup } from './ValidationFormGroup';
 export { default as TransitionReplace } from './TransitionReplace';
 export { default as ValidationMessage } from './ValidationMessage';
+export { default as TableNew } from './TableNew';
 export { default as Variant } from './utils/constants';
 export { default as useWindowSize } from './hooks/useWindowSize';
 
