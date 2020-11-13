@@ -8,11 +8,12 @@ import TableRow from './TableRow';
 import TextFilter from './TextFilter';
 import TableFilters from './TableFilters';
 import IndeterminateCheckbox from './IndeterminateCheckBox';
+import BulkActions from './BulkActions';
 
 function Table({ columns, data, title }) {
   const defaultColumn = React.useMemo(
     () => ({
-      // Let's set up our default Filter UI
+      // Set up our default Filter UI. This will be overriden defining Filter on a column
       Filter: TextFilter,
     }),
     [],
@@ -46,8 +47,10 @@ function Table({ columns, data, title }) {
         disableSortBy: true,
       },
       ...visibleColumn,
+      // create a column for an action
     ]);
   });
+  console.log('INSTANCE', instance)
 
   const {
     getTableProps,
@@ -64,10 +67,22 @@ function Table({ columns, data, title }) {
     );
   });
 
+  const actions = [
+    {
+      buttonText: 'Enroll',
+      handleClick: (selectedRows) => console.log('Enrolling ', selectedRows),
+    },
+    {
+      buttonText: 'Assign',
+      handleClick: (selectedRows) => console.log('Assigning ', selectedRows),
+    },
+  ];
+
   // Render the UI for your table
   return (
     <>
       <TableFilters columns={instance.columns} />
+      <BulkActions actions={actions} selectedRows={instance.selectedFlatRows} />
       {title && <h3>{title}</h3>}
       <table {...getTableProps()}>
         <TableHeaderRow headerGroups={headerGroups} />
@@ -80,7 +95,7 @@ function Table({ columns, data, title }) {
   );
 }
 
-Table.defaultPropTypes = {
+Table.defaultProps = {
   title: null,
 };
 
