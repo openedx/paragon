@@ -67,10 +67,10 @@ function Table({ columns, data, title }) {
     toggleAllRowsSelected,
   } = instance;
 
-  const renderRows = () => rows.map((row) => {
+  const renderRows = () => rows.map((row, index) => {
     prepareRow(row);
     return (
-      <TableRow row={row} key={row.id} />
+      <TableRow row={row} key={row.id} isStriped={index % 2} />
     );
   });
 
@@ -88,10 +88,13 @@ function Table({ columns, data, title }) {
   // Render the UI for your table
   return (
     <>
+      {title && <h3>{title}</h3>}
       <TableFilters columns={instance.columns} />
       <BulkActions actions={actions} selectedRows={instance.selectedFlatRows} />
-      <SelectionState numberOfSelectedRows={instance.selectedFlatRows.length} toggleAllRowsSelected={toggleAllRowsSelected} />
-      {title && <h3>{title}</h3>}
+      <SelectionState
+        numberOfSelectedRows={instance.selectedFlatRows.length}
+        toggleAllRowsSelected={toggleAllRowsSelected}
+      />
       <table {...getTableProps()}>
         <TableHeaderRow headerGroups={headerGroups} />
         <tbody {...getTableBodyProps()}>

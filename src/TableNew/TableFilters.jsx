@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const TableFilters = ({ columns }) => (
   <div>
-    <h3>Filters</h3>
+    <h4>Filters</h4>
     {columns.map(column => <div key={column.Header}>{column.canFilter ? column.render('Filter') : null}</div>)}
   </div>
 );
