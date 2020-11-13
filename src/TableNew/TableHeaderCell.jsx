@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const TableHeaderRow = ({ column }) => {
-  const isSortableIndicator = ' ↑↓';
+  const isSortableIndicator = column.canSort ? ' ↑↓' : '';
   const sortingIndicator = column.isSortedDesc ? ' ↑' : ' ↓';
 
   return (
@@ -24,6 +24,7 @@ TableHeaderRow.propTypes = {
     render: PropTypes.func.isRequired,
     isSortedDesc: PropTypes.bool,
     getSortByToggleProps: PropTypes.func.isRequired,
+    canSort: PropTypes.bool.isRequired,
   }).isRequired,
 };
 

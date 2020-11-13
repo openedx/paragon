@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useSortBy, useTable, useFilters } from 'react-table';
+import {
+  useSortBy, useTable, useFilters, useRowSelect,
+} from 'react-table';
 import TableHeaderRow from './TableHeader';
 import TableRow from './TableRow';
 import TextFilter from './TextFilter';
 import TableFilters from './TableFilters';
+import IndeterminateCheckbox from './IndeterminateCheckBox';
 
 function Table({ columns, data, title }) {
   const defaultColumn = React.useMemo(
@@ -20,7 +23,31 @@ function Table({ columns, data, title }) {
     columns,
     data,
     defaultColumn,
-  }, useFilters, useSortBy);
+  }, useFilters, useSortBy, useRowSelect,
+  hooks => {
+    hooks.visibleColumns.push(visibleColumn => [
+      // Create a column for selection
+      {
+        id: 'selection',
+        // The header can use the table's getToggleAllRowsSelectedProps method
+        // to render a checkbox
+        Header: ({ getToggleAllRowsSelectedProps }) => (
+          <div>
+            <IndeterminateCheckbox {...getToggleAllRowsSelectedProps()} />
+          </div>
+        ),
+        // The cell can use the individual row's getToggleRowSelectedProps method
+        // to the render a checkbox
+        Cell: ({ row }) => (
+          <div>
+            <IndeterminateCheckbox {...row.getToggleRowSelectedProps()} />
+          </div>
+        ),
+        disableSortBy: true,
+      },
+      ...visibleColumn,
+    ]);
+  });
 
   const {
     getTableProps,
