@@ -9,6 +9,8 @@ import TextFilter from './TextFilter';
 import TableFilters from './TableFilters';
 import IndeterminateCheckbox from './IndeterminateCheckBox';
 import BulkActions from './BulkActions';
+import Button from '../Button';
+import SelectionState from './SelectionState';
 
 function Table({ columns, data, title }) {
   const defaultColumn = React.useMemo(
@@ -48,9 +50,13 @@ function Table({ columns, data, title }) {
       },
       ...visibleColumn,
       // create a column for an action
+      {
+        id: 'action',
+        Header: 'Action',
+        Cell: ({ row }) => <Button variant="link" onClick={() => console.log("Assign", row)}>Assign</Button>,
+      },
     ]);
   });
-  console.log('INSTANCE', instance)
 
   const {
     getTableProps,
@@ -58,6 +64,7 @@ function Table({ columns, data, title }) {
     headerGroups,
     rows,
     prepareRow,
+    toggleAllRowsSelected,
   } = instance;
 
   const renderRows = () => rows.map((row) => {
@@ -83,6 +90,7 @@ function Table({ columns, data, title }) {
     <>
       <TableFilters columns={instance.columns} />
       <BulkActions actions={actions} selectedRows={instance.selectedFlatRows} />
+      <SelectionState numberOfSelectedRows={instance.selectedFlatRows.length} toggleAllRowsSelected={toggleAllRowsSelected} />
       {title && <h3>{title}</h3>}
       <table {...getTableProps()}>
         <TableHeaderRow headerGroups={headerGroups} />
