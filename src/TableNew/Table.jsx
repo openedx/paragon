@@ -1,80 +1,47 @@
-// import React from 'react';
-// import { useTable, useSortBy } from 'react-table';
-// import makeData from './makeData';
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import TableHeaderRow from './TableHeaderRow';
+import TableRow from './TableRow';
 
-// // const TableWrapper = () => {
-// //   const columns = React.useMemo(
-// //     () => [
-// //       {
-// //         Header: 'First Name',
-// //         accessor: 'firstName',
-// //         // Use a two-stage aggregator here to first
-// //         // count the total rows being aggregated,
-// //         // then sum any of those counts if they are
-// //         // aggregated further
-// //         aggregate: 'count',
-// //         Aggregated: ({ value }) => `${value} Names`,
-// //       },
-// //       {
-// //         Header: 'Last Name',
-// //         accessor: 'lastName',
-// //         // Use our custom `fuzzyText` filter on this column
-// //         filter: 'fuzzyText',
-// //         // Use another two-stage aggregator here to
-// //         // first count the UNIQUE values from the rows
-// //         // being aggregated, then sum those counts if
-// //         // they are aggregated further
-// //         aggregate: 'uniqueCount',
-// //         Aggregated: ({ value }) => `${value} Unique Names`,
-// //       },
-// //     ],
-// //     [],
-// //   );
+const Table = ({
+  getTableProps, headerGroups, getTableBodyProps, rows, prepareRow, isStriped,
+}) => {
+  const renderRows = () => rows.map((row, index) => {
+    prepareRow(row);
+    return (
+      <TableRow row={row} key={row.id} isStriped={index % 2 === 1} />
+    );
+  });
 
-// //   const [data, setData] = React.useState(() => makeData(10000));
+  return (
+    <table {...getTableProps({
+      className: isStriped ? classNames({ 'is-striped': isStriped }) : '',
+    })}
+    >
+      <TableHeaderRow headerGroups={headerGroups} />
+      <tbody {...getTableBodyProps()}>
+        {renderRows()}
+      </tbody>
+    </table>
+  );
+};
 
-// //   return (
-// //     <Table columns={columns} data={data} />
-// //   );
-// // };
+Table.defaultProps = {
+  isStriped: true,
+};
 
-// function Table({ columns, data }) {
-//   // Use the state and functions returned from useTable to build your UI
-//   const {
-//     getTableProps,
-//     getTableBodyProps,
-//     headerGroups,
-//     rows,
-//     prepareRow,
-//   } = useTable({
-//     columns,
-//     data,
-//   }, useSortBy);
+Table.propTypes = {
+  /** returns an object that will be spread as props to the <table> element */
+  getTableProps: PropTypes.func.isRequired,
+  /** returns an object that will be spread as props to the <tbody> element */
+  getTableBodyProps: PropTypes.func.isRequired,
+  headerGroups: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  /** function that prepares rows for render */
+  prepareRow: PropTypes.func.isRequired,
+  rows: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  /** should table rows be striped */
+  isStriped: PropTypes.bool,
+};
 
-//   // Render the UI for your table
-//   return (
-//     <table {...getTableProps()}>
-//       <thead>
-//         {headerGroups.map(headerGroup => (
-//           <tr {...headerGroup.getHeaderGroupProps()}>
-//             {headerGroup.headers.map(column => (
-//               <th {...column.getHeaderProps()}>{column.render('Header')}</th>
-//             ))}
-//           </tr>
-//         ))}
-//       </thead>
-//       <tbody {...getTableBodyProps()}>
-//         {rows.map((row, i) => {
-//           prepareRow(row);
-//           return (
-//             <tr {...row.getRowProps()}>
-//               {row.cells.map(cell => <td {...cell.getCellProps()}>{cell.render('Cell')}</td>)}
-//             </tr>
-//           );
-//         })}
-//       </tbody>
-//     </table>
-//   );
-// }
-
-// export default TableWrapper;
+export default Table;

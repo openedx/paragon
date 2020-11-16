@@ -3,16 +3,14 @@ import PropTypes from 'prop-types';
 import {
   useSortBy, useTable, useFilters, useRowSelect, usePagination,
 } from 'react-table';
-import TableHeaderRow from './TableHeader';
-import TableRow from './TableRow';
-import TextFilter from './TextFilter';
+import Table from './Table';
 import TableFilters from './TableFilters';
 import BulkActions from './BulkActions';
 import SelectionState from './SelectionState';
 import TablePagination from './TablePagination';
 import getVisibleColumns from './utils/getVisibleColumns';
 
-function Table({
+function TableWrapper({
   columns, data, title, bulkActions, defaultColumnValues, additionalColumns, isSelectable,
 }) {
   const defaultColumn = React.useMemo(
@@ -41,13 +39,6 @@ function Table({
     toggleAllRowsSelected,
   } = instance;
 
-  const renderRows = () => rows.map((row, index) => {
-    prepareRow(row);
-    return (
-      <TableRow row={row} key={row.id} isStriped={index % 2 === 1} />
-    );
-  });
-
   // Render the UI for your table
   return (
     <>
@@ -65,20 +56,23 @@ function Table({
           toggleAllRowsSelected={toggleAllRowsSelected}
         />
       )}
-      <table {...getTableProps()}>
-        <TableHeaderRow headerGroups={headerGroups} />
-        <tbody {...getTableBodyProps()}>
-          {rows.length > 0 && renderRows()}
-        </tbody>
-      </table>
-      {/* TODO: Add empty table  */}
+      {rows.length > 0 && (
+        <Table
+          getTableProps={getTableProps}
+          getTableBodyProps={getTableBodyProps}
+          headerGroups={headerGroups}
+          rows={rows}
+          prepareRow={prepareRow}
+        />
+      )}
+      {/* TODO: Add empty table thing */}
       {rows.length <= 0 && <div />}
       {/* <TablePagination previousPage={instance.previousPage} nextPage={instance.nextPage} /> */}
     </>
   );
 }
 
-Table.defaultProps = {
+TableWrapper.defaultProps = {
   title: null,
   bulkActions: [],
   defaultColumnValues: {},
@@ -86,7 +80,7 @@ Table.defaultProps = {
   additionalColumns: [],
 };
 
-Table.propTypes = {
+TableWrapper.propTypes = {
   columns: PropTypes.arrayOf(PropTypes.shape({
     Header: PropTypes.string.isRequired,
     accessor: PropTypes.string.isRequired,
@@ -119,4 +113,4 @@ Table.propTypes = {
   })),
 };
 
-export default Table;
+export default TableWrapper;

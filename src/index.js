@@ -40,7 +40,18 @@ export { default as Toast } from './Toast';
 export { default as ValidationFormGroup } from './ValidationFormGroup';
 export { default as TransitionReplace } from './TransitionReplace';
 export { default as ValidationMessage } from './ValidationMessage';
+/*
+  TODO: Decide if this table should be used instead of the current Paragon component
+  export { default as Table } from 'react-bootstrap/Table';
+*/
 export { default as TableNew } from './TableNew';
+export { default as TextFilter } from './TableNew/TextFilter';
+export { default as TableHeaderCell } from './TableNew/TableHeaderCell';
+export { default as TableCell } from './TableNew/TableCell';
+export { default as TableFilters } from './TableNew/TableFilters';
+export { default as TableHeader } from './TableNew/TableHeaderRow';
+export { default as TableRow } from './TableNew/TableRow';
+export { default as BulkActions } from './TableNew/BulkActions';
 export { default as Variant } from './utils/constants';
 export { default as useWindowSize } from './hooks/useWindowSize';
 
@@ -131,10 +142,6 @@ export { default as SplitButton } from 'react-bootstrap/SplitButton';
 export { default as Tab } from 'react-bootstrap/Tab';
 export { default as TabContainer } from 'react-bootstrap/TabContainer';
 export { default as TabContent } from 'react-bootstrap/TabContent';
-/*
-  TODO: Decide if this table should be used instead of the current Paragon component
-  export { default as Table } from 'react-bootstrap/Table';
-*/
 export { default as TabPane } from 'react-bootstrap/TabPane';
 export { default as ToggleButton } from 'react-bootstrap/ToggleButton';
 export { default as ToggleButtonGroup } from 'react-bootstrap/ToggleButtonGroup';
