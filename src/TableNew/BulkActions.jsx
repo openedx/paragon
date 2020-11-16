@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 
+// TODO: Convert to a dropdown if actions list is too long
 const BulkActions = ({ actions, selectedRows, classNames, ...rest }) => {
   return (
     <div classnames={classNames} {...rest}>
@@ -14,6 +15,10 @@ const BulkActions = ({ actions, selectedRows, classNames, ...rest }) => {
       })}
     </div>
   );
+};
+
+BulkActions.defaultProps = {
+  classNames: '',
 };
 
 BulkActions.propTypes = {

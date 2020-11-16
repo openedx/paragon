@@ -8,7 +8,7 @@ const TableHeaderRow = ({ headerGroups }) => {
       {headerGroups.map(headerGroup => (
         <tr {...headerGroup.getHeaderGroupProps()}>
           {headerGroup.headers.map(column => (
-            <TableHeadeCell column={column} key={column.Header} />
+            <TableHeadeCell column={column} {...column.getHeaderProps()} />
           ))}
         </tr>
       ))}
