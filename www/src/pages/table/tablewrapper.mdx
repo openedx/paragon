@@ -1,14 +1,14 @@
 ---
-title: 'Table'
+title: 'TableWrapper'
 type: 'component'
-status: 'Reassessing'
+status: 'New'
 designStatus: 'TBD'
 devStatus: 'TBD'
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
 import get from 'lodash/get';
-import { TableNew } from '~paragon-react';
+import { TableWrapper, TextFilter } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
 import SingleComponentStatus from '../../components/SingleComponentStatus';
 
@@ -23,7 +23,10 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 ##### unstyled
 
 ```jsx live
-<TableNew
+<TableWrapper
+  isSelectable
+  isSortable
+  isFilterable
   data={[
     {
       name: 'Lil Bub',
@@ -62,10 +65,11 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
       famous_for: 'getting halfway there'
     },
   ]}
-  columns={[
+  initialColumns={[
     {
       Header: 'Name',
       accessor: 'name',
+
     },
     {
       Header: 'Famous For',
@@ -77,5 +81,41 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
     },
   ]}
   title="Famous Internet Cats"
+  bulkActions={[
+    {
+      buttonText: 'Enroll',
+      handleClick: (selectedRows) => console.log('Enrolling ', selectedRows),
+    },
+    {
+      buttonText: 'Assign',
+      handleClick: (selectedRows) => console.log('Assigning ', selectedRows),
+    },
+  ]}
+  additionalColumns={[
+    {
+      id: 'action',
+      Header: 'Action',
+      // Proptypes disabled as this prop is passed in separately
+      // eslint-disable-next-line react/prop-types
+      Cell: ({ row }) => <Button variant="link" onClick={() => console.log("Assign", row)}>Assign</Button>,
+    }
+  ]}
+  defaultColumnValues={{ Filter: TextFilter }}
 />
 ```
+
+##### Props
+
+<StaticQuery
+  query={graphql`
+    query {
+      componentMetadata(displayName: { eq: "TableWrapper" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
+  render={({ componentMetadata }) => {
+    if (componentMetadata == null) return null;
+    return <PropsTable propMetaData={componentMetadata.props} />;
+  }}
+/>
