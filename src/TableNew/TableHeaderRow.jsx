@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TableHeaderCell from './TableHeaderCell';
 
-const TableHeaderRow = ({ headerGroups }) => {
-  console.log("HeaderGroup", headerGroups)
-  return (
+const TableHeaderRow = ({ headerGroups }) => (
   <thead>
     {headerGroups.map(headerGroup => (
       <tr {...headerGroup.getHeaderGroupProps()}>
@@ -14,7 +12,7 @@ const TableHeaderRow = ({ headerGroups }) => {
       </tr>
     ))}
   </thead>
-)};
+);
 
 TableHeaderRow.propTypes = {
   headerGroups: PropTypes.arrayOf(PropTypes.shape({

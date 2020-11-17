@@ -9,27 +9,42 @@ import BulkActions from './BulkActions';
 import SelectionState from './SelectionState';
 import TablePagination from './TablePagination';
 import getVisibleColumns from './utils/getVisibleColumns';
-import { propTypes } from 'react-bootstrap/esm/Image';
 
 function TableWrapper({
-  columns, data, title, bulkActions, defaultColumnValues, additionalColumns, isSelectable,
+  initialColumns, data, title, bulkActions, defaultColumnValues, additionalColumns,
+  isSelectable, isPaginated, isSortable, isFilterable,
 }) {
   const defaultColumn = React.useMemo(
     () => (defaultColumnValues),
     [defaultColumnValues],
   );
 
-  // Use the state and functions returned from useTable to build your UI
-  const instance = useTable({
-    columns,
-    data,
-    defaultColumn,
-  }, useFilters, useSortBy, usePagination, useRowSelect,
-  hooks => {
+  const tableArgs = [
+    {
+      columns: initialColumns,
+      data,
+      defaultColumn,
+    },
+  ];
+  if (isFilterable) {
+    tableArgs.push(useFilters);
+  }
+  if (isSortable) {
+    tableArgs.push(useSortBy);
+  }
+  if (isPaginated) {
+    tableArgs.push(usePagination);
+  }
+  if (isSelectable) {
+    tableArgs.push(useRowSelect);
+  }
+  // adds selection column and action columns as necessary
+  tableArgs.push(hooks => {
     hooks.visibleColumns.push(visibleColumns => getVisibleColumns(isSelectable, visibleColumns, additionalColumns));
   });
 
-  const hasFilters = useMemo(() => columns.some((column) => column.Filter), [columns]);
+  // Use the state and functions returned from useTable to build your UI
+  const instance = useTable(...tableArgs);
 
   const {
     getTableProps,
@@ -37,14 +52,13 @@ function TableWrapper({
     headerGroups,
     rows,
     prepareRow,
-    toggleAllRowsSelected,
   } = instance;
 
   // Render the UI for your table
   return (
     <>
       {title && <h3>{title}</h3>}
-      {hasFilters && <TableFilters columns={instance.columns} />}
+      {isFilterable && <TableFilters columns={instance.columns} />}
       {isSelectable && bulkActions.length > 0 && (
         <BulkActions
           actions={bulkActions}
@@ -54,7 +68,7 @@ function TableWrapper({
       {isSelectable && (
         <SelectionState
           numberOfSelectedRows={instance.selectedFlatRows.length}
-          toggleAllRowsSelected={toggleAllRowsSelected}
+          toggleAllRowsSelected={instance.toggleAllRowsSelected}
         />
       )}
       {rows.length > 0 && (
@@ -68,31 +82,51 @@ function TableWrapper({
       )}
       {/* TODO: Add empty table thing */}
       {rows.length <= 0 && <div />}
-      {/* <TablePagination previousPage={instance.previousPage} nextPage={instance.nextPage} /> */}
+      {isPaginated && (
+        <TablePagination
+          previousPage={instance.previousPage}
+          nextPage={instance.nextPage}
+          canNextPage={instance.canNextPage}
+          canPreviousPage={instance.canNextPage}
+          pageIndex={instance.state.pageIndex}
+          totalPages={instance.pageOptions.length}
+        />
+      )}
     </>
   );
 }
 
 TableWrapper.defaultProps = {
-  title: null,
+  additionalColumns: [],
   bulkActions: [],
   defaultColumnValues: {},
+  isFilterable: false,
+  isPaginated: false,
   isSelectable: false,
-  additionalColumns: [],
+  isSortable: false,
+  title: null,
 };
 
 TableWrapper.propTypes = {
   /** Definition of table columns */
-  columns: PropTypes.arrayOf(PropTypes.shape({
+  initialColumns: PropTypes.arrayOf(PropTypes.shape({
     /** User visible column name P */
     Header: PropTypes.string.isRequired,
     /** String used to access the correct cell data for this column */
     accessor: PropTypes.string.isRequired,
   })).isRequired,
+  /** Data to be displayed in the table */
+  data: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   /**  Title to be displayed above all table components */
   title: PropTypes.string,
   /** table rows can be selected */
   isSelectable: PropTypes.bool,
+  /** Table columns can be sorted */
+  isSortable: PropTypes.bool,
+  /** Paginate the table */
+  isPaginated: PropTypes.bool,
+  /** Table rows can be filtered, using a default filter in the default column values, or in the column definition */
+  isFilterable: PropTypes.bool,
   /** Actions to be performed on the table. isSelectable must be true to use bulk actions */
   bulkActions: PropTypes.arrayOf(PropTypes.shape({
     /** Text displayed to the user for each action */
@@ -103,8 +137,9 @@ TableWrapper.propTypes = {
   /** defaults that will be set on each column. Will be overridden by individual column values */
   defaultColumnValues: PropTypes.shape({
     /** A default filter component for the column */
-    Filter: PropTypes.node,
+    Filter: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
   }),
+  /** Actions or other additional non-data columns can be added here  */
   additionalColumns: PropTypes.arrayOf(PropTypes.shape({
     /** id must be unique from other columns ids */
     id: PropTypes.string.isRequired,
