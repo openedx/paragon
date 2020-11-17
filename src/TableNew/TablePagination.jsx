@@ -2,24 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 
-const TablePagination = ({ previousPage, nextPage, canPreviousPage, canNextPage, pageIndex, totalPages }) => {
-  return (
-    <div className="pagination">
-      <Button onClick={() => previousPage()} disabled={!canPreviousPage}>
-        {'<'}
-      </Button>
-      <Button onClick={() => nextPage()} disabled={!canNextPage}>
-        {'>'}
-      </Button>
-      <span>
-        Page{' '}
-        <strong>
-          {pageIndex + 1} of {totalPages}
-        </strong>{' '}
-      </span>
-    </div>
-  );
-};
+const TablePagination = ({
+  previousPage, nextPage, canPreviousPage, canNextPage, pageIndex, totalPages,
+}) => (
+  <div className="pagination">
+    <Button onClick={() => previousPage()} disabled={!canPreviousPage}>
+      {'<'}
+    </Button>
+    <Button onClick={() => nextPage()} disabled={!canNextPage}>
+      {'>'}
+    </Button>
+    <span>
+      Page{' '}
+      <strong>
+        {pageIndex + 1} of {totalPages}
+      </strong>{' '}
+    </span>
+  </div>
+);
 
 TablePagination.propTypes = {
   previousPage: PropTypes.func.isRequired,

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
   useSortBy, useTable, useFilters, useRowSelect, usePagination,
