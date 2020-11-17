@@ -9,6 +9,7 @@ import BulkActions from './BulkActions';
 import SelectionState from './SelectionState';
 import TablePagination from './TablePagination';
 import getVisibleColumns from './utils/getVisibleColumns';
+import { propTypes } from 'react-bootstrap/esm/Image';
 
 function TableWrapper({
   columns, data, title, bulkActions, defaultColumnValues, additionalColumns, isSelectable,
@@ -81,34 +82,35 @@ TableWrapper.defaultProps = {
 };
 
 TableWrapper.propTypes = {
+  /** Definition of table columns */
   columns: PropTypes.arrayOf(PropTypes.shape({
+    /** User visible column name P */
     Header: PropTypes.string.isRequired,
+    /** String used to access the correct cell data for this column */
     accessor: PropTypes.string.isRequired,
   })).isRequired,
-  // Data to be displated in the table. Data should be accessible via the accessors of the columns
-  data: PropTypes.arrayOf(PropTypes.shape()).isRequired,
-  // Title to be displayed above all table components
+  /**  Title to be displayed above all table components */
   title: PropTypes.string,
-  // table rows can be selected
+  /** table rows can be selected */
   isSelectable: PropTypes.bool,
-  // Actions to be performed on the table. isSelectable must be true to use bulk actions
+  /** Actions to be performed on the table. isSelectable must be true to use bulk actions */
   bulkActions: PropTypes.arrayOf(PropTypes.shape({
-    // Text displayed to the user for each action
+    /** Text displayed to the user for each action */
     buttonText: PropTypes.string.isRequired,
-    // Click handler for the action; it will be passed the selected rows
+    /** Click handler for the action; it will be passed the selected rows */
     handleClick: PropTypes.func.isRequired,
   })),
-  // defaults that will be set on each column. Will be overridden by individual column values
+  /** defaults that will be set on each column. Will be overridden by individual column values */
   defaultColumnValues: PropTypes.shape({
-    // A default filter component for the column
+    /** A default filter component for the column */
     Filter: PropTypes.node,
   }),
   additionalColumns: PropTypes.arrayOf(PropTypes.shape({
-    // id must be unique from other columns ids
+    /** id must be unique from other columns ids */
     id: PropTypes.string.isRequired,
-    // column header that will be displayed to the user
+    /** column header that will be displayed to the user */
     Header: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-    // Component that renders in the added column. It will receive the row as a prop
+    /** Component that renders in the added column. It will receive the row as a prop */
     Cell: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
   })),
 };

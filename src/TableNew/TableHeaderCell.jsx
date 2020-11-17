@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TableHeaderRow = ({ column }) => {
-  const isSortableIndicator = column.canSort ? ' ↑↓' : '';
-  const sortingIndicator = column.isSortedDesc ? ' ↑' : ' ↓';
-  const toggleProps = column.getSortByToggleProps ? column.getSortByToggleProps() : {};
+export const sortIndicator = ' ↑↓';
+export const sortedDescIndicator = ' ↓';
+export const sortedAscIndicator = ' ↑';
+
+const TableHeaderCell = ({ column }) => {
+  const isSortableIndicator = column.canSort ? sortIndicator : '';
+  const sortingIndicator = column.isSortedDesc ? sortedDescIndicator : sortedAscIndicator;
+  const toggleProps = column.canSort && column.getSortByToggleProps ? column.getSortByToggleProps() : {};
 
   return (
     <th {...column.getHeaderProps(toggleProps)}>
@@ -18,7 +22,7 @@ const TableHeaderRow = ({ column }) => {
   );
 };
 
-TableHeaderRow.propTypes = {
+TableHeaderCell.propTypes = {
   column: PropTypes.shape({
     /** Returns props for the <th> element */
     getHeaderProps: PropTypes.func.isRequired,
@@ -35,4 +39,4 @@ TableHeaderRow.propTypes = {
   }).isRequired,
 };
 
-export default TableHeaderRow;
+export default TableHeaderCell;

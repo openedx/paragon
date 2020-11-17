@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TableHeaderCell from './TableHeaderCell';
 
-const TableHeaderRow = ({ headerGroups }) => (
+const TableHeaderRow = ({ headerGroups }) => {
+  console.log("HeaderGroup", headerGroups)
+  return (
   <thead>
     {headerGroups.map(headerGroup => (
       <tr {...headerGroup.getHeaderGroupProps()}>
@@ -12,15 +14,16 @@ const TableHeaderRow = ({ headerGroups }) => (
       </tr>
     ))}
   </thead>
-);
+)};
 
 TableHeaderRow.propTypes = {
   headerGroups: PropTypes.arrayOf(PropTypes.shape({
-    headers: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+    headers: PropTypes.arrayOf(PropTypes.shape({
+      /** Props for the TableHeaderCell component. Must include a key */
+      getHeaderProps: PropTypes.func.isRequired,
+    })).isRequired,
     /** Returns props for the header <tr> element */
     getHeaderGroupProps: PropTypes.func.isRequired,
-    /** Props for the TableHeaderCell component. Must include a key */
-    getHeaderProps: PropTypes.func.isRequired,
   })).isRequired,
 };
 

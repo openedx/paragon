@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 
-const TablePagination = ({ previousPage, nextPage }) => {
+const TablePagination = ({ previousPage, nextPage, canPreviousPage, canNextPage, pageIndex, totalPages }) => {
   return (
     <div className="pagination">
       <Button onClick={() => previousPage()} disabled={!canPreviousPage}>
@@ -14,7 +14,7 @@ const TablePagination = ({ previousPage, nextPage }) => {
       <span>
         Page{' '}
         <strong>
-          {pageIndex + 1} of {pageOptions.length}
+          {pageIndex + 1} of {totalPages}
         </strong>{' '}
       </span>
     </div>
@@ -22,7 +22,12 @@ const TablePagination = ({ previousPage, nextPage }) => {
 };
 
 TablePagination.propTypes = {
-
+  previousPage: PropTypes.func.isRequired,
+  nextPage: PropTypes.func.isRequired,
+  canPreviousPage: PropTypes.bool.isRequired,
+  canNextPage: PropTypes.bool.isRequired,
+  pageIndex: PropTypes.number.isRequired,
+  totalPages: PropTypes.number.isRequired,
 };
 
 export default TablePagination;

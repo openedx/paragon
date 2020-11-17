@@ -44,7 +44,7 @@ export { default as ValidationMessage } from './ValidationMessage';
   TODO: Decide if this table should be used instead of the current Paragon component
   export { default as Table } from 'react-bootstrap/Table';
 */
-export { default as TableNew } from './TableNew';
+export { default as TableWrapper } from './TableNew';
 export { default as TextFilter } from './TableNew/TextFilter';
 export { default as TableHeaderCell } from './TableNew/TableHeaderCell';
 export { default as TableCell } from './TableNew/TableCell';
@@ -52,6 +52,7 @@ export { default as TableFilters } from './TableNew/TableFilters';
 export { default as TableHeader } from './TableNew/TableHeaderRow';
 export { default as TableRow } from './TableNew/TableRow';
 export { default as BulkActions } from './TableNew/BulkActions';
+
 export { default as Variant } from './utils/constants';
 export { default as useWindowSize } from './hooks/useWindowSize';
 
