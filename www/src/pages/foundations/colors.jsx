@@ -103,8 +103,11 @@ export default function ({ data }) {
 
       <h6>Variable name</h6>
       <code className="d-block mb-4 lead bg-gray-100 p-3">
-        // ${themeName}-{level}
-        $primary-100
+        // $color_name-level <br/>
+        $primary-100<br/>
+        $primary-200<br/>
+        $primary-300<br/>
+        $primary-400
       </code>
 
       <h6>Mixin (deprecated)</h6>
