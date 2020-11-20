@@ -2,12 +2,15 @@
 // Color system
 
 $white:    #fff !default;
-$gray-100: #F9F9F9 !default;
-$gray-200: #b9babe !default;
-$gray-300: #A2A4A9 !default;
-$gray-500: #686B73 !default;
-$gray-700: #2D323E !default;
-$gray-900: #171C29 !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
 $black:    #000 !default;
 
 $grays: () !default;
@@ -16,8 +19,11 @@ $grays: map-merge(
     "100": $gray-100,
     "200": $gray-200,
     "300": $gray-300,
+    "400": $gray-400,
     "500": $gray-500,
+    "600": $gray-600,
     "700": $gray-700,
+    "800": $gray-800,
     "900": $gray-900
   ),
   $grays
@@ -45,7 +51,6 @@ $colors: map-merge(
   $colors
 );
 
-
 $primary: $blue !default;
 $success: $green !default;
 $info: $teal !default;
@@ -69,36 +74,167 @@ $theme-colors: map-merge(
   $theme-colors
 );
 
+$primary-100: mix(white, $primary,  94%);
+$primary-200: mix(white, $primary,  75%);
+$primary-300: mix(white, $primary,  50%);
+$primary-400: mix(white, $primary,  25%);
+$primary-500: $primary;
+$primary-600: mix(black, $primary,  10%);
+$primary-700: mix(black, $primary,  20%);
+$primary-800: mix(black, $primary,  25%);
+$primary-900: mix(black, $primary,  30%);
+
+$success-100: mix(white, $success,  94%);
+$success-200: mix(white, $success,  75%);
+$success-300: mix(white, $success,  50%);
+$success-400: mix(white, $success,  25%);
+$success-500: $success;
+$success-600: mix(black, $success,  10%);
+$success-700: mix(black, $success,  20%);
+$success-800: mix(black, $success,  25%);
+$success-900: mix(black, $success,  30%);
+
+$info-100: mix(white, $info,  94%);
+$info-200: mix(white, $info,  75%);
+$info-300: mix(white, $info,  50%);
+$info-400: mix(white, $info,  25%);
+$info-500: $info;
+$info-600: mix(black, $info,  10%);
+$info-700: mix(black, $info,  20%);
+$info-800: mix(black, $info,  25%);
+$info-900: mix(black, $info,  30%);
+
+$warning-100: mix(white, $warning,  94%);
+$warning-200: mix(white, $warning,  75%);
+$warning-300: mix(white, $warning,  50%);
+$warning-400: mix(white, $warning,  25%);
+$warning-500: $warning;
+$warning-600: mix(black, $warning,  10%);
+$warning-700: mix(black, $warning,  20%);
+$warning-800: mix(black, $warning,  25%);
+$warning-900: mix(black, $warning,  30%);
+
+$danger-100: mix(white, $danger,  94%);
+$danger-200: mix(white, $danger,  75%);
+$danger-300: mix(white, $danger,  50%);
+$danger-400: mix(white, $danger,  25%);
+$danger-500: $danger;
+$danger-600: mix(black, $danger,  10%);
+$danger-700: mix(black, $danger,  20%);
+$danger-800: mix(black, $danger,  25%);
+$danger-900: mix(black, $danger,  30%);
+
+$light-100: mix(white, $light,  94%);
+$light-200: mix(white, $light,  75%);
+$light-300: mix(white, $light,  50%);
+$light-400: mix(white, $light,  25%);
+$light-500: $light;
+$light-600: mix(black, $light,  10%);
+$light-700: mix(black, $light,  20%);
+$light-800: mix(black, $light,  25%);
+$light-900: mix(black, $light,  30%);
+
+$dark-100: mix(white, $dark,  94%);
+$dark-200: mix(white, $dark,  75%);
+$dark-300: mix(white, $dark,  50%);
+$dark-400: mix(white, $dark,  25%);
+$dark-500: $dark;
+$dark-600: mix(black, $dark,  10%);
+$dark-700: mix(black, $dark,  20%);
+$dark-800: mix(black, $dark,  25%);
+$dark-900: mix(black, $dark,  30%);
 
 
-$theme-color-levels: (
-  // Color levels include 100, 200, 300, 500, 700, 900 by default
-  // These values will override any calculation made from the values
-  // defined in $color-levels below. Example definition:
-  //
-  // "primary-100": #f4f7ff,
-  // "primary-200": #D8EDF8,
-  // "primary-300": #6c83cd,
-  // "primary-500": $primary,
-  // "primary-700": #1a337b,
-  // "primary-900": #03195c,
-) !default;
+$theme-color-levels: () !default;
 
-
-$color-levels: () !default;
-$color-levels: map-merge(
+$theme-color-levels: map-merge(
   (
-    100: ( "mix-color": white, "percent": 94% ),
-    200: ( "mix-color": white, "percent": 75% ),
-    300: ( "mix-color": white, "percent": 50% ),
-    500: ( "mix-color": white, "percent": 0% ),
-    700: ( "mix-color": black, "percent": 20% ),
-    900: ( "mix-color": black, "percent": 30% ),
+  "gray-100": $gray-100,
+  "gray-200": $gray-200,
+  "gray-300": $gray-300,
+  "gray-400": $gray-400,
+  "gray-500": $gray-500,
+  "gray-600": $gray-600,
+  "gray-700": $gray-700,
+  "gray-800": $gray-800,
+  "gray-900": $gray-900,
+
+  "primary-100": $primary-100,
+  "primary-200": $primary-200,
+  "primary-300": $primary-300,
+  "primary-400": $primary-400,
+  "primary-500": $primary-500,
+  "primary-600": $primary-600,
+  "primary-700": $primary-700,
+  "primary-800": $primary-800,
+  "primary-900": $primary-900,
+
+  "success-100": $success-100,
+  "success-200": $success-200,
+  "success-300": $success-300,
+  "success-400": $success-400,
+  "success-500": $success-500,
+  "success-600": $success-600,
+  "success-700": $success-700,
+  "success-800": $success-800,
+  "success-900": $success-900,
+
+  "info-100": $info-100,
+  "info-200": $info-200,
+  "info-300": $info-300,
+  "info-400": $info-400,
+  "info-500": $info-500,
+  "info-600": $info-600,
+  "info-700": $info-700,
+  "info-800": $info-800,
+  "info-900": $info-900,
+
+  "warning-100": $warning-100,
+  "warning-200": $warning-200,
+  "warning-300": $warning-300,
+  "warning-400": $warning-400,
+  "warning-500": $warning-500,
+  "warning-600": $warning-600,
+  "warning-700": $warning-700,
+  "warning-800": $warning-800,
+  "warning-900": $warning-900,
+
+  "danger-100": $danger-100,
+  "danger-200": $danger-200,
+  "danger-300": $danger-300,
+  "danger-400": $danger-400,
+  "danger-500": $danger-500,
+  "danger-600": $danger-600,
+  "danger-700": $danger-700,
+  "danger-800": $danger-800,
+  "danger-900": $danger-900,
+
+  "light-100": $light-100,
+  "light-200": $light-200,
+  "light-300": $light-300,
+  "light-400": $light-400,
+  "light-500": $light-500,
+  "light-600": $light-600,
+  "light-700": $light-700,
+  "light-800": $light-800,
+  "light-900": $light-900,
+
+  "dark-100": $dark-100,
+  "dark-200": $dark-200,
+  "dark-300": $dark-300,
+  "dark-400": $dark-400,
+  "dark-500": $dark-500,
+  "dark-600": $dark-600,
+  "dark-700": $dark-700,
+  "dark-800": $dark-800,
+  "dark-900": $dark-900,
   ),
-  $color-levels
+  $theme-color-levels
 );
 
+
 $element-color-levels: () !default;
+
 $element-color-levels: map-merge(
   (
     "background": 100,
