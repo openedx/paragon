@@ -1,8 +1,9 @@
 // Add background, border, and text color utilities
 // for all theme color levels.
+$color-levels: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 
 @each $color, $value in $theme-colors {
-  @each $level, $color-shift in $color-levels {
+  @each $level in $color-levels {
     @include bg-variant(".bg-#{$color}-#{$level}", theme-color($color, $level), true);
     @include text-emphasis-variant(".text-#{$color}-#{$level}", theme-color($color, $level), true);
     .border-#{$color}-#{$level} {
