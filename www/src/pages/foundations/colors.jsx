@@ -98,12 +98,21 @@ export default function ({ data }) {
 
       <h3>SCSS Color Usage</h3>
       <p>
-        Include these colors in scss files using the mixin.
+        Include these colors in scss files in one of two ways:
       </p>
 
+      <h6>Variable name</h6>
+      <code className="d-block mb-4 lead bg-gray-100 p-3">
+        // ${themeName}-{level}
+        $primary-100
+      </code>
+
+      <h6>Mixin (deprecated)</h6>
       <code className="d-block mb-4 lead bg-gray-100 p-3">
         theme-color($color-name, $variant)
       </code>
+
+      <p>Using the variable name instead of the theme-color mixin will make later upgrade paths easier. Paragon may begin to adopt CSS variables for theming and attempt to eliminate mixins from the public api.</p>
 
       <table className="table pgn-doc__table">
         <tbody>
@@ -136,6 +145,10 @@ export default function ({ data }) {
       </table>
 
       <h6>Example</h6>
+      <code className="d-block mb-2 bg-gray-100 p-3">
+        border: solid 1px <strong>$gray-300</strong>;
+      </code>
+
       <code className="d-block mb-2 bg-gray-100 p-3">
         border: solid 1px <strong>theme-color(&ldquo;gray&rdquo;, &ldquo;border&rdquo;)</strong>;
       </code>
