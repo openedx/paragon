@@ -118,6 +118,32 @@ fieldset:disabled a.btn {
 }
 
 //
+// Tertiary buttons
+//
+
+.btn-tertiary {
+  $background: $btn-tertiary-bg;
+  $border: transparent;
+  $hover-background: $btn-tertiary-hover-bg;
+  $hover-border: transparent;
+  $active-background: $btn-tertiary-active-bg;
+  $active-border: transparent;
+
+  @include button-variant(
+    $background,
+    $border,
+    $hover-background,
+    $hover-border,
+    $active-background,
+    $active-border
+  );
+
+  color: $btn-tertiary-color;
+
+  @include button-focus(theme-color("primary", "focus"));
+}
+
+//
 // Link buttons
 //
 
