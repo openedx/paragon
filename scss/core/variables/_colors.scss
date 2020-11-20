@@ -52,6 +52,7 @@ $colors: map-merge(
 );
 
 $primary: $blue !default;
+$brand: $primary !default;
 $success: $green !default;
 $info: $teal !default;
 $danger: $red !default;
@@ -63,6 +64,7 @@ $theme-colors: () !default;
 $theme-colors: map-merge(
   (
     "primary":    $primary,
+    "brand":      $brand,
     "success":    $success,
     "info":       $info,
     "warning":    $warning,
@@ -83,6 +85,16 @@ $primary-600: mix(black, $primary,  10%);
 $primary-700: mix(black, $primary,  20%);
 $primary-800: mix(black, $primary,  25%);
 $primary-900: mix(black, $primary,  30%);
+
+$brand-100: mix(white, $brand,  94%);
+$brand-200: mix(white, $brand,  75%);
+$brand-300: mix(white, $brand,  50%);
+$brand-400: mix(white, $brand,  25%);
+$brand-500: $brand;
+$brand-600: mix(black, $brand,  10%);
+$brand-700: mix(black, $brand,  20%);
+$brand-800: mix(black, $brand,  25%);
+$brand-900: mix(black, $brand,  30%);
 
 $success-100: mix(white, $success,  94%);
 $success-200: mix(white, $success,  75%);
@@ -168,6 +180,16 @@ $theme-color-levels: map-merge(
   "primary-700": $primary-700,
   "primary-800": $primary-800,
   "primary-900": $primary-900,
+
+  "brand-100": $brand-100,
+  "brand-200": $brand-200,
+  "brand-300": $brand-300,
+  "brand-400": $brand-400,
+  "brand-500": $brand-500,
+  "brand-600": $brand-600,
+  "brand-700": $brand-700,
+  "brand-800": $brand-800,
+  "brand-900": $brand-900,
 
   "success-100": $success-100,
   "success-200": $success-200,
