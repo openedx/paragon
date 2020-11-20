@@ -355,6 +355,11 @@ $btn-focus-box-shadow:        $input-btn-focus-box-shadow !default;
 $btn-disabled-opacity:        .65 !default;
 $btn-active-box-shadow:       none;
 
+$btn-tertiary-color:          $gray-700 !default;
+$btn-tertiary-bg:             transparent !default;
+$btn-tertiary-hover-bg:       $light-500 !default;
+$btn-tertiary-active-bg:      $light-500 !default;
+
 $btn-link-disabled-color:     theme-color("gray", "light-text") !default;
 
 $btn-block-spacing-y:         .5rem !default;
