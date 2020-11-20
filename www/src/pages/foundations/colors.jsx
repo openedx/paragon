@@ -12,6 +12,7 @@ const utilityClasses = {
 const colors = [
   { themeName: 'gray', color: 'gray', unusedLevels: [] },
   { themeName: 'primary', color: 'blue', unusedLevels: [] },
+  { themeName: 'brand', color: 'blue', unusedLevels: [] },
   { themeName: 'success', color: 'green', unusedLevels: [] },
   { themeName: 'info', color: 'teal', unusedLevels: [] },
   { themeName: 'danger', color: 'red', unusedLevels: [] },
@@ -106,8 +107,8 @@ export default function ({ data }) {
         // $color_name-level <br/>
         $primary-100<br/>
         $primary-200<br/>
-        $primary-300<br/>
-        $primary-400
+        $brand-100<br/>
+        $brand-200
       </code>
 
       <h6>Mixin (deprecated)</h6>
