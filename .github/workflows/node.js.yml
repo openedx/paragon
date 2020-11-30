@@ -22,3 +22,7 @@ jobs:
       run: npm run build
     - name: Build Docs
       run: npm run build-docs
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
