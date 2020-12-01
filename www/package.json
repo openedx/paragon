@@ -3,6 +3,7 @@
   "description": "Paragon Pattern Library Documentation",
   "version": "1.0.0",
   "dependencies": {
+    "@edx/brand": "npm:@edx/brand-edx.org@^1.2.3",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@mdx-js/mdx": "^1.6.16",
     "@mdx-js/react": "^1.6.16",
@@ -35,10 +36,11 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build --prefix-paths",
-    "build:with-theme": "USE_BRAND_THEME=1 gatsby build --prefix-paths",
+    "build:with-theme": "THEME=npm:@edx/brand-edx.org@1.x npm run install-theme && gatsby build --prefix-paths",
     "clean": "gatsby clean",
     "develop": "gatsby develop",
-    "develop:with-theme": "USE_BRAND_THEME=1 gatsby develop",
+    "install-theme": "npm install \"@edx/brand@${THEME}\"",
+    "develop:with-theme": "THEME=npm:@edx/brand-edx.org@1.x npm run install-theme && gatsby develop",
     "lint": "eslint --ext .js --ext .jsx .",
     "start": "npm run develop",
     "test": "echo \"Error: no test specified\" && exit 1"
