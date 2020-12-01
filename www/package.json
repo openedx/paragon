@@ -3,7 +3,7 @@
   "description": "Paragon Pattern Library Documentation",
   "version": "1.0.0",
   "dependencies": {
-    "@edx/brand": "npm:@edx/brand-edx.org@^1.2.3",
+    "@edx/brand": "npm:@edx/brand-openedx@1.x",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@mdx-js/mdx": "^1.6.16",
     "@mdx-js/react": "^1.6.16",
@@ -39,7 +39,7 @@
     "build:with-theme": "THEME=npm:@edx/brand-edx.org@1.x npm run install-theme && gatsby build --prefix-paths",
     "clean": "gatsby clean",
     "develop": "gatsby develop",
-    "install-theme": "npm install \"@edx/brand@${THEME}\"",
+    "install-theme": "npm install \"@edx/brand@${THEME}\" --no-save",
     "develop:with-theme": "THEME=npm:@edx/brand-edx.org@1.x npm run install-theme && gatsby develop",
     "lint": "eslint --ext .js --ext .jsx .",
     "start": "npm run develop",
