@@ -113,7 +113,29 @@ fieldset:disabled a.btn {
       $active-border,
     );
 
-    @include button-focus(scale-color($background, $alpha: -20%));
+    @include button-focus($white);
+  }
+
+  .btn-inverse-outline-#{$color} {
+    $text-and-border: $white;
+
+    $color-hover: theme-color($color, "hover");
+    $active-background: theme-color($color, "background");
+    $active-border: transparent;
+
+    // Defaults
+    $color-hover: color-yiq($value) !default;
+    $active-background: $value !default;
+    $active-border: $value !default;
+
+    @include button-outline-variant(
+      $text-and-border,
+      $color-hover,
+      $active-background,
+      $active-border,
+    );
+
+    @include button-focus($white);
   }
 }
 
@@ -135,12 +157,36 @@ fieldset:disabled a.btn {
     $hover-background,
     $hover-border,
     $active-background,
-    $active-border
+    $active-border,
+    $btn-tertiary-color,
+    $btn-tertiary-color,
+    $btn-tertiary-color
   );
 
-  color: $btn-tertiary-color;
-
   @include button-focus(theme-color("primary", "focus"));
+}
+
+.btn-inverse-tertiary {
+  $background: $btn-inverse-tertiary-bg;
+  $border: transparent;
+  $hover-background: $btn-inverse-tertiary-hover-bg;
+  $hover-border: transparent;
+  $active-background: $btn-inverse-tertiary-active-bg;
+  $active-border: transparent;
+
+  @include button-variant(
+    $background,
+    $border,
+    $hover-background,
+    $hover-border,
+    $active-background,
+    $active-border,
+    $btn-inverse-tertiary-color,
+    $btn-inverse-tertiary-color,
+    $btn-inverse-tertiary-color
+  );
+
+  @include button-focus($white);
 }
 
 //
