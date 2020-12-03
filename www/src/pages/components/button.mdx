@@ -29,31 +29,42 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
   </a>
 </p>
 
-##### Basic Usage
+##### Core Buttons
 ```jsx live
 <>
-<div className="mb-3">
-  <Button variant="primary">Primary</Button>{' '}
   <Button variant="brand">Brand</Button>{' '}
-  <Button variant="success">Success</Button>{' '}
-  <Button variant="warning">Warning</Button>{' '}
-  <Button variant="danger">Danger</Button>{' '}
-</div>
-<div className="mb-3">
-  <Button variant="outline-primary">Primary</Button>{' '}
-  <Button variant="outline-brand">Brand</Button>{' '}
-  <Button variant="outline-success">Success</Button>{' '}
-  <Button variant="outline-warning">Warning</Button>{' '}
-  <Button variant="outline-danger">Danger</Button>{' '}
-</div>
-<div className="mb-3">
+  <Button variant="outline-brand">Outline Brand</Button>{' '}
+  <Button variant="primary">Primary</Button>{' '}
+  <Button variant="outline-primary">Outline Primary</Button>{' '}
   <Button variant="tertiary">Tertiary</Button>{' '}
-  <Button variant="light">Light</Button> <Button variant="dark">Dark</Button>{' '}
-  <Button variant="outline-light">Light</Button>{' '}
-  <Button variant="outline-dark">Dark</Button>
-  <Button variant="link">Link</Button>
-  <Button variant="link" className="px-0">No padding link</Button>
+</>
+```
+##### Core Buttons (Inverse Pallete)
+```jsx live
+<div className="bg-dark-700 p-4">
+  <Button variant="inverse-brand">Brand</Button>{' '}
+  <Button variant="inverse-outline-brand">Outline Brand</Button>{' '}
+  <Button variant="inverse-primary">Primary</Button>{' '}
+  <Button variant="inverse-outline-primary">Outline Primary</Button>{' '}
+  <Button variant="inverse-tertiary">Tertiary</Button>{' '}
 </div>
+```
+
+##### Utility Buttons
+```jsx live
+<>
+  <div className="mb-2">
+    <Button variant="success">Success</Button>{' '}
+    <Button variant="danger">Danger</Button>{' '}
+    <Button variant="outline-success">Success</Button>{' '}
+    <Button variant="outline-danger">Danger</Button>{' '}
+  </div>
+  <div className="mb-2">
+    <Button variant="link">Link</Button>{' '}
+    <Button variant="light">Light</Button> <Button variant="dark">Dark</Button>{' '}
+    <Button variant="outline-light">Light</Button>{' '}
+    <Button variant="outline-dark">Dark</Button>
+  </div>
 </>
 ```
 
