@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -10,25 +11,30 @@ const IconButton = ({
   iconClassNames,
   onClick,
   variant,
+  ...attrs
 }) => {
   const invertedHoverClass = invertColors ? `iconbutton-hover__${variant}--invert` : '';
   const invertedIconClass = invertColors ? `iconbutton__${variant}--invert` : '';
 
   return (
-    <div className="iconbutton-refwrapper">
-      <button
-        aria-label={alt}
-        className={`iconbutton-hover ${invertedHoverClass} iconbutton-hover__${variant}`}
-        onClick={onClick}
-        type="button"
-      >
-        <FontAwesomeIcon
-          className={`iconbutton iconbutton__${variant} ${invertedIconClass} ${iconClassNames}`}
-          icon={icon}
-          alt={alt}
-        />
-      </button>
-    </div>
+    <button
+      {...attrs}
+      aria-label={alt}
+      className={classNames(
+        'iconbutton-hover',
+        invertedHoverClass,
+        `iconbutton-hover__${variant}`,
+        attrs.className,
+      )}
+      onClick={onClick}
+      type="button"
+    >
+      <FontAwesomeIcon
+        className={`iconbutton iconbutton__${variant} ${invertedIconClass} ${iconClassNames}`}
+        icon={icon}
+        alt={alt}
+      />
+    </button>
   );
 };
 
