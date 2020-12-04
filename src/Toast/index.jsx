@@ -40,7 +40,7 @@ function Toast({
         </div>
         {action && (
           <Button
-            as={action.href ? 'a' : Button}
+            as={action.href ? 'a' : 'button'}
             href={action.href}
             onClick={action.onClick}
             size="sm"
