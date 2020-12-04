@@ -19,7 +19,7 @@ describe('<Toast />', () => {
       >
         Success message.
       </Toast>));
-    const toastLink = wrapper.find('a.btn-toast-action');
+    const toastLink = wrapper.find('a.btn');
     expect(toastLink).toHaveLength(1);
   });
   it('renders optional action as button', () => {
@@ -33,7 +33,7 @@ describe('<Toast />', () => {
       >
         Success message.
       </Toast>));
-    const toastButton = wrapper.find('button.btn-toast-action');
+    const toastButton = wrapper.find('button.btn');
     expect(toastButton).toHaveLength(1);
   });
   it('autohide is set to false on onMouseOver and true on onMouseLeave', () => {

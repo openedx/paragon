@@ -13,17 +13,21 @@ $icon-button-margin: .75rem !default;
 $icon-button-refwrapper-size: $icon-button-hover-size + $icon-button-margin !default;
 
 $icon-color-invert: white !default;
+$icon-button-bg: transparent !default;
+$icon-button-invert-bg: transparent !default;
 
 .iconbutton-hover {
     width: $icon-button-hover-size;
     height: $icon-button-hover-size;
     border-radius: $icon-button-hover-size;
     display: flex;
+    flex-shrink: 0;
     justify-content: center;
     align-items: center;
     text-align: center;
     position: relative;
-    margin: 0;
+    border: none;
+
     cursor: pointer;
 
     &:active {
@@ -33,7 +37,7 @@ $icon-color-invert: white !default;
     @each $name, $color in $icon-button-colors {
         &__#{$name} {
             @include button-focus($color);
-            background-color: $icon-color-invert;
+            background-color: $icon-button-bg;
             color: $color;
         }
         &__#{$name}:hover {
@@ -42,7 +46,7 @@ $icon-color-invert: white !default;
         }
         &__#{$name}--invert {
             @include button-focus($icon-color-invert);
-            background-color: $color;
+            background-color: $icon-button-invert-bg;
             color: $icon-color-invert;
 
             &:hover {
@@ -50,14 +54,5 @@ $icon-color-invert: white !default;
                 color: $color;
             }
         }
-    }
-}
-
-.iconbutton-refwrapper {
-    height: $icon-button-refwrapper-size;
-    width: $icon-button-refwrapper-size;
-    padding: $icon-button-margin * 0.5;
-    button {
-        border: none;
     }
 }
