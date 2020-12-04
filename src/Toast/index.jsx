@@ -27,14 +27,16 @@ function Toast({
           className="toast-header"
         >
           <p className="small">{children}</p>
-          <IconButton
-            alt={closeLabel}
-            className="m-0"
-            icon={faTimes}
-            onClick={() => (onClose())}
-            variant="dark"
-            invertColors
-          />
+          <div className="toast-header-btn-container">
+            <IconButton
+              alt={closeLabel}
+              className="align-self-start"
+              icon={faTimes}
+              onClick={() => (onClose())}
+              variant="primary"
+              invertColors
+            />
+          </div>
         </div>
         {action && (
           <Button
@@ -42,7 +44,7 @@ function Toast({
             href={action.href}
             onClick={action.onClick}
             size="sm"
-            variant="toast-action"
+            variant="inverse-outline-primary"
           >
             {action.label}
           </Button>
