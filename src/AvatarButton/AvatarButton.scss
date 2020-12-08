@@ -1,0 +1,31 @@
+$avatar-button-padding-left: .5em !default;
+$avatar-button-padding-left-sm: .5 !default;
+$avatar-button-padding-left-lg: .5em !default;
+
+.pgn__avatar-button-avatar {
+  padding-left: $avatar-button-padding-left;
+  &.pgn__avatar-button-avatar-sm {
+    padding-left: $avatar-button-padding-left-sm;
+  }
+  &.pgn__avatar-button-avatar-lg {
+    padding-left: $avatar-button-padding-left-lg;
+  }
+  .pgn__avatar-button-avatar-wrap {
+    height: 0px;
+    vertical-align: middle;
+    display: inline-flex;
+    margin-right: .5em;
+  }
+  .pgn__avatar {
+    transform: translateY(-50%);
+    margin-top: -1px;
+  }
+}
+
+
+/*
+ edx theme
+*/
+.btn-avatar.btn-tertiary {
+  color: $primary-500;
+}
