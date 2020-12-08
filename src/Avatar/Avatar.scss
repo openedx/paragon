@@ -7,7 +7,6 @@ $avatar-size: 3rem !default;
 $avatar-size-lg: 4rem !default;
 $avatar-size-xl: 18.75rem !default;
 
-
 .pgn__avatar {
   border-radius: $avatar-border-radius;
   border: $avatar-border;
@@ -15,13 +14,8 @@ $avatar-size-xl: 18.75rem !default;
   height: $avatar-size;
   overflow: hidden;
   width: $avatar-size;
+  object-fit: cover;
 
-  img {
-    display: block;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
   &.pgn__avatar-xs {
     height: $avatar-size-xs;
     width: $avatar-size-xs;

@@ -9,16 +9,16 @@ const Avatar = ({
   src,
   ...attrs
 }) => (
-  <div
+  <img
     {...attrs}
     className={classNames(
       'pgn__avatar',
       `pgn__avatar-${size}`,
       attrs.className,
     )}
-  >
-    <img src={src || defaultAvatar} alt={alt} />
-  </div>
+    src={src || defaultAvatar}
+    alt={alt}
+  />
 );
 
 Avatar.propTypes = {
