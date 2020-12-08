@@ -11,8 +11,9 @@ const buttonSizesToAvatarSize = {
 
 const AvatarButton = React.forwardRef(({
   children,
-  size,
   className,
+  showLabel,
+  size,
   src,
   ...attrs
 }, ref) => {
@@ -25,23 +26,26 @@ const AvatarButton = React.forwardRef(({
         'pgn__avatar-button-avatar',
         `pgn__avatar-button-avatar-${size}`,
         className,
+        { 'pgn__avatar-button-hide-label': !showLabel },
       )}
       size={size}
       ref={ref}
     >
       <span className="pgn__avatar-button-avatar-wrap">
-        <Avatar src={src} alt="" size={avatarSize} />
+        <Avatar src={src} alt={showLabel ? '' : children} size={avatarSize} />
       </span>
-      {children}
+      {showLabel && children}
     </Button>
   );
 });
 
 AvatarButton.propTypes = {
   /** The button text */
-  children: PropTypes.node,
+  children: PropTypes.string,
   /** A class name to append to the button */
   className: PropTypes.string,
+  /** Show the label or only the avatar */
+  showLabel: PropTypes.bool,
   /** The button size */
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
   /** Image src of the avatar image */
@@ -53,6 +57,7 @@ AvatarButton.propTypes = {
 AvatarButton.defaultProps = {
   children: undefined,
   className: undefined,
+  showLabel: true,
   size: 'md',
   src: undefined,
   variant: 'tertiary',

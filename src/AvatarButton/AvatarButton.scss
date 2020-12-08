@@ -16,6 +16,13 @@ $avatar-button-padding-left-lg: .5em !default;
     display: inline-flex;
     margin-right: .5em;
   }
+  &.pgn__avatar-button-hide-label {
+    padding-left: 4px;
+    padding-right: 4px;
+    .pgn__avatar-button-avatar-wrap {
+      margin-right: 0em;
+    }
+  }
   .pgn__avatar {
     transform: translateY(-50%);
     margin-top: -1px;
