@@ -1,7 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import classNames from 'classnames';
+import Color from 'color';
 import SEO from '../../components/seo';
+import MeasuredItem from '../../components/MeasuredItem';
 
 const utilityClasses = {
   bg: (color, level) => (level ? `bg-${color}-${level}` : `bg-${color}`),
@@ -13,20 +15,15 @@ const colors = [
   { themeName: 'gray', color: 'gray', unusedLevels: [] },
   { themeName: 'primary', color: 'blue', unusedLevels: [] },
   { themeName: 'brand', color: 'blue', unusedLevels: [] },
+  { themeName: 'light', color: 'light', unusedLevels: [] },
+  { themeName: 'dark', color: 'dark', unusedLevels: [] },
   { themeName: 'success', color: 'green', unusedLevels: [] },
   { themeName: 'info', color: 'teal', unusedLevels: [] },
   { themeName: 'danger', color: 'red', unusedLevels: [] },
   { themeName: 'warning', color: 'yellow', unusedLevels: [500, 700, 900] },
 ];
 
-const levels = [
-  { level: 100, use: 'Backgrounds' },
-  { level: 200, use: 'Borders & Lines' },
-  { level: 300, use: 'Icons & Semantic State' },
-  { level: 500, use: 'Lighter Text & Element Fills' },
-  { level: 700, use: 'Regular Text & Hover State' },
-  { level: 900, use: 'Darker Text & Active State' },
-];
+const levels = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
 const selectorColors = {};
 
@@ -41,6 +38,42 @@ function parseColors(cssSelectors) {
   });
 }
 
+
+const renderColorRamp = (themeName, unusedLevels) => (
+  <div style={{ flexBasis: '19%', marginRight: '1%', marginBottom: '2rem' }}>
+    <h5>
+      {themeName}
+    </h5>
+    {levels.map(level => (
+      <MeasuredItem
+        properties={['background-color']}
+        renderAfter={(measurements) => {
+          console.log(measurements)
+          return (
+            <div style={{ lineHeight: 1 }} className="small mt-1 mb-2">
+              <code className="mb-0 d-flex justify-content-between text-lowercase text-gray-700">
+                <span>{`$${themeName}-${level}`}</span>
+              </code>
+              <code
+                style={{ fontSize: '65%' }}
+                className="text-black-50 text-lowercase"
+              >
+                {Color(measurements['background-color']).hex()}
+              </code>
+            </div>
+          );
+        }}>
+        <div
+          className={classNames('p-3 rounded', utilityClasses.bg(themeName, level), {
+              'unused-level': unusedLevels.includes(level),
+          })}
+        />
+      </MeasuredItem>
+    ))}
+  </div>
+);
+
+
 // eslint-disable-next-line react/prop-types
 export default function ({ data }) {
   parseColors(data.allCssUtilityClasses.nodes);
@@ -52,50 +85,56 @@ export default function ({ data }) {
 
       <h1>Colors</h1>
 
-      <h3>Palette</h3>
-
-      <p>
-        Below is an exhaustive set of UI colors. Colors for brands,
-        illustrations, or graphics are not included.
-      </p>
-
-      {levels.map(({ level, use }) => (
-        <div>
-          <h6 className="text-muted text-uppercase mb-3 font-weight-normal">
-            <strong className="mr-2">{level}</strong> {use}
-          </h6>
-          <div className="d-flex">
-            {colors.map(({ themeName, unusedLevels }) => (
-              <div className="mr-3 mb-4 w-100">
-                <div
-                  className={classNames(
-                    'pgn-doc__swatch',
-                    utilityClasses.bg(themeName, level),
-                    {
-                      'unused-level': unusedLevels.includes(level),
-                    },
-                  )}
-                />
-                {unusedLevels.includes(level) ? null : (
-                  <div style={{ lineHeight: 1 }} className="mt-1">
-                    <code className="mb-0 d-flex justify-content-between text-lowercase text-gray-700">
-                      <span>{themeName}</span>
-                      <span>{level}</span>
-                    </code>
-                    <code
-                      style={{ fontSize: '65%' }}
-                      className="text-black-50 text-lowercase"
-                    >
-                      {selectorColors[utilityClasses.bg(themeName, level)]}
-                    </code>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+      <div className="d-flex flex-wrap">
+        {colors.slice(0,3).map(({ themeName, unusedLevels }) => renderColorRamp(themeName, unusedLevels))}
+        <div style={{ flexBasis: '19%', marginRight: '1%', marginBottom: '2rem' }}>
+          <h5>
+            accents
+          </h5>
+          <MeasuredItem
+            properties={['background-color']}
+            renderAfter={(measurements) => {
+              console.log(measurements)
+              return (
+                <div style={{ lineHeight: 1 }} className="small mt-1 mb-2">
+                  <code className="mb-0 d-flex justify-content-between text-lowercase text-gray-700">
+                    <span>$accent-a</span>
+                  </code>
+                  <code
+                    style={{ fontSize: '65%' }}
+                    className="text-black-50 text-lowercase"
+                  >
+                    {Color(measurements['background-color']).hex()}
+                  </code>
+                </div>
+              );
+            }}>
+            <div className={classNames('p-3 rounded', 'bg-accent-a')} />
+          </MeasuredItem>
+          <MeasuredItem
+            properties={['background-color']}
+            renderAfter={(measurements) => {
+              console.log(measurements)
+              return (
+                <div style={{ lineHeight: 1 }} className="small mt-1 mb-2">
+                  <code className="mb-0 d-flex justify-content-between text-lowercase text-gray-700">
+                    <span>$accent-b</span>
+                  </code>
+                  <code
+                    style={{ fontSize: '65%' }}
+                    className="text-black-50 text-lowercase"
+                  >
+                    {Color(measurements['background-color']).hex()}
+                  </code>
+                </div>
+              );
+            }}>
+            <div className={classNames('p-3 rounded', 'bg-accent-b')} />
+          </MeasuredItem>
         </div>
-      ))}
 
+        {colors.slice(3).map(({ themeName, unusedLevels }) => renderColorRamp(themeName, unusedLevels))}
+      </div>
 
       <h3>SCSS Color Usage</h3>
       <p>
