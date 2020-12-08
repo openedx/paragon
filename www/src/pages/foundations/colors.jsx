@@ -20,7 +20,7 @@ const colors = [
   { themeName: 'success', color: 'green', unusedLevels: [] },
   { themeName: 'info', color: 'teal', unusedLevels: [] },
   { themeName: 'danger', color: 'red', unusedLevels: [] },
-  { themeName: 'warning', color: 'yellow', unusedLevels: [500, 700, 900] },
+  { themeName: 'warning', color: 'yellow', unusedLevels: [] },
 ];
 
 const levels = [100, 200, 300, 400, 500, 600, 700, 800, 900];
@@ -38,37 +38,34 @@ function parseColors(cssSelectors) {
   });
 }
 
+const Swatch = ({ name, colorClassName, isUnused }) => (
+  <div className="d-flex align-items-center mb-2">
+    <MeasuredItem
+      properties={['background-color']}
+      renderAfter={(measurements) => {
+        return (
+          <div style={{ lineHeight: 1 }} className="small">
+            <code className="mb-0 d-block text-lowercase text-dark-700">{name}</code>
+            <code style={{ fontSize: '65%' }} className="text-muted">{Color(measurements['background-color']).hex()}</code>
+          </div>
+        );
+      }}>
+      <div className={classNames('pgn-doc__swatch', colorClassName, { 'unused-level': isUnused })} />
+    </MeasuredItem>
+  </div>
+);
 
 const renderColorRamp = (themeName, unusedLevels) => (
-  <div style={{ flexBasis: '19%', marginRight: '1%', marginBottom: '2rem' }}>
+  <div style={{ flexBasis: '24%', marginRight: '1%', marginBottom: '2rem' }}>
     <h5>
       {themeName}
     </h5>
     {levels.map(level => (
-      <MeasuredItem
-        properties={['background-color']}
-        renderAfter={(measurements) => {
-          console.log(measurements)
-          return (
-            <div style={{ lineHeight: 1 }} className="small mt-1 mb-2">
-              <code className="mb-0 d-flex justify-content-between text-lowercase text-gray-700">
-                <span>{`$${themeName}-${level}`}</span>
-              </code>
-              <code
-                style={{ fontSize: '65%' }}
-                className="text-black-50 text-lowercase"
-              >
-                {Color(measurements['background-color']).hex()}
-              </code>
-            </div>
-          );
-        }}>
-        <div
-          className={classNames('p-3 rounded', utilityClasses.bg(themeName, level), {
-              'unused-level': unusedLevels.includes(level),
-          })}
-        />
-      </MeasuredItem>
+      <Swatch
+        name={`$${themeName}-${level}`}
+        colorClassName={utilityClasses.bg(themeName, level)}
+        isUnused={unusedLevels.includes(level)}
+      />
     ))}
   </div>
 );
@@ -88,49 +85,12 @@ export default function ({ data }) {
       <div className="d-flex flex-wrap">
         {colors.slice(0,3).map(({ themeName, unusedLevels }) => renderColorRamp(themeName, unusedLevels))}
         <div style={{ flexBasis: '19%', marginRight: '1%', marginBottom: '2rem' }}>
-          <h5>
+          <h6>
             accents
-          </h5>
-          <MeasuredItem
-            properties={['background-color']}
-            renderAfter={(measurements) => {
-              console.log(measurements)
-              return (
-                <div style={{ lineHeight: 1 }} className="small mt-1 mb-2">
-                  <code className="mb-0 d-flex justify-content-between text-lowercase text-gray-700">
-                    <span>$accent-a</span>
-                  </code>
-                  <code
-                    style={{ fontSize: '65%' }}
-                    className="text-black-50 text-lowercase"
-                  >
-                    {Color(measurements['background-color']).hex()}
-                  </code>
-                </div>
-              );
-            }}>
-            <div className={classNames('p-3 rounded', 'bg-accent-a')} />
-          </MeasuredItem>
-          <MeasuredItem
-            properties={['background-color']}
-            renderAfter={(measurements) => {
-              console.log(measurements)
-              return (
-                <div style={{ lineHeight: 1 }} className="small mt-1 mb-2">
-                  <code className="mb-0 d-flex justify-content-between text-lowercase text-gray-700">
-                    <span>$accent-b</span>
-                  </code>
-                  <code
-                    style={{ fontSize: '65%' }}
-                    className="text-black-50 text-lowercase"
-                  >
-                    {Color(measurements['background-color']).hex()}
-                  </code>
-                </div>
-              );
-            }}>
-            <div className={classNames('p-3 rounded', 'bg-accent-b')} />
-          </MeasuredItem>
+          </h6>
+
+          <Swatch name="$accent-a" colorClassName="bg-accent-a" />
+          <Swatch name="$accent-b" colorClassName="bg-accent-b" />
         </div>
 
         {colors.slice(3).map(({ themeName, unusedLevels }) => renderColorRamp(themeName, unusedLevels))}
