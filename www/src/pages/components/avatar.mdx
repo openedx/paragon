@@ -1,0 +1,73 @@
+---
+title: 'Avatar'
+type: 'component'
+status: 'New'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: |
+
+---
+
+import { StaticQuery, graphql } from 'gatsby';
+import get from 'lodash/get';
+import PropsTable from '../../components/PropsTable';
+import SingleComponentStatus from '../../components/SingleComponentStatus';
+
+# Avatar
+
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
+
+
+##### Basic Usage
+
+```jsx live
+<>
+  <Avatar size="lg" />
+  <Avatar />
+  <Avatar size="sm" />
+  <Avatar size="xs" />
+</>
+```
+
+
+##### Extra large
+
+```jsx live
+<>
+  <Avatar size="xl" />
+</>
+```
+
+
+##### Props
+
+<StaticQuery
+  query={graphql`
+    query {
+      componentMetadata(displayName: { eq: "Avatar" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
+  render={({ componentMetadata }) => {
+    if (componentMetadata == null) return null;
+    return <PropsTable propMetaData={componentMetadata.props} />;
+  }}
+/>
+
+##### Theme variables (SCSS)
+
+```scss
+$avatar-border-radius:  100% !default;
+$avatar-border: solid 1px $light-300 !default;
+
+$avatar-size-xs: 1.5rem !default;
+$avatar-size-sm: 2.25rem !default;
+$avatar-size: 3rem !default;
+$avatar-size-lg: 4rem !default;
+$avatar-size-xl: 18.75rem !default;
+```
