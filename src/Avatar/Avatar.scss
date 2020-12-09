@@ -1,0 +1,39 @@
+$avatar-border-radius:  100% !default;
+$avatar-border: solid 1px $light-300 !default;
+
+$avatar-size-xs: 1.5rem !default;
+$avatar-size-sm: 2.25rem !default;
+$avatar-size: 3rem !default;
+$avatar-size-lg: 4rem !default;
+$avatar-size-xl: 18.75rem !default;
+
+.pgn__avatar {
+  border-radius: $avatar-border-radius;
+  border: $avatar-border;
+  display: inline-block;
+  height: $avatar-size;
+  overflow: hidden;
+  width: $avatar-size;
+  object-fit: cover;
+
+  &.pgn__avatar-xs {
+    height: $avatar-size-xs;
+    width: $avatar-size-xs;
+  }
+  &.pgn__avatar-sm {
+    height: $avatar-size-sm;
+    width: $avatar-size-sm;
+  }
+  &.pgn__avatar-md {
+    height: $avatar-size;
+    width: $avatar-size;
+  }
+  &.pgn__avatar-lg {
+    height: $avatar-size-lg;
+    width: $avatar-size-lg;
+  }
+  &.pgn__avatar-xl {
+    height: $avatar-size-xl;
+    width: $avatar-size-xl;
+  }
+}

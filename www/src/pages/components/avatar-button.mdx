@@ -1,0 +1,139 @@
+---
+title: 'Avatar Button'
+type: 'component'
+status: 'New'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: |
+
+---
+
+import { StaticQuery, graphql } from 'gatsby';
+import get from 'lodash/get';
+import PropsTable from '../../components/PropsTable';
+import SingleComponentStatus from '../../components/SingleComponentStatus';
+
+# Avatar Button
+
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
+
+
+##### Basic Usage
+
+```jsx live
+<>
+  <div>
+    <AvatarButton size="lg" src="https://source.unsplash.com/128x128/?dog,portrait">Casey</AvatarButton>
+  </div>
+  <div>
+    <AvatarButton size="md" src="https://source.unsplash.com/128x128/?dog,portrait">Casey</AvatarButton>
+  </div>
+  <div>
+    <AvatarButton size="sm" src="https://source.unsplash.com/128x128/?dog,portrait">Casey</AvatarButton>
+  </div>
+</>
+```
+
+
+##### With Dropdown
+
+```jsx live
+<Dropdown>
+  <Dropdown.Toggle as={AvatarButton} src="https://source.unsplash.com/128x128/?dog,portrait">
+    Casey
+  </Dropdown.Toggle>
+
+  <Dropdown.Menu alignRight>
+    <Dropdown.Item href="#/action-1">Resume your last course</Dropdown.Item>
+    <Dropdown.Item href="#/action-2">Dashboard</Dropdown.Item>
+    <Dropdown.Item href="#/action-3">Profile</Dropdown.Item>
+    <Dropdown.Item href="#/action-3">Account</Dropdown.Item>
+    <Dropdown.Divider />
+    <Dropdown.Item href="#/action-3">Sign out</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
+```
+
+Props set on Dropdown.Toggle get passed through to the "as" component
+
+```jsx live
+<Dropdown>
+  <Dropdown.Toggle as={AvatarButton} size="sm" src="https://source.unsplash.com/128x128/?dog,portrait">
+    Casey
+  </Dropdown.Toggle>
+
+  <Dropdown.Menu alignRight>
+    <Dropdown.Item href="#/action-1">Resume your last course</Dropdown.Item>
+    <Dropdown.Item href="#/action-2">Dashboard</Dropdown.Item>
+    <Dropdown.Item href="#/action-3">Profile</Dropdown.Item>
+    <Dropdown.Item href="#/action-3">Account</Dropdown.Item>
+    <Dropdown.Divider />
+    <Dropdown.Item href="#/action-3">Sign out</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
+```
+
+##### No label
+
+For use in mobile viewports or constrained views.
+
+```jsx live
+<>
+  <div>
+    <AvatarButton showLabel={false} size="lg" src="https://source.unsplash.com/128x128/?dog,portrait">Casey</AvatarButton>
+  </div>
+  <div>
+    <AvatarButton showLabel={false} size="md" src="https://source.unsplash.com/128x128/?dog,portrait">Casey</AvatarButton>
+  </div>
+  <div>
+    <AvatarButton showLabel={false} size="sm" src="https://source.unsplash.com/128x128/?dog,portrait">Casey</AvatarButton>
+  </div>
+
+  <Dropdown>
+    <Dropdown.Toggle  showLabel={false} as={AvatarButton} src="https://source.unsplash.com/128x128/?dog,portrait">
+      Casey
+    </Dropdown.Toggle>
+
+    <Dropdown.Menu alignRight>
+      <Dropdown.Item href="#/action-1">Resume your last course</Dropdown.Item>
+      <Dropdown.Item href="#/action-2">Dashboard</Dropdown.Item>
+      <Dropdown.Item href="#/action-3">Profile</Dropdown.Item>
+      <Dropdown.Item href="#/action-3">Account</Dropdown.Item>
+      <Dropdown.Divider />
+      <Dropdown.Item href="#/action-3">Sign out</Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
+</>
+```
+
+
+##### Props
+
+<StaticQuery
+  query={graphql`
+    query {
+      componentMetadata(displayName: { eq: "AvatarButton" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
+  render={({ componentMetadata }) => {
+    if (componentMetadata == null) return null;
+    return <PropsTable propMetaData={componentMetadata.props} />;
+  }}
+/>
+
+##### Theme variables (SCSS)
+
+```scss
+$avatar-button-padding-left: .5em !default;
+$avatar-button-padding-left-sm: .5 !default;
+$avatar-button-padding-left-lg: .5em !default;
+```
+
+CSS overrides can be applied to this component through the `.btn-avatar` class name.
+
