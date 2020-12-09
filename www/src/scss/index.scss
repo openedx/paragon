@@ -25,7 +25,9 @@
 
   // Colors Page
   .pgn-doc__swatch {
-    height: 3rem;
+    height: 2rem;
+    width: 2rem;
+    margin-right: .5rem;
     @extend .rounded;
     &.unused-level {
       background: $gray-100 !important;
