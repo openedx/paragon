@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from '../Button';
 
 const TablePagination = ({
-  previousPage, nextPage, canPreviousPage, canNextPage, pageIndex, totalPages,
+  previousPage, nextPage, canPreviousPage, canNextPage, pageIndex, pageCount,
 }) => (
   <div className="pagination">
     <Button onClick={() => previousPage()} disabled={!canPreviousPage}>
@@ -15,7 +15,7 @@ const TablePagination = ({
     <span>
       Page{' '}
       <strong>
-        {pageIndex + 1} of {totalPages}
+        {pageIndex + 1} of {pageCount}
       </strong>{' '}
     </span>
   </div>
@@ -27,7 +27,7 @@ TablePagination.propTypes = {
   canPreviousPage: PropTypes.bool.isRequired,
   canNextPage: PropTypes.bool.isRequired,
   pageIndex: PropTypes.number.isRequired,
-  totalPages: PropTypes.number.isRequired,
+  pageCount: PropTypes.number.isRequired,
 };
 
 export default TablePagination;

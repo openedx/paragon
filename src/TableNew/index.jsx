@@ -11,21 +11,26 @@ import TablePagination from './TablePagination';
 import getVisibleColumns from './utils/getVisibleColumns';
 
 function TableWrapper({
-  initialColumns, data, title, bulkActions, defaultColumnValues, additionalColumns,
-  isSelectable, isPaginated, isSortable, isFilterable, manualFilters, onFilter,
+  initialColumns, data, title, bulkActions, defaultColumnValues, additionalColumns, isSelectable, isSortable,
+  isPaginated, manualPagination, initialPageSize, initialPageIndex, itemCount,
+  isFilterable, manualFilters, onFilter,
 }) {
   const defaultColumn = React.useMemo(
     () => (defaultColumnValues),
     [defaultColumnValues],
   );
+  const tableOptions = {
+    columns: initialColumns,
+    data,
+    defaultColumn,
+    manualFilters,
+    manualPagination,
+    initialState: {},
+  };
 
+  // NB: Table args *must* be in a particular order
   const tableArgs = [
-    {
-      columns: initialColumns,
-      data,
-      defaultColumn,
-      manualFilters,
-    },
+    tableOptions,
   ];
   if (isFilterable) {
     tableArgs.push(useFilters);
@@ -34,6 +39,9 @@ function TableWrapper({
     tableArgs.push(useSortBy);
   }
   if (isPaginated) {
+    tableOptions.initialState.pageCount = itemCount ? itemCount % initialPageSize : 1;
+    tableOptions.initialState.pageIndex = initialPageIndex;
+    tableOptions.initialState.pageSize = initialPageSize;
     tableArgs.push(usePagination);
   }
   if (isSelectable) {
@@ -84,7 +92,7 @@ function TableWrapper({
           getTableProps={getTableProps}
           getTableBodyProps={getTableBodyProps}
           headerGroups={headerGroups}
-          rows={rows}
+          rows={instance.page ? instance.page : rows}
           prepareRow={prepareRow}
         />
       )}
@@ -95,9 +103,9 @@ function TableWrapper({
           previousPage={instance.previousPage}
           nextPage={instance.nextPage}
           canNextPage={instance.canNextPage}
-          canPreviousPage={instance.canNextPage}
+          canPreviousPage={instance.canPreviousPage}
           pageIndex={instance.state.pageIndex}
-          totalPages={instance.pageOptions.length}
+          pageCount={instance.pageCount}
         />
       )}
     </>
@@ -114,6 +122,8 @@ TableWrapper.defaultProps = {
   isSortable: false,
   title: null,
   manualFilters: false,
+  manualPagination: false,
+  initialPageIndex: 1,
   onFilter: () => { throw new Error('You have set manualFilters to true but have not provided an onFilter function.'); },
 };
 
@@ -135,6 +145,28 @@ TableWrapper.propTypes = {
   isSortable: PropTypes.bool,
   /** Paginate the table */
   isPaginated: PropTypes.bool,
+  // eslint-disable-next-line react/require-default-props
+  initialPageSize: (props, propName, componentName, ...rest) => {
+    if (props.isPaginated === true && props[propName] === undefined) {
+      return new Error(`${componentName}: pageSize is required when the table is paginated.`);
+    }
+    return PropTypes.number(props, propName, componentName, ...rest);
+  },
+  // eslint-disable-next-line react/require-default-props
+  initialPageIndex: (props, propName, componentName, ...rest) => {
+    if (props.isPaginated === true && props[propName] === undefined) {
+      return new Error(`${componentName}: pageIndex is required when the table is paginated.`);
+    }
+    return PropTypes.number(props, propName, componentName, ...rest);
+  },
+  manualPagination: PropTypes.bool,
+  // eslint-disable-next-line react/require-default-props
+  itemCount: (props, propName, componentName, ...rest) => {
+    if (props.manualPagination === true && props[propName] === undefined) {
+      return new Error(`${componentName}: itemCount is required when manualPagination is set to True.`);
+    }
+    return PropTypes.number(props, propName, componentName, ...rest);
+  },
   /** Table rows can be filtered, using a default filter in the default column values, or in the column definition */
   isFilterable: PropTypes.bool,
   /** Indicates that filtering will be done via a backend API. An onFilter function must be provided */
