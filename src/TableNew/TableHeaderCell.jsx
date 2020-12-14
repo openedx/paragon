@@ -35,7 +35,7 @@ TableHeaderCell.propTypes = {
     /** Gets props related to sorting that will be passed to <th> */
     getSortByToggleProps: PropTypes.func,
     /** Indicates whether a column is sortable */
-    canSort: PropTypes.bool.isRequired,
+    canSort: PropTypes.bool,
   }).isRequired,
 };
 

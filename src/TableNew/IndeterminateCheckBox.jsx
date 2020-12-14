@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const IndeterminateCheckbox = React.forwardRef(
   ({ indeterminate, ...rest }, ref) => {
@@ -16,5 +17,9 @@ const IndeterminateCheckbox = React.forwardRef(
     );
   },
 );
+
+IndeterminateCheckbox.propTypes = {
+  indeterminate: PropTypes.bool.isRequired,
+};
 
 export default IndeterminateCheckbox;

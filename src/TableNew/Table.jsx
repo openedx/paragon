@@ -7,10 +7,10 @@ import TableRow from './TableRow';
 const Table = ({
   getTableProps, headerGroups, getTableBodyProps, rows, prepareRow, isStriped,
 }) => {
-  const renderRows = () => rows.map((row, index) => {
+  const renderRows = () => rows.map((row) => {
     prepareRow(row);
     return (
-      <TableRow row={row} key={row.id} isStriped={index % 2 === 1} />
+      <TableRow row={row} key={row.id} />
     );
   });
 
