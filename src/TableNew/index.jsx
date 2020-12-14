@@ -12,7 +12,7 @@ import getVisibleColumns from './utils/getVisibleColumns';
 
 function TableWrapper({
   initialColumns, data, title, bulkActions, defaultColumnValues, additionalColumns,
-  isSelectable, isPaginated, isSortable, isFilterable,
+  isSelectable, isPaginated, isSortable, isFilterable, manualFilters, onFilter,
 }) {
   const defaultColumn = React.useMemo(
     () => (defaultColumnValues),
@@ -24,6 +24,7 @@ function TableWrapper({
       columns: initialColumns,
       data,
       defaultColumn,
+      manualFilters,
     },
   ];
   if (isFilterable) {
@@ -58,7 +59,14 @@ function TableWrapper({
   return (
     <>
       {title && <h3>{title}</h3>}
-      {isFilterable && <TableFilters columns={instance.columns} />}
+      {isFilterable && (
+      <TableFilters
+        columns={instance.columns}
+        manualFilters={manualFilters}
+        onFilter={onFilter}
+        currentFilters={instance.state.filters}
+      />
+      )}
       {isSelectable && bulkActions.length > 0 && (
         <BulkActions
           actions={bulkActions}
@@ -105,6 +113,8 @@ TableWrapper.defaultProps = {
   isSelectable: false,
   isSortable: false,
   title: null,
+  manualFilters: false,
+  onFilter: () => { throw new Error('You have set manualFilters to true but have not provided an onFilter function.'); },
 };
 
 TableWrapper.propTypes = {
@@ -127,6 +137,10 @@ TableWrapper.propTypes = {
   isPaginated: PropTypes.bool,
   /** Table rows can be filtered, using a default filter in the default column values, or in the column definition */
   isFilterable: PropTypes.bool,
+  /** Indicates that filtering will be done via a backend API. An onFilter function must be provided */
+  manualFilters: PropTypes.bool,
+  /**  Function will be called with a list of filters in the form [{ id: <column name>, value: <filter value> }] */
+  onFilter: PropTypes.func,
   /** Actions to be performed on the table. isSelectable must be true to use bulk actions */
   bulkActions: PropTypes.arrayOf(PropTypes.shape({
     /** Text displayed to the user for each action */
