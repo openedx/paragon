@@ -16,7 +16,7 @@ const Table = ({
 
   return (
     <table {...getTableProps({
-      className: isStriped ? classNames({ 'is-striped': isStriped }) : '',
+      className: classNames({ pgn__table: true, 'is-striped': isStriped }),
     })}
     >
       <TableHeaderRow headerGroups={headerGroups} />

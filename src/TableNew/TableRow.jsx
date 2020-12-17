@@ -1,10 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import TableCell from './TableCell';
 
 const TableRow = ({ row }) => (
-  <tr {...row.getRowProps()}>
+  <tr {...row.getRowProps({
+    className: classNames({
+      'pgn__table-row': true,
+      'is-selected': row.isSelected,
+    }),
+  })}
+  >
     {row.cells.map(cell => <TableCell cell={cell} key={`${cell.column.Header}${row.id}`} />)}
   </tr>
 );
@@ -17,6 +24,7 @@ TableRow.propTypes = {
     cells: PropTypes.arrayOf(PropTypes.shape()).isRequired,
     /** row id */
     id: PropTypes.string.isRequired,
+    isSelected: PropTypes.bool,
   }).isRequired,
 };
 

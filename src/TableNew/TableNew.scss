@@ -1,4 +1,69 @@
 
-table.is-striped tr:nth-child(even) {
-  background-color: rgb(219, 226, 236);
+$table-border: 1px solid $gray-200!default;
+$table-padding-x: 16px;
+$table-padding-y: 16px;
+$table-cell-padding: 8px 14px;
+
+.pgn__table-wrapper {
+  border: $table-border;
+}
+
+.pgn__table-status-bar {
+  padding: 16px;
+}
+
+.pgn__table {
+  width: 100%;
+  border-bottom: $table-border;
+
+  &.is-striped tr:nth-child(even) {
+    background-color: $light-200;
+  }
+  th {
+    background-color: $light-300;
+    padding: $table-cell-padding;
+  }
+  td {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: $table-cell-padding;
+    line-height: 24px;
+  }
+  & tr.is-selected {
+    background-color: $info-100!important;
+  }
+}
+
+.pgn__table-filters {
+  display: flex;
+}
+
+.pgn__table-filters-breakout-filter {
+  margin-right: 16px;
+  align-self: flex-end;
+}
+
+.pgn__table-filters-dropdown-item {
+  padding: 8px 14px;
+}
+
+.pgn__table-status {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0px;
+
+  .pgn__table-status-left {
+    align-self: flex-end;
+  }
+}
+
+.pgn__table-pagination {
+  display: flex;
+  justify-content: space-between;
+  padding: $table-padding-x $table-padding-y;
+
+  .pgn__page-count {
+    align-self: flex-end;
+  }
 }

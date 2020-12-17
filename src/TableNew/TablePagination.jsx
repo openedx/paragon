@@ -1,23 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '../Button';
+import { Button, ButtonGroup } from '..';
 
 const TablePagination = ({
   previousPage, nextPage, canPreviousPage, canNextPage, pageIndex, pageCount,
 }) => (
-  <div className="pagination">
-    <Button onClick={() => previousPage()} disabled={!canPreviousPage}>
-      {'<'}
-    </Button>
-    <Button onClick={() => nextPage()} disabled={!canNextPage}>
-      {'>'}
-    </Button>
-    <span>
+  <div className="pgn__table-pagination">
+    <div className="pgn__page-count">
       Page{' '}
       <strong>
         {pageIndex + 1} of {pageCount}
       </strong>{' '}
-    </span>
+    </div>
+    <ButtonGroup>
+      <Button variant="outline-primary" onClick={() => previousPage()} disabled={!canPreviousPage}>
+        Previous
+      </Button>
+      <Button variant="outline-primary" onClick={() => nextPage()} disabled={!canNextPage}>
+        Next
+      </Button>
+    </ButtonGroup>
   </div>
 );
 
