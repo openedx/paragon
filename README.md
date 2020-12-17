@@ -1,6 +1,6 @@
 # Paragon
 
-[![npm_version](https://img.shields.io/npm/v/@edx/paragon.svg)](@edx/paragon) [![Build Status](https://travis-ci.org/edx/paragon.svg?branch=master)](https://travis-ci.org/edx/paragon) [![Coveralls](https://img.shields.io/coveralls/edx/paragon.svg?branch=master)](https://coveralls.io/github/edx/paragon)
+[![npm_version](https://img.shields.io/npm/v/@edx/paragon.svg)](@edx/paragon) [![Build Status](https://travis-ci.com/edx/paragon.svg?branch=master)](https://travis-ci.com/edx/paragon) [![Coveralls](https://img.shields.io/coveralls/edx/paragon.svg?branch=master)](https://coveralls.io/github/edx/paragon)
 
 Paragon is a pattern library containing [accessible](https://www.w3.org/WAI/standards-guidelines/aria/) React components and a SCSS foundation built on Twitter Bootstrap. Paragon is developed for the Open edX platform.
 
