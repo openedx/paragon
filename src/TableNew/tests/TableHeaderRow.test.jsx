@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import TableHeaderCell from '../TableHeaderCell';
 import TableHeaderRow from '../TableHeaderRow';
 
 const header1Name = 'Name';
@@ -44,15 +43,10 @@ describe('<TableHeaderRow />', () => {
     const row = wrapper.find('tr');
     expect(row.props().className).toEqual('red');
   });
-  it('adds props to the cell', () => {
-    const cells = wrapper.find(TableHeaderCell);
-    expect(cells.get(0).props().className).toEqual('bears');
-    expect(cells.get(1).props().className).toEqual('bears');
-  });
   it('renders cells', () => {
-    const cells = wrapper.find('td');
+    const cells = wrapper.find('th');
     expect(cells.length).toEqual(2);
-    expect(wrapper.text()).toContain('Name');
-    expect(wrapper.text()).toContain('DOB');
+    expect(wrapper.text()).toContain(header1Name);
+    expect(wrapper.text()).toContain(header2Name);
   });
 });

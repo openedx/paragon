@@ -1,19 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {
   useSortBy, useTable, useFilters, useRowSelect, usePagination,
 } from 'react-table';
 import Table from './Table';
-import TableFilters from './TableFilters';
-import BulkActions from './BulkActions';
-import SelectionState from './SelectionState';
+
 import TablePagination from './TablePagination';
 import getVisibleColumns from './utils/getVisibleColumns';
+import { requiredWhen } from './utils/propTypesUtils';
+import TableControlBar from './TableControlBar';
 
 function TableWrapper({
-  initialColumns, data, title, bulkActions, defaultColumnValues, additionalColumns, isSelectable, isSortable,
+  initialColumns, data, bulkActions, defaultColumnValues, additionalColumns, isSelectable, isSortable,
   isPaginated, manualPagination, initialPageSize, initialPageIndex, itemCount,
-  isFilterable, manualFilters, onFilter,
+  isFilterable, manualFilters, fetchData,
 }) {
   const defaultColumn = React.useMemo(
     () => (defaultColumnValues),
@@ -55,6 +55,20 @@ function TableWrapper({
   // Use the state and functions returned from useTable to build your UI
   const instance = useTable(...tableArgs);
 
+  useEffect(() => {
+    if (fetchData) {
+      const currentState = {};
+      if (manualFilters) {
+        currentState.currentFilters = instance.state.filters;
+      }
+      if (manualPagination) {
+        currentState.pageSize = instance.state.pageSize;
+        currentState.pageIndex = instance.state.pageIndex;
+      }
+      fetchData(currentState);
+    }
+  }, [instance.state.pageSize, instance.state.filters, instance.state.pageIndex, fetchData]);
+
   const {
     getTableProps,
     getTableBodyProps,
@@ -63,30 +77,20 @@ function TableWrapper({
     prepareRow,
   } = instance;
 
-  // Render the UI for your table
   return (
-    <>
-      {title && <h3>{title}</h3>}
-      {isFilterable && (
-      <TableFilters
+    <div className="pgn__table-wrapper">
+      <TableControlBar
+        isSelectable={isSelectable}
+        selectedFlatRows={instance.selectedFlatRows}
+        toggleAllRowsSelected={instance.toggleAllRowsSelected}
+        isFilterable={isFilterable}
+        filtersNames={instance.state.filters.map((filter) => filter.id)}
+        pageSize={instance.state.pageSize}
+        itemCount={itemCount || rows.length}
+        bulkActions={bulkActions}
         columns={instance.columns}
-        manualFilters={manualFilters}
-        onFilter={onFilter}
-        currentFilters={instance.state.filters}
+        rows={instance.flatRows}
       />
-      )}
-      {isSelectable && bulkActions.length > 0 && (
-        <BulkActions
-          actions={bulkActions}
-          selectedRows={instance.selectedFlatRows}
-        />
-      )}
-      {isSelectable && (
-        <SelectionState
-          numberOfSelectedRows={instance.selectedFlatRows.length}
-          toggleAllRowsSelected={instance.toggleAllRowsSelected}
-        />
-      )}
       {rows.length > 0 && (
         <Table
           getTableProps={getTableProps}
@@ -108,7 +112,7 @@ function TableWrapper({
           pageCount={instance.pageCount}
         />
       )}
-    </>
+    </div>
   );
 }
 
@@ -120,11 +124,10 @@ TableWrapper.defaultProps = {
   isPaginated: false,
   isSelectable: false,
   isSortable: false,
-  title: null,
   manualFilters: false,
   manualPagination: false,
   initialPageIndex: 1,
-  onFilter: () => { throw new Error('You have set manualFilters to true but have not provided an onFilter function.'); },
+  fetchData: null,
 };
 
 TableWrapper.propTypes = {
@@ -137,8 +140,6 @@ TableWrapper.propTypes = {
   })).isRequired,
   /** Data to be displayed in the table */
   data: PropTypes.arrayOf(PropTypes.shape()).isRequired,
-  /**  Title to be displayed above all table components */
-  title: PropTypes.string,
   /** table rows can be selected */
   isSelectable: PropTypes.bool,
   /** Table columns can be sorted */
@@ -161,18 +162,11 @@ TableWrapper.propTypes = {
   },
   manualPagination: PropTypes.bool,
   // eslint-disable-next-line react/require-default-props
-  itemCount: (props, propName, componentName, ...rest) => {
-    if (props.manualPagination === true && props[propName] === undefined) {
-      return new Error(`${componentName}: itemCount is required when manualPagination is set to True.`);
-    }
-    return PropTypes.number(props, propName, componentName, ...rest);
-  },
+  itemCount: requiredWhen(PropTypes.number, 'manualPagination'),
   /** Table rows can be filtered, using a default filter in the default column values, or in the column definition */
   isFilterable: PropTypes.bool,
   /** Indicates that filtering will be done via a backend API. An onFilter function must be provided */
   manualFilters: PropTypes.bool,
-  /**  Function will be called with a list of filters in the form [{ id: <column name>, value: <filter value> }] */
-  onFilter: PropTypes.func,
   /** Actions to be performed on the table. isSelectable must be true to use bulk actions */
   bulkActions: PropTypes.arrayOf(PropTypes.shape({
     /** Text displayed to the user for each action */
@@ -194,6 +188,9 @@ TableWrapper.propTypes = {
     /** Component that renders in the added column. It will receive the row as a prop */
     Cell: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
   })),
+  /** Function that will fetch table data. Called when page size, page index or filters change.
+    * Meant to be used with manual filters and pagination */
+  fetchData: PropTypes.func,
 };
 
 export default TableWrapper;
