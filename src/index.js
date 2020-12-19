@@ -60,13 +60,6 @@ export {
 */
 export { default as Alert } from 'react-bootstrap/Alert';
 export { default as Badge } from 'react-bootstrap/Badge';
-/*
-  TODO: Breadcrumb
-  a11y defect: aria-current (needed semantics) is on the <li>, not on the <a>, which takes focus
-
-export { default as Breadcrumb } from 'react-bootstrap/Breadcrumb';
-export { default as BreadcrumbItem } from 'react-bootstrap/BreadcrumbItem';
-*/
 export { default as ButtonGroup } from 'react-bootstrap/ButtonGroup';
 export { default as ButtonToolbar } from 'react-bootstrap/ButtonToolbar';
 export { default as Card } from 'react-bootstrap/Card';

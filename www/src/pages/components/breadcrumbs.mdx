@@ -1,11 +1,11 @@
 ---
 title: 'Breadcrumbs'
 type: 'component'
-status: 'Needs Work'
-designStatus: 'DONE'
-devStatus: 'To Do'
+status: 'Stable'
+designStatus: 'Needs Review'
+devStatus: 'Done'
 notes: |
-  Replace with react-bootstrap shim
+  TODO: Remove subcomponent of deprecated implementation soon
 ---
 
 import { StaticQuery, graphql } from 'gatsby';
@@ -22,10 +22,29 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
   }
 />
 
+<p style={{ fontSize: '1.5em' }}>
+  This is a pass through component from React-Bootstrap.<br/>
+  <a href="https://react-bootstrap.github.io/components/breadcrumb/" target="_blank" rel="noopener noreferrer">
+    See React-Bootstrap for documentation.
+  </a>
+</p>
+
 ##### Basic Usage
 
 ```jsx live
-<Breadcrumb
+<Breadcrumb className="small">
+  <Breadcrumb.Item href="#">Find a Course</Breadcrumb.Item>
+  <Breadcrumb.Item href="#page2">Computer Science Courses</Breadcrumb.Item>
+  <Breadcrumb.Item active>CS50's Introduction to Computer Science</Breadcrumb.Item>
+</Breadcrumb>
+```
+
+## Breadcrumb/Deprecated
+
+##### Basic Usage
+
+```jsx live
+<Breadcrumb.Deprecated
   links={[
     { label: 'Link 1', url: '/link-1' },
     { label: 'Link 2', url: '/link-2' },
@@ -37,7 +56,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 ##### With active label
 
 ```jsx live
-<Breadcrumb
+<Breadcrumb.Deprecated
   links={[
     { label: 'Link 1', url: '/link-1' },
     { label: 'Link 2', url: '/link-2' },
@@ -50,7 +69,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 ##### With custom spacer
 
 ```jsx live
-<Breadcrumb
+<Breadcrumb.Deprecated
   links={[
     { label: 'Link 1', url: '/link-1' },
     { label: 'Link 2', url: '/link-2' },
