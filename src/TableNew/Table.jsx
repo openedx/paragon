@@ -32,9 +32,9 @@ Table.defaultProps = {
 };
 
 Table.propTypes = {
-  /** returns an object that will be spread as props to the <table> element */
+  /** returns an object that will be spread as props to the table element */
   getTableProps: PropTypes.func.isRequired,
-  /** returns an object that will be spread as props to the <tbody> element */
+  /** returns an object that will be spread as props to the tbody element */
   getTableBodyProps: PropTypes.func.isRequired,
   headerGroups: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   /** function that prepares rows for render */
