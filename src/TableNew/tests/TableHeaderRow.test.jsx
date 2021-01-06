@@ -7,11 +7,11 @@ const header1Name = 'Name';
 const header2Name = 'DOB';
 const props = {
   headerGroups: [{
-    getHeaderGroupProps: () => ({ className: 'red' }),
+    getHeaderGroupProps: () => ({ className: 'red', key: '1' }),
     headers: [
       {
         Header: header1Name,
-        getHeaderProps: () => ({ className: 'bears' }),
+        getHeaderProps: () => ({ className: 'bears', key: '1' }),
         render: () => header1Name,
         isSorted: false,
         isSortedDesc: false,
@@ -20,7 +20,7 @@ const props = {
       },
       {
         Header: header2Name,
-        getHeaderProps: () => ({ className: 'bears' }),
+        getHeaderProps: () => ({ className: 'bears', key: '2' }),
         render: () => header2Name,
         isSorted: false,
         isSortedDesc: false,
