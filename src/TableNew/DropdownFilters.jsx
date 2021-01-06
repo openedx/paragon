@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
+import { SMALL_SCREEN_BREAKPOINT } from './constants';
 import { DropdownButton, useWindowSize } from '..';
 
 /** The first filter will be as an input, additional filters will be available in a dropdown.  */
@@ -9,8 +10,7 @@ const DropdownFilters = ({
   const { width } = useWindowSize();
   const [breakoutFilter, otherFilters] = useMemo(() => {
     const availableFilters = columns.filter((column) => column.canFilter);
-    // 576 is the bootstrap xs breakpoint
-    if (width < 576) {
+    if (width < SMALL_SCREEN_BREAKPOINT) {
       return [null, availableFilters];
     }
 
