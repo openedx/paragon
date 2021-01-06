@@ -15,8 +15,18 @@ const TableControlBar = ({
   return (
     <div className="pgn__table-status-bar">
       {isFilterable && (
-      <div className="pgn__table-filters">
-        <DropdownFilters columns={columns} />
+      <div className="pgn__table-actions">
+        <div className="pgn__table-actions-left">
+          <DropdownFilters columns={columns} />
+        </div>
+        <div className="pgn__table-actions-right">
+          {bulkActions.length > 0 && (
+            <BulkActions
+              actions={bulkActions}
+              selectedRows={bulkActionRows}
+            />
+          )}
+        </div>
       </div>
       )}
       <div className="pgn__table-status">
@@ -30,14 +40,12 @@ const TableControlBar = ({
             itemCount={itemCount}
           />
         </div>
-        <div className="pgn__table-status-right">
-          {bulkActions.length > 0 && (
+        {!isFilterable && bulkActions.length > 0 && (
           <BulkActions
             actions={bulkActions}
             selectedRows={bulkActionRows}
           />
-          )}
-        </div>
+        )}
       </div>
     </div>
   );

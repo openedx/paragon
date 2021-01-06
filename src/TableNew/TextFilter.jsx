@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Input } from '..';
 
 function TextFilter({
   column: {
@@ -7,7 +8,7 @@ function TextFilter({
   },
 }) {
   return (
-    <input
+    <Input
       value={filterValue || ''}
       onChange={e => {
         setFilter(e.target.value || undefined); // Set undefined to remove the filter entirely

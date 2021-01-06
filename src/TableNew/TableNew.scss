@@ -1,7 +1,7 @@
 
 $table-border: 1px solid $gray-200!default;
-$table-padding-x: 16px;
-$table-padding-y: 16px;
+$table-padding-x: 14px;
+$table-padding-y: 14px;
 $table-cell-padding: 8px 14px;
 
 .pgn__table-wrapper {
@@ -9,7 +9,7 @@ $table-cell-padding: 8px 14px;
 }
 
 .pgn__table-status-bar {
-  padding: 16px;
+  padding: $table-padding-y $table-padding-x 0 $table-padding-x;
 }
 
 .pgn__table {
@@ -35,6 +35,11 @@ $table-cell-padding: 8px 14px;
   }
 }
 
+.pgn__table-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
 .pgn__table-filters {
   display: flex;
 }
@@ -50,8 +55,8 @@ $table-cell-padding: 8px 14px;
 
 .pgn__table-status {
     display: flex;
-    justify-content: space-between;
     padding: 8px 0px;
+    justify-content: space-between;
 
   .pgn__table-status-left {
     align-self: flex-end;
