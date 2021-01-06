@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import {
-  useSortBy, useTable, useFilters, useRowSelect, usePagination,
-} from 'react-table';
+import { useTable } from 'react-table';
 import Table from './Table';
 
 import TablePagination from './TablePagination';
 import getVisibleColumns from './utils/getVisibleColumns';
 import { requiredWhen } from './utils/propTypesUtils';
+import getTableArgs from './utils/getTableArgs';
 import TableControlBar from './TableControlBar';
 
 function TableWrapper({
@@ -28,25 +27,16 @@ function TableWrapper({
     initialState: {},
   };
 
-  // NB: Table args *must* be in a particular order
-  const tableArgs = [
-    tableOptions,
-  ];
-  if (isFilterable) {
-    tableArgs.push(useFilters);
-  }
-  if (isSortable) {
-    tableArgs.push(useSortBy);
-  }
   if (isPaginated) {
     tableOptions.initialState.pageCount = itemCount ? itemCount % initialPageSize : 1;
     tableOptions.initialState.pageIndex = initialPageIndex;
     tableOptions.initialState.pageSize = initialPageSize;
-    tableArgs.push(usePagination);
   }
-  if (isSelectable) {
-    tableArgs.push(useRowSelect);
-  }
+
+  // NB: Table args *must* be in a particular order
+  const tableArgs = getTableArgs({
+    tableOptions, isFilterable, isSelectable, isPaginated, isSortable,
+  });
   // adds selection column and action columns as necessary
   tableArgs.push(hooks => {
     hooks.visibleColumns.push(visibleColumns => getVisibleColumns(isSelectable, visibleColumns, additionalColumns));
@@ -149,19 +139,9 @@ TableWrapper.propTypes = {
   /** Paginate the table */
   isPaginated: PropTypes.bool,
   // eslint-disable-next-line react/require-default-props
-  initialPageSize: (props, propName, componentName, ...rest) => {
-    if (props.isPaginated === true && props[propName] === undefined) {
-      return new Error(`${componentName}: pageSize is required when the table is paginated.`);
-    }
-    return PropTypes.number(props, propName, componentName, ...rest);
-  },
+  initialPageSize: requiredWhen(PropTypes.number, 'isPaginated'),
   // eslint-disable-next-line react/require-default-props
-  initialPageIndex: (props, propName, componentName, ...rest) => {
-    if (props.isPaginated === true && props[propName] === undefined) {
-      return new Error(`${componentName}: pageIndex is required when the table is paginated.`);
-    }
-    return PropTypes.number(props, propName, componentName, ...rest);
-  },
+  initialPageIndex: requiredWhen(PropTypes.number, 'isPaginated'),
   manualPagination: PropTypes.bool,
   // eslint-disable-next-line react/require-default-props
   itemCount: requiredWhen(PropTypes.number, 'manualPagination'),

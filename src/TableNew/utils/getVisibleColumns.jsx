@@ -25,12 +25,12 @@ const sortColumn = {
   disableSortBy: true,
 };
 
-const getVisibleColumns = (isSelectable, visibleColumn, additionalColumns = []) => {
+const getVisibleColumns = (isSelectable, visibleColumns, additionalColumns = []) => {
   let columns = [];
   if (isSelectable) {
     columns.push(sortColumn);
   }
-  columns = columns.concat(visibleColumn);
+  columns = columns.concat(visibleColumns);
   if (additionalColumns.length > 0) {
     columns = columns.concat(additionalColumns);
   }

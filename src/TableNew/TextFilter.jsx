@@ -10,6 +10,7 @@ function TextFilter({
   return (
     <Input
       value={filterValue || ''}
+      type="text"
       onChange={e => {
         setFilter(e.target.value || undefined); // Set undefined to remove the filter entirely
       }}
