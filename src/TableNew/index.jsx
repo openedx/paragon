@@ -77,7 +77,7 @@ function TableWrapper({
     prepareRow,
   } = instance;
 
-  const filterNames = instance.state.filters && instance.state.filters.map((filter) => filter.id)
+  const filterNames = instance.state.filters && instance.state.filters.map((filter) => filter.id);
 
   return (
     <div className="pgn__table-wrapper">

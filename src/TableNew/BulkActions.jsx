@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Button, ButtonGroup, DropdownButton, Dropdown, useWindowSize
+  Button, ButtonGroup, DropdownButton, Dropdown, useWindowSize,
 } from '..';
-import { SMALL_SCREEN_BREAKPOINT } from './constants'
+import { SMALL_SCREEN_BREAKPOINT } from './constants';
 
 export const DROPDOWN_BUTTON_TEXT = 'More actions';
 export const SMALL_SCREEN_DROPDOWN_BUTTON_TEXT = 'Actions';

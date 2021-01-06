@@ -2,7 +2,9 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import BulkActions, { DROPDOWN_BUTTON_TEXT } from '../BulkActions';
-import { useWindowSize, DropdownButton, Dropdown, Button } from '../..';
+import {
+  useWindowSize, DropdownButton, Dropdown, Button,
+} from '../..';
 
 jest.mock('../../hooks/useWindowSize');
 useWindowSize.mockReturnValue({ width: 800 });
