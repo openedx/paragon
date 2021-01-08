@@ -23,7 +23,7 @@ const SmartStatus = ({
   if (filterNames.length > 0) {
     return <div>Filtered by {filterNames.join(', ')}</div>;
   }
-  return <div>Showing {pageSize || itemCount} of {itemCount}</div>;
+  return <div>Showing {itemCount || pageSize} of {itemCount}</div>;
 };
 
 SmartStatus.defaultProps = {
