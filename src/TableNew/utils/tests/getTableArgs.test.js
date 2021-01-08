@@ -4,8 +4,6 @@ import {
 } from 'react-table';
 import getTableArgs from '../getTableArgs';
 
-console.log('GET TABLE ARGS', getTableArgs);
-
 describe('getTableArgs', () => {
   const tableOptions = { foo: 'bar' };
   it('returns tableOptions if no other arguments are given', () => {
