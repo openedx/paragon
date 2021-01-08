@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '../Button';
+import { Button } from '..';
 
 export const SELECT_ALL_TEST_ID = 'test_selection_state_select_all_button';
 export const CLEAR_SELECTION_TEST_ID = 'test_selection_state_clear_selection_button';
@@ -13,7 +13,7 @@ const SelectionState = ({ numberOfSelectedRows, toggleAllRowsSelected, itemCount
       {!allRowsSelected && (
       <Button
         className={SELECT_ALL_TEST_ID}
-        variant="link"
+        variant="inline-link"
         onClick={() => toggleAllRowsSelected(true)}
       >
         Select all {itemCount}
@@ -22,7 +22,7 @@ const SelectionState = ({ numberOfSelectedRows, toggleAllRowsSelected, itemCount
       {numberOfSelectedRows > 0 && (
       <Button
         className={CLEAR_SELECTION_TEST_ID}
-        variant="link"
+        variant="inline-link"
         onClick={() => toggleAllRowsSelected(false)}
       >
         Clear Selection
