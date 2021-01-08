@@ -1,0 +1,27 @@
+---
+title: Icons
+---
+
+
+import { Link, StaticQuery, graphql } from 'gatsby';
+import get from 'lodash/get';
+import { Icon } from '~paragon-react';
+import IconsTable from '../../components/IconsTable';
+import PropsTable from '../../components/PropsTable';
+import SingleComponentStatus from '../../components/SingleComponentStatus';
+
+# Icons
+
+Displays an svg icon from `@edx/paragon/icons`. See the <Link to="/components/icon">Icon Component</Link> for more information.
+
+```jsx live
+// Included in this live jsx scope:
+// import { Add, AddCircle } from '@edx/paragon/icons';
+<Icon src={Add} />
+```
+
+Many of the icons below are sourced from <a href="https://material.io/resources/icons/">Material Design Sharp Icons</a>. They are designed to be sharp at 24px by 24px.
+
+<br/>
+
+<IconsTable />

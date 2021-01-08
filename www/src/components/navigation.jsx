@@ -16,6 +16,7 @@ const menu = [
       { title: 'Typography', url: '/foundations/typography' },
       { title: 'Layout & Grid', url: '/foundations/layout' },
       { title: 'Spacing & Margins', url: '/foundations/spacing' },
+      { title: 'Icons', url: '/foundations/icons' },
       { title: 'All Utilities', url: '/foundations/css-utilities' },
     ],
   },
