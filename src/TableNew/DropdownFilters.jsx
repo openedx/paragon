@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { SMALL_SCREEN_BREAKPOINT } from './constants';
 import { DropdownButton, useWindowSize } from '..';
+import { requiredWhen } from './utils/propTypesUtils';
 
 /** The first filter will be as an input, additional filters will be available in a dropdown.  */
 const DropdownFilters = ({
@@ -42,6 +43,7 @@ DropdownFilters.propTypes = {
     Header: PropTypes.string.isRequired,
     canFilter: PropTypes.bool,
     render: PropTypes.func.isRequired,
+    Filter: requiredWhen(PropTypes.func, 'canFilter'),
   })).isRequired,
 };
 
