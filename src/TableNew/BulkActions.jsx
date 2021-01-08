@@ -33,6 +33,7 @@ const BulkActions = ({
   return (
     <div className={`pgn__bulk-actions ${className}`} {...rest}>
       <ButtonGroup>
+        {/* TODO: change the dropdown trigger to an IconButton with the elipsis-v icon */}
         {dropdownActions.length > 0 && (
         <DropdownButton
           title={width > SMALL_SCREEN_BREAKPOINT ? DROPDOWN_BUTTON_TEXT : SMALL_SCREEN_DROPDOWN_BUTTON_TEXT}
