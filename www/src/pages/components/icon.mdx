@@ -7,9 +7,10 @@ devStatus: 'TBD'
 notes: 'Reconcile purpose of this component with use of FontAwesome'
 ---
 
-import { StaticQuery, graphql } from 'gatsby';
+import { Link, StaticQuery, graphql } from 'gatsby';
 import get from 'lodash/get';
 import { Icon } from '~paragon-react';
+import IconsTable from '../../components/IconsTable';
 import PropsTable from '../../components/PropsTable';
 import SingleComponentStatus from '../../components/SingleComponentStatus';
 
@@ -20,6 +21,26 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
     get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
   }
 />
+
+
+Displays an svg icon from `@edx/paragon/icons`. See <Link to="/foundations/icons">Icons Foundation Documentation</Link> for a list of all available icons.
+
+```jsx live
+// Included in this live jsx scope:
+// import { Add, AddCircle } from '@edx/paragon/icons';
+<Icon src={Add} />
+```
+
+HTML attributes can be passed to this component allowing for customization of the color, size, or addition of any necessary ARIA attributes.
+
+```jsx live
+// Included in this live jsx scope:
+// import { Add, AddCircle } from '@edx/paragon/icons';
+<div className="d-flex align-items-center bg-dark">
+  <Icon src={Add} className="mx-3 text-white" />
+  <Icon src={Add} className="text-white" style={{ height: '48px', width: '48px' }} />
+</div>
+```
 
 ##### Props
 

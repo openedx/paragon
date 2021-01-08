@@ -10,6 +10,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       alias: {
         '~paragon-react': path.resolve(__dirname, '../src'),
         '~paragon-style': path.resolve(__dirname, '../scss'),
+        '~paragon-icons': path.resolve(__dirname, '../icons'),
         // Prevent multiple copies of react getting loaded
         // paragon react components would naturally import
         // react and react-dom from the node_modules folder
