@@ -1,0 +1,22 @@
+{
+  "name": "icons",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "svgr svg --out-dir jsx && babel jsx -d es5",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "@svgr/cli": "^5.5.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6"
+  }
+}

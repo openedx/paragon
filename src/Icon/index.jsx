@@ -1,20 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import newId from '../utils/newId';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
-function Icon(props) {
+function Icon({
+  src: Component,
+  id,
+  className,
+  hidden,
+  screenReaderText,
+  svgAttrs,
+  ...attrs
+}) {
+  if (Component) {
+    return (
+      <span
+        className={classNames('pgn__icon', className)}
+        id={id}
+        {...attrs}
+      >
+        <Component {...svgAttrs} />
+      </span>
+    );
+  }
+
   return (
     <>
       <span
-        id={props.id ? props.id : newId('Icon')}
-        className={props.className}
-        aria-hidden={props.hidden}
+        id={id || newId('Icon')}
+        className={className}
+        aria-hidden={hidden}
       />
-      {props.screenReaderText && (
+      {screenReaderText && (
         <span className="sr-only">
-          {props.screenReaderText}
+          {screenReaderText}
         </span>
       )}
     </>
@@ -23,11 +44,16 @@ function Icon(props) {
 
 Icon.propTypes = {
   // eslint-disable-next-line max-len
+  /** An icon component to render. Example import of a Paragon icon component: `import { Check } from '@edx/paragon/dist/icon';` */
+  src: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  /** HTML element attributes to pass through to the underlying svg element */
+  svgAttrs: PropTypes.object, // eslint-disable-line
+  // eslint-disable-next-line max-len
   /** the `id` property of the Icon element, by default this value is generated with the `newId` function with the `prefix` of `Icon`. */
   id: PropTypes.string,
   // eslint-disable-next-line max-len
   /** array of class names that will define what the Icon looks like. For example, a list of FontAwesome style names. */
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
   // eslint-disable-next-line max-len
   /** a boolean that determines the value of `aria-hidden` attribute on the Icon span, this value is `true` by default. */
   hidden: PropTypes.bool,
@@ -38,9 +64,12 @@ Icon.propTypes = {
 };
 
 Icon.defaultProps = {
+  src: null,
+  svgAttrs: {},
   id: undefined,
   hidden: true,
   screenReaderText: undefined,
+  className: undefined,
 };
 
 export default withDeprecatedProps(Icon, 'Icon', {
