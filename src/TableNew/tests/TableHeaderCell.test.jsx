@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import TableHeaderCell, { sortIndicator, sortedAscIndicator, sortedDescIndicator } from '../TableHeaderCell';
+import TableHeaderCell, { SortIndicator } from '../TableHeaderCell';
 
 const sortByToggleProps = { foo: 'bar' };
 const columnProps = {
@@ -38,7 +38,8 @@ describe('<TableHeaderCell />', () => {
   describe('with sorting', () => {
     it('renders a sortable indicator if sorting is available', () => {
       const wrapper = mount(<FakeTable><TableHeaderCell column={{ ...columnProps, canSort: true }} /></FakeTable>);
-      expect(wrapper.text()).toContain(sortIndicator);
+      expect(wrapper.find(SortIndicator).props().isSorted).toBe(false);
+      expect(wrapper.find(SortIndicator).props().isSortedDesc).toBe(false);
     });
     it('renders a sorted ascending indicator when sorted ascending', () => {
       const wrapper = mount(
@@ -46,7 +47,8 @@ describe('<TableHeaderCell />', () => {
           <TableHeaderCell column={{ ...columnProps, canSort: true, isSorted: true }} />
         </FakeTable>,
       );
-      expect(wrapper.text()).toContain(sortedAscIndicator);
+      expect(wrapper.find(SortIndicator).props().isSorted).toBe(true);
+      expect(wrapper.find(SortIndicator).props().isSortedDesc).toBe(false);
     });
     it('renders a sorted descending indicator when sorted ascending', () => {
       const wrapper = mount(
@@ -57,7 +59,8 @@ describe('<TableHeaderCell />', () => {
           />
         </FakeTable>,
       );
-      expect(wrapper.text()).toContain(sortedDescIndicator);
+      expect(wrapper.find(SortIndicator).props().isSorted).toBe(true);
+      expect(wrapper.find(SortIndicator).props().isSortedDesc).toBe(true);
     });
     it('adds the toggle props to the header props if toggle props are available', () => {
       const headerPropsSpy = jest.fn().mockReturnValueOnce({});

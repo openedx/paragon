@@ -1,22 +1,42 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Icon } from '..';
+import { ArrowDropDown, ArrowDropUp, ArrowDropUpDown } from '../../icons';
 
-export const sortIndicator = ' ↑↓';
-export const sortedDescIndicator = ' ↓';
-export const sortedAscIndicator = ' ↑';
+export const SortIndicator = ({ isSorted, isSortedDesc }) => {
+  if (!isSorted) {
+    return <Icon style={{ opacity: 0.5 }} src={ArrowDropUpDown} />;
+  }
+
+  if (isSortedDesc) {
+    return <Icon src={ArrowDropUp} />;
+  }
+
+  return <Icon src={ArrowDropDown} />;
+};
+
+SortIndicator.propTypes = {
+  isSorted: PropTypes.bool.isRequired,
+  isSortedDesc: PropTypes.bool.isRequired,
+};
 
 const TableHeaderCell = ({ column }) => {
-  const isSortableIndicator = column.canSort ? sortIndicator : '';
-  const sortingIndicator = column.isSortedDesc ? sortedDescIndicator : sortedAscIndicator;
-  const toggleProps = column.canSort && column.getSortByToggleProps ? column.getSortByToggleProps() : {};
+  const {
+    canSort,
+    getSortByToggleProps,
+    getHeaderProps,
+    render,
+    isSorted,
+    isSortedDesc,
+  } = column;
+
+  const toggleProps = canSort && getSortByToggleProps ? getSortByToggleProps() : {};
 
   return (
-    <th {...column.getHeaderProps(toggleProps)}>
-      {column.render('Header')}
-      {/* Sort direction indicator */}
-      <span>
-        {column.isSorted
-          ? sortingIndicator : isSortableIndicator }
+    <th {...getHeaderProps(toggleProps)}>
+      <span className="d-flex align-items-center">
+        <span>{render('Header')}</span>
+        {canSort && <SortIndicator isSorted={isSorted} isSortedDesc={isSortedDesc} />}
       </span>
     </th>
   );
