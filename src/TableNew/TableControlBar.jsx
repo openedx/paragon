@@ -9,6 +9,7 @@ import DropdownFilters from './DropdownFilters';
 const TableControlBar = ({
   isSelectable, selectedFlatRows, toggleAllRowsSelected, bulkActions,
   isFilterable, filterNames, pageSize, itemCount, columns, rows,
+  setAllFilters,
 }) => {
   const bulkActionRows = isSelectable ? selectedFlatRows : rows;
 
@@ -38,6 +39,7 @@ const TableControlBar = ({
             filterNames={filterNames}
             pageSize={pageSize}
             itemCount={itemCount}
+            setAllFilters={setAllFilters}
           />
         </div>
         {!isFilterable && bulkActions.length > 0 && (
@@ -67,7 +69,9 @@ TableControlBar.propTypes = {
   bulkActions: PropTypes.arrayOf(PropTypes.shape()),
   isFilterable: PropTypes.bool.isRequired,
   /** Names of applied filters */
-  filterNames: PropTypes.arrayOf(PropTypes.string),
+  filterNames: requiredWhen(PropTypes.arrayOf(PropTypes.string), 'isFilterable'),
+  // eslint-disable-next-line react/require-default-props
+  setAllFilters: requiredWhen(PropTypes.func, 'isFilterable'),
   pageSize: PropTypes.number,
   itemCount: PropTypes.number.isRequired,
   columns: PropTypes.arrayOf(PropTypes.shape()).isRequired,

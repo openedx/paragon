@@ -13,7 +13,8 @@ const SelectionState = ({ numberOfSelectedRows, toggleAllRowsSelected, itemCount
       {!allRowsSelected && (
       <Button
         className={SELECT_ALL_TEST_ID}
-        variant="inline-link"
+        variant="link"
+        size="inline"
         onClick={() => toggleAllRowsSelected(true)}
       >
         Select all {itemCount}
@@ -22,7 +23,8 @@ const SelectionState = ({ numberOfSelectedRows, toggleAllRowsSelected, itemCount
       {numberOfSelectedRows > 0 && (
       <Button
         className={CLEAR_SELECTION_TEST_ID}
-        variant="inline-link"
+        variant="link"
+        size="inline"
         onClick={() => toggleAllRowsSelected(false)}
       >
         Clear Selection
