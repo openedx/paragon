@@ -1,12 +1,29 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { MoreVert } from '../../icons';
 import {
-  Button, ButtonGroup, DropdownButton, Dropdown, useWindowSize,
+  Button, ButtonGroup, Dropdown, useWindowSize, Icon,
 } from '..';
 import { SMALL_SCREEN_BREAKPOINT } from './constants';
 
 export const DROPDOWN_BUTTON_TEXT = 'More actions';
 export const SMALL_SCREEN_DROPDOWN_BUTTON_TEXT = 'Actions';
+
+// eslint-disable-next-line react/prop-types
+const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
+  <Button
+    href=""
+    ref={ref}
+    variant="tertiary"
+    onClick={(e) => {
+      e.preventDefault();
+      onClick(e);
+    }}
+  >
+    {children}
+  </Button>
+));
 
 const BulkActions = ({
   actions, selectedRows, className, ...rest
@@ -35,20 +52,27 @@ const BulkActions = ({
       <ButtonGroup>
         {/* TODO: change the dropdown trigger to an IconButton with the elipsis-v icon */}
         {dropdownActions.length > 0 && (
-        <DropdownButton
-          title={width > SMALL_SCREEN_BREAKPOINT ? DROPDOWN_BUTTON_TEXT : SMALL_SCREEN_DROPDOWN_BUTTON_TEXT}
-        >
-          {dropdownActions.map((action) => (
-            <Dropdown.Item
-              className={action.className}
-              key={action.buttonText}
-              onClick={() => action.handleClick(selectedRows)}
-              disabled={action.disabled}
-            >
-              {action.buttonText}
-            </Dropdown.Item>
-          ))}
-        </DropdownButton>
+        <Dropdown>
+          <Dropdown.Toggle as={CustomToggle}>
+            <Icon
+              src={MoreVert}
+              screenReaderText={width > SMALL_SCREEN_BREAKPOINT
+                ? DROPDOWN_BUTTON_TEXT : SMALL_SCREEN_DROPDOWN_BUTTON_TEXT}
+            />
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            {dropdownActions.map((action) => (
+              <Dropdown.Item
+                className={action.className}
+                key={action.buttonText}
+                onClick={() => action.handleClick(selectedRows)}
+                disabled={action.disabled}
+              >
+                {action.buttonText}
+              </Dropdown.Item>
+            ))}
+          </Dropdown.Menu>
+        </Dropdown>
         )}
         {/* Reversing the array because to the user it makes sense to put the primary button first,
         but we want it on the right */}
@@ -61,7 +85,10 @@ const BulkActions = ({
           return (
             <Button
               variant={variant}
-              className={`${action.className ? action.className : ''}`}
+              className={classNames({
+                [action.className]: action.className,
+                'ml-2': true,
+              })}
               onClick={() => action.handleClick(selectedRows)}
               key={action.buttonText}
               disabled={action.disabled}

@@ -1,9 +1,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import BulkActions, { DROPDOWN_BUTTON_TEXT } from '../BulkActions';
+import BulkActions, { DROPDOWN_BUTTON_TEXT, SMALL_SCREEN_DROPDOWN_BUTTON_TEXT } from '../BulkActions';
 import {
-  useWindowSize, DropdownButton, Dropdown, Button,
+  useWindowSize, Dropdown, Button, Icon,
 } from '../..';
 
 jest.mock('../../hooks/useWindowSize');
@@ -68,7 +68,7 @@ describe('<BulkActions />', () => {
     it('passes button classnames', () => {
       const wrapper = mount(<BulkActions actions={[{ ...firstAction }]} selectedRows={selectedRows} />);
       const button = wrapper.find(Button);
-      expect(button.props().className).toEqual(firstAction.className);
+      expect(button.props().className).toContain(firstAction.className);
     });
     it('disables the button', () => {
       const wrapper = mount(<BulkActions actions={[{ ...firstAction, disabled: true }]} selectedRows={selectedRows} />);
@@ -111,8 +111,8 @@ describe('<BulkActions />', () => {
     it('passes button classnames', () => {
       const wrapper = mount(<BulkActions actions={twoActions} selectedRows={selectedRows} />);
       const buttons = wrapper.find(Button);
-      expect(buttons.at(0).props().className).toEqual(twoActions[1].className);
-      expect(buttons.at(1).props().className).toEqual(twoActions[0].className);
+      expect(buttons.at(0).props().className).toContain(twoActions[1].className);
+      expect(buttons.at(1).props().className).toContain(twoActions[0].className);
     });
     it('performs the primary button action on click', () => {
       const onClickSpy = jest.fn();
@@ -174,7 +174,8 @@ describe('<BulkActions />', () => {
         onClickSpy.mockClear();
       });
       it('displays additional actions in a dropdown', () => {
-        expect(dropdownButton.text()).toEqual(DROPDOWN_BUTTON_TEXT);
+        const icon = wrapper.find(Icon);
+        expect(icon.props().screenReaderText).toEqual(DROPDOWN_BUTTON_TEXT);
         const actionItems = wrapper.find(Dropdown.Item);
         // we subtract two for the two main buttons that aren't in the dropdown
         expect(actionItems.length).toEqual(4);
@@ -205,7 +206,7 @@ describe('<BulkActions />', () => {
     test.each(actions)('puts all actions in a dropdown %#', (testActions) => {
       useWindowSize.mockReturnValue({ width: 500 });
       const wrapper = mount(<BulkActions actions={testActions} selectedRows={selectedRows} />);
-      const button = wrapper.find(DropdownButton);
+      const button = wrapper.find(Icon);
       expect(button.length).toEqual(1);
       expect(wrapper.text()).not.toContain(firstAction.buttonText);
       const buttons = wrapper.find('button');
@@ -216,6 +217,12 @@ describe('<BulkActions />', () => {
       testActions.forEach((action) => {
         expect(wrapper.text()).toContain(action.buttonText);
       });
+    });
+    it('renders the correct alt text for the dropdown', () => {
+      useWindowSize.mockReturnValue({ width: 500 });
+      const wrapper = mount(<BulkActions {...props} />);
+      const icon = wrapper.find(Icon);
+      expect(icon.props().screenReaderText).toEqual(SMALL_SCREEN_DROPDOWN_BUTTON_TEXT);
     });
   });
 });
