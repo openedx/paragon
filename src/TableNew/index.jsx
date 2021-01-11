@@ -10,27 +10,25 @@ import getTableArgs from './utils/getTableArgs';
 import TableControlBar from './TableControlBar';
 
 function TableWrapper({
-  initialColumns, data, bulkActions, defaultColumnValues, additionalColumns, isSelectable, isSortable,
-  isPaginated, manualPagination, initialPageSize, initialPageIndex, itemCount,
-  isFilterable, manualFilters, fetchData,
+  columns, data, bulkActions, defaultColumnValues, additionalColumns, isSelectable, isSortable,
+  isPaginated, manualPagination, pageCount, itemCount,
+  isFilterable, manualFilters, fetchData, initialState,
 }) {
   const defaultColumn = React.useMemo(
     () => (defaultColumnValues),
     [defaultColumnValues],
   );
   const tableOptions = {
-    columns: initialColumns,
+    columns,
     data,
     defaultColumn,
     manualFilters,
     manualPagination,
-    initialState: {},
+    initialState,
   };
 
   if (isPaginated) {
-    tableOptions.initialState.pageCount = itemCount ? itemCount % initialPageSize : 1;
-    tableOptions.initialState.pageIndex = initialPageIndex;
-    tableOptions.initialState.pageSize = initialPageSize;
+    tableOptions.pageCount = pageCount || itemCount % initialState.pageSize || -1;
   }
 
   // NB: Table args *must* be in a particular order
@@ -118,13 +116,13 @@ TableWrapper.defaultProps = {
   isSortable: false,
   manualFilters: false,
   manualPagination: false,
-  initialPageIndex: 1,
   fetchData: null,
+  initialState: {},
 };
 
 TableWrapper.propTypes = {
   /** Definition of table columns */
-  initialColumns: PropTypes.arrayOf(PropTypes.shape({
+  columns: PropTypes.arrayOf(PropTypes.shape({
     /** User visible column name P */
     Header: PropTypes.string.isRequired,
     /** String used to access the correct cell data for this column */
@@ -138,11 +136,10 @@ TableWrapper.propTypes = {
   isSortable: PropTypes.bool,
   /** Paginate the table */
   isPaginated: PropTypes.bool,
-  // eslint-disable-next-line react/require-default-props
-  initialPageSize: requiredWhen(PropTypes.number, 'isPaginated'),
-  // eslint-disable-next-line react/require-default-props
-  initialPageIndex: requiredWhen(PropTypes.number, 'isPaginated'),
+  /* indicates that pagination will be done manually */
   manualPagination: PropTypes.bool,
+  // eslint-disable-next-line react/require-default-props
+  pageCount: requiredWhen(PropTypes.number, 'manualPagination'),
   // eslint-disable-next-line react/require-default-props
   itemCount: requiredWhen(PropTypes.number, 'manualPagination'),
   /** Table rows can be filtered, using a default filter in the default column values, or in the column definition */
@@ -173,6 +170,12 @@ TableWrapper.propTypes = {
   /** Function that will fetch table data. Called when page size, page index or filters change.
     * Meant to be used with manual filters and pagination */
   fetchData: PropTypes.func,
+  /** Initial state passed to react-table's <a href="https://react-table.tanstack.com/docs/api/useTable">useTable</a>  */
+  initialState: PropTypes.shape({
+    pageSize: requiredWhen(PropTypes.number, 'isPaginated'),
+    pageIndex: requiredWhen(PropTypes.number, 'isPaginated'),
+    filters: requiredWhen(PropTypes.arrayOf(PropTypes.shape()), 'manualFilters'),
+  }),
 };
 
 export default TableWrapper;
