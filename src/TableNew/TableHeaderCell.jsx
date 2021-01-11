@@ -36,7 +36,7 @@ const TableHeaderCell = ({ column }) => {
     <th {...getHeaderProps(toggleProps)}>
       <span className="d-flex align-items-center">
         <span>{render('Header')}</span>
-        {canSort && <SortIndicator isSorted={isSorted} isSortedDesc={isSortedDesc} />}
+        {canSort && <SortIndicator isSorted={isSorted} isSortedDesc={isSortedDesc || false} />}
       </span>
     </th>
   );
