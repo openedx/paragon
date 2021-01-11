@@ -91,7 +91,8 @@
   "jest": {
     "transform": {
       "^.+\\.md?$": "markdown-loader-jest",
-      "^.+\\.jsx?$": "babel-jest"
+      "^.+\\.jsx?$": "babel-jest",
+      "^icons/index.js$": "babel-jest"
     },
     "setupFiles": [
       "./src/setupTest.js"
