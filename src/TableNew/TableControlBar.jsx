@@ -35,7 +35,7 @@ const TableControlBar = ({
             isSelectable={isSelectable}
             numberOfSelectedRows={selectedFlatRows.length}
             toggleAllRowsSelected={toggleAllRowsSelected}
-            filterName={filterNames.map((filter) => filter.id)}
+            filterNames={filterNames}
             pageSize={pageSize}
             itemCount={itemCount}
           />

@@ -65,7 +65,7 @@ function TableWrapper({
     prepareRow,
   } = instance;
 
-  const filterNames = instance.state.filters && instance.state.filters.map((filter) => filter.id);
+  const filterNames = instance.state.filters.map((filter) => filter.id);
 
   return (
     <div className="pgn__table-wrapper">
@@ -74,7 +74,7 @@ function TableWrapper({
         selectedFlatRows={instance.selectedFlatRows}
         toggleAllRowsSelected={instance.toggleAllRowsSelected}
         isFilterable={isFilterable}
-        filtersNames={filterNames}
+        filterNames={filterNames}
         pageSize={instance.state.pageSize}
         itemCount={itemCount || rows.length}
         bulkActions={bulkActions}
