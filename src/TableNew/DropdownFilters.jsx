@@ -20,7 +20,7 @@ const DropdownFilters = ({
 
   return (
     <div className="pgn__table-filters">
-      {breakoutFilter && <div className="pgn__table-filters-breakout-filter">{breakoutFilter.render('Filter')}</div>}
+      {breakoutFilter && <div className="mr-2">{breakoutFilter.render('Filter')}</div>}
       {otherFilters.length > 0 && (
       <DropdownButton variant="outline-primary" id="table-filters-dropdown" title="Filters">
         {otherFilters.map(column => (

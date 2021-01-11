@@ -45,12 +45,12 @@ $table-cell-padding: 8px 14px;
 }
 
 .pgn__table-filters-breakout-filter {
-  margin-right: 16px;
   align-self: flex-end;
 }
 
 .pgn__table-filters-dropdown-item {
   padding: 8px 14px;
+  min-width: 15em;
 }
 
 .pgn__table-status {
