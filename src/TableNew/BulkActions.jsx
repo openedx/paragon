@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { MoreVert } from '../../icons';
 import {
-  Button, Dropdown, useWindowSize, Icon,
+  Button, Dropdown, useWindowSize, Icon, breakpoints,
 } from '..';
-import { SMALL_SCREEN_BREAKPOINT } from './constants';
 
 export const DROPDOWN_BUTTON_TEXT = 'More actions';
 export const SMALL_SCREEN_DROPDOWN_BUTTON_TEXT = 'Actions';
@@ -31,7 +30,7 @@ const BulkActions = ({
   const { width } = useWindowSize();
   const [visibleActions, dropdownActions] = useMemo(() => {
     const buttonActions = [...actions];
-    if (width < SMALL_SCREEN_BREAKPOINT) {
+    if (width < breakpoints.small.minWidth) {
       return [[], buttonActions];
     }
     let firstTwoActions = [];
@@ -54,7 +53,7 @@ const BulkActions = ({
         <Dropdown.Toggle as={CustomToggle}>
           <Icon
             src={MoreVert}
-            screenReaderText={width > SMALL_SCREEN_BREAKPOINT
+            screenReaderText={width > breakpoints.small.minWidth
               ? DROPDOWN_BUTTON_TEXT : SMALL_SCREEN_DROPDOWN_BUTTON_TEXT}
           />
         </Dropdown.Toggle>
