@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { MoreVert } from '../../icons';
 import {
-  Button, ButtonGroup, Dropdown, useWindowSize, Icon,
+  Button, Dropdown, useWindowSize, Icon,
 } from '..';
 import { SMALL_SCREEN_BREAKPOINT } from './constants';
 
@@ -49,55 +49,53 @@ const BulkActions = ({
 
   return (
     <div className={`pgn__bulk-actions ${className}`} {...rest}>
-      <ButtonGroup>
-        {/* TODO: change the dropdown trigger to an IconButton with the elipsis-v icon */}
-        {dropdownActions.length > 0 && (
-        <Dropdown>
-          <Dropdown.Toggle as={CustomToggle}>
-            <Icon
-              src={MoreVert}
-              screenReaderText={width > SMALL_SCREEN_BREAKPOINT
-                ? DROPDOWN_BUTTON_TEXT : SMALL_SCREEN_DROPDOWN_BUTTON_TEXT}
-            />
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            {dropdownActions.map((action) => (
-              <Dropdown.Item
-                className={action.className}
-                key={action.buttonText}
-                onClick={() => action.handleClick(selectedRows)}
-                disabled={action.disabled}
-              >
-                {action.buttonText}
-              </Dropdown.Item>
-            ))}
-          </Dropdown.Menu>
-        </Dropdown>
-        )}
-        {/* Reversing the array because to the user it makes sense to put the primary button first,
-        but we want it on the right */}
-        {visibleActions.map((action, idx) => {
-          let { variant } = action;
-          if (!variant) {
-            variant = (idx === 1 && visibleActions.length === 2) ? 'brand' : 'outline-primary';
-          }
-
-          return (
-            <Button
-              variant={variant}
-              className={classNames({
-                [action.className]: action.className,
-                'ml-2': true,
-              })}
-              onClick={() => action.handleClick(selectedRows)}
+      {/* TODO: change the dropdown trigger to an IconButton with the elipsis-v icon */}
+      {dropdownActions.length > 0 && (
+      <Dropdown>
+        <Dropdown.Toggle as={CustomToggle}>
+          <Icon
+            src={MoreVert}
+            screenReaderText={width > SMALL_SCREEN_BREAKPOINT
+              ? DROPDOWN_BUTTON_TEXT : SMALL_SCREEN_DROPDOWN_BUTTON_TEXT}
+          />
+        </Dropdown.Toggle>
+        <Dropdown.Menu alignRight>
+          {dropdownActions.map((action) => (
+            <Dropdown.Item
+              className={action.className}
               key={action.buttonText}
+              onClick={() => action.handleClick(selectedRows)}
               disabled={action.disabled}
             >
               {action.buttonText}
-            </Button>
-          );
-        })}
-      </ButtonGroup>
+            </Dropdown.Item>
+          ))}
+        </Dropdown.Menu>
+      </Dropdown>
+      )}
+      {/* Reversing the array because to the user it makes sense to put the primary button first,
+      but we want it on the right */}
+      {visibleActions.map((action, idx) => {
+        let { variant } = action;
+        if (!variant) {
+          variant = (idx === 1 && visibleActions.length === 2) ? 'brand' : 'outline-primary';
+        }
+
+        return (
+          <Button
+            variant={variant}
+            className={classNames({
+              [action.className]: action.className,
+              'ml-2': true,
+            })}
+            onClick={() => action.handleClick(selectedRows)}
+            key={action.buttonText}
+            disabled={action.disabled}
+          >
+            {action.buttonText}
+          </Button>
+        );
+      })}
     </div>
   );
 };

@@ -13,6 +13,10 @@ $table-footer-position: flex-end;
   padding: $table-padding-y $table-padding-x 0 $table-padding-x;
 }
 
+.pgn__bulk-actions {
+  display: flex;
+}
+
 .pgn__table {
   width: 100%;
   border-bottom: $table-border;

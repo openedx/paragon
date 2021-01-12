@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { useTable } from 'react-table';
 import Table from './Table';
 
-import TablePagination from './TablePagination';
 import getVisibleColumns from './utils/getVisibleColumns';
 import { requiredWhen } from './utils/propTypesUtils';
 import getTableArgs from './utils/getTableArgs';
