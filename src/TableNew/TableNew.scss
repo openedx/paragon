@@ -35,6 +35,10 @@ $table-cell-padding: 8px 14px;
   }
 }
 
+.pgn__table-empty {
+  padding: $table-padding-x $table-padding-y
+}
+
 .pgn__table-actions {
   display: flex;
   justify-content: space-between;
