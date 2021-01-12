@@ -4,7 +4,7 @@ import { requiredWhen } from './utils/propTypesUtils';
 import SelectionState from './SelectionState';
 import { Button } from '..';
 
-const SMART_STATUS_CLASS = 'pgn__smart-status'
+const SMART_STATUS_CLASS = 'pgn__smart-status';
 
 const SmartStatus = ({
   isSelectable,

@@ -5,10 +5,12 @@ import { Button } from '..';
 export const SELECT_ALL_TEST_ID = 'test_selection_state_select_all_button';
 export const CLEAR_SELECTION_TEST_ID = 'test_selection_state_clear_selection_button';
 
-const SelectionState = ({ numberOfSelectedRows, toggleAllRowsSelected, itemCount }) => {
+const SelectionState = ({
+  numberOfSelectedRows, toggleAllRowsSelected, itemCount, className,
+}) => {
   const allRowsSelected = numberOfSelectedRows === itemCount;
   return (
-    <div>
+    <div className={className}>
       <span>{allRowsSelected && 'All '}{numberOfSelectedRows} selected </span>
       {!allRowsSelected && (
       <Button
@@ -34,10 +36,15 @@ const SelectionState = ({ numberOfSelectedRows, toggleAllRowsSelected, itemCount
   );
 };
 
+SelectionState.defaultProps = {
+  className: '',
+};
+
 SelectionState.propTypes = {
   numberOfSelectedRows: PropTypes.number.isRequired,
   toggleAllRowsSelected: PropTypes.func.isRequired,
   itemCount: PropTypes.number.isRequired,
+  className: PropTypes.string,
 };
 
 export default SelectionState;
