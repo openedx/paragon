@@ -15,6 +15,7 @@ const noFiltersProps = {
 const props = {
   ...noFiltersProps,
   filterNames: ['name', 'age'],
+  isFilterable: true,
 };
 
 describe('<SmartStatus />', () => {

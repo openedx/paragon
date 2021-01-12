@@ -10,10 +10,11 @@ const SmartStatus = ({
   isSelectable,
   numberOfSelectedRows,
   toggleAllRowsSelected,
+  isFilterable,
   filterNames,
+  resetAllFilters,
   pageSize,
   itemCount,
-  setAllFilters,
 }) => {
   if (isSelectable && numberOfSelectedRows > 0) {
     return (
@@ -25,7 +26,7 @@ const SmartStatus = ({
       />
     );
   }
-  if (filterNames.length > 0) {
+  if (isFilterable && filterNames.length > 0) {
     return (
       <div className={SMART_STATUS_CLASS}>
         Filtered by {filterNames.join(', ')}
@@ -33,32 +34,32 @@ const SmartStatus = ({
           className="pgn__smart-status-button"
           variant="link"
           size="inline"
-          onClick={() => setAllFilters([])}
+          onClick={() => resetAllFilters()}
         >
           Clear Filters
         </Button>
       </div>
     );
   }
-  return <div className={SMART_STATUS_CLASS}>Showing {itemCount || pageSize} of {itemCount}</div>;
+  return <div className={SMART_STATUS_CLASS}>Showing {pageSize} of {itemCount}</div>;
 };
 
 SmartStatus.defaultProps = {
   numberOfSelectedRows: 0,
   toggleAllRowsSelected: () => {},
   filterNames: [],
-  pageSize: null,
 };
 
 SmartStatus.propTypes = {
   isSelectable: PropTypes.bool.isRequired,
   numberOfSelectedRows: requiredWhen(PropTypes.number, 'isSelectable'),
   toggleAllRowsSelected: requiredWhen(PropTypes.func, 'isSelectable'),
+  isFilterable: PropTypes.bool.isRequired,
   /** Names of applied filters */
   filterNames: requiredWhen(PropTypes.arrayOf(PropTypes.string), 'isFilterable'),
   // eslint-disable-next-line react/require-default-props
-  setAllFilters: requiredWhen(PropTypes.func, 'isFilterable'),
-  pageSize: PropTypes.number,
+  resetAllFilters: requiredWhen(PropTypes.func, 'isFilterable'),
+  pageSize: PropTypes.number.isRequired,
   itemCount: PropTypes.number.isRequired,
 };
 
