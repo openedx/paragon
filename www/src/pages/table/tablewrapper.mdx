@@ -114,12 +114,16 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 ```
 
 
-## Backend Filtering
+## Backend filtering and sorting
 
 ```jsx live
 <TableWrapper
   isFilterable
+  manualFilters
+  defaultColumnValues={{ Filter: TextFilter }}
   isPaginated
+  isSortable
+  manualSortBy
   initialState={{
     pageSize: 3,
     pageIndex: 0
@@ -303,9 +307,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
     },
   ]}
   title="Studio Ghibli Films"
-  defaultColumnValues={{ Filter: TextFilter }}
-  manualFilters={true}
-  fetchData={ ({currentFilters}) => console.log(`This function will be called with the current filter values: ${JSON.stringify(currentFilters)}`)}
+  fetchData={(currentState) => console.log(`This function will be called with the value: ${JSON.stringify(currentState)}}`)}
   bulkActions={[
     {
       buttonText: 'Download CSV',

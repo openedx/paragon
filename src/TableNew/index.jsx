@@ -10,9 +10,11 @@ import getTableArgs from './utils/getTableArgs';
 import TableControlBar from './TableControlBar';
 
 function TableWrapper({
-  columns, data, bulkActions, defaultColumnValues, additionalColumns, isSelectable, isSortable,
+  columns, data, bulkActions, defaultColumnValues, additionalColumns, isSelectable,
   isPaginated, manualPagination, pageCount, itemCount,
   isFilterable, manualFilters, fetchData, initialState,
+  isSortable, manualSortBy,
+  initialTableOptions,
 }) {
   const defaultColumn = React.useMemo(
     () => (defaultColumnValues),
@@ -24,10 +26,12 @@ function TableWrapper({
     defaultColumn,
     manualFilters,
     manualPagination,
+    manualSortBy,
     initialState,
-  }), [columns, data, defaultColumn, manualFilters, manualPagination, initialState]);
+    ...initialTableOptions,
+  }), [columns, data, defaultColumn, manualFilters, manualPagination, initialState, initialTableOptions]);
 
-  if (isPaginated) {
+  if (isPaginated && manualPagination) {
     tableOptions.pageCount = pageCount || itemCount % initialState.pageSize || -1;
   }
 
@@ -45,17 +49,10 @@ function TableWrapper({
 
   useEffect(() => {
     if (fetchData) {
-      const currentState = {};
-      if (manualFilters) {
-        currentState.currentFilters = instance.state.filters;
-      }
-      if (manualPagination) {
-        currentState.pageSize = instance.state.pageSize;
-        currentState.pageIndex = instance.state.pageIndex;
-      }
-      fetchData(currentState);
+      fetchData(instance.state);
     }
-  }, [instance.state.pageSize, instance.state.filters, instance.state.pageIndex, fetchData]);
+    // Stringifying the data gives a quick way of checking deep equality
+  }, [fetchData, JSON.stringify(instance.state)]);
 
   const {
     getTableProps,
@@ -119,8 +116,10 @@ TableWrapper.defaultProps = {
   isSortable: false,
   manualFilters: false,
   manualPagination: false,
+  manualSortBy: false,
   fetchData: null,
   initialState: {},
+  initialTableOptions: {},
 };
 
 TableWrapper.propTypes = {
@@ -137,16 +136,18 @@ TableWrapper.propTypes = {
   isSelectable: PropTypes.bool,
   /** Table columns can be sorted */
   isSortable: PropTypes.bool,
+  /** Indicates that sorting will be done via backend API. A fetchData function must be provided */
+  manualSortBy: PropTypes.bool,
   /** Paginate the table */
   isPaginated: PropTypes.bool,
-  /* indicates that pagination will be done manually */
+  /* Indicates that pagination will be done manually. A fetchData function must be provided */
   manualPagination: PropTypes.bool,
   // eslint-disable-next-line react/require-default-props
   pageCount: requiredWhen(PropTypes.number, 'manualPagination'),
   itemCount: PropTypes.number.isRequired,
   /** Table rows can be filtered, using a default filter in the default column values, or in the column definition */
   isFilterable: PropTypes.bool,
-  /** Indicates that filtering will be done via a backend API. An onFilter function must be provided */
+  /** Indicates that filtering will be done via a backend API. A fetchData function must be provided */
   manualFilters: PropTypes.bool,
   /** Actions to be performed on the table. isSelectable must be true to use bulk actions */
   bulkActions: PropTypes.arrayOf(PropTypes.shape({
@@ -172,12 +173,16 @@ TableWrapper.propTypes = {
   /** Function that will fetch table data. Called when page size, page index or filters change.
     * Meant to be used with manual filters and pagination */
   fetchData: PropTypes.func,
-  /** Initial state passed to react-table's <a href="https://react-table.tanstack.com/docs/api/useTable">useTable</a>  */
+  /** Initial state passed to react-table's documentation https://react-table.tanstack.com/docs/api/useTable */
   initialState: PropTypes.shape({
     pageSize: requiredWhen(PropTypes.number, 'isPaginated'),
     pageIndex: requiredWhen(PropTypes.number, 'isPaginated'),
     filters: requiredWhen(PropTypes.arrayOf(PropTypes.shape()), 'manualFilters'),
+    sortBy: requiredWhen(PropTypes.arrayOf(PropTypes.shape())),
   }),
+  /** Table options passed to react-table's useTable hook. Will override some options passed in to TableWrapper, such
+     as: data, columns, defaultColumn, manualFilters, manualPagination, manualSortBy, and initialState */
+  initialTableOptions: PropTypes.shape(),
 };
 
 export default TableWrapper;
