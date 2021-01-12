@@ -34,6 +34,7 @@ const TableControlBar = ({
         <div className="pgn__table-status-left">
           <SmartStatus
             isSelectable={isSelectable}
+            isFilterable={isFilterable}
             numberOfSelectedRows={selectedFlatRows.length}
             toggleAllRowsSelected={toggleAllRowsSelected}
             filterNames={filterNames}
