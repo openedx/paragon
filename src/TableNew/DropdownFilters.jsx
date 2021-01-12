@@ -39,9 +39,13 @@ const DropdownFilters = ({
 
 DropdownFilters.propTypes = {
   columns: PropTypes.arrayOf(PropTypes.shape({
+    /** Column Header is used as a key */
     Header: PropTypes.string.isRequired,
+    /** Defines whether a filter will be displayed for this column or not */
     canFilter: PropTypes.bool,
+    /** Called with the string 'Filter' to render the filter */
     render: PropTypes.func.isRequired,
+    /** React function component to display the filter */
     Filter: requiredWhen(PropTypes.func, 'canFilter'),
   })).isRequired,
 };
