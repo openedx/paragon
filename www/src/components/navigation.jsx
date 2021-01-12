@@ -73,7 +73,7 @@ const menu = [
   {
     section: 'TABLE',
     items: [
-      { title: 'TableWrapper', url: '/table/tablewrapper' },
+      { title: 'DataTable', url: '/table/datatable' },
     ]
   },
   {

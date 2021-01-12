@@ -10,7 +10,7 @@ import TableControlBar from './TableControlBar';
 import EmptyTable from './EmptyTable';
 import TableFooter from './TableFooter';
 
-function TableWrapper({
+function DataTable({
   columns, data, bulkActions, defaultColumnValues, additionalColumns, isSelectable,
   isPaginated, manualPagination, pageCount, itemCount,
   isFilterable, manualFilters, fetchData, initialState,
@@ -34,7 +34,8 @@ function TableWrapper({
   }), [columns, data, defaultColumn, manualFilters, manualPagination, initialState, initialTableOptions]);
 
   if (isPaginated && manualPagination) {
-    tableOptions.pageCount = pageCount || itemCount % initialState.pageSize || -1;
+    // pageCount is required when pagination is manual, if it's not there passing -1 as per react-table docs
+    tableOptions.pageCount = pageCount || -1;
   }
 
   // NB: Table args *must* be in a particular order
@@ -67,6 +68,7 @@ function TableWrapper({
   const filterNames = instance.state.filters ? instance.state.filters.map((filter) => filter.id) : [];
   const resetAllFilters = instance.setAllFilters ? () => instance.setAllFilters([]) : null;
   const pageSize = instance.page?.length || rows.length;
+
   return (
     <div className="pgn__table-wrapper">
       <TableControlBar
@@ -109,7 +111,7 @@ function TableWrapper({
   );
 }
 
-TableWrapper.defaultProps = {
+DataTable.defaultProps = {
   additionalColumns: [],
   bulkActions: [],
   defaultColumnValues: {},
@@ -126,7 +128,7 @@ TableWrapper.defaultProps = {
   EmptyTableComponent: EmptyTable,
 };
 
-TableWrapper.propTypes = {
+DataTable.propTypes = {
   /** Definition of table columns */
   columns: PropTypes.arrayOf(PropTypes.shape({
     /** User visible column name P */
@@ -184,11 +186,11 @@ TableWrapper.propTypes = {
     filters: requiredWhen(PropTypes.arrayOf(PropTypes.shape()), 'manualFilters'),
     sortBy: requiredWhen(PropTypes.arrayOf(PropTypes.shape())),
   }),
-  /** Table options passed to react-table's useTable hook. Will override some options passed in to TableWrapper, such
+  /** Table options passed to react-table's useTable hook. Will override some options passed in to DataTable, such
      as: data, columns, defaultColumn, manualFilters, manualPagination, manualSortBy, and initialState */
   initialTableOptions: PropTypes.shape(),
   /** Component to be displayed when the table is empty */
   EmptyTableComponent: PropTypes.func,
 };
 
-export default TableWrapper;
+export default DataTable;
