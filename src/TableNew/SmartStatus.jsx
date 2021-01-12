@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { requiredWhen } from './utils/propTypesUtils';
 import SelectionState from './SelectionState';
+import RowStatus from './RowStatus';
 import { Button } from '..';
 
 const SMART_STATUS_CLASS = 'pgn__smart-status';
@@ -29,7 +30,7 @@ const SmartStatus = ({
   if (isFilterable && filterNames.length > 0) {
     return (
       <div className={SMART_STATUS_CLASS}>
-        Filtered by {filterNames.join(', ')}
+        Filtered by {filterNames.join(', ')}.
         <Button
           className="pgn__smart-status-button"
           variant="link"
@@ -41,7 +42,7 @@ const SmartStatus = ({
       </div>
     );
   }
-  return <div className={SMART_STATUS_CLASS}>Showing {pageSize} of {itemCount}</div>;
+  return <RowStatus className={SMART_STATUS_CLASS} pageSize={pageSize} itemCount={itemCount} />;
 };
 
 SmartStatus.defaultProps = {
