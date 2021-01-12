@@ -8,6 +8,7 @@ import getVisibleColumns from './utils/getVisibleColumns';
 import { requiredWhen } from './utils/propTypesUtils';
 import getTableArgs from './utils/getTableArgs';
 import TableControlBar from './TableControlBar';
+import EmptyTable from './EmptyTable';
 
 function TableWrapper({
   columns, data, bulkActions, defaultColumnValues, additionalColumns, isSelectable,
@@ -15,6 +16,7 @@ function TableWrapper({
   isFilterable, manualFilters, fetchData, initialState,
   isSortable, manualSortBy,
   initialTableOptions,
+  EmptyTableComponent,
 }) {
   const defaultColumn = React.useMemo(
     () => (defaultColumnValues),
@@ -91,7 +93,7 @@ function TableWrapper({
         />
       )}
       {/* TODO: Add empty table thing */}
-      {rows.length <= 0 && <div />}
+      {rows.length <= 0 && <EmptyTableComponent />}
       {isPaginated && (
         <TablePagination
           previousPage={instance.previousPage}
@@ -120,6 +122,7 @@ TableWrapper.defaultProps = {
   fetchData: null,
   initialState: {},
   initialTableOptions: {},
+  EmptyTableComponent: EmptyTable,
 };
 
 TableWrapper.propTypes = {
@@ -183,6 +186,8 @@ TableWrapper.propTypes = {
   /** Table options passed to react-table's useTable hook. Will override some options passed in to TableWrapper, such
      as: data, columns, defaultColumn, manualFilters, manualPagination, manualSortBy, and initialState */
   initialTableOptions: PropTypes.shape(),
+  /** Component to be displayed when the table is empty */
+  EmptyTableComponent: PropTypes.node,
 };
 
 export default TableWrapper;
