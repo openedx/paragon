@@ -64,7 +64,7 @@ function TableWrapper({
     prepareRow,
   } = instance;
 
-  const filterNames = instance.state.filters.map((filter) => filter.id);
+  const filterNames = instance.state.filters ? instance.state.filters.map((filter) => filter.id) : [];
   const resetAllFilters = instance.setAllFilters ? () => instance.setAllFilters([]) : null;
   const pageSize = instance.page?.length || rows.length;
   return (
@@ -188,7 +188,7 @@ TableWrapper.propTypes = {
      as: data, columns, defaultColumn, manualFilters, manualPagination, manualSortBy, and initialState */
   initialTableOptions: PropTypes.shape(),
   /** Component to be displayed when the table is empty */
-  EmptyTableComponent: PropTypes.node,
+  EmptyTableComponent: PropTypes.func,
 };
 
 export default TableWrapper;

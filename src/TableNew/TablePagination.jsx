@@ -6,7 +6,7 @@ const TablePagination = ({
   previousPage, nextPage, canPreviousPage, canNextPage, pageIndex, pageCount,
 }) => (
   <div className="pgn__table-pagination">
-    <div className="pgn__page-count">
+    <div className="pgn__page-count mr-3">
       Page{' '}
       <strong>
         {pageIndex + 1} of {pageCount}
