@@ -15,15 +15,17 @@ const Table = ({
   });
 
   return (
-    <table {...getTableProps({
-      className: classNames({ pgn__table: true, 'is-striped': isStriped }),
-    })}
-    >
-      <TableHeaderRow headerGroups={headerGroups} />
-      <tbody {...getTableBodyProps()}>
-        {renderRows()}
-      </tbody>
-    </table>
+    <div className="pgn__table-container">
+      <table {...getTableProps({
+        className: classNames({ pgn__table: true, 'is-striped': isStriped }),
+      })}
+      >
+        <TableHeaderRow headerGroups={headerGroups} />
+        <tbody {...getTableBodyProps()}>
+          {renderRows()}
+        </tbody>
+      </table>
+    </div>
   );
 };
 

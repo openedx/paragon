@@ -17,6 +17,14 @@ $table-footer-position: flex-end;
   display: flex;
 }
 
+.pgn__table-container {
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-bottom: $table-border;
+}
+
 .pgn__table {
   width: 100%;
   border-bottom: $table-border;
@@ -38,6 +46,14 @@ $table-footer-position: flex-end;
   & tr.is-selected {
     background-color: $info-100!important;
   }
+}
+
+.pgn__table-cell-wrap {
+  max-width: 20vw;
+  display: block;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .pgn__table-empty {

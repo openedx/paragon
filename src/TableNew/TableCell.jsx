@@ -1,7 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TableCell = ({ cell }) => <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
+const TableCell = ({ cell }) => (
+  <td {...cell.getCellProps()}>
+    <span className="pgn__table-cell-wrap">
+      {cell.render('Cell')}
+    </span>
+  </td>
+);
 
 TableCell.propTypes = {
   cell: PropTypes.shape({
