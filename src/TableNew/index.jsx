@@ -9,6 +9,7 @@ import { requiredWhen } from './utils/propTypesUtils';
 import getTableArgs from './utils/getTableArgs';
 import TableControlBar from './TableControlBar';
 import EmptyTable from './EmptyTable';
+import TableFooter from './TableFooter';
 
 function TableWrapper({
   columns, data, bulkActions, defaultColumnValues, additionalColumns, isSelectable,
@@ -66,6 +67,7 @@ function TableWrapper({
 
   const filterNames = instance.state.filters.map((filter) => filter.id);
   const resetAllFilters = instance.setAllFilters ? () => instance.setAllFilters([]) : null;
+  const pageSize = instance.page?.length || rows.length;
   return (
     <div className="pgn__table-wrapper">
       <TableControlBar
@@ -74,7 +76,7 @@ function TableWrapper({
         toggleAllRowsSelected={instance.toggleAllRowsSelected}
         isFilterable={isFilterable}
         filterNames={filterNames}
-        pageSize={instance.page?.length || rows.length}
+        pageSize={pageSize}
         itemCount={itemCount}
         bulkActions={bulkActions}
         columns={instance.columns}
@@ -92,18 +94,18 @@ function TableWrapper({
           prepareRow={prepareRow}
         />
       )}
-      {/* TODO: Add empty table thing */}
       {rows.length <= 0 && <EmptyTableComponent />}
-      {isPaginated && (
-        <TablePagination
-          previousPage={instance.previousPage}
-          nextPage={instance.nextPage}
-          canNextPage={instance.canNextPage}
-          canPreviousPage={instance.canPreviousPage}
-          pageIndex={instance.state.pageIndex}
-          pageCount={instance.pageCount}
-        />
-      )}
+      <TableFooter
+        itemCount={itemCount}
+        pageSize={pageSize}
+        isPaginated={isPaginated}
+        previousPage={instance.previousPage}
+        nextPage={instance.nextPage}
+        canNextPage={instance.canNextPage}
+        canPreviousPage={instance.canPreviousPage}
+        pageIndex={instance.state.pageIndex}
+        pageCount={instance.pageCount}
+      />
     </div>
   );
 }

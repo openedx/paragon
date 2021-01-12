@@ -3,6 +3,7 @@ $table-border: 1px solid $gray-200!default;
 $table-padding-x: 14px;
 $table-padding-y: 14px;
 $table-cell-padding: 8px 14px;
+$table-footer-position: flex-end;
 
 .pgn__table-wrapper {
   border: $table-border;
@@ -67,12 +68,19 @@ $table-cell-padding: 8px 14px;
   }
 }
 
-.pgn__table-pagination {
+.pgn__table-footer {
   display: flex;
   justify-content: space-between;
   padding: $table-padding-x $table-padding-y;
 
+  .pgn__table-footer-row-status {
+    align-self: $table-footer-position;
+  }
+}
+
+.pgn__table-pagination {
+  display: flex;
   .pgn__page-count {
-    align-self: flex-end;
+    align-self: $table-footer-position;
   }
 }
