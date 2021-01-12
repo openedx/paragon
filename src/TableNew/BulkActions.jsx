@@ -49,7 +49,6 @@ const BulkActions = ({
 
   return (
     <div className={`pgn__bulk-actions ${className}`} {...rest}>
-      {/* TODO: change the dropdown trigger to an IconButton with the elipsis-v icon */}
       {dropdownActions.length > 0 && (
       <Dropdown>
         <Dropdown.Toggle as={CustomToggle}>
@@ -73,11 +72,11 @@ const BulkActions = ({
         </Dropdown.Menu>
       </Dropdown>
       )}
-      {/* Reversing the array because to the user it makes sense to put the primary button first,
-      but we want it on the right */}
+
       {visibleActions.map((action, idx) => {
         let { variant } = action;
         if (!variant) {
+          // use the variant defined on the button if it exists, if not, use these styles.
           variant = (idx === 1 && visibleActions.length === 2) ? 'brand' : 'outline-primary';
         }
 
