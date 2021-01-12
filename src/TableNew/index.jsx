@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { useTable } from 'react-table';
 import Table from './Table';
@@ -18,14 +18,14 @@ function TableWrapper({
     () => (defaultColumnValues),
     [defaultColumnValues],
   );
-  const tableOptions = {
+  const tableOptions = useMemo(() => ({
     columns,
     data,
     defaultColumn,
     manualFilters,
     manualPagination,
     initialState,
-  };
+  }), [columns, data, defaultColumn, manualFilters, manualPagination, initialState]);
 
   if (isPaginated) {
     tableOptions.pageCount = pageCount || itemCount % initialState.pageSize || -1;
@@ -66,7 +66,7 @@ function TableWrapper({
   } = instance;
 
   const filterNames = instance.state.filters.map((filter) => filter.id);
-
+  const resetAllFilters = instance.setAllFilters ? () => instance.setAllFilters([]) : null;
   return (
     <div className="pgn__table-wrapper">
       <TableControlBar
@@ -75,17 +75,20 @@ function TableWrapper({
         toggleAllRowsSelected={instance.toggleAllRowsSelected}
         isFilterable={isFilterable}
         filterNames={filterNames}
-        pageSize={instance.state.pageSize}
-        itemCount={itemCount || rows.length}
+        pageSize={instance.page?.length || rows.length}
+        itemCount={itemCount}
         bulkActions={bulkActions}
         columns={instance.columns}
         rows={instance.flatRows}
+        resetAllFilters={resetAllFilters}
       />
       {rows.length > 0 && (
         <Table
           getTableProps={getTableProps}
           getTableBodyProps={getTableBodyProps}
           headerGroups={headerGroups}
+          /* the page contains only the rows in it, as opposed to all rows.
+            it is only available when the table is paginated */
           rows={instance.page ? instance.page : rows}
           prepareRow={prepareRow}
         />
@@ -140,8 +143,7 @@ TableWrapper.propTypes = {
   manualPagination: PropTypes.bool,
   // eslint-disable-next-line react/require-default-props
   pageCount: requiredWhen(PropTypes.number, 'manualPagination'),
-  // eslint-disable-next-line react/require-default-props
-  itemCount: requiredWhen(PropTypes.number, 'manualPagination'),
+  itemCount: PropTypes.number.isRequired,
   /** Table rows can be filtered, using a default filter in the default column values, or in the column definition */
   isFilterable: PropTypes.bool,
   /** Indicates that filtering will be done via a backend API. An onFilter function must be provided */

@@ -27,6 +27,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
   isSelectable
   isSortable
   isFilterable
+  itemCount={7}
   data={[
     {
       name: 'Lil Bub',
@@ -119,8 +120,11 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 <TableWrapper
   isFilterable
   isPaginated
-  initialPageSize={3}
-  initialPageIndex={0}
+  initialState={{
+    pageSize: 3,
+    pageIndex: 0
+  }}
+  itemCount={20}
   data={[
   {
     "id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
