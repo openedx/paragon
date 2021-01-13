@@ -9,6 +9,15 @@ import getTableArgs from './utils/getTableArgs';
 import TableControlBar from './TableControlBar';
 import EmptyTable from './EmptyTable';
 import TableFooter from './TableFooter';
+import BulkActions from './BulkActions';
+import DropdownFilters from './DropdownFilters';
+import FilterStatus from './FilterStatus';
+import RowStatus from './RowStatus';
+import SelectionStatus from './SelectionStatus';
+import SmartStatus from './SmartStatus';
+import { TableCell, TableFilters, TableHeaderCell } from '..';
+import TableHeaderRow from './TableHeaderRow';
+import TablePagination from './TablePagination';
 
 function DataTable({
   columns, data, bulkActions, defaultColumnValues, additionalColumns, isSelectable,
@@ -192,5 +201,21 @@ DataTable.propTypes = {
   /** Component to be displayed when the table is empty */
   EmptyTableComponent: PropTypes.func,
 };
+
+DataTable.BulkActions = BulkActions;
+DataTable.EmptyTable = EmptyTable;
+DataTable.DropdownFilters = DropdownFilters;
+DataTable.FilterStatus = FilterStatus;
+DataTable.RowStatus = RowStatus;
+DataTable.SelectionStatus = SelectionStatus;
+DataTable.SmartStatus = SmartStatus;
+DataTable.Table = Table;
+DataTable.TableCell = TableCell;
+DataTable.TableControlBar = TableControlBar;
+DataTable.TableFilters = TableFilters;
+DataTable.TableFooter = TableFooter;
+DataTable.TableHeaderCell = TableHeaderCell;
+DataTable.TableHeaderRow = TableHeaderRow;
+DataTable.TablePagination = TablePagination;
 
 export default DataTable;
