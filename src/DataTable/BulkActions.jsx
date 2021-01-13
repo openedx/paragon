@@ -29,25 +29,21 @@ const BulkActions = ({
 }) => {
   const { width } = useWindowSize();
   const [visibleActions, dropdownActions] = useMemo(() => {
-    const buttonActions = [...actions];
     if (width < breakpoints.small.minWidth) {
-      return [[], buttonActions];
+      // On a small screen, all actions will be in the overflow menu
+      return [[], [...actions]];
     }
-    let firstTwoActions = [];
-    let extraActions = [];
-    if (buttonActions.length <= 2) {
-      firstTwoActions = buttonActions;
-    } else {
-      firstTwoActions = buttonActions.splice(0, 2);
-      extraActions = buttonActions;
-    }
+    // The first two actions will be displayed as buttons, the rest will go in an overflow menu
+    const firstTwoActions = [...actions].splice(0, 2);
+    const extraActions = [...actions].slice(2);
+
     /*  Reversing the array because to the user it makes sense to put the primary button first,
         but we want it on the right */
     return [firstTwoActions.reverse(), extraActions];
   }, [actions, width]);
 
   return (
-    <div className={`pgn__bulk-actions ${className}`} {...rest}>
+    <div className={classNames('pgn__bulk-actions', className)} {...rest}>
       {dropdownActions.length > 0 && (
       <Dropdown>
         <Dropdown.Toggle as={CustomToggle}>
@@ -99,7 +95,7 @@ const BulkActions = ({
 };
 
 BulkActions.defaultProps = {
-  className: '',
+  className: null,
 };
 
 BulkActions.propTypes = {
