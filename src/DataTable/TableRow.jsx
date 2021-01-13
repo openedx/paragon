@@ -24,6 +24,7 @@ TableRow.propTypes = {
     cells: PropTypes.arrayOf(PropTypes.shape()).isRequired,
     /** row id */
     id: PropTypes.string.isRequired,
+    /** indicates if row has been selected */
     isSelected: PropTypes.bool,
   }).isRequired,
 };

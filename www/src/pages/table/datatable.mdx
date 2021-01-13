@@ -20,7 +20,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
   }
 />
 
-The DataTable component is a wrapper that  uses the <a href="https://react-table.tanstack.com/docs">react-table</a> library to
+The DataTable component is a wrapper that uses the <a href="https://react-table.tanstack.com/docs">react-table</a> library to
 create tables. It can be used as is, or its subcomponents can be used on their own, allowing the developer full control.
 
 ## Frontend filtering and sorting
@@ -407,16 +407,51 @@ any component that a user requires. It will receive the row as props.
 
 ## Props
 
+### DataTable
 <StaticQuery
   query={graphql`
     query {
-      componentMetadata(displayName: { eq: "DataTable" }) {
+      dataTable: componentMetadata(displayName: { eq: "DataTable" }) {
+        ...ComponentDocGenData
+      }
+      bulkActions: componentMetadata(displayName: { eq: "BulkActions" }) {
+        ...ComponentDocGenData
+      }
+      table: componentMetadata(displayName: {eq: "Table"}, props: {elemMatch: {name: {eq: "prepareRow"}}}) {
+        displayName
+        ...ComponentDocGenData
+      }
+      cell: componentMetadata(displayName: { eq: "TableCell" }) {
+        ...ComponentDocGenData
+      }
+      headerCell: componentMetadata(displayName: { eq: "TableHeaderCell" }) {
+        ...ComponentDocGenData
+      }
+      headerRow: componentMetadata(displayName: { eq: "TableHeaderRow" }) {
+        ...ComponentDocGenData
+      }
+      row: componentMetadata(displayName: { eq: "TableRow" }) {
         ...ComponentDocGenData
       }
     }
   `}
-  render={({ componentMetadata }) => {
-    if (componentMetadata == null) return null;
-    return <PropsTable propMetaData={componentMetadata.props} />;
+  render={({ dataTable, bulkActions, table, cell, headerCell, row, headerRow }) => {
+    return (
+      <div>
+        {dataTable ? <PropsTable propMetaData={dataTable.props} /> : null}
+        <h4>{"DataTable.Table"}</h4>
+        {table ? <PropsTable propMetaData={table.props} /> : null}
+        <h4>{"DataTable.BulkActions"}</h4>
+        {bulkActions ? <PropsTable propMetaData={bulkActions.props} /> : null}
+        <h4>{"DataTable.TableRow"}</h4>
+        {row ? <PropsTable propMetaData={row.props} /> : null}
+        <h4>{"DataTable.TableHeaderRow"}</h4>
+        {headerRow ? <PropsTable propMetaData={headerRow.props} /> : null}
+        <h4>{"DataTable.TableCell"}</h4>
+        {cell ? <PropsTable propMetaData={cell.props} /> : null}
+        <h4>{"DataTable.TableHeaderCell"}</h4>
+        {headerCell ? <PropsTable propMetaData={headerCell.props} /> : null}
+      </div>
+    );
   }}
 />
