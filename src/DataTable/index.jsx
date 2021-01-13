@@ -76,7 +76,7 @@ function DataTable({
 
   const filterNames = instance.state.filters ? instance.state.filters.map((filter) => filter.id) : [];
   const resetAllFilters = instance.setAllFilters ? () => instance.setAllFilters([]) : null;
-  const pageSize = instance.page?.length || rows.length;
+  const pageSize = instance.page ? instance.page.length : rows.length;
 
   return (
     <div className="pgn__table-wrapper">
@@ -193,7 +193,7 @@ DataTable.propTypes = {
     pageSize: requiredWhen(PropTypes.number, 'isPaginated'),
     pageIndex: requiredWhen(PropTypes.number, 'isPaginated'),
     filters: requiredWhen(PropTypes.arrayOf(PropTypes.shape()), 'manualFilters'),
-    sortBy: requiredWhen(PropTypes.arrayOf(PropTypes.shape())),
+    sortBy: requiredWhen(PropTypes.arrayOf(PropTypes.shape()), 'manualSortBy'),
   }),
   /** Table options passed to react-table's useTable hook. Will override some options passed in to DataTable, such
      as: data, columns, defaultColumn, manualFilters, manualPagination, manualSortBy, and initialState */
