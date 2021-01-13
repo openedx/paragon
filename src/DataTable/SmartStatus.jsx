@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { requiredWhen } from './utils/propTypesUtils';
-import SelectionState from './SelectionState';
+import SelectionStatus from './SelectionStatus';
 import RowStatus from './RowStatus';
-import { Button } from '..';
+import FilterStatus from './FilterStatus';
 
 const SMART_STATUS_CLASS = 'pgn__smart-status';
 
@@ -19,7 +19,7 @@ const SmartStatus = ({
 }) => {
   if (isSelectable && numberOfSelectedRows > 0) {
     return (
-      <SelectionState
+      <SelectionStatus
         numberOfSelectedRows={numberOfSelectedRows}
         toggleAllRowsSelected={toggleAllRowsSelected}
         itemCount={itemCount}
@@ -29,17 +29,11 @@ const SmartStatus = ({
   }
   if (isFilterable && filterNames.length > 0) {
     return (
-      <div className={SMART_STATUS_CLASS}>
-        Filtered by {filterNames.join(', ')}.
-        <Button
-          className="pgn__smart-status-button"
-          variant="link"
-          size="inline"
-          onClick={() => resetAllFilters()}
-        >
-          Clear Filters
-        </Button>
-      </div>
+      <FilterStatus
+        className={SMART_STATUS_CLASS}
+        filterNames={filterNames}
+        onClick={() => resetAllFilters()}
+      />
     );
   }
   return <RowStatus className={SMART_STATUS_CLASS} pageSize={pageSize} itemCount={itemCount} />;

@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import SmartStatus from '../SmartStatus';
-import SelectionState from '../SelectionState';
+import SelectionState from '../SelectionStatus';
 
 const noFiltersProps = {
   isSelectable: true,
