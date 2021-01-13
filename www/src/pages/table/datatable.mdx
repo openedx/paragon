@@ -24,7 +24,7 @@ The DataTable component is a wrapper that  uses the <a href="https://react-table
 create tables. It can be used as is, or its subcomponents can be used on their own, allowing the developer full control.
 
 ## Frontend filtering and sorting
-For small tables (less than ~10,000 rows), frontend filtering, sorting and pagination can be done
+For small tables (less than ~10,000 rows), filtering, sorting and pagination can be done
 quickly and easily on the frontend.
 
 In this example, a default TextFilter component is used for all columns. A default filter can be passed in,
@@ -90,34 +90,6 @@ for more information.
       Header: 'Coat Color',
       accessor: 'color',
     },
-  ]}
-  title="Famous Internet Cats"
-  bulkActions={[
-    {
-      buttonText: 'Enroll',
-      handleClick: (selectedRows) => console.log('Enrolling ', selectedRows),
-    },
-    {
-      buttonText: 'Assign',
-      handleClick: (selectedRows) => console.log('Assigning ', selectedRows),
-    },
-    {
-      buttonText: 'Extra action 1',
-      handleClick: (selectedRows) => console.log('Extra action 1', selectedRows),
-    },
-    {
-      buttonText: 'Extra action 2',
-      handleClick: (selectedRows) => console.log('Extra action 2 ', selectedRows),
-    },
-  ]}
-  additionalColumns={[
-    {
-      id: 'action',
-      Header: 'Action',
-      // Proptypes disabled as this prop is passed in separately
-      // eslint-disable-next-line react/prop-types
-      Cell: ({ row }) => <Button variant="link" onClick={() => console.log("Assign", row)}>Assign</Button>,
-    }
   ]}
 />
 ```
