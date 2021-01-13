@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Form, FormLabel, Input } from '..';
 
 function TextFilter({
-  // hideLabel,
   column: {
     filterValue, setFilter, Header,
   },
@@ -11,7 +10,6 @@ function TextFilter({
   const inputText = `Search ${Header}`;
   return (
     <Form.Group>
-      {/* TODO: make sr-only toggleable */}
       <FormLabel className="sr-only">{inputText}</FormLabel>
       <Input
         value={filterValue || ''}
@@ -26,7 +24,6 @@ function TextFilter({
 }
 
 TextFilter.propTypes = {
-  // hideLabel: PropTypes.bool.isRequired,
   column: PropTypes.shape({
     /** Value for the filter input */
     filterValue: PropTypes.string,
