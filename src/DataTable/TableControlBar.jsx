@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { requiredWhen } from './utils/propTypesUtils';
 import BulkActions from './BulkActions';
 import SmartStatus from './SmartStatus';
@@ -9,12 +10,12 @@ import DropdownFilters from './DropdownFilters';
 const TableControlBar = ({
   isSelectable, selectedFlatRows, toggleAllRowsSelected, bulkActions,
   isFilterable, filterNames, pageSize, itemCount, columns, rows,
-  resetAllFilters,
+  resetAllFilters, className,
 }) => {
   const bulkActionRows = isSelectable ? selectedFlatRows : rows;
 
   return (
-    <div className="pgn__data-table-status-bar">
+    <div className={classNames('pgn__data-table-status-bar', className)}>
       {isFilterable && (
       <div className="pgn__data-table-actions">
         <div className="pgn__data-table-actions-left">
@@ -60,6 +61,7 @@ TableControlBar.defaultProps = {
   bulkActions: [],
   filterNames: [],
   pageSize: null,
+  className: null,
 };
 
 TableControlBar.propTypes = {
@@ -77,6 +79,7 @@ TableControlBar.propTypes = {
   pageSize: PropTypes.number,
   itemCount: PropTypes.number.isRequired,
   columns: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  className: PropTypes.string,
 };
 
 export default TableControlBar;
