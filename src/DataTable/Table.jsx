@@ -10,7 +10,7 @@ const Table = ({
   const renderRows = () => rows.map((row) => {
     prepareRow(row);
     return (
-      <TableRow row={row} key={row.id} />
+      <TableRow {...row} key={row.id} />
     );
   });
 

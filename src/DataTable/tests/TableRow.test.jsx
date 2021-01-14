@@ -4,26 +4,24 @@ import { mount } from 'enzyme';
 import TableRow from '../TableRow';
 
 const props = {
-  row: {
-    id: '1',
-    getRowProps: () => ({ className: 'red' }),
-    cells: [
-      {
-        column: {
-          Header: 'Name',
-        },
-        getCellProps: () => ({}),
-        render: () => 'Fido',
+  id: '1',
+  getRowProps: () => ({ className: 'red' }),
+  cells: [
+    {
+      column: {
+        Header: 'Name',
       },
-      {
-        column: {
-          Header: 'Favorite food',
-        },
-        getCellProps: () => ({}),
-        render: () => 'Bones',
+      getCellProps: () => ({}),
+      render: () => 'Fido',
+    },
+    {
+      column: {
+        Header: 'Favorite food',
       },
-    ],
-  },
+      getCellProps: () => ({}),
+      render: () => 'Bones',
+    },
+  ],
 };
 
 describe('<TableRow />', () => {

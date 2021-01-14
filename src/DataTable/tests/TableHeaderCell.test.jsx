@@ -4,16 +4,13 @@ import { mount } from 'enzyme';
 import TableHeaderCell, { SortIndicator } from '../TableHeaderCell';
 
 const sortByToggleProps = { foo: 'bar' };
-const columnProps = {
+const props = {
   getHeaderProps: () => ({ className: 'red' }),
   render: () => 'Title',
   isSorted: false,
   isSortedDesc: false,
   getSortByToggleProps: () => (sortByToggleProps),
   canSort: false,
-};
-const props = {
-  column: columnProps,
 };
 
 // eslint-disable-next-line react/prop-types
@@ -37,14 +34,14 @@ describe('<TableHeaderCell />', () => {
   });
   describe('with sorting', () => {
     it('renders a sortable indicator if sorting is available', () => {
-      const wrapper = mount(<FakeTable><TableHeaderCell column={{ ...columnProps, canSort: true }} /></FakeTable>);
+      const wrapper = mount(<FakeTable><TableHeaderCell {...props} canSort /></FakeTable>);
       expect(wrapper.find(SortIndicator).props().isSorted).toBe(false);
       expect(wrapper.find(SortIndicator).props().isSortedDesc).toBe(false);
     });
     it('renders a sorted ascending indicator when sorted ascending', () => {
       const wrapper = mount(
         <FakeTable>
-          <TableHeaderCell column={{ ...columnProps, canSort: true, isSorted: true }} />
+          <TableHeaderCell {...props} canSort isSorted />
         </FakeTable>,
       );
       expect(wrapper.find(SortIndicator).props().isSorted).toBe(true);
@@ -53,10 +50,7 @@ describe('<TableHeaderCell />', () => {
     it('renders a sorted descending indicator when sorted ascending', () => {
       const wrapper = mount(
         <FakeTable>
-          <TableHeaderCell column={{
-            ...columnProps, canSort: true, isSorted: true, isSortedDesc: true,
-          }}
-          />
+          <TableHeaderCell {...props} canSort isSorted isSortedDesc />
         </FakeTable>,
       );
       expect(wrapper.find(SortIndicator).props().isSorted).toBe(true);
@@ -66,7 +60,7 @@ describe('<TableHeaderCell />', () => {
       const headerPropsSpy = jest.fn().mockReturnValueOnce({});
       mount(
         <FakeTable>
-          <TableHeaderCell column={{ ...columnProps, canSort: true, getHeaderProps: headerPropsSpy }} />
+          <TableHeaderCell {...props} canSort getHeaderProps={headerPropsSpy} />
         </FakeTable>,
       );
       expect(headerPropsSpy).toHaveBeenCalledWith(sortByToggleProps);

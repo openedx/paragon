@@ -4,10 +4,8 @@ import { mount } from 'enzyme';
 import TableCell from '../TableCell';
 
 const props = {
-  cell: {
-    getCellProps: () => ({ className: 'red' }),
-    render: () => 'Cell data',
-  },
+  getCellProps: () => ({ className: 'red' }),
+  render: () => 'Cell data',
 };
 
 describe('<TableCell />', () => {

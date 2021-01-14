@@ -20,16 +20,9 @@ SortIndicator.propTypes = {
   isSortedDesc: PropTypes.bool.isRequired,
 };
 
-const TableHeaderCell = ({ column }) => {
-  const {
-    canSort,
-    getSortByToggleProps,
-    getHeaderProps,
-    render,
-    isSorted,
-    isSortedDesc,
-  } = column;
-
+const TableHeaderCell = ({
+  getHeaderProps, render, canSort, getSortByToggleProps, isSorted, isSortedDesc,
+}) => {
   const toggleProps = canSort && getSortByToggleProps ? getSortByToggleProps() : {};
 
   return (
@@ -42,21 +35,26 @@ const TableHeaderCell = ({ column }) => {
   );
 };
 
+TableHeaderCell.defaultProps = {
+  isSorted: false,
+  isSortedDesc: false,
+  canSort: false,
+  getSortByToggleProps: () => {},
+};
+
 TableHeaderCell.propTypes = {
-  column: PropTypes.shape({
-    /** Returns props for the <th> element */
-    getHeaderProps: PropTypes.func.isRequired,
-    /** Indicates whether or not a column is sorted */
-    isSorted: PropTypes.bool,
-    /** Renders the header content. Passed the string 'Header' */
-    render: PropTypes.func.isRequired,
-    /** Indicates whether the column is sorted in descending order */
-    isSortedDesc: PropTypes.bool,
-    /** Gets props related to sorting that will be passed to <th> */
-    getSortByToggleProps: PropTypes.func,
-    /** Indicates whether a column is sortable */
-    canSort: PropTypes.bool,
-  }).isRequired,
+  /** Returns props for the <th> element */
+  getHeaderProps: PropTypes.func.isRequired,
+  /** Indicates whether or not a column is sorted */
+  isSorted: PropTypes.bool,
+  /** Renders the header content. Passed the string 'Header' */
+  render: PropTypes.func.isRequired,
+  /** Indicates whether the column is sorted in descending order */
+  isSortedDesc: PropTypes.bool,
+  /** Gets props related to sorting that will be passed to <th> */
+  getSortByToggleProps: PropTypes.func,
+  /** Indicates whether a column is sortable */
+  canSort: PropTypes.bool,
 };
 
 export default TableHeaderCell;

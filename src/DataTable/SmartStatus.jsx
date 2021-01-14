@@ -47,7 +47,7 @@ SmartStatus.defaultProps = {
 
 SmartStatus.propTypes = {
   isSelectable: PropTypes.bool.isRequired,
-  numberOfSelectedRows: requiredWhen(PropTypes.number, 'isSelectable'),
+  numberOfSelectedRows: PropTypes.number,
   toggleAllRowsSelected: requiredWhen(PropTypes.func, 'isSelectable'),
   isFilterable: PropTypes.bool.isRequired,
   /** Names of applied filters */
