@@ -43,7 +43,7 @@ TableHeaderCell.defaultProps = {
 };
 
 TableHeaderCell.propTypes = {
-  /** Returns props for the <th> element */
+  /** Returns props for the th element */
   getHeaderProps: PropTypes.func.isRequired,
   /** Indicates whether or not a column is sorted */
   isSorted: PropTypes.bool,
@@ -51,7 +51,7 @@ TableHeaderCell.propTypes = {
   render: PropTypes.func.isRequired,
   /** Indicates whether the column is sorted in descending order */
   isSortedDesc: PropTypes.bool,
-  /** Gets props related to sorting that will be passed to <th> */
+  /** Gets props related to sorting that will be passed to th */
   getSortByToggleProps: PropTypes.func,
   /** Indicates whether a column is sortable */
   canSort: PropTypes.bool,

@@ -44,7 +44,7 @@ const props = {
     {
       name: 'Zeno',
       color: 'brown tabby',
-      famous_for: 'getting halfway there'
+      famous_for: 'getting halfway there',
     },
   ],
   columns: [

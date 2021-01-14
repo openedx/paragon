@@ -10,7 +10,7 @@ const TableCell = ({ getCellProps, render }) => (
 );
 
 TableCell.propTypes = {
-  /** Props for the <td> element */
+  /** Props for the td element */
   getCellProps: PropTypes.func.isRequired,
   /** Function that renders the cell contents. Will be called with the string 'Cell' */
   render: PropTypes.func.isRequired,
