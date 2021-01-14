@@ -253,11 +253,10 @@ fieldset:disabled a.btn {
 }
 
 .btn-inline {
-  line-height: inherit;
+  line-height: calc(#{$line-height-base}em - #{2 * $btn-border-width});
   font-size: inherit;
   vertical-align: baseline;
   padding: 0 .25em;
-  border: none;
 }
 
 // Specificity overrides
