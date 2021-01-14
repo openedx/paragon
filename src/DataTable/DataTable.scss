@@ -34,9 +34,6 @@ $table-footer-position: flex-end;
     padding: $table-cell-padding;
   }
   td {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
     padding: $table-cell-padding;
     line-height: 24px;
   }
