@@ -433,9 +433,28 @@ any component that a user requires. It will receive the row as props.
       row: componentMetadata(displayName: { eq: "TableRow" }) {
         ...ComponentDocGenData
       }
+      filterStatus: componentMetadata(displayName: { eq: "FilterStatus" }) {
+        ...ComponentDocGenData
+      }
+      selectionStatus: componentMetadata(displayName: { eq: "SelectionStatus" }) {
+        ...ComponentDocGenData
+      }
+      rowStatus: componentMetadata(displayName: { eq: "RowStatus" }) {
+        ...ComponentDocGenData
+      }
+      smartStatus: componentMetadata(displayName: { eq: "SmartStatus" }) {
+        ...ComponentDocGenData
+      }
+      pagination: componentMetadata(displayName: { eq: "TablePagination" }) {
+        ...ComponentDocGenData
+      }
+      textFilter: componentMetadata(displayName: { eq: "TextFilter" }) {
+        ...ComponentDocGenData
+      }
     }
   `}
-  render={({ dataTable, bulkActions, table, cell, headerCell, row, headerRow }) => {
+  render={({ dataTable, bulkActions, table, cell, headerCell, row, headerRow,
+    filterStatus, smartStatus, rowStatus, selectionStatus, pagination, textFilter }) => {
     return (
       <div>
         {dataTable ? <PropsTable propMetaData={dataTable.props} /> : null}
@@ -451,6 +470,18 @@ any component that a user requires. It will receive the row as props.
         {cell ? <PropsTable propMetaData={cell.props} /> : null}
         <h4>{"DataTable.TableHeaderCell"}</h4>
         {headerCell ? <PropsTable propMetaData={headerCell.props} /> : null}
+        <h4>{"DataTable.SmartStatus"}</h4>
+        {smartStatus ? <PropsTable propMetaData={smartStatus.props} /> : null}
+        <h4>{"DataTable.RowStatus"}</h4>
+        {rowStatus ? <PropsTable propMetaData={rowStatus.props} /> : null}
+        <h4>{"DataTable.SelectionStatus"}</h4>
+        {selectionStatus ? <PropsTable propMetaData={selectionStatus.props} /> : null}
+        <h4>{"DataTable.FilterStatus"}</h4>
+        {filterStatus ? <PropsTable propMetaData={filterStatus.props} /> : null}
+        <h4>{"DataTable.TablePagination"}</h4>
+        {pagination ? <PropsTable propMetaData={pagination.props} /> : null}
+        <h4>TextFilter</h4>
+        {textFilter ? <PropsTable propMetaData={textFilter.props} /> : null}
       </div>
     );
   }}
