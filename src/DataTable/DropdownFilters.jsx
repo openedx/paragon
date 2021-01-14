@@ -18,14 +18,14 @@ const DropdownFilters = ({
   }, [columns, width]);
 
   return (
-    <div className="pgn__table-filters">
+    <div className="pgn__data-table-filters">
       {breakoutFilter && <div className="mr-2">{breakoutFilter.render('Filter')}</div>}
       {otherFilters.length > 0 && (
       <DropdownButton variant="outline-primary" id="table-filters-dropdown" title="Filters">
         {otherFilters.map(column => (
           <div
             key={column.Header}
-            className="pgn__table-filters-dropdown-item"
+            className="pgn__data-table-filters-dropdown-item"
           >
             {column.render('Filter')}
           </div>

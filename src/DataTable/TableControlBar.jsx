@@ -14,13 +14,13 @@ const TableControlBar = ({
   const bulkActionRows = isSelectable ? selectedFlatRows : rows;
 
   return (
-    <div className="pgn__table-status-bar">
+    <div className="pgn__data-table-status-bar">
       {isFilterable && (
-      <div className="pgn__table-actions">
-        <div className="pgn__table-actions-left">
+      <div className="pgn__data-table-actions">
+        <div className="pgn__data-table-actions-left">
           <DropdownFilters columns={columns} />
         </div>
-        <div className="pgn__table-actions-right">
+        <div className="pgn__data-table-actions-right">
           {bulkActions.length > 0 && (
             <BulkActions
               actions={bulkActions}
@@ -30,8 +30,8 @@ const TableControlBar = ({
         </div>
       </div>
       )}
-      <div className="pgn__table-status">
-        <div className="pgn__table-status-left">
+      <div className="pgn__data-table-status">
+        <div className="pgn__data-table-status-left">
           <SmartStatus
             isSelectable={isSelectable}
             isFilterable={isFilterable}

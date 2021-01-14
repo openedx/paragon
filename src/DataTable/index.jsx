@@ -7,7 +7,7 @@ import getVisibleColumns from './utils/getVisibleColumns';
 import { requiredWhen } from './utils/propTypesUtils';
 import getTableArgs from './utils/getTableArgs';
 import TableControlBar from './TableControlBar';
-import EmptyTable from './EmptyTable';
+import EmptyTableContent from './EmptyTableContent';
 import TableFooter from './TableFooter';
 import BulkActions from './BulkActions';
 import DropdownFilters from './DropdownFilters';
@@ -81,7 +81,7 @@ function DataTable({
   const pageSize = instance.page ? instance.page.length : rows.length;
 
   return (
-    <div className="pgn__table-wrapper">
+    <div className="pgn__data-table-wrapper">
       <TableControlBar
         isSelectable={isSelectable}
         selectedFlatRows={instance.selectedFlatRows}
@@ -136,7 +136,7 @@ DataTable.defaultProps = {
   fetchData: null,
   initialState: {},
   initialTableOptions: {},
-  EmptyTableComponent: EmptyTable,
+  EmptyTableComponent: EmptyTableContent,
 };
 
 DataTable.propTypes = {
@@ -205,7 +205,7 @@ DataTable.propTypes = {
 };
 
 DataTable.BulkActions = BulkActions;
-DataTable.EmptyTable = EmptyTable;
+DataTable.EmptyTable = EmptyTableContent;
 DataTable.DropdownFilters = DropdownFilters;
 DataTable.FilterStatus = FilterStatus;
 DataTable.RowStatus = RowStatus;

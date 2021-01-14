@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const TableCell = ({ cell }) => (
   <td {...cell.getCellProps()}>
-    <span className="pgn__table-cell-wrap">
+    <span className="pgn__data-table-cell-wrap">
       {cell.render('Cell')}
     </span>
   </td>

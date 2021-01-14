@@ -7,7 +7,7 @@ import TableCell from './TableCell';
 const TableRow = ({ row }) => (
   <tr {...row.getRowProps({
     className: classNames({
-      'pgn__table-row': true,
+      'pgn__data-table-row': true,
       'is-selected': row.isSelected,
     }),
   })}

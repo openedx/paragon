@@ -8,8 +8,8 @@ import { requiredWhen } from './utils/propTypesUtils';
 const TableFooter = ({
   isPaginated, pageSize, itemCount, previousPage, nextPage, canNextPage, canPreviousPage, pageIndex, pageCount,
 }) => (
-  <div className="pgn__table-footer">
-    <RowStatus className="pgn__table-footer-row-status" pageSize={pageSize} itemCount={itemCount} />
+  <div className="pgn__data-table-footer">
+    <RowStatus className="pgn__data-table-footer-row-status" pageSize={pageSize} itemCount={itemCount} />
     {isPaginated && (
       <TablePagination
         previousPage={previousPage}

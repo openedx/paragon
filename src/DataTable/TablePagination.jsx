@@ -5,7 +5,7 @@ import { Button, ButtonGroup } from '..';
 const TablePagination = ({
   previousPage, nextPage, canPreviousPage, canNextPage, pageIndex, pageCount,
 }) => (
-  <div className="pgn__table-pagination">
+  <div className="pgn__data-table-pagination">
     <div className="pgn__page-count mr-3">
       Page{' '}
       <strong>

@@ -15,9 +15,9 @@ const Table = ({
   });
 
   return (
-    <div className="pgn__table-container">
+    <div className="pgn__data-table-container">
       <table {...getTableProps({
-        className: classNames({ pgn__table: true, 'is-striped': isStriped }),
+        className: classNames({ 'pgn__data-table': true, 'is-striped': isStriped }),
       })}
       >
         <TableHeaderRow headerGroups={headerGroups} />

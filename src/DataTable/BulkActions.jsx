@@ -12,7 +12,6 @@ export const SMALL_SCREEN_DROPDOWN_BUTTON_TEXT = 'Actions';
 // eslint-disable-next-line react/prop-types
 const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
   <Button
-    href=""
     ref={ref}
     variant="tertiary"
     onClick={(e) => {
