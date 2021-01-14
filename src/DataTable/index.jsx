@@ -15,7 +15,9 @@ import FilterStatus from './FilterStatus';
 import RowStatus from './RowStatus';
 import SelectionStatus from './SelectionStatus';
 import SmartStatus from './SmartStatus';
-import { TableCell, TableFilters, TableHeaderCell } from '..';
+import TableFilters from './TableFilters';
+import TableHeaderCell from './TableHeaderCell';
+import TableCell from './TableCell';
 import TableHeaderRow from './TableHeaderRow';
 import TablePagination from './TablePagination';
 
