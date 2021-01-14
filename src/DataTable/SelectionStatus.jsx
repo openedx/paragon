@@ -37,7 +37,7 @@ const SelectionState = ({
 };
 
 SelectionState.defaultProps = {
-  className: '',
+  className: undefined,
 };
 
 SelectionState.propTypes = {
