@@ -40,6 +40,20 @@ export { default as Toast } from './Toast';
 export { default as ValidationFormGroup } from './ValidationFormGroup';
 export { default as TransitionReplace } from './TransitionReplace';
 export { default as ValidationMessage } from './ValidationMessage';
+/*
+  TODO: Decide if this table should be used instead of the current Paragon component
+  export { default as Table } from 'react-bootstrap/Table';
+*/
+export { default as DataTable } from './DataTable';
+export { default as TextFilter } from './DataTable/TextFilter';
+export { default as TableHeaderCell } from './DataTable/TableHeaderCell';
+export { default as TableCell } from './DataTable/TableCell';
+export { default as TableFilters } from './DataTable/TableFilters';
+export { default as TableHeader } from './DataTable/TableHeaderRow';
+export { default as TableRow } from './DataTable/TableRow';
+export { default as BulkActions } from './DataTable/BulkActions';
+export { default as TableControlBar } from './DataTable/TableControlBar';
+
 export { default as Variant } from './utils/constants';
 export { default as useWindowSize } from './hooks/useWindowSize';
 
@@ -93,6 +107,7 @@ export { default as Image } from 'react-bootstrap/Image';
 export { default as Figure } from 'react-bootstrap/Figure';
 export { default as InputGroup } from 'react-bootstrap/InputGroup';
 export { default as Media } from 'react-bootstrap/Media';
+export { useTable } from 'react-table';
 /*
   TODO: Modal
   a11y defects:
@@ -130,10 +145,6 @@ export { default as SplitButton } from 'react-bootstrap/SplitButton';
 export { default as Tab } from 'react-bootstrap/Tab';
 export { default as TabContainer } from 'react-bootstrap/TabContainer';
 export { default as TabContent } from 'react-bootstrap/TabContent';
-/*
-  TODO: Decide if this table should be used instead of the current Paragon component
-  export { default as Table } from 'react-bootstrap/Table';
-*/
 export { default as TabPane } from 'react-bootstrap/TabPane';
 export { default as ToggleButton } from 'react-bootstrap/ToggleButton';
 export { default as ToggleButtonGroup } from 'react-bootstrap/ToggleButtonGroup';
