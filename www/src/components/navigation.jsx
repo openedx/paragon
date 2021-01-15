@@ -71,6 +71,12 @@ const menu = [
     ],
   },
   {
+    section: 'TABLE',
+    items: [
+      { title: 'DataTable', url: '/table/datatable' },
+    ]
+  },
+  {
     section: 'DEPRECATED',
     items: [
       { title: 'Checkbox', url: '/components/checkbox' },

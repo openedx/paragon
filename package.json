@@ -43,6 +43,7 @@
     "react-focus-on": "^3.5.0",
     "react-proptype-conditional-require": "^1.0.4",
     "react-responsive": "^6.1.1",
+    "react-table": "^7.6.1",
     "react-transition-group": "^4.0.0",
     "sanitize-html": "^1.20.0",
     "tabbable": "^4.0.0"
@@ -90,7 +91,8 @@
   "jest": {
     "transform": {
       "^.+\\.md?$": "markdown-loader-jest",
-      "^.+\\.jsx?$": "babel-jest"
+      "^.+\\.jsx?$": "babel-jest",
+      "^icons/index.js$": "babel-jest"
     },
     "setupFiles": [
       "./src/setupTest.js"

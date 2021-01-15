@@ -1,0 +1,106 @@
+
+$data-table-border: 1px solid $gray-200!default;
+$data-table-padding-x: 14px;
+$data-table-padding-y: 14px;
+$data-table-padding-small: 8px;
+$data-table-cell-padding: 8px 14px;
+$data-table-footer-position: flex-end;
+
+.pgn__data-table-wrapper {
+  border: $data-table-border;
+}
+
+.pgn__bulk-actions {
+  display: flex;
+}
+
+.pgn__data-table-container {
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-bottom: $data-table-border;
+}
+
+.pgn__data-table {
+  width: 100%;
+  border-bottom: $data-table-border;
+
+  &.is-striped tr:nth-child(even) {
+    background-color: $light-200;
+  }
+  th {
+    background-color: $light-300;
+    padding: $data-table-cell-padding;
+  }
+  td {
+    padding: $table-cell-padding;
+    line-height: 24px;
+  }
+  & tr.is-selected {
+    background-color: $info-100!important;
+  }
+}
+
+.pgn__data-table-cell-wrap {
+  max-width: 20vw;
+  display: block;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pgn__data-table-empty {
+  padding: $data-table-padding-x $data-table-padding-y
+}
+
+.pgn__data-table-actions {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: $data-table-padding-small;
+}
+
+
+.pgn__data-table-status-bar {
+  padding: $data-table-padding-y $data-table-padding-x 0 $data-table-padding-x;
+}
+
+.pgn__data-table-filters {
+  display: flex;
+}
+
+.pgn__data-table-filters-breakout-filter {
+  align-self: flex-end;
+}
+
+.pgn__data-table-filters-dropdown-item {
+  padding: $data-table-padding-small 14px;
+  min-width: 15em;
+}
+
+.pgn__data-table-status {
+    display: flex;
+    padding: 0px 0px $data-table-padding-small 0px;
+    justify-content: space-between;
+
+  .pgn__data-table-status-left {
+    align-self: flex-end;
+  }
+}
+
+.pgn__data-table-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: $data-table-padding-x $data-table-padding-y;
+
+  .pgn__data-table-footer-row-status {
+    align-self: $data-table-footer-position;
+  }
+}
+
+.pgn__data-table-pagination {
+  display: flex;
+  .pgn__page-count {
+    align-self: $data-table-footer-position;
+  }
+}
