@@ -19,13 +19,16 @@ const measuredTypeProps = {
     const fontFamily = measurements['font-family'] ?
       measurements['font-family'].split(',')[0] : null;
     const weight = weightLabels[measurements['font-weight']];
+    // only one significant digit if needed
+    const fontSize = Math.round(Number.parseFloat(measurements['font-size']) * 10) / 10;
+    const lineHeight = Math.round(Number.parseFloat(measurements['line-height']) * 10) / 10;
 
     return (
       <p className="m-0 text-muted">
         <span className="mr-2">
           {fontFamily} {weight}
         </span>
-        {measurements['font-size']} / {measurements['line-height']}
+        {fontSize}px / {lineHeight}px
       </p>
     );
   },
@@ -43,7 +46,7 @@ export default function () {
         <tbody>
           <tr>
             <th colSpan="3">
-              <h2>Headings</h2>
+              <h2 className="mt-3">Headings</h2>
               <p className="font-weight-normal">Headings all share a line-height of 1.25em</p>
             </th>
           </tr>
@@ -73,8 +76,7 @@ export default function () {
         <tbody>
           <tr>
             <th colSpan="3">
-              <h2>Body</h2>
-              <p className="font-weight-normal">Body text line-heights are 1.5em</p>
+              <h2 className="mt-3">Body</h2>
             </th>
           </tr>
           <tr>
@@ -124,7 +126,7 @@ export default function () {
         <tbody>
           <tr>
             <th colSpan="3">
-              <h2>Forms</h2>
+              <h2 className="mt-3">Forms</h2>
               <p className="font-weight-normal">Form text line-heights are the same as headings: 1.25em.</p>
             </th>
           </tr>
