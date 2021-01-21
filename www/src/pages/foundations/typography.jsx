@@ -109,6 +109,16 @@ export default function () {
               <code>.small</code>
             </td>
           </tr>
+          <tr>
+            <td colSpan="2">
+              <MeasuredItem {...measuredTypeProps}>
+                <p className="x-small m-0">Extra Small Body</p>
+              </MeasuredItem>
+            </td>
+            <td>
+              <code>.x-small</code>
+            </td>
+          </tr>
         </tbody>
 
         <tbody>
