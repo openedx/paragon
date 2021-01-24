@@ -1,46 +1,18 @@
-@import "~bootstrap/scss/functions";
-@import "functions"; // After bootstrap's so we can override.
-
-@import "variables"; // Before bootstrap's defaults.
-@import "~bootstrap/scss/variables";
-
+@import "functions";
+@import "variables";
 @import "~bootstrap/scss/mixins";
-@import "mixins"; // After bootstrap's so we can override.
-
 @import "~bootstrap/scss/root";
+$table-cell-padding:          .75rem !default;
+$table-cell-padding-sm:       .3rem !default;
+$table-caption-color:         $text-muted !default;
+$label-margin-bottom:                   .5rem !default;
+$table-border-color:          $border-color !default;
 @import "~bootstrap/scss/reboot";
-@import "~bootstrap/scss/type";
-@import "~bootstrap/scss/images";
-@import "~bootstrap/scss/code";
+@import "typography";
 @import "~bootstrap/scss/grid";
-@import "~bootstrap/scss/tables";
-@import "~bootstrap/scss/forms";
-@import "overrides/buttons";
 @import "~bootstrap/scss/transitions";
-@import "~bootstrap/scss/dropdown";
-@import "~bootstrap/scss/button-group";
-@import "~bootstrap/scss/input-group";
-@import "~bootstrap/scss/custom-forms";
-@import "~bootstrap/scss/nav";
-@import "~bootstrap/scss/navbar";
-@import "~bootstrap/scss/card";
-@import "~bootstrap/scss/breadcrumb";
-@import "~bootstrap/scss/pagination";
-@import "~bootstrap/scss/badge";
-@import "~bootstrap/scss/jumbotron";
-@import "overrides/alert";
-@import "~bootstrap/scss/progress";
-@import "~bootstrap/scss/media";
-@import "~bootstrap/scss/list-group";
-@import "~bootstrap/scss/close";
-@import "~bootstrap/scss/toasts";
-@import "~bootstrap/scss/modal";
-@import "~bootstrap/scss/tooltip";
-@import "~bootstrap/scss/popover";
-@import "~bootstrap/scss/carousel";
-@import "~bootstrap/scss/spinners";
-@import "~bootstrap/scss/utilities";
+@import "utilities";
 @import "~bootstrap/scss/print";
 
-@import "components";
-@import "extensions";
+// Paragon components
+@import "../../src/index.scss";

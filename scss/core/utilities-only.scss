@@ -5,12 +5,8 @@
 @import "~bootstrap/scss/variables";
 
 @import "~bootstrap/scss/mixins";
-@import "mixins";
-
-@import "~bootstrap/scss/images";
 
 @import "~bootstrap/scss/grid";
 @import "~bootstrap/scss/transitions";
-@import "~bootstrap/scss/utilities";
 
-@import "extensions/utilities";
+@import "utilities";

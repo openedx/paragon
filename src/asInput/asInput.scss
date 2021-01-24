@@ -1,3 +1,6 @@
+// TODO: Remove this dependency
+@import '../Form/variables';
+
 .form-control.is-invalid.is-invalid-nodanger {
   border-color: $input-border-color;
 }
