@@ -68,6 +68,7 @@ const menu = [
     section: 'HOOKS',
     items: [
       { title: 'useWindowSize', url: '/hooks/useWindowSize' },
+      { title: 'useResizeDetector', url: '/hooks/useResizeDetector' },
     ],
   },
   {

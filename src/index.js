@@ -8,10 +8,10 @@ export { default as Breadcrumb } from './Breadcrumb';
 export { default as Button, ButtonGroup, ButtonToolbar } from './Button';
 export {
   default as Card,
-  CardColumns,
+  // CardColumns,
   CardDeck,
-  CardImg,
-  CardGroup,
+  // CardImg,
+  // CardGroup,
 } from './Card';
 export { default as Carousel, CarouselItem } from './Carousel';
 export { default as CheckBox } from './CheckBox';
@@ -96,10 +96,13 @@ export { default as BulkActions } from './DataTable/BulkActions';
 export { default as TableControlBar } from './DataTable/TableControlBar';
 export { default as ToggleButton, ToggleButtonGroup } from './ToggleButton';
 export { default as Variant } from './utils/constants';
-export { default as useWindowSize } from './hooks/useWindowSize';
+
+// Hooks
+export { useWindowSize } from './hooks';
 
 // Pass through any needed whole third-party library functionality
 // useTable for example is needed to use the DataTable component seamlessly
 // rather than setting a peer dependency in this project, we opt to tightly
 // couple these dependencies by passing through needed functionality.
 export { useTable } from 'react-table';
+export { useResizeDetector } from 'react-resize-detector';
