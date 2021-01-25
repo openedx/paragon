@@ -2,11 +2,6 @@
 @import "variables";
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/root";
-$table-cell-padding:          .75rem !default;
-$table-cell-padding-sm:       .3rem !default;
-$table-caption-color:         $text-muted !default;
-$label-margin-bottom:                   .5rem !default;
-$table-border-color:          $border-color !default;
 @import "~bootstrap/scss/reboot";
 @import "typography";
 @import "~bootstrap/scss/grid";

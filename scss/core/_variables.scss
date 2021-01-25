@@ -268,6 +268,13 @@ $mark-bg:                     #fff243 !default;
 
 $hr-margin-y:                 $spacer !default;
 
+$label-margin-bottom:                   .5rem !default;
+
+$table-cell-padding:          .75rem !default;
+$table-cell-padding-sm:       .3rem !default;
+$table-caption-color:         $text-muted !default;
+$table-border-color:          $border-color !default;
+
 // Z-index master list
 //
 // Warning: Avoid customizing these values. They're used for a bird's eye view
