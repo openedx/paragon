@@ -21,12 +21,10 @@ We will colocate component-related SCSS and javascript in `src/{componentName}` 
 ```
 src/Button/_variables.scss
 src/Button/Button.scss
-src/Button/Button.jsx
-src/Button/Button.test.jsx
+src/Button/index.jsx
 ```
 
-The root `src/index.scss` will be responsible for including this SCSS files.
-
+The root `src/index.scss` will be responsible for including these SCSS files. And `Button.scss` in the example above would be responsible for including `Button/_variables.scss`
 
 Consequences
 ------------
