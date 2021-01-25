@@ -2,3 +2,10 @@
 @import "~bootstrap/scss/forms";
 @import "~bootstrap/scss/input-group";
 @import "~bootstrap/scss/custom-forms";
+
+// A form input state used by the now deprecate Fieldset and asInput
+// we can remove this when they are deleted.
+.form-control.is-invalid.is-invalid-nodanger {
+  @include form-control-focus(true);
+  border-color: $input-border-color;
+}
