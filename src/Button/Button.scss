@@ -1,0 +1,425 @@
+@import "variables";
+@import "~bootstrap/scss/button-group";
+
+@mixin button-variant($background, $border, $hover-background: darken($background, 7.5%), $hover-border: darken($border, 10%), $active-background: darken($background, 10%), $active-border: darken($border, 12.5%), $color: color-yiq($background), $hover-color: color-yiq($hover-background), $active-color: color-yiq($active-background)) {
+  color: $color;
+  @include gradient-bg($background);
+  border-color: $border;
+  @include box-shadow($btn-box-shadow);
+
+  @include hover {
+    color: $hover-color;
+    @include gradient-bg($hover-background);
+    border-color: $hover-border;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    color: color-yiq($background);
+    background-color: $background;
+    border-color: $border;
+    // Remove CSS gradients if they're enabled
+    @if $enable-gradients {
+      background-image: none;
+    }
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: $active-color;
+    background-color: $active-background;
+    @if $enable-gradients {
+      background-image: none; // Remove the gradient for the pressed/active state
+    }
+    border-color: $active-border;
+  }
+}
+
+// OVERRIDE FROM BOOTSTRAP
+// We do this to better control active and focus states.
+@mixin button-outline-variant($color, $color-hover: color-yiq($color), $active-background: $color, $active-border: $color) {
+  color: $color;
+  border-color: $color;
+
+  @include hover {
+    color: $color-hover;
+    background-color: $active-background;
+    border-color: $active-border;
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $color;
+    background-color: transparent;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: color-yiq($active-background);
+    background-color: $active-background;
+    border-color: $active-border;
+  }
+}
+
+// OVERRIDE FROM BOOTSTRAP
+// No changes made. We do this to keep all button related mixins together,
+//
+// Button sizes
+@mixin button-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
+  padding: $padding-y $padding-x;
+  @include font-size($font-size);
+  line-height: $line-height;
+  // Manually declare to provide an override to the browser default
+  @include border-radius($border-radius, 0);
+}
+
+
+// ------------------------
+// BELOW ARE EDX EXTENSIONS
+// ------------------------
+
+
+//
+// A new variant of button (inverse)
+//
+@mixin button-inverse-variant($color, $background: color-yiq($color), $active-background: $color, $active-border: $color) {
+  color: $color;
+  border-color: transparent;
+  background-color: $background;
+
+  @include hover {
+    color: darken($color, 7.5%);
+    background-color: darken($background, 7.5%);
+    border-color: transparent;
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $color;
+    background-color: transparent;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: darken($color, 10%);
+    background: #eee;
+  }
+}
+
+@mixin button-focus($ring-color) {
+  &.focus,
+  &:focus {
+    position: relative;
+    outline: 0;
+    box-shadow: none;
+
+    $distance: $btn-focus-width + $btn-focus-gap;
+    $distance-include-btn-border: $distance + $btn-border-width;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -1 * $distance-include-btn-border;
+      right: -1 * $distance-include-btn-border;
+      bottom: -1 * $distance-include-btn-border;
+      left: -1 * $distance-include-btn-border;
+      border:solid $btn-focus-width $ring-color;
+      border-radius: calc(#{$btn-border-radius} + #{$distance});
+    }
+    &.btn-lg:before {
+      border-radius: calc(#{$btn-border-radius-lg} + #{$distance});
+    }
+    &.btn-sm:before {
+      border-radius: calc(#{$btn-border-radius-sm} + #{$distance});
+    }
+
+    &:active,
+    &.active {
+      &:before {
+        opacity: .75;
+      }
+    }
+
+    // Disabled buttons should not have focus rings
+    &:disabled,
+    &.disabled {
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+//
+// Override Bootstrap's button definition.
+// We do this to get more control over focus
+// and hover states, as well as to define
+// an extra button variant: btn-inverse-${color}
+//
+
+//
+// Base styles
+//
+
+.btn {
+  display: inline-block;
+  font-family: $btn-font-family;
+  font-weight: $btn-font-weight;
+  color: $body-color;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border: $btn-border-width solid transparent;
+  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+  @include transition($btn-transition);
+
+  @include hover {
+    color: $body-color;
+    text-decoration: none;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    opacity: $btn-disabled-opacity;
+  }
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.btn.disabled,
+fieldset:disabled a.btn {
+  pointer-events: none;
+}
+
+
+//
+// Alternate buttons
+//
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    $background: $value;
+    $border: $value;
+
+    $hover-background: theme-color($color, "hover");
+    $hover-border: theme-color($color, "hover");
+    $active-background: theme-color($color, "active");
+    $active-border: theme-color($color, "active");
+
+    // Defaults
+    $hover-background: darken($background, 7.5%) !default;
+    $hover-border: darken($border, 10%) !default;
+    $active-background: darken($background, 10%) !default;
+    $active-border: darken($border, 12.5%) !default;
+
+    @include button-variant(
+      $background,
+      $border,
+      $hover-background,
+      $hover-border,
+      $active-background,
+      $active-border
+    );
+
+    @include button-focus(theme-color($color, "focus"));
+  }
+
+  .btn-outline-#{$color} {
+    $text-and-border: $value;
+
+    $color-hover: theme-color($color, "hover");
+    $active-background: theme-color($color, "background");
+    $active-border: theme-color($color, "active");
+
+    // Defaults
+    $color-hover: color-yiq($value) !default;
+    $active-background: $value !default;
+    $active-border: $value !default;
+
+    @include button-outline-variant(
+      $text-and-border,
+      $color-hover,
+      $active-background,
+      $active-border,
+    );
+
+    @include button-focus(theme-color($color, "focus"));
+  }
+
+  .btn-inverse-#{$color} {
+    $text: $value;
+
+    $active-background: theme-color($color, "background");
+    $active-border: theme-color($color, "active");
+
+    // Defaults
+    $background: color-yiq($value) !default;
+    $active-background: $value !default;
+    $active-border: $value !default;
+
+    @include button-inverse-variant(
+      $text,
+      $background,
+      $active-background,
+      $active-border,
+    );
+
+    @include button-focus($white);
+  }
+
+  .btn-inverse-outline-#{$color} {
+    $text-and-border: $white;
+
+    $color-hover: theme-color($color, "hover");
+    $active-background: theme-color($color, "background");
+    $active-border: transparent;
+
+    // Defaults
+    $color-hover: color-yiq($value) !default;
+    $active-background: $value !default;
+    $active-border: $value !default;
+
+    @include button-outline-variant(
+      $text-and-border,
+      $color-hover,
+      $active-background,
+      $active-border,
+    );
+
+    @include button-focus($white);
+  }
+}
+
+//
+// Tertiary buttons
+//
+
+.btn-tertiary {
+  $background: $btn-tertiary-bg;
+  $border: transparent;
+  $hover-background: $btn-tertiary-hover-bg;
+  $hover-border: transparent;
+  $active-background: $btn-tertiary-active-bg;
+  $active-border: transparent;
+
+  @include button-variant(
+    $background,
+    $border,
+    $hover-background,
+    $hover-border,
+    $active-background,
+    $active-border,
+    $btn-tertiary-color,
+    $btn-tertiary-color,
+    $btn-tertiary-color
+  );
+
+  @include button-focus(theme-color("primary", "focus"));
+}
+
+.btn-inverse-tertiary {
+  $background: $btn-inverse-tertiary-bg;
+  $border: transparent;
+  $hover-background: $btn-inverse-tertiary-hover-bg;
+  $hover-border: transparent;
+  $active-background: $btn-inverse-tertiary-active-bg;
+  $active-border: transparent;
+
+  @include button-variant(
+    $background,
+    $border,
+    $hover-background,
+    $hover-border,
+    $active-background,
+    $active-border,
+    $btn-inverse-tertiary-color,
+    $btn-inverse-tertiary-color,
+    $btn-inverse-tertiary-color
+  );
+
+  @include button-focus($white);
+}
+
+//
+// Link buttons
+//
+
+// Make a button look and behave like a link
+.btn-link {
+  font-weight: $font-weight-normal;
+  color: $link-color;
+  text-decoration: $link-decoration;
+
+  @include hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+
+  &:focus,
+  &.focus {
+    text-decoration: $link-hover-decoration;
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: $btn-link-disabled-color;
+    pointer-events: none;
+  }
+
+  // No need for an active state here
+}
+
+.btn-light,
+.btn-dark {
+  @include button-focus(theme-color("primary", "focus"));
+}
+
+
+//
+// Button Sizes
+//
+
+.btn-lg {
+  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+}
+
+.btn-sm {
+  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+}
+
+
+//
+// Block button
+//
+
+.btn-block {
+  display: block;
+  width: 100%;
+
+  // Vertically space out multiple block buttons
+  + .btn-block {
+    margin-top: $btn-block-spacing-y;
+  }
+}
+
+.btn-inline {
+  line-height: calc(#{$line-height-base}em - #{2 * $btn-border-width});
+  font-size: inherit;
+  vertical-align: baseline;
+  padding: 0 .25em;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}

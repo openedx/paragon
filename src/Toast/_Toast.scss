@@ -1,3 +1,6 @@
+@import "variables";
+@import "~bootstrap/scss/toasts";
+
 .toast {
   background-color: $toast-background-color;
   box-shadow: $toast-box-shadow;

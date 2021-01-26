@@ -1,3 +1,6 @@
+@import "variables";
+@import "~bootstrap/scss/modal";
+
 .modal.show {
   position: fixed;
   background-color: transparent;
