@@ -68,6 +68,7 @@ export {
 } from './Responsive';
 export { default as ResponsiveEmbed } from './ResponsiveEmbed';
 export { default as SearchField } from './SearchField';
+export { default as Skeleton } from './Skeleton';
 export { default as Spinner } from './Spinner';
 export { default as StatefulButton } from './StatefulButton';
 export { default as StatusAlert } from './StatusAlert';

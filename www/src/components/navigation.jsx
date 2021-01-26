@@ -54,6 +54,7 @@ const menu = [
       { title: 'ProgressBar', url: '/components/progress-bar' },
       { title: 'Responsive', url: '/components/responsive' },
       { title: 'SearchField', url: '/components/searchfield' },
+      { title: 'Skeleton', url: '/components/skeleton' },
       { title: 'Spinner', url: '/components/spinner' },
       { title: 'StatefulButton', url: '/components/statefulbutton' },
       { title: 'Table', url: '/components/table' },

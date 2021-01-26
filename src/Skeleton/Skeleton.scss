@@ -1,0 +1,9 @@
+@import 'variables';
+
+.pgn__skeleton {
+  background-color: $skeleton-color;
+  border-radius: 4px;
+  display: inline-block;
+  line-height: 1;
+  width: 100%;
+}

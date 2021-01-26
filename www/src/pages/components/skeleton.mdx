@@ -1,0 +1,32 @@
+---
+title: 'Skeleton'
+type: 'component'
+status: 'None'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: |
+  This is a skeleton loading component that Adam S. doesn't think should exist.
+---
+
+import get from 'lodash/get';
+import SingleComponentStatus from '../../components/SingleComponentStatus';
+
+# Skeleton
+
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
+
+Add a description of the new component in [MDX](https://mdxjs.com/): Markdown or JSX.
+
+
+
+##### Interactive Code Block
+
+```jsx live
+<>
+  <Skeleton />
+</>
+```
