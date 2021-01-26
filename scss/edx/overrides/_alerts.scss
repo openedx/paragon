@@ -1,8 +1,0 @@
-.alert-dismissible .close {
-  color: theme-color("gray", "default");
-  opacity: 1;
-
-  @include hover {
-    color: theme-color("gray", "hover");
-  }
-}
