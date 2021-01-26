@@ -21,13 +21,3 @@ var coreResult = sass.renderSync({
 });
 
 fs.writeFileSync('./dist/paragon.css', coreResult.css);
-
-
-// edX.org theme
-var edxResult = sass.renderSync({
-  file: './scss/edx/theme.scss',
-  outputStyle: 'compressed',
-  importer: tildaImporter,
-});
-
-fs.writeFileSync('./dist/edx-paragon.css', edxResult.css);
