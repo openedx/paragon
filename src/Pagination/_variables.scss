@@ -28,3 +28,6 @@ $pagination-active-border-color:    $pagination-active-bg !default;
 $pagination-disabled-color:         theme-color("gray", "light-text") !default;
 $pagination-disabled-bg:            $white !default;
 $pagination-disabled-border-color:  theme-color("gray", "disabled-border") !default;
+
+$pagination-border-radius-sm:       $border-radius-sm !default;
+$pagination-border-radius-lg:       $border-radius-lg !default;
