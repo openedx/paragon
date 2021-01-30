@@ -27,7 +27,7 @@ import useResizeDetector from '~paragon-react'
 <p>
   See
   {' '}
-  <a href="https://www.npmjs.com/package/react-resize-detector">
+  <a href="https://www.npmjs.com/package/react-resize-detector" target="_blank" rel="noopener noreferrer">
     https://www.npmjs.com/package/react-resize-detector
   </a>
   {' '}
@@ -41,8 +41,8 @@ import useResizeDetector from '~paragon-react'
   const { height, width, ref } = useResizeDetector();
   return (
     <div ref={ref} className="border p-3">
-      <div>Element height: {height}px</div>
-      <div>Element width: {width}px</div>
+      <div>Height: {height}px</div>
+      <div>Width: {width}px</div>
     </div>
   );
 }
