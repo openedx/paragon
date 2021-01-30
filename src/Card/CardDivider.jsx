@@ -1,16 +1,11 @@
 import React from 'react';
-import { useResizeDetector } from 'react-resize-detector';
+import classNames from 'classnames';
 
-const CardDivider = () => {
-  const { width, height, ref } = useResizeDetector({
-    refreshMode: 'throttle',
-    refreshRate: 200,
-  });
-  return (
-    <div ref={ref}>
-      {`${width}x${height}`}
-    </div>
-  );
-};
+const CardDivider = ({ className, ...attrs }) => (
+  <div
+    {...attrs}
+    className={classNames('pgn__card-divider', className)}
+  />
+);
 
 export default CardDivider;

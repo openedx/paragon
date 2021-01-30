@@ -1,2 +1,9 @@
 @import "variables";
 @import "~bootstrap/scss/card";
+
+.pgn__card-divider {
+  height: 0;
+  margin: $card-divider-margin-y 0;
+  overflow: hidden;
+  border-top: 1px solid $card-divider-bg;
+}
