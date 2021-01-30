@@ -20,13 +20,8 @@
 }
 
 .pgn__card-section-action {
-  @extend .ml-2;
-  @extend .small;
-  @extend .p-2;
-
-  &.btn {
-    @extend .btn-sm;
-  }
+  @extend .ml-1;
+  @extend .btn-sm;
 
   &:first-child {
     @extend .ml-0;
