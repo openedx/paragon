@@ -1,9 +1,37 @@
 @import "variables";
 @import "~bootstrap/scss/card";
 
+.pgn__card-section {
+  @extend .px-4;
+  @extend .pt-4;
+  @extend .pb-3;
+}
+
 .pgn__card-divider {
   height: 0;
   margin: $card-divider-margin-y 0;
   overflow: hidden;
   border-top: 1px solid $card-divider-bg;
 }
+
+.pgn__card-section-actions {
+  @extend .my-2;
+  @extend .text-right;
+}
+
+.pgn__card-section-action {
+  @extend .ml-2;
+  @extend .small;
+  @extend .p-2;
+
+  &.btn {
+    @extend .btn-sm;
+  }
+
+  &:first-child {
+    @extend .ml-0;
+  }
+}
+
+// .pgn__card-section-content {}
+// .pgn__card-section-title {}

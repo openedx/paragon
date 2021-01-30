@@ -9,24 +9,63 @@ devStatus: 'In progress'
 import get from 'lodash/get';
 import SingleComponentStatus from '../../components/SingleComponentStatus';
 
-# Card
+## Card
 
-##### Basic Usage
+### Basic Usage
 
 ```jsx live
-<Card>
-  Some text goes here
+<Card style={{ width: '18rem' }}>
+  <Card.Img variant="top" src="https://source.unsplash.com/400x200/?nature,flower" />
+  <Card.Section>
+    <Card.Section.Title>Section title</Card.Section.Title>
+    <Card.Section.Text>
+      Some quick example text to build on the card title and make up the bulk of
+      the card's content.
+    </Card.Section.Text>
+    <Button variant="primary">Go somewhere</Button>
+  </Card.Section>
 </Card>
 ```
 
-# Card.Divider
+## Card.Section
 
-##### Basic Usage
+### Basic Usage
 
 ```jsx live
 <Card>
-  Some text goes here
+  <Card.Section>
+    <Card.Section.Title>
+      Section title
+    </Card.Section.Title>
+    <Card.Section.Content>
+      <Card.Section.Text>
+        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+      </Card.Section.Text>
+    </Card.Section.Content>
+    <Card.Section.Actions>
+      <Card.Section.Action href="https://edx.org">
+        Action 1
+      </Card.Section.Action>
+      <Card.Section.Action href="https://edx.org">
+        Action 2
+      </Card.Section.Action>
+    </Card.Section.Actions>
+  </Card.Section>
+</Card>
+```
+
+## Card.Divider
+
+### Basic Usage
+
+```jsx live
+<Card>
+  <Card.Section>
+    Some text goes here.
+  </Card.Section>
   <Card.Divider />
-  Some text goes here
+  <Card.Section>
+    Some text goes here.
+  </Card.Section>
 </Card>
 ```
