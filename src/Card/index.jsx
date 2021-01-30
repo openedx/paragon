@@ -13,5 +13,8 @@ Card.SectionAction = CardSection.Action;
 Card.SectionText = CardSection.Text;
 
 export { default as CardDeck } from 'react-bootstrap/CardDeck';
+export { default as CardColumns } from 'react-bootstrap/CardColumns';
+export { default as CardImg } from 'react-bootstrap/CardImg';
+export { default as CardGroup } from 'react-bootstrap/CardGroup';
 
 export default Card;

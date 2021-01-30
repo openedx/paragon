@@ -8,10 +8,10 @@ export { default as Breadcrumb } from './Breadcrumb';
 export { default as Button, ButtonGroup, ButtonToolbar } from './Button';
 export {
   default as Card,
-  // CardColumns,
+  CardColumns,
   CardDeck,
-  // CardImg,
-  // CardGroup,
+  CardImg,
+  CardGroup,
 } from './Card';
 export { default as Carousel, CarouselItem } from './Carousel';
 export { default as CheckBox } from './CheckBox';
