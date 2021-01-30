@@ -2,8 +2,7 @@
 @import "~bootstrap/scss/card";
 
 .pgn__card-section {
-  @extend .px-4;
-  @extend .pt-4;
+  @extend .card-body;
   @extend .pb-3;
 }
 
@@ -26,6 +25,15 @@
   &:first-child {
     @extend .ml-0;
   }
+}
+
+.pgn__card-header {
+  @extend .card-body;
+  @extend .pb-0;
+}
+
+.pgn__card-header-title {
+  @extend .m-0;
 }
 
 // .pgn__card-section-content {}
