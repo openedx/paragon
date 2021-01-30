@@ -1,16 +1,26 @@
 @import "variables";
 @import "~bootstrap/scss/card";
 
+/**
+ * Card Header
+ */
+
+ .pgn__card-header {
+  @extend .card-body;
+  @extend .pb-0;
+}
+
+.pgn__card-header-title {
+  @extend .m-0;
+}
+
+/**
+ * Card Section
+ */
+
 .pgn__card-section {
   @extend .card-body;
   @extend .pb-3;
-}
-
-.pgn__card-divider {
-  height: 0;
-  margin: $card-divider-margin-y 0;
-  overflow: hidden;
-  border-top: 1px solid $card-divider-bg;
 }
 
 .pgn__card-section-actions {
@@ -27,14 +37,16 @@
   }
 }
 
-.pgn__card-header {
-  @extend .card-body;
-  @extend .pb-0;
-}
-
-.pgn__card-header-title {
-  @extend .m-0;
-}
-
 // .pgn__card-section-content {}
 // .pgn__card-section-title {}
+
+/**
+ * Card Divider
+ */
+
+.pgn__card-divider {
+  height: 0;
+  margin: $card-divider-margin-y 0;
+  overflow: hidden;
+  border-top: 1px solid $card-divider-bg;
+}

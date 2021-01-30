@@ -2,14 +2,20 @@
 title: 'Card'
 type: 'component'
 status: 'In progress'
-designStatus: 'In progress'
+designStatus: 'Done'
 devStatus: 'In progress'
 ---
 
 import get from 'lodash/get';
 import SingleComponentStatus from '../../components/SingleComponentStatus';
 
-## Card
+# Card
+
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
 
 ### Basic Usage
 
@@ -27,6 +33,40 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
     </Card.Section.Text>
     <Button variant="primary">Go somewhere</Button>
   </Card.Section>
+</Card>
+```
+
+## Card.Header
+
+### Basic Usage
+
+```jsx live
+<Card>
+  <Card.Header>
+    <Card.Header.Title>Card Title</Card.Header.Title>
+  </Card.Header>
+</Card>
+```
+
+### Small Variant
+```jsx live
+<Card>
+  <Card.Header>
+    <Card.Header.Title small>
+      Card Title
+    </Card.Header.Title>
+  </Card.Header>
+</Card>
+```
+
+### Custom Title Sizes
+```jsx live
+<Card>
+  <Card.Header>
+    <Card.Header.Title sizes={{ default: 'h2', small: 'h3' }}>
+      Card Title
+    </Card.Header.Title>
+  </Card.Header>
 </Card>
 ```
 
