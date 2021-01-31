@@ -5,10 +5,8 @@ import Card from 'react-bootstrap/Card';
 
 import { AVAILABLE_HEADING_VALUES, HEADING_SIZES_MAP } from './constants';
 
-const useTitleComponent = ({
-  as,
-  sizes,
-  small,
+const useFormattedHeaderTitle = ({
+  as, sizes, small,
 }) => {
   const Component = useMemo(
     () => {
@@ -30,17 +28,15 @@ const CardHeaderTitle = ({
   small,
   ...attrs
 }) => {
-  const Component = useTitleComponent({
-    as,
-    sizes,
-    small,
+  const FormattedHeaderTitle = useFormattedHeaderTitle({
+    as, sizes, small,
   });
 
   return (
     <Card.Title
       {...attrs}
       className={classNames('pgn__card-header-title', className)}
-      as={Component}
+      as={FormattedHeaderTitle}
     >
       {children}
     </Card.Title>
