@@ -25,8 +25,7 @@ CardSectionTitle.propTypes = {
 };
 
 CardSectionTitle.defaultProps = {
-  // as: HEADING_SIZES_MAP.H5,
-  as: 'h5',
+  as: HEADING_SIZES_MAP.H5,
   className: undefined,
 };
 

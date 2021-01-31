@@ -67,9 +67,11 @@ const menu = [
     section: 'CARD',
     items: [
       { title: 'Card', url: '/card/card' },
+      { title: 'Card: Image Cap', url: '/card/card-image-cap' },
       { title: 'Card: Header', url: '/card/card-header' },
       { title: 'Card: Section', url: '/card/card-section' },
       { title: 'Card: Divider', url: '/card/card-divider' },
+      { title: 'Card: Footer', url: '/card/card-footer' },
     ]
   },
   {
