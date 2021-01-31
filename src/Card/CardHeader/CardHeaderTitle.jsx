@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Card from 'react-bootstrap/Card';
 
-import { AVAILABLE_HEADING_VALUES, HEADING_SIZES_MAP } from './constants';
+import { AVAILABLE_HEADING_VALUES, HEADING_SIZES_MAP } from '../constants';
 
 const useFormattedHeaderTitle = ({
   as, sizes, small,

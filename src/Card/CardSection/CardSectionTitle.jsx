@@ -2,9 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import { HEADING_SIZES_MAP } from '../constants';
+
 const CardSectionTitle = ({
-  className,
   as: Component,
+  className,
   children,
   ...attrs
 }) => (
@@ -23,6 +25,7 @@ CardSectionTitle.propTypes = {
 };
 
 CardSectionTitle.defaultProps = {
+  // as: HEADING_SIZES_MAP.H5,
   as: 'h5',
   className: undefined,
 };

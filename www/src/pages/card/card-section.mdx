@@ -1,9 +1,9 @@
 ---
-title: 'Card'
+title: 'Card.Section'
 type: 'component'
-status: 'In progress'
+status: 'In review'
 designStatus: 'Done'
-devStatus: 'In progress'
+devStatus: 'In review'
 notes: |
   Extends Card component from react-bootstrap/Card.
 ---
@@ -11,7 +11,7 @@ notes: |
 import get from 'lodash/get';
 import SingleComponentStatus from '../../components/SingleComponentStatus';
 
-# Card
+# Card: Section
 
 <SingleComponentStatus
   frontmatter={
@@ -20,38 +20,43 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 />
 
 <p>This component utilizes and extends many of the components of react-bootstrap/Card.</p>
-
 <p>
   <a href="https://react-bootstrap.github.io/components/cards/" target="_blank" rel="noopener noreferrer">
     See react-bootstrap for its documentation.
   </a>
 </p>
 
+### Card.Section
+
 ##### Basic Usage
 
 ```jsx live
-<Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="https://source.unsplash.com/400x200/?nature,flower" />
-  <Card.Header>
-    <Card.Header.Title>Card title</Card.Header.Title>
-  </Card.Header>
+<Card>
   <Card.Section>
-    <Card.Section.Title>
-      Section title
-    </Card.Section.Title>
+    Some text goes here.
+  </Card.Section>
+</Card>
+```
+
+##### Kitchen Sink
+
+```jsx live
+<Card>
+  <Card.Section>
+    <Card.Section.Title>Section title</Card.Section.Title>
     <Card.Section.Content>
       <Card.Section.Text>
-        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+        Some text goes here.
       </Card.Section.Text>
     </Card.Section.Content>
     <Card.Section.Actions>
-      <Card.Section.Action className="btn btn-outline-brand" href="https://edx.org">
+      <Card.Section.Action as={Button} variant="outline-primary">
         Action 1
       </Card.Section.Action>
       <Card.Section.Action className="btn btn-tertiary" href="https://edx.org">
         Action 2
       </Card.Section.Action>
-    </Card.Section.Actions>
+    </Card.Section.Actions> 
   </Card.Section>
 </Card>
 ```

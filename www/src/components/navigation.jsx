@@ -67,6 +67,9 @@ const menu = [
     section: 'CARD',
     items: [
       { title: 'Card', url: '/card/card' },
+      { title: 'Card: Header', url: '/card/card-header' },
+      { title: 'Card: Section', url: '/card/card-section' },
+      { title: 'Card: Divider', url: '/card/card-divider' },
     ]
   },
   {
