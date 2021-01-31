@@ -31,7 +31,6 @@ const menu = [
       { title: 'Breadcrumbs', url: '/components/breadcrumbs' },
       { title: 'Button', url: '/components/button' },
       { title: 'Button Group', url: '/components/button-group' },
-      { title: 'Card', url: '/components/card' },
       { title: 'Carousel', url: '/components/carousel' },
       { title: 'Collapsible', url: '/components/collapsible' },
       { title: 'Dropdown', url: '/components/dropdown' },
@@ -65,17 +64,23 @@ const menu = [
     ],
   },
   {
-    section: 'HOOKS',
+    section: 'CARD',
     items: [
-      { title: 'useWindowSize', url: '/hooks/useWindowSize' },
-      { title: 'useResizeDetector', url: '/hooks/useResizeDetector' },
-    ],
+      { title: 'Card', url: '/card/card' },
+    ]
   },
   {
     section: 'TABLE',
     items: [
       { title: 'DataTable', url: '/table/datatable' },
     ]
+  },
+  {
+    section: 'HOOKS',
+    items: [
+      { title: 'useWindowSize', url: '/hooks/useWindowSize' },
+      { title: 'useResizeDetector', url: '/hooks/useResizeDetector' },
+    ],
   },
   {
     section: 'DEPRECATED',
