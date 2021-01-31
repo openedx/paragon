@@ -28,4 +28,64 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 ### Card.Footer
 
-<p class="lead">Coming soon ⌛️</p>
+<p>
+  Note: This component is responsive based on its own width, not the screen size. See <a href="/hooks/useResizeDetector">useResizeDetector</a> for more details.
+</p>
+
+##### Basic Usage
+
+```jsx live
+<Card>
+  <Card.Footer>
+    <Card.Footer.Content>
+      Footer Text
+    </Card.Footer.Content>
+    <Card.Footer.Actions>
+        <Card.Footer.Action as={Button}>
+          Action 1
+        </Card.Footer.Action>
+      </Card.Footer.Actions>
+  </Card.Footer>
+</Card>
+```
+
+##### Kitchen Sink
+
+<p>
+  To preview the responsive nature of this component, delete one of the Card components nested under CardDeck below.
+</p>
+
+```jsx live
+<CardDeck>
+  <Card>
+    <Card.Footer>
+      <Card.Footer.Content>
+        Footer Text
+      </Card.Footer.Content>
+      <Card.Footer.Actions>
+        <Card.Footer.Action as={Button}>
+          Action 1
+        </Card.Footer.Action>
+        <Card.Footer.Action as={Button} variant="tertiary">
+          Action 2
+        </Card.Footer.Action>
+      </Card.Footer.Actions>
+    </Card.Footer>
+  </Card>
+  <Card>
+    <Card.Footer>
+      <Card.Footer.Content>
+        Footer Text
+      </Card.Footer.Content>
+      <Card.Footer.Actions>
+        <Card.Footer.Action as={Button}>
+          Action 1
+        </Card.Footer.Action>
+        <Card.Footer.Action as={Button} variant="tertiary">
+          Action 2
+        </Card.Footer.Action>
+      </Card.Footer.Actions>
+    </Card.Footer>
+  </Card>
+</CardDeck>
+```

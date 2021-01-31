@@ -1,33 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { useReversedChildren } from '../hooks';
+import { CardFooterContext } from './CardFooter';
 
-const CardSectionActions = ({
+const CardFooterActions = ({
   className,
   children,
   ...attrs
 }) => {
+  const { stacked } = useContext(CardFooterContext);
   const reversedChildren = useReversedChildren(children);
 
   return (
     <div
       {...attrs}
-      className={classNames('pgn__card-section-actions', className)}
+      className={classNames('pgn__card-footer-actions')}
     >
-      {reversedChildren}
+      {stacked ? children : reversedChildren}
     </div>
   );
 };
 
-CardSectionActions.propTypes = {
+CardFooterActions.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
 
-CardSectionActions.defaultProps = {
+CardFooterActions.defaultProps = {
   className: undefined,
 };
 
-export default CardSectionActions;
+export default CardFooterActions;

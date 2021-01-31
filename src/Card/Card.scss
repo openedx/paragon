@@ -51,3 +51,50 @@
   overflow: hidden;
   border-top: 1px solid $card-divider-bg;
 }
+
+/**
+ * Card Footer
+ */
+
+.pgn__card-footer {
+  @extend .card-body;
+  @extend .pt-0;
+
+  @extend .d-flex;
+  @extend .justify-content-between;
+
+  &.stacked {
+    @extend .d-block;
+
+    .pgn__card-footer-actions {
+      @extend .text-left;
+
+      .pgn__card-footer-action {
+        @extend .btn-block;
+        @extend .m-0;
+        @extend .mb-2;
+      }
+    }
+  }
+}
+
+.pgn__card-footer-content {
+  @extend .small;
+
+  .btn {
+    @extend .btn-sm;
+  }
+}
+
+.pgn__card-footer-actions {
+  @extend .text-right;
+  flex: 1;
+}
+
+.pgn__card-footer-action {
+  @extend .ml-1;
+
+  &:first-child {
+    @extend .ml-0;
+  }
+}
