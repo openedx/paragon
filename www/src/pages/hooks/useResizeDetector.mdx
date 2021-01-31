@@ -24,6 +24,26 @@ import useResizeDetector from '~paragon-react'
   element in a performant way. Change the screen size to see the effect.
 </p>
 
+##### Use Case
+
+<p>
+  Generally, responsive behavior is based on the user's screen width using media queries. However, there may
+  be situations where a component needs to change its styles and/or layout based on its own width, e.g. container queries,
+  where a media query won't suffice.
+</p>
+
+##### Technical Notes
+
+<p>
+  This hooks utilizes
+  {' '}
+  <a href="https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver" target="_blank" rel="noopener noreferrer">
+    ResizeObservers
+  </a>
+  {' '}
+  to handle element resizes natively, without relying on any window.resize listeners.
+</p>
+
 <p>
   See
   {' '}
@@ -34,7 +54,7 @@ import useResizeDetector from '~paragon-react'
   for full documentation.
 </p>
 
-#### Basic Usage
+##### Basic Usage
 
 ```jsx live
 () => {
@@ -49,7 +69,7 @@ import useResizeDetector from '~paragon-react'
 }
 ```
 
-#### Optimizing for performance
+##### Optimizing for Performance
 
 <p>This hook may be configured to be throttled or debounced.</p>
 

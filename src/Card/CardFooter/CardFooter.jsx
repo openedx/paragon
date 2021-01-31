@@ -1,11 +1,15 @@
-import React, { useLayoutEffect, useState, useMemo } from 'react';
+import React, { useCallback, useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { useResizeDetector } from 'react-resize-detector';
+import { useResizeDetector } from 'react-resize-detector/build/withPolyfill';
 
 import { useReversedChildren } from '../hooks';
 
 export const CardFooterContext = React.createContext();
+
+const CARD_FOOTER_BREAKPOINTS = {
+  STACKED: 360,
+};
 
 const CardFooter = ({
   className,
@@ -15,20 +19,8 @@ const CardFooter = ({
 }) => {
   const [stacked, setStacked] = useState(controlledStacked);
 
-  const { width, ref } = useResizeDetector({
-    refreshMode: 'throttle',
-    refreshRate: 100,
-  });
-  const reversedChildren = useReversedChildren(children);
-  const contextValue = useMemo(
-    () => ({
-      stacked,
-    }),
-    [stacked],
-  );
-
-  useLayoutEffect(
-    () => {
+  const handleResize = useCallback(
+    (width) => {
       if (controlledStacked) {
         // ``stacked`` was passed in as a prop so this component is being used as a
         // controlled component; rely on this prop instead of setting ``stacked`` state below.
@@ -36,13 +28,28 @@ const CardFooter = ({
       }
 
       // TODO: what to do about hardcoded width breakpoints...?
-      if (width < 420) {
+      if (width < CARD_FOOTER_BREAKPOINTS.STACKED) {
         setStacked(true);
       } else {
         setStacked(false);
       }
     },
-    [controlledStacked, width],
+    [controlledStacked],
+  );
+
+  const { ref } = useResizeDetector({
+    handleHeight: false,
+    refreshMode: 'throttle',
+    refreshRate: 100,
+    onResize: handleResize,
+  });
+
+  const reversedChildren = useReversedChildren(children);
+  const contextValue = useMemo(
+    () => ({
+      stacked,
+    }),
+    [stacked],
   );
 
   return (
