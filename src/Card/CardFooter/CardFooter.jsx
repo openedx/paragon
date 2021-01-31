@@ -8,7 +8,7 @@ import { useReversedChildren } from '../hooks';
 export const CardFooterContext = React.createContext();
 
 const CARD_FOOTER_BREAKPOINTS = {
-  STACKED: 420,
+  STACKED: 460,
 };
 
 const CardFooter = ({

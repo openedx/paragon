@@ -16,7 +16,7 @@ const CardFooterActions = ({
   return (
     <div
       {...attrs}
-      className={classNames('pgn__card-footer-actions')}
+      className={classNames('pgn__card-footer-actions', className)}
     >
       {stacked ? children : reversedChildren}
     </div>

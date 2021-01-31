@@ -88,3 +88,23 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
   </Card>
 </CardDeck>
 ```
+
+##### With stacked prop
+
+```jsx live
+<Card>
+  <Card.Footer stacked>
+    <Card.Footer.Content>
+      Footer Text
+    </Card.Footer.Content>
+    <Card.Footer.Actions>
+        <Card.Footer.Action href="https://edx.org" className="btn-primary">
+          Action 1
+        </Card.Footer.Action>
+        <Card.Footer.Action href="https://edx.org" className="btn-tertiary">
+          Action 2
+        </Card.Footer.Action>
+      </Card.Footer.Actions>
+  </Card.Footer>
+</Card>
+```
