@@ -30,7 +30,8 @@
 }
 
 .pgn__card-section-action {
-  @extend .ml-1;
+  @extend .ml-2;
+  @extend .btn;
   @extend .btn-sm;
 
   &:first-child {
@@ -68,9 +69,11 @@
 
     .pgn__card-footer-actions {
       @extend .text-left;
+      @extend .mb-2;
 
       .pgn__card-footer-action {
         @extend .btn-block;
+        @extend .text-center;
         @extend .m-0;
         @extend .mb-2;
       }
@@ -92,7 +95,8 @@
 }
 
 .pgn__card-footer-action {
-  @extend .ml-1;
+  @extend .ml-3;
+  @extend .btn;
 
   &:first-child {
     @extend .ml-0;

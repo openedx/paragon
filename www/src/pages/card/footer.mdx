@@ -29,7 +29,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 ### Card.Footer
 
 <p>
-  Note: This component is responsive based on its own width, not the screen size. See <a href="/hooks/useResizeDetector">useResizeDetector</a> for more details.
+  Note: This component is responsive based on its own element width, not the screen size. See <a href="/hooks/useResizeDetector">useResizeDetector</a> for more details.
 </p>
 
 ##### Basic Usage
@@ -41,8 +41,11 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
       Footer Text
     </Card.Footer.Content>
     <Card.Footer.Actions>
-        <Card.Footer.Action as={Button}>
+        <Card.Footer.Action href="https://edx.org" className="btn-primary">
           Action 1
+        </Card.Footer.Action>
+        <Card.Footer.Action href="https://edx.org" className="btn-tertiary">
+          Action 2
         </Card.Footer.Action>
       </Card.Footer.Actions>
   </Card.Footer>
