@@ -24,7 +24,8 @@
 }
 
 .pgn__card-section-actions {
-  @extend .my-2;
+  @extend .mt-2;
+  @extend .mb-0;
   @extend .text-right;
 }
 
