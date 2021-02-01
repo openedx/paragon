@@ -108,3 +108,30 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
   </Card.Footer>
 </Card>
 ```
+
+##### With Custom Breakpoints
+
+Try reducing the breakpoints.stacked prop from 1000 to something more like 500, and
+then shrink the width of your browser until the footer hits your custom breakpoint.
+
+```jsx live
+<Card>
+  <Card.Footer
+    breakpoints={{
+      stacked: 1000,
+    }}
+  >
+    <Card.Footer.Content>
+      Footer Text
+    </Card.Footer.Content>
+    <Card.Footer.Actions>
+        <Card.Footer.Action as={Button}>
+          Action 1
+        </Card.Footer.Action>
+        <Card.Footer.Action as={Button} variant="tertiary">
+          Action 2
+        </Card.Footer.Action>
+      </Card.Footer.Actions>
+  </Card.Footer>
+</Card>
+```
