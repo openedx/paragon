@@ -98,7 +98,10 @@ export { default as ToggleButton, ToggleButtonGroup } from './ToggleButton';
 export { default as Variant } from './utils/constants';
 
 // Hooks
-export { useWindowSize } from './hooks';
+export {
+  useReversedChildren,
+  useWindowSize,
+} from './hooks';
 
 // Pass through any needed whole third-party library functionality
 // useTable for example is needed to use the DataTable component seamlessly

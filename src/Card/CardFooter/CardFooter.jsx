@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useResizeDetector } from 'react-resize-detector/build/withPolyfill';
 
-import { useReversedChildren } from '../hooks';
+import { useReversedChildren } from '../../hooks';
 
 export const CardFooterContext = React.createContext();
 

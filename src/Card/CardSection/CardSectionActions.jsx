@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { useReversedChildren } from '../hooks';
+import { useReversedChildren } from '../../hooks';
 
 const CardSectionActions = ({
   className,

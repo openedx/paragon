@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { useReversedChildren } from '../hooks';
+import { useReversedChildren } from '../../hooks';
 import { CardFooterContext } from './CardFooter';
 
 const CardFooterActions = ({

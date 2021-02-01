@@ -83,8 +83,9 @@ const menu = [
   {
     section: 'HOOKS',
     items: [
-      { title: 'useWindowSize', url: '/hooks/useWindowSize' },
       { title: 'useResizeDetector', url: '/hooks/useResizeDetector' },
+      { title: 'useReversedChildren', url: '/hooks/useReversedChildren' },
+      { title: 'useWindowSize', url: '/hooks/useWindowSize' },
     ],
   },
   {

@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 
-// eslint-disable-next-line import/prefer-default-export
-export const useReversedChildren = (children) => {
+const useReversedChildren = (children) => {
   const reversedChildren = useMemo(
     () => React.Children.toArray(children).reverse(),
     [children],
@@ -9,3 +8,5 @@ export const useReversedChildren = (children) => {
 
   return reversedChildren;
 };
+
+export default useReversedChildren;
