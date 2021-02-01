@@ -13,6 +13,9 @@
     // Note: any element that should be "lifted" outside of this click should be relatively
     // positioned, e.g. action buttons in the footer should remain clickable outside of the
     // full card click.
+    
+    // TODO: make this class be added conditionally on some component via a prop rather than explicitly
+    // passing ``className="full-card-click"``.
     content: '';
     position: absolute;
     left: 0;
