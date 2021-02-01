@@ -69,7 +69,10 @@
 
     .pgn__card-footer-actions {
       @extend .text-left;
-      @extend .mb-2;
+
+      &:not(:last-child) {
+        @extend .mb-2;
+      }
 
       .pgn__card-footer-action {
         @extend .btn-block;
