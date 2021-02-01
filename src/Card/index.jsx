@@ -1,11 +1,9 @@
-import CardDeprecated from 'react-bootstrap/Card';
-
+import Card from './Card';
 import CardDivider from './CardDivider';
 import CardSection from './CardSection';
 import CardHeader from './CardHeader';
 import CardFooter from './CardFooter';
 
-const Card = CardDeprecated;
 Card.Divider = CardDivider;
 Card.Section = CardSection;
 Card.Header = CardHeader;

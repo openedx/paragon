@@ -2,6 +2,27 @@
 @import "~bootstrap/scss/card";
 
 /**
+ * Card
+ */
+
+ .pgn__card {
+  .full-card-click:after {
+    // Any element using this class will become the element that receives a click
+    // when any part of the card is clicked.
+    //
+    // Note: any element that should be "lifted" outside of this click should be relatively
+    // positioned, e.g. action buttons in the footer should remain clickable outside of the
+    // full card click.
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+ }
+
+/**
  * Card Header
  */
 
@@ -12,6 +33,12 @@
 
 .pgn__card-header-title {
   @extend .m-0;
+
+  &.card-title {
+    a  {
+      color: $black;
+    }
+  }
 }
 
 /**
@@ -27,6 +54,7 @@
   @extend .mt-2;
   @extend .mb-0;
   @extend .text-right;
+  position: relative;
 }
 
 .pgn__card-section-action {
@@ -86,6 +114,7 @@
 
 .pgn__card-footer-content {
   @extend .small;
+  position: relative;
 
   .btn {
     @extend .btn-sm;
@@ -95,6 +124,7 @@
 .pgn__card-footer-actions {
   @extend .text-right;
   flex: 1;
+  position: relative;
 }
 
 .pgn__card-footer-action {
