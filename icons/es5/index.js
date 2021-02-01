@@ -38,6 +38,7 @@ export { default as Info } from './Info';
 export { default as Institution } from './Institution';
 export { default as Language } from './Language';
 export { default as Laptop } from './Laptop';
+export { default as Lightbulb } from './Lightbulb';
 export { default as Menu } from './Menu';
 export { default as Money } from './Money';
 export { default as MoneyFilled } from './MoneyFilled';
