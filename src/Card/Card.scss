@@ -1,2 +1,10 @@
 @import "variables";
 @import "~bootstrap/scss/card";
+
+.pgn__card-grid {
+  .row > div[class*="col-"] {
+    margin-bottom: $card-grid-margin;
+    display: flex;
+    flex: 1 0 auto;
+  }
+}

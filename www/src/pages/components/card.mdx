@@ -9,6 +9,8 @@ notes: |
 ---
 
 import get from 'lodash/get';
+import { StaticQuery, graphql } from 'gatsby';
+import PropsTable from '../../components/PropsTable';
 import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 # Card
@@ -42,7 +44,109 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 </Card>
 ```
 
+##### CardGrid
+
+This component displays a collection of Cards as a grid (with customizable responsive behavior), where
+all cards in a given row have equal height. Try shrinking the width of your browser to view the responsive
+behavior.
+
+```jsx live
+<CardGrid
+  columnSizes={{
+    xs: 12,
+    lg: 6,
+    xl: 4,
+  }}
+>
+  <Card>
+    <Card.Img variant="top" src="https://source.unsplash.com/360x200/?nature,flower" />
+    <Card.Body>
+      <Card.Title>Card title</Card.Title>
+      <Card.Text>
+        This is a wider card with supporting text below as a natural lead-in to
+        additional content. This card has even longer content than the first to
+        show that equal height action.
+      </Card.Text>
+    </Card.Body>
+    <Card.Footer>
+      <small className="text-muted">Last updated 3 mins ago</small>
+    </Card.Footer>
+  </Card>
+  <Card>
+    <Card.Img variant="top" src="https://source.unsplash.com/360x200/?nature,flower" />
+    <Card.Body>
+      <Card.Title>Card title</Card.Title>
+      <Card.Text>
+        This is a wider card with supporting text below as a natural lead-in to
+        additional content. This content is a little bit longer.
+      </Card.Text>
+    </Card.Body>
+    <Card.Footer>
+      <small className="text-muted">Last updated 3 mins ago</small>
+    </Card.Footer>
+  </Card>
+  <Card>
+    <Card.Img variant="top" src="https://source.unsplash.com/360x200/?nature,flower" />
+    <Card.Body>
+      <Card.Title>Card title</Card.Title>
+      <Card.Text>
+        This is a wider card with supporting text below as a natural lead-in to
+        additional content. This card has even longer content than the first to
+        show that equal height action.
+      </Card.Text>
+    </Card.Body>
+    <Card.Footer>
+      <small className="text-muted">Last updated 3 mins ago</small>
+    </Card.Footer>
+  </Card>
+  <Card>
+    <Card.Img variant="top" src="https://source.unsplash.com/360x200/?nature,flower" />
+    <Card.Body>
+      <Card.Title>Card title</Card.Title>
+      <Card.Text>
+        This is a wider card with supporting text below as a natural lead-in to
+        additional content. This card has even longer content than the first to
+        show that equal height action.
+      </Card.Text>
+    </Card.Body>
+    <Card.Footer>
+      <small className="text-muted">Last updated 3 mins ago</small>
+    </Card.Footer>
+  </Card>
+  <Card>
+    <Card.Img variant="top" src="https://source.unsplash.com/360x200/?nature,flower" />
+    <Card.Body>
+      <Card.Title>Card title</Card.Title>
+      <Card.Text>
+        This is a wider card with supporting text below as a natural lead-in to
+        additional content. This content is a little bit longer.
+      </Card.Text>
+    </Card.Body>
+    <Card.Footer>
+      <small className="text-muted">Last updated 3 mins ago</small>
+    </Card.Footer>
+  </Card>
+  <Card>
+    <Card.Img variant="top" src="https://source.unsplash.com/360x200/?nature,flower" />
+    <Card.Body>
+      <Card.Title>Card title</Card.Title>
+      <Card.Text>
+        This is a wider card with supporting text below as a natural lead-in to
+        additional content. This card has even longer content than the first to
+        show that equal height action.
+      </Card.Text>
+    </Card.Body>
+    <Card.Footer>
+      <small className="text-muted">Last updated 3 mins ago</small>
+    </Card.Footer>
+  </Card>
+</CardGrid>
+```
+
 ##### CardDeck
+
+This component gives any child Card components equal height with an appropriate gutter between cards. However,
+it is meant to be used as a single horizontal row of Cards, not as a grid. See CardGrid for more details.
 
 ```jsx live
 <CardDeck>
@@ -87,4 +191,48 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
     </Card.Footer>
   </Card>
 </CardDeck>
+```
+
+##### Props
+
+##### CardGrid
+
+<StaticQuery
+  query={graphql`
+    query {
+      componentMetadata(displayName: { eq: "CardGrid" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
+  render={({ componentMetadata }) => {
+    if (componentMetadata == null) return null;
+    return <PropsTable propMetaData={componentMetadata.props} />;
+  }}
+/>
+
+##### Theme variables (SCSS)
+
+```scss
+$card-spacer-y:                     .75rem !default;
+$card-spacer-x:                     1.25rem !default;
+$card-border-width:                 $border-width !default;
+$card-border-radius:                $border-radius !default;
+$card-border-color:                 rgba($black, .125) !default;
+$card-inner-border-radius:          subtract($card-border-radius, $card-border-width) !default;
+$card-cap-bg:                       rgba($black, .03) !default;
+$card-cap-color:                    null !default;
+$card-height:                       null !default;
+$card-color:                        null !default;
+$card-bg:                           $white !default;
+
+$card-img-overlay-padding:          1.25rem !default;
+
+$card-group-margin:                 $grid-gutter-width / 2 !default;
+$card-deck-margin:                  $card-group-margin !default;
+$card-grid-margin:                  $card-group-margin !default;
+
+$card-columns-count:                3 !default;
+$card-columns-gap:                  1.25rem !default;
+$card-columns-margin:               $card-spacer-y !default;
 ```
