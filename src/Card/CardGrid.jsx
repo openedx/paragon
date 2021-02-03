@@ -7,11 +7,11 @@ import Col from 'react-bootstrap/Col';
 const CardGrid = ({
   className,
   children,
-  columnProps,
+  columnSizes,
 }) => {
   const cards = useMemo(
     () => React.Children.map(children, child => (
-      <Col {...columnProps}>
+      <Col {...columnSizes}>
         {child}
       </Col>
     )),
@@ -30,7 +30,7 @@ const CardGrid = ({
 CardGrid.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
-  columnProps: PropTypes.shape({
+  columnSizes: PropTypes.shape({
     xs: PropTypes.number,
     sm: PropTypes.number,
     md: PropTypes.number,
@@ -41,7 +41,7 @@ CardGrid.propTypes = {
 
 CardGrid.defaultProps = {
   className: undefined,
-  columnProps: {
+  columnSizes: {
     sm: 12,
     lg: 6,
     xl: 4,
