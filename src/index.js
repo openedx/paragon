@@ -12,6 +12,7 @@ export {
   CardDeck,
   CardImg,
   CardGroup,
+  CardGrid,
 } from './Card';
 export { default as Carousel, CarouselItem } from './Carousel';
 export { default as CheckBox } from './CheckBox';
