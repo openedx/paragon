@@ -10,12 +10,12 @@ const CardGrid = ({
   columnSizes,
 }) => {
   const cards = useMemo(
-    () => React.Children.map(children, child => (
+    () => React.Children.map(children, card => (
       <Col {...columnSizes}>
-        {child}
+        {card}
       </Col>
     )),
-    [children],
+    [children, columnSizes],
   );
 
   return (
