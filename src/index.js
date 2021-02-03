@@ -87,6 +87,7 @@ export { default as TransitionReplace } from './TransitionReplace';
 export { default as ValidationMessage } from './ValidationMessage';
 export { default as DataTable } from './DataTable';
 export { default as TextFilter } from './DataTable/TextFilter';
+export { default as CheckboxFilter } from './DataTable/CheckboxFilter';
 export { default as TableHeaderCell } from './DataTable/TableHeaderCell';
 export { default as TableCell } from './DataTable/TableCell';
 export { default as TableFilters } from './DataTable/TableFilters';

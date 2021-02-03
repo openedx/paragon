@@ -104,3 +104,17 @@ $data-table-footer-position: flex-end;
     align-self: $data-table-footer-position;
   }
 }
+
+.pgn__checkbox-filter-label {
+  font-weight: $font-weight-bold;
+}
+
+.pgn__checkbox-filter {
+  display: flex;
+  input {
+    margin-left: 0;
+  }
+  label {
+    margin-left: 1.25rem;
+  }
+}

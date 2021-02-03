@@ -1,0 +1,156 @@
+---
+title: 'DataTable'
+type: 'component'
+status: 'New'
+designStatus: 'In progress'
+devStatus: 'In progress'
+---
+
+import { StaticQuery, graphql } from 'gatsby';
+import get from 'lodash/get';
+import { DataTable, TextFilter, CheckboxFilter } from '~paragon-react';
+import PropsTable from '../../components/PropsTable';
+import SingleComponentStatus from '../../components/SingleComponentStatus';
+
+# DataTable Filter Types
+
+<SingleComponentStatus
+  frontmatter={
+    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
+  }
+/>
+
+The DataTable component is a wrapper that uses the <a href="https://react-table.tanstack.com/docs">react-table</a> library to
+create tables. It can be used as is, or its subcomponents can be used on their own, allowing the developer full control.
+
+## Filtering and sorting
+Paragon currently provides two filter types, TextFilter and CheckboxFilter. You can also define your own filter types.
+
+In this example, a default TextFilter component is used as the default filter for all columns. A default filter can be passed in,
+or a filter component can be defined on the column using the `Filter` attribute. See <a href="https://react-table.tanstack.com/docs/api/useFilters">react-table filters documentation</a>
+for more information.
+
+A CheckboxFilter is used on the coat color column. Filters can be defined on the columns themselves. The CheckboxFilter additionally requires that the "CheckboxFilters" property be defined on the column.
+
+### Available filter functions
+A filtering function can be defined on the column as well as the filter component. Custom filtering functions can also be defined, see <a href="https://react-table.tanstack.com/docs/api/useFilters#column-options">react-table filters documentation</a>
+for more information.
+Filter functions are definied on the column as the `filter` attribute.
+<dl>
+<dt>text</dt><dd>This is the default filter function. It lower-cases the search string and checks if the row value includes the search string</dd>
+<dt>exactText</dt><dd>Checks that the row value matches the search string exactly (case-insensitive)</dd>
+<dt>exactTextCase</dt><dd>Checks that the row value matches the search string exactly (case-sensitive)</dd>
+<dt>includes</dt><dd>Check that the row value includes the search string</dd>
+<dt>includesAll</dt><dd>Check that the row value includes every item in the array</dd>
+<dt>includesSome</dt><dd>Check that row value includes some item in the array</dd>
+<dt>exact</dt><dd>Checks for exact equality between the row value and the search term. <pre>===</pre></dd>
+<dt>equals</dt><dd>Checks for equality between the row value and the search term. <pre>==</pre></dd>
+<dt>between</dt><dd>Expects an array with a min and max value as the search term. Checks that the row value is between the min and max</dd>
+</dl>
+
+```jsx live
+<DataTable
+  isFilterable
+  defaultColumnValues={{ Filter: TextFilter }}
+  columns={[
+    {
+      Header: 'Name',
+      accessor: 'name',
+
+    },
+    {
+      Header: 'Famous For',
+      accessor: 'famous_for',
+    },
+    {
+      Header: 'Coat Color',
+      accessor: 'color',
+      Filter: CheckboxFilter,
+      filter: 'includesValue',
+      checkboxFilters: [{
+        name: 'russian white',
+        number: 1,
+      },
+      {
+        name: 'orange tabby',
+        number: 2
+      },
+      {
+        name: 'brown tabby',
+        number: 3
+      },
+      {
+        name: 'siamese',
+        number: 1,
+      }
+      ]
+    },
+  ]}
+  itemCount={7}
+  data={[
+    {
+      name: 'Lil Bub',
+      color: 'brown tabby',
+      famous_for: 'weird tongue',
+    },
+    {
+      name: 'Grumpy Cat',
+      color: 'siamese',
+      famous_for: 'serving moods',
+    },
+    {
+      name: 'Smoothie',
+      color: 'orange tabby',
+      famous_for: 'modeling',
+    },
+    {
+      name: 'Maru',
+      color: 'brown tabby',
+      famous_for: 'being a lovable oaf',
+    },
+    {
+      name: 'Keyboard Cat',
+      color: 'orange tabby',
+      famous_for: 'piano virtuoso',
+    },
+    {
+      name: 'Long Cat',
+      color: 'russian white',
+      famous_for:
+        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+    },
+    {
+      name: 'Zeno',
+      color: 'brown tabby',
+      famous_for: 'getting halfway there'
+    },
+  ]}
+
+/>
+```
+
+## Props
+
+### Avaliable filter types
+<StaticQuery
+  query={graphql`
+    query {
+      textFilter: componentMetadata(displayName: { eq: "TextFilter" }) {
+        ...ComponentDocGenData
+      }
+      checkboxFilter: componentMetadata(displayName: { eq: "CheckboxFilter" }) {
+        ...ComponentDocGenData
+      }
+    }
+  `}
+  render={({ textFilter, checkboxFilter }) => {
+    return (
+      <div>
+        <h4>TextFilter</h4>
+        {textFilter ? <PropsTable propMetaData={textFilter.props} /> : null}
+        <h4>CheckboxFilter</h4>
+        {checkboxFilter ? <PropsTable propMetaData={checkboxFilter.props} /> : null}
+      </div>
+    );
+  }}
+/>
