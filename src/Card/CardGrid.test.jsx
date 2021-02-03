@@ -5,7 +5,7 @@ import Card from '.';
 
 const cardContent = (
   <Card>
-    <Card.Img variant="top" src="https://source.unsplash.com/360x200/?nature,flower" />
+    <Card.Img variant="top" src="http://fake.image" />
     <Card.Body>
       <Card.Title>Card title</Card.Title>
       <Card.Text>

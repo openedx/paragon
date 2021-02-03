@@ -15,7 +15,7 @@ exports[`<CardGrid /> Controlled Rendering renders with controlled columnSizes 1
       >
         <img
           className="card-img-top"
-          src="https://source.unsplash.com/360x200/?nature,flower"
+          src="http://fake.image"
         />
         <div
           className="card-body"
@@ -61,7 +61,7 @@ exports[`<CardGrid /> Uncontrolled Rendering renders default columnSizes 1`] = `
       >
         <img
           className="card-img-top"
-          src="https://source.unsplash.com/360x200/?nature,flower"
+          src="http://fake.image"
         />
         <div
           className="card-body"
