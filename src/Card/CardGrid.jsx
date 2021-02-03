@@ -32,7 +32,10 @@ CardGrid.propTypes = {
   className: PropTypes.string,
   /** The Card components to organize into a responsive grid */
   children: PropTypes.node.isRequired,
-  /** An object containing the desired column size at each breakpoint */
+  /**
+   * An object containing the desired column size at each breakpoint, following a similar
+   * props API as ``react-bootstrap/Col``
+   */
   columnSizes: PropTypes.shape({
     xs: PropTypes.number,
     sm: PropTypes.number,
