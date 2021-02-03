@@ -28,8 +28,11 @@ const CardGrid = ({
 };
 
 CardGrid.propTypes = {
+  /** The class name for the CardGrid component */
   className: PropTypes.string,
+  /** The Card components to organize into a responsive grid */
   children: PropTypes.node.isRequired,
+  /** An object containing the desired column size at each breakpoint */
   columnSizes: PropTypes.shape({
     xs: PropTypes.number,
     sm: PropTypes.number,
