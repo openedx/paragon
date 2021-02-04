@@ -50,7 +50,7 @@ CheckboxFilter.defaultPropTypes = {
 CheckboxFilter.propTypes = {
   column: PropTypes.shape({
     /** Value for the filter input */
-    filterValue: PropTypes.arrayOf(PropTypes.string).isRequired,
+    filterValue: PropTypes.arrayOf(PropTypes.any),
     /** Function to set the filter value */
     setFilter: PropTypes.func.isRequired,
     /** Column header used for labels and placeholders */
