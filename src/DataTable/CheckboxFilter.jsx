@@ -10,7 +10,7 @@ function CheckboxFilter({
   },
 }) {
   // creates a unique label that does not change on re-render in case there are multiple checkbox filters in the dom
-  const ariaLabel = useRef(`checkbox-filter-label-${Math.floor(Math.random() * 100)}`);
+  const ariaLabel = useRef(`checkbox-filter-label-${Math.floor(Math.random() * 100000)}`);
   const inputText = `Search ${Header}`;
   const checkedBoxes = filterValue || [];
   const changeCheckbox = (name) => {
