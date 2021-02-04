@@ -32,7 +32,7 @@ function CheckboxFilter({
           <label htmlFor={name} className="mb-0">
             {name}
           </label>
-          {number && <Badge variant="dark">{number}</Badge>}
+          {number && <Badge variant="light">{number}</Badge>}
         </div>
       ))}
     </Form.Group>
