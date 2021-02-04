@@ -28,6 +28,7 @@ function DataTable({
   isSortable, manualSortBy,
   initialTableOptions,
   EmptyTableComponent,
+  noOfBreakoutFilters,
 }) {
   const defaultColumn = React.useMemo(
     () => (defaultColumnValues),
@@ -94,6 +95,7 @@ function DataTable({
         columns={instance.columns}
         rows={instance.flatRows}
         resetAllFilters={resetAllFilters}
+        noOfBreakoutFilters={noOfBreakoutFilters}
       />
       {rows.length > 0 && (
         <Table
@@ -137,6 +139,7 @@ DataTable.defaultProps = {
   initialState: {},
   initialTableOptions: {},
   EmptyTableComponent: EmptyTableContent,
+  noOfBreakoutFilters: 1,
 };
 
 DataTable.propTypes = {
@@ -202,6 +205,10 @@ DataTable.propTypes = {
   initialTableOptions: PropTypes.shape(),
   /** Component to be displayed when the table is empty */
   EmptyTableComponent: PropTypes.func,
+  /** Number between one and four filters that can be shown on the top row on large screens. On small screens
+   * all filters will be placed in the dropdown.
+  */
+  noOfBreakoutFilters: PropTypes.oneOf([1, 2, 3, 4]),
 };
 
 DataTable.BulkActions = BulkActions;
