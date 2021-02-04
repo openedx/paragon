@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import {
   Form, FormLabel, Input, Badge,
@@ -9,6 +9,8 @@ function CheckboxFilter({
     filterValue, setFilter, Header, checkboxFilters,
   },
 }) {
+  // creates a unique label that does not change on re-render in case there are multiple checkbox filters in the dom
+  const ariaLabel = useRef(`checkbox-filter-label-${Math.floor(Math.random() * 100)}`);
   const inputText = `Search ${Header}`;
   const checkedBoxes = filterValue || [];
   const changeCheckbox = (name) => {
@@ -20,8 +22,8 @@ function CheckboxFilter({
     return setFilter(checkedBoxes);
   };
   return (
-    <Form.Group>
-      <FormLabel className="pgn__checkbox-filter-label">{inputText}</FormLabel>
+    <Form.Group role="group" aria-labelledby={ariaLabel.current}>
+      <FormLabel id={ariaLabel.current} className="pgn__checkbox-filter-label">{inputText}</FormLabel>
       {checkboxFilters.map(({ name, number }) => (
         <div key={name} className="pgn__checkbox-filter align-items-center mb-2">
           <Input
