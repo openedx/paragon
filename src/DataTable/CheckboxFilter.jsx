@@ -23,15 +23,16 @@ function CheckboxFilter({
     <Form.Group>
       <FormLabel className="pgn__checkbox-filter-label">{inputText}</FormLabel>
       {checkboxFilters.map(({ name, number }) => (
-        <div key={name} className="pgn__checkbox-filter">
+        <div key={name} className="pgn__checkbox-filter align-items-center mb-2">
           <Input
-            id={`pgn__checkbox-filter--${name}`}
             type="checkbox"
             checked={checkedBoxes.includes(name)}
             onChange={() => { changeCheckbox(name); }}
           />
-          <label htmlFor={name}>{name} {number && <Badge variant="dark">{number}</Badge>}
+          <label htmlFor={name} className="mb-0">
+            {name}
           </label>
+          {number && <Badge variant="dark">{number}</Badge>}
         </div>
       ))}
     </Form.Group>

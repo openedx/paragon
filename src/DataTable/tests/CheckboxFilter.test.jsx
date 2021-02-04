@@ -58,14 +58,14 @@ describe('<CheckboxFilter />', () => {
   });
   it('renders chekcbox label with number', () => {
     const wrapper = mount(<CheckboxFilter column={{ ...props.column, filterValue: ['roan'] }} />);
-    const label = wrapper.find({ htmlFor: roan.name });
+    const label = wrapper.find('.pgn__checkbox-filter').at(0);
     const badge = label.find(Badge);
     expect(badge).toHaveLength(1);
     expect(badge.text()).toEqual(String(roan.number));
   });
   it('renders chekcbox label with number', () => {
     const wrapper = mount(<CheckboxFilter column={{ ...props.column, filterValue: ['roan'] }} />);
-    const label = wrapper.find({ htmlFor: palomino.name });
+    const label = wrapper.find('.pgn__checkbox-filter').at(1);
     const badge = label.find(Badge);
     expect(badge).toHaveLength(0);
   });
