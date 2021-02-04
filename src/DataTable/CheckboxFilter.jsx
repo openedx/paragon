@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Form, FormLabel, Input, Badge,
+  Form, FormLabel, Badge,
 } from '..';
 
 function CheckboxFilter({
@@ -25,16 +25,12 @@ function CheckboxFilter({
     <Form.Group role="group" aria-labelledby={ariaLabel.current}>
       <FormLabel id={ariaLabel.current} className="pgn__checkbox-filter-label">{inputText}</FormLabel>
       {checkboxFilters.map(({ name, number }) => (
-        <div key={name} className="pgn__checkbox-filter align-items-center mb-2">
-          <Input
-            type="checkbox"
+        <div key={name} className="pgn__checkbox-filter">
+          <Form.Check
             checked={checkedBoxes.includes(name)}
             onChange={() => { changeCheckbox(name); }}
+            label={<>{name} {number && <Badge variant="light">{number}</Badge>}</>}
           />
-          <label htmlFor={name} className="mb-0">
-            {name}
-          </label>
-          {number && <Badge variant="light">{number}</Badge>}
         </div>
       ))}
     </Form.Group>
