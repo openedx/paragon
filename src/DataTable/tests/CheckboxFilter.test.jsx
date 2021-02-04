@@ -53,7 +53,7 @@ describe('<CheckboxFilter />', () => {
   });
   it('renders checkbox label with filter name', () => {
     const wrapper = mount(<CheckboxFilter column={{ ...props.column, filterValue: ['roan'] }} />);
-    const label = wrapper.find({ htmlFor: roan.name });
+    const label = wrapper.find('.form-check-label').at(0);
     expect(label.text()).toContain(roan.name);
   });
   it('renders checkbox label with number', () => {
