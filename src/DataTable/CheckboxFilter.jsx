@@ -1,18 +1,18 @@
-import React, { useRef } from 'react';
+import React, { useRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import {
   Form, FormLabel, Badge,
 } from '..';
-import { generateRandomId } from '../utils';
+import { newId } from '../utils';
 
 const CheckboxFilterCheck = ({
-  onChange, checked, label,
+  onChange, checked, label, id,
 }) => {
-  const ariaLabelId = useRef(generateRandomId('checkbox-filter-check'));
+  const idRef = useRef(newId(id));
   return (
-    <div key={ariaLabelId.current} className="pgn__checkbox-filter">
+    <div key={idRef.current} className="pgn__checkbox-filter">
       <Form.Check
-        id={ariaLabelId.current}
+        id={idRef.current}
         checked={checked}
         onChange={onChange}
         label={label}
@@ -25,16 +25,17 @@ CheckboxFilterCheck.propTypes = {
   checked: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
   label: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 function CheckboxFilter({
   column: {
-    filterValue, setFilter, Header, checkboxFilters,
+    filterValue, setFilter, Header, checkboxFilters, getHeaderProps,
   },
 }) {
   // creates a unique label that does not change on re-render in case there are multiple checkbox filters in the dom
-  const ariaLabel = useRef(generateRandomId('checkbox-filter-label'));
-  const inputText = `Search ${Header}`;
+  const ariaLabel = useRef(newId(`checkbox-filter-label-${getHeaderProps().key}-`));
+  const inputText = `Filter by ${Header}`;
   const checkedBoxes = filterValue || [];
   const changeCheckbox = (name) => {
     if (checkedBoxes.includes(name)) {
@@ -44,12 +45,14 @@ function CheckboxFilter({
     checkedBoxes.push(name);
     return setFilter(checkedBoxes);
   };
+  const headerBasedId = useMemo(() => `checkbox-filter-check-${getHeaderProps().key}-`, [getHeaderProps]);
+
   return (
     <Form.Group role="group" aria-labelledby={ariaLabel.current}>
       <FormLabel id={ariaLabel.current} className="pgn__checkbox-filter-label">{inputText}</FormLabel>
       {checkboxFilters.map(({ name, number }) => (
         <CheckboxFilterCheck
-          id={generateRandomId('checkbox-filter-check')}
+          id={headerBasedId}
           checked={checkedBoxes.includes(name)}
           onChange={() => { changeCheckbox(name); }}
           label={<>{name} {number && <Badge variant="light">{number}</Badge>}</>}
@@ -77,6 +80,7 @@ CheckboxFilter.propTypes = {
       name: PropTypes.string.isRequired,
       number: PropTypes.number,
     })).isRequired,
+    getHeaderProps: PropTypes.func.isRequired,
   }).isRequired,
 };
 

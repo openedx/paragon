@@ -2,7 +2,6 @@ import React from 'react';
 
 import newId from './newId';
 import getTextFromElement from './getTextFromElement';
-import generateRandomId from './generateRandomId';
 
 describe('newId', () => {
   it('increments on each call', () => {
@@ -21,16 +20,5 @@ describe('getTextFromElement', () => {
       </div>
     );
     expect(getTextFromElement(element)).toEqual('Foobar');
-  });
-});
-
-describe('generateRandomId', () => {
-  it('should return a string with the base string and a random number', () => {
-    const baseString = 'foo-bar';
-    const result = generateRandomId(baseString);
-    expect(result.startsWith(baseString)).toBeTruthy();
-    const randomNum = parseInt(result.split('-').unshift(), 10);
-    expect(randomNum).toBeGreaterThan(0);
-    expect(randomNum).toBeLessThan(100000);
   });
 });

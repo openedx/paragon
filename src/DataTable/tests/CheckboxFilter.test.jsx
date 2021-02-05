@@ -17,6 +17,7 @@ const props = {
       palomino,
       { name: 'dappled grey', number: 4 },
     ],
+    getHeaderProps: () => ({ key: 'foo' }),
   },
 };
 
