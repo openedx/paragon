@@ -58,12 +58,12 @@ export default function () {
             <tr>
               <td>
                 <MeasuredItem {...measuredTypeProps}>
-                  <p className={`m-0 h${headingSize}`}>Header {headingSize}</p>
+                  <p className={`m-0 h${headingSize}`}>Heading {headingSize}</p>
                 </MeasuredItem>
               </td>
               <td className="mobile-type">
                 <MeasuredItem {...measuredTypeProps}>
-                  <p className={`m-0 h${headingSize}`}>Header {headingSize}</p>
+                  <p className={`m-0 h${headingSize}`}>Heading {headingSize}</p>
                 </MeasuredItem>
               </td>
               <td>
@@ -71,6 +71,17 @@ export default function () {
               </td>
             </tr>
           ))}
+          <tr>
+            <td colSpan="2">
+              <MeasuredItem {...measuredTypeProps}>
+                <p className="heading-label">Heading Label</p>
+              </MeasuredItem>
+              A heading label is usually paired with and proceeds a Heading.
+            </td>
+            <td>
+              <code>.heading-label</code>
+            </td>
+          </tr>
         </tbody>
         <tbody>
           <tr>
