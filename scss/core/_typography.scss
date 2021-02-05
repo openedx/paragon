@@ -28,3 +28,47 @@
 @media (max-width: map-get($grid-breakpoints, "sm")) {
   @include mobile-type;
 }
+
+.heading-label {
+  text-transform: uppercase;
+  font-family: $font-family-monospace;
+  margin-bottom: 0 !important;
+}
+
+p > a[href]:not(.btn),
+a.inline-link {
+  color: $inline-link-color;
+  text-decoration: $inline-link-decoration;
+  text-decoration-line: $inline-link-decoration;
+  text-decoration-color: $inline-link-decoration-color;
+  &:hover {
+    color: $inline-link-hover-color;
+    text-decoration: $inline-link-hover-decoration;
+    text-decoration-line: $inline-link-hover-decoration;
+    text-decoration-color: $inline-link-hover-decoration-color;
+  }
+}
+
+a.muted-link {
+  color: $muted-link-color;
+  text-decoration: $muted-link-decoration;
+
+  &:hover {
+    color: $muted-link-hover-color;
+    text-decoration: $muted-link-hover-decoration;
+  }
+
+  p > &[href]:not(.btn),
+  &.inline-link {
+    color: $muted-inline-link-color;
+    text-decoration: $muted-inline-link-decoration;
+    text-decoration-line: $muted-inline-link-decoration;
+    text-decoration-color: $muted-inline-link-decoration-color;
+    &:hover {
+      color: $muted-inline-link-hover-color;
+      text-decoration: $muted-inline-link-hover-decoration;
+      text-decoration-line: $muted-inline-link-hover-decoration;
+      text-decoration-color: $muted-inline-link-hover-decoration-color;
+    }
+  }
+}
