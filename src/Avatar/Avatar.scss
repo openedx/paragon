@@ -5,7 +5,9 @@ $avatar-size-xs: 1.5rem !default;
 $avatar-size-sm: 2.25rem !default;
 $avatar-size: 3rem !default;
 $avatar-size-lg: 4rem !default;
-$avatar-size-xl: 18.75rem !default;
+$avatar-size-xl: 6rem !default;
+$avatar-size-xxl: 11.5rem !default;
+$avatar-size-huge: 18.75rem !default;
 
 .pgn__avatar {
   border-radius: $avatar-border-radius;
@@ -35,5 +37,13 @@ $avatar-size-xl: 18.75rem !default;
   &.pgn__avatar-xl {
     height: $avatar-size-xl;
     width: $avatar-size-xl;
+  }
+  &.pgn__avatar-xxl {
+    height: $avatar-size-xxl;
+    width: $avatar-size-xxl;
+  }
+  &.pgn__avatar-huge {
+    height: $avatar-size-huge;
+    width: $avatar-size-huge;
   }
 }
