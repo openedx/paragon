@@ -27,5 +27,15 @@ Array [
     className="pgn__avatar pgn__avatar-xl"
     src="test-file-stub"
   />,
+  <img
+    alt=""
+    className="pgn__avatar pgn__avatar-xxl"
+    src="test-file-stub"
+  />,
+  <img
+    alt=""
+    className="pgn__avatar pgn__avatar-huge"
+    src="test-file-stub"
+  />,
 ]
 `;

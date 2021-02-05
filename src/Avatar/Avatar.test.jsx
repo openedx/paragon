@@ -11,6 +11,8 @@ describe('Avatar', () => {
         <Avatar />
         <Avatar size="lg" />
         <Avatar size="xl" />
+        <Avatar size="xxl" />
+        <Avatar size="huge" />
       </>
     )).toJSON();
     expect(tree).toMatchSnapshot();
