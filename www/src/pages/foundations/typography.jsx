@@ -47,7 +47,6 @@ export default function () {
           <tr>
             <th colSpan="3">
               <h2 className="mt-3">Headings</h2>
-              <p className="font-weight-normal">Headings all share a line-height of 1.25em</p>
             </th>
           </tr>
           <tr>
@@ -59,12 +58,12 @@ export default function () {
             <tr>
               <td>
                 <MeasuredItem {...measuredTypeProps}>
-                  <p className={`m-0 h${headingSize}`}>Header {headingSize}</p>
+                  <p className={`m-0 h${headingSize}`}>Heading {headingSize}</p>
                 </MeasuredItem>
               </td>
               <td className="mobile-type">
                 <MeasuredItem {...measuredTypeProps}>
-                  <p className={`m-0 h${headingSize}`}>Header {headingSize}</p>
+                  <p className={`m-0 h${headingSize}`}>Heading {headingSize}</p>
                 </MeasuredItem>
               </td>
               <td>
@@ -72,6 +71,17 @@ export default function () {
               </td>
             </tr>
           ))}
+          <tr>
+            <td colSpan="2">
+              <MeasuredItem {...measuredTypeProps}>
+                <p className="heading-label">Heading Label</p>
+              </MeasuredItem>
+              A heading label is usually paired with and proceeds a Heading.
+            </td>
+            <td>
+              <code>.heading-label</code>
+            </td>
+          </tr>
         </tbody>
         <tbody>
           <tr>
@@ -122,47 +132,71 @@ export default function () {
             </td>
           </tr>
         </tbody>
-
         <tbody>
           <tr>
             <th colSpan="3">
-              <h2 className="mt-3">Forms</h2>
-              <p className="font-weight-normal">Form text line-heights are the same as headings: 1.25em.</p>
+              <h2 className="mt-3">Display</h2>
             </th>
           </tr>
           <tr>
-            <th colSpan="2">Desktop & Mobile</th>
+            <th>Desktop</th>
+            <th>Mobile</th>
             <th>CSS Class</th>
           </tr>
+          {[1, 2, 3, 4].map(displaySize => (
+            <tr>
+              <td>
+                <MeasuredItem {...measuredTypeProps}>
+                  <p className={`m-0 display-${displaySize}`}>Display {displaySize}</p>
+                </MeasuredItem>
+              </td>
+              <td className="mobile-type">
+                <MeasuredItem {...measuredTypeProps}>
+                  <p className={`m-0 display-${displaySize}`}>Display {displaySize}</p>
+                </MeasuredItem>
+              </td>
+              <td>
+                <code>.display-{displaySize}</code>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+        <tbody>
+          <tr>
+            <th colSpan="3">
+              <h2 className="mt-3">Links</h2>
+            </th>
+          </tr>
           <tr>
             <td colSpan="2">
-              <MeasuredItem {...measuredTypeProps}>
-                <label className="m-0">Label</label>{/* eslint-disable-line */}
-              </MeasuredItem>
+              <a href="#">Standalone Link</a>
             </td>
             <td>
-              <small>Same as h6</small>
+              <small>The default style for <code>a</code> tags that don't appear in a <code>p</code> tag.</small>
             </td>
           </tr>
           <tr>
             <td colSpan="2">
-              <MeasuredItem {...measuredTypeProps}>
-                <p className="m-0">Helper</p>
-              </MeasuredItem>
+              <p>An <a className="inline-link" href="#">inline link</a> in a sentence.</p>
             </td>
             <td>
-              <small>Same as body</small>
+              <small>For links inside a <code>p</code> or with the <code>.inline-link</code> class name.</small>
             </td>
           </tr>
           <tr>
             <td colSpan="2">
-              <MeasuredItem {...measuredTypeProps}>
-                <p className="small m-0">Helper Small</p>
-              </MeasuredItem>
+              <a className="muted-link" href="#">Muted, Standalone Link</a>
             </td>
             <td>
-              <code>.small</code><br />
-              <small>Same as small body</small>
+              <small><code>.muted-link</code> not in a <code>p</code> tag.</small>
+            </td>
+          </tr>
+          <tr>
+            <td colSpan="2">
+              <p>An <a className="muted-link inline-link" href="#">muted, inline link</a> in a sentence.</p>
+            </td>
+            <td>
+              <small>For <code>.muted-link</code> links inside a <code>p</code> or with the <code>.inline-link</code> class name.</small>
             </td>
           </tr>
         </tbody>

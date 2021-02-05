@@ -391,10 +391,28 @@ $body-color:                theme-color("gray", "dark-text") !default;
 //
 // Style anchor elements.
 
-$link-color:                              theme-color("primary") !default;
+$link-color:                              $info-500 !default;
 $link-decoration:                         none !default;
 $link-hover-color:                        darken($link-color, 15%) !default;
 $link-hover-decoration:                   underline !default;
+$inline-link-color:                       $info-500 !default;
+$inline-link-decoration:                  underline !default;
+$inline-link-decoration-color:            rgba($inline-link-color, .3) !default;
+$inline-link-hover-color:                 darken($inline-link-color, 15%) !default;
+$inline-link-hover-decoration:            underline !default;
+$inline-link-hover-decoration-color:      rgba($inline-link-hover-color, 1) !default;
+
+$muted-link-color:                              $primary-500 !default;
+$muted-link-decoration:                         none !default;
+$muted-link-hover-color:                        darken($muted-link-color, 15%) !default;
+$muted-link-hover-decoration:                   underline !default;
+$muted-inline-link-color:                       $primary-500 !default;
+$muted-inline-link-decoration:                  underline !default;
+$muted-inline-link-decoration-color:            rgba($muted-inline-link-color, .3) !default;
+$muted-inline-link-hover-color:                 darken($muted-inline-link-color, 15%) !default;
+$muted-inline-link-hover-decoration:            underline !default;
+$muted-inline-link-hover-decoration-color:      rgba($muted-inline-link-hover-color, 1) !default;
+
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
 $emphasized-link-hover-darken-percentage: 15% !default;
 
