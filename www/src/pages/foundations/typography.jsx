@@ -183,6 +183,22 @@ export default function () {
               <small>For links inside a <code>p</code> or with the <code>.inline-link</code> class name.</small>
             </td>
           </tr>
+          <tr>
+            <td colSpan="2">
+              <a className="muted-link" href="#">Muted, Standalone Link</a>
+            </td>
+            <td>
+              <small>The default style for <code>a</code> tags that don't appear in a <code>p</code> tag.</small>
+            </td>
+          </tr>
+          <tr>
+            <td colSpan="2">
+              <p>An <a className="muted-link inline-link" href="#">muted, inline link</a> in a sentence.</p>
+            </td>
+            <td>
+              <small>For links inside a <code>p</code> or with the <code>.inline-link</code> class name.</small>
+            </td>
+          </tr>
         </tbody>
       </table>
 
