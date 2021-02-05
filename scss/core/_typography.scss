@@ -38,9 +38,13 @@
 p > a[href]:not(.btn),
 a.inline-link {
   text-decoration: $inline-link-decoration;
+  text-decoration-line: $inline-link-decoration;
+  text-decoration-color: $inline-link-decoration-color;
   color: $inline-link-color;
   &:hover {
     color: $inline-link-hover-color;
     text-decoration: $inline-link-hover-decoration;
+    text-decoration-line: $inline-link-hover-decoration;
+    text-decoration-color: $inline-link-hover-decoration-color;
   }
 }
