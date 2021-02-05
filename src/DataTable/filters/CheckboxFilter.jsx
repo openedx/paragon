@@ -2,8 +2,8 @@ import React, { useRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import {
   Form, FormLabel, Badge,
-} from '..';
-import { newId } from '../utils';
+} from '../..';
+import { newId } from '../../utils';
 
 const CheckboxFilterCheck = ({
   onChange, checked, label, id,

@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import CheckboxFilter from '../CheckboxFilter';
-import Badge from '../../Badge';
+import Badge from '../../../Badge';
 
 const setFilterMock = jest.fn();
 const roan = { name: 'roan', number: 3 };
