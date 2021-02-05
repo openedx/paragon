@@ -3,6 +3,29 @@ import PropTypes from 'prop-types';
 import {
   Form, FormLabel, Badge,
 } from '..';
+import { generateRandomId } from '../utils';
+
+const CheckboxFilterCheck = ({
+  onChange, checked, label,
+}) => {
+  const ariaLabelId = useRef(generateRandomId('checkbox-filter-check'));
+  return (
+    <div key={ariaLabelId.current} className="pgn__checkbox-filter">
+      <Form.Check
+        id={ariaLabelId.current}
+        checked={checked}
+        onChange={onChange}
+        label={label}
+      />
+    </div>
+  );
+};
+
+CheckboxFilterCheck.propTypes = {
+  checked: PropTypes.bool.isRequired,
+  onChange: PropTypes.func.isRequired,
+  label: PropTypes.func.isRequired,
+};
 
 function CheckboxFilter({
   column: {
@@ -10,7 +33,7 @@ function CheckboxFilter({
   },
 }) {
   // creates a unique label that does not change on re-render in case there are multiple checkbox filters in the dom
-  const ariaLabel = useRef(`checkbox-filter-label-${Math.floor(Math.random() * 100000)}`);
+  const ariaLabel = useRef(generateRandomId('checkbox-filter-label'));
   const inputText = `Search ${Header}`;
   const checkedBoxes = filterValue || [];
   const changeCheckbox = (name) => {
@@ -25,13 +48,12 @@ function CheckboxFilter({
     <Form.Group role="group" aria-labelledby={ariaLabel.current}>
       <FormLabel id={ariaLabel.current} className="pgn__checkbox-filter-label">{inputText}</FormLabel>
       {checkboxFilters.map(({ name, number }) => (
-        <div key={name} className="pgn__checkbox-filter">
-          <Form.Check
-            checked={checkedBoxes.includes(name)}
-            onChange={() => { changeCheckbox(name); }}
-            label={<>{name} {number && <Badge variant="light">{number}</Badge>}</>}
-          />
-        </div>
+        <CheckboxFilterCheck
+          id={generateRandomId('checkbox-filter-check')}
+          checked={checkedBoxes.includes(name)}
+          onChange={() => { changeCheckbox(name); }}
+          label={<>{name} {number && <Badge variant="light">{number}</Badge>}</>}
+        />
       ))}
     </Form.Group>
   );
