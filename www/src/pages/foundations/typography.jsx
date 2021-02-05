@@ -161,48 +161,6 @@ export default function () {
             </tr>
           ))}
         </tbody>
-        <tbody>
-          <tr>
-            <th colSpan="3">
-              <h2 className="mt-3">Forms</h2>
-            </th>
-          </tr>
-          <tr>
-            <th colSpan="2">Desktop & Mobile</th>
-            <th>CSS Class</th>
-          </tr>
-          <tr>
-            <td colSpan="2">
-              <MeasuredItem {...measuredTypeProps}>
-                <label className="m-0">Label</label>{/* eslint-disable-line */}
-              </MeasuredItem>
-            </td>
-            <td>
-              <small>Same as h6</small>
-            </td>
-          </tr>
-          <tr>
-            <td colSpan="2">
-              <MeasuredItem {...measuredTypeProps}>
-                <p className="m-0">Helper</p>
-              </MeasuredItem>
-            </td>
-            <td>
-              <small>Same as body</small>
-            </td>
-          </tr>
-          <tr>
-            <td colSpan="2">
-              <MeasuredItem {...measuredTypeProps}>
-                <p className="small m-0">Helper Small</p>
-              </MeasuredItem>
-            </td>
-            <td>
-              <code>.small</code><br />
-              <small>Same as small body</small>
-            </td>
-          </tr>
-        </tbody>
       </table>
 
 
