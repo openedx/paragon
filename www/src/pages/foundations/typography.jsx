@@ -47,7 +47,6 @@ export default function () {
           <tr>
             <th colSpan="3">
               <h2 className="mt-3">Headings</h2>
-              <p className="font-weight-normal">Headings all share a line-height of 1.25em</p>
             </th>
           </tr>
           <tr>
@@ -127,7 +126,6 @@ export default function () {
           <tr>
             <th colSpan="3">
               <h2 className="mt-3">Forms</h2>
-              <p className="font-weight-normal">Form text line-heights are the same as headings: 1.25em.</p>
             </th>
           </tr>
           <tr>
