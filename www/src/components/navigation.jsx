@@ -74,6 +74,7 @@ const menu = [
     section: 'TABLE',
     items: [
       { title: 'DataTable', url: '/table/datatable' },
+      { title: 'Table Filters', url: '/table/tablefilters'}
     ]
   },
   {
