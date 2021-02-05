@@ -25,7 +25,7 @@ Avatar.propTypes = {
   /** Alt text. Usually the user's name */
   alt: PropTypes.string,
   /** Size of the avatar */
-  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'huge']),
   /** Image src of the avatar image */
   src: PropTypes.string,
 };
