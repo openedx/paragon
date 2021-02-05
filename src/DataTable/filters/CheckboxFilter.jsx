@@ -4,29 +4,7 @@ import {
   Form, FormLabel, Badge,
 } from '../..';
 import { newId } from '../../utils';
-
-const CheckboxFilterCheck = ({
-  onChange, checked, label, id,
-}) => {
-  const idRef = useRef(newId(id));
-  return (
-    <div key={idRef.current} className="pgn__checkbox-filter">
-      <Form.Check
-        id={idRef.current}
-        checked={checked}
-        onChange={onChange}
-        label={label}
-      />
-    </div>
-  );
-};
-
-CheckboxFilterCheck.propTypes = {
-  checked: PropTypes.bool.isRequired,
-  onChange: PropTypes.func.isRequired,
-  label: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired,
-};
+import LabelledCheckbox from './LabelledCheckbox';
 
 function CheckboxFilter({
   column: {
@@ -36,7 +14,7 @@ function CheckboxFilter({
   // creates a unique label that does not change on re-render in case there are multiple checkbox filters in the dom
   const ariaLabel = useRef(newId(`checkbox-filter-label-${getHeaderProps().key}-`));
   const inputText = `Filter by ${Header}`;
-  const checkedBoxes = filterValue || [];
+  const checkedBoxes = filterValue;
   const changeCheckbox = (name) => {
     if (checkedBoxes.includes(name)) {
       const newCheckedBoxes = checkedBoxes.filter((val) => val !== name);
@@ -51,7 +29,7 @@ function CheckboxFilter({
     <Form.Group role="group" aria-labelledby={ariaLabel.current}>
       <FormLabel id={ariaLabel.current} className="pgn__checkbox-filter-label">{inputText}</FormLabel>
       {checkboxFilters.map(({ name, number }) => (
-        <CheckboxFilterCheck
+        <LabelledCheckbox
           id={headerBasedId}
           checked={checkedBoxes.includes(name)}
           onChange={() => { changeCheckbox(name); }}
