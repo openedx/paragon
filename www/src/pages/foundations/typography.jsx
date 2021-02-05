@@ -161,6 +161,29 @@ export default function () {
             </tr>
           ))}
         </tbody>
+        <tbody>
+          <tr>
+            <th colSpan="3">
+              <h2 className="mt-3">Links</h2>
+            </th>
+          </tr>
+          <tr>
+            <td colSpan="2">
+              <a href="#">Standalone Link</a>
+            </td>
+            <td>
+              <small>The default style for <code>a</code> tags that don't appear in a <code>p</code> tag.</small>
+            </td>
+          </tr>
+          <tr>
+            <td colSpan="2">
+              <p>An <a className="inline-link" href="#">inline link</a> in a sentence.</p>
+            </td>
+            <td>
+              <small>For links inside a <code>p</code> or with the <code>.inline-link</code> class name.</small>
+            </td>
+          </tr>
+        </tbody>
       </table>
 
 

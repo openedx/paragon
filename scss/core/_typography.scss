@@ -35,6 +35,12 @@
   margin-bottom: 0 !important;
 }
 
-.inline-link {
-  text-decoration: underline;
+p > a[href]:not(.btn),
+a.inline-link {
+  text-decoration: $inline-link-decoration;
+  color: $inline-link-color;
+  &:hover {
+    color: $inline-link-hover-color;
+    text-decoration: $inline-link-hover-decoration;
+  }
 }
