@@ -90,6 +90,7 @@ export { default as DataTable } from './DataTable';
 export { default as TextFilter } from './DataTable/filters/TextFilter';
 export { default as CheckboxFilter } from './DataTable/filters/CheckboxFilter';
 export { default as DropdownFilter } from './DataTable/filters/DropdownFilter';
+export { default as MultiSelectDropdownFilter } from './DataTable/filters/MultiSelectDropdownFilter';
 export { default as TableHeaderCell } from './DataTable/TableHeaderCell';
 export { default as TableCell } from './DataTable/TableCell';
 export { default as TableFilters } from './DataTable/TableFilters';
