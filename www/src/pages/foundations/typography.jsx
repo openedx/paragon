@@ -121,7 +121,35 @@ export default function () {
             </td>
           </tr>
         </tbody>
-
+        <tbody>
+          <tr>
+            <th colSpan="3">
+              <h2 className="mt-3">Display</h2>
+            </th>
+          </tr>
+          <tr>
+            <th>Desktop</th>
+            <th>Mobile</th>
+            <th>CSS Class</th>
+          </tr>
+          {[1, 2, 3, 4].map(displaySize => (
+            <tr>
+              <td>
+                <MeasuredItem {...measuredTypeProps}>
+                  <p className={`m-0 display-${displaySize}`}>Display {displaySize}</p>
+                </MeasuredItem>
+              </td>
+              <td className="mobile-type">
+                <MeasuredItem {...measuredTypeProps}>
+                  <p className={`m-0 display-${displaySize}`}>Display {displaySize}</p>
+                </MeasuredItem>
+              </td>
+              <td>
+                <code>.display-{displaySize}</code>
+              </td>
+            </tr>
+          ))}
+        </tbody>
         <tbody>
           <tr>
             <th colSpan="3">
