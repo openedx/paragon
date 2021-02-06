@@ -1,56 +1,74 @@
-import React from 'react';
+import React, { createRef, useMemo } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import isRequiredIf from 'react-proptype-conditional-require';
 
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
-function Hyperlink(props) {
-  const {
-    destination,
-    children,
-    target,
+import { useHandleLogClick } from '../hooks/analytics';
+
+const Hyperlink = React.forwardRef(({
+  analyticEvents,
+  destination,
+  children,
+  target,
+  onClick,
+  externalLinkAlternativeText,
+  externalLinkTitle,
+  ...attrs
+}, forwardedRef) => {
+  const ref = useMemo(() => forwardedRef || createRef(), [forwardedRef]);
+
+  const handleLogClick = useHandleLogClick({
+    event: analyticEvents?.onClick,
     onClick,
-    externalLinkAlternativeText,
-    externalLinkTitle,
-    ...other
-  } = props;
+    ref,
+  });
 
   let externalLinkIcon;
 
   if (target === '_blank') {
     // Add this rel attribute to prevent Reverse Tabnabbing
-    other.rel = other.rel ? `noopener ${other.rel}` : 'noopener';
+    Object.assign(attrs, {
+      ...attrs,
+      rel: attrs.rel ? `noopener ${attrs.rel}` : 'noopener',
+    });
 
     externalLinkIcon = (
-      // Space between content and icon
-      <span>{' '}
-        <span
-          className={classNames('fa', 'fa-external-link')}
-          aria-hidden={false}
-          aria-label={externalLinkAlternativeText}
-          title={externalLinkTitle}
-        />
-      </span>
+      <span
+        className={classNames('fa', 'fa-external-link')}
+        aria-hidden={false}
+        aria-label={externalLinkAlternativeText}
+        title={externalLinkTitle}
+      />
     );
   }
 
   return (
     <a
+      ref={ref}
       href={destination}
       target={target}
-      onClick={onClick}
-      {...other}
-    >{children}{externalLinkIcon}
+      onClick={handleLogClick}
+      {...attrs}
+    >
+      {children}
+      {externalLinkIcon && (
+        <>
+          {' '}
+          {externalLinkIcon}
+        </>
+      )}
     </a>
   );
-}
+});
 
 Hyperlink.defaultProps = {
   target: '_self',
   onClick: () => {},
   externalLinkAlternativeText: 'Opens in a new window',
   externalLinkTitle: 'Opens in a new window',
+  analyticEvents: undefined,
 };
 
 Hyperlink.propTypes = {
@@ -74,6 +92,13 @@ Hyperlink.propTypes = {
     PropTypes.string,
     props => props.target === '_blank',
   ),
+  analyticEvents: PropTypes.shape({
+    onClick: PropTypes.shape({
+      name: PropTypes.string,
+      properties: PropTypes.shape({}),
+      dispatchers: PropTypes.arrayOf(PropTypes.func),
+    }),
+  }),
 };
 
 export default withDeprecatedProps(Hyperlink, 'Hyperlink', {
