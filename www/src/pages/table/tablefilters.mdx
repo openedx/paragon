@@ -42,10 +42,16 @@ Filter functions are definied on the column as the `filter` attribute.
 <dt>includes</dt><dd>Check that the row value includes the search string</dd>
 <dt>includesAll</dt><dd>Check that the row value includes every item in the array</dd>
 <dt>includesSome</dt><dd>Check that row value includes some item in the array</dd>
+<dt>includesValue</dt><dd>Check that the filter value includes the value of the row</dd>
 <dt>exact</dt><dd>Checks for exact equality between the row value and the search term. <pre>===</pre></dd>
 <dt>equals</dt><dd>Checks for equality between the row value and the search term. <pre>==</pre></dd>
 <dt>between</dt><dd>Expects an array with a min and max value as the search term. Checks that the row value is between the min and max</dd>
 </dl>
+
+### Using Filter components with filter functions
+The `MultiSelectDropdownFilter` and `CheckboxFilter` components expect an array of values. Thus, it is est to use them with the `includesValue` filter function.
+The `TextFilter` and `DropdownFilter` components can be used with a variety of the above `filter` functions.
+
 
 ```jsx live
 <DataTable
@@ -61,8 +67,8 @@ Filter functions are definied on the column as the `filter` attribute.
     {
       Header: 'Age',
       accessor: 'age',
-      Filter: DropdownFilter,
-      filter: 'equals',
+      Filter: MultiSelectDropdownFilter,
+      filter: 'includesValue',
       filterMultiSelect: true,
       dropdownFilters: [
         {
@@ -178,15 +184,25 @@ Filter functions are definied on the column as the `filter` attribute.
       checkboxFilter: componentMetadata(displayName: { eq: "CheckboxFilter" }) {
         ...ComponentDocGenData
       }
+      dropdownFilter: componentMetadata(displayName: { eq: "DropdownFilter" }) {
+        ...ComponentDocGenData
+      }
+      multiSelectDropdownFilter: componentMetadata(displayName: { eq: "MultiSelectDropdownFilter" }) {
+        ...ComponentDocGenData
+      }
     }
   `}
-  render={({ textFilter, checkboxFilter }) => {
+  render={({ textFilter, checkboxFilter, dropdownFilter, multiSelectDropdownFilter }) => {
     return (
       <div>
         <h4>TextFilter</h4>
         {textFilter ? <PropsTable propMetaData={textFilter.props} /> : null}
         <h4>CheckboxFilter</h4>
         {checkboxFilter ? <PropsTable propMetaData={checkboxFilter.props} /> : null}
+        <h4>DropdownFilter</h4>
+        {dropdownFilter ? <PropsTable propMetaData={dropdownFilter.props} /> : null}
+        <h4>MultiSelectDropdownFilter</h4>
+        {multiSelectDropdownFilter ? <PropsTable propMetaData={multiSelectDropdownFilter.props} /> : null}
       </div>
     );
   }}
