@@ -5,7 +5,7 @@ import {
 } from '../..';
 import { newId } from '../../utils';
 
-const DEFAULT_VALUE = 'dropdown-filter-default';
+const DEFAULT_VALUE = '';
 
 function DropdownFilter({
   column: {
@@ -16,7 +16,8 @@ function DropdownFilter({
   const ariaLabel = useRef(newId(`dropdown-filter-label-${getHeaderProps().key}-`));
   const onChange = (e) => {
     if (e.target.value === DEFAULT_VALUE) {
-      return setFilter(null);
+      // setting undefined resets the filter
+      return setFilter(undefined);
     }
     return setFilter(e.target.value);
   };
