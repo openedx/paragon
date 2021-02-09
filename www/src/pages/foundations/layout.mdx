@@ -168,6 +168,10 @@ the style only at a certain breakpoint and above.
 
 <CSSUtilitiesTable selectors={getCssSelectors(props.data.flexUtilities.nodes)} />
 
+### Max Width
+
+<CSSUtilitiesTable selectors={getCssSelectors(props.data.maxWidthUtilities.nodes)} />
+
 
 ### Misc Layout
 
@@ -189,6 +193,12 @@ export const pageQuery = graphql`
     }
   }
   positionUtilities: allCssUtilityClasses(filter: {selector: {regex: "/(^fixed-)|(position)/"}}) {
+    nodes {
+      selector
+      declarations
+    }
+  }
+  maxWidthUtilities: allCssUtilityClasses(filter: {selector: {regex: "/(^mw-)/"}}) {
     nodes {
       selector
       declarations
