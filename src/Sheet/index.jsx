@@ -33,10 +33,8 @@ class Sheet extends React.Component {
           position,
         )}
         role="alert"
-        {...{
-          'aria-live': 'polite',
-          'aria-atomic': 'true',
-        }}
+        aria-live="polite"
+        aria-atomic="true"
       >
         <div className="pgn__sheet-content">
           { children }
