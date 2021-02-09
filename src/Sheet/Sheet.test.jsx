@@ -1,12 +1,25 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
 import Sheet, { POSITIONS, VARIANTS } from './index';
 
 /* eslint-disable react/prop-types */
-jest.mock('./SheetContainer', () => (props) => (
-  <sheet-container>{props.children}</sheet-container>
-));
+jest.mock('./SheetContainer', () => (props) => {
+  const { children, ...otherProps } = props;
+  return (
+    <sheet-container {...otherProps}>
+      {children}
+    </sheet-container>
+  );
+});
+
+jest.mock('react-focus-on', () => ({
+  FocusOn: (props) => {
+    const { children, ...otherProps } = props;
+    return (
+      <focus-on {...otherProps}>{children}</focus-on>
+    );
+  },
+}));
 
 const testContent = (<div className="sheet-content">Hi</div>);
 
@@ -35,12 +48,5 @@ describe('<Sheet />', () => {
   it('returns empty render iff show is false', () => {
     expect(renderJSON(<Sheet show={false} />)).toEqual(null);
     expect(renderJSON(<Sheet />)).not.toEqual(null);
-  });
-
-  it('blocks clicks through scrim when blocking===true', () => {
-    const wrapper = mount(<Sheet blocking>{testContent}</Sheet>);
-    const stopPropagation = jest.fn();
-    wrapper.find('.pgn__sheet-skrim').simulate('click', { stopPropagation });
-    expect(stopPropagation).toHaveBeenCalled();
   });
 });

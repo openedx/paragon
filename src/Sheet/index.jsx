@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { FocusOn } from 'react-focus-on';
 
 import SheetContainer from './SheetContainer';
 
@@ -19,20 +20,47 @@ export const VARIANTS = {
 class Sheet extends React.Component {
   constructor(props) {
     super(props);
-    this.blockClicks = this.blockClicks.bind(this);
+    this.renderSheet = this.renderSheet.bind(this);
+    this.lockFocusEl = this.lockFocusEl.bind(this);
   }
 
-  blockClicks(event) {
-    event.stopPropagation();
+  lockFocusEl(renderContent) {
+    if (!this.props.blocking) {
+      return renderContent;
+    }
+    return (
+      <FocusOn enabled={this.props.show}>
+        {renderContent}
+      </FocusOn>
+    );
+  }
+
+  renderSheet() {
+    const { children, position, variant } = this.props;
+    return (
+      <div
+        className={classNames(
+          'pgn__sheet-component',
+          `pgn__sheet__${variant}`,
+          position,
+        )}
+        role="alert"
+        {...{
+          'aria-live': 'polite',
+          'aria-atomic': 'true',
+        }}
+      >
+        <div className="pgn__sheet-content">
+          { children }
+        </div>
+      </div>
+    );
   }
 
   render() {
     const {
       blocking,
-      children,
-      position,
       show,
-      variant,
     } = this.props;
     if (!show) {
       return null;
@@ -44,26 +72,9 @@ class Sheet extends React.Component {
             'pgn__sheet-skrim',
             { hidden: !blocking },
           )}
-          onClick={this.blockClicks}
           role="presentation"
         />
-        <div
-          className={classNames(
-            'pgn__sheet-component',
-            `pgn__sheet__${variant}`,
-            position,
-
-          )}
-          role="alert"
-          {...{
-            'aria-live': 'polite',
-            'aria-atomic': 'true',
-          }}
-        >
-          <div className="pgn__sheet-content">
-            { children }
-          </div>
-        </div>
+        {this.lockFocusEl(this.renderSheet())}
       </SheetContainer>
     );
   }

@@ -4,19 +4,22 @@ exports[`<Sheet /> snapshots blocking, left snapshot 1`] = `
 <sheet-container>
   <div
     className="pgn__sheet-skrim"
-    onClick={[Function]}
     role="presentation"
   />
-  <div
-    aria-atomic="true"
-    aria-live="polite"
-    className="pgn__sheet-component pgn__sheet__light left"
-    role="alert"
+  <focus-on
+    enabled={true}
   >
     <div
-      className="pgn__sheet-content"
-    />
-  </div>
+      aria-atomic="true"
+      aria-live="polite"
+      className="pgn__sheet-component pgn__sheet__light left"
+      role="alert"
+    >
+      <div
+        className="pgn__sheet-content"
+      />
+    </div>
+  </focus-on>
 </sheet-container>
 `;
 
@@ -24,19 +27,22 @@ exports[`<Sheet /> snapshots dark, right snapshot 1`] = `
 <sheet-container>
   <div
     className="pgn__sheet-skrim hidden"
-    onClick={[Function]}
     role="presentation"
   />
-  <div
-    aria-atomic="true"
-    aria-live="polite"
-    className="pgn__sheet-component pgn__sheet__dark right"
-    role="alert"
+  <focus-on
+    enabled={false}
   >
     <div
-      className="pgn__sheet-content"
-    />
-  </div>
+      aria-atomic="true"
+      aria-live="polite"
+      className="pgn__sheet-component pgn__sheet__dark right"
+      role="alert"
+    >
+      <div
+        className="pgn__sheet-content"
+      />
+    </div>
+  </focus-on>
 </sheet-container>
 `;
 
@@ -44,24 +50,27 @@ exports[`<Sheet /> snapshots default args snapshot: bottom, show, light 1`] = `
 <sheet-container>
   <div
     className="pgn__sheet-skrim hidden"
-    onClick={[Function]}
     role="presentation"
   />
-  <div
-    aria-atomic="true"
-    aria-live="polite"
-    className="pgn__sheet-component pgn__sheet__light bottom"
-    role="alert"
+  <focus-on
+    enabled={false}
   >
     <div
-      className="pgn__sheet-content"
+      aria-atomic="true"
+      aria-live="polite"
+      className="pgn__sheet-component pgn__sheet__light bottom"
+      role="alert"
     >
       <div
-        className="sheet-content"
+        className="pgn__sheet-content"
       >
-        Hi
+        <div
+          className="sheet-content"
+        >
+          Hi
+        </div>
       </div>
     </div>
-  </div>
+  </focus-on>
 </sheet-container>
 `;
