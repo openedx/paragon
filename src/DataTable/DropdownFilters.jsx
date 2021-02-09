@@ -5,7 +5,7 @@ import { requiredWhen } from './utils/propTypesUtils';
 
 /** The first filter will be as an input, additional filters will be available in a dropdown.  */
 const DropdownFilters = ({
-  columns, noOfBreakoutFilters,
+  columns, numBreakoutFilters,
 }) => {
   const { width } = useWindowSize();
   const [breakoutFilters, otherFilters] = useMemo(() => {
@@ -13,11 +13,11 @@ const DropdownFilters = ({
     if (width < breakpoints.small.minWidth) {
       return [null, availableFilters];
     }
-    const boFilters = availableFilters.slice(0, noOfBreakoutFilters);
-    const dropdownFilters = availableFilters.slice(noOfBreakoutFilters);
+    const boFilters = availableFilters.slice(0, numBreakoutFilters);
+    const dropdownFilters = availableFilters.slice(numBreakoutFilters);
 
     return [boFilters, dropdownFilters];
-  }, [columns, width, noOfBreakoutFilters]);
+  }, [columns, width, numBreakoutFilters]);
 
   return (
     <div className="pgn__data-table-filters">
@@ -39,7 +39,7 @@ const DropdownFilters = ({
 };
 
 DropdownFilters.defaultProps = {
-  noOfBreakoutFilters: 1,
+  numBreakoutFilters: 1,
 };
 
 DropdownFilters.propTypes = {
@@ -54,7 +54,7 @@ DropdownFilters.propTypes = {
     Filter: requiredWhen(PropTypes.func, 'canFilter'),
   })).isRequired,
   /** Number between one and four filters that can be shown on the top row. */
-  noOfBreakoutFilters: PropTypes.oneOf([1, 2, 3, 4]),
+  numBreakoutFilters: PropTypes.oneOf([1, 2, 3, 4]),
 };
 
 export default DropdownFilters;
