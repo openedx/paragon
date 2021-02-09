@@ -24,7 +24,7 @@ describe('<SheetContainer />', () => {
     mount(<SheetContainer>{child1}</SheetContainer>);
     mount(<SheetContainer>{child2}</SheetContainer>);
     const rootEls = document.querySelectorAll('#sheet-root');
-    expect(rootEls.length).toBeGreaterThan(0);
+    expect(rootEls.length).toEqual(1);
     const childEl1 = rootEls[0].querySelector(`#${childId1}`);
     expect(childEl1.innerHTML).toEqual(childContent1);
     const childEl2 = rootEls[0].querySelector(`#${childId2}`);
