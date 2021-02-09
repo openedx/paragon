@@ -3,16 +3,25 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import TableHeaderRow from './TableHeaderRow';
 import TableRow from './TableRow';
+import { useRows } from './hooks';
 
 const Table = ({
-  getTableProps, headerGroups, getTableBodyProps, rows, prepareRow, isStriped,
+  tableName, isStriped, ...rest
 }) => {
-  const renderRows = () => rows.map((row) => {
+  const {
+    getTableProps, prepareRow, displayRows, headerGroups, getTableBodyProps,
+  } = useRows(tableName);
+
+  const renderRows = () => displayRows.map((row) => {
     prepareRow(row);
     return (
-      <TableRow {...row} key={row.id} />
+      <TableRow {...row} key={row.id} {...rest} />
     );
   });
+
+  if (!getTableProps) {
+    return null;
+  }
 
   return (
     <div className="pgn__data-table-container">
@@ -20,7 +29,7 @@ const Table = ({
         className: classNames({ 'pgn__data-table': true, 'is-striped': isStriped }),
       })}
       >
-        <TableHeaderRow headerGroups={headerGroups} />
+        <TableHeaderRow headerGroups={headerGroups} {...rest} />
         <tbody {...getTableBodyProps()}>
           {renderRows()}
         </tbody>
@@ -34,14 +43,7 @@ Table.defaultProps = {
 };
 
 Table.propTypes = {
-  /** returns an object that will be spread as props to the table element */
-  getTableProps: PropTypes.func.isRequired,
-  /** returns an object that will be spread as props to the tbody element */
-  getTableBodyProps: PropTypes.func.isRequired,
-  headerGroups: PropTypes.arrayOf(PropTypes.shape()).isRequired,
-  /** function that prepares rows for render */
-  prepareRow: PropTypes.func.isRequired,
-  rows: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  tableName: PropTypes.string.isRequired,
   /** should table rows be striped */
   isStriped: PropTypes.bool,
 };

@@ -26,7 +26,7 @@ TableRow.propTypes = {
   /** props to include on the tr tag (must include id) */
   getRowProps: PropTypes.func.isRequired,
   /** cells in the row */
-  cells: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  cells: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   /** row id */
   id: PropTypes.string.isRequired,
   /** indicates if row has been selected */

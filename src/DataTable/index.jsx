@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useTable } from 'react-table';
 import Table from './Table';
@@ -20,15 +20,16 @@ import TableHeaderCell from './TableHeaderCell';
 import TableCell from './TableCell';
 import TableHeaderRow from './TableHeaderRow';
 import TablePagination from './TablePagination';
+import { TableContext } from './TableContext';
 
 function DataTable({
-  columns, data, bulkActions, defaultColumnValues, additionalColumns, isSelectable,
+  columns, data, defaultColumnValues, additionalColumns, isSelectable,
   isPaginated, manualPagination, pageCount, itemCount,
   isFilterable, manualFilters, fetchData, initialState,
   isSortable, manualSortBy,
   initialTableOptions,
-  EmptyTableComponent,
-  numBreakoutFilters,
+  tableName, children,
+  ...rest
 }) {
   const defaultColumn = React.useMemo(
     () => (defaultColumnValues),
@@ -44,6 +45,7 @@ function DataTable({
     initialState,
     ...initialTableOptions,
   }), [columns, data, defaultColumn, manualFilters, manualPagination, initialState, initialTableOptions]);
+  const { setTableInstance } = useContext(TableContext);
 
   if (isPaginated && manualPagination) {
     // pageCount is required when pagination is manual, if it's not there passing -1 as per react-table docs
@@ -61,6 +63,9 @@ function DataTable({
 
   // Use the state and functions returned from useTable to build your UI
   const instance = useTable(...tableArgs);
+  useEffect(() => {
+    setTableInstance(tableName, instance);
+  }, [tableName, instance, JSON.stringify(instance.state)]);
 
   useEffect(() => {
     if (fetchData) {
@@ -69,64 +74,28 @@ function DataTable({
     // Stringifying the data gives a quick way of checking deep equality
   }, [fetchData, JSON.stringify(instance.state)]);
 
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = instance;
-
-  const filterNames = instance.state.filters ? instance.state.filters.map((filter) => filter.id) : [];
-  const resetAllFilters = instance.setAllFilters ? () => instance.setAllFilters([]) : null;
-  const pageSize = instance.page ? instance.page.length : rows.length;
+  const propsForChildren = { tableName, itemCount, ...rest };
+  const childrenWithExtraProps = React.Children.map(
+    children, child => React.cloneElement(child, propsForChildren),
+  );
 
   return (
     <div className="pgn__data-table-wrapper">
-      <TableControlBar
-        isSelectable={isSelectable}
-        selectedFlatRows={instance.selectedFlatRows}
-        toggleAllRowsSelected={instance.toggleAllRowsSelected}
-        isFilterable={isFilterable}
-        filterNames={filterNames}
-        pageSize={pageSize}
-        itemCount={itemCount}
-        bulkActions={bulkActions}
-        columns={instance.columns}
-        rows={instance.flatRows}
-        resetAllFilters={resetAllFilters}
-        numBreakoutFilters={numBreakoutFilters}
-      />
-      {rows.length > 0 && (
-        <Table
-          getTableProps={getTableProps}
-          getTableBodyProps={getTableBodyProps}
-          headerGroups={headerGroups}
-          /* the page contains only the rows in it, as opposed to all rows.
-            it is only available when the table is paginated */
-          rows={instance.page ? instance.page : rows}
-          prepareRow={prepareRow}
-        />
-      )}
-      {rows.length <= 0 && <EmptyTableComponent />}
-      <TableFooter
-        itemCount={itemCount}
-        pageSize={pageSize}
-        isPaginated={isPaginated}
-        previousPage={instance.previousPage}
-        nextPage={instance.nextPage}
-        canNextPage={instance.canNextPage}
-        canPreviousPage={instance.canPreviousPage}
-        pageIndex={instance.state.pageIndex}
-        pageCount={instance.pageCount}
-      />
+      {children && childrenWithExtraProps}
+      {!children
+        && (
+        <>
+          <TableControlBar {...propsForChildren} />
+          <Table {...propsForChildren} />
+          <TableFooter {...propsForChildren} />
+        </>
+        )}
     </div>
   );
 }
 
 DataTable.defaultProps = {
   additionalColumns: [],
-  bulkActions: [],
   defaultColumnValues: {},
   isFilterable: false,
   isPaginated: false,
@@ -138,8 +107,8 @@ DataTable.defaultProps = {
   fetchData: null,
   initialState: {},
   initialTableOptions: {},
-  EmptyTableComponent: EmptyTableContent,
-  numBreakoutFilters: 1,
+  children: null,
+
 };
 
 DataTable.propTypes = {
@@ -151,7 +120,7 @@ DataTable.propTypes = {
     accessor: PropTypes.string.isRequired,
   })).isRequired,
   /** Data to be displayed in the table */
-  data: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  data: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   /** table rows can be selected */
   isSelectable: PropTypes.bool,
   /** Table columns can be sorted */
@@ -164,18 +133,11 @@ DataTable.propTypes = {
   manualPagination: PropTypes.bool,
   // eslint-disable-next-line react/require-default-props
   pageCount: requiredWhen(PropTypes.number, 'manualPagination'),
-  itemCount: PropTypes.number.isRequired,
   /** Table rows can be filtered, using a default filter in the default column values, or in the column definition */
   isFilterable: PropTypes.bool,
   /** Indicates that filtering will be done via a backend API. A fetchData function must be provided */
   manualFilters: PropTypes.bool,
-  /** Actions to be performed on the table. isSelectable must be true to use bulk actions */
-  bulkActions: PropTypes.arrayOf(PropTypes.shape({
-    /** Text displayed to the user for each action */
-    buttonText: PropTypes.string.isRequired,
-    /** Click handler for the action; it will be passed the selected rows */
-    handleClick: PropTypes.func.isRequired,
-  })),
+
   /** defaults that will be set on each column. Will be overridden by individual column values */
   defaultColumnValues: PropTypes.shape({
     /** A default filter component for the column */
@@ -202,13 +164,13 @@ DataTable.propTypes = {
   }),
   /** Table options passed to react-table's useTable hook. Will override some options passed in to DataTable, such
      as: data, columns, defaultColumn, manualFilters, manualPagination, manualSortBy, and initialState */
-  initialTableOptions: PropTypes.shape(),
-  /** Component to be displayed when the table is empty */
-  EmptyTableComponent: PropTypes.func,
-  /** Number between one and four filters that can be shown on the top row on large screens. On small screens
-   * all filters will be placed in the dropdown.
-  */
-  numBreakoutFilters: PropTypes.oneOf([1, 2, 3, 4]),
+  initialTableOptions: PropTypes.shape({}),
+  /** Total number of items */
+  itemCount: PropTypes.number.isRequired,
+  /** Name of table used for storing table data in context */
+  tableName: PropTypes.string.isRequired,
+  /** If children are not provided a table with control bar and footer will be rendered */
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
 
 DataTable.BulkActions = BulkActions;

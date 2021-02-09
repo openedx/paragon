@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import { TableContext } from './TableContext';
 
-const RowStatus = ({ className, pageSize, itemCount }) => (
-  <div className={className}>Showing {pageSize} of {itemCount}</div>
-);
+const RowStatus = ({ className, itemCount, tableName }) => {
+  const instance = useContext(TableContext).getTableInstance(tableName);
+  const pageSize = instance.page ? instance.page.length : instance.rows?.length;
+
+  if (!pageSize) {
+    return null;
+  }
+  return (<div className={className}>Showing {pageSize} of {itemCount}</div>);
+};
 
 RowStatus.defaultProps = {
   className: '',
@@ -11,8 +18,8 @@ RowStatus.defaultProps = {
 
 RowStatus.propTypes = {
   className: PropTypes.string,
-  pageSize: PropTypes.number.isRequired,
   itemCount: PropTypes.number.isRequired,
+  tableName: PropTypes.string.isRequired,
 };
 
 export default RowStatus;
