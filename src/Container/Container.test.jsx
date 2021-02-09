@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { Container } from './index';
+import Container from './index';
 
 const getClassNames = container => container.props().className.split(' ');
 
