@@ -21,18 +21,6 @@ class Sheet extends React.Component {
   constructor(props) {
     super(props);
     this.renderSheet = this.renderSheet.bind(this);
-    this.lockFocusEl = this.lockFocusEl.bind(this);
-  }
-
-  lockFocusEl(renderContent) {
-    if (!this.props.blocking) {
-      return renderContent;
-    }
-    return (
-      <FocusOn enabled={this.props.show}>
-        {renderContent}
-      </FocusOn>
-    );
   }
 
   renderSheet() {
@@ -74,7 +62,9 @@ class Sheet extends React.Component {
           )}
           role="presentation"
         />
-        {this.lockFocusEl(this.renderSheet())}
+        <FocusOn enabled={this.props.blocking}>
+          {this.renderSheet()}
+        </FocusOn>
       </SheetContainer>
     );
   }
