@@ -12,7 +12,7 @@ const props = {
     filterValue: [],
     setFilter: setFilterMock,
     Header: 'Horse colors',
-    dropdownFilters: [
+    filterChoices: [
       roan,
       palomino,
       { name: 'dappled grey', number: 4, value: 7 },
@@ -33,7 +33,7 @@ describe('<MultiSelectDropdownFilter />', () => {
   });
   it('renders a title', () => {
     const wrapper = mount(<MultiSelectDropdownFilter {...props} />);
-    expect(wrapper.text()).toContain(props.column.Header.toLowerCase());
+    expect(wrapper.text()).toContain(props.column.Header);
   });
   it('sets a filter - no initial filters', () => {
     const wrapper = mount(<MultiSelectDropdownFilter {...props} />);

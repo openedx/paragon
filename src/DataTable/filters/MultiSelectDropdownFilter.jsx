@@ -9,12 +9,11 @@ import LabelledCheckbox from './LabelledCheckbox';
 
 function MultiSelectDropdownFilter({
   column: {
-    setFilter, Header, dropdownFilters, getHeaderProps, filterValue,
+    setFilter, Header, filterChoices, getHeaderProps, filterValue,
   },
 }) {
   // creates a unique label that does not change on re-render in case there are multiple checkbox filters in the dom
   const ariaLabel = useRef(newId(`multi-dropdown-filter-label-${getHeaderProps().key}-`));
-  const label = `Filter by ${Header.toLowerCase()}`;
   const checkedBoxes = filterValue || [];
   const changeCheckbox = (value) => {
     if (checkedBoxes.includes(value)) {
@@ -26,9 +25,9 @@ function MultiSelectDropdownFilter({
   };
   const headerBasedId = useMemo(() => `checkbox-filter-check-${getHeaderProps().key}-`, [getHeaderProps]);
   return (
-    <DropdownButton variant="outline-primary" id={ariaLabel.current} title={label}>
-      <div role="group" aria-label={label} className="pgn__dropdown-filter-checkbox-group">
-        {dropdownFilters.map(({ name, number, value }) => (
+    <DropdownButton variant="outline-primary" id={ariaLabel.current} title={Header}>
+      <div role="group" aria-label={Header} className="pgn__dropdown-filter-checkbox-group">
+        {filterChoices.map(({ name, number, value }) => (
           <LabelledCheckbox
             key={name}
             id={headerBasedId}
@@ -55,7 +54,7 @@ MultiSelectDropdownFilter.propTypes = {
     /** Column header used for labels and placeholders */
     Header: PropTypes.string.isRequired,
     /** Names and values for the select options */
-    dropdownFilters: PropTypes.arrayOf(PropTypes.shape({
+    filterChoices: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string.isRequired,
       number: PropTypes.number,
       value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,

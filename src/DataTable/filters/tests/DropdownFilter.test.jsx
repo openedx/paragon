@@ -12,7 +12,7 @@ const props = {
     setFilter: setFilterMock,
     Header: 'Horse colors',
     getHeaderProps: () => ({ key: 'foo' }),
-    dropdownFilters: [
+    filterChoices: [
       roan,
       palomino,
       { name: 'dappled grey', value: '10' },
@@ -26,7 +26,7 @@ describe('<DropdownFilter />', () => {
   });
   it('renders a select button', () => {
     const wrapper = mount(<DropdownFilter {...props} />);
-    expect(wrapper.text()).toContain(props.column.Header.toLowerCase());
+    expect(wrapper.text()).toContain(props.column.Header);
   });
   it('sets a filter - no initial filters', () => {
     const wrapper = mount(<DropdownFilter {...props} />);

@@ -52,6 +52,9 @@ Filter functions are definied on the column as the `filter` attribute.
 The `MultiSelectDropdownFilter` and `CheckboxFilter` components expect an array of values. Thus, it is est to use them with the `includesValue` filter function.
 The `TextFilter` and `DropdownFilter` components can be used with a variety of the above `filter` functions.
 
+## TextFilter, MultiSelectDropdownFilter, CheckboxFilter
+
+The checkbox filter is used in the dropdown.
 
 ```jsx live
 <DataTable
@@ -69,8 +72,7 @@ The `TextFilter` and `DropdownFilter` components can be used with a variety of t
       accessor: 'age',
       Filter: MultiSelectDropdownFilter,
       filter: 'includesValue',
-      filterMultiSelect: true,
-      dropdownFilters: [
+      filterChoices: [
         {
           name: 'Four',
           value: 4,
@@ -103,23 +105,26 @@ The `TextFilter` and `DropdownFilter` components can be used with a variety of t
       accessor: 'color',
       Filter: CheckboxFilter,
       filter: 'includesValue',
-      checkboxFilters: [{
+      filterChoices: [{
         name: 'russian white',
         number: 1,
+        value: 'russian white',
       },
       {
         name: 'orange tabby',
-        number: 2
+        number: 2,
+        value: 'orange tabby',
       },
       {
         name: 'brown tabby',
-        number: 3
+        number: 3,
+        value: 'brown tabby',
       },
       {
         name: 'siamese',
         number: 1,
-      }
-      ]
+        value: 'siamese',
+      }]
     },
   ]}
   itemCount={7}
@@ -171,6 +176,130 @@ The `TextFilter` and `DropdownFilter` components can be used with a variety of t
 
 />
 ```
+
+## DropdownFilter
+
+```jsx live
+<DataTable
+  isFilterable
+  defaultColumnValues={{ Filter: TextFilter }}
+  noOfBreakoutFilters={2}
+  columns={[
+    {
+      Header: 'Name',
+      accessor: 'name',
+
+    },
+    {
+      Header: 'Age',
+      accessor: 'age',
+      Filter: DropdownFilter,
+      filter: 'equals',
+      filterChoices: [
+        {
+          name: 'Four',
+          value: 4,
+        },
+        {
+          name: 'One',
+          value: 1,
+        },
+        {
+          name: 'Twelve',
+          value: 12,
+        },
+        {
+          name: 'Nine',
+          value: 9,
+        },
+        {
+          name: 'Seventeen',
+          number: 17,
+          value: 17,
+        },
+      ]
+    },
+    {
+      Header: 'Famous For',
+      accessor: 'famous_for',
+    },
+    {
+      Header: 'Coat Color',
+      accessor: 'color',
+      Filter: CheckboxFilter,
+      filter: 'includesValue',
+      filterChoices: [{
+        name: 'russian white',
+        number: 1,
+        value: 'russian white',
+      },
+      {
+        name: 'orange tabby',
+        number: 2,
+        value: 'orange tabby',
+      },
+      {
+        name: 'brown tabby',
+        number: 3,
+        value: 'brown tabby',
+      },
+      {
+        name: 'siamese',
+        number: 1,
+        value: 'siamese',
+      }]
+    },
+  ]}
+  itemCount={7}
+  data={[
+    {
+      name: 'Lil Bub',
+      color: 'brown tabby',
+      famous_for: 'weird tongue',
+      age: 4,
+    },
+    {
+      name: 'Grumpy Cat',
+      color: 'siamese',
+      famous_for: 'serving moods',
+      age: 4,
+    },
+    {
+      name: 'Smoothie',
+      color: 'orange tabby',
+      famous_for: 'modeling',
+      age: 1,
+    },
+    {
+      name: 'Maru',
+      color: 'brown tabby',
+      famous_for: 'being a lovable oaf',
+      age: 12,
+    },
+    {
+      name: 'Keyboard Cat',
+      color: 'orange tabby',
+      famous_for: 'piano virtuoso',
+      age: 9,
+    },
+    {
+      name: 'Long Cat',
+      color: 'russian white',
+      famous_for:
+        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+      age: 9,
+    },
+    {
+      name: 'Zeno',
+      color: 'brown tabby',
+      famous_for: 'getting halfway there',
+      age: 17,
+    },
+  ]}
+
+/>
+```
+
 
 ## Props
 
