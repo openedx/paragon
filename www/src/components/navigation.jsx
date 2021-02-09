@@ -34,6 +34,7 @@ const menu = [
       { title: 'Card', url: '/components/card' },
       { title: 'Carousel', url: '/components/carousel' },
       { title: 'Collapsible', url: '/components/collapsible' },
+      { title: 'Container', url: '/components/container' },
       { title: 'Dropdown', url: '/components/dropdown' },
       { title: 'Fieldset', url: '/components/fieldset' },
       { title: 'Figure', url: '/components/figure' },

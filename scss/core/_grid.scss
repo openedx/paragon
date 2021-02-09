@@ -1,0 +1,21 @@
+@import "~bootstrap/scss/grid";
+
+.container-mw-xs {
+  max-width: $max-width-xs + $grid-gutter-width;
+}
+
+.container-mw-sm {
+  max-width: $max-width-sm + $grid-gutter-width;
+}
+
+.container-mw-md {
+  max-width: $max-width-md + $grid-gutter-width;
+}
+
+.container-mw-lg {
+  max-width: $max-width-lg + $grid-gutter-width;
+}
+
+.container-mw-xl {
+  max-width: $max-width-xl + $grid-gutter-width;
+}
