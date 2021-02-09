@@ -1,3 +1,47 @@
+import React from 'react';
+import classNames from 'classnames';
+import RBContainer from 'react-bootstrap/Container';
+import PropTypes from 'prop-types';
+
 export { default as Col } from 'react-bootstrap/Col';
-export { default as Container } from 'react-bootstrap/Container';
 export { default as Row } from 'react-bootstrap/Row';
+
+const SIZE_CLASS_NAMES = {
+  xs: 'container-mw-xs',
+  sm: 'container-mw-sm',
+  md: 'container-mw-md',
+  lg: 'container-mw-lg',
+  xl: 'container-mw-xl',
+};
+
+const Container = ({ size, children, ...props }) => (
+  <RBContainer
+    {...props}
+    className={classNames(
+      props.className,
+      SIZE_CLASS_NAMES[size],
+    )}
+  >
+    {children}
+  </RBContainer>
+);
+
+Container.propTypes = {
+  ...RBContainer.propTypes,
+  /** Override the base element */
+  as: PropTypes.elementType,
+  children: PropTypes.node,
+  /** Fill all available space at any breakpoint */
+  fluid: PropTypes.bool,
+  /** Set the maximum width for the container */
+  size: PropTypes.oneOf(Object.keys(SIZE_CLASS_NAMES)),
+};
+
+Container.defaultProps = {
+  as: 'div',
+  children: undefined,
+  fluid: true,
+  size: undefined,
+};
+
+export { Container };
