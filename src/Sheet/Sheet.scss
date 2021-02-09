@@ -5,7 +5,6 @@
   position: fixed;
   top: 0px;
   left: 0px;
-  font-size: 18px;
   &.hidden {
     display: none;
   }
@@ -13,12 +12,12 @@
 }
 .pgn__sheet-component {
   position: fixed;
-  padding: 20px;
+  padding: 1.25rem;
   background-color: white;
   z-index: $zindex-sheet;
   &.pgn__sheet__dark {
-    background-color: rgb(0,38,43);
-    color: rgb(242,240,239);
+    background-color: $primary-500;
+    color: $light-300;
   }
   &.bottom {
     bottom: 0px;
