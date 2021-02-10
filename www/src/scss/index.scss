@@ -54,3 +54,10 @@
 input[type=range] {
   cursor: pointer;
 }
+
+pre, small {
+  font-size: .875rem;
+}
+code {
+  font-size: inherit;
+}

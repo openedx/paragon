@@ -7,7 +7,7 @@ devStatus: 'Done'
 notes:
 ---
 
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import { SearchField } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
@@ -15,11 +15,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 # SearchField
 
-<SingleComponentStatus
-  frontmatter={
-    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
-  }
-/>
+<SingleComponentStatus frontmatter={props?.pageContext?.frontmatter} />
 
 ### Basic Usage
 
@@ -148,43 +144,17 @@ For needs that deviate from the basic usage above, use `<SearchField.Advanced />
 </SearchField.Advanced>
 ```
 
-### Props
 
-<StaticQuery
-  query={graphql`query {
+<PropsTable {...props.data.searchField} />
+<PropsTable {...props.data.searchFieldAdvanced} />
+<PropsTable {...props.data.searchFieldLabel} />
+<PropsTable {...props.data.searchFieldInput} />
+
+export const query = graphql`
+  query {
     searchField: componentMetadata(displayName: { eq: "SearchField" }) { ...ComponentDocGenData }
     searchFieldAdvanced: componentMetadata(displayName: { eq: "SearchFieldAdvanced" }) { ...ComponentDocGenData }
     searchFieldLabel: componentMetadata(displayName: { eq: "SearchFieldLabel" }) { ...ComponentDocGenData }
     searchFieldInput: componentMetadata(displayName: { eq: "SearchFieldInput" }) { ...ComponentDocGenData }
-  }`}
-  render={({ searchField, searchFieldAdvanced, searchFieldLabel, searchFieldInput }) => {
-    return (
-      <>
-        {searchField && (
-          <>
-            <h5>SearchField</h5>
-            <PropsTable propMetaData={searchField.props} />
-          </>
-        )}
-        {searchFieldAdvanced && (
-          <>
-            <h5>SearchField.Advanced</h5>
-            <PropsTable propMetaData={searchFieldAdvanced.props} />
-          </>
-        )}
-        {searchFieldLabel && (
-          <>
-            <h5>SearchField.Label</h5>
-            <PropsTable propMetaData={searchFieldLabel.props} />
-          </>
-        )}
-        {searchFieldInput && (
-          <>
-            <h5>SearchField.Input</h5>
-            <PropsTable propMetaData={searchFieldInput.props} />
-          </>
-        )}
-      </>
-    )
-  }}
-/>
+  }
+`

@@ -7,7 +7,7 @@ devStatus: "Done"
 notes:
 ---
 
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import { Collapsible } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
@@ -15,11 +15,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 # Collapsible
 
-<SingleComponentStatus
-  frontmatter={
-    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
-  }
-/>
+<SingleComponentStatus frontmatter={props?.pageContext?.frontmatter} />
 
 ### Basic Usage
 
@@ -218,26 +214,24 @@ an **uncontrolled** Collapsible by getting a ref to the component and calling
 the component will be updated accordingly.
 
 
-##### Props
+<PropsTable {...props.data.collapsible} />
+<PropsTable {...props.data.collapsibleTrigger} />
+<PropsTable {...props.data.collapsibleBody} />
+<PropsTable {...props.data.collapsibleVisible} />
 
-<StaticQuery
-  query={graphql`query {
-    collapsible: componentMetadata(displayName: { eq: "Collapsible" }) { ...ComponentDocGenData }
-    collapsibleTrigger: componentMetadata(displayName: { eq: "CollapsibleTrigger" }) { ...ComponentDocGenData }
-    collapsibleBody: componentMetadata(displayName: { eq: "CollapsibleBody" }) { ...ComponentDocGenData }
-    collapsibleVisible: componentMetadata(displayName: { eq: "CollapsibleVisible" }) { ...ComponentDocGenData }
-  }`}
-  render={({ collapsible, collapsibleTrigger, collapsibleBody, collapsibleVisible }) => {
-    return (
-      <div>
-        {collapsible ? <PropsTable propMetaData={collapsible.props} /> : null}
-        <h5>Collapsible.Trigger</h5>
-        {collapsibleTrigger ? <PropsTable propMetaData={collapsibleTrigger.props} /> : null}
-        <h5>Collapsible.Body</h5>
-        {collapsibleBody ? <PropsTable propMetaData={collapsibleBody.props} /> : null}
-        <h5>Collapsible.Visible</h5>
-        {collapsibleVisible ? <PropsTable propMetaData={collapsibleVisible.props} /> : null}
-      </div>
-    )
-  }}
-/>
+export const query = graphql`
+  query {
+    collapsible: componentMetadata(displayName: { eq: "CardGrid" }) {
+      ...ComponentDocGenData
+    }
+    collapsibleTrigger: componentMetadata(displayName: { eq: "CollapsibleTrigger" }) {
+      ...ComponentDocGenData
+    }
+    collapsibleBody: componentMetadata(displayName: { eq: "CollapsibleBody" }) {
+      ...ComponentDocGenData
+    }
+    collapsibleVisible: componentMetadata(displayName: { eq: "CollapsibleVisible" }) {
+      ...ComponentDocGenData
+    }
+  }
+`
