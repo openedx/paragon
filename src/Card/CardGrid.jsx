@@ -36,12 +36,25 @@ CardGrid.propTypes = {
    * An object containing the desired column size at each breakpoint, following a similar
    * props API as ``react-bootstrap/Col``
    */
+  oneoftype: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  instanceof: PropTypes.instanceOf(CardGrid),
+  PropTypeArrayOf: PropTypes.arrayOf(PropTypes.string),
+  PropTypeObjectOf: PropTypes.objectOf(PropTypes.number),
   columnSizes: PropTypes.shape({
-    xs: PropTypes.number,
-    sm: PropTypes.number,
-    md: PropTypes.number,
-    lg: PropTypes.number,
+    sm: PropTypes.func,
+    lg: PropTypes.shape({
+      xs: PropTypes.number.isRequired,
+      sm: PropTypes.number,
+      md: PropTypes.number,
+      lg: PropTypes.number,
+      xl: PropTypes.number,
+    }).isRequired,
     xl: PropTypes.number,
+  }),
+  // An object with warnings on extra properties
+  optionalObjectWithStrictShape: PropTypes.exact({
+    name: PropTypes.string,
+    quantity: PropTypes.number
   }),
 };
 

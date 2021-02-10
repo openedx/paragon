@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
-
+import { Badge } from '~paragon-react';
 
 let lastIds = {};
 
@@ -53,12 +53,261 @@ ShapeProp.defaultProps = {
   shape: {},
 };
 
+// const PropType = ({ children }) => <h6>{children}</h6>;
+// const PropTypeValue = ({ value }) => {
+//   if (typeof value === 'undefined') {
+//     return null;
+//   }
+
+//   return (
+//     <div className="text-success">
+//       {value && JSON.stringify(value)}
+//     </div>
+//   )
+// };
+// const PropTypeDefaultValue = ({ value }) => {
+//   if (value === 'undefined' || !value) {
+//     return null;
+//   }
+//   return value;
+// }
+
+// const PropTypeDisplay = ({ name, value }) => {
+//   if (name === 'union') {
+//     return (
+//       <div>
+//         <PropType>One of:</PropType>
+//         {value.map(type => <PropTypeDisplay {...type} />)}
+//       </div>
+//     );
+//   }
+
+//   return (
+//     <div>
+//       <PropType>{name}</PropType>
+//       <PropTypeValue value={value}></PropTypeValue>
+//     </div>
+//   );
+// }
+
+const PropTypeEnumValues = ({ values }) => {
+  return (
+    <div>
+      <code>{values.map(valueObj => valueObj.value).join(' | ')}</code>
+    </div>
+  );
+}
+
+const PropTypeShapeValue = ({ shape, required }) => {
+  const simplifiedShape = Object.entries(shape).map(([key, value]) => (
+    <div className="text-monospace small pl-3">{key}: <PropType {...value} />,</div>
+  ));
+
+  return (
+    <>
+      <code>shape{required && " (required)"} {"\{"}</code>
+        {simplifiedShape}
+      <code>{"\}"}</code>
+    </>
+  );
+}
+
+const PropTypeArrayOfTypeValue = ({ values, required }) => {
+  const simplifiedValues =values.map(value => (
+    <div className="pl-3"><PropType {...value} /></div>
+  ));
+
+  return (
+    <>
+      <code>array{required && " (required)"} {"\["}</code>
+        {simplifiedValues}
+      <code>{"\]"}</code>
+    </>
+  );
+}
+
+const simplePropTypes = [
+  'array',
+  'bool',
+  'func',
+  'number',
+  'object',
+  'string',
+  'any',
+  'element',
+  'node',
+  'symbol',
+  'elementType',
+];
+
+const RequiredBadge = ({ isRequired }) => {
+  if (!isRequired) return null;
+  return <> <Badge variant="light">Required</Badge></>;
+}
+
+const SimplePropType = ({ name, isRequired }) => (
+  <span>
+    <code>{name}</code>
+    <RequiredBadge isRequired={isRequired} />
+  </span>
+);
+
+const PropTypeEnum = ({ name, value, isRequired }) => (
+  <span>
+    <code>{name}</code>
+    <RequiredBadge isRequired={isRequired} />
+    <div>{value.map(({ value }) => value).join(' | ')}</div>
+  </span>
+);
+
+const PropTypeUnion = ({ name, value, isRequired }) => (
+  <span>
+    {value
+      .map(propType => <PropType {...propType} />)
+      .reduce((prev, curr) => [prev, ' | ', curr])
+    }
+
+    <RequiredBadge isRequired={isRequired} />
+  </span>
+);
+
+const PropTypeInstanceOf = ({ name, value, isRequired }) => (
+  <span>
+    <code>{value}</code>
+    <RequiredBadge isRequired={isRequired} />
+  </span>
+);
+
+const PropTypeArrayOf = ({ name, value, isRequired }) => (
+  <span>
+    <PropType {...value} /><code>[]</code>
+    <RequiredBadge isRequired={isRequired} />
+  </span>
+);
+
+const PropTypeObjectOf = ({ name, value, isRequired }) => (
+  <span>
+    <code>Object.{"<"}<PropType {...value} />{">"}</code>
+    <RequiredBadge isRequired={isRequired} />
+  </span>
+);
+
+const PropTypeShape = ({ name, value, isRequired }) => (
+  <span>
+    <code>{name}</code>
+    <RequiredBadge isRequired={isRequired} />
+    {" \{"}
+    {Object.entries(value).map(([key, propType]) => (
+      <div className="text-monospace pl-3">{key}: <PropType {...propType} />,</div>
+    ))}
+    {"\}"}
+  </span>
+);
+
+const PropTypeExact = ({ name, value, isRequired }) => (
+  <span>
+    <code>{name}</code>
+    <RequiredBadge isRequired={isRequired} />
+    {" \{"}
+    {Object.entries(value).map(([key, propType]) => (
+      <div className="text-monospace pl-3">{key}: <PropType {...propType} />,</div>
+    ))}
+    {"\}"}
+  </span>
+);
+
+const complexPropTypes = {
+  enum: PropTypeEnum,
+  union: PropTypeUnion,
+  instanceOf: PropTypeInstanceOf,
+  arrayOf: PropTypeArrayOf,
+  objectOf: PropTypeObjectOf,
+  shape: PropTypeShape,
+  exact: PropTypeExact,
+}
+
+const PROP_TYPE_DISPLAY_NAMES = {
+  func: 'function',
+  bool: 'boolean',
+  string: 'string',
+}
+const PropType = ({ name, value, required }) => {
+  if (simplePropTypes.includes(name)) {
+    return <SimplePropType name={name} isRequired={required} />;
+  }
+  const ComplexPropTypeComponent = complexPropTypes[name];
+  if (ComplexPropTypeComponent) {
+    return <ComplexPropTypeComponent value={value} name={name} isRequired={required} />;
+  }
+
+  return JSON.stringify(value);
+
+  return null;
+  console.log(name, value);
+
+  if (name === 'enum') {
+    return <PropTypeEnumValues values={value} required={required} />
+  }
+  if (name === 'shape') {
+    return <PropTypeShapeValue shape={value} required={required} />
+  }
+
+  if (name === 'arrayOf') {
+    return <PropTypeShapeValue shape={value} required={required} />
+  }
+
+  if (Array.isArray(value)) {
+    return <PropTypeArrayOfTypeValue values={value} />
+  }
+
+  return JSON.stringify(value);
+  // };
+
+  // return (
+  //   <div>
+  //     <div>{name}</div>
+  //     {renderValue()}
+  //   </div>
+  // )
+}
+
+const DefaultValue = ({ value }) => {
+  if (!value || value === 'undefined') return null;
+  return (
+    <div>
+      Default:{" "}
+      <span className="small text-monospace">{value}</span>
+    </div>
+  );
+}
+
+const Prop = ({
+  name, type, required, defaultValue = {}, description,
+}) => (
+  <li className="p-3 border-bottom">
+    <h6>{name}</h6>
+    <div className="small">
+      <PropType {...type} />
+    </div>
+    <DefaultValue {...defaultValue} />
+    {description ? <ReactMarkdown className="small mb-0">{description.text}</ReactMarkdown> : null}
+  </li>
+)
 
 const PropsTable = (props) => {
   const { propMetaData = [], ..._props } = props;
-
   return (
-    <table className="table w-100" {..._props}>
+    <div>
+      <h3>Props API</h3>
+      <ul className="list-unstyled">
+        {Object.entries(propMetaData).map(([key, metadata]) => {
+          return <Prop {...metadata} />
+        })}
+      </ul>
+    </div>
+  );
+  return (
+    <table className="table table-fixed w-100" {..._props}>
       <thead>
         <tr>
           <th>Prop Name</th>
