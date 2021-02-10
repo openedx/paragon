@@ -44,7 +44,7 @@ describe('<DropdownFilter />', () => {
     const wrapper = mount(<DropdownFilter column={{ ...props.column, filterValue: palomino.value }} />);
     wrapper.find('select').simulate('click');
     wrapper.find('option').at(0).simulate('change');
-    expect(setFilterMock).toHaveBeenCalledWith(null);
+    expect(setFilterMock).toHaveBeenCalledWith(undefined);
   });
   it('displays a number if a number is provided', () => {
     const wrapper = mount(<DropdownFilter {...props} />);
