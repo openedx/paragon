@@ -215,13 +215,17 @@ the component will be updated accordingly.
 
 
 <PropsTable {...props.data.collapsible} />
+<PropsTable {...props.data.collapsibleAdvanced} />
 <PropsTable {...props.data.collapsibleTrigger} />
 <PropsTable {...props.data.collapsibleBody} />
 <PropsTable {...props.data.collapsibleVisible} />
 
 export const query = graphql`
   query {
-    collapsible: componentMetadata(displayName: { eq: "CardGrid" }) {
+    collapsible: componentMetadata(displayName: { eq: "Collapsible" }) {
+      ...ComponentDocGenData
+    }
+    collapsibleAdvanced: componentMetadata(displayName: { eq: "CollapsibleAdvanced" }) {
       ...ComponentDocGenData
     }
     collapsibleTrigger: componentMetadata(displayName: { eq: "CollapsibleTrigger" }) {

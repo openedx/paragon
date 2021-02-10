@@ -1,12 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
-import { Nav } from '~paragon-react';
+import { Container, Row, Col, Collapsible, Icon } from '~paragon-react';
+import { Menu, Close } from '~paragon-icons';
 
 import Navigation from './navigation';
 
 import '../scss/index.scss';
 
+const ResponsiveNavigation = () => {
+  const [collapseIsOpen, setCollapseOpen] = React.useState(false);
+
+  return (
+    <>
+      <Collapsible.Advanced
+        open={collapseIsOpen}
+        onToggle={isOpen => setCollapseOpen(isOpen)}
+        className="d-lg-none"
+      >
+        <Collapsible.Trigger tag="button" className="d-inline-flex btn btn-primary align-items-center" style={{ position: 'sticky', top: '1rem', margin: '1rem 0 0', zIndex: 2000 }}>
+          <Collapsible.Visible whenClosed><Icon className="mr-2" src={Menu} /> Menu</Collapsible.Visible>
+          <Collapsible.Visible whenOpen><Icon className="mr-2" src={Close} /> Close Menu</Collapsible.Visible>
+        </Collapsible.Trigger>
+
+        <Collapsible.Body onClick={(e) => {
+          if (e.target.tagName == 'A') {
+            setCollapseOpen(false)
+          }
+        }}>
+          <Navigation siteTitle="TODO CHANGE THIS" />
+        </Collapsible.Body>
+      </Collapsible.Advanced>
+
+      <div className="d-none d-lg-block" style={{ position:'sticky', top: '0', maxHeight: '100vh', overflow: 'auto' }}>
+        <Navigation siteTitle="TODO CHANGE THIS" />
+      </div>
+    </>
+  );
+}
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -20,30 +51,16 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <div className="pgn-doc_container">
-        <Navigation siteTitle={data.site.siteMetadata.title} />
-        <div className="pgn-doc__main-content">
-          {children}
-        </div>
-        <footer className="pgn-doc_footer border-top border-light d-flex align-items-center">
-          <Nav className="flex-grow-1">
-            <Nav.Item>
-              <Nav.Link href="https://github.com/edx/paragon">Contribute on Github</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href="https://github.com/edx/.github/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href="https://open.edx.org/">Open edX</Nav.Link>
-            </Nav.Item>
-          </Nav>
-          <p className="m-0 text-muted">
-            <a href="https://www.netlify.com">
-              <img src="https://www.netlify.com/img/global/badges/netlify-light.svg" alt="Deploys by Netlify" />
-            </a>
-          </p>
-        </footer>
-      </div>
+      <Container size="xl">
+        <Row>
+          <Col lg="3">
+            <ResponsiveNavigation />
+          </Col>
+          <Col className="py-5">
+            {children}
+          </Col>
+        </Row>
+      </Container>
     )}
   />
 );
