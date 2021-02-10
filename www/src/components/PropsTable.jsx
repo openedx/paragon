@@ -1,135 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
-import { Badge, Row, Col } from '~paragon-react';
-
-const simplePropTypes = [
-  'array',
-  'bool',
-  'func',
-  'number',
-  'object',
-  'string',
-  'any',
-  'element',
-  'node',
-  'symbol',
-  'elementType',
-];
-
-const RequiredBadge = ({ isRequired }) => {
-  if (!isRequired) return null;
-  return <> <Badge variant="light">Required</Badge></>;
-}
-
-const SimplePropType = ({ name, isRequired }) => (
-  <span>
-    <code>{name}</code>
-    <RequiredBadge isRequired={isRequired} />
-  </span>
-);
-
-const PropTypeEnum = ({ name, value, isRequired }) => (
-  <span>
-    <code>{name}</code>
-    <RequiredBadge isRequired={isRequired} />
-    <span className="text-monospace small ml-2">
-      {value.map ? value.map(({ value }) => value).join(' | ') : JSON.stringify(value)}
-    </span>
-  </span>
-);
-
-const PropTypeUnion = ({ name, value, isRequired }) => (
-  <span>
-    {value
-      .map(propType => <PropType {...propType} />)
-      .reduce((prev, curr) => [prev, ' | ', curr])
-    }
-
-    <RequiredBadge isRequired={isRequired} />
-  </span>
-);
-
-const PropTypeInstanceOf = ({ name, value, isRequired }) => (
-  <span>
-    <code>{value}</code>
-    <RequiredBadge isRequired={isRequired} />
-  </span>
-);
-
-const PropTypeArrayOf = ({ name, value, isRequired }) => (
-  <span>
-    <PropType {...value} /><code>[]</code>
-    <RequiredBadge isRequired={isRequired} />
-  </span>
-);
-
-const PropTypeObjectOf = ({ name, value, isRequired }) => (
-  <span>
-    <code>Object.{"<"}<PropType {...value} />{">"}</code>
-    <RequiredBadge isRequired={isRequired} />
-  </span>
-);
-
-const PropTypeShape = ({ name, value, isRequired }) => (
-  <span className="small">
-    <code>{name}</code>
-    <RequiredBadge isRequired={isRequired} />
-    {" \{"}
-    {Object.entries(value).map(([key, propType]) => (
-      <div className="text-monospace pl-3">{key}: <PropType {...propType} />,</div>
-    ))}
-    {"\}"}
-  </span>
-);
-
-const PropTypeExact = ({ name, value, isRequired }) => (
-  <span className="small">
-    <code>{name}</code>
-    <RequiredBadge isRequired={isRequired} />
-    {" \{"}
-    {Object.entries(value).map(([key, propType]) => (
-      <div className="text-monospace pl-3">{key}: <PropType {...propType} />,</div>
-    ))}
-    {"\}"}
-  </span>
-);
-
-const PropTypeCustom = ({ name, isRequired }) => (
-  <span>
-    <code>{name}</code>
-    <RequiredBadge isRequired={isRequired} />
-  </span>
-)
-
-
-const complexPropTypes = {
-  enum: PropTypeEnum,
-  union: PropTypeUnion,
-  instanceOf: PropTypeInstanceOf,
-  arrayOf: PropTypeArrayOf,
-  objectOf: PropTypeObjectOf,
-  shape: PropTypeShape,
-  exact: PropTypeExact,
-}
-
-const PropType = ({ name, value, required, raw, ...others }) => {
-  console.log(name, value, required, raw, others);
-
-  if (simplePropTypes.includes(name)) {
-    return <SimplePropType name={name} isRequired={required} />;
-  }
-  const ComplexPropTypeComponent = complexPropTypes[name];
-  if (ComplexPropTypeComponent) {
-    return <ComplexPropTypeComponent value={value} name={name} isRequired={required} />;
-  }
-
-  if (name === 'custom') {
-    return  <SimplePropType name={raw} isRequired={required} />;
-  }
-  return 'unknown type';
-  return JSON.stringify(value);
-}
+import PropType from './PropType';
+import { Badge } from '~paragon-react';
 
 const DefaultValue = ({ value }) => {
   if (!value || value === 'undefined') return null;
@@ -149,7 +22,7 @@ const Prop = ({
       <div className="mb-2">
         <h6 className="d-inline mb-0 mr-1">
           {`${name} `}
-          <RequiredBadge isRequired={required} />
+          {required && <> <Badge variant="light">Required</Badge></>}
         </h6>
         <PropType {...type} />
       </div>
