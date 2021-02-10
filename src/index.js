@@ -101,6 +101,7 @@ export { default as TableRow } from './DataTable/TableRow';
 export { default as BulkActions } from './DataTable/BulkActions';
 export { default as TableControlBar } from './DataTable/TableControlBar';
 export { default as TableFooter } from './DataTable/TableFooter';
+export { default as CardView } from './DataTable/CardView';
 export { default as TableContextProvider } from './DataTable/TableContext';
 export { default as ToggleButton, ToggleButtonGroup } from './ToggleButton';
 export { default as Variant } from './utils/constants';
