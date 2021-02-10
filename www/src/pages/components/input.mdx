@@ -7,7 +7,7 @@ devStatus: 'Done'
 notes: ''
 ---
 
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import { Input } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
@@ -78,18 +78,12 @@ Extra props supplied to Input will be passed through to the html node.
 <Input type="range" />
 ```
 
-##### Props
+<PropsTable {...props.data.componentMetadata} />
 
-<StaticQuery
-  query={graphql`
-    query {
-      componentMetadata(displayName: { eq: "Input" }) {
-        ...ComponentDocGenData
-      }
+export const query = graphql`
+  query {
+    componentMetadata: componentMetadata(displayName: { eq: "Input" }) {
+      ...ComponentDocGenData
     }
-  `}
-  render={({ componentMetadata }) => {
-    if (componentMetadata == null) return null;
-    return <PropsTable propMetaData={componentMetadata.props} />;
-  }}
-/>
+  }
+`

@@ -6,7 +6,7 @@ designStatus: 'In progress'
 devStatus: 'In progress'
 ---
 
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import PropsTable from '../../components/PropsTable';
 import SingleComponentStatus from '../../components/SingleComponentStatus';
@@ -124,28 +124,16 @@ Filter functions are definied on the column as the `filter` attribute.
 />
 ```
 
-## Props
+<PropsTable {...props.data.textFilter} />
+<PropsTable {...props.data.checkboxFilter} />
 
-### Avaliable filter types
-<StaticQuery
-  query={graphql`
-    query {
-      textFilter: componentMetadata(displayName: { eq: "TextFilter" }) {
-        ...ComponentDocGenData
-      }
-      checkboxFilter: componentMetadata(displayName: { eq: "CheckboxFilter" }) {
-        ...ComponentDocGenData
-      }
+export const query = graphql`
+  query {
+    textFilter: componentMetadata(displayName: { eq: "TextFilter" }) {
+      ...ComponentDocGenData
     }
-  `}
-  render={({ textFilter, checkboxFilter }) => {
-    return (
-      <div>
-        <h4>TextFilter</h4>
-        {textFilter ? <PropsTable propMetaData={textFilter.props} /> : null}
-        <h4>CheckboxFilter</h4>
-        {checkboxFilter ? <PropsTable propMetaData={checkboxFilter.props} /> : null}
-      </div>
-    );
-  }}
-/>
+    checkboxFilter: componentMetadata(displayName: { eq: "CheckboxFilter" }) {
+      ...ComponentDocGenData
+    }
+  }
+`

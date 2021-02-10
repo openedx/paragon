@@ -8,7 +8,7 @@ notes: |
   Replace with react-bootstrap shim
 ---
 
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import { Breadcrumb } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
@@ -56,18 +56,13 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 />
 ```
 
-##### Props
 
-<StaticQuery
-  query={graphql`
-    query {
-      componentMetadata(displayName: { eq: "Breadcrumbs" }) {
-        ...ComponentDocGenData
-      }
+<PropsTable {...props.data.componentMetadata} />
+
+export const query = graphql`
+  query {
+    componentMetadata: componentMetadata(displayName: { eq: "Breadcrumbs" }) {
+      ...ComponentDocGenData
     }
-  `}
-  render={({ componentMetadata }) => {
-    if (componentMetadata == null) return null;
-    return <PropsTable propMetaData={componentMetadata.props} />;
-  }}
-/>
+  }
+`

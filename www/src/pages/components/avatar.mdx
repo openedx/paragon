@@ -8,7 +8,7 @@ notes: |
 
 ---
 
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import PropsTable from '../../components/PropsTable';
 import SingleComponentStatus from '../../components/SingleComponentStatus';
@@ -40,23 +40,6 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 </>
 ```
 
-
-##### Props
-
-<StaticQuery
-  query={graphql`
-    query {
-      componentMetadata(displayName: { eq: "Avatar" }) {
-        ...ComponentDocGenData
-      }
-    }
-  `}
-  render={({ componentMetadata }) => {
-    if (componentMetadata == null) return null;
-    return <PropsTable propMetaData={componentMetadata.props} />;
-  }}
-/>
-
 ##### Theme variables (SCSS)
 
 ```scss
@@ -69,3 +52,14 @@ $avatar-size: 3rem !default;
 $avatar-size-lg: 4rem !default;
 $avatar-size-xl: 18.75rem !default;
 ```
+
+
+<PropsTable {...props.data.componentMetadata} />
+
+export const query = graphql`
+  query {
+    componentMetadata: componentMetadata(displayName: { eq: "Avatar" }) {
+      ...ComponentDocGenData
+    }
+  }
+`

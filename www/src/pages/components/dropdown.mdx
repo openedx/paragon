@@ -8,7 +8,7 @@ notes: |
   TODO: Remove subcomponent of deprecated implementation soon
 ---
 
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import { Dropdown } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
@@ -141,38 +141,24 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 />
 ```
 
-##### Props
+<PropsTable {...props.data.dropdown} />
+<PropsTable {...props.data.dropdownItem} />
+<PropsTable {...props.data.dropdownButton} />
+<PropsTable {...props.data.dropdownMenu} />
 
-<StaticQuery
-  query={graphql`
-    query {
-      dropdown: componentMetadata(displayName: { eq: "Dropdown" }) {
-        ...ComponentDocGenData
-      }
-      dropdownItem: componentMetadata(displayName: { eq: "DropdownItem" }) {
-        ...ComponentDocGenData
-      }
-      dropdownButton: componentMetadata(displayName: { eq: "DropdownButton" }) {
-        ...ComponentDocGenData
-      }
-      dropdownMenu: componentMetadata(displayName: { eq: "DropdownMenu" }) {
-        ...ComponentDocGenData
-      }
+export const query = graphql`
+  query {
+    dropdown: componentMetadata(displayName: { eq: "Dropdown" }) {
+      ...ComponentDocGenData
     }
-  `}
-  render={({ dropdown, dropdownItem, dropdownButton, dropdownMenu }) => {
-    return (
-      <div>
-        {dropdown ? <PropsTable propMetaData={dropdown.props} /> : null}
-        <h4>Dropdown.Button</h4>
-        {dropdownButton ? (
-          <PropsTable propMetaData={dropdownButton.props} />
-        ) : null}
-        <h4>Dropdown.Menu</h4>
-        {dropdownMenu ? <PropsTable propMetaData={dropdownMenu.props} /> : null}
-        <h4>Dropdown.Item</h4>
-        {dropdownItem ? <PropsTable propMetaData={dropdownItem.props} /> : null}
-      </div>
-    );
-  }}
-/>
+    dropdownItem: componentMetadata(displayName: { eq: "DropdownItem" }) {
+      ...ComponentDocGenData
+    }
+    dropdownButton: componentMetadata(displayName: { eq: "DropdownButton" }) {
+      ...ComponentDocGenData
+    }
+    dropdownMenu: componentMetadata(displayName: { eq: "DropdownMenu" }) {
+      ...ComponentDocGenData
+    }
+  }
+`

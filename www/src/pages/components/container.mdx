@@ -9,7 +9,7 @@ notes: |
 ---
 
 import get from 'lodash/get';
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import PropsTable from '../../components/PropsTable';
 import SingleComponentStatus from '../../components/SingleComponentStatus';
 
@@ -49,22 +49,6 @@ The base container to contain, pad, and center content in the viewport. This com
 </div>
 ```
 
-##### Props
-
-<StaticQuery
-  query={graphql`
-    query {
-      componentMetadata(displayName: { eq: "Container" }) {
-        ...ComponentDocGenData
-      }
-    }
-  `}
-  render={({ componentMetadata }) => {
-    if (componentMetadata == null) return null;
-    return <PropsTable propMetaData={componentMetadata.props} />;
-  }}
-/>
-
 ##### Theme variables (SCSS)
 
 ```
@@ -74,3 +58,13 @@ $max-width-md: 952px !default;
 $max-width-lg: 1192px !default;
 $max-width-xl: 1440px !default;
 ```
+
+<PropsTable {...props.data.componentMetadata} />
+
+export const query = graphql`
+  query {
+    componentMetadata: componentMetadata(displayName: { eq: "Container" }) {
+      ...ComponentDocGenData
+    }
+  }
+`

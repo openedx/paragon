@@ -33,7 +33,9 @@ const PropTypeEnum = ({ name, value, isRequired }) => (
   <span>
     <code>{name}</code>
     <RequiredBadge isRequired={isRequired} />
-    <span className="text-monospace small ml-2">{value.map(({ value }) => value).join(' | ')}</span>
+    <span className="text-monospace small ml-2">
+      {value.map ? value.map(({ value }) => value).join(' | ') : JSON.stringify(value)}
+    </span>
   </span>
 );
 
@@ -93,6 +95,14 @@ const PropTypeExact = ({ name, value, isRequired }) => (
   </span>
 );
 
+const PropTypeCustom = ({ name, isRequired }) => (
+  <span>
+    <code>{name}</code>
+    <RequiredBadge isRequired={isRequired} />
+  </span>
+)
+
+
 const complexPropTypes = {
   enum: PropTypeEnum,
   union: PropTypeUnion,
@@ -103,7 +113,9 @@ const complexPropTypes = {
   exact: PropTypeExact,
 }
 
-const PropType = ({ name, value, required }) => {
+const PropType = ({ name, value, required, raw, ...others }) => {
+  console.log(name, value, required, raw, others);
+
   if (simplePropTypes.includes(name)) {
     return <SimplePropType name={name} isRequired={required} />;
   }
@@ -112,6 +124,10 @@ const PropType = ({ name, value, required }) => {
     return <ComplexPropTypeComponent value={value} name={name} isRequired={required} />;
   }
 
+  if (name === 'custom') {
+    return  <SimplePropType name={raw} isRequired={required} />;
+  }
+  return 'unknown type';
   return JSON.stringify(value);
 }
 
@@ -150,7 +166,7 @@ const PropsTable = ({ props, displayName }) => {
       <h3>{displayName} Props API</h3>
       <ul className="list-unstyled">
         {props.map((metadata) => {
-          return <Prop {...metadata} />
+          return <Prop key={metadata.name} {...metadata} />
         })}
       </ul>
     </div>

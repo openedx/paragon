@@ -7,7 +7,7 @@ devStatus: 'Done'
 notes: ''
 ---
 
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import { StatefulButton } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
@@ -95,18 +95,12 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 };
 ```
 
-##### Props
+<PropsTable {...props.data.componentMetadata} />
 
-<StaticQuery
-  query={graphql`
-    query {
-      componentMetadata(displayName: { eq: "StatefulButton" }) {
-        ...ComponentDocGenData
-      }
+export const query = graphql`
+  query {
+    componentMetadata: componentMetadata(displayName: { eq: "StatefulButton" }) {
+      ...ComponentDocGenData
     }
-  `}
-  render={({ componentMetadata }) => {
-    if (componentMetadata == null) return null;
-    return <PropsTable propMetaData={componentMetadata.props} />;
-  }}
-/>
+  }
+`

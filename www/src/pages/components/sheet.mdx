@@ -8,7 +8,7 @@ notes: |
   Window-level edge-anchored content container with elevation shadow, with option to block content.
 ---
 
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import PropsTable from '../../components/PropsTable';
 import get from 'lodash/get';
 import SingleComponentStatus from '../../components/SingleComponentStatus';
@@ -64,18 +64,12 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 }
 ```
 
-##### Props
+<PropsTable {...props.data.componentMetadata} />
 
-<StaticQuery
-  query={graphql`
-    query {
-      componentMetadata(displayName: { eq: "Sheet" }) {
-        ...ComponentDocGenData
-      }
+export const query = graphql`
+  query {
+    componentMetadata: componentMetadata(displayName: { eq: "Sheet" }) {
+      ...ComponentDocGenData
     }
-  `}
-  render={({ componentMetadata }) => {
-    if (componentMetadata === null) return null;
-    return <PropsTable propMetaData={componentMetadata.props} />;
-  }}
-/>
+  }
+`

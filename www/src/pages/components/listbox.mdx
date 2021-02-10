@@ -7,7 +7,7 @@ devStatus: 'To Do'
 notes: 'Not used anywhere in code on Github. Consult design.'
 ---
 
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import { ListBox } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
@@ -189,18 +189,12 @@ class ListBoxWrapperForSelectedOptionIndex extends React.Component {
 }
 ```
 
-##### Props
+<PropsTable {...props.data.componentMetadata} />
 
-<StaticQuery
-  query={graphql`
-    query {
-      componentMetadata(displayName: { eq: "ListBox" }) {
-        ...ComponentDocGenData
-      }
+export const query = graphql`
+  query {
+    componentMetadata: componentMetadata(displayName: { eq: "ListBox" }) {
+      ...ComponentDocGenData
     }
-  `}
-  render={({ componentMetadata }) => {
-    if (componentMetadata == null) return null;
-    return <PropsTable propMetaData={componentMetadata.props} />;
-  }}
-/>
+  }
+`

@@ -8,7 +8,7 @@ notes: |
   Consider a different strategy: export breakpoint constants and a passthrough to react-responsive. Current components are less flexible than needed ( from x-small to medium is not possible without strange repetition).
 ---
 
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import PropsTable from '../../components/PropsTable';
 import SingleComponentStatus from '../../components/SingleComponentStatus';
@@ -44,17 +44,3 @@ The following responsive components are available:
     <p>This text will only show on screens larger than extra small.</p>
 </LargerThanExtraSmall>
 ```
-
-<StaticQuery
-  query={graphql`
-    query {
-      componentMetadata(displayName: { eq: "Responsive" }) {
-        ...ComponentDocGenData
-      }
-    }
-  `}
-  render={({ componentMetadata }) => {
-    if (componentMetadata == null) return null;
-    return <PropsTable propMetaData={componentMetadata.props} />;
-  }}
-/>
