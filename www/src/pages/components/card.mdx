@@ -16,19 +16,9 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 ##### CardGrid
 
-<StaticQuery
-  query={graphql`
-    query {
-      componentMetadata(displayName: { eq: "CardGrid" }) {
-        ...ComponentDocGenData
-      }
-    }
-  `}
-  render={({ componentMetadata }) => {
-    if (componentMetadata == null) return null;
-    return <PropsTable propMetaData={componentMetadata.props} />;
-  }}
-/>
+
+<PropsTable {...props.data.cardGridMetadata} />
+<PropsTable {...props.data.avatarMetadata} />
 
 ##### Theme variables (SCSS)
 
@@ -55,3 +45,15 @@ $card-columns-count:                3 !default;
 $card-columns-gap:                  1.25rem !default;
 $card-columns-margin:               $card-spacer-y !default;
 ```
+
+
+export const query = graphql`
+  query {
+    cardGridMetadata: componentMetadata(displayName: { eq: "CardGrid" }) {
+      ...ComponentDocGenData
+    }
+    avatarMetadata: componentMetadata(displayName: { eq: "Avatar" }) {
+      ...ComponentDocGenData
+    }
+  }
+`
