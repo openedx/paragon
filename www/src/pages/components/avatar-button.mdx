@@ -8,18 +8,14 @@ notes: |
 
 ---
 
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import PropsTable from '../../components/PropsTable';
 import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 # Avatar Button
 
-<SingleComponentStatus
-  frontmatter={
-    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
-  }
-/>
+<SingleComponentStatus frontmatter={props?.pageContext?.frontmatter} />
 
 
 ##### Basic Usage
@@ -110,23 +106,6 @@ For use in mobile viewports or constrained views.
 </>
 ```
 
-
-##### Props
-
-<StaticQuery
-  query={graphql`
-    query {
-      componentMetadata(displayName: { eq: "AvatarButton" }) {
-        ...ComponentDocGenData
-      }
-    }
-  `}
-  render={({ componentMetadata }) => {
-    if (componentMetadata == null) return null;
-    return <PropsTable propMetaData={componentMetadata.props} />;
-  }}
-/>
-
 ##### Theme variables (SCSS)
 
 ```scss
@@ -137,3 +116,13 @@ $avatar-button-padding-left-lg: .5em !default;
 
 CSS overrides can be applied to this component through the `.btn-avatar` class name.
 
+
+<PropsTable {...props.data.componentMetadata} />
+
+export const query = graphql`
+  query {
+    componentMetadata: componentMetadata(displayName: { eq: "AvatarButton" }) {
+      ...ComponentDocGenData
+    }
+  }
+`

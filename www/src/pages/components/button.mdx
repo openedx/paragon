@@ -8,7 +8,7 @@ notes: |
   TODO: Remove subcomponent of deprecated implementation soon
 ---
 
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import { Button } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
@@ -16,11 +16,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 # Button
 
-<SingleComponentStatus
-  frontmatter={
-    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
-  }
-/>
+<SingleComponentStatus frontmatter={props?.pageContext?.frontmatter} />
 
 <p style={{ fontSize: '1.5em' }}>
   This is a pass through component from React-Bootstrap.<br/>
@@ -174,18 +170,13 @@ Use inline size buttons for when a button sits with a line of text.
 </div>
 ```
 
-##### Props
+<PropsTable {...props.data.componentMetadata} />
 
-<StaticQuery
-  query={graphql`
-    query {
-      componentMetadata(displayName: { eq: "Button" }) {
-        ...ComponentDocGenData
-      }
+export const query = graphql`
+  query {
+    componentMetadata: componentMetadata(displayName: { eq: "Button" }) {
+      ...ComponentDocGenData
     }
-  `}
-  render={({ componentMetadata }) => {
-    if (componentMetadata == null) return null;
-    return <PropsTable propMetaData={componentMetadata.props} />;
-  }}
-/>
+  }
+`
+

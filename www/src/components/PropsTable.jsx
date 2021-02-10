@@ -1,102 +1,59 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
+import PropType from './PropType';
+import { Badge } from '~paragon-react';
 
-
-let lastIds = {};
-
-const newId = (prefix = 'id') => {
-  if (lastIds[prefix]) {
-    lastIds[prefix] += 1
-  } else {
-    lastIds[prefix] = 1
-  }
-  return `${prefix}${lastIds[prefix]}`;
-};
-
-const renderType = ({ name, value }) => { // eslint-disable-line
-  switch (name) {
-    case 'shape':
-      return <ShapeProp shape={value} />;
-    case 'union':
-      return <span key={newId(name)}>{value.map(v => renderType(v))}</span>;
-    case 'arrayOf':
-      return <span key={newId(name)}>[ {renderType(value)} ]</span>;
-    case 'enum':
-      return (
-        <span key={newId(name)}>
-          <span className="base-type">{name}</span>:
-          {typeof value === 'string' ? value : value.map(item => item.value).join(', ')}
-        </span>
-      );
-    default:
-      return <span key={newId(name)} className="base-type">{name}</span>;
-  }
-};
-
-
-const ShapeProp = ({ shape }) => (
-  <React.Fragment>
-    {'{'}
-    {Object.entries(shape).map(([k, v]) => (
-      <span key={k} className="d-block ml-3">{k}: {renderType(v)},</span>
-    ))}
-    {'}'}
-  </React.Fragment>
-);
-
-ShapeProp.propTypes = {
-  shape: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-};
-
-ShapeProp.defaultProps = {
-  shape: {},
-};
-
-
-const PropsTable = (props) => {
-  const { propMetaData = [], ..._props } = props;
-
+const DefaultValue = ({ value }) => {
+  if (!value || value === 'undefined') return null;
   return (
-    <table className="table w-100" {..._props}>
-      <thead>
-        <tr>
-          <th>Prop Name</th>
-          <th>Type</th>
-          <th>Required</th>
-          <th>Default Value</th>
-        </tr>
-      </thead>
-      <tbody>
-        {Object.keys(propMetaData).map((key) => {
-          const {
-            name, type, required, defaultValue, description,
-          } = propMetaData[key];
-          return (
-            <tr key={key}>
-              <td>
-                <span className="d-block">{name}</span>
-                {description ? <ReactMarkdown className="text-muted mb-0">{description.text}</ReactMarkdown> : null}
-              </td>
-              <td>{type ? renderType(type) : ''}</td>
-              <td>{required ? 'required' : 'optional'}</td>
-              <td>{defaultValue ? defaultValue.value : null}</td>
+    <>
+      <Badge variant="light">Default</Badge>
+      <span className="small text-monospace ml-2">{value}</span>
+    </>
+  );
+}
 
-            </tr>
-          );
+const Prop = ({
+  name, type, required, defaultValue = {}, description,
+}) => (
+  <li className="border-bottom">
+    <div className="my-3">
+      <div className="mb-2">
+        <h6 className="d-inline mb-0 mr-1">
+          {`${name} `}
+          {required && <> <Badge variant="light">Required</Badge></>}
+        </h6>
+        <PropType {...type} />
+      </div>
+      <div className="x-small">{description ? <ReactMarkdown>{description.text}</ReactMarkdown> : null}</div>
+
+      <DefaultValue {...defaultValue} />
+    </div>
+  </li>
+)
+
+const PropsTable = ({ props, displayName }) => {
+  return (
+    <div>
+      <h3>{displayName} Props API</h3>
+      <ul className="list-unstyled">
+        {props.map((metadata) => {
+          return <Prop key={metadata.name} {...metadata} />
         })}
-      </tbody>
-    </table>
+      </ul>
+    </div>
   );
 };
 
 PropsTable.propTypes = {
-  /** this is the `metadata.props` field of what metadata you get from the react-docgen-loader.  */
-  propMetaData: PropTypes.oneOfType([PropTypes.object, PropTypes.array]) // eslint-disable-line react/forbid-prop-types
+  props: PropTypes.arrayOf(PropTypes.object),
+  displayName: PropTypes.string,
 };
 
 PropsTable.defaultProps = {
-  propMetaData: {},
+  props: [],
+  displayName: undefined,
 };
 
 export default PropsTable;
