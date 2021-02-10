@@ -51,13 +51,15 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <Container size="xl">
+      <Container style={{ maxWidth: 'none' }}>
         <Row>
-          <Col lg="3">
+          <Col lg="3" xl="2">
             <ResponsiveNavigation />
           </Col>
           <Col className="py-5">
+            <Container size="md" style={{ marginLeft: '0' }}>
             {children}
+            </Container>
           </Col>
         </Row>
       </Container>
