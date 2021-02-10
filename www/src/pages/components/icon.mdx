@@ -7,7 +7,7 @@ devStatus: 'TBD'
 notes: 'Reconcile purpose of this component with use of FontAwesome'
 ---
 
-import { Link, StaticQuery, graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import get from 'lodash/get';
 import { Icon } from '~paragon-react';
 import IconsTable from '../../components/IconsTable';
@@ -16,11 +16,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 # Icon
 
-<SingleComponentStatus
-  frontmatter={
-    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
-  }
-/>
+<SingleComponentStatus frontmatter={props?.pageContext?.frontmatter} />
 
 
 Displays an svg icon from `@edx/paragon/icons`. See <Link to="/foundations/icons">Icons Foundation Documentation</Link> for a list of all available icons.
@@ -42,18 +38,12 @@ HTML attributes can be passed to this component allowing for customization of th
 </div>
 ```
 
-##### Props
+<PropsTable {...props.data.componentMetadata} />
 
-<StaticQuery
-  query={graphql`
-    query {
-      componentMetadata(displayName: { eq: "Icon" }) {
-        ...ComponentDocGenData
-      }
+export const query = graphql`
+  query {
+    componentMetadata: componentMetadata(displayName: { eq: "Icon" }) {
+      ...ComponentDocGenData
     }
-  `}
-  render={({ componentMetadata }) => {
-    if (componentMetadata == null) return null;
-    return <PropsTable propMetaData={componentMetadata.props} />;
-  }}
-/>
+  }
+`

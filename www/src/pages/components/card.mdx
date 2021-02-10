@@ -9,7 +9,7 @@ notes: |
 ---
 
 import get from 'lodash/get';
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import PropsTable from '../../components/PropsTable';
 import SingleComponentStatus from '../../components/SingleComponentStatus';
 
@@ -193,24 +193,6 @@ it is meant to be used as a single horizontal row of Cards, not as a grid. See C
 </CardDeck>
 ```
 
-##### Props
-
-##### CardGrid
-
-<StaticQuery
-  query={graphql`
-    query {
-      componentMetadata(displayName: { eq: "CardGrid" }) {
-        ...ComponentDocGenData
-      }
-    }
-  `}
-  render={({ componentMetadata }) => {
-    if (componentMetadata == null) return null;
-    return <PropsTable propMetaData={componentMetadata.props} />;
-  }}
-/>
-
 ##### Theme variables (SCSS)
 
 ```scss
@@ -236,3 +218,14 @@ $card-columns-count:                3 !default;
 $card-columns-gap:                  1.25rem !default;
 $card-columns-margin:               $card-spacer-y !default;
 ```
+
+
+<PropsTable {...props.data.componentMetadata} />
+
+export const query = graphql`
+  query {
+    componentMetadata: componentMetadata(displayName: { eq: "CardGrid" }) {
+      ...ComponentDocGenData
+    }
+  }
+`

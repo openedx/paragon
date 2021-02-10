@@ -6,18 +6,14 @@ designStatus: 'Done'
 devStatus: 'In progress'
 ---
 
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import PropsTable from '../../components/PropsTable';
 import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 # Data Table
 
-<SingleComponentStatus
-  frontmatter={
-    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
-  }
-/>
+<SingleComponentStatus frontmatter={props?.pageContext?.frontmatter} />
 
 The DataTable component is a wrapper that uses the <a href="https://react-table.tanstack.com/docs">react-table</a> library to
 create tables. It can be used as is, or its subcomponents can be used on their own, allowing the developer full control.
@@ -426,84 +422,35 @@ any component that a user requires. It will receive the row as props.
 />
 ```
 
-## Props
 
-### DataTable
-<StaticQuery
-  query={graphql`
-    query {
-      dataTable: componentMetadata(displayName: { eq: "DataTable" }) {
-        ...ComponentDocGenData
-      }
-      bulkActions: componentMetadata(displayName: { eq: "BulkActions" }) {
-        ...ComponentDocGenData
-      }
-      table: componentMetadata(displayName: {eq: "Table"}, props: {elemMatch: {name: {eq: "prepareRow"}}}) {
-        displayName
-        ...ComponentDocGenData
-      }
-      cell: componentMetadata(displayName: { eq: "TableCell" }) {
-        ...ComponentDocGenData
-      }
-      headerCell: componentMetadata(displayName: { eq: "TableHeaderCell" }) {
-        ...ComponentDocGenData
-      }
-      headerRow: componentMetadata(displayName: { eq: "TableHeaderRow" }) {
-        ...ComponentDocGenData
-      }
-      row: componentMetadata(displayName: { eq: "TableRow" }) {
-        ...ComponentDocGenData
-      }
-      filterStatus: componentMetadata(displayName: { eq: "FilterStatus" }) {
-        ...ComponentDocGenData
-      }
-      selectionStatus: componentMetadata(displayName: { eq: "SelectionStatus" }) {
-        ...ComponentDocGenData
-      }
-      rowStatus: componentMetadata(displayName: { eq: "RowStatus" }) {
-        ...ComponentDocGenData
-      }
-      smartStatus: componentMetadata(displayName: { eq: "SmartStatus" }) {
-        ...ComponentDocGenData
-      }
-      pagination: componentMetadata(displayName: { eq: "TablePagination" }) {
-        ...ComponentDocGenData
-      }
-      textFilter: componentMetadata(displayName: { eq: "TextFilter" }) {
-        ...ComponentDocGenData
-      }
-    }
-  `}
-  render={({ dataTable, bulkActions, table, cell, headerCell, row, headerRow,
-    filterStatus, smartStatus, rowStatus, selectionStatus, pagination, textFilter }) => {
-    return (
-      <div>
-        {dataTable ? <PropsTable propMetaData={dataTable.props} /> : null}
-        <h4>{"DataTable.Table"}</h4>
-        {table ? <PropsTable propMetaData={table.props} /> : null}
-        <h4>{"DataTable.BulkActions"}</h4>
-        {bulkActions ? <PropsTable propMetaData={bulkActions.props} /> : null}
-        <h4>{"DataTable.TableRow"}</h4>
-        {row ? <PropsTable propMetaData={row.props} /> : null}
-        <h4>{"DataTable.TableHeaderRow"}</h4>
-        {headerRow ? <PropsTable propMetaData={headerRow.props} /> : null}
-        <h4>{"DataTable.TableCell"}</h4>
-        {cell ? <PropsTable propMetaData={cell.props} /> : null}
-        <h4>{"DataTable.TableHeaderCell"}</h4>
-        {headerCell ? <PropsTable propMetaData={headerCell.props} /> : null}
-        <h4>{"DataTable.SmartStatus"}</h4>
-        {smartStatus ? <PropsTable propMetaData={smartStatus.props} /> : null}
-        <h4>{"DataTable.RowStatus"}</h4>
-        {rowStatus ? <PropsTable propMetaData={rowStatus.props} /> : null}
-        <h4>{"DataTable.SelectionStatus"}</h4>
-        {selectionStatus ? <PropsTable propMetaData={selectionStatus.props} /> : null}
-        <h4>{"DataTable.FilterStatus"}</h4>
-        {filterStatus ? <PropsTable propMetaData={filterStatus.props} /> : null}
-        <h4>{"DataTable.TablePagination"}</h4>
-        {pagination ? <PropsTable propMetaData={pagination.props} /> : null}
-        <h4>TextFilter</h4>
-        {textFilter ? <PropsTable propMetaData={textFilter.props} /> : null}
-      </div>
-    );
-  }}
-/>
+<PropsTable {...props.data.dataTable} />
+<PropsTable {...props.data.bulkActions} />
+<PropsTable {...props.data.table} />
+<PropsTable {...props.data.cell} />
+<PropsTable {...props.data.headerCell} />
+<PropsTable {...props.data.headerRow} />
+<PropsTable {...props.data.row} />
+<PropsTable {...props.data.filterStatus} />
+<PropsTable {...props.data.selectionStatus} />
+<PropsTable {...props.data.rowStatus} />
+<PropsTable {...props.data.smartStatus} />
+<PropsTable {...props.data.pagination} />
+<PropsTable {...props.data.textFilter} />
+
+export const query = graphql`
+  query {
+    dataTable: componentMetadata(displayName: { eq: "DataTable" }) { ...ComponentDocGenData }
+    bulkActions: componentMetadata(displayName: { eq: "BulkActions" }) { ...ComponentDocGenData }
+    table: componentMetadata(displayName: {eq: "Table"}, props: {elemMatch: {name: {eq: "prepareRow"}}}) { ...ComponentDocGenData }
+    cell: componentMetadata(displayName: { eq: "TableCell" }) { ...ComponentDocGenData }
+    headerCell: componentMetadata(displayName: { eq: "TableHeaderCell" }) { ...ComponentDocGenData }
+    headerRow: componentMetadata(displayName: { eq: "TableHeaderRow" }) { ...ComponentDocGenData }
+    row: componentMetadata(displayName: { eq: "TableRow" }) { ...ComponentDocGenData }
+    filterStatus: componentMetadata(displayName: { eq: "FilterStatus" }) { ...ComponentDocGenData }
+    selectionStatus: componentMetadata(displayName: { eq: "SelectionStatus" }) { ...ComponentDocGenData }
+    rowStatus: componentMetadata(displayName: { eq: "RowStatus" }) { ...ComponentDocGenData }
+    smartStatus: componentMetadata(displayName: { eq: "SmartStatus" }) { ...ComponentDocGenData }
+    pagination: componentMetadata(displayName: { eq: "TablePagination" }) { ...ComponentDocGenData }
+    textFilter: componentMetadata(displayName: { eq: "TextFilter" }) { ...ComponentDocGenData }
+  }
+`;

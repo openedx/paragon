@@ -9,7 +9,7 @@ notes: |
   Too opinionated in design/structure
 ---
 
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import { Modal } from '~paragon-react';
 import PropsTable from '../../components/PropsTable';
@@ -17,11 +17,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 # Modal
 
-<SingleComponentStatus
-  frontmatter={
-    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
-  }
-/>
+<SingleComponentStatus frontmatter={props?.pageContext?.frontmatter} />
 
 ##### Example Usage
 
@@ -158,18 +154,12 @@ class ModalWrapper extends React.Component {
 />
 ```
 
-##### Props
+<PropsTable {...props.data.componentMetadata} />
 
-<StaticQuery
-  query={graphql`
-    query {
-      componentMetadata(displayName: { eq: "Modal" }) {
-        ...ComponentDocGenData
-      }
+export const query = graphql`
+  query {
+    componentMetadata: componentMetadata(displayName: { eq: "Modal" }) {
+      ...ComponentDocGenData
     }
-  `}
-  render={({ componentMetadata }) => {
-    if (componentMetadata == null) return null;
-    return <PropsTable propMetaData={componentMetadata.props} />;
-  }}
-/>
+  }
+`
