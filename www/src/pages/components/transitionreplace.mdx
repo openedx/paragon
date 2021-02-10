@@ -15,11 +15,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 # TransitionReplace
 
-<SingleComponentStatus
-  frontmatter={
-    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
-  }
-/>
+<SingleComponentStatus frontmatter={props?.pageContext?.frontmatter} />
 
 Manages a transition when replacing content. By default this component will transition the height and do a cross-fade. The transition can be customized.
 

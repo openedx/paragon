@@ -13,11 +13,7 @@ import useWindowSize from '~paragon-react'
 
 # useWindowSize
 
-<SingleComponentStatus
-  frontmatter={
-    get(props, 'pageContext.frontmatter') ? props.pageContext.frontmatter : null
-  }
-/>
+<SingleComponentStatus frontmatter={props?.pageContext?.frontmatter} />
 
 #### Sample Usage
 
