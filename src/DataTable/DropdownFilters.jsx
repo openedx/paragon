@@ -16,7 +16,7 @@ const DropdownFilters = ({
     }
     const availableFilters = columns.filter((column) => column.canFilter);
     if (width < breakpoints.small.minWidth) {
-      return [null, availableFilters];
+      return [[], availableFilters];
     }
     const boFilters = availableFilters.slice(0, numBreakoutFilters);
     const dropdownFilters = availableFilters.slice(numBreakoutFilters);

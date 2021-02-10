@@ -2,11 +2,12 @@ import React from 'react';
 import { mount } from 'enzyme';
 import TableHeaderRow from '../TableHeaderRow';
 import Table from '../Table';
+import DataTableContext from '../TableContext';
 
 const header1Name = 'Name';
 const header2Name = 'DOB';
 
-const props = {
+const instance = {
   rows: [{
     id: '1',
     getRowProps: () => ({ className: 'red', key: '1' }),
@@ -56,14 +57,19 @@ const props = {
   isStriped: false,
 };
 
-describe('<Table />', () => {
+// eslint-disable-next-line react/prop-types
+const TableWrapper = ({ value = instance, props }) => (
+  <DataTableContext.Provider value={value}><Table {...props} /></DataTableContext.Provider>
+);
+
+describe('DataTable <Table />', () => {
   it('renders a table header', () => {
-    const wrapper = mount(<Table {...props} />);
+    const wrapper = mount(<TableWrapper />);
     const row = wrapper.find(TableHeaderRow);
     expect(row.length).toEqual(1);
   });
   it('renders rows', () => {
-    const wrapper = mount(<Table {...props} />);
+    const wrapper = mount(<TableWrapper />);
     const row = wrapper.find('tbody tr');
     expect(row.length).toEqual(1);
   });
@@ -73,7 +79,7 @@ describe('<Table />', () => {
     };
     const getTablePropsSpy = jest.fn();
     getTablePropsSpy.mockReturnValue(tableProps);
-    const wrapper = mount(<Table {...props} getTableProps={getTablePropsSpy} />);
+    const wrapper = mount(<TableWrapper value={{ ...instance, getTableProps: getTablePropsSpy }} />);
     const table = wrapper.find('table');
 
     expect(table.props().summary).toEqual(tableProps.summary);
@@ -85,9 +91,13 @@ describe('<Table />', () => {
     };
     const getTableBodyPropsSpy = jest.fn();
     getTableBodyPropsSpy.mockReturnValue(tableProps);
-    const wrapper = mount(<Table {...props} getTableBodyProps={getTableBodyPropsSpy} />);
+    const wrapper = mount(<TableWrapper value={{ ...instance, getTableBodyProps: getTableBodyPropsSpy }} />);
     const table = wrapper.find('tbody');
     expect(table.props().foo).toEqual(tableProps.foo);
     expect(table.props().baz).toEqual(tableProps.baz);
+  });
+  it('returns null if the instance does not exist', () => {
+    const wrapper = mount(<TableWrapper value={{}} />);
+    expect(wrapper).toEqual({});
   });
 });

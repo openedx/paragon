@@ -6,11 +6,10 @@ import DataTableContext from './TableContext';
 export const SELECT_ALL_TEST_ID = 'test_selection_state_select_all_button';
 export const CLEAR_SELECTION_TEST_ID = 'test_selection_state_clear_selection_button';
 
-const SelectionState = ({
+const SelectionStatus = ({
   itemCount, className,
 }) => {
-  const instance = useContext(DataTableContext);
-  const { toggleAllRowsSelected, selectedFlatRows } = instance;
+  const { toggleAllRowsSelected, selectedFlatRows } = useContext(DataTableContext);
   const numSelectedRows = selectedFlatRows.length;
   const allRowsSelected = numSelectedRows === itemCount;
   return (
@@ -40,13 +39,13 @@ const SelectionState = ({
   );
 };
 
-SelectionState.defaultProps = {
+SelectionStatus.defaultProps = {
   className: undefined,
 };
 
-SelectionState.propTypes = {
+SelectionStatus.propTypes = {
   itemCount: PropTypes.number.isRequired,
   className: PropTypes.string,
 };
 
-export default SelectionState;
+export default SelectionStatus;

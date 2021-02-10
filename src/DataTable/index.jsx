@@ -28,6 +28,7 @@ function DataTable({
   isFilterable, manualFilters, fetchData, initialState,
   isSortable, manualSortBy,
   initialTableOptions,
+  EmptyTableComponent,
   children,
   ...rest
 }) {
@@ -84,6 +85,7 @@ function DataTable({
           <>
             <TableControlBar {...propsForChildren} />
             <Table {...propsForChildren} />
+            <EmptyTableComponent {...propsForChildren} />
             <TableFooter {...propsForChildren} />
           </>
           )}
@@ -105,8 +107,8 @@ DataTable.defaultProps = {
   fetchData: null,
   initialState: {},
   initialTableOptions: {},
+  EmptyTableComponent: EmptyTableContent,
   children: null,
-
 };
 
 DataTable.propTypes = {
@@ -165,6 +167,8 @@ DataTable.propTypes = {
   initialTableOptions: PropTypes.shape({}),
   /** Total number of items */
   itemCount: PropTypes.number.isRequired,
+  /** Component to be displayed when the table is empty */
+  EmptyTableComponent: PropTypes.func,
   /** If children are not provided a table with control bar and footer will be rendered */
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };

@@ -4,10 +4,11 @@ import { act } from 'react-dom/test-utils';
 
 import DropdownFilters from '../DropdownFilters';
 import { useWindowSize, DropdownButton } from '../..';
+import DataTableContext from '../TableContext';
 
 jest.mock('../../hooks/useWindowSize');
 
-const props = {
+const instance = {
   columns: [
     {
       Header: 'Bears',
@@ -27,6 +28,10 @@ const props = {
   ],
 };
 
+// eslint-disable-next-line react/prop-types
+const DropdownFiltersWrapper = ({ value = instance, props }) => (
+  <DataTableContext.Provider value={value}><DropdownFilters {...props} /></DataTableContext.Provider>);
+
 describe('<DropdownFilters />', () => {
   afterAll(() => {
     jest.restoreAllMocks();
@@ -34,12 +39,13 @@ describe('<DropdownFilters />', () => {
   describe('non-mobile site', () => {
     it('renders a breakout filter', () => {
       useWindowSize.mockReturnValue({ width: 800 });
-      const wrapper = mount(<DropdownFilters {...props} />);
+
+      const wrapper = mount(<DropdownFiltersWrapper />);
       expect(wrapper.text()).toContain('Bears filter');
     });
     it('renders additional filters in a dropdown', () => {
       useWindowSize.mockReturnValue({ width: 800 });
-      const wrapper = mount(<DropdownFilters {...props} />);
+      const wrapper = mount(<DropdownFiltersWrapper />);
       // filter should be rendered in the dropdown, so should not be present before
       // clicking the button.
       expect(wrapper.text()).not.toContain('Occupation filter');
@@ -52,7 +58,7 @@ describe('<DropdownFilters />', () => {
     });
     it('should not render filters for non-filterable rows', () => {
       useWindowSize.mockReturnValue({ width: 800 });
-      const wrapper = mount(<DropdownFilters {...props} />);
+      const wrapper = mount(<DropdownFiltersWrapper />);
       expect(wrapper.text()).not.toContain('DOB filter');
       const filtersButton = wrapper.find('button');
       filtersButton.simulate('click');
@@ -60,7 +66,7 @@ describe('<DropdownFilters />', () => {
     });
     it('does not render a dropdown if there is only one filter', () => {
       useWindowSize.mockReturnValue({ width: 800 });
-      const wrapper = mount(<DropdownFilters columns={[props.columns[1]]} />);
+      const wrapper = mount(<DropdownFiltersWrapper value={{ columns: [instance.columns[1]] }} />);
       expect(wrapper.text()).toContain('Occupation filter');
       expect(wrapper.find(DropdownButton)).toHaveLength(0);
     });
@@ -68,12 +74,12 @@ describe('<DropdownFilters />', () => {
   describe('on mobile', () => {
     it('does not render a breakout filter', () => {
       useWindowSize.mockReturnValue({ width: 500 });
-      const wrapper = mount(<DropdownFilters {...props} />);
+      const wrapper = mount(<DropdownFiltersWrapper />);
       expect(wrapper.text()).not.toContain('Bears filter');
     });
     it('renders all filters in the dropdown', () => {
       useWindowSize.mockReturnValue({ width: 500 });
-      const wrapper = mount(<DropdownFilters {...props} />);
+      const wrapper = mount(<DropdownFiltersWrapper />);
       const filtersButton = wrapper.find('button');
       filtersButton.simulate('click');
       expect(wrapper.text()).toContain('Bears filter');

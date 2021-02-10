@@ -10,11 +10,13 @@ const TablePagination = () => {
   const {
     pageCount, previousPage, canPreviousPage, canNextPage, nextPage, state,
   } = useContext(DataTableContext);
-  const pageIndex = state?.pageIndex;
 
+  // Use nextPage as a proxy for whether or not the table is paginated
   if (!nextPage) {
     return null;
   }
+
+  const pageIndex = state?.pageIndex;
 
   return (
     <div className="pgn__data-table-pagination">
