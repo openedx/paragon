@@ -38,20 +38,59 @@ Filter functions are definied on the column as the `filter` attribute.
 <dt>includes</dt><dd>Check that the row value includes the search string</dd>
 <dt>includesAll</dt><dd>Check that the row value includes every item in the array</dd>
 <dt>includesSome</dt><dd>Check that row value includes some item in the array</dd>
+<dt>includesValue</dt><dd>Check that the filter value includes the value of the row</dd>
 <dt>exact</dt><dd>Checks for exact equality between the row value and the search term. <pre>===</pre></dd>
 <dt>equals</dt><dd>Checks for equality between the row value and the search term. <pre>==</pre></dd>
 <dt>between</dt><dd>Expects an array with a min and max value as the search term. Checks that the row value is between the min and max</dd>
 </dl>
 
+### Using Filter components with filter functions
+The `MultiSelectDropdownFilter` and `CheckboxFilter` components expect an array of values. Thus, it is est to use them with the `includesValue` filter function.
+The `TextFilter` and `DropdownFilter` components can be used with a variety of the above `filter` functions.
+
+## TextFilter, MultiSelectDropdownFilter, CheckboxFilter
+
+The checkbox filter is used in the dropdown.
+
 ```jsx live
 <DataTable
   isFilterable
   defaultColumnValues={{ Filter: TextFilter }}
+  numBreakoutFilters={2}
   columns={[
     {
       Header: 'Name',
       accessor: 'name',
 
+    },
+    {
+      Header: 'Age',
+      accessor: 'age',
+      Filter: MultiSelectDropdownFilter,
+      filter: 'includesValue',
+      filterChoices: [
+        {
+          name: 'Four',
+          value: 4,
+        },
+        {
+          name: 'One',
+          value: 1,
+        },
+        {
+          name: 'Twelve',
+          value: 12,
+        },
+        {
+          name: 'Nine',
+          value: 9,
+        },
+        {
+          name: 'Seventeen',
+          number: 17,
+          value: 17,
+        },
+      ]
     },
     {
       Header: 'Famous For',
@@ -62,23 +101,26 @@ Filter functions are definied on the column as the `filter` attribute.
       accessor: 'color',
       Filter: CheckboxFilter,
       filter: 'includesValue',
-      checkboxFilters: [{
+      filterChoices: [{
         name: 'russian white',
         number: 1,
+        value: 'russian white',
       },
       {
         name: 'orange tabby',
-        number: 2
+        number: 2,
+        value: 'orange tabby',
       },
       {
         name: 'brown tabby',
-        number: 3
+        number: 3,
+        value: 'brown tabby',
       },
       {
         name: 'siamese',
         number: 1,
-      }
-      ]
+        value: 'siamese',
+      }]
     },
   ]}
   itemCount={7}
@@ -87,37 +129,167 @@ Filter functions are definied on the column as the `filter` attribute.
       name: 'Lil Bub',
       color: 'brown tabby',
       famous_for: 'weird tongue',
+      age: 4,
     },
     {
       name: 'Grumpy Cat',
       color: 'siamese',
       famous_for: 'serving moods',
+      age: 4,
     },
     {
       name: 'Smoothie',
       color: 'orange tabby',
       famous_for: 'modeling',
+      age: 1,
     },
     {
       name: 'Maru',
       color: 'brown tabby',
       famous_for: 'being a lovable oaf',
+      age: 12,
     },
     {
       name: 'Keyboard Cat',
       color: 'orange tabby',
       famous_for: 'piano virtuoso',
+      age: 9,
     },
     {
       name: 'Long Cat',
       color: 'russian white',
       famous_for:
         'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+      age: 9,
     },
     {
       name: 'Zeno',
       color: 'brown tabby',
-      famous_for: 'getting halfway there'
+      famous_for: 'getting halfway there',
+      age: 17,
+    },
+  ]}
+
+/>
+```
+
+## DropdownFilter
+
+```jsx live
+<DataTable
+  isFilterable
+  defaultColumnValues={{ Filter: TextFilter }}
+  numBreakoutFilters={2}
+  columns={[
+    {
+      Header: 'Name',
+      accessor: 'name',
+
+    },
+    {
+      Header: 'Age',
+      accessor: 'age',
+      Filter: DropdownFilter,
+      filter: 'equals',
+      filterChoices: [
+        {
+          name: 'Four',
+          value: 4,
+        },
+        {
+          name: 'One',
+          value: 1,
+        },
+        {
+          name: 'Twelve',
+          value: 12,
+        },
+        {
+          name: 'Nine',
+          value: 9,
+        },
+        {
+          name: 'Seventeen',
+          number: 17,
+          value: 17,
+        },
+      ]
+    },
+    {
+      Header: 'Famous For',
+      accessor: 'famous_for',
+    },
+    {
+      Header: 'Coat Color',
+      accessor: 'color',
+      Filter: CheckboxFilter,
+      filter: 'includesValue',
+      filterChoices: [{
+        name: 'russian white',
+        number: 1,
+        value: 'russian white',
+      },
+      {
+        name: 'orange tabby',
+        number: 2,
+        value: 'orange tabby',
+      },
+      {
+        name: 'brown tabby',
+        number: 3,
+        value: 'brown tabby',
+      },
+      {
+        name: 'siamese',
+        number: 1,
+        value: 'siamese',
+      }]
+    },
+  ]}
+  itemCount={7}
+  data={[
+    {
+      name: 'Lil Bub',
+      color: 'brown tabby',
+      famous_for: 'weird tongue',
+      age: 4,
+    },
+    {
+      name: 'Grumpy Cat',
+      color: 'siamese',
+      famous_for: 'serving moods',
+      age: 4,
+    },
+    {
+      name: 'Smoothie',
+      color: 'orange tabby',
+      famous_for: 'modeling',
+      age: 1,
+    },
+    {
+      name: 'Maru',
+      color: 'brown tabby',
+      famous_for: 'being a lovable oaf',
+      age: 12,
+    },
+    {
+      name: 'Keyboard Cat',
+      color: 'orange tabby',
+      famous_for: 'piano virtuoso',
+      age: 9,
+    },
+    {
+      name: 'Long Cat',
+      color: 'russian white',
+      famous_for:
+        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+      age: 9,
+    },
+    {
+      name: 'Zeno',
+      color: 'brown tabby',
+      famous_for: 'getting halfway there',
+      age: 17,
     },
   ]}
 
@@ -126,6 +298,8 @@ Filter functions are definied on the column as the `filter` attribute.
 
 <PropsTable {...props.data.textFilter} />
 <PropsTable {...props.data.checkboxFilter} />
+<PropsTable {...props.data.dropdownFilter} />
+<PropsTable {...props.data.multiSelectDropdownFilter} />
 
 export const query = graphql`
   query {
@@ -133,6 +307,12 @@ export const query = graphql`
       ...ComponentDocGenData
     }
     checkboxFilter: componentMetadata(displayName: { eq: "CheckboxFilter" }) {
+      ...ComponentDocGenData
+    }
+    dropdownFilter: componentMetadata(displayName: { eq: "DropdownFilter" }) {
+      ...ComponentDocGenData
+    }
+    multiSelectDropdownFilter: componentMetadata(displayName: { eq: "MultiSelectDropdownFilter" }) {
       ...ComponentDocGenData
     }
   }
