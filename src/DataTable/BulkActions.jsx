@@ -5,7 +5,7 @@ import { MoreVert } from '../../icons';
 import {
   Button, Dropdown, useWindowSize, Icon, breakpoints,
 } from '..';
-import { TableContext } from './TableContext';
+import DataTableContext from './TableContext';
 
 export const DROPDOWN_BUTTON_TEXT = 'More actions';
 export const SMALL_SCREEN_DROPDOWN_BUTTON_TEXT = 'Actions';
@@ -25,10 +25,10 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
 ));
 
 const BulkActions = ({
-  actions, className, tableName, ...rest
+  actions, className, ...rest
 }) => {
   const { width } = useWindowSize();
-  const { selectedFlatRows, rows } = useContext(TableContext).getTableInstance(tableName);
+  const { selectedFlatRows, rows } = useContext(DataTableContext);
   const [visibleActions, dropdownActions] = useMemo(() => {
     if (width < breakpoints.small.minWidth) {
       // On a small screen, all actions will be in the overflow menu
@@ -120,7 +120,6 @@ BulkActions.propTypes = {
   })).isRequired,
   /** class names for the div wrapping the button components */
   className: PropTypes.string,
-  tableName: PropTypes.string.isRequired,
 };
 
 export default BulkActions;

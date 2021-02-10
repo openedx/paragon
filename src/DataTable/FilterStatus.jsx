@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from '..';
-import { TableContext } from './TableContext';
+import DataTableContext from './TableContext';
 
 const FilterStatus = ({
-  className, variant, size, clearSelectionText, buttonClassName, tableName,
+  className, variant, size, clearSelectionText, buttonClassName,
 }) => {
-  const { state, setAllFilters } = useContext(TableContext).getTableInstance(tableName);
+  const { state, setAllFilters } = useContext(DataTableContext);
   if (!setAllFilters) {
     return null;
   }
@@ -42,7 +42,6 @@ FilterStatus.propTypes = {
   variant: PropTypes.string,
   size: PropTypes.string,
   clearSelectionText: PropTypes.string,
-  tableName: PropTypes.string.isRequired,
 };
 
 export default FilterStatus;

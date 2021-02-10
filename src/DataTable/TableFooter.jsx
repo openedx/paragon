@@ -5,21 +5,19 @@ import RowStatus from './RowStatus';
 import TablePagination from './TablePagination';
 
 const TableFooter = ({
-  itemCount, tableName,
+  itemCount,
 }) => (
   <div className="pgn__data-table-footer">
     <RowStatus
       className="pgn__data-table-footer-row-status"
       itemCount={itemCount}
-      tableName={tableName}
     />
-    <TablePagination tableName={tableName} />
+    <TablePagination />
   </div>
 );
 
 TableFooter.propTypes = {
   itemCount: PropTypes.number.isRequired,
-  tableName: PropTypes.string.isRequired,
 };
 
 export default TableFooter;

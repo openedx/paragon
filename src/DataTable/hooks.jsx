@@ -1,11 +1,11 @@
 /* eslint-disable import/prefer-default-export */
 import { useContext } from 'react';
-import { TableContext } from './TableContext';
+import DataTableContext from './TableContext';
 
-export const useRows = (tableName) => {
+export const useRows = () => {
   const {
     getTableProps, prepareRow, page, rows, headerGroups, getTableBodyProps,
-  } = useContext(TableContext).getTableInstance(tableName);
+  } = useContext(DataTableContext);
 
   const displayRows = page || rows;
 

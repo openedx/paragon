@@ -1,21 +1,16 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
 import { Button, ButtonGroup } from '..';
-import { TableContext } from './TableContext';
+import DataTableContext from './TableContext';
 
 const NEXT_BUTTON_TEXT = 'Next';
 const PREVOUS_BUTTON_TEXT = 'Previous';
 const PAGE_TEXT = 'Page';
 
-const TablePagination = ({
-  tableName,
-}) => {
-  const tableContext = useContext(TableContext);
-  const instance = tableContext.getTableInstance(tableName);
+const TablePagination = () => {
   const {
-    pageCount, previousPage, canPreviousPage, canNextPage, nextPage,
-  } = instance;
-  const pageIndex = instance.state?.pageIndex;
+    pageCount, previousPage, canPreviousPage, canNextPage, nextPage, state,
+  } = useContext(DataTableContext);
+  const pageIndex = state?.pageIndex;
 
   if (!nextPage) {
     return null;
@@ -39,10 +34,6 @@ const TablePagination = ({
       </ButtonGroup>
     </div>
   );
-};
-
-TablePagination.propTypes = {
-  tableName: PropTypes.string.isRequired,
 };
 
 export default TablePagination;

@@ -1,14 +1,14 @@
 import React, { useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { DropdownButton, useWindowSize, breakpoints } from '..';
-import { TableContext } from './TableContext';
+import DataTableContext from './TableContext';
 
 /** The first filter will be as an input, additional filters will be available in a dropdown.  */
 const DropdownFilters = ({
-  numBreakoutFilters, tableName,
+  numBreakoutFilters,
 }) => {
   const { width } = useWindowSize();
-  const { columns } = useContext(TableContext).getTableInstance(tableName);
+  const { columns } = useContext(DataTableContext);
 
   const [breakoutFilters, otherFilters] = useMemo(() => {
     if (!columns) {
@@ -50,7 +50,6 @@ DropdownFilters.defaultProps = {
 DropdownFilters.propTypes = {
   /** Number between one and four filters that can be shown on the top row. */
   numBreakoutFilters: PropTypes.oneOf([1, 2, 3, 4]),
-  tableName: PropTypes.string.isRequired,
 };
 
 export default DropdownFilters;

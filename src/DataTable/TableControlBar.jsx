@@ -4,13 +4,13 @@ import classNames from 'classnames';
 import BulkActions from './BulkActions';
 import SmartStatus from './SmartStatus';
 import DropdownFilters from './DropdownFilters';
-import { TableContext } from './TableContext';
+import DataTableContext from './TableContext';
 
 // handles layout for filters, status, and bulk actions
 const TableControlBar = ({
-  bulkActions, tableName, itemCount, className, noOfBreakoutFilters, ...rest
+  bulkActions, itemCount, className, noOfBreakoutFilters, ...rest
 }) => {
-  const instance = useContext(TableContext).getTableInstance(tableName);
+  const instance = useContext(DataTableContext);
   const {
     setFilter,
   } = instance;
@@ -21,13 +21,12 @@ const TableControlBar = ({
       {setFilter && (
       <div className="pgn__data-table-actions">
         <div className="pgn__data-table-actions-left">
-          <DropdownFilters noOfBreakoutFilters={noOfBreakoutFilters} tableName={tableName} />
+          <DropdownFilters noOfBreakoutFilters={noOfBreakoutFilters} />
         </div>
         <div className="pgn__data-table-actions-right">
           {bulkActions.length > 0 && (
             <BulkActions
               actions={bulkActions}
-              tableName={tableName}
               {...rest}
             />
           )}
@@ -38,14 +37,12 @@ const TableControlBar = ({
         <div className="pgn__data-table-status-left">
           <SmartStatus
             itemCount={itemCount}
-            tableName={tableName}
             {...rest}
           />
         </div>
         {!setFilter && (
           <BulkActions
             actions={bulkActions}
-            tableName={tableName}
             {...rest}
           />
         )}
@@ -72,7 +69,6 @@ TableControlBar.propTypes = {
   className: PropTypes.string,
   /** Number between one and four filters that can be shown on the top row. */
   noOfBreakoutFilters: PropTypes.oneOf([1, 2, 3, 4]),
-  tableName: PropTypes.string.isRequired,
 };
 
 export default TableControlBar;

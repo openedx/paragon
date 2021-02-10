@@ -4,15 +4,11 @@ import { useRows } from './hooks';
 import { CardGrid } from '..';
 
 const CardView = ({
-  tableName, columnSizes, CardComponent,
+  columnSizes, CardComponent, className,
 }) => {
-  if (!tableName) {
-    return null;
-  }
-
   const {
     getTableProps, prepareRow, displayRows,
-  } = useRows(tableName);
+  } = useRows();
 
   const renderCards = () => displayRows.map((row) => {
     prepareRow(row);
@@ -27,6 +23,7 @@ const CardView = ({
 
   return (
     <CardGrid
+      className={className}
       columnSizes={columnSizes}
     >
       {renderCards()}
@@ -40,12 +37,14 @@ CardView.defaultProps = {
     lg: 6,
     xl: 4,
   },
+  className: '',
 };
 
 CardView.propTypes = {
-  tableName: PropTypes.string.isRequired,
+  className: PropTypes.string,
   columnSizes: PropTypes.shape(),
-  /** Your card component must be individualized to your table. It will be called with the row as props. */
+  /** Your card component must be individualized to your table.
+   * It will be called with props from the "row" of data it will display */
   CardComponent: PropTypes.func.isRequired,
 };
 

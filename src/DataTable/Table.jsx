@@ -6,11 +6,11 @@ import TableRow from './TableRow';
 import { useRows } from './hooks';
 
 const Table = ({
-  tableName, isStriped, ...rest
+  isStriped, ...rest
 }) => {
   const {
     getTableProps, prepareRow, displayRows, headerGroups, getTableBodyProps,
-  } = useRows(tableName);
+  } = useRows();
 
   const renderRows = () => displayRows.map((row) => {
     prepareRow(row);
@@ -43,7 +43,6 @@ Table.defaultProps = {
 };
 
 Table.propTypes = {
-  tableName: PropTypes.string.isRequired,
   /** should table rows be striped */
   isStriped: PropTypes.bool,
 };

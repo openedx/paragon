@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useContext } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { useTable } from 'react-table';
 import Table from './Table';
@@ -20,7 +20,7 @@ import TableHeaderCell from './TableHeaderCell';
 import TableCell from './TableCell';
 import TableHeaderRow from './TableHeaderRow';
 import TablePagination from './TablePagination';
-import { TableContext } from './TableContext';
+import DataTableContext from './TableContext';
 
 function DataTable({
   columns, data, defaultColumnValues, additionalColumns, isSelectable,
@@ -28,7 +28,7 @@ function DataTable({
   isFilterable, manualFilters, fetchData, initialState,
   isSortable, manualSortBy,
   initialTableOptions,
-  tableName, children,
+  children,
   ...rest
 }) {
   const defaultColumn = React.useMemo(
@@ -45,7 +45,6 @@ function DataTable({
     initialState,
     ...initialTableOptions,
   }), [columns, data, defaultColumn, manualFilters, manualPagination, initialState, initialTableOptions]);
-  const { setTableInstance } = useContext(TableContext);
 
   if (isPaginated && manualPagination) {
     // pageCount is required when pagination is manual, if it's not there passing -1 as per react-table docs
@@ -63,9 +62,6 @@ function DataTable({
 
   // Use the state and functions returned from useTable to build your UI
   const instance = useTable(...tableArgs);
-  useEffect(() => {
-    setTableInstance(tableName, instance);
-  }, [tableName, instance, JSON.stringify(instance.state)]);
 
   useEffect(() => {
     if (fetchData) {
@@ -74,23 +70,25 @@ function DataTable({
     // Stringifying the data gives a quick way of checking deep equality
   }, [fetchData, JSON.stringify(instance.state)]);
 
-  const propsForChildren = { tableName, itemCount, ...rest };
+  const propsForChildren = { itemCount, ...rest };
   const childrenWithExtraProps = React.Children.map(
     children, child => React.cloneElement(child, propsForChildren),
   );
 
   return (
-    <div className="pgn__data-table-wrapper">
-      {children && childrenWithExtraProps}
-      {!children
-        && (
-        <>
-          <TableControlBar {...propsForChildren} />
-          <Table {...propsForChildren} />
-          <TableFooter {...propsForChildren} />
-        </>
-        )}
-    </div>
+    <DataTableContext.Provider value={instance}>
+      <div className="pgn__data-table-wrapper">
+        {children && childrenWithExtraProps}
+        {!children
+          && (
+          <>
+            <TableControlBar {...propsForChildren} />
+            <Table {...propsForChildren} />
+            <TableFooter {...propsForChildren} />
+          </>
+          )}
+      </div>
+    </DataTableContext.Provider>
   );
 }
 
@@ -167,8 +165,6 @@ DataTable.propTypes = {
   initialTableOptions: PropTypes.shape({}),
   /** Total number of items */
   itemCount: PropTypes.number.isRequired,
-  /** Name of table used for storing table data in context */
-  tableName: PropTypes.string.isRequired,
   /** If children are not provided a table with control bar and footer will be rendered */
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
