@@ -43,13 +43,13 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
         {positions.map(position => (
           <Dropdown.Item eventKey={position}>{position}</Dropdown.Item>
         ))}
-      </DropdownButton>
+      </DropdownButton><br />
       <Button onClick={() => setShow(!show)}>
         {show ? "Hide" : "Show"} the Sheet.
-      </Button>
+      </Button>{' '}
       <Button onClick={() => setBlocking(!blocking)}>
         {blocking ? "Disable": "Enable"} blocking content
-      </Button>
+      </Button>{' '}
       <Button onClick={() => setDark(!dark)}>
         Set {dark ? "Light": "Dark"} mode
       </Button>
@@ -61,7 +61,12 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
         variant={dark ? 'dark' : 'light'}
       >
         This is a Sheet component <br />
-        <Button onClick={() => setShow(false)}>Hide Me!</Button>
+        <Button
+          onClick={() => setShow(false)}
+          variant={dark ? 'inverse-primary' : 'primary'}
+        >
+          Hide Me!
+        </Button>
       </Sheet>
     </>
   )

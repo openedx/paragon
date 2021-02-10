@@ -16,7 +16,7 @@
   background-color: white;
   z-index: $zindex-sheet;
   &.pgn__sheet__dark {
-    background-color: $primary-500;
+    background-color: $dark-500;
     color: $light-300;
   }
   &.bottom {
