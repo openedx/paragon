@@ -18,6 +18,20 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 The DataTable component is a wrapper that uses the <a href="https://react-table.tanstack.com/docs">react-table</a> library to
 create tables. It can be used as is, or its subcomponents can be used on their own, allowing the developer full control.
 
+## How children get information
+
+## TableContext
+The table context gets the current `react-table` instance of the table from the `DataTable` component and makes it available to any component within the provider,
+whether or not that component is a child of DataTable. It can store instances of multiple tables that are accessed using the table's name.
+
+```jsx
+const instance = useContext(TableContext).getTableInstance(tableName);
+```
+
+## Props passed to children
+The DataTable will pass the `tableName`, `itemCount` and any extra props on to it's children. Component's outside the `DataTable` component will
+need to have access to the table name in order to access table data and methods.
+
 ## Frontend filtering and sorting
 For small tables (less than ~10,000 rows), filtering, sorting and pagination can be done
 quickly and easily on the frontend.
@@ -27,88 +41,96 @@ or a filter component can be defined on the column. See <a href="https://react-t
 for more information.
 
 ```jsx live
-<DataTable
-  isSelectable
-  isSortable
-  isFilterable
-  defaultColumnValues={{ Filter: TextFilter }}
-  itemCount={7}
-  data={[
-    {
-      name: 'Lil Bub',
-      color: 'brown tabby',
-      famous_for: 'weird tongue',
-    },
-    {
-      name: 'Grumpy Cat',
-      color: 'siamese',
-      famous_for: 'serving moods',
-    },
-    {
-      name: 'Smoothie',
-      color: 'orange tabby',
-      famous_for: 'modeling',
-    },
-    {
-      name: 'Maru',
-      color: 'brown tabby',
-      famous_for: 'being a lovable oaf',
-    },
-    {
-      name: 'Keyboard Cat',
-      color: 'orange tabby',
-      famous_for: 'piano virtuoso',
-    },
-    {
-      name: 'Long Cat',
-      color: 'russian white',
-      famous_for:
-        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
-    },
-    {
-      name: 'Zeno',
-      color: 'brown tabby',
-      famous_for: 'getting halfway there'
-    },
-  ]}
-  columns={[
-    {
-      Header: 'Name',
-      accessor: 'name',
+<TableContextProvider >
+  <DataTable
+    tableName='famous-cats'
+    isFilterable
+    isSortable
+    defaultColumnValues={{ Filter: TextFilter }}
+    initialState={{ pageSize: 3}}
+    itemCount={7}
+    data={[
+      {
+        name: 'Lil Bub',
+        color: 'brown tabby',
+        famous_for: 'weird tongue',
+      },
+      {
+        name: 'Grumpy Cat',
+        color: 'siamese',
+        famous_for: 'serving moods',
+      },
+      {
+        name: 'Smoothie',
+        color: 'orange tabby',
+        famous_for: 'modeling',
+      },
+      {
+        name: 'Maru',
+        color: 'brown tabby',
+        famous_for: 'being a lovable oaf',
+      },
+      {
+        name: 'Keyboard Cat',
+        color: 'orange tabby',
+        famous_for: 'piano virtuoso',
+      },
+      {
+        name: 'Long Cat',
+        color: 'russian white',
+        famous_for:
+          'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+      },
+      {
+        name: 'Zeno',
+        color: 'brown tabby',
+        famous_for: 'getting halfway there'
+      },
+    ]}
+    columns={[
+      {
+        Header: 'Name',
+        accessor: 'name',
 
-    },
-    {
-      Header: 'Famous For',
-      accessor: 'famous_for',
-    },
-    {
-      Header: 'Coat Color',
-      accessor: 'color',
-      Filter: CheckboxFilter,
-      filter: 'includesValue',
-      filterChoices: [{
-        name: 'russian white',
-        number: 1,
-        value: 'russian white',
       },
       {
-        name: 'orange tabby',
-        number: 2,
-        value: 'orange tabby',
+        Header: 'Famous For',
+        accessor: 'famous_for',
       },
       {
-        name: 'brown tabby',
-        number: 3,
-        value: 'brown tabby',
+        Header: 'Coat Color',
+        accessor: 'color',
+        Filter: CheckboxFilter,
+        filter: 'includesValue',
+        filterChoices: [{
+          name: 'russian white',
+          number: 1,
+          value: 'russian white',
+        },
+        {
+          name: 'orange tabby',
+          number: 2,
+          value: 'orange tabby',
+        },
+        {
+          name: 'brown tabby',
+          number: 3,
+          value: 'brown tabby',
+        },
+        {
+          name: 'siamese',
+          number: 1,
+          value: 'siamese',
+        }]
       },
-      {
-        name: 'siamese',
-        number: 1,
-        value: 'siamese',
-      }]
-    },
-  ]}
-/>
+    ]}
+  >
+    <DataTable.TableControlBar />
+    <DataTable.Table />
+    <DataTable.EmptyTable content="No results found" />
+    <DataTable.TableFooter />
+  </DataTable>
+</TableContextProvider>
 ```
 
 
@@ -123,7 +145,9 @@ can see in the console what the fetchData function is called with.
 
 
 ```jsx live
+<TableContextProvider>
 <DataTable
+  tableName="miyazaki"
   isFilterable
   manualFilters
   defaultColumnValues={{ Filter: TextFilter }}
@@ -320,6 +344,7 @@ can see in the console what the fetchData function is called with.
     },
   ]}
 />
+</TableContextProvider>
 ```
 
 ## Actions and Bulk actions
@@ -335,93 +360,111 @@ overflow dropdown menu. The bulk actions are called with the selected rows.
 An action can be definied as an additional column on the table. The Cell property can be definied to display
 any component that a user requires. It will receive the row as props.
 
+<strong>NOTE</strong>: The rows the action are called with are logged to the console in this example.
+
 ```jsx live
-<DataTable
-  isSelectable
-  itemCount={7}
-  bulkActions={[
-    {
-      buttonText: 'Enroll',
-      handleClick: (selectedRows) => console.log('Enrolling ', selectedRows),
-    },
-    {
-      buttonText: 'Assign',
-      handleClick: (selectedRows) => console.log('Assigning ', selectedRows),
-    },
-    {
-      buttonText: 'Extra action 1',
-      handleClick: (selectedRows) => console.log('Extra action 1', selectedRows),
-    },
-    {
-      buttonText: 'Extra action 2',
-      handleClick: (selectedRows) => console.log('Extra action 2 ', selectedRows),
-    },
-  ]}
-  additionalColumns={[
-    {
-      id: 'action',
-      Header: 'Action',
-      // Proptypes disabled as this prop is passed in separately
-      // eslint-disable-next-line react/prop-types
-      Cell: ({ row }) => <Button variant="link" onClick={() => console.log("Assign", row)}>Assign</Button>,
-    }
-  ]}
-  data={[
-    {
-      name: 'Lil Bub',
-      color: 'brown tabby',
-      famous_for: 'weird tongue',
-    },
-    {
-      name: 'Grumpy Cat',
-      color: 'siamese',
-      famous_for: 'serving moods',
-    },
-    {
-      name: 'Smoothie',
-      color: 'orange tabby',
-      famous_for: 'modeling',
-    },
-    {
-      name: 'Maru',
-      color: 'brown tabby',
-      famous_for: 'being a lovable oaf',
-    },
-    {
-      name: 'Keyboard Cat',
-      color: 'orange tabby',
-      famous_for: 'piano virtuoso',
-    },
-    {
-      name: 'Long Cat',
-      color: 'russian white',
-      famous_for:
-        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
-    },
-    {
-      name: 'Zeno',
-      color: 'brown tabby',
-      famous_for: 'getting halfway there'
-    },
-  ]}
-  columns={[
-    {
-      Header: 'Name',
-      accessor: 'name',
+<TableContextProvider >
+  <DataTable
+    tableName="famous-cats-2"
+    isSelectable
+    itemCount={7}
 
-    },
-    {
-      Header: 'Famous For',
-      accessor: 'famous_for',
-    },
-    {
-      Header: 'Coat Color',
-      accessor: 'color',
-    },
-  ]}
-/>
+    additionalColumns={[
+      {
+        id: 'action',
+        Header: 'Action',
+        // Proptypes disabled as this prop is passed in separately
+        Cell: ({ row }) => <Button variant="link" onClick={() => console.log("Assign", row)}>Assign</Button>,
+      }
+    ]}
+    data={[
+      {
+        name: 'Lil Bub',
+        color: 'brown tabby',
+        famous_for: 'weird tongue',
+      },
+      {
+        name: 'Grumpy Cat',
+        color: 'siamese',
+        famous_for: 'serving moods',
+      },
+      {
+        name: 'Smoothie',
+        color: 'orange tabby',
+        famous_for: 'modeling',
+      },
+      {
+        name: 'Maru',
+        color: 'brown tabby',
+        famous_for: 'being a lovable oaf',
+      },
+      {
+        name: 'Keyboard Cat',
+        color: 'orange tabby',
+        famous_for: 'piano virtuoso',
+      },
+      {
+        name: 'Long Cat',
+        color: 'russian white',
+        famous_for:
+          'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+      },
+      {
+        name: 'Zeno',
+        color: 'brown tabby',
+        famous_for: 'getting halfway there'
+      },
+    ]}
+    columns={[
+      {
+        Header: 'Name',
+        accessor: 'name',
+
+      },
+      {
+        Header: 'Famous For',
+        accessor: 'famous_for',
+      },
+      {
+        Header: 'Coat Color',
+        accessor: 'color',
+      },
+    ]}
+  >
+    <DataTable.TableControlBar
+      itemCount={7}
+      tableName='famous-cats-2'
+      bulkActions={[
+        {
+          buttonText: 'Enroll',
+          handleClick: (selectedRows) => console.log('Enrolling ', selectedRows),
+        },
+        {
+          buttonText: 'Assign',
+          handleClick: (selectedRows) => console.log('Assigning ', selectedRows),
+        },
+        {
+          buttonText: 'Extra action 1',
+          handleClick: (selectedRows) => console.log('Extra action 1', selectedRows),
+        },
+        {
+          buttonText: 'Extra action 2',
+          handleClick: (selectedRows) => console.log('Extra action 2 ', selectedRows),
+        },
+      ]}
+    />
+    <DataTable.Table
+      tableName='famous-cats-2'
+    />
+    <DataTable.EmptyTable content="No results found" tableName='famous-cats-2'/>
+    <DataTable.TableFooter
+      tableName='famous-cats-2'
+      itemCount={7}
+      isPaginated
+    />
+  </DataTable>
+</TableContextProvider>
 ```
-
 
 <PropsTable {...props.data.dataTable} />
 <PropsTable {...props.data.bulkActions} />

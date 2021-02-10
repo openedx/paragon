@@ -53,7 +53,9 @@ The `TextFilter` and `DropdownFilter` components can be used with a variety of t
 The checkbox filter is used in the dropdown.
 
 ```jsx live
+<TableContextProvider >
 <DataTable
+  tableName="famous-cats"
   isFilterable
   defaultColumnValues={{ Filter: TextFilter }}
   numBreakoutFilters={2}
@@ -171,12 +173,15 @@ The checkbox filter is used in the dropdown.
   ]}
 
 />
+</TableContextProvider>
 ```
 
 ## DropdownFilter
 
 ```jsx live
+<TableContextProvider>
 <DataTable
+  tableName="more-cats"
   isFilterable
   defaultColumnValues={{ Filter: TextFilter }}
   numBreakoutFilters={2}
@@ -294,6 +299,7 @@ The checkbox filter is used in the dropdown.
   ]}
 
 />
+</TableContextProvider>
 ```
 
 <PropsTable {...props.data.textFilter} />
