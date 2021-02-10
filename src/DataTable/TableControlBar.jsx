@@ -10,7 +10,7 @@ import DropdownFilters from './DropdownFilters';
 const TableControlBar = ({
   isSelectable, selectedFlatRows, toggleAllRowsSelected, bulkActions,
   isFilterable, filterNames, pageSize, itemCount, columns, rows,
-  resetAllFilters, className,
+  resetAllFilters, className, numBreakoutFilters,
 }) => {
   const bulkActionRows = isSelectable ? selectedFlatRows : rows;
 
@@ -19,7 +19,7 @@ const TableControlBar = ({
       {isFilterable && (
       <div className="pgn__data-table-actions">
         <div className="pgn__data-table-actions-left">
-          <DropdownFilters columns={columns} />
+          <DropdownFilters columns={columns} numBreakoutFilters={numBreakoutFilters} />
         </div>
         <div className="pgn__data-table-actions-right">
           {bulkActions.length > 0 && (
@@ -62,6 +62,7 @@ TableControlBar.defaultProps = {
   filterNames: [],
   pageSize: null,
   className: null,
+  numBreakoutFilters: 1,
 };
 
 TableControlBar.propTypes = {
@@ -80,6 +81,8 @@ TableControlBar.propTypes = {
   itemCount: PropTypes.number.isRequired,
   columns: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   className: PropTypes.string,
+  /** Number between one and four filters that can be shown on the top row. */
+  numBreakoutFilters: PropTypes.oneOf([1, 2, 3, 4]),
 };
 
 export default TableControlBar;
