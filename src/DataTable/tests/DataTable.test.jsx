@@ -4,7 +4,7 @@ import * as reactTable from 'react-table';
 import DataTable from '..';
 
 import TableControlBar from '../TableControlBar';
-import EmptyTable from '../EmptyTableContent';
+import EmptyTable from '../EmptyTable';
 import Table from '../Table';
 import TableFooter from '../TableFooter';
 

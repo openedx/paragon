@@ -10,10 +10,7 @@ import DataTableContext from './DataTableContext';
 const TableControlBar = ({
   className,
 }) => {
-  const instance = useContext(DataTableContext);
-  const {
-    setFilter, bulkActions,
-  } = instance;
+  const { setFilter, bulkActions } = useContext(DataTableContext);
 
   return (
     <div className={classNames('pgn__data-table-status-bar', className)}>

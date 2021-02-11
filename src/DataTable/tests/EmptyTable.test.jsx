@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import EmptyTableContent from '../EmptyTableContent';
+import EmptyTableContent from '../EmptyTable';
 import DataTableContext from '../DataTableContext';
 
 const props = {

@@ -7,7 +7,7 @@ import getVisibleColumns from './utils/getVisibleColumns';
 import { requiredWhen } from './utils/propTypesUtils';
 import getTableArgs from './utils/getTableArgs';
 import TableControlBar from './TableControlBar';
-import EmptyTableContent from './EmptyTableContent';
+import EmptyTableContent from './EmptyTable';
 import TableFooter from './TableFooter';
 import BulkActions from './BulkActions';
 import DropdownFilters from './DropdownFilters';
@@ -31,7 +31,7 @@ function DataTable({
   initialTableOptions,
   EmptyTableComponent,
   children,
-  ...rest
+  ...props
 }) {
   const defaultColumn = React.useMemo(
     () => (defaultColumnValues),
@@ -77,8 +77,8 @@ function DataTable({
     itemCount,
     numBreakoutFilters,
     bulkActions,
-    ...rest,
-  }), [instance, JSON.stringify(instance.state), itemCount, bulkActions, numBreakoutFilters, JSON.stringify(rest)]);
+    ...props,
+  }), [instance, JSON.stringify(instance.state), itemCount, bulkActions, numBreakoutFilters, JSON.stringify(props)]);
 
   return (
     <DataTableContext.Provider value={enhancedInstance}>

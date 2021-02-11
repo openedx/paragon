@@ -6,7 +6,7 @@ import TableRow from './TableRow';
 import { useRows } from './hooks';
 
 const Table = ({
-  isStriped, ...rest
+  isStriped,
 }) => {
   const {
     getTableProps, prepareRow, displayRows, headerGroups, getTableBodyProps,
@@ -15,7 +15,7 @@ const Table = ({
   const renderRows = () => displayRows.map((row) => {
     prepareRow(row);
     return (
-      <TableRow {...row} key={row.id} {...rest} />
+      <TableRow {...row} key={row.id} />
     );
   });
 
@@ -29,7 +29,7 @@ const Table = ({
         className: classNames({ 'pgn__data-table': true, 'is-striped': isStriped }),
       })}
       >
-        <TableHeaderRow headerGroups={headerGroups} {...rest} />
+        <TableHeaderRow headerGroups={headerGroups} />
         <tbody {...getTableBodyProps()}>
           {renderRows()}
         </tbody>
