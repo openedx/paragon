@@ -67,7 +67,9 @@ const ModalLayer = ({
         >
           <div style={overlayStyles}>
             <ModalBackdrop />
-            {children}
+            <div>
+              {children}
+            </div>
           </div>
         </FocusOn>
       </Portal>
