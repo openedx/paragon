@@ -4,7 +4,7 @@ import { Button } from '..';
 import DataTableContext from './DataTableContext';
 
 const FilterStatus = ({
-  className, variant, size, clearSelectionText, buttonClassName,
+  className, variant, size, clearFiltersText, buttonClassName,
 }) => {
   const { state, setAllFilters } = useContext(DataTableContext);
   if (!setAllFilters) {
@@ -22,7 +22,7 @@ const FilterStatus = ({
         size={size}
         onClick={() => setAllFilters([])}
       >
-        {clearSelectionText}
+        {clearFiltersText}
       </Button>
     </div>
   );
@@ -33,7 +33,7 @@ FilterStatus.defaultProps = {
   buttonClassName: 'pgn__smart-status-button',
   variant: 'link',
   size: 'inline',
-  clearSelectionText: 'Clear Selection',
+  clearFiltersText: 'Clear Filters',
 };
 
 FilterStatus.propTypes = {
@@ -41,7 +41,7 @@ FilterStatus.propTypes = {
   buttonClassName: PropTypes.string,
   variant: PropTypes.string,
   size: PropTypes.string,
-  clearSelectionText: PropTypes.string,
+  clearFiltersText: PropTypes.string,
 };
 
 export default FilterStatus;

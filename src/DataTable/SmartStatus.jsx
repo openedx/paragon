@@ -7,12 +7,11 @@ import DataTableContext from './DataTableContext';
 const SMART_STATUS_CLASS = 'pgn__smart-status';
 
 const SmartStatus = () => {
-  const { state, selectedFlatRows, itemCount } = useContext(DataTableContext);
+  const { state, selectedFlatRows } = useContext(DataTableContext);
   const numSelectedRows = selectedFlatRows?.length;
   if (selectedFlatRows && numSelectedRows > 0) {
     return (
       <SelectionStatus
-        itemCount={itemCount}
         className={SMART_STATUS_CLASS}
       />
     );
@@ -27,7 +26,6 @@ const SmartStatus = () => {
   return (
     <RowStatus
       className={SMART_STATUS_CLASS}
-      itemCount={itemCount}
     />
   );
 };
