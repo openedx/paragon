@@ -102,11 +102,6 @@ describe('<DataTable />', () => {
     expect(controlBar.length).toEqual(1);
     expect(controlBar.text()).toEqual('Showing 7 of 7');
   });
-  it('passes the correct default props to the control bar', () => {
-    const wrapper = mount(<DataTable {...props} />);
-    const controlBarProps = wrapper.find(TableControlBar).props();
-    expect(controlBarProps.itemCount).toEqual(props.itemCount);
-  });
   it('displays a table', () => {
     const wrapper = mount(<DataTable {...props} />);
     const table = wrapper.find(Table);

@@ -25,23 +25,23 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
 ));
 
 const BulkActions = ({
-  actions, className, ...rest
+  className,
 }) => {
   const { width } = useWindowSize();
-  const { selectedFlatRows, rows } = useContext(DataTableContext);
+  const { selectedFlatRows, rows, bulkActions } = useContext(DataTableContext);
   const [visibleActions, dropdownActions] = useMemo(() => {
     if (width < breakpoints.small.minWidth) {
       // On a small screen, all actions will be in the overflow menu
-      return [[], [...actions]];
+      return [[], [...bulkActions]];
     }
-    // The first two actions will be displayed as buttons, the rest will go in an overflow menu
-    const firstTwoActions = [...actions].splice(0, 2);
-    const extraActions = [...actions].slice(2);
+    // The first two bulkActions will be displayed as buttons, the rest will go in an overflow menu
+    const firstTwoActions = [...bulkActions].splice(0, 2);
+    const extraActions = [...bulkActions].slice(2);
 
     /*  Reversing the array because to the user it makes sense to put the primary button first,
         but we want it on the right */
     return [firstTwoActions.reverse(), extraActions];
-  }, [actions, width]);
+  }, [bulkActions, width]);
 
   const bulkActionRows = selectedFlatRows || rows;
   if (!bulkActionRows) {
@@ -49,7 +49,7 @@ const BulkActions = ({
   }
 
   return (
-    <div className={classNames('pgn__bulk-actions', className)} {...rest}>
+    <div className={classNames('pgn__bulk-actions', className)}>
       {dropdownActions.length > 0 && (
       <Dropdown>
         <Dropdown.Toggle as={CustomToggle}>
@@ -105,19 +105,6 @@ BulkActions.defaultProps = {
 };
 
 BulkActions.propTypes = {
-  /** Bulk actions to be performed on the selected rows */
-  actions: PropTypes.arrayOf(PropTypes.shape({
-    /** Bulk action button text */
-    buttonText: PropTypes.string.isRequired,
-    /** handleClick will be passed the selected rows */
-    handleClick: PropTypes.func.isRequired,
-    /** classnames for button class */
-    className: PropTypes.string,
-    /** optional button variant; only relevant for the first two buttons */
-    variant: PropTypes.string,
-    /** disables button */
-    disabled: PropTypes.disabled,
-  })).isRequired,
   /** class names for the div wrapping the button components */
   className: PropTypes.string,
 };

@@ -15,6 +15,7 @@ const instance = {
   // FilterStatus uses this as a proxy for filterability
   setAllFilters: () => {},
   toggleAllRowsSelected: () => {},
+  itemCount,
 };
 
 // eslint-disable-next-line react/prop-types
@@ -24,32 +25,32 @@ const SmartStatusWrapper = ({ value, props }) => (
 describe('<SmartStatus />', () => {
   it('Shows the selection status if rows are selected', () => {
     const wrapper = mount(
-      <SmartStatusWrapper value={{ ...instance, state: {}, selectedFlatRows: Array(5) }} props={{ itemCount: 101 }} />,
+      <SmartStatusWrapper value={{ ...instance, state: {}, selectedFlatRows: Array(5) }} />,
     );
     expect(wrapper.find(SelectionState)).toHaveLength(1);
   });
   it('Shows the filter state with selection turned off', () => {
-    const wrapper = mount(<SmartStatusWrapper value={{ ...instance, state: { filters } }} props={{ itemCount }} />);
+    const wrapper = mount(<SmartStatusWrapper value={{ ...instance, state: { filters } }} />);
     const status = wrapper.find(SmartStatus);
     expect(status.text()).toContain(filterNames.join(', '));
   });
   it('Shows the filter state when there are no selected rows', () => {
     const wrapper = mount(
-      <SmartStatusWrapper value={{ ...instance, state: { filters }, selectedFlatRows: [] }} props={{ itemCount }} />,
+      <SmartStatusWrapper value={{ ...instance, state: { filters }, selectedFlatRows: [] }} />,
     );
     const status = wrapper.find(SmartStatus);
     expect(status.text()).toContain(filterNames.join(', '));
   });
   it('Shows the number of items on the page if the there are no selected rows and no filters', () => {
     const wrapper = mount(
-      <SmartStatusWrapper value={instance} props={{ itemCount }} />,
+      <SmartStatusWrapper value={instance} />,
     );
     const status = wrapper.find(SmartStatus);
     expect(status.text()).toContain(`Showing ${instance.page.length} of ${itemCount}`);
   });
   it('Shows the number of items on the page if selection is off and there are no filters', () => {
     const wrapper = mount(
-      <SmartStatusWrapper value={instance} props={{ itemCount }} />,
+      <SmartStatusWrapper value={instance} />,
     );
     const status = wrapper.find(SmartStatus);
     expect(status.text()).toContain(`Showing ${instance.page.length} of ${itemCount}`);

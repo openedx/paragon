@@ -29,8 +29,9 @@ const twoActions = [
   secondAction,
 ];
 
-const props = {
-  actions: [
+const instance = {
+  selectedFlatRows,
+  bulkActions: [
     ...twoActions,
     {
       buttonText: 'Extra1',
@@ -52,13 +53,13 @@ const props = {
 };
 
 // eslint-disable-next-line react/prop-types
-const BulkActionsWrapper = ({ value, actions }) => (
-  <DataTableContext.Provider value={value}><BulkActions actions={actions} /></DataTableContext.Provider>);
+const BulkActionsWrapper = ({ value = instance }) => (
+  <DataTableContext.Provider value={value}><BulkActions /></DataTableContext.Provider>);
 
 describe('<BulkActions />', () => {
   describe('with one action', () => {
     it('displays the primary button as an outline button', () => {
-      const wrapper = mount(<BulkActionsWrapper value={{ selectedFlatRows }} actions={[firstAction]} />);
+      const wrapper = mount(<BulkActionsWrapper value={{ ...instance, bulkActions: [firstAction] }} />);
       const button = wrapper.find(Button);
       expect(button.length).toEqual(1);
       expect(button.props().variant).toEqual('outline-primary');
@@ -66,19 +67,19 @@ describe('<BulkActions />', () => {
     it('displays the primary action with the user\'s variant', () => {
       const variant = 'my-variant';
       const wrapper = mount(
-        <BulkActionsWrapper value={{ selectedFlatRows }} actions={[{ ...firstAction, variant }]} />,
+        <BulkActionsWrapper value={{ ...instance, bulkActions: [{ ...firstAction, variant }] }} />,
       );
       const button = wrapper.find(Button);
       expect(button.props().variant).toEqual(variant);
     });
     it('passes button classnames', () => {
-      const wrapper = mount(<BulkActionsWrapper value={{ selectedFlatRows }} actions={[firstAction]} />);
+      const wrapper = mount(<BulkActionsWrapper value={{ ...instance, bulkActions: [firstAction] }} />);
       const button = wrapper.find(Button);
       expect(button.props().className).toContain(firstAction.className);
     });
     it('disables the button', () => {
       const wrapper = mount(
-        <BulkActionsWrapper value={{ selectedFlatRows }} actions={[{ ...firstAction, disabled: true }]} />,
+        <BulkActionsWrapper value={{ ...instance, bulkActions: [{ ...firstAction, disabled: true }] }} />,
       );
       const button = wrapper.find(Button);
       expect(button.props().disabled).toEqual(true);
@@ -87,8 +88,8 @@ describe('<BulkActions />', () => {
       const onClickSpy = jest.fn();
       const wrapper = mount(
         <BulkActionsWrapper
-          actions={[{ ...firstAction, handleClick: onClickSpy }]}
-          value={{ selectedFlatRows }}
+          value={{ ...instance, bulkActions: [{ ...firstAction, handleClick: onClickSpy }] }}
+
         />,
       );
       const button = wrapper.find('button');
@@ -99,35 +100,33 @@ describe('<BulkActions />', () => {
     });
   });
   describe('with two actions', () => {
+    const wrapper = mount(<BulkActionsWrapper value={{ ...instance, bulkActions: twoActions }} />);
     it('displays the user\'s first button as an brand button', () => {
-      const wrapper = mount(<BulkActionsWrapper value={{ selectedFlatRows }} actions={twoActions} />);
       const buttons = wrapper.find(Button);
       expect(buttons.length).toEqual(2);
       expect(buttons.get(1).props.variant).toEqual('brand');
     });
     it('displays the user\'s second button as an outline button', () => {
-      const wrapper = mount(<BulkActionsWrapper value={{ selectedFlatRows }} actions={twoActions} />);
       const buttons = wrapper.find(Button);
       expect(buttons.get(0).props.variant).toEqual('outline-primary');
     });
     it('reverses the button order so that the primary button is on the right', () => {
-      const wrapper = mount(<BulkActionsWrapper value={{ selectedFlatRows }} actions={twoActions} />);
       const buttons = wrapper.find(Button);
       expect(buttons.at(0).text()).toEqual(twoActions[1].buttonText);
       expect(buttons.at(1).text()).toEqual(twoActions[0].buttonText);
     });
     it('passes button classnames', () => {
-      const wrapper = mount(<BulkActionsWrapper value={{ selectedFlatRows }} actions={twoActions} />);
       const buttons = wrapper.find(Button);
       expect(buttons.at(0).props().className).toContain(twoActions[1].className);
       expect(buttons.at(1).props().className).toContain(twoActions[0].className);
     });
+  });
+  describe('two actions on click', () => {
     it('performs the primary button action on click', () => {
       const onClickSpy = jest.fn();
       const wrapper = mount(
         <BulkActionsWrapper
-          actions={[{ ...firstAction, handleClick: onClickSpy }, secondAction]}
-          value={{ selectedFlatRows }}
+          value={{ ...instance, bulkActions: [{ ...firstAction, handleClick: onClickSpy }, secondAction] }}
         />,
       );
       const button = wrapper.find(Button).at(1);
@@ -139,8 +138,7 @@ describe('<BulkActions />', () => {
       const onClickSpy = jest.fn();
       const wrapper = mount(
         <BulkActionsWrapper
-          actions={[firstAction, { ...secondAction, handleClick: onClickSpy }]}
-          value={{ selectedFlatRows }}
+          value={{ ...instance, bulkActions: [firstAction, { ...secondAction, handleClick: onClickSpy }] }}
         />,
       );
       const button = wrapper.find(Button).at(0);
@@ -151,13 +149,13 @@ describe('<BulkActions />', () => {
   });
   describe('with more than two actions', () => {
     it('displays the user\'s first button as an brand button', () => {
-      const wrapper = mount(<BulkActionsWrapper value={{ selectedFlatRows }} {...props} />);
+      const wrapper = mount(<BulkActionsWrapper />);
       const buttons = wrapper.find(Button);
       expect(buttons.length).toEqual(3);
       expect(buttons.get(2).props.variant).toEqual('brand');
     });
     it('displays the user\'s second button as an outline button', () => {
-      const wrapper = mount(<BulkActionsWrapper value={{ selectedFlatRows }} {...props} />);
+      const wrapper = mount(<BulkActionsWrapper />);
       const buttons = wrapper.find(Button);
       expect(buttons.get(1).props.variant).toEqual('outline-primary');
     });
@@ -170,8 +168,11 @@ describe('<BulkActions />', () => {
       beforeEach(() => {
         wrapper = mount(
           <BulkActionsWrapper
-            actions={[...props.actions, { buttonText: itemText, handleClick: onClickSpy, className: itemClassName }]}
-            value={{ selectedFlatRows }}
+            value={{
+              ...instance,
+              // eslint-disable-next-line max-len
+              bulkActions: [...instance.bulkActions, { buttonText: itemText, handleClick: onClickSpy, className: itemClassName }],
+            }}
           />,
         );
         // the dropdown menu is the first button
@@ -210,10 +211,10 @@ describe('<BulkActions />', () => {
   });
 
   describe('small screen', () => {
-    const actions = [[[firstAction]], [[firstAction, secondAction]], [props.actions]];
+    const actions = [[[firstAction]], [[firstAction, secondAction]], [instance.bulkActions]];
     test.each(actions)('puts all actions in a dropdown %#', (testActions) => {
       useWindowSize.mockReturnValue({ width: 500 });
-      const wrapper = mount(<BulkActionsWrapper actions={testActions} value={{ selectedFlatRows }} />);
+      const wrapper = mount(<BulkActionsWrapper value={{ ...instance, bulkActions: testActions }} />);
       const button = wrapper.find(Icon);
       expect(button.length).toEqual(1);
       expect(wrapper.text()).not.toContain(firstAction.buttonText);
@@ -228,7 +229,7 @@ describe('<BulkActions />', () => {
     });
     it('renders the correct alt text for the dropdown', () => {
       useWindowSize.mockReturnValue({ width: 500 });
-      const wrapper = mount(<BulkActionsWrapper value={{ selectedFlatRows }} {...props} />);
+      const wrapper = mount(<BulkActionsWrapper />);
       const icon = wrapper.find(Icon);
       expect(icon.props().screenReaderText).toEqual(SMALL_SCREEN_DROPDOWN_BUTTON_TEXT);
     });

@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import DataTableContext from './DataTableContext';
 
-const RowStatus = ({ className, itemCount }) => {
-  const instance = useContext(DataTableContext);
-  const pageSize = instance.page ? instance.page.length : instance.rows?.length;
+const RowStatus = ({ className }) => {
+  const { page, rows, itemCount } = useContext(DataTableContext);
+  const pageSize = page?.length || rows?.length;
 
   if (!pageSize) {
     return null;
@@ -18,7 +18,6 @@ RowStatus.defaultProps = {
 
 RowStatus.propTypes = {
   className: PropTypes.string,
-  itemCount: PropTypes.number.isRequired,
 };
 
 export default RowStatus;

@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
 import SelectionStatus from './SelectionStatus';
 import RowStatus from './RowStatus';
 import FilterStatus from './FilterStatus';
@@ -7,10 +6,8 @@ import DataTableContext from './DataTableContext';
 
 const SMART_STATUS_CLASS = 'pgn__smart-status';
 
-const SmartStatus = ({
-  itemCount,
-}) => {
-  const { state, selectedFlatRows } = useContext(DataTableContext);
+const SmartStatus = () => {
+  const { state, selectedFlatRows, itemCount } = useContext(DataTableContext);
   const numSelectedRows = selectedFlatRows?.length;
   if (selectedFlatRows && numSelectedRows > 0) {
     return (
@@ -33,10 +30,6 @@ const SmartStatus = ({
       itemCount={itemCount}
     />
   );
-};
-
-SmartStatus.propTypes = {
-  itemCount: PropTypes.number.isRequired,
 };
 
 export default SmartStatus;

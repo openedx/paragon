@@ -27,6 +27,7 @@ function DataTable({
   isPaginated, manualPagination, pageCount, itemCount,
   isFilterable, manualFilters, fetchData, initialState,
   isSortable, manualSortBy,
+  bulkActions, numBreakoutFilters,
   initialTableOptions,
   EmptyTableComponent,
   children,
@@ -71,22 +72,25 @@ function DataTable({
     // Stringifying the data gives a quick way of checking deep equality
   }, [fetchData, JSON.stringify(instance.state)]);
 
-  const propsForChildren = { itemCount, ...rest };
-  const childrenWithExtraProps = React.Children.map(
-    children, child => React.cloneElement(child, propsForChildren),
-  );
+  const enhancedInstance = useMemo(() => ({
+    ...instance,
+    itemCount,
+    numBreakoutFilters,
+    bulkActions,
+    ...rest,
+  }), [instance, JSON.stringify(instance.state), itemCount, bulkActions, numBreakoutFilters, JSON.stringify(rest)]);
 
   return (
-    <DataTableContext.Provider value={instance}>
+    <DataTableContext.Provider value={enhancedInstance}>
       <div className="pgn__data-table-wrapper">
-        {children && childrenWithExtraProps}
+        {children}
         {!children
           && (
           <>
-            <TableControlBar {...propsForChildren} />
-            <Table {...propsForChildren} />
-            <EmptyTableComponent {...propsForChildren} />
-            <TableFooter {...propsForChildren} />
+            <TableControlBar />
+            <Table />
+            <EmptyTableComponent />
+            <TableFooter />
           </>
           )}
       </div>
@@ -109,6 +113,8 @@ DataTable.defaultProps = {
   initialTableOptions: {},
   EmptyTableComponent: EmptyTableContent,
   children: null,
+  bulkActions: [],
+  numBreakoutFilters: 1,
 };
 
 DataTable.propTypes = {
@@ -167,6 +173,21 @@ DataTable.propTypes = {
   initialTableOptions: PropTypes.shape({}),
   /** Total number of items */
   itemCount: PropTypes.number.isRequired,
+  /** Actions to be performed on the table. */
+  bulkActions: PropTypes.arrayOf(PropTypes.shape({
+    /** Bulk action button text */
+    buttonText: PropTypes.string.isRequired,
+    /** handleClick will be passed the selected rows */
+    handleClick: PropTypes.func.isRequired,
+    /** classnames for button class */
+    className: PropTypes.string,
+    /** optional button variant; only relevant for the first two buttons */
+    variant: PropTypes.string,
+    /** disables button */
+    disabled: PropTypes.disabled,
+  })),
+  /** Number between one and four filters that can be shown on the top row. */
+  numBreakoutFilters: PropTypes.oneOf([1, 2, 3, 4]),
   /** Component to be displayed when the table is empty */
   EmptyTableComponent: PropTypes.func,
   /** If children are not provided a table with control bar and footer will be rendered */

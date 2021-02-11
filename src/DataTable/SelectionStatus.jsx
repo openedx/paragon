@@ -7,9 +7,9 @@ export const SELECT_ALL_TEST_ID = 'test_selection_state_select_all_button';
 export const CLEAR_SELECTION_TEST_ID = 'test_selection_state_clear_selection_button';
 
 const SelectionStatus = ({
-  itemCount, className,
+  className,
 }) => {
-  const { toggleAllRowsSelected, selectedFlatRows } = useContext(DataTableContext);
+  const { toggleAllRowsSelected, selectedFlatRows, itemCount } = useContext(DataTableContext);
   const numSelectedRows = selectedFlatRows.length;
   const allRowsSelected = numSelectedRows === itemCount;
   return (
@@ -44,7 +44,6 @@ SelectionStatus.defaultProps = {
 };
 
 SelectionStatus.propTypes = {
-  itemCount: PropTypes.number.isRequired,
   className: PropTypes.string,
 };
 

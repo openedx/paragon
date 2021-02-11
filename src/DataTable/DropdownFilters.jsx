@@ -1,14 +1,11 @@
 import React, { useContext, useMemo } from 'react';
-import PropTypes from 'prop-types';
 import { DropdownButton, useWindowSize, breakpoints } from '..';
 import DataTableContext from './DataTableContext';
 
 /** The first filter will be as an input, additional filters will be available in a dropdown.  */
-const DropdownFilters = ({
-  numBreakoutFilters,
-}) => {
+const DropdownFilters = () => {
   const { width } = useWindowSize();
-  const { columns } = useContext(DataTableContext);
+  const { columns, numBreakoutFilters } = useContext(DataTableContext);
 
   const [breakoutFilters, otherFilters] = useMemo(() => {
     if (!columns) {
@@ -18,8 +15,10 @@ const DropdownFilters = ({
     if (width < breakpoints.small.minWidth) {
       return [[], availableFilters];
     }
-    const boFilters = availableFilters.slice(0, numBreakoutFilters);
-    const dropdownFilters = availableFilters.slice(numBreakoutFilters);
+
+    const numberOfBreakoutFilters = numBreakoutFilters || 1;
+    const boFilters = availableFilters.slice(0, numberOfBreakoutFilters);
+    const dropdownFilters = availableFilters.slice(numberOfBreakoutFilters);
 
     return [boFilters, dropdownFilters];
   }, [columns, width, numBreakoutFilters]);
@@ -45,11 +44,6 @@ const DropdownFilters = ({
 
 DropdownFilters.defaultProps = {
   numBreakoutFilters: 1,
-};
-
-DropdownFilters.propTypes = {
-  /** Number between one and four filters that can be shown on the top row. */
-  numBreakoutFilters: PropTypes.oneOf([1, 2, 3, 4]),
 };
 
 export default DropdownFilters;
