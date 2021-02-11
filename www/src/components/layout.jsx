@@ -51,18 +51,18 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <Container className="d-lg-flex d-block">
+      <div className="px-3 d-lg-flex d-block">
 
         <div className="flex-shrink-0">
           <ResponsiveNavigation />
         </div>
 
-        <div className="py-5 px-3">
+        <div className="py-5 px-lg-5">
           <Container size="lg" style={{ marginLeft: '0' }}>
           {children}
           </Container>
         </div>
-      </Container>
+      </div>
     )}
   />
 );
