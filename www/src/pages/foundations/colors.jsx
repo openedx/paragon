@@ -50,7 +50,7 @@ const Swatch = ({ name, colorClassName, isUnused }) => (
           </div>
         );
       }}>
-      <div className={classNames('pgn-doc__swatch', colorClassName, { 'unused-level': isUnused })} />
+      <div className={classNames('p-3 mr-2 rounded', colorClassName, { 'unused-level': isUnused })} />
     </MeasuredItem>
   </div>
 );
