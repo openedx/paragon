@@ -23,14 +23,13 @@ create tables. It can be used as is, or its subcomponents can be used on their o
 ## TableContext
 The table context gets the current `react-table` instance of the table from the `DataTable` component and makes it available to any component within the provider,
 whether or not that component is a child of DataTable. It can store instances of multiple tables that are accessed using the table's name.
+In addition to the `react-table` instance, `itemCount`, `numBreakoutFilters`, and `bulkActions`, and any props that are not listed in the
+props table below are available to child components through the `DataTableContext`.
 
+How to use context in a custom component:
 ```jsx
 const instance = useContext(DataTableContext)
 ```
-
-## Props passed to children
-The DataTable will pass the `itemCount` and any extra props on to it's children. Component's outside the `DataTable` component will
-need to have access to the table name in order to access table data and methods.
 
 ## Frontend filtering and sorting
 For small tables (less than ~10,000 rows), filtering, sorting and pagination can be done
@@ -45,7 +44,6 @@ for more information.
     isFilterable
     isSortable
     defaultColumnValues={{ Filter: TextFilter }}
-    initialState={{ pageSize: 3}}
     itemCount={7}
     data={[
       {
@@ -129,7 +127,6 @@ for more information.
     <DataTable.TableFooter />
   </DataTable>
 ```
-
 
 ## Backend filtering and sorting
 
@@ -654,7 +651,7 @@ a responsive grid of cards.
   bulkActions={[
     {
       buttonText: 'Download CSV',
-      handleClick: (selectedRows) => console.log('Enrolling ', selectedRows),
+      handleClick: (selectedRows) => console.log('Downloading CSV ', selectedRows),
     },
   ]}
 >
@@ -662,6 +659,30 @@ a responsive grid of cards.
   <CardView CardComponent={MiyazakiCard} />
   <TableFooter />
 </DataTable>
+```
+
+### Sample Card component for use with CardView
+
+The `CardComponent` prop on `CardView` represents a table row, and will receive the row that `react-table`
+provides as props.
+
+```jsx
+const MiyazakiCard = ({ className, original  }) => {
+  const { title, director, release_date } = original;
+
+  return (
+    <Card className={className}>
+      <Card.Img variant="top" src="https://source.unsplash.com/360x200/?nature,flower" />
+      <Card.Body>
+        <Card.Title>{title}</Card.Title>
+        <dl>
+          <dt>Director</dt><dd>{director}</dd>
+          <dt>Release Date</dt><dd>{release_date}</dd>
+        </dl>
+      </Card.Body>
+    </Card>
+  );
+};
 ```
 
 <PropsTable {...props.data.dataTable} />

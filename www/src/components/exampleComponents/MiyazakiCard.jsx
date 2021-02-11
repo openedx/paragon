@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Card } from 'react-bootstrap';
 
 const MiyazakiCard = ({ className, original  }) => {
-  const { title, director, producer, release_date, rt_score } = original;
+  const { title, director, release_date } = original;
 
   return (
     <Card className={className}>
