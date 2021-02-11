@@ -1,0 +1,81 @@
+---
+title: 'Modal'
+type: 'component'
+status: 'Stable'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: |
+
+---
+
+import get from 'lodash/get';
+import SingleComponentStatus from '../../components/SingleComponentStatus';
+import PropsTable from '../../components/PropsTable';
+
+# Modal Building Blocks
+
+Generic components that handle accessibility requirements of modal objects.
+
+# ModalLayer
+
+```jsx live
+() => {
+  const [isOpen, open, close] = useToggle(false);
+
+  return (
+    <>
+      <ModalLayer isOpen={isOpen} close={close}>
+        <Container size="sm" className="my-5">
+          <div className="bg-white p-5">
+            Ive got some stuff
+            <Button variant="primary">First</Button>
+            <ModalCloseButton variant="outline-primary">Close Modal</ModalCloseButton>
+            <div style={{ height: '1000px', border: 'solid 2px gray' }}>
+              long content
+            </div>
+          </div>
+        </Container>
+      </ModalLayer>
+      <Button variant="outline-primary" onClick={open}>Enter Mode</Button>
+    </>
+  )
+}
+```
+
+# ModalPopup
+
+```jsx live
+() => {
+  const [isOpen, open, close] = useToggle(false);
+  const target = React.useRef(null);
+
+  return (
+    <>
+      <ModalPopup positionRef={target} isOpen={isOpen} close={close}>
+        <div className="bg-white p-2 rounded shadow">
+          Ive got some stuff
+          <Button variant="primary">First</Button>
+          <ModalCloseButton variant="outline-primary">Close Modal</ModalCloseButton>
+        </div>
+      </ModalPopup>
+      <Button ref={target} variant="outline-primary" onClick={open}>Enter Mode</Button>
+    </>
+  )
+}
+```
+
+
+
+<PropsTable {...props.data.modalLayerMetadata} />
+<PropsTable {...props.data.modalPopupMetadata} />
+
+export const query = graphql`
+  query {
+    modalLayerMetadata: componentMetadata(displayName: { eq: "ModalLayer" }) {
+      ...ComponentDocGenData
+    }
+    modalPopupMetadata: componentMetadata(displayName: { eq: "ModalPopup" }) {
+      ...ComponentDocGenData
+    }
+  }
+`
