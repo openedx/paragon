@@ -9,7 +9,7 @@ const ParNavLink = ({ children, ...props }) => (
 );
 
 const Navigation = () => (
-  <Nav variant="pills" defaultActiveKey="/home" className="flex-column align-items-stretch py-3 mr-xl-5">
+  <Nav variant="pills" defaultActiveKey="/home" className="flex-column align-items-stretch py-3 mr-3">
 
     <NavSectionTitle>Overview</NavSectionTitle>
 
@@ -55,6 +55,7 @@ const Navigation = () => (
     <ParNavLink to="/components/input-group">Input Group</ParNavLink>
     <ParNavLink to="/components/image">Image</ParNavLink>
     <ParNavLink to="/components/modal">Modal</ParNavLink>
+    <ParNavLink to="/components/modal-base">ModalBase</ParNavLink>
     <ParNavLink to="/components/mailtolink">MailtoLink</ParNavLink>
     <ParNavLink to="/components/navs">Navs</ParNavLink>
     <ParNavLink to="/components/navbar">Navbar</ParNavLink>
