@@ -4,7 +4,7 @@ $data-table-padding-x: 14px;
 $data-table-padding-y: 14px;
 $data-table-padding-small: 8px;
 $data-table-cell-padding: 8px 14px;
-$data-table-footer-position: flex-end;
+$data-table-footer-position: center;
 
 .pgn__data-table-wrapper {
   border: $data-table-border;
@@ -84,7 +84,7 @@ $data-table-footer-position: flex-end;
     justify-content: space-between;
 
   .pgn__data-table-status-left {
-    align-self: flex-end;
+    align-self: center;
   }
 }
 
@@ -122,4 +122,8 @@ $data-table-footer-position: flex-end;
   input .form-check-input {
     margin-top: .36rem;
   }
+}
+
+.pgn__data-table-card-view {
+  padding: 0 $data-table-padding-x
 }
