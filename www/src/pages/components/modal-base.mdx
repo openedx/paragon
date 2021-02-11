@@ -24,19 +24,32 @@ Generic components that handle accessibility requirements of modal objects.
 
   return (
     <>
+      <Button variant="outline-primary" onClick={open}>Open modal layer</Button>
+
       <ModalLayer isOpen={isOpen} close={close}>
-        <Container size="sm" className="my-5">
-          <div className="bg-white p-5">
-            Ive got some stuff
-            <Button variant="primary">First</Button>
-            <ModalCloseButton variant="outline-primary">Close Modal</ModalCloseButton>
-            <div style={{ height: '1000px', border: 'solid 2px gray' }}>
-              long content
-            </div>
-          </div>
-        </Container>
+        <div className="mw-sm p-5 bg-white mx-auto my-5">
+          <h1>I'm a dialog box</h1>
+          <p>
+            <Button variant="primary" className="mr-2">A button</Button>
+            <ModalCloseButton variant="outline-primary">Close modal</ModalCloseButton>
+          </p>
+          <p>
+            I'm baby palo santo ugh celiac fashion axe. La croix lo-fi venmo whatever. Beard man braid migas single-origin coffee forage ramps. Tumeric messenger bag bicycle rights wayfarers, try-hard cronut blue bottle health goth. Sriracha tumblr cardigan, cloud bread succulents tumeric copper mug marfa semiotics woke next level organic roof party +1 try-hard.
+          </p>
+          <p>
+            Cold-pressed bushwick kale chips cliche, raclette pour-over brooklyn godard tbh. Bitters distillery neutra leggings jean shorts street art tbh. Lyft pinterest venmo, food truck small batch try-hard banh mi sriracha microdosing taiyaki trust fund literally stumptown prism. Pok pok lo-fi fam you probably haven't heard of them, salvia etsy YOLO 3 wolf moon fixie tousled raw denim retro farm-to-table hashtag. Godard waistcoat typewriter, thundercats cold-pressed pabst taxidermy. Farm-to-table taxidermy artisan everyday carry.
+          </p>
+          <p>
+            Edison bulb kale chips VHS pug pabst vaporware. Hammock ennui vape farm-to-table vegan literally disrupt microdosing ugh helvetica. Bespoke tbh lomo blue bottle. Next level try-hard readymade mixtape. Cliche cornhole microdosing whatever, vegan fingerstache paleo. Before they sold out YOLO enamel pin, celiac retro flexitarian roof party normcore air plant.
+          </p>
+          <p>
+            Drinking vinegar literally four dollar toast asymmetrical. Godard hella seitan, gluten-free selvage readymade viral tumblr quinoa roof party. Neutra flannel pop-up craft beer live-edge pour-over. Humblebrag pinterest kale chips bicycle rights etsy 8-bit. Hammock brunch gentrify, hot chicken actually chillwave cornhole gastropub. Bushwick bicycle rights typewriter man bun coloring book. Plaid bespoke you probably haven't heard of them adaptogen fam copper mug cold-pressed organic cred retro salvia chicharrones direct trade.
+          </p>
+          <p>
+            Fanny pack yuccie lumbersexual raclette biodiesel letterpress plaid hoodie cornhole ugh listicle. Distillery portland put a bird on it tacos whatever crucifix. Polaroid ethical jean shorts swag truffaut, intelligentsia kitsch meggings readymade tattooed chicharrones waistcoat artisan heirloom. Kickstarter post-ironic direct trade, celiac fixie activated charcoal lomo hella quinoa twee cardigan tousled. VHS woke seitan heirloom, prism roof party YOLO pinterest pork belly iPhone dreamcatcher tattooed succulents helvetica man braid. Locavore subway tile shaman ugh pinterest vaporware quinoa wolf crucifix shoreditch green juice pok pok post-ironic. Kinfolk plaid disrupt biodiesel leggings PBR&B glossier sartorial pop-up actually.
+          </p>
+        </div>
       </ModalLayer>
-      <Button variant="outline-primary" onClick={open}>Enter Mode</Button>
     </>
   )
 }
@@ -51,14 +64,15 @@ Generic components that handle accessibility requirements of modal objects.
 
   return (
     <>
+      <Button ref={target} variant="outline-primary" onClick={open}>Open modal popup</Button>
       <ModalPopup positionRef={target} isOpen={isOpen} close={close}>
-        <div className="bg-white p-2 rounded shadow">
-          Ive got some stuff
-          <Button variant="primary">First</Button>
-          <ModalCloseButton variant="outline-primary">Close Modal</ModalCloseButton>
+        <div className="bg-white p-3 rounded shadow">
+          <p>This could be a menu or tray.</p>
+
+          <Button variant="primary" className="mr-2">Action</Button>
+          <ModalCloseButton variant="outline-primary">Close</ModalCloseButton>
         </div>
       </ModalPopup>
-      <Button ref={target} variant="outline-primary" onClick={open}>Enter Mode</Button>
     </>
   )
 }
@@ -68,14 +82,21 @@ Generic components that handle accessibility requirements of modal objects.
 
 <PropsTable {...props.data.modalLayerMetadata} />
 <PropsTable {...props.data.modalPopupMetadata} />
+<PropsTable {...props.data.modalCloseButtonMetadata} />
+
+<hr className="my-5" />
+
+# Related components
+
+<PropsTable {...props.data.popperElementMetadata} />
+<PropsTable {...props.data.portalMetadata} />
 
 export const query = graphql`
   query {
-    modalLayerMetadata: componentMetadata(displayName: { eq: "ModalLayer" }) {
-      ...ComponentDocGenData
-    }
-    modalPopupMetadata: componentMetadata(displayName: { eq: "ModalPopup" }) {
-      ...ComponentDocGenData
-    }
+    modalLayerMetadata: componentMetadata(displayName: { eq: "ModalLayer" }) { ...ComponentDocGenData}
+    modalPopupMetadata: componentMetadata(displayName: { eq: "ModalPopup" }) { ...ComponentDocGenData}
+    modalCloseButtonMetadata: componentMetadata(displayName: { eq: "ModalCloseButton" }) { ...ComponentDocGenData}
+    popperElementMetadata: componentMetadata(displayName: { eq: "PopperElement" }) { ...ComponentDocGenData}
+    portalMetadata: componentMetadata(displayName: { eq: "Portal" }) { ...ComponentDocGenData}
   }
 `
