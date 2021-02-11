@@ -98,7 +98,7 @@ export { default as TableCell } from './DataTable/TableCell';
 export { default as TableFilters } from './DataTable/TableFilters';
 export { default as TableHeader } from './DataTable/TableHeaderRow';
 export { default as TableRow } from './DataTable/TableRow';
-export { default as DataTableContext } from './DataTable/TableContext';
+export { default as DataTableContext } from './DataTable/DataTableContext';
 export { default as BulkActions } from './DataTable/BulkActions';
 export { default as TableControlBar } from './DataTable/TableControlBar';
 export { default as TableFooter } from './DataTable/TableFooter';

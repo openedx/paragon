@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 
 import FilterStatus from '../FilterStatus';
 import { Button } from '../..';
-import DataTableContext from '../TableContext';
+import DataTableContext from '../DataTableContext';
 
 const filterNames = ['color', 'breed', 'discipline'];
 const filters = filterNames.map((name) => ({ id: name }));

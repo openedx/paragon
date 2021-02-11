@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import DataTableContext from './TableContext';
+import DataTableContext from './DataTableContext';
 
 const RowStatus = ({ className, itemCount }) => {
   const instance = useContext(DataTableContext);

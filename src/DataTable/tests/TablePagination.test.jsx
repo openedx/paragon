@@ -4,7 +4,7 @@ import { mount } from 'enzyme';
 import TablePagination from '../TablePagination';
 import SelectionState from '../SelectionStatus';
 import { Button } from '../..';
-import DataTableContext from '../TableContext';
+import DataTableContext from '../DataTableContext';
 
 const instance = {
   previousPage: () => {},

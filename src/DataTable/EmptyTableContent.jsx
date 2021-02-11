@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import DataTableContext from './TableContext';
+import DataTableContext from './DataTableContext';
 
 const EmptyTable = ({ content, className }) => {
   const { rows } = useContext(DataTableContext);

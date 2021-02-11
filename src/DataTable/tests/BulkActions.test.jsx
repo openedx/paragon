@@ -5,7 +5,7 @@ import BulkActions, { DROPDOWN_BUTTON_TEXT, SMALL_SCREEN_DROPDOWN_BUTTON_TEXT } 
 import {
   useWindowSize, Dropdown, Button, Icon,
 } from '../..';
-import DataTableContext from '../TableContext';
+import DataTableContext from '../DataTableContext';
 
 jest.mock('../../hooks/useWindowSize');
 useWindowSize.mockReturnValue({ width: 800 });

@@ -4,7 +4,7 @@ import { act } from 'react-dom/test-utils';
 
 import DropdownFilters from '../DropdownFilters';
 import { useWindowSize, DropdownButton } from '../..';
-import DataTableContext from '../TableContext';
+import DataTableContext from '../DataTableContext';
 
 jest.mock('../../hooks/useWindowSize');
 

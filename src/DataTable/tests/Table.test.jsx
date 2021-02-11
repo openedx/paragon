@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import TableHeaderRow from '../TableHeaderRow';
 import Table from '../Table';
-import DataTableContext from '../TableContext';
+import DataTableContext from '../DataTableContext';
 
 const header1Name = 'Name';
 const header2Name = 'DOB';

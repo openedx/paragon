@@ -20,7 +20,7 @@ import TableHeaderCell from './TableHeaderCell';
 import TableCell from './TableCell';
 import TableHeaderRow from './TableHeaderRow';
 import TablePagination from './TablePagination';
-import DataTableContext from './TableContext';
+import DataTableContext from './DataTableContext';
 
 function DataTable({
   columns, data, defaultColumnValues, additionalColumns, isSelectable,

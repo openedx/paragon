@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import SelectionStatus, { SELECT_ALL_TEST_ID, CLEAR_SELECTION_TEST_ID } from '../SelectionStatus';
-import DataTableContext from '../TableContext';
+import DataTableContext from '../DataTableContext';
 
 const instance = {
   selectedFlatRows: [1, 2, 3, 4],

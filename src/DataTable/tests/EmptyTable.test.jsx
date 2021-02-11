@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import EmptyTableContent from '../EmptyTableContent';
-import DataTableContext from '../TableContext';
+import DataTableContext from '../DataTableContext';
 
 const props = {
   className: 'foo',

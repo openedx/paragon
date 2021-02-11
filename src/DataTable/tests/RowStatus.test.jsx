@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import RowStatus from '../RowStatus';
-import DataTableContext from '../TableContext';
+import DataTableContext from '../DataTableContext';
 
 const statusProps = {
   itemCount: 30,

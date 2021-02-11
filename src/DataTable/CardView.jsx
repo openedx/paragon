@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { useRows } from './hooks';
 import { CardGrid } from '..';
 
@@ -23,7 +24,7 @@ const CardView = ({
 
   return (
     <CardGrid
-      className={className}
+      className={classNames('pgn__data-table-card-view', className)}
       columnSizes={columnSizes}
     >
       {renderCards()}

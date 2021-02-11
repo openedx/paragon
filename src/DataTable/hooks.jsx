@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import { useContext } from 'react';
-import DataTableContext from './TableContext';
+import DataTableContext from './DataTableContext';
 
 export const useRows = () => {
   const {

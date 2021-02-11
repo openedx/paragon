@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import BulkActions from './BulkActions';
 import SmartStatus from './SmartStatus';
 import DropdownFilters from './DropdownFilters';
-import DataTableContext from './TableContext';
+import DataTableContext from './DataTableContext';
 
 // handles layout for filters, status, and bulk actions
 const TableControlBar = ({

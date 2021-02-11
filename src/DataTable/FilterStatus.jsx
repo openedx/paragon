@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from '..';
-import DataTableContext from './TableContext';
+import DataTableContext from './DataTableContext';
 
 const FilterStatus = ({
   className, variant, size, clearSelectionText, buttonClassName,

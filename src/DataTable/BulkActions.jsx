@@ -5,7 +5,7 @@ import { MoreVert } from '../../icons';
 import {
   Button, Dropdown, useWindowSize, Icon, breakpoints,
 } from '..';
-import DataTableContext from './TableContext';
+import DataTableContext from './DataTableContext';
 
 export const DROPDOWN_BUTTON_TEXT = 'More actions';
 export const SMALL_SCREEN_DROPDOWN_BUTTON_TEXT = 'Actions';

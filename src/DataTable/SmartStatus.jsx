@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import SelectionStatus from './SelectionStatus';
 import RowStatus from './RowStatus';
 import FilterStatus from './FilterStatus';
-import DataTableContext from './TableContext';
+import DataTableContext from './DataTableContext';
 
 const SMART_STATUS_CLASS = 'pgn__smart-status';
 

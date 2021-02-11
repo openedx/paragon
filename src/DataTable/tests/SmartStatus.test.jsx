@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 
 import SmartStatus from '../SmartStatus';
 import SelectionState from '../SelectionStatus';
-import DataTableContext from '../TableContext';
+import DataTableContext from '../DataTableContext';
 
 const filters = [{ id: 'name' }, { id: 'age' }];
 const filterNames = ['name', 'age'];

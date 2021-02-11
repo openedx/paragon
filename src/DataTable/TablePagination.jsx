@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Button, ButtonGroup } from '..';
-import DataTableContext from './TableContext';
+import DataTableContext from './DataTableContext';
 
 const NEXT_BUTTON_TEXT = 'Next';
 const PREVOUS_BUTTON_TEXT = 'Previous';
