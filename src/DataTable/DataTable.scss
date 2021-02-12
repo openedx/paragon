@@ -24,7 +24,6 @@ $data-table-footer-position: center !default;
 
 .pgn__data-table {
   width: 100%;
-  border-bottom: $data-table-border;
 
   &.is-striped tr:nth-child(even) {
     background-color: $light-200;
@@ -62,7 +61,7 @@ $data-table-footer-position: center !default;
 
 
 .pgn__data-table-status-bar {
-  padding: $data-table-padding-y $data-table-padding-x 0 $data-table-padding-x;
+  padding: $data-table-padding-y $data-table-padding-x;
 }
 
 .pgn__data-table-filters {
@@ -80,7 +79,6 @@ $data-table-footer-position: center !default;
 
 .pgn__data-table-status {
     display: flex;
-    padding: 0px 0px $data-table-padding-small 0px;
     justify-content: space-between;
 
   .pgn__data-table-status-left {
