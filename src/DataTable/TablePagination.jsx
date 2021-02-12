@@ -27,10 +27,10 @@ const TablePagination = () => {
         </strong>{' '}
       </div>
       <ButtonGroup>
-        <Button variant="outline-primary" onClick={() => previousPage()} disabled={!canPreviousPage}>
+        <Button variant="outline-primary" onClick={previousPage} disabled={!canPreviousPage}>
           {PREVOUS_BUTTON_TEXT}
         </Button>
-        <Button variant="outline-primary" onClick={() => nextPage()} disabled={!canNextPage}>
+        <Button variant="outline-primary" onClick={nextPage} disabled={!canNextPage}>
           {NEXT_BUTTON_TEXT}
         </Button>
       </ButtonGroup>

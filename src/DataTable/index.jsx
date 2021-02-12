@@ -83,16 +83,14 @@ function DataTable({
   return (
     <DataTableContext.Provider value={enhancedInstance}>
       <div className="pgn__data-table-wrapper">
-        {children}
-        {!children
-          && (
+        {children ? children : (
           <>
             <TableControlBar />
             <Table />
             <EmptyTableComponent />
             <TableFooter />
           </>
-          )}
+        )}
       </div>
     </DataTableContext.Provider>
   );
