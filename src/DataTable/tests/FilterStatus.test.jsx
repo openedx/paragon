@@ -13,7 +13,7 @@ const filterProps = {
   variant: 'variant',
   size: 'lorge',
   onClick: () => {},
-  clearSelectionText: 'CLEAR ME',
+  clearFiltersText: 'CLEAR ME',
   className: 'filterClass',
 };
 
@@ -32,7 +32,7 @@ describe('<FilterStatus />', () => {
   });
   it('sets the button text', () => {
     const wrapper = mount(<FilterStatusWrapper value={instance} props={filterProps} />);
-    expect(wrapper.find(Button).text()).toEqual(filterProps.clearSelectionText);
+    expect(wrapper.find(Button).text()).toEqual(filterProps.clearFiltersText);
   });
   it('clears the selection on click', () => {
     const clearSpy = jest.fn();
