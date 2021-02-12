@@ -1,25 +1,17 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { FocusOn } from 'react-focus-on';
 import Portal from './Portal';
 import PopperElement from './PopperElement';
-import ModalContext from './ModalContext';
-
-const useMemoizedValues = ({ close, isOpen, isBlocking }) => useMemo(() => ({
-  close,
-  isOpen,
-  isBlocking,
-}), [close, isOpen, isBlocking]);
+import { ModalContextProvider } from './ModalContext';
 
 const ModalPopup = ({
   children, close, isOpen, positionRef, isBlocking, withPortal, placement, ...popperProps
 }) => {
   const RootComponent = withPortal ? Portal : React.Fragment;
 
-  const modalContextValue = useMemoizedValues({ close, isOpen, isBlocking });
-
   return (
-    <ModalContext.Provider value={modalContextValue}>
+    <ModalContextProvider close={close} isOpen={isOpen} isBlocking={isBlocking}>
       <RootComponent>
         <PopperElement target={positionRef} placement={placement} {...popperProps}>
           <FocusOn
@@ -36,7 +28,7 @@ const ModalPopup = ({
           </FocusOn>
         </PopperElement>
       </RootComponent>
-    </ModalContext.Provider>
+    </ModalContextProvider>
   );
 };
 

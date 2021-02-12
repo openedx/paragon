@@ -3,11 +3,11 @@
 /*  TODO: The first of these two disabled linters is okay.
 Focus lock is handling the keyboard for us. The second I'm not sure */
 
-import React, { useMemo, useContext } from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { FocusOn } from 'react-focus-on';
 import Portal from './Portal';
-import ModalContext from './ModalContext';
+import ModalContext, { ModalContextProvider } from './ModalContext';
 
 const overlayStyles = {
   zIndex: 3050, // $zindex-modal: 1050 !default;
@@ -18,12 +18,6 @@ const overlayStyles = {
   width: '100vw',
   height: '100vh',
 };
-
-const useMemoizedValues = ({ close, isOpen, isBlocking }) => useMemo(() => ({
-  close,
-  isOpen,
-  isBlocking,
-}), [close, isOpen, isBlocking]);
 
 const ModalBackdrop = () => {
   const { close, isBlocking } = useContext(ModalContext);
@@ -54,10 +48,8 @@ const ModalLayer = ({
     return null;
   }
 
-  const modalContextValue = useMemoizedValues({ close, isOpen, isBlocking });
-
   return (
-    <ModalContext.Provider value={modalContextValue}>
+    <ModalContextProvider close={close} isOpen={isOpen} isBlocking={isBlocking}>
       <Portal>
         <FocusOn
           scrollLock
@@ -73,7 +65,7 @@ const ModalLayer = ({
           </div>
         </FocusOn>
       </Portal>
-    </ModalContext.Provider>
+    </ModalContextProvider>
   );
 };
 
