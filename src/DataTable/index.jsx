@@ -7,7 +7,7 @@ import getVisibleColumns from './utils/getVisibleColumns';
 import { requiredWhen } from './utils/propTypesUtils';
 import getTableArgs from './utils/getTableArgs';
 import TableControlBar from './TableControlBar';
-import EmptyTableContent from './EmptyTableContent';
+import EmptyTableContent from './EmptyTable';
 import TableFooter from './TableFooter';
 import BulkActions from './BulkActions';
 import DropdownFilters from './DropdownFilters';
@@ -20,15 +20,18 @@ import TableHeaderCell from './TableHeaderCell';
 import TableCell from './TableCell';
 import TableHeaderRow from './TableHeaderRow';
 import TablePagination from './TablePagination';
+import DataTableContext from './DataTableContext';
 
 function DataTable({
-  columns, data, bulkActions, defaultColumnValues, additionalColumns, isSelectable,
+  columns, data, defaultColumnValues, additionalColumns, isSelectable,
   isPaginated, manualPagination, pageCount, itemCount,
   isFilterable, manualFilters, fetchData, initialState,
   isSortable, manualSortBy,
+  bulkActions, numBreakoutFilters,
   initialTableOptions,
   EmptyTableComponent,
-  numBreakoutFilters,
+  children,
+  ...props
 }) {
   const defaultColumn = React.useMemo(
     () => (defaultColumnValues),
@@ -69,64 +72,32 @@ function DataTable({
     // Stringifying the data gives a quick way of checking deep equality
   }, [fetchData, JSON.stringify(instance.state)]);
 
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = instance;
-
-  const filterNames = instance.state.filters ? instance.state.filters.map((filter) => filter.id) : [];
-  const resetAllFilters = instance.setAllFilters ? () => instance.setAllFilters([]) : null;
-  const pageSize = instance.page ? instance.page.length : rows.length;
+  const enhancedInstance = useMemo(() => ({
+    ...instance,
+    itemCount,
+    numBreakoutFilters,
+    bulkActions,
+    ...props,
+  }), [instance, JSON.stringify(instance.state), itemCount, bulkActions, numBreakoutFilters, JSON.stringify(props)]);
 
   return (
-    <div className="pgn__data-table-wrapper">
-      <TableControlBar
-        isSelectable={isSelectable}
-        selectedFlatRows={instance.selectedFlatRows}
-        toggleAllRowsSelected={instance.toggleAllRowsSelected}
-        isFilterable={isFilterable}
-        filterNames={filterNames}
-        pageSize={pageSize}
-        itemCount={itemCount}
-        bulkActions={bulkActions}
-        columns={instance.columns}
-        rows={instance.flatRows}
-        resetAllFilters={resetAllFilters}
-        numBreakoutFilters={numBreakoutFilters}
-      />
-      {rows.length > 0 && (
-        <Table
-          getTableProps={getTableProps}
-          getTableBodyProps={getTableBodyProps}
-          headerGroups={headerGroups}
-          /* the page contains only the rows in it, as opposed to all rows.
-            it is only available when the table is paginated */
-          rows={instance.page ? instance.page : rows}
-          prepareRow={prepareRow}
-        />
-      )}
-      {rows.length <= 0 && <EmptyTableComponent />}
-      <TableFooter
-        itemCount={itemCount}
-        pageSize={pageSize}
-        isPaginated={isPaginated}
-        previousPage={instance.previousPage}
-        nextPage={instance.nextPage}
-        canNextPage={instance.canNextPage}
-        canPreviousPage={instance.canPreviousPage}
-        pageIndex={instance.state.pageIndex}
-        pageCount={instance.pageCount}
-      />
-    </div>
+    <DataTableContext.Provider value={enhancedInstance}>
+      <div className="pgn__data-table-wrapper">
+        {children || (
+          <>
+            <TableControlBar />
+            <Table />
+            <EmptyTableComponent />
+            <TableFooter />
+          </>
+        )}
+      </div>
+    </DataTableContext.Provider>
   );
 }
 
 DataTable.defaultProps = {
   additionalColumns: [],
-  bulkActions: [],
   defaultColumnValues: {},
   isFilterable: false,
   isPaginated: false,
@@ -139,6 +110,8 @@ DataTable.defaultProps = {
   initialState: {},
   initialTableOptions: {},
   EmptyTableComponent: EmptyTableContent,
+  children: null,
+  bulkActions: [],
   numBreakoutFilters: 1,
 };
 
@@ -151,7 +124,7 @@ DataTable.propTypes = {
     accessor: PropTypes.string.isRequired,
   })).isRequired,
   /** Data to be displayed in the table */
-  data: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  data: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   /** table rows can be selected */
   isSelectable: PropTypes.bool,
   /** Table columns can be sorted */
@@ -164,18 +137,11 @@ DataTable.propTypes = {
   manualPagination: PropTypes.bool,
   // eslint-disable-next-line react/require-default-props
   pageCount: requiredWhen(PropTypes.number, 'manualPagination'),
-  itemCount: PropTypes.number.isRequired,
   /** Table rows can be filtered, using a default filter in the default column values, or in the column definition */
   isFilterable: PropTypes.bool,
   /** Indicates that filtering will be done via a backend API. A fetchData function must be provided */
   manualFilters: PropTypes.bool,
-  /** Actions to be performed on the table. isSelectable must be true to use bulk actions */
-  bulkActions: PropTypes.arrayOf(PropTypes.shape({
-    /** Text displayed to the user for each action */
-    buttonText: PropTypes.string.isRequired,
-    /** Click handler for the action; it will be passed the selected rows */
-    handleClick: PropTypes.func.isRequired,
-  })),
+
   /** defaults that will be set on each column. Will be overridden by individual column values */
   defaultColumnValues: PropTypes.shape({
     /** A default filter component for the column */
@@ -202,13 +168,28 @@ DataTable.propTypes = {
   }),
   /** Table options passed to react-table's useTable hook. Will override some options passed in to DataTable, such
      as: data, columns, defaultColumn, manualFilters, manualPagination, manualSortBy, and initialState */
-  initialTableOptions: PropTypes.shape(),
+  initialTableOptions: PropTypes.shape({}),
+  /** Total number of items */
+  itemCount: PropTypes.number.isRequired,
+  /** Actions to be performed on the table. */
+  bulkActions: PropTypes.arrayOf(PropTypes.shape({
+    /** Bulk action button text */
+    buttonText: PropTypes.string.isRequired,
+    /** handleClick will be passed the selected rows */
+    handleClick: PropTypes.func.isRequired,
+    /** classnames for button class */
+    className: PropTypes.string,
+    /** optional button variant; only relevant for the first two buttons */
+    variant: PropTypes.string,
+    /** disables button */
+    disabled: PropTypes.disabled,
+  })),
+  /** Number between one and four filters that can be shown on the top row. */
+  numBreakoutFilters: PropTypes.oneOf([1, 2, 3, 4]),
   /** Component to be displayed when the table is empty */
   EmptyTableComponent: PropTypes.func,
-  /** Number between one and four filters that can be shown on the top row on large screens. On small screens
-   * all filters will be placed in the dropdown.
-  */
-  numBreakoutFilters: PropTypes.oneOf([1, 2, 3, 4]),
+  /** If children are not provided a table with control bar and footer will be rendered */
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
 
 DataTable.BulkActions = BulkActions;
