@@ -6,6 +6,7 @@ class Portal extends React.Component {
   constructor(props) {
     super(props);
     this.rootName = 'paragon-portal-root';
+    // istanbul ignore if
     if (typeof document === 'undefined') {
       this.rootElement = null;
     } else if (document.getElementById(this.rootName)) {
@@ -18,12 +19,14 @@ class Portal extends React.Component {
   }
 
   render() {
+    // istanbul ignore else
     if (this.rootElement) {
       return ReactDOM.createPortal(
         this.props.children,
         this.rootElement,
       );
     }
+
     return null;
   }
 }
