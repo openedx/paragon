@@ -3,25 +3,23 @@ import PropTypes from 'prop-types';
 import { Button } from '..';
 import ModalContext from './ModalContext';
 
-const ModalCloseButton = React.forwardRef(({
-  as, children, onClick, ...props
-}, ref) => {
+const ModalCloseButton = React.forwardRef(({ as, children, ...props }, ref) => {
   const { close } = useContext(ModalContext);
-
-  return React.createElement(
-    as,
-    {
-      ...props,
-      onClick: () => {
-        close();
-        if (onClick) {
-          onClick();
-        }
-      },
-      ref,
+  const type = as;
+  const componentProps = {
+    ...props,
+    onClick: () => {
+      close();
+      if (props.onClick) {
+        props.onClick();
+      }
     },
-    children,
-  );
+    ref,
+  };
+
+  // Use the non-jsx syntax to create this element so we can more
+  // finely control the component type (defaulted to Button via defaultProps)
+  return React.createElement(type, componentProps, children);
 });
 
 ModalCloseButton.propTypes = {
