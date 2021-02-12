@@ -661,29 +661,7 @@ a responsive grid of cards.
 </DataTable>
 ```
 
-### Sample Card component for use with CardView
 
-The `CardComponent` prop on `CardView` represents a table row, and will receive the row that `react-table`
-provides as props.
-
-```jsx
-const MiyazakiCard = ({ className, original  }) => {
-  const { title, director, release_date } = original;
-
-  return (
-    <Card className={className}>
-      <Card.Img variant="top" src="https://source.unsplash.com/360x200/?nature,flower" />
-      <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <dl>
-          <dt>Director</dt><dd>{director}</dd>
-          <dt>Release Date</dt><dd>{release_date}</dd>
-        </dl>
-      </Card.Body>
-    </Card>
-  );
-};
-```
 
 <PropsTable {...props.data.dataTable} />
 <PropsTable {...props.data.bulkActions} />

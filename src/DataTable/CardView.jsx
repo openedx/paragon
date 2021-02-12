@@ -42,8 +42,19 @@ CardView.defaultProps = {
 };
 
 CardView.propTypes = {
+  /** The class name for the CardGrid component */
   className: PropTypes.string,
-  columnSizes: PropTypes.shape(),
+  /**
+   * An object containing the desired column size at each breakpoint, following a similar
+   * props API as ``react-bootstrap/Col``
+   */
+  columnSizes: PropTypes.shape({
+    xs: PropTypes.number,
+    sm: PropTypes.number,
+    md: PropTypes.number,
+    lg: PropTypes.number,
+    xl: PropTypes.number,
+  }),
   /** Your card component must be individualized to your table.
    * It will be called with props from the "row" of data it will display */
   CardComponent: PropTypes.func.isRequired,
