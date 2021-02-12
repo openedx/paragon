@@ -357,7 +357,24 @@ any component that a user requires. It will receive the row as props.
   <DataTable
     isSelectable
     itemCount={7}
-
+    bulkActions={[
+        {
+          buttonText: 'Enroll',
+          handleClick: (selectedRows) => console.log('Enrolling ', selectedRows),
+        },
+        {
+          buttonText: 'Assign',
+          handleClick: (selectedRows) => console.log('Assigning ', selectedRows),
+        },
+        {
+          buttonText: 'Extra action 1',
+          handleClick: (selectedRows) => console.log('Extra action 1', selectedRows),
+        },
+        {
+          buttonText: 'Extra action 2',
+          handleClick: (selectedRows) => console.log('Extra action 2 ', selectedRows),
+        },
+      ]}
     additionalColumns={[
       {
         id: 'action',
@@ -420,33 +437,10 @@ any component that a user requires. It will receive the row as props.
       },
     ]}
   >
-    <DataTable.TableControlBar
-      itemCount={7}
-      bulkActions={[
-        {
-          buttonText: 'Enroll',
-          handleClick: (selectedRows) => console.log('Enrolling ', selectedRows),
-        },
-        {
-          buttonText: 'Assign',
-          handleClick: (selectedRows) => console.log('Assigning ', selectedRows),
-        },
-        {
-          buttonText: 'Extra action 1',
-          handleClick: (selectedRows) => console.log('Extra action 1', selectedRows),
-        },
-        {
-          buttonText: 'Extra action 2',
-          handleClick: (selectedRows) => console.log('Extra action 2 ', selectedRows),
-        },
-      ]}
-    />
+    <DataTable.TableControlBar />
     <DataTable.Table />
     <DataTable.EmptyTable content="No results found" />
-    <DataTable.TableFooter
-      itemCount={7}
-      isPaginated
-    />
+    <DataTable.TableFooter />
   </DataTable>
 ```
 
