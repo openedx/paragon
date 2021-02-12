@@ -16,7 +16,9 @@ import PropsTable from '../../components/PropsTable';
 
 Generic components that handle accessibility requirements of modal objects.
 
-# ModalLayer
+## ModalLayer
+
+The modal layer provides a focus locked and scrollable overlay layer for a dialog. The child of a ModalLayer must have the role "dialog" and specify either an `aria-label` or `aria-labelledby` attribute.
 
 ```jsx live
 () => {
@@ -27,7 +29,7 @@ Generic components that handle accessibility requirements of modal objects.
       <Button variant="outline-primary" onClick={open}>Open modal layer</Button>
 
       <ModalLayer isOpen={isOpen} close={close}>
-        <div className="mw-sm p-5 bg-white mx-auto my-5">
+        <div role="dialog" aria-label="My dialog" className="mw-sm p-5 bg-white mx-auto my-5">
           <h1>I'm a dialog box</h1>
           <p>
             <Button variant="primary" className="mr-2">A button</Button>
@@ -65,7 +67,7 @@ Generic components that handle accessibility requirements of modal objects.
       <Button variant="outline-primary" onClick={open}>Open small modal layer</Button>
 
       <ModalLayer isOpen={isOpen} close={close}>
-        <div className="mw-sm p-5 bg-white mx-auto my-5">
+        <div role="dialog" aria-label="My dialog" className="mw-sm p-5 bg-white mx-auto my-5">
           <h1>I'm a dialog box</h1>
           <p>
             <Button variant="primary" className="mr-2">A button</Button>
@@ -81,7 +83,7 @@ Generic components that handle accessibility requirements of modal objects.
 }
 ```
 
-# ModalPopup
+## ModalPopup
 
 ```jsx live
 () => {
@@ -112,7 +114,7 @@ Generic components that handle accessibility requirements of modal objects.
 
 <hr className="my-5" />
 
-# Related components
+## Related components
 
 <PropsTable {...props.data.popperElementMetadata} />
 <PropsTable {...props.data.portalMetadata} />
