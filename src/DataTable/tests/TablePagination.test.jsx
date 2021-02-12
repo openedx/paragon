@@ -22,7 +22,7 @@ const PaginationWrapper = ({ value }) => (
 describe('<TablePagination />', () => {
   it('returns null if pagination is not possible', () => {
     const wrapper = mount(<PaginationWrapper value={{}} />);
-    expect(wrapper).toEqual({});
+    expect(wrapper.text()).toEqual('');
   });
   it('Shows the page count', () => {
     const wrapper = mount(<PaginationWrapper value={instance} />);

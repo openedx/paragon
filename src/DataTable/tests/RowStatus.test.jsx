@@ -19,7 +19,7 @@ const RowStatusWrapper = ({ value = instance, props = statusProps }) => (
 describe('<RowStatus />', () => {
   it('returns null if there is no pageSize', () => {
     const wrapper = mount(<RowStatusWrapper />);
-    expect(wrapper).toEqual({});
+    expect(wrapper.text()).toEqual('');
   });
   it('displays the row status with pagination', () => {
     const pageSize = 10;

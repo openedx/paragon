@@ -52,6 +52,6 @@ describe('<FilterStatus />', () => {
   });
   it('returns null if setAllFilters is not present (table is not filterable)', () => {
     const wrapper = mount(<FilterStatusWrapper value={{}} props={filterProps} />);
-    expect(wrapper).toEqual({});
+    expect(wrapper.text()).toEqual('');
   });
 });

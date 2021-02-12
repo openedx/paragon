@@ -24,10 +24,10 @@ describe('<EmptyTableContent />', () => {
   });
   it('does not display if there are rows', () => {
     const nonEmptyWrapper = mount(
-      <DataTableContext.Provider value={{ rows: [] }}>
+      <DataTableContext.Provider value={{ rows: Array(1) }}>
         <EmptyTableContent {...props} />
       </DataTableContext.Provider>,
     );
-    expect(nonEmptyWrapper).toEqual({});
+    expect(nonEmptyWrapper.text()).toEqual('');
   });
 });

@@ -98,6 +98,6 @@ describe('DataTable <Table />', () => {
   });
   it('returns null if the instance does not exist', () => {
     const wrapper = mount(<TableWrapper value={{}} />);
-    expect(wrapper).toEqual({});
+    expect(wrapper.text()).toEqual('');
   });
 });
