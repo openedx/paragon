@@ -84,8 +84,10 @@ const Navigation = () => (
     <NavSectionTitle>Tables</NavSectionTitle>
 
     <ParNavLink to="/table/datatable">DataTable</ParNavLink>
+    <ParNavLink to="/table/tablecontrolbar">TableControlBar</ParNavLink>
+    <ParNavLink to="/table/dataviews">Data views</ParNavLink>
+    <ParNavLink to="/table/tablefooter">TableFooter</ParNavLink>
     <ParNavLink to="/table/tablefilters">Table Filters</ParNavLink>
-
 
     <NavSectionTitle>Deprecated</NavSectionTitle>
 

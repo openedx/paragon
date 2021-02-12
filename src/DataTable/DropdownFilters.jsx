@@ -1,27 +1,31 @@
-import React, { useMemo } from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext, useMemo } from 'react';
 import { DropdownButton, useWindowSize, breakpoints } from '..';
-import { requiredWhen } from './utils/propTypesUtils';
+import DataTableContext from './DataTableContext';
 
 /** The first filter will be as an input, additional filters will be available in a dropdown.  */
-const DropdownFilters = ({
-  columns, numBreakoutFilters,
-}) => {
+const DropdownFilters = () => {
   const { width } = useWindowSize();
+  const { columns, numBreakoutFilters } = useContext(DataTableContext);
+
   const [breakoutFilters, otherFilters] = useMemo(() => {
+    if (!columns) {
+      return [[], []];
+    }
     const availableFilters = columns.filter((column) => column.canFilter);
     if (width < breakpoints.small.minWidth) {
-      return [null, availableFilters];
+      return [[], availableFilters];
     }
-    const boFilters = availableFilters.slice(0, numBreakoutFilters);
-    const dropdownFilters = availableFilters.slice(numBreakoutFilters);
+
+    const numberOfBreakoutFilters = numBreakoutFilters || 1;
+    const boFilters = availableFilters.slice(0, numberOfBreakoutFilters);
+    const dropdownFilters = availableFilters.slice(numberOfBreakoutFilters);
 
     return [boFilters, dropdownFilters];
   }, [columns, width, numBreakoutFilters]);
 
   return (
     <div className="pgn__data-table-filters">
-      {breakoutFilters && breakoutFilters.map((column) => (<div className="mr-2" key={column.Header}>{column.render('Filter')}</div>))}
+      {breakoutFilters.length > 0 && breakoutFilters.map((column) => (<div className="mr-2" key={column.Header}>{column.render('Filter')}</div>))}
       {otherFilters.length > 0 && (
       <DropdownButton variant="outline-primary" id="table-filters-dropdown" title="Filters">
         {otherFilters.map(column => (
@@ -40,21 +44,6 @@ const DropdownFilters = ({
 
 DropdownFilters.defaultProps = {
   numBreakoutFilters: 1,
-};
-
-DropdownFilters.propTypes = {
-  columns: PropTypes.arrayOf(PropTypes.shape({
-    /** Column Header is used as a key */
-    Header: PropTypes.string.isRequired,
-    /** Defines whether a filter will be displayed for this column or not */
-    canFilter: PropTypes.bool,
-    /** Called with the string 'Filter' to render the filter */
-    render: PropTypes.func.isRequired,
-    /** React function component to display the filter */
-    Filter: requiredWhen(PropTypes.func, 'canFilter'),
-  })).isRequired,
-  /** Number between one and four filters that can be shown on the top row. */
-  numBreakoutFilters: PropTypes.oneOf([1, 2, 3, 4]),
 };
 
 export default DropdownFilters;

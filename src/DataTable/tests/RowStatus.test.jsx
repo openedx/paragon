@@ -2,20 +2,37 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import RowStatus from '../RowStatus';
+import DataTableContext from '../DataTableContext';
 
-const props = {
-  pageSize: 10,
+const instance = {
   itemCount: 30,
+};
+
+const statusProps = {
   className: 'rowClass',
 };
 
+// eslint-disable-next-line react/prop-types
+const RowStatusWrapper = ({ value = instance, props = statusProps }) => (
+  <DataTableContext.Provider value={value}><RowStatus {...props} /></DataTableContext.Provider>);
+
 describe('<RowStatus />', () => {
-  it('displays the row status', () => {
-    const wrapper = mount(<RowStatus {...props} />);
-    expect(wrapper.text()).toEqual(`Showing ${props.pageSize} of ${props.itemCount}`);
+  it('returns null if there is no pageSize', () => {
+    const wrapper = mount(<RowStatusWrapper />);
+    expect(wrapper.text()).toEqual('');
+  });
+  it('displays the row status with pagination', () => {
+    const pageSize = 10;
+    const wrapper = mount(<RowStatusWrapper value={{ ...instance, page: Array(pageSize) }} />);
+    expect(wrapper.text()).toEqual(`Showing ${pageSize} of ${instance.itemCount}`);
+  });
+  it('displays the row status without pagination', () => {
+    const pageSize = 10;
+    const wrapper = mount(<RowStatusWrapper value={{ ...instance, rows: Array(pageSize) }} />);
+    expect(wrapper.text()).toEqual(`Showing ${pageSize} of ${instance.itemCount}`);
   });
   it('sets class names on the parent', () => {
-    const wrapper = mount(<RowStatus {...props} />);
-    expect(wrapper.props().className).toEqual(props.className);
+    const wrapper = mount(<RowStatusWrapper value={{ ...instance, page: Array(15) }} />);
+    expect(wrapper.find('div').props().className).toEqual(statusProps.className);
   });
 });
