@@ -36,10 +36,10 @@ const ModalBackdrop = () => {
 };
 
 /**
- * The ModalBase should be used for any component that wishes to capture the
- * user in a *modal* context where the rest of the application is non-interactive.
- * The assumption made by this component is that if a modal object is visible then
- * it is "enabled"
+ * The ModalLayer should be used for any component that wishes to engage the user
+ * in a "mode" where a layer on top of the application is interactive while the
+ * rest of the application is made non-interactive. The assumption made by this
+ * component is that if a modal object is visible then it is "enabled"
  */
 const ModalLayer = ({
   children, close, isOpen, isBlocking,
