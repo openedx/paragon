@@ -10,6 +10,7 @@ import { Button } from '..';
 import Icon from '../Icon';
 import newId from '../utils/newId';
 import Variant from '../utils/constants';
+import { Close } from '../../icons';
 
 class Modal extends React.Component {
   constructor(props) {
@@ -220,7 +221,7 @@ class Modal extends React.Component {
                       className="p-1"
                       onClick={this.close}
                     >
-                      <Icon className="fa fa-times" screenReaderText={closeText} />
+                      <Icon src={Close} screenReaderText={closeText} />
                     </Button.Deprecated>
                   )}
                 </div>
