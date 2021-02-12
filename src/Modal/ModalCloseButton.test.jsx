@@ -4,7 +4,7 @@ import { ModalContextProvider } from './ModalContext';
 import ModalCloseButton from './ModalCloseButton';
 
 describe('<ModalCloseButton />', () => {
-  it('calls the a modal context close function on click', () => {
+  it('calls a modal context close function on click', () => {
     const mockClose = jest.fn();
     const wrapper = mount((
       <ModalContextProvider close={mockClose} isOpen>
