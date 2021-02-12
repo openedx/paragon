@@ -9,6 +9,7 @@ import { FocusOn } from 'react-focus-on';
 import Portal from './Portal';
 import { ModalContextProvider } from './ModalContext';
 
+// istanbul ignore next
 const ModalBackdrop = ({ onClick }) => (
   <div className="pgn__modal-backdrop" onClick={onClick} />
 );
@@ -21,6 +22,7 @@ ModalBackdrop.defaultProps = {
   onClick: undefined,
 };
 
+// istanbul ignore next
 const ModalContentContainer = ({ children }) => (
   <div className="pgn__modal-content-container">{children}</div>
 );
@@ -46,6 +48,8 @@ const ModalLayer = ({
     return null;
   }
 
+  const onClickOutside = !isBlocking ? close : null;
+
   return (
     <ModalContextProvider close={close} isOpen={isOpen} isBlocking={isBlocking}>
       <Portal>
@@ -53,11 +57,11 @@ const ModalLayer = ({
           scrollLock
           enabled={isOpen}
           onEscapeKey={close}
-          onClickOutside={!isBlocking && close}
+          onClickOutside={onClickOutside}
           className="pgn__modal-layer"
         >
           <ModalContentContainer>
-            <ModalBackdrop onClick={!isBlocking && close} />
+            <ModalBackdrop onClick={onClickOutside} />
             {children}
           </ModalContentContainer>
         </FocusOn>
@@ -77,4 +81,5 @@ ModalLayer.defaultProps = {
   isBlocking: false,
 };
 
+export { ModalBackdrop, ModalContentContainer };
 export default ModalLayer;
