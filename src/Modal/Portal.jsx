@@ -26,7 +26,7 @@ class Portal extends React.Component {
         this.rootElement,
       );
     }
-
+    // istanbul ignore next
     return null;
   }
 }
