@@ -1,10 +1,11 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { MoreVert } from '../../icons';
 import {
   Button, Dropdown, useWindowSize, Icon, breakpoints,
 } from '..';
+import DataTableContext from './DataTableContext';
 
 export const DROPDOWN_BUTTON_TEXT = 'More actions';
 export const SMALL_SCREEN_DROPDOWN_BUTTON_TEXT = 'Actions';
@@ -24,25 +25,31 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
 ));
 
 const BulkActions = ({
-  actions, selectedRows, className, ...rest
+  className,
 }) => {
   const { width } = useWindowSize();
+  const { selectedFlatRows, rows, bulkActions } = useContext(DataTableContext);
   const [visibleActions, dropdownActions] = useMemo(() => {
     if (width < breakpoints.small.minWidth) {
       // On a small screen, all actions will be in the overflow menu
-      return [[], [...actions]];
+      return [[], [...bulkActions]];
     }
-    // The first two actions will be displayed as buttons, the rest will go in an overflow menu
-    const firstTwoActions = [...actions].splice(0, 2);
-    const extraActions = [...actions].slice(2);
+    // The first two bulkActions will be displayed as buttons, the rest will go in an overflow menu
+    const firstTwoActions = [...bulkActions].splice(0, 2);
+    const extraActions = [...bulkActions].slice(2);
 
     /*  Reversing the array because to the user it makes sense to put the primary button first,
         but we want it on the right */
     return [firstTwoActions.reverse(), extraActions];
-  }, [actions, width]);
+  }, [bulkActions, width]);
+
+  const bulkActionRows = selectedFlatRows || rows;
+  if (!bulkActionRows) {
+    return null;
+  }
 
   return (
-    <div className={classNames('pgn__bulk-actions', className)} {...rest}>
+    <div className={classNames('pgn__bulk-actions', className)}>
       {dropdownActions.length > 0 && (
       <Dropdown>
         <Dropdown.Toggle as={CustomToggle}>
@@ -57,7 +64,7 @@ const BulkActions = ({
             <Dropdown.Item
               className={action.className}
               key={action.buttonText}
-              onClick={() => action.handleClick(selectedRows)}
+              onClick={() => action.handleClick(bulkActionRows)}
               disabled={action.disabled}
             >
               {action.buttonText}
@@ -81,7 +88,7 @@ const BulkActions = ({
               [action.className]: action.className,
               'ml-2': true,
             })}
-            onClick={() => action.handleClick(selectedRows)}
+            onClick={() => action.handleClick(bulkActionRows)}
             key={action.buttonText}
             disabled={action.disabled}
           >
@@ -98,21 +105,6 @@ BulkActions.defaultProps = {
 };
 
 BulkActions.propTypes = {
-  /** Bulk actions to be performed on the selected rows */
-  actions: PropTypes.arrayOf(PropTypes.shape({
-    /** Bulk action button text */
-    buttonText: PropTypes.string.isRequired,
-    /** handleClick will be passed the selected rows */
-    handleClick: PropTypes.func.isRequired,
-    /** classnames for button class */
-    className: PropTypes.string,
-    /** optional button variant; only relevant for the first two buttons */
-    variant: PropTypes.string,
-    /** disables button */
-    disabled: PropTypes.disabled,
-  })).isRequired,
-  /** User selected rows that actions will be performed on */
-  selectedRows: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   /** class names for the div wrapping the button components */
   className: PropTypes.string,
 };

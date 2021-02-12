@@ -1,31 +1,39 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from '..';
+import DataTableContext from './DataTableContext';
 
 const FilterStatus = ({
-  className, variant, size, onClick, clearSelectionText, buttonClassName,
-  filterNames,
-}) => (
-  <div className={className}>
-    Filtered by {filterNames.join(', ')}.
-    <Button
-      className={buttonClassName}
-      variant={variant}
-      size={size}
-      onClick={onClick}
-    >
-      {clearSelectionText}
-    </Button>
-  </div>
+  className, variant, size, clearFiltersText, buttonClassName,
+}) => {
+  const { state, setAllFilters } = useContext(DataTableContext);
+  if (!setAllFilters) {
+    return null;
+  }
 
-);
+  const filterNames = state.filters ? state.filters.map((filter) => filter.id) : [];
+
+  return (
+    <div className={className}>
+      Filtered by {filterNames.join(', ')}.
+      <Button
+        className={buttonClassName}
+        variant={variant}
+        size={size}
+        onClick={() => setAllFilters([])}
+      >
+        {clearFiltersText}
+      </Button>
+    </div>
+  );
+};
 
 FilterStatus.defaultProps = {
   className: null,
   buttonClassName: 'pgn__smart-status-button',
   variant: 'link',
   size: 'inline',
-  clearSelectionText: 'Clear Selection',
+  clearFiltersText: 'Clear Filters',
 };
 
 FilterStatus.propTypes = {
@@ -33,9 +41,7 @@ FilterStatus.propTypes = {
   buttonClassName: PropTypes.string,
   variant: PropTypes.string,
   size: PropTypes.string,
-  onClick: PropTypes.func.isRequired,
-  clearSelectionText: PropTypes.string,
-  filterNames: PropTypes.arrayOf(PropTypes.string).isRequired,
+  clearFiltersText: PropTypes.string,
 };
 
 export default FilterStatus;

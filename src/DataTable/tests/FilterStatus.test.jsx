@@ -3,41 +3,55 @@ import { mount } from 'enzyme';
 
 import FilterStatus from '../FilterStatus';
 import { Button } from '../..';
+import DataTableContext from '../DataTableContext';
 
-const props = {
-  filterNames: ['foo', 'bar', 'baz'],
+const filterNames = ['color', 'breed', 'discipline'];
+const filters = filterNames.map((name) => ({ id: name }));
+const instance = { state: { filters }, setAllFilters: () => {} };
+const filterProps = {
   buttonClassName: 'buttonClass',
   variant: 'variant',
   size: 'lorge',
   onClick: () => {},
-  clearSelectionText: 'CLEAR ME',
+  clearFiltersText: 'CLEAR ME',
   className: 'filterClass',
 };
 
+// eslint-disable-next-line react/prop-types
+const FilterStatusWrapper = ({ value, props }) => (
+  <DataTableContext.Provider value={value}><FilterStatus {...props} /></DataTableContext.Provider>
+);
+
 describe('<FilterStatus />', () => {
   it('passes props to the button', () => {
-    const wrapper = mount(<FilterStatus {...props} />);
+    const wrapper = mount(<FilterStatusWrapper value={instance} props={filterProps} />);
     const buttonProps = wrapper.find(Button).props();
-    expect(buttonProps.className).toEqual(props.buttonClassName);
-    expect(buttonProps.variant).toEqual(props.variant);
-    expect(buttonProps.size).toEqual(props.size);
+    expect(buttonProps.className).toEqual(filterProps.buttonClassName);
+    expect(buttonProps.variant).toEqual(filterProps.variant);
+    expect(buttonProps.size).toEqual(filterProps.size);
   });
   it('sets the button text', () => {
-    const wrapper = mount(<FilterStatus {...props} />);
-    expect(wrapper.find(Button).text()).toEqual(props.clearSelectionText);
+    const wrapper = mount(<FilterStatusWrapper value={instance} props={filterProps} />);
+    expect(wrapper.find(Button).text()).toEqual(filterProps.clearFiltersText);
   });
   it('clears the selection on click', () => {
     const clearSpy = jest.fn();
-    const wrapper = mount(<FilterStatus {...props} onClick={clearSpy} />);
+    const wrapper = mount(<FilterStatusWrapper value={{ ...instance, setAllFilters: clearSpy }} props={filterProps} />);
     wrapper.find(Button).simulate('click');
     expect(clearSpy).toHaveBeenCalledTimes(1);
+    expect(clearSpy).toHaveBeenCalledWith([]);
   });
   it('displays the current filter names', () => {
-    const wrapper = mount(<FilterStatus {...props} />);
-    expect(wrapper.text()).toContain(props.filterNames.join(', '));
+    const wrapper = mount(<FilterStatusWrapper value={instance} props={filterProps} />);
+    expect(wrapper.text()).toContain(filterNames.join(', '));
   });
   it('sets class names on the parent', () => {
-    const wrapper = mount(<FilterStatus {...props} />);
-    expect(wrapper.props().className).toEqual(props.className);
+    const wrapper = mount(<FilterStatusWrapper value={instance} props={filterProps} />);
+    const statusDiv = wrapper.find('div');
+    expect(statusDiv.props().className).toEqual(filterProps.className);
+  });
+  it('returns null if setAllFilters is not present (table is not filterable)', () => {
+    const wrapper = mount(<FilterStatusWrapper value={{}} props={filterProps} />);
+    expect(wrapper.text()).toEqual('');
   });
 });

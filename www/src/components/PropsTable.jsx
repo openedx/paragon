@@ -33,10 +33,11 @@ const Prop = ({
   </li>
 )
 
-const PropsTable = ({ props, displayName }) => {
+const PropsTable = ({ props, displayName, content }) => {
   return (
     <div>
       <h3>{displayName} Props API</h3>
+      {content && <p><ReactMarkdown>{content}</ReactMarkdown></p>}
       <ul className="list-unstyled">
         {props.map((metadata) => {
           return <Prop key={metadata.name} {...metadata} />

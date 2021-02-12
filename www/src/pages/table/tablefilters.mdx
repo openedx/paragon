@@ -19,13 +19,11 @@ The DataTable component is a wrapper that uses the <a href="https://react-table.
 create tables. It can be used as is, or its subcomponents can be used on their own, allowing the developer full control.
 
 ## Filtering and sorting
-Paragon currently provides two filter types, TextFilter and CheckboxFilter. You can also define your own filter types.
+Paragon currently provides a variety of filter types, and you can also define your own filter types.
 
-In this example, a default TextFilter component is used as the default filter for all columns. A default filter can be passed in,
+In the example below, a default TextFilter component is used as the default filter for all columns. A default filter can be passed in,
 or a filter component can be defined on the column using the `Filter` attribute. See <a href="https://react-table.tanstack.com/docs/api/useFilters">react-table filters documentation</a>
 for more information.
-
-A CheckboxFilter is used on the coat color column. Filters can be defined on the columns themselves. The CheckboxFilter additionally requires that the "CheckboxFilters" property be defined on the column.
 
 ### Available filter functions
 A filtering function can be defined on the column as well as the filter component. Custom filtering functions can also be defined, see <a href="https://react-table.tanstack.com/docs/api/useFilters#column-options">react-table filters documentation</a>
@@ -45,12 +43,17 @@ Filter functions are definied on the column as the `filter` attribute.
 </dl>
 
 ### Using Filter components with filter functions
-The `MultiSelectDropdownFilter` and `CheckboxFilter` components expect an array of values. Thus, it is est to use them with the `includesValue` filter function.
+The `MultiSelectDropdownFilter` and `CheckboxFilter` components expect an array of values. It is best to use them with the `includesValue` filter function.
 The `TextFilter` and `DropdownFilter` components can be used with a variety of the above `filter` functions.
 
 ## TextFilter, MultiSelectDropdownFilter, CheckboxFilter
 
 The checkbox filter is used in the dropdown.
+A CheckboxFilter is used on the coat color column. Filters can be defined on the columns themselves.
+The `CheckboxFilter`, `DropdownFilter`, and `MultiSelectDropdownFilter` additionally require that the `filterChoices` property be defined on the column.
+
+The number of filters displayed in the `TableControlBar` can be modified by passing the `numBreakoutFilters` prop. When the screen size is small,
+all filters will be rendered in the dropdown.
 
 ```jsx live
 <DataTable
