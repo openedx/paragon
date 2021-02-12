@@ -14,15 +14,6 @@ jest.mock('./Portal', () => (props) => {
   );
 });
 
-jest.mock('react-focus-on', () => ({
-  FocusOn: (props) => {
-    const { children, ...otherProps } = props;
-    return (
-      <focus-on {...otherProps}>{children}</focus-on>
-    );
-  },
-}));
-
 const Dialog = () => (
   <div role="dialog" aria-label="A dialog">
     A dialog.

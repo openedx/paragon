@@ -12,15 +12,6 @@ jest.mock('./SheetContainer', () => (props) => {
   );
 });
 
-jest.mock('react-focus-on', () => ({
-  FocusOn: (props) => {
-    const { children, ...otherProps } = props;
-    return (
-      <focus-on {...otherProps}>{children}</focus-on>
-    );
-  },
-}));
-
 const testContent = (<div className="sheet-content">Hi</div>);
 
 const renderJSON = (jsxContent) => renderer.create(jsxContent).toJSON();
