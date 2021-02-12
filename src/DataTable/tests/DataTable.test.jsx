@@ -137,8 +137,8 @@ describe('<DataTable />', () => {
   test.each([
     [{}, { manualFilters: false, manualPagination: false, manualSortBy: false }],
     [{ manualFilters: true }, { manualFilters: true, manualPagination: false, manualSortBy: false }],
-    // [{ manualPagination: true }, { manualFilters: true, manualPagination: true, manualSortBy: false }],
-    // [{ manualSortBy: true }, { manualFilters: true, manualPagination: true, manualSortBy: true }],
+    [{ manualPagination: true }, { manualFilters: false, manualPagination: true, manualSortBy: false }],
+    [{ manualSortBy: true }, { manualFilters: false, manualPagination: false, manualSortBy: true }],
     // eslint-disable-next-line max-len
     [{ manualSortBy: true, manualFilters: true, manualPagination: true }, { manualFilters: true, manualPagination: true, manualSortBy: true }],
   ])('calls useTable with the correct manual settings %#', (additionalProps, expected) => {
