@@ -3,36 +3,34 @@
 /*  TODO: The first of these two disabled linters is okay.
 Focus lock is handling the keyboard for us. The second I'm not sure */
 
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { FocusOn } from 'react-focus-on';
 import Portal from './Portal';
-import ModalContext, { ModalContextProvider } from './ModalContext';
+import { ModalContextProvider } from './ModalContext';
 
-const overlayStyles = {
-  zIndex: 3050, // $zindex-modal: 1050 !default;
-  overflow: 'auto',
-  position: 'fixed',
-  top: 0,
-  left: 0,
-  width: '100vw',
-  height: '100vh',
+const ModalBackdrop = ({ onClick }) => (
+  <div className="pgn__modal-backdrop" onClick={onClick} />
+);
+
+ModalBackdrop.propTypes = {
+  onClick: PropTypes.func,
 };
 
-const ModalBackdrop = () => {
-  const { close, isBlocking } = useContext(ModalContext);
+ModalBackdrop.defaultProps = {
+  onClick: undefined,
+};
 
-  return (
-    <div
-      style={{
-        ...overlayStyles,
-        zIndex: -1,
-        background: 'rgba(0,0,0,.5)',
-      }}
-      className="position-overlay"
-      onClick={!isBlocking && close}
-    />
-  );
+const ModalContentContainer = ({ children }) => (
+  <div className="pgn__modal-content-container">{children}</div>
+);
+
+ModalContentContainer.propTypes = {
+  children: PropTypes.node,
+};
+
+ModalContentContainer.defaultProps = {
+  children: null,
 };
 
 /**
@@ -56,13 +54,12 @@ const ModalLayer = ({
           enabled={isOpen}
           onEscapeKey={close}
           onClickOutside={!isBlocking && close}
+          className="pgn__modal-layer"
         >
-          <div style={overlayStyles}>
-            <ModalBackdrop />
-            <div>
-              {children}
-            </div>
-          </div>
+          <ModalContentContainer>
+            <ModalBackdrop onClick={!isBlocking && close} />
+            {children}
+          </ModalContentContainer>
         </FocusOn>
       </Portal>
     </ModalContextProvider>

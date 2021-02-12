@@ -55,6 +55,32 @@ Generic components that handle accessibility requirements of modal objects.
 }
 ```
 
+
+```jsx live
+() => {
+  const [isOpen, open, close] = useToggle(false);
+
+  return (
+    <>
+      <Button variant="outline-primary" onClick={open}>Open small modal layer</Button>
+
+      <ModalLayer isOpen={isOpen} close={close}>
+        <div className="mw-sm p-5 bg-white mx-auto my-5">
+          <h1>I'm a dialog box</h1>
+          <p>
+            <Button variant="primary" className="mr-2">A button</Button>
+            <ModalCloseButton variant="outline-primary">Close modal</ModalCloseButton>
+          </p>
+          <p>
+            I'm baby palo santo ugh celiac fashion axe. La croix lo-fi venmo whatever. Beard man braid migas single-origin coffee forage ramps. Tumeric messenger bag bicycle rights wayfarers, try-hard cronut blue bottle health goth. Sriracha tumblr cardigan, cloud bread succulents tumeric copper mug marfa semiotics woke next level organic roof party +1 try-hard.
+          </p>
+        </div>
+      </ModalLayer>
+    </>
+  )
+}
+```
+
 # ModalPopup
 
 ```jsx live

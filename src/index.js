@@ -47,12 +47,12 @@ export { default as ListBoxOption } from './ListBoxOption';
 export { default as MailtoLink } from './MailtoLink';
 export { default as Media } from './Media';
 export { default as Modal } from './Modal';
-export { default as ModalCloseButton } from './ModalBase/ModalCloseButton';
-export { default as ModalLayer } from './ModalBase/ModalLayer';
-export { default as ModalPopup } from './ModalBase/ModalPopup';
-export { default as ModalContext } from './ModalBase/ModalContext';
-export { default as Portal } from './ModalBase/Portal';
-export { default as PopperElement } from './ModalBase/PopperElement';
+export { default as ModalCloseButton } from './Modal/ModalCloseButton';
+export { default as ModalLayer } from './Modal/ModalLayer';
+export { default as ModalPopup } from './Modal/ModalPopup';
+export { default as ModalContext } from './Modal/ModalContext';
+export { default as Portal } from './Modal/Portal';
+export { default as PopperElement } from './Modal/PopperElement';
 
 export {
   default as Nav,
