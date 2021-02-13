@@ -15,8 +15,8 @@ class Check extends React.Component {
     };
   }
 
-  // eslint-disable-next-line react/no-deprecated
-  componentWillReceiveProps(nextProps) {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.checked !== this.props.checked) {
       this.setState({
         checked: nextProps.checked,

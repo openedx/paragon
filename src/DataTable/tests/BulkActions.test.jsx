@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { act } from 'react-dom/test-utils';
 
 import BulkActions, { DROPDOWN_BUTTON_TEXT, SMALL_SCREEN_DROPDOWN_BUTTON_TEXT } from '../BulkActions';
 import {
@@ -94,7 +95,7 @@ describe('<BulkActions />', () => {
       );
       const button = wrapper.find('button');
       expect(button.length).toEqual(1);
-      button.simulate('click');
+      act(() => button.simulate('click'));
       expect(onClickSpy).toHaveBeenCalledTimes(1);
       expect(onClickSpy).toHaveBeenCalledWith(selectedFlatRows);
     });
@@ -130,7 +131,7 @@ describe('<BulkActions />', () => {
         />,
       );
       const button = wrapper.find(Button).at(1);
-      button.simulate('click');
+      act(() => button.simulate('click'));
       expect(onClickSpy).toHaveBeenCalledTimes(1);
       expect(onClickSpy).toHaveBeenCalledWith(selectedFlatRows);
     });
@@ -142,7 +143,7 @@ describe('<BulkActions />', () => {
         />,
       );
       const button = wrapper.find(Button).at(0);
-      button.simulate('click');
+      act(() => button.simulate('click'));
       expect(onClickSpy).toHaveBeenCalledTimes(1);
       expect(onClickSpy).toHaveBeenCalledWith(selectedFlatRows);
     });
@@ -177,7 +178,7 @@ describe('<BulkActions />', () => {
         );
         // the dropdown menu is the first button
         dropdownButton = wrapper.find('button').at(0);
-        dropdownButton.simulate('click');
+        act(() => dropdownButton.simulate('click'));
       });
       afterEach(() => {
         onClickSpy.mockClear();
@@ -190,7 +191,7 @@ describe('<BulkActions />', () => {
         expect(actionItems.length).toEqual(4);
       });
       it('performs actions when dropdown items are clicked', () => {
-        wrapper.find(`a.${itemClassName}`).simulate('click');
+        act(() => wrapper.find(`a.${itemClassName}`).simulate('click'));
         expect(onClickSpy).toHaveBeenCalledTimes(1);
         expect(onClickSpy).toHaveBeenCalledWith(selectedFlatRows);
       });
@@ -221,7 +222,7 @@ describe('<BulkActions />', () => {
       const buttons = wrapper.find('button');
       expect(buttons.length).toEqual(1);
       const dropdownButton = buttons.at(0);
-      dropdownButton.simulate('click');
+      act(() => dropdownButton.simulate('click'));
       wrapper.update();
       testActions.forEach((action) => {
         expect(wrapper.text()).toContain(action.buttonText);

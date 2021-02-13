@@ -26,8 +26,8 @@ class Pagination extends React.Component {
   }
 
   // TODO: Move to getDerivedStateFromProps
-  // eslint-disable-next-line react/no-deprecated
-  componentWillReceiveProps(nextProps) {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (
       nextProps.currentPage !== this.props.currentPage
       || nextProps.currentPage !== this.state.currentPage

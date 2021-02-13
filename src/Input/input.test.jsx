@@ -7,7 +7,7 @@ import Input from './index';
 describe('<Input />', () => {
   const label = 'label';
   const name = 'name';
-  const className = ['input'];
+  const className = 'input';
   const props = {
     label,
     name,

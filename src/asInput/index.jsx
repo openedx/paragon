@@ -85,8 +85,8 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
     }
 
     // move to getDerivedStateFromProps
-    // eslint-disable-next-line react/no-deprecated
-    componentWillReceiveProps(nextProps) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillReceiveProps(nextProps) {
       const updatedState = {};
       if (nextProps.value !== this.props.value) {
         updatedState.value = nextProps.value;

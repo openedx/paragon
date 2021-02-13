@@ -17,8 +17,8 @@ export default class ListBox extends React.Component {
   }
 
   // TODO: move to getDerivedStateFromProps (or other method)
-  // eslint-disable-next-line react/no-deprecated
-  componentWillReceiveProps(nextProps) {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const { selectedOptionIndex } = nextProps;
 
     if (this.shouldUpdateSelectedOptionIndex(selectedOptionIndex)) {
