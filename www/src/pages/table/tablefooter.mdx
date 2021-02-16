@@ -18,7 +18,8 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 <a href="/table/datatable">Main DataTable page</a>
 
 The `TableFooter` component is meant to be rendered within a `DataTableContext` (provided by `DataTable` here).
-It shows a how many items are being displayed and pagination information.
+By default, it shows a how many items are being displayed and pagination information. It is a display component,
+and will accept a `RightComponent` and a `LeftComponent` that will override it's defaults.
 
 ```jsx live
 <DataTable
@@ -90,8 +91,46 @@ It shows a how many items are being displayed and pagination information.
 </DataTable>
 ```
 
+## Rendering with override components
+```jsx live
+<DataTable
+  isPaginated
+  initialState={{
+    pageSize: 3,
+    pageIndex: 0
+  }}
+  columns={[
+    {
+      Header: 'Name',
+      accessor: 'name',
 
-<PropsTable {...props.data.tableFooter} content="The `TableFooter` component does not accept any props" />
+    },
+  ]}
+  itemCount={7}
+  data={[
+      {
+        name: 'Lil Bub',
+        color: 'brown tabby',
+        famous_for: 'weird tongue',
+      },
+      {
+        name: 'Grumpy Cat',
+        color: 'siamese',
+        famous_for: 'serving moods',
+      },
+
+    ]}
+>
+  <TableFooter>
+    <div>Custom component</div>
+    <div>More custom data</div>
+    <TablePagination />
+  </TableFooter>
+</DataTable>
+```
+
+
+<PropsTable {...props.data.tableFooter} />
 
 ## Footer subcomponents
 These components can be rendered independently of the `TableFooter` component with a `DataTableContext`.
