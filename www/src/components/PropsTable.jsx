@@ -37,7 +37,7 @@ const PropsTable = ({ props, displayName, content }) => {
   return (
     <div>
       <h3>{displayName} Props API</h3>
-      {content && <p><ReactMarkdown>{content}</ReactMarkdown></p>}
+      {content && <ReactMarkdown>{content}</ReactMarkdown>}
       <ul className="list-unstyled">
         {props.map((metadata) => {
           return <Prop key={metadata.name} {...metadata} />
