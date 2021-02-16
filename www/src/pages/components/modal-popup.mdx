@@ -1,0 +1,57 @@
+---
+title: 'ModalPopup'
+type: 'component'
+status: 'New'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: |
+
+---
+
+import get from 'lodash/get';
+import SingleComponentStatus from '../../components/SingleComponentStatus';
+import PropsTable from '../../components/PropsTable';
+
+## ModalPopup
+
+A generic component for creating accessibile modal popup objects.
+
+```jsx live
+() => {
+  const [isOpen, open, close] = useToggle(false);
+  const target = React.useRef(null);
+
+  return (
+    <>
+      <Button ref={target} variant="outline-primary" onClick={open}>Open modal popup</Button>
+      <ModalPopup positionRef={target} isOpen={isOpen} close={close}>
+        <div className="bg-white p-3 rounded shadow">
+          <p>This could be a menu or tray.</p>
+
+          <Button variant="primary" className="mr-2">Action</Button>
+          <ModalCloseButton variant="outline-primary">Close</ModalCloseButton>
+        </div>
+      </ModalPopup>
+    </>
+  )
+}
+```
+
+
+
+<PropsTable {...props.data.modalPopupMetadata} />
+
+Extra props supplied to ModalPopup are passed through to an underlying PopperElement component.
+
+<PropsTable {...props.data.modalCloseButtonMetadata} />
+<PropsTable {...props.data.popperElementMetadata} />
+<PropsTable {...props.data.portalMetadata} />
+
+export const query = graphql`
+  query {
+    modalPopupMetadata: componentMetadata(displayName: { eq: "ModalPopup" }) { ...ComponentDocGenData}
+    modalCloseButtonMetadata: componentMetadata(displayName: { eq: "ModalCloseButton" }) { ...ComponentDocGenData}
+    popperElementMetadata: componentMetadata(displayName: { eq: "PopperElement" }) { ...ComponentDocGenData}
+    portalMetadata: componentMetadata(displayName: { eq: "Portal" }) { ...ComponentDocGenData}
+  }
+`

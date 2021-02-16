@@ -47,6 +47,13 @@ export { default as ListBoxOption } from './ListBoxOption';
 export { default as MailtoLink } from './MailtoLink';
 export { default as Media } from './Media';
 export { default as Modal } from './Modal';
+export { default as ModalCloseButton } from './Modal/ModalCloseButton';
+export { default as ModalLayer } from './Modal/ModalLayer';
+export { default as ModalPopup } from './Modal/ModalPopup';
+export { default as ModalContext } from './Modal/ModalContext';
+export { default as Portal } from './Modal/Portal';
+export { default as PopperElement } from './Modal/PopperElement';
+
 export {
   default as Nav,
   NavDropdown,
@@ -106,6 +113,7 @@ export { default as CardView } from './DataTable/CardView';
 export { default as ToggleButton, ToggleButtonGroup } from './ToggleButton';
 export { default as Variant } from './utils/constants';
 export { default as useWindowSize } from './hooks/useWindowSize';
+export { default as useToggle } from './hooks/useToggle';
 
 // Pass through any needed whole third-party library functionality
 // useTable for example is needed to use the DataTable component seamlessly

@@ -1,6 +1,45 @@
 @import "variables";
 @import "~bootstrap/scss/modal";
 
+
+.pgn__modal-layer {
+  height: 100vh;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 3050;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pgn__modal-backdrop {
+  background: $modal-backdrop-bg;
+  bottom: 0;
+  left: 0;
+  opacity: $modal-backdrop-opacity;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.pgn__modal-content-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0.1px;
+  position: relative;
+  & > *:not(.pgn__modal-backdrop) {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+
+// Bootstrap modal styles
+
 .modal.show {
   position: fixed;
   background-color: transparent;
