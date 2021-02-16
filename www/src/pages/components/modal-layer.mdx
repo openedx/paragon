@@ -1,7 +1,7 @@
 ---
-title: 'Modal'
+title: 'ModalLayer'
 type: 'component'
-status: 'Stable'
+status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
@@ -12,13 +12,9 @@ import get from 'lodash/get';
 import SingleComponentStatus from '../../components/SingleComponentStatus';
 import PropsTable from '../../components/PropsTable';
 
-# Modal Building Blocks
+# ModalLayer
 
-Generic components that handle accessibility requirements of modal objects.
-
-## ModalLayer
-
-The modal layer provides a focus locked and scrollable overlay layer for a dialog. The child of a ModalLayer must have the role "dialog" and specify either an `aria-label` or `aria-labelledby` attribute.
+A generic component for creating accessibile modal layer objects. The modal layer provides a focus locked and scrollable overlay layer for a dialog. The child of a ModalLayer must have the role "dialog" and specify either an `aria-label` or `aria-labelledby` attribute.
 
 ```jsx live
 () => {
@@ -83,48 +79,18 @@ The modal layer provides a focus locked and scrollable overlay layer for a dialo
 }
 ```
 
-## ModalPopup
-
-```jsx live
-() => {
-  const [isOpen, open, close] = useToggle(false);
-  const target = React.useRef(null);
-
-  return (
-    <>
-      <Button ref={target} variant="outline-primary" onClick={open}>Open modal popup</Button>
-      <ModalPopup positionRef={target} isOpen={isOpen} close={close}>
-        <div className="bg-white p-3 rounded shadow">
-          <p>This could be a menu or tray.</p>
-
-          <Button variant="primary" className="mr-2">Action</Button>
-          <ModalCloseButton variant="outline-primary">Close</ModalCloseButton>
-        </div>
-      </ModalPopup>
-    </>
-  )
-}
-```
-
-
 
 <PropsTable {...props.data.modalLayerMetadata} />
-<PropsTable {...props.data.modalPopupMetadata} />
 <PropsTable {...props.data.modalCloseButtonMetadata} />
-
-<hr className="my-5" />
-
-## Related components
-
 <PropsTable {...props.data.popperElementMetadata} />
 <PropsTable {...props.data.portalMetadata} />
 
 export const query = graphql`
   query {
     modalLayerMetadata: componentMetadata(displayName: { eq: "ModalLayer" }) { ...ComponentDocGenData}
-    modalPopupMetadata: componentMetadata(displayName: { eq: "ModalPopup" }) { ...ComponentDocGenData}
     modalCloseButtonMetadata: componentMetadata(displayName: { eq: "ModalCloseButton" }) { ...ComponentDocGenData}
     popperElementMetadata: componentMetadata(displayName: { eq: "PopperElement" }) { ...ComponentDocGenData}
     portalMetadata: componentMetadata(displayName: { eq: "Portal" }) { ...ComponentDocGenData}
   }
 `
+

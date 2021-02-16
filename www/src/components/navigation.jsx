@@ -55,7 +55,8 @@ const Navigation = () => (
     <ParNavLink to="/components/input-group">Input Group</ParNavLink>
     <ParNavLink to="/components/image">Image</ParNavLink>
     <ParNavLink to="/components/modal">Modal</ParNavLink>
-    <ParNavLink to="/components/modal-base">ModalBase</ParNavLink>
+    <ParNavLink to="/components/modal-layer">ModalLayer</ParNavLink>
+    <ParNavLink to="/components/modal-popup">ModalPopup</ParNavLink>
     <ParNavLink to="/components/mailtolink">MailtoLink</ParNavLink>
     <ParNavLink to="/components/navs">Navs</ParNavLink>
     <ParNavLink to="/components/navbar">Navbar</ParNavLink>
