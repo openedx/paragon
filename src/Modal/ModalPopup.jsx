@@ -21,9 +21,9 @@ const ModalPopup = ({
             onClickOutside={close}
           >
             {isOpen && (
-              <div>
+              <>
                 {children}
-              </div>
+              </>
             )}
           </FocusOn>
         </PopperElement>

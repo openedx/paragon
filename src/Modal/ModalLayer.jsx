@@ -1,8 +1,3 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/*  TODO: The first of these two disabled linters is okay.
-Focus lock is handling the keyboard for us. The second I'm not sure */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FocusOn } from 'react-focus-on';
@@ -11,6 +6,11 @@ import { ModalContextProvider } from './ModalContext';
 
 // istanbul ignore next
 const ModalBackdrop = ({ onClick }) => (
+
+  // Focus lock is handling the keyboard eventfor us. Though adding a role="button"
+  // would be appropriate, modal dialogs provide their own close button and this
+  // would create a duplicative control.
+  // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
   <div className="pgn__modal-backdrop" onClick={onClick} />
 );
 
