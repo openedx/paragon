@@ -6,14 +6,14 @@ import { useToggle } from '../..';
 const TOGGLE_IS_ON = 'on';
 const TOGGLE_IS_OFF = 'off';
 
-const mockOnToggleOn = jest.fn();
-const mockOnToggleOff = jest.fn();
-const mockOnToggle = jest.fn();
+const mockHandleToggleOn = jest.fn();
+const mockHandleToggleOff = jest.fn();
+const mockHandleToggle = jest.fn();
 
 const resetHandlerMocks = () => {
-  mockOnToggleOn.mockReset();
-  mockOnToggleOff.mockReset();
-  mockOnToggle.mockReset();
+  mockHandleToggleOn.mockReset();
+  mockHandleToggleOff.mockReset();
+  mockHandleToggle.mockReset();
 };
 
 const expectToggleToBeOn = (wrapper) => {
@@ -46,9 +46,9 @@ describe('useToggle hook', () => {
     <FakeComponent
       defaultIsOn={false}
       handlers={{
-        onToggleOn: mockOnToggleOn,
-        onToggleOff: mockOnToggleOff,
-        onToggle: mockOnToggle,
+        handleToggleOn: mockHandleToggleOn,
+        handleToggleOff: mockHandleToggleOff,
+        handleToggle: mockHandleToggle,
       }}
     />
   ));
@@ -63,8 +63,8 @@ describe('useToggle hook', () => {
     wrapper.find('#set-on').simulate('click');
     wrapper.update();
     expectToggleToBeOn(wrapper);
-    expect(mockOnToggleOn).toHaveBeenCalled();
-    expect(mockOnToggle).toHaveBeenCalled();
+    expect(mockHandleToggleOn).toHaveBeenCalled();
+    expect(mockHandleToggle).toHaveBeenCalled();
 
     // try again to ensure on only sets it on.
     wrapper.find('#set-on').simulate('click');
@@ -76,8 +76,8 @@ describe('useToggle hook', () => {
     wrapper.find('#set-off').simulate('click');
     wrapper.update();
     expectToggleToBeOff(wrapper);
-    expect(mockOnToggleOff).toHaveBeenCalled();
-    expect(mockOnToggle).toHaveBeenCalled();
+    expect(mockHandleToggleOff).toHaveBeenCalled();
+    expect(mockHandleToggle).toHaveBeenCalled();
 
     // try again to ensure on only sets it off.
     wrapper.find('#set-off').simulate('click');
@@ -89,9 +89,9 @@ describe('useToggle hook', () => {
     wrapper.find('#toggle').simulate('click');
     wrapper.update();
     expectToggleToBeOn(wrapper);
-    expect(mockOnToggleOn).toHaveBeenCalled();
-    expect(mockOnToggleOff).not.toHaveBeenCalled();
-    expect(mockOnToggle).toHaveBeenCalled();
+    expect(mockHandleToggleOn).toHaveBeenCalled();
+    expect(mockHandleToggleOff).not.toHaveBeenCalled();
+    expect(mockHandleToggle).toHaveBeenCalled();
 
     resetHandlerMocks();
 
@@ -99,8 +99,8 @@ describe('useToggle hook', () => {
     wrapper.find('#toggle').simulate('click');
     wrapper.update();
     expectToggleToBeOff(wrapper);
-    expect(mockOnToggleOn).not.toHaveBeenCalled();
-    expect(mockOnToggleOff).toHaveBeenCalled();
-    expect(mockOnToggle).toHaveBeenCalled();
+    expect(mockHandleToggleOn).not.toHaveBeenCalled();
+    expect(mockHandleToggleOff).toHaveBeenCalled();
+    expect(mockHandleToggle).toHaveBeenCalled();
   });
 });

@@ -79,6 +79,7 @@ const Navigation = () => (
     <NavSectionTitle>Hooks</NavSectionTitle>
 
     <ParNavLink to="/hooks/useWindowSize">useWindowSize</ParNavLink>
+    <ParNavLink to="/hooks/useToggle">useToggle</ParNavLink>
 
 
     <NavSectionTitle>Tables</NavSectionTitle>

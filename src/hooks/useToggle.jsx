@@ -1,32 +1,32 @@
 import { useState, useCallback } from 'react';
 
 export default function useToggle(defaultIsOn, handlers = {}) {
-  const { onToggleOn, onToggleOff, onToggle } = handlers;
+  const { handleToggleOn, handleToggleOff, handleToggle } = handlers;
   const [isOn, setIsOn] = useState(defaultIsOn || false);
 
   const setOn = useCallback(() => {
     setIsOn(true);
     // istanbul ignore else
-    if (onToggleOn) {
-      onToggleOn();
+    if (handleToggleOn) {
+      handleToggleOn();
     }
     // istanbul ignore else
-    if (onToggle) {
-      onToggle(true);
+    if (handleToggle) {
+      handleToggle(true);
     }
-  }, [onToggleOn, onToggle]);
+  }, [handleToggleOn, handleToggle]);
 
   const setOff = useCallback(() => {
     setIsOn(false);
     // istanbul ignore else
-    if (onToggleOff) {
-      onToggleOff();
+    if (handleToggleOff) {
+      handleToggleOff();
     }
     // istanbul ignore else
-    if (onToggle) {
-      onToggle(false);
+    if (handleToggle) {
+      handleToggle(false);
     }
-  }, [onToggleOff, onToggle]);
+  }, [handleToggleOff, handleToggle]);
 
   const toggle = useCallback(() => {
     const doToggle = isOn ? setOff : setOn;
