@@ -27,7 +27,7 @@ const PropTypeEnum = ({ name, value, isRequired }) => (
 const PropTypeUnion = ({ name, value, isRequired }) => (
   <span>
     {value
-      .map(propType => <PropType {...propType} />)
+      .map(propType => <PropType key={propType.name} {...propType} />)
       .reduce((prev, curr) => [prev, ' | ', curr])
     }
     <RequiredBadge isRequired={isRequired} />
