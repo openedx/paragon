@@ -1,0 +1,16 @@
+{
+  "name": "dependency-analysis",
+  "version": "1.0.0",
+  "description": "Analyze the usage of Paragon in select dependent applications",
+  "main": "index.js",
+  "scripts": {
+    "analyze": "ls -al $GITHUB_WORKSPACE"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/parser": "^7.12.16",
+    "babel-walk": "^3.0.0",
+    "glob": "^7.1.6"
+  }
+}
