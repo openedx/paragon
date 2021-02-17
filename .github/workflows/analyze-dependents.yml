@@ -3,9 +3,15 @@ name: Analyze Dependents
 on: [pull_request]
 
 jobs:
-  checkout-dependents:
+  analyze-dependents:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Setup Nodejs
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12
     - name: Checkout ecommerce
       uses: actions/checkout@master
       with:
@@ -16,15 +22,6 @@ jobs:
       with:
         repository: edx/frontend-app-profile
         path: frontend-app-profile
-  analyze-dependents:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Setup Nodejs
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12
     - name: Install dependencies
       run: npm run analyze
       working-directory: dependency-analysis
