@@ -13,12 +13,12 @@ jobs:
       with:
         node-version: 12
     - name: Checkout ecommerce
-      uses: actions/checkout@master
+      uses: actions/checkout@v2
       with:
         repository: edx/frontend-app-ecommerce
         path: analyze-projects/frontend-app-ecommerce
     - name: Checkout profile
-      uses: actions/checkout@master
+      uses: actions/checkout@v2
       with:
         repository: edx/frontend-app-profile
         path: analyze-projects/frontend-app-profile
@@ -28,3 +28,11 @@ jobs:
     - name: Analyze projects
       run: npm run analyze "${GITHUB_WORKSPACE}/analyze-projects"
       working-directory: dependency-analysis
+    - name: Commit result
+      uses: actions/checkout@v2
+      run: |
+        git config user.name paragon
+        git config user.email paragon+git@github.com
+        git add .
+        git commit -m "docs(generated): update dependents analysis"
+        git push
