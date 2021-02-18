@@ -16,12 +16,12 @@ jobs:
       uses: actions/checkout@master
       with:
         repository: edx/frontend-app-ecommerce
-        path: frontend-app-ecommerce
+        path: analyze-projects/frontend-app-ecommerce
     - name: Checkout profile
       uses: actions/checkout@master
       with:
         repository: edx/frontend-app-profile
-        path: frontend-app-profile
+        path: analyze-projects/frontend-app-profile
     - name: Install dependencies
-      run: npm run analyze
+      run: npm run analyze "${GITHUB_WORKSPACE}/analyze-projects"
       working-directory: dependency-analysis

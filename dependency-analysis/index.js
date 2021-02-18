@@ -2,6 +2,8 @@ const parser = require('@babel/parser');
 const fs = require('fs');
 const walk = require('babel-walk');
 const glob = require('glob');
+const { Command } = require('commander');
+const path = require('path');
 
 const ignorePatterns = (dir) => ([
   `${dir}/**/node_modules/**`,
@@ -106,38 +108,19 @@ function analyzeProject(dir, options = {}) {
   };
 }
 
-const projectsToAnalyze = [
-  'frontend-app-account',
-  'frontend-app-admin-portal',
-  'frontend-app-course-authoring',
-  'frontend-app-ecommerce',
-  'frontend-app-gradebook',
-  'frontend-app-learner-portal-enterprise',
-  'frontend-app-learner-portal-programs',
-  'frontend-app-learning',
-  'frontend-app-library-authoring',
-  'frontend-app-payment',
-  'frontend-app-profile',
-  'frontend-app-program-console',
-  // 'frontend-app-programs-dashboard',
-  'frontend-app-publisher',
-  'frontend-component-cookie-policy-banner',
-  'frontend-component-footer',
-  'frontend-component-footer-edx',
-  'frontend-component-header',
-  'frontend-component-header-edx',
-  'frontend-enterprise',
-  'frontend-learner-portal-base',
-  'frontend-platform',
-  'frontend-template-application',
-  'prospectus',
-  // 'studio-frontend',
-];
+const program = new Command();
 
-const allProjects = projectsToAnalyze.map(projectDir => {
-  const thing = analyzeProject(`./projects/${projectDir}`);
-  // console.log(thing)
-  return thing;
-});
+program
+  .version('0.0.1')
+  .arguments('<projectsDir>')
+  .option('-o, --out <outFilePath>', 'output filepath')
+  .action((projectsDir, options) => {
+    const outputFilePath = options.out || 'out.json';
+    const projectsToAnalyze = fs.readdirSync(projectsDir);
+    const allProjects = projectsToAnalyze.map(projectDir => analyzeProject(path.join(projectsDir, projectDir)));
+    // eslint-disable-next-line no-console
+    console.log(allProjects);
+    fs.writeFileSync(outputFilePath, JSON.stringify(allProjects, null, 2));
+  });
 
-fs.writeFileSync('out.json', JSON.stringify(allProjects, null, 2));
+program.parse(process.argv);
