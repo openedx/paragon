@@ -26,7 +26,7 @@ jobs:
       run: npm ci
       working-directory: dependency-analysis
     - name: Analyze projects
-      run: npm run analyze "${GITHUB_WORKSPACE}/analyze-projects" --out "${GITHUB_WORKSPACE}/dependents-analysis.json"
+      run: npm run analyze "${GITHUB_WORKSPACE}/analyze-projects" -- --out "${GITHUB_WORKSPACE}/dependents-analysis.json"
       working-directory: dependency-analysis
     - name: Commit result
       run: |
