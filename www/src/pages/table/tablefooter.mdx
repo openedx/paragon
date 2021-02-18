@@ -18,8 +18,8 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 <a href="/table/datatable">Main DataTable page</a>
 
 The `TableFooter` component is meant to be rendered within a `DataTableContext` (provided by `DataTable` here).
-By default, it shows a how many items are being displayed and pagination information. It is a display component,
-and will accept a `RightComponent` and a `LeftComponent` that will override it's defaults.
+By default, it shows a how many items are being displayed on the left and pagination and page information on the right.
+Alternately, it will accept children.
 
 ```jsx live
 <DataTable
