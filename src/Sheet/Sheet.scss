@@ -43,8 +43,10 @@
   &.bottom, &.top {
     width: 100%;
     left: 0px;
+    max-height: 50%;
   }
   &.left, &.right {
+    max-width: 272px;
     height: 100%;
     top: 0px;
   }
