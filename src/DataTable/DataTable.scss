@@ -90,10 +90,7 @@ $data-table-footer-position: center !default;
   display: flex;
   justify-content: space-between;
   padding: $data-table-padding-x $data-table-padding-y;
-
-  .pgn__data-table-footer-row-status {
-    align-self: $data-table-footer-position;
-  }
+  align-items: center;
 }
 
 .pgn__data-table-pagination {
