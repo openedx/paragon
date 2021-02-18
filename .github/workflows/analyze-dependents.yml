@@ -26,12 +26,12 @@ jobs:
       run: npm ci
       working-directory: dependency-analysis
     - name: Analyze projects
-      run: npm run analyze "${GITHUB_WORKSPACE}/analyze-projects"
+      run: npm run analyze "${GITHUB_WORKSPACE}/analyze-projects" --out "${GITHUB_WORKSPACE}/dependents-analysis.json"
       working-directory: dependency-analysis
     - name: Commit result
       run: |
         git config user.name paragon
         git config user.email paragon+git@github.com
-        git add .
+        git add dependents-analysis.json
         git commit -m "docs(generated): update dependents analysis"
         git push
