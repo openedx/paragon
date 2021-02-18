@@ -12,8 +12,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12
-    - name: Install dependencies
-      run: npm ci
     - name: Checkout ecommerce
       uses: actions/checkout@master
       with:
@@ -24,6 +22,9 @@ jobs:
       with:
         repository: edx/frontend-app-profile
         path: analyze-projects/frontend-app-profile
+    - name: Install dependencies
+      run: npm ci
+      working-directory: dependency-analysis
     - name: Analyze projects
       run: npm run analyze "${GITHUB_WORKSPACE}/analyze-projects"
       working-directory: dependency-analysis
