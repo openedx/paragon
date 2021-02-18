@@ -29,7 +29,6 @@ jobs:
       run: npm run analyze "${GITHUB_WORKSPACE}/analyze-projects"
       working-directory: dependency-analysis
     - name: Commit result
-      uses: actions/checkout@v2
       run: |
         git config user.name paragon
         git config user.email paragon+git@github.com
