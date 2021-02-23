@@ -1,0 +1,6325 @@
+[
+  {
+    "version": "13.1.2",
+    "name": "@edx/frontend-app-account",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/edx/frontend-app-account.git"
+    },
+    "usages": {
+      "Hyperlink": [
+        {
+          "filePath": "src/account-settings/AccountSettingsPage.jsx",
+          "line": 193,
+          "column": 16,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/BetaLanguageBanner.jsx",
+          "line": 74,
+          "column": 12,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/coaching/CoachingConsent.jsx",
+          "line": 31,
+          "column": 4,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/coaching/CoachingConsentForm.jsx",
+          "line": 75,
+          "column": 10,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/delete-account/BeforeProceedingBanner.jsx",
+          "line": 28,
+          "column": 12,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/delete-account/DeleteAccount.jsx",
+          "line": 78,
+          "column": 10,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/delete-account/PrintingInstructions.jsx",
+          "line": 9,
+          "column": 4,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/demographics/DemographicsSection.jsx",
+          "line": 170,
+          "column": 10,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/reset-password/ConfirmationAlert.jsx",
+          "line": 14,
+          "column": 4,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/third-party-auth/ThirdPartyAuth.jsx",
+          "line": 25,
+          "column": 8,
+          "version": "13.1.2"
+        }
+      ],
+      "Button": [
+        {
+          "filePath": "src/account-settings/BetaLanguageBanner.jsx",
+          "line": 68,
+          "column": 12,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/coaching/CoachingConsentForm.jsx",
+          "line": 70,
+          "column": 10,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/delete-account/ConfirmationModal.jsx",
+          "line": 106,
+          "column": 10,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/delete-account/DeleteAccount.jsx",
+          "line": 83,
+          "column": 10,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/EditableField.jsx",
+          "line": 64,
+          "column": 13,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/EditableField.jsx",
+          "line": 145,
+          "column": 14,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/EditableField.jsx",
+          "line": 159,
+          "column": 16,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/EmailField.jsx",
+          "line": 91,
+          "column": 13,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/EmailField.jsx",
+          "line": 145,
+          "column": 14,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/EmailField.jsx",
+          "line": 159,
+          "column": 16,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/id-verification/IdVerificationPage.jsx",
+          "line": 67,
+          "column": 12,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/id-verification/panels/SummaryPanel.jsx",
+          "line": 52,
+          "column": 6,
+          "version": "13.1.2"
+        }
+      ],
+      "Input": [
+        {
+          "filePath": "src/account-settings/coaching/CoachingConsentForm.jsx",
+          "line": 43,
+          "column": 10,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/coaching/CoachingConsentForm.jsx",
+          "line": 56,
+          "column": 10,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/coaching/CoachingToggle.jsx",
+          "line": 47,
+          "column": 6,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/delete-account/ConfirmationModal.jsx",
+          "line": 95,
+          "column": 14,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/demographics/DemographicsSection.jsx",
+          "line": 197,
+          "column": 16,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/demographics/DemographicsSection.jsx",
+          "line": 274,
+          "column": 16,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/EditableField.jsx",
+          "line": 113,
+          "column": 14,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/EmailField.jsx",
+          "line": 116,
+          "column": 14,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/id-verification/panels/SummaryPanel.jsx",
+          "line": 154,
+          "column": 10,
+          "version": "13.1.2"
+        }
+      ],
+      "ValidationFormGroup": [
+        {
+          "filePath": "src/account-settings/coaching/CoachingToggle.jsx",
+          "line": 40,
+          "column": 4,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/delete-account/ConfirmationModal.jsx",
+          "line": 87,
+          "column": 12,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/EditableField.jsx",
+          "line": 106,
+          "column": 12,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/EmailField.jsx",
+          "line": 109,
+          "column": 12,
+          "version": "13.1.2"
+        }
+      ],
+      "Modal": [
+        {
+          "filePath": "src/account-settings/delete-account/ConfirmationModal.jsx",
+          "line": 69,
+          "column": 6,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/delete-account/SuccessModal.jsx",
+          "line": 11,
+          "column": 4,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/id-verification/IdVerificationPage.jsx",
+          "line": 73,
+          "column": 8,
+          "version": "13.1.2"
+        }
+      ],
+      "CheckBox": [
+        {
+          "filePath": "src/account-settings/demographics/Checkboxes.jsx",
+          "line": 43,
+          "column": 8,
+          "version": "13.1.2"
+        }
+      ],
+      "StatefulButton": [
+        {
+          "filePath": "src/account-settings/EditableField.jsx",
+          "line": 126,
+          "column": 14,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/EmailField.jsx",
+          "line": 126,
+          "column": 14,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/reset-password/ResetPassword.jsx",
+          "line": 24,
+          "column": 8,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/account-settings/third-party-auth/ThirdPartyAuth.jsx",
+          "line": 62,
+          "column": 8,
+          "version": "13.1.2"
+        }
+      ],
+      "TransitionReplace": [
+        {
+          "filePath": "src/account-settings/SwitchContent.jsx",
+          "line": 44,
+          "column": 4,
+          "version": "13.1.2"
+        }
+      ],
+      "Form.Group": [
+        {
+          "filePath": "src/id-verification/Camera.jsx",
+          "line": 285,
+          "column": 8,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/id-verification/panels/GetNameIdPanel.jsx",
+          "line": 67,
+          "column": 8,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/id-verification/panels/GetNameIdPanel.jsx",
+          "line": 99,
+          "column": 8,
+          "version": "13.1.2"
+        }
+      ],
+      "Form.Check": [
+        {
+          "filePath": "src/id-verification/Camera.jsx",
+          "line": 286,
+          "column": 10,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/id-verification/panels/GetNameIdPanel.jsx",
+          "line": 72,
+          "column": 12,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/id-verification/panels/GetNameIdPanel.jsx",
+          "line": 86,
+          "column": 12,
+          "version": "13.1.2"
+        }
+      ],
+      "Spinner": [
+        {
+          "filePath": "src/id-verification/Camera.jsx",
+          "line": 295,
+          "column": 53,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/id-verification/panels/SummaryPanel.jsx",
+          "line": 181,
+          "column": 23,
+          "version": "13.1.2"
+        }
+      ],
+      "Form.Text": [
+        {
+          "filePath": "src/id-verification/Camera.jsx",
+          "line": 296,
+          "column": 10,
+          "version": "13.1.2"
+        }
+      ],
+      "Collapsible": [
+        {
+          "filePath": "src/id-verification/CameraHelp.jsx",
+          "line": 11,
+          "column": 6,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/id-verification/CameraHelp.jsx",
+          "line": 21,
+          "column": 6,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/id-verification/CameraHelpWithUpload.jsx",
+          "line": 27,
+          "column": 6,
+          "version": "13.1.2"
+        }
+      ],
+      "Alert": [
+        {
+          "filePath": "src/id-verification/ImageFileUpload.jsx",
+          "line": 35,
+          "column": 6,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/id-verification/panels/SummaryPanel.jsx",
+          "line": 94,
+          "column": 8,
+          "version": "13.1.2"
+        }
+      ],
+      "Form": [
+        {
+          "filePath": "src/id-verification/panels/GetNameIdPanel.jsx",
+          "line": 66,
+          "column": 6,
+          "version": "13.1.2"
+        }
+      ],
+      "Form.Label": [
+        {
+          "filePath": "src/id-verification/panels/GetNameIdPanel.jsx",
+          "line": 68,
+          "column": 10,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/id-verification/panels/GetNameIdPanel.jsx",
+          "line": 100,
+          "column": 10,
+          "version": "13.1.2"
+        }
+      ],
+      "Form.Row": [
+        {
+          "filePath": "src/id-verification/panels/GetNameIdPanel.jsx",
+          "line": 71,
+          "column": 10,
+          "version": "13.1.2"
+        }
+      ],
+      "Form.Control": [
+        {
+          "filePath": "src/id-verification/panels/GetNameIdPanel.jsx",
+          "line": 103,
+          "column": 10,
+          "version": "13.1.2"
+        }
+      ],
+      "Alert.Link": [
+        {
+          "filePath": "src/id-verification/panels/SummaryPanel.jsx",
+          "line": 83,
+          "column": 32,
+          "version": "13.1.2"
+        }
+      ]
+    }
+  },
+  {
+    "version": "13.6.2",
+    "name": "frontend-app-admin-portal",
+    "repository": "https://github.com/edx/frontend-app-admin-portal",
+    "usages": {
+      "Button": [
+        {
+          "filePath": "src/components/ActionButtonWithModal/index.jsx",
+          "line": 14,
+          "column": 6,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/BulkEnrollmentModal/index.jsx",
+          "line": 179,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CodeAssignmentModal/index.jsx",
+          "line": 515,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CodeManagement/index.jsx",
+          "line": 273,
+          "column": 16,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CodeReminderModal/index.jsx",
+          "line": 265,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CodeRevokeModal/index.jsx",
+          "line": 305,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CodeSearchResults/CodeSearchResultsHeading.jsx",
+          "line": 13,
+          "column": 6,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CouponDetails/index.jsx",
+          "line": 282,
+          "column": 6,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CouponDetails/index.jsx",
+          "line": 895,
+          "column": 18,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CouponDetails/index.jsx",
+          "line": 927,
+          "column": 26,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CouponDetails/index.jsx",
+          "line": 942,
+          "column": 26,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CouponDetails/index.jsx",
+          "line": 979,
+          "column": 28,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/DownloadCsvButton/index.jsx",
+          "line": 20,
+          "column": 6,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/FileInput/index.jsx",
+          "line": 131,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/InviteLearnersModal/index.jsx",
+          "line": 235,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LicenseRemindModal/index.jsx",
+          "line": 196,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LicenseRevokeModal/index.jsx",
+          "line": 159,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/NumberCard/index.jsx",
+          "line": 205,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 359,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/RequestCodesPage/RequestCodesForm.jsx",
+          "line": 110,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 328,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
+          "line": 184,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SidebarToggle/index.jsx",
+          "line": 18,
+          "column": 4,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
+          "line": 46,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SupportPage/SupportForm.jsx",
+          "line": 110,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/TemplateSourceFields/index.jsx",
+          "line": 139,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/TemplateSourceFields/index.jsx",
+          "line": 165,
+          "column": 14,
+          "version": "13.6.2"
+        }
+      ],
+      "Form.Group": [
+        {
+          "filePath": "src/components/Admin/AdminSearchForm.jsx",
+          "line": 58,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/Admin/AdminSearchForm.jsx",
+          "line": 80,
+          "column": 14,
+          "version": "13.6.2"
+        }
+      ],
+      "Form.Label": [
+        {
+          "filePath": "src/components/Admin/AdminSearchForm.jsx",
+          "line": 59,
+          "column": 16,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/Admin/AdminSearchForm.jsx",
+          "line": 81,
+          "column": 16,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/Admin/AdminSearchForm.jsx",
+          "line": 113,
+          "column": 14,
+          "version": "13.6.2"
+        }
+      ],
+      "Form.Control": [
+        {
+          "filePath": "src/components/Admin/AdminSearchForm.jsx",
+          "line": 60,
+          "column": 16,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/Admin/AdminSearchForm.jsx",
+          "line": 89,
+          "column": 16,
+          "version": "13.6.2"
+        }
+      ],
+      "Icon": [
+        {
+          "filePath": "src/components/Admin/index.jsx",
+          "line": 227,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/Admin/index.jsx",
+          "line": 244,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/BulkEnrollmentModal/index.jsx",
+          "line": 186,
+          "column": 29,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CodeAssignmentModal/index.jsx",
+          "line": 521,
+          "column": 52,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CodeManagement/index.jsx",
+          "line": 280,
+          "column": 20,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CodeManagement/index.jsx",
+          "line": 289,
+          "column": 20,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CodeReminderModal/index.jsx",
+          "line": 272,
+          "column": 52,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CodeRevokeModal/index.jsx",
+          "line": 312,
+          "column": 52,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CodeSearchResults/CodeSearchResultsHeading.jsx",
+          "line": 18,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CodeSearchResults/CodeSearchResultsTable.jsx",
+          "line": 116,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/Coupon/index.jsx",
+          "line": 91,
+          "column": 6,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/Coupon/index.jsx",
+          "line": 100,
+          "column": 6,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CouponDetails/index.jsx",
+          "line": 627,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/DownloadCsvButton/index.jsx",
+          "line": 27,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/FileInput/index.jsx",
+          "line": 141,
+          "column": 18,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/InviteLearnersModal/index.jsx",
+          "line": 242,
+          "column": 31,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LicenseRemindModal/index.jsx",
+          "line": 203,
+          "column": 31,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LicenseRevokeModal/index.jsx",
+          "line": 166,
+          "column": 29,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
+          "line": 224,
+          "column": 25,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
+          "line": 225,
+          "column": 25,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
+          "line": 226,
+          "column": 26,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
+          "line": 227,
+          "column": 23,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
+          "line": 225,
+          "column": 25,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
+          "line": 226,
+          "column": 25,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
+          "line": 227,
+          "column": 26,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
+          "line": 228,
+          "column": 23,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CornerstoneIntegrationConfigForm.jsx",
+          "line": 229,
+          "column": 23,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CornerstoneIntegrationConfigForm.jsx",
+          "line": 230,
+          "column": 23,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CornerstoneIntegrationConfigForm.jsx",
+          "line": 231,
+          "column": 24,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CornerstoneIntegrationConfigForm.jsx",
+          "line": 232,
+          "column": 21,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
+          "line": 324,
+          "column": 23,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
+          "line": 325,
+          "column": 23,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
+          "line": 326,
+          "column": 24,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
+          "line": 327,
+          "column": 21,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
+          "line": 275,
+          "column": 25,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
+          "line": 276,
+          "column": 25,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
+          "line": 277,
+          "column": 26,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
+          "line": 278,
+          "column": 23,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+          "line": 299,
+          "column": 25,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+          "line": 300,
+          "column": 25,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+          "line": 301,
+          "column": 26,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+          "line": 302,
+          "column": 23,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/NumberCard/index.jsx",
+          "line": 158,
+          "column": 15,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/NumberCard/index.jsx",
+          "line": 189,
+          "column": 16,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/NumberCard/index.jsx",
+          "line": 219,
+          "column": 20,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/index.jsx",
+          "line": 123,
+          "column": 22,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 348,
+          "column": 25,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 349,
+          "column": 25,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 350,
+          "column": 26,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 351,
+          "column": 23,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 363,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/RequestCodesPage/RequestCodesForm.jsx",
+          "line": 116,
+          "column": 33,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/index.jsx",
+          "line": 170,
+          "column": 22,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 316,
+          "column": 25,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 317,
+          "column": 25,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 318,
+          "column": 26,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 319,
+          "column": 23,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 333,
+          "column": 16,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
+          "line": 171,
+          "column": 27,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
+          "line": 172,
+          "column": 27,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
+          "line": 173,
+          "column": 28,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
+          "line": 174,
+          "column": 25,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
+          "line": 188,
+          "column": 16,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SaveTemplateButton/index.jsx",
+          "line": 144,
+          "column": 19,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SaveTemplateButton/index.jsx",
+          "line": 145,
+          "column": 20,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SidebarToggle/index.jsx",
+          "line": 25,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/StatusAlert/index.jsx",
+          "line": 31,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SupportPage/SupportForm.jsx",
+          "line": 116,
+          "column": 33,
+          "version": "13.6.2"
+        }
+      ],
+      "Container": [
+        {
+          "filePath": "src/components/AdminRegisterPage/index.jsx",
+          "line": 41,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/AdminRegisterPage/index.jsx",
+          "line": 59,
+          "column": 4,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/subscriptions/SubscriptionManagementPage.jsx",
+          "line": 21,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/UserActivationPage/index.jsx",
+          "line": 70,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/UserActivationPage/index.jsx",
+          "line": 94,
+          "column": 6,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/UserActivationPage/index.jsx",
+          "line": 109,
+          "column": 4,
+          "version": "13.6.2"
+        }
+      ],
+      "Row": [
+        {
+          "filePath": "src/components/AdminRegisterPage/index.jsx",
+          "line": 42,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/AdminRegisterPage/index.jsx",
+          "line": 60,
+          "column": 6,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/subscriptions/MultipleSubscriptionsPage.jsx",
+          "line": 42,
+          "column": 6,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/subscriptions/SubscriptionDetails.jsx",
+          "line": 17,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/subscriptions/SubscriptionDetails.jsx",
+          "line": 25,
+          "column": 6,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/UserActivationPage/index.jsx",
+          "line": 71,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/UserActivationPage/index.jsx",
+          "line": 95,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/UserActivationPage/index.jsx",
+          "line": 110,
+          "column": 6,
+          "version": "13.6.2"
+        }
+      ],
+      "Col": [
+        {
+          "filePath": "src/components/AdminRegisterPage/index.jsx",
+          "line": 43,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/AdminRegisterPage/index.jsx",
+          "line": 61,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/subscriptions/MultipleSubscriptionsPage.jsx",
+          "line": 43,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/subscriptions/SubscriptionDetails.jsx",
+          "line": 26,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/UserActivationPage/index.jsx",
+          "line": 72,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/UserActivationPage/index.jsx",
+          "line": 96,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/UserActivationPage/index.jsx",
+          "line": 111,
+          "column": 8,
+          "version": "13.6.2"
+        }
+      ],
+      "Alert": [
+        {
+          "filePath": "src/components/BulkEnrollmentModal/index.jsx",
+          "line": 87,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/BulkEnrollmentModal/index.jsx",
+          "line": 104,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/UserActivationPage/index.jsx",
+          "line": 73,
+          "column": 14,
+          "version": "13.6.2"
+        }
+      ],
+      "Alert.Heading": [
+        {
+          "filePath": "src/components/BulkEnrollmentModal/index.jsx",
+          "line": 91,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/BulkEnrollmentModal/index.jsx",
+          "line": 108,
+          "column": 10,
+          "version": "13.6.2"
+        }
+      ],
+      "Modal": [
+        {
+          "filePath": "src/components/BulkEnrollmentModal/index.jsx",
+          "line": 172,
+          "column": 6,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CodeAssignmentModal/index.jsx",
+          "line": 509,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CodeReminderModal/index.jsx",
+          "line": 259,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CodeRevokeModal/index.jsx",
+          "line": 299,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/InviteLearnersModal/index.jsx",
+          "line": 229,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LicenseRemindModal/index.jsx",
+          "line": 190,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LicenseRevokeModal/index.jsx",
+          "line": 153,
+          "column": 6,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/subscriptions/expiration/SubscriptionExpirationModal.jsx",
+          "line": 73,
+          "column": 6,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/subscriptions/expiration/SubscriptionExpirationModal.jsx",
+          "line": 107,
+          "column": 4,
+          "version": "13.6.2"
+        }
+      ],
+      "Toast": [
+        {
+          "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
+          "line": 82,
+          "column": 6,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/Toasts/Toasts.jsx",
+          "line": 9,
+          "column": 4,
+          "version": "13.6.2"
+        }
+      ],
+      "DataTable": [
+        {
+          "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
+          "line": 89,
+          "column": 8,
+          "version": "13.6.2"
+        }
+      ],
+      "Input": [
+        {
+          "filePath": "src/components/CodeAssignmentModal/index.jsx",
+          "line": 378,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CodeRevokeModal/index.jsx",
+          "line": 164,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CsvUpload/index.jsx",
+          "line": 41,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
+          "line": 129,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
+          "line": 149,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
+          "line": 167,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
+          "line": 185,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
+          "line": 201,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
+          "line": 124,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
+          "line": 143,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
+          "line": 162,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
+          "line": 181,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
+          "line": 200,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CornerstoneIntegrationConfigForm.jsx",
+          "line": 186,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CornerstoneIntegrationConfigForm.jsx",
+          "line": 206,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
+          "line": 191,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
+          "line": 211,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
+          "line": 229,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
+          "line": 247,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
+          "line": 265,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
+          "line": 283,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
+          "line": 301,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
+          "line": 144,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
+          "line": 164,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
+          "line": 182,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
+          "line": 198,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
+          "line": 216,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
+          "line": 234,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
+          "line": 252,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+          "line": 127,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+          "line": 147,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+          "line": 165,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+          "line": 183,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+          "line": 201,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+          "line": 219,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+          "line": 237,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+          "line": 258,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+          "line": 276,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/EmailDeliveryMethodForm.jsx",
+          "line": 20,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/EmailDeliveryMethodForm.jsx",
+          "line": 35,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/EmailDeliveryMethodForm.jsx",
+          "line": 51,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 157,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 174,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 192,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 210,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 227,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 250,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 268,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 294,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 309,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/SFTPDeliveryMethodForm.jsx",
+          "line": 19,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/SFTPDeliveryMethodForm.jsx",
+          "line": 36,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/SFTPDeliveryMethodForm.jsx",
+          "line": 55,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/SFTPDeliveryMethodForm.jsx",
+          "line": 66,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/SFTPDeliveryMethodForm.jsx",
+          "line": 82,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/SFTPDeliveryMethodForm.jsx",
+          "line": 97,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlConfiguration/index.jsx",
+          "line": 48,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 117,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 135,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 151,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 174,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 192,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 208,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 224,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 240,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 256,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 272,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 288,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
+          "line": 109,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
+          "line": 128,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
+          "line": 147,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/TemplateSourceFields/index.jsx",
+          "line": 61,
+          "column": 8,
+          "version": "13.6.2"
+        }
+      ],
+      "Pagination": [
+        {
+          "filePath": "src/components/CodeManagement/index.jsx",
+          "line": 198,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/subscriptions/licenses/TabContentTable.jsx",
+          "line": 168,
+          "column": 20,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/TableComponent/index.jsx",
+          "line": 89,
+          "column": 12,
+          "version": "13.6.2"
+        }
+      ],
+      "TransitionReplace": [
+        {
+          "filePath": "src/components/CodeSearchResults/index.jsx",
+          "line": 86,
+          "column": 6,
+          "version": "13.6.2"
+        }
+      ],
+      "CheckBox": [
+        {
+          "filePath": "src/components/CouponDetails/index.jsx",
+          "line": 35,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CouponDetails/index.jsx",
+          "line": 638,
+          "column": 8,
+          "version": "13.6.2"
+        }
+      ],
+      "InputSelect": [
+        {
+          "filePath": "src/components/CouponDetails/index.jsx",
+          "line": 862,
+          "column": 18,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CouponDetails/index.jsx",
+          "line": 873,
+          "column": 22,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/CouponDetails/index.jsx",
+          "line": 886,
+          "column": 18,
+          "version": "13.6.2"
+        }
+      ],
+      "ValidationFormGroup": [
+        {
+          "filePath": "src/components/FileInput/index.jsx",
+          "line": 71,
+          "column": 6,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
+          "line": 125,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
+          "line": 142,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
+          "line": 160,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
+          "line": 178,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
+          "line": 196,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
+          "line": 120,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
+          "line": 137,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
+          "line": 156,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
+          "line": 175,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
+          "line": 194,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CornerstoneIntegrationConfigForm.jsx",
+          "line": 182,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CornerstoneIntegrationConfigForm.jsx",
+          "line": 199,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
+          "line": 187,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
+          "line": 204,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
+          "line": 222,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
+          "line": 240,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
+          "line": 258,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
+          "line": 276,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
+          "line": 294,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
+          "line": 140,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
+          "line": 157,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
+          "line": 175,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
+          "line": 193,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
+          "line": 209,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
+          "line": 227,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
+          "line": 245,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+          "line": 123,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+          "line": 140,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+          "line": 158,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+          "line": 176,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+          "line": 194,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+          "line": 212,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+          "line": 230,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+          "line": 253,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+          "line": 271,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/EmailDeliveryMethodForm.jsx",
+          "line": 13,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/EmailDeliveryMethodForm.jsx",
+          "line": 44,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 153,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 169,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 187,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 205,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 222,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 244,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 263,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 287,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 304,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 331,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/SFTPDeliveryMethodForm.jsx",
+          "line": 12,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/SFTPDeliveryMethodForm.jsx",
+          "line": 29,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/SFTPDeliveryMethodForm.jsx",
+          "line": 48,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/SFTPDeliveryMethodForm.jsx",
+          "line": 75,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/SFTPDeliveryMethodForm.jsx",
+          "line": 90,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlConfiguration/index.jsx",
+          "line": 42,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 113,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 130,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 146,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 167,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 185,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 203,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 219,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 235,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 251,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 267,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 283,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
+          "line": 102,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
+          "line": 121,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
+          "line": 140,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/TextAreaAutoSize/index.jsx",
+          "line": 20,
+          "column": 4,
+          "version": "13.6.2"
+        }
+      ],
+      "MailtoLink": [
+        {
+          "filePath": "src/components/ForbiddenPage/index.jsx",
+          "line": 17,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/subscriptions/expiration/SubscriptionExpirationBanner.jsx",
+          "line": 26,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/subscriptions/expiration/SubscriptionExpirationModal.jsx",
+          "line": 35,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/subscriptions/expiration/SubscriptionExpirationModal.jsx",
+          "line": 57,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SupportPage/index.jsx",
+          "line": 55,
+          "column": 18,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/UserActivationPage/index.jsx",
+          "line": 82,
+          "column": 18,
+          "version": "13.6.2"
+        }
+      ],
+      "Dropdown": [
+        {
+          "filePath": "src/components/Header/index.jsx",
+          "line": 47,
+          "column": 4,
+          "version": "13.6.2"
+        }
+      ],
+      "Dropdown.Toggle": [
+        {
+          "filePath": "src/components/Header/index.jsx",
+          "line": 48,
+          "column": 6,
+          "version": "13.6.2"
+        }
+      ],
+      "Dropdown.Menu": [
+        {
+          "filePath": "src/components/Header/index.jsx",
+          "line": 57,
+          "column": 6,
+          "version": "13.6.2"
+        }
+      ],
+      "Dropdown.Item": [
+        {
+          "filePath": "src/components/Header/index.jsx",
+          "line": 58,
+          "column": 8,
+          "version": "13.6.2"
+        }
+      ],
+      "Navbar": [
+        {
+          "filePath": "src/components/Header/index.jsx",
+          "line": 97,
+          "column": 6,
+          "version": "13.6.2"
+        }
+      ],
+      "Nav": [
+        {
+          "filePath": "src/components/Header/index.jsx",
+          "line": 98,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/Header/index.jsx",
+          "line": 108,
+          "column": 10,
+          "version": "13.6.2"
+        }
+      ],
+      "Nav.Link": [
+        {
+          "filePath": "src/components/Header/index.jsx",
+          "line": 100,
+          "column": 10,
+          "version": "13.6.2"
+        }
+      ],
+      "OverlayTrigger": [
+        {
+          "filePath": "src/components/IconWithTooltip/index.jsx",
+          "line": 13,
+          "column": 4,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/TemplateSourceFields/index.jsx",
+          "line": 128,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/TemplateSourceFields/index.jsx",
+          "line": 154,
+          "column": 10,
+          "version": "13.6.2"
+        }
+      ],
+      "Tooltip": [
+        {
+          "filePath": "src/components/IconWithTooltip/index.jsx",
+          "line": 18,
+          "column": 8,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/TemplateSourceFields/index.jsx",
+          "line": 132,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/TemplateSourceFields/index.jsx",
+          "line": 158,
+          "column": 14,
+          "version": "13.6.2"
+        }
+      ],
+      "StatefulButton": [
+        {
+          "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
+          "line": 213,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
+          "line": 214,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/CornerstoneIntegrationConfigForm.jsx",
+          "line": 218,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
+          "line": 313,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
+          "line": 264,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+          "line": 288,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+          "line": 337,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+          "line": 305,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
+          "line": 160,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SaveTemplateButton/index.jsx",
+          "line": 133,
+          "column": 6,
+          "version": "13.6.2"
+        }
+      ],
+      "Collapsible": [
+        {
+          "filePath": "src/components/LmsConfigurations/index.jsx",
+          "line": 139,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/index.jsx",
+          "line": 151,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/index.jsx",
+          "line": 163,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/index.jsx",
+          "line": 175,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/index.jsx",
+          "line": 187,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/LmsConfigurations/index.jsx",
+          "line": 199,
+          "column": 10,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/index.jsx",
+          "line": 118,
+          "column": 16,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/ReportingConfig/index.jsx",
+          "line": 150,
+          "column": 12,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/index.jsx",
+          "line": 165,
+          "column": 16,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/index.jsx",
+          "line": 205,
+          "column": 16,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/index.jsx",
+          "line": 235,
+          "column": 14,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/SamlProviderConfiguration/index.jsx",
+          "line": 249,
+          "column": 14,
+          "version": "13.6.2"
+        }
+      ],
+      "InputText": [
+        {
+          "filePath": "src/components/RenderField/index.jsx",
+          "line": 14,
+          "column": 2,
+          "version": "13.6.2"
+        }
+      ],
+      "SearchField": [
+        {
+          "filePath": "src/components/SearchBar/index.jsx",
+          "line": 6,
+          "column": 2,
+          "version": "13.6.2"
+        }
+      ],
+      "StatusAlert": [
+        {
+          "filePath": "src/components/StatusAlert/index.jsx",
+          "line": 18,
+          "column": 4,
+          "version": "13.6.2"
+        }
+      ],
+      "Table": [
+        {
+          "filePath": "src/components/subscriptions/licenses/TabContentTable.jsx",
+          "line": 161,
+          "column": 20,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/TableComponent/index.jsx",
+          "line": 75,
+          "column": 14,
+          "version": "13.6.2"
+        }
+      ],
+      "CardGrid": [
+        {
+          "filePath": "src/components/subscriptions/MultipleSubscriptionsPage.jsx",
+          "line": 50,
+          "column": 6,
+          "version": "13.6.2"
+        }
+      ],
+      "Card": [
+        {
+          "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
+          "line": 23,
+          "column": 4,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/subscriptions/SubscriptionZeroStateMessage.jsx",
+          "line": 14,
+          "column": 4,
+          "version": "13.6.2"
+        }
+      ],
+      "Card.Body": [
+        {
+          "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
+          "line": 24,
+          "column": 6,
+          "version": "13.6.2"
+        },
+        {
+          "filePath": "src/components/subscriptions/SubscriptionZeroStateMessage.jsx",
+          "line": 15,
+          "column": 6,
+          "version": "13.6.2"
+        }
+      ],
+      "Card.Title": [
+        {
+          "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
+          "line": 25,
+          "column": 8,
+          "version": "13.6.2"
+        }
+      ],
+      "Badge": [
+        {
+          "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
+          "line": 29,
+          "column": 14,
+          "version": "13.6.2"
+        }
+      ]
+    }
+  },
+  {
+    "version": "13.3.1",
+    "name": "@edx/frontend-app-authn",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/edx/frontend-app-authn.git"
+    },
+    "usages": {
+      "Alert": [
+        {
+          "filePath": "src/common-components/APIFailureMessage.jsx",
+          "line": 13,
+          "column": 8,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/common-components/ConfirmationAlert.jsx",
+          "line": 14,
+          "column": 4,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/common-components/ThirdPartyAuthAlert.jsx",
+          "line": 32,
+          "column": 9,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
+          "line": 42,
+          "column": 8,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/forgot-password/RequestInProgressAlert.jsx",
+          "line": 12,
+          "column": 4,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/login/AccountActivationMessage.jsx",
+          "line": 51,
+          "column": 4,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/login/LoginFailure.jsx",
+          "line": 165,
+          "column": 4,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/register/RegistrationFailure.jsx",
+          "line": 47,
+          "column": 6,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/reset-password/InvalidToken.jsx",
+          "line": 20,
+          "column": 8,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/reset-password/ResetPasswordPage.jsx",
+          "line": 124,
+          "column": 14,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/reset-password/ResetSuccess.jsx",
+          "line": 25,
+          "column": 10,
+          "version": "13.3.1"
+        }
+      ],
+      "Alert.Heading": [
+        {
+          "filePath": "src/common-components/APIFailureMessage.jsx",
+          "line": 14,
+          "column": 10,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/common-components/ConfirmationAlert.jsx",
+          "line": 15,
+          "column": 6,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
+          "line": 43,
+          "column": 10,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/forgot-password/RequestInProgressAlert.jsx",
+          "line": 13,
+          "column": 6,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/login/AccountActivationMessage.jsx",
+          "line": 52,
+          "column": 18,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/login/LoginFailure.jsx",
+          "line": 166,
+          "column": 6,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/register/RegistrationFailure.jsx",
+          "line": 48,
+          "column": 8,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/reset-password/InvalidToken.jsx",
+          "line": 21,
+          "column": 10,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/reset-password/ResetPasswordPage.jsx",
+          "line": 125,
+          "column": 16,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/reset-password/ResetSuccess.jsx",
+          "line": 26,
+          "column": 12,
+          "version": "13.3.1"
+        }
+      ],
+      "Form.Label": [
+        {
+          "filePath": "src/common-components/AuthnValidationFormGroup.jsx",
+          "line": 42,
+          "column": 6,
+          "version": "13.3.1"
+        }
+      ],
+      "ValidationFormGroup": [
+        {
+          "filePath": "src/common-components/AuthnValidationFormGroup.jsx",
+          "line": 91,
+          "column": 4,
+          "version": "13.3.1"
+        }
+      ],
+      "Input": [
+        {
+          "filePath": "src/common-components/AuthnValidationFormGroup.jsx",
+          "line": 95,
+          "column": 6,
+          "version": "13.3.1"
+        }
+      ],
+      "Alert.Link": [
+        {
+          "filePath": "src/common-components/ConfirmationAlert.jsx",
+          "line": 33,
+          "column": 14,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/login/AccountActivationMessage.jsx",
+          "line": 30,
+          "column": 8,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/login/LoginFailure.jsx",
+          "line": 52,
+          "column": 8,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/login/LoginFailure.jsx",
+          "line": 90,
+          "column": 8,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/login/LoginFailure.jsx",
+          "line": 116,
+          "column": 8,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/login/LoginFailure.jsx",
+          "line": 155,
+          "column": 14,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/reset-password/InvalidToken.jsx",
+          "line": 12,
+          "column": 4,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/reset-password/ResetSuccess.jsx",
+          "line": 12,
+          "column": 4,
+          "version": "13.3.1"
+        }
+      ],
+      "Form": [
+        {
+          "filePath": "src/common-components/EnterpriseSSO.jsx",
+          "line": 36,
+          "column": 12,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
+          "line": 92,
+          "column": 14,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/login/LoginPage.jsx",
+          "line": 208,
+          "column": 14,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/register/RegistrationPage.jsx",
+          "line": 445,
+          "column": 14,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/reset-password/ResetPasswordPage.jsx",
+          "line": 129,
+          "column": 12,
+          "version": "13.3.1"
+        }
+      ],
+      "Button": [
+        {
+          "filePath": "src/common-components/EnterpriseSSO.jsx",
+          "line": 38,
+          "column": 14,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/common-components/EnterpriseSSO.jsx",
+          "line": 64,
+          "column": 14,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/common-components/InstitutionLogistration.jsx",
+          "line": 14,
+          "column": 6,
+          "version": "13.3.1"
+        }
+      ],
+      "Hyperlink": [
+        {
+          "filePath": "src/common-components/InstitutionLogistration.jsx",
+          "line": 43,
+          "column": 12,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/common-components/InstitutionLogistration.jsx",
+          "line": 60,
+          "column": 18,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/login/LoginHelpLinks.jsx",
+          "line": 32,
+          "column": 4,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/login/LoginHelpLinks.jsx",
+          "line": 42,
+          "column": 4,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/login/LoginHelpLinks.jsx",
+          "line": 49,
+          "column": 6,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/login/LoginPage.jsx",
+          "line": 200,
+          "column": 16,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/login/LoginPage.jsx",
+          "line": 231,
+          "column": 16,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/register/RegistrationPage.jsx",
+          "line": 439,
+          "column": 16,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/register/RegistrationPage.jsx",
+          "line": 519,
+          "column": 24,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/register/RegistrationPage.jsx",
+          "line": 524,
+          "column": 24,
+          "version": "13.3.1"
+        }
+      ],
+      "TransitionReplace": [
+        {
+          "filePath": "src/common-components/SwitchContent.jsx",
+          "line": 41,
+          "column": 4,
+          "version": "13.3.1"
+        }
+      ],
+      "StatefulButton": [
+        {
+          "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
+          "line": 114,
+          "column": 16,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/login/LoginPage.jsx",
+          "line": 234,
+          "column": 16,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/register/RegistrationPage.jsx",
+          "line": 547,
+          "column": 16,
+          "version": "13.3.1"
+        },
+        {
+          "filePath": "src/reset-password/ResetPasswordPage.jsx",
+          "line": 159,
+          "column": 14,
+          "version": "13.3.1"
+        }
+      ],
+      "Spinner": [
+        {
+          "filePath": "src/reset-password/Spinner.jsx",
+          "line": 7,
+          "column": 6,
+          "version": "13.3.1"
+        }
+      ]
+    }
+  },
+  {
+    "version": "12.2.0",
+    "name": "@edx/frontend-app-course-authoring",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/edx/frontend-app-course-authoring.git"
+    },
+    "usages": {
+      "Col": [
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionAppCard.jsx",
+          "line": 16,
+          "column": 4,
+          "version": "12.2.0"
+        }
+      ],
+      "Input": [
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionAppCard.jsx",
+          "line": 37,
+          "column": 12,
+          "version": "12.2.0"
+        }
+      ],
+      "Image": [
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionAppCard.jsx",
+          "line": 46,
+          "column": 12,
+          "version": "12.2.0"
+        }
+      ],
+      "Container": [
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionAppList.jsx",
+          "line": 37,
+          "column": 4,
+          "version": "12.2.0"
+        }
+      ],
+      "Row": [
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionAppList.jsx",
+          "line": 40,
+          "column": 6,
+          "version": "12.2.0"
+        }
+      ],
+      "Button": [
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionAppList.jsx",
+          "line": 56,
+          "column": 10,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/pages-and-resources/pages/PageCard.jsx",
+          "line": 56,
+          "column": 10,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/pages-and-resources/resources/ResourcesList.jsx",
+          "line": 18,
+          "column": 10,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 370,
+          "column": 8,
+          "version": "12.2.0"
+        }
+      ],
+      "Alert.Link": [
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 119,
+          "column": 35,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 131,
+          "column": 35,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 419,
+          "column": 34,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 457,
+          "column": 40,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 481,
+          "column": 34,
+          "version": "12.2.0"
+        }
+      ],
+      "Form": [
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 194,
+          "column": 6,
+          "version": "12.2.0"
+        }
+      ],
+      "Alert": [
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 198,
+          "column": 12,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 412,
+          "column": 6,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 428,
+          "column": 6,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 443,
+          "column": 6,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 465,
+          "column": 6,
+          "version": "12.2.0"
+        }
+      ],
+      "Form.Group": [
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 209,
+          "column": 8,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 231,
+          "column": 12,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 275,
+          "column": 8,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 299,
+          "column": 10,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 332,
+          "column": 12,
+          "version": "12.2.0"
+        }
+      ],
+      "Form.Check": [
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 210,
+          "column": 10,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 239,
+          "column": 14,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 249,
+          "column": 14,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 340,
+          "column": 14,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 350,
+          "column": 14,
+          "version": "12.2.0"
+        }
+      ],
+      "Form.Text": [
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 219,
+          "column": 10,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 259,
+          "column": 14,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 291,
+          "column": 10,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 317,
+          "column": 12,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 360,
+          "column": 14,
+          "version": "12.2.0"
+        }
+      ],
+      "Form.Label": [
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 232,
+          "column": 14,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 276,
+          "column": 10,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 300,
+          "column": 12,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 333,
+          "column": 14,
+          "version": "12.2.0"
+        }
+      ],
+      "Form.Control": [
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 283,
+          "column": 10,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 307,
+          "column": 12,
+          "version": "12.2.0"
+        }
+      ],
+      "Spinner": [
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 383,
+          "column": 33,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 397,
+          "column": 8,
+          "version": "12.2.0"
+        }
+      ]
+    }
+  },
+  {
+    "version": "12.0.5",
+    "name": "@edx/frontend-app-discussions",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/edx/frontend-app-discussions.git"
+    },
+    "usages": {
+      "Dropdown": [
+        {
+          "filePath": "src/components/selectable-dropdown/SelectableDropdown.jsx",
+          "line": 10,
+          "column": 4,
+          "version": "12.0.5"
+        }
+      ],
+      "Dropdown.Toggle": [
+        {
+          "filePath": "src/components/selectable-dropdown/SelectableDropdown.jsx",
+          "line": 11,
+          "column": 6,
+          "version": "12.0.5"
+        }
+      ],
+      "Dropdown.Menu": [
+        {
+          "filePath": "src/components/selectable-dropdown/SelectableDropdown.jsx",
+          "line": 14,
+          "column": 6,
+          "version": "12.0.5"
+        }
+      ],
+      "Dropdown.Item": [
+        {
+          "filePath": "src/components/selectable-dropdown/SelectableDropdown.jsx",
+          "line": 17,
+          "column": 12,
+          "version": "12.0.5"
+        }
+      ]
+    }
+  },
+  {
+    "version": "12.7.1",
+    "name": "@edx/frontend-app-ecommerce",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/edx/frontend-app-ecommerce.git"
+    },
+    "usages": {
+      "Hyperlink": [
+        {
+          "filePath": "src/order-history/OrderHistoryPage.jsx",
+          "line": 46,
+          "column": 8,
+          "version": "12.7.1"
+        }
+      ],
+      "Pagination": [
+        {
+          "filePath": "src/order-history/OrderHistoryPage.jsx",
+          "line": 68,
+          "column": 6,
+          "version": "12.7.1"
+        }
+      ],
+      "Table": [
+        {
+          "filePath": "src/order-history/OrderHistoryPage.jsx",
+          "line": 91,
+          "column": 6,
+          "version": "12.7.1"
+        }
+      ]
+    }
+  },
+  {
+    "version": "12.4.1",
+    "name": "@edx/frontend-app-gradebook",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/edx/frontend-app-gradebook.git"
+    },
+    "usages": {
+      "Button": [
+        {
+          "filePath": "src/components/Drawer/index.jsx",
+          "line": 56,
+          "column": 12,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/Gradebook/Assignments.jsx",
+          "line": 132,
+          "column": 14,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/Gradebook/BulkManagement.jsx",
+          "line": 112,
+          "column": 8,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/Gradebook/EditModal.jsx",
+          "line": 122,
+          "column": 10,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/Gradebook/index.jsx",
+          "line": 294,
+          "column": 18,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/Gradebook/index.jsx",
+          "line": 441,
+          "column": 12,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/PageButtons/index.jsx",
+          "line": 14,
+          "column": 6,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/PageButtons/index.jsx",
+          "line": 28,
+          "column": 6,
+          "version": "12.4.1"
+        }
+      ],
+      "Collapsible": [
+        {
+          "filePath": "src/components/Gradebook/Assignments.jsx",
+          "line": 78,
+          "column": 6,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/Gradebook/index.jsx",
+          "line": 413,
+          "column": 8,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/Gradebook/index.jsx",
+          "line": 449,
+          "column": 8,
+          "version": "12.4.1"
+        }
+      ],
+      "InputSelect": [
+        {
+          "filePath": "src/components/Gradebook/Assignments.jsx",
+          "line": 81,
+          "column": 12,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/Gradebook/Assignments.jsx",
+          "line": 92,
+          "column": 12,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/Gradebook/index.jsx",
+          "line": 348,
+          "column": 18,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/Gradebook/index.jsx",
+          "line": 450,
+          "column": 10,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/Gradebook/index.jsx",
+          "line": 459,
+          "column": 10,
+          "version": "12.4.1"
+        }
+      ],
+      "InputText": [
+        {
+          "filePath": "src/components/Gradebook/Assignments.jsx",
+          "line": 104,
+          "column": 14,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/Gradebook/Assignments.jsx",
+          "line": 118,
+          "column": 14,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/Gradebook/index.jsx",
+          "line": 416,
+          "column": 14,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/Gradebook/index.jsx",
+          "line": 428,
+          "column": 14,
+          "version": "12.4.1"
+        }
+      ],
+      "StatusAlert": [
+        {
+          "filePath": "src/components/Gradebook/BulkManagement.jsx",
+          "line": 91,
+          "column": 10,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/Gradebook/BulkManagement.jsx",
+          "line": 97,
+          "column": 10,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/Gradebook/EditModal.jsx",
+          "line": 82,
+          "column": 12,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/Gradebook/index.jsx",
+          "line": 320,
+          "column": 16,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/Gradebook/index.jsx",
+          "line": 326,
+          "column": 16,
+          "version": "12.4.1"
+        }
+      ],
+      "Table": [
+        {
+          "filePath": "src/components/Gradebook/BulkManagement.jsx",
+          "line": 122,
+          "column": 8,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/Gradebook/EditModal.jsx",
+          "line": 89,
+          "column": 14,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/Gradebook/GradebookTable.jsx",
+          "line": 148,
+          "column": 10,
+          "version": "12.4.1"
+        }
+      ],
+      "StatefulButton": [
+        {
+          "filePath": "src/components/Gradebook/BulkManagementControls.jsx",
+          "line": 33,
+          "column": 8,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/Gradebook/BulkManagementControls.jsx",
+          "line": 47,
+          "column": 8,
+          "version": "12.4.1"
+        }
+      ],
+      "Modal": [
+        {
+          "filePath": "src/components/Gradebook/EditModal.jsx",
+          "line": 66,
+          "column": 6,
+          "version": "12.4.1"
+        }
+      ],
+      "Tabs": [
+        {
+          "filePath": "src/components/Gradebook/index.jsx",
+          "line": 289,
+          "column": 12,
+          "version": "12.4.1"
+        }
+      ],
+      "Tab": [
+        {
+          "filePath": "src/components/Gradebook/index.jsx",
+          "line": 290,
+          "column": 14,
+          "version": "12.4.1"
+        },
+        {
+          "filePath": "src/components/Gradebook/index.jsx",
+          "line": 388,
+          "column": 16,
+          "version": "12.4.1"
+        }
+      ],
+      "Icon": [
+        {
+          "filePath": "src/components/Gradebook/index.jsx",
+          "line": 293,
+          "column": 78,
+          "version": "12.4.1"
+        }
+      ],
+      "SearchField": [
+        {
+          "filePath": "src/components/Gradebook/index.jsx",
+          "line": 296,
+          "column": 20,
+          "version": "12.4.1"
+        }
+      ],
+      "Hyperlink": [
+        {
+          "filePath": "src/components/Header/index.jsx",
+          "line": 16,
+          "column": 10,
+          "version": "12.4.1"
+        }
+      ]
+    }
+  },
+  {
+    "version": "13.2.0",
+    "name": "frontend-app-learner-portal-enterprise",
+    "repository": {
+      "type": "git",
+      "url": ""
+    },
+    "usages": {
+      "Container": [
+        {
+          "filePath": "src/components/course/Course.jsx",
+          "line": 67,
+          "column": 6,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/course/Course.jsx",
+          "line": 85,
+          "column": 8,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/enterprise-user-subsidy/OffersAlert.jsx",
+          "line": 16,
+          "column": 6,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/enterprise-user-subsidy/SubscriptionSubsidy.jsx",
+          "line": 101,
+          "column": 4,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/system-wide-banner/SystemWideWarningBanner.jsx",
+          "line": 13,
+          "column": 4,
+          "version": "13.2.0"
+        }
+      ],
+      "Row": [
+        {
+          "filePath": "src/components/course/Course.jsx",
+          "line": 86,
+          "column": 10,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/course/CourseSidebarListItem.jsx",
+          "line": 12,
+          "column": 4,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/dashboard/main-content/course-enrollments/CourseEnrollments.jsx",
+          "line": 162,
+          "column": 12,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/system-wide-banner/SystemWideWarningBanner.jsx",
+          "line": 14,
+          "column": 6,
+          "version": "13.2.0"
+        }
+      ],
+      "StatusAlert": [
+        {
+          "filePath": "src/components/course/CourseHeader.jsx",
+          "line": 43,
+          "column": 8,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/dashboard/Dashboard.jsx",
+          "line": 23,
+          "column": 8,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
+          "line": 124,
+          "column": 14,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/mark-complete-modal/ModalError.jsx",
+          "line": 11,
+          "column": 4,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/move-to-in-progress-modal/ModalError.jsx",
+          "line": 11,
+          "column": 4,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/dashboard/main-content/course-enrollments/CourseEnrollments.jsx",
+          "line": 65,
+          "column": 4,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/dashboard/main-content/course-enrollments/CourseEnrollments.jsx",
+          "line": 85,
+          "column": 6,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/dashboard/main-content/course-enrollments/CourseEnrollments.jsx",
+          "line": 108,
+          "column": 6,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/enterprise-user-subsidy/SubscriptionSubsidy.jsx",
+          "line": 102,
+          "column": 6,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/license-activation/LicenseActivation.jsx",
+          "line": 38,
+          "column": 10,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/search/SearchError.jsx",
+          "line": 24,
+          "column": 4,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/search/SearchNoResults.jsx",
+          "line": 27,
+          "column": 6,
+          "version": "13.2.0"
+        }
+      ],
+      "Breadcrumb": [
+        {
+          "filePath": "src/components/course/CourseHeader.jsx",
+          "line": 67,
+          "column": 14,
+          "version": "13.2.0"
+        }
+      ],
+      "Button": [
+        {
+          "filePath": "src/components/course/CourseRunSelector.jsx",
+          "line": 27,
+          "column": 8,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/course/CourseRunSelector.jsx",
+          "line": 54,
+          "column": 8,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/UpcomingCourseCard.jsx",
+          "line": 10,
+          "column": 4,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/integration-warning-modal/IntegrationWarningModal.jsx",
+          "line": 38,
+          "column": 10,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/preview-expand/PreviewExpand.jsx",
+          "line": 21,
+          "column": 6,
+          "version": "13.2.0"
+        }
+      ],
+      "Input": [
+        {
+          "filePath": "src/components/course/CourseRunSelector.jsx",
+          "line": 38,
+          "column": 8,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
+          "line": 141,
+          "column": 14,
+          "version": "13.2.0"
+        }
+      ],
+      "Col": [
+        {
+          "filePath": "src/components/course/CourseSidebarListItem.jsx",
+          "line": 13,
+          "column": 6,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/course/CourseSidebarListItem.jsx",
+          "line": 17,
+          "column": 6,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/system-wide-banner/SystemWideWarningBanner.jsx",
+          "line": 15,
+          "column": 8,
+          "version": "13.2.0"
+        }
+      ],
+      "Modal": [
+        {
+          "filePath": "src/components/course/EnrollModal.jsx",
+          "line": 37,
+          "column": 4,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
+          "line": 119,
+          "column": 6,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/mark-complete-modal/MarkCompleteModal.jsx",
+          "line": 76,
+          "column": 6,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/move-to-in-progress-modal/MoveToInProgressModal.jsx",
+          "line": 67,
+          "column": 6,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/dashboard/SubscriptionExpirationModal.jsx",
+          "line": 105,
+          "column": 6,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/dashboard/SubscriptionExpirationModal.jsx",
+          "line": 131,
+          "column": 4,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/integration-warning-modal/IntegrationWarningModal.jsx",
+          "line": 29,
+          "column": 6,
+          "version": "13.2.0"
+        }
+      ],
+      "Dropdown": [
+        {
+          "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
+          "line": 146,
+          "column": 10,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/site-header/AvatarDropdown.jsx",
+          "line": 14,
+          "column": 4,
+          "version": "13.2.0"
+        }
+      ],
+      "Dropdown.Toggle": [
+        {
+          "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
+          "line": 147,
+          "column": 12,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/site-header/AvatarDropdown.jsx",
+          "line": 15,
+          "column": 6,
+          "version": "13.2.0"
+        }
+      ],
+      "Dropdown.Menu": [
+        {
+          "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
+          "line": 153,
+          "column": 12,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/site-header/AvatarDropdown.jsx",
+          "line": 18,
+          "column": 6,
+          "version": "13.2.0"
+        }
+      ],
+      "Dropdown.Item": [
+        {
+          "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
+          "line": 155,
+          "column": 16,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/site-header/AvatarDropdown.jsx",
+          "line": 20,
+          "column": 8,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/site-header/AvatarDropdown.jsx",
+          "line": 21,
+          "column": 8,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/site-header/AvatarDropdown.jsx",
+          "line": 23,
+          "column": 8,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/site-header/AvatarDropdown.jsx",
+          "line": 24,
+          "column": 8,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/site-header/AvatarDropdown.jsx",
+          "line": 25,
+          "column": 8,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/site-header/AvatarDropdown.jsx",
+          "line": 27,
+          "column": 8,
+          "version": "13.2.0"
+        }
+      ],
+      "StatefulButton": [
+        {
+          "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
+          "line": 158,
+          "column": 10,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/mark-complete-modal/MarkCompleteModal.jsx",
+          "line": 80,
+          "column": 10,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/move-to-in-progress-modal/MoveToInProgressModal.jsx",
+          "line": 71,
+          "column": 10,
+          "version": "13.2.0"
+        }
+      ],
+      "Collapsible": [
+        {
+          "filePath": "src/components/dashboard/main-content/course-enrollments/CourseSection.jsx",
+          "line": 94,
+          "column": 8,
+          "version": "13.2.0"
+        }
+      ],
+      "MailtoLink": [
+        {
+          "filePath": "src/components/dashboard/sidebar/DashboardSidebar.jsx",
+          "line": 36,
+          "column": 8,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/dashboard/SubscriptionExpirationModal.jsx",
+          "line": 45,
+          "column": 8,
+          "version": "13.2.0"
+        }
+      ],
+      "Card": [
+        {
+          "filePath": "src/components/dashboard/sidebar/SidebarCard.jsx",
+          "line": 11,
+          "column": 2,
+          "version": "13.2.0"
+        }
+      ],
+      "Card.Body": [
+        {
+          "filePath": "src/components/dashboard/sidebar/SidebarCard.jsx",
+          "line": 12,
+          "column": 4,
+          "version": "13.2.0"
+        }
+      ],
+      "Card.Title": [
+        {
+          "filePath": "src/components/dashboard/sidebar/SidebarCard.jsx",
+          "line": 13,
+          "column": 16,
+          "version": "13.2.0"
+        }
+      ],
+      "Badge": [
+        {
+          "filePath": "src/components/dashboard/sidebar/SubscriptionSummaryCard.jsx",
+          "line": 38,
+          "column": 10,
+          "version": "13.2.0"
+        }
+      ],
+      "Alert": [
+        {
+          "filePath": "src/components/enterprise-user-subsidy/OffersAlert.jsx",
+          "line": 15,
+          "column": 4,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/system-wide-banner/SystemWideWarningBanner.jsx",
+          "line": 9,
+          "column": 2,
+          "version": "13.2.0"
+        }
+      ],
+      "Hyperlink": [
+        {
+          "filePath": "src/components/layout/Layout.jsx",
+          "line": 36,
+          "column": 12,
+          "version": "13.2.0"
+        }
+      ],
+      "Dropdown.Header": [
+        {
+          "filePath": "src/components/site-header/AvatarDropdown.jsx",
+          "line": 19,
+          "column": 8,
+          "version": "13.2.0"
+        }
+      ],
+      "Dropdown.Divider": [
+        {
+          "filePath": "src/components/site-header/AvatarDropdown.jsx",
+          "line": 22,
+          "column": 8,
+          "version": "13.2.0"
+        },
+        {
+          "filePath": "src/components/site-header/AvatarDropdown.jsx",
+          "line": 26,
+          "column": 8,
+          "version": "13.2.0"
+        }
+      ],
+      "Icon": [
+        {
+          "filePath": "src/components/system-wide-banner/SystemWideWarningBanner.jsx",
+          "line": 21,
+          "column": 10,
+          "version": "13.2.0"
+        }
+      ]
+    }
+  },
+  {
+    "version": "12.4.0",
+    "name": "frontend-app-learner-portal",
+    "repository": {
+      "type": "git",
+      "url": ""
+    },
+    "usages": {
+      "Dropdown.Deprecated": [
+        {
+          "filePath": "src/components/course-enrollments/course-cards/BaseCourseCard.jsx",
+          "line": 150,
+          "column": 10,
+          "version": "12.4.0"
+        }
+      ],
+      "Modal": [
+        {
+          "filePath": "src/components/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
+          "line": 111,
+          "column": 6,
+          "version": "12.4.0"
+        },
+        {
+          "filePath": "src/components/course-enrollments/course-cards/mark-complete-modal/MarkCompleteModal.jsx",
+          "line": 74,
+          "column": 6,
+          "version": "12.4.0"
+        }
+      ],
+      "StatusAlert": [
+        {
+          "filePath": "src/components/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
+          "line": 116,
+          "column": 14,
+          "version": "12.4.0"
+        },
+        {
+          "filePath": "src/components/course-enrollments/course-cards/mark-complete-modal/ModalError.jsx",
+          "line": 11,
+          "column": 4,
+          "version": "12.4.0"
+        },
+        {
+          "filePath": "src/components/course-enrollments/CourseEnrollments.jsx",
+          "line": 56,
+          "column": 4,
+          "version": "12.4.0"
+        },
+        {
+          "filePath": "src/components/course-enrollments/CourseEnrollments.jsx",
+          "line": 76,
+          "column": 6,
+          "version": "12.4.0"
+        },
+        {
+          "filePath": "src/components/program/ProgramPage.jsx",
+          "line": 57,
+          "column": 6,
+          "version": "12.4.0"
+        },
+        {
+          "filePath": "src/components/programs-list/ProgramListPage.jsx",
+          "line": 78,
+          "column": 4,
+          "version": "12.4.0"
+        }
+      ],
+      "Input": [
+        {
+          "filePath": "src/components/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
+          "line": 133,
+          "column": 14,
+          "version": "12.4.0"
+        }
+      ],
+      "StatefulButton": [
+        {
+          "filePath": "src/components/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
+          "line": 149,
+          "column": 10,
+          "version": "12.4.0"
+        },
+        {
+          "filePath": "src/components/course-enrollments/course-cards/mark-complete-modal/MarkCompleteModal.jsx",
+          "line": 78,
+          "column": 10,
+          "version": "12.4.0"
+        }
+      ],
+      "Button": [
+        {
+          "filePath": "src/components/course-enrollments/course-cards/UpcomingCourseCard.jsx",
+          "line": 10,
+          "column": 4,
+          "version": "12.4.0"
+        },
+        {
+          "filePath": "src/components/program/sidebar/Links.jsx",
+          "line": 58,
+          "column": 10,
+          "version": "12.4.0"
+        }
+      ],
+      "Collapsible": [
+        {
+          "filePath": "src/components/course-enrollments/CourseSection.jsx",
+          "line": 80,
+          "column": 8,
+          "version": "12.4.0"
+        }
+      ]
+    }
+  },
+  {
+    "version": "13.9.0",
+    "name": "@edx/frontend-app-learning",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/edx/frontend-app-learning.git"
+    },
+    "usages": {
+      "Hyperlink": [
+        {
+          "filePath": "src/alerts/access-expiration-alert/AccessExpirationAlert.jsx",
+          "line": 91,
+          "column": 8,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/alerts/access-expiration-alert/AccessExpirationAlertMMP2P.jsx",
+          "line": 43,
+          "column": 8,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/alerts/logistration-alert/LogistrationAlert.jsx",
+          "line": 12,
+          "column": 4,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/alerts/logistration-alert/LogistrationAlert.jsx",
+          "line": 23,
+          "column": 4,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/alerts/offer-alert/OfferAlert.jsx",
+          "line": 61,
+          "column": 6,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-home/outline-tab/alerts/certificate-available-alert/CertificateAvailableAlert.jsx",
+          "line": 32,
+          "column": 12,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-home/outline-tab/alerts/private-course-alert/PrivateCourseAlert.jsx",
+          "line": 48,
+          "column": 4,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-home/outline-tab/alerts/private-course-alert/PrivateCourseAlert.jsx",
+          "line": 57,
+          "column": 4,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/course-exit/CatalogSuggestion.jsx",
+          "line": 25,
+          "column": 4,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/course-exit/CourseCelebration.jsx",
+          "line": 65,
+          "column": 4,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/course-exit/CourseCelebration.jsx",
+          "line": 74,
+          "column": 4,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/course-exit/CourseCelebration.jsx",
+          "line": 83,
+          "column": 4,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/course-exit/CourseCelebration.jsx",
+          "line": 230,
+          "column": 14,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/course-exit/DashboardFootnote.jsx",
+          "line": 25,
+          "column": 4,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/course-exit/ProgramCompletion.jsx",
+          "line": 34,
+          "column": 4,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/course-exit/ProgramCompletion.jsx",
+          "line": 57,
+          "column": 14,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/course-exit/ProgramCompletion.jsx",
+          "line": 74,
+          "column": 12,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/course-exit/UpgradeFootnote.jsx",
+          "line": 23,
+          "column": 4,
+          "version": "13.9.0"
+        }
+      ],
+      "Button": [
+        {
+          "filePath": "src/alerts/enrollment-alert/EnrollmentAlert.jsx",
+          "line": 42,
+          "column": 4,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-header/AnonymousUserMenu.jsx",
+          "line": 13,
+          "column": 6,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-header/AnonymousUserMenu.jsx",
+          "line": 20,
+          "column": 6,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-home/dates-banner/DatesBanner.jsx",
+          "line": 26,
+          "column": 12,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-home/outline-tab/alerts/private-course-alert/PrivateCourseAlert.jsx",
+          "line": 36,
+          "column": 4,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-home/outline-tab/OutlineTab.jsx",
+          "line": 106,
+          "column": 12,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-home/outline-tab/OutlineTab.jsx",
+          "line": 156,
+          "column": 18,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-home/outline-tab/widgets/CourseGoalCard.jsx",
+          "line": 44,
+          "column": 12,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-home/outline-tab/widgets/CourseGoalCard.jsx",
+          "line": 64,
+          "column": 18,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-home/outline-tab/widgets/ProctoringInfoPanel.jsx",
+          "line": 92,
+          "column": 14,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-home/outline-tab/widgets/ProctoringInfoPanel.jsx",
+          "line": 96,
+          "column": 12,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-home/outline-tab/widgets/UpgradeCard.jsx",
+          "line": 72,
+          "column": 16,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-home/outline-tab/widgets/WelcomeMessage.jsx",
+          "line": 43,
+          "column": 14,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/course-exit/CourseCelebration.jsx",
+          "line": 128,
+          "column": 10,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/course-exit/CourseCelebration.jsx",
+          "line": 176,
+          "column": 8,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/course-exit/CourseCelebration.jsx",
+          "line": 320,
+          "column": 18,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/course-exit/CourseExit.jsx",
+          "line": 33,
+          "column": 8,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/course-exit/CourseInProgress.jsx",
+          "line": 41,
+          "column": 14,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/course-exit/CourseNonPassing.jsx",
+          "line": 41,
+          "column": 14,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/course-exit/ProgramCompletion.jsx",
+          "line": 65,
+          "column": 12,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/sequence/content-lock/ContentLock.jsx",
+          "line": 32,
+          "column": 8,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/sequence/lock-paywall-value-prop/LockPaywall.jsx",
+          "line": 227,
+          "column": 10,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/sequence/sequence-navigation/SequenceNavigation.jsx",
+          "line": 69,
+          "column": 6,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/sequence/sequence-navigation/SequenceNavigation.jsx",
+          "line": 84,
+          "column": 6,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/sequence/sequence-navigation/UnitButton.jsx",
+          "line": 28,
+          "column": 4,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/sequence/sequence-navigation/UnitNavigation.jsx",
+          "line": 32,
+          "column": 6,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/sequence/sequence-navigation/UnitNavigation.jsx",
+          "line": 48,
+          "column": 6,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/generic/upgrade-button/UpgradeButton.jsx",
+          "line": 21,
+          "column": 4,
+          "version": "13.9.0"
+        }
+      ],
+      "Dropdown.Item": [
+        {
+          "filePath": "src/course-header/AuthenticatedUserDropdown.jsx",
+          "line": 15,
+          "column": 4,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-header/AuthenticatedUserDropdown.jsx",
+          "line": 21,
+          "column": 6,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-header/AuthenticatedUserDropdown.jsx",
+          "line": 40,
+          "column": 10,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-header/AuthenticatedUserDropdown.jsx",
+          "line": 43,
+          "column": 10,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-header/AuthenticatedUserDropdown.jsx",
+          "line": 51,
+          "column": 12,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-header/AuthenticatedUserDropdown.jsx",
+          "line": 55,
+          "column": 10,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-home/outline-tab/widgets/UpdateGoalSelector.jsx",
+          "line": 53,
+          "column": 18,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/sequence/sequence-navigation/SequenceNavigationDropdown.jsx",
+          "line": 29,
+          "column": 10,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/instructor-toolbar/masquerade-widget/MasqueradeWidgetOption.jsx",
+          "line": 70,
+          "column": 6,
+          "version": "13.9.0"
+        }
+      ],
+      "Dropdown": [
+        {
+          "filePath": "src/course-header/AuthenticatedUserDropdown.jsx",
+          "line": 31,
+          "column": 6,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-home/outline-tab/widgets/UpdateGoalSelector.jsx",
+          "line": 47,
+          "column": 12,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/sequence/sequence-navigation/SequenceNavigationDropdown.jsx",
+          "line": 15,
+          "column": 4,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/generic/tabs/Tabs.jsx",
+          "line": 39,
+          "column": 8,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/instructor-toolbar/masquerade-widget/MasqueradeWidget.jsx",
+          "line": 124,
+          "column": 10,
+          "version": "13.9.0"
+        }
+      ],
+      "Dropdown.Toggle": [
+        {
+          "filePath": "src/course-header/AuthenticatedUserDropdown.jsx",
+          "line": 32,
+          "column": 8,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-home/outline-tab/widgets/UpdateGoalSelector.jsx",
+          "line": 48,
+          "column": 14,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/sequence/sequence-navigation/SequenceNavigationDropdown.jsx",
+          "line": 16,
+          "column": 6,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/generic/tabs/Tabs.jsx",
+          "line": 40,
+          "column": 10,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/instructor-toolbar/masquerade-widget/MasqueradeWidget.jsx",
+          "line": 125,
+          "column": 12,
+          "version": "13.9.0"
+        }
+      ],
+      "Dropdown.Menu": [
+        {
+          "filePath": "src/course-header/AuthenticatedUserDropdown.jsx",
+          "line": 38,
+          "column": 8,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-home/outline-tab/widgets/UpdateGoalSelector.jsx",
+          "line": 51,
+          "column": 14,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/sequence/sequence-navigation/SequenceNavigationDropdown.jsx",
+          "line": 27,
+          "column": 6,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/generic/tabs/Tabs.jsx",
+          "line": 47,
+          "column": 10,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/instructor-toolbar/masquerade-widget/MasqueradeWidget.jsx",
+          "line": 128,
+          "column": 12,
+          "version": "13.9.0"
+        }
+      ],
+      "OverlayTrigger": [
+        {
+          "filePath": "src/course-home/dates-tab/Day.jsx",
+          "line": 69,
+          "column": 18,
+          "version": "13.9.0"
+        }
+      ],
+      "Tooltip": [
+        {
+          "filePath": "src/course-home/dates-tab/Day.jsx",
+          "line": 72,
+          "column": 22,
+          "version": "13.9.0"
+        }
+      ],
+      "Toast": [
+        {
+          "filePath": "src/course-home/outline-tab/OutlineTab.jsx",
+          "line": 93,
+          "column": 6,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/tab-page/TabPage.jsx",
+          "line": 41,
+          "column": 8,
+          "version": "13.9.0"
+        }
+      ],
+      "Collapsible": [
+        {
+          "filePath": "src/course-home/outline-tab/Section.jsx",
+          "line": 77,
+          "column": 6,
+          "version": "13.9.0"
+        }
+      ],
+      "IconButton": [
+        {
+          "filePath": "src/course-home/outline-tab/Section.jsx",
+          "line": 84,
+          "column": 10,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-home/outline-tab/Section.jsx",
+          "line": 91,
+          "column": 10,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/generic/user-messages/Alert.jsx",
+          "line": 62,
+          "column": 12,
+          "version": "13.9.0"
+        }
+      ],
+      "Card": [
+        {
+          "filePath": "src/course-home/outline-tab/widgets/CourseGoalCard.jsx",
+          "line": 37,
+          "column": 4,
+          "version": "13.9.0"
+        }
+      ],
+      "Card.Body": [
+        {
+          "filePath": "src/course-home/outline-tab/widgets/CourseGoalCard.jsx",
+          "line": 38,
+          "column": 6,
+          "version": "13.9.0"
+        }
+      ],
+      "Card.Text": [
+        {
+          "filePath": "src/course-home/outline-tab/widgets/CourseGoalCard.jsx",
+          "line": 57,
+          "column": 8,
+          "version": "13.9.0"
+        }
+      ],
+      "TransitionReplace": [
+        {
+          "filePath": "src/course-home/outline-tab/widgets/WelcomeMessage.jsx",
+          "line": 55,
+          "column": 8,
+          "version": "13.9.0"
+        }
+      ],
+      "StatefulButton": [
+        {
+          "filePath": "src/courseware/course/bookmark/BookmarkButton.jsx",
+          "line": 42,
+          "column": 4,
+          "version": "13.9.0"
+        }
+      ],
+      "Modal": [
+        {
+          "filePath": "src/courseware/course/celebration/CelebrationModal.jsx",
+          "line": 34,
+          "column": 4,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/sequence/Unit.jsx",
+          "line": 152,
+          "column": 8,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
+          "line": 73,
+          "column": 6,
+          "version": "13.9.0"
+        }
+      ],
+      "Collapsible.Advanced": [
+        {
+          "filePath": "src/courseware/course/content-tools/calculator/Calculator.jsx",
+          "line": 42,
+          "column": 6,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/content-tools/calculator/Calculator.jsx",
+          "line": 82,
+          "column": 10,
+          "version": "13.9.0"
+        }
+      ],
+      "Collapsible.Trigger": [
+        {
+          "filePath": "src/courseware/course/content-tools/calculator/Calculator.jsx",
+          "line": 44,
+          "column": 10,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/content-tools/calculator/Calculator.jsx",
+          "line": 84,
+          "column": 14,
+          "version": "13.9.0"
+        }
+      ],
+      "Collapsible.Visible": [
+        {
+          "filePath": "src/courseware/course/content-tools/calculator/Calculator.jsx",
+          "line": 45,
+          "column": 12,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/content-tools/calculator/Calculator.jsx",
+          "line": 48,
+          "column": 12,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/content-tools/calculator/Calculator.jsx",
+          "line": 85,
+          "column": 16,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/content-tools/calculator/Calculator.jsx",
+          "line": 88,
+          "column": 16,
+          "version": "13.9.0"
+        }
+      ],
+      "Collapsible.Body": [
+        {
+          "filePath": "src/courseware/course/content-tools/calculator/Calculator.jsx",
+          "line": 54,
+          "column": 8,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/content-tools/calculator/Calculator.jsx",
+          "line": 97,
+          "column": 12,
+          "version": "13.9.0"
+        }
+      ],
+      "Alert": [
+        {
+          "filePath": "src/courseware/course/course-exit/CourseCelebration.jsx",
+          "line": 313,
+          "column": 10,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/course-exit/CourseInProgress.jsx",
+          "line": 37,
+          "column": 8,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/course-exit/CourseNonPassing.jsx",
+          "line": 37,
+          "column": 8,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/courseware/course/course-exit/ProgramCompletion.jsx",
+          "line": 44,
+          "column": 4,
+          "version": "13.9.0"
+        }
+      ],
+      "Input": [
+        {
+          "filePath": "src/instructor-toolbar/masquerade-widget/MasqueradeUserNameInput.jsx",
+          "line": 49,
+          "column": 6,
+          "version": "13.9.0"
+        }
+      ],
+      "Icon": [
+        {
+          "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
+          "line": 87,
+          "column": 14,
+          "version": "13.9.0"
+        }
+      ]
+    }
+  },
+  {
+    "version": "12.3.0",
+    "name": "@edx/frontend-app-payment",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/edx/frontend-app-payment.git"
+    },
+    "usages": {
+      "StatusAlert": [
+        {
+          "filePath": "src/feedback/AlertMessage.jsx",
+          "line": 45,
+          "column": 9,
+          "version": "12.3.0"
+        }
+      ],
+      "Hyperlink": [
+        {
+          "filePath": "src/feedback/FallbackErrorMessage.jsx",
+          "line": 13,
+          "column": 8,
+          "version": "12.3.0"
+        },
+        {
+          "filePath": "src/payment/AlertCodeMessages.jsx",
+          "line": 22,
+          "column": 10,
+          "version": "12.3.0"
+        },
+        {
+          "filePath": "src/payment/checkout/FreeCheckoutOrderButton.jsx",
+          "line": 9,
+          "column": 4,
+          "version": "12.3.0"
+        },
+        {
+          "filePath": "src/payment/EmptyCartMessage.jsx",
+          "line": 23,
+          "column": 14,
+          "version": "12.3.0"
+        },
+        {
+          "filePath": "src/payment/EmptyCartMessage.jsx",
+          "line": 32,
+          "column": 14,
+          "version": "12.3.0"
+        }
+      ],
+      "Collapsible": [
+        {
+          "filePath": "src/payment/cart/Cart.jsx",
+          "line": 103,
+          "column": 12,
+          "version": "12.3.0"
+        }
+      ],
+      "ValidationFormGroup": [
+        {
+          "filePath": "src/payment/cart/CouponForm.jsx",
+          "line": 47,
+          "column": 8,
+          "version": "12.3.0"
+        }
+      ],
+      "Input": [
+        {
+          "filePath": "src/payment/cart/CouponForm.jsx",
+          "line": 55,
+          "column": 10,
+          "version": "12.3.0"
+        },
+        {
+          "filePath": "src/payment/cart/UpdateQuantityForm.jsx",
+          "line": 36,
+          "column": 10,
+          "version": "12.3.0"
+        }
+      ],
+      "Button": [
+        {
+          "filePath": "src/payment/cart/CouponForm.jsx",
+          "line": 57,
+          "column": 8,
+          "version": "12.3.0"
+        },
+        {
+          "filePath": "src/payment/cart/CouponForm.jsx",
+          "line": 124,
+          "column": 8,
+          "version": "12.3.0"
+        }
+      ],
+      "StatefulButton": [
+        {
+          "filePath": "src/payment/cart/UpdateQuantityForm.jsx",
+          "line": 65,
+          "column": 6,
+          "version": "12.3.0"
+        },
+        {
+          "filePath": "src/payment/checkout/payment-form/PaymentForm.jsx",
+          "line": 208,
+          "column": 18,
+          "version": "12.3.0"
+        }
+      ]
+    }
+  },
+  {
+    "version": "13.1.2",
+    "name": "@edx/frontend-app-profile",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/edx/frontend-app-profile.git"
+    },
+    "usages": {
+      "StatusAlert": [
+        {
+          "filePath": "src/profile/AgeMessage.jsx",
+          "line": 8,
+          "column": 4,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/profile/forms/SocialLinks.jsx",
+          "line": 168,
+          "column": 36,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/profile/ProfilePage.jsx",
+          "line": 134,
+          "column": 10,
+          "version": "13.1.2"
+        }
+      ],
+      "ValidationFormGroup": [
+        {
+          "filePath": "src/profile/forms/Bio.jsx",
+          "line": 59,
+          "column": 16,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/profile/forms/Country.jsx",
+          "line": 70,
+          "column": 16,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/profile/forms/Education.jsx",
+          "line": 66,
+          "column": 16,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/profile/forms/PreferredLanguage.jsx",
+          "line": 80,
+          "column": 16,
+          "version": "13.1.2"
+        }
+      ],
+      "Hyperlink": [
+        {
+          "filePath": "src/profile/forms/Certificates.jsx",
+          "line": 106,
+          "column": 14,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/profile/ProfilePage.jsx",
+          "line": 103,
+          "column": 6,
+          "version": "13.1.2"
+        }
+      ],
+      "Button": [
+        {
+          "filePath": "src/profile/forms/elements/EditButton.jsx",
+          "line": 14,
+          "column": 4,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/profile/forms/elements/FormControls.jsx",
+          "line": 54,
+          "column": 8,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/profile/forms/ProfileAvatar.jsx",
+          "line": 59,
+          "column": 8,
+          "version": "13.1.2"
+        }
+      ],
+      "StatefulButton": [
+        {
+          "filePath": "src/profile/forms/elements/FormControls.jsx",
+          "line": 32,
+          "column": 8,
+          "version": "13.1.2"
+        }
+      ],
+      "TransitionReplace": [
+        {
+          "filePath": "src/profile/forms/elements/SwitchContent.jsx",
+          "line": 44,
+          "column": 4,
+          "version": "13.1.2"
+        }
+      ],
+      "Dropdown": [
+        {
+          "filePath": "src/profile/forms/ProfileAvatar.jsx",
+          "line": 75,
+          "column": 6,
+          "version": "13.1.2"
+        }
+      ],
+      "Dropdown.Toggle": [
+        {
+          "filePath": "src/profile/forms/ProfileAvatar.jsx",
+          "line": 76,
+          "column": 8,
+          "version": "13.1.2"
+        }
+      ],
+      "Dropdown.Menu": [
+        {
+          "filePath": "src/profile/forms/ProfileAvatar.jsx",
+          "line": 79,
+          "column": 8,
+          "version": "13.1.2"
+        }
+      ],
+      "Dropdown.Item": [
+        {
+          "filePath": "src/profile/forms/ProfileAvatar.jsx",
+          "line": 80,
+          "column": 10,
+          "version": "13.1.2"
+        },
+        {
+          "filePath": "src/profile/forms/ProfileAvatar.jsx",
+          "line": 87,
+          "column": 10,
+          "version": "13.1.2"
+        }
+      ]
+    }
+  },
+  {
+    "version": "11.1.0",
+    "name": "edx-frontend-app-publisher",
+    "repository": "https://github.com/edx/frontend-app-publisher",
+    "usages": {
+      "StatefulButton": [
+        {
+          "filePath": "src/components/ActionButton/index.jsx",
+          "line": 8,
+          "column": 2,
+          "version": "11.1.0"
+        }
+      ],
+      "Icon": [
+        {
+          "filePath": "src/components/Collaborator/index.jsx",
+          "line": 32,
+          "column": 8,
+          "version": "11.1.0"
+        },
+        {
+          "filePath": "src/components/Collaborator/index.jsx",
+          "line": 53,
+          "column": 10,
+          "version": "11.1.0"
+        },
+        {
+          "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
+          "line": 107,
+          "column": 8,
+          "version": "11.1.0"
+        },
+        {
+          "filePath": "src/components/LoadingSpinner/index.jsx",
+          "line": 10,
+          "column": 4,
+          "version": "11.1.0"
+        },
+        {
+          "filePath": "src/components/RemoveButton/index.jsx",
+          "line": 20,
+          "column": 4,
+          "version": "11.1.0"
+        },
+        {
+          "filePath": "src/components/SidePanes/CommentsPane.jsx",
+          "line": 101,
+          "column": 24,
+          "version": "11.1.0"
+        },
+        {
+          "filePath": "src/components/SidePanes/UsersPane.jsx",
+          "line": 108,
+          "column": 13,
+          "version": "11.1.0"
+        },
+        {
+          "filePath": "src/components/SidePanes/UsersPane.jsx",
+          "line": 141,
+          "column": 16,
+          "version": "11.1.0"
+        },
+        {
+          "filePath": "src/components/Staffer/index.jsx",
+          "line": 29,
+          "column": 8,
+          "version": "11.1.0"
+        },
+        {
+          "filePath": "src/components/Staffer/index.jsx",
+          "line": 43,
+          "column": 10,
+          "version": "11.1.0"
+        },
+        {
+          "filePath": "src/components/StatusAlert/index.jsx",
+          "line": 32,
+          "column": 14,
+          "version": "11.1.0"
+        }
+      ],
+      "Collapsible.Advanced": [
+        {
+          "filePath": "src/components/Collapsible/index.jsx",
+          "line": 32,
+          "column": 2,
+          "version": "11.1.0"
+        }
+      ],
+      "Collapsible.Trigger": [
+        {
+          "filePath": "src/components/Collapsible/index.jsx",
+          "line": 33,
+          "column": 4,
+          "version": "11.1.0"
+        }
+      ],
+      "Collapsible.Visible": [
+        {
+          "filePath": "src/components/Collapsible/index.jsx",
+          "line": 35,
+          "column": 6,
+          "version": "11.1.0"
+        },
+        {
+          "filePath": "src/components/Collapsible/index.jsx",
+          "line": 38,
+          "column": 6,
+          "version": "11.1.0"
+        }
+      ],
+      "Modal": [
+        {
+          "filePath": "src/components/ConfirmationModal/index.jsx",
+          "line": 13,
+          "column": 2,
+          "version": "11.1.0"
+        }
+      ],
+      "SearchField": [
+        {
+          "filePath": "src/components/CourseTable/index.jsx",
+          "line": 163,
+          "column": 12,
+          "version": "11.1.0"
+        }
+      ],
+      "InputText": [
+        {
+          "filePath": "src/components/DateTimeField/index.jsx",
+          "line": 74,
+          "column": 10,
+          "version": "11.1.0"
+        },
+        {
+          "filePath": "src/components/DateTimeField/index.jsx",
+          "line": 97,
+          "column": 10,
+          "version": "11.1.0"
+        },
+        {
+          "filePath": "src/components/RenderInputTextField/index.jsx",
+          "line": 18,
+          "column": 2,
+          "version": "11.1.0"
+        }
+      ],
+      "Hyperlink": [
+        {
+          "filePath": "src/components/EditCoursePage/CollapsibleCourseRun.jsx",
+          "line": 66,
+          "column": 12,
+          "version": "11.1.0"
+        },
+        {
+          "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
+          "line": 130,
+          "column": 10,
+          "version": "11.1.0"
+        },
+        {
+          "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
+          "line": 144,
+          "column": 10,
+          "version": "11.1.0"
+        },
+        {
+          "filePath": "src/components/Header/index.jsx",
+          "line": 29,
+          "column": 12,
+          "version": "11.1.0"
+        }
+      ],
+      "DropdownButton": [
+        {
+          "filePath": "src/components/Header/index.jsx",
+          "line": 45,
+          "column": 12,
+          "version": "11.1.0"
+        }
+      ],
+      "Dropdown.Item": [
+        {
+          "filePath": "src/components/Header/index.jsx",
+          "line": 50,
+          "column": 14,
+          "version": "11.1.0"
+        }
+      ],
+      "InputSelect": [
+        {
+          "filePath": "src/components/RenderSelectField/index.jsx",
+          "line": 15,
+          "column": 2,
+          "version": "11.1.0"
+        },
+        {
+          "filePath": "src/components/SidePanes/UsersPane.jsx",
+          "line": 148,
+          "column": 16,
+          "version": "11.1.0"
+        }
+      ],
+      "TextArea": [
+        {
+          "filePath": "src/components/SidePanes/CommentsPane.jsx",
+          "line": 123,
+          "column": 14,
+          "version": "11.1.0"
+        }
+      ],
+      "StatusAlert": [
+        {
+          "filePath": "src/components/StatusAlert/index.jsx",
+          "line": 18,
+          "column": 4,
+          "version": "11.1.0"
+        }
+      ],
+      "Table": [
+        {
+          "filePath": "src/components/TableComponent/index.jsx",
+          "line": 93,
+          "column": 10,
+          "version": "11.1.0"
+        }
+      ],
+      "Pagination": [
+        {
+          "filePath": "src/components/TableComponent/index.jsx",
+          "line": 105,
+          "column": 12,
+          "version": "11.1.0"
+        }
+      ]
+    }
+  },
+  {
+    "version": "12.8.0",
+    "name": "@edx/frontend-app-support",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/edx/frontend-app-support.git"
+    },
+    "usages": {
+      "Dropdown": [
+        {
+          "filePath": "src/support-header/DesktopHeader.jsx",
+          "line": 58,
+          "column": 6,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/support-header/MobileHeader.jsx",
+          "line": 60,
+          "column": 6,
+          "version": "12.8.0"
+        }
+      ],
+      "Dropdown.Toggle": [
+        {
+          "filePath": "src/support-header/DesktopHeader.jsx",
+          "line": 59,
+          "column": 8,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/support-header/MobileHeader.jsx",
+          "line": 61,
+          "column": 8,
+          "version": "12.8.0"
+        }
+      ],
+      "Dropdown.Menu": [
+        {
+          "filePath": "src/support-header/DesktopHeader.jsx",
+          "line": 63,
+          "column": 8,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/support-header/MobileHeader.jsx",
+          "line": 65,
+          "column": 8,
+          "version": "12.8.0"
+        }
+      ],
+      "Dropdown.Item": [
+        {
+          "filePath": "src/support-header/DesktopHeader.jsx",
+          "line": 74,
+          "column": 6,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/support-header/DesktopHeader.jsx",
+          "line": 82,
+          "column": 6,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/support-header/MobileHeader.jsx",
+          "line": 76,
+          "column": 6,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/support-header/MobileHeader.jsx",
+          "line": 84,
+          "column": 6,
+          "version": "12.8.0"
+        }
+      ],
+      "Button": [
+        {
+          "filePath": "src/Table.jsx",
+          "line": 69,
+          "column": 8,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/user-messages/Alert.jsx",
+          "line": 49,
+          "column": 22,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/EnrollmentForm.jsx",
+          "line": 107,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/EnrollmentForm.jsx",
+          "line": 117,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/Enrollments.jsx",
+          "line": 69,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/entitlements/CreateEntitlementForm.jsx",
+          "line": 92,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/entitlements/CreateEntitlementForm.jsx",
+          "line": 102,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/entitlements/Entitlements.jsx",
+          "line": 72,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/entitlements/Entitlements.jsx",
+          "line": 128,
+          "column": 12,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/entitlements/Entitlements.jsx",
+          "line": 140,
+          "column": 12,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/entitlements/Entitlements.jsx",
+          "line": 202,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/entitlements/ExpireEntitlementForm.jsx",
+          "line": 86,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/entitlements/ExpireEntitlementForm.jsx",
+          "line": 95,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/entitlements/ReissueEntitlementForm.jsx",
+          "line": 84,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/entitlements/ReissueEntitlementForm.jsx",
+          "line": 93,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/UserSearch.jsx",
+          "line": 22,
+          "column": 8,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/UserSummary.jsx",
+          "line": 180,
+          "column": 8,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/UserSummary.jsx",
+          "line": 222,
+          "column": 8,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/UserSummary.jsx",
+          "line": 246,
+          "column": 16,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/UserSummary.jsx",
+          "line": 254,
+          "column": 18,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/UserSummary.jsx",
+          "line": 320,
+          "column": 12,
+          "version": "12.8.0"
+        }
+      ],
+      "InputSelect": [
+        {
+          "filePath": "src/users/EnrollmentForm.jsx",
+          "line": 74,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/EnrollmentForm.jsx",
+          "line": 85,
+          "column": 10,
+          "version": "12.8.0"
+        }
+      ],
+      "Input": [
+        {
+          "filePath": "src/users/EnrollmentForm.jsx",
+          "line": 97,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/entitlements/CreateEntitlementForm.jsx",
+          "line": 56,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/entitlements/CreateEntitlementForm.jsx",
+          "line": 66,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/entitlements/CreateEntitlementForm.jsx",
+          "line": 82,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/entitlements/ExpireEntitlementForm.jsx",
+          "line": 54,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/entitlements/ExpireEntitlementForm.jsx",
+          "line": 65,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/entitlements/ExpireEntitlementForm.jsx",
+          "line": 76,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/entitlements/ReissueEntitlementForm.jsx",
+          "line": 52,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/entitlements/ReissueEntitlementForm.jsx",
+          "line": 63,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/entitlements/ReissueEntitlementForm.jsx",
+          "line": 74,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/UserSearch.jsx",
+          "line": 21,
+          "column": 8,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/UserSummary.jsx",
+          "line": 332,
+          "column": 14,
+          "version": "12.8.0"
+        }
+      ],
+      "TransitionReplace": [
+        {
+          "filePath": "src/users/Enrollments.jsx",
+          "line": 139,
+          "column": 6,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/entitlements/Entitlements.jsx",
+          "line": 215,
+          "column": 6,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/entitlements/Entitlements.jsx",
+          "line": 229,
+          "column": 6,
+          "version": "12.8.0"
+        }
+      ],
+      "Collapsible": [
+        {
+          "filePath": "src/users/Enrollments.jsx",
+          "line": 152,
+          "column": 6,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/entitlements/Entitlements.jsx",
+          "line": 243,
+          "column": 6,
+          "version": "12.8.0"
+        }
+      ],
+      "Modal": [
+        {
+          "filePath": "src/users/UserSummary.jsx",
+          "line": 284,
+          "column": 8,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/UserSummary.jsx",
+          "line": 295,
+          "column": 8,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/UserSummary.jsx",
+          "line": 306,
+          "column": 8,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/users/UserSummary.jsx",
+          "line": 317,
+          "column": 8,
+          "version": "12.8.0"
+        }
+      ]
+    }
+  },
+  {
+    "version": "12.0.5",
+    "name": "@edx/frontend-component-cookie-policy-banner",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/edx/frontend-component-cookie-policy-banner"
+    },
+    "usages": {
+      "StatusAlert": [
+        {
+          "filePath": "src/CookiePolicyBanner/index.jsx",
+          "line": 66,
+          "column": 10,
+          "version": "12.0.5"
+        }
+      ]
+    }
+  },
+  {
+    "version": "12.0.5",
+    "name": "@edx/frontend-component-footer",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/edx/frontend-component-footer.git"
+    },
+    "usages": {}
+  },
+  {
+    "version": "12.6.1",
+    "name": "@edx/frontend-component-header-edx",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/edx/frontend-component-header-edx.git"
+    },
+    "usages": {
+      "Dropdown": [
+        {
+          "filePath": "src/DesktopHeader.jsx",
+          "line": 66,
+          "column": 6,
+          "version": "12.6.1"
+        }
+      ],
+      "Dropdown.Toggle": [
+        {
+          "filePath": "src/DesktopHeader.jsx",
+          "line": 67,
+          "column": 8,
+          "version": "12.6.1"
+        }
+      ],
+      "Dropdown.Menu": [
+        {
+          "filePath": "src/DesktopHeader.jsx",
+          "line": 77,
+          "column": 8,
+          "version": "12.6.1"
+        }
+      ],
+      "Dropdown.Item": [
+        {
+          "filePath": "src/DesktopHeader.jsx",
+          "line": 79,
+          "column": 12,
+          "version": "12.6.1"
+        }
+      ]
+    }
+  },
+  {
+    "version": "12.0.5",
+    "name": "@edx/frontend-component-header",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/edx/frontend-component-header.git"
+    },
+    "usages": {}
+  },
+  {
+    "version": "unknown",
+    "name": "@edx/frontend-component-site-header",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/edx/frontend-component-site-header.git"
+    },
+    "usages": {}
+  },
+  {
+    "version": "12.8.0",
+    "name": "@edx/frontend-platform",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/edx/frontend-platform.git"
+    },
+    "usages": {
+      "Container": [
+        {
+          "filePath": "src/react/ErrorPage.jsx",
+          "line": 25,
+          "column": 6,
+          "version": "12.8.0"
+        }
+      ],
+      "Row": [
+        {
+          "filePath": "src/react/ErrorPage.jsx",
+          "line": 26,
+          "column": 8,
+          "version": "12.8.0"
+        }
+      ],
+      "Col": [
+        {
+          "filePath": "src/react/ErrorPage.jsx",
+          "line": 27,
+          "column": 10,
+          "version": "12.8.0"
+        }
+      ],
+      "Button": [
+        {
+          "filePath": "src/react/ErrorPage.jsx",
+          "line": 40,
+          "column": 12,
+          "version": "12.8.0"
+        }
+      ]
+    }
+  },
+  {
+    "version": "12.0.5",
+    "name": "@edx/frontend-template-application",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/edx/frontend-template-application.git"
+    },
+    "usages": {}
+  },
+  {
+    "version": "12.8.0",
+    "name": "@edx/gatsby-react-app",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/edx/prospectus.git"
+    },
+    "usages": {
+      "Button": [
+        {
+          "filePath": "src/components/Card/index.jsx",
+          "line": 142,
+          "column": 12,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/components/Card/index.jsx",
+          "line": 182,
+          "column": 16,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/components/Course/CourseRunSelector.jsx",
+          "line": 91,
+          "column": 8,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/components/EdX/ParagonCollapsible.jsx",
+          "line": 94,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/components/EnrollButton/index.jsx",
+          "line": 376,
+          "column": 24,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/components/Home/HomeSearchBar.jsx",
+          "line": 71,
+          "column": 10,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/components/Search/SearchBox/AutoComplete.jsx",
+          "line": 451,
+          "column": 14,
+          "version": "12.8.0"
+        }
+      ],
+      "OverlayTrigger": [
+        {
+          "filePath": "src/components/Course/CourseSidebar.jsx",
+          "line": 105,
+          "column": 14,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/components/ProgramPathway/ProgramPathwayCourse.jsx",
+          "line": 64,
+          "column": 6,
+          "version": "12.8.0"
+        }
+      ],
+      "Popover": [
+        {
+          "filePath": "src/components/Course/CourseSidebar.jsx",
+          "line": 110,
+          "column": 18,
+          "version": "12.8.0"
+        }
+      ],
+      "Popover.Content": [
+        {
+          "filePath": "src/components/Course/CourseSidebar.jsx",
+          "line": 111,
+          "column": 20,
+          "version": "12.8.0"
+        }
+      ],
+      "Icon": [
+        {
+          "filePath": "src/components/Course/CourseSidebar.jsx",
+          "line": 121,
+          "column": 16,
+          "version": "12.8.0"
+        }
+      ],
+      "Input": [
+        {
+          "filePath": "src/components/Footer/index.jsx",
+          "line": 421,
+          "column": 20,
+          "version": "12.8.0"
+        }
+      ],
+      "Dropdown": [
+        {
+          "filePath": "src/components/Header/UserMenu.jsx",
+          "line": 153,
+          "column": 10,
+          "version": "12.8.0"
+        }
+      ],
+      "Dropdown.Toggle": [
+        {
+          "filePath": "src/components/Header/UserMenu.jsx",
+          "line": 154,
+          "column": 12,
+          "version": "12.8.0"
+        }
+      ],
+      "Dropdown.Menu": [
+        {
+          "filePath": "src/components/Header/UserMenu.jsx",
+          "line": 168,
+          "column": 12,
+          "version": "12.8.0"
+        }
+      ],
+      "Avatar": [
+        {
+          "filePath": "src/components/MemberList/index.jsx",
+          "line": 123,
+          "column": 8,
+          "version": "12.8.0"
+        }
+      ],
+      "Modal": [
+        {
+          "filePath": "src/components/MemberList/index.jsx",
+          "line": 163,
+          "column": 8,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/components/Program/ProgramTrackModal.jsx",
+          "line": 105,
+          "column": 6,
+          "version": "12.8.0"
+        }
+      ],
+      "AvatarButton": [
+        {
+          "filePath": "src/components/MemberList/MemberListItem.jsx",
+          "line": 52,
+          "column": 8,
+          "version": "12.8.0"
+        }
+      ],
+      "Alert": [
+        {
+          "filePath": "src/components/Program/ProgramMain.jsx",
+          "line": 406,
+          "column": 20,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/templates/courseDetail.jsx",
+          "line": 194,
+          "column": 18,
+          "version": "12.8.0"
+        }
+      ],
+      "Tooltip": [
+        {
+          "filePath": "src/components/ProgramPathway/ProgramPathwayCourse.jsx",
+          "line": 70,
+          "column": 10,
+          "version": "12.8.0"
+        }
+      ],
+      "StatusAlert": [
+        {
+          "filePath": "src/components/Search/DiscoveryCardList/noResultsBlurb.jsx",
+          "line": 41,
+          "column": 6,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/templates/appUpgrade.jsx",
+          "line": 73,
+          "column": 8,
+          "version": "12.8.0"
+        }
+      ],
+      "Pagination": [
+        {
+          "filePath": "src/components/Search/Pagination/index.jsx",
+          "line": 100,
+          "column": 8,
+          "version": "12.8.0"
+        },
+        {
+          "filePath": "src/components/Search/Pagination/index.jsx",
+          "line": 113,
+          "column": 6,
+          "version": "12.8.0"
+        }
+      ]
+    }
+  },
+  {
+    "usages": {}
+  },
+  {
+    "usages": {}
+  },
+  {
+    "version": "3.4.8",
+    "name": "@edx/studio-frontend",
+    "repository": "edx/studio-frontend",
+    "usages": {
+      "StatusAlert": [
+        {
+          "filePath": "src/components/AccessibilityPolicyForm/index.jsx",
+          "line": 231,
+          "column": 6,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/AssetsStatusAlert/index.jsx",
+          "line": 174,
+          "column": 6,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/EditImageModal/index.jsx",
+          "line": 580,
+          "column": 4,
+          "version": "3.4.8"
+        }
+      ],
+      "InputText": [
+        {
+          "filePath": "src/components/AccessibilityPolicyForm/index.jsx",
+          "line": 258,
+          "column": 10,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/AccessibilityPolicyForm/index.jsx",
+          "line": 270,
+          "column": 10,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/EditImageModal/index.jsx",
+          "line": 375,
+          "column": 6,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/EditImageModal/index.jsx",
+          "line": 456,
+          "column": 10,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/EditImageModal/index.jsx",
+          "line": 473,
+          "column": 10,
+          "version": "3.4.8"
+        }
+      ],
+      "TextArea": [
+        {
+          "filePath": "src/components/AccessibilityPolicyForm/index.jsx",
+          "line": 280,
+          "column": 10,
+          "version": "3.4.8"
+        }
+      ],
+      "Button": [
+        {
+          "filePath": "src/components/AccessibilityPolicyForm/index.jsx",
+          "line": 292,
+          "column": 15,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/AssetsClearFiltersButton/index.jsx",
+          "line": 10,
+          "column": 2,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/AssetsClearSearchButton/index.jsx",
+          "line": 10,
+          "column": 2,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/AssetsDropZone/index.jsx",
+          "line": 84,
+          "column": 22,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/AssetsTable/index.jsx",
+          "line": 148,
+          "column": 11,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/AssetsTable/index.jsx",
+          "line": 170,
+          "column": 11,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/AssetsTable/index.jsx",
+          "line": 286,
+          "column": 13,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/AssetsTable/index.jsx",
+          "line": 372,
+          "column": 12,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/BackendStatusBanner/index.jsx",
+          "line": 49,
+          "column": 10,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/CopyButton/index.jsx",
+          "line": 63,
+          "column": 6,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/EditImageModal/index.jsx",
+          "line": 742,
+          "column": 4,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/EditImageModal/index.jsx",
+          "line": 755,
+          "column": 4,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/EditImageModal/index.jsx",
+          "line": 768,
+          "column": 4,
+          "version": "3.4.8"
+        }
+      ],
+      "CheckBoxGroup": [
+        {
+          "filePath": "src/components/AssetsFilters/index.jsx",
+          "line": 19,
+          "column": 6,
+          "version": "3.4.8"
+        }
+      ],
+      "CheckBox": [
+        {
+          "filePath": "src/components/AssetsFilters/index.jsx",
+          "line": 21,
+          "column": 10,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/AssetsImagePreviewFilter/index.jsx",
+          "line": 9,
+          "column": 2,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/EditImageModal/index.jsx",
+          "line": 396,
+          "column": 6,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/EditImageModal/index.jsx",
+          "line": 487,
+          "column": 6,
+          "version": "3.4.8"
+        }
+      ],
+      "SearchField": [
+        {
+          "filePath": "src/components/AssetsSearch/index.jsx",
+          "line": 40,
+          "column": 8,
+          "version": "3.4.8"
+        }
+      ],
+      "Modal": [
+        {
+          "filePath": "src/components/AssetsTable/index.jsx",
+          "line": 360,
+          "column": 8,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/EditImageModal/index.jsx",
+          "line": 911,
+          "column": 6,
+          "version": "3.4.8"
+        }
+      ],
+      "Table": [
+        {
+          "filePath": "src/components/AssetsTable/index.jsx",
+          "line": 426,
+          "column": 8,
+          "version": "3.4.8"
+        }
+      ],
+      "Icon": [
+        {
+          "filePath": "src/components/CourseChecklist/index.jsx",
+          "line": 98,
+          "column": 12,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/CourseChecklist/index.jsx",
+          "line": 159,
+          "column": 10,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/CourseChecklist/index.jsx",
+          "line": 206,
+          "column": 6,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/CourseOutlineStatus/index.jsx",
+          "line": 187,
+          "column": 10,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/EditImageModal/index.jsx",
+          "line": 470,
+          "column": 10,
+          "version": "3.4.8"
+        }
+      ],
+      "Hyperlink": [
+        {
+          "filePath": "src/components/CourseChecklist/index.jsx",
+          "line": 146,
+          "column": 6,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/CourseChecklist/index.jsx",
+          "line": 260,
+          "column": 16,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/CourseOutlineStatus/index.jsx",
+          "line": 135,
+          "column": 12,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/CourseOutlineStatus/index.jsx",
+          "line": 213,
+          "column": 6,
+          "version": "3.4.8"
+        }
+      ],
+      "Fieldset": [
+        {
+          "filePath": "src/components/EditImageModal/index.jsx",
+          "line": 365,
+          "column": 4,
+          "version": "3.4.8"
+        },
+        {
+          "filePath": "src/components/EditImageModal/index.jsx",
+          "line": 444,
+          "column": 4,
+          "version": "3.4.8"
+        }
+      ],
+      "Pagination": [
+        {
+          "filePath": "src/components/Pagination/index.jsx",
+          "line": 31,
+          "column": 12,
+          "version": "3.4.8"
+        }
+      ]
+    }
+  }
+]
