@@ -1,7 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import BulkActions, { DROPDOWN_BUTTON_TEXT, SMALL_SCREEN_DROPDOWN_BUTTON_TEXT } from '../BulkActions';
+import BulkActions from '../BulkActions';
+import { DROPDOWN_BUTTON_TEXT, SMALL_SCREEN_DROPDOWN_BUTTON_TEXT } from '../Actions';
 import {
   useWindowSize, Dropdown, Button, Icon,
 } from '../..';

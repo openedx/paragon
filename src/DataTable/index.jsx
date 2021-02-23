@@ -27,7 +27,7 @@ function DataTable({
   isPaginated, manualPagination, pageCount, itemCount,
   isFilterable, manualFilters, fetchData, initialState,
   isSortable, manualSortBy,
-  bulkActions, numBreakoutFilters,
+  bulkActions, tableActions, numBreakoutFilters,
   initialTableOptions,
   EmptyTableComponent,
   children,
@@ -77,8 +77,14 @@ function DataTable({
     itemCount,
     numBreakoutFilters,
     bulkActions,
+    tableActions,
     ...props,
-  }), [instance, JSON.stringify(instance.state), itemCount, bulkActions, numBreakoutFilters, JSON.stringify(props)]);
+  }), [
+    instance,
+    JSON.stringify(instance.state),
+    itemCount, bulkActions, tableActions,
+    numBreakoutFilters, JSON.stringify(props),
+  ]);
 
   return (
     <DataTableContext.Provider value={enhancedInstance}>
@@ -87,7 +93,7 @@ function DataTable({
           <>
             <TableControlBar />
             <Table />
-            <EmptyTableComponent />
+            <EmptyTableComponent content="No results found" />
             <TableFooter />
           </>
         )}
@@ -112,6 +118,7 @@ DataTable.defaultProps = {
   EmptyTableComponent: EmptyTableContent,
   children: null,
   bulkActions: [],
+  tableActions: [],
   numBreakoutFilters: 1,
 };
 
@@ -171,8 +178,22 @@ DataTable.propTypes = {
   initialTableOptions: PropTypes.shape({}),
   /** Total number of items */
   itemCount: PropTypes.number.isRequired,
-  /** Actions to be performed on the table. */
+  /** Actions to be performed on selected rows of the table. Called with the selected rows.
+   *  Not displayed if rows are not selected. */
   bulkActions: PropTypes.arrayOf(PropTypes.shape({
+    /** Bulk action button text */
+    buttonText: PropTypes.string.isRequired,
+    /** handleClick will be passed the selected rows */
+    handleClick: PropTypes.func.isRequired,
+    /** classnames for button class */
+    className: PropTypes.string,
+    /** optional button variant; only relevant for the first two buttons */
+    variant: PropTypes.string,
+    /** disables button */
+    disabled: PropTypes.disabled,
+  })),
+  /** Actions to be performed on the table. Called with the table instance. Not displayed if rows are selected. */
+  tableActions: PropTypes.arrayOf(PropTypes.shape({
     /** Bulk action button text */
     buttonText: PropTypes.string.isRequired,
     /** handleClick will be passed the selected rows */
