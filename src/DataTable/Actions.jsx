@@ -25,7 +25,7 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
 
 const Actions = ({
   className,
-  actionRows,
+  actionData,
   actions,
 }) => {
   const { width } = useWindowSize();
@@ -43,7 +43,7 @@ const Actions = ({
     return [firstTwoActions.reverse(), extraActions];
   }, [actions, width]);
 
-  if (!actionRows) {
+  if (!actionData) {
     return null;
   }
 
@@ -63,7 +63,7 @@ const Actions = ({
             <Dropdown.Item
               className={action.className}
               key={action.buttonText}
-              onClick={() => action.handleClick(actionRows)}
+              onClick={() => action.handleClick(actionData)}
               disabled={action.disabled}
             >
               {action.buttonText}
@@ -87,7 +87,7 @@ const Actions = ({
               [action.className]: action.className,
               'ml-2': true,
             })}
-            onClick={() => action.handleClick(actionRows)}
+            onClick={() => action.handleClick(actionData)}
             key={action.buttonText}
             disabled={action.disabled}
           >
@@ -101,13 +101,14 @@ const Actions = ({
 
 Actions.defaultProps = {
   className: null,
-  actionRows: null,
+  actionData: null,
 };
 
 Actions.propTypes = {
   /** class names for the div wrapping the button components */
   className: PropTypes.string,
-  actionRows: PropTypes.arrayOf(PropTypes.shape()),
+  // eslint-disable-next-line react/forbid-prop-types
+  actionData: PropTypes.any,
   actions: PropTypes.arrayOf(PropTypes.shape({
     className: PropTypes.string,
     handleClick: PropTypes.func.isRequired,

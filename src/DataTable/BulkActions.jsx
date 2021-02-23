@@ -12,7 +12,7 @@ const BulkActions = ({
 
   const bulkActionRows = selectedFlatRows || rows;
 
-  return <Actions actionRows={bulkActionRows} actions={bulkActions} className={classNames('pgn__bulk-actions', className)} />;
+  return <Actions actionData={bulkActionRows} actions={bulkActions} className={classNames('pgn__bulk-actions', className)} />;
 };
 
 BulkActions.defaultProps = {

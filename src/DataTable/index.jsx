@@ -21,6 +21,7 @@ import TableCell from './TableCell';
 import TableHeaderRow from './TableHeaderRow';
 import TablePagination from './TablePagination';
 import DataTableContext from './DataTableContext';
+import TableActions from './TableActions';
 
 function DataTable({
   columns, data, defaultColumnValues, additionalColumns, isSelectable,
@@ -228,5 +229,6 @@ DataTable.TableFooter = TableFooter;
 DataTable.TableHeaderCell = TableHeaderCell;
 DataTable.TableHeaderRow = TableHeaderRow;
 DataTable.TablePagination = TablePagination;
+DataTable.TableActions = TableActions;
 
 export default DataTable;

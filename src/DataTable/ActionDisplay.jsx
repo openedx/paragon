@@ -10,9 +10,9 @@ const ActionDisplay = () => {
   const noTableActions = tableActions?.length < 1;
   const noActionsAvailable = noBulkActions && noTableActions;
   const noRowsSelected = selectedFlatRows?.length < 1;
-  console.log(bulkActions, tableActions)
+
   // return null if there are no actions or if there are only bulk actions and no selected rows
-  if (noActionsAvailable || (!noBulkActions && noTableActions && noRowsSelected)) {
+  if (noActionsAvailable || (noTableActions && noRowsSelected)) {
     return null;
   }
   if (!noRowsSelected) {
