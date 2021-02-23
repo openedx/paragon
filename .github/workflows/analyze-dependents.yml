@@ -49,12 +49,6 @@ jobs:
         name: dependents-usage-analysis-json
     - name: Check for changes
       run: |
-        if !(git diff --exit-code)
-        then
-          echo "There is a change to the analysis output. Commit the change."
-          git commit -m "docs(generated): update dependents analysis"
-          # git push
-        else
-          echo "No significant changes. Do nothing."
-        fi
-        git diff
+        git status
+        ls -al
+        pwd
