@@ -34,6 +34,7 @@ jobs:
         name: dependents-usage-analysis-json
         path: dependents-usage-analysis.json
   commit-dependents-analysis:
+    needs: analyze-dependents
     runs-on: ubuntu-latest
     steps:
     - name: Download analysis output
