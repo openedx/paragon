@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-console */
 const parser = require('@babel/parser');
 const fs = require('fs');
@@ -31,78 +32,74 @@ function getPackageInfo(dir) {
       repository,
     };
   } catch (e) {
-    // eslint-disable-next-line no-console
     console.error('Unable to read package lock json in ', dir);
     return {};
   }
 }
 
-const filesToUsagesReducer = (rootDir, usagesAccumulator, filePath) => {
-  const paragonImportsInFile = {};
-  const sourceCode = fs.readFileSync(filePath, { encoding: 'utf-8' });
-  const ast = parser.parse(sourceCode, {
-    sourceType: 'module',
-    // enable jsx and other plugins
-    plugins: ['jsx', 'classProperties'],
-  });
+function getComponentUsagesInFiles(files, rootDir) {
+  // save the file and line location of components for all files
+  return files.reduce((usagesAccumulator, filePath) => {
+    const sourceCode = fs.readFileSync(filePath, { encoding: 'utf-8' });
+    const ast = parser.parse(sourceCode, { sourceType: 'module', plugins: ['jsx', 'classProperties'] });
 
-  const handleJSXOpeningElement = (node) => {
-    const componentName = node.name.object ? node.name.object.name : node.name.name;
-    const isParagonComponent = componentName in paragonImportsInFile;
+    // Track the local names of imported paragon components
+    const paragonImportsInFile = {};
+    const addParagonImport = (specifierNode) => {
+      const { local, imported } = specifierNode;
+      paragonImportsInFile[local.name] = imported ? imported.name : local.name;
+    };
 
-    if (isParagonComponent) {
-      const paragonName = paragonImportsInFile[componentName];
-      const subComponentName = node.name.object ? node.name.property.name : null;
-      const fullComponentName = subComponentName ? `${paragonName}.${subComponentName}` : paragonName;
+    const addComponentUsage = (fullComponentName, startLocation) => {
       if (!usagesAccumulator[fullComponentName]) {
-        // eslint-disable-next-line no-param-reassign
         usagesAccumulator[fullComponentName] = [];
       }
       usagesAccumulator[fullComponentName].push({
         filePath: filePath.substring(rootDir.length + 1),
-        ...node.loc.start,
+        ...startLocation,
       });
-    }
-  };
+    };
 
-  const handleImportDeclaration = (node) => {
-    // ignore icons and direct imports for now
-    if (node.source.value === '@edx/paragon') {
-      node.specifiers.forEach(specifierNode => {
-        paragonImportsInFile[specifierNode.local.name] = specifierNode.imported
-          ? specifierNode.imported.name : specifierNode.local.name;
-      });
-    }
-  };
+    // Walk the abstract syntax tree of the file looking for paragon imports and component usages
+    walk.simple({
+      ImportDeclaration(node) {
+        // ignore icons and direct imports for now
+        if (node.source.value === '@edx/paragon') {
+          node.specifiers.forEach(addParagonImport);
+        }
+      },
+      JSXOpeningElement(node) {
+        const componentName = node.name.object ? node.name.object.name : node.name.name;
+        const isParagonComponent = componentName in paragonImportsInFile;
 
-  walk.simple({
-    JSXOpeningElement: handleJSXOpeningElement,
-    ImportDeclaration: handleImportDeclaration,
-  })(ast);
+        if (isParagonComponent) {
+          const paragonName = paragonImportsInFile[componentName];
+          const subComponentName = node.name.object ? node.name.property.name : null;
+          const fullComponentName = subComponentName ? `${paragonName}.${subComponentName}` : paragonName;
+          addComponentUsage(fullComponentName, node.loc.start);
+        }
+      },
+    })(ast);
 
-  return usagesAccumulator;
-};
-
-function analyzeProject(dir, options = {}) {
-  const files = getProjectFiles(dir, options);
-  const { version, name, repository } = getPackageInfo(dir);
-  const usages = files.reduce(filesToUsagesReducer.bind(null, dir), {});
-
-  // Add Paragon version to each usage
-  // eslint-disable-next-line no-restricted-syntax, guard-for-in
-  for (const component in usages) {
-    usages[component] = usages[component].map(usage => ({ ...usage, version }));
-  }
-
-  return {
-    name,
-    version,
-    repository,
-    usages,
-  };
+    return usagesAccumulator;
+  }, {});
 }
 
-const program = new Command();
+function analyzeProject(dir, options = {}) {
+  const packageInfo = getPackageInfo(dir);
+  const files = getProjectFiles(dir, options);
+  const usages = getComponentUsagesInFiles(files, dir);
+
+  // Add Paragon version to each component usage
+  Object.keys(usages).forEach(componentName => {
+    usages[componentName] = usages[componentName].map(usage => ({
+      ...usage,
+      version: packageInfo.version,
+    }));
+  });
+
+  return { ...packageInfo, usages };
+}
 
 function findProjectsToAnalyze(dir) {
   // Find all directories containing a package.json file.
@@ -110,17 +107,20 @@ function findProjectsToAnalyze(dir) {
   return packageJSONFiles.map(packageJSONFile => path.dirname(packageJSONFile));
 }
 
+const program = new Command();
+
 program
-  .version('0.0.1')
+  .version('1.0.0')
   .arguments('<projectsDir>')
   .option('-o, --out <outFilePath>', 'output filepath')
   .action((projectsDir, options) => {
     const outputFilePath = options.out || 'out.json';
     const projectDirectories = findProjectsToAnalyze(projectsDir);
     console.log(`Found ${projectDirectories.length} projects to analyze`);
-    const allProjects = projectDirectories.map(analyzeProject);
-    console.log(allProjects);
-    fs.writeFileSync(outputFilePath, JSON.stringify(allProjects, null, 2));
+    const analysis = projectDirectories.map(analyzeProject);
+    fs.writeFileSync(outputFilePath, JSON.stringify(analysis, null, 2));
+    console.log(`Analyzed ${projectDirectories.length} projects:`);
+    console.log(analysis);
   });
 
 program.parse(process.argv);
