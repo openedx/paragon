@@ -33,5 +33,11 @@ jobs:
         git config user.name paragon
         git config user.email paragon+git@github.com
         git add "${GITHUB_WORKSPACE}/dependents-analysis.json"
-        git commit -m "docs(generated): update dependents analysis"
-        git push
+        if !(git diff --cached --exit-code)
+        then
+          echo "There is a change to the analysis output. Commit the change."
+          git commit -m "docs(generated): update dependents analysis"
+          # git push
+        else
+          echo "No significant changes. Do nothing."
+        fi
