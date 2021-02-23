@@ -50,5 +50,4 @@ jobs:
         else
           echo "No significant changes. Do nothing."
         fi
-      run: git diff
-
+        git diff
