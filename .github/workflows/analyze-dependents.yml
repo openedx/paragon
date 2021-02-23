@@ -16,24 +16,33 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: edx/frontend-app-ecommerce
-        path: analyze-projects/frontend-app-ecommerce
+        path: dependent-projects/frontend-app-ecommerce
     - name: Checkout profile
       uses: actions/checkout@v2
       with:
         repository: edx/frontend-app-profile
-        path: analyze-projects/frontend-app-profile
+        path: dependent-projects/frontend-app-profile
     - name: Install dependencies
       run: npm ci
-      working-directory: dependency-analysis
+      working-directory: dependents-usage-analysis
     - name: Analyze projects
-      run: npm run analyze "${GITHUB_WORKSPACE}/analyze-projects" -- --out "${GITHUB_WORKSPACE}/dependents-analysis.json"
-      working-directory: dependency-analysis
-    - name: Commit result
+      run: npm run analyze "${GITHUB_WORKSPACE}/dependent-projects" -- --out "${GITHUB_WORKSPACE}/dependents-usage-analysis.json"
+      working-directory: dependents-usage-analysis
+    - name: Upload analysis output
+      uses: actions/upload-artifact@v2
+      with:
+        name: dependents-usage-analysis-json
+        path: dependents-usage-analysis.json
+  commit-dependents-analysis:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download analysis output
+      uses: actions/download-artifact@v2
+      with:
+        name: dependents-usage-analysis-json
+    - name: Check for changes
       run: |
-        git config user.name paragon
-        git config user.email paragon+git@github.com
-        git add "${GITHUB_WORKSPACE}/dependents-analysis.json"
-        if !(git diff --cached --exit-code)
+        if !(git diff --exit-code)
         then
           echo "There is a change to the analysis output. Commit the change."
           git commit -m "docs(generated): update dependents analysis"
@@ -41,3 +50,5 @@ jobs:
         else
           echo "No significant changes. Do nothing."
         fi
+      run: git diff
+
