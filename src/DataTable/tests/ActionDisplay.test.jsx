@@ -53,15 +53,24 @@ describe('<ActionDisplay />', () => {
   it('displays tableActions', () => {
     const wrapper = mount(
       <ActionDisplayWrapper
-        value={{ ...instance, tableActions: [firstAction, secondAction], selectedFlatRows: [{}, {}] }}
+        value={{ ...instance, tableActions: [firstAction, secondAction], selectedFlatRows: [] }}
       />,
     );
-    expect(wrapper.find(BulkActions)).toHaveLength(1);
+    expect(wrapper.find(TableActions)).toHaveLength(1);
   });
   it('displays table actions when both bulk actions and table actions are present - no selected rows', () => {
     const wrapper = mount(
       <ActionDisplayWrapper
         value={{ bulkActions: [firstAction], tableActions: [secondAction], selectedFlatRows: [] }}
+      />,
+    );
+    expect(wrapper.find(TableActions)).toHaveLength(1);
+  });
+  it('displays table actions with rows selected and no bulk actions', () => {
+    // This is an edge case
+    const wrapper = mount(
+      <ActionDisplayWrapper
+        value={{ ...instance, tableActions: [firstAction, secondAction], selectedFlatRows: [{}, {}] }}
       />,
     );
     expect(wrapper.find(TableActions)).toHaveLength(1);

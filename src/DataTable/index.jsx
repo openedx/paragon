@@ -180,7 +180,7 @@ DataTable.propTypes = {
   /** Total number of items */
   itemCount: PropTypes.number.isRequired,
   /** Actions to be performed on selected rows of the table. Called with the selected rows.
-   *  Not displayed if rows are not selected. */
+   *  Only displayed if rows are selected. */
   bulkActions: PropTypes.arrayOf(PropTypes.shape({
     /** Bulk action button text */
     buttonText: PropTypes.string.isRequired,
