@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import SelectionStatus, { SELECT_ALL_TEST_ID, CLEAR_SELECTION_TEST_ID } from '../SelectionStatus';
+import SelectionStatus, { SELECT_ALL_TEST_ID, CLEAR_SELECTION_TEST_ID, CLEAR_SELECTION_TEXT } from '../SelectionStatus';
 import DataTableContext from '../DataTableContext';
 
 const instance = {
@@ -58,5 +58,20 @@ describe('<SelectionStatus />', () => {
     button.simulate('click');
     expect(toggleAllRowsSpy).toHaveBeenCalledTimes(1);
     expect(toggleAllRowsSpy).toHaveBeenCalledWith(false);
+  });
+  it('renders default selection text', () => {
+    const wrapper = mount(<SelectionStatusWrapper value={instance} />);
+    expect(wrapper.text()).toContain(CLEAR_SELECTION_TEXT);
+  });
+  it('can accept clear selection text as a prop', () => {
+    const customText = 'CLEAR ME';
+    const wrapper = mount(<SelectionStatusWrapper value={instance} props={{ clearSelectionText: customText }} />);
+    expect(wrapper.text()).toContain(customText);
+    expect(wrapper.text()).not.toContain(CLEAR_SELECTION_TEXT);
+  });
+  it('accepts a class name', () => {
+    const customClassName = 'classy';
+    const wrapper = mount(<SelectionStatusWrapper value={instance} props={{ className: customClassName }} />);
+    expect(wrapper.find(SelectionStatus).props().className).toEqual(customClassName);
   });
 });
