@@ -5,9 +5,10 @@ import DataTableContext from './DataTableContext';
 
 export const SELECT_ALL_TEST_ID = 'test_selection_state_select_all_button';
 export const CLEAR_SELECTION_TEST_ID = 'test_selection_state_clear_selection_button';
+export const CLEAR_SELECTION_TEXT = 'Clear selection';
 
 const SelectionStatus = ({
-  className,
+  className, clearSelectionText,
 }) => {
   const { toggleAllRowsSelected, selectedFlatRows, itemCount } = useContext(DataTableContext);
   const numSelectedRows = selectedFlatRows.length;
@@ -32,7 +33,7 @@ const SelectionStatus = ({
         size="inline"
         onClick={() => toggleAllRowsSelected(false)}
       >
-        Clear Selection
+        {clearSelectionText}
       </Button>
       )}
     </div>
@@ -41,10 +42,12 @@ const SelectionStatus = ({
 
 SelectionStatus.defaultProps = {
   className: undefined,
+  clearSelectionText: CLEAR_SELECTION_TEXT,
 };
 
 SelectionStatus.propTypes = {
   className: PropTypes.string,
+  clearSelectionText: PropTypes.string,
 };
 
 export default SelectionStatus;
