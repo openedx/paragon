@@ -1,6 +1,6 @@
 # Analyzing Paragon Dependents
 
-Generate Paragon component usage information within a dependent projects with this command line tool. This tool uses babel to parse a series of javascript projects as an abstract syntax tree and walks through it to gather information about usage of Paragon components (version and file line numbers).
+Generate Paragon component usage information within dependent projects with this command line tool. This tool uses babel to parse a series of javascript projects as an abstract syntax tree and walks through it to gather information about usage of Paragon components (version and file line numbers).
 
 ## Usage
 
