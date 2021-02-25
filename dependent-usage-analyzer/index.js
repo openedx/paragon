@@ -41,7 +41,13 @@ function getComponentUsagesInFiles(files, rootDir) {
   // save the file and line location of components for all files
   return files.reduce((usagesAccumulator, filePath) => {
     const sourceCode = fs.readFileSync(filePath, { encoding: 'utf-8' });
-    const ast = parser.parse(sourceCode, { sourceType: 'module', plugins: ['jsx', 'classProperties'] });
+    let ast;
+    try {
+      ast = parser.parse(sourceCode, { sourceType: 'module', plugins: ['jsx', 'classProperties'] });
+    } catch (e) {
+      console.error(`There was an error parsing a file into an abstract syntax tree. Skipping file: ${filePath}`);
+      return usagesAccumulator;
+    }
 
     // Track the local names of imported paragon components
     const paragonImportsInFile = {};

@@ -2,6 +2,7 @@
 mkdir .projects
 (
   cd .projects &&
+  git clone git@github.com:edx/edx-platform.git --depth 1
   git clone git@github.com:edx/frontend-app-account.git --depth 1
   git clone git@github.com:edx/frontend-app-admin-portal.git --depth 1
   git clone git@github.com:edx/frontend-app-authn.git --depth 1
