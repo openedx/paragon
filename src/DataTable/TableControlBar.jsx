@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import BulkActions from './BulkActions';
 import SmartStatus from './SmartStatus';
 import DropdownFilters from './DropdownFilters';
 import DataTableContext from './DataTableContext';
+import ActionDisplay from './ActionDisplay';
 
 // handles layout for filters, status, and bulk actions
 const TableControlBar = ({
   className,
 }) => {
-  const { setFilter, bulkActions } = useContext(DataTableContext);
+  const { setFilter } = useContext(DataTableContext);
 
   return (
     <div className={classNames('pgn__data-table-status-bar', className)}>
@@ -21,7 +21,7 @@ const TableControlBar = ({
           <DropdownFilters />
         </div>
         <div className="pgn__data-table-actions-right">
-          {bulkActions.length > 0 && (<BulkActions />)}
+          <ActionDisplay />
         </div>
       </div>
       )}
@@ -29,7 +29,7 @@ const TableControlBar = ({
         <div className="pgn__data-table-status-left">
           <SmartStatus />
         </div>
-        {!setFilter && (<BulkActions />)}
+        {!setFilter && (<ActionDisplay />)}
       </div>
     </div>
   );

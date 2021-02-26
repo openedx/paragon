@@ -5,23 +5,21 @@ import classNames from 'classnames';
 import DataTableContext from './DataTableContext';
 import Actions from './CollapsibleButtonGroup';
 
-const BulkActions = ({
+const TableActions = ({
   className,
 }) => {
-  const { selectedFlatRows, rows, bulkActions } = useContext(DataTableContext);
+  const instance = useContext(DataTableContext);
 
-  const bulkActionRows = selectedFlatRows || rows;
-
-  return <Actions actionData={bulkActionRows} actions={bulkActions} className={classNames('pgn__bulk-actions', className)} />;
+  return <Actions actionData={instance} actions={instance.tableActions} className={classNames('pgn__table-actions', className)} />;
 };
 
-BulkActions.defaultProps = {
+TableActions.defaultProps = {
   className: null,
 };
 
-BulkActions.propTypes = {
+TableActions.propTypes = {
   /** class names for the div wrapping the button components */
   className: PropTypes.string,
 };
 
-export default BulkActions;
+export default TableActions;
