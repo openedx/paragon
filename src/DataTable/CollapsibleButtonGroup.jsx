@@ -10,7 +10,7 @@ export const DROPDOWN_BUTTON_TEXT = 'More actions';
 export const SMALL_SCREEN_DROPDOWN_BUTTON_TEXT = 'Actions';
 
 // eslint-disable-next-line react/prop-types
-const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
+const CustomDropdownToggle = React.forwardRef(({ children, onClick }, ref) => (
   <Button
     ref={ref}
     variant="tertiary"
@@ -23,7 +23,7 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
   </Button>
 ));
 
-const Actions = ({
+const CollapsibleButtonGroup = ({
   className,
   actionData,
   actions,
@@ -51,7 +51,7 @@ const Actions = ({
     <div className={className}>
       {dropdownActions.length > 0 && (
       <Dropdown>
-        <Dropdown.Toggle as={CustomToggle}>
+        <Dropdown.Toggle as={CustomDropdownToggle}>
           <Icon
             src={MoreVert}
             screenReaderText={width > breakpoints.small.minWidth
@@ -96,12 +96,12 @@ const Actions = ({
   );
 };
 
-Actions.defaultProps = {
+CollapsibleButtonGroup.defaultProps = {
   className: null,
   actionData: null,
 };
 
-Actions.propTypes = {
+CollapsibleButtonGroup.propTypes = {
   /** class names for the div wrapping the button components */
   className: PropTypes.string,
   // eslint-disable-next-line react/forbid-prop-types
@@ -114,4 +114,4 @@ Actions.propTypes = {
   })).isRequired,
 };
 
-export default Actions;
+export default CollapsibleButtonGroup;

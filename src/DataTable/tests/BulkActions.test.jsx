@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import BulkActions from '../BulkActions';
-import { DROPDOWN_BUTTON_TEXT, SMALL_SCREEN_DROPDOWN_BUTTON_TEXT } from '../Actions';
+import { DROPDOWN_BUTTON_TEXT, SMALL_SCREEN_DROPDOWN_BUTTON_TEXT } from '../CollapsibleButtonGroup';
 import {
   useWindowSize, Dropdown, Button, Icon,
 } from '../..';

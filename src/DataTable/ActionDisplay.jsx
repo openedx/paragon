@@ -3,7 +3,7 @@ import BulkActions from './BulkActions';
 import TableActions from './TableActions';
 import DataTableContext from './DataTableContext';
 
-// handles layout for filters, status, and bulk actions
+// handles display logic for actions
 const ActionDisplay = () => {
   const { bulkActions, tableActions, selectedFlatRows } = useContext(DataTableContext);
   const noBulkActions = bulkActions?.length < 1;
