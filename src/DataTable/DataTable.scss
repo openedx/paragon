@@ -10,7 +10,7 @@ $data-table-footer-position: center !default;
   border: $data-table-border;
 }
 
-.pgn__bulk-actions {
+.pgn__bulk-actions, .pgn__table-actions {
   display: flex;
 }
 

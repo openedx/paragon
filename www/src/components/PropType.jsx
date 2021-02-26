@@ -61,7 +61,7 @@ const PropTypeShape = ({ name, value, isRequired }) => (
     <RequiredBadge isRequired={isRequired} />
     {" \{"}
     {Object.entries(value).map(([key, propType]) => (
-      <div className="text-monospace pl-3">{key}: <PropType {...propType} />,</div>
+      <div className="text-monospace pl-3" key={key}>{key}: <PropType {...propType} />,</div>
     ))}
     {"\}"}
   </span>

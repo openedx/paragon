@@ -336,41 +336,54 @@ can see in the console what the fetchData function is called with.
 />
 ```
 
-## Actions and Bulk actions
+## Actions, Table actions and Bulk actions
 
 Actions and bulk actions are actions that are performed on table rows, though bulk actions can be used for
 actions that apply to the whole table. It is up to the user to determine what the action does.
 
+### Table Actions
+Table actions are actions that are enacted on the entire table. Their click handler is called with the react-table
+instance.
+The first two table actions will be displayed as buttons, while the remaining actions will be displayed in an overflow
+dropdown menu.
+Table actions are not visible if bulk actions are available and there  are selected rows.
+
 ### Bulk Actions
+Bulk actions are action that are enacted on specific table rows. The bulk action click handler is called with the selected rows.
 The first two bulk actions will be displayed as buttons, while the remaining bulk actions will be displayed in a
-overflow dropdown menu. The bulk actions are called with the selected rows.
+overflow dropdown menu.
+Bulk actions are not visible unless rows have been selected.
 
 ### Actions
-An action can be definied as an additional column on the table. The Cell property can be definied to display
+An action can also be definied as an additional column on the table. The Cell property can be defined to display
 any component that a user requires. It will receive the row as props.
-
-<strong>NOTE</strong>: The rows the action are called with are logged to the console in this example.
 
 ```jsx live
   <DataTable
     isSelectable
     itemCount={7}
+    tableActions={[
+        {
+          buttonText: 'Table Action',
+          handleClick: (selectedRows) => alert(`Table actions are called with the table instance`),
+        },
+    ]}
     bulkActions={[
         {
           buttonText: 'Enroll',
-          handleClick: (selectedRows) => console.log('Enrolling ', selectedRows),
+          handleClick: (selectedRows) => alert(`Enrolling ${selectedRows.map((row) => row.values.name).join(', ')}`),
         },
         {
           buttonText: 'Assign',
-          handleClick: (selectedRows) => console.log('Assigning ', selectedRows),
+          handleClick: (selectedRows) => alert(`Assigning ${selectedRows.map((row) => row.values.name).join(', ')}`),
         },
         {
           buttonText: 'Extra action 1',
-          handleClick: (selectedRows) => console.log('Extra action 1', selectedRows),
+          handleClick: (selectedRows) => alert(`Extra action 1 for ${selectedRows.map((row) => row.values.name).join(', ')}`),
         },
         {
           buttonText: 'Extra action 2',
-          handleClick: (selectedRows) => console.log('Extra action 2 ', selectedRows),
+          handleClick: (selectedRows) => alert(`Extra action2 for ${selectedRows.map((row) => row.values.name).join(', ')}`),
         },
       ]}
     additionalColumns={[
@@ -378,7 +391,7 @@ any component that a user requires. It will receive the row as props.
         id: 'action',
         Header: 'Action',
         // Proptypes disabled as this prop is passed in separately
-        Cell: ({ row }) => <Button variant="link" onClick={() => console.log("Assign", row)}>Assign</Button>,
+        Cell: ({ row }) => <Button variant="link" onClick={() => alert(`Assigning ${row.values.name}`)}>Assign</Button>,
       }
     ]}
     data={[
@@ -657,6 +670,7 @@ a responsive grid of cards.
 
 <PropsTable {...props.data.dataTable} />
 <PropsTable {...props.data.bulkActions} />
+<PropsTable {...props.data.tableActions} />
 <PropsTable {...props.data.table} />
 <PropsTable {...props.data.cell} />
 <PropsTable {...props.data.headerCell} />
@@ -673,6 +687,7 @@ export const query = graphql`
   query {
     dataTable: componentMetadata(displayName: { eq: "DataTable" }) { ...ComponentDocGenData }
     bulkActions: componentMetadata(displayName: { eq: "BulkActions" }) { ...ComponentDocGenData }
+    tableActions: componentMetadata(displayName: { eq: "TableActions" }) { ...ComponentDocGenData }
     table: componentMetadata(displayName: {eq: "Table"}, props: {elemMatch: {name: {eq: "prepareRow"}}}) { ...ComponentDocGenData }
     cell: componentMetadata(displayName: { eq: "TableCell" }) { ...ComponentDocGenData }
     headerCell: componentMetadata(displayName: { eq: "TableHeaderCell" }) { ...ComponentDocGenData }
