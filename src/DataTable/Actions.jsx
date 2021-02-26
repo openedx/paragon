@@ -83,10 +83,7 @@ const Actions = ({
         return (
           <Button
             variant={variant}
-            className={classNames({
-              [action.className]: action.className,
-              'ml-2': true,
-            })}
+            className={classNames('ml-2', action.className)}
             onClick={() => action.handleClick(actionData)}
             key={action.buttonText}
             disabled={action.disabled}
