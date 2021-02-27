@@ -1,4 +1,4 @@
-import React, { createRef, useMemo } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import isRequiredIf from 'react-proptype-conditional-require';
@@ -15,14 +15,13 @@ const Hyperlink = React.forwardRef(({
   onClick,
   externalLinkAlternativeText,
   externalLinkTitle,
+  rel,
   ...attrs
 }, forwardedRef) => {
-  const ref = useMemo(() => forwardedRef || createRef(), [forwardedRef]);
-
-  const handleLogClick = useHandleLogClick({
+  const [handleLogClick, ref] = useHandleLogClick({
     event: analyticEvents?.onClick,
     onClick,
-    ref,
+    forwardedRef,
   });
 
   let externalLinkIcon;
@@ -30,8 +29,7 @@ const Hyperlink = React.forwardRef(({
   if (target === '_blank') {
     // Add this rel attribute to prevent Reverse Tabnabbing
     Object.assign(attrs, {
-      ...attrs,
-      rel: attrs.rel ? `noopener ${attrs.rel}` : 'noopener',
+      rel: rel ? `noopener ${rel}` : 'noopener',
     });
 
     externalLinkIcon = (
@@ -65,6 +63,7 @@ const Hyperlink = React.forwardRef(({
 
 Hyperlink.defaultProps = {
   target: '_self',
+  rel: undefined,
   onClick: () => {},
   externalLinkAlternativeText: 'Opens in a new window',
   externalLinkTitle: 'Opens in a new window',
@@ -78,6 +77,10 @@ Hyperlink.propTypes = {
   /** specifies where the link should open. The default behavior is `_self`, which means that the URL will be loaded into the same browsing context as the current one. If the target is `_blank` (opening a new window) `rel='noopener'` will be added to the anchor tag to prevent any potential [reverse tabnabbing attack](https://www.owasp.org/index.php/Reverse_Tabnabbing).
    */
   target: PropTypes.string,
+  /** specifies the relationship between the current document and the linked document; the
+   * `noopener` value is automatically added if `target` is "_blank".
+   */
+  rel: PropTypes.string,
   /** specifies the callback function when the link is clicked */
   onClick: PropTypes.func,
   // eslint-disable-next-line max-len
@@ -92,6 +95,7 @@ Hyperlink.propTypes = {
     PropTypes.string,
     props => props.target === '_blank',
   ),
+  /** specifies the analytic events to dispatch for when the user interacts with this component, e.g. `onClick`. */
   analyticEvents: PropTypes.shape({
     onClick: PropTypes.shape({
       name: PropTypes.string,

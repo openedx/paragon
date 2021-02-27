@@ -1,51 +1,91 @@
-import { useContext, useMemo } from 'react';
+import {
+  createRef, useCallback, useContext, useMemo,
+} from 'react';
 
 import { ParagonContext } from '../ParagonProvider';
 
+/**
+ * Returns the ``analytics`` key stored in ParagonProvider's context
+ */
 export const useAnalytics = () => {
   const { analytics } = useContext(ParagonContext) || {};
   return analytics;
 };
 
+/**
+ *
+ * @param {object} [event] Object containing the analytic event name, properties, and dispatchers.
+ * @param {function} [onClick] Custom event handler to call when processing the onClick event.
+ * @param {object} [forwardedRef] An optional React forwarded ref.
+ *
+ * @returns {array} Array containing an onClick event handler to pass to an element that will dispatch
+ *  an analytics event, and an element ref.
+ */
 export const useHandleLogClick = ({
-  event, onClick, ref,
+  event, onClick, forwardedRef,
 }) => {
+  const ref = useMemo(
+    () => forwardedRef || createRef(),
+    [forwardedRef],
+  );
   const analytics = useAnalytics();
+  const {
+    name: eventName,
+    properties: eventProperties,
+    dispatchers: eventDispatchers,
+  } = event || {};
 
-  const trackedRef = useMemo(() => ref?.current, [ref?.current]);
-  const { name, properties, dispatchers } = event || {};
+  /**
+   * Iterates through all analytic event dispatch functions passed in, passing the event name and
+   * properties to each.
+   */
+  const sendEventToDispatchers = useCallback(
+    () => {
+      if (!eventDispatchers) {
+        return;
+      }
+      eventDispatchers.filter(dispatcher => typeof dispatcher === 'function').forEach((dispatch) => {
+        dispatch(eventName, eventProperties);
+      });
+    },
+    [eventName, eventProperties, eventDispatchers],
+  );
 
-  const sendEventToDispatchers = () => {
-    if (!dispatchers) {
-      return;
+  /**
+   * Sends an analytic event to ``analytics.sendTrackEvent`` if it exists as well as sending the
+   * same event to the provided custom event dispatchers.
+   */
+  const dispatchAnalyticEvents = () => {
+    if (analytics?.sendTrackEvent) {
+      analytics.sendTrackEvent(eventName, eventProperties);
     }
-    dispatchers.filter(dispatcher => typeof dispatcher === 'function').forEach((dispatch) => {
-      dispatch(name, properties);
-    });
+    sendEventToDispatchers();
   };
 
+  /**
+   * An onClick event handler that appropriately configures an element to dispatch an analytic event.
+   * If the element has an `href` (i.e., hyperlink), delay execution of the location redirect to give
+   * enough time for the analytic event to be dispatched. Otherwise, dispatch the analytic event immediately.
+   *
+   * @param {event} e The event associated with onClick.
+   */
   const handleLogClick = (e) => {
     if (event) {
       // handle clicked anchor links that open in same tab by adding a slight delay
       // to the page redirect to allow enough time for an analytics event to
       // be dispatched.
-      if (trackedRef?.href && trackedRef?.target !== '_blank') {
+      if (ref?.current?.href && ref?.current?.target !== '_blank') {
         e.preventDefault();
-
-        analytics.sendTrackEvent(name, properties);
-        sendEventToDispatchers(dispatchers);
-
+        dispatchAnalyticEvents();
         setTimeout(() => {
-          global.location.href = trackedRef.href;
+          global.location.href = ref?.current?.href;
         }, [300]);
-
         return;
       }
 
-      // if ``trackedRef`` is not an anchor link (e.g., a button), dispatch the
-      // analytic event immediately.
-      analytics.sendTrackEvent(name, properties);
-      sendEventToDispatchers(dispatchers);
+      // if ``ref`` is not an anchor link (e.g., a button), dispatch the
+      // analytic events immediately.
+      dispatchAnalyticEvents();
     }
 
     if (onClick) {
@@ -53,5 +93,5 @@ export const useHandleLogClick = ({
     }
   };
 
-  return handleLogClick;
+  return [handleLogClick, ref];
 };

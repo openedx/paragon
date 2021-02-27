@@ -1,4 +1,4 @@
-import React, { createRef, useMemo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import ButtonBase from 'react-bootstrap/Button';
 
@@ -9,14 +9,13 @@ import ButtonDeprecated from './deprecated';
 const Button = React.forwardRef(({
   children,
   analyticEvents,
+  onClick,
   ...attrs
 }, forwardedRef) => {
-  const ref = useMemo(() => forwardedRef || createRef(), [forwardedRef]);
-
-  const handleLogClick = useHandleLogClick({
+  const [handleLogClick, ref] = useHandleLogClick({
     event: analyticEvents?.onClick,
-    onClick: attrs?.onClick,
-    ref,
+    onClick,
+    forwardedRef,
   });
 
   return (
@@ -32,7 +31,9 @@ const Button = React.forwardRef(({
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
+  /** specifies the callback function when the button is clicked */
   onClick: PropTypes.func,
+  /** specifies the analytic events to dispatch for when the user interacts with this component, e.g. `onClick`. */
   analyticEvents: PropTypes.shape({
     onClick: PropTypes.shape({
       name: PropTypes.string,
