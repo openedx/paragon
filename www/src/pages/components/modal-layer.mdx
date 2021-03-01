@@ -24,7 +24,7 @@ A generic component for creating accessibile modal layer objects. The modal laye
     <>
       <Button variant="outline-primary" onClick={open}>Open modal layer</Button>
 
-      <ModalLayer isOpen={isOpen} close={close}>
+      <ModalLayer isOpen={isOpen} onClose={close}>
         <div role="dialog" aria-label="My dialog" className="mw-sm p-5 bg-white mx-auto my-5">
           <h1>I'm a dialog box</h1>
           <p>
@@ -62,7 +62,7 @@ A generic component for creating accessibile modal layer objects. The modal laye
     <>
       <Button variant="outline-primary" onClick={open}>Open small modal layer</Button>
 
-      <ModalLayer isOpen={isOpen} close={close}>
+      <ModalLayer isOpen={isOpen} onClose={close}>
         <div role="dialog" aria-label="My dialog" className="mw-sm p-5 bg-white mx-auto my-5">
           <h1>I'm a dialog box</h1>
           <p>
@@ -93,4 +93,3 @@ export const query = graphql`
     portalMetadata: componentMetadata(displayName: { eq: "Portal" }) { ...ComponentDocGenData}
   }
 `
-
