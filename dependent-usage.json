@@ -2,6 +2,7 @@
   {
     "version": "2.6.4",
     "name": "edx",
+    "folderName": "edx-platform",
     "usages": {
       "Icon": [
         {
@@ -256,6 +257,7 @@
       "type": "git",
       "url": "git+https://github.com/edx/frontend-app-account.git"
     },
+    "folderName": "frontend-app-account",
     "usages": {
       "Hyperlink": [
         {
@@ -682,172 +684,173 @@
     }
   },
   {
-    "version": "13.6.2",
+    "version": "13.13.2",
     "name": "frontend-app-admin-portal",
     "repository": "https://github.com/edx/frontend-app-admin-portal",
+    "folderName": "frontend-app-admin-portal",
     "usages": {
       "Button": [
         {
           "filePath": "src/components/ActionButtonWithModal/index.jsx",
           "line": 14,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/BulkEnrollmentModal/index.jsx",
           "line": 179,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CodeAssignmentModal/index.jsx",
           "line": 515,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CodeManagement/index.jsx",
           "line": 273,
           "column": 16,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CodeReminderModal/index.jsx",
           "line": 265,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CodeRevokeModal/index.jsx",
           "line": 305,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CodeSearchResults/CodeSearchResultsHeading.jsx",
           "line": 13,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CouponDetails/index.jsx",
           "line": 282,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CouponDetails/index.jsx",
           "line": 895,
           "column": 18,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CouponDetails/index.jsx",
           "line": 927,
           "column": 26,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CouponDetails/index.jsx",
           "line": 942,
           "column": 26,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CouponDetails/index.jsx",
           "line": 979,
           "column": 28,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/DownloadCsvButton/index.jsx",
           "line": 20,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/FileInput/index.jsx",
           "line": 131,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/InviteLearnersModal/index.jsx",
           "line": 235,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LicenseRemindModal/index.jsx",
           "line": 196,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LicenseRevokeModal/index.jsx",
           "line": 159,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/NumberCard/index.jsx",
           "line": 205,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 359,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/RequestCodesPage/RequestCodesForm.jsx",
           "line": 110,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 328,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
           "line": 184,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SidebarToggle/index.jsx",
           "line": 18,
           "column": 4,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
           "line": 46,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SupportPage/SupportForm.jsx",
           "line": 110,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/TemplateSourceFields/index.jsx",
           "line": 139,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/TemplateSourceFields/index.jsx",
           "line": 165,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Form.Group": [
@@ -855,13 +858,13 @@
           "filePath": "src/components/Admin/AdminSearchForm.jsx",
           "line": 58,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/Admin/AdminSearchForm.jsx",
           "line": 80,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Form.Label": [
@@ -869,19 +872,19 @@
           "filePath": "src/components/Admin/AdminSearchForm.jsx",
           "line": 59,
           "column": 16,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/Admin/AdminSearchForm.jsx",
           "line": 81,
           "column": 16,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/Admin/AdminSearchForm.jsx",
           "line": 113,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Form.Control": [
@@ -889,13 +892,13 @@
           "filePath": "src/components/Admin/AdminSearchForm.jsx",
           "line": 60,
           "column": 16,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/Admin/AdminSearchForm.jsx",
           "line": 89,
           "column": 16,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Icon": [
@@ -903,409 +906,409 @@
           "filePath": "src/components/Admin/index.jsx",
           "line": 227,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/Admin/index.jsx",
           "line": 244,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/BulkEnrollmentModal/index.jsx",
           "line": 186,
           "column": 29,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CodeAssignmentModal/index.jsx",
           "line": 521,
           "column": 52,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CodeManagement/index.jsx",
           "line": 280,
           "column": 20,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CodeManagement/index.jsx",
           "line": 289,
           "column": 20,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CodeReminderModal/index.jsx",
           "line": 272,
           "column": 52,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CodeRevokeModal/index.jsx",
           "line": 312,
           "column": 52,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CodeSearchResults/CodeSearchResultsHeading.jsx",
           "line": 18,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CodeSearchResults/CodeSearchResultsTable.jsx",
           "line": 116,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/Coupon/index.jsx",
           "line": 91,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/Coupon/index.jsx",
           "line": 100,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CouponDetails/index.jsx",
           "line": 627,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/DownloadCsvButton/index.jsx",
           "line": 27,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/FileInput/index.jsx",
           "line": 141,
           "column": 18,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/InviteLearnersModal/index.jsx",
           "line": 242,
           "column": 31,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LicenseRemindModal/index.jsx",
           "line": 203,
           "column": 31,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LicenseRevokeModal/index.jsx",
           "line": 166,
           "column": 29,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
           "line": 224,
           "column": 25,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
           "line": 225,
           "column": 25,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
           "line": 226,
           "column": 26,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
           "line": 227,
           "column": 23,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
           "line": 225,
           "column": 25,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
           "line": 226,
           "column": 25,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
           "line": 227,
           "column": 26,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
           "line": 228,
           "column": 23,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CornerstoneIntegrationConfigForm.jsx",
           "line": 229,
           "column": 23,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CornerstoneIntegrationConfigForm.jsx",
           "line": 230,
           "column": 23,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CornerstoneIntegrationConfigForm.jsx",
           "line": 231,
           "column": 24,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CornerstoneIntegrationConfigForm.jsx",
           "line": 232,
           "column": 21,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
           "line": 324,
           "column": 23,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
           "line": 325,
           "column": 23,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
           "line": 326,
           "column": 24,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
           "line": 327,
           "column": 21,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
           "line": 275,
           "column": 25,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
           "line": 276,
           "column": 25,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
           "line": 277,
           "column": 26,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
           "line": 278,
           "column": 23,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
           "line": 299,
           "column": 25,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
           "line": 300,
           "column": 25,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
           "line": 301,
           "column": 26,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
           "line": 302,
           "column": 23,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/NumberCard/index.jsx",
           "line": 158,
           "column": 15,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/NumberCard/index.jsx",
           "line": 189,
           "column": 16,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/NumberCard/index.jsx",
           "line": 219,
           "column": 20,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/index.jsx",
           "line": 123,
           "column": 22,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 348,
           "column": 25,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 349,
           "column": 25,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 350,
           "column": 26,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 351,
           "column": 23,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 363,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/RequestCodesPage/RequestCodesForm.jsx",
           "line": 116,
           "column": 33,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/index.jsx",
           "line": 170,
           "column": 22,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 316,
           "column": 25,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 317,
           "column": 25,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 318,
           "column": 26,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 319,
           "column": 23,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 333,
           "column": 16,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
           "line": 171,
           "column": 27,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
           "line": 172,
           "column": 27,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
           "line": 173,
           "column": 28,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
           "line": 174,
           "column": 25,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
           "line": 188,
           "column": 16,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SaveTemplateButton/index.jsx",
           "line": 144,
           "column": 19,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SaveTemplateButton/index.jsx",
           "line": 145,
           "column": 20,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SidebarToggle/index.jsx",
           "line": 25,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/StatusAlert/index.jsx",
           "line": 31,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SupportPage/SupportForm.jsx",
           "line": 116,
           "column": 33,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Container": [
@@ -1313,37 +1316,37 @@
           "filePath": "src/components/AdminRegisterPage/index.jsx",
           "line": 41,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/AdminRegisterPage/index.jsx",
           "line": 59,
           "column": 4,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/subscriptions/SubscriptionManagementPage.jsx",
           "line": 21,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/UserActivationPage/index.jsx",
           "line": 70,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/UserActivationPage/index.jsx",
           "line": 94,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/UserActivationPage/index.jsx",
           "line": 109,
           "column": 4,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Row": [
@@ -1351,49 +1354,49 @@
           "filePath": "src/components/AdminRegisterPage/index.jsx",
           "line": 42,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/AdminRegisterPage/index.jsx",
           "line": 60,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/subscriptions/MultipleSubscriptionsPage.jsx",
           "line": 42,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/subscriptions/SubscriptionDetails.jsx",
           "line": 17,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/subscriptions/SubscriptionDetails.jsx",
           "line": 25,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/UserActivationPage/index.jsx",
           "line": 71,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/UserActivationPage/index.jsx",
           "line": 95,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/UserActivationPage/index.jsx",
           "line": 110,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Col": [
@@ -1401,43 +1404,43 @@
           "filePath": "src/components/AdminRegisterPage/index.jsx",
           "line": 43,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/AdminRegisterPage/index.jsx",
           "line": 61,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/subscriptions/MultipleSubscriptionsPage.jsx",
           "line": 43,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/subscriptions/SubscriptionDetails.jsx",
           "line": 26,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/UserActivationPage/index.jsx",
           "line": 72,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/UserActivationPage/index.jsx",
           "line": 96,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/UserActivationPage/index.jsx",
           "line": 111,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Alert": [
@@ -1445,19 +1448,19 @@
           "filePath": "src/components/BulkEnrollmentModal/index.jsx",
           "line": 87,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/BulkEnrollmentModal/index.jsx",
           "line": 104,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/UserActivationPage/index.jsx",
           "line": 73,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Alert.Heading": [
@@ -1465,13 +1468,13 @@
           "filePath": "src/components/BulkEnrollmentModal/index.jsx",
           "line": 91,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/BulkEnrollmentModal/index.jsx",
           "line": 108,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Modal": [
@@ -1479,77 +1482,109 @@
           "filePath": "src/components/BulkEnrollmentModal/index.jsx",
           "line": 172,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CodeAssignmentModal/index.jsx",
           "line": 509,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CodeReminderModal/index.jsx",
           "line": 259,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CodeRevokeModal/index.jsx",
           "line": 299,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/InviteLearnersModal/index.jsx",
           "line": 229,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LicenseRemindModal/index.jsx",
           "line": 190,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LicenseRevokeModal/index.jsx",
           "line": 153,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/subscriptions/expiration/SubscriptionExpirationModal.jsx",
           "line": 73,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/subscriptions/expiration/SubscriptionExpirationModal.jsx",
           "line": 107,
           "column": 4,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Toast": [
         {
           "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
-          "line": 82,
+          "line": 119,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/Toasts/Toasts.jsx",
           "line": 9,
           "column": 4,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "DataTable": [
         {
           "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
-          "line": 89,
+          "line": 126,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
+        }
+      ],
+      "DataTable.TableControlBar": [
+        {
+          "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
+          "line": 144,
+          "column": 10,
+          "version": "13.13.2"
+        }
+      ],
+      "DataTable.Table": [
+        {
+          "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
+          "line": 145,
+          "column": 10,
+          "version": "13.13.2"
+        }
+      ],
+      "DataTable.TableFooter": [
+        {
+          "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
+          "line": 146,
+          "column": 10,
+          "version": "13.13.2"
+        }
+      ],
+      "DataTable.RowStatus": [
+        {
+          "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
+          "line": 147,
+          "column": 12,
+          "version": "13.13.2"
         }
       ],
       "Input": [
@@ -1557,433 +1592,433 @@
           "filePath": "src/components/CodeAssignmentModal/index.jsx",
           "line": 378,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CodeRevokeModal/index.jsx",
           "line": 164,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CsvUpload/index.jsx",
           "line": 41,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
           "line": 129,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
           "line": 149,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
           "line": 167,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
           "line": 185,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
           "line": 201,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
           "line": 124,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
           "line": 143,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
           "line": 162,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
           "line": 181,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
           "line": 200,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CornerstoneIntegrationConfigForm.jsx",
           "line": 186,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CornerstoneIntegrationConfigForm.jsx",
           "line": 206,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
           "line": 191,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
           "line": 211,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
           "line": 229,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
           "line": 247,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
           "line": 265,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
           "line": 283,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
           "line": 301,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
           "line": 144,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
           "line": 164,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
           "line": 182,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
           "line": 198,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
           "line": 216,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
           "line": 234,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
           "line": 252,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
           "line": 127,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
           "line": 147,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
           "line": 165,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
           "line": 183,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
           "line": 201,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
           "line": 219,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
           "line": 237,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
           "line": 258,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
           "line": 276,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/EmailDeliveryMethodForm.jsx",
           "line": 20,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/EmailDeliveryMethodForm.jsx",
           "line": 35,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/EmailDeliveryMethodForm.jsx",
           "line": 51,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 157,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 174,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 192,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 210,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 227,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 250,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 268,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 294,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 309,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/SFTPDeliveryMethodForm.jsx",
           "line": 19,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/SFTPDeliveryMethodForm.jsx",
           "line": 36,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/SFTPDeliveryMethodForm.jsx",
           "line": 55,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/SFTPDeliveryMethodForm.jsx",
           "line": 66,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/SFTPDeliveryMethodForm.jsx",
           "line": 82,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/SFTPDeliveryMethodForm.jsx",
           "line": 97,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlConfiguration/index.jsx",
           "line": 48,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 117,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 135,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 151,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 174,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 192,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 208,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 224,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 240,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 256,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 272,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 288,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
           "line": 109,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
           "line": 128,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
           "line": 147,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/TemplateSourceFields/index.jsx",
           "line": 61,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Pagination": [
@@ -1991,19 +2026,19 @@
           "filePath": "src/components/CodeManagement/index.jsx",
           "line": 198,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/subscriptions/licenses/TabContentTable.jsx",
           "line": 168,
           "column": 20,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/TableComponent/index.jsx",
           "line": 89,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "TransitionReplace": [
@@ -2011,7 +2046,7 @@
           "filePath": "src/components/CodeSearchResults/index.jsx",
           "line": 86,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "CheckBox": [
@@ -2019,13 +2054,13 @@
           "filePath": "src/components/CouponDetails/index.jsx",
           "line": 35,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CouponDetails/index.jsx",
           "line": 638,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "InputSelect": [
@@ -2033,19 +2068,19 @@
           "filePath": "src/components/CouponDetails/index.jsx",
           "line": 862,
           "column": 18,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CouponDetails/index.jsx",
           "line": 873,
           "column": 22,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/CouponDetails/index.jsx",
           "line": 886,
           "column": 18,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "ValidationFormGroup": [
@@ -2053,415 +2088,415 @@
           "filePath": "src/components/FileInput/index.jsx",
           "line": 71,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
           "line": 125,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
           "line": 142,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
           "line": 160,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
           "line": 178,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
           "line": 196,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
           "line": 120,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
           "line": 137,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
           "line": 156,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
           "line": 175,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
           "line": 194,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CornerstoneIntegrationConfigForm.jsx",
           "line": 182,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CornerstoneIntegrationConfigForm.jsx",
           "line": 199,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
           "line": 187,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
           "line": 204,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
           "line": 222,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
           "line": 240,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
           "line": 258,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
           "line": 276,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
           "line": 294,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
           "line": 140,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
           "line": 157,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
           "line": 175,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
           "line": 193,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
           "line": 209,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
           "line": 227,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
           "line": 245,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
           "line": 123,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
           "line": 140,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
           "line": 158,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
           "line": 176,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
           "line": 194,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
           "line": 212,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
           "line": 230,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
           "line": 253,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
           "line": 271,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/EmailDeliveryMethodForm.jsx",
           "line": 13,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/EmailDeliveryMethodForm.jsx",
           "line": 44,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 153,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 169,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 187,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 205,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 222,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 244,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 263,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 287,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 304,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 331,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/SFTPDeliveryMethodForm.jsx",
           "line": 12,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/SFTPDeliveryMethodForm.jsx",
           "line": 29,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/SFTPDeliveryMethodForm.jsx",
           "line": 48,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/SFTPDeliveryMethodForm.jsx",
           "line": 75,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/SFTPDeliveryMethodForm.jsx",
           "line": 90,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlConfiguration/index.jsx",
           "line": 42,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 113,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 130,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 146,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 167,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 185,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 203,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 219,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 235,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 251,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 267,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 283,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
           "line": 102,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
           "line": 121,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
           "line": 140,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/TextAreaAutoSize/index.jsx",
           "line": 20,
           "column": 4,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "MailtoLink": [
@@ -2469,37 +2504,37 @@
           "filePath": "src/components/ForbiddenPage/index.jsx",
           "line": 17,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/subscriptions/expiration/SubscriptionExpirationBanner.jsx",
           "line": 26,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/subscriptions/expiration/SubscriptionExpirationModal.jsx",
           "line": 35,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/subscriptions/expiration/SubscriptionExpirationModal.jsx",
           "line": 57,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SupportPage/index.jsx",
           "line": 55,
           "column": 18,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/UserActivationPage/index.jsx",
           "line": 82,
           "column": 18,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Dropdown": [
@@ -2507,7 +2542,7 @@
           "filePath": "src/components/Header/index.jsx",
           "line": 47,
           "column": 4,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Dropdown.Toggle": [
@@ -2515,7 +2550,7 @@
           "filePath": "src/components/Header/index.jsx",
           "line": 48,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Dropdown.Menu": [
@@ -2523,7 +2558,7 @@
           "filePath": "src/components/Header/index.jsx",
           "line": 57,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Dropdown.Item": [
@@ -2531,7 +2566,7 @@
           "filePath": "src/components/Header/index.jsx",
           "line": 58,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Navbar": [
@@ -2539,7 +2574,7 @@
           "filePath": "src/components/Header/index.jsx",
           "line": 97,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Nav": [
@@ -2547,13 +2582,13 @@
           "filePath": "src/components/Header/index.jsx",
           "line": 98,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/Header/index.jsx",
           "line": 108,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Nav.Link": [
@@ -2561,7 +2596,7 @@
           "filePath": "src/components/Header/index.jsx",
           "line": 100,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "OverlayTrigger": [
@@ -2569,19 +2604,19 @@
           "filePath": "src/components/IconWithTooltip/index.jsx",
           "line": 13,
           "column": 4,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/TemplateSourceFields/index.jsx",
           "line": 128,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/TemplateSourceFields/index.jsx",
           "line": 154,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Tooltip": [
@@ -2589,19 +2624,19 @@
           "filePath": "src/components/IconWithTooltip/index.jsx",
           "line": 18,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/TemplateSourceFields/index.jsx",
           "line": 132,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/TemplateSourceFields/index.jsx",
           "line": 158,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "StatefulButton": [
@@ -2609,61 +2644,61 @@
           "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
           "line": 213,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
           "line": 214,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/CornerstoneIntegrationConfigForm.jsx",
           "line": 218,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
           "line": 313,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
           "line": 264,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
           "line": 288,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
           "line": 337,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
           "line": 305,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
           "line": 160,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SaveTemplateButton/index.jsx",
           "line": 133,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Collapsible": [
@@ -2671,73 +2706,73 @@
           "filePath": "src/components/LmsConfigurations/index.jsx",
           "line": 139,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/index.jsx",
           "line": 151,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/index.jsx",
           "line": 163,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/index.jsx",
           "line": 175,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/index.jsx",
           "line": 187,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/LmsConfigurations/index.jsx",
           "line": 199,
           "column": 10,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/index.jsx",
           "line": 118,
           "column": 16,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/ReportingConfig/index.jsx",
           "line": 150,
           "column": 12,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/index.jsx",
           "line": 165,
           "column": 16,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/index.jsx",
           "line": 205,
           "column": 16,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/index.jsx",
           "line": 235,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/SamlProviderConfiguration/index.jsx",
           "line": 249,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "InputText": [
@@ -2745,7 +2780,7 @@
           "filePath": "src/components/RenderField/index.jsx",
           "line": 14,
           "column": 2,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "SearchField": [
@@ -2753,7 +2788,7 @@
           "filePath": "src/components/SearchBar/index.jsx",
           "line": 6,
           "column": 2,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "StatusAlert": [
@@ -2761,7 +2796,7 @@
           "filePath": "src/components/StatusAlert/index.jsx",
           "line": 18,
           "column": 4,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Table": [
@@ -2769,13 +2804,13 @@
           "filePath": "src/components/subscriptions/licenses/TabContentTable.jsx",
           "line": 161,
           "column": 20,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/TableComponent/index.jsx",
           "line": 75,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "CardGrid": [
@@ -2783,7 +2818,7 @@
           "filePath": "src/components/subscriptions/MultipleSubscriptionsPage.jsx",
           "line": 50,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Card": [
@@ -2791,13 +2826,13 @@
           "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
           "line": 23,
           "column": 4,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/subscriptions/SubscriptionZeroStateMessage.jsx",
           "line": 14,
           "column": 4,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Card.Body": [
@@ -2805,13 +2840,13 @@
           "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
           "line": 24,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/components/subscriptions/SubscriptionZeroStateMessage.jsx",
           "line": 15,
           "column": 6,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Card.Title": [
@@ -2819,7 +2854,7 @@
           "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
           "line": 25,
           "column": 8,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ],
       "Badge": [
@@ -2827,171 +2862,172 @@
           "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
           "line": 29,
           "column": 14,
-          "version": "13.6.2"
+          "version": "13.13.2"
         }
       ]
     }
   },
   {
-    "version": "13.3.1",
+    "version": "13.13.2",
     "name": "@edx/frontend-app-authn",
     "repository": {
       "type": "git",
       "url": "git+https://github.com/edx/frontend-app-authn.git"
     },
+    "folderName": "frontend-app-authn",
     "usages": {
       "Alert": [
         {
           "filePath": "src/common-components/APIFailureMessage.jsx",
-          "line": 13,
+          "line": 29,
           "column": 8,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/common-components/ConfirmationAlert.jsx",
           "line": 14,
           "column": 4,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/common-components/ThirdPartyAuthAlert.jsx",
           "line": 32,
           "column": 9,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
-          "line": 42,
+          "line": 43,
           "column": 8,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/forgot-password/RequestInProgressAlert.jsx",
           "line": 12,
           "column": 4,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/login/AccountActivationMessage.jsx",
           "line": 51,
           "column": 4,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/login/LoginFailure.jsx",
-          "line": 165,
+          "line": 170,
           "column": 4,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/register/RegistrationFailure.jsx",
           "line": 47,
           "column": 6,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/reset-password/InvalidToken.jsx",
-          "line": 20,
-          "column": 8,
-          "version": "13.3.1"
+          "line": 28,
+          "column": 10,
+          "version": "13.13.2"
         },
         {
           "filePath": "src/reset-password/ResetPasswordPage.jsx",
-          "line": 124,
+          "line": 138,
           "column": 14,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/reset-password/ResetSuccess.jsx",
-          "line": 25,
-          "column": 10,
-          "version": "13.3.1"
+          "line": 33,
+          "column": 12,
+          "version": "13.13.2"
         }
       ],
       "Alert.Heading": [
         {
           "filePath": "src/common-components/APIFailureMessage.jsx",
-          "line": 14,
+          "line": 30,
           "column": 10,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/common-components/ConfirmationAlert.jsx",
           "line": 15,
           "column": 6,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
-          "line": 43,
+          "line": 44,
           "column": 10,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/forgot-password/RequestInProgressAlert.jsx",
           "line": 13,
           "column": 6,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/login/AccountActivationMessage.jsx",
           "line": 52,
           "column": 18,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/login/LoginFailure.jsx",
-          "line": 166,
+          "line": 171,
           "column": 6,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/register/RegistrationFailure.jsx",
           "line": 48,
           "column": 8,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/reset-password/InvalidToken.jsx",
-          "line": 21,
-          "column": 10,
-          "version": "13.3.1"
+          "line": 29,
+          "column": 12,
+          "version": "13.13.2"
         },
         {
           "filePath": "src/reset-password/ResetPasswordPage.jsx",
-          "line": 125,
+          "line": 139,
           "column": 16,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/reset-password/ResetSuccess.jsx",
-          "line": 26,
-          "column": 12,
-          "version": "13.3.1"
+          "line": 34,
+          "column": 14,
+          "version": "13.13.2"
         }
       ],
       "Form.Label": [
         {
           "filePath": "src/common-components/AuthnValidationFormGroup.jsx",
-          "line": 42,
+          "line": 47,
           "column": 6,
-          "version": "13.3.1"
+          "version": "13.13.2"
         }
       ],
       "ValidationFormGroup": [
         {
           "filePath": "src/common-components/AuthnValidationFormGroup.jsx",
-          "line": 91,
+          "line": 93,
           "column": 4,
-          "version": "13.3.1"
+          "version": "13.13.2"
         }
       ],
       "Input": [
         {
           "filePath": "src/common-components/AuthnValidationFormGroup.jsx",
-          "line": 95,
+          "line": 97,
           "column": 6,
-          "version": "13.3.1"
+          "version": "13.13.2"
         }
       ],
       "Alert.Link": [
@@ -2999,49 +3035,49 @@
           "filePath": "src/common-components/ConfirmationAlert.jsx",
           "line": 33,
           "column": 14,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/login/AccountActivationMessage.jsx",
           "line": 30,
           "column": 8,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/login/LoginFailure.jsx",
-          "line": 52,
+          "line": 53,
           "column": 8,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/login/LoginFailure.jsx",
-          "line": 90,
+          "line": 91,
           "column": 8,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/login/LoginFailure.jsx",
-          "line": 116,
+          "line": 117,
           "column": 8,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/login/LoginFailure.jsx",
-          "line": 155,
+          "line": 160,
           "column": 14,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/reset-password/InvalidToken.jsx",
-          "line": 12,
+          "line": 14,
           "column": 4,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/reset-password/ResetSuccess.jsx",
-          "line": 12,
+          "line": 14,
           "column": 4,
-          "version": "13.3.1"
+          "version": "13.13.2"
         }
       ],
       "Form": [
@@ -3049,31 +3085,31 @@
           "filePath": "src/common-components/EnterpriseSSO.jsx",
           "line": 36,
           "column": 12,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
-          "line": 92,
+          "line": 98,
           "column": 14,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/login/LoginPage.jsx",
-          "line": 208,
+          "line": 214,
           "column": 14,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/register/RegistrationPage.jsx",
-          "line": 445,
+          "line": 468,
           "column": 14,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/reset-password/ResetPasswordPage.jsx",
-          "line": 129,
+          "line": 143,
           "column": 12,
-          "version": "13.3.1"
+          "version": "13.13.2"
         }
       ],
       "Button": [
@@ -3081,19 +3117,19 @@
           "filePath": "src/common-components/EnterpriseSSO.jsx",
           "line": 38,
           "column": 14,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/common-components/EnterpriseSSO.jsx",
           "line": 64,
           "column": 14,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/common-components/InstitutionLogistration.jsx",
           "line": 14,
           "column": 6,
-          "version": "13.3.1"
+          "version": "13.13.2"
         }
       ],
       "Hyperlink": [
@@ -3101,61 +3137,61 @@
           "filePath": "src/common-components/InstitutionLogistration.jsx",
           "line": 43,
           "column": 12,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/common-components/InstitutionLogistration.jsx",
           "line": 60,
           "column": 18,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/login/LoginHelpLinks.jsx",
           "line": 32,
           "column": 4,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/login/LoginHelpLinks.jsx",
           "line": 42,
           "column": 4,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/login/LoginHelpLinks.jsx",
           "line": 49,
           "column": 6,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/login/LoginPage.jsx",
-          "line": 200,
+          "line": 206,
           "column": 16,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/login/LoginPage.jsx",
-          "line": 231,
+          "line": 237,
           "column": 16,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/register/RegistrationPage.jsx",
-          "line": 439,
+          "line": 462,
           "column": 16,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/register/RegistrationPage.jsx",
-          "line": 519,
+          "line": 542,
           "column": 24,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/register/RegistrationPage.jsx",
-          "line": 524,
+          "line": 547,
           "column": 24,
-          "version": "13.3.1"
+          "version": "13.13.2"
         }
       ],
       "TransitionReplace": [
@@ -3163,33 +3199,33 @@
           "filePath": "src/common-components/SwitchContent.jsx",
           "line": 41,
           "column": 4,
-          "version": "13.3.1"
+          "version": "13.13.2"
         }
       ],
       "StatefulButton": [
         {
           "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
-          "line": 114,
+          "line": 120,
           "column": 16,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/login/LoginPage.jsx",
-          "line": 234,
+          "line": 240,
           "column": 16,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/register/RegistrationPage.jsx",
-          "line": 547,
+          "line": 570,
           "column": 16,
-          "version": "13.3.1"
+          "version": "13.13.2"
         },
         {
           "filePath": "src/reset-password/ResetPasswordPage.jsx",
-          "line": 159,
+          "line": 173,
           "column": 14,
-          "version": "13.3.1"
+          "version": "13.13.2"
         }
       ],
       "Spinner": [
@@ -3197,83 +3233,286 @@
           "filePath": "src/reset-password/Spinner.jsx",
           "line": 7,
           "column": 6,
-          "version": "13.3.1"
+          "version": "13.13.2"
         }
       ]
     }
   },
   {
-    "version": "12.2.0",
+    "version": "13.10.0",
     "name": "@edx/frontend-app-course-authoring",
     "repository": {
       "type": "git",
       "url": "git+https://github.com/edx/frontend-app-course-authoring.git"
     },
+    "folderName": "frontend-app-course-authoring",
     "usages": {
-      "Col": [
+      "Card": [
         {
           "filePath": "src/pages-and-resources/discussions/DiscussionAppCard.jsx",
-          "line": 16,
+          "line": 15,
           "column": 4,
-          "version": "12.2.0"
+          "version": "13.10.0"
         }
       ],
       "Input": [
         {
           "filePath": "src/pages-and-resources/discussions/DiscussionAppCard.jsx",
-          "line": 37,
-          "column": 12,
-          "version": "12.2.0"
+          "line": 38,
+          "column": 10,
+          "version": "13.10.0"
         }
       ],
-      "Image": [
+      "Card.Img": [
         {
           "filePath": "src/pages-and-resources/discussions/DiscussionAppCard.jsx",
-          "line": 46,
-          "column": 12,
-          "version": "12.2.0"
-        }
-      ],
-      "Container": [
-        {
-          "filePath": "src/pages-and-resources/discussions/DiscussionAppList.jsx",
-          "line": 37,
-          "column": 4,
-          "version": "12.2.0"
-        }
-      ],
-      "Row": [
-        {
-          "filePath": "src/pages-and-resources/discussions/DiscussionAppList.jsx",
-          "line": 40,
+          "line": 43,
           "column": 6,
-          "version": "12.2.0"
+          "version": "13.10.0"
+        }
+      ],
+      "Card.Body": [
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionAppCard.jsx",
+          "line": 55,
+          "column": 6,
+          "version": "13.10.0"
+        }
+      ],
+      "Card.Title": [
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionAppCard.jsx",
+          "line": 56,
+          "column": 8,
+          "version": "13.10.0"
+        }
+      ],
+      "Card.Text": [
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionAppCard.jsx",
+          "line": 57,
+          "column": 8,
+          "version": "13.10.0"
+        }
+      ],
+      "Card.Footer": [
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionAppCard.jsx",
+          "line": 59,
+          "column": 6,
+          "version": "13.10.0"
+        }
+      ],
+      "CardGrid": [
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionAppList.jsx",
+          "line": 49,
+          "column": 6,
+          "version": "13.10.0"
         }
       ],
       "Button": [
         {
           "filePath": "src/pages-and-resources/discussions/DiscussionAppList.jsx",
-          "line": 56,
+          "line": 71,
           "column": 10,
-          "version": "12.2.0"
+          "version": "13.10.0"
+        },
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionsConfigForm.jsx",
+          "line": 102,
+          "column": 6,
+          "version": "13.10.0"
         },
         {
           "filePath": "src/pages-and-resources/pages/PageCard.jsx",
-          "line": 56,
-          "column": 10,
-          "version": "12.2.0"
+          "line": 64,
+          "column": 12,
+          "version": "13.10.0"
         },
         {
           "filePath": "src/pages-and-resources/resources/ResourcesList.jsx",
           "line": 18,
           "column": 10,
-          "version": "12.2.0"
+          "version": "13.10.0"
         },
         {
           "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
           "line": 370,
           "column": 8,
-          "version": "12.2.0"
+          "version": "13.10.0"
+        }
+      ],
+      "Form": [
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionsConfigForm.jsx",
+          "line": 36,
+          "column": 4,
+          "version": "13.10.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 194,
+          "column": 6,
+          "version": "13.10.0"
+        }
+      ],
+      "Hyperlink": [
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionsConfigForm.jsx",
+          "line": 45,
+          "column": 14,
+          "version": "13.10.0"
+        }
+      ],
+      "Form.Group": [
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionsConfigForm.jsx",
+          "line": 53,
+          "column": 6,
+          "version": "13.10.0"
+        },
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionsConfigForm.jsx",
+          "line": 66,
+          "column": 6,
+          "version": "13.10.0"
+        },
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionsConfigForm.jsx",
+          "line": 79,
+          "column": 6,
+          "version": "13.10.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 209,
+          "column": 8,
+          "version": "13.10.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 231,
+          "column": 12,
+          "version": "13.10.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 275,
+          "column": 8,
+          "version": "13.10.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 299,
+          "column": 10,
+          "version": "13.10.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 332,
+          "column": 12,
+          "version": "13.10.0"
+        }
+      ],
+      "Form.Label": [
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionsConfigForm.jsx",
+          "line": 54,
+          "column": 8,
+          "version": "13.10.0"
+        },
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionsConfigForm.jsx",
+          "line": 67,
+          "column": 8,
+          "version": "13.10.0"
+        },
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionsConfigForm.jsx",
+          "line": 80,
+          "column": 8,
+          "version": "13.10.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 232,
+          "column": 14,
+          "version": "13.10.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 276,
+          "column": 10,
+          "version": "13.10.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 300,
+          "column": 12,
+          "version": "13.10.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 333,
+          "column": 14,
+          "version": "13.10.0"
+        }
+      ],
+      "Form.Control": [
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionsConfigForm.jsx",
+          "line": 55,
+          "column": 8,
+          "version": "13.10.0"
+        },
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionsConfigForm.jsx",
+          "line": 68,
+          "column": 8,
+          "version": "13.10.0"
+        },
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionsConfigForm.jsx",
+          "line": 81,
+          "column": 8,
+          "version": "13.10.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 283,
+          "column": 10,
+          "version": "13.10.0"
+        },
+        {
+          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+          "line": 307,
+          "column": 12,
+          "version": "13.10.0"
+        }
+      ],
+      "StatefulButton": [
+        {
+          "filePath": "src/pages-and-resources/discussions/DiscussionsConfigForm.jsx",
+          "line": 92,
+          "column": 6,
+          "version": "13.10.0"
+        }
+      ],
+      "DataTable": [
+        {
+          "filePath": "src/pages-and-resources/discussions/FeaturesTable.jsx",
+          "line": 10,
+          "column": 6,
+          "version": "13.10.0"
+        }
+      ],
+      "DataTable.Table": [
+        {
+          "filePath": "src/pages-and-resources/discussions/FeaturesTable.jsx",
+          "line": 47,
+          "column": 8,
+          "version": "13.10.0"
         }
       ],
       "Alert.Link": [
@@ -3281,39 +3520,31 @@
           "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
           "line": 119,
           "column": 35,
-          "version": "12.2.0"
+          "version": "13.10.0"
         },
         {
           "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
           "line": 131,
           "column": 35,
-          "version": "12.2.0"
+          "version": "13.10.0"
         },
         {
           "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
           "line": 419,
           "column": 34,
-          "version": "12.2.0"
+          "version": "13.10.0"
         },
         {
           "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
           "line": 457,
           "column": 40,
-          "version": "12.2.0"
+          "version": "13.10.0"
         },
         {
           "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
           "line": 481,
           "column": 34,
-          "version": "12.2.0"
-        }
-      ],
-      "Form": [
-        {
-          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-          "line": 194,
-          "column": 6,
-          "version": "12.2.0"
+          "version": "13.10.0"
         }
       ],
       "Alert": [
@@ -3321,63 +3552,31 @@
           "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
           "line": 198,
           "column": 12,
-          "version": "12.2.0"
+          "version": "13.10.0"
         },
         {
           "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
           "line": 412,
           "column": 6,
-          "version": "12.2.0"
+          "version": "13.10.0"
         },
         {
           "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
           "line": 428,
           "column": 6,
-          "version": "12.2.0"
+          "version": "13.10.0"
         },
         {
           "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
           "line": 443,
           "column": 6,
-          "version": "12.2.0"
+          "version": "13.10.0"
         },
         {
           "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
           "line": 465,
           "column": 6,
-          "version": "12.2.0"
-        }
-      ],
-      "Form.Group": [
-        {
-          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-          "line": 209,
-          "column": 8,
-          "version": "12.2.0"
-        },
-        {
-          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-          "line": 231,
-          "column": 12,
-          "version": "12.2.0"
-        },
-        {
-          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-          "line": 275,
-          "column": 8,
-          "version": "12.2.0"
-        },
-        {
-          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-          "line": 299,
-          "column": 10,
-          "version": "12.2.0"
-        },
-        {
-          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-          "line": 332,
-          "column": 12,
-          "version": "12.2.0"
+          "version": "13.10.0"
         }
       ],
       "Form.Check": [
@@ -3385,31 +3584,31 @@
           "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
           "line": 210,
           "column": 10,
-          "version": "12.2.0"
+          "version": "13.10.0"
         },
         {
           "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
           "line": 239,
           "column": 14,
-          "version": "12.2.0"
+          "version": "13.10.0"
         },
         {
           "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
           "line": 249,
           "column": 14,
-          "version": "12.2.0"
+          "version": "13.10.0"
         },
         {
           "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
           "line": 340,
           "column": 14,
-          "version": "12.2.0"
+          "version": "13.10.0"
         },
         {
           "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
           "line": 350,
           "column": 14,
-          "version": "12.2.0"
+          "version": "13.10.0"
         }
       ],
       "Form.Text": [
@@ -3417,71 +3616,31 @@
           "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
           "line": 219,
           "column": 10,
-          "version": "12.2.0"
+          "version": "13.10.0"
         },
         {
           "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
           "line": 259,
           "column": 14,
-          "version": "12.2.0"
+          "version": "13.10.0"
         },
         {
           "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
           "line": 291,
           "column": 10,
-          "version": "12.2.0"
+          "version": "13.10.0"
         },
         {
           "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
           "line": 317,
           "column": 12,
-          "version": "12.2.0"
+          "version": "13.10.0"
         },
         {
           "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
           "line": 360,
           "column": 14,
-          "version": "12.2.0"
-        }
-      ],
-      "Form.Label": [
-        {
-          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-          "line": 232,
-          "column": 14,
-          "version": "12.2.0"
-        },
-        {
-          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-          "line": 276,
-          "column": 10,
-          "version": "12.2.0"
-        },
-        {
-          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-          "line": 300,
-          "column": 12,
-          "version": "12.2.0"
-        },
-        {
-          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-          "line": 333,
-          "column": 14,
-          "version": "12.2.0"
-        }
-      ],
-      "Form.Control": [
-        {
-          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-          "line": 283,
-          "column": 10,
-          "version": "12.2.0"
-        },
-        {
-          "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-          "line": 307,
-          "column": 12,
-          "version": "12.2.0"
+          "version": "13.10.0"
         }
       ],
       "Spinner": [
@@ -3489,13 +3648,13 @@
           "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
           "line": 383,
           "column": 33,
-          "version": "12.2.0"
+          "version": "13.10.0"
         },
         {
           "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
           "line": 397,
           "column": 8,
-          "version": "12.2.0"
+          "version": "13.10.0"
         }
       ]
     }
@@ -3507,6 +3666,7 @@
       "type": "git",
       "url": "git+https://github.com/edx/frontend-app-discussions.git"
     },
+    "folderName": "frontend-app-discussions",
     "usages": {
       "Dropdown": [
         {
@@ -3549,6 +3709,7 @@
       "type": "git",
       "url": "git+https://github.com/edx/frontend-app-ecommerce.git"
     },
+    "folderName": "frontend-app-ecommerce",
     "usages": {
       "Hyperlink": [
         {
@@ -3583,6 +3744,7 @@
       "type": "git",
       "url": "git+https://github.com/edx/frontend-app-gradebook.git"
     },
+    "folderName": "frontend-app-gradebook",
     "usages": {
       "Button": [
         {
@@ -3835,43 +3997,110 @@
     }
   },
   {
-    "version": "13.2.0",
+    "version": "13.12.1",
     "name": "frontend-app-learner-portal-enterprise",
     "repository": {
       "type": "git",
       "url": ""
     },
+    "folderName": "frontend-app-learner-portal-enterprise",
     "usages": {
       "Container": [
         {
           "filePath": "src/components/course/Course.jsx",
           "line": 67,
           "column": 6,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/course/Course.jsx",
           "line": 85,
           "column": 8,
-          "version": "13.2.0"
+          "version": "13.12.1"
+        },
+        {
+          "filePath": "src/components/course/CourseHeader.jsx",
+          "line": 42,
+          "column": 6,
+          "version": "13.12.1"
+        },
+        {
+          "filePath": "src/components/course/CourseHeader.jsx",
+          "line": 63,
+          "column": 6,
+          "version": "13.12.1"
+        },
+        {
+          "filePath": "src/components/dashboard/Dashboard.jsx",
+          "line": 47,
+          "column": 6,
+          "version": "13.12.1"
+        },
+        {
+          "filePath": "src/components/enterprise-banner/EnterpriseBanner.jsx",
+          "line": 11,
+          "column": 6,
+          "version": "13.12.1"
+        },
+        {
+          "filePath": "src/components/enterprise-page/EnterprisePage.jsx",
+          "line": 27,
+          "column": 6,
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/enterprise-user-subsidy/OffersAlert.jsx",
           "line": 16,
           "column": 6,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/enterprise-user-subsidy/SubscriptionSubsidy.jsx",
           "line": 101,
           "column": 4,
-          "version": "13.2.0"
+          "version": "13.12.1"
+        },
+        {
+          "filePath": "src/components/enterprise-user-subsidy/UserSubsidy.jsx",
+          "line": 58,
+          "column": 6,
+          "version": "13.12.1"
+        },
+        {
+          "filePath": "src/components/license-activation/LicenseActivation.jsx",
+          "line": 37,
+          "column": 8,
+          "version": "13.12.1"
+        },
+        {
+          "filePath": "src/components/license-activation/LicenseActivation.jsx",
+          "line": 58,
+          "column": 6,
+          "version": "13.12.1"
+        },
+        {
+          "filePath": "src/components/NotFoundPage/index.jsx",
+          "line": 15,
+          "column": 4,
+          "version": "13.12.1"
+        },
+        {
+          "filePath": "src/components/search/SearchResults.jsx",
+          "line": 58,
+          "column": 4,
+          "version": "13.12.1"
+        },
+        {
+          "filePath": "src/components/site-header/SiteHeader.jsx",
+          "line": 45,
+          "column": 6,
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/system-wide-banner/SystemWideWarningBanner.jsx",
           "line": 13,
           "column": 4,
-          "version": "13.2.0"
+          "version": "13.12.1"
         }
       ],
       "Row": [
@@ -3879,25 +4108,37 @@
           "filePath": "src/components/course/Course.jsx",
           "line": 86,
           "column": 10,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/course/CourseSidebarListItem.jsx",
           "line": 12,
           "column": 4,
-          "version": "13.2.0"
+          "version": "13.12.1"
+        },
+        {
+          "filePath": "src/components/dashboard/Dashboard.jsx",
+          "line": 49,
+          "column": 8,
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/dashboard/main-content/course-enrollments/CourseEnrollments.jsx",
           "line": 162,
           "column": 12,
-          "version": "13.2.0"
+          "version": "13.12.1"
+        },
+        {
+          "filePath": "src/components/search/SearchResults.jsx",
+          "line": 79,
+          "column": 12,
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/system-wide-banner/SystemWideWarningBanner.jsx",
           "line": 14,
           "column": 6,
-          "version": "13.2.0"
+          "version": "13.12.1"
         }
       ],
       "StatusAlert": [
@@ -3905,73 +4146,73 @@
           "filePath": "src/components/course/CourseHeader.jsx",
           "line": 43,
           "column": 8,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/dashboard/Dashboard.jsx",
-          "line": 23,
+          "line": 28,
           "column": 8,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
           "line": 124,
           "column": 14,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/mark-complete-modal/ModalError.jsx",
           "line": 11,
           "column": 4,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/move-to-in-progress-modal/ModalError.jsx",
           "line": 11,
           "column": 4,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/dashboard/main-content/course-enrollments/CourseEnrollments.jsx",
           "line": 65,
           "column": 4,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/dashboard/main-content/course-enrollments/CourseEnrollments.jsx",
           "line": 85,
           "column": 6,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/dashboard/main-content/course-enrollments/CourseEnrollments.jsx",
           "line": 108,
           "column": 6,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/enterprise-user-subsidy/SubscriptionSubsidy.jsx",
           "line": 102,
           "column": 6,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/license-activation/LicenseActivation.jsx",
           "line": 38,
           "column": 10,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/search/SearchError.jsx",
           "line": 24,
           "column": 4,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/search/SearchNoResults.jsx",
           "line": 27,
           "column": 6,
-          "version": "13.2.0"
+          "version": "13.12.1"
         }
       ],
       "Breadcrumb": [
@@ -3979,7 +4220,7 @@
           "filePath": "src/components/course/CourseHeader.jsx",
           "line": 67,
           "column": 14,
-          "version": "13.2.0"
+          "version": "13.12.1"
         }
       ],
       "Button": [
@@ -3987,31 +4228,31 @@
           "filePath": "src/components/course/CourseRunSelector.jsx",
           "line": 27,
           "column": 8,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/course/CourseRunSelector.jsx",
           "line": 54,
           "column": 8,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/UpcomingCourseCard.jsx",
           "line": 10,
           "column": 4,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/integration-warning-modal/IntegrationWarningModal.jsx",
           "line": 38,
           "column": 10,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/preview-expand/PreviewExpand.jsx",
           "line": 21,
           "column": 6,
-          "version": "13.2.0"
+          "version": "13.12.1"
         }
       ],
       "Input": [
@@ -4019,13 +4260,13 @@
           "filePath": "src/components/course/CourseRunSelector.jsx",
           "line": 38,
           "column": 8,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
           "line": 141,
           "column": 14,
-          "version": "13.2.0"
+          "version": "13.12.1"
         }
       ],
       "Col": [
@@ -4033,19 +4274,19 @@
           "filePath": "src/components/course/CourseSidebarListItem.jsx",
           "line": 13,
           "column": 6,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/course/CourseSidebarListItem.jsx",
           "line": 17,
           "column": 6,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/system-wide-banner/SystemWideWarningBanner.jsx",
           "line": 15,
           "column": 8,
-          "version": "13.2.0"
+          "version": "13.12.1"
         }
       ],
       "Modal": [
@@ -4053,43 +4294,43 @@
           "filePath": "src/components/course/EnrollModal.jsx",
           "line": 37,
           "column": 4,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
           "line": 119,
           "column": 6,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/mark-complete-modal/MarkCompleteModal.jsx",
           "line": 76,
           "column": 6,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/move-to-in-progress-modal/MoveToInProgressModal.jsx",
           "line": 67,
           "column": 6,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/dashboard/SubscriptionExpirationModal.jsx",
-          "line": 105,
+          "line": 103,
           "column": 6,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/dashboard/SubscriptionExpirationModal.jsx",
-          "line": 131,
+          "line": 129,
           "column": 4,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/integration-warning-modal/IntegrationWarningModal.jsx",
           "line": 29,
           "column": 6,
-          "version": "13.2.0"
+          "version": "13.12.1"
         }
       ],
       "Dropdown": [
@@ -4097,13 +4338,13 @@
           "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
           "line": 146,
           "column": 10,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/site-header/AvatarDropdown.jsx",
           "line": 14,
           "column": 4,
-          "version": "13.2.0"
+          "version": "13.12.1"
         }
       ],
       "Dropdown.Toggle": [
@@ -4111,13 +4352,13 @@
           "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
           "line": 147,
           "column": 12,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/site-header/AvatarDropdown.jsx",
           "line": 15,
           "column": 6,
-          "version": "13.2.0"
+          "version": "13.12.1"
         }
       ],
       "Dropdown.Menu": [
@@ -4125,13 +4366,13 @@
           "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
           "line": 153,
           "column": 12,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/site-header/AvatarDropdown.jsx",
           "line": 18,
           "column": 6,
-          "version": "13.2.0"
+          "version": "13.12.1"
         }
       ],
       "Dropdown.Item": [
@@ -4139,43 +4380,43 @@
           "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
           "line": 155,
           "column": 16,
-          "version": "13.2.0"
-        },
-        {
-          "filePath": "src/components/site-header/AvatarDropdown.jsx",
-          "line": 20,
-          "column": 8,
-          "version": "13.2.0"
-        },
-        {
-          "filePath": "src/components/site-header/AvatarDropdown.jsx",
-          "line": 21,
-          "column": 8,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/site-header/AvatarDropdown.jsx",
           "line": 23,
           "column": 8,
-          "version": "13.2.0"
-        },
-        {
-          "filePath": "src/components/site-header/AvatarDropdown.jsx",
-          "line": 24,
-          "column": 8,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/site-header/AvatarDropdown.jsx",
           "line": 25,
           "column": 8,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/site-header/AvatarDropdown.jsx",
-          "line": 27,
+          "line": 37,
           "column": 8,
-          "version": "13.2.0"
+          "version": "13.12.1"
+        },
+        {
+          "filePath": "src/components/site-header/AvatarDropdown.jsx",
+          "line": 38,
+          "column": 8,
+          "version": "13.12.1"
+        },
+        {
+          "filePath": "src/components/site-header/AvatarDropdown.jsx",
+          "line": 39,
+          "column": 8,
+          "version": "13.12.1"
+        },
+        {
+          "filePath": "src/components/site-header/AvatarDropdown.jsx",
+          "line": 41,
+          "column": 8,
+          "version": "13.12.1"
         }
       ],
       "StatefulButton": [
@@ -4183,19 +4424,19 @@
           "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
           "line": 158,
           "column": 10,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/mark-complete-modal/MarkCompleteModal.jsx",
           "line": 80,
           "column": 10,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/move-to-in-progress-modal/MoveToInProgressModal.jsx",
           "line": 71,
           "column": 10,
-          "version": "13.2.0"
+          "version": "13.12.1"
         }
       ],
       "Collapsible": [
@@ -4203,7 +4444,7 @@
           "filePath": "src/components/dashboard/main-content/course-enrollments/CourseSection.jsx",
           "line": 94,
           "column": 8,
-          "version": "13.2.0"
+          "version": "13.12.1"
         }
       ],
       "MailtoLink": [
@@ -4211,13 +4452,13 @@
           "filePath": "src/components/dashboard/sidebar/DashboardSidebar.jsx",
           "line": 36,
           "column": 8,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/dashboard/SubscriptionExpirationModal.jsx",
-          "line": 45,
+          "line": 43,
           "column": 8,
-          "version": "13.2.0"
+          "version": "13.12.1"
         }
       ],
       "Card": [
@@ -4225,7 +4466,13 @@
           "filePath": "src/components/dashboard/sidebar/SidebarCard.jsx",
           "line": 11,
           "column": 2,
-          "version": "13.2.0"
+          "version": "13.12.1"
+        },
+        {
+          "filePath": "src/components/search/SearchCourseCard.jsx",
+          "line": 56,
+          "column": 8,
+          "version": "13.12.1"
         }
       ],
       "Card.Body": [
@@ -4233,7 +4480,13 @@
           "filePath": "src/components/dashboard/sidebar/SidebarCard.jsx",
           "line": 12,
           "column": 4,
-          "version": "13.2.0"
+          "version": "13.12.1"
+        },
+        {
+          "filePath": "src/components/search/SearchCourseCard.jsx",
+          "line": 86,
+          "column": 10,
+          "version": "13.12.1"
         }
       ],
       "Card.Title": [
@@ -4241,7 +4494,13 @@
           "filePath": "src/components/dashboard/sidebar/SidebarCard.jsx",
           "line": 13,
           "column": 16,
-          "version": "13.2.0"
+          "version": "13.12.1"
+        },
+        {
+          "filePath": "src/components/search/SearchCourseCard.jsx",
+          "line": 87,
+          "column": 12,
+          "version": "13.12.1"
         }
       ],
       "Badge": [
@@ -4249,7 +4508,7 @@
           "filePath": "src/components/dashboard/sidebar/SubscriptionSummaryCard.jsx",
           "line": 38,
           "column": 10,
-          "version": "13.2.0"
+          "version": "13.12.1"
         }
       ],
       "Alert": [
@@ -4257,13 +4516,13 @@
           "filePath": "src/components/enterprise-user-subsidy/OffersAlert.jsx",
           "line": 15,
           "column": 4,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/system-wide-banner/SystemWideWarningBanner.jsx",
           "line": 9,
           "column": 2,
-          "version": "13.2.0"
+          "version": "13.12.1"
         }
       ],
       "Hyperlink": [
@@ -4271,29 +4530,51 @@
           "filePath": "src/components/layout/Layout.jsx",
           "line": 36,
           "column": 12,
-          "version": "13.2.0"
+          "version": "13.12.1"
+        }
+      ],
+      "Card.Img": [
+        {
+          "filePath": "src/components/search/SearchCourseCard.jsx",
+          "line": 58,
+          "column": 12,
+          "version": "13.12.1"
+        },
+        {
+          "filePath": "src/components/search/SearchCourseCard.jsx",
+          "line": 66,
+          "column": 12,
+          "version": "13.12.1"
+        }
+      ],
+      "Card.Footer": [
+        {
+          "filePath": "src/components/search/SearchCourseCard.jsx",
+          "line": 110,
+          "column": 10,
+          "version": "13.12.1"
         }
       ],
       "Dropdown.Header": [
         {
           "filePath": "src/components/site-header/AvatarDropdown.jsx",
-          "line": 19,
+          "line": 22,
           "column": 8,
-          "version": "13.2.0"
+          "version": "13.12.1"
         }
       ],
       "Dropdown.Divider": [
         {
           "filePath": "src/components/site-header/AvatarDropdown.jsx",
-          "line": 22,
+          "line": 36,
           "column": 8,
-          "version": "13.2.0"
+          "version": "13.12.1"
         },
         {
           "filePath": "src/components/site-header/AvatarDropdown.jsx",
-          "line": 26,
+          "line": 40,
           "column": 8,
-          "version": "13.2.0"
+          "version": "13.12.1"
         }
       ],
       "Icon": [
@@ -4301,7 +4582,7 @@
           "filePath": "src/components/system-wide-banner/SystemWideWarningBanner.jsx",
           "line": 21,
           "column": 10,
-          "version": "13.2.0"
+          "version": "13.12.1"
         }
       ]
     }
@@ -4313,6 +4594,7 @@
       "type": "git",
       "url": ""
     },
+    "folderName": "frontend-app-learner-portal-programs",
     "usages": {
       "Dropdown.Deprecated": [
         {
@@ -4427,6 +4709,7 @@
       "type": "git",
       "url": "git+https://github.com/edx/frontend-app-learning.git"
     },
+    "folderName": "frontend-app-learning",
     "usages": {
       "Hyperlink": [
         {
@@ -4475,6 +4758,12 @@
           "filePath": "src/course-home/outline-tab/alerts/private-course-alert/PrivateCourseAlert.jsx",
           "line": 57,
           "column": 4,
+          "version": "13.9.0"
+        },
+        {
+          "filePath": "src/course-home/outline-tab/SequenceLink.jsx",
+          "line": 47,
+          "column": 100,
           "version": "13.9.0"
         },
         {
@@ -5097,6 +5386,7 @@
       "type": "git",
       "url": "git+https://github.com/edx/frontend-app-payment.git"
     },
+    "folderName": "frontend-app-payment",
     "usages": {
       "StatusAlert": [
         {
@@ -5205,6 +5495,7 @@
       "type": "git",
       "url": "git+https://github.com/edx/frontend-app-profile.git"
     },
+    "folderName": "frontend-app-profile",
     "usages": {
       "StatusAlert": [
         {
@@ -5346,6 +5637,7 @@
     "version": "11.1.0",
     "name": "edx-frontend-app-publisher",
     "repository": "https://github.com/edx/frontend-app-publisher",
+    "folderName": "frontend-app-publisher",
     "usages": {
       "StatefulButton": [
         {
@@ -5586,6 +5878,7 @@
       "type": "git",
       "url": "git+https://github.com/edx/frontend-app-support.git"
     },
+    "folderName": "frontend-app-support-tools",
     "usages": {
       "Dropdown": [
         {
@@ -5940,6 +6233,7 @@
       "type": "git",
       "url": "https://github.com/edx/frontend-component-cookie-policy-banner"
     },
+    "folderName": "frontend-component-cookie-policy-banner",
     "usages": {
       "StatusAlert": [
         {
@@ -5953,122 +6247,12 @@
   },
   {
     "version": "12.0.5",
-    "name": "@edx/frontend-component-footer",
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/edx/frontend-component-footer.git"
-    },
-    "usages": {}
-  },
-  {
-    "version": "12.6.1",
-    "name": "@edx/frontend-component-header-edx",
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/edx/frontend-component-header-edx.git"
-    },
-    "usages": {
-      "Dropdown": [
-        {
-          "filePath": "src/DesktopHeader.jsx",
-          "line": 66,
-          "column": 6,
-          "version": "12.6.1"
-        }
-      ],
-      "Dropdown.Toggle": [
-        {
-          "filePath": "src/DesktopHeader.jsx",
-          "line": 67,
-          "column": 8,
-          "version": "12.6.1"
-        }
-      ],
-      "Dropdown.Menu": [
-        {
-          "filePath": "src/DesktopHeader.jsx",
-          "line": 77,
-          "column": 8,
-          "version": "12.6.1"
-        }
-      ],
-      "Dropdown.Item": [
-        {
-          "filePath": "src/DesktopHeader.jsx",
-          "line": 79,
-          "column": 12,
-          "version": "12.6.1"
-        }
-      ]
-    }
-  },
-  {
-    "version": "12.0.5",
-    "name": "@edx/frontend-component-header",
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/edx/frontend-component-header.git"
-    },
-    "usages": {}
-  },
-  {
-    "version": "unknown",
-    "name": "@edx/frontend-component-site-header",
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/edx/frontend-component-site-header.git"
-    },
-    "usages": {}
-  },
-  {
-    "version": "12.8.0",
-    "name": "@edx/frontend-platform",
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/edx/frontend-platform.git"
-    },
-    "usages": {
-      "Container": [
-        {
-          "filePath": "src/react/ErrorPage.jsx",
-          "line": 25,
-          "column": 6,
-          "version": "12.8.0"
-        }
-      ],
-      "Row": [
-        {
-          "filePath": "src/react/ErrorPage.jsx",
-          "line": 26,
-          "column": 8,
-          "version": "12.8.0"
-        }
-      ],
-      "Col": [
-        {
-          "filePath": "src/react/ErrorPage.jsx",
-          "line": 27,
-          "column": 10,
-          "version": "12.8.0"
-        }
-      ],
-      "Button": [
-        {
-          "filePath": "src/react/ErrorPage.jsx",
-          "line": 40,
-          "column": 12,
-          "version": "12.8.0"
-        }
-      ]
-    }
-  },
-  {
-    "version": "12.0.5",
     "name": "@edx/frontend-template-application",
     "repository": {
       "type": "git",
       "url": "git+https://github.com/edx/frontend-template-application.git"
     },
+    "folderName": "frontend-template-application",
     "usages": {}
   },
   {
@@ -6078,6 +6262,7 @@
       "type": "git",
       "url": "git://github.com/edx/prospectus.git"
     },
+    "folderName": "prospectus",
     "usages": {
       "Button": [
         {
@@ -6126,7 +6311,7 @@
       "OverlayTrigger": [
         {
           "filePath": "src/components/Course/CourseSidebar.jsx",
-          "line": 105,
+          "line": 111,
           "column": 14,
           "version": "12.8.0"
         },
@@ -6140,7 +6325,7 @@
       "Popover": [
         {
           "filePath": "src/components/Course/CourseSidebar.jsx",
-          "line": 110,
+          "line": 116,
           "column": 18,
           "version": "12.8.0"
         }
@@ -6148,7 +6333,7 @@
       "Popover.Content": [
         {
           "filePath": "src/components/Course/CourseSidebar.jsx",
-          "line": 111,
+          "line": 117,
           "column": 20,
           "version": "12.8.0"
         }
@@ -6156,7 +6341,7 @@
       "Icon": [
         {
           "filePath": "src/components/Course/CourseSidebar.jsx",
-          "line": 121,
+          "line": 127,
           "column": 16,
           "version": "12.8.0"
         }
@@ -6276,15 +6461,10 @@
     }
   },
   {
-    "usages": {}
-  },
-  {
-    "usages": {}
-  },
-  {
     "version": "3.4.8",
     "name": "@edx/studio-frontend",
     "repository": "edx/studio-frontend",
+    "folderName": "studio-frontend",
     "usages": {
       "StatusAlert": [
         {
