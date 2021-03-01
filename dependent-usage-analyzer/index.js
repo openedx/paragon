@@ -30,6 +30,7 @@ function getPackageInfo(dir) {
       version: dependencies && dependencies['@edx/paragon'] ? dependencies['@edx/paragon'].version : 'unknown',
       name,
       repository,
+      folderName: dir.split('/').pop(),
     };
   } catch (e) {
     console.error('Unable to read package lock json in ', dir);
@@ -110,7 +111,14 @@ function analyzeProject(dir, options = {}) {
 function findProjectsToAnalyze(dir) {
   // Find all directories containing a package.json file.
   const packageJSONFiles = glob.sync(`${dir}/**/package.json`, { ignore: [`${dir}/**/node_modules/**`] });
-  return packageJSONFiles.map(packageJSONFile => path.dirname(packageJSONFile));
+
+  // If paragon isn't included in the package.json file then skip analyzing it
+  const packageJSONFilesWithParagon = packageJSONFiles.filter(packageJSONFile => {
+    const { dependencies } = JSON.parse(fs.readFileSync(packageJSONFile, { encoding: 'utf-8' }));
+    return dependencies['@edx/paragon'] !== undefined;
+  });
+
+  return packageJSONFilesWithParagon.map(packageJSONFile => path.dirname(packageJSONFile));
 }
 
 const program = new Command();
