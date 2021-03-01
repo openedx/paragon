@@ -57,7 +57,7 @@ const Layout = ({ children }) => (
           <ResponsiveNavigation />
         </div>
 
-        <div className="py-5 px-lg-5">
+        <div className="py-5 px-lg-5 flex-grow-1">
           <Container size="lg" style={{ marginLeft: '0' }}>
           {children}
           </Container>
