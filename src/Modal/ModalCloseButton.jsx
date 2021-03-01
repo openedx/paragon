@@ -4,12 +4,12 @@ import { Button } from '..';
 import ModalContext from './ModalContext';
 
 const ModalCloseButton = React.forwardRef(({ as, children, ...props }, ref) => {
-  const { close } = useContext(ModalContext);
+  const { onClose } = useContext(ModalContext);
   const type = as;
   const componentProps = {
     ...props,
     onClick: () => {
-      close();
+      onClose();
       if (props.onClick) {
         props.onClick();
       }
