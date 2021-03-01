@@ -34,7 +34,7 @@ describe('<ModalLayer />', () => {
     const isOpen = true;
     const closeFn = jest.fn();
     const wrapper = shallow((
-      <ModalLayer isOpen={isOpen} close={closeFn}>
+      <ModalLayer isOpen={isOpen} onClose={closeFn}>
         <Dialog />
       </ModalLayer>
     ));
@@ -47,7 +47,7 @@ describe('<ModalLayer />', () => {
     it('renders a modal context provider', () => {
       const contextProvider = wrapper.find(ModalContextProvider);
       expect(contextProvider.props().isOpen).toBe(isOpen);
-      expect(contextProvider.props().close).toBe(closeFn);
+      expect(contextProvider.props().onClose).toBe(closeFn);
     });
 
     it('renders a focus-on component with appropriate props', () => {
@@ -61,7 +61,7 @@ describe('<ModalLayer />', () => {
 
   test('when isOpen is false the dialog is not rendered', () => {
     const wrapper = shallow((
-      <ModalLayer isOpen={false} close={jest.fn()}>
+      <ModalLayer isOpen={false} onClose={jest.fn()}>
         <Dialog />
       </ModalLayer>
     ));
@@ -73,7 +73,7 @@ describe('<ModalLayer />', () => {
     it('closes a non-blocking modal layer when clicked', () => {
       const closeFn = jest.fn();
       const wrapper = shallow((
-        <ModalLayer isOpen close={closeFn} isBlocking={false}>
+        <ModalLayer isOpen onClose={closeFn} isBlocking={false}>
           <Dialog />
         </ModalLayer>
       ));
@@ -85,7 +85,7 @@ describe('<ModalLayer />', () => {
     it('does not close a blocking modal layer when clicked', () => {
       const closeFn = jest.fn();
       const wrapper = shallow((
-        <ModalLayer isOpen close={closeFn} isBlocking>
+        <ModalLayer isOpen onClose={closeFn} isBlocking>
           <Dialog />
         </ModalLayer>
       ));
