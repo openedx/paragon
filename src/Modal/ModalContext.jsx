@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 const ModalContext = React.createContext();
 
 const ModalContextProvider = ({
-  close, isOpen, isBlocking, children,
+  onClose, isOpen, isBlocking, children,
 }) => {
   const modalContextValue = useMemo(
-    () => ({ close, isOpen, isBlocking }),
-    [close, isOpen, isBlocking],
+    () => ({ onClose, isOpen, isBlocking }),
+    [onClose, isOpen, isBlocking],
   );
 
   return (
@@ -20,7 +20,7 @@ const ModalContextProvider = ({
 
 ModalContextProvider.propTypes = {
   children: PropTypes.node,
-  close: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
   isBlocking: PropTypes.bool,
   isOpen: PropTypes.bool.isRequired,
 };

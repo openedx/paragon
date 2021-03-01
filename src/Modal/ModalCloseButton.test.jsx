@@ -7,7 +7,7 @@ describe('<ModalCloseButton />', () => {
   it('calls a modal context close function on click', () => {
     const mockClose = jest.fn();
     const wrapper = mount((
-      <ModalContextProvider close={mockClose} isOpen>
+      <ModalContextProvider onClose={mockClose} isOpen>
         <ModalCloseButton>Close</ModalCloseButton>
       </ModalContextProvider>
     ));
@@ -18,7 +18,7 @@ describe('<ModalCloseButton />', () => {
     const mockClose = jest.fn();
     const mockOnClick = jest.fn();
     const wrapper = mount((
-      <ModalContextProvider close={mockClose} isOpen>
+      <ModalContextProvider onClose={mockClose} isOpen>
         <ModalCloseButton onClick={mockOnClick}>Close</ModalCloseButton>
       </ModalContextProvider>
     ));

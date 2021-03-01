@@ -6,19 +6,19 @@ import PopperElement from './PopperElement';
 import { ModalContextProvider } from './ModalContext';
 
 const ModalPopup = ({
-  children, close, isOpen, positionRef, isBlocking, withPortal, placement, ...popperProps
+  children, onClose, isOpen, positionRef, isBlocking, withPortal, placement, ...popperProps
 }) => {
   const RootComponent = withPortal ? Portal : React.Fragment;
 
   return (
-    <ModalContextProvider close={close} isOpen={isOpen} isBlocking={isBlocking}>
+    <ModalContextProvider onClose={onClose} isOpen={isOpen} isBlocking={isBlocking}>
       <RootComponent>
         <PopperElement target={positionRef} placement={placement} {...popperProps}>
           <FocusOn
             scrollLock={false}
             enabled={isOpen}
-            onEscapeKey={close}
-            onClickOutside={close}
+            onEscapeKey={onClose}
+            onClickOutside={onClose}
           >
             {isOpen && (
               <>
@@ -34,7 +34,7 @@ const ModalPopup = ({
 
 ModalPopup.propTypes = {
   children: PropTypes.node.isRequired,
-  close: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
   isBlocking: PropTypes.bool,
   withPortal: PropTypes.bool,
