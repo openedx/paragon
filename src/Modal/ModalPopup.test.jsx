@@ -37,7 +37,7 @@ describe('<ModalPopup />', () => {
     const isOpen = true;
     const closeFn = jest.fn();
     const wrapper = shallow((
-      <ModalPopup positionRef={mockPositionRef} isOpen={isOpen} close={closeFn}>
+      <ModalPopup positionRef={mockPositionRef} isOpen={isOpen} onClose={closeFn}>
         <Dialog />
       </ModalPopup>
     ));
@@ -50,7 +50,7 @@ describe('<ModalPopup />', () => {
     it('renders a modal context provider', () => {
       const contextProvider = wrapper.find(ModalContextProvider);
       expect(contextProvider.props().isOpen).toBe(isOpen);
-      expect(contextProvider.props().close).toBe(closeFn);
+      expect(contextProvider.props().onClose).toBe(closeFn);
     });
 
     it('renders a focus-on component with appropriate props', () => {
@@ -64,7 +64,7 @@ describe('<ModalPopup />', () => {
 
   it('when isOpen is false the dialog is not rendered', () => {
     const wrapper = shallow((
-      <ModalPopup positionRef={mockPositionRef} isOpen={false} close={jest.fn()}>
+      <ModalPopup positionRef={mockPositionRef} isOpen={false} onClose={jest.fn()}>
         <Dialog />
       </ModalPopup>
     ));
@@ -75,7 +75,7 @@ describe('<ModalPopup />', () => {
   describe('withPortal', () => {
     it('renders no portal by default', () => {
       const wrapper = shallow((
-        <ModalPopup positionRef={mockPositionRef} isOpen close={jest.fn()}>
+        <ModalPopup positionRef={mockPositionRef} isOpen onClose={jest.fn()}>
           <Dialog />
         </ModalPopup>
       ));
@@ -83,7 +83,7 @@ describe('<ModalPopup />', () => {
     });
     it('renders with a portal if withPortal is true', () => {
       const wrapper = shallow((
-        <ModalPopup withPortal positionRef={mockPositionRef} isOpen close={jest.fn()}>
+        <ModalPopup withPortal positionRef={mockPositionRef} isOpen onClose={jest.fn()}>
           <Dialog />
         </ModalPopup>
       ));

@@ -42,21 +42,21 @@ ModalContentContainer.defaultProps = {
  * component is that if a modal object is visible then it is "enabled"
  */
 const ModalLayer = ({
-  children, close, isOpen, isBlocking,
+  children, onClose, isOpen, isBlocking,
 }) => {
   if (!isOpen) {
     return null;
   }
 
-  const onClickOutside = !isBlocking ? close : null;
+  const onClickOutside = !isBlocking ? onClose : null;
 
   return (
-    <ModalContextProvider close={close} isOpen={isOpen} isBlocking={isBlocking}>
+    <ModalContextProvider onClose={onClose} isOpen={isOpen} isBlocking={isBlocking}>
       <Portal>
         <FocusOn
           scrollLock
           enabled={isOpen}
-          onEscapeKey={close}
+          onEscapeKey={onClose}
           onClickOutside={onClickOutside}
           className="pgn__modal-layer"
         >
@@ -72,7 +72,7 @@ const ModalLayer = ({
 
 ModalLayer.propTypes = {
   children: PropTypes.node.isRequired,
-  close: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
   isBlocking: PropTypes.bool,
 };
