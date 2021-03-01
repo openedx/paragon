@@ -15,6 +15,7 @@ const Navigation = () => (
 
     <ParNavLink to="/">Getting Started</ParNavLink>
     <ParNavLink to="/status">Library Status</ParNavLink>
+    <ParNavLink to="/insights">Usage Insights</ParNavLink>
     <Nav.Item>
       <Nav.Link href="https://github.com/edx/paragon">Contribute on Github</Nav.Link>
     </Nav.Item>
