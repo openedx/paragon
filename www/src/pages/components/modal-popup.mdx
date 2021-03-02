@@ -24,7 +24,7 @@ A generic component for creating accessibile modal popup objects.
   return (
     <>
       <Button ref={target} variant="outline-primary" onClick={open}>Open modal popup</Button>
-      <ModalPopup positionRef={target} isOpen={isOpen} close={close}>
+      <ModalPopup positionRef={target} isOpen={isOpen} onClose={close}>
         <div className="bg-white p-3 rounded shadow">
           <p>This could be a menu or tray.</p>
 
