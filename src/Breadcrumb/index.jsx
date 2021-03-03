@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import Icon from '../Icon';
+import { ChevronRight } from '../../icons';
 
 const Breadcrumbs = ({
   links, activeLabel, spacer, clickHandler,
@@ -10,22 +11,22 @@ const Breadcrumbs = ({
   const linkCount = links.length;
 
   return (
-    <nav aria-label="breadcrumb">
-      <ol className={classNames('list-inline')}>
+    <nav aria-label="breadcrumb" className="pgn__breadcrumb">
+      <ol className="list-inline d-flex">
         {links.map(({ url, label }, i) => (
           <React.Fragment key={url}>
             <li className={classNames('list-inline-item')}>
-              <a href={url} {...(clickHandler && { onClick: clickHandler })}>{label}</a>
+              <a className="link-muted" href={url} {...(clickHandler && { onClick: clickHandler })}>{label}</a>
             </li>
             {(activeLabel || ((i + 1) < linkCount))
               && (
-              <li className={classNames('list-inline-item')} role="presentation" aria-label="spacer">
-                {spacer || <Icon className="fa fa-chevron-right" id={`spacer-${i}`} />}
+              <li className="list-inline-item" role="presentation" aria-label="spacer">
+                {spacer || <Icon src={ChevronRight} id={`spacer-${i}`} />}
               </li>
               )}
           </React.Fragment>
         ))}
-        {activeLabel && <li className={classNames('list-inline-item')} key="active">{activeLabel}</li>}
+        {activeLabel && <li className="list-inline-item active" key="active">{activeLabel}</li>}
       </ol>
     </nav>
   );
