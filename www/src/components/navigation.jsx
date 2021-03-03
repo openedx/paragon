@@ -2,14 +2,14 @@ import { Link } from 'gatsby';
 import React from 'react';
 import { Nav } from '~paragon-react';
 
-const NavSectionTitle = ({ children }) => <h6 className="mt-4 px-3">{children}</h6>;
+const NavSectionTitle = ({ children }) => <h5 className="mt-4 px-3">{children}</h5>;
 
 const ParNavLink = ({ children, ...props }) => (
   <Link activeClassName="active" className="nav-link" {...props}>{children}</Link>
 );
 
 const Navigation = () => (
-  <Nav variant="pills" defaultActiveKey="/home" className="flex-column align-items-stretch py-3 mr-3">
+  <Nav variant="pills" defaultActiveKey="/home" className="flex-column align-items-stretch py-3 px-3 mr-3">
 
     <NavSectionTitle>Overview</NavSectionTitle>
 
