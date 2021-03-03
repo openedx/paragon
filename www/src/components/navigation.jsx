@@ -98,7 +98,6 @@ const Navigation = () => (
     <ParNavLink to="/components/checkboxgroup">CheckboxGroup</ParNavLink>
     <ParNavLink to="/components/inputselect">InputSelect</ParNavLink>
     <ParNavLink to="/components/inputtext">InputText</ParNavLink>
-    <ParNavLink to="/components/listbox">ListBox</ParNavLink>
     <ParNavLink to="/components/radiobuttongroup">RadioButtonGroup</ParNavLink>
     <ParNavLink to="/components/statusalert">StatusAlert</ParNavLink>
     <ParNavLink to="/components/textarea">TextArea</ParNavLink>

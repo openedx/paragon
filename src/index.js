@@ -42,8 +42,6 @@ export { default as Input } from './Input';
 export { default as InputSelect } from './InputSelect';
 export { default as InputText } from './InputText';
 export { default as Image, Figure } from './Image';
-export { default as ListBox } from './ListBox';
-export { default as ListBoxOption } from './ListBoxOption';
 export { default as MailtoLink } from './MailtoLink';
 export { default as Media } from './Media';
 export { default as Modal } from './Modal';
