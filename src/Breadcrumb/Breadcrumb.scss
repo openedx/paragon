@@ -1,2 +1,6 @@
 @import "variables";
 @import "~bootstrap/scss/breadcrumb";
+
+.pgn__breadcrumb .list-inline-item.active {
+    color: $breadcrumb-active-color;
+}
