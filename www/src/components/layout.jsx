@@ -51,7 +51,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <div className="px-3 d-lg-flex d-block">
+      <div className="d-lg-flex d-block">
 
         <div className="flex-shrink-0">
           <ResponsiveNavigation />
