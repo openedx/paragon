@@ -12,7 +12,7 @@ const Breadcrumbs = ({
 
   return (
     <nav aria-label="breadcrumb" className="pgn__breadcrumb">
-      <ol className="list-inline d-flex">
+      <ol className="list-inline d-flex align-items-center">
         {links.map(({ url, label }, i) => (
           <React.Fragment key={url}>
             <li className={classNames('list-inline-item')}>
