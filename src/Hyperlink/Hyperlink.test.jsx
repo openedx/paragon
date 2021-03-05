@@ -60,7 +60,7 @@ describe('event handlers are triggered correctly', () => {
 
   beforeEach(() => { spy = jest.fn(); });
 
-  it('should fire onClick', async () => {
+  it('should fire onClick', () => {
     const wrapper = mount(<Hyperlink {...props} onClick={spy} />);
     expect(spy).toHaveBeenCalledTimes(0);
     wrapper.simulate('click');

@@ -4,6 +4,8 @@ import {
 
 import { ParagonContext } from '../ParagonProvider';
 
+export const ANALYTICS_TIMEOUT_MS = 300;
+
 /**
  * Returns the ``analytics`` key stored in ParagonProvider's context
  */
@@ -78,8 +80,8 @@ export const useHandleLogClick = ({
         e.preventDefault();
         dispatchAnalyticEvents();
         setTimeout(() => {
-          global.location.href = ref?.current?.href;
-        }, [300]);
+          global.location.href = ref.current.href;
+        }, [ANALYTICS_TIMEOUT_MS]);
         return;
       }
 
