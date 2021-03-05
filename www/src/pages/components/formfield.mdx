@@ -1,0 +1,37 @@
+---
+title: 'FormField'
+type: 'component'
+status: 'Stable'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: |
+
+---
+
+import get from 'lodash/get';
+import SingleComponentStatus from '../../components/SingleComponentStatus';
+
+# FormField
+
+<SingleComponentStatus frontmatter={props?.pageContext?.frontmatter} />
+
+
+##### Basic Usage
+
+```jsx live
+() => {
+  const [value, setValue] = useState('');
+  return (
+  <>
+  <FormField
+    label="First Name"
+    name="fname"
+    leadingIcon={Add}
+    trailingIcon={Add}
+    value={value}
+    onChange={(e) => setValue(e.target.value)}
+  />
+  </>
+  );
+}
+```

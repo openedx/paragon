@@ -35,6 +35,7 @@ export {
   FormText,
   InputGroup,
 } from './Form';
+export { default as FormField } from './FormField';
 export { default as Hyperlink } from './Hyperlink';
 export { default as Icon } from './Icon';
 export { default as IconButton } from './IconButton';
