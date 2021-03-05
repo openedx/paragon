@@ -5,31 +5,21 @@ import { Icon, Input, FormControl, IconButton } from '..';
 import { Add } from '../../icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
-const InputBoxTrailingIconButton = ({ src, label, onClick, ...props }) => (
-  <button
-    type="button"
-    onClick={onClick}
-    className="pgn__input-box-trailing-icon-button"
-    aria-label={label}
-    {...props}
+const InputBoxIcon = ({ position, children }) => (
+  <div
+    className={classNames(
+      'pgn__input-box-icon',
+      `pgn__input-box-icon-${position}`,
+    )}
   >
-    <Icon src={src} />
-  </button>
+    {children}
+  </div>
 );
 
-const InputBoxIcon = ({ as, src, position, children }) => React.createElement(as, {
-  className: classNames(
-    'pgn__input-box-icon',
-    `pgn__input-box-icon-${position}`,
-  ),
-}, children);
-
 InputBoxIcon.defaultProps = {
-  as: 'div',
   position: 'leading',
 };
 InputBoxIcon.propTypes = {
-  as: PropTypes.elementType,
   position: PropTypes.oneOf(['leading', 'trailing']),
 };
 
@@ -51,7 +41,8 @@ const InputBoxOutline = ({ label, withLeadingIcon }) => (
 );
 
 const InputBox = ({ children, hasValue, label, leadingIcon, trailingIcon, ...props }) => (
-  <div {...props}
+  <div
+    {...props}
     className={classNames(
       'pgn__input-box',
       {
@@ -85,17 +76,22 @@ const FormField = ({
   onChange,
   trailingIcon,
   leadingIcon,
+  size,
   ...props
 }) => (
-  <div className="pgn__form-field">
+  <div className={classNames('pgn__form-field', {
+    'pgn__form-field-sm': size === 'sm',
+    'pgn__form-field-lg': size === 'lg',
+  })}>
     <InputBox
       label={label}
       hasValue={!!value}
       leadingIcon={leadingIcon}
       trailingIcon={trailingIcon}
     >
-      <Input
+      <FormControl
         className="pgn__input"
+        size={size}
         onChange={onChange}
         value={value}
         type="text"
@@ -104,6 +100,10 @@ const FormField = ({
     </InputBox>
   </div>
 );
+
+FormField.defaultProps = {
+  size: 'lg',
+}
 
 export default FormField;
 

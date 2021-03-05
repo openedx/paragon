@@ -1,8 +1,5 @@
 @import "variables";
 
-$y-padding: $input-padding-y;
-$x-padding: $input-padding-x;
-$line-height: $input-line-height;
 $icon-width: 32px;
 $input-bg: white;
 $focus-color: $primary-500;
@@ -16,12 +13,12 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
 
   &.with-leading-icon {
     .pgn__input {
-      padding-left: calc(#{$x-padding} + #{$icon-width});
+      padding-left: calc(#{$input-padding-x} + #{$icon-width});
     }
   }
   &.with-trailing-icon-button {
     .pgn__input {
-      padding-right: calc(#{$x-padding} + #{$icon-width});
+      padding-right: calc(#{$input-padding-x} + #{$icon-width});
     }
   }
 }
@@ -39,13 +36,13 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
 }
 .pgn__input-box-icon-leading {
   left: 0;
-  padding-left: $x-padding;
-  padding-right: $x-padding / 2;
+  padding-left: $input-padding-x;
+  padding-right: $input-padding-x / 2;
 }
 .pgn__input-box-icon-trailing {
   right: 0;
-  padding-left: $x-padding / 2;
-  padding-right: $x-padding / 2;
+  padding-left: $input-padding-x / 2;
+  padding-right: $input-padding-x / 2;
 }
 
 
@@ -56,8 +53,8 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
   bottom: 0;
   // border-radius: 50%;
   border: none;
-  padding: 2px $x-padding / 2;
-  right: $x-padding / 2;
+  padding: 2px $input-padding-x / 2;
+  right: $input-padding-x / 2;
   background: none;
   .pgn__icon {
     background: transparent;
@@ -91,7 +88,7 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
 }
 .pgn__input-box-outline-start {
   flex-shrink: 0;
-  width: 3 * ($x-padding / 4);
+  width: 3 * ($input-padding-x / 4);
   border-right: 0;
   border-bottom-left-radius: $input-border-radius;
   border-top-left-radius: $input-border-radius;
@@ -102,14 +99,21 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
   border-right: 0;
   position: relative;
   max-width: calc(95% - #{2*$icon-width});
-  padding: calc(#{$y-padding} + #{$difference-focus-default-border-width}) $x-padding / 4 0;
+  padding: calc(#{$input-padding-y} + #{$difference-focus-default-border-width}) $input-padding-x / 4 0;
+
+  .pgn__form-field-lg & {
+    padding: calc(#{$input-padding-y-lg} + #{$difference-focus-default-border-width}) $input-padding-x-lg / 4 0;
+  }
+  .pgn__form-field-sm & {
+    padding: calc(#{$input-padding-y-sm} + #{$difference-focus-default-border-width}) $input-padding-x-sm / 4 0;
+  }
 
   &:before {
     content: '';
     position: absolute;
     height: $input-border-width;
     width: 25%;
-    margin-right: -$x-padding / 4;
+    margin-right: -$input-padding-x / 4;
     right: 0;
     top: 0;
     background-color: $input-border-color;
@@ -128,13 +132,21 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
   white-space: nowrap;
   margin-left: $difference-focus-default-border-width;
   margin-top: $difference-focus-default-border-width;
-  line-height: $line-height;
+  line-height: $input-line-height;
   font-size: $input-font-size;
   transform: translateX(0);
   overflow: hidden;
   text-overflow: ellipsis;
   &.with-leading-icon {
     transform: translateX(#{$icon-width});
+  }
+  .pgn__form-field-lg & {
+    line-height: $input-line-height-lg;
+    font-size: $input-font-size-lg;
+  }
+  .pgn__form-field-sm & {
+    line-height: $input-line-height-sm;
+    font-size: $input-font-size-sm;
   }
   transition: color, transform 150ms ease;
 }
@@ -157,6 +169,21 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
     $translate-padding: $scale-translate-multiplier * $input-padding-y;
     color: $focus-color;
     transform: scale($scale) translateY(-$translate-padding) translateY(-$translate-line-height) translateY(-$translate-half-cap-height) translateY($difference-focus-default-border-width);
+
+    .pgn__form-field-lg & {
+      $translate-line-height: $input-line-height-lg * .5em;
+      $translate-half-cap-height: ($input-font-size-lg / 2) * .75;
+      $translate-padding: $scale-translate-multiplier * $input-padding-y-lg;
+      color: $focus-color;
+      transform: scale($scale) translateY(-$translate-padding) translateY(-$translate-line-height) translateY(-$translate-half-cap-height) translateY($difference-focus-default-border-width);
+    }
+    .pgn__form-field-sm & {
+      $translate-line-height: $input-line-height-sm * .5em;
+      $translate-half-cap-height: ($input-font-size-sm / 2) * .75;
+      $translate-padding: $scale-translate-multiplier * $input-padding-y-sm;
+      color: $focus-color;
+      transform: scale($scale) translateY(-$translate-padding) translateY(-$translate-line-height) translateY(-$translate-half-cap-height) translateY($difference-focus-default-border-width);
+    }
   }
 }
 
