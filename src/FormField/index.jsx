@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Icon, Input, FormControl, IconButton } from '..';
 import { Add } from '../../icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const InputBoxTrailingIconButton = ({ src, label, onClick, ...props }) => (
   <button
@@ -16,12 +17,21 @@ const InputBoxTrailingIconButton = ({ src, label, onClick, ...props }) => (
   </button>
 );
 
-const InputBoxLeadingIcon = ({ src }) => (
-  <Icon
-    src={src}
-    className="pgn__input-box-leading-icon"
-  />
-);
+const InputBoxIcon = ({ as, src, position, children }) => React.createElement(as, {
+  className: classNames(
+    'pgn__input-box-icon',
+    `pgn__input-box-icon-${position}`,
+  ),
+}, children);
+
+InputBoxIcon.defaultProps = {
+  as: 'div',
+  position: 'leading',
+};
+InputBoxIcon.propTypes = {
+  as: PropTypes.elementType,
+  position: PropTypes.oneOf(['leading', 'trailing']),
+};
 
 const InputBoxOutline = ({ label, withLeadingIcon }) => (
   <div className="pgn__input-box-outline">
@@ -52,10 +62,17 @@ const InputBox = ({ children, hasValue, label, leadingIcon, trailingIcon, ...pro
       props.className,
     )}
   >
-    {leadingIcon && <InputBoxLeadingIcon src={leadingIcon} />}
+
+    <InputBoxIcon position="leading">
+      <Icon src={leadingIcon} />
+    </InputBoxIcon>
+
     {children}
-    {trailingIcon && <InputBoxTrailingIconButton src={trailingIcon} alt='Close' onClick={() => {}} variant="primary" />}
-    {false && <Icon src={trailingIcon} className="pgn__input-box-trailing-icon" />}
+
+    <InputBoxIcon position="trailing" src={trailingIcon}>
+      <IconButton icon={faTimes} alt='Close' onClick={() => {}} variant="primary" />
+    </InputBoxIcon>
+
     <InputBoxOutline label={label} withLeadingIcon={!!leadingIcon} />
   </div>
 );
