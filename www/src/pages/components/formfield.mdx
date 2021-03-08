@@ -26,17 +26,58 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
   <FormField
     label="First Name"
     name="fname"
-    leadingIcon={Add}
-    trailingIcon={Add}
+    leadingIcon={<Icon src={Add} />}
+    trailingIcon={<IconButton icon={FontAwesome.faTimes} alt='Close' onClick={() => {}} variant="primary" />}
     value={value}
+    size="lg"
     onChange={(e) => setValue(e.target.value)}
+  />
+  <FormField
+    label="First Name"
+    name="fname"
+    leadingIcon={<Icon src={Add} />}
+    trailingIcon={<IconButton icon={FontAwesome.faTimes} alt='Close' onClick={() => {}} variant="primary" />}
+    value={value}
+    size="md"
+    onChange={(e) => setValue(e.target.value)}
+  />
+  <FormField
+    label="First Name"
+    name="fname"
+    leadingIcon={<Icon src={Add} />}
+    trailingIcon={<IconButton icon={FontAwesome.faTimes} alt='Close' onClick={() => {}} variant="primary" />}
+    value={value}
+    size="sm"
+    onChange={(e) => setValue(e.target.value)}
+    type="textarea"
   />
   </>
   );
 }
 ```
 
-- Add sizes sm, lg
+```
+  <InputSelect />
+  <InputText />
+  <InputTextarea />
+  <InputRadioGroup />
+    <InputRadio />
+  <InputCheckbox />
+  <InputCheckboxGroup />
+  <InputSwitch />
+
+  <FormField
+    id="myid"
+    label="My Label"
+    helpText="Stuff" >> node
+    errorText="Error stuff" >> node
+    validText="Valid stuff" >> node
+  >
+    <InputText />
+  </FormField>
+
+```
+
 - Normalize button vs icon
 - Reconcile with validation form group
 - pass through props to input
