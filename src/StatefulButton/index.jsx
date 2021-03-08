@@ -92,7 +92,7 @@ function StatefulButton({
     >
       <span className="d-flex align-items-center justify-content-center">
         {icon ? <span className="pgn__stateful-btn-icon">{icon}</span> : null}
-        {labels[state] !== undefined ? labels[state] : labels.default}
+        <span>{labels[state] !== undefined ? labels[state] : labels.default}</span>
       </span>
     </Button>
   );
