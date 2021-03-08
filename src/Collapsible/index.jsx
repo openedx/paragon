@@ -1,23 +1,18 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faPlusCircle,
-  faMinusCircle,
-  faPlus,
-  faMinus,
-} from '@fortawesome/free-solid-svg-icons';
 
 import CollapsibleAdvanced, { CollapsibleContext } from './CollapsibleAdvanced';
 import CollapsibleBody from './CollapsibleBody';
 import CollapsibleTrigger from './CollapsibleTrigger';
 import CollapsibleVisible from './CollapsibleVisible';
+import Icon from '../Icon';
+import { Add, Remove } from '../../icons';
 
 const styleIcons = {
   basic: {
-    iconWhenClosed: <FontAwesomeIcon icon={faPlusCircle} />,
-    iconWhenOpen: <FontAwesomeIcon icon={faMinusCircle} />,
+    iconWhenClosed: <Icon src={Add} />,
+    iconWhenOpen: <Icon src={Remove} />,
   },
   // card and card-lg use the defaults specified in defaultProps
 };
@@ -44,7 +39,7 @@ const Collapsible = React.forwardRef((props, ref) => {
     >
       <Collapsible.Trigger className="collapsible-trigger">
         {titleElement}
-        <span className="ml-2">
+        <span className="collapsible-icon">
           <Collapsible.Visible whenClosed>{icons.iconWhenClosed}</Collapsible.Visible>
           <Collapsible.Visible whenOpen>{icons.iconWhenOpen}</Collapsible.Visible>
         </span>
@@ -66,8 +61,8 @@ Collapsible.propTypes = {
 Collapsible.defaultProps = {
   className: undefined,
   styling: 'card',
-  iconWhenClosed: <FontAwesomeIcon icon={faPlus} />,
-  iconWhenOpen: <FontAwesomeIcon icon={faMinus} />,
+  iconWhenClosed: <Icon src={Add} />,
+  iconWhenOpen: <Icon src={Remove} />,
 
 };
 
