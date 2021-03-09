@@ -35,11 +35,20 @@ export {
   FormText,
   InputGroup,
 } from './Form';
-export { default as FormField } from './FormField';
+export {
+  default as FormField,
+  Input,
+  Textarea,
+  Select,
+  CheckboxGroup,
+  RadioGroup,
+  Switch,
+  Checkbox,
+} from './FormField';
 export { default as Hyperlink } from './Hyperlink';
 export { default as Icon } from './Icon';
 export { default as IconButton } from './IconButton';
-export { default as Input } from './Input';
+// export { default as Input } from './Input';
 export { default as InputSelect } from './InputSelect';
 export { default as InputText } from './InputText';
 export { default as Image, Figure } from './Image';

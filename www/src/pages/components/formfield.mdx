@@ -23,6 +23,30 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
   const [value, setValue] = useState('');
   return (
   <>
+  <Checkbox label="my select" />
+  <CheckboxGroup options={[
+    { label: 'Option 1', value: 'option 1 value', disabled: true },
+    { label: 'Option 2', value: 'option 2 value', disabled: false }
+  ]} label="my select" />
+
+  </>
+  );
+}
+```
+
+```
+
+
+  <Select label="my select">
+    <option value="hi">hi</option>
+    <option value="h2i">hi</option>
+    <option value="h3i">hi</option>
+  </Select>
+  <Input label="my select" />
+  <Textarea label="my select" />
+
+<RadioGroup options={[]} label="my select" />
+  <Switch label="my select" />
   <FormField
     label="First Name"
     name="fname"
@@ -51,12 +75,6 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
     onChange={(e) => setValue(e.target.value)}
     type="textarea"
   />
-  </>
-  );
-}
-```
-
-```
   <InputSelect />
   <InputText />
   <InputTextarea />
