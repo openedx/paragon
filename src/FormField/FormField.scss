@@ -50,13 +50,10 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
 
 .pgn__input-decorator {
   position: absolute;
-  position: absolute;
   pointer-events: none;
   button {
     pointer-events: initial;
   }
-  border-top: solid $border-width transparent;
-  border-bottom: solid $border-width transparent;
   height: $input-height;
   min-width: $input-height;
   line-height: inherit;
