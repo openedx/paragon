@@ -41,8 +41,12 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
   position: absolute;
   position: absolute;
   pointer-events: none;
+  button {
+    pointer-events: initial;
+  }
   top: 0;
   height: $input-height;
+  min-width: $input-height;
   display: flex;
   align-items: center;
   font-size: $input-font-size;
@@ -54,7 +58,7 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
   &.pgn__input-decorator-trailing {
     right: 0;
     padding-left: $input-padding-x / 2;
-    padding-right: $input-padding-x;
+    padding-right: calc(#{$input-padding-y-sm} - #{2 * $input-border-width});
   }
 
   .pgn__input-decorator-group-lg & {
@@ -66,7 +70,7 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
     }
     &.pgn__input-decorator-trailing {
       padding-left: $input-padding-x-lg / 2;
-      padding-right: $input-padding-x-lg;
+      padding-right: calc(#{$input-padding-y} - #{2 * $input-border-width});
     }
   }
 
@@ -79,7 +83,7 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
     }
     &.pgn__input-decorator-trailing {
       padding-left: $input-padding-x-sm / 2;
-      padding-right: $input-padding-x-sm;
+      padding-right: calc(#{$input-padding-y-sm} - #{2 * $input-border-width});
     }
   }
 }
