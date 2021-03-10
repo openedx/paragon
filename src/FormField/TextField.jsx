@@ -7,11 +7,32 @@ import { InputDecoratorGroup } from './InputDecoratorGroup';
 import useToggle from '../hooks/useToggle';
 import { callAllHandlers, useHasValue } from './fieldUtils';
 
-const TextField = ({ label, size, leadingElement, trailingElement, value, defaultValue, id, ...formControlProps }) => {
+
+const FieldLabel = ({ children, isInline, size, className }) => (
+  <label className={classNames('pgn__field-label', {
+    'pgn__field-label-inline': isInline,
+    'pgn__field-label-lg': size === 'lg',
+    'pgn__field-label-sm': size === 'sm',
+  })}>{children}</label>
+);
+
+const TextField = ({
+  label,
+  size,
+  labelPosition,
+  leadingElement,
+  trailingElement,
+  value,
+  defaultValue,
+  id,
+  ...formControlProps
+}) => {
   const [hasFocus, setHasFocusTrue, setHasFocusFalse] = useToggle(false);
   const [hasValue, checkInputEventValue] = useHasValue(defaultValue, value);
   const controlId = React.useMemo(() => id || newId('text-field'), [id]);
   const fieldId = `${controlId}-field`;
+  const hasFloatingLabel = labelPosition === 'floating';
+  const isInline = labelPosition === 'inline';
 
   return (
     <div
@@ -21,14 +42,15 @@ const TextField = ({ label, size, leadingElement, trailingElement, value, defaul
         {
           'pgn__text-field-has-value': hasValue,
           'pgn__text-field-has-focus': hasFocus,
+          'pgn__text-field-inline': isInline,
         },
       )}
     >
-      <label>{label}</label>
+      {!hasFloatingLabel && <FieldLabel size={size} isInline={isInline}>{label}</FieldLabel>}
       <InputDecoratorGroup
         leadingElement={leadingElement}
         trailingElement={trailingElement}
-        floatingLabel={label}
+        floatingLabel={hasFloatingLabel && label}
         isLabelFloating={hasValue || hasFocus}
         size={size}
       >
@@ -52,6 +74,10 @@ const TextField = ({ label, size, leadingElement, trailingElement, value, defaul
       </InputDecoratorGroup>
     </div>
   );
+};
+
+TextField.defaultProps = {
+  labelPosition: 'floating',
 };
 
 export default TextField;
