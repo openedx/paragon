@@ -23,11 +23,12 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
   const [value, setValue] = useState('');
   return (
   <>
-  <Checkbox label="my select" />
-  <CheckboxGroup options={[
-    { label: 'Option 1', value: 'option 1 value', disabled: true },
-    { label: 'Option 2', value: 'option 2 value', disabled: false }
-  ]} label="my select" />
+    <InputDecoratorGroup>
+      <InputLeadingDecorator><Icon src={Add} /></InputLeadingDecorator>
+      <InputFloatingLabel>This is a label</InputFloatingLabel>
+      <InputText className="" />
+      <InputTrailingDecorator><Icon src={Add} /></InputTrailingDecorator>
+    </InputDecoratorGroup>
 
   </>
   );
@@ -36,6 +37,50 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 ```
 
+
+
+
+<InputText className="mb-3" size="lg" />
+    <InputText className="mb-3" size="sm" />
+
+    <InputSelect className="mb-3" size="lg" />
+    <InputSelect className="mb-3" />
+    <InputSelect className="mb-3" size="sm" />
+
+    <InputTextarea className="mb-3" size="lg" />
+    <InputTextarea className="mb-3" />
+    <InputTextarea className="mb-3" size="sm" />
+
+    <InputTextarea className="mb-3" size="lg" />
+    <InputTextarea className="mb-3" />
+    <InputTextarea className="mb-3" size="sm" />
+
+    <InputCheckbox className="mb-3" />
+    <InputRadio className="mb-3" />
+    <InputSwitch className="mb-3" />
+
+
+
+<InputGroup>
+  <InputGroup.Prepend><Icon src={Add} /></InputGroup.Prepend>
+  <Input
+</InputGroup>
+
+<FormField
+  id="email"
+  label="Email"
+>
+  <FormField.Label floating>Email address</FormField.Label>
+  <Input type="email" />
+  <FormHelperText>We'll never share your email.</FormHelperText>
+</FormField>
+
+
+  <Checkbox label="my select" />
+  <CheckboxGroup options={[
+    { label: 'Option 1', value: 'option 1 value', disabled: true },
+    { label: 'Option 2', value: 'option 2 value', disabled: false }
+  ]} label="my select" />
 
   <Select label="my select">
     <option value="hi">hi</option>

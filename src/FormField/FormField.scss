@@ -5,58 +5,84 @@ $input-bg: white;
 $focus-color: $primary-500;
 $focus-border-width: 2px;
 $difference-focus-default-border-width: $focus-border-width - $input-border-width;
-@mixin input-box-size($padding-x: $input-padding-x) {
-  &.with-leading-icon {
-    .form-control {
-      padding-left: calc(#{$padding-x} + #{$icon-width});
-    }
-  }
-  &.with-trailing-icon {
-    .form-control {
-      padding-right: calc(#{$padding-x} + #{$icon-width});
-    }
-  }
-  .pgn__input-box-icon-leading {
-    left: 0;
-    padding-left: $padding-x;
-    padding-right: $padding-x / 2;
-  }
-  .pgn__input-box-icon-trailing {
-    right: 0;
-    padding-left: $padding-x / 2;
-    padding-right: $padding-x / 2;
-  }
-}
 
-.pgn__input-box {
+.pgn__input-group {
   position: relative;
   display: flex;
   align-items: center;
 
-  .pgn__input-box-icon {
-    position: absolute;
-    pointer-events: none;
-    top: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    button {
-      pointer-events: initial;
+  &.has-prepended-node {
+    .form-control {
+      padding-left: calc(#{$input-padding-x} + #{$icon-width});
+    }
+    .form-control-lg {
+      padding-left: calc(#{$input-padding-x-lg} + #{$icon-width});
+    }
+    .form-control-sm {
+      padding-left: calc(#{$input-padding-x-sm} + #{$icon-width});
     }
   }
 
-  @include input-box-size();
-
-  &.pgn__input-box-lg {
-    @include input-box-size($input-padding-x-lg);
-  }
-
-  &.pgn__input-box-sm {
-    @include input-box-size($input-padding-x-sm);
+  &.has-appended-node {
+    .form-control {
+      padding-right: calc(#{$input-padding-x} + #{$icon-width});
+    }
+    .form-control-lg {
+      padding-right: calc(#{$input-padding-x-lg} + #{$icon-width});
+    }
+    .form-control-sm {
+      padding-right: calc(#{$input-padding-x-sm} + #{$icon-width});
+    }
   }
 }
 
-@mixin input-floating-label-initial(
+
+.pgn__input-group-prepend,
+.pgn__input-group-append {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  height: $input-height;
+  display: flex;
+  align-items: center;
+  button {
+    pointer-events: initial;
+  }
+}
+
+.pgn__input-group-prepend {
+  left: 0;
+  padding-left: $input-padding-x;
+  padding-right: $input-padding-x / 2;
+}
+.form-control-lg ~ .pgn__input-group-prepend {
+  height: $input-height-lg;
+  padding-left: $input-padding-x-lg;
+  padding-right: $input-padding-x-lg / 2;
+}
+.form-control-sm ~ .pgn__input-group-prepend {
+  height: $input-height-sm;
+  padding-left: $input-padding-x-sm;
+  padding-right: $input-padding-x-sm / 2;
+}
+.pgn__input-group-append {
+  right: 0;
+  padding-left: $input-padding-x / 2;
+  padding-right: $input-padding-x / 2;
+}
+.form-control-lg ~ .pgn__input-group-append {
+  height: $input-height-lg;
+  padding-left: $input-padding-x-lg / 2;
+  padding-right: $input-padding-x-lg / 2;
+}
+.form-control-sm ~ .pgn__input-group-append {
+  height: $input-height-sm;
+  padding-left: $input-padding-x-sm / 2;
+  padding-right: $input-padding-x-sm / 2;
+}
+
+
+@mixin input-group-floating-label-initial(
   $padding-x,
   $padding-y,
   $line-height,
@@ -64,21 +90,21 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
   $border-width
 ) {
   padding: 0 $padding-x;
-  .pgn__input-floating-label-content {
+  .pgn__input-group-floating-label-content {
     padding-top: $padding-y;
     line-height: $line-height;
     font-size: $font-size;
   }
 }
 
-@mixin input-floating-label-float(
+@mixin input-group-floating-label-float(
   $padding-x,
   $padding-y,
   $line-height,
   $font-size,
   $border-width
 ) {
-  .pgn__input-floating-label-text {
+  .pgn__input-group-floating-label-text {
     $half-leading: ($line-height - 0.8) / 2;
     $percent-height-minus-no-bottom-leading: (
         ($line-height - $half-leading) / $line-height
@@ -87,7 +113,7 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
   }
 }
 
-.pgn__input-floating-label {
+.pgn__input-group-floating-label {
   position: absolute;
   left: $input-border-width;
   right: 0;
@@ -96,33 +122,33 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
   height: 100%;
   pointer-events: none;
 
-  .pgn__input-floating-label-content {
+  .pgn__input-group-floating-label-content {
     border-top: solid 2px transparent;
     position: relative;
     left: -0.5em;
   }
-  .pgn__input-floating-label-text {
+  .pgn__input-group-floating-label-text {
     transform-origin: left top;
     padding: 0 0.5em;
     transition: transform 150ms ease, background-color 150ms linear;
     background: transparent;
   }
 
-  &.with-leading-icon {
-    .pgn__input-floating-label-text {
+  .has-prepended-node & {
+    .pgn__input-group-floating-label-text {
       transform: translateX(#{$icon-width});
     }
   }
 
-  @include input-floating-label-initial(
+  @include input-group-floating-label-initial(
     $input-padding-x,
     $input-padding-y,
     $input-line-height,
     $input-font-size,
     $input-border-width
   );
-  .pgn__input-box-lg & {
-    @include input-floating-label-initial(
+  .form-control-lg ~ & {
+    @include input-group-floating-label-initial(
       $input-padding-x-lg,
       $input-padding-y-lg,
       $input-line-height-lg,
@@ -130,8 +156,8 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
       $input-border-width
     );
   }
-  .pgn__input-box-sm & {
-    @include input-floating-label-initial(
+  .form-control-sm ~ & {
+    @include input-group-floating-label-initial(
       $input-padding-x-sm,
       $input-padding-y-sm,
       $input-line-height-sm,
@@ -141,36 +167,37 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
   }
 
   // float
-  &.is-floating,
+  // &.is-floating,
+  .form-control.has-value ~ &,
   .form-control:not([disabled]):focus ~ & {
-    .pgn__input-floating-label-text {
+    .pgn__input-group-floating-label-text {
       background-color: $input-bg;
     }
-    @include input-floating-label-float(
+    @include input-group-floating-label-float(
       $input-padding-x,
       $input-padding-y,
       $input-line-height,
       $input-font-size,
       $input-border-width
     );
-    .pgn__input-box-lg & {
-      @include input-floating-label-float(
-        $input-padding-x-lg,
-        $input-padding-y-lg,
-        $input-line-height-lg,
-        $input-font-size-lg,
-        $input-border-width
-      );
-    }
-    .pgn__input-box-sm & {
-      @include input-floating-label-float(
-        $input-padding-x-sm,
-        $input-padding-y-sm,
-        $input-line-height-sm,
-        $input-font-size-sm,
-        $input-border-width
-      );
-    }
+  }
+  .form-control-lg:not([disabled]):focus ~ & {
+    @include input-group-floating-label-float(
+      $input-padding-x-lg,
+      $input-padding-y-lg,
+      $input-line-height-lg,
+      $input-font-size-lg,
+      $input-border-width
+    );
+  }
+  .form-control-sm:not([disabled]):focus ~ & {
+    @include input-group-floating-label-float(
+      $input-padding-x-sm,
+      $input-padding-y-sm,
+      $input-line-height-sm,
+      $input-font-size-sm,
+      $input-border-width
+    );
   }
 }
 
@@ -384,6 +411,17 @@ $form-check-label-disabled-opacity: .5;
   margin-bottom: 0.5rem;
   display: block;
 }
+
+
+.pgn__form-input-text,
+.pgn__form-input-select,
+.pgn__form-input-textarea,
+.pgn__form-input-slider,
+.pgn__form-input-switch,
+.pgn__form-input-check {
+
+}
+
 
 // .form-check-label {
 //   color: $form-check-label-color;
