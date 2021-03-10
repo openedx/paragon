@@ -35,6 +35,17 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
       padding-right: calc(#{$input-padding-x-sm} + #{$icon-width});
     }
   }
+
+  font-size: $input-font-size;
+  line-height: $input-line-height;
+  &.pgn__input-decorator-group-sm {
+    font-size: $input-font-size-sm;
+    line-height: $input-line-height-sm;
+  }
+  &.pgn__input-decorator-group-lg {
+    font-size: $input-font-size-lg;
+    line-height: $input-line-height-lg;
+  }
 }
 
 .pgn__input-decorator {
@@ -44,12 +55,15 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
   button {
     pointer-events: initial;
   }
-  top: 0;
+  border-top: solid $border-width transparent;
+  border-bottom: solid $border-width transparent;
   height: $input-height;
   min-width: $input-height;
+  line-height: inherit;
   display: flex;
+  justify-content: center;
   align-items: center;
-  font-size: $input-font-size;
+  font-size: inherit;
   &.pgn__input-decorator-leading {
     left: 0;
     padding-left: $input-padding-x;
@@ -62,8 +76,8 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
   }
 
   .pgn__input-decorator-group-lg & {
-    font-size: $input-font-size-lg;
     height: $input-height-lg;
+    min-width: $input-height-lg;
     &.pgn__input-decorator-leading {
       padding-left: $input-padding-x-lg;
       padding-right: $input-padding-x-lg / 2;
@@ -75,8 +89,8 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
   }
 
   .pgn__input-decorator-group-sm & {
-    font-size: $input-font-size-sm;
     height: $input-height-sm;
+    min-width: $input-height-lg;
     &.pgn__input-decorator-leading {
       padding-left: $input-padding-x-sm;
       padding-right: $input-padding-x-sm / 2;
