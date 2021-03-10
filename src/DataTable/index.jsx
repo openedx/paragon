@@ -73,19 +73,14 @@ function DataTable({
     // Stringifying the data gives a quick way of checking deep equality
   }, [fetchData, JSON.stringify(instance.state)]);
 
-  const enhancedInstance = useMemo(() => ({
+  const enhancedInstance = {
     ...instance,
     itemCount,
     numBreakoutFilters,
     bulkActions,
     tableActions,
     ...props,
-  }), [
-    instance,
-    JSON.stringify(instance.state),
-    itemCount, bulkActions, tableActions,
-    numBreakoutFilters, JSON.stringify(props),
-  ]);
+  };
 
   return (
     <DataTableContext.Provider value={enhancedInstance}>
