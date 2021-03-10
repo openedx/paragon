@@ -23,13 +23,12 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
   const [value, setValue] = useState('');
   return (
   <>
-    <InputDecoratorGroup>
-      <InputLeadingDecorator><Icon src={Add} /></InputLeadingDecorator>
-      <InputFloatingLabel>This is a label</InputFloatingLabel>
-      <InputText className="" />
-      <InputTrailingDecorator><Icon src={Add} /></InputTrailingDecorator>
-    </InputDecoratorGroup>
 
+    <TextField
+      leadingElement={<Icon src={Add} />}
+      trailingElement={<Icon src={Add} />}
+      label="Last Name"
+    />
   </>
   );
 }

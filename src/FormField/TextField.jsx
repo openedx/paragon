@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Input, FormControl, InputText, InputSelect, InputTextarea } from '..';
+import { FormControl } from '..';
 import newId from '../utils/newId';
+import { InputDecoratorGroup } from './InputDecoratorGroup';
 import useToggle from '../hooks/useToggle';
-
 import { callAllHandlers, useHasValue } from './fieldUtils';
 
 const TextField = ({ label, size, leadingElement, trailingElement, value, defaultValue, id, ...formControlProps }) => {
@@ -24,11 +24,18 @@ const TextField = ({ label, size, leadingElement, trailingElement, value, defaul
         },
       )}
     >
-    <label>{label}</label>
-      <InputDecoratorGroup size={size}>
+      <label>{label}</label>
+      <InputDecoratorGroup
+        leadingElement={leadingElement}
+        trailingElement={trailingElement}
+        floatingLabel={label}
+        isLabelFloating={hasValue || hasFocus}
+        size={size}
+      >
         <FormControl
           id={controlId}
           value={value}
+          size={size}
           defaultValue={defaultValue}
           onFocus={(event) => callAllHandlers(
             event,
@@ -47,20 +54,4 @@ const TextField = ({ label, size, leadingElement, trailingElement, value, defaul
   );
 };
 
-export { TextField };
-// <TextField
-//   leadingElement={null}
-//   trailingElement={null}
-//   label={null}
-// />
-
-// <SelectField
-
-// />
-
-// <RadioButtonGroupField
-
-// />
-
-// <CheckboxGroupField
-// />
+export default TextField;

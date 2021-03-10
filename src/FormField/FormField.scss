@@ -1,4 +1,4 @@
-@import "variables";
+// @import "variables";
 
 $icon-width: 32px;
 $input-bg: white;
@@ -6,7 +6,7 @@ $focus-color: $primary-500;
 $focus-border-width: 2px;
 $difference-focus-default-border-width: $focus-border-width - $input-border-width;
 
-.pgn__input-group {
+.pgn__input-decorator-group {
   position: relative;
   display: flex;
   align-items: center;
@@ -36,50 +36,105 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
   }
 }
 
-
-.pgn__input-group-prepend,
-.pgn__input-group-append {
+.pgn__input-decorator {
+  position: absolute;
   position: absolute;
   pointer-events: none;
   top: 0;
   height: $input-height;
   display: flex;
   align-items: center;
-  button {
-    pointer-events: initial;
+  font-size: $input-font-size;
+  &.pgn__input-decorator-leading {
+    left: 0;
+    padding-left: $input-padding-x;
+    padding-right: $input-padding-x / 2;
+  }
+  &.pgn__input-decorator-trailing {
+    right: 0;
+    padding-left: $input-padding-x / 2;
+    padding-right: $input-padding-x;
+  }
+
+  .pgn__input-decorator-group-lg & {
+    font-size: $input-font-size-lg;
+    height: $input-height-lg;
+    &.pgn__input-decorator-leading {
+      padding-left: $input-padding-x-lg;
+      padding-right: $input-padding-x-lg / 2;
+    }
+    &.pgn__input-decorator-trailing {
+      padding-left: $input-padding-x-lg / 2;
+      padding-right: $input-padding-x-lg;
+    }
+  }
+
+  .pgn__input-decorator-group-sm & {
+    font-size: $input-font-size-sm;
+    height: $input-height-sm;
+    &.pgn__input-decorator-leading {
+      padding-left: $input-padding-x-sm;
+      padding-right: $input-padding-x-sm / 2;
+    }
+    &.pgn__input-decorator-trailing {
+      padding-left: $input-padding-x-sm / 2;
+      padding-right: $input-padding-x-sm;
+    }
   }
 }
 
-.pgn__input-group-prepend {
-  left: 0;
-  padding-left: $input-padding-x;
-  padding-right: $input-padding-x / 2;
-}
-.form-control-lg ~ .pgn__input-group-prepend {
-  height: $input-height-lg;
-  padding-left: $input-padding-x-lg;
-  padding-right: $input-padding-x-lg / 2;
-}
-.form-control-sm ~ .pgn__input-group-prepend {
-  height: $input-height-sm;
-  padding-left: $input-padding-x-sm;
-  padding-right: $input-padding-x-sm / 2;
-}
-.pgn__input-group-append {
-  right: 0;
-  padding-left: $input-padding-x / 2;
-  padding-right: $input-padding-x / 2;
-}
-.form-control-lg ~ .pgn__input-group-append {
-  height: $input-height-lg;
-  padding-left: $input-padding-x-lg / 2;
-  padding-right: $input-padding-x-lg / 2;
-}
-.form-control-sm ~ .pgn__input-group-append {
-  height: $input-height-sm;
-  padding-left: $input-padding-x-sm / 2;
-  padding-right: $input-padding-x-sm / 2;
-}
+
+// .pgn__input-group {
+//   position: relative;
+//   display: flex;
+//   align-items: center;
+
+// }
+
+
+// .pgn__input-group-prepend,
+// .pgn__input-group-append {
+//   position: absolute;
+//   pointer-events: none;
+//   top: 0;
+//   height: $input-height;
+//   display: flex;
+//   align-items: center;
+//   button {
+//     pointer-events: initial;
+//   }
+// }
+
+// .pgn__input-group-prepend {
+//   left: 0;
+//   padding-left: $input-padding-x;
+//   padding-right: $input-padding-x / 2;
+// }
+// .form-control-lg ~ .pgn__input-group-prepend {
+//   height: $input-height-lg;
+//   padding-left: $input-padding-x-lg;
+//   padding-right: $input-padding-x-lg / 2;
+// }
+// .form-control-sm ~ .pgn__input-group-prepend {
+//   height: $input-height-sm;
+//   padding-left: $input-padding-x-sm;
+//   padding-right: $input-padding-x-sm / 2;
+// }
+// .pgn__input-group-append {
+//   right: 0;
+//   padding-left: $input-padding-x / 2;
+//   padding-right: $input-padding-x / 2;
+// }
+// .form-control-lg ~ .pgn__input-group-append {
+//   height: $input-height-lg;
+//   padding-left: $input-padding-x-lg / 2;
+//   padding-right: $input-padding-x-lg / 2;
+// }
+// .form-control-sm ~ .pgn__input-group-append {
+//   height: $input-height-sm;
+//   padding-left: $input-padding-x-sm / 2;
+//   padding-right: $input-padding-x-sm / 2;
+// }
 
 
 @mixin input-group-floating-label-initial(
@@ -134,7 +189,7 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
     background: transparent;
   }
 
-  .has-prepended-node & {
+  .has-leading-element & {
     .pgn__input-group-floating-label-text {
       transform: translateX(#{$icon-width});
     }
@@ -147,7 +202,7 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
     $input-font-size,
     $input-border-width
   );
-  .form-control-lg ~ & {
+  .pgn__input-decorator-group-lg & {
     @include input-group-floating-label-initial(
       $input-padding-x-lg,
       $input-padding-y-lg,
@@ -156,7 +211,7 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
       $input-border-width
     );
   }
-  .form-control-sm ~ & {
+  .pgn__input-decorator-group-sm & {
     @include input-group-floating-label-initial(
       $input-padding-x-sm,
       $input-padding-y-sm,
@@ -167,9 +222,7 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
   }
 
   // float
-  // &.is-floating,
-  .form-control.has-value ~ &,
-  .form-control:not([disabled]):focus ~ & {
+  .float-label & {
     .pgn__input-group-floating-label-text {
       background-color: $input-bg;
     }
@@ -181,7 +234,7 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
       $input-border-width
     );
   }
-  .form-control-lg:not([disabled]):focus ~ & {
+  .float-label.pgn__input-decorator-group-lg & {
     @include input-group-floating-label-float(
       $input-padding-x-lg,
       $input-padding-y-lg,
@@ -190,7 +243,7 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
       $input-border-width
     );
   }
-  .form-control-sm:not([disabled]):focus ~ & {
+  .float-label.pgn__input-decorator-group-sm & {
     @include input-group-floating-label-float(
       $input-padding-x-sm,
       $input-padding-y-sm,

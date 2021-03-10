@@ -41,12 +41,14 @@ export { default as InputTextarea } from './FormField/InputTextarea';
 export { default as InputCheckbox } from './FormField/InputCheckbox';
 export { default as InputRadio } from './FormField/InputRadio';
 export { default as InputSwitch } from './FormField/InputSwitch';
+export { default as TextField } from './FormField/TextField';
 export {
   InputDecoratorGroup,
   InputLeadingDecorator,
   InputTrailingDecorator,
   InputFloatingLabel,
-} from './FormField';
+
+} from './FormField/InputDecoratorGroup';
 export { default as Hyperlink } from './Hyperlink';
 export { default as Icon } from './Icon';
 export { default as IconButton } from './IconButton';
