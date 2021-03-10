@@ -7,7 +7,6 @@ import { InputDecoratorGroup } from './InputDecoratorGroup';
 import useToggle from '../hooks/useToggle';
 import { callAllHandlers, useHasValue } from './fieldUtils';
 
-
 const FieldLabel = ({ children, isInline, size, className }) => (
   <label className={classNames('pgn__field-label', {
     'pgn__field-label-inline': isInline,
@@ -16,13 +15,15 @@ const FieldLabel = ({ children, isInline, size, className }) => (
   })}>{children}</label>
 );
 
-const TextField = ({
+const FormField = ({
   label,
   size,
   labelPosition,
   leadingElement,
   trailingElement,
   value,
+  className,
+  formControlClassName,
   defaultValue,
   id,
   ...formControlProps
@@ -44,6 +45,7 @@ const TextField = ({
           'pgn__text-field-has-focus': hasFocus,
           'pgn__text-field-inline': isInline,
         },
+        className,
       )}
     >
       {!hasFloatingLabel && <FieldLabel size={size} isInline={isInline}>{label}</FieldLabel>}
@@ -58,6 +60,7 @@ const TextField = ({
           id={controlId}
           value={value}
           size={size}
+          className={formControlClassName}
           defaultValue={defaultValue}
           onFocus={(event) => callAllHandlers(
             event,
@@ -70,14 +73,35 @@ const TextField = ({
             checkInputEventValue,
             formControlProps.onBlur,
           )}
+          {...formControlProps}
         />
       </InputDecoratorGroup>
     </div>
   );
 };
 
+FormField.defaultProps = {
+  labelPosition: 'floating',
+};
+
+const TextField = props => <FormField {...props} />;
+
 TextField.defaultProps = {
   labelPosition: 'floating',
 };
 
+
+const SelectField = ({ children, ...props }) => (
+  <FormField as="select" {...props} trailingElement={undefined}>
+    {props.labelPosition === 'floating' && <option></option>}
+    {children}
+  </FormField>
+);
+
+SelectField.defaultProps = {
+  labelPosition: 'floating',
+};
+
+
 export default TextField;
+export { SelectField };

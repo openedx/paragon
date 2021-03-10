@@ -41,7 +41,7 @@ export { default as InputTextarea } from './FormField/InputTextarea';
 export { default as InputCheckbox } from './FormField/InputCheckbox';
 export { default as InputRadio } from './FormField/InputRadio';
 export { default as InputSwitch } from './FormField/InputSwitch';
-export { default as TextField } from './FormField/TextField';
+export { default as TextField, SelectField } from './FormField/TextField';
 export {
   InputDecoratorGroup,
   InputLeadingDecorator,

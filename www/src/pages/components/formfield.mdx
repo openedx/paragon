@@ -25,10 +25,32 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
   <>
 
     <TextField
+      className="mb-3"
       leadingElement={<Icon src={Add} />}
       trailingElement={<Icon src={Add} />}
       label="Last Name"
     />
+
+    <TextField
+      as="textarea"
+      className="mb-3"
+      leadingElement={<Icon src={Add} />}
+      trailingElement={<Button size="sm" variant="tertiary">Copy</Button>}
+      label="Last Name"
+    />
+
+    <SelectField
+      className="mb-3"
+      leadingElement={<Icon src={Add} />}
+      trailingElement={<Button>Copy</Button>}
+      label="Last Name"
+    >
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </SelectField>
   </>
   );
 }

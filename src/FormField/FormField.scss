@@ -10,7 +10,16 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
   position: relative;
   display: flex;
   flex-grow: 1;
-  align-items: center;
+  align-items: flex-start;
+
+  &.has-floating-label {
+    .form-control:not(:focus) {
+      &::placeholder,
+      &::-webkit-datetime-edit {
+        opacity: 0;
+      }
+    }
+  }
 
   &.has-prepended-node {
     .form-control {

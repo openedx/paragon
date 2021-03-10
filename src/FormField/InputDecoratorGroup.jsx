@@ -87,6 +87,7 @@ const InputDecoratorGroup = ({
         'has-appended-node': !!trailingElement,
         'has-leading-element': !!leadingElement,
         'has-trailing-element': !!trailingElement,
+        'has-floating-label': !!floatingLabel,
         '2pgn__input-group-lg': size === 'lg',
         '2pgn__input-group-sm': size === 'sm',
         'pgn__input-decorator-group-lg': size === 'lg',

@@ -24,11 +24,13 @@ const TextField = ({ label, size, leadingElement, trailingElement, value, defaul
         },
       )}
     >
-    <label>{label}</label>
-      <InputDecoratorGroup size={size}>
+    <label>{label}</label>textarea
+      <InputDecoratorGroup>
         <FormControl
+          as="textarea"
           id={controlId}
           value={value}
+          size={size}
           defaultValue={defaultValue}
           onFocus={(event) => callAllHandlers(
             event,
