@@ -15,7 +15,7 @@ const FieldLabel = ({ children, isInline, size, className }) => (
   })}>{children}</label>
 );
 
-const FormField = ({
+const FormField = React.forwardRef(({
   label,
   size,
   labelPosition,
@@ -27,7 +27,7 @@ const FormField = ({
   defaultValue,
   id,
   ...formControlProps
-}) => {
+}, ref) => {
   const [hasFocus, setHasFocusTrue, setHasFocusFalse] = useToggle(false);
   const [hasValue, checkInputEventValue] = useHasValue(defaultValue, value);
   const controlId = React.useMemo(() => id || newId('text-field'), [id]);
@@ -57,6 +57,7 @@ const FormField = ({
         size={size}
       >
         <FormControl
+          ref={ref}
           id={controlId}
           value={value}
           size={size}
@@ -78,25 +79,25 @@ const FormField = ({
       </InputDecoratorGroup>
     </div>
   );
-};
+});
 
 FormField.defaultProps = {
   labelPosition: 'floating',
 };
 
-const TextField = props => <FormField {...props} />;
+const TextField = React.forwardRef((props, ref) => <FormField {...props} ref={ref} />);
 
 TextField.defaultProps = {
   labelPosition: 'floating',
 };
 
 
-const SelectField = ({ children, ...props }) => (
-  <FormField as="select" {...props} trailingElement={undefined}>
+const SelectField = React.forwardRef(({ children, ...props }, ref) => (
+  <FormField ref={ref} as="select" {...props} trailingElement={undefined}>
     {props.labelPosition === 'floating' && <option></option>}
     {children}
   </FormField>
-);
+));
 
 SelectField.defaultProps = {
   labelPosition: 'floating',
