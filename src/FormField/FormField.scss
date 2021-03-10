@@ -122,7 +122,11 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
     font-size: $font-size;
   }
 }
+select.form-control {
+  background: $custom-select-bg $custom-select-background;
+  appearance: none;
 
+}
 @mixin input-group-floating-label-float(
   $padding-x,
   $padding-y,
