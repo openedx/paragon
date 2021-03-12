@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Input, FormControl, InputText, InputSelect, InputTextarea } from '..';
+import {
+  Input, FormControl, InputText, InputSelect, InputTextarea,
+} from '..';
 import newId from '../utils/newId';
 import useToggle from '../hooks/useToggle';
 
 import { callAllHandlers, useHasValue } from './fieldUtils';
 
-const TextField = ({ label, size, leadingElement, trailingElement, value, defaultValue, id, ...formControlProps }) => {
+const TextField = ({
+  label, size, leadingElement, trailingElement, value, defaultValue, id, ...formControlProps
+}) => {
   const [hasFocus, setHasFocusTrue, setHasFocusFalse] = useToggle(false);
   const [hasValue, checkInputEventValue] = useHasValue(defaultValue, value);
   const controlId = React.useMemo(() => id || newId('text-field'), [id]);
@@ -24,7 +28,7 @@ const TextField = ({ label, size, leadingElement, trailingElement, value, defaul
         },
       )}
     >
-    <label>{label}</label>textarea
+      <label>{label}</label>textarea
       <InputDecoratorGroup>
         <FormControl
           as="textarea"

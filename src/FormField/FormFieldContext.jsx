@@ -1,13 +1,13 @@
 import React from 'react';
+import classNames from 'classnames';
 import { newId } from '../utils';
 import useToggle from '../hooks/useToggle';
 import { callAllHandlers } from './fieldUtils';
-import classNames from 'classnames';
 
 const useIdList = (uniqueIdPrefix, initialList) => {
   const [idList, setIdList] = React.useState(initialList || []);
   const getNewId = () => {
-    console.log('new id', uniqueIdPrefix)
+    console.log('new id', uniqueIdPrefix);
     const idToAdd = newId(`${uniqueIdPrefix}-`);
     setIdList(oldIdList => [...oldIdList, idToAdd]);
     return idToAdd;
@@ -17,7 +17,6 @@ const useIdList = (uniqueIdPrefix, initialList) => {
   };
   return [idList, getNewId, removeId];
 };
-
 
 // const useHasValue = (defaultValue, value) => {
 //   const [hasUncontrolledValue, setHasUncontrolledValue] = useState(!!defaultValue);
@@ -29,7 +28,7 @@ const useIdList = (uniqueIdPrefix, initialList) => {
 const mergeAriaAttributes = (...values) => {
   const mergedValues = classNames(values);
   return mergedValues || undefined;
-}
+};
 
 const FormFieldContext = React.createContext();
 

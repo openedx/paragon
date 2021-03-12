@@ -1,4 +1,6 @@
-import React, { useContext, createContext, useMemo, useEffect, useState } from 'react';
+import React, {
+  useContext, createContext, useMemo, useEffect, useState,
+} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Icon } from '..';
@@ -6,7 +8,9 @@ import { Icon } from '..';
 // import { InputDecoratorGroup } from './InputDecoratorGroup';
 // import useToggle from '../hooks/useToggle';
 // import { callAllHandlers, useHasValue } from './fieldUtils';
-import { Check, Close, Cancel, CheckCircle, RadioButtonUnchecked, WarningFilled } from '../../icons';
+import {
+  Check, Close, Cancel, CheckCircle, RadioButtonUnchecked, WarningFilled,
+} from '../../icons';
 
 import { useFormFieldContext } from './FormFieldContext';
 
@@ -27,7 +31,8 @@ const FieldLabel = ({ children, isInline, ...props }) => {
 
   return (
     <label
-      {...props} className={className}
+      {...props}
+      className={className}
       htmlFor={fieldId}
     >
       {children}

@@ -1,4 +1,6 @@
-import React, { useContext, createContext, useMemo, useEffect, useState } from 'react';
+import React, {
+  useContext, createContext, useMemo, useEffect, useState,
+} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -35,7 +37,7 @@ const FormControlFloatingLabel = ({ children }) => {
 /**
   * Decorates a textual input.
   */
- const FormControlDecoratorGroup = ({
+const FormControlDecoratorGroup = ({
   children,
   leadingElement,
   trailingElement,
