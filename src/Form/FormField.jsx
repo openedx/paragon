@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { FormFieldContextProvider } from './FormFieldContext';
 import { FORM_CONTROL_SIZES } from './constants';
-import classNames from 'classnames';
 
 const FormField = ({
   children,
