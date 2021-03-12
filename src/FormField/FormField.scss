@@ -197,8 +197,8 @@ select.form-control {
   }
 
   .form-control:focus ~ &,
-  .form-control.has-value ~ &,
-  select.form-control ~ & {
+  // select.form-control ~ &,
+  .form-control.has-value ~ & {
     .pgn__input-group-floating-label-text {
       background-color: $input-bg;
     }
@@ -228,6 +228,10 @@ select.form-control {
       $input-border-width
     );
   }
+}
+
+.pgn__input-decorator-group.has-floating-label select.form-control:not(.has-value):not(:focus) {
+  color: rgba(0,0,0,0);
 }
 
 
