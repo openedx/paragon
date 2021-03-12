@@ -1,12 +1,8 @@
 // @import "variables";
 
 $icon-width: 32px;
-$input-bg: white;
-$focus-color: $primary-500;
-$focus-border-width: 2px;
-$difference-focus-default-border-width: $focus-border-width - $input-border-width;
 
-.pgn__input-decorator-group {
+.pgn__form-control-decorator-group {
   position: relative;
   display: flex;
   flex-grow: 1;
@@ -47,17 +43,17 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
 
   font-size: $input-font-size;
   line-height: $input-line-height;
-  &.pgn__input-decorator-group-sm {
+  &.pgn__form-control-decorator-group-sm {
     font-size: $input-font-size-sm;
     line-height: $input-line-height-sm;
   }
-  &.pgn__input-decorator-group-lg {
+  &.pgn__form-control-decorator-group-lg {
     font-size: $input-font-size-lg;
     line-height: $input-line-height-lg;
   }
 }
 
-.pgn__input-decorator {
+.pgn__form-control-decorator {
   position: absolute;
   pointer-events: none;
   button {
@@ -70,45 +66,45 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
   justify-content: center;
   align-items: center;
   font-size: inherit;
-  &.pgn__input-decorator-leading {
+  &.pgn__form-control-decorator-leading {
     left: 0;
     padding-left: $input-padding-x;
     padding-right: $input-padding-x / 2;
   }
-  &.pgn__input-decorator-trailing {
+  &.pgn__form-control-decorator-trailing {
     right: 0;
     padding-left: $input-padding-x / 2;
     padding-right: calc(#{$input-padding-y-sm} - #{2 * $input-border-width});
   }
 
-  .pgn__input-decorator-group-lg & {
+  .pgn__form-control-decorator-group-lg & {
     height: $input-height-lg;
     min-width: $input-height-lg;
-    &.pgn__input-decorator-leading {
+    &.pgn__form-control-decorator-leading {
       padding-left: $input-padding-x-lg;
       padding-right: $input-padding-x-lg / 2;
     }
-    &.pgn__input-decorator-trailing {
+    &.pgn__form-control-decorator-trailing {
       padding-left: $input-padding-x-lg / 2;
       padding-right: calc(#{$input-padding-y} - #{2 * $input-border-width});
     }
   }
 
-  .pgn__input-decorator-group-sm & {
+  .pgn__form-control-decorator-group-sm & {
     height: $input-height-sm;
     min-width: $input-height-lg;
-    &.pgn__input-decorator-leading {
+    &.pgn__form-control-decorator-leading {
       padding-left: $input-padding-x-sm;
       padding-right: $input-padding-x-sm / 2;
     }
-    &.pgn__input-decorator-trailing {
+    &.pgn__form-control-decorator-trailing {
       padding-left: $input-padding-x-sm / 2;
       padding-right: calc(#{$input-padding-y-sm} - #{2 * $input-border-width});
     }
   }
 }
 
-@mixin input-group-floating-label-initial(
+@mixin form-control-floating-label-initial(
   $padding-x,
   $padding-y,
   $line-height,
@@ -116,7 +112,7 @@ $difference-focus-default-border-width: $focus-border-width - $input-border-widt
   $border-width
 ) {
   padding: 0 $padding-x;
-  .pgn__input-group-floating-label-content {
+  .pgn__form-control-floating-label-content {
     padding-top: $padding-y;
     line-height: $line-height;
     font-size: $font-size;
@@ -127,14 +123,14 @@ select.form-control {
   appearance: none;
 
 }
-@mixin input-group-floating-label-float(
+@mixin form-control-floating-label-float(
   $padding-x,
   $padding-y,
   $line-height,
   $font-size,
   $border-width
 ) {
-  .pgn__input-group-floating-label-text {
+  .pgn__form-control-floating-label-text {
     $half-leading: ($line-height - 0.8) / 2;
     $percent-height-minus-no-bottom-leading: (
         ($line-height - $half-leading) / $line-height
@@ -143,7 +139,7 @@ select.form-control {
   }
 }
 
-.pgn__input-group-floating-label {
+.pgn__form-control-floating-label {
   position: absolute;
   left: $input-border-width;
   right: 0;
@@ -152,12 +148,12 @@ select.form-control {
   height: 100%;
   pointer-events: none;
 
-  .pgn__input-group-floating-label-content {
+  .pgn__form-control-floating-label-content {
     border-top: solid 2px transparent;
     position: relative;
     left: -0.5em;
   }
-  .pgn__input-group-floating-label-text {
+  .pgn__form-control-floating-label-text {
     transform-origin: left top;
     padding: 0 0.5em;
     transition: transform 150ms ease, background-color 150ms linear;
@@ -165,20 +161,20 @@ select.form-control {
   }
 
   .has-leading-element & {
-    .pgn__input-group-floating-label-text {
+    .pgn__form-control-floating-label-text {
       transform: translateX(#{$icon-width});
     }
   }
 
-  @include input-group-floating-label-initial(
+  @include form-control-floating-label-initial(
     $input-padding-x,
     $input-padding-y,
     $input-line-height,
     $input-font-size,
     $input-border-width
   );
-  .pgn__input-decorator-group-lg & {
-    @include input-group-floating-label-initial(
+  .pgn__form-control-decorator-group-lg & {
+    @include form-control-floating-label-initial(
       $input-padding-x-lg,
       $input-padding-y-lg,
       $input-line-height-lg,
@@ -186,8 +182,8 @@ select.form-control {
       $input-border-width
     );
   }
-  .pgn__input-decorator-group-sm & {
-    @include input-group-floating-label-initial(
+  .pgn__form-control-decorator-group-sm & {
+    @include form-control-floating-label-initial(
       $input-padding-x-sm,
       $input-padding-y-sm,
       $input-line-height-sm,
@@ -199,10 +195,10 @@ select.form-control {
   .form-control:focus ~ &,
   // select.form-control ~ &,
   .form-control.has-value ~ & {
-    .pgn__input-group-floating-label-text {
+    .pgn__form-control-floating-label-text {
       background-color: $input-bg;
     }
-    @include input-group-floating-label-float(
+    @include form-control-floating-label-float(
       $input-padding-x,
       $input-padding-y,
       $input-line-height,
@@ -210,8 +206,8 @@ select.form-control {
       $input-border-width
     );
   }
-  .float-label.pgn__input-decorator-group-lg & {
-    @include input-group-floating-label-float(
+  .float-label.pgn__form-control-decorator-group-lg & {
+    @include form-control-floating-label-float(
       $input-padding-x-lg,
       $input-padding-y-lg,
       $input-line-height-lg,
@@ -219,8 +215,8 @@ select.form-control {
       $input-border-width
     );
   }
-  .float-label.pgn__input-decorator-group-sm & {
-    @include input-group-floating-label-float(
+  .float-label.pgn__form-control-decorator-group-sm & {
+    @include form-control-floating-label-float(
       $input-padding-x-sm,
       $input-padding-y-sm,
       $input-line-height-sm,
@@ -230,7 +226,7 @@ select.form-control {
   }
 }
 
-.pgn__input-decorator-group.has-floating-label select.form-control:not(.has-value):not(:focus) {
+.pgn__form-control-decorator-group.has-floating-label select.form-control:not(.has-value):not(:focus) {
   color: rgba(0,0,0,0);
 }
 
@@ -352,209 +348,3 @@ $custom-checkbox-indicator-icon-checked:        str-replace(url("data:image/svg+
     color: $success-500;
   }
 }
-
-
-// //
-// // Check/radio
-// //
-
-// .form-check {
-//   display: block;
-//   min-height: $form-check-min-height;
-//   padding-left: $form-check-padding-start;
-//   margin-bottom: $form-check-margin-bottom;
-
-//   .form-check-input {
-//     float: left;
-//     margin-left: $form-check-padding-start * -1;
-//   }
-// }
-$form-check-input-width: 1.5rem;
-$form-check-input-bg: blue;
-$form-check-input-border: green;
-$form-check-input-focus-border: red;
-$form-check-input-focus-box-shadow: 0 0 0 4px green;
-$form-check-input-checked-bg-color: yellow;
-$form-check-input-checked-border-color: yellow;
-$form-check-input-indeterminate-bg-color: red;
-$form-check-input-indeterminate-border-color: purple;
-
-$form-check-checked-color: blue;
-$form-check-indeterminate-color: blue;
-$form-check-unchecked-color: rgba(0,0,0,1);
-$form-check-disabled-opacity: gray;
-
-$form-radio-checked-color: blue;
-$form-radio-indeterminate-color: blue;
-$form-radio-unchecked-color: rgba(0,0,0,1);
-$form-radio-disabled-opacity: gray;
-
-
-$form-check-input-checked-bg-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 3H3V21H21V3ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z" fill="#{$form-check-checked-color}"/></svg>');
-$form-check-input-unchecked-bg-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 5V19H5V5H19ZM21 3H3V21H21V3Z" fill="#{$form-check-unchecked-color}"/></svg>');
-$form-check-input-indeterminate-bg-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 3H3V21H21V3ZM17 13H7V11H17V13Z" fill="#{$form-check-indeterminate-color}"/></svg>');
-
-$form-check-radio-checked-bg-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z" fill="black"/>
-<path d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z" fill="black"/>
-</svg>
-');
-
-$form-check-radio-unchecked-bg-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z" fill="black"/>
-</svg>
-');
-
-$form-check-input-disabled-opacity: .5;
-$form-check-label-disabled-opacity: .5;
-
-.pgn__check-input {
-  width: $form-check-input-width;
-  height: $form-check-input-width;
-  margin-top: ($line-height-base - $form-check-input-width) / 2; // line-height minus check height
-  vertical-align: top;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  border: $form-check-input-border;
-  appearance: none;
-  // color-adjust: exact; // Keep themed appearance for print
-  // @include transition($form-check-transition);
-
-  &[type="checkbox"] {
-    background-image: escape-svg($form-check-input-unchecked-bg-image);
-    // @include border-radius($form-check-input-border-radius);
-  }
-
-  &[type="radio"] {
-    background-image: escape-svg($form-check-radio-unchecked-bg-image);
-    // stylelint-disable-next-line property-disallowed-list
-    // border-radius: $form-check-radio-border-radius;
-  }
-
-  &:active {
-    // filter: $form-check-input-active-filter;
-  }
-
-  &:focus {
-    border-color: $form-check-input-focus-border;
-    outline: 0;
-    box-shadow: $form-check-input-focus-box-shadow;
-  }
-
-  &:checked {
-    // background-color: $form-check-input-checked-bg-color;
-    // border-color: $form-check-input-checked-border-color;
-
-    &[type="checkbox"] {
-      background-image: escape-svg($form-check-input-checked-bg-image);
-    }
-
-    &[type="radio"] {
-      background-image: escape-svg($form-check-radio-checked-bg-image);
-    }
-  }
-
-  &[type="checkbox"]:indeterminate {
-    // background-color: $form-check-input-indeterminate-bg-color;
-    // border-color: $form-check-input-indeterminate-border-color;
-    background-image: escape-svg($form-check-input-indeterminate-bg-image);
-  }
-
-  &:disabled {
-    pointer-events: none;
-    filter: none;
-    opacity: $form-check-input-disabled-opacity;
-  }
-
-  // Use disabled attribute in addition of :disabled pseudo-class
-  // See: https://github.com/twbs/bootstrap/issues/28247
-  &[disabled],
-  &:disabled {
-    ~ .form-check-label {
-      opacity: $form-check-label-disabled-opacity;
-    }
-  }
-}
-
-.pgn__checkbox-group-options {
-  display: flex;
-  flex-direction: column;
-  & > .pgn__checkbox {
-    margin-right: 1rem;
-    margin-bottom: .5rem;
-  }
-}
-.pgn__checkbox-group-legend {
-  font-size: inherit;
-  color: inherit;
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-
-.pgn__form-input-text,
-.pgn__form-input-select,
-.pgn__form-input-textarea,
-.pgn__form-input-slider,
-.pgn__form-input-switch,
-.pgn__form-input-check {
-
-}
-
-
-// .form-check-label {
-//   color: $form-check-label-color;
-//   cursor: $form-check-label-cursor;
-// }
-
-// //
-// // Switch
-// //
-
-// .form-switch {
-//   padding-left: $form-switch-padding-start;
-
-//   .form-check-input {
-//     width: $form-switch-width;
-//     margin-left: $form-switch-padding-start * -1;
-//     background-image: escape-svg($form-switch-bg-image);
-//     background-position: left center;
-//     @include border-radius($form-switch-border-radius);
-//     @include transition($form-switch-transition);
-
-//     &:focus {
-//       background-image: escape-svg($form-switch-focus-bg-image);
-//     }
-
-//     &:checked {
-//       background-position: $form-switch-checked-bg-position;
-
-//       @if $enable-gradients {
-//         background-image: escape-svg($form-switch-checked-bg-image), var(--#{$variable-prefix}gradient);
-//       } @else {
-//         background-image: escape-svg($form-switch-checked-bg-image);
-//       }
-//     }
-//   }
-// }
-
-// .form-check-inline {
-//   display: inline-block;
-//   margin-right: $form-check-inline-margin-end;
-// }
-
-// .btn-check {
-//   position: absolute;
-//   clip: rect(0, 0, 0, 0);
-//   pointer-events: none;
-
-//   &[disabled],
-//   &:disabled {
-//     + .btn {
-//       pointer-events: none;
-//       filter: none;
-//       opacity: $form-check-btn-check-disabled-opacity;
-//     }
-//   }
-// }

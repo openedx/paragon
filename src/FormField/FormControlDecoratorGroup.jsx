@@ -5,24 +5,24 @@ import classNames from 'classnames';
 import { useFormFieldContext } from './FormFieldContext';
 
 // overlays
-const InputLeadingDecorator = ({ children }) => (
-  <div className="pgn__input-decorator pgn__input-decorator-leading">
+const FormControlLeadingDecorator = ({ children }) => (
+  <div className="pgn__form-control-decorator pgn__form-control-decorator-leading">
     {children}
   </div>
 );
-const InputTrailingDecorator = ({ children }) => (
-  <div className="pgn__input-decorator pgn__input-decorator-trailing">
+const FormControlTrailingDecorator = ({ children }) => (
+  <div className="pgn__form-control-decorator pgn__form-control-decorator-trailing">
     {children}
   </div>
 );
 
-const FormFieldControlFloatingLabel = ({ children }) => {
+const FormControlFloatingLabel = ({ children }) => {
   const { id: fieldId } = useFormFieldContext();
   return (
-    <div className="pgn__input-group-floating-label">
-      <div className="pgn__input-group-floating-label-content">
+    <div className="pgn__form-control-floating-label">
+      <div className="pgn__form-control-floating-label-content">
         <label
-          className="pgn__input-group-floating-label-text"
+          className="pgn__form-control-floating-label-text"
           htmlFor={fieldId}
         >
           {children}
@@ -35,7 +35,7 @@ const FormFieldControlFloatingLabel = ({ children }) => {
 /**
   * Decorates a textual input.
   */
- const FormFieldControlDecoratorGroup = ({
+ const FormControlDecoratorGroup = ({
   children,
   leadingElement,
   trailingElement,
@@ -49,26 +49,26 @@ const FormFieldControlFloatingLabel = ({ children }) => {
   return (
     <div
       className={classNames(
-        'pgn__input-decorator-group',
+        'pgn__form-control-decorator-group',
         {
           'has-prepended-node': !!leadingElement,
           'has-appended-node': !!trailingElement,
           'has-leading-element': !!leadingElement,
           'has-trailing-element': !!trailingElement,
           'has-floating-label': !!floatingLabel,
-          'pgn__input-decorator-group-lg': size === 'lg',
-          'pgn__input-decorator-group-sm': size === 'sm',
+          'pgn__form-control-decorator-group-lg': size === 'lg',
+          'pgn__form-control-decorator-group-sm': size === 'sm',
         },
         className,
       )}
       {...props}
     >
       {children}
-      {leadingElement && <InputLeadingDecorator>{leadingElement}</InputLeadingDecorator>}
-      {trailingElement && <InputTrailingDecorator>{trailingElement}</InputTrailingDecorator>}
-      {floatingLabel && <FormFieldControlFloatingLabel>{floatingLabel}</FormFieldControlFloatingLabel>}
+      {leadingElement && <FormControlLeadingDecorator>{leadingElement}</FormControlLeadingDecorator>}
+      {trailingElement && <FormControlTrailingDecorator>{trailingElement}</FormControlTrailingDecorator>}
+      {floatingLabel && <FormControlFloatingLabel>{floatingLabel}</FormControlFloatingLabel>}
     </div>
   );
 };
 
-export default FormFieldControlDecoratorGroup;
+export default FormControlDecoratorGroup;

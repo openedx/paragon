@@ -25,26 +25,26 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
   <>
     <FormField>
       <FormFieldLabel>description</FormFieldLabel>
-       <FormFieldControlDecoratorGroup
+       <FormControlDecoratorGroup
           leadingElement={<Icon src={Add} />}
           trailingElement={<Icon src={Add} />}
           floatingLabel="I'm a label"
         >
           <FormFieldControl value={value} onChange={(e) => setValue(e.target.value)} />
-        </FormFieldControlDecoratorGroup>
+        </FormControlDecoratorGroup>
       <FormFieldDescription>description</FormFieldDescription>
     </FormField>
 
 
     <FormField>
       <FormFieldLabel>description</FormFieldLabel>
-       <FormFieldControlDecoratorGroup
+       <FormControlDecoratorGroup
           leadingElement={<Icon src={Add} />}
           trailingElement={<Icon src={Add} />}
           floatingLabel="I'm a label"
         >
           <FormFieldControl as="textarea" value={value} onChange={(e) => setValue(e.target.value)} />
-        </FormFieldControlDecoratorGroup>
+        </FormControlDecoratorGroup>
       <FormFieldDescription>description</FormFieldDescription>
     </FormField>
 
@@ -52,7 +52,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
     <FormField>
       <FormFieldLabel>description</FormFieldLabel>
-       <FormFieldControlDecoratorGroup
+       <FormControlDecoratorGroup
           leadingElement={<Icon src={Add} />}
           floatingLabel="I'm a label"
         >
@@ -62,7 +62,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
             <option>hi</option>
             <option>hi</option>
           </FormFieldControl>
-        </FormFieldControlDecoratorGroup>
+        </FormControlDecoratorGroup>
       <FormFieldDescription>description</FormFieldDescription>
     </FormField>
   </>
