@@ -1,0 +1,202 @@
+---
+title: 'FormField'
+type: 'component'
+status: 'Stable'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: |
+
+---
+
+import get from 'lodash/get';
+import SingleComponentStatus from '../../components/SingleComponentStatus';
+import PropsTable from '../../components/PropsTable';
+
+# FormField
+
+<SingleComponentStatus frontmatter={props?.pageContext?.frontmatter} />
+
+`FormField` and the suite of components outlined here are the foundation for the
+to be developed, `TextField`, `SelectField`, and `TextareaField`.
+
+FormField renders its children inside a context that provides ids and attributes
+that enable these components to relate to each other according to WCAG guidelines.
+
+##### Basic usage with floating label
+
+```jsx live
+() => {
+  const [value, setValue] = useState('');
+  return (
+    <FormField>
+      <FormControlDecoratorGroup
+        leadingElement={<Icon src={FavoriteBorder} />}
+        trailingElement={<Icon src={Verified} />}
+        floatingLabel="What kind of cats?"
+      >
+        <FormFieldControl value={value} onChange={(e) => setValue(e.target.value)} />
+      </FormControlDecoratorGroup>
+      <FormFieldDescription>We answer the important questions here.</FormFieldDescription>
+    </FormField>
+  );
+}
+```
+
+##### Basic usage with external label
+
+```jsx live
+() => {
+  const [value, setValue] = useState('');
+  return (
+    <FormField>
+      <FormFieldLabel>What kind of cats?</FormFieldLabel>
+      <FormControlDecoratorGroup
+        leadingElement={<Icon src={FavoriteBorder} />}
+        trailingElement={<Icon src={Verified} />}
+      >
+        <FormFieldControl value={value} onChange={(e) => setValue(e.target.value)} />
+      </FormControlDecoratorGroup>
+      <FormFieldDescription>We answer the important questions here.</FormFieldDescription>
+    </FormField>
+  );
+}
+```
+
+##### Sizes
+
+```jsx live
+() => {
+  const [value, setValue] = useState('');
+  return (
+    <>
+      <FormField size="sm">
+        <FormControlDecoratorGroup floatingLabel="What kind of cats?">
+          <FormFieldControl value={value} onChange={(e) => setValue(e.target.value)} />
+        </FormControlDecoratorGroup>
+      </FormField>
+      <FormField>
+        <FormControlDecoratorGroup floatingLabel="What kind of cats?">
+          <FormFieldControl value={value} onChange={(e) => setValue(e.target.value)} />
+        </FormControlDecoratorGroup>
+      </FormField>
+      <FormField size="lg">
+        <FormControlDecoratorGroup floatingLabel="What kind of cats?">
+          <FormFieldControl value={value} onChange={(e) => setValue(e.target.value)} />
+        </FormControlDecoratorGroup>
+      </FormField>
+    </>
+  );
+}
+```
+
+
+##### Input types
+
+```jsx live
+() => {
+  const [value, setValue] = useState('');
+  return (
+    <>
+      <FormField size="sm">
+        <FormControlDecoratorGroup floatingLabel="What kind of cats?">
+          <FormFieldControl
+            leadingElement={<Icon src={FavoriteBorder} />}
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+          />
+        </FormControlDecoratorGroup>
+      </FormField>
+      <FormField>
+        <FormControlDecoratorGroup floatingLabel="What kind of cats?">
+          <FormFieldControl
+            as="textarea"
+            leadingElement={<Icon src={FavoriteBorder} />}
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+          />
+        </FormControlDecoratorGroup>
+      </FormField>
+      <FormField size="lg">
+        <FormControlDecoratorGroup floatingLabel="What kind of cats?">
+          <FormFieldControl
+            as="select"
+            leadingElement={<Icon src={FavoriteBorder} />}
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+          >
+            <option value="">Select a cat</option>
+            <option>Persian cat</option>
+            <option>British Shorthair</option>
+            <option>Maine Coon</option>
+            <option>Siamese cat</option>
+          </FormFieldControl>
+        </FormControlDecoratorGroup>
+      </FormField>
+    </>
+  );
+}
+```
+
+
+
+<PropsTable {...props.data.formFieldMetadata} />
+<PropsTable {...props.data.formFieldLabelMetadata} />
+<PropsTable {...props.data.formFieldControlMetadata} />
+<PropsTable {...props.data.formControlDecoratorGroupMetadata} />
+
+export const query = graphql`
+  query {
+    formFieldMetadata: componentMetadata(displayName: { eq: "FormField" }) {
+      ...ComponentDocGenData
+    }
+    formFieldLabelMetadata: componentMetadata(displayName: { eq: "FormFieldLabel" }) {
+      ...ComponentDocGenData
+    }
+    formFieldControlMetadata: componentMetadata(displayName: { eq: "FormFieldControl" }) {
+      ...ComponentDocGenData
+    }
+    formControlDecoratorGroupMetadata: componentMetadata(displayName: { eq: "FormControlDecoratorGroup" }) {
+      ...ComponentDocGenData
+    }
+  }
+`
+
+
+```
+
+<TextField
+      className="mb-3"
+      leadingElement={<Icon src={Add} />}
+      trailingElement={<Icon src={Add} />}
+      label="Last Name"
+    />
+
+    <TextField
+      as="textarea"
+      className="mb-3"
+      leadingElement={<Icon src={Add} />}
+      trailingElement={<Button size="sm" variant="tertiary">Copy</Button>}
+      label="Last Name"
+    />
+
+    <SelectField
+      className="mb-3"
+      leadingElement={<Icon src={Add} />}
+      trailingElement={<Button>Copy</Button>}
+      label="Last Name"
+    >
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </SelectField>
+```
+
+
+
+
+
+
+- Add layout effect to change padding of inputs.
+- make select options an array.

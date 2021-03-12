@@ -46,14 +46,10 @@ const Navigation = () => (
     <ParNavLink to="/components/collapsible">Collapsible</ParNavLink>
     <ParNavLink to="/components/container">Container</ParNavLink>
     <ParNavLink to="/components/dropdown">Dropdown</ParNavLink>
-    <ParNavLink to="/components/fieldset">Fieldset</ParNavLink>
     <ParNavLink to="/components/figure">Figure</ParNavLink>
-    <ParNavLink to="/components/forms">Forms</ParNavLink>
     <ParNavLink to="/components/hyperlink">Hyperlink</ParNavLink>
     <ParNavLink to="/components/icon">Icon</ParNavLink>
     <ParNavLink to="/components/icon-button">IconButton</ParNavLink>
-    <ParNavLink to="/components/input">Input</ParNavLink>
-    <ParNavLink to="/components/input-group">Input Group</ParNavLink>
     <ParNavLink to="/components/image">Image</ParNavLink>
     <ParNavLink to="/components/modal">Modal</ParNavLink>
     <ParNavLink to="/components/modal-layer">ModalLayer</ParNavLink>
@@ -75,8 +71,15 @@ const Navigation = () => (
     <ParNavLink to="/components/tooltip">Tooltip</ParNavLink>
     <ParNavLink to="/components/toast">Toast</ParNavLink>
     <ParNavLink to="/components/transitionreplace">TransitionReplace</ParNavLink>
-    <ParNavLink to="/components/validationformgroup">ValidationFormGroup</ParNavLink>
 
+    <NavSectionTitle>Forms</NavSectionTitle>
+
+    <ParNavLink to="/components/forms">Form</ParNavLink>
+    <ParNavLink to="/components/form-field">FormField</ParNavLink>
+    <ParNavLink to="/components/input">Input</ParNavLink>
+    <ParNavLink to="/components/input-group">Input Group</ParNavLink>
+    <ParNavLink to="/components/fieldset">Fieldset</ParNavLink>
+    <ParNavLink to="/components/validationformgroup">ValidationFormGroup</ParNavLink>
 
     <NavSectionTitle>Hooks</NavSectionTitle>
 
