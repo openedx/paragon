@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { useFormFieldContext } from './FormFieldContext';
 import { FORM_CONTROL_SIZES } from './constants';
 
-const FieldLabel = ({ children, isInline, ...props }) => {
+const FormFieldLabel = ({ children, isInline, ...props }) => {
   const {
     id: fieldId,
     size,
@@ -30,7 +30,7 @@ const FieldLabel = ({ children, isInline, ...props }) => {
   );
 };
 
-FieldLabel.propTypes = {
+FormFieldLabel.propTypes = {
   isInline: PropTypes.bool,
   size: PropTypes.oneOf([
     FORM_CONTROL_SIZES.SMALL,
@@ -40,10 +40,10 @@ FieldLabel.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-FieldLabel.defaultProps = {
+FormFieldLabel.defaultProps = {
   isInline: false,
   size: undefined,
   className: undefined,
 };
 
-export default FieldLabel;
+export default FormFieldLabel;

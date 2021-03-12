@@ -2,6 +2,10 @@
 
 $icon-width: 32px;
 
+.pgn__form-field {
+  margin-bottom: $form-group-margin-bottom;
+}
+
 .pgn__form-control-decorator-group {
   position: relative;
   display: flex;

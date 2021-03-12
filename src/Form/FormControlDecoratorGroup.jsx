@@ -17,8 +17,8 @@ const FormControlDecoratorGroup = ({
   className,
   ...props
 }) => {
-  const { size } = useFormFieldContext({ size: props.size });
-
+  const { size } = useFormFieldContext(props);
+console.log(useFormFieldContext({ size: props.size }));
   return (
     <div
       className={classNames(
@@ -29,8 +29,8 @@ const FormControlDecoratorGroup = ({
           'has-leading-element': !!leadingElement,
           'has-trailing-element': !!trailingElement,
           'has-floating-label': !!floatingLabel,
-          'pgn__form-control-decorator-group-lg': size === 'lg',
-          'pgn__form-control-decorator-group-sm': size === 'sm',
+          'pgn__form-control-decorator-group-lg': size === FORM_CONTROL_SIZES.LARGE,
+          'pgn__form-control-decorator-group-sm': size === FORM_CONTROL_SIZES.SMALL,
         },
         className,
       )}

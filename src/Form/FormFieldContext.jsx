@@ -5,13 +5,22 @@ import useToggle from '../hooks/useToggle';
 import { callAllHandlers, useIdList, mergeAttributeValues } from './fieldUtils';
 import { FORM_CONTROL_SIZES } from './constants';
 
+const omitUndefinedProperties = (obj) => Object.entries(obj)
+  .reduce((acc, [key, value]) => {
+    if (value !== undefined) {
+      acc[key] = value;
+    }
+    return acc;
+  }, {});
+
 const FormFieldContext = React.createContext();
 
 const useFormFieldContext = (props = {}) => {
+  const cleanedProps = omitUndefinedProperties(props);
   const contextValue = React.useContext(FormFieldContext);
   const mergedValues = {
     ...contextValue,
-    ...props,
+    ...cleanedProps,
     'aria-describedby': mergeAttributeValues(
       contextValue['aria-describedby'],
       props['aria-describedby'],
@@ -39,7 +48,6 @@ const FormFieldContextProvider = ({
     isInvalid,
     isValid,
     size,
-    // hasValue,
     hasFocus,
     getNewDescriptorId,
     removeDescriptorId,

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormFieldContextProvider } from './FormFieldContext';
 import { FORM_CONTROL_SIZES } from './constants';
+import classNames from 'classnames';
 
 const FormField = ({
   children,
@@ -13,7 +14,10 @@ const FormField = ({
   size,
   as,
   ...props
-}) => React.createElement(as, props, (
+}) => React.createElement(as, {
+  ...props,
+  className: classNames('pgn__form-field', props.className),
+}, (
   <FormFieldContextProvider
     id={id}
     isInvalid={isInvalid}
@@ -29,6 +33,7 @@ const FormField = ({
 FormField.propTypes = {
   as: PropTypes.elementType,
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
   id: PropTypes.string,
   isInvalid: PropTypes.bool,
   isValid: PropTypes.bool,
@@ -42,6 +47,7 @@ FormField.propTypes = {
 
 FormField.defaultProps = {
   as: 'div',
+  className: undefined,
   id: undefined,
   isInvalid: false,
   isValid: false,
