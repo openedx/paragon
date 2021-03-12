@@ -3,46 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useFormFieldContext } from './FormFieldContext';
 import { FORM_CONTROL_SIZES } from './constants';
-
-const FormControlLeadingDecorator = ({ children }) => (
-  <div className="pgn__form-control-decorator pgn__form-control-decorator-leading">
-    {children}
-  </div>
-);
-
-FormControlLeadingDecorator.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
-const FormControlTrailingDecorator = ({ children }) => (
-  <div className="pgn__form-control-decorator pgn__form-control-decorator-trailing">
-    {children}
-  </div>
-);
-
-FormControlTrailingDecorator.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
-const FormControlFloatingLabel = ({ children }) => {
-  const { id: fieldId } = useFormFieldContext();
-  return (
-    <div className="pgn__form-control-floating-label">
-      <div className="pgn__form-control-floating-label-content">
-        <label
-          className="pgn__form-control-floating-label-text"
-          htmlFor={fieldId}
-        >
-          {children}
-        </label>
-      </div>
-    </div>
-  );
-};
-
-FormControlFloatingLabel.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+import FormControlFloatingLabel from './FormControlFloatingLabel';
+import FormControlDecorator from './FormControlDecorator';
 
 /**
   * Decorates a textual input.
@@ -75,8 +37,8 @@ const FormControlDecoratorGroup = ({
       {...props}
     >
       {children}
-      {leadingElement && <FormControlLeadingDecorator>{leadingElement}</FormControlLeadingDecorator>}
-      {trailingElement && <FormControlTrailingDecorator>{trailingElement}</FormControlTrailingDecorator>}
+      {leadingElement && <FormControlDecorator location="leading">{leadingElement}</FormControlDecorator>}
+      {trailingElement && <FormControlDecorator location="trailing">{trailingElement}</FormControlDecorator>}
       {floatingLabel && <FormControlFloatingLabel>{floatingLabel}</FormControlFloatingLabel>}
     </div>
   );
