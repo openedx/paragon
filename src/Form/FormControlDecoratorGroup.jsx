@@ -18,7 +18,6 @@ const FormControlDecoratorGroup = ({
   ...props
 }) => {
   const { size } = useFormFieldContext(props);
-console.log(useFormFieldContext({ size: props.size }));
   return (
     <div
       className={classNames(
