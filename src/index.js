@@ -35,13 +35,14 @@ export {
   FormText,
   InputGroup,
 } from './Form';
-export { default as InputText } from './FormField/InputText';
-export { default as InputSelect } from './FormField/InputSelect';
-export { default as InputTextarea } from './FormField/InputTextarea';
-export { default as InputCheckbox } from './FormField/InputCheckbox';
-export { default as InputRadio } from './FormField/InputRadio';
-export { default as InputSwitch } from './FormField/InputSwitch';
-export { default as TextField, SelectField } from './FormField/TextField';
+export { default as FormField } from './FormField/FormField';
+export { default as FormFieldControl } from './FormField/FormFieldControl';
+export { default as FormFieldDescription } from './FormField/FormFieldDescription';
+export { default as FormFieldLabel } from './FormField/FormFieldLabel';
+export { default as FormFieldControlDecoratorGroup } from './FormField/FormFieldControlDecoratorGroup';
+// export { default as InputRadio } from './FormField/InputRadio';
+// export { default as InputSwitch } from './FormField/InputSwitch';
+// export { default as TextField, SelectField } from './FormField/TextField';
 export {
   InputDecoratorGroup,
   InputLeadingDecorator,
@@ -52,9 +53,9 @@ export {
 export { default as Hyperlink } from './Hyperlink';
 export { default as Icon } from './Icon';
 export { default as IconButton } from './IconButton';
-// export { default as Input } from './Input';
-// export { default as InputSelect } from './InputSelect';
-// export { default as InputText } from './InputText';
+export { default as Input } from './Input';
+export { default as InputSelect } from './InputSelect';
+export { default as InputText } from './InputText';
 export { default as Image, Figure } from './Image';
 export { default as ListBox } from './ListBox';
 export { default as ListBoxOption } from './ListBoxOption';

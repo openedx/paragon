@@ -196,8 +196,9 @@ select.form-control {
     );
   }
 
-  // float
-  .float-label & {
+  .form-control:focus ~ &,
+  .form-control.has-value ~ &,
+  select.form-control ~ & {
     .pgn__input-group-floating-label-text {
       background-color: $input-bg;
     }
@@ -228,6 +229,7 @@ select.form-control {
     );
   }
 }
+
 
 .pgn__text-field-inline {
   display: flex;
@@ -300,6 +302,50 @@ $custom-checkbox-indicator-icon-checked:        str-replace(url("data:image/svg+
   .pgn__checkbox-label {
     margin-left: .5em;
 //         background-image: escape-svg($form-check-input-checked-bg-image);
+  }
+}
+
+.pgn__field-description {
+  margin-top: .5rem;
+  font-size: $small-font-size;
+  display: flex;
+  align-items: center;
+  .pgn__icon {
+    height: 1em;
+    margin-right: .5em;
+    width: 1em;
+    display: inline-block;
+  }
+  & ~ .pgn__field-description {
+    margin-top: .25rem;
+  }
+}
+.pgn__field-description-valid {
+  color: $success-500;
+}
+.pgn__field-description-invalid {
+  color: $danger-500;
+}
+.pgn__field-description-warning {
+  color: $gray-900;
+}
+.pgn__field-description-muted {
+  color: $text-muted;
+}
+.pgn__field-description-criteria-empty {
+  .pgn__icon {
+    color: $text-muted;
+  }
+}
+
+.pgn__field-description-criteria-invalid {
+  .pgn__icon {
+    color: $danger-500;
+  }
+}
+.pgn__field-description-criteria-valid {
+  .pgn__icon {
+    color: $success-500;
   }
 }
 

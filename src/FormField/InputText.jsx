@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { useFormFieldContext } from './FormFieldContext';
+import { FormControl } from '..';
 
-const getInputTextClassName = (size, hasValue, ...others) => classNames(
+const getInputTextClassName = (size, ...others) => classNames(
   'form-control',
   {
-    'has-value': hasValue,
     'form-control-lg': size === 'lg',
     'form-control-sm': size === 'sm',
   },
@@ -13,16 +14,19 @@ const getInputTextClassName = (size, hasValue, ...others) => classNames(
 );
 
 const InputText = React.forwardRef(({ size, className, ...props }, ref) => {
-  const [hasValue, setHasValue] = React.useState(!!props.value && !!props.defaultValue);
+  const mergedContextAndProps = useFormFieldContext(props);
+  // const allClassNames = getInputTextClassName(
+  //   size,
+  //   className,
+  //   mergedContextAndProps.isInvalid,
+  //   mergedContextAndProps.isValid,
+  // );
   return (
-    <input
+    <FormControl
       ref={ref}
-      className={getInputTextClassName(size, hasValue, className)}
-      onBlur={(e) => {
-        setHasValue(!!e.target.value);
-        props.onBlur && props.onBlur(e);
-      }}
-      {...props}
+      size={size}
+      className={className}
+      {...mergedContextAndProps}
     />
   );
 });

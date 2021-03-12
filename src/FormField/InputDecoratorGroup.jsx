@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Input, FormControl, InputText, InputSelect, InputTextarea } from '..';
+import { Input, FormControl } from '..';
 import newId from '../utils/newId';
 import useToggle from '../hooks/useToggle';
 
@@ -55,9 +55,6 @@ function sortInputDecoratorChildren(childA, childB) {
 const validInputChildren = [
   // Input.name,
   FormControl.name,
-  InputText.name,
-  InputSelect.name,
-  InputTextarea.name,
   'input',
   'textarea',
   'select',

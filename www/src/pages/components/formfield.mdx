@@ -23,8 +23,56 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
   const [value, setValue] = useState('');
   return (
   <>
+    <FormField>
+      <FormFieldLabel>description</FormFieldLabel>
+       <FormFieldControlDecoratorGroup
+          leadingElement={<Icon src={Add} />}
+          trailingElement={<Icon src={Add} />}
+          floatingLabel="I'm a label"
+        >
+          <FormFieldControl value={value} onChange={(e) => setValue(e.target.value)} />
+        </FormFieldControlDecoratorGroup>
+      <FormFieldDescription>description</FormFieldDescription>
+    </FormField>
 
-    <TextField
+
+    <FormField>
+      <FormFieldLabel>description</FormFieldLabel>
+       <FormFieldControlDecoratorGroup
+          leadingElement={<Icon src={Add} />}
+          trailingElement={<Icon src={Add} />}
+          floatingLabel="I'm a label"
+        >
+          <FormFieldControl as="textarea" value={value} onChange={(e) => setValue(e.target.value)} />
+        </FormFieldControlDecoratorGroup>
+      <FormFieldDescription>description</FormFieldDescription>
+    </FormField>
+
+
+
+    <FormField>
+      <FormFieldLabel>description</FormFieldLabel>
+       <FormFieldControlDecoratorGroup
+          leadingElement={<Icon src={Add} />}
+          floatingLabel="I'm a label"
+        >
+          <FormFieldControl as="select" value={value} onChange={(e) => setValue(e.target.value)}>
+            <option>hi</option>
+            <option>hi</option>
+            <option>hi</option>
+            <option>hi</option>
+          </FormFieldControl>
+        </FormFieldControlDecoratorGroup>
+      <FormFieldDescription>description</FormFieldDescription>
+    </FormField>
+  </>
+  );
+}
+```
+
+```
+
+<TextField
       className="mb-3"
       leadingElement={<Icon src={Add} />}
       trailingElement={<Icon src={Add} />}
@@ -51,12 +99,12 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
       <option>4</option>
       <option>5</option>
     </SelectField>
-  </>
-  );
-}
-```
 
-```
+
+
+
+
+
 
 
 
@@ -165,6 +213,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
 - Reconcile with validation form group <<
 - Add layout effect to change padding of inputs.
+- make select options an array.
 
 
 

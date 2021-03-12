@@ -1,8 +1,13 @@
 import { useState } from 'react';
 
-const callAllHandlers = (event, ...handlers) => handlers
-  .filter(handler => typeof handler === 'function')
-  .forEach(handler => handler(event));
+const callAllHandlers = (...handlers) => {
+  const unifiedEventHandler = (event) => {
+    handlers
+      .filter(handler => typeof handler === 'function')
+      .forEach(handler => handler(event));
+  };
+  return unifiedEventHandler;
+};
 
 const useHasValue = (defaultValue, value) => {
   const [hasUncontrolledValue, setHasUncontrolledValue] = useState(!!defaultValue);
