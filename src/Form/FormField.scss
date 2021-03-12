@@ -329,9 +329,6 @@ $custom-checkbox-indicator-icon-checked:        str-replace(url("data:image/svg+
 .pgn__field-description-warning {
   color: $gray-900;
 }
-.pgn__field-description-muted {
-  color: $text-muted;
-}
 .pgn__field-description-criteria-empty {
   .pgn__icon {
     color: $text-muted;

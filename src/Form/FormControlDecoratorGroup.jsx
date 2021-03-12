@@ -1,22 +1,28 @@
-import React, {
-  useContext, createContext, useMemo, useEffect, useState,
-} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
 import { useFormFieldContext } from './FormFieldContext';
+import { FORM_CONTROL_SIZES } from './constants';
 
-// overlays
 const FormControlLeadingDecorator = ({ children }) => (
   <div className="pgn__form-control-decorator pgn__form-control-decorator-leading">
     {children}
   </div>
 );
+
+FormControlLeadingDecorator.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 const FormControlTrailingDecorator = ({ children }) => (
   <div className="pgn__form-control-decorator pgn__form-control-decorator-trailing">
     {children}
   </div>
 );
+
+FormControlTrailingDecorator.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 const FormControlFloatingLabel = ({ children }) => {
   const { id: fieldId } = useFormFieldContext();
@@ -34,6 +40,10 @@ const FormControlFloatingLabel = ({ children }) => {
   );
 };
 
+FormControlFloatingLabel.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 /**
   * Decorates a textual input.
   */
@@ -41,12 +51,11 @@ const FormControlDecoratorGroup = ({
   children,
   leadingElement,
   trailingElement,
-  isLabelFloating,
   floatingLabel,
   className,
   ...props
 }) => {
-  const { id: fieldId, size } = useFormFieldContext({ size: props.size });
+  const { size } = useFormFieldContext({ size: props.size });
 
   return (
     <div
@@ -71,6 +80,25 @@ const FormControlDecoratorGroup = ({
       {floatingLabel && <FormControlFloatingLabel>{floatingLabel}</FormControlFloatingLabel>}
     </div>
   );
+};
+
+FormControlDecoratorGroup.propTypes = {
+  children: PropTypes.node.isRequired,
+  leadingElement: PropTypes.node,
+  trailingElement: PropTypes.node,
+  floatingLabel: PropTypes.node,
+  className: PropTypes.string,
+  size: PropTypes.oneOf([
+    FORM_CONTROL_SIZES.SMALL,
+    FORM_CONTROL_SIZES.LARGE,
+  ]),
+};
+FormControlDecoratorGroup.defaultProps = {
+  leadingElement: undefined,
+  trailingElement: undefined,
+  floatingLabel: undefined,
+  className: undefined,
+  size: undefined,
 };
 
 export default FormControlDecoratorGroup;

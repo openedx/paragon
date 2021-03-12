@@ -1,18 +1,8 @@
-import React, {
-  useContext, createContext, useMemo, useEffect, useState,
-} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Icon } from '..';
-// import newId from '../utils/newId';
-// import { InputDecoratorGroup } from './InputDecoratorGroup';
-// import useToggle from '../hooks/useToggle';
-// import { callAllHandlers, useHasValue } from './fieldUtils';
-import {
-  Check, Close, Cancel, CheckCircle, RadioButtonUnchecked, WarningFilled,
-} from '../../icons';
-
 import { useFormFieldContext } from './FormFieldContext';
+import { FORM_CONTROL_SIZES } from './constants';
 
 const FieldLabel = ({ children, isInline, ...props }) => {
   const {
@@ -23,8 +13,8 @@ const FieldLabel = ({ children, isInline, ...props }) => {
     'pgn__field-label',
     {
       'pgn__field-label-inline': isInline,
-      'pgn__field-label-lg': size === 'lg',
-      'pgn__field-label-sm': size === 'sm',
+      'pgn__field-label-lg': size === FORM_CONTROL_SIZES.LARGE,
+      'pgn__field-label-sm': size === FORM_CONTROL_SIZES.SMALL,
     },
     props.className,
   );
@@ -38,6 +28,22 @@ const FieldLabel = ({ children, isInline, ...props }) => {
       {children}
     </label>
   );
+};
+
+FieldLabel.propTypes = {
+  isInline: PropTypes.bool,
+  size: PropTypes.oneOf([
+    FORM_CONTROL_SIZES.SMALL,
+    FORM_CONTROL_SIZES.LARGE,
+  ]),
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired,
+};
+
+FieldLabel.defaultProps = {
+  isInline: false,
+  size: undefined,
+  className: undefined,
 };
 
 export default FieldLabel;

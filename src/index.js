@@ -35,11 +35,11 @@ export {
   FormText,
   InputGroup,
 } from './Form';
-export { default as FormField } from './FormField/FormField';
-export { default as FormFieldControl } from './FormField/FormFieldControl';
-export { default as FormFieldDescription } from './FormField/FormFieldDescription';
-export { default as FormFieldLabel } from './FormField/FormFieldLabel';
-export { default as FormControlDecoratorGroup } from './FormField/FormControlDecoratorGroup';
+export { default as FormField } from './Form/FormField';
+export { default as FormFieldControl } from './Form/FormFieldControl';
+export { default as FormFieldDescription } from './Form/FormFieldDescription';
+export { default as FormFieldLabel } from './Form/FormFieldLabel';
+export { default as FormControlDecoratorGroup } from './Form/FormControlDecoratorGroup';
 export { default as Hyperlink } from './Hyperlink';
 export { default as Icon } from './Icon';
 export { default as IconButton } from './IconButton';

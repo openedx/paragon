@@ -42,4 +42,16 @@ const FormFieldControl = React.forwardRef(({ className, ...props }, ref) => {
   );
 });
 
+FormFieldControl.propTypes = {
+  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  className: PropTypes.string,
+};
+
+FormFieldControl.defaultProps = {
+  className: undefined,
+  defaultValue: undefined,
+  value: undefined,
+};
+
 export default FormFieldControl;
