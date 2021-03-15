@@ -10,14 +10,14 @@ notes: |
 
 ---
 
-<p className="lead">
-  This is a pass through component from React-Bootstrap.<br/>
-  <a href="https://react-bootstrap.github.io/components/overlays#tooltips" target="_blank" rel="noopener noreferrer">
-    See React-Bootstrap for documentation.
-  </a>
-</p>
+import get from 'lodash/get';
+import SingleComponentStatus from '../../components/SingleComponentStatus';
 
-### Basic Usage
+# Tooltip
+
+<SingleComponentStatus frontmatter={props?.pageContext?.frontmatter} />
+
+##### Basic Usage
 
 ```jsx live
 <>
@@ -35,4 +35,24 @@ notes: |
     </OverlayTrigger>
   ))}
 </>
+```
+
+##### Light version
+
+```jsx live
+<div className="bg-dark-700 p-4">
+  {['top', 'right', 'bottom', 'left'].map((placement) => (
+    <OverlayTrigger
+      key={placement}
+      placement={placement}
+      overlay={
+        <Tooltip variant="tooltip-light" id={`tooltip-${placement}`}>
+          Tooltip on <strong>{placement}</strong>.
+        </Tooltip>
+      }
+    >
+      <Button variant="inverse-outline-brand" className="mr-2 mb-2">Tooltip on {placement}</Button>
+    </OverlayTrigger>
+  ))}
+</div>
 ```
