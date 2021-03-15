@@ -1,2 +1,16 @@
 @import "variables";
 @import "~bootstrap/scss/dropdown";
+
+.dropdown-toggle::after {
+    border: 0;
+    border-style: solid;
+    border-width: 0.15rem 0.15rem 0 0;
+    content: '';
+    height: 0.45rem;
+    left: 0.25rem;
+    position: relative;
+    top: 0.15rem;
+    transform: rotate(135deg);
+    vertical-align: super;
+    width: 0.45rem;
+}
