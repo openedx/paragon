@@ -84,3 +84,8 @@ FormFieldDescription.defaultProps = {
 };
 
 export default FormFieldDescription;
+export {
+  VARIANTS,
+  VARIANT_ICONS,
+  DescriptionIcon,
+};

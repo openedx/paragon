@@ -2,6 +2,14 @@ import classNames from 'classnames';
 import { useState } from 'react';
 import { newId } from '../utils';
 
+const omitUndefinedProperties = (obj = {}) => Object.entries(obj)
+  .reduce((acc, [key, value]) => {
+    if (value !== undefined) {
+      acc[key] = value;
+    }
+    return acc;
+  }, {});
+
 const callAllHandlers = (...handlers) => {
   const unifiedEventHandler = (event) => {
     handlers
@@ -11,7 +19,7 @@ const callAllHandlers = (...handlers) => {
   return unifiedEventHandler;
 };
 
-const useHasValue = (defaultValue, value) => {
+const useHasValue = ({ defaultValue, value }) => {
   const [hasUncontrolledValue, setHasUncontrolledValue] = useState(!!defaultValue);
   const hasValue = !!value || hasUncontrolledValue;
   const handleInputEvent = (e) => setHasUncontrolledValue(e.target.value);
@@ -26,7 +34,7 @@ const useIdList = (uniqueIdPrefix, initialList) => {
     return idToAdd;
   };
   const removeId = (idToRemove) => {
-    setIdList(oldIdList => oldIdList.filter(id => id === idToRemove));
+    setIdList(oldIdList => oldIdList.filter(id => id !== idToRemove));
   };
   return [idList, getNewId, removeId];
 };
@@ -41,4 +49,5 @@ export {
   useHasValue,
   mergeAttributeValues,
   useIdList,
+  omitUndefinedProperties,
 };

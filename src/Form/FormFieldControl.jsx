@@ -17,7 +17,7 @@ const FormFieldControl = React.forwardRef(({ className, ...props }, ref) => {
     'aria-describedby': ariaDescribedBy,
   } = useFormFieldContext(props);
 
-  const [hasValue, checkInputEventValue] = useHasValue(props.defaultValue, props.value);
+  const [hasValue, checkInputEventValue] = useHasValue({ defaultValue: props.defaultValue, value: props.value });
 
   return (
     <FormControl
