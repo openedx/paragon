@@ -47,6 +47,7 @@ that enable these components to relate to each other according to WCAG guideline
 ```jsx live
 () => {
   const [value, setValue] = useState('');
+  const handleChange = (e) => setValue(e.target.value);
   return (
     <FormField>
       <FormFieldLabel>What kind of cats?</FormFieldLabel>
@@ -54,9 +55,11 @@ that enable these components to relate to each other according to WCAG guideline
         leadingElement={<Icon src={FavoriteBorder} />}
         trailingElement={<Icon src={Verified} />}
       >
-        <FormFieldControl value={value} onChange={(e) => setValue(e.target.value)} />
+        <FormFieldControl value={value} onChange={handleChange} />
       </FormControlDecoratorGroup>
-      <FormFieldDescription>We answer the important questions here.</FormFieldDescription>
+      <FormFieldDescription>
+        We answer the important questions.
+      </FormFieldDescription>
     </FormField>
   );
 }
@@ -67,22 +70,80 @@ that enable these components to relate to each other according to WCAG guideline
 ```jsx live
 () => {
   const [value, setValue] = useState('');
+  const handleChange = (e) => setValue(e.target.value);
   return (
     <>
       <FormField size="sm">
         <FormControlDecoratorGroup floatingLabel="What kind of cats?">
-          <FormFieldControl value={value} onChange={(e) => setValue(e.target.value)} />
+          <FormFieldControl value={value} onChange={handleChange} />
         </FormControlDecoratorGroup>
       </FormField>
+
       <FormField>
         <FormControlDecoratorGroup floatingLabel="What kind of cats?">
-          <FormFieldControl value={value} onChange={(e) => setValue(e.target.value)} />
+          <FormFieldControl value={value} onChange={handleChange} />
         </FormControlDecoratorGroup>
       </FormField>
+
       <FormField size="lg">
         <FormControlDecoratorGroup floatingLabel="What kind of cats?">
-          <FormFieldControl value={value} onChange={(e) => setValue(e.target.value)} />
+          <FormFieldControl value={value} onChange={handleChange} />
         </FormControlDecoratorGroup>
+      </FormField>
+    </>
+  );
+}
+```
+
+##### States
+
+```jsx live
+() => {
+  const [value, setValue] = useState('');
+  const handleChange = (e) => setValue(e.target.value);
+  return (
+    <>
+      <FormField isInvalid>
+        <FormFieldLabel>What kind of cats?</FormFieldLabel>
+        <FormFieldControl value={value} onChange={handleChange} />
+        <FormFieldDescription variant="invalid">
+          You are incorrect!
+        </FormFieldDescription>
+      </FormField>
+
+      <FormField isValid>
+        <FormFieldLabel>What kind of cats?</FormFieldLabel>
+        <FormFieldControl value={value} onChange={handleChange} />
+        <FormFieldDescription variant="valid">
+          You are correct!
+        </FormFieldDescription>
+      </FormField>
+
+      <FormField>
+        <FormFieldLabel>What kind of cats?</FormFieldLabel>
+        <FormFieldControl value={value} onChange={handleChange} />
+        <FormFieldDescription>
+          Let me help you!
+        </FormFieldDescription>
+      </FormField>
+
+      <FormField>
+        <FormFieldLabel>What kind of cats?</FormFieldLabel>
+        <FormFieldControl value={value} onChange={handleChange} />
+        <FormFieldDescription icon={<Icon src={WarningFilled} />}>
+          Making it custom. Be very careful.
+        </FormFieldDescription>
+      </FormField>
+
+      <FormField>
+        <FormFieldLabel>What kind of cats?</FormFieldLabel>
+        <FormFieldControl value={value} onChange={handleChange} />
+        <FormFieldDescription>
+          More than one at a time!
+        </FormFieldDescription>
+        <FormFieldDescription variant="valid">
+          This is okay sometimes.
+        </FormFieldDescription>
       </FormField>
     </>
   );
@@ -95,41 +156,75 @@ that enable these components to relate to each other according to WCAG guideline
 ```jsx live
 () => {
   const [value, setValue] = useState('');
+  const handleChange = (e) => setValue(e.target.value);
   return (
     <>
-      <FormField size="sm">
-        <FormControlDecoratorGroup floatingLabel="What kind of cats?">
-          <FormFieldControl
-            leadingElement={<Icon src={FavoriteBorder} />}
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-          />
-        </FormControlDecoratorGroup>
-      </FormField>
       <FormField>
-        <FormControlDecoratorGroup floatingLabel="What kind of cats?">
-          <FormFieldControl
-            as="textarea"
-            leadingElement={<Icon src={FavoriteBorder} />}
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-          />
+        <FormControlDecoratorGroup
+          leadingElement={<Icon src={FavoriteBorder} />}
+          floatingLabel="What kind of cats?"
+        >
+          <FormFieldControl value={value} onChange={handleChange} />
         </FormControlDecoratorGroup>
       </FormField>
-      <FormField size="lg">
-        <FormControlDecoratorGroup floatingLabel="What kind of cats?">
-          <FormFieldControl
-            as="select"
-            leadingElement={<Icon src={FavoriteBorder} />}
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-          >
+
+      <FormField>
+        <FormControlDecoratorGroup
+          leadingElement={<Icon src={FavoriteBorder} />}
+          floatingLabel="What kind of cats?"
+        >
+          <FormFieldControl as="textarea" value={value} onChange={handleChange} />
+        </FormControlDecoratorGroup>
+      </FormField>
+
+      <FormField>
+        <FormControlDecoratorGroup
+          leadingElement={<Icon src={FavoriteBorder} />}
+          floatingLabel="What kind of cats?"
+        >
+          <FormFieldControl as="select" value={value} onChange={handleChange} >
             <option value="">Select a cat</option>
             <option>Persian cat</option>
             <option>British Shorthair</option>
             <option>Maine Coon</option>
             <option>Siamese cat</option>
           </FormFieldControl>
+        </FormControlDecoratorGroup>
+      </FormField>
+
+      <FormField>
+        <FormControlDecoratorGroup
+          leadingElement={<Icon src={FavoriteBorder} />}
+          floatingLabel="Password cats?"
+        >
+          <FormFieldControl type="password" value={value} onChange={handleChange} />
+        </FormControlDecoratorGroup>
+      </FormField>
+
+      <FormField>
+        <FormControlDecoratorGroup
+          leadingElement={<Icon src={FavoriteBorder} />}
+          floatingLabel="When cats?"
+        >
+          <FormFieldControl type="date" value={value} onChange={handleChange} />
+        </FormControlDecoratorGroup>
+      </FormField>
+
+      <FormField>
+        <FormControlDecoratorGroup
+          leadingElement={<Icon src={FavoriteBorder} />}
+          floatingLabel="How many cats?"
+        >
+          <FormFieldControl type="number" value={value} onChange={handleChange} />
+        </FormControlDecoratorGroup>
+      </FormField>
+
+      <FormField>
+        <FormControlDecoratorGroup
+          leadingElement={<Icon src={FavoriteBorder} />}
+          floatingLabel="Time cats?"
+        >
+          <FormFieldControl type="time" value={value} onChange={handleChange} />
         </FormControlDecoratorGroup>
       </FormField>
     </>
