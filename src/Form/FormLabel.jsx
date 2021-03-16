@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { useFormFieldContext } from './FormFieldContext';
+import { useFormGroupContext } from './FormGroupContext';
 import { FORM_CONTROL_SIZES } from './constants';
 
 const FormLabel = ({ children, isInline, ...props }) => {
   const {
     id: fieldId,
     size,
-  } = useFormFieldContext({ size: props.size });
+  } = useFormGroupContext({ size: props.size });
   const className = classNames(
-    'pgn__field-label',
+    'pgn__form-label',
     {
-      'pgn__field-label-inline': isInline,
-      'pgn__field-label-lg': size === FORM_CONTROL_SIZES.LARGE,
-      'pgn__field-label-sm': size === FORM_CONTROL_SIZES.SMALL,
+      'pgn__form-label-inline': isInline,
+      'pgn__form-label-lg': size === FORM_CONTROL_SIZES.LARGE,
+      'pgn__form-label-sm': size === FORM_CONTROL_SIZES.SMALL,
     },
     props.className,
   );

@@ -1,18 +1,18 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import FormControlDescription, { VARIANTS, VARIANT_ICONS } from './FormControlDescription';
-import { FormFieldContext } from './FormFieldContext';
+import FormControlDescription, { DESCRIPTION_TYPES, DESCRIPTION_TYPE_ICONS } from '../FormControlDescription';
+import { FormGroupContext } from '../FormGroupContext';
 
 describe('FormControlDescription', () => {
   it('renders a form control with an id', () => {
     const getNewDescriptorId = jest.fn(() => 'descriptor-id');
     const wrapper = mount((
-      <FormFieldContext.Provider value={{ getNewDescriptorId }}>
+      <FormGroupContext.Provider value={{ getNewDescriptorId }}>
         <FormControlDescription>
           This is a description
         </FormControlDescription>
-      </FormFieldContext.Provider>
+      </FormGroupContext.Provider>
     ));
     expect(wrapper.exists('[children="This is a description"]')).toBe(true);
     const descriptionNode = wrapper.find(FormControlDescription).first().childAt(0);
@@ -22,11 +22,11 @@ describe('FormControlDescription', () => {
 
   it('renders with a default icon for a variant', () => {
     const wrapper = mount((
-      <FormControlDescription type={VARIANTS.VALID}>
+      <FormControlDescription type={DESCRIPTION_TYPES.VALID}>
         This is a description
       </FormControlDescription>
     ));
-    expect(wrapper.exists(VARIANT_ICONS[VARIANTS.VALID])).toBe(true);
+    expect(wrapper.exists(DESCRIPTION_TYPE_ICONS[DESCRIPTION_TYPES.VALID])).toBe(true);
   });
 
   it('renders with a custom icon', () => {

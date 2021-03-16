@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import RBFormControl from 'react-bootstrap/FormControl';
-import { useFormFieldContext } from './FormFieldContext';
+import { useFormGroupContext } from './FormGroupContext';
 import FormControlDescription from './FormControlDescription';
 import FormControlDecoratorGroup from './FormControlDecoratorGroup';
 
@@ -26,7 +26,7 @@ const FormControl = React.forwardRef(({
     onBlur,
     placeholder,
     'aria-describedby': ariaDescribedBy,
-  } = useFormFieldContext(props);
+  } = useFormGroupContext(props);
 
   const [hasValue, checkInputEventValue] = useHasValue({ defaultValue: props.defaultValue, value: props.value });
 

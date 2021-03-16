@@ -1,10 +1,10 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import FormGroup from './FormGroup';
-import FormControl from './FormControl';
-import FormLabel from './FormLabel';
-import FormControlDescription from './FormControlDescription';
+import FormGroup from '../FormGroup';
+import FormControl from '../FormControl';
+import FormLabel from '../FormLabel';
+import FormControlDescription from '../FormControlDescription';
 
 /* eslint-disable react/prop-types */
 jest.mock('react-bootstrap/FormControl', () => (props) => {

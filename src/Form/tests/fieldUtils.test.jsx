@@ -7,7 +7,7 @@ import {
   mergeAttributeValues,
   useIdList,
   omitUndefinedProperties,
-} from './fieldUtils';
+} from '../fieldUtils';
 
 describe('omitUndefinedProperties', () => {
   it('removes undefined properties from an object', () => {

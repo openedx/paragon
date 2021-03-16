@@ -112,7 +112,7 @@ that enable these components to relate to each other according to WCAG guideline
       <FormGroup isInvalid>
         <FormLabel>What kind of cats?</FormLabel>
         <FormControl value={value} onChange={handleChange} />
-        <FormControl.Feedback variant="invalid">
+        <FormControl.Feedback type="invalid">
           You are incorrect!
         </FormControl.Feedback>
       </FormGroup>
@@ -120,7 +120,7 @@ that enable these components to relate to each other according to WCAG guideline
       <FormGroup isValid>
         <FormLabel>What kind of cats?</FormLabel>
         <FormControl value={value} onChange={handleChange} />
-        <FormControl.Feedback variant="valid">
+        <FormControl.Feedback type="valid">
           You are correct!
         </FormControl.Feedback>
       </FormGroup>
@@ -147,7 +147,7 @@ that enable these components to relate to each other according to WCAG guideline
         <FormControl.Feedback>
           More than one at a time!
         </FormControl.Feedback>
-        <FormControl.Feedback variant="valid">
+        <FormControl.Feedback type="valid">
           This is okay sometimes.
         </FormControl.Feedback>
       </FormGroup>

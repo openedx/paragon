@@ -10,17 +10,17 @@ import {
 } from './fieldUtils';
 import { FORM_CONTROL_SIZES } from './constants';
 
-const FormFieldContext = React.createContext();
+const FormGroupContext = React.createContext();
 
-const defaultFormFieldContextValue = {
+const defaultFormGroupContextValue = {
   getNewDescriptorId: () => {}, // noop by default
 };
 
-const useFormFieldContext = (props = {}) => {
+const useFormGroupContext = (props = {}) => {
   const cleanedProps = omitUndefinedProperties(props);
-  const contextValue = React.useContext(FormFieldContext) || {};
+  const contextValue = React.useContext(FormGroupContext) || {};
   const mergedValues = {
-    ...defaultFormFieldContextValue,
+    ...defaultFormGroupContextValue,
     ...contextValue,
     ...cleanedProps,
     'aria-describedby': mergeAttributeValues(
@@ -33,7 +33,7 @@ const useFormFieldContext = (props = {}) => {
   return mergedValues;
 };
 
-const FormFieldContextProvider = ({
+const FormGroupContextProvider = ({
   children,
   id,
   isInvalid,
@@ -58,13 +58,13 @@ const FormFieldContextProvider = ({
     onBlur: callAllHandlers(setHasFocusFalse, onBlur),
   };
   return (
-    <FormFieldContext.Provider value={contextValue}>
+    <FormGroupContext.Provider value={contextValue}>
       {children}
-    </FormFieldContext.Provider>
+    </FormGroupContext.Provider>
   );
 };
 
-FormFieldContextProvider.propTypes = {
+FormGroupContextProvider.propTypes = {
   children: PropTypes.node.isRequired,
   id: PropTypes.string,
   isInvalid: PropTypes.bool,
@@ -77,7 +77,7 @@ FormFieldContextProvider.propTypes = {
   ]),
 };
 
-FormFieldContextProvider.defaultProps = {
+FormGroupContextProvider.defaultProps = {
   id: undefined,
   isInvalid: undefined,
   isValid: undefined,
@@ -87,7 +87,7 @@ FormFieldContextProvider.defaultProps = {
 };
 
 export {
-  FormFieldContext,
-  FormFieldContextProvider,
-  useFormFieldContext,
+  FormGroupContext,
+  FormGroupContextProvider,
+  useFormGroupContext,
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { FormFieldContextProvider } from './FormFieldContext';
+import { FormGroupContextProvider } from './FormGroupContext';
 import { FORM_CONTROL_SIZES } from './constants';
 
 const FormGroup = ({
@@ -16,9 +16,9 @@ const FormGroup = ({
   ...props
 }) => React.createElement(as, {
   ...props,
-  className: classNames('pgn__form-field', props.className),
+  className: classNames('pgn__form-group', props.className),
 }, (
-  <FormFieldContextProvider
+  <FormGroupContextProvider
     id={id}
     isInvalid={isInvalid}
     isValid={isValid}
@@ -27,7 +27,7 @@ const FormGroup = ({
     size={size}
   >
     {children}
-  </FormFieldContextProvider>
+  </FormGroupContextProvider>
 ));
 
 FormGroup.propTypes = {

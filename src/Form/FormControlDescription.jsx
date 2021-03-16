@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { useFormFieldContext } from './FormFieldContext';
+import { useFormGroupContext } from './FormGroupContext';
 import { Icon } from '..';
 import {
   Check, Close, Cancel, CheckCircle, RadioButtonUnchecked, WarningFilled,
 } from '../../icons';
 
-const VARIANTS = {
+const DESCRIPTION_TYPES = {
   VALID: 'valid',
   INVALID: 'invalid',
   WARNING: 'warning',
@@ -16,13 +16,13 @@ const VARIANTS = {
   CRITERIA_INVALID: 'criteria-invalid',
 };
 
-const VARIANT_ICONS = {
-  [VARIANTS.VALID]: Check,
-  [VARIANTS.INVALID]: Close,
-  [VARIANTS.WARNING]: WarningFilled,
-  [VARIANTS.CRITERIA_EMPTY]: RadioButtonUnchecked,
-  [VARIANTS.CRITERIA_VALID]: CheckCircle,
-  [VARIANTS.CRITERIA_INVALID]: Cancel,
+const DESCRIPTION_TYPE_ICONS = {
+  [DESCRIPTION_TYPES.VALID]: Check,
+  [DESCRIPTION_TYPES.INVALID]: Close,
+  [DESCRIPTION_TYPES.WARNING]: WarningFilled,
+  [DESCRIPTION_TYPES.CRITERIA_EMPTY]: RadioButtonUnchecked,
+  [DESCRIPTION_TYPES.CRITERIA_VALID]: CheckCircle,
+  [DESCRIPTION_TYPES.CRITERIA_INVALID]: Cancel,
 };
 
 const DescriptionIcon = ({ type, customIcon }) => {
@@ -30,16 +30,16 @@ const DescriptionIcon = ({ type, customIcon }) => {
     return customIcon;
   }
 
-  const variantIcon = VARIANT_ICONS[type];
-  if (variantIcon) {
-    return <Icon src={variantIcon} />;
+  const typeIcon = DESCRIPTION_TYPE_ICONS[type];
+  if (typeIcon) {
+    return <Icon src={typeIcon} />;
   }
 
   return null;
 };
 
 DescriptionIcon.propTypes = {
-  type: PropTypes.oneOf(Object.values(VARIANTS)),
+  type: PropTypes.oneOf(Object.values(DESCRIPTION_TYPES)),
   customIcon: PropTypes.node,
 };
 
@@ -51,15 +51,15 @@ DescriptionIcon.defaultProps = {
 const FormControlDescription = ({
   children, type, icon, className, muted, ...props
 }) => {
-  const { id: fieldId, getNewDescriptorId } = useFormFieldContext();
+  const { id: fieldId, getNewDescriptorId } = useFormGroupContext();
   const [id, setId] = useState();
   useEffect(() => setId(getNewDescriptorId()), [fieldId]);
   return (
     <div
       id={id}
       className={classNames(
-        'pgn__field-description',
-        type && `pgn__field-description-${type}`,
+        'pgn__form-control-description',
+        type && `pgn__form-control-description-${type}`,
         className,
         {
           'text-muted': muted,
@@ -74,7 +74,7 @@ const FormControlDescription = ({
 };
 
 FormControlDescription.propTypes = {
-  type: PropTypes.oneOf(Object.values(VARIANTS)),
+  type: PropTypes.oneOf(Object.values(DESCRIPTION_TYPES)),
   icon: PropTypes.node,
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
@@ -90,7 +90,7 @@ FormControlDescription.defaultProps = {
 
 export default FormControlDescription;
 export {
-  VARIANTS,
-  VARIANT_ICONS,
+  DESCRIPTION_TYPES,
+  DESCRIPTION_TYPE_ICONS,
   DescriptionIcon,
 };
