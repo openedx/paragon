@@ -1,5 +1,5 @@
 ---
-title: 'FormField'
+title: 'FormGroup'
 type: 'component'
 status: 'Stable'
 designStatus: 'Done'
@@ -12,14 +12,14 @@ import get from 'lodash/get';
 import SingleComponentStatus from '../../components/SingleComponentStatus';
 import PropsTable from '../../components/PropsTable';
 
-# FormField
+# FormGroup
 
 <SingleComponentStatus frontmatter={props?.pageContext?.frontmatter} />
 
-`FormField` and the suite of components outlined here are the foundation for the
+`FormGroup` and the suite of components outlined here are the foundation for the
 to be developed, `TextField`, `SelectField`, and `TextareaField`.
 
-FormField renders its children inside a context that provides ids and attributes
+FormGroup renders its children inside a context that provides ids and attributes
 that enable these components to relate to each other according to WCAG guidelines.
 
 ##### Basic usage with floating label
@@ -28,16 +28,16 @@ that enable these components to relate to each other according to WCAG guideline
 () => {
   const [value, setValue] = useState('');
   return (
-    <FormField>
-      <FormControlDecoratorGroup
+    <FormGroup>
+      <FormControl
         leadingElement={<Icon src={FavoriteBorder} />}
         trailingElement={<Icon src={Verified} />}
         floatingLabel="What kind of cats?"
-      >
-        <FormFieldControl value={value} onChange={(e) => setValue(e.target.value)} />
-      </FormControlDecoratorGroup>
-      <FormFieldDescription>We answer the important questions here.</FormFieldDescription>
-    </FormField>
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
+      <FormControl.Feedback>We answer the important questions here.</FormControl.Feedback>
+    </FormGroup>
   );
 }
 ```
@@ -49,18 +49,18 @@ that enable these components to relate to each other according to WCAG guideline
   const [value, setValue] = useState('');
   const handleChange = (e) => setValue(e.target.value);
   return (
-    <FormField>
-      <FormFieldLabel>What kind of cats?</FormFieldLabel>
-      <FormControlDecoratorGroup
+    <FormGroup>
+      <FormLabel>What kind of cats?</FormLabel>
+      <FormControl
+        value={value}
+        onChange={handleChange}
         leadingElement={<Icon src={FavoriteBorder} />}
         trailingElement={<Icon src={Verified} />}
-      >
-        <FormFieldControl value={value} onChange={handleChange} />
-      </FormControlDecoratorGroup>
-      <FormFieldDescription>
+      />
+      <FormControl.Feedback>
         We answer the important questions.
-      </FormFieldDescription>
-    </FormField>
+      </FormControl.Feedback>
+    </FormGroup>
   );
 }
 ```
@@ -73,23 +73,29 @@ that enable these components to relate to each other according to WCAG guideline
   const handleChange = (e) => setValue(e.target.value);
   return (
     <>
-      <FormField size="sm">
-        <FormControlDecoratorGroup floatingLabel="What kind of cats?">
-          <FormFieldControl value={value} onChange={handleChange} />
-        </FormControlDecoratorGroup>
-      </FormField>
+      <FormGroup size="sm">
+        <FormControl
+          value={value}
+          onChange={handleChange}
+          floatingLabel="What kind of cats?"
+        />
+      </FormGroup>
 
-      <FormField>
-        <FormControlDecoratorGroup floatingLabel="What kind of cats?">
-          <FormFieldControl value={value} onChange={handleChange} />
-        </FormControlDecoratorGroup>
-      </FormField>
+      <FormGroup>
+        <FormControl
+          value={value}
+          onChange={handleChange}
+          floatingLabel="What kind of cats?"
+        />
+      </FormGroup>
 
-      <FormField size="lg">
-        <FormControlDecoratorGroup floatingLabel="What kind of cats?">
-          <FormFieldControl value={value} onChange={handleChange} />
-        </FormControlDecoratorGroup>
-      </FormField>
+      <FormGroup size="lg">
+        <FormControl
+          value={value}
+          onChange={handleChange}
+          floatingLabel="What kind of cats?"
+        />
+      </FormGroup>
     </>
   );
 }
@@ -103,48 +109,48 @@ that enable these components to relate to each other according to WCAG guideline
   const handleChange = (e) => setValue(e.target.value);
   return (
     <>
-      <FormField isInvalid>
-        <FormFieldLabel>What kind of cats?</FormFieldLabel>
-        <FormFieldControl value={value} onChange={handleChange} />
-        <FormFieldDescription variant="invalid">
+      <FormGroup isInvalid>
+        <FormLabel>What kind of cats?</FormLabel>
+        <FormControl value={value} onChange={handleChange} />
+        <FormControl.Feedback variant="invalid">
           You are incorrect!
-        </FormFieldDescription>
-      </FormField>
+        </FormControl.Feedback>
+      </FormGroup>
 
-      <FormField isValid>
-        <FormFieldLabel>What kind of cats?</FormFieldLabel>
-        <FormFieldControl value={value} onChange={handleChange} />
-        <FormFieldDescription variant="valid">
+      <FormGroup isValid>
+        <FormLabel>What kind of cats?</FormLabel>
+        <FormControl value={value} onChange={handleChange} />
+        <FormControl.Feedback variant="valid">
           You are correct!
-        </FormFieldDescription>
-      </FormField>
+        </FormControl.Feedback>
+      </FormGroup>
 
-      <FormField>
-        <FormFieldLabel>What kind of cats?</FormFieldLabel>
-        <FormFieldControl value={value} onChange={handleChange} />
-        <FormFieldDescription>
+      <FormGroup>
+        <FormLabel>What kind of cats?</FormLabel>
+        <FormControl value={value} onChange={handleChange} />
+        <FormControl.Feedback>
           Let me help you!
-        </FormFieldDescription>
-      </FormField>
+        </FormControl.Feedback>
+      </FormGroup>
 
-      <FormField>
-        <FormFieldLabel>What kind of cats?</FormFieldLabel>
-        <FormFieldControl value={value} onChange={handleChange} />
-        <FormFieldDescription icon={<Icon src={WarningFilled} />}>
+      <FormGroup>
+        <FormLabel>What kind of cats?</FormLabel>
+        <FormControl value={value} onChange={handleChange} />
+        <FormControl.Feedback icon={<Icon src={WarningFilled} />}>
           Making it custom. Be very careful.
-        </FormFieldDescription>
-      </FormField>
+        </FormControl.Feedback>
+      </FormGroup>
 
-      <FormField>
-        <FormFieldLabel>What kind of cats?</FormFieldLabel>
-        <FormFieldControl value={value} onChange={handleChange} />
-        <FormFieldDescription>
+      <FormGroup>
+        <FormLabel>What kind of cats?</FormLabel>
+        <FormControl value={value} onChange={handleChange} />
+        <FormControl.Feedback>
           More than one at a time!
-        </FormFieldDescription>
-        <FormFieldDescription variant="valid">
+        </FormControl.Feedback>
+        <FormControl.Feedback variant="valid">
           This is okay sometimes.
-        </FormFieldDescription>
-      </FormField>
+        </FormControl.Feedback>
+      </FormGroup>
     </>
   );
 }
@@ -159,74 +165,80 @@ that enable these components to relate to each other according to WCAG guideline
   const handleChange = (e) => setValue(e.target.value);
   return (
     <>
-      <FormField>
-        <FormControlDecoratorGroup
+      <FormGroup>
+        <FormControl
+          value={value}
+          onChange={handleChange}
+          leadingElement={<Icon src={FavoriteBorder} />}
+          floatingLabel="What kind of cats?"
+        />
+      </FormGroup>
+
+      <FormGroup>
+        <FormControl
+          as="textarea"
+          value={value}
+          onChange={handleChange}
+          leadingElement={<Icon src={FavoriteBorder} />}
+          floatingLabel="What kind of cats?"
+        />
+      </FormGroup>
+
+      <FormGroup>
+        <FormControl
+          as="select"
+          value={value}
+          onChange={handleChange}
           leadingElement={<Icon src={FavoriteBorder} />}
           floatingLabel="What kind of cats?"
         >
-          <FormFieldControl value={value} onChange={handleChange} />
-        </FormControlDecoratorGroup>
-      </FormField>
+          <option value="">Select a cat</option>
+          <option>Persian cat</option>
+          <option>British Shorthair</option>
+          <option>Maine Coon</option>
+          <option>Siamese cat</option>
+        </FormControl>
+      </FormGroup>
 
-      <FormField>
-        <FormControlDecoratorGroup
-          leadingElement={<Icon src={FavoriteBorder} />}
-          floatingLabel="What kind of cats?"
-        >
-          <FormFieldControl as="textarea" value={value} onChange={handleChange} />
-        </FormControlDecoratorGroup>
-      </FormField>
-
-      <FormField>
-        <FormControlDecoratorGroup
-          leadingElement={<Icon src={FavoriteBorder} />}
-          floatingLabel="What kind of cats?"
-        >
-          <FormFieldControl as="select" value={value} onChange={handleChange} >
-            <option value="">Select a cat</option>
-            <option>Persian cat</option>
-            <option>British Shorthair</option>
-            <option>Maine Coon</option>
-            <option>Siamese cat</option>
-          </FormFieldControl>
-        </FormControlDecoratorGroup>
-      </FormField>
-
-      <FormField>
-        <FormControlDecoratorGroup
+      <FormGroup>
+        <FormControl
+          type="password"
+          value={value}
+          onChange={handleChange}
           leadingElement={<Icon src={FavoriteBorder} />}
           floatingLabel="Password cats?"
-        >
-          <FormFieldControl type="password" value={value} onChange={handleChange} />
-        </FormControlDecoratorGroup>
-      </FormField>
+        />
+      </FormGroup>
 
-      <FormField>
-        <FormControlDecoratorGroup
+      <FormGroup>
+        <FormControl
+          type="date"
+          value={value}
+          onChange={handleChange}
           leadingElement={<Icon src={FavoriteBorder} />}
           floatingLabel="When cats?"
-        >
-          <FormFieldControl type="date" value={value} onChange={handleChange} />
-        </FormControlDecoratorGroup>
-      </FormField>
+        />
+      </FormGroup>
 
-      <FormField>
-        <FormControlDecoratorGroup
+      <FormGroup>
+        <FormControl
+          type="number"
+          value={value}
+          onChange={handleChange}
           leadingElement={<Icon src={FavoriteBorder} />}
           floatingLabel="How many cats?"
-        >
-          <FormFieldControl type="number" value={value} onChange={handleChange} />
-        </FormControlDecoratorGroup>
-      </FormField>
+        />
+      </FormGroup>
 
-      <FormField>
-        <FormControlDecoratorGroup
+      <FormGroup>
+        <FormControl
+          type="time"
+          value={value}
+          onChange={handleChange}
           leadingElement={<Icon src={FavoriteBorder} />}
           floatingLabel="Time cats?"
-        >
-          <FormFieldControl type="time" value={value} onChange={handleChange} />
-        </FormControlDecoratorGroup>
-      </FormField>
+        />
+      </FormGroup>
     </>
   );
 }
@@ -234,20 +246,20 @@ that enable these components to relate to each other according to WCAG guideline
 
 
 
-<PropsTable {...props.data.formFieldMetadata} />
-<PropsTable {...props.data.formFieldLabelMetadata} />
-<PropsTable {...props.data.formFieldControlMetadata} />
+<PropsTable {...props.data.FormGroupMetadata} />
+<PropsTable {...props.data.FormLabelMetadata} />
+<PropsTable {...props.data.FormControlMetadata} />
 <PropsTable {...props.data.formControlDecoratorGroupMetadata} />
 
 export const query = graphql`
   query {
-    formFieldMetadata: componentMetadata(displayName: { eq: "FormField" }) {
+    FormGroupMetadata: componentMetadata(displayName: { eq: "FormGroup" }) {
       ...ComponentDocGenData
     }
-    formFieldLabelMetadata: componentMetadata(displayName: { eq: "FormFieldLabel" }) {
+    FormLabelMetadata: componentMetadata(displayName: { eq: "FormLabel" }) {
       ...ComponentDocGenData
     }
-    formFieldControlMetadata: componentMetadata(displayName: { eq: "FormFieldControl" }) {
+    FormControlMetadata: componentMetadata(displayName: { eq: "FormControl" }) {
       ...ComponentDocGenData
     }
     formControlDecoratorGroupMetadata: componentMetadata(displayName: { eq: "FormControlDecoratorGroup" }) {

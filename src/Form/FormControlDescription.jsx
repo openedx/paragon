@@ -25,12 +25,12 @@ const VARIANT_ICONS = {
   [VARIANTS.CRITERIA_INVALID]: Cancel,
 };
 
-const DescriptionIcon = ({ variant, customIcon }) => {
+const DescriptionIcon = ({ type, customIcon }) => {
   if (customIcon) {
     return customIcon;
   }
 
-  const variantIcon = VARIANT_ICONS[variant];
+  const variantIcon = VARIANT_ICONS[type];
   if (variantIcon) {
     return <Icon src={variantIcon} />;
   }
@@ -39,17 +39,17 @@ const DescriptionIcon = ({ variant, customIcon }) => {
 };
 
 DescriptionIcon.propTypes = {
-  variant: PropTypes.oneOf(Object.values(VARIANTS)),
+  type: PropTypes.oneOf(Object.values(VARIANTS)),
   customIcon: PropTypes.node,
 };
 
 DescriptionIcon.defaultProps = {
-  variant: undefined,
+  type: undefined,
   customIcon: undefined,
 };
 
-const FormFieldDescription = ({
-  children, variant, icon, className, ...props
+const FormControlDescription = ({
+  children, type, icon, className, muted, ...props
 }) => {
   const { id: fieldId, getNewDescriptorId } = useFormFieldContext();
   const [id, setId] = useState();
@@ -59,31 +59,36 @@ const FormFieldDescription = ({
       id={id}
       className={classNames(
         'pgn__field-description',
-        variant && `pgn__field-description-${variant}`,
+        type && `pgn__field-description-${type}`,
         className,
+        {
+          'text-muted': muted,
+        },
       )}
       {...props}
     >
-      <DescriptionIcon customIcon={icon} variant={variant} />
+      <DescriptionIcon customIcon={icon} type={type} />
       {children}
     </div>
   );
 };
 
-FormFieldDescription.propTypes = {
-  variant: PropTypes.oneOf(Object.values(VARIANTS)),
+FormControlDescription.propTypes = {
+  type: PropTypes.oneOf(Object.values(VARIANTS)),
   icon: PropTypes.node,
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  muted: PropTypes.bool,
 };
 
-FormFieldDescription.defaultProps = {
-  variant: undefined,
+FormControlDescription.defaultProps = {
+  type: undefined,
   icon: undefined,
   className: undefined,
+  muted: false,
 };
 
-export default FormFieldDescription;
+export default FormControlDescription;
 export {
   VARIANTS,
   VARIANT_ICONS,

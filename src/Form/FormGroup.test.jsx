@@ -1,10 +1,10 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import FormField from './FormField';
-import FormFieldControl from './FormFieldControl';
-import FormFieldLabel from './FormFieldLabel';
-import FormFieldDescription from './FormFieldDescription';
+import FormGroup from './FormGroup';
+import FormControl from './FormControl';
+import FormLabel from './FormLabel';
+import FormControlDescription from './FormControlDescription';
 
 /* eslint-disable react/prop-types */
 jest.mock('react-bootstrap/FormControl', () => (props) => {
@@ -16,15 +16,15 @@ jest.mock('react-bootstrap/FormControl', () => (props) => {
   );
 });
 
-describe('FormField', () => {
+describe('FormGroup', () => {
   describe('associate element ids and attributes', () => {
     const wrapper = mount((
-      <FormField id="my-field">
-        <FormFieldLabel>My Field</FormFieldLabel>
-        <FormFieldControl />
-        <FormFieldDescription>Default help text</FormFieldDescription>
-        <FormFieldDescription>Second help text</FormFieldDescription>
-      </FormField>
+      <FormGroup id="my-field">
+        <FormLabel>My Field</FormLabel>
+        <FormControl />
+        <FormControlDescription>Default help text</FormControlDescription>
+        <FormControlDescription>Second help text</FormControlDescription>
+      </FormGroup>
     ));
 
     it('has a form control with the proper id', () => {
@@ -62,9 +62,9 @@ describe('FormField', () => {
 
   it('renders a form control with a generated id', () => {
     const wrapper = mount((
-      <FormField>
-        <FormFieldControl />
-      </FormField>
+      <FormGroup>
+        <FormControl />
+      </FormGroup>
     ));
     expect(wrapper.exists('form-control')).toBe(true);
     const formControlNode = wrapper.find('form-control').first();

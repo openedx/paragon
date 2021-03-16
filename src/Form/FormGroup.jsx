@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { FormFieldContextProvider } from './FormFieldContext';
 import { FORM_CONTROL_SIZES } from './constants';
 
-const FormField = ({
+const FormGroup = ({
   children,
   id,
   isInvalid,
@@ -30,7 +30,7 @@ const FormField = ({
   </FormFieldContextProvider>
 ));
 
-FormField.propTypes = {
+FormGroup.propTypes = {
   as: PropTypes.elementType,
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
@@ -45,7 +45,7 @@ FormField.propTypes = {
   ]),
 };
 
-FormField.defaultProps = {
+FormGroup.defaultProps = {
   as: 'div',
   className: undefined,
   id: undefined,
@@ -56,4 +56,4 @@ FormField.defaultProps = {
   size: undefined,
 };
 
-export default FormField;
+export default FormGroup;
