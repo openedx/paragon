@@ -161,7 +161,10 @@ select.form-control {
     transform-origin: left top;
     padding: 0 0.5em;
     transition: transform 150ms ease, background-color 150ms linear;
-    background: transparent;
+    // Prevent background-color from being output as "transparent"
+    // Firefox doesn't handle the first animation well from transparent to
+    // a color. Adding an alpha channel smooths it out.
+    background-color: rgba($input-bg, 0.01);
   }
 
   .has-leading-element & {
