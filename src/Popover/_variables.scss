@@ -3,17 +3,20 @@
 
 $popover-font-size:                 $font-size-sm !default;
 $popover-bg:                        $white !default;
-$popover-max-width:                 276px !default;
+$popover-max-width:                 480px !default;
 $popover-border-width:              $border-width !default;
 $popover-border-color:              rgba($black, .2) !default;
-$popover-border-radius:             $border-radius-lg !default;
+$popover-border-radius:             $border-radius-sm !default;
 $popover-inner-border-radius:       subtract($popover-border-radius, $popover-border-width) !default;
-$popover-box-shadow:                0 .25rem .5rem rgba($black, .2) !default;
+$popover-box-shadow:                drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.15)) drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.15)) !default;
+$popover-icon-margin-right:         .5rem;
+$popover-icon-height:               1rem;
+$popover-icon-width:                1rem;
 
-$popover-header-bg:                 darken($popover-bg, 3%) !default;
+$popover-header-bg:                 $white !default;
 $popover-header-color:              $headings-color !default;
 $popover-header-padding-y:          .5rem !default;
-$popover-header-padding-x:          .75rem !default;
+$popover-header-padding-x:          1rem !default;
 
 $popover-body-color:                $body-color !default;
 $popover-body-padding-y:            $popover-header-padding-y !default;
@@ -24,3 +27,10 @@ $popover-arrow-height:              .5rem !default;
 $popover-arrow-color:               $popover-bg !default;
 
 $popover-arrow-outer-color:         fade-in($popover-border-color, .05) !default;
+
+$popover-success-bg:                $success-100 !default;
+$popover-success-icon-color:        $success-500 !default;
+$popover-warning-bg:                $warning-100 !default;
+$popover-warning-icon-color:        $warning-500 !default;
+$popover-danger-bg:                 $danger-100 !default;
+$popover-danger-icon-color:         $danger-500 !default;
