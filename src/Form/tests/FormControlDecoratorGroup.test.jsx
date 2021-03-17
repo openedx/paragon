@@ -35,4 +35,21 @@ describe('FormFieldDecoratorGroup', () => {
     const groupNode = wrapper.find(FormControlDecoratorGroup).first().childAt(0);
     expect(groupNode.props().className).toContain('-lg');
   });
+  it('renders nodes in leading, trailing, and floatLabel elements', () => {
+    const beforeNode = <span id="before-node">before</span>;
+    const afterNode = <span id="after-node">after</span>;
+    const labelNode = <span id="label-node">label</span>;
+    const wrapper = mount((
+      <FormControlDecoratorGroup
+        leadingElement={beforeNode}
+        trailingElement={afterNode}
+        floatingLabel={labelNode}
+      >
+        <span>Form control</span>
+      </FormControlDecoratorGroup>
+    ));
+    expect(wrapper.exists('#before-node')).toBe(true);
+    expect(wrapper.exists('#after-node')).toBe(true);
+    expect(wrapper.exists('#label-node')).toBe(true);
+  });
 });
