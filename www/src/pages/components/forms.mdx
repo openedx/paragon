@@ -58,21 +58,18 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 
   <Form.Row>
     <Form.Group as={Col} controlId="formGridCity">
-      <Form.Label>City</Form.Label>
-      <Form.Control />
+      <Form.Control floatingLabel="City" />
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridState">
-      <Form.Label>State</Form.Label>
-      <Form.Control as="select" defaultValue="Choose...">
-        <option>Choose...</option>
+      <Form.Control floatingLabel="State" as="select">
+        <option value="">Choose...</option>
         <option>...</option>
       </Form.Control>
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridZip">
-      <Form.Label>Zip</Form.Label>
-      <Form.Control />
+      <Form.Control floatingLabel="Zip" />
     </Form.Group>
   </Form.Row>
 
@@ -107,38 +104,38 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
 ```jsx live
 <Form>
   <Form.Row>
-    <Form.Group as={Col} controlId="formGridEmail">
+    <Form.Group as={Col} controlId="formGridEmail-2">
       <Form.Label>Email</Form.Label>
-      <Form.Control type="email" placeholder="Enter email" aria-describedby="emailHelpBlock" />
-      <Form.Text id="emailHelpBlock" muted>
+      <Form.Control type="email" placeholder="Enter email" />
+      <Form.Text muted>
         This is the email that we'll send emails to.
       </Form.Text>
     </Form.Group>
 
-    <Form.Group as={Col} controlId="formGridPassword">
+    <Form.Group isInvalid as={Col} controlId="formGridPassword-2">
       <Form.Label>Password</Form.Label>
-      <Form.Control className="is-invalid" type="password" placeholder="Password" aria-describedby="passwordFeedback" />
-      <Form.Control.Feedback id="passwordFeedback" type="invalid">
+      <Form.Control type="password" placeholder="Password" />
+      <Form.Control.Feedback type="invalid">
         We don't like that password. Try a different one.
       </Form.Control.Feedback>
     </Form.Group>
   </Form.Row>
 
-  <Form.Group controlId="formGridAddress1">
+  <Form.Group controlId="formGridAddress1-2">
     <Form.Label>Address</Form.Label>
-    <Form.Control className="is-valid" placeholder="1234 Main St" aria-describedby="addressFeedback" />
-    <Form.Control.Feedback id="addressFeedback" type="valid">
+    <Form.Control placeholder="1234 Main St" />
+    <Form.Control.Feedback type="valid">
       This is a nice place!
     </Form.Control.Feedback>
   </Form.Group>
 
   <Form.Row>
-    <Form.Group as={Col} controlId="formGridCity">
+    <Form.Group as={Col} controlId="formGridCity-2">
       <Form.Label>City</Form.Label>
       <Form.Control />
     </Form.Group>
 
-    <Form.Group as={Col} controlId="formGridState">
+    <Form.Group as={Col} controlId="formGridState-2">
       <Form.Label>State</Form.Label>
       <Form.Control as="select" defaultValue="Choose...">
         <option>Choose...</option>
@@ -146,13 +143,13 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
       </Form.Control>
     </Form.Group>
 
-    <Form.Group as={Col} controlId="formGridZip">
+    <Form.Group as={Col} controlId="formGridZip-2">
       <Form.Label>Zip</Form.Label>
       <Form.Control />
     </Form.Group>
   </Form.Row>
 
-  <Form.Group controlId="formSwitch">
+  <Form.Group controlId="formSwitch-2">
     <Form.Check
       type="switch"
       id="custom-switch"
@@ -166,7 +163,7 @@ import SingleComponentStatus from '../../components/SingleComponentStatus';
     />
   </Form.Group>
 
-  <Form.Group id="formGridCheckbox">
+  <Form.Group id="formGridCheckbox-2">
     <Form.Check type="checkbox" id="formGridCheckboxCheck" label="Check me out" />
   </Form.Group>
 
