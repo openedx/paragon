@@ -4,7 +4,7 @@ import { mount } from 'enzyme';
 import FormGroup from '../FormGroup';
 import FormControl from '../FormControl';
 import FormLabel from '../FormLabel';
-import FormControlDescription from '../FormControlDescription';
+import FormControlFeedback from '../FormControlFeedback';
 
 /* eslint-disable react/prop-types */
 jest.mock('react-bootstrap/FormControl', () => (props) => {
@@ -19,11 +19,11 @@ jest.mock('react-bootstrap/FormControl', () => (props) => {
 describe('FormGroup', () => {
   describe('associate element ids and attributes', () => {
     const wrapper = mount((
-      <FormGroup id="my-field">
+      <FormGroup controlId="my-field">
         <FormLabel>My Field</FormLabel>
         <FormControl />
-        <FormControlDescription>Default help text</FormControlDescription>
-        <FormControlDescription>Second help text</FormControlDescription>
+        <FormControlFeedback>Default help text</FormControlFeedback>
+        <FormControlFeedback>Second help text</FormControlFeedback>
       </FormGroup>
     ));
 
