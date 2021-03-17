@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import { useFormGroupContext } from './FormGroupContext';
 
 const FormControlFloatingLabel = ({ children }) => {
-  const { id: fieldId } = useFormGroupContext();
+  const { controlId } = useFormGroupContext();
   return (
     <div className="pgn__form-control-floating-label">
       <div className="pgn__form-control-floating-label-content">
         <label
           className="pgn__form-control-floating-label-text"
-          htmlFor={fieldId}
+          htmlFor={controlId}
         >
           {children}
         </label>

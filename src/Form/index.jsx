@@ -2,13 +2,13 @@ import Form from 'react-bootstrap/Form';
 import FormControl from './FormControl';
 import FormLabel from './FormLabel';
 import FormGroup from './FormGroup';
-import FormControlDescription from './FormControlDescription';
+import FormControlFeedback from './FormControlFeedback';
 import FormControlDecoratorGroup from './FormControlDecoratorGroup';
 
 Form.Control = FormControl;
 Form.Label = FormLabel;
 Form.Group = FormGroup;
-Form.Text = FormControlDescription;
+Form.Text = FormControlFeedback;
 
 export default Form;
 export {
@@ -16,8 +16,8 @@ export {
   FormLabel,
   FormGroup,
   FormControlDecoratorGroup,
-  FormControlDescription,
-  FormControlDescription as FormText,
+  FormControlFeedback,
+  FormControlFeedback as FormText,
 };
 export { default as FormCheck } from 'react-bootstrap/FormCheck';
 export { default as FormFile } from 'react-bootstrap/FormFile';

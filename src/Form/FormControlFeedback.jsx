@@ -7,7 +7,7 @@ import {
   Check, Close, Cancel, CheckCircle, RadioButtonUnchecked, WarningFilled,
 } from '../../icons';
 
-const DESCRIPTION_TYPES = {
+const FEEDBACK_TYPES = {
   VALID: 'valid',
   INVALID: 'invalid',
   WARNING: 'warning',
@@ -16,21 +16,21 @@ const DESCRIPTION_TYPES = {
   CRITERIA_INVALID: 'criteria-invalid',
 };
 
-const DESCRIPTION_TYPE_ICONS = {
-  [DESCRIPTION_TYPES.VALID]: Check,
-  [DESCRIPTION_TYPES.INVALID]: Close,
-  [DESCRIPTION_TYPES.WARNING]: WarningFilled,
-  [DESCRIPTION_TYPES.CRITERIA_EMPTY]: RadioButtonUnchecked,
-  [DESCRIPTION_TYPES.CRITERIA_VALID]: CheckCircle,
-  [DESCRIPTION_TYPES.CRITERIA_INVALID]: Cancel,
+const FEEDBACK_ICONS = {
+  [FEEDBACK_TYPES.VALID]: Check,
+  [FEEDBACK_TYPES.INVALID]: Close,
+  [FEEDBACK_TYPES.WARNING]: WarningFilled,
+  [FEEDBACK_TYPES.CRITERIA_EMPTY]: RadioButtonUnchecked,
+  [FEEDBACK_TYPES.CRITERIA_VALID]: CheckCircle,
+  [FEEDBACK_TYPES.CRITERIA_INVALID]: Cancel,
 };
 
-const DescriptionIcon = ({ type, customIcon }) => {
+const FeedbackIcon = ({ type, customIcon }) => {
   if (customIcon) {
     return customIcon;
   }
 
-  const typeIcon = DESCRIPTION_TYPE_ICONS[type];
+  const typeIcon = FEEDBACK_ICONS[type];
   if (typeIcon) {
     return <Icon src={typeIcon} />;
   }
@@ -38,22 +38,22 @@ const DescriptionIcon = ({ type, customIcon }) => {
   return null;
 };
 
-DescriptionIcon.propTypes = {
-  type: PropTypes.oneOf(Object.values(DESCRIPTION_TYPES)),
+FeedbackIcon.propTypes = {
+  type: PropTypes.oneOf(Object.values(FEEDBACK_TYPES)),
   customIcon: PropTypes.node,
 };
 
-DescriptionIcon.defaultProps = {
+FeedbackIcon.defaultProps = {
   type: undefined,
   customIcon: undefined,
 };
 
-const FormControlDescription = ({
+const FormControlFeedback = ({
   children, type, icon, className, muted, ...props
 }) => {
-  const { id: fieldId, getNewDescriptorId } = useFormGroupContext();
+  const { controlId, getNewDescriptorId } = useFormGroupContext();
   const [id, setId] = useState();
-  useEffect(() => setId(getNewDescriptorId()), [fieldId]);
+  useEffect(() => setId(getNewDescriptorId()), [controlId]);
   return (
     <div
       id={id}
@@ -67,30 +67,30 @@ const FormControlDescription = ({
       )}
       {...props}
     >
-      <DescriptionIcon customIcon={icon} type={type} />
+      <FeedbackIcon customIcon={icon} type={type} />
       {children}
     </div>
   );
 };
 
-FormControlDescription.propTypes = {
-  type: PropTypes.oneOf(Object.values(DESCRIPTION_TYPES)),
+FormControlFeedback.propTypes = {
+  type: PropTypes.oneOf(Object.values(FEEDBACK_TYPES)),
   icon: PropTypes.node,
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   muted: PropTypes.bool,
 };
 
-FormControlDescription.defaultProps = {
+FormControlFeedback.defaultProps = {
   type: undefined,
   icon: undefined,
   className: undefined,
   muted: false,
 };
 
-export default FormControlDescription;
+export default FormControlFeedback;
 export {
-  DESCRIPTION_TYPES,
-  DESCRIPTION_TYPE_ICONS,
-  DescriptionIcon,
+  FEEDBACK_TYPES,
+  FEEDBACK_ICONS,
+  FeedbackIcon,
 };

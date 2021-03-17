@@ -6,7 +6,7 @@ import { FORM_CONTROL_SIZES } from './constants';
 
 const FormGroup = ({
   children,
-  id,
+  controlId,
   isInvalid,
   isValid,
   onFocus,
@@ -19,7 +19,7 @@ const FormGroup = ({
   className: classNames('pgn__form-group', props.className),
 }, (
   <FormGroupContextProvider
-    id={id}
+    controlId={controlId}
     isInvalid={isInvalid}
     isValid={isValid}
     onFocus={onFocus}
@@ -34,7 +34,7 @@ FormGroup.propTypes = {
   as: PropTypes.elementType,
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  id: PropTypes.string,
+  controlId: PropTypes.string,
   isInvalid: PropTypes.bool,
   isValid: PropTypes.bool,
   onFocus: PropTypes.func,
@@ -48,7 +48,7 @@ FormGroup.propTypes = {
 FormGroup.defaultProps = {
   as: 'div',
   className: undefined,
-  id: undefined,
+  controlId: undefined,
   isInvalid: false,
   isValid: false,
   onFocus: undefined,

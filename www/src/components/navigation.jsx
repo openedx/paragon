@@ -75,11 +75,12 @@ const Navigation = () => (
     <NavSectionTitle>Forms</NavSectionTitle>
 
     <ParNavLink to="/components/forms">Form</ParNavLink>
-    <ParNavLink to="/components/form-field">FormField</ParNavLink>
-    <ParNavLink to="/components/input">Input</ParNavLink>
-    <ParNavLink to="/components/input-group">Input Group</ParNavLink>
+    <ParNavLink to="/components/form-group">Form.Group</ParNavLink>
+    <ParNavLink to="/components/form-label">Form.Label</ParNavLink>
+    <ParNavLink to="/components/form-control">Form.Control</ParNavLink>
+    <ParNavLink to="/components/form-control-feedback">Form.Control.Feedback</ParNavLink>
+    <ParNavLink to="/components/form-control-feedback#form-text">Form.Text</ParNavLink>
     <ParNavLink to="/components/fieldset">Fieldset</ParNavLink>
-    <ParNavLink to="/components/validationformgroup">ValidationFormGroup</ParNavLink>
 
     <NavSectionTitle>Hooks</NavSectionTitle>
 
@@ -99,12 +100,14 @@ const Navigation = () => (
 
     <ParNavLink to="/components/checkbox">Checkbox</ParNavLink>
     <ParNavLink to="/components/checkboxgroup">CheckboxGroup</ParNavLink>
+    <ParNavLink to="/components/input">Input</ParNavLink>
     <ParNavLink to="/components/inputselect">InputSelect</ParNavLink>
     <ParNavLink to="/components/inputtext">InputText</ParNavLink>
     <ParNavLink to="/components/listbox">ListBox</ParNavLink>
     <ParNavLink to="/components/radiobuttongroup">RadioButtonGroup</ParNavLink>
     <ParNavLink to="/components/statusalert">StatusAlert</ParNavLink>
     <ParNavLink to="/components/textarea">TextArea</ParNavLink>
+    <ParNavLink to="/components/validationformgroup">ValidationFormGroup</ParNavLink>
 
     <hr className="w-100" />
 

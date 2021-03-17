@@ -6,7 +6,7 @@ import { FORM_CONTROL_SIZES } from './constants';
 
 const FormLabel = ({ children, isInline, ...props }) => {
   const {
-    id: fieldId,
+    controlId,
     size,
   } = useFormGroupContext({ size: props.size });
   const className = classNames(
@@ -23,7 +23,7 @@ const FormLabel = ({ children, isInline, ...props }) => {
     <label
       {...props}
       className={className}
-      htmlFor={fieldId}
+      htmlFor={controlId}
     >
       {children}
     </label>

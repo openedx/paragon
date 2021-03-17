@@ -35,18 +35,18 @@ const useFormGroupContext = (props = {}) => {
 
 const FormGroupContextProvider = ({
   children,
-  id,
+  controlId,
   isInvalid,
   isValid,
   onFocus,
   onBlur,
   size,
 }) => {
-  const resolvedId = React.useMemo(() => id || newId('form-field'), [id]);
+  const resolvedId = React.useMemo(() => controlId || newId('form-field'), [controlId]);
   const [hasFocus, setHasFocusTrue, setHasFocusFalse] = useToggle(false);
   const [describedByIds, getNewDescriptorId, removeDescriptorId] = useIdList(resolvedId);
   const contextValue = {
-    id: resolvedId,
+    controlId: resolvedId,
     isInvalid,
     isValid,
     size,
@@ -66,7 +66,7 @@ const FormGroupContextProvider = ({
 
 FormGroupContextProvider.propTypes = {
   children: PropTypes.node.isRequired,
-  id: PropTypes.string,
+  controlId: PropTypes.string,
   isInvalid: PropTypes.bool,
   isValid: PropTypes.bool,
   onFocus: PropTypes.func,
@@ -78,7 +78,7 @@ FormGroupContextProvider.propTypes = {
 };
 
 FormGroupContextProvider.defaultProps = {
-  id: undefined,
+  controlId: undefined,
   isInvalid: undefined,
   isValid: undefined,
   onFocus: undefined,
