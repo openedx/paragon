@@ -1,6 +1,8 @@
 ---
 title: 'Avatar'
 type: 'component'
+components:
+- Avatar
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'
@@ -8,13 +10,7 @@ notes: |
 
 ---
 
-
-
-
-
 # Avatar
-
-
 
 
 ##### Basic Usage
