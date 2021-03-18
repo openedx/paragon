@@ -10,21 +10,42 @@ import PropsTable from '../components/PropsTable';
 import '../scss/index.scss';
 
 // Provide common components here
-const shortcodes = {
-  pre: props => <div {...props} />,
-  code: CodeBlock,
-  Link,
-};
+// const shortcodes = {
+//   pre: props => <div {...props} />,
+//   code: CodeBlock,
+//   Link,
+// };
 
-export default function PageTemplate({ data: { mdx, components } }) {
+export default function PageTemplate({ data: { mdx, components: componentNodes } }) {
+
+  const components = componentNodes.nodes.reduce((acc, currentValue) => {
+    acc[currentValue.displayName] = currentValue;
+    return acc;
+  }, {});
+
+  const shortcodes = React.useMemo(() => {
+
+    const PropsTableFor = ({ name }) => {
+      if (components[name]) {
+        return <PropsTable {...components[name]} />
+      }
+      return null;
+    }
+    return {
+      pre: props => <div {...props} />,
+      code: CodeBlock,
+      Link,
+      PropsTableFor,
+    };
+  }, [components]);
   return (
-    <Container size="lg">
+    <Container size="md">
       <Link to="/">Home</Link>
       <h1>{mdx.frontmatter.title}</h1>
       <MDXProvider components={shortcodes}>
         <MDXRenderer>{mdx.body}</MDXRenderer>
       </MDXProvider>
-      {components.nodes.map(node => <PropsTable {...node} />)}
+      {Object.values(components).map(node => <PropsTable {...node} />)}
     </Container>
   )
 }

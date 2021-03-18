@@ -1,19 +1,14 @@
 ---
 title: 'TableFooter'
 type: 'component'
+components:
+- TableFooter
+- RowStatus
+- TablePagination
 status: 'New'
 designStatus: 'Done'
 devStatus: 'In progress'
 ---
-
-import { graphql } from 'gatsby';
-import get from 'lodash/get';
-import PropsTable from '../../components/PropsTable';
-import SingleComponentStatus from '../../components/SingleComponentStatus';
-
-# TableFooter
-
-<SingleComponentStatus frontmatter={props?.pageContext?.frontmatter} />
 
 <a href="/table/datatable">Main DataTable page</a>
 
@@ -130,26 +125,5 @@ Alternately, it will accept children.
 ```
 
 
-<PropsTable {...props.data.tableFooter} />
-
 ## Footer subcomponents
 These components can be rendered independently of the `TableFooter` component with a `DataTableContext`.
-
-<PropsTable
-  {...props.data.rowStatus}
-  content="The `RowStatus` component expects to receive `page`, `rows`, and `itemCount` from the `DataTableContext`."
-/>
-<PropsTable
-  {...props.data.pagination}
-  content="The `Pagination` component expects to receive the following from the `DataTableContext`:
-   `pageCount`, `previousPage`, `canNextPage`, `nextPage`, `state.pageIndex`"
-/>
-
-
-export const query = graphql`
-  query {
-    tableFooter: componentMetadata(displayName: { eq: "TableFooter" }) { ...ComponentDocGenData }
-    rowStatus: componentMetadata(displayName: { eq: "RowStatus" }) { ...ComponentDocGenData }
-    pagination: componentMetadata(displayName: { eq: "TablePagination" }) { ...ComponentDocGenData }
-  }
-`;

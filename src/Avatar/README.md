@@ -3,6 +3,8 @@ title: 'Avatar'
 type: 'component'
 components:
 - Avatar
+categories:
+- Imagery and Iconography
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'
@@ -10,8 +12,9 @@ notes: |
 
 ---
 
-# Avatar
+<Link to="/">Home</Link>
 
+<PropsTableFor name="Avatar" />
 
 ##### Basic Usage
 

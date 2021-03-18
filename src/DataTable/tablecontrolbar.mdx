@@ -1,19 +1,19 @@
 ---
 title: 'TableControlBar'
 type: 'component'
+components:
+- TableControlBar
+- BulkActions
+- DropdownFilters
+- FilterStatus
+- SmartStatus
+- SelectionStatus
+- RowStatus
 status: 'New'
 designStatus: 'Done'
 devStatus: 'In progress'
 ---
 
-import { graphql } from 'gatsby';
-import get from 'lodash/get';
-import PropsTable from '../../components/PropsTable';
-import SingleComponentStatus from '../../components/SingleComponentStatus';
-
-# TableControlBar
-
-<SingleComponentStatus frontmatter={props?.pageContext?.frontmatter} />
 
 <a href="/table/datatable">Main DataTable page</a>
 
@@ -150,46 +150,5 @@ It always shows the `SmartStatus` component. If applicable, it displays the `Dro
 </DataTable>
 ```
 
-<PropsTable
-  {...props.data.tableControlBar}
-  content="The table control bar expects to get `setFilter` and `bulkActions` from the `DataTableContext` context if filters or
-  bulk actions are being used."
-/>
-
 ## TableControlBar Subcomponents
 These components are used by the `TableControlBar` but can also be used individually as children of `DataTable`.
-
-<PropsTable
-  {...props.data.bulkActions}
-  content="The `BulkActions` component expects to receive `selectedFlatRows`, `rows`, and `bulkActions` from the `DataTableContext`."
-/>
-<PropsTable
-  {...props.data.smartStatus}
-  content="The `SmartStatus` component expects to receive `state` and `selectedFlatRows` from the `DataTableContext`."
-/>
-<PropsTable
-  {...props.data.filterStatus}
-  content="If filters are used, the `FilterSatus` component expects to receive `state.filters` and `setAllFilters` from the `DataTableContext`."
-/>
-<PropsTable
-  {...props.data.selectionStatus}
-  content="If selection is used, the `SelectionStatus` component expects to receive `toggleAllRowsSelected`, `selectedFlatRows`,
-  and `itemCount` from the `DataTableContext`."
-/>
-<PropsTable
-  {...props.data.rowStatus}
-  content="The `RowStatus` component expects to receive `page`, `rows`, and `itemCount` from the `DataTableContext`."
-/>
-
-
-export const query = graphql`
-  query {
-    tableControlBar: componentMetadata(displayName: { eq: "TableControlBar" }) { ...ComponentDocGenData }
-    bulkActions: componentMetadata(displayName: { eq: "BulkActions" }) { ...ComponentDocGenData }
-    dropDownFilters: componentMetadata(displayName: { eq: "DropdownFilters" }) { ...ComponentDocGenData }
-    filterStatus: componentMetadata(displayName: { eq: "FilterStatus" }) { ...ComponentDocGenData }
-    smartStatus: componentMetadata(displayName: { eq: "SmartStatus" }) { ...ComponentDocGenData }
-    selectionStatus: componentMetadata(displayName: { eq: "SelectionStatus" }) { ...ComponentDocGenData }
-    rowStatus: componentMetadata(displayName: { eq: "RowStatus" }) { ...ComponentDocGenData }
-  }
-`;

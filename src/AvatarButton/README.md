@@ -2,11 +2,14 @@
 title: 'Avatar Button'
 components:
 - AvatarButton
+category:
+- Buttonlike
 type: 'component'
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
+
 
 ---
 

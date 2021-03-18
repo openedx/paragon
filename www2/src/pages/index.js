@@ -2,17 +2,26 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 const BlogIndex = ({ data }) => {
-  const { edges: components } = data.allMdx
+  const { categories, types, all } = data.components;
 
   return (
     <div>
       <h1>Components</h1>
-
+      {categories.map(({ fieldValue, nodes }) => (
+        <div>
+          {fieldValue}
+        </div>
+      ))}
+      {types.map(({ fieldValue, nodes }) => (
+        <div>
+          {fieldValue}
+        </div>
+      ))}
       <ul>
-        {components.map(({ node: component }) => (
-          <li key={component.id}>
-            <Link to={component.fields.slug}>
-              <h2>{component.frontmatter.title}</h2>
+        {all.map(({ id, fields, frontmatter }) => (
+          <li key={id}>
+            <Link to={fields.slug}>
+              {frontmatter.title}
             </Link>
           </li>
         ))}
@@ -25,27 +34,39 @@ const BlogIndex = ({ data }) => {
 // This query filters out all of those markdown nodes and assumes all others
 // are for page creation purposes.
 export const pageQuery = graphql`
-  query blogIndex {
-    allMdx(filter: {
-      parent: {
-        internal: {
-          owner: {nin: "gatsby-transformer-react-docgen"}
-        }
+query blogIndex {
+  components: allMdx(
+    filter: {parent: {internal: {owner: {nin: "gatsby-transformer-react-docgen"}}}, frontmatter: {type: {}}}
+  ) {
+    categories: group(field: frontmatter___categories) {
+      nodes {
+        ...ComponentPage
       }
-    }) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-          }
-          fields {
-            slug
-          }
-        }
+      fieldValue
+    }
+    types: group(field: frontmatter___type) {
+      nodes {
+        ...ComponentPage
       }
+      fieldValue
+    }
+    all: nodes {
+      ...ComponentPage
     }
   }
+}
+
+fragment ComponentPage on Mdx {
+  id
+  frontmatter {
+    categories
+    type
+    title
+  }
+  fields {
+    slug
+  }
+}
 `
 
 export default BlogIndex

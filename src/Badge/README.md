@@ -8,10 +8,6 @@ notes: |
 
 ---
 
-# Badge
-
-<SingleComponentStatus frontmatter={props?.pageContext?.frontmatter} />
-
 <p style={{ fontSize: '1.5em' }}>
   This is a pass through component from React-Bootstrap.<br/>
   <a href="https://react-bootstrap.github.io/components/badge/" target="_blank" rel="noopener noreferrer">
