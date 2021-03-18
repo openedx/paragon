@@ -7,7 +7,9 @@ import * as ParagonReact from '~paragon-react';
 import * as ParagonIcons from '~paragon-icons';
 import * as FontAwesome from '@fortawesome/free-solid-svg-icons'
 // import MiyazakiCard from './exampleComponents/MiyazakiCard';
-const MiyazakiCard = () => {};
+const MiyazakiCard = () => {
+  return 'miyazaki card';
+}
 
 function CodeBlock({ children, className, live }) {
   const language = className ? className.replace(/language-/, '') : 'jsx';

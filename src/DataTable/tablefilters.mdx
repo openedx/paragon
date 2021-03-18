@@ -1,19 +1,16 @@
 ---
 title: 'DataTable'
 type: 'component'
+components:
+- TextFilter
+- CheckboxFilter
+- DropdownFilter
+- MultiSelectDropdownFilter
 status: 'New'
 designStatus: 'In progress'
 devStatus: 'In progress'
 ---
 
-import { graphql } from 'gatsby';
-import get from 'lodash/get';
-import PropsTable from '../../components/PropsTable';
-import SingleComponentStatus from '../../components/SingleComponentStatus';
-
-# DataTable Filter Types
-
-<SingleComponentStatus frontmatter={props?.pageContext?.frontmatter} />
 
 The DataTable component is a wrapper that uses the <a href="https://react-table.tanstack.com/docs">react-table</a> library to
 create tables. It can be used as is, or its subcomponents can be used on their own, allowing the developer full control.
@@ -298,25 +295,3 @@ all filters will be rendered in the dropdown.
 
 />
 ```
-
-<PropsTable {...props.data.textFilter} />
-<PropsTable {...props.data.checkboxFilter} />
-<PropsTable {...props.data.dropdownFilter} />
-<PropsTable {...props.data.multiSelectDropdownFilter} />
-
-export const query = graphql`
-  query {
-    textFilter: componentMetadata(displayName: { eq: "TextFilter" }) {
-      ...ComponentDocGenData
-    }
-    checkboxFilter: componentMetadata(displayName: { eq: "CheckboxFilter" }) {
-      ...ComponentDocGenData
-    }
-    dropdownFilter: componentMetadata(displayName: { eq: "DropdownFilter" }) {
-      ...ComponentDocGenData
-    }
-    multiSelectDropdownFilter: componentMetadata(displayName: { eq: "MultiSelectDropdownFilter" }) {
-      ...ComponentDocGenData
-    }
-  }
-`

@@ -1,19 +1,18 @@
 ---
 title: 'Data views'
 type: 'component'
+components:
+- Table
+- TableCell
+- TableHeaderCell
+- TableHeaderRow
+- TableRow
+- CardView
 status: 'New'
 designStatus: 'Done'
 devStatus: 'In progress'
 ---
 
-import { graphql } from 'gatsby';
-import get from 'lodash/get';
-import PropsTable from '../../components/PropsTable';
-import SingleComponentStatus from '../../components/SingleComponentStatus';
-
-# Data views
-
-<SingleComponentStatus frontmatter={props?.pageContext?.frontmatter} />
 
 <a href="/table/datatable">Main DataTable page</a>
 
@@ -105,19 +104,10 @@ It displays the data provided by the `DataTableContext` as an html table.
 </DataTable>
 ```
 
-<PropsTable
-  {...props.data.table}
-  content='The `DataTable.Table` component expects to receive a `react-table` instance from the `DataTableContext`.'
-/>
 
 ## Table Subcomponents
 
 Subcomponents of `DataTable.Table` can be used independently of the main component. They are designed for use with a `react-table` instance.
-<PropsTable {...props.data.row} />
-<PropsTable {...props.data.cell} />
-<PropsTable {...props.data.headerCell} />
-<PropsTable {...props.data.headerRow} />
-
 
 ## CardView and alternate table components
 
@@ -353,16 +343,3 @@ const MiyazakiCard = ({ className, original  }) => {
   );
 };
 ```
-
-<PropsTable {...props.data.cardView} />
-
-export const query = graphql`
-  query {
-    table: componentMetadata(displayName: {eq: "Table"}, props: {elemMatch: {name: {eq: "prepareRow"}}}) { ...ComponentDocGenData }
-    cell: componentMetadata(displayName: { eq: "TableCell" }) { ...ComponentDocGenData }
-    headerCell: componentMetadata(displayName: { eq: "TableHeaderCell" }) { ...ComponentDocGenData }
-    headerRow: componentMetadata(displayName: { eq: "TableHeaderRow" }) { ...ComponentDocGenData }
-    row: componentMetadata(displayName: { eq: "TableRow" }) { ...ComponentDocGenData }
-    cardView: componentMetadata(displayName: { eq: "CardView" }) { ...ComponentDocGenData }
-  }
-`;

@@ -1,19 +1,25 @@
 ---
 title: 'DataTable'
 type: 'component'
+components:
+- DataTable
+- BulkActions
+- TableActions
+- Table
+- TableCell
+- TableHeaderCell
+- TableHeaderRow
+- TableRow
+- FilterStatus
+- SelectionStatus
+- RowStatus
+- SmartStatus
+- TablePagination
+- TextFilter
 status: 'New'
 designStatus: 'Done'
 devStatus: 'In progress'
 ---
-
-import { graphql } from 'gatsby';
-import get from 'lodash/get';
-import PropsTable from '../../components/PropsTable';
-import SingleComponentStatus from '../../components/SingleComponentStatus';
-
-# Data Table
-
-<SingleComponentStatus frontmatter={props?.pageContext?.frontmatter} />
 
 The DataTable component is a wrapper that uses the <a href="https://react-table.tanstack.com/docs">react-table</a> library to
 create tables. It can be used as is, or its subcomponents can be used on their own, allowing the developer full control.
@@ -665,39 +671,3 @@ a responsive grid of cards.
   <TableFooter />
 </DataTable>
 ```
-
-
-
-<PropsTable {...props.data.dataTable} />
-<PropsTable {...props.data.bulkActions} />
-<PropsTable {...props.data.tableActions} />
-<PropsTable {...props.data.table} />
-<PropsTable {...props.data.cell} />
-<PropsTable {...props.data.headerCell} />
-<PropsTable {...props.data.headerRow} />
-<PropsTable {...props.data.row} />
-<PropsTable {...props.data.filterStatus} />
-<PropsTable {...props.data.selectionStatus} />
-<PropsTable {...props.data.rowStatus} />
-<PropsTable {...props.data.smartStatus} />
-<PropsTable {...props.data.pagination} />
-<PropsTable {...props.data.textFilter} />
-
-export const query = graphql`
-  query {
-    dataTable: componentMetadata(displayName: { eq: "DataTable" }) { ...ComponentDocGenData }
-    bulkActions: componentMetadata(displayName: { eq: "BulkActions" }) { ...ComponentDocGenData }
-    tableActions: componentMetadata(displayName: { eq: "TableActions" }) { ...ComponentDocGenData }
-    table: componentMetadata(displayName: {eq: "Table"}, props: {elemMatch: {name: {eq: "prepareRow"}}}) { ...ComponentDocGenData }
-    cell: componentMetadata(displayName: { eq: "TableCell" }) { ...ComponentDocGenData }
-    headerCell: componentMetadata(displayName: { eq: "TableHeaderCell" }) { ...ComponentDocGenData }
-    headerRow: componentMetadata(displayName: { eq: "TableHeaderRow" }) { ...ComponentDocGenData }
-    row: componentMetadata(displayName: { eq: "TableRow" }) { ...ComponentDocGenData }
-    filterStatus: componentMetadata(displayName: { eq: "FilterStatus" }) { ...ComponentDocGenData }
-    selectionStatus: componentMetadata(displayName: { eq: "SelectionStatus" }) { ...ComponentDocGenData }
-    rowStatus: componentMetadata(displayName: { eq: "RowStatus" }) { ...ComponentDocGenData }
-    smartStatus: componentMetadata(displayName: { eq: "SmartStatus" }) { ...ComponentDocGenData }
-    pagination: componentMetadata(displayName: { eq: "TablePagination" }) { ...ComponentDocGenData }
-    textFilter: componentMetadata(displayName: { eq: "TextFilter" }) { ...ComponentDocGenData }
-  }
-`;
