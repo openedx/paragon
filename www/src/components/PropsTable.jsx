@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ReactMarkdown from 'react-markdown';
+import { MDXRenderer } from "gatsby-plugin-mdx"
 import PropType from './PropType';
 import { Badge } from '~paragon-react';
 
@@ -26,7 +26,7 @@ const Prop = ({
         </h6>
         <PropType {...type} />
       </div>
-      <div className="x-small">{description ? <ReactMarkdown>{description.text}</ReactMarkdown> : null}</div>
+      <div className="x-small">{description ? <MDXRenderer>{description.text}</MDXRenderer> : null}</div>
 
       <DefaultValue {...defaultValue} />
     </div>
@@ -37,7 +37,7 @@ const PropsTable = ({ props, displayName, content }) => {
   return (
     <div>
       <h3>{displayName} Props API</h3>
-      {content && <ReactMarkdown>{content}</ReactMarkdown>}
+      {content && <MDXRenderer>{content}</MDXRenderer>}
       <ul className="list-unstyled">
         {props.map((metadata) => {
           return <Prop key={metadata.name} {...metadata} />
