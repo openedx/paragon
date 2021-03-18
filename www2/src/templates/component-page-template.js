@@ -6,6 +6,7 @@ import { Link } from "gatsby"
 import { Container } from '~paragon-react';
 
 import CodeBlock from '../components/CodeBlock';
+import PropsTable from '../components/PropsTable';
 import '../scss/index.scss';
 
 // Provide common components here
@@ -19,11 +20,11 @@ export default function PageTemplate({ data: { mdx, components } }) {
   return (
     <Container size="lg">
       <Link to="/">Home</Link>
-      {JSON.stringify(components)}
       <h1>{mdx.frontmatter.title}</h1>
       <MDXProvider components={shortcodes}>
         <MDXRenderer>{mdx.body}</MDXRenderer>
       </MDXProvider>
+      {components.nodes.map(node => <PropsTable {...node} />)}
     </Container>
   )
 }
@@ -63,6 +64,9 @@ fragment ComponentDocGenData on ComponentMetadata {
     description {
       id
       text
+      childMdx {
+        body
+      }
     }
   }
 }

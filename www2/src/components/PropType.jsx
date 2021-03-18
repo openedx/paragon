@@ -59,11 +59,11 @@ const PropTypeShape = ({ name, value, isRequired }) => (
   <span className="small">
     <code>{name}</code>
     <RequiredBadge isRequired={isRequired} />
-    {" \{"}
+    {" {"}
     {Object.entries(value).map(([key, propType]) => (
       <div className="text-monospace pl-3" key={key}>{key}: <PropType {...propType} />,</div>
     ))}
-    {"\}"}
+    {"}"}
   </span>
 );
 
@@ -71,11 +71,11 @@ const PropTypeExact = ({ name, value, isRequired }) => (
   <span className="small">
     <code>{name}</code>
     <RequiredBadge isRequired={isRequired} />
-    {" \{"}
+    {" {"}
     {Object.entries(value).map(([key, propType]) => (
       <div className="text-monospace pl-3">{key}: <PropType {...propType} />,</div>
     ))}
-    {"\}"}
+    {"}"}
   </span>
 );
 
@@ -137,7 +137,7 @@ PropType.propTypes = {
     'shape',
     'exact',
     'union',
-    'elementType',,
+    'elementType',
   ]),
   value: PropTypes.any,
   raw: PropTypes.string,
