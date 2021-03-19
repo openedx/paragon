@@ -4,7 +4,7 @@ import Layout from '../components/PageLayout';
 import { Button } from '~paragon-react'; // eslint-disable-line
 
 const HomePage = () => (
-  <Layout showMinimizedTitle>
+  <Layout showMinimizedTitle hideFooterComponentMenu>
     <div className="bg-dark text-white text-center py-5">
       <p className="x-small text-uppercase text-monospace mb-0">
         Technical Documentation{' '}

@@ -179,7 +179,7 @@ const Menu = () => {
           </MenuComponentList>
         </Col>
       </Row>
-      <div className="menu-all-components">
+      <div className="menu-all-components pt-5">
         <h3 className="mb-3">All components (A-Z)</h3>
         <MenuComponentList>
           <ul className="list-unstyled small mb-4">

@@ -12,7 +12,7 @@ import { Container, Nav } from '~paragon-react'; // eslint-disable-line
 import Header from './Header';
 import Menu from './Menu';
 
-const Layout = ({ children, showMinimizedTitle }) => {
+const Layout = ({ children, showMinimizedTitle, hideFooterComponentMenu }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -30,9 +30,11 @@ const Layout = ({ children, showMinimizedTitle }) => {
         showMinimizedTitle={showMinimizedTitle}
       />
       <main className="flex-grow-1">{children}</main>
-      <Container className="py-3 mt-5 bg-light-200 border-top border-light-300">
-        <Menu />
-      </Container>
+      {!hideFooterComponentMenu && (
+        <Container className="py-3 mt-5 bg-light-200 border-top border-light-300">
+          <Menu />
+        </Container>
+      )}
       <Container as="footer" className="py-3 border-top border-light-300">
         <Nav className="d-flex align-items-center">
           <Nav.Item>
@@ -64,10 +66,12 @@ const Layout = ({ children, showMinimizedTitle }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   showMinimizedTitle: PropTypes.bool,
+  hideFooterComponentMenu: PropTypes.bool,
 };
 
 Layout.defaultProps = {
   showMinimizedTitle: false,
+  hideFooterComponentMenu: false,
 };
 
 export default Layout;

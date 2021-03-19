@@ -16,6 +16,8 @@ components:
 - SmartStatus
 - TablePagination
 - TextFilter
+categories:
+- Table
 status: 'New'
 designStatus: 'Done'
 devStatus: 'In progress'
