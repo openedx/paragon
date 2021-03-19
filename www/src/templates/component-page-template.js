@@ -1,39 +1,39 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { MDXProvider } from "@mdx-js/react"
-import { MDXRenderer } from "gatsby-plugin-mdx"
-import { Link } from "gatsby"
-import { Container } from "~paragon-react"
+import React from 'react';
+import { graphql, Link } from 'gatsby';
+import { MDXProvider } from '@mdx-js/react';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import CodeBlock from "../components/CodeBlock"
-import PropsTable from "../components/PropsTable"
-import "../scss/index.scss"
-import Layout from "../components/PageLayout"
-import SEO from "../components/seo"
+import { Container } from '~paragon-react'; // eslint-disable-line
+
+import CodeBlock from '../components/CodeBlock';
+import PropsTable from '../components/PropsTable';
+import '../scss/index.scss';
+import Layout from '../components/PageLayout';
+import SEO from '../components/seo';
 
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
 }) {
   const components = componentNodes.nodes.reduce((acc, currentValue) => {
-    acc[currentValue.displayName] = currentValue
-    return acc
-  }, {})
+    acc[currentValue.displayName] = currentValue;
+    return acc;
+  }, {});
 
   const shortcodes = React.useMemo(() => {
     const PropsTableFor = ({ name }) => {
       if (components[name]) {
-        return <PropsTable {...components[name]} />
+        return <PropsTable {...components[name]} />;
       }
-      return null
-    }
+      return null;
+    };
     // Provide common components here
     return {
       pre: props => <div {...props} />,
       code: CodeBlock,
       Link,
       PropsTableFor,
-    }
-  }, [components])
+    };
+  }, [components]);
 
   return (
     <Layout>
@@ -48,7 +48,7 @@ export default function PageTemplate({
         ))}
       </Container>
     </Layout>
-  )
+  );
 }
 
 export const pageQuery = graphql`
@@ -93,4 +93,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

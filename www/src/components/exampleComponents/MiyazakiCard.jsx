@@ -1,9 +1,9 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Card } from "react-bootstrap"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Card } from '~paragon-react';
 
 const MiyazakiCard = ({ className, original }) => {
-  const { title, director, release_date } = original
+  const { title, director, release_date } = original;
 
   return (
     <Card className={className}>
@@ -21,17 +21,17 @@ const MiyazakiCard = ({ className, original }) => {
         </dl>
       </Card.Body>
     </Card>
-  )
-}
+  );
+};
 
 MiyazakiCard.defaultProps = {
-  className: "",
+  className: '',
   title: null,
-}
+};
 
 MiyazakiCard.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string,
-}
+};
 
-export default MiyazakiCard
+export default MiyazakiCard;

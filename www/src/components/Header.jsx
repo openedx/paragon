@@ -1,7 +1,7 @@
-import React, { useEffect } from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
-import Menu from "./Menu"
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
+import Menu from './Menu';
 import {
   Icon,
   useToggle,
@@ -10,10 +10,12 @@ import {
   Col,
   Container,
   Button,
-} from "~paragon-react"
-import { Menu as MenuIcon, Close } from "~paragon-icons"
+} from '~paragon-react'; // eslint-disable-line
+import { Menu as MenuIcon, Close } from '~paragon-icons'; // eslint-disable-line
 
-const Navbar = ({ siteTitle, onMenuClick, menuIsOpen, showMinimizedTitle }) => (
+const Navbar = ({
+  siteTitle, onMenuClick, menuIsOpen, showMinimizedTitle,
+}) => (
   <Container as="header" className="py-3 bg-dark text-white sticky-top">
     <Row className="align-items-center">
       <Col sm={4}>
@@ -38,12 +40,12 @@ const Navbar = ({ siteTitle, onMenuClick, menuIsOpen, showMinimizedTitle }) => (
       <Col sm={4}>
         <Link
           to="/"
-          style={{ textDecoration: `none` }}
+          style={{ textDecoration: 'none' }}
           className="d-block text-center"
         >
           {showMinimizedTitle ? (
             <span
-              style={{ fontSize: "36px", lineHeight: 1 }}
+              style={{ fontSize: '36px', lineHeight: 1 }}
               role="img"
               aria-label="Paragon"
             >
@@ -89,28 +91,28 @@ const Navbar = ({ siteTitle, onMenuClick, menuIsOpen, showMinimizedTitle }) => (
       </Col>
     </Row>
   </Container>
-)
+);
 const Header = ({ siteTitle, showMinimizedTitle }) => {
   // eslint-disable-next-line no-unused-vars
   const [isOpen, open, close, toggle] = useToggle(false, {
     handleToggleOn: () => {
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = 'hidden';
     },
     handleToggleOff: () => {
-      document.body.style.overflow = "initial"
+      document.body.style.overflow = 'initial';
     },
-  })
-  useEffect(() => {
+  });
+  useEffect(() =>
     // returned function will be called on component unmount
-    return () => {
-      document.body.style.overflow = "initial"
-    }
-  }, [])
+    () => {
+      document.body.style.overflow = 'initial';
+    },
+  []);
 
   return (
     <div
       className="bg-white sticky-top"
-      style={{ maxHeight: "100vh", overflow: "scroll" }}
+      style={{ maxHeight: '100vh', overflow: 'scroll' }}
     >
       <Navbar
         siteTitle={siteTitle}
@@ -120,17 +122,17 @@ const Header = ({ siteTitle, showMinimizedTitle }) => {
       />
       {isOpen && <Menu />}
     </div>
-  )
-}
+  );
+};
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
   showMinimizedTitle: PropTypes.bool,
-}
+};
 
 Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: '',
   showMinimizedTitle: false,
-}
+};
 
-export default Header
+export default Header;

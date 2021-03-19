@@ -5,12 +5,12 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import * as React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import { Container, Nav } from "~paragon-react"
-import Header from "./Header"
-import Menu from "./Menu"
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import { useStaticQuery, graphql } from 'gatsby';
+import { Container, Nav } from '~paragon-react'; // eslint-disable-line
+import Header from './Header';
+import Menu from './Menu';
 
 const Layout = ({ children, showMinimizedTitle }) => {
   const data = useStaticQuery(graphql`
@@ -21,12 +21,12 @@ const Layout = ({ children, showMinimizedTitle }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <div className="d-flex flex-column">
       <Header
-        siteTitle={data.site.siteMetadata?.title || `Title`}
+        siteTitle={data.site.siteMetadata?.title || 'Title'}
         showMinimizedTitle={showMinimizedTitle}
       />
       <main className="flex-grow-1">{children}</main>
@@ -58,16 +58,16 @@ const Layout = ({ children, showMinimizedTitle }) => {
         </Nav>
       </Container>
     </div>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   showMinimizedTitle: PropTypes.bool,
-}
+};
 
 Layout.defaultProps = {
   showMinimizedTitle: false,
-}
+};
 
-export default Layout
+export default Layout;
