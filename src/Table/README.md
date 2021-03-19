@@ -1,9 +1,9 @@
 ---
-title: 'Table'
+title: 'Table (Deprecated)'
 type: 'component'
 components:
-- Table
-status: 'Reassessing'
+- TableDeprecated
+status: 'Deprecate soon'
 designStatus: 'TBD'
 devStatus: 'TBD'
 notes: |
