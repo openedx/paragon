@@ -1,0 +1,214 @@
+---
+title: Layout
+---
+
+import { graphql } from 'gatsby';
+import { Table } from '~paragon-react';
+import getCssSelectors from '../../utils/getCssSelectors.js';
+import CSSUtilitiesTable from '../../components/CSSUtilitiesTable';
+import LayoutGenerator from '../../components/LayoutGenerator'
+
+# Layout
+
+Paragon's layout is controlled by the Bootstrap grid system. Documentation can be found here:
+[https://getbootstrap.com/docs/4.5/layout/grid/](https://getbootstrap.com/docs/4.5/layout/grid/)
+
+
+## Components
+
+<p>
+  These components are pass throughs from React-Bootstrap.<br/>
+  <a href="https://react-bootstrap.github.io/components/layout/" target="_blank" rel="noopener noreferrer">
+    See React-Bootstrap for documentation.
+  </a>
+</p>
+
+```jsx live
+<Container className="border">
+  {/* Stack the columns on mobile by making one full-width and the other half-width */}
+  <Row className="my-3">
+    <Col xs={12} md={8}>
+      <div className="p-3 border">xs=12 md=8</div>
+    </Col>
+    <Col xs={6} md={4}>
+      <div className="p-3 border">xs=6 md=4</div>
+    </Col>
+  </Row>
+
+  {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
+  <Row className="my-3">
+    <Col xs={6} md={4}>
+      <div className="p-3 border">xs=6 md=4</div>
+    </Col>
+    <Col xs={6} md={4}>
+      <div className="p-3 border">xs=6 md=4</div>
+    </Col>
+    <Col xs={6} md={4}>
+      <div className="p-3 border">xs=6 md=4</div>
+    </Col>
+  </Row>
+
+  {/* Columns are always 50% wide, on mobile and desktop */}
+  <Row className="my-3">
+    <Col xs={6}>
+      <div className="p-3 border">xs=6</div>
+    </Col>
+    <Col xs={6}>
+      <div className="p-3 border">xs=6</div>
+    </Col>
+  </Row>
+</Container>
+```
+
+## Grid
+
+
+<LayoutGenerator />
+
+
+### Row
+
+Rows contain columns. They are `display: flex` so
+any related flex box styles or css utilities
+can be leveraged here.
+
+- `.row`
+
+###### Related flexbox utilities
+
+- `.justify-content-start`
+- `.justify-content-end`
+- `.justify-content-center`
+- `.justify-content-between`
+- `.justify-content-around`
+- `.align-items-start`
+- `.align-items-end`
+- `.align-items-center`
+- `.align-items-baseline`
+- `.align-items-stretch`
+
+Responsive variations of these utilities also exist:
+`.{property}-{breakpoint}-{value}`.
+
+###### Some examples:
+
+- `.justify-content-sm-start`
+- `.align-items-md-start`
+- `.align-items-l-between`
+- `.justify-content-xl-between`
+
+
+### Column
+
+Columns lay on a 12 column grid.
+
+- `.col`
+- `.col-${width}`
+- `.col-${breakpoint}-${width}`
+- `offset-${columns}`
+- `offset-${breakpoint}-${columns}`
+
+###### Examples
+
+- `.col-1`
+- `.col-2`
+- `.col-3`
+- `.col-4`
+- `.col-5`
+- `.col-6`
+- `.col-7`
+- `.col-8`
+- `.col-9`
+- `.col-10`
+- `.col-11`
+- `.col-12`
+
+###### Related flexbox utilities
+
+- `.align-self-start`
+- `.align-self-end`
+- `.align-self-center`
+- `.align-self-baseline`
+- `.align-self-stretch`
+- `.flex-fill`
+
+
+### Breakpoint Utilities
+
+Many css utility classes have variants that apply
+the style only at a certain breakpoint and above.
+
+- Small and up **`-sm-`**
+- Medium and up **`-md-`**
+- Large and up **`-lg-`**
+- Extra Large and up **`-xl-`**
+
+###### Examples
+
+- `.col-sm-4`
+- `.col-md-4`
+- `.col-lg-4`
+- `.col-xl-4`
+- `.align-items-sm-start`
+- `.align-items-md-start`
+- `.align-items-lg-start`
+- `.align-items-xl-start`
+
+
+
+### Display Utilities
+
+<CSSUtilitiesTable selectors={getCssSelectors(props.data.displayUtilities.nodes)} />
+
+### Position
+
+<CSSUtilitiesTable selectors={getCssSelectors(props.data.positionUtilities.nodes)} />
+
+### Flexbox
+
+<CSSUtilitiesTable selectors={getCssSelectors(props.data.flexUtilities.nodes)} />
+
+### Max Width
+
+<CSSUtilitiesTable selectors={getCssSelectors(props.data.maxWidthUtilities.nodes)} />
+
+
+### Misc Layout
+
+<CSSUtilitiesTable selectors={getCssSelectors(props.data.miscUtilities.nodes)} />
+
+
+export const pageQuery = graphql`
+{
+  flexUtilities: allCssUtilityClasses(filter: {declarations: {regex: "/flex/"}, isUtility: {eq: true}}) {
+    nodes {
+      selector
+      declarations
+    }
+  }
+  displayUtilities: allCssUtilityClasses(filter: {declarations: {regex: "/display/"}, isUtility: {eq: true}}) {
+    nodes {
+      selector
+      declarations
+    }
+  }
+  positionUtilities: allCssUtilityClasses(filter: {selector: {regex: "/(^fixed-)|(position)/"}}) {
+    nodes {
+      selector
+      declarations
+    }
+  }
+  maxWidthUtilities: allCssUtilityClasses(filter: {selector: {regex: "/(^mw-)/"}}) {
+    nodes {
+      selector
+      declarations
+    }
+  }
+  miscUtilities: allCssUtilityClasses(filter: {declarations: {regex: "/(float)|(overflow)/"}, isUtility: {eq: true}}) {
+    nodes {
+      selector
+      declarations
+    }
+  }
+}
+`;

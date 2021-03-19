@@ -8,17 +8,14 @@ notes: |
 
 ---
 
-# Alert
-
-
-<p style={{ fontSize: '1.5em' }}>
+<p className="lead">
   This is a pass through component from React-Bootstrap.<br/>
   <a href="https://react-bootstrap.github.io/components/alerts/" target="_blank" rel="noopener noreferrer">
     See React-Bootstrap for documentation.
   </a>
 </p>
 
-##### Basic Usage
+### Basic Usage
 
 ```jsx live
 <>
@@ -45,7 +42,7 @@ notes: |
 </>
 ```
 
-##### Kitchen Sink
+### Kitchen Sink
 
 ```jsx live
 <Alert variant="success" dismissible>

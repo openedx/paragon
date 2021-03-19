@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import PropType from './PropType';
-import { Badge } from '~paragon-react';
+import { Badge, Card } from '~paragon-react';
 
 const DefaultValue = ({ value }) => {
   if (!value || value === 'undefined') return null;
@@ -17,14 +17,15 @@ const DefaultValue = ({ value }) => {
 const Prop = ({
   name, type, required, defaultValue = {}, description,
 }) => (
-  <li className="border-bottom">
+  <li className="px-4 border-top border-light-300">
     <div className="my-3">
       <div className="mb-2">
-        <h6 className="d-inline mb-0 mr-1">
+        <h5 className="d-inline mb-0 mr-1">
           {`${name} `}
-          {required && <> <Badge variant="light">Required</Badge></>}
-        </h6>
+
+        </h5>
         <PropType {...type} />
+        {required && <> <Badge variant="light">Required</Badge></>}
       </div>
       <div className="x-small">{description ? <MDXRenderer>{description.childMdx.body}</MDXRenderer> : null}</div>
 
@@ -35,15 +36,19 @@ const Prop = ({
 
 const PropsTable = ({ props, displayName, content }) => {
   return (
-    <div>
-      <h3>{displayName} Props API</h3>
-      {content}
-      <ul className="list-unstyled">
-        {props.map((metadata) => {
-          return <Prop key={metadata.name} {...metadata} />
-        })}
-      </ul>
-    </div>
+      <Card className="mb-5" id={`props-api-table-${displayName}`}>
+        <Card.Body className="pb-1">
+          <Card.Title as="h3">{displayName} Props API</Card.Title>
+          {content && <div className="small mb-3">{content}</div>}
+
+
+        </Card.Body>
+        <ul className="list-unstyled">
+          {props.map((metadata) => {
+            return <Prop key={metadata.name} {...metadata} />
+          })}
+        </ul>
+      </Card>
   );
 };
 

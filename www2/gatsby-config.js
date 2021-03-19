@@ -55,6 +55,10 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
+        defaultLayouts: {
+          components: require.resolve("./src/templates/component-page-template.js"),
+          default: require.resolve("./src/templates/default-mdx-page-template.js"),
+        },
       }
     },
     `gatsby-plugin-gatsby-cloud`,

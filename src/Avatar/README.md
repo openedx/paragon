@@ -16,7 +16,7 @@ notes: |
 
 <PropsTableFor name="Avatar" />
 
-##### Basic Usage
+### Basic Usage
 
 ```jsx live
 <div className="bg-light p-2">
@@ -30,7 +30,7 @@ notes: |
 ```
 
 
-##### Huge
+### Huge
 
 ```jsx live
 <>
@@ -38,7 +38,7 @@ notes: |
 </>
 ```
 
-##### Theme variables (SCSS)
+### Theme variables (SCSS)
 
 ```scss
 $avatar-border-radius:  100% !default;
