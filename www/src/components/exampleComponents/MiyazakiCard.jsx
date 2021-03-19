@@ -1,32 +1,37 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card } from 'react-bootstrap';
+import React from "react"
+import PropTypes from "prop-types"
+import { Card } from "react-bootstrap"
 
-const MiyazakiCard = ({ className, original  }) => {
-  const { title, director, release_date } = original;
+const MiyazakiCard = ({ className, original }) => {
+  const { title, director, release_date } = original
 
   return (
     <Card className={className}>
-      <Card.Img variant="top" src="https://source.unsplash.com/360x200/?nature,flower" />
+      <Card.Img
+        variant="top"
+        src="https://source.unsplash.com/360x200/?nature,flower"
+      />
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <dl>
-          <dt>Director</dt><dd>{director}</dd>
-          <dt>Release Date</dt><dd>{release_date}</dd>
+          <dt>Director</dt>
+          <dd>{director}</dd>
+          <dt>Release Date</dt>
+          <dd>{release_date}</dd>
         </dl>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 MiyazakiCard.defaultProps = {
-  className: '',
+  className: "",
   title: null,
-};
+}
 
 MiyazakiCard.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string,
-};
+}
 
-export default MiyazakiCard;
+export default MiyazakiCard

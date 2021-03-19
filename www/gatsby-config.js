@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require("path")
 
 module.exports = {
   siteMetadata: {
@@ -7,7 +7,7 @@ module.exports = {
     author: `@edx`,
   },
   plugins: [
-    'gatsby-plugin-sass',
+    "gatsby-plugin-sass",
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     {
@@ -50,16 +50,20 @@ module.exports = {
     // },
     // Note this will throw a warning about conflicting field types during build, but it is O.K.
     // https://github.com/gatsbyjs/gatsby/issues/7027
-    'gatsby-transformer-react-docgen',
+    "gatsby-transformer-react-docgen",
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
         defaultLayouts: {
-          components: require.resolve("./src/templates/component-page-template.js"),
-          default: require.resolve("./src/templates/default-mdx-page-template.js"),
+          components: require.resolve(
+            "./src/templates/component-page-template.js"
+          ),
+          default: require.resolve(
+            "./src/templates/default-mdx-page-template.js"
+          ),
         },
-      }
+      },
     },
     `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
