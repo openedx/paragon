@@ -8,13 +8,8 @@ import { Container } from '~paragon-react';
 import CodeBlock from '../components/CodeBlock';
 import PropsTable from '../components/PropsTable';
 import '../scss/index.scss';
-
-// Provide common components here
-// const shortcodes = {
-//   pre: props => <div {...props} />,
-//   code: CodeBlock,
-//   Link,
-// };
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 export default function PageTemplate({ data: { mdx, components: componentNodes } }) {
 
@@ -24,13 +19,13 @@ export default function PageTemplate({ data: { mdx, components: componentNodes }
   }, {});
 
   const shortcodes = React.useMemo(() => {
-
     const PropsTableFor = ({ name }) => {
       if (components[name]) {
         return <PropsTable {...components[name]} />
       }
       return null;
     }
+    // Provide common components here
     return {
       pre: props => <div {...props} />,
       code: CodeBlock,
@@ -38,15 +33,18 @@ export default function PageTemplate({ data: { mdx, components: componentNodes }
       PropsTableFor,
     };
   }, [components]);
+
   return (
-    <Container size="md">
-      <Link to="/">Home</Link>
-      <h1>{mdx.frontmatter.title}</h1>
-      <MDXProvider components={shortcodes}>
-        <MDXRenderer>{mdx.body}</MDXRenderer>
-      </MDXProvider>
-      {Object.values(components).map(node => <PropsTable {...node} />)}
-    </Container>
+    <Layout>
+      <SEO title={mdx.frontmatter.title} />
+      <Container size="md" className="py-5">
+        <h1>{mdx.frontmatter.title}</h1>
+        <MDXProvider components={shortcodes}>
+          <MDXRenderer>{mdx.body}</MDXRenderer>
+        </MDXProvider>
+        {Object.values(components).map(node => <PropsTable {...node} />)}
+      </Container>
+    </Layout>
   )
 }
 
