@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { Container } from '~paragon-react'; // eslint-disable-line
-import SEO from '../../components/seo';
+import SEO from '../../components/SEO';
 import MeasuredItem from '../../components/MeasuredItem';
 import Layout from '../../components/PageLayout';
 
@@ -184,7 +184,7 @@ export default function TypographyPage() {
               </td>
               <td>
                 <small>
-                  The default style for <code>a</code> tags that don't appear in
+                  The default style for <code>a</code> tags that don&apos;t appear in
                   a <code>p</code> tag.
                 </small>
               </td>

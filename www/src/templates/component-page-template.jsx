@@ -1,15 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-
 import { Container } from '~paragon-react'; // eslint-disable-line
-
 import CodeBlock from '../components/CodeBlock';
 import PropsTable from '../components/PropsTable';
 import '../scss/index.scss';
 import Layout from '../components/PageLayout';
-import SEO from '../components/seo';
+import SEO from '../components/SEO';
 
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
@@ -20,7 +19,7 @@ export default function PageTemplate({
   }, {});
 
   const shortcodes = React.useMemo(() => {
-    const PropsTableFor = ({ name }) => {
+    const PropsTableFor = ({ name }) => { // eslint-disable-line react/prop-types
       if (components[name]) {
         return <PropsTable {...components[name]} />;
       }
@@ -50,6 +49,18 @@ export default function PageTemplate({
     </Layout>
   );
 }
+
+PageTemplate.propTypes = {
+  data: PropTypes.shape({
+    mdx: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string,
+      }),
+      body: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+    }),
+    components: PropTypes.objectOf(PropTypes.object), // eslint-disable-line react/forbid-prop-types
+  }).isRequired,
+};
 
 export const pageQuery = graphql`
   query BlogPostQuery($id: String, $components: [String]) {

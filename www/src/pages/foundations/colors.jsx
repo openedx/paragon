@@ -1,8 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Color from 'color';
-import SEO from '../../components/seo';
+import SEO from '../../components/SEO';
 import MeasuredItem from '../../components/MeasuredItem';
 import Layout from '../../components/PageLayout';
 import { Container } from '~paragon-react'; // eslint-disable-line
@@ -66,6 +67,12 @@ const Swatch = ({ name, colorClassName, isUnused }) => (
   </div>
 );
 
+Swatch.propTypes = {
+  name: PropTypes.string.isRequired,
+  colorClassName: PropTypes.string.isRequired,
+  isUnused: PropTypes.bool.isRequired,
+};
+
 const renderColorRamp = (themeName, unusedLevels) => (
   <div style={{ flexBasis: '24%', marginRight: '1%', marginBottom: '2rem' }}>
     <h5>{themeName}</h5>
@@ -81,7 +88,7 @@ const renderColorRamp = (themeName, unusedLevels) => (
 
 // eslint-disable-next-line react/prop-types
 export default function ColorsPage({ data }) {
-  parseColors(data.allCssUtilityClasses.nodes);
+  parseColors(data.allCssUtilityClasses.nodes); // eslint-disable-line react/prop-types
 
   return (
     <Layout>

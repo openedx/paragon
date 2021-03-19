@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { MDXProvider } from '@mdx-js/react';
 import { Link } from 'gatsby';
 import { Container } from '~paragon-react'; // eslint-disable-line
@@ -6,7 +7,7 @@ import { Container } from '~paragon-react'; // eslint-disable-line
 import CodeBlock from '../components/CodeBlock';
 import '../scss/index.scss';
 import Layout from '../components/PageLayout';
-import SEO from '../components/seo';
+import SEO from '../components/SEO';
 
 const shortcodes = {
   pre: props => <div {...props} />,
@@ -14,7 +15,7 @@ const shortcodes = {
   Link,
 };
 
-export default function PageTemplate({ children, pageContext, ...props }) {
+export default function PageTemplate({ children, pageContext }) {
   return (
     <Layout>
       <SEO title={pageContext?.frontmatter?.title} />
@@ -24,3 +25,13 @@ export default function PageTemplate({ children, pageContext, ...props }) {
     </Layout>
   );
 }
+
+PageTemplate.propTypes = {
+  children: PropTypes.node.isRequired,
+  // Require mdx files to define their page title using frontmatter
+  pageContext: PropTypes.shape({
+    frontmatter: PropTypes.shape({
+      title: PropTypes.string,
+    }),
+  }).isRequired,
+};

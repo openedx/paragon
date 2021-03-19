@@ -92,6 +92,18 @@ const Navbar = ({
     </Row>
   </Container>
 );
+
+Navbar.propTypes = {
+  siteTitle: PropTypes.string.isRequired,
+  onMenuClick: PropTypes.func.isRequired,
+  menuIsOpen: PropTypes.string,
+  showMinimizedTitle: PropTypes.string,
+};
+Navbar.defaultProps = {
+  menuIsOpen: false,
+  showMinimizedTitle: false,
+};
+
 const Header = ({ siteTitle, showMinimizedTitle }) => {
   // eslint-disable-next-line no-unused-vars
   const [isOpen, open, close, toggle] = useToggle(false, {
@@ -102,11 +114,11 @@ const Header = ({ siteTitle, showMinimizedTitle }) => {
       document.body.style.overflow = 'initial';
     },
   });
-  useEffect(() =>
-    // returned function will be called on component unmount
-    () => {
-      document.body.style.overflow = 'initial';
-    },
+
+  // returned function will be called on component unmount
+  useEffect(() => () => {
+    document.body.style.overflow = 'initial';
+  },
   []);
 
   return (

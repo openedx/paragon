@@ -12,6 +12,14 @@ const RequiredBadge = ({ isRequired }) => {
   );
 };
 
+RequiredBadge.propTypes = {
+  isRequired: PropTypes.bool,
+};
+
+RequiredBadge.defaultProps = {
+  isRequired: false,
+};
+
 const SimplePropType = ({ name, isRequired }) => (
   <span>
     <code>{name}</code>
@@ -19,19 +27,38 @@ const SimplePropType = ({ name, isRequired }) => (
   </span>
 );
 
-const PropTypeEnum = ({ name, value, isRequired }) => (
+SimplePropType.propTypes = {
+  isRequired: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+};
+
+SimplePropType.defaultProps = {
+  isRequired: false,
+};
+
+const PropTypeEnum = ({ name, value: enumValue, isRequired }) => (
   <span>
     <code>{name}</code>
     <RequiredBadge isRequired={isRequired} />
     <span className="text-monospace small ml-2">
-      {value.map
-        ? value.map(({ value }) => value).join(' | ')
-        : JSON.stringify(value)}
+      {enumValue.map
+        ? enumValue.map(({ value }) => value).join(' | ')
+        : JSON.stringify(enumValue)}
     </span>
   </span>
 );
 
-const PropTypeUnion = ({ name, value, isRequired }) => (
+PropTypeEnum.propTypes = {
+  isRequired: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
+};
+
+PropTypeEnum.defaultProps = {
+  isRequired: false,
+};
+
+const PropTypeUnion = ({ value, isRequired }) => (
   <span>
     {value
       .map(propType => <PropType key={propType.name} {...propType} />)
@@ -40,14 +67,33 @@ const PropTypeUnion = ({ name, value, isRequired }) => (
   </span>
 );
 
-const PropTypeInstanceOf = ({ name, value, isRequired }) => (
+PropTypeUnion.propTypes = {
+  isRequired: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
+};
+
+PropTypeUnion.defaultProps = {
+  isRequired: false,
+};
+
+const PropTypeInstanceOf = ({ value, isRequired }) => (
   <span>
     <code>{value}</code>
     <RequiredBadge isRequired={isRequired} />
   </span>
 );
 
-const PropTypeArrayOf = ({ name, value, isRequired }) => (
+PropTypeInstanceOf.propTypes = {
+  isRequired: PropTypes.bool,
+  value: PropTypes.string.isRequired,
+};
+
+PropTypeInstanceOf.defaultProps = {
+  isRequired: false,
+};
+
+const PropTypeArrayOf = ({ value, isRequired }) => (
   <span>
     <PropType {...value} />
     <code>[]</code>
@@ -55,7 +101,16 @@ const PropTypeArrayOf = ({ name, value, isRequired }) => (
   </span>
 );
 
-const PropTypeObjectOf = ({ name, value, isRequired }) => (
+PropTypeArrayOf.propTypes = {
+  isRequired: PropTypes.bool,
+  value: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+};
+
+PropTypeArrayOf.defaultProps = {
+  isRequired: false,
+};
+
+const PropTypeObjectOf = ({ value, isRequired }) => (
   <span>
     <code>
       Object.{'<'}
@@ -65,6 +120,15 @@ const PropTypeObjectOf = ({ name, value, isRequired }) => (
     <RequiredBadge isRequired={isRequired} />
   </span>
 );
+
+PropTypeObjectOf.propTypes = {
+  isRequired: PropTypes.bool,
+  value: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+};
+
+PropTypeObjectOf.defaultProps = {
+  isRequired: false,
+};
 
 const PropTypeShape = ({ name, value, isRequired }) => (
   <span className="small">
@@ -80,6 +144,16 @@ const PropTypeShape = ({ name, value, isRequired }) => (
   </span>
 );
 
+PropTypeShape.propTypes = {
+  isRequired: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+};
+
+PropTypeShape.defaultProps = {
+  isRequired: false,
+};
+
 const PropTypeExact = ({ name, value, isRequired }) => (
   <span className="small">
     <code>{name}</code>
@@ -94,12 +168,32 @@ const PropTypeExact = ({ name, value, isRequired }) => (
   </span>
 );
 
+PropTypeExact.propTypes = {
+  isRequired: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+};
+
+PropTypeExact.defaultProps = {
+  isRequired: false,
+};
+
 const CustomPropType = ({ raw, isRequired }) => (
   <span>
     <code>{raw}</code>
     <RequiredBadge isRequired={isRequired} />
   </span>
 );
+
+CustomPropType.propTypes = {
+  isRequired: PropTypes.bool,
+  raw: PropTypes.string,
+};
+
+CustomPropType.defaultProps = {
+  isRequired: false,
+  raw: '',
+};
 
 const PROP_TYPE_COMPONENTS = {
   array: SimplePropType,
@@ -163,7 +257,7 @@ PropType.propTypes = {
     'union',
     'elementType',
   ]),
-  value: PropTypes.any,
+  value: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   raw: PropTypes.string,
   computed: PropTypes.bool,
   required: PropTypes.bool,

@@ -14,8 +14,16 @@ const DefaultValue = ({ value }) => {
   );
 };
 
+DefaultValue.propTypes = {
+  value: PropTypes.string,
+};
+
+DefaultValue.defaultProps = {
+  value: undefined,
+};
+
 const Prop = ({
-  name, type, required, defaultValue = {}, description,
+  name, type, required, defaultValue, description,
 }) => (
   <li className="px-4 border-top border-light-300">
     <div className="my-3">
@@ -40,25 +48,42 @@ const Prop = ({
   </li>
 );
 
-const PropsTable = ({ props, displayName, content }) => (
+Prop.propTypes = {
+  name: PropTypes.string.isRequired,
+  type: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  required: PropTypes.bool,
+  defaultValue: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  description: PropTypes.shape({
+    childMdx: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  }),
+};
+Prop.defaultProps = {
+  required: false,
+  defaultValue: {},
+  description: undefined,
+};
+
+const PropsTable = ({ props: componentProps, displayName, content }) => (
   <Card className="mb-5" id={`props-api-table-${displayName}`}>
     <Card.Body className="pb-1">
       <Card.Title as="h3">{displayName} Props API</Card.Title>
       {content && <div className="small mb-3">{content}</div>}
     </Card.Body>
     <ul className="list-unstyled">
-      {props.map(metadata => <Prop key={metadata.name} {...metadata} />)}
+      {componentProps.map(metadata => <Prop key={metadata.name} {...metadata} />)}
     </ul>
   </Card>
 );
 
 PropsTable.propTypes = {
   props: PropTypes.arrayOf(PropTypes.object),
+  content: PropTypes.string,
   displayName: PropTypes.string,
 };
 
 PropsTable.defaultProps = {
   props: [],
+  content: undefined,
   displayName: undefined,
 };
 
