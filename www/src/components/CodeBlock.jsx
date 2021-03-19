@@ -6,7 +6,10 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import * as ParagonReact from '~paragon-react';
 import * as ParagonIcons from '~paragon-icons';
 import * as FontAwesome from '@fortawesome/free-solid-svg-icons'
-import MiyazakiCard from './exampleComponents/MiyazakiCard';
+// import MiyazakiCard from './exampleComponents/MiyazakiCard';
+const MiyazakiCard = () => {
+  return 'miyazaki card';
+}
 
 function CodeBlock({ children, className, live }) {
   const language = className ? className.replace(/language-/, '') : 'jsx';

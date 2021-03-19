@@ -1,62 +1,10 @@
-@import "~font-awesome/css/font-awesome.min.css";
+// @import "~font-awesome/css/font-awesome.min.css";
 
-@import "~@edx/brand/paragon/fonts.scss";
-@import "~@edx/brand/paragon/variables.scss";
+// @import "~@edx/brand/paragon/fonts.scss";
+// @import "~@edx/brand/paragon/variables.scss";
 @import "~paragon-style/core/core.scss";
-@import "~@edx/brand/paragon/overrides.scss";
+// @import "~@edx/brand/paragon/overrides.scss";
 
-@import "./hero";
-@import "./code-block";
-@import "./status-table";
+@import "../components/CodeBlock";
+@import "../components/Menu";
 
-// Typography
-
-.pgn-doc__main-content {
-  h1 {
-    margin: 4rem 0;
-  }
-
-  & > div {
-    & > h1, & > h2, & > h3, & > h4, & > h5 {
-      margin-top: 2em;
-    }
-  }
-
-  // Colors Page
-  .pgn-doc__swatch {
-    height: 2rem;
-    width: 2rem;
-    margin-right: .5rem;
-    @extend .rounded;
-    &.unused-level {
-      background: $gray-100 !important;
-    }
-  }
-}
-
-.base-type {
-  & + .base-type {
-    margin-left: .25em;
-  }
-  display: inline-block;
-  background: #eee;
-  padding: 0 .25em;
-  font-family: SFMono-Regular, Menlo, Monaco, "Courier New", monospace;
-  font-size: .8em;
-  vertical-align: middle;
-}
-
-.mobile-type {
-  @include mobile-type;
-}
-
-input[type=range] {
-  cursor: pointer;
-}
-
-pre, small {
-  font-size: .875rem;
-}
-code {
-  font-size: inherit;
-}

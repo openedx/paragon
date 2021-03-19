@@ -2,7 +2,8 @@ import React from 'react';
 import { Icon } from '~paragon-react';
 import * as IconComponents from '~paragon-icons';
 
-export default function() {
+
+function IconsTable() {
   return (
     <div>
       {Object.keys(IconComponents).map(iconName => (
@@ -15,3 +16,5 @@ export default function() {
     </div>
   )
 }
+
+export default IconsTable;
