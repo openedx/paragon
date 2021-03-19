@@ -2,6 +2,7 @@
 @import "~bootstrap/scss/forms";
 @import "~bootstrap/scss/input-group";
 @import "~bootstrap/scss/custom-forms";
+@import "mixins";
 
 $form-control-icon-width: 32px !default;
 
@@ -115,37 +116,6 @@ $form-control-icon-width: 32px !default;
 }
 
 // Floating Labels
-
-@mixin form-control-floating-label-initial(
-  $padding-x,
-  $padding-y,
-  $line-height,
-  $font-size,
-  $border-width
-) {
-  padding: 0 $padding-x;
-  .pgn__form-control-floating-label-content {
-    padding-top: $padding-y;
-    line-height: $line-height;
-    font-size: $font-size;
-  }
-}
-
-@mixin form-control-floating-label-float(
-  $padding-x,
-  $padding-y,
-  $line-height,
-  $font-size,
-  $border-width
-) {
-  .pgn__form-control-floating-label-text {
-    $half-leading: ($line-height - 0.8) / 2;
-    $percent-height-minus-no-bottom-leading: (
-        ($line-height - $half-leading) / $line-height
-      ) * 100%;
-    transform: translateY(-$padding-y) scale(.75)  translateY(-$percent-height-minus-no-bottom-leading);
-  }
-}
 
 .pgn__form-control-floating-label {
   position: absolute;

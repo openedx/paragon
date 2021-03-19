@@ -26,7 +26,6 @@ const FormControl = React.forwardRef(({
     isValid,
     onFocus,
     onBlur,
-    placeholder,
     'aria-describedby': ariaDescribedBy,
   } = useFormGroupContext({ ...props, controlId: id });
 
@@ -52,11 +51,6 @@ const FormControl = React.forwardRef(({
           'has-value': hasValue,
         })}
         onFocus={onFocus}
-        /*
-          Force a whitespace string for a placeholder if none is defined so we can
-          use the :placeholder-shown pseudo-class when styling floating labels
-        */
-        placeholder={placeholder || ' '}
         onBlur={callAllHandlers(checkInputEventValue, onBlur)}
         aria-describedby={ariaDescribedBy}
       />
