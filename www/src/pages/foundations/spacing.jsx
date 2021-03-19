@@ -1,56 +1,55 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import { Input, Container } from '~paragon-react';
-import SEO from '../../components/seo';
-import Layout from '../../components/PageLayout';
+import React, { useState } from "react"
+import PropTypes from "prop-types"
+import classNames from "classnames"
+import { Input, Container } from "~paragon-react"
+import SEO from "../../components/seo"
+import Layout from "../../components/PageLayout"
 
 const directions = [
-  { key: '', name: 'all' },
-  { key: 't', name: 'top' },
-  { key: 'r', name: 'right' },
-  { key: 'b', name: 'bottom' },
-  { key: 'l', name: 'left' },
-  { key: 'x', name: 'x direction' },
-  { key: 'y', name: 'y direction' },
-];
+  { key: "", name: "all" },
+  { key: "t", name: "top" },
+  { key: "r", name: "right" },
+  { key: "b", name: "bottom" },
+  { key: "l", name: "left" },
+  { key: "x", name: "x direction" },
+  { key: "y", name: "y direction" },
+]
 
-const sizes = [5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5];
+const sizes = [5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5]
 
 const getUtilityClassName = (prefix, direction, size) =>
-  `${prefix}${direction}-${size < 0 ? 'n' : ''}${Math.abs(size)}`;
-
+  `${prefix}${direction}-${size < 0 ? "n" : ""}${Math.abs(size)}`
 
 const SpaceBlock = ({ utilityClass }) => (
   <code
     className={classNames(utilityClass)}
     style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: '5rem',
-      textAlign: 'center',
-      width: '10rem',
-      background: 'rgba(0,0,0,.1)',
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      height: "5rem",
+      textAlign: "center",
+      width: "10rem",
+      background: "rgba(0,0,0,.1)",
     }}
   >
     {utilityClass ? `.${utilityClass}` : null}
   </code>
-);
+)
 
 SpaceBlock.propTypes = {
   utilityClass: PropTypes.string,
-};
+}
 
 SpaceBlock.defaultProps = {
-  utilityClass: '',
-};
+  utilityClass: "",
+}
 
 export default function SpacingPage() {
-  const [size, setSize] = useState(3);
-  const [direction, setDirection] = useState('r');
+  const [size, setSize] = useState(3)
+  const [direction, setDirection] = useState("r")
 
-  const utilityClassName = getUtilityClassName('m', direction, size);
+  const utilityClassName = getUtilityClassName("m", direction, size)
 
   return (
     <Layout>
@@ -60,11 +59,11 @@ export default function SpacingPage() {
 
         <h3>Margin</h3>
         <p>
-          Margin utilities are structured as <code>{'.m{direction}-{level}'}</code>.
-          Negative numbers are represented
-          as <code>n1</code>, <code>n2</code>, <code>n3</code>, etc.
-          Choose a direction and spacing level to change the
-          margin applied to the center block below.
+          Margin utilities are structured as{" "}
+          <code>{".m{direction}-{level}"}</code>. Negative numbers are
+          represented as <code>n1</code>, <code>n2</code>, <code>n3</code>, etc.
+          Choose a direction and spacing level to change the margin applied to
+          the center block below.
         </p>
         <div className="border p-4">
           <div className="d-flex flex-column align-items-center">
@@ -89,12 +88,12 @@ export default function SpacingPage() {
                 </label>
               ))}
             </div>
-            <label
-              className="d-block"
-              htmlFor="set-size"
-            >
-              <span className="d-block text-center">Spacing Level: { size }</span>
-              <div className="d-flex align-items-center" style={{ maxWidth: '20rem' }}>
+            <label className="d-block" htmlFor="set-size">
+              <span className="d-block text-center">Spacing Level: {size}</span>
+              <div
+                className="d-flex align-items-center"
+                style={{ maxWidth: "20rem" }}
+              >
                 -5
                 <Input
                   type="range"
@@ -126,9 +125,9 @@ export default function SpacingPage() {
         </div>
         <h3>Padding</h3>
         <p>
-          Padding utilities are structured the same way: <code>{'.p{direction}-{level}'}</code>.
+          Padding utilities are structured the same way:{" "}
+          <code>{".p{direction}-{level}"}</code>.
         </p>
-
 
         <h3>All Spacing Utility Classes</h3>
         <table className="table">
@@ -150,7 +149,11 @@ export default function SpacingPage() {
             <tr>
               {directions.map(({ key }) => (
                 <td>
-                  {sizes.map(_size => <code className="d-block">.{getUtilityClassName('m', key, _size)}</code>)}
+                  {sizes.map(_size => (
+                    <code className="d-block">
+                      .{getUtilityClassName("m", key, _size)}
+                    </code>
+                  ))}
                 </td>
               ))}
             </tr>
@@ -160,7 +163,11 @@ export default function SpacingPage() {
             <tr>
               {directions.map(({ key }) => (
                 <td>
-                  {sizes.map(_size => <code className="d-block">.{getUtilityClassName('p', key, _size)}</code>)}
+                  {sizes.map(_size => (
+                    <code className="d-block">
+                      .{getUtilityClassName("p", key, _size)}
+                    </code>
+                  ))}
                 </td>
               ))}
             </tr>
@@ -168,5 +175,5 @@ export default function SpacingPage() {
         </table>
       </Container>
     </Layout>
-  );
+  )
 }

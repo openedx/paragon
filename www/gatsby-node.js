@@ -7,29 +7,29 @@
 // You can delete this file if you're not using it
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
-const sass = require('node-sass');
-const css = require('css');
+const sass = require("node-sass")
+const css = require("css")
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
-      modules: ['node_modules', path.resolve(__dirname, 'node_modules')],
+      modules: ["node_modules", path.resolve(__dirname, "node_modules")],
       alias: {
-        '~paragon-react': path.resolve(__dirname, '../src'),
-        '~paragon-style': path.resolve(__dirname, '../scss'),
-        '~paragon-icons': path.resolve(__dirname, '../icons'),
+        "~paragon-react": path.resolve(__dirname, "../src"),
+        "~paragon-style": path.resolve(__dirname, "../scss"),
+        "~paragon-icons": path.resolve(__dirname, "../icons"),
         // Prevent multiple copies of react getting loaded
         // paragon react components would naturally import
         // react and react-dom from the node_modules folder
         // one level above if it is present. This approach forces
         // all uses of react and react-dom to resolve to those
         // in ./node_modules
-        'react': path.resolve(__dirname, 'node_modules/react/'),
-        'react-dom': path.resolve(__dirname, 'node_modules/react-dom/'),
+        react: path.resolve(__dirname, "node_modules/react/"),
+        "react-dom": path.resolve(__dirname, "node_modules/react-dom/"),
       },
     },
-  });
-};
+  })
+}
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
@@ -37,7 +37,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   // remote CMS you could also check to see if the parent node was a
   // `File` node here
   if (node.internal.type === "Mdx") {
-    const value = createFilePath({ node, getNode }).split('README')[0].toLowerCase();
+    const value = createFilePath({ node, getNode })
+      .split("README")[0]
+      .toLowerCase()
 
     createNodeField({
       // Name of the field you are adding
@@ -60,13 +62,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // are for page creation purposes.
   const result = await graphql(`
     query {
-      allMdx(filter: {
-        parent: {
-          internal: {
-            owner: {nin: "gatsby-transformer-react-docgen"}
+      allMdx(
+        filter: {
+          parent: {
+            internal: { owner: { nin: "gatsby-transformer-react-docgen" } }
           }
         }
-      }) {
+      ) {
         edges {
           node {
             id
@@ -101,56 +103,65 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   })
 }
 
-function createCssUtilityClassNodes({ actions, createNodeId, createContentDigest }) {
-  const { createNode } = actions;
+function createCssUtilityClassNodes({
+  actions,
+  createNodeId,
+  createContentDigest,
+}) {
+  const { createNode } = actions
 
   // We convert to CSS first since we prefer the real values over tokens.
   const compiledCSS = sass
-      .renderSync({
-        file: path.resolve(__dirname, '../scss/core/utilities-only.scss'),
-        // Resolve tildes the way webpack would in our base npm project
-        importer: function(url, prev, done) {
-          if (url[0] === '~') {
-            url = path.resolve(__dirname, '../node_modules', url.substr(1));
-          }
-          return { file: url };
-        },
-      }).css.toString();
+    .renderSync({
+      file: path.resolve(__dirname, "../scss/core/utilities-only.scss"),
+      // Resolve tildes the way webpack would in our base npm project
+      importer: function (url, prev, done) {
+        if (url[0] === "~") {
+          url = path.resolve(__dirname, "../node_modules", url.substr(1))
+        }
+        return { file: url }
+      },
+    })
+    .css.toString()
 
-  const sheet = css.parse(compiledCSS).stylesheet;
+  const sheet = css.parse(compiledCSS).stylesheet
 
-  sheet.rules.forEach(({
-    selectors, position, declarations,
-  }) => {
-    if (!selectors) return;
+  sheet.rules.forEach(({ selectors, position, declarations }) => {
+    if (!selectors) return
 
-    selectors.forEach((selector) => {
-      if (selector[0] !== '.') return; // classes only
+    selectors.forEach(selector => {
+      if (selector[0] !== ".") return // classes only
 
-      selector = selector.substr(1);
+      selector = selector.substr(1)
 
       const nodeData = {
         selector,
-        declarations: declarations.map(({ property, value }) => `${property}: ${value};`),
-        isUtility: declarations.length === 1 && declarations[0].value.includes('!important'),
-      };
+        declarations: declarations.map(
+          ({ property, value }) => `${property}: ${value};`
+        ),
+        isUtility:
+          declarations.length === 1 &&
+          declarations[0].value.includes("!important"),
+      }
 
       const nodeMeta = {
-        id: createNodeId(`rule-${selector}-${position.start.line}-${position.end.line}`),
+        id: createNodeId(
+          `rule-${selector}-${position.start.line}-${position.end.line}`
+        ),
         parent: null,
         children: [],
         internal: {
           type: `CssUtilityClasses`,
           contentDigest: createContentDigest(nodeData),
-        }
-      };
+        },
+      }
 
       const node = Object.assign({}, nodeData, nodeMeta)
-      createNode(node);
+      createNode(node)
     })
-  });
+  })
 }
 
 exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
-  createCssUtilityClassNodes({ actions, createNodeId, createContentDigest });
-};
+  createCssUtilityClassNodes({ actions, createNodeId, createContentDigest })
+}

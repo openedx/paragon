@@ -1,25 +1,28 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import Highlight, { defaultProps } from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/duotoneDark';
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
-import * as ParagonReact from '~paragon-react';
-import * as ParagonIcons from '~paragon-icons';
-import * as FontAwesome from '@fortawesome/free-solid-svg-icons'
-// import MiyazakiCard from './exampleComponents/MiyazakiCard';
-const MiyazakiCard = () => {
-  return 'miyazaki card';
-}
+import React, { useState } from "react"
+import PropTypes from "prop-types"
+import Highlight, { defaultProps } from "prism-react-renderer"
+import theme from "prism-react-renderer/themes/duotoneDark"
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live"
+import * as ParagonReact from "~paragon-react"
+import * as ParagonIcons from "~paragon-icons"
+import * as FontAwesome from "@fortawesome/free-solid-svg-icons"
+import MiyazakiCard from './exampleComponents/MiyazakiCard';
 
 function CodeBlock({ children, className, live }) {
-  const language = className ? className.replace(/language-/, '') : 'jsx';
+  const language = className ? className.replace(/language-/, "") : "jsx"
 
   if (live) {
     return (
       <div className="pgn-doc__code-block">
         <LiveProvider
           code={children}
-          scope={{ ...ParagonIcons, ...ParagonReact, useState, FontAwesome, MiyazakiCard }}
+          scope={{
+            ...ParagonIcons,
+            ...ParagonReact,
+            useState,
+            FontAwesome,
+            MiyazakiCard,
+          }}
           theme={theme}
         >
           <LivePreview className="pgn-doc__code-block-preview" />
@@ -27,16 +30,20 @@ function CodeBlock({ children, className, live }) {
           <LiveError className="pgn-doc__code-block-error" />
         </LiveProvider>
       </div>
-    );
+    )
   }
 
   /* eslint-disable react/no-array-index-key */
   return (
     <Highlight {...defaultProps} code={children} language={language}>
       {({
-        className: preClassName, style, tokens, getLineProps, getTokenProps,
+        className: preClassName,
+        style,
+        tokens,
+        getLineProps,
+        getTokenProps,
       }) => (
-        <pre className={preClassName} style={{ ...style, padding: '1rem' }}>
+        <pre className={preClassName} style={{ ...style, padding: "1rem" }}>
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
@@ -47,18 +54,18 @@ function CodeBlock({ children, className, live }) {
         </pre>
       )}
     </Highlight>
-  );
+  )
 }
 
 CodeBlock.propTypes = {
   children: PropTypes.string.isRequired,
   className: PropTypes.string,
   live: PropTypes.bool,
-};
+}
 
 CodeBlock.defaultProps = {
   live: false,
-  className: '',
-};
+  className: "",
+}
 
-export default CodeBlock;
+export default CodeBlock
