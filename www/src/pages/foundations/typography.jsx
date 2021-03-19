@@ -1,32 +1,30 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react"
-import { Container } from "~paragon-react"
-import SEO from "../../components/seo"
-import MeasuredItem from "../../components/MeasuredItem"
-import Layout from "../../components/PageLayout"
+import React from 'react';
+import { Container } from '~paragon-react'; // eslint-disable-line
+import SEO from '../../components/seo';
+import MeasuredItem from '../../components/MeasuredItem';
+import Layout from '../../components/PageLayout';
 
 const weightLabels = {
-  200: "Light",
-  300: "Light",
-  400: "Regular",
-  500: "Medium",
-  600: "Medium",
-  700: "Bold",
-  800: "Black",
-}
+  200: 'Light',
+  300: 'Light',
+  400: 'Regular',
+  500: 'Medium',
+  600: 'Medium',
+  700: 'Bold',
+  800: 'Black',
+};
 
 const measuredTypeProps = {
-  properties: ["font-size", "line-height", "font-family", "font-weight"],
+  properties: ['font-size', 'line-height', 'font-family', 'font-weight'],
   renderAfter: measurements => {
-    const fontFamily = measurements["font-family"]
-      ? measurements["font-family"].split(",")[0]
-      : null
-    const weight = weightLabels[measurements["font-weight"]]
+    const fontFamily = measurements['font-family']
+      ? measurements['font-family'].split(',')[0]
+      : null;
+    const weight = weightLabels[measurements['font-weight']];
     // only one significant digit if needed
-    const fontSize =
-      Math.round(Number.parseFloat(measurements["font-size"]) * 10) / 10
-    const lineHeight =
-      Math.round(Number.parseFloat(measurements["line-height"]) * 10) / 10
+    const fontSize = Math.round(Number.parseFloat(measurements['font-size']) * 10) / 10;
+    const lineHeight = Math.round(Number.parseFloat(measurements['line-height']) * 10) / 10;
 
     return (
       <p className="m-0 text-muted">
@@ -35,9 +33,9 @@ const measuredTypeProps = {
         </span>
         {fontSize}px / {lineHeight}px
       </p>
-    )
+    );
   },
-}
+};
 
 export default function TypographyPage() {
   return (
@@ -194,16 +192,16 @@ export default function TypographyPage() {
             <tr>
               <td colSpan="2">
                 <p>
-                  An{" "}
+                  An{' '}
                   <a className="inline-link" href="#">
                     inline link
-                  </a>{" "}
+                  </a>{' '}
                   in a sentence.
                 </p>
               </td>
               <td>
                 <small>
-                  For links inside a <code>p</code> or with the{" "}
+                  For links inside a <code>p</code> or with the{' '}
                   <code>.inline-link</code> class name.
                 </small>
               </td>
@@ -223,10 +221,10 @@ export default function TypographyPage() {
             <tr>
               <td colSpan="2">
                 <p>
-                  An{" "}
+                  An{' '}
                   <a className="muted-link inline-link" href="#">
                     muted, inline link
-                  </a>{" "}
+                  </a>{' '}
                   in a sentence.
                 </p>
               </td>
@@ -352,7 +350,7 @@ export default function TypographyPage() {
                 <p className="text-justify">justify text.</p>
                 <p
                   className="text-justify text-muted small"
-                  style={{ maxWidth: "20rem" }}
+                  style={{ maxWidth: '20rem' }}
                 >
                   At the edge of forever tendrils of gossamer clouds corpus
                   callosum culture Vangelis dispassionate extraterrestrial
@@ -383,5 +381,5 @@ export default function TypographyPage() {
         </table>
       </Container>
     </Layout>
-  )
+  );
 }

@@ -5,11 +5,11 @@
 const getCssSelectors = (nodes, regExpStr) => {
   // return Object.keys(props.data, fileName);
   if (!regExpStr) {
-    return nodes
+    return nodes;
   }
 
-  const regex = RegExp(regExpStr)
-  return nodes.filter(rule => regex.test(rule.selector))
-}
+  const regex = RegExp(regExpStr);
+  return nodes.filter(rule => regex.test(rule.selector));
+};
 
-export default getCssSelectors
+export default getCssSelectors;

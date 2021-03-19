@@ -1,19 +1,21 @@
-import React, { useState } from "react"
-import PropTypes from "prop-types"
-import { Input } from "~paragon-react"
-import classNames from "classnames"
-import CodeBlock from "./CodeBlock"
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { Input } from '~paragon-react'; // eslint-disable-line
+import CodeBlock from './CodeBlock';
 
-const Column = ({ index, width, onChangeWidth, offset, onChangeOffset }) => (
+const Column = ({
+  index, width, onChangeWidth, offset, onChangeOffset,
+}) => (
   <div
-    className={classNames("col mb-4", {
+    className={classNames('col mb-4', {
       [`col-${width}`]: width > 0,
       [`offset-${offset}`]: offset > 0,
     })}
   >
     <div
       className="text-align-center p-1"
-      style={{ background: "#eee", minHeight: "2rem" }}
+      style={{ background: '#eee', minHeight: '2rem' }}
     >
       <div className="form-inline m-2">
         <label className="font-weight-normal" htmlFor={`column-${index}-width`}>
@@ -25,7 +27,7 @@ const Column = ({ index, width, onChangeWidth, offset, onChangeOffset }) => (
           className="form-control-sm"
           value={width}
           placeholder="Width (1 - 12)"
-          style={{ width: "3rem" }}
+          style={{ width: '3rem' }}
           min={0}
           step={1}
           max={12}
@@ -45,7 +47,7 @@ const Column = ({ index, width, onChangeWidth, offset, onChangeOffset }) => (
           className="form-control-sm"
           value={offset}
           placeholder="Offset (1 - 11)"
-          style={{ width: "3rem" }}
+          style={{ width: '3rem' }}
           min={0}
           step={1}
           max={11}
@@ -54,7 +56,7 @@ const Column = ({ index, width, onChangeWidth, offset, onChangeOffset }) => (
       </div>
     </div>
   </div>
-)
+);
 
 Column.propTypes = {
   index: PropTypes.number.isRequired,
@@ -62,19 +64,19 @@ Column.propTypes = {
   onChangeWidth: PropTypes.func.isRequired,
   offset: PropTypes.number,
   onChangeOffset: PropTypes.func.isRequired,
-}
+};
 
 Column.defaultProps = {
   width: 0,
   offset: 0,
-}
+};
 
 function LayoutGenerator() {
-  const [numColumns, setColumns] = useState(3)
-  const [columnWidths, setColumnWidths] = useState({ 0: 3, 1: 6, 2: 3 })
-  const [columnOffsets, setColumnOffsets] = useState({})
+  const [numColumns, setColumns] = useState(3);
+  const [columnWidths, setColumnWidths] = useState({ 0: 3, 1: 6, 2: 3 });
+  const [columnOffsets, setColumnOffsets] = useState({});
 
-  const columns = []
+  const columns = [];
 
   for (let i = 0; i < numColumns; i++) {
     // eslint-disable-line no-plusplus
@@ -84,39 +86,39 @@ function LayoutGenerator() {
         index={i}
         width={columnWidths[i]}
         onChangeWidth={(_index, _width) => {
-          setColumnWidths({ ...columnWidths, [_index]: _width })
+          setColumnWidths({ ...columnWidths, [_index]: _width });
         }}
         offset={columnOffsets[i]}
         onChangeOffset={(_index, _offset) => {
-          setColumnOffsets({ ...columnOffsets, [_index]: _offset })
+          setColumnOffsets({ ...columnOffsets, [_index]: _offset });
         }}
-      />
-    )
+      />,
+    );
   }
 
   const renderMarkupString = () => {
     const columnsString = columns.map((ColumnComponent, i) => {
-      const width = columnWidths[i]
-      const offset = columnOffsets[i]
+      const width = columnWidths[i];
+      const offset = columnOffsets[i];
 
-      const className = classNames("col", {
+      const className = classNames('col', {
         [`col-${width}`]: width > 0,
         [`offset-${offset}`]: offset > 0,
-      })
+      });
       return `
   <div className="${className}">
-    ${width || "auto"}
+    ${width || 'auto'}
   </div>
-      `
-    })
+      `;
+    });
 
     const rowString = `
 <div className="row">
-${columnsString.join("")}
+${columnsString.join('')}
 </div>
-    `
-    return rowString
-  }
+    `;
+    return rowString;
+  };
 
   return (
     <div>
@@ -142,7 +144,7 @@ ${columnsString.join("")}
 
       <CodeBlock className="language-jsx">{renderMarkupString()}</CodeBlock>
     </div>
-  )
+  );
 }
 
-export default LayoutGenerator
+export default LayoutGenerator;

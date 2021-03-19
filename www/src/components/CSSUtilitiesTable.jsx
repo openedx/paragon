@@ -1,6 +1,6 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Table } from "~paragon-react"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Table } from '~paragon-react'; // eslint-disable-line
 
 function CSSUtilitiesTable({ selectors, showExample }) {
   return (
@@ -11,10 +11,10 @@ function CSSUtilitiesTable({ selectors, showExample }) {
         example: showExample ? (
           <p
             style={{
-              margin: "-.25em 0",
-              display: "inline-block",
-              padding: ".25em .5em",
-              border: "solid 1px transparent",
+              margin: '-.25em 0',
+              display: 'inline-block',
+              padding: '.25em .5em',
+              border: 'solid 1px transparent',
             }}
             className={selector}
           >
@@ -33,22 +33,22 @@ function CSSUtilitiesTable({ selectors, showExample }) {
       }))}
       columns={[
         {
-          label: "Utility Class Name",
-          key: "selector",
+          label: 'Utility Class Name',
+          key: 'selector',
         },
         {
-          label: "Example",
+          label: 'Example',
           hideHeader: true,
-          key: "example",
+          key: 'example',
         },
         {
-          label: "Declarations",
-          key: "declarations",
+          label: 'Declarations',
+          key: 'declarations',
           hideHeader: true,
         },
       ]}
     />
-  )
+  );
 }
 
 CSSUtilitiesTable.propTypes = {
@@ -56,14 +56,14 @@ CSSUtilitiesTable.propTypes = {
     PropTypes.shape({
       selector: PropTypes.string,
       declarations: PropTypes.arrayOf(PropTypes.string),
-    })
+    }),
   ),
   showExample: PropTypes.bool,
-}
+};
 
 CSSUtilitiesTable.defaultProps = {
   selectors: [],
   showExample: false,
-}
+};
 
-export default CSSUtilitiesTable
+export default CSSUtilitiesTable;
