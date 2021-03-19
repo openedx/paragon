@@ -57,10 +57,10 @@ module.exports = {
         extensions: [`.mdx`, `.md`],
         defaultLayouts: {
           components: require.resolve(
-            "./src/templates/component-page-template.js"
+            "./src/templates/component-page-template.jsx"
           ),
           default: require.resolve(
-            "./src/templates/default-mdx-page-template.js"
+            "./src/templates/default-mdx-page-template.jsx"
           ),
         },
       },
