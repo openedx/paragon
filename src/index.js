@@ -28,6 +28,7 @@ export { default as Fieldset } from './Fieldset';
 export {
   default as Form,
   FormControl,
+  FormControlDecoratorGroup,
   FormCheck,
   FormFile,
   FormGroup,
