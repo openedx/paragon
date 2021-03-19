@@ -2,10 +2,281 @@
 @import "~bootstrap/scss/forms";
 @import "~bootstrap/scss/input-group";
 @import "~bootstrap/scss/custom-forms";
+@import "mixins";
+
+$form-control-icon-width: 32px !default;
 
 // A form input state used by the now deprecate Fieldset and asInput
 // we can remove this when they are deleted.
 .form-control.is-invalid.is-invalid-nodanger {
   @include form-control-focus(true);
   border-color: $input-border-color;
+}
+
+
+.pgn__form-group {
+  margin-bottom: $form-group-margin-bottom;
+}
+
+// FormControlDecoratorGroup
+
+.pgn__form-control-decorator-group {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-start;
+
+  &.has-prepended-node {
+    .form-control {
+      padding-left: calc(#{$input-padding-x} + #{$form-control-icon-width});
+    }
+    .form-control-lg {
+      padding-left: calc(#{$input-padding-x-lg} + #{$form-control-icon-width});
+    }
+    .form-control-sm {
+      padding-left: calc(#{$input-padding-x-sm} + #{$form-control-icon-width});
+    }
+  }
+
+  &.has-appended-node {
+    .form-control {
+      padding-right: calc(#{$input-padding-x} + #{$form-control-icon-width});
+    }
+    .form-control-lg {
+      padding-right: calc(#{$input-padding-x-lg} + #{$form-control-icon-width});
+    }
+    .form-control-sm {
+      padding-right: calc(#{$input-padding-x-sm} + #{$form-control-icon-width});
+    }
+  }
+
+  font-size: $input-font-size;
+  line-height: $input-line-height;
+  &.pgn__form-control-decorator-group-sm {
+    font-size: $input-font-size-sm;
+    line-height: $input-line-height-sm;
+  }
+  &.pgn__form-control-decorator-group-lg {
+    font-size: $input-font-size-lg;
+    line-height: $input-line-height-lg;
+  }
+}
+
+// Control Decorators
+
+.pgn__form-control-decorator {
+  position: absolute;
+  pointer-events: none;
+  button {
+    pointer-events: initial;
+  }
+  height: $input-height;
+  min-width: $input-height;
+  line-height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: inherit;
+  &.pgn__form-control-decorator-leading {
+    left: 0;
+    padding-left: $input-padding-x;
+    padding-right: $input-padding-x / 2;
+  }
+  &.pgn__form-control-decorator-trailing {
+    right: 0;
+    padding-left: $input-padding-x / 2;
+    padding-right: calc(#{$input-padding-y-sm} - #{2 * $input-border-width});
+  }
+
+  .pgn__form-control-decorator-group-lg & {
+    height: $input-height-lg;
+    min-width: $input-height-lg;
+    &.pgn__form-control-decorator-leading {
+      padding-left: $input-padding-x-lg;
+      padding-right: $input-padding-x-lg / 2;
+    }
+    &.pgn__form-control-decorator-trailing {
+      padding-left: $input-padding-x-lg / 2;
+      padding-right: calc(#{$input-padding-y} - #{2 * $input-border-width});
+    }
+  }
+
+  .pgn__form-control-decorator-group-sm & {
+    height: $input-height-sm;
+    min-width: $input-height-lg;
+    &.pgn__form-control-decorator-leading {
+      padding-left: $input-padding-x-sm;
+      padding-right: $input-padding-x-sm / 2;
+    }
+    &.pgn__form-control-decorator-trailing {
+      padding-left: $input-padding-x-sm / 2;
+      padding-right: calc(#{$input-padding-y-sm} - #{2 * $input-border-width});
+    }
+  }
+}
+
+// Floating Labels
+
+.pgn__form-control-floating-label {
+  position: absolute;
+  left: $input-border-width;
+  right: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  .pgn__form-control-floating-label-content {
+    border-top: solid 2px transparent;
+    position: relative;
+    left: -0.5em;
+  }
+  .pgn__form-control-floating-label-text {
+    transform-origin: left top;
+    padding: 0 0.5em;
+    transition: transform 150ms ease, background-color 150ms linear;
+    // Prevent background-color from being output as "transparent"
+    // Firefox doesn't handle the first animation well from transparent to
+    // a color. Adding an alpha channel smooths it out.
+    background-color: rgba($input-bg, 0.01);
+  }
+
+  .has-leading-element & {
+    .pgn__form-control-floating-label-text {
+      transform: translateX(#{$form-control-icon-width});
+    }
+  }
+
+  @include form-control-floating-label-initial(
+    $input-padding-x,
+    $input-padding-y,
+    $input-line-height,
+    $input-font-size,
+    $input-border-width
+  );
+  .pgn__form-control-decorator-group-lg & {
+    @include form-control-floating-label-initial(
+      $input-padding-x-lg,
+      $input-padding-y-lg,
+      $input-line-height-lg,
+      $input-font-size-lg,
+      $input-border-width
+    );
+  }
+  .pgn__form-control-decorator-group-sm & {
+    @include form-control-floating-label-initial(
+      $input-padding-x-sm,
+      $input-padding-y-sm,
+      $input-line-height-sm,
+      $input-font-size-sm,
+      $input-border-width
+    );
+  }
+
+  .form-control:focus ~ &,
+  // select.form-control ~ &,
+  .form-control.has-value ~ & {
+    .pgn__form-control-floating-label-text {
+      background-color: $input-bg;
+    }
+    @include form-control-floating-label-float(
+      $input-padding-x,
+      $input-padding-y,
+      $input-line-height,
+      $input-font-size,
+      $input-border-width
+    );
+  }
+  .float-label.pgn__form-control-decorator-group-lg & {
+    @include form-control-floating-label-float(
+      $input-padding-x-lg,
+      $input-padding-y-lg,
+      $input-line-height-lg,
+      $input-font-size-lg,
+      $input-border-width
+    );
+  }
+  .float-label.pgn__form-control-decorator-group-sm & {
+    @include form-control-floating-label-float(
+      $input-padding-x-sm,
+      $input-padding-y-sm,
+      $input-line-height-sm,
+      $input-font-size-sm,
+      $input-border-width
+    );
+  }
+}
+
+.pgn__form-control-decorator-group.has-floating-label {
+  .form-control:not(:focus) {
+    &::placeholder,
+    &::-webkit-datetime-edit {
+      opacity: 0;
+    }
+  }
+  select.form-control {
+    background: $custom-select-bg $custom-select-background;
+    appearance: none;
+  }
+  select.form-control:not(.has-value):not(:focus) {
+    // color: rgba(0,0,0,0); Force the rgba syntax to appear in the output rather
+    // than transparent. IE11 does not understand color: transparent here.
+    color: unquote("rgba(0,0,0,0)");
+  }
+}
+
+.pgn__form-label {
+  font-size: $input-font-size;
+  &.pgn__form-label-inline {
+    display: inline-block;
+    margin: 0 1em 0 0;
+  }
+  &.pgn__form-label-lg {
+    font-size: $input-font-size-lg;
+  }
+  &.pgn__form-label-sm {
+    font-size: $input-font-size-sm;
+  }
+}
+
+// Form Control Description
+
+.pgn__form-control-description {
+  margin-top: .5rem;
+  font-size: $small-font-size;
+  display: flex;
+  align-items: center;
+  .pgn__icon {
+    height: 1em;
+    margin-right: .5em;
+    width: 1em;
+    display: inline-block;
+  }
+  & ~ .pgn__form-control-description {
+    margin-top: .25rem;
+  }
+}
+.pgn__form-control-description-valid {
+  color: $success-500;
+}
+.pgn__form-control-description-invalid {
+  color: $danger-500;
+}
+.pgn__form-control-description-warning {
+  color: $gray-900;
+}
+.pgn__form-control-description-criteria-empty {
+  .pgn__icon {
+    color: $text-muted;
+  }
+}
+.pgn__form-control-description-criteria-invalid {
+  .pgn__icon {
+    color: $danger-500;
+  }
+}
+.pgn__form-control-description-criteria-valid {
+  .pgn__icon {
+    color: $success-500;
+  }
 }
