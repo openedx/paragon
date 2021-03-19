@@ -5,7 +5,7 @@ import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { Container } from '~paragon-react'; // eslint-disable-line
 import CodeBlock from '../components/CodeBlock';
-import PropsTable from '../components/PropsTable';
+import GenericPropsTable from '../components/PropsTable';
 import '../scss/index.scss';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
@@ -19,9 +19,9 @@ export default function PageTemplate({
   }, {});
 
   const shortcodes = React.useMemo(() => {
-    const PropsTableFor = ({ name }) => { // eslint-disable-line react/prop-types
-      if (components[name]) {
-        return <PropsTable {...components[name]} />;
+    const PropsTable = ({ displayName, ...props }) => { // eslint-disable-line react/prop-types
+      if (components[displayName]) {
+        return <GenericPropsTable {...components[displayName]} {...props} />;
       }
       return null;
     };
@@ -30,7 +30,7 @@ export default function PageTemplate({
       pre: props => <div {...props} />,
       code: CodeBlock,
       Link,
-      PropsTableFor,
+      PropsTable,
     };
   }, [components]);
 
@@ -43,7 +43,7 @@ export default function PageTemplate({
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
         {Object.values(components).map(node => (
-          <PropsTable key={node.displayName} {...node} />
+          <GenericPropsTable key={node.displayName} {...node} />
         ))}
       </Container>
     </Layout>

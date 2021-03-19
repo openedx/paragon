@@ -5,12 +5,14 @@ components:
 - TableFooter
 - RowStatus
 - TablePagination
+categories:
+- Table
 status: 'New'
 designStatus: 'Done'
 devStatus: 'In progress'
 ---
 
-<a href="/table/datatable">Main DataTable page</a>
+<Link to="/components/datatable/">Main DataTable page</Link>
 
 The `TableFooter` component is meant to be rendered within a `DataTableContext` (provided by `DataTable` here).
 By default, it shows a how many items are being displayed on the left and pagination and page information on the right.
@@ -124,6 +126,16 @@ Alternately, it will accept children.
 </DataTable>
 ```
 
+<PropsTable displayName="TableFooter" />
 
 ## Footer subcomponents
 These components can be rendered independently of the `TableFooter` component with a `DataTableContext`.
+
+<PropsTable
+  displayName="RowStatus"
+  content="The RowStatus component expects to receive page, rows, and itemCount from the DataTableContext."
+/>
+<PropsTable
+  displayName="TablePagination"
+  content="The Pagination component expects to receive the following from the DataTableContext: pageCount, previousPage, canNextPage, nextPage, state.pageIndex"
+/>
