@@ -110,6 +110,19 @@ const Menu = () => {
                 Contributing components
               </a>
             </li>
+          </ul>
+          <h3 className="mb-3">Resources</h3>
+          <ul className="list-unstyled small mb-4">
+            <li>
+              <Link to="/status">
+                Component status
+              </Link>
+            </li>
+            <li>
+              <Link to="/insights">
+                Usage insights
+              </Link>
+            </li>
             <li>
               <a
                 target="_blank"
