@@ -11,11 +11,6 @@ devStatus: 'Done'
 notes: |
 
 ---
-
-<Link to="/">Home</Link>
-
-<PropsTableFor name="Avatar" />
-
 ### Basic Usage
 
 ```jsx live
