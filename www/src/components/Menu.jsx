@@ -56,15 +56,35 @@ const ComponentNavItem = ({
   </li>
 );
 
+ComponentNavItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  fields: PropTypes.shape({
+    slug: PropTypes.string.isRequired,
+  }).isRequired,
+  frontmatter: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
 const MenuComponentList = ({ children }) => (
   <div className="menu-component-list">{children}</div>
 );
+
+MenuComponentList.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 const MenuComponentListCategory = ({ children, title }) => (
   <div className="menu-component-list-category">
     <h5>{title}</h5>
     {children}
   </div>
 );
+
+MenuComponentListCategory.propTypes = {
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
+};
 
 const Menu = () => {
   const { components } = useStaticQuery(menuQuery);

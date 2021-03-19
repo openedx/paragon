@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Input, Container } from '~paragon-react'; // eslint-disable-line
-import SEO from '../../components/seo';
+import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 
 const directions = [
