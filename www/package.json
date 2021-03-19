@@ -41,13 +41,16 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
+    "build": "gatsby build --prefix-paths",
+    "build:with-theme": "THEME=npm:@edx/brand-edx.org@1.x npm run install-theme && gatsby build --prefix-paths",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "develop": "gatsby develop",
+    "install-theme": "npm install \"@edx/brand@${THEME}\" --no-save",
+    "develop:with-theme": "THEME=npm:@edx/brand-edx.org@1.x npm run install-theme && gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "lint": "eslint --ext .js --ext .jsx .",
+    "start": "npm run develop",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
