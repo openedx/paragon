@@ -4,7 +4,7 @@ type: 'component'
 components:
 - Avatar
 categories:
-- Imagery and Iconography
+- Imagery & Iconography
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'

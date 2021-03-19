@@ -1,6 +1,8 @@
 ---
 title: 'Badge'
 type: 'component'
+categories:
+- Imagery & Iconography
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'
