@@ -14,7 +14,7 @@ notes: |
 ---
 
 
-##### Basic Usage
+### Basic Usage
 
 ```jsx live
 <>
@@ -31,7 +31,7 @@ notes: |
 ```
 
 
-##### With Dropdown
+### With Dropdown
 
 ```jsx live
 <Dropdown>
@@ -69,7 +69,7 @@ Props set on Dropdown.Toggle get passed through to the "as" component
 </Dropdown>
 ```
 
-##### No label
+### No label
 
 For use in mobile viewports or constrained views.
 
@@ -102,7 +102,7 @@ For use in mobile viewports or constrained views.
 </>
 ```
 
-##### Theme variables (SCSS)
+### Theme variables (SCSS)
 
 ```scss
 $avatar-button-padding-left: .5em !default;

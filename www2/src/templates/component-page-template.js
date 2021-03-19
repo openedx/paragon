@@ -8,7 +8,7 @@ import { Container } from '~paragon-react';
 import CodeBlock from '../components/CodeBlock';
 import PropsTable from '../components/PropsTable';
 import '../scss/index.scss';
-import Layout from '../components/layout';
+import Layout from '../components/PageLayout';
 import SEO from '../components/seo';
 
 export default function PageTemplate({ data: { mdx, components: componentNodes } }) {
@@ -38,11 +38,11 @@ export default function PageTemplate({ data: { mdx, components: componentNodes }
     <Layout>
       <SEO title={mdx.frontmatter.title} />
       <Container size="md" className="py-5">
-        <h1>{mdx.frontmatter.title}</h1>
+        <h1 className="mb-4">{mdx.frontmatter.title}</h1>
         <MDXProvider components={shortcodes}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
-        {Object.values(components).map(node => <PropsTable {...node} />)}
+        {Object.values(components).map(node => <PropsTable key={node.displayName} {...node} />)}
       </Container>
     </Layout>
   )

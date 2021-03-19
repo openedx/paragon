@@ -1,0 +1,32 @@
+---
+title: CSS Utilities
+---
+
+import { graphql } from 'gatsby';
+import { Table } from '~paragon-react';
+import getCssSelectors from '../../utils/getCssSelectors.js';
+import CSSUtilitiesTable from '../../components/CSSUtilitiesTable';
+
+
+# CSS Utilities
+
+
+### Utility Classes
+
+<CSSUtilitiesTable
+  selectors={getCssSelectors(props.data.utilities.nodes)}
+/>
+
+export const pageQuery = graphql`
+{
+  utilities: allCssUtilityClasses(
+    filter: {isUtility: {eq: true}},
+    sort: {fields: selector, order: ASC}
+  ) {
+    nodes {
+      selector
+      declarations
+    }
+  }
+}
+`;
