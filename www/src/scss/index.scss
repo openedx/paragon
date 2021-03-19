@@ -5,6 +5,11 @@
 @import "~paragon-style/core/core.scss";
 @import "~@edx/brand/paragon/overrides.scss";
 
+// Remove this line after the edx.org brand removes a problematic max-width
+.container-fluid {
+  max-width: none;
+}
+
 @import "../components/CodeBlock";
 @import "../components/Menu";
 
