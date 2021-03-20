@@ -1,5 +1,10 @@
 @import "~bootstrap/scss/type";
 
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 @mixin mobile-type {
   .display-1,
   .display-2,
