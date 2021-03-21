@@ -6,7 +6,6 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { Container } from '~paragon-react'; // eslint-disable-line
 import CodeBlock from '../components/CodeBlock';
 import GenericPropsTable from '../components/PropsTable';
-import '../scss/index.scss';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
 

@@ -5,7 +5,6 @@ import { Link } from 'gatsby';
 import { Container } from '~paragon-react'; // eslint-disable-line
 
 import CodeBlock from '../components/CodeBlock';
-import '../scss/index.scss';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
 

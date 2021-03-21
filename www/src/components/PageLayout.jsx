@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Container, Nav } from '~paragon-react'; // eslint-disable-line
 import Header from './Header';
 import Menu from './Menu';
+import '../scss/index.scss';
 
 const Layout = ({ children, showMinimizedTitle, hideFooterComponentMenu }) => {
   const data = useStaticQuery(graphql`
