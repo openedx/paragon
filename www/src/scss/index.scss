@@ -1,9 +1,13 @@
 @import "~font-awesome/css/font-awesome.min.css";
-
 @import "~@edx/brand/paragon/fonts.scss";
 @import "~@edx/brand/paragon/variables.scss";
 @import "~paragon-style/core/core.scss";
 @import "~@edx/brand/paragon/overrides.scss";
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 // Remove this line after the edx.org brand removes a problematic max-width
 .container-fluid {
