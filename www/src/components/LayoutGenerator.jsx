@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Input } from '~paragon-react';
 import classNames from 'classnames';
+import { Input } from '~paragon-react'; // eslint-disable-line
 import CodeBlock from './CodeBlock';
-
 
 const Column = ({
   index, width, onChangeWidth, offset, onChangeOffset,
@@ -19,10 +18,7 @@ const Column = ({
       style={{ background: '#eee', minHeight: '2rem' }}
     >
       <div className="form-inline m-2">
-        <label
-          className="font-weight-normal"
-          htmlFor={`column-${index}-width`}
-        >
+        <label className="font-weight-normal" htmlFor={`column-${index}-width`}>
           Width
         </label>
         <Input
@@ -75,7 +71,6 @@ Column.defaultProps = {
   offset: 0,
 };
 
-
 function LayoutGenerator() {
   const [numColumns, setColumns] = useState(3);
   const [columnWidths, setColumnWidths] = useState({ 0: 3, 1: 6, 2: 3 });
@@ -83,8 +78,9 @@ function LayoutGenerator() {
 
   const columns = [];
 
-  for (let i = 0; i < numColumns; i++) { // eslint-disable-line no-plusplus
-    columns.push((
+  for (let i = 0; i < numColumns; i++) {
+    // eslint-disable-line no-plusplus
+    columns.push(
       <Column
         key={i}
         index={i}
@@ -96,8 +92,8 @@ function LayoutGenerator() {
         onChangeOffset={(_index, _offset) => {
           setColumnOffsets({ ...columnOffsets, [_index]: _offset });
         }}
-      />
-    ));
+      />,
+    );
   }
 
   const renderMarkupString = () => {
@@ -127,12 +123,13 @@ ${columnsString.join('')}
   return (
     <div>
       <p>
-        Drag the slider to add or remove columns.
-        Edit the width and offset values for each
-        column and see the output below.
+        Drag the slider to add or remove columns. Edit the width and offset
+        values for each column and see the output below.
       </p>
       <div className="form-inline mb-4">
-        <label htmlFor="num-cols-range mr-2">Number of Columns {numColumns}</label>
+        <label htmlFor="num-cols-range mr-2">
+          Number of Columns {numColumns}
+        </label>
         <Input
           id="num-cols-range"
           type="range"
@@ -143,13 +140,9 @@ ${columnsString.join('')}
           onChange={e => setColumns(e.target.value)}
         />
       </div>
-      <div className="row">
-        {columns}
-      </div>
+      <div className="row">{columns}</div>
 
       <CodeBlock className="language-jsx">{renderMarkupString()}</CodeBlock>
-
-
     </div>
   );
 }

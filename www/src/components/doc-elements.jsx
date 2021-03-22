@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 // eslint-disable-next-line import/prefer-default-export
 export function ComponentStatus({ status, noLeftMargin }) {
-  if (!status) return null;
+  if (!status) { return null; }
   return (
     <span
-      className={`status-indicator ${noLeftMargin &&
-        'status-no-left-margin'} ${status.toLowerCase().replace(' ', '-')}`}
+      className={`status-indicator ${noLeftMargin
+        && 'status-no-left-margin'} ${status.toLowerCase().replace(' ', '-')}`}
     >
       <span>{status}</span>
     </span>
@@ -16,4 +16,9 @@ export function ComponentStatus({ status, noLeftMargin }) {
 
 ComponentStatus.propTypes = {
   status: PropTypes.string.isRequired,
+  noLeftMargin: PropTypes.bool,
+};
+
+ComponentStatus.defaultProps = {
+  noLeftMargin: false,
 };

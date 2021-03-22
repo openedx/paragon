@@ -1,0 +1,46 @@
+---
+title: 'ModalPopup'
+type: 'component'
+components:
+- ModalPopup
+- ModalCloseButton
+categories:
+- Overlays
+status: 'New'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: |
+
+---
+
+
+
+
+## ModalPopup
+
+A generic component for creating accessibile modal popup objects.
+
+```jsx live
+() => {
+  const [isOpen, open, close] = useToggle(false);
+  const target = React.useRef(null);
+
+  return (
+    <>
+      <Button ref={target} variant="outline-primary" onClick={open}>Open modal popup</Button>
+      <ModalPopup positionRef={target} isOpen={isOpen} onClose={close}>
+        <div className="bg-white p-3 rounded shadow">
+          <p>This could be a menu or tray.</p>
+
+          <Button variant="primary" className="mr-2">Action</Button>
+          <ModalCloseButton variant="outline-primary">Close</ModalCloseButton>
+        </div>
+      </ModalPopup>
+    </>
+  )
+}
+```
+
+
+
+Extra props supplied to ModalPopup are passed through to an underlying PopperElement component.

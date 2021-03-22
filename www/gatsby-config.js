@@ -1,54 +1,42 @@
-const path = require('path');
-
 module.exports = {
   siteMetadata: {
-    title: 'Paragon Documentation',
-    description: 'Documentation for Paragon Pattern Library',
+    title: `Paragon Design System`,
+    description: `Technical documentation for the Paragon Design System.`,
+    author: `@edx`,
   },
-  // Match the location of the site on github pages if no path prefix is specified
-  pathPrefix: 'PATH_PREFIX' in process.env ? process.env.PATH_PREFIX : '/paragon',
   plugins: [
-    'gatsby-plugin-sass',
+    "gatsby-plugin-sass",
+    `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-plugin-mdx',
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        extensions: ['.mdx'],
-        defaultLayouts: {
-          default: require.resolve('./src/components/mdx-layout.jsx'),
-        },
-      },
-    },
-    'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'pages',
-        path: `${__dirname}/src/pages`,
+        start_url: `/`,
+        icon: `src/images/paragon-icon.png`, // This path is relative to the root of the site.
       },
     },
     {
-      // Will auto-generate favicon
-      resolve: 'gatsby-plugin-manifest',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        icon: 'src/images/paragon-icon.png',
-      },
-    },
-    {
-      // Using the layout plugin to prevent re-renders of nav sidebar between routes
-      resolve: 'gatsby-plugin-layout',
-      options: {
-        component: require.resolve('./src/components/layout.jsx'),
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'src',
         path: `${__dirname}/../src`,
+        name: `components`,
       },
     },
     // Note this will throw a warning about conflicting field types during build, but it is O.K.
     // https://github.com/gatsbyjs/gatsby/issues/7027
-    'gatsby-transformer-react-docgen',
+    "gatsby-transformer-react-docgen",
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        defaultLayouts: {
+          components: require.resolve(
+            "./src/templates/component-page-template.jsx"
+          ),
+          default: require.resolve(
+            "./src/templates/default-mdx-page-template.jsx"
+          ),
+        },
+      },
+    },
   ],
-};
+}

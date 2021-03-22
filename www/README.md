@@ -38,4 +38,3 @@ Syntax highlighting:
 
 - For VSCode: [https://marketplace.visualstudio.com/items?itemName=silvenon.mdx](https://marketplace.visualstudio.com/items?itemName=silvenon.mdx)
 - For SublimeText [https://packagecontrol.io/packages/MDX%20Syntax%20Highlighting](https://packagecontrol.io/packages/MDX%20Syntax%20Highlighting)
-
