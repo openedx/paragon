@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { FocusOn } from 'react-focus-on';
 import { Link } from 'gatsby';
 import Menu from './Menu';
 import {
@@ -122,18 +123,24 @@ const Header = ({ siteTitle, showMinimizedTitle }) => {
   []);
 
   return (
-    <div
-      className="bg-white sticky-top"
-      style={{ maxHeight: '100vh', overflow: 'scroll' }}
+    <FocusOn
+      enabled={isOpen}
+      onClickOutside={close}
+      onEscapeKey={close}
     >
-      <Navbar
-        siteTitle={siteTitle}
-        onMenuClick={toggle}
-        menuIsOpen={isOpen}
-        showMinimizedTitle={showMinimizedTitle}
-      />
-      {isOpen && <Menu />}
-    </div>
+      <div
+        className="bg-white sticky-top"
+        style={{ maxHeight: '100vh', overflow: 'scroll' }}
+      >
+        <Navbar
+          siteTitle={siteTitle}
+          onMenuClick={toggle}
+          menuIsOpen={isOpen}
+          showMinimizedTitle={showMinimizedTitle}
+        />
+        {isOpen && <Menu />}
+      </div>
+    </FocusOn>
   );
 };
 
