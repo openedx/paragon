@@ -127,6 +127,7 @@ devStatus: 'Done'
 notes: |
   Something special about this component
 ---
+
 ### Basic Usage
 
 ```jsx live
