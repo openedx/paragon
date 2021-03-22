@@ -1,5 +1,3 @@
-const path = require("path")
-
 module.exports = {
   siteMetadata: {
     title: `Paragon Design System`,
@@ -27,27 +25,8 @@ module.exports = {
       options: {
         path: `${__dirname}/../src`,
         name: `components`,
-        // ignore: [
-        //   `**/\.*`,  // ignore files starting with a dot
-        //   `**/*\.js`,  // ignore files starting with a dot
-        //   `**/*\.jsx`,  // ignore files starting with a dot
-        //   `**/*\.snap`,  // ignore files starting with a dot
-        //   `**/*\.css`,  // ignore files starting with a dot
-        //   `**/*\.scss`,  // ignore files starting with a dot
-        //   `utils`,
-        // ],
       },
     },
-    // {
-    //   resolve: "gatsby-plugin-page-creator",
-    //   options: {
-    //     path: `${__dirname}/../src`,
-    //     ignore: {
-    //       // Example: Ignore `file.example.js`, `dir/s/file.example.tsx`
-    //       patterns: [`**/*.(js|ts)?(x)`],
-    //     }
-    //   },
-    // },
     // Note this will throw a warning about conflicting field types during build, but it is O.K.
     // https://github.com/gatsbyjs/gatsby/issues/7027
     "gatsby-transformer-react-docgen",

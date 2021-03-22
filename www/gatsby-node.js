@@ -7,25 +7,25 @@
 // You can delete this file if you're not using it
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
-const sass = require("node-sass")
-const css = require("css")
+const sass = require('node-sass')
+const css = require('css')
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
-      modules: ["node_modules", path.resolve(__dirname, "node_modules")],
+      modules: ['node_modules', path.resolve(__dirname, 'node_modules')],
       alias: {
-        "~paragon-react": path.resolve(__dirname, "../src"),
-        "~paragon-style": path.resolve(__dirname, "../scss"),
-        "~paragon-icons": path.resolve(__dirname, "../icons"),
+        '~paragon-react': path.resolve(__dirname, '../src'),
+        '~paragon-style': path.resolve(__dirname, '../scss'),
+        '~paragon-icons': path.resolve(__dirname, '../icons'),
         // Prevent multiple copies of react getting loaded
         // paragon react components would naturally import
         // react and react-dom from the node_modules folder
         // one level above if it is present. This approach forces
         // all uses of react and react-dom to resolve to those
         // in ./node_modules
-        react: path.resolve(__dirname, "node_modules/react/"),
-        "react-dom": path.resolve(__dirname, "node_modules/react-dom/"),
+        react: path.resolve(__dirname, 'node_modules/react/'),
+        'react-dom': path.resolve(__dirname, 'node_modules/react-dom/'),
       },
     },
   })
@@ -36,19 +36,19 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   // you only want to operate on `Mdx` nodes. If you had content from a
   // remote CMS you could also check to see if the parent node was a
   // `File` node here
-  if (node.internal.type === "Mdx") {
+  if (node.internal.type === 'Mdx') {
     const value = createFilePath({ node, getNode })
-      .split("README")[0]
+      .split('README')[0]
       .toLowerCase()
 
     createNodeField({
       // Name of the field you are adding
-      name: "slug",
+      name: 'slug',
       // Individual MDX node
       node,
-      // Generated value based on filepath with "blog" prefix. you
-      // don't need a separating "/" before the value because
-      // createFilePath returns a path with the leading "/".
+      // Generated value based on filepath with 'blog' prefix. you
+      // don't need a separating '/' before the value because
+      // createFilePath returns a path with the leading '/'.
       value: `/components${value}`,
     })
   }
@@ -65,7 +65,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       allMdx(
         filter: {
           parent: {
-            internal: { owner: { nin: "gatsby-transformer-react-docgen" } }
+            internal: { owner: { nin: 'gatsby-transformer-react-docgen' } }
           }
         }
       ) {
@@ -84,7 +84,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   `)
   if (result.errors) {
-    reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
+    reporter.panicOnBuild('🚨  ERROR: Loading 'createPages' query')
   }
   // Create blog post pages.
   const posts = result.data.allMdx.edges
@@ -113,11 +113,11 @@ function createCssUtilityClassNodes({
   // We convert to CSS first since we prefer the real values over tokens.
   const compiledCSS = sass
     .renderSync({
-      file: path.resolve(__dirname, "../scss/core/utilities-only.scss"),
+      file: path.resolve(__dirname, '../scss/core/utilities-only.scss'),
       // Resolve tildes the way webpack would in our base npm project
       importer: function (url, prev, done) {
-        if (url[0] === "~") {
-          url = path.resolve(__dirname, "../node_modules", url.substr(1))
+        if (url[0] === '~') {
+          url = path.resolve(__dirname, '../node_modules', url.substr(1))
         }
         return { file: url }
       },
@@ -130,7 +130,7 @@ function createCssUtilityClassNodes({
     if (!selectors) return
 
     selectors.forEach(selector => {
-      if (selector[0] !== ".") return // classes only
+      if (selector[0] !== '.') return // classes only
 
       selector = selector.substr(1)
 
@@ -141,7 +141,7 @@ function createCssUtilityClassNodes({
         ),
         isUtility:
           declarations.length === 1 &&
-          declarations[0].value.includes("!important"),
+          declarations[0].value.includes('!important'),
       }
 
       const nodeMeta = {

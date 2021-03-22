@@ -6,7 +6,7 @@ import { Button } from '~paragon-react'; // eslint-disable-line
 const HomePage = () => (
   <Layout showMinimizedTitle hideFooterComponentMenu>
     <div className="bg-dark text-white text-center py-5">
-      <p className="x-small text-uppercase text-monospace mb-0">
+      <p className="x-small text-uppercase text-monospace mb-0" style={{ letterSpacing: '.2em' }}>
         Technical Documentation{' '}
       </p>
       <h1 className="display-3 text-white">Paragon Design System</h1>
@@ -15,12 +15,20 @@ const HomePage = () => (
         learning applications.
       </p>
       <div className="mb-5">
-        <Button variant="inverse-outline-primary mr-2">
+        <Button
+          variant="inverse-outline-primary mr-2"
+          as="a"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://openedx.atlassian.net/wiki/spaces/BPL/overview"
+        >
           Design Documentation
         </Button>
         <Button
           variant="inverse-outline-primary"
           as="a"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://www.figma.com/file/eGmDp94FlqEr4iSqy1Uc1K/Paragon-2021"
         >
           Figma Library
