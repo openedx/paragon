@@ -51,7 +51,7 @@ Note that including fonts will affect performance.  In some applications may cho
 
 See the [code of conduct](https://github.com/edx/.github/blob/master/CODE_OF_CONDUCT.md).
 
-#### Start the documentation site development server
+#### 1. Start the documentation site development server
 
 The Paragon documentation site serves both as documentation and as a workbench to create your component within. To see your component in action, you need to run the documentation site locally. (Note you need to install dependences both in the project root and the `www` directory)
 
@@ -68,11 +68,11 @@ You can alternatively run the dev server with the edx.org theme by running
 npm run develop:with-theme
 ```
 
-#### Create a new directory for your component
+#### 2. Create a new directory for your component
 
 Add a directory in `/src/` that matches the name of your component. For example: `/src/MyComponent`.
 
-#### Add an index.jsx that exports your component
+#### 3. Add an index.jsx that exports your component
 
 
 Create a file `src/MyComponent/index.jsx`. Define your component (using the same `<MyComponent>` as the class name) in this file. Example:
@@ -99,7 +99,7 @@ export default MyComponent;
 
 ```
 
-#### Add your component to the Paragon exports in `src/index.js`
+#### 4. Add your component to the Paragon exports in `src/index.js`
 
 Next, add your component to the exports in `src/index.js`. Example:
 
@@ -109,7 +109,7 @@ export { default as MyComponent } from './MyComponent';
 // ...
 ```
 
-#### Add a README.md to document your component and see it in the documentation site
+#### 5. Add a README.md to document your component and see it in the documentation site
 
 Create a `src/MyComponent/README.md` file similar to other components in the `src` directory. The documentation site scans this directory for markdown or mdx files to create pages.
 
@@ -147,7 +147,7 @@ The top part of the markdown file is known as `frontmatter`. This metadata with 
 
 JSX code blocks in the markdown file can be made interactive with the live attribute. All paragon components and icons are in scope. (Note: the scope of this code block is controlled by `www/components/CodeBlock.jsx`).
 
-#### Navigate to your component on the doc site and start building
+#### 6. Navigate to your component on the doc site and start building
 
 Visit the documentation at [http://localhost:8000](http://localhost:8000) and navigate to see your README.md powered page and workbench. Changes to the README.md file will auto refesh the page.
 
