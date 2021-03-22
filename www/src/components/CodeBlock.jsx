@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/duotoneDark';
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
-import * as ParagonReact from '~paragon-react';
-import * as ParagonIcons from '~paragon-icons';
-import * as FontAwesome from '@fortawesome/free-solid-svg-icons'
+import {
+  LiveProvider, LiveEditor, LiveError, LivePreview,
+} from 'react-live';
+import * as FontAwesome from '@fortawesome/free-solid-svg-icons';
+import * as ParagonReact from '~paragon-react'; // eslint-disable-line
+import * as ParagonIcons from '~paragon-icons'; // eslint-disable-line
 import MiyazakiCard from './exampleComponents/MiyazakiCard';
 
 function CodeBlock({ children, className, live }) {
@@ -16,7 +18,13 @@ function CodeBlock({ children, className, live }) {
       <div className="pgn-doc__code-block">
         <LiveProvider
           code={children}
-          scope={{ ...ParagonIcons, ...ParagonReact, useState, FontAwesome, MiyazakiCard }}
+          scope={{
+            ...ParagonIcons,
+            ...ParagonReact,
+            useState,
+            FontAwesome,
+            MiyazakiCard,
+          }}
           theme={theme}
         >
           <LivePreview className="pgn-doc__code-block-preview" />
@@ -31,7 +39,11 @@ function CodeBlock({ children, className, live }) {
   return (
     <Highlight {...defaultProps} code={children} language={language}>
       {({
-        className: preClassName, style, tokens, getLineProps, getTokenProps,
+        className: preClassName,
+        style,
+        tokens,
+        getLineProps,
+        getTokenProps,
       }) => (
         <pre className={preClassName} style={{ ...style, padding: '1rem' }}>
           {tokens.map((line, i) => (

@@ -1,0 +1,42 @@
+---
+title: 'Popover'
+type: 'component'
+categories:
+- Overlays
+status: 'Stable'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: |
+
+---
+
+<p className="lead">
+  This is a pass through component from React-Bootstrap.<br/>
+  <a href="https://react-bootstrap.github.io/components/overlays/#popovers" target="_blank" rel="noopener noreferrer">
+    See React-Bootstrap for documentation.
+  </a>
+</p>
+
+### Basic Usage
+
+```jsx live
+<>
+  {['top', 'right', 'bottom', 'left'].map((placement) => (
+    <OverlayTrigger
+      trigger="click"
+      key={placement}
+      placement={placement}
+      overlay={
+        <Popover id={`popover-positioned-${placement}`}>
+          <Popover.Title as="h3">{`Popover ${placement}`}</Popover.Title>
+          <Popover.Content>
+            <strong>Holy guacamole!</strong> Check this info.
+          </Popover.Content>
+        </Popover>
+      }
+    >
+      <Button variant="secondary" className="mr-2 mb-2">Popover on {placement}</Button>
+    </OverlayTrigger>
+  ))}
+</>
+```

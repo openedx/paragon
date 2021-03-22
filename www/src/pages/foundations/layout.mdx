@@ -3,7 +3,7 @@ title: Layout
 ---
 
 import { graphql } from 'gatsby';
-import { Table } from '~paragon-react';
+import { Table } from '~paragon-react'; // eslint-disable-line
 import getCssSelectors from '../../utils/getCssSelectors.js';
 import CSSUtilitiesTable from '../../components/CSSUtilitiesTable';
 import LayoutGenerator from '../../components/LayoutGenerator'
@@ -23,7 +23,7 @@ Paragon's layout is controlled by the Bootstrap grid system. Documentation can b
   </a>
 </p>
 
-```jsx = live
+```jsx live
 <Container className="border">
   {/* Stack the columns on mobile by making one full-width and the other half-width */}
   <Row className="my-3">
