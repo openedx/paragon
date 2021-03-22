@@ -71,7 +71,7 @@ PageTemplate.propTypes = {
 };
 
 export const pageQuery = graphql`
-  query BlogPostQuery($id: String, $components: [String]) {
+  query ComponentPageQuery($id: String, $components: [String]) {
     mdx(id: { eq: $id }) {
       id
       body

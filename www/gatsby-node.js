@@ -46,7 +46,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       name: 'slug',
       // Individual MDX node
       node,
-      // Generated value based on filepath with 'blog' prefix. you
+      // Generated value based on filepath with 'components' prefix. you
       // don't need a separating '/' before the value because
       // createFilePath returns a path with the leading '/'.
       value: `/components${value}`,
@@ -86,10 +86,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (result.errors) {
     reporter.panicOnBuild('🚨  ERROR: Loading createPages query');
   }
-  // Create blog post pages.
-  const posts = result.data.allMdx.edges
+  // Create component detail pages.
+  const components = result.data.allMdx.edges
   // you'll call `createPage` for each result
-  posts.forEach(({ node }, index) => {
+  components.forEach(({ node }, index) => {
     createPage({
       // This is the slug you created before
       // (or `node.frontmatter.slug`)
