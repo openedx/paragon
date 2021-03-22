@@ -67,7 +67,7 @@ const Navbar = ({
       <Col className="small" sm={4}>
         <Nav className="justify-content-end align-items-center">
           <img
-            className="d-inline-block"
+            className="d-inline-block mr-2"
             src="https://img.shields.io/npm/v/@edx/paragon.svg"
             alt="npm_version"
           />
@@ -84,7 +84,7 @@ const Navbar = ({
               className="text-white"
               href="https://github.com/edx/paragon"
             >
-              Contribute on GitHub
+              GitHub
             </Nav.Link>
           </Nav.Item>
         </Nav>
