@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Table } from '~paragon-react';
+import { Table } from '~paragon-react'; // eslint-disable-line
 
 function CSSUtilitiesTable({ selectors, showExample }) {
   return (
@@ -24,7 +24,9 @@ function CSSUtilitiesTable({ selectors, showExample }) {
         declarations: (
           <div>
             {declarations.map(declaration => (
-              <code key={declaration} className="mb-0 text-muted">{declaration}</code>
+              <code key={declaration} className="mb-0 text-muted">
+                {declaration}
+              </code>
             ))}
           </div>
         ),
@@ -50,10 +52,12 @@ function CSSUtilitiesTable({ selectors, showExample }) {
 }
 
 CSSUtilitiesTable.propTypes = {
-  selectors: PropTypes.arrayOf(PropTypes.shape({
-    selector: PropTypes.string,
-    declarations: PropTypes.arrayOf(PropTypes.string),
-  })),
+  selectors: PropTypes.arrayOf(
+    PropTypes.shape({
+      selector: PropTypes.string,
+      declarations: PropTypes.arrayOf(PropTypes.string),
+    }),
+  ),
   showExample: PropTypes.bool,
 };
 

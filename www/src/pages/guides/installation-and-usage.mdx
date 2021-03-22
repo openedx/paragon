@@ -1,0 +1,40 @@
+---
+title: Installation and usage
+---
+
+# Installation and usage
+
+Paragon components require React 16 or higher. To install Paragon into your project:
+
+In terminal:
+
+```
+npm i --save @edx/paragon
+```
+
+In your React project:
+
+```jsx
+import { ComponentName } from '@edx/paragon';
+```
+
+#### SCSS Foundation
+
+Usage with no theme:
+
+```scss
+@import "@edx/paragon/scss/core/core.scss";
+```
+
+Usage with a theme:
+
+```scss
+@import "@my-brand/fonts.scss";
+@import "@my-brand/variables.scss";
+// Import the Paragon core after setting brand-themed variables.
+@import "@edx/paragon/scss/core/core.scss";
+// Import brand overrides after the Paragon core.
+@import "@my-brand/overrides.scss";
+```
+
+Note that including fonts will affect load performance.  In some pages you may choose not to load the custom font.

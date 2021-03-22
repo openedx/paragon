@@ -1,6 +1,9 @@
 import React from 'react';
-import { DataTable, Tabs, Tab } from '~paragon-react';
-import SEO from '../components/seo';
+import {
+  DataTable, Tabs, Tab, Container,
+} from '~paragon-react'; // eslint-disable-line
+import SEO from '../components/SEO';
+import Layout from '../components/PageLayout';
 import dependentProjectsUsages from '../../../dependent-usage.json';
 
 const dependentProjects = dependentProjectsUsages.map(dependentUsage => ({
@@ -9,7 +12,7 @@ const dependentProjects = dependentProjectsUsages.map(dependentUsage => ({
 }));
 
 const componentsUsage = dependentProjectsUsages.reduce((accumulator, project) => {
-  Object.keys(project.usages).map(componentName => {
+  Object.keys(project.usages).forEach(componentName => {
     if (!accumulator[componentName]) {
       accumulator[componentName] = [];
     }
@@ -18,8 +21,8 @@ const componentsUsage = dependentProjectsUsages.reduce((accumulator, project) =>
       folderName: project.folderName,
       version: project.version,
       componentUsageCount: project.usages[componentName].length,
-    })
-  })
+    });
+  });
   return accumulator;
 }, {});
 
@@ -45,12 +48,13 @@ const ProjectsUsage = () => (
 );
 
 // Usage info about a single component
+// eslint-disable-next-line
 const ComponentUsage = ({ name, componentUsageInProjects }) => (
   <div className="mb-5">
     <h3 className="mb-4">{name}</h3>
     <DataTable
       isSortable
-      itemCount={componentUsageInProjects.length}
+      itemCount={componentUsageInProjects.length} // eslint-disable-line
       data={componentUsageInProjects}
       columns={[
         { Header: 'Project Name', accessor: 'folderName' },
@@ -77,23 +81,24 @@ const ComponentsUsage = () => (
   </div>
 );
 
-export default function () {
+export default function InsightsPage() {
   return (
-    <div className="w-100">
-      <SEO title="Usage Insights" />
-      <header className="mb-5">
-        <h1>Usage Insights</h1>
-        <p>Last updated: 3-1-2021</p>
-      </header>
-      <Tabs defaultActiveKey="projects" id="uncontrolled-tab-example">
-        <Tab eventKey="projects" title="Projects">
-          <ProjectsUsage />
-        </Tab>
-        <Tab eventKey="components" title="Components">
-          <ComponentsUsage />
-        </Tab>
-      </Tabs>
-    </div>
+    <Layout>
+      <Container size="md" className="py-5">
+        <SEO title="Usage Insights" />
+        <header className="mb-5">
+          <h1>Usage Insights</h1>
+          <p>Last updated: 3-1-2021</p>
+        </header>
+        <Tabs defaultActiveKey="projects" id="uncontrolled-tab-example">
+          <Tab eventKey="projects" title="Projects">
+            <ProjectsUsage />
+          </Tab>
+          <Tab eventKey="components" title="Components">
+            <ComponentsUsage />
+          </Tab>
+        </Tabs>
+      </Container>
+    </Layout>
   );
 }
-
