@@ -2,7 +2,7 @@
 title: 'Badge'
 type: 'component'
 categories:
-- Imagery & Iconography
+- Status & metadata
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

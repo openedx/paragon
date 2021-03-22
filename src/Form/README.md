@@ -8,6 +8,8 @@ components:
 - FormControlFeedback
 - FormLabel
 - FormText
+categories:
+- Forms
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

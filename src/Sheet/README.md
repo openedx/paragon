@@ -4,7 +4,7 @@ type: 'component'
 components:
 - Sheet
 categories:
-- Dialogs
+- Overlays
 status: 'New'
 designStatus: 'In Progress'
 devStatus: 'In Progress'

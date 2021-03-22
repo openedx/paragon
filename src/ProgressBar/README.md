@@ -2,7 +2,7 @@
 title: 'Progress Bar'
 type: 'component'
 categories:
-- Imagery & Iconography
+- Status & metadata
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

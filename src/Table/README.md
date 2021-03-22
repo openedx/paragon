@@ -3,6 +3,8 @@ title: 'Table (Deprecated)'
 type: 'component'
 components:
 - TableDeprecated
+categories:
+- Table
 status: 'Deprecate soon'
 designStatus: 'TBD'
 devStatus: 'TBD'

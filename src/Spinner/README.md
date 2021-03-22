@@ -3,6 +3,7 @@ title: 'Spinner'
 type: 'component'
 status: 'Stable'
 categories:
+- Status & metadata
 - Choreography
 designStatus: 'Done'
 devStatus: 'Done'

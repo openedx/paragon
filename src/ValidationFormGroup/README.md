@@ -4,7 +4,7 @@ type: 'component'
 components:
 - ValidationFormGroup
 categories:
-- User Input
+- Forms (deprecated)
 status: 'Deprecate Soon'
 designStatus: 'Done'
 devStatus: 'Done'

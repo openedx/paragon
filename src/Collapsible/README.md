@@ -7,6 +7,8 @@ components:
 - CollapsibleBody
 - CollapsibleTrigger
 - CollapsibleVisible
+categories:
+- Content
 status: "Stable"
 designStatus: "Needs Review"
 devStatus: "Done"

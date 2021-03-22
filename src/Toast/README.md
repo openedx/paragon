@@ -4,7 +4,7 @@ type: 'component'
 components:
 - Toast
 categories:
-- Dialogs
+- Overlays
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'

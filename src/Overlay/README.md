@@ -2,7 +2,7 @@
 title: 'Overlays'
 type: 'component'
 categories:
-- Dialogs
+- Overlays
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

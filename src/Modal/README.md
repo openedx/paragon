@@ -4,7 +4,7 @@ type: 'component'
 components:
 - Modal
 categories:
-- Dialogs
+- Overlays
 status: 'Needs Work'
 designStatus: 'Done'
 devStatus: 'To Do'

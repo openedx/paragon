@@ -5,7 +5,7 @@ components:
 - ListBox
 - ListBoxOption
 categories:
-- User Input
+- Forms (deprecated)
 status: 'Deprecate Soon'
 designStatus: 'TBD'
 devStatus: 'To Do'

@@ -4,6 +4,8 @@ type: 'component'
 components:
 - Card
 - CardGrid
+categories:
+- Content
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

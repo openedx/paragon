@@ -3,6 +3,7 @@ title: 'Image'
 type: 'component'
 categories:
 - Imagery & Iconography
+- Content
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

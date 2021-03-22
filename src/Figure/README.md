@@ -1,6 +1,8 @@
 ---
 title: 'Figure'
 type: 'component'
+categories:
+- Content
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

@@ -1,6 +1,8 @@
 ---
 title: 'Tooltip'
 type: 'component'
+categories:
+- Overlays
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

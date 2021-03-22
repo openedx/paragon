@@ -4,7 +4,7 @@ type: 'component'
 components:
 - CheckBoxGroup
 categories:
-- User Input
+- Forms (deprecated)
 status: 'Deprecate Soon'
 designStatus: 'To Do'
 devStatus: 'To Do'

@@ -10,7 +10,7 @@ const HomePage = () => (
         Technical Documentation{' '}
       </p>
       <h1 className="display-3 text-white">Paragon Design System</h1>
-      <p className="lead mx-auto my-3 mb-4" style={{ maxWidth: '28em', }}>
+      <p className="lead mx-auto my-3 mb-4" style={{ maxWidth: '28em' }}>
         An accessible, theme-ready, and open source design system built for
         learning applications.
       </p>

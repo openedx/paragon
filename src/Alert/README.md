@@ -1,6 +1,8 @@
 ---
 title: 'Alert'
 type: 'component'
+categories:
+- Status & metadata
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

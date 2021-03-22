@@ -1,6 +1,8 @@
 ---
 title: 'Carousel'
 type: 'component'
+categories:
+- Content
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

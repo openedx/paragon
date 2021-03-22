@@ -6,6 +6,8 @@ components:
 - DropdownItem
 - DropdownMenu
 - DropdownButton
+categories:
+- Navigation
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'TO DO'

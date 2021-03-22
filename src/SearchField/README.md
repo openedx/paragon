@@ -9,7 +9,8 @@ components:
 - SearchFieldLabel
 - SearchFieldSubmitButton
 categories:
-- User Input
+- Forms
+- Navigation
 status: 'Stable'
 designStatus: 'Needs Review'
 devStatus: 'Done'

@@ -7,7 +7,7 @@
 
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import { Container, Nav } from '~paragon-react'; // eslint-disable-line
 import Header from './Header';
 import Menu from './Menu';
@@ -38,6 +38,16 @@ const Layout = ({ children, showMinimizedTitle, hideFooterComponentMenu }) => {
       )}
       <Container as="footer" className="py-3 border-top border-light-300">
         <Nav className="d-flex align-items-center">
+          <Nav.Item>
+            <Link className="nav-link muted-link" to="/status">
+              Library status
+            </Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Link className="nav-link muted-link" to="/insights">
+              Usage insights
+            </Link>
+          </Nav.Item>
           <Nav.Item>
             <Nav.Link
               className="muted-link"

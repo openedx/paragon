@@ -3,6 +3,8 @@ title: 'StatusAlert'
 type: 'component'
 components:
 - StatusAlert
+categories:
+- Status & metadata
 status: 'Deprecate Soon'
 designStatus: 'Done'
 devStatus: 'Done'
