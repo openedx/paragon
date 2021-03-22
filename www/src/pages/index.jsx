@@ -6,7 +6,7 @@ import { Button } from '~paragon-react'; // eslint-disable-line
 const HomePage = () => (
   <Layout showMinimizedTitle hideFooterComponentMenu>
     <div className="bg-dark text-white text-center py-5">
-      <p className="x-small text-uppercase text-monospace mb-0" style={{ letterSpacing: '.2em' }}>
+      <p className="x-small text-uppercase text-monospace mb-0">
         Technical Documentation{' '}
       </p>
       <h1 className="display-3 text-white">Paragon Design System</h1>
