@@ -65,7 +65,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       allMdx(
         filter: {
           parent: {
-            internal: { owner: { nin: 'gatsby-transformer-react-docgen' } }
+            internal: { owner: { nin: "gatsby-transformer-react-docgen" } }
           }
         }
       ) {
