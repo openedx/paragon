@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { Container } from '~paragon-react'; // eslint-disable-line
+import { Container, Alert } from '~paragon-react'; // eslint-disable-line
 import CodeBlock from '../components/CodeBlock';
 import GenericPropsTable from '../components/PropsTable';
 import Layout from '../components/PageLayout';
@@ -33,10 +33,18 @@ export default function PageTemplate({
     };
   }, [components]);
 
+  const isDeprecated = mdx.frontmatter?.status?.toLowerCase().includes('deprecate') || false;
+
   return (
     <Layout>
       <SEO title={mdx.frontmatter.title} />
       <Container size="md" className="py-5">
+        {isDeprecated && (
+          <Alert variant="warning">
+            <Alert.Heading>This component will be removed soon.</Alert.Heading>
+            <p className="small mb-0">{mdx.frontmatter.notes}</p>
+          </Alert>
+        )}
         <h1 className="mb-4">{mdx.frontmatter.title}</h1>
         <MDXProvider components={shortcodes}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
@@ -54,6 +62,7 @@ PageTemplate.propTypes = {
     mdx: PropTypes.shape({
       frontmatter: PropTypes.shape({
         title: PropTypes.string,
+        status: PropTypes.string,
       }),
       body: PropTypes.any, // eslint-disable-line react/forbid-prop-types
     }),
@@ -68,6 +77,8 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
+        status
+        notes
       }
     }
     components: allComponentMetadata(
