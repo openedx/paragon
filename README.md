@@ -29,6 +29,8 @@ import { ComponentName } from '@edx/paragon';
 
 Usage for Open edX and others:
 
+**index.scss**
+
 ```
 // ... Any custom SCSS variables should be defined here
 @import '~@edx/paragon/scss/core/core.scss';
@@ -37,37 +39,45 @@ Usage for Open edX and others:
 Usage on edx.org:
 
 ```
-@import '~@edx/paragon/scss/edx/theme.scss';
-@import '~@edx/paragon/scss/edx/fonts.scss'; // Roboto
+@import '~@edx/brand/paragon/fonts.scss';
+@import '~@edx/brand/paragon/variables.scss';
+@import '~@edx/paragon/scss/core/core.scss';
+@import '~@edx/brand/paragon/overrides.scss';
 ```
 
-Note that including the fonts (Roboto) will affect performance.  In some micro-frontends you may choose not to load the custom font - this is a decision we've made for edx/frontend-app-payment, for instance, to keep it highly performant.
-
-#### CSS Foundation
-
-If you are not using SCSS you can use the pre-built CSS.
-
-Usage for Open edX and others:
-
-```
-// ... Any custom SCSS variables should be defined here
-@import "~@edx/paragon/dist/paragon.css';
-```
-
-Usage on edx.org:
-
-```
-@import "~@edx/paragon/dist/edx-paragon.css";
-```
-
+Note that including fonts will affect performance.  In some applications may choose not to load the custom font to keep it highly performant.
 
 ## Contributing & Development
 
 See the [code of conduct](https://github.com/edx/.github/blob/master/CODE_OF_CONDUCT.md).
 
-To add a new component, create a file `src/MyComponent/index.jsx`. Define your component (using the same `<MyComponent>` as the class name) in this file. Example:
+#### Start the documentation site development server
+
+The Paragon documentation site serves both as documentation and as a workbench to create your component within. To see your component in action, you need to run the documentation site locally. (Note you need to install dependences both in the project root and the `www` directory)
 
 ```
+npm install
+cd www
+npm install
+npm start
+```
+
+You can alternatively run the dev server with the edx.org theme by running
+
+```
+npm run develop:with-theme
+```
+
+#### Create a new directory for your component
+
+Add a directory in `/src/` that matches the name of your component. For example: `/src/MyComponent`.
+
+#### Add an index.jsx that exports your component
+
+
+Create a file `src/MyComponent/index.jsx`. Define your component (using the same `<MyComponent>` as the class name) in this file. Example:
+
+``` jsx
 // src/MyComponent/index.jsx
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -89,39 +99,57 @@ export default MyComponent;
 
 ```
 
+#### Add your component to the Paragon exports in `src/index.js`
+
 Next, add your component to the exports in `src/index.js`. Example:
 
-```
-...
-
+``` js
+// ...
 export { default as MyComponent } from './MyComponent';
-
-...
+// ...
 ```
 
-### Set up your workbench
-To see your component in action, you need to run the documentation site locally and add a new page. The documentation site is a [Gatsby](https://www.gatsbyjs.org/) application located in the `www/` folder. 
+#### Add a README.md to document your component and see it in the documentation site
 
-##### Run the documentation site:
+Create a `src/MyComponent/README.md` file similar to other components in the `src` directory. The documentation site scans this directory for markdown or mdx files to create pages.
 
-1. Install node modules in the root project
-  `npm install`
+``` md
+---
+title: 'MyComponent'
+type: 'component'
+components:
+- MyComponent
+categories:
+- Layout
+status: 'New'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: |
+  Something special about this component
+---
+### Basic Usage
 
-2. Install node modules in the Gatsby project
-  `cd www && npm install`
+````jsx live
+<MyComponent>
+  Hello!
+</MyComponent>
+````
 
-3. Run the documentation dev server
-  `npm start`
+```
 
-4. Visit the documentation at [http://localhost:8000](http://localhost:8000)
+##### Some notes on the format above:
 
-##### Add a page for your new component
+The top part of the markdown file is known as `frontmatter`. This metadata with consumed by the documentation site to control the title of the page and the doc site navigation.
+- **title** controls the page title of the generated page
+- **components** is a list of react components by displayName. This usually matches the name you define the component as in code. (In our example so far it is MyComponent). Components added to this list will be scanned by react-docgen for code comments and a props api table will be rendered at the bottom of the page.
+- **categories** is a list of categories where this page will appear the documentation site menu.
+- **status**, **designStatus**, **devStatus**, and **notes** appear in the http://localhost:8000/status page.
 
-1. Make a copy of `www/src/pages/components/_my-component.mdx` and rename to match your component. Use kebab-case.
+JSX code blocks in the markdown file can be made interactive with the live attribute. All paragon components and icons are in scope. (Note: the scope of this code block is controlled by `www/components/CodeBlock.jsx`).
 
-2. Add your new page to the navigation by making an addition to `www/src/components/navigation.jsx`. Note that the url of your new page is determined by its file name. A file at `www/src/pages/components/my-new-component.mdx` would generate a page at the path `components/my-new-component`. You should see your changes reflected at [http://localhost:8000](http://localhost:8000). Note: Live code blocks in mdx files are created by adding a live attribute (See `_my-component.mdx` for an example). The code inside this code block does not share scope with the MDX file it lives in. It's parsed and rendered inside `www/src/components/CodeBlock.jsx`. All Paragon components are added to the scope of these code blocks by default. If you need to add something to the scope (a React hook for example) you can do so in `CodeBlock.jsx`.
+#### Navigate to your component on the doc site and start building
 
-3. Use your new doc page as the workbench for your component. It will auto refresh as you make changes.
+Visit the documentation at [http://localhost:8000](http://localhost:8000) and navigate to see your README.md powered page and workbench. Changes to the README.md file will auto refesh the page.
 
 
 ### ESLint
