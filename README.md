@@ -113,7 +113,7 @@ export { default as MyComponent } from './MyComponent';
 
 Create a `src/MyComponent/README.md` file similar to other components in the `src` directory. The documentation site scans this directory for markdown or mdx files to create pages.
 
-``` md
+```` md
 ---
 title: 'MyComponent'
 type: 'component'
@@ -129,13 +129,13 @@ notes: |
 ---
 ### Basic Usage
 
-````jsx live
+```jsx live
 <MyComponent>
   Hello!
 </MyComponent>
-````
-
 ```
+
+````
 
 ##### Some notes on the format above:
 
