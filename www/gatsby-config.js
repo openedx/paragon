@@ -4,6 +4,8 @@ module.exports = {
     description: `Technical documentation for the Paragon Design System.`,
     author: `@edx`,
   },
+  // Match the location of the site on github pages if no path prefix is specified
+  pathPrefix: 'PATH_PREFIX' in process.env ? process.env.PATH_PREFIX : '/paragon',
   plugins: [
     "gatsby-plugin-sass",
     `gatsby-plugin-react-helmet`,
