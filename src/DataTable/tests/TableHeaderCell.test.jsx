@@ -11,6 +11,7 @@ const props = {
   isSortedDesc: false,
   getSortByToggleProps: () => (sortByToggleProps),
   canSort: false,
+  headerClassName: 'align-me',
 };
 
 // eslint-disable-next-line react/prop-types
@@ -30,6 +31,10 @@ describe('<TableHeaderCell />', () => {
     it('renders cell content', () => {
       const cell = wrapper.find('th');
       expect(cell.text()).toEqual('Title');
+    });
+    it('adds the headerClassName to inner span', () => {
+      const innerCell = wrapper.find('th span').at(0);
+      expect(innerCell.props().className).toContain(props.headerClassName);
     });
   });
   describe('with sorting', () => {
