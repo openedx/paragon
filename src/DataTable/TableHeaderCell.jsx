@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { Icon } from '..';
 import { ArrowDropDown, ArrowDropUp, ArrowDropUpDown } from '../../icons';
 
@@ -21,13 +22,13 @@ SortIndicator.propTypes = {
 };
 
 const TableHeaderCell = ({
-  getHeaderProps, render, canSort, getSortByToggleProps, isSorted, isSortedDesc,
+  getHeaderProps, render, canSort, getSortByToggleProps, isSorted, isSortedDesc, headerClassName,
 }) => {
   const toggleProps = canSort && getSortByToggleProps ? getSortByToggleProps() : {};
 
   return (
     <th {...getHeaderProps(toggleProps)}>
-      <span className="d-flex align-items-center">
+      <span className={classNames('d-flex align-items-center', headerClassName)}>
         <span>{render('Header')}</span>
         {canSort && <SortIndicator isSorted={isSorted} isSortedDesc={isSortedDesc || false} />}
       </span>
@@ -36,6 +37,7 @@ const TableHeaderCell = ({
 };
 
 TableHeaderCell.defaultProps = {
+  headerClassName: null,
   isSorted: false,
   isSortedDesc: false,
   canSort: false,
@@ -55,6 +57,8 @@ TableHeaderCell.propTypes = {
   getSortByToggleProps: PropTypes.func,
   /** Indicates whether a column is sortable */
   canSort: PropTypes.bool,
+  /** Class(es) to be applied to header cells */
+  headerClassName: PropTypes.string,
 };
 
 export default TableHeaderCell;
