@@ -5,13 +5,22 @@ $nav-link-padding-y:                .5rem !default;
 $nav-link-padding-x:                1rem !default;
 $nav-link-disabled-color:           theme-color("gray", "light-text") !default;
 
-$nav-tabs-border-color:             theme-color("gray", "border") !default;
-$nav-tabs-border-width:             $border-width !default;
-$nav-tabs-border-radius:            $border-radius !default;
-$nav-tabs-link-hover-border-color:  theme-color("gray", "border") theme-color("gray", "border") $nav-tabs-border-color !default;
-$nav-tabs-link-active-color:        theme-color("gray", "text") !default;
+$nav-tabs-border-color:             $light-400 !default;
+$nav-tabs-border-width:             2px !default;
+$nav-tabs-border-radius:            0 !default;
+$nav-tabs-link-color:               theme-color("gray", "text") !default;
+$nav-tabs-link-hover-border-color:  transparent !default;
+$nav-tabs-link-hover-bg:            $light-400 !default;
+$nav-tabs-link-focus-border-color:  $primary !default;
+$nav-tabs-link-active-color:        theme-color("primary", "text") !default;
 $nav-tabs-link-active-bg:           $body-bg !default;
-$nav-tabs-link-active-border-color: theme-color("gray", "active-border") theme-color("gray", "active-border") $nav-tabs-link-active-bg !default;
+$nav-tabs-link-active-border-color: $nav-tabs-link-active-bg $nav-tabs-link-active-bg theme-color("primary", "default") !default;
+$nav-tabs-group-border-radius:      $border-radius !default;
+$nav-tabs-group-border-width:       1px !default;
+$nav-tabs-group-border-color:       $light-400 !default;
+$nav-tabs-group-active-bg:          theme-color("primary", "default") !default;
+$nav-tabs-group-active-color:       $white !default;
+$nav-tabs-group-active-border-color: $white !default;
 
 $nav-pills-border-radius:           $border-radius !default;
 $nav-pills-link-active-color:       $component-active-color !default;

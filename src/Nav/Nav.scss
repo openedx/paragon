@@ -1,2 +1,42 @@
 @import "variables";
 @import "~bootstrap/scss/nav";
+
+.nav-tabs {
+  .nav-link {
+    color: $nav-tabs-link-color;
+    transition: $transition-base;
+    margin: 0;
+
+    &:hover {
+      background: $nav-tabs-link-hover-bg;
+    }
+
+    &:focus {
+      border: $nav-tabs-border-width solid $nav-tabs-link-focus-border-color;
+      outline: none;
+    }
+
+    &.active {
+      border-left-width: 0;
+      border-right-width: 0;
+      margin: 0 $nav-tabs-border-width;
+
+      &:focus {
+        border-width: $nav-tabs-border-width;
+        margin: 0;
+      }
+    }
+  }
+
+  &.button-group {
+    .nav-item {
+      border: $nav-tabs-group-border-width solid $nav-tabs-group-border-color;
+    }
+
+    .nav-link.active {
+      background: $nav-tabs-group-active-bg;
+      color: $nav-tabs-group-active-color;
+      border-color: $nav-tabs-group-active-border-color;
+    }   
+  }
+}

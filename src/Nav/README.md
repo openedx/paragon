@@ -49,5 +49,41 @@ notes: |
       </NavDropdown>
     </Nav>
   );
-}
+};
+```
+
+##### Tabs
+
+```jsx live
+<Nav variant="tabs" defaultActiveKey="/home">
+  <Nav.Item>
+    <Nav.Link eventKey="/home" href="#/home">NavLink 1 content</Nav.Link>
+  </Nav.Item>
+  <Nav.Item>
+    <Nav.Link eventKey="link-1">NavLink 2 content</Nav.Link>
+  </Nav.Item>
+  <Nav.Item>
+    <Nav.Link eventKey="disabled" disabled>
+      NavLink 3 content
+    </Nav.Link>
+  </Nav.Item>
+</Nav>
+```
+
+##### Tabs button group
+
+```jsx live
+<Nav variant="tabs" className="button-group" defaultActiveKey="/home">
+  <Nav.Item>
+    <Nav.Link eventKey="/home" href="#/home">NavLink 1 content</Nav.Link>
+  </Nav.Item>
+  <Nav.Item>
+    <Nav.Link eventKey="link-1">NavLink 2 content</Nav.Link>
+  </Nav.Item>
+  <Nav.Item>
+    <Nav.Link eventKey="disabled" disabled>
+      NavLink 3 content
+    </Nav.Link>
+  </Nav.Item>
+</Nav>
 ```
