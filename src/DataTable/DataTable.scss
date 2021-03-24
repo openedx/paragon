@@ -1,5 +1,6 @@
 
-$data-table-border: 1px solid $gray-200!default;
+$data-table-border: 1px solid $gray-200 !default;
+$data-table-box-shadow: $box-shadow-sm !default;
 $data-table-padding-x: 14px !default;
 $data-table-padding-y: 14px !default;
 $data-table-padding-small: 8px !default;
@@ -7,7 +8,18 @@ $data-table-cell-padding: 8px 14px !default;
 $data-table-footer-position: center !default;
 
 .pgn__data-table-wrapper {
-  border: $data-table-border;
+  border-radius: $border-radius;
+  box-shadow: $data-table-box-shadow;
+
+  > :first-child {
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+
+  > :last-child {
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+  }
 }
 
 .pgn__bulk-actions, .pgn__table-actions {
@@ -19,7 +31,6 @@ $data-table-footer-position: center !default;
   display: block;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  border-bottom: $data-table-border;
 }
 
 .pgn__data-table {
@@ -91,6 +102,7 @@ $data-table-footer-position: center !default;
   justify-content: space-between;
   padding: $data-table-padding-x $data-table-padding-y;
   align-items: center;
+  border-top: $data-table-border;
 }
 
 .pgn__data-table-pagination {
