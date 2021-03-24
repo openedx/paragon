@@ -37,7 +37,7 @@ jobs:
         NPM_TOKEN: ${{ secrets.SEMANTIC_RELEASE_NPM_TOKEN }}
       run: npx semantic-release
     - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@4.0.0
+      uses: JamesIves/github-pages-deploy-action@4.1.0
       with:
         branch: gh-pages # The branch the action should deploy to.
         folder: www/public # The folder the action should deploy.
