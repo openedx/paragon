@@ -36,11 +36,11 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build --prefix-paths",
-    "build:with-theme": "THEME=npm:@edx/brand-edx.org@1.x npm run install-theme && gatsby build --prefix-paths",
+    "build:with-theme": "THEME=npm:@edx/brand-edx.org@latest npm run install-theme && gatsby build --prefix-paths",
     "clean": "gatsby clean",
     "develop": "gatsby develop",
     "install-theme": "npm install \"@edx/brand@${THEME}\" --no-save",
-    "develop:with-theme": "THEME=npm:@edx/brand-edx.org@1.x npm run install-theme && gatsby develop",
+    "develop:with-theme": "THEME=npm:@edx/brand-edx.org@latest npm run install-theme && gatsby develop",
     "lint": "eslint --ext .js --ext .jsx .",
     "start": "npm run develop",
     "test": "echo \"Error: no test specified\" && exit 1"
