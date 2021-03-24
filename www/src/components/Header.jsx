@@ -130,7 +130,7 @@ const Header = ({ siteTitle, showMinimizedTitle }) => {
     >
       <div
         className="bg-white sticky-top"
-        style={{ maxHeight: '100vh', overflow: 'scroll' }}
+        style={{ maxHeight: '100vh', overflow: 'auto' }}
       >
         <Navbar
           siteTitle={siteTitle}
