@@ -6,15 +6,7 @@ import {
   Check, Close, Cancel, CheckCircle, RadioButtonUnchecked, WarningFilled,
 } from '../../icons';
 
-const FORM_TEXT_TYPES = {
-  DEFAULT: 'default',
-  VALID: 'valid',
-  INVALID: 'invalid',
-  WARNING: 'warning',
-  CRITERIA_EMPTY: 'criteria-empty',
-  CRITERIA_VALID: 'criteria-valid',
-  CRITERIA_INVALID: 'criteria-invalid',
-};
+import { FORM_TEXT_TYPES } from './constants';
 
 const FORM_TEXT_ICONS = {
   [FORM_TEXT_TYPES.DEFAULT]: null,

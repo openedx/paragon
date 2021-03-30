@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useFormGroupContext } from './FormGroupContext';
-import FormText, { FORM_TEXT_TYPES } from './FormText';
+import { FORM_TEXT_TYPES } from './constants';
+import FormText from './FormText';
 
 const FormControlFeedback = ({ children, ...props }) => {
   const { controlId, getNewDescriptorId } = useFormGroupContext();
@@ -29,13 +30,11 @@ FormControlFeedback.propTypes = {
 };
 
 FormControlFeedback.defaultProps = {
-  type: undefined,
+  type: FORM_TEXT_TYPES.DEFAULT,
   icon: undefined,
   className: undefined,
   muted: false,
 };
 
 export default FormControlFeedback;
-export {
-  FORM_TEXT_TYPES,
-};
+

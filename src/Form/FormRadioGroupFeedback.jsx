@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import FormText, { FORM_TEXT_TYPES, resolveTextType } from './FormText';
+import FormText, { resolveTextType } from './FormText';
+import { FORM_TEXT_TYPES } from './constants';
 import { useRadioGroupContext } from './FormRadioGroupContext';
 
 const FormRadioGroupFeedback = ({ children, ...props }) => {

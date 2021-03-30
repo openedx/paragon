@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { FormRadioGroupContextProvider, useRadioGroupContext } from './FormRadioGroupContext';
 import FormRadioGroupLegend from './FormRadioGroupLegend';
-import FormRadioGroupFeedback from './FormRadioGroupFeedback';
+import FormRadioGroupFeedback from './FormRadioGroupFeedback.jsx';
 
 const FormRadioGroupFieldset = ({ children, ...props }) => {
   const { describedByIds } = useRadioGroupContext();
