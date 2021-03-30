@@ -83,7 +83,7 @@ $custom-control-label-color:            null !default;
 $custom-control-indicator-disabled-bg:          $input-disabled-bg !default;
 $custom-control-label-disabled-color:           theme-color("gray", "light-text") !default;
 
-$custom-control-indicator-checked-color:        $component-active-color !default;
+$custom-control-indicator-checked-color:        $primary !default;
 $custom-control-indicator-checked-bg:           $component-active-bg !default;
 $custom-control-indicator-checked-disabled-bg:  rgba(theme-color("primary"), .5) !default;
 $custom-control-indicator-checked-box-shadow:   none !default;

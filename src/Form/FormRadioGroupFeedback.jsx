@@ -23,7 +23,7 @@ FormRadioGroupFeedback.propTypes = {
 };
 
 FormRadioGroupFeedback.defaultProps = {
-  type: FORM_TEXT_TYPES.DEFAULT,
+  type: undefined,
   className: undefined,
 };
 

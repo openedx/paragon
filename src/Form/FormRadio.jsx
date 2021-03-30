@@ -35,8 +35,8 @@ const FormRadio = React.forwardRef(({
           {...radioInputProps}
           type="radio"
           ref={ref}
-          className={classNames('pgn__form-radio-control', controlClassName)}
         />
+        <span className={classNames('pgn__form-radio-control', controlClassName)} />
         <span className={classNames('pgn__form-radio-label', controlClassName)}>
           {children}
         </span>
