@@ -13,11 +13,12 @@ const FormRadioFeedback = ({ children, ...props }) => {
 };
 
 FormRadioFeedback.propTypes = {
-
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
 };
 
 FormRadioFeedback.defaultProps = {
-
+  className: undefined,
 };
 
 export default FormRadioFeedback;

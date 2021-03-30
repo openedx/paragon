@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import FormText, { resolveTextType } from './FormText';
+import FormText, { FORM_TEXT_TYPES, resolveTextType } from './FormText';
 import { useRadioGroupContext } from './FormRadioGroupContext';
 
 const FormRadioGroupFeedback = ({ children, ...props }) => {
@@ -15,11 +16,14 @@ const FormRadioGroupFeedback = ({ children, ...props }) => {
 };
 
 FormRadioGroupFeedback.propTypes = {
-
+  children: PropTypes.node.isRequired,
+  type: PropTypes.oneOf(Object.values(FORM_TEXT_TYPES)),
+  className: PropTypes.string,
 };
 
 FormRadioGroupFeedback.defaultProps = {
-
+  type: FORM_TEXT_TYPES.DEFAULT,
+  className: undefined,
 };
 
 export default FormRadioGroupFeedback;

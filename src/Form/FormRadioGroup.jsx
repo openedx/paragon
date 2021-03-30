@@ -8,7 +8,7 @@ import FormRadioGroupFeedback from './FormRadioGroupFeedback';
 const FormRadioGroupFieldset = ({ children, ...props }) => {
   const { describedByIds } = useRadioGroupContext();
   const ariaDescribedBy = classNames(props['aria-describedby'], describedByIds);
-  const className = classNames('pgn__form-radio-group', props.className)
+  const className = classNames('pgn__form-radio-group', props.className);
   return (
     <fieldset
       {...props}
@@ -21,11 +21,14 @@ const FormRadioGroupFieldset = ({ children, ...props }) => {
 };
 
 FormRadioGroupFieldset.propTypes = {
-
+  children: PropTypes.node.isRequired,
+  'aria-describedby': PropTypes.string,
+  className: PropTypes.string,
 };
 
 FormRadioGroupFieldset.defaultProps = {
-
+  className: undefined,
+  'aria-describedby': undefined,
 };
 
 const FormRadioGroup = ({
@@ -58,11 +61,32 @@ const FormRadioGroup = ({
 );
 
 FormRadioGroup.propTypes = {
-
+  children: PropTypes.node.isRequired,
+  'aria-describedby': PropTypes.string,
+  className: PropTypes.string,
+  name: PropTypes.string,
+  isInvalid: PropTypes.bool,
+  isValid: PropTypes.bool,
+  onChange: PropTypes.func,
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
+  value: PropTypes.string,
+  defaultValue: PropTypes.string,
+  id: PropTypes.string,
 };
 
 FormRadioGroup.defaultProps = {
-
+  'aria-describedby': undefined,
+  className: undefined,
+  name: undefined,
+  isInvalid: false,
+  isValid: false,
+  onChange: undefined,
+  onFocus: undefined,
+  onBlur: undefined,
+  value: undefined,
+  defaultValue: undefined,
+  id: undefined,
 };
 
 FormRadioGroup.Legend = FormRadioGroupLegend;

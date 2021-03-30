@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { callAllHandlers, useIdList } from './fieldUtils';
 
 const FormRadioGroupContext = React.createContext({
@@ -53,11 +54,27 @@ const FormRadioGroupContextProvider = ({
 };
 
 FormRadioGroupContextProvider.propTypes = {
-
+  children: PropTypes.node.isRequired,
+  name: PropTypes.string.isRequired,
+  isInvalid: PropTypes.bool,
+  isValid: PropTypes.bool,
+  groupId: PropTypes.string,
+  onBlur: PropTypes.func,
+  onFocus: PropTypes.func,
+  onChange: PropTypes.func,
+  value: PropTypes.string,
+  defaultValue: PropTypes.string,
 };
 
 FormRadioGroupContextProvider.defaultProps = {
-
+  isInvalid: false,
+  isValid: false,
+  groupId: undefined,
+  onBlur: undefined,
+  onFocus: undefined,
+  onChange: undefined,
+  value: undefined,
+  defaultValue: undefined,
 };
 
 export default FormRadioGroupContext;

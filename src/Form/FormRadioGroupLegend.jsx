@@ -8,7 +8,7 @@ const FormRadioGroupLegend = ({ children, ...props }) => {
   const [id, setId] = useState(props.id);
   useEffect(() => {
     if (props.id) {
-      addNewDescriptorId(props.id)
+      addNewDescriptorId(props.id);
     } else {
       setId(getNewDescriptorId());
     }
@@ -23,11 +23,14 @@ const FormRadioGroupLegend = ({ children, ...props }) => {
 };
 
 FormRadioGroupLegend.propTypes = {
-
+  children: PropTypes.node.isRequired,
+  id: PropTypes.string,
+  className: PropTypes.string,
 };
 
 FormRadioGroupLegend.defaultProps = {
-
+  id: undefined,
+  className: undefined,
 };
 
 export default FormRadioGroupLegend;

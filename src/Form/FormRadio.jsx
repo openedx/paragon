@@ -51,12 +51,22 @@ const FormRadio = React.forwardRef(({
 });
 
 FormRadio.propTypes = {
-  className: PropTypes.string,
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  controlClassName: PropTypes.string,
+  labelClassName: PropTypes.string,
+  description: PropTypes.node,
+  isInvalid: PropTypes.bool,
+  isValid: PropTypes.bool,
 };
 
 FormRadio.defaultProps = {
   className: undefined,
+  controlClassName: undefined,
+  labelClassName: undefined,
+  description: undefined,
+  isInvalid: false,
+  isValid: false,
 };
 
 FormRadio.Feedback = FormRadioFeedback;
