@@ -44,15 +44,15 @@ const FormGroupContextProvider = ({
 }) => {
   const resolvedId = React.useMemo(() => controlId || newId('form-field'), [controlId]);
   const [hasFocus, setHasFocusTrue, setHasFocusFalse] = useToggle(false);
-  const [describedByIds, getNewDescriptorId, removeDescriptorId] = useIdList(resolvedId);
+  const [describedByIds, { getNewId, removeId }] = useIdList(resolvedId);
   const contextValue = {
     controlId: resolvedId,
     isInvalid,
     isValid,
     size,
     hasFocus,
-    getNewDescriptorId,
-    removeDescriptorId,
+    getNewDescriptorId: getNewId,
+    removeDescriptorId: removeId,
     'aria-describedby': describedByIds.length ? describedByIds.join(' ') : undefined,
     onFocus: callAllHandlers(setHasFocusTrue, onFocus),
     onBlur: callAllHandlers(setHasFocusFalse, onBlur),

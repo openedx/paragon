@@ -28,15 +28,18 @@ const useHasValue = ({ defaultValue, value }) => {
 
 const useIdList = (uniqueIdPrefix, initialList) => {
   const [idList, setIdList] = useState(initialList || []);
-  const getNewId = () => {
-    const idToAdd = newId(`${uniqueIdPrefix}-`);
+  const addId = (idToAdd) => {
     setIdList(oldIdList => [...oldIdList, idToAdd]);
     return idToAdd;
+  };
+  const getNewId = () => {
+    const idToAdd = newId(`${uniqueIdPrefix}-`);
+    return addId(idToAdd);
   };
   const removeId = (idToRemove) => {
     setIdList(oldIdList => oldIdList.filter(id => id !== idToRemove));
   };
-  return [idList, getNewId, removeId];
+  return [idList, { getNewId, addId, removeId }];
 };
 
 const mergeAttributeValues = (...values) => {

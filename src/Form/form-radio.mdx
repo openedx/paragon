@@ -1,0 +1,144 @@
+---
+title: 'Form.Radio'
+type: 'component'
+components:
+- FormRadio
+categories:
+- Forms
+status: 'Stable'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: |
+
+---
+
+A simple radio button for use with `Form.RadioGroup`.
+
+Note: extra props added to this component are passed as attributes to the
+underlying `input` node. See MDN for documentation on available
+[input attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attributes).
+
+
+### Controlled Usage
+
+```jsx live
+() => {
+  const [value, setValue] = useState('green');
+  return (
+    <Form.RadioGroup
+      name="color-one"
+      onChange={(e) => {
+        console.log(e.target.value)
+        setValue(e.target.value)
+      }}
+      value={value}
+    >
+      <Form.RadioGroup.Legend>What color?</Form.RadioGroup.Legend>
+      <Form.Radio value="red">Red</Form.Radio>
+      <Form.Radio value="green">Green</Form.Radio>
+      <Form.Radio value="blue">Blue</Form.Radio>
+      <Form.Radio value="cyan" disabled>Cyan</Form.Radio>
+    </Form.RadioGroup>
+  );
+}
+```
+
+### Uncontrolled Usage
+
+```jsx live
+<Form.RadioGroup
+  name="color-two"
+  onChange={(e) => console.log(e.target.value)}
+  defaultValue="green"
+>
+  <Form.RadioGroup.Legend>What color?</Form.RadioGroup.Legend>
+  <Form.Radio value="red">Red</Form.Radio>
+  <Form.Radio value="green">Green</Form.Radio>
+  <Form.Radio value="blue">Blue</Form.Radio>
+  <Form.Radio value="cyan" disabled>Cyan</Form.Radio>
+</Form.RadioGroup>
+```
+
+### Inline layout
+
+```jsx live
+<Form.RadioGroup
+  name="color-three"
+  onChange={(e) => console.log(e)}
+  defaultValue="green"
+>
+  <Form.RadioGroup.Legend>What color?</Form.RadioGroup.Legend>
+  <div className="d-flex align-items-start">
+    <Form.Radio value="red">Red</Form.Radio>
+    <Form.Radio value="green">Green</Form.Radio>
+    <Form.Radio value="blue">Blue</Form.Radio>
+    <Form.Radio value="cyan" disabled>Cyan</Form.Radio>
+  </div>
+</Form.RadioGroup>
+```
+
+
+### Individual option validation
+
+```jsx live
+<Form.RadioGroup name="color-four">
+  <Form.RadioGroup.Legend>What color?</Form.RadioGroup.Legend>
+  <Form.Radio
+    value="red"
+    description="Red's cool"
+  >
+    Red
+  </Form.Radio>
+  <Form.Radio
+    value="green"
+    description="Excellent choice"
+    isValid
+  >
+    Green
+  </Form.Radio>
+  <Form.Radio
+    value="blue"
+    description="Poor choice"
+    isInvalid
+  >
+    Blue
+  </Form.Radio>
+  <Form.Radio
+    value="cyan"
+    disabled
+  >
+    Cyan
+  </Form.Radio>
+</Form.RadioGroup>
+```
+
+### Group level Validation
+
+```jsx live
+<Form.RadioGroup
+  name="color-five"
+  onChange={(e) => console.log(e.target.value)}
+  isInvalid
+  description="Some description"
+>
+  <Form.RadioGroup.Legend>What color?</Form.RadioGroup.Legend>
+  <Form.Radio value="red">Red</Form.Radio>
+  <Form.Radio value="green">Green</Form.Radio>
+  <Form.Radio value="blue">Blue</Form.Radio>
+  <Form.Radio value="cyan" disabled>Cyan</Form.Radio>
+  <Form.RadioGroup.Feedback>
+    Please choose an option.
+  </Form.RadioGroup.Feedback>
+</Form.RadioGroup>
+```
+
+### Radio standalone usage
+
+```jsx live
+<>
+  <Form.Radio name="color" value="red">Red</Form.Radio>
+  <Form.Radio name="color" value="green" defaultChecked>Green</Form.Radio>
+  <Form.Radio name="color" value="blue">Blue</Form.Radio>
+  <Form.Radio name="color" value="cyan" disabled>Cyan</Form.Radio>
+</>
+```
