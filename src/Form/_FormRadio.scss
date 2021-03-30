@@ -4,7 +4,6 @@
   margin: 0 $radio-control-margin-x $radio-control-margin-y 0;
   display: block;
   flex-shrink: 0;
-  cursor: pointer;
   input {
     border: 0px;
     clip: rect(0px, 0px, 0px, 0px);
@@ -33,7 +32,8 @@
   border-radius: 50%;
   background-color: rgba(0,0,0,0.01);
   transition: background-color 150ms ease;
-  &:not([disabled]):hover {
+  input:not(:disabled) + &:hover {
+    cursor: pointer;
     background-color: rgba(0,0,0,.1);
   }
   &:before, &:after {

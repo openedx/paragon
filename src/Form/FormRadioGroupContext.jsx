@@ -20,12 +20,16 @@ const FormRadioGroupContextProvider = ({
   value,
   defaultValue,
 }) => {
+  /* istanbul ignore next */
   const [describedByIds, { getNewId, addId, removeId }] = useIdList(groupId || 'radio-group');
   const isControlled = !defaultValue && value !== undefined;
   const getRadioInputProps = (radioProps) => ({
     name,
+    /* istanbul ignore next */
     onBlur: radioProps.onBlur ? callAllHandlers(onBlur, radioProps.onBlur) : onBlur,
+    /* istanbul ignore next */
     onFocus: radioProps.onFocus ? callAllHandlers(onFocus, radioProps.onFocus) : onFocus,
+    /* istanbul ignore next */
     onChange: radioProps.onChange ? callAllHandlers(onChange, radioProps.onChange) : onChange,
     checked: isControlled ? value === radioProps.value : undefined,
     defaultChecked: isControlled ? undefined : defaultValue === radioProps.value,
