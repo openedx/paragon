@@ -1,7 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import FormControlFeedback, { FEEDBACK_TYPES, FEEDBACK_ICONS } from '../FormControlFeedback';
+import FormControlFeedback from '../FormControlFeedback';
+import { FORM_TEXT_TYPES, FORM_TEXT_ICONS } from '../FormText';
 import { FormGroupContext } from '../FormGroupContext';
 
 describe('FormControlFeedback', () => {
@@ -22,11 +23,11 @@ describe('FormControlFeedback', () => {
 
   it('renders with a default icon for a variant', () => {
     const wrapper = mount((
-      <FormControlFeedback type={FEEDBACK_TYPES.VALID}>
+      <FormControlFeedback type={FORM_TEXT_TYPES.VALID}>
         This is feedback
       </FormControlFeedback>
     ));
-    expect(wrapper.exists(FEEDBACK_ICONS[FEEDBACK_TYPES.VALID])).toBe(true);
+    expect(wrapper.exists(FORM_TEXT_ICONS[FORM_TEXT_TYPES.VALID])).toBe(true);
   });
 
   it('renders with a custom icon', () => {

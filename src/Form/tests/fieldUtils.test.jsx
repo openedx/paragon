@@ -47,7 +47,7 @@ describe('callAllHandlers', () => {
 
 // eslint-disable-next-line react/prop-types
 const IdListExample = ({ prefix, initialList }) => {
-  const [ids, getNewId, removeId] = useIdList(prefix, initialList);
+  const [ids, { getNewId, removeId }] = useIdList(prefix, initialList);
   return (
     <div>
       <span id="id-list">{ids.join(' ')}</span>
