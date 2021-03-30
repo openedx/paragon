@@ -16,19 +16,31 @@
   margin-bottom: $alert-margin-bottom;
   border: $alert-border-width solid transparent;
   @include border-radius($alert-border-radius);
+  box-shadow: $alert-box-shadow;
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+
+  .alert-icon {
+    float: left;
+    margin-right: $alert-icon-space;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
 }
 
 // Headings for larger alerts
 .alert-heading {
   // Specified to prevent conflicts of changing $headings-color
-  color: inherit;
+  color: $alert-title-color;
+  display: flex;
 }
 
 // Provide class for links that match alerts
 .alert-link {
   font-weight: $alert-link-font-weight;
 }
-
 
 // Dismissible alerts
 //
@@ -64,5 +76,9 @@
     color: inherit;
     background-color: theme-color($color, "background");
     border-color: theme-color($color, "border");
+
+    .alert-icon {
+      color: theme-color($color, "default");
+    }
   }
 }
