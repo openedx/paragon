@@ -1,12 +1,10 @@
 .pgn__form-radio {
   font-size: $font-size-base;
   line-height: $line-height-base;
-  margin-bottom: $form-group-margin-bottom;
+  margin: 0 $radio-control-margin-x $radio-control-margin-y 0;
   display: block;
-  margin: 0 .5em .5em 0;
   flex-shrink: 0;
   cursor: pointer;
-
   input {
     border: 0px;
     clip: rect(0px, 0px, 0px, 0px);
@@ -26,20 +24,18 @@
 }
 
 .pgn__form-radio-control {
-  height: 32px;
-  width: 32px;
+  height: $radio-control-size;
+  width: $radio-control-size;
   flex-shrink: 0;
-  margin-right: 4px;
+  margin-right: $radio-control-label-margin;
   position: relative;
   display: block;
   border-radius: 50%;
   background-color: rgba(0,0,0,0.01);
   transition: background-color 150ms ease;
-
   &:not([disabled]):hover {
     background-color: rgba(0,0,0,.1);
   }
-
   &:before, &:after {
     content: '';
     display: block;
@@ -53,53 +49,41 @@
   &:before {
     height: 20px;
     width: 20px;
-    border: solid 2px $gray-700;
+    border: $radio-control-border;
     transition: box-shadow 150ms ease;
+
+    input:checked + & {
+      border-color: $component-active-bg;
+    }
+    input:disabled + & {
+      opacity: .3;
+    }
+    .pgn__form-radio-invalid input + & {
+      border-color: $form-feedback-invalid-color;
+    }
+    .pgn__form-radio-valid input + & {
+      border-color: $form-feedback-valid-color;
+    }
+    input:focus + & {
+      box-shadow: 0 0 0 1px $component-active-bg;
+      .pgn__form-radio-invalid & {
+        box-shadow: 0 0 0 1px $form-feedback-invalid-color;
+      }
+      .pgn__form-radio-valid & {
+        box-shadow: 0 0 0 1px $form-feedback-valid-color;
+      }
+    }
   }
   &:after {
     height: 14px;
     width: 14px;
-    background-image: escape-svg($custom-radio-indicator-icon-checked);
+    background-image: escape-svg($radio-control-icon-checked);
     opacity: 0;
     transform: translate(-50%, -50%) scale(0);
     transition: opacity 150ms ease, transform 150ms ease;
-  }
-
-  input:checked + & {
-    &:before {
-      border-color: $primary;
-    }
-    &:after {
+    input:checked + & {
       transform: translate(-50%, -50%) scale(1);
-      // background-color: $info;
-
       opacity: 1;
-    }
-  }
-  input:disabled + & {
-    &:before {
-      opacity: .3;
-    }
-    &:after {
-
-    }
-  }
-
-  input + &:before {
-    .pgn__form-radio-invalid & {
-      border-color: $danger;
-    }
-    .pgn__form-radio-valid & {
-      border-color: $success;
-    }
-  }
-  input:focus + &:before {
-    box-shadow: 0 0 0 1px $primary;
-    .pgn__form-radio-invalid & {
-      box-shadow: 0 0 0 1px $danger;
-    }
-    .pgn__form-radio-valid & {
-      box-shadow: 0 0 0 1px $success;
     }
   }
 }
@@ -108,101 +92,29 @@
   display: block;
   display: flex;
   align-items: center;
-
   input:disabled ~ & {
     opacity: .3;
   }
 }
 
-
-// .custom-radio {
-//   .custom-control-label::before {
-//     // stylelint-disable-next-line property-disallowed-list
-//     border-radius: $custom-radio-indicator-border-radius;
-//   }
-
-//   .custom-control-input:checked ~ .custom-control-label {
-//     &::after {
-//       background-image: escape-svg($custom-radio-indicator-icon-checked);
-//     }
-//   }
-
-//   .custom-control-input:disabled {
-//     &:checked ~ .custom-control-label::before {
-//       @include gradient-bg($custom-control-indicator-checked-disabled-bg);
-//     }
-//   // }?
-
-// .pgn__form-radio-label:before {
-//   content: '';
-//   display: block;
-//   height: 20px;
-//   width: 20px;
-//   border: solid 2px $gray-700;
-//   margin-right: .25em;
-//   // background-image: escape-svg($custom-radio-indicator-icon-unchecked);
-//   input:checked + & {
-//     border-radius: 50%;
-//     // background: blue;
-//     // background-image: escape-svg($custom-radio-indicator-icon-checked);
-//   }
-//   input:disabled + & {
-//     // background: gray;
-//     // opacity: .5;
-//   }
-//   input:focus + & {
-//     // outline: solid 1px blue;
-//     // outline-offset: 1px;
-//   }
-// }
-
-// .pgn__form-radio-label:after {
-//   content: '';
-//   display: block;
-//   height: 10px;
-//   width: 10px;
-//   background: $gray-700;
-//   margin-right: .25em;
-//   opacity: 0;
-//   // background-image: escape-svg($custom-radio-indicator-icon-unchecked);
-//   input:checked + & {
-//     border-radius: 50%;
-//     opacity: 1;
-//     // background: blue;
-//     // background-image: escape-svg($custom-radio-indicator-icon-checked);
-//   }
-//   input:disabled + & {
-//     // background: gray;
-//     // opacity: .5;
-//   }
-//   input:focus + & {
-//     // outline: solid 1px blue;
-//     // outline-offset: 1px;
-//   }
-// }
-
 .pgn__form-radio-text {
-  padding-left: 36px;
+  padding-left: calc(#{$radio-control-size} + #{$radio-control-label-margin});
 }
 
 .pgn__form-radio-valid {
   .pgn__form-radio-text {
-    color: $success;
+    color: $form-feedback-valid-color;
   }
 }
 
 .pgn__form-radio-invalid {
   .pgn__form-radio-text {
-    color: $danger;
+    color: $form-feedback-invalid-color;
   }
 }
 
 .pgn__form-radio-disabled {
   color: $text-muted;
-}
-
-.pgn__form-radio-group {
-
 }
 
 .pgn__form-radio-group-legend {

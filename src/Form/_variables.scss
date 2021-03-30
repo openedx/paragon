@@ -231,3 +231,13 @@ $form-feedback-tooltip-font-size:     $font-size-sm !default;
 $form-feedback-tooltip-line-height:   $line-height-base !default;
 $form-feedback-tooltip-opacity:       .9 !default;
 $form-feedback-tooltip-border-radius: $border-radius !default;
+
+// Radio Controls
+
+$radio-control-size: 32px !default;
+$radio-control-label-margin: 4px !default;
+$radio-control-border: solid 2px $gray-700 !default;
+$radio-control-outline-size: 2px !default;
+$radio-control-icon-checked: str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-color}'/%3e%3c/svg%3e"), "#", "%23") !default;
+$radio-control-margin-x: .5em !default;
+$radio-control-margin-y: .25em !default;
