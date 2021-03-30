@@ -4,53 +4,6 @@ import Layout from '../components/PageLayout';
 import { Button, Container, Row, Col } from '~paragon-react'; // eslint-disable-line
 
 const HomePage = () => (
-  <>
-  <Container size="xs" className="mb-5">
-  <div className="border border-success">1</div>
-  </Container>
-  <Container size="xl" className="mb-5">
-    <Row>
-      <Col>
-        <div className="border border-success">1</div>
-      </Col>
-      <Col>
-        <div className="border border-success">1</div>
-      </Col>
-      <Col>
-        <div className="border border-success">1</div>
-      </Col>
-      <Col>
-        <div className="border border-success">1</div>
-      </Col>
-      <Col xs={4}>
-        <div className="border border-success">1</div>
-      </Col>
-      <Col>
-        <div className="border border-success">1</div>
-      </Col>
-      <Col>
-        <div className="border border-success">1</div>
-      </Col>
-      <Col>
-        <div className="border border-success">1</div>
-      </Col>
-      <Col>
-        <div className="border border-success">1</div>
-      </Col>
-    </Row>
-  </Container>
-  <Container size="sm" className="mb-5">
-    <div className="border border-success">This is a container</div>
-  </Container>
-  <Container size="md" className="mb-5">
-    <div className="border border-success">This is a container</div>
-  </Container>
-  <Container size="lg" className="mb-5">
-    <div className="border border-success">This is a container</div>
-  </Container>
-  <Container size="xl" className="mb-5">
-    <div className="border border-success">This is a container</div>
-  </Container>
   <Layout showMinimizedTitle hideFooterComponentMenu>
     <div className="bg-dark text-white text-center py-5">
       <p className="x-small text-uppercase text-monospace mb-0">
@@ -84,7 +37,6 @@ const HomePage = () => (
     </div>
     <Menu />
   </Layout>
-  </>
 );
 
 export default HomePage;
