@@ -35,11 +35,13 @@ FormRadioGroupFeedback.propTypes = {
   children: PropTypes.node.isRequired,
   type: PropTypes.oneOf(Object.values(FORM_TEXT_TYPES)),
   className: PropTypes.string,
+  id: PropTypes.string,
 };
 
 FormRadioGroupFeedback.defaultProps = {
   type: undefined,
   className: undefined,
+  id: undefined,
 };
 
 export default FormRadioGroupFeedback;
