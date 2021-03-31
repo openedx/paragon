@@ -1,7 +1,7 @@
 import React from 'react';
 import Menu from '../components/Menu';
 import Layout from '../components/PageLayout';
-import { Button, Container, Row, Col } from '~paragon-react'; // eslint-disable-line
+import { Button } from '~paragon-react'; // eslint-disable-line
 
 const HomePage = () => (
   <Layout showMinimizedTitle hideFooterComponentMenu>
