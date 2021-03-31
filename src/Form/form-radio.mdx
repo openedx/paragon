@@ -18,7 +18,6 @@ Note: extra props added to this component are passed as attributes to the
 underlying `input` node. See MDN for documentation on available
 [input attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attributes).
 
-
 ### Controlled Usage
 
 ```jsx live
@@ -77,8 +76,28 @@ underlying `input` node. See MDN for documentation on available
 </Form.RadioGroup>
 ```
 
+### Validation
 
-### Individual option validation
+#### Group Level Validation
+
+```jsx live
+<Form.RadioGroup
+  name="color-five"
+  onChange={(e) => console.log(e.target.value)}
+  isInvalid
+>
+  <Form.RadioGroup.Legend>What color?</Form.RadioGroup.Legend>
+  <Form.Radio value="red">Red</Form.Radio>
+  <Form.Radio value="green">Green</Form.Radio>
+  <Form.Radio value="blue">Blue</Form.Radio>
+  <Form.Radio value="cyan" disabled>Cyan</Form.Radio>
+  <Form.RadioGroup.Feedback>
+    Please choose an option.
+  </Form.RadioGroup.Feedback>
+</Form.RadioGroup>
+```
+
+#### Individual option validation
 
 ```jsx live
 <Form.RadioGroup name="color-four">
@@ -112,26 +131,9 @@ underlying `input` node. See MDN for documentation on available
 </Form.RadioGroup>
 ```
 
-### Group level Validation
-
-```jsx live
-<Form.RadioGroup
-  name="color-five"
-  onChange={(e) => console.log(e.target.value)}
-  isInvalid
->
-  <Form.RadioGroup.Legend>What color?</Form.RadioGroup.Legend>
-  <Form.Radio value="red">Red</Form.Radio>
-  <Form.Radio value="green">Green</Form.Radio>
-  <Form.Radio value="blue">Blue</Form.Radio>
-  <Form.Radio value="cyan" disabled>Cyan</Form.Radio>
-  <Form.RadioGroup.Feedback>
-    Please choose an option.
-  </Form.RadioGroup.Feedback>
-</Form.RadioGroup>
-```
-
 ### Radio standalone usage
+
+This is supported, but not recommended.
 
 ```jsx live
 <>
