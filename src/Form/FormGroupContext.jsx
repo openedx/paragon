@@ -13,9 +13,7 @@ const identityFn = props => props;
 
 const FormGroupContext = React.createContext({
   getControlProps: identityFn,
-  getFieldsetControlProps: identityFn,
   getDescriptorProps: identityFn,
-  getLabelProps: identityFn,
   addDescriptorId: identityFn,
   getNewDescriptorId: identityFn,
   removeDescriptorId: identityFn,
@@ -74,7 +72,6 @@ const FormGroupContextProvider = ({
 
   const contextValue = {
     getControlProps,
-    getLabelProps: identityFn,
     getDescriptorProps,
     controlId: resolvedId,
     isInvalid,

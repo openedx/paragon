@@ -7,13 +7,9 @@ import { FormGroupContext } from '../FormGroupContext';
 
 describe('FormControlFeedback', () => {
   it('renders a form control with an id', () => {
-    const getNewDescriptorId = jest.fn(() => 'descriptor-id');
-    const addDescriptorId = jest.fn(() => 'explicit-id');
-    const removeDescriptorId = jest.fn();
+    const getDescriptorProps = jest.fn(() => ({ id: 'descriptor-id' }));
     const contextValue = {
-      getNewDescriptorId,
-      addDescriptorId,
-      removeDescriptorId,
+      getDescriptorProps,
     };
     const wrapper = mount((
       <FormGroupContext.Provider value={contextValue}>
@@ -24,7 +20,7 @@ describe('FormControlFeedback', () => {
     ));
     expect(wrapper.exists('[children="This is feedback"]')).toBe(true);
     const FeedbackNode = wrapper.find(FormControlFeedback).first().childAt(0);
-    expect(getNewDescriptorId).toHaveBeenCalled();
+    expect(getDescriptorProps).toHaveBeenCalled();
     expect(FeedbackNode.props().id).toContain('descriptor-id');
   });
 
