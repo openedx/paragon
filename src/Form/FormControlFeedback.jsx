@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useFormGroupContext } from './FormGroupContext';
 import { FORM_TEXT_TYPES } from './constants';
-import FormText from './FormText';
+import FormText, { resolveTextType } from './FormText';
 
 const FormControlFeedback = ({ children, ...props }) => {
-  const { controlId, getNewDescriptorId } = useFormGroupContext();
-  const [id, setId] = useState();
-  useEffect(() => setId(getNewDescriptorId()), [controlId]);
+  const { getDescriptorProps, isInvalid, isValid } = useFormGroupContext();
+  const descriptorProps = getDescriptorProps(props);
   const className = classNames('pgn__form-control-description', props.className);
+  const textType = props.type || resolveTextType({ isInvalid, isValid });
   return (
     <FormText
-      {...props}
-      id={id}
+      {...descriptorProps}
       className={className}
+      type={textType}
     >
       {children}
     </FormText>
@@ -27,13 +27,15 @@ FormControlFeedback.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   muted: PropTypes.bool,
+  id: PropTypes.string,
 };
 
 FormControlFeedback.defaultProps = {
-  type: FORM_TEXT_TYPES.DEFAULT,
+  type: undefined,
   icon: undefined,
   className: undefined,
   muted: false,
+  id: undefined,
 };
 
 export default FormControlFeedback;

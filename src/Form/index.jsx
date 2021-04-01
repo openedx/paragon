@@ -6,15 +6,12 @@ import FormControlFeedback from './FormControlFeedback';
 import FormText from './FormText';
 import FormControlDecoratorGroup from './FormControlDecoratorGroup';
 import FormRadio from './FormRadio';
-import FormRadioGroup from './FormRadioGroup';
-import FormRadioGroupLegend from './FormRadioGroupLegend';
-import FormRadioGroupContext from './FormRadioGroupContext';
-import FormRadioGroupFeedback from './FormRadioGroupFeedback';
-import FormRadioFeedback from './FormRadioFeedback';
+import FormRadioSet from './FormRadioSet';
+import FormRadioSetContext from './FormRadioSetContext';
 
 Form.Control = FormControl;
 Form.Radio = FormRadio;
-Form.RadioGroup = FormRadioGroup;
+Form.RadioSet = FormRadioSet;
 Form.Label = FormLabel;
 Form.Group = FormGroup;
 Form.Text = FormText;
@@ -24,11 +21,8 @@ export {
   FormControl,
   FormLabel,
   FormRadio,
-  FormRadioGroup,
-  FormRadioGroupLegend,
-  FormRadioGroupContext,
-  FormRadioGroupFeedback,
-  FormRadioFeedback,
+  FormRadioSet,
+  FormRadioSetContext,
   FormGroup,
   FormControlDecoratorGroup,
   FormControlFeedback,

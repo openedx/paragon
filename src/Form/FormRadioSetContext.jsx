@@ -1,27 +1,24 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { callAllHandlers, useIdList } from './fieldUtils';
+import { callAllHandlers } from './fieldUtils';
 
-const FormRadioGroupContext = React.createContext({
+const FormRadioSetContext = React.createContext({
   getRadioInputProps: () => ({}),
 });
 
-const useRadioGroupContext = () => useContext(FormRadioGroupContext);
+const useRadioSetContext = () => useContext(FormRadioSetContext);
 
-const FormRadioGroupContextProvider = ({
+const FormRadioSetContextProvider = ({
   children,
   name,
   isInvalid,
   isValid,
-  groupId,
   onBlur,
   onFocus,
   onChange,
   value,
   defaultValue,
 }) => {
-  /* istanbul ignore next */
-  const [describedByIds, { getNewId, addId, removeId }] = useIdList(groupId || 'radio-group');
   const isControlled = !defaultValue && value !== undefined;
   const getRadioInputProps = (radioProps) => ({
     name,
@@ -34,35 +31,28 @@ const FormRadioGroupContextProvider = ({
     checked: isControlled ? value === radioProps.value : undefined,
     defaultChecked: isControlled ? undefined : defaultValue === radioProps.value,
   });
-
   const contextValue = {
     name,
     value,
     getRadioInputProps,
     isInvalid,
     isValid,
-    groupId,
-    getNewDescriptorId: getNewId,
-    addNewDescriptorId: addId,
-    removeDescriptorId: removeId,
-    describedByIds,
     onBlur,
     onFocus,
     onChange,
   };
   return (
-    <FormRadioGroupContext.Provider value={contextValue}>
+    <FormRadioSetContext.Provider value={contextValue}>
       {children}
-    </FormRadioGroupContext.Provider>
+    </FormRadioSetContext.Provider>
   );
 };
 
-FormRadioGroupContextProvider.propTypes = {
+FormRadioSetContextProvider.propTypes = {
   children: PropTypes.node.isRequired,
   name: PropTypes.string.isRequired,
   isInvalid: PropTypes.bool,
   isValid: PropTypes.bool,
-  groupId: PropTypes.string,
   onBlur: PropTypes.func,
   onFocus: PropTypes.func,
   onChange: PropTypes.func,
@@ -70,10 +60,9 @@ FormRadioGroupContextProvider.propTypes = {
   defaultValue: PropTypes.string,
 };
 
-FormRadioGroupContextProvider.defaultProps = {
+FormRadioSetContextProvider.defaultProps = {
   isInvalid: false,
   isValid: false,
-  groupId: undefined,
   onBlur: undefined,
   onFocus: undefined,
   onChange: undefined,
@@ -81,8 +70,8 @@ FormRadioGroupContextProvider.defaultProps = {
   defaultValue: undefined,
 };
 
-export default FormRadioGroupContext;
+export default FormRadioSetContext;
 export {
-  useRadioGroupContext,
-  FormRadioGroupContextProvider,
+  useRadioSetContext,
+  FormRadioSetContextProvider,
 };

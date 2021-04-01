@@ -6,30 +6,34 @@ import { useFormGroupContext } from './FormGroupContext';
 import FormControlFeedback from './FormControlFeedback';
 import FormControlDecoratorGroup from './FormControlDecoratorGroup';
 
-import { useHasValue, callAllHandlers } from './fieldUtils';
+import { useHasValue } from './fieldUtils';
 import { FORM_CONTROL_SIZES } from './constants';
 
 const FormControl = React.forwardRef(({
+  as,
   className,
   controlClassName,
   leadingElement,
   trailingElement,
   floatingLabel,
-  id,
   ...props
 }, ref) => {
   const {
-    as,
     size,
-    controlId,
     isInvalid,
     isValid,
-    onFocus,
-    onBlur,
-    'aria-describedby': ariaDescribedBy,
-  } = useFormGroupContext({ ...props, controlId: id });
+    getControlProps,
+  } = useFormGroupContext();
 
-  const [hasValue, checkInputEventValue] = useHasValue({ defaultValue: props.defaultValue, value: props.value });
+  const [hasValue, checkInputEventValue] = useHasValue({
+    defaultValue: props.defaultValue,
+    value: props.value,
+  });
+
+  const controlProps = getControlProps({
+    ...props,
+    onBlur: checkInputEventValue,
+  });
 
   return (
     <FormControlDecoratorGroup
@@ -40,19 +44,15 @@ const FormControl = React.forwardRef(({
       className={className}
     >
       <RBFormControl
-        {...props}
         as={as}
         ref={ref}
         size={size}
-        id={controlId}
         isInvalid={isInvalid}
         isValid={isValid}
         className={classNames(controlClassName, {
           'has-value': hasValue,
         })}
-        onFocus={onFocus}
-        onBlur={callAllHandlers(checkInputEventValue, onBlur)}
-        aria-describedby={ariaDescribedBy}
+        {...controlProps}
       />
     </FormControlDecoratorGroup>
   );

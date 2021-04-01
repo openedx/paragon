@@ -11,7 +11,9 @@ const FormGroup = ({
   isValid,
   onFocus,
   onBlur,
+  onChange,
   size,
+  name,
   as,
   ...props
 }) => React.createElement(as, {
@@ -23,8 +25,10 @@ const FormGroup = ({
     isInvalid={isInvalid}
     isValid={isValid}
     onFocus={onFocus}
+    onChange={onChange}
     onBlur={onBlur}
     size={size}
+    name={name}
   >
     {children}
   </FormGroupContextProvider>
@@ -38,11 +42,13 @@ FormGroup.propTypes = {
   isInvalid: PropTypes.bool,
   isValid: PropTypes.bool,
   onFocus: PropTypes.func,
+  onChange: PropTypes.func,
   onBlur: PropTypes.func,
   size: PropTypes.oneOf([
     FORM_CONTROL_SIZES.SMALL,
     FORM_CONTROL_SIZES.LARGE,
   ]),
+  name: PropTypes.string,
 };
 
 FormGroup.defaultProps = {
@@ -53,7 +59,9 @@ FormGroup.defaultProps = {
   isValid: false,
   onFocus: undefined,
   onBlur: undefined,
+  onChange: undefined,
   size: undefined,
+  name: undefined,
 };
 
 export default FormGroup;

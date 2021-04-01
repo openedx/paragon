@@ -8,8 +8,15 @@ import { FormGroupContext } from '../FormGroupContext';
 describe('FormControlFeedback', () => {
   it('renders a form control with an id', () => {
     const getNewDescriptorId = jest.fn(() => 'descriptor-id');
+    const addDescriptorId = jest.fn(() => 'explicit-id');
+    const removeDescriptorId = jest.fn();
+    const contextValue = {
+      getNewDescriptorId,
+      addDescriptorId,
+      removeDescriptorId,
+    };
     const wrapper = mount((
-      <FormGroupContext.Provider value={{ getNewDescriptorId }}>
+      <FormGroupContext.Provider value={contextValue}>
         <FormControlFeedback>
           This is feedback
         </FormControlFeedback>

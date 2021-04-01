@@ -4,9 +4,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { resolveTextType } from './FormText';
-import { useRadioGroupContext } from './FormRadioGroupContext';
-import FormRadioFeedback from './FormRadioFeedback';
+import FormText, { resolveTextType } from './FormText';
+import { useRadioSetContext } from './FormRadioSetContext';
 
 const FormRadio = React.forwardRef(({
   children,
@@ -18,7 +17,7 @@ const FormRadio = React.forwardRef(({
   isValid,
   ...props
 }, ref) => {
-  const { getRadioInputProps } = useRadioGroupContext();
+  const { getRadioInputProps } = useRadioSetContext();
   const radioInputProps = getRadioInputProps(props);
 
   return (
@@ -42,9 +41,13 @@ const FormRadio = React.forwardRef(({
         </span>
       </span>
       {description && (
-        <FormRadioFeedback hasIcon={false} type={resolveTextType({ isValid, isInvalid })}>
+        <FormText
+          className="pgn__form-radio-text"
+          hasIcon={false}
+          type={resolveTextType({ isValid, isInvalid })}
+        >
           {description}
-        </FormRadioFeedback>
+        </FormText>
       )}
     </label>
   );
@@ -68,7 +71,5 @@ FormRadio.defaultProps = {
   isInvalid: false,
   isValid: false,
 };
-
-FormRadio.Feedback = FormRadioFeedback;
 
 export default FormRadio;

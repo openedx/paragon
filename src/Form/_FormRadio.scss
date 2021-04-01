@@ -122,3 +122,15 @@
   font-size: inherit;
   margin-bottom: $label-margin-bottom;
 }
+
+.pgn__radio-set-controls {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.pgn__radio-set-controls-inline {
+  flex-direction: row;
+  flex-wrap: 1;
+  align-items: flex-start;
+}
