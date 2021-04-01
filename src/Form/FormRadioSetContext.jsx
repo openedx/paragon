@@ -2,8 +2,10 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { callAllHandlers } from './fieldUtils';
 
+const identityFn = props => props;
+
 const FormRadioSetContext = React.createContext({
-  getRadioInputProps: () => ({}),
+  getRadioInputProps: identityFn,
 });
 
 const useRadioSetContext = () => useContext(FormRadioSetContext);
@@ -11,8 +13,6 @@ const useRadioSetContext = () => useContext(FormRadioSetContext);
 const FormRadioSetContextProvider = ({
   children,
   name,
-  isInvalid,
-  isValid,
   onBlur,
   onFocus,
   onChange,
@@ -21,6 +21,7 @@ const FormRadioSetContextProvider = ({
 }) => {
   const isControlled = !defaultValue && value !== undefined;
   const getRadioInputProps = (radioProps) => ({
+    ...radioProps,
     name,
     /* istanbul ignore next */
     onBlur: radioProps.onBlur ? callAllHandlers(onBlur, radioProps.onBlur) : onBlur,
@@ -34,9 +35,8 @@ const FormRadioSetContextProvider = ({
   const contextValue = {
     name,
     value,
+    defaultValue,
     getRadioInputProps,
-    isInvalid,
-    isValid,
     onBlur,
     onFocus,
     onChange,
@@ -51,8 +51,6 @@ const FormRadioSetContextProvider = ({
 FormRadioSetContextProvider.propTypes = {
   children: PropTypes.node.isRequired,
   name: PropTypes.string.isRequired,
-  isInvalid: PropTypes.bool,
-  isValid: PropTypes.bool,
   onBlur: PropTypes.func,
   onFocus: PropTypes.func,
   onChange: PropTypes.func,
@@ -61,8 +59,6 @@ FormRadioSetContextProvider.propTypes = {
 };
 
 FormRadioSetContextProvider.defaultProps = {
-  isInvalid: false,
-  isValid: false,
   onBlur: undefined,
   onFocus: undefined,
   onChange: undefined,

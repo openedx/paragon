@@ -4,8 +4,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import FormText, { resolveTextType } from './FormText';
 import { useRadioSetContext } from './FormRadioSetContext';
+import { FormControlContextProvider, useFormControlContext } from './FormControlContext';
+import FormLabel from './FormLabel';
+import FormControlFeedback from './FormControlFeedback';
+
+const RadioControl = React.forwardRef((props, ref) => {
+  const { getControlProps } = useFormControlContext();
+  const radioProps = getControlProps(props);
+  return (
+    <input {...radioProps} type="radio" ref={ref} />
+  );
+});
 
 const FormRadio = React.forwardRef(({
   children,
@@ -19,37 +29,33 @@ const FormRadio = React.forwardRef(({
 }, ref) => {
   const { getRadioInputProps } = useRadioSetContext();
   const radioInputProps = getRadioInputProps(props);
-
   return (
-    <label
-      className={classNames('pgn__form-radio', className, {
-        'pgn__form-radio-valid': isValid,
-        'pgn__form-radio-invalid': isInvalid,
-        'pgn__form-radio-disabled': radioInputProps.disabled,
-      })}
+    <FormControlContextProvider
+      controlId={radioInputProps.id}
+      isInvalid={isInvalid}
+      isValid={isValid}
     >
-      <span className={classNames('pgn__form-radio-lockup', controlClassName)}>
-        <input
-          {...props}
-          {...radioInputProps}
-          type="radio"
-          ref={ref}
-        />
-        <span className={classNames('pgn__form-radio-control', controlClassName)} />
-        <span className={classNames('pgn__form-radio-label', controlClassName)}>
-          {children}
+      <div
+        className={classNames('pgn__form-radio', className, {
+          'pgn__form-radio-valid': isValid,
+          'pgn__form-radio-invalid': isInvalid,
+          'pgn__form-radio-disabled': radioInputProps.disabled,
+        })}
+      >
+        <RadioControl {...radioInputProps} ref={ref} />
+        <span className={classNames('pgn__form-radio-display', controlClassName)}>
+          <FormLabel className={classNames('pgn__form-radio-label', labelClassName)}>
+            <span className={classNames('pgn__form-radio-control', controlClassName)} />
+            {children}
+          </FormLabel>
+          {description && (
+            <FormControlFeedback hasIcon={false}>
+              {description}
+            </FormControlFeedback>
+          )}
         </span>
-      </span>
-      {description && (
-        <FormText
-          className="pgn__form-radio-text"
-          hasIcon={false}
-          type={resolveTextType({ isValid, isInvalid })}
-        >
-          {description}
-        </FormText>
-      )}
-    </label>
+      </div>
+    </FormControlContextProvider>
   );
 });
 

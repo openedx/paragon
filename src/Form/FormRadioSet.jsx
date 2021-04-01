@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { useFormGroupContext, useControlDescriptorId } from './FormGroupContext';
+import { useFormControlContext, useControlDescriptorId } from './FormControlContext';
 import { FormRadioSetContextProvider } from './FormRadioSetContext';
 
 const RadioSetLegend = ({ children, ...props }) => {
@@ -42,7 +42,7 @@ const FormRadioSet = ({
   isInline,
   ...props
 }) => {
-  const { getControlProps } = useFormGroupContext();
+  const { getControlProps } = useFormControlContext();
   const {
     onChange,
     onBlur,

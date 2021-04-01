@@ -11,7 +11,7 @@ import { FORM_CONTROL_SIZES } from './constants';
 
 const identityFn = props => props;
 
-const FormGroupContext = React.createContext({
+const FormControlContext = React.createContext({
   getControlProps: identityFn,
   getDescriptorProps: identityFn,
   addDescriptorId: identityFn,
@@ -19,7 +19,7 @@ const FormGroupContext = React.createContext({
   removeDescriptorId: identityFn,
 });
 
-const useFormGroupContext = () => React.useContext(FormGroupContext);
+const useFormControlContext = () => React.useContext(FormControlContext);
 
 const useControlDescriptorId = (explicitId) => {
   const {
@@ -27,7 +27,7 @@ const useControlDescriptorId = (explicitId) => {
     getNewDescriptorId,
     addDescriptorId,
     removeDescriptorId,
-  } = useFormGroupContext();
+  } = useFormControlContext();
   const [id, setId] = useState(explicitId);
   useEffect(() => {
     if (explicitId) {
@@ -40,7 +40,7 @@ const useControlDescriptorId = (explicitId) => {
   return id;
 };
 
-const FormGroupContextProvider = ({
+const FormControlContextProvider = ({
   children,
   controlId,
   isInvalid,
@@ -82,13 +82,13 @@ const FormGroupContextProvider = ({
     removeDescriptorId: removeId,
   };
   return (
-    <FormGroupContext.Provider value={contextValue}>
+    <FormControlContext.Provider value={contextValue}>
       {children}
-    </FormGroupContext.Provider>
+    </FormControlContext.Provider>
   );
 };
 
-FormGroupContextProvider.propTypes = {
+FormControlContextProvider.propTypes = {
   children: PropTypes.node.isRequired,
   controlId: PropTypes.string,
   isInvalid: PropTypes.bool,
@@ -102,7 +102,7 @@ FormGroupContextProvider.propTypes = {
   ]),
 };
 
-FormGroupContextProvider.defaultProps = {
+FormControlContextProvider.defaultProps = {
   controlId: undefined,
   isInvalid: undefined,
   isValid: undefined,
@@ -113,8 +113,8 @@ FormGroupContextProvider.defaultProps = {
 };
 
 export {
-  FormGroupContext,
-  FormGroupContextProvider,
-  useFormGroupContext,
+  FormControlContext,
+  FormControlContextProvider,
+  useFormControlContext,
   useControlDescriptorId,
 };

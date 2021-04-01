@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { FormGroupContext } from '../FormGroupContext';
+import { FormControlContext } from '../FormControlContext';
 import FormControlDecoratorGroup from '../FormControlDecoratorGroup';
 import { FORM_CONTROL_SIZES } from '../constants';
 
@@ -22,7 +22,7 @@ describe('FormFieldDecoratorGroup', () => {
   });
   it('renders a size reflecting a context', () => {
     const wrapper = mount((
-      <FormGroupContext.Provider value={{ size: FORM_CONTROL_SIZES.LARGE }}>
+      <FormControlContext.Provider value={{ size: FORM_CONTROL_SIZES.LARGE }}>
         <FormControlDecoratorGroup
           leadingElement="before"
           trailingElement="after"
@@ -30,7 +30,7 @@ describe('FormFieldDecoratorGroup', () => {
         >
           <span>Form control</span>
         </FormControlDecoratorGroup>
-      </FormGroupContext.Provider>
+      </FormControlContext.Provider>
     ));
     const groupNode = wrapper.find(FormControlDecoratorGroup).first().childAt(0);
     expect(groupNode.props().className).toContain('-lg');

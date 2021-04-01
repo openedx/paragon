@@ -17,11 +17,6 @@
   }
 }
 
-.pgn__form-radio-lockup {
-  display: flex;
-  align-items: center;
-}
-
 .pgn__form-radio-control {
   height: $radio-control-size;
   width: $radio-control-size;
@@ -32,7 +27,7 @@
   border-radius: 50%;
   background-color: rgba(0,0,0,0.01);
   transition: background-color 150ms ease;
-  input:not(:disabled) + &:hover {
+  input:not(:disabled) + .pgn__form-radio-display:hover & {
     cursor: pointer;
     background-color: rgba(0,0,0,.1);
   }
@@ -52,19 +47,19 @@
     border: $radio-control-border;
     transition: box-shadow 150ms ease;
 
-    input:checked + & {
+    input:checked + .pgn__form-radio-display & {
       border-color: $component-active-bg;
     }
     input:disabled + & {
       opacity: .3;
     }
-    .pgn__form-radio-invalid input + & {
+    .pgn__form-radio-invalid input + .pgn__form-radio-display & {
       border-color: $form-feedback-invalid-color;
     }
-    .pgn__form-radio-valid input + & {
+    .pgn__form-radio-valid input + .pgn__form-radio-display & {
       border-color: $form-feedback-valid-color;
     }
-    input:focus + & {
+    input:focus + .pgn__form-radio-display & {
       box-shadow: 0 0 0 1px $component-active-bg;
       .pgn__form-radio-invalid & {
         box-shadow: 0 0 0 1px $form-feedback-invalid-color;
@@ -81,35 +76,29 @@
     opacity: 0;
     transform: translate(-50%, -50%) scale(0);
     transition: opacity 150ms ease, transform 150ms ease;
-    input:checked + & {
+    input:checked + .pgn__form-radio-display & {
       transform: translate(-50%, -50%) scale(1);
       opacity: 1;
     }
   }
 }
 
+
 .pgn__form-radio-label {
   display: block;
   display: flex;
   align-items: center;
-  input:disabled ~ & {
+  margin-bottom: 0;
+  input:disabled ~ .pgn__form-radio-display & {
     opacity: .3;
   }
 }
 
-.pgn__form-radio-text {
-  padding-left: calc(#{$radio-control-size} + #{$radio-control-label-margin});
-}
 
-.pgn__form-radio-valid {
-  .pgn__form-radio-text {
-    color: $form-feedback-valid-color;
-  }
-}
-
-.pgn__form-radio-invalid {
-  .pgn__form-radio-text {
-    color: $form-feedback-invalid-color;
+.pgn__form-radio-display {
+  .pgn__form-text {
+    margin-top: -4px;
+    padding-left: calc(#{$radio-control-size} + #{$radio-control-label-margin});
   }
 }
 
