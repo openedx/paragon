@@ -43,7 +43,7 @@ const FormRadio = React.forwardRef(({
         })}
       >
         <RadioControl {...radioInputProps} ref={ref} />
-        <span className={classNames('pgn__form-radio-display', controlClassName)}>
+        <div className={classNames('pgn__form-radio-display', controlClassName)}>
           <FormLabel className={classNames('pgn__form-radio-label', labelClassName)}>
             <span className={classNames('pgn__form-radio-control', controlClassName)} />
             {children}
@@ -53,7 +53,7 @@ const FormRadio = React.forwardRef(({
               {description}
             </FormControlFeedback>
           )}
-        </span>
+        </div>
       </div>
     </FormControlContextProvider>
   );

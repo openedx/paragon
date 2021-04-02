@@ -20,9 +20,9 @@
     display: flex;
     align-items: center;
     margin-bottom: 0;
-    input:disabled ~ .pgn__form-radio-display & {
-      opacity: .3;
-    }
+  }
+  input:disabled ~ .pgn__form-radio-display {
+    opacity: .3;
   }
 }
 
@@ -33,9 +33,6 @@
   }
 }
 
-.pgn__form-radio-disabled {
-  color: $text-muted;
-}
 
 .pgn__form-radio-control {
   height: $custom-control-indicator-size;
@@ -71,9 +68,6 @@
 
     input:checked + .pgn__form-radio-display & {
       border-color: $custom-control-indicator-active-border-color;
-    }
-    input:disabled + & {
-      opacity: .3;
     }
     .pgn__form-radio-invalid input + .pgn__form-radio-display & {
       border-color: $form-feedback-invalid-color;
