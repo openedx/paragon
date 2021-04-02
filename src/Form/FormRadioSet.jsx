@@ -51,6 +51,9 @@ FormRadioSet.propTypes = {
   value: PropTypes.string,
   defaultValue: PropTypes.string,
   isInline: PropTypes.bool,
+  onChange: PropTypes.func,
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
 };
 
 FormRadioSet.defaultProps = {
@@ -59,6 +62,9 @@ FormRadioSet.defaultProps = {
   value: undefined,
   defaultValue: undefined,
   isInline: false,
+  onChange: undefined,
+  onFocus: undefined,
+  onBlur: undefined,
 };
 
 export default FormRadioSet;
