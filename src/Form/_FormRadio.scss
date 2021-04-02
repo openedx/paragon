@@ -99,7 +99,7 @@
   }
 }
 
-.pgn__form-radio-group {
+.pgn__form-radio-set {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -108,7 +108,7 @@
   }
 }
 
-.pgn__form-radio-group-inline {
+.pgn__form-radio-set-inline {
   flex-direction: row;
   flex-wrap: 1;
   align-items: flex-start;
