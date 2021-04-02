@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { newId } from '../utils';
@@ -10,7 +10,7 @@ const noop = () => {};
 
 const FormGroupContext = React.createContext({
   getControlProps: identityFn,
-  useSetControlIsGroupEffect: noop,
+  useSetIsControlGroupEffect: noop,
   getLabelProps: identityFn,
   getDescriptorProps: identityFn,
 });
@@ -35,7 +35,7 @@ const FormGroupContextProvider = ({
   const resolvedId = React.useMemo(() => controlId || newId('form-field'), [controlId]);
   const [describedByIds, useRegisteredDescriptorId] = useIdList(resolvedId);
   const [labelledByIds, useRegisteredLabellerId] = useIdList(resolvedId);
-  const [controlIsGroup, useSetControlIsGroupEffect] = useStateEffect(false);
+  const [isControlGroup, useSetIsControlGroupEffect] = useStateEffect(false);
 
   const getControlProps = (controlProps) => {
     // labelledByIds from the list above should only be added to a control
@@ -45,7 +45,7 @@ const FormGroupContextProvider = ({
     //      whether it is needed or not.
     //    - This is what allows consumers of Paragon to use <Form.Label>
     //      interchangeably between ControlGroup type controls and regular Controls
-    const labelledByIdsForControl = controlIsGroup ? labelledByIds : undefined;
+    const labelledByIdsForControl = isControlGroup ? labelledByIds : undefined;
     return omitUndefinedProperties({
       ...controlProps,
       'aria-describedby': classNames(controlProps['aria-describedby'], describedByIds) || undefined,
@@ -56,7 +56,7 @@ const FormGroupContextProvider = ({
 
   const getLabelProps = (labelProps) => {
     const id = useRegisteredLabellerId(labelProps?.id);
-    if (controlIsGroup) {
+    if (isControlGroup) {
       return { ...labelProps, id };
     }
     return { ...labelProps, htmlFor: resolvedId };
@@ -67,17 +67,25 @@ const FormGroupContextProvider = ({
     return { ...descriptorProps, id };
   };
 
-  const contextValue = {
+  const contextValue = useMemo(() => ({
     getControlProps,
     getLabelProps,
     getDescriptorProps,
-    useSetControlIsGroupEffect,
-    controlIsGroup,
+    useSetIsControlGroupEffect,
+    isControlGroup,
     controlId: resolvedId,
     isInvalid,
     isValid,
     size,
-  };
+  }), [
+    resolvedId,
+    describedByIds,
+    labelledByIds,
+    isControlGroup,
+    isInvalid,
+    isValid,
+    size,
+  ]);
   return (
     <FormGroupContext.Provider value={contextValue}>
       {children}

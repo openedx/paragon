@@ -5,7 +5,7 @@ import { useFormGroupContext } from './FormGroupContext';
 import { FORM_CONTROL_SIZES } from './constants';
 
 const FormLabel = ({ children, isInline, ...props }) => {
-  const { size, controlIsGroup, getLabelProps } = useFormGroupContext();
+  const { size, isControlGroup, getLabelProps } = useFormGroupContext();
   const className = classNames(
     'pgn__form-label',
     {
@@ -16,7 +16,7 @@ const FormLabel = ({ children, isInline, ...props }) => {
     props.className,
   );
   const labelProps = getLabelProps({ ...props, className });
-  const componentType = controlIsGroup ? 'p' : 'label';
+  const componentType = isControlGroup ? 'p' : 'label';
   return React.createElement(componentType, labelProps, children);
 };
 
