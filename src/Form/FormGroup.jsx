@@ -9,8 +9,6 @@ const FormGroup = ({
   controlId,
   isInvalid,
   isValid,
-  onFocus,
-  onBlur,
   size,
   as,
   ...props
@@ -22,8 +20,6 @@ const FormGroup = ({
     controlId={controlId}
     isInvalid={isInvalid}
     isValid={isValid}
-    onFocus={onFocus}
-    onBlur={onBlur}
     size={size}
   >
     {children}
@@ -37,8 +33,6 @@ FormGroup.propTypes = {
   controlId: PropTypes.string,
   isInvalid: PropTypes.bool,
   isValid: PropTypes.bool,
-  onFocus: PropTypes.func,
-  onBlur: PropTypes.func,
   size: PropTypes.oneOf([
     FORM_CONTROL_SIZES.SMALL,
     FORM_CONTROL_SIZES.LARGE,
@@ -51,8 +45,6 @@ FormGroup.defaultProps = {
   controlId: undefined,
   isInvalid: false,
   isValid: false,
-  onFocus: undefined,
-  onBlur: undefined,
   size: undefined,
 };
 
