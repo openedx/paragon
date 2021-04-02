@@ -10,17 +10,17 @@ const noop = () => {};
 
 const FormGroupContext = React.createContext({
   getControlProps: identityFn,
-  setControlIsGroup: noop,
+  useControlAsGroup: noop,
   getLabelProps: identityFn,
   getDescriptorProps: identityFn,
 });
 
 const useFormGroupContext = () => React.useContext(FormGroupContext);
 
-const useControlIsGroup = (defaultIsGroup) => {
+const useControlAsGroupEffect = (defaultIsGroup) => {
   const [isGroup, setIsGroup] = useState(defaultIsGroup);
   const setIsGroupEffect = (newIsGroup) => {
-    useEffect(() => setIsGroup(newIsGroup), []);
+    useEffect(() => setIsGroup(newIsGroup), [newIsGroup]);
   };
   return [isGroup, setIsGroupEffect];
 };
@@ -33,9 +33,9 @@ const FormGroupContextProvider = ({
   size,
 }) => {
   const resolvedId = React.useMemo(() => controlId || newId('form-field'), [controlId]);
-  const [describedByIds, useDescriptorId] = useIdList(resolvedId);
-  const [labelledByIds, useLabellerId] = useIdList(resolvedId);
-  const [controlIsGroup, setControlIsGroup] = useControlIsGroup(false);
+  const [describedByIds, useRegisteredDescriptorId] = useIdList(resolvedId);
+  const [labelledByIds, useRegisteredLabellerId] = useIdList(resolvedId);
+  const [controlIsGroup, useControlAsGroup] = useControlAsGroupEffect(false);
 
   const getControlProps = (controlProps) => {
     // labelledByIds from the list above should only be added to a control
@@ -55,7 +55,7 @@ const FormGroupContextProvider = ({
   };
 
   const getLabelProps = (labelProps) => {
-    const id = useLabellerId(labelProps?.id);
+    const id = useRegisteredLabellerId(labelProps?.id);
     if (controlIsGroup) {
       return { ...labelProps, id };
     }
@@ -63,7 +63,7 @@ const FormGroupContextProvider = ({
   };
 
   const getDescriptorProps = (descriptorProps) => {
-    const id = useDescriptorId(descriptorProps?.id);
+    const id = useRegisteredDescriptorId(descriptorProps?.id);
     return { ...descriptorProps, id };
   };
 
@@ -71,7 +71,7 @@ const FormGroupContextProvider = ({
     getControlProps,
     getLabelProps,
     getDescriptorProps,
-    setControlIsGroup,
+    useControlAsGroup,
     controlIsGroup,
     controlId: resolvedId,
     isInvalid,

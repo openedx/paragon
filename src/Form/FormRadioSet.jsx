@@ -15,8 +15,8 @@ const FormRadioSet = ({
   onBlur,
   ...props
 }) => {
-  const { getControlProps, setControlIsGroup } = useFormGroupContext();
-  setControlIsGroup(true);
+  const { getControlProps, useControlAsGroup } = useFormGroupContext();
+  useControlAsGroup(true);
   const controlProps = getControlProps(props);
   const className = classNames(
     'pgn__form-control-set',
