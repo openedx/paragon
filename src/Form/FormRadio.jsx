@@ -24,8 +24,8 @@ const FormRadio = React.forwardRef(({
   isValid,
   ...props
 }, ref) => {
-  const { getRadioInputProps } = useRadioSetContext();
-  const radioInputProps = getRadioInputProps(props);
+  const { getRadioControlProps } = useRadioSetContext();
+  const radioInputProps = getRadioControlProps(props);
   return (
     <FormGroupContextProvider
       controlId={radioInputProps.id}

@@ -5,7 +5,7 @@ import { callAllHandlers } from './fieldUtils';
 const identityFn = props => props;
 
 const FormRadioSetContext = React.createContext({
-  getRadioInputProps: identityFn,
+  getRadioControlProps: identityFn,
 });
 
 const useRadioSetContext = () => useContext(FormRadioSetContext);
@@ -20,7 +20,7 @@ const FormRadioSetContextProvider = ({
   defaultValue,
 }) => {
   const isControlled = !defaultValue && value !== undefined;
-  const getRadioInputProps = (radioProps) => ({
+  const getRadioControlProps = (radioProps) => ({
     ...radioProps,
     name,
     /* istanbul ignore next */
@@ -36,7 +36,7 @@ const FormRadioSetContextProvider = ({
     name,
     value,
     defaultValue,
-    getRadioInputProps,
+    getRadioControlProps,
     onBlur,
     onFocus,
     onChange,
