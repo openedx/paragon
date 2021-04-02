@@ -20,26 +20,11 @@
   color: $text-muted;
 }
 .pgn__form-text-valid {
-  color: $success-500;
+  color:$form-feedback-valid-color;
 }
 .pgn__form-text-invalid {
-  color: $danger-500;
+  color: $form-feedback-invalid-color;
 }
 .pgn__form-text-warning {
   color: $gray-900;
-}
-.pgn__form-text-criteria-empty {
-  .pgn__icon {
-    color: $text-muted;
-  }
-}
-.pgn__form-text-criteria-invalid {
-  .pgn__icon {
-    color: $danger-500;
-  }
-}
-.pgn__form-text-criteria-valid {
-  .pgn__icon {
-    color: $success-500;
-  }
 }
