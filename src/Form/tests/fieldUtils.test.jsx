@@ -16,12 +16,14 @@ describe('omitUndefinedProperties', () => {
       two: undefined,
       three: 3,
       four: null,
+      five: '',
     };
     const output = omitUndefinedProperties(source);
     expect(output).toMatchObject({
       one: 1,
       three: 3,
       four: null,
+      five: '',
     });
   });
   it('returns an empty object if no source is given', () => {
@@ -47,23 +49,14 @@ describe('callAllHandlers', () => {
 
 // eslint-disable-next-line react/prop-types
 const IdListExample = ({ prefix, initialList }) => {
-  const [ids, getNewId, removeId] = useIdList(prefix, initialList);
+  const [ids, useRegisteredId] = useIdList(prefix, initialList);
+  const id1 = useRegisteredId();
+  const id2 = useRegisteredId('explicit-id');
   return (
     <div>
       <span id="id-list">{ids.join(' ')}</span>
-      <button type="button" id="get-new-id" onClick={getNewId}>
-        New Id
-      </button>
-      {ids.map(id => (
-        <button
-          key={id}
-          type="button"
-          id={`remove-${id}`}
-          onClick={() => removeId(id)}
-        >
-          Remove {id}
-        </button>
-      ))}
+      <span id="first">{id1}</span>
+      <span id="second">{id2}</span>
     </div>
   );
 };
@@ -71,34 +64,23 @@ describe('useIdList', () => {
   describe('with default', () => {
     const wrapper = mount(<IdListExample prefix="prefix" initialList={['id-0']} />);
     const idList = wrapper.find('#id-list').first();
-    const newIdButton = wrapper.find('#get-new-id').first();
+    const renderedIds = idList.text().split(' ');
     it('starts with the default id', () => {
-      expect(idList.text()).toBe('id-0');
+      expect(renderedIds[0]).toBe('id-0');
     });
-    it('adds a new id', () => {
-      newIdButton.invoke('onClick')();
-      expect(idList.text().split('prefix').length).toBe(2);
+    it('generates a registered id', () => {
+      expect(renderedIds[1]).toBe('prefix-1');
     });
-    it('adds another new id', () => {
-      newIdButton.invoke('onClick')();
-      expect(idList.text().split('prefix').length).toBe(3);
-    });
-    it('removes the first id', () => {
-      const removeId1 = wrapper.find('#remove-prefix-1').first();
-      removeId1.invoke('onClick')();
-      expect(idList.text().split('prefix').length).toBe(2);
+    it('registers an explicit id', () => {
+      expect(renderedIds[2]).toBe('explicit-id');
     });
   });
   describe('with no default', () => {
     const wrapper = mount(<IdListExample prefix="prefix" />);
     const idList = wrapper.find('#id-list').first();
-    const newIdButton = wrapper.find('#get-new-id').first();
-    it('starts with no defaults', () => {
-      expect(idList.text()).toBe('');
-    });
-    it('adds a new id', () => {
-      newIdButton.invoke('onClick')();
-      expect(idList.text()).toBeTruthy();
+    const renderedIds = idList.text().split(' ');
+    it('only have the two ids', () => {
+      expect(renderedIds.length).toBe(2);
     });
   });
 });

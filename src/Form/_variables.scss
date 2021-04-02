@@ -30,7 +30,7 @@ $input-border-radius-sm:                $border-radius-sm !default;
 $input-focus-bg:                        $input-bg !default;
 $input-focus-border-color:              $component-active-bg !default;
 $input-focus-color:                     $input-color !default;
-$input-focus-width:                     2px !default;
+$input-focus-width:                     1px !default;
 $input-focus-box-shadow:                $input-btn-focus-box-shadow !default;
 
 $input-placeholder-color:               theme-color("gray", "light-text") !default;
@@ -70,20 +70,20 @@ $custom-control-gutter:                 .5rem !default;
 $custom-control-spacer-x:               1rem !default;
 $custom-control-cursor:                 null !default;
 
-$custom-control-indicator-size:         1.5rem !default;
+$custom-control-indicator-size:         1.25rem !default;
 $custom-control-indicator-bg:           $input-bg !default;
 
 $custom-control-indicator-bg-size:      50% 50% !default;
 $custom-control-indicator-box-shadow:   $input-box-shadow !default;
-$custom-control-indicator-border-color: theme-color("gray", "border") !default;
-$custom-control-indicator-border-width: $input-border-width !default;
+$custom-control-indicator-border-color: $gray-700 !default;
+$custom-control-indicator-border-width: 2px !default;
 
 $custom-control-label-color:            null !default;
 
 $custom-control-indicator-disabled-bg:          $input-disabled-bg !default;
 $custom-control-label-disabled-color:           theme-color("gray", "light-text") !default;
 
-$custom-control-indicator-checked-color:        $component-active-color !default;
+$custom-control-indicator-checked-color:        white !default;
 $custom-control-indicator-checked-bg:           $component-active-bg !default;
 $custom-control-indicator-checked-disabled-bg:  rgba(theme-color("primary"), .5) !default;
 $custom-control-indicator-checked-box-shadow:   none !default;
@@ -93,7 +93,7 @@ $custom-control-indicator-focus-box-shadow:     $input-focus-box-shadow !default
 $custom-control-indicator-focus-border-color:   $input-focus-border-color !default;
 
 $custom-control-indicator-active-color:         $component-active-color !default;
-$custom-control-indicator-active-bg:            lighten($component-active-bg, 35%) !default;
+$custom-control-indicator-active-bg:            $component-active-bg !default;
 $custom-control-indicator-active-box-shadow:    none !default;
 $custom-control-indicator-active-border-color:  $custom-control-indicator-active-bg !default;
 
@@ -107,7 +107,7 @@ $custom-checkbox-indicator-indeterminate-box-shadow:   none !default;
 $custom-checkbox-indicator-indeterminate-border-color: $custom-checkbox-indicator-indeterminate-bg !default;
 
 $custom-radio-indicator-border-radius:          50% !default;
-$custom-radio-indicator-icon-checked:           str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-color}'/%3e%3c/svg%3e"), "#", "%23") !default;
+$custom-radio-indicator-icon-checked:           str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-bg}'/%3e%3c/svg%3e"), "#", "%23") !default;
 
 $custom-switch-width:                           $custom-control-indicator-size * 1.75 !default;
 $custom-switch-indicator-border-radius:         $custom-control-indicator-size / 2 !default;

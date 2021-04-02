@@ -3,6 +3,8 @@
 @import "~bootstrap/scss/input-group";
 @import "~bootstrap/scss/custom-forms";
 @import "mixins";
+@import "FormRadio";
+@import "FormText";
 
 $form-control-icon-width: 32px !default;
 
@@ -227,6 +229,8 @@ $form-control-icon-width: 32px !default;
 
 .pgn__form-label {
   font-size: $input-font-size;
+  display: inline-block;
+  margin-bottom: 0.5rem;
   &.pgn__form-label-inline {
     display: inline-block;
     margin: 0 1em 0 0;
@@ -236,47 +240,5 @@ $form-control-icon-width: 32px !default;
   }
   &.pgn__form-label-sm {
     font-size: $input-font-size-sm;
-  }
-}
-
-// Form Control Description
-
-.pgn__form-control-description {
-  margin-top: .5rem;
-  font-size: $small-font-size;
-  display: flex;
-  align-items: center;
-  .pgn__icon {
-    height: 1em;
-    margin-right: .5em;
-    width: 1em;
-    display: inline-block;
-  }
-  & ~ .pgn__form-control-description {
-    margin-top: .25rem;
-  }
-}
-.pgn__form-control-description-valid {
-  color: $success-500;
-}
-.pgn__form-control-description-invalid {
-  color: $danger-500;
-}
-.pgn__form-control-description-warning {
-  color: $gray-900;
-}
-.pgn__form-control-description-criteria-empty {
-  .pgn__icon {
-    color: $text-muted;
-  }
-}
-.pgn__form-control-description-criteria-invalid {
-  .pgn__icon {
-    color: $danger-500;
-  }
-}
-.pgn__form-control-description-criteria-valid {
-  .pgn__icon {
-    color: $success-500;
   }
 }
