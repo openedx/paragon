@@ -2,11 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { newId } from '../utils';
-import {
-  callAllHandlers,
-  useIdList,
-  omitEmptyProperties,
-} from './fieldUtils';
+import { useIdList, omitUndefinedProperties } from './fieldUtils';
 import { FORM_CONTROL_SIZES } from './constants';
 
 const identityFn = props => props;
@@ -37,9 +33,6 @@ const FormGroupContextProvider = ({
   controlId,
   isInvalid,
   isValid,
-  onFocus,
-  onBlur,
-  onChange,
   size,
 }) => {
   const resolvedId = React.useMemo(() => controlId || newId('form-field'), [controlId]);
@@ -56,13 +49,10 @@ const FormGroupContextProvider = ({
     //    - This is what allows consumers of Paragon to use <Form.Label>
     //      interchangeably between ControlGroup type controls and regular Controls
     const labelledByIdsForControl = controlIsGroup ? labelledByIds : undefined;
-    return omitEmptyProperties({
+    return omitUndefinedProperties({
       ...controlProps,
-      onBlur: callAllHandlers(controlProps.onBlur, onBlur),
-      onFocus: callAllHandlers(controlProps.onFocus, onFocus),
-      onChange: callAllHandlers(controlProps.onChange, onChange),
-      'aria-describedby': classNames(controlProps['aria-describedby'], describedByIds),
-      'aria-labelledby': classNames(controlProps['aria-labelledby'], labelledByIdsForControl),
+      'aria-describedby': classNames(controlProps['aria-describedby'], describedByIds) || undefined,
+      'aria-labelledby': classNames(controlProps['aria-labelledby'], labelledByIdsForControl) || undefined,
       id: resolvedId,
     });
   };
@@ -103,9 +93,6 @@ FormGroupContextProvider.propTypes = {
   controlId: PropTypes.string,
   isInvalid: PropTypes.bool,
   isValid: PropTypes.bool,
-  onFocus: PropTypes.func,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
   size: PropTypes.oneOf([
     FORM_CONTROL_SIZES.SMALL,
     FORM_CONTROL_SIZES.LARGE,
@@ -116,9 +103,6 @@ FormGroupContextProvider.defaultProps = {
   controlId: undefined,
   isInvalid: undefined,
   isValid: undefined,
-  onFocus: undefined,
-  onBlur: undefined,
-  onChange: undefined,
   size: undefined,
 };
 

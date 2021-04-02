@@ -10,16 +10,14 @@ const FormRadioSet = ({
   value,
   defaultValue,
   isInline,
+  onChange,
+  onFocus,
+  onBlur,
   ...props
 }) => {
   const { getControlProps, setControlIsGroup } = useFormGroupContext();
   setControlIsGroup(true);
-  const {
-    onChange,
-    onBlur,
-    onFocus,
-    ...controlProps
-  } = getControlProps(props);
+  const { controlProps } = getControlProps(props);
   const className = classNames(
     'pgn__form-radio-group',
     props.className,

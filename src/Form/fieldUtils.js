@@ -2,11 +2,9 @@ import classNames from 'classnames';
 import { useState, useEffect } from 'react';
 import { newId } from '../utils';
 
-const propIsEmpty = prop => prop === undefined || prop === '';
-
-const omitEmptyProperties = (obj = {}) => Object.entries(obj)
+const omitUndefinedProperties = (obj = {}) => Object.entries(obj)
   .reduce((acc, [key, value]) => {
-    if (!propIsEmpty(value)) {
+    if (value !== undefined) {
       acc[key] = value;
     }
     return acc;
@@ -68,5 +66,5 @@ export {
   useHasValue,
   mergeAttributeValues,
   useIdList,
-  omitEmptyProperties,
+  omitUndefinedProperties,
 };

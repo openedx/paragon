@@ -6,7 +6,7 @@ import { useFormGroupContext } from './FormGroupContext';
 import FormControlFeedback from './FormControlFeedback';
 import FormControlDecoratorGroup from './FormControlDecoratorGroup';
 
-import { useHasValue } from './fieldUtils';
+import { callAllHandlers, useHasValue } from './fieldUtils';
 import { FORM_CONTROL_SIZES } from './constants';
 
 const FormControl = React.forwardRef(({
@@ -32,7 +32,8 @@ const FormControl = React.forwardRef(({
 
   const controlProps = getControlProps({
     ...props,
-    onBlur: checkInputEventValue,
+    // eslint-disable-next-line react/prop-types
+    onBlur: callAllHandlers(checkInputEventValue, props.onBlur),
   });
 
   return (

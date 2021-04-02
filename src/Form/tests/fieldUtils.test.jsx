@@ -6,10 +6,10 @@ import {
   useHasValue,
   mergeAttributeValues,
   useIdList,
-  omitEmptyProperties,
+  omitUndefinedProperties,
 } from '../fieldUtils';
 
-describe('omitEmptyProperties', () => {
+describe('omitUndefinedProperties', () => {
   it('removes undefined properties from an object', () => {
     const source = {
       one: 1,
@@ -18,16 +18,17 @@ describe('omitEmptyProperties', () => {
       four: null,
       five: '',
     };
-    const output = omitEmptyProperties(source);
+    const output = omitUndefinedProperties(source);
     expect(output).toMatchObject({
       one: 1,
       three: 3,
       four: null,
+      five: '',
     });
   });
   it('returns an empty object if no source is given', () => {
     const source = undefined;
-    const output = omitEmptyProperties(source);
+    const output = omitUndefinedProperties(source);
     expect(output).toMatchObject({});
   });
 });
