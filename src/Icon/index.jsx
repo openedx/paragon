@@ -28,13 +28,7 @@ function Icon({
         id={id}
         {...attrs}
       >
-        <Component
-          role="img"
-          aria-label=""
-          aria-hidden="true"
-          focusable="false"
-          {...mergedSvgProps}
-        />
+        <Component {...mergedSvgProps} />
       </span>
     );
   }
