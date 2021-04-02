@@ -10,7 +10,6 @@ const FormGroup = ({
   isInvalid,
   isValid,
   size,
-  name,
   as,
   ...props
 }) => React.createElement(as, {
@@ -22,7 +21,6 @@ const FormGroup = ({
     isInvalid={isInvalid}
     isValid={isValid}
     size={size}
-    name={name}
   >
     {children}
   </FormGroupContextProvider>
@@ -39,7 +37,6 @@ FormGroup.propTypes = {
     FORM_CONTROL_SIZES.SMALL,
     FORM_CONTROL_SIZES.LARGE,
   ]),
-  name: PropTypes.string,
 };
 
 FormGroup.defaultProps = {
@@ -49,7 +46,6 @@ FormGroup.defaultProps = {
   isInvalid: false,
   isValid: false,
   size: undefined,
-  name: undefined,
 };
 
 export default FormGroup;
