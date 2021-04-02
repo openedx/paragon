@@ -34,6 +34,20 @@ it has an htmlFor attribute matching the `Form.Control` according to WCAG guidel
 </Form.Group>
 ```
 
+### Usage with grouped control
+
+```jsx live
+<Form.Group className="d-flex align-items-center">
+  <Form.Label isInline>What kind of cats?</Form.Label>
+  <Form.RadioSet name="color-three" defaultValue="green" isInline>
+    <Form.Radio value="red">Red</Form.Radio>
+    <Form.Radio value="green">Green</Form.Radio>
+    <Form.Radio value="blue">Blue</Form.Radio>
+    <Form.Radio value="cyan" disabled>Cyan</Form.Radio>
+  </Form.RadioSet>
+</Form.Group>
+```
+
 ### Sizes
 
 ```jsx live

@@ -88,6 +88,20 @@ notes: |
     />
   </Form.Group>
 
+  <Form.Group controlId="whichColor">
+    <Form.Label>
+      Which color would you like?
+    </Form.Label>
+    <Form.RadioSet name="color">
+      <Form.Radio value="red">Red</Form.Radio>
+      <Form.Radio value="green">Green</Form.Radio>
+      <Form.Radio value="blue">Blue</Form.Radio>
+    </Form.RadioSet>
+    <Form.Control.Feedback>
+      The color you choose.
+    </Form.Control.Feedback>
+  </Form.Group>
+
   <Form.Group id="formGridCheckbox">
     <Form.Check type="checkbox" id="formGridCheckboxCheck" label="Check me out" />
   </Form.Group>

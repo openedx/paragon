@@ -15,13 +15,20 @@ function Icon({
   ...attrs
 }) {
   if (Component) {
+    const mergedSvgProps = { ...svgAttrs, role: 'img' };
+    // If no aria label is specified, hide this icon from screenreaders
+    if (!svgAttrs['aria-label']) {
+      mergedSvgProps['aria-label'] = '';
+      mergedSvgProps['aria-hidden'] = true;
+      mergedSvgProps.focusable = false;
+    }
     return (
       <span
         className={classNames('pgn__icon', className)}
         id={id}
         {...attrs}
       >
-        <Component {...svgAttrs} />
+        <Component {...mergedSvgProps} />
       </span>
     );
   }

@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { newId } from '../utils';
 
 const omitUndefinedProperties = (obj = {}) => Object.entries(obj)
@@ -28,15 +28,32 @@ const useHasValue = ({ defaultValue, value }) => {
 
 const useIdList = (uniqueIdPrefix, initialList) => {
   const [idList, setIdList] = useState(initialList || []);
-  const getNewId = () => {
-    const idToAdd = newId(`${uniqueIdPrefix}-`);
+  const addId = (idToAdd) => {
     setIdList(oldIdList => [...oldIdList, idToAdd]);
     return idToAdd;
+  };
+  const getNewId = () => {
+    const idToAdd = newId(`${uniqueIdPrefix}-`);
+    return addId(idToAdd);
   };
   const removeId = (idToRemove) => {
     setIdList(oldIdList => oldIdList.filter(id => id !== idToRemove));
   };
-  return [idList, getNewId, removeId];
+
+  const useRegisteredId = (explicitlyRegisteredId) => {
+    const [registeredId, setRegisteredId] = useState(explicitlyRegisteredId);
+    useEffect(() => {
+      if (explicitlyRegisteredId) {
+        addId(explicitlyRegisteredId);
+      } else if (!registeredId) {
+        setRegisteredId(getNewId(uniqueIdPrefix));
+      }
+      return () => removeId(registeredId);
+    }, [registeredId]);
+    return registeredId;
+  };
+
+  return [idList, useRegisteredId];
 };
 
 const mergeAttributeValues = (...values) => {
