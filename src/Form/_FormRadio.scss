@@ -106,7 +106,7 @@
   color: $text-muted;
 }
 
-.pgn__radio-group {
+.pgn__form-radio-group {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -115,7 +115,7 @@
   }
 }
 
-.pgn__radio-group-inline {
+.pgn__form-radio-group-inline {
   flex-direction: row;
   flex-wrap: 1;
   align-items: flex-start;

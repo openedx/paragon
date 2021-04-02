@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useFormControlContext } from './FormControlContext';
@@ -6,7 +6,6 @@ import { FormRadioSetContextProvider } from './FormRadioSetContext';
 
 const FormRadioSet = ({
   children,
-  label,
   name,
   value,
   defaultValue,
@@ -24,7 +23,7 @@ const FormRadioSet = ({
   const className = classNames(
     'pgn__form-radio-group',
     props.className,
-    { 'pgn__radio-set-controls-inline': isInline },
+    { 'pgn__form-radio-group-inline': isInline },
   );
   return (
     <FormRadioSetContextProvider
