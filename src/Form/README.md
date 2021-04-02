@@ -89,7 +89,10 @@ notes: |
   </Form.Group>
 
   <Form.Group controlId="whichColor">
-    <Form.RadioSet name="color" label="Which color would you like?">
+    <Form.Label>
+      Which color would you like?
+    </Form.Label>
+    <Form.RadioSet name="color">
       <Form.Radio value="red">Red</Form.Radio>
       <Form.Radio value="green">Green</Form.Radio>
       <Form.Radio value="blue">Blue</Form.Radio>
