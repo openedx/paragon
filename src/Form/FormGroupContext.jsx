@@ -10,7 +10,7 @@ const noop = () => {};
 
 const FormGroupContext = React.createContext({
   getControlProps: identityFn,
-  useControlAsGroup: noop,
+  useSetControlIsGroupEffect: noop,
   getLabelProps: identityFn,
   getDescriptorProps: identityFn,
 });
