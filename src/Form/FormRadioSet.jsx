@@ -45,7 +45,6 @@ const FormRadioSet = ({
 
 FormRadioSet.propTypes = {
   children: PropTypes.node.isRequired,
-  'aria-describedby': PropTypes.string,
   className: PropTypes.string,
   name: PropTypes.string.isRequired,
   value: PropTypes.string,
@@ -58,7 +57,6 @@ FormRadioSet.propTypes = {
 
 FormRadioSet.defaultProps = {
   className: undefined,
-  'aria-describedby': undefined,
   value: undefined,
   defaultValue: undefined,
   isInline: false,
