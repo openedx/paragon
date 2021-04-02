@@ -29,14 +29,14 @@ const useStateEffect = (initialState) => {
 
 const FormGroupContextProvider = ({
   children,
-  controlId,
+  controlId: explicitControlId,
   isInvalid,
   isValid,
   size,
 }) => {
-  const resolvedId = React.useMemo(() => controlId || newId('form-field'), [controlId]);
-  const [describedByIds, useRegisteredDescriptorId] = useIdList(resolvedId);
-  const [labelledByIds, useRegisteredLabellerId] = useIdList(resolvedId);
+  const controlId = useMemo(() => explicitControlId || newId('form-field'), [explicitControlId]);
+  const [describedByIds, useRegisteredDescriptorId] = useIdList(controlId);
+  const [labelledByIds, useRegisteredLabellerId] = useIdList(controlId);
   const [isControlGroup, useSetIsControlGroupEffect] = useStateEffect(false);
 
   const getControlProps = useCallback((controlProps) => {
@@ -52,47 +52,40 @@ const FormGroupContextProvider = ({
       ...controlProps,
       'aria-describedby': classNames(controlProps['aria-describedby'], describedByIds) || undefined,
       'aria-labelledby': classNames(controlProps['aria-labelledby'], labelledByIdsForControl) || undefined,
-      id: resolvedId,
+      id: controlId,
     });
   }, [
     isControlGroup,
     describedByIds,
     labelledByIds,
-    resolvedId,
+    controlId,
   ]);
 
-  const getLabelProps = useCallback((labelProps) => {
+  const getLabelProps = (labelProps) => {
     const id = useRegisteredLabellerId(labelProps?.id);
     if (isControlGroup) {
       return { ...labelProps, id };
     }
-    return { ...labelProps, htmlFor: resolvedId };
-  }, [isControlGroup, resolvedId]);
+    return { ...labelProps, htmlFor: controlId };
+  };
 
-  const getDescriptorProps = useCallback((descriptorProps) => {
+  const getDescriptorProps = (descriptorProps) => {
     const id = useRegisteredDescriptorId(descriptorProps?.id);
     return { ...descriptorProps, id };
-  }, []);
+  };
 
-  const contextValue = useMemo(() => ({
+  const contextValue = {
     getControlProps,
     getLabelProps,
     getDescriptorProps,
     useSetIsControlGroupEffect,
     isControlGroup,
-    controlId: resolvedId,
+    controlId,
     isInvalid,
     isValid,
     size,
-  }), [
-    resolvedId,
-    describedByIds,
-    labelledByIds,
-    isControlGroup,
-    isInvalid,
-    isValid,
-    size,
-  ]);
+  };
+
   return (
     <FormGroupContext.Provider value={contextValue}>
       {children}
