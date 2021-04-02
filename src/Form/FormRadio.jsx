@@ -1,6 +1,3 @@
-/* disable label has for since we are leveraging implicit labeling */
-/* eslint-disable jsx-a11y/label-has-for */
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
