@@ -13,9 +13,6 @@ const FormGroupContext = React.createContext({
   setControlIsGroup: noop,
   getLabelProps: identityFn,
   getDescriptorProps: identityFn,
-  addDescriptorId: identityFn,
-  getNewDescriptorId: identityFn,
-  removeDescriptorId: identityFn,
 });
 
 const useFormGroupContext = () => React.useContext(FormGroupContext);
