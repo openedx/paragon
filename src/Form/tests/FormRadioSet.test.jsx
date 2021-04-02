@@ -3,6 +3,7 @@ import { mount } from 'enzyme';
 import FormGroup from '../FormGroup';
 import FormRadioSet from '../FormRadioSet';
 import FormRadio from '../FormRadio';
+import FormLabel from '../FormLabel';
 
 describe('FormRadioSet', () => {
   describe('associate element ids and attributes', () => {
@@ -10,9 +11,9 @@ describe('FormRadioSet', () => {
     const value = 'green';
     const wrapper = mount((
       <FormGroup controlId="my-field">
+        <FormLabel>Which color?</FormLabel>
         <FormRadioSet
           name="colors"
-          label="Which color?"
           onChange={handleChange}
           value={value}
         >
@@ -24,19 +25,19 @@ describe('FormRadioSet', () => {
       </FormGroup>
     ));
 
-    it('has a fieldset with the proper id', () => {
-      expect(wrapper.exists('fieldset')).toBe(true);
-      const radioGroupNode = wrapper.find('fieldset').first();
+    it('has a radiogroup div with the proper id', () => {
+      expect(wrapper.exists('div[role="radiogroup"]')).toBe(true);
+      const radioGroupNode = wrapper.find('div[role="radiogroup"]').first();
       expect(radioGroupNode.props().id).toEqual('my-field');
     });
 
-    it('has a legend describing the fieldset', () => {
-      expect(wrapper.exists('legend')).toBe(true);
-      const legendNode = wrapper.find('legend').first();
-      const legendNodeId = legendNode.props().id;
-      expect(legendNode.props().id).toBeTruthy();
-      const radioGroupNode = wrapper.find('fieldset').first();
-      expect(radioGroupNode.props()['aria-describedby']).toContain(legendNodeId);
+    it('has an element labelling the radiogroup', () => {
+      expect(wrapper.exists('FormLabel')).toBe(true);
+      const labelNode = wrapper.find('FormLabel').first().childAt(0);
+      const labelNodeId = labelNode.props().id;
+      expect(labelNode.props().id).toBeTruthy();
+      const radioGroupNode = wrapper.find('div[role="radiogroup"]').first();
+      expect(radioGroupNode.props()['aria-labelledby']).toContain(labelNodeId);
     });
   });
 
@@ -49,7 +50,6 @@ describe('FormRadioSet', () => {
         onChange={(e) => {
           setValue(e.target.value);
         }}
-        label="Which color?"
       >
         <FormRadio value="red">red</FormRadio>
         <FormRadio value="green" isInvalid description="Nope">green</FormRadio>

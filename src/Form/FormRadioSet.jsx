@@ -51,7 +51,6 @@ FormRadioSet.propTypes = {
   'aria-describedby': PropTypes.string,
   className: PropTypes.string,
   name: PropTypes.string.isRequired,
-  label: PropTypes.node.isRequired,
   value: PropTypes.string,
   defaultValue: PropTypes.string,
   isInline: PropTypes.bool,
