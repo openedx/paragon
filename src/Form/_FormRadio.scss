@@ -1,7 +1,6 @@
 .pgn__form-radio {
   font-size: $font-size-base;
   line-height: $line-height-base;
-  // margin: 0 $radio-control-margin-x $radio-control-margin-y 0;
   display: block;
   flex-shrink: 0;
   input {
@@ -27,19 +26,32 @@
   }
 }
 
+.pgn__form-radio-display {
+  .pgn__form-text {
+    margin-top: -4px;
+    padding-left: calc(#{$custom-control-indicator-size} + #{$custom-control-gutter});
+  }
+}
+
+.pgn__form-radio-disabled {
+  color: $text-muted;
+}
+
 .pgn__form-radio-control {
-  height: $radio-control-size;
-  width: $radio-control-size;
+  height: $custom-control-indicator-size;
+  width: $custom-control-indicator-size;
   flex-shrink: 0;
-  margin-right: $radio-control-label-margin;
+  margin-right: $custom-control-gutter;
   position: relative;
   display: block;
-  border-radius: 50%;
+  border-radius: $custom-radio-indicator-border-radius;
   background-color: rgba(0,0,0,0.01);
-  transition: background-color 150ms ease;
+  transition: background-color, box-shadow 150ms ease;
+
   input:not(:disabled) + .pgn__form-radio-display:hover & {
     cursor: pointer;
-    background-color: rgba(0,0,0,.1);
+    background: rgba(0,0,0,.1);
+    box-shadow: 0 0 0 6px rgba(0,0,0,.1);
   }
   &:before, &:after {
     content: '';
@@ -54,11 +66,11 @@
   &:before {
     height: 20px;
     width: 20px;
-    border: $radio-control-border;
+    border: $custom-control-indicator-border-color solid $custom-control-indicator-border-width;
     transition: box-shadow 150ms ease;
 
     input:checked + .pgn__form-radio-display & {
-      border-color: $component-active-bg;
+      border-color: $custom-control-indicator-active-border-color;
     }
     input:disabled + & {
       opacity: .3;
@@ -82,7 +94,7 @@
   &:after {
     height: 14px;
     width: 14px;
-    background-image: escape-svg($radio-control-icon-checked);
+    background-image: escape-svg($custom-radio-indicator-icon-checked);
     opacity: 0;
     transform: translate(-50%, -50%) scale(0);
     transition: opacity 150ms ease, transform 150ms ease;
@@ -93,25 +105,12 @@
   }
 }
 
-
-
-.pgn__form-radio-display {
-  .pgn__form-text {
-    margin-top: -4px;
-    padding-left: calc(#{$radio-control-size} + #{$radio-control-label-margin});
-  }
-}
-
-.pgn__form-radio-disabled {
-  color: $text-muted;
-}
-
 .pgn__form-radio-group {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   & > * + * {
-    margin: 0 .5em 0 0;
+    margin: .25em 0 0;
   }
 }
 
