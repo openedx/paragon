@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { newId } from '../utils';
@@ -37,7 +37,7 @@ const FormGroupContextProvider = ({
   const [labelledByIds, useRegisteredLabellerId] = useIdList(resolvedId);
   const [isControlGroup, useSetIsControlGroupEffect] = useStateEffect(false);
 
-  const getControlProps = (controlProps) => {
+  const getControlProps = useCallback((controlProps) => {
     // labelledByIds from the list above should only be added to a control
     // if it the control is a group. We prefer adding a condition here because:
     //    - Hooks cannot be called inside conditionals
@@ -52,20 +52,25 @@ const FormGroupContextProvider = ({
       'aria-labelledby': classNames(controlProps['aria-labelledby'], labelledByIdsForControl) || undefined,
       id: resolvedId,
     });
-  };
+  }, [
+    isControlGroup,
+    describedByIds,
+    labelledByIds,
+    resolvedId,
+  ]);
 
-  const getLabelProps = (labelProps) => {
+  const getLabelProps = useCallback((labelProps) => {
     const id = useRegisteredLabellerId(labelProps?.id);
     if (isControlGroup) {
       return { ...labelProps, id };
     }
     return { ...labelProps, htmlFor: resolvedId };
-  };
+  }, [isControlGroup, resolvedId]);
 
-  const getDescriptorProps = (descriptorProps) => {
+  const getDescriptorProps = useCallback((descriptorProps) => {
     const id = useRegisteredDescriptorId(descriptorProps?.id);
     return { ...descriptorProps, id };
-  };
+  }, []);
 
   const contextValue = useMemo(() => ({
     getControlProps,
