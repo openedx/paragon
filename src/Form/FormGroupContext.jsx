@@ -17,12 +17,12 @@ const FormGroupContext = React.createContext({
 
 const useFormGroupContext = () => React.useContext(FormGroupContext);
 
-const useControlAsGroupEffect = (defaultIsGroup) => {
-  const [isGroup, setIsGroup] = useState(defaultIsGroup);
-  const setIsGroupEffect = (newIsGroup) => {
-    useEffect(() => setIsGroup(newIsGroup), [newIsGroup]);
+const useStateEffect = (initialState) => {
+  const [state, setState] = useState(initialState);
+  const useSetStateEffect = (newState) => {
+    useEffect(() => setState(newState), [newState]);
   };
-  return [isGroup, setIsGroupEffect];
+  return [state, useSetStateEffect];
 };
 
 const FormGroupContextProvider = ({
@@ -35,7 +35,7 @@ const FormGroupContextProvider = ({
   const resolvedId = React.useMemo(() => controlId || newId('form-field'), [controlId]);
   const [describedByIds, useRegisteredDescriptorId] = useIdList(resolvedId);
   const [labelledByIds, useRegisteredLabellerId] = useIdList(resolvedId);
-  const [controlIsGroup, useControlAsGroup] = useControlAsGroupEffect(false);
+  const [controlIsGroup, useSetControlIsGroupEffect] = useStateEffect(false);
 
   const getControlProps = (controlProps) => {
     // labelledByIds from the list above should only be added to a control
@@ -71,7 +71,7 @@ const FormGroupContextProvider = ({
     getControlProps,
     getLabelProps,
     getDescriptorProps,
-    useControlAsGroup,
+    useSetControlIsGroupEffect,
     controlIsGroup,
     controlId: resolvedId,
     isInvalid,
