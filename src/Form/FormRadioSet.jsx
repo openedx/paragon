@@ -19,6 +19,7 @@ const FormRadioSet = ({
   setControlIsGroup(true);
   const controlProps = getControlProps(props);
   const className = classNames(
+    'pgn__form-control-set',
     'pgn__form-radio-set',
     props.className,
     { 'pgn__form-radio-set-inline': isInline },
