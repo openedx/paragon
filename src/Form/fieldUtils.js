@@ -1,10 +1,12 @@
 import classNames from 'classnames';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { newId } from '../utils';
 
-const omitUndefinedProperties = (obj = {}) => Object.entries(obj)
+const propIsEmpty = prop => prop === undefined || prop === '';
+
+const omitEmptyProperties = (obj = {}) => Object.entries(obj)
   .reduce((acc, [key, value]) => {
-    if (value !== undefined) {
+    if (!propIsEmpty(value)) {
       acc[key] = value;
     }
     return acc;
@@ -39,7 +41,21 @@ const useIdList = (uniqueIdPrefix, initialList) => {
   const removeId = (idToRemove) => {
     setIdList(oldIdList => oldIdList.filter(id => id !== idToRemove));
   };
-  return [idList, { getNewId, addId, removeId }];
+
+  const useRegisteredId = (explicitlyRegisteredId) => {
+    const [registeredId, setRegisteredId] = useState(explicitlyRegisteredId);
+    useEffect(() => {
+      if (explicitlyRegisteredId) {
+        addId(explicitlyRegisteredId);
+      } else if (!registeredId) {
+        setRegisteredId(getNewId(uniqueIdPrefix));
+      }
+      return () => removeId(registeredId);
+    }, [registeredId]);
+    return registeredId;
+  };
+
+  return [idList, useRegisteredId];
 };
 
 const mergeAttributeValues = (...values) => {
@@ -52,5 +68,5 @@ export {
   useHasValue,
   mergeAttributeValues,
   useIdList,
-  omitUndefinedProperties,
+  omitEmptyProperties,
 };

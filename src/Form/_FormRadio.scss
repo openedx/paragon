@@ -1,7 +1,7 @@
 .pgn__form-radio {
   font-size: $font-size-base;
   line-height: $line-height-base;
-  margin: 0 $radio-control-margin-x $radio-control-margin-y 0;
+  // margin: 0 $radio-control-margin-x $radio-control-margin-y 0;
   display: block;
   flex-shrink: 0;
   input {
@@ -14,6 +14,16 @@
     overflow: hidden;
     white-space: nowrap;
     position: absolute;
+  }
+
+  .pgn__form-radio-label {
+    display: block;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    input:disabled ~ .pgn__form-radio-display & {
+      opacity: .3;
+    }
   }
 }
 
@@ -84,16 +94,6 @@
 }
 
 
-.pgn__form-radio-label {
-  display: block;
-  display: flex;
-  align-items: center;
-  margin-bottom: 0;
-  input:disabled ~ .pgn__form-radio-display & {
-    opacity: .3;
-  }
-}
-
 
 .pgn__form-radio-display {
   .pgn__form-text {
@@ -106,20 +106,20 @@
   color: $text-muted;
 }
 
-.pgn__form-radio-group-legend {
-  display: inline-block;
-  font-size: inherit;
-  margin-bottom: $label-margin-bottom;
-}
-
-.pgn__radio-set-controls {
+.pgn__radio-group {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  & > * + * {
+    margin: 0 .5em 0 0;
+  }
 }
 
-.pgn__radio-set-controls-inline {
+.pgn__radio-group-inline {
   flex-direction: row;
   flex-wrap: 1;
   align-items: flex-start;
+  & > * + * {
+    margin: 0 0 0 .5em;
+  }
 }

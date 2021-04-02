@@ -5,10 +5,7 @@ import { useFormControlContext } from './FormControlContext';
 import { FORM_CONTROL_SIZES } from './constants';
 
 const FormLabel = ({ children, isInline, ...props }) => {
-  const {
-    controlId,
-    size,
-  } = useFormControlContext({ size: props.size });
+  const { size, controlIsGroup, getLabelProps } = useFormControlContext();
   const className = classNames(
     'pgn__form-label',
     {
@@ -18,16 +15,9 @@ const FormLabel = ({ children, isInline, ...props }) => {
     },
     props.className,
   );
-
-  return (
-    <label
-      {...props}
-      className={className}
-      htmlFor={controlId}
-    >
-      {children}
-    </label>
-  );
+  const labelProps = getLabelProps({ ...props, className });
+  const componentType = controlIsGroup ? 'p' : 'label';
+  return React.createElement(componentType, labelProps, children);
 };
 
 FormLabel.propTypes = {

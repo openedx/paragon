@@ -1,37 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { useFormControlContext, useControlDescriptorId } from './FormControlContext';
+import { useFormControlContext } from './FormControlContext';
 import { FormRadioSetContextProvider } from './FormRadioSetContext';
-
-const RadioSetLegend = ({ children, ...props }) => {
-  const id = useControlDescriptorId(props.id);
-  const className = classNames(
-    'pgn__form-radio-group-legend',
-    props.className,
-  );
-
-  return (
-    <legend
-      {...props}
-      id={id}
-      className={className}
-    >
-      {children}
-    </legend>
-  );
-};
-
-RadioSetLegend.propTypes = {
-  children: PropTypes.node.isRequired,
-  id: PropTypes.string,
-  className: PropTypes.string,
-};
-
-RadioSetLegend.defaultProps = {
-  id: undefined,
-  className: undefined,
-};
 
 const FormRadioSet = ({
   children,
@@ -42,7 +13,8 @@ const FormRadioSet = ({
   isInline,
   ...props
 }) => {
-  const { getControlProps } = useFormControlContext();
+  const { getControlProps, setControlIsGroup } = useFormControlContext();
+  setControlIsGroup(true);
   const {
     onChange,
     onBlur,
@@ -52,6 +24,7 @@ const FormRadioSet = ({
   const className = classNames(
     'pgn__form-radio-group',
     props.className,
+    { 'pgn__radio-set-controls-inline': isInline },
   );
   return (
     <FormRadioSetContextProvider
@@ -62,21 +35,13 @@ const FormRadioSet = ({
       onBlur={onBlur}
       onChange={onChange}
     >
-      <fieldset
+      <div
+        role="radiogroup"
         className={className}
         {...controlProps}
       >
-        <RadioSetLegend>
-          {label}
-        </RadioSetLegend>
-        <div
-          className={classNames('pgn__radio-set-controls', {
-            'pgn__radio-set-controls-inline': isInline,
-          })}
-        >
-          {children}
-        </div>
-      </fieldset>
+        {children}
+      </div>
     </FormRadioSetContextProvider>
   );
 };

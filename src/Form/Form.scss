@@ -229,6 +229,8 @@ $form-control-icon-width: 32px !default;
 
 .pgn__form-label {
   font-size: $input-font-size;
+  display: inline-block;
+  margin-bottom: 0.5rem;
   &.pgn__form-label-inline {
     display: inline-block;
     margin: 0 1em 0 0;

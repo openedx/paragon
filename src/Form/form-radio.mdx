@@ -26,9 +26,9 @@ underlying `input` node. See MDN for documentation on available
   const handleChange = e => setValue(e.target.value);
   return (
     <Form.Group>
+      <Form.Label>Which Color?</Form.Label>
       <Form.RadioSet
         name="colors"
-        label="Which color?"
         onChange={handleChange}
         value={value}
       >
@@ -46,11 +46,11 @@ underlying `input` node. See MDN for documentation on available
 
 ```jsx live
 <Form.Group>
+  <Form.Label>Which Color?</Form.Label>
   <Form.RadioSet
     name="color-two"
     onChange={(e) => console.log(e.target.value)}
     defaultValue="green"
-    label="Which color?"
   >
     <Form.Radio value="red">Red</Form.Radio>
     <Form.Radio value="green">Green</Form.Radio>
@@ -64,11 +64,11 @@ underlying `input` node. See MDN for documentation on available
 
 ```jsx live
 <Form.Group>
+  <Form.Label>Which Color?</Form.Label>
   <Form.RadioSet
     name="color-three"
     onChange={(e) => console.log(e.target.value)}
     defaultValue="green"
-    label="Which color?"
     isInline
   >
     <Form.Radio value="red">Red</Form.Radio>
@@ -85,10 +85,10 @@ underlying `input` node. See MDN for documentation on available
 
 ```jsx live
 <Form.Group isInvalid>
+  <Form.Label>Which Color?</Form.Label>
   <Form.RadioSet
     name="color-five"
     onChange={(e) => console.log(e.target.value)}
-    label="Which color?"
   >
     <Form.Radio value="red">Red</Form.Radio>
     <Form.Radio value="green">Green</Form.Radio>
@@ -105,7 +105,8 @@ underlying `input` node. See MDN for documentation on available
 
 ```jsx live
 <Form.Group>
-  <Form.RadioSet name="color-four" label="Which color?">
+  <Form.Label>Which Color?</Form.Label>
+  <Form.RadioSet name="color-four">
     <Form.Radio
       value="red"
       description="Red's cool"
