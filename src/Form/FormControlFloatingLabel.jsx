@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useFormControlContext } from './FormControlContext';
+import { useFormGroupContext } from './FormGroupContext';
 
 const FormControlFloatingLabel = ({ children }) => {
-  const { controlId } = useFormControlContext();
+  const { controlId } = useFormGroupContext();
   return (
     <div className="pgn__form-control-floating-label">
       <div className="pgn__form-control-floating-label-content">

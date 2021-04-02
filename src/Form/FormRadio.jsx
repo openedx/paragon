@@ -5,12 +5,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useRadioSetContext } from './FormRadioSetContext';
-import { FormControlContextProvider, useFormControlContext } from './FormControlContext';
+import { FormGroupContextProvider, useFormGroupContext } from './FormGroupContext';
 import FormLabel from './FormLabel';
 import FormControlFeedback from './FormControlFeedback';
 
 const RadioControl = React.forwardRef((props, ref) => {
-  const { getControlProps } = useFormControlContext();
+  const { getControlProps } = useFormGroupContext();
   const radioProps = getControlProps(props);
   return (
     <input {...radioProps} type="radio" ref={ref} />
@@ -30,7 +30,7 @@ const FormRadio = React.forwardRef(({
   const { getRadioInputProps } = useRadioSetContext();
   const radioInputProps = getRadioInputProps(props);
   return (
-    <FormControlContextProvider
+    <FormGroupContextProvider
       controlId={radioInputProps.id}
       isInvalid={isInvalid}
       isValid={isValid}
@@ -55,7 +55,7 @@ const FormRadio = React.forwardRef(({
           )}
         </div>
       </div>
-    </FormControlContextProvider>
+    </FormGroupContextProvider>
   );
 });
 

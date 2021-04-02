@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 
 import FormControlFeedback from '../FormControlFeedback';
 import { FORM_TEXT_TYPES, FORM_TEXT_ICONS } from '../FormText';
-import { FormControlContext } from '../FormControlContext';
+import { FormGroupContext } from '../FormGroupContext';
 
 describe('FormControlFeedback', () => {
   it('renders a form control with an id', () => {
@@ -12,11 +12,11 @@ describe('FormControlFeedback', () => {
       getDescriptorProps,
     };
     const wrapper = mount((
-      <FormControlContext.Provider value={contextValue}>
+      <FormGroupContext.Provider value={contextValue}>
         <FormControlFeedback>
           This is feedback
         </FormControlFeedback>
-      </FormControlContext.Provider>
+      </FormGroupContext.Provider>
     ));
     expect(wrapper.exists('[children="This is feedback"]')).toBe(true);
     const FeedbackNode = wrapper.find(FormControlFeedback).first().childAt(0);

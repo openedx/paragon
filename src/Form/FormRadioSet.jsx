@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { useFormControlContext } from './FormControlContext';
+import { useFormGroupContext } from './FormGroupContext';
 import { FormRadioSetContextProvider } from './FormRadioSetContext';
 
 const FormRadioSet = ({
@@ -12,7 +12,7 @@ const FormRadioSet = ({
   isInline,
   ...props
 }) => {
-  const { getControlProps, setControlIsGroup } = useFormControlContext();
+  const { getControlProps, setControlIsGroup } = useFormGroupContext();
   setControlIsGroup(true);
   const {
     onChange,

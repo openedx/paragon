@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { useFormControlContext } from './FormControlContext';
+import { useFormGroupContext } from './FormGroupContext';
 import { FORM_CONTROL_SIZES } from './constants';
 
 const FormLabel = ({ children, isInline, ...props }) => {
-  const { size, controlIsGroup, getLabelProps } = useFormControlContext();
+  const { size, controlIsGroup, getLabelProps } = useFormGroupContext();
   const className = classNames(
     'pgn__form-label',
     {

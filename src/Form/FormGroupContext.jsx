@@ -12,7 +12,7 @@ import { FORM_CONTROL_SIZES } from './constants';
 const identityFn = props => props;
 const noop = () => {};
 
-const FormControlContext = React.createContext({
+const FormGroupContext = React.createContext({
   getControlProps: identityFn,
   setControlIsGroup: noop,
   getLabelProps: identityFn,
@@ -22,26 +22,7 @@ const FormControlContext = React.createContext({
   removeDescriptorId: identityFn,
 });
 
-const useFormControlContext = () => React.useContext(FormControlContext);
-
-// const useControlDescriptorId = (explicitId) => {
-//   const {
-//     controlId,
-//     getNewDescriptorId,
-//     addDescriptorId,
-//     removeDescriptorId,
-//   } = useFormControlContext();
-//   const [id, setId] = useState(explicitId);
-//   useEffect(() => {
-//     if (explicitId) {
-//       addDescriptorId(explicitId);
-//     } else if (!id) {
-//       setId(getNewDescriptorId(controlId));
-//     }
-//     return () => removeDescriptorId(id);
-//   }, [id]);
-//   return id;
-// };
+const useFormGroupContext = () => React.useContext(FormGroupContext);
 
 const useControlIsGroup = (defaultIsGroup) => {
   const [isGroup, setIsGroup] = useState(defaultIsGroup);
@@ -51,7 +32,7 @@ const useControlIsGroup = (defaultIsGroup) => {
   return [isGroup, setIsGroupEffect];
 };
 
-const FormControlContextProvider = ({
+const FormGroupContextProvider = ({
   children,
   controlId,
   isInvalid,
@@ -111,13 +92,13 @@ const FormControlContextProvider = ({
     size,
   };
   return (
-    <FormControlContext.Provider value={contextValue}>
+    <FormGroupContext.Provider value={contextValue}>
       {children}
-    </FormControlContext.Provider>
+    </FormGroupContext.Provider>
   );
 };
 
-FormControlContextProvider.propTypes = {
+FormGroupContextProvider.propTypes = {
   children: PropTypes.node.isRequired,
   controlId: PropTypes.string,
   isInvalid: PropTypes.bool,
@@ -131,7 +112,7 @@ FormControlContextProvider.propTypes = {
   ]),
 };
 
-FormControlContextProvider.defaultProps = {
+FormGroupContextProvider.defaultProps = {
   controlId: undefined,
   isInvalid: undefined,
   isValid: undefined,
@@ -142,7 +123,7 @@ FormControlContextProvider.defaultProps = {
 };
 
 export {
-  FormControlContext,
-  FormControlContextProvider,
-  useFormControlContext,
+  FormGroupContext,
+  FormGroupContextProvider,
+  useFormGroupContext,
 };

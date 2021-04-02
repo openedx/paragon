@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { FormControlContextProvider } from './FormControlContext';
+import { FormGroupContextProvider } from './FormGroupContext';
 import { FORM_CONTROL_SIZES } from './constants';
 
 const FormGroup = ({
@@ -20,7 +20,7 @@ const FormGroup = ({
   ...props,
   className: classNames('pgn__form-group', props.className),
 }, (
-  <FormControlContextProvider
+  <FormGroupContextProvider
     controlId={controlId}
     isInvalid={isInvalid}
     isValid={isValid}
@@ -31,7 +31,7 @@ const FormGroup = ({
     name={name}
   >
     {children}
-  </FormControlContextProvider>
+  </FormGroupContextProvider>
 ));
 
 FormGroup.propTypes = {

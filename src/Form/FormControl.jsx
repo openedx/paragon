@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import RBFormControl from 'react-bootstrap/FormControl';
-import { useFormControlContext } from './FormControlContext';
+import { useFormGroupContext } from './FormGroupContext';
 import FormControlFeedback from './FormControlFeedback';
 import FormControlDecoratorGroup from './FormControlDecoratorGroup';
 
@@ -23,7 +23,7 @@ const FormControl = React.forwardRef(({
     isInvalid,
     isValid,
     getControlProps,
-  } = useFormControlContext();
+  } = useFormGroupContext();
 
   const [hasValue, checkInputEventValue] = useHasValue({
     defaultValue: props.defaultValue,

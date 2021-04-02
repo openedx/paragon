@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { useFormControlContext } from './FormControlContext';
+import { useFormGroupContext } from './FormGroupContext';
 import { FORM_CONTROL_SIZES } from './constants';
 import FormControlFloatingLabel from './FormControlFloatingLabel';
 import FormControlDecorator from './FormControlDecorator';
@@ -17,7 +17,7 @@ const FormControlDecoratorGroup = ({
   className,
   ...props
 }) => {
-  const { size } = useFormControlContext(props);
+  const { size } = useFormGroupContext(props);
   return (
     <div
       className={classNames(
