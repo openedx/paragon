@@ -22,20 +22,20 @@ const FormControlFeedback = ({ children, ...props }) => {
 };
 
 FormControlFeedback.propTypes = {
+  hasIcon: PropTypes.bool,
   type: PropTypes.oneOf(Object.values(FORM_TEXT_TYPES)),
   icon: PropTypes.node,
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   muted: PropTypes.bool,
-  id: PropTypes.string,
 };
 
 FormControlFeedback.defaultProps = {
+  hasIcon: true,
   type: undefined,
   icon: undefined,
   className: undefined,
   muted: false,
-  id: undefined,
 };
 
 export default FormControlFeedback;
