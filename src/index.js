@@ -37,6 +37,7 @@ export {
   FormRadioSetContext,
   FormGroup,
   FormLabel,
+  useCheckboxSetValues,
   FormText,
   InputGroup,
 } from './Form';
