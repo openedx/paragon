@@ -26,17 +26,18 @@ underlying `input` node. See MDN for documentation on available
   const [isChecked, setChecked] = useState(false);
   const handleChange = e => setChecked(e.target.checked);
   return (
-    <Form.Checkbox
-      checked={isChecked}
-      onChange={handleChange}
-    >
+    <Form.Checkbox checked={isChecked} onChange={handleChange}>
       I want pizza.
     </Form.Checkbox>
   );
 }
 ```
 
-### Controlled Group Usage
+### Controlled Group Usage with useCheckboxSetValues
+
+`useCheckboxSetValues(initialValues[])` returns an array: `[state, dispatchers]`.
+
+`dispatchers` includes `add(value)` `remove(value)` `set(values[])` and `clear()`
 
 ```jsx live
 () => {
@@ -67,6 +68,8 @@ underlying `input` node. See MDN for documentation on available
   );
 }
 ```
+
+
 
 ### Uncontrolled Usage
 
