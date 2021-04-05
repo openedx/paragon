@@ -1,6 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import FormCheckbox from '../FormCheckbox';
+import FormGroup from '../FormGroup';
+import FormLabel from '../FormLabel';
 
 describe('FormCheckbox', () => {
   const handleChange = jest.fn();
@@ -67,5 +69,36 @@ describe('FormCheckbox', () => {
         type: 'blur',
       }),
     );
+  });
+});
+
+describe('FormCheckbox with FormGroup', () => {
+  const handleChange = jest.fn();
+  const handleFocus = jest.fn();
+  const handleBlur = jest.fn();
+  const wrapper = mount((
+    <FormGroup controlId="group-id">
+      <FormLabel>Group Label</FormLabel>
+      <FormCheckbox
+        value="green"
+        name="color"
+        onChange={handleChange}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        description="Describe green"
+      >
+        Green
+      </FormCheckbox>
+    </FormGroup>
+  ));
+
+  it('renders an a group with a label', () => {
+    expect(wrapper.exists('#group-id')).toBe(true);
+    const groupNode = wrapper.find('#group-id').first();
+    const labelledById = groupNode.props()['aria-labelledby'];
+    expect(labelledById).toBeTruthy();
+    expect(wrapper.exists(`#${labelledById}`)).toBe(true);
+    const labelNode = wrapper.find(`#${labelledById}`).first();
+    expect(labelNode.text()).toBe('Group Label');
   });
 });

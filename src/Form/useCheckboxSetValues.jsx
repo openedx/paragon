@@ -14,7 +14,6 @@ const checkboxValuesReducer = (state, action) => {
   }
 };
 
-// istanbul ignore else
 const useCheckboxSetValues = (initialState = []) => {
   const [state, dispatch] = useReducer(checkboxValuesReducer, initialState);
 

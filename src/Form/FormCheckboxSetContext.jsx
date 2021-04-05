@@ -6,6 +6,7 @@ const identityFn = props => props;
 
 const FormCheckboxSetContext = React.createContext({
   getCheckboxControlProps: identityFn,
+  hasCheckboxSetProvider: false,
 });
 
 const useCheckboxSetContext = () => useContext(FormCheckboxSetContext);
@@ -40,6 +41,7 @@ const FormCheckboxSetContextProvider = ({
     onBlur,
     onFocus,
     onChange,
+    hasCheckboxSetProvider: true,
   };
   return (
     <FormCheckboxSetContext.Provider value={contextValue}>

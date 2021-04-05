@@ -41,7 +41,14 @@ const FormCheckbox = React.forwardRef(({
   isValid,
   ...props
 }, ref) => {
-  const { getCheckboxControlProps } = useCheckboxSetContext();
+  const { getCheckboxControlProps, hasCheckboxSetProvider } = useCheckboxSetContext();
+  const { hasFormGroupProvider, useSetIsControlGroupEffect, getControlProps } = useFormGroupContext();
+  useSetIsControlGroupEffect(true);
+  const shouldActAsGroup = hasFormGroupProvider && !hasCheckboxSetProvider;
+  const groupProps = shouldActAsGroup ? {
+    ...getControlProps({}),
+    role: 'group',
+  } : {};
   const checkboxInputProps = getCheckboxControlProps(props);
   return (
     <FormGroupContextProvider
@@ -55,6 +62,7 @@ const FormCheckbox = React.forwardRef(({
           'pgn__form-checkbox-invalid': isInvalid,
           'pgn__form-checkbox-disabled': checkboxInputProps.disabled,
         })}
+        {...groupProps}
       >
         <CheckboxControl {...checkboxInputProps} ref={ref} />
         <div className={classNames('pgn__form-checkbox-display', controlClassName)}>
