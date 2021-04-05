@@ -149,16 +149,4 @@ describe('FormCheckboxSet', () => {
       expect(checkboxNode.props().defaultChecked).toBe(true);
     });
   });
-
-  it('renders checkbox control without a context', () => {
-    const wrapper = mount((
-      <>
-        <FormCheckbox name="trees">Evergreen</FormCheckbox>
-      </>
-    ));
-
-    expect(wrapper.exists('input[type="checkbox"]')).toBe(true);
-    const checkboxNode = wrapper.find('input[type="checkbox"]').first();
-    expect(checkboxNode.props().name).toBe('trees');
-  });
 });

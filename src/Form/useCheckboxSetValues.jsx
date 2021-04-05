@@ -9,12 +9,12 @@ const checkboxValuesReducer = (state, action) => {
     case 'set':
       return [...action.value];
     case 'clear':
-      return [];
     default:
-      throw new Error('An unknown update to checkbox set values was attemped');
+      return [];
   }
 };
 
+// istanbul ignore else
 const useCheckboxSetValues = (initialState = []) => {
   const [state, dispatch] = useReducer(checkboxValuesReducer, initialState);
 
