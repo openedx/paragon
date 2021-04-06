@@ -27,6 +27,7 @@ export { default as Fade } from './Fade';
 export { default as Fieldset } from './Fieldset';
 export {
   default as Form,
+  CheckboxControl,
   FormControl,
   FormControlDecoratorGroup,
   FormControlFeedback,

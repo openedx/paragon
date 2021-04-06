@@ -8,7 +8,7 @@ import FormControlDecoratorGroup from './FormControlDecoratorGroup';
 import FormRadio from './FormRadio';
 import FormRadioSet from './FormRadioSet';
 import FormRadioSetContext from './FormRadioSetContext';
-import FormCheckbox from './FormCheckbox';
+import FormCheckbox, { CheckboxControl } from './FormCheckbox';
 import FormSwitch from './FormSwitch';
 import FormCheckboxSet from './FormCheckboxSet';
 import FormCheckboxSetContext from './FormCheckboxSetContext';
@@ -39,6 +39,7 @@ export {
   FormControlDecoratorGroup,
   FormControlFeedback,
   FormText,
+  CheckboxControl,
   useCheckboxSetValues,
 };
 

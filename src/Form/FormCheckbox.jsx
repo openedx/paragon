@@ -11,14 +11,21 @@ const CheckboxControl = React.forwardRef(
     const defaultRef = React.useRef();
     const resolvedRef = ref || defaultRef;
     const { getControlProps } = useFormGroupContext();
-    const checkboxProps = getControlProps(props);
+    const checkboxProps = getControlProps({
+      ...props,
+      className: classNames('pgn__form-checkbox-input', props.className),
+    });
 
     React.useEffect(() => {
       resolvedRef.current.indeterminate = isIndeterminate;
     }, [resolvedRef, isIndeterminate]);
 
     return (
-      <input type="checkbox" {...checkboxProps} ref={resolvedRef} {...props} />
+      <input
+        type="checkbox"
+        {...checkboxProps}
+        ref={resolvedRef}
+      />
     );
   },
 );
@@ -65,7 +72,7 @@ const FormCheckbox = React.forwardRef(({
         {...groupProps}
       >
         <CheckboxControl {...checkboxInputProps} ref={ref} />
-        <div className={classNames('pgn__form-checkbox-display', controlClassName)}>
+        <div className={classNames('pgn__form-checkbox-label-description', controlClassName)}>
           <FormLabel className={classNames('pgn__form-checkbox-label', labelClassName)}>
             <span className={classNames('pgn__form-checkbox-control', controlClassName)} />
             {children}
@@ -100,4 +107,5 @@ FormCheckbox.defaultProps = {
   isValid: false,
 };
 
+export { CheckboxControl };
 export default FormCheckbox;
