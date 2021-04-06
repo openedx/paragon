@@ -1,0 +1,212 @@
+---
+title: 'Form.Switch'
+type: 'component'
+components:
+- FormSwitch
+- FormCheckbox
+categories:
+- Forms
+status: 'New'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: |
+
+---
+
+A switch control for use with `Form.CheckboxSet`. This component has identical
+props to `Form.Checkbox` and is interoperable with `Form.CheckboxSet` and
+`useCheckboxSetValues`.
+
+Note: extra props added to this component are passed as attributes to the
+underlying `input` node. See MDN for documentation on available
+[input attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attributes).
+
+
+### Controlled Standalone Usage
+
+```jsx live
+() => {
+  const [isChecked, setChecked] = useState(false);
+  const handleChange = e => setChecked(e.target.checked);
+  return (
+    <Form.Switch checked={isChecked} onChange={handleChange}>
+      I want pizza.
+    </Form.Switch>
+  );
+}
+```
+
+### Controlled Group Usage with useCheckboxSetValues
+
+`useCheckboxSetValues(initialValues[])` returns an array: `[state, dispatchers]`.
+
+`dispatchers` includes `add(value)` `remove(value)` `set(values[])` and `clear()`
+
+```jsx live
+() => {
+
+  const [colorValues, { add, remove }] = useCheckboxSetValues(['green']);
+
+  const handleChange = e => {
+    if (e.target.checked) {
+      add(e.target.value);
+    } else {
+      remove(e.target.value);
+    }
+  }
+  return (
+    <Form.Group>
+      <Form.Label>Which Color?</Form.Label>
+      <Form.CheckboxSet
+        name="colors"
+        onChange={handleChange}
+        value={colorValues}
+      >
+        <Form.Switch value="red">Red</Form.Switch>
+        <Form.Switch value="green">Green</Form.Switch>
+        <Form.Switch value="blue">Blue</Form.Switch>
+        <Form.Switch value="cyan" disabled>Cyan</Form.Switch>
+      </Form.CheckboxSet>
+    </Form.Group>
+  );
+}
+```
+
+
+
+### Uncontrolled Usage
+
+```jsx live
+<Form.Group>
+  <Form.Label>Which Color?</Form.Label>
+  <Form.CheckboxSet
+    name="color-two"
+    onChange={(e) => console.log(e.target.value)}
+    defaultValue={['green']}
+  >
+    <Form.Switch value="red">Red</Form.Switch>
+    <Form.Switch value="green">Green</Form.Switch>
+    <Form.Switch value="blue">Blue</Form.Switch>
+    <Form.Switch value="cyan" disabled>Cyan</Form.Switch>
+  </Form.CheckboxSet>
+</Form.Group>
+```
+
+### Indeterminate Usage
+
+```jsx live
+() => {
+  const allCheeseOptions = ['swiss', 'cheddar', 'pepperjack'];
+  const [checkedCheeses, { add, remove, set, clear }] = useCheckboxSetValues(['swiss']);
+
+  const handleChange = e => {
+    e.target.checked ? add(e.target.value) : remove(e.target.value);
+  };
+
+  const handleCheckAllChange = e => {
+    e.target.checked ? set(allCheeseOptions) : clear();
+  };
+
+  const allChecked = allCheeseOptions.every(value => checkedCheeses.includes(value));
+  const someChecked = allCheeseOptions.some(value => checkedCheeses.includes(value));
+  const isIndeterminate = someChecked && !allChecked;
+
+  return (
+    <>
+      <Form.Switch
+        checked={allChecked}
+        isIndeterminate={isIndeterminate}
+        onChange={handleCheckAllChange}
+      >
+        All the cheese
+      </Form.Switch>
+      <Form.CheckboxSet
+        className="p-2"
+        value={checkedCheeses}
+        onChange={handleChange}
+      >
+        <Form.Switch value="swiss">Swiss</Form.Switch>
+        <Form.Switch value="cheddar">Cheddar</Form.Switch>
+        <Form.Switch value="pepperjack">Pepperjack</Form.Switch>
+      </Form.CheckboxSet>
+    </>
+  );
+}
+```
+
+### Inline layout
+
+```jsx live
+<Form.Group>
+  <Form.Label>Which Color?</Form.Label>
+  <Form.CheckboxSet
+    name="color-three"
+    onChange={(e) => console.log(e.target.value)}
+    defaultValue={['green']}
+    isInline
+  >
+    <Form.Switch value="red">Red</Form.Switch>
+    <Form.Switch value="green">Green</Form.Switch>
+    <Form.Switch value="blue">Blue</Form.Switch>
+    <Form.Switch value="cyan" disabled>Cyan</Form.Switch>
+  </Form.CheckboxSet>
+</Form.Group>
+```
+
+### Validation
+
+#### Group Level Validation
+
+```jsx live
+<Form.Group isInvalid>
+  <Form.Label>Which Color?</Form.Label>
+  <Form.CheckboxSet
+    name="color-five"
+    onChange={(e) => console.log(e.target.value)}
+  >
+    <Form.Switch value="red">Red</Form.Switch>
+    <Form.Switch value="green">Green</Form.Switch>
+    <Form.Switch value="blue">Blue</Form.Switch>
+    <Form.Switch value="cyan" disabled>Cyan</Form.Switch>
+  </Form.CheckboxSet>
+  <Form.Control.Feedback>
+    Please choose an option.
+  </Form.Control.Feedback>
+</Form.Group>
+```
+
+#### Individual option validation
+
+```jsx live
+<Form.Group>
+  <Form.Label>Which Color?</Form.Label>
+  <Form.CheckboxSet name="color-four">
+    <Form.Switch
+      value="red"
+      description="Red's cool"
+    >
+      Red
+    </Form.Switch>
+    <Form.Switch
+      value="green"
+      description="Excellent choice"
+      isValid
+    >
+      Green
+    </Form.Switch>
+    <Form.Switch
+      value="blue"
+      description="Poor choice"
+      isInvalid
+    >
+      Blue
+    </Form.Switch>
+    <Form.Switch
+      value="cyan"
+      disabled
+    >
+      Cyan
+    </Form.Switch>
+  </Form.CheckboxSet>
+</Form.Group>
+```
