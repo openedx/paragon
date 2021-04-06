@@ -97,8 +97,8 @@ const Navbar = ({
 Navbar.propTypes = {
   siteTitle: PropTypes.string.isRequired,
   onMenuClick: PropTypes.func.isRequired,
-  menuIsOpen: PropTypes.string,
-  showMinimizedTitle: PropTypes.string,
+  menuIsOpen: PropTypes.bool,
+  showMinimizedTitle: PropTypes.bool,
 };
 Navbar.defaultProps = {
   menuIsOpen: false,

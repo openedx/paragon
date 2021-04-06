@@ -15,6 +15,7 @@ const FormGroupContext = React.createContext({
   useSetIsControlGroupEffect: noop,
   getLabelProps: identityFn,
   getDescriptorProps: identityFn,
+  hasFormGroupProvider: false,
 });
 
 const useFormGroupContext = () => React.useContext(FormGroupContext);
@@ -84,6 +85,7 @@ const FormGroupContextProvider = ({
     isInvalid,
     isValid,
     size,
+    hasFormGroupProvider: true,
   };
 
   return (
