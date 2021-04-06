@@ -32,10 +32,12 @@ const CheckboxControl = React.forwardRef(
 
 CheckboxControl.propTypes = {
   isIndeterminate: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 CheckboxControl.defaultProps = {
   isIndeterminate: false,
+  className: undefined,
 };
 
 const FormCheckbox = React.forwardRef(({
