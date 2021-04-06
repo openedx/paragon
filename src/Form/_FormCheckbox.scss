@@ -30,6 +30,10 @@
   .pgn__form-text {
     margin-top: -4px;
     padding-left: calc(#{$custom-control-indicator-size} + #{$custom-control-gutter});
+
+    .pgn__form-switch & {
+      padding-left: calc(#{$custom-switch-width} + #{$custom-control-gutter});
+    }
   }
 }
 
@@ -45,6 +49,11 @@
   background-color: rgba(0,0,0,0.01);
   transition: background-color, box-shadow 150ms ease;
 
+  .pgn__form-switch & {
+    width: $custom-switch-width;
+    border-radius: $custom-switch-indicator-border-radius;
+  }
+
   input:not(:disabled) + .pgn__form-checkbox-display:hover & {
     cursor: pointer;
     background: rgba(0,0,0,.1);
@@ -59,15 +68,26 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: $custom-checkbox-indicator-border-radius;
+
+    .pgn__form-switch & {
+      border-radius: $custom-switch-indicator-border-radius;
+    }
   }
   &:before {
     height: 20px;
     width: 20px;
     border: $custom-control-indicator-border-color solid $custom-control-indicator-border-width;
-    transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease, background-color 150ms ease;
+
+    .pgn__form-switch & {
+      width: $custom-switch-width;
+    }
 
     input:checked + .pgn__form-checkbox-display & {
       border-color: $custom-control-indicator-active-border-color;
+      .pgn__form-switch & {
+        background: $component-active-bg;
+      }
     }
     .pgn__form-checkbox-invalid input + .pgn__form-checkbox-display & {
       border-color: $form-feedback-invalid-color;
@@ -91,10 +111,24 @@
     background-image: escape-svg($custom-checkbox-indicator-icon-checked);
     opacity: 0;
     transform: translate(-50%, -50%) scale(0);
-    transition: opacity 150ms ease, transform 150ms ease;
+    transition: opacity 150ms ease, transform 150ms ease, background-color 150ms ease;
+
+    .pgn__form-switch & {
+      height: 14px;
+      width: 14px;
+      background: $component-active-bg;
+      transform: translate(-50%, -50%) scale(1) translateX(-7px);
+      opacity: 1;
+    }
+
     input:checked + .pgn__form-checkbox-display & {
       transform: translate(-50%, -50%) scale(1);
       opacity: 1;
+
+      .pgn__form-switch & {
+        background: $component-active-color;
+        transform: translate(-50%, -50%) scale(1) translateX(7px);
+      }
     }
     input:indeterminate + .pgn__form-checkbox-display & {
       background-image: escape-svg($custom-checkbox-indicator-icon-indeterminate);

@@ -9,6 +9,7 @@ import FormRadio from './FormRadio';
 import FormRadioSet from './FormRadioSet';
 import FormRadioSetContext from './FormRadioSetContext';
 import FormCheckbox from './FormCheckbox';
+import FormSwitch from './FormSwitch';
 import FormCheckboxSet from './FormCheckboxSet';
 import FormCheckboxSetContext from './FormCheckboxSetContext';
 import useCheckboxSetValues from './useCheckboxSetValues';
@@ -17,6 +18,7 @@ Form.Control = FormControl;
 Form.Radio = FormRadio;
 Form.RadioSet = FormRadioSet;
 Form.Checkbox = FormCheckbox;
+Form.Switch = FormSwitch;
 Form.CheckboxSet = FormCheckboxSet;
 Form.Label = FormLabel;
 Form.Group = FormGroup;
@@ -30,6 +32,7 @@ export {
   FormRadioSet,
   FormRadioSetContext,
   FormCheckbox,
+  FormSwitch,
   FormCheckboxSet,
   FormCheckboxSetContext,
   FormGroup,

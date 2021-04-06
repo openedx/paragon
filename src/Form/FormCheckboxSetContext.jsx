@@ -52,7 +52,7 @@ const FormCheckboxSetContextProvider = ({
 
 FormCheckboxSetContextProvider.propTypes = {
   children: PropTypes.node.isRequired,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   onBlur: PropTypes.func,
   onFocus: PropTypes.func,
   onChange: PropTypes.func,
@@ -62,6 +62,7 @@ FormCheckboxSetContextProvider.propTypes = {
 
 FormCheckboxSetContextProvider.defaultProps = {
   onBlur: undefined,
+  name: undefined,
   onFocus: undefined,
   onChange: undefined,
   value: undefined,
