@@ -17,13 +17,13 @@ const FormCheckboxSet = ({
 }) => {
   const { getControlProps, useSetIsControlGroupEffect } = useFormGroupContext();
   useSetIsControlGroupEffect(true);
-  const controlProps = getControlProps(props);
   const className = classNames(
     'pgn__form-control-set',
     'pgn__form-checkbox-set',
     props.className,
     { 'pgn__form-checkbox-set-inline': isInline },
   );
+  const controlProps = getControlProps({ ...props, className });
   return (
     <FormCheckboxSetContextProvider
       name={name}
