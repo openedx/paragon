@@ -7,13 +7,17 @@ import FormLabel from './FormLabel';
 import FormControlFeedback from './FormControlFeedback';
 
 const CheckboxControl = React.forwardRef(
-  ({ isIndeterminate, ...props }, ref) => {
+  ({ isIndeterminate, asSwitch, ...props }, ref) => {
     const defaultRef = React.useRef();
     const resolvedRef = ref || defaultRef;
     const { getControlProps } = useFormGroupContext();
     const checkboxProps = getControlProps({
       ...props,
-      className: classNames('pgn__form-checkbox-input', props.className),
+      className: classNames(
+        'pgn__form-checkbox-input',
+        props.className,
+        { 'pgn__form-switch-input': asSwitch },
+      ),
     });
 
     React.useEffect(() => {
@@ -32,11 +36,13 @@ const CheckboxControl = React.forwardRef(
 
 CheckboxControl.propTypes = {
   isIndeterminate: PropTypes.bool,
+  asSwitch: PropTypes.bool,
   className: PropTypes.string,
 };
 
 CheckboxControl.defaultProps = {
   isIndeterminate: false,
+  asSwitch: false,
   className: undefined,
 };
 
@@ -48,6 +54,7 @@ const FormCheckbox = React.forwardRef(({
   description,
   isInvalid,
   isValid,
+  asSwitch,
   ...props
 }, ref) => {
   const { getCheckboxControlProps, hasCheckboxSetProvider } = useCheckboxSetContext();
@@ -73,7 +80,7 @@ const FormCheckbox = React.forwardRef(({
         })}
         {...groupProps}
       >
-        <CheckboxControl {...checkboxInputProps} ref={ref} />
+        <CheckboxControl {...checkboxInputProps} asSwitch={asSwitch} ref={ref} />
         <div className={classNames('pgn__form-checkbox-label-description', controlClassName)}>
           <FormLabel className={classNames('pgn__form-checkbox-label', labelClassName)}>
             <span className={classNames('pgn__form-checkbox-control', controlClassName)} />
@@ -98,6 +105,7 @@ FormCheckbox.propTypes = {
   description: PropTypes.node,
   isInvalid: PropTypes.bool,
   isValid: PropTypes.bool,
+  asSwitch: PropTypes.bool,
 };
 
 FormCheckbox.defaultProps = {
@@ -107,6 +115,7 @@ FormCheckbox.defaultProps = {
   description: undefined,
   isInvalid: false,
   isValid: false,
+  asSwitch: false,
 };
 
 export { CheckboxControl };

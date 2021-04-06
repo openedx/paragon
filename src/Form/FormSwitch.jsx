@@ -13,6 +13,7 @@ const FormSwitch = React.forwardRef(({
     className={classNames('pgn__form-switch', className)}
     {...props}
     role="switch"
+    asSwitch
     ref={ref}
   >
     {children}

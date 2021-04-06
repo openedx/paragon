@@ -24,7 +24,7 @@
   }
 }
 
-.pgn__form-switch .pgn__form-checkbox-input {
+.pgn__form-switch-input.pgn__form-checkbox-input {
   width: $custom-switch-width;
   border-radius: $custom-switch-indicator-border-radius;
   background-image: escape-svg($custom-switch-indicator-icon-off);

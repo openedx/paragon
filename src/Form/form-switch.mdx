@@ -36,6 +36,22 @@ underlying `input` node. See MDN for documentation on available
 }
 ```
 
+### Unlabeled control
+
+```jsx live
+() => {
+  const [isChecked, setChecked] = useState(false);
+  const handleChange = e => setChecked(e.target.checked);
+  return (
+    <CheckboxControl
+      asSwitch
+      checked={isChecked}
+      onChange={handleChange}
+    />
+  );
+}
+```
+
 ### Controlled Group Usage with useCheckboxSetValues
 
 `useCheckboxSetValues(initialValues[])` returns an array: `[state, dispatchers]`.
