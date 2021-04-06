@@ -10,14 +10,7 @@ notes: |
 
 ---
 
-<p className="lead">
-  This is a pass through component from React-Bootstrap.<br/>
-  <a href="https://react-bootstrap.github.io/components/overlays/#popovers" target="_blank" rel="noopener noreferrer">
-    See React-Bootstrap for documentation.
-  </a>
-</p>
-
-### Basic Usage
+##### Basic Usage
 
 ```jsx live
 <>
@@ -38,5 +31,80 @@ notes: |
       <Button variant="secondary" className="mr-2 mb-2">Popover on {placement}</Button>
     </OverlayTrigger>
   ))}
+</>
+```
+
+##### State variants
+
+```jsx live
+<>
+  <OverlayTrigger
+    trigger="click"
+    key="top-basic"
+    placement="top"
+    overlay={
+      <Popover className="popover-positioned-top">
+        <Popover.Title as="h5">Popover Basic</Popover.Title>
+        <Popover.Content>
+          <strong>Holy guacamole!</strong> Check this info.
+        </Popover.Content>
+      </Popover>
+    }
+  >
+    <Button variant="secondary" className="mr-2 mb-2">
+      Popover Basic
+    </Button>
+  </OverlayTrigger>
+  <OverlayTrigger
+    trigger="click"
+    key="top-success"
+    placement="top"
+    overlay={
+      <Popover className="popover-positioned-top" variant="success">
+        <Popover.Title as="h5"><Icon src={CheckCircle}/> Popover Success</Popover.Title>
+        <Popover.Content>
+          <strong>Holy guacamole!</strong> Check this info.
+        </Popover.Content>
+      </Popover>
+    }
+  >
+    <Button variant="secondary" className="mr-2 mb-2">
+      Popover Success
+    </Button>
+  </OverlayTrigger>
+  <OverlayTrigger
+    trigger="click"
+    key="top-warning"
+    placement="top"
+    overlay={
+      <Popover className="popover-positioned-top" variant="warning">
+        <Popover.Title as="h5"><Icon src={WarningFilled} /> Popover Warning</Popover.Title>
+        <Popover.Content>
+          <strong>Holy guacamole!</strong> Check this info.
+        </Popover.Content>
+      </Popover>
+    }
+  >
+    <Button variant="secondary" className="mr-2 mb-2">
+      Popover Warning
+    </Button>
+  </OverlayTrigger>
+  <OverlayTrigger
+    trigger="click"
+    key="top-danger"
+    placement="top"
+    overlay={
+      <Popover className="popover-positioned-top" variant="danger">
+        <Popover.Title as="h5"><Icon src={Info} /> Popover Danger</Popover.Title>
+        <Popover.Content>
+          <strong>Holy guacamole!</strong> Check this info.
+        </Popover.Content>
+      </Popover>
+    }
+  >
+    <Button variant="secondary" className="mr-2 mb-2">
+      Popover Danger
+    </Button>
+  </OverlayTrigger>
 </>
 ```
