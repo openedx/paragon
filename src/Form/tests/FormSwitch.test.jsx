@@ -6,7 +6,7 @@ import FormSwitch from '../FormSwitch';
 
 describe('FormSwitch', () => {
   const wrapper = mount((
-    <FormSwitch name="color value="green" description="Describe green">
+    <FormSwitch name="color" value="green" description="Describe green">
       Green
     </FormSwitch>
   ));
