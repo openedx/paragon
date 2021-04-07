@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { useFormGroupContext } from './FormGroupContext';
 import { FormRadioSetContextProvider } from './FormRadioSetContext';
+import FormControlSet from './FormControlSet';
 
 const FormRadioSet = ({
   children,
@@ -18,12 +18,6 @@ const FormRadioSet = ({
   const { getControlProps, useSetIsControlGroupEffect } = useFormGroupContext();
   useSetIsControlGroupEffect(true);
   const controlProps = getControlProps(props);
-  const className = classNames(
-    'pgn__form-control-set',
-    'pgn__form-radio-set',
-    props.className,
-    { 'pgn__form-radio-set-inline': isInline },
-  );
   return (
     <FormRadioSetContextProvider
       name={name}
@@ -33,13 +27,9 @@ const FormRadioSet = ({
       onBlur={onBlur}
       onChange={onChange}
     >
-      <div
-        role="radiogroup"
-        className={className}
-        {...controlProps}
-      >
+      <FormControlSet role="radiogroup" isInline={isInline} {...controlProps}>
         {children}
-      </div>
+      </FormControlSet>
     </FormRadioSetContextProvider>
   );
 };

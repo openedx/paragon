@@ -8,11 +8,22 @@ import FormControlFeedback from './FormControlFeedback';
 
 const RadioControl = React.forwardRef((props, ref) => {
   const { getControlProps } = useFormGroupContext();
-  const radioProps = getControlProps(props);
+  const radioProps = getControlProps({
+    ...props,
+    className: classNames('pgn__form-radio-input', props.className),
+  });
   return (
     <input {...radioProps} type="radio" ref={ref} />
   );
 });
+
+RadioControl.propTypes = {
+  className: PropTypes.string,
+};
+
+RadioControl.defaultProps = {
+  className: undefined,
+};
 
 const FormRadio = React.forwardRef(({
   children,
@@ -25,7 +36,10 @@ const FormRadio = React.forwardRef(({
   ...props
 }, ref) => {
   const { getRadioControlProps } = useRadioSetContext();
-  const radioInputProps = getRadioControlProps(props);
+  const radioInputProps = getRadioControlProps({
+    ...props,
+    className: controlClassName,
+  });
   return (
     <FormGroupContextProvider
       controlId={radioInputProps.id}
@@ -34,15 +48,14 @@ const FormRadio = React.forwardRef(({
     >
       <div
         className={classNames('pgn__form-radio', className, {
-          'pgn__form-radio-valid': isValid,
-          'pgn__form-radio-invalid': isInvalid,
-          'pgn__form-radio-disabled': radioInputProps.disabled,
+          'pgn__form-control-valid': isValid,
+          'pgn__form-control-invalid': isInvalid,
+          'pgn__form-control-disabled': radioInputProps.disabled,
         })}
       >
         <RadioControl {...radioInputProps} ref={ref} />
-        <div className={classNames('pgn__form-radio-label-description', controlClassName)}>
-          <FormLabel className={classNames('pgn__form-radio-label', labelClassName)}>
-            <span className={classNames('pgn__form-radio-control', controlClassName)} />
+        <div>
+          <FormLabel className={labelClassName}>
             {children}
           </FormLabel>
           {description && (

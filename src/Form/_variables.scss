@@ -89,7 +89,7 @@ $custom-control-indicator-checked-disabled-bg:  rgba(theme-color("primary"), .5)
 $custom-control-indicator-checked-box-shadow:   none !default;
 $custom-control-indicator-checked-border-color: $custom-control-indicator-checked-bg !default;
 
-$custom-control-indicator-focus-box-shadow:     $input-focus-box-shadow !default;
+$custom-control-indicator-focus-box-shadow:     0 0 0 4px rgba(0,0,0,.1) !default;
 $custom-control-indicator-focus-border-color:   $input-focus-border-color !default;
 
 $custom-control-indicator-active-color:         $component-active-color !default;

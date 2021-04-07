@@ -61,7 +61,10 @@ const FormCheckbox = React.forwardRef(({
     ...getControlProps({}),
     role: 'group',
   } : {};
-  const checkboxInputProps = getCheckboxControlProps(props);
+  const checkboxInputProps = getCheckboxControlProps({
+    ...props,
+    className: controlClassName,
+  });
   const control = React.createElement(controlAs, { ...checkboxInputProps, ref });
   return (
     <FormGroupContextProvider
@@ -71,16 +74,15 @@ const FormCheckbox = React.forwardRef(({
     >
       <div
         className={classNames('pgn__form-checkbox', className, {
-          'pgn__form-checkbox-valid': isValid,
-          'pgn__form-checkbox-invalid': isInvalid,
-          'pgn__form-checkbox-disabled': checkboxInputProps.disabled,
+          'pgn__form-control-valid': isValid,
+          'pgn__form-control-invalid': isInvalid,
+          'pgn__form-control-disabled': checkboxInputProps.disabled,
         })}
         {...groupProps}
       >
         {control}
-        <div className={classNames('pgn__form-checkbox-label-description', controlClassName)}>
-          <FormLabel className={classNames('pgn__form-checkbox-label', labelClassName)}>
-            <span className={classNames('pgn__form-checkbox-control', controlClassName)} />
+        <div>
+          <FormLabel className={labelClassName}>
             {children}
           </FormLabel>
           {description && (

@@ -12,7 +12,6 @@ const SwitchControl = React.forwardRef(
     const checkboxProps = getControlProps({
       ...props,
       className: classNames(
-        'pgn__form-checkbox-input',
         'pgn__form-switch-input',
         props.className,
       ),
