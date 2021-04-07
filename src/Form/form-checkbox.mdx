@@ -3,6 +3,7 @@ title: 'Form.Checkbox'
 type: 'component'
 components:
 - FormCheckbox
+- CheckboxControl
 categories:
 - Forms
 status: 'New'
@@ -29,6 +30,21 @@ underlying `input` node. See MDN for documentation on available
     <Form.Checkbox checked={isChecked} onChange={handleChange}>
       I want pizza.
     </Form.Checkbox>
+  );
+}
+```
+
+### Unlabeled control
+
+```jsx live
+() => {
+  const [isChecked, setChecked] = useState(false);
+  const handleChange = e => setChecked(e.target.checked);
+  return (
+    <CheckboxControl
+      checked={isChecked}
+      onChange={handleChange}
+    />
   );
 }
 ```

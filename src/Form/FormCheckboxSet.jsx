@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { useFormGroupContext } from './FormGroupContext';
 import { FormCheckboxSetContextProvider } from './FormCheckboxSetContext';
+import FormControlSet from './FormControlSet';
 
 const FormCheckboxSet = ({
   children,
@@ -17,13 +17,7 @@ const FormCheckboxSet = ({
 }) => {
   const { getControlProps, useSetIsControlGroupEffect } = useFormGroupContext();
   useSetIsControlGroupEffect(true);
-  const className = classNames(
-    'pgn__form-control-set',
-    'pgn__form-checkbox-set',
-    props.className,
-    { 'pgn__form-checkbox-set-inline': isInline },
-  );
-  const controlProps = getControlProps({ ...props, className });
+  const controlProps = getControlProps(props);
   return (
     <FormCheckboxSetContextProvider
       name={name}
@@ -33,13 +27,9 @@ const FormCheckboxSet = ({
       onBlur={onBlur}
       onChange={onChange}
     >
-      <div
-        role="group"
-        className={className}
-        {...controlProps}
-      >
+      <FormControlSet role="group" isInline={isInline} {...controlProps}>
         {children}
-      </div>
+      </FormControlSet>
     </FormCheckboxSetContextProvider>
   );
 };
