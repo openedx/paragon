@@ -32,13 +32,11 @@ const CheckboxControl = React.forwardRef(
 
 CheckboxControl.propTypes = {
   isIndeterminate: PropTypes.bool,
-  asSwitch: PropTypes.bool,
   className: PropTypes.string,
 };
 
 CheckboxControl.defaultProps = {
   isIndeterminate: false,
-  asSwitch: false,
   className: undefined,
 };
 
