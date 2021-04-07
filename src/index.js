@@ -28,6 +28,8 @@ export { default as Fieldset } from './Fieldset';
 export {
   default as Form,
   CheckboxControl,
+  SwitchControl,
+  FormSwitchSet,
   FormControl,
   FormControlDecoratorGroup,
   FormControlFeedback,
