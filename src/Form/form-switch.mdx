@@ -4,6 +4,10 @@ type: 'component'
 components:
 - FormSwitch
 - FormCheckbox
+- SwitchControl
+- CheckboxControl
+- FormCheckboxSet
+- FormSwitchSet
 categories:
 - Forms
 status: 'New'
@@ -13,8 +17,8 @@ notes: |
 
 ---
 
-A switch control for use with `Form.CheckboxSet`. This component has identical
-props to `Form.Checkbox` and is interoperable with `Form.CheckboxSet` and
+A switch control for use with `Form.SwitchSet`. This component has identical
+props to `Form.Checkbox` and is interoperable with `Form.SwitchSet` and
 `useCheckboxSetValues`.
 
 Note: extra props added to this component are passed as attributes to the
@@ -32,6 +36,21 @@ underlying `input` node. See MDN for documentation on available
     <Form.Switch checked={isChecked} onChange={handleChange}>
       I want pizza.
     </Form.Switch>
+  );
+}
+```
+
+### Unlabeled control
+
+```jsx live
+() => {
+  const [isChecked, setChecked] = useState(false);
+  const handleChange = e => setChecked(e.target.checked);
+  return (
+    <SwitchControl
+      checked={isChecked}
+      onChange={handleChange}
+    />
   );
 }
 ```
@@ -57,7 +76,7 @@ underlying `input` node. See MDN for documentation on available
   return (
     <Form.Group>
       <Form.Label>Which Color?</Form.Label>
-      <Form.CheckboxSet
+      <Form.SwitchSet
         name="colors"
         onChange={handleChange}
         value={colorValues}
@@ -66,7 +85,7 @@ underlying `input` node. See MDN for documentation on available
         <Form.Switch value="green">Green</Form.Switch>
         <Form.Switch value="blue">Blue</Form.Switch>
         <Form.Switch value="cyan" disabled>Cyan</Form.Switch>
-      </Form.CheckboxSet>
+      </Form.SwitchSet>
     </Form.Group>
   );
 }
@@ -79,7 +98,7 @@ underlying `input` node. See MDN for documentation on available
 ```jsx live
 <Form.Group>
   <Form.Label>Which Color?</Form.Label>
-  <Form.CheckboxSet
+  <Form.SwitchSet
     name="color-two"
     onChange={(e) => console.log(e.target.value)}
     defaultValue={['green']}
@@ -88,7 +107,7 @@ underlying `input` node. See MDN for documentation on available
     <Form.Switch value="green">Green</Form.Switch>
     <Form.Switch value="blue">Blue</Form.Switch>
     <Form.Switch value="cyan" disabled>Cyan</Form.Switch>
-  </Form.CheckboxSet>
+  </Form.SwitchSet>
 </Form.Group>
 ```
 
@@ -120,7 +139,7 @@ underlying `input` node. See MDN for documentation on available
       >
         All the cheese
       </Form.Switch>
-      <Form.CheckboxSet
+      <Form.SwitchSet
         className="p-2"
         value={checkedCheeses}
         onChange={handleChange}
@@ -128,7 +147,7 @@ underlying `input` node. See MDN for documentation on available
         <Form.Switch value="swiss">Swiss</Form.Switch>
         <Form.Switch value="cheddar">Cheddar</Form.Switch>
         <Form.Switch value="pepperjack">Pepperjack</Form.Switch>
-      </Form.CheckboxSet>
+      </Form.SwitchSet>
     </>
   );
 }
@@ -139,7 +158,7 @@ underlying `input` node. See MDN for documentation on available
 ```jsx live
 <Form.Group>
   <Form.Label>Which Color?</Form.Label>
-  <Form.CheckboxSet
+  <Form.SwitchSet
     name="color-three"
     onChange={(e) => console.log(e.target.value)}
     defaultValue={['green']}
@@ -149,7 +168,7 @@ underlying `input` node. See MDN for documentation on available
     <Form.Switch value="green">Green</Form.Switch>
     <Form.Switch value="blue">Blue</Form.Switch>
     <Form.Switch value="cyan" disabled>Cyan</Form.Switch>
-  </Form.CheckboxSet>
+  </Form.SwitchSet>
 </Form.Group>
 ```
 
@@ -160,7 +179,7 @@ underlying `input` node. See MDN for documentation on available
 ```jsx live
 <Form.Group isInvalid>
   <Form.Label>Which Color?</Form.Label>
-  <Form.CheckboxSet
+  <Form.SwitchSet
     name="color-five"
     onChange={(e) => console.log(e.target.value)}
   >
@@ -168,7 +187,7 @@ underlying `input` node. See MDN for documentation on available
     <Form.Switch value="green">Green</Form.Switch>
     <Form.Switch value="blue">Blue</Form.Switch>
     <Form.Switch value="cyan" disabled>Cyan</Form.Switch>
-  </Form.CheckboxSet>
+  </Form.SwitchSet>
   <Form.Control.Feedback>
     Please choose an option.
   </Form.Control.Feedback>
@@ -180,7 +199,7 @@ underlying `input` node. See MDN for documentation on available
 ```jsx live
 <Form.Group>
   <Form.Label>Which Color?</Form.Label>
-  <Form.CheckboxSet name="color-four">
+  <Form.SwitchSet name="color-four">
     <Form.Switch
       value="red"
       description="Red's cool"
@@ -207,6 +226,6 @@ underlying `input` node. See MDN for documentation on available
     >
       Cyan
     </Form.Switch>
-  </Form.CheckboxSet>
+  </Form.SwitchSet>
 </Form.Group>
 ```

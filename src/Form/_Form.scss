@@ -3,9 +3,8 @@
 @import "~bootstrap/scss/input-group";
 @import "~bootstrap/scss/custom-forms";
 @import "mixins";
-@import "FormRadio";
-@import "FormCheckbox";
 @import "FormText";
+@import "FormControlSet";
 
 $form-control-icon-width: 32px !default;
 
@@ -228,6 +227,8 @@ $form-control-icon-width: 32px !default;
   }
 }
 
+// Regular Form Label
+
 .pgn__form-label {
   font-size: $input-font-size;
   display: inline-block;
@@ -241,5 +242,91 @@ $form-control-icon-width: 32px !default;
   }
   &.pgn__form-label-sm {
     font-size: $input-font-size-sm;
+  }
+}
+
+// Checkbox, Radio, Switch
+
+.pgn__form-checkbox-input,
+.pgn__form-radio-input,
+.pgn__form-switch-input {
+  appearance: none;
+  height: $custom-control-indicator-size;
+  width: $custom-control-indicator-size;
+  background-color: $custom-control-indicator-bg;
+  border: solid $custom-control-indicator-border-width $custom-control-indicator-border-color;
+  border-radius: $custom-checkbox-indicator-border-radius;
+  margin-right: $custom-control-gutter;
+  background-position: center;
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+  &:not(:disabled):hover {
+    box-shadow: $custom-control-indicator-focus-box-shadow;
+  }
+  &:disabled {
+    opacity: .3;
+  }
+  &:checked {
+    border-color: $custom-control-indicator-checked-border-color;
+  }
+}
+
+.pgn__form-checkbox-input {
+  &:checked {
+    background-image: escape-svg($custom-checkbox-indicator-icon-checked);
+  }
+  &:indeterminate {
+    background-image: escape-svg($custom-checkbox-indicator-icon-indeterminate);
+  }
+}
+
+.pgn__form-switch-input {
+  width: $custom-switch-width;
+  border-radius: $custom-switch-indicator-border-radius;
+  background-image: escape-svg($custom-switch-indicator-icon-off);
+  background-position: left center;
+  background-repeat: no-repeat;
+  transition: background 150ms ease;
+  &:checked {
+    background-position: right center;
+    background-color: $custom-control-indicator-checked-bg;
+    background-image: escape-svg($custom-switch-indicator-icon-on);
+  }
+  &:indeterminate {
+    background-position: center;
+    background-image: escape-svg($custom-switch-indicator-icon-off);
+  }
+}
+
+.pgn__form-radio-input {
+  border-radius: $custom-radio-indicator-border-radius;
+  &:checked {
+    background-image: escape-svg($custom-radio-indicator-icon-checked);
+  }
+}
+
+.pgn__form-checkbox,
+.pgn__form-switch,
+.pgn__form-radio {
+  display: inline-flex;
+
+  .pgn__form-label {
+    display: block;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    line-height: $custom-control-indicator-size;
+  }
+
+  input:disabled ~ * {
+    opacity: .3;
+  }
+
+  &.pgn__form-control-invalid input {
+    border-color: $form-feedback-invalid-color;
+  }
+  &.pgn__form-control-valid input {
+    border-color: $form-feedback-valid-color;
   }
 }

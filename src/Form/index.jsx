@@ -8,9 +8,10 @@ import FormControlDecoratorGroup from './FormControlDecoratorGroup';
 import FormRadio from './FormRadio';
 import FormRadioSet from './FormRadioSet';
 import FormRadioSetContext from './FormRadioSetContext';
-import FormCheckbox from './FormCheckbox';
-import FormSwitch from './FormSwitch';
+import FormCheckbox, { CheckboxControl } from './FormCheckbox';
+import FormSwitch, { SwitchControl } from './FormSwitch';
 import FormCheckboxSet from './FormCheckboxSet';
+import FormSwitchSet from './FormSwitchSet';
 import FormCheckboxSetContext from './FormCheckboxSetContext';
 import useCheckboxSetValues from './useCheckboxSetValues';
 
@@ -18,8 +19,9 @@ Form.Control = FormControl;
 Form.Radio = FormRadio;
 Form.RadioSet = FormRadioSet;
 Form.Checkbox = FormCheckbox;
-Form.Switch = FormSwitch;
 Form.CheckboxSet = FormCheckboxSet;
+Form.Switch = FormSwitch;
+Form.SwitchSet = FormSwitchSet;
 Form.Label = FormLabel;
 Form.Group = FormGroup;
 Form.Text = FormText;
@@ -39,6 +41,9 @@ export {
   FormControlDecoratorGroup,
   FormControlFeedback,
   FormText,
+  CheckboxControl,
+  SwitchControl,
+  FormSwitchSet,
   useCheckboxSetValues,
 };
 
