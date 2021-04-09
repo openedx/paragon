@@ -1,28 +1,7 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
-const useIsVisible = (defaultIsVisible = true) => {
-  const sentinelRef = useRef();
-  const [isVisible, setIsVisible] = useState(defaultIsVisible);
-
-  useEffect(() => {
-    if (sentinelRef.current) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(({ isIntersecting }) => {
-          setIsVisible(isIntersecting);
-        });
-      }, {});
-      observer.observe(sentinelRef.current);
-      return () => {
-        observer.disconnect();
-      };
-    }
-    return () => {};
-  }, [sentinelRef.current]);
-
-  return [isVisible, sentinelRef];
-};
+import useIsVisible from '../hooks/useIsVisible';
 
 const ModalDialogBody = ({
   as,
