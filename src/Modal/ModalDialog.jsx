@@ -19,6 +19,7 @@ function ModalDialog({
   size,
   variant,
   hasCloseButton,
+  closeLabel,
 }) {
   return (
     <ModalLayer isOpen={isOpen} onClose={onClose}>
@@ -41,7 +42,7 @@ function ModalDialog({
               iconAs={Icon}
               invertColors={variant === 'dark'}
               src={Close}
-              alt="Close"
+              alt={closeLabel}
             />
           </div>
         )}
@@ -57,8 +58,9 @@ ModalDialog.propTypes = {
   onClose: PropTypes.func.isRequired,
   isOpen: PropTypes.bool,
   hasCloseButton: PropTypes.bool,
-  size: PropTypes.string,
-  variant: PropTypes.string,
+  size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'fullscreen']),
+  variant: PropTypes.oneOf(['default', 'warning', 'danger', 'success', 'dark']),
+  closeLabel: PropTypes.string,
 };
 
 ModalDialog.defaultProps = {
@@ -66,6 +68,7 @@ ModalDialog.defaultProps = {
   hasCloseButton: true,
   size: 'md',
   variant: 'default',
+  closeLabel: 'Close',
 };
 
 ModalDialog.Header = ModalDialogHeader;
