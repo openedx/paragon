@@ -4,6 +4,9 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  & > * {
+    margin: 0;
+  }
   & > * + * {
     margin-left: $action-row-gap-x;
   }
@@ -13,6 +16,9 @@
   align-items: center;
   flex-direction: column-reverse;
   justify-content: center;
+  & > * {
+    margin: 0;
+  }
   & > * + * {
     margin-bottom: $action-row-gap-y;
   }

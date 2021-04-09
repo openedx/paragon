@@ -3,6 +3,7 @@ title: 'ActionRow'
 type: 'component'
 components:
 - ActionRow
+- ActionRowSpacer
 categories:
 - Buttonlike
 status: 'Stable'
@@ -12,22 +13,36 @@ notes: |
 
 ---
 
-<p className="lead">
-  This is a pass through component from React-Bootstrap.<br/>
-  <a href="https://react-bootstrap.github.io/components/badge/" target="_blank" rel="noopener noreferrer">
-    See React-Bootstrap for documentation.
-  </a>
-</p>
-
+A layout utility for the common use case of aligning buttons, links or text
+in a row in a control bar or nav.
 ### Basic Usage
 
 ```jsx live
-<>
-<Badge variant="primary">Primary</Badge>{' '}
-<Badge variant="secondary">Secondary</Badge>{' '}
-<Badge variant="success">Success</Badge>{' '}
-<Badge variant="danger">Danger</Badge>{' '}
-<Badge variant="warning">Warning</Badge> <Badge variant="info">Info</Badge>{' '}
-<Badge variant="light">Light</Badge> <Badge variant="dark">Dark</Badge>
-</>
+<ActionRow>
+  <Form.Checkbox>Don't ask me again.</Form.Checkbox>
+  <ActionRow.Spacer />
+  <Button variant="tertiary">
+    Cancel
+  </Button>
+  <Button variant="primary">
+    Submit
+  </Button>
+</ActionRow>
+```
+
+### Stacked Usage
+
+
+```jsx live
+<ActionRow isStacked>
+  <p className="x-small">
+    Bespoke leggings yuccie, portland umami readymade craft beer vaporware sriracha.
+  </p>
+  <Button variant="tertiary">
+    Go back
+  </Button>
+  <Button variant="primary">
+    Continue
+  </Button>
+</ActionRow>
 ```
