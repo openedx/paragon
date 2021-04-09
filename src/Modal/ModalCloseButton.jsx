@@ -26,7 +26,7 @@ const ModalCloseButton = React.forwardRef(({ as, children, ...props }, ref) => {
 
 ModalCloseButton.propTypes = {
   as: PropTypes.elementType,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   onClick: PropTypes.func,
   className: PropTypes.string,
 };
@@ -35,6 +35,7 @@ ModalCloseButton.defaultProps = {
   as: Button,
   onClick: undefined,
   className: undefined,
+  children: null,
 };
 
 export default ModalCloseButton;

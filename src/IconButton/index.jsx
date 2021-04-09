@@ -44,6 +44,7 @@ const IconButton = ({
 IconButton.defaultProps = {
   iconAs: FontAwesomeIcon,
   src: null,
+  icon: {},
   iconClassNames: '',
   invertColors: false,
   variant: 'primary',
@@ -67,7 +68,7 @@ IconButton.propTypes = {
     iconName: PropTypes.string,
     // eslint-disable-next-line react/forbid-prop-types
     icon: PropTypes.array,
-  }).isRequired,
+  }),
   /** Extra class names that will be added to the icon */
   iconClassNames: PropTypes.string,
   /** Click handler for the button */
