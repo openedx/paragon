@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import ModalLayer from './ModalLayer';
-import { Container, Icon, IconButton } from '..';
+import { Icon, IconButton } from '..';
 import ModalCloseButton from './ModalCloseButton';
 import { Close } from '../../icons';
 
@@ -25,7 +25,7 @@ ModalHeader.propTypes = {
 };
 
 ModalHeader.defaultProps = {
-  as: Container,
+  as: 'div',
   variant: 'default',
   className: undefined,
 };
@@ -102,7 +102,7 @@ ModalBody.propTypes = {
 };
 
 ModalBody.defaultProps = {
-  as: Container,
+  as: 'div',
   className: undefined,
 };
 
@@ -127,7 +127,7 @@ ModalHero.propTypes = {
 };
 
 ModalHero.defaultProps = {
-  as: Container,
+  as: 'div',
   className: undefined,
 };
 
@@ -163,6 +163,7 @@ const ModalHeroContent = ({ children, ...props }) => (
     {children}
   </div>
 );
+
 ModalHeroContent.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
