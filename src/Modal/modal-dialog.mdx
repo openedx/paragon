@@ -43,34 +43,31 @@ A set of components for making all kinds of modal dialogs.
         </ModalDialog.Header>
 
         <ModalDialog.Body>
-          <h5>Size</h5>
-          <ButtonGroup as="p" size="sm">
-            {sizes.map(size => (
-              <Button
-                onClick={() => setModalSize(size)}
-                key={size}
-                variant={size === modalSize ? 'primary' : 'outline-primary'}
-              >
-                {size}
-              </Button>
-            ))}
-          </ButtonGroup>
-          <h5>Variant</h5>
-          <ButtonGroup as="p" size="sm">
-            {variants.map(variant => (
-              <Button
-                onClick={() => setModalVariant(variant)}
-                key={variant}
-                variant={variant === modalVariant ? 'primary' : 'outline-primary'}
-              >
-                {variant}
-              </Button>
-            ))}
-          </ButtonGroup>
+          <Form.Group>
+            <Form.Label>Size</Form.Label>
+            <Form.RadioSet
+              name="size"
+              value={modalSize}
+              onChange={(e) => setModalSize(e.target.value)}
+            >
+              {sizes.map(s => <Form.Radio key={s} value={s}>{s}</Form.Radio>)}
+            </Form.RadioSet>
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Variant</Form.Label>
+            <Form.RadioSet
+              name="variant"
+              value={modalVariant}
+              onChange={(e) => setModalVariant(e.target.value)}
+            >
+              {variants.map(v => <Form.Radio key={v} value={v}>{v}</Form.Radio>)}
+            </Form.RadioSet>
+          </Form.Group>
           <p>
             I'm baby palo santo ugh celiac fashion axe. La croix lo-fi venmo whatever. Beard man braid migas single-origin coffee forage ramps. Tumeric messenger bag bicycle rights wayfarers, try-hard cronut blue bottle health goth. Sriracha tumblr cardigan, cloud bread succulents tumeric copper mug marfa semiotics woke next level organic roof party +1 try-hard.
           </p>
         </ModalDialog.Body>
+
         <ModalDialog.Footer>
           <ActionRow>
             <ModalDialog.CloseButton variant="tertiary">
@@ -118,30 +115,22 @@ A set of components for making all kinds of modal dialogs.
         </ModalDialog.Hero>
 
         <ModalDialog.Body>
-          <h5>Size</h5>
-          <ButtonGroup as="p" size="sm">
-            {sizes.map(size => (
-              <Button
-                onClick={() => setModalSize(size)}
-                key={size}
-                variant={size === modalSize ? 'primary' : 'outline-primary'}
-              >
-                {size}
-              </Button>
-            ))}
-          </ButtonGroup>
-          <h5>Variant</h5>
-          <ButtonGroup as="p" size="sm">
-            {variants.map(variant => (
-              <Button
-                onClick={() => setModalVariant(variant)}
-                key={variant}
-                variant={variant === modalVariant ? 'primary' : 'outline-primary'}
-              >
-                {variant}
-              </Button>
-            ))}
-          </ButtonGroup>
+          <Form.Group>
+            <Form.Label>Size</Form.Label>
+            <Form.RadioSet name="size" value={modalSize} onChange={(e) => setModalSize(e.target.value)}>
+              {sizes.map(size => (
+                <Form.Radio key={size} value={size}>{size}</Form.Radio>
+              ))}
+            </Form.RadioSet>
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Variant</Form.Label>
+            <Form.RadioSet name="variant" value={modalVariant} onChange={(e) => setModalVariant(e.target.value)}>
+              {['default', 'dark'].map(variant => (
+                <Form.Radio key={variant} value={variant}>{variant}</Form.Radio>
+              ))}
+            </Form.RadioSet>
+          </Form.Group>
           <p>
             I'm baby palo santo ugh celiac fashion axe. La croix lo-fi venmo whatever. Beard man braid migas single-origin coffee forage ramps. Tumeric messenger bag bicycle rights wayfarers, try-hard cronut blue bottle health goth. Sriracha tumblr cardigan, cloud bread succulents tumeric copper mug marfa semiotics woke next level organic roof party +1 try-hard.
           </p>
