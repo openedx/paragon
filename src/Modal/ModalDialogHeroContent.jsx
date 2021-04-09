@@ -2,21 +2,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const ModalDialogHeroContent = ({ children, ...props }) => (
-  <div
-    {...props}
-    className={classNames('pgn__modal-hero-content', props.className)}
-  >
-    {children}
-  </div>
+const ModalDialogHeroContent = ({
+  as,
+  children,
+  ...props
+}) => React.createElement(
+  as,
+  {
+    ...props,
+    className: classNames('pgn__modal-hero-content', props.className),
+  },
+  children,
 );
 
 ModalDialogHeroContent.propTypes = {
+  as: PropTypes.elementType,
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
 };
 
 ModalDialogHeroContent.defaultProps = {
+  as: 'div',
   className: undefined,
 };
 

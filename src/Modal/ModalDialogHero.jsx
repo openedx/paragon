@@ -5,23 +5,22 @@ import ModalDialogHeroContent from './ModalDialogHeroContent';
 import ModalDialogHeroBackground from './ModalDialogHeroBackground';
 
 const ModalDialogHero = ({
-  as: Component,
+  as,
   children,
   ...props
-}) => {
-  const className = classNames('pgn__modal-hero', props.className);
-
-  return (
-    <Component {...props} className={className}>
-      {children}
-    </Component>
-  );
-};
+}) => React.createElement(
+  as,
+  {
+    ...props,
+    className: classNames('pgn__modal-hero', props.className),
+  },
+  children,
+);
 
 ModalDialogHero.propTypes = {
   as: PropTypes.elementType,
-  className: PropTypes.string,
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
 };
 
 ModalDialogHero.defaultProps = {

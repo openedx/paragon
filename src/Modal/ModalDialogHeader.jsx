@@ -3,26 +3,26 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const ModalDialogHeader = ({
-  as: Component,
+  as,
   children,
-  variant,
   ...props
-}) => (
-  <div className={classNames('pgn__modal-header', props.className)}>
-    {children}
-  </div>
+}) => React.createElement(
+  as,
+  {
+    ...props,
+    className: classNames('pgn__modal-header', props.className),
+  },
+  children,
 );
 
 ModalDialogHeader.propTypes = {
   as: PropTypes.elementType,
-  className: PropTypes.string,
-  variant: PropTypes.string,
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
 };
 
 ModalDialogHeader.defaultProps = {
   as: 'div',
-  variant: 'default',
   className: undefined,
 };
 

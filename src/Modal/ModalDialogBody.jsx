@@ -3,23 +3,22 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const ModalDialogBody = ({
-  as: Component,
+  as,
   children,
   ...props
-}) => {
-  const className = classNames('pgn__modal-body', props.className);
-
-  return (
-    <Component {...props} className={className}>
-      {children}
-    </Component>
-  );
-};
+}) => React.createElement(
+  as,
+  {
+    ...props,
+    className: classNames('pgn__modal-body', props.className),
+  },
+  children,
+);
 
 ModalDialogBody.propTypes = {
   as: PropTypes.elementType,
-  className: PropTypes.string,
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
 };
 
 ModalDialogBody.defaultProps = {

@@ -17,8 +17,8 @@ const ModalDialogTitle = ({
 
 ModalDialogTitle.propTypes = {
   as: PropTypes.elementType,
-  className: PropTypes.string,
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
 };
 
 ModalDialogTitle.defaultProps = {

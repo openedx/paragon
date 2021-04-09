@@ -3,21 +3,22 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const ModalDialogFooter = ({
-  as: Component,
+  as,
   children,
   ...props
-}) => (
-  <Component
-    className={classNames('pgn__modal-footer', props.className)}
-  >
-    {children}
-  </Component>
+}) => React.createElement(
+  as,
+  {
+    ...props,
+    className: classNames('pgn__modal-footer', props.className),
+  },
+  children,
 );
 
 ModalDialogFooter.propTypes = {
   as: PropTypes.elementType,
-  className: PropTypes.string,
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
 };
 
 ModalDialogFooter.defaultProps = {
