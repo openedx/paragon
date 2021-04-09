@@ -23,7 +23,7 @@ const ModalDialogHeroBackground = ({
 ModalDialogHeroBackground.propTypes = {
   as: PropTypes.elementType,
   backgroundSrc: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.object, // eslint-disable-line
 };
@@ -31,6 +31,7 @@ ModalDialogHeroBackground.propTypes = {
 ModalDialogHeroBackground.defaultProps = {
   as: 'div',
   backgroundSrc: undefined,
+  children: null,
   className: undefined,
   style: {},
 };
