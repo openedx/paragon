@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { Button } from '..';
 import ModalContext from './ModalContext';
 
@@ -8,6 +9,7 @@ const ModalCloseButton = React.forwardRef(({ as, children, ...props }, ref) => {
   const type = as;
   const componentProps = {
     ...props,
+    className: classNames('pgn__modal-close-button', props.className),
     onClick: () => {
       onClose();
       if (props.onClick) {
@@ -26,11 +28,13 @@ ModalCloseButton.propTypes = {
   as: PropTypes.elementType,
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func,
+  className: PropTypes.string,
 };
 
 ModalCloseButton.defaultProps = {
   as: Button,
   onClick: undefined,
+  className: undefined,
 };
 
 export default ModalCloseButton;

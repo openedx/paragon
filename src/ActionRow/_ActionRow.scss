@@ -1,0 +1,22 @@
+@import "variables";
+
+.pgn__action-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  & > * + * {
+    margin-left: $action-row-gap-x;
+  }
+}
+.pgn__action-row-stacked {
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+  justify-content: center;
+  & > * + * {
+    margin-bottom: $action-row-gap-y;
+  }
+}
+.pgn__action-row-spacer {
+  flex-grow: 1;
+}

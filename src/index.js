@@ -1,5 +1,6 @@
 /* eslint-disable import/no-cycle */
 export { default as asInput } from './asInput';
+export { default as ActionRow } from './ActionRow';
 export { default as Alert } from './Alert';
 export { default as Avatar } from './Avatar';
 export { default as AvatarButton } from './AvatarButton';
@@ -58,6 +59,7 @@ export { default as Media } from './Media';
 export { default as Modal } from './Modal';
 export { default as ModalCloseButton } from './Modal/ModalCloseButton';
 export { default as ModalLayer } from './Modal/ModalLayer';
+export { default as ModalDialog } from './Modal/ModalDialog';
 export { default as ModalPopup } from './Modal/ModalPopup';
 export { default as ModalContext } from './Modal/ModalContext';
 export { default as Portal } from './Modal/Portal';

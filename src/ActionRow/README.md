@@ -1,0 +1,33 @@
+---
+title: 'ActionRow'
+type: 'component'
+components:
+- ActionRow
+categories:
+- Buttonlike
+status: 'Stable'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: |
+
+---
+
+<p className="lead">
+  This is a pass through component from React-Bootstrap.<br/>
+  <a href="https://react-bootstrap.github.io/components/badge/" target="_blank" rel="noopener noreferrer">
+    See React-Bootstrap for documentation.
+  </a>
+</p>
+
+### Basic Usage
+
+```jsx live
+<>
+<Badge variant="primary">Primary</Badge>{' '}
+<Badge variant="secondary">Secondary</Badge>{' '}
+<Badge variant="success">Success</Badge>{' '}
+<Badge variant="danger">Danger</Badge>{' '}
+<Badge variant="warning">Warning</Badge> <Badge variant="info">Info</Badge>{' '}
+<Badge variant="light">Light</Badge> <Badge variant="dark">Dark</Badge>
+</>
+```
