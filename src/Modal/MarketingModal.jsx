@@ -28,22 +28,24 @@ MarketingModal.propTypes = {
   isOpen: PropTypes.bool,
   hasCloseButton: PropTypes.bool,
   size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'fullscreen']),
-  variant: PropTypes.oneOf(['default', 'warning', 'danger', 'success', 'dark']),
   closeLabel: PropTypes.string,
   className: PropTypes.string,
   isFullscreenScroll: PropTypes.bool,
   footerNode: PropTypes.node,
+  heroIsDark: PropTypes.bool,
+  heroNode: PropTypes.node,
 };
 
 MarketingModal.defaultProps = {
   isOpen: false,
   hasCloseButton: true,
   size: 'md',
-  variant: 'default',
   closeLabel: 'Close',
   className: undefined,
   isFullscreenScroll: true,
   footerNode: null,
+  heroIsDark: true,
+  heroNode: null,
 };
 
 export default MarketingModal;
