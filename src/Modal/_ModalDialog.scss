@@ -51,9 +51,15 @@
   margin: 0;
   max-height: none;
   max-width: none;
-  width: 100vw;
-  height: 100vh;
-  height: -webkit-fill-available;
+}
+
+// Made specific due to a selector in Modal.scss
+.pgn__modal-content-container > *.pgn__modal.pgn__modal-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
 }
 
 // Subcomponents
