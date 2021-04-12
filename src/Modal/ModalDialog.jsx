@@ -57,14 +57,40 @@ function ModalDialog({
 
 ModalDialog.propTypes = {
   children: PropTypes.node.isRequired,
+  /**
+   * The aria-label of the dialog
+   */
   title: PropTypes.string.isRequired,
+  /**
+   * A callback to close the modal dialog
+   */
   onClose: PropTypes.func.isRequired,
+  /**
+   * Is the modal dialog open or closed
+   */
   isOpen: PropTypes.bool,
+  /**
+   * The close 'x' icon button in the top right of the dialog box
+   */
   hasCloseButton: PropTypes.bool,
+  /**
+   * Sizes determine the maximum width of the dialog box
+   */
   size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'fullscreen']),
+  /**
+   * The visual style of the dialog box
+   */
   variant: PropTypes.oneOf(['default', 'warning', 'danger', 'success', 'dark']),
+  /**
+   * The label supplied to the close icon button if one is rendered
+   */
   closeLabel: PropTypes.string,
   className: PropTypes.string,
+  /**
+   * Determines where a scrollbar should appear if a modal is too large for the
+   * viewport. When false, the ModalDialog.Body receives a scrollbar, when true
+   * the browser window itself receives the scrollbar.
+   */
   isFullscreenScroll: PropTypes.bool,
 };
 
