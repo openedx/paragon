@@ -1,10 +1,9 @@
 .pgn__icon {
   display: block;
   height: 1.5rem; // 24px, Assumes base font size to be 16px
-  max-height: 100%;
-  max-width: 100%;
   position: relative;
   width: 1.5rem; // 24px, Assumes base font size to be 16px
+  flex-shrink: 0;
 }
 
 .pgn__icon svg {

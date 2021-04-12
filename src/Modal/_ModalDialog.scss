@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   margin: 0 $modal-dialog-margin;
-  max-height: 90vh;
+  max-height: 80vh;
   max-width: $modal-md;
   overflow: auto;
   width: 100vw;
@@ -53,6 +53,7 @@
   max-width: none;
   width: 100vw;
   height: 100vh;
+  height: -webkit-fill-available;
 }
 
 // Subcomponents
