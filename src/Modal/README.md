@@ -5,12 +5,11 @@ components:
 - Modal
 categories:
 - Overlays
-status: 'Needs Work'
+status: 'Deprecate soon'
 designStatus: 'Done'
 devStatus: 'To Do'
 notes: |
-  Overly complex implementation
-  Too opinionated in design/structure
+  Replaced by ModalDialog.
 ---
 
 ### Example Usage

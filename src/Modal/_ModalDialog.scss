@@ -1,0 +1,220 @@
+.pgn__modal {
+  background: $modal-content-bg;
+  border-radius: $modal-content-inner-border-radius;
+  display: flex;
+  flex-direction: column;
+  margin: 0 $modal-dialog-margin;
+  max-height: 80vh;
+  max-width: $modal-md;
+  overflow: auto;
+  width: 100vw;
+  box-shadow: $modal-content-box-shadow-sm-up;
+  border: solid $modal-content-border-width $modal-content-border-color;
+  position: relative;
+
+  &:not(.pgn__modal-fullscreen) > *:first-child {
+    border-top-left-radius: $modal-content-border-radius;
+    border-top-right-radius: $modal-content-border-radius;
+  }
+
+  &:not(.pgn__modal-fullscreen) > *:last-child {
+    border-bottom-left-radius: $modal-content-border-radius;
+    border-bottom-right-radius: $modal-content-border-radius;
+  }
+
+  &.pgn__modal-scroll-fullscreen {
+    max-height: none;
+    margin: $modal-dialog-margin;
+  }
+}
+
+// Sizes
+
+.pgn__modal-sm {
+  max-width: $modal-sm;
+}
+
+.pgn__modal-lg {
+  max-width: $modal-lg;
+}
+
+.pgn__modal-md {
+  max-width: $modal-md;
+}
+
+.pgn__modal-xl {
+  max-width: $modal-xl;
+}
+
+.pgn__modal-fullscreen {
+  border-radius: 0;
+  margin: 0;
+  max-height: none;
+  max-width: none;
+}
+
+// Made specific due to a selector in Modal.scss
+.pgn__modal-content-container > *.pgn__modal.pgn__modal-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+}
+
+// Subcomponents
+
+.pgn__modal-close-container {
+  position: absolute;
+  z-index: 10;
+  top: $modal-header-padding-y;
+  right: $modal-header-padding-y;
+}
+
+.pgn__modal-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  padding: $modal-header-padding;
+  background-color: $modal-content-bg;
+  transition: box-shadow 150ms ease;
+  min-height: 2rem; // height of the icon close button
+  box-sizing: content-box;
+  flex-shrink: 0;
+  box-shadow: none;
+
+  * {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .pgn__modal-title {
+    font-size: $h3-font-size;
+    margin-right: 3rem; // roughly accomodate the width of the close buttonn
+  }
+}
+
+.pgn__modal-hero {
+  padding: $modal-header-padding;
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 10rem;
+
+  .pgn__modal-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-size: cover;
+  }
+
+  .pgn__modal-hero-content {
+    position: relative;
+    z-index: 1;
+    margin-right: 3rem;
+  }
+}
+
+.pgn__modal-body {
+  flex-grow: 1;
+  padding: $modal-inner-padding $modal-inner-padding $modal-inner-padding / 2;
+  overflow: auto;
+  box-shadow: inset 0 10px 10px -10px rgba(black, .5), inset 0 -10px 10px -10px rgba(black, .5);
+  transition: box-shadow 150ms ease;
+
+  &.pgn__modal-body-scroll-bottom {
+    box-shadow: inset 0 10px 10px -10px rgba(black, .5), inset 0 -10px 10px -10px rgba(black, 0);
+  }
+
+  &.pgn__modal-body-scroll-top {
+    box-shadow: inset 0 10px 10px -10px rgba(black, 0), inset 0 -10px 10px -10px rgba(black, .5);
+  }
+
+  &.pgn__modal-body-scroll-top.pgn__modal-body-scroll-bottom {
+    box-shadow: inset 0 10px 10px -10px rgba(black, 0), inset 0 -10px 10px -10px rgba(black, 0);
+  }
+
+  .pgn__modal-body-content > *:last-child {
+    margin-bottom: 0;
+  }
+
+  // Avoid doubling up on padding with containers
+  .pgn__modal-body-content > .container-fluid {
+    padding: 0;
+  }
+
+  .pgn__modal.pgn__modal-scroll-fullscreen & {
+    box-shadow: none;
+  }
+}
+
+.pgn__modal-footer {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  background-color: $modal-content-bg;
+  transition: box-shadow 150ms ease;
+  padding: $modal-footer-padding;
+  padding-top: $modal-inner-padding / 2;
+}
+
+// Color Variants
+
+.pgn__modal-default {
+  // Default style modals don't have a background on the header which
+  // ends up looking spaced too far away from the body content.
+  .pgn__modal-header {
+    padding-bottom: $modal-inner-padding / 2;
+  }
+
+  .pgn__modal-body {
+    padding: $modal-inner-padding / 2 $modal-inner-padding;
+  }
+}
+
+.pgn__modal-dark {
+  .pgn__modal-header,
+  .pgn__modal-hero {
+    background-color: $dark;
+    color: $white;
+    * {
+      color: inherit;
+    }
+  }
+
+  .pgn__modal-header {
+    border-bottom: solid 1px $light-700;
+  }
+}
+
+.pgn__modal-warning .pgn__modal-header {
+  background-color: $warning-100;
+}
+
+.pgn__modal-danger .pgn__modal-header {
+  background-color: $danger-100;
+}
+
+.pgn__modal-success .pgn__modal-header {
+  background-color: $success-100;
+}
+
+// Modal types
+
+.pgn__alert-modal {
+  &.pgn__modal-default {
+    .pgn__modal-header {
+      padding-bottom: 0;
+    }
+  }
+
+  .pgn__modal-title {
+    font-size: $h4-font-size;
+  }
+}

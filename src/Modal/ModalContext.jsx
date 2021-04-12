@@ -1,7 +1,9 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 
-const ModalContext = React.createContext();
+const ModalContext = React.createContext({
+  onClose: () => {},
+});
 
 const ModalContextProvider = ({
   onClose, isOpen, isBlocking, children,
