@@ -22,6 +22,8 @@ $icon-button-invert-bg: transparent !default;
     height: $icon-button-hover-size;
     border-radius: $icon-button-hover-size;
     display: flex;
+    appearance: none;
+    padding: 0;
     flex-shrink: 0;
     justify-content: center;
     align-items: center;

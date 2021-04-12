@@ -33,6 +33,8 @@ export default function PageTemplate({
     };
   }, [components]);
 
+  const sortedComponentNames = mdx.frontmatter?.components || [];
+
   const isDeprecated = mdx.frontmatter?.status?.toLowerCase().includes('deprecate') || false;
 
   return (
@@ -49,9 +51,13 @@ export default function PageTemplate({
         <MDXProvider components={shortcodes}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
-        {Object.values(components).map(node => (
-          <GenericPropsTable key={node.displayName} {...node} />
-        ))}
+        {sortedComponentNames.map(componentName => {
+          const node = components[componentName];
+          if (!node) {
+            return null;
+          }
+          return <GenericPropsTable key={node.displayName} {...node} />
+        })}
       </Container>
     </Layout>
   );
@@ -79,6 +85,7 @@ export const pageQuery = graphql`
         title
         status
         notes
+        components
       }
     }
     components: allComponentMetadata(

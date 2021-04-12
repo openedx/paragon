@@ -1,0 +1,43 @@
+---
+title: 'AlertModal'
+type: 'component'
+components:
+- AlertModal
+- ModalDialog
+categories:
+- Overlays
+status: 'New'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: |
+
+---
+
+The alert style `ModalDialog` composition. `AlertModal` is a passes all of its props through to an underlying `ModalDialog` component providing some limited customization. If you have unique needs, use the `ModalDialog` compound component family directly.
+
+```jsx live
+() => {
+  const [isOpen, open, close] = useToggle(false);
+  return (
+    <>
+      <Button variant="outline-primary" onClick={open}>Open alert modal</Button>
+
+      <AlertModal
+        title="Heads up!"
+        isOpen={isOpen}
+        onClose={close}
+        footerNode={(
+          <ActionRow>
+            <Button variant="tertiary" onClick={close}>Cancel</Button>
+            <Button variant="danger">Submit</Button>
+          </ActionRow>
+        )}
+      >
+        <p>
+          I'm baby palo santo ugh celiac fashion axe. La croix lo-fi venmo whatever.
+        </p>
+      </AlertModal>
+    </>
+  )
+}
+```

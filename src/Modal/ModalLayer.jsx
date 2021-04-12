@@ -54,6 +54,7 @@ const ModalLayer = ({
     <ModalContextProvider onClose={onClose} isOpen={isOpen} isBlocking={isBlocking}>
       <Portal>
         <FocusOn
+          allowPinchZoom
           scrollLock
           enabled={isOpen}
           onEscapeKey={onClose}
