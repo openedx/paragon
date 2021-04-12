@@ -34,7 +34,7 @@ export default function PageTemplate({
   }, [components]);
 
   const isDeprecated = mdx.frontmatter?.status?.toLowerCase().includes('deprecate') || false;
-  console.log(mdx)
+
   return (
     <Layout>
       <SEO title={mdx.frontmatter.title} />
