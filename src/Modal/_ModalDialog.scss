@@ -1,15 +1,15 @@
-
-
 .pgn__modal {
-  background: white;
-  border-radius: calc(#{$modal-content-border-radius} + 1px);
+  background: $modal-content-bg;
+  border-radius: $modal-content-inner-border-radius;
   display: flex;
   flex-direction: column;
-  margin: 0 1.5rem;
+  margin: 0 $modal-dialog-margin;
   max-height: 90vh;
   max-width: $modal-md;
   overflow: auto;
   width: 100vw;
+  box-shadow: $modal-content-box-shadow-sm-up;
+  border: solid $modal-content-border-width $modal-content-border-color;
   position: relative;
   &:not(.pgn__modal-fullscreen) > *:first-child {
     border-bottom-left-radius: $modal-content-border-radius;
@@ -54,7 +54,6 @@
   position: absolute;
   z-index: 10;
   top: $modal-header-padding-y;
-  // transform: translateY(-50%);
   right: $modal-header-padding-y;
 }
 
@@ -65,21 +64,13 @@
   position: sticky;
   top: 0;
   padding: $modal-header-padding;
-  background-color: white;
-  // align-items: center;
+  background-color: $modal-content-bg;
   transition: box-shadow 150ms ease;
   min-height: 2rem; // height of the icon close button
   box-sizing: content-box;
   flex-shrink: 0;
-  // background: $white;
-  // border-bottom: solid 1px $light-300;
   box-shadow: none;
-  .pgn__modal-dark & {
-    background: $dark-500;
-    border-bottom: solid 1px $light-700;
-    color: $white;
-    padding-bottom: $modal-header-padding-y;
-  }
+
   * {
     margin-bottom: 0;
     margin-top: 0;
@@ -89,6 +80,7 @@
     margin-right: 3rem; // roughly accomodate the width of the close buttonn
   }
 }
+
 .pgn__modal-hero {
   padding: $modal-header-padding;
   position: relative;
@@ -132,14 +124,13 @@
 .pgn__modal-footer {
   position: sticky;
   bottom: 0;
-  background-color: white;
+  background-color: $modal-content-bg;
   transition: box-shadow 150ms ease;
   padding: $modal-footer-padding;
   padding-top: $modal-inner-padding / 2;
 }
 
-
-// Variants
+// Color Variants
 
 .pgn__modal-default {
   // Default style modals don't have a background on the header which
@@ -150,9 +141,6 @@
   .pgn__modal-body {
     padding: $modal-inner-padding / 2 $modal-inner-padding;
   }
-  // .pgn__modal-footer {
-  //   padding-top: $modal-inner-padding / 2;
-  // }
 }
 
 .pgn__modal-dark {
@@ -163,6 +151,10 @@
     * {
       color: inherit;
     }
+  }
+
+  .pgn__modal-header {
+    border-bottom: solid 1px $light-700;
   }
 }
 
