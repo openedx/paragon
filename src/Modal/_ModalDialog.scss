@@ -84,6 +84,7 @@
   }
 
   .pgn__modal-title {
+    font-size: $h3-font-size;
     margin-right: 3rem; // roughly accomodate the width of the close buttonn
   }
 }
@@ -186,15 +187,15 @@
 }
 
 .pgn__modal-warning .pgn__modal-header {
-  background-color: $warning-200;
+  background-color: $warning-100;
 }
 
 .pgn__modal-danger .pgn__modal-header {
-  background-color: $danger-200;
+  background-color: $danger-100;
 }
 
 .pgn__modal-success .pgn__modal-header {
-  background-color: $success-200;
+  background-color: $success-100;
 }
 
 // Modal types

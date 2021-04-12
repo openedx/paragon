@@ -22,7 +22,7 @@ ModalDialogTitle.propTypes = {
 };
 
 ModalDialogTitle.defaultProps = {
-  as: 'h3',
+  as: 'h2',
   className: undefined,
 };
 
