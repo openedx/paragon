@@ -23,8 +23,10 @@ const ModalDialogBody = ({
     { ...props, className },
     (
       <>
-        <div className="pgn_modal-body-scroll-sentinel-top" ref={topSentinelRef} />
-        {children}
+        <div ref={topSentinelRef} />
+        <div className="pgn__modal-body-content">
+          {children}
+        </div>
         <div ref={bottomSentinelRef} />
       </>
     ),

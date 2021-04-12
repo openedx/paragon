@@ -2,6 +2,7 @@
 
 .pgn__action-row {
   display: flex;
+  flex-grow: 1;
   align-items: center;
   justify-content: flex-end;
   & > * {
@@ -13,6 +14,7 @@
 }
 .pgn__action-row-stacked {
   display: flex;
+  flex-grow: 1;
   align-items: center;
   flex-direction: column-reverse;
   justify-content: center;

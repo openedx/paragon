@@ -20,6 +20,8 @@ function ModalDialog({
   variant,
   hasCloseButton,
   closeLabel,
+  isFullscreenScroll,
+  className,
 }) {
   return (
     <ModalLayer isOpen={isOpen} onClose={onClose}>
@@ -28,11 +30,12 @@ function ModalDialog({
         aria-label={title}
         className={classNames(
           'pgn__modal',
-          'pgn__modal-scroll-internal',
           {
             [`pgn__modal-${size}`]: size,
             [`pgn__modal-${variant}`]: variant,
+            'pgn__modal-scroll-fullscreen': isFullscreenScroll,
           },
+          className,
         )}
       >
         {hasCloseButton && (
@@ -61,6 +64,8 @@ ModalDialog.propTypes = {
   size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'fullscreen']),
   variant: PropTypes.oneOf(['default', 'warning', 'danger', 'success', 'dark']),
   closeLabel: PropTypes.string,
+  className: PropTypes.string,
+  isFullscreenScroll: PropTypes.bool,
 };
 
 ModalDialog.defaultProps = {
@@ -69,6 +74,8 @@ ModalDialog.defaultProps = {
   size: 'md',
   variant: 'default',
   closeLabel: 'Close',
+  className: undefined,
+  isFullscreenScroll: false,
 };
 
 ModalDialog.Header = ModalDialogHeader;
