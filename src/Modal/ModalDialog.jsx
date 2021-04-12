@@ -1,0 +1,114 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import ModalLayer from './ModalLayer';
+import { Icon, IconButton } from '..';
+import { Close } from '../../icons';
+import ModalCloseButton from './ModalCloseButton';
+import ModalDialogHeader from './ModalDialogHeader';
+import ModalDialogTitle from './ModalDialogTitle';
+import ModalDialogFooter from './ModalDialogFooter';
+import ModalDialogBody from './ModalDialogBody';
+import ModalDialogHero from './ModalDialogHero';
+
+function ModalDialog({
+  children,
+  title,
+  isOpen,
+  onClose,
+  size,
+  variant,
+  hasCloseButton,
+  closeLabel,
+  isFullscreenScroll,
+  className,
+}) {
+  return (
+    <ModalLayer isOpen={isOpen} onClose={onClose}>
+      <div
+        role="dialog"
+        aria-label={title}
+        className={classNames(
+          'pgn__modal',
+          {
+            [`pgn__modal-${size}`]: size,
+            [`pgn__modal-${variant}`]: variant,
+            'pgn__modal-scroll-fullscreen': isFullscreenScroll,
+          },
+          className,
+        )}
+      >
+        {hasCloseButton && (
+          <div className="pgn__modal-close-container">
+            <ModalCloseButton
+              as={IconButton}
+              iconAs={Icon}
+              invertColors={variant === 'dark'}
+              src={Close}
+              alt={closeLabel}
+            />
+          </div>
+        )}
+        {children}
+      </div>
+    </ModalLayer>
+  );
+}
+
+ModalDialog.propTypes = {
+  children: PropTypes.node.isRequired,
+  /**
+   * The aria-label of the dialog
+   */
+  title: PropTypes.string.isRequired,
+  /**
+   * A callback to close the modal dialog
+   */
+  onClose: PropTypes.func.isRequired,
+  /**
+   * Is the modal dialog open or closed
+   */
+  isOpen: PropTypes.bool,
+  /**
+   * The close 'x' icon button in the top right of the dialog box
+   */
+  hasCloseButton: PropTypes.bool,
+  /**
+   * Sizes determine the maximum width of the dialog box
+   */
+  size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'fullscreen']),
+  /**
+   * The visual style of the dialog box
+   */
+  variant: PropTypes.oneOf(['default', 'warning', 'danger', 'success', 'dark']),
+  /**
+   * The label supplied to the close icon button if one is rendered
+   */
+  closeLabel: PropTypes.string,
+  className: PropTypes.string,
+  /**
+   * Determines where a scrollbar should appear if a modal is too large for the
+   * viewport. When false, the ModalDialog.Body receives a scrollbar, when true
+   * the browser window itself receives the scrollbar.
+   */
+  isFullscreenScroll: PropTypes.bool,
+};
+
+ModalDialog.defaultProps = {
+  isOpen: false,
+  hasCloseButton: true,
+  size: 'md',
+  variant: 'default',
+  closeLabel: 'Close',
+  className: undefined,
+  isFullscreenScroll: false,
+};
+
+ModalDialog.Header = ModalDialogHeader;
+ModalDialog.Title = ModalDialogTitle;
+ModalDialog.Footer = ModalDialogFooter;
+ModalDialog.CloseButton = ModalCloseButton;
+ModalDialog.Body = ModalDialogBody;
+ModalDialog.Hero = ModalDialogHero;
+
+export default ModalDialog;

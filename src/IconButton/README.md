@@ -11,7 +11,19 @@ devStatus: 'Done'
 notes: ''
 ---
 
-### Basic Usage
+### Basic Usage with Paragon Icon
+
+```jsx live
+() => {
+  return (
+    <div className="d-flex">
+      <IconButton src={Close} iconAs={Icon} alt='Close' onClick={() => {}} variant="primary" />
+    </div>
+  );
+}
+```
+
+### Basic Usage with FontAwesome Icon
 
 ```jsx live
 () => {
