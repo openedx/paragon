@@ -4,6 +4,10 @@ type: 'component'
 status: 'Stable'
 components:
 - Stepper
+- StepperStep
+- StepperActionRow
+- StepperHeader
+- StepperHeaderStep
 categories:
 - Navigation
 - Content

@@ -42,7 +42,7 @@ const paragraphs = [
 const HipsterIpsum = ({ numParagraphs }) => {
   const shuffledParagraphs = React.useMemo(() => {
     return shuffle(paragraphs);
-  });
+  }, []);
   const content = shuffledParagraphs
     .slice(0, numParagraphs)
     .map((text, index) => <p key={index}>{text}</p>)

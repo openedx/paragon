@@ -33,9 +33,9 @@ const StepperHeaderStep = ({
         {hasError && <Icon src={Error} />}
       </div>
 
-      <div>
-        <span className="pgn__stepper-header-step-title">{title}</span>
-        <span className="pgn__stepper-header-step-description">{description}</span>
+      <div className="pgn__stepper-header-step-title-description">
+        <div className="pgn__stepper-header-step-title">{title}</div>
+        <div className="pgn__stepper-header-step-description">{description}</div>
       </div>
     </li>
   );
