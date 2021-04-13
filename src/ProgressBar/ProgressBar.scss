@@ -1,2 +1,10 @@
 @import "variables";
 @import "~bootstrap/scss/progress";
+
+.progress { 
+    border: 1px solid $gray-500;
+}
+.progress-bar { 
+    background-color: $accent-a;
+}
+  
