@@ -1,0 +1,52 @@
+@import "variables";
+
+.pgn__stepper-header-step-list {
+  list-style: none;
+  padding: .75rem 0;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+.pgn__stepper-header {
+  display: flex;
+  justify-content: center;
+  background: $white;
+}
+.pgn__stepper-header-step {
+  display: flex;
+  align-items: center;
+  color: $primary;
+  & + .pgn__stepper-header-step:before {
+    content: '';
+    display: block;
+    height: 1px;
+    background: $light;
+    width: 80px;
+    margin: 0 .5rem;
+  }
+  .pgn__stepper-header-step-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    background: currentColor;
+    margin-right: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .75rem;
+    flex-shrink: 0;
+    * {
+      color: $white;
+    }
+  }
+  &.pgn__stepper-header-step-active ~ .pgn__stepper-header-step {
+    color: $gray-500;
+  }
+
+  .pgn__stepper-header-step-title {
+
+  }
+  .pgn__stepper-header-step-description {
+
+  }
+}
