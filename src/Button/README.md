@@ -112,6 +112,17 @@ Use inline size buttons for when a button sits with a line of text.
 </>
 ```
 
+### With Icons before or after
+```jsx live
+<>
+  <Button variant="brand" iconBefore={ArrowBack}>Brand</Button>{' '}
+  <Button variant="outline-brand" iconAfter={ArrowDropDown}>Outline Brand</Button>{' '}
+  <Button variant="primary" iconBefore={Remove} iconAfter={Add}>Primary</Button>{' '}
+  <Button variant="outline-primary" iconBefore={Highlight}>Outline Primary</Button>{' '}
+  <Button variant="tertiary" iconAfter={Add}>Tertiary</Button>{' '}
+</>
+```
+
 ***
 
 ## Button/Deprecated
@@ -163,3 +174,4 @@ Use inline size buttons for when a button sits with a line of text.
   <Button.Deprecated className="btn-link px-0">Button with no horizontal padding</Button.Deprecated>
 </div>
 ```
+Warning: Failed prop type: Invalid prop `children` of type `object` supplied to `ForwardRef(_c)`, expected `string`.
