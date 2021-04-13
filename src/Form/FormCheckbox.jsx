@@ -15,9 +15,11 @@ const CheckboxControl = React.forwardRef(
       ...props,
       className: classNames('pgn__form-checkbox-input', props.className),
     });
-
     React.useEffect(() => {
-      resolvedRef.current.indeterminate = isIndeterminate;
+      // this if(resolvedRef.current) prevents console errors in testing
+      if (resolvedRef.current) {
+        resolvedRef.current.indeterminate = isIndeterminate;
+      }
     }, [resolvedRef, isIndeterminate]);
 
     return (
