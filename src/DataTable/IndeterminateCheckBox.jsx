@@ -7,7 +7,10 @@ const IndeterminateCheckbox = React.forwardRef(
     const resolvedRef = ref || defaultRef;
 
     React.useEffect(() => {
-      resolvedRef.current.indeterminate = indeterminate;
+      // this if(resolvedRef.current) prevents console errors in testing
+      if (resolvedRef.current) {
+        resolvedRef.current.indeterminate = indeterminate;
+      }
     }, [resolvedRef, indeterminate]);
 
     return (

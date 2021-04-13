@@ -18,7 +18,10 @@ const SwitchControl = React.forwardRef(
     });
 
     React.useEffect(() => {
-      resolvedRef.current.indeterminate = isIndeterminate;
+      // this if(resolvedRef.current) prevents console errors in testing
+      if (resolvedRef.current) {
+        resolvedRef.current.indeterminate = isIndeterminate;
+      }
     }, [resolvedRef, isIndeterminate]);
 
     return (
