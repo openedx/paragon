@@ -174,4 +174,3 @@ Use inline size buttons for when a button sits with a line of text.
   <Button.Deprecated className="btn-link px-0">Button with no horizontal padding</Button.Deprecated>
 </div>
 ```
-Warning: Failed prop type: Invalid prop `children` of type `object` supplied to `ForwardRef(_c)`, expected `string`.
