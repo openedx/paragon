@@ -27,6 +27,20 @@ const StepList = ({ steps, activeKey }) => (
   </ul>
 );
 
+StepList.propTypes = {
+  steps: PropTypes.arrayOf(PropTypes.shape({
+    eventKey: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    hasError: PropTypes.bool,
+  })),
+  activeKey: PropTypes.string.isRequired,
+};
+
+StepList.defaultProps = {
+  steps: [],
+};
+
 const PageCount = ({ activeStepIndex, totalSteps }) => `${activeStepIndex + 1} of ${totalSteps}`;
 
 const StepperHeader = ({ className, PageCountComponent }) => {
