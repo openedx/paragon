@@ -7,15 +7,14 @@ exports[`<Button /> correct rendering renders with props iconAfter 1`] = `
   type="button"
 >
   <span
-    className="d-flex align-items-center"
+    className="btn-icons-container"
   >
     Button
     <span
-      className="pgn__icon ml-2"
+      className="pgn__icon btn-icon-after"
     >
       <svg
         aria-hidden={true}
-        aria-label=""
         fill="none"
         focusable={false}
         height={24}
@@ -41,14 +40,13 @@ exports[`<Button /> correct rendering renders with props iconBefore 1`] = `
   type="button"
 >
   <span
-    className="d-flex align-items-center"
+    className="btn-icons-container"
   >
     <span
-      className="pgn__icon mr-2"
+      className="pgn__icon btn-icon-before"
     >
       <svg
         aria-hidden={true}
-        aria-label=""
         fill="none"
         focusable={false}
         height={24}
@@ -75,14 +73,13 @@ exports[`<Button /> correct rendering renders with props iconBefore and iconAfte
   type="button"
 >
   <span
-    className="d-flex align-items-center"
+    className="btn-icons-container"
   >
     <span
-      className="pgn__icon mr-2"
+      className="pgn__icon btn-icon-before"
     >
       <svg
         aria-hidden={true}
-        aria-label=""
         fill="none"
         focusable={false}
         height={24}
@@ -99,11 +96,10 @@ exports[`<Button /> correct rendering renders with props iconBefore and iconAfte
     </span>
     Button
     <span
-      className="pgn__icon ml-2"
+      className="pgn__icon btn-icon-after"
     >
       <svg
         aria-hidden={true}
-        aria-label=""
         fill="none"
         focusable={false}
         height={24}
@@ -129,7 +125,7 @@ exports[`<Button /> correct rendering renders without props 1`] = `
   type="button"
 >
   <span
-    className="d-flex align-items-center"
+    className="btn-icons-container"
   >
     Button
   </span>

@@ -17,10 +17,10 @@ const WrappedButton = React.forwardRef(({
     className={classNames(props.className)}
     ref={ref}
   >
-    <span className={classNames('d-flex', 'align-items-center')}>
-      {iconBefore && <Icon className="mr-2" src={iconBefore} />}
+    <span className="btn-icons-container">
+      {iconBefore && <Icon className={classNames('btn-icon-before', props.size && `pgn__icon__${props.size}`)} src={iconBefore} />}
       {children}
-      {iconAfter && <Icon className="ml-2" src={iconAfter} />}
+      {iconAfter && <Icon className={classNames('btn-icon-after', props.size && `pgn__icon__${props.size}`)} src={iconAfter} />}
     </span>
   </Button>
 ));
