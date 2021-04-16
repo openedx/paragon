@@ -16,6 +16,9 @@ const StepperHeaderStep = ({
 }) => {
   const { getIsComplete } = useContext(StepperContext);
   const isComplete = getIsComplete(eventKey);
+  const stepIcon = isComplete ? <Icon src={Check} /> : <span>{index + 1}</span>;
+  const errorIcon = <Icon src={Error} />;
+
   return (
     <li
       className={classNames(
@@ -28,9 +31,7 @@ const StepperHeaderStep = ({
       )}
     >
       <div className="pgn__stepper-header-step-icon">
-        {!isComplete && !hasError && <span>{index + 1}</span>}
-        {isComplete && !hasError && <Icon src={Check} />}
-        {hasError && <Icon src={Error} />}
+        {hasError ? errorIcon : stepIcon}
       </div>
 
       <div className="pgn__stepper-header-step-title-description">

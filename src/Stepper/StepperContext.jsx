@@ -33,6 +33,7 @@ export function StepperContextProvider({ children, activeKey }) {
     const thisIndex = steps.findIndex(step => step.eventKey === eventKey);
     return thisIndex < activeIndex;
   };
+
   return (
     <StepperContext.Provider
       value={{
@@ -52,3 +53,5 @@ StepperContextProvider.propTypes = {
   children: PropTypes.node.isRequired,
   activeKey: PropTypes.node.isRequired,
 };
+
+export { stepsReducer };
