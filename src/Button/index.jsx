@@ -1,5 +1,10 @@
-import Button from 'react-bootstrap/Button';
+import styled from 'styled-components';
+import RBButton from 'react-bootstrap/Button';
 import ButtonDeprecated from './deprecated';
+
+const Button = styled(RBButton)`
+  border: 2px solid palevioletred;
+`;
 
 Button.Deprecated = ButtonDeprecated;
 

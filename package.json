@@ -55,7 +55,8 @@
   "peerDependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "styled-components": "5.x"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -89,7 +90,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-test-renderer": "^16.8.6",
-    "semantic-release": "^17.0.0"
+    "semantic-release": "^17.0.0",
+    "styled-components": "^5.2.3"
   },
   "jest": {
     "transform": {
