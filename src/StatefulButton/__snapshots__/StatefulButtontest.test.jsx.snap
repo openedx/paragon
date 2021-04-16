@@ -1,11 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`StatefulButton renders basic usage 1`] = `
+.c0 {
+  border: 2px solid palevioletred;
+}
+
 <div>
   <button
     aria-disabled={false}
     aria-live="assertive"
-    className="pgn__stateful-btn pgn__stateful-btn-state-default mr-2 btn btn-primary"
+    className="c0 pgn__stateful-btn pgn__stateful-btn-state-default mr-2 btn btn-primary"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -21,7 +25,7 @@ exports[`StatefulButton renders basic usage 1`] = `
   <button
     aria-disabled={true}
     aria-live="assertive"
-    className="pgn__stateful-btn pgn__stateful-btn-state-pending mr-2 disabled btn btn-primary"
+    className="c0 pgn__stateful-btn pgn__stateful-btn-state-pending mr-2 disabled btn btn-primary"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -46,7 +50,7 @@ exports[`StatefulButton renders basic usage 1`] = `
   <button
     aria-disabled={true}
     aria-live="assertive"
-    className="pgn__stateful-btn pgn__stateful-btn-state-complete mr-2 disabled btn btn-primary"
+    className="c0 pgn__stateful-btn pgn__stateful-btn-state-complete mr-2 disabled btn btn-primary"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -73,10 +77,14 @@ exports[`StatefulButton renders basic usage 1`] = `
 
 exports[`StatefulButton renders custom icons and disable during state 1`] = `
 Array [
-  <button
+  .c0 {
+  border: 2px solid palevioletred;
+}
+
+<button
     aria-disabled={false}
     aria-live="assertive"
-    className="pgn__stateful-btn pgn__stateful-btn-state-default mr-2 btn btn-primary"
+    className="c0 pgn__stateful-btn pgn__stateful-btn-state-default mr-2 btn btn-primary"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -98,10 +106,14 @@ Array [
       </span>
     </span>
   </button>,
-  <button
+  .c0 {
+  border: 2px solid palevioletred;
+}
+
+<button
     aria-disabled={true}
     aria-live="assertive"
-    className="pgn__stateful-btn pgn__stateful-btn-state-pending mr-2 disabled btn btn-primary"
+    className="c0 pgn__stateful-btn pgn__stateful-btn-state-pending mr-2 disabled btn btn-primary"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -123,10 +135,14 @@ Array [
       </span>
     </span>
   </button>,
-  <button
+  .c0 {
+  border: 2px solid palevioletred;
+}
+
+<button
     aria-disabled={false}
     aria-live="assertive"
-    className="pgn__stateful-btn pgn__stateful-btn-state-complete mr-2 btn btn-primary"
+    className="c0 pgn__stateful-btn pgn__stateful-btn-state-complete mr-2 btn btn-primary"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -153,10 +169,14 @@ Array [
 
 exports[`StatefulButton renders custom states 1`] = `
 Array [
-  <button
+  .c0 {
+  border: 2px solid palevioletred;
+}
+
+<button
     aria-disabled={true}
     aria-live="assertive"
-    className="pgn__stateful-btn pgn__stateful-btn-state-unedited mr-2 disabled btn btn-primary"
+    className="c0 pgn__stateful-btn pgn__stateful-btn-state-unedited mr-2 disabled btn btn-primary"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -178,10 +198,14 @@ Array [
       </span>
     </span>
   </button>,
-  <button
+  .c0 {
+  border: 2px solid palevioletred;
+}
+
+<button
     aria-disabled={false}
     aria-live="assertive"
-    className="pgn__stateful-btn pgn__stateful-btn-state-edited mr-2 btn btn-primary"
+    className="c0 pgn__stateful-btn pgn__stateful-btn-state-edited mr-2 btn btn-primary"
     disabled={false}
     onClick={[Function]}
     type="button"
