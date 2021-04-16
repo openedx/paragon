@@ -5,13 +5,17 @@ import ModalDialog from './ModalDialog';
 const StandardModal = ({
   children,
   footerNode,
+  beforeBodyNode,
+  afterBodyNode,
   ...props
 }) => (
   <ModalDialog {...props}>
     <ModalDialog.Header>
       <ModalDialog.Title>{props.title}</ModalDialog.Title>
     </ModalDialog.Header>
+    {beforeBodyNode}
     <ModalDialog.Body>{children}</ModalDialog.Body>
+    {afterBodyNode}
     {footerNode && <ModalDialog.Footer>{footerNode}</ModalDialog.Footer>}
   </ModalDialog>
 );
@@ -28,6 +32,8 @@ StandardModal.propTypes = {
   className: PropTypes.string,
   isFullscreenScroll: PropTypes.bool,
   footerNode: PropTypes.node,
+  beforeBodyNode: PropTypes.node,
+  afterBodyNode: PropTypes.node,
 };
 
 StandardModal.defaultProps = {
@@ -39,6 +45,8 @@ StandardModal.defaultProps = {
   className: undefined,
   isFullscreenScroll: false,
   footerNode: null,
+  beforeBodyNode: null,
+  afterBodyNode: null,
 };
 
 export default StandardModal;
