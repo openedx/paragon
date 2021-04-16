@@ -2,12 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ModalDialog from './ModalDialog';
 
-const FullscreenModal = ({ children, footerNode, ...props }) => (
+const FullscreenModal = ({
+  children,
+  footerNode,
+  beforeBodyNode,
+  afterBodyNode,
+  ...props
+}) => (
   <ModalDialog {...props}>
     <ModalDialog.Header>
       <ModalDialog.Title>{props.title}</ModalDialog.Title>
     </ModalDialog.Header>
+    {beforeBodyNode}
     <ModalDialog.Body>{children}</ModalDialog.Body>
+    {afterBodyNode}
     {footerNode && <ModalDialog.Footer>{footerNode}</ModalDialog.Footer>}
   </ModalDialog>
 );
@@ -24,6 +32,8 @@ FullscreenModal.propTypes = {
   className: PropTypes.string,
   isFullscreenScroll: PropTypes.bool,
   footerNode: PropTypes.node,
+  beforeBodyNode: PropTypes.node,
+  afterBodyNode: PropTypes.node,
 };
 
 FullscreenModal.defaultProps = {
@@ -35,6 +45,8 @@ FullscreenModal.defaultProps = {
   className: undefined,
   isFullscreenScroll: false,
   footerNode: null,
+  beforeBodyNode: null,
+  afterBodyNode: null,
 };
 
 export default FullscreenModal;

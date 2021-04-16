@@ -9,6 +9,7 @@ import * as FontAwesome from '@fortawesome/free-solid-svg-icons';
 import * as ParagonReact from '~paragon-react'; // eslint-disable-line
 import * as ParagonIcons from '~paragon-icons'; // eslint-disable-line
 import MiyazakiCard from './exampleComponents/MiyazakiCard';
+import HipsterIpsum from './exampleComponents/HipsterIpsum';
 
 function CodeBlock({ children, className, live }) {
   const language = className ? className.replace(/language-/, '') : 'jsx';
@@ -24,6 +25,7 @@ function CodeBlock({ children, className, live }) {
             useState,
             FontAwesome,
             MiyazakiCard,
+            HipsterIpsum,
           }}
           theme={theme}
         >

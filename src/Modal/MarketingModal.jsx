@@ -7,6 +7,8 @@ const MarketingModal = ({
   footerNode,
   heroNode,
   heroIsDark,
+  beforeBodyNode,
+  afterBodyNode,
   ...props
 }) => (
   <ModalDialog
@@ -14,7 +16,9 @@ const MarketingModal = ({
     variant={heroIsDark ? 'dark' : 'default'}
   >
     {heroNode}
+    {beforeBodyNode}
     <ModalDialog.Body>{children}</ModalDialog.Body>
+    {afterBodyNode}
     {footerNode && (
       <ModalDialog.Footer>{footerNode}</ModalDialog.Footer>
     )}
@@ -34,6 +38,8 @@ MarketingModal.propTypes = {
   footerNode: PropTypes.node,
   heroIsDark: PropTypes.bool,
   heroNode: PropTypes.node,
+  beforeBodyNode: PropTypes.node,
+  afterBodyNode: PropTypes.node,
 };
 
 MarketingModal.defaultProps = {
@@ -46,6 +52,8 @@ MarketingModal.defaultProps = {
   footerNode: null,
   heroIsDark: true,
   heroNode: null,
+  beforeBodyNode: null,
+  afterBodyNode: null,
 };
 
 export default MarketingModal;
