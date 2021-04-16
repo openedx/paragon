@@ -8,15 +8,19 @@ Array [
     type="button"
   >
     <span
-      className="pgn__avatar-button-avatar-wrap"
+      className="btn-icons-container"
     >
-      <img
-        alt=""
-        className="pgn__avatar pgn__avatar-xs"
-        src="test-file-stub"
-      />
+      <span
+        className="pgn__avatar-button-avatar-wrap"
+      >
+        <img
+          alt=""
+          className="pgn__avatar pgn__avatar-xs"
+          src="test-file-stub"
+        />
+      </span>
+      Casey
     </span>
-    Casey
   </button>,
   <button
     className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md btn btn-tertiary btn-md"
@@ -24,15 +28,19 @@ Array [
     type="button"
   >
     <span
-      className="pgn__avatar-button-avatar-wrap"
+      className="btn-icons-container"
     >
-      <img
-        alt=""
-        className="pgn__avatar pgn__avatar-sm"
-        src="test-file-stub"
-      />
+      <span
+        className="pgn__avatar-button-avatar-wrap"
+      >
+        <img
+          alt=""
+          className="pgn__avatar pgn__avatar-sm"
+          src="test-file-stub"
+        />
+      </span>
+      Casey
     </span>
-    Casey
   </button>,
   <button
     className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-lg btn btn-tertiary btn-lg"
@@ -40,15 +48,19 @@ Array [
     type="button"
   >
     <span
-      className="pgn__avatar-button-avatar-wrap"
+      className="btn-icons-container"
     >
-      <img
-        alt=""
-        className="pgn__avatar pgn__avatar-md"
-        src="test-file-stub"
-      />
+      <span
+        className="pgn__avatar-button-avatar-wrap"
+      >
+        <img
+          alt=""
+          className="pgn__avatar pgn__avatar-md"
+          src="test-file-stub"
+        />
+      </span>
+      Casey
     </span>
-    Casey
   </button>,
   <button
     className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-sm pgn__avatar-button-hide-label btn btn-tertiary btn-sm"
@@ -56,13 +68,17 @@ Array [
     type="button"
   >
     <span
-      className="pgn__avatar-button-avatar-wrap"
+      className="btn-icons-container"
     >
-      <img
-        alt="Casey"
-        className="pgn__avatar pgn__avatar-xs"
-        src="test-file-stub"
-      />
+      <span
+        className="pgn__avatar-button-avatar-wrap"
+      >
+        <img
+          alt="Casey"
+          className="pgn__avatar pgn__avatar-xs"
+          src="test-file-stub"
+        />
+      </span>
     </span>
   </button>,
   <button
@@ -71,13 +87,17 @@ Array [
     type="button"
   >
     <span
-      className="pgn__avatar-button-avatar-wrap"
+      className="btn-icons-container"
     >
-      <img
-        alt="Casey"
-        className="pgn__avatar pgn__avatar-sm"
-        src="test-file-stub"
-      />
+      <span
+        className="pgn__avatar-button-avatar-wrap"
+      >
+        <img
+          alt="Casey"
+          className="pgn__avatar pgn__avatar-sm"
+          src="test-file-stub"
+        />
+      </span>
     </span>
   </button>,
   <button
@@ -86,13 +106,17 @@ Array [
     type="button"
   >
     <span
-      className="pgn__avatar-button-avatar-wrap"
+      className="btn-icons-container"
     >
-      <img
-        alt="Casey"
-        className="pgn__avatar pgn__avatar-md"
-        src="test-file-stub"
-      />
+      <span
+        className="pgn__avatar-button-avatar-wrap"
+      >
+        <img
+          alt="Casey"
+          className="pgn__avatar pgn__avatar-md"
+          src="test-file-stub"
+        />
+      </span>
     </span>
   </button>,
 ]
