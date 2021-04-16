@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import RBButton from 'react-bootstrap/Button';
+import forwardAsProp from '../utils/forwardAsProp';
 import ButtonDeprecated from './deprecated';
 
-const Button = styled(RBButton)`
+const Button = forwardAsProp(styled(RBButton)`
   border: 2px solid palevioletred;
-`;
+`);
 
 Button.Deprecated = ButtonDeprecated;
 
