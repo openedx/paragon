@@ -2,9 +2,9 @@
 @import "~bootstrap/scss/progress";
 
 .progress { 
-    border: 1px solid $gray-500;
+    border: $progress-bar-border-width solid $progress-bar-border-color;
 }
 .progress-bar { 
-    background-color: $accent-a;
+    background-color: $progress-bar-bg;
 }
   
