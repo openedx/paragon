@@ -10,13 +10,6 @@ notes: |
 
 ---
 
-import get from 'lodash/get';
-import SingleComponentStatus from '../../components/SingleComponentStatus';
-
-# Tooltip
-
-<SingleComponentStatus frontmatter={props?.pageContext?.frontmatter} />
-
 ##### Basic Usage
 
 ```jsx live
