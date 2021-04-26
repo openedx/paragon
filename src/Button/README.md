@@ -19,6 +19,30 @@ notes: |
   </a>
 </p>
 
+### Overridden Buttons
+```jsx live
+<>
+  <Button
+    marginRight={40}
+    color="darkred"
+    bg="pink"
+    borderWidth={1}
+    borderColor="darkred"
+  >
+    Brand
+  </Button>
+  <Button
+    padding={0}
+    color="white"
+    bg="darkred"
+    borderWidth={1}
+    borderColor="red"
+  >
+    Brand
+  </Button>
+</>
+```
+
 ### Core Buttons
 ```jsx live
 <>
