@@ -2,8 +2,16 @@
 
 exports[`AvatarButton renders in all sizes 1`] = `
 Array [
-  <button
-    className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-sm btn btn-tertiary btn-sm"
+  .emotion-0 {
+  border: 2px solid palevioletred;
+}
+
+.emotion-0:hover {
+  border-color: darkred;
+}
+
+<button
+    className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-sm emotion-0 btn btn-tertiary btn-sm"
     disabled={false}
     type="button"
   >
@@ -18,8 +26,16 @@ Array [
     </span>
     Casey
   </button>,
-  <button
-    className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md btn btn-tertiary btn-md"
+  .emotion-0 {
+  border: 2px solid palevioletred;
+}
+
+.emotion-0:hover {
+  border-color: darkred;
+}
+
+<button
+    className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md emotion-0 btn btn-tertiary btn-md"
     disabled={false}
     type="button"
   >
@@ -34,8 +50,16 @@ Array [
     </span>
     Casey
   </button>,
-  <button
-    className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-lg btn btn-tertiary btn-lg"
+  .emotion-0 {
+  border: 2px solid palevioletred;
+}
+
+.emotion-0:hover {
+  border-color: darkred;
+}
+
+<button
+    className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-lg emotion-0 btn btn-tertiary btn-lg"
     disabled={false}
     type="button"
   >
@@ -50,8 +74,16 @@ Array [
     </span>
     Casey
   </button>,
-  <button
-    className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-sm pgn__avatar-button-hide-label btn btn-tertiary btn-sm"
+  .emotion-0 {
+  border: 2px solid palevioletred;
+}
+
+.emotion-0:hover {
+  border-color: darkred;
+}
+
+<button
+    className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-sm pgn__avatar-button-hide-label emotion-0 btn btn-tertiary btn-sm"
     disabled={false}
     type="button"
   >
@@ -65,8 +97,16 @@ Array [
       />
     </span>
   </button>,
-  <button
-    className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md pgn__avatar-button-hide-label btn btn-tertiary btn-md"
+  .emotion-0 {
+  border: 2px solid palevioletred;
+}
+
+.emotion-0:hover {
+  border-color: darkred;
+}
+
+<button
+    className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md pgn__avatar-button-hide-label emotion-0 btn btn-tertiary btn-md"
     disabled={false}
     type="button"
   >
@@ -80,8 +120,16 @@ Array [
       />
     </span>
   </button>,
-  <button
-    className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-lg pgn__avatar-button-hide-label btn btn-tertiary btn-lg"
+  .emotion-0 {
+  border: 2px solid palevioletred;
+}
+
+.emotion-0:hover {
+  border-color: darkred;
+}
+
+<button
+    className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-lg pgn__avatar-button-hide-label emotion-0 btn btn-tertiary btn-lg"
     disabled={false}
     type="button"
   >

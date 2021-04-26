@@ -34,6 +34,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@popperjs/core": "^2.6.0",
+    "@styled-system/css": "^5.1.5",
     "airbnb-prop-types": "^2.12.0",
     "bootstrap": "4.6.0",
     "classnames": "^2.2.6",
@@ -69,6 +70,7 @@
     "@commitlint/config-angular": "^12.0.0",
     "@commitlint/prompt-cli": "^12.0.0",
     "@edx/eslint-config": "^1.1.6",
+    "@emotion/jest": "^11.3.0",
     "@emotion/react": "^11.1.5",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^24.5.0",
@@ -99,6 +101,7 @@
       "^.+\\.jsx?$": "babel-jest",
       "^icons/index.js$": "babel-jest"
     },
+    "snapshotSerializers": ["@emotion/jest/serializer"],
     "setupFiles": [
       "./src/setupTest.js"
     ],

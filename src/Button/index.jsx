@@ -1,19 +1,20 @@
 // this comment tells babel to convert jsx to calls to a function called jsx instead of React.createElement
 /** @jsx jsx */
 import React from 'react';
-import { css, jsx } from '@emotion/react';
+import { jsx } from '@emotion/react';
+import css from '@styled-system/css';
 import RBButton from 'react-bootstrap/Button';
 import ButtonDeprecated from './deprecated';
 
 const Button = React.forwardRef((props, ref) => (
   <RBButton
     ref={ref}
-    css={css`
-      border: 2px solid palevioletred;
-      &:hover {
-        border-color: darkred;
-      }
-    `}
+    css={css({
+      border: '2px solid palevioletred',
+      ':hover': {
+        borderColor: 'darkred',
+      },
+    })}
     {...props}
   >
     {props.children}
