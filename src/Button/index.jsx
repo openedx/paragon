@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import RBButton from 'react-bootstrap/Button';
-import { typography, space, color, border } from 'styled-system';
+import {
+  typography, space, color, border,
+} from 'styled-system';
 import forwardAsProp from '../utils/forwardAsProp';
 import ButtonDeprecated from './deprecated';
 
