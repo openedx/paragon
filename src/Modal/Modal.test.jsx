@@ -103,14 +103,14 @@ describe('<Modal />', () => {
     });
 
     it('renders custom close button element', () => {
-      const closeElem = <span>{closeText}</span>;
+      const closeElem = <span className="is-close-text">{closeText}</span>;
       wrapper = mount(<Modal {...defaultProps} closeText={closeElem} />);
       const modalFooter = wrapper.find('.modal-footer');
       const closeButton = modalFooter.find('button');
 
       expect(closeButton).toHaveLength(1);
       expect(closeButton.children()).toHaveLength(1);
-      expect(closeButton.find('span')).toHaveLength(1);
+      expect(closeButton.find('.is-close-text')).toHaveLength(1);
       expect(closeButton.text()).toEqual(closeText);
     });
 
