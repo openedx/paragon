@@ -423,3 +423,21 @@ input[type="button"] {
     width: 100%;
   }
 }
+
+//
+// Button Icon Sizes
+//
+
+.btn .btn-icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .btn-icon-before {
+    margin-right: 0.5rem;
+  }
+
+  .btn-icon-after {
+    margin-left: 0.5rem;
+  }
+}
