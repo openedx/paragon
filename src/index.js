@@ -66,6 +66,14 @@ export { default as ModalLayer } from './Modal/ModalLayer';
 export { default as ModalDialog } from './Modal/ModalDialog';
 export { default as ModalPopup } from './Modal/ModalPopup';
 export { default as ModalContext } from './Modal/ModalContext';
+export {
+  default as ParagonProvider,
+  ParagonContext,
+  useParagonContext,
+  ThemeProvider,
+  useTheme,
+  withTheme,
+} from './ParagonProvider';
 export { default as Portal } from './Modal/Portal';
 export { default as PopperElement } from './Modal/PopperElement';
 
