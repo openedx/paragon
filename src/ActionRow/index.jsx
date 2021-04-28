@@ -1,23 +1,50 @@
-import React from 'react';
+/** @jsx jsx */
+import { css, jsx } from '@emotion/react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+
+const horizontalCSS = css`
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: flex-end;
+  & > * {
+    margin: 0;
+  }
+  & > * + * {
+    margin-left: .5rem;
+  }
+`;
+
+const stackedCSS = css`
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  flex-direction: column-reverse;
+  justify-content: center;
+  & > * {
+    margin: 0;
+  }
+  & > * + * {
+    margin-bottom: .5rem;
+  }
+`;
 
 const ActionRow = ({
-  as,
+  as: Component,
   isStacked,
   children,
   ...props
-}) => React.createElement(
-  as,
-  {
-    ...props,
-    className: classNames(props.className, {
-      'pgn__action-row': !isStacked,
-      'pgn__action-row-stacked': isStacked,
-    }),
-  },
-  children,
-);
+}) => {
+  console.log(props)
+  return (
+  <Component
+    css={isStacked ? stackedCSS : horizontalCSS}
+    {...props}
+  >
+    {children}
+  </Component>
+)
+  };
 
 ActionRow.propTypes = {
   as: PropTypes.elementType,
@@ -33,7 +60,7 @@ ActionRow.defaultProps = {
   isStacked: false,
 };
 
-const ActionRowSpacer = () => <span className="pgn__action-row-spacer" />;
+const ActionRowSpacer = () => <span css={css`flex-grow: 1;`} />;
 
 ActionRow.Spacer = ActionRowSpacer;
 

@@ -26,6 +26,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         // in ./node_modules
         react: path.resolve(__dirname, 'node_modules/react/'),
         'react-dom': path.resolve(__dirname, 'node_modules/react-dom/'),
+        '@emotion/react': path.resolve(__dirname, 'node_modules/@emotion/react/'),
       },
     },
   })

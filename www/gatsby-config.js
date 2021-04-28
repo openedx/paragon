@@ -7,6 +7,7 @@ module.exports = {
   // Match the location of the site on github pages if no path prefix is specified
   pathPrefix: 'PATH_PREFIX' in process.env ? process.env.PATH_PREFIX : '/paragon',
   plugins: [
+    `gatsby-plugin-emotion`,
     "gatsby-plugin-sass",
     `gatsby-plugin-react-helmet`,
     {
