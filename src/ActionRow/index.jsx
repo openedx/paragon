@@ -34,17 +34,14 @@ const ActionRow = ({
   isStacked,
   children,
   ...props
-}) => {
-  console.log(props)
-  return (
+}) => (
   <Component
     css={isStacked ? stackedCSS : horizontalCSS}
     {...props}
   >
     {children}
   </Component>
-)
-  };
+);
 
 ActionRow.propTypes = {
   as: PropTypes.elementType,
