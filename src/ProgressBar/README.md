@@ -20,5 +20,27 @@ notes: |
 ### Basic Usage
 
 ```jsx live
-<ProgressBar now={60} label="60%" />
+<>
+  <ProgressBar now={60} label="60%" variant="primary" />
+  <br />
+  <ProgressBar now={60} label="60%" variant="success" />
+  <br />
+  <ProgressBar now={60} label="60%" variant="brand" />
+  <br />
+  <ProgressBar now={60} label="60%" variant="warning" />
+</>
+```
+
+### Basic Usage (Inverse Pallete)
+
+```jsx live
+<div className="bg-dark-700 p-4">
+  <ProgressBar now={60} label="60%" />
+  <br />
+  <ProgressBar now={60} label="60%" variant="success" />
+  <br />
+  <ProgressBar now={60} label="60%" variant="brand" />
+  <br />
+  <ProgressBar now={60} label="60%" variant="warning" />
+</div>
 ```
