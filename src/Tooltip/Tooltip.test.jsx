@@ -6,7 +6,7 @@ import Tooltip from './index';
 describe('<Tootltip />', () => {
   describe('correct rendering', () => {
     it('renders with correct class when variant is added', () => {
-      const wrapper = mount(<Tooltip variant="tooltip-light" />);
+      const wrapper = mount(<Tooltip variant="light" />);
       const tooltip = wrapper.find('.tooltip');
       expect(tooltip.hasClass('tooltip-light')).toEqual(true);
     });

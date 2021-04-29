@@ -39,7 +39,7 @@ notes: |
       key={placement}
       placement={placement}
       overlay={
-        <Tooltip variant="tooltip-light" id={`tooltip-${placement}`}>
+        <Tooltip variant="light" id={`tooltip-${placement}`}>
           Tooltip on <strong>{placement}</strong>.
         </Tooltip>
       }

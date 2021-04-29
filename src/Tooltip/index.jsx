@@ -10,7 +10,7 @@ const WrapperTooltip = React.forwardRef(({
 }, ref) => (
   <Tooltip
     {...props}
-    className={classNames(variant, props.className)}
+    className={classNames({ 'tooltip-light': variant === 'light' }, props.className)}
     ref={ref}
   >
     {children}
