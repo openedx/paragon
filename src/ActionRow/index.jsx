@@ -2,32 +2,33 @@
 import { css, jsx } from '@emotion/react';
 import PropTypes from 'prop-types';
 
-const horizontalCSS = css`
-  display: flex;
-  flex-grow: 1;
-  align-items: center;
-  justify-content: flex-end;
-  & > * {
-    margin: 0;
-  }
-  & > * + * {
-    margin-left: .5rem;
-  }
-`;
-
-const stackedCSS = css`
-  display: flex;
-  flex-grow: 1;
-  align-items: center;
-  flex-direction: column-reverse;
-  justify-content: center;
-  & > * {
-    margin: 0;
-  }
-  & > * + * {
-    margin-bottom: .5rem;
-  }
-`;
+const styles = {
+  horizontal: css`
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: flex-end;
+    & > * {
+      margin: 0;
+    }
+    & > * + * {
+      margin-left: .5rem;
+    }
+  `,
+  stacked: css`
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    flex-direction: column-reverse;
+    justify-content: center;
+    & > * {
+      margin: 0;
+    }
+    & > * + * {
+      margin-bottom: .5rem;
+    }
+  `,
+};
 
 const ActionRow = ({
   as: Component,
@@ -36,7 +37,7 @@ const ActionRow = ({
   ...props
 }) => (
   <Component
-    css={isStacked ? stackedCSS : horizontalCSS}
+    css={isStacked ? styles.stacked : styles.horizontal}
     {...props}
   >
     {children}
