@@ -11,32 +11,32 @@ const IconButton = ({
   src,
   iconClassNames,
   onClick,
+  size,
   variant,
   iconAs: IconComponent,
   ...attrs
 }) => {
-  const invertedHoverClass = invertColors ? `iconbutton-hover__${variant}--invert` : '';
-  const invertedIconClass = invertColors ? `iconbutton__${variant}--invert` : '';
-
+  const invert = invertColors ? 'inverse-' : '';
   return (
     <button
       {...attrs}
       aria-label={alt}
       className={classNames(
-        'iconbutton-hover',
-        invertedHoverClass,
-        `iconbutton-hover__${variant}`,
+        'btn-icon',
+        `btn-icon-${invert}${variant}`,
+        `btn-icon-${size}`,
         attrs.className,
       )}
       onClick={onClick}
       type="button"
     >
-      <IconComponent
-        className={`iconbutton iconbutton__${variant} ${invertedIconClass} ${iconClassNames}`}
-        icon={icon}
-        alt={alt}
-        src={src}
-      />
+      <span className="btn-icon__icon-container">
+        <IconComponent
+          className={`btn-icon__icon ${iconClassNames}`}
+          icon={icon}
+          src={src}
+        />
+      </span>
     </button>
   );
 };
@@ -48,6 +48,7 @@ IconButton.defaultProps = {
   iconClassNames: '',
   invertColors: false,
   variant: 'primary',
+  size: 'md',
 };
 
 IconButton.propTypes = {
@@ -75,6 +76,7 @@ IconButton.propTypes = {
   onClick: PropTypes.func.isRequired,
   /** Type of button (uses Bootstrap options) */
   variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'light', 'dark']),
+  size: PropTypes.oneOf(['sm', 'md', 'inline']),
 };
 
 export default IconButton;

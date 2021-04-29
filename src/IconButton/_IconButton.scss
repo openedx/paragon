@@ -8,54 +8,83 @@ $icon-button-colors: (
     "light": $light,
     "dark": $dark
 ) !default;
-$icon-button-hover-size: 2rem !default;
-// keep the icon focus circle inside it's parent element
-$icon-button-margin: .75rem !default;
-$icon-button-refwrapper-size: $icon-button-hover-size + $icon-button-margin !default;
+$btn-icon-diameter-md: 2.75rem !default;
+$btn-icon-diameter-sm: 2.25rem !default;
+$btn-icon-diameter-inline: calc(#{$line-height-base}em + 0.1em) !default;
 
-$icon-color-invert: white !default;
-$icon-button-bg: transparent !default;
-$icon-button-invert-bg: transparent !default;
+$btn-icon-bg: transparent !default;
+$btn-icon-accent-color: white !default;
 
-.iconbutton-hover {
-    width: $icon-button-hover-size;
-    height: $icon-button-hover-size;
-    border-radius: $icon-button-hover-size;
-    display: flex;
-    appearance: none;
+@mixin btn-icon-size($icon-size) {
+    width: $icon-size;
+    height: $icon-size;
+}
+
+@mixin btn-icon-variant($icon-color, $accent-color) {
+    background-color: $btn-icon-bg;
+    color: $icon-color;
+
+    &.hover,
+    &:hover {
+        background-color: $icon-color;
+        color: $accent-color;
+    }
+
+    &.focus,
+    &:focus {
+        background-color: $btn-icon-bg;
+        color: $icon-color;
+        box-shadow: inset 0 0 0 $btn-focus-width $icon-color;
+    }
+}
+
+.btn-icon {
+    @include btn-icon-size($btn-icon-diameter-md);
+    border-radius: 50%;
     padding: 0;
-    flex-shrink: 0;
+    display: inline-flex;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
     border: none;
 
-    cursor: pointer;
+    &.btn-icon-sm {
+        @include btn-icon-size($btn-icon-diameter-sm);
+    }
 
-    &:active {
-        transform: scale(0.9);
+    &.btn-icon-inline {
+        @include btn-icon-size($btn-icon-diameter-inline);
+        padding: 1em;
+        vertical-align: middle;
+        .btn-icon__icon-container {
+            height: 100%;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .btn-icon__icon-container {
+        display: inline-flex;
+        align-self: center;
+    }
+
+    .btn-icon__icon {
+        height: 1em;
+        width: 1em;
+    }
+
+    &.disabled,
+    &:disabled {
+        opacity: $btn-disabled-opacity;
+        pointer-events: none;
     }
 
     @each $name, $color in $icon-button-colors {
-        &__#{$name} {
-            @include button-focus($color);
-            background-color: $icon-button-bg;
-            color: $color;
+        &.btn-icon-#{$name} {
+            @include btn-icon-variant($color, $btn-icon-accent-color);
         }
-        &__#{$name}:hover {
-            background-color: $color;
-            color: $icon-color-invert;
-        }
-        &__#{$name}--invert {
-            @include button-focus($icon-color-invert);
-            background-color: $icon-button-invert-bg;
-            color: $icon-color-invert;
 
-            &:hover {
-                background-color: $icon-color-invert;
-                color: $color;
-            }
+        &.btn-icon-inverse-#{$name} {
+            @include btn-icon-variant($btn-icon-accent-color, $color);
         }
     }
 }
