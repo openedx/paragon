@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import classNames from 'classnames';
 
 import Hyperlink from './index';
 
@@ -41,12 +40,12 @@ describe('correct rendering', () => {
     expect(wrapper.find('span')).toHaveLength(2);
 
     const icon = wrapper.find('span').at(1);
+    const iconImage = icon.find('svg').at(0);
 
-    expect(icon.prop('aria-hidden')).toEqual(false);
-    expect(icon.prop('className'))
-      .toEqual(classNames('fa', 'fa-external-link'));
-    expect(icon.prop('aria-label')).toEqual(externalLinkAlternativeText);
-    expect(icon.prop('title')).toEqual(externalLinkTitle);
+    expect(icon.prop('className')).toEqual('pgn__icon');
+    expect(iconImage.prop('role')).toEqual('img');
+    expect(iconImage.prop('width')).toEqual(24);
+    expect(iconImage.prop('height')).toEqual(24);
   });
 });
 

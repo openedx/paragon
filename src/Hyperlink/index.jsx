@@ -1,7 +1,8 @@
 import React from 'react';
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import isRequiredIf from 'react-proptype-conditional-require';
+import Icon from '../Icon';
+import { Launch } from '../../icons';
 
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
@@ -23,14 +24,9 @@ function Hyperlink(props) {
     other.rel = other.rel ? `noopener ${other.rel}` : 'noopener';
 
     externalLinkIcon = (
-      // Space between content and icon
-      <span>{' '}
-        <span
-          className={classNames('fa', 'fa-external-link')}
-          aria-hidden={false}
-          aria-label={externalLinkAlternativeText}
-          title={externalLinkTitle}
-        />
+    // Space between content and icon
+      <span className="d-inline-block">{' '}
+        <Icon src={Launch} />
       </span>
     );
   }
