@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import IconButton from './index';
 
@@ -13,21 +12,19 @@ describe('<IconButton />', () => {
     icon,
     variant,
   };
-  it('passes the icon and alt text to the icon', () => {
+  it('passes the alt text to the button aria-label', () => {
     const wrapper = shallow(<IconButton {...props} onClick={() => {}} />);
-    const faIcon = wrapper.find(FontAwesomeIcon).at(0);
-    expect(faIcon.prop('icon')).toEqual(icon);
-    expect(faIcon.prop('alt')).toEqual(alt);
+    expect(wrapper.prop('aria-label')).toEqual(alt);
   });
-  it('should not render with --invert classnames if invertColors is false', () => {
+  it('should not render with inverse- class names if invertColors is false', () => {
     const wrapper = shallow(<IconButton {...props} onClick={() => {}} />);
-    expect(wrapper.find(`.iconbutton-hover__${variant}--invert`)).toHaveLength(0);
-    expect(wrapper.find(`.iconbutton__${variant}--invert`)).toHaveLength(0);
+    expect(wrapper.find(`.btn-icon-inverse-${variant}`)).toHaveLength(0);
+    expect(wrapper.find(`.btn-icon-inverse-${variant}`)).toHaveLength(0);
   });
-  it('should render with --invert classnames if invertColors is true', () => {
+  it('should render with inverse- class names if invertColors is true', () => {
     const wrapper = shallow(<IconButton {...props} onClick={() => {}} invertColors />);
-    expect(wrapper.find(`.iconbutton-hover__${variant}--invert`)).toHaveLength(1);
-    expect(wrapper.find(`.iconbutton__${variant}--invert`)).toHaveLength(1);
+    expect(wrapper.find(`.btn-icon-inverse-${variant}`)).toHaveLength(1);
+    expect(wrapper.find(`.btn-icon-inverse-${variant}`)).toHaveLength(1);
   });
   it('should add the icon class names if it receives them', () => {
     const wrapper = shallow(<IconButton {...props} onClick={() => {}} iconClassNames="foo bar" />);
