@@ -1,4 +1,6 @@
-const React = require("react");
-const { ParagonProvider } = require("~paragon-react");
+import React from 'react'
+import { ParagonProvider } from '~paragon-react';
 
-exports.wrapRootElement = ({ element }) => <ParagonProvider>{element}</ParagonProvider>;
+const wrapRootElement = ({ element }) => <ParagonProvider>{element}</ParagonProvider>;
+
+export { wrapRootElement };

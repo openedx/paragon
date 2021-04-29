@@ -72,7 +72,7 @@ PageTemplate.propTypes = {
       }),
       body: PropTypes.any, // eslint-disable-line react/forbid-prop-types
     }),
-    components: PropTypes.objectOf(PropTypes.object), // eslint-disable-line react/forbid-prop-types
+    components: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   }).isRequired,
 };
 

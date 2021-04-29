@@ -1,18 +1,24 @@
 import { ThemeProvider, useTheme, withTheme } from '@emotion/react';
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
+import { theme as defaultTheme } from '..';
 
 const ParagonContext = React.createContext();
 
-const useParagonContext = useContext(ParagonContext);
+const useParagonContext = () => useContext(ParagonContext);
 
-const ParagonProvider = ({ children, theme, locale }) => (
-  <ParagonContext.Provider value={{ locale }}>
-    <ThemeProvider theme={theme}>
-      {children}
-    </ThemeProvider>
-  </ParagonContext.Provider>
-);
+const ParagonProvider = ({
+  children, theme, locale, ...props
+}) => {
+  const themeWithDefaults = useMemo(() => ({ ...defaultTheme, ...theme }), [theme]);
+  return (
+    <ParagonContext.Provider value={{ locale, ...props }}>
+      <ThemeProvider theme={themeWithDefaults}>
+        {children}
+      </ThemeProvider>
+    </ParagonContext.Provider>
+  );
+};
 
 ParagonProvider.propTypes = {
   locale: PropTypes.string,
