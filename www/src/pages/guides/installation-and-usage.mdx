@@ -12,10 +12,32 @@ Install paragon and its peer depedencies:
 npm i --save @edx/paragon @emotion/react
 ```
 
-In your React project:
+In your React project, wrap the root of the app with `ParagonProvider`. ParagonProvider provides locale and theme information to components. If no theme or locale is set Paragon will use a default theme and "en-us" as the locale. The theme object must conform to the [system-ui theme specification](https://system-ui.com/theme).
 
 ```jsx
-import { ComponentName } from '@edx/paragon';
+// index.js
+
+ReactDOM.render(
+  <ParagonProvider theme={theme} locale="en-us">
+    ...the app
+  </ParagonProvider>
+);
+```
+
+Import components from `@edx/paragon`.
+
+```jsx
+// page.js
+
+import { Button } from '@edx/paragon';
+
+// ...
+
+render() {
+  return (
+    <Button variant="primary">Click me!</Button>
+  );
+}
 ```
 
 #### SCSS Foundation
