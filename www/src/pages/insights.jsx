@@ -88,7 +88,7 @@ export default function InsightsPage() {
         <SEO title="Usage Insights" />
         <header className="mb-5">
           <h1>Usage Insights</h1>
-          <p>Last updated: 3-1-2021</p>
+          <p>Last updated: 4-30-2021</p>
         </header>
         <Tabs defaultActiveKey="projects" id="uncontrolled-tab-example">
           <Tab eventKey="projects" title="Projects">
