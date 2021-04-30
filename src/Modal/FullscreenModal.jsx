@@ -14,7 +14,7 @@ const FullscreenModal = ({
       <ModalDialog.Title>{props.title}</ModalDialog.Title>
     </ModalDialog.Header>
     {beforeBodyNode}
-    <ModalDialog.Body>{children}</ModalDialog.Body>
+    <ModalDialog.Body className={props.modalBodyClassName}>{children}</ModalDialog.Body>
     {afterBodyNode}
     {footerNode && <ModalDialog.Footer>{footerNode}</ModalDialog.Footer>}
   </ModalDialog>
@@ -34,6 +34,7 @@ FullscreenModal.propTypes = {
   footerNode: PropTypes.node,
   beforeBodyNode: PropTypes.node,
   afterBodyNode: PropTypes.node,
+  modalBodyClassName: PropTypes.string,
 };
 
 FullscreenModal.defaultProps = {
@@ -47,6 +48,7 @@ FullscreenModal.defaultProps = {
   footerNode: null,
   beforeBodyNode: null,
   afterBodyNode: null,
+  modalBodyClassName: '',
 };
 
 export default FullscreenModal;
