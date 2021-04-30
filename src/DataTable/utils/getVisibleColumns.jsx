@@ -1,7 +1,7 @@
 import React from 'react';
 import IndeterminateCheckbox from '../IndeterminateCheckBox';
 
-const sortColumn = {
+export const selectColumn = {
   id: 'selection',
   // The header can use the table's getToggleAllRowsSelectedProps method
   // to render a checkbox
@@ -25,10 +25,10 @@ const sortColumn = {
   disableSortBy: true,
 };
 
-const getVisibleColumns = (isSelectable, visibleColumns, additionalColumns = []) => {
+const getVisibleColumns = (isSelectable, visibleColumns, additionalColumns = [], manualSelectColumn = selectColumn) => {
   let columns = [];
   if (isSelectable) {
-    columns.push(sortColumn);
+    columns.push(manualSelectColumn);
   }
   columns = columns.concat(visibleColumns);
   if (additionalColumns.length > 0) {
