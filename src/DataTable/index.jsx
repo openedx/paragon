@@ -31,6 +31,7 @@ function DataTable({
   bulkActions, tableActions, numBreakoutFilters,
   initialTableOptions,
   EmptyTableComponent,
+  manualSelectColumn,
   children,
   ...props
 }) {
@@ -60,7 +61,9 @@ function DataTable({
   });
   // adds selection column and action columns as necessary
   tableArgs.push(hooks => {
-    hooks.visibleColumns.push(visibleColumns => getVisibleColumns(isSelectable, visibleColumns, additionalColumns));
+    hooks.visibleColumns.push(
+      visibleColumns => getVisibleColumns(isSelectable, visibleColumns, additionalColumns, manualSelectColumn),
+    );
   });
 
   // Use the state and functions returned from useTable to build your UI
@@ -116,6 +119,7 @@ DataTable.defaultProps = {
   bulkActions: [],
   tableActions: [],
   numBreakoutFilters: 1,
+  manualSelectColumn: undefined,
 };
 
 DataTable.propTypes = {
@@ -130,6 +134,13 @@ DataTable.propTypes = {
   data: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   /** table rows can be selected */
   isSelectable: PropTypes.bool,
+  /** Alternate column for selecting rows. See react table useSort docs for more information */
+  manualSelectColumn: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    Header: PropTypes.func.isRequired,
+    Cell: PropTypes.func.isRequired,
+    disableSortBy: PropTypes.bool.isRequired,
+  }),
   /** Table columns can be sorted */
   isSortable: PropTypes.bool,
   /** Indicates that sorting will be done via backend API. A fetchData function must be provided */
