@@ -1,6 +1,8 @@
-import React from 'react';
+/** @jsx jsx */
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { jsx, useTheme } from '@emotion/react';
+import { formControlSetStyle } from './style';
 
 const FormControlSet = ({
   as,
@@ -8,16 +10,14 @@ const FormControlSet = ({
   isInline,
   children,
   ...props
-}) => React.createElement(as, {
-  className: classNames(
-    className,
-    {
-      'pgn__form-control-set': !isInline,
-      'pgn__form-control-set-inline': isInline,
-    },
-  ),
-  ...props,
-}, children);
+}) => {
+  const style = formControlSetStyle(useTheme());
+  return jsx(as, {
+    className: classNames(className, 'pgn__form-control-set'),
+    css: isInline ? style.inline : style.base,
+    ...props,
+  }, children);
+};
 
 FormControlSet.propTypes = {
   as: PropTypes.elementType,

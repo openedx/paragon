@@ -553,6 +553,26 @@ const listGroup = {
     },
   },
 };
+const formFeedback = {
+  validColor: themeColors.success,
+  invalidColor: themeColors.danger,
+};
+/* eslint-disable-next-line quotes */
+formFeedback.iconValid = `url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'><path fill='#{${formFeedback.validColor}}' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/></svg>")`;
+/* eslint-disable-next-line quotes */
+formFeedback.iconInvalid = `url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='#{${formFeedback.invalidColor}}' viewBox='0 0 12 12'><circle cx='6' cy='6' r='4.5'/><path stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/><circle cx='6' cy='8.2' r='.6' fill='#{$form-feedback-icon-invalid-color}' stroke='none'/></svg>")`;
+formFeedback.iconValidColor = formFeedback.validColor;
+formFeedback.iconInvalidColor = formFeedback.invalidColor;
+const formValidationStates = {
+  valid: {
+    color: formFeedback.validColor,
+    icon: formFeedback.iconValid,
+  },
+  invalid: {
+    color: formFeedback.invalidColor,
+    icon: formFeedback.iconInvalid,
+  },
+};
 
 const theme = {
   colors,
@@ -566,6 +586,8 @@ const theme = {
   body,
   grid,
   component,
+  formFeedback,
+  formValidationStates,
   inputBtn,
   link,
   listGroup,

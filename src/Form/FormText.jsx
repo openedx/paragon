@@ -1,10 +1,13 @@
-import React from 'react';
+/** @jsx jsx */
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { jsx, useTheme } from '@emotion/react';
+
 import { Icon } from '..';
 import {
   Check, Close, Cancel, CheckCircle, RadioButtonUnchecked, WarningFilled,
 } from '../../icons';
+import { formTextStyle } from './style';
 
 import { FORM_TEXT_TYPES } from './constants';
 
@@ -54,17 +57,16 @@ FormTextIcon.defaultProps = {
 const FormText = ({
   children, type, icon, muted, hasIcon, ...props
 }) => {
-  const className = classNames(
-    props.className,
-    'pgn__form-text',
-    `pgn__form-text-${type}`,
-    {
-      'text-muted': muted,
-    },
-  );
+  const className = classNames(props.className);
+  const style = formTextStyle(useTheme());
+  const css = {
+    ...style.base,
+    ...style.type[type],
+    ...(muted ? style.muted : {}),
+  };
 
   return (
-    <div {...props} className={className}>
+    <div {...props} className={className} css={css}>
       {hasIcon && <FormTextIcon customIcon={icon} type={type} />}
       {children}
     </div>
