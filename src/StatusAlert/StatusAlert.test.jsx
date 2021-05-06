@@ -1,21 +1,32 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
-import StatusAlert from './index';
-import { Button } from '../index';
+import { StatusAlert } from '.';
+import { Button } from '..';
 
-const statusAlertOpen = (isOpen, wrapper) => {
-  expect(wrapper.find('.alert').hasClass('show')).toEqual(isOpen);
-  expect(wrapper.find('StatusAlert').state('open')).toEqual(isOpen);
-};
 const dialog = 'Status Alert dialog';
+const theme = {
+  component: {
+    border: {
+      radius: 12,
+    },
+  },
+  text: {
+    fontWeight: { normal: 21 },
+    fontSize: { base: '12px' },
+  },
+  colors: { primary500: '#abc' },
+  getThemeColor: jest.fn(),
+};
 const defaultProps = {
   dialog,
   onClose: () => {},
   open: true,
+  theme,
 };
 
 let wrapper;
+let event;
 
 describe('<StatusAlert />', () => {
   describe('correct rendering', () => {
@@ -24,7 +35,7 @@ describe('<StatusAlert />', () => {
       const statusAlertDialog = wrapper.find('.alert-dialog');
 
       expect(statusAlertDialog.text()).toEqual(dialog);
-      expect(wrapper.find('button')).toHaveLength(1);
+      expect(wrapper.find('withDeprecatedProps(Button)')).toHaveLength(1);
     });
 
     it('renders non-dismissible view', () => {
@@ -32,57 +43,70 @@ describe('<StatusAlert />', () => {
       const statusAlertDialog = wrapper.find('.alert-dialog');
 
       expect(statusAlertDialog.text()).toEqual(dialog);
-      expect(wrapper.find('button')).toHaveLength(0);
+      expect(wrapper.find('withDeprecatedProps(Button)')).toHaveLength(0);
     });
 
     it('renders custom aria-label view', () => {
       const customLabel = 'Dismiss this alert post-haste!';
       wrapper = mount(<StatusAlert {...defaultProps} closeButtonAriaLabel={customLabel} />);
-      const button = wrapper.find('button').at(0);
-
+      const button = wrapper.find('withDeprecatedProps(Button)').at(0);
       expect(button.prop('aria-label')).toEqual(customLabel);
     });
   });
 
+  const assertStatusAlertOpen = (isOpen) => {
+    expect(wrapper.find('.alert').hasClass('show')).toEqual(isOpen);
+  };
   describe('props received correctly', () => {
     it('component receives props', () => {
-      wrapper = mount(<StatusAlert dialog={dialog} onClose={() => {}} />);
-
-      statusAlertOpen(false, wrapper);
+      wrapper = shallow(
+        <StatusAlert theme={theme} dialog={dialog} onClose={() => {}} />,
+      );
+      assertStatusAlertOpen(false);
       wrapper.setProps({ open: true });
-      statusAlertOpen(true, wrapper);
+      assertStatusAlertOpen(true);
     });
 
     it('component receives props and ignores prop change', () => {
-      wrapper = mount(<StatusAlert {...defaultProps} />);
+      wrapper = shallow(<StatusAlert {...defaultProps} />);
 
-      statusAlertOpen(true, wrapper);
+      assertStatusAlertOpen(true);
       wrapper.setProps({ dialog: 'Changed alert dialog' });
-      statusAlertOpen(true, wrapper);
+      assertStatusAlertOpen(true);
     });
   });
 
   describe('close functions properly', () => {
     beforeEach(() => {
-      wrapper = mount(<StatusAlert {...defaultProps} />);
+      wrapper = shallow(<StatusAlert {...defaultProps} />);
+      event = { preventDefault: jest.fn() };
     });
 
     it('closes when x button pressed', () => {
-      statusAlertOpen(true, wrapper);
-      wrapper.find('button').at(0).simulate('click');
-      statusAlertOpen(false, wrapper);
+      assertStatusAlertOpen(true);
+      wrapper.find('withDeprecatedProps(Button)').at(0).simulate(
+        'click',
+        event,
+      );
+      assertStatusAlertOpen(false);
     });
 
     it('closes when Enter key pressed', () => {
-      statusAlertOpen(true, wrapper);
-      wrapper.find('button').at(0).simulate('keyDown', { key: 'Enter' });
-      statusAlertOpen(false, wrapper);
+      assertStatusAlertOpen(true);
+      wrapper.find('withDeprecatedProps(Button)').at(0).simulate(
+        'keyDown',
+        { ...event, key: 'Enter' },
+      );
+      assertStatusAlertOpen(false);
     });
 
     it('closes when Escape key pressed', () => {
-      statusAlertOpen(true, wrapper);
-      wrapper.find('button').at(0).simulate('keyDown', { key: 'Escape' });
-      statusAlertOpen(false, wrapper);
+      assertStatusAlertOpen(true);
+      wrapper.find('withDeprecatedProps(Button)').at(0).simulate(
+        'keyDown',
+        { ...event, key: 'Escape' },
+      );
+      assertStatusAlertOpen(false);
     });
 
     it('calls callback function on close', () => {
@@ -93,41 +117,41 @@ describe('<StatusAlert />', () => {
       expect(spy).toHaveBeenCalledTimes(0);
 
       // press X button
-      wrapper.find('button').at(0).simulate('click');
+      wrapper.find('withDeprecatedProps(Button)').at(0).simulate('click');
       expect(spy).toHaveBeenCalledTimes(1);
     });
   });
 
   describe('invalid keystrokes do nothing', () => {
     beforeEach(() => {
-      wrapper = mount(<StatusAlert {...defaultProps} />);
+      wrapper = shallow(<StatusAlert {...defaultProps} />);
     });
 
     it('does nothing on invalid keystroke q', () => {
-      const buttons = wrapper.find('button');
+      const buttons = wrapper.find('withDeprecatedProps(Button)');
 
       expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
-      statusAlertOpen(true, wrapper);
+      assertStatusAlertOpen(true);
       buttons.at(0).simulate('keyDown', { key: 'q' });
       expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
-      statusAlertOpen(true, wrapper);
+      assertStatusAlertOpen(true);
     });
 
     it('does nothing on invalid keystroke + ctrl', () => {
-      const buttons = wrapper.find('button');
+      const buttons = wrapper.find('withDeprecatedProps(Button)');
 
       expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
-      statusAlertOpen(true, wrapper);
+      assertStatusAlertOpen(true);
       buttons.at(0).simulate('keyDown', { key: 'Tab', ctrlKey: true });
       expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
-      statusAlertOpen(true, wrapper);
+      assertStatusAlertOpen(true);
     });
   });
   describe('focus functions properly', () => {
     it('focus function changes focus', () => {
       wrapper = mount(<div><Button.Deprecated label="test" /><StatusAlert {...defaultProps} /></div>);
 
-      const buttons = wrapper.find('button');
+      const buttons = wrapper.find('withDeprecatedProps(Button)');
 
       // move focus away from default StatusAlert xButton
       buttons.at(0).simulate('click');

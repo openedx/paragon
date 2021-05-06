@@ -1,20 +1,22 @@
 /* eslint-disable max-len */
+/** @jsx jsx */
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import isRequiredIf from 'react-proptype-conditional-require';
+import { jsx, withTheme } from '@emotion/react';
 
-import { Button } from '..';
+import Button from '../Button';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
+import getStyle from './style';
 
-class StatusAlert extends React.Component {
+export class StatusAlert extends React.Component {
   constructor(props) {
     super(props);
 
     this.close = this.close.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.renderDialog = this.renderDialog.bind(this);
-
+    this.style = getStyle(this.props.theme);
     this.state = {
       open: props.open,
     };
@@ -56,16 +58,6 @@ class StatusAlert extends React.Component {
     }
   }
 
-  renderDialog() {
-    const { dialog } = this.props;
-
-    return (
-      <div className="alert-dialog">
-        { dialog }
-      </div>
-    );
-  }
-
   renderDismissible() {
     const { closeButtonAriaLabel, dismissible } = this.props;
 
@@ -84,25 +76,28 @@ class StatusAlert extends React.Component {
 
   render() {
     const { alertType, className, dismissible } = this.props;
-
     return (
       <div
+        css={{
+          ...this.style.alert,
+          ...this.style.fade,
+          ...(dismissible ? this.style.alertDismissible : {}),
+          ...(alertType !== undefined ? this.style.alertColor(alertType) : {}),
+        }}
+
         className={classNames([
-          className,
           'alert',
-          'fade',
+          className,
         ], {
-          'alert-dismissible': dismissible,
-        }, {
-          [`alert-${alertType}`]: alertType !== undefined,
-        }, {
           show: this.state.open,
         })}
         role="alert"
         hidden={!this.state.open}
       >
         {this.renderDismissible()}
-        {this.renderDialog()}
+        <div className="alert-dialog">
+          { this.props.dialog }
+        </div>
       </div>
     );
   }
@@ -122,6 +117,24 @@ StatusAlert.propTypes = {
   onClose: isRequiredIf(PropTypes.func, props => props.dismissible),
   /** specifies whether the status alert renders open or closed on the initial render. It defaults to false. */
   open: PropTypes.bool,
+
+  theme: PropTypes.shape({
+    component: PropTypes.shape({
+      borderRadius: PropTypes.number,
+    }),
+    text: PropTypes.shape({
+      fontWeight: PropTypes.shape({
+        normal: PropTypes.number,
+      }),
+      fontSize: PropTypes.shape({
+        base: PropTypes.string,
+      }),
+    }),
+    colors: PropTypes.shape({
+      primary500: PropTypes.string,
+    }),
+    getThemeColor: PropTypes.func,
+  }),
 };
 
 StatusAlert.defaultProps = {
@@ -132,11 +145,11 @@ StatusAlert.defaultProps = {
   open: false,
 };
 
-export default withDeprecatedProps(StatusAlert, 'StatusAlert', {
+export default withTheme(withDeprecatedProps(StatusAlert, 'StatusAlert', {
   className: {
     deprType: DEPR_TYPES.FORMAT,
     expect: value => typeof value === 'string',
     transform: value => (Array.isArray(value) ? value.join(' ') : value),
     message: 'It should be a string.',
   },
-});
+}));
