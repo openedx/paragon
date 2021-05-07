@@ -2,8 +2,10 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import SmartStatus from '../SmartStatus';
-import SelectionState from '../SelectionStatus';
 import DataTableContext from '../DataTableContext';
+import FilterStatus from '../FilterStatus';
+import RowStatus from '../RowStatus';
+import SelectionStatus from '../SelectionStatus';
 
 const filters = [{ id: 'name' }, { id: 'age' }];
 const filterNames = ['name', 'age'];
@@ -16,6 +18,9 @@ const instance = {
   setAllFilters: () => {},
   toggleAllRowsSelected: () => {},
   itemCount,
+  SelectionStatusComponent: SelectionStatus,
+  FilterStatusComponent: FilterStatus,
+  RowStatusComponent: RowStatus,
 };
 
 // eslint-disable-next-line react/prop-types
@@ -27,7 +32,7 @@ describe('<SmartStatus />', () => {
     const wrapper = mount(
       <SmartStatusWrapper value={{ ...instance, state: {}, selectedFlatRows: Array(5) }} />,
     );
-    expect(wrapper.find(SelectionState)).toHaveLength(1);
+    expect(wrapper.find(SelectionStatus)).toHaveLength(1);
   });
   it('Shows the filter state with selection turned off', () => {
     const wrapper = mount(<SmartStatusWrapper value={{ ...instance, state: { filters } }} />);
@@ -54,5 +59,31 @@ describe('<SmartStatus />', () => {
     );
     const status = wrapper.find(SmartStatus);
     expect(status.text()).toContain(`Showing ${instance.page.length} of ${itemCount}`);
+  });
+  it('shows an alternate selection status', () => {
+    const altStatusText = 'horses R cool';
+    const AltStatus = () => <div>{altStatusText}</div>;
+    const wrapper = mount(<SmartStatusWrapper
+      value={{
+        ...instance, SelectionStatusComponent: AltStatus, state: {}, selectedFlatRows: Array(5),
+      }}
+    />);
+    expect(wrapper.text()).toContain(altStatusText);
+  });
+  it('shows an alternate row status', () => {
+    const altStatusText = 'horses R cool';
+    const AltStatus = () => <div>{altStatusText}</div>;
+    const wrapper = mount(<SmartStatusWrapper
+      value={{ ...instance, RowStatusComponent: AltStatus }}
+    />);
+    expect(wrapper.text()).toContain(altStatusText);
+  });
+  it('shows an alternate filter status', () => {
+    const altStatusText = 'horses R cool';
+    const AltStatus = () => <div>{altStatusText}</div>;
+    const wrapper = mount(<SmartStatusWrapper
+      value={{ ...instance, FilterStatusComponent: AltStatus, state: { filters } }}
+    />);
+    expect(wrapper.text()).toContain(altStatusText);
   });
 });

@@ -1,14 +1,20 @@
 import React, { useContext } from 'react';
-import SelectionStatus from './SelectionStatus';
-import RowStatus from './RowStatus';
-import FilterStatus from './FilterStatus';
 import DataTableContext from './DataTableContext';
+import FilterStatusDefault from './FilterStatus';
+import RowStatusDefault from './RowStatus';
+import SelectionStatusDefault from './SelectionStatus';
 
 const SMART_STATUS_CLASS = 'pgn__smart-status';
 
 const SmartStatus = () => {
-  const { state, selectedFlatRows } = useContext(DataTableContext);
+  const {
+    state, selectedFlatRows, SelectionStatusComponent, FilterStatusComponent, RowStatusComponent,
+  } = useContext(DataTableContext);
   const numSelectedRows = selectedFlatRows?.length;
+  const SelectionStatus = SelectionStatusComponent || SelectionStatusDefault;
+  const FilterStatus = FilterStatusComponent || FilterStatusDefault;
+  const RowStatus = RowStatusComponent || RowStatusDefault;
+
   if (selectedFlatRows && numSelectedRows > 0) {
     return (
       <SelectionStatus
