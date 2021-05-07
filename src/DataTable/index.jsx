@@ -73,8 +73,7 @@ function DataTable({
     if (fetchData) {
       fetchData(instance.state);
     }
-    // Stringifying the data gives a quick way of checking deep equality
-  }, [fetchData, JSON.stringify(instance.state)]);
+  }, [fetchData, instance.state]);
 
   const enhancedInstance = {
     ...instance,
@@ -120,6 +119,9 @@ DataTable.defaultProps = {
   tableActions: [],
   numBreakoutFilters: 1,
   manualSelectColumn: undefined,
+  SelectionStatusComponent: SelectionStatus,
+  FilterStatusComponent: FilterStatus,
+  RowStatusComponent: RowStatus,
 };
 
 DataTable.propTypes = {
@@ -216,6 +218,12 @@ DataTable.propTypes = {
   numBreakoutFilters: PropTypes.oneOf([1, 2, 3, 4]),
   /** Component to be displayed when the table is empty */
   EmptyTableComponent: PropTypes.func,
+  /** Component to be displayed for row status, ie, 10 of 20 rows. Displayed by default in the TableControlBar */
+  RowStatusComponent: PropTypes.func,
+  /** Component to be displayed for selection status. Displayed when there are selected rows and no active filters */
+  SelectionStatusComponent: PropTypes.func,
+  /** Component to be displayed for filter status. Displayed when there are active filters. */
+  FilterStatusComponent: PropTypes.func,
   /** If children are not provided a table with control bar and footer will be rendered */
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };

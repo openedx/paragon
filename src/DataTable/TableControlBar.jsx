@@ -16,14 +16,14 @@ const TableControlBar = ({
     <div className={classNames('pgn__data-table-status-bar', className)}>
       {/* Using setFilter as a proxy for isFilterable */}
       {setFilter && (
-      <div className="pgn__data-table-actions">
-        <div className="pgn__data-table-actions-left">
-          <DropdownFilters />
+        <div className="pgn__data-table-actions">
+          <div className="pgn__data-table-actions-left">
+            <DropdownFilters />
+          </div>
+          <div className="pgn__data-table-actions-right">
+            <ActionDisplay />
+          </div>
         </div>
-        <div className="pgn__data-table-actions-right">
-          <ActionDisplay />
-        </div>
-      </div>
       )}
       <div className="pgn__data-table-status">
         <div className="pgn__data-table-status-left">
