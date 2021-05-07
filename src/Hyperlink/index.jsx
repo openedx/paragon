@@ -25,7 +25,7 @@ function Hyperlink(props) {
 
     externalLinkIcon = (
     // Space between content and icon
-      <span className="d-inline-block">{' '}
+      <span className="d-inline-block align-text-top">{' '}
         <Icon src={Launch} style={{ height: '1em', width: '1em' }} />
       </span>
     );
@@ -33,6 +33,7 @@ function Hyperlink(props) {
 
   return (
     <a
+      style={{ textDecoration: 'underline' }}
       href={destination}
       target={target}
       onClick={onClick}
