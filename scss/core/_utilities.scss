@@ -39,6 +39,6 @@ $color-levels: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 }
 
 .icon-spin {
-  animation: 0.75s linear infinite spinner-border-ltr;
-  -webkit-animation: 0.75s linear infinite spinner-border-ltr;
+  animation: spinner-border 0.75s linear infinite;
+  -webkit-animation: spinner-border 0.75s linear infinite;
 }

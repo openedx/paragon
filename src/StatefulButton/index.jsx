@@ -1,6 +1,6 @@
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { Button } from '..';
 import { Cancel, CheckCircleOutline, SpinnerSimple } from '../../icons';
 import Icon from '../Icon';
@@ -67,6 +67,7 @@ function StatefulButton({
 }) {
   const isDisabled = disabledStates.indexOf(state) !== -1;
   const icon = icons[state] !== undefined ? icons[state] : icons.default;
+  const label = labels[state] !== undefined ? labels[state] : labels.default
 
   return (
     <Button
@@ -94,10 +95,8 @@ function StatefulButton({
       {...attributes}
     >
       <span className="d-flex align-items-center justify-content-center">
-        {icon ? <span className="pgn__stateful-btn-icon">{icon}</span> : null}
-        <span>
-          {labels[state] !== undefined ? labels[state] : labels.default}
-        </span>
+        {icon && <span className="pgn__stateful-btn-icon">{icon}</span>}
+        <span>{label}</span>
       </span>
     </Button>
   );
