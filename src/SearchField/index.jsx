@@ -14,13 +14,14 @@ const SearchField = (props) => {
   const {
     label,
     placeholder,
+    inputProps,
     ...others
   } = props;
 
   return (
     <SearchField.Advanced {...others}>
       <SearchField.Label>{label}</SearchField.Label>
-      <SearchField.Input placeholder={placeholder} />
+      <SearchField.Input placeholder={placeholder} {...inputProps} />
       <SearchField.ClearButton />
       <SearchField.SubmitButton />
     </SearchField.Advanced>
@@ -74,6 +75,8 @@ SearchField.propTypes = {
   }),
   /** specifies the aria-label attribute on the form element. This is useful if you use the `SearchField` component more than once on a page. */
   formAriaLabel: PropTypes.string,
+  /** Props to be passed to the form input */
+  inputProps: PropTypes.shape({}),
 };
 
 SearchField.defaultProps = {
@@ -95,6 +98,7 @@ SearchField.defaultProps = {
   onChange: () => {},
   onFocus: () => {},
   onClear: () => {},
+  inputProps: {},
 };
 
 SearchField.Advanced = SearchFieldAdvanced;
