@@ -67,7 +67,7 @@ function StatefulButton({
 }) {
   const isDisabled = disabledStates.indexOf(state) !== -1;
   const icon = icons[state] !== undefined ? icons[state] : icons.default;
-  const label = labels[state] !== undefined ? labels[state] : labels.default
+  const label = labels[state] !== undefined ? labels[state] : labels.default;
 
   return (
     <Button

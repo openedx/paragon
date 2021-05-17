@@ -17,9 +17,10 @@ notes: ''
 () => {
   const props = {
     labels: {
-      default: 'Saved',
+      default: 'Save',
       pending: 'Saving',
       complete: 'Saved',
+      error: 'Error'
     },
     variant: 'primary',
     className: 'mr-2',
@@ -27,14 +28,15 @@ notes: ''
   return (
     <div>
       <StatefulButton {...props} />
-      <StatefulButton state="pending" {...props} />
+      <StatefulButton state="pending" {...props} classNames='icon-spin' />
       <StatefulButton state="complete" {...props} />
+      <StatefulButton state="error" {...props} />
     </div>
   );
 };
 ```
 
-### custom icons and disable during state
+### custom icons and disable states
 
 ```jsx live
 () => {
@@ -43,11 +45,13 @@ notes: ''
       default: 'Download',
       pending: 'Downloading',
       complete: 'Downloaded',
+      error: 'Retry'
     },
     icons: {
       default: <Icon className="fa fa-download" />,
       pending: <Icon className="fa fa-spinner fa-spin" />,
       complete: <Icon className="fa fa-check" />,
+      error: <Icon className="fa fa-retweet" />,
     },
     disabledStates: ['pending'],
     variant: 'primary',
@@ -58,12 +62,13 @@ notes: ''
       <StatefulButton state="default" {...downloadButtonProps} />
       <StatefulButton state="pending" {...downloadButtonProps} />
       <StatefulButton state="complete" {...downloadButtonProps} />
+      <StatefulButton state="error" {...downloadButtonProps} />
     </React.Fragment>
   );
 };
 ```
 
-### custom states
+### custom states with paragon icons
 
 ```jsx live
 () => {
@@ -73,8 +78,8 @@ notes: ''
       edited: 'Save Changes',
     },
     icons: {
-      unedited: <Icon className="fa fa-save" />,
-      edited: <Icon className="fa fa-save" />,
+      unedited: <Icon src={Add} />,
+      edited: <Icon src={Add} />,
     },
     disabledStates: ['unedited'],
     variant: 'primary',
