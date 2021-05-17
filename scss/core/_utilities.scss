@@ -37,3 +37,8 @@ $color-levels: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 .mw-xl {
   max-width: $max-width-xl !important;
 }
+
+.icon-spin {
+  animation: spinner-border 0.75s linear infinite;
+  -webkit-animation: spinner-border 0.75s linear infinite;
+}
