@@ -1,8 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Icon from '../Icon';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { Button } from '..';
+import { Cancel, CheckCircleOutline, SpinnerSimple } from '../../icons';
+import Icon from '../Icon';
 
 const propTypes = {
   className: PropTypes.string,
@@ -47,9 +48,9 @@ const defaultProps = {
   state: 'default',
   icons: {
     default: undefined,
-    pending: <Icon className="icon fa fa-spinner fa-spin" />,
-    complete: <Icon className="icon fa fa-check-circle" />,
-    error: <Icon className="icon fa fa-times-circle" />,
+    pending: <Icon src={SpinnerSimple} className={classNames('icon-spin')} />,
+    complete: <Icon src={CheckCircleOutline} />,
+    error: <Icon src={Cancel} />,
   },
   disabledStates: ['pending', 'complete'],
   onClick: undefined,
@@ -86,13 +87,17 @@ function StatefulButton({
           return;
         }
 
-        if (onClick) { onClick(e); }
+        if (onClick) {
+          onClick(e);
+        }
       }}
       {...attributes}
     >
       <span className="d-flex align-items-center justify-content-center">
         {icon ? <span className="pgn__stateful-btn-icon">{icon}</span> : null}
-        <span>{labels[state] !== undefined ? labels[state] : labels.default}</span>
+        <span>
+          {labels[state] !== undefined ? labels[state] : labels.default}
+        </span>
       </span>
     </Button>
   );
