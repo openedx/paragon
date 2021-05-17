@@ -18,6 +18,10 @@ const useIsVisible = (defaultIsVisible = true) => {
         };
       }
     } catch (e) {
+      const isReferenceError = e instanceof ReferenceError;
+      if (!isReferenceError) {
+        throw e;
+      }
       // Do nothing if an intersection observer can't be created.
     }
     return () => {};
