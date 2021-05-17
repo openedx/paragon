@@ -28,15 +28,15 @@ const WrappedButton = React.forwardRef(({
 WrappedButton.propTypes = {
   ...Button.propTypes,
   /** Docstring for the children prop */
-  children: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
   /** Docstring for className... A class name to append to the button */
   className: PropTypes.string,
   /** An icon component to render.
    * Example import of a Paragon icon component: `import { Check } from '@edx/paragon/dist/icon';` */
-  iconBefore: PropTypes.node,
+  iconBefore: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
   /** An icon component to render.
    * Example import of a Paragon icon component: `import { Check } from '@edx/paragon/dist/icon';` */
-  iconAfter: PropTypes.node,
+  iconAfter: PropTypes.instanceOf([PropTypes.func, PropTypes.node]),
 };
 
 WrappedButton.defaultProps = {
