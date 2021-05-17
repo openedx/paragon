@@ -77,6 +77,7 @@ export { default as Settings } from './Settings';
 export { default as Share } from './Share';
 export { default as Speed } from './Speed';
 export { default as Spinner } from './Spinner';
+export { default as SpinnerSimple } from './SpinnerSimple';
 export { default as Tag } from './Tag';
 export { default as Timelapse } from './Timelapse';
 export { default as Translate } from './Translate';
