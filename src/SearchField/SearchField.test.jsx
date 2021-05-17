@@ -47,7 +47,6 @@ describe('<SearchField /> with basic usage', () => {
       },
     });
   });
-
   it('should pass correct props to `SearchField.Label`', () => {
     const label = 'foobar';
     let props = { ...baseProps, label };
@@ -66,9 +65,10 @@ describe('<SearchField /> with basic usage', () => {
   });
 
   it('should pass correct props to `SearchField.Input`', () => {
-    const wrapper = mount(<SearchField {...baseProps} placeholder="foobar" />);
+    const wrapper = mount(<SearchField {...baseProps} placeholder="foobar" inputProps={{ 'data-testid': 'foo' }} />);
     expect(wrapper.find(SearchField.Input).prop('placeholder')).toEqual('foobar');
     expect(wrapper.find('input').prop('placeholder')).toEqual('foobar');
+    expect(wrapper.find('input').prop('data-testid')).toEqual('foo');
   });
 
   it('should use passed in initial `value` prop', () => {
