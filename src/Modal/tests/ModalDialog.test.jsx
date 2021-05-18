@@ -12,10 +12,6 @@ jest.mock('../ModalLayer', () => (props) => {
   );
 });
 
-// Mock this hook since it uses Intersection Observer which is unavailable
-// in the context of a test.
-jest.mock('../../hooks/useIsVisible', () => () => [false, () => {}]);
-
 describe('ModalDialog', () => {
   const onClose = jest.fn();
   const wrapper = mount((
