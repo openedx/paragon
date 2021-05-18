@@ -2,7 +2,7 @@ import React from 'react';
 import Menu from '../components/Menu';
 import Layout from '../components/PageLayout';
 import { Button } from '~paragon-react'; // eslint-disable-line
-
+import { Button as CButton, ButtonGroup } from "@chakra-ui/react"
 const HomePage = () => (
   <Layout showMinimizedTitle hideFooterComponentMenu>
     <div className="bg-dark text-white text-center py-5">
@@ -15,6 +15,8 @@ const HomePage = () => (
         learning applications.
       </p>
       <div className="mb-5">
+      <CButton colorScheme="primary">Chakra Button</CButton>
+      <CButton colorScheme="brand">Chakra Button</CButton>
         <Button
           variant="inverse-outline-primary mr-2"
           as="a"
