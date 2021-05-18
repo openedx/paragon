@@ -53,17 +53,26 @@ const Collapsible = React.forwardRef((props, ref) => {
 Collapsible.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  title: PropTypes.node.isRequired,
-  styling: PropTypes.oneOf(['basic', 'card', 'card-lg']),
+  defaultOpen: PropTypes.bool,
   iconWhenClosed: PropTypes.element,
   iconWhenOpen: PropTypes.element,
+  onClose: PropTypes.func,
+  onOpen: PropTypes.func,
+  onToggle: PropTypes.func,
+  open: PropTypes.bool,
+  styling: PropTypes.oneOf(['basic', 'card', 'card-lg']),
+  title: PropTypes.node.isRequired,
 };
 Collapsible.defaultProps = {
   className: undefined,
-  styling: 'card',
+  defaultOpen: false,
   iconWhenClosed: <Icon src={Add} />,
   iconWhenOpen: <Icon src={Remove} />,
-
+  onClose: undefined,
+  onOpen: undefined,
+  onToggle: undefined,
+  open: undefined,
+  styling: 'card',
 };
 
 Collapsible.Advanced = CollapsibleAdvanced;
