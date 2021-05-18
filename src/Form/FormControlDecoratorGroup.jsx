@@ -17,7 +17,8 @@ const FormControlDecoratorGroup = ({
   className,
   ...props
 }) => {
-  const { size } = useFormGroupContext(props);
+  const formGroupContext = useFormGroupContext(props);
+  const size = props.size || formGroupContext.size;
   return (
     <div
       className={classNames(

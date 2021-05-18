@@ -19,11 +19,12 @@ const FormControl = React.forwardRef(({
   ...props
 }, ref) => {
   const {
-    size,
     isInvalid,
     isValid,
     getControlProps,
+    ...formGroupContext
   } = useFormGroupContext();
+  const size = props.size || formGroupContext.size;
 
   const [hasValue, checkInputEventValue] = useHasValue({
     defaultValue: props.defaultValue,
