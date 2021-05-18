@@ -5,16 +5,24 @@ const useIsVisible = (defaultIsVisible = true) => {
   const [isVisible, setIsVisible] = useState(defaultIsVisible);
 
   useEffect(() => {
-    if (sentinelRef.current) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(({ isIntersecting }) => {
-          setIsVisible(isIntersecting);
-        });
-      }, {});
-      observer.observe(sentinelRef.current);
-      return () => {
-        observer.disconnect();
-      };
+    try {
+      if (sentinelRef.current) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(({ isIntersecting }) => {
+            setIsVisible(isIntersecting);
+          });
+        }, {});
+        observer.observe(sentinelRef.current);
+        return () => {
+          observer.disconnect();
+        };
+      }
+    } catch (e) {
+      const isReferenceError = e instanceof ReferenceError;
+      if (!isReferenceError) {
+        throw e;
+      }
+      // Do nothing if an intersection observer can't be created.
     }
     return () => {};
   }, [sentinelRef.current]);
