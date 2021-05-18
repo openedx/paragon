@@ -41,7 +41,7 @@ StepList.defaultProps = {
   steps: [],
 };
 
-const PageCount = ({ activeStepIndex, totalSteps }) => `${activeStepIndex + 1} of ${totalSteps}`;
+const PageCount = ({ activeStepIndex, totalSteps }) => `Step ${activeStepIndex + 1} of ${totalSteps}`;
 
 const StepperHeader = ({ className, PageCountComponent }) => {
   const { steps, activeKey } = useContext(StepperContext);
