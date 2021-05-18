@@ -15,6 +15,7 @@ exports[`<Button /> correct rendering renders with props iconAfter 1`] = `
     >
       <svg
         aria-hidden={true}
+        aria-label=""
         fill="none"
         focusable={false}
         height={24}
@@ -47,6 +48,7 @@ exports[`<Button /> correct rendering renders with props iconBefore 1`] = `
     >
       <svg
         aria-hidden={true}
+        aria-label=""
         fill="none"
         focusable={false}
         height={24}
@@ -80,6 +82,7 @@ exports[`<Button /> correct rendering renders with props iconBefore and iconAfte
     >
       <svg
         aria-hidden={true}
+        aria-label=""
         fill="none"
         focusable={false}
         height={24}
@@ -100,6 +103,7 @@ exports[`<Button /> correct rendering renders with props iconBefore and iconAfte
     >
       <svg
         aria-hidden={true}
+        aria-label=""
         fill="none"
         focusable={false}
         height={24}

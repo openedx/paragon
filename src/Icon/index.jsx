@@ -5,6 +5,13 @@ import classNames from 'classnames';
 import newId from '../utils/newId';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
+/**
+ * An svg with an "img" role must satisfy the following a11y requirements
+ * - It needs a text alternative in the form of aria-label, aria-labelledby, or screen-reader only text.
+ * - If no label is desired, aria-label will be set to an empty string and aria-hidden to "true".
+ * - focusable is set to false on the svg in all cases as a workaround for an ie11 bug
+ */
+
 function Icon({
   src: Component,
   id,
@@ -15,19 +22,32 @@ function Icon({
   ...attrs
 }) {
   if (Component) {
-    const mergedSvgProps = { ...svgAttrs, role: 'img' };
     // If no aria label is specified, hide this icon from screenreaders
-    if (!svgAttrs['aria-label']) {
+    const hasAriaLabel = svgAttrs['aria-label'] || svgAttrs['aria-labelledby'];
+
+    const mergedSvgProps = { ...svgAttrs };
+
+    if (!hasAriaLabel) {
+      mergedSvgProps['aria-label'] = '';
       mergedSvgProps['aria-hidden'] = true;
-      mergedSvgProps.focusable = false;
     }
+
     return (
       <span
         className={classNames('pgn__icon', className)}
         id={id}
         {...attrs}
       >
-        <Component {...mergedSvgProps} />
+        <Component
+          role="img"
+          focusable={false}
+          {...mergedSvgProps}
+        />
+        {screenReaderText && (
+          <span className="sr-only">
+            {screenReaderText}
+          </span>
+        )}
       </span>
     );
   }
