@@ -159,3 +159,42 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
   );
 }
 ```
+
+### Sizes
+
+```jsx live
+() => {
+  const [value, setValue] = useState('');
+  return (
+    <>
+      <Form.Group size="sm">
+        <Form.Control
+          leadingElement={<Icon src={FavoriteBorder} />}
+          trailingElement={<Icon src={Verified} />}
+          floatingLabel="What kind of cats?"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Control
+          leadingElement={<Icon src={FavoriteBorder} />}
+          trailingElement={<Icon src={Verified} />}
+          floatingLabel="What kind of cats?"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+      </Form.Group>
+      <Form.Group size="lg">
+        <Form.Control
+          leadingElement={<Icon src={FavoriteBorder} />}
+          trailingElement={<Icon src={Verified} />}
+          floatingLabel="What kind of cats?"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+      </Form.Group>
+    </>
+  );
+}
+```
