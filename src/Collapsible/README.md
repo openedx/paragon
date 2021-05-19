@@ -75,6 +75,19 @@ This is the default style if no `styling` prop is supplied.
   <p>Your stuff goes here.</p>
 </Collapsible>
 ```
+### With Callbacks
+
+```jsx live
+<Collapsible
+  title="Toggle Collapsible"
+  defaultOpen
+  onToggle={(isOpen) => console.log('Collapsible toggled and open is: ', isOpen)}
+  onOpen={() => console.log('Collapsible opened.')}
+  onClose={() => console.log('Collapsible closed.')}
+>
+  <p>See the console.</p>
+</Collapsible>
+```
 
 <hr/>
 
