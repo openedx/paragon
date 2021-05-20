@@ -127,8 +127,8 @@ DataTable.defaultProps = {
 DataTable.propTypes = {
   /** Definition of table columns */
   columns: PropTypes.arrayOf(PropTypes.shape({
-    /** User visible column name P */
-    Header: PropTypes.string.isRequired,
+    /** User visible column name */
+    Header: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
     /** String used to access the correct cell data for this column */
     accessor: PropTypes.string.isRequired,
   })).isRequired,
@@ -139,7 +139,7 @@ DataTable.propTypes = {
   /** Alternate column for selecting rows. See react table useSort docs for more information */
   manualSelectColumn: PropTypes.shape({
     id: PropTypes.string.isRequired,
-    Header: PropTypes.func.isRequired,
+    Header: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
     Cell: PropTypes.func.isRequired,
     disableSortBy: PropTypes.bool.isRequired,
   }),
