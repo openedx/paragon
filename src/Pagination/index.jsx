@@ -10,6 +10,49 @@ import getTextFromElement from '../utils/getTextFromElement';
 import Icon from '../Icon';
 import newId from '../utils/newId';
 
+const getPaginationRange = (currentIndex, count, length) => {
+  const boundedLength = Math.min(count, length);
+  const unboundedStartIndex = currentIndex - Math.floor(boundedLength / 2);
+  let startIndex = Math.max(0, unboundedStartIndex);
+  startIndex = Math.min(startIndex, count - boundedLength);
+
+  return Array.from(
+    {
+      length: boundedLength,
+    },
+    (el, i) => startIndex + i,
+  );
+};
+
+const getPaginationChunks = (
+  currentIndex,
+  count,
+  { maxPagesDisplayed = 7 } = {},
+) => {
+  const lastIndex = count - 1;
+  const centerChunk = getPaginationRange(currentIndex, count, maxPagesDisplayed - 2);
+
+  if (centerChunk[0] === 1) {
+    centerChunk.unshift(0);
+  }
+
+  if (centerChunk[centerChunk.length - 1] === lastIndex - 1) {
+    centerChunk.push(lastIndex);
+  }
+
+  const needsStartChunk = centerChunk[0] !== 0;
+  const needsEndChunk = centerChunk[centerChunk.length - 1] !== lastIndex;
+
+  const chunks = {
+    start: needsStartChunk ? [0] : undefined,
+    center: centerChunk,
+    end: needsEndChunk ? [lastIndex] : undefined,
+  };
+
+  return chunks;
+};
+
+
 class Pagination extends React.Component {
   constructor(props) {
     super(props);
@@ -306,47 +349,29 @@ class Pagination extends React.Component {
    * buttons) given the currently selected page, the max number of buttons to display, and
    * the total number of pages.
    */
-  renderPageButtons(range) {
+  renderPageButtons() {
     const { currentPage } = this.state;
     const { pageCount, maxPagesDisplayed } = this.props;
 
-    const pageRange = range || [...Array(pageCount).keys()].map(page => page + 1);
-    const currentIndex = pageRange.indexOf(currentPage);
-    const middleIndex = parseInt(pageRange.length / 2, 10) - 1;
-    const lastIndex = pageRange.length - 1;
-    const hasLeftEllipsis = pageRange[1] - pageRange[0] > 1;
-    const hasRightEllipsis = pageRange[lastIndex] - pageRange[lastIndex - 1] > 1;
+    const chunks = getPaginationChunks(currentPage, pageCount, { maxPagesDisplayed });
 
-    let ellipsisCount = 0;
-
-    ellipsisCount += hasLeftEllipsis;
-    ellipsisCount += hasRightEllipsis;
-
-    if (pageRange.length <= maxPagesDisplayed - ellipsisCount) {
-      return pageRange.map((page) => {
-        const pageButtons = [this.renderPageButton(page)];
-
-        if (page === 1 && hasLeftEllipsis) {
-          pageButtons.push(this.renderEllipsisButton());
-        } else if (page === pageCount && hasRightEllipsis) {
-          pageButtons.unshift(this.renderEllipsisButton());
-        }
-
-        return pageButtons;
-      });
-    }
-
-    if (currentIndex > middleIndex) {
-      const first = pageRange.shift();
-      pageRange.shift();
-      pageRange.unshift(first);
-    } else {
-      const last = pageRange.pop();
-      pageRange.pop();
-      pageRange.push(last);
-    }
-
-    return this.renderPageButtons(pageRange);
+    return (
+      <>
+        {chunks.start && (
+          <>
+            {this.renderPageButton(1)}
+            {this.renderEllipsisButton()}
+          </>
+        )}
+        {chunks.center.map((index) => this.renderPageButton(index + 1))}
+        {chunks.end && (
+          <>
+            {this.renderEllipsisButton()}
+            {this.renderPageButton(pageCount)}
+          </>
+        )}
+      </>
+    );
   }
 
   render() {
