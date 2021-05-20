@@ -19,7 +19,7 @@ TableFilters.defaultProps = {
 
 TableFilters.propTypes = {
   columns: PropTypes.arrayOf(PropTypes.shape({
-    Header: PropTypes.string.isRequired,
+    Header: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
     canFilter: PropTypes.bool,
     render: PropTypes.func.isRequired,
   })).isRequired,

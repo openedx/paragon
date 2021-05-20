@@ -33,7 +33,7 @@ TextFilter.propTypes = {
     /** Function to set the filter value */
     setFilter: PropTypes.func.isRequired,
     /** Column header used for labels and placeholders */
-    Header: PropTypes.string.isRequired,
+    Header: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
     getHeaderProps: PropTypes.func.isRequired,
   }).isRequired,
 };
