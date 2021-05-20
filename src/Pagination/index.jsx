@@ -52,7 +52,6 @@ const getPaginationChunks = (
   return chunks;
 };
 
-
 class Pagination extends React.Component {
   constructor(props) {
     super(props);
