@@ -9,48 +9,8 @@ import { ExtraSmall, LargerThanExtraSmall } from '../Responsive';
 import getTextFromElement from '../utils/getTextFromElement';
 import Icon from '../Icon';
 import newId from '../utils/newId';
-
-const getPaginationRange = (currentIndex, count, length) => {
-  const boundedLength = Math.min(count, length);
-  const unboundedStartIndex = currentIndex - Math.floor(boundedLength / 2);
-  let startIndex = Math.max(0, unboundedStartIndex);
-  startIndex = Math.min(startIndex, count - boundedLength);
-
-  return Array.from(
-    {
-      length: boundedLength,
-    },
-    (el, i) => startIndex + i,
-  );
-};
-
-const getPaginationChunks = (
-  currentIndex,
-  count,
-  { maxPagesDisplayed = 7 } = {},
-) => {
-  const lastIndex = count - 1;
-  const centerChunk = getPaginationRange(currentIndex, count, maxPagesDisplayed - 2);
-
-  if (centerChunk[0] === 1) {
-    centerChunk.unshift(0);
-  }
-
-  if (centerChunk[centerChunk.length - 1] === lastIndex - 1) {
-    centerChunk.push(lastIndex);
-  }
-
-  const needsStartChunk = centerChunk[0] !== 0;
-  const needsEndChunk = centerChunk[centerChunk.length - 1] !== lastIndex;
-
-  const chunks = {
-    start: needsStartChunk ? [0] : undefined,
-    center: centerChunk,
-    end: needsEndChunk ? [lastIndex] : undefined,
-  };
-
-  return chunks;
-};
+import { ELLIPSIS } from './constants';
+import getPaginationRange from './getPaginationRange';
 
 class Pagination extends React.Component {
   constructor(props) {
@@ -69,7 +29,7 @@ class Pagination extends React.Component {
 
   // TODO: Move to getDerivedStateFromProps
   // eslint-disable-next-line react/no-deprecated
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (
       nextProps.currentPage !== this.props.currentPage
       || nextProps.currentPage !== this.state.currentPage
@@ -352,23 +312,34 @@ class Pagination extends React.Component {
     const { currentPage } = this.state;
     const { pageCount, maxPagesDisplayed } = this.props;
 
-    const chunks = getPaginationChunks(currentPage, pageCount, { maxPagesDisplayed });
+    // const chunks = getPaginationChunks(currentPage, pageCount, { maxPagesDisplayed });
+    const pages = getPaginationRange({
+      currentIndex: currentPage,
+      count: pageCount,
+      length: maxPagesDisplayed,
+      requireFirstAndLastPages: true,
+    });
 
     return (
       <>
-        {chunks.start && (
+        {/* {chunks.start && (
           <>
             {this.renderPageButton(1)}
             {this.renderEllipsisButton()}
           </>
-        )}
-        {chunks.center.map((index) => this.renderPageButton(index + 1))}
-        {chunks.end && (
+        )} */}
+        {pages.map((pageIndex) => {
+          if (pageIndex === ELLIPSIS) {
+            return this.renderEllipsisButton();
+          }
+          return this.renderPageButton(pageIndex + 1);
+        })}
+        {/* {chunks.end && (
           <>
             {this.renderEllipsisButton()}
             {this.renderPageButton(pageCount)}
           </>
-        )}
+        )} */}
       </>
     );
   }
