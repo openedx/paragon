@@ -9,6 +9,8 @@ import { ExtraSmall, LargerThanExtraSmall } from '../Responsive';
 import getTextFromElement from '../utils/getTextFromElement';
 import Icon from '../Icon';
 import newId from '../utils/newId';
+import { ELLIPSIS } from './constants';
+import getPaginationRange from './getPaginationRange';
 
 class Pagination extends React.Component {
   constructor(props) {
@@ -26,8 +28,8 @@ class Pagination extends React.Component {
   }
 
   // TODO: Move to getDerivedStateFromProps
-  // eslint-disable-next-line react/no-deprecated
-  componentWillReceiveProps(nextProps) {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (
       nextProps.currentPage !== this.props.currentPage
       || nextProps.currentPage !== this.state.currentPage
@@ -301,52 +303,23 @@ class Pagination extends React.Component {
     );
   }
 
-  /*
-   * Uses recursion to generate an array of the buttons to display (i.e., page/ellipsis
-   * buttons) given the currently selected page, the max number of buttons to display, and
-   * the total number of pages.
-   */
-  renderPageButtons(range) {
+  renderPageButtons() {
     const { currentPage } = this.state;
     const { pageCount, maxPagesDisplayed } = this.props;
 
-    const pageRange = range || [...Array(pageCount).keys()].map(page => page + 1);
-    const currentIndex = pageRange.indexOf(currentPage);
-    const middleIndex = parseInt(pageRange.length / 2, 10) - 1;
-    const lastIndex = pageRange.length - 1;
-    const hasLeftEllipsis = pageRange[1] - pageRange[0] > 1;
-    const hasRightEllipsis = pageRange[lastIndex] - pageRange[lastIndex - 1] > 1;
+    const pages = getPaginationRange({
+      currentIndex: currentPage,
+      count: pageCount,
+      length: maxPagesDisplayed,
+      requireFirstAndLastPages: true,
+    });
 
-    let ellipsisCount = 0;
-
-    ellipsisCount += hasLeftEllipsis;
-    ellipsisCount += hasRightEllipsis;
-
-    if (pageRange.length <= maxPagesDisplayed - ellipsisCount) {
-      return pageRange.map((page) => {
-        const pageButtons = [this.renderPageButton(page)];
-
-        if (page === 1 && hasLeftEllipsis) {
-          pageButtons.push(this.renderEllipsisButton());
-        } else if (page === pageCount && hasRightEllipsis) {
-          pageButtons.unshift(this.renderEllipsisButton());
-        }
-
-        return pageButtons;
-      });
-    }
-
-    if (currentIndex > middleIndex) {
-      const first = pageRange.shift();
-      pageRange.shift();
-      pageRange.unshift(first);
-    } else {
-      const last = pageRange.pop();
-      pageRange.pop();
-      pageRange.push(last);
-    }
-
-    return this.renderPageButtons(pageRange);
+    return pages.map((pageIndex) => {
+      if (pageIndex === ELLIPSIS) {
+        return this.renderEllipsisButton();
+      }
+      return this.renderPageButton(pageIndex + 1);
+    });
   }
 
   render() {
