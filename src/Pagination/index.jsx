@@ -303,16 +303,10 @@ class Pagination extends React.Component {
     );
   }
 
-  /*
-   * Uses recursion to generate an array of the buttons to display (i.e., page/ellipsis
-   * buttons) given the currently selected page, the max number of buttons to display, and
-   * the total number of pages.
-   */
   renderPageButtons() {
     const { currentPage } = this.state;
     const { pageCount, maxPagesDisplayed } = this.props;
 
-    // const chunks = getPaginationChunks(currentPage, pageCount, { maxPagesDisplayed });
     const pages = getPaginationRange({
       currentIndex: currentPage,
       count: pageCount,
@@ -320,28 +314,12 @@ class Pagination extends React.Component {
       requireFirstAndLastPages: true,
     });
 
-    return (
-      <>
-        {/* {chunks.start && (
-          <>
-            {this.renderPageButton(1)}
-            {this.renderEllipsisButton()}
-          </>
-        )} */}
-        {pages.map((pageIndex) => {
-          if (pageIndex === ELLIPSIS) {
-            return this.renderEllipsisButton();
-          }
-          return this.renderPageButton(pageIndex + 1);
-        })}
-        {/* {chunks.end && (
-          <>
-            {this.renderEllipsisButton()}
-            {this.renderPageButton(pageCount)}
-          </>
-        )} */}
-      </>
-    );
+    return pages.map((pageIndex) => {
+      if (pageIndex === ELLIPSIS) {
+        return this.renderEllipsisButton();
+      }
+      return this.renderPageButton(pageIndex + 1);
+    });
   }
 
   render() {
