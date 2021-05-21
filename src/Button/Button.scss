@@ -417,7 +417,7 @@ fieldset:disabled a.btn {
 .btn-inline {
   line-height: calc(#{$line-height-base}em - #{2 * $btn-border-width});
   font-size: inherit;
-  vertical-align: baseline;
+  vertical-align: bottom;
   padding: 0 0.25em;
 }
 
