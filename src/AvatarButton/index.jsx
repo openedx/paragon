@@ -31,9 +31,7 @@ const AvatarButton = React.forwardRef(({
       size={size}
       ref={ref}
     >
-      <span className="pgn__avatar-button-avatar-wrap">
-        <Avatar src={src} alt={showLabel ? '' : children} size={avatarSize} />
-      </span>
+      <Avatar src={src} alt={showLabel ? '' : children} size={avatarSize} />
       {showLabel && children}
     </Button>
   );

@@ -1,30 +1,32 @@
-$avatar-button-padding-left: .5em !default;
-$avatar-button-padding-left-sm: .5 !default;
-$avatar-button-padding-left-lg: .5em !default;
+$avatar-button-padding-left: 0.25em !default;
+$avatar-button-padding-left-sm: 0.25em !default;
+$avatar-button-padding-left-lg: 0.25em !default;
 
-.pgn__avatar-button-avatar {
+.btn.pgn__avatar-button-avatar {
   padding-left: $avatar-button-padding-left;
+
   &.pgn__avatar-button-avatar-sm {
     padding-left: $avatar-button-padding-left-sm;
   }
+
   &.pgn__avatar-button-avatar-lg {
     padding-left: $avatar-button-padding-left-lg;
   }
-  .pgn__avatar-button-avatar-wrap {
-    height: 0px;
-    vertical-align: middle;
-    display: inline-flex;
-    margin-right: .5em;
+
+  .pgn__avatar {
+    margin: -0.5em 0;
+    margin-inline-end: 0.5em;
   }
+
   &.pgn__avatar-button-hide-label {
     padding-left: 4px;
-    padding-right: 4px;
-    .pgn__avatar-button-avatar-wrap {
-      margin-right: 0em;
+
+    &:not(.dropdown-toggle) {
+      padding-right: 4px;
     }
-  }
-  .pgn__avatar {
-    transform: translateY(-50%);
-    margin-top: -1px;
+
+    .pgn__avatar {
+      margin-inline-end: 0;
+    }
   }
 }

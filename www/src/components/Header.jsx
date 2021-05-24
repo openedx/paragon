@@ -4,7 +4,6 @@ import { FocusOn } from 'react-focus-on';
 import { Link } from 'gatsby';
 import Menu from './Menu';
 import {
-  Icon,
   useToggle,
   Nav,
   Row,
@@ -24,18 +23,9 @@ const Navbar = ({
           className="d-inline-flex align-items-center"
           variant="inverse-tertiary"
           onClick={onMenuClick}
+          iconBefore={menuIsOpen ? Close : MenuIcon}
         >
-          {menuIsOpen ? (
-            <>
-              <Icon className="mr-2" src={Close} />
-              Menu
-            </>
-          ) : (
-            <>
-              <Icon className="mr-2" src={MenuIcon} />
-              Menu
-            </>
-          )}
+          Menu
         </Button>
       </Col>
       <Col sm={4}>
