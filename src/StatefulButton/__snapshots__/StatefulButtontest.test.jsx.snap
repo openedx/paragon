@@ -11,14 +11,10 @@ exports[`StatefulButton renders basic usage 1`] = `
     type="button"
   >
     <span
-      className="btn-icons-container"
+      className="d-flex align-items-center justify-content-center"
     >
-      <span
-        className="d-flex align-items-center justify-content-center"
-      >
-        <span>
-          Saved
-        </span>
+      <span>
+        Saved
       </span>
     </span>
   </button>
@@ -31,38 +27,34 @@ exports[`StatefulButton renders basic usage 1`] = `
     type="button"
   >
     <span
-      className="btn-icons-container"
+      className="d-flex align-items-center justify-content-center"
     >
       <span
-        className="d-flex align-items-center justify-content-center"
+        className="pgn__stateful-btn-icon"
       >
         <span
-          className="pgn__stateful-btn-icon"
+          className="pgn__icon icon-spin"
         >
-          <span
-            className="pgn__icon icon-spin"
+          <svg
+            aria-hidden={true}
+            aria-label=""
+            fill="none"
+            focusable={false}
+            height={24}
+            role="img"
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              aria-hidden={true}
-              aria-label=""
-              fill="none"
-              focusable={false}
-              height={24}
-              role="img"
-              viewBox="0 0 24 24"
-              width={24}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M22 12A10 10 0 116.122 3.91l1.176 1.618A8 8 0 1020 12h2z"
-                fill="currentColor"
-              />
-            </svg>
-          </span>
+            <path
+              d="M22 12A10 10 0 116.122 3.91l1.176 1.618A8 8 0 1020 12h2z"
+              fill="currentColor"
+            />
+          </svg>
         </span>
-        <span>
-          Saving
-        </span>
+      </span>
+      <span>
+        Saving
       </span>
     </span>
   </button>
@@ -75,38 +67,34 @@ exports[`StatefulButton renders basic usage 1`] = `
     type="button"
   >
     <span
-      className="btn-icons-container"
+      className="d-flex align-items-center justify-content-center"
     >
       <span
-        className="d-flex align-items-center justify-content-center"
+        className="pgn__stateful-btn-icon"
       >
         <span
-          className="pgn__stateful-btn-icon"
+          className="pgn__icon"
         >
-          <span
-            className="pgn__icon"
+          <svg
+            aria-hidden={true}
+            aria-label=""
+            fill="none"
+            focusable={false}
+            height={24}
+            role="img"
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              aria-hidden={true}
-              aria-label=""
-              fill="none"
-              focusable={false}
-              height={24}
-              role="img"
-              viewBox="0 0 24 24"
-              width={24}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4.59-12.42L10 14.17l-2.59-2.58L6 13l4 4 8-8-1.41-1.42z"
-                fill="currentColor"
-              />
-            </svg>
-          </span>
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4.59-12.42L10 14.17l-2.59-2.58L6 13l4 4 8-8-1.41-1.42z"
+              fill="currentColor"
+            />
+          </svg>
         </span>
-        <span>
-          Saved
-        </span>
+      </span>
+      <span>
+        Saved
       </span>
     </span>
   </button>
@@ -124,23 +112,19 @@ Array [
     type="button"
   >
     <span
-      className="btn-icons-container"
+      className="d-flex align-items-center justify-content-center"
     >
       <span
-        className="d-flex align-items-center justify-content-center"
+        className="pgn__stateful-btn-icon"
       >
         <span
-          className="pgn__stateful-btn-icon"
-        >
-          <span
-            aria-hidden={true}
-            className="fa fa-download"
-            id="Icon1"
-          />
-        </span>
-        <span>
-          Download
-        </span>
+          aria-hidden={true}
+          className="fa fa-download"
+          id="Icon1"
+        />
+      </span>
+      <span>
+        Download
       </span>
     </span>
   </button>,
@@ -153,23 +137,19 @@ Array [
     type="button"
   >
     <span
-      className="btn-icons-container"
+      className="d-flex align-items-center justify-content-center"
     >
       <span
-        className="d-flex align-items-center justify-content-center"
+        className="pgn__stateful-btn-icon"
       >
         <span
-          className="pgn__stateful-btn-icon"
-        >
-          <span
-            aria-hidden={true}
-            className="fa fa-spinner fa-spin"
-            id="Icon2"
-          />
-        </span>
-        <span>
-          Downloading
-        </span>
+          aria-hidden={true}
+          className="fa fa-spinner fa-spin"
+          id="Icon2"
+        />
+      </span>
+      <span>
+        Downloading
       </span>
     </span>
   </button>,
@@ -182,23 +162,19 @@ Array [
     type="button"
   >
     <span
-      className="btn-icons-container"
+      className="d-flex align-items-center justify-content-center"
     >
       <span
-        className="d-flex align-items-center justify-content-center"
+        className="pgn__stateful-btn-icon"
       >
         <span
-          className="pgn__stateful-btn-icon"
-        >
-          <span
-            aria-hidden={true}
-            className="fa fa-check"
-            id="Icon3"
-          />
-        </span>
-        <span>
-          Downloaded
-        </span>
+          aria-hidden={true}
+          className="fa fa-check"
+          id="Icon3"
+        />
+      </span>
+      <span>
+        Downloaded
       </span>
     </span>
   </button>,
@@ -216,23 +192,19 @@ Array [
     type="button"
   >
     <span
-      className="btn-icons-container"
+      className="d-flex align-items-center justify-content-center"
     >
       <span
-        className="d-flex align-items-center justify-content-center"
+        className="pgn__stateful-btn-icon"
       >
         <span
-          className="pgn__stateful-btn-icon"
-        >
-          <span
-            aria-hidden={true}
-            className="fa fa-save"
-            id="Icon4"
-          />
-        </span>
-        <span>
-          Save (no changes)
-        </span>
+          aria-hidden={true}
+          className="fa fa-save"
+          id="Icon4"
+        />
+      </span>
+      <span>
+        Save (no changes)
       </span>
     </span>
   </button>,
@@ -245,23 +217,19 @@ Array [
     type="button"
   >
     <span
-      className="btn-icons-container"
+      className="d-flex align-items-center justify-content-center"
     >
       <span
-        className="d-flex align-items-center justify-content-center"
+        className="pgn__stateful-btn-icon"
       >
         <span
-          className="pgn__stateful-btn-icon"
-        >
-          <span
-            aria-hidden={true}
-            className="fa fa-save"
-            id="Icon5"
-          />
-        </span>
-        <span>
-          Save Changes
-        </span>
+          aria-hidden={true}
+          className="fa fa-save"
+          id="Icon5"
+        />
+      </span>
+      <span>
+        Save Changes
       </span>
     </span>
   </button>,
