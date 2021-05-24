@@ -3,13 +3,18 @@
 
 @mixin button-variant($background, $border, $hover-background: darken($background, 7.5%), $hover-border: darken($border, 10%), $active-background: darken($background, 10%), $active-border: darken($border, 12.5%), $color: color-yiq($background), $hover-color: color-yiq($hover-background), $active-color: color-yiq($active-background)) {
   color: $color;
+
   @include gradient-bg($background);
+
   border-color: $border;
+
   @include box-shadow($btn-box-shadow);
 
   @include hover {
     color: $hover-color;
+
     @include gradient-bg($hover-background);
+
     border-color: $hover-border;
   }
 
@@ -30,9 +35,11 @@
   .show > &.dropdown-toggle {
     color: $active-color;
     background-color: $active-background;
+
     @if $enable-gradients {
       background-image: none; // Remove the gradient for the pressed/active state
     }
+
     border-color: $active-border;
   }
 }
@@ -181,6 +188,7 @@
   user-select: none;
   background-color: transparent;
   border: $btn-border-width solid transparent;
+
   @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
   @include transition($btn-transition);
 
@@ -231,7 +239,6 @@ fieldset:disabled a.btn {
       $active-background,
       $active-border
     );
-
     @include button-focus(theme-color($color, "focus"));
   }
 
@@ -253,7 +260,6 @@ fieldset:disabled a.btn {
       $active-background,
       $active-border,
     );
-
     @include button-focus(theme-color($color, "focus"));
   }
 
@@ -274,7 +280,6 @@ fieldset:disabled a.btn {
       $active-background,
       $active-border,
     );
-
     @include button-focus($white);
   }
 
@@ -296,7 +301,6 @@ fieldset:disabled a.btn {
       $active-background,
       $active-border,
     );
-
     @include button-focus($white);
   }
 }
@@ -324,7 +328,6 @@ fieldset:disabled a.btn {
     $btn-tertiary-color,
     $btn-tertiary-color
   );
-
   @include button-focus(theme-color("primary", "focus"));
 }
 
@@ -347,7 +350,6 @@ fieldset:disabled a.btn {
     $btn-inverse-tertiary-color,
     $btn-inverse-tertiary-color
   );
-
   @include button-focus($white);
 }
 
@@ -437,9 +439,11 @@ input[type="button"] {
 .btn {
   .btn-icon-before {
     margin-inline-end: 0.5rem;
+    margin-left: -0.25em;
   }
 
   .btn-icon-after {
     margin-inline-start: 0.5rem;
+    margin-right: -0.25em;
   }
 }
