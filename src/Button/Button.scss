@@ -3,13 +3,18 @@
 
 @mixin button-variant($background, $border, $hover-background: darken($background, 7.5%), $hover-border: darken($border, 10%), $active-background: darken($background, 10%), $active-border: darken($border, 12.5%), $color: color-yiq($background), $hover-color: color-yiq($hover-background), $active-color: color-yiq($active-background)) {
   color: $color;
+
   @include gradient-bg($background);
+
   border-color: $border;
+
   @include box-shadow($btn-box-shadow);
 
   @include hover {
     color: $hover-color;
+
     @include gradient-bg($hover-background);
+
     border-color: $hover-border;
   }
 
@@ -30,9 +35,11 @@
   .show > &.dropdown-toggle {
     color: $active-color;
     background-color: $active-background;
+
     @if $enable-gradients {
       background-image: none; // Remove the gradient for the pressed/active state
     }
+
     border-color: $active-border;
   }
 }
@@ -70,7 +77,9 @@
 // Button sizes
 @mixin button-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
   padding: $padding-y $padding-x;
+
   @include font-size($font-size);
+
   line-height: $line-height;
   // Manually declare to provide an override to the browser default
   @include border-radius($border-radius, 0);
@@ -120,34 +129,36 @@
     $distance: $btn-focus-width + $btn-focus-gap;
     $distance-include-btn-border: $distance + $btn-border-width;
 
-    &:before {
+    &::before {
       content: '';
       position: absolute;
       top: -1 * $distance-include-btn-border;
       right: -1 * $distance-include-btn-border;
       bottom: -1 * $distance-include-btn-border;
       left: -1 * $distance-include-btn-border;
-      border:solid $btn-focus-width $ring-color;
+      border: solid $btn-focus-width $ring-color;
       border-radius: calc(#{$btn-border-radius} + #{$distance});
     }
-    &.btn-lg:before {
+
+    &.btn-lg::before {
       border-radius: calc(#{$btn-border-radius-lg} + #{$distance});
     }
-    &.btn-sm:before {
+
+    &.btn-sm::before {
       border-radius: calc(#{$btn-border-radius-sm} + #{$distance});
     }
 
     &:active,
     &.active {
-      &:before {
-        opacity: .75;
+      &::before {
+        opacity: 0.75;
       }
     }
 
     // Disabled buttons should not have focus rings
     &:disabled,
     &.disabled {
-      &:before {
+      &::before {
         display: none;
       }
     }
@@ -166,7 +177,9 @@
 //
 
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-family: $btn-font-family;
   font-weight: $btn-font-weight;
   color: $body-color;
@@ -175,6 +188,7 @@
   user-select: none;
   background-color: transparent;
   border: $btn-border-width solid transparent;
+
   @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
   @include transition($btn-transition);
 
@@ -225,7 +239,6 @@ fieldset:disabled a.btn {
       $active-background,
       $active-border
     );
-
     @include button-focus(theme-color($color, "focus"));
   }
 
@@ -247,7 +260,6 @@ fieldset:disabled a.btn {
       $active-background,
       $active-border,
     );
-
     @include button-focus(theme-color($color, "focus"));
   }
 
@@ -268,7 +280,6 @@ fieldset:disabled a.btn {
       $active-background,
       $active-border,
     );
-
     @include button-focus($white);
   }
 
@@ -290,7 +301,6 @@ fieldset:disabled a.btn {
       $active-background,
       $active-border,
     );
-
     @include button-focus($white);
   }
 }
@@ -318,7 +328,6 @@ fieldset:disabled a.btn {
     $btn-tertiary-color,
     $btn-tertiary-color
   );
-
   @include button-focus(theme-color("primary", "focus"));
 }
 
@@ -341,7 +350,6 @@ fieldset:disabled a.btn {
     $btn-inverse-tertiary-color,
     $btn-inverse-tertiary-color
   );
-
   @include button-focus($white);
 }
 
@@ -399,7 +407,7 @@ fieldset:disabled a.btn {
 //
 
 .btn-block {
-  display: block;
+  display: flex;
   width: 100%;
 
   // Vertically space out multiple block buttons
@@ -411,8 +419,8 @@ fieldset:disabled a.btn {
 .btn-inline {
   line-height: calc(#{$line-height-base}em - #{2 * $btn-border-width});
   font-size: inherit;
-  vertical-align: baseline;
-  padding: 0 .25em;
+  vertical-align: bottom;
+  padding: 0 0.25em;
 }
 
 // Specificity overrides
@@ -428,16 +436,14 @@ input[type="button"] {
 // Button Icon Sizes
 //
 
-.btn .btn-icons-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+.btn {
   .btn-icon-before {
-    margin-right: 0.5rem;
+    margin-inline-end: 0.5rem;
+    margin-left: -0.25em;
   }
 
   .btn-icon-after {
-    margin-left: 0.5rem;
+    margin-inline-start: 0.5rem;
+    margin-right: -0.25em;
   }
 }
