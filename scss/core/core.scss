@@ -1,11 +1,11 @@
 @import "functions";
 @import "variables";
-@import "~bootstrap/scss/mixins";
-@import "~bootstrap/scss/root";
-@import "~bootstrap/scss/reboot";
+@import "mixins";
+@import "root";
+@import "reboot";
 @import "typography";
 @import "grid";
-@import "~bootstrap/scss/transitions";
+@import "transitions";
 @import "utilities";
 @import "~bootstrap/scss/media";
 @import "~bootstrap/scss/list-group";
