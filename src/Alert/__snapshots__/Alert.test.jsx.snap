@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Alert /> correct rendering renders with correct with icon 1`] = `
+<div
+  className="fade alert-content undefined alert show"
+  role="alert"
+>
+  <span
+    className="pgn__icon alert-icon"
+  >
+    <svg
+      aria-hidden={true}
+      aria-label=""
+      fill="none"
+      focusable={false}
+      height={24}
+      role="img"
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+        fill="currentColor"
+      />
+    </svg>
+  </span>
+  <div>
+    Alert
+  </div>
+</div>
+`;
+
+exports[`<Alert /> correct rendering renders without icon prop 1`] = `
+<div
+  className="fade alert-content undefined alert show"
+  role="alert"
+>
+  <div>
+    Alert
+  </div>
+</div>
+`;

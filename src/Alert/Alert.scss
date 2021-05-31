@@ -27,6 +27,7 @@
     margin-right: $alert-icon-space;
     width: 1.25rem;
     height: 1.25rem;
+    flex-shrink: 0;
   }
 }
 
@@ -34,6 +35,11 @@
 .alert-heading {
   // Specified to prevent conflicts of changing $headings-color
   color: $alert-title-color;
+  display: flex;
+}
+
+// added to align content and icon
+.alert-content {
   display: flex;
 }
 
