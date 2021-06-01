@@ -59,9 +59,51 @@ notes: |
 }
 ```
 
+### Button Group Usage
+
+```jsx live
+<Tabs
+  defaultActiveKey="profile"
+  id="uncontrolled-pills-tab-example"
+  variant="button-group"
+>
+  <Tab eventKey="home" title="Home">
+    Hello I am the first panel.
+  </Tab>
+  <Tab eventKey="profile" title="Profile">
+    Hello I am the second panel.
+  </Tab>
+  <Tab eventKey="contact" title="Contact" disabled>
+    Hello I am third first panel.
+  </Tab>
+</Tabs>
+```
+
+### Pills Usage
+
+```jsx live
+<Tabs
+  defaultActiveKey="profile"
+  id="uncontrolled-pills-tab-example"
+  variant="pills"
+>
+  <Tab eventKey="home" title="Home">
+    Hello I am the first panel.
+  </Tab>
+  <Tab eventKey="profile" title="Profile">
+    Hello I am the second panel.
+  </Tab>
+  <Tab eventKey="contact" title="Contact" disabled>
+    Hello I am third first panel.
+  </Tab>
+</Tabs>
+```
+
 ***
 
 ## Tabs.Deprecated
+
+<br/>
 
 ### Basic Usage
 
