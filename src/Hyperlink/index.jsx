@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import isRequiredIf from 'react-proptype-conditional-require';
 import Icon from '../Icon';
 import { Launch } from '../../icons';
@@ -14,6 +15,8 @@ function Hyperlink(props) {
     onClick,
     externalLinkAlternativeText,
     externalLinkTitle,
+    variant,
+    isInline,
     ...other
   } = props;
 
@@ -33,7 +36,13 @@ function Hyperlink(props) {
 
   return (
     <a
-      style={{ textDecoration: 'underline' }}
+      className={classNames(
+        `${variant}-link`,
+        {
+          'standalone-link': !isInline,
+          'inline-link': isInline,
+        },
+      )}
       href={destination}
       target={target}
       onClick={onClick}
@@ -48,6 +57,8 @@ Hyperlink.defaultProps = {
   onClick: () => {},
   externalLinkAlternativeText: 'Opens in a new window',
   externalLinkTitle: 'Opens in a new window',
+  variant: 'default',
+  isInline: false,
 };
 
 Hyperlink.propTypes = {
@@ -71,6 +82,10 @@ Hyperlink.propTypes = {
     PropTypes.string,
     props => props.target === '_blank',
   ),
+  /** type of hyperlink */
+  variant: PropTypes.oneOf(['default', 'muted', 'brand']),
+  /** specify the link style. By default it will be underlined. */
+  isInline: PropTypes.bool,
 };
 
 export default withDeprecatedProps(Hyperlink, 'Hyperlink', {

@@ -72,3 +72,27 @@ a.muted-link {
     }
   }
 }
+
+a.brand-link {
+  color: $brand-link-color;
+  text-decoration: $brand-link-decoration;
+
+  &:hover {
+    color: $brand-link-hover-color;
+    text-decoration: $brand-link-hover-decoration;
+  }
+
+  p > &[href]:not(.btn),
+  &.inline-link {
+    color: $brand-inline-link-color;
+    text-decoration: $brand-inline-link-decoration;
+    text-decoration-line: $brand-inline-link-decoration;
+    text-decoration-color: $brand-inline-link-decoration-color;
+    &:hover {
+      color: $brand-inline-link-hover-color;
+      text-decoration: $brand-inline-link-hover-decoration;
+      text-decoration-line: $brand-inline-link-hover-decoration;
+      text-decoration-color: $brand-inline-link-hover-decoration-color;
+    }
+  }
+}
