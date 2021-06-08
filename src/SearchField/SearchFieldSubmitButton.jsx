@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import { SearchFieldContext } from './SearchFieldAdvanced';
 
-const SearchFieldSubmitButton = () => {
+const SearchFieldSubmitButton = (props) => {
   const { screenReaderText, icons, refs } = useContext(SearchFieldContext);
 
   return (
@@ -10,6 +10,7 @@ const SearchFieldSubmitButton = () => {
       type="submit"
       className="btn"
       ref={refs.submitButton}
+      {...props}
     >
       {icons.submit}
       <span className="sr-only">{screenReaderText.submitButton}</span>

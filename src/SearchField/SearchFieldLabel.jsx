@@ -5,13 +5,14 @@ import classNames from 'classnames';
 
 import { SearchFieldContext } from './SearchFieldAdvanced';
 
-const SearchFieldLabel = ({ children }) => {
+const SearchFieldLabel = ({ children, ...props }) => {
   const { screenReaderText, inputId } = useContext(SearchFieldContext);
 
   return (
     <label
       htmlFor={inputId.current}
       className={classNames('m-0', { 'has-label-text': !!children })}
+      {...props}
     >
       {children || <span className="sr-only">{screenReaderText.label}</span>}
     </label>

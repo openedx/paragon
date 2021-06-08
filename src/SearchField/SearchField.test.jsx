@@ -156,4 +156,35 @@ describe('<SearchField /> with basic usage', () => {
       expect(wrapper.find('input').prop('value')).toEqual('');
     });
   });
+  describe('advanced usage', () => {
+    it('should pass props to the clear button', () => {
+      const buttonProps = { variant: 'inline' };
+      const wrapper = mount(
+        <SearchField.Advanced {...baseProps}>
+          <SearchField.Input />
+          <SearchField.ClearButton {...buttonProps} />
+        </SearchField.Advanced>,
+      );
+      wrapper.find('input').simulate('change', { target: { value: 'foobar' } });
+      expect(wrapper.find('button').prop('variant')).toEqual(buttonProps.variant);
+    });
+    it('should pass props to the label', () => {
+      const labelProps = { variant: 'inline' };
+      const wrapper = mount(
+        <SearchField.Advanced {...baseProps}>
+          <SearchField.Label {...labelProps}>Labeled</SearchField.Label>
+        </SearchField.Advanced>,
+      );
+      expect(wrapper.find('label').prop('variant')).toEqual(labelProps.variant);
+    });
+    it('should pass props to the submit button', () => {
+      const buttonProps = { variant: 'inline' };
+      const wrapper = mount(
+        <SearchField.Advanced {...baseProps}>
+          <SearchField.SubmitButton {...buttonProps} />
+        </SearchField.Advanced>,
+      );
+      expect(wrapper.find('button').prop('variant')).toEqual(buttonProps.variant);
+    });
+  });
 });
