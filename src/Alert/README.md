@@ -44,12 +44,11 @@ notes: |
 </>
 ```
 
-##### Variants 
+##### Variants
 
 ```jsx live
 <>
-<Alert variant="success" dismissible>
-  <Icon src={CheckCircle} className="alert-icon"/>
+<Alert variant="success" dismissible icon={CheckCircle}>
   <Alert.Heading>Hey, nice to see you</Alert.Heading>
   <p>
     Aww yeah, you successfully read this important alert message. This example
@@ -57,8 +56,7 @@ notes: |
     alert works with this kind of content.
   </p>
 </Alert>
-<Alert variant="warning" dismissible>
-  <Icon src={WarningFilled} className="alert-icon"/>
+<Alert variant="warning" dismissible icon={WarningFilled}>
   <Alert.Heading>Hey, nice to see you</Alert.Heading>
   <p>
     Aww yeah, you successfully read this important alert message. This example
@@ -66,8 +64,7 @@ notes: |
     alert works with this kind of content.
   </p>
 </Alert>
-<Alert variant="danger" dismissible>
-  <Icon src={Info} className="alert-icon"/>
+<Alert variant="danger" dismissible icon={Info}>
   <Alert.Heading>Hey, nice to see you</Alert.Heading>
   <p>
     Aww yeah, you successfully read this important alert message. This example
