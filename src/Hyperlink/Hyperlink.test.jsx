@@ -68,3 +68,10 @@ describe('event handlers are triggered correctly', () => {
     expect(spy).toHaveBeenCalledTimes(1);
   });
 });
+
+describe('show underlined hyperlink text', () => {
+  it('it checks if hyperlink is underlined', () => {
+    const wrapper = mount(<Hyperlink {...props} isUnderline />).find('a');
+    expect(wrapper.prop('style')).toEqual({ textDecoration: 'underline' });
+  });
+});

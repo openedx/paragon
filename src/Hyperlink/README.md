@@ -53,3 +53,8 @@ notes: |
   />
 </Hyperlink>
 ```
+### underlined 
+
+```jsx live
+<Hyperlink href="https://en.wikipedia.org/wiki/Hyperlink" isUnderline>edX.org</Hyperlink>
+```

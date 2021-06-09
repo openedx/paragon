@@ -14,6 +14,7 @@ function Hyperlink(props) {
     onClick,
     externalLinkAlternativeText,
     externalLinkTitle,
+    isUnderline,
     ...other
   } = props;
 
@@ -33,12 +34,14 @@ function Hyperlink(props) {
 
   return (
     <a
-      style={{ textDecoration: 'underline' }}
+      style={{ textDecoration: isUnderline ? 'underline' : '' }}
       href={destination}
       target={target}
       onClick={onClick}
       {...other}
-    >{children}{externalLinkIcon}
+    >
+      {children}
+      {externalLinkIcon}
     </a>
   );
 }
@@ -48,6 +51,7 @@ Hyperlink.defaultProps = {
   onClick: () => {},
   externalLinkAlternativeText: 'Opens in a new window',
   externalLinkTitle: 'Opens in a new window',
+  isUnderline: false,
 };
 
 Hyperlink.propTypes = {
@@ -71,6 +75,7 @@ Hyperlink.propTypes = {
     PropTypes.string,
     props => props.target === '_blank',
   ),
+  isUnderline: PropTypes.bool,
 };
 
 export default withDeprecatedProps(Hyperlink, 'Hyperlink', {
