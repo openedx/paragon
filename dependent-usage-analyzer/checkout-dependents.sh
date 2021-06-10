@@ -9,6 +9,7 @@ mkdir .projects
   git clone git@github.com:edx/frontend-app-course-authoring.git --depth 1
   git clone git@github.com:edx/frontend-app-discussions.git --depth 1
   git clone git@github.com:edx/frontend-app-ecommerce.git --depth 1
+  git clone git@github.com:edx/frontend-app-enterprise-public-catalog.git --depth 1
   git clone git@github.com:edx/frontend-app-gradebook.git --depth 1
   git clone git@github.com:edx/frontend-app-learner-portal-enterprise.git --depth 1
   git clone git@github.com:edx/frontend-app-learner-portal-programs.git --depth 1
