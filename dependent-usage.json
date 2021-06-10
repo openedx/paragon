@@ -4482,6 +4482,197 @@
     }
   },
   {
+    "version": "14.14.1",
+    "name": "@edx/frontend-app-enterprise-public-catalog",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/edx/frontend-app-enterprise-public-catalog.git"
+    },
+    "folderName": "frontend-app-enterprise-public-catalog",
+    "usages": {
+      "Container": [
+        {
+          "filePath": "src/components/callToAction/callToAction.jsx",
+          "line": 18,
+          "column": 4,
+          "version": "14.14.1"
+        },
+        {
+          "filePath": "src/components/catalogSelectionDeck/CatalogSelectionDeck.jsx",
+          "line": 13,
+          "column": 6,
+          "version": "14.14.1"
+        },
+        {
+          "filePath": "src/components/hero/Hero.jsx",
+          "line": 19,
+          "column": 4,
+          "version": "14.14.1"
+        },
+        {
+          "filePath": "src/components/PageWrapper.jsx",
+          "line": 11,
+          "column": 2,
+          "version": "14.14.1"
+        }
+      ],
+      "Button": [
+        {
+          "filePath": "src/components/callToAction/callToAction.jsx",
+          "line": 24,
+          "column": 8,
+          "version": "14.14.1"
+        }
+      ],
+      "Hyperlink": [
+        {
+          "filePath": "src/components/catalogPage/CatalogPage.jsx",
+          "line": 31,
+          "column": 14,
+          "version": "14.14.1"
+        },
+        {
+          "filePath": "src/components/catalogPage/CatalogPage.jsx",
+          "line": 36,
+          "column": 14,
+          "version": "14.14.1"
+        }
+      ],
+      "Alert": [
+        {
+          "filePath": "src/components/catalogs/CatalogSearchResults.jsx",
+          "line": 60,
+          "column": 6,
+          "version": "14.14.1"
+        },
+        {
+          "filePath": "src/components/catalogs/CatalogSearchResults.jsx",
+          "line": 73,
+          "column": 6,
+          "version": "14.14.1"
+        }
+      ],
+      "DataTable": [
+        {
+          "filePath": "src/components/catalogs/CatalogSearchResults.jsx",
+          "line": 105,
+          "column": 8,
+          "version": "14.14.1"
+        }
+      ],
+      "DataTable.TableControlBar": [
+        {
+          "filePath": "src/components/catalogs/CatalogSearchResults.jsx",
+          "line": 112,
+          "column": 10,
+          "version": "14.14.1"
+        }
+      ],
+      "DataTable.Table": [
+        {
+          "filePath": "src/components/catalogs/CatalogSearchResults.jsx",
+          "line": 113,
+          "column": 10,
+          "version": "14.14.1"
+        }
+      ],
+      "DataTable.TableFooter": [
+        {
+          "filePath": "src/components/catalogs/CatalogSearchResults.jsx",
+          "line": 114,
+          "column": 10,
+          "version": "14.14.1"
+        }
+      ],
+      "DataTable.RowStatus": [
+        {
+          "filePath": "src/components/catalogs/CatalogSearchResults.jsx",
+          "line": 115,
+          "column": 12,
+          "version": "14.14.1"
+        }
+      ],
+      "Form.Checkbox": [
+        {
+          "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
+          "line": 22,
+          "column": 4,
+          "version": "14.14.1"
+        }
+      ],
+      "Card": [
+        {
+          "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
+          "line": 32,
+          "column": 2,
+          "version": "14.14.1"
+        }
+      ],
+      "Card.Body": [
+        {
+          "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
+          "line": 33,
+          "column": 4,
+          "version": "14.14.1"
+        }
+      ],
+      "Card.Title": [
+        {
+          "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
+          "line": 34,
+          "column": 6,
+          "version": "14.14.1"
+        }
+      ],
+      "Card.Text": [
+        {
+          "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
+          "line": 37,
+          "column": 6,
+          "version": "14.14.1"
+        }
+      ],
+      "CardDeck": [
+        {
+          "filePath": "src/components/catalogSelectionDeck/CatalogSelectionDeck.jsx",
+          "line": 15,
+          "column": 8,
+          "version": "14.14.1"
+        }
+      ],
+      "Large": [
+        {
+          "filePath": "src/components/hero/Hero.jsx",
+          "line": 22,
+          "column": 8,
+          "version": "14.14.1"
+        }
+      ],
+      "Image": [
+        {
+          "filePath": "src/components/hero/Hero.jsx",
+          "line": 23,
+          "column": 10,
+          "version": "14.14.1"
+        },
+        {
+          "filePath": "src/components/hero/Hero.jsx",
+          "line": 32,
+          "column": 10,
+          "version": "14.14.1"
+        }
+      ],
+      "ExtraLarge": [
+        {
+          "filePath": "src/components/hero/Hero.jsx",
+          "line": 31,
+          "column": 8,
+          "version": "14.14.1"
+        }
+      ]
+    }
+  },
+  {
     "version": "14.6.1",
     "name": "@edx/frontend-app-gradebook",
     "repository": {
