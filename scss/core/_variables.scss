@@ -418,6 +418,17 @@ $muted-inline-link-hover-color:                 darken($muted-inline-link-color,
 $muted-inline-link-hover-decoration:            underline !default;
 $muted-inline-link-hover-decoration-color:      rgba($muted-inline-link-hover-color, 1) !default;
 
+$brand-link-color:                              $brand-500 !default;
+$brand-link-decoration:                         none !default;
+$brand-link-hover-color:                        darken($brand-link-color, 15%) !default;
+$brand-link-hover-decoration:                   underline !default;
+$brand-inline-link-color:                       $brand-500 !default;
+$brand-inline-link-decoration:                  underline !default;
+$brand-inline-link-decoration-color:            rgba($brand-inline-link-color, .3) !default;
+$brand-inline-link-hover-color:                 darken($brand-inline-link-color, 15%) !default;
+$brand-inline-link-hover-decoration:            underline !default;
+$brand-inline-link-hover-decoration-color:      rgba($brand-inline-link-hover-color, 1) !default;
+
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
 $emphasized-link-hover-darken-percentage: 15% !default;
 
