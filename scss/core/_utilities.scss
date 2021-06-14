@@ -18,6 +18,12 @@ $color-levels: 100, 200, 300, 400, 500, 600, 700, 800, 900;
   font-size: $x-small-font-size;
 }
 
+.micro {
+  font-size: $micro-font-size;
+  font-weight: normal;
+  line-height: $micro-line-height;
+}
+
 .mw-xs {
   max-width: $max-width-xs !important;
 }
