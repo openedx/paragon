@@ -590,6 +590,9 @@ $lead-font-weight:            null !default;
 $small-font-size:             87.5% !default;
 $x-small-font-size:             75% !default;
 
+$micro-font-size:        0.688rem;
+$micro-line-height:      136% !default;
+
 $text-muted:                  theme-color("gray", "light-text") !default;
 
 $blockquote-small-color:      theme-color("gray", "light-text") !default;
