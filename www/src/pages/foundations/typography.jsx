@@ -138,6 +138,16 @@ export default function TypographyPage() {
                 <code>.x-small</code>
               </td>
             </tr>
+            <tr>
+              <td colSpan="2">
+                <MeasuredItem {...measuredTypeProps}>
+                  <p className="micro m-0">Micro Body</p>
+                </MeasuredItem>
+              </td>
+              <td>
+                <code>.micro</code>
+              </td>
+            </tr>
           </tbody>
           <tbody>
             <tr>
