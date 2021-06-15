@@ -217,7 +217,10 @@ $form-control-icon-width: 32px !default;
     }
   }
   select.form-control {
-    background: $custom-select-bg $custom-select-background;
+    background-image: $custom-select-indicator;
+    background-position: right .5625rem center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
     appearance: none;
   }
   select.form-control:not(.has-value):not(:focus) {
