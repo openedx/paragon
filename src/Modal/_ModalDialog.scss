@@ -51,6 +51,11 @@
   margin: 0;
   max-height: none;
   max-width: none;
+
+  .pgn__modal-footer {
+    border-top: solid 1px $light;
+    padding-top: $modal-footer-padding-y;
+  }
 }
 
 // Made specific due to a selector in Modal.scss
@@ -190,10 +195,6 @@
 
   .pgn__modal-header {
     border-bottom: solid 1px $light;
-  }
-  .pgn__modal-footer {
-    border-top: solid 1px $light;
-    padding-top: $modal-footer-padding-y;
   }
 }
 
