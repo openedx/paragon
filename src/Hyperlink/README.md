@@ -27,6 +27,14 @@ notes: |
 </Hyperlink>
 ```
 
+### blank target without Icon
+
+```jsx live
+<Hyperlink destination="https://www.edx.org" target="_blank" rel="noopener noreferrer" showLaunchIcon={false}>
+  edX.org
+</Hyperlink>
+```
+
 ### with onClick
 
 ```jsx live
