@@ -17,6 +17,7 @@ function Hyperlink(props) {
     externalLinkTitle,
     variant,
     isInline,
+    showLaunchIcon,
     ...other
   } = props;
 
@@ -25,13 +26,14 @@ function Hyperlink(props) {
   if (target === '_blank') {
     // Add this rel attribute to prevent Reverse Tabnabbing
     other.rel = other.rel ? `noopener ${other.rel}` : 'noopener';
-
-    externalLinkIcon = (
-    // Space between content and icon
-      <span className="d-inline-block align-text-top">{' '}
-        <Icon src={Launch} style={{ height: '1em', width: '1em' }} />
-      </span>
-    );
+    if (showLaunchIcon) {
+      externalLinkIcon = (
+        // Space between content and icon
+        <span className="d-inline-block align-text-top">{' '}
+          <Icon src={Launch} style={{ height: '1em', width: '1em' }} />
+        </span>
+      );
+    }
   }
 
   return (
@@ -59,6 +61,7 @@ Hyperlink.defaultProps = {
   externalLinkTitle: 'Opens in a new window',
   variant: 'default',
   isInline: false,
+  showLaunchIcon: true,
 };
 
 Hyperlink.propTypes = {
@@ -86,6 +89,8 @@ Hyperlink.propTypes = {
   variant: PropTypes.oneOf(['default', 'muted', 'brand']),
   /** specify the link style. By default it will be underlined. */
   isInline: PropTypes.bool,
+  /** specify if we need to show launch Icon. By default it will be visible. */
+  showLaunchIcon: PropTypes.bool,
 };
 
 export default withDeprecatedProps(Hyperlink, 'Hyperlink', {
