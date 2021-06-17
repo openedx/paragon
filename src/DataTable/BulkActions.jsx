@@ -5,14 +5,23 @@ import classNames from 'classnames';
 import DataTableContext from './DataTableContext';
 import Actions from './CollapsibleButtonGroup';
 
-const BulkActions = ({
-  className,
-}) => {
-  const { selectedFlatRows, rows, bulkActions } = useContext(DataTableContext);
+const BulkActions = ({ className }) => {
+  const {
+    controlledTableSelections: [{ isEntireTableSelected }],
+    selectedFlatRows,
+    rows,
+    bulkActions,
+  } = useContext(DataTableContext);
+  const selectedRowsForAction = selectedFlatRows || rows;
 
-  const bulkActionRows = selectedFlatRows || rows;
-
-  return <Actions actionData={bulkActionRows} actions={bulkActions} className={classNames('pgn__bulk-actions', className)} />;
+  return (
+    <Actions
+      actions={bulkActions}
+      className={classNames('pgn__bulk-actions', className)}
+      isEntireTableSelected={isEntireTableSelected}
+      selectedRows={selectedRowsForAction}
+    />
+  );
 };
 
 BulkActions.defaultProps = {

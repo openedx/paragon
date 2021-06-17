@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 const IndeterminateCheckbox = React.forwardRef(
   ({ indeterminate, ...props }, ref) => {
-    const defaultRef = React.useRef();
+    const defaultRef = useRef();
     const resolvedRef = ref || defaultRef;
 
-    React.useEffect(() => {
+    useEffect(() => {
       // this if(resolvedRef.current) prevents console errors in testing
       if (resolvedRef.current) {
         resolvedRef.current.indeterminate = indeterminate;

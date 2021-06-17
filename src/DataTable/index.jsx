@@ -1,8 +1,8 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, useReducer } from 'react';
 import PropTypes from 'prop-types';
 import { useTable } from 'react-table';
-import Table from './Table';
 
+import Table from './Table';
 import getVisibleColumns from './utils/getVisibleColumns';
 import { requiredWhen } from './utils/propTypesUtils';
 import getTableArgs from './utils/getTableArgs';
@@ -14,6 +14,7 @@ import DropdownFilters from './DropdownFilters';
 import FilterStatus from './FilterStatus';
 import RowStatus from './RowStatus';
 import SelectionStatus from './SelectionStatus';
+import ControlledSelectionStatus from './selection/ControlledSelectionStatus';
 import SmartStatus from './SmartStatus';
 import TableFilters from './TableFilters';
 import TableHeaderCell from './TableHeaderCell';
@@ -22,6 +23,10 @@ import TableHeaderRow from './TableHeaderRow';
 import TablePagination from './TablePagination';
 import DataTableContext from './DataTableContext';
 import TableActions from './TableActions';
+import ControlledSelectWithContext from './selection/ControlledSelectWithContext';
+import ControlledSelectWithContextHeader from './selection/ControlledSelectWithContextHeader';
+
+import selectionsReducer, { initialState as initialSelectionsState } from './selection/data/reducer';
 
 function DataTable({
   columns, data, defaultColumnValues, additionalColumns, isSelectable,
@@ -35,7 +40,7 @@ function DataTable({
   children,
   ...props
 }) {
-  const defaultColumn = React.useMemo(
+  const defaultColumn = useMemo(
     () => (defaultColumnValues),
     [defaultColumnValues],
   );
@@ -49,6 +54,8 @@ function DataTable({
     initialState,
     ...initialTableOptions,
   }), [columns, data, defaultColumn, manualFilters, manualPagination, initialState, initialTableOptions]);
+
+  const [selections, selectionsDispatch] = useReducer(selectionsReducer, initialSelectionsState);
 
   if (isPaginated && manualPagination) {
     // pageCount is required when pagination is manual, if it's not there passing -1 as per react-table docs
@@ -66,6 +73,22 @@ function DataTable({
     );
   });
 
+  const selectionProps = {};
+  const { selectedRows } = selections;
+  if (selectedRows.length > 0) {
+    const selectedRowsById = {};
+    selectedRows.forEach((row) => {
+      selectedRowsById[row.id] = true;
+    });
+    tableArgs.push(hooks => {
+      hooks.useControlledState.push(
+        (state) => ({ ...state, selectedRowIds: selectedRowsById }),
+      );
+    });
+    selectionProps.selectedFlatRows = selectedRows;
+  }
+  const controlledTableSelections = [selections, selectionsDispatch];
+
   // Use the state and functions returned from useTable to build your UI
   const instance = useTable(...tableArgs);
 
@@ -73,7 +96,7 @@ function DataTable({
     if (fetchData) {
       fetchData(instance.state);
     }
-  }, [fetchData, instance.state]);
+  }, [fetchData, JSON.stringify(instance.state)]);
 
   const enhancedInstance = {
     ...instance,
@@ -81,6 +104,8 @@ function DataTable({
     numBreakoutFilters,
     bulkActions,
     tableActions,
+    controlledTableSelections,
+    ...selectionProps,
     ...props,
   };
 
@@ -244,5 +269,8 @@ DataTable.TableHeaderCell = TableHeaderCell;
 DataTable.TableHeaderRow = TableHeaderRow;
 DataTable.TablePagination = TablePagination;
 DataTable.TableActions = TableActions;
+DataTable.ControlledSelectionStatus = ControlledSelectionStatus;
+DataTable.ControlledSelectWithContext = ControlledSelectWithContext;
+DataTable.ControlledSelectWithContextHeader = ControlledSelectWithContextHeader;
 
 export default DataTable;
