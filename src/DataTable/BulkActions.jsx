@@ -8,11 +8,25 @@ import Actions from './CollapsibleButtonGroup';
 const BulkActions = ({
   className,
 }) => {
-  const { selectedFlatRows, rows, bulkActions } = useContext(DataTableContext);
+  const {
+    controlledTableSelections: [{ isEntireTableSelected }],
+    selectedFlatRows,
+    rows,
+    bulkActions,
+  } = useContext(DataTableContext);
 
   const bulkActionRows = selectedFlatRows || rows;
-
-  return <Actions actionData={bulkActionRows} actions={bulkActions} className={classNames('pgn__bulk-actions', className)} />;
+  const actionProps = {
+    isEntireTableSelected,
+    actionData: bulkActionRows,
+  };
+  return (
+    <Actions
+      actions={bulkActions}
+      className={classNames('pgn__bulk-actions', className)}
+      {...actionProps}
+    />
+  );
 };
 
 BulkActions.defaultProps = {

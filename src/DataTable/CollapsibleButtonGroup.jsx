@@ -27,6 +27,7 @@ const CollapsibleButtonGroup = ({
   className,
   actionData,
   actions,
+  isEntireTableSelected,
 }) => {
   const { width } = useWindowSize();
   const [visibleActions, dropdownActions] = useMemo(() => {
@@ -43,48 +44,52 @@ const CollapsibleButtonGroup = ({
     return [firstTwoActions.reverse(), extraActions];
   }, [actions, width]);
 
-  if (!actionData) {
+  if (!isEntireTableSelected && !actionData) {
     return null;
   }
 
   return (
     <div className={className}>
       {dropdownActions.length > 0 && (
-      <Dropdown>
-        <Dropdown.Toggle as={CustomDropdownToggle}>
-          <Icon
-            src={MoreVert}
-            screenReaderText={width > breakpoints.small.minWidth
-              ? DROPDOWN_BUTTON_TEXT : SMALL_SCREEN_DROPDOWN_BUTTON_TEXT}
-          />
-        </Dropdown.Toggle>
-        <Dropdown.Menu alignRight>
-          {dropdownActions.map((action) => (
-            <Dropdown.Item
-              className={action.className}
-              key={action.buttonText}
-              onClick={() => action.handleClick(actionData)}
-              disabled={action.disabled}
-            >
-              {action.buttonText}
-            </Dropdown.Item>
-          ))}
-        </Dropdown.Menu>
-      </Dropdown>
+        <Dropdown>
+          <Dropdown.Toggle as={CustomDropdownToggle}>
+            <Icon
+              src={MoreVert}
+              screenReaderText={width > breakpoints.small.minWidth
+                ? DROPDOWN_BUTTON_TEXT : SMALL_SCREEN_DROPDOWN_BUTTON_TEXT}
+            />
+          </Dropdown.Toggle>
+          <Dropdown.Menu alignRight>
+            {dropdownActions.map((action) => (
+              <Dropdown.Item
+                className={action.className}
+                key={action.buttonText}
+                onClick={() => action.handleClick({
+                  isEntireTableSelected,
+                  actionData,
+                })}
+                disabled={action.disabled}
+              >
+                {action.buttonText}
+              </Dropdown.Item>
+            ))}
+          </Dropdown.Menu>
+        </Dropdown>
       )}
-
       {visibleActions.map((action, idx) => {
         let { variant } = action;
         if (!variant) {
           // use the variant defined on the button if it exists, if not, use these styles.
           variant = (idx === 1 && visibleActions.length === 2) ? 'brand' : 'outline-primary';
         }
-
         return (
           <Button
             variant={variant}
             className={classNames('ml-2', action.className)}
-            onClick={() => action.handleClick(actionData)}
+            onClick={() => action.handleClick({
+              isEntireTableSelected,
+              actionData,
+            })}
             key={action.buttonText}
             disabled={action.disabled}
           >
@@ -98,14 +103,14 @@ const CollapsibleButtonGroup = ({
 
 CollapsibleButtonGroup.defaultProps = {
   className: null,
-  actionData: null,
 };
 
 CollapsibleButtonGroup.propTypes = {
   /** class names for the div wrapping the button components */
   className: PropTypes.string,
   // eslint-disable-next-line react/forbid-prop-types
-  actionData: PropTypes.any,
+  isEntireTableSelected: PropTypes.bool.isRequired,
+  actionData: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   actions: PropTypes.arrayOf(PropTypes.shape({
     className: PropTypes.string,
     handleClick: PropTypes.func.isRequired,

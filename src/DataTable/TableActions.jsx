@@ -8,9 +8,25 @@ import Actions from './CollapsibleButtonGroup';
 const TableActions = ({
   className,
 }) => {
-  const instance = useContext(DataTableContext);
+  const {
+    controlledTableSelections: [{ isEntireTableSelected }],
+    selectedFlatRows,
+    rows,
+    tableActions,
+  } = useContext(DataTableContext);
 
-  return <Actions actionData={instance} actions={instance.tableActions} className={classNames('pgn__table-actions', className)} />;
+  const tableActionRows = selectedFlatRows || rows;
+  const actionProps = {
+    isEntireTableSelected,
+    actionData: tableActionRows,
+  };
+  return (
+    <Actions
+      {...actionProps}
+      actions={tableActions}
+      className={classNames('pgn__table-actions', className)}
+    />
+  );
 };
 
 TableActions.defaultProps = {

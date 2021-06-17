@@ -1,17 +1,22 @@
 import React from 'react';
+
 import IndeterminateCheckbox from '../IndeterminateCheckBox';
 
 export const selectColumn = {
   id: 'selection',
-  // The header can use the table's getToggleAllRowsSelectedProps method
-  // to render a checkbox
-  // Proptypes disabled as this prop is passed in separately
+  // The header can use the table's getToggleAllPageRowsSelectedProps or getToggleAllRowsSelectedProps
+  // method to render a checkbox. The method is determined based on whether pagination is enabled or
+  // not (i.e., ``page`` is defined).
+  // Proptypes disabled as these props are passed in separately
   // eslint-disable-next-line react/prop-types
-  Header: ({ getToggleAllRowsSelectedProps }) => (
-    <div>
-      <IndeterminateCheckbox {...getToggleAllRowsSelectedProps()} />
-    </div>
-  ),
+  Header: ({ getToggleAllPageRowsSelectedProps, getToggleAllRowsSelectedProps, page }) => {
+    const toggleRowsSelected = page ? getToggleAllPageRowsSelectedProps : getToggleAllRowsSelectedProps;
+    return (
+      <div>
+        <IndeterminateCheckbox {...toggleRowsSelected()} />
+      </div>
+    );
+  },
   // The cell can use the individual row's getToggleRowSelectedProps method
   // to the render a checkbox
   // Proptypes disabled as this prop is passed in separately
@@ -25,7 +30,12 @@ export const selectColumn = {
   disableSortBy: true,
 };
 
-const getVisibleColumns = (isSelectable, visibleColumns, additionalColumns = [], manualSelectColumn = selectColumn) => {
+const getVisibleColumns = (
+  isSelectable,
+  visibleColumns,
+  additionalColumns = [],
+  manualSelectColumn = selectColumn,
+) => {
   let columns = [];
   if (isSelectable) {
     columns.push(manualSelectColumn);

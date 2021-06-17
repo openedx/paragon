@@ -135,12 +135,28 @@ describe('<DataTable />', () => {
     expect(spy.mock.calls[0]).toHaveLength(2);
   });
   test.each([
-    [{}, { manualFilters: false, manualPagination: false, manualSortBy: false }],
-    [{ manualFilters: true }, { manualFilters: true, manualPagination: false, manualSortBy: false }],
-    [{ manualPagination: true }, { manualFilters: false, manualPagination: true, manualSortBy: false }],
-    [{ manualSortBy: true }, { manualFilters: false, manualPagination: false, manualSortBy: true }],
-    // eslint-disable-next-line max-len
-    [{ manualSortBy: true, manualFilters: true, manualPagination: true }, { manualFilters: true, manualPagination: true, manualSortBy: true }],
+    [
+      {},
+      { manualFilters: false, manualPagination: false, manualSortBy: false },
+    ],
+    [
+      { manualFilters: true, pageCount: 1 },
+      { manualFilters: true, manualPagination: false, manualSortBy: false },
+    ],
+    [
+      { manualPagination: true, pageCount: 1 },
+      { manualFilters: false, manualPagination: true, manualSortBy: false },
+    ],
+    [
+      { manualSortBy: true, pageCount: 1 },
+      { manualFilters: false, manualPagination: false, manualSortBy: true },
+    ],
+    [
+      {
+        manualSortBy: true, manualFilters: true, manualPagination: true, pageCount: 1,
+      },
+      { manualFilters: true, manualPagination: true, manualSortBy: true },
+    ],
   ])('calls useTable with the correct manual settings %#', (additionalProps, expected) => {
     const spy = jest.spyOn(reactTable, 'useTable');
     mount(<DataTable {...props} {...additionalProps} />);

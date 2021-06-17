@@ -17,24 +17,24 @@ const SelectionStatus = ({
     <div className={className}>
       <span>{allRowsSelected && 'All '}{numSelectedRows} selected </span>
       {!allRowsSelected && (
-      <Button
-        className={SELECT_ALL_TEST_ID}
-        variant="link"
-        size="inline"
-        onClick={() => toggleAllRowsSelected(true)}
-      >
-        Select all {itemCount}
-      </Button>
+        <Button
+          className={SELECT_ALL_TEST_ID}
+          variant="link"
+          size="inline"
+          onClick={() => toggleAllRowsSelected(true)}
+        >
+          Select all {itemCount}
+        </Button>
       )}
       {numSelectedRows > 0 && (
-      <Button
-        className={CLEAR_SELECTION_TEST_ID}
-        variant="link"
-        size="inline"
-        onClick={() => toggleAllRowsSelected(false)}
-      >
-        {clearSelectionText}
-      </Button>
+        <Button
+          className={CLEAR_SELECTION_TEST_ID}
+          variant="link"
+          size="inline"
+          onClick={() => toggleAllRowsSelected(false)}
+        >
+          {clearSelectionText}
+        </Button>
       )}
     </div>
   );

@@ -14,14 +14,17 @@ import DropdownFilters from './DropdownFilters';
 import FilterStatus from './FilterStatus';
 import RowStatus from './RowStatus';
 import SelectionStatus from './SelectionStatus';
+import ControlledSelectionStatus from './selection/ControlledSelectionStatus';
 import SmartStatus from './SmartStatus';
 import TableFilters from './TableFilters';
 import TableHeaderCell from './TableHeaderCell';
 import TableCell from './TableCell';
 import TableHeaderRow from './TableHeaderRow';
 import TablePagination from './TablePagination';
-import DataTableContext from './DataTableContext';
+import DataTableContextProvider from './DataTableContextProvider';
 import TableActions from './TableActions';
+import ControlledSelectWithContext from './selection/ControlledSelectWithContext';
+import ControlledSelectWithContextHeader from './selection/ControlledSelectWithContextHeader';
 
 function DataTable({
   columns, data, defaultColumnValues, additionalColumns, isSelectable,
@@ -35,7 +38,7 @@ function DataTable({
   children,
   ...props
 }) {
-  const defaultColumn = React.useMemo(
+  const defaultColumn = useMemo(
     () => (defaultColumnValues),
     [defaultColumnValues],
   );
@@ -73,7 +76,7 @@ function DataTable({
     if (fetchData) {
       fetchData(instance.state);
     }
-  }, [fetchData, instance.state]);
+  }, [fetchData, JSON.stringify(instance.state)]);
 
   const enhancedInstance = {
     ...instance,
@@ -85,7 +88,7 @@ function DataTable({
   };
 
   return (
-    <DataTableContext.Provider value={enhancedInstance}>
+    <DataTableContextProvider value={enhancedInstance}>
       <div className="pgn__data-table-wrapper">
         {children || (
           <>
@@ -96,7 +99,7 @@ function DataTable({
           </>
         )}
       </div>
-    </DataTableContext.Provider>
+    </DataTableContextProvider>
   );
 }
 
@@ -244,5 +247,8 @@ DataTable.TableHeaderCell = TableHeaderCell;
 DataTable.TableHeaderRow = TableHeaderRow;
 DataTable.TablePagination = TablePagination;
 DataTable.TableActions = TableActions;
+DataTable.ControlledSelectionStatus = ControlledSelectionStatus;
+DataTable.ControlledSelectWithContext = ControlledSelectWithContext;
+DataTable.ControlledSelectWithContextHeader = ControlledSelectWithContextHeader;
 
 export default DataTable;
