@@ -23,7 +23,7 @@ designStatus: 'Done'
 devStatus: 'In progress'
 ---
 
-The DataTable component is a wrapper that uses the <a href="https://react-table.tanstack.com/docs">react-table</a> library to
+The DataTable component is a wrapper that uses the <a href="https://react-table.tanstack.com/docs/overview">react-table</a> library to
 create tables. It can be used as is, or its subcomponents can be used on their own, allowing the developer full control.
 
 ## How children get information
