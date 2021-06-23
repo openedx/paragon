@@ -143,6 +143,7 @@
     margin-left: -$modal-inner-padding;
     margin-right: -$modal-inner-padding;
     opacity: .5;
+    z-index: 2;
   }
   &::after{
     content:"";
