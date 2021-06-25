@@ -146,8 +146,8 @@ When ``fetchData`` is called, it is given the necessary data to send a backend A
 To enable proper selection behavior with backend pagination (i.e., when ``isSelectable`` is provided), for both individual rows and bulk actions, the controlled selection status and controlled select components must be used. When used, these components keep track of a user's row selections in a React context provider such that they persist during pagination, even when only 1 page of data is known at any given time. The following components must be used, as shown in the below example:
 
 * ``DataTable.ControlledSelectionStatus``
-* ``DataTable.ControlledSelectWithContextHeader``
-* ``DataTable.ControlledSelectWithContext``
+* ``DataTable.ControlledSelectHeader``
+* ``DataTable.ControlledSelect``
 
 <strong>NOTE:</strong> While the below example doesn't demonstrate using true backend filtering, pagination, and sorting, it does mock the behavior of making an asynchronous API request and updating the table data.
 
@@ -219,7 +219,6 @@ To enable proper selection behavior with backend pagination (i.e., when ``isSele
   const [data, setData] = useState(PAGINATED_DATA[0]);
   const fetchData = useCallback(
     (args) => {
-      console.log('fetchData', args);
       setTimeout(() => {
         setData(PAGINATED_DATA[args.pageIndex]);
       }, 1000);
@@ -229,8 +228,8 @@ To enable proper selection behavior with backend pagination (i.e., when ``isSele
 
   const selectColumn = {
     id: 'selection',
-    Header: DataTable.ControlledSelectWithContextHeader,
-    Cell: DataTable.ControlledSelectWithContext,
+    Header: DataTable.ControlledSelectHeader,
+    Cell: DataTable.ControlledSelect,
     disableSortBy: true,
   };
   return (

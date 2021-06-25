@@ -6,20 +6,11 @@ import DataTableContext from './DataTableContext';
 import Actions from './CollapsibleButtonGroup';
 
 const BulkActions = ({ className }) => {
-  const {
-    controlledTableSelections: [{ isEntireTableSelected }],
-    selectedFlatRows,
-    rows,
-    bulkActions,
-  } = useContext(DataTableContext);
-  const selectedRowsForAction = selectedFlatRows || rows;
-
+  const { bulkActions } = useContext(DataTableContext);
   return (
     <Actions
-      actions={bulkActions}
       className={classNames('pgn__bulk-actions', className)}
-      isEntireTableSelected={isEntireTableSelected}
-      selectedRows={selectedRowsForAction}
+      actions={bulkActions}
     />
   );
 };

@@ -26,7 +26,6 @@ export { default as Collapsible } from './Collapsible';
 export { default as Dropdown, DropdownButton, SplitButton } from './Dropdown';
 export { default as Fade } from './Fade';
 export { default as Fieldset } from './Fieldset';
-export { default as IndeterminateCheckbox } from './DataTable/IndeterminateCheckBox';
 export {
   default as Form,
   CheckboxControl,

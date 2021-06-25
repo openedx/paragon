@@ -1,6 +1,8 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+
+import DataTableContext from './DataTableContext';
 import { MoreVert } from '../../icons';
 import {
   Button, Dropdown, useWindowSize, Icon, breakpoints,
@@ -25,12 +27,17 @@ const CustomDropdownToggle = React.forwardRef(({ children, onClick }, ref) => (
 
 const CollapsibleButtonGroup = ({
   className,
-  selectedRows,
   actions,
-  isEntireTableSelected,
   tableInstance,
 }) => {
+  const {
+    controlledTableSelections: [{ isEntireTableSelected }],
+    selectedFlatRows,
+    rows,
+  } = useContext(DataTableContext);
   const { width } = useWindowSize();
+  const selectedRows = selectedFlatRows || rows;
+
   const [visibleActions, dropdownActions] = useMemo(() => {
     if (width < breakpoints.small.minWidth) {
       // On a small screen, all actions will be in the overflow menu
@@ -119,8 +126,6 @@ CollapsibleButtonGroup.propTypes = {
   /** class names for the div wrapping the button components */
   className: PropTypes.string,
   // eslint-disable-next-line react/forbid-prop-types
-  isEntireTableSelected: PropTypes.bool.isRequired,
-  selectedRows: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   actions: PropTypes.arrayOf(PropTypes.shape({
     className: PropTypes.string,
     handleClick: PropTypes.func.isRequired,

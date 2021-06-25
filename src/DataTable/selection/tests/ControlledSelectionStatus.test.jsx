@@ -1,9 +1,14 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import ControlledSelectionStatus, { SELECT_ALL_TEST_ID, CLEAR_SELECTION_TEST_ID, CLEAR_SELECTION_TEXT } from '../ControlledSelectionStatus';
+import ControlledSelectionStatus from '../ControlledSelectionStatus';
 import { clearSelectionAction, setSelectAllRowsAllPagesAction, setSelectedRowsAction } from '../data/actions';
 import DataTableContext from '../../DataTableContext';
+import {
+  SELECT_ALL_TEST_ID,
+  CLEAR_SELECTION_TEST_ID,
+  CLEAR_SELECTION_TEXT,
+} from '../data/constants';
 
 const instance = {
   itemCount: 18,

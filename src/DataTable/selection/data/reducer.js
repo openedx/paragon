@@ -16,7 +16,7 @@ export const initialState = {
 const selectionsReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_SELECTED_ROWS: {
-      const selectedRows = uniqBy([...state.selectedRows, ...action.rows], (row) => row.id);
+      const selectedRows = uniqBy([...state.selectedRows, ...action.rows], row => row.id);
       const updatedState = {
         ...state,
         selectedRows,
@@ -37,7 +37,7 @@ const selectionsReducer = (state = initialState, action) => {
         isEntireTableSelected: false,
       };
     case ADD_ROW: {
-      const selectedRows = [...state.selectedRows, action.row];
+      const selectedRows = uniqBy([...state.selectedRows, action.row], row => row.id);
       const isEntireTableSelected = selectedRows.length === action.itemCount;
       return {
         selectedRows,

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import IndeterminateCheckbox from '../IndeterminateCheckBox';
+import { CheckboxControl } from '../../Form';
 
 export const selectColumn = {
   id: 'selection',
@@ -8,25 +8,29 @@ export const selectColumn = {
   // method to render a checkbox. The method is determined based on whether pagination is enabled or
   // not (i.e., ``page`` is defined).
   // Proptypes disabled as these props are passed in separately
-  // eslint-disable-next-line react/prop-types
+  /* eslint-disable-next-line react/prop-types */
   Header: ({ getToggleAllPageRowsSelectedProps, getToggleAllRowsSelectedProps, page }) => {
-    const toggleRowsSelected = page ? getToggleAllPageRowsSelectedProps : getToggleAllRowsSelectedProps;
+    const getToggleRowsSelectedProps = page ? getToggleAllPageRowsSelectedProps : getToggleAllRowsSelectedProps;
+    const toggleRowsSelectedProps = getToggleRowsSelectedProps();
+    toggleRowsSelectedProps.isIndeterminate = toggleRowsSelectedProps.indeterminate;
+    // delete unused ``indeterminate`` prop
+    delete toggleRowsSelectedProps.indeterminate;
     return (
       <div>
-        <IndeterminateCheckbox {...toggleRowsSelected()} />
+        <CheckboxControl {...toggleRowsSelectedProps} />
       </div>
     );
   },
   // The cell can use the individual row's getToggleRowSelectedProps method
   // to the render a checkbox
   // Proptypes disabled as this prop is passed in separately
-  // eslint-disable-next-line react/prop-types
+  /* eslint-disable react/prop-types */
   Cell: ({ row }) => (
     <div>
-      {/* eslint-disable-next-line react/prop-types */}
-      <IndeterminateCheckbox {...row.getToggleRowSelectedProps()} />
+      <CheckboxControl {...row.getToggleRowSelectedProps()} />
     </div>
   ),
+  /* eslint-enable react/prop-types */
   disableSortBy: true,
 };
 

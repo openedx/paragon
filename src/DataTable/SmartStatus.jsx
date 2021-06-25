@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import DataTableContext from './DataTableContext';
 import FilterStatusDefault from './FilterStatus';
 import RowStatusDefault from './RowStatus';
-import SelectionStatusDefault from './SelectionStatus';
+import SelectionStatusDefault from './selection/SelectionStatus';
 
 const SMART_STATUS_CLASS = 'pgn__smart-status';
 

@@ -7,20 +7,11 @@ import Actions from './CollapsibleButtonGroup';
 
 const TableActions = ({ className }) => {
   const tableInstance = useContext(DataTableContext);
-  const {
-    controlledTableSelections: [{ isEntireTableSelected }],
-    selectedFlatRows,
-    rows,
-    tableActions,
-  } = tableInstance;
-  const selectedRowsForAction = selectedFlatRows || rows;
-
+  const { tableActions } = tableInstance;
   return (
     <Actions
-      actions={tableActions}
       className={classNames('pgn__table-actions', className)}
-      selectedRows={selectedRowsForAction}
-      isEntireTableSelected={isEntireTableSelected}
+      actions={tableActions}
       tableInstance={tableInstance}
     />
   );

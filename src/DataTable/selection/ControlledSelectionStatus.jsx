@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import Button from '../../Button';
 import DataTableContext from '../DataTableContext';
+import BaseSelectionStatus from './BaseSelectionStatus';
 
 import {
   clearSelectionAction,
@@ -13,10 +13,7 @@ import {
   getUnselectedPageRows,
   getRowIds,
 } from './data/helpers';
-
-export const SELECT_ALL_TEST_ID = 'test_selection_state_select_all_button';
-export const CLEAR_SELECTION_TEST_ID = 'test_selection_state_clear_selection_button';
-export const CLEAR_SELECTION_TEXT = 'Clear selection';
+import { CLEAR_SELECTION_TEXT } from './data/constants';
 
 const ControlledSelectionStatus = ({ className, clearSelectionText }) => {
   const {
@@ -39,33 +36,15 @@ const ControlledSelectionStatus = ({ className, clearSelectionText }) => {
   );
 
   const numSelectedRows = isEntireTableSelected ? itemCount : selectedRows.length;
-  const isAllRowsSelected = numSelectedRows === itemCount;
 
-  return (
-    <div className={className}>
-      <span>{isAllRowsSelected && 'All '}{numSelectedRows} selected </span>
-      {!isAllRowsSelected && (
-        <Button
-          className={SELECT_ALL_TEST_ID}
-          variant="link"
-          size="inline"
-          onClick={() => dispatch(setSelectAllRowsAllPagesAction())}
-        >
-          Select all {itemCount}
-        </Button>
-      )}
-      {numSelectedRows > 0 && (
-        <Button
-          className={CLEAR_SELECTION_TEST_ID}
-          variant="link"
-          size="inline"
-          onClick={() => { dispatch(clearSelectionAction()); }}
-        >
-          {clearSelectionText}
-        </Button>
-      )}
-    </div>
-  );
+  const selectionStatusProps = {
+    className,
+    numSelectedRows,
+    clearSelectionText,
+    onSelectAll: () => dispatch(setSelectAllRowsAllPagesAction()),
+    onClear: () => dispatch(clearSelectionAction()),
+  };
+  return <BaseSelectionStatus {...selectionStatusProps} />;
 };
 
 ControlledSelectionStatus.defaultProps = {

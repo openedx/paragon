@@ -13,7 +13,7 @@ import BulkActions from './BulkActions';
 import DropdownFilters from './DropdownFilters';
 import FilterStatus from './FilterStatus';
 import RowStatus from './RowStatus';
-import SelectionStatus from './SelectionStatus';
+import SelectionStatus from './selection/SelectionStatus';
 import ControlledSelectionStatus from './selection/ControlledSelectionStatus';
 import SmartStatus from './SmartStatus';
 import TableFilters from './TableFilters';
@@ -23,8 +23,8 @@ import TableHeaderRow from './TableHeaderRow';
 import TablePagination from './TablePagination';
 import DataTableContext from './DataTableContext';
 import TableActions from './TableActions';
-import ControlledSelectWithContext from './selection/ControlledSelectWithContext';
-import ControlledSelectWithContextHeader from './selection/ControlledSelectWithContextHeader';
+import ControlledSelect from './selection/ControlledSelect';
+import ControlledSelectHeader from './selection/ControlledSelectHeader';
 
 import selectionsReducer, { initialState as initialSelectionsState } from './selection/data/reducer';
 
@@ -73,6 +73,8 @@ function DataTable({
     );
   });
 
+  // Pass any controlled selections from context to the appropriate ``useTable`` arguments to maintain
+  // correct selection states on rows, both from a data perspective and in the UI.
   const selectionProps = {};
   const { selectedRows } = selections;
   if (selectedRows.length > 0) {
@@ -92,11 +94,15 @@ function DataTable({
   // Use the state and functions returned from useTable to build your UI
   const instance = useTable(...tableArgs);
 
+  // Call ``fetchData`` whenever the state of the table changes (e.g., page change, sort or filter applied) but ignore
+  // any state changes to current row selections as we don't want to re-fetch data whenever row(s) are selected.
+  const tableStateWithoutSelections = { ...instance.state };
+  delete tableStateWithoutSelections.selectedRowIds;
   useEffect(() => {
     if (fetchData) {
-      fetchData(instance.state);
+      fetchData(tableStateWithoutSelections);
     }
-  }, [fetchData, JSON.stringify(instance.state)]);
+  }, [fetchData, JSON.stringify(tableStateWithoutSelections)]);
 
   const enhancedInstance = {
     ...instance,
@@ -270,7 +276,7 @@ DataTable.TableHeaderRow = TableHeaderRow;
 DataTable.TablePagination = TablePagination;
 DataTable.TableActions = TableActions;
 DataTable.ControlledSelectionStatus = ControlledSelectionStatus;
-DataTable.ControlledSelectWithContext = ControlledSelectWithContext;
-DataTable.ControlledSelectWithContextHeader = ControlledSelectWithContextHeader;
+DataTable.ControlledSelect = ControlledSelect;
+DataTable.ControlledSelectHeader = ControlledSelectHeader;
 
 export default DataTable;
