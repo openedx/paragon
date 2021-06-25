@@ -10,6 +10,13 @@ const instance = {
   selectedFlatRows: null,
   bulkActions: [],
   tableActions: [],
+  controlledTableSelections: [
+    {
+      selectedRows: [],
+      isEntireTableSelected: false,
+    },
+    jest.fn(),
+  ],
 };
 
 const firstAction = {
@@ -61,7 +68,12 @@ describe('<ActionDisplay />', () => {
   it('displays table actions when both bulk actions and table actions are present - no selected rows', () => {
     const wrapper = mount(
       <ActionDisplayWrapper
-        value={{ bulkActions: [firstAction], tableActions: [secondAction], selectedFlatRows: [] }}
+        value={{
+          ...instance,
+          bulkActions: [firstAction],
+          tableActions: [secondAction],
+          selectedFlatRows: [],
+        }}
       />,
     );
     expect(wrapper.find(TableActions)).toHaveLength(1);
@@ -75,18 +87,15 @@ describe('<ActionDisplay />', () => {
     );
     expect(wrapper.find(TableActions)).toHaveLength(1);
   });
-  it('displays table actions when both bulk actions and table actions are present - no selected rows', () => {
-    const wrapper = mount(
-      <ActionDisplayWrapper
-        value={{ bulkActions: [firstAction], tableActions: [secondAction], selectedFlatRows: [] }}
-      />,
-    );
-    expect(wrapper.find(TableActions)).toHaveLength(1);
-  });
   it('displays bulk actions instead of table actions when rows are selected', () => {
     const wrapper = mount(
       <ActionDisplayWrapper
-        value={{ bulkActions: [firstAction], tableActions: [secondAction], selectedFlatRows: [{}, {}] }}
+        value={{
+          ...instance,
+          bulkActions: [firstAction],
+          tableActions: [secondAction],
+          selectedFlatRows: [{}, {}],
+        }}
       />,
     );
     expect(wrapper.find(BulkActions)).toHaveLength(1);

@@ -1,8 +1,13 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import SelectionStatus, { SELECT_ALL_TEST_ID, CLEAR_SELECTION_TEST_ID, CLEAR_SELECTION_TEXT } from '../SelectionStatus';
-import DataTableContext from '../DataTableContext';
+import SelectionStatus from '../SelectionStatus';
+import DataTableContext from '../../DataTableContext';
+import {
+  SELECT_ALL_TEST_ID,
+  CLEAR_SELECTION_TEST_ID,
+  CLEAR_SELECTION_TEXT,
+} from '../data/constants';
 
 const instance = {
   selectedFlatRows: [1, 2, 3, 4],

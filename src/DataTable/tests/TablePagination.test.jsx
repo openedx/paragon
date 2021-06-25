@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import TablePagination from '../TablePagination';
-import SelectionState from '../SelectionStatus';
+import SelectionState from '../selection/SelectionStatus';
 import { Button } from '../..';
 import DataTableContext from '../DataTableContext';
 

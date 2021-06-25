@@ -1,10 +1,10 @@
 
 $data-table-border: 1px solid $gray-200 !default;
 $data-table-box-shadow: $box-shadow-sm !default;
-$data-table-padding-x: 14px !default;
-$data-table-padding-y: 14px !default;
-$data-table-padding-small: 8px !default;
-$data-table-cell-padding: 8px 14px !default;
+$data-table-padding-x: 0.75rem !default;
+$data-table-padding-y: 0.75rem !default;
+$data-table-padding-small: 0.5rem !default;
+$data-table-cell-padding: 0.5rem 0.75rem !default;
 $data-table-footer-position: center !default;
 
 .pgn__data-table-wrapper {
