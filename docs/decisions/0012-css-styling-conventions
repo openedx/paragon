@@ -19,6 +19,7 @@ We will adopt and expand the following guidelines:
 - Avoid using the ``!important`` rule 
 - Class names should use the prefix ``pgn__`` followed by class names that follow Bootstrap conventions. (See Bootstrap classname conventions: https://getbootstrap.com/docs/5.0/extend/approach/#classes). Note that this is not the BEM convention.
 - Do not use CSS utility classes in Paragon components (e.g. ``className="d-flex"``).
+- Avoid use of inline styles (e.g. ``style={{ color: 'red' }}``
 
 
 Consequences
