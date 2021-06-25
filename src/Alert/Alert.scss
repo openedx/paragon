@@ -41,6 +41,10 @@
 // added to align content and icon
 .alert-content {
   display: flex;
+
+  div {
+    flex-grow: 1;
+  }
 }
 
 // Provide class for links that match alerts
