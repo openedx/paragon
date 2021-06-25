@@ -40,7 +40,7 @@ const ControlledSelectHeader = ({ rows }) => {
   delete toggleAllPageRowsSelectedProps.indeterminate;
 
   return (
-    <div>
+    <div className="d-flex align-content-center p-1">
       <CheckboxControl
         {...toggleAllPageRowsSelectedProps}
         onChange={toggleAllPageRowsSelected}

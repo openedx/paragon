@@ -27,7 +27,7 @@ const ControlledSelect = ({ row }) => {
   );
 
   return (
-    <div>
+    <div className="d-flex align-content-center p-1">
       <CheckboxControl
         {...row.getToggleRowSelectedProps()}
         onChange={toggleSelected}

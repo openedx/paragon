@@ -16,7 +16,7 @@ export const selectColumn = {
     // delete unused ``indeterminate`` prop
     delete toggleRowsSelectedProps.indeterminate;
     return (
-      <div>
+      <div className="d-flex align-content-center p-1">
         <CheckboxControl {...toggleRowsSelectedProps} />
       </div>
     );
@@ -26,7 +26,7 @@ export const selectColumn = {
   // Proptypes disabled as this prop is passed in separately
   /* eslint-disable react/prop-types */
   Cell: ({ row }) => (
-    <div>
+    <div className="d-flex align-content-center p-1">
       <CheckboxControl {...row.getToggleRowSelectedProps()} />
     </div>
   ),
