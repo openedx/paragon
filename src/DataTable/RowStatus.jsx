@@ -13,7 +13,7 @@ const RowStatus = ({ className }) => {
 };
 
 RowStatus.defaultProps = {
-  className: '',
+  className: undefined,
 };
 
 RowStatus.propTypes = {

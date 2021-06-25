@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/duotoneDark';
@@ -22,7 +22,9 @@ function CodeBlock({ children, className, live }) {
           scope={{
             ...ParagonIcons,
             ...ParagonReact,
+            useCallback,
             useState,
+            useMemo,
             FontAwesome,
             MiyazakiCard,
             HipsterIpsum,

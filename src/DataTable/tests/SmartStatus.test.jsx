@@ -5,7 +5,7 @@ import SmartStatus from '../SmartStatus';
 import DataTableContext from '../DataTableContext';
 import FilterStatus from '../FilterStatus';
 import RowStatus from '../RowStatus';
-import SelectionStatus from '../SelectionStatus';
+import SelectionStatus from '../selection/SelectionStatus';
 
 const filters = [{ id: 'name' }, { id: 'age' }];
 const filterNames = ['name', 'age'];

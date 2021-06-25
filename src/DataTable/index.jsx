@@ -1,8 +1,8 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, useReducer } from 'react';
 import PropTypes from 'prop-types';
 import { useTable } from 'react-table';
-import Table from './Table';
 
+import Table from './Table';
 import getVisibleColumns from './utils/getVisibleColumns';
 import { requiredWhen } from './utils/propTypesUtils';
 import getTableArgs from './utils/getTableArgs';
@@ -13,7 +13,8 @@ import BulkActions from './BulkActions';
 import DropdownFilters from './DropdownFilters';
 import FilterStatus from './FilterStatus';
 import RowStatus from './RowStatus';
-import SelectionStatus from './SelectionStatus';
+import SelectionStatus from './selection/SelectionStatus';
+import ControlledSelectionStatus from './selection/ControlledSelectionStatus';
 import SmartStatus from './SmartStatus';
 import TableFilters from './TableFilters';
 import TableHeaderCell from './TableHeaderCell';
@@ -22,6 +23,10 @@ import TableHeaderRow from './TableHeaderRow';
 import TablePagination from './TablePagination';
 import DataTableContext from './DataTableContext';
 import TableActions from './TableActions';
+import ControlledSelect from './selection/ControlledSelect';
+import ControlledSelectHeader from './selection/ControlledSelectHeader';
+
+import selectionsReducer, { initialState as initialSelectionsState } from './selection/data/reducer';
 
 function DataTable({
   columns, data, defaultColumnValues, additionalColumns, isSelectable,
@@ -35,7 +40,7 @@ function DataTable({
   children,
   ...props
 }) {
-  const defaultColumn = React.useMemo(
+  const defaultColumn = useMemo(
     () => (defaultColumnValues),
     [defaultColumnValues],
   );
@@ -49,6 +54,8 @@ function DataTable({
     initialState,
     ...initialTableOptions,
   }), [columns, data, defaultColumn, manualFilters, manualPagination, initialState, initialTableOptions]);
+
+  const [selections, selectionsDispatch] = useReducer(selectionsReducer, initialSelectionsState);
 
   if (isPaginated && manualPagination) {
     // pageCount is required when pagination is manual, if it's not there passing -1 as per react-table docs
@@ -66,14 +73,36 @@ function DataTable({
     );
   });
 
+  // Pass any controlled selections from context to the appropriate ``useTable`` arguments to maintain
+  // correct selection states on rows, both from a data perspective and in the UI.
+  const selectionProps = {};
+  const { selectedRows } = selections;
+  if (selectedRows.length > 0) {
+    const selectedRowsById = {};
+    selectedRows.forEach((row) => {
+      selectedRowsById[row.id] = true;
+    });
+    tableArgs.push(hooks => {
+      hooks.useControlledState.push(
+        (state) => ({ ...state, selectedRowIds: selectedRowsById }),
+      );
+    });
+    selectionProps.selectedFlatRows = selectedRows;
+  }
+  const controlledTableSelections = [selections, selectionsDispatch];
+
   // Use the state and functions returned from useTable to build your UI
   const instance = useTable(...tableArgs);
 
+  // Call ``fetchData`` whenever the state of the table changes (e.g., page change, sort or filter applied) but ignore
+  // any state changes to current row selections as we don't want to re-fetch data whenever row(s) are selected.
+  const tableStateWithoutSelections = { ...instance.state };
+  delete tableStateWithoutSelections.selectedRowIds;
   useEffect(() => {
     if (fetchData) {
-      fetchData(instance.state);
+      fetchData(tableStateWithoutSelections);
     }
-  }, [fetchData, instance.state]);
+  }, [fetchData, JSON.stringify(tableStateWithoutSelections)]);
 
   const enhancedInstance = {
     ...instance,
@@ -81,6 +110,8 @@ function DataTable({
     numBreakoutFilters,
     bulkActions,
     tableActions,
+    controlledTableSelections,
+    ...selectionProps,
     ...props,
   };
 
@@ -244,5 +275,8 @@ DataTable.TableHeaderCell = TableHeaderCell;
 DataTable.TableHeaderRow = TableHeaderRow;
 DataTable.TablePagination = TablePagination;
 DataTable.TableActions = TableActions;
+DataTable.ControlledSelectionStatus = ControlledSelectionStatus;
+DataTable.ControlledSelect = ControlledSelect;
+DataTable.ControlledSelectHeader = ControlledSelectHeader;
 
 export default DataTable;

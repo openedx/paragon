@@ -5,14 +5,14 @@ import classNames from 'classnames';
 import DataTableContext from './DataTableContext';
 import Actions from './CollapsibleButtonGroup';
 
-const BulkActions = ({
-  className,
-}) => {
-  const { selectedFlatRows, rows, bulkActions } = useContext(DataTableContext);
-
-  const bulkActionRows = selectedFlatRows || rows;
-
-  return <Actions actionData={bulkActionRows} actions={bulkActions} className={classNames('pgn__bulk-actions', className)} />;
+const BulkActions = ({ className }) => {
+  const { bulkActions } = useContext(DataTableContext);
+  return (
+    <Actions
+      className={classNames('pgn__bulk-actions', className)}
+      actions={bulkActions}
+    />
+  );
 };
 
 BulkActions.defaultProps = {

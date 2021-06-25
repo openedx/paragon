@@ -49,6 +49,14 @@ const instance = {
       disabled: true,
     },
   ],
+  controlledTableSelections: [
+    {
+      isEntireTableSelected: false,
+      selectedRows: [],
+    },
+    jest.fn(),
+  ],
+  rows: [],
 };
 
 // eslint-disable-next-line react/prop-types
@@ -87,16 +95,16 @@ describe('<TableActions />', () => {
       const onClickSpy = jest.fn();
       const tableInstance = { ...instance, tableActions: [{ ...firstAction, handleClick: onClickSpy }] };
       const wrapper = mount(
-        <TableActionsWrapper
-          value={tableInstance}
-
-        />,
+        <TableActionsWrapper value={tableInstance} />,
       );
       const button = wrapper.find('button');
       expect(button.length).toEqual(1);
       button.simulate('click');
       expect(onClickSpy).toHaveBeenCalledTimes(1);
-      expect(onClickSpy).toHaveBeenCalledWith(tableInstance);
+      expect(onClickSpy).toHaveBeenCalledWith({
+        selectedRows: [],
+        tableInstance: expect.any(Object),
+      });
     });
   });
   describe('with two actions', () => {
@@ -125,28 +133,26 @@ describe('<TableActions />', () => {
     it('performs the primary button action on click', () => {
       const onClickSpy = jest.fn();
       const tableInstance = { ...instance, tableActions: [{ ...firstAction, handleClick: onClickSpy }, secondAction] };
-      const wrapper = mount(
-        <TableActionsWrapper
-          value={tableInstance}
-        />,
-      );
+      const wrapper = mount(<TableActionsWrapper value={tableInstance} />);
       const button = wrapper.find(Button).at(1);
       button.simulate('click');
       expect(onClickSpy).toHaveBeenCalledTimes(1);
-      expect(onClickSpy).toHaveBeenCalledWith(tableInstance);
+      expect(onClickSpy).toHaveBeenCalledWith({
+        selectedRows: [],
+        tableInstance: expect.any(Object),
+      });
     });
     it('performs the second button action on click', () => {
       const onClickSpy = jest.fn();
       const tableInstance = { ...instance, tableActions: [firstAction, { ...secondAction, handleClick: onClickSpy }] };
-      const wrapper = mount(
-        <TableActionsWrapper
-          value={tableInstance}
-        />,
-      );
+      const wrapper = mount(<TableActionsWrapper value={tableInstance} />);
       const button = wrapper.find(Button).at(0);
       button.simulate('click');
       expect(onClickSpy).toHaveBeenCalledTimes(1);
-      expect(onClickSpy).toHaveBeenCalledWith(tableInstance);
+      expect(onClickSpy).toHaveBeenCalledWith({
+        selectedRows: [],
+        tableInstance: expect.any(Object),
+      });
     });
   });
   describe('with more than two actions', () => {
@@ -175,9 +181,7 @@ describe('<TableActions />', () => {
           tableActions: [...instance.tableActions, { buttonText: itemText, handleClick: onClickSpy, className: itemClassName }],
         };
         wrapper = mount(
-          <TableActionsWrapper
-            value={tableInstance}
-          />,
+          <TableActionsWrapper value={tableInstance} />,
         );
         // the dropdown menu is the first button
         dropdownButton = wrapper.find('button').at(0);
@@ -196,7 +200,10 @@ describe('<TableActions />', () => {
       it('performs actions when dropdown items are clicked', () => {
         wrapper.find(`a.${itemClassName}`).simulate('click');
         expect(onClickSpy).toHaveBeenCalledTimes(1);
-        expect(onClickSpy).toHaveBeenCalledWith(tableInstance);
+        expect(onClickSpy).toHaveBeenCalledWith({
+          selectedRows: [],
+          tableInstance: expect.any(Object),
+        });
       });
       it('displays the action text', () => {
         const item = wrapper.find(`a.${itemClassName}`);
