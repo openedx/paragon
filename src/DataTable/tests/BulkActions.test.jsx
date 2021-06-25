@@ -32,6 +32,13 @@ const twoActions = [
 
 const instance = {
   selectedFlatRows,
+  controlledTableSelections: [
+    {
+      selectedRows: [],
+      isEntireTableSelected: false,
+    },
+    jest.fn(),
+  ],
   bulkActions: [
     ...twoActions,
     {
@@ -90,14 +97,15 @@ describe('<BulkActions />', () => {
       const wrapper = mount(
         <BulkActionsWrapper
           value={{ ...instance, bulkActions: [{ ...firstAction, handleClick: onClickSpy }] }}
-
         />,
       );
       const button = wrapper.find('button');
       expect(button.length).toEqual(1);
       button.simulate('click');
       expect(onClickSpy).toHaveBeenCalledTimes(1);
-      expect(onClickSpy).toHaveBeenCalledWith(selectedFlatRows);
+      expect(onClickSpy).toHaveBeenCalledWith({
+        selectedRows: selectedFlatRows,
+      });
     });
   });
   describe('with two actions', () => {
@@ -122,6 +130,33 @@ describe('<BulkActions />', () => {
       expect(buttons.at(1).props().className).toContain(twoActions[0].className);
     });
   });
+  describe('controlled table selections', () => {
+    it('handles action on click with full table selection (all rows across all pages)', () => {
+      const onClickSpy = jest.fn();
+      const wrapper = mount(
+        <BulkActionsWrapper
+          value={{
+            ...instance,
+            bulkActions: [{ ...firstAction, handleClick: onClickSpy }, secondAction],
+            controlledTableSelections: [
+              {
+                selectedRows: [],
+                isEntireTableSelected: true,
+              },
+              jest.fn(),
+            ],
+          }}
+        />,
+      );
+      const button = wrapper.find(Button).at(1);
+      button.simulate('click');
+      expect(onClickSpy).toHaveBeenCalledTimes(1);
+      expect(onClickSpy).toHaveBeenCalledWith({
+        isEntireTableSelected: true,
+        selectedRows: selectedFlatRows,
+      });
+    });
+  });
   describe('two actions on click', () => {
     it('performs the primary button action on click', () => {
       const onClickSpy = jest.fn();
@@ -133,7 +168,9 @@ describe('<BulkActions />', () => {
       const button = wrapper.find(Button).at(1);
       button.simulate('click');
       expect(onClickSpy).toHaveBeenCalledTimes(1);
-      expect(onClickSpy).toHaveBeenCalledWith(selectedFlatRows);
+      expect(onClickSpy).toHaveBeenCalledWith({
+        selectedRows: selectedFlatRows,
+      });
     });
     it('performs the second button action on click', () => {
       const onClickSpy = jest.fn();
@@ -145,7 +182,9 @@ describe('<BulkActions />', () => {
       const button = wrapper.find(Button).at(0);
       button.simulate('click');
       expect(onClickSpy).toHaveBeenCalledTimes(1);
-      expect(onClickSpy).toHaveBeenCalledWith(selectedFlatRows);
+      expect(onClickSpy).toHaveBeenCalledWith({
+        selectedRows: selectedFlatRows,
+      });
     });
   });
   describe('with more than two actions', () => {
@@ -193,7 +232,9 @@ describe('<BulkActions />', () => {
       it('performs actions when dropdown items are clicked', () => {
         wrapper.find(`a.${itemClassName}`).simulate('click');
         expect(onClickSpy).toHaveBeenCalledTimes(1);
-        expect(onClickSpy).toHaveBeenCalledWith(selectedFlatRows);
+        expect(onClickSpy).toHaveBeenCalledWith({
+          selectedRows: selectedFlatRows,
+        });
       });
       it('displays the action text', () => {
         const item = wrapper.find(`a.${itemClassName}`);

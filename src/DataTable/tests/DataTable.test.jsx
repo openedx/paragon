@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { act } from 'react-dom/test-utils';
 import { mount } from 'enzyme';
 import * as reactTable from 'react-table';
-import DataTable from '..';
 
+import DataTable from '..';
 import TableControlBar from '../TableControlBar';
 import EmptyTable from '../EmptyTable';
 import Table from '../Table';
 import TableFooter from '../TableFooter';
+import DataTableContext from '../DataTableContext';
+import { addSelectedRowAction } from '../selection/data/actions';
 
 const additionalColumns = [
   {
@@ -83,6 +86,17 @@ const props = {
 const emptyTestText = 'We love bears';
 const EmptyTest = () => <div>{emptyTestText}</div>;
 
+// eslint-disable-next-line react/prop-types
+const DataTableContextProviderChild = ({ children }) => {
+  const contextValue = useContext(DataTableContext);
+  return (
+    <>
+      <div className="context-value" data-contextvalue={contextValue} />
+      {children}
+    </>
+  );
+};
+
 describe('<DataTable />', () => {
   beforeEach(() => {
     jest.clearAllMocks();
@@ -136,11 +150,11 @@ describe('<DataTable />', () => {
   });
   test.each([
     [{}, { manualFilters: false, manualPagination: false, manualSortBy: false }],
-    [{ manualFilters: true }, { manualFilters: true, manualPagination: false, manualSortBy: false }],
-    [{ manualPagination: true }, { manualFilters: false, manualPagination: true, manualSortBy: false }],
-    [{ manualSortBy: true }, { manualFilters: false, manualPagination: false, manualSortBy: true }],
-    // eslint-disable-next-line max-len
-    [{ manualSortBy: true, manualFilters: true, manualPagination: true }, { manualFilters: true, manualPagination: true, manualSortBy: true }],
+    [{ manualFilters: true, pageCount: 1 }, { manualFilters: true, manualPagination: false, manualSortBy: false }],
+    [{ manualPagination: true, pageCount: 1 }, { manualFilters: false, manualPagination: true, manualSortBy: false }],
+    [{ manualSortBy: true, pageCount: 1 }, { manualFilters: false, manualPagination: false, manualSortBy: true }],
+    // eslint-disable-next-line max-len, object-curly-newline
+    [{ manualSortBy: true, manualFilters: true, manualPagination: true, pageCount: 1 }, { manualFilters: true, manualPagination: true, manualSortBy: true }],
   ])('calls useTable with the correct manual settings %#', (additionalProps, expected) => {
     const spy = jest.spyOn(reactTable, 'useTable');
     mount(<DataTable {...props} {...additionalProps} />);
@@ -157,4 +171,57 @@ describe('<DataTable />', () => {
 
   // TODO: test that useTable is called with the correct arguments when isPaginated, isFilterable, isSelectable are used
   // TODO: test that fetchData is called correctly
+
+  describe('controlled table selections', () => {
+    it('passes initial controlledTableSelections to context', () => {
+      const wrapper = mount(
+        <DataTable {...props}>
+          <DataTableContextProviderChild />
+        </DataTable>,
+      );
+      const contextValue = wrapper.find('div.context-value').prop('data-contextvalue');
+      const { controlledTableSelections } = contextValue;
+      expect(controlledTableSelections).toEqual([
+        { selectedRows: [], isEntireTableSelected: false },
+        expect.any(Function),
+      ]);
+    });
+    it('passes appropriate selection props to context with active selections', () => {
+      const wrapper = mount(
+        <DataTable {...props}><DataTableContextProviderChild /></DataTable>,
+      );
+
+      // verify there are no current selections
+      let contextValue = wrapper.find('div.context-value').prop('data-contextvalue');
+      expect(contextValue.controlledTableSelections).toEqual([
+        { selectedRows: [], isEntireTableSelected: false },
+        expect.any(Function),
+      ]);
+
+      // select one row
+      const [, selectionsDispatch] = contextValue.controlledTableSelections;
+      const selectedRow = { id: 1 };
+      const itemCount = 5;
+      const action = addSelectedRowAction(selectedRow, itemCount);
+      act(() => {
+        selectionsDispatch(action);
+      });
+      wrapper.update();
+
+      // verify there is one active selection and appropriate selection props are passed
+      contextValue = wrapper.find('div.context-value').prop('data-contextvalue');
+      expect(contextValue.controlledTableSelections).toEqual([
+        { selectedRows: [selectedRow], isEntireTableSelected: false },
+        expect.any(Function),
+      ]);
+      expect(contextValue.state).toEqual(
+        expect.objectContaining({
+          selectedRowIds: {
+            [selectedRow.id]: true,
+          },
+        }),
+      );
+      expect(contextValue.selectedFlatRows).toEqual([selectedRow]);
+    });
+  });
 });
