@@ -7,6 +7,7 @@
 @import "FormControlSet";
 
 $form-control-icon-width: 32px !default;
+$select-icon-padding: .5625rem !default;
 
 // A form input state used by the now deprecate Fieldset and asInput
 // we can remove this when they are deleted.
@@ -154,6 +155,7 @@ $form-control-icon-width: 32px !default;
     // Firefox doesn't handle the first animation well from transparent to
     // a color. Adding an alpha channel smooths it out.
     background-color: rgba($input-bg, 0.01);
+    white-space: nowrap;
   }
 
   .has-leading-element & {
@@ -230,8 +232,9 @@ $form-control-icon-width: 32px !default;
     }
   }
   select.form-control {
+    padding-right: 2rem + $select-icon-padding;
     background-image: $custom-select-indicator;
-    background-position: right .5625rem center;
+    background-position: right $select-icon-padding center;
     background-repeat: no-repeat;
     background-size: 24px 24px;
     appearance: none;
