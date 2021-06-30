@@ -446,7 +446,7 @@ a responsive grid of cards.
   },
   {
     'id': 'ea660b10-85c4-4ae3-8a5f-41cea3648e3e',
-    'title': 'Kiki's Delivery Service',
+    'title': 'Kiki\'s Delivery Service',
     'director': 'Hayao Miyazaki',
     'producer': 'Hayao Miyazaki',
     'release_date': '1989',
