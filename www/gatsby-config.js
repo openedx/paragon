@@ -38,6 +38,24 @@ module.exports = {
             "./src/templates/default-mdx-page-template.jsx"
           ),
         },
+        rehypePlugins: [
+          require("rehype-slug"),
+          [
+            require("rehype-autolink-headings"),
+            {
+              behavior: 'prepend',
+              properties: { /* intentionally blank to remove default properties */ },
+              content: {
+                type: 'element',
+                tagName: 'span',
+                properties: {
+                  className: 'heading-icon-link',
+                },
+                children: [],
+              },
+            },
+          ],
+        ],
       },
     },
   ],
