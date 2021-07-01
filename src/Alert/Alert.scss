@@ -41,6 +41,9 @@
 // added to align content and icon
 .alert-content {
   display: flex;
+  font-size: $alert-font-size;
+  line-height: $alert-line-height;
+  color: $alert-content-color;
 
   div {
     flex-grow: 1;
