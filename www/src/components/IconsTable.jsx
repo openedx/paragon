@@ -6,7 +6,7 @@ function IconsTable() {
   return (
     <div>
       {Object.keys(IconComponents).map(iconName => (
-        <div className="d-flex mb-3 align-items-center">
+        <div key={iconName} className="d-flex mb-3 align-items-center">
           <Icon
             className="mr-3"
             key={iconName}
