@@ -6,7 +6,6 @@ import React from 'react';
 
 import { Button } from '..';
 import { ExtraSmall, LargerThanExtraSmall } from '../Responsive';
-import getTextFromElement from '../utils/getTextFromElement';
 import Icon from '../Icon';
 import newId from '../utils/newId';
 import { ELLIPSIS } from './constants';
@@ -106,19 +105,10 @@ class Pagination extends React.Component {
     const { buttonLabels } = this.props;
     const active = page === this.state.currentPage || null;
 
-    const ariaLabel = getTextFromElement((
-      <div>
-        {buttonLabels.page}
-        {` ${page}`}
-        {active
-          && (
-          <span>
-            {', '}
-            {buttonLabels.currentPage}
-          </span>
-          )}
-      </div>
-    ));
+    let ariaLabel = `${buttonLabels.page} ${page}`;
+    if (active) {
+      ariaLabel += `, ${buttonLabels.currentPage}`;
+    }
 
     return (
       <li
@@ -146,16 +136,7 @@ class Pagination extends React.Component {
     const { currentPage } = this.state;
     const { pageCount, buttonLabels } = this.props;
 
-    const ariaLabel = getTextFromElement((
-      <div>
-        {buttonLabels.page}
-        {` ${currentPage}, `}
-        {buttonLabels.currentPage}
-        {', '}
-        {buttonLabels.pageOfCount}
-        {` ${pageCount}`}
-      </div>
-    ));
+    const ariaLabel = `${buttonLabels.page} ${currentPage}, ${buttonLabels.currentPage}, ${buttonLabels.pageOfCount} ${pageCount}`;
 
     const label = (
       <span>
@@ -191,19 +172,10 @@ class Pagination extends React.Component {
     const isFirstPage = currentPage === 1;
     const previousPage = isFirstPage ? null : currentPage - 1;
 
-    const ariaLabel = getTextFromElement((
-      <div>
-        {buttonLabels.previous}
-        {previousPage
-          && (
-          <span>
-            {', '}
-            {buttonLabels.page}
-            {` ${previousPage}`}
-          </span>
-          )}
-      </div>
-    ));
+    let ariaLabel = `${buttonLabels.previous}`;
+    if (previousPage) {
+      ariaLabel += `, ${buttonLabels.page} ${previousPage}`;
+    }
 
     return (
       <li
@@ -237,19 +209,10 @@ class Pagination extends React.Component {
     const isLastPage = currentPage === pageCount;
     const nextPage = isLastPage ? null : currentPage + 1;
 
-    const ariaLabel = getTextFromElement((
-      <div>
-        {buttonLabels.next}
-        {nextPage
-          && (
-          <span>
-            {', '}
-            {buttonLabels.page}
-            {` ${nextPage}`}
-          </span>
-          )}
-      </div>
-    ));
+    let ariaLabel = `${buttonLabels.next}`;
+    if (nextPage) {
+      ariaLabel += `, ${buttonLabels.page} ${nextPage}`;
+    }
 
     return (
       <li
@@ -280,6 +243,9 @@ class Pagination extends React.Component {
   renderScreenReaderSection() {
     const { currentPage } = this.state;
     const { buttonLabels, pageCount } = this.props;
+
+    const description = `${buttonLabels.page} ${currentPage}, ${buttonLabels.currentPage}, ${buttonLabels.pageOfCount} ${pageCount}`;
+
     return (
       <div
         className="sr-only"
@@ -287,18 +253,7 @@ class Pagination extends React.Component {
         aria-relevant="text"
         aria-atomic
       >
-        {
-          getTextFromElement((
-            <div>
-              {buttonLabels.page}
-              {` ${currentPage}, `}
-              {buttonLabels.currentPage}
-              {', '}
-              {buttonLabels.pageOfCount}
-              {` ${pageCount}`}
-            </div>
-          ))
-        }
+        {description}
       </div>
     );
   }
@@ -371,7 +326,7 @@ Pagination.propTypes = {
   /** specifies the total number of pages in the `Pagination` component. */
   pageCount: PropTypes.number.isRequired,
   /** specifies the `aria-label` for the `<nav>` element that wraps the pagination button list. */
-  paginationLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  paginationLabel: PropTypes.string.isRequired,
   /** specifies the labels to use for the `Previous`/`Next` buttons as well as the various parts of `aria-label` on the page buttons for accessibility. All button labels accept both string or elements. The button label options are as follows:
 
 * `previous`: Text for the `Previous` button;
@@ -393,11 +348,11 @@ The default is:
 }
 ``` */
   buttonLabels: PropTypes.shape({
-    previous: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-    next: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-    page: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-    currentPage: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-    pageOfCount: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+    previous: PropTypes.string,
+    next: PropTypes.string,
+    page: PropTypes.string,
+    currentPage: PropTypes.string,
+    pageOfCount: PropTypes.string,
   }),
   /** specifies any class name(s) for the `Pagination` component. The default is an empty string. */
   className: PropTypes.string,

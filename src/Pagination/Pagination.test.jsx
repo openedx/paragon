@@ -21,6 +21,24 @@ describe('<Pagination />', () => {
     expect(wrapper.exists()).toEqual(true);
   });
 
+  it('renders screen reader section', () => {
+    const buttonLabels = {
+      previous: 'Anterior',
+      next: 'Siguiente',
+      page: 'Página',
+      currentPage: 'Página actual',
+      pageOfCount: 'de',
+    };
+    const props = {
+      ...baseProps,
+      buttonLabels,
+    };
+    const wrapper = mount(<Pagination {...props} />);
+    expect(
+      wrapper.findWhere(node => node.hasClass('sr-only')).text(),
+    ).toEqual(`${buttonLabels.page} 1, ${buttonLabels.currentPage}, ${buttonLabels.pageOfCount} ${baseProps.pageCount}`);
+  });
+
   describe('handles currentPage props properly', () => {
     it('overrides state currentPage when props currentPage changes', () => {
       const initialPage = 1;
