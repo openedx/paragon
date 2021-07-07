@@ -15,7 +15,7 @@ const directions = [
   { key: 'y', name: 'y direction' },
 ];
 
-const sizes = [5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5];
+const sizes = [6, 5.5, 5, 4.5, 4, 3.5, 3, 2.5, 2, 1.5, 1, 0, -1, -1.5, -2, -2.5, -3, -3.5, -4, -4.5, -5, -5.5, -6];
 
 const getUtilityClassName = (prefix, direction, size) => `${prefix}${direction}-${size < 0 ? 'n' : ''}${Math.abs(size)}`;
 
