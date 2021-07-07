@@ -93,18 +93,18 @@ export default function SpacingPage() {
                 className="d-flex align-items-center"
                 style={{ maxWidth: '20rem' }}
               >
-                -5
+                -6
                 <Input
                   type="range"
                   id="set-size"
                   className="mx-2"
-                  min={-5}
-                  step={1}
-                  max={5}
+                  min={-6}
+                  step={0.5}
+                  max={6}
                   value={size}
                   onChange={e => setSize(e.target.value)}
                 />
-                5
+                6
               </div>
             </label>
           </div>
