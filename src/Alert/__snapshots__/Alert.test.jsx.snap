@@ -25,7 +25,9 @@ exports[`<Alert /> correct rendering renders with correct with icon 1`] = `
       />
     </svg>
   </span>
-  <div>
+  <div
+    className="alert-message-content"
+  >
     Alert
   </div>
 </div>
@@ -36,7 +38,9 @@ exports[`<Alert /> correct rendering renders without icon prop 1`] = `
   className="fade alert-content undefined alert show"
   role="alert"
 >
-  <div>
+  <div
+    className="alert-message-content"
+  >
     Alert
   </div>
 </div>

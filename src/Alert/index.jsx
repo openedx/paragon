@@ -14,7 +14,7 @@ const WrappedAlert = React.forwardRef(({
     ref={ref}
   >
     {icon && <Icon src={icon} className="alert-icon" />}
-    <div>
+    <div className="alert-message-content">
       {children}
     </div>
   </Alert>
