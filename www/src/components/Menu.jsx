@@ -125,6 +125,9 @@ const Menu = () => {
                 Contributing
               </a>
             </li>
+            <li>
+              <Link to="/insights">Usage insights</Link>
+            </li>
           </ul>
           <h3 className="mb-4">Foundations</h3>
           <ul className="list-unstyled small foundations-list">

@@ -23,11 +23,12 @@ function getProjectFiles(dir) {
 function getPackageInfo(dir) {
   try {
     // Package lock contains the actual Paragon version rather than a range in package.json
-    const { dependencies } = JSON.parse(fs.readFileSync(`${dir}/package-lock.json`, { encoding: 'utf-8' }));
+    const { dependencies, peerDependencies } = JSON.parse(fs.readFileSync(`${dir}/package-lock.json`, { encoding: 'utf-8' }));
     const { name, repository } = JSON.parse(fs.readFileSync(`${dir}/package.json`, { encoding: 'utf-8' }));
-
+    const directDependencyVersion = dependencies && dependencies['@edx/paragon'] ? dependencies['@edx/paragon'].version : false;
+    const peerDependencyVersion = peerDependencies && peerDependencies['@edx/paragon'] ? peerDependencies['@edx/paragon'].version : false;
     return {
-      version: dependencies && dependencies['@edx/paragon'] ? dependencies['@edx/paragon'].version : 'unknown',
+      version: directDependencyVersion || peerDependencyVersion,
       name,
       repository,
       folderName: dir.split('/').pop(),
@@ -114,9 +115,13 @@ function findProjectsToAnalyze(dir) {
 
   // If paragon isn't included in the package.json file then skip analyzing it
   const packageJSONFilesWithParagon = packageJSONFiles.filter(packageJSONFile => {
-    const { dependencies } = JSON.parse(fs.readFileSync(packageJSONFile, { encoding: 'utf-8' }));
-    return dependencies['@edx/paragon'] !== undefined;
+    const { dependencies, peerDependencies } = JSON.parse(fs.readFileSync(packageJSONFile, { encoding: 'utf-8' }));
+    const hasDirectDependency = dependencies && dependencies['@edx/paragon'] !== undefined;
+    const hasPeerDependency = peerDependencies && peerDependencies['@edx/paragon'] !== undefined
+    return hasDirectDependency || hasPeerDependency;
   });
+
+  console.log(packageJSONFilesWithParagon)
 
   return packageJSONFilesWithParagon.map(packageJSONFile => path.dirname(packageJSONFile));
 }
