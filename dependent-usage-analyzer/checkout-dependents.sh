@@ -16,6 +16,7 @@ mkdir .projects
   git clone git@github.com:edx/frontend-app-learning.git --depth 1
   git clone git@github.com:edx/frontend-app-payment.git --depth 1
   git clone git@github.com:edx/frontend-app-profile.git --depth 1
+  git clone git@github.com:edx/frontend-app-program-console.git --depth 1
   git clone git@github.com:edx/frontend-app-publisher.git --depth 1
   git clone git@github.com:edx/frontend-app-support-tools.git --depth 1
   git clone git@github.com:edx/frontend-component-cookie-policy-banner.git --depth 1
@@ -23,6 +24,10 @@ mkdir .projects
   git clone git@github.com:edx/frontend-component-header-edx.git --depth 1
   git clone git@github.com:edx/frontend-component-header.git --depth 1
   git clone git@github.com:edx/frontend-component-site-header.git --depth 1
+  git clone git@github.com:edx/frontend-enterprise.git --depth 1
+  git clone git@github.com:edx/frontend-learner-portal-base.git --depth 1
+  git clone git@github.com:edx/frontend-app-library-authoring.git --depth 1
+  git clone git@github.com:edx/frontend-lib-special-exams.git --depth 1
   git clone git@github.com:edx/frontend-platform.git --depth 1
   git clone git@github.com:edx/frontend-template-application.git --depth 1
   git clone git@github.com:edx/prospectus.git --depth 1
