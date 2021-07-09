@@ -7255,6 +7255,1197 @@
     }
   },
   {
+    "version": "10.0.1",
+    "name": "@edx/frontend-app-library-authoring",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/edx/frontend-app-library-authoring.git"
+    },
+    "folderName": "frontend-app-library-authoring",
+    "usages": {
+      "Col": [
+        {
+          "filePath": "src/generic/LoadingPage.jsx",
+          "line": 6,
+          "column": 2,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 295,
+          "column": 6,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 300,
+          "column": 6,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 309,
+          "column": 6,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 312,
+          "column": 6,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 318,
+          "column": 18,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 326,
+          "column": 18,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 337,
+          "column": 14,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 352,
+          "column": 18,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 362,
+          "column": 14,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 377,
+          "column": 20,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 380,
+          "column": 20,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 415,
+          "column": 6,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 418,
+          "column": 12,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 425,
+          "column": 12,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 429,
+          "column": 20,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 434,
+          "column": 20,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 439,
+          "column": 20,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/ErrorAlert.jsx",
+          "line": 11,
+          "column": 4,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 40,
+          "column": 6,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 45,
+          "column": 6,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 62,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 72,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 77,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 82,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 92,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 97,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 102,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 112,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 117,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 122,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 132,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 137,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 144,
+          "column": 6,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 148,
+          "column": 6,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/LibraryAccessPage.jsx",
+          "line": 98,
+          "column": 16,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/LibraryAccessPage.jsx",
+          "line": 107,
+          "column": 16,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/LibraryAccessPage.jsx",
+          "line": 111,
+          "column": 16,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
+          "line": 26,
+          "column": 2,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
+          "line": 34,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
+          "line": 43,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
+          "line": 46,
+          "column": 14,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
+          "line": 51,
+          "column": 14,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
+          "line": 80,
+          "column": 14,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
+          "line": 88,
+          "column": 18,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
+          "line": 93,
+          "column": 18,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
+          "line": 101,
+          "column": 14,
+          "version": "10.0.1"
+        }
+      ],
+      "Navbar": [
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 69,
+          "column": 4,
+          "version": "10.0.1"
+        }
+      ],
+      "Navbar.Brand": [
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 70,
+          "column": 6,
+          "version": "10.0.1"
+        }
+      ],
+      "Navbar.Collapse": [
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 71,
+          "column": 6,
+          "version": "10.0.1"
+        }
+      ],
+      "Button": [
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 73,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 79,
+          "column": 8,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 100,
+          "column": 8,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 227,
+          "column": 4,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 231,
+          "column": 4,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 364,
+          "column": 16,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 398,
+          "column": 22,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 401,
+          "column": 22,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 404,
+          "column": 22,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 435,
+          "column": 22,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 440,
+          "column": 22,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 41,
+          "column": 8,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 46,
+          "column": 8,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
+          "line": 317,
+          "column": 18,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
+          "line": 263,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/edit-block/LibraryBlockAssets.jsx",
+          "line": 29,
+          "column": 15,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/edit-block/LibraryBlockOlx.jsx",
+          "line": 56,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/edit-block/LibraryBlockOlx.jsx",
+          "line": 57,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/edit-block/LibraryBlockOlx.jsx",
+          "line": 64,
+          "column": 8,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/edit-block/LibraryBlockPage.jsx",
+          "line": 212,
+          "column": 14,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/edit-block/LibraryBlockPage.jsx",
+          "line": 330,
+          "column": 24,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/edit-block/LibraryBlockPage.jsx",
+          "line": 341,
+          "column": 24,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/edit-block/LibraryBlockPage.jsx",
+          "line": 352,
+          "column": 24,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/LibraryAccessForm.jsx",
+          "line": 81,
+          "column": 12,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/LibraryAccessPage.jsx",
+          "line": 52,
+          "column": 16,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/LibraryAccessPage.jsx",
+          "line": 112,
+          "column": 18,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
+          "line": 52,
+          "column": 16,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
+          "line": 70,
+          "column": 20,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
+          "line": 81,
+          "column": 16,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
+          "line": 89,
+          "column": 20,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
+          "line": 94,
+          "column": 20,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
+          "line": 102,
+          "column": 16,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
+          "line": 127,
+          "column": 20,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
+          "line": 139,
+          "column": 18,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
+          "line": 195,
+          "column": 24,
+          "version": "10.0.1"
+        }
+      ],
+      "Modal": [
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 88,
+          "column": 4,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
+          "line": 55,
+          "column": 16,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
+          "line": 112,
+          "column": 16,
+          "version": "10.0.1"
+        }
+      ],
+      "Card": [
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 108,
+          "column": 6,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 313,
+          "column": 8,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 426,
+          "column": 14,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/LibraryAccessForm.jsx",
+          "line": 31,
+          "column": 8,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/LibraryAccessForm.jsx",
+          "line": 63,
+          "column": 8,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
+          "line": 27,
+          "column": 4,
+          "version": "10.0.1"
+        }
+      ],
+      "Card.Body": [
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 109,
+          "column": 8,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 314,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 427,
+          "column": 16,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/LibraryAccessForm.jsx",
+          "line": 32,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/LibraryAccessForm.jsx",
+          "line": 64,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
+          "line": 28,
+          "column": 6,
+          "version": "10.0.1"
+        }
+      ],
+      "Container": [
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 293,
+          "column": 2,
+          "version": "10.0.1"
+        }
+      ],
+      "Row": [
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 294,
+          "column": 4,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 315,
+          "column": 12,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 376,
+          "column": 18,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 417,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 428,
+          "column": 18,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 39,
+          "column": 4,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 61,
+          "column": 8,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 81,
+          "column": 8,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 101,
+          "column": 8,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 121,
+          "column": 8,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 143,
+          "column": 4,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/LibraryAccessForm.jsx",
+          "line": 29,
+          "column": 4,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/LibraryAccessPage.jsx",
+          "line": 85,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/LibraryAccessPage.jsx",
+          "line": 106,
+          "column": 14,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
+          "line": 33,
+          "column": 8,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
+          "line": 44,
+          "column": 12,
+          "version": "10.0.1"
+        }
+      ],
+      "SearchField": [
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 319,
+          "column": 20,
+          "version": "10.0.1"
+        }
+      ],
+      "Input": [
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 327,
+          "column": 20,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 63,
+          "column": 12,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 83,
+          "column": 12,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 103,
+          "column": 12,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/common/LicenseField.jsx",
+          "line": 123,
+          "column": 12,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
+          "line": 216,
+          "column": 24,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
+          "line": 237,
+          "column": 24,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
+          "line": 259,
+          "column": 26,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
+          "line": 163,
+          "column": 16,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
+          "line": 184,
+          "column": 16,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
+          "line": 205,
+          "column": 16,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
+          "line": 226,
+          "column": 16,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/LibraryAccessForm.jsx",
+          "line": 48,
+          "column": 22,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
+          "line": 210,
+          "column": 22,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
+          "line": 224,
+          "column": 22,
+          "version": "10.0.1"
+        }
+      ],
+      "Dropdown": [
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 382,
+          "column": 24,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
+          "line": 46,
+          "column": 18,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
+          "line": 79,
+          "column": 16,
+          "version": "10.0.1"
+        }
+      ],
+      "Dropdown.Toggle": [
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 383,
+          "column": 26,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
+          "line": 47,
+          "column": 20,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
+          "line": 80,
+          "column": 18,
+          "version": "10.0.1"
+        }
+      ],
+      "Dropdown.Menu": [
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 386,
+          "column": 26,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
+          "line": 51,
+          "column": 20,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
+          "line": 84,
+          "column": 18,
+          "version": "10.0.1"
+        }
+      ],
+      "Dropdown.Item": [
+        {
+          "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+          "line": 388,
+          "column": 30,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
+          "line": 52,
+          "column": 22,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
+          "line": 53,
+          "column": 22,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
+          "line": 85,
+          "column": 20,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
+          "line": 86,
+          "column": 20,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
+          "line": 87,
+          "column": 20,
+          "version": "10.0.1"
+        }
+      ],
+      "Alert": [
+        {
+          "filePath": "src/library-authoring/common/ErrorAlert.jsx",
+          "line": 12,
+          "column": 6,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
+          "line": 194,
+          "column": 14,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
+          "line": 143,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/edit-block/LibraryBlockPage.jsx",
+          "line": 226,
+          "column": 14,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/LibraryAccessPage.jsx",
+          "line": 70,
+          "column": 12,
+          "version": "10.0.1"
+        }
+      ],
+      "Form": [
+        {
+          "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
+          "line": 202,
+          "column": 14,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
+          "line": 182,
+          "column": 16,
+          "version": "10.0.1"
+        }
+      ],
+      "ValidationFormGroup": [
+        {
+          "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
+          "line": 206,
+          "column": 22,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
+          "line": 227,
+          "column": 22,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
+          "line": 249,
+          "column": 24,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
+          "line": 153,
+          "column": 14,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
+          "line": 174,
+          "column": 14,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
+          "line": 195,
+          "column": 14,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
+          "line": 216,
+          "column": 14,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/LibraryAccessForm.jsx",
+          "line": 38,
+          "column": 20,
+          "version": "10.0.1"
+        }
+      ],
+      "Form.Group": [
+        {
+          "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
+          "line": 270,
+          "column": 22,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
+          "line": 184,
+          "column": 20,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
+          "line": 206,
+          "column": 20,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
+          "line": 220,
+          "column": 20,
+          "version": "10.0.1"
+        }
+      ],
+      "Form.Check": [
+        {
+          "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
+          "line": 271,
+          "column": 24,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
+          "line": 280,
+          "column": 24,
+          "version": "10.0.1"
+        }
+      ],
+      "StatefulButton": [
+        {
+          "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
+          "line": 302,
+          "column": 18,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
+          "line": 249,
+          "column": 10,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/LibraryAccessForm.jsx",
+          "line": 65,
+          "column": 12,
+          "version": "10.0.1"
+        }
+      ],
+      "Icon": [
+        {
+          "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
+          "line": 312,
+          "column": 31,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
+          "line": 257,
+          "column": 23,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/library-access/LibraryAccessForm.jsx",
+          "line": 76,
+          "column": 25,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
+          "line": 49,
+          "column": 22,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
+          "line": 82,
+          "column": 20,
+          "version": "10.0.1"
+        }
+      ],
+      "Spinner": [
+        {
+          "filePath": "src/library-authoring/edit-block/LibraryBlockPage.jsx",
+          "line": 262,
+          "column": 22,
+          "version": "10.0.1"
+        }
+      ],
+      "Card.Title": [
+        {
+          "filePath": "src/library-authoring/library-access/LibraryAccessForm.jsx",
+          "line": 34,
+          "column": 14,
+          "version": "10.0.1"
+        }
+      ],
+      "Badge": [
+        {
+          "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
+          "line": 29,
+          "column": 8,
+          "version": "10.0.1"
+        }
+      ],
+      "Form.Row": [
+        {
+          "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
+          "line": 183,
+          "column": 18,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
+          "line": 205,
+          "column": 18,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
+          "line": 219,
+          "column": 18,
+          "version": "10.0.1"
+        }
+      ],
+      "Form.Label": [
+        {
+          "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
+          "line": 185,
+          "column": 22,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
+          "line": 207,
+          "column": 22,
+          "version": "10.0.1"
+        },
+        {
+          "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
+          "line": 221,
+          "column": 22,
+          "version": "10.0.1"
+        }
+      ],
+      "Form.Control": [
+        {
+          "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
+          "line": 189,
+          "column": 24,
+          "version": "10.0.1"
+        }
+      ]
+    }
+  },
+  {
     "version": "12.3.0",
     "name": "@edx/frontend-app-payment",
     "repository": {
@@ -7504,6 +8695,85 @@
           "line": 87,
           "column": 10,
           "version": "16.0.1"
+        }
+      ]
+    }
+  },
+  {
+    "version": "12.0.4",
+    "name": "@edx/frontend-app-program-console",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/edx/frontend-app-program-console.git"
+    },
+    "folderName": "frontend-app-program-console",
+    "usages": {
+      "Collapsible": [
+        {
+          "filePath": "src/console/ConsolePage.jsx",
+          "line": 61,
+          "column": 4,
+          "version": "12.0.4"
+        },
+        {
+          "filePath": "src/report/reportSection.jsx",
+          "line": 34,
+          "column": 8,
+          "version": "12.0.4"
+        }
+      ],
+      "StatusAlert": [
+        {
+          "filePath": "src/console/ConsolePage.jsx",
+          "line": 112,
+          "column": 8,
+          "version": "12.0.4"
+        },
+        {
+          "filePath": "src/console/ConsolePage.jsx",
+          "line": 128,
+          "column": 8,
+          "version": "12.0.4"
+        },
+        {
+          "filePath": "src/console/ConsolePage.jsx",
+          "line": 146,
+          "column": 12,
+          "version": "12.0.4"
+        },
+        {
+          "filePath": "src/console/ConsolePage.jsx",
+          "line": 167,
+          "column": 20,
+          "version": "12.0.4"
+        },
+        {
+          "filePath": "src/report/reportSection.jsx",
+          "line": 22,
+          "column": 4,
+          "version": "12.0.4"
+        }
+      ],
+      "SearchField": [
+        {
+          "filePath": "src/console/ConsolePage.jsx",
+          "line": 140,
+          "column": 12,
+          "version": "12.0.4"
+        }
+      ],
+      "Pagination": [
+        {
+          "filePath": "src/console/ConsolePage.jsx",
+          "line": 154,
+          "column": 12,
+          "version": "12.0.4"
+        },
+        {
+          "filePath": "src/console/ConsolePage.jsx",
+          "line": 191,
+          "column": 12,
+          "version": "12.0.4"
         }
       ]
     }
@@ -8252,6 +9522,823 @@
           "line": 66,
           "column": 10,
           "version": "12.0.5"
+        }
+      ]
+    }
+  },
+  {
+    "version": "12.6.1",
+    "name": "@edx/frontend-component-header-edx",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/edx/frontend-component-header-edx.git"
+    },
+    "folderName": "frontend-component-header-edx",
+    "usages": {
+      "Dropdown": [
+        {
+          "filePath": "src/DesktopHeader.jsx",
+          "line": 66,
+          "column": 6,
+          "version": "12.6.1"
+        }
+      ],
+      "Dropdown.Toggle": [
+        {
+          "filePath": "src/DesktopHeader.jsx",
+          "line": 67,
+          "column": 8,
+          "version": "12.6.1"
+        }
+      ],
+      "Dropdown.Menu": [
+        {
+          "filePath": "src/DesktopHeader.jsx",
+          "line": 77,
+          "column": 8,
+          "version": "12.6.1"
+        }
+      ],
+      "Dropdown.Item": [
+        {
+          "filePath": "src/DesktopHeader.jsx",
+          "line": 79,
+          "column": 12,
+          "version": "12.6.1"
+        }
+      ]
+    }
+  },
+  {
+    "version": "12.8.0",
+    "name": "@edx/frontend-component-header",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/edx/frontend-component-header.git"
+    },
+    "folderName": "frontend-component-header",
+    "usages": {}
+  },
+  {
+    "version": false,
+    "name": "@edx/frontend-component-site-header",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/edx/frontend-component-site-header.git"
+    },
+    "folderName": "frontend-component-site-header",
+    "usages": {}
+  },
+  {
+    "version": false,
+    "name": "@edx/frontend-enterprise-catalog-search",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/edx/frontend-enterprise.git"
+    },
+    "folderName": "catalog-search",
+    "usages": {
+      "Button": [
+        {
+          "filePath": "src/ClearCurrentRefinements.jsx",
+          "line": 22,
+          "column": 4,
+          "version": false
+        },
+        {
+          "filePath": "src/CurrentRefinements.jsx",
+          "line": 96,
+          "column": 10,
+          "version": false
+        },
+        {
+          "filePath": "src/MobileFilterMenu.jsx",
+          "line": 21,
+          "column": 8,
+          "version": false
+        },
+        {
+          "filePath": "src/MobileFilterMenu.jsx",
+          "line": 56,
+          "column": 14,
+          "version": false
+        },
+        {
+          "filePath": "src/MobileFilterMenu.jsx",
+          "line": 76,
+          "column": 16,
+          "version": false
+        }
+      ],
+      "Badge": [
+        {
+          "filePath": "src/CurrentRefinements.jsx",
+          "line": 71,
+          "column": 10,
+          "version": false
+        },
+        {
+          "filePath": "src/CurrentRefinements.jsx",
+          "line": 84,
+          "column": 10,
+          "version": false
+        },
+        {
+          "filePath": "src/FacetItem.jsx",
+          "line": 22,
+          "column": 6,
+          "version": false
+        }
+      ],
+      "Dropdown": [
+        {
+          "filePath": "src/FacetDropdown.jsx",
+          "line": 16,
+          "column": 4,
+          "version": false
+        }
+      ],
+      "Dropdown.Toggle": [
+        {
+          "filePath": "src/FacetDropdown.jsx",
+          "line": 17,
+          "column": 6,
+          "version": false
+        }
+      ],
+      "Dropdown.Menu": [
+        {
+          "filePath": "src/FacetDropdown.jsx",
+          "line": 26,
+          "column": 6,
+          "version": false
+        }
+      ],
+      "Dropdown.Item": [
+        {
+          "filePath": "src/FacetItem.jsx",
+          "line": 11,
+          "column": 2,
+          "version": false
+        }
+      ],
+      "Input": [
+        {
+          "filePath": "src/FacetItem.jsx",
+          "line": 12,
+          "column": 4,
+          "version": false
+        },
+        {
+          "filePath": "src/TypeaheadFacetDropdown.jsx",
+          "line": 26,
+          "column": 8,
+          "version": false
+        }
+      ],
+      "SearchField.Advanced": [
+        {
+          "filePath": "src/SearchBox.jsx",
+          "line": 64,
+          "column": 6,
+          "version": false
+        }
+      ],
+      "SearchField.Input": [
+        {
+          "filePath": "src/SearchBox.jsx",
+          "line": 72,
+          "column": 8,
+          "version": false
+        }
+      ],
+      "SearchField.ClearButton": [
+        {
+          "filePath": "src/SearchBox.jsx",
+          "line": 78,
+          "column": 8,
+          "version": false
+        }
+      ],
+      "SearchField.SubmitButton": [
+        {
+          "filePath": "src/SearchBox.jsx",
+          "line": 79,
+          "column": 8,
+          "version": false
+        }
+      ],
+      "Container": [
+        {
+          "filePath": "src/SearchHeader.jsx",
+          "line": 22,
+          "column": 6,
+          "version": false
+        }
+      ],
+      "Row": [
+        {
+          "filePath": "src/SearchHeader.jsx",
+          "line": 23,
+          "column": 8,
+          "version": false
+        }
+      ],
+      "Col": [
+        {
+          "filePath": "src/SearchHeader.jsx",
+          "line": 24,
+          "column": 10,
+          "version": false
+        },
+        {
+          "filePath": "src/SearchHeader.jsx",
+          "line": 36,
+          "column": 10,
+          "version": false
+        }
+      ],
+      "Pagination": [
+        {
+          "filePath": "src/SearchPagination.jsx",
+          "line": 53,
+          "column": 4,
+          "version": false
+        }
+      ]
+    }
+  },
+  {
+    "version": "12.2.0",
+    "name": "@edx/frontend-learner-portal-base",
+    "repository": {
+      "type": "git",
+      "url": ""
+    },
+    "folderName": "frontend-learner-portal-base",
+    "usages": {
+      "Dropdown.Deprecated": [
+        {
+          "filePath": "src/components/course-enrollments/course-cards/BaseCourseCard.jsx",
+          "line": 150,
+          "column": 10,
+          "version": "12.2.0"
+        }
+      ],
+      "Modal": [
+        {
+          "filePath": "src/components/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
+          "line": 111,
+          "column": 6,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/components/course-enrollments/course-cards/mark-complete-modal/MarkCompleteModal.jsx",
+          "line": 74,
+          "column": 6,
+          "version": "12.2.0"
+        }
+      ],
+      "StatusAlert": [
+        {
+          "filePath": "src/components/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
+          "line": 116,
+          "column": 14,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/components/course-enrollments/course-cards/mark-complete-modal/ModalError.jsx",
+          "line": 11,
+          "column": 4,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/components/course-enrollments/CourseEnrollments.jsx",
+          "line": 56,
+          "column": 4,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/components/course-enrollments/CourseEnrollments.jsx",
+          "line": 76,
+          "column": 6,
+          "version": "12.2.0"
+        }
+      ],
+      "Input": [
+        {
+          "filePath": "src/components/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
+          "line": 133,
+          "column": 14,
+          "version": "12.2.0"
+        }
+      ],
+      "StatefulButton": [
+        {
+          "filePath": "src/components/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
+          "line": 149,
+          "column": 10,
+          "version": "12.2.0"
+        },
+        {
+          "filePath": "src/components/course-enrollments/course-cards/mark-complete-modal/MarkCompleteModal.jsx",
+          "line": 78,
+          "column": 10,
+          "version": "12.2.0"
+        }
+      ],
+      "Button": [
+        {
+          "filePath": "src/components/course-enrollments/course-cards/UpcomingCourseCard.jsx",
+          "line": 10,
+          "column": 4,
+          "version": "12.2.0"
+        }
+      ],
+      "Collapsible": [
+        {
+          "filePath": "src/components/course-enrollments/CourseSection.jsx",
+          "line": 80,
+          "column": 8,
+          "version": "12.2.0"
+        }
+      ]
+    }
+  },
+  {
+    "version": "13.17.0",
+    "name": "@edx/frontend-lib-special-exams",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/edx/frontend-lib-special-exams.git"
+    },
+    "folderName": "frontend-lib-special-exams",
+    "usages": {
+      "Spinner": [
+        {
+          "filePath": "src/exam/Exam.jsx",
+          "line": 45,
+          "column": 8,
+          "version": "13.17.0"
+        }
+      ],
+      "Alert": [
+        {
+          "filePath": "src/exam/ExamAPIError.jsx",
+          "line": 37,
+          "column": 4,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/timer/ExamTimerBlock.jsx",
+          "line": 61,
+          "column": 6,
+          "version": "13.17.0"
+        }
+      ],
+      "Icon": [
+        {
+          "filePath": "src/exam/ExamAPIError.jsx",
+          "line": 38,
+          "column": 6,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/timer/CountDownTimer.jsx",
+          "line": 36,
+          "column": 12,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/timer/CountDownTimer.jsx",
+          "line": 37,
+          "column": 12,
+          "version": "13.17.0"
+        }
+      ],
+      "Alert.Heading": [
+        {
+          "filePath": "src/exam/ExamAPIError.jsx",
+          "line": 39,
+          "column": 6,
+          "version": "13.17.0"
+        }
+      ],
+      "Alert.Link": [
+        {
+          "filePath": "src/exam/ExamAPIError.jsx",
+          "line": 48,
+          "column": 10,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/timer/ExamTimerBlock.jsx",
+          "line": 71,
+          "column": 12,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/timer/ExamTimerBlock.jsx",
+          "line": 89,
+          "column": 20,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/timer/ExamTimerBlock.jsx",
+          "line": 98,
+          "column": 18,
+          "version": "13.17.0"
+        }
+      ],
+      "Container": [
+        {
+          "filePath": "src/instructions/EntranceInstructions.jsx",
+          "line": 29,
+          "column": 6,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/ErrorInstructions.jsx",
+          "line": 26,
+          "column": 6,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/ExpiredInstructions.jsx",
+          "line": 6,
+          "column": 2,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/download-instructions/index.jsx",
+          "line": 70,
+          "column": 6,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/OnboardingErrorExamInstructions.jsx",
+          "line": 75,
+          "column": 6,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/prerequisites-instructions/index.jsx",
+          "line": 39,
+          "column": 6,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/ReadyToStartProctoredExamInstructions.jsx",
+          "line": 26,
+          "column": 6,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/SkipProctoredExamInstruction.jsx",
+          "line": 14,
+          "column": 6,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/VerificationProctoredExamInstructions.jsx",
+          "line": 95,
+          "column": 6,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/RejectedInstructions.jsx",
+          "line": 24,
+          "column": 6,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/SubmitInstructions.jsx",
+          "line": 31,
+          "column": 6,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/SubmittedInstructions.jsx",
+          "line": 29,
+          "column": 6,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/VerifiedInstructions.jsx",
+          "line": 23,
+          "column": 6,
+          "version": "13.17.0"
+        }
+      ],
+      "MailtoLink": [
+        {
+          "filePath": "src/instructions/onboarding_exam/EntranceOnboardingExamInstructions.jsx",
+          "line": 64,
+          "column": 10,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/onboarding_exam/EntranceOnboardingExamInstructions.jsx",
+          "line": 79,
+          "column": 10,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/onboarding_exam/RejectedOnboardingExamInstructions.jsx",
+          "line": 25,
+          "column": 10,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/onboarding_exam/SubmittedOnboardingExamInstructions.jsx",
+          "line": 37,
+          "column": 8,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/onboarding_exam/SubmittedOnboardingExamInstructions.jsx",
+          "line": 86,
+          "column": 8,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/onboarding_exam/VerifiedOnboardingExamInstructions.jsx",
+          "line": 32,
+          "column": 8,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/ErrorProctoredExamInstructions.jsx",
+          "line": 23,
+          "column": 33,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/OnboardingErrorExamInstructions.jsx",
+          "line": 91,
+          "column": 12,
+          "version": "13.17.0"
+        }
+      ],
+      "Button": [
+        {
+          "filePath": "src/instructions/onboarding_exam/EntranceOnboardingExamInstructions.jsx",
+          "line": 89,
+          "column": 8,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/onboarding_exam/ErrorOnboardingExamInstructions.jsx",
+          "line": 25,
+          "column": 6,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/onboarding_exam/RejectedOnboardingExamInstructions.jsx",
+          "line": 34,
+          "column": 6,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/onboarding_exam/SubmittedOnboardingExamInstructions.jsx",
+          "line": 63,
+          "column": 8,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/onboarding_exam/SubmittedOnboardingExamInstructions.jsx",
+          "line": 70,
+          "column": 6,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/practice_exam/EntrancePracticeExamInstructions.jsx",
+          "line": 26,
+          "column": 8,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/practice_exam/ErrorPracticeExamInstructions.jsx",
+          "line": 37,
+          "column": 6,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/practice_exam/SubmittedPracticeExamInstructions.jsx",
+          "line": 25,
+          "column": 6,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/download-instructions/DownloadButtons.jsx",
+          "line": 11,
+          "column": 6,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/download-instructions/DownloadButtons.jsx",
+          "line": 23,
+          "column": 4,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/EntranceProctoredExamInstructions.jsx",
+          "line": 55,
+          "column": 8,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/Footer.jsx",
+          "line": 15,
+          "column": 8,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/ReadyToStartProctoredExamInstructions.jsx",
+          "line": 80,
+          "column": 10,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/ReadyToStartProctoredExamInstructions.jsx",
+          "line": 113,
+          "column": 8,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/SkipProctoredExamButton.jsx",
+          "line": 8,
+          "column": 4,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/SkipProctoredExamInstruction.jsx",
+          "line": 29,
+          "column": 10,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/SkipProctoredExamInstruction.jsx",
+          "line": 40,
+          "column": 10,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/SubmitProctoredExamInstructions.jsx",
+          "line": 51,
+          "column": 6,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/VerificationProctoredExamInstructions.jsx",
+          "line": 32,
+          "column": 12,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/VerificationProctoredExamInstructions.jsx",
+          "line": 55,
+          "column": 12,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/VerificationProctoredExamInstructions.jsx",
+          "line": 78,
+          "column": 12,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/WarningModal.jsx",
+          "line": 15,
+          "column": 6,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/SubmitInstructions.jsx",
+          "line": 36,
+          "column": 10,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/timed_exam/StartTimedExamInstructions.jsx",
+          "line": 38,
+          "column": 6,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/timed_exam/SubmitTimedExamInstructions.jsx",
+          "line": 30,
+          "column": 6,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/timer/ExamTimerBlock.jsx",
+          "line": 116,
+          "column": 14,
+          "version": "13.17.0"
+        }
+      ],
+      "Form.Group": [
+        {
+          "filePath": "src/instructions/proctored_exam/download-instructions/ExamCode.jsx",
+          "line": 29,
+          "column": 4,
+          "version": "13.17.0"
+        }
+      ],
+      "Form.Label": [
+        {
+          "filePath": "src/instructions/proctored_exam/download-instructions/ExamCode.jsx",
+          "line": 30,
+          "column": 6,
+          "version": "13.17.0"
+        }
+      ],
+      "Form.Control": [
+        {
+          "filePath": "src/instructions/proctored_exam/download-instructions/ExamCode.jsx",
+          "line": 36,
+          "column": 6,
+          "version": "13.17.0"
+        }
+      ],
+      "StatefulButton": [
+        {
+          "filePath": "src/instructions/proctored_exam/download-instructions/ExamCode.jsx",
+          "line": 41,
+          "column": 10,
+          "version": "13.17.0"
+        }
+      ],
+      "Hyperlink": [
+        {
+          "filePath": "src/instructions/proctored_exam/ErrorProctoredExamInstructions.jsx",
+          "line": 34,
+          "column": 31,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/OnboardingErrorExamInstructions.jsx",
+          "line": 30,
+          "column": 14,
+          "version": "13.17.0"
+        },
+        {
+          "filePath": "src/instructions/proctored_exam/OnboardingErrorExamInstructions.jsx",
+          "line": 59,
+          "column": 14,
+          "version": "13.17.0"
+        }
+      ],
+      "Modal": [
+        {
+          "filePath": "src/instructions/proctored_exam/WarningModal.jsx",
+          "line": 8,
+          "column": 2,
+          "version": "13.17.0"
+        }
+      ]
+    }
+  },
+  {
+    "version": "14.16.10",
+    "name": "@edx/frontend-platform",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/edx/frontend-platform.git"
+    },
+    "folderName": "frontend-platform",
+    "usages": {
+      "Container": [
+        {
+          "filePath": "src/react/ErrorPage.jsx",
+          "line": 25,
+          "column": 6,
+          "version": "14.16.10"
+        }
+      ],
+      "Row": [
+        {
+          "filePath": "src/react/ErrorPage.jsx",
+          "line": 26,
+          "column": 8,
+          "version": "14.16.10"
+        }
+      ],
+      "Col": [
+        {
+          "filePath": "src/react/ErrorPage.jsx",
+          "line": 27,
+          "column": 10,
+          "version": "14.16.10"
+        }
+      ],
+      "Button": [
+        {
+          "filePath": "src/react/ErrorPage.jsx",
+          "line": 40,
+          "column": 12,
+          "version": "14.16.10"
         }
       ]
     }
