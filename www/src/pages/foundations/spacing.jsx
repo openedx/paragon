@@ -15,7 +15,7 @@ const directions = [
   { key: 'y', name: 'y direction' },
 ];
 
-const sizes = [5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5];
+const sizes = [6, 5.5, 5, 4.5, 4, 3.5, 3, 2.5, 2, 1.5, 1, 0, -1, -1.5, -2, -2.5, -3, -3.5, -4, -4.5, -5, -5.5, -6];
 
 const getUtilityClassName = (prefix, direction, size) => `${prefix}${direction}-${size < 0 ? 'n' : ''}${Math.abs(size)}`;
 
@@ -93,18 +93,18 @@ export default function SpacingPage() {
                 className="d-flex align-items-center"
                 style={{ maxWidth: '20rem' }}
               >
-                -5
+                -6
                 <Input
                   type="range"
                   id="set-size"
                   className="mx-2"
-                  min={-5}
-                  step={1}
-                  max={5}
+                  min={-6}
+                  step={0.5}
+                  max={6}
                   value={size}
                   onChange={e => setSize(e.target.value)}
                 />
-                5
+                6
               </div>
             </label>
           </div>
