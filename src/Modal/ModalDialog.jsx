@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { useMediaQuery } from 'react-responsive';
 import ModalLayer from './ModalLayer';
 import { Icon, IconButton } from '..';
 import { Close } from '../../icons';
@@ -22,7 +23,10 @@ function ModalDialog({
   closeLabel,
   isFullscreenScroll,
   className,
+  isFullscreenOnMobile,
 }) {
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' });
+  const showFullScreen = (isFullscreenOnMobile && isTabletOrMobile);
   return (
     <ModalLayer isOpen={isOpen} onClose={onClose}>
       <div
@@ -31,7 +35,7 @@ function ModalDialog({
         className={classNames(
           'pgn__modal',
           {
-            [`pgn__modal-${size}`]: size,
+            [`pgn__modal-${showFullScreen ? 'fullscreen' : size}`]: showFullScreen ? 'fullscreen' : size,
             [`pgn__modal-${variant}`]: variant,
             'pgn__modal-scroll-fullscreen': isFullscreenScroll,
           },
@@ -92,6 +96,10 @@ ModalDialog.propTypes = {
    * the browser window itself receives the scrollbar.
    */
   isFullscreenScroll: PropTypes.bool,
+  /**
+   * to show full screen view on mobile screens
+   * */
+  isFullscreenOnMobile: PropTypes.bool,
 };
 
 ModalDialog.defaultProps = {
@@ -102,6 +110,7 @@ ModalDialog.defaultProps = {
   closeLabel: 'Close',
   className: undefined,
   isFullscreenScroll: false,
+  isFullscreenOnMobile: false,
 };
 
 ModalDialog.Header = ModalDialogHeader;
