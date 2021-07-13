@@ -13,6 +13,7 @@ export { default as ArrowForwardIos } from './ArrowForwardIos';
 export { default as Article } from './Article';
 export { default as Assignment } from './Assignment';
 export { default as Award } from './Award';
+export { default as Blocked } from './Blocked';
 export { default as BookOpen } from './BookOpen';
 export { default as Calendar } from './Calendar';
 export { default as Cancel } from './Cancel';
