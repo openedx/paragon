@@ -35,7 +35,7 @@ function ModalDialog({
         className={classNames(
           'pgn__modal',
           {
-            [`pgn__modal-${showFullScreen ? 'fullscreen' : size}`]: showFullScreen ? 'fullscreen' : size,
+            [`pgn__modal-${showFullScreen ? 'fullscreen' : size}`]: size,
             [`pgn__modal-${variant}`]: variant,
             'pgn__modal-scroll-fullscreen': isFullscreenScroll,
           },

@@ -147,7 +147,7 @@ describe('<ExtraLarge />', () => {
   //  global.innerWidth = breakpoints.extraLarge.maxWidth;
 
     const wrapper = mount((
-      <ResponsiveContext.Provider value={{ width: breakpoints.extraLarge.minWidth }}>
+      <ResponsiveContext.Provider value={{ width: breakpoints.extraLarge.maxWidth }}>
         <ExtraLarge>
           <p>Hello world</p>
         </ExtraLarge>
@@ -168,12 +168,12 @@ describe('<ExtraLarge />', () => {
   });
 
   it('should not render children for larger than extra large displays', () => {
-    global.innerWidth = breakpoints.extraExtraLarge.minWidth;
-
     const wrapper = mount((
-      <Large>
-        <p>Hello world</p>
-      </Large>
+      <ResponsiveContext.Provider value={{ width: breakpoints.extraExtraLarge.minWidth }}>
+        <Large>
+          <p>Hello world</p>
+        </Large>
+      </ResponsiveContext.Provider>
     ));
     expect(wrapper.find('p')).toHaveLength(0);
   });
@@ -181,23 +181,23 @@ describe('<ExtraLarge />', () => {
 
 describe('<ExtraExtraLarge />', () => {
   it('should render children for extra large displays', () => {
-    global.innerWidth = breakpoints.extraExtraLarge.minWidth;
-
     const wrapper = mount((
-      <ExtraExtraLarge>
-        <p>Hello world</p>
-      </ExtraExtraLarge>
+      <ResponsiveContext.Provider value={{ width: breakpoints.extraExtraLarge.minWidth }}>
+        <ExtraExtraLarge>
+          <p>Hello world</p>
+        </ExtraExtraLarge>
+      </ResponsiveContext.Provider>
     ));
     expect(wrapper.find('p')).toHaveLength(1);
   });
 
   it('should not render children for smaller than extra large displays', () => {
-    global.innerWidth = breakpoints.extraLarge.maxWidth;
-
     const wrapper = mount((
-      <ExtraExtraLarge>
-        <p>Hello world</p>
-      </ExtraExtraLarge>
+      <ResponsiveContext.Provider value={{ width: breakpoints.extraLarge.maxWidth }}>
+        <ExtraExtraLarge>
+          <p>Hello world</p>
+        </ExtraExtraLarge>
+      </ResponsiveContext.Provider>
     ));
     expect(wrapper.find('p')).toHaveLength(0);
   });
