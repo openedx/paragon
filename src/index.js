@@ -88,6 +88,7 @@ export {
   Medium,
   Large,
   ExtraLarge,
+  ExtraExtraLarge,
   LargerThanExtraSmall,
 } from './Responsive';
 export { default as ResponsiveEmbed } from './ResponsiveEmbed';
