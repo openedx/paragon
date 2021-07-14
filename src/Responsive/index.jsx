@@ -21,6 +21,10 @@ const breakpoints = {
   },
   extraLarge: {
     minWidth: 1200,
+    maxWidth: 1399.98,
+  },
+  extraExtraLarge: {
+    minWidth: 1400,
   },
 };
 
@@ -64,6 +68,15 @@ const ExtraLarge = props => (
   <Responsive
     {...props}
     minWidth={breakpoints.extraLarge.minWidth}
+    maxWidth={breakpoints.extraLarge.maxWidth}
+  />
+);
+
+// Extra Extra large devices
+const ExtraExtraLarge = props => (
+  <Responsive
+    {...props}
+    minWidth={breakpoints.extraExtraLarge.minWidth}
   />
 );
 
@@ -81,5 +94,6 @@ export {
   Medium,
   Large,
   ExtraLarge,
+  ExtraExtraLarge,
   LargerThanExtraSmall,
 };
