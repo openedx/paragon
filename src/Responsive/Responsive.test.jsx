@@ -10,6 +10,7 @@ import {
   Medium,
   Large,
   ExtraLarge,
+  ExtraExtraLarge,
   LargerThanExtraSmall,
 } from './index';
 
@@ -144,7 +145,7 @@ describe('<Large />', () => {
 
 describe('<ExtraLarge />', () => {
   it('should render children for extra large displays', () => {
-    global.innerWidth = breakpoints.extraLarge.minWidth;
+    global.innerWidth = breakpoints.extraLarge.maxWidth;
 
     const wrapper = mount((
       <ExtraLarge>
@@ -161,6 +162,41 @@ describe('<ExtraLarge />', () => {
       <ExtraLarge>
         <p>Hello world</p>
       </ExtraLarge>
+    ));
+    expect(wrapper.find('p')).toHaveLength(0);
+  });
+
+  it('should not render children for larger than extra large displays', () => {
+    global.innerWidth = breakpoints.extraExtraLarge.minWidth;
+
+    const wrapper = mount((
+      <Large>
+        <p>Hello world</p>
+      </Large>
+    ));
+    expect(wrapper.find('p')).toHaveLength(0);
+  });
+});
+
+describe('<ExtraExtraLarge />', () => {
+  it('should render children for extra large displays', () => {
+    global.innerWidth = breakpoints.extraExtraLarge.minWidth;
+
+    const wrapper = mount((
+      <ExtraExtraLarge>
+        <p>Hello world</p>
+      </ExtraExtraLarge>
+    ));
+    expect(wrapper.find('p')).toHaveLength(1);
+  });
+
+  it('should not render children for smaller than extra large displays', () => {
+    global.innerWidth = breakpoints.extraLarge.maxWidth;
+
+    const wrapper = mount((
+      <ExtraExtraLarge>
+        <p>Hello world</p>
+      </ExtraExtraLarge>
     ));
     expect(wrapper.find('p')).toHaveLength(0);
   });

@@ -7,6 +7,7 @@ components:
 - Medium
 - Large
 - ExtraLarge
+- ExtraExtraLarge
 - LargerThanExtraSmall
 categories:
 - Layout
@@ -26,8 +27,9 @@ The following responsive components are available:
 2. `Small` (min-width: 576; max-width: 767)
 3. `Medium` (min-width: 768; max-width: 991)
 4. `Large` (min-width: 992; max-width: 1199)
-5. `ExtraLarge` (min-width: 1200)
-6. `LargerThanExtraSmall` (min-width: 576)
+5. `ExtraLarge` (min-width: 1200; max-width: 1399)
+6. `ExtraExtraLarge` (min-width: 1400)
+7. `LargerThanExtraSmall` (min-width: 576)
 
 ## Example Usage
 
