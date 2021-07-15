@@ -1,9 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-
-import '../__mocks__/reactResponsive.mock';
+import { Context as ResponsiveContext } from 'react-responsive';
 import { breakpoints } from '../Responsive';
-
 import Pagination from './index';
 
 const baseProps = {
@@ -105,7 +103,11 @@ describe('<Pagination />', () => {
 
     describe('should use correct number of pages', () => {
       it('should show 5 buttons on desktop', () => {
-        const wrapper = mount(<Pagination {...baseProps} />);
+        const wrapper = mount((
+          <ResponsiveContext.Provider value={{ width: breakpoints.large.maxWidth }}>
+            <Pagination {...baseProps} />
+          </ResponsiveContext.Provider>
+        ));
         expect(wrapper.findWhere((node) => {
           const isPrevOrNext = node.hasClass('previous') || node.hasClass('next');
           return node.name() === 'button' && !isPrevOrNext;
@@ -114,17 +116,16 @@ describe('<Pagination />', () => {
 
       it('should show 1 button on mobile', () => {
         // Use extra small window size to display the mobile version of `Pagination`.
-        global.innerWidth = breakpoints.extraSmall.maxWidth;
-
-        const wrapper = mount(<Pagination {...baseProps} />);
+        const wrapper = mount((
+          <ResponsiveContext.Provider value={{ width: breakpoints.extraSmall.maxWidth }}>
+            <Pagination {...baseProps} />
+          </ResponsiveContext.Provider>
+        ));
         expect(wrapper.findWhere((node) => {
           const name = node.name();
           const isPrevOrNext = node.hasClass('previous') || node.hasClass('next');
           return name === 'span' && node.hasClass('btn') && !isPrevOrNext;
         })).toHaveLength(1);
-
-        // Reset window size back to extra large display
-        global.innerWidth = breakpoints.extraLarge.minWidth;
       });
     });
 
@@ -135,7 +136,11 @@ describe('<Pagination />', () => {
           ...baseProps,
           onPageSelect: spy,
         };
-        const wrapper = mount(<Pagination {...props} />);
+        const wrapper = mount((
+          <ResponsiveContext.Provider value={{ width: breakpoints.large.maxWidth }}>
+            <Pagination {...props} />
+          </ResponsiveContext.Provider>
+        ));
 
         wrapper.find('.btn').at(1).simulate('click');
         expect(spy).toHaveBeenCalledTimes(0);
@@ -147,7 +152,11 @@ describe('<Pagination />', () => {
           ...baseProps,
           onPageSelect: spy,
         };
-        const wrapper = mount(<Pagination {...props} />);
+        const wrapper = mount((
+          <ResponsiveContext.Provider value={{ width: breakpoints.large.maxWidth }}>
+            <Pagination {...props} />
+          </ResponsiveContext.Provider>
+        ));
 
         wrapper.find('.btn').at(2).simulate('click');
         expect(wrapper.state('currentPage')).toEqual(2);
@@ -196,16 +205,25 @@ describe('<Pagination />', () => {
 
     let wrapper;
     let props;
+    /**
+     * made a proxy component because setProps can only be used with root component and
+     * Responsive Context Provider is needed to mock screen
+     * */
+    // eslint-disable-next-line react/prop-types
+    const Proxy = ({ currentPage, width }) => (
+      <ResponsiveContext.Provider value={{ width }}>
+        <Pagination {...props} currentPage={currentPage} />
+      </ResponsiveContext.Provider>
+    );
 
     beforeEach(() => {
-      // Reset window size to extra large display
-      global.innerWidth = breakpoints.extraLarge.minWidth;
-
       props = {
         ...baseProps,
         buttonLabels,
       };
-      wrapper = mount(<Pagination {...props} />);
+      wrapper = mount(
+        <Proxy currentPage={1} width={breakpoints.large.minWidth} />,
+      );
     });
 
     it('uses passed in previous button label', () => {
@@ -233,25 +251,30 @@ describe('<Pagination />', () => {
     });
 
     it('uses passed in page button label', () => {
+      wrapper = mount((
+        <ResponsiveContext.Provider value={{ width: breakpoints.large.minWidth }}>
+          <Pagination {...props} />
+        </ResponsiveContext.Provider>
+      ));
       expect(wrapper.state('currentPage')).toEqual(1);
       expect(wrapper.find('.btn').at(1).prop('aria-label'))
         .toEqual(`${buttonLabels.page} 1, ${buttonLabels.currentPage}`);
+      wrapper = mount((
+        <ResponsiveContext.Provider value={{ width: breakpoints.large.minWidth }}>
+          <Pagination {...props} currentPage={2} />
+        </ResponsiveContext.Provider>
+      ));
 
-      wrapper.setProps({ currentPage: 2 });
       expect(wrapper.state('currentPage')).toEqual(2);
-
       expect(wrapper.find('.btn').at(1).prop('aria-label'))
         .toEqual(`${buttonLabels.page} 1`);
 
-      // Reset window size to extra small display
-      global.innerWidth = breakpoints.extraSmall.maxWidth;
-      wrapper = mount(<Pagination {...props} />);
+      wrapper = mount(
+        <Proxy currentPage={1} width={breakpoints.extraSmall.maxWidth} />,
+      );
 
       expect(wrapper.find('.btn').at(1).prop('aria-label'))
         .toEqual(`${buttonLabels.page} 1, ${buttonLabels.currentPage}, ${buttonLabels.pageOfCount} 5`);
-
-      // Reset window size back to extra large display
-      global.innerWidth = breakpoints.extraLarge.minWidth;
     });
   });
 });
