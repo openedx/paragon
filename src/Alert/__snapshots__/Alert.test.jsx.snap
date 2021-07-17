@@ -1,8 +1,101 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Alert /> correct rendering renders with correct with icon 1`] = `
+exports[`<Alert /> renders with button and dismissible props 1`] = `
 <div
-  className="fade alert-content undefined alert show"
+  className="fade alert-content alert show"
+  role="alert"
+>
+  <div
+    className="pgn__alert-content-wrapper d-flex align-content-center align-items-center"
+  >
+    <div
+      className="alert-message-content"
+    >
+      Alert
+    </div>
+    <div
+      className="pgn__alert-buttons d-flex justify-content-end ml-3"
+    >
+      <button
+        className="btn btn-tertiary btn-sm"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Dismiss
+      </button>
+      <button
+        className="ml-3 btn btn-primary btn-sm"
+        disabled={false}
+        type="button"
+      >
+        Hello
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Alert /> renders with button prop 1`] = `
+<div
+  className="fade alert-content alert show"
+  role="alert"
+>
+  <div
+    className="pgn__alert-content-wrapper d-flex align-content-center align-items-center"
+  >
+    <div
+      className="alert-message-content"
+    >
+      Alert
+    </div>
+    <div
+      className="pgn__alert-buttons d-flex justify-content-end ml-3"
+    >
+      <button
+        className="btn btn-brand btn-sm"
+        disabled={false}
+        type="button"
+      >
+        Hello
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Alert /> renders with dismissible prop 1`] = `
+<div
+  className="fade alert-content alert show"
+  role="alert"
+>
+  <div
+    className="pgn__alert-content-wrapper d-flex align-content-center align-items-center"
+  >
+    <div
+      className="alert-message-content"
+    >
+      Alert
+    </div>
+    <div
+      className="pgn__alert-buttons d-flex justify-content-end ml-3"
+    >
+      <button
+        className="btn btn-tertiary btn-sm"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Dismiss
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Alert /> renders with icon prop 1`] = `
+<div
+  className="fade alert-content alert show"
   role="alert"
 >
   <span
@@ -26,22 +119,68 @@ exports[`<Alert /> correct rendering renders with correct with icon 1`] = `
     </svg>
   </span>
   <div
-    className="alert-message-content"
+    className="pgn__alert-content-wrapper"
   >
-    Alert
+    <div
+      className="alert-message-content"
+    >
+      Alert
+    </div>
   </div>
 </div>
 `;
 
-exports[`<Alert /> correct rendering renders without icon prop 1`] = `
+exports[`<Alert /> renders with stacked prop 1`] = `
 <div
-  className="fade alert-content undefined alert show"
+  className="fade alert-content alert show"
   role="alert"
 >
   <div
-    className="alert-message-content"
+    className="pgn__alert-content-wrapper"
   >
-    Alert
+    <div
+      className="alert-message-content"
+    >
+      Alert
+    </div>
+    <div
+      className="pgn__alert-buttons d-flex justify-content-end mt-3"
+    >
+      <button
+        className="btn btn-tertiary btn-sm"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Dismiss
+      </button>
+      <button
+        className="ml-3 btn btn-primary btn-sm"
+        disabled={false}
+        type="button"
+      >
+        Hello
+      </button>
+    </div>
   </div>
 </div>
 `;
+
+exports[`<Alert /> renders without any props 1`] = `
+<div
+  className="fade alert-content alert show"
+  role="alert"
+>
+  <div
+    className="pgn__alert-content-wrapper"
+  >
+    <div
+      className="alert-message-content"
+    >
+      Alert
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Alert /> switches to stacked variant at extra small breakpoint 1`] = `null`;
