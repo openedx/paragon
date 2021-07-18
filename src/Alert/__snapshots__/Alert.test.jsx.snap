@@ -14,7 +14,7 @@ exports[`<Alert /> renders with button and dismissible props 1`] = `
       Alert
     </div>
     <div
-      className="pgn__alert-buttons d-flex justify-content-end ml-3"
+      className="pgn__alert-buttons d-flex justify-content-end ml-4"
     >
       <button
         className="btn btn-tertiary btn-sm"
@@ -50,7 +50,7 @@ exports[`<Alert /> renders with button prop 1`] = `
       Alert
     </div>
     <div
-      className="pgn__alert-buttons d-flex justify-content-end ml-3"
+      className="pgn__alert-buttons d-flex justify-content-end ml-4"
     >
       <button
         className="btn btn-brand btn-sm"
@@ -78,7 +78,7 @@ exports[`<Alert /> renders with dismissible prop 1`] = `
       Alert
     </div>
     <div
-      className="pgn__alert-buttons d-flex justify-content-end ml-3"
+      className="pgn__alert-buttons d-flex justify-content-end ml-4"
     >
       <button
         className="btn btn-tertiary btn-sm"

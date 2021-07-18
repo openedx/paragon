@@ -60,7 +60,7 @@ const WrappedAlert = React.forwardRef(({
           <AlertButtons
             className={classNames({
               'mt-3': isStacked,
-              'ml-3': !isStacked,
+              'ml-4': !isStacked,
             })}
             button={button}
             dismissible={dismissible}
