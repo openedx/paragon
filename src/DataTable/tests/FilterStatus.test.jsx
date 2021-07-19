@@ -15,6 +15,17 @@ const filterProps = {
   onClick: () => {},
   clearFiltersText: 'CLEAR ME',
   className: 'filterClass',
+  showFilteredFields: true,
+};
+
+const filterPropsNoFiltered = {
+  buttonClassName: 'buttonClass',
+  variant: 'variant',
+  size: 'lorge',
+  onClick: () => {},
+  clearFiltersText: '',
+  className: 'filterClass',
+  showFilteredFields: false,
 };
 
 // eslint-disable-next-line react/prop-types
@@ -52,6 +63,10 @@ describe('<FilterStatus />', () => {
   });
   it('returns null if setAllFilters is not present (table is not filterable)', () => {
     const wrapper = mount(<FilterStatusWrapper value={{}} props={filterProps} />);
+    expect(wrapper.text()).toEqual('');
+  });
+  it('hides filter text', () => {
+    const wrapper = mount(<FilterStatusWrapper value={instance} props={filterPropsNoFiltered} />);
     expect(wrapper.text()).toEqual('');
   });
 });
