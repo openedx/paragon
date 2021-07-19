@@ -53,6 +53,10 @@
 // Provide class for links that match alerts
 .alert-link {
   font-weight: $alert-link-font-weight;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 // Dismissible alerts
@@ -73,10 +77,15 @@
   }
 }
 
-.alert-link {
-  text-decoration: underline;
-  &:hover {
-    text-decoration: none;
+.pgn__alert-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: $alert-actions-margin-bottom;
+  &.stacked {
+    margin-top: $alert-actions-margin-top;
+  }
+  & > * + * {
+    margin-left: $alert-actions-gap-x;
   }
 }
 

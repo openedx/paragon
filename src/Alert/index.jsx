@@ -3,26 +3,24 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Alert from 'react-bootstrap/Alert';
 import { useMediaQuery } from 'react-responsive';
-import useToggle from '../hooks/useToggle';
 import { Icon } from '..';
-import AlertButtons from './AlertButtons';
-import { alertButtonProps } from './propTypes';
+import Button from '../Button';
 import { breakpoints } from '../Responsive';
+import ActionRow from '../ActionRow';
 
 const WrappedAlert = React.forwardRef(({
   children,
   icon,
-  button,
+  actions,
   dismissible,
   onClose,
   closeLabel,
-  show,
   stacked,
   ...props
 }, ref) => {
-  const [isOpen, /* open */, close] = useToggle(show);
   const [isStacked, setIsStacked] = useState(stacked);
   const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+  const actionButtonSize = 'sm';
 
   useEffect(() => {
     if (isExtraSmall) {
@@ -32,43 +30,44 @@ const WrappedAlert = React.forwardRef(({
     }
   }, [isExtraSmall, stacked]);
 
-  const handleClose = useCallback((e) => {
-    close();
-    onClose(e);
-  }, []);
+  const cloneActionElement = useCallback(
+    (Action) => {
+      const addtlActionProps = { size: actionButtonSize, key: Action.props.children };
+      return React.cloneElement(Action, addtlActionProps);
+    },
+    [],
+  );
 
   return (
     <Alert
       {...props}
-      show={isOpen}
       className={classNames('alert-content', props.className)}
       ref={ref}
     >
       {icon && <Icon src={icon} className="alert-icon" />}
-      <div
-        className={classNames(
-          'pgn__alert-content-wrapper',
-          {
-            'd-flex align-content-center align-items-center': (dismissible || button) && !isStacked,
-          },
-        )}
+      <ActionRow
+        isStacked={isStacked}
+        isStackedReversed={false}
+        isStackedCentered={false}
       >
         <div className="alert-message-content">
           {children}
         </div>
-        {(dismissible || button) && (
-          <AlertButtons
-            className={classNames({
-              'mt-3': isStacked,
-              'ml-4': !isStacked,
-            })}
-            button={button}
-            dismissible={dismissible}
-            closeLabel={closeLabel}
-            onClose={handleClose}
-          />
+        {(dismissible || actions?.length > 0) && (
+          <div className={classNames('pgn__alert-actions', { stacked: isStacked })}>
+            {dismissible && (
+              <Button
+                size={actionButtonSize}
+                variant="tertiary"
+                onClick={onClose}
+              >
+                {closeLabel}
+              </Button>
+            )}
+            {actions && actions.map(cloneActionElement)}
+          </div>
         )}
-      </div>
+      </ActionRow>
     </Alert>
   );
 });
@@ -85,8 +84,8 @@ WrappedAlert.propTypes = {
   dismissible: PropTypes.bool,
   /** Optional callback function for when the alert it dismissed. */
   onClose: PropTypes.func,
-  /** Optional list of props button */
-  button: alertButtonProps,
+  /** Optional list of action elements. May include, at most, 2 actions, or 1 if dismissible is true. */
+  actions: PropTypes.arrayOf(PropTypes.element),
   /** Position of the dismiss and call-to-action buttons. Defaults to ``false``. */
   stacked: PropTypes.bool,
 };
@@ -95,7 +94,7 @@ WrappedAlert.defaultProps = {
   ...Alert.defaultProps,
   children: undefined,
   icon: undefined,
-  button: undefined,
+  actions: undefined,
   dismissible: false,
   onClose: () => {},
   closeLabel: 'Dismiss',

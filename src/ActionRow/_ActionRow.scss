@@ -15,15 +15,22 @@
 .pgn__action-row-stacked {
   display: flex;
   flex-grow: 1;
-  align-items: center;
-  flex-direction: column-reverse;
-  justify-content: center;
   & > * {
     margin: 0;
   }
   & > * + * {
     margin-bottom: $action-row-gap-y;
   }
+}
+.pgn__action-row-stacked-column-reverse {
+  flex-direction: column-reverse;
+}
+.pgn__action-row-stacked-column {
+  flex-direction: column;
+}
+.pgn__action-row-stacked-centered {
+  align-items: center;
+  justify-content: center;
 }
 .pgn__action-row-spacer {
   flex-grow: 1;

@@ -1,6 +1,8 @@
 ---
 title: 'Alert'
 type: 'component'
+components:
+- Alert
 categories:
 - Status & metadata
 status: 'Stable'
@@ -44,17 +46,16 @@ notes: |
 </>
 ```
 
-### With Buttons
+### With Action Buttons
 The ``Alert`` component supports a dismissible button and a custom call-to-action button, via the ``dismissible`` and ``button`` props respectively. The buttons may be right aligned or stacked. On extra small screen widths, the buttons will be stacked.
 
 ```jsx live
 <>
   <Alert
     variant="info"
-    button={{
-      buttonText: 'Hello',
-      onClick: (e) => console.log('clicked', e),
-    }}
+    actions={[
+      <Button>Hello</Button>,
+    ]}
     dismissible
     closeLabel="Dismiss"
     onClose={(e) => { console.log('closed', e); } }
@@ -72,7 +73,9 @@ The ``Alert`` component supports a dismissible button and a custom call-to-actio
     variant="success"
     icon={CheckCircle}
     dismissible
-    button={{ buttonText: 'Hello' }}
+    actions={[
+      <Button>Hello</Button>,
+    ]}
   >
     <Alert.Heading>Hey, nice to see you</Alert.Heading>
     <p>
@@ -84,7 +87,9 @@ The ``Alert`` component supports a dismissible button and a custom call-to-actio
   <Alert
     variant="danger"
     icon={Info}
-    button={{ buttonText: 'Hello' }}
+    actions={[
+      <Button>Hello</Button>,
+    ]}
     dismissible
     onClose={(e) => { console.log('closed', e); } }
     stacked
@@ -135,10 +140,9 @@ The ``Alert`` component supports a dismissible button and a custom call-to-actio
 ```jsx live
 <Alert
   variant="success"
-  button={{
-    buttonText: 'Hello',
-    onClick: (e) => console.log('clicked', e),
-  }}
+  actions={[
+    <Button>Hello</Button>
+  ]}
   dismissible
   stacked
 >
