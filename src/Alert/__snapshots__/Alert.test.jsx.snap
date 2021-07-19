@@ -6,7 +6,7 @@ exports[`<Alert /> renders with button and dismissible props 1`] = `
   role="alert"
 >
   <div
-    className="pgn__alert-content-wrapper d-flex align-content-center align-items-center"
+    className="pgn__action-row"
   >
     <div
       className="alert-message-content"
@@ -14,7 +14,7 @@ exports[`<Alert /> renders with button and dismissible props 1`] = `
       Alert
     </div>
     <div
-      className="pgn__alert-buttons d-flex justify-content-end ml-4"
+      className="pgn__alert-actions"
     >
       <button
         className="btn btn-tertiary btn-sm"
@@ -25,7 +25,7 @@ exports[`<Alert /> renders with button and dismissible props 1`] = `
         Dismiss
       </button>
       <button
-        className="ml-3 btn btn-primary btn-sm"
+        className="btn btn-primary btn-sm"
         disabled={false}
         type="button"
       >
@@ -42,7 +42,7 @@ exports[`<Alert /> renders with button prop 1`] = `
   role="alert"
 >
   <div
-    className="pgn__alert-content-wrapper d-flex align-content-center align-items-center"
+    className="pgn__action-row"
   >
     <div
       className="alert-message-content"
@@ -50,10 +50,10 @@ exports[`<Alert /> renders with button prop 1`] = `
       Alert
     </div>
     <div
-      className="pgn__alert-buttons d-flex justify-content-end ml-4"
+      className="pgn__alert-actions"
     >
       <button
-        className="btn btn-brand btn-sm"
+        className="btn btn-primary btn-sm"
         disabled={false}
         type="button"
       >
@@ -70,7 +70,7 @@ exports[`<Alert /> renders with dismissible prop 1`] = `
   role="alert"
 >
   <div
-    className="pgn__alert-content-wrapper d-flex align-content-center align-items-center"
+    className="pgn__action-row"
   >
     <div
       className="alert-message-content"
@@ -78,7 +78,7 @@ exports[`<Alert /> renders with dismissible prop 1`] = `
       Alert
     </div>
     <div
-      className="pgn__alert-buttons d-flex justify-content-end ml-4"
+      className="pgn__alert-actions"
     >
       <button
         className="btn btn-tertiary btn-sm"
@@ -119,7 +119,7 @@ exports[`<Alert /> renders with icon prop 1`] = `
     </svg>
   </span>
   <div
-    className="pgn__alert-content-wrapper"
+    className="pgn__action-row"
   >
     <div
       className="alert-message-content"
@@ -136,7 +136,7 @@ exports[`<Alert /> renders with stacked prop 1`] = `
   role="alert"
 >
   <div
-    className="pgn__alert-content-wrapper"
+    className="pgn__action-row-stacked pgn__action-row-stacked-column"
   >
     <div
       className="alert-message-content"
@@ -144,7 +144,7 @@ exports[`<Alert /> renders with stacked prop 1`] = `
       Alert
     </div>
     <div
-      className="pgn__alert-buttons d-flex justify-content-end mt-3"
+      className="pgn__alert-actions stacked"
     >
       <button
         className="btn btn-tertiary btn-sm"
@@ -155,7 +155,7 @@ exports[`<Alert /> renders with stacked prop 1`] = `
         Dismiss
       </button>
       <button
-        className="ml-3 btn btn-primary btn-sm"
+        className="btn btn-primary btn-sm"
         disabled={false}
         type="button"
       >
@@ -172,7 +172,7 @@ exports[`<Alert /> renders without any props 1`] = `
   role="alert"
 >
   <div
-    className="pgn__alert-content-wrapper"
+    className="pgn__action-row"
   >
     <div
       className="alert-message-content"

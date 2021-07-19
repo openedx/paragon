@@ -3,6 +3,7 @@ import { mount } from 'enzyme';
 import renderer, { act } from 'react-test-renderer';
 import { Context as ResponsiveContext } from 'react-responsive';
 import { breakpoints } from '../Responsive';
+import Button from '../Button';
 import Alert from './index';
 import { Info } from '../../icons';
 
@@ -34,42 +35,28 @@ describe('<Alert />', () => {
     expect(mockOnClose).toHaveBeenCalledTimes(1);
   });
   it('renders with button prop', () => {
-    const buttonProps = {
-      buttonText: 'Hello',
-      variant: 'brand',
-    };
     const tree = renderer.create((
-      <Alert button={buttonProps}>Alert</Alert>
+      <Alert actions={[<Button>Hello</Button>]}>Alert</Alert>
     )).toJSON();
     expect(tree).toMatchSnapshot();
   });
   it('handles button onClick', () => {
     const mockOnClick = jest.fn();
-    const buttonProps = {
-      buttonText: 'Hello',
-      onClick: mockOnClick,
-    };
     const wrapper = mount((
-      <Alert button={buttonProps}>Alert</Alert>
+      <Alert actions={[<Button onClick={mockOnClick}>Hello</Button>]}>Alert</Alert>
     ));
     wrapper.find('.btn').simulate('click');
     expect(mockOnClick).toHaveBeenCalledTimes(1);
   });
   it('renders with button and dismissible props', () => {
-    const buttonProps = {
-      buttonText: 'Hello',
-    };
     const tree = renderer.create((
-      <Alert button={buttonProps} dismissible>Alert</Alert>
+      <Alert actions={[<Button>Hello</Button>]} dismissible>Alert</Alert>
     )).toJSON();
     expect(tree).toMatchSnapshot();
   });
   it('renders with stacked prop', () => {
-    const buttonProps = {
-      buttonText: 'Hello',
-    };
     const tree = renderer.create((
-      <Alert stacked button={buttonProps} dismissible>Alert</Alert>
+      <Alert stacked actions={[<Button>Hello</Button>]} dismissible>Alert</Alert>
     )).toJSON();
     expect(tree).toMatchSnapshot();
   });
