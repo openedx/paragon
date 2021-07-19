@@ -1,14 +1,14 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Alert from 'react-bootstrap/Alert';
+import BaseAlert from 'react-bootstrap/Alert';
 import { useMediaQuery } from 'react-responsive';
 import { Icon } from '..';
 import Button from '../Button';
 import { breakpoints } from '../Responsive';
 import ActionRow from '../ActionRow';
 
-const WrappedAlert = React.forwardRef(({
+const Alert = React.forwardRef(({
   children,
   icon,
   actions,
@@ -39,7 +39,7 @@ const WrappedAlert = React.forwardRef(({
   );
 
   return (
-    <Alert
+    <BaseAlert
       {...props}
       className={classNames('alert-content', props.className)}
       ref={ref}
@@ -68,12 +68,12 @@ const WrappedAlert = React.forwardRef(({
           </div>
         )}
       </ActionRow>
-    </Alert>
+    </BaseAlert>
   );
 });
 
-WrappedAlert.propTypes = {
-  ...Alert.propTypes,
+Alert.propTypes = {
+  ...BaseAlert.propTypes,
   /** Docstring for the children prop */
   children: PropTypes.node,
   /** Docstring for the icon prop... Icon that will be shown in the alert */
@@ -90,8 +90,8 @@ WrappedAlert.propTypes = {
   stacked: PropTypes.bool,
 };
 
-WrappedAlert.defaultProps = {
-  ...Alert.defaultProps,
+Alert.defaultProps = {
+  ...BaseAlert.defaultProps,
   children: undefined,
   icon: undefined,
   actions: undefined,
@@ -102,7 +102,7 @@ WrappedAlert.defaultProps = {
   stacked: false,
 };
 
-WrappedAlert.Link = Alert.Link;
-WrappedAlert.Heading = Alert.Heading;
+Alert.Link = BaseAlert.Link;
+Alert.Heading = BaseAlert.Heading;
 
-export default WrappedAlert;
+export default Alert;
