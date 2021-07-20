@@ -1,40 +1,110 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import Alert from 'react-bootstrap/Alert';
+import classNames from 'classnames';
+import BaseAlert from 'react-bootstrap/Alert';
+import { useMediaQuery } from 'react-responsive';
 import { Icon } from '..';
+import Button from '../Button';
+import { breakpoints } from '../Responsive';
+import ActionRow from '../ActionRow';
 
-const WrappedAlert = React.forwardRef(({
+const Alert = React.forwardRef(({
   children,
   icon,
+  actions,
+  dismissible,
+  onClose,
+  closeLabel,
+  stacked,
   ...props
-}, ref) => (
-  <Alert
-    {...props}
-    className={`alert-content ${props.className}`}
-    ref={ref}
-  >
-    {icon && <Icon src={icon} className="alert-icon" />}
-    <div className="alert-message-content">
-      {children}
-    </div>
-  </Alert>
-));
+}, ref) => {
+  const [isStacked, setIsStacked] = useState(stacked);
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+  const actionButtonSize = 'sm';
 
-WrappedAlert.propTypes = {
-  ...Alert.propTypes,
+  useEffect(() => {
+    if (isExtraSmall) {
+      setIsStacked(true);
+    } else {
+      setIsStacked(stacked);
+    }
+  }, [isExtraSmall, stacked]);
+
+  const cloneActionElement = useCallback(
+    (Action) => {
+      const addtlActionProps = { size: actionButtonSize, key: Action.props.children };
+      return React.cloneElement(Action, addtlActionProps);
+    },
+    [],
+  );
+
+  return (
+    <BaseAlert
+      {...props}
+      className={classNames('alert-content', props.className)}
+      ref={ref}
+    >
+      {icon && <Icon src={icon} className="alert-icon" />}
+      <div
+        className={classNames({
+          'pgn__alert-message-wrapper': !isStacked,
+          'pgn__alert-message-wrapper-stacked': isStacked,
+        })}
+      >
+        <div className="alert-message-content">
+          {children}
+        </div>
+        {(dismissible || actions?.length > 0) && (
+          <ActionRow className="pgn__alert-actions">
+            <ActionRow.Spacer />
+            {dismissible && (
+              <Button
+                size={actionButtonSize}
+                variant="tertiary"
+                onClick={onClose}
+              >
+                {closeLabel}
+              </Button>
+            )}
+            {actions && actions.map(cloneActionElement)}
+          </ActionRow>
+        )}
+      </div>
+    </BaseAlert>
+  );
+});
+
+Alert.propTypes = {
+  ...BaseAlert.propTypes,
   /** Docstring for the children prop */
   children: PropTypes.node,
   /** Docstring for the icon prop... Icon that will be shown in the alert */
   icon: PropTypes.func,
+  /** Whether the alert is shown. */
+  show: PropTypes.bool,
+  /** Whether the alert is dismissible. Defaults to true. */
+  dismissible: PropTypes.bool,
+  /** Optional callback function for when the alert it dismissed. */
+  onClose: PropTypes.func,
+  /** Optional list of action elements. May include, at most, 2 actions, or 1 if dismissible is true. */
+  actions: PropTypes.arrayOf(PropTypes.element),
+  /** Position of the dismiss and call-to-action buttons. Defaults to ``false``. */
+  stacked: PropTypes.bool,
 };
 
-WrappedAlert.defaultProps = {
-  ...Alert.defaultProps,
+Alert.defaultProps = {
+  ...BaseAlert.defaultProps,
   children: undefined,
   icon: undefined,
+  actions: undefined,
+  dismissible: false,
+  onClose: () => {},
+  closeLabel: 'Dismiss',
+  show: true,
+  stacked: false,
 };
 
-WrappedAlert.Link = Alert.Link;
-WrappedAlert.Heading = Alert.Heading;
+Alert.Link = BaseAlert.Link;
+Alert.Heading = BaseAlert.Heading;
 
-export default WrappedAlert;
+export default Alert;
