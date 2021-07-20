@@ -19,13 +19,9 @@ const filterProps = {
 };
 
 const filterPropsNoFiltered = {
-  buttonClassName: 'buttonClass',
-  variant: 'variant',
-  size: 'lorge',
-  onClick: () => {},
-  clearFiltersText: '',
-  className: 'filterClass',
+  ...filterProps,
   showFilteredFields: false,
+  clearFiltersText: '',
 };
 
 // eslint-disable-next-line react/prop-types

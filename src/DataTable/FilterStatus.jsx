@@ -12,7 +12,7 @@ const FilterStatus = ({
   }
 
   const filterNames = state.filters ? state.filters.map((filter) => filter.id) : [];
-  const filterTexts = (<p>Filtered by {filterNames.join(', ')}</p>);
+  const filterTexts = <p>Filtered by {filterNames.join(', ')}</p>;
 
   return (
     <div className={className}>
