@@ -23,6 +23,4 @@ $alert-font-size:                   .875rem !default;
 $alert-line-height:                 1.5rem !default;
 $alert-content-color:               $gray-700 !default;
 
-$alert-actions-margin-top:          .5rem !default;
-$alert-actions-margin-bottom:       0 !default;
-$alert-actions-gap-x:               .5rem !default;
+$alert-actions-gap:                 map-get($spacers, 3);

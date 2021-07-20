@@ -77,15 +77,17 @@
   }
 }
 
-.pgn__alert-actions {
+.pgn__alert-message-wrapper {
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: $alert-actions-margin-bottom;
-  &.stacked {
-    margin-top: $alert-actions-margin-top;
+  align-items: center;
+  .pgn__alert-actions {
+    margin-left: $alert-actions-gap;
   }
-  & > * + * {
-    margin-left: $alert-actions-gap-x;
+}
+
+.pgn__alert-message-wrapper-stacked {
+  .pgn__alert-actions {
+    margin-top: $alert-actions-gap;
   }
 }
 

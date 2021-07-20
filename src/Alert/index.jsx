@@ -45,16 +45,18 @@ const Alert = React.forwardRef(({
       ref={ref}
     >
       {icon && <Icon src={icon} className="alert-icon" />}
-      <ActionRow
-        isStacked={isStacked}
-        isStackedReversed={false}
-        isStackedCentered={false}
+      <div
+        className={classNames({
+          'pgn__alert-message-wrapper': !isStacked,
+          'pgn__alert-message-wrapper-stacked': isStacked,
+        })}
       >
         <div className="alert-message-content">
           {children}
         </div>
         {(dismissible || actions?.length > 0) && (
-          <div className={classNames('pgn__alert-actions', { stacked: isStacked })}>
+          <ActionRow className="pgn__alert-actions">
+            <ActionRow.Spacer />
             {dismissible && (
               <Button
                 size={actionButtonSize}
@@ -65,9 +67,9 @@ const Alert = React.forwardRef(({
               </Button>
             )}
             {actions && actions.map(cloneActionElement)}
-          </div>
+          </ActionRow>
         )}
-      </ActionRow>
+      </div>
     </BaseAlert>
   );
 });
