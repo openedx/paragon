@@ -156,6 +156,10 @@ $select-icon-padding: .5625rem !default;
     // a color. Adding an alpha channel smooths it out.
     background-color: rgba($input-bg, 0.01);
     white-space: nowrap;
+    max-width: 75vw;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .has-leading-element & {
