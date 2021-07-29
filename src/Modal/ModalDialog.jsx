@@ -25,7 +25,7 @@ function ModalDialog({
   className,
   isFullscreenOnMobile,
 }) {
-  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 767.98px)' });
   const showFullScreen = (isFullscreenOnMobile && isMobile);
   return (
     <ModalLayer isOpen={isOpen} onClose={onClose}>
