@@ -17,7 +17,8 @@ notes: |
 ### Scrollable with top and bottom drop shadows
 ```jsx live
 <Scrollable>
-<div style={{'max-height':'20vh'}}>
+<div style={{'max-height':'30vh','overflow-y':'auto'}}>
+  <p>Use overflow-y:auto if you want scrolling, in this content component</p>
   <p>A very long scrollable Content.</p>
   <p>A very long scrollable Content.</p>
   <p>A very long scrollable Content.</p>
