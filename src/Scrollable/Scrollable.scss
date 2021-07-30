@@ -5,53 +5,25 @@
     flex-direction: column;
     padding: $scrollable-inner-padding $scrollable-inner-padding $scrollable-inner-padding / 2;
     position: relative;
-    overflow:hidden;
-
-    &::before{
-        content:"";
-        box-shadow: 2px 7px 10px -1px rgba(0,0,0,0.6);
-        display: block;
-        height: 16px;
-        top: 10px;
-        opacity: .5;
-        z-index: 2;
-        position:absolute
-    }
-    &::after{
-        content:"";
-        box-shadow: 2px 7px 10px -1px rgba(0,0,0,0.4);
-        display: block;
-        height: 26px;
-        position: absolute;
-        bottom: -3.55rem;
-        opacity: .5;
-        z-index: 2;
-    }
-
-    &.pgn__scrollable-body-scroll-bottom {
-        &::before{
-        opacity: 0;
-        }
-        &::after{
-        opacity: 0.5;
-        }
-    }
-
-    &.pgn__scrollable-body-scroll-top {
-        &::before{
-        opacity: 0.5;
-        }
-        &::after{
-        opacity: 0;
-        }
-    }
-
-    &.pgn__scrollable-body-scroll-top.pgn__scrollable-body-scroll-bottom {
-
-    }
+    overflow:auto;
+    z-index: 1;
 
     .pgn__scrollable-body-content {
         overflow-y: auto;
+        z-index: -1;
+        padding: 1rem;
+    }
+
+    &.pgn__scrollable-body-scroll-top {
+        background: linear-gradient(to bottom, rgba(0,0,0,.3) 0%, transparent 8px);
+    }
+
+    &.pgn__scrollable-body-scroll-bottom {
+        background: linear-gradient(to top, rgba(0,0,0,.3) 0%, transparent 8px);
+    }
+
+    &.pgn__scrollable-body-scroll-top.pgn__scrollable-body-scroll-bottom {
+        background: transparent;
     }
 
     .pgn__scrollable-body-content > *:last-child {
