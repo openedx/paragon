@@ -29,7 +29,7 @@ function Hyperlink(props) {
     if (showLaunchIcon) {
       externalLinkIcon = (
         // Space between content and icon
-        <span className="d-inline-block align-text-top ml-2">
+        <span className="d-inline-block align-middle ml-2">
           <Icon src={Launch} style={{ height: '1em', width: '1em' }} />
         </span>
       );
