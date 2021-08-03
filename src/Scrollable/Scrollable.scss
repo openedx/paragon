@@ -1,41 +1,82 @@
 @import "variables";
 
 .pgn__scrollable-body {
-    display: flex;
-    flex-direction: column;
+    flex-grow: 1;
     padding: $scrollable-inner-padding $scrollable-inner-padding $scrollable-inner-padding / 2;
+    overflow: auto;
     position: relative;
-    overflow:auto;
-    z-index: 1;
 
-    .pgn__scrollable-body-content {
-        overflow-y: auto;
-        z-index: -1;
-        padding: 1rem;
+    &::before {
+      content: "";
+      background-color: transparent;
+      background-image: linear-gradient(#605c5c, #b8bebe, transparent 50%);
+      display: block;
+      height: 16px;
+      position: sticky;
+      top: -$scrollable-inner-padding;
+      margin-top: -$scrollable-inner-padding;
+      margin-left: -$scrollable-inner-padding;
+      margin-right: -$scrollable-inner-padding;
+      opacity: 0.5;
+      z-index: 2;
     }
-
-    &.pgn__scrollable-body-scroll-top {
-        background: linear-gradient(to bottom, rgba(0,0,0,.3) 0%, transparent 8px);
+    &::after {
+      content: "";
+      background-color: transparent;
+      background-image: linear-gradient(
+        360deg,
+        #605c5c,
+        #b8bebe,
+        transparent 50%
+      );
+      display: block;
+      height: 16px;
+      position: sticky;
+      bottom: -$scrollable-inner-padding / 2;
+      margin-bottom: -$scrollable-inner-padding;
+      margin-left: -$scrollable-inner-padding;
+      margin-right: -$scrollable-inner-padding;
+      opacity: 0.5;
     }
 
     &.pgn__scrollable-body-scroll-bottom {
-        background: linear-gradient(to top, rgba(0,0,0,.3) 0%, transparent 8px);
+      &::before {
+        opacity: 0.5;
+      }
+      &::after {
+        opacity: 0;
+      }
+    }
+
+    &.pgn__scrollable-body-scroll-top {
+      &::before {
+        opacity: 0;
+        z-index: 0;
+      }
+      &::after {
+        opacity: 0.5;
+      }
     }
 
     &.pgn__scrollable-body-scroll-top.pgn__scrollable-body-scroll-bottom {
-        background: transparent;
+      &::before {
+        opacity: 0;
+      }
+      &::after {
+        opacity: 0;
+      }
     }
 
     .pgn__scrollable-body-content > *:last-child {
-        margin-bottom: 0;
+      margin-bottom: 0;
     }
 
     // Avoid doubling up on padding with containers
     .pgn__scrollable-body-content > .container-fluid {
-        padding: 0;
+      padding: 0;
     }
 
-    .pgn__modal.pgn__scrollable-scroll-fullscreen & {
-        box-shadow: none;
+    .pgn__scrollable.pgn__scrollable-scroll-fullscreen & {
+      box-shadow: none;
     }
-}
+  }
