@@ -100,6 +100,7 @@ export { default as Timelapse } from './Timelapse';
 export { default as Translate } from './Translate';
 export { default as Undo } from './Undo';
 export { default as Unlocked } from './Unlocked';
+export { default as Unread } from './Unread';
 export { default as Verified } from './Verified';
 export { default as VerifiedBadge } from './VerifiedBadge';
 export { default as VerifiedOutline } from './VerifiedOutline';
