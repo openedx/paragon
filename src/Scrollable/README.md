@@ -14,7 +14,7 @@ notes: |
 
 ---
 
-### Scrollable area adornment with top and bottom drop shadows
+### Scrollable area adorned with top and bottom drop shadows on scroll detection
 
 <p>
 If the wrapped element specifies a
