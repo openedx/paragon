@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import useIsVisible from '../hooks/useIsVisible';
 
-const Scrollable = ({ as, children, ...props }) => {
+const Scrollable = ({ children, ...props }) => {
   const [isScrolledToTop, topSentinelRef] = useIsVisible();
   const [isScrolledToBottom, bottomSentinelRef] = useIsVisible();
   const className = classNames(
@@ -16,7 +16,7 @@ const Scrollable = ({ as, children, ...props }) => {
     },
   );
   return React.createElement(
-    as,
+    'div',
     { ...props, className },
     (
       <>
@@ -32,13 +32,11 @@ const Scrollable = ({ as, children, ...props }) => {
 };
 
 Scrollable.propTypes = {
-  as: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
 
 Scrollable.defaultProps = {
-  as: 'div',
   className: undefined,
 };
 

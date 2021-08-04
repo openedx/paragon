@@ -16,14 +16,14 @@ notes: |
 
 ### Scrollable area adorned with top and bottom drop shadows on scroll detection
 
-<p>
+<span>
 If the wrapped element specifies a
  height, then scrollable area with shadows constrained to that height.
 Shadow is shown on top if you scroll upwards
 Shadow is shown on bottom if you scroll downwards
 
 If you don't specify height you will get a default height per the Scrollable component (subject to change)
-</p>
+</span>
 
 #### Demo
 ```jsx live
