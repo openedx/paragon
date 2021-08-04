@@ -2,7 +2,8 @@
 // Scrollable
 
 // Padding applied to the scrollable body
-$scrollable-inner-padding:               1.5rem !default;
+$scrollable-inner-padding:               1.58rem !default;
+$scrollable-shadow-padding:              1.66rem !default;
 
 // Margin between elements in footer, must be lower than or equal to 2 * $scrollable-inner-padding
 $scrollable-footer-margin-between:       .5rem !default;
