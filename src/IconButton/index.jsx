@@ -75,7 +75,7 @@ IconButton.propTypes = {
   /** Click handler for the button */
   onClick: PropTypes.func.isRequired,
   /** Type of button (uses Bootstrap options) */
-  variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'light', 'dark']),
+  variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'light', 'dark', 'black']),
   size: PropTypes.oneOf(['sm', 'md', 'inline']),
 };
 
