@@ -27,8 +27,8 @@ If you don't specify height you will get a default height per the Scrollable com
 
 #### Demo
 ```jsx live
+<div style={{'height':'70vh', 'display': 'flex', 'flex-direction': 'column'}}>
 <Scrollable>
-<div>
   <p>Do not use overflow in wrapped component, Scrollable provides overflow:auto around wrapped element</p>
   <p>A very long scrollable Content.</p>
   <p>A very long scrollable Content.</p>
@@ -66,6 +66,6 @@ If you don't specify height you will get a default height per the Scrollable com
   <p>A very long scrollable Content.</p>
   <p>A very long scrollable Content.</p>
   <p>A very long scrollable Content.</p>
-</div>
 </Scrollable>
+</div>
 ```
