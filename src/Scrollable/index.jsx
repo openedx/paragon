@@ -20,11 +20,11 @@ const Scrollable = ({ children, ...props }) => {
     { ...props, className },
     (
       <>
-        <div ref={topSentinelRef} style={{ height: '10px', backgroundColor: 'red' }} />
+        <div ref={topSentinelRef} />
         <div className="pgn__scrollable-body-content">
           {children}
         </div>
-        <div ref={bottomSentinelRef} style={{ height: '10px', backgroundColor: 'black' }} />
+        <div ref={bottomSentinelRef} />
       </>
 
     ),
