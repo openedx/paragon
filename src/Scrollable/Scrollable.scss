@@ -2,7 +2,7 @@
 
 .pgn__scrollable-body {
     flex-grow: 1;
-    padding: $scrollable-inner-padding $scrollable-inner-padding $scrollable-inner-padding;
+    padding: $scrollable-inner-padding $scrollable-inner-padding $scrollable-inner-padding/2 $scrollable-inner-padding;
     overflow: auto;
     position: relative;
 
@@ -13,11 +13,10 @@
       display: block;
       height: 2px;
       position: sticky;
-      top: -$scrollable-shadow-padding;
+      top: -1.66rem;
       margin-top: -$scrollable-inner-padding;
       margin-left: -$scrollable-inner-padding;
       margin-right: -$scrollable-inner-padding;
-      opacity: 0.5;
       z-index: 2;
     }
     &::after {
@@ -27,32 +26,28 @@
       display: block;
       height: 2px;
       position: sticky;
-      bottom: -$scrollable-shadow-padding / 2;
+      bottom: -$scrollable-bottom-shadow-position;
       margin-bottom: -$scrollable-inner-padding;
       margin-left: -$scrollable-inner-padding;
       margin-right: -$scrollable-inner-padding;
-      opacity: 0.5;
     }
 
     &.pgn__scrollable-body-scroll-bottom {
       &::before {
         opacity: 0.5;
-        z-index: 2;
       }
       &::after {
         opacity: 0;
-        z-index: -1;
       }
     }
 
     &.pgn__scrollable-body-scroll-top {
       &::before {
         opacity: 0;
-        z-index: -1;
+        z-index: 0;
       }
       &::after {
         opacity: 0.5;
-        z-index: 2;
       }
     }
 
@@ -61,7 +56,7 @@
         opacity: 0;
       }
       &::after {
-        z-index: -1;
+        opacity: 0;
       }
     }
 
