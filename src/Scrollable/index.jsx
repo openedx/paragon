@@ -4,6 +4,9 @@ import classNames from 'classnames';
 
 import useIsVisible from '../hooks/useIsVisible';
 
+export const CLASSNAME_SCROLL_TOP = 'pgn__scrollable-body-scroll-top';
+export const CLASSNAME_SCROLL_BOTTOM = 'pgn__scrollable-body-scroll-bottom';
+
 const Scrollable = ({ children, ...props }) => {
   const [isScrolledToTop, topSentinelRef] = useIsVisible();
   const [isScrolledToBottom, bottomSentinelRef] = useIsVisible();
@@ -11,8 +14,8 @@ const Scrollable = ({ children, ...props }) => {
     'pgn__scrollable-body',
     props.className,
     {
-      'pgn__scrollable-body-scroll-top': isScrolledToTop,
-      'pgn__scrollable-body-scroll-bottom': isScrolledToBottom,
+      [CLASSNAME_SCROLL_TOP]: isScrolledToTop,
+      [CLASSNAME_SCROLL_BOTTOM]: isScrolledToBottom,
     },
   );
   return React.createElement(
