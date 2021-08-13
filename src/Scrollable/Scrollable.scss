@@ -1,35 +1,36 @@
 @import "variables";
 
 .pgn__scrollable-body {
-    flex-grow: 1;
-    padding: $scrollable-inner-padding $scrollable-inner-padding/2 $scrollable-inner-padding/2 $scrollable-inner-padding/2;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     position: relative;
 
+
+    // this pseudo element shows the shadow on the top edge whenever the sentinel div is hidden
     &::before {
       content: "";
       background-color: transparent;
-      box-shadow: 0px 1px 3px rgba(0,0,0,0.4);
+      box-shadow: 28px 0px 7px 2px rgba(0, 0, 0, 0.55);
       display: block;
       height: 2px;
       position: sticky;
-      top: -1.66rem;
-      margin-top: -$scrollable-inner-padding;
+      top: -0.16rem;
+      margin-top: $scrollable-top-margin;
       margin-left: -$scrollable-inner-padding;
       margin-right: -$scrollable-inner-padding;
       z-index: 2;
     }
+
+    // this pseudo element shows the shadow on the bottom edge whenever the sentinel div is hidden
     &::after {
       content: "";
-      background-color: transparent;
-      box-shadow: 0px 2px 3px rgba(0,0,0,0.4);
+      background-color: blue;
+      box-shadow: 5px 2px 7px rgba(0, 0, 0, 0.55);
       display: block;
       height: 2px;
       position: sticky;
       bottom: -$scrollable-bottom-shadow-position;
-      margin-bottom: -$scrollable-inner-padding;
-      margin-left: -$scrollable-inner-padding;
-      margin-right: -$scrollable-inner-padding;
+      margin-bottom: -$scrollable-top-margin;
     }
 
     &.pgn__scrollable-body-scroll-bottom {
@@ -62,11 +63,6 @@
 
     .pgn__scrollable-body-content > *:last-child {
       margin-bottom: 0;
-    }
-
-    // Avoid doubling up on padding with containers
-    .pgn__scrollable-body-content > .container-fluid {
-      padding: 0;
     }
 
     .pgn__scrollable.pgn__scrollable-scroll-fullscreen & {
