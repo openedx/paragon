@@ -1,10 +1,10 @@
 @import "variables";
 
 .pgn__scrollable-body {
-    overflow-y: auto;
     overflow-x: hidden;
     position: relative;
-
+    flex-grow: 1;
+    overflow-y:auto;
 
     // this pseudo element shows the shadow on the top edge whenever the sentinel div is hidden
     &::before {

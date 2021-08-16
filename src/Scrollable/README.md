@@ -17,18 +17,16 @@ notes: |
 ### Scrollable area adorned with top and bottom drop shadows on scroll detection
 
 <span>
-If the wrapped element specifies a
- height, then scrollable area with shadows constrained to that height.
 Shadow is shown on top if you scroll upwards
 Shadow is shown on bottom if you scroll downwards
 
 If you don't specify height you will get a default height per the Scrollable component (subject to change)
 </span>
 
-#### Demo
+#### Demo with flex container around Scrollable
 ```jsx live
+<div style={{'height': '80vh','display': 'flex','flex-direction': 'column'}}>
 <Scrollable>
-<div style={{ 'height':'70vh'}}>
   <p>Do not use overflow in wrapped component, Scrollable provides overflow:auto around wrapped element</p>
   <p>A very long scrollable Content.</p>
   <p>A very long scrollable Content.</p>
@@ -66,6 +64,6 @@ If you don't specify height you will get a default height per the Scrollable com
   <p>A very long scrollable Content.</p>
   <p>A very long scrollable Content.</p>
   <p>A very long scrollable Content.</p>
-</div>
 </Scrollable>
+</div>
 ```
