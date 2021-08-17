@@ -1,9 +1,6 @@
-@import "variables";
-
 .pgn__scrollable-body {
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
     position: relative;
     flex-grow: 1;
     overflow-y:auto;
@@ -17,9 +14,6 @@
       height: 2px;
       position: sticky;
       top: -0.16rem;
-      margin-top: $scrollable-top-margin;
-      margin-left: -$scrollable-inner-padding;
-      margin-right: -$scrollable-inner-padding;
       z-index: 2;
     }
 
@@ -32,7 +26,7 @@
       height: 2px;
       position: sticky;
       bottom: -2px;
-      margin-bottom: -$scrollable-bottom-margin;
+      margin-top: 1.6rem;
     }
 
     &.pgn__scrollable-body-scroll-bottom {
