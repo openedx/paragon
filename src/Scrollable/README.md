@@ -65,3 +65,50 @@ If you don't specify height you will get a default height per the Scrollable com
   <p>A very long scrollable Content.</p>
 </Scrollable>
 ```
+
+
+
+#### With padding used by consumer
+```jsx live
+<Scrollable style={{'height': '40vh'}}>
+<div className="p-4">
+  <p>Do not use overflow in wrapped component, Scrollable provides overflow:auto around wrapped element</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+  <p>A very long scrollable Content.</p>
+</div>
+</Scrollable>
+```
