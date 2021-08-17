@@ -1,6 +1,8 @@
 @import "variables";
 
 .pgn__scrollable-body {
+    display: flex;
+    flex-direction: column;
     overflow-x: hidden;
     position: relative;
     flex-grow: 1;
