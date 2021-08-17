@@ -18,19 +18,14 @@ const Scrollable = ({ children, ...props }) => {
       [CLASSNAME_SCROLL_BOTTOM]: isScrolledToBottom,
     },
   );
-  return React.createElement(
-    'div',
-    { ...props, className },
-    (
-      <>
-        <div ref={topSentinelRef} />
-        <div className="pgn__scrollable-body-content">
-          {children}
-        </div>
-        <div ref={bottomSentinelRef} />
-      </>
-
-    ),
+  return (
+    <div {...props} className={className}>
+      <div ref={topSentinelRef} />
+      <div className="pgn__scrollable-body-content">
+        {children}
+      </div>
+      <div ref={bottomSentinelRef} />
+    </div>
   );
 };
 
