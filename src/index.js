@@ -78,6 +78,7 @@ export {
 } from './Nav';
 export { default as Navbar, NavbarBrand } from './Navbar';
 export { default as Overlay, OverlayTrigger } from './Overlay';
+export { default as PageBanner } from './PageBanner';
 export { default as Pagination } from './Pagination';
 export { default as Popover, PopoverTitle, PopoverContent } from './Popover';
 export { default as ProgressBar } from './ProgressBar';
