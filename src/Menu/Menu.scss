@@ -14,7 +14,6 @@
     user-select: none;
     background-color: transparent;
     border: $btn-border-width solid transparent;
-
     padding: $btn-padding-y $btn-padding-x;
     font-size: $btn-font-size;
     line-height: $btn-line-height;
@@ -23,7 +22,6 @@
     @include hover {
       color: $body-color;
       text-decoration: none;
-
     }
 
     // Disabled comes first so active can properly restyle
