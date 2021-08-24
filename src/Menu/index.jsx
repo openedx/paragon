@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import useArrowKeyNavigationHook from 'react-arrow-key-navigation-hook';
+import useArrowKeyNavigationHook from '../hooks/useArrowKeyNavigation';
 
 const Menu = ({
   as,
@@ -21,7 +21,7 @@ const Menu = ({
     },
     (
       <>
-        <div className="pgn__menu-bg">
+        <div className="bg-white p-3 rounded shadow">
           {children}
         </div>
       </>
