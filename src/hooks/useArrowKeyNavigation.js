@@ -2,8 +2,6 @@ import { useRef, useEffect } from 'react';
 
 /**
  * A react hook to enable arrow key navigation on a component.
- * @param {*} param0
- * @returns a useRef, which can be applied to a component
  */
 
 function handleEnter({ event, currentIndex, activeElement }) {
@@ -35,10 +33,6 @@ function handleArrowKey({ event, currentIndex, availableElements }) {
 
 /**
  * Implement arrow key navigation for the given parentNode
- * @param {object}  options
- * @param {Event}   options.e          Keydown event
- * @param {DOMNode} options.parentNode The parent node to operate on. Arrow keys won't navigate outside of this node
- * @param {String}  options.selectors  Selectors for elements we want to be able to key through
  */
 function handleEvents({
   event,
