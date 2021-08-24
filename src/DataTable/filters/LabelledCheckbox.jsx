@@ -22,7 +22,7 @@ const LabelledCheckbox = ({
 LabelledCheckbox.propTypes = {
   checked: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
-  label: PropTypes.func.isRequired,
+  label: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
   id: PropTypes.string.isRequired,
 };
 
