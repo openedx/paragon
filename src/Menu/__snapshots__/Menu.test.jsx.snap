@@ -5,7 +5,7 @@ exports[`Menu Item renders correctly renders as expected with menu items 1`] = `
   className="pgn__menu"
 >
   <div
-    className="pgn__menu-bg"
+    className="bg-white"
   >
     <button
       className="pgn__menu-item"
