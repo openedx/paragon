@@ -21,7 +21,7 @@ const Menu = ({
     },
     (
       <>
-        <div className="bg-white">
+        <div className={className}>
           {children}
         </div>
       </>

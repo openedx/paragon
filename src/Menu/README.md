@@ -15,7 +15,7 @@ notes: ''
 
 ### MenuItem
 
-A menu item is a link, button, or checkbox for use by any kind of menu overlay, dropdown menu, or nav menu. A menu item can be text-only or combined with an icon.
+A menu item is a link, button, or checkbox for use by any kind of menu overlay, dropdown menu, or nav menu. A menu item can be text-only or combined with an icon. Passing a component to the `as` prop, MenuItems will also be an instance of that component.
 
 ```jsx live
 () => {
@@ -74,5 +74,34 @@ A Menu can include things like forms.
       </Form.Group>
     </Menu>
   );
+}
+```
+
+A Menu can be implemented to appear inside a `modalpopup` for a wide variety of use cases The Modal brings focus to the first menu element upon the click of the trigger.
+
+```jsx live
+() => {
+  const [isOpen, open, close] = useToggle(false);
+  const target = React.useRef(null);
+  const [selected, setSelected] = useState('I Like...');
+
+  return (
+    <>
+      <Button>{selected}</Button>
+      <Button ref={target} variant="primary" size="inline" onClick={open}>Click Me To Pick:</Button>
+      <ModalPopup positionRef={target} isOpen={isOpen} onClose={close} style={{
+        width: 500, height: 50
+      }}>
+      <div className="bg-white">
+        <Menu>
+        <MenuItem as={Button} variant="primary" size="inline" onClick= {()=>setSelected('Beans')}>Beans</MenuItem>
+        <MenuItem as={Button} variant="primary" size="inline" onClick= {()=>setSelected('Greens')}>Greens</MenuItem>
+        <MenuItem as={Button} variant="primary" size="inline" onClick= {()=>setSelected('Tomatoes')}>Tomatoes</MenuItem>
+        <MenuItem as={Button} variant="primary" size="inline" onClick= {()=>setSelected('Potatoes')}>Potatoes</MenuItem>
+      </Menu>
+      </div>
+      </ModalPopup>
+    </>
+  )
 }
 ```
