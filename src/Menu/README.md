@@ -90,17 +90,3 @@ A Menu can be implemented to appear inside a `modalpopup` for a wide variety of 
 }
 ```
 
-```jsx live
-() => {
-
-
-  return (
-    <>
-      <SelectMenu defaultMessage="Select Your favorite Color...">
-      <MenuItem as={Button} variant="primary" size="inline">Beans</MenuItem>
-      <MenuItem as={Button} variant="primary" size="inline">Greens</MenuItem>
-      </SelectMenu>
-    </>
-  )
-}
-```
