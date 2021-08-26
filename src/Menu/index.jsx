@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import useArrowKeyNavigationHook from '../hooks/useArrowKeyNavigation';
+import useArrowKeyNavigation from '../hooks/useArrowKeyNavigation';
 
 const Menu = ({
   as,
@@ -9,7 +9,7 @@ const Menu = ({
   children,
   ...props
 }) => {
-  const parentRef = useArrowKeyNavigationHook({ selectors: arrowKeyNavigationSelector });
+  const parentRef = useArrowKeyNavigation({ selectors: arrowKeyNavigationSelector });
   const className = classNames(props.className, 'pgn__menu');
 
   return React.createElement(
@@ -21,9 +21,7 @@ const Menu = ({
     },
     (
       <>
-        <div className={className}>
-          {children}
-        </div>
+        {children}
       </>
     ),
   );

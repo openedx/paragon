@@ -17,22 +17,6 @@ notes: ''
 
 A menu item is a link, button, or checkbox for use by any kind of menu overlay, dropdown menu, or nav menu. A menu item can be text-only or combined with an icon. Passing a component to the `as` prop, MenuItems will also be an instance of that component.
 
-```jsx live
-() => {
-  return (
-      <div className="bg-white p-3 rounded shadow" style={{width: 400}}>
-        <MenuItem> A Menu Item</MenuItem>
-        <MenuItem as={Button} iconBefore={Add}>A Menu Item With an Icon Before</MenuItem>
-        <MenuItem iconAfter={Check}>A Menu Item With an Icon After </MenuItem>
-        <MenuItem disabled>A Disabled Menu Item</MenuItem>
-        <MenuItem as= {Hyperlink} href = "https://en.wikipedia.org/wiki/Hyperlink">A Link Menu Item</MenuItem>
-        <MenuItem as= {Button} variant="primary" size="inline">A Button Menu Item</MenuItem>
-        <MenuItem as= {Form.Checkbox} >A Checkbox Menu Item</MenuItem>
-      </div>
-  );
-}
-```
-
 ### Menu
 
 An arrow-key naivgable Menu which consists of MenuItems. A Menu can be employed to produce its common variants, including dropdown menus, select menus, and others. Menus are keyboard navigable with both tab and arrow keys.
@@ -42,7 +26,7 @@ An arrow-key naivgable Menu which consists of MenuItems. A Menu can be employed 
   return (
     <Menu>
         <MenuItem> A Menu Item</MenuItem>
-        <MenuItem iconBefore={Add} stoven>A Menu Item With an Icon Before</MenuItem>
+        <MenuItem iconBefore={Add}>A Menu Item With an Icon Before</MenuItem>
         <MenuItem iconAfter={Check}>A Menu Item With an Icon After </MenuItem>
         <MenuItem disabled>A Disabled Menu Item</MenuItem>
         <MenuItem as={Hyperlink} href="https://en.wikipedia.org/wiki/Hyperlink">A Link Menu Item</MenuItem>
@@ -77,17 +61,17 @@ A Menu can include things like forms.
 }
 ```
 
-A Menu can be implemented to appear inside a `modalpopup` for a wide variety of use cases The Modal brings focus to the first menu element upon the click of the trigger.
+A Menu can be implemented to appear inside a `modalpopup` for a wide variety of use cases The Modal brings focus to the first menu element upon the click of the trigger, and can be escaped on click away or key press.
 
 ```jsx live
 () => {
   const [isOpen, open, close] = useToggle(false);
   const target = React.useRef(null);
-  const [selected, setSelected] = useState('I Like...');
+  const [selected, setSelected] = useState('...');
 
   return (
     <>
-      <Button>{selected}</Button>
+    <Badge variant="secondary">I like {selected}</Badge>
       <Button ref={target} variant="primary" size="inline" onClick={open}>Click Me To Pick:</Button>
       <ModalPopup positionRef={target} isOpen={isOpen} onClose={close} style={{
         width: 500, height: 50
@@ -101,6 +85,21 @@ A Menu can be implemented to appear inside a `modalpopup` for a wide variety of 
       </Menu>
       </div>
       </ModalPopup>
+    </>
+  )
+}
+```
+
+```jsx live
+() => {
+
+
+  return (
+    <>
+      <SelectMenu defaultMessage="Select Your favorite Color...">
+      <MenuItem as={Button} variant="primary" size="inline">Beans</MenuItem>
+      <MenuItem as={Button} variant="primary" size="inline">Greens</MenuItem>
+      </SelectMenu>
     </>
   )
 }

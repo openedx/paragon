@@ -6,7 +6,6 @@ import { useRef, useEffect } from 'react';
 
 function handleEnter({ event, currentIndex, activeElement }) {
   if (currentIndex === -1) { return; }
-
   activeElement.click();
   event.preventDefault();
 }

@@ -18,10 +18,14 @@
     font-size: $btn-font-size;
     line-height: $btn-line-height;
     border-radius: 0;
+    $hover-border: transparent;
 
     @include hover {
       color: $body-color;
       text-decoration: none;
+      color: $btn-tertiary-color;
+      border-color: $hover-border;
+      background: $btn-tertiary-hover-bg;;
     }
 
     // Disabled comes first so active can properly restyle
@@ -32,19 +36,8 @@
 
     $background: $btn-tertiary-bg;
     $border: transparent;
-    $hover-background: $btn-tertiary-hover-bg;
-    $hover-border: transparent;
     $active-background: $btn-tertiary-active-bg;
     $active-border: transparent;
-
-    color: $btn-tertiary-color;
-    border-color: $border;
-
-    @include hover {
-      color: $btn-tertiary-color;
-      border-color: $hover-border;
-      background: $hover-background;
-    }
 
     &:not(:disabled):not(.disabled):active,
     &:not(:disabled):not(.disabled).active,
@@ -72,21 +65,10 @@
       margin-right: -0.25em;
     }
   }
-.pgn__menu-item:nth-last-child(1) {
-    @include hover {
-      border-bottom-right-radius: 0.25em;
-      border-bottom-left-radius: 0.25em;
-    }
-}
-.pgn__menu-item:nth-child(1) {
-  @include hover {
-    border-top-right-radius: 0.25em;
-    border-top-left-radius: 0.25em;
-  }
-}
 .pgn__menu{
   border-radius: 0.25em;
   box-shadow: $box-shadow;
   background-color: $btn-tertiary-bg;
   border-color: transparent;
+  overflow: hidden;
 }

@@ -8,8 +8,6 @@ import Hyperlink from '../Hyperlink';
 import Button from '../Button';
 import Form from '../Form';
 
-// Mock the whole navigation modulue
-
 describe('Menu Item renders correctly', () => {
   it('renders as just a div With empty usage', () => {
     const wrapper = mount(<Menu />);
