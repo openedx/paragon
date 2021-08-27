@@ -185,6 +185,21 @@ it is meant to be used as a single horizontal row of Cards, not as a grid. See C
 </CardDeck>
 ```
 
+### CardSelect
+
+This component displays a collection of Cards in a radio selectable form.
+
+```jsx live
+<CardSelect
+  cardsData={[
+    {name: "card1", title: "Lorem Ipsum 1", textElements: [{className: "", text: "Card Text1"}, {className: "", text: "Card SubText1"}], footer: "Card Footer1", img: "https://source.unsplash.com/360x200/?nature,flower"},
+    {name: "card2", title: "Lorem Ipsum 2", textElements: [{className: "", text: "Card Text2"}, {className: "", text: "Card SubText2"}], footer: "Card Footer2", img: "https://source.unsplash.com/360x200/?nature"},
+    {name: "card3", title: "Lorem Ipsum 3", textElements: [{className: "", text: "Card Text3"}, {className: "", text: "Card SubText3"}], footer: "Card Footer3", img: "https://source.unsplash.com/360x200"}]}
+  selectedCardName="card3"
+>
+</CardSelect>
+```
+
 ### Theme variables (SCSS)
 
 ```scss
