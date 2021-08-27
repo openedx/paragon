@@ -42,26 +42,26 @@ A Menu can include things like forms.
 ```jsx live
 () => {
   return (
-    <Menu>
-      <Form.Group>
-        <MenuItem as ={Form.Label}>Which Color?</MenuItem>
-        <Form.CheckboxSet
+    <Form.Group>
+      <Form.CheckboxSet
           name="color-two"
           onChange={(e) => console.log(e.target.value)}
           defaultValue={['green']}
         >
-        <MenuItem as = {Form.Checkbox} value="red">Red</MenuItem>
-        <MenuItem as = {Form.Checkbox} value="blue">Blue</MenuItem>
-        <MenuItem as = {Form.Checkbox} value="green">Green</MenuItem>
-        <MenuItem as = {Form.Checkbox} value="yellow">Yellow</MenuItem>
-        </Form.CheckboxSet>
-      </Form.Group>
-    </Menu>
+        <Form.Label>Which Color?</Form.Label>
+        <Menu>
+          <MenuItem as = {Form.Checkbox} value="red">Red</MenuItem>
+          <MenuItem as = {Form.Checkbox} value="blue">Blue</MenuItem>
+          <MenuItem as = {Form.Checkbox} value="green">Green</MenuItem>
+          <MenuItem as = {Form.Checkbox} value="yellow">Yellow</MenuItem>
+        </Menu>
+      </Form.CheckboxSet>
+    </Form.Group>
   );
 }
 ```
 
-A Menu can be implemented to appear inside a `modalpopup` for a wide variety of use cases The Modal brings focus to the first menu element upon the click of the trigger, and can be escaped on click away or key press.
+A Menu can be implemented to appear inside a `modalpopup` for a wide variety of use cases. The Modal brings focus to the first menu element upon the click of the trigger, and can be escaped on click away or key press.
 
 ```jsx live
 () => {
