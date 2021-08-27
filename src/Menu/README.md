@@ -30,7 +30,7 @@ An arrow-key naivgable Menu which consists of MenuItems. A Menu can be employed 
         <MenuItem iconAfter={Check}>A Menu Item With an Icon After </MenuItem>
         <MenuItem disabled>A Disabled Menu Item</MenuItem>
         <MenuItem as={Hyperlink} href="https://en.wikipedia.org/wiki/Hyperlink">A Link Menu Item</MenuItem>
-        <MenuItem as={Button} variant="primary" size="inline">A Button Menu Item</MenuItem>
+        <MenuItem as={Button} variant="tertiary" size="inline">A Button Menu Item</MenuItem>
         <MenuItem as={Form.Checkbox}>A Checkbox Menu Item</MenuItem>
     </Menu>
   );
@@ -78,10 +78,10 @@ A Menu can be implemented to appear inside a `modalpopup` for a wide variety of 
       }}>
       <div className="bg-white">
         <Menu>
-        <MenuItem as={Button} variant="primary" size="inline" onClick= {()=>setSelected('Beans')}>Beans</MenuItem>
-        <MenuItem as={Button} variant="primary" size="inline" onClick= {()=>setSelected('Greens')}>Greens</MenuItem>
-        <MenuItem as={Button} variant="primary" size="inline" onClick= {()=>setSelected('Tomatoes')}>Tomatoes</MenuItem>
-        <MenuItem as={Button} variant="primary" size="inline" onClick= {()=>setSelected('Potatoes')}>Potatoes</MenuItem>
+        <MenuItem as={Button} variant="tertiary" size="inline" onClick= {()=>setSelected('Beans')}>Beans</MenuItem>
+        <MenuItem as={Button} variant="tertiary" size="inline" onClick= {()=>setSelected('Greens')}>Greens</MenuItem>
+        <MenuItem as={Button} variant="tertiary" size="inline" onClick= {()=>setSelected('Tomatoes')}>Tomatoes</MenuItem>
+        <MenuItem as={Button} variant="tertiary" size="inline" onClick= {()=>setSelected('Potatoes')}>Potatoes</MenuItem>
       </Menu>
       </div>
       </ModalPopup>
