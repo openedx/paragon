@@ -33,6 +33,35 @@ $data-table-footer-position: center !default;
   -webkit-overflow-scrolling: touch;
 }
 
+.pgn__data-table-layout-wrapper{
+  display: flex;
+  align-items: flex-start;
+  .pgn__data-table-layout-sidebar{
+    border-radius: $border-radius;
+    box-shadow: $data-table-box-shadow;
+    padding: $data-table-padding-small;
+    margin-right: map_get($spacers, 4);
+    flex-grow: 0;
+  }
+
+  .pgn__data-table-side-filters{
+    .pgn__data-table-side-filters-title{
+      margin-bottom: map_get($spacers, 3);
+    }
+    .pgn__data-table-side-filters-status{
+      margin-bottom: map_get($spacers, 2);
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  
+
+
+  .pgn__data-table-layout-main{
+    flex-grow: 1;
+  }
+}
+
 .pgn__data-table {
   width: 100%;
 

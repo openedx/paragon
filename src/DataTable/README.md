@@ -608,3 +608,85 @@ a responsive grid of cards.
   <TableFooter />
 </DataTable>
 ```
+
+## Sidebar Filter
+For a more desktop friendly view, you can move filters into a sidebar by providing ``showFiltersInSidebar`` prop, try it out! 
+
+```jsx live
+  <DataTable
+    showFiltersInSidebar
+    isFilterable
+    isSortable
+    defaultColumnValues={{ Filter: TextFilter }}
+    itemCount={5}
+    data={[
+      {
+        name: 'Lil Bub',
+        color: 'brown tabby',
+        famous_for: 'weird tongue',
+      },
+      {
+        name: 'Grumpy Cat',
+        color: 'siamese',
+        famous_for: 'serving moods',
+      },
+      {
+        name: 'Smoothie',
+        color: 'orange tabby',
+        famous_for: 'modeling',
+      },
+      {
+        name: 'Maru',
+        color: 'brown tabby',
+        famous_for: 'being a lovable oaf',
+      },
+      {
+        name: 'Keyboard Cat',
+        color: 'orange tabby',
+        famous_for: 'piano virtuoso',
+      }
+    ]}
+    columns={[
+      {
+        Header: 'Name',
+        accessor: 'name',
+
+      },
+      {
+        Header: 'Famous For',
+        accessor: 'famous_for',
+      },
+      {
+        Header: 'Coat Color',
+        accessor: 'color',
+        Filter: CheckboxFilter,
+        filter: 'includesValue',
+        filterChoices: [{
+          name: 'russian white',
+          number: 1,
+          value: 'russian white',
+        },
+        {
+          name: 'orange tabby',
+          number: 2,
+          value: 'orange tabby',
+        },
+        {
+          name: 'brown tabby',
+          number: 3,
+          value: 'brown tabby',
+        },
+        {
+          name: 'siamese',
+          number: 1,
+          value: 'siamese',
+        }]
+      },
+    ]}
+  >
+    <DataTable.TableControlBar />
+    <DataTable.Table />
+    <DataTable.EmptyTable content="No results found" />
+    <DataTable.TableFooter />
+  </DataTable>
+```
