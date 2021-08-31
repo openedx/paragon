@@ -90,3 +90,25 @@ A Menu can be implemented to appear inside a `modalpopup` for a wide variety of 
 }
 ```
 
+```jsx live
+() => {
+  return (
+
+        <SelectMenu>
+         <MenuItem> A Menu Item</MenuItem>
+        <MenuItem iconBefore={Add}>A Menu Item With an Icon Before</MenuItem>
+        <MenuItem iconAfter={Check}>A Menu Item With an Icon After </MenuItem>
+        <MenuItem disabled>A Disabled Menu Item</MenuItem>
+        <MenuItem as={Hyperlink} href="https://en.wikipedia.org/wiki/Hyperlink">A Link Menu Item</MenuItem>
+       <MenuItem >Falstaff</MenuItem>
+          <MenuItem >Scipio</MenuItem>
+         <MenuItem >Faustus</MenuItem>
+          <MenuItem >Cordelia</MenuItem>
+          <MenuItem >Renfrancine</MenuItem>
+          <MenuItem >Stovern</MenuItem>
+         <MenuItem >Kainian</MenuItem>
+          <MenuItem >M. Hortens</MenuItem>
+        </SelectMenu>
+  );
+}
+```

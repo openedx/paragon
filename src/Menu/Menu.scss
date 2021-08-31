@@ -7,6 +7,10 @@
     justify-content: flex-start;
     width: 100%;
     min-width: 288px;
+    max-width: 450px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-family: $btn-font-family;
     font-weight: $btn-font-weight;
     color: $body-color;
@@ -69,7 +73,25 @@
 .pgn__menu{
   border-radius: 0.25em;
   box-shadow: $box-shadow;
-  background-color: $btn-tertiary-bg;
+  background-color: $white;
   border-color: transparent;
-  overflow: hidden;
+  overflow: scroll;
+  max-height: 264px;
+}
+.pgn__menu-select-popup{
+  max-height: 267px;
+  color: $btn-tertiary-bg;
+}
+.pgn__menu-select-trigger-btn{
+  background: $white;
+  border: 1px solid #F2F0EF;
+  box-sizing: border-box;
+  color: $dark;
+
+  @include hover {
+    color: $white;
+    background: $primary;
+    border: 1px solid $white;
+    box-sizing: border-box;
+  }
 }
