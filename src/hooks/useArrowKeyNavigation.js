@@ -16,6 +16,7 @@ function handleArrowKey({ event, currentIndex, availableElements }) {
 
   // Move the focus up or down. Wrap around ends of list.
   let nextElement;
+
   if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
     nextElement = availableElements[(currentIndex + 1) % availableElements.length];
   }

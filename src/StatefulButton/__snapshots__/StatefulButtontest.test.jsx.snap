@@ -13,10 +13,10 @@ exports[`StatefulButton renders basic usage 1`] = `
     <span
       className="d-flex align-items-center justify-content-center"
     >
-      <span
-        className=""
-      >
+      <span>
+         
         Saved
+         
       </span>
     </span>
   </button>
@@ -55,10 +55,10 @@ exports[`StatefulButton renders basic usage 1`] = `
           </svg>
         </span>
       </span>
-      <span
-        className=""
-      >
+      <span>
+         
         Saving
+         
       </span>
     </span>
   </button>
@@ -97,10 +97,10 @@ exports[`StatefulButton renders basic usage 1`] = `
           </svg>
         </span>
       </span>
-      <span
-        className=""
-      >
+      <span>
+         
         Saved
+         
       </span>
     </span>
   </button>
@@ -129,10 +129,10 @@ Array [
           id="Icon1"
         />
       </span>
-      <span
-        className=""
-      >
+      <span>
+         
         Download
+         
       </span>
     </span>
   </button>,
@@ -156,10 +156,10 @@ Array [
           id="Icon2"
         />
       </span>
-      <span
-        className=""
-      >
+      <span>
+         
         Downloading
+         
       </span>
     </span>
   </button>,
@@ -183,10 +183,10 @@ Array [
           id="Icon3"
         />
       </span>
-      <span
-        className=""
-      >
+      <span>
+         
         Downloaded
+         
       </span>
     </span>
   </button>,
@@ -215,10 +215,10 @@ Array [
           id="Icon4"
         />
       </span>
-      <span
-        className=""
-      >
+      <span>
+         
         Save (no changes)
+         
       </span>
     </span>
   </button>,
@@ -242,10 +242,10 @@ Array [
           id="Icon5"
         />
       </span>
-      <span
-        className=""
-      >
+      <span>
+         
         Save Changes
+         
       </span>
     </span>
   </button>,

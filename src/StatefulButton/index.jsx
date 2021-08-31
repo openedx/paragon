@@ -95,14 +95,8 @@ function StatefulButton({
       {...attributes}
     >
       <span className="d-flex align-items-center justify-content-center">
-        {icon && <span className={classNames({ 'pgn__stateful-btn-icon': label })}>{icon}</span>}
-        <span
-          className={classNames(
-            { 'sr-only': !label },
-          )}
-        >
-          {label || state}
-        </span>
+        {icon && <span className={classNames({ 'pgn__stateful-btn-icon': !!label })}>{icon}</span>}
+        {label ? <span> {label} </span> : <span className="sr-only"> {state} </span>}
       </span>
     </Button>
   );
