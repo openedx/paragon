@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+
 import SmartStatus from './SmartStatus';
 import DropdownFilters from './DropdownFilters';
 import DataTableContext from './DataTableContext';
@@ -10,12 +11,12 @@ import ActionDisplay from './ActionDisplay';
 const TableControlBar = ({
   className,
 }) => {
-  const { setFilter } = useContext(DataTableContext);
+  const { setFilter, showFiltersInSidebar } = useContext(DataTableContext);
 
   return (
     <div className={classNames('pgn__data-table-status-bar', className)}>
       {/* Using setFilter as a proxy for isFilterable */}
-      {setFilter && (
+      {(setFilter && !showFiltersInSidebar) && (
         <div className="pgn__data-table-actions">
           <div className="pgn__data-table-actions-left">
             <DropdownFilters />
@@ -29,7 +30,7 @@ const TableControlBar = ({
         <div className="pgn__data-table-status-left">
           <SmartStatus />
         </div>
-        {!setFilter && (<ActionDisplay />)}
+        {(!setFilter || (setFilter && showFiltersInSidebar)) && (<ActionDisplay />)}
       </div>
     </div>
   );

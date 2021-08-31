@@ -1,4 +1,6 @@
-import React, { useEffect, useMemo, useReducer } from 'react';
+import React, {
+  useEffect, useMemo, useReducer,
+} from 'react';
 import PropTypes from 'prop-types';
 import { useTable } from 'react-table';
 
@@ -25,6 +27,7 @@ import DataTableContext from './DataTableContext';
 import TableActions from './TableActions';
 import ControlledSelect from './selection/ControlledSelect';
 import ControlledSelectHeader from './selection/ControlledSelectHeader';
+import DataTableLayout from './DataTableLayout';
 
 import selectionsReducer, { initialState as initialSelectionsState } from './selection/data/reducer';
 
@@ -37,6 +40,7 @@ function DataTable({
   initialTableOptions,
   EmptyTableComponent,
   manualSelectColumn,
+  showFiltersInSidebar,
   children,
   ...props
 }) {
@@ -111,22 +115,25 @@ function DataTable({
     bulkActions,
     tableActions,
     controlledTableSelections,
+    showFiltersInSidebar,
     ...selectionProps,
     ...props,
   };
 
   return (
     <DataTableContext.Provider value={enhancedInstance}>
-      <div className="pgn__data-table-wrapper">
-        {children || (
+      <DataTableLayout>
+        <div className="pgn__data-table-wrapper">
+          {children || (
           <>
             <TableControlBar />
             <Table />
             <EmptyTableComponent content="No results found" />
             <TableFooter />
           </>
-        )}
-      </div>
+          )}
+        </div>
+      </DataTableLayout>
     </DataTableContext.Provider>
   );
 }
@@ -153,6 +160,7 @@ DataTable.defaultProps = {
   SelectionStatusComponent: SelectionStatus,
   FilterStatusComponent: FilterStatus,
   RowStatusComponent: RowStatus,
+  showFiltersInSidebar: false,
 };
 
 DataTable.propTypes = {
@@ -257,6 +265,8 @@ DataTable.propTypes = {
   FilterStatusComponent: PropTypes.func,
   /** If children are not provided a table with control bar and footer will be rendered */
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  /** If true filters will be shown on sidebar instead */
+  showFiltersInSidebar: PropTypes.bool,
 };
 
 DataTable.BulkActions = BulkActions;
