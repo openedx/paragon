@@ -14,6 +14,7 @@ const SelectMenu = ({
   ...props
 }) => {
   const triggerTarget = React.useRef(null);
+  const triggerRef = React.useRef(null);
   const className = classNames(props.className, 'pgn__menu-select');
   const [selected, setSelected] = useState();
   const [isOpen, open, close] = useToggle(false);
@@ -78,6 +79,8 @@ const SelectMenu = ({
       <span ref={triggerTarget} />
       <Button
         aria-haspopup="true"
+        aria-expanded={isOpen}
+        ref={triggerRef}
         className="pgn__menu-select-trigger-btn"
         variant={link ? 'link' : 'tertiary'}
         iconAfter={link ? undefined : ExpandMore}
@@ -106,18 +109,21 @@ const SelectMenu = ({
             ]
           }
         >
-          <Menu aria-expanded={isOpen} aria-label="Select Menu">
+          <Menu aria-label="Select Menu">
             {React.Children.map(
               children,
               (child => React.cloneElement(child, {
-                onClick: (e) => {
+                onClick(e) {
                   if (child.props.onClick) {
                     child.props.onClick(e);
                   }
                   setSelected(e.target);
                   close();
+                  triggerRef.current.focus();
                 },
                 id: `${children.indexOf(child).toString()}_pgn__menu-item`,
+                ariaCurrent:
+                    selected && `${children.indexOf(child).toString()}_pgn__menu-item` === selected.id,
               })),
             )}
           </Menu>

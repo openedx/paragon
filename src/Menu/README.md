@@ -6,7 +6,6 @@ components:
 - Menu
 categories:
 - Navigation
-- Buttonlike
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'
@@ -89,18 +88,26 @@ A Menu can be implemented to appear inside a `modalpopup` for a wide variety of 
   )
 }
 ```
+### Selectmenu
+
+The selectMenu component is triggered on the click of a button or your choice of a standalone link using the `isLink` prop, and expands from the center if not close to the edge of the page. The menu contains a list of MenuItems, with a white background, and level 2 elevation. The menu also remembers the user’s selection and displays it as the label for the button/link trigger.
+
+The Modal brings focus to the first menu element upon the click of the trigger, and can be escaped on click away or key press. Set a default message with the `defaultMessage` prop string.
 
 ```jsx live
 () => {
   return (
-
+    <div className="mb-2">
         <SelectMenu>
          <MenuItem> A Menu Item</MenuItem>
         <MenuItem iconBefore={Add}>A Menu Item With an Icon Before</MenuItem>
         <MenuItem iconAfter={Check}>A Menu Item With an Icon After </MenuItem>
         <MenuItem disabled>A Disabled Menu Item</MenuItem>
         <MenuItem as={Hyperlink} href="https://en.wikipedia.org/wiki/Hyperlink">A Link Menu Item</MenuItem>
-       <MenuItem >Falstaff</MenuItem>
+        </SelectMenu>
+
+        <SelectMenu isLink={true} defaultMessage="Choose Your New Best Friend">
+        <MenuItem >Falstaff</MenuItem>
           <MenuItem >Scipio</MenuItem>
          <MenuItem >Faustus</MenuItem>
           <MenuItem >Cordelia</MenuItem>
@@ -109,6 +116,7 @@ A Menu can be implemented to appear inside a `modalpopup` for a wide variety of 
          <MenuItem >Kainian</MenuItem>
           <MenuItem >M. Hortens</MenuItem>
         </SelectMenu>
+        </div>
   );
 }
 ```
