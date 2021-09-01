@@ -110,22 +110,37 @@ const SelectMenu = ({
           }
         >
           <Menu aria-label="Select Menu">
-            {React.Children.map(
-              children,
-              (child => React.cloneElement(child, {
-                onClick(e) {
-                  if (child.props.onClick) {
-                    child.props.onClick(e);
-                  }
-                  setSelected(e.target);
-                  close();
-                  triggerRef.current.focus();
-                },
-                id: `${children.indexOf(child).toString()}_pgn__menu-item`,
-                ariaCurrent:
-                    selected && `${children.indexOf(child).toString()}_pgn__menu-item` === selected.id,
-              })),
-            )}
+            {
+              React.Children.map(children, (child) => {
+                if (selected && selected.id === `${children.indexOf(child).toString()}_pgn__menu-item`) {
+                  return React.cloneElement(child, {
+                    'aria-current': 'page',
+                    onClick(e) {
+                      if (child.props.onClick) {
+                        child.props.onClick(e);
+                      }
+                      setSelected(e.target);
+                      close();
+                      triggerRef.current.focus();
+                    },
+                    id: `${children.indexOf(child).toString()}_pgn__menu-item`,
+                    role: 'link',
+                  });
+                }
+                return React.cloneElement(child, {
+                  onClick(e) {
+                    if (child.props.onClick) {
+                      child.props.onClick(e);
+                    }
+                    setSelected(e.target);
+                    close();
+                    triggerRef.current.focus();
+                  },
+                  id: `${children.indexOf(child).toString()}_pgn__menu-item`,
+                  role: 'link',
+                });
+              })
+            }
           </Menu>
         </ModalPopup>
       </div>
