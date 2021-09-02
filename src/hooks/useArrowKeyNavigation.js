@@ -16,15 +16,22 @@ function handleArrowKey({ event, currentIndex, availableElements }) {
 
   // Move the focus up or down. Wrap around ends of list.
   let nextElement;
-  if (event.key === 'ArrowDown') {
+
+  if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
     nextElement = availableElements[(currentIndex + 1) % availableElements.length];
   }
-
-  if (event.key === 'ArrowUp') {
+  if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
     nextElement = currentIndex - 1 < 0
       ? availableElements[currentIndex - 1 + availableElements.length]
       : availableElements[currentIndex - 1];
   }
+  if (event.key === 'End') {
+    nextElement = availableElements[availableElements.length - 1];
+  }
+  if (event.key === 'Home') {
+    [nextElement] = availableElements;
+  }
+
   // eslint-disable-next-line no-unused-expressions
   nextElement && nextElement.focus();
   event.preventDefault();
@@ -41,7 +48,7 @@ function handleEvents({
   if (!parentNode) { return; }
 
   const { key } = event;
-  if (!['ArrowUp', 'ArrowDown', 'Enter'].includes(key)) {
+  if (!['ArrowUp', 'ArrowDown', 'ArrowRight', 'ArrowLeft', 'Enter', 'Home', 'End'].includes(key)) {
     return;
   }
 
