@@ -62,9 +62,24 @@ const SelectMenu = ({
         }
       }
     }
-    // case: we are near the bottom and don't want to do any offset
-    if (isOpen && !prevOpenRef.current && selected) {
-      document.getElementById(selected.id).focus();
+    // set focus on open
+    if (isOpen && !prevOpenRef.current) {
+      if (selected) { document.getElementById(selected.id).focus(); } else {
+        React.Children.forEach(children, (child) => {
+          if (child.props.defaultSelected) {
+            const buttonTags = document.getElementsByTagName('button');
+            for (let i = 0; i < buttonTags.length; i++) {
+              if (buttonTags[i].textContent === child.props.children) {
+                setSelected(buttonTags[i]);
+                buttonTags[i].focus({
+                  preventScroll: true,
+                });
+                break;
+              }
+            }
+          }
+        });
+      }
     }
     prevOpenRef.current = isOpen;
   });
@@ -112,22 +127,7 @@ const SelectMenu = ({
           <Menu aria-label="Select Menu">
             {
               React.Children.map(children, (child) => {
-                if (selected && selected.id === `${children.indexOf(child).toString()}_pgn__menu-item`) {
-                  return React.cloneElement(child, {
-                    'aria-current': 'page',
-                    onClick(e) {
-                      if (child.props.onClick) {
-                        child.props.onClick(e);
-                      }
-                      setSelected(e.target);
-                      close();
-                      triggerRef.current.focus();
-                    },
-                    id: `${children.indexOf(child).toString()}_pgn__menu-item`,
-                    role: 'link',
-                  });
-                }
-                return React.cloneElement(child, {
+                const newProps = {
                   onClick(e) {
                     if (child.props.onClick) {
                       child.props.onClick(e);
@@ -138,7 +138,11 @@ const SelectMenu = ({
                   },
                   id: `${children.indexOf(child).toString()}_pgn__menu-item`,
                   role: 'link',
-                });
+                };
+                if (selected && selected.id === `${children.indexOf(child).toString()}_pgn__menu-item`) {
+                  newProps['aria-current'] = 'page';
+                }
+                return React.cloneElement(child, newProps);
               })
             }
           </Menu>

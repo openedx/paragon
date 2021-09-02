@@ -6,6 +6,7 @@ import { Icon } from '..';
 const MenuItem = ({
   as,
   children,
+  defaultSelected,
   iconAfter,
   iconBefore,
   ...props
@@ -30,6 +31,7 @@ const MenuItem = ({
 };
 
 MenuItem.propTypes = {
+  defaultSelected: PropTypes.bool,
   className: PropTypes.string,
   children: PropTypes.node,
   as: PropTypes.elementType,
@@ -38,6 +40,7 @@ MenuItem.propTypes = {
 };
 
 MenuItem.defaultProps = {
+  defaultSelected: false,
   as: 'button',
   className: undefined,
   children: null,

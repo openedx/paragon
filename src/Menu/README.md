@@ -25,7 +25,7 @@ An arrow-key naivgable Menu which consists of MenuItems. A Menu can be employed 
   return (
     <Menu>
         <MenuItem> A Menu Item</MenuItem>
-        <MenuItem iconBefore={Add}>A Menu Item With an Icon Before</MenuItem>
+        <MenuItem iconBefore={Check}>A Menu Item With an Icon Before</MenuItem>
         <MenuItem iconAfter={Check}>A Menu Item With an Icon After </MenuItem>
         <MenuItem disabled>A Disabled Menu Item</MenuItem>
         <MenuItem as={Hyperlink} href="https://en.wikipedia.org/wiki/Hyperlink">A Link Menu Item</MenuItem>
@@ -92,10 +92,14 @@ A Menu can be implemented to appear inside a `modalpopup` for a wide variety of 
 
 The selectMenu component is triggered on the click of a button or your choice of a standalone link using the `isLink` prop, and expands from the center if not close to the edge of the page. The menu contains a list of MenuItems, with a white background, and level 2 elevation. The menu also remembers the user’s selection and displays it as the label for the button/link trigger.
 
-The Modal brings focus to the first menu element upon the click of the trigger, and can be escaped on click away or key press. Set a default message with the `defaultMessage` prop string.
+The Modal brings focus to the first menu element upon the click of the trigger, and can be escaped on click away or key press. Set a default message with the `defaultMessage` prop string. Use the `defaultSelected` prop to signify that a menuItem is the default to open to.
 
 ```jsx live
 () => {
+
+  const defaultSelectedRef = React.useRef();
+
+
   return (
     <div className="mb-2">
         <SelectMenu>
@@ -105,11 +109,10 @@ The Modal brings focus to the first menu element upon the click of the trigger, 
         <MenuItem disabled>A Disabled Menu Item</MenuItem>
         <MenuItem as={Hyperlink} href="https://en.wikipedia.org/wiki/Hyperlink">A Link Menu Item</MenuItem>
         </SelectMenu>
-
         <SelectMenu isLink={true} defaultMessage="Choose Your New Best Friend">
         <MenuItem >Falstaff</MenuItem>
           <MenuItem >Scipio</MenuItem>
-         <MenuItem >Faustus</MenuItem>
+         <MenuItem defaultSelected>Faustus</MenuItem>
           <MenuItem >Cordelia</MenuItem>
           <MenuItem >Renfrancine</MenuItem>
           <MenuItem >Stovern</MenuItem>

@@ -76,6 +76,8 @@
   background-color: $white;
   border-color: transparent;
   overflow: scroll;
+  min-width: 288px;
+  max-width: 450px;
   max-height: 264px;
 }
 .pgn__menu-select-popup{
