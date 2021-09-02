@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rendering Beahvior Renders as expected 1`] = `
+<pgn__menu-select
+  className="pgn__menu-select"
+>
+  <span />
+  <button
+    aria-expanded={false}
+    aria-haspopup="true"
+    className="pgn__menu-select-trigger-btn btn btn-tertiary"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    Select...
+    <span
+      className="pgn__icon btn-icon-after"
+    >
+      <svg
+        aria-hidden={true}
+        aria-label=""
+        fill="none"
+        focusable={false}
+        height={24}
+        role="img"
+        viewBox="0 0 24 24"
+        width={24}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
+  </button>
+  <div
+    className="pgn__menu-select-popup"
+  >
+    <div
+      style={
+        Object {
+          "left": "0",
+          "position": "absolute",
+          "top": "0",
+          "zIndex": 2000,
+        }
+      }
+    >
+      <div
+        data-focus-guard={true}
+        style={
+          Object {
+            "height": "0px",
+            "left": "1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "fixed",
+            "top": "1px",
+            "width": "1px",
+          }
+        }
+        tabIndex={-1}
+      />
+      <div
+        data-focus-guard={true}
+        style={
+          Object {
+            "height": "0px",
+            "left": "1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "fixed",
+            "top": "1px",
+            "width": "1px",
+          }
+        }
+        tabIndex={-1}
+      />
+      <div
+        data-focus-lock-disabled="disabled"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onScrollCapture={[Function]}
+        onTouchMoveCapture={[Function]}
+        onWheelCapture={[Function]}
+      />
+      <div
+        data-focus-guard={true}
+        style={
+          Object {
+            "height": "0px",
+            "left": "1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "fixed",
+            "top": "1px",
+            "width": "1px",
+          }
+        }
+        tabIndex={-1}
+      />
+    </div>
+  </div>
+</pgn__menu-select>
+`;
