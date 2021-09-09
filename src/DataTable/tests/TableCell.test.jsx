@@ -22,7 +22,7 @@ describe('<TableCell />', () => {
   });
   it('adds props to the cell', () => {
     const cell = wrapper.find('td');
-    expect(cell.props().className).toEqual('red');
+    expect(cell.props().className).toEqual('pgn__data-table-cell-wrap red');
   });
   it('renders cell content', () => {
     const cell = wrapper.find('td');
@@ -39,7 +39,7 @@ describe('<TableCell />', () => {
         </tbody>
       </table>,
     );
-    const innerCell = wrapper.find('td span');
-    expect(innerCell.props().className).toContain(addedClass);
+    const cell = wrapper.find('td');
+    expect(cell.props().className).toContain(addedClass);
   });
 });

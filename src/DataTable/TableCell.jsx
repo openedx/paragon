@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const TableCell = ({ getCellProps, render, column }) => (
-  <td {...getCellProps()}>
-    <span className={classNames('pgn__data-table-cell-wrap', column.cellClassName)}>
+const TableCell = ({ getCellProps, render, column }) => {
+  const { className, ...rest } = getCellProps();
+  return (
+    <td {...rest} className={classNames('pgn__data-table-cell-wrap', className, column.cellClassName)}>
       {render('Cell')}
-    </span>
-  </td>
-);
+    </td>
+  );
+};
 
 TableCell.propTypes = {
   /** Props for the td element */
@@ -17,6 +18,7 @@ TableCell.propTypes = {
   render: PropTypes.func.isRequired,
   /** Table column */
   column: PropTypes.shape({
+    /** Class(es) to be applied to the cells in the given column */
     cellClassName: PropTypes.string,
   }).isRequired,
 };
