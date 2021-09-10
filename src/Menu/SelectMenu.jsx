@@ -14,21 +14,57 @@ const SelectMenu = ({
   ...props
 }) => {
   const triggerTarget = React.useRef(null);
-  const triggerRef = React.useRef(null);
+  const itemsCollection = React.useMemo(
+    () => Array.from({ length: children.length }).map(() => React.createRef()),
+    [],
+  );
+
   const className = classNames(props.className, 'pgn__menu-select');
-  const [selected, setSelected] = useState();
+  function defaultIndex() {
+    for (let i = 0; i < children.length; i++) {
+      if (children[i].props && children[i].props.defaultSelected) {
+        return i;
+      }
+    }
+    return undefined;
+  }
+  const [selected, setSelected] = useState(defaultIndex());
+
   const [isOpen, open, close] = useToggle(false);
   const [vertOffset, setOffset] = useState(0);
-  const link = isLink; // allow inline link styling
 
+  const createMenuItems = () => {
+    const elements = [];
+    React.Children.map(children, (child) => {
+      const newProps = {
+        onClick(e) {
+          if (child.props.onClick) {
+            child.props.onClick(e);
+          }
+          setSelected(children.indexOf(child));
+          close();
+          triggerTarget.current.focus();
+        },
+        id: `${children.indexOf(child).toString()}_pgn__menu-item`,
+        role: 'link',
+      };
+      if (selected === children.indexOf(child)) {
+        newProps['aria-current'] = 'page';
+      }
+      elements.push(
+        React.cloneElement(child, newProps),
+      );
+    });
+    return elements;
+  };
+
+  const link = isLink; // allow inline link styling
   const prevOpenRef = React.useRef();
   useEffect(() => {
     // logic to always center the selected item.
     if (isOpen && selected) {
-      const index = parseInt(selected.id.slice(0, selected.id.indexOf('_')), 10);
       const numItems = children.length;
-
-      const boundingRect = document.getElementById(selected.id).parentElement.getBoundingClientRect();
+      const boundingRect = itemsCollection[selected].current.parentElement.getBoundingClientRect();
       if (boundingRect.bottom >= window.innerHeight - 150 || boundingRect.top <= 150) {
         setOffset(0); // if too close to the edge, don't do centering fancyness
       } else {
@@ -36,26 +72,26 @@ const SelectMenu = ({
           case numItems < 6: {
             // on small lists, center each element
             setOffset(
-              parseInt(selected.id.slice(0, selected.id.indexOf('_') + 1), 10) * -48 + 20,
+              (selected) * -48,
             );
             break;
           }
-          case index < 2: {
+          case selected < 2: {
             // On first two elements, set offset based on position
-            setOffset((index) * -48);
+            setOffset((selected) * -48);
             break;
           }
-          case numItems - index < 3: {
+          case numItems - selected < 3: {
             // on n-1 and n-2 elelements, set offset to put most modal elements on top.
-            setOffset((6 - (numItems - index)) * -48);
+            setOffset((6 - (numItems - selected)) * -48);
             break;
           }
-          case index > 1 && numItems - index > 2: {
+          case selected > 1 && numItems - selected > 2: {
             // on "middle elements", set offset to center of block and scroll to center
-            document.getElementById(selected.id).scrollIntoView({
+            itemsCollection[selected].current.children[0].scrollIntoView({
               block: 'center',
             });
-            setOffset(-125);
+            setOffset(2 * -48);
             break;
           }
           default: break;
@@ -63,23 +99,8 @@ const SelectMenu = ({
       }
     }
     // set focus on open
-    if (isOpen && !prevOpenRef.current) {
-      if (selected) { document.getElementById(selected.id).focus(); } else {
-        React.Children.forEach(children, (child) => {
-          if (child.props.defaultSelected) {
-            const buttonTags = document.getElementsByTagName('button');
-            for (let i = 0; i < buttonTags.length; i++) {
-              if (buttonTags[i].textContent === child.props.children) {
-                setSelected(buttonTags[i]);
-                buttonTags[i].focus({
-                  preventScroll: true,
-                });
-                break;
-              }
-            }
-          }
-        });
-      }
+    if (isOpen && !prevOpenRef.current && selected) {
+      itemsCollection[selected].current.children[0].focus({ preventScroll: (defaultIndex() === selected) });
     }
     prevOpenRef.current = isOpen;
   });
@@ -91,16 +112,15 @@ const SelectMenu = ({
       className,
     },
     <>
-      <span ref={triggerTarget} />
       <Button
         aria-haspopup="true"
         aria-expanded={isOpen}
-        ref={triggerRef}
+        ref={triggerTarget}
         className="pgn__menu-select-trigger-btn"
         variant={link ? 'link' : 'tertiary'}
         iconAfter={link ? undefined : ExpandMore}
         onClick={open}
-      >{ selected ? selected.innerText : defaultMessage}
+      >{ selected !== defaultIndex() ? children[selected].props.children : defaultMessage}
       </Button>
       <div className="pgn__menu-select-popup">
         <ModalPopup
@@ -118,33 +138,18 @@ const SelectMenu = ({
                 name: 'offset',
                 options: {
                   enabled: true,
-                  offset: [vertOffset, 0],
+                  offset: [vertOffset, triggerTarget.current ? -1 * triggerTarget.current.offsetWidth : 0],
                 },
               },
             ]
           }
         >
           <Menu aria-label="Select Menu">
-            {
-              React.Children.map(children, (child) => {
-                const newProps = {
-                  onClick(e) {
-                    if (child.props.onClick) {
-                      child.props.onClick(e);
-                    }
-                    setSelected(e.target);
-                    close();
-                    triggerRef.current.focus();
-                  },
-                  id: `${children.indexOf(child).toString()}_pgn__menu-item`,
-                  role: 'link',
-                };
-                if (selected && selected.id === `${children.indexOf(child).toString()}_pgn__menu-item`) {
-                  newProps['aria-current'] = 'page';
-                }
-                return React.cloneElement(child, newProps);
-              })
-            }
+            {createMenuItems().map((child, index) => (
+              <div ref={itemsCollection[index]}>
+                {child}
+              </div>
+            ))}
           </Menu>
         </ModalPopup>
       </div>
