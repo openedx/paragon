@@ -74,19 +74,19 @@
   border-radius: 0.25em;
   box-shadow: $box-shadow;
   background-color: $white;
-  border-color: transparent;
-  overflow: scroll;
-  min-width: 288px;
-  max-width: 450px;
+  overflow: auto;
   max-height: 264px;
 }
 .pgn__menu-select-popup{
-  max-height: 267px;
+
   color: $btn-tertiary-bg;
 }
 .pgn__menu-select-trigger-btn{
+  max-width: 450px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow:ellipsis;
   background: $white;
-  border: 1px solid #F2F0EF;
   box-sizing: border-box;
   color: $dark;
 
