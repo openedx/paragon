@@ -1,8 +1,9 @@
-import React, { useContext, useCallback } from 'react';
+import React, { useContext, useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 import { CheckboxControl } from '../../Form';
 import DataTableContext from '../DataTableContext';
+import useConvertIndeterminateProp from '../utils/useConvertIndeterminateProp';
 
 import {
   deleteSelectedRowAction,
@@ -26,10 +27,13 @@ const ControlledSelect = ({ row }) => {
     [itemCount, row],
   );
 
+  const toggleRowSelectedProps = useMemo(() => row.getToggleRowSelectedProps(), [row.getToggleRowSelectedProps]);
+  const updatedProps = useConvertIndeterminateProp(toggleRowSelectedProps);
+
   return (
     <div className="d-flex align-content-center p-1">
       <CheckboxControl
-        {...row.getToggleRowSelectedProps()}
+        {...updatedProps}
         onChange={toggleSelected}
       />
     </div>
