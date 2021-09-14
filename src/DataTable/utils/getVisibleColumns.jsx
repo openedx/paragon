@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import { CheckboxControl } from '../../Form';
+import useConvertIndeterminateProp from './useConvertIndeterminateProp';
 
 export const selectColumn = {
   id: 'selection',
@@ -10,14 +11,19 @@ export const selectColumn = {
   // Proptypes disabled as these props are passed in separately
   /* eslint-disable-next-line react/prop-types */
   Header: ({ getToggleAllPageRowsSelectedProps, getToggleAllRowsSelectedProps, page }) => {
-    const getToggleRowsSelectedProps = page ? getToggleAllPageRowsSelectedProps : getToggleAllRowsSelectedProps;
-    const toggleRowsSelectedProps = getToggleRowsSelectedProps();
-    toggleRowsSelectedProps.isIndeterminate = toggleRowsSelectedProps.indeterminate;
-    // delete unused ``indeterminate`` prop
-    delete toggleRowsSelectedProps.indeterminate;
+    const toggleRowsSelectedProps = useMemo(
+      () => {
+        // determine if this selection is for an individual page or the entire table
+        const getToggleRowsSelectedProps = page ? getToggleAllPageRowsSelectedProps : getToggleAllRowsSelectedProps;
+        return getToggleRowsSelectedProps();
+      },
+      [getToggleAllPageRowsSelectedProps, getToggleAllRowsSelectedProps, page],
+    );
+    const updatedProps = useConvertIndeterminateProp(toggleRowsSelectedProps);
+
     return (
       <div className="d-flex align-content-center p-1">
-        <CheckboxControl {...toggleRowsSelectedProps} />
+        <CheckboxControl {...updatedProps} />
       </div>
     );
   },
@@ -25,11 +31,16 @@ export const selectColumn = {
   // to the render a checkbox
   // Proptypes disabled as this prop is passed in separately
   /* eslint-disable react/prop-types */
-  Cell: ({ row }) => (
-    <div className="d-flex align-content-center p-1">
-      <CheckboxControl {...row.getToggleRowSelectedProps()} />
-    </div>
-  ),
+  Cell: ({ row }) => {
+    const toggleRowSelectedProps = useMemo(() => row.getToggleRowSelectedProps(), [row.getToggleRowSelectedProps]);
+    const updatedProps = useConvertIndeterminateProp(toggleRowSelectedProps);
+
+    return (
+      <div className="d-flex align-content-center p-1">
+        <CheckboxControl {...updatedProps} />
+      </div>
+    );
+  },
   /* eslint-enable react/prop-types */
   disableSortBy: true,
 };
