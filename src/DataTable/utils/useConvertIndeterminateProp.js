@@ -9,11 +9,8 @@ import { useMemo } from 'react';
 const useConvertIndeterminateProp = (props) => {
   const updatedProps = useMemo(
     () => {
-      const newProps = { ...props };
-      newProps.isIndeterminate = newProps.indeterminate;
-      // delete unused ``indeterminate`` prop
-      delete newProps.indeterminate;
-      return newProps;
+      const { indeterminate, ...rest } = props;
+      return { isIndeterminate: indeterminate, ...rest };
     },
     [props],
   );
