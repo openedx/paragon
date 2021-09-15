@@ -7,12 +7,12 @@ import CollapsibleBody from './CollapsibleBody';
 import CollapsibleTrigger from './CollapsibleTrigger';
 import CollapsibleVisible from './CollapsibleVisible';
 import Icon from '../Icon';
-import { Add, Remove } from '../../icons';
+import { ExpandLess, ExpandMore } from '../../icons';
 
 const styleIcons = {
   basic: {
-    iconWhenClosed: <Icon src={Add} />,
-    iconWhenOpen: <Icon src={Remove} />,
+    iconWhenClosed: <Icon src={ExpandMore} />,
+    iconWhenOpen: <Icon src={ExpandLess} />,
   },
   // card and card-lg use the defaults specified in defaultProps
 };
@@ -66,8 +66,8 @@ Collapsible.propTypes = {
 Collapsible.defaultProps = {
   className: undefined,
   defaultOpen: false,
-  iconWhenClosed: <Icon src={Add} />,
-  iconWhenOpen: <Icon src={Remove} />,
+  iconWhenClosed: <Icon src={ExpandMore} />,
+  iconWhenOpen: <Icon src={ExpandLess} />,
   onClose: undefined,
   onOpen: undefined,
   onToggle: undefined,
