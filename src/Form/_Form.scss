@@ -15,7 +15,9 @@ $select-icon-padding: .5625rem !default;
   @include form-control-focus(true);
   border-color: $input-border-color;
 }
-
+.form-control:hover {
+  border : solid $input-hover-width $dark-700;
+}
 
 .pgn__form-group {
   margin-bottom: $form-group-margin-bottom;
