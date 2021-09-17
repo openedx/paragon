@@ -300,7 +300,9 @@ Bulk actions are not visible unless rows have been selected.
 
 ### Actions
 An action can also be definied as an additional column on the table. The Cell property can be defined to display
-any component that a user requires. It will receive the row as props.
+any component that a user requires. It will receive the row as props. 
+You can pass a function to render custom components for bulk actions and table actions.
+
 
 ```jsx live
   <DataTable
@@ -313,9 +315,12 @@ any component that a user requires. It will receive the row as props.
         },
     ]}
     bulkActions={[
-        {
-          buttonText: 'Enroll',
-          handleClick: (data) => console.log('Enroll', data),
+        // Function defined button
+        (data)=>{
+          return {
+            buttonText: `Enroll ${data.selectedFlatRows.length}`,
+            handleClick: () => console.log('Enroll', data), 
+          }
         },
         {
           buttonText: 'Assign',
@@ -607,4 +612,86 @@ a responsive grid of cards.
   <CardView CardComponent={MiyazakiCard} />
   <TableFooter />
 </DataTable>
+```
+
+## Sidebar Filter
+For a more desktop friendly view, you can move filters into a sidebar by providing ``showFiltersInSidebar`` prop, try it out! 
+
+```jsx live
+  <DataTable
+    showFiltersInSidebar
+    isFilterable
+    isSortable
+    defaultColumnValues={{ Filter: TextFilter }}
+    itemCount={5}
+    data={[
+      {
+        name: 'Lil Bub',
+        color: 'brown tabby',
+        famous_for: 'weird tongue',
+      },
+      {
+        name: 'Grumpy Cat',
+        color: 'siamese',
+        famous_for: 'serving moods',
+      },
+      {
+        name: 'Smoothie',
+        color: 'orange tabby',
+        famous_for: 'modeling',
+      },
+      {
+        name: 'Maru',
+        color: 'brown tabby',
+        famous_for: 'being a lovable oaf',
+      },
+      {
+        name: 'Keyboard Cat',
+        color: 'orange tabby',
+        famous_for: 'piano virtuoso',
+      }
+    ]}
+    columns={[
+      {
+        Header: 'Name',
+        accessor: 'name',
+
+      },
+      {
+        Header: 'Famous For',
+        accessor: 'famous_for',
+      },
+      {
+        Header: 'Coat Color',
+        accessor: 'color',
+        Filter: CheckboxFilter,
+        filter: 'includesValue',
+        filterChoices: [{
+          name: 'russian white',
+          number: 1,
+          value: 'russian white',
+        },
+        {
+          name: 'orange tabby',
+          number: 2,
+          value: 'orange tabby',
+        },
+        {
+          name: 'brown tabby',
+          number: 3,
+          value: 'brown tabby',
+        },
+        {
+          name: 'siamese',
+          number: 1,
+          value: 'siamese',
+        }]
+      },
+    ]}
+  >
+    <DataTable.TableControlBar />
+    <DataTable.Table />
+    <DataTable.EmptyTable content="No results found" />
+    <DataTable.TableFooter />
+  </DataTable>
 ```

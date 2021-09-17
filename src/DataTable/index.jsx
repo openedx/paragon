@@ -1,4 +1,6 @@
-import React, { useEffect, useMemo, useReducer } from 'react';
+import React, {
+  useEffect, useMemo, useReducer,
+} from 'react';
 import PropTypes from 'prop-types';
 import { useTable } from 'react-table';
 
@@ -25,6 +27,7 @@ import DataTableContext from './DataTableContext';
 import TableActions from './TableActions';
 import ControlledSelect from './selection/ControlledSelect';
 import ControlledSelectHeader from './selection/ControlledSelectHeader';
+import DataTableLayout from './DataTableLayout';
 
 import selectionsReducer, { initialState as initialSelectionsState } from './selection/data/reducer';
 
@@ -37,6 +40,7 @@ function DataTable({
   initialTableOptions,
   EmptyTableComponent,
   manualSelectColumn,
+  showFiltersInSidebar,
   children,
   ...props
 }) {
@@ -111,22 +115,25 @@ function DataTable({
     bulkActions,
     tableActions,
     controlledTableSelections,
+    showFiltersInSidebar,
     ...selectionProps,
     ...props,
   };
 
   return (
     <DataTableContext.Provider value={enhancedInstance}>
-      <div className="pgn__data-table-wrapper">
-        {children || (
+      <DataTableLayout>
+        <div className="pgn__data-table-wrapper">
+          {children || (
           <>
             <TableControlBar />
             <Table />
             <EmptyTableComponent content="No results found" />
             <TableFooter />
           </>
-        )}
-      </div>
+          )}
+        </div>
+      </DataTableLayout>
     </DataTableContext.Provider>
   );
 }
@@ -153,6 +160,7 @@ DataTable.defaultProps = {
   SelectionStatusComponent: SelectionStatus,
   FilterStatusComponent: FilterStatus,
   RowStatusComponent: RowStatus,
+  showFiltersInSidebar: false,
 };
 
 DataTable.propTypes = {
@@ -216,35 +224,55 @@ DataTable.propTypes = {
   /** Table options passed to react-table's useTable hook. Will override some options passed in to DataTable, such
      as: data, columns, defaultColumn, manualFilters, manualPagination, manualSortBy, and initialState */
   initialTableOptions: PropTypes.shape({}),
-  /** Total number of items */
+  /** Actions to be performed on the table. Called with the table instance. Not displayed if rows are selected. */
   itemCount: PropTypes.number.isRequired,
   /** Actions to be performed on selected rows of the table. Called with the selected rows.
    *  Only displayed if rows are selected. */
-  bulkActions: PropTypes.arrayOf(PropTypes.shape({
-    /** Bulk action button text */
-    buttonText: PropTypes.string.isRequired,
-    /** handleClick will be passed the selected rows */
-    handleClick: PropTypes.func.isRequired,
-    /** classnames for button class */
-    className: PropTypes.string,
-    /** optional button variant; only relevant for the first two buttons */
-    variant: PropTypes.string,
-    /** disables button */
-    disabled: PropTypes.disabled,
-  })),
-  /** Actions to be performed on the table. Called with the table instance. Not displayed if rows are selected. */
-  tableActions: PropTypes.arrayOf(PropTypes.shape({
-    /** Bulk action button text */
-    buttonText: PropTypes.string.isRequired,
-    /** handleClick will be passed the selected rows */
-    handleClick: PropTypes.func.isRequired,
-    /** classnames for button class */
-    className: PropTypes.string,
-    /** optional button variant; only relevant for the first two buttons */
-    variant: PropTypes.string,
-    /** disables button */
-    disabled: PropTypes.disabled,
-  })),
+  bulkActions: PropTypes.oneOfType([
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([
+        PropTypes.shape({
+          /** Bulk action button text */
+          buttonText: PropTypes.string.isRequired,
+          /** handleClick will be passed the selected rows */
+          handleClick: PropTypes.func.isRequired,
+          /** classnames for button class */
+          className: PropTypes.string,
+          /** optional button variant; only relevant for the first two buttons */
+          variant: PropTypes.string,
+          /** disables button */
+          disabled: PropTypes.disabled,
+        }),
+        /** function passed selected items, should return action object */
+        PropTypes.func,
+      ]),
+    ),
+    /** Function for rendering custom components */
+    PropTypes.func,
+  ]),
+  /** Function for rendering custom components, called with the table instance */
+  tableActions: PropTypes.oneOfType([
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([
+        PropTypes.shape({
+          /** Bulk action button text */
+          buttonText: PropTypes.string.isRequired,
+          /** handleClick will be passed the selected rows */
+          handleClick: PropTypes.func.isRequired,
+          /** classnames for button class */
+          className: PropTypes.string,
+          /** optional button variant; only relevant for the first two buttons */
+          variant: PropTypes.string,
+          /** disables button */
+          disabled: PropTypes.disabled,
+        }),
+        /** function passed table instance, should return action object */
+        PropTypes.func,
+      ]),
+    ),
+    /** Function for rendering custom components */
+    PropTypes.func,
+  ]),
   /** Number between one and four filters that can be shown on the top row. */
   numBreakoutFilters: PropTypes.oneOf([1, 2, 3, 4]),
   /** Component to be displayed when the table is empty */
@@ -257,6 +285,8 @@ DataTable.propTypes = {
   FilterStatusComponent: PropTypes.func,
   /** If children are not provided a table with control bar and footer will be rendered */
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  /** If true filters will be shown on sidebar instead */
+  showFiltersInSidebar: PropTypes.bool,
 };
 
 DataTable.BulkActions = BulkActions;

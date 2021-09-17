@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu Item renders as expected with both icons 1`] = `
+<button
+  className="pgn__menu-item"
+>
+  <span
+    className="pgn__icon btn-icon-before"
+  >
+    <svg
+      aria-hidden={true}
+      aria-label=""
+      fill="none"
+      focusable={false}
+      height={24}
+      role="img"
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+        fill="currentColor"
+      />
+    </svg>
+  </span>
+  Hello World
+  <span
+    className="pgn__menu-item-content-spacer"
+  />
+  <span
+    className="pgn__icon btn-icon-after"
+  >
+    <svg
+      aria-hidden={true}
+      aria-label=""
+      fill="none"
+      focusable={false}
+      height={24}
+      role="img"
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+        fill="currentColor"
+      />
+    </svg>
+  </span>
+</button>
+`;

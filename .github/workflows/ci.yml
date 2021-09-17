@@ -22,10 +22,8 @@ jobs:
       run: npm run build
     - name: Build Docs
       run: npm run build-docs
-    - name: Coveralls
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Coverage
+      uses: codecov/codecov-action@v2
     - name: Extract branch name
       shell: bash
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
