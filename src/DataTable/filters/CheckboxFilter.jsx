@@ -34,7 +34,7 @@ function CheckboxFilter({
           key={headerBasedId + name}
           checked={checkedBoxes.includes(value)}
           onChange={() => { changeCheckbox(value); }}
-          label={<>{name} {number && <Badge variant="light">{number}</Badge>}</>}
+          label={<>{name} {number !== undefined && <Badge variant="light">{number}</Badge>}</>}
         />
       ))}
     </Form.Group>
