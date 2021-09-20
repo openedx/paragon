@@ -209,7 +209,7 @@ If the snapshot tests fail, it's generally pretty easy to tell whether it's happ
 
 ### Coverage
 
-Paragon measures code coverage using Jest's built-in `--coverage` flag (which I believe uses istanbul under the hood) and report it via [Codecov](hthttps://codecov.io/gh/edx/paragon). Shoot for 100% test coverage on your PRs, but use your best judgment if you're really struggling to cover those last few lines. At the very least, don't *reduce* total coverage. Codecov will fail your build if your PR reduces coverage.
+Paragon measures code coverage using Jest's built-in `--coverage` flag (which I believe uses istanbul under the hood) and report it via [Codecov](https://codecov.io/gh/edx/paragon). Shoot for 100% test coverage on your PRs, but use your best judgment if you're really struggling to cover those last few lines. At the very least, don't *reduce* total coverage. Codecov will fail your build if your PR reduces coverage.
 
 ## Semantic Release
 
