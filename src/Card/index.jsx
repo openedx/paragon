@@ -5,4 +5,3 @@ export { default as CardImg } from 'react-bootstrap/CardImg';
 export { default as CardGroup } from 'react-bootstrap/CardGroup';
 
 export { default as CardGrid } from './CardGrid';
-export { default as CardSelect } from './CardSelect';
