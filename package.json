@@ -4,6 +4,9 @@
   "description": "Accessible, responsive UI component library based on Bootstrap.",
   "main": "dist/index.js",
   "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/edx/paragon.git"
@@ -20,7 +23,6 @@
     "build-docs": "cd ./www && \"$npm_execpath\" install && \"$npm_execpath\" run build",
     "build-docs:with-theme": "cd ./www && \"$npm_execpath\" install && \"$npm_execpath\" run build:with-theme",
     "commit": "commit",
-    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage",
     "lint": "eslint --ext .js --ext .jsx .",
     "prepublishOnly": "npm run build",
@@ -73,7 +75,6 @@
     "babel-eslint": "^10.1.0",
     "babel-jest": "^24.5.0",
     "babel-loader": "^8.0.6",
-    "coveralls": "^3.0.3",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
     "eslint": "^7.0.0",
