@@ -1,6 +1,6 @@
 # Paragon
 
-[![npm_version](https://img.shields.io/npm/v/@edx/paragon.svg)](@edx/paragon) [![Build Status](https://travis-ci.com/edx/paragon.svg?branch=master)](https://travis-ci.com/edx/paragon) [![Coveralls](https://img.shields.io/coveralls/edx/paragon.svg?branch=master)](https://coveralls.io/github/edx/paragon)
+[![npm_version](https://img.shields.io/npm/v/@edx/paragon.svg)](@edx/paragon) [![NPM downloads](https://img.shields.io/npm/dw/@edx/paragon)](https://www.npmjs.com/package/@edx/paragon) [![Build Status](https://github.com/edx/paragon/actions/workflows/release.yml/badge.svg)](https://github.com/edx/paragon/actions/workflows/release.yml) [![codecov](https://codecov.io/gh/edx/paragon/branch/master/graph/badge.svg?token=x1tZmNduy9)](https://codecov.io/gh/edx/paragon)
 
 Paragon is a pattern library containing [accessible](https://www.w3.org/WAI/standards-guidelines/aria/) React components and a SCSS foundation built on Twitter Bootstrap. Paragon is developed for the Open edX platform.
 
@@ -209,7 +209,7 @@ If the snapshot tests fail, it's generally pretty easy to tell whether it's happ
 
 ### Coverage
 
-Paragon measures code coverage using Jest's built-in `--coverage` flag (which I believe uses istanbul under the hood) and report it via [Coveralls](https://coveralls.io/github/edx/paragon). Shoot for 100% test coverage on your PRs, but use your best judgment if you're really struggling to cover those last few lines. At the very least, don't *reduce* total coverage. Coveralls will fail your build if your PR reduces coverage.
+Paragon measures code coverage using Jest's built-in `--coverage` flag and report it via [Codecov](https://codecov.io/gh/edx/paragon). Shoot for 100% test coverage on your PRs, but use your best judgment if you're really struggling to cover those last few lines. At the very least, don't *reduce* total coverage. Codecov will fail your build if your PR reduces coverage.
 
 ## Semantic Release
 
