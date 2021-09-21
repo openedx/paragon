@@ -4,6 +4,9 @@
   "description": "Accessible, responsive UI component library based on Bootstrap.",
   "main": "dist/index.js",
   "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/edx/paragon.git"
