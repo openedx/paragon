@@ -220,31 +220,40 @@ DataTable.propTypes = {
   itemCount: PropTypes.number.isRequired,
   /** Actions to be performed on selected rows of the table. Called with the selected rows.
    *  Only displayed if rows are selected. */
-  bulkActions: PropTypes.arrayOf(PropTypes.shape({
-    /** Bulk action button text */
-    buttonText: PropTypes.string.isRequired,
-    /** handleClick will be passed the selected rows */
-    handleClick: PropTypes.func.isRequired,
-    /** classnames for button class */
-    className: PropTypes.string,
-    /** optional button variant; only relevant for the first two buttons */
-    variant: PropTypes.string,
-    /** disables button */
-    disabled: PropTypes.disabled,
-  })),
-  /** Actions to be performed on the table. Called with the table instance. Not displayed if rows are selected. */
-  tableActions: PropTypes.arrayOf(PropTypes.shape({
-    /** Bulk action button text */
-    buttonText: PropTypes.string.isRequired,
-    /** handleClick will be passed the selected rows */
-    handleClick: PropTypes.func.isRequired,
-    /** classnames for button class */
-    className: PropTypes.string,
-    /** optional button variant; only relevant for the first two buttons */
-    variant: PropTypes.string,
-    /** disables button */
-    disabled: PropTypes.disabled,
-  })),
+  bulkActions: PropTypes.oneOfType([
+    /** Function that will be passed selected rows as first parameter */
+    PropTypes.arrayOf(PropTypes.shape({
+      /** Bulk action button text */
+      buttonText: PropTypes.string.isRequired,
+      /** handleClick will be passed the selected rows */
+      handleClick: PropTypes.func.isRequired,
+      /** classnames for button class */
+      className: PropTypes.string,
+      /** optional button variant; only relevant for the first two buttons */
+      variant: PropTypes.string,
+      /** disables button */
+      disabled: PropTypes.disabled,
+    })),
+    /** Function that will be passed selected rows as first parameter */
+    PropTypes.func,
+  ]),
+  /** Function for rendering custom components, called with the table instance */
+  tableActions: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.shape({
+      /** Bulk action button text */
+      buttonText: PropTypes.string.isRequired,
+      /** handleClick will be passed the selected rows */
+      handleClick: PropTypes.func.isRequired,
+      /** classnames for button class */
+      className: PropTypes.string,
+      /** optional button variant; only relevant for the first two buttons */
+      variant: PropTypes.string,
+      /** disables button */
+      disabled: PropTypes.disabled,
+    })),
+    /** Function for rendering custom components */
+    PropTypes.func,
+  ]),
   /** Number between one and four filters that can be shown on the top row. */
   numBreakoutFilters: PropTypes.oneOf([1, 2, 3, 4]),
   /** Component to be displayed when the table is empty */

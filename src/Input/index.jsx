@@ -40,6 +40,7 @@ class Input extends React.Component {
   checkHasLabel() {
     if (this.inputEl.labels.length > 0) { return; }
     if (this.inputEl.getAttribute('aria-label') !== null) { return; }
+    if (this.inputEl.getAttribute('aria-labelledby') !== null) { return; }
 
     if (console) {
       // eslint-disable-next-line no-console

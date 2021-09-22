@@ -28,6 +28,8 @@ const twoActions = [
   secondAction,
 ];
 
+const buttonFunction = () => <Button>foo</Button>;
+
 const instance = {
   randomInstanceVar: 'foo',
   tableActions: [
@@ -243,6 +245,15 @@ describe('<TableActions />', () => {
       const wrapper = mount(<TableActionsWrapper />);
       const icon = wrapper.find(Icon);
       expect(icon.props().screenReaderText).toEqual(SMALL_SCREEN_DROPDOWN_BUTTON_TEXT);
+    });
+  });
+
+  describe('with function', () => {
+    it('passed correct number of selected rows', () => {
+      const wrapper = mount(<TableActionsWrapper value={{ ...instance, tableActions: buttonFunction }} />);
+      const button = wrapper.find(Button);
+      expect(button.length).toEqual(1);
+      expect(button.text()).toEqual('foo');
     });
   });
 });

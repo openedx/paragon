@@ -30,6 +30,8 @@ const twoActions = [
   secondAction,
 ];
 
+const buttonFunction = (a) => <Button>{a.length}</Button>;
+
 const instance = {
   selectedFlatRows,
   controlledTableSelections: [
@@ -274,6 +276,15 @@ describe('<BulkActions />', () => {
       const wrapper = mount(<BulkActionsWrapper />);
       const icon = wrapper.find(Icon);
       expect(icon.props().screenReaderText).toEqual(SMALL_SCREEN_DROPDOWN_BUTTON_TEXT);
+    });
+  });
+
+  describe('with function', () => {
+    it('passed correct number of selected rows', () => {
+      const wrapper = mount(<BulkActionsWrapper value={{ ...instance, bulkActions: buttonFunction }} />);
+      const button = wrapper.find(Button);
+      expect(button.length).toEqual(1);
+      expect(button.text()).toEqual('2');
     });
   });
 });
