@@ -31,6 +31,7 @@ function CheckboxFilter({
       {filterChoices.map(({ name, number, value }) => (
         <LabelledCheckbox
           id={headerBasedId}
+          key={headerBasedId + name}
           checked={checkedBoxes.includes(value)}
           onChange={() => { changeCheckbox(value); }}
           label={<>{name} {number !== undefined && <Badge variant="light">{number}</Badge>}</>}

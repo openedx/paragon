@@ -46,6 +46,7 @@ $input-height:                          calc(#{$input-line-height * 1em} + #{$in
 $input-height-sm:                       calc(#{$input-line-height-sm * 1em} + #{$input-btn-padding-y-sm * 2} + #{$input-height-border}) !default;
 $input-height-lg:                       calc(#{$input-line-height-lg * 1em} + #{$input-btn-padding-y-lg * 2} + #{$input-height-border}) !default;
 
+$input-hover-width:                     1px !default;
 $input-transition:                      border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
 $form-text-margin-top:                  .25rem !default;

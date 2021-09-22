@@ -15,7 +15,9 @@ $select-icon-padding: .5625rem !default;
   @include form-control-focus(true);
   border-color: $input-border-color;
 }
-
+.form-control:hover {
+  border : solid $input-hover-width $dark-700;
+}
 
 .pgn__form-group {
   margin-bottom: $form-group-margin-bottom;
@@ -229,7 +231,7 @@ $select-icon-padding: .5625rem !default;
 }
 
 .pgn__form-control-decorator-group.has-floating-label {
-  .form-control:not(:focus) {
+  .form-control:not(.has-value) {
     &::placeholder,
     &::-webkit-datetime-edit {
       opacity: 0;
