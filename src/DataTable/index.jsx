@@ -224,41 +224,52 @@ DataTable.propTypes = {
   /** Table options passed to react-table's useTable hook. Will override some options passed in to DataTable, such
      as: data, columns, defaultColumn, manualFilters, manualPagination, manualSortBy, and initialState */
   initialTableOptions: PropTypes.shape({}),
-  /** Total number of items */
+  /** Actions to be performed on the table. Called with the table instance. Not displayed if rows are selected. */
   itemCount: PropTypes.number.isRequired,
   /** Actions to be performed on selected rows of the table. Called with the selected rows.
    *  Only displayed if rows are selected. */
   bulkActions: PropTypes.oneOfType([
-    /** Function that will be passed selected rows as first parameter */
-    PropTypes.arrayOf(PropTypes.shape({
-      /** Bulk action button text */
-      buttonText: PropTypes.string.isRequired,
-      /** handleClick will be passed the selected rows */
-      handleClick: PropTypes.func.isRequired,
-      /** classnames for button class */
-      className: PropTypes.string,
-      /** optional button variant; only relevant for the first two buttons */
-      variant: PropTypes.string,
-      /** disables button */
-      disabled: PropTypes.disabled,
-    })),
-    /** Function that will be passed selected rows as first parameter */
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([
+        PropTypes.shape({
+          /** Bulk action button text */
+          buttonText: PropTypes.string.isRequired,
+          /** handleClick will be passed the selected rows */
+          handleClick: PropTypes.func.isRequired,
+          /** classnames for button class */
+          className: PropTypes.string,
+          /** optional button variant; only relevant for the first two buttons */
+          variant: PropTypes.string,
+          /** disables button */
+          disabled: PropTypes.disabled,
+        }),
+        /** function passed selected items, should return action object */
+        PropTypes.func,
+      ]),
+    ),
+    /** Function for rendering custom components */
     PropTypes.func,
   ]),
   /** Function for rendering custom components, called with the table instance */
   tableActions: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.shape({
-      /** Bulk action button text */
-      buttonText: PropTypes.string.isRequired,
-      /** handleClick will be passed the selected rows */
-      handleClick: PropTypes.func.isRequired,
-      /** classnames for button class */
-      className: PropTypes.string,
-      /** optional button variant; only relevant for the first two buttons */
-      variant: PropTypes.string,
-      /** disables button */
-      disabled: PropTypes.disabled,
-    })),
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([
+        PropTypes.shape({
+          /** Bulk action button text */
+          buttonText: PropTypes.string.isRequired,
+          /** handleClick will be passed the selected rows */
+          handleClick: PropTypes.func.isRequired,
+          /** classnames for button class */
+          className: PropTypes.string,
+          /** optional button variant; only relevant for the first two buttons */
+          variant: PropTypes.string,
+          /** disables button */
+          disabled: PropTypes.disabled,
+        }),
+        /** function passed table instance, should return action object */
+        PropTypes.func,
+      ]),
+    ),
     /** Function for rendering custom components */
     PropTypes.func,
   ]),

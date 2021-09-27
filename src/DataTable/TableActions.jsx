@@ -9,12 +9,20 @@ const TableActions = ({ className }) => {
   const tableInstance = useContext(DataTableContext);
   const { tableActions } = tableInstance;
   if (typeof tableActions === 'function') {
-    return <div className={classNames('pgn__bulk-actions', className)}>{tableActions()}</div>;
+    return <div className={classNames('pgn__table-actions', className)}>{tableActions()}</div>;
   }
+
+  const actions = tableActions.map(action => {
+    if (typeof tableActions === 'function') {
+      return action(tableInstance);
+    }
+    return action;
+  });
+
   return (
     <Actions
-      className={classNames('pgn__bulk-actions', className)}
-      actions={tableActions}
+      className={classNames('pgn__table-actions', className)}
+      actions={actions}
       tableInstance={tableInstance}
     />
   );
