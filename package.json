@@ -121,7 +121,8 @@
     "testPathIgnorePatterns": [
       "/node_modules/",
       "/www/",
-      "/dist/"
+      "/dist/",
+      "/dependent-usage-analyzer/"
     ],
     "transformIgnorePatterns": [
       "/node_modules/(?!(@edx/paragon)/).*/"
