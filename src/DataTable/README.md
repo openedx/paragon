@@ -300,7 +300,9 @@ Bulk actions are not visible unless rows have been selected.
 
 ### Actions
 An action can also be definied as an additional column on the table. The Cell property can be defined to display
-any component that a user requires. It will receive the row as props.
+any component that a user requires. It will receive the row as props. 
+You can pass a function to render custom components for bulk actions and table actions.
+
 
 ```jsx live
   <DataTable
@@ -313,9 +315,12 @@ any component that a user requires. It will receive the row as props.
         },
     ]}
     bulkActions={[
-        {
-          buttonText: 'Enroll',
-          handleClick: (data) => console.log('Enroll', data),
+        // Function defined button
+        (data)=>{
+          return {
+            buttonText: `Enroll ${data.length}`,
+            handleClick: () => console.log('Enroll', data), 
+          }
         },
         {
           buttonText: 'Assign',

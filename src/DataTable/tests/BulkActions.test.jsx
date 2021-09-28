@@ -30,6 +30,13 @@ const twoActions = [
   secondAction,
 ];
 
+const buttonFunction = (a) => <Button>{a.length}</Button>;
+
+const objectFunction = (data) => ({
+  buttonText: `${data !== undefined}`,
+  handleClick: () => {},
+});
+
 const instance = {
   selectedFlatRows,
   controlledTableSelections: [
@@ -252,6 +259,22 @@ describe('<BulkActions />', () => {
     });
   });
 
+  describe('with function', () => {
+    it('item is rendered and data passed', () => {
+      const wrapper = mount(<BulkActionsWrapper value={{ ...instance, bulkActions: [objectFunction] }} />);
+      const button = wrapper.find(Button);
+      expect(button.length).toEqual(1);
+      expect(button.text()).toEqual('true');
+    });
+    it(' and an object item is rendered and data passed', () => {
+      const wrapper = mount(
+        <BulkActionsWrapper value={{ ...instance, bulkActions: [firstAction, objectFunction] }} />,
+      );
+      const buttons = wrapper.find(Button);
+      expect(buttons.length).toEqual(2);
+    });
+  });
+
   describe('small screen', () => {
     const actions = [[[firstAction]], [[firstAction, secondAction]], [instance.bulkActions]];
     test.each(actions)('puts all actions in a dropdown %#', (testActions) => {
@@ -274,6 +297,15 @@ describe('<BulkActions />', () => {
       const wrapper = mount(<BulkActionsWrapper />);
       const icon = wrapper.find(Icon);
       expect(icon.props().screenReaderText).toEqual(SMALL_SCREEN_DROPDOWN_BUTTON_TEXT);
+    });
+  });
+
+  describe('with function', () => {
+    it('passed correct number of selected rows', () => {
+      const wrapper = mount(<BulkActionsWrapper value={{ ...instance, bulkActions: buttonFunction }} />);
+      const button = wrapper.find(Button);
+      expect(button.length).toEqual(1);
+      expect(button.text()).toEqual('2');
     });
   });
 });

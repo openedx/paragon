@@ -28,6 +28,13 @@ const twoActions = [
   secondAction,
 ];
 
+const buttonFunction = () => <Button>foo</Button>;
+
+const objectFunction = (data) => ({
+  buttonText: `${data !== undefined}`,
+  handleClick: () => {},
+});
+
 const instance = {
   randomInstanceVar: 'foo',
   tableActions: [
@@ -220,7 +227,21 @@ describe('<TableActions />', () => {
       });
     });
   });
-
+  describe('with function', () => {
+    it('item is rendered and data passed', () => {
+      const wrapper = mount(<TableActionsWrapper value={{ ...instance, tableActions: [objectFunction] }} />);
+      const button = wrapper.find(Button);
+      expect(button.length).toEqual(1);
+      expect(button.text()).toEqual('true');
+    });
+    it(' and an object item is rendered and data passed', () => {
+      const wrapper = mount(
+        <TableActionsWrapper value={{ ...instance, tableActions: [firstAction, objectFunction] }} />,
+      );
+      const buttons = wrapper.find(Button);
+      expect(buttons.length).toEqual(2);
+    });
+  });
   describe('small screen', () => {
     const actions = [[[firstAction]], [[firstAction, secondAction]], [instance.tableActions]];
     test.each(actions)('puts all actions in a dropdown %#', (testActions) => {
@@ -243,6 +264,14 @@ describe('<TableActions />', () => {
       const wrapper = mount(<TableActionsWrapper />);
       const icon = wrapper.find(Icon);
       expect(icon.props().screenReaderText).toEqual(SMALL_SCREEN_DROPDOWN_BUTTON_TEXT);
+    });
+  });
+  describe('with over ride function', () => {
+    it('renders button', () => {
+      const wrapper = mount(<TableActionsWrapper value={{ ...instance, tableActions: buttonFunction }} />);
+      const button = wrapper.find(Button);
+      expect(button.length).toEqual(1);
+      expect(button.text()).toEqual('foo');
     });
   });
 });
