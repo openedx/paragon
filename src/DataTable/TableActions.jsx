@@ -8,12 +8,13 @@ import Actions from './CollapsibleButtonGroup';
 const TableActions = ({ className }) => {
   const tableInstance = useContext(DataTableContext);
   const { tableActions } = tableInstance;
+
   if (typeof tableActions === 'function') {
-    return <div className={classNames('pgn__table-actions', className)}>{tableActions()}</div>;
+    return <div className={classNames('pgn__table-actions', className)}>{tableActions(tableInstance)}</div>;
   }
 
   const actions = tableActions.map(action => {
-    if (typeof tableActions === 'function') {
+    if (typeof action === 'function') {
       return action(tableInstance);
     }
     return action;

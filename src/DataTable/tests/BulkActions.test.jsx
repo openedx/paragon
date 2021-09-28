@@ -32,6 +32,11 @@ const twoActions = [
 
 const buttonFunction = (a) => <Button>{a.length}</Button>;
 
+const objectFunction = (data) => ({
+  buttonText: `${data !== undefined}`,
+  handleClick: () => {},
+});
+
 const instance = {
   selectedFlatRows,
   controlledTableSelections: [
@@ -251,6 +256,22 @@ describe('<BulkActions />', () => {
         const item = wrapper.find('.disabledTest').first();
         expect(item.props().disabled).toEqual(true);
       });
+    });
+  });
+
+  describe('with function', () => {
+    it('item is rendered and data passed', () => {
+      const wrapper = mount(<BulkActionsWrapper value={{ ...instance, bulkActions: [objectFunction] }} />);
+      const button = wrapper.find(Button);
+      expect(button.length).toEqual(1);
+      expect(button.text()).toEqual('true');
+    });
+    it(' and an object item is rendered and data passed', () => {
+      const wrapper = mount(
+        <BulkActionsWrapper value={{ ...instance, bulkActions: [firstAction, objectFunction] }} />,
+      );
+      const buttons = wrapper.find(Button);
+      expect(buttons.length).toEqual(2);
     });
   });
 

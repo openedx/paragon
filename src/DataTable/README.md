@@ -323,10 +323,6 @@ You can pass a function to render custom components for bulk actions and table a
           }
         },
         {
-          buttonText: 'Enroll',
-          handleClick: (data) => console.log('Enroll', data),
-        },
-        {
           buttonText: 'Assign',
           handleClick: (data) => console.log('Assign', data),
         },
