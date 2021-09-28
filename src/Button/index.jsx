@@ -30,11 +30,11 @@ WrappedButton.propTypes = {
   /** Docstring for className... A class name to append to the button */
   className: PropTypes.string,
   /** An icon component to render.
-   * Example import of a Paragon icon component: `import { Check } from '@edx/paragon/dist/icon';` */
+   * Example import of a Paragon icon component: `import { Check } from '@edx/paragon/icons';` */
   iconBefore: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
   /** An icon component to render.
-   * Example import of a Paragon icon component: `import { Check } from '@edx/paragon/dist/icon';` */
-  iconAfter: PropTypes.instanceOf([PropTypes.func, PropTypes.node]),
+   * Example import of a Paragon icon component: `import { Check } from '@edx/paragon/icons';` */
+  iconAfter: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
 };
 
 WrappedButton.defaultProps = {
