@@ -2,7 +2,11 @@
 mkdir .projects
 (
   cd .projects &&
+  git clone git@github.com:edx/credentials.git --depth 1
+  git clone git@github.com:edx/edx-enterprise.git --depth 1
   git clone git@github.com:edx/edx-platform.git --depth 1
+  git clone git@github.com:edx/edx-ora2.git --depth 1
+  git clone git@github.com:edx/web-certificates.git --depth 1
   git clone git@github.com:edx/frontend-app-account.git --depth 1
   git clone git@github.com:edx/frontend-app-admin-portal.git --depth 1
   git clone git@github.com:edx/frontend-app-authn.git --depth 1
@@ -11,9 +15,11 @@ mkdir .projects
   git clone git@github.com:edx/frontend-app-ecommerce.git --depth 1
   git clone git@github.com:edx/frontend-app-enterprise-public-catalog.git --depth 1
   git clone git@github.com:edx/frontend-app-gradebook.git --depth 1
+  git clone git@github.com:edx/frontend-app-learner-record.git --depth 1
   git clone git@github.com:edx/frontend-app-learner-portal-enterprise.git --depth 1
   git clone git@github.com:edx/frontend-app-learner-portal-programs.git --depth 1
   git clone git@github.com:edx/frontend-app-learning.git --depth 1
+  git clone git@github.com:edx/frontend-app-ora-grading.git --depth 1
   git clone git@github.com:edx/frontend-app-payment.git --depth 1
   git clone git@github.com:edx/frontend-app-profile.git --depth 1
   git clone git@github.com:edx/frontend-app-program-console.git --depth 1
