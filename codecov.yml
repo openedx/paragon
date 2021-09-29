@@ -9,4 +9,4 @@ coverage:
         target: auto
         threshold: 1%
 ignore:
-  - "/www/"
+  - "www"
