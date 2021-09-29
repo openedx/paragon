@@ -1,5 +1,3 @@
-codecov:
-  max_report_age: off
 coverage:
   status:
     project:
@@ -10,3 +8,5 @@ coverage:
       default:
         target: auto
         threshold: 1%
+ignore:
+  - "/www/"
