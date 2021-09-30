@@ -26,7 +26,7 @@ const WrappedButton = React.forwardRef(({
 WrappedButton.propTypes = {
   ...Button.propTypes,
   /** Docstring for the children prop */
-  children: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+  children: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
   /** Docstring for className... A class name to append to the button */
   className: PropTypes.string,
   /** An icon component to render.
