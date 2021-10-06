@@ -318,11 +318,7 @@ You can pass a function to render custom components for bulk actions and table a
         // Function defined button
         (data)=>{
           return {
-<<<<<<< HEAD
             buttonText: `Enroll ${data.selectedFlatRows.length}`,
-=======
-            buttonText: `Enroll ${data.length}`,
->>>>>>> master
             handleClick: () => console.log('Enroll', data), 
           }
         },
