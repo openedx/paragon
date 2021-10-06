@@ -8,7 +8,7 @@ import dependentProjectsUsages from '../../../dependent-usage.json';
 
 const dependentProjects = dependentProjectsUsages.map(dependentUsage => ({
   ...dependentUsage,
-  count: dependentUsage.usages.length,
+  count: Object.values(dependentUsage.usages).reduce((accumulator, usage) => accumulator += usage.length, 0),
 }));
 
 const componentsUsage = dependentProjectsUsages.reduce((accumulator, project) => {
@@ -26,6 +26,50 @@ const componentsUsage = dependentProjectsUsages.reduce((accumulator, project) =>
   return accumulator;
 }, {});
 
+const summaryComponentsUsage = Object.entries(componentsUsage).map(([componentName, usages]) => {
+  const componentUsageCounts = usages.reduce((accumulator, project) => accumulator += project.componentUsageCount, 0);
+  return {
+    name: componentName,
+    count: componentUsageCounts,
+  };
+});
+
+const SummaryUsage = () => {
+  const summaryTableData = summaryComponentsUsage.sort((a, b) => {
+    const nameA = a.name.toUpperCase();
+    const nameB = b.name.toUpperCase();
+    return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
+  });
+  const round = (n) => Math.round(n * 10) / 10;
+  const averageComponentsUsedPerProject = dependentProjects.reduce((accumulator, project) => accumulator += project.count, 0) / dependentProjects.length;
+  return (
+    <div className="pt-5 mb-5">
+      <div className="mb-5">
+        <h3>Overview</h3>
+        <p>
+          Paragon is used by at least <strong>{dependentProjects.length} projects</strong>, each with an average
+          of <strong>{round(averageComponentsUsedPerProject)}</strong> components per project.
+        </p>
+      </div>
+      <h3>Overall component usage</h3>
+      <DataTable
+        isSortable
+        itemCount={summaryTableData.length}
+        data={summaryTableData}
+        columns={[
+          { Header: 'Component Name', accessor: 'name' },
+          { Header: 'Instance Count', accessor: 'count' },
+        ]}
+      >
+        <DataTable.TableControlBar />
+        <DataTable.Table />
+        <DataTable.EmptyTable content="No summary available" />
+        <DataTable.TableFooter />
+      </DataTable>
+    </div>
+  );
+};
+
 // Paragon version in all projects
 const ProjectsUsage = () => (
   <div className="pt-5 mb-5">
@@ -37,6 +81,7 @@ const ProjectsUsage = () => (
       columns={[
         { Header: 'Project Name', accessor: 'folderName' },
         { Header: 'Paragon Version', accessor: 'version' },
+        { Header: 'Instance Count', accessor: 'count' },
       ]}
     >
       <DataTable.TableControlBar />
@@ -59,7 +104,7 @@ const ComponentUsage = ({ name, componentUsageInProjects }) => (
       columns={[
         { Header: 'Project Name', accessor: 'folderName' },
         { Header: 'Paragon Version', accessor: 'version' },
-        { Header: 'Instance count', accessor: 'componentUsageCount' },
+        { Header: 'Instance Count', accessor: 'componentUsageCount' },
       ]}
     >
       <DataTable.Table />
@@ -88,9 +133,12 @@ export default function InsightsPage() {
         <SEO title="Usage Insights" />
         <header className="mb-5">
           <h1>Usage Insights</h1>
-          <p>Last updated: 4-30-2021</p>
+          <p>Last updated: 09-27-2021</p>
         </header>
-        <Tabs defaultActiveKey="projects" id="uncontrolled-tab-example">
+        <Tabs defaultActiveKey="summary" id="uncontrolled-tab-example">
+          <Tab eventKey="summary" title="Summary">
+            <SummaryUsage />
+          </Tab>
           <Tab eventKey="projects" title="Projects">
             <ProjectsUsage />
           </Tab>
