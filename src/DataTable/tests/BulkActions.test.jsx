@@ -30,7 +30,7 @@ const twoActions = [
   secondAction,
 ];
 
-const buttonFunction = (a) => <Button>{a.length}</Button>;
+const buttonFunction = (a) => <Button>{a.selectedFlatRows.length}</Button>;
 
 const objectFunction = (data) => ({
   buttonText: `${data !== undefined}`,
