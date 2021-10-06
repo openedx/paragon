@@ -20,7 +20,7 @@ const Breadcrumbs = ({
             </li>
             {(activeLabel || ((i + 1) < linkCount))
               && (
-              <li className="list-inline-item" role="presentation" aria-label="spacer">
+              <li className="list-inline-item" role="presentation">
                 {spacer || <Icon src={ChevronRight} id={`spacer-${i}`} />}
               </li>
               )}
