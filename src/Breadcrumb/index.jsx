@@ -26,7 +26,7 @@ const Breadcrumbs = ({
               )}
           </React.Fragment>
         ))}
-              {activeLabel && <li className="list-inline-item active" key="active" aria-current="page">{activeLabel}</li>}
+        {activeLabel && <li className="list-inline-item active" key="active" aria-current="page">{activeLabel}</li>}
       </ol>
     </nav>
   );
