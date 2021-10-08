@@ -20,13 +20,13 @@ const Breadcrumbs = ({
             </li>
             {(activeLabel || ((i + 1) < linkCount))
               && (
-              <li className="list-inline-item" role="presentation" aria-label="spacer">
+              <li className="list-inline-item" role="presentation">
                 {spacer || <Icon src={ChevronRight} id={`spacer-${i}`} />}
               </li>
               )}
           </React.Fragment>
         ))}
-        {activeLabel && <li className="list-inline-item active" key="active">{activeLabel}</li>}
+        {activeLabel && <li className="list-inline-item active" key="active" aria-current="page">{activeLabel}</li>}
       </ol>
     </nav>
   );
