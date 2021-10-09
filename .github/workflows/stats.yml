@@ -8,3 +8,10 @@ jobs:
     steps:
       - name: Run pull request stats
         uses: flowwer-dev/pull-request-stats@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          period: 365
+          charts: true
+          sort-by: 'COMMENTS'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
