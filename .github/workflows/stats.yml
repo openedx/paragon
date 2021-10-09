@@ -1,0 +1,17 @@
+name: Pull Request Stats
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run pull request stats
+        uses: flowwer-dev/pull-request-stats@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          organization: 'edx'
+          period: 365
+          charts: true
+          disable-links: true
+          sort-by: 'COMMENTS'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
