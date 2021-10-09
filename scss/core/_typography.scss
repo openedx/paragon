@@ -29,6 +29,10 @@
   @include mobile-type;
 }
 
+.mobile-type {
+  @include mobile-type;
+}
+
 .heading-label {
   text-transform: uppercase;
   font-family: $font-family-monospace;

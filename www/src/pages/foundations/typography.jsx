@@ -111,12 +111,11 @@ export default function TypographyPage() {
               </td>
             </tr>
             <tr>
-              <td colSpan="2">
+              <td colSpan="3">
                 <MeasuredItem {...measuredTypeProps}>
                   <p className="m-0">Body</p>
                 </MeasuredItem>
               </td>
-              <td />
             </tr>
             <tr>
               <td colSpan="2">
