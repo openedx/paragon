@@ -223,6 +223,7 @@ jobs:
       with:
         name: dependent-usage-json
         path: dependent-usage-v2.json
+  # automatically open, approve, and merge a PR with the dependent projects analysis output
   commit-dependents-analysis:
     needs: analyze-dependents
     runs-on: ubuntu-latest
