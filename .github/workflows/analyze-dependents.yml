@@ -242,5 +242,6 @@ jobs:
       with:
         commit-message: "docs: update dependent-usage-v2.json"
         title: "docs: update dependent-usage-v2.json"
-        body: "Contains automated  changes to the dependent-usage-v2.json file, which provides the data for Paragon Usage Insights."
+        body: "Contains automated changes to the dependent-usage-v2.json file, which provides the data for Paragon Usage Insights."
         branch: dependent-usage-analyzer/update-dependent-usage-json
+        base: master
