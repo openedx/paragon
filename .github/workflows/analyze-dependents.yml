@@ -224,10 +224,9 @@ jobs:
       uses: montudor/action-zip@v1
       with:
         args: unzip -qq dependent-usage-analyzer/dependent-projects.zip -d dependent-usage-analyzer/dependent-projects
-    - name: Verify dependent project checkouts
+    - name: Move dependent project checkouts
       working-directory: dependent-usage-analyzer
-      run: |
-        ls -la dependent-projects/dependent-usage-analyzer
+      run: mv dependent-projects/dependent-usage-analyzer/.projects ./projects
     - name: Analyze projects
       run: npm run analyze .projects -- --out "${GITHUB_WORKSPACE}/dependent-usage.json"
       working-directory: dependent-usage-analyzer
