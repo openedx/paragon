@@ -238,10 +238,23 @@ jobs:
       with:
         name: dependent-usage-json
     - name: Create pull request for dependent project usages
+      id: cpr
       uses: peter-evans/create-pull-request@v3
       with:
         commit-message: "docs: update dependent-usage-v2.json"
         title: "docs: update dependent-usage-v2.json"
         body: "Contains automated changes to the dependent-usage-v2.json file, which provides the data for Paragon Usage Insights."
+        labels: automerge
         branch: dependent-usage-analyzer/update-dependent-usage-json
         base: master
+    - name: Auto-approve pull request for dependent project usages
+      uses: hmarr/auto-approve-action@v2
+      with:
+        pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+        github-token: ${{ secrets.EDX_NETLIFY_PAT }}
+    # - name: Auto-merge pull request for dependent project usages
+    #   uses: pascalgn/automerge-action@v0.14.3
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.EDX_NETLIFY_PAT }}
+    #     MERGE_METHOD: squash
+    #     PULL_REQUEST: ${{ steps.cpr.outputs.pull-request-number }}
