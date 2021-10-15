@@ -227,8 +227,7 @@ jobs:
     - name: Move dependent project checkouts
       working-directory: dependent-usage-analyzer
       run: |
-        sudo mv dependent-projects/dependent-usage-analyzer/.projects ./projects
-        ls -la
+        sudo mv dependent-projects/dependent-usage-analyzer/.projects .projects
         ls -la .projects
     - name: Analyze projects
       run: npm run analyze .projects -- --out "${GITHUB_WORKSPACE}/dependent-usage.json"
