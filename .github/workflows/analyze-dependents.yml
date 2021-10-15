@@ -27,12 +27,6 @@ jobs:
     #   with:
     #     repository: edx/edx-ora2
     #     path: dependent-usage-analyzer/.projects/edx-ora2
-    # - name: Checkout edx/web-certificates
-    #   uses: actions/checkout@v2
-    #   with:
-    #     repository: edx/web-certificates
-    #     path: dependent-usage-analyzer/.projects/web-certificates
-    #     token: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
     # - name: Checkout edx/frontend-app-account
     #   uses: actions/checkout@v2
     #   with:
@@ -128,11 +122,6 @@ jobs:
     #   with:
     #     repository: edx/frontend-component-cookie-policy-banner
     #     path: dependent-usage-analyzer/.projects/frontend-component-cookie-policy-banner
-    # - name: Checkout edx/frontend-component-footer
-    #   uses: actions/checkout@v2
-    #   with:
-    #     repository: edx/frontend-component-footer
-    #     path: dependent-usage-analyzer/.projects/frontend-component-footer
     # - name: Checkout edx/frontend-component-header-edx
     #   uses: actions/checkout@v2
     #   with:
@@ -143,11 +132,6 @@ jobs:
     #   with:
     #     repository: edx/frontend-component-header
     #     path: dependent-usage-analyzer/.projects/frontend-component-header
-    # - name: Checkout edx/frontend-component-site-header
-    #   uses: actions/checkout@v2
-    #   with:
-    #     repository: edx/frontend-component-site-header
-    #     path: dependent-usage-analyzer/.projects/frontend-component-site-header
     # - name: Checkout edx/frontend-enterprise
     #   uses: actions/checkout@v2
     #   with:
@@ -236,7 +220,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: dependent-usage-json
-        path: dependent-usage.json
+        path: dependent-usage-v2.json
   commit-dependents-analysis:
     needs: analyze-dependents
     runs-on: ubuntu-latest
