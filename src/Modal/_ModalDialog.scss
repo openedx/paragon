@@ -176,7 +176,7 @@
   &.pgn__modal-body-scroll-top {
     &::before {
       opacity: 0;
-      z-index: 0;
+      z-index: -1;
     }
     &::after {
       opacity: 0.5;
