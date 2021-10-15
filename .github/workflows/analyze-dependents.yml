@@ -32,7 +32,7 @@ jobs:
       with:
         repository: edx/web-certificates
         path: dependent-usage-analyzer/.projects/web-certificates
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
     - name: Checkout edx/frontend-app-account
       uses: actions/checkout@v2
       with:
@@ -183,7 +183,7 @@ jobs:
       with:
         repository: edx/prospectus
         path: dependent-usage-analyzer/.projects/prospectus
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
     - name: Checkout edx/studio-frontend
       uses: actions/checkout@v2
       with:
