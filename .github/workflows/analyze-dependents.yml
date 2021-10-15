@@ -16,13 +16,13 @@ jobs:
       run: npm ci
       working-directory: dependent-usage-analyzer
     - name: Analyze projects
-      run: npm run analyze "${GITHUB_WORKSPACE}/dependent-projects" -- --out "${GITHUB_WORKSPACE}/dependents-usage-analysis.json"
-      working-directory: dependents-usage-analysis
+      run: npm run analyze "${GITHUB_WORKSPACE}/dependent-usage-analyzer/.projects" -- --out "${GITHUB_WORKSPACE}/dependent-usage-analyzer.json"
+      working-directory: dependent-usage-analyzer
     - name: Upload analysis output
       uses: actions/upload-artifact@v2
       with:
-        name: dependents-usage-analysis-json
-        path: dependents-usage-analysis.json
+        name: dependent-usage-analyzer-json
+        path: dependent-usage-analyzer.json
   commit-dependents-analysis:
     needs: analyze-dependents
     runs-on: ubuntu-latest
@@ -30,13 +30,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Setup Nodejs
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
-        node-version: 12
+        node-version: 16
     - name: Download analysis output
       uses: actions/download-artifact@v2
       with:
-        name: dependents-usage-analysis-json
+        name: dependent-usage-analyzer-json
     - name: Check for changes
       run: |
         git status
