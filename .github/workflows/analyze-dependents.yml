@@ -3,20 +3,42 @@ name: Analyze Dependents
 on: [pull_request]
 
 jobs:
+  # clones known dependent Git repositories from Open edX
+  checkout-dependents:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout edx/credentials
+      uses: actions/checkout@v2
+      working-directory: dependent-usage-analyzer
+      with:
+        repository: edx/credentials
+        path: .projects/credentials
+        fetch-depth: 0
+    - name: Checkout edx/frontend-app-ecommerce
+      uses: actions/checkout@v2
+      working-directory: dependent-usage-analyzer
+      with:
+        repository: edx/frontend-app-ecommerce
+        path: .projects/frontend-app-ecommerce
+        fetch-depth: 0
+    - name: Verify checkouts
+      working-directory: dependent-usage-analyzer
+      run: ls -la
+  # analyzes the dependent Git repositories
   analyze-dependents:
+    needs: checkout-dependents
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
     - name: Setup Nodejs
       uses: actions/setup-node@v2
       with:
         node-version: 16
     - name: Install dependencies
       run: npm ci
-      working-directory: dependent-usage-analyzer
-    - name: Checkout projects
-      run: bash ./checkout-dependents.sh
       working-directory: dependent-usage-analyzer
     - name: Analyze projects
       run: npm run analyze "${GITHUB_WORKSPACE}/dependent-usage-analyzer/.projects" -- --out "${GITHUB_WORKSPACE}/dependent-usage.json"
