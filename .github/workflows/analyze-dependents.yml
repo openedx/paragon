@@ -15,14 +15,17 @@ jobs:
     - name: Install dependencies
       run: npm ci
       working-directory: dependent-usage-analyzer
+    - name: Checkout projects
+      run: bash ./checkout-dependents.sh
+      working-directory: dependent-usage-analyzer
     - name: Analyze projects
-      run: npm run analyze "${GITHUB_WORKSPACE}/dependent-usage-analyzer/.projects" -- --out "${GITHUB_WORKSPACE}/dependent-usage-analyzer.json"
+      run: npm run analyze "${GITHUB_WORKSPACE}/dependent-usage-analyzer/.projects" -- --out "${GITHUB_WORKSPACE}/dependent-usage.json"
       working-directory: dependent-usage-analyzer
     - name: Upload analysis output
       uses: actions/upload-artifact@v2
       with:
-        name: dependent-usage-analyzer-json
-        path: dependent-usage-analyzer.json
+        name: dependent-usage-json
+        path: dependent-usage.json
   commit-dependents-analysis:
     needs: analyze-dependents
     runs-on: ubuntu-latest
@@ -36,7 +39,7 @@ jobs:
     - name: Download analysis output
       uses: actions/download-artifact@v2
       with:
-        name: dependent-usage-analyzer-json
+        name: dependent-usage-json
     - name: Check for changes
       run: |
         git status
