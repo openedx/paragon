@@ -27,11 +27,12 @@ jobs:
       with:
         repository: edx/edx-ora2
         path: dependent-usage-analyzer/.projects/edx-ora2
-    # - name: Checkout edx/web-certificates
-    #   uses: actions/checkout@v2
-    #   with:
-    #     repository: edx/web-certificates
-    #     path: dependent-usage-analyzer/.projects/web-certificates
+    - name: Checkout edx/web-certificates
+      uses: actions/checkout@v2
+      with:
+        repository: edx/web-certificates
+        path: dependent-usage-analyzer/.projects/web-certificates
+        token: ${{ secrets.GITHUB_TOKEN }}
     - name: Checkout edx/frontend-app-account
       uses: actions/checkout@v2
       with:
@@ -182,6 +183,7 @@ jobs:
       with:
         repository: edx/prospectus
         path: dependent-usage-analyzer/.projects/prospectus
+        token: ${{ secrets.GITHUB_TOKEN }}
     - name: Checkout edx/studio-frontend
       uses: actions/checkout@v2
       with:
