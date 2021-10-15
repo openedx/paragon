@@ -215,7 +215,7 @@ jobs:
     - name: Install dependencies
       run: npm ci
       working-directory: dependent-usage-analyzer
-    - name: Download analysis output
+    - name: Download dependent project checkouts
       uses: actions/download-artifact@v2
       with:
         name: dependent-project-checkouts
@@ -224,6 +224,11 @@ jobs:
       uses: montudor/action-zip@v1
       with:
         args: unzip -qq dependent-usage-analyzer/dependent-projects.zip -d dependent-usage-analyzer/.projects
+    - name: Verify dependent project checkouts
+      working-directory: dependent-usage-analyzer
+      run: |
+        ls -la
+        ls -la .projects
     - name: Analyze projects
       run: npm run analyze .projects -- --out "${GITHUB_WORKSPACE}/dependent-usage.json"
       working-directory: dependent-usage-analyzer
