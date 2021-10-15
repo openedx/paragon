@@ -192,11 +192,15 @@ jobs:
     - name: Verify checkouts
       working-directory: dependent-usage-analyzer
       run: ls -la .projects
-    - name: Upload checkouts
+    - name: Create zip archive of dependent project checkouts
+      uses: montudor/action-zip@v1
+      with:
+        args: zip -qq -r dependent-usage-analyzer/dependent-projects.zip dependent-usage-analyzer/.projects
+    - name: Upload dependent projects checkouts
       uses: actions/upload-artifact@v2
       with:
         name: dependent-project-checkouts
-        path: dependent-usage-analyzer/.projects
+        path: dependent-usage-analyzer/dependent-projects.zip
   # analyzes the dependent Git repositories
   analyze-dependents:
     needs: checkout-dependents
@@ -215,7 +219,11 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: dependent-project-checkouts
-        path: dependent-usage-analyzer/.projects
+        path: dependent-usage-analyzer
+    - name: Unzip archive of dependent project checkouts
+      uses: montudor/action-zip@v1
+      with:
+        args: unzip -qq dependent-usage-analyzer/dependent-projects.zip -d dependent-usage-analyzer/.projects
     - name: Analyze projects
       run: npm run analyze .projects -- --out "${GITHUB_WORKSPACE}/dependent-usage.json"
       working-directory: dependent-usage-analyzer
