@@ -9,18 +9,14 @@ jobs:
     steps:
     - name: Checkout edx/credentials
       uses: actions/checkout@v2
-      working-directory: dependent-usage-analyzer
       with:
         repository: edx/credentials
-        path: .projects/credentials
-        fetch-depth: 0
+        path: dependent-usage-analyzer/.projects/credentials
     - name: Checkout edx/frontend-app-ecommerce
       uses: actions/checkout@v2
-      working-directory: dependent-usage-analyzer
       with:
         repository: edx/frontend-app-ecommerce
-        path: .projects/frontend-app-ecommerce
-        fetch-depth: 0
+        path: dependent-usage-analyzer/.projects/frontend-app-ecommerce
     - name: Verify checkouts
       working-directory: dependent-usage-analyzer
       run: ls -la
@@ -31,8 +27,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
     - name: Setup Nodejs
       uses: actions/setup-node@v2
       with:
