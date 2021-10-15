@@ -191,7 +191,7 @@ jobs:
         path: dependent-usage-analyzer/.projects/studio-frontend
     - name: Verify checkouts
       working-directory: dependent-usage-analyzer
-      run: ls -la dependent-usage-analyzer/.projects
+      run: ls -la .projects
   # analyzes the dependent Git repositories
   analyze-dependents:
     needs: checkout-dependents
