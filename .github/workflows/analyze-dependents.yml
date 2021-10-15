@@ -1,6 +1,8 @@
 name: Analyze Dependents
 
-on: [pull_request]
+on:
+  schedule:
+  - cron: "0 0 * * *" # daily
 
 jobs:
   # clones known dependent Git repositories from Open edX
