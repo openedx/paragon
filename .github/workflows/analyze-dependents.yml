@@ -227,7 +227,7 @@ jobs:
     - name: Verify dependent project checkouts
       working-directory: dependent-usage-analyzer
       run: |
-        ls -la dependent-projects
+        ls -la dependent-projects/dependent-usage-analyzer
     - name: Analyze projects
       run: npm run analyze .projects -- --out "${GITHUB_WORKSPACE}/dependent-usage.json"
       working-directory: dependent-usage-analyzer
