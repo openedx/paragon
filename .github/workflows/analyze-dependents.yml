@@ -192,6 +192,11 @@ jobs:
     - name: Verify checkouts
       working-directory: dependent-usage-analyzer
       run: ls -la .projects
+    - name: Upload checkouts
+      uses: actions/upload-artifact@v2
+      with:
+        name: dependent-project-checkouts
+        path: dependent-usage-analyzer/.projects
   # analyzes the dependent Git repositories
   analyze-dependents:
     needs: checkout-dependents
@@ -206,8 +211,13 @@ jobs:
     - name: Install dependencies
       run: npm ci
       working-directory: dependent-usage-analyzer
+    - name: Download analysis output
+      uses: actions/download-artifact@v2
+      with:
+        name: dependent-project-checkouts
+        path: dependent-usage-analyzer/.projects
     - name: Analyze projects
-      run: npm run analyze "${GITHUB_WORKSPACE}/dependent-usage-analyzer/.projects" -- --out "${GITHUB_WORKSPACE}/dependent-usage.json"
+      run: npm run analyze .projects -- --out "${GITHUB_WORKSPACE}/dependent-usage.json"
       working-directory: dependent-usage-analyzer
     - name: Upload analysis output
       uses: actions/upload-artifact@v2
