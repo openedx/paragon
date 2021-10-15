@@ -27,11 +27,11 @@ jobs:
       with:
         repository: edx/edx-ora2
         path: dependent-usage-analyzer/.projects/edx-ora2
-    - name: Checkout edx/web-certificates
-      uses: actions/checkout@v2
-      with:
-        repository: edx/web-certificates
-        path: dependent-usage-analyzer/.projects/web-certificates
+    # - name: Checkout edx/web-certificates
+    #   uses: actions/checkout@v2
+    #   with:
+    #     repository: edx/web-certificates
+    #     path: dependent-usage-analyzer/.projects/web-certificates
     - name: Checkout edx/frontend-app-account
       uses: actions/checkout@v2
       with:
