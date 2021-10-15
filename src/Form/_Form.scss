@@ -231,7 +231,12 @@ $select-icon-padding: .5625rem !default;
 }
 
 .pgn__form-control-decorator-group.has-floating-label {
-  .form-control:not(.has-value) {
+
+  input[type='date']:not(:focus):not(.has-value),
+  input[type='time']:not(:focus):not(.has-value) {
+    color: transparent;
+  }
+  .form-control:not(:focus):not(.has-value) {
     &::placeholder,
     &::-webkit-datetime-edit {
       opacity: 0;
