@@ -3,6 +3,7 @@ title: 'Card'
 type: 'component'
 components:
 - Card
+- CardHeader
 - CardGrid
 categories:
 - Content
@@ -36,6 +37,93 @@ notes: |
 </Card>
 ```
 
+### Header
+You may add a header by adding a ``Card.Header`` component.
+This header displays a title, subtitle, and may contain actions.
+
+```jsx live
+<div>
+  <Card>
+    <Card.Header 
+      title="Title"
+    />
+  </Card>
+  <Card className="mt-1">
+    <Card.Header 
+      title="Title"
+      subtitle="Subtitle"
+    />
+  </Card>
+</div>
+```
+
+#### Actions
+The CardHeader supports custom actions via the the actions prop and renders them on the top right of the header.
+
+```jsx live
+<div>
+  <Card>
+    <Card.Header
+      title="Title"
+      subtitle="Subtitle"
+      actions={
+        <ActionRow>
+          <Button>Action</Button>
+        </ActionRow>
+      } 
+    />
+  </Card>
+  <Card className="mt-1">
+    <Card.Header
+      title="Title"
+      subtitle="Subtitle"
+      actions={
+        <>
+          <ExtraSmall>
+            <IconButton
+              icon={FontAwesome.faBars}
+              alt="Menu"
+              onClick={() => console.log("You clicked the menu button")}
+              variant="primary"
+            />
+          </ExtraSmall>
+          <LargerThanExtraSmall>
+            <ActionRow>
+              <Button>Action 1</Button>
+              <Button variant="secondary">Action 2</Button>
+              <IconButton
+                icon={FontAwesome.faBars}
+                alt="Menu"
+                onClick={() => console.log("You clicked the menu button")}
+                variant="primary"
+              />
+            </ActionRow>
+          </LargerThanExtraSmall>
+        </>
+      } 
+    />
+  </Card>
+</div>
+```
+
+#### Sizes
+The CardHeader supports two size variants, ``"sm"`` and ``"md"``. 
+Add ``size="sm"`` for smaller header content and actions.
+
+```jsx live
+<Card>
+  <Card.Header
+    title="Title"
+    subtitle="Subtitle"
+    actions={
+      <ActionRow>
+        <Button>Action</Button>
+      </ActionRow>
+    }
+    size="sm"
+  />
+</Card>
+```
 ### CardGrid
 
 This component displays a collection of Cards as a grid (with customizable responsive behavior), where
