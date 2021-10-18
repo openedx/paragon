@@ -93,6 +93,7 @@ const MyComponent = ({ children, className }) => {
 
 MyComponent.propTypes = {
   className: PropTypes.string.isRequired,
+  children: Proptypes.node.isRequired,
 }
 
 export default MyComponent;
