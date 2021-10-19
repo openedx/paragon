@@ -4,7 +4,7 @@ import {
 } from '~paragon-react'; // eslint-disable-line
 import SEO from '../components/SEO';
 import Layout from '../components/PageLayout';
-import dependentProjectsAnalysis from '../../../dependent-usage-v2.json';
+import dependentProjectsAnalysis from '../../../dependent-usage.json';
 
 const {
   lastModified: analysisLastUpdated,
