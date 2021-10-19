@@ -47,8 +47,8 @@ const SummaryUsage = () => {
       <div className="mb-5">
         <h3>Overview</h3>
         <p>
-          Paragon is used by at least <strong>{dependentProjects.length} projects</strong>, each with an average
-          of <strong>{round(averageComponentsUsedPerProject)}</strong> components per project.
+          Paragon is used by at least <strong>{dependentProjects.length} projects</strong>, with an average
+          of <strong>{round(averageComponentsUsedPerProject)} component instances</strong> per project.
         </p>
       </div>
       <h3>Overall component usage</h3>
