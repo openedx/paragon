@@ -4,7 +4,12 @@ import {
 } from '~paragon-react'; // eslint-disable-line
 import SEO from '../components/SEO';
 import Layout from '../components/PageLayout';
-import dependentProjectsUsages from '../../../dependent-usage.json';
+import dependentProjectsAnalysis from '../../../dependent-usage-v2.json';
+
+const {
+  lastModified: analysisLastUpdated,
+  projectUsages: dependentProjectsUsages,
+} = dependentProjectsAnalysis;
 
 const dependentProjects = dependentProjectsUsages.map(dependentUsage => ({
   ...dependentUsage,
@@ -133,7 +138,7 @@ export default function InsightsPage() {
         <SEO title="Usage Insights" />
         <header className="mb-5">
           <h1>Usage Insights</h1>
-          <p>Last updated: 09-27-2021</p>
+          <p>Last updated: {new Date(analysisLastUpdated).toLocaleDateString()}</p>
         </header>
         <Tabs defaultActiveKey="summary" id="uncontrolled-tab-example">
           <Tab eventKey="summary" title="Summary">
