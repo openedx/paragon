@@ -216,13 +216,13 @@ jobs:
         sudo mv dependent-projects/dependent-usage-analyzer/.projects .projects
         ls -la .projects
     - name: Analyze projects
-      run: npm run analyze .projects -- --out "${GITHUB_WORKSPACE}/dependent-usage-v2.json"
+      run: npm run analyze .projects -- --out "${GITHUB_WORKSPACE}/dependent-usage.json"
       working-directory: dependent-usage-analyzer
     - name: Upload analysis output
       uses: actions/upload-artifact@v2
       with:
         name: dependent-usage-json
-        path: dependent-usage-v2.json
+        path: dependent-usage.json
   # automatically open, approve, and merge a PR with the dependent projects analysis output
   commit-dependents-analysis:
     needs: analyze-dependents
@@ -244,9 +244,9 @@ jobs:
       id: cpr
       uses: peter-evans/create-pull-request@v3
       with:
-        commit-message: "docs: update dependent-usage-v2.json"
-        title: "docs: update dependent-usage-v2.json"
-        body: "Contains automated changes to the dependent-usage-v2.json file, which provides the data for Paragon Usage Insights."
+        commit-message: "docs: update dependent-usage.json"
+        title: "docs: update dependent-usage.json"
+        body: "Contains automated changes to the dependent-usage.json file, which provides the data for Paragon Usage Insights."
         labels: automerge
         branch: dependent-usage-analyzer/update-dependent-usage-json
         base: master
