@@ -20,13 +20,52 @@ function getProjectFiles(dir) {
   return glob.sync(`${dir}/**/*.{js,jsx}`, { ignore });
 }
 
-function getPackageInfo(dir) {
+/**
+ * Attempts to extract the Paragon version for a given package directory.
+ * When no package-lock.json file is found in the given directory path or when
+ * no Paragon version can be retrieved, recursively traverse up the directory tree
+ * until we reach the top-level projects directory. This approach is necessary in
+ * order to account for potential projects that are technically monorepos containing
+ * multiple packages, where dependencies are hoisted to a parent directory.
+ *
+ * @param {string} dir Path to directory
+ * @param {object} options Optional options
+ * @param {string} options.projectsDir Path to top-level projects directory
+ * @returns Object containing direct or peer Paragon dependency version
+ */
+function getDependencyVersion(dir, options = {}) {
+  // package-lock.json contains the actual Paragon version
+  // rather than a range in package.json.
+  const packageFilename = 'package-lock.json';
+  const { projectsDir } = options;
+  if (dir === projectsDir) {
+    // At the top-level directory containing all projects; Paragon version not found.
+    return {};
+  }
+  const parentDir = dir.split('/').slice(0, -1).join('/');
+  if (!fs.existsSync(`${dir}/${packageFilename}`)) {
+    // No package-lock.json file exists, so try traversing up the tree until
+    // reaching the top-level ``projectsDir``.
+    return getDependencyVersion(parentDir, options);
+  }
+  const { dependencies, peerDependencies } = JSON.parse(fs.readFileSync(`${dir}/${packageFilename}`, { encoding: 'utf-8' }));
+  const directDependencyVersion = dependencies && dependencies['@edx/paragon'] ? dependencies['@edx/paragon'].version : false;
+  const peerDependencyVersion = peerDependencies && peerDependencies['@edx/paragon'] ? peerDependencies['@edx/paragon'].version : false;
+  if (directDependencyVersion || peerDependencyVersion) {
+    return {
+      directDependencyVersion,
+      peerDependencyVersion,
+    }
+  }
+  // No Paragon dependency exists, so try traversing up the tree until
+  // reaching the top-level ``projectsDir``.
+  return getDependencyVersion(parentDir, options)
+}
+
+function getPackageInfo(dir, options = {}) {
+  const { directDependencyVersion, peerDependencyVersion } = getDependencyVersion(dir, options);
   try {
-    // Package lock contains the actual Paragon version rather than a range in package.json
-    const { dependencies, peerDependencies } = JSON.parse(fs.readFileSync(`${dir}/package-lock.json`, { encoding: 'utf-8' }));
     const { name, repository } = JSON.parse(fs.readFileSync(`${dir}/package.json`, { encoding: 'utf-8' }));
-    const directDependencyVersion = dependencies && dependencies['@edx/paragon'] ? dependencies['@edx/paragon'].version : false;
-    const peerDependencyVersion = peerDependencies && peerDependencies['@edx/paragon'] ? peerDependencies['@edx/paragon'].version : false;
     return {
       version: directDependencyVersion || peerDependencyVersion,
       name,
@@ -34,13 +73,13 @@ function getPackageInfo(dir) {
       folderName: dir.split('/').pop(),
     };
   } catch (e) {
-    console.error('Unable to read package lock json in ', dir);
+    console.error('Unable to read package.json in ', dir);
     return {};
   }
 }
 
 function getComponentUsagesInFiles(files, rootDir) {
-  // save the file and line location of components for all files
+  // Save the file and line location of components for all files
   return files.reduce((usagesAccumulator, filePath) => {
     const sourceCode = fs.readFileSync(filePath, { encoding: 'utf-8' });
     let ast;
@@ -71,7 +110,7 @@ function getComponentUsagesInFiles(files, rootDir) {
     // Walk the abstract syntax tree of the file looking for paragon imports and component usages
     walk.simple({
       ImportDeclaration(node) {
-        // ignore icons and direct imports for now
+        // Ignore icons and direct imports for now
         if (node.source.value === '@edx/paragon') {
           node.specifiers.forEach(addParagonImport);
         }
@@ -94,8 +133,8 @@ function getComponentUsagesInFiles(files, rootDir) {
 }
 
 function analyzeProject(dir, options = {}) {
-  const packageInfo = getPackageInfo(dir);
-  const files = getProjectFiles(dir, options);
+  const packageInfo = getPackageInfo(dir, options);
+  const files = getProjectFiles(dir);
   const usages = getComponentUsagesInFiles(files, dir);
 
   // Add Paragon version to each component usage
@@ -136,7 +175,11 @@ program
     const outputFilePath = options.out || 'out.json';
     const projectDirectories = findProjectsToAnalyze(projectsDir);
     console.log(`Found ${projectDirectories.length} projects to analyze`);
-    const analysis = projectDirectories.map(analyzeProject);
+    const analyzedProjects = projectDirectories.map((dir) => analyzeProject(dir, { projectsDir }));
+    const analysis = {
+      lastModified: Date.now(),
+      projectUsages: analyzedProjects,
+    }
     fs.writeFileSync(outputFilePath, JSON.stringify(analysis, null, 2));
     console.log(`Analyzed ${projectDirectories.length} projects:`);
     console.log(analysis);
