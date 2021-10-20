@@ -1,8 +1,8 @@
 {
-  "lastModified": 1634674531723,
+  "lastModified": 1634738869499,
   "projectUsages": [
     {
-      "version": "16.14.7",
+      "version": "16.15.0",
       "name": "edx-credentials",
       "repository": {
         "type": "git",
@@ -15,7 +15,7 @@
             "filePath": "credentials/static/components/FoldingTable.jsx",
             "line": 26,
             "column": 6,
-            "version": "16.14.7"
+            "version": "16.15.0"
           }
         ],
         "Button.Deprecated": [
@@ -23,37 +23,37 @@
             "filePath": "credentials/static/components/MasqueradeBanner.jsx",
             "line": 102,
             "column": 12,
-            "version": "16.14.7"
+            "version": "16.15.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 277,
             "column": 14,
-            "version": "16.14.7"
+            "version": "16.15.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 284,
             "column": 12,
-            "version": "16.14.7"
+            "version": "16.15.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 296,
             "column": 12,
-            "version": "16.14.7"
+            "version": "16.15.0"
           },
           {
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 141,
             "column": 10,
-            "version": "16.14.7"
+            "version": "16.15.0"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 177,
             "column": 18,
-            "version": "16.14.7"
+            "version": "16.15.0"
           }
         ],
         "StatusAlert": [
@@ -61,43 +61,43 @@
             "filePath": "credentials/static/components/MasqueradeBanner.jsx",
             "line": 109,
             "column": 8,
-            "version": "16.14.7"
+            "version": "16.15.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 304,
             "column": 8,
-            "version": "16.14.7"
+            "version": "16.15.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 315,
             "column": 8,
-            "version": "16.14.7"
+            "version": "16.15.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 329,
             "column": 8,
-            "version": "16.14.7"
+            "version": "16.15.0"
           },
           {
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 109,
             "column": 14,
-            "version": "16.14.7"
+            "version": "16.15.0"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 138,
             "column": 14,
-            "version": "16.14.7"
+            "version": "16.15.0"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 152,
             "column": 14,
-            "version": "16.14.7"
+            "version": "16.15.0"
           }
         ],
         "Icon": [
@@ -105,13 +105,13 @@
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 311,
             "column": 14,
-            "version": "16.14.7"
+            "version": "16.15.0"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 191,
             "column": 16,
-            "version": "16.14.7"
+            "version": "16.15.0"
           }
         ],
         "Modal": [
@@ -119,13 +119,13 @@
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 90,
             "column": 6,
-            "version": "16.14.7"
+            "version": "16.15.0"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 130,
             "column": 6,
-            "version": "16.14.7"
+            "version": "16.15.0"
           }
         ],
         "CheckBoxGroup": [
@@ -133,7 +133,7 @@
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 123,
             "column": 12,
-            "version": "16.14.7"
+            "version": "16.15.0"
           }
         ],
         "CheckBox": [
@@ -141,7 +141,7 @@
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 125,
             "column": 16,
-            "version": "16.14.7"
+            "version": "16.15.0"
           }
         ],
         "InputText": [
@@ -149,7 +149,7 @@
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 165,
             "column": 18,
-            "version": "16.14.7"
+            "version": "16.15.0"
           }
         ]
       }
@@ -4602,7 +4602,7 @@
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
-            "line": 199,
+            "line": 202,
             "column": 14,
             "version": "16.14.1"
           }
@@ -4918,13 +4918,13 @@
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
-            "line": 173,
-            "column": 12,
+            "line": 175,
+            "column": 16,
             "version": "16.14.1"
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
-            "line": 186,
+            "line": 189,
             "column": 12,
             "version": "16.14.1"
           }
@@ -4974,13 +4974,13 @@
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
-            "line": 174,
-            "column": 14,
+            "line": 176,
+            "column": 18,
             "version": "16.14.1"
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
-            "line": 187,
+            "line": 190,
             "column": 14,
             "version": "16.14.1"
           }
@@ -5098,13 +5098,13 @@
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
-            "line": 179,
-            "column": 33,
+            "line": 181,
+            "column": 37,
             "version": "16.14.1"
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
-            "line": 192,
+            "line": 195,
             "column": 33,
             "version": "16.14.1"
           }
@@ -5368,13 +5368,13 @@
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
-            "line": 211,
+            "line": 214,
             "column": 14,
             "version": "16.14.1"
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
-            "line": 223,
+            "line": 226,
             "column": 14,
             "version": "16.14.1"
           }
@@ -8217,6 +8217,12 @@
             "version": "16.14.7"
           },
           {
+            "filePath": "src/components/program/ProgramSidebarListItem.jsx",
+            "line": 12,
+            "column": 4,
+            "version": "16.14.7"
+          },
+          {
             "filePath": "src/components/search/SearchResults.jsx",
             "line": 81,
             "column": 12,
@@ -8362,6 +8368,18 @@
           },
           {
             "filePath": "src/components/course/CourseSidebarListItem.jsx",
+            "line": 17,
+            "column": 6,
+            "version": "16.14.7"
+          },
+          {
+            "filePath": "src/components/program/ProgramSidebarListItem.jsx",
+            "line": 13,
+            "column": 6,
+            "version": "16.14.7"
+          },
+          {
+            "filePath": "src/components/program/ProgramSidebarListItem.jsx",
             "line": 17,
             "column": 6,
             "version": "16.14.7"
