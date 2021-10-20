@@ -2,7 +2,7 @@ name: Analyze Dependents
 
 on:
   schedule:
-  - cron: "0 0 * * *" # daily
+  - cron: "0 14 * * *" # daily at 10am EST (Github Actions works with UTC)
 
 jobs:
   # clones known dependent Git repositories from Open edX
@@ -260,4 +260,3 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.EDX_NETLIFY_PAT }}
         MERGE_METHOD: squash
-        PULL_REQUEST: ${{ steps.cpr.outputs.pull-request-number }}
