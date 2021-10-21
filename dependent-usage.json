@@ -1,5 +1,5 @@
 {
-  "lastModified": 1634738869499,
+  "lastModified": 1634825264539,
   "projectUsages": [
     {
       "version": "16.15.0",
@@ -1011,7 +1011,7 @@
           },
           {
             "filePath": "src/id-verification/IdVerificationPage.jsx",
-            "line": 73,
+            "line": 74,
             "column": 12,
             "version": "16.1.0"
           },
@@ -1397,7 +1397,7 @@
           },
           {
             "filePath": "src/id-verification/IdVerificationPage.jsx",
-            "line": 79,
+            "line": 80,
             "column": 8,
             "version": "16.1.0"
           }
@@ -5565,7 +5565,7 @@
           },
           {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 205,
+            "line": 216,
             "column": 16,
             "version": "16.14.3"
           },
@@ -5821,19 +5821,19 @@
           },
           {
             "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
-            "line": 50,
+            "line": 47,
             "column": 14,
             "version": "16.14.3"
           },
           {
             "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
-            "line": 53,
+            "line": 50,
             "column": 14,
             "version": "16.14.3"
           },
           {
             "filePath": "src/pages-and-resources/teams/Settings.jsx",
-            "line": 138,
+            "line": 134,
             "column": 20,
             "version": "16.14.3"
           },
@@ -5865,7 +5865,7 @@
           },
           {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 39,
+            "line": 41,
             "column": 4,
             "version": "16.14.3"
           },
@@ -5895,12 +5895,18 @@
           },
           {
             "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
-            "line": 43,
+            "line": 40,
             "column": 4,
             "version": "16.14.3"
           }
         ],
         "Form.Group": [
+          {
+            "filePath": "src/generic/FormikControl.jsx",
+            "line": 22,
+            "column": 4,
+            "version": "16.14.3"
+          },
           {
             "filePath": "src/generic/FormSwitchGroup.jsx",
             "line": 23,
@@ -5975,31 +5981,7 @@
           },
           {
             "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
-            "line": 84,
-            "column": 12,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
             "line": 98,
-            "column": 12,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
-            "line": 114,
-            "column": 12,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
-            "line": 138,
-            "column": 12,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/pages-and-resources/teams/Settings.jsx",
-            "line": 105,
             "column": 12,
             "version": "16.14.3"
           },
@@ -6031,6 +6013,136 @@
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 343,
             "column": 12,
+            "version": "16.14.3"
+          }
+        ],
+        "Form.Control": [
+          {
+            "filePath": "src/generic/FormikControl.jsx",
+            "line": 24,
+            "column": 6,
+            "version": "16.14.3"
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
+            "line": 89,
+            "column": 14,
+            "version": "16.14.3"
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
+            "line": 102,
+            "column": 14,
+            "version": "16.14.3"
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
+            "line": 115,
+            "column": 14,
+            "version": "16.14.3"
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/blackout-dates/BlackoutDatesInput.jsx",
+            "line": 39,
+            "column": 6,
+            "version": "16.14.3"
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
+            "line": 115,
+            "column": 10,
+            "version": "16.14.3"
+          },
+          {
+            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
+            "line": 273,
+            "column": 14,
+            "version": "16.14.3"
+          },
+          {
+            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
+            "line": 299,
+            "column": 12,
+            "version": "16.14.3"
+          },
+          {
+            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+            "line": 294,
+            "column": 10,
+            "version": "16.14.3"
+          },
+          {
+            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+            "line": 318,
+            "column": 12,
+            "version": "16.14.3"
+          }
+        ],
+        "Form.Text": [
+          {
+            "filePath": "src/generic/FormikControl.jsx",
+            "line": 34,
+            "column": 8,
+            "version": "16.14.3"
+          },
+          {
+            "filePath": "src/generic/FormSwitchGroup.jsx",
+            "line": 41,
+            "column": 8,
+            "version": "16.14.3"
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
+            "line": 131,
+            "column": 12,
+            "version": "16.14.3"
+          },
+          {
+            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
+            "line": 282,
+            "column": 14,
+            "version": "16.14.3"
+          },
+          {
+            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
+            "line": 309,
+            "column": 12,
+            "version": "16.14.3"
+          },
+          {
+            "filePath": "src/pages-and-resources/teams/Settings.jsx",
+            "line": 119,
+            "column": 14,
+            "version": "16.14.3"
+          },
+          {
+            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+            "line": 230,
+            "column": 10,
+            "version": "16.14.3"
+          },
+          {
+            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+            "line": 270,
+            "column": 14,
+            "version": "16.14.3"
+          },
+          {
+            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+            "line": 302,
+            "column": 10,
+            "version": "16.14.3"
+          },
+          {
+            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+            "line": 328,
+            "column": 12,
+            "version": "16.14.3"
+          },
+          {
+            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+            "line": 371,
+            "column": 14,
             "version": "16.14.3"
           }
         ],
@@ -6067,14 +6179,14 @@
           },
           {
             "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
-            "line": 115,
+            "line": 99,
             "column": 14,
             "version": "16.14.3"
           },
           {
             "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
-            "line": 139,
-            "column": 14,
+            "line": 128,
+            "column": 21,
             "version": "16.14.3"
           },
           {
@@ -6110,92 +6222,6 @@
             "version": "16.14.3"
           }
         ],
-        "Form.Text": [
-          {
-            "filePath": "src/generic/FormSwitchGroup.jsx",
-            "line": 41,
-            "column": 8,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
-            "line": 131,
-            "column": 12,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 282,
-            "column": 14,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 309,
-            "column": 12,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
-            "line": 95,
-            "column": 16,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
-            "line": 111,
-            "column": 16,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
-            "line": 151,
-            "column": 16,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/pages-and-resources/teams/Settings.jsx",
-            "line": 117,
-            "column": 16,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/pages-and-resources/teams/Settings.jsx",
-            "line": 122,
-            "column": 14,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-            "line": 230,
-            "column": 10,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-            "line": 270,
-            "column": 14,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-            "line": 302,
-            "column": 10,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-            "line": 328,
-            "column": 12,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-            "line": 371,
-            "column": 14,
-            "version": "16.14.3"
-          }
-        ],
         "Spinner": [
           {
             "filePath": "src/generic/Loading.jsx",
@@ -6213,7 +6239,7 @@
         "ModalDialog": [
           {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 67,
+            "line": 69,
             "column": 4,
             "version": "16.14.3"
           },
@@ -6233,7 +6259,7 @@
         "ModalDialog.Header": [
           {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 76,
+            "line": 78,
             "column": 6,
             "version": "16.14.3"
           },
@@ -6253,7 +6279,7 @@
         "ModalDialog.Title": [
           {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 77,
+            "line": 79,
             "column": 8,
             "version": "16.14.3"
           },
@@ -6273,7 +6299,7 @@
         "ModalDialog.Body": [
           {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 81,
+            "line": 83,
             "column": 6,
             "version": "16.14.3"
           },
@@ -6293,7 +6319,7 @@
         "ModalDialog.Footer": [
           {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 84,
+            "line": 86,
             "column": 6,
             "version": "16.14.3"
           },
@@ -6313,7 +6339,7 @@
         "ActionRow": [
           {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 85,
+            "line": 87,
             "column": 8,
             "version": "16.14.3"
           },
@@ -6333,7 +6359,7 @@
         "ModalDialog.CloseButton": [
           {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 86,
+            "line": 88,
             "column": 10,
             "version": "16.14.3"
           },
@@ -6353,7 +6379,7 @@
         "Hyperlink": [
           {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 154,
+            "line": 167,
             "column": 4,
             "version": "16.14.3"
           },
@@ -6385,7 +6411,7 @@
         "Form": [
           {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 181,
+            "line": 194,
             "column": 10,
             "version": "16.14.3"
           },
@@ -6417,7 +6443,7 @@
         "StatefulButton": [
           {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 193,
+            "line": 204,
             "column": 16,
             "version": "16.14.3"
           },
@@ -6437,7 +6463,7 @@
         "Alert.Heading": [
           {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 206,
+            "line": 217,
             "column": 18,
             "version": "16.14.3"
           }
@@ -6445,7 +6471,7 @@
         "Badge": [
           {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 222,
+            "line": 233,
             "column": 22,
             "version": "16.14.3"
           },
@@ -6493,86 +6519,6 @@
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/AppExternalLinks.jsx",
             "line": 47,
             "column": 16,
-            "version": "16.14.3"
-          }
-        ],
-        "Form.Control": [
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
-            "line": 89,
-            "column": 14,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
-            "line": 102,
-            "column": 14,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
-            "line": 115,
-            "column": 14,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/blackout-dates/BlackoutDatesInput.jsx",
-            "line": 39,
-            "column": 6,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
-            "line": 115,
-            "column": 10,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 273,
-            "column": 14,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 299,
-            "column": 12,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
-            "line": 85,
-            "column": 14,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
-            "line": 99,
-            "column": 14,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
-            "line": 140,
-            "column": 14,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/pages-and-resources/teams/Settings.jsx",
-            "line": 106,
-            "column": 14,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-            "line": 294,
-            "column": 10,
-            "version": "16.14.3"
-          },
-          {
-            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-            "line": 318,
-            "column": 12,
             "version": "16.14.3"
           }
         ],
@@ -6791,7 +6737,7 @@
           },
           {
             "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
-            "line": 118,
+            "line": 102,
             "column": 14,
             "version": "16.14.3"
           }
@@ -6823,7 +6769,7 @@
           },
           {
             "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
-            "line": 125,
+            "line": 109,
             "column": 18,
             "version": "16.14.3"
           }
@@ -7066,8 +7012,8 @@
           },
           {
             "filePath": "src/discussions/posts/PostsView.jsx",
-            "line": 61,
-            "column": 10,
+            "line": 73,
+            "column": 12,
             "version": "16.13.2"
           }
         ],
@@ -8138,8 +8084,8 @@
           },
           {
             "filePath": "src/components/program/ProgramHeader.jsx",
-            "line": 7,
-            "column": 4,
+            "line": 11,
+            "column": 6,
             "version": "16.14.7"
           },
           {
@@ -8162,7 +8108,7 @@
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 169,
+            "line": 170,
             "column": 10,
             "version": "16.14.7"
           },
@@ -8456,31 +8402,31 @@
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 149,
+            "line": 150,
             "column": 16,
             "version": "16.14.7"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 153,
+            "line": 154,
             "column": 16,
             "version": "16.14.7"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 160,
+            "line": 161,
             "column": 16,
             "version": "16.14.7"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 164,
+            "line": 165,
             "column": 16,
             "version": "16.14.7"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 232,
+            "line": 233,
             "column": 16,
             "version": "16.14.7"
           }
@@ -8904,38 +8850,38 @@
         "Collapsible.Advanced": [
           {
             "filePath": "src/components/program/ProgramCourses.jsx",
-            "line": 27,
-            "column": 8,
+            "line": 30,
+            "column": 14,
             "version": "16.14.7"
           }
         ],
         "Collapsible.Trigger": [
           {
             "filePath": "src/components/program/ProgramCourses.jsx",
-            "line": 28,
-            "column": 10,
+            "line": 31,
+            "column": 16,
             "version": "16.14.7"
           }
         ],
         "Collapsible.Visible": [
           {
             "filePath": "src/components/program/ProgramCourses.jsx",
-            "line": 30,
-            "column": 12,
+            "line": 33,
+            "column": 18,
             "version": "16.14.7"
           },
           {
             "filePath": "src/components/program/ProgramCourses.jsx",
-            "line": 34,
-            "column": 12,
+            "line": 37,
+            "column": 18,
             "version": "16.14.7"
           }
         ],
         "Collapsible.Body": [
           {
             "filePath": "src/components/program/ProgramCourses.jsx",
-            "line": 39,
-            "column": 10,
+            "line": 42,
+            "column": 16,
             "version": "16.14.7"
           }
         ],
@@ -9022,7 +8968,7 @@
         "Stepper": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 139,
+            "line": 140,
             "column": 6,
             "version": "16.14.7"
           }
@@ -9030,7 +8976,7 @@
         "FullscreenModal": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 140,
+            "line": 141,
             "column": 8,
             "version": "16.14.7"
           }
@@ -9038,7 +8984,7 @@
         "Stepper.Header": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 145,
+            "line": 146,
             "column": 26,
             "version": "16.14.7"
           }
@@ -9046,13 +8992,13 @@
         "Stepper.ActionRow": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 148,
+            "line": 149,
             "column": 14,
             "version": "16.14.7"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 159,
+            "line": 160,
             "column": 14,
             "version": "16.14.7"
           }
@@ -9060,13 +9006,13 @@
         "Stepper.Step": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 170,
+            "line": 171,
             "column": 12,
             "version": "16.14.7"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 220,
+            "line": 221,
             "column": 12,
             "version": "16.14.7"
           }
@@ -9803,7 +9749,7 @@
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 82,
+            "line": 91,
             "column": 16,
             "version": "16.14.9"
           },
@@ -10215,7 +10161,7 @@
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 41,
+            "line": 50,
             "column": 6,
             "version": "16.14.9"
           },
@@ -10247,7 +10193,7 @@
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 42,
+            "line": 51,
             "column": 8,
             "version": "16.14.9"
           },
@@ -10273,7 +10219,7 @@
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 46,
+            "line": 55,
             "column": 10,
             "version": "16.14.9"
           },
@@ -10287,7 +10233,7 @@
         "Card.Title": [
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 43,
+            "line": 52,
             "column": 10,
             "version": "16.14.9"
           },
@@ -10307,7 +10253,7 @@
         "Form.Switch": [
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 69,
+            "line": 78,
             "column": 12,
             "version": "16.14.9"
           }
@@ -10315,7 +10261,7 @@
         "Card.Footer": [
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 79,
+            "line": 88,
             "column": 10,
             "version": "16.14.9"
           }
@@ -12339,7 +12285,7 @@
           },
           {
             "filePath": "src/containers/Rubric/RubricFeedback.jsx",
-            "line": 38,
+            "line": 44,
             "column": 8,
             "version": "16.14.4"
           }
@@ -12347,13 +12293,13 @@
         "Form.Group": [
           {
             "filePath": "src/containers/CriterionContainer/index.jsx",
-            "line": 22,
-            "column": 6,
+            "line": 23,
+            "column": 4,
             "version": "16.14.4"
           },
           {
             "filePath": "src/containers/Rubric/RubricFeedback.jsx",
-            "line": 31,
+            "line": 37,
             "column": 6,
             "version": "16.14.4"
           }
@@ -12361,8 +12307,8 @@
         "Form.Label": [
           {
             "filePath": "src/containers/CriterionContainer/index.jsx",
-            "line": 23,
-            "column": 8,
+            "line": 24,
+            "column": 6,
             "version": "16.14.4"
           },
           {
@@ -12373,7 +12319,7 @@
           },
           {
             "filePath": "src/containers/Rubric/RubricFeedback.jsx",
-            "line": 32,
+            "line": 38,
             "column": 8,
             "version": "16.14.4"
           }
@@ -15051,10 +14997,36 @@
       },
       "folderName": "prospectus",
       "usages": {
+        "CardGrid": [
+          {
+            "filePath": "src/components/2U/CardsList/SubjectCards.jsx",
+            "line": 20,
+            "column": 6,
+            "version": "16.14.6"
+          },
+          {
+            "filePath": "src/components/Course/CourseRunSelector.jsx",
+            "line": 166,
+            "column": 10,
+            "version": "16.14.6"
+          },
+          {
+            "filePath": "src/components/Course/CourseRunSelectorExp.jsx",
+            "line": 202,
+            "column": 10,
+            "version": "16.14.6"
+          },
+          {
+            "filePath": "src/components/SearchLanding/PartnerFilters.jsx",
+            "line": 75,
+            "column": 10,
+            "version": "16.14.6"
+          }
+        ],
         "Card": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 64,
+            "line": 100,
             "column": 8,
             "version": "16.14.6"
           },
@@ -15066,8 +15038,8 @@
           },
           {
             "filePath": "src/components/SearchLanding/PartnerFilters.jsx",
-            "line": 70,
-            "column": 4,
+            "line": 84,
+            "column": 14,
             "version": "16.14.6"
           },
           {
@@ -15080,7 +15052,7 @@
         "Card.Img": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 65,
+            "line": 101,
             "column": 10,
             "version": "16.14.6"
           }
@@ -15088,7 +15060,7 @@
         "Image": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 69,
+            "line": 105,
             "column": 10,
             "version": "16.14.6"
           },
@@ -15108,7 +15080,7 @@
         "Card.Body": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 74,
+            "line": 110,
             "column": 10,
             "version": "16.14.6"
           },
@@ -15128,7 +15100,7 @@
         "Card.Title": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 76,
+            "line": 112,
             "column": 14,
             "version": "16.14.6"
           }
@@ -15136,7 +15108,7 @@
         "Card.Subtitle": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 77,
+            "line": 113,
             "column": 14,
             "version": "16.14.6"
           }
@@ -15144,7 +15116,7 @@
         "Badge": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 80,
+            "line": 116,
             "column": 14,
             "version": "16.14.6"
           },
@@ -15194,7 +15166,7 @@
         "Card.Footer": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 83,
+            "line": 119,
             "column": 10,
             "version": "16.14.6"
           }
@@ -15202,7 +15174,7 @@
         "Icon": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 85,
+            "line": 121,
             "column": 12,
             "version": "16.14.6"
           },
@@ -15422,32 +15394,6 @@
             "filePath": "src/components/SearchLanding/PopularSearchLinks.jsx",
             "line": 64,
             "column": 8,
-            "version": "16.14.6"
-          }
-        ],
-        "CardGrid": [
-          {
-            "filePath": "src/components/CardList/BootcampCardList.jsx",
-            "line": 27,
-            "column": 10,
-            "version": "16.14.6"
-          },
-          {
-            "filePath": "src/components/Course/CourseRunSelector.jsx",
-            "line": 166,
-            "column": 10,
-            "version": "16.14.6"
-          },
-          {
-            "filePath": "src/components/Course/CourseRunSelectorExp.jsx",
-            "line": 202,
-            "column": 10,
-            "version": "16.14.6"
-          },
-          {
-            "filePath": "src/components/SearchLanding/PartnerFilters.jsx",
-            "line": 100,
-            "column": 12,
             "version": "16.14.6"
           }
         ],
@@ -15730,7 +15676,7 @@
           },
           {
             "filePath": "src/components/Section/index.jsx",
-            "line": 11,
+            "line": 12,
             "column": 4,
             "version": "16.14.6"
           },
@@ -15760,14 +15706,38 @@
           },
           {
             "filePath": "src/templates/aboutEdX.jsx",
-            "line": 384,
+            "line": 367,
             "column": 12,
             "version": "16.14.6"
           },
           {
             "filePath": "src/templates/aboutEdX.jsx",
-            "line": 408,
+            "line": 391,
             "column": 12,
+            "version": "16.14.6"
+          },
+          {
+            "filePath": "src/templates/aboutEdX.jsx",
+            "line": 458,
+            "column": 14,
+            "version": "16.14.6"
+          },
+          {
+            "filePath": "src/templates/aboutEdX.jsx",
+            "line": 468,
+            "column": 14,
+            "version": "16.14.6"
+          },
+          {
+            "filePath": "src/templates/aboutEdX.jsx",
+            "line": 477,
+            "column": 14,
+            "version": "16.14.6"
+          },
+          {
+            "filePath": "src/templates/aboutEdX.jsx",
+            "line": 486,
+            "column": 14,
             "version": "16.14.6"
           },
           {
