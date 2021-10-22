@@ -69,7 +69,7 @@ MailtoLink.defaultProps = {
 MailtoLink.propTypes = {
   /** Content of the mailto link */
   children: PropTypes.node.isRequired,
-  /** Custom class names for the hyperlink */
+  /** Custom class names for the mailto link */
   className: PropTypes.string,
   /** specifies the email's recipients */
   to: PropTypes.oneOfType([PropTypes.arrayOf(emailPropType), emailPropType]),
