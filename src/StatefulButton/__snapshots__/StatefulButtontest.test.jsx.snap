@@ -37,7 +37,6 @@ exports[`StatefulButton renders basic usage 1`] = `
         >
           <svg
             aria-hidden={true}
-            aria-label=""
             fill="none"
             focusable={false}
             height={24}
@@ -77,7 +76,6 @@ exports[`StatefulButton renders basic usage 1`] = `
         >
           <svg
             aria-hidden={true}
-            aria-label=""
             fill="none"
             focusable={false}
             height={24}

@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 import emailPropType from 'email-prop-type';
 import isRequiredIf from 'react-proptype-conditional-require';
 import mailtoLink from 'mailto-link';
+import classNames from 'classnames';
 
 import Hyperlink from '../Hyperlink';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
-const MailtoLink = (props) => {
+const MailtoLink = React.forwardRef((props, ref) => {
   const {
     to,
     cc,
@@ -19,7 +20,8 @@ const MailtoLink = (props) => {
     target,
     onClick,
     externalLink,
-    ...other
+    className,
+    ...attrs
   } = props;
 
   const externalLinkAlternativeText = externalLink.alternativeText;
@@ -34,11 +36,20 @@ const MailtoLink = (props) => {
     onClick,
     externalLinkAlternativeText,
     externalLinkTitle,
-    ...other,
+    ...attrs,
   };
 
-  return <Hyperlink {...hyperlinkProps}>{children}</Hyperlink>;
-};
+  return (
+    <span
+      ref={ref}
+      className={classNames('pgn__mailtolink', className)}
+    >
+      <Hyperlink {...hyperlinkProps}>
+        {children}
+      </Hyperlink>
+    </span>
+  );
+});
 
 MailtoLink.defaultProps = {
   to: [],
@@ -49,13 +60,17 @@ MailtoLink.defaultProps = {
   target: '_self',
   onClick: null,
   externalLink: {
-    alternativeText: 'Opens in a new window',
-    title: 'Opens in a new window',
+    alternativeText: 'in a new tab',
+    title: 'Opens in a new tab',
   },
+  className: undefined,
 };
 
 MailtoLink.propTypes = {
+  /** Content of the mailto link */
   children: PropTypes.node.isRequired,
+  /** Custom class names for the mailto link */
+  className: PropTypes.string,
   /** specifies the email's recipients */
   to: PropTypes.oneOfType([PropTypes.arrayOf(emailPropType), emailPropType]),
   /** specifies the email's carbon copy recipients */
