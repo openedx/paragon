@@ -30,6 +30,7 @@ import ControlledSelectHeader from './selection/ControlledSelectHeader';
 import DataTableLayout from './DataTableLayout';
 
 import selectionsReducer, { initialState as initialSelectionsState } from './selection/data/reducer';
+import tableControlledSelectionActions from './selection/data/actions';
 
 function DataTable({
   columns, data, defaultColumnValues, additionalColumns, isSelectable,
@@ -60,7 +61,6 @@ function DataTable({
   }), [columns, data, defaultColumn, manualFilters, manualPagination, initialState, initialTableOptions]);
 
   const [selections, selectionsDispatch] = useReducer(selectionsReducer, initialSelectionsState);
-
   if (isPaginated && manualPagination) {
     // pageCount is required when pagination is manual, if it's not there passing -1 as per react-table docs
     tableOptions.pageCount = pageCount || -1;
@@ -308,5 +308,6 @@ DataTable.TableActions = TableActions;
 DataTable.ControlledSelectionStatus = ControlledSelectionStatus;
 DataTable.ControlledSelect = ControlledSelect;
 DataTable.ControlledSelectHeader = ControlledSelectHeader;
+DataTable.ControlledSelectionActions = tableControlledSelectionActions;
 
 export default DataTable;
