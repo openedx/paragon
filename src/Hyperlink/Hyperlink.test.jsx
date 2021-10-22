@@ -25,6 +25,7 @@ describe('correct rendering', () => {
     const wrapper = mount(<Hyperlink {...props} />).find('a');
     expect(wrapper).toHaveLength(1);
 
+    expect(wrapper.prop('className')).toContain('pgn__hyperlink');
     expect(wrapper.prop('children')).toEqual([content, undefined]);
     expect(wrapper.prop('href')).toEqual(destination);
     expect(wrapper.prop('target')).toEqual('_self');
@@ -52,7 +53,7 @@ describe('correct rendering', () => {
 describe('security', () => {
   it('prevents reverse tabnabbing for links with target="_blank"', () => {
     const wrapper = mount(<Hyperlink {...externalLinkProps} />);
-    expect(wrapper.find('a').prop('rel')).toEqual('noopener');
+    expect(wrapper.find('a').prop('rel')).toEqual('noopener noreferrer');
   });
 });
 

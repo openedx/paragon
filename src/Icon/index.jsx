@@ -28,7 +28,7 @@ function Icon({
     const mergedSvgProps = { ...svgAttrs };
 
     if (!hasAriaLabel) {
-      mergedSvgProps['aria-label'] = '';
+      mergedSvgProps['aria-label'] = undefined;
       mergedSvgProps['aria-hidden'] = true;
     }
 

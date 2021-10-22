@@ -21,7 +21,6 @@ exports[`Menu Item renders correctly renders as expected with menu items 1`] = `
     >
       <svg
         aria-hidden={true}
-        aria-label=""
         fill="none"
         focusable={false}
         height={24}
@@ -53,7 +52,6 @@ exports[`Menu Item renders correctly renders as expected with menu items 1`] = `
     >
       <svg
         aria-hidden={true}
-        aria-label=""
         fill="none"
         focusable={false}
         height={24}
@@ -79,7 +77,7 @@ exports[`Menu Item renders correctly renders as expected with menu items 1`] = `
     />
   </button>
   <a
-    className="pgn__menu-item"
+    className="pgn__hyperlink default-link standalone-link pgn__menu-item"
     href="https://en.wikipedia.org/wiki/Hyperlink"
     onClick={[Function]}
     target="_self"

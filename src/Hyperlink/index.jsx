@@ -7,8 +7,9 @@ import { Launch } from '../../icons';
 
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
-function Hyperlink(props) {
+const Hyperlink = React.forwardRef((props, ref) => {
   const {
+    className,
     destination,
     children,
     target,
@@ -18,18 +19,35 @@ function Hyperlink(props) {
     variant,
     isInline,
     showLaunchIcon,
-    ...other
+    ...attrs
   } = props;
-
   let externalLinkIcon;
 
   if (target === '_blank') {
+    const generateRel = () => {
+      let { rel } = attrs;
+      if (!rel) {
+        return 'noopener noreferrer';
+      }
+      if (!rel.includes('noopener')) {
+        rel += ' noopener';
+      }
+      if (!rel.includes('noreferrer')) {
+        rel += ' noreferrer';
+      }
+      return rel;
+    };
+
     // Add this rel attribute to prevent Reverse Tabnabbing
-    other.rel = other.rel ? `noopener ${other.rel}` : 'noopener';
+    attrs.rel = generateRel();
     if (showLaunchIcon) {
       externalLinkIcon = (
-        // Space between content and icon
-        <span className="d-inline-block align-middle ml-2">
+        <span
+          // TODO: do not use css utility classes in components as they use !important, which hinders theming.
+          className="d-inline-block align-middle ml-2"
+          aria-label={externalLinkAlternativeText}
+          title={externalLinkTitle}
+        >
           <Icon src={Launch} style={{ height: '1em', width: '1em' }} />
         </span>
       );
@@ -38,27 +56,33 @@ function Hyperlink(props) {
 
   return (
     <a
+      ref={ref}
       className={classNames(
+        'pgn__hyperlink',
         `${variant}-link`,
         {
           'standalone-link': !isInline,
           'inline-link': isInline,
         },
+        className,
       )}
       href={destination}
       target={target}
       onClick={onClick}
-      {...other}
-    >{children}{externalLinkIcon}
+      {...attrs}
+    >
+      {children}
+      {externalLinkIcon}
     </a>
   );
-}
+});
 
 Hyperlink.defaultProps = {
+  className: undefined,
   target: '_self',
   onClick: () => {},
-  externalLinkAlternativeText: 'Opens in a new window',
-  externalLinkTitle: 'Opens in a new window',
+  externalLinkAlternativeText: 'in a new tab',
+  externalLinkTitle: 'Opens in a new tab',
   variant: 'default',
   isInline: false,
   showLaunchIcon: true,
@@ -67,7 +91,10 @@ Hyperlink.defaultProps = {
 Hyperlink.propTypes = {
   /** specifies the URL */
   destination: PropTypes.string.isRequired,
+  /** Content of the hyperlink */
   children: PropTypes.node.isRequired,
+  /** Custom class names for the hyperlink */
+  className: PropTypes.string,
   /** specifies where the link should open. The default behavior is `_self`, which means that the URL will be loaded into the same browsing context as the current one. If the target is `_blank` (opening a new window) `rel='noopener'` will be added to the anchor tag to prevent any potential [reverse tabnabbing attack](https://www.owasp.org/index.php/Reverse_Tabnabbing).
    */
   target: PropTypes.string,

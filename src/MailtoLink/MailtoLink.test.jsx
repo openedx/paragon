@@ -21,9 +21,10 @@ describe('correct rendering', () => {
         bcc={emailAddress}
       />
     );
-    const wrapper = mount(singleRecipientLink).find('a');
-
-    expect(wrapper.prop('href')).toEqual('mailto:edx@example.com?bcc=edx%40example.com&body=body&cc=edx%40example.com&subject=subject');
+    const wrapper = mount(singleRecipientLink);
+    expect(wrapper.find('.pgn_mailtolink')).toBeTruthy();
+    const linkWrapper = wrapper.find('a');
+    expect(linkWrapper.prop('href')).toEqual('mailto:edx@example.com?bcc=edx%40example.com&body=body&cc=edx%40example.com&subject=subject');
   });
 
   it('renders mailtoLink with many to, cc, and bcc recipients', () => {

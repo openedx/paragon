@@ -17,13 +17,15 @@ notes: |
 ### minimal usage
 
 ```jsx live
-<MailtoLink to="edx@example.com">edx@example.com</MailtoLink>
+<MailtoLink to="edx@example.com">
+  edx@example.com
+</MailtoLink>
 ```
 
 ### with blank target
 
 ```jsx live
-<MailtoLink to="edx@example.com" target="_blank" rel="noopener noreferrer">
+<MailtoLink to="edx@example.com" target="_blank">
   edx@example.com
 </MailtoLink>
 ```
