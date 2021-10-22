@@ -16,13 +16,15 @@ notes: |
 ### minimal usage
 
 ```jsx live
-<Hyperlink href="https://en.wikipedia.org/wiki/Hyperlink">edX.org</Hyperlink>
+<Hyperlink destination="https://www.edx.org">
+  edX.org
+</Hyperlink>
 ```
 
 ### with blank target
 
 ```jsx live
-<Hyperlink destination="https://www.edx.org" target="_blank" rel="noopener noreferrer">
+<Hyperlink destination="https://www.edx.org" target="_blank">
   edX.org
 </Hyperlink>
 ```
@@ -30,7 +32,7 @@ notes: |
 ### blank target without Icon
 
 ```jsx live
-<Hyperlink destination="https://www.edx.org" target="_blank" rel="noopener noreferrer" showLaunchIcon={false}>
+<Hyperlink destination="https://www.edx.org" target="_blank" showLaunchIcon={false}>
   edX.org
 </Hyperlink>
 ```
