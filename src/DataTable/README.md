@@ -277,12 +277,12 @@ For more control over the state of these controlled components try ``DataTable.C
           handleClick: (data) => console.log('Download CSV', data),
         },
         // custom button function that utilizes controlled selection actions
-        (data)=>{
+        ({tableInstance})=>{
           return {
-            buttonText: `Enroll ${data.selectedFlatRows.length}`,
+            buttonText: `Clear Selection`,
             handleClick: () => {
-              console.log('Enroll and clear selection', data);
-              const {controlledTableSelections: [, dispatch]} = data.tableInstance;
+              console.log('Clear selection');
+              const {controlledTableSelections: [, dispatch]} = tableInstance;
               dispatch(DataTable.ControlledSelectionActions.clearSelectionAction())
             }, 
           }
@@ -329,10 +329,10 @@ You can pass a function to render custom components for bulk actions and table a
     ]}
     bulkActions={[
         // Function defined button
-        (data)=>{
+        ({selectedFlatRows})=>{
           return {
-            buttonText: `Enroll ${data.selectedFlatRows.length}`,
-            handleClick: () => console.log('Enroll', data), 
+            buttonText: `Enroll ${selectedFlatRows.length}`,
+            handleClick: () => console.log('Enroll', selectedFlatRows), 
           }
         },
         {
