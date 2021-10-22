@@ -61,6 +61,7 @@ function DataTable({
   }), [columns, data, defaultColumn, manualFilters, manualPagination, initialState, initialTableOptions]);
 
   const [selections, selectionsDispatch] = useReducer(selectionsReducer, initialSelectionsState);
+  
   if (isPaginated && manualPagination) {
     // pageCount is required when pagination is manual, if it's not there passing -1 as per react-table docs
     tableOptions.pageCount = pageCount || -1;
