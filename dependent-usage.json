@@ -1,5 +1,5 @@
 {
-  "lastModified": 1634911661528,
+  "lastModified": 1634998042014,
   "projectUsages": [
     {
       "version": "16.15.0",
@@ -1573,7 +1573,7 @@
           },
           {
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentSubmit.jsx",
-            "line": 133,
+            "line": 136,
             "column": 6,
             "version": "16.14.5"
           },
@@ -2405,7 +2405,7 @@
         "DataTable": [
           {
             "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
-            "line": 118,
+            "line": 120,
             "column": 8,
             "version": "16.14.5"
           },
@@ -2425,7 +2425,7 @@
         "DataTable.TableControlBar": [
           {
             "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
-            "line": 130,
+            "line": 132,
             "column": 10,
             "version": "16.14.5"
           },
@@ -2439,7 +2439,7 @@
         "DataTable.Table": [
           {
             "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
-            "line": 131,
+            "line": 133,
             "column": 10,
             "version": "16.14.5"
           },
@@ -2453,7 +2453,7 @@
         "DataTable.TableFooter": [
           {
             "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
-            "line": 132,
+            "line": 134,
             "column": 10,
             "version": "16.14.5"
           },
@@ -2467,7 +2467,7 @@
         "DataTable.RowStatus": [
           {
             "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
-            "line": 133,
+            "line": 135,
             "column": 12,
             "version": "16.14.5"
           }
@@ -2749,7 +2749,7 @@
         "Form.Checkbox": [
           {
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentSubmit.jsx",
-            "line": 126,
+            "line": 129,
             "column": 6,
             "version": "16.14.5"
           },
@@ -14942,7 +14942,7 @@
       }
     },
     {
-      "version": "16.14.4",
+      "version": "16.15.1",
       "name": "@edx/frontend-platform",
       "repository": {
         "type": "git",
@@ -14955,7 +14955,7 @@
             "filePath": "src/react/ErrorPage.jsx",
             "line": 25,
             "column": 6,
-            "version": "16.14.4"
+            "version": "16.15.1"
           }
         ],
         "Row": [
@@ -14963,7 +14963,7 @@
             "filePath": "src/react/ErrorPage.jsx",
             "line": 26,
             "column": 8,
-            "version": "16.14.4"
+            "version": "16.15.1"
           }
         ],
         "Col": [
@@ -14971,7 +14971,7 @@
             "filePath": "src/react/ErrorPage.jsx",
             "line": 27,
             "column": 10,
-            "version": "16.14.4"
+            "version": "16.15.1"
           }
         ],
         "Button": [
@@ -14979,7 +14979,7 @@
             "filePath": "src/react/ErrorPage.jsx",
             "line": 40,
             "column": 12,
-            "version": "16.14.4"
+            "version": "16.15.1"
           }
         ]
       }
@@ -15006,7 +15006,7 @@
         "CardGrid": [
           {
             "filePath": "src/components/2U/CardsList/SubjectCards.jsx",
-            "line": 20,
+            "line": 17,
             "column": 6,
             "version": "16.14.6"
           },
@@ -15032,7 +15032,7 @@
         "Card": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 100,
+            "line": 108,
             "column": 8,
             "version": "16.14.6"
           },
@@ -15055,19 +15055,11 @@
             "version": "16.14.6"
           }
         ],
-        "Card.Img": [
-          {
-            "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 101,
-            "column": 10,
-            "version": "16.14.6"
-          }
-        ],
         "Image": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 105,
-            "column": 10,
+            "line": 122,
+            "column": 12,
             "version": "16.14.6"
           },
           {
@@ -15086,7 +15078,7 @@
         "Card.Body": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 110,
+            "line": 127,
             "column": 10,
             "version": "16.14.6"
           },
@@ -15106,7 +15098,7 @@
         "Card.Title": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 112,
+            "line": 129,
             "column": 14,
             "version": "16.14.6"
           }
@@ -15114,7 +15106,7 @@
         "Card.Subtitle": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 113,
+            "line": 130,
             "column": 14,
             "version": "16.14.6"
           }
@@ -15122,8 +15114,14 @@
         "Badge": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 116,
+            "line": 133,
             "column": 14,
+            "version": "16.14.6"
+          },
+          {
+            "filePath": "src/components/Badges/NewBadge.jsx",
+            "line": 9,
+            "column": 2,
             "version": "16.14.6"
           },
           {
@@ -15172,7 +15170,7 @@
         "Card.Footer": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 119,
+            "line": 136,
             "column": 10,
             "version": "16.14.6"
           }
@@ -15180,7 +15178,7 @@
         "Icon": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 121,
+            "line": 138,
             "column": 12,
             "version": "16.14.6"
           },
