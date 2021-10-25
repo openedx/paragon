@@ -1,8 +1,8 @@
 {
-  "lastModified": 1635084475185,
+  "lastModified": 1635170862531,
   "projectUsages": [
     {
-      "version": "16.15.0",
+      "version": "16.15.1",
       "name": "edx-credentials",
       "repository": {
         "type": "git",
@@ -15,7 +15,7 @@
             "filePath": "credentials/static/components/FoldingTable.jsx",
             "line": 26,
             "column": 6,
-            "version": "16.15.0"
+            "version": "16.15.1"
           }
         ],
         "Button.Deprecated": [
@@ -23,37 +23,37 @@
             "filePath": "credentials/static/components/MasqueradeBanner.jsx",
             "line": 102,
             "column": 12,
-            "version": "16.15.0"
+            "version": "16.15.1"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 277,
             "column": 14,
-            "version": "16.15.0"
+            "version": "16.15.1"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 284,
             "column": 12,
-            "version": "16.15.0"
+            "version": "16.15.1"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 296,
             "column": 12,
-            "version": "16.15.0"
+            "version": "16.15.1"
           },
           {
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 141,
             "column": 10,
-            "version": "16.15.0"
+            "version": "16.15.1"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 177,
             "column": 18,
-            "version": "16.15.0"
+            "version": "16.15.1"
           }
         ],
         "StatusAlert": [
@@ -61,43 +61,43 @@
             "filePath": "credentials/static/components/MasqueradeBanner.jsx",
             "line": 109,
             "column": 8,
-            "version": "16.15.0"
+            "version": "16.15.1"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 304,
             "column": 8,
-            "version": "16.15.0"
+            "version": "16.15.1"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 315,
             "column": 8,
-            "version": "16.15.0"
+            "version": "16.15.1"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 329,
             "column": 8,
-            "version": "16.15.0"
+            "version": "16.15.1"
           },
           {
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 109,
             "column": 14,
-            "version": "16.15.0"
+            "version": "16.15.1"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 138,
             "column": 14,
-            "version": "16.15.0"
+            "version": "16.15.1"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 152,
             "column": 14,
-            "version": "16.15.0"
+            "version": "16.15.1"
           }
         ],
         "Icon": [
@@ -105,13 +105,13 @@
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 311,
             "column": 14,
-            "version": "16.15.0"
+            "version": "16.15.1"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 191,
             "column": 16,
-            "version": "16.15.0"
+            "version": "16.15.1"
           }
         ],
         "Modal": [
@@ -119,13 +119,13 @@
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 90,
             "column": 6,
-            "version": "16.15.0"
+            "version": "16.15.1"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 130,
             "column": 6,
-            "version": "16.15.0"
+            "version": "16.15.1"
           }
         ],
         "CheckBoxGroup": [
@@ -133,7 +133,7 @@
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 123,
             "column": 12,
-            "version": "16.15.0"
+            "version": "16.15.1"
           }
         ],
         "CheckBox": [
@@ -141,7 +141,7 @@
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 125,
             "column": 16,
-            "version": "16.15.0"
+            "version": "16.15.1"
           }
         ],
         "InputText": [
@@ -149,7 +149,7 @@
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 165,
             "column": 18,
-            "version": "16.15.0"
+            "version": "16.15.1"
           }
         ]
       }
@@ -12575,7 +12575,7 @@
           },
           {
             "filePath": "src/profile/ProfilePage.jsx",
-            "line": 149,
+            "line": 159,
             "column": 10,
             "version": "16.6.1"
           }
@@ -12615,7 +12615,7 @@
           },
           {
             "filePath": "src/profile/ProfilePage.jsx",
-            "line": 118,
+            "line": 127,
             "column": 6,
             "version": "16.6.1"
           }
@@ -12691,6 +12691,14 @@
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 87,
             "column": 10,
+            "version": "16.6.1"
+          }
+        ],
+        "Icon": [
+          {
+            "filePath": "src/profile/UsernameDescription.jsx",
+            "line": 9,
+            "column": 6,
             "version": "16.6.1"
           }
         ]
