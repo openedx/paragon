@@ -33,14 +33,3 @@ export const clearPageSelectionAction = (rowIds) => ({
   type: CLEAR_PAGE_SELECTION,
   rowIds,
 });
-
-const controlledSelectionActions = {
-  setSelectAllRowsAllPagesAction,
-  setSelectedRowsAction,
-  deleteSelectedRowAction,
-  addSelectedRowAction,
-  clearSelectionAction,
-  clearPageSelectionAction,
-};
-
-export default controlledSelectionActions;

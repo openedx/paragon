@@ -29,8 +29,8 @@ import ControlledSelect from './selection/ControlledSelect';
 import ControlledSelectHeader from './selection/ControlledSelectHeader';
 import DataTableLayout from './DataTableLayout';
 
+import { useSelectionActions } from './hooks';
 import selectionsReducer, { initialState as initialSelectionsState } from './selection/data/reducer';
-import tableControlledSelectionActions from './selection/data/actions';
 
 function DataTable({
   columns, data, defaultColumnValues, additionalColumns, isSelectable,
@@ -109,6 +109,8 @@ function DataTable({
     }
   }, [fetchData, JSON.stringify(tableStateWithoutSelections)]);
 
+  const selectionActions = useSelectionActions(instance, controlledTableSelections);
+
   const enhancedInstance = {
     ...instance,
     itemCount,
@@ -118,6 +120,7 @@ function DataTable({
     controlledTableSelections,
     showFiltersInSidebar,
     ...selectionProps,
+    ...selectionActions,
     ...props,
   };
 
@@ -309,6 +312,5 @@ DataTable.TableActions = TableActions;
 DataTable.ControlledSelectionStatus = ControlledSelectionStatus;
 DataTable.ControlledSelect = ControlledSelect;
 DataTable.ControlledSelectHeader = ControlledSelectHeader;
-DataTable.ControlledSelectionActions = tableControlledSelectionActions;
 
 export default DataTable;

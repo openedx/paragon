@@ -149,8 +149,6 @@ To enable proper selection behavior with backend pagination (i.e., when ``isSele
 * ``DataTable.ControlledSelectHeader``
 * ``DataTable.ControlledSelect``
 
-For more control over the state of these controlled components try ``DataTable.ControlledSelectionActions`` combined with the dispatcher in the ``DataTableContext.controlledTableSelections`` as shown in the example bellow.
-
 <strong>NOTE:</strong> While the below example doesn't demonstrate using true backend filtering, pagination, and sorting, it does mock the behavior of making an asynchronous API request and updating the table data.
 
 ```jsx live
@@ -276,14 +274,13 @@ For more control over the state of these controlled components try ``DataTable.C
           buttonText: 'Download CSV',
           handleClick: (data) => console.log('Download CSV', data),
         },
-        // custom button function that utilizes controlled selection actions
+        // custom button function that utilizes clearSelection function provided by the table instance
         ({tableInstance})=>{
           return {
             buttonText: `Clear Selection`,
             handleClick: () => {
               console.log('Clear selection');
-              const {controlledTableSelections: [, dispatch]} = tableInstance;
-              dispatch(DataTable.ControlledSelectionActions.clearSelectionAction())
+              tableInstance.clearSelection()
             }, 
           }
         },
