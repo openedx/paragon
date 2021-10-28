@@ -274,6 +274,16 @@ To enable proper selection behavior with backend pagination (i.e., when ``isSele
           buttonText: 'Download CSV',
           handleClick: (data) => console.log('Download CSV', data),
         },
+        // custom button function that utilizes clearSelection function provided by the table instance
+        ({tableInstance})=>{
+          return {
+            buttonText: `Clear Selection`,
+            handleClick: () => {
+              console.log('Clear selection');
+              tableInstance.clearSelection()
+            }, 
+          }
+        },
       ]}
     />
   );
@@ -316,10 +326,10 @@ You can pass a function to render custom components for bulk actions and table a
     ]}
     bulkActions={[
         // Function defined button
-        (data)=>{
+        ({selectedFlatRows})=>{
           return {
-            buttonText: `Enroll ${data.selectedFlatRows.length}`,
-            handleClick: () => console.log('Enroll', data), 
+            buttonText: `Enroll ${selectedFlatRows.length}`,
+            handleClick: () => console.log('Enroll', selectedFlatRows), 
           }
         },
         {
