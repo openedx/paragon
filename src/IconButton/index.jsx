@@ -49,6 +49,7 @@ IconButton.defaultProps = {
   invertColors: false,
   variant: 'primary',
   size: 'md',
+  onClick: () => {},
 };
 
 IconButton.propTypes = {
@@ -73,7 +74,7 @@ IconButton.propTypes = {
   /** Extra class names that will be added to the icon */
   iconClassNames: PropTypes.string,
   /** Click handler for the button */
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   /** Type of button (uses Bootstrap options) */
   variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'light', 'dark', 'black']),
   size: PropTypes.oneOf(['sm', 'md', 'inline']),
