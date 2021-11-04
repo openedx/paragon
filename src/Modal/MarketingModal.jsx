@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import { requiredWhenNot } from '../utils/propTypesUtils';
 import ModalDialog from './ModalDialog';
 
 const MarketingModal = ({
@@ -28,9 +30,10 @@ const MarketingModal = ({
 MarketingModal.propTypes = {
   children: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
-  onClose: PropTypes.func.isRequired,
   isOpen: PropTypes.bool,
+  isBlocking: PropTypes.bool,
   hasCloseButton: PropTypes.bool,
+  onClose: requiredWhenNot(PropTypes.func, 'isBlocking'),
   size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'fullscreen']),
   closeLabel: PropTypes.string,
   className: PropTypes.string,
@@ -44,7 +47,9 @@ MarketingModal.propTypes = {
 
 MarketingModal.defaultProps = {
   isOpen: false,
+  isBlocking: false,
   hasCloseButton: true,
+  onClose: () => {},
   size: 'md',
   closeLabel: 'Close',
   className: undefined,
