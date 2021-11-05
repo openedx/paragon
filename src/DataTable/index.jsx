@@ -6,7 +6,7 @@ import { useTable } from 'react-table';
 
 import Table from './Table';
 import getVisibleColumns from './utils/getVisibleColumns';
-import { requiredWhen } from './utils/propTypesUtils';
+import { requiredWhen } from '../utils/propTypesUtils';
 import getTableArgs from './utils/getTableArgs';
 import TableControlBar from './TableControlBar';
 import EmptyTableContent from './EmptyTable';
