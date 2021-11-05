@@ -1,9 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+
+import { requiredWhenNot } from '../utils/propTypesUtils';
 import ModalDialog from './ModalDialog';
 
-const AlertModal = ({ children, footerNode, ...props }) => (
+const AlertModal = ({
+  children,
+  footerNode,
+  ...props
+}) => (
   <ModalDialog
     {...props}
     className={classNames('pgn__alert-modal', props.className)}
@@ -19,9 +25,10 @@ const AlertModal = ({ children, footerNode, ...props }) => (
 AlertModal.propTypes = {
   children: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
-  onClose: PropTypes.func.isRequired,
   isOpen: PropTypes.bool,
+  isBlocking: PropTypes.bool,
   hasCloseButton: PropTypes.bool,
+  onClose: requiredWhenNot(PropTypes.func, 'isBlocking'),
   size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'fullscreen']),
   variant: PropTypes.oneOf(['default', 'warning', 'danger', 'success', 'dark']),
   closeLabel: PropTypes.string,
@@ -32,7 +39,9 @@ AlertModal.propTypes = {
 
 AlertModal.defaultProps = {
   isOpen: false,
+  isBlocking: false,
   hasCloseButton: false,
+  onClose: () => {},
   size: 'md',
   variant: 'default',
   closeLabel: 'Close',
