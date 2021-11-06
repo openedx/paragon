@@ -1,5 +1,5 @@
 {
-  "lastModified": 1636121265958,
+  "lastModified": 1636207646960,
   "projectUsages": [
     {
       "version": "16.16.1",
@@ -9460,6 +9460,12 @@
             "version": "16.14.9"
           },
           {
+            "filePath": "src/course-home/progress-tab/credit-information/CreditInformation.jsx",
+            "line": 29,
+            "column": 4,
+            "version": "16.14.9"
+          },
+          {
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/DetailedGrades.jsx",
             "line": 41,
             "column": 4,
@@ -9996,6 +10002,30 @@
             "version": "16.14.9"
           },
           {
+            "filePath": "src/course-home/progress-tab/credit-information/CreditInformation.jsx",
+            "line": 73,
+            "column": 84,
+            "version": "16.14.9"
+          },
+          {
+            "filePath": "src/course-home/progress-tab/credit-information/CreditInformation.jsx",
+            "line": 77,
+            "column": 81,
+            "version": "16.14.9"
+          },
+          {
+            "filePath": "src/course-home/progress-tab/credit-information/CreditInformation.jsx",
+            "line": 80,
+            "column": 72,
+            "version": "16.14.9"
+          },
+          {
+            "filePath": "src/course-home/progress-tab/credit-information/CreditInformation.jsx",
+            "line": 83,
+            "column": 71,
+            "version": "16.14.9"
+          },
+          {
             "filePath": "src/course-home/progress-tab/grades/course-grade/CourseGradeFooter.jsx",
             "line": 60,
             "column": 27,
@@ -10015,7 +10045,7 @@
           },
           {
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/DetailedGrades.jsx",
-            "line": 56,
+            "line": 57,
             "column": 10,
             "version": "16.14.9"
           },
@@ -12349,7 +12379,7 @@
           },
           {
             "filePath": "src/containers/ReviewActions/index.jsx",
-            "line": 26,
+            "line": 25,
             "column": 4,
             "version": "16.14.4"
           }
@@ -12381,13 +12411,13 @@
           },
           {
             "filePath": "src/containers/ReviewActions/components/StartGradingButton.jsx",
-            "line": 93,
+            "line": 92,
             "column": 8,
             "version": "16.14.4"
           },
           {
             "filePath": "src/containers/ReviewActions/index.jsx",
-            "line": 40,
+            "line": 39,
             "column": 8,
             "version": "16.14.4"
           },
@@ -12401,7 +12431,7 @@
         "OverlayTrigger": [
           {
             "filePath": "src/components/InfoPopover/index.jsx",
-            "line": 20,
+            "line": 19,
             "column": 2,
             "version": "16.14.4"
           }
@@ -12409,15 +12439,15 @@
         "Popover": [
           {
             "filePath": "src/components/InfoPopover/index.jsx",
-            "line": 25,
+            "line": 24,
             "column": 6,
             "version": "16.14.4"
           }
         ],
-        "PopoverContent": [
+        "Popover.Content": [
           {
             "filePath": "src/components/InfoPopover/index.jsx",
-            "line": 26,
+            "line": 25,
             "column": 8,
             "version": "16.14.4"
           }
@@ -12425,19 +12455,19 @@
         "IconButton": [
           {
             "filePath": "src/components/InfoPopover/index.jsx",
-            "line": 30,
+            "line": 29,
             "column": 4,
             "version": "16.14.4"
           },
           {
             "filePath": "src/containers/ReviewActions/components/SubmissionNavigation.jsx",
-            "line": 26,
+            "line": 25,
             "column": 4,
             "version": "16.14.4"
           },
           {
             "filePath": "src/containers/ReviewActions/components/SubmissionNavigation.jsx",
-            "line": 41,
+            "line": 40,
             "column": 4,
             "version": "16.14.4"
           }
@@ -12485,13 +12515,13 @@
         "Form.Control": [
           {
             "filePath": "src/containers/CriterionContainer/CriterionFeedback.jsx",
-            "line": 37,
+            "line": 36,
             "column": 6,
             "version": "16.14.4"
           },
           {
             "filePath": "src/containers/Rubric/RubricFeedback.jsx",
-            "line": 55,
+            "line": 54,
             "column": 8,
             "version": "16.14.4"
           }
@@ -12505,7 +12535,7 @@
           },
           {
             "filePath": "src/containers/Rubric/RubricFeedback.jsx",
-            "line": 46,
+            "line": 45,
             "column": 6,
             "version": "16.14.4"
           }
@@ -12525,7 +12555,7 @@
           },
           {
             "filePath": "src/containers/Rubric/RubricFeedback.jsx",
-            "line": 47,
+            "line": 46,
             "column": 8,
             "version": "16.14.4"
           }
@@ -12533,7 +12563,7 @@
         "Form.RadioSet": [
           {
             "filePath": "src/containers/CriterionContainer/RadioCriterion.jsx",
-            "line": 37,
+            "line": 36,
             "column": 8,
             "version": "16.14.4"
           }
@@ -12541,7 +12571,7 @@
         "Form.Radio": [
           {
             "filePath": "src/containers/CriterionContainer/RadioCriterion.jsx",
-            "line": 39,
+            "line": 38,
             "column": 12,
             "version": "16.14.4"
           }
@@ -12557,7 +12587,7 @@
         "Container": [
           {
             "filePath": "src/containers/ListView/index.jsx",
-            "line": 82,
+            "line": 81,
             "column": 6,
             "version": "16.14.4"
           }
@@ -12565,7 +12595,7 @@
         "DataTable": [
           {
             "filePath": "src/containers/ListView/index.jsx",
-            "line": 84,
+            "line": 83,
             "column": 8,
             "version": "16.14.4"
           },
@@ -12579,7 +12609,7 @@
         "DataTable.TableControlBar": [
           {
             "filePath": "src/containers/ListView/index.jsx",
-            "line": 132,
+            "line": 131,
             "column": 10,
             "version": "16.14.4"
           }
@@ -12587,7 +12617,7 @@
         "DataTable.Table": [
           {
             "filePath": "src/containers/ListView/index.jsx",
-            "line": 133,
+            "line": 132,
             "column": 10,
             "version": "16.14.4"
           },
@@ -12601,7 +12631,7 @@
         "DataTable.EmptyTable": [
           {
             "filePath": "src/containers/ListView/index.jsx",
-            "line": 134,
+            "line": 133,
             "column": 10,
             "version": "16.14.4"
           }
@@ -12609,7 +12639,7 @@
         "DataTable.TableFooter": [
           {
             "filePath": "src/containers/ListView/index.jsx",
-            "line": 135,
+            "line": 134,
             "column": 10,
             "version": "16.14.4"
           }
@@ -12729,7 +12759,7 @@
         "FullscreenModal": [
           {
             "filePath": "src/containers/ReviewModal/index.jsx",
-            "line": 39,
+            "line": 38,
             "column": 6,
             "version": "16.14.4"
           }
@@ -12737,7 +12767,7 @@
         "Row": [
           {
             "filePath": "src/containers/ReviewModal/index.jsx",
-            "line": 48,
+            "line": 47,
             "column": 10,
             "version": "16.14.4"
           }
@@ -12745,7 +12775,7 @@
         "Col": [
           {
             "filePath": "src/containers/ReviewModal/index.jsx",
-            "line": 49,
+            "line": 48,
             "column": 12,
             "version": "16.14.4"
           }
