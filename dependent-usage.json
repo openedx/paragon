@@ -1,5 +1,5 @@
 {
-  "lastModified": 1636380440600,
+  "lastModified": 1636466894020,
   "projectUsages": [
     {
       "version": "16.17.0",
@@ -5559,13 +5559,13 @@
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-list/FeaturesList.jsx",
-            "line": 25,
+            "line": 15,
             "column": 10,
             "version": "16.15.1"
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-list/FeaturesList.jsx",
-            "line": 28,
+            "line": 18,
             "column": 10,
             "version": "16.15.1"
           }
@@ -6695,7 +6695,7 @@
         "Collapsible": [
           {
             "filePath": "src/pages-and-resources/discussions/app-list/FeaturesList.jsx",
-            "line": 21,
+            "line": 11,
             "column": 4,
             "version": "16.15.1"
           }
@@ -7088,7 +7088,13 @@
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
-            "line": 78,
+            "line": 69,
+            "column": 14,
+            "version": "16.15.0"
+          },
+          {
+            "filePath": "src/discussions/posts/post/PostFooter.jsx",
+            "line": 92,
             "column": 14,
             "version": "16.15.0"
           },
@@ -7344,7 +7350,7 @@
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
-            "line": 71,
+            "line": 85,
             "column": 12,
             "version": "16.15.0"
           }
@@ -7364,7 +7370,7 @@
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
-            "line": 73,
+            "line": 87,
             "column": 16,
             "version": "16.15.0"
           }
@@ -8383,6 +8389,12 @@
             "version": "16.14.7"
           },
           {
+            "filePath": "src/components/program/ProgramCourses.jsx",
+            "line": 61,
+            "column": 20,
+            "version": "16.14.7"
+          },
+          {
             "filePath": "src/components/program/ProgramInstructors.jsx",
             "line": 25,
             "column": 12,
@@ -8436,6 +8448,12 @@
             "filePath": "src/components/license-activation/LicenseActivation.jsx",
             "line": 38,
             "column": 10,
+            "version": "16.14.7"
+          },
+          {
+            "filePath": "src/components/program/ProgramCourses.jsx",
+            "line": 70,
+            "column": 20,
             "version": "16.14.7"
           },
           {
@@ -9026,7 +9044,7 @@
         "Collapsible.Advanced": [
           {
             "filePath": "src/components/program/ProgramCourses.jsx",
-            "line": 32,
+            "line": 35,
             "column": 14,
             "version": "16.14.7"
           },
@@ -9040,7 +9058,7 @@
         "Collapsible.Trigger": [
           {
             "filePath": "src/components/program/ProgramCourses.jsx",
-            "line": 33,
+            "line": 36,
             "column": 16,
             "version": "16.14.7"
           },
@@ -9054,13 +9072,13 @@
         "Collapsible.Visible": [
           {
             "filePath": "src/components/program/ProgramCourses.jsx",
-            "line": 36,
+            "line": 39,
             "column": 18,
             "version": "16.14.7"
           },
           {
             "filePath": "src/components/program/ProgramCourses.jsx",
-            "line": 40,
+            "line": 43,
             "column": 18,
             "version": "16.14.7"
           },
@@ -9080,7 +9098,7 @@
         "Collapsible.Body": [
           {
             "filePath": "src/components/program/ProgramCourses.jsx",
-            "line": 45,
+            "line": 48,
             "column": 16,
             "version": "16.14.7"
           },
@@ -14724,7 +14742,7 @@
         "SearchField.Advanced": [
           {
             "filePath": "src/SearchBox.jsx",
-            "line": 64,
+            "line": 65,
             "column": 6,
             "version": "14.5.0"
           }
@@ -14732,7 +14750,7 @@
         "SearchField.Input": [
           {
             "filePath": "src/SearchBox.jsx",
-            "line": 72,
+            "line": 73,
             "column": 8,
             "version": "14.5.0"
           }
@@ -14740,7 +14758,7 @@
         "SearchField.ClearButton": [
           {
             "filePath": "src/SearchBox.jsx",
-            "line": 78,
+            "line": 79,
             "column": 8,
             "version": "14.5.0"
           }
@@ -14748,7 +14766,7 @@
         "SearchField.SubmitButton": [
           {
             "filePath": "src/SearchBox.jsx",
-            "line": 79,
+            "line": 80,
             "column": 8,
             "version": "14.5.0"
           }
@@ -14778,7 +14796,7 @@
           },
           {
             "filePath": "src/SearchHeader.jsx",
-            "line": 35,
+            "line": 36,
             "column": 10,
             "version": "14.5.0"
           }
