@@ -27,6 +27,7 @@ export { default as ChevronRight } from './ChevronRight';
 export { default as Class } from './Class';
 export { default as Close } from './Close';
 export { default as CloseSmall } from './CloseSmall';
+export { default as ContactMail } from './ContactMail';
 export { default as DateRange } from './DateRange';
 export { default as Delete } from './Delete';
 export { default as Download } from './Download';
