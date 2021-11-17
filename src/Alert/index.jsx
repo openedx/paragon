@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import BaseAlert from 'react-bootstrap/Alert';
+import divWithClassName from 'react-bootstrap/divWithClassName';
 import { useMediaQuery } from 'react-responsive';
 import { Icon } from '..';
 import Button from '../Button';
@@ -74,6 +75,35 @@ const Alert = React.forwardRef(({
   );
 });
 
+// This is needed to display a default prop for Alert.Heading element
+// Copied from react-bootstrap since BaseAlert.Heading component doesn't have defaultProps,
+// so there seems to be no other way of providing correct default prop for base element
+const DivStyledAsH4 = divWithClassName('h4');
+DivStyledAsH4.displayName = 'DivStyledAsH4';
+
+const AlertHeading = (props) => <BaseAlert.Heading {...props} />;
+const AlertLink = (props) => <BaseAlert.Link {...props} />;
+
+const commonPropTypes = {
+  /** Specifies the base element */
+  as: PropTypes.elementType,
+  /** Overrides underlying component base CSS class name */
+  bsPrefix: PropTypes.string,
+};
+
+AlertLink.propTypes = commonPropTypes;
+AlertHeading.propTypes = commonPropTypes;
+
+AlertLink.defaultProps = {
+  as: 'a',
+  bsPrefix: 'alert-link',
+};
+
+AlertHeading.defaultProps = {
+  as: DivStyledAsH4,
+  bsPrefix: 'alert-heading',
+};
+
 Alert.propTypes = {
   ...BaseAlert.propTypes,
   /** Docstring for the children prop */
@@ -90,6 +120,8 @@ Alert.propTypes = {
   actions: PropTypes.arrayOf(PropTypes.element),
   /** Position of the dismiss and call-to-action buttons. Defaults to ``false``. */
   stacked: PropTypes.bool,
+  /** Sets the text for alert close button. */
+  closeLabel: PropTypes.string,
 };
 
 Alert.defaultProps = {
@@ -104,7 +136,8 @@ Alert.defaultProps = {
   stacked: false,
 };
 
-Alert.Link = BaseAlert.Link;
-Alert.Heading = BaseAlert.Heading;
+Alert.Heading = AlertHeading;
+Alert.Link = AlertLink;
 
+export { AlertHeading, AlertLink };
 export default Alert;

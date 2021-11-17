@@ -13,6 +13,7 @@ notes: |
 
 ---
 
+A button that contains the user’s Avatar.
 
 ### Basic Usage
 
