@@ -1,8 +1,8 @@
 {
-  "lastModified": 1637071672408,
+  "lastModified": 1637158029389,
   "projectUsages": [
     {
-      "version": "16.17.0",
+      "version": "16.18.0",
       "name": "edx-credentials",
       "repository": {
         "type": "git",
@@ -15,7 +15,7 @@
             "filePath": "credentials/static/components/FoldingTable.jsx",
             "line": 26,
             "column": 6,
-            "version": "16.17.0"
+            "version": "16.18.0"
           }
         ],
         "Button.Deprecated": [
@@ -23,37 +23,37 @@
             "filePath": "credentials/static/components/MasqueradeBanner.jsx",
             "line": 102,
             "column": 12,
-            "version": "16.17.0"
+            "version": "16.18.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 277,
             "column": 14,
-            "version": "16.17.0"
+            "version": "16.18.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 284,
             "column": 12,
-            "version": "16.17.0"
+            "version": "16.18.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 296,
             "column": 12,
-            "version": "16.17.0"
+            "version": "16.18.0"
           },
           {
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 141,
             "column": 10,
-            "version": "16.17.0"
+            "version": "16.18.0"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 177,
             "column": 18,
-            "version": "16.17.0"
+            "version": "16.18.0"
           }
         ],
         "StatusAlert": [
@@ -61,43 +61,43 @@
             "filePath": "credentials/static/components/MasqueradeBanner.jsx",
             "line": 109,
             "column": 8,
-            "version": "16.17.0"
+            "version": "16.18.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 304,
             "column": 8,
-            "version": "16.17.0"
+            "version": "16.18.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 315,
             "column": 8,
-            "version": "16.17.0"
+            "version": "16.18.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 329,
             "column": 8,
-            "version": "16.17.0"
+            "version": "16.18.0"
           },
           {
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 109,
             "column": 14,
-            "version": "16.17.0"
+            "version": "16.18.0"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 138,
             "column": 14,
-            "version": "16.17.0"
+            "version": "16.18.0"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 152,
             "column": 14,
-            "version": "16.17.0"
+            "version": "16.18.0"
           }
         ],
         "Icon": [
@@ -105,13 +105,13 @@
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 311,
             "column": 14,
-            "version": "16.17.0"
+            "version": "16.18.0"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 191,
             "column": 16,
-            "version": "16.17.0"
+            "version": "16.18.0"
           }
         ],
         "Modal": [
@@ -119,13 +119,13 @@
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 90,
             "column": 6,
-            "version": "16.17.0"
+            "version": "16.18.0"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 130,
             "column": 6,
-            "version": "16.17.0"
+            "version": "16.18.0"
           }
         ],
         "CheckBoxGroup": [
@@ -133,7 +133,7 @@
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 123,
             "column": 12,
-            "version": "16.17.0"
+            "version": "16.18.0"
           }
         ],
         "CheckBox": [
@@ -141,7 +141,7 @@
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 125,
             "column": 16,
-            "version": "16.17.0"
+            "version": "16.18.0"
           }
         ],
         "InputText": [
@@ -149,7 +149,7 @@
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 165,
             "column": 18,
-            "version": "16.17.0"
+            "version": "16.18.0"
           }
         ]
       }
@@ -6801,7 +6801,7 @@
       }
     },
     {
-      "version": "16.15.0",
+      "version": "16.16.0",
       "name": "@edx/frontend-app-discussions",
       "repository": {
         "type": "git",
@@ -6814,7 +6814,7 @@
             "filePath": "src/components/FormikErrorFeedback.jsx",
             "line": 17,
             "column": 4,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "SelectMenu": [
@@ -6822,7 +6822,7 @@
             "filePath": "src/components/SelectableDropdown.jsx",
             "line": 12,
             "column": 4,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "MenuItem": [
@@ -6830,7 +6830,7 @@
             "filePath": "src/components/SelectableDropdown.jsx",
             "line": 15,
             "column": 10,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "Button": [
@@ -6838,31 +6838,31 @@
             "filePath": "src/discussions/comments/comment/Comment.jsx",
             "line": 79,
             "column": 10,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/comments/comment/Comment.jsx",
             "line": 102,
             "column": 16,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/comments/comment/ResponseEditor.jsx",
             "line": 20,
             "column": 8,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/comments/CommentsView.jsx",
             "line": 86,
             "column": 8,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
             "line": 21,
             "column": 6,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "Form": [
@@ -6870,19 +6870,19 @@
             "filePath": "src/discussions/comments/comment/CommentEditor.jsx",
             "line": 49,
             "column": 10,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 175,
+            "line": 173,
             "column": 8,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
             "line": 96,
             "column": 6,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "StatefulButton": [
@@ -6890,25 +6890,25 @@
             "filePath": "src/discussions/comments/comment/CommentEditor.jsx",
             "line": 65,
             "column": 14,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/comments/comment/CommentEditor.jsx",
             "line": 72,
             "column": 14,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 324,
+            "line": 322,
             "column": 12,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 331,
+            "line": 329,
             "column": 12,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "Avatar": [
@@ -6916,19 +6916,19 @@
             "filePath": "src/discussions/comments/comment/CommentHeader.jsx",
             "line": 24,
             "column": 8,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/comments/comment/Reply.jsx",
             "line": 42,
             "column": 10,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post/PostHeader.jsx",
             "line": 30,
             "column": 6,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "Spinner": [
@@ -6936,19 +6936,19 @@
             "filePath": "src/discussions/comments/CommentsView.jsx",
             "line": 99,
             "column": 12,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/comments/CommentsView.jsx",
             "line": 120,
             "column": 6,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/PostsView.jsx",
             "line": 87,
             "column": 12,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "IconButton": [
@@ -6956,19 +6956,19 @@
             "filePath": "src/discussions/common/ActionsDropdown.jsx",
             "line": 37,
             "column": 8,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post/LikeButton.jsx",
             "line": 37,
             "column": 8,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
             "line": 43,
             "column": 12,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "ModalPopup": [
@@ -6976,7 +6976,7 @@
             "filePath": "src/discussions/common/ActionsDropdown.jsx",
             "line": 45,
             "column": 6,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "Dropdown.Divider": [
@@ -6984,7 +6984,7 @@
             "filePath": "src/discussions/common/ActionsDropdown.jsx",
             "line": 58,
             "column": 17,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "Dropdown.Item": [
@@ -6992,7 +6992,7 @@
             "filePath": "src/discussions/common/ActionsDropdown.jsx",
             "line": 60,
             "column": 14,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "Icon": [
@@ -7000,103 +7000,97 @@
             "filePath": "src/discussions/common/ActionsDropdown.jsx",
             "line": 70,
             "column": 16,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/common/AuthorLabel.jsx",
             "line": 18,
             "column": 6,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/common/AuthorLabel.jsx",
             "line": 27,
             "column": 6,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
             "line": 24,
             "column": 4,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
             "line": 85,
             "column": 20,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
             "line": 86,
             "column": 22,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
             "line": 41,
             "column": 12,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
             "line": 59,
             "column": 12,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
             "line": 69,
             "column": 14,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
             "line": 92,
             "column": 14,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post/PostHeader.jsx",
             "line": 21,
             "column": 6,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post/PostLink.jsx",
             "line": 40,
             "column": 10,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post/PostLink.jsx",
             "line": 45,
             "column": 10,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post/PostLink.jsx",
             "line": 53,
             "column": 8,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/topics/topic-group/topic/Topic.jsx",
-            "line": 54,
+            "line": 48,
             "column": 14,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/topics/topic-group/topic/Topic.jsx",
-            "line": 64,
+            "line": 58,
             "column": 12,
-            "version": "16.15.0"
-          },
-          {
-            "filePath": "src/discussions/topics/topic-search-bar/TopicSearchBar.jsx",
-            "line": 29,
-            "column": 15,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "Alert": [
@@ -7104,13 +7098,13 @@
             "filePath": "src/discussions/common/AlertBanner.jsx",
             "line": 26,
             "column": 8,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/common/AlertBanner.jsx",
             "line": 47,
             "column": 8,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "Hyperlink": [
@@ -7118,15 +7112,21 @@
             "filePath": "src/discussions/common/AlertBanner.jsx",
             "line": 40,
             "column": 14,
-            "version": "16.15.0"
+            "version": "16.16.0"
+          },
+          {
+            "filePath": "src/discussions/posts/post/Post.jsx",
+            "line": 51,
+            "column": 10,
+            "version": "16.16.0"
           }
         ],
         "Breadcrumb": [
           {
             "filePath": "src/discussions/navigation/breadcrumb-menu/BreadcrumbMenu.jsx",
-            "line": 57,
+            "line": 56,
             "column": 6,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "Nav": [
@@ -7134,7 +7134,7 @@
             "filePath": "src/discussions/navigation/navigation-bar/NavigationBar.jsx",
             "line": 30,
             "column": 4,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "Nav.Item": [
@@ -7142,7 +7142,7 @@
             "filePath": "src/discussions/navigation/navigation-bar/NavigationBar.jsx",
             "line": 32,
             "column": 8,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "Nav.Link": [
@@ -7150,7 +7150,7 @@
             "filePath": "src/discussions/navigation/navigation-bar/NavigationBar.jsx",
             "line": 33,
             "column": 10,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "SearchField": [
@@ -7158,13 +7158,13 @@
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
             "line": 15,
             "column": 6,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/topics/topic-search-bar/TopicSearchBar.jsx",
-            "line": 20,
+            "line": 15,
             "column": 6,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "Form.Radio": [
@@ -7172,13 +7172,13 @@
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 37,
             "column": 6,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
             "line": 25,
             "column": 4,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "Card": [
@@ -7186,7 +7186,7 @@
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 38,
             "column": 6,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "Card.Body": [
@@ -7194,7 +7194,7 @@
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 39,
             "column": 8,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "Card.Text": [
@@ -7202,111 +7202,111 @@
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 40,
             "column": 10,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "Form.RadioSet": [
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 181,
+            "line": 179,
             "column": 10,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
             "line": 97,
             "column": 8,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
             "line": 122,
             "column": 8,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
             "line": 162,
             "column": 8,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "Form.Group": [
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 205,
+            "line": 203,
             "column": 12,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 234,
+            "line": 232,
             "column": 14,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 253,
+            "line": 251,
             "column": 10,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 283,
+            "line": 281,
             "column": 16,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 295,
+            "line": 293,
             "column": 18,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 309,
+            "line": 307,
             "column": 20,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "Form.Control": [
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 206,
+            "line": 204,
             "column": 14,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 235,
+            "line": 233,
             "column": 16,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 260,
+            "line": 258,
             "column": 12,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "Form.Checkbox": [
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 284,
+            "line": 282,
             "column": 18,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 296,
+            "line": 294,
             "column": 20,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 310,
+            "line": 308,
             "column": 22,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "Collapsible": [
@@ -7314,7 +7314,7 @@
             "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
             "line": 83,
             "column": 4,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "OverlayTrigger": [
@@ -7322,19 +7322,19 @@
             "filePath": "src/discussions/posts/post/LikeButton.jsx",
             "line": 30,
             "column": 6,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
             "line": 33,
             "column": 6,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
             "line": 85,
             "column": 12,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "Tooltip": [
@@ -7342,19 +7342,19 @@
             "filePath": "src/discussions/posts/post/LikeButton.jsx",
             "line": 32,
             "column": 10,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
             "line": 35,
             "column": 10,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
             "line": 87,
             "column": 16,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ],
         "Badge": [
@@ -7362,13 +7362,13 @@
             "filePath": "src/discussions/posts/post/PostHeader.jsx",
             "line": 64,
             "column": 21,
-            "version": "16.15.0"
+            "version": "16.16.0"
           },
           {
             "filePath": "src/discussions/posts/post/PostLink.jsx",
             "line": 65,
             "column": 22,
-            "version": "16.15.0"
+            "version": "16.16.0"
           }
         ]
       }
@@ -8248,7 +8248,7 @@
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 175,
+            "line": 178,
             "column": 10,
             "version": "16.14.7"
           },
@@ -8560,31 +8560,31 @@
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 155,
+            "line": 158,
             "column": 16,
             "version": "16.14.7"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 159,
+            "line": 162,
             "column": 16,
             "version": "16.14.7"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 166,
+            "line": 169,
             "column": 16,
             "version": "16.14.7"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 170,
+            "line": 173,
             "column": 16,
             "version": "16.14.7"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 264,
+            "line": 267,
             "column": 16,
             "version": "16.14.7"
           }
@@ -9242,7 +9242,7 @@
         "Stepper": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 145,
+            "line": 148,
             "column": 6,
             "version": "16.14.7"
           }
@@ -9250,7 +9250,7 @@
         "FullscreenModal": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 146,
+            "line": 149,
             "column": 8,
             "version": "16.14.7"
           }
@@ -9258,7 +9258,7 @@
         "Stepper.Header": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 151,
+            "line": 154,
             "column": 26,
             "version": "16.14.7"
           }
@@ -9266,13 +9266,13 @@
         "Stepper.ActionRow": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 154,
+            "line": 157,
             "column": 14,
             "version": "16.14.7"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 165,
+            "line": 168,
             "column": 14,
             "version": "16.14.7"
           }
@@ -9280,13 +9280,13 @@
         "Stepper.Step": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 176,
+            "line": 179,
             "column": 12,
             "version": "16.14.7"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 252,
+            "line": 255,
             "column": 12,
             "version": "16.14.7"
           }
@@ -16154,37 +16154,25 @@
           },
           {
             "filePath": "src/templates/aboutEdX.jsx",
-            "line": 367,
+            "line": 383,
             "column": 12,
             "version": "16.14.6"
           },
           {
             "filePath": "src/templates/aboutEdX.jsx",
-            "line": 391,
+            "line": 407,
             "column": 12,
             "version": "16.14.6"
           },
           {
             "filePath": "src/templates/aboutEdX.jsx",
-            "line": 458,
+            "line": 500,
             "column": 14,
             "version": "16.14.6"
           },
           {
             "filePath": "src/templates/aboutEdX.jsx",
-            "line": 468,
-            "column": 14,
-            "version": "16.14.6"
-          },
-          {
-            "filePath": "src/templates/aboutEdX.jsx",
-            "line": 477,
-            "column": 14,
-            "version": "16.14.6"
-          },
-          {
-            "filePath": "src/templates/aboutEdX.jsx",
-            "line": 486,
+            "line": 509,
             "column": 14,
             "version": "16.14.6"
           },
