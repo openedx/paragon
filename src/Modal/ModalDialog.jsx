@@ -61,6 +61,9 @@ function ModalDialog({
 }
 
 ModalDialog.propTypes = {
+  /**
+   * Specifies the content of the modal
+   */
   children: PropTypes.node.isRequired,
   /**
    * The aria-label of the dialog
@@ -90,6 +93,9 @@ ModalDialog.propTypes = {
    * The label supplied to the close icon button if one is rendered
    */
   closeLabel: PropTypes.string,
+  /**
+   *  Specifies class name to append to the base element
+   */
   className: PropTypes.string,
   /**
    * Determines where a scrollbar should appear if a modal is too large for the
