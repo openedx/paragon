@@ -153,6 +153,29 @@ JSX code blocks in the markdown file can be made interactive with the live attri
 
 Visit the documentation at [http://localhost:8000](http://localhost:8000) and navigate to see your README.md powered page and workbench. Changes to the README.md file will auto refesh the page.
 
+### Developing locally against MFE
+
+If you want to test the changes with local MFE setup, you need to create a "module.config.js" file in your MFE's directory containing local module overrides. After that the webpack build for your application will automatically pick your local version of Paragon and use it. The example of module.config.js file looks like this (for more details about module.config.js, refer to the [frontend-build documentation](https://github.com/edx/frontend-build#local-module-configuration-for-webpack).):
+
+```javascript
+module.exports = {
+  /*
+  Modules you want to use from local source code. Adding a module here means that when 
+  your MFE runs its build, it'll resolve the source from peer directories of the app.
+
+  moduleName: the name you use to import code from the module.
+  dir: The relative path to the module's source code.
+  dist: The sub-directory of the source code where it puts its build artifact. Often "dist".
+  */
+  localModules: [
+    { moduleName: '@edx/paragon/scss/core', dir: '../src/paragon', dist: 'scss/core' },
+    { moduleName: '@edx/paragon/icons', dir: '../src/paragon', dist: 'icons' },
+    { moduleName: '@edx/paragon', dir: '../src/paragon', dist: 'dist' },
+  ],
+};
+```
+
+Then, when importing Paragon's core SCSS in your MFE the import needs to begin with a tilde `~` so that path to your local Paragon repository gets resolved correctly: `@import "~@edx/paragon/scss/core";`
 
 ### ESLint
 
