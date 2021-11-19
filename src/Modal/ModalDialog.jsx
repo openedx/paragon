@@ -62,7 +62,7 @@ function ModalDialog({
 
 ModalDialog.propTypes = {
   /**
-   * Specifies the content of the modal
+   *  Specifies the content of the dialog
    */
   children: PropTypes.node.isRequired,
   /**
@@ -99,17 +99,17 @@ ModalDialog.propTypes = {
   className: PropTypes.string,
   /**
    * Determines where a scrollbar should appear if a modal is too large for the
-   * viewport. When false, the ModalDialog.Body receives a scrollbar, when true
+   * viewport. When false, the ``ModalDialog``. Body receives a scrollbar, when true
    * the browser window itself receives the scrollbar.
    */
   isFullscreenScroll: PropTypes.bool,
   /**
-   * to show full screen view on mobile screens
-   * */
+   * To show full screen view on mobile screens
+   */
   isFullscreenOnMobile: PropTypes.bool,
   /**
    * Prevent clicking on the backdrop to close the modal
-   * */
+   */
   isBlocking: PropTypes.bool,
 };
 

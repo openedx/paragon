@@ -25,10 +25,14 @@ const ModalCloseButton = React.forwardRef(({ as, children, ...props }, ref) => {
 });
 
 ModalCloseButton.propTypes = {
+  /** Specifies the base element */
   as: PropTypes.elementType,
+  /** Specifies the content of the button */
   children: PropTypes.node,
-  onClick: PropTypes.func,
+  /** Specifies class name to append to the base element */
   className: PropTypes.string,
+  /** Specifies the callback function when the close button is clicked */
+  onClick: PropTypes.func,
 };
 
 ModalCloseButton.defaultProps = {
