@@ -139,5 +139,4 @@ Alert.defaultProps = {
 Alert.Heading = AlertHeading;
 Alert.Link = AlertLink;
 
-export { AlertHeading, AlertLink };
 export default Alert;

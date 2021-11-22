@@ -21,7 +21,6 @@ ActionRow assumes that its last child is the primary action and lays out actions
 
 ```jsx live
 <ActionRow>
-  <Form.Checkbox>Don't ask me again.</Form.Checkbox>
   <Button variant="tertiary">
     Cancel
   </Button>

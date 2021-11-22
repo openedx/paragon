@@ -14,19 +14,14 @@ notes: |
 
 ---
 
-The Alert component displays a short, important message in a way that attracts the user's attention.
+The `Alert` component displays a short, important message in a way that attracts the user's attention.
 Alerts offer four severity levels that set a distinctive icon and color:
 - **Info**: used to convey general information or actions that aren't critical, note that info variant should not contain any icons in it
 - **Warning**: used to display information that needs attention
 - **Success**: used for success messages
 - **Danger**: used to communicate problems that have to be resolved immediately
 
-<p>
-  This is a pass through component from React-Bootstrap.<br/>
-  <a href="https://react-bootstrap.github.io/components/alerts/" target="_blank" rel="noopener noreferrer">
-  See React-Bootstrap for additional documentation.
-  </a>
-</p>
+This component utilizes and extends the `Alert` component from react-bootstrap.<br/> <a href="https://react-bootstrap.github.io/components/alerts/" target="_blank" rel="noopener noreferrer"> See React-Bootstrap for additional documentation.</a>
 
 ### Basic Usage
 
