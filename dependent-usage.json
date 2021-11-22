@@ -1,8 +1,8 @@
 {
-  "lastModified": 1637503613099,
+  "lastModified": 1637590050131,
   "projectUsages": [
     {
-      "version": "16.18.0",
+      "version": "16.19.0",
       "name": "edx-credentials",
       "repository": {
         "type": "git",
@@ -15,7 +15,7 @@
             "filePath": "credentials/static/components/FoldingTable.jsx",
             "line": 26,
             "column": 6,
-            "version": "16.18.0"
+            "version": "16.19.0"
           }
         ],
         "Button.Deprecated": [
@@ -23,37 +23,37 @@
             "filePath": "credentials/static/components/MasqueradeBanner.jsx",
             "line": 102,
             "column": 12,
-            "version": "16.18.0"
+            "version": "16.19.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 277,
             "column": 14,
-            "version": "16.18.0"
+            "version": "16.19.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 284,
             "column": 12,
-            "version": "16.18.0"
+            "version": "16.19.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 296,
             "column": 12,
-            "version": "16.18.0"
+            "version": "16.19.0"
           },
           {
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 141,
             "column": 10,
-            "version": "16.18.0"
+            "version": "16.19.0"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 177,
             "column": 18,
-            "version": "16.18.0"
+            "version": "16.19.0"
           }
         ],
         "StatusAlert": [
@@ -61,43 +61,43 @@
             "filePath": "credentials/static/components/MasqueradeBanner.jsx",
             "line": 109,
             "column": 8,
-            "version": "16.18.0"
+            "version": "16.19.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 304,
             "column": 8,
-            "version": "16.18.0"
+            "version": "16.19.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 315,
             "column": 8,
-            "version": "16.18.0"
+            "version": "16.19.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 329,
             "column": 8,
-            "version": "16.18.0"
+            "version": "16.19.0"
           },
           {
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 109,
             "column": 14,
-            "version": "16.18.0"
+            "version": "16.19.0"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 138,
             "column": 14,
-            "version": "16.18.0"
+            "version": "16.19.0"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 152,
             "column": 14,
-            "version": "16.18.0"
+            "version": "16.19.0"
           }
         ],
         "Icon": [
@@ -105,13 +105,13 @@
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 311,
             "column": 14,
-            "version": "16.18.0"
+            "version": "16.19.0"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 191,
             "column": 16,
-            "version": "16.18.0"
+            "version": "16.19.0"
           }
         ],
         "Modal": [
@@ -119,13 +119,13 @@
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 90,
             "column": 6,
-            "version": "16.18.0"
+            "version": "16.19.0"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 130,
             "column": 6,
-            "version": "16.18.0"
+            "version": "16.19.0"
           }
         ],
         "CheckBoxGroup": [
@@ -133,7 +133,7 @@
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 123,
             "column": 12,
-            "version": "16.18.0"
+            "version": "16.19.0"
           }
         ],
         "CheckBox": [
@@ -141,7 +141,7 @@
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 125,
             "column": 16,
-            "version": "16.18.0"
+            "version": "16.19.0"
           }
         ],
         "InputText": [
@@ -149,7 +149,7 @@
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 165,
             "column": 18,
-            "version": "16.18.0"
+            "version": "16.19.0"
           }
         ]
       }
@@ -883,7 +883,7 @@
           },
           {
             "filePath": "src/account-settings/delete-account/DeleteAccount.jsx",
-            "line": 95,
+            "line": 99,
             "column": 10,
             "version": "16.1.0"
           },
@@ -951,7 +951,7 @@
           },
           {
             "filePath": "src/account-settings/delete-account/DeleteAccount.jsx",
-            "line": 100,
+            "line": 104,
             "column": 10,
             "version": "16.1.0"
           },
@@ -4602,13 +4602,13 @@
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 671,
+            "line": 675,
             "column": 20,
             "version": "16.14.1"
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 676,
+            "line": 680,
             "column": 20,
             "version": "16.14.1"
           },
@@ -4830,7 +4830,7 @@
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 587,
+            "line": 591,
             "column": 10,
             "version": "16.14.1"
           },
@@ -4918,7 +4918,7 @@
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 684,
+            "line": 688,
             "column": 14,
             "version": "16.14.1"
           },
@@ -5092,7 +5092,7 @@
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 466,
+            "line": 470,
             "column": 26,
             "version": "16.14.1"
           },
@@ -5266,7 +5266,7 @@
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 457,
+            "line": 461,
             "column": 8,
             "version": "16.14.1"
           },
@@ -5354,13 +5354,13 @@
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 460,
+            "line": 464,
             "column": 12,
             "version": "16.14.1"
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 475,
+            "line": 479,
             "column": 10,
             "version": "16.14.1"
           }
@@ -5380,7 +5380,7 @@
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 697,
+            "line": 701,
             "column": 12,
             "version": "16.14.1"
           },
@@ -5406,7 +5406,7 @@
         "Form.Checkbox": [
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 653,
+            "line": 657,
             "column": 14,
             "version": "16.14.1"
           }
@@ -5414,7 +5414,7 @@
         "Form.Check": [
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 685,
+            "line": 689,
             "column": 16,
             "version": "16.14.1"
           }
