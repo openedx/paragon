@@ -15,6 +15,12 @@ devStatus: "Done"
 notes:
 ---
 
+Collapsible is an element that allows a user to toggle (view/hide) supplemental information or actions.
+
+When to use:
+- To organize related information.
+- To shorten pages and reduce scrolling when content is not crucial to read in full.
+- When space is at a premium and long content cannot be displayed all at once.
 
 ### Basic Usage
 
@@ -223,4 +229,18 @@ an **uncontrolled** Collapsible by getting a ref to the component and calling
 the component will be updated accordingly.
 
 
-`
+### Theme Variables (SCSS)
+
+```scss
+$collapsible-card-spacer-y:               .5rem !default;
+$collapsible-card-spacer-x:               .5rem !default;
+$collapsible-card-spacer-y-lg:             $card-spacer-y !default;
+$collapsible-card-spacer-x-lg:             $card-spacer-x !default;
+$collapsible-card-body-spacer-left:        .75rem !default;
+$collapsible-card-spacer-icon:             2.5rem !default;
+
+$collapsible-basic-spacer-y:               .5rem !default;
+$collapsible-basic-spacer-x:               .5rem !default;
+$collapsible-basic-spacer-icon:            .625rem !default;
+```
+

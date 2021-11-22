@@ -93,10 +93,15 @@ class CollapsibleAdvanced extends React.Component {
 CollapsibleAdvanced.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
+  /** Specifies whether `Collapsible` should be initially open. */
   defaultOpen: PropTypes.bool,
+  /** Specifies whether `Collapsible` is open. */
   open: PropTypes.bool,
+  /** Callback fired when `Collapsible's` state is toggled. */
   onToggle: PropTypes.func,
+  /** Callback fired when `Collapsible` opens. */
   onOpen: PropTypes.func,
+  /** Callback fired when `Collapsible` closes. */
   onClose: PropTypes.func,
 };
 

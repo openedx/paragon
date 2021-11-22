@@ -52,10 +52,15 @@ function CollapsibleTrigger({
 
 CollapsibleTrigger.propTypes = {
   children: PropTypes.node,
+  /** Specifies base element. */
   tag: PropTypes.string,
+  /** Specifies whether toggling `Collapsible's` state will always trigger only open action. */
   openOnly: PropTypes.bool,
+  /** Specifies whether toggling `Collapsible's` state will always trigger only close action. */
   closeOnly: PropTypes.bool,
+  /** Callback fired when element gets clicked. */
   onClick: PropTypes.func,
+  /** Callback fired when a key is pressed. */
   onKeyDown: PropTypes.func,
 };
 

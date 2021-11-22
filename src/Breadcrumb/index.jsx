@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import Icon from '../Icon';
 import { ChevronRight } from '../../icons';
 
-const Breadcrumbs = ({
+const Breadcrumb = ({
   links, activeLabel, spacer, clickHandler, variant, isMobile,
 }) => {
   const linkCount = links.length;
@@ -33,7 +33,7 @@ const Breadcrumbs = ({
   );
 };
 
-Breadcrumbs.propTypes = {
+Breadcrumb.propTypes = {
   /** an array of objects with the properties `label` and `url` as strings. */
   links: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
@@ -55,7 +55,7 @@ Breadcrumbs.propTypes = {
   isMobile: PropTypes.bool,
 };
 
-Breadcrumbs.defaultProps = {
+Breadcrumb.defaultProps = {
   activeLabel: undefined,
   spacer: undefined,
   clickHandler: undefined,
@@ -63,4 +63,4 @@ Breadcrumbs.defaultProps = {
   isMobile: false,
 };
 
-export default Breadcrumbs;
+export default Breadcrumb;
