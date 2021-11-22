@@ -1,11 +1,14 @@
 import React from 'react';
 import BaseNavbar from 'react-bootstrap/Navbar';
+import BaseNavbarBrand from 'react-bootstrap/NavbarBrand';
+import BaseNavbarToggle from 'react-bootstrap/NavbarToggle';
+import BaseNavbarCollapse from 'react-bootstrap/NavbarCollapse';
 import PropTypes from 'prop-types';
 
 const Navbar = (props) => <BaseNavbar {...props} />;
-const NavbarBrand = (props) => <Navbar.Brand {...props} />;
-const NavbarToggle = (props) => <Navbar.Toggle {...props} />;
-const NavbarCollapse = (props) => <Navbar.Collapse {...props} />;
+const NavbarBrand = (props) => <BaseNavbarBrand {...props} />;
+const NavbarToggle = (props) => <BaseNavbarToggle {...props} />;
+const NavbarCollapse = (props) => <BaseNavbarCollapse {...props} />;
 
 Navbar.propTypes = {
   ...Navbar.propTypes,
@@ -50,5 +53,9 @@ Navbar.defaultProps = {
   bsPrefix: 'navbar',
 };
 
-export { NavbarBrand, NavbarToggle, NavbarCollapse };
+Navbar.Brand = NavbarBrand;
+Navbar.Toggle = NavbarToggle;
+Navbar.Collapse = NavbarCollapse;
+
+export { NavbarBrand };
 export default Navbar;
