@@ -47,6 +47,21 @@ function PageBanner({
   );
 }
 
+PageBanner.propTypes = {
+  /** An element rendered inside the `Page Banner`. */
+  children: PropTypes.node,
+  /** Boolean used to control whether `Page Banner` is dismissible. */
+  dismissible: PropTypes.bool,
+  /** An element to be set as the dismiss button's alt text (preferably a translated string). */
+  dismissAltText: PropTypes.node,
+  /** A function to be called on dismiss of the `Page Banner`. */
+  onDismiss: PropTypes.func,
+  /** Boolean used to control whether the Page Banner shows. */
+  show: PropTypes.bool,
+  /** A string designating which color variant of the `Page Banner` to display */
+  variant: PropTypes.oneOf([VARIANTS.light, VARIANTS.dark, VARIANTS.warning, VARIANTS.accentA]),
+};
+
 PageBanner.defaultProps = {
   children: undefined,
   dismissible: false,
@@ -54,21 +69,6 @@ PageBanner.defaultProps = {
   onDismiss: () => {},
   show: true,
   variant: VARIANTS.accentA,
-};
-
-PageBanner.propTypes = {
-  /** an element rendered inside the Page Banner */
-  children: PropTypes.node,
-  /** Boolean used to control whether Page Banner is dismissible */
-  dismissible: PropTypes.bool,
-  /** an element to be set as the dismiss button's alt text (preferably a translated string) */
-  dismissAltText: PropTypes.node,
-  /** a function to be called on dismiss of the Page Banner */
-  onDismiss: PropTypes.func,
-  /** Boolean used to control whether the Page Banner shows. */
-  show: PropTypes.bool,
-  /** a string designating which color variant of the Page Banner to display */
-  variant: PropTypes.oneOf([VARIANTS.light, VARIANTS.dark, VARIANTS.warning, VARIANTS.accentA]),
 };
 
 export default PageBanner;

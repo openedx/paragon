@@ -1,6 +1,10 @@
 ---
 title: 'Popover'
 type: 'component'
+components:
+- WrapperPopover
+- PopoverTitle
+- PopoverContent
 categories:
 - Overlays
 status: 'Stable'
@@ -10,7 +14,9 @@ notes: |
 
 ---
 
-##### Basic Usage
+Popovers are small overlays that present additional content and actions without cluttering the page.
+
+### Basic Usage
 
 ```jsx live
 <>
@@ -34,7 +40,7 @@ notes: |
 </>
 ```
 
-##### State variants
+### State variants
 
 ```jsx live
 <>
@@ -107,4 +113,42 @@ notes: |
     </Button>
   </OverlayTrigger>
 </>
+```
+
+### Theme variables (SCSS)
+
+```scss
+$popover-font-size:                 $font-size-sm !default;
+$popover-bg:                        $white !default;
+$popover-max-width:                 480px !default;
+$popover-border-width:              $border-width !default;
+$popover-border-color:              rgba($black, .2) !default;
+$popover-border-radius:             $border-radius-sm !default;
+$popover-inner-border-radius:       subtract($popover-border-radius, $popover-border-width) !default;
+$popover-box-shadow:                drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.15)) drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.15)) !default;
+$popover-icon-margin-right:         .5rem;
+$popover-icon-height:               1rem;
+$popover-icon-width:                1rem;
+
+$popover-header-bg:                 $white !default;
+$popover-header-color:              $headings-color !default;
+$popover-header-padding-y:          .5rem !default;
+$popover-header-padding-x:          1rem !default;
+
+$popover-body-color:                $body-color !default;
+$popover-body-padding-y:            $popover-header-padding-y !default;
+$popover-body-padding-x:            $popover-header-padding-x !default;
+
+$popover-arrow-width:               1rem !default;
+$popover-arrow-height:              .5rem !default;
+$popover-arrow-color:               $popover-bg !default;
+
+$popover-arrow-outer-color:         fade-in($popover-border-color, .05) !default;
+
+$popover-success-bg:                $success-100 !default;
+$popover-success-icon-color:        $success-500 !default;
+$popover-warning-bg:                $warning-100 !default;
+$popover-warning-icon-color:        $warning-500 !default;
+$popover-danger-bg:                 $danger-100 !default;
+$popover-danger-icon-color:         $danger-500 !default;
 ```

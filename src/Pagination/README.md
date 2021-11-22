@@ -15,7 +15,9 @@ notes: |
   Remove baked in english strings
 ---
 
-### basic usage
+Navigation between multiple pages of some set of results. Controls are provided to navigate through multiple pages of related data.
+
+### Basic usage
 
 ```jsx live
 <Pagination
@@ -25,7 +27,7 @@ notes: |
 />
 ```
 
-### with initial page selected
+### With initial page selected
 
 ```jsx live
 <Pagination
@@ -36,7 +38,7 @@ notes: |
 />
 ```
 
-### with max pages displayed
+### With max pages displayed
 
 ```jsx live
 <Pagination
@@ -47,7 +49,7 @@ notes: |
 />
 ```
 
-### with custom string labels
+### With custom string labels
 
 ```jsx live
 <Pagination
@@ -64,7 +66,7 @@ notes: |
 />
 ```
 
-### with custom element labels
+### With custom element labels
 
 ```jsx live
 <Pagination
@@ -81,7 +83,7 @@ notes: |
 />
 ```
 
-### with custom right and left icons
+### With custom right and left icons
 
 ```jsx live
 <Pagination
@@ -93,4 +95,39 @@ notes: |
     rightIcon: <svg viewBox="0 0 32 32" style={{width: '15px'}} aria-hidden="true" className="ml-2"><path d="M18.629 15.997l-7.083-7.081L13.462 7l8.997 8.997L13.457 25l-1.916-1.916z"/></svg>
   }}
 />
+```
+
+### Theme variables (SCSS)
+
+```scss
+$pagination-padding-y:              .5rem !default;
+$pagination-padding-x:              .75rem !default;
+$pagination-padding-y-sm:           .25rem !default;
+$pagination-padding-x-sm:           .5rem !default;
+$pagination-padding-y-lg:           .75rem !default;
+$pagination-padding-x-lg:           1.5rem !default;
+$pagination-line-height:            1.25 !default;
+
+$pagination-color:                  $link-color !default;
+$pagination-bg:                     $white !default;
+$pagination-border-width:           $border-width !default;
+$pagination-border-color:           theme-color("gray", "border") !default;
+
+$pagination-focus-box-shadow:       $input-btn-focus-box-shadow !default;
+$pagination-focus-outline:          0 !default;
+
+$pagination-hover-color:            $link-hover-color !default;
+$pagination-hover-bg:               theme-color("gray", "background") !default;
+$pagination-hover-border-color:     theme-color("gray", "border") !default;
+
+$pagination-active-color:           $component-active-color !default;
+$pagination-active-bg:              $component-active-bg !default;
+$pagination-active-border-color:    $pagination-active-bg !default;
+
+$pagination-disabled-color:         theme-color("gray", "light-text") !default;
+$pagination-disabled-bg:            $white !default;
+$pagination-disabled-border-color:  theme-color("gray", "disabled-border") !default;
+
+$pagination-border-radius-sm:       $border-radius-sm !default;
+$pagination-border-radius-lg:       $border-radius-lg !default;
 ```
