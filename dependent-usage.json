@@ -1,5 +1,5 @@
 {
-  "lastModified": 1637590050131,
+  "lastModified": 1637676469761,
   "projectUsages": [
     {
       "version": "16.19.0",
@@ -7514,19 +7514,19 @@
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 159,
+            "line": 245,
             "column": 17,
             "version": "16.10.0"
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 163,
+            "line": 249,
             "column": 17,
             "version": "16.10.0"
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 167,
+            "line": 253,
             "column": 17,
             "version": "16.10.0"
           },
@@ -7570,7 +7570,7 @@
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 138,
+            "line": 224,
             "column": 8,
             "version": "16.10.0"
           }
@@ -7591,69 +7591,27 @@
             "version": "16.10.0"
           }
         ],
-        "Alert": [
+        "IconButton": [
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 76,
+            "line": 58,
             "column": 6,
             "version": "16.10.0"
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 89,
+            "line": 66,
             "column": 6,
             "version": "16.10.0"
           }
         ],
-        "DataTable": [
+        "Card": [
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 203,
-            "column": 8,
-            "version": "16.10.0"
-          }
-        ],
-        "DataTable.TableControlBar": [
-          {
-            "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 210,
-            "column": 10,
-            "version": "16.10.0"
-          }
-        ],
-        "DataTable.Table": [
-          {
-            "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 211,
-            "column": 10,
-            "version": "16.10.0"
-          }
-        ],
-        "DataTable.TableFooter": [
-          {
-            "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 212,
-            "column": 10,
-            "version": "16.10.0"
-          }
-        ],
-        "DataTable.RowStatus": [
-          {
-            "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 213,
-            "column": 12,
-            "version": "16.10.0"
-          }
-        ],
-        "Form.Radio": [
-          {
-            "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
-            "line": 25,
+            "line": 87,
             "column": 4,
             "version": "16.10.0"
-          }
-        ],
-        "Card": [
+          },
           {
             "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
             "line": 38,
@@ -7661,7 +7619,21 @@
             "version": "16.10.0"
           }
         ],
+        "Card.Img": [
+          {
+            "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
+            "line": 88,
+            "column": 6,
+            "version": "16.10.0"
+          }
+        ],
         "Card.Body": [
+          {
+            "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
+            "line": 94,
+            "column": 6,
+            "version": "16.10.0"
+          },
           {
             "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
             "line": 39,
@@ -7671,9 +7643,93 @@
         ],
         "Card.Title": [
           {
+            "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
+            "line": 95,
+            "column": 8,
+            "version": "16.10.0"
+          },
+          {
             "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
             "line": 40,
             "column": 6,
+            "version": "16.10.0"
+          }
+        ],
+        "Card.Subtitle": [
+          {
+            "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
+            "line": 96,
+            "column": 8,
+            "version": "16.10.0"
+          }
+        ],
+        "Alert": [
+          {
+            "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
+            "line": 157,
+            "column": 6,
+            "version": "16.10.0"
+          },
+          {
+            "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
+            "line": 170,
+            "column": 6,
+            "version": "16.10.0"
+          }
+        ],
+        "DataTable": [
+          {
+            "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
+            "line": 291,
+            "column": 8,
+            "version": "16.10.0"
+          }
+        ],
+        "DataTable.TableControlBar": [
+          {
+            "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
+            "line": 298,
+            "column": 10,
+            "version": "16.10.0"
+          }
+        ],
+        "CardView": [
+          {
+            "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
+            "line": 300,
+            "column": 12,
+            "version": "16.10.0"
+          }
+        ],
+        "DataTable.Table": [
+          {
+            "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
+            "line": 310,
+            "column": 14,
+            "version": "16.10.0"
+          }
+        ],
+        "DataTable.TableFooter": [
+          {
+            "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
+            "line": 311,
+            "column": 10,
+            "version": "16.10.0"
+          }
+        ],
+        "DataTable.RowStatus": [
+          {
+            "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
+            "line": 312,
+            "column": 12,
+            "version": "16.10.0"
+          }
+        ],
+        "Form.Radio": [
+          {
+            "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
+            "line": 25,
+            "column": 4,
             "version": "16.10.0"
           }
         ],
@@ -13917,7 +13973,7 @@
           },
           {
             "filePath": "src/users/enrollments/v2/Enrollments.jsx",
-            "line": 211,
+            "line": 216,
             "column": 8,
             "version": "12.8.0"
           },
@@ -14161,7 +14217,7 @@
         "Form.Check": [
           {
             "filePath": "src/supportHeader/ToggleVersion.jsx",
-            "line": 24,
+            "line": 32,
             "column": 4,
             "version": "12.8.0"
           }
@@ -14421,13 +14477,13 @@
           },
           {
             "filePath": "src/users/enrollments/v2/Enrollments.jsx",
-            "line": 236,
+            "line": 242,
             "column": 6,
             "version": "12.8.0"
           },
           {
             "filePath": "src/users/enrollments/v2/Enrollments.jsx",
-            "line": 250,
+            "line": 256,
             "column": 6,
             "version": "12.8.0"
           },
