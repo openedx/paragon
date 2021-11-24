@@ -12,12 +12,13 @@ const RowStatus = ({ className }) => {
   return (<div className={className}>Showing {pageSize} of {itemCount}.</div>);
 };
 
-RowStatus.defaultProps = {
-  className: undefined,
+RowStatus.propTypes = {
+  /** Specifies class name to append to the base element. */
+  className: PropTypes.string,
 };
 
-RowStatus.propTypes = {
-  className: PropTypes.string,
+RowStatus.defaultProps = {
+  className: undefined,
 };
 
 export default RowStatus;

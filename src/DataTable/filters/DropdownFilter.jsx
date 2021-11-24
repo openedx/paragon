@@ -39,18 +39,25 @@ function DropdownFilter({
 }
 
 DropdownFilter.propTypes = {
+  /**
+   * Specifies a column object.
+   *
+   * `setFilter`: Function to set the filter value.
+   *
+   * `Header`: Column header used for labels and placeholders.
+   *
+   * `filterChoices`: Specifies array of choices.
+   *
+   * `getHeaderProps`: Generates a key unique to the column being filtered.
+   */
   column: PropTypes.shape({
-    /** Function to set the filter value */
     setFilter: PropTypes.func.isRequired,
-    /** Column header used for labels and placeholders */
     Header: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
-    /** Names and values for the select options */
     filterChoices: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string.isRequired,
       number: PropTypes.number,
       value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     })).isRequired,
-    /** Generates a key unique to the column being filtered */
     getHeaderProps: PropTypes.func.isRequired,
   }).isRequired,
 };

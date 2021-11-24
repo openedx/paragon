@@ -27,15 +27,29 @@ function TextFilter({
 }
 
 TextFilter.propTypes = {
+  /**
+   * Specifies a column object.
+   *
+   * `setFilter`: Function to set the filter value.
+   *
+   * `Header`: Column header used for labels and placeholders.
+   *
+   * `getHeaderProps`: Generates a key unique to the column being filtered.
+   *
+   * `filterValue`: Value for the filter input.
+   */
   column: PropTypes.shape({
-    /** Value for the filter input */
-    filterValue: PropTypes.string,
-    /** Function to set the filter value */
     setFilter: PropTypes.func.isRequired,
-    /** Column header used for labels and placeholders */
     Header: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
     getHeaderProps: PropTypes.func.isRequired,
+    filterValue: PropTypes.string,
   }).isRequired,
+};
+
+TextFilter.defaultPropTypes = {
+  column: {
+    filterValue: [],
+  },
 };
 
 export default TextFilter;

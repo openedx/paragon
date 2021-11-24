@@ -30,8 +30,10 @@ const Scrollable = ({ children, ...props }) => {
 };
 
 Scrollable.propTypes = {
-  className: PropTypes.string,
+  /** Specifies the content of the `Scrollable`. */
   children: PropTypes.node.isRequired,
+  /** Additional classnames for this component. */
+  className: PropTypes.string,
 };
 
 Scrollable.defaultProps = {

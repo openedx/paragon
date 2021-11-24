@@ -12,6 +12,17 @@ const TableFooter = ({ className, children }) => (
   </div>
 );
 
+TableFooter.propTypes = {
+  /** Specifies the content of the `TableFooter` */
+  children: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.node])),
+  ]),
+  /** Specifies class name to append to the base element. */
+  className: PropTypes.string,
+};
+
 TableFooter.defaultProps = {
   children: (
     <>
@@ -21,15 +32,6 @@ TableFooter.defaultProps = {
     </>
   ),
   className: null,
-};
-
-TableFooter.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.node])),
-  ]),
 };
 
 export default TableFooter;
