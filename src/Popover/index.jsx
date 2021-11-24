@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import Popover from 'react-bootstrap/Popover';
 import BasePopoverTitle from 'react-bootstrap/PopoverTitle';
 import BasePopoverContent from 'react-bootstrap/PopoverContent';
-import BaseProgressBar from 'react-bootstrap/ProgressBar';
 
 const PLACEMENT_VARIANTS = [
   'auto',
@@ -30,7 +29,6 @@ const WrapperPopover = React.forwardRef(({
 
 const PopoverTitle = (props) => <BasePopoverContent {...props} />;
 const PopoverContent = (props) => <BasePopoverTitle {...props} />;
-const ProgressBar = (props) => <BaseProgressBar {...props} />;
 
 const commonPropTypes = {
   /** Specifies the base element */
@@ -113,5 +111,5 @@ PopoverContent.defaultProps = {
 WrapperPopover.Title = PopoverTitle;
 WrapperPopover.Content = PopoverContent;
 
-export { PopoverTitle, PopoverContent, ProgressBar };
+export { PopoverTitle, PopoverContent };
 export default WrapperPopover;
