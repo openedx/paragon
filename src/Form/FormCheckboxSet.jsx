@@ -37,12 +37,19 @@ const FormCheckboxSet = ({
 FormCheckboxSet.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  /** Specifies name for the component. */
   name: PropTypes.string.isRequired,
+  /** Specifies values for the checkboxes. */
   value: PropTypes.arrayOf(PropTypes.string),
+  /** Specifies default values for the checkboxes. */
   defaultValue: PropTypes.arrayOf(PropTypes.string),
+  /** Specifies whether to display components with inline styling. */
   isInline: PropTypes.bool,
+  /** Specifies onChange event handler. */
   onChange: PropTypes.func,
+  /** Specifies onFocus event handler. */
   onFocus: PropTypes.func,
+  /** Specifies onBlur event handler. */
   onBlur: PropTypes.func,
 };
 

@@ -35,6 +35,7 @@ const SwitchControl = React.forwardRef(
 );
 
 SwitchControl.propTypes = {
+  /** Specifies whether input should be rendered in indeterminate state. */
   isIndeterminate: PropTypes.bool,
   className: PropTypes.string,
 };

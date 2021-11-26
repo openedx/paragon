@@ -20,14 +20,15 @@ const FormLabel = ({ children, isInline, ...props }) => {
   return React.createElement(componentType, labelProps, children);
 };
 
+const SIZE_CHOICES = ['sm', 'lg'];
+
 FormLabel.propTypes = {
-  isInline: PropTypes.bool,
-  size: PropTypes.oneOf([
-    FORM_CONTROL_SIZES.SMALL,
-    FORM_CONTROL_SIZES.LARGE,
-  ]),
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
+  /** Specifies whether the component should be displayed with inline styling. */
+  isInline: PropTypes.bool,
+  /** Specifies size of the component. */
+  size: PropTypes.oneOf(SIZE_CHOICES),
 };
 
 FormLabel.defaultProps = {

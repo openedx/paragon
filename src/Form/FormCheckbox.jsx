@@ -33,6 +33,7 @@ const CheckboxControl = React.forwardRef(
 );
 
 CheckboxControl.propTypes = {
+  /** Specifies whether the checkbox should be rendered in indeterminate state. */
   isIndeterminate: PropTypes.bool,
   className: PropTypes.string,
 };
@@ -101,11 +102,17 @@ const FormCheckbox = React.forwardRef(({
 FormCheckbox.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  /** Specifies class name for control component. */
   controlClassName: PropTypes.string,
+  /** Specifies class name for label component. */
   labelClassName: PropTypes.string,
+  /** Specifies description to show under the checkbox. */
   description: PropTypes.node,
+  /** Specifies whether to display checkbox in invalid state, this affects styling. */
   isInvalid: PropTypes.bool,
+  /** Specifies whether to display checkbox in valid state, this affects styling. */
   isValid: PropTypes.bool,
+  /** Specifies control element. */
   controlAs: PropTypes.elementType,
   floatLabelLeft: PropTypes.bool,
 };

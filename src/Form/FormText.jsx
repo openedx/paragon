@@ -71,18 +71,32 @@ const FormText = ({
   );
 };
 
+const FORM_TEXT_TYPE_CHOICES = [
+  'default',
+  'valid',
+  'invalid',
+  'warning',
+  'criteria-empty',
+  'criteria-valid',
+  'criteria-invalid',
+];
+
 FormText.propTypes = {
-  hasIcon: PropTypes.bool,
-  type: PropTypes.oneOf(Object.values(FORM_TEXT_TYPES)),
-  icon: PropTypes.node,
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  /** Specifies whether to show an icon next to the text. */
+  hasIcon: PropTypes.bool,
+  /** Specifies text type, this affects styling. */
+  type: PropTypes.oneOf(FORM_TEXT_TYPE_CHOICES),
+  /** Specifies icon to show, will only be shown if `hasIcon` prop is set to `true`. */
+  icon: PropTypes.node,
+  /** Specifies whether to show text with muted styling. */
   muted: PropTypes.bool,
 };
 
 FormText.defaultProps = {
   hasIcon: true,
-  type: FORM_TEXT_TYPES.DEFAULT,
+  type: 'default',
   icon: undefined,
   className: undefined,
   muted: false,
