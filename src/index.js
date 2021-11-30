@@ -18,6 +18,7 @@ export {
 export { default as Carousel, CarouselItem } from './Carousel';
 export { default as CheckBox } from './CheckBox';
 export { default as CheckBoxGroup } from './CheckBoxGroup';
+export { default as Chip } from './Chip';
 export { default as CloseButton } from './CloseButton';
 export { default as Container } from './Container';
 export { Col, Row } from './Layout';
