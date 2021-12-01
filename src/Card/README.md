@@ -5,6 +5,9 @@ components:
 - Card
 - CardHeader
 - CardGrid
+- CardSection
+- CardDivider
+- CardFooter
 categories:
 - Content
 status: 'Stable'
@@ -58,7 +61,7 @@ This header displays a title, subtitle, and may contain actions.
 ```
 
 #### Actions
-The CardHeader supports custom actions via the the actions prop and renders them on the top right of the header.
+The CardHeader supports custom actions via the actions prop and renders them on the top right of the header.
 
 ```jsx live
 <div>
