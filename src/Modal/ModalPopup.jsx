@@ -41,7 +41,7 @@ ModalPopup.propTypes = {
   // This type: https://stackoverflow.com/questions/48007326/what-is-the-correct-proptype-for-a-ref-in-react
   positionRef: PropTypes.oneOfType([
     PropTypes.func,
-    PropTypes.shape({ current: PropTypes.element }),
+    PropTypes.shape({ current: PropTypes.shape({}) }),
   ]).isRequired,
   placement: PopperElement.propTypes.placement,
 };
