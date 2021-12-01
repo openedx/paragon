@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import newId from '../utils/newId';
+import { BUTTON_LOCATION_VARIANTS } from './constants';
 
 export const SearchFieldContext = createContext();
 
@@ -24,6 +25,8 @@ const SearchFieldAdvanced = (props) => {
     onFocus,
     value: initialValue,
     formAriaLabel,
+    disabled,
+    submitButtonLocation,
   } = props;
 
   const [hasFocus, setHasFocus] = useState(false);
@@ -80,7 +83,11 @@ const SearchFieldAdvanced = (props) => {
     <div
       className={classNames(
         'pgn__searchfield', 'd-flex',
-        { 'has-focus': hasFocus },
+        {
+          'has-focus': hasFocus,
+          disabled,
+          'pgn__searchfield--external': submitButtonLocation === 'external',
+        },
         className,
       )}
     >
@@ -158,6 +165,8 @@ SearchFieldAdvanced.propTypes = {
   }),
   /** specifies the aria-label attribute on the form element. This is useful if you use the `SearchField` component more than once on a page. */
   formAriaLabel: PropTypes.string,
+  disabled: PropTypes.bool,
+  submitButtonLocation: PropTypes.oneOf(BUTTON_LOCATION_VARIANTS),
 };
 
 SearchFieldAdvanced.defaultProps = {
@@ -177,6 +186,8 @@ SearchFieldAdvanced.defaultProps = {
   onChange: () => {},
   onFocus: () => {},
   onClear: () => {},
+  disabled: false,
+  submitButtonLocation: 'internal',
 };
 
 export default SearchFieldAdvanced;

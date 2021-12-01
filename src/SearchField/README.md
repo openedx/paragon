@@ -77,6 +77,15 @@ notes:
 />
 ```
 
+### With the submit button outside the input
+
+```jsx live
+<SearchField
+  submitButtonLocation="external"
+  onSubmit={value => console.log(`search submitted: ${value}`)}
+/>
+```
+
 ### Advanced Usage
 
 For needs that deviate from the basic usage above, use `<SearchField.Advanced />`. The `children` elements must contain the `SearchField.Label` and `SearchField.Input` components at a minimum.
