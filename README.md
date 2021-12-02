@@ -170,6 +170,9 @@ module.exports = {
   localModules: [
     { moduleName: '@edx/paragon/scss/core', dir: '../src/paragon', dist: 'scss/core' },
     { moduleName: '@edx/paragon/icons', dir: '../src/paragon', dist: 'icons' },
+    // Note that using dist: 'dist' will require you to run 'npm build' in Paragon
+    // to add local changes to the 'dist' directory, so that they can be picked up by the MFE.
+    // To avoid doing that you can use dist: 'src' to get any local changes hot reloaded on save in the MFE.
     { moduleName: '@edx/paragon', dir: '../src/paragon', dist: 'dist' },
   ],
 };
