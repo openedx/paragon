@@ -66,4 +66,13 @@ describe('<Breadcrumb />', () => {
     links.first().simulate('click');
     expect(clickHandler).toHaveBeenCalled();
   });
+
+  it('renders in mobile view', () => {
+    wrapper = mount(<Breadcrumb {...baseProps} isMobile />);
+
+    const list = wrapper.find('ol');
+    const listElements = list.find('li');
+    expect(listElements.length).toEqual(2);
+    expect(list.hasClass('is-mobile')).toEqual(true);
+  });
 });
