@@ -3,6 +3,8 @@ title: 'Alert'
 type: 'component'
 components:
 - Alert
+- AlertHeading
+- AlertLink
 categories:
 - Status & metadata
 status: 'Stable'
@@ -12,12 +14,14 @@ notes: |
 
 ---
 
-<p className="lead">
-  This is a pass through component from React-Bootstrap.<br/>
-  <a href="https://react-bootstrap.github.io/components/alerts/" target="_blank" rel="noopener noreferrer">
-    See React-Bootstrap for documentation.
-  </a>
-</p>
+The `Alert` component displays a short, important message in a way that attracts the user's attention.
+Alerts offer four severity levels that set a distinctive icon and color:
+- **Info**: used to convey general information or actions that aren't critical, note that info variant should not contain any icons in it
+- **Warning**: used to display information that needs attention
+- **Success**: used for success messages
+- **Danger**: used to communicate problems that have to be resolved immediately
+
+This component utilizes and extends the `Alert` component from react-bootstrap.<br/> <a href="https://react-bootstrap.github.io/components/alerts/" target="_blank" rel="noopener noreferrer"> See React-Bootstrap for additional documentation.</a>
 
 ### Basic Usage
 
@@ -48,6 +52,11 @@ notes: |
 
 ### With Action Buttons
 The ``Alert`` component supports a dismissible button and a custom call-to-action button, via the ``dismissible`` and ``button`` props respectively. The buttons may be right aligned or stacked. On extra small screen widths, the buttons will be stacked.
+
+The stacked variant should be used for:
+- Placement in sidebars or small container
+- Extra-small breakpoint and below
+---
 
 ```jsx live
 <>

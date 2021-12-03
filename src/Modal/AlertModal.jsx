@@ -24,16 +24,31 @@ const AlertModal = ({
 
 AlertModal.propTypes = {
   children: PropTypes.node.isRequired,
+  /** The aria-label of the dialog */
   title: PropTypes.string.isRequired,
+  /** Is the modal dialog open or closed */
   isOpen: PropTypes.bool,
+  /** Prevent clicking on the backdrop to close the modal */
   isBlocking: PropTypes.bool,
+  /** Specifies whether the dialog box should contain 'x' icon button in the top right */
   hasCloseButton: PropTypes.bool,
+  /** A callback to close the modal dialog */
   onClose: requiredWhenNot(PropTypes.func, 'isBlocking'),
+  /** Sizes determine the maximum width of the dialog box */
   size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'fullscreen']),
+  /** The visual style of the dialog box */
   variant: PropTypes.oneOf(['default', 'warning', 'danger', 'success', 'dark']),
+  /** The label supplied to the close icon button if one is rendered */
   closeLabel: PropTypes.string,
+  /** Specifies class name to append to the base element */
   className: PropTypes.string,
+  /**
+   * Determines where a scrollbar should appear if a modal is too large for the
+   * viewport. When false, the ModalDialog.Body receives a scrollbar, when true
+   * the browser window itself receives the scrollbar.
+   */
   isFullscreenScroll: PropTypes.bool,
+  /** Specifies what should be displayed in the footer of the dialog box */
   footerNode: PropTypes.node,
 };
 
