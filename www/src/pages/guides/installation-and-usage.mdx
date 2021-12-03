@@ -28,6 +28,8 @@ Usage with no theme:
 
 Usage with a theme:
 
+When working with a theme the order of imports is important: if you need to override Paragon's variables you must import theme's variables before Paragon core (that's because all variables in Paragon use `!default` flag which allows you to override them before importing, you can read more [here](https://sass-lang.com/documentation/variables#default-values)), while to override Paragon's styles, the theme's style overrides must be imported after.
+
 ```scss
 @import "@my-brand/fonts.scss";
 @import "@my-brand/variables.scss";
