@@ -20,9 +20,13 @@ const ActionRow = ({
 );
 
 ActionRow.propTypes = {
+  /** Specifies the base element */
   as: PropTypes.elementType,
+  /** Specifies class name to append to the base element */
   className: PropTypes.string,
+  /** Specifies the contents of the row */
   children: PropTypes.node,
+  /** Specifies whether row should be displayed horizontally */
   isStacked: PropTypes.bool,
 };
 
