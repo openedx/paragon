@@ -1,5 +1,5 @@
 {
-  "lastModified": 1638454038194,
+  "lastModified": 1638540444875,
   "projectUsages": [
     {
       "version": "16.20.1",
@@ -9825,7 +9825,7 @@
           },
           {
             "filePath": "src/courseware/course/sequence/honor-code/HonorCode.jsx",
-            "line": 23,
+            "line": 34,
             "column": 4,
             "version": "16.18.0"
           },
@@ -10057,13 +10057,13 @@
           },
           {
             "filePath": "src/courseware/course/sequence/honor-code/HonorCode.jsx",
-            "line": 42,
+            "line": 53,
             "column": 8,
             "version": "16.18.0"
           },
           {
             "filePath": "src/courseware/course/sequence/honor-code/HonorCode.jsx",
-            "line": 45,
+            "line": 56,
             "column": 8,
             "version": "16.18.0"
           },
@@ -11041,7 +11041,7 @@
         "ActionRow": [
           {
             "filePath": "src/courseware/course/sequence/honor-code/HonorCode.jsx",
-            "line": 40,
+            "line": 51,
             "column": 6,
             "version": "16.18.0"
           }
@@ -11049,7 +11049,7 @@
         "ActionRow.Spacer": [
           {
             "filePath": "src/courseware/course/sequence/honor-code/HonorCode.jsx",
-            "line": 41,
+            "line": 52,
             "column": 8,
             "version": "16.18.0"
           }
@@ -14770,7 +14770,78 @@
         "url": "git+https://github.com/edx/frontend-component-header.git"
       },
       "folderName": "frontend-component-header",
-      "usages": {}
+      "usages": {
+        "Button": [
+          {
+            "filePath": "src/learning-header/AnonymousUserMenu.jsx",
+            "line": 13,
+            "column": 6,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/learning-header/AnonymousUserMenu.jsx",
+            "line": 20,
+            "column": 6,
+            "version": "12.8.0"
+          }
+        ],
+        "Dropdown.Item": [
+          {
+            "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
+            "line": 15,
+            "column": 4,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
+            "line": 32,
+            "column": 10,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
+            "line": 35,
+            "column": 10,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
+            "line": 39,
+            "column": 12,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
+            "line": 43,
+            "column": 10,
+            "version": "12.8.0"
+          }
+        ],
+        "Dropdown": [
+          {
+            "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
+            "line": 23,
+            "column": 6,
+            "version": "12.8.0"
+          }
+        ],
+        "Dropdown.Toggle": [
+          {
+            "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
+            "line": 24,
+            "column": 8,
+            "version": "12.8.0"
+          }
+        ],
+        "Dropdown.Menu": [
+          {
+            "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
+            "line": 30,
+            "column": 8,
+            "version": "12.8.0"
+          }
+        ]
+      }
     },
     {
       "version": "14.5.0",
@@ -15712,13 +15783,13 @@
           },
           {
             "filePath": "src/components/Course/CourseModes.jsx",
-            "line": 297,
+            "line": 313,
             "column": 50,
             "version": "16.14.6"
           },
           {
             "filePath": "src/components/Course/CourseModes.jsx",
-            "line": 306,
+            "line": 322,
             "column": 50,
             "version": "16.14.6"
           },
@@ -16066,7 +16137,7 @@
           },
           {
             "filePath": "src/components/Course/CourseModes.jsx",
-            "line": 154,
+            "line": 170,
             "column": 4,
             "version": "16.14.6"
           },
@@ -16400,13 +16471,13 @@
         "OverlayTrigger": [
           {
             "filePath": "src/components/Course/CourseModes.jsx",
-            "line": 231,
+            "line": 247,
             "column": 26,
             "version": "16.14.6"
           },
           {
             "filePath": "src/components/Course/CourseModes.jsx",
-            "line": 248,
+            "line": 264,
             "column": 26,
             "version": "16.14.6"
           },
@@ -16432,13 +16503,13 @@
         "Tooltip": [
           {
             "filePath": "src/components/Course/CourseModes.jsx",
-            "line": 234,
+            "line": 250,
             "column": 30,
             "version": "16.14.6"
           },
           {
             "filePath": "src/components/Course/CourseModes.jsx",
-            "line": 251,
+            "line": 267,
             "column": 30,
             "version": "16.14.6"
           },
