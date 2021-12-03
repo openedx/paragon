@@ -91,7 +91,9 @@ class CollapsibleAdvanced extends React.Component {
 }
 
 CollapsibleAdvanced.propTypes = {
+  /** Specifies contents of the component. */
   children: PropTypes.node,
+  /** Specifies classname to append to the base element. */
   className: PropTypes.string,
   /** Specifies whether `Collapsible` should be initially open. */
   defaultOpen: PropTypes.bool,

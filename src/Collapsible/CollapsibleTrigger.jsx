@@ -51,6 +51,7 @@ function CollapsibleTrigger({
 }
 
 CollapsibleTrigger.propTypes = {
+  /** Specifies contents of the component. */
   children: PropTypes.node,
   /** Specifies base element. */
   tag: PropTypes.string,

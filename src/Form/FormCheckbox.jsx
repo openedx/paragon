@@ -35,6 +35,7 @@ const CheckboxControl = React.forwardRef(
 CheckboxControl.propTypes = {
   /** Specifies whether the checkbox should be rendered in indeterminate state. */
   isIndeterminate: PropTypes.bool,
+  /** Specifies class name to append to the base element. */
   className: PropTypes.string,
 };
 
@@ -100,7 +101,9 @@ const FormCheckbox = React.forwardRef(({
 });
 
 FormCheckbox.propTypes = {
+  /** Specifies contents of the component. */
   children: PropTypes.node.isRequired,
+  /** Specifies class name to append to the base element. */
   className: PropTypes.string,
   /** Specifies class name for control component. */
   controlClassName: PropTypes.string,

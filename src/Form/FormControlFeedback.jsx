@@ -31,7 +31,9 @@ const FEEDBACK_TYPES = [
 ];
 
 FormControlFeedback.propTypes = {
+  /** Specifies contents of the component. */
   children: PropTypes.node.isRequired,
+  /** Specifies class name to append to the base element. */
   className: PropTypes.string,
   /** Specifies whether to show an icon next to the text. */
   hasIcon: PropTypes.bool,

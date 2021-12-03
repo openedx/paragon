@@ -28,7 +28,9 @@ const FormGroup = ({
 const SIZE_CHOICES = ['sm', 'lg'];
 
 FormGroup.propTypes = {
+  /** Specifies contents of the component. */
   children: PropTypes.node.isRequired,
+  /** Specifies class name to append to the base element. */
   className: PropTypes.string,
   /** Specifies base element for the component. */
   as: PropTypes.elementType,

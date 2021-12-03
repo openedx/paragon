@@ -18,6 +18,7 @@ function CollapsibleVisible({
 }
 
 CollapsibleVisible.propTypes = {
+  /** Specifies contents of the component. */
   children: PropTypes.node,
   /** Specifies whether the content should be visible when `Collapsible` is open. */
   whenOpen: PropTypes.bool,

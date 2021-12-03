@@ -70,7 +70,9 @@ const FormRadio = React.forwardRef(({
 });
 
 FormRadio.propTypes = {
+  /** Specifies contents of the component. */
   children: PropTypes.node.isRequired,
+  /** Specifies class name to append to the base element. */
   className: PropTypes.string,
   /** Specifies class name for control component. */
   controlClassName: PropTypes.string,

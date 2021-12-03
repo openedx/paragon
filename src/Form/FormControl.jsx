@@ -65,6 +65,7 @@ FormControl.Feedback = FormControlFeedback;
 FormControl.Description = FormControlFeedback;
 
 FormControl.propTypes = {
+  /** Specifies class name to append to the base element. */
   className: PropTypes.string,
   /** Specifies base element for the control component. */
   as: PropTypes.elementType,

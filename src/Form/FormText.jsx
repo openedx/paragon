@@ -82,7 +82,9 @@ const FORM_TEXT_TYPE_CHOICES = [
 ];
 
 FormText.propTypes = {
+  /** Specifies contents of the component. */
   children: PropTypes.node.isRequired,
+  /** Specifies class name to append to the base element. */
   className: PropTypes.string,
   /** Specifies whether to show an icon next to the text. */
   hasIcon: PropTypes.bool,

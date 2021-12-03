@@ -23,7 +23,9 @@ const FormLabel = ({ children, isInline, ...props }) => {
 const SIZE_CHOICES = ['sm', 'lg'];
 
 FormLabel.propTypes = {
+  /** Specifies class name to append to the base element. */
   className: PropTypes.string,
+  /** Specifies contents of the component. */
   children: PropTypes.node.isRequired,
   /** Specifies whether the component should be displayed with inline styling. */
   isInline: PropTypes.bool,

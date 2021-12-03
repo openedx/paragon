@@ -35,7 +35,9 @@ const FormCheckboxSet = ({
 };
 
 FormCheckboxSet.propTypes = {
+  /** Specifies contents of the component. */
   children: PropTypes.node.isRequired,
+  /** Specifies class name to append to the base element. */
   className: PropTypes.string,
   /** Specifies name for the component. */
   name: PropTypes.string.isRequired,

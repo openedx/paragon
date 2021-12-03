@@ -51,7 +51,9 @@ const Collapsible = React.forwardRef((props, ref) => {
 });
 
 Collapsible.propTypes = {
+  /** Specifies contents of the component. */
   children: PropTypes.node.isRequired,
+  /** Specifies class name to append to the base element. */
   className: PropTypes.string,
   /** Specifies whether the `Collapsible` should be initially open. */
   defaultOpen: PropTypes.bool,
