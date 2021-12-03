@@ -21,6 +21,21 @@ ActionRow assumes that its last child is the primary action and lays out actions
 
 ```jsx live
 <ActionRow>
+  <Button variant="tertiary">
+    Cancel
+  </Button>
+  <Button variant="primary">
+    Submit
+  </Button>
+</ActionRow>
+```
+
+### Usage with a Spacer
+
+ActionRow can also be used with a helper component ``ActionRow.Spacer`` to insert empty space between children
+
+```jsx live
+<ActionRow>
   <Form.Checkbox>Don't ask me again.</Form.Checkbox>
   <ActionRow.Spacer />
   <Button variant="tertiary">
@@ -47,4 +62,11 @@ ActionRow assumes that its last child is the primary action and lays out actions
     Continue
   </Button>
 </ActionRow>
+```
+
+### Theme variables (SCSS)
+
+```scss
+$action-row-gap-x:                   .5rem !default;
+$action-row-gap-y:                   .5rem !default;
 ```
