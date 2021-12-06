@@ -36,6 +36,7 @@ const OverlayTrigger = (props) => (
 );
 
 Overlay.propTypes = {
+  /** Specifies the content of the `Overlay`. */
   children: PropTypes.node.isRequired,
   /**
    * A component instance, DOM node, or function that returns either.
@@ -87,6 +88,7 @@ Overlay.propTypes = {
 };
 
 OverlayTrigger.propTypes = {
+  /** Specifies the content of the `OverlayTrigger`. */
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.func]).isRequired,
   /** An element or text to overlay next to the target. */
   overlay: PropTypes.oneOfType([PropTypes.element, PropTypes.func]).isRequired,
