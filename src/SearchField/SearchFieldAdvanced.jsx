@@ -8,9 +8,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import newId from '../utils/newId';
-import { BUTTON_LOCATION_VARIANTS } from './constants';
 
 export const SearchFieldContext = createContext();
+
+const BUTTON_LOCATION_VARIANTS = [
+  'internal',
+  'external',
+];
 
 const SearchFieldAdvanced = (props) => {
   const {

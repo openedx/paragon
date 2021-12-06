@@ -3,9 +3,13 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { BUTTON_LOCATION_VARIANTS } from './constants';
 
 import SearchField from './index';
+
+const BUTTON_LOCATION_VARIANTS = [
+  'internal',
+  'external',
+];
 
 const baseProps = {
   onSubmit: () => {},

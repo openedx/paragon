@@ -1,10 +1,19 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { BUTTON_LOCATION_VARIANTS, STYLE_VARIANTS } from './constants';
 
 import { SearchFieldContext } from './SearchFieldAdvanced';
 import { Button } from '../index';
+
+const STYLE_VARIANTS = [
+  'light',
+  'dark',
+];
+
+const BUTTON_LOCATION_VARIANTS = [
+  'internal',
+  'external',
+];
 
 const SearchFieldSubmitButton = (props) => {
   const {

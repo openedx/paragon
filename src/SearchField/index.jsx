@@ -9,7 +9,16 @@ import SearchFieldLabel from './SearchFieldLabel';
 import SearchFieldInput from './SearchFieldInput';
 import SearchFieldClearButton from './SearchFieldClearButton';
 import SearchFieldSubmitButton from './SearchFieldSubmitButton';
-import { BUTTON_LOCATION_VARIANTS, STYLE_VARIANTS } from './constants';
+
+const STYLE_VARIANTS = [
+  'light',
+  'dark',
+];
+
+const BUTTON_LOCATION_VARIANTS = [
+  'internal',
+  'external',
+];
 
 const SearchField = (props) => {
   const {
