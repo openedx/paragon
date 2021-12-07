@@ -11,7 +11,7 @@ devStatus: 'In progress'
 notes: |
 ---
 
-``Chips`` are compact elements that represent an input, attribute, or action. Similar to the Badge component, but interactive.
+``Chips`` are compact elements that represent an input, attribute, or action. Similar to the [Badge](/components/badge) component, but interactive.
 
 ### Basic Usage
 

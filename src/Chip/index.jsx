@@ -64,14 +64,14 @@ Chip.propTypes = {
    *
    * `import { Check } from '@edx/paragon/icons';`
    */
-  iconBefore: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+  iconBefore: PropTypes.node,
   /**
    * An icon component to render before after the content.
    * Example import of a Paragon icon component:
    *
    * `import { Check } from '@edx/paragon/icons';`
    */
-  iconAfter: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+  iconAfter: PropTypes.node,
   /** A click handler for the `Chip` */
   onClick: PropTypes.func,
 };
