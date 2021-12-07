@@ -120,6 +120,118 @@ Add ``size="sm"`` for smaller header content and actions.
   />
 </Card>
 ```
+
+### Section
+`Card.Section` is the main block to display card content. Can include its own title and actions separate from other card components. Multiple sections have a `Card.Divider` between them.
+
+```jsx live
+<Card>
+  <Card.Section 
+    title="Section title"
+    actions={
+      <ActionRow>
+        <Button>Action 1</Button>
+        <Button>Action 2</Button>
+      </ActionRow>
+    }
+  >
+    This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+  </Card.Section>
+  <Card.Divider />
+  <Card.Section 
+    title="Muted section"
+    actions={
+      <ActionRow>
+        <Button>Action 1</Button>
+        <Button>Action 2</Button>
+      </ActionRow>
+    }
+    muted
+  >
+    This is a muted variant.
+  </Card.Section>
+  <Card.Divider />
+  <Card.Section>
+    This is a section without title or actions, just content.
+  </Card.Section>
+</Card>
+```
+
+### Footer
+
+`Card.Footer` is the bottom part of the card. Usually used to outline actions that can be taken on the card object.
+
+#### Vertical variant
+
+```jsx live
+<>
+  <Card>
+    <Card.Footer>
+      <Button>Action 1</Button>
+      <Button>Action 2</Button>
+    </Card.Footer>
+    <Card.Divider />
+    <Card.Footer text="Optional footer text to display">
+      <Button>Action 1</Button>
+      <Button>Action 2</Button>
+    </Card.Footer>
+    <Card.Divider />
+  </Card>
+  <Card style={{width: '40%'}}>
+    <Card.Footer text="Stacked vertical variant" isStacked>
+      <Button>Action 1</Button>
+      <Button>Action 2</Button>
+    </Card.Footer>
+  </Card>
+</>
+```
+
+#### Horizontal variant
+
+```jsx live
+<Card style={{width: '40%'}}>
+  <Card.Footer orientation="horizontal">
+    <Button>Action 1</Button>
+    <Button>Action 2</Button>
+  </Card.Footer>
+  <Card.Divider />
+  <Card.Footer orientation="horizontal" text="Optional footer text to display">
+    <Button>Action 1</Button>
+    <Button>Action 2</Button>
+  </Card.Footer>
+  <Card.Divider />
+  <Card.Footer orientation="horizontal" text="Horizontal stacked variant" isStacked>
+    <Button>Action 1</Button>
+    <Button>Action 2</Button>
+  </Card.Footer>
+</Card>
+```
+
+#### With Image Cap
+
+```jsx live
+<>
+  <Card style={{width: '40%'}}>
+    <Card.ImageCap 
+      src="https://source.unsplash.com/360x200/?nature,flower"
+      logoSrc="https://via.placeholder.com/150"
+    />
+    <Card.Header
+      title="Title"
+      subtitle="Subtitle"
+    />
+    <Card.Section 
+      title="Section title"
+    >
+      This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+    </Card.Section>
+    <Card.Footer>
+      <Button>Action 1</Button>
+    </Card.Footer>
+  </Card>
+</>
+```
+
 ### CardGrid
 
 This component displays a collection of Cards as a grid (with customizable responsive behavior), where

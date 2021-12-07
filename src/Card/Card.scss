@@ -151,3 +151,39 @@
     order: -1;
   }
 }
+
+.pgn__card-wrapper-image-cap {
+  position: relative;
+
+  &.horizontal {
+    .pgn__card-image-cap {
+      height: 100%;
+      border-top-left-radius: $card-border-radius;
+      border-bottom-left-radius: $card-border-radius;
+      border-top-right-radius: 0;
+    }
+
+    .pgn__card-logo-cap {
+      left: $card-logo-left-offset-horizontal;
+      bottom: $card-logo-bottom-offset-horizontal;
+      
+    }
+  }
+}
+
+.pgn__card-image-cap {
+  width: 100%;
+  border-top-left-radius: $card-border-radius;
+  border-top-right-radius: $card-border-radius;
+}
+
+.pgn__card-logo-cap {
+  position: absolute;
+  left: $card-logo-left-offset;
+  bottom: #{-$card-logo-bottom-offset};
+  width: $card-logo-width;
+  height: $card-logo-height;
+  border-radius: $card-logo-border-radius;
+  box-shadow: $card-logo-box-shadow;
+  z-index: 1;
+}

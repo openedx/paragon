@@ -3,6 +3,7 @@ import CardHeader from './CardHeader';
 import CardDivider from './CardDivider';
 import CardSection from './CardSection';
 import CardFooter from './CardFooter';
+import CardImageCap from './CardImageCap';
 
 export { default as CardColumns } from 'react-bootstrap/CardColumns';
 export { default as CardDeck } from 'react-bootstrap/CardDeck';
@@ -15,4 +16,5 @@ Card.Header = CardHeader;
 Card.Divider = CardDivider;
 Card.Section = CardSection;
 Card.Footer = CardFooter;
+Card.ImageCap = CardImageCap;
 export default Card;
