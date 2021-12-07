@@ -1,0 +1,72 @@
+@import "variables";
+
+@mixin triangle($color, $direction) {
+  height: 0;
+  width: 0;
+  position: absolute;
+  content: '';
+  border: solid transparent;
+
+  @if $direction == top {
+    border-bottom-color: $color;
+    border-width: 0 $annotation-arrow-border-width $annotation-arrow-border-width;
+    right: 0;
+    left: 0;
+    top: -$annotation-arrow-border-width;
+    margin: 0 auto;
+  } @else if $direction == right {
+    border-left-color: $color;
+    border-width: $annotation-arrow-border-width 0 $annotation-arrow-border-width $annotation-arrow-border-width;
+    top: 0;
+    bottom: 0;
+    right: -$annotation-arrow-border-width;
+    margin: auto 0;
+  } @else if $direction == bottom {
+    border-top-color: $color;
+    border-width: $annotation-arrow-border-width $annotation-arrow-border-width 0;
+    right: 0;
+    left: 0;
+    bottom: -$annotation-arrow-border-width;
+    margin: 0 auto;
+  } @else if $direction == left {
+    border-right-color: $color;
+    border-width: $annotation-arrow-border-width $annotation-arrow-border-width $annotation-arrow-border-width 0;
+    top: 0;
+    bottom: 0;
+    left: -$annotation-arrow-border-width;
+    margin: auto 0;
+  } @else {
+    @error "Unknown direction #{$direction}.";
+  }
+}
+
+.pgn__annotation {
+  padding: $annotation-padding;
+  border-radius: $annotation-border-radius;
+  max-width: $annotation-max-width;
+  filter: $annotation-box-shadow;
+  word-wrap: break-word;
+  position: relative;
+  display: inline-block;
+  font-size: $annotation-font-size;
+  line-height: $annotation-line-height;
+  text-align: center;
+}
+
+$arrow-directions: top, right, bottom, left;
+
+@each $name, $colors in $annotation-variants {
+  @each $direction in $arrow-directions {
+    .pgn__annotation-#{$name}-#{$direction} {
+      background-color: map-get($colors, "background-color");
+      color: map-get($colors, "color");
+
+      // set additional margin to arrow side of the Annotation
+      margin-#{$direction}: $annotation-arrow-border-width + $annotation-arrow-side-margin;
+
+      &::after {
+        @include triangle(map-get($colors, "background-color"), $direction)
+      }
+    }
+  }
+}

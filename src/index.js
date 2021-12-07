@@ -2,6 +2,7 @@
 export { default as asInput } from './asInput';
 export { default as ActionRow } from './ActionRow';
 export { default as Alert } from './Alert';
+export { default as Annotation } from './Annotation';
 export { default as Avatar } from './Avatar';
 export { default as AvatarButton } from './AvatarButton';
 export { default as Badge } from './Badge';
