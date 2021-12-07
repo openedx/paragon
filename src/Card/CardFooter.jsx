@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import CardContext from './CardContext';
 
 const CardFooter = React.forwardRef(({
   children,
@@ -9,8 +10,10 @@ const CardFooter = React.forwardRef(({
   text,
   orientation,
 }, ref) => {
-  const wrapperClassName = `pgn__card-footer ${orientation}${isStacked ? '-stacked' : ''}`;
-  const textClassName = `pgn__card-footer-text ${orientation}${isStacked ? '-stacked' : ''} x-small`;
+  const { horizontal } = useContext(CardContext);
+  const dir = horizontal ? 'horizontal' : orientation;
+  const wrapperClassName = `pgn__card-footer ${dir}${isStacked ? '-stacked' : ''}`;
+  const textClassName = `pgn__card-footer-text ${dir}${isStacked ? '-stacked' : ''} x-small`;
 
   return (
     <div className={classNames(className, wrapperClassName)} ref={ref}>

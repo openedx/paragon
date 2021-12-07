@@ -82,6 +82,7 @@
 }
 
 .pgn__card-footer {
+  @extend .w-100;
   padding: $card-spacer-x;
   background-color: $white;
   display: flex;
@@ -156,11 +157,17 @@
   position: relative;
 
   &.horizontal {
+    max-width: 30%;
+
     .pgn__card-image-cap {
       height: 100%;
       border-top-left-radius: $card-border-radius;
       border-bottom-left-radius: $card-border-radius;
       border-top-right-radius: 0;
+      max-width: -moz-available;          /* WebKit-based browsers will ignore this. */
+      max-width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+      max-width: stretch;
+      width: auto;
     }
 
     .pgn__card-logo-cap {
@@ -208,4 +215,10 @@
   &:hover {
     box-shadow: $level-1-box-shadow;
   }
+}
+
+// horizontal styles
+
+.pgn__card.horizontal {
+  flex-direction: row;
 }

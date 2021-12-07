@@ -11,25 +11,32 @@ exports[`<CardGrid /> Controlled Rendering renders with controlled columnSizes 1
       className="col-lg-4 col-md-6 col-12"
     >
       <div
-        className="card"
+        className="pgn__card card"
       >
-        <img
-          className="card-img-top"
-          src="http://fake.image"
-        />
         <div
-          className="card-body"
+          className="pgn__card-wrapper-image-cap vertical"
+        >
+          <img
+            alt="card-cap-vertical"
+            className="pgn__card-image-cap"
+            src="http://fake.image"
+          />
+        </div>
+        <div
+          className="pgn__card-body"
         >
           <div
-            className="card-title h5"
+            className="pgn__card-header"
           >
-            Card title
+            <div
+              className="pgn__card-header-content"
+            />
           </div>
-          <p
-            className="card-text"
+          <div
+            className="pgn__card-section"
           >
             This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
-          </p>
+          </div>
         </div>
         <div
           className="pgn__card-footer vertical"
@@ -58,25 +65,32 @@ exports[`<CardGrid /> Uncontrolled Rendering renders default columnSizes 1`] = `
       className="col-xl-4 col-lg-6 col-sm-12"
     >
       <div
-        className="card"
+        className="pgn__card card"
       >
-        <img
-          className="card-img-top"
-          src="http://fake.image"
-        />
         <div
-          className="card-body"
+          className="pgn__card-wrapper-image-cap vertical"
+        >
+          <img
+            alt="card-cap-vertical"
+            className="pgn__card-image-cap"
+            src="http://fake.image"
+          />
+        </div>
+        <div
+          className="pgn__card-body"
         >
           <div
-            className="card-title h5"
+            className="pgn__card-header"
           >
-            Card title
+            <div
+              className="pgn__card-header-content"
+            />
           </div>
-          <p
-            className="card-text"
+          <div
+            className="pgn__card-section"
           >
             This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
-          </p>
+          </div>
         </div>
         <div
           className="pgn__card-footer vertical"

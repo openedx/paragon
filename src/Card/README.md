@@ -8,6 +8,7 @@ components:
 - CardSection
 - CardDivider
 - CardFooter
+- CardBody
 categories:
 - Content
 status: 'Stable'
@@ -207,7 +208,7 @@ Add ``size="sm"`` for smaller header content and actions.
 </Card>
 ```
 
-#### With Image Cap
+### With Image Cap
 
 ```jsx live
 <>
@@ -226,6 +227,34 @@ Add ``size="sm"`` for smaller header content and actions.
       This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
     </Card.Section>
     <Card.Footer>
+      <Button>Action 1</Button>
+    </Card.Footer>
+  </Card>
+</>
+```
+
+### Horizontal variant
+
+```jsx live
+<>
+  <Card horizontal>
+    <Card.ImageCap 
+      src="https://source.unsplash.com/360x200/?nature,flower"
+      logoSrc="https://via.placeholder.com/150"
+    />
+    <Card.Body>
+      <Card.Header
+        title="Title"
+        subtitle="Subtitle"
+      />
+      <Card.Section 
+        title="Section title"
+      >
+        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+      </Card.Section>
+    </Card.Body>
+    <Card.Footer>
+      <Button>Action 1</Button>
       <Button>Action 1</Button>
     </Card.Footer>
   </Card>

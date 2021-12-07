@@ -5,14 +5,14 @@ import Card from '../index';
 
 const cardContent = (
   <Card>
-    <Card.Img variant="top" src="http://fake.image" />
+    <Card.ImageCap src="http://fake.image" />
     <Card.Body>
-      <Card.Title>Card title</Card.Title>
-      <Card.Text>
+      <Card.Header>Card title</Card.Header>
+      <Card.Section>
         This is a wider card with supporting text below as a natural lead-in to
         additional content. This card has even longer content than the first to
         show that equal height action.
-      </Card.Text>
+      </Card.Section>
     </Card.Body>
     <Card.Footer>
       <small className="text-muted">Last updated 3 mins ago</small>

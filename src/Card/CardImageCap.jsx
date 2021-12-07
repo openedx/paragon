@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import CardContext from './CardContext';
 
 const CardImageCap = React.forwardRef(({
   src,
@@ -8,12 +9,14 @@ const CardImageCap = React.forwardRef(({
   className,
   orientation,
 }, ref) => {
-  const wrapperClassName = `pgn__card-wrapper-image-cap ${orientation}`;
+  const { horizontal } = useContext(CardContext);
+  const dir = horizontal ? 'horizontal' : orientation;
+  const wrapperClassName = `pgn__card-wrapper-image-cap ${dir}`;
 
   return (
     <div className={classNames(className, wrapperClassName)} ref={ref}>
-      <img className="pgn__card-image-cap" src={src} alt={`card-cap-${orientation}`} />
-      {!!logoSrc && <img className="pgn__card-logo-cap" src={logoSrc} alt={`card-logo-cap-${orientation}`} />}
+      <img className="pgn__card-image-cap" src={src} alt={`card-cap-${dir}`} />
+      {!!logoSrc && <img className="pgn__card-logo-cap" src={logoSrc} alt={`card-logo-cap-${dir}`} />}
     </div>
   );
 });
