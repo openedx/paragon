@@ -72,6 +72,7 @@ export { default as ModalPopup } from './Modal/ModalPopup';
 export { default as ModalContext } from './Modal/ModalContext';
 export { default as Portal } from './Modal/Portal';
 export { default as PopperElement } from './Modal/PopperElement';
+export { default as DataviewToggle } from './DataviewToggle';
 
 export {
   default as Nav,
