@@ -4,7 +4,6 @@
     transition: $input-transition;
     border: $search-border-width solid $search-border-color;
 
-    &.disabled,
     &:disabled {
         opacity: $search-disabled-opacity;
         pointer-events: none;
@@ -23,7 +22,7 @@
         border-color: $search-border-color-interaction;
     }
 
-    & .form-control {
+    .form-control {
         @extend .border-0;
         border-radius: $search-border-radius !important;
         height: $input-height-search;
@@ -48,9 +47,9 @@
             display: none;
         }
 
-        & .form-control:hover,
-        & .form-control:focus,
-        & .form-control:active {
+        .form-control:hover,
+        .form-control:focus,
+        .form-control:active {
             border: none;
         }
     }
