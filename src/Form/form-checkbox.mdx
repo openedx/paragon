@@ -223,3 +223,16 @@ underlying `input` node. See MDN for documentation on available
   </Form.CheckboxSet>
 </Form.Group>
 ```
+
+### Label Position
+
+The label is positioned to the right of the checkbox control by default. The label can be rendered on the left instead
+by passing the `floatLabelLeft` prop.
+
+```jsx live
+<Form.Group>
+  <Form.CheckboxSet>
+    <Form.Checkbox value="red" floatLabelLeft>Red</Form.Checkbox>
+  </Form.CheckboxSet>
+</Form.Group>
+```

@@ -47,27 +47,44 @@ SwitchControl.defaultProps = {
 const FormSwitch = React.forwardRef(({
   children,
   className,
+  helperText,
   ...props
 }, ref) => (
-
-  <FormCheckbox
-    className={classNames('pgn__form-switch', className)}
-    {...props}
-    role="switch"
-    controlAs={SwitchControl}
-    ref={ref}
-  >
-    {children}
-  </FormCheckbox>
+  <div className="d-inline-flex flex-column">
+    <FormCheckbox
+      className={classNames('pgn__form-switch', className)}
+      {...props}
+      role="switch"
+      ref={ref}
+      controlAs={SwitchControl}
+      // ignore the following props for form switch
+      isValid={null}
+      isInvalid={null}
+      description={null}
+    >
+      {children}
+    </FormCheckbox>
+    {helperText && (
+      <div className="pgn__form-switch-helper-text">
+        {helperText}
+      </div>
+    )}
+  </div>
 ));
 
 FormSwitch.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  labelClassName: PropTypes.string,
+  helperText: PropTypes.node,
+  floatLabelLeft: PropTypes.bool,
 };
 
 FormSwitch.defaultProps = {
   className: undefined,
+  labelClassName: undefined,
+  helperText: undefined,
+  floatLabelLeft: false,
 };
 
 export { SwitchControl };
