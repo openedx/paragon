@@ -320,13 +320,19 @@ $select-icon-padding: .5625rem !default;
   transition: background 150ms ease;
   &:checked {
     background-position: right center;
-    background-color: $custom-control-indicator-checked-bg;
+    background-color: $custom-switch-indicator-checked-bg;
     background-image: escape-svg($custom-switch-indicator-icon-on);
   }
   &:indeterminate {
     background-position: center;
     background-image: escape-svg($custom-switch-indicator-icon-off);
   }
+}
+
+.pgn__form-switch-helper-text {
+  color: $gray-500;
+  font-size: $font-size-xs;
+  margin-top: 0.25rem;
 }
 
 .pgn__form-radio-input {
@@ -358,5 +364,15 @@ $select-icon-padding: .5625rem !default;
   }
   &.pgn__form-control-valid input {
     border-color: $form-feedback-valid-color;
+  }
+  &.pgn__form-control-label-left {
+    .pgn__form-label {
+      order: 1;
+      margin-right: $custom-control-gutter;
+    }
+
+    input {
+      order: 2;
+    }
   }
 }

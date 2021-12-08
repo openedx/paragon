@@ -51,6 +51,7 @@ const FormCheckbox = React.forwardRef(({
   isInvalid,
   isValid,
   controlAs,
+  floatLabelLeft,
   ...props
 }, ref) => {
   const { getCheckboxControlProps, hasCheckboxSetProvider } = useCheckboxSetContext();
@@ -77,6 +78,7 @@ const FormCheckbox = React.forwardRef(({
           'pgn__form-control-valid': isValid,
           'pgn__form-control-invalid': isInvalid,
           'pgn__form-control-disabled': checkboxInputProps.disabled,
+          'pgn__form-control-label-left': !!floatLabelLeft,
         })}
         {...groupProps}
       >
@@ -105,6 +107,7 @@ FormCheckbox.propTypes = {
   isInvalid: PropTypes.bool,
   isValid: PropTypes.bool,
   controlAs: PropTypes.elementType,
+  floatLabelLeft: PropTypes.bool,
 };
 
 FormCheckbox.defaultProps = {
@@ -115,6 +118,7 @@ FormCheckbox.defaultProps = {
   isInvalid: false,
   isValid: false,
   controlAs: CheckboxControl,
+  floatLabelLeft: false,
 };
 
 export { CheckboxControl };

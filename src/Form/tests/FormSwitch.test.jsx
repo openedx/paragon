@@ -6,14 +6,19 @@ import FormSwitch from '../FormSwitch';
 
 describe('FormSwitch', () => {
   const wrapper = mount((
-    <FormSwitch name="color" value="green" description="Describe green">
+    <FormSwitch
+      name="color"
+      value="green"
+      helperText="Describe green"
+    >
       Green
     </FormSwitch>
   ));
   const inputNode = wrapper.find('input[value="green"]').first();
 
   it('renders an input with a name and value and role=switch', () => {
-    wrapper.exists('input[value="green"]');
+    expect(wrapper.exists('input[value="green"]')).toBe(true);
+    expect(wrapper.exists('.pgn__form-switch-helper-text')).toBe(true);
     expect(inputNode.props().name).toBe('color');
     expect(inputNode.props().role).toBe('switch');
   });

@@ -3,11 +3,7 @@ title: 'Form.Switch'
 type: 'component'
 components:
 - FormSwitch
-- FormCheckbox
 - SwitchControl
-- CheckboxControl
-- FormCheckboxSet
-- FormSwitchSet
 categories:
 - Forms
 status: 'New'
@@ -172,59 +168,42 @@ underlying `input` node. See MDN for documentation on available
 </Form.Group>
 ```
 
-### Validation
+### Label Position
 
-#### Group Level Validation
-
-```jsx live
-<Form.Group isInvalid>
-  <Form.Label>Which Color?</Form.Label>
-  <Form.SwitchSet
-    name="color-five"
-    onChange={(e) => console.log(e.target.value)}
-  >
-    <Form.Switch value="red">Red</Form.Switch>
-    <Form.Switch value="green">Green</Form.Switch>
-    <Form.Switch value="blue">Blue</Form.Switch>
-    <Form.Switch value="cyan" disabled>Cyan</Form.Switch>
-  </Form.SwitchSet>
-  <Form.Control.Feedback>
-    Please choose an option.
-  </Form.Control.Feedback>
-</Form.Group>
-```
-
-#### Individual option validation
+The label is positioned to the right of the switch control by default. The label can be rendered on the left instead
+by passing the `floatLabelLeft` prop.
 
 ```jsx live
 <Form.Group>
-  <Form.Label>Which Color?</Form.Label>
-  <Form.SwitchSet name="color-four">
+  <Form.SwitchSet>
+    <Form.Switch value="red">Red</Form.Switch>
+    <Form.Switch value="blue" floatLabelLeft>Blue</Form.Switch>
+  </Form.SwitchSet>
+</Form.Group>
+```
+
+### Helper Text
+
+A helper text component can be passed in to be rendered below the switch control.
+
+```jsx live
+<Form.Group>
+  <Form.SwitchSet>
     <Form.Switch
       value="red"
-      description="Red's cool"
+      helperText={
+        <span>Helper text for red switch</span>
+      }
     >
       Red
     </Form.Switch>
     <Form.Switch
-      value="green"
-      description="Excellent choice"
-      isValid
-    >
-      Green
-    </Form.Switch>
-    <Form.Switch
       value="blue"
-      description="Poor choice"
-      isInvalid
+      helperText={
+        <span>Helper text for blue switch</span>
+      }
     >
       Blue
-    </Form.Switch>
-    <Form.Switch
-      value="cyan"
-      disabled
-    >
-      Cyan
     </Form.Switch>
   </Form.SwitchSet>
 </Form.Group>
