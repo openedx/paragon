@@ -1,6 +1,4 @@
-$avatar-button-padding-left: 0.25em !default;
-$avatar-button-padding-left-sm: 0.25em !default;
-$avatar-button-padding-left-lg: 0.25em !default;
+@import "variables";
 
 .btn.pgn__avatar-button-avatar {
   padding-left: $avatar-button-padding-left;

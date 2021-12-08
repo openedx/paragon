@@ -11,6 +11,7 @@ import SEO from '../components/SEO';
 
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
+  pageContext: { cssVariables },
 }) {
   const components = componentNodes.nodes.reduce((acc, currentValue) => {
     acc[currentValue.displayName] = currentValue;
@@ -51,12 +52,18 @@ export default function PageTemplate({
         <MDXProvider components={shortcodes}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
+        {cssVariables && (
+          <div className="mb-5">
+            <h3 className="mb-4">Theme Variables (SCSS)</h3>
+            <CodeBlock className="language-scss">{cssVariables}</CodeBlock>
+          </div>
+        )}
         {sortedComponentNames.map(componentName => {
           const node = components[componentName];
           if (!node) {
             return null;
           }
-          return <GenericPropsTable key={node.displayName} {...node} />
+          return <GenericPropsTable key={node.displayName} {...node} />;
         })}
       </Container>
     </Layout>
@@ -72,8 +79,13 @@ PageTemplate.propTypes = {
       }),
       body: PropTypes.any, // eslint-disable-line react/forbid-prop-types
     }),
-    components: PropTypes.objectOf(PropTypes.object), // eslint-disable-line react/forbid-prop-types
+    components: PropTypes.shape({
+      nodes: PropTypes.arrayOf(PropTypes.object),
+    }),
   }).isRequired,
+  pageContext: PropTypes.shape({
+    cssVariables: PropTypes.string,
+  }),
 };
 
 export const pageQuery = graphql`

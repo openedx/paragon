@@ -103,13 +103,4 @@ For use in mobile viewports or constrained views.
 </>
 ```
 
-### Theme variables (SCSS)
-
-```scss
-$avatar-button-padding-left: 0.5em !default;
-$avatar-button-padding-left-sm: 0.5 !default;
-$avatar-button-padding-left-lg: 0.5em !default;
-```
-
 CSS overrides can be applied to this component through the `.btn-avatar` class name.
-
