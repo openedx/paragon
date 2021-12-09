@@ -18,8 +18,13 @@ notes: |
 
 ### Basic Usage
 ```jsx live
-    <IconButtonToggle activeValue={'card'} onChange={ value => alert(`Active value now is ${value}`) }>
-      <IconButton value="card" src={GridView} iconAs={Icon} alt="Card" />
-      <IconButton value="list" src={ListView} iconAs={Icon} alt="List" />
-    </IconButtonToggle>
+    () => {
+      const [activeValue, setActiveValue] = React.useState('card');
+      return (
+        <IconButtonToggle activeValue={activeValue} onChange={ value => setActiveValue(value) }>
+          <IconButton value="card" src={GridView} iconAs={Icon} alt="Card" />
+          <IconButton value="list" src={ListView} iconAs={Icon} alt="List" />
+        </IconButtonToggle>
+      );
+    }
 ```

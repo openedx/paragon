@@ -15,6 +15,7 @@ $btn-icon-diameter-inline: calc(#{$line-height-base}em + 0.1em) !default;
 
 $btn-icon-bg: transparent !default;
 $btn-icon-accent-color: white !default;
+$btn-active-bg: #454e52 !default;
 
 @mixin btn-icon-size($icon-size) {
     width: $icon-size;
@@ -31,11 +32,17 @@ $btn-icon-accent-color: white !default;
         color: $accent-color;
     }
 
-    &.focus,
-    &:focus {
-        background-color: $btn-icon-bg;
-        color: $icon-color;
-        box-shadow: inset 0 0 0 $btn-focus-width $icon-color;
+    // &.focus,
+    // &:focus {
+    //     background-color: $btn-icon-bg;
+    //     color: $icon-color;
+    //     box-shadow: inset 0 0 0 $btn-focus-width $icon-color;
+    // }
+
+    &.active,
+    &:active {
+        background-color: $icon-color;
+        color: $accent-color;
     }
 }
 
@@ -91,6 +98,16 @@ $btn-icon-accent-color: white !default;
 
         &.btn-icon-inverse-#{$name} {
             @include btn-icon-variant($btn-icon-accent-color, $color);
+        }
+
+        &.btn-icon-#{$name}-active {
+            background-color: $color;
+            color: $btn-icon-accent-color;
+        }
+
+        &.btn-icon-inverse-#{$name}-active {
+            background-color: $btn-icon-accent-color;
+            color: $color;
         }
     }
 }

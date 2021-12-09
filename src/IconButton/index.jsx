@@ -14,9 +14,11 @@ const IconButton = ({
   size,
   variant,
   iconAs: IconComponent,
+  isActive,
   ...attrs
 }) => {
   const invert = invertColors ? 'inverse-' : '';
+  const activeStyle = isActive ? `${variant}-` : '';
   return (
     <button
       {...attrs}
@@ -25,6 +27,7 @@ const IconButton = ({
         'btn-icon',
         `btn-icon-${invert}${variant}`,
         `btn-icon-${size}`,
+        isActive ? `btn-icon-${invert}${activeStyle}active` : '',
         attrs.className,
       )}
       onClick={onClick}
@@ -50,6 +53,7 @@ IconButton.defaultProps = {
   variant: 'primary',
   size: 'md',
   onClick: () => {},
+  isActive: false,
 };
 
 IconButton.propTypes = {
@@ -78,6 +82,7 @@ IconButton.propTypes = {
   /** Type of button (uses Bootstrap options) */
   variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'light', 'dark', 'black']),
   size: PropTypes.oneOf(['sm', 'md', 'inline']),
+  isActive: PropTypes.bool,
 };
 
 export default IconButton;

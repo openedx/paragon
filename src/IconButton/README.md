@@ -48,6 +48,44 @@ notes: ''
 }
 ```
 
+### Active State
+
+Even numbered buttons are shown in active state with isActive=true, regular colors
+
+```jsx live
+() => {
+  const variants = ["brand", "primary", "secondary", "success", "warning", "danger", "light", "dark", "black"];
+  return (
+    <div className="d-flex">
+      {variants.map((variant, index) => (
+        <IconButton
+         isActive
+         src={Close} iconAs={Icon} alt="Close" onClick={() => {}} variant={variant} className="mr-2" />
+      ))}
+    </div>
+  );
+}
+```
+
+isActive=true with inverted colors
+
+```jsx live
+() => {
+  const variants = ["brand", "primary", "secondary", "success", "warning", "danger", "light", "dark", "black"];
+  return (
+    <div className="d-flex">
+      {variants.map((variant, index) => (
+        <IconButton
+         invertColors
+         isActive
+         src={Close} iconAs={Icon} alt="Close" onClick={() => {}} variant={variant} className="mr-2" />
+      ))}
+    </div>
+  );
+}
+```
+
+
 ### Inverted Colors
 
 ```jsx live
@@ -150,7 +188,7 @@ notes: ''
         />
       </div>
       <div className="mb-1">
-        Inline: 
+        Inline:
         <IconButton
           icon={FontAwesome.faBars}
           alt="Menu"

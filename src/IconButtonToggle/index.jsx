@@ -8,11 +8,11 @@ const IconButtonToggle = ({ activeValue, onChange, children }) => {
       <>
         {React.cloneElement(iconButton, {
           onClick: () => { onChange(iconButton.props.value); },
-          invertColors: iconButton.props.value === activeValue,
+          isActive: iconButton.props.value === activeValue,
         })}
       </>
     )),
-    [children],
+    [children, activeValue],
   );
   return <Container>{iconButtons}</Container>;
 };
