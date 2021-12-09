@@ -49,6 +49,7 @@ export {
 export { default as Hyperlink } from './Hyperlink';
 export { default as Icon } from './Icon';
 export { default as IconButton } from './IconButton';
+export { default as IconButtonToggle } from './IconButtonToggle';
 export { default as Input } from './Input';
 export { default as InputSelect } from './InputSelect';
 export { default as InputText } from './InputText';
@@ -72,7 +73,6 @@ export { default as ModalPopup } from './Modal/ModalPopup';
 export { default as ModalContext } from './Modal/ModalContext';
 export { default as Portal } from './Modal/Portal';
 export { default as PopperElement } from './Modal/PopperElement';
-export { default as DataviewToggle } from './DataviewToggle';
 
 export {
   default as Nav,

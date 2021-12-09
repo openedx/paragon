@@ -1,8 +1,8 @@
 ---
-title: 'DataviewToggle'
+title: 'IconButtonToggle'
 type: 'component'
 components:
-- DataviewToggle
+- IconButtonToggle
 categories:
 - Buttonlike
 status: 'Stable'
@@ -18,12 +18,8 @@ notes: |
 
 ### Basic Usage
 ```jsx live
-        <DataviewToggle value={'card'} onChange={value=>alert(value)}>
-            <DataviewToggle.Button value="card" aria-label="card view">
-                <IconButton src={GridView} iconAs={Icon} alt="Card" />
-            </DataviewToggle.Button>
-            <DataviewToggle.Button value="list" aria-label="list view">
-                <IconButton src={ListView} iconAs={Icon} alt="List" />
-            </DataviewToggle.Button>
-        </DataviewToggle>
+    <IconButtonToggle activeValue={'card'} onChange={ value => alert(`Active value now is ${value}`) }>
+      <IconButton value="card" src={GridView} iconAs={Icon} alt="Card" />
+      <IconButton value="list" src={ListView} iconAs={Icon} alt="List" />
+    </IconButtonToggle>
 ```
