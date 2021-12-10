@@ -79,22 +79,3 @@ Use as a secondary navigation pattern to help convey hierarchy and enable naviga
   spacer={<span className="custom-spacer">/</span>}
 />
 ```
-
-### Theme variables (SCSS)
-
-```scss
-$breadcrumb-font-size:              null !default;
-
-$breadcrumb-padding-y:              .75rem !default;
-$breadcrumb-padding-x:              1rem !default;
-$breadcrumb-item-padding:           .5rem !default;
-
-$breadcrumb-margin-bottom:          1rem !default;
-
-$breadcrumb-bg:                     $gray-200 !default;
-$breadcrumb-divider-color:          $gray-600 !default;
-$breadcrumb-active-color:           $gray-500 !default;
-$breadcrumb-divider:                quote("/") !default;
-
-$breadcrumb-border-radius:          $border-radius !default;
-```

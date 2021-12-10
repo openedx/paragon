@@ -38,19 +38,3 @@ Badges are composed of text and an accompanying indicator color, and are typical
   <Badge variant="dark">Dark</Badge>
 </>
 ```
-
-### Theme variables (SCSS)
-
-```scss
-$badge-font-size:                   75% !default;
-$badge-font-weight:                 $font-weight-bold !default;
-$badge-padding-y:                   .125rem !default;
-$badge-padding-x:                   .5rem !default;
-$badge-border-radius:               .25rem !default;
-
-$badge-transition:                  none !default;
-$badge-focus-width:                 $input-btn-focus-width !default;
-
-$badge-pill-padding-x:              .6em !default;
-$badge-pill-border-radius:          10rem !default;
-```

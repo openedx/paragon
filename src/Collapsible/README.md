@@ -227,20 +227,3 @@ such as loading the page or clicking a link, you can open or close
 an **uncontrolled** Collapsible by getting a ref to the component and calling
 `collapsibleRef.open()` or `collapsibleRef.close()`. The internal state of
 the component will be updated accordingly.
-
-
-### Theme Variables (SCSS)
-
-```scss
-$collapsible-card-spacer-y:               .5rem !default;
-$collapsible-card-spacer-x:               .5rem !default;
-$collapsible-card-spacer-y-lg:             $card-spacer-y !default;
-$collapsible-card-spacer-x-lg:             $card-spacer-x !default;
-$collapsible-card-body-spacer-left:        .75rem !default;
-$collapsible-card-spacer-icon:             2.5rem !default;
-
-$collapsible-basic-spacer-y:               .5rem !default;
-$collapsible-basic-spacer-x:               .5rem !default;
-$collapsible-basic-spacer-icon:            .625rem !default;
-```
-
