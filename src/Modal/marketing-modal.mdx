@@ -13,7 +13,11 @@ notes: |
 
 ---
 
-The composition of `ModalDialog` for marketing style scenarios. This component passes through all of its props to an underlying `ModalDialog` component providing some limited customization. If you have unique needs, use the `ModalDialog` compound component family directly.
+``MarketingModal`` is similar to the alert modal, providing friendly messaging to our users to encourage greater engagement than the simpler confirmation dialogs. They should enable platform understanding, highlight opportunities, and support workflow engagement.
+
+The ``MarketingModal`` is a preconfigured `ModalDialog` that accepts an image and center aligns buttons.
+
+### Basic Usage
 
 ```jsx live
 () => {
@@ -54,3 +58,4 @@ The composition of `ModalDialog` for marketing style scenarios. This component p
   )
 }
 ```
+

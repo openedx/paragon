@@ -2,8 +2,9 @@
 title: 'Menu'
 type: 'component'
 components:
-- MenuItem
 - Menu
+- MenuItem
+- SelectMenu
 categories:
 - Navigation
 status: 'New'
@@ -12,13 +13,13 @@ devStatus: 'Done'
 notes: ''
 ---
 
-### MenuItem
-
-A menu item is a link, button, or checkbox for use by any kind of menu overlay, dropdown menu, or nav menu. A menu item can be text-only or combined with an icon. Passing a component to the `as` prop, MenuItems will also be an instance of that component.
-
 ### Menu
 
-An arrow-key naivgable Menu which consists of MenuItems. A Menu can be employed to produce its common variants, including dropdown menus, select menus, and others. Menus are keyboard navigable with both tab and arrow keys.
+An arrow-key navigable ``Menu`` which consists of ``MenuItems``. A ``Menu`` can be employed to produce its common variants, including dropdown menus, select menus, and others. ``Menus`` are keyboard navigable with both tab and arrow keys.
+
+### MenuItem
+
+A ``MenuItem`` is its own distinct component that is used by any kind of menu overlays i.e. dropdown menu and navigation menu.
 
 ```jsx live
 () => {
@@ -36,7 +37,7 @@ An arrow-key naivgable Menu which consists of MenuItems. A Menu can be employed 
 }
 ```
 
-A Menu can include things like forms.
+A ``Menu`` can include things like forms.
 
 ```jsx live
 () => {
@@ -60,7 +61,7 @@ A Menu can include things like forms.
 }
 ```
 
-A Menu can be implemented to appear inside a `modalpopup` for a wide variety of use cases. The Modal brings focus to the first menu element upon the click of the trigger, and can be escaped on click away or key press.
+A ``Menu`` can be implemented to appear inside a `modalpopup` for a wide variety of use cases. The ``Modal`` brings focus to the first menu element upon the click of the trigger, and can be escaped on click away or key press.
 
 ```jsx live
 () => {
@@ -88,18 +89,17 @@ A Menu can be implemented to appear inside a `modalpopup` for a wide variety of 
   )
 }
 ```
-### Selectmenu
+### SelectMenu
 
-The selectMenu component is triggered on the click of a button or your choice of a standalone link using the `isLink` prop, and expands from the center if not close to the edge of the page. The menu contains a list of MenuItems, with a white background, and level 2 elevation. The menu also remembers the user’s selection and displays it as the label for the button/link trigger.
+The ``SelectMenu`` component is triggered on the click of a button or your choice of a standalone link using the `isLink` prop, and expands from the center if not close to the edge of the page. The ``Menu`` contains a list of ``MenuItems``, with a white background, and level 2 elevation. The ``Menu`` also remembers the user’s selection and displays it as the label for the button/link trigger.
 
-The Modal brings focus to the first menu element upon the click of the trigger, and can be escaped on click away or key press. Set a default message with the `defaultMessage` prop string. Use the `defaultSelected` prop to signify that a menuItem is the default to open to.
+The ``Modal`` brings focus to the first menu element upon the click of the trigger, and can be escaped on click away or key press. Set a default message with the `defaultMessage` prop string. Use the `defaultSelected` prop to signify that a menuItem is the default to open to.
 
 ```jsx live
 () => {
 
   const defaultSelectedRef = React.useRef();
-
-
+  
   return (
     <div className="mb-2">
         <SelectMenu>

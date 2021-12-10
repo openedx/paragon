@@ -28,20 +28,39 @@ const MarketingModal = ({
 );
 
 MarketingModal.propTypes = {
+  /** Specifies the content of the modal */
   children: PropTypes.node.isRequired,
+  /** Title of the modal */
   title: PropTypes.string.isRequired,
+  /** Is the modal dialog open or closed */
   isOpen: PropTypes.bool,
+  /** Prevent clicking on the backdrop to close the modal */
   isBlocking: PropTypes.bool,
+  /** The close 'x' icon button in the top right corner */
   hasCloseButton: PropTypes.bool,
+  /** Callback function for when the modal is dismissed */
   onClose: requiredWhenNot(PropTypes.func, 'isBlocking'),
+  /** Size of the modal window */
   size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'fullscreen']),
+  /** Specifies the ``aria-label`` attribute for the close button */
   closeLabel: PropTypes.string,
+  /** Specifies class name to append to the base element */
   className: PropTypes.string,
+  /**
+   * Determines where a scrollbar should appear if a modal is too large for the
+   * viewport. When false, the ModalDialog.Body receives a scrollbar, when true
+   * the browser window itself receives the scrollbar.
+   */
   isFullscreenScroll: PropTypes.bool,
+  /** Specifies what should be displayed in the footer of the nodal */
   footerNode: PropTypes.node,
+  /** Enables dark theme for the modal */
   heroIsDark: PropTypes.bool,
+  /** Specifies what should be displayed in the header of the modal */
   heroNode: PropTypes.node,
+  /** Specifies what should be displayed before the body block */
   beforeBodyNode: PropTypes.node,
+  /** Specifies what should be displayed after the body block */
   afterBodyNode: PropTypes.node,
 };
 

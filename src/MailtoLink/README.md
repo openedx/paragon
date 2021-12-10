@@ -36,7 +36,7 @@ notes: |
 <MailtoLink
   to="edx@example.com"
   target="_blank"
-  onClick={onClick}
+  onClick={() => { /* some actions */ }}
 >
   edx@example.com
 </MailtoLink>
@@ -61,7 +61,7 @@ notes: |
   cc="edx@example.com"
   bcc="edx@example.com"
 >
-  Moar mail, this time with cc and bcc
+  More mail, this time with cc and bcc
 </MailtoLink>
 ```
 

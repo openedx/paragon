@@ -16,8 +16,11 @@ const ModalDialogFooter = ({
 );
 
 ModalDialogFooter.propTypes = {
+  /** Specifies the base element */
   as: PropTypes.elementType,
+  /** Specifies the contents of the header */
   children: PropTypes.node.isRequired,
+  /** Specifies class name to append to the base element */
   className: PropTypes.string,
 };
 

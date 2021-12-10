@@ -1,6 +1,11 @@
 ---
 title: 'Navbar'
 type: 'component'
+components:
+- Navbar
+- NavbarBrand
+- NavbarToggle
+- NavbarCollapse
 categories:
 - Navigation
 status: 'Stable'
@@ -9,7 +14,9 @@ devStatus: 'Done'
 notes:
 ---
 
-<p className="lead">
+A powerful, responsive navigation header, the navbar. Includes support for branding, navigation, and more.
+
+<p>
   This is a pass through component from React-Bootstrap.<br/>
   <a href="https://react-bootstrap.github.io/components/navbar/" target="_blank" rel="noopener noreferrer">
     See React-Bootstrap for documentation.
