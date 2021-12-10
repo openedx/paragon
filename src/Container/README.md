@@ -41,13 +41,3 @@ The base container to contain, pad, and center content in the viewport. This com
 </Container>
 </div>
 ```
-
-### Theme variables (SCSS)
-
-```
-$max-width-xs: 464px !default;
-$max-width-sm: 708px !default;
-$max-width-md: 952px !default;
-$max-width-lg: 1192px !default;
-$max-width-xl: 1440px !default;
-```

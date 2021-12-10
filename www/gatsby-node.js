@@ -9,6 +9,7 @@ const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const sass = require('node-sass')
 const css = require('css')
+const fs = require(`fs`)
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -78,6 +79,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             frontmatter {
               components
             }
+            slug
           }
         }
       }
@@ -90,6 +92,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const components = result.data.allMdx.edges
   // you'll call `createPage` for each result
   components.forEach(({ node }, index) => {
+    const componentDir = node.slug.split('/')[0];
+    const variablesPath = path.resolve(__dirname, `../src/${componentDir}/_variables.scss`);
+
+    let cssVariables = '';
+    if (fs.existsSync(variablesPath)) {
+      cssVariables = fs.readFileSync(variablesPath, `utf-8`);
+    }
+
     createPage({
       // This is the slug you created before
       // (or `node.frontmatter.slug`)
@@ -98,7 +108,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: path.resolve(`./src/templates/component-page-template.jsx`),
       // You can use the values in this context in
       // our page layout component
-      context: { id: node.id, components: node.frontmatter.components || [] },
+      context: { id: node.id, components: node.frontmatter.components || [], cssVariables },
     })
   })
 }

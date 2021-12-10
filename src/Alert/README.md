@@ -168,28 +168,3 @@ The stacked variant should be used for:
   </p>
 </Alert>
 ```
-
-### Theme variables (SCSS)
-
-```scss
-$alert-padding-y:                   1.5rem !default;
-$alert-padding-x:                   1.5rem !default;
-$alert-margin-bottom:               1rem !default;
-$alert-border-radius:               $border-radius !default;
-$alert-link-font-weight:            $font-weight-normal !default;
-$alert-border-width:                0 !default;
-$alert-title-color:                 #000000 !default;
-$alert-box-shadow:                  0px 1px 2px rgba(0, 0, 0, 0.15), 0px 1px 4px rgba(0, 0, 0, 0.15) !default;
-
-$alert-bg-level:                    -10 !default;
-$alert-border-level:                -9 !default;
-$alert-color-level:                 6 !default;
-
-$alert-icon-space:                  .8rem !default;
-
-$alert-font-size:                   .875rem !default;
-$alert-line-height:                 1.5rem !default;
-$alert-content-color:               $gray-700 !default;
-
-$alert-actions-gap:                 map-get($spacers, 3);
-```

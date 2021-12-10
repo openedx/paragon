@@ -63,10 +63,3 @@ ActionRow can also be used with a helper component ``ActionRow.Spacer`` to inser
   </Button>
 </ActionRow>
 ```
-
-### Theme variables (SCSS)
-
-```scss
-$action-row-gap-x:                   .5rem !default;
-$action-row-gap-y:                   .5rem !default;
-```
