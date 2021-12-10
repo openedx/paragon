@@ -158,9 +158,13 @@ const SelectMenu = ({
 };
 
 SelectMenu.propTypes = {
+  /** String that is displayed for default value of the ``SelectMenu`` */
   defaultMessage: PropTypes.string,
+  /** Displays chosen value of the ``SelectMenu`` as a link */
   isLink: PropTypes.bool,
+  /** Specifies the content of the ``SelectMenu`` */
   children: PropTypes.node.isRequired,
+  /** Specifies class name to append to the base element */
   className: PropTypes.string,
 };
 

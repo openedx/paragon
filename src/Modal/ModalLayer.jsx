@@ -72,9 +72,13 @@ const ModalLayer = ({
 };
 
 ModalLayer.propTypes = {
+  /** Specifies the contents of the modal */
   children: PropTypes.node.isRequired,
+  /** A callback function for when the modal is dismissed */
   onClose: PropTypes.func.isRequired,
+  /** Is the modal dialog open or closed */
   isOpen: PropTypes.bool.isRequired,
+  /** Prevent clicking on the backdrop to close the modal */
   isBlocking: PropTypes.bool,
 };
 

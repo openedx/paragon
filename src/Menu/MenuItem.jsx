@@ -31,11 +31,17 @@ const MenuItem = ({
 };
 
 MenuItem.propTypes = {
+  /** Specifies that this ``MenuItem`` is selected inside the ``SelectMenu`` */
   defaultSelected: PropTypes.bool,
+  /** Specifies class name to append to the base element */
   className: PropTypes.string,
+  /** Specifies the content of the ``MenuItem`` */
   children: PropTypes.node,
+  /** Specifies the base element */
   as: PropTypes.elementType,
+  /** Specifies the jsx before the content of the ``MenuItem`` */
   iconBefore: PropTypes.node,
+  /** Specifies the jsx after the content of the ``MenuItem`` */
   iconAfter: PropTypes.node,
 };
 
