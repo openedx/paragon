@@ -24,6 +24,34 @@ notes: |
 />
 ```
 
+### Basic Usage (Mobile View)
+
+```jsx live
+<Breadcrumb
+  links={[
+    { label: 'Link 1', url: '/link-1' },
+    { label: 'Link 2', url: '/link-2' },
+    { label: 'Link 3', url: '/link-3' },
+  ]}
+  isMobile
+/>
+```
+
+### Basic Usage (Inverse Pallete)
+
+```jsx live
+<div className="bg-dark-700 p-4">
+  <Breadcrumb
+    links={[
+      { label: 'Link 1', url: '/link-1' },
+      { label: 'Link 2', url: '/link-2' },
+      { label: 'Link 3', url: '/link-3' },
+    ]}
+    variant="dark"
+  />
+</div>
+```
+
 ### With active label
 
 ```jsx live
