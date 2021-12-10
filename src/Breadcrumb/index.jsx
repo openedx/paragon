@@ -6,14 +6,15 @@ import Icon from '../Icon';
 import { ChevronRight } from '../../icons';
 
 const Breadcrumbs = ({
-  links, activeLabel, spacer, clickHandler,
+  links, activeLabel, spacer, clickHandler, variant, isMobile,
 }) => {
   const linkCount = links.length;
+  const displayLinks = isMobile ? [links[linkCount - 1]] : links;
 
   return (
-    <nav aria-label="breadcrumb" className="pgn__breadcrumb">
-      <ol className="list-inline d-flex align-items-center">
-        {links.map(({ url, label }, i) => (
+    <nav aria-label="breadcrumb" className={classNames('pgn__breadcrumb', `pgn__breadcrumb-${variant}`)}>
+      <ol className={classNames('list-inline', 'd-flex', 'align-items-center', { 'is-mobile': isMobile })}>
+        {displayLinks.map(({ url, label }, i) => (
           <React.Fragment key={url}>
             <li className={classNames('list-inline-item')}>
               <a className="link-muted" href={url} {...(clickHandler && { onClick: clickHandler })}>{label}</a>
@@ -26,7 +27,7 @@ const Breadcrumbs = ({
               )}
           </React.Fragment>
         ))}
-        {activeLabel && <li className="list-inline-item active" key="active" aria-current="page">{activeLabel}</li>}
+        {!isMobile && activeLabel && <li className="list-inline-item active" key="active" aria-current="page">{activeLabel}</li>}
       </ol>
     </nav>
   );
@@ -48,12 +49,18 @@ Breadcrumbs.propTypes = {
   /** allows to add a custom function to be called `onClick` of a breadcrumb link.
    * The use case for this is for adding custom analytics to the component. */
   clickHandler: PropTypes.func,
+  /** The `Breadcrumbs` style variant to use. */
+  variant: PropTypes.oneOf(['light', 'dark']),
+  /** The `Breadcrumbs` mobile variant view. */
+  isMobile: PropTypes.bool,
 };
 
 Breadcrumbs.defaultProps = {
   activeLabel: undefined,
   spacer: undefined,
   clickHandler: undefined,
+  variant: 'light',
+  isMobile: false,
 };
 
 export default Breadcrumbs;
