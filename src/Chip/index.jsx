@@ -3,11 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Icon from '../Icon';
 
-const TAG_VARIANTS = [
-  'button',
-  'a',
-];
-
 const STYLE_VARIANTS = [
   'light',
   'dark',
@@ -23,7 +18,6 @@ const Chip = ({
   iconAfter,
   ...props
 }) => {
-  const elementType = TAG_VARIANTS.includes(as) ? as : 'button';
   const elementProps = {
     ...props,
     className: classNames(
@@ -40,7 +34,7 @@ const Chip = ({
       {iconAfter && <Icon className={classNames('chip-icon-after')} src={iconAfter} />}
     </>
   );
-  return React.createElement(props.href ? 'a' : elementType, elementProps, elementContent);
+  return React.createElement(props.href ? 'a' : as, elementProps, elementContent);
 };
 
 Chip.propTypes = {

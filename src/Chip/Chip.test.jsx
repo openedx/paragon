@@ -45,13 +45,10 @@ describe('<Chip />', () => {
     it('renders as the button tag', () => {
       const wrapper = mount(<Chip />);
       const wrapperButton = mount(<Chip as="button" />);
-      const wrapperDiv = mount(<Chip as="div" />);
       const chipDefault = wrapper.find('.pgn__chip');
       const chipAsButton = wrapperButton.find('.pgn__chip');
-      const chipAsDiv = wrapperDiv.find('.pgn__chip');
       expect(chipDefault.type()).toEqual('button');
       expect(chipAsButton.type()).toEqual('button');
-      expect(chipAsDiv.type()).toEqual('button');
     });
     it('renders as the anchor tag', () => {
       const wrapperHref = mount(<Chip href="#" />);
