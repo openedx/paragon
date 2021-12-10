@@ -28,9 +28,16 @@ const Menu = ({
 };
 
 Menu.propTypes = {
+  /** Specifies class name to append to the base element */
   className: PropTypes.string,
+  /**
+   * Specifies the CSS selector string that indicates to which elements
+   * the user can navigate using the arrow keys
+   */
   arrowKeyNavigationSelector: PropTypes.string,
+  /** Specifies the base element */
   as: PropTypes.elementType,
+  /** Specifies the content of the menu */
   children: PropTypes.node,
 };
 
