@@ -2,7 +2,7 @@
 title: 'Tooltip'
 type: 'component'
 components:
-- WrapperTooltip
+- Tooltip
 categories:
 - Overlays
 status: 'Stable'

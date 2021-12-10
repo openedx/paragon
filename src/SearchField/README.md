@@ -17,8 +17,6 @@ devStatus: 'Done'
 notes:
 ---
 
-Sheets contain supplementary content and are anchored to the top, bottom, left or right edge of the screen.
-
 Search allows users to quickly find content. The ``Search field`` is made up of the ``Text field`` component and an optional ``Button`` component.
 
 ### Basic Usage

@@ -68,10 +68,4 @@ CheckboxFilter.propTypes = {
   }).isRequired,
 };
 
-CheckboxFilter.defaultPropTypes = {
-  column: {
-    filterValue: [],
-  },
-};
-
 export default CheckboxFilter;

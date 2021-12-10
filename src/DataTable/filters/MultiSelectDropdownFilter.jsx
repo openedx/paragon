@@ -72,10 +72,4 @@ MultiSelectDropdownFilter.propTypes = {
   }).isRequired,
 };
 
-MultiSelectDropdownFilter.defaultPropTypes = {
-  column: {
-    filterValue: [],
-  },
-};
-
 export default MultiSelectDropdownFilter;

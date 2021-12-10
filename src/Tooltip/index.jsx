@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Tooltip from 'react-bootstrap/Tooltip';
+import BaseTooltip from 'react-bootstrap/Tooltip';
 
 const PLACEMENT_VARIANTS = [
   'auto-start',
@@ -21,22 +21,22 @@ const PLACEMENT_VARIANTS = [
   'left-start',
 ];
 
-const WrapperTooltip = React.forwardRef(({
+const Tooltip = React.forwardRef(({
   children,
   variant,
   ...props
 }, ref) => (
-  <Tooltip
+  <BaseTooltip
     {...props}
     className={classNames({ 'tooltip-light': variant === 'light' }, props.className)}
     ref={ref}
   >
     {children}
-  </Tooltip>
+  </BaseTooltip>
 ));
 
-WrapperTooltip.propTypes = {
-  ...Tooltip.propTypes,
+Tooltip.propTypes = {
+  ...BaseTooltip.propTypes,
   /** An html id attribute, necessary for accessibility. */
   id: PropTypes.string.isRequired,
   /**
@@ -71,7 +71,7 @@ WrapperTooltip.propTypes = {
   variant: PropTypes.string,
 };
 
-WrapperTooltip.defaultProps = {
+Tooltip.defaultProps = {
   ...Tooltip.defaultProps,
   id: undefined,
   placement: 'right',
@@ -84,4 +84,4 @@ WrapperTooltip.defaultProps = {
   bsPrefix: 'tooltip',
 };
 
-export default WrapperTooltip;
+export default Tooltip;

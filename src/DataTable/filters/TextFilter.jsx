@@ -46,10 +46,4 @@ TextFilter.propTypes = {
   }).isRequired,
 };
 
-TextFilter.defaultPropTypes = {
-  column: {
-    filterValue: [],
-  },
-};
-
 export default TextFilter;
