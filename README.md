@@ -53,7 +53,7 @@ See the [code of conduct](https://github.com/edx/.github/blob/master/CODE_OF_CON
 
 #### 1. Start the documentation site development server
 
-The Paragon documentation site serves both as documentation and as a workbench to create your component within. To see your component in action, you need to run the documentation site locally. (Note you need to install dependences both in the project root and the `www` directory)
+The Paragon documentation site serves both as documentation and as a workbench to create your component within. To see your component in action, you need to run the documentation site locally. (Note you need to install dependencies both in the project root and the `www` directory)
 
 ```
 npm install
@@ -110,7 +110,27 @@ export { default as MyComponent } from './MyComponent';
 // ...
 ```
 
-#### 5. Add a README.md to document your component and see it in the documentation site
+#### 5. (Optional) Add styles to your component.
+
+If your component requires additional styling (which most likely is the case), create a separate SCSS style sheet in your
+component's directory. For example: `/src/MyComponent/MyComponent.scss`.
+
+If you wish to use SASS variables (which is the preferred way of styling the components since values can be
+easily overridden and customized by the consumers of Paragon), create a separate file that will contain all variables specific to your component:
+`/src/MyComponent/_variables.scss`. This way the variables will also get automatically picked up by documentation site and displayed on your
+component's page.
+
+**Please note that you need to follow [Paragon's CSS styling conventions](docs/decisions/0012-css-styling-conventions).** 
+
+Finally, add your style sheet to the imports in `src/index.scss`. Example:
+
+``` scss
+// ...
+@import './MyComponent/MyComponent.scss';
+// ...
+```
+
+#### 6. Add a README.md to document your component and see it in the documentation site
 
 Create a `src/MyComponent/README.md` file similar to other components in the `src` directory. The documentation site scans this directory for markdown or mdx files to create pages.
 
@@ -208,7 +228,7 @@ To run the unit tests, run:
 npm run test
 ```
 
-To add unit tests for a component, create a file in your component's directory named `<ComponentName>.test.js`. Jest will automatically pick up this file and run the tests as part of the suite. Take a look at [Dropdown.test.jsx](https://github.com/edx/paragon/blob/master/src/Dropdown/Dropdown.test.jsx) or [CheckBox.test.jsx](https://github.com/edx/paragon/blob/master/src/CheckBox/CheckBox.test.jsx) for examples of good component unit tests.
+To add unit tests for a component, create a file in your component's directory named `<ComponentName>.test.js`. Jest will automatically pick up this file and run the tests as part of the suite. Take a look at [Dropdown.test.jsx](https://github.com/edx/paragon/blob/master/src/Dropdown/deprecated/Dropdown.test.jsx) or [CheckBox.test.jsx](https://github.com/edx/paragon/blob/master/src/CheckBox/CheckBox.test.jsx) for examples of good component unit tests.
 
 #### Run Unit Tests in Chrome DevTools Inspector
 
@@ -255,7 +275,7 @@ Paragon currently uses [the default conventional Angular changelog rules](https:
 2. `fix` (`patch` release)
 3. `perf` (`patch` release)
 
-[There are other commit types](https://github.com/marionebl/commitlint/blob/master/%40commitlint/config-angular-type-enum/index.js#L1-L12) that will not trigger a release that you can use at your own discretion. Suggested prefixes are `docs`, `chore`, `style`, `refactor`, and `test` for non-changelog related tasks.
+[There are other commit types](https://github.com/conventional-changelog/commitlint/blob/master/%40commitlint/config-angular-type-enum/index.js#L1-L12) that will not trigger a release that you can use at your own discretion. Suggested prefixes are `docs`, `chore`, `style`, `refactor`, and `test` for non-changelog related tasks.
 
 #### Breaking Changes
 
