@@ -58,29 +58,3 @@ Navigation bits in Bootstrap all share a general ``Nav`` component and styles. S
   );
 }
 ```
-
-### Theme variables (SCSS)
-
-```scss
-$nav-link-padding-y:                .5rem !default;
-$nav-link-padding-x:                1rem !default;
-$nav-link-color:                    $gray-700 !default;
-$nav-link-disabled-color:           $gray-300 !default;
-$nav-link-font-weight:              500 !default;
-
-$nav-tabs-border-color:             $light-400 !default;
-$nav-tabs-border-width:             2px !default;
-$nav-tabs-border-radius:            0 !default;
-$nav-tabs-link-hover-border-color:  transparent transparent $nav-tabs-border-color !default;
-$nav-tabs-link-hover-bg:            $light-400 !default;
-$nav-tabs-link-active-color:        $primary-500 !default;
-$nav-tabs-link-active-bg:           $body-bg !default;
-$nav-tabs-link-active-border-color: transparent transparent $primary-500 !default;
-
-$nav-pills-border-radius:           $border-radius !default;
-$nav-pills-link-active-color:       $component-active-color !default;
-$nav-pills-link-active-bg:          $component-active-bg !default;
-
-$nav-divider-color:                 theme-color("gray", "background") !default;
-$nav-divider-margin-y:              $spacer / 2 !default;
-```

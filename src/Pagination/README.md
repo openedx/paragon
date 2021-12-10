@@ -96,38 +96,3 @@ Navigation between multiple pages of some set of results. Controls are provided 
   }}
 />
 ```
-
-### Theme variables (SCSS)
-
-```scss
-$pagination-padding-y:              .5rem !default;
-$pagination-padding-x:              .75rem !default;
-$pagination-padding-y-sm:           .25rem !default;
-$pagination-padding-x-sm:           .5rem !default;
-$pagination-padding-y-lg:           .75rem !default;
-$pagination-padding-x-lg:           1.5rem !default;
-$pagination-line-height:            1.25 !default;
-
-$pagination-color:                  $link-color !default;
-$pagination-bg:                     $white !default;
-$pagination-border-width:           $border-width !default;
-$pagination-border-color:           theme-color("gray", "border") !default;
-
-$pagination-focus-box-shadow:       $input-btn-focus-box-shadow !default;
-$pagination-focus-outline:          0 !default;
-
-$pagination-hover-color:            $link-hover-color !default;
-$pagination-hover-bg:               theme-color("gray", "background") !default;
-$pagination-hover-border-color:     theme-color("gray", "border") !default;
-
-$pagination-active-color:           $component-active-color !default;
-$pagination-active-bg:              $component-active-bg !default;
-$pagination-active-border-color:    $pagination-active-bg !default;
-
-$pagination-disabled-color:         theme-color("gray", "light-text") !default;
-$pagination-disabled-bg:            $white !default;
-$pagination-disabled-border-color:  theme-color("gray", "disabled-border") !default;
-
-$pagination-border-radius-sm:       $border-radius-sm !default;
-$pagination-border-radius-lg:       $border-radius-lg !default;
-```
