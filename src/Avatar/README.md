@@ -39,16 +39,3 @@ It is used in the global navigation’s user menu and may also be used to indica
   <Avatar size="huge" />
 </>
 ```
-
-### Theme variables (SCSS)
-
-```scss
-$avatar-border-radius:  100% !default;
-$avatar-border: solid 1px $light-300 !default;
-
-$avatar-size-xs: 1.5rem !default;
-$avatar-size-sm: 2.25rem !default;
-$avatar-size: 3rem !default;
-$avatar-size-lg: 4rem !default;
-$avatar-size-xl: 18.75rem !default;
-```
