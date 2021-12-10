@@ -27,7 +27,7 @@ notes: |
 ### Basic Usage
 
 ```jsx live
-<Card style={{ width: '18rem' }}>
+<Card style={{ width: '18rem' }} tabIndex="0">
   <Card.Img variant="top" src="https://source.unsplash.com/400x200/?nature,flower" />
   <Card.Body>
     <Card.Title>Card Title</Card.Title>

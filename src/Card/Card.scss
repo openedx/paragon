@@ -166,7 +166,6 @@
     .pgn__card-logo-cap {
       left: $card-logo-left-offset-horizontal;
       bottom: $card-logo-bottom-offset-horizontal;
-      
     }
   }
 }
@@ -184,6 +183,29 @@
   width: $card-logo-width;
   height: $card-logo-height;
   border-radius: $card-logo-border-radius;
-  box-shadow: $card-logo-box-shadow;
+  box-shadow: $level-1-box-shadow;
   z-index: 1;
+}
+
+.card {
+  &:focus,
+  &.focus {
+    box-shadow: $level-1-box-shadow;
+    outline: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border: $card-border-width solid $card-border-focus-color;
+      border-radius: $card-border-radius;
+    }
+  }
+
+  &:hover {
+    box-shadow: $level-1-box-shadow;
+  }
 }

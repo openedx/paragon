@@ -7,6 +7,7 @@ $card-spacer-x:                      1.25rem !default;
 $card-border-width:                  $border-width !default;
 $card-border-radius:                 $border-radius !default;
 $card-border-color:                  rgba($black, .125) !default;
+$card-border-focus-color:            rgba($black, .5) !default;
 $card-inner-border-radius:           subtract($card-border-radius, $card-border-width) !default;
 $card-cap-bg:                        rgba($black, .03) !default;
 $card-cap-color:                     null !default;
@@ -39,4 +40,4 @@ $card-logo-height:                   4.125rem !default;
 
 $card-logo-border-radius:            0.25rem !default;
 
-$card-logo-box-shadow:               0 .0625rem .125rem rgba(0, 0, 0, .15), 0 .0625rem .25rem rgba(0, 0, 0, .15) !default;
+$level-1-box-shadow:                 0 .0625rem .125rem rgba(0, 0, 0, .15), 0 .0625rem .25rem rgba(0, 0, 0, .15) !default;
