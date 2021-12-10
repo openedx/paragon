@@ -1,5 +1,5 @@
 {
-  "lastModified": 1639058885647,
+  "lastModified": 1639145253522,
   "projectUsages": [
     {
       "version": "16.21.0",
@@ -2394,6 +2394,12 @@
             "line": 120,
             "column": 33,
             "version": "16.20.1"
+          },
+          {
+            "filePath": "src/components/system-wide-banner/SystemWideWarningBanner.jsx",
+            "line": 8,
+            "column": 4,
+            "version": "16.20.1"
           }
         ],
         "AlertModal": [
@@ -4497,6 +4503,14 @@
             "filePath": "src/components/UserActivationPage/index.jsx",
             "line": 61,
             "column": 4,
+            "version": "16.20.1"
+          }
+        ],
+        "PageBanner": [
+          {
+            "filePath": "src/components/system-wide-banner/SystemWideWarningBanner.jsx",
+            "line": 7,
+            "column": 2,
             "version": "16.20.1"
           }
         ],
@@ -7528,14 +7542,14 @@
           },
           {
             "filePath": "src/components/hero/Hero.jsx",
-            "line": 23,
-            "column": 10,
+            "line": 17,
+            "column": 2,
             "version": "16.10.0"
           },
           {
             "filePath": "src/components/hero/Hero.jsx",
-            "line": 32,
-            "column": 10,
+            "line": 30,
+            "column": 2,
             "version": "16.10.0"
           }
         ],
@@ -7648,7 +7662,7 @@
           },
           {
             "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
-            "line": 38,
+            "line": 45,
             "column": 2,
             "version": "16.10.0"
           }
@@ -7670,7 +7684,7 @@
           },
           {
             "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
-            "line": 39,
+            "line": 46,
             "column": 4,
             "version": "16.10.0"
           }
@@ -7684,7 +7698,7 @@
           },
           {
             "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
-            "line": 40,
+            "line": 47,
             "column": 6,
             "version": "16.10.0"
           }
@@ -7732,7 +7746,7 @@
           },
           {
             "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
-            "line": 41,
+            "line": 48,
             "column": 8,
             "version": "16.10.0"
           }
@@ -7796,7 +7810,7 @@
         "Card.Text": [
           {
             "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
-            "line": 50,
+            "line": 57,
             "column": 6,
             "version": "16.10.0"
           }
@@ -7810,8 +7824,8 @@
           },
           {
             "filePath": "src/components/hero/Hero.jsx",
-            "line": 19,
-            "column": 4,
+            "line": 46,
+            "column": 6,
             "version": "16.10.0"
           },
           {
@@ -7838,16 +7852,32 @@
         "Large": [
           {
             "filePath": "src/components/hero/Hero.jsx",
-            "line": 22,
-            "column": 8,
+            "line": 49,
+            "column": 10,
+            "version": "16.10.0"
+          }
+        ],
+        "Medium": [
+          {
+            "filePath": "src/components/hero/Hero.jsx",
+            "line": 52,
+            "column": 10,
+            "version": "16.10.0"
+          }
+        ],
+        "ExtraExtraLarge": [
+          {
+            "filePath": "src/components/hero/Hero.jsx",
+            "line": 55,
+            "column": 10,
             "version": "16.10.0"
           }
         ],
         "ExtraLarge": [
           {
             "filePath": "src/components/hero/Hero.jsx",
-            "line": 31,
-            "column": 8,
+            "line": 58,
+            "column": 10,
             "version": "16.10.0"
           }
         ]
@@ -8367,12 +8397,6 @@
             "line": 178,
             "column": 10,
             "version": "16.14.7"
-          },
-          {
-            "filePath": "src/components/system-wide-banner/SystemWideWarningBanner.jsx",
-            "line": 13,
-            "column": 4,
-            "version": "16.14.7"
           }
         ],
         "Row": [
@@ -8435,12 +8459,6 @@
             "line": 23,
             "column": 8,
             "version": "16.14.7"
-          },
-          {
-            "filePath": "src/components/system-wide-banner/SystemWideWarningBanner.jsx",
-            "line": 14,
-            "column": 6,
-            "version": "16.14.7"
           }
         ],
         "Hyperlink": [
@@ -8481,14 +8499,8 @@
             "version": "16.14.7"
           },
           {
-            "filePath": "src/components/layout/Layout.jsx",
-            "line": 36,
-            "column": 12,
-            "version": "16.14.7"
-          },
-          {
             "filePath": "src/components/program/ProgramCourses.jsx",
-            "line": 65,
+            "line": 73,
             "column": 20,
             "version": "16.14.7"
           },
@@ -8550,14 +8562,8 @@
           },
           {
             "filePath": "src/components/program/ProgramCourses.jsx",
-            "line": 85,
+            "line": 93,
             "column": 20,
-            "version": "16.14.7"
-          },
-          {
-            "filePath": "src/components/system-wide-banner/SystemWideWarningBanner.jsx",
-            "line": 9,
-            "column": 2,
             "version": "16.14.7"
           }
         ],
@@ -8596,12 +8602,6 @@
             "filePath": "src/components/program/ProgramSidebarListItem.jsx",
             "line": 17,
             "column": 6,
-            "version": "16.14.7"
-          },
-          {
-            "filePath": "src/components/system-wide-banner/SystemWideWarningBanner.jsx",
-            "line": 15,
-            "column": 8,
             "version": "16.14.7"
           }
         ],
@@ -9178,7 +9178,7 @@
         "Collapsible.Advanced": [
           {
             "filePath": "src/components/program/ProgramCourses.jsx",
-            "line": 39,
+            "line": 41,
             "column": 14,
             "version": "16.14.7"
           },
@@ -9192,7 +9192,7 @@
         "Collapsible.Trigger": [
           {
             "filePath": "src/components/program/ProgramCourses.jsx",
-            "line": 40,
+            "line": 42,
             "column": 16,
             "version": "16.14.7"
           },
@@ -9206,13 +9206,13 @@
         "Collapsible.Visible": [
           {
             "filePath": "src/components/program/ProgramCourses.jsx",
-            "line": 43,
+            "line": 45,
             "column": 18,
             "version": "16.14.7"
           },
           {
             "filePath": "src/components/program/ProgramCourses.jsx",
-            "line": 47,
+            "line": 49,
             "column": 18,
             "version": "16.14.7"
           },
@@ -9232,7 +9232,7 @@
         "Collapsible.Body": [
           {
             "filePath": "src/components/program/ProgramCourses.jsx",
-            "line": 52,
+            "line": 54,
             "column": 16,
             "version": "16.14.7"
           },
@@ -9304,8 +9304,8 @@
           },
           {
             "filePath": "src/components/system-wide-banner/SystemWideWarningBanner.jsx",
-            "line": 21,
-            "column": 10,
+            "line": 8,
+            "column": 4,
             "version": "16.14.7"
           }
         ],
@@ -9350,7 +9350,7 @@
         "Form.Radio": [
           {
             "filePath": "src/components/skills-quiz/SelectJobCard.jsx",
-            "line": 71,
+            "line": 53,
             "column": 41,
             "version": "16.14.7"
           }
@@ -9404,6 +9404,14 @@
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
             "line": 255,
             "column": 12,
+            "version": "16.14.7"
+          }
+        ],
+        "PageBanner": [
+          {
+            "filePath": "src/components/system-wide-banner/SystemWideWarningBanner.jsx",
+            "line": 7,
+            "column": 2,
             "version": "16.14.7"
           }
         ]
@@ -10149,7 +10157,7 @@
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 94,
+            "line": 113,
             "column": 14,
             "version": "16.18.0"
           },
@@ -10591,7 +10599,7 @@
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 50,
+            "line": 69,
             "column": 4,
             "version": "16.18.0"
           },
@@ -10623,7 +10631,7 @@
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 54,
+            "line": 73,
             "column": 6,
             "version": "16.18.0"
           },
@@ -10649,7 +10657,7 @@
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 56,
+            "line": 75,
             "column": 8,
             "version": "16.18.0"
           },
@@ -10663,7 +10671,7 @@
         "Form.Switch": [
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 81,
+            "line": 100,
             "column": 10,
             "version": "16.18.0"
           }
@@ -10671,7 +10679,7 @@
         "Card.Footer": [
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 91,
+            "line": 110,
             "column": 8,
             "version": "16.18.0"
           }
