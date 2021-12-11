@@ -1,5 +1,5 @@
 {
-  "lastModified": 1639145253522,
+  "lastModified": 1639231653348,
   "projectUsages": [
     {
       "version": "16.21.0",
@@ -12538,6 +12538,12 @@
             "version": "16.14.4"
           },
           {
+            "filePath": "src/components/FilePreview/PDFRenderer.jsx",
+            "line": 107,
+            "column": 8,
+            "version": "16.14.4"
+          },
+          {
             "filePath": "src/containers/ReviewActions/index.jsx",
             "line": 27,
             "column": 4,
@@ -12555,6 +12561,12 @@
             "filePath": "src/components/ConfirmModal.jsx",
             "line": 28,
             "column": 8,
+            "version": "16.14.4"
+          },
+          {
+            "filePath": "src/components/FilePreview/FileInfo.jsx",
+            "line": 27,
+            "column": 4,
             "version": "16.14.4"
           },
           {
@@ -12600,7 +12612,47 @@
             "version": "16.14.4"
           }
         ],
+        "Card": [
+          {
+            "filePath": "src/components/FilePreview/FileCard.jsx",
+            "line": 14,
+            "column": 2,
+            "version": "16.14.4"
+          },
+          {
+            "filePath": "src/containers/ResponseDisplay/index.jsx",
+            "line": 50,
+            "column": 12,
+            "version": "16.14.4"
+          },
+          {
+            "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
+            "line": 27,
+            "column": 6,
+            "version": "16.14.4"
+          },
+          {
+            "filePath": "src/containers/Rubric/index.jsx",
+            "line": 52,
+            "column": 6,
+            "version": "16.14.4"
+          }
+        ],
+        "Collapsible": [
+          {
+            "filePath": "src/components/FilePreview/FileCard.jsx",
+            "line": 15,
+            "column": 4,
+            "version": "16.14.4"
+          }
+        ],
         "OverlayTrigger": [
+          {
+            "filePath": "src/components/FilePreview/FileInfo.jsx",
+            "line": 17,
+            "column": 2,
+            "version": "16.14.4"
+          },
           {
             "filePath": "src/components/InfoPopover/index.jsx",
             "line": 19,
@@ -12610,6 +12662,12 @@
         ],
         "Popover": [
           {
+            "filePath": "src/components/FilePreview/FileInfo.jsx",
+            "line": 22,
+            "column": 6,
+            "version": "16.14.4"
+          },
+          {
             "filePath": "src/components/InfoPopover/index.jsx",
             "line": 24,
             "column": 6,
@@ -12618,6 +12676,18 @@
         ],
         "Popover.Content": [
           {
+            "filePath": "src/components/FilePreview/FileInfo.jsx",
+            "line": 23,
+            "column": 8,
+            "version": "16.14.4"
+          },
+          {
+            "filePath": "src/components/FilePreview/FileInfo.test.jsx",
+            "line": 22,
+            "column": 45,
+            "version": "16.14.4"
+          },
+          {
             "filePath": "src/components/InfoPopover/index.jsx",
             "line": 25,
             "column": 8,
@@ -12625,6 +12695,18 @@
           }
         ],
         "IconButton": [
+          {
+            "filePath": "src/components/FilePreview/PDFRenderer.jsx",
+            "line": 108,
+            "column": 10,
+            "version": "16.14.4"
+          },
+          {
+            "filePath": "src/components/FilePreview/PDFRenderer.jsx",
+            "line": 127,
+            "column": 10,
+            "version": "16.14.4"
+          },
           {
             "filePath": "src/components/InfoPopover/index.jsx",
             "line": 29,
@@ -12641,6 +12723,84 @@
             "filePath": "src/containers/ReviewActions/components/SubmissionNavigation.jsx",
             "line": 41,
             "column": 4,
+            "version": "16.14.4"
+          }
+        ],
+        "Form.Group": [
+          {
+            "filePath": "src/components/FilePreview/PDFRenderer.jsx",
+            "line": 116,
+            "column": 10,
+            "version": "16.14.4"
+          },
+          {
+            "filePath": "src/containers/CriterionContainer/CriterionFeedback.jsx",
+            "line": 41,
+            "column": 6,
+            "version": "16.14.4"
+          },
+          {
+            "filePath": "src/containers/CriterionContainer/index.jsx",
+            "line": 23,
+            "column": 4,
+            "version": "16.14.4"
+          },
+          {
+            "filePath": "src/containers/Rubric/RubricFeedback.jsx",
+            "line": 46,
+            "column": 6,
+            "version": "16.14.4"
+          }
+        ],
+        "Form.Label": [
+          {
+            "filePath": "src/components/FilePreview/PDFRenderer.jsx",
+            "line": 117,
+            "column": 12,
+            "version": "16.14.4"
+          },
+          {
+            "filePath": "src/components/FilePreview/PDFRenderer.jsx",
+            "line": 125,
+            "column": 12,
+            "version": "16.14.4"
+          },
+          {
+            "filePath": "src/containers/CriterionContainer/index.jsx",
+            "line": 24,
+            "column": 6,
+            "version": "16.14.4"
+          },
+          {
+            "filePath": "src/containers/CriterionContainer/ReviewCriterion.jsx",
+            "line": 19,
+            "column": 10,
+            "version": "16.14.4"
+          },
+          {
+            "filePath": "src/containers/Rubric/RubricFeedback.jsx",
+            "line": 47,
+            "column": 8,
+            "version": "16.14.4"
+          }
+        ],
+        "Form.Control": [
+          {
+            "filePath": "src/components/FilePreview/PDFRenderer.jsx",
+            "line": 118,
+            "column": 12,
+            "version": "16.14.4"
+          },
+          {
+            "filePath": "src/containers/CriterionContainer/CriterionFeedback.jsx",
+            "line": 42,
+            "column": 8,
+            "version": "16.14.4"
+          },
+          {
+            "filePath": "src/containers/Rubric/RubricFeedback.jsx",
+            "line": 55,
+            "column": 8,
             "version": "16.14.4"
           }
         ],
@@ -12695,60 +12855,6 @@
             "filePath": "src/containers/CourseHeader/AuthenticatedUserDropdown/UserMenu.jsx",
             "line": 23,
             "column": 6,
-            "version": "16.14.4"
-          }
-        ],
-        "Form.Group": [
-          {
-            "filePath": "src/containers/CriterionContainer/CriterionFeedback.jsx",
-            "line": 41,
-            "column": 6,
-            "version": "16.14.4"
-          },
-          {
-            "filePath": "src/containers/CriterionContainer/index.jsx",
-            "line": 23,
-            "column": 4,
-            "version": "16.14.4"
-          },
-          {
-            "filePath": "src/containers/Rubric/RubricFeedback.jsx",
-            "line": 46,
-            "column": 6,
-            "version": "16.14.4"
-          }
-        ],
-        "Form.Control": [
-          {
-            "filePath": "src/containers/CriterionContainer/CriterionFeedback.jsx",
-            "line": 42,
-            "column": 8,
-            "version": "16.14.4"
-          },
-          {
-            "filePath": "src/containers/Rubric/RubricFeedback.jsx",
-            "line": 55,
-            "column": 8,
-            "version": "16.14.4"
-          }
-        ],
-        "Form.Label": [
-          {
-            "filePath": "src/containers/CriterionContainer/index.jsx",
-            "line": 24,
-            "column": 6,
-            "version": "16.14.4"
-          },
-          {
-            "filePath": "src/containers/CriterionContainer/ReviewCriterion.jsx",
-            "line": 19,
-            "column": 10,
-            "version": "16.14.4"
-          },
-          {
-            "filePath": "src/containers/Rubric/RubricFeedback.jsx",
-            "line": 47,
-            "column": 8,
             "version": "16.14.4"
           }
         ],
@@ -12910,30 +13016,10 @@
             "version": "16.14.4"
           }
         ],
-        "Card": [
-          {
-            "filePath": "src/containers/ResponseDisplay/index.jsx",
-            "line": 48,
-            "column": 12,
-            "version": "16.14.4"
-          },
-          {
-            "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
-            "line": 27,
-            "column": 6,
-            "version": "16.14.4"
-          },
-          {
-            "filePath": "src/containers/Rubric/index.jsx",
-            "line": 52,
-            "column": 6,
-            "version": "16.14.4"
-          }
-        ],
         "Card.Body": [
           {
             "filePath": "src/containers/ResponseDisplay/index.jsx",
-            "line": 49,
+            "line": 51,
             "column": 14,
             "version": "16.14.4"
           },
