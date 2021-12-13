@@ -108,6 +108,7 @@ const SearchFieldAdvanced = (props) => {
             screenReaderText,
             icons,
             value,
+            disabled,
             handleFocus,
             handleBlur,
             handleChange,
@@ -169,7 +170,9 @@ SearchFieldAdvanced.propTypes = {
   }),
   /** specifies the aria-label attribute on the form element. This is useful if you use the `SearchField` component more than once on a page. */
   formAriaLabel: PropTypes.string,
+  /** Specifies whether the `SearchField` is disabled. */
   disabled: PropTypes.bool,
+  /** Controls whether the search button is internal as an icon or external as a button. */
   submitButtonLocation: PropTypes.oneOf(BUTTON_LOCATION_VARIANTS),
 };
 

@@ -152,3 +152,20 @@ For needs that deviate from the basic usage above, use `<SearchField.Advanced />
   <SearchField.Input />
 </SearchField.Advanced>
 ```
+
+### Advanced usage with the submit button outside the input
+
+Use class `pgn__searchfield_wrapper` to group input elements apart from the submit button.
+
+```jsx live
+<SearchField.Advanced
+  onSubmit={value => console.log(`search submitted: ${value}`)}
+  submitButtonLocation="external"
+>
+  <div className="pgn__searchfield_wrapper">
+    <SearchField.Label/>
+    <SearchField.Input/>
+  </div>
+  <SearchField.SubmitButton submitButtonLocation="external" />
+</SearchField.Advanced>
+```

@@ -20,7 +20,7 @@ const SearchFieldSubmitButton = (props) => {
     variant, submitButtonLocation, buttonText, ...others
   } = props;
   const {
-    screenReaderText, icons, refs, value,
+    screenReaderText, icons, refs, value, disabled,
   } = useContext(SearchFieldContext);
 
   if (submitButtonLocation === 'internal' && value.length) {
@@ -31,8 +31,9 @@ const SearchFieldSubmitButton = (props) => {
     <Button
       type="submit"
       ref={refs.submitButton}
-      variant={variant === 'light' ? 'dark' : 'danger'}
+      variant={variant === 'light' ? 'primary' : 'brand'}
       className="pgn__searchfield__button"
+      disabled={disabled}
       {...others}
     >
       {buttonText}
@@ -43,6 +44,7 @@ const SearchFieldSubmitButton = (props) => {
       type="submit"
       className={classNames('btn')}
       ref={refs.submitButton}
+      disabled={disabled}
       {...others}
     >
       {icons.submit}

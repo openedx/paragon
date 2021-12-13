@@ -4,6 +4,7 @@
     transition: $input-transition;
     border: $search-border-width solid $search-border-color;
 
+    &.disabled,
     &:disabled {
         opacity: $search-disabled-opacity;
         pointer-events: none;
@@ -23,8 +24,8 @@
     }
 
     .form-control {
-        @extend .border-0;
-        border-radius: $search-border-radius !important;
+        border: none;
+        border-radius: $search-border-radius;
         height: $input-height-search;
 
         &:focus {
@@ -61,15 +62,31 @@
     &.pgn__searchfield--external {
         border: none;
 
+        .btn-primary {
+            background: map-get($search-btn-variants, 'light');
+        }
+
+        .btn-brand {
+            background: map-get($search-btn-variants, 'dark');
+        }
+
         &.has-focus {
             box-shadow: none;
+
+            .btn-primary {
+                background: map-get($search-btn-variants, 'light');
+            }
+
+            .btn-brand {
+                background: map-get($search-btn-variants, 'dark');
+            }
         }
     }
 
     .pgn__searchfield_wrapper {
-        @extend .d-flex;
-        @extend .align-items-center;
-        @extend .w-100;
+        display: flex;
+        align-items: center;
+        width: 100%;
 
         border: $search-border-width solid $search-border-color;
 
@@ -83,10 +100,4 @@
 .pgn__searchfield__button.btn[type='submit'] {
     border-radius: 0;
     margin-left: $search-button-margin;
-
-    &:hover:before,
-    &:focus:before,
-    &:active:before {
-        border-radius: 0 !important;
-    }
 }

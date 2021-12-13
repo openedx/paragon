@@ -40,7 +40,7 @@ const SearchField = (props) => {
       <SearchField.Advanced {...others} submitButtonLocation={submitButtonLocation}>
         <Wrapper>
           <SearchField.Label>{label}</SearchField.Label>
-          <SearchField.Input placeholder={placeholder} {...inputProps} />
+          <SearchField.Input placeholder={placeholder} {...inputProps} disabled={others.disabled} />
           <SearchField.ClearButton />
         </Wrapper>
         <SearchField.SubmitButton
