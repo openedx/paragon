@@ -110,6 +110,7 @@ function DataTable({
   }, [fetchData, JSON.stringify(tableStateWithoutSelections)]);
 
   const selectionActions = useSelectionActions(instance, controlledTableSelections);
+
   const enhancedInstance = {
     ...instance,
     itemCount,
