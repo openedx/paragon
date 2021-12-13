@@ -245,7 +245,7 @@ DataTable.propTypes = {
           /** optional button variant; only relevant for the first two buttons */
           variant: PropTypes.string,
           /** disables button */
-          disabled: PropTypes.disabled,
+          disabled: PropTypes.bool,
         }),
         /** function passed selected items, should return action object */
         PropTypes.func,
@@ -268,7 +268,7 @@ DataTable.propTypes = {
           /** optional button variant; only relevant for the first two buttons */
           variant: PropTypes.string,
           /** disables button */
-          disabled: PropTypes.disabled,
+          disabled: PropTypes.bool,
         }),
         /** function passed table instance, should return action object */
         PropTypes.func,
