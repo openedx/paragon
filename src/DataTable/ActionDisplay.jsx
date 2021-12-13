@@ -6,8 +6,8 @@ import DataTableContext from './DataTableContext';
 // handles display logic for actions
 const ActionDisplay = () => {
   const { bulkActions, tableActions, selectedFlatRows } = useContext(DataTableContext);
-  const noBulkActions = bulkActions?.length < 1;
-  const noTableActions = tableActions?.length < 1;
+  const noBulkActions = typeof bulkActions !== 'function' && bulkActions?.length < 1;
+  const noTableActions = typeof tableActions !== 'function' && tableActions?.length < 1;
   const noActionsAvailable = noBulkActions && noTableActions;
   const hasRowsSelected = selectedFlatRows?.length > 0;
 
