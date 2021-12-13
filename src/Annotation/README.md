@@ -54,25 +54,37 @@ Display informative text related to an object on screen. Unlike the tooltip an a
 </>
 ```
 
-### Theme variables (SCSS)
+### Referring to other elements
 
-```scss
-$annotation-padding:               .5rem !default;
-$annotation-box-shadow:            drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.15)) drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.15)) !default;
-$annotation-border-radius:         .25rem !default;
-$annotation-max-width:             300px !default;
-$annotation-font-size:             $font-size-sm !default;
-$annotation-line-height:           $line-height-sm !default;
-
-$annotation-variants: (
-  "success": ( "background-color": $success, "color": $white ),
-  "warning": ( "background-color": $warning, "color": $black ),
-  "error":   ( "background-color": $danger, "color": $white ),
-  "light":   ( "background-color": $white, "color": $primary-500 ),
-  "dark":    ( "background-color": $black, "color": $white ),
-) !default;
-
-$annotation-arrow-side-margin:     .25rem !default;
-$annotation-arrow-border-width:    .5rem !default;
-
+```jsx live
+<>
+  <div className="d-flex justify-content-around mb-4">
+    <div className="d-flex flex-column align-items-center">
+      <Annotation>
+        Annotation on top
+      </Annotation>
+      <Button>This is an example button</Button>
+    </div>
+    <div className="d-flex align-items-center">	
+      <Button>This is an example button</Button>
+      <Annotation arrowPlacement='left'>
+        Annotation on right
+      </Annotation>
+    </div>
+  </div>
+  <div className="d-flex justify-content-around">
+    <div className="d-flex align-items-center">
+      <Annotation arrowPlacement='right'>
+        Annotation on left
+      </Annotation>
+      <Button>This is an example button</Button>
+    </div>
+    <div className="d-flex flex-column align-items-center">
+      <Button>This is an example button</Button>
+      <Annotation arrowPlacement='top'>
+        Annotation on bottom
+      </Annotation>
+    </div>
+  </div>
+</>
 ```
