@@ -211,8 +211,8 @@ describe('<SearchField /> with basic usage', () => {
           <SearchField.SubmitButton {...buttonProps} variant="dark" />
         </SearchField.Advanced>,
       );
-      expect(wrapperDefault.find('button').hasClass('btn-dark')).toBe(true);
-      expect(wrapperDark.find('button').hasClass('btn-danger')).toBe(true);
+      expect(wrapperDefault.find('button').hasClass('btn-primary')).toBe(true);
+      expect(wrapperDark.find('button').hasClass('btn-brand')).toBe(true);
     });
   });
 });
