@@ -32,12 +32,12 @@ $btn-active-bg: #454e52 !default;
         color: $accent-color;
     }
 
-    // &.focus,
-    // &:focus {
-    //     background-color: $btn-icon-bg;
-    //     color: $icon-color;
-    //     box-shadow: inset 0 0 0 $btn-focus-width $icon-color;
-    // }
+    &.focus,
+    &:focus {
+        background-color: $btn-icon-bg;
+        color: $icon-color;
+        box-shadow: inset 0 0 0 $btn-focus-width $icon-color;
+    }
 
     &.active,
     &:active {
