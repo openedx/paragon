@@ -22,27 +22,42 @@ $btn-active-bg: #454e52 !default;
     height: $icon-size;
 }
 
-@mixin btn-icon-variant($icon-color, $accent-color) {
-    background-color: $btn-icon-bg;
-    color: $icon-color;
-
-    &.hover,
-    &:hover {
+@mixin btn-icon-variant($icon-color, $accent-color, $active-state: false) {
+    @if $active-state {
         background-color: $icon-color;
         color: $accent-color;
-    }
 
-    &.focus,
-    &:focus {
+        &.hover,
+        &:hover,
+        &.focus,
+        &:focus,
+        &.active,
+        &:active {
+            background-color: $icon-color;
+            color: $accent-color;
+        }
+    } @else {
         background-color: $btn-icon-bg;
         color: $icon-color;
-        box-shadow: inset 0 0 0 $btn-focus-width $icon-color;
-    }
 
-    &.active,
-    &:active {
-        background-color: $icon-color;
-        color: $accent-color;
+        &.hover,
+        &:hover {
+            background-color: $icon-color;
+            color: $accent-color;
+        }
+
+        &.focus,
+        &:focus {
+            background-color: $btn-icon-bg;
+            color: $icon-color;
+            box-shadow: inset 0 0 0 $btn-focus-width $icon-color;
+        }
+
+        &.active,
+        &:active {
+            background-color: $icon-color;
+            color: $accent-color;
+        }
     }
 }
 
@@ -101,13 +116,11 @@ $btn-active-bg: #454e52 !default;
         }
 
         &.btn-icon-#{$name}-active {
-            background-color: $color;
-            color: $btn-icon-accent-color;
+            @include btn-icon-variant($color, $btn-icon-accent-color, true);
         }
 
         &.btn-icon-inverse-#{$name}-active {
-            background-color: $btn-icon-accent-color;
-            color: $color;
+            @include btn-icon-variant($btn-icon-accent-color, $color, true);
         }
     }
 }
