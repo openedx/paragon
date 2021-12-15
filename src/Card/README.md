@@ -29,15 +29,18 @@ notes: |
 
 ```jsx live
 <Card style={{ width: '18rem' }} tabIndex="0">
-  <Card.Img variant="top" src="https://source.unsplash.com/400x200/?nature,flower" />
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
+  <Card.ImageCap 
+    src="https://source.unsplash.com/360x200/?nature,flower"
+  />
+  <Card.Header
+    title="Card Title"
+  />
+  <Card.Section>
+    This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+  </Card.Section>
+  <Card.Footer>
+    <Button>Action 1</Button>
+  </Card.Footer>
 </Card>
 ```
 
@@ -211,12 +214,35 @@ Add ``size="sm"`` for smaller header content and actions.
 ### With Image Cap
 
 ```jsx live
-<>
-  <Card style={{width: '40%'}}>
-    <Card.ImageCap 
-      src="https://source.unsplash.com/360x200/?nature,flower"
-      logoSrc="https://via.placeholder.com/150"
-    />
+<Card style={{width: '40%'}} tabIndex="0">
+  <Card.ImageCap 
+    src="https://source.unsplash.com/360x200/?nature,flower"
+    logoSrc="https://via.placeholder.com/150"
+  />
+  <Card.Header
+    title="Title"
+    subtitle="Subtitle"
+  />
+  <Card.Section 
+    title="Section title"
+  >
+    This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+  </Card.Section>
+  <Card.Footer>
+    <Button>Action 1</Button>
+  </Card.Footer>
+</Card>
+```
+
+### Horizontal variant
+
+```jsx live
+<Card horizontal>
+  <Card.ImageCap 
+    src="https://source.unsplash.com/360x200/?nature,flower"
+    logoSrc="https://via.placeholder.com/150"
+  />
+  <Card.Body>
     <Card.Header
       title="Title"
       subtitle="Subtitle"
@@ -226,39 +252,12 @@ Add ``size="sm"`` for smaller header content and actions.
     >
       This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
     </Card.Section>
-    <Card.Footer>
-      <Button>Action 1</Button>
-    </Card.Footer>
-  </Card>
-</>
-```
-
-### Horizontal variant
-
-```jsx live
-<>
-  <Card horizontal>
-    <Card.ImageCap 
-      src="https://source.unsplash.com/360x200/?nature,flower"
-      logoSrc="https://via.placeholder.com/150"
-    />
-    <Card.Body>
-      <Card.Header
-        title="Title"
-        subtitle="Subtitle"
-      />
-      <Card.Section 
-        title="Section title"
-      >
-        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
-      </Card.Section>
-    </Card.Body>
-    <Card.Footer>
-      <Button>Action 1</Button>
-      <Button>Action 1</Button>
-    </Card.Footer>
-  </Card>
-</>
+  </Card.Body>
+  <Card.Footer>
+    <Button>Action 1</Button>
+    <Button>Action 1</Button>
+  </Card.Footer>
+</Card>
 ```
 
 ### CardGrid
@@ -276,83 +275,107 @@ behavior.
   }}
 >
   <Card>
-    <Card.Img variant="top" src="https://source.unsplash.com/360x200/?nature,flower" />
-    <Card.Body>
-      <Card.Title>Card title</Card.Title>
-      <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This card has even longer content than the first to
-        show that equal height action.
-      </Card.Text>
-    </Card.Body>
+    <Card.ImageCap 
+      src="https://source.unsplash.com/360x200/?nature,flower"
+    />
+    <Card.Header
+      title="Card title"
+    />
+    <Card.Section 
+      title="Card title"
+    >
+      This is a wider card with supporting text below as a natural lead-in to 
+      additional content. This card has even longer content than the first to 
+      show that equal height action.
+    </Card.Section>
     <Card.Footer>
       <small className="text-muted">Last updated 3 mins ago</small>
     </Card.Footer>
   </Card>
   <Card>
-    <Card.Img variant="top" src="https://source.unsplash.com/360x200/?nature,flower" />
-    <Card.Body>
-      <Card.Title>Card title</Card.Title>
-      <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This content is a little bit longer.
-      </Card.Text>
-    </Card.Body>
+    <Card.ImageCap 
+      src="https://source.unsplash.com/360x200/?nature,flower"
+    />
+    <Card.Header
+      title="Card title"
+    />
+    <Card.Section 
+      title="Card title"
+    >
+      This is a wider card with supporting text below as a natural lead-in to 
+      additional content. This content is a little bit longer.
+    </Card.Section>
     <Card.Footer>
       <small className="text-muted">Last updated 3 mins ago</small>
     </Card.Footer>
   </Card>
   <Card>
-    <Card.Img variant="top" src="https://source.unsplash.com/360x200/?nature,flower" />
-    <Card.Body>
-      <Card.Title>Card title</Card.Title>
-      <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This card has even longer content than the first to
-        show that equal height action.
-      </Card.Text>
-    </Card.Body>
+    <Card.ImageCap 
+      src="https://source.unsplash.com/360x200/?nature,flower"
+    />
+    <Card.Header
+      title="Card title"
+    />
+    <Card.Section 
+      title="Card title"
+    >
+      This is a wider card with supporting text below as a natural lead-in to 
+      additional content. This card has even longer content than the first to 
+      show that equal height action.
+    </Card.Section>
     <Card.Footer>
       <small className="text-muted">Last updated 3 mins ago</small>
     </Card.Footer>
   </Card>
   <Card>
-    <Card.Img variant="top" src="https://source.unsplash.com/360x200/?nature,flower" />
-    <Card.Body>
-      <Card.Title>Card title</Card.Title>
-      <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This card has even longer content than the first to
-        show that equal height action.
-      </Card.Text>
-    </Card.Body>
+    <Card.ImageCap 
+      src="https://source.unsplash.com/360x200/?nature,flower"
+    />
+    <Card.Header
+      title="Card title"
+    />
+    <Card.Section 
+      title="Card title"
+    >
+      This is a wider card with supporting text below as a natural lead-in to 
+      additional content. This card has even longer content than the first to 
+      show that equal height action.
+    </Card.Section>
     <Card.Footer>
       <small className="text-muted">Last updated 3 mins ago</small>
     </Card.Footer>
   </Card>
   <Card>
-    <Card.Img variant="top" src="https://source.unsplash.com/360x200/?nature,flower" />
-    <Card.Body>
-      <Card.Title>Card title</Card.Title>
-      <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This content is a little bit longer.
-      </Card.Text>
-    </Card.Body>
+    <Card.ImageCap 
+      src="https://source.unsplash.com/360x200/?nature,flower"
+    />
+    <Card.Header
+      title="Card title"
+    />
+    <Card.Section 
+      title="Card title"
+    >
+      This is a wider card with supporting text below as a natural lead-in to 
+      additional content. This content is a little bit longer.
+    </Card.Section>
     <Card.Footer>
       <small className="text-muted">Last updated 3 mins ago</small>
     </Card.Footer>
   </Card>
   <Card>
-    <Card.Img variant="top" src="https://source.unsplash.com/360x200/?nature,flower" />
-    <Card.Body>
-      <Card.Title>Card title</Card.Title>
-      <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This card has even longer content than the first to
-        show that equal height action.
-      </Card.Text>
-    </Card.Body>
+    <Card.ImageCap 
+      src="https://source.unsplash.com/360x200/?nature,flower"
+    />
+    <Card.Header
+      title="Card title"
+    />
+    <Card.Section 
+      title="Card title"
+    >
+      This is a wider card with supporting text below as a natural lead-in to 
+      additional content. This card has even longer content than the first to 
+      show that equal height action.
+    </Card.Section>
     <Card.Footer>
       <small className="text-muted">Last updated 3 mins ago</small>
     </Card.Footer>
@@ -368,41 +391,54 @@ it is meant to be used as a single horizontal row of Cards, not as a grid. See C
 ```jsx live
 <CardDeck>
   <Card>
-    <Card.Img variant="top" src="https://source.unsplash.com/360x200/?nature,flower" />
-    <Card.Body>
-      <Card.Title>Card title</Card.Title>
-      <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This content is a little bit longer.
-      </Card.Text>
-    </Card.Body>
+    <Card.ImageCap 
+      src="https://source.unsplash.com/360x200/?nature,flower"
+    />
+    <Card.Header
+      title="Card title"
+    />
+    <Card.Section 
+      title="Card title"
+    >
+      This is a wider card with supporting text below as a natural lead-in to 
+      additional content. This card has even longer content than the first to 
+      show that equal height action.
+    </Card.Section>
     <Card.Footer>
       <small className="text-muted">Last updated 3 mins ago</small>
     </Card.Footer>
   </Card>
   <Card>
-    <Card.Img variant="top" src="https://source.unsplash.com/360x200/?nature,flower"  />
-    <Card.Body>
-      <Card.Title>Card title</Card.Title>
-      <Card.Text>
-        This card has supporting text below as a natural lead-in to additional
-        content.{' '}
-      </Card.Text>
-    </Card.Body>
+    <Card.ImageCap 
+      src="https://source.unsplash.com/360x200/?nature,flower"
+    />
+    <Card.Header
+      title="Card title"
+    />
+    <Card.Section 
+      title="Card title"
+    >
+      This is a wider card with supporting text below as a natural lead-in to 
+      additional content. This content is a little bit longer.
+    </Card.Section>
     <Card.Footer>
       <small className="text-muted">Last updated 3 mins ago</small>
     </Card.Footer>
   </Card>
   <Card>
-    <Card.Img variant="top" src="https://source.unsplash.com/360x200/?nature,flower" />
-    <Card.Body>
-      <Card.Title>Card title</Card.Title>
-      <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This card has even longer content than the first to
-        show that equal height action.
-      </Card.Text>
-    </Card.Body>
+    <Card.ImageCap 
+      src="https://source.unsplash.com/360x200/?nature,flower"
+    />
+    <Card.Header
+      title="Card title"
+    />
+    <Card.Section 
+      title="Card title"
+    >
+      This is a wider card with supporting text below as a natural lead-in to 
+      additional content. This card has even longer content than the first to 
+      show that equal height action.
+    </Card.Section>
     <Card.Footer>
       <small className="text-muted">Last updated 3 mins ago</small>
     </Card.Footer>
