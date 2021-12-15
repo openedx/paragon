@@ -16,6 +16,14 @@ describe('<IconButton />', () => {
     const wrapper = shallow(<IconButton {...props} onClick={() => {}} />);
     expect(wrapper.prop('aria-label')).toEqual(alt);
   });
+  it('should render with active style if isActive is true', () => {
+    const wrapper = shallow(<IconButton {...props} isActive onClick={() => {}} />);
+    expect(wrapper.find(`.btn-icon-${variant}-active`)).toHaveLength(1);
+  });
+  it('should render with inverse active style if inverse and isActive is true', () => {
+    const wrapper = shallow(<IconButton {...props} isActive invertColors onClick={() => {}} />);
+    expect(wrapper.find(`.btn-icon-inverse-${variant}-active`)).toHaveLength(1);
+  });
   it('should not render with inverse- class names if invertColors is false', () => {
     const wrapper = shallow(<IconButton {...props} onClick={() => {}} />);
     expect(wrapper.find(`.btn-icon-inverse-${variant}`)).toHaveLength(0);
