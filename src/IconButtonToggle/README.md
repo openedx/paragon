@@ -22,8 +22,8 @@ notes: |
       const [activeValue, setActiveValue] = React.useState('card');
       return (
         <IconButtonToggle activeValue={activeValue} onChange={ value => setActiveValue(value) }>
-          <IconButton value="card" src={GridView} iconAs={Icon} alt="Card" />
-          <IconButton value="list" src={ListView} iconAs={Icon} alt="List" />
+          <IconButton.WithTooltip tooltipContent="Card view" value="card" src={GridView} iconAs={Icon} alt="Card" />
+          <IconButton.WithTooltip tooltipContent="List view" value="list" src={ListView} iconAs={Icon} alt="List" />
         </IconButtonToggle>
       );
     }

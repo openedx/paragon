@@ -26,6 +26,31 @@ notes: ''
 }
 ```
 
+### With tooltips
+
+```jsx live
+() => {
+  const variants = ["brand", "primary", "secondary", "success", "warning", "danger", "light", "dark", "black"];
+  return (
+    <div className="d-flex">
+      {variants.map((variant) => (
+        <IconButton.WithTooltip
+          placement='left'
+          tooltipContent={<div>a nice tooltip of {variant}!</div>}
+          src={Close}
+          iconAs={Icon}
+          alt="Close"
+          onClick={() => {}}
+          variant={variant}
+          className="mr-2"
+        />
+      ))}
+    </div>
+  );
+}
+```
+
+
 ### Basic Usage with FontAwesome Icon
 
 ```jsx live

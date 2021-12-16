@@ -107,6 +107,14 @@ $btn-active-bg: #454e52 !default;
     }
 
     @each $name, $color in $icon-button-colors {
+        &.btn-icon-tooltip-#{$name} {
+            @include btn-icon-variant($btn-icon-accent-color, $color);
+        }
+
+        &.btn-icon-tooltip-inverse-#{$name} {
+            @include btn-icon-variant($color, $btn-icon-accent-color);
+        }
+
         &.btn-icon-#{$name} {
             @include btn-icon-variant($color, $btn-icon-accent-color);
         }

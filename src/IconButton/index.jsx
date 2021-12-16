@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { OverlayTrigger, Tooltip } from '..';
 
 const IconButton = ({
   alt,
@@ -84,5 +85,54 @@ IconButton.propTypes = {
   size: PropTypes.oneOf(['sm', 'md', 'inline']),
   isActive: PropTypes.bool,
 };
+
+/**
+ *
+ * @param {object} args Arguments
+ * @param { string } args.placement choose from https://popper.js.org/docs/v2/constructors/#options
+ * @param { React.Component } args.tooltipContent any content to pass to tooltip content area
+ * @returns {IconButton} a button wrapped in overlaytrigger
+ */
+const WithTooltip = ({
+  placement, tooltipContent, variant, invertColors, ...props
+}) => {
+  const invert = invertColors ? 'inverse-' : '';
+  return (
+    <OverlayTrigger
+      key={placement}
+      placement={placement}
+      overlay={(
+        <Tooltip
+          id={`iconbutton-tooltip-${placement}`}
+          className={classNames(
+            'btn-icon-tooltip',
+            `btn-icon-tooltip-${invert}${variant}`,
+          )}
+        >
+          {tooltipContent}
+        </Tooltip>
+      )}
+    >
+      <IconButton variant={variant} invertColors={invertColors} {...props} />
+    </OverlayTrigger>
+  );
+};
+
+WithTooltip.defaultProps = {
+  placement: 'top',
+  variant: 'primary',
+  invertColors: false,
+};
+
+WithTooltip.propTypes = {
+  placement: PropTypes.string,
+  tooltipContent: PropTypes.node.isRequired,
+  /** Type of button (uses Bootstrap options) */
+  variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'light', 'dark', 'black']),
+  /** Changes icon styles for dark background */
+  invertColors: PropTypes.bool,
+};
+
+IconButton.WithTooltip = WithTooltip;
 
 export default IconButton;
