@@ -21,7 +21,7 @@ const IconButtonToggle = ({ activeValue, onChange, children }) => {
         'data-testid': `icon-btn-val-${iconButton.props.value}`,
       })
     )),
-    [children, activeValue],
+    [children, activeValue, onChange],
   );
   return <Container className="icon-button-toggle-container">{iconButtons}</Container>;
 };
