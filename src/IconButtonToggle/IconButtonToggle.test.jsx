@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render, screen, waitFor } from '@testing-library/react';
 
 // adds special assertions like toHaveTextContent
 import '@testing-library/jest-dom/extend-expect';
+import userEvent from '@testing-library/user-event';
 
 import { IconButton, IconButtonToggle } from '..';
 
@@ -18,7 +18,7 @@ describe('IconButtonToggle tests', () => {
     );
     expect(screen.getByTestId('icon-btn-val-abc')).toHaveClass('btn-icon-primary-active');
   });
-  test('switching activeValue works as expected', async () => {
+  test('switching activeValue works as expected', () => {
     const spyChanger = jest.fn();
     render(
       <IconButtonToggle activeValue="abc" onChange={spyChanger}>
@@ -26,12 +26,13 @@ describe('IconButtonToggle tests', () => {
         <IconButton alt="abc button" value="abc">abc</IconButton>
       </IconButtonToggle>,
     );
-    expect(screen.getByTestId('icon-btn-val-def')).toHaveClass('btn-icon-primary');
-    expect(screen.getByTestId('icon-btn-val-abc')).toHaveClass('btn-icon-primary-active');
-    userEvent.click(screen.getByTestId('icon-btn-val-def'));
-    const elem = await screen.findByTestId('icon-btn-val-def');
-    expect(elem).toHaveClass('btn-icon-primary-active');
-    expect(screen.getByTestId('icon-btn-val-abc')).toHaveClass('btn-icon-primary');
+    const btnDef = screen.getByTestId('icon-btn-val-def');
+    const btnAbc = screen.getByTestId('icon-btn-val-abc');
+    expect(btnDef).toHaveClass('btn-icon-primary');
+    expect(btnAbc).toHaveClass('btn-icon-primary-active');
+    userEvent.click(btnDef);
+    waitFor(() => expect(btnDef).toHaveClass('btn-icon-primary-active'));
+    waitFor(() => expect(btnAbc).toHaveClass('btn-icon-primary'));
     expect(spyChanger).toHaveBeenCalledWith('def');
   });
 });
