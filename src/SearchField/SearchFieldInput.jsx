@@ -6,7 +6,7 @@ import { SearchFieldContext } from './SearchFieldAdvanced';
 
 const SearchFieldInput = (props) => {
   const {
-    inputId, value, handleChange, handleFocus, handleBlur, refs,
+    inputId, value, handleChange, handleFocus, handleBlur, refs, disabled,
   } = useContext(SearchFieldContext);
 
   return (
@@ -21,6 +21,7 @@ const SearchFieldInput = (props) => {
       onFocus={handleFocus}
       onBlur={handleBlur}
       onChange={handleChange}
+      options={{ disabled }}
     />
   );
 };
