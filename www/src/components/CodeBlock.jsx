@@ -44,28 +44,28 @@ function CodeBlock({ children, className, live }) {
 
   if (live) {
     return (
-        <div className="pgn-doc__code-block">
-          <LiveProvider
-            code={children}
-            scope={{
-              ...ParagonIcons,
-              ...ParagonReact,
-              useCallback,
-              useState,
-              useMemo,
-              FontAwesome,
-              MiyazakiCard,
-              HipsterIpsum,
-            }}
-            theme={theme}
-          >
-            <LivePreview className="pgn-doc__code-block-preview" />
-            <CollapsibleLiveEditor>
-              <LiveEditor className="pgn-doc__code-block-editor" />
-            </CollapsibleLiveEditor>
-            <LiveError className="pgn-doc__code-block-error" />
-          </LiveProvider>
-        </div>
+      <div className="pgn-doc__code-block">
+        <LiveProvider
+          code={children}
+          scope={{
+            ...ParagonIcons,
+            ...ParagonReact,
+            useCallback,
+            useState,
+            useMemo,
+            FontAwesome,
+            MiyazakiCard,
+            HipsterIpsum,
+          }}
+          theme={theme}
+        >
+          <LivePreview className="pgn-doc__code-block-preview" />
+          <CollapsibleLiveEditor>
+            <LiveEditor className="pgn-doc__code-block-editor" />
+          </CollapsibleLiveEditor>
+          <LiveError className="pgn-doc__code-block-error" />
+        </LiveProvider>
+      </div>
     );
   }
 
