@@ -11,6 +11,11 @@ import newId from '../utils/newId';
 
 export const SearchFieldContext = createContext();
 
+const BUTTON_LOCATION_VARIANTS = [
+  'internal',
+  'external',
+];
+
 const SearchFieldAdvanced = (props) => {
   const {
     children,
@@ -24,6 +29,8 @@ const SearchFieldAdvanced = (props) => {
     onFocus,
     value: initialValue,
     formAriaLabel,
+    disabled,
+    submitButtonLocation,
   } = props;
 
   const [hasFocus, setHasFocus] = useState(false);
@@ -80,7 +87,11 @@ const SearchFieldAdvanced = (props) => {
     <div
       className={classNames(
         'pgn__searchfield', 'd-flex',
-        { 'has-focus': hasFocus },
+        {
+          'has-focus': hasFocus,
+          disabled,
+          'pgn__searchfield--external': submitButtonLocation === 'external',
+        },
         className,
       )}
     >
@@ -97,6 +108,7 @@ const SearchFieldAdvanced = (props) => {
             screenReaderText,
             icons,
             value,
+            disabled,
             handleFocus,
             handleBlur,
             handleChange,
@@ -158,6 +170,10 @@ SearchFieldAdvanced.propTypes = {
   }),
   /** specifies the aria-label attribute on the form element. This is useful if you use the `SearchField` component more than once on a page. */
   formAriaLabel: PropTypes.string,
+  /** Specifies whether the `SearchField` is disabled. */
+  disabled: PropTypes.bool,
+  /** Controls whether the search button is internal as an icon or external as a button. */
+  submitButtonLocation: PropTypes.oneOf(BUTTON_LOCATION_VARIANTS),
 };
 
 SearchFieldAdvanced.defaultProps = {
@@ -177,6 +193,8 @@ SearchFieldAdvanced.defaultProps = {
   onChange: () => {},
   onFocus: () => {},
   onClear: () => {},
+  disabled: false,
+  submitButtonLocation: 'internal',
 };
 
 export default SearchFieldAdvanced;

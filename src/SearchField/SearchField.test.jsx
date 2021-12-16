@@ -5,10 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import SearchField from './index';
-import SearchFieldLabel from './SearchFieldLabel';
-import SearchFieldInput from './SearchFieldInput';
-import SearchFieldClearButton from './SearchFieldClearButton';
-import SearchFieldSubmitButton from './SearchFieldSubmitButton';
+
+const BUTTON_LOCATION_VARIANTS = [
+  'internal',
+  'external',
+];
 
 const baseProps = {
   onSubmit: () => {},
@@ -22,30 +23,27 @@ describe('<SearchField /> with basic usage', () => {
 
   it('should pass correct props to `SearchField.Advanced`', () => {
     const wrapper = shallow(<SearchField {...baseProps} />);
-    expect(wrapper.find(SearchField.Advanced).props()).toEqual({
-      children: [
-        <SearchFieldLabel />,
-        <SearchFieldInput />,
-        <SearchFieldClearButton />,
-        <SearchFieldSubmitButton />,
-      ],
-      className: undefined,
-      icons: {
-        clear: <FontAwesomeIcon icon={faTimes} />,
-        submit: <FontAwesomeIcon icon={faSearch} />,
-      },
-      onFocus: expect.any(Function),
-      onBlur: expect.any(Function),
-      onChange: expect.any(Function),
-      onSubmit: expect.any(Function),
-      onClear: expect.any(Function),
-      value: '',
-      screenReaderText: {
-        label: 'search',
-        clearButton: 'clear search',
-        submitButton: 'submit search',
-      },
+    const props = wrapper.find(SearchField.Advanced).props();
+    expect(props.children).toEqual(expect.any(Array));
+    expect(props.className).toEqual(undefined);
+    expect(props.icons).toEqual({
+      clear: <FontAwesomeIcon icon={faTimes} />,
+      submit: <FontAwesomeIcon icon={faSearch} />,
     });
+    expect(props.onFocus).toEqual(expect.any(Function));
+    expect(props.onBlur).toEqual(expect.any(Function));
+    expect(props.onChange).toEqual(expect.any(Function));
+    expect(props.onSubmit).toEqual(expect.any(Function));
+    expect(props.onClear).toEqual(expect.any(Function));
+    expect(props.value).toEqual(expect.any(String));
+    expect(props.screenReaderText).toEqual({
+      label: 'search',
+      clearButton: 'clear search',
+      submitButton: 'submit search',
+    });
+    expect(props.formAriaLabel).toEqual(undefined);
+    expect(props.className).toEqual(undefined);
+    expect(BUTTON_LOCATION_VARIANTS.includes(props.submitButtonLocation)).toEqual(true);
   });
   it('should pass correct props to `SearchField.Label`', () => {
     const label = 'foobar';
@@ -88,9 +86,17 @@ describe('<SearchField /> with basic usage', () => {
     };
     const props = { ...baseProps, screenReaderText };
     const wrapper = mount(<SearchField {...props} />);
+    const submitLabel = wrapper.find('button[type="submit"] .sr-only').text();
+    expect(submitLabel).toEqual(screenReaderText.submitButton);
     wrapper.find('input').simulate('change', { target: { value: 'foobar' } });
-    expect(wrapper.find('button[type="reset"] .sr-only').prop('children')).toEqual(screenReaderText.clearButton);
-    expect(wrapper.find('button[type="submit"] .sr-only').prop('children')).toEqual(screenReaderText.submitButton);
+    const resetLabel = wrapper.find('button[type="reset"] .sr-only').text();
+    expect(resetLabel).toEqual(screenReaderText.clearButton);
+  });
+  it('should add div if `submitButtonLocation` is passed', () => {
+    const wrapperDefault = mount(<SearchField {...baseProps} />);
+    const wrapperExternal = mount(<SearchField {...baseProps} submitButtonLocation="external" />);
+    expect(wrapperDefault.find('.pgn__searchfield_wrapper').length).toEqual(0);
+    expect(wrapperExternal.find('.pgn__searchfield_wrapper').length).toEqual(1);
   });
 
   describe('should fire', () => {
@@ -132,7 +138,7 @@ describe('<SearchField /> with basic usage', () => {
       const props = { ...baseProps, onSubmit: spy };
       const wrapper = mount(<SearchField {...props} />);
       wrapper.find('input').simulate('change', { target: { value: 'foobar' } });
-      wrapper.find('button[type="submit"]').simulate('submit');
+      wrapper.find('input').simulate('submit');
       expect(spy).toHaveBeenCalledTimes(1);
       expect(spy).toHaveBeenCalledWith('foobar');
     });
@@ -178,13 +184,35 @@ describe('<SearchField /> with basic usage', () => {
       expect(wrapper.find('label').prop('variant')).toEqual(labelProps.variant);
     });
     it('should pass props to the submit button', () => {
-      const buttonProps = { variant: 'inline' };
+      const buttonText = 'Some test text';
+      const buttonProps = {
+        submitButtonLocation: 'external',
+        buttonText,
+      };
       const wrapper = mount(
         <SearchField.Advanced {...baseProps}>
           <SearchField.SubmitButton {...buttonProps} />
         </SearchField.Advanced>,
       );
-      expect(wrapper.find('button').prop('variant')).toEqual(buttonProps.variant);
+      expect(wrapper.find('button').hasClass('pgn__searchfield__button')).toBe(true);
+      expect(wrapper.find('button').text().includes(buttonText)).toBe(true);
+    });
+    it('should pass variant to the submit button', () => {
+      const buttonProps = {
+        submitButtonLocation: 'external',
+      };
+      const wrapperDefault = mount(
+        <SearchField.Advanced {...baseProps}>
+          <SearchField.SubmitButton {...buttonProps} />
+        </SearchField.Advanced>,
+      );
+      const wrapperDark = mount(
+        <SearchField.Advanced {...baseProps}>
+          <SearchField.SubmitButton {...buttonProps} variant="dark" />
+        </SearchField.Advanced>,
+      );
+      expect(wrapperDefault.find('button').hasClass('btn-primary')).toBe(true);
+      expect(wrapperDark.find('button').hasClass('btn-brand')).toBe(true);
     });
   });
 });

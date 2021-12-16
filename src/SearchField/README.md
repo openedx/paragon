@@ -77,6 +77,15 @@ notes:
 />
 ```
 
+### With the submit button outside the input
+
+```jsx live
+<SearchField
+  submitButtonLocation="external"
+  onSubmit={value => console.log(`search submitted: ${value}`)}
+/>
+```
+
 ### Advanced Usage
 
 For needs that deviate from the basic usage above, use `<SearchField.Advanced />`. The `children` elements must contain the `SearchField.Label` and `SearchField.Input` components at a minimum.
@@ -141,5 +150,22 @@ For needs that deviate from the basic usage above, use `<SearchField.Advanced />
 >
   <SearchField.Label />
   <SearchField.Input />
+</SearchField.Advanced>
+```
+
+### Advanced usage with the submit button outside the input
+
+Use class `pgn__searchfield_wrapper` to group input elements apart from the submit button.
+
+```jsx live
+<SearchField.Advanced
+  onSubmit={value => console.log(`search submitted: ${value}`)}
+  submitButtonLocation="external"
+>
+  <div className="pgn__searchfield_wrapper">
+    <SearchField.Label/>
+    <SearchField.Input/>
+  </div>
+  <SearchField.SubmitButton submitButtonLocation="external" />
 </SearchField.Advanced>
 ```
