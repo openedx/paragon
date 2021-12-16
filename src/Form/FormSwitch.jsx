@@ -35,7 +35,9 @@ const SwitchControl = React.forwardRef(
 );
 
 SwitchControl.propTypes = {
+  /** Specifies whether input should be rendered in indeterminate state. */
   isIndeterminate: PropTypes.bool,
+  /** Specifies class name to append to the base element. */
   className: PropTypes.string,
 };
 
@@ -73,7 +75,9 @@ const FormSwitch = React.forwardRef(({
 ));
 
 FormSwitch.propTypes = {
+  /** Specifies contents of the component. */
   children: PropTypes.node.isRequired,
+  /** Specifies class name to append to the base element. */
   className: PropTypes.string,
   labelClassName: PropTypes.string,
   helperText: PropTypes.node,

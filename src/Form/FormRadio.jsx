@@ -70,12 +70,19 @@ const FormRadio = React.forwardRef(({
 });
 
 FormRadio.propTypes = {
+  /** Specifies contents of the component. */
   children: PropTypes.node.isRequired,
+  /** Specifies class name to append to the base element. */
   className: PropTypes.string,
+  /** Specifies class name for control component. */
   controlClassName: PropTypes.string,
+  /** Specifies class name for label component. */
   labelClassName: PropTypes.string,
+  /** Specifies description to show under the radio's value. */
   description: PropTypes.node,
+  /** Specifies whether to display component in invalid state, this affects styling. */
   isInvalid: PropTypes.bool,
+  /** Specifies whether to display component in valid state, this affects styling. */
   isValid: PropTypes.bool,
 };
 

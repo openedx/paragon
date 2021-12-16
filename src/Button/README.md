@@ -12,12 +12,7 @@ notes: |
   TODO: Remove subcomponent of deprecated implementation soon
 ---
 
-<p className="lead">
-  This is a pass through component from React-Bootstrap.<br/>
-  <a href="https://react-bootstrap.github.io/components/cards/" target="_blank" rel="noopener noreferrer">
-    See React-Bootstrap for documentation.
-  </a>
-</p>
+This component utilizes `Button` from React-Bootstrap and extends it with an ability to add icons before and after button label, see [below](#with-icons-before-or-after) for usage example.<br/> <a href="https://react-bootstrap.github.io/components/buttons/" target="_blank" rel="noopener noreferrer"> See React-Bootstrap for additional documentation. </a>
 
 ### Core Buttons
 ```jsx live
@@ -70,7 +65,7 @@ notes: |
       Large button
     </Button>
   </div>
-  <div>
+  <div className="mb-2">
     <Button variant="primary" size="sm">
       Small button
     </Button>{' '}
@@ -78,7 +73,7 @@ notes: |
       Small button
     </Button>
   </div>
-  <div>
+  <div className="mb-2">
     <Button variant="link" size="inline">Inline button</Button>
     <Button variant="link" size="inline">Inline button</Button>
   </div>

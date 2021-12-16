@@ -51,16 +51,27 @@ const Collapsible = React.forwardRef((props, ref) => {
 });
 
 Collapsible.propTypes = {
+  /** Specifies contents of the component. */
   children: PropTypes.node.isRequired,
+  /** Specifies class name to append to the base element. */
   className: PropTypes.string,
+  /** Specifies whether the `Collapsible` should be initially open. */
   defaultOpen: PropTypes.bool,
+  /** Specifies icon to show when `Collapsible` is closed. */
   iconWhenClosed: PropTypes.element,
+  /** Specifies icon to show when `Collapsible` is open. */
   iconWhenOpen: PropTypes.element,
+  /** Callback fired when `Collapsible` closes. */
   onClose: PropTypes.func,
+  /** Callback fired when `Collapsible` opens. */
   onOpen: PropTypes.func,
+  /** Callback fired when `Collapsible's` state is toggled. */
   onToggle: PropTypes.func,
+  /** Specifies whether `Collapsible` is open. */
   open: PropTypes.bool,
+  /** Specifies style variant. */
   styling: PropTypes.oneOf(['basic', 'card', 'card-lg']),
+  /** Specifies title. */
   title: PropTypes.node.isRequired,
 };
 Collapsible.defaultProps = {

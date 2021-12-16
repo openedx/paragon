@@ -24,8 +24,11 @@ function CollapsibleBody({
 }
 
 CollapsibleBody.propTypes = {
+  /** Specifies contents of the component. */
   children: PropTypes.node,
+  /** Specifies content's base element. */
   tag: PropTypes.string,
+  /** Specifies transition element. */
   transitionWrapper: PropTypes.element,
 };
 
