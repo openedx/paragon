@@ -128,6 +128,7 @@ export { default as TableFilters } from './DataTable/TableFilters';
 export { default as TableHeader } from './DataTable/TableHeaderRow';
 export { default as TableRow } from './DataTable/TableRow';
 export { default as TablePagination } from './DataTable/TablePagination';
+export { default as TablePaginationButtonGroup } from './DataTable/TablePaginationButtonGroup';
 export { default as DataTableContext } from './DataTable/DataTableContext';
 export { default as BulkActions } from './DataTable/BulkActions';
 export { default as TableControlBar } from './DataTable/TableControlBar';
@@ -142,4 +143,19 @@ export { default as useToggle } from './hooks/useToggle';
 // useTable for example is needed to use the DataTable component seamlessly
 // rather than setting a peer dependency in this project, we opt to tightly
 // couple these dependencies by passing through needed functionality.
-export { useTable } from 'react-table';
+export {
+  useTable,
+  useFilters,
+  useGlobalFilter,
+  useSortBy,
+  useGroupBy,
+  useExpanded,
+  usePagination,
+  useRowSelect,
+  useRowState,
+  useColumnOrder,
+  useResizeColumns,
+  useBlockLayout,
+  useAbsoluteLayout,
+  useFlexLayout,
+} from 'react-table';

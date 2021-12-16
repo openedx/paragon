@@ -24,12 +24,12 @@ describe('<RowStatus />', () => {
   it('displays the row status with pagination', () => {
     const pageSize = 10;
     const wrapper = mount(<RowStatusWrapper value={{ ...instance, page: Array(pageSize) }} />);
-    expect(wrapper.text()).toEqual(`Showing ${pageSize} of ${instance.itemCount}`);
+    expect(wrapper.text()).toEqual(`Showing ${pageSize} of ${instance.itemCount}.`);
   });
   it('displays the row status without pagination', () => {
     const pageSize = 10;
     const wrapper = mount(<RowStatusWrapper value={{ ...instance, rows: Array(pageSize) }} />);
-    expect(wrapper.text()).toEqual(`Showing ${pageSize} of ${instance.itemCount}`);
+    expect(wrapper.text()).toEqual(`Showing ${pageSize} of ${instance.itemCount}.`);
   });
   it('sets class names on the parent', () => {
     const wrapper = mount(<RowStatusWrapper value={{ ...instance, page: Array(15) }} />);

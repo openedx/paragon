@@ -6,6 +6,8 @@ $data-table-padding-y: 0.75rem !default;
 $data-table-padding-small: 0.5rem !default;
 $data-table-cell-padding: 0.5rem 0.75rem !default;
 $data-table-footer-position: center !default;
+$data-table-pagination-dropdown-max-height: 60vh !default;
+$data-table-pagination-dropdown-min-width: 6rem !default;
 
 .pgn__data-table-wrapper {
   border-radius: $border-radius;
@@ -137,6 +139,16 @@ $data-table-footer-position: center !default;
   display: flex;
   .pgn__page-count {
     align-self: $data-table-footer-position;
+  }
+}
+
+.pgn__data-table-pagination-dropdown {
+  overflow-y: auto;
+  max-height: $data-table-pagination-dropdown-max-height;
+  min-width: $data-table-pagination-dropdown-min-width;
+
+  a {
+    text-align: center;
   }
 }
 
