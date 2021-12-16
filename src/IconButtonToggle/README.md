@@ -27,6 +27,22 @@ notes: |
         <>
         <div className="mr-2 mt-2 mb-2">Current value is: <strong>{activeValue}</strong></div>
         <IconButtonToggle activeValue={activeValue} onChange={ value => setActiveValue(value) }>
+          <IconButton value="card" src={GridView} iconAs={Icon} alt="Card" />
+          <IconButton value="list" src={ListView} iconAs={Icon} alt="List" />
+        </IconButtonToggle>
+        </>
+      );
+    }
+```
+
+### Basic Usage (with tooltips)
+```jsx live
+    () => {
+      const [activeValue, setActiveValue] = React.useState('card');
+      return (
+        <>
+        <div className="mr-2 mt-2 mb-2">Current value is: <strong>{activeValue}</strong></div>
+        <IconButtonToggle activeValue={activeValue} onChange={ value => setActiveValue(value) }>
           <IconButton.WithTooltip tooltipContent="Card view" value="card" src={GridView} iconAs={Icon} alt="Card" />
           <IconButton.WithTooltip tooltipContent="List view" value="list" src={ListView} iconAs={Icon} alt="List" />
         </IconButtonToggle>
