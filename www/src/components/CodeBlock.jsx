@@ -16,7 +16,7 @@ const { Collapsible } = ParagonReact;
 function CollapsibleLiveEditor({ children }) {
   const [collapseIsOpen, setCollapseIsOpen] = useState(false);
   return (
-    <div className="pgn-doc__collapsible-code-block">
+    <div className="pgn-doc__collapsible-live-editor">
       <Collapsible.Advanced
         open={collapseIsOpen}
         onToggle={(isOpen) => setCollapseIsOpen(isOpen)}
