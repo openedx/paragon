@@ -1,6 +1,11 @@
 ---
-title: 'Navs'
+title: 'Nav'
 type: 'component'
+components:
+- Nav
+- NavItem
+- NavLink
+- NavDropdown
 categories:
 - Navigation
 status: 'Stable'
@@ -10,10 +15,12 @@ notes: |
 
 ---
 
-<p className="lead">
+Navigation bits in Bootstrap all share a general ``Nav`` component and styles. Swap ``variant``s to switch between each style. The base ``Nav`` component is built with flexbox and provide a strong foundation for building all types of navigation components.
+
+<p>
   This is a pass through component from React-Bootstrap.<br/>
   <a href="https://react-bootstrap.github.io/components/navs/" target="_blank" rel="noopener noreferrer">
-    See React-Bootstrap for documentation.
+    See React-Bootstrap for additional documentation.
   </a>
 </p>
 
