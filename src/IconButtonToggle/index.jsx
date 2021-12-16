@@ -32,8 +32,11 @@ IconButtonToggle.defaultProps = {
 };
 
 IconButtonToggle.propTypes = {
+  /* value to use to check which button to set to active */
   activeValue: PropTypes.string,
+  /* handler that is passed the currently active button's value when a button is selected */
   onChange: PropTypes.func,
+  /* child nodes of type IconButton (or its subcomponents) to be rendered within toggle group */
   children: PropTypes.node.isRequired,
 };
 
