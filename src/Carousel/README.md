@@ -1,6 +1,10 @@
 ---
 title: 'Carousel'
 type: 'component'
+components:
+- Carousel
+- CarouselItem
+- CarouselCaption
 categories:
 - Content
 status: 'Stable'

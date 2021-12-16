@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Button from 'react-bootstrap/Button';
+import BaseButtonGroup from 'react-bootstrap/ButtonGroup';
+import BaseButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import ButtonDeprecated from './deprecated';
 
 import Icon from '../Icon';
@@ -47,6 +49,44 @@ WrappedButton.defaultProps = {
 
 WrappedButton.Deprecated = ButtonDeprecated;
 
+const ButtonGroup = (props) => <BaseButtonGroup {...props} />;
+const ButtonToolbar = (props) => <BaseButtonToolbar {...props} />;
+
+ButtonGroup.propTypes = {
+  /** Specifies element type for this component. */
+  as: PropTypes.elementType,
+  /** An ARIA role describing the button group. */
+  role: PropTypes.string,
+  /** Specifies the size for all Buttons in the group. */
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  /** Display as a button toggle group. */
+  toggle: PropTypes.bool,
+  /** Specifies if the set of Buttons should appear vertically stacked. */
+  vertical: PropTypes.bool,
+  /** Overrides underlying component base CSS class name */
+  bsPrefix: PropTypes.string,
+};
+
+ButtonGroup.defaultProps = {
+  as: 'div',
+  role: 'group',
+  toggle: false,
+  vertical: false,
+  bsPrefix: 'btn-group',
+  size: 'md',
+};
+
+ButtonToolbar.propTypes = {
+  /** An ARIA role describing the button group. */
+  role: PropTypes.string,
+  /** Overrides underlying component base CSS class name */
+  bsPrefix: PropTypes.string,
+};
+
+ButtonToolbar.defaultProps = {
+  role: 'toolbar',
+  bsPrefix: 'btn-toolbar',
+};
+
 export default WrappedButton;
-export { default as ButtonGroup } from 'react-bootstrap/ButtonGroup';
-export { default as ButtonToolbar } from 'react-bootstrap/ButtonToolbar';
+export { ButtonGroup, ButtonToolbar };

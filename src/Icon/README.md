@@ -11,7 +11,7 @@ devStatus: 'TBD'
 notes: 'Reconcile purpose of this component with use of FontAwesome'
 ---
 
-Displays an svg icon from `@edx/paragon/icons`. See  Icons Foundation Documentation for a list of all available icons.
+Displays an svg icon from `@edx/paragon/icons`. See [Icons Foundation Documentation](/foundations/icons) for a list of all available icons.
 
 ```jsx live
 // Included in this live jsx scope:
