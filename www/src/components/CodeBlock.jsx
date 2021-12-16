@@ -11,6 +11,34 @@ import * as ParagonIcons from '~paragon-icons'; // eslint-disable-line
 import MiyazakiCard from './exampleComponents/MiyazakiCard';
 import HipsterIpsum from './exampleComponents/HipsterIpsum';
 
+const { Collapsible } = ParagonReact;
+
+function CollapsibleLiveEditor({ children }) {
+  const [collapseIsOpen, setCollapseIsOpen] = useState(false);
+  return (
+    <div className="pgn-doc__collapsible-live-editor">
+      <Collapsible.Advanced
+        open={collapseIsOpen}
+        onToggle={(isOpen) => setCollapseIsOpen(isOpen)}
+      >
+        <Collapsible.Trigger>
+          <div className="font-weight-bold">
+            <Collapsible.Visible whenClosed>Show code example</Collapsible.Visible>
+            <Collapsible.Visible whenOpen>Hide code example</Collapsible.Visible>
+          </div>
+        </Collapsible.Trigger>
+        <Collapsible.Body className="mt-2">
+          {children}
+        </Collapsible.Body>
+      </Collapsible.Advanced>
+    </div>
+  );
+}
+
+CollapsibleLiveEditor.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 function CodeBlock({ children, className, live }) {
   const language = className ? className.replace(/language-/, '') : 'jsx';
 
@@ -32,7 +60,9 @@ function CodeBlock({ children, className, live }) {
           theme={theme}
         >
           <LivePreview className="pgn-doc__code-block-preview" />
-          <LiveEditor className="pgn-doc__code-block-editor" />
+          <CollapsibleLiveEditor>
+            <LiveEditor className="pgn-doc__code-block-editor" />
+          </CollapsibleLiveEditor>
           <LiveError className="pgn-doc__code-block-error" />
         </LiveProvider>
       </div>
