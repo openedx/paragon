@@ -1,5 +1,5 @@
 {
-  "lastModified": 1639577240939,
+  "lastModified": 1639663642530,
   "projectUsages": [
     {
       "version": "16.22.0",
@@ -9709,7 +9709,7 @@
         "Tabs": [
           {
             "filePath": "src/components/program/TabularView.jsx",
-            "line": 26,
+            "line": 35,
             "column": 4,
             "version": "12.4.0"
           }
@@ -9717,7 +9717,7 @@
         "Tab": [
           {
             "filePath": "src/components/program/TabularView.jsx",
-            "line": 29,
+            "line": 38,
             "column": 10,
             "version": "12.4.0"
           }
@@ -16183,7 +16183,7 @@
           },
           {
             "filePath": "src/components/Course/CourseHeader.jsx",
-            "line": 111,
+            "line": 124,
             "column": 10,
             "version": "16.14.6"
           },
@@ -16195,13 +16195,13 @@
           },
           {
             "filePath": "src/components/Course/CourseModes.jsx",
-            "line": 319,
+            "line": 334,
             "column": 50,
             "version": "16.14.6"
           },
           {
             "filePath": "src/components/Course/CourseModes.jsx",
-            "line": 328,
+            "line": 343,
             "column": 50,
             "version": "16.14.6"
           },
@@ -16375,7 +16375,7 @@
           },
           {
             "filePath": "src/components/DiscoveryCard/DiscoveryCourseCard.jsx",
-            "line": 98,
+            "line": 125,
             "column": 14,
             "version": "16.14.6"
           },
@@ -16433,7 +16433,7 @@
           },
           {
             "filePath": "src/components/Course/CourseHeader.jsx",
-            "line": 53,
+            "line": 66,
             "column": 10,
             "version": "16.14.6"
           },
@@ -16451,7 +16451,7 @@
           },
           {
             "filePath": "src/components/Course/CourseRunSelector.jsx",
-            "line": 195,
+            "line": 214,
             "column": 10,
             "version": "16.14.6"
           },
@@ -16463,7 +16463,7 @@
           },
           {
             "filePath": "src/components/Course/EnrollButtonLink.jsx",
-            "line": 304,
+            "line": 308,
             "column": 20,
             "version": "16.14.6"
           },
@@ -16483,6 +16483,24 @@
             "filePath": "src/components/Home/HomeSearchBar.jsx",
             "line": 72,
             "column": 10,
+            "version": "16.14.6"
+          },
+          {
+            "filePath": "src/components/Overlays/SocialSharePopover.jsx",
+            "line": 253,
+            "column": 18,
+            "version": "16.14.6"
+          },
+          {
+            "filePath": "src/components/Overlays/SocialSharePopover.jsx",
+            "line": 260,
+            "column": 18,
+            "version": "16.14.6"
+          },
+          {
+            "filePath": "src/components/Overlays/SocialSharePopover.jsx",
+            "line": 284,
+            "column": 14,
             "version": "16.14.6"
           },
           {
@@ -16525,7 +16543,7 @@
           },
           {
             "filePath": "src/components/Course/CourseHeader.jsx",
-            "line": 106,
+            "line": 119,
             "column": 6,
             "version": "16.14.6"
           },
@@ -16549,7 +16567,7 @@
           },
           {
             "filePath": "src/components/Course/CourseModes.jsx",
-            "line": 176,
+            "line": 191,
             "column": 4,
             "version": "16.14.6"
           },
@@ -16567,7 +16585,7 @@
           },
           {
             "filePath": "src/components/Course/CourseRunSelector.jsx",
-            "line": 105,
+            "line": 124,
             "column": 4,
             "version": "16.14.6"
           },
@@ -16851,13 +16869,13 @@
         "Breadcrumb": [
           {
             "filePath": "src/components/Course/CourseHeader.jsx",
-            "line": 108,
+            "line": 121,
             "column": 10,
             "version": "16.14.6"
           },
           {
             "filePath": "src/components/Course/CourseHeader.jsx",
-            "line": 112,
+            "line": 125,
             "column": 10,
             "version": "16.14.6"
           },
@@ -16877,13 +16895,13 @@
         "OverlayTrigger": [
           {
             "filePath": "src/components/Course/CourseModes.jsx",
-            "line": 253,
+            "line": 268,
             "column": 26,
             "version": "16.14.6"
           },
           {
             "filePath": "src/components/Course/CourseModes.jsx",
-            "line": 270,
+            "line": 285,
             "column": 26,
             "version": "16.14.6"
           },
@@ -16900,6 +16918,12 @@
             "version": "16.14.6"
           },
           {
+            "filePath": "src/components/Overlays/SocialSharePopover.jsx",
+            "line": 227,
+            "column": 6,
+            "version": "16.14.6"
+          },
+          {
             "filePath": "src/components/ProgramPathway/ProgramPathwayCourse.jsx",
             "line": 61,
             "column": 6,
@@ -16909,13 +16933,13 @@
         "Tooltip": [
           {
             "filePath": "src/components/Course/CourseModes.jsx",
-            "line": 256,
+            "line": 271,
             "column": 30,
             "version": "16.14.6"
           },
           {
             "filePath": "src/components/Course/CourseModes.jsx",
-            "line": 273,
+            "line": 288,
             "column": 30,
             "version": "16.14.6"
           },
@@ -16941,21 +16965,27 @@
         "IconButton": [
           {
             "filePath": "src/components/Course/CourseModes.jsx",
-            "line": 261,
+            "line": 276,
             "column": 28,
             "version": "16.14.6"
           },
           {
             "filePath": "src/components/Course/CourseModes.jsx",
-            "line": 278,
+            "line": 293,
             "column": 28,
+            "version": "16.14.6"
+          },
+          {
+            "filePath": "src/components/Overlays/SocialSharePopover.jsx",
+            "line": 295,
+            "column": 14,
             "version": "16.14.6"
           }
         ],
         "CardGrid": [
           {
             "filePath": "src/components/Course/CourseRunSelector.jsx",
-            "line": 166,
+            "line": 185,
             "column": 10,
             "version": "16.14.6"
           },
@@ -17123,6 +17153,62 @@
             "filePath": "src/components/MemberList/MemberListItem.jsx",
             "line": 52,
             "column": 8,
+            "version": "16.14.6"
+          }
+        ],
+        "Toast": [
+          {
+            "filePath": "src/components/Overlays/SocialSharePopover.jsx",
+            "line": 220,
+            "column": 8,
+            "version": "16.14.6"
+          }
+        ],
+        "Popover": [
+          {
+            "filePath": "src/components/Overlays/SocialSharePopover.jsx",
+            "line": 231,
+            "column": 10,
+            "version": "16.14.6"
+          }
+        ],
+        "Popover.Title": [
+          {
+            "filePath": "src/components/Overlays/SocialSharePopover.jsx",
+            "line": 233,
+            "column": 12,
+            "version": "16.14.6"
+          }
+        ],
+        "Popover.Content": [
+          {
+            "filePath": "src/components/Overlays/SocialSharePopover.jsx",
+            "line": 236,
+            "column": 12,
+            "version": "16.14.6"
+          }
+        ],
+        "Form": [
+          {
+            "filePath": "src/components/Overlays/SocialSharePopover.jsx",
+            "line": 240,
+            "column": 14,
+            "version": "16.14.6"
+          }
+        ],
+        "Form.Group": [
+          {
+            "filePath": "src/components/Overlays/SocialSharePopover.jsx",
+            "line": 241,
+            "column": 16,
+            "version": "16.14.6"
+          }
+        ],
+        "Form.Control": [
+          {
+            "filePath": "src/components/Overlays/SocialSharePopover.jsx",
+            "line": 242,
+            "column": 18,
             "version": "16.14.6"
           }
         ],
