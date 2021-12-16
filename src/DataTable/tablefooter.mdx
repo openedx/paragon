@@ -5,6 +5,7 @@ components:
 - TableFooter
 - RowStatus
 - TablePagination
+- TablePaginationButtonGroup
 categories:
 - Table
 status: 'New'
@@ -15,7 +16,8 @@ devStatus: 'In progress'
 <Link to="/components/datatable/">Main DataTable page</Link>
 
 The `TableFooter` component is meant to be rendered within a `DataTableContext` (provided by `DataTable` here).
-By default, it shows a how many items are being displayed on the left and pagination and page information on the right.
+By default, it shows how many items are being displayed on the left, pagination dropdown in the middle, and
+navigation buttons on the right.
 Alternately, it will accept children.
 
 ```jsx live
@@ -115,7 +117,16 @@ Alternately, it will accept children.
         color: 'siamese',
         famous_for: 'serving moods',
       },
-
+      {
+        name: 'Maru',
+        color: 'brown tabby',
+        famous_for: 'being a lovable oaf',
+      },
+      {
+        name: 'Keyboard Cat',
+        color: 'orange tabby',
+        famous_for: 'piano virtuoso',
+      },
     ]}
 >
   <TableFooter>
@@ -126,16 +137,9 @@ Alternately, it will accept children.
 </DataTable>
 ```
 
-<PropsTable displayName="TableFooter" />
-
 ## Footer subcomponents
-These components can be rendered independently of the `TableFooter` component with a `DataTableContext`.
-
-<PropsTable
-  displayName="RowStatus"
-  content="The RowStatus component expects to receive page, rows, and itemCount from the DataTableContext."
-/>
-<PropsTable
-  displayName="TablePagination"
-  content="The Pagination component expects to receive the following from the DataTableContext: pageCount, previousPage, canNextPage, nextPage, state.pageIndex"
-/>
+These components can be rendered independently of the `TableFooter` component with a `DataTableContext`: `RowStatus`,
+`TablePagination`, `TablePaginationButtonGroup`.
+- `RowStatus` expects to receive `page`, `rows`, and `itemCount` from `DataTableContext`
+- `TablePagination` expects to receive `pageCount`, `state`, and `gotoPage` from `DataTableContext`
+- `TablePaginationButtonGroup` expects to receive `nextPage`, `previousPage`, `canPreviousPage`, and `canNextPage` from `DataTableContext`

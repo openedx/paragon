@@ -2,17 +2,13 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import TablePagination from '../TablePagination';
-import SelectionState from '../selection/SelectionStatus';
-import { Button } from '../..';
+import { Dropdown } from '../..';
 import DataTableContext from '../DataTableContext';
 
 const instance = {
-  previousPage: () => {},
-  nextPage: () => {},
-  canPreviousPage: true,
-  canNextPage: true,
   state: { pageIndex: 1 },
   pageCount: 3,
+  gotoPage: () => {},
 };
 
 // eslint-disable-next-line react/prop-types
@@ -24,40 +20,20 @@ describe('<TablePagination />', () => {
     const wrapper = mount(<PaginationWrapper value={{}} />);
     expect(wrapper.text()).toEqual('');
   });
-  it('Shows the page count', () => {
-    const wrapper = mount(<PaginationWrapper value={instance} />);
-    expect(wrapper.text(SelectionState)).toContain(`Page ${instance.state.pageIndex + 1} of ${instance.pageCount}`);
-  });
-  it('disables the previous button when it can\'t be clicked', () => {
-    const wrapper = mount(<PaginationWrapper value={{ ...instance, canPreviousPage: false }} />);
-    const buttons = wrapper.find(Button);
-    const prevButton = buttons.at(0);
-    expect(prevButton.props().disabled).toEqual(true);
-    const nextButton = buttons.at(1);
-    expect(nextButton.props().disabled).toEqual(false);
-  });
-  it('disables the next button when it can\'t be clicked', () => {
-    const wrapper = mount(<PaginationWrapper value={{ ...instance, canNextPage: false }} />);
-    const buttons = wrapper.find(Button);
-    const prevButton = buttons.at(0);
-    expect(prevButton.props().disabled).toEqual(false);
-    const nextButton = wrapper.find(Button).at(1);
-    expect(nextButton.props().disabled).toEqual(true);
-  });
-  it('calls canNextPage when next is clicked', () => {
-    const nextSpy = jest.fn();
-    const wrapper = mount(<PaginationWrapper value={{ ...instance, nextPage: nextSpy }} />);
-    const buttons = wrapper.find(Button);
-    const prevButton = buttons.at(1);
-    prevButton.simulate('click');
-    expect(nextSpy).toHaveBeenCalledTimes(1);
-  });
-  it('calls canPreviousPage when previous is clicked', () => {
-    const prevSpy = jest.fn();
-    const wrapper = mount(<PaginationWrapper value={{ ...instance, previousPage: prevSpy }} />);
-    const buttons = wrapper.find(Button);
-    const prevButton = buttons.at(0);
-    prevButton.simulate('click');
-    expect(prevSpy).toHaveBeenCalledTimes(1);
+  it('Shows dropdown button with the page count as label and performs actions when dropdown items are clicked', () => {
+    const gotoPageSpy = jest.fn();
+    const wrapper = mount(<PaginationWrapper value={{ ...instance, gotoPage: gotoPageSpy }} />);
+    const dropdown = wrapper.find(Dropdown);
+    expect(dropdown.text()).toContain(`${instance.state.pageIndex + 1} of ${instance.pageCount}`);
+
+    const dropdownButton = wrapper.find('button');
+    dropdownButton.simulate('click');
+    const dropdownChoices = wrapper.find(Dropdown.Item);
+    expect(dropdownChoices.length).toEqual(instance.pageCount);
+
+    const secondPageButton = dropdownChoices.at(1);
+    secondPageButton.simulate('click');
+    expect(gotoPageSpy).toHaveBeenCalledTimes(1);
+    expect(gotoPageSpy).toHaveBeenCalledWith(1);
   });
 });

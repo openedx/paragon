@@ -1,40 +1,31 @@
 import React, { useContext } from 'react';
-import { Button, ButtonGroup } from '..';
+import { Dropdown } from '..';
 import DataTableContext from './DataTableContext';
-
-const NEXT_BUTTON_TEXT = 'Next';
-const PREVOUS_BUTTON_TEXT = 'Previous';
-const PAGE_TEXT = 'Page';
 
 const TablePagination = () => {
   const {
-    pageCount, previousPage, canPreviousPage, canNextPage, nextPage, state,
+    pageCount, state, gotoPage,
   } = useContext(DataTableContext);
 
-  // Use nextPage as a proxy for whether or not the table is paginated
-  if (!nextPage) {
+  if (!pageCount || pageCount < 2) {
     return null;
   }
 
   const pageIndex = state?.pageIndex;
 
   return (
-    <div className="pgn__data-table-pagination">
-      <div className="pgn__page-count mr-3">
-        {PAGE_TEXT}{' '}
-        <strong>
-          {pageIndex + 1} of {pageCount}
-        </strong>{' '}
-      </div>
-      <ButtonGroup>
-        <Button variant="outline-primary" onClick={previousPage} disabled={!canPreviousPage}>
-          {PREVOUS_BUTTON_TEXT}
-        </Button>
-        <Button variant="outline-primary" onClick={nextPage} disabled={!canNextPage}>
-          {NEXT_BUTTON_TEXT}
-        </Button>
-      </ButtonGroup>
-    </div>
+    <Dropdown>
+      <Dropdown.Toggle variant="tertiary">
+        {pageIndex + 1} of {pageCount}
+      </Dropdown.Toggle>
+      <Dropdown.Menu className="pgn__data-table-pagination-dropdown">
+        {[...Array(pageCount).keys()].map(pageNum => (
+          <Dropdown.Item onClick={() => gotoPage(pageNum)} key={pageNum}>
+            {pageNum + 1}
+          </Dropdown.Item>
+        ))}
+      </Dropdown.Menu>
+    </Dropdown>
   );
 };
 
