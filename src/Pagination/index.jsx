@@ -3,10 +3,11 @@ import { between } from 'airbnb-prop-types';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
+import MediaQuery from 'react-responsive';
 
 import { Button } from '..';
-import { ExtraSmall, LargerThanExtraSmall } from '../Responsive';
 import Icon from '../Icon';
+import breakpoints from '../utils/breakpoints';
 import newId from '../utils/newId';
 import { ELLIPSIS } from './constants';
 import getPaginationRange from './getPaginationRange';
@@ -286,12 +287,12 @@ class Pagination extends React.Component {
         {this.renderScreenReaderSection()}
         <ul className="pagination">
           {this.renderPreviousButton()}
-          <ExtraSmall>
+          <MediaQuery maxWidth={breakpoints.extraSmall.maxWidth}>
             {this.renderPageOfCountButton()}
-          </ExtraSmall>
-          <LargerThanExtraSmall>
+          </MediaQuery>
+          <MediaQuery minWidth={breakpoints.small.minWidth}>
             {this.renderPageButtons()}
-          </LargerThanExtraSmall>
+          </MediaQuery>
           {this.renderNextButton()}
         </ul>
       </nav>

@@ -88,16 +88,6 @@ export { default as Pagination } from './Pagination';
 export { default as Popover, PopoverTitle, PopoverContent } from './Popover';
 export { default as ProgressBar } from './ProgressBar';
 export { default as RadioButtonGroup, RadioButton } from './RadioButtonGroup';
-export {
-  breakpoints,
-  ExtraSmall,
-  Small,
-  Medium,
-  Large,
-  ExtraLarge,
-  ExtraExtraLarge,
-  LargerThanExtraSmall,
-} from './Responsive';
 export { default as ResponsiveEmbed } from './ResponsiveEmbed';
 export { default as SearchField } from './SearchField';
 export { default as Sheet } from './Sheet';
@@ -137,6 +127,7 @@ export { default as TableControlBar } from './DataTable/TableControlBar';
 export { default as TableFooter } from './DataTable/TableFooter';
 export { default as CardView } from './DataTable/CardView';
 export { default as ToggleButton, ToggleButtonGroup } from './ToggleButton';
+export { default as breakpoints } from './utils/breakpoints';
 export { default as Variant } from './utils/constants';
 export { default as useWindowSize } from './hooks/useWindowSize';
 export { default as useToggle } from './hooks/useToggle';
@@ -145,6 +136,12 @@ export { default as useToggle } from './hooks/useToggle';
 // useTable for example is needed to use the DataTable component seamlessly
 // rather than setting a peer dependency in this project, we opt to tightly
 // couple these dependencies by passing through needed functionality.
+export {
+  default as MediaQuery,
+  useMediaQuery,
+  Context as ResponsiveContext,
+} from 'react-responsive';
+
 export {
   useTable,
   useFilters,
