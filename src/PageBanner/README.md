@@ -2,7 +2,7 @@
 title: 'Page Banner'
 type: 'component'
 components:
-- Page Banner
+- PageBanner
 categories:
 - Status & metadata
 status: 'New'
@@ -11,10 +11,11 @@ devStatus: 'In Progress'
 notes: |
 ---
 
+A ``Page Banner`` displays an important, succinct message, and provides actions for users to address (or dismiss the banner). It requires a user action to be dismissed.
+
 ### Basic Usage
 
 ```jsx live
-
 () => {
   const [show, setShow] = useState(true);
   return (
@@ -34,8 +35,9 @@ notes: |
 
 ### Variants
 
-```jsx live
+The system warning banner is similar to the ``Alert Banner`` banner in styling, except that the text is always default body (14px) and padding has been modified in order to accommodate the ``Page Banner`` component. It cannot be dismissed.
 
+```jsx live
 () => {
   const [showLightVariant, setShowLightVariant] = useState(true);
   const [showDarkVariant, setShowDarkVariant] = useState(true);
