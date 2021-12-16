@@ -10,21 +10,46 @@ import SearchFieldInput from './SearchFieldInput';
 import SearchFieldClearButton from './SearchFieldClearButton';
 import SearchFieldSubmitButton from './SearchFieldSubmitButton';
 
+const STYLE_VARIANTS = [
+  'light',
+  'dark',
+];
+
+const BUTTON_LOCATION_VARIANTS = [
+  'internal',
+  'external',
+];
+
 const SearchField = (props) => {
   const {
     label,
     placeholder,
     inputProps,
+    variant,
+    submitButtonLocation,
+    buttonText,
     ...others
   } = props;
 
+  const Wrapper = (wrapperProps) => (submitButtonLocation === 'external'
+    ? <div className="pgn__searchfield_wrapper">{wrapperProps.children}</div>
+    : <>{wrapperProps.children}</>);
+
   return (
-    <SearchField.Advanced {...others}>
-      <SearchField.Label>{label}</SearchField.Label>
-      <SearchField.Input placeholder={placeholder} {...inputProps} />
-      <SearchField.ClearButton />
-      <SearchField.SubmitButton />
-    </SearchField.Advanced>
+    <>
+      <SearchField.Advanced {...others} submitButtonLocation={submitButtonLocation}>
+        <Wrapper>
+          <SearchField.Label>{label}</SearchField.Label>
+          <SearchField.Input placeholder={placeholder} {...inputProps} disabled={others.disabled} />
+          <SearchField.ClearButton />
+        </Wrapper>
+        <SearchField.SubmitButton
+          variant={variant}
+          submitButtonLocation={submitButtonLocation}
+          buttonText={buttonText}
+        />
+      </SearchField.Advanced>
+    </>
   );
 };
 
@@ -77,6 +102,17 @@ SearchField.propTypes = {
   formAriaLabel: PropTypes.string,
   /** Props to be passed to the form input */
   inputProps: PropTypes.shape({}),
+  /** The button style variant to use. */
+  variant: PropTypes.oneOf(STYLE_VARIANTS),
+  /** Specifies whether the `SearchField` is disabled. */
+  disabled: PropTypes.bool,
+  /** Controls whether the search button is internal as an icon or external as a button. */
+  submitButtonLocation: PropTypes.oneOf(BUTTON_LOCATION_VARIANTS),
+  /**
+   * Specifies a text that is displayed on the button.
+   * The `submitButtonLocation` prop should be set to `external`.
+   */
+  buttonText: PropTypes.string,
 };
 
 SearchField.defaultProps = {
@@ -99,6 +135,10 @@ SearchField.defaultProps = {
   onFocus: () => {},
   onClear: () => {},
   inputProps: {},
+  variant: 'light',
+  disabled: false,
+  submitButtonLocation: 'internal',
+  buttonText: 'Search',
 };
 
 SearchField.Advanced = SearchFieldAdvanced;
