@@ -88,10 +88,10 @@ IconButton.propTypes = {
 
 /**
  *
- * @param {object} args Arguments
+ * @param { object } args Arguments
  * @param { string } args.placement choose from https://popper.js.org/docs/v2/constructors/#options
  * @param { React.Component } args.tooltipContent any content to pass to tooltip content area
- * @returns {IconButton} a button wrapped in overlaytrigger
+ * @returns { IconButton } a button wrapped in overlaytrigger
  */
 const WithTooltip = ({
   placement, tooltipContent, variant, invertColors, ...props
@@ -104,10 +104,7 @@ const WithTooltip = ({
       overlay={(
         <Tooltip
           id={`iconbutton-tooltip-${placement}`}
-          className={classNames(
-            'btn-icon-tooltip',
-            `btn-icon-tooltip-${invert}${variant}`,
-          )}
+          variant={invert ? 'light' : ''}
         >
           {tooltipContent}
         </Tooltip>

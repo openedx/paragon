@@ -3,6 +3,7 @@ title: 'IconButton'
 type: 'component'
 components:
 - IconButton
+- IconButton.WithToggle
 categories:
 - Buttonlike
 status: 'New'
