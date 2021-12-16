@@ -1,6 +1,10 @@
 ---
 title: 'Popover'
 type: 'component'
+components:
+- WrapperPopover
+- PopoverTitle
+- PopoverContent
 categories:
 - Overlays
 status: 'Stable'
@@ -10,7 +14,9 @@ notes: |
 
 ---
 
-##### Basic Usage
+Popovers are small overlays that present additional content and actions without cluttering the page.
+
+### Basic Usage
 
 ```jsx live
 <>
@@ -34,7 +40,7 @@ notes: |
 </>
 ```
 
-##### State variants
+### State variants
 
 ```jsx live
 <>

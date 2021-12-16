@@ -15,7 +15,9 @@ notes: |
   Remove baked in english strings
 ---
 
-### basic usage
+Navigation between multiple pages of some set of results. Controls are provided to navigate through multiple pages of related data.
+
+### Basic usage
 
 ```jsx live
 <Pagination
@@ -25,7 +27,7 @@ notes: |
 />
 ```
 
-### with initial page selected
+### With initial page selected
 
 ```jsx live
 <Pagination
@@ -36,7 +38,7 @@ notes: |
 />
 ```
 
-### with max pages displayed
+### With max pages displayed
 
 ```jsx live
 <Pagination
@@ -47,7 +49,7 @@ notes: |
 />
 ```
 
-### with custom string labels
+### With custom string labels
 
 ```jsx live
 <Pagination
@@ -64,7 +66,7 @@ notes: |
 />
 ```
 
-### with custom element labels
+### With custom element labels
 
 ```jsx live
 <Pagination
@@ -81,7 +83,7 @@ notes: |
 />
 ```
 
-### with custom right and left icons
+### With custom right and left icons
 
 ```jsx live
 <Pagination
