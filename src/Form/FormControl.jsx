@@ -7,7 +7,6 @@ import FormControlFeedback from './FormControlFeedback';
 import FormControlDecoratorGroup from './FormControlDecoratorGroup';
 
 import { callAllHandlers, useHasValue } from './fieldUtils';
-import { FORM_CONTROL_SIZES } from './constants';
 
 const FormControl = React.forwardRef(({
   as,
@@ -60,25 +59,37 @@ const FormControl = React.forwardRef(({
   );
 });
 
+const SIZE_CHOICES = ['sm', 'lg'];
+
 FormControl.Feedback = FormControlFeedback;
 FormControl.Description = FormControlFeedback;
 
 FormControl.propTypes = {
-  as: PropTypes.elementType,
-  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /** Specifies class name to append to the base element. */
   className: PropTypes.string,
+  /** Specifies base element for the control component. */
+  as: PropTypes.elementType,
+  /** Specifies default value of the input component. */
+  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /** Specifies current value of the input component. */
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /** Specifies id of the control component. */
   id: PropTypes.string,
+  /** Specifies class name for the control component. */
   controlClassName: PropTypes.string,
-  size: PropTypes.oneOf([
-    FORM_CONTROL_SIZES.SMALL,
-    FORM_CONTROL_SIZES.LARGE,
-  ]),
+  /** Specifies size for the control component. */
+  size: PropTypes.oneOf(SIZE_CHOICES),
+  /** Specifies leading element to display for the input component. */
   leadingElement: PropTypes.node,
+  /** Specifies trailing element to display for the input component. */
   trailingElement: PropTypes.node,
+  /** Specifies floating label to display for the input component. */
   floatingLabel: PropTypes.node,
+  /** Specifies whether to render input as plain text. */
   plaintext: PropTypes.bool,
+  /** Specifies whether to display control in valid state, this affects styling. */
   isValid: PropTypes.bool,
+  /** Specifies whether to display control in invalid state, this affects styling. */
   isInvalid: PropTypes.bool,
 };
 
