@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { Context as ResponsiveContext } from 'react-responsive';
-import { breakpoints } from '../Responsive';
+import breakpoints from '../utils/breakpoints';
 import Pagination from './index';
 
 const baseProps = {

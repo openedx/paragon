@@ -5,8 +5,8 @@ import BaseAlert from 'react-bootstrap/Alert';
 import divWithClassName from 'react-bootstrap/divWithClassName';
 import { useMediaQuery } from 'react-responsive';
 import { Icon } from '..';
+import breakpoints from '../utils/breakpoints';
 import Button from '../Button';
-import { breakpoints } from '../Responsive';
 import ActionRow from '../ActionRow';
 
 const Alert = React.forwardRef(({
