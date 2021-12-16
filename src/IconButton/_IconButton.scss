@@ -23,16 +23,20 @@ $btn-active-bg: $gray-700 !default;
 }
 
 @mixin btn-icon-variant($icon-color, $accent-color, $active-state: false) {
+    &.hover,
+    &:hover,
+    &.active,
+    &:active {
+        background-color: $icon-color;
+        color: $accent-color;
+    }
+
     @if $active-state {
         background-color: $icon-color;
         color: $accent-color;
 
-        &.hover,
-        &:hover,
         &.focus,
-        &:focus,
-        &.active,
-        &:active {
+        &:focus {
             background-color: $icon-color;
             color: $accent-color;
         }
@@ -40,23 +44,11 @@ $btn-active-bg: $gray-700 !default;
         background-color: $btn-icon-bg;
         color: $icon-color;
 
-        &.hover,
-        &:hover {
-            background-color: $icon-color;
-            color: $accent-color;
-        }
-
         &.focus,
         &:focus {
             background-color: $btn-icon-bg;
             color: $icon-color;
             box-shadow: inset 0 0 0 $btn-focus-width $icon-color;
-        }
-
-        &.active,
-        &:active {
-            background-color: $icon-color;
-            color: $accent-color;
         }
     }
 }

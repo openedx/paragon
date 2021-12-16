@@ -32,7 +32,7 @@ IconButtonToggle.defaultProps = {
 };
 
 IconButtonToggle.propTypes = {
-  activeValue: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+  activeValue: PropTypes.string,
   onChange: PropTypes.func,
   children: PropTypes.node.isRequired,
 };

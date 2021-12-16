@@ -13,10 +13,10 @@ notes: |
 ---
 
 <p className="lead">
-  Wraps a set of <i>IconButton</i> or <i>IconButton.WithTooltip</i> components in a group and marks as active only one at a time.
+  Wraps a set of `IconButton` or `IconButton.WithTooltip` components in a group and marks as active only one at a time.
   The IconButton with a value matching the 'activeValue' is set to be in the active state
-  When one presses on one of the buttons, that button is set to active state, and the callback passed to onChange is called with that value
-  You can pass a tooltip if you use the WithTooltip sub component.
+  When one presses on one of the buttons, that button is set to active state, and the callback passed to `onChange` is called with that value
+  You can pass a tooltip if you use the `IconButton.WithTooltip` sub component.
 </p>
 
 ### Basic Usage
