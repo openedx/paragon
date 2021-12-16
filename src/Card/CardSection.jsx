@@ -20,7 +20,9 @@ const CardSection = React.forwardRef(({
 ));
 
 CardSection.propTypes = {
+  /** Specifies class name to append to the base element. */
   className: PropTypes.string,
+  /** Specifies contents of the component. */
   children: PropTypes.node.isRequired,
   /** Specifies title of the `Section`. */
   title: PropTypes.node,

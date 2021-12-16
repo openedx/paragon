@@ -7,6 +7,7 @@ const CardDivider = ({ className }) => (
 );
 
 CardDivider.propTypes = {
+  /** Specifies class name to append to the base element. */
   className: PropTypes.string,
 };
 

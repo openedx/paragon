@@ -15,9 +15,9 @@ describe('correct rendering', () => {
 
   it('renders a context with correct props', () => {
     const wrapper = shallow((
-      <Card horizontal />
+      <Card orientation="horizontal" />
     ));
     const contextProvider = wrapper.find(CardContextProvider);
-    expect(contextProvider.props().horizontal).toBe(true);
+    expect(contextProvider.props().orientation).toBe('horizontal');
   });
 });

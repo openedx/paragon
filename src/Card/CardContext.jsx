@@ -4,22 +4,22 @@ import PropTypes from 'prop-types';
 const CardContext = createContext({});
 
 const CardContextProvider = ({
-  horizontal, children,
+  orientation, children,
 }) => (
-  <CardContext.Provider value={{ horizontal }}>
+  <CardContext.Provider value={{ orientation }}>
     {children}
   </CardContext.Provider>
 );
 
 CardContextProvider.propTypes = {
-  /** Display `horizontal` layout of the `Card` when the prop is set to `true`. */
-  horizontal: PropTypes.bool,
+  /** Specifies which orientation to use. */
+  orientation: PropTypes.oneOf(['horizontal', 'vertical']),
   /** Specifies content of the component. */
   children: PropTypes.node,
 };
 
 CardContextProvider.defaultProps = {
-  horizontal: false,
+  orientation: 'vertical',
   children: null,
 };
 

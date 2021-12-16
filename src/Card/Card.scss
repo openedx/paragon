@@ -196,7 +196,7 @@
   z-index: 1;
 }
 
-.card {
+.pgn__card {
   &:focus,
   &.focus {
     box-shadow: $level-1-box-shadow;
@@ -217,10 +217,8 @@
   &:hover {
     box-shadow: $level-1-box-shadow;
   }
-}
 
-// horizontal styles
-
-.pgn__card.horizontal {
-  flex-direction: row;
+  &.horizontal {
+    flex-direction: row;
+  }
 }

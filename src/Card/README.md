@@ -9,21 +9,21 @@ components:
 - CardDivider
 - CardFooter
 - CardBody
+- CardImageCap
 categories:
 - Content
 status: 'Stable'
 designStatus: 'Done'
-devStatus: 'Done'
+devStatus: 'In Progress'
 notes: |
   A pass through from react-bootstrap
 ---
 
-<p className="lead">
-  This is a pass through component from React-Bootstrap.<br/>
-  <a href="https://react-bootstrap.github.io/components/cards/" target="_blank" rel="noopener noreferrer">
-    See React-Bootstrap for documentation.
-  </a>
-</p>
+`Card` is a box of related content usually describing a single object. It can be composed of several subcomponents, we give full overview of those subcomponents below.
+
+`Card` supports `vertical` and `horizontal` orientation which is controlled by `CardContext`, see examples below.
+
+This component uses a `Card` from react-bootstrap as a base component and extends it with additional subcomponents. <br/> <a href="https://react-bootstrap.github.io/components/cards/" target="_blank" rel="noopener noreferrer">See React-Bootstrap for additional documentation.</a>
 
 ### Basic Usage
 
@@ -65,7 +65,7 @@ This header displays a title, subtitle, and may contain actions.
 ```
 
 #### Actions
-The CardHeader supports custom actions via the actions prop and renders them on the top right of the header.
+The `Card.Header` supports custom actions via the actions prop and renders them on the top right of the header.
 
 ```jsx live
 <div>
@@ -107,7 +107,7 @@ The CardHeader supports custom actions via the actions prop and renders them on 
 ```
 
 #### Sizes
-The CardHeader supports two size variants, ``"sm"`` and ``"md"``. 
+The `Card.Header` supports two size variants, ``"sm"`` and ``"md"``. 
 Add ``size="sm"`` for smaller header content and actions.
 
 ```jsx live
@@ -164,6 +164,7 @@ Add ``size="sm"`` for smaller header content and actions.
 ### Footer
 
 `Card.Footer` is the bottom part of the card. Usually used to outline actions that can be taken on the card object.
+Note that `Card.Footer` has a separate `orientation` prop which will override the value from `CardContext`, this was implemented because there are some use cases where you would want to display `Card` with horizontal orientation containing footer with vertical orientation.
 
 #### Vertical variant
 
@@ -213,6 +214,8 @@ Add ``size="sm"`` for smaller header content and actions.
 
 ### With Image Cap
 
+`ImageCap` is an image that sits on the top or the left edge of a `Card`. Can contain an optional logo image.
+
 ```jsx live
 <Card style={{width: '40%'}} tabIndex="0">
   <Card.ImageCap 
@@ -236,28 +239,67 @@ Add ``size="sm"`` for smaller header content and actions.
 
 ### Horizontal variant
 
+When using horizontal variant Paragon provides additional component `Card.Body` which acts as a wrapper for content you want to display between `ImageCap` and `Footer`. Use it if content contains multiple components.
+
 ```jsx live
-<Card horizontal>
-  <Card.ImageCap 
-    src="https://source.unsplash.com/360x200/?nature,flower"
-    logoSrc="https://via.placeholder.com/150"
-  />
-  <Card.Body>
-    <Card.Header
-      title="Title"
-      subtitle="Subtitle"
+<>
+  <Card orientation="horizontal" className="mb-4">
+    <Card.ImageCap 
+      src="https://source.unsplash.com/360x200/?nature,flower"
+      logoSrc="https://via.placeholder.com/150"
+    />
+    <Card.Body>
+      <Card.Header
+        title="Title"
+        subtitle="Subtitle"
+      />
+      <Card.Section 
+        title="Section title"
+      >
+        Here we want to display both Header and Section between ImageCap and Footer components, so we use Card.Body to accomplish that. 
+      </Card.Section>
+    </Card.Body>
+    <Card.Footer>
+      <Button>Action 1</Button>
+      <Button>Action 2</Button>
+    </Card.Footer>
+  </Card>
+  <Card orientation="horizontal" className="mb-4">
+    <Card.ImageCap 
+      src="https://source.unsplash.com/360x200/?nature,flower"
+      logoSrc="https://via.placeholder.com/150"
     />
     <Card.Section 
       title="Section title"
     >
-      This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+      In this Card we only want to diplay Section, therefore no need to use Body wrapper. 
     </Card.Section>
-  </Card.Body>
-  <Card.Footer>
-    <Button>Action 1</Button>
-    <Button>Action 1</Button>
-  </Card.Footer>
-</Card>
+    <Card.Footer>
+      <Button>Action 1</Button>
+      <Button>Action 2</Button>
+    </Card.Footer>
+  </Card>
+  <Card orientation="horizontal">
+    <Card.ImageCap 
+      src="https://source.unsplash.com/360x200/?nature,flower"
+      logoSrc="https://via.placeholder.com/150"
+    />
+    <Card.Body>
+      <Card.Header
+        title="Title"
+      />
+      <Card.Section 
+        title="Section title"
+      >
+        This is a special case where we want to have Footer with vertical orientation in the Card with horizontal orientation.
+      </Card.Section>
+      <Card.Footer orientation="vertical" text="Some footer text">
+        <Button>Action 1</Button>
+        <Button>Action 2</Button>
+      </Card.Footer>
+    </Card.Body>
+  </Card>
+</>
 ```
 
 ### CardGrid

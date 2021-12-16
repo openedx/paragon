@@ -10,9 +10,12 @@ import CardFooter from './CardFooter';
 import CardImageCap from './CardImageCap';
 import CardBody from './CardBody';
 
-const Card = ({ horizontal, ...props }) => (
-  <CardContextProvider horizontal={horizontal}>
-    <BaseCard className={classNames('pgn__card', { horizontal })} {...props} />
+const Card = ({ orientation, className, ...props }) => (
+  <CardContextProvider orientation={orientation}>
+    <BaseCard
+      className={classNames(className, 'pgn__card', { horizontal: orientation === 'horizontal' })}
+      {...props}
+    />
   </CardContextProvider>
 );
 
@@ -24,17 +27,16 @@ export { default as CardGrid } from './CardGrid';
 
 Card.propTypes = {
   ...BaseCard.propTypes,
-  /** Display `horizontal` layout of the `Card` when the prop is set to `true`. */
-  horizontal: PropTypes.bool,
+  /** Specifies class name to append to the base element. */
+  className: PropTypes.string,
+  /** Specifies which orientation to use. */
+  orientation: PropTypes.oneOf(['vertical', 'horizontal']),
 };
 
 Card.defaultProps = {
   ...BaseCard.defaultProps,
-  horizontal: false,
-};
-
-CardContextProvider.defaultProps = {
-  horizontal: false,
+  className: undefined,
+  orientation: 'vertical',
 };
 
 Card.Header = CardHeader;
