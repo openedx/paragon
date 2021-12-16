@@ -13,7 +13,10 @@ notes: |
 ---
 
 <p className="lead">
-  A component that enables users to switch between data views depending on their individual preferences or needs. Data views may include card view (displaying data in cards that form a grid), table view (displaying data in a data table), or list view (displaying data in full-width cards that form a list).
+  Wraps a set of <i>IconButton</i> or <i>IconButton.WithTooltip</i> components in a group and marks as active only one at a time.
+  The IconButton with a value matching the 'activeValue' is set to be in the active state
+  When one presses on one of the buttons, that button is set to active state, and the callback passed to onChange is called with that value
+  You can pass a tooltip if you use the WithTooltip sub component.
 </p>
 
 ### Basic Usage
