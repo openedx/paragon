@@ -1,6 +1,8 @@
 ---
 title: 'Container'
 type: 'component'
+components:
+- Container
 categories:
 - Layout
 status: 'Stable'
@@ -10,11 +12,7 @@ notes: |
 
 ---
 
-The base container to contain, pad, and center content in the viewport. This component extends the React-Bootstrap Container
-
-<a href="https://react-bootstrap.github.io/layout/grid/" target="_blank" rel="noopener noreferrer">
-  See React-Bootstrap for more documentation.
-</a>
+The base container to contain, pad, and center content in the viewport. This component extends the React-Bootstrap `Container`.<br/> <a href="https://react-bootstrap.github.io/layout/grid/" target="_blank" rel="noopener noreferrer">See React-Bootstrap for more documentation.</a>
 
 ### Basic Usage
 

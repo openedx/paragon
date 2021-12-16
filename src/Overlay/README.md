@@ -1,6 +1,9 @@
 ---
 title: 'Overlays'
 type: 'component'
+components:
+- Overlay
+- OverlayTrigger
 categories:
 - Overlays
 status: 'Stable'
@@ -10,15 +13,46 @@ notes: |
 
 ---
 
-<p className="lead">
+A set of components for positioning beautiful overlays, tooltips, popovers, and anything else you need.
+
+This component is used to power Tooltips and Popovers.
+
+<p>
   This is a pass through component from React-Bootstrap.<br/>
   <a href="https://react-bootstrap.github.io/components/overlays/" target="_blank" rel="noopener noreferrer">
-    See React-Bootstrap for documentation.
+    See React-Bootstrap for additional documentation.
   </a>
 </p>
 
-### Generic Overlay
+### Basic usage
 
-A set of components for positioning beautiful overlays, tooltips, popovers, and anything else you need. [See Overlay documentation.](https://react-bootstrap.github.io/components/overlays/)
+```jsx live
+() => {
+  const [isOpen, open, close] = useToggle(false);
+  const target = React.useRef(null);
 
-This component is used to power Tooltips and Popovers.
+  return (
+    <>
+      <Button variant="danger" ref={target} onClick={() => open(!isOpen)}>
+        Click me to see
+      </Button>
+      <Overlay target={target.current} show={open} placement="right">
+        {({ placement, arrowProps, show: _show, popper, ...props }) => (
+          <div
+            {...props}
+            style={{
+              backgroundColor: 'rgba(255, 100, 100, 0.85)',
+              padding: '2px 10px',
+              color: 'white',
+              borderRadius: 3,
+              ...props.style,
+            }}
+          >
+            Simple tooltip
+          </div>
+        )}
+      </Overlay>
+    </>
+  );
+}
+```

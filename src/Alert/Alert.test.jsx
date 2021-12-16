@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import renderer, { act } from 'react-test-renderer';
 import { Context as ResponsiveContext } from 'react-responsive';
-import { breakpoints } from '../Responsive';
+import breakpoints from '../utils/breakpoints';
 import Button from '../Button';
 import Alert from './index';
 import { Info } from '../../icons';

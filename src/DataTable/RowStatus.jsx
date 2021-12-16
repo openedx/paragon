@@ -9,7 +9,7 @@ const RowStatus = ({ className }) => {
   if (!pageSize) {
     return null;
   }
-  return (<div className={className}>Showing {pageSize} of {itemCount}</div>);
+  return (<div className={className}>Showing {pageSize} of {itemCount}.</div>);
 };
 
 RowStatus.defaultProps = {

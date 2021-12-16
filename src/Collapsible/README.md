@@ -15,6 +15,12 @@ devStatus: "Done"
 notes:
 ---
 
+Collapsible is an element that allows a user to toggle (view/hide) supplemental information or actions.
+
+When to use:
+- To organize related information.
+- To shorten pages and reduce scrolling when content is not crucial to read in full.
+- When space is at a premium and long content cannot be displayed all at once.
 
 ### Basic Usage
 
@@ -221,6 +227,3 @@ such as loading the page or clicking a link, you can open or close
 an **uncontrolled** Collapsible by getting a ref to the component and calling
 `collapsibleRef.open()` or `collapsibleRef.close()`. The internal state of
 the component will be updated accordingly.
-
-
-`

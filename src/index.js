@@ -2,6 +2,7 @@
 export { default as asInput } from './asInput';
 export { default as ActionRow } from './ActionRow';
 export { default as Alert } from './Alert';
+export { default as Annotation } from './Annotation';
 export { default as Avatar } from './Avatar';
 export { default as AvatarButton } from './AvatarButton';
 export { default as Badge } from './Badge';
@@ -18,6 +19,7 @@ export {
 export { default as Carousel, CarouselItem } from './Carousel';
 export { default as CheckBox } from './CheckBox';
 export { default as CheckBoxGroup } from './CheckBoxGroup';
+export { default as Chip } from './Chip';
 export { default as CloseButton } from './CloseButton';
 export { default as Container } from './Container';
 export { Col, Row } from './Layout';
@@ -87,16 +89,6 @@ export { default as Pagination } from './Pagination';
 export { default as Popover, PopoverTitle, PopoverContent } from './Popover';
 export { default as ProgressBar } from './ProgressBar';
 export { default as RadioButtonGroup, RadioButton } from './RadioButtonGroup';
-export {
-  breakpoints,
-  ExtraSmall,
-  Small,
-  Medium,
-  Large,
-  ExtraLarge,
-  ExtraExtraLarge,
-  LargerThanExtraSmall,
-} from './Responsive';
 export { default as ResponsiveEmbed } from './ResponsiveEmbed';
 export { default as SearchField } from './SearchField';
 export { default as Sheet } from './Sheet';
@@ -129,12 +121,14 @@ export { default as TableFilters } from './DataTable/TableFilters';
 export { default as TableHeader } from './DataTable/TableHeaderRow';
 export { default as TableRow } from './DataTable/TableRow';
 export { default as TablePagination } from './DataTable/TablePagination';
+export { default as TablePaginationButtonGroup } from './DataTable/TablePaginationButtonGroup';
 export { default as DataTableContext } from './DataTable/DataTableContext';
 export { default as BulkActions } from './DataTable/BulkActions';
 export { default as TableControlBar } from './DataTable/TableControlBar';
 export { default as TableFooter } from './DataTable/TableFooter';
 export { default as CardView } from './DataTable/CardView';
 export { default as ToggleButton, ToggleButtonGroup } from './ToggleButton';
+export { default as breakpoints } from './utils/breakpoints';
 export { default as Variant } from './utils/constants';
 export { default as useWindowSize } from './hooks/useWindowSize';
 export { default as useToggle } from './hooks/useToggle';
@@ -143,4 +137,25 @@ export { default as useToggle } from './hooks/useToggle';
 // useTable for example is needed to use the DataTable component seamlessly
 // rather than setting a peer dependency in this project, we opt to tightly
 // couple these dependencies by passing through needed functionality.
-export { useTable } from 'react-table';
+export {
+  default as MediaQuery,
+  useMediaQuery,
+  Context as ResponsiveContext,
+} from 'react-responsive';
+
+export {
+  useTable,
+  useFilters,
+  useGlobalFilter,
+  useSortBy,
+  useGroupBy,
+  useExpanded,
+  usePagination,
+  useRowSelect,
+  useRowState,
+  useColumnOrder,
+  useResizeColumns,
+  useBlockLayout,
+  useAbsoluteLayout,
+  useFlexLayout,
+} from 'react-table';

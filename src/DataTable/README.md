@@ -26,6 +26,9 @@ devStatus: 'In progress'
 The DataTable component is a wrapper that uses the <a href="https://react-table.tanstack.com/docs/overview">react-table</a> library to
 create tables. It can be used as is, or its subcomponents can be used on their own, allowing the developer full control.
 
+Paragon also exports all React hooks from ``react-table`` allowing the developers to use them and make customizations more freely without adding ``react-table`` as a separate dependency to their project.
+For full list of available hooks view <a href="https://react-table.tanstack.com/docs/api/overview">react-table API reference</a>.
+
 ## How children get information
 
 The table context gets the current ``react-table`` instance of the table from the ``DataTable`` component and makes it available to any child component within the ``DataTable`` provider.

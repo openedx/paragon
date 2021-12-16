@@ -114,7 +114,7 @@ describe('<DataTable />', () => {
     const wrapper = mount(<DataTable {...props} />);
     const controlBar = wrapper.find(TableControlBar);
     expect(controlBar.length).toEqual(1);
-    expect(controlBar.text()).toEqual('Showing 7 of 7');
+    expect(controlBar.text()).toEqual('Showing 7 of 7.');
   });
   it('displays a table', () => {
     const wrapper = mount(<DataTable {...props} />);

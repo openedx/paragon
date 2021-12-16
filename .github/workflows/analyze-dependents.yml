@@ -9,6 +9,11 @@ jobs:
   checkout-dependents:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout edx/credentials-themes
+      uses: actions/checkout@v2
+      with:
+        repository: edx/credentials-themes
+        path: dependent-usage-analyzer/.projects/credentials-themes
     - name: Checkout edx/credentials
       uses: actions/checkout@v2
       with:
@@ -19,16 +24,16 @@ jobs:
       with:
         repository: edx/edx-enterprise
         path: dependent-usage-analyzer/.projects/edx-enterprise
-    - name: Checkout edx/edx-platform
-      uses: actions/checkout@v2
-      with:
-        repository: edx/edx-platform
-        path: dependent-usage-analyzer/.projects/edx-platform
     - name: Checkout edx/edx-ora2
       uses: actions/checkout@v2
       with:
         repository: edx/edx-ora2
         path: dependent-usage-analyzer/.projects/edx-ora2
+    - name: Checkout edx/edx-platform
+      uses: actions/checkout@v2
+      with:
+        repository: edx/edx-platform
+        path: dependent-usage-analyzer/.projects/edx-platform
     - name: Checkout edx/frontend-app-account
       uses: actions/checkout@v2
       with:
@@ -44,6 +49,11 @@ jobs:
       with:
         repository: edx/frontend-app-authn
         path: dependent-usage-analyzer/.projects/frontend-app-authn
+    - name: Checkout edx/frontend-app-communications
+      uses: actions/checkout@v2
+      with:
+        repository: edx/frontend-app-communications
+        path: dependent-usage-analyzer/.projects/frontend-app-communications
     - name: Checkout edx/frontend-app-course-authoring
       uses: actions/checkout@v2
       with:
@@ -69,11 +79,6 @@ jobs:
       with:
         repository: edx/frontend-app-gradebook
         path: dependent-usage-analyzer/.projects/frontend-app-gradebook
-    - name: Checkout edx/frontend-app-learner-record
-      uses: actions/checkout@v2
-      with:
-        repository: edx/frontend-app-learner-record
-        path: dependent-usage-analyzer/.projects/frontend-app-learner-record
     - name: Checkout edx/frontend-app-learner-portal-enterprise
       uses: actions/checkout@v2
       with:
@@ -84,11 +89,21 @@ jobs:
       with:
         repository: edx/frontend-app-learner-portal-programs
         path: dependent-usage-analyzer/.projects/frontend-app-learner-portal-programs
+    - name: Checkout edx/frontend-app-learner-record
+      uses: actions/checkout@v2
+      with:
+        repository: edx/frontend-app-learner-record
+        path: dependent-usage-analyzer/.projects/frontend-app-learner-record
     - name: Checkout edx/frontend-app-learning
       uses: actions/checkout@v2
       with:
         repository: edx/frontend-app-learning
         path: dependent-usage-analyzer/.projects/frontend-app-learning
+    - name: Checkout edx/frontend-app-library-authoring
+      uses: actions/checkout@v2
+      with:
+        repository: edx/frontend-app-library-authoring
+        path: dependent-usage-analyzer/.projects/frontend-app-library-authoring
     - name: Checkout edx/frontend-app-ora-grading
       uses: actions/checkout@v2
       with:
@@ -144,11 +159,11 @@ jobs:
       with:
         repository: edx/frontend-learner-portal-base
         path: dependent-usage-analyzer/.projects/frontend-learner-portal-base
-    - name: Checkout edx/frontend-app-library-authoring
+    - name: Checkout edx/frontend-lib-content-components
       uses: actions/checkout@v2
       with:
-        repository: edx/frontend-app-library-authoring
-        path: dependent-usage-analyzer/.projects/frontend-app-library-authoring
+        repository: edx/frontend-lib-content-components
+        path: dependent-usage-analyzer/.projects/frontend-lib-content-components
     - name: Checkout edx/frontend-lib-special-exams
       uses: actions/checkout@v2
       with:
