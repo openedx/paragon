@@ -4,7 +4,7 @@ import { mount } from 'enzyme';
 import TableActions from '../TableActions';
 import { DROPDOWN_BUTTON_TEXT, SMALL_SCREEN_DROPDOWN_BUTTON_TEXT } from '../CollapsibleButtonGroup';
 import {
-  useWindowSize, Dropdown, Button, Icon,
+  useWindowSize, Dropdown, Button, Icon, IconButton,
 } from '../..';
 import DataTableContext from '../DataTableContext';
 
@@ -166,13 +166,13 @@ describe('<TableActions />', () => {
     it('displays the user\'s first button as an brand button', () => {
       const wrapper = mount(<TableActionsWrapper />);
       const buttons = wrapper.find(Button);
-      expect(buttons.length).toEqual(3);
-      expect(buttons.get(2).props.variant).toEqual('brand');
+      expect(buttons.length).toEqual(2);
+      expect(buttons.get(1).props.variant).toEqual('brand');
     });
     it('displays the user\'s second button as an outline button', () => {
       const wrapper = mount(<TableActionsWrapper />);
       const buttons = wrapper.find(Button);
-      expect(buttons.get(1).props.variant).toEqual('outline-primary');
+      expect(buttons.get(0).props.variant).toEqual('outline-primary');
     });
     describe('dropdown', () => {
       const onClickSpy = jest.fn();
@@ -247,8 +247,8 @@ describe('<TableActions />', () => {
     test.each(actions)('puts all actions in a dropdown %#', (testActions) => {
       useWindowSize.mockReturnValue({ width: 500 });
       const wrapper = mount(<TableActionsWrapper value={{ ...instance, tableActions: testActions }} />);
-      const button = wrapper.find(Icon);
-      expect(button.length).toEqual(1);
+      const iconButton = wrapper.find(IconButton);
+      expect(iconButton.length).toEqual(1);
       expect(wrapper.text()).not.toContain(firstAction.buttonText);
       const buttons = wrapper.find('button');
       expect(buttons.length).toEqual(1);

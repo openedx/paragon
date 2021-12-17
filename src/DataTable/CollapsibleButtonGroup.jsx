@@ -5,25 +5,11 @@ import classNames from 'classnames';
 import DataTableContext from './DataTableContext';
 import { MoreVert } from '../../icons';
 import {
-  Button, Dropdown, useWindowSize, Icon, breakpoints,
+  Button, Dropdown, useWindowSize, Icon, IconButton, breakpoints,
 } from '..';
 
 export const DROPDOWN_BUTTON_TEXT = 'More actions';
 export const SMALL_SCREEN_DROPDOWN_BUTTON_TEXT = 'Actions';
-
-// eslint-disable-next-line react/prop-types
-const CustomDropdownToggle = React.forwardRef(({ children, onClick }, ref) => (
-  <Button
-    ref={ref}
-    variant="tertiary"
-    onClick={(e) => {
-      e.preventDefault();
-      onClick(e);
-    }}
-  >
-    {children}
-  </Button>
-));
 
 const CollapsibleButtonGroup = ({
   className,
@@ -74,13 +60,15 @@ const CollapsibleButtonGroup = ({
     <div className={className}>
       {dropdownActions.length > 0 && (
         <Dropdown>
-          <Dropdown.Toggle as={CustomDropdownToggle}>
-            <Icon
-              src={MoreVert}
-              screenReaderText={width > breakpoints.small.minWidth
-                ? DROPDOWN_BUTTON_TEXT : SMALL_SCREEN_DROPDOWN_BUTTON_TEXT}
-            />
-          </Dropdown.Toggle>
+          <Dropdown.Toggle
+            variant="secondary"
+            iconAs={Icon}
+            as={IconButton}
+            src={MoreVert}
+            screenReaderText={width > breakpoints.small.minWidth
+              ? DROPDOWN_BUTTON_TEXT : SMALL_SCREEN_DROPDOWN_BUTTON_TEXT}
+            id="actions-dropdown"
+          />
           <Dropdown.Menu alignRight>
             {dropdownActions.map((action) => (
               <Dropdown.Item
