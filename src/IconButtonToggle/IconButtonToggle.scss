@@ -1,5 +1,5 @@
-.icon-button-toggle-container {
+.pgn__icon-button-toggle__container {
     .btn-icon + .btn-icon {
-        margin-left: 0.4rem;
+        margin-left: map_get($spacers, 1\.4);
     }
 }

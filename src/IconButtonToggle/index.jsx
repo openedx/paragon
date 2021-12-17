@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { Container } from '..';
 
 /**
  *
@@ -23,7 +22,7 @@ const IconButtonToggle = ({ activeValue, onChange, children }) => {
     )),
     [children, activeValue, onChange],
   );
-  return <Container className="icon-button-toggle-container">{iconButtons}</Container>;
+  return <div className="pgn__icon-button-toggle__container">{iconButtons}</div>;
 };
 
 IconButtonToggle.defaultProps = {

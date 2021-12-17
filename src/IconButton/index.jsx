@@ -28,7 +28,9 @@ const IconButton = React.forwardRef(({
         'btn-icon',
         `btn-icon-${invert}${variant}`,
         `btn-icon-${size}`,
-        isActive ? `btn-icon-${invert}${activeStyle}active` : '',
+        {
+          [`btn-icon-${invert}${activeStyle}active`]: isActive,
+        },
         attrs.className,
       )}
       onClick={onClick}
@@ -84,28 +86,30 @@ IconButton.propTypes = {
   onClick: PropTypes.func,
   /** Type of button (uses Bootstrap options) */
   variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'light', 'dark', 'black']),
+  /** size of button to render */
   size: PropTypes.oneOf(['sm', 'md', 'inline']),
+  /** whether to show the IconButton in an active state, whose styling is distinct from default state */
   isActive: PropTypes.bool,
 };
 
 /**
  *
  * @param { object } args Arguments
- * @param { string } args.placement choose from https://popper.js.org/docs/v2/constructors/#options
+ * @param { string } args.tooltipPlacement choose from https://popper.js.org/docs/v2/constructors/#options
  * @param { React.Component } args.tooltipContent any content to pass to tooltip content area
  * @returns { IconButton } a button wrapped in overlaytrigger
  */
 const WithTooltip = ({
-  placement, tooltipContent, variant, invertColors, ...props
+  tooltipPlacement, tooltipContent, variant, invertColors, ...props
 }) => {
   const invert = invertColors ? 'inverse-' : '';
   return (
     <OverlayTrigger
-      key={placement}
-      placement={placement}
+      key={tooltipPlacement}
+      placement={tooltipPlacement}
       overlay={(
         <Tooltip
-          id={`iconbutton-tooltip-${placement}`}
+          id={`iconbutton-tooltip-${tooltipPlacement}`}
           variant={invert ? 'light' : ''}
         >
           {tooltipContent}
@@ -118,13 +122,15 @@ const WithTooltip = ({
 };
 
 WithTooltip.defaultProps = {
-  placement: 'top',
+  tooltipPlacement: 'top',
   variant: 'primary',
   invertColors: false,
 };
 
 WithTooltip.propTypes = {
-  placement: PropTypes.string,
+  /** tooltip placement can be top, left, right etc, per https://popper.js.org/docs/v2/constructors/#options  */
+  tooltipPlacement: PropTypes.string,
+  /** any valid JSX or text to be rendered as tooltip contents */
   tooltipContent: PropTypes.node.isRequired,
   /** Type of button (uses Bootstrap options) */
   variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'light', 'dark', 'black']),

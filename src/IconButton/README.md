@@ -3,7 +3,7 @@ title: 'IconButton'
 type: 'component'
 components:
 - IconButton
-- IconButton.WithToggle
+- WithTooltip
 categories:
 - Buttonlike
 status: 'New'
@@ -76,8 +76,6 @@ notes: ''
 
 ### Active State
 
-Even numbered buttons are shown in active state with isActive=true, regular colors
-
 ```jsx live
 () => {
   const variants = ["brand", "primary", "secondary", "success", "warning", "danger", "light", "dark", "black"];
@@ -93,7 +91,7 @@ Even numbered buttons are shown in active state with isActive=true, regular colo
 }
 ```
 
-isActive=true with inverted colors
+#### isActive=true with inverted colors
 
 ```jsx live
 () => {
