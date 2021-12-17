@@ -1,8 +1,8 @@
 {
-  "lastModified": 1639663642530,
+  "lastModified": 1639750069702,
   "projectUsages": [
     {
-      "version": "16.22.0",
+      "version": "16.24.0",
       "name": "edx-credentials",
       "repository": {
         "type": "git",
@@ -15,7 +15,7 @@
             "filePath": "credentials/static/components/FoldingTable.jsx",
             "line": 26,
             "column": 6,
-            "version": "16.22.0"
+            "version": "16.24.0"
           }
         ],
         "Button.Deprecated": [
@@ -23,37 +23,37 @@
             "filePath": "credentials/static/components/MasqueradeBanner.jsx",
             "line": 102,
             "column": 12,
-            "version": "16.22.0"
+            "version": "16.24.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 277,
             "column": 14,
-            "version": "16.22.0"
+            "version": "16.24.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 284,
             "column": 12,
-            "version": "16.22.0"
+            "version": "16.24.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 296,
             "column": 12,
-            "version": "16.22.0"
+            "version": "16.24.0"
           },
           {
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 141,
             "column": 10,
-            "version": "16.22.0"
+            "version": "16.24.0"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 177,
             "column": 18,
-            "version": "16.22.0"
+            "version": "16.24.0"
           }
         ],
         "StatusAlert": [
@@ -61,43 +61,43 @@
             "filePath": "credentials/static/components/MasqueradeBanner.jsx",
             "line": 109,
             "column": 8,
-            "version": "16.22.0"
+            "version": "16.24.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 304,
             "column": 8,
-            "version": "16.22.0"
+            "version": "16.24.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 315,
             "column": 8,
-            "version": "16.22.0"
+            "version": "16.24.0"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 329,
             "column": 8,
-            "version": "16.22.0"
+            "version": "16.24.0"
           },
           {
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 109,
             "column": 14,
-            "version": "16.22.0"
+            "version": "16.24.0"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 138,
             "column": 14,
-            "version": "16.22.0"
+            "version": "16.24.0"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 152,
             "column": 14,
-            "version": "16.22.0"
+            "version": "16.24.0"
           }
         ],
         "Icon": [
@@ -105,13 +105,13 @@
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 311,
             "column": 14,
-            "version": "16.22.0"
+            "version": "16.24.0"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 191,
             "column": 16,
-            "version": "16.22.0"
+            "version": "16.24.0"
           }
         ],
         "Modal": [
@@ -119,13 +119,13 @@
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 90,
             "column": 6,
-            "version": "16.22.0"
+            "version": "16.24.0"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 130,
             "column": 6,
-            "version": "16.22.0"
+            "version": "16.24.0"
           }
         ],
         "CheckBoxGroup": [
@@ -133,7 +133,7 @@
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 123,
             "column": 12,
-            "version": "16.22.0"
+            "version": "16.24.0"
           }
         ],
         "CheckBox": [
@@ -141,7 +141,7 @@
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 125,
             "column": 16,
-            "version": "16.22.0"
+            "version": "16.24.0"
           }
         ],
         "InputText": [
@@ -149,7 +149,7 @@
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 165,
             "column": 18,
-            "version": "16.22.0"
+            "version": "16.24.0"
           }
         ]
       }
@@ -1614,6 +1614,12 @@
             "version": "16.20.1"
           },
           {
+            "filePath": "src/components/ContactCustomerSupportButton/index.jsx",
+            "line": 8,
+            "column": 2,
+            "version": "16.20.1"
+          },
+          {
             "filePath": "src/components/CouponDetails/ActionButton.jsx",
             "line": 80,
             "column": 4,
@@ -1704,15 +1710,21 @@
             "version": "16.20.1"
           },
           {
-            "filePath": "src/components/SidebarToggle/index.jsx",
-            "line": 18,
-            "column": 4,
+            "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
+            "line": 101,
+            "column": 20,
             "version": "16.20.1"
           },
           {
-            "filePath": "src/components/subscriptions/buttons/ContactCustomerSupportButton.jsx",
-            "line": 8,
-            "column": 2,
+            "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
+            "line": 102,
+            "column": 20,
+            "version": "16.20.1"
+          },
+          {
+            "filePath": "src/components/SidebarToggle/index.jsx",
+            "line": 18,
+            "column": 4,
             "version": "16.20.1"
           },
           {
@@ -2468,6 +2480,12 @@
             "version": "16.20.1"
           },
           {
+            "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
+            "line": 63,
+            "column": 6,
+            "version": "16.20.1"
+          },
+          {
             "filePath": "src/components/subscriptions/licenses/LicenseManagementTable/index.jsx",
             "line": 189,
             "column": 6,
@@ -2480,6 +2498,12 @@
             "line": 132,
             "column": 10,
             "version": "16.20.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
+            "line": 112,
+            "column": 8,
+            "version": "16.20.1"
           }
         ],
         "DataTable.Table": [
@@ -2487,6 +2511,12 @@
             "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
             "line": 133,
             "column": 10,
+            "version": "16.20.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
+            "line": 113,
+            "column": 8,
             "version": "16.20.1"
           }
         ],
@@ -2969,6 +2999,18 @@
             "filePath": "src/components/BulkEnrollmentPage/stepper/ReviewStep.jsx",
             "line": 37,
             "column": 6,
+            "version": "16.20.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAccessTab/index.jsx",
+            "line": 17,
+            "column": 4,
+            "version": "16.20.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAccessTab/index.jsx",
+            "line": 22,
+            "column": 4,
             "version": "16.20.1"
           },
           {
@@ -4192,6 +4234,12 @@
             "version": "16.20.1"
           },
           {
+            "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
+            "line": 69,
+            "column": 10,
+            "version": "16.20.1"
+          },
+          {
             "filePath": "src/components/subscriptions/buttons/DownloadCsvButton.jsx",
             "line": 42,
             "column": 4,
@@ -4282,6 +4330,12 @@
             "line": 249,
             "column": 14,
             "version": "16.20.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessTabSection.jsx",
+            "line": 21,
+            "column": 8,
+            "version": "16.20.1"
           }
         ],
         "FormControl.Feedback": [
@@ -4366,6 +4420,120 @@
             "version": "16.20.1"
           }
         ],
+        "Container": [
+          {
+            "filePath": "src/components/settings/SettingsAccessTab/index.jsx",
+            "line": 16,
+            "column": 2,
+            "version": "16.20.1"
+          },
+          {
+            "filePath": "src/components/subscriptions/SubscriptionManagementPage.jsx",
+            "line": 25,
+            "column": 8,
+            "version": "16.20.1"
+          },
+          {
+            "filePath": "src/components/UserActivationPage/index.jsx",
+            "line": 61,
+            "column": 4,
+            "version": "16.20.1"
+          }
+        ],
+        "Col": [
+          {
+            "filePath": "src/components/settings/SettingsAccessTab/index.jsx",
+            "line": 18,
+            "column": 6,
+            "version": "16.20.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAccessTab/index.jsx",
+            "line": 23,
+            "column": 6,
+            "version": "16.20.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAccessTab/index.jsx",
+            "line": 29,
+            "column": 6,
+            "version": "16.20.1"
+          },
+          {
+            "filePath": "src/components/subscriptions/MultipleSubscriptionPicker.jsx",
+            "line": 16,
+            "column": 6,
+            "version": "16.20.1"
+          },
+          {
+            "filePath": "src/components/subscriptions/MultipleSubscriptionPicker.jsx",
+            "line": 22,
+            "column": 6,
+            "version": "16.20.1"
+          },
+          {
+            "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
+            "line": 100,
+            "column": 10,
+            "version": "16.20.1"
+          },
+          {
+            "filePath": "src/components/subscriptions/SubscriptionDetails.jsx",
+            "line": 44,
+            "column": 8,
+            "version": "16.20.1"
+          },
+          {
+            "filePath": "src/components/UserActivationPage/index.jsx",
+            "line": 63,
+            "column": 8,
+            "version": "16.20.1"
+          }
+        ],
+        "DataTable.EmptyTable": [
+          {
+            "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
+            "line": 114,
+            "column": 8,
+            "version": "16.20.1"
+          },
+          {
+            "filePath": "src/components/subscriptions/licenses/LicenseManagementTable/index.jsx",
+            "line": 216,
+            "column": 16,
+            "version": "16.20.1"
+          }
+        ],
+        "Form.Switch": [
+          {
+            "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessTabSection.jsx",
+            "line": 18,
+            "column": 8,
+            "version": "16.20.1"
+          }
+        ],
+        "Tabs": [
+          {
+            "filePath": "src/components/settings/SettingsTabs.jsx",
+            "line": 44,
+            "column": 6,
+            "version": "16.20.1"
+          }
+        ],
+        "Tab": [
+          {
+            "filePath": "src/components/settings/SettingsTabs.jsx",
+            "line": 50,
+            "column": 8,
+            "version": "16.20.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsTabs.jsx",
+            "line": 53,
+            "column": 8,
+            "version": "16.20.1"
+          }
+        ],
         "StatusAlert": [
           {
             "filePath": "src/components/StatusAlert/index.jsx",
@@ -4428,14 +4596,6 @@
             "version": "16.20.1"
           }
         ],
-        "DataTable.EmptyTable": [
-          {
-            "filePath": "src/components/subscriptions/licenses/LicenseManagementTable/index.jsx",
-            "line": 216,
-            "column": 16,
-            "version": "16.20.1"
-          }
-        ],
         "ModalPopup": [
           {
             "filePath": "src/components/subscriptions/licenses/LicenseManagementTable/LicenseManagementTableBulkActions.jsx",
@@ -4458,57 +4618,11 @@
             "version": "16.20.1"
           }
         ],
-        "Col": [
-          {
-            "filePath": "src/components/subscriptions/MultipleSubscriptionPicker.jsx",
-            "line": 16,
-            "column": 6,
-            "version": "16.20.1"
-          },
-          {
-            "filePath": "src/components/subscriptions/MultipleSubscriptionPicker.jsx",
-            "line": 22,
-            "column": 6,
-            "version": "16.20.1"
-          },
-          {
-            "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
-            "line": 100,
-            "column": 10,
-            "version": "16.20.1"
-          },
-          {
-            "filePath": "src/components/subscriptions/SubscriptionDetails.jsx",
-            "line": 44,
-            "column": 8,
-            "version": "16.20.1"
-          },
-          {
-            "filePath": "src/components/UserActivationPage/index.jsx",
-            "line": 63,
-            "column": 8,
-            "version": "16.20.1"
-          }
-        ],
         "Card.Header": [
           {
             "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
             "line": 80,
             "column": 6,
-            "version": "16.20.1"
-          }
-        ],
-        "Container": [
-          {
-            "filePath": "src/components/subscriptions/SubscriptionManagementPage.jsx",
-            "line": 25,
-            "column": 8,
-            "version": "16.20.1"
-          },
-          {
-            "filePath": "src/components/UserActivationPage/index.jsx",
-            "line": 61,
-            "column": 4,
             "version": "16.20.1"
           }
         ],
@@ -5496,6 +5610,16 @@
           }
         ]
       }
+    },
+    {
+      "version": "16.3.2",
+      "name": "@edx/frontend-app-communications",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/edx/frontend-app-communications.git"
+      },
+      "folderName": "frontend-app-communications",
+      "usages": {}
     },
     {
       "version": "16.17.0",
@@ -8490,7 +8614,7 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/CourseEnrollments.jsx",
-            "line": 162,
+            "line": 78,
             "column": 12,
             "version": "16.14.7"
           },
@@ -8608,7 +8732,7 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
-            "line": 120,
+            "line": 119,
             "column": 14,
             "version": "16.14.7"
           },
@@ -8621,6 +8745,12 @@
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/move-to-in-progress-modal/ModalError.jsx",
             "line": 10,
+            "column": 4,
+            "version": "16.14.7"
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/CourseEnrollmentsAlert.jsx",
+            "line": 19,
             "column": 4,
             "version": "16.14.7"
           },
@@ -8728,8 +8858,8 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
-            "line": 30,
-            "column": 12,
+            "line": 31,
+            "column": 14,
             "version": "16.14.7"
           },
           {
@@ -8802,7 +8932,7 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
-            "line": 125,
+            "line": 124,
             "column": 14,
             "version": "16.14.7"
           }
@@ -8892,7 +9022,7 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
-            "line": 115,
+            "line": 114,
             "column": 6,
             "version": "16.14.7"
           },
@@ -9094,7 +9224,7 @@
         "StatefulButton": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
-            "line": 142,
+            "line": 141,
             "column": 10,
             "version": "16.14.7"
           },
@@ -9122,50 +9252,6 @@
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/move-to-in-progress-modal/ModalError.jsx",
             "line": 11,
             "column": 42,
-            "version": "16.14.7"
-          }
-        ],
-        "StatusAlert": [
-          {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/CourseEnrollments.jsx",
-            "line": 65,
-            "column": 4,
-            "version": "16.14.7"
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/CourseEnrollments.jsx",
-            "line": 85,
-            "column": 6,
-            "version": "16.14.7"
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/CourseEnrollments.jsx",
-            "line": 108,
-            "column": 6,
-            "version": "16.14.7"
-          },
-          {
-            "filePath": "src/components/search/SearchError.jsx",
-            "line": 26,
-            "column": 4,
-            "version": "16.14.7"
-          },
-          {
-            "filePath": "src/components/search/SearchNoResults.jsx",
-            "line": 29,
-            "column": 6,
-            "version": "16.14.7"
-          },
-          {
-            "filePath": "src/components/skills-quiz/SearchCourseCard.jsx",
-            "line": 225,
-            "column": 10,
-            "version": "16.14.7"
-          },
-          {
-            "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
-            "line": 274,
-            "column": 10,
             "version": "16.14.7"
           }
         ],
@@ -9480,6 +9566,32 @@
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
             "line": 237,
             "column": 16,
+            "version": "16.14.7"
+          }
+        ],
+        "StatusAlert": [
+          {
+            "filePath": "src/components/search/SearchError.jsx",
+            "line": 26,
+            "column": 4,
+            "version": "16.14.7"
+          },
+          {
+            "filePath": "src/components/search/SearchNoResults.jsx",
+            "line": 29,
+            "column": 6,
+            "version": "16.14.7"
+          },
+          {
+            "filePath": "src/components/skills-quiz/SearchCourseCard.jsx",
+            "line": 225,
+            "column": 10,
+            "version": "16.14.7"
+          },
+          {
+            "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
+            "line": 274,
+            "column": 10,
             "version": "16.14.7"
           }
         ],
@@ -10773,7 +10885,7 @@
           },
           {
             "filePath": "src/tab-page/TabPage.jsx",
-            "line": 65,
+            "line": 66,
             "column": 8,
             "version": "16.19.0"
           }
@@ -15610,6 +15722,16 @@
           }
         ]
       }
+    },
+    {
+      "version": "16.22.0",
+      "name": "@edx/frontend-lib-content-components",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/edx/frontend-lib-content-components.git"
+      },
+      "folderName": "frontend-lib-content-components",
+      "usages": {}
     },
     {
       "version": "13.17.0",
