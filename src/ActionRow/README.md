@@ -7,7 +7,7 @@ components:
 categories:
 - Buttonlike
 status: 'Stable'
-designStatus: 'Done'
+designStatus: 'Needs Figma Design'
 devStatus: 'Done'
 notes: |
 
