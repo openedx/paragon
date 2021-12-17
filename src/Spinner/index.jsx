@@ -15,9 +15,7 @@ const Spinner = React.forwardRef(({
   };
   return (
     <BaseSpinner {...spinnerProps} ref={ref}>
-      {screenReaderText && (
-        <span className="sr-only">{screenReaderText}</span>
-      )}
+      {screenReaderText && <span className="sr-only">{screenReaderText}</span>}
     </BaseSpinner>
   );
 });
