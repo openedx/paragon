@@ -43,12 +43,12 @@ This header displays a title, subtitle, and may contain actions.
 
 ```jsx live
 <div>
-  <Card>
-    <Card.Header 
+  <Card className="mb-2">
+    <Card.Header
       title="Title"
     />
   </Card>
-  <Card className="mt-1">
+  <Card>
     <Card.Header 
       title="Title"
       subtitle="Subtitle"
@@ -62,45 +62,38 @@ The CardHeader supports custom actions via the the actions prop and renders them
 
 ```jsx live
 <div>
-  <Card>
+  <Card className="mb-2">
     <Card.Header
       title="Title"
       subtitle="Subtitle"
       actions={
         <ActionRow>
+          <Button variant="tertiary">Action</Button>
           <Button>Action</Button>
         </ActionRow>
       } 
     />
   </Card>
-  <Card className="mt-1">
+  <Card>
     <Card.Header
       title="Title"
       subtitle="Subtitle"
       actions={
-        <>
-          <ExtraSmall>
-            <IconButton
-              icon={FontAwesome.faBars}
-              alt="Menu"
-              onClick={() => console.log("You clicked the menu button")}
-              variant="primary"
-            />
-          </ExtraSmall>
-          <LargerThanExtraSmall>
-            <ActionRow>
-              <Button>Action 1</Button>
-              <Button variant="secondary">Action 2</Button>
-              <IconButton
-                icon={FontAwesome.faBars}
-                alt="Menu"
-                onClick={() => console.log("You clicked the menu button")}
-                variant="primary"
-              />
-            </ActionRow>
-          </LargerThanExtraSmall>
-        </>
-      } 
+        <Dropdown>
+          <Dropdown.Toggle
+            id="dropdown-toggle-with-iconbutton"
+            as={IconButton}
+            src={MoreVert}
+            iconAs={Icon}
+            variant="primary"
+          />
+          <Dropdown.Menu>
+            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+      }
     />
   </Card>
 </div>

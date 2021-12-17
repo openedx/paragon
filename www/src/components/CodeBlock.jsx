@@ -11,7 +11,7 @@ import * as ParagonIcons from '~paragon-icons'; // eslint-disable-line
 import MiyazakiCard from './exampleComponents/MiyazakiCard';
 import HipsterIpsum from './exampleComponents/HipsterIpsum';
 
-const { Collapsible } = ParagonReact;
+const { Button, Collapsible } = ParagonReact;
 
 function CollapsibleLiveEditor({ children }) {
   const [collapseIsOpen, setCollapseIsOpen] = useState(false);
@@ -21,11 +21,9 @@ function CollapsibleLiveEditor({ children }) {
         open={collapseIsOpen}
         onToggle={(isOpen) => setCollapseIsOpen(isOpen)}
       >
-        <Collapsible.Trigger>
-          <div className="font-weight-bold">
-            <Collapsible.Visible whenClosed>Show code example</Collapsible.Visible>
-            <Collapsible.Visible whenOpen>Hide code example</Collapsible.Visible>
-          </div>
+        <Collapsible.Trigger tag={Button} variant="link">
+          <Collapsible.Visible whenClosed>Show code example</Collapsible.Visible>
+          <Collapsible.Visible whenOpen>Hide code example</Collapsible.Visible>
         </Collapsible.Trigger>
         <Collapsible.Body className="mt-2">
           {children}
