@@ -2,6 +2,8 @@
 title: 'Spinner'
 type: 'component'
 status: 'Stable'
+components:
+- Spinner
 categories:
 - Status & metadata
 - Choreography
@@ -11,7 +13,7 @@ notes: |
 
 ---
 
-<p className="lead">
+<p>
   This is a pass through component from React-Bootstrap.<br/>
   <a href="https://react-bootstrap.github.io/components/spinners" target="_blank" rel="noopener noreferrer">
     See React-Bootstrap for documentation.
@@ -21,5 +23,18 @@ notes: |
 ### Basic Usage
 
 ```jsx live
-<Spinner animation="border" variant="primary" />
+<>
+  <Spinner animation="border" className="mr-3" screenReaderText="loading" />
+  <Spinner animation="grow" screenReaderText="loading" />
+</>
+```
+### Color Variants
+
+```jsx live
+() => {
+  const variants = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'];
+  return variants.map((variant) => (
+    <Spinner animation="border" variant={variant} className="mr-3" screenReaderText="loading" />
+  ));
+}
 ```
