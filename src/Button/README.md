@@ -80,7 +80,7 @@ This component utilizes `Button` from React-Bootstrap and extends it with an abi
 </>
 ```
 
-### When to use the inline size
+#### When to use the inline size
 
 Use inline size buttons for when a button sits with a line of text.
 
@@ -115,6 +115,30 @@ Use inline size buttons for when a button sits with a line of text.
   <Button variant="primary" iconBefore={Remove} iconAfter={Add}>Primary</Button>{' '}
   <Button variant="outline-primary" iconBefore={Highlight}>Outline Primary</Button>{' '}
   <Button variant="tertiary" iconAfter={Add}>Tertiary</Button>{' '}
+</>
+```
+
+### With a Spinner
+```jsx live
+<>
+  <Button variant="primary" className="mr-2">
+    <Spinner animation="border" screenReaderText="loading some stuff" />
+  </Button>
+  <Button variant="brand" className="mr-2">
+    <Spinner animation="border" />
+  </Button>
+  <Button variant="outline-primary" className="mr-2">
+    <Spinner animation="border" />
+  </Button>
+  <Button variant="outline-brand" className="mr-2">
+    <Spinner animation="border" />
+  </Button>
+  <Button variant="inverse-primary" className="mr-2">
+    <Spinner animation="border" />
+  </Button>
+  <Button variant="inverse-brand" className="mr-2">
+    <Spinner animation="border" />
+  </Button>
 </>
 ```
 

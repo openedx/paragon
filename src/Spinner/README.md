@@ -2,6 +2,8 @@
 title: 'Spinner'
 type: 'component'
 status: 'Stable'
+components:
+- Spinner
 categories:
 - Status & metadata
 - Choreography
@@ -21,5 +23,18 @@ notes: |
 ### Basic Usage
 
 ```jsx live
-<Spinner animation="border" variant="primary" />
+<>
+  <Spinner animation="border" className="mr-3" />
+  <Spinner animation="grow" />
+</>
+```
+### Color Variants
+
+```jsx live
+() => {
+  const variants = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'];
+  return variants.map((variant) => (
+    <Spinner animation="border" variant={variant} className="mr-3" />
+  ));
+}
 ```
