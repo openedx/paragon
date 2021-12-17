@@ -147,7 +147,6 @@ export {
   useMediaQuery,
   Context as ResponsiveContext,
 } from 'react-responsive';
-
 export {
   useTable,
   useFilters,
