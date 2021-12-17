@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { OverlayTrigger, Tooltip } from '..';
 
-const IconButton = ({
+const IconButton = React.forwardRef(({
   alt,
   invertColors,
   icon,
@@ -17,7 +17,7 @@ const IconButton = ({
   iconAs: IconComponent,
   isActive,
   ...attrs
-}) => {
+}, ref) => {
   const invert = invertColors ? 'inverse-' : '';
   const activeStyle = isActive ? `${variant}-` : '';
   return (
@@ -33,9 +33,11 @@ const IconButton = ({
       )}
       onClick={onClick}
       type="button"
+      ref={ref}
     >
       <span className="btn-icon__icon-container">
         <IconComponent
+          {...attrs}
           className={`btn-icon__icon ${iconClassNames}`}
           icon={icon}
           src={src}
@@ -43,7 +45,7 @@ const IconButton = ({
       </span>
     </button>
   );
-};
+});
 
 IconButton.defaultProps = {
   iconAs: FontAwesomeIcon,

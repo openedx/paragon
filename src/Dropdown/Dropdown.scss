@@ -13,3 +13,10 @@
   transform: rotate(135deg);
   width: 0.45rem;
 }
+
+// this is a helper class to remove arrow element from Dropdown.Toggle
+// pass it as bsPrefix prop for Dropdown.Toggle component when you want to render
+// toggle as IconButton (that way it will override underlying react-bootstrap class)
+.pgn__dropdown-toggle-iconbutton {
+  white-space: nowrap;
+}
