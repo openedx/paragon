@@ -6,6 +6,7 @@ components:
 - DropdownItem
 - DropdownMenu
 - DropdownButton
+- DropdownToggle
 categories:
 - Navigation
 status: 'Stable'
@@ -22,7 +23,7 @@ notes: |
   </a>
 </p>
 
-### basic usage
+### Basic Usage
 ```jsx live
 <DropdownButton id="dropdown-basic-button" title="Dropdown button">
   <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
@@ -31,7 +32,7 @@ notes: |
 </DropdownButton>
 ```
 
-### advanced usage
+### Advanced Usage
 
 ```jsx live
 <Dropdown>
@@ -39,6 +40,27 @@ notes: |
     Dropdown Button
   </Dropdown.Toggle>
 
+  <Dropdown.Menu>
+    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
+```
+
+### With IconButton
+
+You can use `Dropdown.Toggle` with [IconButton](/components/iconbutton) component, note that all props you provide to `Dropdown.Toggle` will get passed down to the `IconButton`.
+
+```jsx live
+<Dropdown>
+  <Dropdown.Toggle
+    id="dropdown-toggle-with-iconbutton"
+    as={IconButton}
+    src={MoreVert}
+    iconAs={Icon}
+    variant="primary"
+  />
   <Dropdown.Menu>
     <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
     <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>

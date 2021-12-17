@@ -198,13 +198,13 @@ describe('<BulkActions />', () => {
     it('displays the user\'s first button as an brand button', () => {
       const wrapper = mount(<BulkActionsWrapper />);
       const buttons = wrapper.find(Button);
-      expect(buttons.length).toEqual(3);
-      expect(buttons.get(2).props.variant).toEqual('brand');
+      expect(buttons.length).toEqual(2);
+      expect(buttons.get(1).props.variant).toEqual('brand');
     });
     it('displays the user\'s second button as an outline button', () => {
       const wrapper = mount(<BulkActionsWrapper />);
       const buttons = wrapper.find(Button);
-      expect(buttons.get(1).props.variant).toEqual('outline-primary');
+      expect(buttons.get(0).props.variant).toEqual('outline-primary');
     });
     describe('dropdown', () => {
       const onClickSpy = jest.fn();
