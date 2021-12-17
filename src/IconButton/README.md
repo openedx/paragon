@@ -3,7 +3,7 @@ title: 'IconButton'
 type: 'component'
 components:
 - IconButton
-- WithTooltip
+- IconButtonWithTooltip
 categories:
 - Buttonlike
 status: 'New'
@@ -35,8 +35,8 @@ notes: ''
   return (
     <div className="d-flex">
       {variants.map((variant) => (
-        <IconButton.WithTooltip
-          placement='left'
+        <IconButtonWithTooltip
+          tooltipPlacement='top'
           tooltipContent={<div>a nice tooltip of {variant}!</div>}
           src={Close}
           iconAs={Icon}

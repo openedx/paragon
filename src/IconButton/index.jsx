@@ -99,13 +99,12 @@ IconButton.propTypes = {
  * @param { React.Component } args.tooltipContent any content to pass to tooltip content area
  * @returns { IconButton } a button wrapped in overlaytrigger
  */
-const WithTooltip = ({
+const IconButtonWithTooltip = ({
   tooltipPlacement, tooltipContent, variant, invertColors, ...props
 }) => {
   const invert = invertColors ? 'inverse-' : '';
   return (
     <OverlayTrigger
-      key={tooltipPlacement}
       placement={tooltipPlacement}
       overlay={(
         <Tooltip
@@ -121,13 +120,13 @@ const WithTooltip = ({
   );
 };
 
-WithTooltip.defaultProps = {
+IconButtonWithTooltip.defaultProps = {
   tooltipPlacement: 'top',
   variant: 'primary',
   invertColors: false,
 };
 
-WithTooltip.propTypes = {
+IconButtonWithTooltip.propTypes = {
   /** tooltip placement can be top, left, right etc, per https://popper.js.org/docs/v2/constructors/#options  */
   tooltipPlacement: PropTypes.string,
   /** any valid JSX or text to be rendered as tooltip contents */
@@ -138,6 +137,7 @@ WithTooltip.propTypes = {
   invertColors: PropTypes.bool,
 };
 
-IconButton.WithTooltip = WithTooltip;
+IconButton.IconButtonWithTooltip = IconButtonWithTooltip;
 
 export default IconButton;
+export { IconButtonWithTooltip };

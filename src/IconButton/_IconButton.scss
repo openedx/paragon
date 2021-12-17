@@ -15,7 +15,6 @@ $btn-icon-diameter-inline: calc(#{$line-height-base}em + 0.1em) !default;
 
 $btn-icon-bg: transparent !default;
 $btn-icon-accent-color: white !default;
-$btn-active-bg: $gray-700 !default;
 
 @mixin btn-icon-size($icon-size) {
     width: $icon-size;
