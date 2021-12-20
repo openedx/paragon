@@ -13,7 +13,7 @@ notes: ''
 
 ``Toast`` is a pop-up style message that shows the user a brief, fleeting, dismissible message about a successful app process.
 
-``Toasts`` six fixed to the bottom left of the window.
+``Toasts`` sit fixed to the bottom left of the window.
 
 #### Behaviors
 

@@ -110,7 +110,7 @@ The order of steps is dictated by the order of ``Stepper.Step`` components in th
 
 ### In a modal
 
-A composition of a stepper with a `FullscreenModal``.
+A composition of a stepper with a `FullscreenModal`.
 
 ```jsx live
 () => {
