@@ -50,10 +50,6 @@ const summaryComponentsUsage = Object.entries(componentsUsage).map(([componentNa
   };
 });
 
-console.log('componentsUsage', componentsUsage);
-console.log('dependentProjects', dependentProjects);
-console.log('summaryComponentsUsage', summaryComponentsUsage);
-
 const SummaryUsage = () => {
   const summaryTableData = summaryComponentsUsage.sort((a, b) => {
     const nameA = a.name.toUpperCase();
