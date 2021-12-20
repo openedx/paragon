@@ -1,9 +1,16 @@
 import React from 'react';
 import {
-  DataTable, Tabs, Tab, Container,
+  DataTable,
+  Tabs,
+  Tab,
+  Container,
 } from '~paragon-react'; // eslint-disable-line
 import SEO from '../components/SEO';
 import Layout from '../components/PageLayout';
+import SummaryComponentNameWithUsageModal from '../components/insights/SummaryComponentNameWithUsageModal';
+import ProjectNameWithUsageModal from '../components/insights/ProjectNameWithUsageModal';
+import ProjectNameWithComponentUsageModal from '../components/insights/ProjectNameWithComponentUsageModal';
+import getGithubProjectUrl from '../utils/getGithubProjectUrl';
 import dependentProjectsAnalysis from '../../../dependent-usage.json';
 
 const {
@@ -13,6 +20,7 @@ const {
 
 const dependentProjects = dependentProjectsUsages.map(dependentUsage => ({
   ...dependentUsage,
+  repositoryUrl: getGithubProjectUrl(dependentUsage.repository?.url),
   count: Object.values(dependentUsage.usages).reduce((accumulator, usage) => accumulator += usage.length, 0),
 }));
 
@@ -25,7 +33,9 @@ const componentsUsage = dependentProjectsUsages.reduce((accumulator, project) =>
       name: project.name,
       folderName: project.folderName,
       version: project.version,
+      repositoryUrl: getGithubProjectUrl(project.repository?.url),
       componentUsageCount: project.usages[componentName].length,
+      usages: project.usages[componentName],
     });
   });
   return accumulator;
@@ -36,8 +46,13 @@ const summaryComponentsUsage = Object.entries(componentsUsage).map(([componentNa
   return {
     name: componentName,
     count: componentUsageCounts,
+    usages: componentsUsage[componentName],
   };
 });
+
+console.log('componentsUsage', componentsUsage);
+console.log('dependentProjects', dependentProjects);
+console.log('summaryComponentsUsage', summaryComponentsUsage);
 
 const SummaryUsage = () => {
   const summaryTableData = summaryComponentsUsage.sort((a, b) => {
@@ -62,7 +77,11 @@ const SummaryUsage = () => {
         itemCount={summaryTableData.length}
         data={summaryTableData}
         columns={[
-          { Header: 'Component Name', accessor: 'name' },
+          {
+            Header: 'Component Name',
+            accessor: 'name',
+            Cell: SummaryComponentNameWithUsageModal,
+          },
           { Header: 'Instance Count', accessor: 'count' },
         ]}
       >
@@ -84,7 +103,11 @@ const ProjectsUsage = () => (
       itemCount={dependentProjects.length}
       data={dependentProjects}
       columns={[
-        { Header: 'Project Name', accessor: 'folderName' },
+        {
+          Header: 'Project Name',
+          accessor: 'folderName',
+          Cell: ProjectNameWithUsageModal,
+        },
         { Header: 'Paragon Version', accessor: 'version' },
         { Header: 'Instance Count', accessor: 'count' },
       ]}
@@ -98,7 +121,6 @@ const ProjectsUsage = () => (
 );
 
 // Usage info about a single component
-// eslint-disable-next-line
 const ComponentUsage = ({ name, componentUsageInProjects }) => (
   <div className="mb-5">
     <h3 className="mb-4">{name}</h3>
@@ -107,7 +129,11 @@ const ComponentUsage = ({ name, componentUsageInProjects }) => (
       itemCount={componentUsageInProjects.length} // eslint-disable-line
       data={componentUsageInProjects}
       columns={[
-        { Header: 'Project Name', accessor: 'folderName' },
+        {
+          Header: 'Project Name',
+          accessor: 'folderName',
+          Cell: (props) => <ProjectNameWithComponentUsageModal {...props} componentName={name} />,
+        },
         { Header: 'Paragon Version', accessor: 'version' },
         { Header: 'Instance Count', accessor: 'componentUsageCount' },
       ]}
