@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { OverlayTrigger, Tooltip } from '..';
 
 const IconButton = React.forwardRef(({
   alt,
@@ -14,9 +15,11 @@ const IconButton = React.forwardRef(({
   size,
   variant,
   iconAs: IconComponent,
+  isActive,
   ...attrs
 }, ref) => {
   const invert = invertColors ? 'inverse-' : '';
+  const activeStyle = isActive ? `${variant}-` : '';
   return (
     <button
       {...attrs}
@@ -25,6 +28,9 @@ const IconButton = React.forwardRef(({
         'btn-icon',
         `btn-icon-${invert}${variant}`,
         `btn-icon-${size}`,
+        {
+          [`btn-icon-${invert}${activeStyle}active`]: isActive,
+        },
         attrs.className,
       )}
       onClick={onClick}
@@ -52,6 +58,7 @@ IconButton.defaultProps = {
   variant: 'primary',
   size: 'md',
   onClick: () => {},
+  isActive: false,
 };
 
 IconButton.propTypes = {
@@ -79,7 +86,58 @@ IconButton.propTypes = {
   onClick: PropTypes.func,
   /** Type of button (uses Bootstrap options) */
   variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'light', 'dark', 'black']),
+  /** size of button to render */
   size: PropTypes.oneOf(['sm', 'md', 'inline']),
+  /** whether to show the IconButton in an active state, whose styling is distinct from default state */
+  isActive: PropTypes.bool,
 };
 
+/**
+ *
+ * @param { object } args Arguments
+ * @param { string } args.tooltipPlacement choose from https://popper.js.org/docs/v2/constructors/#options
+ * @param { React.Component } args.tooltipContent any content to pass to tooltip content area
+ * @returns { IconButton } a button wrapped in overlaytrigger
+ */
+const IconButtonWithTooltip = ({
+  tooltipPlacement, tooltipContent, variant, invertColors, ...props
+}) => {
+  const invert = invertColors ? 'inverse-' : '';
+  return (
+    <OverlayTrigger
+      placement={tooltipPlacement}
+      overlay={(
+        <Tooltip
+          id={`iconbutton-tooltip-${tooltipPlacement}`}
+          variant={invert ? 'light' : ''}
+        >
+          {tooltipContent}
+        </Tooltip>
+      )}
+    >
+      <IconButton variant={variant} invertColors={invertColors} {...props} />
+    </OverlayTrigger>
+  );
+};
+
+IconButtonWithTooltip.defaultProps = {
+  tooltipPlacement: 'top',
+  variant: 'primary',
+  invertColors: false,
+};
+
+IconButtonWithTooltip.propTypes = {
+  /** tooltip placement can be top, left, right etc, per https://popper.js.org/docs/v2/constructors/#options  */
+  tooltipPlacement: PropTypes.string,
+  /** any valid JSX or text to be rendered as tooltip contents */
+  tooltipContent: PropTypes.node.isRequired,
+  /** Type of button (uses Bootstrap options) */
+  variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'light', 'dark', 'black']),
+  /** Changes icon styles for dark background */
+  invertColors: PropTypes.bool,
+};
+
+IconButton.IconButtonWithTooltip = IconButtonWithTooltip;
+
 export default IconButton;
+export { IconButtonWithTooltip };
