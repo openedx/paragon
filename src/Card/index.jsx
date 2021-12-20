@@ -10,14 +10,24 @@ import CardFooter from './CardFooter';
 import CardImageCap from './CardImageCap';
 import CardBody from './CardBody';
 
-const Card = ({ orientation, className, ...props }) => (
+const Card = React.forwardRef(({
+  orientation,
+  className,
+  isClickable,
+  ...props
+}, ref) => (
   <CardContextProvider orientation={orientation}>
     <BaseCard
-      className={classNames(className, 'pgn__card', { horizontal: orientation === 'horizontal' })}
       {...props}
+      className={classNames(className, 'pgn__card', {
+        horizontal: orientation === 'horizontal',
+        clickable: isClickable,
+      })}
+      ref={ref}
+      tabindex={isClickable ? '0' : '-1'}
     />
   </CardContextProvider>
-);
+));
 
 export { default as CardColumns } from 'react-bootstrap/CardColumns';
 export { default as CardDeck } from 'react-bootstrap/CardDeck';
@@ -31,12 +41,15 @@ Card.propTypes = {
   className: PropTypes.string,
   /** Specifies which orientation to use. */
   orientation: PropTypes.oneOf(['vertical', 'horizontal']),
+  /** Specifies whether the `Card` is clickable, if `true` appropriate `hover` and `focus` styling will be added. */
+  isClickable: PropTypes.bool,
 };
 
 Card.defaultProps = {
   ...BaseCard.defaultProps,
   className: undefined,
   orientation: 'vertical',
+  isClickable: false,
 };
 
 Card.Header = CardHeader;

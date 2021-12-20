@@ -28,7 +28,28 @@ This component uses a `Card` from react-bootstrap as a base component and extend
 ### Basic Usage
 
 ```jsx live
-<Card style={{ width: '18rem' }} tabIndex="0">
+<Card style={{ width: '18rem' }}>
+  <Card.ImageCap 
+    src="https://source.unsplash.com/360x200/?nature,flower"
+  />
+  <Card.Header
+    title="Card Title"
+  />
+  <Card.Section>
+    This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+  </Card.Section>
+  <Card.Footer>
+    <Button>Action 1</Button>
+  </Card.Footer>
+</Card>
+```
+
+### Clickable variant
+
+You use `isClickable` prop to add additional `hover` and `focus` styling to the `Card`.
+
+```jsx live
+<Card style={{ width: '18rem' }} isClickable>
   <Card.ImageCap 
     src="https://source.unsplash.com/360x200/?nature,flower"
   />
@@ -93,6 +114,7 @@ The `Card.Header` supports custom actions via the actions prop and renders them 
             src={MoreVert}
             iconAs={Icon}
             variant="primary"
+            alt="Actions dropdown"
           />
           <Dropdown.Menu>
             <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
@@ -169,26 +191,36 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
 #### Vertical variant
 
 ```jsx live
-<>
-  <Card>
-    <Card.Footer>
-      <Button>Action 1</Button>
-      <Button>Action 2</Button>
-    </Card.Footer>
-    <Card.Divider />
-    <Card.Footer text="Optional footer text to display">
-      <Button>Action 1</Button>
-      <Button>Action 2</Button>
-    </Card.Footer>
-    <Card.Divider />
-  </Card>
-  <Card style={{width: '40%'}}>
-    <Card.Footer text="Stacked vertical variant" isStacked>
-      <Button>Action 1</Button>
-      <Button>Action 2</Button>
-    </Card.Footer>
-  </Card>
-</>
+() => {
+  const footerLink = <a href='#link'>Footer text as a link</a>;
+
+  return (
+    <>
+      <Card>
+        <Card.Footer>
+          <Button>Action 1</Button>
+          <Button>Action 2</Button>
+        </Card.Footer>
+        <Card.Divider />
+        <Card.Footer textElement="Optional footer text to display">
+          <Button>Action 1</Button>
+          <Button>Action 2</Button>
+        </Card.Footer>
+        <Card.Divider />
+        <Card.Footer textElement={footerLink}>
+          <Button>Action 1</Button>
+          <Button>Action 2</Button>
+        </Card.Footer>
+      </Card>
+      <Card style={{width: '40%'}}>
+        <Card.Footer textElement="Stacked vertical variant" isStacked>
+          <Button>Action 1</Button>
+          <Button>Action 2</Button>
+        </Card.Footer>
+      </Card>
+    </>
+  )
+}
 ```
 
 #### Horizontal variant
@@ -200,12 +232,12 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
     <Button>Action 2</Button>
   </Card.Footer>
   <Card.Divider />
-  <Card.Footer orientation="horizontal" text="Optional footer text to display">
+  <Card.Footer orientation="horizontal" textElement="Optional footer text to display">
     <Button>Action 1</Button>
     <Button>Action 2</Button>
   </Card.Footer>
   <Card.Divider />
-  <Card.Footer orientation="horizontal" text="Horizontal stacked variant" isStacked>
+  <Card.Footer orientation="horizontal" textElement="Horizontal stacked variant" isStacked>
     <Button>Action 1</Button>
     <Button>Action 2</Button>
   </Card.Footer>
@@ -217,7 +249,7 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
 `ImageCap` is an image that sits on the top or the left edge of a `Card`. Can contain an optional logo image.
 
 ```jsx live
-<Card style={{width: '40%'}} tabIndex="0">
+<Card style={{width: '40%'}}>
   <Card.ImageCap 
     src="https://source.unsplash.com/360x200/?nature,flower"
     logoSrc="https://via.placeholder.com/150"
@@ -293,7 +325,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
       >
         This is a special case where we want to have Footer with vertical orientation in the Card with horizontal orientation.
       </Card.Section>
-      <Card.Footer orientation="vertical" text="Some footer text">
+      <Card.Footer orientation="vertical" textElement="Some footer text">
         <Button>Action 1</Button>
         <Button>Action 2</Button>
       </Card.Footer>
@@ -324,7 +356,7 @@ behavior.
       title="Card title"
     />
     <Card.Section 
-      title="Card title"
+      title="Section title"
     >
       This is a wider card with supporting text below as a natural lead-in to 
       additional content. This card has even longer content than the first to 
@@ -342,7 +374,7 @@ behavior.
       title="Card title"
     />
     <Card.Section 
-      title="Card title"
+      title="Section title"
     >
       This is a wider card with supporting text below as a natural lead-in to 
       additional content. This content is a little bit longer.
@@ -359,7 +391,7 @@ behavior.
       title="Card title"
     />
     <Card.Section 
-      title="Card title"
+      title="Section title"
     >
       This is a wider card with supporting text below as a natural lead-in to 
       additional content. This card has even longer content than the first to 
@@ -377,7 +409,7 @@ behavior.
       title="Card title"
     />
     <Card.Section 
-      title="Card title"
+      title="Section title"
     >
       This is a wider card with supporting text below as a natural lead-in to 
       additional content. This card has even longer content than the first to 
@@ -395,7 +427,7 @@ behavior.
       title="Card title"
     />
     <Card.Section 
-      title="Card title"
+      title="Section title"
     >
       This is a wider card with supporting text below as a natural lead-in to 
       additional content. This content is a little bit longer.
@@ -412,7 +444,7 @@ behavior.
       title="Card title"
     />
     <Card.Section 
-      title="Card title"
+      title="Section title"
     >
       This is a wider card with supporting text below as a natural lead-in to 
       additional content. This card has even longer content than the first to 
@@ -440,7 +472,7 @@ it is meant to be used as a single horizontal row of Cards, not as a grid. See C
       title="Card title"
     />
     <Card.Section 
-      title="Card title"
+      title="Section title"
     >
       This is a wider card with supporting text below as a natural lead-in to 
       additional content. This card has even longer content than the first to 
@@ -458,7 +490,7 @@ it is meant to be used as a single horizontal row of Cards, not as a grid. See C
       title="Card title"
     />
     <Card.Section 
-      title="Card title"
+      title="Section title"
     >
       This is a wider card with supporting text below as a natural lead-in to 
       additional content. This content is a little bit longer.
@@ -475,7 +507,7 @@ it is meant to be used as a single horizontal row of Cards, not as a grid. See C
       title="Card title"
     />
     <Card.Section 
-      title="Card title"
+      title="Section title"
     >
       This is a wider card with supporting text below as a natural lead-in to 
       additional content. This card has even longer content than the first to 

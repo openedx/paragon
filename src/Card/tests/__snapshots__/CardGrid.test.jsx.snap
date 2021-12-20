@@ -12,12 +12,13 @@ exports[`<CardGrid /> Controlled Rendering renders with controlled columnSizes 1
     >
       <div
         className="pgn__card card"
+        tabindex="-1"
       >
         <div
           className="pgn__card-wrapper-image-cap vertical"
         >
           <img
-            alt="card-cap-vertical"
+            alt="Card background"
             className="pgn__card-image-cap"
             src="http://fake.image"
           />
@@ -41,7 +42,6 @@ exports[`<CardGrid /> Controlled Rendering renders with controlled columnSizes 1
         <div
           className="pgn__card-footer vertical"
         >
-          
           <small
             className="text-muted"
           >
@@ -66,12 +66,13 @@ exports[`<CardGrid /> Uncontrolled Rendering renders default columnSizes 1`] = `
     >
       <div
         className="pgn__card card"
+        tabindex="-1"
       >
         <div
           className="pgn__card-wrapper-image-cap vertical"
         >
           <img
-            alt="card-cap-vertical"
+            alt="Card background"
             className="pgn__card-image-cap"
             src="http://fake.image"
           />
@@ -95,7 +96,6 @@ exports[`<CardGrid /> Uncontrolled Rendering renders default columnSizes 1`] = `
         <div
           className="pgn__card-footer vertical"
         >
-          
           <small
             className="text-muted"
           >

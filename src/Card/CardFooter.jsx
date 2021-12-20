@@ -7,17 +7,17 @@ const CardFooter = React.forwardRef(({
   children,
   className,
   isStacked,
-  text,
+  textElement,
   orientation,
 }, ref) => {
-  const { orientation: contextOrientation } = useContext(CardContext);
-  const footerOrientation = orientation || contextOrientation;
+  const { orientation: cardOrientation } = useContext(CardContext);
+  const footerOrientation = orientation || cardOrientation;
   const wrapperClassName = `pgn__card-footer ${footerOrientation}${isStacked ? '-stacked' : ''}`;
-  const textClassName = `pgn__card-footer-text ${footerOrientation}${isStacked ? '-stacked' : ''} x-small`;
+  const textElementClassName = `pgn__card-footer-text ${footerOrientation}${isStacked ? '-stacked' : ''} x-small`;
 
   return (
     <div className={classNames(className, wrapperClassName)} ref={ref}>
-      {text && <div className={textClassName}>{text}</div>}
+      {textElement && <div className={textElementClassName}>{textElement}</div>}
       {children}
     </div>
   );
@@ -28,19 +28,19 @@ CardFooter.propTypes = {
   children: PropTypes.node.isRequired,
   /** Specifies class name to append to the base element. */
   className: PropTypes.string,
-  /** Footer text to display near actions. */
-  text: PropTypes.string,
+  /** Optional node to display near actions. Should be either a plain text or an element containing text (e.g. link). */
+  textElement: PropTypes.node,
   /** Specifies whether to use stacked variant. */
   isStacked: PropTypes.bool,
   /** Specifies which orientation to use. This prop will override context value if provided. */
-  orientation: PropTypes.oneOf(['horizontal', 'vertical', '']),
+  orientation: PropTypes.oneOf(['horizontal', 'vertical']),
 };
 
 CardFooter.defaultProps = {
   className: null,
-  text: '',
+  textElement: undefined,
   isStacked: false,
-  orientation: '',
+  orientation: undefined,
 };
 
 export default CardFooter;
