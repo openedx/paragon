@@ -1,5 +1,5 @@
 {
-  "lastModified": 1640095653183,
+  "lastModified": 1640115482241,
   "projectUsages": [
     {
       "version": "16.24.0",
@@ -237,6 +237,7 @@
     {
       "version": "2.6.4",
       "name": "edx",
+      "repository": "https://github.com/edx/edx-platform",
       "folderName": "edx-platform",
       "usages": {
         "Icon": [
@@ -9694,10 +9695,7 @@
     {
       "version": "12.4.0",
       "name": "frontend-app-learner-portal",
-      "repository": {
-        "type": "git",
-        "url": ""
-      },
+      "repository": "https://github.com/edx/frontend-app-learner-portal-programs",
       "folderName": "frontend-app-learner-portal-programs",
       "usages": {
         "Dropdown.Deprecated": [
@@ -10507,20 +10505,26 @@
           },
           {
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/SubsectionTitleCell.jsx",
-            "line": 51,
+            "line": 53,
             "column": 42,
             "version": "16.19.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/SubsectionTitleCell.jsx",
-            "line": 52,
+            "line": 54,
             "column": 40,
             "version": "16.19.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/SubsectionTitleCell.jsx",
-            "line": 57,
+            "line": 59,
             "column": 14,
+            "version": "16.19.0"
+          },
+          {
+            "filePath": "src/course-home/progress-tab/grades/detailed-grades/SubsectionTitleCell.jsx",
+            "line": 88,
+            "column": 16,
             "version": "16.19.0"
           },
           {
@@ -11079,7 +11083,7 @@
         "Collapsible.Advanced": [
           {
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/SubsectionTitleCell.jsx",
-            "line": 44,
+            "line": 46,
             "column": 4,
             "version": "16.19.0"
           },
@@ -11099,7 +11103,7 @@
         "Row": [
           {
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/SubsectionTitleCell.jsx",
-            "line": 45,
+            "line": 47,
             "column": 6,
             "version": "16.19.0"
           },
@@ -11125,7 +11129,7 @@
         "Collapsible.Trigger": [
           {
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/SubsectionTitleCell.jsx",
-            "line": 46,
+            "line": 48,
             "column": 8,
             "version": "16.19.0"
           },
@@ -11145,13 +11149,13 @@
         "Collapsible.Visible": [
           {
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/SubsectionTitleCell.jsx",
-            "line": 51,
+            "line": 53,
             "column": 10,
             "version": "16.19.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/SubsectionTitleCell.jsx",
-            "line": 52,
+            "line": 54,
             "column": 10,
             "version": "16.19.0"
           },
@@ -11183,7 +11187,7 @@
         "Collapsible.Body": [
           {
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/SubsectionTitleCell.jsx",
-            "line": 81,
+            "line": 83,
             "column": 6,
             "version": "16.19.0"
           },
@@ -15531,10 +15535,7 @@
     {
       "version": "12.2.0",
       "name": "@edx/frontend-learner-portal-base",
-      "repository": {
-        "type": "git",
-        "url": ""
-      },
+      "repository": "https://github.com/edx/frontend-learner-portal-base",
       "folderName": "frontend-learner-portal-base",
       "usages": {
         "Dropdown.Deprecated": [
@@ -16189,13 +16190,13 @@
           },
           {
             "filePath": "src/components/Carousel/index.jsx",
-            "line": 191,
+            "line": 226,
             "column": 10,
             "version": "16.14.6"
           },
           {
             "filePath": "src/components/Carousel/index.jsx",
-            "line": 207,
+            "line": 242,
             "column": 10,
             "version": "16.14.6"
           },
@@ -16299,6 +16300,12 @@
             "filePath": "src/components/Search/Pagination/index.jsx",
             "line": 18,
             "column": 20,
+            "version": "16.14.6"
+          },
+          {
+            "filePath": "src/components/Search/SearchBreadcrumb.jsx",
+            "line": 63,
+            "column": 6,
             "version": "16.14.6"
           }
         ],
@@ -16788,6 +16795,12 @@
             "version": "16.14.6"
           },
           {
+            "filePath": "src/components/Search/SearchBreadcrumb.jsx",
+            "line": 62,
+            "column": 4,
+            "version": "16.14.6"
+          },
+          {
             "filePath": "src/components/SearchLanding/HeroSearch.jsx",
             "line": 60,
             "column": 6,
@@ -16885,7 +16898,7 @@
           },
           {
             "filePath": "src/templates/searchPageNew.jsx",
-            "line": 335,
+            "line": 336,
             "column": 12,
             "version": "16.14.6"
           }
@@ -16913,6 +16926,12 @@
             "filePath": "src/components/Course/CourseHeaderExp.jsx",
             "line": 136,
             "column": 10,
+            "version": "16.14.6"
+          },
+          {
+            "filePath": "src/components/Search/SearchBreadcrumb.jsx",
+            "line": 64,
+            "column": 6,
             "version": "16.14.6"
           }
         ],
