@@ -6,6 +6,7 @@ components:
 - BulkActions
 - TableActions
 - Table
+- CardView
 - TableCell
 - TableHeaderCell
 - TableHeaderRow
@@ -284,12 +285,93 @@ To enable proper selection behavior with backend pagination (i.e., when ``isSele
             handleClick: () => {
               console.log('Clear selection');
               tableInstance.clearSelection()
-            }, 
+            },
           }
         },
       ]}
     />
   );
+}
+```
+
+## View Switching
+
+```jsx live
+function() {
+  const [currentView, setCurrentView] = useState('card');
+  return (
+    <DataTable
+      isFilterable
+      enableDataViewToggle
+      onDataViewToggle={ val => setCurrentView(val) }
+      isSortable
+      defaultColumnValues={{ Filter: TextFilter }}
+      itemCount={7}
+      data={[
+        {
+          name: 'Lil Bub',
+          color: 'brown tabby',
+          famous_for: 'weird tongue',
+        },
+        {
+          name: 'Grumpy Cat',
+          color: 'siamese',
+          famous_for: 'serving moods',
+        },
+        {
+          name: 'Smoothie',
+          color: 'orange tabby',
+          famous_for: 'modeling',
+        },
+      ]}
+      columns={[
+        {
+          Header: 'Name',
+          accessor: 'name',
+
+        },
+        {
+          Header: 'Famous For',
+          accessor: 'famous_for',
+        },
+        {
+          Header: 'Coat Color',
+          accessor: 'color',
+          Filter: CheckboxFilter,
+          filter: 'includesValue',
+          filterChoices: [{
+            name: 'russian white',
+            number: 1,
+            value: 'russian white',
+          },
+          {
+            name: 'orange tabby',
+            number: 2,
+            value: 'orange tabby',
+          },
+          {
+            name: 'brown tabby',
+            number: 3,
+            value: 'brown tabby',
+          },
+          {
+            name: 'siamese',
+            number: 1,
+            value: 'siamese',
+          }]
+        },
+      ]}
+    >
+      <DataTable.TableControlBar />
+
+      {/* which kind of body content to show */}
+      { currentView === "card" && <CardView CardComponent={MiyazakiCard} /> }
+      { currentView === "list" && <DataTable.Table /> }
+
+      <DataTable.EmptyTable content="No results found" />
+      <DataTable.TableFooter />
+    </DataTable>
+  )
 }
 ```
 
@@ -313,7 +395,7 @@ Bulk actions are not visible unless rows have been selected.
 
 ### Actions
 An action can also be definied as an additional column on the table. The Cell property can be defined to display
-any component that a user requires. It will receive the row as props. 
+any component that a user requires. It will receive the row as props.
 You can pass a function to render custom components for bulk actions and table actions.
 
 
@@ -332,7 +414,7 @@ You can pass a function to render custom components for bulk actions and table a
         ({selectedFlatRows})=>{
           return {
             buttonText: `Enroll ${selectedFlatRows.length}`,
-            handleClick: () => console.log('Enroll', selectedFlatRows), 
+            handleClick: () => console.log('Enroll', selectedFlatRows),
           }
         },
         {
@@ -628,7 +710,7 @@ a responsive grid of cards.
 ```
 
 ## Sidebar Filter
-For a more desktop friendly view, you can move filters into a sidebar by providing ``showFiltersInSidebar`` prop, try it out! 
+For a more desktop friendly view, you can move filters into a sidebar by providing ``showFiltersInSidebar`` prop, try it out!
 
 ```jsx live
   <DataTable

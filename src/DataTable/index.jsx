@@ -43,6 +43,8 @@ function DataTable({
   EmptyTableComponent,
   manualSelectColumn,
   showFiltersInSidebar,
+  enableDataViewToggle,
+  onDataViewToggle,
   children,
   ...props
 }) {
@@ -120,6 +122,8 @@ function DataTable({
     tableActions,
     controlledTableSelections,
     showFiltersInSidebar,
+    enableDataViewToggle,
+    onDataViewToggle,
     ...selectionProps,
     ...selectionActions,
     ...props,
@@ -166,6 +170,8 @@ DataTable.defaultProps = {
   FilterStatusComponent: FilterStatus,
   RowStatusComponent: RowStatus,
   showFiltersInSidebar: false,
+  enableDataViewToggle: false,
+  onDataViewToggle: () => {},
 };
 
 DataTable.propTypes = {
@@ -292,6 +298,10 @@ DataTable.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   /** If true filters will be shown on sidebar instead */
   showFiltersInSidebar: PropTypes.bool,
+  /** Whether to show a toggle button group which allows view switching between card and table views */
+  enableDataViewToggle: PropTypes.bool,
+  /** Callback invoked when the toggle buttons are clicked, with value of selected button passed in */
+  onDataViewToggle: PropTypes.func,
 };
 
 DataTable.BulkActions = BulkActions;
