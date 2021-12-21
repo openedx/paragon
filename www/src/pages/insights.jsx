@@ -20,7 +20,7 @@ const {
 
 const dependentProjects = dependentProjectsUsages.map(dependentUsage => ({
   ...dependentUsage,
-  repositoryUrl: getGithubProjectUrl(dependentUsage.repository?.url),
+  repositoryUrl: getGithubProjectUrl(dependentUsage.repository),
   count: Object.values(dependentUsage.usages).reduce((accumulator, usage) => accumulator += usage.length, 0),
 }));
 
@@ -33,7 +33,7 @@ const componentsUsage = dependentProjectsUsages.reduce((accumulator, project) =>
       name: project.name,
       folderName: project.folderName,
       version: project.version,
-      repositoryUrl: getGithubProjectUrl(project.repository?.url),
+      repositoryUrl: getGithubProjectUrl(project.repository),
       componentUsageCount: project.usages[componentName].length,
       usages: project.usages[componentName],
     });
