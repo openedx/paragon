@@ -168,7 +168,12 @@ DataTable.defaultProps = {
   FilterStatusComponent: FilterStatus,
   RowStatusComponent: RowStatus,
   showFiltersInSidebar: false,
-  dataViewToggleOptions: { isDataViewToggleEnabled: false, onDataViewToggle: () => {}, defaultActiveStateValue: 'card' },
+  dataViewToggleOptions: {
+    isDataViewToggleEnabled: false,
+    onDataViewToggle: () => {},
+    defaultActiveStateValue: 'card',
+    togglePlacement: 'left',
+  },
 };
 
 DataTable.propTypes = {
@@ -303,6 +308,9 @@ DataTable.propTypes = {
     onDataViewToggle: PropTypes.func,
     /** default value for toggle active state */
     defaultActiveStateValue: PropTypes.string,
+    /** placement of toggle 'bottom' will push it to the bottom row in
+     * actions section. Only 'left' and 'bottom' are supported */
+    togglePlacement: PropTypes.string,
   }),
 };
 

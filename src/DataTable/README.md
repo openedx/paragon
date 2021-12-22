@@ -304,12 +304,14 @@ See ``dataViewToggleOptions`` props documentation for all supported props
 ```jsx live
 function() {
   const [currentView, setCurrentView] = useState('card');
+  const togglePlacement = 'bottom'; // this defaults to left if omitted
   return (
     <DataTable
       isFilterable
       dataViewToggleOptions={{
         isDataViewToggleEnabled: true,
-        onDataViewToggle: val => setCurrentView(val)
+        onDataViewToggle: val => setCurrentView(val),
+        togglePlacement,
       }}
       isSortable
       defaultColumnValues={{ Filter: TextFilter }}
@@ -588,6 +590,120 @@ You can pass a function to render custom components for bulk actions and table a
     <DataTable.EmptyTable content="No results found" />
     <DataTable.TableFooter />
   </DataTable>
+```
+
+#### Actions with Data view toggle enabled
+
+
+```jsx live
+function() {
+    const [currentView, setCurrentView] = useState('card');
+
+  return (<DataTable
+            dataViewToggleOptions={{
+              isDataViewToggleEnabled: true,
+              onDataViewToggle: val => setCurrentView(val),
+              defaultActiveStateValue: "card",
+            }}
+            isSelectable
+            itemCount={7}
+            tableActions={[
+                {
+                  buttonText: 'Table Action',
+                  handleClick: (data) => console.log('Table Action', data),
+                },
+            ]}
+            bulkActions={[
+                // Function defined button
+                ({selectedFlatRows})=>{
+                  return {
+                    buttonText: `Enroll (${selectedFlatRows.length})`,
+                    handleClick: () => console.log('Enroll', selectedFlatRows),
+                  }
+                },
+                {
+                  buttonText: 'Assign',
+                  handleClick: (data) => console.log('Assign', data),
+                },
+                {
+                  buttonText: 'Extra action 1',
+                  handleClick: (data) => console.log('Extra action 1', data),
+                },
+                {
+                  buttonText: 'Extra action 2',
+                  handleClick: (data) => console.log('Extra action 2', data),
+                },
+              ]}
+            additionalColumns={[
+              {
+                id: 'action',
+                Header: 'Action',
+                Cell: ({ row }) => <Button variant="link" onClick={() => console.log(`Assigning ${row.values.name}`)}>Assign</Button>,
+              }
+            ]}
+            data={[
+              {
+                name: 'Lil Bub',
+                color: 'brown tabby',
+                famous_for: 'weird tongue',
+              },
+              {
+                name: 'Grumpy Cat',
+                color: 'siamese',
+                famous_for: 'serving moods',
+              },
+              {
+                name: 'Smoothie',
+                color: 'orange tabby',
+                famous_for: 'modeling',
+              },
+              {
+                name: 'Maru',
+                color: 'brown tabby',
+                famous_for: 'being a lovable oaf',
+              },
+              {
+                name: 'Keyboard Cat',
+                color: 'orange tabby',
+                famous_for: 'piano virtuoso',
+              },
+              {
+                name: 'Long Cat',
+                color: 'russian white',
+                famous_for:
+                  'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+              },
+              {
+                name: 'Zeno',
+                color: 'brown tabby',
+                famous_for: 'getting halfway there'
+              },
+            ]}
+            columns={[
+              {
+                Header: 'Name',
+                accessor: 'name',
+
+              },
+              {
+                Header: 'Famous For',
+                accessor: 'famous_for',
+              },
+              {
+                Header: 'Coat Color',
+                accessor: 'color',
+              },
+            ]}
+          >
+            <DataTable.TableControlBar />
+            {/* which kind of body content to show */}
+            { currentView === "card" && <CardView CardComponent={MiyazakiCard} /> }
+            { currentView === "list" && <DataTable.Table /> }
+            <DataTable.EmptyTable content="No results found" />
+            <DataTable.TableFooter />
+          </DataTable>
+          );
+}
 ```
 
 ## CardView and alternate table components

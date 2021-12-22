@@ -13,8 +13,14 @@ const TableControlBar = ({ className }) => {
   const {
     setFilter,
     showFiltersInSidebar,
+    dataViewToggleOptions: { togglePlacement },
   } = useContext(DataTableContext);
 
+  const invalidtogglePlacement = !togglePlacement || !(['left', 'bottom']).includes(togglePlacement);
+  const actionsSectionClassName = classNames({
+    'pgn__data-table-actions-right-toggle-bottom': togglePlacement === 'bottom',
+    'pgn__data-table-actions-right': invalidtogglePlacement || togglePlacement === 'left',
+  });
   return (
     <div className={classNames('pgn__data-table-status-bar', className)}>
       {/* Using setFilter as a proxy for isFilterable */}
@@ -23,7 +29,7 @@ const TableControlBar = ({ className }) => {
           <div className="pgn__data-table-actions-left">
             <DropdownFilters />
           </div>
-          <div className="pgn__data-table-actions-right">
+          <div className={actionsSectionClassName}>
             <DataViewToggle />
             <ActionDisplay />
           </div>
@@ -34,7 +40,7 @@ const TableControlBar = ({ className }) => {
           <SmartStatus />
         </div>
         {(!setFilter || (setFilter && showFiltersInSidebar)) && (
-          <div className="pgn__data-table-actions-right">
+          <div className={actionsSectionClassName}>
             <DataViewToggle />
             <ActionDisplay />
           </div>
