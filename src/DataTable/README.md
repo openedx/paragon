@@ -302,8 +302,10 @@ function() {
   return (
     <DataTable
       isFilterable
-      enableDataViewToggle
-      onDataViewToggle={ val => setCurrentView(val) }
+      dataViewToggleOptions={{
+        isDataViewToggleEnabled: true,
+        onDataViewToggle: val => setCurrentView(val)
+      }}
       isSortable
       defaultColumnValues={{ Filter: TextFilter }}
       itemCount={7}
