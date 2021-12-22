@@ -304,7 +304,7 @@ See ``dataViewToggleOptions`` props documentation for all supported props
 ```jsx live
 function() {
   const [currentView, setCurrentView] = useState('card');
-  const togglePlacement = 'bottom'; // this defaults to left if omitted
+  const togglePlacement = 'left'; // 'bottom' is the only other supported value
   return (
     <DataTable
       isFilterable

@@ -17,7 +17,7 @@ const TableControlBar = ({ className }) => {
   } = useContext(DataTableContext);
 
   const invalidtogglePlacement = !togglePlacement || !(['left', 'bottom']).includes(togglePlacement);
-  const actionsSectionClassName = classNames({
+  const actionsSectionClassName = classNames('mb-3', {
     'pgn__data-table-actions-right-toggle-bottom': togglePlacement === 'bottom',
     'pgn__data-table-actions-right': invalidtogglePlacement || togglePlacement === 'left',
   });
