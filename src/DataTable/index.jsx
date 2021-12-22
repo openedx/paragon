@@ -168,7 +168,7 @@ DataTable.defaultProps = {
   FilterStatusComponent: FilterStatus,
   RowStatusComponent: RowStatus,
   showFiltersInSidebar: false,
-  dataViewToggleOptions: { isDataViewToggleEnabled: false, onDataViewToggle: () => {}, defaultToggleValue: 'card' },
+  dataViewToggleOptions: { isDataViewToggleEnabled: false, onDataViewToggle: () => {}, defaultActiveStateValue: 'card' },
 };
 
 DataTable.propTypes = {

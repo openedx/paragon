@@ -9,13 +9,13 @@ const DataViewToggle = () => {
     dataViewToggleOptions: {
       isDataViewToggleEnabled,
       onDataViewToggle,
-      defaultToggleValue,
+      defaultActiveStateValue,
     },
   } = useContext(DataTableContext);
 
   if (!isDataViewToggleEnabled) { return null; }
 
-  const [activeValue, setActiveValue] = useState(defaultToggleValue);
+  const [activeValue, setActiveValue] = useState(defaultActiveStateValue || 'card');
   const handleOnChange = value => {
     setActiveValue(value);
     onDataViewToggle(value);
