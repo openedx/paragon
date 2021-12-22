@@ -18,7 +18,9 @@ const DataViewToggle = () => {
   const [activeValue, setActiveValue] = useState(defaultActiveStateValue || 'card');
   const handleOnChange = value => {
     setActiveValue(value);
-    onDataViewToggle(value);
+    if (onDataViewToggle) {
+      onDataViewToggle(value);
+    }
   };
   return (
     <div className="pgn__data-table-dataview-toggle">

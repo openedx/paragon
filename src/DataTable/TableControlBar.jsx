@@ -33,7 +33,12 @@ const TableControlBar = ({ className }) => {
         <div className="pgn__data-table-status-left">
           <SmartStatus />
         </div>
-        {(!setFilter || (setFilter && showFiltersInSidebar)) && (<ActionDisplay />)}
+        {(!setFilter || (setFilter && showFiltersInSidebar)) && (
+          <div className="pgn__data-table-actions-right">
+            <DataViewToggle />
+            <ActionDisplay />
+          </div>
+        )}
       </div>
     </div>
   );
