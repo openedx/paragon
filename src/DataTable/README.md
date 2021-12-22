@@ -374,8 +374,8 @@ function() {
       <DataTable.TableControlBar />
 
       {/* which kind of body content to show */}
-      { currentView === "card" && <CardView CardComponent={MiyazakiCard} /> }
-      { currentView === "list" && <DataTable.Table /> }
+      { currentView === 'card' && <CardView CardComponent={MiyazakiCard} /> }
+      { currentView === 'list' && <DataTable.Table /> }
 
       <DataTable.EmptyTable content="No results found" />
       <DataTable.TableFooter />
@@ -388,7 +388,7 @@ function() {
 
 ```jsx live
 function() {
-  const defaultVal = "list";
+  const defaultVal = 'list';
   const [currentView, setCurrentView] = useState(defaultVal);
   return (
     <DataTable
@@ -459,13 +459,157 @@ function() {
       <DataTable.TableControlBar />
 
       {/* which kind of body content to show */}
-      { currentView === "card" && <CardView CardComponent={MiyazakiCard} /> }
-      { currentView === "list" && <DataTable.Table /> }
+      { currentView === 'card' && <CardView CardComponent={MiyazakiCard} /> }
+      { currentView === 'list' && <DataTable.Table /> }
 
       <DataTable.EmptyTable content="No results found" />
       <DataTable.TableFooter />
     </DataTable>
-  )
+  );
+}
+```
+
+## Loading state
+
+Can be used to show the loading state when DataTable fetching new data.
+
+```jsx live
+() => {
+  const PAGINATED_DATA = [
+    [
+      {
+        id: '2baf70d1-42bb-4437-b551-e5fed5a87abe',
+        title: 'Castle in the Sky',
+        director: 'Hayao Miyazaki',
+        producer: 'Isao Takahata',
+        release_date: 1986,
+        rt_score: 95,
+      }, {
+        id: '12cfb892-aac0-4c5b-94af-521852e46d6a',
+        title: 'Grave of the Fireflies',
+        director: 'Isao Takahata',
+        producer: 'Toru Hara',
+        release_date: 1988,
+        rt_score: 97,
+      },
+      {
+        id: '58611129-2dbc-4a81-a72f-77ddfc1b1b49',
+        title: 'My Neighbor Totoro',
+        director: 'Hayao Miyazaki',
+        producer: 'Hayao Miyazaki',
+        release_date: 1988,
+        rt_score: 93,
+      },
+    ],
+    [
+      {
+        id: 'ea660b10-85c4-4ae3-8a5f-41cea3648e3e',
+        title: 'Kiki\'s Delivery Service',
+        director: 'Hayao Miyazaki',
+        producer: 'Hayao Miyazaki',
+        release_date: 1989,
+        rt_score: 96,
+      },
+      {
+        id: '4e236f34-b981-41c3-8c65-f8c9000b94e7',
+        title: 'Only Yesterday',
+        director: 'Isao Takahata',
+        producer: 'Toshio Suzuki',
+        release_date: 1991,
+        rt_score: 100,
+      },
+      {
+        id: 'ebbb6b7c-945c-41ee-a792-de0e43191bd8',
+        title: 'Porco Rosso',
+        director: 'Hayao Miyazaki',
+        producer: 'Toshio Suzuki',
+        release_date: 1992,
+        rt_score: 94,
+      },
+    ],
+    [
+      {
+        id: '1b67aa9a-2e4a-45af-ac98-64d6ad15b16c',
+        title: 'Pom Poko',
+        director: 'Isao Takahata',
+        producer: 'Toshio Suzuki',
+        release_date: 1994,
+        rt_score: 78,
+      },
+    ],
+  ];
+  const [data, setData] = useState(PAGINATED_DATA[0]);
+  const fetchData = useCallback(
+    (args) => {
+      setTimeout(() => {
+        setData(PAGINATED_DATA[args.pageIndex]);
+      }, 1000);
+    },
+    [],
+  );
+
+  const selectColumn = {
+    id: 'selection',
+    Header: DataTable.ControlledSelectHeader,
+    Cell: DataTable.ControlledSelect,
+    disableSortBy: true,
+  };
+  return (
+    <DataTable
+      isLoading
+      isSelectable
+      manualSelectColumn={selectColumn}
+      SelectionStatusComponent={DataTable.ControlledSelectionStatus}
+      isFilterable
+      manualFilters
+      defaultColumnValues={{ Filter: TextFilter }}
+      isPaginated
+      manualPagination
+      isSortable
+      manualSortBy
+      initialState={{
+        pageSize: 3,
+        pageIndex: 0
+      }}
+      initialTableOptions={{
+        getRowId: row => row.id,
+      }}
+      itemCount={7}
+      pageCount={3}
+      fetchData={fetchData}
+      data={data}
+      columns={[
+        {
+          Header: 'Title',
+          accessor: 'title',
+        },
+        {
+          Header: 'Director',
+          accessor: 'director',
+        },
+        {
+          Header: 'Release date',
+          accessor: 'release_date',
+        },
+      ]}
+      bulkActions={[
+        {
+          buttonText: 'Download CSV',
+          handleClick: (data) => console.log('Download CSV', data),
+        },
+        // custom button function that utilizes clearSelection function provided by the table instance
+        ({tableInstance})=>{
+          return {
+            buttonText: `Clear Selection`,
+            handleClick: () => {
+              console.log('Clear selection');
+              tableInstance.clearSelection()
+            }, 
+          }
+        },
+      ]}
+    />
+  );
 }
 ```
 
@@ -603,7 +747,7 @@ function() {
             dataViewToggleOptions={{
               isDataViewToggleEnabled: true,
               onDataViewToggle: val => setCurrentView(val),
-              defaultActiveStateValue: "card",
+              defaultActiveStateValue: 'card',
             }}
             isSelectable
             itemCount={7}
@@ -697,8 +841,8 @@ function() {
           >
             <DataTable.TableControlBar />
             {/* which kind of body content to show */}
-            { currentView === "card" && <CardView CardComponent={MiyazakiCard} /> }
-            { currentView === "list" && <DataTable.Table /> }
+            { currentView === 'card' && <CardView CardComponent={MiyazakiCard} /> }
+            { currentView === 'list' && <DataTable.Table /> }
             <DataTable.EmptyTable content="No results found" />
             <DataTable.TableFooter />
           </DataTable>

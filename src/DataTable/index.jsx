@@ -44,6 +44,7 @@ function DataTable({
   manualSelectColumn,
   showFiltersInSidebar,
   dataViewToggleOptions,
+  isLoading,
   children,
   ...props
 }) {
@@ -122,6 +123,7 @@ function DataTable({
     controlledTableSelections,
     showFiltersInSidebar,
     dataViewToggleOptions,
+    isLoading,
     ...selectionProps,
     ...selectionActions,
     ...props,
@@ -174,6 +176,7 @@ DataTable.defaultProps = {
     defaultActiveStateValue: 'card',
     togglePlacement: 'left',
   },
+  isLoading: false,
 };
 
 DataTable.propTypes = {
@@ -312,6 +315,8 @@ DataTable.propTypes = {
      * actions section. Only 'left' and 'bottom' are supported */
     togglePlacement: PropTypes.string,
   }),
+  /** Whether the table is loading data asynchronously */
+  isLoading: PropTypes.bool,
 };
 
 DataTable.BulkActions = BulkActions;

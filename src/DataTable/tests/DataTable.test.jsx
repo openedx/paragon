@@ -168,6 +168,13 @@ describe('<DataTable />', () => {
     mount(<DataTable {...props} initialState={initialState} />);
     expect(spy.mock.calls[0][0].initialState).toEqual(initialState);
   });
+  it('displays loading state', () => {
+    const wrapper = mount(<DataTable {...props} isLoading />);
+    const tableContainer = wrapper.find('.pgn__data-table-container');
+    const spinner = wrapper.find('.pgn__data-table-spinner');
+    expect(tableContainer.hasClass('is-loading')).toEqual(true);
+    expect(spinner.exists()).toEqual(true);
+  });
 
   // TODO: test that useTable is called with the correct arguments when isPaginated, isFilterable, isSelectable are used
   // TODO: test that fetchData is called correctly
