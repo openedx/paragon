@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import Spinner from 'react-bootstrap/Spinner';
 import TableHeaderRow from './TableHeaderRow';
 import TableRow from './TableRow';
 import { useRows } from './hooks';
+import DataTableContext from './DataTableContext';
 
 const Table = ({
   isStriped,
@@ -11,6 +13,7 @@ const Table = ({
   const {
     getTableProps, prepareRow, displayRows, headerGroups, getTableBodyProps,
   } = useRows();
+  const { isLoading } = useContext(DataTableContext);
 
   const renderRows = () => displayRows.map((row) => {
     prepareRow(row);
@@ -24,7 +27,12 @@ const Table = ({
   }
 
   return (
-    <div className="pgn__data-table-container">
+    <div className={classNames('pgn__data-table-container', { 'is-loading': isLoading })}>
+      {isLoading && (
+        <div className="pgn__data-table-spinner">
+          <Spinner animation="border" variant="primary" />
+        </div>
+      )}
       <table {...getTableProps({
         className: classNames({ 'pgn__data-table': true, 'is-striped': isStriped }),
       })}
