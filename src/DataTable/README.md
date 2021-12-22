@@ -296,6 +296,8 @@ To enable proper selection behavior with backend pagination (i.e., when ``isSele
 
 ## View Switching
 
+Card view is default when ``isDataViewToggleEnabled`` is true
+
 ```jsx live
 function() {
   const [currentView, setCurrentView] = useState('card');
@@ -305,6 +307,91 @@ function() {
       dataViewToggleOptions={{
         isDataViewToggleEnabled: true,
         onDataViewToggle: val => setCurrentView(val)
+      }}
+      isSortable
+      defaultColumnValues={{ Filter: TextFilter }}
+      itemCount={7}
+      data={[
+        {
+          name: 'Lil Bub',
+          color: 'brown tabby',
+          famous_for: 'weird tongue',
+        },
+        {
+          name: 'Grumpy Cat',
+          color: 'siamese',
+          famous_for: 'serving moods',
+        },
+        {
+          name: 'Smoothie',
+          color: 'orange tabby',
+          famous_for: 'modeling',
+        },
+      ]}
+      columns={[
+        {
+          Header: 'Name',
+          accessor: 'name',
+
+        },
+        {
+          Header: 'Famous For',
+          accessor: 'famous_for',
+        },
+        {
+          Header: 'Coat Color',
+          accessor: 'color',
+          Filter: CheckboxFilter,
+          filter: 'includesValue',
+          filterChoices: [{
+            name: 'russian white',
+            number: 1,
+            value: 'russian white',
+          },
+          {
+            name: 'orange tabby',
+            number: 2,
+            value: 'orange tabby',
+          },
+          {
+            name: 'brown tabby',
+            number: 3,
+            value: 'brown tabby',
+          },
+          {
+            name: 'siamese',
+            number: 1,
+            value: 'siamese',
+          }]
+        },
+      ]}
+    >
+      <DataTable.TableControlBar />
+
+      {/* which kind of body content to show */}
+      { currentView === "card" && <CardView CardComponent={MiyazakiCard} /> }
+      { currentView === "list" && <DataTable.Table /> }
+
+      <DataTable.EmptyTable content="No results found" />
+      <DataTable.TableFooter />
+    </DataTable>
+  )
+}
+```
+
+### With a default active state specified
+
+```jsx live
+function() {
+  const defaultVal = "list";
+  const [currentView, setCurrentView] = useState(defaultVal);
+  return (
+    <DataTable
+      isFilterable
+      dataViewToggleOptions={{
+        isDataViewToggleEnabled: true,
+        onDataViewToggle: val => setCurrentView(val),
+        defaultActiveStateValue: defaultVal,
       }}
       isSortable
       defaultColumnValues={{ Filter: TextFilter }}
