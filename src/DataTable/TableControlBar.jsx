@@ -6,18 +6,13 @@ import SmartStatus from './SmartStatus';
 import DropdownFilters from './DropdownFilters';
 import DataTableContext from './DataTableContext';
 import ActionDisplay from './ActionDisplay';
-import { Icon, IconButtonToggle, IconButtonWithTooltip } from '..';
-import { GridView, ListView } from '../../icons';
+import DataViewToggle from './DataViewToggle';
 
 // handles layout for filters, status, and bulk actions
-const TableControlBar = ({
-  className,
-}) => {
+const TableControlBar = ({ className }) => {
   const {
     setFilter,
     showFiltersInSidebar,
-    enableDataViewToggle,
-    onDataViewToggle,
   } = useContext(DataTableContext);
 
   return (
@@ -29,6 +24,7 @@ const TableControlBar = ({
             <DropdownFilters />
           </div>
           <div className="pgn__data-table-actions-right">
+            <DataViewToggle />
             <ActionDisplay />
           </div>
         </div>
@@ -39,16 +35,6 @@ const TableControlBar = ({
         </div>
         {(!setFilter || (setFilter && showFiltersInSidebar)) && (<ActionDisplay />)}
       </div>
-      {enableDataViewToggle
-      && (
-      <div className="pgn__data-table-view-switching">
-        <IconButtonToggle activeValue="card" onChange={value => onDataViewToggle(value)}>
-          <IconButtonWithTooltip tooltipContent="Card view" value="card" src={GridView} iconAs={Icon} alt="Card" />
-          <IconButtonWithTooltip tooltipContent="List view" value="list" src={ListView} iconAs={Icon} alt="List" />
-        </IconButtonToggle>
-      </div>
-      )}
-
     </div>
   );
 };

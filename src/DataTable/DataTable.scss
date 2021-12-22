@@ -100,9 +100,6 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
 
 .pgn__data-table-status-bar {
   padding: $data-table-padding-y $data-table-padding-x;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
 }
 
 .pgn__data-table-filters {
