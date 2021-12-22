@@ -3,6 +3,7 @@ title: 'DataTable'
 type: 'component'
 components:
 - DataTable
+- DataViewToggle
 - BulkActions
 - TableActions
 - Table
@@ -297,6 +298,8 @@ To enable proper selection behavior with backend pagination (i.e., when ``isSele
 ## View Switching
 
 Card view is default when ``isDataViewToggleEnabled`` is true
+
+See ``dataViewToggleOptions`` props documentation for all supported props
 
 ```jsx live
 function() {
