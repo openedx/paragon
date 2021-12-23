@@ -24,6 +24,19 @@ describe('data view toggle default state', () => {
     );
     expect(screen.queryByRole('group')).not.toBeInTheDocument();
   });
+  it('no rendering when isDataViewToggleEnabled is absent/malformed', () => {
+    const instanceCorrupt = {
+      dataViewToggleOptions: {
+        defaultActiveStateValue: 'a_val',
+      },
+    };
+    render(
+      <DataTableContext.Provider value={instanceCorrupt}>
+        <DataViewToggle />
+      </DataTableContext.Provider>,
+    );
+    expect(screen.queryByRole('group')).not.toBeInTheDocument();
+  });
   it('onDataViewToggle is invoked when clicking on buttons', () => {
     const onDataViewToggle = jest.fn();
     render(
