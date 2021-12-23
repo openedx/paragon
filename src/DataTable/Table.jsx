@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Spinner from 'react-bootstrap/Spinner';
+import Spinner from '../Spinner';
 import TableHeaderRow from './TableHeaderRow';
 import TableRow from './TableRow';
 import { useRows } from './hooks';
@@ -30,7 +30,7 @@ const Table = ({
     <div className={classNames('pgn__data-table-container', { 'is-loading': isLoading })}>
       {isLoading && (
         <div className="pgn__data-table-spinner">
-          <Spinner animation="border" variant="primary" />
+          <Spinner animation="border" screenreadertext="loading" />
         </div>
       )}
       <table {...getTableProps({
