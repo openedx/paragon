@@ -128,6 +128,7 @@
 .pgn__card-footer-text {
   color: $gray-700;
   order: 1;
+  font-size: $card-footer-text-font-size;
 
   &.vertical {
     margin-right: auto;
@@ -163,8 +164,6 @@
       border-top-left-radius: $card-image-border-radius;
       border-bottom-left-radius: $card-image-border-radius;
       border-top-right-radius: 0;
-      max-width: -moz-available;          /* WebKit-based browsers will ignore this. */
-      max-width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
       max-width: stretch;
       width: auto;
       object-fit: cover;
@@ -195,27 +194,17 @@
 }
 
 .pgn__card {
-  &:focus,
-  &.focus {
-    box-shadow: $level-1-box-shadow;
-    outline: none;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      border: $card-border-width solid $card-border-focus-color;
-      border-radius: $card-border-radius;
-    }
-  }
-
   &.clickable {
     &:hover {
       box-shadow: $level-1-box-shadow;
       cursor: pointer;
+    }
+
+    &:focus,
+    &.focus {
+      box-shadow: $level-1-box-shadow;
+      outline: none;
+      border-color: $card-border-focus-color;
     }
   }
 

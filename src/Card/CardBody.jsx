@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const CardBody = ({ className, children }) => (
-  <div className={classNames('pgn__card-body', className)}>
+const CardBody = React.forwardRef(({ className, children }, ref) => (
+  <div className={classNames('pgn__card-body', className)} ref={ref}>
     {children}
   </div>
-);
+));
 
 CardBody.propTypes = {
   /** Specifies the content of the component. */

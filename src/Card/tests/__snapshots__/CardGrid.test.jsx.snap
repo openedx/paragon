@@ -18,7 +18,6 @@ exports[`<CardGrid /> Controlled Rendering renders with controlled columnSizes 1
           className="pgn__card-wrapper-image-cap vertical"
         >
           <img
-            alt="Card background"
             className="pgn__card-image-cap"
             src="http://fake.image"
           />
@@ -72,7 +71,6 @@ exports[`<CardGrid /> Uncontrolled Rendering renders default columnSizes 1`] = `
           className="pgn__card-wrapper-image-cap vertical"
         >
           <img
-            alt="Card background"
             className="pgn__card-image-cap"
             src="http://fake.image"
           />

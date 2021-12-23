@@ -17,7 +17,6 @@ exports[`<CardImageCap /> renders with scr prop in horizontal orientation 1`] = 
   className="pgn__card-wrapper-image-cap horizontal"
 >
   <img
-    alt="Card background"
     className="pgn__card-image-cap"
     src="http://fake.image"
   />
@@ -29,12 +28,10 @@ exports[`<CardImageCap /> renders with src and logoSrc prop in horizontal orient
   className="pgn__card-wrapper-image-cap horizontal"
 >
   <img
-    alt="Card background"
     className="pgn__card-image-cap"
     src="http://fake.image"
   />
   <img
-    alt="Card logo"
     className="pgn__card-logo-cap"
     src="http://fake.image"
   />
@@ -46,7 +43,6 @@ exports[`<CardImageCap /> renders with src, logoSrc and logoAlt props 1`] = `
   className="pgn__card-wrapper-image-cap vertical"
 >
   <img
-    alt="Card background"
     className="pgn__card-image-cap"
     src="http://fake.image"
   />

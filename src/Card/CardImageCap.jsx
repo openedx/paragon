@@ -38,8 +38,8 @@ CardImageCap.defaultProps = {
   src: undefined,
   logoSrc: undefined,
   className: undefined,
-  srcAlt: 'Card background',
-  logoAlt: 'Card logo',
+  srcAlt: undefined,
+  logoAlt: undefined,
 };
 
 export default CardImageCap;

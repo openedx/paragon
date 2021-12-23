@@ -13,7 +13,7 @@ const CardFooter = React.forwardRef(({
   const { orientation: cardOrientation } = useContext(CardContext);
   const footerOrientation = orientation || cardOrientation;
   const wrapperClassName = `pgn__card-footer ${footerOrientation}${isStacked ? '-stacked' : ''}`;
-  const textElementClassName = `pgn__card-footer-text ${footerOrientation}${isStacked ? '-stacked' : ''} x-small`;
+  const textElementClassName = `pgn__card-footer-text ${footerOrientation}${isStacked ? '-stacked' : ''}`;
 
   return (
     <div className={classNames(className, wrapperClassName)} ref={ref}>
@@ -37,7 +37,7 @@ CardFooter.propTypes = {
 };
 
 CardFooter.defaultProps = {
-  className: null,
+  className: undefined,
   textElement: undefined,
   isStacked: false,
   orientation: undefined,
