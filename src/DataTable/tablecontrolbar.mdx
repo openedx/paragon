@@ -16,13 +16,12 @@ designStatus: 'Done'
 devStatus: 'In progress'
 ---
 
-
-<Link to="/components/datatable/">Main DataTable page</Link>
-
 The `TableControlBar` component is meant to be rendered within a `DataTableContext` (provided by `DataTable` here). The context provides necessary information
 to the control bar, such as the filters and filter state, the selection state of the table, as well as any bulk actions.
 
 It always shows the `SmartStatus` component. If applicable, it displays the `DropdownFilters` component, the `BulkActions` component.
+
+### Basic usage
 
 ```jsx live
 <DataTable
@@ -151,8 +150,6 @@ It always shows the `SmartStatus` component. If applicable, it displays the `Dro
   <TableControlBar />
 </DataTable>
 ```
-
-<PropsTable displayName="TableControlBar" />
 
 ## TableControlBar Subcomponents
 These components are used by the `TableControlBar` but can also be used individually as children of `DataTable`.

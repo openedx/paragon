@@ -3,43 +3,6 @@ import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import classNames from 'classnames';
 
-const propTypes = {
-  children: PropTypes.element,
-  enterDuration: PropTypes.number,
-  exitDuration: PropTypes.number,
-  className: PropTypes.string,
-  onChildEnter: PropTypes.func,
-  onChildEntering: PropTypes.func,
-  onChildEntered: PropTypes.func,
-  onChildExit: PropTypes.func,
-  onChildExiting: PropTypes.func,
-  onChildExited: PropTypes.func,
-  /* eslint-disable react/forbid-prop-types */
-  transitionStyles: PropTypes.shape({
-    entering: PropTypes.object,
-    entered: PropTypes.object,
-    exiting: PropTypes.object,
-    exited: PropTypes.object,
-  /* eslint-enable react/forbid-prop-types */
-  }),
-  transitionClassNames: PropTypes.string,
-};
-
-const defaultProps = {
-  children: undefined,
-  enterDuration: 300,
-  exitDuration: 300,
-  className: undefined,
-  onChildEnter: undefined,
-  onChildEntering: undefined,
-  onChildEntered: undefined,
-  onChildExit: undefined,
-  onChildExiting: undefined,
-  onChildExited: undefined,
-  transitionStyles: {},
-  transitionClassNames: 'pgn__transition-replace',
-};
-
 class TransitionReplace extends React.Component {
   constructor(props) {
     super(props);
@@ -169,7 +132,59 @@ class TransitionReplace extends React.Component {
   }
 }
 
-TransitionReplace.propTypes = propTypes;
-TransitionReplace.defaultProps = defaultProps;
+TransitionReplace.propTypes = {
+  /** Specifies an additional class for the base element */
+  children: PropTypes.element,
+  /** Duration of the element appearance transition. */
+  enterDuration: PropTypes.number,
+  /** Duration of the element dismiss transition. */
+  exitDuration: PropTypes.number,
+  /** Specifies class name to append to the base element. */
+  className: PropTypes.string,
+  /** A `Transition` callback fired immediately after the `enter` or `appear` class is applied. */
+  onChildEnter: PropTypes.func,
+  /** A `Transition` callback fired immediately after the `enter-active` or `appear-active` class is applied. */
+  onChildEntering: PropTypes.func,
+  /**
+   * A `Transition` callback fired immediately after the `enter` or
+   * `appear` classes are removed and the done class is added to the DOM node.
+   */
+  onChildEntered: PropTypes.func,
+  /** A `Transition` callback fired immediately after the `exit` class is applied. */
+  onChildExit: PropTypes.func,
+  /** A `Transition` callback fired immediately after the `exit-active` is applied. */
+  onChildExiting: PropTypes.func,
+  /**
+   * A `Transition` callback fired immediately after the `exit` classes
+   * are removed and the exit-done class is added to the DOM node.
+   */
+  onChildExited: PropTypes.func,
+  /** An object that specifies transition styles. */
+  /* eslint-disable react/forbid-prop-types */
+  transitionStyles: PropTypes.shape({
+    entering: PropTypes.object,
+    entered: PropTypes.object,
+    exiting: PropTypes.object,
+    exited: PropTypes.object,
+    /* eslint-enable react/forbid-prop-types */
+  }),
+  /** Specifies class name to append to the `Transition`. */
+  transitionClassNames: PropTypes.string,
+};
+
+TransitionReplace.defaultProps = {
+  children: undefined,
+  enterDuration: 300,
+  exitDuration: 300,
+  className: undefined,
+  onChildEnter: undefined,
+  onChildEntering: undefined,
+  onChildEntered: undefined,
+  onChildExit: undefined,
+  onChildExiting: undefined,
+  onChildExited: undefined,
+  transitionStyles: {},
+  transitionClassNames: 'pgn__transition-replace',
+};
 
 export default TransitionReplace;

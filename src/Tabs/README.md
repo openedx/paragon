@@ -10,14 +10,14 @@ notes: |
   TODO: Remove subcomponent of deprecated implementation soon
 ---
 
-<p className="lead">
+<p>
   This is a pass through component from React-Bootstrap.<br/>
   <a href="https://react-bootstrap.github.io/components/cards/" target="_blank" rel="noopener noreferrer">
     See React-Bootstrap for documentation.
   </a>
 </p>
 
-### Uncontrolled Usage
+### Uncontrolled usage
 
 ```jsx live
 <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
@@ -33,7 +33,7 @@ notes: |
 </Tabs>
 ```
 
-### Controlled Usage
+### Controlled usage
 
 ```jsx live
 () => {
@@ -59,7 +59,7 @@ notes: |
 }
 ```
 
-### Button Group Usage
+### Button group usage
 
 ```jsx live
 <Tabs
@@ -79,7 +79,7 @@ notes: |
 </Tabs>
 ```
 
-### Pills Usage
+### Pills usage
 
 ```jsx live
 <Tabs
@@ -105,7 +105,7 @@ notes: |
 
 <br/>
 
-### Basic Usage
+### Basic usage
 
 ```jsx live
 <Tabs.Deprecated

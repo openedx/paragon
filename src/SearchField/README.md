@@ -17,6 +17,8 @@ devStatus: 'Done'
 notes:
 ---
 
+Search allows users to quickly find content. The ``Search field`` is made up of the ``Text field`` component and an optional ``Button`` component.
+
 ### Basic Usage
 
 ```jsx live
@@ -25,7 +27,7 @@ notes:
 />
 ```
 
-### with an initial value
+### With an initial value
 
 ```jsx live
 <SearchField
@@ -34,7 +36,7 @@ notes:
 />
 ```
 
-### with a placeholder
+### With a placeholder
 
 ```jsx live
 <SearchField
@@ -43,7 +45,7 @@ notes:
 />
 ```
 
-### with callbacks
+### With callbacks
 
 ```jsx live
 <SearchField
@@ -55,7 +57,7 @@ notes:
 />
 ```
 
-### with a custom label
+### With a custom label
 
 ```jsx live
 <SearchField
@@ -64,7 +66,7 @@ notes:
 />
 ```
 
-### with custom screenreader text
+### With custom screenreader text
 
 ```jsx live
 <SearchField
@@ -90,7 +92,7 @@ notes:
 
 For needs that deviate from the basic usage above, use `<SearchField.Advanced />`. The `children` elements must contain the `SearchField.Label` and `SearchField.Input` components at a minimum.
 
-### with a custom label
+### With a custom label
 
 ```jsx live
 <SearchField.Advanced
@@ -103,7 +105,7 @@ For needs that deviate from the basic usage above, use `<SearchField.Advanced />
 </SearchField.Advanced>
 ```
 
-### with an initial value
+### With an initial value
 
 ```jsx live
 <SearchField.Advanced
@@ -117,7 +119,7 @@ For needs that deviate from the basic usage above, use `<SearchField.Advanced />
 </SearchField.Advanced>
 ```
 
-### with a placeholder
+### With a placeholder
 
 ```jsx live
 <SearchField.Advanced
@@ -130,7 +132,7 @@ For needs that deviate from the basic usage above, use `<SearchField.Advanced />
 </SearchField.Advanced>
 ```
 
-### with no clear button
+### With no clear button
 
 ```jsx live
 <SearchField.Advanced
@@ -142,7 +144,7 @@ For needs that deviate from the basic usage above, use `<SearchField.Advanced />
 </SearchField.Advanced>
 ```
 
-### with no submit or clear buttons
+### With no submit or clear buttons
 
 ```jsx live
 <SearchField.Advanced

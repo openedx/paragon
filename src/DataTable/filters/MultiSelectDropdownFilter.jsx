@@ -41,13 +41,20 @@ function MultiSelectDropdownFilter({
   );
 }
 
-MultiSelectDropdownFilter.defaultPropTypes = {
-  column: {
-    filterValue: [],
-  },
-};
-
 MultiSelectDropdownFilter.propTypes = {
+  /**
+   * Specifies a column object.
+   *
+   * `setFilter`: Function to set the filter value.
+   *
+   * `Header`: Column header used for labels and placeholders.
+   *
+   * `filterChoices`: Specifies array of choices.
+   *
+   * `getHeaderProps`: Generates a key unique to the column being filtered.
+   *
+   * `filterValue`: Value for the filter input.
+   */
   column: PropTypes.shape({
     /** Function to set the filter value */
     setFilter: PropTypes.func.isRequired,

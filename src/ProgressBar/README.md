@@ -10,7 +10,9 @@ notes: |
 
 ---
 
-<p className="lead">
+A bar to indicate the completed progress of a task.
+
+<p>
   This is a pass through component from React-Bootstrap.<br/>
   <a href="https://react-bootstrap.github.io/components/progress" target="_blank" rel="noopener noreferrer">
     See React-Bootstrap for documentation.

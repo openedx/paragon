@@ -12,9 +12,12 @@ const Stepper = ({ children, activeKey }) => (
 );
 
 Stepper.propTypes = {
+  /**
+   * Specifies the content of the `Stepper`.
+   */
   children: PropTypes.node.isRequired,
   /**
-   * The eventKey of the step to display
+   * The eventKey of the step to display.
    */
   activeKey: PropTypes.string.isRequired,
 };

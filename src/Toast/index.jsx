@@ -61,28 +61,34 @@ Toast.defaultProps = {
 };
 
 Toast.propTypes = {
-  /** Fields used to build optional action button.
-   * "label" is a string rendered inside the button.
-   * "href" is a link that will render the action button as an anchor tag.
-   * "onClick" is a function that is called when the button is clicked. */
+  /** A string or an element that is rendered inside the main body of the `Toast`. */
+  children: PropTypes.string.isRequired,
+  /**
+   * A function that is called on close. It can be used to perform
+   * actions upon closing of the `Toast`, such as setting the "show"
+   * element to false.
+   * */
+  onClose: PropTypes.func.isRequired,
+  /** Boolean used to control whether the `Toast` shows */
+  show: PropTypes.bool.isRequired,
+  /**
+   * Fields used to build optional action button.
+   * `label` is a string rendered inside the button.
+   * `href` is a link that will render the action button as an anchor tag.
+   * `onClick` is a function that is called when the button is clicked.
+   */
   action: PropTypes.shape({
     label: PropTypes.string.isRequired,
     href: PropTypes.string,
     onClick: PropTypes.func,
   }),
-  /** A string or an element that is rendered inside the main body of the Toast. */
-  children: PropTypes.string.isRequired,
-  /** Alt text for the Toast's dismiss button. The recommended use is an i18n value.
-   * The default is an English string. */
+  /**
+   * Alt text for the `Toast`'s dismiss button. The recommended use is an i18n value.
+   * The default is an English string.
+   */
   closeLabel: PropTypes.string,
-  /** Time in milliseconds for which the Toast will display. */
+  /** Time in milliseconds for which the `Toast` will display. */
   delay: PropTypes.number,
-  /** A function that is called on close. It can be used to perform
-   * actions upon closing of the Toast, such as setting the "show"
-   * element to false. */
-  onClose: PropTypes.func.isRequired,
-  /** Boolean used to control whether the Toast shows */
-  show: PropTypes.bool.isRequired,
 };
 
 export default Toast;

@@ -11,7 +11,9 @@ devStatus: 'Done'
 notes: ''
 ---
 
-### basic usage
+The stateful button is a button used to display an actionable icon.
+
+### Basic usage
 
 ```jsx live
 () => {
@@ -36,7 +38,7 @@ notes: ''
 };
 ```
 
-### custom icons and disable states
+### Custom icons and disable states
 
 ```jsx live
 () => {
@@ -68,7 +70,7 @@ notes: ''
 };
 ```
 
-### custom states with paragon icons
+### Custom states with paragon icons
 
 ```jsx live
 () => {

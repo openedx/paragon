@@ -50,7 +50,9 @@ export function StepperContextProvider({ children, activeKey }) {
 }
 
 StepperContextProvider.propTypes = {
+  /** Specifies the content of the `ContextProvider`. */
   children: PropTypes.node.isRequired,
+  /** Specifies the current step of the `Stepper`. */
   activeKey: PropTypes.node.isRequired,
 };
 
