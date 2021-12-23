@@ -23,7 +23,7 @@ const DataViewToggle = () => {
     }
   };
   return (
-    <div className="pgn__data-table-dataview-toggle">
+    <div role="group" className="pgn__data-table-dataview-toggle">
       <IconButtonToggle
         activeValue={activeValue}
         onChange={handleOnChange}
