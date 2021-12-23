@@ -23,7 +23,8 @@ Shadow is shown on bottom if you scroll downwards
 If you don't specify height you will get a default height per the Scrollable component (subject to change)
 </span>
 
-#### Demo of scrollable with provided height
+### Basic usage of scrollable with provided height
+
 ```jsx live
 <Scrollable style={{'height': '40vh'}}>
   <p>Do not use overflow in wrapped component, Scrollable provides overflow:auto around wrapped element</p>
@@ -66,49 +67,48 @@ If you don't specify height you will get a default height per the Scrollable com
 </Scrollable>
 ```
 
+### With padding used by consumer
 
-
-#### With padding used by consumer
 ```jsx live
 <Scrollable style={{'height': '40vh'}}>
-<div className="p-4">
-  <p>Do not use overflow in wrapped component, Scrollable provides overflow:auto around wrapped element</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-  <p>A very long scrollable Content.</p>
-</div>
+  <div className="p-4">
+    <p>Do not use overflow in wrapped component, Scrollable provides overflow:auto around wrapped element</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+    <p>A very long scrollable Content.</p>
+  </div>
 </Scrollable>
 ```

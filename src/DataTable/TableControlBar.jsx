@@ -36,12 +36,13 @@ const TableControlBar = ({
   );
 };
 
-TableControlBar.defaultProps = {
-  className: null,
+TableControlBar.propTypes = {
+  /** Specifies class name to append to the base element */
+  className: PropTypes.string,
 };
 
-TableControlBar.propTypes = {
-  className: PropTypes.string,
+TableControlBar.defaultProps = {
+  className: null,
 };
 
 export default TableControlBar;

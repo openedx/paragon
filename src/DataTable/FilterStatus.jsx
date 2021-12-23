@@ -30,11 +30,17 @@ const FilterStatus = ({
 };
 
 FilterStatus.defaultProps = {
+  /** Specifies class name to append to the base element. */
   className: null,
+  /** Specifies class name to append to the button. */
   buttonClassName: 'pgn__smart-status-button',
+  /** The visual style of the `FilterStatus`. */
   variant: 'link',
+  /** The size of the `FilterStatus`. */
   size: 'inline',
+  /** A text that appears on the `Clear filters` button. */
   clearFiltersText: 'Clear Filters',
+  /** Whether to display applied filters. */
   showFilteredFields: true,
 };
 

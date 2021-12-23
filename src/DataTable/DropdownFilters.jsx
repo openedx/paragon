@@ -42,8 +42,4 @@ const DropdownFilters = () => {
   );
 };
 
-DropdownFilters.defaultProps = {
-  numBreakoutFilters: 1,
-};
-
 export default DropdownFilters;

@@ -20,9 +20,15 @@ const StepperActionRow = ({
 };
 
 StepperActionRow.propTypes = {
-  as: PropTypes.elementType,
+  /** Specifies the content of the `ActionRow`. */
   children: PropTypes.node.isRequired,
+  /**
+   * An identifier of the `ActionRow`. When `activeKey` on the
+   * `Stepper` equals to the `eventKey`, the `ActionRow` will be displayed.
+   */
   eventKey: PropTypes.string.isRequired,
+  /** Specifies the base element */
+  as: PropTypes.elementType,
 };
 
 StepperActionRow.defaultProps = {

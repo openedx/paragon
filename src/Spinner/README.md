@@ -13,6 +13,8 @@ notes: |
 
 ---
 
+A spinning animation that indicates loading.
+
 <p>
   This is a pass through component from React-Bootstrap.<br/>
   <a href="https://react-bootstrap.github.io/components/spinners" target="_blank" rel="noopener noreferrer">

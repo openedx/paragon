@@ -43,11 +43,20 @@ const StepperHeaderStep = ({
 };
 
 StepperHeaderStep.propTypes = {
+  /**
+   * An identifier of the `HeaderStep`. When `activeKey` on the
+   * `Stepper` equals to the `eventKey`, the `HeaderStep` will be displayed.
+   */
   eventKey: PropTypes.string.isRequired,
+  /** A text of the `HeaderStep`. */
   title: PropTypes.string.isRequired,
+  /** Specifies that this `HeaderStep` is active. */
   isActive: PropTypes.bool,
+  /** Informs user if this `Step` has errors. */
   hasError: PropTypes.bool,
+  /** A text under the `title`. */
   description: PropTypes.string,
+  /** A number that will be display in the icon of the `HeaderStep`.  */
   index: PropTypes.number,
 };
 

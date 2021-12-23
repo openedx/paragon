@@ -41,19 +41,22 @@ function CheckboxFilter({
   );
 }
 
-CheckboxFilter.defaultPropTypes = {
-  column: {
-    filterValue: [],
-  },
-};
-
 CheckboxFilter.propTypes = {
+  /**
+   * Specifies a column object.
+   *
+   * `setFilter`: Function to set the filter value.
+   *
+   * `Header`: Column header used for labels and placeholders.
+   *
+   * `filterChoices`: Specifies array of choices.
+   *
+   * `getHeaderProps`: Generates a key unique to the column being filtered.
+   *
+   * `filterValue`: Value for the filter input.
+   */
   column: PropTypes.shape({
-    /** Value for the filter input */
-    filterValue: PropTypes.arrayOf(PropTypes.any),
-    /** Function to set the filter value */
     setFilter: PropTypes.func.isRequired,
-    /** Column header used for labels and placeholders */
     Header: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
     filterChoices: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string.isRequired,
@@ -61,6 +64,7 @@ CheckboxFilter.propTypes = {
       number: PropTypes.number,
     })).isRequired,
     getHeaderProps: PropTypes.func.isRequired,
+    filterValue: PropTypes.arrayOf(PropTypes.any),
   }).isRequired,
 };
 

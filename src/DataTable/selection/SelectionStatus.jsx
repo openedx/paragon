@@ -18,14 +18,16 @@ const SelectionStatus = ({ className, clearSelectionText }) => {
   return <BaseSelectionStatus {...selectionStatusProps} />;
 };
 
+SelectionStatus.propTypes = {
+  /** A class name to append to the base element */
+  className: PropTypes.string,
+  /** A text that appears on the `Clear selection` button */
+  clearSelectionText: PropTypes.string,
+};
+
 SelectionStatus.defaultProps = {
   className: undefined,
   clearSelectionText: CLEAR_SELECTION_TEXT,
-};
-
-SelectionStatus.propTypes = {
-  className: PropTypes.string,
-  clearSelectionText: PropTypes.string,
 };
 
 export default SelectionStatus;
