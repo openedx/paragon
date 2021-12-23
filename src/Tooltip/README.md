@@ -1,6 +1,8 @@
 ---
 title: 'Tooltip'
 type: 'component'
+components:
+- Tooltip
 categories:
 - Overlays
 status: 'Stable'
@@ -10,7 +12,9 @@ notes: |
 
 ---
 
-##### Basic Usage
+`Tooltips` display informative text when users hover over, focus on, or tap an element.
+
+### Basic Usage
 
 ```jsx live
 <>
@@ -30,7 +34,7 @@ notes: |
 </>
 ```
 
-##### Light version
+### Light version
 
 ```jsx live
 <div className="bg-dark-700 p-4">

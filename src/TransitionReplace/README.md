@@ -11,11 +11,11 @@ devStatus: 'Done'
 notes: ''
 ---
 
-Manages a transition when replacing content. By default this component will transition the height and do a cross-fade. The transition can be customized.
+Manages a transition when replacing content. By default, this component will transition the height and do a cross-fade. The transition can be customized.
 
 TransitionReplace expects only one child at any time. Swap content inside the component (usually based on some state).
 
-### Usage
+### Basic usage
 
 ```jsx live
 () => {
