@@ -275,20 +275,27 @@ To enable proper selection behavior with backend pagination (i.e., when ``isSele
         },
       ]}
       bulkActions={[
-        {
-          buttonText: 'Download CSV',
-          handleClick: (data) => console.log('Download CSV', data),
-        },
-        // custom button function that utilizes clearSelection function provided by the table instance
-        ({tableInstance})=>{
-          return {
-            buttonText: `Clear Selection`,
-            handleClick: () => {
-              console.log('Clear selection');
-              tableInstance.clearSelection()
+        ({ as, selectedFlatRows }) => React.createElement(
+          as || Button,
+          {
+            key: 'Download CSV',
+            onClick: () => console.log('Download CSV', selectedFlatRows),
+            className: as ? '' : 'ml-2',
+          },
+          'Download CSV',
+        ),
+        ({ as, selectedFlatRows, tableInstance }) => React.createElement(
+          as || Button,
+          {
+            key: 'Clear Selection',
+            onClick: () => {
+              console.log('Clear Selection');
+              tableInstance.clearSelection();
             },
-          }
-        },
+            className: as ? '' : 'ml-2',
+          },
+          'Clear Selection',
+        )
       ]}
     />
   );
@@ -638,102 +645,137 @@ You can pass a function to render custom components for bulk actions and table a
 
 
 ```jsx live
-  <DataTable
-    isSelectable
-    itemCount={7}
-    tableActions={[
+() => {
+  const TableAction = (props) => React.createElement(
+    props.as || Button,
+    {
+      key: 'Table Action',
+      onClick: () => console.log('Table Action', props.selectedFlatRows),
+      className: props.as ? "" : "ml-2",
+    },
+    'Table Action'
+  );
+  
+  const AssignAction = (props) => React.createElement(
+    // Here is access to the selectedFlatRows, isEntireTableSelected, tableInstance
+    // Pass `as` like in the example bellow for the proper display in the toggled variant
+    props.as || Button,
+    {
+      key: 'Assign',
+      onClick: () => console.log('Assign', props.selectedFlatRows),
+      className: props.as ? "" : "ml-2",
+    },
+    'Assign'
+  );
+
+  const EnrollAction = (props) => React.createElement(
+    props.as || Button,
+    {
+      key: 'Enroll',
+      variant: 'danger',
+      onClick: () => console.log('Enroll', props.selectedFlatRows),
+      className: props.as ? '' : 'ml-2',
+    },
+    'Enroll'
+  );
+  
+  return (
+    <DataTable
+      isSelectable
+      itemCount={7}
+      tableActions={[
+        TableAction,
+      ]}
+      bulkActions={[
+        AssignAction,
+        EnrollAction,
+        ({ as, selectedFlatRows }) => React.createElement(
+          as || Button,
+          {
+            key: 'Extra action 1',
+            onClick: () => console.log('Extra action 1', selectedFlatRows),
+            className: as ? "" : "ml-2",
+          },
+          'Extra action 1'
+        ),
+        ({ as, selectedFlatRows }) => React.createElement(
+          as || Button,
+          {
+            key: 'Extra action 2',
+            onClick: () => console.log('Extra action 2', selectedFlatRows),
+            className: as ? "" : "ml-2",
+          },
+          'Extra action 2'
+        )
+      ]}
+      additionalColumns={[
         {
-          buttonText: 'Table Action',
-          handleClick: (data) => console.log('Table Action', data),
-        },
-    ]}
-    bulkActions={[
-        // Function defined button
-        ({selectedFlatRows})=>{
-          return {
-            buttonText: `Enroll (${selectedFlatRows.length})`,
-            handleClick: () => console.log('Enroll', selectedFlatRows),
-          }
+          id: 'action',
+          Header: 'Action',
+          Cell: ({ row }) => <Button variant="link" onClick={() => console.log(`Assigning ${row.values.name}`)}>Assign</Button>,
+        }
+      ]}
+      data={[
+        {
+          name: 'Lil Bub',
+          color: 'brown tabby',
+          famous_for: 'weird tongue',
         },
         {
-          buttonText: 'Assign',
-          handleClick: (data) => console.log('Assign', data),
+          name: 'Grumpy Cat',
+          color: 'siamese',
+          famous_for: 'serving moods',
         },
         {
-          buttonText: 'Extra action 1',
-          handleClick: (data) => console.log('Extra action 1', data),
+          name: 'Smoothie',
+          color: 'orange tabby',
+          famous_for: 'modeling',
         },
         {
-          buttonText: 'Extra action 2',
-          handleClick: (data) => console.log('Extra action 2', data),
+          name: 'Maru',
+          color: 'brown tabby',
+          famous_for: 'being a lovable oaf',
+        },
+        {
+          name: 'Keyboard Cat',
+          color: 'orange tabby',
+          famous_for: 'piano virtuoso',
+        },
+        {
+          name: 'Long Cat',
+          color: 'russian white',
+          famous_for:
+            'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+        },
+        {
+          name: 'Zeno',
+          color: 'brown tabby',
+          famous_for: 'getting halfway there'
         },
       ]}
-    additionalColumns={[
-      {
-        id: 'action',
-        Header: 'Action',
-        Cell: ({ row }) => <Button variant="link" onClick={() => console.log(`Assigning ${row.values.name}`)}>Assign</Button>,
-      }
-    ]}
-    data={[
-      {
-        name: 'Lil Bub',
-        color: 'brown tabby',
-        famous_for: 'weird tongue',
-      },
-      {
-        name: 'Grumpy Cat',
-        color: 'siamese',
-        famous_for: 'serving moods',
-      },
-      {
-        name: 'Smoothie',
-        color: 'orange tabby',
-        famous_for: 'modeling',
-      },
-      {
-        name: 'Maru',
-        color: 'brown tabby',
-        famous_for: 'being a lovable oaf',
-      },
-      {
-        name: 'Keyboard Cat',
-        color: 'orange tabby',
-        famous_for: 'piano virtuoso',
-      },
-      {
-        name: 'Long Cat',
-        color: 'russian white',
-        famous_for:
-          'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
-      },
-      {
-        name: 'Zeno',
-        color: 'brown tabby',
-        famous_for: 'getting halfway there'
-      },
-    ]}
-    columns={[
-      {
-        Header: 'Name',
-        accessor: 'name',
-
-      },
-      {
-        Header: 'Famous For',
-        accessor: 'famous_for',
-      },
-      {
-        Header: 'Coat Color',
-        accessor: 'color',
-      },
-    ]}
-  >
-    <DataTable.TableControlBar />
-    <DataTable.Table />
-    <DataTable.EmptyTable content="No results found" />
-    <DataTable.TableFooter />
-  </DataTable>
+      columns={[
+        {
+          Header: 'Name',
+          accessor: 'name',
+        },
+        {
+          Header: 'Famous For',
+          accessor: 'famous_for',
+        },
+        {
+          Header: 'Coat Color',
+          accessor: 'color',
+        },
+      ]}
+    >
+      <DataTable.TableControlBar />
+      <DataTable.Table />
+      <DataTable.EmptyTable content="No results found" />
+      <DataTable.TableFooter />
+    </DataTable>
+  )
+}
+  
 ```
 
 #### Actions with Data view toggle enabled
@@ -1049,10 +1091,14 @@ a responsive grid of cards.
     },
   ]}
   bulkActions={[
-    {
-      buttonText: 'Download CSV',
-      handleClick: (data) => console.log('Download CSV ', data),
-    },
+    ({ as, selectedFlatRows }) => React.createElement(
+      as || Button,
+      {
+        onClick: () => console.log('Download CSV', selectedFlatRows),
+        className: as ? "" : "ml-2",
+      },
+      'Download CSV'
+    )
   ]}
 >
   <TableControlBar />

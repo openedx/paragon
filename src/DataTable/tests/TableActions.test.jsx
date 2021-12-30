@@ -11,59 +11,61 @@ import DataTableContext from '../DataTableContext';
 jest.mock('../../hooks/useWindowSize');
 useWindowSize.mockReturnValue({ width: 800 });
 
-const firstAction = {
-  buttonText: 'Primary action',
-  handleClick: () => {},
-  className: 'class1',
-};
+const firstAction = ({ as }) => React.createElement(
+  as || Button,
+  {
+    key: 'First Action',
+    onClick: () => {},
+    className: 'class1',
+  },
+  'First Action',
+);
 
-const secondAction = {
-  buttonText: 'Secondary action',
-  handleClick: () => {},
-  className: 'class2',
-};
+const secondAction = ({ as }) => React.createElement(
+  as || Button,
+  {
+    key: 'Second Action',
+    onClick: () => {},
+    className: 'class2',
+    variant: 'brand',
+  },
+  'Second Action',
+);
+
+const selectedFlatRows = [{ id: 1 }, { id: 2 }];
 
 const twoActions = [
   firstAction,
   secondAction,
 ];
 
-const buttonFunction = () => <Button>foo</Button>;
-
-const objectFunction = (data) => ({
-  buttonText: `${data !== undefined}`,
-  handleClick: () => {},
-});
-
 const instance = {
-  randomInstanceVar: 'foo',
-  tableActions: [
-    ...twoActions,
-    {
-      buttonText: 'Extra1',
-      handleClick: () => {},
-      className: 'extra3',
-    },
-    {
-      buttonText: 'Extra2',
-      handleClick: () => {},
-      className: 'extra2',
-    },
-    {
-      buttonText: 'Extra3',
-      handleClick: () => {},
-      className: 'disabledTest',
-      disabled: true,
-    },
-  ],
+  selectedFlatRows,
   controlledTableSelections: [
     {
-      isEntireTableSelected: false,
       selectedRows: [],
+      isEntireTableSelected: false,
     },
     jest.fn(),
   ],
-  rows: [],
+  tableActions: [
+    ...twoActions,
+    ({ as }) => React.createElement(
+      as || Button,
+      { key: 'action1' },
+      'Extra 1',
+    ),
+    ({ as }) => React.createElement(
+      as || Button,
+      { key: 'action2' },
+      'Extra 2',
+    ),
+    ({ as }) => React.createElement(
+      as || Button,
+      { key: 'action3' },
+      'Extra 3',
+    ),
+  ],
 };
 
 // eslint-disable-next-line react/prop-types
@@ -72,35 +74,50 @@ const TableActionsWrapper = ({ value = instance }) => (
 
 describe('<TableActions />', () => {
   describe('with one action', () => {
-    it('displays the primary button as an outline button', () => {
-      const wrapper = mount(<TableActionsWrapper value={{ ...instance, tableActions: [firstAction] }} />);
-      const button = wrapper.find(Button);
-      expect(button.length).toEqual(1);
-      expect(button.props().variant).toEqual('outline-primary');
-    });
     it('displays the primary action with the user\'s variant', () => {
       const variant = 'my-variant';
+      const action = ({ as }) => React.createElement(
+        as || Button,
+        { variant, key: 'action1' },
+        'Extra 1',
+      );
       const wrapper = mount(
-        <TableActionsWrapper value={{ ...instance, tableActions: [{ ...firstAction, variant }] }} />,
+        <TableActionsWrapper value={{ ...instance, tableActions: [action] }} />,
       );
       const button = wrapper.find(Button);
       expect(button.props().variant).toEqual(variant);
     });
     it('passes button classnames', () => {
-      const wrapper = mount(<TableActionsWrapper value={{ ...instance, tableActions: [firstAction] }} />);
+      const customClass = 'class1';
+      const action = ({ as }) => React.createElement(
+        as || Button,
+        { className: customClass, key: 'action1' },
+        'Extra 1',
+      );
+      const wrapper = mount(<TableActionsWrapper value={{ ...instance, tableActions: [action] }} />);
       const button = wrapper.find(Button);
-      expect(button.props().className).toContain(firstAction.className);
+      expect(button.props().className).toContain(customClass);
     });
     it('disables the button', () => {
+      const action = ({ as }) => React.createElement(
+        as || Button,
+        { disabled: true, key: 'action1' },
+        'Extra 1',
+      );
       const wrapper = mount(
-        <TableActionsWrapper value={{ ...instance, tableActions: [{ ...firstAction, disabled: true }] }} />,
+        <TableActionsWrapper value={{ ...instance, tableActions: [action] }} />,
       );
       const button = wrapper.find(Button);
       expect(button.props().disabled).toEqual(true);
     });
     it('performs the button action on click', () => {
       const onClickSpy = jest.fn();
-      const tableInstance = { ...instance, tableActions: [{ ...firstAction, handleClick: onClickSpy }] };
+      const action = ({ as }) => React.createElement(
+        as || Button,
+        { onClick: onClickSpy, key: 'action1' },
+        'Extra 1',
+      );
+      const tableInstance = { ...instance, tableActions: [action] };
       const wrapper = mount(
         <TableActionsWrapper value={tableInstance} />,
       );
@@ -108,10 +125,6 @@ describe('<TableActions />', () => {
       expect(button.length).toEqual(1);
       button.simulate('click');
       expect(onClickSpy).toHaveBeenCalledTimes(1);
-      expect(onClickSpy).toHaveBeenCalledWith({
-        selectedRows: [],
-        tableInstance: expect.any(Object),
-      });
     });
   });
   describe('with two actions', () => {
@@ -119,47 +132,44 @@ describe('<TableActions />', () => {
     it('displays the user\'s first button as an brand button', () => {
       const buttons = wrapper.find(Button);
       expect(buttons.length).toEqual(2);
-      expect(buttons.get(1).props.variant).toEqual('brand');
+      expect(buttons.get(0).props.variant).toEqual('brand');
     });
     it('displays the user\'s second button as an outline button', () => {
       const buttons = wrapper.find(Button);
-      expect(buttons.get(0).props.variant).toEqual('outline-primary');
+      expect(buttons.get(1).props.variant).toEqual('primary');
     });
     it('reverses the button order so that the primary button is on the right', () => {
       const buttons = wrapper.find(Button);
-      expect(buttons.at(0).text()).toEqual(twoActions[1].buttonText);
-      expect(buttons.at(1).text()).toEqual(twoActions[0].buttonText);
-    });
-    it('passes button classnames', () => {
-      const buttons = wrapper.find(Button);
-      expect(buttons.at(0).props().className).toContain(twoActions[1].className);
-      expect(buttons.at(1).props().className).toContain(twoActions[0].className);
+      expect(buttons.get(1).props.variant).toEqual('primary');
+      expect(buttons.get(0).props.variant).toEqual('brand');
     });
   });
   describe('two actions on click', () => {
     it('performs the primary button action on click', () => {
       const onClickSpy = jest.fn();
-      const tableInstance = { ...instance, tableActions: [{ ...firstAction, handleClick: onClickSpy }, secondAction] };
+      const action = ({ as }) => React.createElement(
+        as || Button,
+        { onClick: onClickSpy, key: 'action1' },
+        'Extra 1',
+      );
+      const tableInstance = { ...instance, tableActions: [action, secondAction] };
       const wrapper = mount(<TableActionsWrapper value={tableInstance} />);
       const button = wrapper.find(Button).at(1);
       button.simulate('click');
       expect(onClickSpy).toHaveBeenCalledTimes(1);
-      expect(onClickSpy).toHaveBeenCalledWith({
-        selectedRows: [],
-        tableInstance: expect.any(Object),
-      });
     });
     it('performs the second button action on click', () => {
       const onClickSpy = jest.fn();
-      const tableInstance = { ...instance, tableActions: [firstAction, { ...secondAction, handleClick: onClickSpy }] };
+      const action = ({ as }) => React.createElement(
+        as || Button,
+        { onClick: onClickSpy },
+        'Extra 1',
+      );
+      const tableInstance = { ...instance, tableActions: [firstAction, action] };
       const wrapper = mount(<TableActionsWrapper value={tableInstance} />);
       const button = wrapper.find(Button).at(0);
       button.simulate('click');
       expect(onClickSpy).toHaveBeenCalledTimes(1);
-      expect(onClickSpy).toHaveBeenCalledWith({
-        selectedRows: [],
-        tableInstance: expect.any(Object),
-      });
     });
   });
   describe('with more than two actions', () => {
@@ -167,12 +177,12 @@ describe('<TableActions />', () => {
       const wrapper = mount(<TableActionsWrapper />);
       const buttons = wrapper.find(Button);
       expect(buttons.length).toEqual(2);
-      expect(buttons.get(1).props.variant).toEqual('brand');
+      expect(buttons.get(1).props.variant).toEqual('primary');
     });
     it('displays the user\'s second button as an outline button', () => {
       const wrapper = mount(<TableActionsWrapper />);
       const buttons = wrapper.find(Button);
-      expect(buttons.get(0).props.variant).toEqual('outline-primary');
+      expect(buttons.get(0).props.variant).toEqual('brand');
     });
     describe('dropdown', () => {
       const onClickSpy = jest.fn();
@@ -182,10 +192,14 @@ describe('<TableActions />', () => {
       let wrapper;
       let dropdownButton;
       beforeEach(() => {
+        const action = ({ as }) => React.createElement(
+          as || Button,
+          { onClick: onClickSpy, className: itemClassName, key: 'action0' },
+          itemText,
+        );
         tableInstance = {
           ...instance,
-          // eslint-disable-next-line max-len
-          tableActions: [...instance.tableActions, { buttonText: itemText, handleClick: onClickSpy, className: itemClassName }],
+          tableActions: [...instance.tableActions, action],
         };
         wrapper = mount(
           <TableActionsWrapper value={tableInstance} />,
@@ -207,10 +221,6 @@ describe('<TableActions />', () => {
       it('performs actions when dropdown items are clicked', () => {
         wrapper.find(`a.${itemClassName}`).simulate('click');
         expect(onClickSpy).toHaveBeenCalledTimes(1);
-        expect(onClickSpy).toHaveBeenCalledWith({
-          selectedRows: [],
-          tableInstance: expect.any(Object),
-        });
       });
       it('displays the action text', () => {
         const item = wrapper.find(`a.${itemClassName}`);
@@ -220,26 +230,6 @@ describe('<TableActions />', () => {
         const item = wrapper.find(`a.${itemClassName}`);
         expect(item.length).toEqual(1);
       });
-      it('disables actions', () => {
-        // This should be the Dropdown.Item
-        const item = wrapper.find('.disabledTest').first();
-        expect(item.props().disabled).toEqual(true);
-      });
-    });
-  });
-  describe('with function', () => {
-    it('item is rendered and data passed', () => {
-      const wrapper = mount(<TableActionsWrapper value={{ ...instance, tableActions: [objectFunction] }} />);
-      const button = wrapper.find(Button);
-      expect(button.length).toEqual(1);
-      expect(button.text()).toEqual('true');
-    });
-    it(' and an object item is rendered and data passed', () => {
-      const wrapper = mount(
-        <TableActionsWrapper value={{ ...instance, tableActions: [firstAction, objectFunction] }} />,
-      );
-      const buttons = wrapper.find(Button);
-      expect(buttons.length).toEqual(2);
     });
   });
   describe('small screen', () => {
@@ -249,29 +239,19 @@ describe('<TableActions />', () => {
       const wrapper = mount(<TableActionsWrapper value={{ ...instance, tableActions: testActions }} />);
       const iconButton = wrapper.find(IconButton);
       expect(iconButton.length).toEqual(1);
-      expect(wrapper.text()).not.toContain(firstAction.buttonText);
+      const wrapperText = wrapper.text();
       const buttons = wrapper.find('button');
       expect(buttons.length).toEqual(1);
       const dropdownButton = buttons.at(0);
       dropdownButton.simulate('click');
       wrapper.update();
-      testActions.forEach((action) => {
-        expect(wrapper.text()).toContain(action.buttonText);
-      });
+      expect(wrapper.text()).not.toEqual(wrapperText);
     });
     it('renders the correct alt text for the dropdown', () => {
       useWindowSize.mockReturnValue({ width: 500 });
       const wrapper = mount(<TableActionsWrapper />);
       const dropdownToggle = wrapper.find('DropdownToggle');
       expect(dropdownToggle.props().alt).toEqual(SMALL_SCREEN_DROPDOWN_BUTTON_TEXT);
-    });
-  });
-  describe('with over ride function', () => {
-    it('renders button', () => {
-      const wrapper = mount(<TableActionsWrapper value={{ ...instance, tableActions: buttonFunction }} />);
-      const button = wrapper.find(Button);
-      expect(button.length).toEqual(1);
-      expect(button.text()).toEqual('foo');
     });
   });
 });

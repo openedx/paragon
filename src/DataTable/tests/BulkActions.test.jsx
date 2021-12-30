@@ -11,17 +11,27 @@ import DataTableContext from '../DataTableContext';
 jest.mock('../../hooks/useWindowSize');
 useWindowSize.mockReturnValue({ width: 800 });
 
-const firstAction = {
-  buttonText: 'Primary action',
-  handleClick: () => {},
-  className: 'class1',
-};
+const firstAction = ({ as }) => React.createElement(
+  as || Button,
+  {
+    key: 'First Action',
+    onClick: () => {},
+    className: 'class1',
+    variant: 'brand',
+  },
+  'First Action',
+);
 
-const secondAction = {
-  buttonText: 'Secondary action',
-  handleClick: () => {},
-  className: 'class2',
-};
+const secondAction = ({ as }) => React.createElement(
+  as || Button,
+  {
+    key: 'Second Action',
+    onClick: () => {},
+    className: 'class2',
+    variant: 'outline-primary',
+  },
+  'Second Action',
+);
 
 const selectedFlatRows = [{ id: 1 }, { id: 2 }];
 
@@ -30,12 +40,15 @@ const twoActions = [
   secondAction,
 ];
 
-const buttonFunction = (a) => <Button>{a.selectedFlatRows.length}</Button>;
-
-const objectFunction = (data) => ({
-  buttonText: `${data !== undefined}`,
-  handleClick: () => {},
-});
+const buttonFunction = ({ as, selectedFlatRows: selectedRows }) => React.createElement(
+  as || Button,
+  {
+    key: 'buttonFunction',
+    onClick: () => {},
+    className: 'class2',
+  },
+  selectedRows.length,
+);
 
 const instance = {
   selectedFlatRows,
@@ -48,22 +61,21 @@ const instance = {
   ],
   bulkActions: [
     ...twoActions,
-    {
-      buttonText: 'Extra1',
-      handleClick: () => {},
-      className: 'extra3',
-    },
-    {
-      buttonText: 'Extra2',
-      handleClick: () => {},
-      className: 'extra2',
-    },
-    {
-      buttonText: 'Extra3',
-      handleClick: () => {},
-      className: 'disabledTest',
-      disabled: true,
-    },
+    ({ as }) => React.createElement(
+      as || Button,
+      {},
+      'Extra 1',
+    ),
+    ({ as }) => React.createElement(
+      as || Button,
+      {},
+      'Extra 2',
+    ),
+    ({ as }) => React.createElement(
+      as || Button,
+      {},
+      'Extra 3',
+    ),
   ],
 };
 
@@ -73,46 +85,64 @@ const BulkActionsWrapper = ({ value = instance }) => (
 
 describe('<BulkActions />', () => {
   describe('with one action', () => {
-    it('displays the primary button as an outline button', () => {
+    it('displays the primary button as an brand button', () => {
       const wrapper = mount(<BulkActionsWrapper value={{ ...instance, bulkActions: [firstAction] }} />);
       const button = wrapper.find(Button);
       expect(button.length).toEqual(1);
-      expect(button.props().variant).toEqual('outline-primary');
+      expect(button.props().variant).toEqual('brand');
     });
     it('displays the primary action with the user\'s variant', () => {
       const variant = 'my-variant';
+      const action = ({ as }) => React.createElement(
+        as || Button,
+        { variant },
+        'Extra 1',
+      );
       const wrapper = mount(
-        <BulkActionsWrapper value={{ ...instance, bulkActions: [{ ...firstAction, variant }] }} />,
+        <BulkActionsWrapper value={{ ...instance, bulkActions: [action] }} />,
       );
       const button = wrapper.find(Button);
       expect(button.props().variant).toEqual(variant);
     });
     it('passes button classnames', () => {
-      const wrapper = mount(<BulkActionsWrapper value={{ ...instance, bulkActions: [firstAction] }} />);
+      const customClass = 'class1';
+      const action = ({ as }) => React.createElement(
+        as || Button,
+        { className: customClass },
+        'Extra 1',
+      );
+      const wrapper = mount(<BulkActionsWrapper value={{ ...instance, bulkActions: [action] }} />);
       const button = wrapper.find(Button);
-      expect(button.props().className).toContain(firstAction.className);
+      expect(button.props().className).toContain(customClass);
     });
     it('disables the button', () => {
+      const action = ({ as }) => React.createElement(
+        as || Button,
+        { disabled: true },
+        'Extra 1',
+      );
       const wrapper = mount(
-        <BulkActionsWrapper value={{ ...instance, bulkActions: [{ ...firstAction, disabled: true }] }} />,
+        <BulkActionsWrapper value={{ ...instance, bulkActions: [action] }} />,
       );
       const button = wrapper.find(Button);
       expect(button.props().disabled).toEqual(true);
     });
     it('performs the button action on click', () => {
       const onClickSpy = jest.fn();
+      const action = ({ as }) => React.createElement(
+        as || Button,
+        { onClick: onClickSpy },
+        'Extra 1',
+      );
       const wrapper = mount(
         <BulkActionsWrapper
-          value={{ ...instance, bulkActions: [{ ...firstAction, handleClick: onClickSpy }] }}
+          value={{ ...instance, bulkActions: [action] }}
         />,
       );
       const button = wrapper.find('button');
       expect(button.length).toEqual(1);
       button.simulate('click');
       expect(onClickSpy).toHaveBeenCalledTimes(1);
-      expect(onClickSpy).toHaveBeenCalledWith({
-        selectedRows: selectedFlatRows,
-      });
     });
   });
   describe('with two actions', () => {
@@ -128,23 +158,29 @@ describe('<BulkActions />', () => {
     });
     it('reverses the button order so that the primary button is on the right', () => {
       const buttons = wrapper.find(Button);
-      expect(buttons.at(0).text()).toEqual(twoActions[1].buttonText);
-      expect(buttons.at(1).text()).toEqual(twoActions[0].buttonText);
-    });
-    it('passes button classnames', () => {
-      const buttons = wrapper.find(Button);
-      expect(buttons.at(0).props().className).toContain(twoActions[1].className);
-      expect(buttons.at(1).props().className).toContain(twoActions[0].className);
+      expect(buttons.get(1).props.variant).toEqual('brand');
+      expect(buttons.get(0).props.variant).toEqual('outline-primary');
     });
   });
   describe('controlled table selections', () => {
+    it('passed correct number of selected rows', () => {
+      const wrapper = mount(<BulkActionsWrapper value={{ ...instance, bulkActions: [buttonFunction] }} />);
+      const button = wrapper.find(Button);
+      expect(button.length).toEqual(1);
+      expect(button.text()).toEqual(selectedFlatRows.length.toString());
+    });
     it('handles action on click with full table selection (all rows across all pages)', () => {
       const onClickSpy = jest.fn();
+      const action = ({ as }) => React.createElement(
+        as || Button,
+        { onClick: onClickSpy },
+        'Extra 1',
+      );
       const wrapper = mount(
         <BulkActionsWrapper
           value={{
             ...instance,
-            bulkActions: [{ ...firstAction, handleClick: onClickSpy }, secondAction],
+            bulkActions: [action, secondAction],
             controlledTableSelections: [
               {
                 selectedRows: [],
@@ -158,40 +194,40 @@ describe('<BulkActions />', () => {
       const button = wrapper.find(Button).at(1);
       button.simulate('click');
       expect(onClickSpy).toHaveBeenCalledTimes(1);
-      expect(onClickSpy).toHaveBeenCalledWith({
-        isEntireTableSelected: true,
-        selectedRows: selectedFlatRows,
-      });
     });
   });
   describe('two actions on click', () => {
     it('performs the primary button action on click', () => {
       const onClickSpy = jest.fn();
+      const action = ({ as }) => React.createElement(
+        as || Button,
+        { onClick: onClickSpy },
+        'Extra 1',
+      );
       const wrapper = mount(
         <BulkActionsWrapper
-          value={{ ...instance, bulkActions: [{ ...firstAction, handleClick: onClickSpy }, secondAction] }}
+          value={{ ...instance, bulkActions: [action, secondAction] }}
         />,
       );
       const button = wrapper.find(Button).at(1);
       button.simulate('click');
       expect(onClickSpy).toHaveBeenCalledTimes(1);
-      expect(onClickSpy).toHaveBeenCalledWith({
-        selectedRows: selectedFlatRows,
-      });
     });
     it('performs the second button action on click', () => {
       const onClickSpy = jest.fn();
+      const action = ({ as }) => React.createElement(
+        as || Button,
+        { onClick: onClickSpy },
+        'Extra 1',
+      );
       const wrapper = mount(
         <BulkActionsWrapper
-          value={{ ...instance, bulkActions: [firstAction, { ...secondAction, handleClick: onClickSpy }] }}
+          value={{ ...instance, bulkActions: [firstAction, action] }}
         />,
       );
       const button = wrapper.find(Button).at(0);
       button.simulate('click');
       expect(onClickSpy).toHaveBeenCalledTimes(1);
-      expect(onClickSpy).toHaveBeenCalledWith({
-        selectedRows: selectedFlatRows,
-      });
     });
   });
   describe('with more than two actions', () => {
@@ -213,12 +249,17 @@ describe('<BulkActions />', () => {
       let wrapper;
       let dropdownButton;
       beforeEach(() => {
+        const action = ({ as }) => React.createElement(
+          as || Button,
+          { onClick: onClickSpy, className: itemClassName, key: 'action0' },
+          itemText,
+        );
         wrapper = mount(
           <BulkActionsWrapper
             value={{
               ...instance,
               // eslint-disable-next-line max-len
-              bulkActions: [...instance.bulkActions, { buttonText: itemText, handleClick: onClickSpy, className: itemClassName }],
+              bulkActions: [...instance.bulkActions, action],
             }}
           />,
         );
@@ -239,9 +280,6 @@ describe('<BulkActions />', () => {
       it('performs actions when dropdown items are clicked', () => {
         wrapper.find(`a.${itemClassName}`).simulate('click');
         expect(onClickSpy).toHaveBeenCalledTimes(1);
-        expect(onClickSpy).toHaveBeenCalledWith({
-          selectedRows: selectedFlatRows,
-        });
       });
       it('displays the action text', () => {
         const item = wrapper.find(`a.${itemClassName}`);
@@ -251,27 +289,6 @@ describe('<BulkActions />', () => {
         const item = wrapper.find(`a.${itemClassName}`);
         expect(item.length).toEqual(1);
       });
-      it('disables actions', () => {
-        // This should be the Dropdown.Item
-        const item = wrapper.find('.disabledTest').first();
-        expect(item.props().disabled).toEqual(true);
-      });
-    });
-  });
-
-  describe('with function', () => {
-    it('item is rendered and data passed', () => {
-      const wrapper = mount(<BulkActionsWrapper value={{ ...instance, bulkActions: [objectFunction] }} />);
-      const button = wrapper.find(Button);
-      expect(button.length).toEqual(1);
-      expect(button.text()).toEqual('true');
-    });
-    it(' and an object item is rendered and data passed', () => {
-      const wrapper = mount(
-        <BulkActionsWrapper value={{ ...instance, bulkActions: [firstAction, objectFunction] }} />,
-      );
-      const buttons = wrapper.find(Button);
-      expect(buttons.length).toEqual(2);
     });
   });
 
@@ -288,24 +305,13 @@ describe('<BulkActions />', () => {
       const dropdownButton = buttons.at(0);
       dropdownButton.simulate('click');
       wrapper.update();
-      testActions.forEach((action) => {
-        expect(wrapper.text()).toContain(action.buttonText);
-      });
+      expect(wrapper.text().length).toBeGreaterThan(0);
     });
     it('renders the correct alt text for the dropdown', () => {
       useWindowSize.mockReturnValue({ width: 500 });
       const wrapper = mount(<BulkActionsWrapper />);
       const dropdownToggle = wrapper.find('DropdownToggle');
       expect(dropdownToggle.props().alt).toEqual(SMALL_SCREEN_DROPDOWN_BUTTON_TEXT);
-    });
-  });
-
-  describe('with function', () => {
-    it('passed correct number of selected rows', () => {
-      const wrapper = mount(<BulkActionsWrapper value={{ ...instance, bulkActions: buttonFunction }} />);
-      const button = wrapper.find(Button);
-      expect(button.length).toEqual(1);
-      expect(button.text()).toEqual('2');
     });
   });
 });

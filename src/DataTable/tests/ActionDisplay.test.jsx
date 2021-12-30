@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
+import { Button } from '../..';
 import ActionDisplay from '../ActionDisplay';
 import DataTableContext from '../DataTableContext';
 import BulkActions from '../BulkActions';
@@ -19,17 +20,25 @@ const instance = {
   ],
 };
 
-const firstAction = {
-  buttonText: 'Primary action',
-  handleClick: () => {},
-  className: 'class1',
-};
+const firstAction = ({ as }) => React.createElement(
+  as || Button,
+  {
+    key: 'First Action',
+    onClick: () => {},
+    className: 'class1',
+  },
+  'First Action',
+);
 
-const secondAction = {
-  buttonText: 'Secondary action',
-  handleClick: () => {},
-  className: 'class2',
-};
+const secondAction = ({ as }) => React.createElement(
+  as || Button,
+  {
+    key: 'Second Action',
+    onClick: () => {},
+    className: 'class2',
+  },
+  'Second Action',
+);
 
 // eslint-disable-next-line react/prop-types
 const ActionDisplayWrapper = ({ value = instance, props = {} }) => (
@@ -40,6 +49,17 @@ describe('<ActionDisplay />', () => {
   it('renders null if there are no actions', () => {
     const wrapper = mount(<ActionDisplayWrapper />);
     expect(wrapper.find(ActionDisplay).text()).toEqual('');
+  });
+  it('renders null if there are no rows', () => {
+    const wrapper = mount(
+      <ActionDisplayWrapper
+        value={{
+          ...instance, rows: null, tableActions: [firstAction], bulkActions: [secondAction],
+        }}
+      />,
+    );
+    const button = wrapper.find(Button);
+    expect(button.length).toEqual(0);
   });
   it('displays bulk actions when rows are selected', () => {
     const wrapper = mount(
