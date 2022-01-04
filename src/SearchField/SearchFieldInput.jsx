@@ -21,7 +21,7 @@ const SearchFieldInput = (props) => {
       onFocus={handleFocus}
       onBlur={handleBlur}
       onChange={handleChange}
-      options={{ disabled }}
+      disabled={disabled}
     />
   );
 };
