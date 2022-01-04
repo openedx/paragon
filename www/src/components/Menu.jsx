@@ -56,7 +56,7 @@ const ComponentNavItem = ({
   const linkNode = isDeprecated ? (
     <OverlayTrigger
       placement="left"
-      overlay={<Tooltip>Deprecated</Tooltip>}
+      overlay={<Tooltip id={`tooltip-deprecated-${id}`}>Deprecated</Tooltip>}
     >
       <Link className="text-muted" to={fields.slug}>{frontmatter.title}</Link>
     </OverlayTrigger>

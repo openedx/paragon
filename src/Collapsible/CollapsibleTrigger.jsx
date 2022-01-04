@@ -54,7 +54,7 @@ CollapsibleTrigger.propTypes = {
   /** Specifies contents of the component. */
   children: PropTypes.node,
   /** Specifies base element. */
-  tag: PropTypes.string,
+  tag: PropTypes.oneOfType([PropTypes.string, PropTypes.elementType]),
   /** Specifies whether toggling `Collapsible's` state will always trigger only open action. */
   openOnly: PropTypes.bool,
   /** Specifies whether toggling `Collapsible's` state will always trigger only close action. */

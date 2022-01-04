@@ -35,6 +35,8 @@ const OverlayTrigger = (props) => (
   </BaseOverlayTrigger>
 );
 
+const triggerType = PropTypes.oneOf(TRIGGER_VARIANTS);
+
 Overlay.propTypes = {
   /** Specifies the content of the `Overlay`. */
   children: PropTypes.node.isRequired,
@@ -123,10 +125,7 @@ OverlayTrigger.propTypes = {
   show: PropTypes.bool,
   target: PropTypes.instanceOf(null),
   /** Specify which action or actions trigger `Overlay` visibility. */
-  trigger: PropTypes.oneOf([
-    ...TRIGGER_VARIANTS,
-    PropTypes.arrayOf(PropTypes.oneOf(TRIGGER_VARIANTS)),
-  ]),
+  trigger: PropTypes.oneOfType([triggerType, PropTypes.arrayOf(triggerType)]),
 };
 
 Overlay.defaultProps = {
