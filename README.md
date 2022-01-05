@@ -68,71 +68,72 @@ You can alternatively run the dev server with the edx.org theme by running
 npm run develop:with-theme
 ```
 
-#### 2. Create a new directory for your component
+#### 2. Create new component
 
-Add a directory in `/src/` that matches the name of your component. For example: `/src/MyComponent`.
+To create new component run
 
-#### 3. Add an index.jsx that exports your component
+```
+npm run generate-component -- --componentName=MyComponent
+```
 
+where `MyComponent` is your new component's name.
 
-Create a file `src/MyComponent/index.jsx`. Define your component (using the same `<MyComponent>` as the class name) in this file. Example:
+This will create a directory in `/src/` that will contain templates for all necessary files to start developing the component:
+```
+MyComponent
+├── index.jsx
+├── README.md
+├── MyComponent.scss
+├── _variables.scss
+└── MyComponent.test.jsx
+```
+
+The script will also automatically export your component from Paragon.
+
+#### 3. Start developing
+
+`/src/MyComponent/index.jsx` is where your component lives, the file is created with the following template, edit it to implement your own component.
 
 ``` jsx
-// src/MyComponent/index.jsx
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
-const MyComponent = ({ children, className }) => {
-  // ...
-  return (
-    <p className={className}>
-      {children}
-    </p>
-  );
-}
+const MyComponent = React.forwardRef(({ className, children }, ref) => (
+  <div ref={ref} className={classNames('png__MyComponent', className)}>
+    {children}
+  </div>
+));
+
+MyComponent.defaultProps = {
+  className: undefined,
+};
 
 MyComponent.propTypes = {
-  className: PropTypes.string.isRequired,
-  children: Proptypes.node.isRequired,
-}
+  /** A class name to append to the base element. */
+  className: PropTypes.string,
+  /** Specifies contents of the component. */
+  children: PropTypes.node.isRequired,
+};
 
 export default MyComponent;
 
 ```
 
-#### 4. Add your component to the Paragon exports in `src/index.js`
+#### 4. (Optional) Add styles to your component.
 
-Next, add your component to the exports in `src/index.js`. Example:
-
-``` js
-// ...
-export { default as MyComponent } from './MyComponent';
-// ...
-```
-
-#### 5. (Optional) Add styles to your component.
-
-If your component requires additional styling (which most likely is the case), create a separate SCSS style sheet in your
-component's directory. For example: `/src/MyComponent/MyComponent.scss`.
+If your component requires additional styling (which most likely is the case), edit created SCSS style sheet in your
+component's directory `/src/MyComponent/MyComponent.scss` which by default contains an empty class for your component.
 
 If you wish to use SASS variables (which is the preferred way of styling the components since values can be
-easily overridden and customized by the consumers of Paragon), create a separate file that will contain all variables specific to your component:
-`/src/MyComponent/_variables.scss`. This way the variables will also get automatically picked up by documentation site and displayed on your
-component's page.
+easily overridden and customized by the consumers of Paragon), add them in `/src/MyComponent/_variables.scss` (this file should contain all variables specific to your component).
+This way the variables will also get automatically picked up by documentation site and displayed on your component's page.
 
-**Please note that you need to follow [Paragon's CSS styling conventions](docs/decisions/0012-css-styling-conventions).** 
+**Please note that you need to follow [Paragon's CSS styling conventions](docs/decisions/0012-css-styling-conventions).**
 
-Finally, add your style sheet to the imports in `src/index.scss`. Example:
+#### 5. Document you component
 
-``` scss
-// ...
-@import './MyComponent/MyComponent.scss';
-// ...
-```
-
-#### 6. Add a README.md to document your component and see it in the documentation site
-
-Create a `src/MyComponent/README.md` file similar to other components in the `src` directory. The documentation site scans this directory for markdown or mdx files to create pages.
+The documentation for you component lives in `src/MyComponent/README.md`. The documentation site scans this directory for markdown or mdx files to create pages. By default, the file is created with following content:
 
 ```` md
 ---
@@ -140,14 +141,14 @@ title: 'MyComponent'
 type: 'component'
 components:
 - MyComponent
-categories:
-- Layout
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
   Something special about this component
 ---
+
+Describe you component here and give usage examples.
 
 ### Basic Usage
 
@@ -171,7 +172,7 @@ JSX code blocks in the markdown file can be made interactive with the live attri
 
 #### 6. Navigate to your component on the doc site and start building
 
-Visit the documentation at [http://localhost:8000](http://localhost:8000) and navigate to see your README.md powered page and workbench. Changes to the README.md file will auto refesh the page.
+Visit the documentation at [http://localhost:8000](http://localhost:8000) and navigate to see your README.md powered page and workbench. Changes to the README.md file will auto refresh the page.
 
 ### Developing locally against MFE
 
