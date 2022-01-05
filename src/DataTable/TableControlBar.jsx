@@ -16,34 +16,45 @@ const TableControlBar = ({ className }) => {
     dataViewToggleOptions: { togglePlacement },
   } = useContext(DataTableContext);
 
-  const invalidtogglePlacement = !togglePlacement || !(['left', 'bottom']).includes(togglePlacement);
-  const actionsSectionClassName = classNames('mb-3', {
+  const invalidTogglePlacement = !togglePlacement || !(['left', 'bottom']).includes(togglePlacement);
+  const actionsSectionClassName = classNames({
     'pgn__data-table-actions-right-toggle-bottom': togglePlacement === 'bottom',
-    'pgn__data-table-actions-right': invalidtogglePlacement || togglePlacement === 'left',
+    'pgn__data-table-actions-right': invalidTogglePlacement || togglePlacement === 'left',
   });
   return (
     <div className={classNames('pgn__data-table-status-bar', className)}>
       {/* Using setFilter as a proxy for isFilterable */}
       {(setFilter && !showFiltersInSidebar) && (
-        <div className="pgn__data-table-actions">
-          <div className="pgn__data-table-actions-left">
-            <DropdownFilters />
-          </div>
-          <div className={actionsSectionClassName}>
+      <div className="pgn__data-table-actions">
+        <div className="pgn__data-table-actions-left">
+          <DropdownFilters />
+        </div>
+        <div className={actionsSectionClassName}>
+          <div className="pgn__data-table-toggle">
             <DataViewToggle />
+          </div>
+          <div>
             <ActionDisplay />
           </div>
         </div>
+
+      </div>
       )}
       <div className="pgn__data-table-status">
         <div className="pgn__data-table-status-left">
           <SmartStatus />
         </div>
         {(!setFilter || (setFilter && showFiltersInSidebar)) && (
-          <div className={actionsSectionClassName}>
-            <DataViewToggle />
-            <ActionDisplay />
-          </div>
+          <>
+            <div className={actionsSectionClassName}>
+              <div className="pgn__data-table-toggle">
+                <DataViewToggle />
+              </div>
+              <div>
+                <ActionDisplay />
+              </div>
+            </div>
+          </>
         )}
       </div>
     </div>
