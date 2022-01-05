@@ -43,6 +43,7 @@ function DataTable({
   EmptyTableComponent,
   manualSelectColumn,
   showFiltersInSidebar,
+  dataViewToggleOptions,
   children,
   ...props
 }) {
@@ -120,6 +121,7 @@ function DataTable({
     tableActions,
     controlledTableSelections,
     showFiltersInSidebar,
+    dataViewToggleOptions,
     ...selectionProps,
     ...selectionActions,
     ...props,
@@ -166,6 +168,12 @@ DataTable.defaultProps = {
   FilterStatusComponent: FilterStatus,
   RowStatusComponent: RowStatus,
   showFiltersInSidebar: false,
+  dataViewToggleOptions: {
+    isDataViewToggleEnabled: false,
+    onDataViewToggle: () => {},
+    defaultActiveStateValue: 'card',
+    togglePlacement: 'left',
+  },
 };
 
 DataTable.propTypes = {
@@ -292,6 +300,18 @@ DataTable.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   /** If true filters will be shown on sidebar instead */
   showFiltersInSidebar: PropTypes.bool,
+  /** options for data view toggle */
+  dataViewToggleOptions: PropTypes.shape({
+    /** Whether to show a toggle button group which allows view switching between card and table views */
+    isDataViewToggleEnabled: PropTypes.bool,
+    /** Callback invoked when the toggle buttons are clicked, with value of selected button passed in */
+    onDataViewToggle: PropTypes.func,
+    /** default value for toggle active state */
+    defaultActiveStateValue: PropTypes.string,
+    /** placement of toggle 'bottom' will push it to the bottom row in
+     * actions section. Only 'left' and 'bottom' are supported */
+    togglePlacement: PropTypes.string,
+  }),
 };
 
 DataTable.BulkActions = BulkActions;
