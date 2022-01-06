@@ -315,7 +315,7 @@ DataTable.propTypes = {
      * actions section. Only 'left' and 'bottom' are supported */
     togglePlacement: PropTypes.string,
   }),
-  /** Whether the table is loading data asynchronously */
+  /** Whether a spinner overlays the table when data loads asynchronously */
   isLoading: PropTypes.bool,
 };
 

@@ -471,7 +471,7 @@ function() {
 
 ## Loading state
 
-Can be used to show the loading state when DataTable fetching new data.
+Can be used to show a loading spinner overlay when ``DataTable`` is fetching new data.
 
 ```jsx live
 () => {

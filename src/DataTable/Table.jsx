@@ -30,7 +30,7 @@ const Table = ({
     <div className={classNames('pgn__data-table-container', { 'is-loading': isLoading })}>
       {isLoading && (
         <div className="pgn__data-table-spinner">
-          <Spinner animation="border" screenreadertext="loading" />
+          <Spinner animation="border" screenReaderText="loading" />
         </div>
       )}
       <table {...getTableProps({
