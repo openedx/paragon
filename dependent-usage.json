@@ -1,5 +1,5 @@
 {
-  "lastModified": 1641478119970,
+  "lastModified": 1641564466181,
   "projectUsages": [
     {
       "version": "16.24.0",
@@ -5687,6 +5687,14 @@
       },
       "folderName": "frontend-app-communications",
       "usages": {
+        "Spinner": [
+          {
+            "filePath": "src/components/bulk-email-tool/BulkEmailTool.jsx",
+            "line": 51,
+            "column": 6,
+            "version": "16.3.2"
+          }
+        ],
         "Nav": [
           {
             "filePath": "src/components/navigation-tabs/NavigationTabs.jsx",
@@ -16329,19 +16337,31 @@
         "Icon": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 124,
+            "line": 146,
             "column": 10,
             "version": "16.14.6"
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 137,
+            "line": 159,
             "column": 10,
             "version": "16.14.6"
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 223,
+            "line": 172,
+            "column": 10,
+            "version": "16.14.6"
+          },
+          {
+            "filePath": "src/components/2U/ProductCard.jsx",
+            "line": 185,
+            "column": 10,
+            "version": "16.14.6"
+          },
+          {
+            "filePath": "src/components/2U/ProductCard.jsx",
+            "line": 273,
             "column": 12,
             "version": "16.14.6"
           },
@@ -16487,7 +16507,7 @@
         "Card": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 173,
+            "line": 221,
             "column": 8,
             "version": "16.14.6"
           },
@@ -16513,7 +16533,7 @@
         "Image": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 187,
+            "line": 235,
             "column": 16,
             "version": "16.14.6"
           },
@@ -16527,7 +16547,7 @@
         "Card.Body": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 198,
+            "line": 246,
             "column": 10,
             "version": "16.14.6"
           },
@@ -16547,7 +16567,7 @@
         "Card.Title": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 200,
+            "line": 248,
             "column": 14,
             "version": "16.14.6"
           }
@@ -16555,7 +16575,7 @@
         "Card.Subtitle": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 208,
+            "line": 256,
             "column": 14,
             "version": "16.14.6"
           }
@@ -16563,7 +16583,7 @@
         "Badge": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 218,
+            "line": 266,
             "column": 14,
             "version": "16.14.6"
           },
@@ -16619,7 +16639,7 @@
         "Card.Footer": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 221,
+            "line": 271,
             "column": 10,
             "version": "16.14.6"
           }
@@ -17475,7 +17495,7 @@
         "CardView": [
           {
             "filePath": "src/components/Search/Results/FullProductHits.jsx",
-            "line": 74,
+            "line": 73,
             "column": 6,
             "version": "16.14.6"
           }
@@ -17483,7 +17503,7 @@
         "DataTable.TableFooter": [
           {
             "filePath": "src/components/Search/Results/FullProductHits.jsx",
-            "line": 79,
+            "line": 78,
             "column": 6,
             "version": "16.14.6"
           }
