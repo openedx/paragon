@@ -1,9 +1,13 @@
 const { program } = require('commander');
 const fs = require('fs');
-const { exec } = require('child_process');
 const path = require('path');
 const { COMPONENT_FILES } = require('./constants');
-const { validateComponentName, createFile, addComponentToExports } = require('./utils');
+const {
+  validateComponentName,
+  createFile,
+  addComponentToExports,
+  addComponentToGit,
+} = require('./utils');
 
 program
   .requiredOption('--componentName <name>', 'Component must have a name', validateComponentName)
@@ -17,7 +21,7 @@ program
     // export component and its styles from Paragon
     addComponentToExports(componentName);
     // add generated files to git
-    exec(`git add ${componentDir}/*`);
+    addComponentToGit(componentName);
   });
 
 program.parse(process.argv);

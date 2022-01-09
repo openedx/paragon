@@ -148,7 +148,7 @@ notes: |
   Something special about this component
 ---
 
-Describe you component here and give usage examples.
+Describe your component here and give usage examples.
 
 ### Basic Usage
 

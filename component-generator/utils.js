@@ -1,5 +1,7 @@
 const { InvalidOptionArgumentError } = require('commander');
 const fs = require('fs');
+const path = require('path');
+const { exec } = require('child_process');
 
 /**
  * Helper function to validate component name when the command is invoked.
@@ -40,6 +42,18 @@ function addComponentToExports(componentName) {
   fs.appendFileSync('./src/index.scss', `@import './${componentName}/${componentName}.scss';\n`);
 }
 
+/**
+ * Add files related to the new component to Git (these include exports from Paragon and new generated files)
+ * @param {string} componentName - name of the component
+ */
+function addComponentToGit(componentName) {
+  const componentDir = path.resolve(__dirname, `../src/${componentName}`);
+  const componentExportFile = path.resolve(__dirname, '../src/index.js');
+  const stylesExportFile = path.resolve(__dirname, '../src/index.scss');
+  exec(`git add ${componentExportFile} ${stylesExportFile} ${componentDir}/*`);
+}
+
 exports.validateComponentName = validateComponentName;
 exports.createFile = createFile;
 exports.addComponentToExports = addComponentToExports;
+exports.addComponentToGit = addComponentToGit;
