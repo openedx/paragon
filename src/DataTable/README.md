@@ -488,7 +488,7 @@ overflow dropdown menu.
 Bulk actions are not visible unless rows have been selected.
 
 ### Actions
-An action can also be definied as an additional column on the table. The Cell property can be defined to display
+An action can also be defined as an additional column on the table. The Cell property can be defined to display
 any component that a user requires. It will receive the row as props.
 You can pass a function to render custom components for bulk actions and table actions.
 

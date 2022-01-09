@@ -18,7 +18,7 @@ const DropdownToggle = React.forwardRef(({
 
 DropdownToggle.propTypes = {
   /** Specifies the base element. */
-  as: PropTypes.element,
+  as: PropTypes.elementType,
   /** Overrides underlying component base CSS class name. */
   bsPrefix: PropTypes.string,
   /** An html id attribute, necessary for assistive technologies, such as screen readers. */
