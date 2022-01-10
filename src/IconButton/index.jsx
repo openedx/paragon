@@ -39,8 +39,7 @@ const IconButton = React.forwardRef(({
     >
       <span className="btn-icon__icon-container">
         <IconComponent
-          {...attrs}
-          className={`btn-icon__icon ${iconClassNames}`}
+          className={classNames('btn-icon__icon', iconClassNames)}
           icon={icon}
           src={src}
         />
