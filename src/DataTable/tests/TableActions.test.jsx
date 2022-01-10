@@ -4,7 +4,7 @@ import { mount } from 'enzyme';
 import TableActions from '../TableActions';
 import { DROPDOWN_BUTTON_TEXT, SMALL_SCREEN_DROPDOWN_BUTTON_TEXT } from '../CollapsibleButtonGroup';
 import {
-  useWindowSize, Dropdown, Button, Icon, IconButton,
+  useWindowSize, Dropdown, Button, IconButton,
 } from '../..';
 import DataTableContext from '../DataTableContext';
 
@@ -198,8 +198,8 @@ describe('<TableActions />', () => {
         onClickSpy.mockClear();
       });
       it('displays additional actions in a dropdown', () => {
-        const icon = wrapper.find(Icon);
-        expect(icon.props().screenReaderText).toEqual(DROPDOWN_BUTTON_TEXT);
+        const dropdownToggle = wrapper.find('DropdownToggle');
+        expect(dropdownToggle.props().alt).toEqual(DROPDOWN_BUTTON_TEXT);
         const actionItems = wrapper.find(Dropdown.Item);
         // we subtract two for the two main buttons that aren't in the dropdown
         expect(actionItems.length).toEqual(4);
@@ -262,8 +262,8 @@ describe('<TableActions />', () => {
     it('renders the correct alt text for the dropdown', () => {
       useWindowSize.mockReturnValue({ width: 500 });
       const wrapper = mount(<TableActionsWrapper />);
-      const icon = wrapper.find(Icon);
-      expect(icon.props().screenReaderText).toEqual(SMALL_SCREEN_DROPDOWN_BUTTON_TEXT);
+      const dropdownToggle = wrapper.find('DropdownToggle');
+      expect(dropdownToggle.props().alt).toEqual(SMALL_SCREEN_DROPDOWN_BUTTON_TEXT);
     });
   });
   describe('with over ride function', () => {
