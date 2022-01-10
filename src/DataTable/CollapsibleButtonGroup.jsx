@@ -65,7 +65,7 @@ const CollapsibleButtonGroup = ({
             iconAs={Icon}
             as={IconButton}
             src={MoreVert}
-            screenReaderText={width > breakpoints.small.minWidth
+            alt={width > breakpoints.small.minWidth
               ? DROPDOWN_BUTTON_TEXT : SMALL_SCREEN_DROPDOWN_BUTTON_TEXT}
             id="actions-dropdown"
           />
