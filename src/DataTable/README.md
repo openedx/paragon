@@ -488,7 +488,7 @@ overflow dropdown menu.
 Bulk actions are not visible unless rows have been selected.
 
 ### Actions
-An action can also be definied as an additional column on the table. The Cell property can be defined to display
+An action can also be defined as an additional column on the table. The Cell property can be defined to display
 any component that a user requires. It will receive the row as props.
 You can pass a function to render custom components for bulk actions and table actions.
 
@@ -997,4 +997,188 @@ For a more desktop friendly view, you can move filters into a sidebar by providi
     <DataTable.EmptyTable content="No results found" />
     <DataTable.TableFooter />
   </DataTable>
+```
+
+### Expandable rows
+`DataTable` supports expandable rows which once expanded render additional content under the row. Displayed content 
+is controlled by the `renderRowSubComponent` prop, which is a function that receives `row` as its single prop and renders expanded view, you also
+need to pass `isEpandable` prop to `DataTable` to indicate that it should support expand behavior for rows.
+Finally, an additional column is required to be included into `columns` prop which will contain handlers for expand / collapse behavior, see examples below. 
+
+#### Default view
+
+Here we use default expander column offered by Paragon and for each row render value of the `name` attribute as its subcomponent.
+
+```jsx live
+<DataTable 
+  isExpandable
+  itemCount={7}
+  renderRowSubComponent={({ row }) => <div className='text-center'>{row.values.name}</div>}
+  data={[
+    {
+      name: 'Lil Bub',
+      color: 'brown tabby',
+      famous_for: 'weird tongue',
+    },
+    {
+      name: 'Grumpy Cat',
+      color: 'siamese',
+      famous_for: 'serving moods',
+    },
+    {
+      name: 'Smoothie',
+      color: 'orange tabby',
+      famous_for: 'modeling',
+    },
+    {
+      name: 'Maru',
+      color: 'brown tabby',
+      famous_for: 'being a lovable oaf',
+    },
+    {
+      name: 'Keyboard Cat',
+      color: 'orange tabby',
+      famous_for: 'piano virtuoso',
+    },
+    {
+      name: 'Long Cat',
+      color: 'russian white',
+      famous_for: 'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+    },
+    {
+      name: 'Zeno',
+      color: 'brown tabby',
+      famous_for: 'getting halfway there'
+    },
+  ]}
+  columns={[
+    {
+      id: 'expander',
+      Header: DataTable.ExpandAll,
+      Cell: DataTable.ExpandRow,
+    },
+    {
+      Header: 'Name',
+      accessor: 'name',
+    },
+    {
+      Header: 'Famous For',
+      accessor: 'famous_for',
+    },
+    {
+      Header: 'Coat Color',
+      accessor: 'color',
+    },
+  ]}
+>
+  <DataTable.TableControlBar />
+  <DataTable.Table />
+  <DataTable.TableFooter />
+</DataTable>
+```
+
+#### With custom expander column
+
+You can create your own custom expander column and use it, see code example below.
+
+```jsx live
+() => {
+  const expanderColumn = {
+    id: 'expander',
+    // getToggleAllRowsExpandedProps and isAllRowsExpanded props will be automatically passed to the component
+    Header: ({ getToggleAllRowsExpandedProps, isAllRowsExpanded }) => (
+      <span {...getToggleAllRowsExpandedProps()}>
+        {isAllRowsExpanded ? <Remove /> : <Add />}
+      </span>
+    ),
+    // Cell will receive row prop
+    Cell: ({ row }) => (
+      <span {...row.getToggleRowExpandedProps()}>
+        {row.isExpanded ? 'Collapse' : 'Expand'}
+      </span>
+    ),
+  };
+
+  const currentDate = new Date().toDateString();
+
+  const renderSubComponent = ({ row }) => (
+    <div className="ml-5 w-50">
+      <DataTable
+        itemCount={1}
+        data={[
+          {...row.original},
+        ]}
+        columns={[
+          {
+            Header: 'Date modified',
+            accessor: 'date_modified',
+          },
+          {
+            Header: 'Modified by',
+            accessor: 'modified_by',
+          },
+          {
+            Header: 'Reason',
+            accessor: 'reason',
+          },
+        ]}
+      >
+        <DataTable.Table/>
+      </DataTable>
+    </div>
+  )
+	
+  return (
+    <DataTable
+      isExpandable 
+      renderRowSubComponent={renderSubComponent}
+      itemCount={3}
+      data={[
+        {
+          name: 'Lil Bub',
+          color: 'brown tabby',
+          famous_for: 'weird tongue',
+          date_modified: currentDate,
+          modified_by: 'Jane Doe',
+          reason: 'Unknown',
+        },
+        {
+          name: 'Grumpy Cat',
+          color: 'siamese',
+          famous_for: 'serving moods',
+          date_modified: currentDate,
+          modified_by: 'Jane Doe',
+          reason: 'Felt like it',
+        },
+        {
+          name: 'Smoothie', 
+          color: 'orange tabby',
+          famous_for: 'modeling',
+          date_modified: currentDate,
+          modified_by: 'Jane Doe',
+          reason: 'Felt like it',
+        },
+      ]}
+      columns={[
+        { ...expanderColumn },
+        {
+          Header: 'Name',
+          accessor: 'name',
+        },
+        {
+          Header: 'Famous For',
+          accessor: 'famous_for',
+        },
+        {
+          Header: 'Coat Color',
+          accessor: 'color',
+        },
+      ]}
+    >
+      <DataTable.TableControlBar/>
+      <DataTable.Table/>
+      <DataTable.TableFooter/>
+    </DataTable>
+  );
+}
 ```
