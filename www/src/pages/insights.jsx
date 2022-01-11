@@ -7,9 +7,9 @@ import {
 } from '~paragon-react'; // eslint-disable-line
 import SEO from '../components/SEO';
 import Layout from '../components/PageLayout';
-import SummaryComponentNameWithUsageModal from '../components/insights/SummaryComponentNameWithUsageModal';
-import ProjectNameWithUsageModal from '../components/insights/ProjectNameWithUsageModal';
-import ProjectNameWithComponentUsageModal from '../components/insights/ProjectNameWithComponentUsageModal';
+import SummaryUsageExamples from '../components/insights/SummaryUsageExamples';
+import ProjectUsageExamples from '../components/insights/ProjectUsageExamples';
+import ComponentUsageExamples from '../components/insights/ComponentUsageExamples';
 import getGithubProjectUrl from '../utils/getGithubProjectUrl';
 import dependentProjectsAnalysis from '../../../dependent-usage.json';
 
@@ -69,14 +69,20 @@ const SummaryUsage = () => {
       </div>
       <h3>Overall component usage</h3>
       <DataTable
+        isExpandable
         isSortable
         itemCount={summaryTableData.length}
         data={summaryTableData}
+        renderRowSubComponent={({ row }) => <SummaryUsageExamples row={row} />}
         columns={[
+          {
+            id: 'expander',
+            Header: DataTable.ExpandAll,
+            Cell: DataTable.ExpandRow,
+          },
           {
             Header: 'Component Name',
             accessor: 'name',
-            Cell: SummaryComponentNameWithUsageModal,
           },
           { Header: 'Instance Count', accessor: 'count' },
         ]}
@@ -95,14 +101,20 @@ const ProjectsUsage = () => (
   <div className="pt-5 mb-5">
     <h3 className="mb-4">Projects in Open edX consuming Paragon</h3>
     <DataTable
+      isExpandable
       isSortable
       itemCount={dependentProjects.length}
       data={dependentProjects}
+      renderRowSubComponent={({ row }) => <ProjectUsageExamples row={row} />}
       columns={[
+        {
+          id: 'expander',
+          Header: DataTable.ExpandAll,
+          Cell: DataTable.ExpandRow,
+        },
         {
           Header: 'Project Name',
           accessor: 'folderName',
-          Cell: ProjectNameWithUsageModal,
         },
         { Header: 'Paragon Version', accessor: 'version' },
         { Header: 'Instance Count', accessor: 'count' },
@@ -121,14 +133,20 @@ const ComponentUsage = ({ name, componentUsageInProjects }) => (
   <div className="mb-5">
     <h3 className="mb-4">{name}</h3>
     <DataTable
+      isExpandable
       isSortable
       itemCount={componentUsageInProjects.length} // eslint-disable-line
       data={componentUsageInProjects}
+      renderRowSubComponent={({ row }) => <ComponentUsageExamples row={row} />}
       columns={[
+        {
+          id: 'expander',
+          Header: DataTable.ExpandAll,
+          Cell: DataTable.ExpandRow,
+        },
         {
           Header: 'Project Name',
           accessor: 'folderName',
-          Cell: (props) => <ProjectNameWithComponentUsageModal {...props} componentName={name} />,
         },
         { Header: 'Paragon Version', accessor: 'version' },
         { Header: 'Instance Count', accessor: 'componentUsageCount' },

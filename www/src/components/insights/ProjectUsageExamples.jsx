@@ -1,43 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Button,
-  StandardModal,
-  Hyperlink,
-  useToggle,
-} from '~paragon-react';
+import { Hyperlink } from '~paragon-react';
 
-const ProjectNameWithComponentUsageModal = ({ componentName, row }) => {
-  const [isOpen, open, close] = useToggle(false);
-  const projectName = row.original.folderName;
+const ProjectUsageExamples = ({ row }) => {
+  const componentUsages = row.original.usages;
   const repositoryUrl = row.original.repositoryUrl;
-  const projectUsages = row.original.usages;
   return (
     <>
-      <Button
-        variant="link"
-        className="p-0 text-left"
-        onClick={isOpen ? close : open}
-      >
-        {projectName}
-      </Button>
-      <StandardModal
-        size="xl"
-        title={`${componentName} in ${projectName}`}
-        isOpen={isOpen}
-        hasCloseButton={false}
-        onClose={close}
-        footerNode={(
-          <Button variant="primary" onClick={close}>OK</Button>
-        )}
-      >
-        <div className="pgn-doc__component-usage__project">
+      {Object.keys(componentUsages).length === 0 && (
+        <p>This project does not import any Paragon components, but may still use its SCSS styles.</p>
+      )}
+      {Object.entries(componentUsages).map(([componentName, componentUsages]) => (
+        <div className="pgn-doc__usages-modal mb-4" key={componentName}>
+          <h5 className="font-weight-bold">{componentName}</h5>
           <ul className="list-unstyled">
-            {projectUsages.map(({
+            {componentUsages.map(({
               filePath,
               line,
             }) => (
-              <li key={`${filePath}#L${line}`}>
+              <li key={`${filePath}L#${line}`}>
                 {repositoryUrl ? (
                   <>
                     <Hyperlink
@@ -55,13 +36,12 @@ const ProjectNameWithComponentUsageModal = ({ componentName, row }) => {
             ))}
           </ul>
         </div>
-      </StandardModal>
+      ))}
     </>
   );
 };
 
-ProjectNameWithComponentUsageModal.propTypes = {
-  componentName: PropTypes.string.isRequired,
+ProjectUsageExamples.propTypes = {
   row: PropTypes.shape({
     original: PropTypes.shape({
       name: PropTypes.string.isRequired,
@@ -74,4 +54,4 @@ ProjectNameWithComponentUsageModal.propTypes = {
   }).isRequired,
 };
 
-export default ProjectNameWithComponentUsageModal;
+export default ProjectUsageExamples;
