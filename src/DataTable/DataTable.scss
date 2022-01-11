@@ -27,6 +27,7 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
 .pgn__bulk-actions,
 .pgn__table-actions {
   display: flex;
+  margin-left: map_get($spacers, 2);
 }
 
 .pgn__data-table-dataview-toggle {
@@ -35,6 +36,7 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
 
 .pgn__data-table-actions-right {
   display: flex;
+  align-items: center;
 }
 
 .pgn__data-table-actions-right-toggle-bottom {
@@ -189,4 +191,11 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
 
 .pgn__data-table-card-view {
   padding: 0 $data-table-padding-x;
+}
+
+.pgn__data-table__action-btn {
+  margin-left: map_get($spacers, 2);
+  &:first-child {
+    margin-left: 0;
+  }
 }
