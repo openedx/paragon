@@ -1,6 +1,6 @@
 .pgn__icon-button-toggle__container {
     display: flex;
     .btn-icon + .btn-icon {
-        margin-left: map_get($spacers, 1\.5);
+        margin-left: map_get($spacers, 1);
     }
 }
