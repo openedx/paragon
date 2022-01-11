@@ -15,7 +15,7 @@ const TablePagination = () => {
 
   return (
     <Dropdown>
-      <Dropdown.Toggle variant="tertiary">
+      <Dropdown.Toggle variant="tertiary" id="Pagination dropdown">
         {pageIndex + 1} of {pageCount}
       </Dropdown.Toggle>
       <Dropdown.Menu className="pgn__data-table-pagination-dropdown">
