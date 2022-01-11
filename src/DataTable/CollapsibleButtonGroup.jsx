@@ -92,7 +92,7 @@ const CollapsibleButtonGroup = ({
         return (
           <Button
             variant={variant}
-            className={classNames('ml-2', action.className)}
+            className={classNames('pgn__data-table__action-btn', action.className)}
             onClick={() => handleClick(action)}
             key={action.buttonText}
             disabled={action.disabled}
