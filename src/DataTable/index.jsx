@@ -29,6 +29,8 @@ import TableActions from './TableActions';
 import ControlledSelect from './selection/ControlledSelect';
 import ControlledSelectHeader from './selection/ControlledSelectHeader';
 import DataTableLayout from './DataTableLayout';
+import ExpandAll from './ExpandAll';
+import ExpandRow from './ExpandRow';
 
 import { useSelectionActions } from './hooks';
 import selectionsReducer, { initialState as initialSelectionsState } from './selection/data/reducer';
@@ -38,6 +40,7 @@ function DataTable({
   isPaginated, manualPagination, pageCount, itemCount,
   isFilterable, manualFilters, fetchData, initialState,
   isSortable, manualSortBy,
+  isExpandable, renderRowSubComponent,
   bulkActions, tableActions, numBreakoutFilters,
   initialTableOptions,
   EmptyTableComponent,
@@ -71,7 +74,7 @@ function DataTable({
 
   // NB: Table args *must* be in a particular order
   const tableArgs = getTableArgs({
-    tableOptions, isFilterable, isSelectable, isPaginated, isSortable,
+    tableOptions, isFilterable, isSelectable, isPaginated, isSortable, isExpandable,
   });
   // adds selection column and action columns as necessary
   tableArgs.push(hooks => {
@@ -122,6 +125,7 @@ function DataTable({
     controlledTableSelections,
     showFiltersInSidebar,
     dataViewToggleOptions,
+    renderRowSubComponent,
     ...selectionProps,
     ...selectionActions,
     ...props,
@@ -174,6 +178,8 @@ DataTable.defaultProps = {
     defaultActiveStateValue: 'card',
     togglePlacement: 'left',
   },
+  renderRowSubComponent: undefined,
+  isExpandable: false,
 };
 
 DataTable.propTypes = {
@@ -312,6 +318,10 @@ DataTable.propTypes = {
      * actions section. Only 'left' and 'bottom' are supported */
     togglePlacement: PropTypes.string,
   }),
+  /** A function that will render contents of expanded row, accepts `row` as a prop. */
+  renderRowSubComponent: PropTypes.func,
+  /** Indicates whether table supports expandable rows. */
+  isExpandable: PropTypes.bool,
 };
 
 DataTable.BulkActions = BulkActions;
@@ -334,5 +344,7 @@ DataTable.TableActions = TableActions;
 DataTable.ControlledSelectionStatus = ControlledSelectionStatus;
 DataTable.ControlledSelect = ControlledSelect;
 DataTable.ControlledSelectHeader = ControlledSelectHeader;
+DataTable.ExpandAll = ExpandAll;
+DataTable.ExpandRow = ExpandRow;
 
 export default DataTable;
