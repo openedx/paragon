@@ -29,7 +29,8 @@
     "semantic-release": "semantic-release",
     "snapshot": "jest --updateSnapshot",
     "start": "echo 'To start the Paragon documentation site: cd www/ && npm i && npm start'",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "generate-component": "node component-generator/index.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
@@ -73,6 +74,7 @@
     "babel-eslint": "^10.1.0",
     "babel-jest": "^24.5.0",
     "babel-loader": "^8.0.6",
+    "commander": "^7.2.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
     "eslint": "^7.0.0",
@@ -120,7 +122,8 @@
       "/node_modules/",
       "/www/",
       "/dist/",
-      "/dependent-usage-analyzer/"
+      "/dependent-usage-analyzer/",
+      "/component-generator/"
     ],
     "transformIgnorePatterns": [
       "/node_modules/(?!(@edx/paragon)/).*/"
