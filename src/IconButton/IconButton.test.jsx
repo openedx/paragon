@@ -44,7 +44,7 @@ describe('<IconButton />', () => {
       const spy = jest.fn();
       const wrapper = mount((<IconButton {...props} onClick={spy} />));
       expect(spy).toHaveBeenCalledTimes(0);
-      wrapper.props().onClick();
+      wrapper.simulate('click');
       expect(spy).toHaveBeenCalledTimes(1);
     });
     it('only clicks one icon at a time', () => {
@@ -57,11 +57,11 @@ describe('<IconButton />', () => {
         </div>
       ));
       const icon1 = wrapper.find(IconButton).at(0);
-      icon1.props().onClick();
+      icon1.simulate('click');
       expect(spy1).toHaveBeenCalledTimes(1);
       expect(spy2).toHaveBeenCalledTimes(0);
       const icon2 = wrapper.find(IconButton).at(1);
-      icon2.props().onClick();
+      icon2.simulate('click');
       expect(spy1).toHaveBeenCalledTimes(1);
       expect(spy2).toHaveBeenCalledTimes(1);
     });
