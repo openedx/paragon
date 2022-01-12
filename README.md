@@ -1,5 +1,7 @@
 # Paragon
 
+(This is a test.)
+
 [![npm_version](https://img.shields.io/npm/v/@edx/paragon.svg)](@edx/paragon) [![NPM downloads](https://img.shields.io/npm/dw/@edx/paragon)](https://www.npmjs.com/package/@edx/paragon) [![Build Status](https://github.com/edx/paragon/actions/workflows/release.yml/badge.svg)](https://github.com/edx/paragon/actions/workflows/release.yml) [![codecov](https://codecov.io/gh/edx/paragon/branch/master/graph/badge.svg?token=x1tZmNduy9)](https://codecov.io/gh/edx/paragon)
 
 Paragon is a pattern library containing [accessible](https://www.w3.org/WAI/standards-guidelines/aria/) React components and a SCSS foundation built on Twitter Bootstrap. Paragon is developed for the Open edX platform.
