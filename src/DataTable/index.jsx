@@ -47,6 +47,7 @@ function DataTable({
   manualSelectColumn,
   showFiltersInSidebar,
   dataViewToggleOptions,
+  isLoading,
   children,
   ...props
 }) {
@@ -126,6 +127,7 @@ function DataTable({
     showFiltersInSidebar,
     dataViewToggleOptions,
     renderRowSubComponent,
+    isLoading,
     ...selectionProps,
     ...selectionActions,
     ...props,
@@ -180,6 +182,7 @@ DataTable.defaultProps = {
   },
   renderRowSubComponent: undefined,
   isExpandable: false,
+  isLoading: false,
 };
 
 DataTable.propTypes = {
@@ -322,6 +325,7 @@ DataTable.propTypes = {
   renderRowSubComponent: PropTypes.func,
   /** Indicates whether table supports expandable rows. */
   isExpandable: PropTypes.bool,
+  isLoading: PropTypes.bool,
 };
 
 DataTable.BulkActions = BulkActions;
