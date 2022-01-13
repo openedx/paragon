@@ -309,7 +309,7 @@ Card view is default when ``isDataViewToggleEnabled`` is true
 See ``dataViewToggleOptions`` props documentation for all supported props
 
 ```jsx live
-function() {
+() => {
   const [currentView, setCurrentView] = useState('card');
   const togglePlacement = 'left'; // 'bottom' is the only other supported value
   return (
@@ -394,7 +394,7 @@ function() {
 ### With a default active state specified
 
 ```jsx live
-function() {
+() => {
   const defaultVal = "list";
   const [currentView, setCurrentView] = useState(defaultVal);
   return (
@@ -782,8 +782,41 @@ You can pass a function to render custom components for bulk actions and table a
 
 
 ```jsx live
-function() {
-    const [currentView, setCurrentView] = useState('card');
+() => {
+  const [currentView, setCurrentView] = useState('card');
+
+  const TableAction = (props) => React.createElement(
+    props.as || Button,
+    {
+      key: 'Table Action',
+      onClick: () => console.log('Table Action', props.selectedFlatRows),
+      className: props.as ? "" : "ml-2",
+    },
+    'Table Action'
+  );
+
+  const AssignAction = (props) => React.createElement(
+    // Here is access to the selectedFlatRows, isEntireTableSelected, tableInstance
+    // Pass `as` like in the example bellow for the proper display in the toggled variant
+    props.as || Button,
+    {
+      key: 'Assign',
+      onClick: () => console.log('Assign', props.selectedFlatRows),
+      className: props.as ? "" : "ml-2",
+    },
+    'Assign'
+  );
+
+  const EnrollAction = (props) => React.createElement(
+    props.as || Button,
+    {
+      key: 'Enroll',
+      variant: 'danger',
+      onClick: () => console.log('Enroll', props.selectedFlatRows),
+      className: props.as ? '' : 'ml-2',
+    },
+    'Enroll'
+  );
 
   return (<DataTable
             dataViewToggleOptions={{
@@ -794,32 +827,30 @@ function() {
             isSelectable
             itemCount={7}
             tableActions={[
-                {
-                  buttonText: 'Table Action',
-                  handleClick: (data) => console.log('Table Action', data),
-                },
+              TableAction,
             ]}
             bulkActions={[
-                // Function defined button
-                ({selectedFlatRows})=>{
-                  return {
-                    buttonText: `Enroll (${selectedFlatRows.length})`,
-                    handleClick: () => console.log('Enroll', selectedFlatRows),
-                  }
-                },
+              AssignAction,
+              EnrollAction,
+              ({ as, selectedFlatRows }) => React.createElement(
+                as || Button,
                 {
-                  buttonText: 'Assign',
-                  handleClick: (data) => console.log('Assign', data),
+                  key: 'Extra action 1',
+                  onClick: () => console.log('Extra action 1', selectedFlatRows),
+                  className: as ? "" : "ml-2",
                 },
+                'Extra action 1'
+              ),
+              ({ as, selectedFlatRows }) => React.createElement(
+                as || Button,
                 {
-                  buttonText: 'Extra action 1',
-                  handleClick: (data) => console.log('Extra action 1', data),
+                  key: 'Extra action 2',
+                  onClick: () => console.log('Extra action 2', selectedFlatRows),
+                  className: as ? "" : "ml-2",
                 },
-                {
-                  buttonText: 'Extra action 2',
-                  handleClick: (data) => console.log('Extra action 2', data),
-                },
-              ]}
+                'Extra action 2'
+              )
+            ]}
             additionalColumns={[
               {
                 id: 'action',
