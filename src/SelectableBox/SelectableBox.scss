@@ -1,0 +1,56 @@
+@import "variables";
+
+.pgn__selectable_box-set {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  width: auto;
+  min-height: $selectable-box-set-height;
+  margin-right: -$selectable-box-space;
+
+  & > * + * {
+    margin: 0;
+  }
+
+  & > * {
+    margin-top: $selectable-box-space;
+    margin-right: $selectable-box-space;
+  }
+}
+
+.pgn__selectable_box {
+  min-height: inherit;
+  flex: 1;
+  position: relative;
+  padding: $selectable-box-padding;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(0, 0, 0, 0.15);
+  border-radius: $selectable-box-border-radius;
+
+  &:focus-visible {
+    outline: 1px solid #002121;
+  }
+
+  .pgn__form-radio,
+  .pgn__form-checkbox {
+    position: absolute;
+    top: $selectable-box-padding;
+    right: $selectable-box-padding;
+
+    input {
+      margin-right: 0;
+    }
+  }
+
+  * {
+    pointer-events: none;
+  }
+}
+
+.pgn__selectable_box-active {
+  outline: 2px solid #00262B;
+}
+
+.pgn__selectable_box-invalid {
+  outline: 2px solid #CA3A2F;
+}
