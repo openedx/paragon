@@ -13,13 +13,16 @@ const TableActions = ({ className }) => {
     tableInstance,
   };
 
+  if (typeof tableActions === 'function') {
+    return <div className={classNames('pgn__table-actions', className)}>{tableActions(tableInstance)}</div>;
+  }
+
   const actions = tableActions.map(action => ({ component: action, args }));
 
   return (
     <Actions
       className={classNames('pgn__table-actions', className)}
       actions={actions}
-      tableInstance={tableInstance}
     />
   );
 };

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import DataTableContext from './DataTableContext';
 import { MoreVert } from '../../icons';
 import {
-  Dropdown, useWindowSize, Icon, IconButton, breakpoints,
+  Dropdown, useWindowSize, Icon, IconButton, breakpoints, Button,
 } from '..';
 
 export const DROPDOWN_BUTTON_TEXT = 'More actions';
@@ -54,11 +54,25 @@ const CollapsibleButtonGroup = ({
             id="actions-dropdown"
           />
           <Dropdown.Menu alignRight>
-            {dropdownActions.map(action => action.component({ as: Dropdown.Item, ...action.args }))}
+            {dropdownActions.map(action => React.cloneElement(
+              action.component,
+              {
+                key: action,
+                as: Dropdown.Item,
+                ...action.args,
+              },
+            ))}
           </Dropdown.Menu>
         </Dropdown>
       )}
-      {visibleActions.map(action => action.component(action.args))}
+      {visibleActions.map(action => React.cloneElement(
+        action.component,
+        {
+          key: action,
+          as: action.component.props?.as || Button,
+          ...action.args,
+        },
+      ))}
     </div>
   );
 };

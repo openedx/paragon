@@ -19,6 +19,10 @@ const BulkActions = ({ className }) => {
     tableInstance,
   };
 
+  if (typeof bulkActions === 'function') {
+    return <div className={classNames('pgn__bulk-actions', className)}>{bulkActions(args)}</div>;
+  }
+
   const actions = bulkActions.map(action => ({ component: action, args }));
 
   return (
