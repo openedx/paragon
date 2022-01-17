@@ -157,7 +157,7 @@
   position: relative;
 
   &.horizontal {
-    max-width: 30%;
+    max-width: $card-image-horizontal-max-width;
 
     .pgn__card-image-cap {
       height: 100%;
@@ -174,9 +174,15 @@
       bottom: $card-logo-bottom-offset-horizontal;
     }
   }
+
+  &.vertical {
+    max-height: $card-image-vertical-max-height;
+  }
 }
 
 .pgn__card-image-cap {
+  object-fit: cover;
+  max-height: inherit;
   width: 100%;
   border-top-left-radius: $card-image-border-radius;
   border-top-right-radius: $card-image-border-radius;
