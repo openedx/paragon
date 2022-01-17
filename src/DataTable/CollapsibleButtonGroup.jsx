@@ -54,10 +54,11 @@ const CollapsibleButtonGroup = ({
             id="actions-dropdown"
           />
           <Dropdown.Menu alignRight>
-            {dropdownActions.map(action => React.cloneElement(
+            {dropdownActions.map((action, index) => React.cloneElement(
               action.component,
               {
-                key: action,
+                // eslint-disable-next-line react/no-array-index-key
+                key: `${action}${index}`,
                 as: Dropdown.Item,
                 ...action.args,
               },
@@ -65,10 +66,11 @@ const CollapsibleButtonGroup = ({
           </Dropdown.Menu>
         </Dropdown>
       )}
-      {visibleActions.map(action => React.cloneElement(
+      {visibleActions.map((action, index) => React.cloneElement(
         action.component,
         {
-          key: action,
+          // eslint-disable-next-line react/no-array-index-key
+          key: `${action}${index}`,
           as: action.component.props?.as || Button,
           ...action.args,
         },

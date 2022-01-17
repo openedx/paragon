@@ -20,24 +20,18 @@ const instance = {
   ],
 };
 
-const firstAction = ({ as }) => React.createElement(
-  as || Button,
-  {
-    key: 'First Action',
-    onClick: () => {},
-    className: 'class1',
-  },
-  'First Action',
+// eslint-disable-next-line react/prop-types
+const FirstAction = ({ as: Component }) => (
+  <Component className="class1">
+    First Action
+  </Component>
 );
 
-const secondAction = ({ as }) => React.createElement(
-  as || Button,
-  {
-    key: 'Second Action',
-    onClick: () => {},
-    className: 'class2',
-  },
-  'Second Action',
+// eslint-disable-next-line react/prop-types
+const SecondAction = ({ as: Component }) => (
+  <Component className="class2">
+    Second Action
+  </Component>
 );
 
 // eslint-disable-next-line react/prop-types
@@ -54,7 +48,7 @@ describe('<ActionDisplay />', () => {
     const wrapper = mount(
       <ActionDisplayWrapper
         value={{
-          ...instance, rows: null, tableActions: [firstAction], bulkActions: [secondAction],
+          ...instance, rows: null, tableActions: [<FirstAction />], bulkActions: [<SecondAction />],
         }}
       />,
     );
@@ -64,7 +58,7 @@ describe('<ActionDisplay />', () => {
   it('displays bulk actions when rows are selected', () => {
     const wrapper = mount(
       <ActionDisplayWrapper
-        value={{ ...instance, bulkActions: [firstAction, secondAction], selectedFlatRows: [{}, {}] }}
+        value={{ ...instance, bulkActions: [<FirstAction />, <SecondAction />], selectedFlatRows: [{}, {}] }}
       />,
     );
     expect(wrapper.find(BulkActions)).toHaveLength(1);
@@ -72,7 +66,7 @@ describe('<ActionDisplay />', () => {
   it('does not display bulk actions when no rows are selected (no table actions)', () => {
     const wrapper = mount(
       <ActionDisplayWrapper
-        value={{ ...instance, bulkActions: [firstAction, secondAction], selectedFlatRows: [] }}
+        value={{ ...instance, bulkActions: [<FirstAction />, <SecondAction />], selectedFlatRows: [] }}
       />,
     );
     expect(wrapper.find(ActionDisplay).text()).toEqual('');
@@ -80,7 +74,7 @@ describe('<ActionDisplay />', () => {
   it('displays tableActions', () => {
     const wrapper = mount(
       <ActionDisplayWrapper
-        value={{ ...instance, tableActions: [firstAction, secondAction], selectedFlatRows: [] }}
+        value={{ ...instance, tableActions: [<FirstAction />, <SecondAction />], selectedFlatRows: [] }}
       />,
     );
     expect(wrapper.find(TableActions)).toHaveLength(1);
@@ -90,8 +84,8 @@ describe('<ActionDisplay />', () => {
       <ActionDisplayWrapper
         value={{
           ...instance,
-          bulkActions: [firstAction],
-          tableActions: [secondAction],
+          bulkActions: [<FirstAction />],
+          tableActions: [<SecondAction />],
           selectedFlatRows: [],
         }}
       />,
@@ -102,7 +96,7 @@ describe('<ActionDisplay />', () => {
     // This is an edge case
     const wrapper = mount(
       <ActionDisplayWrapper
-        value={{ ...instance, tableActions: [firstAction, secondAction], selectedFlatRows: [{}, {}] }}
+        value={{ ...instance, tableActions: [<FirstAction />, <SecondAction />], selectedFlatRows: [{}, {}] }}
       />,
     );
     expect(wrapper.find(TableActions)).toHaveLength(1);
@@ -112,8 +106,8 @@ describe('<ActionDisplay />', () => {
       <ActionDisplayWrapper
         value={{
           ...instance,
-          bulkActions: [firstAction],
-          tableActions: [secondAction],
+          bulkActions: [<FirstAction />],
+          tableActions: [<SecondAction />],
           selectedFlatRows: [{}, {}],
         }}
       />,
