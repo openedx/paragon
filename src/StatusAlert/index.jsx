@@ -40,8 +40,11 @@ class StatusAlert extends React.Component {
     }
   }
 
-  focus() {
-    this.xButton.focus();
+  handleKeyDown(e) {
+    if (e.key === 'Enter' || e.key === 'Escape') {
+      e.preventDefault();
+      this.close();
+    }
   }
 
   close() {
@@ -49,11 +52,8 @@ class StatusAlert extends React.Component {
     this.props.onClose();
   }
 
-  handleKeyDown(e) {
-    if (e.key === 'Enter' || e.key === 'Escape') {
-      e.preventDefault();
-      this.close();
-    }
+  focus() {
+    this.xButton.focus();
   }
 
   renderDialog() {
