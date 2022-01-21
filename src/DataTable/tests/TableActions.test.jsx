@@ -20,8 +20,8 @@ const FirstAction = ({ as: Component, onClick, className }) => (
 );
 
 // eslint-disable-next-line react/prop-types
-const SecondAction = ({ as: Component }) => (
-  <Component variant="outline-primary" className="class2">
+const SecondAction = ({ as: Component, onClick, className }) => (
+  <Component variant="outline-primary" className={classNames('class2', className)} onClick={onClick}>
     Second Action
   </Component>
 );
@@ -111,7 +111,7 @@ describe('<TableActions />', () => {
     });
     it('performs the second button action on click', () => {
       const onClickSpy = jest.fn();
-      const tableInstance = { ...instance, tableActions: [<FirstAction />, <FirstAction onClick={onClickSpy} />] };
+      const tableInstance = { ...instance, tableActions: [<FirstAction />, <SecondAction onClick={onClickSpy} />] };
       const wrapper = mount(<TableActionsWrapper value={tableInstance} />);
       const button = wrapper.find(Button).at(0);
       button.simulate('click');

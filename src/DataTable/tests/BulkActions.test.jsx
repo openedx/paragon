@@ -20,8 +20,8 @@ const FirstAction = ({ as: Component, onClick, className }) => (
 );
 
 // eslint-disable-next-line react/prop-types
-const SecondAction = ({ as: Component }) => (
-  <Component variant="outline-primary" className="class2">
+const SecondAction = ({ as: Component, onClick, className }) => (
+  <Component variant="outline-primary" className={classNames('class2', className)} onClick={onClick}>
     Second Action
   </Component>
 );
@@ -140,7 +140,7 @@ describe('<BulkActions />', () => {
       const onClickSpy = jest.fn();
       const wrapper = mount(
         <BulkActionsWrapper
-          value={{ ...instance, bulkActions: [<FirstAction />, <FirstAction onClick={onClickSpy} />] }}
+          value={{ ...instance, bulkActions: [<FirstAction />, <SecondAction onClick={onClickSpy} />] }}
         />,
       );
       const button = wrapper.find(Button).at(0);
