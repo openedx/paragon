@@ -1,5 +1,5 @@
 {
-  "lastModified": 1642687726233,
+  "lastModified": 1642774254238,
   "projectUsages": [
     {
       "version": "16.24.0",
@@ -8736,13 +8736,13 @@
           },
           {
             "filePath": "src/components/dashboard/Dashboard.jsx",
-            "line": 44,
+            "line": 38,
             "column": 6,
             "version": "16.14.7"
           },
           {
             "filePath": "src/components/dashboard/Dashboard.jsx",
-            "line": 47,
+            "line": 49,
             "column": 6,
             "version": "16.14.7"
           },
@@ -8844,8 +8844,8 @@
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 190,
-            "column": 10,
+            "line": 179,
+            "column": 12,
             "version": "16.14.7"
           }
         ],
@@ -8870,7 +8870,7 @@
           },
           {
             "filePath": "src/components/dashboard/Dashboard.jsx",
-            "line": 48,
+            "line": 50,
             "column": 8,
             "version": "16.14.7"
           },
@@ -8988,8 +8988,8 @@
           },
           {
             "filePath": "src/components/dashboard/Dashboard.jsx",
-            "line": 35,
-            "column": 4,
+            "line": 39,
+            "column": 8,
             "version": "16.14.7"
           },
           {
@@ -9120,8 +9120,8 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
-            "line": 31,
-            "column": 14,
+            "line": 38,
+            "column": 12,
             "version": "16.14.7"
           },
           {
@@ -9156,32 +9156,32 @@
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 170,
-            "column": 16,
+            "line": 293,
+            "column": 18,
             "version": "16.14.7"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 174,
-            "column": 16,
+            "line": 300,
+            "column": 14,
             "version": "16.14.7"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 181,
-            "column": 16,
+            "line": 304,
+            "column": 14,
             "version": "16.14.7"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 185,
-            "column": 16,
+            "line": 311,
+            "column": 14,
             "version": "16.14.7"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 290,
-            "column": 16,
+            "line": 315,
+            "column": 14,
             "version": "16.14.7"
           }
         ],
@@ -9276,7 +9276,7 @@
           },
           {
             "filePath": "src/components/skills-quiz/SelectedJobSkills.jsx",
-            "line": 24,
+            "line": 23,
             "column": 10,
             "version": "16.14.7"
           }
@@ -9962,51 +9962,67 @@
         "Stepper": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 160,
+            "line": 162,
             "column": 6,
             "version": "16.14.7"
           }
         ],
-        "FullscreenModal": [
+        "ModalDialog": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 161,
+            "line": 163,
             "column": 8,
             "version": "16.14.7"
           }
         ],
-        "Stepper.Header": [
+        "ModalDialog.Hero": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 166,
-            "column": 26,
+            "line": 170,
+            "column": 10,
             "version": "16.14.7"
           }
         ],
-        "Stepper.ActionRow": [
+        "ModalDialog.Body": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 169,
-            "column": 14,
-            "version": "16.14.7"
-          },
-          {
-            "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 180,
-            "column": 14,
+            "line": 178,
+            "column": 10,
             "version": "16.14.7"
           }
         ],
         "Stepper.Step": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 191,
+            "line": 180,
+            "column": 14,
+            "version": "16.14.7"
+          },
+          {
+            "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
+            "line": 274,
+            "column": 14,
+            "version": "16.14.7"
+          }
+        ],
+        "ModalDialog.Footer": [
+          {
+            "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
+            "line": 298,
+            "column": 10,
+            "version": "16.14.7"
+          }
+        ],
+        "Stepper.ActionRow": [
+          {
+            "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
+            "line": 299,
             "column": 12,
             "version": "16.14.7"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 271,
+            "line": 310,
             "column": 12,
             "version": "16.14.7"
           }
