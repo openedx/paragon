@@ -7,7 +7,7 @@
 // You can delete this file if you're not using it
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
-const sass = require('node-sass')
+const sass = require('sass')
 const css = require('css')
 const fs = require(`fs`)
 
