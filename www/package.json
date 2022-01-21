@@ -16,7 +16,6 @@
     "gatsby-plugin-sass": "^4.1.0",
     "gatsby-source-filesystem": "^3.0.0",
     "gatsby-transformer-react-docgen": "^6.1.0",
-    "node-sass": "^5.0.0",
     "prism-react-renderer": "^1.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
@@ -52,7 +51,8 @@
     "css": "^3.0.0",
     "eslint": "^7.6.0",
     "eslint-config-edx": "^4.0.4",
-    "eslint-import-resolver-alias": "^1.1.2"
+    "eslint-import-resolver-alias": "^1.1.2",
+    "sass": "^1.32.13"
   },
   "repository": {
     "type": "git",

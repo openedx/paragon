@@ -1,5 +1,5 @@
 var path = require('path');
-var sass = require('node-sass');
+var sass = require('sass');
 var fs = require('fs');
 
 
