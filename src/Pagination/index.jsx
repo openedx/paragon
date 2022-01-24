@@ -27,17 +27,12 @@ class Pagination extends React.Component {
     };
   }
 
-  // TODO: Move to getDerivedStateFromProps
-  // eslint-disable-next-line camelcase
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    if (
-      nextProps.currentPage !== this.props.currentPage
-      || nextProps.currentPage !== this.state.currentPage
-    ) {
-      this.setState({
-        currentPage: nextProps.currentPage,
-      });
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.currentPage !== prevState.currentPage) {
+      return { currentPage: nextProps.currentPage, ...prevState };
     }
+
+    return null;
   }
 
   shouldComponentUpdate(nextProps, nextState) {

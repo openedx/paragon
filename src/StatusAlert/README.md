@@ -99,7 +99,10 @@ class StatusAlertWrapper extends React.Component {
 
   resetStatusAlertWrapperState() {
     this.setState({ open: false });
-    this.button.focus();
+    
+    if (this.button) {
+      this.button.focus();
+    }
   }
 
   render() {

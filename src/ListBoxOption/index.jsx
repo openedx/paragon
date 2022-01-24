@@ -9,10 +9,8 @@ export default class ListBoxOption extends React.Component {
     this.onMouseDown = this.onMouseDown.bind(this);
   }
 
-  // TODO: Move to getDerivedStateFromProps
-  // eslint-disable-next-line react/no-deprecated
-  componentWillReceiveProps(nextProps) {
-    if (!this.props.isSelected && nextProps.isSelected) {
+  componentDidUpdate(prevProps) {
+    if (this.props.isSelected && !prevProps.isSelected) {
       this.props.onSelect();
     }
   }
