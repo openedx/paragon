@@ -178,3 +178,100 @@ A composition of a stepper with a `FullscreenModal`.
   )
 }
 ```
+
+### Error State
+
+A composition of a stepper with the `hasError` prop. Note that the `index` prop is
+also required for steps to rerender correctly here.
+
+```jsx live
+() => {
+  const steps = ['checkbox', 'success'];
+  const [currentStep, setCurrentStep] = useState(steps[0]);
+  const [isChecked, check, uncheck, toggleChecked] = useToggle(false);
+  const [hasError, setError, removeError] = useToggle(false);
+  const [isAlertOpen, openAlert, closeAlert] = useToggle(false)
+
+  const evaluateCheckbox = () => {
+    if (isChecked) {
+      removeError();
+      setCurrentStep('success');
+    } else {
+      setError();
+    }
+  };
+
+  const resetCheckbox = () => {
+    closeAlert();
+    uncheck();
+    removeError();
+  };
+
+  return (
+    <Stepper activeKey={currentStep}>
+      <Stepper.Header />
+
+      <AlertModal
+        title="Confirm reset"
+        isOpen={isAlertOpen}
+        onClose={closeAlert}
+        footerNode={(
+          <ActionRow>
+            <Button variant="tertiary" onClick={closeAlert}>Cancel</Button>
+            <Button variant="danger" onClick={resetCheckbox}>Confirm</Button>
+          </ActionRow>
+        )}
+      >
+        <p>
+          Are you sure you wish to reset the checkbox?
+        </p>
+      </AlertModal>
+
+      <Container size="sm" className="py-5">
+        <Stepper.Step
+          eventKey="checkbox"
+          title="Check the Box"
+          index={steps.indexOf('checkbox')}
+          description={hasError ? 'Please check the box to continue.' : ''}
+          hasError={hasError}
+        >
+          <h2>Check the box</h2>
+          <Form.Checkbox checked={isChecked} onChange={toggleChecked}>
+            Check me!
+          </Form.Checkbox>
+        </Stepper.Step>
+
+        <Stepper.Step
+          eventKey="success"
+          title="Success!"
+          index={steps.indexOf('success')}
+        >
+          <h2>Success!</h2>
+          <p>You may now complete this demo.</p>
+        </Stepper.Step>
+      </Container>
+
+      <div className="py-3">
+        <Stepper.ActionRow eventKey="checkbox">
+          <Button variant="outline-primary" onClick={openAlert}>
+            Reset
+          </Button>
+          <Stepper.ActionRow.Spacer />
+          <Button onClick={() => evaluateCheckbox()}>Next</Button>
+        </Stepper.ActionRow>
+
+        <Stepper.ActionRow eventKey="success">
+          <Button
+            variant="outline-primary"
+            onClick={() => setCurrentStep('checkbox')}
+          >
+            Previous
+          </Button>
+          <Stepper.ActionRow.Spacer />
+          <Button onClick={() => alert('Completed')}>Complete</Button>
+        </Stepper.ActionRow>
+      </div>
+    </Stepper>
+  )
+}
+```

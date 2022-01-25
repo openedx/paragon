@@ -13,7 +13,7 @@ const Example = ({ activeKey, hasStepWithError, hasFourthStep }) => (
   <Stepper activeKey={activeKey}>
     <Stepper.Header />
 
-    <Stepper.Step eventKey="welcome" title="Welcome">
+    <Stepper.Step eventKey="welcome" title="Welcome" index={0}>
       <span id="welcome-content">Welcome content</span>
     </Stepper.Step>
     <Stepper.Step
@@ -21,14 +21,15 @@ const Example = ({ activeKey, hasStepWithError, hasFourthStep }) => (
       title="Cat"
       hasError={hasStepWithError}
       description={hasStepWithError ? 'Im an error description' : undefined}
+      index={1}
     >
       <span id="cats-content">Cat content</span>
     </Stepper.Step>
-    <Stepper.Step eventKey="review" title="Review">
+    <Stepper.Step eventKey="review" title="Review" index={2}>
       <span id="review-content">Review content</span>
     </Stepper.Step>
     {hasFourthStep && (
-      <Stepper.Step eventKey="extra" title="Extra">
+      <Stepper.Step eventKey="extra" title="Extra" index={3}>
         <span id="extra-content">Extra content</span>
       </Stepper.Step>
     )}
@@ -92,6 +93,9 @@ describe('Stepper', () => {
       wrapper.update();
       const oneStepWithErrors = wrapper.find(StepperHeaderStep).filterWhere((n) => n.props().hasError);
       expect(oneStepWithErrors.length).toBe(1);
+      // Ensure the step is still in the correct position
+      const allSteps = wrapper.find(StepperHeaderStep).getElements();
+      expect(allSteps[1].props.hasError).toBeTruthy();
     });
   });
 
