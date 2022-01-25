@@ -8,6 +8,7 @@ export default function StepperStep({
   eventKey,
   className,
   title,
+  index,
   description,
   hasError,
 }) {
@@ -16,6 +17,7 @@ export default function StepperStep({
   useEffect(() => {
     registerStep({
       title,
+      index,
       eventKey,
       description,
       hasError,
@@ -52,10 +54,16 @@ StepperStep.propTypes = {
   description: PropTypes.string,
   /** Informs user if this `Step` has errors. */
   hasError: PropTypes.bool,
+  /**
+   * Position of the `Step`, only required if adding error state
+   * or conditionally rendering steps.
+   * */
+  index: PropTypes.number,
 };
 
 StepperStep.defaultProps = {
   className: undefined,
   description: undefined,
   hasError: false,
+  index: undefined,
 };

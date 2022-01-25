@@ -6,6 +6,7 @@ export const StepperContext = React.createContext({
 });
 
 const stepsReducer = (stepsState, action) => {
+  let newStepsState = [];
   switch (action.type) {
     case 'remove':
       return stepsState.filter(step => step.eventKey !== action.eventKey);
@@ -13,14 +14,23 @@ const stepsReducer = (stepsState, action) => {
     default:
       // If is existing step
       if (stepsState.some(step => step.eventKey === action.step.eventKey)) {
-        return stepsState.map(step => {
+        newStepsState = stepsState.map(step => {
           if (step.eventKey === action.step.eventKey) {
             return action.step;
           }
           return step;
         });
+      } else {
+        newStepsState = [...stepsState, action.step];
       }
-      return [...stepsState, action.step];
+
+      // If using the index prop
+      if (stepsState.some(step => step.index)) {
+        return newStepsState.sort((a, b) => (
+          a.index > b.index ? 1 : -1
+        ));
+      }
+      return newStepsState;
   }
 };
 
