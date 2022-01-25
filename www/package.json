@@ -26,7 +26,8 @@
     "react-helmet": "^6.1.0",
     "react-live": "^2.4.0",
     "rehype-autolink-headings": "^5.1.0",
-    "rehype-slug": "^4.0.1"
+    "rehype-slug": "^4.0.1",
+    "sass": "^1.32.13"
   },
   "keywords": [
     "paragon",
@@ -37,7 +38,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "npm run build-themes && gatsby build",
+    "build": "gatsby build --prefix-paths && npm run build-themes",
     "build:with-theme": "npm run build",
     "clean": "gatsby clean",
     "develop": "npm run build-themes && gatsby develop",
@@ -52,8 +53,7 @@
     "css": "^3.0.0",
     "eslint": "^7.6.0",
     "eslint-config-edx": "^4.0.4",
-    "eslint-import-resolver-alias": "^1.1.2",
-    "sass": "^1.32.13"
+    "eslint-import-resolver-alias": "^1.1.2"
   },
   "repository": {
     "type": "git",

@@ -11,6 +11,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import { Container, Nav } from '~paragon-react'; // eslint-disable-line
 import Header from './Header';
 import Menu from './Menu';
+import Settings from './Settings';
 
 const Layout = ({ children, showMinimizedTitle, hideFooterComponentMenu }) => {
   const data = useStaticQuery(graphql`
@@ -29,6 +30,7 @@ const Layout = ({ children, showMinimizedTitle, hideFooterComponentMenu }) => {
         siteTitle={data.site.siteMetadata?.title || 'Title'}
         showMinimizedTitle={showMinimizedTitle}
       />
+      <Settings />
       <main className="flex-grow-1">{children}</main>
       {!hideFooterComponentMenu && (
         <Container className="py-3 mt-5 bg-light-200 border-top border-light-300">

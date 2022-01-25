@@ -1,5 +1,5 @@
 const React = require('react');
-const { ThemeContextProvider } = require('./src/context/ThemeContext');
+const { SettingsContextProvider } = require('./src/context/SettingsContext');
 
 // wrap whole app in theme context
-exports.wrapRootElement = ({ element }) => <ThemeContextProvider>{element}</ThemeContextProvider>;
+exports.wrapRootElement = ({ element }) => <SettingsContextProvider>{element}</SettingsContextProvider>;

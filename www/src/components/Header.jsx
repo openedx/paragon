@@ -10,19 +10,18 @@ import {
   Col,
   Container,
   Button,
-  Form,
+  Icon,
+  IconButton,
 } from '~paragon-react'; // eslint-disable-line
-import { Menu as MenuIcon, Close } from '~paragon-icons'; // eslint-disable-line
-import { THEMES } from '../../theme-config';
-import ThemeContext from '../context/ThemeContext';
+import { Menu as MenuIcon, Close, Settings } from '~paragon-icons'; // eslint-disable-line
+import SettingsContext from '../context/SettingsContext';
 
 const Navbar = ({
   siteTitle,
   onMenuClick,
   menuIsOpen,
   showMinimizedTitle,
-  selectedTheme,
-  onThemeChange,
+  onSettingsClick,
 }) => (
   <Container as="header" className="py-3 bg-dark text-white sticky-top">
     <Row className="align-items-center">
@@ -65,27 +64,6 @@ const Navbar = ({
       </Col>
       <Col className="small" sm={4}>
         <Nav className="justify-content-end align-items-center">
-          <Form.Group
-            as={Row}
-            controlId="themeSelector"
-            className="mr-5 mb-0 align-items-center flex-grow-1"
-          >
-            <Form.Control
-              size="sm"
-              as="select"
-              value={selectedTheme}
-              onChange={onThemeChange}
-            >
-              {THEMES.map(theme => (
-                <option
-                  key={theme.label}
-                  value={theme.stylesheet}
-                >
-                  {theme.label}
-                </option>
-              ))}
-            </Form.Control>
-          </Form.Group>
           <img
             className="d-inline-block mr-2"
             src="https://img.shields.io/npm/v/@edx/paragon.svg"
@@ -107,6 +85,16 @@ const Navbar = ({
               GitHub
             </Nav.Link>
           </Nav.Item>
+          <Nav.Item>
+            <IconButton
+              src={Settings}
+              iconAs={Icon}
+              alt="Site settings"
+              onClick={onSettingsClick}
+              variant="light"
+              size="sm"
+            />
+          </Nav.Item>
         </Nav>
       </Col>
     </Row>
@@ -116,8 +104,7 @@ const Navbar = ({
 Navbar.propTypes = {
   siteTitle: PropTypes.string.isRequired,
   onMenuClick: PropTypes.func.isRequired,
-  selectedTheme: PropTypes.string.isRequired,
-  onThemeChange: PropTypes.func.isRequired,
+  onSettingsClick: PropTypes.func.isRequired,
   menuIsOpen: PropTypes.bool,
   showMinimizedTitle: PropTypes.bool,
 };
@@ -137,7 +124,7 @@ const Header = ({ siteTitle, showMinimizedTitle }) => {
     },
   });
 
-  const { theme, onThemeChange } = useContext(ThemeContext);
+  const { openSettings } = useContext(SettingsContext);
 
   // returned function will be called on component unmount
   useEffect(() => () => {
@@ -160,8 +147,7 @@ const Header = ({ siteTitle, showMinimizedTitle }) => {
           onMenuClick={toggle}
           menuIsOpen={isOpen}
           showMinimizedTitle={showMinimizedTitle}
-          selectedTheme={theme}
-          onThemeChange={onThemeChange}
+          onSettingsClick={openSettings}
         />
         {isOpen && <Menu />}
       </div>

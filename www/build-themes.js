@@ -1,5 +1,5 @@
 const path = require('path');
-const sass = require('node-sass');
+const sass = require('sass');
 const fs = require('fs');
 const { THEMES } = require('./theme-config');
 
@@ -26,8 +26,8 @@ const importer = function importer(url, prev) {
   return { file };
 };
 
-if (!fs.existsSync('./static')) {
-  fs.mkdirSync('./static', { recursive: true });
+if (!fs.existsSync('./public/static')) {
+  fs.mkdirSync('./public/static', { recursive: true });
 }
 
 // compile SASS stylesheet to CSS for each theme in the config
@@ -37,7 +37,8 @@ THEMES.forEach(theme => {
     file: `./src/scss/${theme.stylesheet}.scss`,
     outputStyle: 'compressed',
     importer,
+    quietDeps: true,
   });
 
-  fs.writeFileSync(`./static/${theme.stylesheet}.css`, result.css);
+  fs.writeFileSync(`./public/static/${theme.stylesheet}.css`, result.css);
 });

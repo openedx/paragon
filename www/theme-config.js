@@ -6,11 +6,11 @@
 //     and placed into ./public/static/ directory under <stylesheet>.css name
 exports.THEMES = [
   {
-    label: 'Openedx theme',
+    label: 'Open edX (default)',
     stylesheet: 'openedx-theme',
   },
   {
-    label: 'Edx.org theme',
+    label: 'edX.org',
     stylesheet: 'edxorg-theme',
   },
 ];
