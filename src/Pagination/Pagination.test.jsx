@@ -50,6 +50,7 @@ describe('<Pagination />', () => {
       wrapper.setProps({
         currentPage: newPage,
       });
+      wrapper.update();
       expect(wrapper.state('currentPage')).toEqual(newPage);
     });
 
@@ -64,6 +65,7 @@ describe('<Pagination />', () => {
       wrapper.setProps({
         currentPage,
       });
+      wrapper.update();
       expect(wrapper.state('currentPage')).toEqual(currentPage);
     });
   });
@@ -178,6 +180,7 @@ describe('<Pagination />', () => {
       };
       const wrapper = mount(<Pagination {...props} />);
       wrapper.setProps({ currentPage: 2 });
+      wrapper.update();
       wrapper.find('button.previous').simulate('click');
       expect(spy).toHaveBeenCalledTimes(1);
     });
@@ -232,6 +235,7 @@ describe('<Pagination />', () => {
       )).prop('aria-label')).toEqual(buttonLabels.previous);
 
       wrapper.setProps({ currentPage: baseProps.pageCount });
+      wrapper.update();
 
       expect(wrapper.findWhere(node => (
         node.name() === 'button' && node.hasClass('previous')
@@ -244,6 +248,7 @@ describe('<Pagination />', () => {
       )).prop('aria-label')).toEqual(`${buttonLabels.next}, ${buttonLabels.page} 2`);
 
       wrapper.setProps({ currentPage: baseProps.pageCount });
+      wrapper.update();
 
       expect(wrapper.findWhere(node => (
         node.name() === 'button' && node.hasClass('next')

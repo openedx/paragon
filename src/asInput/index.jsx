@@ -111,15 +111,6 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       }
     }
 
-    handleBlur(event) {
-      const val = event.target.value;
-
-      if (this.props.validator) {
-        this.setState(this.props.validator(val));
-      }
-      this.props.onBlur(val, this.props.name);
-    }
-
     handleChange(event) {
       this.setState({ value: event.target.value });
 
@@ -133,14 +124,28 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       this.props.onKeyPress(event, this.props.name);
     }
 
-    getAddons({ addonElements, type }) {
-      if (Array.isArray(addonElements)) {
-        return addonElements.map((addon, index) => React.cloneElement(
-          addon,
-          { key: this.generateInputGroupAddonKey({ prefix: type, index }) },
-        ));
+    handleBlur(event) {
+      const val = event.target.value;
+
+      if (this.props.validator) {
+        this.setState(this.props.validator(val));
       }
-      return addonElements;
+      this.props.onBlur(val, this.props.name);
+    }
+
+    getLabel() {
+      return (
+        // eslint-disable-next-line jsx-a11y/label-has-for
+        <label
+          id={`label-${this.state.id}`}
+          htmlFor={this.state.id}
+          className={classNames({
+            'form-check-label': this.isGroupedInput(),
+          })}
+        >
+          {this.props.label}
+        </label>
+      );
     }
 
     getDescriptions() {
@@ -175,19 +180,14 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       return desc;
     }
 
-    getLabel() {
-      return (
-        // eslint-disable-next-line jsx-a11y/label-has-for
-        <label
-          id={`label-${this.state.id}`}
-          htmlFor={this.state.id}
-          className={classNames({
-            'form-check-label': this.isGroupedInput(),
-          })}
-        >
-          {this.props.label}
-        </label>
-      );
+    getAddons({ addonElements, type }) {
+      if (Array.isArray(addonElements)) {
+        return addonElements.map((addon, index) => React.cloneElement(
+          addon,
+          { key: this.generateInputGroupAddonKey({ prefix: type, index }) },
+        ));
+      }
+      return addonElements;
     }
 
     hasDangerTheme() {
