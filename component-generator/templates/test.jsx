@@ -1,10 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import ComponentName from './index';
+import componentName from './index';
 
-describe('<ComponentName />', () => {
+describe('<componentName />', () => {
   it('successfully renders', () => {
-    const tree = renderer.create(<ComponentName />).toJSON();
+    const tree = renderer.create(<componentName />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

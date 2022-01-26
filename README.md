@@ -62,12 +62,6 @@ npm install
 npm start
 ```
 
-You can alternatively run the dev server with the edx.org theme by running
-
-```
-npm run develop:with-theme
-```
-
 #### 2. Create new component
 
 To create new component run
