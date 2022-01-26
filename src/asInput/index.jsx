@@ -112,6 +112,28 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       }
     }
 
+    handleBlur(event) {
+      const val = event.target.value;
+
+      if (this.props.validator) {
+        this.setState(this.props.validator(val));
+      }
+      this.props.onBlur(val, this.props.name);
+    }
+
+    handleChange(event) {
+      this.setState({ value: event.target.value });
+
+      this.props.onChange(
+        event.target.type === 'checkbox' ? event.target.checked : event.target.value,
+        this.props.name,
+      );
+    }
+
+    handleKeyPress(event) {
+      this.props.onKeyPress(event, this.props.name);
+    }
+
     getAddons({ addonElements, type }) {
       if (Array.isArray(addonElements)) {
         return addonElements.map((addon, index) => React.cloneElement(
@@ -167,28 +189,6 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
           {this.props.label}
         </label>
       );
-    }
-
-    handleBlur(event) {
-      const val = event.target.value;
-
-      if (this.props.validator) {
-        this.setState(this.props.validator(val));
-      }
-      this.props.onBlur(val, this.props.name);
-    }
-
-    handleChange(event) {
-      this.setState({ value: event.target.value });
-
-      this.props.onChange(
-        event.target.type === 'checkbox' ? event.target.checked : event.target.value,
-        this.props.name,
-      );
-    }
-
-    handleKeyPress(event) {
-      this.props.onKeyPress(event, this.props.name);
     }
 
     hasDangerTheme() {
