@@ -11,7 +11,7 @@ $pagination-line-height:            1.25 !default;
 
 $pagination-color:                  $link-color !default;
 $pagination-bg:                     $white !default;
-$pagination-border-width:           $border-width !default;
+$pagination-border-width:           0 !default;
 $pagination-border-color:           theme-color("gray", "border") !default;
 
 $pagination-focus-box-shadow:       $input-btn-focus-box-shadow !default;

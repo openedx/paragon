@@ -7,6 +7,8 @@ import MediaQuery from 'react-responsive';
 
 import { Button } from '..';
 import Icon from '../Icon';
+import IconButton from '../IconButton';
+import { ChevronRight, ChevronLeft } from '../../icons';
 import breakpoints from '../utils/breakpoints';
 import newId from '../utils/newId';
 import { ELLIPSIS } from './constants';
@@ -135,7 +137,7 @@ class Pagination extends React.Component {
 
   renderPageOfCountButton() {
     const { currentPage } = this.state;
-    const { pageCount, buttonLabels } = this.props;
+    const { pageCount, buttonLabels, size } = this.props;
 
     const ariaLabel = `${buttonLabels.page} ${currentPage}, ${buttonLabels.currentPage}, ${buttonLabels.pageOfCount} ${pageCount}`;
 
@@ -156,7 +158,7 @@ class Pagination extends React.Component {
           className={classNames([
             'btn',
             'page-link',
-            'mx-2',
+            { 'mx-2': size !== 'small' },
             'border-0',
           ])}
           aria-label={ariaLabel}
@@ -168,7 +170,7 @@ class Pagination extends React.Component {
   }
 
   renderPreviousButton() {
-    const { buttonLabels, icons } = this.props;
+    const { buttonLabels, icons, size } = this.props;
     const { currentPage } = this.state;
     const isFirstPage = currentPage === 1;
     const previousPage = isFirstPage ? null : currentPage - 1;
@@ -182,30 +184,47 @@ class Pagination extends React.Component {
       <li
         className={classNames(
           'page-item',
+          'previous-item',
           {
             disabled: isFirstPage,
           },
         )}
       >
-        <Button.Deprecated
-          className="previous page-link"
-          aria-label={ariaLabel}
-          tabIndex={isFirstPage ? '-1' : undefined}
-          onClick={() => { this.handlePreviousNextButtonClick(previousPage); }}
-          inputRef={(element) => { this.previousButtonRef = element; }}
-          disabled={isFirstPage}
-        >
-          <div>
-            {icons.leftIcon}
-            {buttonLabels.previous}
-          </div>
-        </Button.Deprecated>
+        {size === 'small' ? (
+          <IconButton
+            iconAs={Icon}
+            src={ChevronLeft}
+            onClick={() => { this.handlePreviousNextButtonClick(previousPage); }}
+            alt={ariaLabel}
+            size="sm"
+          />
+        )
+          : (
+            <Button.Deprecated
+              className="previous page-link"
+              aria-label={ariaLabel}
+              tabIndex={isFirstPage ? '-1' : undefined}
+              onClick={() => { this.handlePreviousNextButtonClick(previousPage); }}
+              inputRef={(element) => { this.previousButtonRef = element; }}
+              disabled={isFirstPage}
+            >
+              <div>
+                {icons.leftIcon}
+                {buttonLabels.previous}
+              </div>
+            </Button.Deprecated>
+          )}
       </li>
     );
   }
 
   renderNextButton() {
-    const { buttonLabels, pageCount, icons } = this.props;
+    const {
+      buttonLabels,
+      pageCount,
+      icons,
+      size,
+    } = this.props;
     const { currentPage } = this.state;
     const isLastPage = currentPage === pageCount;
     const nextPage = isLastPage ? null : currentPage + 1;
@@ -219,24 +238,36 @@ class Pagination extends React.Component {
       <li
         className={classNames(
           'page-item',
+          'next-item',
           {
             disabled: isLastPage,
           },
         )}
       >
-        <Button.Deprecated
-          className="next page-link"
-          aria-label={ariaLabel}
-          tabIndex={isLastPage ? '-1' : undefined}
-          onClick={() => { this.handlePreviousNextButtonClick(nextPage); }}
-          inputRef={(element) => { this.nextButtonRef = element; }}
-          disabled={isLastPage}
-        >
-          <div>
-            {buttonLabels.next}
-            {icons.rightIcon}
-          </div>
-        </Button.Deprecated>
+        {size === 'small' ? (
+          <IconButton
+            iconAs={Icon}
+            src={ChevronRight}
+            onClick={() => { this.handlePreviousNextButtonClick(nextPage); }}
+            alt={ariaLabel}
+            size="sm"
+          />
+        )
+          : (
+            <Button.Deprecated
+              className="next page-link"
+              aria-label={ariaLabel}
+              tabIndex={isLastPage ? '-1' : undefined}
+              onClick={() => { this.handlePreviousNextButtonClick(nextPage); }}
+              inputRef={(element) => { this.nextButtonRef = element; }}
+              disabled={isLastPage}
+            >
+              <div>
+                {buttonLabels.next}
+                {icons.rightIcon}
+              </div>
+            </Button.Deprecated>
+          )}
       </li>
     );
   }
@@ -279,13 +310,18 @@ class Pagination extends React.Component {
   }
 
   render() {
+    const { size } = this.props;
     return (
       <nav
         aria-label={this.props.paginationLabel}
         className={this.props.className}
       >
         {this.renderScreenReaderSection()}
-        <ul className="pagination">
+        <ul className={classNames(
+          'pagination',
+          { 'pagination-small': size === 'small' },
+        )}
+        >
           {this.renderPreviousButton()}
           <MediaQuery maxWidth={breakpoints.extraSmall.maxWidth}>
             {this.renderPageOfCountButton()}
@@ -369,6 +405,11 @@ Pagination.propTypes = {
     leftIcon: PropTypes.node,
     rightIcon: PropTypes.node,
   }),
+  /**
+   * Specifies the size of pagination elements. If the 'small' size is passed,
+   * the IconButton component is used for the previous and next links.
+   */
+  size: PropTypes.oneOf(['default', 'small']),
 };
 
 Pagination.defaultProps = {
@@ -386,6 +427,7 @@ Pagination.defaultProps = {
   className: undefined,
   currentPage: 1,
   maxPagesDisplayed: 7,
+  size: 'default',
 };
 
 export default Pagination;

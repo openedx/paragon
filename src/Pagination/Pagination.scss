@@ -1,6 +1,21 @@
 @import "variables";
 @import "~bootstrap/scss/pagination";
 
+.pagination-small {
+  .page-link {
+    font-size: $font-size-sm;
+  }
+  .previous-item,
+  .next-item {
+    display: flex;
+    align-items: center;
+  }
+  .btn-icon.btn-icon-sm {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 .page-link {
     border-color: $pagination-border-color !important;
     border-radius: 0 !important;

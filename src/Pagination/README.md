@@ -96,3 +96,15 @@ Navigation between multiple pages of some set of results. Controls are provided 
   }}
 />
 ```
+
+### With small size setting
+
+```jsx live
+<Pagination
+  paginationLabel="pagination navigation"
+  pageCount={20}
+  currentPage={15}
+  onPageSelect={() => console.log('page selected')}
+  size="small"
+/>
+```
