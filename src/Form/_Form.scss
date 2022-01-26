@@ -242,19 +242,20 @@ $select-icon-padding: .5625rem !default;
       opacity: 0;
     }
   }
-  select.form-control {
-    padding-right: 2rem + $select-icon-padding;
-    background-image: $custom-select-indicator;
-    background-position: right $select-icon-padding center;
-    background-repeat: no-repeat;
-    background-size: 24px 24px;
-    appearance: none;
-  }
   select.form-control:not(.has-value):not(:focus) {
     // color: rgba(0,0,0,0); Force the rgba syntax to appear in the output rather
     // than transparent. IE11 does not understand color: transparent here.
     color: unquote("rgba(0,0,0,0)");
   }
+}
+
+select.form-control {
+  padding-right: 2rem + $select-icon-padding;
+  background-image: $custom-select-indicator;
+  background-position: right $select-icon-padding center;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  appearance: none;
 }
 
 // Regular Form Label

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { FocusOn } from 'react-focus-on';
 import { Link } from 'gatsby';
@@ -10,11 +10,18 @@ import {
   Col,
   Container,
   Button,
+  Icon,
+  IconButton,
 } from '~paragon-react'; // eslint-disable-line
-import { Menu as MenuIcon, Close } from '~paragon-icons'; // eslint-disable-line
+import { Menu as MenuIcon, Close, Settings } from '~paragon-icons'; // eslint-disable-line
+import SettingsContext from '../context/SettingsContext';
 
 const Navbar = ({
-  siteTitle, onMenuClick, menuIsOpen, showMinimizedTitle,
+  siteTitle,
+  onMenuClick,
+  menuIsOpen,
+  showMinimizedTitle,
+  onSettingsClick,
 }) => (
   <Container as="header" className="py-3 bg-dark text-white sticky-top">
     <Row className="align-items-center">
@@ -78,6 +85,16 @@ const Navbar = ({
               GitHub
             </Nav.Link>
           </Nav.Item>
+          <Nav.Item>
+            <IconButton
+              src={Settings}
+              iconAs={Icon}
+              alt="Site settings"
+              onClick={onSettingsClick}
+              variant="light"
+              size="sm"
+            />
+          </Nav.Item>
         </Nav>
       </Col>
     </Row>
@@ -87,6 +104,7 @@ const Navbar = ({
 Navbar.propTypes = {
   siteTitle: PropTypes.string.isRequired,
   onMenuClick: PropTypes.func.isRequired,
+  onSettingsClick: PropTypes.func.isRequired,
   menuIsOpen: PropTypes.bool,
   showMinimizedTitle: PropTypes.bool,
 };
@@ -105,6 +123,8 @@ const Header = ({ siteTitle, showMinimizedTitle }) => {
       document.body.style.overflow = 'initial';
     },
   });
+
+  const { openSettings } = useContext(SettingsContext);
 
   // returned function will be called on component unmount
   useEffect(() => () => {
@@ -127,6 +147,7 @@ const Header = ({ siteTitle, showMinimizedTitle }) => {
           onMenuClick={toggle}
           menuIsOpen={isOpen}
           showMinimizedTitle={showMinimizedTitle}
+          onSettingsClick={openSettings}
         />
         {isOpen && <Menu />}
       </div>

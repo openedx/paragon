@@ -18,17 +18,42 @@ npm start
 
 Edits made to react components in `src/` will be hot-reloaded in this doc site.
 
-## Developing with a theme applied
+## Including a custom theme
 
-1. Run
-```sh
-npm run develop:with-theme
+1. Create a separate SASS stylesheet with your theme in `src/scss`, e.g. `src/scss/my-theme.scss`.
+2. Add your theme to `theme-config.js`, e.g.
+
+```javascript
+exports.THEMES = [
+  ...,
+  // Provide configuration of your theme so that documentation site can pick it up
+  //
+  // label: Label of your theme which  will appear in theme selector
+  // stylesheet: Name of your theme's stylesheet (without extension) which you created during the first step,
+  //             it's assumed that stylesheet is located in 'src/scss'. The stylesheet will be compiled into CSS
+  //             and placed into ./public/static directory under <stylesheet>.css name
+  {
+    label: 'My custom theme',
+    stylesheet: 'my-theme',
+  },
+];
 ```
 
-(Coming soon) Control the theme used by installing a custom brand under the npm alias `@edx/brand`.
-```sh
-npm i @edx/brand@file:~/my-brand
-```
+3. Build your theme
+
+  - If you have already started the dev server with `npm start`, run
+    ```sh
+    npm run build-themes
+    ```
+
+    the command will build your theme and add it to the site
+  - If you haven't started the dev server yet, start it with
+
+    ```sh
+    npm start
+    ```
+
+    and your theme will automatically get picked up during the build.
 
 ## A note about .mdx files
 

@@ -3,7 +3,8 @@
   "description": "Paragon Pattern Library Documentation",
   "version": "1.0.0",
   "dependencies": {
-    "@edx/brand": "npm:@edx/brand-openedx@1.x",
+    "@edx/brand-edx.org": "^2.0.3",
+    "@edx/brand-openedx": "^1.1.0",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.16",
@@ -25,7 +26,8 @@
     "react-helmet": "^6.1.0",
     "react-live": "^2.4.0",
     "rehype-autolink-headings": "^5.1.0",
-    "rehype-slug": "^4.0.1"
+    "rehype-slug": "^4.0.1",
+    "sass": "^1.32.13"
   },
   "keywords": [
     "paragon",
@@ -36,23 +38,22 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build --prefix-paths",
-    "build:with-theme": "THEME=npm:@edx/brand-edx.org@latest npm run install-theme && gatsby build --prefix-paths",
+    "build": "gatsby build --prefix-paths && npm run build-themes",
+    "build:with-theme": "npm run build",
     "clean": "gatsby clean",
-    "develop": "gatsby develop",
-    "install-theme": "npm install \"@edx/brand@${THEME}\" --no-save",
-    "develop:with-theme": "THEME=npm:@edx/brand-edx.org@latest npm run install-theme && gatsby develop",
+    "develop": "npm run build-themes && gatsby develop",
+    "develop:with-theme": "npm run develop",
     "lint": "eslint --ext .js --ext .jsx .",
     "start": "npm run develop",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-themes": "node build-themes.js"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
     "css": "^3.0.0",
     "eslint": "^7.6.0",
     "eslint-config-edx": "^4.0.4",
-    "eslint-import-resolver-alias": "^1.1.2",
-    "sass": "^1.32.13"
+    "eslint-import-resolver-alias": "^1.1.2"
   },
   "repository": {
     "type": "git",
