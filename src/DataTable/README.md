@@ -237,6 +237,25 @@ To enable proper selection behavior with backend pagination (i.e., when ``isSele
     Cell: DataTable.ControlledSelect,
     disableSortBy: true,
   };
+
+  const DownloadCSVAction = ({ as: Component, selectedFlatRows, ...rest }) => (
+    <Component onClick={() => console.log('Download CSV', selectedFlatRows, rest)}>
+      Download CSV
+    </Component>
+  );
+
+  const ClearAction = ({ as: Component, tableInstance, ...rest }) => (
+    <Component
+      variant="danger"
+      onClick={() => {
+        console.log('Clear Selection');
+        tableInstance.clearSelection();
+      }}
+    >
+      Clear Selection
+    </Component>
+  );
+  
   return (
     <DataTable
       isSelectable
@@ -275,20 +294,8 @@ To enable proper selection behavior with backend pagination (i.e., when ``isSele
         },
       ]}
       bulkActions={[
-        {
-          buttonText: 'Download CSV',
-          handleClick: (data) => console.log('Download CSV', data),
-        },
-        // custom button function that utilizes clearSelection function provided by the table instance
-        ({tableInstance})=>{
-          return {
-            buttonText: `Clear Selection`,
-            handleClick: () => {
-              console.log('Clear selection');
-              tableInstance.clearSelection()
-            },
-          }
-        },
+        <DownloadCSVAction />,
+        <ClearAction />,
       ]}
     />
   );
@@ -302,7 +309,7 @@ Card view is default when ``isDataViewToggleEnabled`` is true
 See ``dataViewToggleOptions`` props documentation for all supported props
 
 ```jsx live
-function() {
+() => {
   const [currentView, setCurrentView] = useState('card');
   const togglePlacement = 'left'; // 'bottom' is the only other supported value
   return (
@@ -387,7 +394,7 @@ function() {
 ### With a default active state specified
 
 ```jsx live
-function() {
+() => {
   const defaultVal = "list";
   const [currentView, setCurrentView] = useState(defaultVal);
   return (
@@ -638,110 +645,151 @@ You can pass a function to render custom components for bulk actions and table a
 
 
 ```jsx live
-  <DataTable
-    isSelectable
-    itemCount={7}
-    tableActions={[
+() => {
+  const TableAction = ({ as: Component, ...rest }) => (
+    // Here is access to the tableInstance
+    // Pass `as` like in the example bellow for the proper display in the toggled variant
+    <Component onClick={() => console.log('TableAction', rest)}>
+      Enroll
+    </Component>
+  );
+  
+  const EnrollAction = ({ as: Component, selectedFlatRows, ...rest }) => (
+    // Here is access to the selectedFlatRows, isEntireTableSelected, tableInstance
+    <Component variant="danger" onClick={() => console.log('Enroll', selectedFlatRows, rest)}>
+      Enroll ({selectedFlatRows.length})
+    </Component>
+  );
+
+  const AssignAction = ({ as: Component, selectedFlatRows, ...rest }) => (
+    <Component onClick={() => console.log('Assign', selectedFlatRows, rest)}>
+      Assign ({selectedFlatRows.length})
+    </Component>
+  );
+  
+  const ExtraAction = ({ text, as: Component, selectedFlatRows, ...rest }) => (
+    <Component onClick={() => console.log(`Extra Action ${text}`, selectedFlatRows, rest)}>
+      {`Extra Action ${text}`}
+    </Component>
+  );
+  
+  return (
+    <DataTable
+      isSelectable
+      itemCount={7}
+      tableActions={[
+        <TableAction />,
+      ]}
+      bulkActions={[
+        <EnrollAction />,
+        // Default value for `as` property is `Button`
+        <AssignAction as={Button} />,
+        <ExtraAction text="1" />,
+        <ExtraAction text="2" />,
+      ]}
+      additionalColumns={[
         {
-          buttonText: 'Table Action',
-          handleClick: (data) => console.log('Table Action', data),
-        },
-    ]}
-    bulkActions={[
-        // Function defined button
-        ({selectedFlatRows})=>{
-          return {
-            buttonText: `Enroll (${selectedFlatRows.length})`,
-            handleClick: () => console.log('Enroll', selectedFlatRows),
-          }
+          id: 'action',
+          Header: 'Action',
+          Cell: ({ row }) => <Button variant="link" onClick={() => console.log(`Assigning ${row.values.name}`)}>Assign</Button>,
+        }
+      ]}
+      data={[
+        {
+          name: 'Lil Bub',
+          color: 'brown tabby',
+          famous_for: 'weird tongue',
         },
         {
-          buttonText: 'Assign',
-          handleClick: (data) => console.log('Assign', data),
+          name: 'Grumpy Cat',
+          color: 'siamese',
+          famous_for: 'serving moods',
         },
         {
-          buttonText: 'Extra action 1',
-          handleClick: (data) => console.log('Extra action 1', data),
+          name: 'Smoothie',
+          color: 'orange tabby',
+          famous_for: 'modeling',
         },
         {
-          buttonText: 'Extra action 2',
-          handleClick: (data) => console.log('Extra action 2', data),
+          name: 'Maru',
+          color: 'brown tabby',
+          famous_for: 'being a lovable oaf',
+        },
+        {
+          name: 'Keyboard Cat',
+          color: 'orange tabby',
+          famous_for: 'piano virtuoso',
+        },
+        {
+          name: 'Long Cat',
+          color: 'russian white',
+          famous_for:
+            'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+        },
+        {
+          name: 'Zeno',
+          color: 'brown tabby',
+          famous_for: 'getting halfway there'
         },
       ]}
-    additionalColumns={[
-      {
-        id: 'action',
-        Header: 'Action',
-        Cell: ({ row }) => <Button variant="link" onClick={() => console.log(`Assigning ${row.values.name}`)}>Assign</Button>,
-      }
-    ]}
-    data={[
-      {
-        name: 'Lil Bub',
-        color: 'brown tabby',
-        famous_for: 'weird tongue',
-      },
-      {
-        name: 'Grumpy Cat',
-        color: 'siamese',
-        famous_for: 'serving moods',
-      },
-      {
-        name: 'Smoothie',
-        color: 'orange tabby',
-        famous_for: 'modeling',
-      },
-      {
-        name: 'Maru',
-        color: 'brown tabby',
-        famous_for: 'being a lovable oaf',
-      },
-      {
-        name: 'Keyboard Cat',
-        color: 'orange tabby',
-        famous_for: 'piano virtuoso',
-      },
-      {
-        name: 'Long Cat',
-        color: 'russian white',
-        famous_for:
-          'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
-      },
-      {
-        name: 'Zeno',
-        color: 'brown tabby',
-        famous_for: 'getting halfway there'
-      },
-    ]}
-    columns={[
-      {
-        Header: 'Name',
-        accessor: 'name',
-
-      },
-      {
-        Header: 'Famous For',
-        accessor: 'famous_for',
-      },
-      {
-        Header: 'Coat Color',
-        accessor: 'color',
-      },
-    ]}
-  >
-    <DataTable.TableControlBar />
-    <DataTable.Table />
-    <DataTable.EmptyTable content="No results found" />
-    <DataTable.TableFooter />
-  </DataTable>
+      columns={[
+        {
+          Header: 'Name',
+          accessor: 'name',
+        },
+        {
+          Header: 'Famous For',
+          accessor: 'famous_for',
+        },
+        {
+          Header: 'Coat Color',
+          accessor: 'color',
+        },
+      ]}
+    >
+      <DataTable.TableControlBar />
+      <DataTable.Table />
+      <DataTable.EmptyTable content="No results found" />
+      <DataTable.TableFooter />
+    </DataTable>
+  )
+}
+  
 ```
 
 #### Actions with Data view toggle enabled
 
 
 ```jsx live
-function() {
-    const [currentView, setCurrentView] = useState('card');
+() => {
+  const [currentView, setCurrentView] = useState('card');
+
+  const TableAction = ({ as: Component, ...rest }) => (
+    // Here is access to the tableInstance
+    // Pass `as` like in the example bellow for the proper display in the toggled variant
+    <Component onClick={() => console.log('TableAction', rest)}>
+      Enroll
+    </Component>
+  );
+
+  const EnrollAction = ({ as: Component, selectedFlatRows, ...rest }) => (
+    // Here is access to the selectedFlatRows, isEntireTableSelected, tableInstance
+    <Component variant="danger" onClick={() => console.log('Enroll', selectedFlatRows, rest)}>
+      Enroll ({selectedFlatRows.length})
+    </Component>
+  );
+
+  const AssignAction = ({ as: Component, selectedFlatRows, ...rest }) => (
+    <Component onClick={() => console.log('Assign', selectedFlatRows, rest)}>
+      Assign ({selectedFlatRows.length})
+    </Component>
+  );
+
+  const ExtraAction = ({ text, as: Component, selectedFlatRows, ...rest }) => (
+    <Component onClick={() => console.log(`Extra Action ${text}`, selectedFlatRows, rest)}>
+      {`Extra Action ${text}`}
+    </Component>
+  );
 
   return (<DataTable
             dataViewToggleOptions={{
@@ -752,32 +800,15 @@ function() {
             isSelectable
             itemCount={7}
             tableActions={[
-                {
-                  buttonText: 'Table Action',
-                  handleClick: (data) => console.log('Table Action', data),
-                },
+              <TableAction />,
             ]}
             bulkActions={[
-                // Function defined button
-                ({selectedFlatRows})=>{
-                  return {
-                    buttonText: `Enroll (${selectedFlatRows.length})`,
-                    handleClick: () => console.log('Enroll', selectedFlatRows),
-                  }
-                },
-                {
-                  buttonText: 'Assign',
-                  handleClick: (data) => console.log('Assign', data),
-                },
-                {
-                  buttonText: 'Extra action 1',
-                  handleClick: (data) => console.log('Extra action 1', data),
-                },
-                {
-                  buttonText: 'Extra action 2',
-                  handleClick: (data) => console.log('Extra action 2', data),
-                },
-              ]}
+              <EnrollAction />,
+              // Default value for `as` property is `Button`
+              <AssignAction as={Button} />,
+              <ExtraAction text="1" />,
+              <ExtraAction text="2" />,
+            ]}
             additionalColumns={[
               {
                 id: 'action',
@@ -860,205 +891,225 @@ The CardView takes a ``CardComponent`` that is personalized to the table in ques
 a responsive grid of cards.
 
 ```jsx live
-<DataTable
-  isFilterable
-  defaultColumnValues={{ Filter: TextFilter }}
-  isPaginated
-  isSortable
-  initialState={{
-    pageSize: 3,
-    pageIndex: 0
-  }}
-  itemCount={20}
-  fetchData={(data) => console.log(`This function will be called with the value: ${JSON.stringify(data)}}`)}
-  data={[
-  {
-    'id': '2baf70d1-42bb-4437-b551-e5fed5a87abe',
-    'title': 'Castle in the Sky',
-    'director': 'Hayao Miyazaki',
-    'producer': 'Isao Takahata',
-    'release_date': '1986',
-    'rt_score': '95',
-  },
-  {
-    'id': '12cfb892-aac0-4c5b-94af-521852e46d6a',
-    'title': 'Grave of the Fireflies',
-    'director': 'Isao Takahata',
-    'producer': 'Toru Hara',
-    'release_date': '1988',
-    'rt_score': '97',
-  },
-  {
-    'id': '58611129-2dbc-4a81-a72f-77ddfc1b1b49',
-    'title': 'My Neighbor Totoro',
-    'director': 'Hayao Miyazaki',
-    'producer': 'Hayao Miyazaki',
-    'release_date': '1988',
-    'rt_score': '93',
-  },
-  {
-    'id': 'ea660b10-85c4-4ae3-8a5f-41cea3648e3e',
-    'title': 'Kiki\'s Delivery Service',
-    'director': 'Hayao Miyazaki',
-    'producer': 'Hayao Miyazaki',
-    'release_date': '1989',
-    'rt_score': '96',
-  },
-  {
-    'id': '4e236f34-b981-41c3-8c65-f8c9000b94e7',
-    'title': 'Only Yesterday',
-    'director': 'Isao Takahata',
-    'producer': 'Toshio Suzuki',
-    'release_date': '1991',
-    'rt_score': '100',
-  },
-  {
-    'id': 'ebbb6b7c-945c-41ee-a792-de0e43191bd8',
-    'title': 'Porco Rosso',
-    'director': 'Hayao Miyazaki',
-    'producer': 'Toshio Suzuki',
-    'release_date': '1992',
-    'rt_score': '94',
-  },
-  {
-    'id': '1b67aa9a-2e4a-45af-ac98-64d6ad15b16c',
-    'title': 'Pom Poko',
-    'director': 'Isao Takahata',
-    'producer': 'Toshio Suzuki',
-    'release_date': '1994',
-    'rt_score': '78',
-  },
-  {
-    'id': 'ff24da26-a969-4f0e-ba1e-a122ead6c6e3',
-    'title': 'Whisper of the Heart',
-    'director': 'Yoshifumi Kondō',
-    'producer': 'Toshio Suzuki',
-    'release_date': '1995',
-    'rt_score': '91',
-  },
-  {
-    'id': '0440483e-ca0e-4120-8c50-4c8cd9b965d6',
-    'title': 'Princess Mononoke',
-    'director': 'Hayao Miyazaki',
-    'producer': 'Toshio Suzuki',
-    'release_date': '1997',
-    'rt_score': '92',
-  },
-  {
-    'id': '45204234-adfd-45cb-a505-a8e7a676b114',
-    'title': 'My Neighbors the Yamadas',
-    'director': 'Isao Takahata',
-    'producer': 'Toshio Suzuki',
-    'release_date': '1999',
-    'rt_score': '75',
-  },
-  {
-    'id': 'dc2e6bd1-8156-4886-adff-b39e6043af0c',
-    'title': 'Spirited Away',
-    'director': 'Hayao Miyazaki',
-    'producer': 'Toshio Suzuki',
-    'release_date': '2001',
-    'rt_score': '97',
-  },
-  {
-    'id': '90b72513-afd4-4570-84de-a56c312fdf81',
-    'title': 'The Cat Returns',
-    'director': 'Hiroyuki Morita',
-    'producer': 'Toshio Suzuki',
-    'release_date': '2002',
-    'rt_score': '89',
-  },
-  {
-    'id': 'cd3d059c-09f4-4ff3-8d63-bc765a5184fa',
-    'title': 'Howl\'s Moving Castle',
-    'director': 'Hayao Miyazaki',
-    'producer': 'Toshio Suzuki',
-    'release_date': '2004',
-    'rt_score': '87',
-  },
-  {
-    'id': '112c1e67-726f-40b1-ac17-6974127bb9b9',
-    'title': 'Tales from Earthsea',
-    'director': 'Gorō Miyazaki',
-    'producer': 'Toshio Suzuki',
-    'release_date': '2006',
-    'rt_score': '41',
-  },
-  {
-    'id': '758bf02e-3122-46e0-884e-67cf83df1786',
-    'title': 'Ponyo',
-    'director': 'Hayao Miyazaki',
-    'producer': 'Toshio Suzuki',
-    'release_date': '2008',
-    'rt_score': '92',
-  },
-  {
-    'id': '2de9426b-914a-4a06-a3a0-5e6d9d3886f6',
-    'title': 'Arrietty',
-    'director': 'Hiromasa Yonebayashi',
-    'producer': 'Toshio Suzuki',
-    'release_date': '2010',
-    'rt_score': '95',
-  },
-  {
-    'id': '45db04e4-304a-4933-9823-33f389e8d74d',
-    'title': 'From Up on Poppy Hill',
-    'director': 'Gorō Miyazaki',
-    'producer': 'Toshio Suzuki',
-    'release_date': '2011',
-    'rt_score': '83',
-  },
-  {
-    'id': '67405111-37a5-438f-81cc-4666af60c800',
-    'title': 'The Wind Rises',
-    'director': 'Hayao Miyazaki',
-    'producer': 'Toshio Suzuki',
-    'release_date': '2013',
-    'rt_score': '89',
-  },
-  {
-    'id': '578ae244-7750-4d9f-867b-f3cd3d6fecf4',
-    'title': 'The Tale of the Princess Kaguya',
-    'director': 'Isao Takahata',
-    'producer': 'Yoshiaki Nishimura',
-    'release_date': '2013',
-    'rt_score': '100',
-  },
-  {
-    'id': '5fdfb320-2a02-49a7-94ff-5ca418cae602',
-    'title': 'When Marnie Was There',
-    'director': 'Hiromasa Yonebayashi',
-    'producer': 'Yoshiaki Nishimura',
-    'release_date': '2014',
-    'rt_score': '92',
-  }
-]}
-  columns={[
-    {
-      Header: 'Title',
-      accessor: 'title',
+() => {
+  const DownloadCSVAction = ({ as: Component, selectedFlatRows, ...rest }) => (
+    <Component onClick={() => console.log('Download CSV', selectedFlatRows, rest)}>
+      Download CSV
+    </Component>
+  );
 
-    },
-    {
-      Header: 'Director',
-      accessor: 'director',
-    },
-    {
-      Header: 'Release date',
-      accessor: 'release_date',
-    },
-  ]}
-  bulkActions={[
-    {
-      buttonText: 'Download CSV',
-      handleClick: (data) => console.log('Download CSV ', data),
-    },
-  ]}
->
-  <TableControlBar />
-  <CardView CardComponent={MiyazakiCard} />
-  <TableFooter />
-</DataTable>
+  const ClearAction = ({ as: Component, tableInstance, ...rest }) => (
+    <Component
+      variant="danger"
+      onClick={() => {
+        console.log('Clear Selection');
+        tableInstance.clearSelection();
+      }}
+    >
+      Clear Selection
+    </Component>
+  );
+  
+  return (
+    <DataTable
+      isFilterable
+      defaultColumnValues={{ Filter: TextFilter }}
+      isPaginated
+      isSortable
+      initialState={{
+        pageSize: 3,
+        pageIndex: 0
+      }}
+      itemCount={20}
+      fetchData={(data) => console.log(`This function will be called with the value: ${JSON.stringify(data)}}`)}
+      data={[
+        {
+          'id': '2baf70d1-42bb-4437-b551-e5fed5a87abe',
+          'title': 'Castle in the Sky',
+          'director': 'Hayao Miyazaki',
+          'producer': 'Isao Takahata',
+          'release_date': '1986',
+          'rt_score': '95',
+        },
+        {
+          'id': '12cfb892-aac0-4c5b-94af-521852e46d6a',
+          'title': 'Grave of the Fireflies',
+          'director': 'Isao Takahata',
+          'producer': 'Toru Hara',
+          'release_date': '1988',
+          'rt_score': '97',
+        },
+        {
+          'id': '58611129-2dbc-4a81-a72f-77ddfc1b1b49',
+          'title': 'My Neighbor Totoro',
+          'director': 'Hayao Miyazaki',
+          'producer': 'Hayao Miyazaki',
+          'release_date': '1988',
+          'rt_score': '93',
+        },
+        {
+          'id': 'ea660b10-85c4-4ae3-8a5f-41cea3648e3e',
+          'title': 'Kiki\'s Delivery Service',
+          'director': 'Hayao Miyazaki',
+          'producer': 'Hayao Miyazaki',
+          'release_date': '1989',
+          'rt_score': '96',
+        },
+        {
+          'id': '4e236f34-b981-41c3-8c65-f8c9000b94e7',
+          'title': 'Only Yesterday',
+          'director': 'Isao Takahata',
+          'producer': 'Toshio Suzuki',
+          'release_date': '1991',
+          'rt_score': '100',
+        },
+        {
+          'id': 'ebbb6b7c-945c-41ee-a792-de0e43191bd8',
+          'title': 'Porco Rosso',
+          'director': 'Hayao Miyazaki',
+          'producer': 'Toshio Suzuki',
+          'release_date': '1992',
+          'rt_score': '94',
+        },
+        {
+          'id': '1b67aa9a-2e4a-45af-ac98-64d6ad15b16c',
+          'title': 'Pom Poko',
+          'director': 'Isao Takahata',
+          'producer': 'Toshio Suzuki',
+          'release_date': '1994',
+          'rt_score': '78',
+        },
+        {
+          'id': 'ff24da26-a969-4f0e-ba1e-a122ead6c6e3',
+          'title': 'Whisper of the Heart',
+          'director': 'Yoshifumi Kondō',
+          'producer': 'Toshio Suzuki',
+          'release_date': '1995',
+          'rt_score': '91',
+        },
+        {
+          'id': '0440483e-ca0e-4120-8c50-4c8cd9b965d6',
+          'title': 'Princess Mononoke',
+          'director': 'Hayao Miyazaki',
+          'producer': 'Toshio Suzuki',
+          'release_date': '1997',
+          'rt_score': '92',
+        },
+        {
+          'id': '45204234-adfd-45cb-a505-a8e7a676b114',
+          'title': 'My Neighbors the Yamadas',
+          'director': 'Isao Takahata',
+          'producer': 'Toshio Suzuki',
+          'release_date': '1999',
+          'rt_score': '75',
+        },
+        {
+          'id': 'dc2e6bd1-8156-4886-adff-b39e6043af0c',
+          'title': 'Spirited Away',
+          'director': 'Hayao Miyazaki',
+          'producer': 'Toshio Suzuki',
+          'release_date': '2001',
+          'rt_score': '97',
+        },
+        {
+          'id': '90b72513-afd4-4570-84de-a56c312fdf81',
+          'title': 'The Cat Returns',
+          'director': 'Hiroyuki Morita',
+          'producer': 'Toshio Suzuki',
+          'release_date': '2002',
+          'rt_score': '89',
+        },
+        {
+          'id': 'cd3d059c-09f4-4ff3-8d63-bc765a5184fa',
+          'title': 'Howl\'s Moving Castle',
+          'director': 'Hayao Miyazaki',
+          'producer': 'Toshio Suzuki',
+          'release_date': '2004',
+          'rt_score': '87',
+        },
+        {
+          'id': '112c1e67-726f-40b1-ac17-6974127bb9b9',
+          'title': 'Tales from Earthsea',
+          'director': 'Gorō Miyazaki',
+          'producer': 'Toshio Suzuki',
+          'release_date': '2006',
+          'rt_score': '41',
+        },
+        {
+          'id': '758bf02e-3122-46e0-884e-67cf83df1786',
+          'title': 'Ponyo',
+          'director': 'Hayao Miyazaki',
+          'producer': 'Toshio Suzuki',
+          'release_date': '2008',
+          'rt_score': '92',
+        },
+        {
+          'id': '2de9426b-914a-4a06-a3a0-5e6d9d3886f6',
+          'title': 'Arrietty',
+          'director': 'Hiromasa Yonebayashi',
+          'producer': 'Toshio Suzuki',
+          'release_date': '2010',
+          'rt_score': '95',
+        },
+        {
+          'id': '45db04e4-304a-4933-9823-33f389e8d74d',
+          'title': 'From Up on Poppy Hill',
+          'director': 'Gorō Miyazaki',
+          'producer': 'Toshio Suzuki',
+          'release_date': '2011',
+          'rt_score': '83',
+        },
+        {
+          'id': '67405111-37a5-438f-81cc-4666af60c800',
+          'title': 'The Wind Rises',
+          'director': 'Hayao Miyazaki',
+          'producer': 'Toshio Suzuki',
+          'release_date': '2013',
+          'rt_score': '89',
+        },
+        {
+          'id': '578ae244-7750-4d9f-867b-f3cd3d6fecf4',
+          'title': 'The Tale of the Princess Kaguya',
+          'director': 'Isao Takahata',
+          'producer': 'Yoshiaki Nishimura',
+          'release_date': '2013',
+          'rt_score': '100',
+        },
+        {
+          'id': '5fdfb320-2a02-49a7-94ff-5ca418cae602',
+          'title': 'When Marnie Was There',
+          'director': 'Hiromasa Yonebayashi',
+          'producer': 'Yoshiaki Nishimura',
+          'release_date': '2014',
+          'rt_score': '92',
+        }
+      ]}
+      columns={[
+        {
+          Header: 'Title',
+          accessor: 'title',
+
+        },
+        {
+          Header: 'Director',
+          accessor: 'director',
+        },
+        {
+          Header: 'Release date',
+          accessor: 'release_date',
+        },
+      ]}
+      bulkActions={[
+        <DownloadCSVAction />,
+        <ClearAction />,
+      ]}
+    >
+      <TableControlBar />
+      <CardView CardComponent={MiyazakiCard} />
+      <TableFooter />
+    </DataTable>
+  );
+};
 ```
 
 ## Sidebar Filter
