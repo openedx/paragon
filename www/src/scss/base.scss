@@ -1,9 +1,3 @@
-@import "~font-awesome/css/font-awesome.min.css";
-@import "~@edx/brand/paragon/fonts.scss";
-@import "~@edx/brand/paragon/variables.scss";
-@import "~paragon-style/core/core.scss";
-@import "~@edx/brand/paragon/overrides.scss";
-
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -49,4 +43,3 @@ h1, h2, h3, h4, h5, h6 {
 @import "../components/CodeBlock";
 @import "../components/Menu";
 @import "../components/doc-elements";
-
