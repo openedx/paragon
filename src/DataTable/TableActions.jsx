@@ -9,22 +9,20 @@ const TableActions = ({ className }) => {
   const tableInstance = useContext(DataTableContext);
   const { tableActions } = tableInstance;
 
+  const args = {
+    tableInstance,
+  };
+
   if (typeof tableActions === 'function') {
     return <div className={classNames('pgn__table-actions', className)}>{tableActions(tableInstance)}</div>;
   }
 
-  const actions = tableActions.map(action => {
-    if (typeof action === 'function') {
-      return action(tableInstance);
-    }
-    return action;
-  });
+  const actions = tableActions.map(action => ({ component: action, args }));
 
   return (
     <Actions
       className={classNames('pgn__table-actions', className)}
       actions={actions}
-      tableInstance={tableInstance}
     />
   );
 };

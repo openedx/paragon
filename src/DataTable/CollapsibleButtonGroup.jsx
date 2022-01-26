@@ -1,11 +1,10 @@
-import React, { useCallback, useContext, useMemo } from 'react';
+import React, { useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
 import DataTableContext from './DataTableContext';
 import { MoreVert } from '../../icons';
 import {
-  Button, Dropdown, useWindowSize, Icon, IconButton, breakpoints,
+  Dropdown, useWindowSize, Icon, IconButton, breakpoints, Button,
 } from '..';
 
 export const DROPDOWN_BUTTON_TEXT = 'More actions';
@@ -14,7 +13,6 @@ export const SMALL_SCREEN_DROPDOWN_BUTTON_TEXT = 'Actions';
 const CollapsibleButtonGroup = ({
   className,
   actions,
-  tableInstance,
 }) => {
   const {
     controlledTableSelections: [{ isEntireTableSelected }],
@@ -38,20 +36,6 @@ const CollapsibleButtonGroup = ({
     return [firstTwoActions.reverse(), extraActions];
   }, [actions, width]);
 
-  const handleClick = useCallback(
-    (action) => {
-      const args = { selectedRows };
-      if (isEntireTableSelected) {
-        args.isEntireTableSelected = isEntireTableSelected;
-      }
-      if (tableInstance) {
-        args.tableInstance = tableInstance;
-      }
-      action.handleClick(args);
-    },
-    [isEntireTableSelected, selectedRows, tableInstance],
-  );
-
   if (!isEntireTableSelected && !selectedRows) {
     return null;
   }
@@ -70,58 +54,43 @@ const CollapsibleButtonGroup = ({
             id="actions-dropdown"
           />
           <Dropdown.Menu alignRight>
-            {dropdownActions.map((action) => (
-              <Dropdown.Item
-                className={action.className}
-                key={action.buttonText}
-                onClick={() => handleClick(action)}
-                disabled={action.disabled}
-              >
-                {action.buttonText}
-              </Dropdown.Item>
+            {dropdownActions.map((action, index) => React.cloneElement(
+              action.component,
+              {
+                // eslint-disable-next-line react/no-array-index-key
+                key: `${action}${index}`,
+                as: Dropdown.Item,
+                ...action.args,
+              },
             ))}
           </Dropdown.Menu>
         </Dropdown>
       )}
-      {visibleActions.map((action, idx) => {
-        let { variant } = action;
-        if (!variant) {
-          // use the variant defined on the button if it exists, if not, use these styles.
-          variant = (idx === 1 && visibleActions.length === 2) ? 'brand' : 'outline-primary';
-        }
-        return (
-          <Button
-            variant={variant}
-            className={classNames('pgn__data-table__action-btn', action.className)}
-            onClick={() => handleClick(action)}
-            key={action.buttonText}
-            disabled={action.disabled}
-          >
-            {action.buttonText}
-          </Button>
-        );
-      })}
+      {visibleActions.map((action, index) => React.cloneElement(
+        action.component,
+        {
+          // eslint-disable-next-line react/no-array-index-key
+          key: `${action}${index}`,
+          as: action.component.props?.as || Button,
+          ...action.args,
+        },
+      ))}
     </div>
   );
 };
 
 CollapsibleButtonGroup.defaultProps = {
   className: null,
-  tableInstance: null,
 };
 
 CollapsibleButtonGroup.propTypes = {
   /** class names for the div wrapping the button components */
   className: PropTypes.string,
-  // eslint-disable-next-line react/forbid-prop-types
   actions: PropTypes.arrayOf(PropTypes.shape({
-    className: PropTypes.string,
-    handleClick: PropTypes.func.isRequired,
-    disabled: PropTypes.bool,
-    buttonText: PropTypes.string.isRequired,
+    component: PropTypes.func.isRequired,
+    // eslint-disable-next-line react/forbid-prop-types
+    args: PropTypes.object,
   })).isRequired,
-  /** useTable instance */
-  tableInstance: PropTypes.shape(),
 };
 
 export default CollapsibleButtonGroup;
