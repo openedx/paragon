@@ -56,6 +56,10 @@ class Pagination extends React.Component {
     }
   }
 
+  setPageButtonSelectedState(value) {
+    this.setState({ pageButtonSelected: value });
+  }
+
   handlePageSelect(page) {
     if (page !== this.state.currentPage) {
       this.setState({
@@ -76,10 +80,6 @@ class Pagination extends React.Component {
     }
     this.setState({ currentPage: page });
     this.props.onPageSelect(page);
-  }
-
-  setPageButtonSelectedState(value) {
-    this.setState({ pageButtonSelected: value });
   }
 
   renderEllipsisButton() {
