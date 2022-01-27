@@ -1,5 +1,5 @@
 {
-  "lastModified": 1643206125192,
+  "lastModified": 1643292611296,
   "projectUsages": [
     {
       "version": "16.24.0",
@@ -7152,13 +7152,13 @@
         "Button": [
           {
             "filePath": "src/discussions/comments/comment/Comment.jsx",
-            "line": 79,
+            "line": 89,
             "column": 10,
             "version": "16.19.0"
           },
           {
             "filePath": "src/discussions/comments/comment/Comment.jsx",
-            "line": 102,
+            "line": 112,
             "column": 16,
             "version": "16.19.0"
           },
@@ -7172,6 +7172,12 @@
             "filePath": "src/discussions/comments/CommentsView.jsx",
             "line": 86,
             "column": 8,
+            "version": "16.19.0"
+          },
+          {
+            "filePath": "src/discussions/common/DeleteConfirmation.jsx",
+            "line": 32,
+            "column": 10,
             "version": "16.19.0"
           },
           {
@@ -7236,7 +7242,7 @@
           },
           {
             "filePath": "src/discussions/comments/comment/Reply.jsx",
-            "line": 42,
+            "line": 53,
             "column": 10,
             "version": "16.19.0"
           },
@@ -7492,7 +7498,63 @@
           },
           {
             "filePath": "src/discussions/posts/post/Post.jsx",
-            "line": 51,
+            "line": 65,
+            "column": 10,
+            "version": "16.19.0"
+          }
+        ],
+        "ModalDialog": [
+          {
+            "filePath": "src/discussions/common/DeleteConfirmation.jsx",
+            "line": 18,
+            "column": 4,
+            "version": "16.19.0"
+          }
+        ],
+        "ModalDialog.Header": [
+          {
+            "filePath": "src/discussions/common/DeleteConfirmation.jsx",
+            "line": 19,
+            "column": 6,
+            "version": "16.19.0"
+          }
+        ],
+        "ModalDialog.Title": [
+          {
+            "filePath": "src/discussions/common/DeleteConfirmation.jsx",
+            "line": 20,
+            "column": 8,
+            "version": "16.19.0"
+          }
+        ],
+        "ModalDialog.Body": [
+          {
+            "filePath": "src/discussions/common/DeleteConfirmation.jsx",
+            "line": 24,
+            "column": 6,
+            "version": "16.19.0"
+          }
+        ],
+        "ModalDialog.Footer": [
+          {
+            "filePath": "src/discussions/common/DeleteConfirmation.jsx",
+            "line": 27,
+            "column": 6,
+            "version": "16.19.0"
+          }
+        ],
+        "ActionRow": [
+          {
+            "filePath": "src/discussions/common/DeleteConfirmation.jsx",
+            "line": 28,
+            "column": 8,
+            "version": "16.19.0"
+          }
+        ],
+        "ModalDialog.CloseButton": [
+          {
+            "filePath": "src/discussions/common/DeleteConfirmation.jsx",
+            "line": 29,
             "column": 10,
             "version": "16.19.0"
           }
@@ -16803,7 +16865,7 @@
       "usages": {}
     },
     {
-      "version": "16.14.6",
+      "version": "17.5.3",
       "name": "@edx/gatsby-react-app",
       "repository": {
         "type": "git",
@@ -16816,181 +16878,181 @@
             "filePath": "src/components/2U/ProductCard.jsx",
             "line": 158,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
             "line": 171,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
             "line": 184,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
             "line": 197,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
             "line": 210,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
             "line": 300,
             "column": 12,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Card/index.jsx",
             "line": 171,
             "column": 32,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Card/index.jsx",
             "line": 172,
             "column": 31,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Card/index.jsx",
             "line": 185,
             "column": 18,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Carousel/index.jsx",
             "line": 226,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Carousel/index.jsx",
             "line": 242,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Collapsible/CollapsibleLink.jsx",
             "line": 44,
             "column": 12,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseHeader.jsx",
             "line": 124,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseHeaderExp.jsx",
             "line": 135,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseModes.jsx",
             "line": 334,
             "column": 50,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseModes.jsx",
             "line": 343,
             "column": 50,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseModesExp.jsx",
             "line": 295,
             "column": 50,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseModesExp.jsx",
             "line": 304,
             "column": 50,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseSnapshot.jsx",
             "line": 72,
             "column": 20,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseSnapshot.jsx",
             "line": 101,
             "column": 22,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseSnapshot.jsx",
             "line": 137,
             "column": 24,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseSnapshotExp.jsx",
             "line": 57,
             "column": 14,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseSnapshotExp.jsx",
             "line": 122,
             "column": 12,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseSnapshotExp.jsx",
             "line": 142,
             "column": 12,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/InstructorCard.jsx",
             "line": 57,
             "column": 22,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/DiscoveryCard/DiscoveryProgramCard.jsx",
             "line": 283,
             "column": 24,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Search/Pagination/index.jsx",
             "line": 17,
             "column": 19,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Search/Pagination/index.jsx",
             "line": 18,
             "column": 20,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Search/SearchBreadcrumb.jsx",
             "line": 87,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Search/SearchBreadcrumb.jsx",
             "line": 90,
             "column": 8,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Card": [
@@ -16998,25 +17060,25 @@
             "filePath": "src/components/2U/ProductCard.jsx",
             "line": 248,
             "column": 8,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseRunSelectionTile.jsx",
             "line": 52,
             "column": 4,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/SearchPreQuery/PartnerFilters.jsx",
             "line": 85,
             "column": 14,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/templates/allTopics.jsx",
             "line": 88,
             "column": 12,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Image": [
@@ -17024,13 +17086,13 @@
             "filePath": "src/components/2U/ProductCard.jsx",
             "line": 262,
             "column": 16,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/SearchPreQuery/SubjectFilters.jsx",
             "line": 155,
             "column": 8,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Card.Body": [
@@ -17038,19 +17100,19 @@
             "filePath": "src/components/2U/ProductCard.jsx",
             "line": 273,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseRunSelectionTile.jsx",
             "line": 53,
             "column": 6,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/templates/allTopics.jsx",
             "line": 89,
             "column": 14,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Card.Title": [
@@ -17058,7 +17120,7 @@
             "filePath": "src/components/2U/ProductCard.jsx",
             "line": 275,
             "column": 14,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Card.Subtitle": [
@@ -17066,7 +17128,7 @@
             "filePath": "src/components/2U/ProductCard.jsx",
             "line": 283,
             "column": 14,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Badge": [
@@ -17074,55 +17136,55 @@
             "filePath": "src/components/2U/ProductCard.jsx",
             "line": 293,
             "column": 14,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Badges/NewBadge.jsx",
             "line": 9,
             "column": 2,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseRunSelectionTile.jsx",
             "line": 57,
             "column": 12,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/DiscoveryCard/DiscoveryCourseCard.jsx",
             "line": 125,
             "column": 14,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/DiscoveryCard/DiscoveryProgramCard.jsx",
             "line": 189,
             "column": 20,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/DiscoveryCard/DiscoveryProgramCard.jsx",
             "line": 273,
             "column": 22,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Search/ManagedAutoComplete.jsx",
-            "line": 194,
+            "line": 198,
             "column": 30,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Search/ManagedAutoComplete.jsx",
-            "line": 248,
+            "line": 252,
             "column": 30,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Search/Refinements/FacetList.jsx",
             "line": 187,
             "column": 33,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Card.Footer": [
@@ -17130,7 +17192,7 @@
             "filePath": "src/components/2U/ProductCard.jsx",
             "line": 298,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Button": [
@@ -17138,97 +17200,97 @@
             "filePath": "src/components/Card/index.jsx",
             "line": 139,
             "column": 12,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Card/index.jsx",
             "line": 180,
             "column": 16,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseHeader.jsx",
             "line": 66,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseHeaderExp.jsx",
             "line": 76,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseHeaderExp.jsx",
             "line": 166,
             "column": 26,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseRunSelector.jsx",
             "line": 214,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseRunSelectorExp.jsx",
             "line": 231,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/EnrollButtonLink.jsx",
             "line": 308,
             "column": 20,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/Instructors.jsx",
             "line": 56,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/EdX/ParagonCollapsible.jsx",
             "line": 94,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Home/HomeSearchBar.jsx",
             "line": 72,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Overlays/SocialSharePopover.jsx",
             "line": 269,
             "column": 18,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Overlays/SocialSharePopover.jsx",
             "line": 276,
             "column": 18,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Overlays/SocialSharePopover.jsx",
             "line": 300,
             "column": 14,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Search/ManagedAutoComplete.jsx",
-            "line": 261,
+            "line": 265,
             "column": 12,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/SearchPreQuery/PopularSearchLinks.jsx",
             "line": 64,
             "column": 8,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Container": [
@@ -17236,355 +17298,349 @@
             "filePath": "src/components/CardPanels/CardListPanel.jsx",
             "line": 183,
             "column": 6,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Careers/Hero.jsx",
             "line": 38,
             "column": 4,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/BusinessBlock.jsx",
             "line": 49,
             "column": 4,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/BusinessBlockExp.jsx",
             "line": 49,
             "column": 4,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseHeader.jsx",
             "line": 119,
             "column": 6,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseHeaderExp.jsx",
             "line": 130,
             "column": 6,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseMain.jsx",
             "line": 95,
             "column": 4,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseMainExp.jsx",
             "line": 30,
             "column": 2,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseModes.jsx",
             "line": 191,
             "column": 4,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseModesExp.jsx",
             "line": 155,
             "column": 4,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseRecommendationsExp.jsx",
             "line": 17,
             "column": 2,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseRunSelector.jsx",
             "line": 124,
             "column": 4,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseRunSelectorExp.jsx",
             "line": 129,
             "column": 4,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseSnapshot.jsx",
             "line": 58,
             "column": 12,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/FAQ.jsx",
             "line": 40,
             "column": 4,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/FAQExp.jsx",
             "line": 34,
             "column": 4,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/StickyNav.jsx",
             "line": 146,
             "column": 12,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/EdX/AboutEdx.jsx",
             "line": 7,
             "column": 2,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/EdX/EdxStatistics.jsx",
             "line": 12,
             "column": 2,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/EdX/EdxStatistics.jsx",
             "line": 13,
             "column": 4,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Form/StandaloneHubspotCaptureForm.jsx",
             "line": 42,
             "column": 6,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Hero/Bootcamp.jsx",
             "line": 44,
             "column": 6,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Home/Audiences.jsx",
             "line": 18,
             "column": 6,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Home/EdxVision.jsx",
             "line": 8,
             "column": 4,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Home/Hero.jsx",
             "line": 12,
             "column": 6,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Home/MarketingTakeover.jsx",
             "line": 20,
             "column": 4,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Home/MarketingTakeover.jsx",
             "line": 49,
             "column": 4,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Home/SubjectList.jsx",
             "line": 17,
             "column": 6,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Home/Trustbar.jsx",
             "line": 10,
             "column": 2,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Home/UniversalDesignOfLearning.jsx",
             "line": 6,
             "column": 2,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Program/ProgramDataBar.jsx",
             "line": 121,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
             "line": 394,
             "column": 8,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
             "line": 395,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
             "line": 396,
             "column": 12,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
             "line": 630,
             "column": 12,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
             "line": 638,
             "column": 12,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
             "line": 657,
             "column": 8,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
             "line": 842,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
             "line": 843,
             "column": 12,
-            "version": "16.14.6"
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/components/Search/Header/index.jsx",
+            "line": 32,
+            "column": 8,
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Search/Results/FullProductHits.jsx",
             "line": 31,
             "column": 2,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Search/Results/OverviewProductHits.jsx",
             "line": 28,
             "column": 4,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Search/SearchBreadcrumb.jsx",
             "line": 79,
             "column": 4,
-            "version": "16.14.6"
-          },
-          {
-            "filePath": "src/components/SearchPreQuery/HeroSearch.jsx",
-            "line": 60,
-            "column": 6,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Section/index.jsx",
             "line": 18,
             "column": 6,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/SitewideBanner/index.jsx",
             "line": 69,
             "column": 8,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/SplitView/index.jsx",
             "line": 32,
             "column": 4,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/SubjectTopics/index.jsx",
             "line": 58,
             "column": 8,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/SubjectTopics/index.jsx",
             "line": 68,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/templates/aboutEdX.jsx",
             "line": 383,
             "column": 12,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/templates/aboutEdX.jsx",
             "line": 407,
             "column": 12,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/templates/aboutEdX.jsx",
             "line": 500,
             "column": 14,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/templates/aboutEdX.jsx",
             "line": 509,
             "column": 14,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/templates/allTopics.jsx",
             "line": 72,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/templates/allTopics.jsx",
             "line": 83,
             "column": 8,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/templates/careers.jsx",
             "line": 74,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/templates/careers.jsx",
             "line": 92,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/templates/products2U.jsx",
             "line": 14,
             "column": 4,
-            "version": "16.14.6"
-          },
-          {
-            "filePath": "src/templates/search/firstLevelResults.jsx",
-            "line": 396,
-            "column": 14,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/templates/search/preQuery.jsx",
-            "line": 45,
-            "column": 6,
-            "version": "16.14.6"
+            "line": 82,
+            "column": 8,
+            "version": "17.5.3"
           }
         ],
         "Breadcrumb": [
@@ -17592,31 +17648,31 @@
             "filePath": "src/components/Course/CourseHeader.jsx",
             "line": 121,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseHeader.jsx",
             "line": 125,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseHeaderExp.jsx",
             "line": 132,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseHeaderExp.jsx",
             "line": 136,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Search/SearchBreadcrumb.jsx",
             "line": 92,
             "column": 6,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "OverlayTrigger": [
@@ -17624,37 +17680,37 @@
             "filePath": "src/components/Course/CourseModes.jsx",
             "line": 268,
             "column": 26,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseModes.jsx",
             "line": 285,
             "column": 26,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseModesExp.jsx",
             "line": 229,
             "column": 26,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseModesExp.jsx",
             "line": 246,
             "column": 26,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Overlays/SocialSharePopover.jsx",
             "line": 243,
             "column": 6,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/ProgramPathway/ProgramPathwayCourse.jsx",
             "line": 61,
             "column": 6,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Tooltip": [
@@ -17662,31 +17718,31 @@
             "filePath": "src/components/Course/CourseModes.jsx",
             "line": 271,
             "column": 30,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseModes.jsx",
             "line": 288,
             "column": 30,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseModesExp.jsx",
             "line": 232,
             "column": 30,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseModesExp.jsx",
             "line": 249,
             "column": 30,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/ProgramPathway/ProgramPathwayCourse.jsx",
             "line": 67,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "IconButton": [
@@ -17694,19 +17750,19 @@
             "filePath": "src/components/Course/CourseModes.jsx",
             "line": 276,
             "column": 28,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseModes.jsx",
             "line": 293,
             "column": 28,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Overlays/SocialSharePopover.jsx",
             "line": 311,
             "column": 14,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "CardGrid": [
@@ -17714,19 +17770,19 @@
             "filePath": "src/components/Course/CourseRunSelector.jsx",
             "line": 185,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseRunSelectorExp.jsx",
             "line": 202,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/SearchPreQuery/PartnerFilters.jsx",
             "line": 76,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Avatar": [
@@ -17734,13 +17790,13 @@
             "filePath": "src/components/Course/InstructorCard.jsx",
             "line": 49,
             "column": 20,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/MemberList/index.jsx",
             "line": 123,
             "column": 8,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Alert": [
@@ -17748,13 +17804,13 @@
             "filePath": "src/components/Course/RetirementBanner.jsx",
             "line": 7,
             "column": 2,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
             "line": 401,
             "column": 20,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "DropdownButton": [
@@ -17762,7 +17818,7 @@
             "filePath": "src/components/Course/StickyNav.jsx",
             "line": 155,
             "column": 16,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Dropdown.Item": [
@@ -17770,7 +17826,7 @@
             "filePath": "src/components/Course/StickyNav.jsx",
             "line": 167,
             "column": 20,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Collapsible": [
@@ -17778,55 +17834,55 @@
             "filePath": "src/components/FAQs/AccordionFAQ.jsx",
             "line": 25,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/templates/courseDetailMobileExp.jsx",
             "line": 294,
             "column": 12,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/templates/courseDetailMobileExp.jsx",
             "line": 309,
             "column": 14,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/templates/courseDetailMobileExp.jsx",
             "line": 315,
             "column": 12,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/templates/courseDetailMobileExp.jsx",
             "line": 326,
             "column": 14,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/templates/courseDetailMobileExp.jsx",
             "line": 337,
             "column": 14,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/templates/courseDetailMobileExp.jsx",
             "line": 348,
             "column": 14,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/templates/courseDetailMobileExp.jsx",
             "line": 357,
             "column": 14,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/templates/courseDetailMobileExp.jsx",
             "line": 367,
             "column": 14,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Input": [
@@ -17834,7 +17890,7 @@
             "filePath": "src/components/Footer/index.jsx",
             "line": 411,
             "column": 20,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Dropdown": [
@@ -17842,7 +17898,7 @@
             "filePath": "src/components/Header/UserMenu.jsx",
             "line": 138,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Dropdown.Toggle": [
@@ -17850,7 +17906,7 @@
             "filePath": "src/components/Header/UserMenu.jsx",
             "line": 139,
             "column": 12,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Dropdown.Menu": [
@@ -17858,7 +17914,7 @@
             "filePath": "src/components/Header/UserMenu.jsx",
             "line": 153,
             "column": 12,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Modal": [
@@ -17866,13 +17922,13 @@
             "filePath": "src/components/MemberList/index.jsx",
             "line": 163,
             "column": 8,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Program/ProgramTrackModal.jsx",
             "line": 111,
             "column": 6,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "AvatarButton": [
@@ -17880,7 +17936,7 @@
             "filePath": "src/components/MemberList/MemberListItem.jsx",
             "line": 52,
             "column": 8,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Toast": [
@@ -17888,7 +17944,7 @@
             "filePath": "src/components/Overlays/SocialSharePopover.jsx",
             "line": 236,
             "column": 8,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Popover": [
@@ -17896,7 +17952,7 @@
             "filePath": "src/components/Overlays/SocialSharePopover.jsx",
             "line": 247,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Popover.Title": [
@@ -17904,7 +17960,7 @@
             "filePath": "src/components/Overlays/SocialSharePopover.jsx",
             "line": 249,
             "column": 12,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Popover.Content": [
@@ -17912,7 +17968,7 @@
             "filePath": "src/components/Overlays/SocialSharePopover.jsx",
             "line": 252,
             "column": 12,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Form": [
@@ -17920,7 +17976,7 @@
             "filePath": "src/components/Overlays/SocialSharePopover.jsx",
             "line": 256,
             "column": 14,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Form.Group": [
@@ -17928,7 +17984,7 @@
             "filePath": "src/components/Overlays/SocialSharePopover.jsx",
             "line": 257,
             "column": 16,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Form.Control": [
@@ -17936,7 +17992,7 @@
             "filePath": "src/components/Overlays/SocialSharePopover.jsx",
             "line": 258,
             "column": 18,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "StatusAlert": [
@@ -17944,19 +18000,19 @@
             "filePath": "src/components/Search/ConnectedDiscoveryCardList/noResultsBlurb.jsx",
             "line": 43,
             "column": 6,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/Search/Results/NoResultsBlurb.jsx",
             "line": 13,
             "column": 2,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/templates/appUpgrade.jsx",
             "line": 77,
             "column": 8,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Pagination": [
@@ -17964,7 +18020,7 @@
             "filePath": "src/components/Search/Pagination/index.jsx",
             "line": 33,
             "column": 4,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "DataTable": [
@@ -17972,7 +18028,7 @@
             "filePath": "src/components/Search/Results/FullProductHits.jsx",
             "line": 39,
             "column": 4,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "CardView": [
@@ -17980,7 +18036,7 @@
             "filePath": "src/components/Search/Results/FullProductHits.jsx",
             "line": 73,
             "column": 6,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "DataTable.TableFooter": [
@@ -17988,7 +18044,7 @@
             "filePath": "src/components/Search/Results/FullProductHits.jsx",
             "line": 78,
             "column": 6,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Row": [
@@ -17996,13 +18052,13 @@
             "filePath": "src/components/SplitView/index.jsx",
             "line": 34,
             "column": 8,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/SplitView/index.jsx",
             "line": 40,
             "column": 6,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ],
         "Col": [
@@ -18010,19 +18066,19 @@
             "filePath": "src/components/SplitView/index.jsx",
             "line": 35,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/SplitView/index.jsx",
             "line": 42,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           },
           {
             "filePath": "src/components/SplitView/index.jsx",
             "line": 45,
             "column": 10,
-            "version": "16.14.6"
+            "version": "17.5.3"
           }
         ]
       }
