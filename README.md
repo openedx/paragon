@@ -4,7 +4,7 @@
 
 Paragon is a pattern library containing [accessible](https://www.w3.org/WAI/standards-guidelines/aria/) React components and a SCSS foundation built on Twitter Bootstrap. Paragon is developed for the Open edX platform.
 
-Documentation lives at http://edx.github.io/paragon.
+Documentation lives at https://paragon-openedx.netlify.app/.
 
 
 ## Usage
