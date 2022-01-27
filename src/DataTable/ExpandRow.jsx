@@ -17,7 +17,7 @@ ExpandRow.propTypes = {
   /** Row data that is received from `react-table` API. */
   row: PropTypes.shape({
     /** Specifies if row is in expanded state. */
-    isExpanded: PropTypes.bool.isRequired,
+    isExpanded: PropTypes.bool,
     /** Function that returns props for the wrapper component to handle expand behaviour. */
     getToggleRowExpandedProps: PropTypes.func.isRequired,
   }).isRequired,
