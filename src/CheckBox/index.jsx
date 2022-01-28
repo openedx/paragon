@@ -15,11 +15,11 @@ class Check extends React.Component {
     };
   }
 
-  // eslint-disable-next-line react/no-deprecated
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.checked !== this.props.checked) {
+  /* eslint-disable react/no-did-update-set-state */
+  componentDidUpdate(prevProps) {
+    if (prevProps.checked !== this.props.checked) {
       this.setState({
-        checked: nextProps.checked,
+        checked: this.props.checked,
       });
     }
   }

@@ -84,41 +84,31 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       };
     }
 
-    // move to getDerivedStateFromProps
-    // eslint-disable-next-line react/no-deprecated
-    componentWillReceiveProps(nextProps) {
+    /* eslint-disable react/no-did-update-set-state */
+    componentDidUpdate(prevProps) {
       const updatedState = {};
-      if (nextProps.value !== this.props.value) {
-        updatedState.value = nextProps.value;
+      if (this.props.value !== prevProps.value) {
+        updatedState.value = this.props.value;
       }
-      if (nextProps.isValid !== this.props.isValid && !nextProps.validator) {
-        updatedState.isValid = nextProps.isValid;
+      if (this.props.isValid !== prevProps.isValid && !this.props.validator) {
+        updatedState.isValid = this.props.isValid;
       }
-      if (nextProps.validationMessage !== this.props.validationMessage && !nextProps.validator) {
-        updatedState.validationMessage = nextProps.validationMessage;
+      if (this.props.validationMessage !== prevProps.validationMessage && !this.props.validator) {
+        updatedState.validationMessage = this.props.validationMessage;
       }
-      if (nextProps.dangerIconDescription !== this.props.dangerIconDescription
-          && !nextProps.validator) {
-        updatedState.dangerIconDescription = nextProps.dangerIconDescription;
+      if (this.props.dangerIconDescription !== prevProps.dangerIconDescription
+          && !this.props.validator) {
+        updatedState.dangerIconDescription = this.props.dangerIconDescription;
       }
       // If validator goes away, revert to props
-      if (nextProps.validator !== this.props.validator && !nextProps.validator) {
-        updatedState.isValid = nextProps.isValid;
-        updatedState.validationMessage = nextProps.validationMessage;
-        updatedState.dangerIconDescription = nextProps.dangerIconDescription;
+      if (this.props.validator !== prevProps.validator && !this.props.validator) {
+        updatedState.isValid = this.props.isValid;
+        updatedState.validationMessage = this.props.validationMessage;
+        updatedState.dangerIconDescription = this.props.dangerIconDescription;
       }
       if (Object.keys(updatedState).length > 0) {
         this.setState(updatedState);
       }
-    }
-
-    handleBlur(event) {
-      const val = event.target.value;
-
-      if (this.props.validator) {
-        this.setState(this.props.validator(val));
-      }
-      this.props.onBlur(val, this.props.name);
     }
 
     handleChange(event) {
@@ -134,14 +124,28 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       this.props.onKeyPress(event, this.props.name);
     }
 
-    getAddons({ addonElements, type }) {
-      if (Array.isArray(addonElements)) {
-        return addonElements.map((addon, index) => React.cloneElement(
-          addon,
-          { key: this.generateInputGroupAddonKey({ prefix: type, index }) },
-        ));
+    handleBlur(event) {
+      const val = event.target.value;
+
+      if (this.props.validator) {
+        this.setState(this.props.validator(val));
       }
-      return addonElements;
+      this.props.onBlur(val, this.props.name);
+    }
+
+    getLabel() {
+      return (
+        // eslint-disable-next-line jsx-a11y/label-has-for
+        <label
+          id={`label-${this.state.id}`}
+          htmlFor={this.state.id}
+          className={classNames({
+            'form-check-label': this.isGroupedInput(),
+          })}
+        >
+          {this.props.label}
+        </label>
+      );
     }
 
     getDescriptions() {
@@ -176,19 +180,14 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       return desc;
     }
 
-    getLabel() {
-      return (
-        // eslint-disable-next-line jsx-a11y/label-has-for
-        <label
-          id={`label-${this.state.id}`}
-          htmlFor={this.state.id}
-          className={classNames({
-            'form-check-label': this.isGroupedInput(),
-          })}
-        >
-          {this.props.label}
-        </label>
-      );
+    getAddons({ addonElements, type }) {
+      if (Array.isArray(addonElements)) {
+        return addonElements.map((addon, index) => React.cloneElement(
+          addon,
+          { key: this.generateInputGroupAddonKey({ prefix: type, index }) },
+        ));
+      }
+      return addonElements;
     }
 
     hasDangerTheme() {

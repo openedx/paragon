@@ -26,17 +26,14 @@ class StatusAlert extends React.Component {
     }
   }
 
-  // TODO: Move to getDerivedStateFromProps
-  // eslint-disable-next-line react/no-deprecated
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.open !== this.props.open) {
-      this.setState({ open: nextProps.open });
-    }
-  }
-
-  componentDidUpdate(prevState) {
+  /* eslint-disable react/no-did-update-set-state */
+  componentDidUpdate(prevProps, prevState) {
     if (this.state.open && !prevState.open && this.xButton) {
       this.xButton.focus();
+    }
+
+    if (this.props.open !== prevProps.open) {
+      this.setState({ open: this.props.open });
     }
   }
 
@@ -53,7 +50,9 @@ class StatusAlert extends React.Component {
   }
 
   focus() {
-    this.xButton.focus();
+    if (this.xButton) {
+      this.xButton.focus();
+    }
   }
 
   renderDialog() {
