@@ -191,7 +191,7 @@ DataTable.propTypes = {
     /** User visible column name */
     Header: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
     /** String used to access the correct cell data for this column */
-    accessor: PropTypes.string.isRequired,
+    accessor: PropTypes.string,
   })).isRequired,
   /** Data to be displayed in the table */
   data: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
@@ -267,10 +267,14 @@ DataTable.propTypes = {
         }),
         /** function passed selected items, should return action object */
         PropTypes.func,
+        /** A custom component representing an action */
+        PropTypes.element,
       ]),
     ),
     /** Function for rendering custom components */
     PropTypes.func,
+    /** A custom component representing an action */
+    PropTypes.element,
   ]),
   /** Function for rendering custom components, called with the table instance */
   tableActions: PropTypes.oneOfType([
@@ -290,10 +294,14 @@ DataTable.propTypes = {
         }),
         /** function passed table instance, should return action object */
         PropTypes.func,
+        /** A custom component representing an action */
+        PropTypes.element,
       ]),
     ),
     /** Function for rendering custom components */
     PropTypes.func,
+    /** A custom component representing an action */
+    PropTypes.element,
   ]),
   /** Number between one and four filters that can be shown on the top row. */
   numBreakoutFilters: PropTypes.oneOf([1, 2, 3, 4]),
