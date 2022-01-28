@@ -304,14 +304,34 @@ To enable proper selection behavior with backend pagination (i.e., when ``isSele
 
 ## View Switching
 
-Card view is default when ``isDataViewToggleEnabled`` is true
+Card view is default when ``isDataViewToggleEnabled`` is true.
 
-See ``dataViewToggleOptions`` props documentation for all supported props
+See ``dataViewToggleOptions`` props documentation for all supported props.
+
+**NOTE**: you have to memoize ``data`` to persist filters choices during view switch, see code example below.
 
 ```jsx live
 () => {
   const [currentView, setCurrentView] = useState('card');
   const togglePlacement = 'left'; // 'bottom' is the only other supported value
+  // memoize data, otherwise the filters will get reset after switching view
+  const data = useMemo(() => [
+    {
+      name: 'Lil Bub',
+      color: 'brown tabby',
+      famous_for: 'weird tongue',
+    },
+    {
+      name: 'Grumpy Cat',
+      color: 'siamese',
+      famous_for: 'serving moods',
+    },
+    {
+      name: 'Smoothie',
+      color: 'orange tabby',
+      famous_for: 'modeling',
+    },
+  ], [])
   return (
     <DataTable
       isFilterable
@@ -323,23 +343,7 @@ See ``dataViewToggleOptions`` props documentation for all supported props
       isSortable
       defaultColumnValues={{ Filter: TextFilter }}
       itemCount={7}
-      data={[
-        {
-          name: 'Lil Bub',
-          color: 'brown tabby',
-          famous_for: 'weird tongue',
-        },
-        {
-          name: 'Grumpy Cat',
-          color: 'siamese',
-          famous_for: 'serving moods',
-        },
-        {
-          name: 'Smoothie',
-          color: 'orange tabby',
-          famous_for: 'modeling',
-        },
-      ]}
+      data={data}
       columns={[
         {
           Header: 'Name',

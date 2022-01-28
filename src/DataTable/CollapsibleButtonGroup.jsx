@@ -87,7 +87,7 @@ CollapsibleButtonGroup.propTypes = {
   /** class names for the div wrapping the button components */
   className: PropTypes.string,
   actions: PropTypes.arrayOf(PropTypes.shape({
-    component: PropTypes.func.isRequired,
+    component: PropTypes.oneOfType([PropTypes.func, PropTypes.element]).isRequired,
     // eslint-disable-next-line react/forbid-prop-types
     args: PropTypes.object,
   })).isRequired,
