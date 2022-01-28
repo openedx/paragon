@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { THEMES } from '../../theme-config';
@@ -11,12 +11,27 @@ const defaultValue = {
 const SettingsContext = createContext(defaultValue);
 
 const SettingsContextProvider = ({ children }) => {
+  // gatsby does not have access to the localStorage during the build (and first render)
+  // so sadly we cannot initialize theme with value from localStorage
   const [theme, setTheme] = useState('openedx-theme');
   const [showSettings, setShowSettings] = useState(false);
 
+  const handleThemeChange = (e) => {
+    setTheme(e.target.value);
+    global.localStorage.setItem('pgn__theme', e.target.value);
+  };
+
+  // this hook will be called after the first render, so we can safely access localStorage
+  useEffect(() => {
+    const savedTheme = global.localStorage.getItem('pgn__theme');
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
+  }, []);
+
   const contextValue = {
     theme,
-    onThemeChange: (e) => setTheme(e.target.value),
+    onThemeChange: handleThemeChange,
     showSettings,
     closeSettings: () => setShowSettings(false),
     openSettings: () => setShowSettings(true),
