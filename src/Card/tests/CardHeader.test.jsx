@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Button from '../Button';
-import CardHeader from './CardHeader';
+import Button from '../../Button';
+import CardHeader from '../CardHeader';
 
 describe('<CardHeader />', () => {
   it('renders with title prop', () => {

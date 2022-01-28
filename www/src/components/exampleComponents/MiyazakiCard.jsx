@@ -7,19 +7,16 @@ const MiyazakiCard = ({ className, original }) => {
 
   return (
     <Card className={className}>
-      <Card.Img
-        variant="top"
-        src="https://source.unsplash.com/360x200/?nature,flower"
-      />
-      <Card.Body>
-        <Card.Title>{title}</Card.Title>
+      <Card.ImageCap src="https://source.unsplash.com/360x200/?nature,flower" />
+      <Card.Header title={title} />
+      <Card.Section>
         <dl>
           <dt>Director</dt>
           <dd>{director}</dd>
           <dt>Release Date</dt>
           <dd>{releaseDate}</dd>
         </dl>
-      </Card.Body>
+      </Card.Section>
     </Card>
   );
 };

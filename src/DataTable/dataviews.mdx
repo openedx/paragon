@@ -341,14 +341,13 @@ const MiyazakiCard = ({ className, original  }) => {
 
   return (
     <Card className={className}>
-      <Card.Img variant="top" src="https://source.unsplash.com/360x200/?nature,flower" />
-      <Card.Body>
-        <Card.Title>{title}</Card.Title>
+      <Card.ImageCap src="https://source.unsplash.com/360x200/?nature,flower" />
+      <Card.Section title={title}>
         <dl>
           <dt>Director</dt><dd>{director}</dd>
           <dt>Release Date</dt><dd>{release_date}</dd>
         </dl>
-      </Card.Body>
+      </Card.Section>
     </Card>
   );
 };

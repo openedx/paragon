@@ -11,28 +11,35 @@ exports[`<CardGrid /> Controlled Rendering renders with controlled columnSizes 1
       className="col-lg-4 col-md-6 col-12"
     >
       <div
-        className="card"
+        className="pgn__card card"
+        tabindex="-1"
       >
-        <img
-          className="card-img-top"
-          src="http://fake.image"
-        />
         <div
-          className="card-body"
+          className="pgn__card-wrapper-image-cap vertical"
         >
-          <div
-            className="card-title h5"
-          >
-            Card title
-          </div>
-          <p
-            className="card-text"
-          >
-            This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
-          </p>
+          <img
+            className="pgn__card-image-cap"
+            src="http://fake.image"
+          />
         </div>
         <div
-          className="card-footer"
+          className="pgn__card-body"
+        >
+          <div
+            className="pgn__card-header"
+          >
+            <div
+              className="pgn__card-header-content"
+            />
+          </div>
+          <div
+            className="pgn__card-section"
+          >
+            This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+          </div>
+        </div>
+        <div
+          className="pgn__card-footer vertical"
         >
           <small
             className="text-muted"
@@ -57,28 +64,35 @@ exports[`<CardGrid /> Uncontrolled Rendering renders default columnSizes 1`] = `
       className="col-xl-4 col-lg-6 col-sm-12"
     >
       <div
-        className="card"
+        className="pgn__card card"
+        tabindex="-1"
       >
-        <img
-          className="card-img-top"
-          src="http://fake.image"
-        />
         <div
-          className="card-body"
+          className="pgn__card-wrapper-image-cap vertical"
         >
-          <div
-            className="card-title h5"
-          >
-            Card title
-          </div>
-          <p
-            className="card-text"
-          >
-            This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
-          </p>
+          <img
+            className="pgn__card-image-cap"
+            src="http://fake.image"
+          />
         </div>
         <div
-          className="card-footer"
+          className="pgn__card-body"
+        >
+          <div
+            className="pgn__card-header"
+          >
+            <div
+              className="pgn__card-header-content"
+            />
+          </div>
+          <div
+            className="pgn__card-section"
+          >
+            This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+          </div>
+        </div>
+        <div
+          className="pgn__card-footer vertical"
         >
           <small
             className="text-muted"

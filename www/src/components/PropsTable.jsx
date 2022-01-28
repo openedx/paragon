@@ -65,10 +65,8 @@ Prop.defaultProps = {
 
 const PropsTable = ({ props: componentProps, displayName, content }) => (
   <Card className="mb-5" id={`props-api-table-${displayName}`}>
-    <Card.Body className="pb-1">
-      <Card.Title as="h3">{displayName} Props API</Card.Title>
-      {content && <div className="small mb-3">{content}</div>}
-    </Card.Body>
+    <Card.Header as="h3" title={`${displayName} Props API`} className="pb-1" />
+    {content && <div className="small mb-3">{content}</div>}
     {componentProps.length > 0 ? (
       <ul className="list-unstyled">
         {componentProps.map(metadata => <Prop key={metadata.name} {...metadata} />)}
