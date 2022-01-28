@@ -52,24 +52,24 @@ Toggle a boolean value on or off with handlers
 
   return (
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="https://source.unsplash.com/400x200/?nature,flower" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
+      <Card.ImageCap src="https://source.unsplash.com/400x200/?nature,flower" />
+      <Card.Header title="Card Title"/>
+      <Card.Section>
+        <p>
           Some quick example text to build on the card title and make up the bulk of
           the card's content.
-        </Card.Text>
+        </p>
         {
           isOpen ? (
-            <Card.Text>
+            <>
               <p>Poutine cred portland heirloom seitan sartorial 90's cray. Humblebrag blue bottle venmo, cloud bread cronut neutra sartorial whatever slow-carb tattooed cliche helvetica poutine squid. Direct trade health goth gentrify kitsch, heirloom blog umami synth ennui seitan messenger bag. Literally poutine slow-carb, hexagon leggings seitan readymade.</p>
               <Button block variant="outline-primary" onClick={close}>Close</Button>
-            </Card.Text>
+            </>
           ) : (
             <Button block variant="outline-primary" onClick={open}>See more</Button>
           )
         }
-      </Card.Body>
+      </Card.Section>
     </Card>
   );
 }
