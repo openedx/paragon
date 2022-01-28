@@ -192,11 +192,19 @@ class Pagination extends React.Component {
       >
         {size === 'small' ? (
           <IconButton
+            className={classNames(
+              'mr-1',
+              {
+                disabled: isFirstPage,
+              },
+            )}
             iconAs={Icon}
             src={ChevronLeft}
             onClick={() => { this.handlePreviousNextButtonClick(previousPage); }}
             alt={ariaLabel}
             size="sm"
+            tabIndex={isFirstPage ? '-1' : undefined}
+            inputRef={(element) => { this.previousButtonRef = element; }}
           />
         )
           : (
@@ -246,11 +254,19 @@ class Pagination extends React.Component {
       >
         {size === 'small' ? (
           <IconButton
+            className={classNames(
+              'ml-1',
+              {
+                disabled: isLastPage,
+              },
+            )}
             iconAs={Icon}
             src={ChevronRight}
             onClick={() => { this.handlePreviousNextButtonClick(nextPage); }}
             alt={ariaLabel}
             size="sm"
+            tabIndex={isLastPage ? '-1' : undefined}
+            inputRef={(element) => { this.nextButtonRef = element; }}
           />
         )
           : (
