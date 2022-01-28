@@ -27,32 +27,29 @@ class Pagination extends React.Component {
     };
   }
 
-  // TODO: Move to getDerivedStateFromProps
-  // eslint-disable-next-line camelcase
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    if (
-      nextProps.currentPage !== this.props.currentPage
-      || nextProps.currentPage !== this.state.currentPage
-    ) {
-      this.setState({
-        currentPage: nextProps.currentPage,
-      });
-    }
-  }
-
   shouldComponentUpdate(nextProps, nextState) {
     // Update only when the props and currentPage state changes to avoid re-render
     // if only the pageButtonSelected state is changed.
     return nextProps !== this.props || nextState.currentPage !== this.state.currentPage;
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState) {
     const { currentPage, pageButtonSelected } = this.state;
     const currentPageRef = this.pageRefs[currentPage];
 
     if (currentPageRef && pageButtonSelected) {
       currentPageRef.focus();
       this.setPageButtonSelectedState(false);
+    }
+    /* eslint-disable react/no-did-update-set-state */
+    if (
+      this.state.currentPage === prevState.currentPage
+      && (this.props.currentPage !== prevProps.currentPage
+      || this.props.currentPage !== this.state.currentPage)
+    ) {
+      this.setState({
+        currentPage: this.props.currentPage,
+      });
     }
   }
 
