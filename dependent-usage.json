@@ -1,5 +1,5 @@
 {
-  "lastModified": 1643292611296,
+  "lastModified": 1643378938348,
   "projectUsages": [
     {
       "version": "16.24.0",
@@ -5633,29 +5633,75 @@
       },
       "folderName": "frontend-app-communications",
       "usages": {
-        "Modal": [
+        "Form": [
           {
-            "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/BulkEmailContentHistory.jsx",
-            "line": 84,
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
+            "line": 125,
             "column": 6,
             "version": "16.3.2"
           }
         ],
-        "Button": [
+        "Form.Group": [
           {
-            "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/BulkEmailContentHistory.jsx",
-            "line": 172,
-            "column": 12,
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
+            "line": 131,
+            "column": 8,
             "version": "16.3.2"
           },
           {
-            "filePath": "src/components/bulk-email-tool/BulkEmailBody.jsx",
-            "line": 34,
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
+            "line": 150,
             "column": 8,
+            "version": "16.3.2"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
+            "line": 169,
+            "column": 8,
+            "version": "16.3.2"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailRecipient.jsx",
+            "line": 17,
+            "column": 4,
+            "version": "16.3.2"
+          }
+        ],
+        "Form.Label": [
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
+            "line": 132,
+            "column": 10,
+            "version": "16.3.2"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
+            "line": 151,
+            "column": 10,
+            "version": "16.3.2"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailRecipient.jsx",
+            "line": 18,
+            "column": 6,
+            "version": "16.3.2"
+          }
+        ],
+        "Form.Control": [
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
+            "line": 139,
+            "column": 10,
             "version": "16.3.2"
           }
         ],
         "StatefulButton": [
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
+            "line": 170,
+            "column": 10,
+            "version": "16.3.2"
+          },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/BulkEmailContentHistory.jsx",
             "line": 190,
@@ -5671,6 +5717,30 @@
         ],
         "Icon": [
           {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
+            "line": 179,
+            "column": 23,
+            "version": "16.3.2"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
+            "line": 180,
+            "column": 23,
+            "version": "16.3.2"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
+            "line": 181,
+            "column": 24,
+            "version": "16.3.2"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
+            "line": 182,
+            "column": 21,
+            "version": "16.3.2"
+          },
+          {
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/BulkEmailContentHistory.jsx",
             "line": 201,
             "column": 21,
@@ -5680,6 +5750,90 @@
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/BulkEmailTaskHistory.jsx",
             "line": 104,
             "column": 21,
+            "version": "16.3.2"
+          }
+        ],
+        "Form.CheckboxSet": [
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailRecipient.jsx",
+            "line": 25,
+            "column": 6,
+            "version": "16.3.2"
+          }
+        ],
+        "Form.Checkbox": [
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailRecipient.jsx",
+            "line": 26,
+            "column": 8,
+            "version": "16.3.2"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailRecipient.jsx",
+            "line": 33,
+            "column": 8,
+            "version": "16.3.2"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailRecipient.jsx",
+            "line": 40,
+            "column": 8,
+            "version": "16.3.2"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailRecipient.jsx",
+            "line": 51,
+            "column": 8,
+            "version": "16.3.2"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailRecipient.jsx",
+            "line": 62,
+            "column": 8,
+            "version": "16.3.2"
+          }
+        ],
+        "AlertModal": [
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/TaskAlertModal.jsx",
+            "line": 19,
+            "column": 4,
+            "version": "16.3.2"
+          }
+        ],
+        "ActionRow": [
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/TaskAlertModal.jsx",
+            "line": 25,
+            "column": 8,
+            "version": "16.3.2"
+          }
+        ],
+        "Button": [
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/TaskAlertModal.jsx",
+            "line": 26,
+            "column": 10,
+            "version": "16.3.2"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/TaskAlertModal.jsx",
+            "line": 33,
+            "column": 10,
+            "version": "16.3.2"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/BulkEmailContentHistory.jsx",
+            "line": 172,
+            "column": 12,
+            "version": "16.3.2"
+          }
+        ],
+        "Modal": [
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/BulkEmailContentHistory.jsx",
+            "line": 84,
+            "column": 6,
             "version": "16.3.2"
           }
         ],
@@ -5699,54 +5853,10 @@
             "version": "16.3.2"
           }
         ],
-        "Form": [
-          {
-            "filePath": "src/components/bulk-email-tool/BulkEmailBody.jsx",
-            "line": 13,
-            "column": 6,
-            "version": "16.3.2"
-          }
-        ],
-        "Form.Group": [
-          {
-            "filePath": "src/components/bulk-email-tool/BulkEmailBody.jsx",
-            "line": 14,
-            "column": 8,
-            "version": "16.3.2"
-          },
-          {
-            "filePath": "src/components/bulk-email-tool/BulkEmailBody.jsx",
-            "line": 24,
-            "column": 8,
-            "version": "16.3.2"
-          }
-        ],
-        "Form.Label": [
-          {
-            "filePath": "src/components/bulk-email-tool/BulkEmailBody.jsx",
-            "line": 15,
-            "column": 10,
-            "version": "16.3.2"
-          },
-          {
-            "filePath": "src/components/bulk-email-tool/BulkEmailBody.jsx",
-            "line": 25,
-            "column": 10,
-            "version": "16.3.2"
-          }
-        ],
-        "Form.Control": [
-          {
-            "filePath": "src/components/bulk-email-tool/BulkEmailBody.jsx",
-            "line": 22,
-            "column": 10,
-            "version": "16.3.2"
-          }
-        ],
         "Spinner": [
           {
             "filePath": "src/components/bulk-email-tool/BulkEmailTool.jsx",
-            "line": 63,
+            "line": 59,
             "column": 6,
             "version": "16.3.2"
           }
@@ -10298,15 +10408,15 @@
         "Tabs": [
           {
             "filePath": "src/components/program/TabularView.jsx",
-            "line": 36,
-            "column": 4,
+            "line": 37,
+            "column": 6,
             "version": "12.4.0"
           }
         ],
         "Tab": [
           {
             "filePath": "src/components/program/TabularView.jsx",
-            "line": 39,
+            "line": 40,
             "column": 10,
             "version": "12.4.0"
           }
@@ -17542,7 +17652,7 @@
           },
           {
             "filePath": "src/components/Search/Results/OverviewProductHits.jsx",
-            "line": 28,
+            "line": 27,
             "column": 4,
             "version": "17.5.3"
           },
