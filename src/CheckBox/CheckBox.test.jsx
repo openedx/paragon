@@ -70,6 +70,8 @@ describe('<CheckBox />', () => {
       checked: false,
     });
 
+    wrapper.update();
+
     expect(wrapper.find('[checked=true]').exists()).toEqual(false);
     expect(wrapper.find('[aria-checked=true]').exists()).toEqual(false);
   });

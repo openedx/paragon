@@ -16,16 +16,15 @@ export default class ListBox extends React.Component {
     };
   }
 
-  // TODO: move to getDerivedStateFromProps (or other method)
-  // eslint-disable-next-line react/no-deprecated
-  componentWillReceiveProps(nextProps) {
+  static getDerivedStateFromProps(nextProps, prevState) {
     const { selectedOptionIndex } = nextProps;
 
-    if (this.shouldUpdateSelectedOptionIndex(selectedOptionIndex)) {
-      this.setState({
-        selectedOptionIndex,
-      });
+    if (selectedOptionIndex !== prevState.selectedOptionIndex
+      && selectedOptionIndex !== undefined) {
+      return { selectedOptionIndex };
     }
+
+    return null;
   }
 
   onFocus() {
@@ -62,11 +61,6 @@ export default class ListBox extends React.Component {
       }
       default:
     }
-  }
-
-  shouldUpdateSelectedOptionIndex(selectedOptionIndex) {
-    return selectedOptionIndex !== this.state.selectedOptionIndex
-      && selectedOptionIndex !== undefined;
   }
 
   renderChildren() {
