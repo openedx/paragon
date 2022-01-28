@@ -15,6 +15,8 @@ const Settings = () => {
     onThemeChange,
     showSettings,
     closeSettings,
+    direction,
+    onDirectionChange,
   } = useContext(SettingsContext);
 
   return (
@@ -35,23 +37,36 @@ const Settings = () => {
           size="sm"
         />
       </div>
-      <Form.Group>
-        <Form.Control
-          as="select"
-          value={currentTheme}
-          onChange={onThemeChange}
-          floatingLabel="Theme"
-        >
-          {THEMES.map(theme => (
-            <option
-              key={theme.label}
-              value={theme.stylesheet}
-            >
-              {theme.label}
-            </option>
-          ))}
-        </Form.Control>
-      </Form.Group>
+      <div className="pgn__settings-form-wrapper">
+        <Form.Group>
+          <Form.Control
+            as="select"
+            value={currentTheme}
+            onChange={onThemeChange}
+            floatingLabel="Theme"
+          >
+            {THEMES.map(theme => (
+              <option
+                key={theme.label}
+                value={theme.stylesheet}
+              >
+                {theme.label}
+              </option>
+            ))}
+          </Form.Control>
+        </Form.Group>
+        <Form.Group>
+          <Form.Control
+            as="select"
+            value={direction}
+            onChange={onDirectionChange}
+            floatingLabel="Direction"
+          >
+            <option value="ltr">Left to right</option>
+            <option value="rtl">Right to left</option>
+          </Form.Control>
+        </Form.Group>
+      </div>
     </Sheet>
   );
 };
