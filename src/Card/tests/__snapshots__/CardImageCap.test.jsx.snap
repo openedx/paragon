@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardImageCap /> renders with scr prop and srcAlt 1`] = `
+<div
+  className="pgn__card-wrapper-image-cap vertical"
+>
+  <img
+    alt="Alt text"
+    className="pgn__card-image-cap"
+    src="http://fake.image"
+  />
+</div>
+`;
+
+exports[`<CardImageCap /> renders with scr prop in horizontal orientation 1`] = `
+<div
+  className="pgn__card-wrapper-image-cap horizontal"
+>
+  <img
+    className="pgn__card-image-cap"
+    src="http://fake.image"
+  />
+</div>
+`;
+
+exports[`<CardImageCap /> renders with src and logoSrc prop in horizontal orientation 1`] = `
+<div
+  className="pgn__card-wrapper-image-cap horizontal"
+>
+  <img
+    className="pgn__card-image-cap"
+    src="http://fake.image"
+  />
+  <img
+    className="pgn__card-logo-cap"
+    src="http://fake.image"
+  />
+</div>
+`;
+
+exports[`<CardImageCap /> renders with src, logoSrc and logoAlt props 1`] = `
+<div
+  className="pgn__card-wrapper-image-cap vertical"
+>
+  <img
+    className="pgn__card-image-cap"
+    src="http://fake.image"
+  />
+  <img
+    alt="Logo alt"
+    className="pgn__card-logo-cap"
+    src="http://fake.image"
+  />
+</div>
+`;

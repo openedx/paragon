@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardFooter /> renders horizontal orientation with footer text 1`] = `
+<div
+  className="pgn__card-footer horizontal"
+>
+  <div
+    className="pgn__card-footer-text horizontal"
+  >
+    Sample footer text
+  </div>
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    type="button"
+  >
+    Action 1
+  </button>
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    type="button"
+  >
+    Action 2
+  </button>
+</div>
+`;
+
+exports[`<CardFooter /> renders horizontal orientation without footer text 1`] = `
+<div
+  className="pgn__card-footer horizontal"
+>
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    type="button"
+  >
+    Action 1
+  </button>
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    type="button"
+  >
+    Action 2
+  </button>
+</div>
+`;
+
+exports[`<CardFooter /> renders stacked horizontal orientation with footer text 1`] = `
+<div
+  className="pgn__card-footer horizontal-stacked"
+>
+  <div
+    className="pgn__card-footer-text horizontal-stacked"
+  >
+    Sample footer text
+  </div>
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    type="button"
+  >
+    Action 1
+  </button>
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    type="button"
+  >
+    Action 2
+  </button>
+</div>
+`;
+
+exports[`<CardFooter /> renders stacked horizontal orientation without footer text 1`] = `
+<div
+  className="pgn__card-footer horizontal-stacked"
+>
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    type="button"
+  >
+    Action 1
+  </button>
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    type="button"
+  >
+    Action 2
+  </button>
+</div>
+`;
+
+exports[`<CardFooter /> renders stacked vertical orientation with footer text 1`] = `
+<div
+  className="pgn__card-footer vertical-stacked"
+>
+  <div
+    className="pgn__card-footer-text vertical-stacked"
+  >
+    Sample footer text
+  </div>
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    type="button"
+  >
+    Action 1
+  </button>
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    type="button"
+  >
+    Action 2
+  </button>
+</div>
+`;
+
+exports[`<CardFooter /> renders stacked vertical orientation without footer text 1`] = `
+<div
+  className="pgn__card-footer vertical-stacked"
+>
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    type="button"
+  >
+    Action 1
+  </button>
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    type="button"
+  >
+    Action 2
+  </button>
+</div>
+`;
+
+exports[`<CardFooter /> renders vertical orientation with footer text 1`] = `
+<div
+  className="pgn__card-footer vertical"
+>
+  <div
+    className="pgn__card-footer-text vertical"
+  >
+    Sample footer text
+  </div>
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    type="button"
+  >
+    Action 1
+  </button>
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    type="button"
+  >
+    Action 2
+  </button>
+</div>
+`;
+
+exports[`<CardFooter /> renders vertical orientation without footer text 1`] = `
+<div
+  className="pgn__card-footer vertical"
+>
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    type="button"
+  >
+    Action 1
+  </button>
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    type="button"
+  >
+    Action 2
+  </button>
+</div>
+`;

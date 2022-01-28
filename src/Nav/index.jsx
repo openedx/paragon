@@ -17,7 +17,6 @@ Nav.propTypes = {
   activeKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Set a custom element for this component. */
   as: PropTypes.elementType,
-  cardHeaderBsPrefix: PropTypes.string,
   /** Have all `NavItems` proportionately fill all available width. */
   fill: PropTypes.bool,
   /** Have all `NavItems` evenly fill all available width. */
@@ -27,9 +26,6 @@ Nav.propTypes = {
    * This prop will be set automatically when the `Nav` is used inside a `Navbar`.
    */
   navbar: PropTypes.bool,
-  navbarBsPrefix: PropTypes.string,
-  /** Enable vertical scrolling within the toggleable contents of a collapsed Navbar. */
-  navbarScroll: PropTypes.bool,
   onKeyDown: PropTypes.func,
   /** A callback fired when a NavItem is selected. */
   onSelect: PropTypes.string,
@@ -100,12 +96,9 @@ NavDropdown.propTypes = {
 Nav.defaultProps = {
   activeKey: undefined,
   as: undefined,
-  cardHeaderBsPrefix: undefined,
   fill: false,
   justify: false,
   navbar: undefined,
-  navbarBsPrefix: undefined,
-  navbarScroll: undefined,
   onKeyDown: undefined,
   onSelect: undefined,
   role: undefined,
