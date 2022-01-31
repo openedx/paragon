@@ -11,6 +11,29 @@ import breakpoints from '../utils/breakpoints';
 import newId from '../utils/newId';
 import { ELLIPSIS } from './constants';
 import getPaginationRange from './getPaginationRange';
+import Dropdown from '../Dropdown';
+
+const VARIANTS = {
+  default: 'default',
+  secondary: 'secondary',
+  reduced: 'reduced',
+  minimal: 'minimal',
+};
+
+const ReducedPagination = ({ currentPage, pageCount, handlePageSelect }) => (
+  <Dropdown>
+    <Dropdown.Toggle variant="tertiary" id="Pagination dropdown">
+      {currentPage} of {pageCount}
+    </Dropdown.Toggle>
+    <Dropdown.Menu className="pgn__reduced-pagination-dropdown">
+      {[...Array(pageCount).keys()].map(pageNum => (
+        <Dropdown.Item onClick={() => handlePageSelect(pageNum + 1)} key={pageNum}>
+          {pageNum + 1}
+        </Dropdown.Item>
+      ))}
+    </Dropdown.Menu>
+  </Dropdown>
+);
 
 class Pagination extends React.Component {
   constructor(props) {
@@ -25,6 +48,8 @@ class Pagination extends React.Component {
       currentPage: this.props.currentPage,
       pageButtonSelected: false,
     };
+
+    this.handlePageSelect = this.handlePageSelect.bind(this);
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -118,14 +143,14 @@ class Pagination extends React.Component {
         ])}
         key={page}
       >
-        <Button.Deprecated
+        <Button
           className="page-link"
           aria-label={ariaLabel}
-          inputRef={(element) => { this.pageRefs[page] = element; }}
+          ref={(element) => { this.pageRefs[page] = element; }}
           onClick={() => { this.handlePageSelect(page); }}
         >
           {page.toString()}
-        </Button.Deprecated>
+        </Button>
       </li>
     );
   }
@@ -165,7 +190,9 @@ class Pagination extends React.Component {
   }
 
   renderPreviousButton() {
-    const { buttonLabels, icons } = this.props;
+    const {
+      buttonLabels, icons, variant,
+    } = this.props;
     const { currentPage } = this.state;
     const isFirstPage = currentPage === 1;
     const previousPage = isFirstPage ? null : currentPage - 1;
@@ -184,25 +211,27 @@ class Pagination extends React.Component {
           },
         )}
       >
-        <Button.Deprecated
+        <Button
           className="previous page-link"
           aria-label={ariaLabel}
           tabIndex={isFirstPage ? '-1' : undefined}
           onClick={() => { this.handlePreviousNextButtonClick(previousPage); }}
-          inputRef={(element) => { this.previousButtonRef = element; }}
+          ref={(element) => { this.previousButtonRef = element; }}
           disabled={isFirstPage}
         >
           <div>
             {icons.leftIcon}
-            {buttonLabels.previous}
+            {variant === VARIANTS.default ? buttonLabels.previous : null}
           </div>
-        </Button.Deprecated>
+        </Button>
       </li>
     );
   }
 
   renderNextButton() {
-    const { buttonLabels, pageCount, icons } = this.props;
+    const {
+      buttonLabels, pageCount, icons, variant,
+    } = this.props;
     const { currentPage } = this.state;
     const isLastPage = currentPage === pageCount;
     const nextPage = isLastPage ? null : currentPage + 1;
@@ -221,19 +250,19 @@ class Pagination extends React.Component {
           },
         )}
       >
-        <Button.Deprecated
+        <Button
           className="next page-link"
           aria-label={ariaLabel}
           tabIndex={isLastPage ? '-1' : undefined}
           onClick={() => { this.handlePreviousNextButtonClick(nextPage); }}
-          inputRef={(element) => { this.nextButtonRef = element; }}
+          ref={(element) => { this.nextButtonRef = element; }}
           disabled={isLastPage}
         >
           <div>
-            {buttonLabels.next}
+            {variant === VARIANTS.default ? buttonLabels.next : null}
             {icons.rightIcon}
           </div>
-        </Button.Deprecated>
+        </Button>
       </li>
     );
   }
@@ -275,23 +304,53 @@ class Pagination extends React.Component {
     });
   }
 
+  renderReducedPagination() {
+    const { currentPage } = this.state;
+    const { pageCount } = this.props;
+
+    return (
+      <ul className="pagination">
+        {this.renderPreviousButton()}
+        <ReducedPagination currentPage={currentPage} pageCount={pageCount} handlePageSelect={this.handlePageSelect} />
+        {this.renderNextButton()}
+      </ul>
+    );
+  }
+
+  renderMinimalPaginations() {
+    return (
+      <ul className="pagination">
+        {this.renderPreviousButton()}
+        {this.renderNextButton()}
+      </ul>
+    );
+  }
+
   render() {
+    const { variant, colorCheme, size } = this.props;
+
     return (
       <nav
         aria-label={this.props.paginationLabel}
-        className={this.props.className}
+        className={classNames(this.props.className, `pagination-${variant} pagination-${colorCheme} pagination-${size}`)}
       >
         {this.renderScreenReaderSection()}
-        <ul className="pagination">
-          {this.renderPreviousButton()}
-          <MediaQuery maxWidth={breakpoints.extraSmall.maxWidth}>
-            {this.renderPageOfCountButton()}
-          </MediaQuery>
-          <MediaQuery minWidth={breakpoints.small.minWidth}>
-            {this.renderPageButtons()}
-          </MediaQuery>
-          {this.renderNextButton()}
-        </ul>
+        {variant === VARIANTS.default || variant === VARIANTS.secondary
+          ? (
+            <ul className="pagination">
+              {this.renderPreviousButton()}
+              <MediaQuery maxWidth={breakpoints.extraSmall.maxWidth}>
+                {this.renderPageOfCountButton()}
+              </MediaQuery>
+              <MediaQuery minWidth={breakpoints.small.minWidth}>
+                {this.renderPageButtons()}
+              </MediaQuery>
+              {this.renderNextButton()}
+            </ul>
+          )
+          : null}
+        {variant === VARIANTS.reduced ? this.renderReducedPagination() : null}
+        {variant === VARIANTS.minimal ? this.renderMinimalPaginations() : null}
       </nav>
     );
   }
@@ -366,12 +425,15 @@ Pagination.propTypes = {
     leftIcon: PropTypes.node,
     rightIcon: PropTypes.node,
   }),
+  variant: PropTypes.oneOf(['default', 'secondary', 'reduced', 'minimal']),
+  colorCheme: PropTypes.oneOf(['light', 'dark']),
+  size: PropTypes.oneOf(['default', 'small']),
 };
 
 Pagination.defaultProps = {
   icons: {
-    leftIcon: <Icon className="fa fa-chevron-left mr-2" />,
-    rightIcon: <Icon className="fa fa-chevron-right ml-2" />,
+    leftIcon: <Icon className="fa fa-angle-left" />,
+    rightIcon: <Icon className="fa fa-angle-right" />,
   },
   buttonLabels: {
     previous: 'Previous',
@@ -383,6 +445,17 @@ Pagination.defaultProps = {
   className: undefined,
   currentPage: 1,
   maxPagesDisplayed: 7,
+  variant: 'default',
+  colorCheme: 'light',
+  size: 'default',
 };
+
+ReducedPagination.propTypes = {
+  currentPage: PropTypes.number.isRequired,
+  pageCount: PropTypes.number.isRequired,
+  handlePageSelect: PropTypes.func.isRequired,
+};
+
+Pagination.ReducedPagination = ReducedPagination;
 
 export default Pagination;

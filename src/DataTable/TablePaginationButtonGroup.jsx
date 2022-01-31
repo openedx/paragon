@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
-import { ButtonGroup, IconButton, Icon } from '..';
-import { ArrowBackIos, ArrowForwardIos } from '../../icons';
+import { Pagination } from '..';
 import DataTableContext from './DataTableContext';
 
 const TablePaginationButtonGroup = () => {
   const {
-    nextPage, previousPage, canPreviousPage, canNextPage,
+    nextPage, pageCount, gotoPage, state,
   } = useContext(DataTableContext);
 
   // Use nextPage as a proxy for whether or not the table is paginated
@@ -13,23 +12,10 @@ const TablePaginationButtonGroup = () => {
     return null;
   }
 
+  const pageIndex = state?.pageIndex;
+
   return (
-    <ButtonGroup>
-      <IconButton
-        alt="Previous page"
-        src={ArrowBackIos}
-        iconAs={Icon}
-        onClick={previousPage}
-        disabled={!canPreviousPage}
-      />
-      <IconButton
-        alt="Next page"
-        src={ArrowForwardIos}
-        iconAs={Icon}
-        onClick={nextPage}
-        disabled={!canNextPage}
-      />
-    </ButtonGroup>
+    <Pagination variant="minimal" currentPage={pageIndex + 1} pageCount={pageCount} paginationLabel="1234" onPageSelect={(pageNum) => gotoPage(pageNum - 1)} />
   );
 };
 

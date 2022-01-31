@@ -17,7 +17,7 @@ notes: |
 
 Navigation between multiple pages of some set of results. Controls are provided to navigate through multiple pages of related data.
 
-### Basic usage
+### Basic usage (Default Size)
 
 ```jsx live
 <Pagination
@@ -27,72 +27,139 @@ Navigation between multiple pages of some set of results. Controls are provided 
 />
 ```
 
-### With initial page selected
+### Secondary
 
 ```jsx live
 <Pagination
   paginationLabel="pagination navigation"
   pageCount={20}
-  currentPage={15}
+  variant="secondary"
   onPageSelect={() => console.log('page selected')}
 />
 ```
 
-### With max pages displayed
+### Reduced
 
 ```jsx live
 <Pagination
   paginationLabel="pagination navigation"
   pageCount={20}
+  variant="reduced"
   onPageSelect={() => console.log('page selected')}
-  maxPagesDisplayed={9}
 />
 ```
 
-### With custom string labels
+### Minimal
 
 ```jsx live
 <Pagination
   paginationLabel="pagination navigation"
-  pageCount={20}
+  pageCount={5}
+  variant="minimal"
   onPageSelect={() => console.log('page selected')}
-  buttonLabels={{
-    previous: 'Anterior',
-    next: 'Siguiente',
-    page: 'Página',
-    currentPage: 'Página actual',
-    pageOfCount: 'de',
-  }}
 />
 ```
 
-### With custom element labels
+### Basic usage (Small Size)
 
 ```jsx live
 <Pagination
   paginationLabel="pagination navigation"
   pageCount={20}
+  size="small"
   onPageSelect={() => console.log('page selected')}
-  buttonLabels={{
-    previous: <span>Anterior</span>,
-    next: <span>Siguiente</span>,
-    page: <span>Página</span>,
-    currentPage: <span>Página actual</span>,
-    pageOfCount: <span>de</span>,
-  }}
 />
 ```
 
-### With custom right and left icons
+### Secondary
 
 ```jsx live
 <Pagination
   paginationLabel="pagination navigation"
   pageCount={20}
+  variant="secondary"
+  size="small"
   onPageSelect={() => console.log('page selected')}
-  icons={{ // replacing with svg
-    leftIcon: <svg viewBox="0 0 32 32" style={{width: '15px'}} aria-hidden="true" className="mr-2"><path d="M14.19 16.005l7.869 7.868-2.129 2.129-9.996-9.997L19.937 6.002l2.127 2.129z"/></svg>,
-    rightIcon: <svg viewBox="0 0 32 32" style={{width: '15px'}} aria-hidden="true" className="ml-2"><path d="M18.629 15.997l-7.083-7.081L13.462 7l8.997 8.997L13.457 25l-1.916-1.916z"/></svg>
-  }}
 />
+```
+
+### Reduced
+
+```jsx live
+<Pagination
+  paginationLabel="pagination navigation"
+  pageCount={20}
+  variant="reduced"
+  size="small"
+  onPageSelect={() => console.log('page selected')}
+/>
+```
+
+### Minimal
+
+```jsx live
+<Pagination
+  paginationLabel="pagination navigation"
+  pageCount={5}
+  variant="minimal"
+  size="small"
+  onPageSelect={() => console.log('page selected')}
+/>
+```
+
+### Inverse Pallete (Default Size)
+
+```jsx live
+<div className="bg-dark-700 p-4">
+  <Pagination
+    paginationLabel="pagination navigation"
+    pageCount={20}
+    colorCheme="dark"
+    onPageSelect={() => console.log('page selected')}
+  />
+  <Pagination
+    paginationLabel="pagination navigation"
+    pageCount={20}
+    colorCheme="dark"
+    variant="reduced"
+    onPageSelect={() => console.log('page selected')}
+  />
+  <Pagination
+    paginationLabel="pagination navigation"
+    pageCount={5}
+    colorCheme="dark"
+    variant="minimal"
+    onPageSelect={() => console.log('page selected')}
+  />
+</div>
+```
+
+### Inverse Pallete (Small Size)
+
+```jsx live
+<div className="bg-dark-700 p-4">
+  <Pagination
+    paginationLabel="pagination navigation"
+    pageCount={20}
+    colorCheme="dark"
+    size="small"
+    onPageSelect={() => console.log('page selected')}
+  />
+  <Pagination
+    paginationLabel="pagination navigation"
+    pageCount={20}
+    colorCheme="dark"
+    variant="reduced"
+    size="small"
+    onPageSelect={() => console.log('page selected')}
+  />
+  <Pagination
+    paginationLabel="pagination navigation"
+    pageCount={5}
+    colorCheme="dark"
+    variant="minimal"
+    size="small"
+    onPageSelect={() => console.log('page selected')}
+  />
+</div>
 ```

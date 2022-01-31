@@ -1,15 +1,214 @@
 @import "variables";
 @import "~bootstrap/scss/pagination";
 
+.pagination {
+    align-items: center;
+
+    .fa {
+        font-size: $pagination-icon-size;
+        line-height: $pagination-icon-size;
+
+        &.fa-angle-left {
+            margin-right: 1rem;
+        }
+
+        &.fa-angle-right {
+            margin-left: 1rem;
+        }
+    }
+
+    .dropdown {
+        z-index: 4;
+    }
+}
+
 .page-link {
-    border-color: $pagination-border-color !important;
-    border-radius: 0 !important;
+    border: none;
 
     div {
         display: inline-block;
     }
 }
 
-.page-item > .btn {
-    transition: none;
+.page-item {
+    > .btn {
+        transition: none;
+        line-height: 1.438rem;
+    }
+}
+
+.pagination-small {
+    .page-link {
+        font-size: $pagination-font-size-sm;
+        line-height: $pagination-link-height;
+        padding: 0 $pagination-padding-y-sm;
+
+        &.previous,
+        &.next {
+            padding: 0 1rem;
+            line-height: $pagination-link-height;
+
+            div {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .fa {
+            font-size: $pagination-icon-size-sm;
+            line-height: $pagination-icon-size-sm;
+        }
+    }
+}
+
+
+.pagination-secondary {
+    button.next,
+    button.previous {
+        height: $pagination-secondary-height;
+        padding: 0 1rem;
+
+        .fa {
+            margin: 0;
+            font-size: $pagination-icon-height;
+            line-height: $pagination-icon-line-height;
+        }
+    }
+
+    &.pagination-small {
+        
+        button.next,
+        button.previous {
+            height: $pagination-secondary-height-sm;
+            padding: 0 1rem;
+            line-height: $pagination-link-height;
+
+            .fa {
+                font-size: $pagination-icon-size;
+                line-height: $pagination-icon-size;
+            }
+        }
+    }
+}
+
+.pagination-dark {
+    .pgn__dark-styles {
+        background-color: transparent;
+        color: $white;
+    }
+
+    .page-item {
+        &.disabled .page-link {
+            @extend .pgn__dark-styles;
+        }
+
+        &.active button.page-link {
+            background-color: $pagination-bg;
+            color: $pagination-color;
+        }
+
+        button.page-link {
+            @extend .pgn__dark-styles;
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        &:not(.active):focus {
+            box-shadow: 0 0 0 .0625rem $pagination-color;
+        }
+    }
+
+    .dropdown {
+        .btn-tertiary {
+            color: $pagination-color-inverse;
+    
+            &:after {
+                border-top: .3125rem solid $pagination-color-inverse;
+            }
+    
+            &:active,
+            &:hover {
+                background-color: transparent;
+            }
+    
+            &:not(:disabled):not(.disabled):active {
+                color: $pagination-color-inverse;
+            }
+        }
+    }
+
+    .show > .dropdown-toggle {
+        background-color: transparent;
+    }
+}
+
+.pgn__reduced-pagination-dropdown {
+    overflow-y: auto;
+    max-height: $pagination-reduced-dropdown-max-height;
+    min-width: $pagination-reduced-dropdown-min-width;
+
+    a {
+        text-align: center;
+    }
+}
+
+.pagination-reduced {
+    .dropdown-toggle:after {
+        width: 0;
+        height: 0;
+        border-left: $pagination-toggle-border solid transparent;
+        border-right: $pagination-toggle-border solid transparent;
+        border-top: $pagination-toggle-border solid $gray-700;
+        transform: rotate(0);
+        left: .5rem;
+        top: 0;
+        margin-right: 1rem;
+    }
+
+    button.next,
+    button.previous {
+        height: 44px;
+        padding: 0 1.3rem;
+
+        .fa {
+            margin: 0;
+        }
+    }
+
+    &.pagination-small {
+        .btn.dropdown-toggle {
+            font-size: $pagination-font-size-sm;
+
+            &:after {
+                border-left-width: $pagination-toggle-border-sm;
+                border-right-width: $pagination-toggle-border-sm;
+                border-top-width: $pagination-toggle-border-sm;
+            }
+        }
+
+        button.previous,
+        button.next {
+            line-height: $pagination-icon-height;
+            height: $pagination-icon-height;
+        }
+    }
+}
+
+.pagination-minimal {
+    .page-item:first-child {
+        margin-right: .3rem;
+    }
+
+    button.next,
+    button.previous {
+        padding: .3rem 1rem;
+
+        .fa {
+            font-size: $pagination-icon-height;
+            line-height: $pagination-icon-height;
+            margin: 0;
+        }
+    }
 }
