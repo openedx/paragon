@@ -5,6 +5,7 @@ exports[`<SelectableBox /> correct rendering renders without props 1`] = `
   className="pgn__selectable_box pgn__selectable_box-active"
   onClick={[Function]}
   onFocus={[Function]}
+  onKeyPress={[Function]}
   role="button"
   tabIndex={0}
 >
