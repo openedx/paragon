@@ -3,6 +3,7 @@ import { mount } from 'enzyme';
 import { Context as ResponsiveContext } from 'react-responsive';
 import breakpoints from '../utils/breakpoints';
 import Pagination from './index';
+import IconButton from '../IconButton/index';
 
 const baseProps = {
   paginationLabel: 'pagination navigation',
@@ -191,6 +192,15 @@ describe('<Pagination />', () => {
       const wrapper = mount(<Pagination {...props} />);
       wrapper.find('button.next').simulate('click');
       expect(spy).toHaveBeenCalledTimes(1);
+    });
+
+    it('uses IconButton component for previous and next button for small size', () => {
+      const props = {
+        ...baseProps,
+        size: 'small',
+      };
+      const wrapper = mount(<Pagination {...props} />);
+      expect(wrapper.find(IconButton)).toHaveLength(2);
     });
   });
 
