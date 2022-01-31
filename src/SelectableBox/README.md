@@ -23,7 +23,7 @@ As ``Checkbox``
 
 ```jsx live
 () => {
-  const type = 'checkbox'
+  const type = 'checkbox';
   const allCheeseOptions = ['swiss', 'cheddar', 'pepperjack'];
   const [checkedCheeses, { add, remove, set, clear }] = useCheckboxSetValues(['swiss']);
 
@@ -68,7 +68,7 @@ As ``Radio``
 
 ```jsx live
 () => {
-  const type = 'radio'
+  const type = 'radio';
   const [value, setValue] = useState('green');
   const handleChange = e => setValue(e.target.value);
   
@@ -104,7 +104,7 @@ As ``Checkbox`` with ``isIndeterminate``
 
 ```jsx live
 () => {
-  const type = 'checkbox'
+  const type = 'checkbox';
   const allCheeseOptions = ['swiss', 'cheddar', 'pepperjack'];
   const [checkedCheeses, { add, remove, set, clear }] = useCheckboxSetValues(['swiss']);
 

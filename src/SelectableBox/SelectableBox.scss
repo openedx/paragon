@@ -28,7 +28,7 @@
   border-radius: $selectable-box-border-radius;
 
   &:focus-visible {
-    outline: 1px solid #002121;
+    outline: 1px solid $primary-700;
   }
 
   .pgn__form-radio,
@@ -48,9 +48,9 @@
 }
 
 .pgn__selectable_box-active {
-  outline: 2px solid #00262B;
+  outline: 2px solid $primary-500;
 }
 
 .pgn__selectable_box-invalid {
-  outline: 2px solid #CA3A2F;
+  outline: 2px solid $danger-300;
 }

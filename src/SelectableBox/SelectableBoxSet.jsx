@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Form from '../Form';
+import { getType } from './utils';
 
 const INPUT_TYPES = [
   'radio',
   'checkbox',
 ];
 
-const SelectableBoxSet = ({
+const SelectableBoxSet = React.forwardRef(({
   children,
   name,
   value,
@@ -16,28 +16,20 @@ const SelectableBoxSet = ({
   onChange,
   type,
   className,
-}) => {
-  const getInputType = () => {
-    switch (type) {
-      case 'radio':
-        return Form.RadioSet;
-      case 'checkbox':
-        return Form.CheckboxSet;
-      default:
-        return Form.RadioSet;
-    }
-  };
+}, ref) => {
+  const inputType = getType('SelectableBoxSet', type);
 
-  return React.createElement(getInputType(), {
+  return React.createElement(inputType, {
     name,
     value,
     defaultValue,
     onChange,
+    ref,
     isInline: true,
     className: classNames('pgn__selectable_box-set', className),
   },
   children);
-};
+});
 
 SelectableBoxSet.propTypes = {
   /** Specifies a name for the group of `SelectableBox`'es. */

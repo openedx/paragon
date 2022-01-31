@@ -1,17 +1,17 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Form from '../Form';
 import SelectableBoxSet from './SelectableBoxSet';
 import { useCheckboxSetContext } from '../Form/FormCheckboxSetContext';
 import { useRadioSetContext } from '../Form/FormRadioSetContext';
+import { getType } from './utils';
 
 const INPUT_TYPES = [
   'radio',
   'checkbox',
 ];
 
-const SelectableBox = ({
+const SelectableBox = React.forwardRef(({
   type,
   value,
   checked,
@@ -22,17 +22,8 @@ const SelectableBox = ({
   onFocus,
   inputHidden,
   className,
-}) => {
-  const getInputType = () => {
-    switch (type) {
-      case 'radio':
-        return Form.Radio;
-      case 'checkbox':
-        return Form.Checkbox;
-      default:
-        return Form.Radio;
-    }
-  };
+}, ref) => {
+  const inputType = getType('SelectableBox', type);
 
   const isChecked = () => {
     switch (type) {
@@ -46,7 +37,7 @@ const SelectableBox = ({
   };
 
   const inputRef = useRef(null);
-  const input = React.createElement(getInputType(), {
+  const input = React.createElement(inputType, {
     value,
     checked,
     hidden: inputHidden,
@@ -62,9 +53,9 @@ const SelectableBox = ({
   };
 
   return (
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
     <div
       role="button"
+      onKeyPress={onClickHandler}
       onClick={onClickHandler}
       onFocus={onFocus}
       className={classNames('pgn__selectable_box', className, {
@@ -72,12 +63,13 @@ const SelectableBox = ({
         'pgn__selectable_box-invalid': isInvalid,
       })}
       tabIndex={0}
+      ref={ref}
     >
       {input}
       {children}
     </div>
   );
-};
+});
 
 SelectableBox.propTypes = {
   /** Content of the `SelectableBox`. */
@@ -88,7 +80,7 @@ SelectableBox.propTypes = {
   checked: PropTypes.bool,
   /** Indicates the input type: checkbox or radio. */
   type: PropTypes.oneOf(INPUT_TYPES),
-  /** Function that is called when the `SelectableBox` is clicked. */
+  /** Indicates a function that can. */
   onClick: PropTypes.func,
   /** Function that is called when the `SelectableBox` is focused. */
   onFocus: PropTypes.func,
