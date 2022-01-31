@@ -6,6 +6,8 @@ import {
   IconButton,
 } from '~paragon-react';
 import { Close } from '~paragon-icons';
+
+import { FEATURES } from '../config';
 import SettingsContext from '../context/SettingsContext';
 import { THEMES } from '../../theme-config';
 
@@ -55,17 +57,19 @@ const Settings = () => {
             ))}
           </Form.Control>
         </Form.Group>
-        <Form.Group>
-          <Form.Control
-            as="select"
-            value={direction}
-            onChange={onDirectionChange}
-            floatingLabel="Direction"
-          >
-            <option value="ltr">Left to right</option>
-            <option value="rtl">Right to left</option>
-          </Form.Control>
-        </Form.Group>
+        {FEATURES.DIRECTION_SWITCHER && (
+          <Form.Group>
+            <Form.Control
+              as="select"
+              value={direction}
+              onChange={onDirectionChange}
+              floatingLabel="Direction"
+            >
+              <option value="ltr">Left to right</option>
+              <option value="rtl">Right to left</option>
+            </Form.Control>
+          </Form.Group>
+        )}
       </div>
     </Sheet>
   );
