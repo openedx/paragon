@@ -204,7 +204,7 @@ class Pagination extends React.Component {
             alt={ariaLabel}
             size="sm"
             tabIndex={isFirstPage ? '-1' : undefined}
-            inputRef={(element) => { this.previousButtonRef = element; }}
+            ref={(element) => { this.previousButtonRef = element; }}
           />
         )
           : (
@@ -266,7 +266,7 @@ class Pagination extends React.Component {
             alt={ariaLabel}
             size="sm"
             tabIndex={isLastPage ? '-1' : undefined}
-            inputRef={(element) => { this.nextButtonRef = element; }}
+            ref={(element) => { this.nextButtonRef = element; }}
           />
         )
           : (
