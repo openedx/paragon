@@ -80,7 +80,7 @@ SelectableBox.propTypes = {
   checked: PropTypes.bool,
   /** Indicates the input type: checkbox or radio. */
   type: PropTypes.oneOf(INPUT_TYPES),
-  /** Indicates a function that can. */
+  /** Function that is called when the `SelectableBox` is clicked. */
   onClick: PropTypes.func,
   /** Function that is called when the `SelectableBox` is focused. */
   onFocus: PropTypes.func,
