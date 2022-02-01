@@ -52,9 +52,11 @@ const Swatch = ({ name, colorClassName, isUnused }) => (
           <code className="mb-0 d-block text-lowercase text-dark-700">
             {name}
           </code>
-          <code style={{ fontSize: '65%' }} className="text-muted">
-            {Color(measurements['background-color']).hex()}
-          </code>
+          {measurements['background-color'] && (
+            <code style={{ fontSize: '65%' }} className="text-muted">
+              {Color(measurements['background-color']).hex()}
+            </code>
+          )}
         </div>
       )}
     >
@@ -70,14 +72,22 @@ const Swatch = ({ name, colorClassName, isUnused }) => (
 Swatch.propTypes = {
   name: PropTypes.string.isRequired,
   colorClassName: PropTypes.string.isRequired,
-  isUnused: PropTypes.bool.isRequired,
+  isUnused: PropTypes.bool,
+};
+
+Swatch.defaultProps = {
+  isUnused: false,
 };
 
 const renderColorRamp = (themeName, unusedLevels) => (
-  <div style={{ flexBasis: '24%', marginRight: '1%', marginBottom: '2rem' }}>
+  <div
+    key={`${themeName}`}
+    style={{ flexBasis: '24%', marginRight: '1%', marginBottom: '2rem' }}
+  >
     <h5>{themeName}</h5>
     {levels.map(level => (
       <Swatch
+        key={`$${themeName}-${level}`}
         name={`$${themeName}-${level}`}
         colorClassName={utilityClasses.bg(themeName, level)}
         isUnused={unusedLevels.includes(level)}
@@ -155,7 +165,7 @@ export default function ColorsPage({ data }) {
               </td>
               <td>
                 {colors.map(({ themeName }) => (
-                  <code className="mr-2">{themeName}</code>
+                  <code key={themeName} className="mr-2">{themeName}</code>
                 ))}
               </td>
             </tr>
@@ -167,8 +177,8 @@ export default function ColorsPage({ data }) {
               </td>
               <td>
                 <strong className="d-block">Levels </strong>
-                {levels.map(({ level }) => (
-                  <code className="mr-2">{level}</code>
+                {levels.map(level => (
+                  <code key={level} className="mr-2">{level}</code>
                 ))}
                 <br />
                 <strong className="d-block">Element types </strong>
@@ -187,7 +197,7 @@ export default function ColorsPage({ data }) {
                   'active',
                   'dark-text',
                 ].map(element => (
-                  <code className="mr-2">{element}</code>
+                  <code key={element} className="mr-2">{element}</code>
                 ))}
               </td>
             </tr>
@@ -238,12 +248,12 @@ export default function ColorsPage({ data }) {
               </td>
               <td className="align-top pr-4">
                 {colors.map(({ themeName }) => (
-                  <code className="d-block">{themeName}-</code>
+                  <code key={themeName} className="d-block">{themeName}-</code>
                 ))}
               </td>
               <td className="align-top pr-4">
-                {levels.map(({ level }) => (
-                  <code className="d-block">{level}</code>
+                {levels.map(level => (
+                  <code key={level} className="d-block">{level}</code>
                 ))}
               </td>
             </tr>
@@ -253,7 +263,7 @@ export default function ColorsPage({ data }) {
         <h3>Background Fills</h3>
         <div className="d-flex flex-wrap">
           {colors.map(({ themeName }) => (
-            <div style={{ flexBasis: '33%' }}>
+            <div key={themeName} style={{ flexBasis: '33%' }}>
               <div className="mr-3 mb-3">
                 <div
                   className={classNames(
@@ -273,7 +283,7 @@ export default function ColorsPage({ data }) {
         <h3>Borders & Lines</h3>
         <div className="d-flex flex-wrap">
           {colors.map(({ themeName }) => (
-            <div style={{ flexBasis: '33%' }}>
+            <div key={themeName} style={{ flexBasis: '33%' }}>
               <div className="mr-3 mb-3">
                 <div
                   className={classNames(
@@ -293,7 +303,7 @@ export default function ColorsPage({ data }) {
         <h3>Icons & Semantic Lines</h3>
         <div className="d-flex flex-wrap">
           {colors.map(({ themeName }) => (
-            <div style={{ flexBasis: '33%' }}>
+            <div key={themeName} style={{ flexBasis: '33%' }}>
               <div className="mr-3 mb-3">
                 <div
                   className={classNames(
@@ -322,11 +332,12 @@ export default function ColorsPage({ data }) {
         </div>
         <div className="d-flex">
           {[500, 700, 900].map(level => (
-            <div style={{ flexBasis: '33%' }}>
+            <div key={level} style={{ flexBasis: '33%' }}>
               {colors.map(({ themeName, unusedLevels }) => {
                 if (unusedLevels.includes(level)) { return null; }
                 return (
                   <code
+                    key={`${themeName}-${level}`}
                     className={classNames(
                       'd-block',
                       utilityClasses.text(themeName, level),
@@ -357,7 +368,7 @@ export default function ColorsPage({ data }) {
           {colors.map(({ themeName }) => {
             if (themeName === 'warning') { return null; }
             return (
-              <div className="d-flex rounded overflow-hidden mb-3">
+              <div key={themeName} className="d-flex rounded overflow-hidden mb-3">
                 <div
                   className={classNames(
                     'p-3 w-100',

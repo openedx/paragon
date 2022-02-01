@@ -8,7 +8,7 @@ const defaultValue = {
   onThemeChange: () => {},
 };
 
-const SettingsContext = createContext(defaultValue);
+export const SettingsContext = createContext(defaultValue);
 
 const SettingsContextProvider = ({ children }) => {
   // gatsby does not have access to the localStorage during the build (and first render)
@@ -46,11 +46,6 @@ const SettingsContextProvider = ({ children }) => {
             if you simply change href of the stylesheet there is a small window of time when the previous
             theme gets unapplied and new one loaded which leaves whose site without styles.
          */}
-        <link
-          href="/static/openedx-theme.css"
-          rel="stylesheet"
-          type="text/css"
-        />
         {THEMES.map(themeInfo => themeInfo.stylesheet !== 'openedx-theme' && (
           <link
             key={themeInfo.stylesheet}
