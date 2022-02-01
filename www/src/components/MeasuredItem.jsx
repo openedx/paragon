@@ -1,43 +1,50 @@
-import React from 'react';
+import React, {
+  useContext,
+  useState,
+  useRef,
+  useEffect,
+} from 'react';
 import PropTypes from 'prop-types';
 
-export default class MeasuredItem extends React.Component {
-  constructor(props) {
-    super(props);
+import { SettingsContext } from '../context/SettingsContext';
 
-    const initialMeasurements = props.properties.reduce((acc, property) => {
-      acc[property] = null;
-      return acc;
-    }, {});
+const initialMeasurements = {};
 
-    this.state = initialMeasurements;
-    this.item = React.createRef();
-  }
+const MeasuredItem = ({
+  properties,
+  renderBefore,
+  renderAfter,
+  children,
+}) => {
+  const { theme } = useContext(SettingsContext);
+  const [measurements, setMeasurements] = useState(initialMeasurements);
+  const itemRef = useRef();
 
-  componentDidMount() {
-    // Needs a moment to render children to DOM first.
-    setTimeout(this.measure.bind(this), 10);
-  }
+  useEffect(
+    () => {
+      const measure = () => {
+        const computedStyle = getComputedStyle(itemRef.current);
+        const measurements = properties.reduce((acc, property) => {
+          acc[property] = computedStyle.getPropertyValue(property);
+          return acc;
+        }, {});
+        setMeasurements(measurements);
+      };
+      // Needs a moment to finish switching theme and re-render children to DOM first.
+      setMeasurements(initialMeasurements)
+      const timeout = setTimeout(measure, 1000);
+      return () => clearTimeout(timeout);
+    },
+    [theme, properties],
+  );
 
-  measure() {
-    const computedStyle = getComputedStyle(this.item.current);
-    const measurements = this.props.properties.reduce((acc, property) => {
-      acc[property] = computedStyle.getPropertyValue(property);
-      return acc;
-    }, {});
-
-    this.setState(measurements);
-  }
-
-  render() {
-    return (
-      <>
-        {this.props.renderBefore ? this.props.renderBefore(this.state) : null}
-        {React.cloneElement(this.props.children, { ref: this.item })}
-        {this.props.renderAfter ? this.props.renderAfter(this.state) : null}
-      </>
-    );
-  }
+  return (
+    <>
+      {renderBefore ? renderBefore(measurements) : null}
+      {React.cloneElement(children, { ref: itemRef })}
+      {renderAfter ? renderAfter(measurements) : null}
+    </>
+  );
 }
 
 MeasuredItem.propTypes = {
@@ -52,3 +59,5 @@ MeasuredItem.defaultProps = {
   renderBefore: undefined,
   renderAfter: undefined,
 };
+
+export default MeasuredItem;
