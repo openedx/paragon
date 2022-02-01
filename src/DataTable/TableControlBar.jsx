@@ -30,9 +30,6 @@ const TableControlBar = ({ className }) => {
           <DropdownFilters />
         </div>
         <div className={actionsSectionClassName}>
-          <div className="pgn__data-table-toggle">
-            <DataViewToggle />
-          </div>
           <div>
             <ActionDisplay />
           </div>
@@ -42,12 +39,13 @@ const TableControlBar = ({ className }) => {
       )}
       <div className="pgn__data-table-status">
         <div className="pgn__data-table-status-left">
-          <SmartStatus />
+          {togglePlacement !== 'bottom' ? <SmartStatus /> : null}
         </div>
         {(!setFilter || (setFilter && showFiltersInSidebar)) && (
           <>
             <div className={actionsSectionClassName}>
               <div className="pgn__data-table-toggle">
+                {togglePlacement === 'bottom' ? <SmartStatus /> : null}
                 <DataViewToggle />
               </div>
               <div>
@@ -55,6 +53,11 @@ const TableControlBar = ({ className }) => {
               </div>
             </div>
           </>
+        )}
+        {(setFilter && !showFiltersInSidebar) && (
+          <div className="pgn__data-table-toggle">
+            <DataViewToggle />
+          </div>
         )}
       </div>
     </div>
