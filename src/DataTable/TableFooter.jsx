@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import RowStatus from './RowStatus';
 import TablePagination from './TablePagination';
-import TablePaginationButtonGroup from './TablePaginationButtonGroup';
+import TablePaginationMinimal from './TablePaginationMinimal';
 
 const TableFooter = ({ className, children }) => (
   <div className={classNames(className, 'pgn__data-table-footer')}>
@@ -28,7 +28,7 @@ TableFooter.defaultProps = {
     <>
       <RowStatus />
       <TablePagination />
-      <TablePaginationButtonGroup />
+      <TablePaginationMinimal />
     </>
   ),
   className: null,

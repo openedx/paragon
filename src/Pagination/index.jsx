@@ -5,13 +5,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import MediaQuery from 'react-responsive';
 
-import { Button } from '..';
+import { Button, Dropdown } from '..';
 import Icon from '../Icon';
 import breakpoints from '../utils/breakpoints';
 import newId from '../utils/newId';
 import { ELLIPSIS } from './constants';
 import getPaginationRange from './getPaginationRange';
-import Dropdown from '../Dropdown';
 
 const VARIANTS = {
   default: 'default',

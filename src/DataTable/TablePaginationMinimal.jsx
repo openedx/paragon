@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Pagination } from '..';
 import DataTableContext from './DataTableContext';
 
-const TablePaginationButtonGroup = () => {
+const TablePaginationMinimal = () => {
   const {
     nextPage, pageCount, gotoPage, state,
   } = useContext(DataTableContext);
@@ -15,8 +15,14 @@ const TablePaginationButtonGroup = () => {
   const pageIndex = state?.pageIndex;
 
   return (
-    <Pagination variant="minimal" currentPage={pageIndex + 1} pageCount={pageCount} paginationLabel="1234" onPageSelect={(pageNum) => gotoPage(pageNum - 1)} />
+    <Pagination
+      variant="minimal"
+      currentPage={pageIndex + 1}
+      pageCount={pageCount}
+      paginationLabel="datatable pagination"
+      onPageSelect={(pageNum) => gotoPage(pageNum - 1)}
+    />
   );
 };
 
-export default TablePaginationButtonGroup;
+export default TablePaginationMinimal;

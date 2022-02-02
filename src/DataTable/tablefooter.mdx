@@ -5,7 +5,7 @@ components:
 - TableFooter
 - RowStatus
 - TablePagination
-- TablePaginationButtonGroup
+- TablePaginationMinimal
 categories:
 - Table
 status: 'New'
@@ -139,7 +139,7 @@ Alternately, it will accept children.
 
 ## Footer subcomponents
 These components can be rendered independently of the `TableFooter` component with a `DataTableContext`: `RowStatus`,
-`TablePagination`, `TablePaginationButtonGroup`.
+`TablePagination`, `TablePaginationMinimal`.
 - `RowStatus` expects to receive `page`, `rows`, and `itemCount` from `DataTableContext`
 - `TablePagination` expects to receive `pageCount`, `state`, and `gotoPage` from `DataTableContext`
-- `TablePaginationButtonGroup` expects to receive `nextPage`, `previousPage`, `canPreviousPage`, and `canNextPage` from `DataTableContext`
+- `TablePaginationMinimal` expects to receive `nextPage`, `previousPage`, `canPreviousPage`, and `canNextPage` from `DataTableContext`
