@@ -1,5 +1,5 @@
 {
-  "lastModified": 1643810927703,
+  "lastModified": 1643897328329,
   "projectUsages": [
     {
       "version": "16.24.0",
@@ -834,19 +834,19 @@
           },
           {
             "filePath": "src/id-verification/ImageFileUpload.jsx",
-            "line": 46,
+            "line": 45,
             "column": 6,
             "version": "16.1.0"
           },
           {
             "filePath": "src/id-verification/panels/ReviewRequirementsPanel.jsx",
-            "line": 50,
+            "line": 34,
             "column": 8,
             "version": "16.1.0"
           },
           {
             "filePath": "src/id-verification/panels/SummaryPanel.jsx",
-            "line": 157,
+            "line": 149,
             "column": 8,
             "version": "16.1.0"
           }
@@ -914,13 +914,13 @@
           },
           {
             "filePath": "src/id-verification/panels/ReviewRequirementsPanel.jsx",
-            "line": 59,
+            "line": 43,
             "column": 16,
             "version": "16.1.0"
           },
           {
             "filePath": "src/id-verification/panels/SummaryPanel.jsx",
-            "line": 55,
+            "line": 52,
             "column": 14,
             "version": "16.1.0"
           }
@@ -1000,19 +1000,19 @@
           },
           {
             "filePath": "src/id-verification/CollapsibleImageHelp.jsx",
-            "line": 52,
-            "column": 12,
+            "line": 38,
+            "column": 6,
             "version": "16.1.0"
           },
           {
             "filePath": "src/id-verification/IdVerificationPage.jsx",
-            "line": 74,
+            "line": 72,
             "column": 12,
             "version": "16.1.0"
           },
           {
             "filePath": "src/id-verification/panels/SummaryPanel.jsx",
-            "line": 98,
+            "line": 90,
             "column": 6,
             "version": "16.1.0"
           }
@@ -1144,13 +1144,7 @@
           },
           {
             "filePath": "src/id-verification/Camera.jsx",
-            "line": 286,
-            "column": 8,
-            "version": "16.1.0"
-          },
-          {
-            "filePath": "src/id-verification/panels/ChooseModePanel.jsx",
-            "line": 35,
+            "line": 285,
             "column": 8,
             "version": "16.1.0"
           },
@@ -1334,7 +1328,7 @@
           },
           {
             "filePath": "src/id-verification/panels/SummaryPanel.jsx",
-            "line": 218,
+            "line": 210,
             "column": 10,
             "version": "16.1.0"
           }
@@ -1380,7 +1374,7 @@
           },
           {
             "filePath": "src/id-verification/IdVerificationPage.jsx",
-            "line": 80,
+            "line": 78,
             "column": 8,
             "version": "16.1.0"
           }
@@ -1418,19 +1412,7 @@
         "Form.Check": [
           {
             "filePath": "src/id-verification/Camera.jsx",
-            "line": 287,
-            "column": 10,
-            "version": "16.1.0"
-          },
-          {
-            "filePath": "src/id-verification/panels/ChooseModePanel.jsx",
-            "line": 36,
-            "column": 10,
-            "version": "16.1.0"
-          },
-          {
-            "filePath": "src/id-verification/panels/ChooseModePanel.jsx",
-            "line": 44,
+            "line": 286,
             "column": 10,
             "version": "16.1.0"
           }
@@ -1438,13 +1420,13 @@
         "Spinner": [
           {
             "filePath": "src/id-verification/Camera.jsx",
-            "line": 296,
+            "line": 295,
             "column": 53,
             "version": "16.1.0"
           },
           {
             "filePath": "src/id-verification/panels/SummaryPanel.jsx",
-            "line": 247,
+            "line": 239,
             "column": 23,
             "version": "16.1.0"
           }
@@ -1452,7 +1434,7 @@
         "Form.Text": [
           {
             "filePath": "src/id-verification/Camera.jsx",
-            "line": 297,
+            "line": 296,
             "column": 10,
             "version": "16.1.0"
           }
@@ -1460,19 +1442,13 @@
         "Collapsible": [
           {
             "filePath": "src/id-verification/CameraHelp.jsx",
-            "line": 17,
-            "column": 8,
-            "version": "16.1.0"
-          },
-          {
-            "filePath": "src/id-verification/CameraHelp.jsx",
-            "line": 28,
+            "line": 12,
             "column": 6,
             "version": "16.1.0"
           },
           {
             "filePath": "src/id-verification/CameraHelp.jsx",
-            "line": 38,
+            "line": 22,
             "column": 6,
             "version": "16.1.0"
           },
@@ -1484,15 +1460,15 @@
           },
           {
             "filePath": "src/id-verification/CollapsibleImageHelp.jsx",
-            "line": 28,
-            "column": 6,
+            "line": 25,
+            "column": 4,
             "version": "16.1.0"
           }
         ],
         "Alert.Link": [
           {
             "filePath": "src/id-verification/panels/SummaryPanel.jsx",
-            "line": 139,
+            "line": 131,
             "column": 12,
             "version": "16.1.0"
           }
@@ -15611,8 +15587,8 @@
             "version": "12.8.0"
           },
           {
-            "filePath": "src/users/v2/IdentityVerificationStatus.jsx",
-            "line": 118,
+            "filePath": "src/users/v2/VerifiedName.jsx",
+            "line": 115,
             "column": 6,
             "version": "12.8.0"
           }
@@ -15809,9 +15785,9 @@
             "version": "12.8.0"
           },
           {
-            "filePath": "src/users/v2/IdentityVerificationStatus.jsx",
+            "filePath": "src/users/v2/VerifiedName.jsx",
             "line": 101,
-            "column": 8,
+            "column": 6,
             "version": "12.8.0"
           }
         ],
@@ -17218,8 +17194,8 @@
           },
           {
             "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 257,
-            "column": 22,
+            "line": 264,
+            "column": 26,
             "version": "17.5.3"
           }
         ],
@@ -17806,7 +17782,7 @@
           },
           {
             "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 224,
+            "line": 229,
             "column": 12,
             "version": "17.5.3"
           },
