@@ -65,7 +65,7 @@ WrapperPopover.propTypes = {
       PropTypes.func,
       PropTypes.shape({ current: PropTypes.element }),
     ]),
-    style: PropTypes.object, // eslint-disable-line
+    style: PropTypes.shape({}),
   }),
   /**
    * When this prop is set, it creates a `Popover` with
@@ -73,8 +73,7 @@ WrapperPopover.propTypes = {
    */
   content: PropTypes.bool,
   /** A `Popper.js` config object passed to the the underlying popper instance. */
-  // eslint-disable-next-line react/forbid-prop-types
-  popper: PropTypes.any,
+  popper: PropTypes.shape({}),
   /** Whether the `Overlay` is shown. */
   show: PropTypes.bool,
   /** Specifies the content of the `Overlay` */

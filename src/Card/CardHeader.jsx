@@ -31,12 +31,11 @@ const CardHeader = React.forwardRef(({
         {title && <div className={`pgn__card-header-title-${size}`}>{title}</div>}
         {subtitle && <div className={`pgn__card-header-subtitle-${size}`}>{subtitle}</div>}
       </div>
-      {actions
-        && (
+      {actions && (
         <div className="pgn__card-header-actions">
           {size !== 'md' ? cloneActions(actions) : actions}
         </div>
-        )}
+      )}
     </div>
   );
 });
@@ -49,7 +48,7 @@ CardHeader.propTypes = {
   /** The class name for the CardHeader component */
   className: PropTypes.string,
   /** The title for the CardHeader component */
-  title: PropTypes.node.isRequired,
+  title: PropTypes.node,
   /** The size of the CardHeader component */
   size: PropTypes.oneOf(['sm', 'md']),
   /** The subtitle of the CardHeader component */
@@ -60,6 +59,7 @@ CardHeader.defaultProps = {
   actions: null,
   className: null,
   size: 'md',
+  title: null,
   subtitle: null,
 };
 

@@ -55,12 +55,12 @@ Tooltip.propTypes = {
       PropTypes.func,
       PropTypes.shape({ current: PropTypes.element }),
     ]),
-    style: PropTypes.object, // eslint-disable-line
+    style: PropTypes.shape({}),
   }),
   /** Whether the `Overlay` is shown. */
   show: PropTypes.bool,
   /** A `Popper.js` config object passed to the the underlying popper instance. */
-  popper: PropTypes.any, // eslint-disable-line
+  popper: PropTypes.shape({}),
   /** Overrides underlying component base CSS class name */
   bsPrefix: PropTypes.string,
   /** Specifies the content of the `Tooltip` */

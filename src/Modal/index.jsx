@@ -274,7 +274,7 @@ Modal.propTypes = {
   /** an array of either elements or shapes that take the form of the buttonPropTypes. See the [buttonPropTypes](https://github.com/edx/paragon/blob/master/src/Button/index.jsx#L40) for a list of acceptable props to pass as part of a button. */
   buttons: PropTypes.arrayOf(PropTypes.oneOfType([
     PropTypes.element,
-    PropTypes.object, // TODO: Only accept nodes in the future
+    PropTypes.shape({}), // TODO: Only accept nodes in the future
   ])),
   /** specifies the display text of the default Close button. It defaults to "Close". */
   closeText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),

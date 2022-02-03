@@ -62,21 +62,6 @@ exports[`Rendering Beahvior Renders as expected 1`] = `
         tabIndex={-1}
       />
       <div
-        data-focus-guard={true}
-        style={
-          Object {
-            "height": "0px",
-            "left": "1px",
-            "overflow": "hidden",
-            "padding": 0,
-            "position": "fixed",
-            "top": "1px",
-            "width": "1px",
-          }
-        }
-        tabIndex={-1}
-      />
-      <div
         data-focus-lock-disabled="disabled"
         onBlur={[Function]}
         onFocus={[Function]}

@@ -71,7 +71,7 @@ Select.propTypes = {
   ]),
   options: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.string),
-    PropTypes.arrayOf(PropTypes.object),
+    PropTypes.arrayOf(PropTypes.shape({})),
   ]).isRequired,
 };
 

@@ -84,12 +84,12 @@ CollapsibleButtonGroup.defaultProps = {
 };
 
 CollapsibleButtonGroup.propTypes = {
-  /** class names for the div wrapping the button components */
+  /** Class names for the div wrapping the button components */
   className: PropTypes.string,
+  /** Array of action objects, containing a component and their callback args */
   actions: PropTypes.arrayOf(PropTypes.shape({
     component: PropTypes.oneOfType([PropTypes.func, PropTypes.element]).isRequired,
-    // eslint-disable-next-line react/forbid-prop-types
-    args: PropTypes.object,
+    args: PropTypes.shape({}),
   })).isRequired,
 };
 

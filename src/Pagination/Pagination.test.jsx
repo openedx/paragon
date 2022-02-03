@@ -76,7 +76,9 @@ describe('<Pagination />', () => {
         ...baseProps,
         currentPage: 2,
       };
-      const wrapper = mount(<Pagination {...props} />);
+      const app = document.createElement('div');
+      document.body.appendChild(app);
+      const wrapper = mount(<Pagination {...props} />, { attachTo: app });
       wrapper.find('button.previous').simulate('click');
       expect(wrapper.find('button.next').instance()).toEqual(document.activeElement);
     });
@@ -86,7 +88,9 @@ describe('<Pagination />', () => {
         ...baseProps,
         currentPage: baseProps.pageCount - 1,
       };
-      const wrapper = mount(<Pagination {...props} />);
+      const app = document.createElement('div');
+      document.body.appendChild(app);
+      const wrapper = mount(<Pagination {...props} />, { attachTo: app });
       wrapper.find('button.next').simulate('click');
       expect(wrapper.find('button.previous').instance()).toEqual(document.activeElement);
     });
