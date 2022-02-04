@@ -31,11 +31,6 @@ As ``Checkbox``
     e.target.checked ? add(e.target.value) : remove(e.target.value);
   };
   
-  const firstSelectableBox = <div>
-    <h3>It is my first SelectableBox</h3>
-    <p>Swiss</p>
-  </div>;
-  
   const isInvalid = () => checkedCheeses.includes('swiss');
 
   return (
@@ -46,7 +41,10 @@ As ``Checkbox``
       name="cheeses"
     >
       <SelectableBox value="swiss" type={type}>
-        {firstSelectableBox}
+        <div>
+          <h3>It is my first SelectableBox</h3>
+          <p>Swiss</p>
+        </div>
       </SelectableBox>
       <SelectableBox value="cheddar" inputHidden={false} type={type}>
         Cheddar
@@ -71,11 +69,6 @@ As ``Radio``
   const type = 'radio';
   const [value, setValue] = useState('green');
   const handleChange = e => setValue(e.target.value);
-  
-  const firstSelectableBox = <div>
-    <h3>It is Red color</h3>
-    <p>Select me</p>
-  </div>;
 
   return (
     <SelectableBox.Set
@@ -85,7 +78,10 @@ As ``Radio``
       name="colors"
     >
       <SelectableBox value="red" type={type}>
-        {firstSelectableBox}
+        <div>
+          <h3>It is Red color</h3>
+          <p>Select me</p>
+        </div>
       </SelectableBox>
       <SelectableBox value="green" inputHidden={false} type={type}>
         <h3>Green</h3>
@@ -119,11 +115,6 @@ As ``Checkbox`` with ``isIndeterminate``
   const handleCheckAllChange = ({ checked }) => {
     checked ? set(allCheeseOptions) : clear();
   };
-  
-  const firstSelectableBox = <div>
-    <h3>It is my first SelectableBox</h3>
-    <p>Swiss</p>
-  </div>;
 
   return (
     <>
@@ -143,7 +134,10 @@ As ``Checkbox`` with ``isIndeterminate``
         name="cheeses"
       >
         <SelectableBox value="swiss" type={type}>
-          {firstSelectableBox}
+          <div>
+            <h3>It is my first SelectableBox</h3>
+            <p>Swiss</p>
+          </div>
         </SelectableBox>
         <SelectableBox value="cheddar" inputHidden={false} type={type}>
           Cheddar

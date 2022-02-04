@@ -1,7 +1,7 @@
 import Form from '../Form';
 
 // eslint-disable-next-line import/prefer-default-export
-export const getType = (component, type) => {
+export const getInputType = (component, type) => {
   if (component === 'SelectableBox') {
     switch (type) {
       case 'radio':

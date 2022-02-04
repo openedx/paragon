@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { getType } from './utils';
+import { getInputType } from './utils';
 
 const INPUT_TYPES = [
   'radio',
@@ -17,7 +17,7 @@ const SelectableBoxSet = React.forwardRef(({
   type,
   className,
 }, ref) => {
-  const inputType = getType('SelectableBoxSet', type);
+  const inputType = getInputType('SelectableBoxSet', type);
 
   return React.createElement(inputType, {
     name,

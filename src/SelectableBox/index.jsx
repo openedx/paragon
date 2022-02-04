@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import SelectableBoxSet from './SelectableBoxSet';
 import { useCheckboxSetContext } from '../Form/FormCheckboxSetContext';
 import { useRadioSetContext } from '../Form/FormRadioSetContext';
-import { getType } from './utils';
+import { getInputType } from './utils';
 
 const INPUT_TYPES = [
   'radio',
@@ -23,7 +23,7 @@ const SelectableBox = React.forwardRef(({
   inputHidden,
   className,
 }, ref) => {
-  const inputType = getType('SelectableBox', type);
+  const inputType = getInputType('SelectableBox', type);
 
   const isChecked = () => {
     switch (type) {

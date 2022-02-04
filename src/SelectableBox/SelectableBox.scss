@@ -24,7 +24,7 @@
   flex: 1;
   position: relative;
   padding: $selectable-box-padding;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: $level-1-box-shadow;
   border-radius: $selectable-box-border-radius;
 
   &:focus-visible {
