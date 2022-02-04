@@ -38,7 +38,7 @@ describe('correct rendering', () => {
   it('renders external Hyperlink', () => {
     const wrapper = mount(<Hyperlink {...externalLinkProps} />);
 
-    expect(wrapper.find('span')).toHaveLength(2);
+    expect(wrapper.find('span')).toHaveLength(3);
 
     const icon = wrapper.find('span').at(1);
     const iconImage = icon.find('svg').at(0);

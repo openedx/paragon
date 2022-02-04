@@ -43,12 +43,14 @@ const Hyperlink = React.forwardRef((props, ref) => {
     if (showLaunchIcon) {
       externalLinkIcon = (
         <span
-          // TODO: do not use css utility classes in components as they use !important, which hinders theming.
-          className="d-inline-block align-middle ml-2"
-          aria-label={externalLinkAlternativeText}
+          className="pgn__hyperlink__external-icon"
           title={externalLinkTitle}
         >
-          <Icon src={Launch} style={{ height: '1em', width: '1em' }} />
+          <Icon
+            src={Launch}
+            screenReaderText={externalLinkAlternativeText}
+            style={{ height: '1em', width: '1em' }}
+          />
         </span>
       );
     }
