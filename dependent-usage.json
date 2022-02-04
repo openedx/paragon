@@ -1,5 +1,5 @@
 {
-  "lastModified": 1643897328329,
+  "lastModified": 1643983707196,
   "projectUsages": [
     {
       "version": "16.24.0",
@@ -1568,7 +1568,7 @@
           },
           {
             "filePath": "src/components/CodeManagement/index.jsx",
-            "line": 274,
+            "line": 268,
             "column": 16,
             "version": "17.5.0"
           },
@@ -1960,13 +1960,13 @@
         "Icon": [
           {
             "filePath": "src/components/Admin/index.jsx",
-            "line": 227,
+            "line": 226,
             "column": 8,
             "version": "17.5.0"
           },
           {
             "filePath": "src/components/Admin/index.jsx",
-            "line": 244,
+            "line": 243,
             "column": 8,
             "version": "17.5.0"
           },
@@ -1984,13 +1984,13 @@
           },
           {
             "filePath": "src/components/CodeManagement/index.jsx",
-            "line": 281,
+            "line": 275,
             "column": 20,
             "version": "17.5.0"
           },
           {
             "filePath": "src/components/CodeManagement/index.jsx",
-            "line": 290,
+            "line": 284,
             "column": 20,
             "version": "17.5.0"
           },
@@ -2020,7 +2020,7 @@
           },
           {
             "filePath": "src/components/CodeSearchResults/CodeSearchResultsTable.jsx",
-            "line": 116,
+            "line": 115,
             "column": 8,
             "version": "17.5.0"
           },
@@ -3164,13 +3164,13 @@
         "Pagination": [
           {
             "filePath": "src/components/CodeManagement/index.jsx",
-            "line": 198,
+            "line": 192,
             "column": 10,
             "version": "17.5.0"
           },
           {
             "filePath": "src/components/TableComponent/index.jsx",
-            "line": 100,
+            "line": 103,
             "column": 12,
             "version": "17.5.0"
           }
@@ -4674,7 +4674,7 @@
         "Table": [
           {
             "filePath": "src/components/TableComponent/index.jsx",
-            "line": 86,
+            "line": 89,
             "column": 14,
             "version": "17.5.0"
           }
@@ -5660,19 +5660,19 @@
         "Form.Group": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 131,
+            "line": 132,
             "column": 8,
             "version": "16.3.2"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 150,
+            "line": 151,
             "column": 8,
             "version": "16.3.2"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 169,
+            "line": 170,
             "column": 8,
             "version": "16.3.2"
           },
@@ -5686,13 +5686,13 @@
         "Form.Label": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 132,
+            "line": 133,
             "column": 10,
             "version": "16.3.2"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 151,
+            "line": 152,
             "column": 10,
             "version": "16.3.2"
           },
@@ -5706,7 +5706,7 @@
         "Form.Control": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 139,
+            "line": 140,
             "column": 10,
             "version": "16.3.2"
           }
@@ -5714,7 +5714,7 @@
         "StatefulButton": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 170,
+            "line": 171,
             "column": 10,
             "version": "16.3.2"
           },
@@ -5734,12 +5734,6 @@
         "Icon": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 179,
-            "column": 23,
-            "version": "16.3.2"
-          },
-          {
-            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
             "line": 180,
             "column": 23,
             "version": "16.3.2"
@@ -5747,12 +5741,18 @@
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
             "line": 181,
-            "column": 24,
+            "column": 23,
             "version": "16.3.2"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
             "line": 182,
+            "column": 24,
+            "version": "16.3.2"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
+            "line": 183,
             "column": 21,
             "version": "16.3.2"
           },
@@ -5780,32 +5780,38 @@
         "Form.Checkbox": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailRecipient.jsx",
-            "line": 26,
+            "line": 31,
             "column": 8,
             "version": "16.3.2"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailRecipient.jsx",
-            "line": 33,
+            "line": 38,
             "column": 8,
             "version": "16.3.2"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailRecipient.jsx",
-            "line": 40,
+            "line": 45,
             "column": 8,
             "version": "16.3.2"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailRecipient.jsx",
-            "line": 51,
+            "line": 56,
             "column": 8,
             "version": "16.3.2"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailRecipient.jsx",
-            "line": 62,
+            "line": 67,
             "column": 8,
+            "version": "16.3.2"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailRecipient.jsx",
+            "line": 82,
+            "column": 14,
             "version": "16.3.2"
           }
         ],
@@ -5872,7 +5878,7 @@
         "Spinner": [
           {
             "filePath": "src/components/bulk-email-tool/BulkEmailTool.jsx",
-            "line": 59,
+            "line": 64,
             "column": 6,
             "version": "16.3.2"
           }
@@ -17194,7 +17200,7 @@
           },
           {
             "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 264,
+            "line": 277,
             "column": 26,
             "version": "17.5.3"
           }
@@ -17448,6 +17454,12 @@
             "filePath": "src/components/Careers/Hero.jsx",
             "line": 38,
             "column": 4,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/components/Course/2U/Factoid.jsx",
+            "line": 6,
+            "column": 2,
             "version": "17.5.3"
           },
           {
@@ -17782,7 +17794,7 @@
           },
           {
             "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 229,
+            "line": 236,
             "column": 12,
             "version": "17.5.3"
           },
@@ -17921,6 +17933,62 @@
             "version": "17.5.3"
           }
         ],
+        "Collapsible": [
+          {
+            "filePath": "src/components/Course/CoursePageMobile.jsx",
+            "line": 58,
+            "column": 4,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/components/Course/CoursePageMobile.jsx",
+            "line": 72,
+            "column": 6,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/components/Course/CoursePageMobile.jsx",
+            "line": 78,
+            "column": 4,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/components/Course/CoursePageMobile.jsx",
+            "line": 89,
+            "column": 6,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/components/Course/CoursePageMobile.jsx",
+            "line": 100,
+            "column": 6,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/components/Course/CoursePageMobile.jsx",
+            "line": 111,
+            "column": 6,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/components/Course/CoursePageMobile.jsx",
+            "line": 120,
+            "column": 6,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/components/Course/CoursePageMobile.jsx",
+            "line": 130,
+            "column": 6,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/components/FAQs/AccordionFAQ.jsx",
+            "line": 25,
+            "column": 10,
+            "version": "17.5.3"
+          }
+        ],
         "CardGrid": [
           {
             "filePath": "src/components/Course/CourseRunSelector.jsx",
@@ -17982,62 +18050,6 @@
             "filePath": "src/components/Course/StickyNav.jsx",
             "line": 167,
             "column": 20,
-            "version": "17.5.3"
-          }
-        ],
-        "Collapsible": [
-          {
-            "filePath": "src/components/FAQs/AccordionFAQ.jsx",
-            "line": 25,
-            "column": 10,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/templates/courseDetailMobileExp.jsx",
-            "line": 294,
-            "column": 12,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/templates/courseDetailMobileExp.jsx",
-            "line": 309,
-            "column": 14,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/templates/courseDetailMobileExp.jsx",
-            "line": 315,
-            "column": 12,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/templates/courseDetailMobileExp.jsx",
-            "line": 326,
-            "column": 14,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/templates/courseDetailMobileExp.jsx",
-            "line": 337,
-            "column": 14,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/templates/courseDetailMobileExp.jsx",
-            "line": 348,
-            "column": 14,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/templates/courseDetailMobileExp.jsx",
-            "line": 357,
-            "column": 14,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/templates/courseDetailMobileExp.jsx",
-            "line": 367,
-            "column": 14,
             "version": "17.5.3"
           }
         ],
