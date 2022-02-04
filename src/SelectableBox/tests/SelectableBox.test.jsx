@@ -3,6 +3,8 @@ import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
 import SelectableBox from '../index';
+import { getInputType } from '../utils';
+import Form from '../../Form';
 
 const checkboxType = 'checkbox';
 const checkboxText = 'SelectableCheckbox';
@@ -19,6 +21,16 @@ const SelectableRadio = (props) => (
 );
 
 describe('<SelectableBox />', () => {
+  describe('utils', () => {
+    it('getInputType returns correct type', () => {
+      expect(getInputType('SelectableBox', undefined)).toEqual(Form.Radio);
+      expect(getInputType('SelectableBox', 'radio')).toEqual(Form.Radio);
+      expect(getInputType('SelectableBox', 'checkbox')).toEqual(Form.Checkbox);
+      expect(getInputType('SelectableBoxSet', undefined)).toEqual(Form.RadioSet);
+      expect(getInputType('SelectableBoxSet', 'radio')).toEqual(Form.RadioSet);
+      expect(getInputType('SelectableBoxSet', 'checkbox')).toEqual(Form.CheckboxSet);
+    });
+  });
   describe('correct rendering', () => {
     it('renders without props', () => {
       const tree = renderer.create((
@@ -68,6 +80,13 @@ describe('<SelectableBox />', () => {
       const wrapper = mount(<SelectableCheckbox onClick={onClickSpy} />);
       const selectableBox = wrapper.find('.pgn__selectable_box');
       selectableBox.simulate('click');
+      expect(onClickSpy).toHaveBeenCalledTimes(1);
+    });
+    it('renders with on key press event when onClick is passed', () => {
+      const onClickSpy = jest.fn();
+      const wrapper = mount(<SelectableCheckbox onClick={onClickSpy} />);
+      const selectableBox = wrapper.find('.pgn__selectable_box');
+      selectableBox.simulate('keypress', { key: 'Enter' });
       expect(onClickSpy).toHaveBeenCalledTimes(1);
     });
     it('renders with hidden input when inputHidden is passed', () => {
