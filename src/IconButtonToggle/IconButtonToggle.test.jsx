@@ -19,7 +19,10 @@ describe('IconButtonToggle tests', () => {
         <IconButton value="abc" alt="abc" icon={iconPlane} />
       </IconButtonToggle>,
     );
-    expect(screen.getByTestId('icon-btn-val-abc')).toHaveClass('btn-icon-primary-active');
+    const btnAbc = screen.getByTestId('icon-btn-val-abc');
+
+    expect(btnAbc).toHaveClass('btn-icon-primary-active');
+    expect(btnAbc).toHaveAttribute('aria-selected', 'true');
   });
   test('switching activeValue works as expected', () => {
     const spyChanger = jest.fn();
@@ -31,11 +34,21 @@ describe('IconButtonToggle tests', () => {
     );
     const btnDef = screen.getByTestId('icon-btn-val-def');
     const btnAbc = screen.getByTestId('icon-btn-val-abc');
+
     expect(btnDef).toHaveClass('btn-icon-primary');
+    expect(btnDef).toHaveAttribute('aria-selected', 'false');
+
     expect(btnAbc).toHaveClass('btn-icon-primary-active');
+    expect(btnAbc).toHaveAttribute('aria-selected', 'true');
+
     userEvent.click(btnDef);
+
     waitFor(() => expect(btnDef).toHaveClass('btn-icon-primary-active'));
+    waitFor(() => expect(btnDef).toHaveAttribute('aria-selected', 'false'));
+
     waitFor(() => expect(btnAbc).toHaveClass('btn-icon-primary'));
+    waitFor(() => expect(btnAbc).toHaveAttribute('aria-selected', 'true'));
+
     expect(spyChanger).toHaveBeenCalledWith('def');
   });
 });
