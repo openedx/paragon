@@ -3,13 +3,24 @@
   height: 100%;
   background-color: rgba(196,196,196,0.5);
   position: fixed;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   &.hidden {
     display: none;
   }
   z-index: $zindex-sheet-backdrop;
 }
+
+.pgn__sheet-component-left {
+  left: 0;
+  box-shadow: 8px 0 16px 0 rgba(0,0,0,0.15);
+}
+
+.pgn__sheet-component-right {
+  right: 0;
+  box-shadow: -8px 0 16px 0 rgba(0,0,0,0.15);
+}
+
 .pgn__sheet-component {
   position: fixed;
   padding: 1.25rem;
@@ -20,34 +31,38 @@
     color: $light-300;
   }
   &.bottom {
-    bottom: 0px;
-    box-shadow: 0px -4px 10px 0px rgba(0,0,0,0.15);
-    box-shadow: 0px -8px 16px 0px rgba(0,0,0,0.15);
+    bottom: 0;
+    box-shadow: 0 -8px 16px 0 rgba(0,0,0,0.15);
   }
   &.top {
-    top: 0px;
-    box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.15);
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
+    top: 0;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.15);
   }
   &.left {
-    left: 0px;
-    box-shadow: 4px 0px 10px 0px rgba(0,0,0,0.15);
-    box-shadow: 8px 0px 16px 0px rgba(0,0,0,0.15);
+    @extend .pgn__sheet-component-left;
+
+    [dir="rtl"] & {
+      @extend .pgn__sheet-component-right;
+      left: auto;
+    }
   }
   &.right {
-    right: 0px;
-    box-shadow: -4px 0px 10px 0px rgba(0,0,0,0.15);
-    box-shadow: -8px 0px 16px 0px rgba(0,0,0,0.15);
+    @extend .pgn__sheet-component-right;
+
+    [dir="rtl"] & {
+      @extend .pgn__sheet-component-left;
+      right: auto;
+    }
   }
 
   &.bottom, &.top {
     width: 100%;
-    left: 0px;
+    left: 0;
     max-height: 50%;
   }
   &.left, &.right {
     max-width: 272px;
     height: 100%;
-    top: 0px;
+    top: 0;
   }
 }

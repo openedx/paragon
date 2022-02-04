@@ -55,6 +55,17 @@ exports.THEMES = [
 
     and your theme will automatically get picked up during the build.
 
+## Feature Flags
+In some scenarios, it is helpful to put your changes to the Paragon documentation site behind a feature flag so that you have more control over how a particular feature or change is rolled out more broadly.
+
+### Configuring feature flags
+To configure feature flags for the documentation site, see the file `src/config.js` for instructions.
+
+### Enabling a feature flag
+A feature flag may be enabled in two ways:
+1. Environment variable. This will allow you to persist the state of a feature flag at build time, with no way to disable it.
+2. Query parameter. Adding `?feature=` to the URL as a query parameter, you can temporarily enable one or more features.
+
 ## A note about .mdx files
 
 MDX is a flavor of Markdown that affords writing JSX directly inside markdown files. For more information visit the website: [https://mdxjs.com/](https://mdxjs.com/).

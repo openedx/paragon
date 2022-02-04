@@ -6,6 +6,8 @@ import {
   IconButton,
 } from '~paragon-react';
 import { Close } from '~paragon-icons';
+
+import { FEATURES } from '../config';
 import SettingsContext from '../context/SettingsContext';
 import { THEMES } from '../../theme-config';
 
@@ -15,6 +17,8 @@ const Settings = () => {
     onThemeChange,
     showSettings,
     closeSettings,
+    direction,
+    onDirectionChange,
   } = useContext(SettingsContext);
 
   return (
@@ -35,23 +39,38 @@ const Settings = () => {
           size="sm"
         />
       </div>
-      <Form.Group>
-        <Form.Control
-          as="select"
-          value={currentTheme}
-          onChange={onThemeChange}
-          floatingLabel="Theme"
-        >
-          {THEMES.map(theme => (
-            <option
-              key={theme.label}
-              value={theme.stylesheet}
+      <div className="pgn__settings-form-wrapper">
+        <Form.Group>
+          <Form.Control
+            as="select"
+            value={currentTheme}
+            onChange={onThemeChange}
+            floatingLabel="Theme"
+          >
+            {THEMES.map(theme => (
+              <option
+                key={theme.label}
+                value={theme.stylesheet}
+              >
+                {theme.label}
+              </option>
+            ))}
+          </Form.Control>
+        </Form.Group>
+        {FEATURES.DIRECTION_SWITCHER && (
+          <Form.Group>
+            <Form.Control
+              as="select"
+              value={direction}
+              onChange={onDirectionChange}
+              floatingLabel="Direction"
             >
-              {theme.label}
-            </option>
-          ))}
-        </Form.Control>
-      </Form.Group>
+              <option value="ltr">Left to right</option>
+              <option value="rtl">Right to left</option>
+            </Form.Control>
+          </Form.Group>
+        )}
+      </div>
     </Sheet>
   );
 };

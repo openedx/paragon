@@ -6,6 +6,8 @@ import { THEMES } from '../../theme-config';
 const defaultValue = {
   theme: 'openedx-theme',
   onThemeChange: () => {},
+  direction: 'ltr',
+  onDirectionChange: () => {},
 };
 
 export const SettingsContext = createContext(defaultValue);
@@ -15,6 +17,13 @@ const SettingsContextProvider = ({ children }) => {
   // so sadly we cannot initialize theme with value from localStorage
   const [theme, setTheme] = useState('openedx-theme');
   const [showSettings, setShowSettings] = useState(false);
+  const [direction, setDirection] = useState('ltr');
+
+  const handleDirectionChange = (e) => {
+    document.body.setAttribute('dir', e.target.value);
+    setDirection(e.target.value);
+    global.localStorage.setItem('pgn__direction', e.target.value);
+  };
 
   const handleThemeChange = (e) => {
     setTheme(e.target.value);
@@ -27,12 +36,19 @@ const SettingsContextProvider = ({ children }) => {
     if (savedTheme) {
       setTheme(savedTheme);
     }
+    const savedDirection = global.localStorage.getItem('pgn__direction');
+    if (savedDirection) {
+      document.body.setAttribute('dir', savedDirection);
+      setDirection(savedDirection);
+    }
   }, []);
 
   const contextValue = {
     theme,
-    onThemeChange: handleThemeChange,
+    direction,
     showSettings,
+    onThemeChange: handleThemeChange,
+    onDirectionChange: handleDirectionChange,
     closeSettings: () => setShowSettings(false),
     openSettings: () => setShowSettings(true),
   };
