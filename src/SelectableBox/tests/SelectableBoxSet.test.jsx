@@ -27,13 +27,23 @@ const SelectableRadioSet = (props) => (
   </SelectableBox.Set>
 );
 
-describe('<SelectableBox />', () => {
+describe('<SelectableBox.Set />', () => {
   describe('correct rendering', () => {
     it('renders without props', () => {
       const tree = renderer.create((
         <SelectableBox.Set name="testName">SelectableBox</SelectableBox.Set>
       )).toJSON();
       expect(tree).toMatchSnapshot();
+    });
+    it('correct render when type prop is changed', () => {
+      const setWrapper = mount(<SelectableBox.Set name="set" />);
+      expect(setWrapper.find(Form.RadioSet).length).toBeGreaterThan(0);
+      setWrapper.setProps({ type: 'anytype' });
+      expect(setWrapper.find(Form.RadioSet).length).toBeGreaterThan(0);
+      setWrapper.setProps({ type: 'radio' });
+      expect(setWrapper.find(Form.RadioSet).length).toBeGreaterThan(0);
+      setWrapper.setProps({ type: 'checkbox' });
+      expect(setWrapper.find(Form.CheckboxSet).length).toBeGreaterThan(0);
     });
     it('renders with children', () => {
       const wrapper = mount(<SelectableBox.Set name="testName">{checkboxText(1)}</SelectableBox.Set>);

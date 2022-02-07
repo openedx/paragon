@@ -3,8 +3,7 @@ import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
 import SelectableBox from '../index';
-import { getInputType } from '../utils';
-import Form from '../../Form';
+import { Form } from '../../index';
 
 const checkboxType = 'checkbox';
 const checkboxText = 'SelectableCheckbox';
@@ -21,22 +20,22 @@ const SelectableRadio = (props) => (
 );
 
 describe('<SelectableBox />', () => {
-  describe('utils', () => {
-    it('getInputType returns correct type', () => {
-      expect(getInputType('SelectableBox', undefined)).toEqual(Form.Radio);
-      expect(getInputType('SelectableBox', 'radio')).toEqual(Form.Radio);
-      expect(getInputType('SelectableBox', 'checkbox')).toEqual(Form.Checkbox);
-      expect(getInputType('SelectableBoxSet', undefined)).toEqual(Form.RadioSet);
-      expect(getInputType('SelectableBoxSet', 'radio')).toEqual(Form.RadioSet);
-      expect(getInputType('SelectableBoxSet', 'checkbox')).toEqual(Form.CheckboxSet);
-    });
-  });
   describe('correct rendering', () => {
     it('renders without props', () => {
       const tree = renderer.create((
         <SelectableBox>SelectableBox</SelectableBox>
       )).toJSON();
       expect(tree).toMatchSnapshot();
+    });
+    it('correct render when type prop is changed', () => {
+      const boxWrapper = mount(<SelectableBox />);
+      expect(boxWrapper.find(Form.Radio).length).toBeGreaterThan(0);
+      boxWrapper.setProps({ type: 'anytype' });
+      expect(boxWrapper.find(Form.Radio).length).toBeGreaterThan(0);
+      boxWrapper.setProps({ type: 'radio' });
+      expect(boxWrapper.find(Form.Radio).length).toBeGreaterThan(0);
+      boxWrapper.setProps({ type: 'checkbox' });
+      expect(boxWrapper.find(Form.Checkbox).length).toBeGreaterThan(0);
     });
     it('renders with radio input type if neither checkbox nor radio is passed', () => {
       const wrapper = mount(<SelectableBox type="wrongType" />);
@@ -76,10 +75,11 @@ describe('<SelectableBox />', () => {
       expect(selectableBox.hasClass('pgn__selectable_box-invalid')).toEqual(true);
     });
     it('renders with on click event when onClick is passed', () => {
+      const wrapper = mount(<SelectableCheckbox onClick={undefined} />);
+      wrapper.find('.pgn__selectable_box').simulate('click');
       const onClickSpy = jest.fn();
-      const wrapper = mount(<SelectableCheckbox onClick={onClickSpy} />);
-      const selectableBox = wrapper.find('.pgn__selectable_box');
-      selectableBox.simulate('click');
+      wrapper.setProps({ onClick: onClickSpy });
+      wrapper.find('.pgn__selectable_box').simulate('click');
       expect(onClickSpy).toHaveBeenCalledTimes(1);
     });
     it('renders with on key press event when onClick is passed', () => {
