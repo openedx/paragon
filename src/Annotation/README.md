@@ -54,6 +54,43 @@ Display informative text related to an object on screen. Unlike the tooltip an a
 </>
 ```
 
+### Basic Usage (RTL)
+
+```jsx live
+<>
+  <Annotation>
+    Success variant
+  </Annotation>
+  <Annotation 
+    variant="dark"
+    arrowPlacement="left"
+    className="ml-2 mb-2"
+  >
+    Dark variant
+  </Annotation>
+  <Annotation 
+    variant="error" 
+    arrowPlacement="top"
+    className="ml-2 mb-2"
+  >
+    Error variant
+  </Annotation>
+  <Annotation
+    variant="warning"
+    arrowPlacement="right" 
+    className="mb-2"
+  >
+    Warning variant
+  </Annotation>
+  <Annotation
+    variant="light"
+    className="mb-2"
+  >
+    Light variant. By default max width is set to 300px with wrapping text.
+  </Annotation>
+</>
+```
+
 ### Referring to other elements
 
 ```jsx live

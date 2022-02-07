@@ -51,6 +51,25 @@ A button that contains the user’s Avatar.
 </Dropdown>
 ```
 
+### With Dropdown (RTL)
+
+```jsx live
+<Dropdown>
+  <Dropdown.Toggle as={AvatarButton} src="https://source.unsplash.com/128x128/?dog,portrait">
+    Casey
+  </Dropdown.Toggle>
+
+  <Dropdown.Menu alignLeft>
+    <Dropdown.Item href="#/action-1">Resume your last course</Dropdown.Item>
+    <Dropdown.Item href="#/action-2">Dashboard</Dropdown.Item>
+    <Dropdown.Item href="#/action-3">Profile</Dropdown.Item>
+    <Dropdown.Item href="#/action-3">Account</Dropdown.Item>
+    <Dropdown.Divider />
+    <Dropdown.Item href="#/action-3">Sign out</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
+```
+
 Props set on Dropdown.Toggle get passed through to the "as" component
 
 ```jsx live

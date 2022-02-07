@@ -64,8 +64,32 @@ $arrow-directions: top, right, bottom, left;
       // set additional margin to arrow side of the Annotation
       margin-#{$direction}: $annotation-arrow-border-width + $annotation-arrow-side-margin;
 
+      [dir="rtl"] & {
+        @if $direction == left {
+          margin-left: 0;
+          margin-right: $annotation-arrow-border-width + $annotation-arrow-side-margin;
+        } @else if $direction == right {
+          margin-right: 0;
+          margin-left: $annotation-arrow-border-width + $annotation-arrow-side-margin;
+        }
+      }
+
       &::after {
-        @include triangle(map-get($colors, "background-color"), $direction)
+        @include triangle(map-get($colors, "background-color"), $direction);
+
+        [dir="rtl"] & {
+          @if $direction == left {
+            left: initial;
+            right: -$annotation-arrow-border-width;
+            border-width: $annotation-arrow-border-width 0 $annotation-arrow-border-width $annotation-arrow-border-width;
+            border-left-color: map-get($colors, "background-color");
+          } @else if $direction == right {
+            right: initial;
+            left: -$annotation-arrow-border-width;
+            border-width: $annotation-arrow-border-width $annotation-arrow-border-width $annotation-arrow-border-width 0;
+            border-right-color: map-get($colors, "background-color");
+          }
+        }
       }
     }
   }
