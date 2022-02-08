@@ -13,13 +13,15 @@ import PropTypes from 'prop-types';
  */
 const IconButtonToggle = ({ activeValue, onChange, children }) => {
   const iconButtons = useMemo(
-    () => React.Children.map(children, iconButton => (
-      React.cloneElement(iconButton, {
+    () => React.Children.map(children, iconButton => {
+      const isActive = iconButton.props.value === activeValue;
+      return React.cloneElement(iconButton, {
         onClick: () => { onChange(iconButton.props.value); },
-        isActive: iconButton.props.value === activeValue,
+        isActive,
+        'aria-selected': isActive,
         'data-testid': `icon-btn-val-${iconButton.props.value}`,
-      })
-    )),
+      });
+    }),
     [children, activeValue, onChange],
   );
   return <div className="pgn__icon-button-toggle__container">{iconButtons}</div>;
