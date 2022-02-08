@@ -1,5 +1,5 @@
 {
-  "lastModified": 1644242926239,
+  "lastModified": 1644329346060,
   "projectUsages": [
     {
       "version": "16.24.0",
@@ -7314,7 +7314,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
-            "line": 55,
+            "line": 51,
             "column": 6,
             "version": "16.19.0"
           },
@@ -7420,7 +7420,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
-            "line": 65,
+            "line": 61,
             "column": 10,
             "version": "16.19.0"
           },
@@ -7744,7 +7744,7 @@
         "SearchField": [
           {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
-            "line": 38,
+            "line": 34,
             "column": 10,
             "version": "16.19.0"
           },
@@ -9076,13 +9076,13 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
-            "line": 29,
+            "line": 28,
             "column": 6,
             "version": "17.5.0"
           },
           {
             "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
-            "line": 59,
+            "line": 57,
             "column": 6,
             "version": "17.5.0"
           },
@@ -9320,7 +9320,7 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
-            "line": 48,
+            "line": 46,
             "column": 12,
             "version": "17.5.0"
           },
@@ -10764,7 +10764,7 @@
           },
           {
             "filePath": "src/courseware/course/sequence/honor-code/HonorCode.jsx",
-            "line": 34,
+            "line": 37,
             "column": 4,
             "version": "16.19.0"
           },
@@ -10984,13 +10984,13 @@
           },
           {
             "filePath": "src/courseware/course/sequence/honor-code/HonorCode.jsx",
-            "line": 53,
+            "line": 56,
             "column": 8,
             "version": "16.19.0"
           },
           {
             "filePath": "src/courseware/course/sequence/honor-code/HonorCode.jsx",
-            "line": 56,
+            "line": 59,
             "column": 8,
             "version": "16.19.0"
           },
@@ -11800,7 +11800,7 @@
           },
           {
             "filePath": "src/courseware/course/sequence/honor-code/HonorCode.jsx",
-            "line": 51,
+            "line": 54,
             "column": 6,
             "version": "16.19.0"
           },
@@ -11846,7 +11846,7 @@
         "ActionRow.Spacer": [
           {
             "filePath": "src/courseware/course/sequence/honor-code/HonorCode.jsx",
-            "line": 52,
+            "line": 55,
             "column": 8,
             "version": "16.19.0"
           }
@@ -17933,62 +17933,6 @@
             "version": "17.5.3"
           }
         ],
-        "Collapsible": [
-          {
-            "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 58,
-            "column": 4,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 72,
-            "column": 6,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 78,
-            "column": 4,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 89,
-            "column": 6,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 100,
-            "column": 6,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 111,
-            "column": 6,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 120,
-            "column": 6,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 130,
-            "column": 6,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/components/FAQs/AccordionFAQ.jsx",
-            "line": 25,
-            "column": 10,
-            "version": "17.5.3"
-          }
-        ],
         "CardGrid": [
           {
             "filePath": "src/components/Course/CourseRunSelector.jsx",
@@ -18050,6 +17994,62 @@
             "filePath": "src/components/Course/StickyNav.jsx",
             "line": 167,
             "column": 20,
+            "version": "17.5.3"
+          }
+        ],
+        "Collapsible": [
+          {
+            "filePath": "src/components/FAQs/AccordionFAQ.jsx",
+            "line": 25,
+            "column": 10,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/templates/courseDetailMobileExp.jsx",
+            "line": 294,
+            "column": 12,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/templates/courseDetailMobileExp.jsx",
+            "line": 309,
+            "column": 14,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/templates/courseDetailMobileExp.jsx",
+            "line": 315,
+            "column": 12,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/templates/courseDetailMobileExp.jsx",
+            "line": 326,
+            "column": 14,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/templates/courseDetailMobileExp.jsx",
+            "line": 337,
+            "column": 14,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/templates/courseDetailMobileExp.jsx",
+            "line": 348,
+            "column": 14,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/templates/courseDetailMobileExp.jsx",
+            "line": 357,
+            "column": 14,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/templates/courseDetailMobileExp.jsx",
+            "line": 367,
+            "column": 14,
             "version": "17.5.3"
           }
         ],
