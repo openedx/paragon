@@ -28,7 +28,7 @@
     p {
       font-size: $small-font-size;
       margin: 0;
-      max-width: 320px;
+      padding-right: .75rem;
     }
     & + .btn {
       margin-top: 1rem;
