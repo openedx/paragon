@@ -27,12 +27,12 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
 .pgn__bulk-actions,
 .pgn__table-actions {
   display: flex;
-  margin-left: map_get($spacers, 2);
+  margin-inline-start: map_get($spacers, 2);
 
   .btn {
-    margin-left: map_get($spacers, 1);
-    :first-child {
-      margin-left: 0;
+    margin-inline-start: map_get($spacers, 1);
+    &:first-child {
+      margin-inline-start: 0;
     }
   }
 }
@@ -97,6 +97,7 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
   .pgn__data-table-side-filters {
     .pgn__data-table-side-filters-title {
       margin-bottom: map_get($spacers, 3);
+      text-align: start;
     }
     .pgn__data-table-side-filters-status {
       margin-bottom: map_get($spacers, 2);
@@ -119,10 +120,12 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
   th {
     background-color: $light-300;
     padding: $data-table-cell-padding;
+    text-align: start;
   }
   td {
     padding: $table-cell-padding;
     line-height: 24px;
+    text-align: start;
   }
   & tr.is-selected {
     background-color: $info-100 !important;
@@ -156,6 +159,7 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
 
 .pgn__data-table-filters-breakout-filter {
   align-self: flex-end;
+  margin-inline-end: map_get($spacers, 2);
 }
 
 .pgn__data-table-filters-dropdown-item {
@@ -175,6 +179,12 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
   padding: $data-table-padding-x $data-table-padding-y;
   align-items: center;
   border-top: $data-table-border;
+
+  .btn-icon .pgn__icon {
+    [dir="rtl"] & {
+      transform: scale(-1);
+    }
+  }
 }
 
 .pgn__data-table-pagination {
@@ -202,6 +212,20 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
   display: flex;
   input .form-check-input {
     margin-top: 0.36rem;
+  }
+
+  .form-check {
+    [dir="rtl"] & {
+      padding-left: 0;
+      padding-right: 1.25rem;
+    }
+
+    .form-check-input {
+      [dir="rtl"] & {
+        margin-left: 0;
+        margin-right: -1.25rem;
+      }
+    }
   }
 }
 
@@ -231,8 +255,4 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-}
-
-.pgn__data-table-filters-breakout-filter {
-  margin-right: map_get($spacers, 2);
 }
