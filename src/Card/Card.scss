@@ -19,11 +19,13 @@
     flex-direction: column;
     margin-top: map_get($spacers, 4);
     overflow: auto;
+    text-align: start;
   } 
 
   .pgn__card-header-title {
     color: $black;
     font-weight: $font-weight-bold;
+    text-align: start;
   }
   .pgn__card-header-title-sm {
     @extend .pgn__card-header-title;
@@ -49,7 +51,7 @@
 
   .pgn__card-header-actions {
     margin-top: $spacer;
-    margin-left: $spacer;
+    margin-inline-start: $spacer;
     flex-shrink: 0;
   }
 }
@@ -62,6 +64,7 @@
 .pgn__card-section {
   padding: $card-spacer-x;
   flex-grow: 1;
+  text-align: start;
 
   &.is-muted {
     background-color: $light-200;
@@ -93,7 +96,7 @@
     padding-top: 0;
 
     & > * + * {
-      margin-left: $card-footer-actions-gap;
+      margin-inline-start: $card-footer-actions-gap;
     }
   }
 
@@ -111,7 +114,7 @@
     flex-wrap: wrap;
 
     & > :not(:last-child) {
-      margin-right: $card-footer-actions-gap;
+      margin-inline-end: $card-footer-actions-gap;
     }
   }
 
@@ -131,7 +134,7 @@
   font-size: $card-footer-text-font-size;
 
   &.vertical {
-    margin-right: auto;
+    margin-inline-end: auto;
     order: -1;
   }
 
@@ -170,7 +173,7 @@
     }
 
     .pgn__card-logo-cap {
-      left: $card-logo-left-offset-horizontal;
+      inset-inline-start: $card-logo-left-offset-horizontal;
       bottom: $card-logo-bottom-offset-horizontal;
     }
   }
@@ -190,7 +193,7 @@
 
 .pgn__card-logo-cap {
   position: absolute;
-  left: $card-logo-left-offset;
+  inset-inline-start: $card-logo-left-offset;
   bottom: #{-$card-logo-bottom-offset};
   width: $card-logo-width;
   height: $card-logo-height;

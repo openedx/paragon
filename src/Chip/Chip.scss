@@ -57,14 +57,24 @@
     display: none;
   }
 
-  & .chip-icon-before {
+  .chip-icon-before {
     margin-inline-end: 0.5rem;
     margin-left: -0.25em;
+
+    [dir="rtl"] & {
+      margin-right: -0.25em;
+      margin-left: 0.5rem;
+    }
   }
 
-  & .chip-icon-after {
+  .chip-icon-after {
     margin-inline-start: 0.5rem;
     margin-right: -0.25em;
+
+    [dir="rtl"] & {
+      margin-right: 0.5rem;
+      margin-left: -0.25em;
+    }
   }
 }
 
