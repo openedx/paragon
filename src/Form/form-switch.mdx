@@ -128,13 +128,15 @@ underlying `input` node. See MDN for documentation on available
 
   return (
     <>
-      <Form.Switch
-        checked={allChecked}
-        isIndeterminate={isIndeterminate}
-        onChange={handleCheckAllChange}
-      >
-        All the cheese
-      </Form.Switch>
+      <div className="d-flex">
+        <Form.Switch
+          checked={allChecked}
+          isIndeterminate={isIndeterminate}
+          onChange={handleCheckAllChange}
+        >
+          All the cheese
+        </Form.Switch>
+      </div>
       <Form.SwitchSet
         className="p-2"
         value={checkedCheeses}
