@@ -93,6 +93,7 @@ export { default as PageBanner } from './PageBanner';
 export { default as Pagination } from './Pagination';
 export { default as Popover, PopoverTitle, PopoverContent } from './Popover';
 export { default as ProgressBar } from './ProgressBar';
+export { default as ProductTour } from './ProductTour';
 export { default as RadioButtonGroup, RadioButton } from './RadioButtonGroup';
 export { default as ResponsiveEmbed } from './ResponsiveEmbed';
 export { default as SearchField } from './SearchField';
