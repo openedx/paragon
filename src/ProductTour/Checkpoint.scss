@@ -42,7 +42,7 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
   }
 
   .pgn__checkpoint-button_dismiss {
-    margin-right: map_get($spacers, 2);
+    margin-inline-end: map_get($spacers, 2);
   }
 
   .pgn__checkpoint-breadcrumb {
@@ -60,8 +60,19 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
     }
   }
 
-  .pgn__checkpoint-breadcrumb:not(:first-child) {
-    margin-left: map_get($spacers, 1\.5);
+  .pgn__checkpoint-breadcrumb {
+    &:not(:first-child) {
+      margin-left: map_get($spacers, 1\.5);
+    }
+
+    [dir="rtl"] & {
+      margin-left: map_get($spacers, 1\.5);
+      margin-right: 0;
+
+      &:last-child {
+        margin-left: 0;
+      }
+    }
   }
 
   .pgn__checkpoint-breadcrumb-container {
@@ -72,6 +83,7 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
   .pgn__checkpoint-body {
     color: $checkpoint-body-color;
     margin-bottom: map_get($spacers, 3\.5);
+    text-align: start;
   }
 
   .pgn__checkpoint-header {
@@ -82,7 +94,7 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
 
   #pgn__checkpoint-title {
     font-size: $h3-font-size;
-    margin-right: map_get($spacers, 2\.5);
+    margin-inline-end: map_get($spacers, 2\.5);
     margin-bottom: 0;
   }
 }
@@ -90,6 +102,10 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
 .pgn__checkpoint[data-popper-placement^='top'] > #pgn__checkpoint-arrow {
   left: -$checkpoint-arrow-width !important; // Override PopperJS arrow placement
   bottom: 1px;
+
+  [dir="rtl"] & {
+    left: $checkpoint-arrow-width !important;
+  }
 
   &::after {
     border-bottom: $checkpoint-arrow-transparent;
