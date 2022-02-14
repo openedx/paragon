@@ -1,28 +1,25 @@
 @import "variables";
 
 .pgn__selectable_box-set {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-  width: auto;
-  min-height: $selectable-box-set-height;
-  margin-right: -$selectable-box-space;
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-column-gap: $selectable-box-space;
+  grid-row-gap: $selectable-box-space;
+
+  @for $i from $min-cols-number through $max-cols-number {
+    &.pgn__selectable_box-set--#{$i} {
+      grid-template-columns: repeat(#{$i}, 1fr);
+    }
+  }
 
   & > * + * {
     margin: 0;
   }
-
-  & > * {
-    margin-top: $selectable-box-space;
-    margin-right: $selectable-box-space;
-  }
 }
 
 .pgn__selectable_box {
-  min-height: inherit;
-  flex: 1;
   position: relative;
+  height: 100%;
   padding: $selectable-box-padding;
   box-shadow: $level-1-box-shadow;
   border-radius: $selectable-box-border-radius;

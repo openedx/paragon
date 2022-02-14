@@ -57,18 +57,24 @@ describe('<SelectableBox.Set />', () => {
     });
     it('renders with checkbox type', () => {
       const wrapper = mount(<SelectableCheckboxSet />);
-      const selectableBox = wrapper.find(Form.CheckboxSet);
-      expect(selectableBox.length).toEqual(1);
+      const selectableBoxSet = wrapper.find(Form.CheckboxSet);
+      expect(selectableBoxSet.length).toEqual(1);
     });
     it('renders with radio type if neither checkbox nor radio is passed', () => {
       const wrapper = mount(<SelectableCheckboxSet type="text" />);
-      const selectableBox = wrapper.find(Form.RadioSet);
-      expect(selectableBox.length).toEqual(1);
+      const selectableBoxSet = wrapper.find(Form.RadioSet);
+      expect(selectableBoxSet.length).toEqual(1);
     });
     it('renders with radio type', () => {
       const wrapper = mount(<SelectableRadioSet type={radioType} />);
-      const selectableBox = wrapper.find(Form.RadioSet);
-      expect(selectableBox.length).toEqual(1);
+      const selectableBoxSet = wrapper.find(Form.RadioSet);
+      expect(selectableBoxSet.length).toEqual(1);
+    });
+    it('renders with correct number of columns', () => {
+      const columns = 10;
+      const wrapper = mount(<SelectableRadioSet columns={columns} />);
+      const selectableBoxSet = wrapper.find(Form.RadioSet);
+      expect(selectableBoxSet.hasClass(`pgn__selectable_box-set--${columns}`)).toBe(true);
     });
   });
 });

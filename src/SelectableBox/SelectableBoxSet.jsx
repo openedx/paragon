@@ -8,6 +8,8 @@ const INPUT_TYPES = [
   'checkbox',
 ];
 
+const DEFAULT_COLUMNS_NUMBER = 2;
+
 const SelectableBoxSet = React.forwardRef(({
   children,
   name,
@@ -15,6 +17,7 @@ const SelectableBoxSet = React.forwardRef(({
   defaultValue,
   onChange,
   type,
+  columns,
   className,
 }, ref) => {
   const inputType = getInputType('SelectableBoxSet', type);
@@ -25,8 +28,11 @@ const SelectableBoxSet = React.forwardRef(({
     defaultValue,
     onChange,
     ref,
-    isInline: true,
-    className: classNames('pgn__selectable_box-set', className),
+    className: classNames(
+      'pgn__selectable_box-set',
+      `pgn__selectable_box-set--${columns || DEFAULT_COLUMNS_NUMBER}`,
+      className,
+    ),
   },
   children);
 });
@@ -44,6 +50,13 @@ SelectableBoxSet.propTypes = {
   defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Indicates the input type: checkbox or radio. */
   type: PropTypes.oneOf(INPUT_TYPES),
+  /**
+   * Specifies number of `SelectableBox`'es in a row.
+   *
+   * Class that is responsible for the columns number: `pgn__selectable_box-set--{columns}`.
+   * Max number of columns: `12`.
+   */
+  columns: PropTypes.number,
   /** A class that is be appended to the base element. */
   className: PropTypes.string,
 };
@@ -54,6 +67,7 @@ SelectableBoxSet.defaultProps = {
   value: undefined,
   defaultValue: undefined,
   type: 'radio',
+  columns: DEFAULT_COLUMNS_NUMBER,
   className: undefined,
 };
 

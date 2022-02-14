@@ -76,6 +76,7 @@ As ``Radio``
       value={value}
       onChange={handleChange}
       name="colors"
+      columns={3}
     >
       <SelectableBox value="red" type={type}>
         <div>
@@ -118,20 +119,23 @@ As ``Checkbox`` with ``isIndeterminate``
 
   return (
     <>
-      <SelectableBox
-        checked={allChecked}
-        isIndeterminate={isIndeterminate}
-        onClick={handleCheckAllChange}
-        inputHidden={false}
-        type={type}
-      >
-        All the cheese
-      </SelectableBox>
+      <div className="mb-3">
+        <SelectableBox
+          checked={allChecked}
+          isIndeterminate={isIndeterminate}
+          onClick={handleCheckAllChange}
+          inputHidden={false}
+          type={type}
+        >
+          All the cheese
+        </SelectableBox>
+      </div>
       <SelectableBox.Set
         value={checkedCheeses}
         type={type}
         onChange={handleChange}
         name="cheeses"
+        columns={3}
       >
         <SelectableBox value="swiss" type={type}>
           <div>
