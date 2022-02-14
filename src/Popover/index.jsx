@@ -20,15 +20,15 @@ const WrapperPopover = React.forwardRef(({
 }, ref) => (
   <Popover
     {...props}
-    className={classNames(`popover-${variant}`, props.className)}
+    className={classNames({ [`popover-${variant}`]: !!variant }, props.className)}
     ref={ref}
   >
     {children}
   </Popover>
 ));
 
-const PopoverTitle = (props) => <BasePopoverContent {...props} />;
-const PopoverContent = (props) => <BasePopoverTitle {...props} />;
+const PopoverTitle = (props) => <BasePopoverTitle {...props} />;
+const PopoverContent = (props) => <BasePopoverContent {...props} />;
 
 const commonPropTypes = {
   /** Specifies the base element */
@@ -100,12 +100,12 @@ WrapperPopover.defaultProps = {
 
 PopoverTitle.defaultProps = {
   as: 'div',
-  bsPrefix: 'popover-body',
+  bsPrefix: 'popover-header',
 };
 
 PopoverContent.defaultProps = {
   as: 'div',
-  bsPrefix: 'popover-header',
+  bsPrefix: 'popover-body',
 };
 
 WrapperPopover.Title = PopoverTitle;
