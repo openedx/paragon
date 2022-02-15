@@ -1,5 +1,5 @@
 {
-  "lastModified": 1644847723634,
+  "lastModified": 1644934118561,
   "projectUsages": [
     {
       "version": "16.24.0",
@@ -1699,15 +1699,105 @@
             "version": "17.5.0"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 9,
-            "column": 6,
+            "filePath": "src/components/settings/SettingsLMSTab/ConfigError.jsx",
+            "line": 15,
+            "column": 8,
             "version": "17.5.0"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSCard.jsx",
-            "line": 16,
-            "column": 6,
+            "filePath": "src/components/settings/SettingsLMSTab/ConfigError.jsx",
+            "line": 24,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
+            "line": 27,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
+            "line": 30,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
+            "line": 33,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/BlackboardConfig.jsx",
+            "line": 80,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/BlackboardConfig.jsx",
+            "line": 81,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
+            "line": 91,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
+            "line": 92,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CornerstoneConfig.jsx",
+            "line": 56,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CornerstoneConfig.jsx",
+            "line": 57,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 116,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 117,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 67,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 68,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 126,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 127,
+            "column": 10,
             "version": "17.5.0"
           },
           {
@@ -1803,6 +1893,144 @@
             "version": "17.5.0"
           },
           {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/BlackboardConfig.jsx",
+            "line": 48,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/BlackboardConfig.jsx",
+            "line": 59,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/BlackboardConfig.jsx",
+            "line": 69,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
+            "line": 50,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
+            "line": 60,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
+            "line": 70,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
+            "line": 80,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CornerstoneConfig.jsx",
+            "line": 45,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 53,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 63,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 73,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 83,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 93,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 104,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 46,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 56,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 54,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 61,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 71,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 81,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 91,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 101,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 111,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
             "filePath": "src/components/subscriptions/licenses/LicenseManagementModals/LicenseManagementRemindModal.jsx",
             "line": 166,
             "column": 10,
@@ -1871,6 +2099,12 @@
             "version": "17.5.0"
           },
           {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 112,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
             "filePath": "src/components/subscriptions/licenses/LicenseManagementModals/LicenseManagementRemindModal.jsx",
             "line": 167,
             "column": 12,
@@ -1930,6 +2164,138 @@
             "filePath": "src/components/RenderField/index.jsx",
             "line": 21,
             "column": 6,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/BlackboardConfig.jsx",
+            "line": 49,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/BlackboardConfig.jsx",
+            "line": 60,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/BlackboardConfig.jsx",
+            "line": 70,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
+            "line": 51,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
+            "line": 61,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
+            "line": 71,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
+            "line": 81,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CornerstoneConfig.jsx",
+            "line": 46,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 54,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 64,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 74,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 84,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 94,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 105,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 47,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 57,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 55,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 62,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 72,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 82,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 92,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 102,
+            "column": 10,
             "version": "17.5.0"
           },
           {
@@ -2403,6 +2769,12 @@
             "line": 52,
             "column": 4,
             "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ConfigError.jsx",
+            "line": 9,
+            "column": 2,
+            "version": "17.5.0"
           }
         ],
         "ActionRow": [
@@ -2434,6 +2806,18 @@
             "filePath": "src/components/settings/SettingsAccessTab/LinkDeactivationAlertModal.jsx",
             "line": 57,
             "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ConfigError.jsx",
+            "line": 14,
+            "column": 6,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
+            "line": 26,
+            "column": 6,
             "version": "17.5.0"
           },
           {
@@ -2547,6 +2931,12 @@
             "version": "17.5.0"
           },
           {
+            "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
+            "line": 11,
+            "column": 2,
+            "version": "17.5.0"
+          },
+          {
             "filePath": "src/components/subscriptions/expiration/SubscriptionExpiredModal.jsx",
             "line": 21,
             "column": 4,
@@ -2579,6 +2969,12 @@
             "version": "17.5.0"
           },
           {
+            "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
+            "line": 17,
+            "column": 4,
+            "version": "17.5.0"
+          },
+          {
             "filePath": "src/components/subscriptions/expiration/SubscriptionExpiringModal.jsx",
             "line": 49,
             "column": 6,
@@ -2605,6 +3001,12 @@
             "version": "17.5.0"
           },
           {
+            "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
+            "line": 18,
+            "column": 6,
+            "version": "17.5.0"
+          },
+          {
             "filePath": "src/components/subscriptions/expiration/SubscriptionExpiringModal.jsx",
             "line": 50,
             "column": 8,
@@ -2628,6 +3030,12 @@
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentStepper.jsx",
             "line": 65,
             "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
+            "line": 22,
+            "column": 4,
             "version": "17.5.0"
           },
           {
@@ -2674,6 +3082,12 @@
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentStepper.jsx",
             "line": 82,
             "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
+            "line": 25,
+            "column": 4,
             "version": "17.5.0"
           },
           {
@@ -2918,7 +3332,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSCard.jsx",
-            "line": 9,
+            "line": 7,
             "column": 2,
             "version": "17.5.0"
           },
@@ -2944,7 +3358,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSCard.jsx",
-            "line": 10,
+            "line": 8,
             "column": 4,
             "version": "17.5.0"
           },
@@ -4385,6 +4799,18 @@
             "version": "17.5.0"
           },
           {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 102,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 113,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
             "filePath": "src/components/TextAreaAutoSize/index.jsx",
             "line": 31,
             "column": 22,
@@ -4473,6 +4899,12 @@
             "version": "17.5.0"
           },
           {
+            "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
+            "line": 75,
+            "column": 6,
+            "version": "17.5.0"
+          },
+          {
             "filePath": "src/components/Toasts/Toasts.jsx",
             "line": 9,
             "column": 4,
@@ -4550,16 +4982,88 @@
         "CardGrid": [
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 24,
-            "column": 4,
+            "line": 52,
+            "column": 10,
             "version": "17.5.0"
           }
         ],
         "Image": [
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSCard.jsx",
-            "line": 12,
+            "line": 10,
             "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigPage.jsx",
+            "line": 44,
+            "column": 6,
+            "version": "17.5.0"
+          }
+        ],
+        "Form": [
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/BlackboardConfig.jsx",
+            "line": 47,
+            "column": 6,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
+            "line": 49,
+            "column": 6,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CornerstoneConfig.jsx",
+            "line": 44,
+            "column": 6,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 52,
+            "column": 6,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 45,
+            "column": 6,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 53,
+            "column": 6,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/subscriptions/licenses/LicenseManagementModals/LicenseManagementRemindModal.jsx",
+            "line": 165,
+            "column": 8,
+            "version": "17.5.0"
+          }
+        ],
+        "Form.RadioSet": [
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 113,
+            "column": 10,
+            "version": "17.5.0"
+          }
+        ],
+        "Form.Radio": [
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 121,
+            "column": 12,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 122,
+            "column": 12,
             "version": "17.5.0"
           }
         ],
@@ -4636,14 +5140,6 @@
             "filePath": "src/components/subscriptions/licenses/LicenseManagementModals/LicenseManagementRevokeModal.jsx",
             "line": 178,
             "column": 10,
-            "version": "17.5.0"
-          }
-        ],
-        "Form": [
-          {
-            "filePath": "src/components/subscriptions/licenses/LicenseManagementModals/LicenseManagementRemindModal.jsx",
-            "line": 165,
-            "column": 8,
             "version": "17.5.0"
           }
         ],
@@ -7183,26 +7679,6 @@
       },
       "folderName": "frontend-app-discussions",
       "usages": {
-        "Hyperlink": [
-          {
-            "filePath": "src/components/Feedback/index.jsx",
-            "line": 16,
-            "column": 6,
-            "version": "16.19.0"
-          },
-          {
-            "filePath": "src/discussions/common/AlertBanner.jsx",
-            "line": 40,
-            "column": 14,
-            "version": "16.19.0"
-          },
-          {
-            "filePath": "src/discussions/posts/post/Post.jsx",
-            "line": 65,
-            "column": 10,
-            "version": "16.19.0"
-          }
-        ],
         "TransitionReplace": [
           {
             "filePath": "src/components/FormikErrorFeedback.jsx",
@@ -7260,7 +7736,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
-            "line": 53,
+            "line": 51,
             "column": 6,
             "version": "16.19.0"
           },
@@ -7366,7 +7842,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
-            "line": 63,
+            "line": 61,
             "column": 10,
             "version": "16.19.0"
           },
@@ -7567,6 +8043,20 @@
             "version": "16.19.0"
           }
         ],
+        "Hyperlink": [
+          {
+            "filePath": "src/discussions/common/AlertBanner.jsx",
+            "line": 40,
+            "column": 14,
+            "version": "16.19.0"
+          },
+          {
+            "filePath": "src/discussions/posts/post/Post.jsx",
+            "line": 65,
+            "column": 10,
+            "version": "16.19.0"
+          }
+        ],
         "ModalDialog": [
           {
             "filePath": "src/discussions/common/DeleteConfirmation.jsx",
@@ -7676,7 +8166,7 @@
         "SearchField": [
           {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
-            "line": 36,
+            "line": 34,
             "column": 10,
             "version": "16.19.0"
           },
@@ -7939,13 +8429,13 @@
       "usages": {
         "ModalDialog": [
           {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
+            "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 49,
             "column": 8,
             "version": "17.3.0"
           },
           {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
+            "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 200,
             "column": 8,
             "version": "17.3.0"
@@ -7953,13 +8443,13 @@
         ],
         "ModalDialog.Body": [
           {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
+            "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 58,
             "column": 10,
             "version": "17.3.0"
           },
           {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
+            "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 209,
             "column": 10,
             "version": "17.3.0"
@@ -7967,13 +8457,13 @@
         ],
         "ModalDialog.Hero": [
           {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
+            "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 59,
             "column": 12,
             "version": "17.3.0"
           },
           {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
+            "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 210,
             "column": 12,
             "version": "17.3.0"
@@ -7981,19 +8471,19 @@
         ],
         "Image": [
           {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
+            "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 62,
             "column": 12,
             "version": "17.3.0"
           },
           {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
+            "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 153,
             "column": 8,
             "version": "17.3.0"
           },
           {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
+            "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 213,
             "column": 12,
             "version": "17.3.0"
@@ -8025,25 +8515,25 @@
         ],
         "ModalDialog.Title": [
           {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
+            "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 64,
             "column": 14,
             "version": "17.3.0"
           },
           {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
+            "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 67,
             "column": 14,
             "version": "17.3.0"
           },
           {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
+            "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 215,
             "column": 14,
             "version": "17.3.0"
           },
           {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
+            "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 218,
             "column": 14,
             "version": "17.3.0"
@@ -8051,13 +8541,13 @@
         ],
         "ModalDialog.Footer": [
           {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
+            "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 93,
             "column": 10,
             "version": "17.3.0"
           },
           {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
+            "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 244,
             "column": 10,
             "version": "17.3.0"
@@ -8065,13 +8555,13 @@
         ],
         "ActionRow": [
           {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
+            "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 94,
             "column": 12,
             "version": "17.3.0"
           },
           {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
+            "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 245,
             "column": 12,
             "version": "17.3.0"
@@ -8079,13 +8569,13 @@
         ],
         "Hyperlink": [
           {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
+            "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 96,
             "column": 14,
             "version": "17.3.0"
           },
           {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
+            "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 246,
             "column": 14,
             "version": "17.3.0"
@@ -8093,13 +8583,13 @@
         ],
         "Button": [
           {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
+            "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 103,
             "column": 16,
             "version": "17.3.0"
           },
           {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
+            "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 253,
             "column": 16,
             "version": "17.3.0"
@@ -8131,50 +8621,50 @@
         ],
         "Icon": [
           {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
+            "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 106,
             "column": 18,
             "version": "17.3.0"
           },
           {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
+            "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 256,
             "column": 18,
             "version": "17.3.0"
           },
           {
-            "filePath": "src/components/catalogCourseModalBanner/CatalogCourseModalBanner.jsx",
+            "filePath": "src/components/catalogModalBanner/CatalogCourseModalBanner.jsx",
             "line": 45,
             "column": 8,
             "version": "17.3.0"
           },
           {
-            "filePath": "src/components/catalogCourseModalBanner/CatalogCourseModalBanner.jsx",
+            "filePath": "src/components/catalogModalBanner/CatalogCourseModalBanner.jsx",
             "line": 57,
             "column": 10,
             "version": "17.3.0"
           },
           {
-            "filePath": "src/components/catalogCourseModalBanner/CatalogCourseModalBanner.jsx",
+            "filePath": "src/components/catalogModalBanner/CatalogCourseModalBanner.jsx",
             "line": 68,
             "column": 8,
             "version": "17.3.0"
           },
           {
-            "filePath": "src/components/catalogCourseModalBanner/CatalogProgramModalBanner.jsx",
+            "filePath": "src/components/catalogModalBanner/CatalogProgramModalBanner.jsx",
             "line": 27,
             "column": 10,
             "version": "17.3.0"
           },
           {
-            "filePath": "src/components/catalogCourseModalBanner/CatalogProgramModalBanner.jsx",
+            "filePath": "src/components/catalogModalBanner/CatalogProgramModalBanner.jsx",
             "line": 41,
             "column": 12,
             "version": "17.3.0"
           },
           {
-            "filePath": "src/components/catalogCourseModalBanner/CatalogProgramModalBanner.jsx",
-            "line": 53,
+            "filePath": "src/components/catalogModalBanner/CatalogProgramModalBanner.jsx",
+            "line": 55,
             "column": 12,
             "version": "17.3.0"
           },
@@ -8182,20 +8672,6 @@
             "filePath": "src/components/programCard/ProgramCard.jsx",
             "line": 58,
             "column": 12,
-            "version": "17.3.0"
-          }
-        ],
-        "ModalDialog.CloseButton": [
-          {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
-            "line": 110,
-            "column": 14,
-            "version": "17.3.0"
-          },
-          {
-            "filePath": "src/components/catalogCourseInfoModal/CatalogCourseInfoModal.jsx",
-            "line": 259,
-            "column": 14,
             "version": "17.3.0"
           }
         ],
@@ -16585,7 +17061,7 @@
           },
           {
             "filePath": "src/editors/TextEditor/TextEditor.jsx",
-            "line": 15,
+            "line": 34,
             "column": 6,
             "version": "16.22.0"
           }
@@ -16595,6 +17071,12 @@
             "filePath": "src/editors/EditorFooter.jsx",
             "line": 58,
             "column": 6,
+            "version": "16.22.0"
+          },
+          {
+            "filePath": "src/editors/TextEditor/ImageUpload/Wizard/ImageUploadModal.jsx",
+            "line": 30,
+            "column": 4,
             "version": "16.22.0"
           }
         ],
@@ -16609,6 +17091,12 @@
             "filePath": "src/editors/EditorHeader.jsx",
             "line": 22,
             "column": 8,
+            "version": "16.22.0"
+          },
+          {
+            "filePath": "src/editors/TextEditor/ImageUpload/Wizard/ImageUploadModal.jsx",
+            "line": 31,
+            "column": 6,
             "version": "16.22.0"
           }
         ],
@@ -16638,6 +17126,12 @@
             "line": 62,
             "column": 10,
             "version": "16.22.0"
+          },
+          {
+            "filePath": "src/editors/TextEditor/ImageUpload/Wizard/ImageUploadModal.jsx",
+            "line": 35,
+            "column": 8,
+            "version": "16.22.0"
           }
         ],
         "Spinner": [
@@ -16649,7 +17143,7 @@
           },
           {
             "filePath": "src/editors/TextEditor/TextEditor.jsx",
-            "line": 25,
+            "line": 44,
             "column": 12,
             "version": "16.22.0"
           }
@@ -16660,6 +17154,12 @@
             "line": 21,
             "column": 6,
             "version": "16.22.0"
+          },
+          {
+            "filePath": "src/editors/TextEditor/ImageUpload/Wizard/ImageUploadModal.jsx",
+            "line": 15,
+            "column": 4,
+            "version": "16.22.0"
           }
         ],
         "ModalDialog.Title": [
@@ -16667,6 +17167,12 @@
             "filePath": "src/editors/EditorHeader.jsx",
             "line": 23,
             "column": 10,
+            "version": "16.22.0"
+          },
+          {
+            "filePath": "src/editors/TextEditor/ImageUpload/Wizard/ImageUploadModal.jsx",
+            "line": 16,
+            "column": 6,
             "version": "16.22.0"
           }
         ],
@@ -16680,9 +17186,25 @@
         ],
         "ModalDialog": [
           {
-            "filePath": "src/editors/EditorPage.jsx",
-            "line": 44,
-            "column": 6,
+            "filePath": "src/editors/TextEditor/ImageUpload/Wizard/ImageUploadModal.jsx",
+            "line": 6,
+            "column": 2,
+            "version": "16.22.0"
+          }
+        ],
+        "ModalDialog.Body": [
+          {
+            "filePath": "src/editors/TextEditor/ImageUpload/Wizard/ImageUploadModal.jsx",
+            "line": 20,
+            "column": 4,
+            "version": "16.22.0"
+          }
+        ],
+        "ModalDialog.CloseButton": [
+          {
+            "filePath": "src/editors/TextEditor/ImageUpload/Wizard/ImageUploadModal.jsx",
+            "line": 32,
+            "column": 8,
             "version": "16.22.0"
           }
         ]
@@ -17332,25 +17854,25 @@
           },
           {
             "filePath": "src/components/Course/CourseSnapshot.jsx",
-            "line": 88,
+            "line": 92,
             "column": 20,
             "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseSnapshot.jsx",
-            "line": 118,
+            "line": 122,
             "column": 24,
             "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseSnapshot.jsx",
-            "line": 150,
+            "line": 154,
             "column": 22,
             "version": "17.5.3"
           },
           {
             "filePath": "src/components/Course/CourseSnapshot.jsx",
-            "line": 193,
+            "line": 197,
             "column": 24,
             "version": "17.5.3"
           },
