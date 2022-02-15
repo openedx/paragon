@@ -14,7 +14,7 @@ const TablePagination = () => {
   const pageIndex = state?.pageIndex;
 
   return (
-    <Pagination.ReducedPagination
+    <Pagination.Reduced
       currentPage={pageIndex + 1}
       handlePageSelect={(pageNum) => gotoPage(pageNum - 1)}
       pageCount={pageCount}

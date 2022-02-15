@@ -19,7 +19,7 @@ const TablePaginationMinimal = () => {
       variant="minimal"
       currentPage={pageIndex + 1}
       pageCount={pageCount}
-      paginationLabel="datatable pagination"
+      paginationLabel="table pagination"
       onPageSelect={(pageNum) => gotoPage(pageNum - 1)}
     />
   );

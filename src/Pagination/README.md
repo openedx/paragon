@@ -114,20 +114,20 @@ Navigation between multiple pages of some set of results. Controls are provided 
   <Pagination
     paginationLabel="pagination navigation"
     pageCount={20}
-    colorCheme="dark"
+    invertColors
     onPageSelect={() => console.log('page selected')}
   />
   <Pagination
     paginationLabel="pagination navigation"
     pageCount={20}
-    colorCheme="dark"
+    invertColors
     variant="reduced"
     onPageSelect={() => console.log('page selected')}
   />
   <Pagination
     paginationLabel="pagination navigation"
     pageCount={5}
-    colorCheme="dark"
+    invertColors
     variant="minimal"
     onPageSelect={() => console.log('page selected')}
   />
@@ -141,14 +141,14 @@ Navigation between multiple pages of some set of results. Controls are provided 
   <Pagination
     paginationLabel="pagination navigation"
     pageCount={20}
-    colorCheme="dark"
+    invertColors
     size="small"
     onPageSelect={() => console.log('page selected')}
   />
   <Pagination
     paginationLabel="pagination navigation"
     pageCount={20}
-    colorCheme="dark"
+    invertColors
     variant="reduced"
     size="small"
     onPageSelect={() => console.log('page selected')}
@@ -156,7 +156,7 @@ Navigation between multiple pages of some set of results. Controls are provided 
   <Pagination
     paginationLabel="pagination navigation"
     pageCount={5}
-    colorCheme="dark"
+    invertColors
     variant="minimal"
     size="small"
     onPageSelect={() => console.log('page selected')}
