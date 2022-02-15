@@ -25,18 +25,22 @@ const DropdownFilters = () => {
 
   return (
     <div className="pgn__data-table-filters">
-      {breakoutFilters.length > 0 && breakoutFilters.map((column) => (<div className="mr-2" key={column.Header}>{column.render('Filter')}</div>))}
+      {breakoutFilters.length > 0 && breakoutFilters.map((column) => (
+        <div className="pgn__data-table-filters-breakout-filter" key={column.Header}>
+          {column.render('Filter')}
+        </div>
+      ))}
       {otherFilters.length > 0 && (
-      <DropdownButton variant="outline-primary" id="table-filters-dropdown" title="Filters">
-        {otherFilters.map(column => (
-          <div
-            key={column.Header}
-            className="pgn__data-table-filters-dropdown-item"
-          >
-            {column.render('Filter')}
-          </div>
-        ))}
-      </DropdownButton>
+        <DropdownButton variant="outline-primary" id="table-filters-dropdown" title="Filters">
+          {otherFilters.map((column) => (
+            <div
+              key={column.Header}
+              className="pgn__data-table-filters-dropdown-item"
+            >
+              {column.render('Filter')}
+            </div>
+          ))}
+        </DropdownButton>
       )}
     </div>
   );
