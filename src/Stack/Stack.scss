@@ -1,0 +1,24 @@
+@import "variables";
+
+.pgn__vstack,
+.pgn__hstack {
+  display: flex;
+  align-self: stretch;
+  gap: $stack-gap;
+
+  @each $level, $space in $spacers {
+    &.pgn__stack-gap--#{$level} {
+      gap: $space;
+    }
+  }
+}
+
+.pgn__vstack {
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.pgn__hstack {
+  flex-direction: row;
+  align-items: center;
+}
