@@ -12,6 +12,7 @@ const Sticky = ({
   children,
   offset,
   className,
+  style,
 }) => {
   const [isSticky, setIsSticky] = useState(false);
   const ref = useRef();
@@ -43,6 +44,7 @@ const Sticky = ({
 
   return (
     <div
+      style={style}
       className={classNames(
         'pgn__sticky',
         `pgn__sticky-${position || 'top'}`,
@@ -66,17 +68,20 @@ Sticky.propTypes = {
    * Specifies offset from top/bottom depending on the `position` property.
    *
    * Valid values are based on `the spacing classes`:
-   * `0, 0.5, ... 6`
+   * `0, 0.5, ... 6`.
    */
   offset: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   /** Specifies an additional `className` to add to the base element. */
   className: PropTypes.string,
+  /** Specifies styles for the base element. */
+  style: PropTypes.object, // eslint-disable-line
 };
 
 Sticky.defaultProps = {
   position: 'top',
   offset: undefined,
   className: undefined,
+  style: {},
 };
 
 export default Sticky;
