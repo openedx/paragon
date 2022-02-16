@@ -4,7 +4,7 @@ type: 'component'
 components:
 - Sticky
 categories:
-- Buttonlike
+- Content
 status: 'New'
 designStatus: 'Done'
 devStatus: 'In progress'
