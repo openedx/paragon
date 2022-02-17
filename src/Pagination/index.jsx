@@ -193,26 +193,16 @@ class Pagination extends React.Component {
 
   renderPreviousButton() {
     const {
-      buttonLabels, icons, variant,
+      buttonLabels, icons, variant, size,
     } = this.props;
     const { currentPage } = this.state;
     const isFirstPage = currentPage === 1;
     const previousPage = isFirstPage ? null : currentPage - 1;
+    const iconSize = (variant !== VARIANTS.reduced && size !== 'small') || variant === VARIANTS.minimal;
 
-    let iconSize;
     let ariaLabel = `${buttonLabels.previous}`;
     if (previousPage) {
       ariaLabel += `, ${buttonLabels.page} ${previousPage}`;
-    }
-
-    switch (true) {
-      case variant === VARIANTS.secondary:
-      case variant === VARIANTS.minimal:
-        iconSize = icons.leftIconXL;
-        break;
-      default:
-        iconSize = icons.leftIcon;
-        break;
     }
 
     return (
@@ -236,14 +226,14 @@ class Pagination extends React.Component {
                 disabled={isFirstPage}
               >
                 <div>
-                  {iconSize}
+                  {icons.leftIcon}
                   {variant === VARIANTS.default ? buttonLabels.previous : null}
                 </div>
               </Button>
             )
             : (
               <IconButton
-                src={ArrowBackIos}
+                src={iconSize ? ArrowBackIos : ChevronLeft}
                 iconAs={Icon}
                 className="previous page-link"
                 aria-label={ariaLabel}
@@ -260,26 +250,16 @@ class Pagination extends React.Component {
 
   renderNextButton() {
     const {
-      buttonLabels, pageCount, icons, variant,
+      buttonLabels, pageCount, icons, variant, size,
     } = this.props;
     const { currentPage } = this.state;
     const isLastPage = currentPage === pageCount;
     const nextPage = isLastPage ? null : currentPage + 1;
-    let iconSize;
+    const iconSize = (variant !== VARIANTS.reduced && size !== 'small') || variant === VARIANTS.minimal;
 
     let ariaLabel = `${buttonLabels.next}`;
     if (nextPage) {
       ariaLabel += `, ${buttonLabels.page} ${nextPage}`;
-    }
-
-    switch (true) {
-      case variant === VARIANTS.secondary:
-      case variant === VARIANTS.minimal:
-        iconSize = icons.rightIconXL;
-        break;
-      default:
-        iconSize = icons.rightIcon;
-        break;
     }
 
     return (
@@ -304,13 +284,13 @@ class Pagination extends React.Component {
               >
                 <div>
                   {variant === VARIANTS.default ? buttonLabels.next : null}
-                  {iconSize}
+                  {icons.rightIcon}
                 </div>
               </Button>
             )
             : (
               <IconButton
-                src={ArrowForwardIos}
+                src={iconSize ? ArrowForwardIos : ChevronRight}
                 iconAs={Icon}
                 className="previous page-link"
                 aria-label={ariaLabel}
@@ -484,8 +464,6 @@ Pagination.propTypes = {
   icons: PropTypes.shape({
     leftIcon: PropTypes.node,
     rightIcon: PropTypes.node,
-    leftIconXL: PropTypes.node,
-    rightIconXL: PropTypes.node,
   }),
   variant: PropTypes.oneOf(['default', 'secondary', 'reduced', 'minimal']),
   invertColors: PropTypes.bool,
@@ -496,8 +474,6 @@ Pagination.defaultProps = {
   icons: {
     leftIcon: <Icon src={ChevronLeft} />,
     rightIcon: <Icon src={ChevronRight} />,
-    leftIconXL: <Icon src={ArrowBackIos} />,
-    rightIconXL: <Icon src={ArrowForwardIos} />,
   },
   buttonLabels: {
     previous: 'Previous',

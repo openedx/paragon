@@ -298,11 +298,9 @@ describe('<Pagination />', () => {
 
     it('renders only previous and next buttons in minimal variant', () => {
       wrapper = mount(<Pagination variant="minimal" />);
-      const previous = wrapper.find('button.previous');
-      const next = wrapper.find('button.next');
+      const items = wrapper.find('li.page-item');
 
-      expect(previous.exists()).toEqual(true);
-      expect(next.exists()).toEqual(true);
+      expect(items.length).toEqual(2);
     });
   });
 });
