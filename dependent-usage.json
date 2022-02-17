@@ -1,5 +1,5 @@
 {
-  "lastModified": 1645020499549,
+  "lastModified": 1645106916697,
   "projectUsages": [
     {
       "version": "16.24.0",
@@ -816,7 +816,7 @@
           },
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 330,
+            "line": 332,
             "column": 4,
             "version": "16.1.0"
           },
@@ -928,7 +928,7 @@
         "Button": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 315,
+            "line": 317,
             "column": 16,
             "version": "16.1.0"
           },
@@ -1020,7 +1020,7 @@
         "Alert.Heading": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 334,
+            "line": 336,
             "column": 6,
             "version": "16.1.0"
           },
@@ -1034,13 +1034,13 @@
         "Icon": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 386,
+            "line": 393,
             "column": 16,
             "version": "16.1.0"
           },
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 388,
+            "line": 395,
             "column": 16,
             "version": "16.1.0"
           }
@@ -17222,7 +17222,7 @@
         "Spinner": [
           {
             "filePath": "src/exam/Exam.jsx",
-            "line": 70,
+            "line": 76,
             "column": 8,
             "version": "13.17.0"
           },
@@ -17236,7 +17236,7 @@
         "Alert": [
           {
             "filePath": "src/exam/Exam.jsx",
-            "line": 80,
+            "line": 96,
             "column": 8,
             "version": "13.17.0"
           },
@@ -17805,6 +17805,12 @@
             "version": "17.5.3"
           },
           {
+            "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
+            "line": 167,
+            "column": 22,
+            "version": "17.5.3"
+          },
+          {
             "filePath": "src/components/Course/2U/MobileCollapsibleSection.jsx",
             "line": 21,
             "column": 10,
@@ -17814,6 +17820,12 @@
             "filePath": "src/components/Course/2U/MobileCollapsibleSection.jsx",
             "line": 24,
             "column": 10,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/components/Course/2U/WhyGetsmarter.jsx",
+            "line": 49,
+            "column": 14,
             "version": "17.5.3"
           },
           {
@@ -17946,12 +17958,6 @@
             "filePath": "src/components/Search/SearchBreadcrumb.jsx",
             "line": 90,
             "column": 8,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 361,
-            "column": 26,
             "version": "17.5.3"
           }
         ],
@@ -18109,6 +18115,18 @@
             "version": "17.5.3"
           },
           {
+            "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
+            "line": 137,
+            "column": 27,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
+            "line": 183,
+            "column": 12,
+            "version": "17.5.3"
+          },
+          {
             "filePath": "src/components/Course/CourseHeader.jsx",
             "line": 69,
             "column": 10,
@@ -18219,15 +18237,21 @@
             "version": "17.5.3"
           },
           {
+            "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
+            "line": 98,
+            "column": 6,
+            "version": "17.5.3"
+          },
+          {
             "filePath": "src/components/Course/2U/Factoid.jsx",
             "line": 7,
             "column": 2,
             "version": "17.5.3"
           },
           {
-            "filePath": "src/components/Course/2U/SlantedBlock.jsx",
-            "line": 7,
-            "column": 2,
+            "filePath": "src/components/Course/2U/WhyGetsmarter.jsx",
+            "line": 11,
+            "column": 4,
             "version": "17.5.3"
           },
           {
@@ -18424,31 +18448,31 @@
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 630,
+            "line": 629,
             "column": 12,
             "version": "17.5.3"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 638,
+            "line": 637,
             "column": 12,
             "version": "17.5.3"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 657,
+            "line": 656,
             "column": 8,
             "version": "17.5.3"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 842,
+            "line": 841,
             "column": 10,
             "version": "17.5.3"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 843,
+            "line": 842,
             "column": 12,
             "version": "17.5.3"
           },
@@ -18556,7 +18580,13 @@
           },
           {
             "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 315,
+            "line": 262,
+            "column": 14,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/templates/courseDetail2U.jsx",
+            "line": 293,
             "column": 14,
             "version": "17.5.3"
           },
@@ -18570,6 +18600,104 @@
             "filePath": "src/templates/search/preQuery.jsx",
             "line": 82,
             "column": 8,
+            "version": "17.5.3"
+          }
+        ],
+        "OverlayTrigger": [
+          {
+            "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
+            "line": 157,
+            "column": 18,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/components/Course/CourseModes.jsx",
+            "line": 268,
+            "column": 26,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/components/Course/CourseModes.jsx",
+            "line": 285,
+            "column": 26,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/components/Course/CourseModesExp.jsx",
+            "line": 229,
+            "column": 26,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/components/Course/CourseModesExp.jsx",
+            "line": 246,
+            "column": 26,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/components/Overlays/SaveForLaterOverlay.jsx",
+            "line": 283,
+            "column": 6,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/components/ProgramPathway/ProgramPathwayCourse.jsx",
+            "line": 61,
+            "column": 6,
+            "version": "17.5.3"
+          }
+        ],
+        "Tooltip": [
+          {
+            "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
+            "line": 160,
+            "column": 22,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/components/Course/CourseModes.jsx",
+            "line": 271,
+            "column": 30,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/components/Course/CourseModes.jsx",
+            "line": 288,
+            "column": 30,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/components/Course/CourseModesExp.jsx",
+            "line": 232,
+            "column": 30,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/components/Course/CourseModesExp.jsx",
+            "line": 249,
+            "column": 30,
+            "version": "17.5.3"
+          },
+          {
+            "filePath": "src/components/ProgramPathway/ProgramPathwayCourse.jsx",
+            "line": 67,
+            "column": 10,
+            "version": "17.5.3"
+          }
+        ],
+        "ModalDialog": [
+          {
+            "filePath": "src/components/Course/2U/CourseVideoDialog.jsx",
+            "line": 9,
+            "column": 2,
+            "version": "17.5.3"
+          }
+        ],
+        "ModalDialog.Body": [
+          {
+            "filePath": "src/components/Course/2U/CourseVideoDialog.jsx",
+            "line": 19,
+            "column": 4,
             "version": "17.5.3"
           }
         ],
@@ -18656,76 +18784,6 @@
             "filePath": "src/components/Search/SearchBreadcrumb.jsx",
             "line": 92,
             "column": 6,
-            "version": "17.5.3"
-          }
-        ],
-        "OverlayTrigger": [
-          {
-            "filePath": "src/components/Course/CourseModes.jsx",
-            "line": 268,
-            "column": 26,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/components/Course/CourseModes.jsx",
-            "line": 285,
-            "column": 26,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/components/Course/CourseModesExp.jsx",
-            "line": 229,
-            "column": 26,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/components/Course/CourseModesExp.jsx",
-            "line": 246,
-            "column": 26,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/components/Overlays/SaveForLaterOverlay.jsx",
-            "line": 283,
-            "column": 6,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/components/ProgramPathway/ProgramPathwayCourse.jsx",
-            "line": 61,
-            "column": 6,
-            "version": "17.5.3"
-          }
-        ],
-        "Tooltip": [
-          {
-            "filePath": "src/components/Course/CourseModes.jsx",
-            "line": 271,
-            "column": 30,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/components/Course/CourseModes.jsx",
-            "line": 288,
-            "column": 30,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/components/Course/CourseModesExp.jsx",
-            "line": 232,
-            "column": 30,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/components/Course/CourseModesExp.jsx",
-            "line": 249,
-            "column": 30,
-            "version": "17.5.3"
-          },
-          {
-            "filePath": "src/components/ProgramPathway/ProgramPathwayCourse.jsx",
-            "line": 67,
-            "column": 10,
             "version": "17.5.3"
           }
         ],
