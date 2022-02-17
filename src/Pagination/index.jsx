@@ -225,7 +225,7 @@ class Pagination extends React.Component {
         )}
       >
         {
-          variant !== VARIANTS.minimal
+          variant === VARIANTS.default
             ? (
               <Button
                 className="previous page-link"
@@ -292,7 +292,7 @@ class Pagination extends React.Component {
         )}
       >
         {
-          variant !== VARIANTS.minimal
+          variant === VARIANTS.default
             ? (
               <Button
                 className="next page-link"

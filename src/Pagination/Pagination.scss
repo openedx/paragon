@@ -9,9 +9,17 @@
   }
 }
 
-.pagination-default .page-link {
-  border-radius: 0;
+.pagination-icon-button-right {
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
 
+.pagination-icon-button-left {
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.pagination-default .page-link {
   &.previous .pgn__icon {
     margin-inline-start: 0;
     margin-inline-end: $pagination-margin-x;
@@ -60,6 +68,16 @@
       }
     }
   }
+
+  &:not(.pagination-default) {
+    .page-link {
+      &.previous,
+      &.next {
+        padding: 0;
+        width: $pagination-icon-width;
+      }
+    }
+  }
 }
 
 .pagination-secondary {
@@ -75,6 +93,14 @@
       height: $pagination-secondary-height-sm;
       line-height: $pagination-line-height;
     }
+  }
+
+  .page-item:first-child .page-link {
+    @extend .pagination-icon-button-left;
+  }
+
+  .page-item:last-child .page-link {
+    @extend .pagination-icon-button-right;
   }
 }
 
@@ -165,7 +191,6 @@
   button.previous {
     height: $pagination-secondary-height;
     padding: 0 $pagination-padding-y;
-    border-radius: 0;
   }
 
   &.pagination-small {
@@ -185,6 +210,14 @@
       height: $pagination-icon-height;
     }
   }
+
+  .page-item:first-child .page-link {
+    @extend .pagination-icon-button-left;
+  }
+
+  .page-item:last-child .page-link {
+    @extend .pagination-icon-button-right;
+  }
 }
 
 .pagination-minimal {
@@ -196,7 +229,6 @@
   button.previous {
     padding: $pagination-padding-y;
     height: $pagination-secondary-height;
-    border-radius: 0;
   }
 
   &.pagination-small {
@@ -205,5 +237,13 @@
       padding: 0 $pagination-padding-y;
       height: $pagination-secondary-height-sm;
     }
+  }
+
+  .page-item:first-child .page-link {
+    @extend .pagination-icon-button-left;
+  }
+
+  .page-item:last-child .page-link {
+    @extend .pagination-icon-button-right;
   }
 }
