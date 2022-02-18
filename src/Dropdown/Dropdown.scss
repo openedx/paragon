@@ -14,6 +14,10 @@
   width: 0.45rem;
 }
 
+[dir="rtl"] .dropdown-item {
+  text-align: right;
+}
+
 // this is a helper class to remove arrow element from Dropdown.Toggle
 // pass it as bsPrefix prop for Dropdown.Toggle component when you want to render
 // toggle as IconButton (that way it will override underlying react-bootstrap class)
