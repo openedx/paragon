@@ -133,6 +133,7 @@ export { default as BulkActions } from './DataTable/BulkActions';
 export { default as TableControlBar } from './DataTable/TableControlBar';
 export { default as TableFooter } from './DataTable/TableFooter';
 export { default as CardView } from './DataTable/CardView';
+export { default as Stack } from './Stack';
 export { default as ToggleButton, ToggleButtonGroup } from './ToggleButton';
 export { default as breakpoints } from './utils/breakpoints';
 export { default as Variant } from './utils/constants';
