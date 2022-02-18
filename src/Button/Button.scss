@@ -440,10 +440,37 @@ input[type="button"] {
   .btn-icon-before {
     margin-inline-end: 0.5rem;
     margin-left: -0.25em;
+
+    [dir="rtl"] & {
+      margin-right: -0.25em;
+      margin-left: 0.5rem;
+    }
   }
 
   .btn-icon-after {
     margin-inline-start: 0.5rem;
     margin-right: -0.25em;
+
+    [dir="rtl"] & {
+      margin-right: 0.5rem;
+      margin-left: -0.25em;
+    }
   }
+}
+
+[dir="rtl"] .btn-group > .btn:not(:last-child):not(.dropdown-toggle),
+[dir="rtl"] .btn-group > .btn-group:not(:last-child) > .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+[dir="rtl"] .btn-group > .btn:not(:first-child),
+[dir="rtl"] .btn-group > .btn-group:not(:first-child) > .btn {
+  border-radius: $btn-border-radius 0 0 $btn-border-radius;
+}
+
+[dir="rtl"] .btn-group > .btn:first-child,
+[dir="rtl"] .btn-group > .btn-group:first-child > .btn {
+  border-top-right-radius: $btn-border-radius;
+  border-bottom-right-radius: $btn-border-radius;
 }
