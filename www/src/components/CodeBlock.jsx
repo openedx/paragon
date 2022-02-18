@@ -10,6 +10,7 @@ import theme from 'prism-react-renderer/themes/duotoneDark';
 import {
   LiveProvider, LiveEditor, LiveError, LivePreview,
 } from 'react-live';
+import { FormattedMessage, injectIntl } from 'react-intl';
 import * as ParagonReact from '~paragon-react'; // eslint-disable-line
 import * as ParagonIcons from '~paragon-icons'; // eslint-disable-line
 import MiyazakiCard from './exampleComponents/MiyazakiCard';
@@ -41,7 +42,12 @@ CollapsibleLiveEditor.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-function CodeBlock({ children, className, live }) {
+function CodeBlock({
+  children,
+  className,
+  live,
+  intl,
+}) {
   const language = className ? className.replace(/language-/, '') : 'jsx';
 
   if (live) {
@@ -58,6 +64,8 @@ function CodeBlock({ children, className, live }) {
             useMemo,
             MiyazakiCard,
             HipsterIpsum,
+            FormattedMessage,
+            formatMessage: intl.formatMessage,
             MenuIcon: ParagonIcons.Menu,
           }}
           theme={theme}
@@ -100,6 +108,7 @@ CodeBlock.propTypes = {
   children: PropTypes.string.isRequired,
   className: PropTypes.string,
   live: PropTypes.bool,
+  intl: PropTypes.shape({}).isRequired,
 };
 
 CodeBlock.defaultProps = {
@@ -107,4 +116,4 @@ CodeBlock.defaultProps = {
   className: '',
 };
 
-export default CodeBlock;
+export default injectIntl(CodeBlock);

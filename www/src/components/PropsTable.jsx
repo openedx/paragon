@@ -69,7 +69,7 @@ const PropsTable = ({ props: componentProps, displayName, content }) => (
     {content && <div className="small mb-3">{content}</div>}
     {componentProps.length > 0 ? (
       <ul className="list-unstyled">
-        {componentProps.map(metadata => <Prop key={metadata.name} {...metadata} />)}
+        {componentProps.map(metadata => metadata.name !== 'intl' && <Prop key={metadata.name} {...metadata} />)}
       </ul>
     ) : <div className="pb-3 pl-4">This component does not receive any props.</div>}
   </Card>

@@ -1,6 +1,6 @@
-// import hasFeatureFlagEnabled from './utils/hasFeatureFlagEnabled';
+import hasFeatureFlagEnabled from './utils/hasFeatureFlagEnabled';
 
-// export const EXAMPLE_FEATURE = 'EXAMPLE_FEATURE';
+export const FEATURE_LANGUAGE_SWITCHER = 'LANGUAGE_SWITCHER';
 
 // Feature flags used throughout the site should be configured here.
 // You should generally allow two ways of enabling a feature flag:
@@ -13,10 +13,68 @@
 //    This will allow to enable feature flag by providing its name as a feature?
 //    query parameter in the URL. (e.g. to enable DIRECTION_SWITCHER feature you would append
 //    '?feature=DIRECTION_SWITCHER' to the URL)
+export const FEATURES = {
+  LANGUAGE_SWITCHER: process.env.FEATURE_LANGUAGE_SWITCHER || hasFeatureFlagEnabled(FEATURE_LANGUAGE_SWITCHER),
+};
 
-// export const FEATURES = {
-//   EXAMPLE_FEATURE: process.env.EXAMPLE_FEATURE || hasFeatureFlagEnabled(EXAMPLE_FEATURE),
-// };
+export const LANGUAGES = [
+  {
+    label: 'English',
+    code: 'en',
+  },
+  {
+    label: 'Arabic',
+    code: 'ar',
+  },
+  {
+    label: 'Catalan',
+    code: 'ca',
+  },
+  {
+    label: 'Chinese',
+    code: 'zh-cn',
+  },
+  {
+    label: 'French',
+    code: 'fr',
+  },
+  {
+    label: 'Hebrew',
+    code: 'he',
+  },
+  {
+    label: 'Indonesian',
+    code: 'id',
+  },
+  {
+    label: 'Polish',
+    code: 'pl',
+  },
+  {
+    label: 'Russian',
+    code: 'ru',
+  },
+  {
+    label: 'Thai',
+    code: 'th',
+  },
+  {
+    label: 'Ukrainian',
+    code: 'uk',
+  },
+  {
+    label: 'Spanish',
+    code: 'es-419',
+  },
+  {
+    label: 'Korean',
+    code: 'ko-kr',
+  },
+  {
+    label: 'Portuguese',
+    code: 'pt-br',
+  },
+];
 
 const INSIGHTS_TABS = Object.freeze({
   SUMMARY: 'Summary',

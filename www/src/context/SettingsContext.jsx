@@ -1,13 +1,46 @@
 import React, { createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
+import { messages } from '~paragon-react';
+
+import { IntlProvider, addLocaleData } from 'react-intl';
+import arLocale from 'react-intl/locale-data/ar';
+import enLocale from 'react-intl/locale-data/en';
+import esLocale from 'react-intl/locale-data/es';
+import frLocale from 'react-intl/locale-data/fr';
+import zhLocale from 'react-intl/locale-data/zh';
+import caLocale from 'react-intl/locale-data/ca';
+import heLocale from 'react-intl/locale-data/he';
+import idLocale from 'react-intl/locale-data/id';
+import koLocale from 'react-intl/locale-data/ko';
+import plLocale from 'react-intl/locale-data/pl';
+import ptLocale from 'react-intl/locale-data/pt';
+import ruLocale from 'react-intl/locale-data/ru';
+import thLocale from 'react-intl/locale-data/th';
+import ukLocale from 'react-intl/locale-data/uk';
+
 import { THEMES } from '../../theme-config';
 
+addLocaleData([
+  ...arLocale,
+  ...caLocale,
+  ...heLocale,
+  ...idLocale,
+  ...plLocale,
+  ...ruLocale,
+  ...thLocale,
+  ...ukLocale,
+  ...enLocale,
+  ...esLocale,
+  ...frLocale,
+  ...zhLocale,
+  ...koLocale,
+  ...ptLocale,
+]);
+
 const defaultValue = {
-  theme: 'openedx-theme',
-  onThemeChange: () => {},
-  direction: 'ltr',
-  onDirectionChange: () => {},
+  settings: {},
+  handleSettingsChange: () => {},
 };
 
 export const SettingsContext = createContext(defaultValue);
@@ -15,38 +48,33 @@ export const SettingsContext = createContext(defaultValue);
 const SettingsContextProvider = ({ children }) => {
   // gatsby does not have access to the localStorage during the build (and first render)
   // so sadly we cannot initialize theme with value from localStorage
-  const [theme, setTheme] = useState('openedx-theme');
+  const [settings, setSettings] = useState({
+    theme: 'openedx-theme',
+    direction: 'ltr',
+    language: 'en',
+  });
   const [showSettings, setShowSettings] = useState(false);
-  const [direction, setDirection] = useState('ltr');
 
-  const handleDirectionChange = (e) => {
-    document.body.setAttribute('dir', e.target.value);
-    setDirection(e.target.value);
-    global.localStorage.setItem('pgn__direction', e.target.value);
-    global.analytics.track('Direction change', { direction: e.target.value });
+  const handleSettingsChange = (key, value) => {
+    if (key === 'direction') {
+      document.body.setAttribute('dir', value);
+    }
+    setSettings(prevState => ({ ...prevState, [key]: value }));
+    global.localStorage.setItem('pgn__settings', JSON.stringify({ ...settings, [key]: value }));
+    global.analytics.track(`${key[0].toUpperCase() + key.slice(1)} change`, { [key]: value });
   };
 
-  const handleThemeChange = (e) => {
-    setTheme(e.target.value);
-    global.localStorage.setItem('pgn__theme', e.target.value);
-    global.analytics.track('Theme change', { theme: e.target.value });
-  };
-
-  const handleSettingsChange = (value) => {
+  const toggleSettings = (value) => {
     setShowSettings(value);
     global.analytics.track('Toggle Settings', { value: value ? 'show' : 'hide' });
   };
 
   // this hook will be called after the first render, so we can safely access localStorage
   useEffect(() => {
-    const savedTheme = global.localStorage.getItem('pgn__theme');
-    if (savedTheme) {
-      setTheme(savedTheme);
-    }
-    const savedDirection = global.localStorage.getItem('pgn__direction');
-    if (savedDirection) {
-      document.body.setAttribute('dir', savedDirection);
-      setDirection(savedDirection);
+    const savedSettings = JSON.parse(global.localStorage.getItem('pgn__settings'));
+    if (savedSettings) {
+      setSettings(savedSettings);
+      document.body.setAttribute('dir', savedSettings.direction);
     }
     if (!global.analytics) {
       global.analytics = {};
@@ -55,13 +83,11 @@ const SettingsContextProvider = ({ children }) => {
   }, []);
 
   const contextValue = {
-    theme,
-    direction,
+    settings,
     showSettings,
-    onThemeChange: handleThemeChange,
-    onDirectionChange: handleDirectionChange,
-    closeSettings: () => handleSettingsChange(false),
-    openSettings: () => handleSettingsChange(true),
+    handleSettingsChange,
+    closeSettings: () => toggleSettings(false),
+    openSettings: () => toggleSettings(true),
   };
 
   return (
@@ -77,12 +103,14 @@ const SettingsContextProvider = ({ children }) => {
           <link
             key={themeInfo.stylesheet}
             href={`/static/${themeInfo.stylesheet}.css`}
-            rel={`stylesheet${theme === themeInfo.stylesheet ? '' : ' alternate'}`}
+            rel={`stylesheet${settings.theme === themeInfo.stylesheet ? '' : ' alternate'}`}
             type="text/css"
           />
         ))}
       </Helmet>
-      {children}
+      <IntlProvider messages={messages[settings.language]} locale={settings.language.split('-')[0]}>
+        {children}
+      </IntlProvider>
     </SettingsContext.Provider>
   );
 };
