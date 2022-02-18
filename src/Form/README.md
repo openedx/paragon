@@ -106,9 +106,9 @@ notes: |
     <Form.Check type="checkbox" id="formGridCheckboxCheck" label="Check me out" />
   </Form.Group>
   <div className="d-flex">
-  <Button variant="primary" type="submit">
-    Submit
-  </Button>
+    <Button variant="primary" type="submit">
+      Submit
+    </Button>
   </div>
 </Form>
 ```
@@ -183,9 +183,9 @@ notes: |
     <Form.Check type="checkbox" id="formGridCheckboxCheck" label="Check me out" />
   </Form.Group>
   <div className="d-flex">
-  <Button variant="primary" type="submit">
-    Submit
-  </Button>
+    <Button variant="primary" type="submit">
+      Submit
+    </Button>
   </div>
 </Form>
 ```
