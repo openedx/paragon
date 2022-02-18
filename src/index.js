@@ -127,7 +127,7 @@ export { default as TableFilters } from './DataTable/TableFilters';
 export { default as TableHeader } from './DataTable/TableHeaderRow';
 export { default as TableRow } from './DataTable/TableRow';
 export { default as TablePagination } from './DataTable/TablePagination';
-export { default as TablePaginationButtonGroup } from './DataTable/TablePaginationButtonGroup';
+export { default as TablePaginationMinimal } from './DataTable/TablePaginationMinimal';
 export { default as DataTableContext } from './DataTable/DataTableContext';
 export { default as BulkActions } from './DataTable/BulkActions';
 export { default as TableControlBar } from './DataTable/TableControlBar';
