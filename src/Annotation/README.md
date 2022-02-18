@@ -27,14 +27,14 @@ Display informative text related to an object on screen. Unlike the tooltip an a
   <Annotation 
     variant="dark"
     arrowPlacement="left"
-    className="mr-2 mb-2"
+    className="mie-2 mb-2"
   >
     Dark variant
   </Annotation>
   <Annotation 
     variant="error" 
     arrowPlacement="top"
-    className="mr-2 mb-2"
+    className="mie-2 mb-2"
   >
     Error variant
   </Annotation>

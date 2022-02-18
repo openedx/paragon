@@ -24,7 +24,7 @@
 
   .alert-icon {
     float: left;
-    margin-right: $alert-icon-space;
+    margin-inline-end: $alert-icon-space;
     width: 1.5rem;
     height: 1.5rem;
     flex-shrink: 0;
@@ -44,6 +44,7 @@
   font-size: $alert-font-size;
   line-height: $alert-line-height;
   color: $alert-content-color;
+  text-align: start;
 
   div {
     flex-grow: 1;
@@ -80,8 +81,9 @@
 .pgn__alert-message-wrapper {
   display: flex;
   align-items: center;
+
   .pgn__alert-actions {
-    margin-left: $alert-actions-gap;
+    margin-inline-start: $alert-actions-gap;
   }
 }
 

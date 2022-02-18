@@ -97,7 +97,8 @@
 
   .pgn__modal-title {
     font-size: $h3-font-size;
-    margin-right: 3rem; // roughly accomodate the width of the close buttonn
+    margin-inline-end: 3rem; // roughly accomodate the width of the close buttonn
+    text-align: start;
   }
 }
 
@@ -192,13 +193,17 @@
     }
   }
 
-  .pgn__modal-body-content > *:last-child {
-    margin-bottom: 0;
-  }
+  .pgn__modal-body-content {
+    text-align: start;
 
-  // Avoid doubling up on padding with containers
-  .pgn__modal-body-content > .container-fluid {
-    padding: 0;
+    > *:last-child {
+      margin-bottom: 0;
+    }
+
+    // Avoid doubling up on padding with containers
+    > .container-fluid {
+      padding: 0;
+    }
   }
 
   .pgn__modal.pgn__modal-scroll-fullscreen & {

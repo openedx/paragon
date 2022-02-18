@@ -59,3 +59,22 @@ $color-levels: 100, 200, 300, 400, 500, 600, 700, 800, 900;
     }
   }
 }
+
+// Define classes for rtl (margin-inline-start == margin-left, margin-inline-end == margin-right)
+@each $size, $length in $spacers {
+  .mis-#{$size} {
+    margin-inline-start: $length !important;
+  }
+
+  .mie-#{$size} {
+    margin-inline-end: $length !important;
+  }
+}
+
+.mis-auto {
+  margin-inline-start: auto;
+}
+
+.mie-auto {
+  margin-inline-end: auto;
+}

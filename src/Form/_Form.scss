@@ -287,7 +287,7 @@ select.form-control {
   background-color: $custom-control-indicator-bg;
   border: solid $custom-control-indicator-border-width $custom-control-indicator-border-color;
   border-radius: $custom-checkbox-indicator-border-radius;
-  margin-right: $custom-control-gutter;
+  margin-inline-end: $custom-control-gutter;
   background-position: center;
   &:not(:disabled) {
     cursor: pointer;
