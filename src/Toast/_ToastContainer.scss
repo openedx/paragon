@@ -1,10 +1,21 @@
 .toast-container {
-  bottom: .625rem;
-  left: .625rem;
+  bottom: 1.25rem;
+  left: 1.25rem;
   position: fixed;
   z-index: 2;
 
+  [dir="rtl"] & {
+    right: 1.25rem;
+    left: 0;
+  }
+
   @media only screen and (max-width: 768px) {
+    bottom: .625rem;
     right: .625rem;
+
+    [dir="rtl"] & {
+      left: .625rem;
+      right: .625rem;
+    }
   }
 }
