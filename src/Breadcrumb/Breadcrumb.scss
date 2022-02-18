@@ -10,6 +10,17 @@
         a.link-muted {
             color: $breadcrumb-color;
         }
+        
+        [dir="rtl"] & {
+            margin-right: 0;
+            margin-left: $breadcrumb-margin-left;
+        }
+
+        .pgn__icon {
+            [dir="rtl"] & {
+                transform: scale(-1);
+            }
+        }
     }
 
     &-dark {
@@ -40,6 +51,10 @@
 
         .pgn__icon {
             transform: scale(-1);
+
+            [dir="rtl"] & {
+                transform: scale(1);
+            }
         }
     }
 }
