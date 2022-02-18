@@ -9,7 +9,7 @@
     margin: 0;
   }
   & > * + * {
-    margin-left: $action-row-gap-x;
+    margin-inline-start: $action-row-gap-x;
   }
 }
 .pgn__action-row-stacked {
