@@ -10,6 +10,12 @@
   position: relative;
   border-radius: $toast-border-radius;
   z-index: 2;
+
+  &.show {
+    display: flex;
+    flex-direction: column;
+  }
+  
   .toast-header-btn-container {
     margin: -.25rem -.5rem;
     align-self: flex-start;
@@ -40,8 +46,6 @@
   }
 
   @media only screen and (min-width: 768px) {
-    bottom: .625rem;
-    left: .625rem;
     max-width: $toast-max-width;
   }
 }

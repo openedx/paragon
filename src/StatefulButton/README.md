@@ -28,7 +28,7 @@ The stateful button is a button used to display an actionable icon.
     className: 'mr-2',
   };
   return (
-    <div>
+    <div className="d-flex">
       <StatefulButton {...props} />
       <StatefulButton state="pending" {...props} classNames='icon-spin' />
       <StatefulButton state="complete" {...props} />
@@ -60,12 +60,12 @@ The stateful button is a button used to display an actionable icon.
     className: 'mr-2',
   };
   return (
-    <React.Fragment>
+    <div className="d-flex">
       <StatefulButton state="default" {...downloadButtonProps} />
       <StatefulButton state="pending" {...downloadButtonProps} />
       <StatefulButton state="complete" {...downloadButtonProps} />
       <StatefulButton state="error" {...downloadButtonProps} />
-    </React.Fragment>
+    </div>
   );
 };
 ```
@@ -88,10 +88,10 @@ The stateful button is a button used to display an actionable icon.
     className: 'mr-2',
   };
   return (
-    <React.Fragment>
+    <div className="d-flex">
       <StatefulButton state="unedited" {...buttonProps} />
       <StatefulButton state="edited" {...buttonProps} />
-    </React.Fragment>
+    </div>
   );
 };
 ```
