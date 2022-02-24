@@ -41,10 +41,9 @@ export default function TypographyPage() {
   return (
     <Layout>
       <Container size="xl" className="py-5">
+        {/* eslint-disable-next-line react/jsx-pascal-case */}
         <SEO title="Typography" />
-
         <h1>Typography</h1>
-
         <table className="w-100 table pgn-doc__status-table">
           <tbody>
             <tr>

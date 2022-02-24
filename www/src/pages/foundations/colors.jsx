@@ -103,10 +103,9 @@ export default function ColorsPage({ data }) {
   return (
     <Layout>
       <Container size="md" className="py-5">
+        {/* eslint-disable-next-line react/jsx-pascal-case */}
         <SEO title="Colors" />
-
         <h1>Colors</h1>
-
         <div className="d-flex flex-wrap">
           {colors
             .slice(0, 3)
