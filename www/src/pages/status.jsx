@@ -9,8 +9,8 @@ export default function StatusPage() {
   return (
     <Layout>
       <Container size="md" className="py-5">
+        {/* eslint-disable-next-line react/jsx-pascal-case */}
         <SEO title="Status" />
-
         <h1>Library Status</h1>
 
         <h3>Components Status</h3>

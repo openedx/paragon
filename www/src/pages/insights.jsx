@@ -175,6 +175,7 @@ export default function InsightsPage() {
   return (
     <Layout>
       <Container size="md" className="py-5">
+        {/* eslint-disable-next-line react/jsx-pascal-case */}
         <SEO title="Usage Insights" />
         <header className="mb-5">
           <h1>Usage Insights</h1>

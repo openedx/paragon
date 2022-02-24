@@ -53,9 +53,9 @@ export default function SpacingPage() {
   return (
     <Layout>
       <Container size="md" className="py-5">
+        {/* eslint-disable-next-line react/jsx-pascal-case */}
         <SEO title="Spacing" />
         <h1>Spacing</h1>
-
         <h3>Margin</h3>
         <p>
           Margin utilities are structured as{' '}
