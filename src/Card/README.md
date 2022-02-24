@@ -304,7 +304,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
     <Card.Section 
       title="Section title"
     >
-      In this Card we only want to diplay Section, therefore no need to use Body wrapper. 
+      In this Card we only want to display Section, therefore no need to use Card.Body wrapper.
     </Card.Section>
     <Card.Footer>
       <Button>Action 1</Button>

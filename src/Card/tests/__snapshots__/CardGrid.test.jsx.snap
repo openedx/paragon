@@ -12,7 +12,7 @@ exports[`<CardGrid /> Controlled Rendering renders with controlled columnSizes 1
     >
       <div
         className="pgn__card card"
-        tabindex="-1"
+        tabIndex="-1"
       >
         <div
           className="pgn__card-wrapper-image-cap vertical"
@@ -65,7 +65,7 @@ exports[`<CardGrid /> Uncontrolled Rendering renders default columnSizes 1`] = `
     >
       <div
         className="pgn__card card"
-        tabindex="-1"
+        tabIndex="-1"
       >
         <div
           className="pgn__card-wrapper-image-cap vertical"
