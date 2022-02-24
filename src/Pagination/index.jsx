@@ -272,37 +272,33 @@ class Pagination extends React.Component {
           },
         )}
       >
-        {
-          variant === VARIANTS.default
-            ? (
-              <Button
-                className="next page-link"
-                aria-label={ariaLabel}
-                tabIndex={isLastPage ? '-1' : undefined}
-                onClick={() => { this.handlePreviousNextButtonClick(nextPage); }}
-                ref={(element) => { this.nextButtonRef = element; }}
-                disabled={isLastPage}
-              >
-                <div>
-                  {variant === VARIANTS.default ? buttonLabels.next : null}
-                  {icons.rightIcon}
-                </div>
-              </Button>
-            )
-            : (
-              <IconButton
-                src={iconSize ? ArrowForwardIos : ChevronRight}
-                iconAs={Icon}
-                className="previous page-link"
-                aria-label={ariaLabel}
-                tabIndex={isLastPage ? '-1' : undefined}
-                onClick={() => { this.handlePreviousNextButtonClick(nextPage); }}
-                ref={(element) => { this.nextButtonRef = element; }}
-                disabled={isLastPage}
-                alt="Go to next page"
-              />
-            )
-        }
+        {variant === VARIANTS.default ? (
+          <Button
+            className="next page-link"
+            aria-label={ariaLabel}
+            tabIndex={isLastPage ? '-1' : undefined}
+            onClick={() => { this.handlePreviousNextButtonClick(nextPage); }}
+            ref={(element) => { this.nextButtonRef = element; }}
+            disabled={isLastPage}
+          >
+            <div>
+              {variant === VARIANTS.default ? buttonLabels.next : null}
+              {icons.rightIcon}
+            </div>
+          </Button>
+        ) : (
+          <IconButton
+            src={iconSize ? ArrowForwardIos : ChevronRight}
+            iconAs={Icon}
+            className="next page-link"
+            aria-label={ariaLabel}
+            tabIndex={isLastPage ? '-1' : undefined}
+            onClick={() => { this.handlePreviousNextButtonClick(nextPage); }}
+            ref={(element) => { this.nextButtonRef = element; }}
+            disabled={isLastPage}
+            alt="Go to next page"
+          />
+        )}
       </li>
     );
   }
