@@ -272,37 +272,33 @@ class Pagination extends React.Component {
           },
         )}
       >
-        {
-          variant === VARIANTS.default
-            ? (
-              <Button
-                className="next page-link"
-                aria-label={ariaLabel}
-                tabIndex={isLastPage ? '-1' : undefined}
-                onClick={() => { this.handlePreviousNextButtonClick(nextPage); }}
-                ref={(element) => { this.nextButtonRef = element; }}
-                disabled={isLastPage}
-              >
-                <div>
-                  {variant === VARIANTS.default ? buttonLabels.next : null}
-                  {icons.rightIcon}
-                </div>
-              </Button>
-            )
-            : (
-              <IconButton
-                src={iconSize ? ArrowForwardIos : ChevronRight}
-                iconAs={Icon}
-                className="previous page-link"
-                aria-label={ariaLabel}
-                tabIndex={isLastPage ? '-1' : undefined}
-                onClick={() => { this.handlePreviousNextButtonClick(nextPage); }}
-                ref={(element) => { this.nextButtonRef = element; }}
-                disabled={isLastPage}
-                alt="Go to next page"
-              />
-            )
-        }
+        {variant === VARIANTS.default ? (
+          <Button
+            className="next page-link"
+            aria-label={ariaLabel}
+            tabIndex={isLastPage ? '-1' : undefined}
+            onClick={() => { this.handlePreviousNextButtonClick(nextPage); }}
+            ref={(element) => { this.nextButtonRef = element; }}
+            disabled={isLastPage}
+          >
+            <div>
+              {variant === VARIANTS.default ? buttonLabels.next : null}
+              {icons.rightIcon}
+            </div>
+          </Button>
+        ) : (
+          <IconButton
+            src={iconSize ? ArrowForwardIos : ChevronRight}
+            iconAs={Icon}
+            className="next page-link"
+            aria-label={ariaLabel}
+            tabIndex={isLastPage ? '-1' : undefined}
+            onClick={() => { this.handlePreviousNextButtonClick(nextPage); }}
+            ref={(element) => { this.nextButtonRef = element; }}
+            disabled={isLastPage}
+            alt="Go to next page"
+          />
+        )}
       </li>
     );
   }
@@ -368,13 +364,14 @@ class Pagination extends React.Component {
 
   render() {
     const { variant, invertColors, size } = this.props;
-    const invert = invertColors ? 'pagination-inverse' : '';
-    const paginationSize = size !== VARIANTS.default ? 'pagination-small' : '';
-
     return (
       <nav
         aria-label={this.props.paginationLabel}
-        className={classNames(this.props.className, `pagination-${variant} ${invert} ${paginationSize}`)}
+        className={classNames(this.props.className, {
+          [`pagination-${variant}`]: variant,
+          'pagination-inverse': invertColors,
+          'pagination-small': size !== VARIANTS.default,
+        })}
       >
         {this.renderScreenReaderSection()}
         {variant === VARIANTS.default || variant === VARIANTS.secondary

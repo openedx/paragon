@@ -24,7 +24,7 @@ const Card = React.forwardRef(({
         clickable: isClickable,
       })}
       ref={ref}
-      tabindex={isClickable ? '0' : '-1'}
+      tabIndex={isClickable ? '0' : '-1'}
     />
   </CardContextProvider>
 ));
