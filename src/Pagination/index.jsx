@@ -364,13 +364,14 @@ class Pagination extends React.Component {
 
   render() {
     const { variant, invertColors, size } = this.props;
-    const invert = invertColors ? 'pagination-inverse' : '';
-    const paginationSize = size !== VARIANTS.default ? 'pagination-small' : '';
-
     return (
       <nav
         aria-label={this.props.paginationLabel}
-        className={classNames(this.props.className, `pagination-${variant} ${invert} ${paginationSize}`)}
+        className={classNames(this.props.className, {
+          [`pagination-${variant}`]: variant,
+          'pagination-inverse': invertColors,
+          'pagination-small': size !== VARIANTS.default,
+        })}
       >
         {this.renderScreenReaderSection()}
         {variant === VARIANTS.default || variant === VARIANTS.secondary
