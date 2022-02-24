@@ -17,6 +17,7 @@ const shortcodes = {
 export default function PageTemplate({ children, pageContext }) {
   return (
     <Layout>
+      {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title={pageContext?.frontmatter?.title} />
       <Container size="md" className="py-5">
         <MDXProvider components={shortcodes}>{children}</MDXProvider>

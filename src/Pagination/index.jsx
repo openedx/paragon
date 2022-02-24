@@ -241,6 +241,7 @@ class Pagination extends React.Component {
                 onClick={() => { this.handlePreviousNextButtonClick(previousPage); }}
                 ref={(element) => { this.previousButtonRef = element; }}
                 disabled={isFirstPage}
+                alt="Go to previous page"
               />
             )
         }
@@ -298,6 +299,7 @@ class Pagination extends React.Component {
                 onClick={() => { this.handlePreviousNextButtonClick(nextPage); }}
                 ref={(element) => { this.nextButtonRef = element; }}
                 disabled={isLastPage}
+                alt="Go to next page"
               />
             )
         }
