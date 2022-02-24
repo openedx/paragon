@@ -40,6 +40,7 @@ export default function PageTemplate({
 
   return (
     <Layout>
+      {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title={mdx.frontmatter.title} />
       <Container size="md" className="py-5">
         {isDeprecated && (
