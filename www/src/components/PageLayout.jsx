@@ -108,10 +108,17 @@ const Layout = ({
   );
 };
 
+const itemsShape = {
+  url: PropTypes.string,
+  title: PropTypes.string,
+};
+itemsShape.items = PropTypes.arrayOf(PropTypes.shape(itemsShape));
+
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
-  tocData: PropTypes.object,
+  tocData: PropTypes.shape({
+    items: PropTypes.arrayOf(PropTypes.shape(itemsShape)),
+  }),
   showMinimizedTitle: PropTypes.bool,
   hideFooterComponentMenu: PropTypes.bool,
   isMdx: PropTypes.bool,
