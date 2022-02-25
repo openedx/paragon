@@ -73,7 +73,7 @@
   position: absolute;
   z-index: 10;
   top: $modal-header-padding-y;
-  right: $modal-header-padding-y;
+  inset-inline-end: $modal-header-padding-y;
 }
 
 .pgn__modal-header {

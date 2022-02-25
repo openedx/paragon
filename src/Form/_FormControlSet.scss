@@ -14,4 +14,10 @@
   & > * + * {
     margin: 0 0 0 .5em;
   }
+
+  [dir="rtl"] & {
+    & > * {
+      margin-left: .5em;
+    }
+  }
 }
