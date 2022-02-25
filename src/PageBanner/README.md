@@ -51,7 +51,7 @@ The system warning banner is similar to the ``Alert Banner`` banner in styling, 
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
       </PageBanner>
-      {!showLightVariant && (<Button className="my-2 mr-2" onClick={() => setShowLightVariant(true)}>Show light variant</Button>)}
+      {!showLightVariant && (<Button className="my-2 mie-2" onClick={() => setShowLightVariant(true)}>Show light variant</Button>)}
       <PageBanner
         show={showDarkVariant}
         dismissible
@@ -64,7 +64,7 @@ The system warning banner is similar to the ``Alert Banner`` banner in styling, 
       <PageBanner
         variant="warning"
       >
-        <Icon src={WarningFilled} className="mr-2" /> We will no longer support Internet Explorer 11.
+        <Icon src={WarningFilled} className="mie-2" /> We will no longer support Internet Explorer 11.
       </PageBanner>
     </>
   )
