@@ -26,8 +26,8 @@ A spinning animation that indicates loading.
 
 ```jsx live
 <>
-  <Spinner animation="border" className="mr-3" screenReaderText="loading" />
-  <Spinner animation="grow" screenReaderText="loading" />
+  <Spinner animation="border" className="mie-3" screenReaderText="loading" />
+  <Spinner animation="grow" className="mie-3" screenReaderText="loading" />
 </>
 ```
 ### Color Variants

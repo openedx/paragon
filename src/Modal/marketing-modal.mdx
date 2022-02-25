@@ -24,8 +24,9 @@ The ``MarketingModal`` is a preconfigured `ModalDialog` that accepts an image an
   const [isOpen, open, close] = useToggle(false);
   return (
     <>
-      <Button variant="outline-primary" onClick={open}>Open marketing modal</Button>
-
+      <div className="d-flex">
+        <Button variant="outline-primary" onClick={open}>Open marketing modal</Button>
+      </div>
       <MarketingModal
         title="My dialog"
         isOpen={isOpen}

@@ -44,6 +44,10 @@ $select-icon-padding: .5625rem !default;
   flex-grow: 1;
   align-items: flex-start;
 
+  @media (min-width: map-get($grid-breakpoints, 'sm')) {
+    margin-inline-end: $custom-control-gutter;
+  }
+
   &.has-prepended-node {
     .form-control {
       padding-inline-start: calc(#{$input-padding-x} + #{$form-control-icon-width});

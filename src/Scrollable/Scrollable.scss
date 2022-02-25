@@ -57,8 +57,14 @@
       }
     }
 
-    .pgn__scrollable-body-content > *:last-child {
-      margin-bottom: 0;
+    .pgn__scrollable-body-content {
+      p {
+        text-align: start;
+      }
+
+      > *:last-child {
+        margin-bottom: 0;
+      }
     }
 
     .pgn__scrollable.pgn__scrollable-scroll-fullscreen & {

@@ -56,7 +56,7 @@
     }
 
     label.has-label-text {
-        padding-left: 0.75rem;
+        padding-inline-start: 0.75rem;
     }
 
     &.pgn__searchfield--external {
@@ -99,5 +99,5 @@
 
 .pgn__searchfield__button.btn[type='submit'] {
     border-radius: 0;
-    margin-left: $search-button-margin;
+    margin-inline-start: $search-button-margin;
 }

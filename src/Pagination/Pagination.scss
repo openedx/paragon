@@ -19,15 +19,31 @@
   border-bottom-left-radius: 50%;
 }
 
-.pagination-default .page-link {
-  &.previous .pgn__icon {
-    margin-inline-start: 0;
-    margin-inline-end: $pagination-margin-x;
+.pagination-default {
+  .page-link {
+    &.previous .pgn__icon {
+      margin-inline-start: 0;
+      margin-inline-end: $pagination-margin-x;
+    }
+    
+    &.next .pgn__icon {
+      margin-inline-start: $pagination-margin-x;
+      margin-inline-end: 0;
+    }
   }
-  
-  &.next .pgn__icon {
-    margin-inline-start: $pagination-margin-x;
-    margin-inline-end: 0;
+
+  .page-item {
+    &:first-child .page-link {
+      [dir="rtl"] & {
+        border-radius: 0 $pagination-border-radius-lg $pagination-border-radius-lg 0;
+      }
+    }
+
+    &:last-child .page-link {
+      [dir="rtl"] & {
+        border-radius: $pagination-border-radius-lg 0 0 $pagination-border-radius-lg;
+      }
+    }
   }
 }
 
@@ -36,6 +52,12 @@
 
   div {
     display: flex;
+  }
+
+  [dir="rtl"] & {
+    svg {
+      transform: scale(-1);
+    }
   }
 
   &:focus:before,
@@ -182,9 +204,9 @@
     border-right: $pagination-toggle-border solid transparent;
     border-top: $pagination-toggle-border solid $gray-700;
     transform: rotate(0);
-    left: .5rem;
+    inset-inline-start: .5rem;
     top: 0;
-    margin-right: 1rem;
+    margin-inline-end: 1rem;
   }
 
   button.next,
@@ -222,7 +244,7 @@
 
 .pagination-minimal {
   .page-item:first-child {
-    margin-right: .3rem;
+    margin-inline-end: .3rem;
   }
 
   button.next,

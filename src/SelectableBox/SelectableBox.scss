@@ -23,6 +23,7 @@
   padding: $selectable-box-padding;
   box-shadow: $level-1-box-shadow;
   border-radius: $selectable-box-border-radius;
+  text-align: start;
 
   &:focus-visible {
     outline: 1px solid $primary-700;
@@ -32,10 +33,10 @@
   .pgn__form-checkbox {
     position: absolute;
     top: $selectable-box-padding;
-    right: $selectable-box-padding;
+    inset-inline-end: $selectable-box-padding;
 
     input {
-      margin-right: 0;
+      margin-inline-end: 0;
     }
   }
 

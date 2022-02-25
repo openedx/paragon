@@ -21,13 +21,14 @@ A generic component for creating accessibile modal layer objects. The modal laye
 
   return (
     <>
-      <Button variant="outline-primary" onClick={open}>Open modal layer</Button>
-
+      <div className="d-flex">
+        <Button variant="outline-primary" onClick={open}>Open modal layer</Button>
+      </div>
       <ModalLayer isOpen={isOpen} onClose={close}>
         <div role="dialog" aria-label="My dialog" className="mw-sm p-5 bg-white mx-auto my-5">
           <h1>I'm a dialog box</h1>
           <p>
-            <Button variant="primary" className="mr-2">A button</Button>
+            <Button variant="primary" className="mie-2">A button</Button>
             <ModalCloseButton variant="outline-primary">Close modal</ModalCloseButton>
           </p>
           <p>
@@ -59,13 +60,14 @@ A generic component for creating accessibile modal layer objects. The modal laye
 
   return (
     <>
-      <Button variant="outline-primary" onClick={open}>Open small modal layer</Button>
-
+      <div className="d-flex">
+        <Button variant="outline-primary" onClick={open}>Open small modal layer</Button>
+      </div>
       <ModalLayer isOpen={isOpen} onClose={close}>
         <div role="dialog" aria-label="My dialog" className="mw-sm p-5 bg-white mx-auto my-5">
           <h1>I'm a dialog box</h1>
           <p>
-            <Button variant="primary" className="mr-2">A button</Button>
+            <Button variant="primary" className="mie-2">A button</Button>
             <ModalCloseButton variant="outline-primary">Close modal</ModalCloseButton>
           </p>
           <p>
