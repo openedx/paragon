@@ -122,7 +122,8 @@
   .pgn__modal-hero-content {
     position: relative;
     z-index: 1;
-    margin-right: 3rem;
+    margin-inline-end: 3rem;
+    text-align: start;
   }
 }
 

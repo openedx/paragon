@@ -32,8 +32,9 @@ label for the dialog element.
   const [modalVariant, setModalVariant] = useState('default');
   return (
     <>
-      <Button variant="outline-primary" onClick={open}>Open standard modal dialog</Button>
-
+      <div className="d-flex">
+        <Button variant="outline-primary" onClick={open}>Open standard modal dialog</Button>
+      </div>
       <ModalDialog
         title="My dialog"
         isOpen={isOpen}
@@ -100,8 +101,9 @@ label for the dialog element.
   const [modalVariant, setModalVariant] = useState('dark');
   return (
     <>
-      <Button variant="outline-primary" onClick={open}>Open marketing modal dialog</Button>
-
+      <div className="d-flex">
+        <Button variant="outline-primary" onClick={open}>Open marketing modal dialog</Button>
+      </div>
       <ModalDialog
         title="My dialog"
         isOpen={isOpen}

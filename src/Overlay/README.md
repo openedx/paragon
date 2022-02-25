@@ -33,9 +33,11 @@ This component is used to power Tooltips and Popovers.
 
   return (
     <>
-      <Button variant="danger" ref={target} onClick={() => open(!isOpen)}>
-        Click me to see
-      </Button>
+      <div className="d-flex">
+        <Button variant="danger" ref={target} onClick={() => open(!isOpen)}>
+          Click me to see
+        </Button>
+      </div>
       <Overlay target={target.current} show={open} placement="right">
         {({ placement, arrowProps, show: _show, popper, ...props }) => (
           <div

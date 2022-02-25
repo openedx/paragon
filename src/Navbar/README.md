@@ -30,7 +30,7 @@ A powerful, responsive navigation header, the navbar. Includes support for brand
   <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
-    <Nav className="mr-auto">
+    <Nav className="mie-auto">
       <Nav.Link href="#home">Home</Nav.Link>
       <Nav.Link href="#link">Link</Nav.Link>
       <NavDropdown title="Dropdown" id="basic-nav-dropdown">
@@ -42,7 +42,7 @@ A powerful, responsive navigation header, the navbar. Includes support for brand
       </NavDropdown>
     </Nav>
     <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+      <FormControl type="text" placeholder="Search" />
       <Button variant="outline-success">Search</Button>
     </Form>
   </Navbar.Collapse>
