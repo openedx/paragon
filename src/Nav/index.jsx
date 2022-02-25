@@ -1,15 +1,16 @@
+import React from 'react';
 import BaseNav from 'react-bootstrap/Nav';
 import BaseNavDropdown from 'react-bootstrap/NavDropdown';
 import BaseNavItem from 'react-bootstrap/NavItem';
 import BaseNavLink from 'react-bootstrap/NavLink';
 import PropTypes from 'prop-types';
 
-const Nav = BaseNav;
-const NavItem = BaseNavItem;
-const NavLink = BaseNavLink;
-const NavDropdown = BaseNavDropdown;
-const NavDropdownItem = BaseNavDropdown.Item;
-const NavDropdownDivider = BaseNavDropdown.Divider;
+const Nav = (props) => <BaseNav {...props} />;
+const NavItem = (props) => <BaseNavItem {...props} />;
+const NavLink = (props) => <BaseNavLink {...props} />;
+const NavDropdown = (props) => <BaseNavDropdown {...props} />;
+const NavDropdownItem = (props) => <BaseNavDropdown.Item {...props} />;
+const NavDropdownDivider = (props) => <BaseNavDropdown.Divider {...props} />;
 
 Nav.propTypes = {
   ...Nav.propTypes,
@@ -94,42 +95,19 @@ NavDropdown.propTypes = {
 };
 
 Nav.defaultProps = {
-  activeKey: undefined,
-  as: undefined,
-  fill: false,
-  justify: false,
-  navbar: undefined,
-  onKeyDown: undefined,
-  onSelect: undefined,
-  role: undefined,
-  variant: undefined,
-  bsPrefix: 'nav',
+  ...BaseNav.defaultProps,
 };
 
 NavDropdown.defaultProps = {
-  active: undefined,
-  disabled: undefined,
-  menuRole: undefined,
-  menuVariant: undefined,
-  onClick: undefined,
-  renderMenuOnMount: undefined,
-  rootCloseEvent: undefined,
-  bsPrefix: undefined,
+  ...BaseNavDropdown.defaultProps,
 };
 
 NavItem.defaultProps = {
-  as: 'div',
-  bsPrefix: 'nav-item',
+  ...BaseNavItem.defaultProps,
 };
 
 NavLink.defaultProps = {
-  active: undefined,
-  as: 'a',
-  disabled: false,
-  eventKey: undefined,
-  href: undefined,
-  role: undefined,
-  bsPrefix: 'nav-link',
+  ...BaseNavLink.defaultProps,
 };
 
 Nav.Item = NavItem;
