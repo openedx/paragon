@@ -17,6 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-align: start;
 
     & > * {
       margin-bottom: 0;
@@ -27,6 +28,7 @@
       border-radius: $card-inner-border-radius $card-inner-border-radius 0 0;
       border-color: $card-border-color;
       transition: none;
+      text-align: start;
     }
   }
 
@@ -34,13 +36,15 @@
     @extend .card-body;
     padding: $collapsible-card-spacer-y $collapsible-card-spacer-x;
     padding-left: $collapsible-card-body-spacer-left;
+    text-align: start;
+
     & > *:last-child {
       margin-bottom: 0;
     }
   }
 
   .collapsible-icon {
-    margin-left: $collapsible-card-spacer-icon;
+    margin-inline-start: $collapsible-card-spacer-icon;
   }
 }
 
@@ -68,6 +72,7 @@
 
   .collapsible-body {
     padding: $collapsible-basic-spacer-y $collapsible-basic-spacer-x;
+    text-align: start;
   }
 
   .collapsible-icon {
