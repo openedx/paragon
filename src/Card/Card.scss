@@ -88,6 +88,13 @@
     justify-content: flex-end;
     margin-top: $card-spacer-y;
   }
+
+  dd {
+    [dir="rtl"] & {
+      margin-right: 0;
+      margin-left: 40px;
+    }
+  }
 }
 
 .pgn__card-footer {
