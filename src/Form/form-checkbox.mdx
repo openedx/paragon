@@ -127,13 +127,15 @@ underlying `input` node. See MDN for documentation on available
 
   return (
     <>
-      <Form.Checkbox
-        checked={allChecked}
-        isIndeterminate={isIndeterminate}
-        onChange={handleCheckAllChange}
-      >
-        All the cheese
-      </Form.Checkbox>
+      <div className="d-flex">
+        <Form.Checkbox
+          checked={allChecked}
+          isIndeterminate={isIndeterminate}
+          onChange={handleCheckAllChange}
+        >
+          All the cheese
+        </Form.Checkbox>
+      </div>
       <Form.CheckboxSet
         className="p-2"
         value={checkedCheeses}
