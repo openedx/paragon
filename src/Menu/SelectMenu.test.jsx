@@ -6,6 +6,8 @@ import { Add, Check } from '../../icons';
 import Hyperlink from '../Hyperlink';
 import Button from '../Button';
 
+const app = document.createElement('div');
+document.body.appendChild(app);
 const selectMenu = mount((
   <SelectMenu>
     <MenuItem> A Menu Item</MenuItem>
@@ -22,7 +24,7 @@ const selectMenu = mount((
     <MenuItem>Kainian</MenuItem>
     <MenuItem>M. Hortens</MenuItem>
   </SelectMenu>
-));
+), { attachTo: app });
 
 const menuTrigger = selectMenu.find(Button);
 
