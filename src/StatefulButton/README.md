@@ -25,20 +25,19 @@ The stateful button is a button used to display an actionable icon.
       error: 'Error'
     },
     variant: 'primary',
-    className: 'mr-2',
   };
   return (
-    <div className="d-flex">
+    <Stack direction="horizontal" gap={2}>
       <StatefulButton {...props} />
-      <StatefulButton state="pending" {...props} classNames='icon-spin' />
+      <StatefulButton state="pending" {...props} />
       <StatefulButton state="complete" {...props} />
       <StatefulButton state="error" {...props} />
-    </div>
+    </Stack>
   );
 };
 ```
 
-### Custom icons and disable states
+### Custom icons and disabled states
 
 ```jsx live
 () => {
@@ -47,30 +46,26 @@ The stateful button is a button used to display an actionable icon.
       default: 'Download',
       pending: 'Downloading',
       complete: 'Downloaded',
-      error: 'Retry'
     },
     icons: {
-      default: <Icon className="fa fa-download" />,
-      pending: <Icon className="fa fa-spinner fa-spin" />,
-      complete: <Icon className="fa fa-check" />,
-      error: <Icon className="fa fa-retweet" />,
+      default: <Icon src={Download} />,
+      pending: <Icon src={SpinnerSimple} className="icon-spin" />,
+      complete: <Icon src={Check} />,
     },
-    disabledStates: ['pending'],
+    disabledStates: ['pending', 'complete'],
     variant: 'primary',
-    className: 'mr-2',
   };
   return (
-    <div className="d-flex">
+    <Stack direction="horizontal" gap={2}>
       <StatefulButton state="default" {...downloadButtonProps} />
       <StatefulButton state="pending" {...downloadButtonProps} />
       <StatefulButton state="complete" {...downloadButtonProps} />
-      <StatefulButton state="error" {...downloadButtonProps} />
-    </div>
+    </Stack>
   );
 };
 ```
 
-### Custom states with paragon icons
+### Custom states with Paragon icons
 
 ```jsx live
 () => {
@@ -85,13 +80,12 @@ The stateful button is a button used to display an actionable icon.
     },
     disabledStates: ['unedited'],
     variant: 'primary',
-    className: 'mr-2',
   };
   return (
-    <div className="d-flex">
+    <Stack direction="horizontal" gap={2}>
       <StatefulButton state="unedited" {...buttonProps} />
       <StatefulButton state="edited" {...buttonProps} />
-    </div>
+    </Stack>
   );
 };
 ```
