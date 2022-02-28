@@ -8,6 +8,7 @@ import CodeBlock from '../components/CodeBlock';
 import GenericPropsTable from '../components/PropsTable';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
+import LinkedHeading from '../components/LinkedHeading';
 
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
@@ -27,6 +28,11 @@ export default function PageTemplate({
     };
     // Provide common components here
     return {
+      h2: (props) => <LinkedHeading h="2" {...props} />,
+      h3: (props) => <LinkedHeading h="3" {...props} />,
+      h4: (props) => <LinkedHeading h="4" {...props} />,
+      h5: (props) => <LinkedHeading h="5" {...props} />,
+      h6: (props) => <LinkedHeading h="6" {...props} />,
       pre: props => <div {...props} />,
       code: CodeBlock,
       Link,
@@ -34,12 +40,26 @@ export default function PageTemplate({
     };
   }, [components]);
 
+  const cssVariablesTitle = 'Theme Variables (SCSS)';
+  const cssVariablesUrl = 'theme-variables-scss';
+
+  const getTocData = () => {
+    const tableOfContents = JSON.parse(JSON.stringify(mdx.tableOfContents));
+    if (cssVariables && !tableOfContents.items?.includes()) {
+      tableOfContents.items?.push({
+        title: cssVariablesTitle,
+        url: `#${cssVariablesUrl}`,
+      });
+    }
+    return tableOfContents;
+  };
+
   const sortedComponentNames = mdx.frontmatter?.components || [];
 
   const isDeprecated = mdx.frontmatter?.status?.toLowerCase().includes('deprecate') || false;
 
   return (
-    <Layout>
+    <Layout isMdx tocData={getTocData()}>
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title={mdx.frontmatter.title} />
       <Container size="md" className="py-5">
@@ -55,7 +75,12 @@ export default function PageTemplate({
         </MDXProvider>
         {cssVariables && (
           <div className="mb-5">
-            <h3 className="mb-4">Theme Variables (SCSS)</h3>
+            <h3 className="mb-4 pgn-doc__heading" id={cssVariablesUrl}>
+              {cssVariablesTitle}
+              <a href={`#${cssVariablesUrl}`}>
+                <span className="pgn-doc__anchor">#</span>
+              </a>
+            </h3>
             <CodeBlock className="language-scss">{cssVariables}</CodeBlock>
           </div>
         )}
@@ -79,6 +104,9 @@ PageTemplate.propTypes = {
         status: PropTypes.string,
       }),
       body: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+      tableOfContents: PropTypes.shape({
+        items: PropTypes.arrayOf(PropTypes.object),
+      }),
     }),
     components: PropTypes.shape({
       nodes: PropTypes.arrayOf(PropTypes.object),
@@ -100,6 +128,7 @@ export const pageQuery = graphql`
         notes
         components
       }
+      tableOfContents
     }
     components: allComponentMetadata(
       filter: { displayName: { in: $components } }
