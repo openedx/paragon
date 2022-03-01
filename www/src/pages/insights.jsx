@@ -1,4 +1,6 @@
 import React from 'react';
+import { navigate } from 'gatsby';
+import PropTypes from 'prop-types';
 import {
   DataTable,
   Tabs,
@@ -218,3 +220,10 @@ export default function InsightsPage() {
     </Layout>
   );
 }
+
+InsightsPage.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+    search: PropTypes.string,
+  }).isRequired,
+};
