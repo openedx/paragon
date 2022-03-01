@@ -65,8 +65,7 @@ Overlay.propTypes = {
   /** The placement of the `Overlay` in relation to it's target. */
   placement: PropTypes.oneOf(PLACEMENT_VARIANTS),
   /** A set of popper options and props passed directly to `Popper`. */
-  // eslint-disable-next-line react/forbid-prop-types
-  popperConfig: PropTypes.object,
+  popperConfig: PropTypes.shape({}),
   /** Specify whether the overlay should trigger `onHide` when the user clicks outside the overlay. */
   rootClose: PropTypes.bool,
   /** Specify event for triggering a “root close” toggle. */
@@ -97,7 +96,7 @@ OverlayTrigger.propTypes = {
   /** The initial visibility state of the `Overlay`. */
   defaultShow: PropTypes.bool,
   /** A millisecond delay amount to show and hide the `Overlay` once triggered. */
-  delay: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
+  delay: PropTypes.oneOfType([PropTypes.number, PropTypes.shape({})]),
   /** The initial flip state of the `Overlay`. */
   flip: PropTypes.bool,
   onHide: PropTypes.instanceOf(null),
@@ -112,8 +111,7 @@ OverlayTrigger.propTypes = {
   /** The placement of the `Overlay` in relation to it's target. */
   placement: PropTypes.oneOf(PLACEMENT_VARIANTS),
   /** A `Popper.js` config object passed to the the underlying popper instance. */
-  // eslint-disable-next-line react/forbid-prop-types
-  popperConfig: PropTypes.object,
+  popperConfig: PropTypes.shape({}),
   /**
    * The visibility of the `Overlay`. `show` is a controlled prop so should
    * be paired with `onToggle` to avoid breaking user interactions.

@@ -50,11 +50,11 @@ const Prop = ({
 
 Prop.propTypes = {
   name: PropTypes.string.isRequired,
-  type: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  type: PropTypes.shape({}).isRequired,
   required: PropTypes.bool,
-  defaultValue: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  defaultValue: PropTypes.shape({}), // eslint-disable-line react/forbid-prop-types
   description: PropTypes.shape({
-    childMdx: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+    childMdx: PropTypes.shape({}), // eslint-disable-line react/forbid-prop-types
   }),
 };
 Prop.defaultProps = {
@@ -76,7 +76,7 @@ const PropsTable = ({ props: componentProps, displayName, content }) => (
 );
 
 PropsTable.propTypes = {
-  props: PropTypes.arrayOf(PropTypes.object),
+  props: PropTypes.arrayOf(PropTypes.shape({})),
   content: PropTypes.string,
   displayName: PropTypes.string,
 };

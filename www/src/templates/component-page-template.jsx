@@ -80,7 +80,7 @@ PageTemplate.propTypes = {
       body: PropTypes.any, // eslint-disable-line react/forbid-prop-types
     }),
     components: PropTypes.shape({
-      nodes: PropTypes.arrayOf(PropTypes.object),
+      nodes: PropTypes.arrayOf(PropTypes.shape({})),
     }),
   }).isRequired,
   pageContext: PropTypes.shape({
