@@ -1,5 +1,5 @@
 {
-  "lastModified": 1646057305309,
+  "lastModified": 1646143753899,
   "projectUsages": [
     {
       "version": "16.24.0",
@@ -3368,7 +3368,7 @@
           },
           {
             "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
-            "line": 121,
+            "line": 132,
             "column": 8,
             "version": "19.4.2"
           }
@@ -3438,7 +3438,7 @@
           },
           {
             "filePath": "src/components/subscriptions/expiration/SubscriptionExpirationBanner.jsx",
-            "line": 119,
+            "line": 122,
             "column": 4,
             "version": "19.4.2"
           },
@@ -3574,7 +3574,7 @@
           },
           {
             "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
-            "line": 119,
+            "line": 125,
             "column": 4,
             "version": "19.4.2"
           },
@@ -3600,8 +3600,8 @@
           },
           {
             "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
-            "line": 103,
-            "column": 4,
+            "line": 108,
+            "column": 6,
             "version": "19.4.2"
           },
           {
@@ -3670,8 +3670,8 @@
           },
           {
             "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
-            "line": 107,
-            "column": 6,
+            "line": 112,
+            "column": 8,
             "version": "19.4.2"
           },
           {
@@ -5258,8 +5258,8 @@
           },
           {
             "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
-            "line": 109,
-            "column": 10,
+            "line": 114,
+            "column": 12,
             "version": "19.4.2"
           },
           {
@@ -5442,7 +5442,7 @@
           },
           {
             "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
-            "line": 120,
+            "line": 131,
             "column": 6,
             "version": "19.4.2"
           }
@@ -5730,6 +5730,12 @@
             "version": "16.14.1"
           },
           {
+            "filePath": "src/welcome/ProgressiveProfiling.jsx",
+            "line": 154,
+            "column": 16,
+            "version": "16.14.1"
+          },
+          {
             "filePath": "src/welcome/WelcomePage.jsx",
             "line": 207,
             "column": 14,
@@ -5958,6 +5964,12 @@
             "version": "16.14.1"
           },
           {
+            "filePath": "src/welcome/ProgressiveProfiling.jsx",
+            "line": 151,
+            "column": 12,
+            "version": "16.14.1"
+          },
+          {
             "filePath": "src/welcome/WelcomePage.jsx",
             "line": 165,
             "column": 10,
@@ -6010,6 +6022,30 @@
             "version": "16.14.1"
           },
           {
+            "filePath": "src/field-renderer/FieldRenderer.jsx",
+            "line": 17,
+            "column": 8,
+            "version": "16.14.1"
+          },
+          {
+            "filePath": "src/field-renderer/FieldRenderer.jsx",
+            "line": 37,
+            "column": 8,
+            "version": "16.14.1"
+          },
+          {
+            "filePath": "src/field-renderer/FieldRenderer.jsx",
+            "line": 51,
+            "column": 8,
+            "version": "16.14.1"
+          },
+          {
+            "filePath": "src/field-renderer/FieldRenderer.jsx",
+            "line": 64,
+            "column": 8,
+            "version": "16.14.1"
+          },
+          {
             "filePath": "src/welcome/WelcomePage.jsx",
             "line": 166,
             "column": 12,
@@ -6039,6 +6075,24 @@
             "filePath": "src/common-components/PasswordField.jsx",
             "line": 60,
             "column": 8,
+            "version": "16.14.1"
+          },
+          {
+            "filePath": "src/field-renderer/FieldRenderer.jsx",
+            "line": 18,
+            "column": 10,
+            "version": "16.14.1"
+          },
+          {
+            "filePath": "src/field-renderer/FieldRenderer.jsx",
+            "line": 38,
+            "column": 10,
+            "version": "16.14.1"
+          },
+          {
+            "filePath": "src/field-renderer/FieldRenderer.jsx",
+            "line": 52,
+            "column": 10,
             "version": "16.14.1"
           },
           {
@@ -6121,6 +6175,12 @@
             "filePath": "src/common-components/PasswordField.jsx",
             "line": 51,
             "column": 88,
+            "version": "16.14.1"
+          },
+          {
+            "filePath": "src/field-renderer/FieldRenderer.jsx",
+            "line": 23,
+            "column": 29,
             "version": "16.14.1"
           },
           {
@@ -6328,6 +6388,12 @@
             "version": "16.14.1"
           },
           {
+            "filePath": "src/welcome/ProgressiveProfiling.jsx",
+            "line": 146,
+            "column": 14,
+            "version": "16.14.1"
+          },
+          {
             "filePath": "src/welcome/WelcomePage.jsx",
             "line": 160,
             "column": 12,
@@ -6378,8 +6444,28 @@
             "version": "16.14.1"
           },
           {
+            "filePath": "src/welcome/ProgressiveProfiling.jsx",
+            "line": 147,
+            "column": 16,
+            "version": "16.14.1"
+          },
+          {
             "filePath": "src/welcome/WelcomePage.jsx",
             "line": 161,
+            "column": 14,
+            "version": "16.14.1"
+          }
+        ],
+        "Form.Checkbox": [
+          {
+            "filePath": "src/field-renderer/FieldRenderer.jsx",
+            "line": 65,
+            "column": 10,
+            "version": "16.14.1"
+          },
+          {
+            "filePath": "src/register/RegistrationPage.jsx",
+            "line": 629,
             "column": 14,
             "version": "16.14.1"
           }
@@ -6436,6 +6522,18 @@
             "version": "16.14.1"
           },
           {
+            "filePath": "src/welcome/ProgressiveProfiling.jsx",
+            "line": 166,
+            "column": 16,
+            "version": "16.14.1"
+          },
+          {
+            "filePath": "src/welcome/ProgressiveProfiling.jsx",
+            "line": 178,
+            "column": 16,
+            "version": "16.14.1"
+          },
+          {
             "filePath": "src/welcome/WelcomePage.jsx",
             "line": 219,
             "column": 14,
@@ -6448,19 +6546,17 @@
             "version": "16.14.1"
           }
         ],
-        "Form.Checkbox": [
-          {
-            "filePath": "src/register/RegistrationPage.jsx",
-            "line": 629,
-            "column": 14,
-            "version": "16.14.1"
-          }
-        ],
         "Spinner": [
           {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
             "line": 151,
             "column": 13,
+            "version": "16.14.1"
+          },
+          {
+            "filePath": "src/welcome/ProgressiveProfiling.jsx",
+            "line": 195,
+            "column": 9,
             "version": "16.14.1"
           }
         ],
@@ -6523,15 +6619,13 @@
       },
       "folderName": "frontend-app-communications",
       "usages": {
-        "Form": [
-          {
-            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 117,
-            "column": 6,
-            "version": "16.3.2"
-          }
-        ],
         "Form.Group": [
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/bulk-email-recipient/BulkEmailRecipient.jsx",
+            "line": 19,
+            "column": 4,
+            "version": "16.3.2"
+          },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
             "line": 124,
@@ -6549,15 +6643,15 @@
             "line": 184,
             "column": 8,
             "version": "16.3.2"
-          },
-          {
-            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailRecipient.jsx",
-            "line": 17,
-            "column": 4,
-            "version": "16.3.2"
           }
         ],
         "Form.Label": [
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/bulk-email-recipient/BulkEmailRecipient.jsx",
+            "line": 20,
+            "column": 6,
+            "version": "16.3.2"
+          },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
             "line": 125,
@@ -6569,10 +6663,58 @@
             "line": 144,
             "column": 10,
             "version": "16.3.2"
+          }
+        ],
+        "Form.CheckboxSet": [
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/bulk-email-recipient/BulkEmailRecipient.jsx",
+            "line": 27,
+            "column": 6,
+            "version": "16.3.2"
+          }
+        ],
+        "Form.Checkbox": [
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/bulk-email-recipient/BulkEmailRecipient.jsx",
+            "line": 33,
+            "column": 8,
+            "version": "16.3.2"
           },
           {
-            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailRecipient.jsx",
-            "line": 18,
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/bulk-email-recipient/BulkEmailRecipient.jsx",
+            "line": 40,
+            "column": 8,
+            "version": "16.3.2"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/bulk-email-recipient/BulkEmailRecipient.jsx",
+            "line": 47,
+            "column": 8,
+            "version": "16.3.2"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/bulk-email-recipient/BulkEmailRecipient.jsx",
+            "line": 58,
+            "column": 8,
+            "version": "16.3.2"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/bulk-email-recipient/BulkEmailRecipient.jsx",
+            "line": 69,
+            "column": 8,
+            "version": "16.3.2"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/bulk-email-recipient/BulkEmailRecipient.jsx",
+            "line": 84,
+            "column": 14,
+            "version": "16.3.2"
+          }
+        ],
+        "Form": [
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
+            "line": 117,
             "column": 6,
             "version": "16.3.2"
           }
@@ -6640,52 +6782,6 @@
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/BulkEmailTaskHistory.jsx",
             "line": 106,
             "column": 21,
-            "version": "16.3.2"
-          }
-        ],
-        "Form.CheckboxSet": [
-          {
-            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailRecipient.jsx",
-            "line": 25,
-            "column": 6,
-            "version": "16.3.2"
-          }
-        ],
-        "Form.Checkbox": [
-          {
-            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailRecipient.jsx",
-            "line": 31,
-            "column": 8,
-            "version": "16.3.2"
-          },
-          {
-            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailRecipient.jsx",
-            "line": 38,
-            "column": 8,
-            "version": "16.3.2"
-          },
-          {
-            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailRecipient.jsx",
-            "line": 45,
-            "column": 8,
-            "version": "16.3.2"
-          },
-          {
-            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailRecipient.jsx",
-            "line": 56,
-            "column": 8,
-            "version": "16.3.2"
-          },
-          {
-            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailRecipient.jsx",
-            "line": 67,
-            "column": 8,
-            "version": "16.3.2"
-          },
-          {
-            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailRecipient.jsx",
-            "line": 82,
-            "column": 14,
             "version": "16.3.2"
           }
         ],
@@ -8440,13 +8536,13 @@
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
-            "line": 69,
+            "line": 72,
             "column": 14,
             "version": "16.19.0"
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
-            "line": 92,
+            "line": 95,
             "column": 14,
             "version": "16.19.0"
           },
@@ -8794,7 +8890,7 @@
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
-            "line": 85,
+            "line": 88,
             "column": 12,
             "version": "16.19.0"
           }
@@ -8814,12 +8910,18 @@
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
-            "line": 87,
+            "line": 90,
             "column": 16,
             "version": "16.19.0"
           }
         ],
         "Badge": [
+          {
+            "filePath": "src/discussions/posts/post/PostFooter.jsx",
+            "line": 66,
+            "column": 8,
+            "version": "16.19.0"
+          },
           {
             "filePath": "src/discussions/posts/post/PostHeader.jsx",
             "line": 64,
@@ -9834,7 +9936,7 @@
           },
           {
             "filePath": "src/components/course/CourseHeader.jsx",
-            "line": 42,
+            "line": 43,
             "column": 6,
             "version": "17.5.0"
           },
@@ -9992,7 +10094,7 @@
           },
           {
             "filePath": "src/components/course/CourseHeader.jsx",
-            "line": 43,
+            "line": 44,
             "column": 8,
             "version": "17.5.0"
           },
@@ -10252,13 +10354,13 @@
         "Col": [
           {
             "filePath": "src/components/course/CourseHeader.jsx",
-            "line": 44,
+            "line": 45,
             "column": 10,
             "version": "17.5.0"
           },
           {
             "filePath": "src/components/course/CourseHeader.jsx",
-            "line": 104,
+            "line": 106,
             "column": 12,
             "version": "17.5.0"
           },
@@ -10338,7 +10440,7 @@
         "Breadcrumb": [
           {
             "filePath": "src/components/course/CourseHeader.jsx",
-            "line": 47,
+            "line": 48,
             "column": 16,
             "version": "17.5.0"
           },
@@ -10352,7 +10454,7 @@
         "Card": [
           {
             "filePath": "src/components/course/CourseRunCard.jsx",
-            "line": 189,
+            "line": 195,
             "column": 4,
             "version": "17.5.0"
           },
@@ -10420,7 +10522,7 @@
         "Card.Body": [
           {
             "filePath": "src/components/course/CourseRunCard.jsx",
-            "line": 190,
+            "line": 196,
             "column": 6,
             "version": "17.5.0"
           },
@@ -10651,6 +10753,32 @@
             "version": "17.5.0"
           }
         ],
+        "StatefulButton": [
+          {
+            "filePath": "src/components/course/SubsidyRequestButton.jsx",
+            "line": 121,
+            "column": 4,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
+            "line": 141,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/mark-complete-modal/MarkCompleteModal.jsx",
+            "line": 80,
+            "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/move-to-in-progress-modal/MoveToInProgressModal.jsx",
+            "line": 71,
+            "column": 10,
+            "version": "17.5.0"
+          }
+        ],
         "Dropdown": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
@@ -10820,26 +10948,6 @@
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
             "line": 124,
             "column": 14,
-            "version": "17.5.0"
-          }
-        ],
-        "StatefulButton": [
-          {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
-            "line": 141,
-            "column": 10,
-            "version": "17.5.0"
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/mark-complete-modal/MarkCompleteModal.jsx",
-            "line": 80,
-            "column": 10,
-            "version": "17.5.0"
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/move-to-in-progress-modal/MoveToInProgressModal.jsx",
-            "line": 71,
-            "column": 10,
             "version": "17.5.0"
           }
         ],
@@ -11458,6 +11566,14 @@
             "column": 2,
             "version": "17.5.0"
           }
+        ],
+        "Toast": [
+          {
+            "filePath": "src/components/Toasts/Toasts.jsx",
+            "line": 9,
+            "column": 4,
+            "version": "17.5.0"
+          }
         ]
       }
     },
@@ -11619,7 +11735,7 @@
       }
     },
     {
-      "version": "16.24.0",
+      "version": "19.3.0",
       "name": "@edx/frontend-app-learning",
       "repository": {
         "type": "git",
@@ -11630,293 +11746,293 @@
         "Hyperlink": [
           {
             "filePath": "src/alerts/access-expiration-alert/AccessExpirationAlert.jsx",
-            "line": 82,
+            "line": 83,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/alerts/access-expiration-alert/AccessExpirationAlertMMP2P.jsx",
             "line": 43,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/alerts/logistration-alert/LogistrationAlert.jsx",
             "line": 12,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/alerts/logistration-alert/LogistrationAlert.jsx",
             "line": 23,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/goal-unsubscribe/ResultPage.jsx",
             "line": 16,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/alerts/private-course-alert/PrivateCourseAlert.jsx",
             "line": 49,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/alerts/private-course-alert/PrivateCourseAlert.jsx",
             "line": 58,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/SequenceLink.jsx",
             "line": 48,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/credit-information/CreditInformation.jsx",
             "line": 29,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/DetailedGrades.jsx",
             "line": 41,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/related-links/RelatedLinks.jsx",
             "line": 36,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/related-links/RelatedLinks.jsx",
             "line": 42,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/course-exit/CatalogSuggestion.jsx",
             "line": 25,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseCelebration.jsx",
-            "line": 205,
+            "line": 207,
             "column": 14,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
-            "line": 81,
+            "line": 100,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
-            "line": 196,
+            "line": 191,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/course-exit/DashboardFootnote.jsx",
             "line": 25,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/course-exit/ProgramCompletion.jsx",
             "line": 34,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/course-exit/ProgramCompletion.jsx",
-            "line": 58,
+            "line": 59,
             "column": 16,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/course-exit/ProgramCompletion.jsx",
-            "line": 75,
+            "line": 76,
             "column": 14,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/course-exit/UpgradeFootnote.jsx",
             "line": 23,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/sequence/hidden-after-due/HiddenAfterDue.jsx",
             "line": 16,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/shared/links.jsx",
             "line": 11,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/shared/links.jsx",
             "line": 30,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/shared/links.jsx",
             "line": 48,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Alert": [
           {
             "filePath": "src/alerts/access-expiration-alert/AccessExpirationAlert.jsx",
-            "line": 95,
+            "line": 96,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/alerts/access-expiration-alert/AccessExpirationAlertMMP2P.jsx",
             "line": 55,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/alerts/course-start-alert/CourseStartAlert.jsx",
             "line": 39,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/alerts/course-start-alert/CourseStartAlert.jsx",
             "line": 64,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/alerts/enrollment-alert/EnrollmentAlert.jsx",
             "line": 50,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/alerts/logistration-alert/LogistrationAlert.jsx",
             "line": 32,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/alerts/certificate-status-alert/CertificateStatusAlert.jsx",
             "line": 171,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/alerts/course-end-alert/CourseEndAlert.jsx",
             "line": 81,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/alerts/private-course-alert/PrivateCourseAlert.jsx",
             "line": 67,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/alerts/scheduled-content-alert/ScheduledCotentAlert.jsx",
             "line": 12,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/WelcomeMessage.jsx",
             "line": 30,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/suggested-schedule-messaging/ShiftDatesAlert.jsx",
             "line": 39,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/suggested-schedule-messaging/UpgradeToCompleteAlert.jsx",
             "line": 36,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/suggested-schedule-messaging/UpgradeToShiftDatesAlert.jsx",
             "line": 38,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseCelebration.jsx",
-            "line": 289,
+            "line": 292,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseInProgress.jsx",
             "line": 37,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseNonPassing.jsx",
             "line": 37,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/course-exit/ProgramCompletion.jsx",
             "line": 44,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/sequence/hidden-after-due/HiddenAfterDue.jsx",
             "line": 26,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/sequence/honor-code/HonorCode.jsx",
             "line": 37,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/sequence/lock-paywall/LockPaywall.jsx",
-            "line": 64,
+            "line": 62,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/generic/user-messages/Alert.jsx",
             "line": 36,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 191,
+            "line": 180,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "PageBanner": [
@@ -11924,13 +12040,13 @@
             "filePath": "src/alerts/access-expiration-alert/AccessExpirationMasqueradeBanner.jsx",
             "line": 15,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/alerts/course-start-alert/CourseStartMasqueradeBanner.jsx",
             "line": 21,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Button": [
@@ -11938,271 +12054,259 @@
             "filePath": "src/alerts/enrollment-alert/EnrollmentAlert.jsx",
             "line": 44,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/alerts/logistration-alert/AccountActivationAlert.jsx",
             "line": 42,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/goal-unsubscribe/ResultPage.jsx",
             "line": 42,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/alerts/certificate-status-alert/CertificateStatusAlert.jsx",
             "line": 180,
             "column": 16,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/alerts/private-course-alert/PrivateCourseAlert.jsx",
             "line": 36,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/alerts/scheduled-content-alert/ScheduledCotentAlert.jsx",
             "line": 28,
             "column": 12,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/OutlineTab.jsx",
             "line": 153,
             "column": 18,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/ProctoringInfoPanel.jsx",
             "line": 121,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/ProctoringInfoPanel.jsx",
             "line": 136,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/ProctoringInfoPanel.jsx",
             "line": 143,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/ProctoringInfoPanel.jsx",
             "line": 149,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/ProctoringInfoPanel.jsx",
             "line": 191,
             "column": 12,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/StartOrResumeCourseCard.jsx",
-            "line": 51,
-            "column": 12,
-            "version": "16.24.0"
+            "line": 48,
+            "column": 10,
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/WelcomeMessage.jsx",
             "line": 42,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/certificate-status/CertificateStatus.jsx",
-            "line": 233,
+            "line": 234,
             "column": 12,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/course-grade/CourseGradeHeader.jsx",
             "line": 77,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/ProgressHeader.jsx",
             "line": 33,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/suggested-schedule-messaging/ShiftDatesAlert.jsx",
             "line": 46,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/suggested-schedule-messaging/UpgradeToCompleteAlert.jsx",
             "line": 43,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/suggested-schedule-messaging/UpgradeToShiftDatesAlert.jsx",
             "line": 45,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/celebration/CelebrationModal.jsx",
-            "line": 37,
+            "line": 35,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/celebration/WeeklyGoalCelebrationModal.jsx",
             "line": 29,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseCelebration.jsx",
-            "line": 108,
+            "line": 107,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseCelebration.jsx",
             "line": 151,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseCelebration.jsx",
-            "line": 297,
+            "line": 300,
             "column": 20,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseExit.jsx",
             "line": 62,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseInProgress.jsx",
             "line": 41,
             "column": 14,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseNonPassing.jsx",
             "line": 41,
             "column": 14,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/course-exit/ProgramCompletion.jsx",
-            "line": 66,
+            "line": 67,
             "column": 14,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/sequence/content-lock/ContentLock.jsx",
             "line": 32,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/sequence/honor-code/HonorCode.jsx",
-            "line": 56,
+            "line": 57,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/sequence/honor-code/HonorCode.jsx",
-            "line": 59,
+            "line": 60,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/sequence/sequence-navigation/SequenceNavigation.jsx",
-            "line": 78,
+            "line": 77,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/sequence/sequence-navigation/SequenceNavigation.jsx",
-            "line": 88,
+            "line": 87,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/sequence/sequence-navigation/UnitButton.jsx",
             "line": 28,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/sequence/sequence-navigation/UnitNavigation.jsx",
             "line": 35,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/sequence/sequence-navigation/UnitNavigation.jsx",
             "line": 52,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/experiments/mm-p2p/BlockModalContent.jsx",
             "line": 64,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/generic/upgrade-button/UpgradeButton.jsx",
             "line": 22,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/generic/upgrade-button/UpgradeNowButton.jsx",
             "line": 22,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/product-tours/newUserCourseHomeTour/LaunchCourseHomeTourButton.jsx",
             "line": 45,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/product-tours/newUserCourseHomeTour/NewUserCourseHomeTourModal.jsx",
             "line": 45,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/product-tours/newUserCourseHomeTour/NewUserCourseHomeTourModal.jsx",
             "line": 51,
             "column": 10,
-            "version": "16.24.0"
-          },
-          {
-            "filePath": "src/tour/CheckpointActionRow.jsx",
-            "line": 17,
-            "column": 8,
-            "version": "16.24.0"
-          },
-          {
-            "filePath": "src/tour/CheckpointActionRow.jsx",
-            "line": 25,
-            "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Icon": [
@@ -12210,139 +12314,139 @@
             "filePath": "src/alerts/logistration-alert/AccountActivationAlert.jsx",
             "line": 55,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/alerts/logistration-alert/AccountActivationAlert.jsx",
             "line": 105,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 116,
+            "line": 115,
             "column": 14,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/credit-information/CreditInformation.jsx",
-            "line": 73,
+            "line": 76,
             "column": 84,
-            "version": "16.24.0"
-          },
-          {
-            "filePath": "src/course-home/progress-tab/credit-information/CreditInformation.jsx",
-            "line": 77,
-            "column": 81,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/credit-information/CreditInformation.jsx",
             "line": 80,
-            "column": 72,
-            "version": "16.24.0"
+            "column": 81,
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/credit-information/CreditInformation.jsx",
             "line": 83,
+            "column": 72,
+            "version": "19.3.0"
+          },
+          {
+            "filePath": "src/course-home/progress-tab/credit-information/CreditInformation.jsx",
+            "line": 86,
             "column": 71,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/course-grade/CourseGradeFooter.jsx",
-            "line": 60,
+            "line": 52,
             "column": 27,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/course-grade/CourseGradeFooter.jsx",
-            "line": 61,
+            "line": 53,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/course-grade/CourseGradeHeader.jsx",
             "line": 58,
             "column": 12,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/DetailedGrades.jsx",
             "line": 57,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/SubsectionTitleCell.jsx",
             "line": 53,
             "column": 42,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/SubsectionTitleCell.jsx",
             "line": 54,
             "column": 40,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/SubsectionTitleCell.jsx",
             "line": 59,
             "column": 14,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/SubsectionTitleCell.jsx",
             "line": 88,
             "column": 16,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/grade-summary/AssignmentTypeCell.jsx",
             "line": 21,
             "column": 30,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/grade-summary/GradeSummaryHeader.jsx",
             "line": 51,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/celebration/WeeklyGoalCelebrationModal.jsx",
-            "line": 54,
+            "line": 55,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/NotificationIcon.jsx",
             "line": 13,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/NotificationTray.jsx",
-            "line": 42,
+            "line": 46,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/product-tours/newUserCourseHomeTour/LaunchCourseHomeTourButton.jsx",
             "line": 47,
             "column": 12,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 184,
+            "line": 173,
             "column": 12,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 193,
+            "line": 182,
             "column": 14,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Spinner": [
@@ -12350,19 +12454,19 @@
             "filePath": "src/alerts/logistration-alert/AccountActivationAlert.jsx",
             "line": 92,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/generic/PageLoading.jsx",
             "line": 28,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 180,
+            "line": 169,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "AlertModal": [
@@ -12370,7 +12474,7 @@
             "filePath": "src/alerts/logistration-alert/AccountActivationAlert.jsx",
             "line": 117,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Badge": [
@@ -12378,7 +12482,7 @@
             "filePath": "src/course-home/dates-tab/timeline/badgelist.jsx",
             "line": 99,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "OverlayTrigger": [
@@ -12386,49 +12490,49 @@
             "filePath": "src/course-home/dates-tab/timeline/Day.jsx",
             "line": 100,
             "column": 18,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/course-completion/CompleteDonutSegment.jsx",
             "line": 32,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/course-completion/IncompleteDonutSegment.jsx",
             "line": 36,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/course-completion/LockedDonutSegment.jsx",
             "line": 35,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/course-grade/CurrentGradeTooltip.jsx",
             "line": 38,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/course-grade/GradeRangeTooltip.jsx",
             "line": 33,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/course-grade/PassingGradeTooltip.jsx",
             "line": 22,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/grade-summary/GradeSummaryHeader.jsx",
             "line": 26,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Tooltip": [
@@ -12436,7 +12540,7 @@
             "filePath": "src/course-home/dates-tab/timeline/Day.jsx",
             "line": 103,
             "column": 22,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Alert.Heading": [
@@ -12444,19 +12548,19 @@
             "filePath": "src/course-home/outline-tab/alerts/certificate-status-alert/CertificateStatusAlert.jsx",
             "line": 175,
             "column": 14,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/alerts/scheduled-content-alert/ScheduledCotentAlert.jsx",
             "line": 15,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/suggested-schedule-messaging/UpgradeToCompleteAlert.jsx",
             "line": 39,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Collapsible": [
@@ -12464,7 +12568,7 @@
             "filePath": "src/course-home/outline-tab/Section.jsx",
             "line": 75,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "IconButton": [
@@ -12472,31 +12576,31 @@
             "filePath": "src/course-home/outline-tab/Section.jsx",
             "line": 82,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/Section.jsx",
             "line": 90,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/course-grade/GradeRangeTooltip.jsx",
             "line": 63,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/grade-summary/GradeSummaryHeader.jsx",
             "line": 38,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/NotificationTray.jsx",
-            "line": 52,
+            "line": 56,
             "column": 14,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Card": [
@@ -12504,81 +12608,105 @@
             "filePath": "src/course-home/outline-tab/widgets/StartOrResumeCourseCard.jsx",
             "line": 44,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
             "line": 69,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/certificate-status/CertificateStatus.jsx",
-            "line": 224,
+            "line": 227,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
-            "line": 86,
+            "line": 105,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
-        "Card.Body": [
+        "Card.Header": [
           {
             "filePath": "src/course-home/outline-tab/widgets/StartOrResumeCourseCard.jsx",
             "line": 45,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
             "line": 74,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/certificate-status/CertificateStatus.jsx",
-            "line": 225,
+            "line": 228,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
-            "line": 88,
+            "line": 107,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
-        "Card.Text": [
+        "Card.Footer": [
+          {
+            "filePath": "src/course-home/outline-tab/widgets/StartOrResumeCourseCard.jsx",
+            "line": 59,
+            "column": 6,
+            "version": "19.3.0"
+          },
+          {
+            "filePath": "src/course-home/progress-tab/certificate-status/CertificateStatus.jsx",
+            "line": 232,
+            "column": 8,
+            "version": "19.3.0"
+          },
+          {
+            "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
+            "line": 110,
+            "column": 10,
+            "version": "19.3.0"
+          }
+        ],
+        "Card.Section": [
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 76,
+            "line": 79,
+            "column": 6,
+            "version": "19.3.0"
+          },
+          {
+            "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
+            "line": 112,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/certificate-status/CertificateStatus.jsx",
             "line": 229,
+            "column": 8,
+            "version": "19.3.0"
+          },
+          {
+            "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
+            "line": 109,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Form.Switch": [
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 103,
+            "line": 102,
             "column": 10,
-            "version": "16.24.0"
-          }
-        ],
-        "Card.Footer": [
-          {
-            "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 113,
-            "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "TransitionReplace": [
@@ -12586,21 +12714,7 @@
             "filePath": "src/course-home/outline-tab/widgets/WelcomeMessage.jsx",
             "line": 51,
             "column": 6,
-            "version": "16.24.0"
-          }
-        ],
-        "Card.Title": [
-          {
-            "filePath": "src/course-home/progress-tab/certificate-status/CertificateStatus.jsx",
-            "line": 226,
-            "column": 10,
-            "version": "16.24.0"
-          },
-          {
-            "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
-            "line": 89,
-            "column": 12,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Popover": [
@@ -12608,43 +12722,43 @@
             "filePath": "src/course-home/progress-tab/course-completion/CompleteDonutSegment.jsx",
             "line": 36,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/course-completion/IncompleteDonutSegment.jsx",
             "line": 40,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/course-completion/LockedDonutSegment.jsx",
             "line": 39,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/course-grade/CurrentGradeTooltip.jsx",
             "line": 42,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/course-grade/GradeRangeTooltip.jsx",
             "line": 38,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/course-grade/PassingGradeTooltip.jsx",
             "line": 26,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/grade-summary/GradeSummaryHeader.jsx",
             "line": 31,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Popover.Content": [
@@ -12652,43 +12766,43 @@
             "filePath": "src/course-home/progress-tab/course-completion/CompleteDonutSegment.jsx",
             "line": 37,
             "column": 12,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/course-completion/IncompleteDonutSegment.jsx",
             "line": 41,
             "column": 12,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/course-completion/LockedDonutSegment.jsx",
             "line": 40,
             "column": 12,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/course-grade/CurrentGradeTooltip.jsx",
             "line": 43,
             "column": 12,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/course-grade/GradeRangeTooltip.jsx",
             "line": 39,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/course-grade/PassingGradeTooltip.jsx",
             "line": 27,
             "column": 12,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/grade-summary/GradeSummaryHeader.jsx",
             "line": 32,
             "column": 12,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "DataTable": [
@@ -12696,19 +12810,19 @@
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/DetailedGradesTable.jsx",
             "line": 40,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/grade-summary/GradeSummaryTable.jsx",
             "line": 81,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
-            "line": 183,
+            "line": 178,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "DataTable.Table": [
@@ -12716,13 +12830,13 @@
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/DetailedGradesTable.jsx",
             "line": 58,
             "column": 12,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/grade-summary/GradeSummaryTable.jsx",
             "line": 131,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Collapsible.Advanced": [
@@ -12730,19 +12844,19 @@
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/SubsectionTitleCell.jsx",
             "line": 46,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/content-tools/calculator/Calculator.jsx",
             "line": 42,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/content-tools/calculator/Calculator.jsx",
             "line": 82,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Row": [
@@ -12750,25 +12864,25 @@
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/SubsectionTitleCell.jsx",
             "line": 47,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/suggested-schedule-messaging/ShiftDatesAlert.jsx",
             "line": 40,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/suggested-schedule-messaging/UpgradeToCompleteAlert.jsx",
             "line": 37,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/suggested-schedule-messaging/UpgradeToShiftDatesAlert.jsx",
             "line": 39,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Collapsible.Trigger": [
@@ -12776,19 +12890,19 @@
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/SubsectionTitleCell.jsx",
             "line": 48,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/content-tools/calculator/Calculator.jsx",
             "line": 44,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/content-tools/calculator/Calculator.jsx",
             "line": 84,
             "column": 14,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Collapsible.Visible": [
@@ -12796,37 +12910,37 @@
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/SubsectionTitleCell.jsx",
             "line": 53,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/SubsectionTitleCell.jsx",
             "line": 54,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/content-tools/calculator/Calculator.jsx",
             "line": 45,
             "column": 12,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/content-tools/calculator/Calculator.jsx",
             "line": 48,
             "column": 12,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/content-tools/calculator/Calculator.jsx",
             "line": 85,
             "column": 16,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/content-tools/calculator/Calculator.jsx",
             "line": 88,
             "column": 16,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Collapsible.Body": [
@@ -12834,19 +12948,19 @@
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/SubsectionTitleCell.jsx",
             "line": 83,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/content-tools/calculator/Calculator.jsx",
             "line": 54,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/content-tools/calculator/Calculator.jsx",
             "line": 97,
             "column": 12,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "DataTable.TableFooter": [
@@ -12854,7 +12968,7 @@
             "filePath": "src/course-home/progress-tab/grades/grade-summary/GradeSummaryTableFooter.jsx",
             "line": 26,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Col": [
@@ -12862,37 +12976,37 @@
             "filePath": "src/course-home/suggested-schedule-messaging/ShiftDatesAlert.jsx",
             "line": 41,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/suggested-schedule-messaging/ShiftDatesAlert.jsx",
             "line": 45,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/suggested-schedule-messaging/UpgradeToCompleteAlert.jsx",
             "line": 38,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/suggested-schedule-messaging/UpgradeToCompleteAlert.jsx",
             "line": 42,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/suggested-schedule-messaging/UpgradeToShiftDatesAlert.jsx",
             "line": 40,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/course-home/suggested-schedule-messaging/UpgradeToShiftDatesAlert.jsx",
             "line": 44,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "StatefulButton": [
@@ -12900,63 +13014,63 @@
             "filePath": "src/courseware/course/bookmark/BookmarkButton.jsx",
             "line": 42,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "StandardModal": [
           {
             "filePath": "src/courseware/course/celebration/CelebrationModal.jsx",
-            "line": 34,
+            "line": 32,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/celebration/WeeklyGoalCelebrationModal.jsx",
             "line": 26,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "ActionRow": [
           {
             "filePath": "src/courseware/course/celebration/CelebrationModal.jsx",
-            "line": 36,
+            "line": 34,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/celebration/WeeklyGoalCelebrationModal.jsx",
             "line": 28,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/courseware/course/sequence/honor-code/HonorCode.jsx",
-            "line": 54,
+            "line": 55,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/product-tours/newUserCourseHomeTour/NewUserCourseHomeTourModal.jsx",
             "line": 44,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
-        "Card.Img": [
+        "Card.ImageCap": [
           {
             "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
-            "line": 87,
+            "line": 106,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "CardView": [
           {
             "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
-            "line": 193,
+            "line": 188,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "SelectMenu": [
@@ -12964,7 +13078,7 @@
             "filePath": "src/courseware/course/CourseBreadcrumbs.jsx",
             "line": 43,
             "column": 12,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "MenuItem": [
@@ -12972,15 +13086,15 @@
             "filePath": "src/courseware/course/JumpNavMenuItem.jsx",
             "line": 44,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "ActionRow.Spacer": [
           {
             "filePath": "src/courseware/course/sequence/honor-code/HonorCode.jsx",
-            "line": 55,
+            "line": 56,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Dropdown": [
@@ -12988,19 +13102,19 @@
             "filePath": "src/courseware/course/sequence/sequence-navigation/SequenceNavigationDropdown.jsx",
             "line": 15,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/generic/tabs/Tabs.jsx",
             "line": 39,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/instructor-toolbar/masquerade-widget/MasqueradeWidget.jsx",
             "line": 124,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Dropdown.Toggle": [
@@ -13008,19 +13122,19 @@
             "filePath": "src/courseware/course/sequence/sequence-navigation/SequenceNavigationDropdown.jsx",
             "line": 16,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/generic/tabs/Tabs.jsx",
             "line": 40,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/instructor-toolbar/masquerade-widget/MasqueradeWidget.jsx",
             "line": 125,
             "column": 12,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Dropdown.Menu": [
@@ -13028,19 +13142,19 @@
             "filePath": "src/courseware/course/sequence/sequence-navigation/SequenceNavigationDropdown.jsx",
             "line": 27,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/generic/tabs/Tabs.jsx",
             "line": 47,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/instructor-toolbar/masquerade-widget/MasqueradeWidget.jsx",
             "line": 128,
             "column": 12,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Dropdown.Item": [
@@ -13048,13 +13162,13 @@
             "filePath": "src/courseware/course/sequence/sequence-navigation/SequenceNavigationDropdown.jsx",
             "line": 29,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/instructor-toolbar/masquerade-widget/MasqueradeWidgetOption.jsx",
             "line": 70,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Modal": [
@@ -13062,7 +13176,7 @@
             "filePath": "src/courseware/course/sequence/Unit.jsx",
             "line": 205,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "ModalLayer": [
@@ -13070,13 +13184,13 @@
             "filePath": "src/experiments/mm-p2p/BlockModal.jsx",
             "line": 10,
             "column": 2,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/experiments/mm-p2p/BlockModalContent.jsx",
             "line": 35,
             "column": 2,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Input": [
@@ -13084,7 +13198,7 @@
             "filePath": "src/instructor-toolbar/masquerade-widget/MasqueradeUserNameInput.jsx",
             "line": 49,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "MarketingModal": [
@@ -13092,7 +13206,7 @@
             "filePath": "src/product-tours/newUserCourseHomeTour/NewUserCourseHomeTourModal.jsx",
             "line": 19,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "ModalDialog.Hero": [
@@ -13100,7 +13214,7 @@
             "filePath": "src/product-tours/newUserCourseHomeTour/NewUserCourseHomeTourModal.jsx",
             "line": 25,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "ModalDialog.Title": [
@@ -13108,65 +13222,73 @@
             "filePath": "src/product-tours/newUserCourseHomeTour/NewUserCourseHomeTourModal.jsx",
             "line": 30,
             "column": 12,
-            "version": "16.24.0"
+            "version": "19.3.0"
           },
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 165,
+            "line": 158,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
+          }
+        ],
+        "ProductTour": [
+          {
+            "filePath": "src/product-tours/ProductTours.jsx",
+            "line": 144,
+            "column": 6,
+            "version": "19.3.0"
           }
         ],
         "ModalDialog": [
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 153,
+            "line": 146,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "ModalDialog.Header": [
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 164,
+            "line": 157,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "ModalDialog.Body": [
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 169,
+            "line": 162,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "ModalDialog.Footer": [
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 211,
+            "line": 200,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "ModalDialog.CloseButton": [
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 222,
-            "column": 14,
-            "version": "16.24.0"
+            "line": 212,
+            "column": 16,
+            "version": "19.3.0"
+          },
+          {
+            "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
+            "line": 225,
+            "column": 16,
+            "version": "19.3.0"
           },
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
             "line": 233,
-            "column": 14,
-            "version": "16.24.0"
-          },
-          {
-            "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 240,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ],
         "Toast": [
@@ -13174,7 +13296,7 @@
             "filePath": "src/tab-page/TabPage.jsx",
             "line": 66,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.3.0"
           }
         ]
       }
@@ -18318,8 +18440,8 @@
           },
           {
             "filePath": "src/components/Course/2U/StickyNav2U.jsx",
-            "line": 183,
-            "column": 24,
+            "line": 196,
+            "column": 26,
             "version": "19.4.2"
           },
           {
@@ -18390,8 +18512,8 @@
           },
           {
             "filePath": "src/components/CourseCurriculum/index.jsx",
-            "line": 73,
-            "column": 8,
+            "line": 89,
+            "column": 10,
             "version": "19.4.2"
           },
           {
@@ -18647,6 +18769,14 @@
             "version": "19.4.2"
           }
         ],
+        "Chip": [
+          {
+            "filePath": "src/components/CardList/CardListTabs.jsx",
+            "line": 60,
+            "column": 20,
+            "version": "19.4.2"
+          }
+        ],
         "Container": [
           {
             "filePath": "src/components/CardPanels/CardListPanel.jsx",
@@ -18662,14 +18792,14 @@
           },
           {
             "filePath": "src/components/Certificate/index.jsx",
-            "line": 26,
+            "line": 25,
             "column": 4,
             "version": "19.4.2"
           },
           {
             "filePath": "src/components/Course/2U/AboutCourse.jsx",
-            "line": 9,
-            "column": 4,
+            "line": 8,
+            "column": 2,
             "version": "19.4.2"
           },
           {
@@ -18685,6 +18815,12 @@
             "version": "19.4.2"
           },
           {
+            "filePath": "src/components/Course/2U/LeadCaptureForm.jsx",
+            "line": 38,
+            "column": 4,
+            "version": "19.4.2"
+          },
+          {
             "filePath": "src/components/Course/2U/PricingInfo.jsx",
             "line": 30,
             "column": 4,
@@ -18692,7 +18828,7 @@
           },
           {
             "filePath": "src/components/Course/2U/StickyNav2U.jsx",
-            "line": 123,
+            "line": 128,
             "column": 12,
             "version": "19.4.2"
           },
@@ -19022,20 +19158,14 @@
           },
           {
             "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 287,
+            "line": 268,
             "column": 14,
             "version": "19.4.2"
           },
           {
             "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 325,
+            "line": 306,
             "column": 14,
-            "version": "19.4.2"
-          },
-          {
-            "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 348,
-            "column": 16,
             "version": "19.4.2"
           },
           {
@@ -19091,6 +19221,12 @@
             "version": "19.4.2"
           },
           {
+            "filePath": "src/components/Course/2U/StickyNav2U.jsx",
+            "line": 183,
+            "column": 16,
+            "version": "19.4.2"
+          },
+          {
             "filePath": "src/components/Course/CourseModes/index.jsx",
             "line": 271,
             "column": 26,
@@ -19100,6 +19236,12 @@
             "filePath": "src/components/Course/CourseModes/index.jsx",
             "line": 288,
             "column": 26,
+            "version": "19.4.2"
+          },
+          {
+            "filePath": "src/components/CourseCurriculum/index.jsx",
+            "line": 79,
+            "column": 6,
             "version": "19.4.2"
           },
           {
@@ -19123,6 +19265,12 @@
             "version": "19.4.2"
           },
           {
+            "filePath": "src/components/Course/2U/StickyNav2U.jsx",
+            "line": 186,
+            "column": 20,
+            "version": "19.4.2"
+          },
+          {
             "filePath": "src/components/Course/CourseModes/index.jsx",
             "line": 274,
             "column": 30,
@@ -19132,6 +19280,12 @@
             "filePath": "src/components/Course/CourseModes/index.jsx",
             "line": 291,
             "column": 30,
+            "version": "19.4.2"
+          },
+          {
+            "filePath": "src/components/CourseCurriculum/index.jsx",
+            "line": 82,
+            "column": 10,
             "version": "19.4.2"
           },
           {
@@ -19214,7 +19368,7 @@
         "DropdownButton": [
           {
             "filePath": "src/components/Course/2U/StickyNav2U.jsx",
-            "line": 132,
+            "line": 137,
             "column": 16,
             "version": "19.4.2"
           },
@@ -19228,7 +19382,7 @@
         "Dropdown.Item": [
           {
             "filePath": "src/components/Course/2U/StickyNav2U.jsx",
-            "line": 144,
+            "line": 149,
             "column": 20,
             "version": "19.4.2"
           },
@@ -19411,7 +19565,7 @@
             "version": "19.4.2"
           }
         ],
-        "Popover.Content": [
+        "Popover.Title": [
           {
             "filePath": "src/components/Overlays/PaintedDoorUnauthenticatedPopover.jsx",
             "line": 49,
@@ -19425,7 +19579,7 @@
             "version": "19.4.2"
           }
         ],
-        "Popover.Title": [
+        "Popover.Content": [
           {
             "filePath": "src/components/Overlays/PaintedDoorUnauthenticatedPopover.jsx",
             "line": 52,
