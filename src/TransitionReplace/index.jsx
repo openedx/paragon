@@ -160,13 +160,11 @@ TransitionReplace.propTypes = {
    */
   onChildExited: PropTypes.func,
   /** An object that specifies transition styles. */
-  /* eslint-disable react/forbid-prop-types */
   transitionStyles: PropTypes.shape({
-    entering: PropTypes.object,
-    entered: PropTypes.object,
-    exiting: PropTypes.object,
-    exited: PropTypes.object,
-    /* eslint-enable react/forbid-prop-types */
+    entering: PropTypes.shape({}),
+    entered: PropTypes.shape({}),
+    exiting: PropTypes.shape({}),
+    exited: PropTypes.shape({}),
   }),
   /** Specifies class name to append to the `Transition`. */
   transitionClassNames: PropTypes.string,

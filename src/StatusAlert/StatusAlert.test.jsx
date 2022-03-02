@@ -101,7 +101,9 @@ describe('<StatusAlert />', () => {
 
   describe('invalid keystrokes do nothing', () => {
     beforeEach(() => {
-      wrapper = mount(<StatusAlert {...defaultProps} />);
+      const app = document.createElement('div');
+      document.body.appendChild(app);
+      wrapper = mount(<StatusAlert {...defaultProps} />, { attachTo: app });
     });
 
     it('does nothing on invalid keystroke q', () => {
@@ -126,8 +128,10 @@ describe('<StatusAlert />', () => {
   });
   describe('focus functions properly', () => {
     it('focus function changes focus', () => {
-      wrapper = mount(<div><Button.Deprecated label="test" /><StatusAlert {...defaultProps} /></div>);
-
+      const app = document.createElement('div');
+      document.body.appendChild(app);
+      wrapper = mount(<div><Button.Deprecated label="test" /><StatusAlert {...defaultProps} /></div>,
+        { attachTo: app });
       const buttons = wrapper.find('button');
 
       // move focus away from default StatusAlert xButton
