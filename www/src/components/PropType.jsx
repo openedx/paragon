@@ -103,7 +103,7 @@ const PropTypeArrayOf = ({ value, isRequired }) => (
 
 PropTypeArrayOf.propTypes = {
   isRequired: PropTypes.bool,
-  value: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  value: PropTypes.shape({}).isRequired,
 };
 
 PropTypeArrayOf.defaultProps = {
@@ -123,7 +123,7 @@ const PropTypeObjectOf = ({ value, isRequired }) => (
 
 PropTypeObjectOf.propTypes = {
   isRequired: PropTypes.bool,
-  value: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  value: PropTypes.shape({}).isRequired,
 };
 
 PropTypeObjectOf.defaultProps = {
@@ -147,7 +147,7 @@ const PropTypeShape = ({ name, value, isRequired }) => (
 PropTypeShape.propTypes = {
   isRequired: PropTypes.bool,
   name: PropTypes.string.isRequired,
-  value: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  value: PropTypes.shape({}).isRequired,
 };
 
 PropTypeShape.defaultProps = {
@@ -171,7 +171,7 @@ const PropTypeExact = ({ name, value, isRequired }) => (
 PropTypeExact.propTypes = {
   isRequired: PropTypes.bool,
   name: PropTypes.string.isRequired,
-  value: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  value: PropTypes.shape({}).isRequired,
 };
 
 PropTypeExact.defaultProps = {

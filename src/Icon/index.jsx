@@ -73,7 +73,10 @@ Icon.propTypes = {
   /** An icon component to render. Example import of a Paragon icon component: `import { Check } from '@edx/paragon/dist/icon';` */
   src: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   /** HTML element attributes to pass through to the underlying svg element */
-  svgAttrs: PropTypes.object, // eslint-disable-line
+  svgAttrs: PropTypes.shape({
+    'aria-label': PropTypes.string,
+    'aria-labelledby': PropTypes.string,
+  }),
   // eslint-disable-next-line max-len
   /** the `id` property of the Icon element, by default this value is generated with the `newId` function with the `prefix` of `Icon`. */
   id: PropTypes.string,

@@ -11,9 +11,11 @@ describe('<Button />', () => {
   let button;
 
   beforeEach(() => {
+    const app = document.createElement('div');
+    document.body.appendChild(app);
     wrapper = mount(<Button
       {...defaultProps}
-    />);
+    />, { attachTo: app });
 
     button = wrapper.find('button');
   });

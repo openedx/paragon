@@ -55,7 +55,10 @@ describe('<Dropdown />', () => {
   });
 
   describe('Mouse Interactions', () => {
-    const wrapper = mount(<Dropdown>{menuContent}</Dropdown>);
+    const app = document.createElement('div');
+    document.body.appendChild(app);
+
+    const wrapper = mount(<Dropdown>{menuContent}</Dropdown>, { attachTo: app });
     const menuTrigger = wrapper.find('button');
     const menuContainer = wrapper.find('.dropdown-menu');
     const menuItems = wrapper.find('.dropdown-menu a');
@@ -94,7 +97,10 @@ describe('<Dropdown />', () => {
 
   describe('Keyboard Interactions', () => {
     // Note: menuContent has three items
-    const wrapper = mount(<Dropdown>{menuContent}</Dropdown>);
+    const app = document.createElement('div');
+    document.body.appendChild(app);
+
+    const wrapper = mount(<Dropdown>{menuContent}</Dropdown>, { attachTo: app });
     const menuTrigger = wrapper.find('button');
     const menuContainer = wrapper.find('.dropdown-menu');
     const menuItems = wrapper.find('.dropdown-menu a');
