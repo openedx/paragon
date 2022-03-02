@@ -12,12 +12,14 @@ const SearchFieldClearButton = (props) => {
   }
 
   const handleClick = () => {
-    refs.input.current?.focus();
+    if (refs.input.current) {
+      refs.input.current.focus();
+    }
   };
 
   return (
     // eslint-disable-next-line react/button-has-type
-    <button type="reset" className="btn" {...props} disabled={disabled} onClick={handleClick}>
+    <button type="reset" className="btn" disabled={disabled} onClick={handleClick} {...props}>
       {icons.clear}
       <span className="sr-only">{screenReaderText.clearButton}</span>
     </button>

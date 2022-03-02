@@ -25,7 +25,7 @@ ModalDialogHeroBackground.propTypes = {
   backgroundSrc: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.object, // eslint-disable-line
+  style: PropTypes.shape({}),
 };
 
 ModalDialogHeroBackground.defaultProps = {

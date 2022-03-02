@@ -172,7 +172,7 @@ Table.propTypes = {
 6. `width` (string; conditionally required) only if `hasFixedColumnWidths` is set to `true`, the `<td>` elements' `class` attributes will be set to this value. This allows restricting columns to specific widths. See [Bootstrap's grid documentation](https://getbootstrap.com/docs/4.0/layout/grid/) for `col` class names that can be used.
 
 The order of objects in `columns` specifies the order of the columns in the table. */
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  data: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   /** specifies the order and contents of the table's columns and provides display strings for each column's heading. It is composed of an ordered array of objects. Each object contains the following keys:
 
 1. `label` (string or element; required) contains the display string for each column's heading.
