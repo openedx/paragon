@@ -1,5 +1,5 @@
 {
-  "lastModified": 1646143753899,
+  "lastModified": 1646230122585,
   "projectUsages": [
     {
       "version": "16.24.0",
@@ -1700,13 +1700,13 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
-            "line": 27,
+            "line": 29,
             "column": 8,
             "version": "19.4.2"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
-            "line": 30,
+            "line": 32,
             "column": 8,
             "version": "19.4.2"
           },
@@ -2978,7 +2978,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
-            "line": 26,
+            "line": 28,
             "column": 6,
             "version": "19.4.2"
           },
@@ -3124,7 +3124,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
-            "line": 11,
+            "line": 13,
             "column": 2,
             "version": "19.4.2"
           },
@@ -3162,7 +3162,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
-            "line": 17,
+            "line": 19,
             "column": 4,
             "version": "19.4.2"
           },
@@ -3194,7 +3194,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
-            "line": 18,
+            "line": 20,
             "column": 6,
             "version": "19.4.2"
           },
@@ -3226,7 +3226,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
-            "line": 22,
+            "line": 24,
             "column": 4,
             "version": "19.4.2"
           },
@@ -3278,7 +3278,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
-            "line": 25,
+            "line": 27,
             "column": 4,
             "version": "19.4.2"
           },
@@ -3473,6 +3473,18 @@
             "version": "19.4.2"
           },
           {
+            "filePath": "src/components/subsidy-request-management-alerts/NoAvailableCodesBanner.jsx",
+            "line": 27,
+            "column": 4,
+            "version": "19.4.2"
+          },
+          {
+            "filePath": "src/components/subsidy-request-management-alerts/NoAvailableLicensesBanner.jsx",
+            "line": 23,
+            "column": 4,
+            "version": "19.4.2"
+          },
+          {
             "filePath": "src/components/UserActivationPage/index.jsx",
             "line": 64,
             "column": 10,
@@ -3543,6 +3555,18 @@
           {
             "filePath": "src/components/subscriptions/expiration/SubscriptionExpirationBanner.jsx",
             "line": 59,
+            "column": 6,
+            "version": "19.4.2"
+          },
+          {
+            "filePath": "src/components/subsidy-request-management-alerts/NoAvailableCodesBanner.jsx",
+            "line": 36,
+            "column": 6,
+            "version": "19.4.2"
+          },
+          {
+            "filePath": "src/components/subsidy-request-management-alerts/NoAvailableLicensesBanner.jsx",
+            "line": 32,
             "column": 6,
             "version": "19.4.2"
           }
@@ -8241,22 +8265,6 @@
             "version": "16.19.0"
           }
         ],
-        "SelectMenu": [
-          {
-            "filePath": "src/components/SelectableDropdown.jsx",
-            "line": 12,
-            "column": 4,
-            "version": "16.19.0"
-          }
-        ],
-        "MenuItem": [
-          {
-            "filePath": "src/components/SelectableDropdown.jsx",
-            "line": 15,
-            "column": 10,
-            "version": "16.19.0"
-          }
-        ],
         "Button": [
           {
             "filePath": "src/discussions/comments/comment/Comment.jsx",
@@ -8290,7 +8298,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
-            "line": 51,
+            "line": 52,
             "column": 6,
             "version": "16.19.0"
           },
@@ -8310,7 +8318,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 212,
+            "line": 215,
             "column": 8,
             "version": "16.19.0"
           },
@@ -8376,13 +8384,13 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 151,
+            "line": 152,
             "column": 8,
             "version": "16.19.0"
           },
           {
             "filePath": "src/discussions/posts/PostsView.jsx",
-            "line": 87,
+            "line": 125,
             "column": 12,
             "version": "16.19.0"
           }
@@ -8396,7 +8404,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
-            "line": 61,
+            "line": 63,
             "column": 10,
             "version": "16.19.0"
           },
@@ -8438,50 +8446,14 @@
           },
           {
             "filePath": "src/discussions/navigation/breadcrumb-menu/BreadcrumbDropdown.jsx",
-            "line": 26,
+            "line": 27,
             "column": 6,
             "version": "16.19.0"
           },
           {
             "filePath": "src/discussions/navigation/breadcrumb-menu/BreadcrumbDropdown.jsx",
-            "line": 35,
-            "column": 8,
-            "version": "16.19.0"
-          },
-          {
-            "filePath": "src/discussions/navigation/breadcrumb-menu/BreadcrumbMenu.jsx",
-            "line": 31,
-            "column": 8,
-            "version": "16.19.0"
-          },
-          {
-            "filePath": "src/discussions/navigation/breadcrumb-menu/BreadcrumbMenu.jsx",
             "line": 37,
-            "column": 12,
-            "version": "16.19.0"
-          },
-          {
-            "filePath": "src/discussions/navigation/breadcrumb-menu/BreadcrumbMenu.jsx",
-            "line": 52,
-            "column": 14,
-            "version": "16.19.0"
-          },
-          {
-            "filePath": "src/discussions/navigation/breadcrumb-menu/BreadcrumbMenu.jsx",
-            "line": 58,
-            "column": 18,
-            "version": "16.19.0"
-          },
-          {
-            "filePath": "src/discussions/navigation/breadcrumb-menu/BreadcrumbMenu.jsx",
-            "line": 75,
-            "column": 14,
-            "version": "16.19.0"
-          },
-          {
-            "filePath": "src/discussions/navigation/breadcrumb-menu/BreadcrumbMenu.jsx",
-            "line": 81,
-            "column": 18,
+            "column": 8,
             "version": "16.19.0"
           }
         ],
@@ -8536,13 +8508,13 @@
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
-            "line": 72,
-            "column": 14,
+            "line": 80,
+            "column": 18,
             "version": "16.19.0"
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
-            "line": 95,
+            "line": 106,
             "column": 14,
             "version": "16.19.0"
           },
@@ -8600,7 +8572,7 @@
           },
           {
             "filePath": "src/discussions/posts/post/Post.jsx",
-            "line": 65,
+            "line": 70,
             "column": 10,
             "version": "16.19.0"
           }
@@ -8664,26 +8636,8 @@
         "DropdownButton": [
           {
             "filePath": "src/discussions/navigation/breadcrumb-menu/BreadcrumbDropdown.jsx",
-            "line": 22,
+            "line": 23,
             "column": 4,
-            "version": "16.19.0"
-          },
-          {
-            "filePath": "src/discussions/navigation/breadcrumb-menu/BreadcrumbMenu.jsx",
-            "line": 26,
-            "column": 6,
-            "version": "16.19.0"
-          },
-          {
-            "filePath": "src/discussions/navigation/breadcrumb-menu/BreadcrumbMenu.jsx",
-            "line": 47,
-            "column": 12,
-            "version": "16.19.0"
-          },
-          {
-            "filePath": "src/discussions/navigation/breadcrumb-menu/BreadcrumbMenu.jsx",
-            "line": 70,
-            "column": 12,
             "version": "16.19.0"
           }
         ],
@@ -8766,7 +8720,7 @@
         "Form.RadioSet": [
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 218,
+            "line": 221,
             "column": 10,
             "version": "16.19.0"
           },
@@ -8792,7 +8746,7 @@
         "Form.Group": [
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 242,
+            "line": 245,
             "column": 12,
             "version": "16.19.0"
           },
@@ -8830,7 +8784,7 @@
         "Form.Control": [
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 243,
+            "line": 246,
             "column": 14,
             "version": "16.19.0"
           },
@@ -8890,7 +8844,13 @@
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
-            "line": 88,
+            "line": 73,
+            "column": 16,
+            "version": "16.19.0"
+          },
+          {
+            "filePath": "src/discussions/posts/post/PostFooter.jsx",
+            "line": 99,
             "column": 12,
             "version": "16.19.0"
           }
@@ -8910,7 +8870,13 @@
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
-            "line": 90,
+            "line": 75,
+            "column": 20,
+            "version": "16.19.0"
+          },
+          {
+            "filePath": "src/discussions/posts/post/PostFooter.jsx",
+            "line": 101,
             "column": 16,
             "version": "16.19.0"
           }
@@ -9909,6 +9875,86 @@
       },
       "folderName": "frontend-app-learner-portal-enterprise",
       "usages": {
+        "Hyperlink": [
+          {
+            "filePath": "src/components/app/AuthenticatedPage.jsx",
+            "line": 40,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/course/CourseAssociatedPrograms.jsx",
+            "line": 35,
+            "column": 14,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/course/CourseMainContent.jsx",
+            "line": 76,
+            "column": 16,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/course/CourseSidebar.jsx",
+            "line": 73,
+            "column": 16,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/course/CourseSidebar.jsx",
+            "line": 97,
+            "column": 14,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/course/CreatedBy.jsx",
+            "line": 38,
+            "column": 14,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/course/CreatedBy.jsx",
+            "line": 56,
+            "column": 16,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/dashboard/sidebar/SupportInformation.jsx",
+            "line": 38,
+            "column": 8,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/enterprise-invite/EnterpriseInvitePage.jsx",
+            "line": 74,
+            "column": 12,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/enterprise-invite/EnterpriseInvitePage.jsx",
+            "line": 81,
+            "column": 12,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/program/ProgramCourses.jsx",
+            "line": 73,
+            "column": 20,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/program/ProgramInstructors.jsx",
+            "line": 25,
+            "column": 12,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/program/ProgramInstructors.jsx",
+            "line": 81,
+            "column": 14,
+            "version": "17.5.0"
+          }
+        ],
         "Container": [
           {
             "filePath": "src/components/app/LoginRefresh.jsx",
@@ -10002,13 +10048,13 @@
           },
           {
             "filePath": "src/components/error-page/ErrorPage.jsx",
-            "line": 23,
+            "line": 24,
             "column": 6,
             "version": "17.5.0"
           },
           {
             "filePath": "src/components/error-page/ErrorPageHeader.jsx",
-            "line": 24,
+            "line": 27,
             "column": 8,
             "version": "17.5.0"
           },
@@ -10215,80 +10261,6 @@
             "version": "17.5.0"
           }
         ],
-        "Hyperlink": [
-          {
-            "filePath": "src/components/course/CourseAssociatedPrograms.jsx",
-            "line": 35,
-            "column": 14,
-            "version": "17.5.0"
-          },
-          {
-            "filePath": "src/components/course/CourseMainContent.jsx",
-            "line": 76,
-            "column": 16,
-            "version": "17.5.0"
-          },
-          {
-            "filePath": "src/components/course/CourseSidebar.jsx",
-            "line": 73,
-            "column": 16,
-            "version": "17.5.0"
-          },
-          {
-            "filePath": "src/components/course/CourseSidebar.jsx",
-            "line": 97,
-            "column": 14,
-            "version": "17.5.0"
-          },
-          {
-            "filePath": "src/components/course/CreatedBy.jsx",
-            "line": 38,
-            "column": 14,
-            "version": "17.5.0"
-          },
-          {
-            "filePath": "src/components/course/CreatedBy.jsx",
-            "line": 56,
-            "column": 16,
-            "version": "17.5.0"
-          },
-          {
-            "filePath": "src/components/dashboard/sidebar/SupportInformation.jsx",
-            "line": 38,
-            "column": 8,
-            "version": "17.5.0"
-          },
-          {
-            "filePath": "src/components/enterprise-invite/EnterpriseInvitePage.jsx",
-            "line": 74,
-            "column": 12,
-            "version": "17.5.0"
-          },
-          {
-            "filePath": "src/components/enterprise-invite/EnterpriseInvitePage.jsx",
-            "line": 81,
-            "column": 12,
-            "version": "17.5.0"
-          },
-          {
-            "filePath": "src/components/program/ProgramCourses.jsx",
-            "line": 73,
-            "column": 20,
-            "version": "17.5.0"
-          },
-          {
-            "filePath": "src/components/program/ProgramInstructors.jsx",
-            "line": 25,
-            "column": 12,
-            "version": "17.5.0"
-          },
-          {
-            "filePath": "src/components/program/ProgramInstructors.jsx",
-            "line": 81,
-            "column": 14,
-            "version": "17.5.0"
-          }
-        ],
         "Alert": [
           {
             "filePath": "src/components/course/CourseEnrollmentFailedAlert.jsx",
@@ -10378,7 +10350,7 @@
           },
           {
             "filePath": "src/components/error-page/ErrorPage.jsx",
-            "line": 24,
+            "line": 25,
             "column": 8,
             "version": "17.5.0"
           },
@@ -10788,8 +10760,8 @@
           },
           {
             "filePath": "src/components/error-page/ErrorPageHeader.jsx",
-            "line": 36,
-            "column": 12,
+            "line": 41,
+            "column": 14,
             "version": "17.5.0"
           },
           {
@@ -10800,7 +10772,7 @@
           },
           {
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
-            "line": 19,
+            "line": 27,
             "column": 4,
             "version": "17.5.0"
           },
@@ -10820,8 +10792,8 @@
           },
           {
             "filePath": "src/components/error-page/ErrorPageHeader.jsx",
-            "line": 37,
-            "column": 14,
+            "line": 42,
+            "column": 16,
             "version": "17.5.0"
           },
           {
@@ -10832,7 +10804,7 @@
           },
           {
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
-            "line": 20,
+            "line": 28,
             "column": 6,
             "version": "17.5.0"
           },
@@ -10852,8 +10824,8 @@
           },
           {
             "filePath": "src/components/error-page/ErrorPageHeader.jsx",
-            "line": 40,
-            "column": 14,
+            "line": 45,
+            "column": 16,
             "version": "17.5.0"
           },
           {
@@ -10864,7 +10836,7 @@
           },
           {
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
-            "line": 23,
+            "line": 31,
             "column": 6,
             "version": "17.5.0"
           },
@@ -10884,8 +10856,8 @@
           },
           {
             "filePath": "src/components/error-page/ErrorPageHeader.jsx",
-            "line": 44,
-            "column": 16,
+            "line": 49,
+            "column": 18,
             "version": "17.5.0"
           },
           {
@@ -10902,37 +10874,37 @@
           },
           {
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
-            "line": 28,
+            "line": 36,
             "column": 8,
             "version": "17.5.0"
           },
           {
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
-            "line": 30,
+            "line": 38,
             "column": 8,
             "version": "17.5.0"
           },
           {
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
-            "line": 42,
+            "line": 50,
             "column": 8,
             "version": "17.5.0"
           },
           {
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
-            "line": 43,
+            "line": 51,
             "column": 8,
             "version": "17.5.0"
           },
           {
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
-            "line": 44,
+            "line": 52,
             "column": 8,
             "version": "17.5.0"
           },
           {
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
-            "line": 46,
+            "line": 54,
             "column": 8,
             "version": "17.5.0"
           },
@@ -11156,7 +11128,7 @@
         "Navbar": [
           {
             "filePath": "src/components/error-page/ErrorPageHeader.jsx",
-            "line": 23,
+            "line": 26,
             "column": 6,
             "version": "17.5.0"
           }
@@ -11164,7 +11136,7 @@
         "Navbar.Brand": [
           {
             "filePath": "src/components/error-page/ErrorPageHeader.jsx",
-            "line": 25,
+            "line": 28,
             "column": 10,
             "version": "17.5.0"
           }
@@ -11436,7 +11408,7 @@
         "Dropdown.Header": [
           {
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
-            "line": 27,
+            "line": 35,
             "column": 8,
             "version": "17.5.0"
           }
@@ -11444,13 +11416,13 @@
         "Dropdown.Divider": [
           {
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
-            "line": 41,
+            "line": 49,
             "column": 8,
             "version": "17.5.0"
           },
           {
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
-            "line": 45,
+            "line": 53,
             "column": 8,
             "version": "17.5.0"
           }
@@ -17648,8 +17620,8 @@
             "version": "16.22.0"
           },
           {
-            "filePath": "src/editors/containers/TextEditor/ImageUpload/ImageUploadModal.jsx",
-            "line": 30,
+            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
+            "line": 33,
             "column": 4,
             "version": "16.22.0"
           }
@@ -17663,13 +17635,13 @@
           },
           {
             "filePath": "src/editors/components/EditorHeader/index.jsx",
-            "line": 18,
+            "line": 20,
             "column": 6,
             "version": "16.22.0"
           },
           {
-            "filePath": "src/editors/containers/TextEditor/ImageUpload/ImageUploadModal.jsx",
-            "line": 31,
+            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
+            "line": 34,
             "column": 6,
             "version": "16.22.0"
           }
@@ -17683,7 +17655,7 @@
           },
           {
             "filePath": "src/editors/components/EditorHeader/index.jsx",
-            "line": 20,
+            "line": 22,
             "column": 8,
             "version": "16.22.0"
           }
@@ -17702,9 +17674,21 @@
             "version": "16.22.0"
           },
           {
-            "filePath": "src/editors/containers/TextEditor/ImageUpload/ImageUploadModal.jsx",
-            "line": 35,
+            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/index.jsx",
+            "line": 83,
             "column": 8,
+            "version": "16.22.0"
+          },
+          {
+            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/index.jsx",
+            "line": 88,
+            "column": 6,
+            "version": "16.22.0"
+          },
+          {
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal.jsx",
+            "line": 39,
+            "column": 21,
             "version": "16.22.0"
           }
         ],
@@ -17728,6 +17712,18 @@
             "line": 14,
             "column": 2,
             "version": "16.22.0"
+          },
+          {
+            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/index.jsx",
+            "line": 99,
+            "column": 8,
+            "version": "16.22.0"
+          },
+          {
+            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/index.jsx",
+            "line": 117,
+            "column": 6,
+            "version": "16.22.0"
           }
         ],
         "Form.Control": [
@@ -17735,6 +17731,24 @@
             "filePath": "src/editors/components/EditorHeader/EditableHeader.jsx",
             "line": 15,
             "column": 4,
+            "version": "16.22.0"
+          },
+          {
+            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/index.jsx",
+            "line": 101,
+            "column": 10,
+            "version": "16.22.0"
+          },
+          {
+            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/index.jsx",
+            "line": 108,
+            "column": 10,
+            "version": "16.22.0"
+          },
+          {
+            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/index.jsx",
+            "line": 119,
+            "column": 8,
             "version": "16.22.0"
           }
         ],
@@ -17761,7 +17775,7 @@
           },
           {
             "filePath": "src/editors/components/EditorHeader/index.jsx",
-            "line": 21,
+            "line": 23,
             "column": 8,
             "version": "16.22.0"
           }
@@ -17769,13 +17783,13 @@
         "ModalDialog.Header": [
           {
             "filePath": "src/editors/components/EditorHeader/index.jsx",
-            "line": 17,
+            "line": 19,
             "column": 4,
             "version": "16.22.0"
           },
           {
-            "filePath": "src/editors/containers/TextEditor/ImageUpload/ImageUploadModal.jsx",
-            "line": 15,
+            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
+            "line": 25,
             "column": 4,
             "version": "16.22.0"
           }
@@ -17783,37 +17797,73 @@
         "ModalDialog.Title": [
           {
             "filePath": "src/editors/components/EditorHeader/index.jsx",
-            "line": 19,
+            "line": 21,
             "column": 8,
             "version": "16.22.0"
           },
           {
-            "filePath": "src/editors/containers/TextEditor/ImageUpload/ImageUploadModal.jsx",
-            "line": 16,
+            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
+            "line": 26,
             "column": 6,
             "version": "16.22.0"
           }
         ],
         "ModalDialog": [
           {
-            "filePath": "src/editors/containers/TextEditor/ImageUpload/ImageUploadModal.jsx",
-            "line": 6,
+            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
+            "line": 16,
             "column": 2,
             "version": "16.22.0"
           }
         ],
         "ModalDialog.Body": [
           {
-            "filePath": "src/editors/containers/TextEditor/ImageUpload/ImageUploadModal.jsx",
-            "line": 20,
+            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
+            "line": 30,
             "column": 4,
             "version": "16.22.0"
           }
         ],
         "ModalDialog.CloseButton": [
           {
-            "filePath": "src/editors/containers/TextEditor/ImageUpload/ImageUploadModal.jsx",
-            "line": 32,
+            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
+            "line": 35,
+            "column": 8,
+            "version": "16.22.0"
+          }
+        ],
+        "Image": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/index.jsx",
+            "line": 92,
+            "column": 6,
+            "version": "16.22.0"
+          },
+          {
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal.jsx",
+            "line": 45,
+            "column": 12,
+            "version": "16.22.0"
+          }
+        ],
+        "Form.Label": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/index.jsx",
+            "line": 100,
+            "column": 10,
+            "version": "16.22.0"
+          },
+          {
+            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/index.jsx",
+            "line": 118,
+            "column": 8,
+            "version": "16.22.0"
+          }
+        ],
+        "Form.Checkbox": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/index.jsx",
+            "line": 126,
             "column": 8,
             "version": "16.22.0"
           }
