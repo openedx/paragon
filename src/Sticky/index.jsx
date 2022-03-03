@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -7,44 +7,47 @@ const POSITION_VARIANTS = [
   'bottom',
 ];
 
-const Sticky = ({
+const Sticky = React.forwardRef(({
   position,
   children,
   offset,
   className,
-  style,
-}) => {
+  ...rest
+}, ref) => {
   const [isSticky, setIsSticky] = useState(false);
-  const ref = useRef();
+  const defaultRef = React.useRef();
+  const resolvedRef = ref || defaultRef;
 
-  useEffect(() => {
-    // getComputedStyle is used to get real top/bottom
-    // values on the page for proper shadows display
-    const elementStyles = window.getComputedStyle(ref.current);
-    const elementOffset = elementStyles[position || 'top'];
-    // Margin calculations according to the offset.
-    // 1 pixel above/bellow + offset pixels that determines
-    // when callback function is called
-    const elementWithOffset = 1 + (parseInt(elementOffset, 10) || 0);
-    const observer = new IntersectionObserver(
-      ([entry]) => setIsSticky(entry.intersectionRatio < 1),
-      {
-        threshold: [1],
-        rootMargin: position === 'bottom'
-          ? `0px 0px -${elementWithOffset}px 0px`
-          : `-${elementWithOffset}px 0px 0px 0px`,
-      },
-    );
-    observer.observe(ref.current);
+  // eslint-disable-next-line consistent-return
+  useLayoutEffect(() => {
+    if (resolvedRef.current) {
+      // getComputedStyle is used to get real top/bottom
+      // values on the page for proper shadows display
+      const elementStyles = window.getComputedStyle(resolvedRef.current);
+      const elementOffset = elementStyles[position || 'top'];
+      // Margin calculations according to the offset.
+      // 1 pixel above/bellow + offset pixels that determines
+      // when callback function is called
+      const elementWithOffset = 1 + (parseInt(elementOffset, 10) || 0);
+      const observer = new IntersectionObserver(
+        ([entry]) => setIsSticky(entry.intersectionRatio < 1),
+        {
+          threshold: [1],
+          rootMargin: position === 'bottom'
+            ? `0px 0px -${elementWithOffset}px 0px`
+            : `-${elementWithOffset}px 0px 0px 0px`,
+        },
+      );
+      observer.observe(resolvedRef.current);
 
-    return () => {
-      observer.unobserve(ref.current);
-    };
+      return () => {
+        observer.unobserve(resolvedRef.current);
+      };
+    }
   }, []);
 
   return (
     <div
-      style={style}
       className={classNames(
         'pgn__sticky',
         `pgn__sticky-${position || 'top'}`,
@@ -52,12 +55,13 @@ const Sticky = ({
         { 'pgn__sticky-shadow': isSticky },
         className,
       )}
-      ref={ref}
+      ref={resolvedRef}
+      {...rest}
     >
       {children}
     </div>
   );
-};
+});
 
 Sticky.propTypes = {
   /** Specifies content of the component. */
@@ -73,15 +77,12 @@ Sticky.propTypes = {
   offset: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   /** Specifies an additional `className` to add to the base element. */
   className: PropTypes.string,
-  /** Specifies styles for the base element. */
-  style: PropTypes.object, // eslint-disable-line
 };
 
 Sticky.defaultProps = {
   position: 'top',
   offset: undefined,
   className: undefined,
-  style: {},
 };
 
 export default Sticky;
