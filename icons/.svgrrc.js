@@ -15,8 +15,15 @@ module.exports = {
     return exportEntries.join('\n')
   },
   svgoConfig: {
-    plugins: {
-      removeViewBox: false,
-    },
+    plugins: [
+      {
+        name: 'preset-default',
+        params: {
+          overrides: {
+            removeViewBox: false,
+          },
+        },
+      },
+    ],
   },
 };
