@@ -29,7 +29,6 @@ const SelectMenu = ({
     return undefined;
   }
   const [selected, setSelected] = useState(defaultIndex());
-
   const [isOpen, open, close] = useToggle(false);
   const [vertOffset, setOffset] = useState(0);
 
@@ -60,6 +59,7 @@ const SelectMenu = ({
 
   const link = isLink; // allow inline link styling
   const prevOpenRef = React.useRef();
+
   useEffect(() => {
     // logic to always center the selected item.
     if (isOpen && selected) {
@@ -103,7 +103,7 @@ const SelectMenu = ({
       itemsCollection[selected].current.children[0].focus({ preventScroll: (defaultIndex() === selected) });
     }
     prevOpenRef.current = isOpen;
-  });
+  }, []);
 
   return React.createElement(
     className,
@@ -120,7 +120,8 @@ const SelectMenu = ({
         variant={link ? 'link' : 'tertiary'}
         iconAfter={link ? undefined : ExpandMore}
         onClick={open}
-      >{ selected !== defaultIndex() ? children[selected].props.children : defaultMessage}
+      >
+        {selected !== undefined && children[selected] ? children[selected].props.children : defaultMessage}
       </Button>
       <div className="pgn__menu-select-popup">
         <ModalPopup
