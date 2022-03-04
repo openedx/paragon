@@ -34,20 +34,20 @@ const SelectMenu = ({
 
   const createMenuItems = () => {
     const elements = [];
-    React.Children.map(children, (child) => {
+    React.Children.map(children, (child, index) => {
       const newProps = {
         onClick(e) {
           if (child.props.onClick) {
             child.props.onClick(e);
           }
-          setSelected(children.indexOf(child));
+          setSelected(index);
           close();
           triggerTarget.current.focus();
         },
-        id: `${children.indexOf(child).toString()}_pgn__menu-item`,
+        id: `${index.toString()}_pgn__menu-item`,
         role: 'link',
       };
-      if (selected === children.indexOf(child)) {
+      if (selected === index) {
         newProps['aria-current'] = 'page';
       }
       elements.push(

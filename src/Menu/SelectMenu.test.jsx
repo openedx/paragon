@@ -26,25 +26,26 @@ const selectMenu = mount((
   </SelectMenu>
 ), { attachTo: app });
 
+const DefaultSelectMenu = (props) => (
+  <SelectMenu {...props}><MenuItem>A Menu Item</MenuItem></SelectMenu>
+);
 const menuTrigger = selectMenu.find(Button);
 
 const menuOpen = (isOpen, wrapper) => {
   expect(wrapper.find(Button).prop('aria-expanded')).toEqual(isOpen);
 };
 
-describe('Rendering Beahvior', () => {
+describe('Rendering behavior', () => {
   it('Renders as expected', () => {
-    const tree = renderer
-      .create(<SelectMenu> <MenuItem> A Menu Item</MenuItem></SelectMenu>)
-      .toJSON();
+    const tree = renderer.create(<DefaultSelectMenu />).toJSON();
     expect(tree).toMatchSnapshot();
   });
   it('Renders with a default message you set', () => {
-    const wrapper = mount((<SelectMenu defaultMessage="Pick Me"> <MenuItem> A Menu Item</MenuItem></SelectMenu>));
-    expect(wrapper.find(Button).text() === 'Pick Me').toBe(true);
+    const wrapper = mount(<DefaultSelectMenu defaultMessage="Pick Me" />);
+    expect(wrapper.find(Button).text()).toEqual('Pick Me');
   });
   it('Renders with a button as link', () => {
-    const wrapper = mount((<SelectMenu isLink> <MenuItem> A Menu Item</MenuItem></SelectMenu>));
+    const wrapper = mount(<DefaultSelectMenu isLink />);
     expect(wrapper.find(Button).prop('variant')).toEqual('link');
   });
 });
