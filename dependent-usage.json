@@ -1,5 +1,5 @@
 {
-  "lastModified": 1646402940504,
+  "lastModified": 1646489319019,
   "projectUsages": [
     {
       "version": "16.24.0",
@@ -1825,6 +1825,12 @@
             "version": "19.4.2"
           },
           {
+            "filePath": "src/components/subscriptions/licenses/NewFeatureAlertBrowseAndRequest.jsx",
+            "line": 60,
+            "column": 8,
+            "version": "19.4.2"
+          },
+          {
             "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
             "line": 61,
             "column": 6,
@@ -3608,6 +3614,12 @@
             "filePath": "src/components/subscriptions/licenses/LicenseManagementModals/LicenseManagementRevokeModal.jsx",
             "line": 161,
             "column": 12,
+            "version": "19.4.2"
+          },
+          {
+            "filePath": "src/components/subscriptions/licenses/NewFeatureAlertBrowseAndRequest.jsx",
+            "line": 55,
+            "column": 4,
             "version": "19.4.2"
           },
           {
@@ -9380,7 +9392,7 @@
           },
           {
             "filePath": "src/components/catalogSearchResults/buttons/downloadCsvButton/DownloadCsvButton.jsx",
-            "line": 49,
+            "line": 40,
             "column": 6,
             "version": "17.3.0"
           },
@@ -9520,7 +9532,7 @@
         "Toast": [
           {
             "filePath": "src/components/catalogSearchResults/buttons/downloadCsvButton/DownloadCsvButton.jsx",
-            "line": 45,
+            "line": 36,
             "column": 7,
             "version": "17.3.0"
           }
@@ -16795,6 +16807,12 @@
             "line": 22,
             "column": 8,
             "version": "12.8.0"
+          },
+          {
+            "filePath": "src/users/v2/VerifiedName.jsx",
+            "line": 55,
+            "column": 10,
+            "version": "12.8.0"
           }
         ],
         "Dropdown": [
@@ -17084,7 +17102,7 @@
           },
           {
             "filePath": "src/users/v2/VerifiedName.jsx",
-            "line": 115,
+            "line": 149,
             "column": 6,
             "version": "12.8.0"
           }
@@ -17282,7 +17300,7 @@
           },
           {
             "filePath": "src/users/v2/VerifiedName.jsx",
-            "line": 101,
+            "line": 135,
             "column": 6,
             "version": "12.8.0"
           }
@@ -17309,6 +17327,38 @@
           {
             "filePath": "src/users/v2/SingleSignOnRecordCard.jsx",
             "line": 55,
+            "column": 14,
+            "version": "12.8.0"
+          }
+        ],
+        "OverlayTrigger": [
+          {
+            "filePath": "src/users/v2/VerifiedName.jsx",
+            "line": 43,
+            "column": 8,
+            "version": "12.8.0"
+          }
+        ],
+        "Popover": [
+          {
+            "filePath": "src/users/v2/VerifiedName.jsx",
+            "line": 47,
+            "column": 12,
+            "version": "12.8.0"
+          }
+        ],
+        "Popover.Title": [
+          {
+            "filePath": "src/users/v2/VerifiedName.jsx",
+            "line": 48,
+            "column": 14,
+            "version": "12.8.0"
+          }
+        ],
+        "Popover.Content": [
+          {
+            "filePath": "src/users/v2/VerifiedName.jsx",
+            "line": 49,
             "column": 14,
             "version": "12.8.0"
           }
@@ -19078,7 +19128,7 @@
           },
           {
             "filePath": "src/components/Overlays/SaveForLaterOverlay.jsx",
-            "line": 293,
+            "line": 291,
             "column": 14,
             "version": "19.4.2"
           },
@@ -19340,7 +19390,7 @@
           },
           {
             "filePath": "src/components/Program/ProgramDataBar.jsx",
-            "line": 121,
+            "line": 135,
             "column": 10,
             "version": "19.4.2"
           },
@@ -19520,7 +19570,7 @@
           },
           {
             "filePath": "src/templates/search/preQuery.jsx",
-            "line": 82,
+            "line": 83,
             "column": 8,
             "version": "19.4.2"
           }
@@ -19590,7 +19640,7 @@
           },
           {
             "filePath": "src/components/Overlays/SaveForLaterOverlay.jsx",
-            "line": 273,
+            "line": 270,
             "column": 6,
             "version": "19.4.2"
           },
@@ -19887,6 +19937,30 @@
             "version": "19.4.2"
           }
         ],
+        "MarketingModal": [
+          {
+            "filePath": "src/components/MarketingModal/SaveForLaterModal.jsx",
+            "line": 50,
+            "column": 6,
+            "version": "19.4.2"
+          }
+        ],
+        "ModalDialog.Hero": [
+          {
+            "filePath": "src/components/MarketingModal/SaveForLaterModal.jsx",
+            "line": 56,
+            "column": 10,
+            "version": "19.4.2"
+          }
+        ],
+        "ModalDialog.Title": [
+          {
+            "filePath": "src/components/MarketingModal/SaveForLaterModal.jsx",
+            "line": 61,
+            "column": 14,
+            "version": "19.4.2"
+          }
+        ],
         "Modal": [
           {
             "filePath": "src/components/MemberList/index.jsx",
@@ -19940,7 +20014,7 @@
         "Toast": [
           {
             "filePath": "src/components/Overlays/SaveForLaterOverlay.jsx",
-            "line": 266,
+            "line": 263,
             "column": 8,
             "version": "19.4.2"
           }
@@ -19948,7 +20022,7 @@
         "Popover": [
           {
             "filePath": "src/components/Overlays/SaveForLaterOverlay.jsx",
-            "line": 277,
+            "line": 274,
             "column": 10,
             "version": "19.4.2"
           }
