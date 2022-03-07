@@ -10,7 +10,7 @@ const app = document.createElement('div');
 document.body.appendChild(app);
 const selectMenu = mount((
   <SelectMenu>
-    <MenuItem> A Menu Item</MenuItem>
+    <MenuItem>A Menu Item</MenuItem>
     <MenuItem iconBefore={Add}>A Menu Item With an Icon Before</MenuItem>
     <MenuItem iconAfter={Check}>A Menu Item With an Icon After </MenuItem>
     <MenuItem disabled>A Disabled Menu Item</MenuItem>

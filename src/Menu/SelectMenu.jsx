@@ -103,7 +103,7 @@ const SelectMenu = ({
       itemsCollection[selected].current.children[0].focus({ preventScroll: (defaultIndex() === selected) });
     }
     prevOpenRef.current = isOpen;
-  }, []);
+  }, [isOpen]);
 
   return React.createElement(
     className,
@@ -147,7 +147,7 @@ const SelectMenu = ({
         >
           <Menu aria-label="Select Menu">
             {createMenuItems().map((child, index) => (
-              <div ref={itemsCollection[index]}>
+              <div key={child.props.id} ref={itemsCollection[index]}>
                 {child}
               </div>
             ))}
