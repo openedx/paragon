@@ -1,5 +1,5 @@
 {
-  "lastModified": 1646575737691,
+  "lastModified": 1646662225942,
   "projectUsages": [
     {
       "version": "16.24.0",
@@ -12266,7 +12266,7 @@
           },
           {
             "filePath": "src/courseware/course/sequence/lock-paywall/LockPaywall.jsx",
-            "line": 62,
+            "line": 63,
             "column": 4,
             "version": "19.6.0"
           },
@@ -12667,15 +12667,21 @@
             "version": "19.6.0"
           },
           {
-            "filePath": "src/courseware/course/NotificationIcon.jsx",
-            "line": 13,
+            "filePath": "src/courseware/course/sidebar/common/SidebarBase.jsx",
+            "line": 53,
+            "column": 10,
+            "version": "19.6.0"
+          },
+          {
+            "filePath": "src/courseware/course/sidebar/sidebars/discussions/DiscussionsTrigger.jsx",
+            "line": 40,
             "column": 6,
             "version": "19.6.0"
           },
           {
-            "filePath": "src/courseware/course/NotificationTray.jsx",
-            "line": 46,
-            "column": 10,
+            "filePath": "src/courseware/course/sidebar/sidebars/notifications/NotificationIcon.jsx",
+            "line": 17,
+            "column": 6,
             "version": "19.6.0"
           },
           {
@@ -12845,9 +12851,9 @@
             "version": "19.6.0"
           },
           {
-            "filePath": "src/courseware/course/NotificationTray.jsx",
-            "line": 56,
-            "column": 14,
+            "filePath": "src/courseware/course/sidebar/common/SidebarBase.jsx",
+            "line": 67,
+            "column": 18,
             "version": "19.6.0"
           }
         ],
@@ -13422,7 +13428,7 @@
         "Modal": [
           {
             "filePath": "src/courseware/course/sequence/Unit.jsx",
-            "line": 205,
+            "line": 191,
             "column": 8,
             "version": "19.6.0"
           }
@@ -16183,6 +16189,18 @@
             "version": "12.8.0"
           },
           {
+            "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
+            "line": 163,
+            "column": 14,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
+            "line": 173,
+            "column": 14,
+            "version": "12.8.0"
+          },
+          {
             "filePath": "src/users/licenses/v2/LicenseCard.jsx",
             "line": 61,
             "column": 10,
@@ -16218,6 +16236,30 @@
             "filePath": "src/FeatureBasedEnrollments/FeatureBasedEnrollment.jsx",
             "line": 49,
             "column": 18,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
+            "line": 164,
+            "column": 16,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
+            "line": 167,
+            "column": 16,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
+            "line": 174,
+            "column": 16,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
+            "line": 177,
+            "column": 16,
             "version": "12.8.0"
           },
           {
@@ -16375,6 +16417,24 @@
             "version": "12.8.0"
           },
           {
+            "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
+            "line": 117,
+            "column": 14,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
+            "line": 130,
+            "column": 14,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
+            "line": 141,
+            "column": 14,
+            "version": "12.8.0"
+          },
+          {
             "filePath": "src/users/account-actions/TogglePasswordStatus.jsx",
             "line": 48,
             "column": 12,
@@ -16529,6 +16589,12 @@
           {
             "filePath": "src/ProgramEnrollments/LinkProgramEnrollments.jsx",
             "line": 76,
+            "column": 10,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
+            "line": 153,
             "column": 10,
             "version": "12.8.0"
           },
@@ -16815,6 +16881,152 @@
             "version": "12.8.0"
           }
         ],
+        "Tabs": [
+          {
+            "filePath": "src/ProgramEnrollments/ProgramEnrollmentsIndexPage.jsx",
+            "line": 20,
+            "column": 6,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/SupportToolsTab/SupportToolsTab.jsx",
+            "line": 45,
+            "column": 8,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/users/v2/LearnerInformation.jsx",
+            "line": 15,
+            "column": 6,
+            "version": "12.8.0"
+          }
+        ],
+        "Tab": [
+          {
+            "filePath": "src/ProgramEnrollments/ProgramEnrollmentsIndexPage.jsx",
+            "line": 21,
+            "column": 8,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/ProgramEnrollments/ProgramEnrollmentsIndexPage.jsx",
+            "line": 25,
+            "column": 8,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/SupportToolsTab/SupportToolsTab.jsx",
+            "line": 55,
+            "column": 10,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/SupportToolsTab/SupportToolsTab.jsx",
+            "line": 60,
+            "column": 10,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/SupportToolsTab/SupportToolsTab.jsx",
+            "line": 67,
+            "column": 10,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/users/v2/LearnerInformation.jsx",
+            "line": 19,
+            "column": 8,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/users/v2/LearnerInformation.jsx",
+            "line": 27,
+            "column": 8,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/users/v2/LearnerInformation.jsx",
+            "line": 32,
+            "column": 8,
+            "version": "12.8.0"
+          }
+        ],
+        "Hyperlink": [
+          {
+            "filePath": "src/ProgramEnrollments/ProgramInspector/EnrollmentDetails.jsx",
+            "line": 38,
+            "column": 18,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/users/entitlements/v2/Entitlements.jsx",
+            "line": 67,
+            "column": 8,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/users/v2/CopyShowHyperLinks.jsx",
+            "line": 10,
+            "column": 6,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/users/v2/CopyShowHyperLinks.jsx",
+            "line": 23,
+            "column": 6,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/users/v2/VerifiedName.jsx",
+            "line": 135,
+            "column": 6,
+            "version": "12.8.0"
+          }
+        ],
+        "Alert": [
+          {
+            "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
+            "line": 109,
+            "column": 8,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
+            "line": 198,
+            "column": 16,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/users/account-actions/v2/ResetPassword.jsx",
+            "line": 29,
+            "column": 19,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/users/account-actions/v2/ResetPassword.jsx",
+            "line": 32,
+            "column": 10,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/users/account-actions/v2/TogglePasswordStatus.jsx",
+            "line": 52,
+            "column": 12,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/users/enrollments/v2/Certificates.jsx",
+            "line": 106,
+            "column": 20,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/users/v2/EnterpriseAssociations.jsx",
+            "line": 40,
+            "column": 16,
+            "version": "12.8.0"
+          }
+        ],
         "Dropdown": [
           {
             "filePath": "src/supportHeader/DesktopHeader.jsx",
@@ -16951,58 +17163,6 @@
             "version": "12.8.0"
           }
         ],
-        "Tabs": [
-          {
-            "filePath": "src/SupportToolsTab/SupportToolsTab.jsx",
-            "line": 45,
-            "column": 8,
-            "version": "12.8.0"
-          },
-          {
-            "filePath": "src/users/v2/LearnerInformation.jsx",
-            "line": 15,
-            "column": 6,
-            "version": "12.8.0"
-          }
-        ],
-        "Tab": [
-          {
-            "filePath": "src/SupportToolsTab/SupportToolsTab.jsx",
-            "line": 55,
-            "column": 10,
-            "version": "12.8.0"
-          },
-          {
-            "filePath": "src/SupportToolsTab/SupportToolsTab.jsx",
-            "line": 60,
-            "column": 10,
-            "version": "12.8.0"
-          },
-          {
-            "filePath": "src/SupportToolsTab/SupportToolsTab.jsx",
-            "line": 67,
-            "column": 10,
-            "version": "12.8.0"
-          },
-          {
-            "filePath": "src/users/v2/LearnerInformation.jsx",
-            "line": 19,
-            "column": 8,
-            "version": "12.8.0"
-          },
-          {
-            "filePath": "src/users/v2/LearnerInformation.jsx",
-            "line": 27,
-            "column": 8,
-            "version": "12.8.0"
-          },
-          {
-            "filePath": "src/users/v2/LearnerInformation.jsx",
-            "line": 32,
-            "column": 8,
-            "version": "12.8.0"
-          }
-        ],
         "Modal": [
           {
             "filePath": "src/users/account-actions/PasswordHistory.jsx",
@@ -17118,38 +17278,6 @@
             "filePath": "src/users/account-actions/v2/PasswordHistory.jsx",
             "line": 63,
             "column": 10,
-            "version": "12.8.0"
-          }
-        ],
-        "Alert": [
-          {
-            "filePath": "src/users/account-actions/v2/ResetPassword.jsx",
-            "line": 29,
-            "column": 19,
-            "version": "12.8.0"
-          },
-          {
-            "filePath": "src/users/account-actions/v2/ResetPassword.jsx",
-            "line": 32,
-            "column": 10,
-            "version": "12.8.0"
-          },
-          {
-            "filePath": "src/users/account-actions/v2/TogglePasswordStatus.jsx",
-            "line": 52,
-            "column": 12,
-            "version": "12.8.0"
-          },
-          {
-            "filePath": "src/users/enrollments/v2/Certificates.jsx",
-            "line": 106,
-            "column": 20,
-            "version": "12.8.0"
-          },
-          {
-            "filePath": "src/users/v2/EnterpriseAssociations.jsx",
-            "line": 40,
-            "column": 16,
             "version": "12.8.0"
           }
         ],
@@ -17275,32 +17403,6 @@
           {
             "filePath": "src/users/licenses/Licenses.jsx",
             "line": 115,
-            "column": 6,
-            "version": "12.8.0"
-          }
-        ],
-        "Hyperlink": [
-          {
-            "filePath": "src/users/entitlements/v2/Entitlements.jsx",
-            "line": 67,
-            "column": 8,
-            "version": "12.8.0"
-          },
-          {
-            "filePath": "src/users/v2/CopyShowHyperLinks.jsx",
-            "line": 10,
-            "column": 6,
-            "version": "12.8.0"
-          },
-          {
-            "filePath": "src/users/v2/CopyShowHyperLinks.jsx",
-            "line": 23,
-            "column": 6,
-            "version": "12.8.0"
-          },
-          {
-            "filePath": "src/users/v2/VerifiedName.jsx",
-            "line": 135,
             "column": 6,
             "version": "12.8.0"
           }
@@ -17594,7 +17696,7 @@
           },
           {
             "filePath": "src/CurrentRefinements.jsx",
-            "line": 105,
+            "line": 107,
             "column": 10,
             "version": "14.5.0"
           },
@@ -17620,13 +17722,13 @@
         "Badge": [
           {
             "filePath": "src/CurrentRefinements.jsx",
-            "line": 80,
+            "line": 81,
             "column": 10,
             "version": "14.5.0"
           },
           {
             "filePath": "src/CurrentRefinements.jsx",
-            "line": 93,
+            "line": 95,
             "column": 10,
             "version": "14.5.0"
           },
@@ -17646,7 +17748,7 @@
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 28,
+            "line": 29,
             "column": 6,
             "version": "14.5.0"
           }
@@ -17660,7 +17762,7 @@
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 29,
+            "line": 30,
             "column": 8,
             "version": "14.5.0"
           }
@@ -17674,7 +17776,7 @@
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 35,
+            "line": 36,
             "column": 8,
             "version": "14.5.0"
           }
@@ -17688,20 +17790,26 @@
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 36,
+            "line": 37,
             "column": 10,
             "version": "14.5.0"
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 47,
+            "line": 49,
             "column": 10,
             "version": "14.5.0"
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 58,
+            "line": 61,
             "column": 10,
+            "version": "14.5.0"
+          },
+          {
+            "filePath": "src/LearningTypeRadioFacet.jsx",
+            "line": 75,
+            "column": 14,
             "version": "14.5.0"
           }
         ],
@@ -17714,20 +17822,26 @@
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 37,
+            "line": 38,
             "column": 12,
             "version": "14.5.0"
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 48,
+            "line": 50,
             "column": 12,
             "version": "14.5.0"
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 59,
+            "line": 62,
             "column": 12,
+            "version": "14.5.0"
+          },
+          {
+            "filePath": "src/LearningTypeRadioFacet.jsx",
+            "line": 76,
+            "column": 16,
             "version": "14.5.0"
           },
           {
