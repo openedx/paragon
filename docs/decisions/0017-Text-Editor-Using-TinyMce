@@ -1,0 +1,22 @@
+Add TextEditor Component using wysiwyg TinyMCE 
+==========================
+Synopsis
+--------
+Text Editing, beyond the scope of simple text input fields in form components, is a neglected user experience in Paragon. Already, numerous openedX experiences use TinyMCE. Standardizing styling, accessibility, and versioning for text editing in Paragon will benefit users, designers, and developers alike.
+Decision
+------
+Paragon will expose a TextEditor Component, which uses TinyMCE’s React library as a foundation. The TextEditor component will have a standardized list of plugins that will also be supported by Paragon, and will not need to be managed by the consumer. A default experience will also be provided for out-of-the-box usage. Any plugins beyond those already managed by paragon, paid or otherwise, will be up to the consumer to maintain. Additional extensions, like custom plugins for specific use cases, will live elsewhere, and not within Paragon. 
+Status
+------
+Proposed
+Context
+-------
+Already, there are two simultaneous ongoing implementations of React-based html editors using tinyMCE. One is the Text Xblock editor, the other is the instructor bulk email tool found in the communications MFE. Already, edX also uses tinyMCE in edx-platform, and hosts its own image of the service there. Presumably, this experience too will be moved from the ball of mud into an independent MFE, and other use cases for text editing will arise. Therefore, it seems obvious to standardize across implementations.
+TinyMCE itself is “based on WCAG [2] and Section 508, to ensure that the TinyMCE editor is accessible to content authors.” Other alternatives do not provide this assurance. In addition to being a familiar entity, it also accomplishes our main goals for content authoring.
+Consequences
+------------
+In the course of this project, we will ensure that the text editor released:
+1. Exposes custom plugin functionality to developers, and provides easy documentation to do so.
+2. Allows for the potential to use paid plugins like spell-checkers and a11y plugins.
+3. Standardizes versioning, accessibility, and style across use cases. Behavior of course content is presently uncontrolled from an accessibility standpoint. This feature provides an opportunity to better guide users of our editors to create accessible content. Usage of tags for certain behaviors (ex: se <strong>, <em>, vs <b>) is now something we can somewhat control by modifying the toolbar to use our conventions.
+4. Eases future development of the other uses of text editing, build cause for tackling tech debt.
