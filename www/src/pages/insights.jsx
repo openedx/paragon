@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   DataTable,
   Tabs,
@@ -171,7 +172,28 @@ const ComponentsUsage = () => (
   </div>
 );
 
-export default function InsightsPage() {
+export default function InsightsPage({ location }) {
+  const tabs = ['/insights', '/insights/?tab=projects', '/insights/?tab=components'];
+  const path = `${location.pathname}${location.search}`;
+
+  const handleOnSelect = (value) => {
+    if (value !== path) {
+      switch (value) {
+        case tabs[0]:
+          window.analytics.track('Usage Insights (Summary)');
+          break;
+        case tabs[1]:
+          window.analytics.track('Usage Insights (Projects)');
+          break;
+        case tabs[2]:
+          window.analytics.track('Usage Insights (Components)');
+          break;
+        default:
+          break;
+      }
+    }
+  };
+
   return (
     <Layout>
       <Container size="md" className="py-5">
@@ -181,14 +203,18 @@ export default function InsightsPage() {
           <h1>Usage Insights</h1>
           <p>Last updated: {new Date(analysisLastUpdated).toLocaleDateString()}</p>
         </header>
-        <Tabs defaultActiveKey="summary" id="uncontrolled-tab-example">
-          <Tab eventKey="summary" title="Summary">
+        <Tabs
+          activeKey={tabs.includes(path) ? path : tabs[0]}
+          id="uncontrolled-tab-example"
+          onSelect={handleOnSelect}
+        >
+          <Tab eventKey={tabs[0]} title="Summary">
             <SummaryUsage />
           </Tab>
-          <Tab eventKey="projects" title="Projects">
+          <Tab eventKey={tabs[1]} title="Projects">
             <ProjectsUsage />
           </Tab>
-          <Tab eventKey="components" title="Components">
+          <Tab eventKey={tabs[2]} title="Components">
             <ComponentsUsage />
           </Tab>
         </Tabs>
@@ -196,3 +222,10 @@ export default function InsightsPage() {
     </Layout>
   );
 }
+
+InsightsPage.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+    search: PropTypes.string,
+  }).isRequired,
+};

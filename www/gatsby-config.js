@@ -63,5 +63,13 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-segment-js`,
+      options: {
+        prodKey: process.env && process.env.SEGMENT_KEY || '',
+        devKey: process.env && process.env.SEGMENT_KEY || '',
+        trackPage: true,
+      }
+    },
   ],
 }

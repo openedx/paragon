@@ -23,11 +23,13 @@ const SettingsContextProvider = ({ children }) => {
     document.body.setAttribute('dir', e.target.value);
     setDirection(e.target.value);
     global.localStorage.setItem('pgn__direction', e.target.value);
+    window.analytics.track('Direction change');
   };
 
   const handleThemeChange = (e) => {
     setTheme(e.target.value);
     global.localStorage.setItem('pgn__theme', e.target.value);
+    window.analytics.track('Theme change');
   };
 
   // this hook will be called after the first render, so we can safely access localStorage
@@ -42,6 +44,10 @@ const SettingsContextProvider = ({ children }) => {
       setDirection(savedDirection);
     }
   }, []);
+
+  useEffect(() => {
+    window.analytics.track('Toggle Settings');
+  }, [showSettings]);
 
   const contextValue = {
     theme,
