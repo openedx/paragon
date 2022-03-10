@@ -451,3 +451,145 @@ select.form-control {
     border-radius: $input-border-radius 0 0 $input-border-radius;
   }
 }
+
+.filterselectPlaceholder {
+  padding: 0 5px;
+  position: absolute;
+  left: 10px;
+  color: rgba(0, 0, 0, .6);
+}
+
+.inputfield.form__multiselect-field {
+  border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.form__multiselect-field {
+  font-size: 14px;
+  line-height: 24px;
+  color: $gray-500;
+  position: relative;
+  width: 428px;
+  display: grid;
+  grid-template-columns: 80% auto;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white;
+  border: 1px solid $gray-500;
+
+  .pgn__form-control-floating-label {
+    position: static;
+  }
+
+  &--btn {
+    background-color: $white;
+    border: none;
+
+    &:hover,
+    &:not(:disabled):not(.disabled):active {
+      color: $gray-500;
+      background-color: $white;
+      border: none;
+    }
+
+    &:focus:before {
+      content: none;
+    }
+
+    .pgn__icon{
+      color: $gray-500;
+    }
+  }
+}
+
+.form__multiselect-field--wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.form__multiselect-field--chip {
+  margin: 10px 5px;
+  padding: 0 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $light;
+  border: none;
+
+  &:hover {
+    background-color: $light;
+    border: none;
+
+    .chip-icon-after {
+      color: $black;
+    }
+  }
+
+  &-title {
+    display: inline;
+    font-size: 12px;
+    line-height: 20px;
+    color: $black;
+    margin: 0 10px 0 0;
+  }
+
+  &-close {
+    cursor: pointer;
+    color: $black;
+  }
+}
+
+//.noflex {
+//  display: flex;
+//  flex-direction: column;
+//}
+//
+.none {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+//
+//.show {
+//  max-height: 300px;
+//  overflow: auto;
+//}
+
+.form__multiselect-field--lable {
+  padding: 3px;
+  margin: 4px;
+  display: inline-block;
+}
+
+.form__multiselect-search {
+  border: none;
+  font-size: 12px;
+  line-height: 20px;
+  height: 24px;
+  margin: 10px 5px;
+
+  &:focus,
+  &:hover {
+    box-shadow: none;
+    border: none;
+    color: $black;
+  }
+}
+
+.form__multiselect-items {
+  width: 428px;
+
+  .form__multiselect-item {
+    font-size: 12px;
+    line-height: 20px;
+    color: $black;
+    padding: 9px 0;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+}
+
+.selctsingleitem:hover {
+  background: #4D18FF;
+  cursor: pointer;
+  color: $white;
+}

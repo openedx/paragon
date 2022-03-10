@@ -2,6 +2,8 @@ import Form from 'react-bootstrap/Form';
 import FormControl from './FormControl';
 import FormLabel from './FormLabel';
 import FormGroup from './FormGroup';
+import FormMultiselect from './FormMultiselect';
+import MyComponent from './FormMultiselect';
 import FormControlFeedback from './FormControlFeedback';
 import FormText from './FormText';
 import FormControlDecoratorGroup from './FormControlDecoratorGroup';
@@ -24,6 +26,8 @@ Form.Switch = FormSwitch;
 Form.SwitchSet = FormSwitchSet;
 Form.Label = FormLabel;
 Form.Group = FormGroup;
+Form.Multiselect = FormMultiselect;
+Form.MyComponent = MyComponent;
 Form.Text = FormText;
 
 export default Form;
@@ -38,6 +42,7 @@ export {
   FormCheckboxSet,
   FormCheckboxSetContext,
   FormGroup,
+  FormMultiselect,
   FormControlDecoratorGroup,
   FormControlFeedback,
   FormText,

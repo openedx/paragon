@@ -48,6 +48,7 @@ export {
   FormRadioSet,
   FormRadioSetContext,
   FormGroup,
+  FormMultiselect,
   FormLabel,
   useCheckboxSetValues,
   FormText,

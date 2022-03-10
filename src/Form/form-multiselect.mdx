@@ -1,0 +1,42 @@
+---
+title: 'Form.Multiselect'
+type: 'component'
+components:
+- FormMultiselect
+categories:
+- Forms
+status: 'New'
+designStatus: 'Done'
+devStatus: 'InProgress'
+notes: |
+
+---
+
+A text style input that allows the user to select from multiple options.
+We would like to use [React-Select](https://react-select.com/home) as our implementation.
+
+### Controlled Usage
+
+```jsx live
+
+() => {
+
+ const selectOptionsData = [
+     'Photoshop',
+     'Principle',
+     'Creation',
+     'Loop',
+     'Bingo'
+ ];
+
+  return (
+        <FormMultiselect
+            floatingLabel="My Lable"
+            selectOptionsData = {selectOptionsData}
+
+        >
+
+        </FormMultiselect>
+  );
+}
+```
