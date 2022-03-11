@@ -29,26 +29,25 @@ const SelectMenu = ({
     return undefined;
   }
   const [selected, setSelected] = useState(defaultIndex());
-
   const [isOpen, open, close] = useToggle(false);
   const [vertOffset, setOffset] = useState(0);
 
   const createMenuItems = () => {
     const elements = [];
-    React.Children.map(children, (child) => {
+    React.Children.map(children, (child, index) => {
       const newProps = {
         onClick(e) {
           if (child.props.onClick) {
             child.props.onClick(e);
           }
-          setSelected(children.indexOf(child));
+          setSelected(index);
           close();
           triggerTarget.current.focus();
         },
-        id: `${children.indexOf(child).toString()}_pgn__menu-item`,
+        id: `${index.toString()}_pgn__menu-item`,
         role: 'link',
       };
-      if (selected === children.indexOf(child)) {
+      if (selected === index) {
         newProps['aria-current'] = 'page';
       }
       elements.push(
@@ -60,6 +59,7 @@ const SelectMenu = ({
 
   const link = isLink; // allow inline link styling
   const prevOpenRef = React.useRef();
+
   useEffect(() => {
     // logic to always center the selected item.
     if (isOpen && selected) {
@@ -103,7 +103,7 @@ const SelectMenu = ({
       itemsCollection[selected].current.children[0].focus({ preventScroll: (defaultIndex() === selected) });
     }
     prevOpenRef.current = isOpen;
-  });
+  }, [isOpen]);
 
   return React.createElement(
     className,
@@ -120,7 +120,8 @@ const SelectMenu = ({
         variant={link ? 'link' : 'tertiary'}
         iconAfter={link ? undefined : ExpandMore}
         onClick={open}
-      >{ selected !== defaultIndex() ? children[selected].props.children : defaultMessage}
+      >
+        {selected !== undefined && children[selected] ? children[selected].props.children : defaultMessage}
       </Button>
       <div className="pgn__menu-select-popup">
         <ModalPopup
@@ -146,7 +147,7 @@ const SelectMenu = ({
         >
           <Menu aria-label="Select Menu">
             {createMenuItems().map((child, index) => (
-              <div ref={itemsCollection[index]}>
+              <div key={child.props.id} ref={itemsCollection[index]}>
                 {child}
               </div>
             ))}

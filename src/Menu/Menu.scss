@@ -1,85 +1,86 @@
 .pgn__menu-item {
-    .pgn__menu-item-content-spacer {
-      flex-grow: 1;
-    }
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    min-width: 288px;
-    max-width: 450px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-family: $btn-font-family;
-    font-weight: $btn-font-weight;
-    color: $body-color;
-    text-align: center;
-    vertical-align: middle;
-    user-select: none;
-    background-color: transparent;
-    border: $btn-border-width solid transparent;
-    padding: $btn-padding-y $btn-padding-x;
-    font-size: $btn-font-size;
-    height: 48px;
-    border-radius: 0;
-    $hover-border: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-width: 288px;
+  max-width: 450px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: $btn-font-family;
+  font-weight: $btn-font-weight;
+  color: $body-color;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border: $btn-border-width solid transparent;
+  padding: $btn-padding-y $btn-padding-x;
+  font-size: $btn-font-size;
+  height: 48px;
+  border-radius: 0;
+  $hover-border: transparent;
 
-    @include hover {
-      color: $body-color;
-      text-decoration: none;
-      color: $btn-tertiary-color;
-      border-color: $hover-border;
-      background: $btn-tertiary-hover-bg;;
-    }
+  .pgn__menu-item-content-spacer {
+    flex-grow: 1;
+  }
 
-    // Disabled comes first so active can properly restyle
-    &.disabled,
-    &:disabled {
-      opacity: $btn-disabled-opacity;
-    }
+  @include hover {
+    text-decoration: none;
+    color: $btn-tertiary-color;
+    border-color: $hover-border;
+    background: $btn-tertiary-hover-bg;
+  }
 
-    $background: $btn-tertiary-bg;
-    $border: transparent;
-    $active-background: $btn-tertiary-active-bg;
-    $active-border: transparent;
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    opacity: $btn-disabled-opacity;
+  }
 
-    &:not(:disabled):not(.disabled):active,
-    &:not(:disabled):not(.disabled).active,
-    .show > &.dropdown-toggle {
+  $background: $btn-tertiary-bg;
+  $border: transparent;
+  $active-background: $btn-tertiary-active-bg;
+  $active-border: transparent;
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: $btn-tertiary-color;
+    background-color: $active-background;
+    border-color: $active-border;
+  }
+
+  &.focus,
+  &:focus{
+      font-weight: $font-weight-bolder;
       color: $btn-tertiary-color;
       background-color: $active-background;
       border-color: $active-border;
-    }
+  }
 
-    &.focus,
-    &:focus{
-        font-weight: $font-weight-bolder;
-        color: $btn-tertiary-color;
-        background-color: $active-background;
-        border-color: $active-border;
-    }
+  .btn-icon-before {
+    margin-inline-end: 0.5rem;
+    margin-left: -0.25em;
 
-    .btn-icon-before {
-      margin-inline-end: 0.5rem;
-      margin-left: -0.25em;
-
-      [dir="rtl"] & {
-        margin-right: -0.25em;
-        margin-left: 0.5rem;
-      }
-    }
-
-    .btn-icon-after {
-      margin-inline-start: 0.5rem;
+    [dir="rtl"] & {
       margin-right: -0.25em;
-
-      [dir="rtl"] & {
-        margin-right: 0.5rem;
-        margin-left: -0.25em;
-      }
+      margin-left: 0.5rem;
     }
   }
+
+  .btn-icon-after {
+    margin-inline-start: 0.5rem;
+    margin-right: -0.25em;
+
+    [dir="rtl"] & {
+      margin-right: 0.5rem;
+      margin-left: -0.25em;
+    }
+  }
+}
+
 .pgn__menu{
   border-radius: 0.25em;
   box-shadow: $box-shadow;
@@ -87,15 +88,16 @@
   overflow: auto;
   max-height: 264px;
 }
-.pgn__menu-select-popup{
 
+.pgn__menu-select-popup{
   color: $btn-tertiary-bg;
 }
+
 .pgn__menu-select-trigger-btn{
   max-width: 450px;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow:ellipsis;
+  text-overflow: ellipsis;
   background: $white;
   box-sizing: border-box;
   color: $dark;
