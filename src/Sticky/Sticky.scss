@@ -1,0 +1,37 @@
+@import "variables";
+
+.pgn__sticky {
+  display: flex;
+  width: 100%;
+  position: sticky;
+
+  &.pgn__sticky-top {
+    align-self: self-start;
+    top: $sticky-offset;
+
+    @each $level, $offset in $spacers {
+      &.pgn__sticky-offset--#{$level} {
+        top: $offset;
+      }
+    }
+
+    &.pgn__sticky-shadow {
+      box-shadow: $sticky-shadow-bottom;
+    }
+  }
+
+  &.pgn__sticky-bottom {
+    align-self: self-end;
+    bottom: $sticky-offset;
+
+    @each $level, $offset in $spacers {
+      &.pgn__sticky-offset--#{$level} {
+        bottom: $offset;
+      }
+    }
+
+    &.pgn__sticky-shadow {
+      box-shadow: $sticky-shadow-top;
+    }
+  }
+}
