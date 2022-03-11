@@ -109,6 +109,7 @@ export { default as Unlocked } from './Unlocked';
 export { default as Unread } from './Unread';
 export { default as Verified } from './Verified';
 export { default as VerifiedBadge } from './VerifiedBadge';
+export { default as VerifiedBadgeOutline } from './VerifiedBadgeOutline';
 export { default as VerifiedOutline } from './VerifiedOutline';
 export { default as VideoCamera } from './VideoCamera';
 export { default as VideoTranscript } from './VideoTranscript';
