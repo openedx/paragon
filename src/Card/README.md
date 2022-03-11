@@ -334,6 +334,61 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
 </>
 ```
 
+### Card Content Block Empty
+#### With image
+
+```jsx live
+<Card style={{ width: '25rem' }}>
+  <Card.ImageCap src="https://source.unsplash.com/360x200/?nature,flower" />
+  <Card.Section className="text-center">
+    <h2>Headline</h2>
+    <p>This is an optional text description.</p>
+    <Button variant="brand">Action</Button>
+  </Card.Section>
+</Card>
+```
+
+#### Without image
+
+```jsx live
+<Card style={{ width: '25rem' }}>
+  <Card.Section className="text-center">
+    <h2>Headline</h2>
+    <p>This is an optional text description.</p>
+    <Button variant="brand">Action</Button>
+  </Card.Section>
+</Card>
+```
+
+#### Horizontal variant with image
+
+```jsx live
+<Card orientation="horizontal">
+  <Card.ImageCap src="https://source.unsplash.com/360x200/?nature,flower" />
+  <Card.Section>
+    <h2>Headline</h2>
+    <p>This is an optional text description.</p>
+  </Card.Section>
+  <Card.Footer className="justify-content-end">
+    <Button variant="brand">Action</Button>
+  </Card.Footer>
+</Card>
+```
+
+#### Horizontal variant without image
+
+```jsx live
+<Card orientation="horizontal">
+  <Card.Section>
+    <h2>Headline</h2>
+    <p>This is an optional text description.</p>
+  </Card.Section>
+  <Card.Footer className="justify-content-end">
+    <Button variant="brand">Action</Button>
+  </Card.Footer>
+</Card>
+```
+
 ### CardGrid
 
 This component displays a collection of Cards as a grid (with customizable responsive behavior), where
