@@ -10,7 +10,7 @@ const app = document.createElement('div');
 document.body.appendChild(app);
 const selectMenu = mount((
   <SelectMenu>
-    <MenuItem> A Menu Item</MenuItem>
+    <MenuItem>A Menu Item</MenuItem>
     <MenuItem iconBefore={Add}>A Menu Item With an Icon Before</MenuItem>
     <MenuItem iconAfter={Check}>A Menu Item With an Icon After </MenuItem>
     <MenuItem disabled>A Disabled Menu Item</MenuItem>
@@ -26,30 +26,33 @@ const selectMenu = mount((
   </SelectMenu>
 ), { attachTo: app });
 
+const DefaultSelectMenu = (props) => (
+  <SelectMenu {...props}><MenuItem>A Menu Item</MenuItem></SelectMenu>
+);
 const menuTrigger = selectMenu.find(Button);
 
 const menuOpen = (isOpen, wrapper) => {
   expect(wrapper.find(Button).prop('aria-expanded')).toEqual(isOpen);
 };
 
-describe('Rendering Beahvior', () => {
-  it('Renders as expected', () => {
-    const tree = renderer
-      .create(<SelectMenu> <MenuItem> A Menu Item</MenuItem></SelectMenu>)
-      .toJSON();
+describe('correct rendering', () => {
+  it('renders as expected', () => {
+    const tree = renderer.create((
+      <DefaultSelectMenu />
+    )).toJSON();
     expect(tree).toMatchSnapshot();
   });
-  it('Renders with a default message you set', () => {
-    const wrapper = mount((<SelectMenu defaultMessage="Pick Me"> <MenuItem> A Menu Item</MenuItem></SelectMenu>));
-    expect(wrapper.find(Button).text() === 'Pick Me').toBe(true);
+  it('renders with a default message you set', () => {
+    const wrapper = mount(<DefaultSelectMenu defaultMessage="Pick Me" />);
+    expect(wrapper.find(Button).text()).toEqual('Pick Me');
   });
-  it('Renders with a button as link', () => {
-    const wrapper = mount((<SelectMenu isLink> <MenuItem> A Menu Item</MenuItem></SelectMenu>));
+  it('renders with a button as link', () => {
+    const wrapper = mount(<DefaultSelectMenu isLink />);
     expect(wrapper.find(Button).prop('variant')).toEqual('link');
   });
 });
 
-describe('Mouse Behavior & keyboard behavior', () => {
+describe('mouse behavior & keyboard behavior', () => {
   menuTrigger.simulate('click');
   const menuItems = selectMenu.find('.pgn__menu-item');
 
@@ -67,7 +70,7 @@ describe('Mouse Behavior & keyboard behavior', () => {
   });
 });
 
-describe('Keyboard Interactions', () => {
+describe('keyboard Interactions', () => {
   menuTrigger.simulate('click'); // Open
   const menuItems = selectMenu.find('.pgn__menu-item');
   const menuContainer = selectMenu.find('.pgn__menu');
@@ -98,7 +101,7 @@ describe('Keyboard Interactions', () => {
     menuContainer.simulate('keyDown', { key: 'ArrowDown' });
     expect(menuItems.at(0) === document.activeElement);
   });
-  it('Home should go to first, End to last', () => {
+  it('home should go to first, End to last', () => {
     menuContainer.simulate('keyDown', { key: 'End' });
     expect(menuItems.at(menuItems.length - 1) === document.activeElement);
     menuContainer.simulate('keyDown', { key: 'Home' });
