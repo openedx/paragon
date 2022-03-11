@@ -1,113 +1,114 @@
-import React, {useState, useRef} from 'react';
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import {ExpandMore} from '../../icons';
+import { ExpandMore, Close } from '../../icons';
 import Button from '../Button/index';
 import Input from '../Input';
 import Chip from '../Chip';
-import {Close} from '@edx/paragon/icons'
-import FormControlFloatingLabel from './FormControlFloatingLabel';
 
-const FormMultiselect = ({floatingLabel, selectOptionsData}) => {
-    const [selectField, setSelectField] = useState([]),
-        [selectItems, setSelectItems] = useState(selectOptionsData),
-        [selectVisible, setSelectVisible] = useState('none'),
-        [filterSelect, setFilterSelect] = useState(''),
-        someRef = useRef(null),
-        selectFieldBox = [...selectField],
-        selectItemsTotal = [...selectItems],
-        SELECT_ITEM_BOX_COUNT = 1;
+const FormMultiselect = ({ floatingLabel, children }) => {
+  const [selectField, setSelectField] = useState([]);
+  const [selectItems, setSelectItems] = useState(children);
+  const [selectVisible, setSelectVisible] = useState('none');
+  const [filterSelect, setFilterSelect] = useState('');
+  const someRef = useRef(null);
+  const selectFieldBox = [...selectField];
+  const selectItemsTotal = [...selectItems];
+  const SELECT_ITEM_BOX_COUNT = 1;
 
-    function setNewSelectVisibleItem() {
-        let selectVisibleClass = selectVisible === 'none' ? 'show' : 'none';
-        setSelectVisible(selectVisibleClass);
-    }
+  const setNewSelectVisibleItem = () => {
+    const selectVisibleClass = selectVisible === 'none' ? 'show' : 'none';
+    setSelectVisible(selectVisibleClass);
+  };
 
-    function addItemSelect(e, element, ref) {
-        setSelectItems(prevState => prevState.filter((item) => {
-            return item !== element;
-        }));
+  const addItemSelect = (e, element) => {
+    setSelectItems(prevState => prevState.filter((item) => item !== element));
+    selectFieldBox.push(element);
+    setSelectField(selectFieldBox);
+  };
 
-        selectFieldBox.push(element);
-        setSelectField(selectFieldBox);
-    }
+  const returnItemSelect = (e, element) => {
+    const selectItemIndex = selectFieldBox.findIndex((item) => item === element);
+    setSelectItems([...selectItemsTotal, element]);
+    selectFieldBox.splice(selectItemIndex, SELECT_ITEM_BOX_COUNT);
+    setSelectField(selectFieldBox);
+  };
 
-    function returnItemSelect(e, element) {
-        let selectItemIndex = selectFieldBox.findIndex((item) => {
-            return item === element;
-        });
-
-        setSelectItems([...selectItemsTotal, element]);
-        selectFieldBox.splice(selectItemIndex, SELECT_ITEM_BOX_COUNT);
-        setSelectField(selectFieldBox);
-    }
-
-    function searchSelectItems(e) {
-        setFilterSelect(e.target.value);
-    }
-
-    return (
-        <div className={classNames('form__multiselect')}>
-            <div className={classNames('form__multiselect-field')}>
-                {selectField.length === 0 &&
-                    <FormControlFloatingLabel className={classNames('form__multiselect-field--lable')}>
-                        {floatingLabel}
-                    </FormControlFloatingLabel>
-                }
-                {selectField.length > 0 &&
-                    <div className={classNames('form__multiselect-field--wrapper')}>
-                        {selectField.length > 0 && selectField.map((item, index) => {
-                            return <Chip
-                                iconAfter={Close}
-                                onClick={(e) => returnItemSelect(e, item)}
-                                className={classNames('form__multiselect-field--chip')}
-                                key={index + item + 'is'}
-                            >
-                                <h4 className={classNames('form__multiselect-field--chip-title')}>
-                                    {item}
-                                </h4>
-                            </Chip>
-                        })}
-                        <Input
-                            className={classNames('form__multiselect-search')}
-                            type='text'
-                            value={filterSelect}
-                            onChange={searchSelectItems}
-                        />
-                    </div>
-                }
-                <Button
-                    className={classNames('form__multiselect-field--btn')}
-                    onClick={setNewSelectVisibleItem}
-                    iconAfter={ExpandMore}>
-                </Button>
+  return (
+    <div className={classNames('form__multiselect')}>
+      <div className={classNames('form__multiselect-field')}>
+        {selectField.length === 0
+          ? (
+            <div className={classNames('form__multiselect-field--label')}>
+              {floatingLabel}
             </div>
-            <div className={classNames('form__multiselect-items' + ' noflex ' + selectVisible)}>
-                {selectItems.map((item, index) => {
-                    if (item.includes(filterSelect))
-                        return <div
-                            className={classNames('form__multiselect-item ')}
-                            key={index + item}
-                            ref={someRef}
-                            onClick={(e) => {
-                                addItemSelect(e, item, someRef);
-                            }}>
-                            <span>{item}</span>
-                        </div>
-                })}
+          ) : (
+            <div className={classNames('form__multiselect-field--wrapper')}>
+              {selectField.length > 0 && selectField.map((item) => (
+                <Chip
+                  iconAfter={Close}
+                  onClick={(e) => returnItemSelect(e, item)}
+                  className={classNames('form__multiselect-field--chip')}
+                  key={item}
+                >
+                  <h4 className={classNames('form__multiselect-field--chip-title')}>
+                    {item}
+                  </h4>
+                </Chip>
+              ))}
+              <Input
+                className={classNames('form__multiselect-search')}
+                type="text"
+                value={filterSelect}
+                onChange={(e) => setFilterSelect(e.target.value)}
+              />
             </div>
-        </div>
-    );
-}
+          )}
+        <Button
+          className={classNames(`form__multiselect-field--hide-btn ${selectVisible}`)}
+          iconAfter={Close}
+        />
+        <Button
+          className={classNames('form__multiselect-field--show-btn')}
+          onClick={setNewSelectVisibleItem}
+          iconAfter={ExpandMore}
+        />
+      </div>
+      <div className={classNames(`form__multiselect-items ${selectVisible}`)}>
+        {selectItems.map((item) => {
+          if (item.includes(filterSelect)) {
+            return (
+              <button
+                className={classNames('form__multiselect-item ')}
+                key={item}
+                type="button"
+                ref={someRef}
+                onClick={(e) => {
+                  addItemSelect(e, item, someRef);
+                  setFilterSelect('');
+                }}
+              >
+                <span>{item}</span>
+              </button>
+            );
+          }
+          return null;
+        })}
+      </div>
+    </div>
+  );
+};
 
 FormMultiselect.propTypes = {
-    floatingLabel: PropTypes.node,
-    selectOptionsData: PropTypes.array,
+  /** Specifies floating label to display for the select component. */
+  floatingLabel: PropTypes.node,
+  /** Specifies the contents of the option rows */
+  children: PropTypes.arrayOf(PropTypes.string),
 };
 
 FormMultiselect.defaultProps = {
-    floatingLabel: 'Label',
-    selectOptionsData: undefined
+  floatingLabel: 'Label',
+  children: undefined,
 };
 
 export default FormMultiselect;

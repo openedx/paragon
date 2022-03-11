@@ -452,51 +452,94 @@ select.form-control {
   }
 }
 
-.filterselectPlaceholder {
-  padding: 0 5px;
-  position: absolute;
-  left: 10px;
-  color: rgba(0, 0, 0, .6);
-}
-
-.inputfield.form__multiselect-field {
-  border: 1px solid rgba(0, 0, 0, .1);
-}
-
 .form__multiselect-field {
-  font-size: 14px;
-  line-height: 24px;
-  color: $gray-500;
-  position: relative;
+  color: $form-multiselect-gray-500;
+  cursor: pointer;
   width: 428px;
   display: grid;
-  grid-template-columns: 80% auto;
+  grid-template-columns: 11fr 1fr 1fr;
   justify-content: space-between;
   align-items: center;
-  background-color: $white;
-  border: 1px solid $gray-500;
+  background-color: $input-bg;
+  border: $border-width solid $form-multiselect-gray-500;
+  transition: $transition-base;
+  padding: 0.5625rem 1rem 0.3125rem;
 
-  .pgn__form-control-floating-label {
-    position: static;
+  //&--error {
+  //  display: none;
+  //}
+  //
+  //&.error {
+  //  border: 2px solid #ca3a2f;
+  //
+  //  &--error {
+  //    display: block;
+  //  }
+  //}
+
+  &:hover {
+    border: $border-width solid $form-multiselect-black;
   }
 
-  &--btn {
+  .form__multiselect-field--label {
+    font-size: 0.875rem;
+    line-height: 16px;
+    transition: $transition-base;
+    padding: 0;
+    margin: 0 0 0.125rem 0;
+
+      &.none {
+        display: none;
+        //position: absolute;
+        //transform: translateY(-23px);
+        //background-color: $white;
+        //z-index: 2;
+        //padding: 0 10px;
+        //margin: 0;
+      }
+  }
+
+  &--show-btn {
     background-color: $white;
     border: none;
+    padding: 0 0 0 0.625rem;
+    border-radius: 0;
+    height: 100%;
+    border-left: $border-width solid $form-multiselect-light;
+    margin-bottom: 0.25rem;
 
     &:hover,
     &:not(:disabled):not(.disabled):active {
-      color: $gray-500;
-      background-color: $white;
-      border: none;
+      background-color: $form-multiselect-white;
+      border-left: $border-width solid $form-multiselect-light;
     }
 
     &:focus:before {
-      content: none;
+      right: 2.8125rem;
+      top: 0.5rem;
+      border: none;
+      left: auto;
     }
 
-    .pgn__icon{
-      color: $gray-500;
+    .pgn__icon {
+      color: $form-multiselect-black;
+      margin: 0;
+    }
+  }
+
+  &--hide-btn {
+    background-color: $form-multiselect-white;
+    border: none;
+    color: $form-multiselect-gray-500;
+    padding: 0;
+
+    .btn-icon-after {
+      color: $form-multiselect-gray-500;
+      margin: 0 0.625rem 0.25rem 0;
+    }
+
+    &:hover {
+      background-color: $form-multiselect-white;
     }
   }
 }
@@ -507,89 +550,96 @@ select.form-control {
 }
 
 .form__multiselect-field--chip {
-  margin: 10px 5px;
-  padding: 0 8px;
+  margin: 0 0.25rem  0.25rem 0;
+  padding: 0 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $light;
+  background-color: $form-multiselect-light;
   border: none;
+  height: 24px;
 
   &:hover {
-    background-color: $light;
+    background-color: $form-multiselect-light;
     border: none;
 
     .chip-icon-after {
-      color: $black;
+      color: $form-multiselect-black;
     }
   }
 
   &-title {
     display: inline;
-    font-size: 12px;
-    line-height: 20px;
-    color: $black;
-    margin: 0 10px 0 0;
+    font-size: 0.75rem;
+    line-height: $form-multiselect-line-height;
+    color: $form-multiselect-black;
+    font-weight: 400;
+    max-width: 50px;
+    margin: 0 0.625rem 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  &-close {
-    cursor: pointer;
-    color: $black;
+  .chip-icon-after {
+    height: 16px;
   }
 }
 
-//.noflex {
-//  display: flex;
-//  flex-direction: column;
-//}
-//
 .none {
   opacity: 0;
   height: 0;
   overflow: hidden;
 }
-//
-//.show {
-//  max-height: 300px;
-//  overflow: auto;
-//}
 
-.form__multiselect-field--lable {
-  padding: 3px;
-  margin: 4px;
+.form__multiselect-field--label {
+  padding: 0.1875rem;
+  margin: 0.25rem;
   display: inline-block;
 }
 
 .form__multiselect-search {
   border: none;
-  font-size: 12px;
-  line-height: 20px;
+  font-size: 0.75rem;
+  line-height: $form-multiselect-line-height;
   height: 24px;
-  margin: 10px 5px;
+  padding: 0 0.5rem;
 
   &:focus,
   &:hover {
     box-shadow: none;
     border: none;
-    color: $black;
+    color: $form-multiselect-black;
   }
 }
 
 .form__multiselect-items {
   width: 428px;
+  margin-top: 0.3125rem;
+  box-shadow: $level-1-box-shadow;
+  transition: $transition-base;
+  position: absolute;
 
   .form__multiselect-item {
-    font-size: 12px;
-    line-height: 20px;
-    color: $black;
-    padding: 9px 0;
-    margin-left: 15px;
+    font-size: 0.75rem;
+    line-height: $form-multiselect-line-height;
+    color: $form-multiselect-black;
+    padding: 0.625rem 0.9375rem;
     cursor: pointer;
-  }
-}
+    display: block;
+    width: 100%;
+    text-align: left;
+    background-color: $form-multiselect-white;
+    border: none;
+    transition: $transition-base;
 
-.selctsingleitem:hover {
-  background: #4D18FF;
-  cursor: pointer;
-  color: $white;
+    &:hover {
+      background-color: $form-multiselect-light;
+    }
+
+    &:focus,
+    &:active {
+      background-color: $light-300;
+    }
+  }
 }

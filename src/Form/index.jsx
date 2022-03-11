@@ -3,7 +3,6 @@ import FormControl from './FormControl';
 import FormLabel from './FormLabel';
 import FormGroup from './FormGroup';
 import FormMultiselect from './FormMultiselect';
-import MyComponent from './FormMultiselect';
 import FormControlFeedback from './FormControlFeedback';
 import FormText from './FormText';
 import FormControlDecoratorGroup from './FormControlDecoratorGroup';
@@ -27,7 +26,6 @@ Form.SwitchSet = FormSwitchSet;
 Form.Label = FormLabel;
 Form.Group = FormGroup;
 Form.Multiselect = FormMultiselect;
-Form.MyComponent = MyComponent;
 Form.Text = FormText;
 
 export default Form;
