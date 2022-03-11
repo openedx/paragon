@@ -87,6 +87,8 @@ export { default as Record } from './Record';
 export { default as Redo } from './Redo';
 export { default as Remove } from './Remove';
 export { default as RemoveCircle } from './RemoveCircle';
+export { default as Report } from './Report';
+export { default as ReportOutline } from './ReportOutline';
 export { default as School } from './School';
 export { default as Search } from './Search';
 export { default as Send } from './Send';
