@@ -1,5 +1,5 @@
 {
-  "lastModified": 1647007731116,
+  "lastModified": 1647094111028,
   "projectUsages": [
     {
       "version": "16.24.0",
@@ -2151,6 +2151,12 @@
             "version": "19.6.0"
           },
           {
+            "filePath": "src/components/settings/SettingsSSOTab/NewSSOConfigForm.jsx",
+            "line": 15,
+            "column": 8,
+            "version": "19.6.0"
+          },
+          {
             "filePath": "src/components/subscriptions/licenses/LicenseManagementModals/LicenseManagementRemindModal.jsx",
             "line": 166,
             "column": 10,
@@ -2488,6 +2494,12 @@
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
             "line": 173,
             "column": 10,
+            "version": "19.6.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/NewSSOConfigForm.jsx",
+            "line": 22,
+            "column": 12,
             "version": "19.6.0"
           },
           {
@@ -3617,6 +3629,12 @@
             "version": "19.6.0"
           },
           {
+            "filePath": "src/components/settings/SettingsSSOTab/index.jsx",
+            "line": 29,
+            "column": 10,
+            "version": "19.6.0"
+          },
+          {
             "filePath": "src/components/subscriptions/expiration/SubscriptionExpirationBanner.jsx",
             "line": 122,
             "column": 4,
@@ -4154,7 +4172,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 52,
+            "line": 56,
             "column": 6,
             "version": "19.6.0"
           },
@@ -4180,13 +4198,19 @@
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 58,
+            "line": 62,
             "column": 8,
             "version": "19.6.0"
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 61,
+            "line": 66,
+            "column": 8,
+            "version": "19.6.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsTabs.jsx",
+            "line": 70,
             "column": 8,
             "version": "19.6.0"
           },
@@ -4212,7 +4236,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 51,
+            "line": 55,
             "column": 4,
             "version": "19.6.0"
           },
@@ -4267,6 +4291,12 @@
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
             "line": 133,
+            "column": 8,
+            "version": "19.6.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/index.jsx",
+            "line": 16,
             "column": 8,
             "version": "19.6.0"
           },
@@ -5945,6 +5975,12 @@
             "version": "19.6.0"
           },
           {
+            "filePath": "src/components/settings/SettingsSSOTab/NewSSOConfigForm.jsx",
+            "line": 16,
+            "column": 10,
+            "version": "19.6.0"
+          },
+          {
             "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
             "line": 120,
             "column": 16,
@@ -5967,6 +6003,12 @@
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
             "line": 195,
+            "column": 12,
+            "version": "19.6.0"
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/NewSSOConfigForm.jsx",
+            "line": 21,
             "column": 12,
             "version": "19.6.0"
           },
@@ -7036,19 +7078,19 @@
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 124,
+            "line": 131,
             "column": 8,
             "version": "16.3.2"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 143,
+            "line": 150,
             "column": 8,
             "version": "16.3.2"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 184,
+            "line": 191,
             "column": 8,
             "version": "16.3.2"
           }
@@ -7062,13 +7104,13 @@
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 125,
+            "line": 132,
             "column": 10,
             "version": "16.3.2"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 144,
+            "line": 151,
             "column": 10,
             "version": "16.3.2"
           }
@@ -7130,7 +7172,7 @@
         "Form.Control": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 132,
+            "line": 139,
             "column": 10,
             "version": "16.3.2"
           }
@@ -7138,7 +7180,7 @@
         "StatefulButton": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 185,
+            "line": 192,
             "column": 10,
             "version": "16.3.2"
           },
@@ -7158,25 +7200,25 @@
         "Icon": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 194,
+            "line": 201,
             "column": 23,
             "version": "16.3.2"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 195,
+            "line": 202,
             "column": 23,
             "version": "16.3.2"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 196,
+            "line": 203,
             "column": 24,
             "version": "16.3.2"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 197,
+            "line": 204,
             "column": 21,
             "version": "16.3.2"
           },
@@ -7259,14 +7301,6 @@
             "version": "16.3.2"
           }
         ],
-        "Spinner": [
-          {
-            "filePath": "src/components/bulk-email-tool/BulkEmailTool.jsx",
-            "line": 71,
-            "column": 6,
-            "version": "16.3.2"
-          }
-        ],
         "Nav": [
           {
             "filePath": "src/components/navigation-tabs/NavigationTabs.jsx",
@@ -7288,6 +7322,14 @@
             "filePath": "src/components/navigation-tabs/NavigationTabs.jsx",
             "line": 14,
             "column": 12,
+            "version": "16.3.2"
+          }
+        ],
+        "Spinner": [
+          {
+            "filePath": "src/components/page-container/PageContainer.jsx",
+            "line": 74,
+            "column": 6,
             "version": "16.3.2"
           }
         ]
@@ -9339,7 +9381,7 @@
       }
     },
     {
-      "version": "17.3.0",
+      "version": "19.7.0",
       "name": "@edx/frontend-app-enterprise-public-catalog",
       "repository": {
         "type": "git",
@@ -9352,13 +9394,13 @@
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 49,
             "column": 8,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 200,
             "column": 8,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
         "ModalDialog.Body": [
@@ -9366,13 +9408,13 @@
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 58,
             "column": 10,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 209,
             "column": 10,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
         "ModalDialog.Hero": [
@@ -9380,13 +9422,13 @@
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 59,
             "column": 12,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 210,
             "column": 12,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
         "Image": [
@@ -9394,43 +9436,31 @@
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 62,
             "column": 12,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 153,
             "column": 8,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 213,
             "column": 12,
-            "version": "17.3.0"
-          },
-          {
-            "filePath": "src/components/courseCard/CourseCard.jsx",
-            "line": 39,
-            "column": 6,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/hero/Hero.jsx",
             "line": 17,
             "column": 2,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/hero/Hero.jsx",
             "line": 30,
             "column": 2,
-            "version": "17.3.0"
-          },
-          {
-            "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 47,
-            "column": 6,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
         "ModalDialog.Title": [
@@ -9438,25 +9468,25 @@
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 64,
             "column": 14,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 67,
             "column": 14,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 215,
             "column": 14,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 218,
             "column": 14,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
         "ModalDialog.Footer": [
@@ -9464,13 +9494,13 @@
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 93,
             "column": 10,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 244,
             "column": 10,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
         "ActionRow": [
@@ -9478,13 +9508,13 @@
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 94,
             "column": 12,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 245,
             "column": 12,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
         "Hyperlink": [
@@ -9492,13 +9522,13 @@
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 96,
             "column": 14,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 246,
             "column": 14,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
         "Button": [
@@ -9506,37 +9536,37 @@
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 103,
             "column": 16,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 253,
             "column": 16,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogSearchResults/buttons/downloadCsvButton/DownloadCsvButton.jsx",
             "line": 40,
             "column": 6,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 151,
             "column": 8,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 201,
             "column": 8,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 327,
             "column": 10,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
         "Icon": [
@@ -9544,55 +9574,55 @@
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 106,
             "column": 18,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 256,
             "column": 18,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogModalBanner/CatalogCourseModalBanner.jsx",
             "line": 45,
             "column": 8,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogModalBanner/CatalogCourseModalBanner.jsx",
             "line": 57,
             "column": 10,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogModalBanner/CatalogCourseModalBanner.jsx",
             "line": 68,
             "column": 8,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogModalBanner/CatalogProgramModalBanner.jsx",
             "line": 27,
             "column": 10,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogModalBanner/CatalogProgramModalBanner.jsx",
             "line": 41,
             "column": 12,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogModalBanner/CatalogProgramModalBanner.jsx",
             "line": 55,
             "column": 12,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
             "line": 62,
             "column": 12,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
         "Alert": [
@@ -9600,13 +9630,13 @@
             "filePath": "src/components/catalogNoResultsDeck/CatalogNoResultsDeck.jsx",
             "line": 61,
             "column": 6,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 94,
             "column": 6,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
         "Alert.Heading": [
@@ -9614,7 +9644,7 @@
             "filePath": "src/components/catalogNoResultsDeck/CatalogNoResultsDeck.jsx",
             "line": 62,
             "column": 8,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
         "Alert.Link": [
@@ -9622,7 +9652,7 @@
             "filePath": "src/components/catalogNoResultsDeck/CatalogNoResultsDeck.jsx",
             "line": 64,
             "column": 8,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
         "DataTable": [
@@ -9630,13 +9660,13 @@
             "filePath": "src/components/catalogNoResultsDeck/CatalogNoResultsDeck.jsx",
             "line": 71,
             "column": 6,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 340,
             "column": 8,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
         "CardView": [
@@ -9644,13 +9674,13 @@
             "filePath": "src/components/catalogNoResultsDeck/CatalogNoResultsDeck.jsx",
             "line": 84,
             "column": 8,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 358,
             "column": 12,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
         "Toast": [
@@ -9658,7 +9688,7 @@
             "filePath": "src/components/catalogSearchResults/buttons/downloadCsvButton/DownloadCsvButton.jsx",
             "line": 36,
             "column": 7,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
         "Badge": [
@@ -9666,85 +9696,85 @@
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 172,
             "column": 14,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 179,
             "column": 14,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 186,
             "column": 14,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 228,
             "column": 14,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 237,
             "column": 14,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 246,
             "column": 14,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
-            "line": 48,
-            "column": 8,
-            "version": "17.3.0"
+            "line": 47,
+            "column": 10,
+            "version": "19.7.0"
+          },
+          {
+            "filePath": "src/components/courseCard/CourseCard.jsx",
+            "line": 43,
+            "column": 12,
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/courseCard/CourseCard.jsx",
             "line": 50,
-            "column": 19,
-            "version": "17.3.0"
+            "column": 12,
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/courseCard/CourseCard.jsx",
-            "line": 54,
-            "column": 19,
-            "version": "17.3.0"
-          },
-          {
-            "filePath": "src/components/courseCard/CourseCard.jsx",
-            "line": 59,
-            "column": 16,
-            "version": "17.3.0"
+            "line": 60,
+            "column": 12,
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
             "line": 56,
             "column": 10,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 72,
-            "column": 16,
-            "version": "17.3.0"
+            "line": 69,
+            "column": 12,
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 80,
-            "column": 16,
-            "version": "17.3.0"
+            "line": 74,
+            "column": 12,
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 88,
-            "column": 16,
-            "version": "17.3.0"
+            "line": 79,
+            "column": 12,
+            "version": "19.7.0"
           }
         ],
         "DataTable.TableControlBar": [
@@ -9752,7 +9782,7 @@
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 356,
             "column": 10,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
         "DataTable.Table": [
@@ -9760,7 +9790,7 @@
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 369,
             "column": 25,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
         "DataTable.TableFooter": [
@@ -9768,7 +9798,7 @@
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 372,
             "column": 10,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
         "DataTable.RowStatus": [
@@ -9776,59 +9806,75 @@
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 373,
             "column": 12,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
         "Form.Radio": [
           {
             "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
-            "line": 25,
+            "line": 19,
             "column": 4,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
         "Card": [
           {
             "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
-            "line": 45,
+            "line": 43,
             "column": 2,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/courseCard/CourseCard.jsx",
-            "line": 29,
+            "line": 23,
             "column": 4,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 37,
+            "line": 36,
             "column": 4,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
-        "Card.Body": [
+        "Card.Header": [
           {
             "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
+            "line": 44,
+            "column": 4,
+            "version": "19.7.0"
+          },
+          {
+            "filePath": "src/components/courseCard/CourseCard.jsx",
+            "line": 33,
+            "column": 6,
+            "version": "19.7.0"
+          },
+          {
+            "filePath": "src/components/programCard/ProgramCard.jsx",
             "line": 46,
+            "column": 6,
+            "version": "19.7.0"
+          }
+        ],
+        "Card.Section": [
+          {
+            "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
+            "line": 56,
             "column": 4,
-            "version": "17.3.0"
-          }
-        ],
-        "Card.Title": [
+            "version": "19.7.0"
+          },
           {
-            "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
-            "line": 47,
+            "filePath": "src/components/courseCard/CourseCard.jsx",
+            "line": 35,
             "column": 6,
-            "version": "17.3.0"
-          }
-        ],
-        "Card.Text": [
+            "version": "19.7.0"
+          },
           {
-            "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
-            "line": 57,
+            "filePath": "src/components/programCard/ProgramCard.jsx",
+            "line": 50,
             "column": 6,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
         "Container": [
@@ -9836,25 +9882,25 @@
             "filePath": "src/components/catalogSelectionDeck/CatalogSelectionDeck.jsx",
             "line": 18,
             "column": 6,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/hero/Hero.jsx",
             "line": 56,
             "column": 6,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/PageWrapper.jsx",
             "line": 11,
             "column": 2,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/subheader/subheader.jsx",
             "line": 11,
             "column": 4,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
         "CardDeck": [
@@ -9862,21 +9908,21 @@
             "filePath": "src/components/catalogSelectionDeck/CatalogSelectionDeck.jsx",
             "line": 20,
             "column": 8,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ],
-        "Card.Img": [
+        "Card.ImageCap": [
           {
             "filePath": "src/components/courseCard/CourseCard.jsx",
-            "line": 30,
+            "line": 24,
             "column": 6,
-            "version": "17.3.0"
+            "version": "19.7.0"
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 38,
+            "line": 37,
             "column": 6,
-            "version": "17.3.0"
+            "version": "19.7.0"
           }
         ]
       }
@@ -12249,6 +12295,12 @@
             "version": "19.7.0"
           },
           {
+            "filePath": "src/courseware/course/sequence/lock-paywall/LockPaywall.jsx",
+            "line": 89,
+            "column": 14,
+            "version": "19.7.0"
+          },
+          {
             "filePath": "src/shared/links.jsx",
             "line": 11,
             "column": 4,
@@ -12390,7 +12442,7 @@
           },
           {
             "filePath": "src/courseware/course/sequence/lock-paywall/LockPaywall.jsx",
-            "line": 63,
+            "line": 80,
             "column": 4,
             "version": "19.7.0"
           },
@@ -12460,7 +12512,7 @@
           },
           {
             "filePath": "src/course-home/outline-tab/OutlineTab.jsx",
-            "line": 153,
+            "line": 157,
             "column": 18,
             "version": "19.7.0"
           },
@@ -12660,6 +12712,12 @@
             "filePath": "src/generic/upgrade-button/UpgradeNowButton.jsx",
             "line": 22,
             "column": 4,
+            "version": "19.7.0"
+          },
+          {
+            "filePath": "src/generic/upgrade-notification/UpgradeNotification.jsx",
+            "line": 454,
+            "column": 6,
             "version": "19.7.0"
           },
           {
@@ -16051,7 +16109,7 @@
       }
     },
     {
-      "version": "19.7.0",
+      "version": "19.9.0",
       "name": "edx-frontend-app-publisher",
       "repository": "https://github.com/edx/frontend-app-publisher",
       "folderName": "frontend-app-publisher",
@@ -16061,7 +16119,7 @@
             "filePath": "src/components/ActionButton/index.jsx",
             "line": 8,
             "column": 2,
-            "version": "19.7.0"
+            "version": "19.9.0"
           }
         ],
         "Icon": [
@@ -16069,67 +16127,67 @@
             "filePath": "src/components/Collaborator/index.jsx",
             "line": 32,
             "column": 8,
-            "version": "19.7.0"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/Collaborator/index.jsx",
             "line": 53,
             "column": 10,
-            "version": "19.7.0"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
             "line": 108,
             "column": 8,
-            "version": "19.7.0"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/LoadingSpinner/index.jsx",
             "line": 10,
             "column": 4,
-            "version": "19.7.0"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/RemoveButton/index.jsx",
             "line": 20,
             "column": 4,
-            "version": "19.7.0"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/SidePanes/CommentsPane.jsx",
             "line": 101,
             "column": 24,
-            "version": "19.7.0"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/SidePanes/UsersPane.jsx",
             "line": 108,
             "column": 13,
-            "version": "19.7.0"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/SidePanes/UsersPane.jsx",
             "line": 141,
             "column": 16,
-            "version": "19.7.0"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/Staffer/index.jsx",
             "line": 29,
             "column": 8,
-            "version": "19.7.0"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/Staffer/index.jsx",
             "line": 43,
             "column": 10,
-            "version": "19.7.0"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/StatusAlert/index.jsx",
             "line": 32,
             "column": 14,
-            "version": "19.7.0"
+            "version": "19.9.0"
           }
         ],
         "Collapsible.Advanced": [
@@ -16137,7 +16195,7 @@
             "filePath": "src/components/Collapsible/index.jsx",
             "line": 32,
             "column": 2,
-            "version": "19.7.0"
+            "version": "19.9.0"
           }
         ],
         "Collapsible.Trigger": [
@@ -16145,7 +16203,7 @@
             "filePath": "src/components/Collapsible/index.jsx",
             "line": 33,
             "column": 4,
-            "version": "19.7.0"
+            "version": "19.9.0"
           }
         ],
         "Collapsible.Visible": [
@@ -16153,13 +16211,13 @@
             "filePath": "src/components/Collapsible/index.jsx",
             "line": 35,
             "column": 6,
-            "version": "19.7.0"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/Collapsible/index.jsx",
             "line": 38,
             "column": 6,
-            "version": "19.7.0"
+            "version": "19.9.0"
           }
         ],
         "Modal": [
@@ -16167,7 +16225,7 @@
             "filePath": "src/components/ConfirmationModal/index.jsx",
             "line": 13,
             "column": 2,
-            "version": "19.7.0"
+            "version": "19.9.0"
           }
         ],
         "SearchField": [
@@ -16175,7 +16233,7 @@
             "filePath": "src/components/CourseTable/index.jsx",
             "line": 163,
             "column": 12,
-            "version": "19.7.0"
+            "version": "19.9.0"
           }
         ],
         "InputText": [
@@ -16183,19 +16241,19 @@
             "filePath": "src/components/DateTimeField/index.jsx",
             "line": 74,
             "column": 10,
-            "version": "19.7.0"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/DateTimeField/index.jsx",
             "line": 97,
             "column": 10,
-            "version": "19.7.0"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/RenderInputTextField/index.jsx",
             "line": 18,
             "column": 2,
-            "version": "19.7.0"
+            "version": "19.9.0"
           }
         ],
         "Hyperlink": [
@@ -16203,25 +16261,25 @@
             "filePath": "src/components/EditCoursePage/CollapsibleCourseRun.jsx",
             "line": 66,
             "column": 12,
-            "version": "19.7.0"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
             "line": 131,
             "column": 10,
-            "version": "19.7.0"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
             "line": 145,
             "column": 10,
-            "version": "19.7.0"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/Header/index.jsx",
             "line": 27,
             "column": 12,
-            "version": "19.7.0"
+            "version": "19.9.0"
           }
         ],
         "Badge": [
@@ -16229,7 +16287,7 @@
             "filePath": "src/components/EditCoursePage/CourseSkills.jsx",
             "line": 29,
             "column": 10,
-            "version": "19.7.0"
+            "version": "19.9.0"
           }
         ],
         "DropdownButton": [
@@ -16237,7 +16295,7 @@
             "filePath": "src/components/Header/index.jsx",
             "line": 43,
             "column": 12,
-            "version": "19.7.0"
+            "version": "19.9.0"
           }
         ],
         "Dropdown.Item": [
@@ -16245,7 +16303,7 @@
             "filePath": "src/components/Header/index.jsx",
             "line": 48,
             "column": 14,
-            "version": "19.7.0"
+            "version": "19.9.0"
           }
         ],
         "InputSelect": [
@@ -16253,13 +16311,13 @@
             "filePath": "src/components/RenderSelectField/index.jsx",
             "line": 15,
             "column": 2,
-            "version": "19.7.0"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/SidePanes/UsersPane.jsx",
             "line": 148,
             "column": 16,
-            "version": "19.7.0"
+            "version": "19.9.0"
           }
         ],
         "TextArea": [
@@ -16267,7 +16325,7 @@
             "filePath": "src/components/SidePanes/CommentsPane.jsx",
             "line": 123,
             "column": 14,
-            "version": "19.7.0"
+            "version": "19.9.0"
           }
         ],
         "StatusAlert": [
@@ -16275,7 +16333,7 @@
             "filePath": "src/components/StatusAlert/index.jsx",
             "line": 18,
             "column": 4,
-            "version": "19.7.0"
+            "version": "19.9.0"
           }
         ],
         "Table": [
@@ -16283,7 +16341,7 @@
             "filePath": "src/components/TableComponent/index.jsx",
             "line": 93,
             "column": 10,
-            "version": "19.7.0"
+            "version": "19.9.0"
           }
         ],
         "Pagination": [
@@ -16291,7 +16349,7 @@
             "filePath": "src/components/TableComponent/index.jsx",
             "line": 105,
             "column": 12,
-            "version": "19.7.0"
+            "version": "19.9.0"
           }
         ]
       }
@@ -19023,37 +19081,37 @@
         "Icon": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 158,
+            "line": 159,
             "column": 10,
             "version": "19.4.2"
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 171,
+            "line": 172,
             "column": 10,
             "version": "19.4.2"
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 184,
+            "line": 185,
             "column": 10,
             "version": "19.4.2"
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 197,
+            "line": 198,
             "column": 10,
             "version": "19.4.2"
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 210,
+            "line": 211,
             "column": 10,
             "version": "19.4.2"
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 311,
+            "line": 320,
             "column": 12,
             "version": "19.4.2"
           },
@@ -19253,7 +19311,7 @@
         "Card": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 259,
+            "line": 268,
             "column": 8,
             "version": "19.4.2"
           },
@@ -19279,7 +19337,7 @@
         "Image": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 273,
+            "line": 282,
             "column": 16,
             "version": "19.4.2"
           },
@@ -19293,7 +19351,7 @@
         "Card.Body": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 284,
+            "line": 293,
             "column": 10,
             "version": "19.4.2"
           },
@@ -19313,7 +19371,7 @@
         "Badge": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 304,
+            "line": 313,
             "column": 14,
             "version": "19.4.2"
           },
@@ -19369,7 +19427,7 @@
         "Card.Footer": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 309,
+            "line": 318,
             "column": 10,
             "version": "19.4.2"
           }
