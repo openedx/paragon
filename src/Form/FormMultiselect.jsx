@@ -6,7 +6,9 @@ import Button from '../Button/index';
 import Input from '../Input';
 import Chip from '../Chip';
 
-const FormMultiselect = ({ floatingLabel, children }) => {
+const FormMultiselect = ({
+  floatingLabel, children, hasError, errorMessage, disabled,
+}) => {
   const [selectField, setSelectField] = useState([]);
   const [selectItems, setSelectItems] = useState(children);
   const [selectVisible, setSelectVisible] = useState('none');
@@ -34,9 +36,18 @@ const FormMultiselect = ({ floatingLabel, children }) => {
     setSelectField(selectFieldBox);
   };
 
+  const returnItemsSelect = (e, elements) => {
+    setSelectField([]);
+    setSelectItems([...selectItemsTotal.concat(elements)]);
+  };
+
   return (
     <div className={classNames('form__multiselect')}>
-      <div className={classNames('form__multiselect-field')}>
+      <div className={classNames('form__multiselect-field', {
+        errors: hasError,
+        disabled,
+      })}
+      >
         {selectField.length === 0
           ? (
             <div className={classNames('form__multiselect-field--label')}>
@@ -67,6 +78,7 @@ const FormMultiselect = ({ floatingLabel, children }) => {
         <Button
           className={classNames(`form__multiselect-field--hide-btn ${selectVisible}`)}
           iconAfter={Close}
+          onClick={(e) => returnItemsSelect(e, selectField)}
         />
         <Button
           className={classNames('form__multiselect-field--show-btn')}
@@ -74,6 +86,12 @@ const FormMultiselect = ({ floatingLabel, children }) => {
           iconAfter={ExpandMore}
         />
       </div>
+      <span className={classNames('form__multiselect-field-error', {
+        errors: hasError,
+      })}
+      >
+        {errorMessage}
+      </span>
       <div className={classNames(`form__multiselect-items ${selectVisible}`)}>
         {selectItems.map((item) => {
           if (item.includes(filterSelect)) {
@@ -88,7 +106,7 @@ const FormMultiselect = ({ floatingLabel, children }) => {
                   setFilterSelect('');
                 }}
               >
-                <span>{item}</span>
+                {item}
               </button>
             );
           }
@@ -104,11 +122,20 @@ FormMultiselect.propTypes = {
   floatingLabel: PropTypes.node,
   /** Specifies the contents of the option rows */
   children: PropTypes.arrayOf(PropTypes.string),
+  /** Informs user if this `Step` has errors. */
+  hasError: PropTypes.bool,
+  /** Error message text. */
+  errorMessage: PropTypes.string,
+  /** Specifies whether the `Multiselect` is disabled. */
+  disabled: PropTypes.bool,
 };
 
 FormMultiselect.defaultProps = {
   floatingLabel: 'Label',
-  children: undefined,
+  children: [],
+  hasError: false,
+  errorMessage: 'Error text',
+  disabled: false,
 };
 
 export default FormMultiselect;
