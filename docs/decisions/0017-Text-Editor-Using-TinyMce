@@ -11,7 +11,7 @@ Status
 Proposed
 Context
 -------
-Already, there are two simultaneous ongoing implementations of React-based html editors using tinyMCE. One is the Text Xblock editor, the other is the instructor bulk email tool found in the communications MFE. Already, edX also uses tinyMCE in edx-platform, and hosts its own image of the service there. Presumably, this experience too will be moved from the ball of mud into an independent MFE, and other use cases for text editing will arise. Therefore, it seems obvious to standardize across implementations.
+Already, there are Three simultaneous ongoing implementations of React-based html editors using tinyMCE. One is the Text Xblock editor, the other is the instructor bulk email tool found in the communications MFE. The final is the discussions MFE. Already, edX also uses tinyMCE in edx-platform, and hosts its own image of the service there. Presumably, this experience too will be moved from the ball of mud into an independent MFE, and other use cases for text editing will arise. Therefore, it seems obvious to standardize across implementations. Paragon will serve as the source of truth for TinyMce versioning, much in the same way the Data table component works.
 TinyMCE itself is “based on WCAG [2] and Section 508, to ensure that the TinyMCE editor is accessible to content authors.” Other alternatives do not provide this assurance. In addition to being a familiar entity, it also accomplishes our main goals for content authoring.
 Consequences
 ------------
