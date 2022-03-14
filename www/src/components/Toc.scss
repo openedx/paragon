@@ -1,6 +1,6 @@
 .pgn-doc__toc {
-  position: sticky;
-  top: 4rem;
+  flex-direction: column;
+  box-shadow: none !important;
   padding: 1.5rem;
   height: calc(100vh - 4rem);
   overflow-y: auto;

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import { Sticky } from '~paragon-react'; // eslint-disable-line
 
-const Toc = ({ data, className }) => {
+const Toc = ({ data }) => {
   const generateTree = (headings) => (headings?.items?.length
     ? (
       <ul className="pgn-doc__toc-list">
@@ -22,10 +22,10 @@ const Toc = ({ data, className }) => {
   const tocTree = generateTree(data);
 
   return tocTree ? (
-    <div className={classNames(className, 'pgn-doc__toc')}>
+    <Sticky className="pgn-doc__toc">
       <p className="pgn-doc__toc-header">Contents</p>
       {tocTree}
-    </div>
+    </Sticky>
   ) : null;
 };
 
@@ -39,11 +39,6 @@ Toc.propTypes = {
   data: PropTypes.shape({
     items: PropTypes.arrayOf(PropTypes.shape(itemsShape)),
   }).isRequired,
-  className: PropTypes.string,
-};
-
-Toc.defaultProps = {
-  className: undefined,
 };
 
 export default Toc;
