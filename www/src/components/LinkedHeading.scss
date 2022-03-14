@@ -1,0 +1,14 @@
+.pgn-doc__heading {
+  .pgn-doc__anchor {
+    margin-left: 5px;
+    display: none;
+  }
+
+  &:hover .pgn-doc__anchor {
+    display: inline;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}

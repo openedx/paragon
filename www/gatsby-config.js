@@ -47,15 +47,16 @@ module.exports = {
           [
             require("rehype-autolink-headings"),
             {
-              behavior: 'prepend',
-              properties: { /* intentionally blank to remove default properties */ },
+              behavior: 'append',
               content: {
                 type: 'element',
                 tagName: 'span',
                 properties: {
-                  className: 'heading-icon-link',
+                  className: 'pgn-doc__anchor',
                 },
-                children: [],
+                children: [
+                  { type: 'text', value: '#' }
+                ],
               },
             },
           ],
