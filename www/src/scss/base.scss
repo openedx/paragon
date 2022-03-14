@@ -8,39 +8,9 @@ body {
   max-width: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  a {
-    .heading-icon-link {
-      position: relative;
-      display: none;
-      &:before {
-        content: url('../images/link.svg');
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translateX(-100%);
-        padding: 0 4px;
-      }
-    }
-    &:focus {
-      .heading-icon-link {
-        display: block;
-        &:before {
-          outline: 1px auto $primary;
-        }
-      }
-    }
-  }
-  &:hover {
-    a {
-      .heading-icon-link {
-        display: block;
-      }
-    }
-  }
-}
-
 @import "../components/CodeBlock";
+@import "../components/LinkedHeading";
 @import "../components/Menu";
 @import "../components/doc-elements";
 @import "../components/Settings";
+@import "../components/Toc";

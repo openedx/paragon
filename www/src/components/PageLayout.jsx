@@ -8,12 +8,19 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql, Link } from 'gatsby';
-import { Container, Nav } from '~paragon-react'; // eslint-disable-line
+import { Container, Nav, Row, Col } from '~paragon-react'; // eslint-disable-line
 import Header from './Header';
 import Menu from './Menu';
 import Settings from './Settings';
+import Toc from './Toc';
 
-const Layout = ({ children, showMinimizedTitle, hideFooterComponentMenu }) => {
+const Layout = ({
+  children,
+  showMinimizedTitle,
+  hideFooterComponentMenu,
+  isMdx,
+  tocData,
+}) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -31,7 +38,33 @@ const Layout = ({ children, showMinimizedTitle, hideFooterComponentMenu }) => {
         showMinimizedTitle={showMinimizedTitle}
       />
       <Settings />
-      <main className="flex-grow-1">{children}</main>
+      {isMdx ? (
+        <Container fluid>
+          <Row className="flex-xl-nowrap">
+            <Col className="d-none d-xl-block" xl={2} />
+            <Col
+              xl={8}
+              lg={9}
+              md={12}
+              as="main"
+              className="flex-grow-1"
+            >
+              {children}
+            </Col>
+            <Col
+              xl={2}
+              lg={3}
+              as={Toc}
+              data={tocData}
+              className="d-none d-lg-block"
+            />
+          </Row>
+        </Container>
+      ) : (
+        <main className="flex-grow-1">
+          {children}
+        </main>
+      )}
       {!hideFooterComponentMenu && (
         <Container className="py-3 mt-5 bg-light-200 border-top border-light-300">
           <Menu />
@@ -75,15 +108,27 @@ const Layout = ({ children, showMinimizedTitle, hideFooterComponentMenu }) => {
   );
 };
 
+const itemsShape = {
+  url: PropTypes.string,
+  title: PropTypes.string,
+};
+itemsShape.items = PropTypes.arrayOf(PropTypes.shape(itemsShape));
+
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  tocData: PropTypes.shape({
+    items: PropTypes.arrayOf(PropTypes.shape(itemsShape)),
+  }),
   showMinimizedTitle: PropTypes.bool,
   hideFooterComponentMenu: PropTypes.bool,
+  isMdx: PropTypes.bool,
 };
 
 Layout.defaultProps = {
+  tocData: {},
   showMinimizedTitle: false,
   hideFooterComponentMenu: false,
+  isMdx: false,
 };
 
 export default Layout;
