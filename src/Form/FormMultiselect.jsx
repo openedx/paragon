@@ -7,7 +7,7 @@ import Input from '../Input';
 import Chip from '../Chip';
 
 const FormMultiselect = ({
-  floatingLabel, children, hasError, errorMessage, disabled, variant,
+  floatingLabel, children, hasError, disabled, variant,
 }) => {
   const [selectField, setSelectField] = useState([]);
   const [selectItems, setSelectItems] = useState(children);
@@ -17,6 +17,7 @@ const FormMultiselect = ({
   const selectFieldBox = [...selectField];
   const selectItemsTotal = [...selectItems];
   const SELECT_ITEM_BOX_COUNT = 1;
+  const errorFlag = true;
 
   const setNewSelectVisibleItem = () => {
     const selectVisibleClass = selectVisible === 'none' ? 'show' : 'none';
@@ -45,7 +46,7 @@ const FormMultiselect = ({
     <div className={classNames('form__multiselect')}>
       <div
         className={classNames('form__multiselect-field', {
-          errors: hasError,
+          error: hasError && errorFlag,
           disabled,
         })}
       >
@@ -94,18 +95,19 @@ const FormMultiselect = ({
         />
       </div>
       <span className={classNames('form__multiselect-field-error', {
-        errors: hasError,
+        error: hasError && errorFlag,
       })}
       >
-        {errorMessage}
+        {hasError}
       </span>
       <div className={classNames(`form__multiselect-items ${selectVisible}`)}>
-        {selectItems.map((item) => {
+        {selectItems.map((item, i) => {
           if (item.includes(filterSelect)) {
             return (
               <button
                 className={classNames('form__multiselect-item ')}
-                key={item}
+                /* eslint-disable-next-line react/no-array-index-key */
+                key={item + i}
                 type="button"
                 ref={someRef}
                 onClick={(e) => {
@@ -130,9 +132,7 @@ FormMultiselect.propTypes = {
   /** Specifies the contents of the option rows */
   children: PropTypes.arrayOf(PropTypes.string),
   /** Informs user if this `Step` has errors. */
-  hasError: PropTypes.bool,
-  /** Error message text. */
-  errorMessage: PropTypes.string,
+  hasError: PropTypes.string,
   /** Specifies whether the `Multiselect` is disabled. */
   disabled: PropTypes.bool,
   /** The Multiselect style variant to use */
@@ -142,8 +142,7 @@ FormMultiselect.propTypes = {
 FormMultiselect.defaultProps = {
   floatingLabel: 'Label',
   children: [],
-  hasError: false,
-  errorMessage: 'Error text',
+  hasError: '',
   disabled: false,
   variant: false,
 };

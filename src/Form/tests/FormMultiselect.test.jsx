@@ -1,7 +1,6 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import {mount, shallow} from 'enzyme';
 import FormMultiselect from '../FormMultiselect';
-import Chip from "../../Chip";
 
 const props = {
   children: [
@@ -12,85 +11,73 @@ const props = {
     'Blue',
   ],
   floatingLabel: 'Test label',
-  errorMessage: 'Error text',
-  hasError: false,
+  hasError: 'Error text',
   disabled: false,
   variant: false,
 };
 
 // eslint-disable-next-line no-shadow
-const setUp = (props) => shallow(<FormMultiselect {...props} />);
+const setUp = (props) => mount(<FormMultiselect {...props} />);
 
 describe('FormMultiselect renders correctly', () => {
   let component;
-  let instance;
-
   beforeEach(() => {
     component = setUp(props);
-    instance = component.instance();
   });
 
-  describe('props Handlers', () => {
-    it('should ', () => {
-      const mockCallBack = jest.fn();
-      component = shallow(<Chip onClick={mockCallBack} />);
-      component.find('.form__multiselect-field--chip').simulate('click');
-      expect(mockCallBack.mock.calls.length).toBe(1);
-      console.log(component.debug());
-    });
-  });
   describe('has render component', () => {
-    it('render', () => {
+    it('render component', () => {
       component.find('.form__multiselect');
       expect(component).toHaveLength(1);
     });
-    it('render', () => {
+    it('create snapshot', () => {
       expect(component).toMatchSnapshot();
     });
   });
   describe('has props', () => {
-    it('show render select', () => {
+    it('checked render select wrapper', () => {
       const select = component.find('.form__multiselect-items');
       expect(select).toHaveLength(1);
     });
-    it('show render option', () => {
+    it('checked render option items', () => {
       const select = component.find('.form__multiselect-item');
       expect(select).toHaveLength(5);
     });
   });
   describe('has no props', () => {
-    it('show render option', () => {
+    it('checked render select wrapper', () => {
       component = shallow(<FormMultiselect />);
       const select = component.find('.form__multiselect-items');
       expect(select).toHaveLength(1);
     });
-    it('show render floatingLabel', () => {
+    it('checked render option items', () => {
+      component = shallow(<FormMultiselect />);
+      const select = component.find('.form__multiselect-item');
+      expect(select).toHaveLength(0);
+    });
+    it('checked render floatingLabel', () => {
       component = FormMultiselect.defaultProps.floatingLabel;
       expect(component).toEqual('Label');
     });
-    it('show render errorMessage', () => {
-      component = FormMultiselect.defaultProps.errorMessage;
-      expect(component).toEqual('Error text');
+    it('checked render hasError', () => {
+      component = FormMultiselect.defaultProps.hasError;
+      expect(component).toEqual('');
     });
   });
-  describe('test default props', () => {
-    it('test floatingLabel props', () => {
+  describe('default FormMultiselect props', () => {
+    it('checked floatingLabel props', () => {
       component = FormMultiselect.defaultProps.floatingLabel;
       expect(component).toEqual('Label');
     });
-    it('test errorMessage props', () => {
-      component = FormMultiselect.defaultProps.errorMessage;
-      expect(component).toEqual('Error text');
-    });
-    it('test hasError props', () => {
+    it('checked hasError props', () => {
       component = FormMultiselect.defaultProps.hasError;
-      expect(component).toEqual(false);
+      expect(component).toEqual('');
     });
-    it('test disabled props', () => {
+    it('checked disabled props', () => {
       component = FormMultiselect.defaultProps.disabled;
       expect(component).toEqual(false);
     });
-    it('test variant props', () => {
+    it('checked variant props', () => {
       component = FormMultiselect.defaultProps.variant;
       expect(component).toEqual(false);
     });

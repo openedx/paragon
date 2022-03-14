@@ -467,7 +467,6 @@ select.form-control {
 
   &-field {
     color: $form-multiselect-gray-500;
-    cursor: pointer;
     display: grid;
     grid-template-columns: 11fr 1fr 1fr;
     justify-content: space-between;
@@ -477,7 +476,7 @@ select.form-control {
     transition: $transition-base;
     padding: 0.5625rem 1rem 0.3125rem;
 
-    &.errors {
+    &.error {
       border: $form-multiselect-border-width solid #ca3a2f;
 
       &:hover {
@@ -567,7 +566,7 @@ select.form-control {
     &-error {
       display: none;
 
-      &.errors {
+      &.error {
         position: absolute;
         display: inline-block;
         font-size: 0.75rem;
@@ -678,6 +677,8 @@ select.form-control {
     transition: $transition-base;
     position: absolute;
     z-index: 2;
+    max-height: 18.75rem;
+    overflow: auto;
 
     @media (min-width: map-get($grid-breakpoints, 'xs')) {
       width: 100%;
