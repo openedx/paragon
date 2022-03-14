@@ -7,7 +7,7 @@ import Input from '../Input';
 import Chip from '../Chip';
 
 const FormMultiselect = ({
-  floatingLabel, children, hasError, errorMessage, disabled,
+  floatingLabel, children, hasError, errorMessage, disabled, variant,
 }) => {
   const [selectField, setSelectField] = useState([]);
   const [selectItems, setSelectItems] = useState(children);
@@ -43,10 +43,11 @@ const FormMultiselect = ({
 
   return (
     <div className={classNames('form__multiselect')}>
-      <div className={classNames('form__multiselect-field', {
-        errors: hasError,
-        disabled,
-      })}
+      <div
+        className={classNames('form__multiselect-field', {
+          errors: hasError,
+          disabled,
+        })}
       >
         {selectField.length === 0
           ? (
@@ -55,6 +56,12 @@ const FormMultiselect = ({
             </div>
           ) : (
             <div className={classNames('form__multiselect-field--wrapper')}>
+              <div className={classNames('form__multiselect-field--label-float', {
+                dark: variant,
+              })}
+              >
+                {floatingLabel}
+              </div>
               {selectField.length > 0 && selectField.map((item) => (
                 <Chip
                   iconAfter={Close}
@@ -128,6 +135,8 @@ FormMultiselect.propTypes = {
   errorMessage: PropTypes.string,
   /** Specifies whether the `Multiselect` is disabled. */
   disabled: PropTypes.bool,
+  /** The Multiselect style variant to use */
+  variant: PropTypes.bool,
 };
 
 FormMultiselect.defaultProps = {
@@ -136,6 +145,7 @@ FormMultiselect.defaultProps = {
   hasError: false,
   errorMessage: 'Error text',
   disabled: false,
+  variant: false,
 };
 
 export default FormMultiselect;
