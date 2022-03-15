@@ -1,5 +1,5 @@
 import React from 'react';
-import {mount, shallow} from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import FormMultiselect from '../FormMultiselect';
 
 const props = {
@@ -11,7 +11,7 @@ const props = {
     'Blue',
   ],
   floatingLabel: 'Test label',
-  hasError: 'Error text',
+  errorText: 'Error text',
   disabled: false,
   variant: false,
 };
@@ -60,7 +60,7 @@ describe('FormMultiselect renders correctly', () => {
       expect(component).toEqual('Label');
     });
     it('checked render hasError', () => {
-      component = FormMultiselect.defaultProps.hasError;
+      component = FormMultiselect.defaultProps.errorText;
       expect(component).toEqual('');
     });
   });
@@ -70,7 +70,7 @@ describe('FormMultiselect renders correctly', () => {
       expect(component).toEqual('Label');
     });
     it('checked hasError props', () => {
-      component = FormMultiselect.defaultProps.hasError;
+      component = FormMultiselect.defaultProps.errorText;
       expect(component).toEqual('');
     });
     it('checked disabled props', () => {

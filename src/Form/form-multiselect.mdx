@@ -13,25 +13,28 @@ notes: |
 ---
 
 A text style input that allows the user to select from multiple options.
-We would like to use [React-Select](https://react-select.com/home) as our implementation.
 
-### Controlled Usage
+### Basic usage
+
+#### Controlled Usage
 
 ```jsx live
-
 () => {
+    const options = [
+        'White',
+        'Black',
+        'Green',
+        'Purple',
+        'Blue'
+    ];
+    const [selectedOptions, setSelectedOptions] = useState(['Purple', 'Green']);
 
- const selectOptionsData = [
-     'White',
-     'Black',
-     'Green',
-     'Purple',
-     'Blue'
- ];
-
-  return (
-        <FormMultiselect
-            children = {selectOptionsData}
+    return (
+        <Form.Multiselect
+            floatingLabel="Colors"
+            options={options}
+            selectedOptions={selectedOptions}
+            setSelectedOptions={setSelectedOptions}
         />
   );
 }
