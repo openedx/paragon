@@ -34,7 +34,7 @@ DataTableLayout.defaultProps = {
 DataTableLayout.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
-  filtersTitle: PropTypes.string,
+  filtersTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };
 
 export default DataTableLayout;

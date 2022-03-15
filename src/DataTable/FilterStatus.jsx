@@ -27,7 +27,7 @@ const FilterStatus = ({
         {clearFiltersText || (
           <FormattedMessage
             id="pgn.DataTable.FilterStatus.clearFiltersText"
-            defaultMessage="Clear Filters"
+            defaultMessage="Clear filters"
             description="A text that appears on the `Clear filters` button"
           />
         )}

@@ -4,6 +4,7 @@ import {
   Form,
   Icon,
   IconButton,
+  Stack,
 } from '~paragon-react';
 import { Close } from '~paragon-icons';
 
@@ -39,7 +40,7 @@ const Settings = () => {
           size="sm"
         />
       </div>
-      <div className="pgn__settings-form-wrapper">
+      <Stack gap={3}>
         <Form.Group>
           <Form.Control
             as="select"
@@ -87,7 +88,7 @@ const Settings = () => {
             </Form.Control>
           </Form.Group>
         )}
-      </div>
+      </Stack>
     </Sheet>
   );
 };

@@ -15,7 +15,7 @@ const RowStatus = ({ className, statusText }) => {
       {statusText || (
         <FormattedMessage
           id="pgn.DataTable.RowStatus.statusText"
-          defaultMessage="Showing {pageSize} of {itemCount}"
+          defaultMessage="Showing {pageSize} of {itemCount}."
           description="A text describing how many rows is shown in the table"
           values={{ itemCount, pageSize }}
         />

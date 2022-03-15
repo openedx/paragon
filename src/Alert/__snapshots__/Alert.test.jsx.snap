@@ -25,7 +25,9 @@ exports[`<Alert /> renders with button and dismissible props 1`] = `
         onClick={[Function]}
         type="button"
       >
-        Dismiss
+        <span>
+          Dismiss
+        </span>
       </button>
       <button
         className="btn btn-primary btn-sm"
@@ -95,7 +97,9 @@ exports[`<Alert /> renders with dismissible prop 1`] = `
         onClick={[Function]}
         type="button"
       >
-        Dismiss
+        <span>
+          Dismiss
+        </span>
       </button>
     </div>
   </div>
@@ -163,7 +167,9 @@ exports[`<Alert /> renders with stacked prop 1`] = `
         onClick={[Function]}
         type="button"
       >
-        Dismiss
+        <span>
+          Dismiss
+        </span>
       </button>
       <button
         className="btn btn-primary btn-sm"

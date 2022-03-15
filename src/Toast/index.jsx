@@ -103,7 +103,9 @@ Toast.propTypes = {
   delay: PropTypes.number,
   /** Class names for the `BaseToast` component */
   className: PropTypes.string,
-  intl: PropTypes.shape.isRequired,
+  intl: PropTypes.shape({
+    formatMessage: PropTypes.func,
+  }).isRequired,
 };
 
 export default injectIntl(Toast);

@@ -18,12 +18,6 @@ const filterProps = {
   showFilteredFields: true,
 };
 
-const filterPropsNoFiltered = {
-  ...filterProps,
-  showFilteredFields: false,
-  clearFiltersText: '',
-};
-
 // eslint-disable-next-line react/prop-types
 const FilterStatusWrapper = ({ value, props }) => (
   <DataTableContext.Provider value={value}><FilterStatus {...props} /></DataTableContext.Provider>
@@ -59,10 +53,6 @@ describe('<FilterStatus />', () => {
   });
   it('returns null if setAllFilters is not present (table is not filterable)', () => {
     const wrapper = mount(<FilterStatusWrapper value={{}} props={filterProps} />);
-    expect(wrapper.text()).toEqual('');
-  });
-  it('hides filter text', () => {
-    const wrapper = mount(<FilterStatusWrapper value={instance} props={filterPropsNoFiltered} />);
     expect(wrapper.text()).toEqual('');
   });
 });
