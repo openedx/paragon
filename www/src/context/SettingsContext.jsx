@@ -23,13 +23,18 @@ const SettingsContextProvider = ({ children }) => {
     document.body.setAttribute('dir', e.target.value);
     setDirection(e.target.value);
     global.localStorage.setItem('pgn__direction', e.target.value);
-    window.analytics.track('Direction change');
+    global.analytics.track(`Direction change (${e.target.value})`);
   };
 
   const handleThemeChange = (e) => {
     setTheme(e.target.value);
     global.localStorage.setItem('pgn__theme', e.target.value);
-    window.analytics.track('Theme change');
+    global.analytics.track(`Theme change (${e.target.value})`);
+  };
+
+  const handleSettingsChange = (value) => {
+    setShowSettings(value);
+    global.analytics.track(`Toggle Settings (${value ? 'show' : 'hide'})`);
   };
 
   // this hook will be called after the first render, so we can safely access localStorage
@@ -45,18 +50,14 @@ const SettingsContextProvider = ({ children }) => {
     }
   }, []);
 
-  useEffect(() => {
-    window.analytics.track('Toggle Settings');
-  }, [showSettings]);
-
   const contextValue = {
     theme,
     direction,
     showSettings,
     onThemeChange: handleThemeChange,
     onDirectionChange: handleDirectionChange,
-    closeSettings: () => setShowSettings(false),
-    openSettings: () => setShowSettings(true),
+    closeSettings: () => handleSettingsChange(false),
+    openSettings: () => handleSettingsChange(true),
   };
 
   return (
