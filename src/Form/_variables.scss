@@ -238,10 +238,67 @@ $form-feedback-tooltip-opacity:       .9 !default;
 $form-feedback-tooltip-border-radius: $border-radius !default;
 
 // Form multiselect
-$form-multiselect-gray-500: $gray-500;
-$form-multiselect-white: $white;
-$form-multiselect-black: $black;
-$form-multiselect-light: $light;
-$form-multiselect-line-height: 20px;
-$form-multiselect-disabled-opacity: .3;
-$form-multiselect-border-width: 0.125rem;
+$form-multiselect-black: $black !default;
+$form-multiselect-gray: $gray-500 !default;
+$form-multiselect-dark: #d7d3d1 !default;
+$form-multiselect-white: $white !default;
+$form-multiselect-light: $light !default;
+$form-multiselect-error: #ca3a2f !default;
+
+$form-multiselect-font-size: .75rem !default;
+$form-multiselect-font-weight: 400 !default;
+$form-multiselect-line-height: 1.25rem !default;
+$form-multiselect-spacer: 1rem !default;
+$form-multiselect-z-index: 2 !default;
+$form-multiselect-border-width: .125rem !default;
+$form-multiselect-border-width: .0625rem !default;
+$form-multiselect-width: 26.75rem !default;
+$form-multiselect-height: 1.5rem !default;
+
+$form-multiselect-items-height: 18.75rem !default;
+$form-multiselect-items-width-xs: 100% !default;
+$form-multiselect-items-margin-y: .3125rem !default;
+
+$form-multiselect-item-padding-y: .625rem !default;
+$form-multiselect-item-padding-x: .9375rem !default;
+$form-multiselect-item-text-width: $form-multiselect-items-width-xs !default;
+$form-multiselect-item-width: $form-multiselect-items-width-xs !default;
+
+$form-multiselect-border-height: $form-multiselect-height !default;
+$form-multiselect-show-button-height: $form-multiselect-items-width-xs !default;
+$form-multiselect-width-xs: $form-multiselect-items-width-xs !default;
+$form-multiselect-hide-button-height: $form-multiselect-show-button-height !default;
+$form-multiselect-field-search-padding-x: .5rem !default;
+
+$form-multiselect-chip-margin-y: .25rem !default;
+$form-multiselect-chip-margin-x: $form-multiselect-chip-margin-y !default;
+$form-multiselect-chip-title-max-width: 16.25rem !default;
+$form-multiselect-chip-title-margin-y: $form-multiselect-item-padding-y !default;
+$form-multiselect-chip-padding-y: $form-multiselect-field-search-padding-x !default;
+$form-multiselect-field-label-icon-top: $form-multiselect-field-search-padding-x !default;
+
+$form-multiselect-field-padding: .5625rem !default;
+$form-multiselect-fields-padding-y: $form-multiselect-items-margin-y !default;
+
+$form-multiselect-hide-button-margin-x-bottom: .1875rem !default;
+$form-multiselect-hide-button-margin-y-bottom: .6875rem !default;
+$form-multiselect-hide-button-right: .375rem !default;
+
+$form-multiselect-field-label-padding-x: .5625rem !default;
+$form-multiselect-field-label-line-height: .875rem !default;
+$form-multiselect-field-label-max-width: 24.6875rem !default;
+
+$form-multiselect-hide-button-margin-bottom: $form-multiselect-chip-margin-y !default;
+$form-multiselect-hide-button-left: -$form-multiselect-hide-button-right !default;
+$form-multiselect-show-button-focus-left: -$form-multiselect-hide-button-margin-x-bottom !default;
+$form-multiselect-show-button-focus-right: $form-multiselect-show-button-focus-left !default;
+$form-multiselect-show-button-focus-top: -$form-multiselect-chip-margin-y !default;
+$form-multiselect-show-button-rtl-left: -$form-multiselect-hide-button-right !default;
+$form-multiselect-hide-button-focus-right: -$form-multiselect-hide-button-margin-x-bottom !default;
+$form-multiselect-show-button-icon-margin-bottom: $form-multiselect-hide-button-margin-x-bottom !default;
+
+$form-multiselect-dark-y: -.0625rem !default;
+$form-multiselect-dark-x: -.625rem !default;
+
+$form-multiselect-disabled-opacity: .3 !default;
+$form-multiselect-bottom-error: -$form-multiselect-line-height !default;

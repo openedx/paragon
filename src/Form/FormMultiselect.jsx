@@ -56,40 +56,36 @@ const FormMultiselect = React.forwardRef(({
   };
 
   return (
-    <div className="form__multiselect" ref={ref}>
+    <div className="png__form-multiselect" ref={ref}>
       <div
-        className={classNames('form__multiselect-field', {
+        className={classNames('png__form-multiselect-field', {
           error: !!errorText,
           disabled,
         })}
       >
-        {/* <div className={classNames('form__multiselect-field--label')}> */}
-        {/*  {floatingLabel} */}
-        {/* </div> */}
-        <div className="form__multiselect-field--wrapper">
-          {(isActiveInput || !!selectedOptions.length) && (
-            <div className={classNames('form__multiselect-field--label-float', {
+        <div className="png__form-multiselect-field-wrapper">
+          <div className={classNames('png__form-multiselect-field-label',
+            isActiveInput || !!selectedOptions.length ? 'slide-up' : 'slide-down', {
               dark: variant === 'dark',
             })}
-            >
-              {floatingLabel}
-            </div>
-          )}
+          >
+            {floatingLabel}
+          </div>
           {selectedOptions.map((item) => (
             <Chip
               iconAfter={Close}
               onClick={() => handleRemove(item)}
-              className="form__multiselect-field--chip"
+              className="png__form-multiselect-field-chip"
               key={item}
             >
-              <h4 className="form__multiselect-field--chip-title">
+              <span className="png__form-multiselect-field-chip-title">
                 {item}
-              </h4>
+              </span>
             </Chip>
           ))}
           <Form.Control
             ref={inputRef}
-            className="form__multiselect-search"
+            className="png__form-multiselect-search"
             type="text"
             value={searchValue}
             onChange={handleSearch}
@@ -98,29 +94,32 @@ const FormMultiselect = React.forwardRef(({
             onBlur={() => setIsActiveInput(false)}
           />
         </div>
-        {!!selectedOptions.length && (
+        <div className="png__form-multiselect-button-group">
+          {!!selectedOptions.length && (
           <Button
-            className="form__multiselect-field--hide-btn"
+            className="png__form-multiselect-field-hide-btn"
             iconAfter={Close}
             onClick={handleReset}
           />
-        )}
-        <Button
-          className="form__multiselect-field--show-btn"
-          onClick={() => setIsOpen(!isOpen)}
-          iconAfter={ExpandMore}
-        />
+          )}
+          <span className="png__form-multiselect-button-group-border" />
+          <Button
+            className="png__form-multiselect-field-show-btn"
+            onClick={() => setIsOpen(!isOpen)}
+            iconAfter={ExpandMore}
+          />
+        </div>
       </div>
-      <span className={classNames('form__multiselect-field-error', {
+      <span className={classNames('png__form-multiselect-field-error', {
         error: !!errorText,
       })}
       >
         {errorText}
       </span>
-      <div className={classNames('form__multiselect-items', isOpen ? 'show' : 'none')}>
+      <div className={classNames('png__form-multiselect-items', isOpen ? 'show' : 'none')}>
         {dropdownOptions.length ? dropdownOptions.map(item => (
           <button
-            className={classNames('form__multiselect-item ')}
+            className={classNames('png__form-multiselect-item ')}
             key={`option-${item}`}
             type="button"
             onClick={() => handleSelect(item)}
@@ -128,7 +127,7 @@ const FormMultiselect = React.forwardRef(({
             {item}
           </button>
         )) : (
-          <span>{noOptionsText}</span>
+          <span className="png__form-multiselect-items-text">{noOptionsText}</span>
         )}
       </div>
     </div>

@@ -28,3 +28,29 @@
     transform: translateY(-$padding-y) scale(.75)  translateY(-$percent-height-minus-no-bottom-leading);
   }
 }
+
+@mixin animation-slide-up {
+  animation: slide-up 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+  @keyframes slide-up {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+@mixin animation-slide-down {
+  animation: slide-down 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+  @keyframes slide-down {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(20px);
+    }
+  }
+}

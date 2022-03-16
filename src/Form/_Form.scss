@@ -454,33 +454,32 @@ select.form-control {
 
 // Form.Multiselect
 
-.form__multiselect {
+.png__form-multiselect {
   position: relative;
 
   @media (min-width: map-get($grid-breakpoints, 'xs')) {
-    width: 100%;
+    width: $form-multiselect-width-xs;
   }
 
   @media (min-width: map-get($grid-breakpoints, 'sm')) {
-    width: 428px;
+    width: $form-multiselect-width;
   }
 
   &-field {
-    color: $form-multiselect-gray-500;
-    display: grid;
-    grid-template-columns: 11fr 1fr 1fr;
+    color: $form-multiselect-gray;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: $input-bg;
-    border: $border-width solid $form-multiselect-gray-500;
+    border: $border-width solid $form-multiselect-gray;
     transition: $transition-base;
-    padding: 0.5625rem 1rem 0.3125rem;
+    padding: $form-multiselect-field-padding $form-multiselect-spacer $form-multiselect-fields-padding-y;
 
     &.error {
-      border: $form-multiselect-border-width solid #ca3a2f;
+      border: $form-multiselect-border-width solid $form-multiselect-error;
 
       &:hover {
-        border: $form-multiselect-border-width solid #ca3a2f;
+        border: $form-multiselect-border-width solid $form-multiselect-error;
       }
     }
 
@@ -494,71 +493,71 @@ select.form-control {
       border: $border-width solid $form-multiselect-black;
     }
 
-    &--label {
-      font-size: 0.875rem;
-      line-height: 1rem;
-      transition: $transition-base;
-      padding: 0;
-      margin: 0 0 0.125rem 0;
-
-      &.none {
-        display: none;
-      }
-    }
-
-    &--show-btn {
-      background-color: $white;
+    &-show-btn {
+      background-color: $form-multiselect-white;
       border: none;
-      padding: 0 0 0 0.625rem;
-      border-radius: 0;
-      height: 100%;
-      border-left: $border-width solid $form-multiselect-light;
-      margin-bottom: 0.25rem;
+      padding: 0;
+      @include border-radius($border-radius, 0);
+      height: $form-multiselect-show-button-height;
 
       &:hover,
-      &:not(:disabled):not(.disabled):active {
+      &:not(:disabled):not(.disabled):active,
+      &.btn-primary:not(:disabled):not(.disabled):hover,
+      &.btn-primary:not(:disabled):not(.disabled):focus {
         background-color: $form-multiselect-white;
-        border-left: $border-width solid $form-multiselect-light;
       }
 
       &:focus:before {
-        right: -0.25rem;
-        top: -0.125rem;
-        border: $form-multiselect-border-width solid $form-multiselect-gray-500;
-        left: 0.375rem;
-        bottom: -0.125rem;
+        right: $form-multiselect-show-button-focus-right;
+        border: $form-multiselect-border-width solid $form-multiselect-gray;
+        left: $form-multiselect-show-button-focus-left;
         opacity: $form-multiselect-disabled-opacity;
+        top: $form-multiselect-show-button-focus-top;
+        bottom: 0;
+
+        [dir="rtl"] & {
+          left: $form-multiselect-show-button-rtl-left;
+        }
       }
 
       .pgn__icon {
         color: $form-multiselect-black;
-        margin: 0;
+        margin-right: 0 !important;
+        margin-left: 0;
+        margin-bottom: $form-multiselect-show-button-icon-margin-bottom;
       }
     }
 
-    &--hide-btn {
+    &-hide-btn {
       background-color: $form-multiselect-white;
       border: none;
-      color: $form-multiselect-gray-500;
+      color: $form-multiselect-gray;
       padding: 0;
-      height: 100%;
+      height: $form-multiselect-hide-button-height;
 
       .btn-icon-after {
-        color: $form-multiselect-gray-500;
-        margin: 0 0.625rem 0.25rem 0;
+        color: $form-multiselect-gray;
+        margin: 0 0 $form-multiselect-hide-button-margin-bottom 0;
       }
 
       &:focus::before {
         bottom: 0;
-        right: 0.375rem;
-        border: $form-multiselect-border-width solid $form-multiselect-gray-500;
+        right: $form-multiselect-hide-button-focus-right;
+        border: $form-multiselect-border-width solid $form-multiselect-gray;
         opacity: $form-multiselect-disabled-opacity;
+
+        [dir="rtl"] & {
+          right: $form-multiselect-hide-button-right;
+          left: $form-multiselect-hide-button-left;
+        }
       }
 
       &:hover,
       &:active,
       &:focus,
-      &:not(:disabled):not(.disabled):active {
+      &:not(:disabled):not(.disabled):active,
+      &.btn-primary:not(:disabled):not(.disabled):hover,
+      &.btn-primary:not(:disabled):not(.disabled):focus {
         background-color: $form-multiselect-white;
       }
     }
@@ -569,55 +568,50 @@ select.form-control {
       &.error {
         position: absolute;
         display: inline-block;
-        font-size: 0.75rem;
+        font-size: $form-multiselect-font-size;
         line-height: $form-multiselect-line-height;
-        color: #d23228;
-        bottom: -1.25rem;
+        color: $form-multiselect-error;
+        bottom: $form-multiselect-bottom-error;
       }
     }
 
-    &--wrapper {
-      display: grid;
+    &-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1 1 auto;
 
-      @media (min-width: map-get($grid-breakpoints, 'xs')) {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      @media (min-width: map-get($grid-breakpoints, 'sm')) {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-
-      .form__multiselect-field--label-float {
-        font-size: 0.75rem;
-        line-height: 0.875rem;
+      .png__form-multiselect-field-label {
+        font-size: $form-multiselect-font-size;
+        line-height: $form-multiselect-field-label-line-height;
         position: absolute;
-        top: -0.6875rem;
-        padding: 0 0.5625rem;
+        top: -$form-multiselect-field-label-icon-top;
+        padding: 0 $form-multiselect-field-label-padding-x;
         display: inline-block;
         background-color: $form-multiselect-white;
-        max-width: 24.6875rem;
+        max-width: $form-multiselect-field-label-max-width;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        transition: $transition-base;
 
         &.dark {
-          color: #d7d3d1;
-          top: -1.0625rem;
-          left: -0.625rem;
+          color: $form-multiselect-dark;
+          top: $form-multiselect-dark-y;
+          left: $form-multiselect-dark-x;
           background-color: transparent;
         }
       }
     }
 
-    &--chip {
-      margin: 0 0.25rem  0.25rem 0;
-      padding: 0 0.5rem;
+    &-chip {
+      margin: 0 $form-multiselect-chip-margin-x  $form-multiselect-chip-margin-y 0;
+      padding: 0 $form-multiselect-chip-padding-y;
       display: flex;
       justify-content: center;
       align-items: center;
       background-color: $form-multiselect-light;
       border: none;
-      height: 1.5rem;
+      height: $form-multiselect-height;
 
       &:hover {
         background-color: $form-multiselect-light;
@@ -630,72 +624,70 @@ select.form-control {
 
       &-title {
         display: inline;
-        font-size: 0.75rem;
+        font-size: $form-multiselect-font-size;
         line-height: $form-multiselect-line-height;
         color: $form-multiselect-black;
-        font-weight: 400;
-        max-width: 3.125rem;
-        margin: 0 0.625rem 0 0;
+        font-weight: $form-multiselect-font-weight;
+        max-width: $form-multiselect-chip-title-max-width;
+        margin: 0 $form-multiselect-chip-title-margin-y 0 0;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
       }
 
       .chip-icon-after {
-        height: 1rem;
-      }
-
-      &--label {
-        padding: 0.1875rem;
-        margin: 0.25rem;
-        display: inline-block;
+        height: $form-multiselect-spacer;
       }
     }
   }
 
   &-search {
-    border: none;
-    font-size: 0.75rem;
-    line-height: $form-multiselect-line-height;
-    height: 1.5rem;
-    padding: 0 0.5rem;
+    max-width: 35%;
 
-    &:focus,
-    &:hover {
-      box-shadow: none;
-      color: $form-multiselect-black;
-    }
+    input {
+      border: none;
+      font-size: $form-multiselect-font-size;
+      line-height: $form-multiselect-line-height;
+      height: $form-multiselect-height;
+      padding: 0 $form-multiselect-field-search-padding-x;
+      transition: $transition-base;
 
-    &:focus {
-      border: $border-width solid $form-multiselect-gray-500;
+      &:hover {
+        border: none;
+      }
+
+      &:focus {
+        box-shadow: none;
+        color: $form-multiselect-black;
+      }
     }
   }
 
   &-items {
-    margin-top: 0.3125rem;
+    margin-top: $form-multiselect-items-margin-y;
     box-shadow: $level-1-box-shadow;
     transition: $transition-base;
     position: absolute;
-    z-index: 2;
-    max-height: 18.75rem;
+    z-index: $form-multiselect-z-index;
+    max-height: $form-multiselect-items-height;
     overflow: auto;
 
     @media (min-width: map-get($grid-breakpoints, 'xs')) {
-      width: 100%;
+      width: $form-multiselect-items-width-xs;
     }
 
     @media (min-width: map-get($grid-breakpoints, 'sm')) {
-      width: 26.75rem;
+      width: $form-multiselect-width;
     }
 
-    .form__multiselect-item {
-      font-size: 0.75rem;
+    .png__form-multiselect-item {
+      font-size: $form-multiselect-font-size;
       line-height: $form-multiselect-line-height;
       color: $form-multiselect-black;
-      padding: 0.625rem 0.9375rem;
+      padding: $form-multiselect-item-padding-y $form-multiselect-item-padding-x;
       cursor: pointer;
       display: block;
-      width: 100%;
+      width: $form-multiselect-item-width;
       text-align: left;
       background-color: $form-multiselect-white;
       border: none;
@@ -710,6 +702,16 @@ select.form-control {
         background-color: $light-300;
       }
     }
+
+    &-text {
+      font-size: $form-multiselect-font-size;
+      line-height: $form-multiselect-line-height;
+      padding: $form-multiselect-item-padding-y $form-multiselect-item-padding-x;
+      display: block;
+      width: $form-multiselect-item-text-width;
+      text-align: left;
+      background-color: $form-multiselect-white;
+    }
   }
 
   .none {
@@ -717,4 +719,26 @@ select.form-control {
     height: 0;
     overflow: hidden;
   }
+
+  &-button-group {
+    display: flex;
+    align-self: stretch;
+
+    &-border {
+      align-self: stretch;
+      background-color: $form-multiselect-light;
+      margin: 0 $form-multiselect-hide-button-margin-y-bottom $form-multiselect-hide-button-margin-x-bottom;
+      width: $form-multiselect-border-width;
+      min-height: $form-multiselect-border-height;
+    }
+  }
+}
+
+.slide-up {
+  @include animation-slide-up;
+}
+
+.slide-down {
+  @include animation-slide-down;
+  opacity: 0;
 }
