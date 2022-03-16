@@ -4,8 +4,8 @@ import classNames from 'classnames';
 import DataTableContext from './DataTableContext';
 
 const EmptyTable = ({ content, className }) => {
-  const { rows } = useContext(DataTableContext);
-  if (!rows || rows.length > 0) { return null; }
+  const { rows, isLoading } = useContext(DataTableContext);
+  if (isLoading || !rows || rows.length > 0) { return null; }
 
   return (<div className={classNames('pgn__data-table-empty', className)}>{content}</div>);
 };
