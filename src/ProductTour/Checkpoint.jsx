@@ -122,6 +122,7 @@ Checkpoint.defaultProps = {
   endButtonText: null,
   placement: 'top',
   title: null,
+  showDismissButton: undefined,
 };
 
 Checkpoint.propTypes = {
@@ -155,6 +156,8 @@ Checkpoint.propTypes = {
   title: PropTypes.node,
   /** The total number of Checkpoints in a tour */
   totalCheckpoints: PropTypes.number.isRequired,
+  /** Enforces visibility of the dismiss button under all circumstances */
+  showDismissButton: PropTypes.bool,
 };
 
 export default Checkpoint;
