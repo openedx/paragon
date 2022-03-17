@@ -30,4 +30,12 @@ describe('<EmptyTableContent />', () => {
     );
     expect(nonEmptyWrapper.text()).toEqual('');
   });
+  it('does not display if the table data is loading', () => {
+    const loadingWrapper = mount(
+      <DataTableContext.Provider value={{ isLoading: true }}>
+        <EmptyTableContent {...props} />
+      </DataTableContext.Provider>,
+    );
+    expect(loadingWrapper.text()).toEqual('');
+  });
 });
