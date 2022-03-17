@@ -135,4 +135,30 @@ describe('Checkpoint', () => {
       expect(breadcrumbs.length).toEqual(0);
     });
   });
+
+  describe('only one Checkpoint in Tour and showDismissButton set to true', () => {
+    it('it renders dismiss button and end button', () => {
+      render(
+        <>
+          <div id="#target-element" />
+          <Checkpoint
+            advanceButtonText="Next"
+            body="Lorem ipsum checkpoint body"
+            dismissButtonText="Dismiss"
+            endButtonText="End"
+            index={0}
+            onAdvance={handleAdvance}
+            onDismiss={handleDismiss}
+            onEnd={handleEnd}
+            target="#target-element"
+            title="Checkpoint title"
+            totalCheckpoints={1}
+            showDismissButton
+          />
+        </>,
+      );
+      expect(screen.getByRole('button', { name: 'Dismiss' })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'End' })).toBeInTheDocument();
+    });
+  });
 });

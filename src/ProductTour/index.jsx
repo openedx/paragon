@@ -104,6 +104,7 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
       target={currentCheckpointData.target}
       title={currentCheckpointData.title}
       totalCheckpoints={prunedCheckpoints.length}
+      showDismissButton={currentCheckpointData.showDismissButton}
       ref={ref}
     />
   );
@@ -121,6 +122,7 @@ ProductTour.defaultProps = {
       onDismiss: () => {},
       placement: 'top',
       title: '',
+      showDismissButton: undefined,
     },
     dismissButtonText: '',
     endButtonText: '',
@@ -163,6 +165,8 @@ ProductTour.propTypes = {
       target: PropTypes.string.isRequired,
       /** The text displayed in the title of the Checkpoint */
       title: PropTypes.node,
+      /** Enforces visibility of the dismiss button under all circumstances */
+      showDismissButton: PropTypes.bool,
     })),
     /** The text displayed on the button used to dismiss the tour. */
     dismissButtonText: PropTypes.node,

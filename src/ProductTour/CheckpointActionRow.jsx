@@ -10,9 +10,10 @@ const CheckpointActionRow = React.forwardRef(({
   onAdvance,
   onDismiss,
   onEnd,
+  showDismissButton,
 }, ref) => (
   <div className="pgn__checkpoint-action-row" ref={ref}>
-    {!isLastCheckpoint && (
+    {(showDismissButton === undefined ? !isLastCheckpoint : showDismissButton) && (
       <Button
         variant="tertiary"
         className="pgn__checkpoint-button_dismiss"
@@ -40,6 +41,7 @@ CheckpointActionRow.defaultProps = {
   onAdvance: () => {},
   onDismiss: () => {},
   onEnd: () => {},
+  showDismissButton: undefined,
 };
 
 CheckpointActionRow.propTypes = {
@@ -57,6 +59,8 @@ CheckpointActionRow.propTypes = {
   onDismiss: PropTypes.func,
   /** A function that runs when triggering the `onClick` event of the advance button if isLastCheckpoint is true. */
   onEnd: PropTypes.func,
+  /** Enforces visibility of the dismiss button under all circumstances */
+  showDismissButton: PropTypes.bool,
 };
 
 export default CheckpointActionRow;
