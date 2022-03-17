@@ -399,7 +399,6 @@ select.form-control {
   display: inline-flex;
 
   .pgn__form-label {
-    display: block;
     display: flex;
     align-items: center;
     margin-bottom: 0;
@@ -454,7 +453,7 @@ select.form-control {
 
 // Form.Multiselect
 
-.png__form-multiselect {
+.pgn__form-multiselect {
   position: relative;
 
   @media (min-width: map-get($grid-breakpoints, 'xs')) {
@@ -580,7 +579,7 @@ select.form-control {
       flex-wrap: wrap;
       flex: 1 1 auto;
 
-      .png__form-multiselect-field-label {
+      .pgn__form-multiselect-field-label {
         font-size: $form-multiselect-font-size;
         line-height: $form-multiselect-field-label-line-height;
         position: absolute;
@@ -680,7 +679,7 @@ select.form-control {
       width: $form-multiselect-width;
     }
 
-    .png__form-multiselect-item {
+    .pgn__form-multiselect-item {
       font-size: $form-multiselect-font-size;
       line-height: $form-multiselect-line-height;
       color: $form-multiselect-black;

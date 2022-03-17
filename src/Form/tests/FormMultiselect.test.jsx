@@ -1,85 +1,173 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import renderer from 'react-test-renderer';
 import FormMultiselect from '../FormMultiselect';
 
-const props = {
-  children: [
-    'White',
-    'Black',
-    'Green',
-    'Purple',
-    'Blue',
-  ],
-  floatingLabel: 'Test label',
-  errorText: 'Error text',
-  disabled: false,
-  variant: false,
-};
+const options = [
+  'White',
+  'Black',
+  'Green',
+  'Purple',
+  'Blue',
+];
 
-// eslint-disable-next-line no-shadow
-const setUp = (props) => mount(<FormMultiselect {...props} />);
+const Multiselect = (props) => <FormMultiselect {...props} />;
 
-describe('FormMultiselect renders correctly', () => {
-  let component;
-  beforeEach(() => {
-    component = setUp(props);
+describe('<FormMultiselect />', () => {
+  describe('correct rendering', () => {
+    it('renders without props', () => {
+      const tree = renderer.create((
+        <Multiselect options={options} />
+      )).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+    it('renders with no options', () => {
+      const wrapper = mount(<Multiselect />);
+      const multiselect = wrapper.find('.pgn__form-multiselect');
+      expect(multiselect.length).toEqual(1);
+    });
+    it('renders with the default class', () => {
+      const wrapper = mount(<Multiselect options={options} />);
+      const multiselect = wrapper.find('.pgn__form-multiselect');
+      expect(multiselect.length).toEqual(1);
+    });
+    it('opens dropdown when show button is clicked', () => {
+      const wrapper = mount(<Multiselect options={options} />);
+      wrapper.find('.pgn__form-multiselect-field-show-btn').first().simulate('click');
+      const dropdown = wrapper.find('.pgn__form-multiselect-items');
+      expect(dropdown.hasClass('show')).toEqual(true);
+    });
+    it('options are rendered in the dropdown', () => {
+      const wrapper = mount(<Multiselect options={options} />);
+      const dropdownItems = wrapper.find('.pgn__form-multiselect-items');
+      expect(dropdownItems.find('.pgn__form-multiselect-item')).toHaveLength(5);
+    });
+    it('rendered with floating label', () => {
+      const labelText = 'TestMultiselect';
+      const wrapper = mount(<Multiselect options={options} floatingLabel={labelText} />);
+      const input = wrapper.find('.form-control');
+      expect(input.at(0).props().placeholder).toEqual(labelText);
+      input.simulate('focus');
+      expect(wrapper.find('.pgn__form-multiselect-field-label').text()).toEqual(labelText);
+    });
+    it('rendered with errorText', () => {
+      const errorText = 'TestError';
+      const wrapper = mount(<Multiselect options={options} errorText={errorText} />);
+      const error = wrapper.find('.pgn__form-multiselect-field-error');
+      expect(error.text()).toEqual(errorText);
+      expect(wrapper.find('.pgn__form-multiselect-field').hasClass('error')).toEqual(true);
+    });
+    it('rendered with disabled prop', () => {
+      const wrapper = mount(<Multiselect options={options} disabled />);
+      expect(wrapper.find('.pgn__form-multiselect-field').hasClass('disabled')).toEqual(true);
+    });
+    it('rendered with dark variant', () => {
+      const wrapper = mount(<Multiselect options={options} variant="dark" />);
+      expect(wrapper.find('.pgn__form-multiselect-field-label').hasClass('dark')).toEqual(true);
+    });
   });
-
-  describe('has render component', () => {
-    it('render component', () => {
-      component.find('.form__multiselect');
-      expect(component).toHaveLength(1);
+  describe('correct interactions', () => {
+    it('option is selected', () => {
+      const setSelectedOptions = jest.fn();
+      const wrapper = mount(
+        <Multiselect
+          options={options}
+          setSelectedOptions={setSelectedOptions}
+        />,
+      );
+      const firstItem = wrapper.find('.pgn__form-multiselect-item').first();
+      const firstItemsText = firstItem.text();
+      firstItem.simulate('click');
+      wrapper.update();
+      expect(wrapper.find('.pgn__form-multiselect-item').first().text()).not.toEqual(firstItemsText);
+      expect(setSelectedOptions).toHaveBeenCalled();
     });
-    it('create snapshot', () => {
-      expect(component).toMatchSnapshot();
+    it('option is preselected', () => {
+      const option = 'White';
+      const wrapper = mount(
+        <Multiselect
+          options={options}
+          selectedOptions={[option]}
+        />,
+      );
+      expect(wrapper.find('.pgn__form-multiselect-item').first().text()).not.toEqual(option);
+      expect(wrapper.find('.pgn__form-multiselect-field-chip').first().text()).toEqual(option);
     });
-  });
-  describe('has props', () => {
-    it('checked render select wrapper', () => {
-      const select = component.find('.form__multiselect-items');
-      expect(select).toHaveLength(1);
+    it('option is removed', () => {
+      const option = 'White';
+      const setSelectedOptions = jest.fn();
+      const wrapper = mount(
+        <Multiselect
+          options={options}
+          selectedOptions={[option]}
+          setSelectedOptions={setSelectedOptions}
+        />,
+      );
+      const chip = wrapper.find('.pgn__form-multiselect-field-chip').first();
+      chip.simulate('click');
+      expect(setSelectedOptions).toHaveBeenCalled();
     });
-    it('checked render option items', () => {
-      const select = component.find('.form__multiselect-item');
-      expect(select).toHaveLength(5);
+    it('options are searched', () => {
+      const searchValue = 'b';
+      const wrapper = mount(
+        <Multiselect
+          options={options}
+        />,
+      );
+      expect(wrapper.find('.pgn__form-multiselect-item')).toHaveLength(5);
+      const input = wrapper.find('.form-control');
+      input.simulate('change', { target: { value: searchValue } });
+      expect(wrapper.find('.pgn__form-multiselect-item')).toHaveLength(2);
     });
-  });
-  describe('has no props', () => {
-    it('checked render select wrapper', () => {
-      component = shallow(<FormMultiselect />);
-      const select = component.find('.form__multiselect-items');
-      expect(select).toHaveLength(1);
+    it('dropdown opens when input value is changed', () => {
+      const searchValue = 'b';
+      const wrapper = mount(
+        <Multiselect
+          options={options}
+        />,
+      );
+      expect(wrapper.find('.pgn__form-multiselect-items').hasClass('none')).toEqual(true);
+      const input = wrapper.find('.form-control');
+      input.simulate('change', { target: { value: searchValue } });
+      expect(wrapper.find('.pgn__form-multiselect-items').hasClass('show')).toEqual(true);
     });
-    it('checked render option items', () => {
-      component = shallow(<FormMultiselect />);
-      const select = component.find('.form__multiselect-item');
-      expect(select).toHaveLength(0);
+    it('options are reset', () => {
+      const option = 'White';
+      const setSelectedOptions = jest.fn();
+      const wrapper = mount(
+        <Multiselect
+          options={options}
+          selectedOptions={[option]}
+          setSelectedOptions={setSelectedOptions}
+        />,
+      );
+      const reset = wrapper.find('.pgn__form-multiselect-field-hide-btn').first();
+      reset.simulate('click');
+      expect(setSelectedOptions).toHaveBeenCalled();
     });
-    it('checked render floatingLabel', () => {
-      component = FormMultiselect.defaultProps.floatingLabel;
-      expect(component).toEqual('Label');
+    it('correct floating label behavior', () => {
+      const labelText = 'TestMultiselect';
+      const wrapper = mount(<Multiselect options={options} floatingLabel={labelText} />);
+      const input = wrapper.find('.form-control');
+      input.simulate('focus');
+      expect(wrapper.find('.pgn__form-multiselect-field-label').text()).toEqual(labelText);
+      input.simulate('blur');
+      expect(input.at(0).props().placeholder).toEqual(labelText);
+      wrapper.setProps({ selectedOptions: ['White'] });
+      expect(wrapper.find('.pgn__form-multiselect-field-label').text()).toEqual(labelText);
     });
-    it('checked render hasError', () => {
-      component = FormMultiselect.defaultProps.errorText;
-      expect(component).toEqual('');
-    });
-  });
-  describe('default FormMultiselect props', () => {
-    it('checked floatingLabel props', () => {
-      component = FormMultiselect.defaultProps.floatingLabel;
-      expect(component).toEqual('Label');
-    });
-    it('checked hasError props', () => {
-      component = FormMultiselect.defaultProps.errorText;
-      expect(component).toEqual('');
-    });
-    it('checked disabled props', () => {
-      component = FormMultiselect.defaultProps.disabled;
-      expect(component).toEqual(false);
-    });
-    it('checked variant props', () => {
-      component = FormMultiselect.defaultProps.variant;
-      expect(component).toEqual(false);
+    it('no options text is rendered', () => {
+      const searchValue = 'something';
+      const noOptions = 'no options';
+      const wrapper = mount(
+        <Multiselect
+          options={options}
+          noOptionsText={noOptions}
+        />,
+      );
+      const input = wrapper.find('.form-control');
+      input.simulate('change', { target: { value: searchValue } });
+      expect(wrapper.find('.pgn__form-multiselect-items-text').text()).toEqual(noOptions);
     });
   });
 });

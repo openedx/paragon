@@ -1,5 +1,108 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FormMultiselect renders correctly Has render component Create snapshot 1`] = `ReactWrapper {}`;
-
-exports[`FormMultiselect renders correctly has render component create snapshot 1`] = `ReactWrapper {}`;
+exports[`<FormMultiselect /> correct rendering renders without props 1`] = `
+<div
+  className="pgn__form-multiselect"
+>
+  <div
+    className="pgn__form-multiselect-field"
+  >
+    <div
+      className="pgn__form-multiselect-field-wrapper"
+    >
+      <div
+        className="pgn__form-multiselect-field-label slide-down"
+      />
+      <div
+        className="pgn__form-control-decorator-group pgn__form-multiselect-search"
+      >
+        <input
+          className="form-control"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="pgn__form-multiselect-button-group"
+    >
+      <span
+        className="pgn__form-multiselect-button-group-border"
+      />
+      <button
+        className="pgn__form-multiselect-field-show-btn btn btn-primary"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="pgn__icon btn-icon-after"
+        >
+          <svg
+            aria-hidden={true}
+            fill="none"
+            focusable={false}
+            height={24}
+            role="img"
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+  <span
+    className="pgn__form-multiselect-field-error"
+  >
+    
+  </span>
+  <div
+    className="pgn__form-multiselect-items none"
+  >
+    <button
+      className="pgn__form-multiselect-item "
+      onClick={[Function]}
+      type="button"
+    >
+      White
+    </button>
+    <button
+      className="pgn__form-multiselect-item "
+      onClick={[Function]}
+      type="button"
+    >
+      Black
+    </button>
+    <button
+      className="pgn__form-multiselect-item "
+      onClick={[Function]}
+      type="button"
+    >
+      Green
+    </button>
+    <button
+      className="pgn__form-multiselect-item "
+      onClick={[Function]}
+      type="button"
+    >
+      Purple
+    </button>
+    <button
+      className="pgn__form-multiselect-item "
+      onClick={[Function]}
+      type="button"
+    >
+      Blue
+    </button>
+  </div>
+</div>
+`;

@@ -18,7 +18,7 @@ const FormMultiselect = React.forwardRef(({
   disabled,
   variant,
 }, ref) => {
-  const defaultOptions = options.filter(item => !selectedOptions.includes(item));
+  const defaultOptions = (options || []).filter(item => !selectedOptions.includes(item));
   const [isOpen, setIsOpen] = useState(false);
   const [isActiveInput, setIsActiveInput] = useState(false);
   const [optionItems, setOptionItems] = useState(defaultOptions);
@@ -56,15 +56,15 @@ const FormMultiselect = React.forwardRef(({
   };
 
   return (
-    <div className="png__form-multiselect" ref={ref}>
+    <div className="pgn__form-multiselect" ref={ref}>
       <div
-        className={classNames('png__form-multiselect-field', {
+        className={classNames('pgn__form-multiselect-field', {
           error: !!errorText,
           disabled,
         })}
       >
-        <div className="png__form-multiselect-field-wrapper">
-          <div className={classNames('png__form-multiselect-field-label',
+        <div className="pgn__form-multiselect-field-wrapper">
+          <div className={classNames('pgn__form-multiselect-field-label',
             isActiveInput || !!selectedOptions.length ? 'slide-up' : 'slide-down', {
               dark: variant === 'dark',
             })}
@@ -75,17 +75,17 @@ const FormMultiselect = React.forwardRef(({
             <Chip
               iconAfter={Close}
               onClick={() => handleRemove(item)}
-              className="png__form-multiselect-field-chip"
+              className="pgn__form-multiselect-field-chip"
               key={item}
             >
-              <span className="png__form-multiselect-field-chip-title">
+              <span className="pgn__form-multiselect-field-chip-title">
                 {item}
               </span>
             </Chip>
           ))}
           <Form.Control
             ref={inputRef}
-            className="png__form-multiselect-search"
+            className="pgn__form-multiselect-search"
             type="text"
             value={searchValue}
             onChange={handleSearch}
@@ -94,32 +94,32 @@ const FormMultiselect = React.forwardRef(({
             onBlur={() => setIsActiveInput(false)}
           />
         </div>
-        <div className="png__form-multiselect-button-group">
+        <div className="pgn__form-multiselect-button-group">
           {!!selectedOptions.length && (
           <Button
-            className="png__form-multiselect-field-hide-btn"
+            className="pgn__form-multiselect-field-hide-btn"
             iconAfter={Close}
             onClick={handleReset}
           />
           )}
-          <span className="png__form-multiselect-button-group-border" />
+          <span className="pgn__form-multiselect-button-group-border" />
           <Button
-            className="png__form-multiselect-field-show-btn"
+            className="pgn__form-multiselect-field-show-btn"
             onClick={() => setIsOpen(!isOpen)}
             iconAfter={ExpandMore}
           />
         </div>
       </div>
-      <span className={classNames('png__form-multiselect-field-error', {
+      <span className={classNames('pgn__form-multiselect-field-error', {
         error: !!errorText,
       })}
       >
         {errorText}
       </span>
-      <div className={classNames('png__form-multiselect-items', isOpen ? 'show' : 'none')}>
+      <div className={classNames('pgn__form-multiselect-items', isOpen ? 'show' : 'none')}>
         {dropdownOptions.length ? dropdownOptions.map(item => (
           <button
-            className={classNames('png__form-multiselect-item ')}
+            className={classNames('pgn__form-multiselect-item ')}
             key={`option-${item}`}
             type="button"
             onClick={() => handleSelect(item)}
@@ -127,7 +127,7 @@ const FormMultiselect = React.forwardRef(({
             {item}
           </button>
         )) : (
-          <span className="png__form-multiselect-items-text">{noOptionsText}</span>
+          <span className="pgn__form-multiselect-items-text">{noOptionsText}</span>
         )}
       </div>
     </div>
