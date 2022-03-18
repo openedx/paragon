@@ -8,13 +8,13 @@ import SearchFieldInput from './SearchFieldInput';
 import SearchFieldClearButton from './SearchFieldClearButton';
 import SearchFieldSubmitButton from './SearchFieldSubmitButton';
 
+import Icon from '../Icon';
+import { Search, Close } from '../../icons';
+
 export const SEARCH_FIELD_SCREEN_READER_TEXT_LABEL = 'search';
 export const SEARCH_FIELD_SCREEN_READER_TEXT_SUBMIT_BUTTON = 'submit search';
 export const SEARCH_FIELD_SCREEN_READER_TEXT_CLEAR_BUTTON = 'clear search';
 export const SEARCH_FIELD_BUTTON_TEXT = 'search';
-
-import Icon from '../Icon';
-import { Search, Close } from '../../icons';
 
 const STYLE_VARIANTS = [
   'light',
