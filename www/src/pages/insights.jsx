@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   DataTable,
   Tabs,
@@ -172,25 +171,22 @@ const ComponentsUsage = () => (
   </div>
 );
 
-export default function InsightsPage({ location }) {
+export default function InsightsPage() {
   const tabs = ['/insights', '/insights/?tab=projects', '/insights/?tab=components'];
-  const path = `${location.pathname}${location.search}`;
 
   const handleOnSelect = (value) => {
-    if (value !== path) {
-      switch (value) {
-        case tabs[0]:
-          window.analytics.track('Usage Insights (Summary)');
-          break;
-        case tabs[1]:
-          window.analytics.track('Usage Insights (Projects)');
-          break;
-        case tabs[2]:
-          window.analytics.track('Usage Insights (Components)');
-          break;
-        default:
-          break;
-      }
+    switch (value) {
+      case tabs[0]:
+        global.analytics.track('Usage Insights', { tab: 'Summary' });
+        break;
+      case tabs[1]:
+        global.analytics.track('Usage Insights', { tab: 'Projects' });
+        break;
+      case tabs[2]:
+        global.analytics.track('Usage Insights', { tab: 'Components' });
+        break;
+      default:
+        break;
     }
   };
 
@@ -204,7 +200,7 @@ export default function InsightsPage({ location }) {
           <p>Last updated: {new Date(analysisLastUpdated).toLocaleDateString()}</p>
         </header>
         <Tabs
-          activeKey={tabs.includes(path) ? path : tabs[0]}
+          defaultKey={tabs[0]}
           id="uncontrolled-tab-example"
           onSelect={handleOnSelect}
         >
@@ -222,10 +218,3 @@ export default function InsightsPage({ location }) {
     </Layout>
   );
 }
-
-InsightsPage.propTypes = {
-  location: PropTypes.shape({
-    pathname: PropTypes.string,
-    search: PropTypes.string,
-  }).isRequired,
-};
