@@ -58,3 +58,9 @@ This component is used to power Tooltips and Popovers.
   );
 }
 ```
+
+<guide
+  events="`onExit`, `rootCloseEvent`, `onToggle`"
+  dataTestId
+  selectors="`pgn-doc__code-block-preview`"
+/>

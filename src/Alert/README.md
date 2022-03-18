@@ -168,3 +168,10 @@ The stacked variant should be used for:
   </p>
 </Alert>
 ```
+
+<guide
+  defaultText="`closeLabel: 'Dismiss'`"
+  events="`onClose`"
+  dataTestId
+  selectors="main wrapper - `alert-content`"
+/>

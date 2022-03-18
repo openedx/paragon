@@ -91,3 +91,9 @@ class CheckBoxWrapper extends React.Component {
   }
 }
 ```
+
+<guide
+  defaultText="`nextLabel: 'Next'`, `prevLabel: 'Previous'`"
+  events="`onSelect`, `onSlid`, `onSlide`"
+  selectors="`carousel`"
+/>

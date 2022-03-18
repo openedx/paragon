@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
@@ -9,15 +9,22 @@ import GenericPropsTable from '../components/PropsTable';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
 import LinkedHeading from '../components/LinkedHeading';
+import TestingGuideline from "../components/TestingGuideline";
 
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
   pageContext: { cssVariables },
 }) {
+  const [isGuidelinesOnPage, setIsGuidelinesOnPage] = useState(false);
+
   const components = componentNodes.nodes.reduce((acc, currentValue) => {
     acc[currentValue.displayName] = currentValue;
     return acc;
   }, {});
+  const testingGuidelinesTitle = 'Testing Guidelines';
+  const testingGuidelinesUrl = 'testing-guidelines';
+  const cssVariablesTitle = 'Theme Variables (SCSS)';
+  const cssVariablesUrl = 'theme-variables-scss';
 
   const shortcodes = React.useMemo(() => {
     const PropsTable = ({ displayName, ...props }) => { // eslint-disable-line react/prop-types
@@ -35,17 +42,28 @@ export default function PageTemplate({
       h6: (props) => <LinkedHeading h="6" {...props} />,
       pre: props => <div {...props} />,
       code: CodeBlock,
+      guide: (props) => (
+        <TestingGuideline
+          title={testingGuidelinesTitle}
+          href={testingGuidelinesUrl}
+          setIsGuidelinesOnPage={setIsGuidelinesOnPage}
+          {...props}
+        />
+      ),
       Link,
       PropsTable,
     };
   }, [components]);
 
-  const cssVariablesTitle = 'Theme Variables (SCSS)';
-  const cssVariablesUrl = 'theme-variables-scss';
-
   const getTocData = () => {
     const tableOfContents = JSON.parse(JSON.stringify(mdx.tableOfContents));
-    if (cssVariables && !tableOfContents.items?.includes()) {
+    if (isGuidelinesOnPage) {
+      tableOfContents.items?.push({
+        title: testingGuidelinesTitle,
+        url: `#${testingGuidelinesUrl}`,
+      })
+    }
+    if (cssVariables) {
       tableOfContents.items?.push({
         title: cssVariablesTitle,
         url: `#${cssVariablesUrl}`,

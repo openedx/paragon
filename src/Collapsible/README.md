@@ -227,3 +227,9 @@ such as loading the page or clicking a link, you can open or close
 an **uncontrolled** Collapsible by getting a ref to the component and calling
 `collapsibleRef.open()` or `collapsibleRef.close()`. The internal state of
 the component will be updated accordingly.
+
+<guide
+  events="`onClose`, `onOpen`, `onToggle`, CollapsibleTrigger - `onClick`"
+  dataTestId
+  selectors="`pgn_collapsible`"
+/>

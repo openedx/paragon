@@ -64,3 +64,7 @@ notes: |
   )
 }
 ```
+
+<guide
+  selectors="`pgn__sheet-component`"
+/>

@@ -38,3 +38,8 @@ Badges are composed of text and an accompanying indicator color, and are typical
   <Badge variant="dark">Dark</Badge>
 </>
 ```
+
+<guide
+  dataTestId
+  selectors="`badge`"
+/>

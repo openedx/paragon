@@ -36,3 +36,7 @@ Stacks are vertical by default and stacked items are full-width by default. Watc
   <div className="border p-2">third block</div>
 </Stack>
 ```
+
+<guide
+  selectors="`pgn__hstack` || `pgn__vstack`"
+/>

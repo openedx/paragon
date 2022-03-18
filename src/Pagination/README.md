@@ -163,3 +163,9 @@ Navigation between multiple pages of some set of results. Controls are provided 
   />
 </div>
 ```
+
+<guide
+  defaultText="`previous: 'Previous'`, `next: 'Next'`, `page: 'Page'`, `currentPage: 'Current Page'`, `pageOfCount: 'of'`"
+  events="`onClick`"
+  selectors="`previous page-link`, `next page-link`"
+/>

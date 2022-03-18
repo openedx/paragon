@@ -40,3 +40,8 @@ A spinning animation that indicates loading.
   ));
 }
 ```
+
+<guide
+  dataTestId
+  selectors="`pgn__spinner`"
+/>

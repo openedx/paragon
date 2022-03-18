@@ -230,3 +230,10 @@ notes: ''
   </div>
 </>
 ```
+
+<guide
+  defaultText="`variant: 'primary'`, `size: 'md'`"
+  events="`onClick`"
+  dataTestId
+  selectors="`btn-icon`"
+/>
