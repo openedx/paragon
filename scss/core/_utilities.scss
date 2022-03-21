@@ -99,7 +99,7 @@ $indexes: map-merge(
 );
 
 @each $index, $size in $indexes {
-  .elevation-#{$index} {
+  .zindex-#{$index} {
     z-index: $size !important;
   }
 }

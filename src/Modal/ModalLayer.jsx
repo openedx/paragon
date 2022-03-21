@@ -43,7 +43,7 @@ ModalContentContainer.defaultProps = {
  * component is that if a modal object is visible then it is "enabled"
  */
 const ModalLayer = ({
-  children, onClose, isOpen, isBlocking, elevation,
+  children, onClose, isOpen, isBlocking, zIndex,
 }) => {
   if (!isOpen) {
     return null;
@@ -62,7 +62,7 @@ const ModalLayer = ({
           onClickOutside={onClickOutside}
           className={classNames(
             'pgn__modal-layer',
-            elevation ? `elevation-${elevation}` : '',
+            zIndex ? `zindex-${zIndex}` : '',
           )}
         >
           <ModalContentContainer>
@@ -84,12 +84,12 @@ ModalLayer.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   /** Prevent clicking on the backdrop to close the modal */
   isBlocking: PropTypes.bool,
-  elevation: PropTypes.number,
+  zIndex: PropTypes.number,
 };
 
 ModalLayer.defaultProps = {
   isBlocking: false,
-  elevation: undefined,
+  zIndex: undefined,
 };
 
 export { ModalBackdrop, ModalContentContainer };
