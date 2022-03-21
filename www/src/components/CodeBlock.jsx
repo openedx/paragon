@@ -10,7 +10,6 @@ import theme from 'prism-react-renderer/themes/duotoneDark';
 import {
   LiveProvider, LiveEditor, LiveError, LivePreview,
 } from 'react-live';
-import * as FontAwesome from '@fortawesome/free-solid-svg-icons';
 import * as ParagonReact from '~paragon-react'; // eslint-disable-line
 import * as ParagonIcons from '~paragon-icons'; // eslint-disable-line
 import MiyazakiCard from './exampleComponents/MiyazakiCard';
@@ -57,9 +56,9 @@ function CodeBlock({ children, className, live }) {
             useEffect,
             useState,
             useMemo,
-            FontAwesome,
             MiyazakiCard,
             HipsterIpsum,
+            MenuIcon: ParagonIcons.Menu,
           }}
           theme={theme}
         >

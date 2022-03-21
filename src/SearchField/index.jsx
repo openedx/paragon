@@ -1,14 +1,15 @@
 /* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import SearchFieldAdvanced, { SearchFieldContext } from './SearchFieldAdvanced';
 import SearchFieldLabel from './SearchFieldLabel';
 import SearchFieldInput from './SearchFieldInput';
 import SearchFieldClearButton from './SearchFieldClearButton';
 import SearchFieldSubmitButton from './SearchFieldSubmitButton';
+
+import Icon from '../Icon';
+import { Search, Close } from '../../icons';
 
 const STYLE_VARIANTS = [
   'light',
@@ -118,14 +119,6 @@ SearchField.propTypes = {
   value: PropTypes.string,
   /**
    * Specifies the icon element(s) to use for the clear and submit buttons.
-   * The default is:
-   *
-   * ```jsx
-   * {
-   *   submit: <FontAwesomeIcon icon={faSearch} />,
-   *   clear: <FontAwesomeIcon icon={faTimes} />
-   * }
-   * ```
    */
   icons: PropTypes.shape({
     submit: PropTypes.element.isRequired,
@@ -163,8 +156,8 @@ SearchField.defaultProps = {
     clearButton: 'clear search',
   },
   icons: {
-    clear: <FontAwesomeIcon icon={faTimes} />,
-    submit: <FontAwesomeIcon icon={faSearch} />,
+    clear: <Icon src={Close} />,
+    submit: <Icon src={Search} />,
   },
   onBlur: () => {},
   onChange: () => {},
