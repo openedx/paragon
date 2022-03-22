@@ -111,7 +111,7 @@ ProgressBarAnnotated.propTypes = {
   /** Current value of progress. */
   now: PropTypes.number,
   /** Show label that represents visual percentage. */
-  label: PropTypes.string,
+  label: PropTypes.node,
   /** The `ProgressBar` style variant to use. */
   variant: PropTypes.oneOf(VARIANTS),
   /** Specifies an additional `className` to add to the base element. */
@@ -121,13 +121,13 @@ ProgressBarAnnotated.propTypes = {
   /** Threshold current value. */
   threshold: PropTypes.number,
   /** Specifies label for `threshold`. */
-  thresholdLabel: PropTypes.string,
+  thresholdLabel: PropTypes.node,
   /** Variant for threshold value. */
   thresholdVariant: PropTypes.oneOf(VARIANTS),
   /** Text near the progress annotation. */
-  progressHint: PropTypes.string,
+  progressHint: PropTypes.node,
   /** Text near the threshold annotation. */
-  thresholdHint: PropTypes.string,
+  thresholdHint: PropTypes.node,
 };
 
 ProgressBarAnnotated.defaultProps = {
