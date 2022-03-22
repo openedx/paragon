@@ -1,8 +1,8 @@
 {
-  "lastModified": 1647871840444,
+  "lastModified": 1647958189233,
   "projectUsages": [
     {
-      "version": "19.10.1",
+      "version": "19.10.2",
       "name": "edx-credentials",
       "repository": {
         "type": "git",
@@ -15,7 +15,7 @@
             "filePath": "credentials/static/components/FoldingTable.jsx",
             "line": 26,
             "column": 6,
-            "version": "19.10.1"
+            "version": "19.10.2"
           }
         ],
         "Button.Deprecated": [
@@ -23,37 +23,37 @@
             "filePath": "credentials/static/components/MasqueradeBanner.jsx",
             "line": 102,
             "column": 12,
-            "version": "19.10.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 277,
             "column": 14,
-            "version": "19.10.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 284,
             "column": 12,
-            "version": "19.10.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 296,
             "column": 12,
-            "version": "19.10.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 141,
             "column": 10,
-            "version": "19.10.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 177,
             "column": 18,
-            "version": "19.10.1"
+            "version": "19.10.2"
           }
         ],
         "StatusAlert": [
@@ -61,43 +61,43 @@
             "filePath": "credentials/static/components/MasqueradeBanner.jsx",
             "line": 109,
             "column": 8,
-            "version": "19.10.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 304,
             "column": 8,
-            "version": "19.10.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 315,
             "column": 8,
-            "version": "19.10.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 329,
             "column": 8,
-            "version": "19.10.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 109,
             "column": 14,
-            "version": "19.10.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 138,
             "column": 14,
-            "version": "19.10.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 152,
             "column": 14,
-            "version": "19.10.1"
+            "version": "19.10.2"
           }
         ],
         "Icon": [
@@ -105,13 +105,13 @@
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 311,
             "column": 14,
-            "version": "19.10.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 191,
             "column": 16,
-            "version": "19.10.1"
+            "version": "19.10.2"
           }
         ],
         "Modal": [
@@ -119,13 +119,13 @@
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 90,
             "column": 6,
-            "version": "19.10.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 130,
             "column": 6,
-            "version": "19.10.1"
+            "version": "19.10.2"
           }
         ],
         "CheckBoxGroup": [
@@ -133,7 +133,7 @@
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 123,
             "column": 12,
-            "version": "19.10.1"
+            "version": "19.10.2"
           }
         ],
         "CheckBox": [
@@ -141,7 +141,7 @@
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 125,
             "column": 16,
-            "version": "19.10.1"
+            "version": "19.10.2"
           }
         ],
         "InputText": [
@@ -149,7 +149,7 @@
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 165,
             "column": 18,
-            "version": "19.10.1"
+            "version": "19.10.2"
           }
         ]
       }
@@ -6134,7 +6134,7 @@
       }
     },
     {
-      "version": "16.14.1",
+      "version": "19.10.2",
       "name": "@edx/frontend-app-authn",
       "repository": {
         "type": "git",
@@ -6147,97 +6147,97 @@
             "filePath": "src/base-component/AuthExtraLargeLayout.jsx",
             "line": 20,
             "column": 8,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/AuthMediumLayout.jsx",
             "line": 19,
             "column": 8,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/AuthSmallLayout.jsx",
             "line": 19,
             "column": 6,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/LargeLayout.jsx",
             "line": 12,
             "column": 6,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/MediumLayout.jsx",
             "line": 37,
             "column": 8,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/SmallLayout.jsx",
             "line": 32,
             "column": 8,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/common-components/InstitutionLogistration.jsx",
             "line": 51,
             "column": 18,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
             "line": 130,
             "column": 18,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
             "line": 141,
             "column": 26,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/login/LoginFailure.jsx",
             "line": 27,
             "column": 4,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/login/LoginFailure.jsx",
             "line": 76,
             "column": 8,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/login/LoginPage.jsx",
             "line": 146,
             "column": 10,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
             "line": 661,
             "column": 20,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
             "line": 666,
             "column": 20,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/ProgressiveProfiling.jsx",
             "line": 154,
             "column": 16,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
             "line": 207,
             "column": 14,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "Image": [
@@ -6245,37 +6245,37 @@
             "filePath": "src/base-component/AuthExtraLargeLayout.jsx",
             "line": 21,
             "column": 10,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/AuthMediumLayout.jsx",
             "line": 20,
             "column": 10,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/AuthSmallLayout.jsx",
             "line": 20,
             "column": 8,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/LargeLayout.jsx",
             "line": 13,
             "column": 8,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/MediumLayout.jsx",
             "line": 38,
             "column": 10,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/SmallLayout.jsx",
             "line": 33,
             "column": 10,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "Row": [
@@ -6283,19 +6283,19 @@
             "filePath": "src/base-component/AuthExtraLargeLayout.jsx",
             "line": 25,
             "column": 12,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/AuthMediumLayout.jsx",
             "line": 24,
             "column": 12,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/AuthSmallLayout.jsx",
             "line": 24,
             "column": 10,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "Col": [
@@ -6303,97 +6303,37 @@
             "filePath": "src/base-component/AuthExtraLargeLayout.jsx",
             "line": 26,
             "column": 14,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/AuthExtraLargeLayout.jsx",
             "line": 38,
             "column": 14,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/AuthMediumLayout.jsx",
             "line": 25,
             "column": 14,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/AuthMediumLayout.jsx",
             "line": 30,
             "column": 14,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/AuthSmallLayout.jsx",
             "line": 25,
             "column": 12,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/AuthSmallLayout.jsx",
             "line": 37,
             "column": 12,
-            "version": "16.14.1"
-          }
-        ],
-        "ExtraLarge": [
-          {
-            "filePath": "src/base-component/BaseComponent.jsx",
-            "line": 37,
-            "column": 6,
-            "version": "16.14.1"
-          },
-          {
-            "filePath": "src/base-component/BaseComponent.jsx",
-            "line": 69,
-            "column": 8,
-            "version": "16.14.1"
-          }
-        ],
-        "ExtraExtraLarge": [
-          {
-            "filePath": "src/base-component/BaseComponent.jsx",
-            "line": 40,
-            "column": 6,
-            "version": "16.14.1"
-          },
-          {
-            "filePath": "src/base-component/BaseComponent.jsx",
-            "line": 74,
-            "column": 8,
-            "version": "16.14.1"
-          }
-        ],
-        "ExtraSmall": [
-          {
-            "filePath": "src/base-component/BaseComponent.jsx",
-            "line": 45,
-            "column": 8,
-            "version": "16.14.1"
-          }
-        ],
-        "Small": [
-          {
-            "filePath": "src/base-component/BaseComponent.jsx",
-            "line": 51,
-            "column": 8,
-            "version": "16.14.1"
-          }
-        ],
-        "Medium": [
-          {
-            "filePath": "src/base-component/BaseComponent.jsx",
-            "line": 57,
-            "column": 8,
-            "version": "16.14.1"
-          }
-        ],
-        "Large": [
-          {
-            "filePath": "src/base-component/BaseComponent.jsx",
-            "line": 63,
-            "column": 8,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "Toast": [
@@ -6401,25 +6341,25 @@
             "filePath": "src/base-component/DiscountBanner.jsx",
             "line": 29,
             "column": 6,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/LargeLeftLayout.jsx",
             "line": 24,
             "column": 6,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/MediumLayout.jsx",
             "line": 30,
             "column": 6,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/SmallLayout.jsx",
             "line": 26,
             "column": 8,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "PageBanner": [
@@ -6427,7 +6367,7 @@
             "filePath": "src/base-component/DiscountBanner.jsx",
             "line": 35,
             "column": 6,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "Form": [
@@ -6435,43 +6375,43 @@
             "filePath": "src/common-components/EnterpriseSSO.jsx",
             "line": 35,
             "column": 12,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
             "line": 100,
             "column": 16,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/login/LoginPage.jsx",
             "line": 227,
             "column": 10,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
             "line": 577,
             "column": 10,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
             "line": 177,
             "column": 14,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/ProgressiveProfiling.jsx",
             "line": 151,
             "column": 12,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
             "line": 165,
             "column": 10,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "Button": [
@@ -6479,31 +6419,31 @@
             "filePath": "src/common-components/EnterpriseSSO.jsx",
             "line": 37,
             "column": 14,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/common-components/EnterpriseSSO.jsx",
             "line": 63,
             "column": 14,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/common-components/InstitutionLogistration.jsx",
             "line": 13,
             "column": 4,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/register/UsernameField.jsx",
             "line": 21,
             "column": 10,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/WelcomePageModal.jsx",
             "line": 40,
             "column": 10,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "Form.Group": [
@@ -6511,55 +6451,55 @@
             "filePath": "src/common-components/FormGroup.jsx",
             "line": 24,
             "column": 4,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
             "line": 58,
             "column": 4,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/field-renderer/FieldRenderer.jsx",
             "line": 17,
             "column": 8,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/field-renderer/FieldRenderer.jsx",
             "line": 37,
             "column": 8,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/field-renderer/FieldRenderer.jsx",
             "line": 51,
             "column": 8,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/field-renderer/FieldRenderer.jsx",
             "line": 64,
             "column": 8,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
             "line": 166,
             "column": 12,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
             "line": 180,
             "column": 16,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
             "line": 194,
             "column": 12,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "Form.Control": [
@@ -6567,49 +6507,49 @@
             "filePath": "src/common-components/FormGroup.jsx",
             "line": 25,
             "column": 6,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
             "line": 60,
             "column": 8,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/field-renderer/FieldRenderer.jsx",
             "line": 18,
             "column": 10,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/field-renderer/FieldRenderer.jsx",
             "line": 38,
             "column": 10,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/field-renderer/FieldRenderer.jsx",
             "line": 52,
             "column": 10,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
             "line": 167,
             "column": 14,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
             "line": 181,
             "column": 18,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
             "line": 195,
             "column": 14,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "TransitionReplace": [
@@ -6617,13 +6557,13 @@
             "filePath": "src/common-components/FormGroup.jsx",
             "line": 44,
             "column": 6,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/common-components/SwitchContent.jsx",
             "line": 41,
             "column": 4,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "Icon": [
@@ -6631,97 +6571,97 @@
             "filePath": "src/common-components/InstitutionLogistration.jsx",
             "line": 19,
             "column": 6,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/common-components/Logistration.jsx",
             "line": 54,
             "column": 6,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
             "line": 43,
             "column": 42,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
             "line": 43,
             "column": 95,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
             "line": 47,
             "column": 42,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
             "line": 47,
             "column": 95,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
             "line": 51,
             "column": 35,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
             "line": 51,
             "column": 88,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/field-renderer/FieldRenderer.jsx",
             "line": 23,
             "column": 29,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
             "line": 61,
             "column": 6,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/login/LoginPage.jsx",
             "line": 147,
             "column": 12,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
             "line": 448,
             "column": 26,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
             "line": 142,
             "column": 6,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
             "line": 172,
             "column": 33,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
             "line": 186,
             "column": 37,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
             "line": 200,
             "column": 33,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "Tabs": [
@@ -6729,25 +6669,25 @@
             "filePath": "src/common-components/Logistration.jsx",
             "line": 68,
             "column": 12,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/common-components/Logistration.jsx",
             "line": 75,
             "column": 16,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
             "line": 69,
             "column": 8,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
             "line": 166,
             "column": 10,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "Tab": [
@@ -6755,31 +6695,31 @@
             "filePath": "src/common-components/Logistration.jsx",
             "line": 69,
             "column": 14,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/common-components/Logistration.jsx",
             "line": 76,
             "column": 18,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/common-components/Logistration.jsx",
             "line": 77,
             "column": 18,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
             "line": 70,
             "column": 10,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
             "line": 167,
             "column": 12,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "IconButton": [
@@ -6787,37 +6727,37 @@
             "filePath": "src/common-components/PasswordField.jsx",
             "line": 33,
             "column": 4,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
             "line": 37,
             "column": 4,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/register/CountryDropdown.jsx",
             "line": 151,
             "column": 6,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/register/CountryDropdown.jsx",
             "line": 165,
             "column": 6,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/register/UsernameField.jsx",
             "line": 38,
             "column": 17,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/register/UsernameField.jsx",
             "line": 42,
             "column": 17,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "Tooltip": [
@@ -6825,7 +6765,7 @@
             "filePath": "src/common-components/PasswordField.jsx",
             "line": 41,
             "column": 4,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "OverlayTrigger": [
@@ -6833,7 +6773,7 @@
             "filePath": "src/common-components/PasswordField.jsx",
             "line": 59,
             "column": 6,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "Alert": [
@@ -6841,61 +6781,61 @@
             "filePath": "src/common-components/ThirdPartyAuthAlert.jsx",
             "line": 23,
             "column": 4,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/forgot-password/ForgotPasswordAlert.jsx",
             "line": 80,
             "column": 6,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/login/AccountActivationMessage.jsx",
             "line": 59,
             "column": 4,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/login/LoginFailure.jsx",
             "line": 159,
             "column": 4,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/register/RegistrationFailure.jsx",
             "line": 38,
             "column": 4,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
             "line": 439,
             "column": 8,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/reset-password/ResetPasswordFailure.jsx",
             "line": 37,
             "column": 6,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/reset-password/ResetPasswordSuccess.jsx",
             "line": 12,
             "column": 4,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/ProgressiveProfiling.jsx",
             "line": 146,
             "column": 14,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
             "line": 160,
             "column": 12,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "Alert.Heading": [
@@ -6903,55 +6843,55 @@
             "filePath": "src/common-components/ThirdPartyAuthAlert.jsx",
             "line": 25,
             "column": 8,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/forgot-password/ForgotPasswordAlert.jsx",
             "line": 86,
             "column": 8,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/login/AccountActivationMessage.jsx",
             "line": 65,
             "column": 18,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/login/LoginFailure.jsx",
             "line": 160,
             "column": 6,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/register/RegistrationFailure.jsx",
             "line": 39,
             "column": 6,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/reset-password/ResetPasswordFailure.jsx",
             "line": 38,
             "column": 8,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/reset-password/ResetPasswordSuccess.jsx",
             "line": 13,
             "column": 6,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/ProgressiveProfiling.jsx",
             "line": 147,
             "column": 16,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
             "line": 161,
             "column": 14,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "Form.Checkbox": [
@@ -6959,13 +6899,13 @@
             "filePath": "src/field-renderer/FieldRenderer.jsx",
             "line": 65,
             "column": 10,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
             "line": 643,
             "column": 14,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "Alert.Link": [
@@ -6973,25 +6913,25 @@
             "filePath": "src/forgot-password/ForgotPasswordAlert.jsx",
             "line": 37,
             "column": 14,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/login/AccountActivationMessage.jsx",
             "line": 38,
             "column": 8,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
             "line": 442,
             "column": 12,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
             "line": 457,
             "column": 10,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "StatefulButton": [
@@ -6999,49 +6939,49 @@
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
             "line": 118,
             "column": 18,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/login/LoginPage.jsx",
             "line": 245,
             "column": 12,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
             "line": 673,
             "column": 12,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
             "line": 196,
             "column": 16,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/ProgressiveProfiling.jsx",
             "line": 166,
             "column": 16,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/ProgressiveProfiling.jsx",
             "line": 178,
             "column": 16,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
             "line": 219,
             "column": 14,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/WelcomePage.jsx",
             "line": 231,
             "column": 14,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "Spinner": [
@@ -7049,13 +6989,13 @@
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
             "line": 151,
             "column": 13,
-            "version": "16.14.1"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/ProgressiveProfiling.jsx",
             "line": 195,
             "column": 9,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "ModalDialog": [
@@ -7063,7 +7003,7 @@
             "filePath": "src/welcome/WelcomePageModal.jsx",
             "line": 20,
             "column": 4,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "ModalDialog.Header": [
@@ -7071,7 +7011,7 @@
             "filePath": "src/welcome/WelcomePageModal.jsx",
             "line": 28,
             "column": 6,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "ModalDialog.Title": [
@@ -7079,7 +7019,7 @@
             "filePath": "src/welcome/WelcomePageModal.jsx",
             "line": 29,
             "column": 8,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "ModalDialog.Body": [
@@ -7087,7 +7027,7 @@
             "filePath": "src/welcome/WelcomePageModal.jsx",
             "line": 34,
             "column": 6,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "ModalDialog.Footer": [
@@ -7095,7 +7035,7 @@
             "filePath": "src/welcome/WelcomePageModal.jsx",
             "line": 38,
             "column": 6,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ],
         "ActionRow": [
@@ -7103,7 +7043,7 @@
             "filePath": "src/welcome/WelcomePageModal.jsx",
             "line": 39,
             "column": 8,
-            "version": "16.14.1"
+            "version": "19.10.2"
           }
         ]
       }
@@ -7885,25 +7825,25 @@
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
-            "line": 86,
+            "line": 99,
             "column": 12,
             "version": "19.9.0"
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
-            "line": 104,
+            "line": 117,
             "column": 12,
             "version": "19.9.0"
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
-            "line": 121,
+            "line": 134,
             "column": 12,
             "version": "19.9.0"
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
-            "line": 139,
+            "line": 152,
             "column": 12,
             "version": "19.9.0"
           },
@@ -7995,19 +7935,19 @@
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
-            "line": 92,
-            "column": 14,
-            "version": "19.9.0"
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
-            "line": 109,
+            "line": 105,
             "column": 14,
             "version": "19.9.0"
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
             "line": 122,
+            "column": 14,
+            "version": "19.9.0"
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
+            "line": 135,
             "column": 14,
             "version": "19.9.0"
           },
@@ -8063,7 +8003,7 @@
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
-            "line": 138,
+            "line": 151,
             "column": 12,
             "version": "19.9.0"
           },
@@ -8486,6 +8426,12 @@
             "version": "19.9.0"
           },
           {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
+            "line": 89,
+            "column": 16,
+            "version": "19.9.0"
+          },
+          {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/AppExternalLinks.jsx",
             "line": 50,
             "column": 16,
@@ -8495,13 +8441,13 @@
         "Form.Check": [
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
-            "line": 140,
+            "line": 153,
             "column": 14,
             "version": "19.9.0"
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
-            "line": 148,
+            "line": 161,
             "column": 14,
             "version": "19.9.0"
           },
@@ -10649,6 +10595,18 @@
             "version": "17.5.0"
           },
           {
+            "filePath": "src/components/program-progress/ProgramLisitng.jsx",
+            "line": 35,
+            "column": 6,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/program-progress/ProgramLisitng.jsx",
+            "line": 44,
+            "column": 6,
+            "version": "17.5.0"
+          },
+          {
             "filePath": "src/components/program-progress/ProgramProgressPage.jsx",
             "line": 36,
             "column": 6,
@@ -10686,7 +10644,7 @@
           },
           {
             "filePath": "src/components/site-header/SiteHeader.jsx",
-            "line": 57,
+            "line": 65,
             "column": 6,
             "version": "17.5.0"
           },
@@ -10750,6 +10708,12 @@
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 134,
             "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/program-progress/ProgramLisitng.jsx",
+            "line": 45,
+            "column": 8,
             "version": "17.5.0"
           },
           {
@@ -10840,13 +10804,13 @@
           },
           {
             "filePath": "src/components/site-header/SiteHeader.jsx",
-            "line": 117,
+            "line": 125,
             "column": 6,
             "version": "17.5.0"
           },
           {
             "filePath": "src/components/site-header/SiteHeader.jsx",
-            "line": 120,
+            "line": 128,
             "column": 6,
             "version": "17.5.0"
           }
@@ -11039,6 +11003,12 @@
             "version": "17.5.0"
           },
           {
+            "filePath": "src/components/program-progress/ProgramListingCard.jsx",
+            "line": 44,
+            "column": 4,
+            "version": "17.5.0"
+          },
+          {
             "filePath": "src/components/search/SearchCourseCard.jsx",
             "line": 70,
             "column": 8,
@@ -11104,6 +11074,12 @@
             "filePath": "src/components/pathway/SearchPathwayCard.jsx",
             "line": 108,
             "column": 10,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/program-progress/ProgramListingCard.jsx",
+            "line": 58,
+            "column": 6,
             "version": "17.5.0"
           },
           {
@@ -11583,6 +11559,12 @@
             "version": "17.5.0"
           },
           {
+            "filePath": "src/components/program-progress/ProgramLisitng.jsx",
+            "line": 54,
+            "column": 20,
+            "version": "17.5.0"
+          },
+          {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
             "line": 291,
             "column": 18,
@@ -11818,6 +11800,12 @@
             "filePath": "src/components/pathway/SearchPathwayCard.jsx",
             "line": 97,
             "column": 12,
+            "version": "17.5.0"
+          },
+          {
+            "filePath": "src/components/program-progress/ProgramListingCard.jsx",
+            "line": 45,
+            "column": 6,
             "version": "17.5.0"
           },
           {
@@ -16265,7 +16253,7 @@
       }
     },
     {
-      "version": "19.9.0",
+      "version": "19.10.2",
       "name": "edx-frontend-app-publisher",
       "repository": "https://github.com/edx/frontend-app-publisher",
       "folderName": "frontend-app-publisher",
@@ -16275,7 +16263,7 @@
             "filePath": "src/components/ActionButton/index.jsx",
             "line": 8,
             "column": 2,
-            "version": "19.9.0"
+            "version": "19.10.2"
           }
         ],
         "Icon": [
@@ -16283,67 +16271,67 @@
             "filePath": "src/components/Collaborator/index.jsx",
             "line": 32,
             "column": 8,
-            "version": "19.9.0"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/components/Collaborator/index.jsx",
             "line": 53,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
             "line": 108,
             "column": 8,
-            "version": "19.9.0"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/components/LoadingSpinner/index.jsx",
             "line": 10,
             "column": 4,
-            "version": "19.9.0"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/components/RemoveButton/index.jsx",
             "line": 20,
             "column": 4,
-            "version": "19.9.0"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/components/SidePanes/CommentsPane.jsx",
             "line": 101,
             "column": 24,
-            "version": "19.9.0"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/components/SidePanes/UsersPane.jsx",
             "line": 108,
             "column": 13,
-            "version": "19.9.0"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/components/SidePanes/UsersPane.jsx",
             "line": 141,
             "column": 16,
-            "version": "19.9.0"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/components/Staffer/index.jsx",
             "line": 29,
             "column": 8,
-            "version": "19.9.0"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/components/Staffer/index.jsx",
             "line": 43,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/components/StatusAlert/index.jsx",
             "line": 32,
             "column": 14,
-            "version": "19.9.0"
+            "version": "19.10.2"
           }
         ],
         "Collapsible.Advanced": [
@@ -16351,7 +16339,7 @@
             "filePath": "src/components/Collapsible/index.jsx",
             "line": 32,
             "column": 2,
-            "version": "19.9.0"
+            "version": "19.10.2"
           }
         ],
         "Collapsible.Trigger": [
@@ -16359,7 +16347,7 @@
             "filePath": "src/components/Collapsible/index.jsx",
             "line": 33,
             "column": 4,
-            "version": "19.9.0"
+            "version": "19.10.2"
           }
         ],
         "Collapsible.Visible": [
@@ -16367,13 +16355,13 @@
             "filePath": "src/components/Collapsible/index.jsx",
             "line": 35,
             "column": 6,
-            "version": "19.9.0"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/components/Collapsible/index.jsx",
             "line": 38,
             "column": 6,
-            "version": "19.9.0"
+            "version": "19.10.2"
           }
         ],
         "Modal": [
@@ -16381,7 +16369,7 @@
             "filePath": "src/components/ConfirmationModal/index.jsx",
             "line": 13,
             "column": 2,
-            "version": "19.9.0"
+            "version": "19.10.2"
           }
         ],
         "SearchField": [
@@ -16389,7 +16377,7 @@
             "filePath": "src/components/CourseTable/index.jsx",
             "line": 163,
             "column": 12,
-            "version": "19.9.0"
+            "version": "19.10.2"
           }
         ],
         "InputText": [
@@ -16397,19 +16385,19 @@
             "filePath": "src/components/DateTimeField/index.jsx",
             "line": 74,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/components/DateTimeField/index.jsx",
             "line": 97,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/components/RenderInputTextField/index.jsx",
             "line": 18,
             "column": 2,
-            "version": "19.9.0"
+            "version": "19.10.2"
           }
         ],
         "Hyperlink": [
@@ -16417,25 +16405,25 @@
             "filePath": "src/components/EditCoursePage/CollapsibleCourseRun.jsx",
             "line": 66,
             "column": 12,
-            "version": "19.9.0"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
             "line": 131,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
             "line": 145,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/components/Header/index.jsx",
             "line": 27,
             "column": 12,
-            "version": "19.9.0"
+            "version": "19.10.2"
           }
         ],
         "Badge": [
@@ -16443,7 +16431,7 @@
             "filePath": "src/components/EditCoursePage/CourseSkills.jsx",
             "line": 29,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.10.2"
           }
         ],
         "DropdownButton": [
@@ -16451,7 +16439,7 @@
             "filePath": "src/components/Header/index.jsx",
             "line": 43,
             "column": 12,
-            "version": "19.9.0"
+            "version": "19.10.2"
           }
         ],
         "Dropdown.Item": [
@@ -16459,7 +16447,7 @@
             "filePath": "src/components/Header/index.jsx",
             "line": 48,
             "column": 14,
-            "version": "19.9.0"
+            "version": "19.10.2"
           }
         ],
         "InputSelect": [
@@ -16467,13 +16455,13 @@
             "filePath": "src/components/RenderSelectField/index.jsx",
             "line": 15,
             "column": 2,
-            "version": "19.9.0"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/components/SidePanes/UsersPane.jsx",
             "line": 148,
             "column": 16,
-            "version": "19.9.0"
+            "version": "19.10.2"
           }
         ],
         "TextArea": [
@@ -16481,7 +16469,7 @@
             "filePath": "src/components/SidePanes/CommentsPane.jsx",
             "line": 123,
             "column": 14,
-            "version": "19.9.0"
+            "version": "19.10.2"
           }
         ],
         "StatusAlert": [
@@ -16489,7 +16477,7 @@
             "filePath": "src/components/StatusAlert/index.jsx",
             "line": 18,
             "column": 4,
-            "version": "19.9.0"
+            "version": "19.10.2"
           }
         ],
         "Table": [
@@ -16497,7 +16485,7 @@
             "filePath": "src/components/TableComponent/index.jsx",
             "line": 93,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.10.2"
           }
         ],
         "Pagination": [
@@ -16505,7 +16493,7 @@
             "filePath": "src/components/TableComponent/index.jsx",
             "line": 105,
             "column": 12,
-            "version": "19.9.0"
+            "version": "19.10.2"
           }
         ]
       }
@@ -19249,37 +19237,37 @@
         "Icon": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 159,
+            "line": 161,
             "column": 10,
             "version": "19.4.2"
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 172,
+            "line": 174,
             "column": 10,
             "version": "19.4.2"
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 185,
+            "line": 187,
             "column": 10,
             "version": "19.4.2"
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 198,
+            "line": 200,
             "column": 10,
             "version": "19.4.2"
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 211,
+            "line": 213,
             "column": 10,
             "version": "19.4.2"
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 320,
+            "line": 329,
             "column": 12,
             "version": "19.4.2"
           },
@@ -19429,26 +19417,26 @@
           },
           {
             "filePath": "src/components/Home/StaticCallouts.jsx",
-            "line": 152,
-            "column": 65,
+            "line": 151,
+            "column": 33,
             "version": "19.4.2"
           },
           {
             "filePath": "src/components/Home/StaticCallouts.jsx",
-            "line": 183,
-            "column": 73,
+            "line": 184,
+            "column": 33,
             "version": "19.4.2"
           },
           {
             "filePath": "src/components/Home/StaticCallouts.jsx",
-            "line": 213,
-            "column": 75,
+            "line": 216,
+            "column": 33,
             "version": "19.4.2"
           },
           {
             "filePath": "src/components/Home/StaticCallouts.jsx",
-            "line": 245,
-            "column": 72,
+            "line": 250,
+            "column": 37,
             "version": "19.4.2"
           },
           {
@@ -19467,7 +19455,7 @@
         "Card": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 268,
+            "line": 277,
             "column": 8,
             "version": "19.4.2"
           },
@@ -19493,7 +19481,7 @@
         "Image": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 282,
+            "line": 291,
             "column": 16,
             "version": "19.4.2"
           },
@@ -19507,7 +19495,7 @@
         "Card.Body": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 293,
+            "line": 302,
             "column": 10,
             "version": "19.4.2"
           },
@@ -19527,7 +19515,7 @@
         "Badge": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 313,
+            "line": 322,
             "column": 14,
             "version": "19.4.2"
           },
@@ -19583,7 +19571,7 @@
         "Card.Footer": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 318,
+            "line": 327,
             "column": 10,
             "version": "19.4.2"
           }
@@ -19887,7 +19875,7 @@
           },
           {
             "filePath": "src/components/Home/StaticCallouts.jsx",
-            "line": 110,
+            "line": 107,
             "column": 6,
             "version": "19.4.2"
           },
@@ -20625,7 +20613,7 @@
         "CardView": [
           {
             "filePath": "src/components/Search/Results/FullProductHits.jsx",
-            "line": 79,
+            "line": 82,
             "column": 8,
             "version": "19.4.2"
           }
@@ -20633,7 +20621,7 @@
         "DataTable.TableFooter": [
           {
             "filePath": "src/components/Search/Results/FullProductHits.jsx",
-            "line": 84,
+            "line": 87,
             "column": 8,
             "version": "19.4.2"
           }
