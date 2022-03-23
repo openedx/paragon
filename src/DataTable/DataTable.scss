@@ -27,12 +27,14 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
 .pgn__bulk-actions,
 .pgn__table-actions {
   display: flex;
-  margin-inline-start: map_get($spacers, 2);
 
-  .btn {
-    margin-inline-start: map_get($spacers, 1);
-    &:first-child {
-      margin-inline-start: 0;
+  .pgn__datatable__visible-actions {
+    margin-inline-start: map_get($spacers, 2);
+    .btn {
+      margin-inline-start: map_get($spacers, 2);
+      &:first-child {
+        margin-inline-start: 0;
+      }
     }
   }
 }
@@ -255,4 +257,11 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+}
+
+.pgn__datatable__overflow-actions-menu {
+  background: #ffffff;
+  padding: map_get($spacers, 2);
+  box-shadow: $level-1-box-shadow;
+  border-radius: 4px;
 }

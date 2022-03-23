@@ -1,10 +1,17 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useContext, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import DataTableContext from './DataTableContext';
 import { MoreVert } from '../../icons';
 import {
-  Dropdown, useWindowSize, Icon, IconButton, breakpoints, Button,
+  useWindowSize,
+  useToggle,
+  DataTableContext,
+  Icon,
+  IconButton,
+  breakpoints,
+  ModalPopup,
+  Stack,
+  Button,
 } from '..';
 
 export const DROPDOWN_BUTTON_TEXT = 'More actions';
@@ -14,6 +21,8 @@ const CollapsibleButtonGroup = ({
   className,
   actions,
 }) => {
+  const [isOverflowMenuOpen, openOverflowMenu, closeOverflowMenu] = useToggle(false);
+  const [overflowMenuTarget, setOverflowMenuTarget] = useState(null);
   const {
     controlledTableSelections: [{ isEntireTableSelected }],
     selectedFlatRows,
@@ -40,41 +49,47 @@ const CollapsibleButtonGroup = ({
     return null;
   }
 
+  const cloneAction = (action, index) => React.cloneElement(
+    action.component,
+    {
+      // eslint-disable-next-line react/no-array-index-key
+      key: `${action}${index}`,
+      as: Button, // for backwards compatibility this is needed
+      ...action.args,
+    },
+  );
+
   return (
     <div className={className}>
       {dropdownActions.length > 0 && (
-        <Dropdown>
-          <Dropdown.Toggle
+        <>
+          <IconButton
             variant="secondary"
             iconAs={Icon}
-            as={IconButton}
             src={MoreVert}
             alt={width > breakpoints.small.minWidth
               ? DROPDOWN_BUTTON_TEXT : SMALL_SCREEN_DROPDOWN_BUTTON_TEXT}
             id="actions-dropdown"
+            ref={setOverflowMenuTarget}
+            onClick={openOverflowMenu}
           />
-          <Dropdown.Menu alignRight>
-            {dropdownActions.map((action, index) => React.cloneElement(
-              action.component,
-              {
-                // eslint-disable-next-line react/no-array-index-key
-                key: `${action}${index}`,
-                as: Dropdown.Item,
-                ...action.args,
-              },
-            ))}
-          </Dropdown.Menu>
-        </Dropdown>
+          <ModalPopup
+            positionRef={overflowMenuTarget}
+            onClose={closeOverflowMenu}
+            placement="bottom-end"
+            isOpen={isOverflowMenuOpen}
+          >
+            <div className="pgn__datatable__overflow-actions-menu">
+              <Stack gap={2}>
+                {dropdownActions.map(cloneAction)}
+              </Stack>
+            </div>
+          </ModalPopup>
+        </>
       )}
-      {visibleActions.map((action, index) => React.cloneElement(
-        action.component,
-        {
-          // eslint-disable-next-line react/no-array-index-key
-          key: `${action}${index}`,
-          as: action.component.props?.as || Button,
-          ...action.args,
-        },
-      ))}
+      <div className="pgn__datatable__visible-actions">
+        {visibleActions.map(cloneAction)}
+      </div>
     </div>
   );
 };
