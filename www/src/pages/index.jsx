@@ -1,10 +1,12 @@
 import React from 'react';
+import { Button } from '~paragon-react'; // eslint-disable-line
 import Menu from '../components/Menu';
 import Layout from '../components/PageLayout';
-import { Button } from '~paragon-react'; // eslint-disable-line
+import SEO from '../components/SEO';
 
 const HomePage = () => (
   <Layout showMinimizedTitle hideFooterComponentMenu>
+    <SEO title="Home" />
     <div className="bg-dark text-white text-center py-5">
       <p className="x-small text-uppercase text-monospace mb-0">
         Technical Documentation{' '}
@@ -16,7 +18,8 @@ const HomePage = () => (
       </p>
       <div className="mb-5">
         <Button
-          variant="inverse-outline-primary mr-2"
+          variant="inverse-outline-primary"
+          className="mr-2"
           as="a"
           target="_blank"
           rel="noopener noreferrer"
