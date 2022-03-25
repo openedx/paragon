@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import renderer from 'react-test-renderer';
 import IconButton from './index';
 import Icon from '../Icon';
 import { InfoOutline } from '../../icons';
@@ -15,6 +16,12 @@ describe('<IconButton />', () => {
     iconAs,
     variant,
   };
+  it('renders with required props', () => {
+    const tree = renderer.create((
+      <IconButton alt={alt} />
+    )).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
   it('passes the alt text to the button aria-label', () => {
     const wrapper = shallow(<IconButton {...props} onClick={() => {}} />);
     expect(wrapper.prop('aria-label')).toEqual(alt);
