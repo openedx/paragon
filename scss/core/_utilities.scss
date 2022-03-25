@@ -72,9 +72,34 @@ $color-levels: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 }
 
 .mis-auto {
-  margin-inline-start: auto;
+  margin-inline-start: auto !important;
 }
 
 .mie-auto {
-  margin-inline-end: auto;
+  margin-inline-end: auto !important;
+}
+
+// Define classes for z-index
+$indexes: () !default;
+$indexes: map-merge(
+  (
+    0: 0,
+    1: 200,
+    2: 400,
+    3: 600,
+    4: 800,
+    5: 1000,
+    6: 1200,
+    7: 1400,
+    8: 1600,
+    9: 1800,
+    10: 2000
+  ),
+  $indexes
+);
+
+@each $index, $size in $indexes {
+  .zindex-#{$index} {
+    z-index: $size !important;
+  }
 }

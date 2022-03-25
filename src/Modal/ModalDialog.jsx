@@ -25,11 +25,12 @@ function ModalDialog({
   className,
   isFullscreenOnMobile,
   isBlocking,
+  zIndex,
 }) {
   const isMobile = useMediaQuery({ query: '(max-width: 767.98px)' });
   const showFullScreen = (isFullscreenOnMobile && isMobile);
   return (
-    <ModalLayer isOpen={isOpen} onClose={onClose} isBlocking={isBlocking}>
+    <ModalLayer isOpen={isOpen} onClose={onClose} isBlocking={isBlocking} zIndex={zIndex}>
       <div
         role="dialog"
         aria-label={title}
@@ -111,6 +112,7 @@ ModalDialog.propTypes = {
    * Prevent clicking on the backdrop to close the modal
    */
   isBlocking: PropTypes.bool,
+  zIndex: PropTypes.number,
 };
 
 ModalDialog.defaultProps = {
@@ -123,6 +125,7 @@ ModalDialog.defaultProps = {
   isFullscreenScroll: false,
   isFullscreenOnMobile: false,
   isBlocking: false,
+  zIndex: undefined,
 };
 
 ModalDialog.Header = ModalDialogHeader;
