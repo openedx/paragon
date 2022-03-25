@@ -1,6 +1,9 @@
 ---
 title: 'Progress Bar'
 type: 'component'
+components:
+- ProgressBar
+- ProgressBarAnnotated
 categories:
 - Status & metadata
 status: 'Stable'
@@ -45,4 +48,21 @@ A bar to indicate the completed progress of a task.
   <br />
   <ProgressBar now={60} label="60%" variant="warning" />
 </div>
+```
+
+### Annotated variant
+
+```jsx live
+<>
+  <ProgressBar.Annotated
+    now={20}
+    label="20%"
+    variant="success"
+    threshold={50}
+    thresholdLabel="50%"
+    thresholdVariant="dark"
+    progressHint="Progress"
+    thresholdHint="Threshold"
+  />
+</>
 ```
