@@ -172,6 +172,24 @@ const ComponentsUsage = () => (
 );
 
 export default function InsightsPage() {
+  const tabs = ['/insights', '/insights/?tab=projects', '/insights/?tab=components'];
+
+  const handleOnSelect = (value) => {
+    switch (value) {
+      case tabs[0]:
+        global.analytics.track('Usage Insights', { tab: 'Summary' });
+        break;
+      case tabs[1]:
+        global.analytics.track('Usage Insights', { tab: 'Projects' });
+        break;
+      case tabs[2]:
+        global.analytics.track('Usage Insights', { tab: 'Components' });
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <Layout>
       <Container size="md" className="py-5">
@@ -181,14 +199,18 @@ export default function InsightsPage() {
           <h1>Usage Insights</h1>
           <p>Last updated: {new Date(analysisLastUpdated).toLocaleDateString()}</p>
         </header>
-        <Tabs defaultActiveKey="summary" id="uncontrolled-tab-example">
-          <Tab eventKey="summary" title="Summary">
+        <Tabs
+          defaultKey={tabs[0]}
+          id="uncontrolled-tab-example"
+          onSelect={handleOnSelect}
+        >
+          <Tab eventKey={tabs[0]} title="Summary">
             <SummaryUsage />
           </Tab>
-          <Tab eventKey="projects" title="Projects">
+          <Tab eventKey={tabs[1]} title="Projects">
             <ProjectsUsage />
           </Tab>
-          <Tab eventKey="components" title="Components">
+          <Tab eventKey={tabs[2]} title="Components">
             <ComponentsUsage />
           </Tab>
         </Tabs>
