@@ -1,5 +1,5 @@
 {
-  "lastModified": 1648131143574,
+  "lastModified": 1648217325643,
   "projectUsages": [
     {
       "version": "19.10.2",
@@ -3088,7 +3088,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
-            "line": 128,
+            "line": 129,
             "column": 8,
             "version": "19.10.1"
           },
@@ -3114,7 +3114,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
-            "line": 176,
+            "line": 177,
             "column": 10,
             "version": "19.10.1"
           },
@@ -3134,7 +3134,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
-            "line": 177,
+            "line": 178,
             "column": 10,
             "version": "19.10.1"
           },
@@ -3618,7 +3618,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
-            "line": 114,
+            "line": 115,
             "column": 8,
             "version": "19.10.1"
           },
@@ -3690,13 +3690,13 @@
           },
           {
             "filePath": "src/components/subsidy-request-management-alerts/NoAvailableCodesBanner.jsx",
-            "line": 27,
+            "line": 23,
             "column": 4,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/subsidy-request-management-alerts/NoAvailableLicensesBanner.jsx",
-            "line": 23,
+            "line": 19,
             "column": 4,
             "version": "19.10.1"
           },
@@ -3788,7 +3788,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
-            "line": 115,
+            "line": 116,
             "column": 10,
             "version": "19.10.1"
           },
@@ -3836,13 +3836,13 @@
           },
           {
             "filePath": "src/components/subsidy-request-management-alerts/NoAvailableCodesBanner.jsx",
-            "line": 36,
+            "line": 32,
             "column": 6,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/subsidy-request-management-alerts/NoAvailableLicensesBanner.jsx",
-            "line": 32,
+            "line": 28,
             "column": 6,
             "version": "19.10.1"
           },
@@ -5782,7 +5782,7 @@
         "DataTable.EmptyTable": [
           {
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
-            "line": 178,
+            "line": 179,
             "column": 28,
             "version": "19.10.1"
           },
@@ -16033,7 +16033,7 @@
       }
     },
     {
-      "version": "16.6.1",
+      "version": "19.6.0",
       "name": "@edx/frontend-app-profile",
       "repository": {
         "type": "git",
@@ -16046,19 +16046,19 @@
             "filePath": "src/profile/AgeMessage.jsx",
             "line": 8,
             "column": 4,
-            "version": "16.6.1"
+            "version": "19.6.0"
           },
           {
             "filePath": "src/profile/forms/SocialLinks.jsx",
             "line": 168,
             "column": 36,
-            "version": "16.6.1"
+            "version": "19.6.0"
           },
           {
             "filePath": "src/profile/ProfilePage.jsx",
             "line": 159,
             "column": 10,
-            "version": "16.6.1"
+            "version": "19.6.0"
           }
         ],
         "ValidationFormGroup": [
@@ -16066,25 +16066,25 @@
             "filePath": "src/profile/forms/Bio.jsx",
             "line": 59,
             "column": 16,
-            "version": "16.6.1"
+            "version": "19.6.0"
           },
           {
             "filePath": "src/profile/forms/Country.jsx",
             "line": 70,
             "column": 16,
-            "version": "16.6.1"
+            "version": "19.6.0"
           },
           {
             "filePath": "src/profile/forms/Education.jsx",
             "line": 66,
             "column": 16,
-            "version": "16.6.1"
+            "version": "19.6.0"
           },
           {
             "filePath": "src/profile/forms/PreferredLanguage.jsx",
             "line": 80,
             "column": 16,
-            "version": "16.6.1"
+            "version": "19.6.0"
           }
         ],
         "Hyperlink": [
@@ -16092,13 +16092,13 @@
             "filePath": "src/profile/forms/Certificates.jsx",
             "line": 106,
             "column": 14,
-            "version": "16.6.1"
+            "version": "19.6.0"
           },
           {
             "filePath": "src/profile/ProfilePage.jsx",
             "line": 127,
             "column": 6,
-            "version": "16.6.1"
+            "version": "19.6.0"
           }
         ],
         "Button": [
@@ -16106,19 +16106,19 @@
             "filePath": "src/profile/forms/elements/EditButton.jsx",
             "line": 14,
             "column": 4,
-            "version": "16.6.1"
+            "version": "19.6.0"
           },
           {
             "filePath": "src/profile/forms/elements/FormControls.jsx",
             "line": 54,
             "column": 8,
-            "version": "16.6.1"
+            "version": "19.6.0"
           },
           {
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 59,
             "column": 8,
-            "version": "16.6.1"
+            "version": "19.6.0"
           }
         ],
         "StatefulButton": [
@@ -16126,7 +16126,7 @@
             "filePath": "src/profile/forms/elements/FormControls.jsx",
             "line": 32,
             "column": 8,
-            "version": "16.6.1"
+            "version": "19.6.0"
           }
         ],
         "TransitionReplace": [
@@ -16134,7 +16134,7 @@
             "filePath": "src/profile/forms/elements/SwitchContent.jsx",
             "line": 44,
             "column": 4,
-            "version": "16.6.1"
+            "version": "19.6.0"
           }
         ],
         "Dropdown": [
@@ -16142,7 +16142,7 @@
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 75,
             "column": 6,
-            "version": "16.6.1"
+            "version": "19.6.0"
           }
         ],
         "Dropdown.Toggle": [
@@ -16150,7 +16150,7 @@
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 76,
             "column": 8,
-            "version": "16.6.1"
+            "version": "19.6.0"
           }
         ],
         "Dropdown.Menu": [
@@ -16158,7 +16158,7 @@
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 79,
             "column": 8,
-            "version": "16.6.1"
+            "version": "19.6.0"
           }
         ],
         "Dropdown.Item": [
@@ -16166,13 +16166,13 @@
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 80,
             "column": 10,
-            "version": "16.6.1"
+            "version": "19.6.0"
           },
           {
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 87,
             "column": 10,
-            "version": "16.6.1"
+            "version": "19.6.0"
           }
         ],
         "Icon": [
@@ -16180,7 +16180,7 @@
             "filePath": "src/profile/UsernameDescription.jsx",
             "line": 9,
             "column": 6,
-            "version": "16.6.1"
+            "version": "19.6.0"
           }
         ]
       }
@@ -18373,7 +18373,7 @@
           },
           {
             "filePath": "src/editors/containers/TextEditor/TextEditor.jsx",
-            "line": 63,
+            "line": 62,
             "column": 6,
             "version": "19.6.0"
           }
@@ -18387,7 +18387,7 @@
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 33,
+            "line": 35,
             "column": 4,
             "version": "19.6.0"
           }
@@ -18407,8 +18407,14 @@
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 34,
+            "line": 36,
             "column": 6,
+            "version": "19.6.0"
+          },
+          {
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
+            "line": 22,
+            "column": 2,
             "version": "19.6.0"
           }
         ],
@@ -18423,6 +18429,18 @@
             "filePath": "src/editors/components/EditorHeader/index.jsx",
             "line": 25,
             "column": 8,
+            "version": "19.6.0"
+          },
+          {
+            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
+            "line": 38,
+            "column": 8,
+            "version": "19.6.0"
+          },
+          {
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
+            "line": 45,
+            "column": 4,
             "version": "19.6.0"
           }
         ],
@@ -18452,9 +18470,15 @@
             "version": "19.6.0"
           },
           {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal.jsx",
-            "line": 39,
-            "column": 21,
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/index.jsx",
+            "line": 46,
+            "column": 8,
+            "version": "19.6.0"
+          },
+          {
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/index.jsx",
+            "line": 52,
+            "column": 8,
             "version": "19.6.0"
           }
         ],
@@ -18466,8 +18490,14 @@
             "version": "19.6.0"
           },
           {
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/Gallery.jsx",
+            "line": 17,
+            "column": 11,
+            "version": "19.6.0"
+          },
+          {
             "filePath": "src/editors/containers/TextEditor/TextEditor.jsx",
-            "line": 70,
+            "line": 69,
             "column": 12,
             "version": "19.6.0"
           }
@@ -18489,6 +18519,12 @@
             "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/DimensionControls.jsx",
             "line": 34,
             "column": 2,
+            "version": "19.6.0"
+          },
+          {
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
+            "line": 23,
+            "column": 4,
             "version": "19.6.0"
           },
           {
@@ -18522,6 +18558,12 @@
             "line": 46,
             "column": 6,
             "version": "19.6.0"
+          },
+          {
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
+            "line": 24,
+            "column": 6,
+            "version": "19.6.0"
           }
         ],
         "Icon": [
@@ -18535,6 +18577,12 @@
             "filePath": "src/editors/components/EditorHeader/EditableHeader.test.jsx",
             "line": 26,
             "column": 64,
+            "version": "19.6.0"
+          },
+          {
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
+            "line": 40,
+            "column": 16,
             "version": "19.6.0"
           }
         ],
@@ -18556,6 +18604,12 @@
             "line": 55,
             "column": 6,
             "version": "19.6.0"
+          },
+          {
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
+            "line": 31,
+            "column": 16,
+            "version": "19.6.0"
           }
         ],
         "ModalDialog.Header": [
@@ -18567,7 +18621,7 @@
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 25,
+            "line": 27,
             "column": 4,
             "version": "19.6.0"
           }
@@ -18581,7 +18635,7 @@
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 26,
+            "line": 28,
             "column": 6,
             "version": "19.6.0"
           }
@@ -18589,7 +18643,7 @@
         "ModalDialog": [
           {
             "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 16,
+            "line": 17,
             "column": 2,
             "version": "19.6.0"
           }
@@ -18597,7 +18651,7 @@
         "ModalDialog.Body": [
           {
             "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 30,
+            "line": 32,
             "column": 4,
             "version": "19.6.0"
           }
@@ -18605,7 +18659,7 @@
         "ModalDialog.CloseButton": [
           {
             "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 35,
+            "line": 39,
             "column": 8,
             "version": "19.6.0"
           }
@@ -18646,9 +18700,89 @@
             "version": "19.6.0"
           },
           {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal.jsx",
-            "line": 45,
-            "column": 12,
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/GalleryCard.jsx",
+            "line": 14,
+            "column": 6,
+            "version": "19.6.0"
+          }
+        ],
+        "Alert": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/ErrorAlert.jsx",
+            "line": 15,
+            "column": 4,
+            "version": "19.6.0"
+          }
+        ],
+        "Alert.Heading": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/ErrorAlert.jsx",
+            "line": 21,
+            "column": 6,
+            "version": "19.6.0"
+          }
+        ],
+        "Scrollable": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/Gallery.jsx",
+            "line": 20,
+            "column": 4,
+            "version": "19.6.0"
+          }
+        ],
+        "SelectableBox.Set": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/Gallery.jsx",
+            "line": 22,
+            "column": 8,
+            "version": "19.6.0"
+          }
+        ],
+        "SelectableBox": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/GalleryCard.jsx",
+            "line": 12,
+            "column": 2,
+            "version": "19.6.0"
+          }
+        ],
+        "Stack": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/index.jsx",
+            "line": 58,
+            "column": 6,
+            "version": "19.6.0"
+          }
+        ],
+        "Dropdown": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
+            "line": 46,
+            "column": 4,
+            "version": "19.6.0"
+          }
+        ],
+        "Dropdown.Toggle": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
+            "line": 47,
+            "column": 6,
+            "version": "19.6.0"
+          }
+        ],
+        "Dropdown.Menu": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
+            "line": 50,
+            "column": 6,
+            "version": "19.6.0"
+          }
+        ],
+        "Dropdown.Item": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
+            "line": 52,
+            "column": 10,
             "version": "19.6.0"
           }
         ],
@@ -18683,7 +18817,7 @@
       }
     },
     {
-      "version": "16.17.0",
+      "version": "19.10.2",
       "name": "content-components-gallery",
       "folderName": "www",
       "usages": {
@@ -18692,7 +18826,7 @@
             "filePath": "src/Gallery.jsx",
             "line": 22,
             "column": 6,
-            "version": "16.17.0"
+            "version": "19.10.2"
           }
         ],
         "Form.RadioSet": [
@@ -18700,7 +18834,7 @@
             "filePath": "src/Gallery.jsx",
             "line": 23,
             "column": 8,
-            "version": "16.17.0"
+            "version": "19.10.2"
           }
         ],
         "Form.Radio": [
@@ -18708,19 +18842,19 @@
             "filePath": "src/Gallery.jsx",
             "line": 28,
             "column": 10,
-            "version": "16.17.0"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/Gallery.jsx",
             "line": 29,
             "column": 10,
-            "version": "16.17.0"
+            "version": "19.10.2"
           },
           {
             "filePath": "src/Gallery.jsx",
             "line": 30,
             "column": 10,
-            "version": "16.17.0"
+            "version": "19.10.2"
           }
         ]
       }
@@ -19279,7 +19413,7 @@
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 329,
+            "line": 333,
             "column": 12,
             "version": "19.4.2"
           },
@@ -19321,13 +19455,13 @@
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 100,
+            "line": 102,
             "column": 14,
             "version": "19.4.2"
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 162,
+            "line": 164,
             "column": 22,
             "version": "19.4.2"
           },
@@ -19491,7 +19625,7 @@
         "Card": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 277,
+            "line": 281,
             "column": 8,
             "version": "19.4.2"
           },
@@ -19517,7 +19651,7 @@
         "Image": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 291,
+            "line": 295,
             "column": 16,
             "version": "19.4.2"
           },
@@ -19531,7 +19665,7 @@
         "Card.Body": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 302,
+            "line": 306,
             "column": 10,
             "version": "19.4.2"
           },
@@ -19551,7 +19685,7 @@
         "Badge": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 322,
+            "line": 326,
             "column": 14,
             "version": "19.4.2"
           },
@@ -19607,7 +19741,7 @@
         "Card.Footer": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 327,
+            "line": 331,
             "column": 10,
             "version": "19.4.2"
           }
@@ -19627,13 +19761,13 @@
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 132,
+            "line": 134,
             "column": 27,
             "version": "19.4.2"
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 178,
+            "line": 180,
             "column": 12,
             "version": "19.4.2"
           },
@@ -19705,8 +19839,8 @@
           },
           {
             "filePath": "src/components/Search/PreQuery/PopularSearchLinks.jsx",
-            "line": 66,
-            "column": 8,
+            "line": 67,
+            "column": 10,
             "version": "19.4.2"
           }
         ],
@@ -19737,7 +19871,7 @@
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 93,
+            "line": 95,
             "column": 6,
             "version": "19.4.2"
           },
@@ -19994,14 +20128,38 @@
             "version": "19.4.2"
           },
           {
-            "filePath": "src/components/Search/BaseHeader/index.jsx",
-            "line": 26,
-            "column": 8,
+            "filePath": "src/components/Search/BaseHeader/SearchInput.jsx",
+            "line": 18,
+            "column": 4,
+            "version": "19.4.2"
+          },
+          {
+            "filePath": "src/components/Search/BaseHeader/TitleSection.jsx",
+            "line": 12,
+            "column": 4,
+            "version": "19.4.2"
+          },
+          {
+            "filePath": "src/components/Search/BaseHeader/TitleSection.jsx",
+            "line": 19,
+            "column": 4,
             "version": "19.4.2"
           },
           {
             "filePath": "src/components/Search/PreQuery/Page.jsx",
             "line": 15,
+            "column": 4,
+            "version": "19.4.2"
+          },
+          {
+            "filePath": "src/components/Search/PreQuery/PopularSearchLinks.jsx",
+            "line": 63,
+            "column": 4,
+            "version": "19.4.2"
+          },
+          {
+            "filePath": "src/components/Search/Refinements/Filters.jsx",
+            "line": 103,
             "column": 4,
             "version": "19.4.2"
           },
@@ -20103,13 +20261,7 @@
           },
           {
             "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 271,
-            "column": 14,
-            "version": "19.4.2"
-          },
-          {
-            "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 311,
+            "line": 253,
             "column": 14,
             "version": "19.4.2"
           },
@@ -20123,13 +20275,13 @@
         "Breadcrumb": [
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 97,
+            "line": 99,
             "column": 14,
             "version": "19.4.2"
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 101,
+            "line": 103,
             "column": 14,
             "version": "19.4.2"
           },
@@ -20155,7 +20307,7 @@
         "OverlayTrigger": [
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 152,
+            "line": 154,
             "column": 18,
             "version": "19.4.2"
           },
@@ -20199,7 +20351,7 @@
         "Tooltip": [
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 155,
+            "line": 157,
             "column": 22,
             "version": "19.4.2"
           },
