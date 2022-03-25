@@ -81,7 +81,7 @@ Icon.propTypes = {
   /** the `id` property of the Icon element, by default this value is generated with the `newId` function with the `prefix` of `Icon`. */
   id: PropTypes.string,
   // eslint-disable-next-line max-len
-  /** array of class names that will define what the Icon looks like. For example, a list of FontAwesome style names. */
+  /** A class name that will define what the Icon looks like. */
   className: PropTypes.string,
   // eslint-disable-next-line max-len
   /** a boolean that determines the value of `aria-hidden` attribute on the Icon span, this value is `true` by default. */

@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
+import Icon from '../Icon';
+import { Search, Close } from '../../icons';
 
 import SearchField from './index';
 
@@ -27,8 +27,8 @@ describe('<SearchField /> with basic usage', () => {
     expect(props.children).toEqual(expect.any(Array));
     expect(props.className).toEqual(undefined);
     expect(props.icons).toEqual({
-      clear: <FontAwesomeIcon icon={faTimes} />,
-      submit: <FontAwesomeIcon icon={faSearch} />,
+      clear: <Icon src={Close} />,
+      submit: <Icon src={Search} />,
     });
     expect(props.onFocus).toEqual(expect.any(Function));
     expect(props.onBlur).toEqual(expect.any(Function));

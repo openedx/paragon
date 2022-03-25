@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import BaseToast from 'react-bootstrap/Toast';
 import ToastContainer from './ToastContainer';
-import { Button, IconButton } from '..';
+import { Button, IconButton, Icon } from '..';
+import { Close } from '../../icons';
 
 function Toast({
   action, children, closeLabel, delay, onClose, show,
@@ -29,9 +29,10 @@ function Toast({
           <p className="small">{children}</p>
           <div className="toast-header-btn-container">
             <IconButton
+              iconAs={Icon}
               alt={closeLabel}
               className="align-self-start"
-              icon={faTimes}
+              src={Close}
               onClick={() => (onClose())}
               variant="primary"
               invertColors
