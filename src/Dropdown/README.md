@@ -191,7 +191,7 @@ You can use `Dropdown.Toggle` with [IconButton](/components/iconbutton) componen
 />
 ```
 
-<guide
+<testguide
   dataTestId
   selectors="`dropdown`"
 />

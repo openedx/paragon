@@ -169,7 +169,7 @@ The stacked variant should be used for:
 </Alert>
 ```
 
-<guide
+<testguide
   defaultText="`closeLabel: 'Dismiss'`"
   events="`onClose`"
   dataTestId

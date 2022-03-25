@@ -67,7 +67,7 @@ A bar to indicate the completed progress of a task.
 </>
 ```
 
-<guide
+<testguide
   dataTestId
   selectors="`progress-bar`"
 />

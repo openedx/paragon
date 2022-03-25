@@ -31,6 +31,6 @@ notes: |
 </Figure>
 ```
 
-<guide
+<testguide
   selectors="`figure`"
 />

@@ -194,7 +194,7 @@ Use inline size buttons for when a button sits with a line of text.
 </div>
 ```
 
-<guide
+<testguide
   dataTestId
   selectors="`btn`"
 />

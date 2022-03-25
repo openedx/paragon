@@ -157,7 +157,7 @@ As ``Checkbox`` with ``isIndeterminate``
 }
 ```
 
-<guide
+<testguide
   events="`onChange`, `onClick`, `onKeyPress`"
   selectors="`pgn__selectable_box`"
 />

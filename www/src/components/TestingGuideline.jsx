@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Markdown from 'markdown-to-jsx';
 import { Button, Collapsible, DataTable } from '~paragon-react';  // eslint-disable-line
@@ -14,7 +14,10 @@ const TestingGuideline = ({
   selectors,
 }) => {
   const [collapseIsOpen, setCollapseIsOpen] = useState(false);
-  setIsGuidelinesOnPage(true);
+
+  useEffect(() => {
+    setIsGuidelinesOnPage(true);
+  }, []);
 
   const tableRow = {
     defaultText: <Markdown>{defaultText}</Markdown>,

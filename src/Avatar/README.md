@@ -40,7 +40,7 @@ It is used in the global navigation’s user menu and may also be used to indica
 </>
 ```
 
-<guide
+<testguide
   dataTestId
   selectors="`btn-avatar`"
 />

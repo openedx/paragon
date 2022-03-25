@@ -64,7 +64,7 @@ ActionRow can also be used with a helper component ``ActionRow.Spacer`` to inser
 </ActionRow>
 ```
 
-<guide
+<testguide
   dataTestId
   selectors="`pgn__action-row`, `pgn__action-row-stacked`"
 />

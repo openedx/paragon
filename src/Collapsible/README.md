@@ -228,7 +228,7 @@ an **uncontrolled** Collapsible by getting a ref to the component and calling
 `collapsibleRef.open()` or `collapsibleRef.close()`. The internal state of
 the component will be updated accordingly.
 
-<guide
+<testguide
   events="`onClose`, `onOpen`, `onToggle`, CollapsibleTrigger - `onClick`"
   dataTestId
   selectors="`pgn_collapsible`"

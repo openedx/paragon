@@ -231,7 +231,7 @@ notes: ''
 </>
 ```
 
-<guide
+<testguide
   defaultText="`variant: 'primary'`, `size: 'md'`"
   events="`onClick`"
   dataTestId

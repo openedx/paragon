@@ -76,7 +76,7 @@ notes: |
 </MailtoLink>
 ```
 
-<guide
+<testguide
   defaultText="`alternativeText: 'in a new tab'`, `title: 'Opens in a new tab'`"
   events="`onClick`"
   dataTestId

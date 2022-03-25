@@ -41,7 +41,7 @@ A spinning animation that indicates loading.
 }
 ```
 
-<guide
+<testguide
   dataTestId
   selectors="`pgn__spinner`"
 />

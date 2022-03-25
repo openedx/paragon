@@ -100,7 +100,7 @@ notes: |
 </div>
 ```
 
-<guide
+<testguide
   defaultText="`target: '_self'`, `externalLinkAlternativeText: 'in a new tab'`,
 `externalLinkTitle: 'Opens in a new tab'`, `variant: 'default'`"
   events="`onClick`"

@@ -80,7 +80,7 @@ Use as a secondary navigation pattern to help convey hierarchy and enable naviga
 />
 ```
 
-<guide
+<testguide
   events="`clickHandler`"
   selectors="`pgn__breadcrumb`"
 />

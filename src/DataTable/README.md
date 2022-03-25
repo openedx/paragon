@@ -1323,7 +1323,7 @@ You can create your own custom expander column and use it, see code example belo
 }
 ```
 
-<guide
+<testguide
   dataTestId
   selectors="main wrapper - `pgn__data-table-layout-wrapper`"
 />

@@ -65,6 +65,6 @@ notes: |
 }
 ```
 
-<guide
+<testguide
   selectors="`pgn__sheet-component`"
 />

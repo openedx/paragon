@@ -594,7 +594,7 @@ it is meant to be used as a single horizontal row of Cards, not as a grid. See C
 </CardDeck>
 ```
 
-<guide
+<testguide
   dataTestId
   selectors="main wrapper - `pgn__card`"
 />

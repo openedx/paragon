@@ -54,7 +54,7 @@ notes: |
 </div>
 ```
 
-<guide
+<testguide
   defaultText="`bsPrefix: 'tooltip'`"
   dataTestId
 />

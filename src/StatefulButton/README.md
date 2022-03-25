@@ -90,7 +90,7 @@ The stateful button is a button used to display an actionable icon.
 };
 ```
 
-<guide
+<testguide
   events="`onClick`"
   dataTestId
   selectors="`pgn__stateful-btn`"

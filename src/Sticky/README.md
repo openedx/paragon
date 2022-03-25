@@ -53,7 +53,7 @@ Valid `offset` values are the same as for [the spacing classes](/foundations/spa
 </div>
 ```
 
-<guide
+<testguide
   dataTestId
   selectors="`pgn__sticky`"
 />

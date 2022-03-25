@@ -30,7 +30,7 @@ HTML attributes can be passed to this component allowing for customization of th
 </div>
 ```
 
-<guide
+<testguide
   dataTestId
   selectors="`pgn__icon`"
 />

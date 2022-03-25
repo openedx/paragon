@@ -39,7 +39,7 @@ Badges are composed of text and an accompanying indicator color, and are typical
 </>
 ```
 
-<guide
+<testguide
   dataTestId
   selectors="`badge`"
 />

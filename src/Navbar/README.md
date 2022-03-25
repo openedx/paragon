@@ -49,7 +49,7 @@ A powerful, responsive navigation header, the navbar. Includes support for brand
 </Navbar>
 ```
 
-<guide
+<testguide
   defaultText="`role: 'navigation'`"
   events="`onToggle`, `onSelect`"
   dataTestId

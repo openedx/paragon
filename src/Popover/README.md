@@ -115,7 +115,7 @@ Popovers are small overlays that present additional content and actions without 
 </>
 ```
 
-<guide
+<testguide
   defaultText="`bsPrefix: 'popover-header'`, `bsPrefix: 'popover-body'`"
   dataTestId
 />

@@ -49,7 +49,7 @@ You can pass a tooltip if you use the ``IconButtonWithTooltip`` subcomponent.
     }
 ```
 
-<guide
+<testguide
   events="`onChange`"
   dataTestId
   selectors="`pgn__icon-button-toggle__container`"

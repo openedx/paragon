@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
@@ -42,7 +42,7 @@ export default function PageTemplate({
       h6: (props) => <LinkedHeading h="6" {...props} />,
       pre: props => <div {...props} />,
       code: CodeBlock,
-      guide: (props) => (
+      testguide: (props) => (
         <TestingGuideline
           title={testingGuidelinesTitle}
           href={testingGuidelinesUrl}

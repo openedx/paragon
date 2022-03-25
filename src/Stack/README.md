@@ -37,6 +37,6 @@ Stacks are vertical by default and stacked items are full-width by default. Watc
 </Stack>
 ```
 
-<guide
+<testguide
   selectors="`pgn__hstack` || `pgn__vstack`"
 />

@@ -63,7 +63,7 @@ notes: |
 </Carousel>
 ```
 
-<guide
+<testguide
   defaultText="`nextLabel: 'Next'`, `prevLabel: 'Previous'`"
   events="`onSelect`, `onSlid`, `onSlide`"
   selectors="`carousel`"

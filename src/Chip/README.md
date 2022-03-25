@@ -34,7 +34,7 @@ notes: |
 </div>
 ```
 
-<guide
+<testguide
   events="`onClick`"
   dataTestId
   selectors="`pgn__chip`"

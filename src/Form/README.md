@@ -190,7 +190,7 @@ notes: |
 </Form>
 ```
 
-<guide
+<testguide
   dataTestId
   selectors="`form` tag"
 />
