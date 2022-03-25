@@ -24,8 +24,8 @@ const Navbar = ({
   onSettingsClick,
 }) => (
   <Container as="header" className="py-3 bg-dark text-white sticky-top">
-    <Row className="align-items-center">
-      <Col sm={4}>
+    <Row className="align-items-center text-center">
+      <Col className="mb-2 mb-sm-0" sm={4}>
         <Button
           className="d-inline-flex align-items-center"
           variant="inverse-tertiary"
@@ -35,7 +35,7 @@ const Navbar = ({
           Menu
         </Button>
       </Col>
-      <Col sm={4}>
+      <Col className="mb-2 mb-sm-0" sm={4}>
         <Link
           to="/"
           style={{ textDecoration: 'none' }}
@@ -63,7 +63,7 @@ const Navbar = ({
         </Link>
       </Col>
       <Col className="small" sm={4}>
-        <Nav className="justify-content-end align-items-center">
+        <Nav className="justify-content-center align-items-center">
           <img
             className="d-inline-block mr-2"
             src="https://img.shields.io/npm/v/@edx/paragon.svg"
