@@ -64,7 +64,7 @@ CheckboxFilter.propTypes = {
       number: PropTypes.number,
     })).isRequired,
     getHeaderProps: PropTypes.func.isRequired,
-    filterValue: PropTypes.string,
+    filterValue: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
 };
 

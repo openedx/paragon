@@ -12,6 +12,10 @@ const PopperElement = ({
     attributes,
   } = usePopper(target, popperElement, popperOptions);
 
+  if (!target) {
+    return null;
+  }
+
   return (
     <div ref={setPopperElement} style={{ ...styles.popper, zIndex: 2000 }} {...attributes.popper}>
       {children}
@@ -19,11 +23,15 @@ const PopperElement = ({
   );
 };
 
+PopperElement.defaultProps = {
+  target: undefined,
+};
+
 PopperElement.propTypes = {
   children: PropTypes.node,
   target: PropTypes.shape({
     current: PropTypes.node,
-  }).isRequired,
+  }),
   strategy: PropTypes.oneOf(['absolute', 'fixed']),
   placement: PropTypes.oneOf([
     'auto',
