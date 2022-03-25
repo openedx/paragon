@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { FocusOn } from 'react-focus-on';
 import Portal from './Portal';
@@ -42,7 +43,7 @@ ModalContentContainer.defaultProps = {
  * component is that if a modal object is visible then it is "enabled"
  */
 const ModalLayer = ({
-  children, onClose, isOpen, isBlocking,
+  children, onClose, isOpen, isBlocking, zIndex,
 }) => {
   if (!isOpen) {
     return null;
@@ -59,7 +60,10 @@ const ModalLayer = ({
           enabled={isOpen}
           onEscapeKey={onClose}
           onClickOutside={onClickOutside}
-          className="pgn__modal-layer"
+          className={classNames(
+            'pgn__modal-layer',
+            zIndex ? `zindex-${zIndex}` : '',
+          )}
         >
           <ModalContentContainer>
             <ModalBackdrop onClick={onClickOutside} />
@@ -80,10 +84,12 @@ ModalLayer.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   /** Prevent clicking on the backdrop to close the modal */
   isBlocking: PropTypes.bool,
+  zIndex: PropTypes.number,
 };
 
 ModalLayer.defaultProps = {
   isBlocking: false,
+  zIndex: undefined,
 };
 
 export { ModalBackdrop, ModalContentContainer };
