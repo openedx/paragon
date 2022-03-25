@@ -7,6 +7,8 @@ import useToggle from '../hooks/useToggle';
 import Menu from '.';
 import { ExpandMore } from '../../icons';
 
+export const SELECT_MENU_DEFAULT_MESSAGE = 'Select...';
+
 const SelectMenu = ({
   defaultMessage,
   isLink,
@@ -170,7 +172,7 @@ SelectMenu.propTypes = {
 };
 
 SelectMenu.defaultProps = {
-  defaultMessage: 'Select...',
+  defaultMessage: SELECT_MENU_DEFAULT_MESSAGE,
   isLink: false,
   className: undefined,
 };

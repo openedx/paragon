@@ -9,6 +9,9 @@ import classNames from 'classnames';
 import Hyperlink from '../Hyperlink';
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
+export const MAIL_TO_LINK_EXTERNAL_LINK_ALTERNATIVE_TEXT = 'Dismiss';
+export const MAIL_TO_LINK_EXTERNAL_LINK_TITLE = 'Opens in a new tab';
+
 const MailtoLink = React.forwardRef((props, ref) => {
   const {
     to,
@@ -60,8 +63,8 @@ MailtoLink.defaultProps = {
   target: '_self',
   onClick: null,
   externalLink: {
-    alternativeText: 'in a new tab',
-    title: 'Opens in a new tab',
+    alternativeText: MAIL_TO_LINK_EXTERNAL_LINK_ALTERNATIVE_TEXT,
+    title: MAIL_TO_LINK_EXTERNAL_LINK_TITLE,
   },
   className: undefined,
 };

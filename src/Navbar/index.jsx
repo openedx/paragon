@@ -5,6 +5,8 @@ import BaseNavbarToggle from 'react-bootstrap/NavbarToggle';
 import BaseNavbarCollapse from 'react-bootstrap/NavbarCollapse';
 import PropTypes from 'prop-types';
 
+export const NAVBAR_LABEL = 'Toggle navigation';
+
 const Navbar = (props) => <BaseNavbar {...props} />;
 const NavbarBrand = (props) => <BaseNavbarBrand {...props} />;
 const NavbarToggle = (props) => <BaseNavbarToggle {...props} />;
@@ -125,7 +127,7 @@ NavbarBrand.defaultProps = {
 NavbarToggle.defaultProps = {
   as: 'button',
   children: undefined,
-  label: 'Toggle navigation',
+  label: NAVBAR_LABEL,
   onClick: () => {},
   bsPrefix: 'navbar-toggler',
 };

@@ -6,6 +6,9 @@ import ToastContainer from './ToastContainer';
 import { Button, IconButton, Icon } from '..';
 import { Close } from '../../icons';
 
+export const TOAST_CLOSE_LABEL_TEXT = 'Close';
+export const TOAST_DELAY = 5000;
+
 function Toast({
   action, children, closeLabel, delay, onClose, show,
 }) {
@@ -57,8 +60,8 @@ function Toast({
 
 Toast.defaultProps = {
   action: null,
-  closeLabel: 'Close',
-  delay: 5000,
+  closeLabel: TOAST_CLOSE_LABEL_TEXT,
+  delay: TOAST_DELAY,
 };
 
 Toast.propTypes = {

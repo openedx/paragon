@@ -9,6 +9,8 @@ import breakpoints from '../utils/breakpoints';
 import Button from '../Button';
 import ActionRow from '../ActionRow';
 
+export const ALERT_CLOSE_LABEL_TEXT = 'Dismiss';
+
 const Alert = React.forwardRef(({
   children,
   icon,
@@ -131,7 +133,7 @@ Alert.defaultProps = {
   actions: undefined,
   dismissible: false,
   onClose: () => {},
-  closeLabel: 'Dismiss',
+  closeLabel: ALERT_CLOSE_LABEL_TEXT,
   show: true,
   stacked: false,
 };

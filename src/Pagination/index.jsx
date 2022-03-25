@@ -15,6 +15,14 @@ import {
   ChevronLeft, ChevronRight, ArrowBackIos, ArrowForwardIos,
 } from '../../icons';
 
+export const PAGINATION_BUTTON_LABEL_PREV = 'Previous';
+export const PAGINATION_BUTTON_LABEL_NEXT = 'Next';
+export const PAGINATION_BUTTON_LABEL_PAGE = 'Page';
+export const PAGINATION_BUTTON_LABEL_CURRENT_PAGE = 'Current Page';
+export const PAGINATION_BUTTON_LABEL_PAGE_OF_COUNT = 'of';
+export const PAGINATION_BUTTON_ICON_BUTTON_NEXT_ALT = 'Go to next page';
+export const PAGINATION_BUTTON_ICON_BUTTON_PREV_ALT = 'Go to previous page';
+
 const VARIANTS = {
   default: 'default',
   secondary: 'secondary',
@@ -241,7 +249,7 @@ class Pagination extends React.Component {
                 onClick={() => { this.handlePreviousNextButtonClick(previousPage); }}
                 ref={(element) => { this.previousButtonRef = element; }}
                 disabled={isFirstPage}
-                alt="Go to previous page"
+                alt={PAGINATION_BUTTON_ICON_BUTTON_PREV_ALT}
               />
             )
         }
@@ -296,7 +304,7 @@ class Pagination extends React.Component {
             onClick={() => { this.handlePreviousNextButtonClick(nextPage); }}
             ref={(element) => { this.nextButtonRef = element; }}
             disabled={isLastPage}
-            alt="Go to next page"
+            alt={PAGINATION_BUTTON_ICON_BUTTON_NEXT_ALT}
           />
         )}
       </li>
@@ -475,11 +483,11 @@ Pagination.defaultProps = {
     rightIcon: <Icon src={ChevronRight} />,
   },
   buttonLabels: {
-    previous: 'Previous',
-    next: 'Next',
-    page: 'Page',
-    currentPage: 'Current Page',
-    pageOfCount: 'of',
+    previous: PAGINATION_BUTTON_LABEL_PREV,
+    next: PAGINATION_BUTTON_LABEL_NEXT,
+    page: PAGINATION_BUTTON_LABEL_PAGE,
+    currentPage: PAGINATION_BUTTON_LABEL_CURRENT_PAGE,
+    pageOfCount: PAGINATION_BUTTON_LABEL_PAGE_OF_COUNT,
   },
   className: undefined,
   currentPage: 1,
