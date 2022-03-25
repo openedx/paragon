@@ -5,10 +5,10 @@ components:
 - Icon
 categories:
 - Imagery & Iconography
-status: 'Reassessing'
-designStatus: 'TBD'
-devStatus: 'TBD'
-notes: 'Reconcile purpose of this component with use of FontAwesome'
+status: 'Stable'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: |
 ---
 
 Displays an svg icon from `@edx/paragon/icons`. See [Icons Foundation Documentation](/foundations/icons) for a list of all available icons.

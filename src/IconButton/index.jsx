@@ -14,12 +14,20 @@ const IconButton = React.forwardRef(({
   onClick,
   size,
   variant,
-  iconAs: IconComponent,
+  iconAs,
   isActive,
   ...attrs
 }, ref) => {
   const invert = invertColors ? 'inverse-' : '';
   const activeStyle = isActive ? `${variant}-` : '';
+  if (!iconAs && process.env.NODE_ENV === 'development' && console) {
+    const msg = '[Deprecated] IconButton: you have not provided a value for iconAs prop and '
+      + 'are using a default one - FontAwesomeIcon, the default value is going to be changed soon '
+      + 'as Paragon is moving away from FontAwesome, please use Paragon\'s icons instead.';
+    // eslint-disable-next-line no-console
+    console.warn(msg);
+  }
+  const IconComponent = iconAs || FontAwesomeIcon;
   return (
     <button
       {...attrs}
@@ -49,7 +57,7 @@ const IconButton = React.forwardRef(({
 });
 
 IconButton.defaultProps = {
-  iconAs: FontAwesomeIcon,
+  iconAs: undefined,
   src: null,
   icon: {},
   iconClassNames: '',
@@ -61,13 +69,15 @@ IconButton.defaultProps = {
 };
 
 IconButton.propTypes = {
+  /** Component that renders the icon, currently defaults to `FontAwesomeIcon`,
+   *  but is going to be deprecated soon, please use Paragon's icons instead. */
   iconAs: PropTypes.elementType,
   /** An icon component to render. Example import of a Paragon icon component:
    * `import { Check } from '@edx/paragon/dist/icon';`
    * */
   src: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   /** Alt text for your icon. For best practice, avoid using alt text to describe
-   * the image in the IconButton. Instead, we recommend describing the function
+   * the image in the `IconButton`. Instead, we recommend describing the function
    * of the button. */
   alt: PropTypes.string.isRequired,
   /** Changes icon styles for dark background */
@@ -84,10 +94,10 @@ IconButton.propTypes = {
   /** Click handler for the button */
   onClick: PropTypes.func,
   /** Type of button (uses Bootstrap options) */
-  variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'light', 'dark', 'black']),
+  variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'light', 'dark', 'black', 'brand']),
   /** size of button to render */
   size: PropTypes.oneOf(['sm', 'md', 'inline']),
-  /** whether to show the IconButton in an active state, whose styling is distinct from default state */
+  /** whether to show the `IconButton` in an active state, whose styling is distinct from default state */
   isActive: PropTypes.bool,
 };
 
@@ -131,7 +141,7 @@ IconButtonWithTooltip.propTypes = {
   /** any valid JSX or text to be rendered as tooltip contents */
   tooltipContent: PropTypes.node.isRequired,
   /** Type of button (uses Bootstrap options) */
-  variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'light', 'dark', 'black']),
+  variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'light', 'dark', 'black', 'brand']),
   /** Changes icon styles for dark background */
   invertColors: PropTypes.bool,
 };

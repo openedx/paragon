@@ -37,7 +37,7 @@ IconButtonToggle.propTypes = {
   activeValue: PropTypes.string,
   /** handler that is passed the currently active button's value when a button is selected */
   onChange: PropTypes.func,
-  /** child nodes of type IconButton (or its subcomponents) to be rendered within toggle group */
+  /** child nodes of type `IconButton` (or its subcomponents) to be rendered within toggle group */
   children: PropTypes.node.isRequired,
 };
 
