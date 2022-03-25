@@ -4,10 +4,10 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
-
 import newId from '../utils/newId';
+
+import Icon from '../Icon';
+import { Search, Close } from '../../icons';
 
 export const SearchFieldContext = createContext();
 
@@ -163,7 +163,7 @@ SearchFieldAdvanced.propTypes = {
   }),
   /** specifies the initial value for the input. The default is an empty string. */
   value: PropTypes.string,
-  /** specifies the icon element(s) to use for the clear and submit buttons. The default is `{ submit: <FontAwesomeIcon icon={faSearch} />, clear: <FontAwesomeIcon icon={faTimes} /> }`. */
+  /** specifies the icon element(s) to use for the clear and submit buttons. */
   icons: PropTypes.shape({
     submit: PropTypes.element.isRequired,
     clear: PropTypes.element,
@@ -186,8 +186,8 @@ SearchFieldAdvanced.defaultProps = {
     clearButton: 'clear search',
   },
   icons: {
-    clear: <FontAwesomeIcon icon={faTimes} />,
-    submit: <FontAwesomeIcon icon={faSearch} />,
+    clear: <Icon src={Close} />,
+    submit: <Icon src={Search} />,
   },
   onBlur: () => {},
   onChange: () => {},

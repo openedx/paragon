@@ -15,7 +15,7 @@ notes: ''
 
 ``Toasts`` sit fixed to the bottom left of the window.
 
-#### Behaviors
+### Behaviors
 
 <ul>
   <li>Auto-dismiss: Toast automatically dismisses after 5 seconds by default.</li>

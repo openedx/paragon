@@ -12,12 +12,10 @@ notes: |
   Helps toggle Data view between list, card view etc.
 ---
 
-<p>
-  Wraps a set of ``IconButton`` or ``IconButtonWithTooltip`` components in a group and marks as active only one at a time.
-  The IconButton with a value matching the 'activeValue' is set to be in the active state
-  When one presses on one of the buttons, that button is set to active state, and the callback passed to ``onChange`` is called with that value
-  You can pass a tooltip if you use the ``IconButtonWithTooltip`` sub component.
-</p>
+Wraps a set of ``IconButton`` or ``IconButtonWithTooltip`` components in a group and marks as active only one at a time.
+The IconButton with a value matching the 'activeValue' is set to be in the active state.
+When one presses on one of the buttons, that button is set to active state, and the callback passed to ``onChange`` is called with that value.
+You can pass a tooltip if you use the ``IconButtonWithTooltip`` subcomponent.
 
 ### Basic Usage
 ```jsx live

@@ -1,22 +1,22 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import { faInfoCircle, faPlane } from '@fortawesome/free-solid-svg-icons';
 
 // adds special assertions like toHaveTextContent
 import '@testing-library/jest-dom/extend-expect';
 import userEvent from '@testing-library/user-event';
 
-import { IconButton, IconButtonToggle } from '..';
+import { IconButton, IconButtonToggle, Icon } from '..';
+import { Info, Home } from '../../icons';
 
 describe('IconButtonToggle tests', () => {
-  const iconInfo = faInfoCircle;
-  const iconPlane = faPlane;
+  const iconInfo = Info;
+  const iconHome = Home;
 
   test('activeValue is correctly applied', () => {
     render(
       <IconButtonToggle activeValue="abc">
-        <IconButton value="def" alt="def" icon={iconInfo} />
-        <IconButton value="abc" alt="abc" icon={iconPlane} />
+        <IconButton iconAs={Icon} value="def" alt="def" src={iconInfo} />
+        <IconButton iconAs={Icon} value="abc" alt="abc" src={iconHome} />
       </IconButtonToggle>,
     );
     const btnAbc = screen.getByTestId('icon-btn-val-abc');
@@ -28,8 +28,8 @@ describe('IconButtonToggle tests', () => {
     const spyChanger = jest.fn();
     render(
       <IconButtonToggle activeValue="abc" onChange={spyChanger}>
-        <IconButton value="def" alt="def" icon={iconInfo} />
-        <IconButton value="abc" alt="abc" icon={iconPlane} />
+        <IconButton iconAs={Icon} value="def" alt="def" src={iconInfo} />
+        <IconButton iconAs={Icon} value="abc" alt="abc" src={iconHome} />
       </IconButtonToggle>,
     );
     const btnDef = screen.getByTestId('icon-btn-val-def');

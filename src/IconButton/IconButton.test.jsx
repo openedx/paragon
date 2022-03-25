@@ -1,15 +1,18 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import IconButton from './index';
+import Icon from '../Icon';
+import { InfoOutline } from '../../icons';
 
 describe('<IconButton />', () => {
   const alt = 'alternative';
-  const icon = faInfoCircle;
+  const iconAs = Icon;
+  const src = InfoOutline;
   const variant = 'secondary';
   const props = {
     alt,
-    icon,
+    src,
+    iconAs,
     variant,
   };
   it('passes the alt text to the button aria-label', () => {
