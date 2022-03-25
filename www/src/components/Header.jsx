@@ -23,7 +23,7 @@ const Navbar = ({
   showMinimizedTitle,
   onSettingsClick,
 }) => (
-  <Container as="header" className="py-3 bg-dark text-white sticky-top">
+  <Container as="header" className="py-3 bg-dark text-white">
     <Row className="align-items-center">
       <Col sm={4}>
         <Button
@@ -137,9 +137,10 @@ const Header = ({ siteTitle, showMinimizedTitle }) => {
       enabled={isOpen}
       onClickOutside={close}
       onEscapeKey={close}
+      className="sticky-top"
     >
       <div
-        className="bg-white sticky-top"
+        className="bg-white"
         style={{ maxHeight: '100vh', overflow: 'auto' }}
       >
         <Navbar
