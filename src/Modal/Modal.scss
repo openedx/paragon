@@ -83,7 +83,7 @@
 .modal-dialog {
   height: 100%;
   margin: auto;
-  padding: $spacer / 2;
+  padding: calc($spacer / 2);
 
   @media (min-width: map-get($grid-breakpoints, 'sm')) {
     padding: $spacer;

@@ -15,7 +15,7 @@ $dropdown-border-radius:            $border-radius !default;
 $dropdown-border-width:             $border-width !default;
 $dropdown-inner-border-radius:      calc(#{$dropdown-border-radius} - #{$dropdown-border-width}) !default;
 $dropdown-divider-bg:               theme-color("gray", "background") !default;
-$dropdown-divider-margin-y:         $spacer / 2 !default;
+$dropdown-divider-margin-y:         calc($spacer / 2) !default;
 $dropdown-box-shadow:               0 .5rem 1rem rgba($black, .175) !default;
 
 $dropdown-link-color:               theme-color("gray", "dark-text") !default;

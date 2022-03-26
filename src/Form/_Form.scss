@@ -106,11 +106,11 @@ $select-icon-padding: .5625rem !default;
   &.pgn__form-control-decorator-leading {
     inset-inline-start: 0;
     padding-inline-start: $input-padding-x;
-    padding-inline-end: $input-padding-x / 2;
+    padding-inline-end: calc($input-padding-x / 2);
   }
   &.pgn__form-control-decorator-trailing {
     inset-inline-end: 0;
-    padding-inline-start: $input-padding-x / 2;
+    padding-inline-start: calc($input-padding-x / 2);
     padding-inline-end: calc(#{$input-padding-y-sm} - #{2 * $input-border-width});
   }
 
@@ -119,10 +119,10 @@ $select-icon-padding: .5625rem !default;
     min-width: $input-height-lg;
     &.pgn__form-control-decorator-leading {
       padding-left: $input-padding-x-lg;
-      padding-right: $input-padding-x-lg / 2;
+      padding-right: calc($input-padding-x-lg / 2);
     }
     &.pgn__form-control-decorator-trailing {
-      padding-left: $input-padding-x-lg / 2;
+      padding-left: calc($input-padding-x-lg / 2);
       padding-right: calc(#{$input-padding-y} - #{2 * $input-border-width});
     }
   }
@@ -132,10 +132,10 @@ $select-icon-padding: .5625rem !default;
     min-width: $input-height-lg;
     &.pgn__form-control-decorator-leading {
       padding-left: $input-padding-x-sm;
-      padding-right: $input-padding-x-sm / 2;
+      padding-right: calc($input-padding-x-sm / 2);
     }
     &.pgn__form-control-decorator-trailing {
-      padding-left: $input-padding-x-sm / 2;
+      padding-left: calc($input-padding-x-sm / 2);
       padding-right: calc(#{$input-padding-y-sm} - #{2 * $input-border-width});
     }
   }
