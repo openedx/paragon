@@ -50,11 +50,11 @@
             .pgn__progress-threshold-dot--#{$name} {
                 background: $color;
                 position: absolute;
-                margin-top: -($progress-threshold-circle / 2 - $annotated-progress-height / 2);
-                margin-left: -($progress-threshold-circle / 2);
+                margin-top: -(calc($progress-threshold-circle / 2) - calc($annotated-progress-height / 2));
+                margin-left: -(calc($progress-threshold-circle / 2));
                 width: $progress-threshold-circle;
                 height: $progress-threshold-circle;
-                border-radius: $progress-threshold-circle / 2;
+                border-radius: calc($progress-threshold-circle / 2);
                 z-index: 1;
             }
         }

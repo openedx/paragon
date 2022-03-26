@@ -59,7 +59,7 @@ const IconButton = React.forwardRef(({
 IconButton.defaultProps = {
   iconAs: undefined,
   src: null,
-  icon: {},
+  icon: undefined,
   iconClassNames: '',
   invertColors: false,
   variant: 'primary',

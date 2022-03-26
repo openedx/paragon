@@ -137,9 +137,10 @@ const Header = ({ siteTitle, showMinimizedTitle }) => {
       enabled={isOpen}
       onClickOutside={close}
       onEscapeKey={close}
+      className="sticky-top"
     >
       <div
-        className="bg-white sticky-top"
+        className="bg-white"
         style={{ maxHeight: '100vh', overflow: 'auto' }}
       >
         <Navbar
