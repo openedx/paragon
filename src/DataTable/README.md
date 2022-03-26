@@ -1141,13 +1141,13 @@ For a more desktop friendly view, you can move filters into a sidebar by providi
   </DataTable>
 ```
 
-### Expandable rows
+## Expandable rows
 `DataTable` supports expandable rows which once expanded render additional content under the row. Displayed content 
 is controlled by the `renderRowSubComponent` prop, which is a function that receives `row` as its single prop and renders expanded view, you also
 need to pass `isEpandable` prop to `DataTable` to indicate that it should support expand behavior for rows.
 Finally, an additional column is required to be included into `columns` prop which will contain handlers for expand / collapse behavior, see examples below. 
 
-#### Default view
+### Default view
 
 Here we use default expander column offered by Paragon and for each row render value of the `name` attribute as its subcomponent.
 
@@ -1219,7 +1219,7 @@ Here we use default expander column offered by Paragon and for each row render v
 </DataTable>
 ```
 
-#### With custom expander column
+### With custom expander column
 
 You can create your own custom expander column and use it, see code example below.
 
