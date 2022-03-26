@@ -13,7 +13,7 @@ Include a direct link to your changes in this PR's deploy preview here (e.g., a 
 * [ ] Do any prop types have missing descriptions in the Props API tables in the documentation site (check deploy preview)?
 * [ ] Were your changes tested using all available themes (see theme switcher in the header of the deploy preview, under the "Settings" icon)?
 * [ ] Is there adequate test coverage for your changes?
-* [ ] Consider whether this change needs to reviewed/QA'ed for accessibility (a11y). If so, please add @wittjeff and @adamstankiewicz as reviewers on this PR.
+* [ ] Consider whether this change needs to reviewed/QA'ed for accessibility (a11y). If so, please add `wittjeff` and `adamstankiewicz` as reviewers on this PR.
 
 ## Post-merge Checklist
 
