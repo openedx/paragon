@@ -57,19 +57,17 @@ const Settings = () => {
             ))}
           </Form.Control>
         </Form.Group>
-        {FEATURES.DIRECTION_SWITCHER && (
-          <Form.Group>
-            <Form.Control
-              as="select"
-              value={direction}
-              onChange={onDirectionChange}
-              floatingLabel="Direction"
-            >
-              <option value="ltr">Left to right</option>
-              <option value="rtl">Right to left</option>
-            </Form.Control>
-          </Form.Group>
-        )}
+        <Form.Group>
+          <Form.Control
+            as="select"
+            value={direction}
+            onChange={onDirectionChange}
+            floatingLabel="Direction"
+          >
+            <option value="ltr">Left to right</option>
+            <option value="rtl">Right to left</option>
+          </Form.Control>
+        </Form.Group>
       </div>
     </Sheet>
   );
