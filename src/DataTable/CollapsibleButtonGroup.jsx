@@ -14,8 +14,8 @@ import {
   Button,
 } from '..';
 
-export const DROPDOWN_BUTTON_TEXT = 'More actions';
-export const SMALL_SCREEN_DROPDOWN_BUTTON_TEXT = 'Actions';
+export const ACTION_OVERFLOW_BUTTON_TEXT = 'More actions';
+export const SMALL_SCREEN_ACTION_OVERFLOW_BUTTON_TEXT = 'Actions';
 
 const CollapsibleButtonGroup = ({
   className,
@@ -68,7 +68,7 @@ const CollapsibleButtonGroup = ({
             iconAs={Icon}
             src={MoreVert}
             alt={width > breakpoints.small.minWidth
-              ? DROPDOWN_BUTTON_TEXT : SMALL_SCREEN_DROPDOWN_BUTTON_TEXT}
+              ? ACTION_OVERFLOW_BUTTON_TEXT : SMALL_SCREEN_ACTION_OVERFLOW_BUTTON_TEXT}
             id="actions-dropdown"
             ref={setOverflowMenuTarget}
             onClick={openOverflowMenu}
