@@ -7,7 +7,6 @@ import {
 } from '~paragon-react';
 import { Close } from '~paragon-icons';
 
-import { FEATURES } from '../config';
 import SettingsContext from '../context/SettingsContext';
 import { THEMES } from '../../theme-config';
 

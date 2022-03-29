@@ -1,5 +1,3 @@
-@use 'sass:math';
-
 .pgn__modal {
   background: $modal-content-bg;
   border-radius: $modal-content-inner-border-radius;
@@ -161,7 +159,7 @@
     display: block;
     height: 20px;
     position: sticky;
-    bottom: math.div(-$modal-inner-padding, 2);
+    bottom: calc($modal-inner-padding / 2 * -1);
     margin-bottom: -$modal-inner-padding;
     margin-left: -$modal-inner-padding;
     margin-right: -$modal-inner-padding;
@@ -238,7 +236,7 @@
     padding: calc($modal-inner-padding / 2) $modal-inner-padding;
 
     &::before {
-      top: math.div(-$modal-inner-padding, 2);
+      top: calc($modal-inner-padding / 2 * -1);
     }
   }
 }
