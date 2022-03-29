@@ -16,7 +16,7 @@
   margin-bottom: $alert-margin-bottom;
   border: $alert-border-width solid transparent;
   @include border-radius($alert-border-radius);
-  @include box-shadow-control(1, 'down');
+  @include pgn-box-shadow(1, 'down');
 
   .alert-message-content > :last-child {
     margin-bottom: 0;

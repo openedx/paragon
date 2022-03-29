@@ -512,7 +512,7 @@ $level-3-box-shadow:          0 0 .625rem rgba(0, 0, 0, 0.15), 0 0 1rem rgba(0, 
 $level-4-box-shadow:          0 .625rem 1.25rem rgba(0, 0, 0, 0.15), 0 .5rem 1.25rem rgba(0, 0, 0, 0.15) !default;
 $level-5-box-shadow:          0 1.25px 2.5rem rgba(0, 0, 0, 0.15), 0 .5rem 2.5rem rgba(0, 0, 0, 0.15) !default;
 
-@mixin box-shadow-control ($level, $side) {
+@mixin pgn-box-shadow ($level, $side) {
   @if $side == 'down' {
     @if $level == 1 {
       box-shadow: 0 .0625rem .125rem rgba(0, 0, 0, .15), 0 .0625rem .25rem rgba(0, 0, 0, .15);
