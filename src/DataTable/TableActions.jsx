@@ -28,7 +28,7 @@ const TableActions = ({ className }) => {
 };
 
 TableActions.defaultProps = {
-  className: null,
+  className: undefined,
 };
 
 TableActions.propTypes = {

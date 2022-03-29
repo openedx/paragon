@@ -38,13 +38,14 @@ const defaultPopperOptions = {
 
 describe('<PopperElement />', () => {
   it('popper element to usePopper and apply styles and attributes to child div', () => {
+    const targetRef = { current: <div /> };
     const wrapper = shallow((
-      <PopperElement target={{ current: null }}>
+      <PopperElement target={targetRef}>
         <div id="popper-content">Popper content</div>
       </PopperElement>
     ));
     const popperEl = wrapper.find('[data-test="someValue"]');
-    expect(usePopper).toHaveBeenCalledWith(null, null, defaultPopperOptions);
+    expect(usePopper).toHaveBeenCalledWith(targetRef, null, defaultPopperOptions);
     expect(popperEl.length).toBe(1);
     expect(popperEl.props().style.someProperty).toBe('someValue');
   });

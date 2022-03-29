@@ -24,3 +24,28 @@
 .pgn__dropdown-toggle-iconbutton {
   white-space: nowrap;
 }
+
+.pgn__dropdown-item {
+  display: flex;
+  align-items: center;
+
+  .pgn__dropdown-item__icon-before {
+    margin-inline-end: 0.5rem;
+    margin-left: -0.25em;
+
+    [dir="rtl"] & {
+      margin-right: -0.25em;
+      margin-left: 0.5rem;
+    }
+  }
+
+  .pgn__dropdown-item__icon-after {
+    margin-inline-start: 0.5rem;
+    margin-right: -0.25em;
+
+    [dir="rtl"] & {
+      margin-right: 0.5rem;
+      margin-left: -0.25em;
+    }
+  }
+}
