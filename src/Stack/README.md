@@ -17,7 +17,7 @@ Shorthand helpers that build on top of our flexbox utilities to make component l
 
 ### Vertical direction
 
-Stacks are vertical by default and stacked items are full-width by default. Watch this pull request to see more details about the [auto stretching behaviour](https://github.com/openedx/paragon/pull/1188).
+Stacks are vertical by default and stacked items are full-width by default. Watch this pull request to see more details about the [auto stretching behavior](https://github.com/openedx/paragon/pull/1188).
 
 ```jsx live
 <Stack gap={3}>
