@@ -194,10 +194,11 @@ DataTable.propTypes = {
     accessor: requiredWhenNot(PropTypes.string, 'Cell'),
     /** Specifies a function that receives `row` as argument and returns cell content */
     Cell: PropTypes.func,
-    /** Specifies filter component. */
+    /** Specifies filter component */
     Filter: PropTypes.func,
-    /** Specifies filter type. */
+    /** Specifies filter type */
     filter: PropTypes.string,
+    /** Specifies filter choices */
     filterChoices: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string,
       number: PropTypes.number,
