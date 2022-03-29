@@ -20,7 +20,7 @@ ________
 
 We will introduce ``@axe-core/react`` into Paragon in order to catch accessibility issues at runtime, where any a11y issues are automatically flagged in the Developer Console. See `documentation <https://github.com/dequelabs/axe-core-npm/blob/develop/packages/react/README.md>`_ for more details.
 
-`@axe-core/react` will be enabled by default in the Paragon code repository, however there will be an environment variable that may be optionally configured to turn off the automated a11y checking during development, if desired.
+``@axe-core/react`` will be enabled by default in the Paragon code repository, however there will be an environment variable that may be optionally configured to turn off the automated a11y checking during development, if desired.
 
 Consequences
 ------------
