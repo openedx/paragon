@@ -209,8 +209,6 @@
 .btn-group-lg>.btn-primary.btn,
 .btn-group-sm>.btn-primary.btn,
 body .page-link {
-  .btn:focus::before,
-  .focus:before,
   &:focus.btn-lg::before,
   &:focus.btn-sm::before,
   &:focus::before {
