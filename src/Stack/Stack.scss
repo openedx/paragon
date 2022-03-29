@@ -2,7 +2,7 @@
 
 .pgn__vstack,
 .pgn__hstack {
-  display: inline-flex;
+  display: flex;
   align-self: stretch;
   gap: $stack-gap;
 
