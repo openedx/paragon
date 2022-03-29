@@ -20,6 +20,8 @@ ________
 
 We will introduce `@axe-core/react` into Paragon in order to catch accessibility issues at runtime, where any a11y issues are automatically flagged in the Developer Console.
 
+See `documentation <https://github.com/dequelabs/axe-core-npm/blob/develop/packages/react/README.md>`_git for more details.
+
 Consequences
 ------------
 
