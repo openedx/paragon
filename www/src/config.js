@@ -1,6 +1,6 @@
-import hasFeatureFlagEnabled from './utils/hasFeatureFlagEnabled';
+// import hasFeatureFlagEnabled from './utils/hasFeatureFlagEnabled';
 
-export const EXAMPLE_FEATURE = 'EXAMPLE_FEATURE';
+// export const EXAMPLE_FEATURE = 'EXAMPLE_FEATURE';
 
 // Feature flags used throughout the site should be configured here.
 // You should generally allow two ways of enabling a feature flag:
