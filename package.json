@@ -31,6 +31,7 @@
     "snapshot": "jest --updateSnapshot",
     "start": "echo 'To start the Paragon documentation site: cd www/ && npm i && npm start'",
     "test": "jest --coverage",
+    "test:watch": "npm run test -- --watch",
     "generate-component": "node component-generator/index.js"
   },
   "dependencies": {
@@ -91,6 +92,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-test-renderer": "^16.14.0",
+    "regenerator-runtime": "^0.13.9",
     "sass": "^1.32.13",
     "semantic-release": "^17.0.0"
   },

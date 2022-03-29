@@ -1,29 +1,37 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { usePopper } from 'react-popper';
 
 const PopperElement = ({
   children, target, strategy, placement, modifiers,
 }) => {
-  const popperElement = useRef(null);
+  const [popperElement, setPopperElement] = useState(null);
   const popperOptions = { modifiers, strategy, placement };
   const {
     styles,
     attributes,
-  } = usePopper(target.current, popperElement.current, popperOptions);
+  } = usePopper(target, popperElement, popperOptions);
+
+  if (!target) {
+    return null;
+  }
 
   return (
-    <div ref={popperElement} style={{ ...styles.popper, zIndex: 2000 }} {...attributes.popper}>
+    <div ref={setPopperElement} style={{ ...styles.popper, zIndex: 2000 }} {...attributes.popper}>
       {children}
     </div>
   );
+};
+
+PopperElement.defaultProps = {
+  target: undefined,
 };
 
 PopperElement.propTypes = {
   children: PropTypes.node,
   target: PropTypes.shape({
     current: PropTypes.node,
-  }).isRequired,
+  }),
   strategy: PropTypes.oneOf(['absolute', 'fixed']),
   placement: PropTypes.oneOf([
     'auto',
