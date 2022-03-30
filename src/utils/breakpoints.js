@@ -7,26 +7,26 @@ import {
 
 const breakpoints = {
   extraSmall: {
-    maxWidth: sm,
+    maxWidth: parseFloat(sm) || 575.98,
   },
   small: {
-    minWidth: sm,
-    maxWidth: md,
+    minWidth: parseFloat(sm) || 576,
+    maxWidth: parseFloat(md) || 767.98,
   },
   medium: {
-    minWidth: md,
-    maxWidth: lg,
+    minWidth: parseFloat(md) || 768,
+    maxWidth: parseFloat(lg) || 991.98,
   },
   large: {
-    minWidth: lg,
-    maxWidth: xl,
+    minWidth: parseFloat(lg) || 992,
+    maxWidth: parseFloat(xl) || 1199.98,
   },
   extraLarge: {
-    minWidth: xl,
-    maxWidth: xxl,
+    minWidth: parseFloat(xl) || 1200,
+    maxWidth: parseFloat(xxl) || 1399.98,
   },
   extraExtraLarge: {
-    minWidth: xxl,
+    minWidth: parseFloat(xxl) || 1400,
   },
 };
 
