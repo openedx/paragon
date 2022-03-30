@@ -6,7 +6,7 @@
 
 @mixin chip-variant(
   $background, $border, $hover-background, $hover-border, $active-background,
-  $active-border, $color, $hover-color, $active-color
+  $active-border, $color, $hover-color, $active-color, $focus-border
 ) {
   background-color: $background;
   color: $color;
@@ -25,6 +25,17 @@
     background-color: $active-background;
     color: $active-color;
     border-color: $active-border;
+  }
+
+  &:focus::before {
+    content: '';
+    position: absolute;
+    top: -$chip-position-axis;
+    right: -$chip-position-axis;
+    bottom: -$chip-position-axis;
+    left: -$chip-position-axis;
+    border: $chip-border-width solid $focus-border;
+    border-radius: $chip-focus-border-radius;
   }
 
   &:disabled {
@@ -55,6 +66,12 @@
   border-radius: $chip-border-radius;
   border: $chip-border-width solid transparent;
   margin-inline: calc($chip-margin-inline / 2);
+
+  &:focus {
+    position: relative;
+    outline: none;
+    box-shadow: none;
+  }
 
   // Empty chip collapse automatically
   &:empty {
@@ -97,6 +114,8 @@
     $active-border: get-color("border", $color, "selected");
     $active-text: get-color("text", $color, "selected");
 
+    $focus-border: get-color("border", $color, "focus");
+
     @include chip-variant(
       $background,
       $border,
@@ -106,7 +125,9 @@
       $active-border,
       $text,
       $hover-text,
-      $active-text
+      $active-text,
+      $focus-border
     );
   }
 }
+

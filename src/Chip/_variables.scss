@@ -4,6 +4,8 @@ $chip-padding-y:                    .125rem !default;
 $chip-padding-x:                    .5rem !default;
 $chip-margin-inline:                .5rem !default;
 $chip-border-radius:                .4375rem !default;
+$chip-focus-border-radius:          .5rem !default;
+$chip-position-axis:                .125rem !default;
 $chip-border-width:                 .0625rem !default;
 $chip-font-size:                    .75rem !default;
 $chip-font-weight:                  400 !default;
@@ -31,3 +33,4 @@ $chip-theme-colors: (
   "dark-text-selected":        $white,
   "dark-border-selected":      $white,
 ) !default;
+

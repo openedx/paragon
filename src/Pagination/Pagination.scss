@@ -58,6 +58,11 @@
 .page-link {
   border: none;
 
+  &.btn-primary:not(:disabled):not(.disabled):focus {
+    background-color: white;
+    color: #000;
+  }
+
   div {
     display: flex;
   }
