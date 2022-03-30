@@ -1,5 +1,5 @@
 {
-  "lastModified": 1648563461067,
+  "lastModified": 1648649498509,
   "projectUsages": [
     {
       "version": "19.10.2",
@@ -1693,6 +1693,12 @@
             "version": "19.10.1"
           },
           {
+            "filePath": "src/components/settings/SettingsLMSTab/ConfigError.jsx",
+            "line": 23,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
             "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
             "line": 29,
             "column": 8,
@@ -1718,38 +1724,44 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/BlackboardConfig.jsx",
-            "line": 262,
+            "line": 261,
             "column": 10,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/BlackboardConfig.jsx",
-            "line": 264,
+            "line": 263,
             "column": 12,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/BlackboardConfig.jsx",
-            "line": 272,
+            "line": 271,
             "column": 12,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 281,
+            "line": 280,
             "column": 10,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 283,
+            "line": 282,
             "column": 12,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 291,
+            "line": 290,
             "column": 12,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CornerstoneConfig.jsx",
+            "line": 126,
+            "column": 10,
             "version": "19.10.1"
           },
           {
@@ -1759,8 +1771,8 @@
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CornerstoneConfig.jsx",
-            "line": 128,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
+            "line": 188,
             "column": 10,
             "version": "19.10.1"
           },
@@ -1771,8 +1783,8 @@
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
-            "line": 190,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 206,
             "column": 10,
             "version": "19.10.1"
           },
@@ -1783,8 +1795,8 @@
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 208,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 204,
             "column": 10,
             "version": "19.10.1"
           },
@@ -1795,20 +1807,14 @@
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 206,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 201,
             "column": 10,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
             "line": 202,
-            "column": 10,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 203,
             "column": 10,
             "version": "19.10.1"
           },
@@ -1856,7 +1862,7 @@
           },
           {
             "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
-            "line": 162,
+            "line": 163,
             "column": 12,
             "version": "19.10.1"
           },
@@ -1948,205 +1954,205 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/BlackboardConfig.jsx",
-            "line": 212,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/BlackboardConfig.jsx",
-            "line": 231,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 193,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
             "line": 211,
             "column": 8,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 224,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/BlackboardConfig.jsx",
+            "line": 230,
             "column": 8,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 237,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 250,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CornerstoneConfig.jsx",
-            "line": 90,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CornerstoneConfig.jsx",
-            "line": 108,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
-            "line": 102,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
-            "line": 121,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
-            "line": 135,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
-            "line": 149,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
-            "line": 167,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 103,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 121,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 134,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 147,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 160,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 178,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
             "line": 192,
             "column": 8,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 111,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
+            "line": 210,
             "column": 8,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 129,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
+            "line": 223,
             "column": 8,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 147,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
+            "line": 236,
             "column": 8,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 159,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
+            "line": 249,
             "column": 8,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 175,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CornerstoneConfig.jsx",
+            "line": 89,
             "column": 8,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 191,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CornerstoneConfig.jsx",
+            "line": 107,
             "column": 8,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 102,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
+            "line": 101,
             "column": 8,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
             "line": 120,
             "column": 8,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 138,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
+            "line": 134,
             "column": 8,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 150,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
+            "line": 148,
             "column": 8,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 162,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
+            "line": 166,
             "column": 8,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 102,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 120,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 133,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 146,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 159,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 177,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 191,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 110,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 128,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 146,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 158,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
             "line": 174,
             "column": 8,
             "version": "19.10.1"
           },
           {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 190,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 186,
+            "line": 101,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 119,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 137,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 149,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 161,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 173,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 185,
             "column": 8,
             "version": "19.10.1"
           },
@@ -2176,7 +2182,7 @@
           },
           {
             "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
-            "line": 120,
+            "line": 121,
             "column": 14,
             "version": "19.10.1"
           },
@@ -2238,7 +2244,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 187,
+            "line": 186,
             "column": 10,
             "version": "19.10.1"
           },
@@ -2306,199 +2312,199 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/BlackboardConfig.jsx",
-            "line": 213,
-            "column": 10,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/BlackboardConfig.jsx",
-            "line": 232,
-            "column": 10,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 194,
-            "column": 10,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
             "line": 212,
             "column": 10,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 225,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/BlackboardConfig.jsx",
+            "line": 231,
             "column": 10,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 238,
-            "column": 10,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 251,
-            "column": 10,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CornerstoneConfig.jsx",
-            "line": 91,
-            "column": 10,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CornerstoneConfig.jsx",
-            "line": 109,
-            "column": 10,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
-            "line": 103,
-            "column": 10,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
-            "line": 122,
-            "column": 10,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
-            "line": 136,
-            "column": 10,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
-            "line": 150,
-            "column": 10,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
-            "line": 168,
-            "column": 10,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 104,
-            "column": 10,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 122,
-            "column": 10,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 135,
-            "column": 10,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 148,
-            "column": 10,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 161,
-            "column": 10,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 179,
-            "column": 10,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
             "line": 193,
             "column": 10,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 112,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
+            "line": 211,
             "column": 10,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 130,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
+            "line": 224,
             "column": 10,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 148,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
+            "line": 237,
             "column": 10,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 160,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
+            "line": 250,
             "column": 10,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 176,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CornerstoneConfig.jsx",
+            "line": 90,
             "column": 10,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 192,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CornerstoneConfig.jsx",
+            "line": 108,
             "column": 10,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 103,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
+            "line": 102,
             "column": 10,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
             "line": 121,
             "column": 10,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 139,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
+            "line": 135,
             "column": 10,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 151,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
+            "line": 149,
             "column": 10,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 163,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
+            "line": 167,
             "column": 10,
             "version": "19.10.1"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 103,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 121,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 134,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 147,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 160,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 178,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 192,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 111,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 129,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 147,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 159,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
             "line": 175,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 191,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 102,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 120,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 138,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 150,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 162,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 174,
             "column": 10,
             "version": "19.10.1"
           },
@@ -3062,7 +3068,7 @@
           },
           {
             "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
-            "line": 161,
+            "line": 162,
             "column": 10,
             "version": "19.10.1"
           },
@@ -3220,7 +3226,7 @@
           },
           {
             "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
-            "line": 84,
+            "line": 85,
             "column": 4,
             "version": "19.10.1"
           },
@@ -3270,7 +3276,7 @@
           },
           {
             "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
-            "line": 92,
+            "line": 93,
             "column": 8,
             "version": "19.10.1"
           },
@@ -3320,7 +3326,7 @@
           },
           {
             "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
-            "line": 93,
+            "line": 94,
             "column": 10,
             "version": "19.10.1"
           },
@@ -3376,7 +3382,7 @@
           },
           {
             "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
-            "line": 108,
+            "line": 109,
             "column": 8,
             "version": "19.10.1"
           },
@@ -3446,7 +3452,7 @@
           },
           {
             "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
-            "line": 160,
+            "line": 161,
             "column": 8,
             "version": "19.10.1"
           },
@@ -3488,12 +3494,6 @@
             "filePath": "src/components/ForbiddenPage/index.jsx",
             "line": 17,
             "column": 10,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/ConfigError.jsx",
-            "line": 22,
-            "column": 8,
             "version": "19.10.1"
           },
           {
@@ -3708,13 +3708,13 @@
           },
           {
             "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
-            "line": 97,
+            "line": 98,
             "column": 12,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
-            "line": 150,
+            "line": 151,
             "column": 12,
             "version": "19.10.1"
           },
@@ -3854,13 +3854,13 @@
           },
           {
             "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
-            "line": 103,
+            "line": 104,
             "column": 14,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
-            "line": 155,
+            "line": 156,
             "column": 14,
             "version": "19.10.1"
           },
@@ -4316,6 +4316,12 @@
             "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
             "line": 223,
             "column": 14,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ConfigError.jsx",
+            "line": 24,
+            "column": 10,
             "version": "19.10.1"
           },
           {
@@ -5456,7 +5462,7 @@
           },
           {
             "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
-            "line": 165,
+            "line": 166,
             "column": 12,
             "version": "19.10.1"
           },
@@ -5606,73 +5612,73 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/BlackboardConfig.jsx",
-            "line": 224,
+            "line": 223,
             "column": 10,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 204,
+            "line": 203,
             "column": 10,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CornerstoneConfig.jsx",
-            "line": 101,
+            "line": 100,
             "column": 10,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
-            "line": 114,
+            "line": 113,
             "column": 10,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
-            "line": 179,
+            "line": 178,
             "column": 10,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 114,
+            "line": 113,
             "column": 10,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 190,
+            "line": 189,
             "column": 10,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 204,
+            "line": 203,
             "column": 10,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 122,
+            "line": 121,
             "column": 10,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 172,
+            "line": 171,
             "column": 12,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 188,
+            "line": 187,
             "column": 12,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 113,
+            "line": 112,
             "column": 10,
             "version": "19.10.1"
           },
@@ -5889,6 +5895,14 @@
             "version": "19.10.1"
           }
         ],
+        "ActionRow.Spacer": [
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ConfigError.jsx",
+            "line": 22,
+            "column": 8,
+            "version": "19.10.1"
+          }
+        ],
         "Card.Header": [
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingLMSCardDeck.jsx",
@@ -5960,43 +5974,43 @@
         "Form": [
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/BlackboardConfig.jsx",
-            "line": 211,
+            "line": 210,
             "column": 6,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 192,
+            "line": 191,
             "column": 6,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CornerstoneConfig.jsx",
-            "line": 89,
+            "line": 88,
             "column": 6,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/Degreed2Config.jsx",
-            "line": 101,
+            "line": 100,
             "column": 6,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 102,
+            "line": 101,
             "column": 6,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 110,
+            "line": 109,
             "column": 6,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 101,
+            "line": 100,
             "column": 6,
             "version": "19.10.1"
           },
@@ -6008,7 +6022,7 @@
           },
           {
             "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
-            "line": 91,
+            "line": 92,
             "column": 6,
             "version": "19.10.1"
           },
@@ -6022,7 +6036,7 @@
         "Form.RadioSet": [
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 188,
+            "line": 187,
             "column": 10,
             "version": "19.10.1"
           },
@@ -6034,7 +6048,7 @@
           },
           {
             "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
-            "line": 121,
+            "line": 122,
             "column": 16,
             "version": "19.10.1"
           },
@@ -6048,13 +6062,13 @@
         "Form.Radio": [
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 197,
+            "line": 196,
             "column": 12,
             "version": "19.10.1"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 198,
+            "line": 197,
             "column": 12,
             "version": "19.10.1"
           },
@@ -6066,7 +6080,7 @@
           },
           {
             "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
-            "line": 126,
+            "line": 127,
             "column": 20,
             "version": "19.10.1"
           },
@@ -15283,12 +15297,24 @@
             "line": 15,
             "column": 2,
             "version": "16.14.4"
+          },
+          {
+            "filePath": "src/components/DemoAlert/index.jsx",
+            "line": 18,
+            "column": 2,
+            "version": "16.14.4"
           }
         ],
         "ActionRow": [
           {
             "filePath": "src/components/ConfirmModal.jsx",
             "line": 21,
+            "column": 6,
+            "version": "16.14.4"
+          },
+          {
+            "filePath": "src/components/DemoAlert/index.jsx",
+            "line": 23,
             "column": 6,
             "version": "16.14.4"
           },
@@ -15315,6 +15341,12 @@
           {
             "filePath": "src/components/ConfirmModal.jsx",
             "line": 28,
+            "column": 8,
+            "version": "16.14.4"
+          },
+          {
+            "filePath": "src/components/DemoAlert/index.jsx",
+            "line": 24,
             "column": 8,
             "version": "16.14.4"
           },
@@ -15374,13 +15406,13 @@
           },
           {
             "filePath": "src/containers/ReviewModal/ReviewErrors/ReviewError.jsx",
-            "line": 24,
+            "line": 26,
             "column": 6,
             "version": "16.14.4"
           },
           {
             "filePath": "src/containers/ReviewModal/ReviewErrors/ReviewError.jsx",
-            "line": 31,
+            "line": 33,
             "column": 6,
             "version": "16.14.4"
           },
@@ -15398,6 +15430,12 @@
           }
         ],
         "Alert": [
+          {
+            "filePath": "src/components/DemoWarning/index.jsx",
+            "line": 15,
+            "column": 4,
+            "version": "16.14.4"
+          },
           {
             "filePath": "src/components/FilePreview/Banners/ErrorBanner.jsx",
             "line": 20,
@@ -15418,12 +15456,18 @@
           },
           {
             "filePath": "src/containers/ReviewModal/ReviewErrors/ReviewError.jsx",
-            "line": 37,
+            "line": 39,
             "column": 4,
             "version": "16.14.4"
           }
         ],
         "Alert.Heading": [
+          {
+            "filePath": "src/components/DemoWarning/index.jsx",
+            "line": 20,
+            "column": 6,
+            "version": "16.14.4"
+          },
           {
             "filePath": "src/components/FilePreview/Banners/ErrorBanner.jsx",
             "line": 21,
@@ -15438,7 +15482,7 @@
           },
           {
             "filePath": "src/containers/ReviewModal/ReviewErrors/ReviewError.jsx",
-            "line": 42,
+            "line": 45,
             "column": 6,
             "version": "16.14.4"
           }
@@ -15594,8 +15638,8 @@
           },
           {
             "filePath": "src/containers/Rubric/index.jsx",
-            "line": 52,
-            "column": 6,
+            "line": 73,
+            "column": 8,
             "version": "16.14.4"
           }
         ],
@@ -15856,8 +15900,8 @@
           },
           {
             "filePath": "src/containers/Rubric/index.jsx",
-            "line": 68,
-            "column": 12,
+            "line": 83,
+            "column": 14,
             "version": "16.14.4"
           }
         ],
@@ -15870,8 +15914,8 @@
           },
           {
             "filePath": "src/containers/Rubric/index.jsx",
-            "line": 53,
-            "column": 8,
+            "line": 74,
+            "column": 10,
             "version": "16.14.4"
           }
         ],
@@ -15924,7 +15968,7 @@
         "FullscreenModal": [
           {
             "filePath": "src/containers/ReviewModal/index.jsx",
-            "line": 70,
+            "line": 80,
             "column": 6,
             "version": "16.14.4"
           }
@@ -15948,7 +15992,7 @@
       }
     },
     {
-      "version": "16.19.0",
+      "version": "16.24.0",
       "name": "@edx/frontend-app-payment",
       "repository": {
         "type": "git",
@@ -15961,7 +16005,7 @@
             "filePath": "src/feedback/AlertMessage.jsx",
             "line": 45,
             "column": 9,
-            "version": "16.19.0"
+            "version": "16.24.0"
           }
         ],
         "Hyperlink": [
@@ -15969,31 +16013,31 @@
             "filePath": "src/feedback/FallbackErrorMessage.jsx",
             "line": 13,
             "column": 8,
-            "version": "16.19.0"
+            "version": "16.24.0"
           },
           {
             "filePath": "src/payment/AlertCodeMessages.jsx",
             "line": 22,
             "column": 10,
-            "version": "16.19.0"
+            "version": "16.24.0"
           },
           {
             "filePath": "src/payment/checkout/FreeCheckoutOrderButton.jsx",
             "line": 9,
             "column": 4,
-            "version": "16.19.0"
+            "version": "16.24.0"
           },
           {
             "filePath": "src/payment/EmptyCartMessage.jsx",
             "line": 23,
             "column": 14,
-            "version": "16.19.0"
+            "version": "16.24.0"
           },
           {
             "filePath": "src/payment/EmptyCartMessage.jsx",
             "line": 32,
             "column": 14,
-            "version": "16.19.0"
+            "version": "16.24.0"
           }
         ],
         "Collapsible": [
@@ -16001,7 +16045,7 @@
             "filePath": "src/payment/cart/Cart.jsx",
             "line": 102,
             "column": 12,
-            "version": "16.19.0"
+            "version": "16.24.0"
           }
         ],
         "ValidationFormGroup": [
@@ -16009,7 +16053,7 @@
             "filePath": "src/payment/cart/CouponForm.jsx",
             "line": 47,
             "column": 8,
-            "version": "16.19.0"
+            "version": "16.24.0"
           }
         ],
         "Input": [
@@ -16017,13 +16061,13 @@
             "filePath": "src/payment/cart/CouponForm.jsx",
             "line": 55,
             "column": 10,
-            "version": "16.19.0"
+            "version": "16.24.0"
           },
           {
             "filePath": "src/payment/cart/UpdateQuantityForm.jsx",
             "line": 36,
             "column": 10,
-            "version": "16.19.0"
+            "version": "16.24.0"
           }
         ],
         "Button": [
@@ -16031,13 +16075,13 @@
             "filePath": "src/payment/cart/CouponForm.jsx",
             "line": 57,
             "column": 8,
-            "version": "16.19.0"
+            "version": "16.24.0"
           },
           {
             "filePath": "src/payment/cart/CouponForm.jsx",
             "line": 124,
             "column": 8,
-            "version": "16.19.0"
+            "version": "16.24.0"
           }
         ],
         "StatefulButton": [
@@ -16045,13 +16089,13 @@
             "filePath": "src/payment/cart/UpdateQuantityForm.jsx",
             "line": 65,
             "column": 6,
-            "version": "16.19.0"
+            "version": "16.24.0"
           },
           {
             "filePath": "src/payment/checkout/payment-form/PaymentForm.jsx",
             "line": 226,
             "column": 18,
-            "version": "16.19.0"
+            "version": "16.24.0"
           }
         ]
       }
@@ -19485,7 +19529,7 @@
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 168,
+            "line": 169,
             "column": 22,
             "version": "19.4.2"
           },
@@ -19563,7 +19607,7 @@
           },
           {
             "filePath": "src/components/CourseCurriculum/index.jsx",
-            "line": 89,
+            "line": 94,
             "column": 10,
             "version": "19.4.2"
           },
@@ -19791,19 +19835,19 @@
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 162,
+            "line": 163,
             "column": 20,
             "version": "19.4.2"
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 178,
+            "line": 179,
             "column": 16,
             "version": "19.4.2"
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 192,
+            "line": 193,
             "column": 12,
             "version": "19.4.2"
           },
@@ -19835,6 +19879,12 @@
             "filePath": "src/components/Course/Instructors/index.jsx",
             "line": 77,
             "column": 10,
+            "version": "19.4.2"
+          },
+          {
+            "filePath": "src/components/CourseCurriculum/index.jsx",
+            "line": 88,
+            "column": 8,
             "version": "19.4.2"
           },
           {
@@ -20297,7 +20347,7 @@
           },
           {
             "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 253,
+            "line": 252,
             "column": 14,
             "version": "19.4.2"
           },
@@ -20343,7 +20393,7 @@
         "OverlayTrigger": [
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 154,
+            "line": 155,
             "column": 18,
             "version": "19.4.2"
           },
@@ -20367,7 +20417,7 @@
           },
           {
             "filePath": "src/components/CourseCurriculum/index.jsx",
-            "line": 79,
+            "line": 80,
             "column": 6,
             "version": "19.4.2"
           },
@@ -20387,7 +20437,7 @@
         "Tooltip": [
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 157,
+            "line": 158,
             "column": 22,
             "version": "19.4.2"
           },
@@ -20411,7 +20461,7 @@
           },
           {
             "filePath": "src/components/CourseCurriculum/index.jsx",
-            "line": 82,
+            "line": 83,
             "column": 10,
             "version": "19.4.2"
           },
