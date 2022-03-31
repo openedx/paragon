@@ -193,7 +193,7 @@ DataTable.propTypes = {
     /** String used to access the correct cell data for this column */
     accessor: requiredWhenNot(PropTypes.string, 'Cell'),
     /** Specifies a function that receives `row` as argument and returns cell content */
-    Cell: PropTypes.func,
+    Cell: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
     /** Specifies filter component */
     Filter: PropTypes.func,
     /** Specifies filter type */
