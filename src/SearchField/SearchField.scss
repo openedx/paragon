@@ -10,9 +10,9 @@
     pointer-events: none;
   }
 
-  &.has-focus {
-    box-shadow: 0 0 0 $search-border-width $search-border-color-interaction;
-    border: 5px double $black;
+    &.has-focus {
+        box-shadow: 0 0 0 $search-border-width $search-border-color-interaction;
+        border: $search-border-focus-width double $search-border-focus-color;
 
     .pgn__searchfield_wrapper {
       box-shadow: 0 0 0 $search-border-width $search-border-color-interaction;
@@ -75,7 +75,7 @@
       box-shadow: none;
 
             .pgn__searchfield_wrapper {
-                border: 5px double $black;
+                border: $search-border-focus-width double $search-border-focus-color;
             }
 
             .btn-primary {

@@ -60,7 +60,7 @@
 
   &.btn-primary:not(:disabled):not(.disabled):focus {
     background-color: $pagination-bg;
-    color: $black;
+    color: $pagination-focus-color-text;
   }
 
   &:focus {
@@ -68,7 +68,7 @@
   }
 
   &.btn-primary:focus:before {
-    border: 2px solid $primary-500;
+    border: $pagination-focus-border-width solid $pagination-focus-color;
     @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
   }
 
@@ -95,7 +95,7 @@
   }
 
   &.active .page-link:focus {
-    background-color: $primary-500 !important;
+    background-color: $pagination-focus-color !important;
     color: $pagination-bg !important;
   }
 }
