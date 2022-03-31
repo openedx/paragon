@@ -59,8 +59,17 @@
   border: none;
 
   &.btn-primary:not(:disabled):not(.disabled):focus {
-    background-color: white;
-    color: #000;
+    background-color: $pagination-bg;
+    color: $black;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  &.btn-primary:focus:before {
+    border: 2px solid $primary-500;
+    @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
   }
 
   div {
@@ -83,6 +92,11 @@
   > .btn {
     transition: none;
     line-height: $pagination-line-height;
+  }
+
+  &.active .page-link:focus {
+    background-color: $primary-500 !important;
+    color: $pagination-bg !important;
   }
 }
 

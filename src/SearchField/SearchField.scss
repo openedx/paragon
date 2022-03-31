@@ -12,6 +12,7 @@
 
   &.has-focus {
     box-shadow: 0 0 0 $search-border-width $search-border-color-interaction;
+    border: 5px double $black;
 
     .pgn__searchfield_wrapper {
       box-shadow: 0 0 0 $search-border-width $search-border-color-interaction;
@@ -73,9 +74,13 @@
     &.has-focus {
       box-shadow: none;
 
-      .btn-primary {
-        background: map-get($search-btn-variants, "light");
-      }
+            .pgn__searchfield_wrapper {
+                border: 5px double $black;
+            }
+
+            .btn-primary {
+                background: map-get($search-btn-variants, "light");
+            }
 
       .btn-brand {
         background: map-get($search-btn-variants, "dark");
