@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tabs /> correct rendering renders successfully 1`] = `
+Array [
+  <nav
+    className="pgn__tabs nav nav-tabs"
+    onKeyDown={[Function]}
+    role="tablist"
+  >
+    <a
+      className="nav-item nav-link"
+      data-rb-event-key={null}
+      href="#"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="tab"
+    >
+      Tab 1
+    </a>
+    <a
+      className="nav-item nav-link"
+      data-rb-event-key={null}
+      href="#"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="tab"
+    >
+      Tab 2
+    </a>
+  </nav>,
+  <div
+    className="tab-content"
+  >
+    <div
+      aria-hidden={true}
+      aria-labelledby={null}
+      className="fade tab-pane"
+      id={null}
+      role="tabpanel"
+    />
+    <div
+      aria-hidden={true}
+      aria-labelledby={null}
+      className="fade tab-pane"
+      id={null}
+      role="tabpanel"
+    />
+  </div>,
+]
+`;

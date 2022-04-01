@@ -1,6 +1,9 @@
 ---
 title: 'Tabs'
 type: 'component'
+components:
+- Tabs
+- Tab
 categories:
 - Navigation
 status: 'Stable'
@@ -21,7 +24,7 @@ notes: |
 
 ```jsx live
 <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
-  <Tab eventKey="home" title="Home">
+  <Tab eventKey="home" title="Home" notification={1}>
     Hello I am the first panel.
   </Tab>
   <Tab eventKey="profile" title="Profile">
