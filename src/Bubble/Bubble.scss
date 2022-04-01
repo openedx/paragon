@@ -19,6 +19,6 @@
 
   &:disabled,
   &.disabled {
-    opacity: 30%;
+    background: $gray-500;
   }
 }
