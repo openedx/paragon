@@ -1,5 +1,5 @@
 {
-  "lastModified": 1648735764314,
+  "lastModified": 1648822135897,
   "projectUsages": [
     {
       "version": "19.10.2",
@@ -1568,7 +1568,7 @@
           },
           {
             "filePath": "src/components/CodeManagement/ManageCodesTab.jsx",
-            "line": 264,
+            "line": 273,
             "column": 12,
             "version": "19.13.6"
           },
@@ -1636,6 +1636,12 @@
             "filePath": "src/components/InviteLearnersModal/index.jsx",
             "line": 189,
             "column": 12,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/NewFeatureAlertBrowseAndRequest/index.jsx",
+            "line": 60,
+            "column": 8,
             "version": "19.13.6"
           },
           {
@@ -1840,12 +1846,6 @@
             "filePath": "src/components/subscriptions/licenses/LicenseManagementTable/bulk-actions/RevokeBulkAction.jsx",
             "line": 113,
             "column": 6,
-            "version": "19.13.6"
-          },
-          {
-            "filePath": "src/components/subscriptions/licenses/NewFeatureAlertBrowseAndRequest.jsx",
-            "line": 60,
-            "column": 8,
             "version": "19.13.6"
           },
           {
@@ -2566,13 +2566,13 @@
           },
           {
             "filePath": "src/components/CodeManagement/ManageCodesTab.jsx",
-            "line": 271,
+            "line": 280,
             "column": 16,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/CodeManagement/ManageCodesTab.jsx",
-            "line": 280,
+            "line": 289,
             "column": 16,
             "version": "19.13.6"
           },
@@ -3564,19 +3564,19 @@
           },
           {
             "filePath": "src/components/CodeManagement/ManageCodesTab.jsx",
-            "line": 170,
+            "line": 173,
             "column": 6,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/CodeManagement/ManageCodesTab.jsx",
-            "line": 211,
+            "line": 214,
             "column": 6,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/CodeManagement/ManageCodesTab.jsx",
-            "line": 226,
+            "line": 229,
             "column": 6,
             "version": "19.13.6"
           },
@@ -3602,6 +3602,12 @@
             "filePath": "src/components/InviteLearnersModal/index.jsx",
             "line": 157,
             "column": 8,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/NewFeatureAlertBrowseAndRequest/index.jsx",
+            "line": 55,
+            "column": 4,
             "version": "19.13.6"
           },
           {
@@ -3647,12 +3653,6 @@
             "version": "19.13.6"
           },
           {
-            "filePath": "src/components/subscriptions/licenses/LicenseAllocationBanner.jsx",
-            "line": 16,
-            "column": 4,
-            "version": "19.13.6"
-          },
-          {
             "filePath": "src/components/subscriptions/licenses/LicenseManagementModals/LicenseManagementRemindModal.jsx",
             "line": 154,
             "column": 12,
@@ -3668,12 +3668,6 @@
             "filePath": "src/components/subscriptions/licenses/LicenseManagementModals/LicenseManagementRevokeModal.jsx",
             "line": 161,
             "column": 12,
-            "version": "19.13.6"
-          },
-          {
-            "filePath": "src/components/subscriptions/licenses/NewFeatureAlertBrowseAndRequest.jsx",
-            "line": 55,
-            "column": 4,
             "version": "19.13.6"
           },
           {
@@ -3740,13 +3734,13 @@
           },
           {
             "filePath": "src/components/CodeManagement/ManageCodesTab.jsx",
-            "line": 171,
+            "line": 174,
             "column": 8,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/CodeManagement/ManageCodesTab.jsx",
-            "line": 218,
+            "line": 221,
             "column": 8,
             "version": "19.13.6"
           },
@@ -4274,7 +4268,7 @@
         "Pagination": [
           {
             "filePath": "src/components/CodeManagement/ManageCodesTab.jsx",
-            "line": 194,
+            "line": 197,
             "column": 10,
             "version": "19.13.6"
           },
@@ -8784,7 +8778,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
-            "line": 54,
+            "line": 58,
             "column": 6,
             "version": "19.10.1"
           },
@@ -8792,6 +8786,12 @@
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 407,
             "column": 12,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/posts/post/ClosePostReasonModal.jsx",
+            "line": 70,
+            "column": 10,
             "version": "19.10.1"
           }
         ],
@@ -8863,6 +8863,12 @@
             "line": 392,
             "column": 20,
             "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/posts/post/ClosePostReasonModal.jsx",
+            "line": 49,
+            "column": 8,
+            "version": "19.10.1"
           }
         ],
         "Form.Control": [
@@ -8894,6 +8900,12 @@
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 329,
             "column": 18,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/posts/post/ClosePostReasonModal.jsx",
+            "line": 50,
+            "column": 10,
             "version": "19.10.1"
           }
         ],
@@ -9088,13 +9100,13 @@
           },
           {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
-            "line": 65,
+            "line": 69,
             "column": 10,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post/LikeButton.jsx",
-            "line": 37,
+            "line": 35,
             "column": 8,
             "version": "19.10.1"
           },
@@ -9159,12 +9171,24 @@
             "line": 64,
             "column": 8,
             "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/common/AlertBanner.jsx",
+            "line": 75,
+            "column": 8,
+            "version": "19.10.1"
           }
         ],
         "ModalDialog": [
           {
             "filePath": "src/discussions/common/DeleteConfirmation.jsx",
             "line": 18,
+            "column": 4,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/posts/post/ClosePostReasonModal.jsx",
+            "line": 36,
             "column": 4,
             "version": "19.10.1"
           }
@@ -9175,12 +9199,24 @@
             "line": 19,
             "column": 6,
             "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/posts/post/ClosePostReasonModal.jsx",
+            "line": 42,
+            "column": 6,
+            "version": "19.10.1"
           }
         ],
         "ModalDialog.Title": [
           {
             "filePath": "src/discussions/common/DeleteConfirmation.jsx",
             "line": 20,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/posts/post/ClosePostReasonModal.jsx",
+            "line": 43,
             "column": 8,
             "version": "19.10.1"
           }
@@ -9191,12 +9227,24 @@
             "line": 24,
             "column": 6,
             "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/posts/post/ClosePostReasonModal.jsx",
+            "line": 47,
+            "column": 6,
+            "version": "19.10.1"
           }
         ],
         "ModalDialog.Footer": [
           {
             "filePath": "src/discussions/common/DeleteConfirmation.jsx",
             "line": 27,
+            "column": 6,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/posts/post/ClosePostReasonModal.jsx",
+            "line": 65,
             "column": 6,
             "version": "19.10.1"
           }
@@ -9207,12 +9255,24 @@
             "line": 28,
             "column": 8,
             "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/posts/post/ClosePostReasonModal.jsx",
+            "line": 66,
+            "column": 8,
+            "version": "19.10.1"
           }
         ],
         "ModalDialog.CloseButton": [
           {
             "filePath": "src/discussions/common/DeleteConfirmation.jsx",
             "line": 29,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/posts/post/ClosePostReasonModal.jsx",
+            "line": 67,
             "column": 10,
             "version": "19.10.1"
           }
@@ -9226,7 +9286,7 @@
           },
           {
             "filePath": "src/discussions/posts/post/LikeButton.jsx",
-            "line": 30,
+            "line": 28,
             "column": 6,
             "version": "19.10.1"
           },
@@ -9258,7 +9318,7 @@
           },
           {
             "filePath": "src/discussions/posts/post/LikeButton.jsx",
-            "line": 32,
+            "line": 30,
             "column": 10,
             "version": "19.10.1"
           },
@@ -9316,7 +9376,7 @@
         "SearchField": [
           {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
-            "line": 36,
+            "line": 40,
             "column": 10,
             "version": "19.10.1"
           },
@@ -9414,7 +9474,7 @@
         "Hyperlink": [
           {
             "filePath": "src/discussions/posts/post/Post.jsx",
-            "line": 71,
+            "line": 83,
             "column": 10,
             "version": "19.10.1"
           }
@@ -11004,7 +11064,7 @@
         "Card": [
           {
             "filePath": "src/components/course/CourseRunCard.jsx",
-            "line": 194,
+            "line": 201,
             "column": 4,
             "version": "17.5.0"
           },
@@ -11078,7 +11138,7 @@
         "Card.Body": [
           {
             "filePath": "src/components/course/CourseRunCard.jsx",
-            "line": 195,
+            "line": 202,
             "column": 6,
             "version": "17.5.0"
           },
@@ -16576,13 +16636,13 @@
           },
           {
             "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
-            "line": 171,
+            "line": 166,
             "column": 14,
             "version": "12.8.0"
           },
           {
             "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
-            "line": 181,
+            "line": 176,
             "column": 14,
             "version": "12.8.0"
           },
@@ -16626,25 +16686,25 @@
           },
           {
             "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
-            "line": 172,
+            "line": 167,
             "column": 16,
             "version": "12.8.0"
           },
           {
             "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
-            "line": 175,
+            "line": 170,
             "column": 16,
             "version": "12.8.0"
           },
           {
             "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
-            "line": 182,
+            "line": 177,
             "column": 16,
             "version": "12.8.0"
           },
           {
             "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
-            "line": 185,
+            "line": 180,
             "column": 16,
             "version": "12.8.0"
           },
@@ -16780,7 +16840,7 @@
         "Input": [
           {
             "filePath": "src/FeatureBasedEnrollments/FeatureBasedEnrollmentIndexPage.jsx",
-            "line": 104,
+            "line": 99,
             "column": 10,
             "version": "12.8.0"
           },
@@ -16798,19 +16858,19 @@
           },
           {
             "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
-            "line": 125,
+            "line": 120,
             "column": 14,
             "version": "12.8.0"
           },
           {
             "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
-            "line": 138,
+            "line": 133,
             "column": 14,
             "version": "12.8.0"
           },
           {
             "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
-            "line": 149,
+            "line": 144,
             "column": 14,
             "version": "12.8.0"
           },
@@ -16890,7 +16950,7 @@
         "Button": [
           {
             "filePath": "src/FeatureBasedEnrollments/FeatureBasedEnrollmentIndexPage.jsx",
-            "line": 105,
+            "line": 100,
             "column": 10,
             "version": "12.8.0"
           },
@@ -16902,7 +16962,7 @@
           },
           {
             "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
-            "line": 161,
+            "line": 156,
             "column": 10,
             "version": "12.8.0"
           },
@@ -17150,13 +17210,13 @@
         "Alert": [
           {
             "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
-            "line": 117,
+            "line": 112,
             "column": 8,
             "version": "12.8.0"
           },
           {
             "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
-            "line": 206,
+            "line": 201,
             "column": 16,
             "version": "12.8.0"
           },
@@ -18107,7 +18167,7 @@
           },
           {
             "filePath": "src/editors/containers/TextEditor/TextEditor.jsx",
-            "line": 62,
+            "line": 64,
             "column": 6,
             "version": "19.6.0"
           }
@@ -18121,7 +18181,7 @@
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 35,
+            "line": 37,
             "column": 4,
             "version": "19.6.0"
           }
@@ -18141,7 +18201,7 @@
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 36,
+            "line": 38,
             "column": 6,
             "version": "19.6.0"
           },
@@ -18167,7 +18227,7 @@
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 38,
+            "line": 40,
             "column": 8,
             "version": "19.6.0"
           },
@@ -18193,13 +18253,13 @@
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/index.jsx",
-            "line": 44,
+            "line": 48,
             "column": 8,
             "version": "19.6.0"
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/index.jsx",
-            "line": 53,
+            "line": 57,
             "column": 6,
             "version": "19.6.0"
           },
@@ -18231,7 +18291,7 @@
           },
           {
             "filePath": "src/editors/containers/TextEditor/TextEditor.jsx",
-            "line": 69,
+            "line": 71,
             "column": 12,
             "version": "19.6.0"
           }
@@ -18245,13 +18305,13 @@
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/AltTextControls.jsx",
-            "line": 20,
+            "line": 25,
             "column": 2,
             "version": "19.6.0"
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/DimensionControls.jsx",
-            "line": 34,
+            "line": 38,
             "column": 2,
             "version": "19.6.0"
           },
@@ -18277,19 +18337,19 @@
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/AltTextControls.jsx",
-            "line": 22,
+            "line": 29,
             "column": 4,
             "version": "19.6.0"
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/DimensionControls.jsx",
-            "line": 37,
+            "line": 43,
             "column": 6,
             "version": "19.6.0"
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/DimensionControls.jsx",
-            "line": 46,
+            "line": 52,
             "column": 6,
             "version": "19.6.0"
           },
@@ -18335,7 +18395,7 @@
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/DimensionControls.jsx",
-            "line": 55,
+            "line": 61,
             "column": 6,
             "version": "19.6.0"
           },
@@ -18355,7 +18415,7 @@
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 27,
+            "line": 29,
             "column": 4,
             "version": "19.6.0"
           }
@@ -18369,7 +18429,7 @@
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 28,
+            "line": 30,
             "column": 6,
             "version": "19.6.0"
           }
@@ -18377,7 +18437,7 @@
         "ModalDialog": [
           {
             "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 17,
+            "line": 20,
             "column": 2,
             "version": "19.6.0"
           }
@@ -18385,7 +18445,7 @@
         "ModalDialog.Body": [
           {
             "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 32,
+            "line": 34,
             "column": 4,
             "version": "19.6.0"
           }
@@ -18393,7 +18453,7 @@
         "ModalDialog.CloseButton": [
           {
             "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 39,
+            "line": 41,
             "column": 8,
             "version": "19.6.0"
           }
@@ -18401,19 +18461,19 @@
         "Form.Label": [
           {
             "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/AltTextControls.jsx",
-            "line": 21,
+            "line": 26,
             "column": 4,
             "version": "19.6.0"
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/AltTextControls.jsx",
-            "line": 35,
+            "line": 42,
             "column": 6,
             "version": "19.6.0"
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/DimensionControls.jsx",
-            "line": 35,
+            "line": 39,
             "column": 4,
             "version": "19.6.0"
           }
@@ -18421,7 +18481,7 @@
         "Form.Checkbox": [
           {
             "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/AltTextControls.jsx",
-            "line": 30,
+            "line": 37,
             "column": 4,
             "version": "19.6.0"
           }
@@ -18429,7 +18489,7 @@
         "Image": [
           {
             "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/index.jsx",
-            "line": 64,
+            "line": 68,
             "column": 10,
             "version": "19.6.0"
           },
@@ -20049,7 +20109,7 @@
           },
           {
             "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 281,
+            "line": 310,
             "column": 14,
             "version": "19.4.2"
           },
