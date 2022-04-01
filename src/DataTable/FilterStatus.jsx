@@ -24,13 +24,15 @@ const FilterStatus = ({
         size={size}
         onClick={() => setAllFilters([])}
       >
-        {clearFiltersText || (
-          <FormattedMessage
-            id="pgn.DataTable.FilterStatus.clearFiltersText"
-            defaultMessage="Clear filters"
-            description="A text that appears on the `Clear filters` button"
-          />
-        )}
+        {clearFiltersText === undefined
+          ? (
+            <FormattedMessage
+              id="pgn.DataTable.FilterStatus.clearFiltersText"
+              defaultMessage="Clear filters"
+              description="A text that appears on the `Clear filters` button"
+            />
+          )
+          : clearFiltersText}
       </Button>
     </div>
   );

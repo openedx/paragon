@@ -12,7 +12,7 @@ transifex_langs = "ar,fr,es_419,zh_CN"
 i18n = ./src/i18n
 transifex_input = $(i18n)/transifex_input.json
 
-NPM_TESTS=build i18n_extract lint test is-es5
+NPM_TESTS=build i18n_extract lint test
 
 .PHONY: test
 test: $(addprefix test.npm.,$(NPM_TESTS))  ## validate ci suite

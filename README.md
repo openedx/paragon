@@ -186,7 +186,7 @@ Since we are using ``react-intl`` that means that your whole app needs to be wra
   )
 ```
 
-Note that if you are using ``frontend-platform``'s ``AppProvider`` component you don't need a separate context,
+Note that if you are using ``@edx/frontend-platform``'s ``AppProvider`` component you don't need a separate context,
 you would only need to add Paragon's messages like this
 
 ```javascript
