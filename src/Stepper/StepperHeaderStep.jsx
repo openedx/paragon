@@ -33,7 +33,6 @@ const StepperHeaderStep = ({
       <Bubble variant={hasError ? 'error' : 'primary'} disabled={!isActive}>
         {hasError ? errorIcon : stepIcon}
       </Bubble>
-
       <div className="pgn__stepper-header-step-title-description">
         <div className="pgn__stepper-header-step-title">{title}</div>
         <div className="pgn__stepper-header-step-description">{description}</div>
