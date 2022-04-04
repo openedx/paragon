@@ -23,18 +23,18 @@ const SettingsContextProvider = ({ children }) => {
     document.body.setAttribute('dir', e.target.value);
     setDirection(e.target.value);
     global.localStorage.setItem('pgn__direction', e.target.value);
-    global.analytics.track('Direction change', { direction: e.target.value });
+    global.analytics.track('openedx.paragon.settings.direction_changed', { direction: e.target.value });
   };
 
   const handleThemeChange = (e) => {
     setTheme(e.target.value);
     global.localStorage.setItem('pgn__theme', e.target.value);
-    global.analytics.track('Theme change', { theme: e.target.value });
+    global.analytics.track('openedx.paragon.settings.theme_changed', { theme: e.target.value });
   };
 
   const handleSettingsChange = (value) => {
     setShowSettings(value);
-    global.analytics.track('Toggle Settings', { value: value ? 'show' : 'hide' });
+    global.analytics.track('openedx.paragon.settings.toggled', { value: value ? 'show' : 'hide' });
   };
 
   // this hook will be called after the first render, so we can safely access localStorage
@@ -47,10 +47,6 @@ const SettingsContextProvider = ({ children }) => {
     if (savedDirection) {
       document.body.setAttribute('dir', savedDirection);
       setDirection(savedDirection);
-    }
-    if (!global.analytics) {
-      global.analytics = {};
-      global.analytics.track = () => {};
     }
   }, []);
 
