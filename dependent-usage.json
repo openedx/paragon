@@ -1,5 +1,5 @@
 {
-  "lastModified": 1648994914295,
+  "lastModified": 1649081371844,
   "projectUsages": [
     {
       "version": "19.10.2",
@@ -6199,13 +6199,13 @@
           },
           {
             "filePath": "src/login/LoginFailure.jsx",
-            "line": 27,
+            "line": 30,
             "column": 4,
             "version": "19.10.2"
           },
           {
             "filePath": "src/login/LoginFailure.jsx",
-            "line": 76,
+            "line": 79,
             "column": 8,
             "version": "19.10.2"
           },
@@ -6797,7 +6797,7 @@
           },
           {
             "filePath": "src/login/LoginFailure.jsx",
-            "line": 159,
+            "line": 171,
             "column": 4,
             "version": "19.10.2"
           },
@@ -6859,7 +6859,7 @@
           },
           {
             "filePath": "src/login/LoginFailure.jsx",
-            "line": 160,
+            "line": 172,
             "column": 6,
             "version": "19.10.2"
           },
@@ -6984,6 +6984,98 @@
             "version": "19.10.2"
           }
         ],
+        "ModalDialog": [
+          {
+            "filePath": "src/login/ChangePasswordPrompt.jsx",
+            "line": 37,
+            "column": 4,
+            "version": "19.10.2"
+          },
+          {
+            "filePath": "src/welcome/WelcomePageModal.jsx",
+            "line": 20,
+            "column": 4,
+            "version": "19.10.2"
+          }
+        ],
+        "ModalDialog.Header": [
+          {
+            "filePath": "src/login/ChangePasswordPrompt.jsx",
+            "line": 44,
+            "column": 6,
+            "version": "19.10.2"
+          },
+          {
+            "filePath": "src/welcome/WelcomePageModal.jsx",
+            "line": 28,
+            "column": 6,
+            "version": "19.10.2"
+          }
+        ],
+        "ModalDialog.Title": [
+          {
+            "filePath": "src/login/ChangePasswordPrompt.jsx",
+            "line": 45,
+            "column": 8,
+            "version": "19.10.2"
+          },
+          {
+            "filePath": "src/welcome/WelcomePageModal.jsx",
+            "line": 29,
+            "column": 8,
+            "version": "19.10.2"
+          }
+        ],
+        "ModalDialog.Body": [
+          {
+            "filePath": "src/login/ChangePasswordPrompt.jsx",
+            "line": 49,
+            "column": 6,
+            "version": "19.10.2"
+          },
+          {
+            "filePath": "src/welcome/WelcomePageModal.jsx",
+            "line": 34,
+            "column": 6,
+            "version": "19.10.2"
+          }
+        ],
+        "ModalDialog.Footer": [
+          {
+            "filePath": "src/login/ChangePasswordPrompt.jsx",
+            "line": 52,
+            "column": 6,
+            "version": "19.10.2"
+          },
+          {
+            "filePath": "src/welcome/WelcomePageModal.jsx",
+            "line": 38,
+            "column": 6,
+            "version": "19.10.2"
+          }
+        ],
+        "ActionRow": [
+          {
+            "filePath": "src/login/ChangePasswordPrompt.jsx",
+            "line": 53,
+            "column": 8,
+            "version": "19.10.2"
+          },
+          {
+            "filePath": "src/welcome/WelcomePageModal.jsx",
+            "line": 39,
+            "column": 8,
+            "version": "19.10.2"
+          }
+        ],
+        "ModalDialog.CloseButton": [
+          {
+            "filePath": "src/login/ChangePasswordPrompt.jsx",
+            "line": 58,
+            "column": 12,
+            "version": "19.10.2"
+          }
+        ],
         "Spinner": [
           {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
@@ -6995,54 +7087,6 @@
             "filePath": "src/welcome/ProgressiveProfiling.jsx",
             "line": 195,
             "column": 9,
-            "version": "19.10.2"
-          }
-        ],
-        "ModalDialog": [
-          {
-            "filePath": "src/welcome/WelcomePageModal.jsx",
-            "line": 20,
-            "column": 4,
-            "version": "19.10.2"
-          }
-        ],
-        "ModalDialog.Header": [
-          {
-            "filePath": "src/welcome/WelcomePageModal.jsx",
-            "line": 28,
-            "column": 6,
-            "version": "19.10.2"
-          }
-        ],
-        "ModalDialog.Title": [
-          {
-            "filePath": "src/welcome/WelcomePageModal.jsx",
-            "line": 29,
-            "column": 8,
-            "version": "19.10.2"
-          }
-        ],
-        "ModalDialog.Body": [
-          {
-            "filePath": "src/welcome/WelcomePageModal.jsx",
-            "line": 34,
-            "column": 6,
-            "version": "19.10.2"
-          }
-        ],
-        "ModalDialog.Footer": [
-          {
-            "filePath": "src/welcome/WelcomePageModal.jsx",
-            "line": 38,
-            "column": 6,
-            "version": "19.10.2"
-          }
-        ],
-        "ActionRow": [
-          {
-            "filePath": "src/welcome/WelcomePageModal.jsx",
-            "line": 39,
-            "column": 8,
             "version": "19.10.2"
           }
         ]
@@ -8778,7 +8822,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
-            "line": 58,
+            "line": 55,
             "column": 6,
             "version": "19.10.1"
           },
@@ -9100,7 +9144,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
-            "line": 69,
+            "line": 66,
             "column": 10,
             "version": "19.10.1"
           },
@@ -9376,7 +9420,7 @@
         "SearchField": [
           {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
-            "line": 40,
+            "line": 37,
             "column": 10,
             "version": "19.10.1"
           },
@@ -18265,13 +18309,13 @@
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/index.jsx",
-            "line": 33,
+            "line": 34,
             "column": 8,
             "version": "19.6.0"
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/index.jsx",
-            "line": 39,
+            "line": 40,
             "column": 8,
             "version": "19.6.0"
           }
@@ -18458,6 +18502,22 @@
             "version": "19.6.0"
           }
         ],
+        "Alert": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/ErrorAlerts/ErrorAlert.jsx",
+            "line": 36,
+            "column": 4,
+            "version": "19.6.0"
+          }
+        ],
+        "Alert.Heading": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/ErrorAlerts/ErrorAlert.jsx",
+            "line": 42,
+            "column": 6,
+            "version": "19.6.0"
+          }
+        ],
         "Form.Label": [
           {
             "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/AltTextControls.jsx",
@@ -18500,22 +18560,6 @@
             "version": "19.6.0"
           }
         ],
-        "Alert": [
-          {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/ErrorAlert.jsx",
-            "line": 15,
-            "column": 4,
-            "version": "19.6.0"
-          }
-        ],
-        "Alert.Heading": [
-          {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/ErrorAlert.jsx",
-            "line": 21,
-            "column": 6,
-            "version": "19.6.0"
-          }
-        ],
         "Scrollable": [
           {
             "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/Gallery.jsx",
@@ -18543,7 +18587,7 @@
         "Stack": [
           {
             "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/index.jsx",
-            "line": 45,
+            "line": 48,
             "column": 6,
             "version": "19.6.0"
           }
@@ -18665,7 +18709,7 @@
         "Spinner": [
           {
             "filePath": "src/exam/Exam.jsx",
-            "line": 78,
+            "line": 75,
             "column": 8,
             "version": "13.17.0"
           },
@@ -18679,7 +18723,7 @@
         "Alert": [
           {
             "filePath": "src/exam/Exam.jsx",
-            "line": 98,
+            "line": 95,
             "column": 8,
             "version": "13.17.0"
           },
@@ -18808,12 +18852,6 @@
           {
             "filePath": "src/instructions/proctored_exam/SkipProctoredExamInstruction.jsx",
             "line": 14,
-            "column": 6,
-            "version": "13.17.0"
-          },
-          {
-            "filePath": "src/instructions/proctored_exam/VerificationProctoredExamInstructions.jsx",
-            "line": 95,
             "column": 6,
             "version": "13.17.0"
           },
@@ -19002,24 +19040,6 @@
             "version": "13.17.0"
           },
           {
-            "filePath": "src/instructions/proctored_exam/VerificationProctoredExamInstructions.jsx",
-            "line": 32,
-            "column": 12,
-            "version": "13.17.0"
-          },
-          {
-            "filePath": "src/instructions/proctored_exam/VerificationProctoredExamInstructions.jsx",
-            "line": 55,
-            "column": 12,
-            "version": "13.17.0"
-          },
-          {
-            "filePath": "src/instructions/proctored_exam/VerificationProctoredExamInstructions.jsx",
-            "line": 78,
-            "column": 12,
-            "version": "13.17.0"
-          },
-          {
             "filePath": "src/instructions/proctored_exam/WarningModal.jsx",
             "line": 15,
             "column": 6,
@@ -19113,7 +19133,7 @@
       }
     },
     {
-      "version": "19.13.2",
+      "version": "19.13.6",
       "name": "@edx/frontend-platform",
       "repository": {
         "type": "git",
@@ -19126,7 +19146,7 @@
             "filePath": "src/react/ErrorPage.jsx",
             "line": 25,
             "column": 6,
-            "version": "19.13.2"
+            "version": "19.13.6"
           }
         ],
         "Row": [
@@ -19134,7 +19154,7 @@
             "filePath": "src/react/ErrorPage.jsx",
             "line": 26,
             "column": 8,
-            "version": "19.13.2"
+            "version": "19.13.6"
           }
         ],
         "Col": [
@@ -19142,7 +19162,7 @@
             "filePath": "src/react/ErrorPage.jsx",
             "line": 27,
             "column": 10,
-            "version": "19.13.2"
+            "version": "19.13.6"
           }
         ],
         "Button": [
@@ -19150,7 +19170,7 @@
             "filePath": "src/react/ErrorPage.jsx",
             "line": 40,
             "column": 12,
-            "version": "19.13.2"
+            "version": "19.13.6"
           }
         ]
       }
