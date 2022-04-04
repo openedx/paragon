@@ -5,9 +5,11 @@ import BaseAlert from 'react-bootstrap/Alert';
 import divWithClassName from 'react-bootstrap/divWithClassName';
 import { useMediaQuery } from 'react-responsive';
 import { Icon } from '..';
+import { CheckCircle } from '../../icons';
 import breakpoints from '../utils/breakpoints';
 import Button from '../Button';
 import ActionRow from '../ActionRow';
+import injectPlaygroundConfig from '../utils/injectPlaygroundConfig';
 
 const Alert = React.forwardRef(({
   children,
@@ -139,4 +141,15 @@ Alert.defaultProps = {
 Alert.Heading = AlertHeading;
 Alert.Link = AlertLink;
 
-export default Alert;
+export default injectPlaygroundConfig(Alert, {
+  initialProps: {
+    variant: 'success',
+    icon: CheckCircle,
+    children: [
+      <Alert.Heading>Alert heading</Alert.Heading>,
+      <p>
+        Alert content.
+      </p>,
+    ],
+  },
+});

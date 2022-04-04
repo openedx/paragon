@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { Container, Nav, Row, Col } from '~paragon-react'; // eslint-disable-line
@@ -21,6 +21,15 @@ const Layout = ({
   isMdx,
   tocData,
 }) => {
+
+  /** Initializes a no-op analytics client if one is not already specified. */
+  useEffect(() => {
+    if (!global.analytics) {
+      global.analytics = {};
+      global.analytics.track = () => {};
+    }
+  }, []);
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {

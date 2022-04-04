@@ -5,8 +5,8 @@ import Button from 'react-bootstrap/Button';
 import BaseButtonGroup from 'react-bootstrap/ButtonGroup';
 import BaseButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import ButtonDeprecated from './deprecated';
-
 import Icon from '../Icon';
+import injectPlaygroundConfig from '../utils/injectPlaygroundConfig';
 
 const WrappedButton = React.forwardRef(({
   children,
@@ -88,5 +88,45 @@ ButtonToolbar.defaultProps = {
   bsPrefix: 'btn-toolbar',
 };
 
-export default WrappedButton;
+WrappedButton.displayName = 'Button';
+
+export default injectPlaygroundConfig(WrappedButton, {
+  initialProps: {
+    variant: 'brand',
+    children: [
+      'Button text',
+    ],
+  },
+  availableOptions: {
+    children: {
+      type: 'node',
+    },
+    variant: {
+      type: 'select',
+      values: [
+        'brand',
+        'outline-brand',
+        'inverse-brand',
+        'inverse-outline-brand',
+        'primary',
+        'outline-primary',
+        'inverse-primary',
+        'inverse-outline-primary',
+        'tertiary',
+        'outline-tertiary',
+        'inverse-tertiary',
+        'inverse-outline-tertiary',
+        'success',
+        'outline-success',
+        'danger',
+        'outline-danger',
+        'link',
+        'light',
+        'outline-light',
+        'dark',
+        'outline-dark',
+      ],
+    },
+  },
+});
 export { ButtonGroup, ButtonToolbar };

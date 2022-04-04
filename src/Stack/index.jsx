@@ -1,19 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import injectPlaygroundConfig from '../utils/injectPlaygroundConfig';
 
 const DIRECTION_VARIANTS = [
   'horizontal',
   'vertical',
 ];
 
-const Stack = ({
+const Stack = React.forwardRef(({
   direction,
   gap,
   children,
   className,
-}) => (
+}, ref) => (
   <div
+    ref={ref}
     className={classNames(
       direction === 'horizontal' ? 'pgn__hstack' : 'pgn__vstack',
       gap ? `pgn__stack-gap--${gap}` : '',
@@ -22,7 +24,7 @@ const Stack = ({
   >
     {children}
   </div>
-);
+));
 
 Stack.propTypes = {
   /** Specifies the content of the `Stack`. */
@@ -46,4 +48,8 @@ Stack.defaultProps = {
   className: undefined,
 };
 
-export default Stack;
+Stack.displayName = 'Stack';
+
+export default injectPlaygroundConfig(Stack, {
+  isDropzone: true,
+});
