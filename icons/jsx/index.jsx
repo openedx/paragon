@@ -35,6 +35,8 @@ export { default as Delete } from './Delete';
 export { default as Download } from './Download';
 export { default as DownloadDone } from './DownloadDone';
 export { default as Downloading } from './Downloading';
+export { default as DragHandle } from './DragHandle';
+export { default as DragIndicator } from './DragIndicator';
 export { default as DrawShapes } from './DrawShapes';
 export { default as Edit } from './Edit';
 export { default as EditOutline } from './EditOutline';
