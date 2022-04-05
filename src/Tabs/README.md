@@ -24,7 +24,7 @@ notes: |
 
 ```jsx live
 <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
-  <Tab eventKey="home" title="Home" notification={1}>
+  <Tab eventKey="home" title="Home">
     Hello I am the first panel.
   </Tab>
   <Tab eventKey="profile" title="Profile">
@@ -98,6 +98,19 @@ notes: |
   </Tab>
   <Tab eventKey="contact" title="Contact" disabled>
     Hello I am third first panel.
+  </Tab>
+</Tabs>
+```
+
+### With notification
+
+```jsx live
+<Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+  <Tab eventKey="home" title="Home">
+    Hello I am the first panel.
+  </Tab>
+  <Tab eventKey="profile" title="Profile" notification={1}>
+    Hello I am the second panel.
   </Tab>
 </Tabs>
 ```
