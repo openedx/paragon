@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 import BaseToast from 'react-bootstrap/Toast';
@@ -7,21 +8,21 @@ import { Button, IconButton, Icon } from '..';
 import { Close } from '../../icons';
 
 function Toast({
-  action, children, closeLabel, delay, onClose, show,
+  action, children, className, closeLabel, onClose, show, ...rest
 }) {
   const [autoHide, setAutoHide] = useState(true);
   return (
     <ToastContainer>
       <BaseToast
         autohide={autoHide}
-        className="toast"
-        delay={delay}
+        className={classNames('pgn__toast', className)}
         onClose={onClose}
         onBlur={() => setAutoHide(true)}
         onFocus={() => setAutoHide(false)}
         onMouseOut={() => setAutoHide(true)}
         onMouseOver={() => setAutoHide(false)}
         show={show}
+        {...rest}
       >
         <div
           className="toast-header"
@@ -33,7 +34,7 @@ function Toast({
               alt={closeLabel}
               className="align-self-start"
               src={Close}
-              onClick={() => (onClose())}
+              onClick={onClose}
               variant="primary"
               invertColors
             />
@@ -57,6 +58,7 @@ function Toast({
 
 Toast.defaultProps = {
   action: null,
+  className: undefined,
   closeLabel: 'Close',
   delay: 5000,
 };
@@ -90,6 +92,8 @@ Toast.propTypes = {
   closeLabel: PropTypes.string,
   /** Time in milliseconds for which the `Toast` will display. */
   delay: PropTypes.number,
+  /** Class names for the `BaseToast` component */
+  className: PropTypes.string,
 };
 
 export default Toast;
