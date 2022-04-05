@@ -35,17 +35,48 @@ notes: |
 ### Advanced Usage
 
 ```jsx live
-<Dropdown>
-  <Dropdown.Toggle variant="success" id="dropdown-basic">
-    Dropdown Button
-  </Dropdown.Toggle>
-
-  <Dropdown.Menu>
-    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
+<>
+  <Dropdown onToggle={(isOpen, event, metadata) => console.log('debug', 'onToggle', { isOpen, event, metadata })} className="mb-3">
+    <Dropdown.Toggle variant="success" id="dropdown-basic-1">
+      Dropdown Button
+    </Dropdown.Toggle>
+    <Dropdown.Menu>
+      <Dropdown.Item>Action</Dropdown.Item>
+      <Dropdown.Item>Another action</Dropdown.Item>
+      <Dropdown.Item>Something else</Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
+  <Dropdown autoClose={false} onToggle={(isOpen, event, metadata) => console.log('debug', 'onToggle', { isOpen, event, metadata })} className="mb-3">
+    <Dropdown.Toggle variant="success" id="dropdown-basic-2">
+      autoClose=false
+    </Dropdown.Toggle>
+    <Dropdown.Menu>
+      <Dropdown.Item>Action</Dropdown.Item>
+      <Dropdown.Item>Another action</Dropdown.Item>
+      <Dropdown.Item>Something else</Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
+  <Dropdown autoClose="inside" onToggle={(isOpen, event, metadata) => console.log('debug', 'onToggle', { isOpen, event, metadata })} className="mb-3">
+    <Dropdown.Toggle variant="success" id="dropdown-basic-3">
+      autoClose=inside
+    </Dropdown.Toggle>
+    <Dropdown.Menu>
+      <Dropdown.Item>Action</Dropdown.Item>
+      <Dropdown.Item>Another action</Dropdown.Item>
+      <Dropdown.Item>Something else</Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
+  <Dropdown autoClose="outside" onToggle={(isOpen, event, metadata) => console.log('debug', 'onToggle', { isOpen, event, metadata })} className="mb-3">
+    <Dropdown.Toggle variant="success" id="dropdown-basic-4">
+      autoClose=outside
+    </Dropdown.Toggle>
+    <Dropdown.Menu>
+      <Dropdown.Item>Action</Dropdown.Item>
+      <Dropdown.Item>Another action</Dropdown.Item>
+      <Dropdown.Item>Something else</Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
+</>
 ```
 
 ### With IconButton
