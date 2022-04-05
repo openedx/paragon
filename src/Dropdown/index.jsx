@@ -10,11 +10,12 @@ import { IconButton, Button } from '..';
 const Dropdown = React.forwardRef(
   // eslint-disable-next-line prefer-arrow-callback
   function Dropdown({
+    show,
     autoClose,
     onToggle,
     ...rest
   }, ref) {
-    const [show, setShow] = React.useState(false);
+    const [internalShow, setInternalShow] = React.useState(show || false);
     const isClosingPermitted = (source) => {
       console.log('debug', 'isClosingPermitted', { autoClose, source });
 
