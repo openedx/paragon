@@ -20,13 +20,40 @@ export const VARIANTS = {
 class Sheet extends React.Component {
   constructor(props) {
     super(props);
+
+    this.wrapperRef = React.createRef();
     this.renderSheet = this.renderSheet.bind(this);
+    this.handleEscape = this.handleEscape.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+  }
+
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleEscape);
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleEscape);
+    document.removeEventListener('mousedown', this.handleClickOutside);
+  }
+
+  handleEscape(e) {
+    if (e.key === 'Escape' && !this.props.blocking) {
+      this.props.onClose();
+    }
+  }
+
+  handleClickOutside(e) {
+    if (this.wrapperRef?.current && !this.wrapperRef.current.contains(e.target) && !this.props.blocking) {
+      this.props.onClose();
+    }
   }
 
   renderSheet() {
     const { children, position, variant } = this.props;
     return (
       <div
+        ref={this.wrapperRef}
         className={classNames(
           'pgn__sheet-component',
           `pgn__sheet__${variant}`,
@@ -60,7 +87,7 @@ class Sheet extends React.Component {
           )}
           role="presentation"
         />
-        <FocusOn enabled={this.props.blocking}>
+        <FocusOn>
           {this.renderSheet()}
         </FocusOn>
       </SheetContainer>
@@ -82,6 +109,8 @@ Sheet.propTypes = {
   ]),
   /** Boolean used to control whether the Sheet shows. */
   show: PropTypes.bool,
+  /** Specifies function that controls `show` value. */
+  onClose: PropTypes.func,
   /** a string designating which version of the sheet to show (light vs dark) */
   variant: PropTypes.oneOf([VARIANTS.light, VARIANTS.dark]),
 };
@@ -91,6 +120,7 @@ Sheet.defaultProps = {
   children: undefined,
   position: POSITIONS.bottom,
   show: true,
+  onClose: () => {},
   variant: VARIANTS.light,
 };
 
