@@ -43,6 +43,7 @@ const SelectableBox = React.forwardRef(({
     hidden: inputHidden,
     ref: inputRef,
     tabIndex: -1,
+    'aria-label': 'checkbox',
     onChange: () => {},
     ...(type === 'checkbox' && { isIndeterminate }),
   }, null);

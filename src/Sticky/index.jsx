@@ -48,6 +48,7 @@ const Sticky = React.forwardRef(({
 
   return (
     <div
+      role="navigation"
       className={classNames(
         'pgn__sticky',
         `pgn__sticky-${position || 'top'}`,

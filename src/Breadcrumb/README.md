@@ -17,7 +17,7 @@ Use as a secondary navigation pattern to help convey hierarchy and enable naviga
 ### Basic Usage
 
 ```jsx live
-<Breadcrumb
+<Breadcrumb ariaLabel='Breadcrumb basic'
   links={[
     { label: 'Link 1', url: '#link-1' },
     { label: 'Link 2', url: '#link-2' },
@@ -29,7 +29,7 @@ Use as a secondary navigation pattern to help convey hierarchy and enable naviga
 ### Basic Usage (Mobile View)
 
 ```jsx live
-<Breadcrumb
+<Breadcrumb ariaLabel='Breadcrumb mobile view'
   links={[
     { label: 'Link 1', url: '/link-1' },
     { label: 'Link 2', url: '/link-2' },
@@ -43,7 +43,7 @@ Use as a secondary navigation pattern to help convey hierarchy and enable naviga
 
 ```jsx live
 <div className="bg-dark-700 p-4">
-  <Breadcrumb
+  <Breadcrumb ariaLabel='Breadcrum inverse pallete'
     links={[
       { label: 'Link 1', url: '/link-1' },
       { label: 'Link 2', url: '/link-2' },
@@ -57,7 +57,7 @@ Use as a secondary navigation pattern to help convey hierarchy and enable naviga
 ### With active label
 
 ```jsx live
-<Breadcrumb
+<Breadcrumb ariaLabel='Breadcrumb is active'
   links={[
     { label: 'Link 1', url: '#link-1' },
     { label: 'Link 2', url: '#link-2' },
@@ -70,7 +70,7 @@ Use as a secondary navigation pattern to help convey hierarchy and enable naviga
 ### With custom spacer
 
 ```jsx live
-<Breadcrumb
+<Breadcrumb ariaLabel='Breadcrum custom spacer'
   links={[
     { label: 'Link 1', url: '#link-1' },
     { label: 'Link 2', url: '#link-2' },

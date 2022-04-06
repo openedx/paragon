@@ -27,6 +27,7 @@ const CheckboxControl = React.forwardRef(
         type="checkbox"
         {...checkboxProps}
         ref={resolvedRef}
+        aria-label="Checkbox"
       />
     );
   },

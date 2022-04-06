@@ -10,9 +10,9 @@ const Toc = ({ data }) => {
           <li key={heading.url}>
             <a href={heading.url}>{heading.title}</a>
             {!!heading.items && (
-              <ul className="pgn-doc__toc-list">
+              <div className="pgn-doc__toc-list">
                 {generateTree(heading)}
-              </ul>
+              </div>
             )}
           </li>
         ))}

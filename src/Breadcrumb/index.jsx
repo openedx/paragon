@@ -6,13 +6,13 @@ import Icon from '../Icon';
 import { ChevronRight } from '../../icons';
 
 const Breadcrumb = ({
-  links, activeLabel, spacer, clickHandler, variant, isMobile,
+  links, activeLabel, spacer, clickHandler, variant, isMobile, ariaLabel,
 }) => {
   const linkCount = links.length;
   const displayLinks = isMobile ? [links[linkCount - 1]] : links;
 
   return (
-    <nav aria-label="breadcrumb" className={classNames('pgn__breadcrumb', `pgn__breadcrumb-${variant}`)}>
+    <nav aria-label={ariaLabel} className={classNames('pgn__breadcrumb', `pgn__breadcrumb-${variant}`)}>
       <ol className={classNames('list-inline', 'd-flex', 'align-items-center', { 'is-mobile': isMobile })}>
         {displayLinks.map(({ url, label }, i) => (
           <React.Fragment key={url}>
@@ -43,6 +43,8 @@ Breadcrumb.propTypes = {
    * Defaults to `undefined`.
  */
   activeLabel: PropTypes.string,
+  /** label of the element */
+  ariaLabel: PropTypes.string,
   /** allows to add a custom element between the breadcrumb items.
    * Defaults to `>` rendered using the `Icon` component. */
   spacer: PropTypes.element,
@@ -57,6 +59,7 @@ Breadcrumb.propTypes = {
 
 Breadcrumb.defaultProps = {
   activeLabel: undefined,
+  ariaLabel: undefined,
   spacer: undefined,
   clickHandler: undefined,
   variant: 'light',

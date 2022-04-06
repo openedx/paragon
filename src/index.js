@@ -1,3 +1,7 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import axe from '@axe-core/react';
+
 /* eslint-disable import/no-cycle */
 export { default as asInput } from './asInput';
 export { default as ActionRow } from './ActionRow';
@@ -185,3 +189,10 @@ export {
   useFlexLayout,
 } from 'react-table';
 export { default as Bubble } from './Bubble';
+
+/** We initialize the @axe-core/react module here
+ *  to track accessibility errors in all existing Paragon components. */
+if (process.env.NODE_ENV !== 'production' && process.env.FEATURE_ENABLE_AXE) {
+  const TEMPORARY_DELAY = 1000;
+  axe(React, ReactDOM, TEMPORARY_DELAY);
+}

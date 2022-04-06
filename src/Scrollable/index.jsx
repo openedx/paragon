@@ -19,7 +19,8 @@ const Scrollable = ({ children, ...props }) => {
     },
   );
   return (
-    <div {...props} className={className}>
+    // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+    <div {...props} className={className} tabIndex="0">
       <div ref={topSentinelRef} />
       <div className="pgn__scrollable-body-content">
         {children}
