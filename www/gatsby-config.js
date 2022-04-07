@@ -23,6 +23,13 @@ const plugins = [
     },
   },
   {
+    resolve: 'gatsby-plugin-react-axe',
+    options: {
+      debounce: 1000,
+      showInProduction: false,
+    },
+  },
+  {
     resolve: `gatsby-source-filesystem`,
     options: {
       path: `${__dirname}/../src`,

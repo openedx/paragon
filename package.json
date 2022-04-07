@@ -42,7 +42,6 @@
     "generate-changelog": "node generate-changelog.js"
   },
   "dependencies": {
-    "@axe-core/react": "^4.4.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/react-fontawesome": "^0.1.18",
     "@popperjs/core": "^2.11.4",
@@ -53,7 +52,7 @@
     "font-awesome": "^4.7.0",
     "lodash.uniqby": "^4.7.0",
     "mailto-link": "^1.0.0",
-    "prop-types": "^15.7.2",
+    "prop-types": "^15.8.1",
     "react-bootstrap": "^1.6.4",
     "react-focus-on": "^3.5.4",
     "react-popper": "^2.2.5",

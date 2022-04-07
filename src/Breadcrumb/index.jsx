@@ -59,7 +59,7 @@ Breadcrumb.propTypes = {
 
 Breadcrumb.defaultProps = {
   activeLabel: undefined,
-  ariaLabel: undefined,
+  ariaLabel: 'breadcrumb',
   spacer: undefined,
   clickHandler: undefined,
   variant: 'light',

@@ -3,6 +3,7 @@
 exports[`<Sticky /> correct rendering renders without props 1`] = `
 <div
   className="pgn__sticky pgn__sticky-top"
+  role="navigation"
 >
   Sticky
 </div>

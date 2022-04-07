@@ -101,6 +101,7 @@ exports[`Menu Item renders correctly renders as expected with menu items 1`] = `
     className="pgn__form-checkbox pgn__menu-item"
   >
     <input
+      aria-label="Checkbox"
       className="pgn__form-checkbox-input"
       id="form-field1"
       type="checkbox"
