@@ -15,10 +15,8 @@ const Dropdown = React.forwardRef(
     onToggle,
     ...rest
   }, ref) {
-    const [internalShow, setInternalShow] = React.useState(show || false);
+    const [internalShow, setInternalShow] = React.useState(show);
     const isClosingPermitted = (source) => {
-      console.log('debug', 'isClosingPermitted', { autoClose, source });
-
       // autoClose=false only permits close on button click
       if (autoClose === false) {
         return source === 'click';
@@ -36,20 +34,21 @@ const Dropdown = React.forwardRef(
 
     const handleToggle = (isOpen, event, metadata) => {
       if (isOpen) {
-        setShow(true);
+        setInternalShow(true);
         return;
       }
       let { source } = { ...metadata };
+
       if (event.currentTarget === document && (source !== 'keydown' || event.key === 'Escape')) {
         source = 'rootClose';
       }
       if (isClosingPermitted(source)) {
-        setShow(false);
+        setInternalShow(false);
         onToggle?.(isOpen, event, metadata);
       }
     };
 
-    return <BaseDropdown show={show} onToggle={handleToggle} {...rest} ref={ref} />;
+    return <BaseDropdown show={internalShow} onToggle={handleToggle} {...rest} ref={ref} data-testid="dropdown" />;
   },
 );
 
@@ -69,12 +68,17 @@ const DropdownToggle = React.forwardRef(
 
 Dropdown.propTypes = {
   onToggle: PropTypes.func,
-  autoClose: PropTypes.bool,
+  autoClose: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.bool,
+  ]),
+  show: PropTypes.bool,
 };
 
 Dropdown.defaultProps = {
   onToggle: undefined,
   autoClose: true,
+  show: false,
 };
 
 DropdownToggle.propTypes = {
