@@ -23,30 +23,6 @@ class Sheet extends React.Component {
 
     this.wrapperRef = React.createRef();
     this.renderSheet = this.renderSheet.bind(this);
-    this.handleEscape = this.handleEscape.bind(this);
-    this.handleClickOutside = this.handleClickOutside.bind(this);
-  }
-
-  componentDidMount() {
-    document.addEventListener('keydown', this.handleEscape);
-    document.addEventListener('mousedown', this.handleClickOutside);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleEscape);
-    document.removeEventListener('mousedown', this.handleClickOutside);
-  }
-
-  handleEscape(e) {
-    if (e.key === 'Escape' && !this.props.blocking) {
-      this.props.onClose();
-    }
-  }
-
-  handleClickOutside(e) {
-    if (this.wrapperRef?.current && !this.wrapperRef.current.contains(e.target) && !this.props.blocking) {
-      this.props.onClose();
-    }
   }
 
   renderSheet() {
@@ -74,6 +50,7 @@ class Sheet extends React.Component {
     const {
       blocking,
       show,
+      onClose,
     } = this.props;
     if (!show) {
       return null;
@@ -87,7 +64,10 @@ class Sheet extends React.Component {
           )}
           role="presentation"
         />
-        <FocusOn>
+        <FocusOn
+          onClickOutside={blocking ? () => {} : onClose}
+          onEscapeKey={blocking ? () => {} : onClose}
+        >
           {this.renderSheet()}
         </FocusOn>
       </SheetContainer>
