@@ -1,5 +1,5 @@
 {
-  "lastModified": 1649340504435,
+  "lastModified": 1649426929306,
   "projectUsages": [
     {
       "version": "19.10.2",
@@ -9824,7 +9824,7 @@
       }
     },
     {
-      "version": "17.2.0",
+      "version": "19.9.0",
       "name": "@edx/frontend-app-ecommerce",
       "repository": {
         "type": "git",
@@ -9837,7 +9837,7 @@
             "filePath": "src/order-history/OrderHistoryPage.jsx",
             "line": 49,
             "column": 8,
-            "version": "17.2.0"
+            "version": "19.9.0"
           }
         ],
         "Pagination": [
@@ -9845,7 +9845,7 @@
             "filePath": "src/order-history/OrderHistoryPage.jsx",
             "line": 71,
             "column": 6,
-            "version": "17.2.0"
+            "version": "19.9.0"
           }
         ],
         "Table": [
@@ -9853,7 +9853,7 @@
             "filePath": "src/order-history/OrderHistoryPage.jsx",
             "line": 94,
             "column": 6,
-            "version": "17.2.0"
+            "version": "19.9.0"
           }
         ]
       }
@@ -16440,7 +16440,7 @@
       }
     },
     {
-      "version": "16.24.0",
+      "version": "19.6.0",
       "name": "@edx/frontend-app-payment",
       "repository": {
         "type": "git",
@@ -16453,7 +16453,7 @@
             "filePath": "src/feedback/AlertMessage.jsx",
             "line": 45,
             "column": 9,
-            "version": "16.24.0"
+            "version": "19.6.0"
           }
         ],
         "Hyperlink": [
@@ -16461,31 +16461,31 @@
             "filePath": "src/feedback/FallbackErrorMessage.jsx",
             "line": 13,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.6.0"
           },
           {
             "filePath": "src/payment/AlertCodeMessages.jsx",
             "line": 22,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.6.0"
           },
           {
             "filePath": "src/payment/checkout/FreeCheckoutOrderButton.jsx",
             "line": 9,
             "column": 4,
-            "version": "16.24.0"
+            "version": "19.6.0"
           },
           {
             "filePath": "src/payment/EmptyCartMessage.jsx",
             "line": 23,
             "column": 14,
-            "version": "16.24.0"
+            "version": "19.6.0"
           },
           {
             "filePath": "src/payment/EmptyCartMessage.jsx",
             "line": 32,
             "column": 14,
-            "version": "16.24.0"
+            "version": "19.6.0"
           }
         ],
         "Collapsible": [
@@ -16493,7 +16493,7 @@
             "filePath": "src/payment/cart/Cart.jsx",
             "line": 102,
             "column": 12,
-            "version": "16.24.0"
+            "version": "19.6.0"
           }
         ],
         "ValidationFormGroup": [
@@ -16501,7 +16501,7 @@
             "filePath": "src/payment/cart/CouponForm.jsx",
             "line": 47,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.6.0"
           }
         ],
         "Input": [
@@ -16509,13 +16509,13 @@
             "filePath": "src/payment/cart/CouponForm.jsx",
             "line": 55,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.6.0"
           },
           {
             "filePath": "src/payment/cart/UpdateQuantityForm.jsx",
             "line": 36,
             "column": 10,
-            "version": "16.24.0"
+            "version": "19.6.0"
           }
         ],
         "Button": [
@@ -16523,13 +16523,13 @@
             "filePath": "src/payment/cart/CouponForm.jsx",
             "line": 57,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.6.0"
           },
           {
             "filePath": "src/payment/cart/CouponForm.jsx",
             "line": 124,
             "column": 8,
-            "version": "16.24.0"
+            "version": "19.6.0"
           }
         ],
         "StatefulButton": [
@@ -16537,13 +16537,13 @@
             "filePath": "src/payment/cart/UpdateQuantityForm.jsx",
             "line": 65,
             "column": 6,
-            "version": "16.24.0"
+            "version": "19.6.0"
           },
           {
             "filePath": "src/payment/checkout/payment-form/PaymentForm.jsx",
             "line": 226,
             "column": 18,
-            "version": "16.24.0"
+            "version": "19.6.0"
           }
         ]
       }
@@ -16781,7 +16781,7 @@
       }
     },
     {
-      "version": "19.10.2",
+      "version": "19.14.0",
       "name": "edx-frontend-app-publisher",
       "repository": "https://github.com/edx/frontend-app-publisher",
       "folderName": "frontend-app-publisher",
@@ -16791,7 +16791,7 @@
             "filePath": "src/components/ActionButton/index.jsx",
             "line": 8,
             "column": 2,
-            "version": "19.10.2"
+            "version": "19.14.0"
           }
         ],
         "Icon": [
@@ -16799,67 +16799,67 @@
             "filePath": "src/components/Collaborator/index.jsx",
             "line": 32,
             "column": 8,
-            "version": "19.10.2"
+            "version": "19.14.0"
           },
           {
             "filePath": "src/components/Collaborator/index.jsx",
             "line": 53,
             "column": 10,
-            "version": "19.10.2"
+            "version": "19.14.0"
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
             "line": 108,
             "column": 8,
-            "version": "19.10.2"
+            "version": "19.14.0"
           },
           {
             "filePath": "src/components/LoadingSpinner/index.jsx",
             "line": 10,
             "column": 4,
-            "version": "19.10.2"
+            "version": "19.14.0"
           },
           {
             "filePath": "src/components/RemoveButton/index.jsx",
             "line": 20,
             "column": 4,
-            "version": "19.10.2"
+            "version": "19.14.0"
           },
           {
             "filePath": "src/components/SidePanes/CommentsPane.jsx",
             "line": 101,
             "column": 24,
-            "version": "19.10.2"
+            "version": "19.14.0"
           },
           {
             "filePath": "src/components/SidePanes/UsersPane.jsx",
             "line": 108,
             "column": 13,
-            "version": "19.10.2"
+            "version": "19.14.0"
           },
           {
             "filePath": "src/components/SidePanes/UsersPane.jsx",
             "line": 141,
             "column": 16,
-            "version": "19.10.2"
+            "version": "19.14.0"
           },
           {
             "filePath": "src/components/Staffer/index.jsx",
             "line": 29,
             "column": 8,
-            "version": "19.10.2"
+            "version": "19.14.0"
           },
           {
             "filePath": "src/components/Staffer/index.jsx",
             "line": 43,
             "column": 10,
-            "version": "19.10.2"
+            "version": "19.14.0"
           },
           {
             "filePath": "src/components/StatusAlert/index.jsx",
             "line": 32,
             "column": 14,
-            "version": "19.10.2"
+            "version": "19.14.0"
           }
         ],
         "Collapsible.Advanced": [
@@ -16867,7 +16867,7 @@
             "filePath": "src/components/Collapsible/index.jsx",
             "line": 32,
             "column": 2,
-            "version": "19.10.2"
+            "version": "19.14.0"
           }
         ],
         "Collapsible.Trigger": [
@@ -16875,7 +16875,7 @@
             "filePath": "src/components/Collapsible/index.jsx",
             "line": 33,
             "column": 4,
-            "version": "19.10.2"
+            "version": "19.14.0"
           }
         ],
         "Collapsible.Visible": [
@@ -16883,13 +16883,13 @@
             "filePath": "src/components/Collapsible/index.jsx",
             "line": 35,
             "column": 6,
-            "version": "19.10.2"
+            "version": "19.14.0"
           },
           {
             "filePath": "src/components/Collapsible/index.jsx",
             "line": 38,
             "column": 6,
-            "version": "19.10.2"
+            "version": "19.14.0"
           }
         ],
         "Modal": [
@@ -16897,7 +16897,7 @@
             "filePath": "src/components/ConfirmationModal/index.jsx",
             "line": 13,
             "column": 2,
-            "version": "19.10.2"
+            "version": "19.14.0"
           }
         ],
         "SearchField": [
@@ -16905,7 +16905,7 @@
             "filePath": "src/components/CourseTable/index.jsx",
             "line": 163,
             "column": 12,
-            "version": "19.10.2"
+            "version": "19.14.0"
           }
         ],
         "InputText": [
@@ -16913,19 +16913,19 @@
             "filePath": "src/components/DateTimeField/index.jsx",
             "line": 87,
             "column": 10,
-            "version": "19.10.2"
+            "version": "19.14.0"
           },
           {
             "filePath": "src/components/DateTimeField/index.jsx",
             "line": 110,
             "column": 10,
-            "version": "19.10.2"
+            "version": "19.14.0"
           },
           {
             "filePath": "src/components/RenderInputTextField/index.jsx",
             "line": 18,
             "column": 2,
-            "version": "19.10.2"
+            "version": "19.14.0"
           }
         ],
         "Hyperlink": [
@@ -16933,25 +16933,25 @@
             "filePath": "src/components/EditCoursePage/CollapsibleCourseRun.jsx",
             "line": 66,
             "column": 12,
-            "version": "19.10.2"
+            "version": "19.14.0"
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
             "line": 131,
             "column": 10,
-            "version": "19.10.2"
+            "version": "19.14.0"
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
             "line": 145,
             "column": 10,
-            "version": "19.10.2"
+            "version": "19.14.0"
           },
           {
             "filePath": "src/components/Header/index.jsx",
             "line": 27,
             "column": 12,
-            "version": "19.10.2"
+            "version": "19.14.0"
           }
         ],
         "Badge": [
@@ -16959,7 +16959,7 @@
             "filePath": "src/components/EditCoursePage/CourseSkills.jsx",
             "line": 29,
             "column": 10,
-            "version": "19.10.2"
+            "version": "19.14.0"
           }
         ],
         "DropdownButton": [
@@ -16967,7 +16967,7 @@
             "filePath": "src/components/Header/index.jsx",
             "line": 43,
             "column": 12,
-            "version": "19.10.2"
+            "version": "19.14.0"
           }
         ],
         "Dropdown.Item": [
@@ -16975,7 +16975,7 @@
             "filePath": "src/components/Header/index.jsx",
             "line": 48,
             "column": 14,
-            "version": "19.10.2"
+            "version": "19.14.0"
           }
         ],
         "InputSelect": [
@@ -16983,13 +16983,13 @@
             "filePath": "src/components/RenderSelectField/index.jsx",
             "line": 15,
             "column": 2,
-            "version": "19.10.2"
+            "version": "19.14.0"
           },
           {
             "filePath": "src/components/SidePanes/UsersPane.jsx",
             "line": 148,
             "column": 16,
-            "version": "19.10.2"
+            "version": "19.14.0"
           }
         ],
         "TextArea": [
@@ -16997,7 +16997,7 @@
             "filePath": "src/components/SidePanes/CommentsPane.jsx",
             "line": 123,
             "column": 14,
-            "version": "19.10.2"
+            "version": "19.14.0"
           }
         ],
         "StatusAlert": [
@@ -17005,7 +17005,7 @@
             "filePath": "src/components/StatusAlert/index.jsx",
             "line": 18,
             "column": 4,
-            "version": "19.10.2"
+            "version": "19.14.0"
           }
         ],
         "Table": [
@@ -17013,7 +17013,7 @@
             "filePath": "src/components/TableComponent/index.jsx",
             "line": 93,
             "column": 10,
-            "version": "19.10.2"
+            "version": "19.14.0"
           }
         ],
         "Pagination": [
@@ -17021,7 +17021,7 @@
             "filePath": "src/components/TableComponent/index.jsx",
             "line": 105,
             "column": 12,
-            "version": "19.10.2"
+            "version": "19.14.0"
           }
         ]
       }
@@ -19619,13 +19619,13 @@
           },
           {
             "filePath": "src/components/Course/CourseSnapshot/index.jsx",
-            "line": 143,
+            "line": 145,
             "column": 22,
             "version": "19.4.2"
           },
           {
             "filePath": "src/components/Course/CourseSnapshot/index.jsx",
-            "line": 186,
+            "line": 188,
             "column": 24,
             "version": "19.4.2"
           },
@@ -19907,8 +19907,8 @@
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 193,
-            "column": 12,
+            "line": 195,
+            "column": 16,
             "version": "19.4.2"
           },
           {
@@ -20419,7 +20419,7 @@
           },
           {
             "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 327,
+            "line": 368,
             "column": 14,
             "version": "19.4.2"
           },
