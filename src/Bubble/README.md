@@ -4,6 +4,8 @@ type: 'component'
 components:
 - Bubble
 status: 'New'
+categories:
+- Status & metadata
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
@@ -17,7 +19,7 @@ Represents the filled circle with a number of an icon, supporting the usual colo
 () => {
   return (
     <>
-      <div style={{ display: 'flex', alignItems: 'center', width: '200px', justifyContent: 'space-between', marginBottom: '10px' }}>
+      <Stack direction="horizontal" gap={4} className="mb-2">
         <Bubble>
           1
         </Bubble>
@@ -30,11 +32,8 @@ Represents the filled circle with a number of an icon, supporting the usual colo
         <Bubble variant="success">
           1
         </Bubble>
-        <Bubble disabled>
-          1
-        </Bubble>
-      </div>
-      <div style={{ display: 'flex', alignItems: 'center', width: '200px', justifyContent: 'space-between' }}>
+      </Stack>
+      <Stack direction="horizontal" gap={4} className="mb-2">
         <Bubble>
           <Icon src={Check} />
         </Bubble>
@@ -47,12 +46,25 @@ Represents the filled circle with a number of an icon, supporting the usual colo
         <Bubble variant="success">
           <Icon src={Check} />
         </Bubble>
-        <Bubble disabled>
-          <Icon src={Check} />
-        </Bubble>
-      </div>
+      </Stack>
     </>
   );
 }
+```
 
+### Disabled variant
+
+```jsx live
+() => {
+  return (
+    <Stack direction="horizontal" gap={4} className="mb-2">
+      <Bubble disabled>
+        1
+      </Bubble>
+      <Bubble disabled>
+        <Icon src={Check} />
+      </Bubble>
+    </Stack>
+  );
+}
 ```
