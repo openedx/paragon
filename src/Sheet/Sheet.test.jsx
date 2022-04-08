@@ -1,6 +1,5 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { fireEvent, render } from '@testing-library/react';
 import Sheet, { POSITIONS, VARIANTS } from './index';
 
 /* eslint-disable react/prop-types */
@@ -49,34 +48,6 @@ describe('<Sheet />', () => {
     it('returns empty render if show is false', () => {
       expect(renderJSON(<Sheet show={false} />)).toEqual(null);
       expect(renderJSON(<Sheet />)).not.toEqual(null);
-    });
-  });
-  describe('correct interactions', () => {
-    it('closes on Escape if not blocking', () => {
-      const func = jest.fn();
-      render(
-        <div id="test">
-          <Sheet show onClose={func} />
-        </div>,
-      );
-      fireEvent.keyDown(document.getElementById('test'), {
-        key: 'Escape',
-        code: 'Escape',
-        keyCode: 27,
-        charCode: 27,
-      });
-      expect(func).toHaveBeenCalledTimes(1);
-    });
-    it('closes on backdrop click if not blocking', () => {
-      const func = jest.fn();
-      render(
-        <div>
-          <div id="backdrop" />
-          <Sheet show onClose={func} />
-        </div>,
-      );
-      fireEvent.mouseDown(document.getElementById('backdrop'));
-      expect(func).toHaveBeenCalledTimes(1);
     });
   });
 });

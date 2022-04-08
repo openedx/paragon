@@ -29,7 +29,6 @@ class Sheet extends React.Component {
     const { children, position, variant } = this.props;
     return (
       <div
-        ref={this.wrapperRef}
         className={classNames(
           'pgn__sheet-component',
           `pgn__sheet__${variant}`,
@@ -67,6 +66,7 @@ class Sheet extends React.Component {
         <FocusOn
           onClickOutside={blocking ? () => {} : onClose}
           onEscapeKey={blocking ? () => {} : onClose}
+          shards={[this.wrapperRef]}
         >
           {this.renderSheet()}
         </FocusOn>

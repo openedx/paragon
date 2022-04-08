@@ -6,7 +6,17 @@ exports[`<Sheet /> snapshots blocking, left snapshot 1`] = `
     className="pgn__sheet-skrim"
     role="presentation"
   />
-  <focus-on>
+  <focus-on
+    onClickOutside={[Function]}
+    onEscapeKey={[Function]}
+    shards={
+      Array [
+        Object {
+          "current": null,
+        },
+      ]
+    }
+  >
     <div
       aria-atomic="true"
       aria-live="polite"
@@ -27,7 +37,17 @@ exports[`<Sheet /> snapshots dark, right snapshot 1`] = `
     className="pgn__sheet-skrim hidden"
     role="presentation"
   />
-  <focus-on>
+  <focus-on
+    onClickOutside={[Function]}
+    onEscapeKey={[Function]}
+    shards={
+      Array [
+        Object {
+          "current": null,
+        },
+      ]
+    }
+  >
     <div
       aria-atomic="true"
       aria-live="polite"
@@ -48,7 +68,17 @@ exports[`<Sheet /> snapshots default args snapshot: bottom, show, light 1`] = `
     className="pgn__sheet-skrim hidden"
     role="presentation"
   />
-  <focus-on>
+  <focus-on
+    onClickOutside={[Function]}
+    onEscapeKey={[Function]}
+    shards={
+      Array [
+        Object {
+          "current": null,
+        },
+      ]
+    }
+  >
     <div
       aria-atomic="true"
       aria-live="polite"
