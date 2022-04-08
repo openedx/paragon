@@ -6,7 +6,7 @@ import { useTable } from 'react-table';
 
 import Table from './Table';
 import getVisibleColumns from './utils/getVisibleColumns';
-import { requiredWhen } from '../utils/propTypesUtils';
+import { requiredWhen, requiredWhenNot } from '../utils/propTypesUtils';
 import getTableArgs from './utils/getTableArgs';
 import TableControlBar from './TableControlBar';
 import EmptyTableContent from './EmptyTable';
@@ -191,7 +191,19 @@ DataTable.propTypes = {
     /** User visible column name */
     Header: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
     /** String used to access the correct cell data for this column */
-    accessor: PropTypes.string,
+    accessor: requiredWhenNot(PropTypes.string, 'Cell'),
+    /** Specifies a function that receives `row` as argument and returns cell content */
+    Cell: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
+    /** Specifies filter component */
+    Filter: PropTypes.func,
+    /** Specifies filter type */
+    filter: PropTypes.string,
+    /** Specifies filter choices */
+    filterChoices: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string,
+      number: PropTypes.number,
+      value: PropTypes.string,
+    })),
   })).isRequired,
   /** Data to be displayed in the table */
   data: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
