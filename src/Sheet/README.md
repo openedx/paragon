@@ -66,5 +66,5 @@ notes: |
 ```
 
 <testguide
-  selectors="`pgn__sheet-component`, `role="presentation"`"
+  selectors='`pgn__sheet-component`, `role="presentation"`'
 />
