@@ -3,25 +3,18 @@ import PropTypes from 'prop-types';
 import { DataTable, Container, breakpoints } from '~paragon-react'; // eslint-disable-line
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
+import CodeBlock from '../../components/CodeBlock';
 
-const getBreakpointDescription = (breakpoint) => {
-  switch (breakpoint) {
-    case 'extraSmall':
-      return { name: 'Extra small', identifier: 'xs' };
-    case 'small':
-      return { name: 'Small', identifier: 'sm' };
-    case 'medium':
-      return { name: 'Medium', identifier: 'md' };
-    case 'large':
-      return { name: 'Large', identifier: 'lg' };
-    case 'extraLarge':
-      return { name: 'Extra large', identifier: 'xl' };
-    case 'extraExtraLarge':
-      return { name: '2Extra large', identifier: 'xxl' };
-    default:
-      return {};
-  }
+const BREAKPOINT_DESCRIPTIONS = {
+  extraSmall: { name: 'Extra small', identifier: 'xs' },
+  small: { name: 'Small', identifier: 'xs' },
+  medium: { name: 'Medium', identifier: 'md' },
+  large: { name: 'Large', identifier: 'lg' },
+  extraLarge: { name: 'Extra large', identifier: 'xl' },
+  extraExtraLarge: { name: 'Extra extra large', identifier: 'xxl' },
 };
+
+const getBreakpointDescription = (breakpoint) => BREAKPOINT_DESCRIPTIONS[breakpoint] || {};
 
 const IdentifierCell = ({ row }) => <code>{row.values.identifier}</code>;
 const MinWidthCell = ({ row }) => <code>{row.values.minWidth ? `${row.values.minWidth}px` : '-'}</code>;
@@ -42,24 +35,35 @@ const Responsive = () => {
         {/* eslint-disable-next-line react/jsx-pascal-case */}
         <SEO title="Responsive" />
         <h1>Responsive</h1>
-        <h3>Break points</h3>
+        <h3>Available breakpoints</h3>
         <p>
           Define the minimum and maximum dimensions at which your layout will change,
           adapting to different screen sizes, for use in media queries.
         </p>
-        <h3>CSS Utilities</h3>
         <DataTable
           className="pgn-doc__spacing-table"
           data={breakpointsData}
           columns={[
-            { Header: 'Name', accessor: 'name' },
-            { Header: 'Identifier', accessor: 'identifier', Cell: IdentifierCell },
+            { Header: 'Breakpoint', accessor: 'name' },
+            { Header: 'Class infix', accessor: 'identifier', Cell: IdentifierCell },
             { Header: 'Min width', accessor: 'minWidth', Cell: MinWidthCell },
             { Header: 'Max Width', accessor: 'maxWidth', Cell: MaxWidthCell },
           ]}
         >
           <DataTable.Table />
         </DataTable>
+        <h3 className="mt-3">Basic usage</h3>
+        <p>
+          To access or change the breakpoints in the scss use <code>$grid-breakpoints</code> variable.
+        </p>
+        <p>
+          Example when the screen is narrower than <code>md</code> breakpoint.
+        </p>
+        <CodeBlock>{'@include media-breakpoint-down(map-get($grid-breakpoints, \'md\')) { // styles here }'}</CodeBlock>
+        <p>
+          Example when the screen is wider than <code>lg</code> breakpoint.
+        </p>
+        <CodeBlock>{'@include media-breakpoint-up(map-get($grid-breakpoints, \'lg\')) { // styles here }'}</CodeBlock>
       </Container>
     </Layout>
   );
