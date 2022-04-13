@@ -22,7 +22,7 @@
   .pgn__card-header-content {
     display: flex;
     flex-direction: column;
-    margin-top: map_get($spacers, 4);
+    margin-top: map_get($spacers, 4\.5);
     overflow: auto;
     text-align: start;
     width: 100%;
@@ -213,6 +213,8 @@
   border-radius: $card-logo-border-radius;
   box-shadow: $level-1-box-shadow;
   z-index: 1;
+  padding: map_get($spacers, 2);
+  background-color: $white;
 }
 
 .pgn__card {
