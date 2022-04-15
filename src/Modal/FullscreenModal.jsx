@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ModalDialog from './ModalDialog';
 
+export const FULLSCREEN_MODAL_CLOSE_LABEL = 'Close';
+
 const FullscreenModal = ({
   children,
   footerNode,
@@ -60,7 +62,7 @@ FullscreenModal.defaultProps = {
   hasCloseButton: true,
   size: 'fullscreen',
   variant: 'dark',
-  closeLabel: 'Close',
+  closeLabel: FULLSCREEN_MODAL_CLOSE_LABEL,
   className: undefined,
   isFullscreenScroll: false,
   footerNode: null,

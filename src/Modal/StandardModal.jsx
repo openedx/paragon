@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ModalDialog from './ModalDialog';
 
+export const STANDARD_MODAL_CLOSE_LABEL = 'Close';
+
 const StandardModal = ({
   children,
   footerNode,
@@ -58,7 +60,7 @@ StandardModal.defaultProps = {
   hasCloseButton: true,
   size: 'md',
   variant: 'default',
-  closeLabel: 'Close',
+  closeLabel: STANDARD_MODAL_CLOSE_LABEL,
   className: undefined,
   isFullscreenScroll: false,
   footerNode: null,
