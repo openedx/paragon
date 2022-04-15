@@ -1,5 +1,5 @@
 {
-  "lastModified": 1649945513365,
+  "lastModified": 1650031728510,
   "projectUsages": [
     {
       "version": "19.15.1",
@@ -1675,6 +1675,12 @@
             "version": "19.13.6"
           },
           {
+            "filePath": "src/components/settings/ConfigError.jsx",
+            "line": 23,
+            "column": 8,
+            "version": "19.13.6"
+          },
+          {
             "filePath": "src/components/settings/SettingsAccessTab/ActionsTableCell.jsx",
             "line": 72,
             "column": 12,
@@ -1696,12 +1702,6 @@
             "filePath": "src/components/settings/SettingsAccessTab/LinkDeactivationAlertModal.jsx",
             "line": 58,
             "column": 10,
-            "version": "19.13.6"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/ConfigError.jsx",
-            "line": 23,
-            "column": 8,
             "version": "19.13.6"
           },
           {
@@ -1748,19 +1748,19 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 287,
+            "line": 288,
             "column": 10,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 289,
+            "line": 290,
             "column": 12,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 297,
+            "line": 298,
             "column": 12,
             "version": "19.13.6"
           },
@@ -1790,19 +1790,13 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 213,
-            "column": 10,
-            "version": "19.13.6"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
             "line": 214,
             "column": 10,
             "version": "19.13.6"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 211,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 215,
             "column": 10,
             "version": "19.13.6"
           },
@@ -1813,8 +1807,8 @@
             "version": "19.13.6"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 208,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 213,
             "column": 10,
             "version": "19.13.6"
           },
@@ -1822,6 +1816,18 @@
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
             "line": 209,
             "column": 10,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 210,
+            "column": 10,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
+            "line": 155,
+            "column": 8,
             "version": "19.13.6"
           },
           {
@@ -2002,31 +2008,31 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 199,
+            "line": 200,
             "column": 8,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 217,
+            "line": 218,
             "column": 8,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 230,
+            "line": 231,
             "column": 8,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 243,
+            "line": 244,
             "column": 8,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 256,
+            "line": 257,
             "column": 8,
             "version": "19.13.6"
           },
@@ -2074,121 +2080,121 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 109,
+            "line": 110,
             "column": 8,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 127,
+            "line": 128,
             "column": 8,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 140,
+            "line": 141,
             "column": 8,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 153,
+            "line": 154,
             "column": 8,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 167,
+            "column": 8,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 185,
+            "column": 8,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 199,
+            "column": 8,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 118,
+            "column": 8,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 136,
+            "column": 8,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 154,
+            "column": 8,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
             "line": 166,
             "column": 8,
             "version": "19.13.6"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 184,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 182,
             "column": 8,
             "version": "19.13.6"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
             "line": 198,
             "column": 8,
             "version": "19.13.6"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 117,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 109,
             "column": 8,
             "version": "19.13.6"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 135,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 127,
             "column": 8,
             "version": "19.13.6"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 153,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 145,
             "column": 8,
             "version": "19.13.6"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 165,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 157,
             "column": 8,
             "version": "19.13.6"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 169,
+            "column": 8,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
             "line": 181,
             "column": 8,
             "version": "19.13.6"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 197,
-            "column": 8,
-            "version": "19.13.6"
-          },
-          {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 108,
-            "column": 8,
-            "version": "19.13.6"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 126,
-            "column": 8,
-            "version": "19.13.6"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 144,
-            "column": 8,
-            "version": "19.13.6"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 156,
-            "column": 8,
-            "version": "19.13.6"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 168,
-            "column": 8,
-            "version": "19.13.6"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 180,
-            "column": 8,
-            "version": "19.13.6"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 192,
+            "line": 193,
             "column": 8,
             "version": "19.13.6"
           },
@@ -2286,7 +2292,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 193,
+            "line": 194,
             "column": 10,
             "version": "19.13.6"
           },
@@ -2372,31 +2378,31 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 200,
+            "line": 201,
             "column": 10,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 218,
+            "line": 219,
             "column": 10,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 231,
+            "line": 232,
             "column": 10,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 244,
+            "line": 245,
             "column": 10,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 257,
+            "line": 258,
             "column": 10,
             "version": "19.13.6"
           },
@@ -2444,115 +2450,115 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 110,
+            "line": 111,
             "column": 10,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 128,
+            "line": 129,
             "column": 10,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 141,
+            "line": 142,
             "column": 10,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 154,
+            "line": 155,
             "column": 10,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 168,
+            "column": 10,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 186,
+            "column": 10,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "line": 200,
+            "column": 10,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 119,
+            "column": 10,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 137,
+            "column": 10,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 155,
+            "column": 10,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
             "line": 167,
             "column": 10,
             "version": "19.13.6"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 185,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "line": 183,
             "column": 10,
             "version": "19.13.6"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
             "line": 199,
             "column": 10,
             "version": "19.13.6"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 118,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 110,
             "column": 10,
             "version": "19.13.6"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 136,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 128,
             "column": 10,
             "version": "19.13.6"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 154,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 146,
             "column": 10,
             "version": "19.13.6"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 166,
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 158,
             "column": 10,
             "version": "19.13.6"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 170,
+            "column": 10,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
             "line": 182,
-            "column": 10,
-            "version": "19.13.6"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 198,
-            "column": 10,
-            "version": "19.13.6"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 109,
-            "column": 10,
-            "version": "19.13.6"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 127,
-            "column": 10,
-            "version": "19.13.6"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 145,
-            "column": 10,
-            "version": "19.13.6"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 157,
-            "column": 10,
-            "version": "19.13.6"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 169,
-            "column": 10,
-            "version": "19.13.6"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 181,
             "column": 10,
             "version": "19.13.6"
           },
@@ -3029,6 +3035,12 @@
             "version": "19.13.6"
           },
           {
+            "filePath": "src/components/settings/ConfigError.jsx",
+            "line": 15,
+            "column": 2,
+            "version": "19.13.6"
+          },
+          {
             "filePath": "src/components/settings/SettingsAccessTab/DisableLinkManagementAlertModal.jsx",
             "line": 32,
             "column": 4,
@@ -3038,12 +3050,6 @@
             "filePath": "src/components/settings/SettingsAccessTab/LinkDeactivationAlertModal.jsx",
             "line": 52,
             "column": 4,
-            "version": "19.13.6"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/ConfigError.jsx",
-            "line": 15,
-            "column": 2,
             "version": "19.13.6"
           }
         ],
@@ -3057,6 +3063,12 @@
           {
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentSubmit.jsx",
             "line": 41,
+            "column": 6,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/ConfigError.jsx",
+            "line": 21,
             "column": 6,
             "version": "19.13.6"
           },
@@ -3076,12 +3088,6 @@
             "filePath": "src/components/settings/SettingsAccessTab/LinkDeactivationAlertModal.jsx",
             "line": 57,
             "column": 8,
-            "version": "19.13.6"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/ConfigError.jsx",
-            "line": 21,
-            "column": 6,
             "version": "19.13.6"
           },
           {
@@ -3762,7 +3768,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/index.jsx",
-            "line": 36,
+            "line": 45,
             "column": 10,
             "version": "19.13.6"
           },
@@ -4020,6 +4026,12 @@
             "filePath": "src/components/settings/SettingsLMSTab/LMSCard.jsx",
             "line": 7,
             "column": 2,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
+            "line": 90,
+            "column": 12,
             "version": "19.13.6"
           },
           {
@@ -4457,7 +4469,7 @@
             "version": "19.13.6"
           },
           {
-            "filePath": "src/components/settings/SettingsLMSTab/ConfigError.jsx",
+            "filePath": "src/components/settings/ConfigError.jsx",
             "line": 24,
             "column": 10,
             "version": "19.13.6"
@@ -4470,13 +4482,13 @@
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
-            "line": 12,
+            "line": 162,
             "column": 10,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/index.jsx",
-            "line": 19,
+            "line": 21,
             "column": 8,
             "version": "19.13.6"
           },
@@ -4991,6 +5003,12 @@
             "line": 97,
             "column": 10,
             "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
+            "line": 101,
+            "column": 18,
+            "version": "19.13.6"
           }
         ],
         "Dropdown.Toggle": [
@@ -5005,6 +5023,12 @@
             "line": 98,
             "column": 12,
             "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
+            "line": 102,
+            "column": 20,
+            "version": "19.13.6"
           }
         ],
         "Dropdown.Menu": [
@@ -5018,6 +5042,12 @@
             "filePath": "src/components/settings/SettingsLMSTab/ExistingLMSCardDeck.jsx",
             "line": 107,
             "column": 12,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
+            "line": 111,
+            "column": 20,
             "version": "19.13.6"
           }
         ],
@@ -5050,6 +5080,30 @@
             "filePath": "src/components/settings/SettingsLMSTab/ExistingLMSCardDeck.jsx",
             "line": 138,
             "column": 14,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
+            "line": 113,
+            "column": 24,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
+            "line": 120,
+            "column": 24,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
+            "line": 128,
+            "column": 26,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
+            "line": 136,
+            "column": 22,
             "version": "19.13.6"
           }
         ],
@@ -5786,7 +5840,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 210,
+            "line": 211,
             "column": 10,
             "version": "19.13.6"
           },
@@ -5810,43 +5864,43 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 120,
+            "line": 121,
             "column": 10,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 196,
+            "line": 197,
             "column": 10,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 210,
+            "line": 211,
             "column": 10,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 128,
+            "line": 129,
             "column": 10,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 178,
+            "line": 179,
             "column": 12,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 194,
+            "line": 195,
             "column": 12,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 119,
+            "line": 120,
             "column": 10,
             "version": "19.13.6"
           },
@@ -5886,6 +5940,14 @@
             "filePath": "src/components/SearchBar/index.jsx",
             "line": 6,
             "column": 2,
+            "version": "19.13.6"
+          }
+        ],
+        "ActionRow.Spacer": [
+          {
+            "filePath": "src/components/settings/ConfigError.jsx",
+            "line": 22,
+            "column": 8,
             "version": "19.13.6"
           }
         ],
@@ -5960,7 +6022,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/index.jsx",
-            "line": 43,
+            "line": 52,
             "column": 27,
             "version": "19.13.6"
           },
@@ -6051,6 +6113,24 @@
             "version": "19.13.6"
           },
           {
+            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
+            "line": 146,
+            "column": 45,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
+            "line": 147,
+            "column": 65,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
+            "line": 148,
+            "column": 66,
+            "version": "19.13.6"
+          },
+          {
             "filePath": "src/components/settings/SettingsSSOTab/SSOConfigConfiguredCard.jsx",
             "line": 124,
             "column": 30,
@@ -6081,14 +6161,6 @@
             "version": "19.13.6"
           }
         ],
-        "ActionRow.Spacer": [
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/ConfigError.jsx",
-            "line": 22,
-            "column": 8,
-            "version": "19.13.6"
-          }
-        ],
         "Card.Header": [
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingLMSCardDeck.jsx",
@@ -6100,6 +6172,12 @@
             "filePath": "src/components/settings/SettingsLMSTab/LMSCard.jsx",
             "line": 12,
             "column": 4,
+            "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
+            "line": 94,
+            "column": 14,
             "version": "19.13.6"
           },
           {
@@ -6161,6 +6239,12 @@
             "line": 191,
             "column": 10,
             "version": "19.13.6"
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
+            "line": 79,
+            "column": 8,
+            "version": "19.13.6"
           }
         ],
         "Form": [
@@ -6172,7 +6256,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/CanvasConfig.jsx",
-            "line": 198,
+            "line": 199,
             "column": 6,
             "version": "19.13.6"
           },
@@ -6190,19 +6274,19 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/DegreedConfig.jsx",
-            "line": 108,
+            "line": 109,
             "column": 6,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/MoodleConfig.jsx",
-            "line": 116,
+            "line": 117,
             "column": 6,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 107,
+            "line": 108,
             "column": 6,
             "version": "19.13.6"
           },
@@ -6228,7 +6312,7 @@
         "Form.RadioSet": [
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 194,
+            "line": 195,
             "column": 10,
             "version": "19.13.6"
           },
@@ -6254,13 +6338,13 @@
         "Form.Radio": [
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 203,
+            "line": 204,
             "column": 12,
             "version": "19.13.6"
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 204,
+            "line": 205,
             "column": 12,
             "version": "19.13.6"
           },
@@ -18137,7 +18221,7 @@
       }
     },
     {
-      "version": "19.15.0",
+      "version": "14.5.0",
       "name": "@edx/frontend-enterprise-catalog-search",
       "repository": {
         "type": "git",
@@ -18150,31 +18234,31 @@
             "filePath": "src/ClearCurrentRefinements.jsx",
             "line": 25,
             "column": 6,
-            "version": "19.15.0"
+            "version": "14.5.0"
           },
           {
             "filePath": "src/CurrentRefinements.jsx",
             "line": 107,
             "column": 10,
-            "version": "19.15.0"
+            "version": "14.5.0"
           },
           {
             "filePath": "src/MobileFilterMenu.jsx",
             "line": 21,
             "column": 8,
-            "version": "19.15.0"
+            "version": "14.5.0"
           },
           {
             "filePath": "src/MobileFilterMenu.jsx",
             "line": 56,
             "column": 14,
-            "version": "19.15.0"
+            "version": "14.5.0"
           },
           {
             "filePath": "src/MobileFilterMenu.jsx",
             "line": 76,
             "column": 16,
-            "version": "19.15.0"
+            "version": "14.5.0"
           }
         ],
         "Badge": [
@@ -18182,19 +18266,19 @@
             "filePath": "src/CurrentRefinements.jsx",
             "line": 81,
             "column": 10,
-            "version": "19.15.0"
+            "version": "14.5.0"
           },
           {
             "filePath": "src/CurrentRefinements.jsx",
             "line": 95,
             "column": 10,
-            "version": "19.15.0"
+            "version": "14.5.0"
           },
           {
             "filePath": "src/FacetItem.jsx",
             "line": 22,
             "column": 6,
-            "version": "19.15.0"
+            "version": "14.5.0"
           }
         ],
         "Dropdown": [
@@ -18202,13 +18286,13 @@
             "filePath": "src/FacetDropdown.jsx",
             "line": 16,
             "column": 4,
-            "version": "19.15.0"
+            "version": "14.5.0"
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
             "line": 29,
             "column": 6,
-            "version": "19.15.0"
+            "version": "14.5.0"
           }
         ],
         "Dropdown.Toggle": [
@@ -18216,13 +18300,13 @@
             "filePath": "src/FacetDropdown.jsx",
             "line": 17,
             "column": 6,
-            "version": "19.15.0"
+            "version": "14.5.0"
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
             "line": 30,
             "column": 8,
-            "version": "19.15.0"
+            "version": "14.5.0"
           }
         ],
         "Dropdown.Menu": [
@@ -18230,13 +18314,13 @@
             "filePath": "src/FacetDropdown.jsx",
             "line": 26,
             "column": 6,
-            "version": "19.15.0"
+            "version": "14.5.0"
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
             "line": 36,
             "column": 8,
-            "version": "19.15.0"
+            "version": "14.5.0"
           }
         ],
         "Dropdown.Item": [
@@ -18244,31 +18328,31 @@
             "filePath": "src/FacetItem.jsx",
             "line": 11,
             "column": 2,
-            "version": "19.15.0"
+            "version": "14.5.0"
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
             "line": 37,
             "column": 10,
-            "version": "19.15.0"
+            "version": "14.5.0"
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
             "line": 49,
             "column": 10,
-            "version": "19.15.0"
+            "version": "14.5.0"
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
             "line": 61,
             "column": 10,
-            "version": "19.15.0"
+            "version": "14.5.0"
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
             "line": 75,
             "column": 14,
-            "version": "19.15.0"
+            "version": "14.5.0"
           }
         ],
         "Input": [
@@ -18276,37 +18360,37 @@
             "filePath": "src/FacetItem.jsx",
             "line": 12,
             "column": 4,
-            "version": "19.15.0"
+            "version": "14.5.0"
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
             "line": 38,
             "column": 12,
-            "version": "19.15.0"
+            "version": "14.5.0"
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
             "line": 50,
             "column": 12,
-            "version": "19.15.0"
+            "version": "14.5.0"
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
             "line": 62,
             "column": 12,
-            "version": "19.15.0"
+            "version": "14.5.0"
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
             "line": 76,
             "column": 16,
-            "version": "19.15.0"
+            "version": "14.5.0"
           },
           {
             "filePath": "src/TypeaheadFacetDropdown.jsx",
             "line": 26,
             "column": 8,
-            "version": "19.15.0"
+            "version": "14.5.0"
           }
         ],
         "SearchField.Advanced": [
@@ -18314,7 +18398,7 @@
             "filePath": "src/SearchBox.jsx",
             "line": 150,
             "column": 6,
-            "version": "19.15.0"
+            "version": "14.5.0"
           }
         ],
         "SearchField.Input": [
@@ -18322,7 +18406,7 @@
             "filePath": "src/SearchBox.jsx",
             "line": 161,
             "column": 8,
-            "version": "19.15.0"
+            "version": "14.5.0"
           }
         ],
         "SearchField.ClearButton": [
@@ -18330,7 +18414,7 @@
             "filePath": "src/SearchBox.jsx",
             "line": 168,
             "column": 8,
-            "version": "19.15.0"
+            "version": "14.5.0"
           }
         ],
         "SearchField.SubmitButton": [
@@ -18338,7 +18422,7 @@
             "filePath": "src/SearchBox.jsx",
             "line": 169,
             "column": 8,
-            "version": "19.15.0"
+            "version": "14.5.0"
           }
         ],
         "Container": [
@@ -18346,7 +18430,7 @@
             "filePath": "src/SearchHeader.jsx",
             "line": 37,
             "column": 6,
-            "version": "19.15.0"
+            "version": "14.5.0"
           }
         ],
         "Row": [
@@ -18354,7 +18438,7 @@
             "filePath": "src/SearchHeader.jsx",
             "line": 38,
             "column": 8,
-            "version": "19.15.0"
+            "version": "14.5.0"
           }
         ],
         "Col": [
@@ -18362,13 +18446,13 @@
             "filePath": "src/SearchHeader.jsx",
             "line": 39,
             "column": 10,
-            "version": "19.15.0"
+            "version": "14.5.0"
           },
           {
             "filePath": "src/SearchHeader.jsx",
             "line": 58,
             "column": 10,
-            "version": "19.15.0"
+            "version": "14.5.0"
           }
         ],
         "Pagination": [
@@ -18376,7 +18460,7 @@
             "filePath": "src/SearchPagination.jsx",
             "line": 53,
             "column": 4,
-            "version": "19.15.0"
+            "version": "14.5.0"
           }
         ]
       }
@@ -18486,22 +18570,22 @@
       "usages": {
         "Toast": [
           {
-            "filePath": "src/editors/components/EditorFooter/index.jsx",
-            "line": 36,
+            "filePath": "src/editors/containers/EditorContainer/components/EditorFooter/index.jsx",
+            "line": 26,
             "column": 6,
             "version": "19.6.0"
           },
           {
-            "filePath": "src/editors/containers/TextEditor/TextEditor.jsx",
-            "line": 65,
-            "column": 6,
+            "filePath": "src/editors/containers/TextEditor/index.jsx",
+            "line": 66,
+            "column": 8,
             "version": "19.6.0"
           }
         ],
         "ModalDialog.Footer": [
           {
-            "filePath": "src/editors/components/EditorFooter/index.jsx",
-            "line": 39,
+            "filePath": "src/editors/containers/EditorContainer/components/EditorFooter/index.jsx",
+            "line": 31,
             "column": 4,
             "version": "19.6.0"
           },
@@ -18510,18 +18594,18 @@
             "line": 37,
             "column": 4,
             "version": "19.6.0"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
+            "line": 33,
+            "column": 4,
+            "version": "19.6.0"
           }
         ],
         "ActionRow": [
           {
-            "filePath": "src/editors/components/EditorFooter/index.jsx",
-            "line": 40,
-            "column": 6,
-            "version": "19.6.0"
-          },
-          {
-            "filePath": "src/editors/components/EditorHeader/index.jsx",
-            "line": 23,
+            "filePath": "src/editors/containers/EditorContainer/components/EditorFooter/index.jsx",
+            "line": 32,
             "column": 6,
             "version": "19.6.0"
           },
@@ -18536,18 +18620,18 @@
             "line": 22,
             "column": 2,
             "version": "19.6.0"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
+            "line": 34,
+            "column": 6,
+            "version": "19.6.0"
           }
         ],
         "ActionRow.Spacer": [
           {
-            "filePath": "src/editors/components/EditorFooter/index.jsx",
-            "line": 41,
-            "column": 8,
-            "version": "19.6.0"
-          },
-          {
-            "filePath": "src/editors/components/EditorHeader/index.jsx",
-            "line": 27,
+            "filePath": "src/editors/containers/EditorContainer/components/EditorFooter/index.jsx",
+            "line": 33,
             "column": 8,
             "version": "19.6.0"
           },
@@ -18566,14 +18650,14 @@
         ],
         "Button": [
           {
-            "filePath": "src/editors/components/EditorFooter/index.jsx",
-            "line": 42,
+            "filePath": "src/editors/containers/EditorContainer/components/EditorFooter/index.jsx",
+            "line": 34,
             "column": 8,
             "version": "19.6.0"
           },
           {
-            "filePath": "src/editors/components/EditorFooter/index.jsx",
-            "line": 49,
+            "filePath": "src/editors/containers/EditorContainer/components/EditorFooter/index.jsx",
+            "line": 41,
             "column": 8,
             "version": "19.6.0"
           },
@@ -18600,12 +18684,18 @@
             "line": 40,
             "column": 8,
             "version": "19.6.0"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/SelectVideoModal.jsx",
+            "line": 39,
+            "column": 21,
+            "version": "19.6.0"
           }
         ],
         "Spinner": [
           {
-            "filePath": "src/editors/components/EditorFooter/index.jsx",
-            "line": 60,
+            "filePath": "src/editors/containers/EditorContainer/components/EditorFooter/index.jsx",
+            "line": 47,
             "column": 14,
             "version": "19.6.0"
           },
@@ -18616,15 +18706,15 @@
             "version": "19.6.0"
           },
           {
-            "filePath": "src/editors/containers/TextEditor/TextEditor.jsx",
-            "line": 72,
-            "column": 12,
+            "filePath": "src/editors/containers/TextEditor/index.jsx",
+            "line": 73,
+            "column": 14,
             "version": "19.6.0"
           }
         ],
         "Form.Group": [
           {
-            "filePath": "src/editors/components/EditorHeader/EditableHeader.jsx",
+            "filePath": "src/editors/containers/EditorContainer/components/TitleHeader/EditableHeader.jsx",
             "line": 14,
             "column": 2,
             "version": "19.6.0"
@@ -18656,7 +18746,7 @@
         ],
         "Form.Control": [
           {
-            "filePath": "src/editors/components/EditorHeader/EditableHeader.jsx",
+            "filePath": "src/editors/containers/EditorContainer/components/TitleHeader/EditableHeader.jsx",
             "line": 15,
             "column": 4,
             "version": "19.6.0"
@@ -18688,13 +18778,13 @@
         ],
         "Icon": [
           {
-            "filePath": "src/editors/components/EditorHeader/EditableHeader.jsx",
+            "filePath": "src/editors/containers/EditorContainer/components/TitleHeader/EditableHeader.jsx",
             "line": 22,
             "column": 23,
             "version": "19.6.0"
           },
           {
-            "filePath": "src/editors/components/EditorHeader/EditableHeader.test.jsx",
+            "filePath": "src/editors/containers/EditorContainer/components/TitleHeader/EditableHeader.test.jsx",
             "line": 26,
             "column": 64,
             "version": "19.6.0"
@@ -18708,15 +18798,9 @@
         ],
         "IconButton": [
           {
-            "filePath": "src/editors/components/EditorHeader/HeaderTitle.jsx",
-            "line": 54,
+            "filePath": "src/editors/containers/EditorContainer/components/TitleHeader/index.jsx",
+            "line": 49,
             "column": 6,
-            "version": "19.6.0"
-          },
-          {
-            "filePath": "src/editors/components/EditorHeader/index.jsx",
-            "line": 28,
-            "column": 8,
             "version": "19.6.0"
           },
           {
@@ -18732,31 +18816,11 @@
             "version": "19.6.0"
           }
         ],
-        "ModalDialog.Header": [
+        "FullscreenModal": [
           {
-            "filePath": "src/editors/components/EditorHeader/index.jsx",
-            "line": 22,
+            "filePath": "src/editors/containers/EditorContainer/index.jsx",
+            "line": 21,
             "column": 4,
-            "version": "19.6.0"
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 29,
-            "column": 4,
-            "version": "19.6.0"
-          }
-        ],
-        "ModalDialog.Title": [
-          {
-            "filePath": "src/editors/components/EditorHeader/index.jsx",
-            "line": 24,
-            "column": 8,
-            "version": "19.6.0"
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 30,
-            "column": 6,
             "version": "19.6.0"
           }
         ],
@@ -18766,6 +18830,40 @@
             "line": 20,
             "column": 2,
             "version": "19.6.0"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
+            "line": 16,
+            "column": 2,
+            "version": "19.6.0"
+          }
+        ],
+        "ModalDialog.Header": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
+            "line": 29,
+            "column": 4,
+            "version": "19.6.0"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
+            "line": 25,
+            "column": 4,
+            "version": "19.6.0"
+          }
+        ],
+        "ModalDialog.Title": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
+            "line": 30,
+            "column": 6,
+            "version": "19.6.0"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
+            "line": 26,
+            "column": 6,
+            "version": "19.6.0"
           }
         ],
         "ModalDialog.Body": [
@@ -18774,12 +18872,24 @@
             "line": 34,
             "column": 4,
             "version": "19.6.0"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
+            "line": 30,
+            "column": 4,
+            "version": "19.6.0"
           }
         ],
         "ModalDialog.CloseButton": [
           {
             "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
             "line": 41,
+            "column": 8,
+            "version": "19.6.0"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
+            "line": 35,
             "column": 8,
             "version": "19.6.0"
           }
@@ -18872,12 +18982,6 @@
             "line": 48,
             "column": 6,
             "version": "19.6.0"
-          },
-          {
-            "filePath": "src/editors/Editor.jsx",
-            "line": 57,
-            "column": 10,
-            "version": "19.6.0"
           }
         ],
         "Dropdown": [
@@ -18909,6 +19013,14 @@
             "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
             "line": 52,
             "column": 10,
+            "version": "19.6.0"
+          }
+        ],
+        "Collapsible": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
+            "line": 10,
+            "column": 2,
             "version": "19.6.0"
           }
         ],
@@ -19959,7 +20071,7 @@
           },
           {
             "filePath": "src/components/Overlays/SaveForLaterOverlay.jsx",
-            "line": 314,
+            "line": 316,
             "column": 14,
             "version": "19.15.0"
           },
@@ -20493,7 +20605,7 @@
           },
           {
             "filePath": "src/components/Overlays/SaveForLaterOverlay.jsx",
-            "line": 293,
+            "line": 295,
             "column": 6,
             "version": "19.15.0"
           },
@@ -20667,7 +20779,7 @@
           },
           {
             "filePath": "src/components/Overlays/SaveForLaterOverlay.jsx",
-            "line": 331,
+            "line": 333,
             "column": 14,
             "version": "19.15.0"
           }
@@ -20899,7 +21011,7 @@
         "Toast": [
           {
             "filePath": "src/components/Overlays/SaveForLaterOverlay.jsx",
-            "line": 286,
+            "line": 287,
             "column": 8,
             "version": "19.15.0"
           }
@@ -20907,7 +21019,7 @@
         "Popover": [
           {
             "filePath": "src/components/Overlays/SaveForLaterOverlay.jsx",
-            "line": 297,
+            "line": 299,
             "column": 10,
             "version": "19.15.0"
           }
