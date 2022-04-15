@@ -50,7 +50,7 @@
   vertical-align: baseline;
   border-radius: $chip-border-radius;
   border: $chip-border-width solid transparent;
-  margin-inline: $chip-margin-inline / 2;
+  margin-inline: calc($chip-margin-inline / 2);
 
   // Empty chip collapse automatically
   &:empty {

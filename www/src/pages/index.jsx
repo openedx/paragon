@@ -6,6 +6,7 @@ import SEO from '../components/SEO';
 
 const HomePage = () => (
   <Layout showMinimizedTitle hideFooterComponentMenu>
+    {/* eslint-disable-next-line react/jsx-pascal-case */}
     <SEO title="Home" />
     <div className="bg-dark text-white text-center py-5">
       <p className="x-small text-uppercase text-monospace mb-0">

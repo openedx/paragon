@@ -593,31 +593,30 @@ You can pass a function to render custom components for bulk actions and table a
 
 ```jsx live
 () => {
-  const TableAction = ({ as: Component, ...rest }) => (
+  const TableAction = ({ tableInstance }) => (
     // Here is access to the tableInstance
-    // Pass `as` like in the example bellow for the proper display in the toggled variant
-    <Component onClick={() => console.log('TableAction', rest)}>
+    <Button onClick={() => console.log('TableAction', tableInstance)}>
       Enroll
-    </Component>
+    </Button>
   );
   
-  const EnrollAction = ({ as: Component, selectedFlatRows, ...rest }) => (
+  const EnrollAction = ({ selectedFlatRows, ...rest }) => (
     // Here is access to the selectedFlatRows, isEntireTableSelected, tableInstance
-    <Component variant="danger" onClick={() => console.log('Enroll', selectedFlatRows, rest)}>
-      Enroll ({selectedFlatRows.length})
-    </Component>
+    <Button variant="danger" onClick={() => console.log('Enroll', selectedFlatRows, rest)}>
+      Enroll
+    </Button>
   );
 
-  const AssignAction = ({ as: Component, selectedFlatRows, ...rest }) => (
-    <Component onClick={() => console.log('Assign', selectedFlatRows, rest)}>
-      Assign ({selectedFlatRows.length})
-    </Component>
+  const AssignAction = (props) => (
+    <Button onClick={() => console.log('Assign', props)}>
+      Assign
+    </Button>
   );
   
-  const ExtraAction = ({ text, as: Component, selectedFlatRows, ...rest }) => (
-    <Component onClick={() => console.log(`Extra Action ${text}`, selectedFlatRows, rest)}>
+  const ExtraAction = ({ text, selectedFlatRows, ...rest }) => (
+    <Button onClick={() => console.log(`Extra Action ${text}`, selectedFlatRows, rest)}>
       {`Extra Action ${text}`}
-    </Component>
+    </Button>
   );
   
   return (
@@ -629,8 +628,7 @@ You can pass a function to render custom components for bulk actions and table a
       ]}
       bulkActions={[
         <EnrollAction />,
-        // Default value for `as` property is `Button`
-        <AssignAction as={Button} />,
+        <AssignAction />,
         <ExtraAction text="1" />,
         <ExtraAction text="2" />,
       ]}
@@ -638,7 +636,7 @@ You can pass a function to render custom components for bulk actions and table a
         {
           id: 'action',
           Header: 'Action',
-          Cell: ({ row }) => <Button variant="link" onClick={() => console.log(`Assigning ${row.values.name}`)}>Assign</Button>,
+          Cell: ({ row }) => <Button variant="link" size="sm" onClick={() => console.log(`Assigning ${row.values.name}`)}>Assign</Button>,
         }
       ]}
       data={[
@@ -711,120 +709,120 @@ You can pass a function to render custom components for bulk actions and table a
 () => {
   const [currentView, setCurrentView] = useState('card');
 
-  const TableAction = ({ as: Component, ...rest }) => (
+  const TableAction = (props) => (
     // Here is access to the tableInstance
-    // Pass `as` like in the example bellow for the proper display in the toggled variant
-    <Component onClick={() => console.log('TableAction', rest)}>
+    <Button onClick={() => console.log('TableAction', props)}>
       Enroll
-    </Component>
+    </Button>
   );
 
-  const EnrollAction = ({ as: Component, selectedFlatRows, ...rest }) => (
+  const EnrollAction = ({ selectedFlatRows, ...rest }) => (
     // Here is access to the selectedFlatRows, isEntireTableSelected, tableInstance
-    <Component variant="danger" onClick={() => console.log('Enroll', selectedFlatRows, rest)}>
+    <Button variant="danger" onClick={() => console.log('Enroll', selectedFlatRows, rest)}>
       Enroll ({selectedFlatRows.length})
-    </Component>
+    </Button>
   );
 
-  const AssignAction = ({ as: Component, selectedFlatRows, ...rest }) => (
-    <Component onClick={() => console.log('Assign', selectedFlatRows, rest)}>
+  const AssignAction = ({ selectedFlatRows, ...rest }) => (
+    <Button onClick={() => console.log('Assign', selectedFlatRows, rest)}>
       Assign ({selectedFlatRows.length})
-    </Component>
+    </Button>
   );
 
-  const ExtraAction = ({ text, as: Component, selectedFlatRows, ...rest }) => (
-    <Component onClick={() => console.log(`Extra Action ${text}`, selectedFlatRows, rest)}>
+  const ExtraAction = ({ text, selectedFlatRows, ...rest }) => (
+    <Button onClick={() => console.log(`Extra Action ${text}`, selectedFlatRows, rest)}>
       {`Extra Action ${text}`}
-    </Component>
+    </Button>
   );
 
-  return (<DataTable
-            dataViewToggleOptions={{
-              isDataViewToggleEnabled: true,
-              onDataViewToggle: val => setCurrentView(val),
-              defaultActiveStateValue: "card",
-            }}
-            isSelectable
-            itemCount={7}
-            tableActions={[
-              <TableAction />,
-            ]}
-            bulkActions={[
-              <EnrollAction />,
-              // Default value for `as` property is `Button`
-              <AssignAction as={Button} />,
-              <ExtraAction text="1" />,
-              <ExtraAction text="2" />,
-            ]}
-            additionalColumns={[
-              {
-                id: 'action',
-                Header: 'Action',
-                Cell: ({ row }) => <Button variant="link" onClick={() => console.log(`Assigning ${row.values.name}`)}>Assign</Button>,
-              }
-            ]}
-            data={[
-              {
-                name: 'Lil Bub',
-                color: 'brown tabby',
-                famous_for: 'weird tongue',
-              },
-              {
-                name: 'Grumpy Cat',
-                color: 'siamese',
-                famous_for: 'serving moods',
-              },
-              {
-                name: 'Smoothie',
-                color: 'orange tabby',
-                famous_for: 'modeling',
-              },
-              {
-                name: 'Maru',
-                color: 'brown tabby',
-                famous_for: 'being a lovable oaf',
-              },
-              {
-                name: 'Keyboard Cat',
-                color: 'orange tabby',
-                famous_for: 'piano virtuoso',
-              },
-              {
-                name: 'Long Cat',
-                color: 'russian white',
-                famous_for:
-                  'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
-              },
-              {
-                name: 'Zeno',
-                color: 'brown tabby',
-                famous_for: 'getting halfway there'
-              },
-            ]}
-            columns={[
-              {
-                Header: 'Name',
-                accessor: 'name',
+  return (
+    <DataTable
+    dataViewToggleOptions={{
+      isDataViewToggleEnabled: true,
+      onDataViewToggle: val => setCurrentView(val),
+      defaultActiveStateValue: "card",
+    }}
+    isSelectable
+    itemCount={7}
+    tableActions={[
+      <TableAction />,
+    ]}
+    bulkActions={[
+      <EnrollAction />,
+      // Default value for `as` property is `Button`
+      <AssignAction as={Button} />,
+      <ExtraAction text="1" />,
+      <ExtraAction text="2" />,
+    ]}
+    additionalColumns={[
+      {
+        id: 'action',
+        Header: 'Action',
+        Cell: ({ row }) => <Button variant="link" size="sm" onClick={() => console.log(`Assigning ${row.values.name}`)}>Assign</Button>,
+      }
+    ]}
+    data={[
+      {
+        name: 'Lil Bub',
+        color: 'brown tabby',
+        famous_for: 'weird tongue',
+      },
+      {
+        name: 'Grumpy Cat',
+        color: 'siamese',
+        famous_for: 'serving moods',
+      },
+      {
+        name: 'Smoothie',
+        color: 'orange tabby',
+        famous_for: 'modeling',
+      },
+      {
+        name: 'Maru',
+        color: 'brown tabby',
+        famous_for: 'being a lovable oaf',
+      },
+      {
+        name: 'Keyboard Cat',
+        color: 'orange tabby',
+        famous_for: 'piano virtuoso',
+      },
+      {
+        name: 'Long Cat',
+        color: 'russian white',
+        famous_for:
+          'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+      },
+      {
+        name: 'Zeno',
+        color: 'brown tabby',
+        famous_for: 'getting halfway there'
+      },
+    ]}
+    columns={[
+      {
+        Header: 'Name',
+        accessor: 'name',
 
-              },
-              {
-                Header: 'Famous For',
-                accessor: 'famous_for',
-              },
-              {
-                Header: 'Coat Color',
-                accessor: 'color',
-              },
-            ]}
-          >
-            <DataTable.TableControlBar />
-            {/* which kind of body content to show */}
-            { currentView === "card" && <CardView CardComponent={MiyazakiCard} /> }
-            { currentView === "list" && <DataTable.Table /> }
-            <DataTable.EmptyTable content="No results found" />
-            <DataTable.TableFooter />
-          </DataTable>
-          );
+      },
+      {
+        Header: 'Famous For',
+        accessor: 'famous_for',
+      },
+      {
+        Header: 'Coat Color',
+        accessor: 'color',
+      },
+    ]}
+  >
+    <DataTable.TableControlBar />
+    {/* which kind of body content to show */}
+    { currentView === "card" && <CardView CardComponent={MiyazakiCard} /> }
+    { currentView === "list" && <DataTable.Table /> }
+    <DataTable.EmptyTable content="No results found" />
+    <DataTable.TableFooter />
+  </DataTable>
+  );
 }
 ```
 
@@ -1141,13 +1139,13 @@ For a more desktop friendly view, you can move filters into a sidebar by providi
   </DataTable>
 ```
 
-### Expandable rows
+## Expandable rows
 `DataTable` supports expandable rows which once expanded render additional content under the row. Displayed content 
 is controlled by the `renderRowSubComponent` prop, which is a function that receives `row` as its single prop and renders expanded view, you also
 need to pass `isEpandable` prop to `DataTable` to indicate that it should support expand behavior for rows.
 Finally, an additional column is required to be included into `columns` prop which will contain handlers for expand / collapse behavior, see examples below. 
 
-#### Default view
+### Default view
 
 Here we use default expander column offered by Paragon and for each row render value of the `name` attribute as its subcomponent.
 
@@ -1219,7 +1217,7 @@ Here we use default expander column offered by Paragon and for each row render v
 </DataTable>
 ```
 
-#### With custom expander column
+### With custom expander column
 
 You can create your own custom expander column and use it, see code example below.
 

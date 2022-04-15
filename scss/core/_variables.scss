@@ -1,3 +1,5 @@
+@import "extend.module";
+
 // Variables
 // Variables
 //
@@ -6,7 +8,6 @@
 
 
 // Color system
-
 $white:    #fff !default;
 $gray-100: #ebebeb !default;
 $gray-200: #cccccc !default;
@@ -445,18 +446,7 @@ $emphasized-link-hover-darken-percentage: 15% !default;
 $paragraph-margin-bottom:   1rem !default;
 
 
-// Grid breakpoints
-//
-// Define the minimum dimensions at which your layout will change,
-// adapting to different screen sizes, for use in media queries.
-
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px
-) !default;
+// Grid breakpoints order
 
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
 @include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
@@ -512,7 +502,7 @@ $level-3-box-shadow:          0 0 .625rem rgba(0, 0, 0, 0.15), 0 0 1rem rgba(0, 
 $level-4-box-shadow:          0 .625rem 1.25rem rgba(0, 0, 0, 0.15), 0 .5rem 1.25rem rgba(0, 0, 0, 0.15) !default;
 $level-5-box-shadow:          0 1.25px 2.5rem rgba(0, 0, 0, 0.15), 0 .5rem 2.5rem rgba(0, 0, 0, 0.15) !default;
 
-@mixin box-shadow-control ($level, $side) {
+@mixin pgn-box-shadow ($level, $side) {
   @if $side == 'down' {
     @if $level == 1 {
       box-shadow: 0 .0625rem .125rem rgba(0, 0, 0, .15), 0 .0625rem .25rem rgba(0, 0, 0, .15);
@@ -661,7 +651,7 @@ $h4-mobile-font-size:         $h4-font-size !default;
 $h5-mobile-font-size:         $h5-font-size !default;
 $h6-mobile-font-size:         $h6-font-size !default;
 
-$headings-margin-bottom:      $spacer / 2 !default;
+$headings-margin-bottom:      calc($spacer / 2) !default;
 $headings-font-family:        null !default;
 $headings-font-weight:        $font-weight-bold !default;
 $headings-line-height:        1.25 !default;
@@ -757,6 +747,16 @@ $input-btn-line-height-lg:    $line-height-lg !default;
 
 $input-btn-border-width:      $border-width !default;
 
+// Spinners
+
+// $spinner-width:           2rem !default;
+// $spinner-height:          $spinner-width !default;
+$spinner-vertical-align:  -.125em !default;
+// $spinner-border-width:    .25em !default;
+
+// $spinner-width-sm:        1rem !default;
+// $spinner-height-sm:       $spinner-width-sm !default;
+// $spinner-border-width-sm: .2em !default;
 
 // Utilities
 

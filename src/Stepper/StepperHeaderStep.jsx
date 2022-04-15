@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { StepperContext } from './StepperContext';
-import { Icon } from '..';
+import { Icon, Bubble } from '..';
 import { Check, Error } from '../../icons';
 
 const StepperHeaderStep = ({
@@ -30,10 +30,9 @@ const StepperHeaderStep = ({
         },
       )}
     >
-      <div className="pgn__stepper-header-step-icon">
+      <Bubble variant={hasError ? 'error' : 'primary'} disabled={!isActive}>
         {hasError ? errorIcon : stepIcon}
-      </div>
-
+      </Bubble>
       <div className="pgn__stepper-header-step-title-description">
         <div className="pgn__stepper-header-step-title">{title}</div>
         <div className="pgn__stepper-header-step-description">{description}</div>

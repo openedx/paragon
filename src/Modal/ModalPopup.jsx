@@ -6,7 +6,14 @@ import PopperElement from './PopperElement';
 import { ModalContextProvider } from './ModalContext';
 
 const ModalPopup = ({
-  children, onClose, isOpen, positionRef, isBlocking, withPortal, placement, ...popperProps
+  children,
+  onClose,
+  isOpen,
+  positionRef,
+  isBlocking,
+  withPortal,
+  placement,
+  ...popperProps
 }) => {
   const RootComponent = withPortal ? Portal : React.Fragment;
 
@@ -48,7 +55,7 @@ ModalPopup.propTypes = {
   positionRef: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.shape({ current: PropTypes.shape({}) }),
-  ]).isRequired,
+  ]),
   /** Specifies position according to the element that the ``positionRef`` prop points to */
   placement: PopperElement.propTypes.placement,
 };
@@ -57,6 +64,7 @@ ModalPopup.defaultProps = {
   isBlocking: false,
   withPortal: false,
   placement: 'bottom-start',
+  positionRef: null,
 };
 
 export default ModalPopup;

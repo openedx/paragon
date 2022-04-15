@@ -184,3 +184,4 @@ export {
   useAbsoluteLayout,
   useFlexLayout,
 } from 'react-table';
+export { default as Bubble } from './Bubble';

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Input, Container } from '~paragon-react'; // eslint-disable-line
+import { Input, Container, DataTable } from '~paragon-react'; // eslint-disable-line
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
+import MeasuredItem from '../../components/MeasuredItem';
 
 const directions = [
   { key: '', name: 'all' },
@@ -15,9 +16,30 @@ const directions = [
   { key: 'y', name: 'y direction' },
 ];
 
-const sizes = [6, 5.5, 5, 4.5, 4, 3.5, 3, 2.5, 2, 1.5, 1, 0, -1, -1.5, -2, -2.5, -3, -3.5, -4, -4.5, -5, -5.5, -6];
+const spacerValues = [0, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6];
+const sizes = [...spacerValues.slice(1).reverse(), ...spacerValues.map(value => -value)];
 
 const getUtilityClassName = (prefix, direction, size) => `${prefix}${direction}-${size < 0 ? 'n' : ''}${Math.abs(size)}`;
+
+const PixelCell = ({ spacer }) => (
+  <MeasuredItem
+    properties={['margin']}
+    renderAfter={measurements => (
+      <code>
+        {measurements.margin}
+      </code>
+    )}
+  >
+    <div
+      style={{ display: 'none' }}
+      className={`m-${spacer}`}
+    />
+  </MeasuredItem>
+);
+
+PixelCell.propTypes = {
+  spacer: PropTypes.number.isRequired,
+};
 
 const SpaceBlock = ({ utilityClass }) => (
   <code
@@ -50,13 +72,29 @@ export default function SpacingPage() {
 
   const utilityClassName = getUtilityClassName('m', direction, size);
 
+  const spacerValuesTableData = spacerValues.map(value => ({
+    spacer: value,
+    pixelValue: <PixelCell spacer={value} />,
+  }));
+
   return (
     <Layout>
       <Container size="md" className="py-5">
         {/* eslint-disable-next-line react/jsx-pascal-case */}
         <SEO title="Spacing" />
         <h1>Spacing</h1>
-        <h3>Margin</h3>
+        <h3>Spacing according to pixels</h3>
+        <DataTable
+          className="pgn-doc__spacing-table"
+          data={spacerValuesTableData}
+          columns={[
+            { Header: 'Spacer value', accessor: 'spacer' },
+            { Header: 'Pixel value', accessor: 'pixelValue' },
+          ]}
+        >
+          <DataTable.Table />
+        </DataTable>
+        <h3 className="mt-3">Margin</h3>
         <p>
           Margin utilities are structured as{' '}
           <code>{'.m{direction}-{level}'}</code>. Negative numbers are

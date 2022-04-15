@@ -21,10 +21,8 @@
   $border-width
 ) {
   .pgn__form-control-floating-label-text {
-    $half-leading: ($line-height - 0.8) / 2;
-    $percent-height-minus-no-bottom-leading: (
-        ($line-height - $half-leading) / $line-height
-      ) * 100%;
+    $half-leading: calc(($line-height - 0.8) / 2);
+    $percent-height-minus-no-bottom-leading: calc((($line-height - $half-leading) / $line-height) * 100%);
     transform: translateY(-$padding-y) scale(.75)  translateY(-$percent-height-minus-no-bottom-leading);
   }
 }

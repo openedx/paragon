@@ -3,11 +3,17 @@ import { mount } from 'enzyme';
 import classNames from 'classnames';
 
 import BulkActions from '../BulkActions';
-import { DROPDOWN_BUTTON_TEXT, SMALL_SCREEN_DROPDOWN_BUTTON_TEXT } from '../CollapsibleButtonGroup';
 import {
-  useWindowSize, Dropdown, Button, Icon,
+  ACTION_OVERFLOW_BUTTON_TEXT, SMALL_SCREEN_ACTION_OVERFLOW_BUTTON_TEXT,
+} from '../CollapsibleButtonGroup';
+import {
+  useWindowSize,
+  Button,
+  IconButton,
+  ModalPopup,
 } from '../..';
 import DataTableContext from '../DataTableContext';
+import { waitForComponentToPaint } from './utils';
 
 jest.mock('../../hooks/useWindowSize');
 useWindowSize.mockReturnValue({ width: 800 });
@@ -20,17 +26,17 @@ const FirstAction = ({ as: Component, onClick, className }) => (
 );
 
 // eslint-disable-next-line react/prop-types
-const SecondAction = ({ as: Component, onClick, className }) => (
-  <Component variant="outline-primary" className={classNames('class2', className)} onClick={onClick}>
+const SecondAction = ({ onClick, className }) => (
+  <Button variant="outline-primary" className={classNames('class2', className)} onClick={onClick}>
     Second Action
-  </Component>
+  </Button>
 );
 
 // eslint-disable-next-line react/prop-types
-const ExtraAction = ({ text, as: Component }) => (
-  <Component>
+const ExtraAction = ({ text }) => (
+  <Button>
     {`Extra Action ${text}`}
-  </Component>
+  </Button>
 );
 
 const selectedFlatRows = [{ id: 1 }, { id: 2 }];
@@ -59,7 +65,10 @@ const instance = {
 
 // eslint-disable-next-line react/prop-types
 const BulkActionsWrapper = ({ value = instance }) => (
-  <DataTableContext.Provider value={value}><BulkActions /></DataTableContext.Provider>);
+  <DataTableContext.Provider value={value}>
+    <BulkActions />
+  </DataTableContext.Provider>
+);
 
 describe('<BulkActions />', () => {
   describe('with functional rendering', () => {
@@ -151,20 +160,22 @@ describe('<BulkActions />', () => {
   describe('with more than two actions', () => {
     it('displays the user\'s first button as an brand button', () => {
       const wrapper = mount(<BulkActionsWrapper />);
+      waitForComponentToPaint(wrapper);
       const buttons = wrapper.find(Button);
       expect(buttons.length).toEqual(2);
       expect(buttons.get(1).props.variant).toEqual('brand');
     });
     it('displays the user\'s second button as an outline button', () => {
       const wrapper = mount(<BulkActionsWrapper />);
+      waitForComponentToPaint(wrapper);
       const buttons = wrapper.find(Button);
       expect(buttons.get(0).props.variant).toEqual('outline-primary');
     });
-    describe('dropdown', () => {
+    describe('overflow menu', () => {
       const onClickSpy = jest.fn();
       const itemClassName = 'itemClickTest';
       let wrapper;
-      let dropdownButton;
+      let overflowButton;
       beforeEach(() => {
         wrapper = mount(
           <BulkActionsWrapper
@@ -175,26 +186,27 @@ describe('<BulkActions />', () => {
             }}
           />,
         );
-        // the dropdown menu is the first button
-        dropdownButton = wrapper.find('button').at(0);
-        dropdownButton.simulate('click');
+        waitForComponentToPaint(wrapper);
+        // the overflow toggle button is the first button
+        overflowButton = wrapper.find(IconButton);
+        overflowButton.simulate('click');
       });
       afterEach(() => {
         onClickSpy.mockClear();
       });
-      it('displays additional actions in a dropdown', () => {
-        const dropdownToggle = wrapper.find('DropdownToggle');
-        expect(dropdownToggle.props().alt).toEqual(DROPDOWN_BUTTON_TEXT);
-        const actionItems = wrapper.find(Dropdown.Item);
-        // we subtract two for the two main buttons that aren't in the dropdown
+      it('displays additional actions in a ModalPopup', () => {
+        const overflowToggle = wrapper.find(IconButton);
+        expect(overflowToggle.props().alt).toEqual(ACTION_OVERFLOW_BUTTON_TEXT);
+        const actionItems = wrapper.find(ModalPopup).find('button');
+        // we subtract two for the two main buttons that aren't in the overflow menu
         expect(actionItems.length).toEqual(4);
       });
-      it('performs actions when dropdown items are clicked', () => {
-        wrapper.find(`a.${itemClassName}`).simulate('click');
+      it('performs actions when overflow items are clicked', () => {
+        wrapper.find(`button.${itemClassName}`).simulate('click');
         expect(onClickSpy).toHaveBeenCalledTimes(1);
       });
       it('passes the class names to the dropdown item', () => {
-        const item = wrapper.find(`a.${itemClassName}`);
+        const item = wrapper.find(`button.${itemClassName}`);
         expect(item.length).toEqual(1);
       });
     });
@@ -205,7 +217,7 @@ describe('<BulkActions />', () => {
     test.each(actions)('puts all actions in a dropdown %#', (testActions) => {
       useWindowSize.mockReturnValue({ width: 500 });
       const wrapper = mount(<BulkActionsWrapper value={{ ...instance, bulkActions: testActions }} />);
-      const button = wrapper.find(Icon);
+      const button = wrapper.find(IconButton);
       expect(button.length).toEqual(1);
       expect(wrapper.text()).not.toContain('First Action');
       const buttons = wrapper.find('button');
@@ -218,8 +230,8 @@ describe('<BulkActions />', () => {
     it('renders the correct alt text for the dropdown', () => {
       useWindowSize.mockReturnValue({ width: 500 });
       const wrapper = mount(<BulkActionsWrapper />);
-      const dropdownToggle = wrapper.find('DropdownToggle');
-      expect(dropdownToggle.props().alt).toEqual(SMALL_SCREEN_DROPDOWN_BUTTON_TEXT);
+      const overflowToggle = wrapper.find(IconButton);
+      expect(overflowToggle.props().alt).toEqual(SMALL_SCREEN_ACTION_OVERFLOW_BUTTON_TEXT);
     });
   });
 });

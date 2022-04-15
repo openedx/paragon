@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { OverlayTrigger, Tooltip } from '..';
 
 const IconButton = React.forwardRef(({
+  className,
   alt,
   invertColors,
   icon,
@@ -30,7 +31,6 @@ const IconButton = React.forwardRef(({
   const IconComponent = iconAs || FontAwesomeIcon;
   return (
     <button
-      {...attrs}
       aria-label={alt}
       className={classNames(
         'btn-icon',
@@ -39,11 +39,12 @@ const IconButton = React.forwardRef(({
         {
           [`btn-icon-${invert}${activeStyle}active`]: isActive,
         },
-        attrs.className,
+        className,
       )}
       onClick={onClick}
       type="button"
       ref={ref}
+      {...attrs}
     >
       <span className="btn-icon__icon-container">
         <IconComponent
@@ -59,8 +60,9 @@ const IconButton = React.forwardRef(({
 IconButton.defaultProps = {
   iconAs: undefined,
   src: null,
-  icon: {},
-  iconClassNames: '',
+  icon: undefined,
+  iconClassNames: undefined,
+  className: undefined,
   invertColors: false,
   variant: 'primary',
   size: 'md',
@@ -69,6 +71,8 @@ IconButton.defaultProps = {
 };
 
 IconButton.propTypes = {
+  /** A custom class name. */
+  className: PropTypes.string,
   /** Component that renders the icon, currently defaults to `FontAwesomeIcon`,
    *  but is going to be deprecated soon, please use Paragon's icons instead. */
   iconAs: PropTypes.elementType,
