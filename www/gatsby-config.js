@@ -29,6 +29,13 @@ const plugins = [
       name: `components`,
     },
   },
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      path: `${__dirname}/../CHANGELOG.md`,
+      name: `changelog`,
+    },
+  },
   // Note this will throw a warning about conflicting field types during build, but it is O.K.
   // https://github.com/gatsbyjs/gatsby/issues/7027
   "gatsby-transformer-react-docgen",

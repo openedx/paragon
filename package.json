@@ -34,7 +34,8 @@
     "test:watch": "npm run test -- --watch",
     "generate-component-install": "cd component-generator && npm install",
     "generate-component": "cd component-generator && npm start",
-    "generate-component-lint": "cd component-generator && npm run lint"
+    "generate-component-lint": "cd component-generator && npm run lint",
+    "generate-changelog": "node generate-changelog.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -71,6 +72,8 @@
     "@babel/preset-env": "^7.16.8",
     "@babel/preset-react": "^7.16.7",
     "@edx/eslint-config": "^2.0.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.1",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
