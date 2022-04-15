@@ -1,0 +1,16 @@
+@import 'variables';
+
+.pgn__tabs {
+  & > * {
+    position: relative;
+  }
+
+  .pgn__tab-notification {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-height: $tab-notification-height;
+    min-width: $tab-notification-width;
+    font-size: $tab-notification-font-size;
+  }
+}
