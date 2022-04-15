@@ -59,11 +59,15 @@ const Responsive = () => {
         <p>
           Example when the screen is narrower than <code>md</code> breakpoint.
         </p>
-        <CodeBlock>{'@include media-breakpoint-down(map-get($grid-breakpoints, \'md\')) { // styles here }'}</CodeBlock>
+        <CodeBlock className="language-scss">
+          {'@include media-breakpoint-down(map-get($grid-breakpoints, \'md\')) { // styles here }'}
+        </CodeBlock>
         <p>
           Example when the screen is wider than <code>lg</code> breakpoint.
         </p>
-        <CodeBlock>{'@include media-breakpoint-up(map-get($grid-breakpoints, \'lg\')) { // styles here }'}</CodeBlock>
+        <CodeBlock className="language-scss">
+          {'@include media-breakpoint-up(map-get($grid-breakpoints, \'lg\')) { // styles here }'}
+        </CodeBlock>
       </Container>
     </Layout>
   );
