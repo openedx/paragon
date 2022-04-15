@@ -1,0 +1,24 @@
+@import "variables";
+
+.pgn__bubble {
+  line-height: normal;
+  min-height: 1.5rem;
+  min-width: 1.5rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-xs;
+
+  @each $name, $colors in $bubble-variants {
+    &.pgn__bubble-#{$name} {
+      background-color: map-get($colors, "background-color");
+      color: map-get($colors, "color");
+    }
+  }
+
+  &:disabled,
+  &.disabled {
+    background: $gray-500;
+  }
+}
