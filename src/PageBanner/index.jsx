@@ -4,6 +4,8 @@ import classNames from 'classnames';
 import { Close } from '../../icons';
 import { Icon, IconButton } from '..';
 
+export const PAGE_BANNER_DISMISS_ALT_TEXT = 'Dismiss';
+
 export const VARIANTS = {
   light: 'light',
   dark: 'dark',
@@ -65,7 +67,7 @@ PageBanner.propTypes = {
 PageBanner.defaultProps = {
   children: undefined,
   dismissible: false,
-  dismissAltText: 'Dismiss',
+  dismissAltText: PAGE_BANNER_DISMISS_ALT_TEXT,
   onDismiss: () => {},
   show: true,
   variant: VARIANTS.accentA,

@@ -7,6 +7,9 @@ import { Launch } from '../../icons';
 
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
 
+export const HYPER_LINK_EXTERNAL_LINK_ALT_TEXT = 'in a new tab';
+export const HYPER_LINK_EXTERNAL_LINK_TITLE = 'Opens in a new tab';
+
 const Hyperlink = React.forwardRef((props, ref) => {
   const {
     className,
@@ -83,8 +86,8 @@ Hyperlink.defaultProps = {
   className: undefined,
   target: '_self',
   onClick: () => {},
-  externalLinkAlternativeText: 'in a new tab',
-  externalLinkTitle: 'Opens in a new tab',
+  externalLinkAlternativeText: HYPER_LINK_EXTERNAL_LINK_ALT_TEXT,
+  externalLinkTitle: HYPER_LINK_EXTERNAL_LINK_TITLE,
   variant: 'default',
   isInline: false,
   showLaunchIcon: true,

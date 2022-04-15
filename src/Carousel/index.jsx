@@ -4,6 +4,9 @@ import BaseCarousel from 'react-bootstrap/Carousel';
 import BaseCarouselItem from 'react-bootstrap/CarouselItem';
 import BaseCarouselCaption from 'react-bootstrap/CarouselCaption';
 
+export const CAROUSEL_NEXT_LABEL_TEXT = 'Next';
+export const CAROUSEL_PREV_LABEL_TEXT = 'Previous';
+
 const Carousel = React.forwardRef((props, ref) => <BaseCarousel {...props} ref={ref} />);
 
 const CarouselItem = React.forwardRef((props, ref) => <BaseCarouselItem {...props} ref={ref} />);
@@ -89,13 +92,13 @@ Carousel.defaultProps = {
   interval: 5000,
   keyboard: true,
   nextIcon: <span aria-hidden="true" className="carousel-control-next-icon" />,
-  nextLabel: 'Next',
+  nextLabel: CAROUSEL_NEXT_LABEL_TEXT,
   onSelect: undefined,
   onSlid: undefined,
   onSlide: undefined,
   pause: 'hover',
   prevIcon: <span aria-hidden="true" className="carousel-control-prev-icon" />,
-  prevLabel: 'Previous',
+  prevLabel: CAROUSEL_PREV_LABEL_TEXT,
   slide: true,
   touch: true,
   wrap: true,
