@@ -4,6 +4,7 @@ const path = require('path');
 const { COMPONENT_FILES } = require('./constants');
 const {
   validateComponentName,
+  sendTrackInfo,
   createFile,
   addComponentToExports,
   addComponentToGit,
@@ -13,6 +14,8 @@ program
   .requiredOption('--componentName <name>', 'Component must have a name', validateComponentName)
   .action((options) => {
     const { componentName } = options;
+    // send data to analytics
+    sendTrackInfo(componentName);
     const componentDir = path.resolve(__dirname, `../src/${componentName}`);
     // create directory for the component files
     fs.mkdirSync(componentDir);
