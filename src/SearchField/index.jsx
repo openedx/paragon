@@ -11,6 +11,11 @@ import SearchFieldSubmitButton from './SearchFieldSubmitButton';
 import Icon from '../Icon';
 import { Search, Close } from '../../icons';
 
+export const SEARCH_FIELD_SCREEN_READER_TEXT_LABEL = 'search';
+export const SEARCH_FIELD_SCREEN_READER_TEXT_SUBMIT_BUTTON = 'submit search';
+export const SEARCH_FIELD_SCREEN_READER_TEXT_CLEAR_BUTTON = 'clear search';
+export const SEARCH_FIELD_BUTTON_TEXT = 'search';
+
 const STYLE_VARIANTS = [
   'light',
   'dark',
@@ -119,6 +124,14 @@ SearchField.propTypes = {
   value: PropTypes.string,
   /**
    * Specifies the icon element(s) to use for the clear and submit buttons.
+   * The default is:
+   *
+   * ```jsx
+   * {
+   *   submit: import {Search} from '@edx/paragon/icons';,
+   *   clear: import {Close} from '@edx/paragon/icons'.
+   * }
+   * ```
    */
   icons: PropTypes.shape({
     submit: PropTypes.element.isRequired,
@@ -151,9 +164,9 @@ SearchField.defaultProps = {
   formAriaLabel: undefined,
   value: '',
   screenReaderText: {
-    label: 'search',
-    submitButton: 'submit search',
-    clearButton: 'clear search',
+    label: SEARCH_FIELD_SCREEN_READER_TEXT_LABEL,
+    submitButton: SEARCH_FIELD_SCREEN_READER_TEXT_SUBMIT_BUTTON,
+    clearButton: SEARCH_FIELD_SCREEN_READER_TEXT_CLEAR_BUTTON,
   },
   icons: {
     clear: <Icon src={Close} />,
@@ -167,7 +180,7 @@ SearchField.defaultProps = {
   variant: 'light',
   disabled: false,
   submitButtonLocation: 'internal',
-  buttonText: 'Search',
+  buttonText: SEARCH_FIELD_BUTTON_TEXT,
 };
 
 SearchField.Advanced = SearchFieldAdvanced;

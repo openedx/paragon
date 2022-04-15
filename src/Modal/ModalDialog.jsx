@@ -12,6 +12,8 @@ import ModalDialogFooter from './ModalDialogFooter';
 import ModalDialogBody from './ModalDialogBody';
 import ModalDialogHero from './ModalDialogHero';
 
+export const MODAL_DIALOG_CLOSE_LABEL = 'Close';
+
 function ModalDialog({
   children,
   title,
@@ -120,7 +122,7 @@ ModalDialog.defaultProps = {
   hasCloseButton: true,
   size: 'md',
   variant: 'default',
-  closeLabel: 'Close',
+  closeLabel: MODAL_DIALOG_CLOSE_LABEL,
   className: undefined,
   isFullscreenScroll: false,
   isFullscreenOnMobile: false,
