@@ -46,5 +46,6 @@
 
   @media only screen and (min-width: 768px) {
     min-width: $toast-max-width;
+    max-width: $toast-max-width;
   }
 }
