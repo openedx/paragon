@@ -1,27 +1,32 @@
 // NOTE: These are the breakpoints used in Bootstrap v4.0.0 as seen in
 // the documentation (https://getbootstrap.com/docs/4.0/layout/overview/#responsive-breakpoints)
+
+import {
+  sm, md, lg, xl, xxl,
+} from '../../scss/core/_extend.module.scss';
+
 const breakpoints = {
   extraSmall: {
-    maxWidth: 575.98,
+    maxWidth: parseFloat(sm) || 575.98,
   },
   small: {
-    minWidth: 576,
-    maxWidth: 767.98,
+    minWidth: parseFloat(sm) || 576,
+    maxWidth: parseFloat(md) || 767.98,
   },
   medium: {
-    minWidth: 768,
-    maxWidth: 991.98,
+    minWidth: parseFloat(md) || 768,
+    maxWidth: parseFloat(lg) || 991.98,
   },
   large: {
-    minWidth: 992,
-    maxWidth: 1199.98,
+    minWidth: parseFloat(lg) || 992,
+    maxWidth: parseFloat(xl) || 1199.98,
   },
   extraLarge: {
-    minWidth: 1200,
-    maxWidth: 1399.98,
+    minWidth: parseFloat(xl) || 1200,
+    maxWidth: parseFloat(xxl) || 1399.98,
   },
   extraExtraLarge: {
-    minWidth: 1400,
+    minWidth: parseFloat(xxl) || 1400,
   },
 };
 
