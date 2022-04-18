@@ -3,7 +3,9 @@
 
 import breakpointSizes from '../../scss/core/_extend.module.scss';
 
-const { sm, md, lg, xl, xxl } = breakpointSizes;
+const {
+  sm, md, lg, xl, xxl,
+} = breakpointSizes;
 
 const breakpoints = {
   extraSmall: {
