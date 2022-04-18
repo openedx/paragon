@@ -1,9 +1,9 @@
 // NOTE: These are the breakpoints used in Bootstrap v4.0.0 as seen in
 // the documentation (https://getbootstrap.com/docs/4.0/layout/overview/#responsive-breakpoints)
 
-import {
-  sm, md, lg, xl, xxl,
-} from '../../scss/core/_extend.module.scss';
+import breakpointSizes from '../../scss/core/_extend.module.scss';
+
+const { sm, md, lg, xl, xxl } = breakpointSizes;
 
 const breakpoints = {
   extraSmall: {
