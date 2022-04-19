@@ -149,9 +149,6 @@ const Menu = () => {
             <li className="mr-3">
               <Link to="/foundations/css-utilities">CSS Utility Classes</Link>
             </li>
-            <li className="mr-3">
-              <Link to="/foundations/responsive">Responsive</Link>
-            </li>
           </ul>
         </Col>
         <Col sm={9}>
