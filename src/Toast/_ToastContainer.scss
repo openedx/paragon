@@ -1,6 +1,8 @@
+@import "variables";
+
 .toast-container {
-  bottom: 1.25rem;
-  left: 1.25rem;
+  bottom: $toast-container-gutter-lg;
+  left: $toast-container-gutter-lg;
   position: fixed;
   z-index: 2;
 
@@ -10,8 +12,9 @@
   }
 
   @media only screen and (max-width: 768px) {
-    bottom: .625rem;
-    right: 1.25rem;
+    bottom: $toast-container-gutter-sm;
+    right: $toast-container-gutter-sm;
+    left: $toast-container-gutter-sm;
 
     [dir="rtl"] & {
       left: .625rem;
