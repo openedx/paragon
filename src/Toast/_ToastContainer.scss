@@ -7,7 +7,7 @@
   z-index: 2;
 
   [dir="rtl"] & {
-    right: 1.25rem;
+    right: $toast-container-gutter-lg;
     left: 0;
   }
 
@@ -17,8 +17,8 @@
     left: $toast-container-gutter-sm;
 
     [dir="rtl"] & {
-      left: .625rem;
-      right: .625rem;
+      left: $toast-container-gutter-sm;
+      right: $toast-container-gutter-sm;
     }
   }
 }
