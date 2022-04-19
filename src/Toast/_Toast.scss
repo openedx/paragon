@@ -5,7 +5,6 @@
   background-color: $toast-background-color;
   box-shadow: $toast-box-shadow;
   margin: 0;
-  min-width: $toast-max-width;
   padding: 1rem;
   position: relative;
   border-radius: $toast-border-radius;
@@ -46,6 +45,7 @@
   }
 
   @media only screen and (min-width: 768px) {
+    min-width: $toast-max-width;
     max-width: $toast-max-width;
   }
 }
