@@ -1,8 +1,8 @@
 {
-  "lastModified": 1650377306471,
+  "lastModified": 1650463720603,
   "projectUsages": [
     {
-      "version": "19.15.1",
+      "version": "19.18.1",
       "name": "edx-credentials",
       "repository": {
         "type": "git",
@@ -15,7 +15,7 @@
             "filePath": "credentials/static/components/FoldingTable.jsx",
             "line": 26,
             "column": 6,
-            "version": "19.15.1"
+            "version": "19.18.1"
           }
         ],
         "Button.Deprecated": [
@@ -23,37 +23,37 @@
             "filePath": "credentials/static/components/MasqueradeBanner.jsx",
             "line": 102,
             "column": 12,
-            "version": "19.15.1"
+            "version": "19.18.1"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 277,
             "column": 14,
-            "version": "19.15.1"
+            "version": "19.18.1"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 284,
             "column": 12,
-            "version": "19.15.1"
+            "version": "19.18.1"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 296,
             "column": 12,
-            "version": "19.15.1"
+            "version": "19.18.1"
           },
           {
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 141,
             "column": 10,
-            "version": "19.15.1"
+            "version": "19.18.1"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 177,
             "column": 18,
-            "version": "19.15.1"
+            "version": "19.18.1"
           }
         ],
         "StatusAlert": [
@@ -61,43 +61,43 @@
             "filePath": "credentials/static/components/MasqueradeBanner.jsx",
             "line": 109,
             "column": 8,
-            "version": "19.15.1"
+            "version": "19.18.1"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 304,
             "column": 8,
-            "version": "19.15.1"
+            "version": "19.18.1"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 315,
             "column": 8,
-            "version": "19.15.1"
+            "version": "19.18.1"
           },
           {
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 329,
             "column": 8,
-            "version": "19.15.1"
+            "version": "19.18.1"
           },
           {
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 109,
             "column": 14,
-            "version": "19.15.1"
+            "version": "19.18.1"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 138,
             "column": 14,
-            "version": "19.15.1"
+            "version": "19.18.1"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 152,
             "column": 14,
-            "version": "19.15.1"
+            "version": "19.18.1"
           }
         ],
         "Icon": [
@@ -105,13 +105,13 @@
             "filePath": "credentials/static/components/ProgramRecord.jsx",
             "line": 311,
             "column": 14,
-            "version": "19.15.1"
+            "version": "19.18.1"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 191,
             "column": 16,
-            "version": "19.15.1"
+            "version": "19.18.1"
           }
         ],
         "Modal": [
@@ -119,13 +119,13 @@
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 90,
             "column": 6,
-            "version": "19.15.1"
+            "version": "19.18.1"
           },
           {
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 130,
             "column": 6,
-            "version": "19.15.1"
+            "version": "19.18.1"
           }
         ],
         "CheckBoxGroup": [
@@ -133,7 +133,7 @@
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 123,
             "column": 12,
-            "version": "19.15.1"
+            "version": "19.18.1"
           }
         ],
         "CheckBox": [
@@ -141,7 +141,7 @@
             "filePath": "credentials/static/components/SendLearnerRecordModal.jsx",
             "line": 125,
             "column": 16,
-            "version": "19.15.1"
+            "version": "19.18.1"
           }
         ],
         "InputText": [
@@ -149,7 +149,7 @@
             "filePath": "credentials/static/components/ShareProgramRecordModal.jsx",
             "line": 165,
             "column": 18,
-            "version": "19.15.1"
+            "version": "19.18.1"
           }
         ]
       }
@@ -9123,6 +9123,18 @@
             "version": "19.10.1"
           },
           {
+            "filePath": "src/discussions/learners/learner/CommentsTabContent.jsx",
+            "line": 33,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/learners/learner/PostsTabContent.jsx",
+            "line": 39,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
             "line": 55,
             "column": 6,
@@ -9388,7 +9400,7 @@
           },
           {
             "filePath": "src/discussions/posts/post/PostLink.jsx",
-            "line": 44,
+            "line": 46,
             "column": 10,
             "version": "19.10.1"
           },
@@ -9438,8 +9450,8 @@
           },
           {
             "filePath": "src/discussions/posts/PostsView.jsx",
-            "line": 138,
-            "column": 12,
+            "line": 74,
+            "column": 10,
             "version": "19.10.1"
           }
         ],
@@ -9754,7 +9766,7 @@
         "Nav": [
           {
             "filePath": "src/discussions/navigation/navigation-bar/NavigationBar.jsx",
-            "line": 41,
+            "line": 42,
             "column": 4,
             "version": "19.10.1"
           }
@@ -9762,7 +9774,7 @@
         "Nav.Item": [
           {
             "filePath": "src/discussions/navigation/navigation-bar/NavigationBar.jsx",
-            "line": 43,
+            "line": 44,
             "column": 8,
             "version": "19.10.1"
           }
@@ -9770,7 +9782,7 @@
         "Nav.Link": [
           {
             "filePath": "src/discussions/navigation/navigation-bar/NavigationBar.jsx",
-            "line": 44,
+            "line": 45,
             "column": 10,
             "version": "19.10.1"
           }
@@ -9882,13 +9894,13 @@
           },
           {
             "filePath": "src/discussions/posts/post/PostLink.jsx",
-            "line": 65,
+            "line": 67,
             "column": 22,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post/PostLink.jsx",
-            "line": 71,
+            "line": 73,
             "column": 22,
             "version": "19.10.1"
           }
@@ -11068,7 +11080,7 @@
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
-            "line": 85,
+            "line": 90,
             "column": 6,
             "version": "17.5.0"
           },
@@ -11178,13 +11190,13 @@
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
-            "line": 86,
+            "line": 91,
             "column": 8,
             "version": "17.5.0"
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
-            "line": 135,
+            "line": 140,
             "column": 10,
             "version": "17.5.0"
           },
@@ -11400,25 +11412,25 @@
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
-            "line": 36,
+            "line": 41,
             "column": 6,
             "version": "17.5.0"
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
-            "line": 87,
+            "line": 92,
             "column": 10,
             "version": "17.5.0"
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
-            "line": 102,
+            "line": 107,
             "column": 10,
             "version": "17.5.0"
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
-            "line": 117,
+            "line": 122,
             "column": 10,
             "version": "17.5.0"
           },
@@ -12026,7 +12038,7 @@
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
-            "line": 37,
+            "line": 42,
             "column": 8,
             "version": "17.5.0"
           },
@@ -12118,7 +12130,7 @@
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
-            "line": 148,
+            "line": 153,
             "column": 10,
             "version": "17.5.0"
           },
@@ -12238,7 +12250,7 @@
         "MarketingModal": [
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
-            "line": 57,
+            "line": 62,
             "column": 4,
             "version": "17.5.0"
           }
@@ -12246,7 +12258,7 @@
         "ModalDialog.Hero": [
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
-            "line": 64,
+            "line": 69,
             "column": 8,
             "version": "17.5.0"
           },
@@ -12260,7 +12272,7 @@
         "ModalDialog.Title": [
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
-            "line": 80,
+            "line": 85,
             "column": 8,
             "version": "17.5.0"
           }
@@ -12268,19 +12280,19 @@
         "Icon": [
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
-            "line": 90,
+            "line": 95,
             "column": 16,
             "version": "17.5.0"
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
-            "line": 105,
+            "line": 110,
             "column": 16,
             "version": "17.5.0"
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
-            "line": 120,
+            "line": 125,
             "column": 16,
             "version": "17.5.0"
           },
@@ -18810,6 +18822,12 @@
             "version": "19.6.0"
           },
           {
+            "filePath": "src/editors/containers/EditorContainer/index.jsx",
+            "line": 27,
+            "column": 12,
+            "version": "19.6.0"
+          },
+          {
             "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/DimensionControls.jsx",
             "line": 61,
             "column": 6,
@@ -18822,29 +18840,13 @@
             "version": "19.6.0"
           }
         ],
-        "FullscreenModal": [
+        "ModalDialog.Header": [
           {
             "filePath": "src/editors/containers/EditorContainer/index.jsx",
-            "line": 21,
-            "column": 4,
-            "version": "19.6.0"
-          }
-        ],
-        "ModalDialog": [
-          {
-            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 20,
-            "column": 2,
+            "line": 23,
+            "column": 6,
             "version": "19.6.0"
           },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
-            "line": 16,
-            "column": 2,
-            "version": "19.6.0"
-          }
-        ],
-        "ModalDialog.Header": [
           {
             "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
             "line": 29,
@@ -18860,6 +18862,12 @@
         ],
         "ModalDialog.Title": [
           {
+            "filePath": "src/editors/containers/EditorContainer/index.jsx",
+            "line": 24,
+            "column": 8,
+            "version": "19.6.0"
+          },
+          {
             "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
             "line": 30,
             "column": 6,
@@ -18869,6 +18877,20 @@
             "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
             "line": 26,
             "column": 6,
+            "version": "19.6.0"
+          }
+        ],
+        "ModalDialog": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
+            "line": 20,
+            "column": 2,
+            "version": "19.6.0"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
+            "line": 16,
+            "column": 2,
             "version": "19.6.0"
           }
         ],
@@ -19539,7 +19561,7 @@
       }
     },
     {
-      "version": "19.15.0",
+      "version": "19.18.1",
       "name": "@edx/frontend-platform",
       "repository": {
         "type": "git",
@@ -19552,7 +19574,7 @@
             "filePath": "src/react/ErrorPage.jsx",
             "line": 25,
             "column": 6,
-            "version": "19.15.0"
+            "version": "19.18.1"
           }
         ],
         "Row": [
@@ -19560,7 +19582,7 @@
             "filePath": "src/react/ErrorPage.jsx",
             "line": 26,
             "column": 8,
-            "version": "19.15.0"
+            "version": "19.18.1"
           }
         ],
         "Col": [
@@ -19568,7 +19590,7 @@
             "filePath": "src/react/ErrorPage.jsx",
             "line": 27,
             "column": 10,
-            "version": "19.15.0"
+            "version": "19.18.1"
           }
         ],
         "Button": [
@@ -19576,7 +19598,7 @@
             "filePath": "src/react/ErrorPage.jsx",
             "line": 40,
             "column": 12,
-            "version": "19.15.0"
+            "version": "19.18.1"
           }
         ]
       }
@@ -19729,26 +19751,26 @@
           },
           {
             "filePath": "src/components/Course/CourseSnapshot/index.jsx",
-            "line": 111,
+            "line": 109,
             "column": 24,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Course/CourseSnapshot/index.jsx",
-            "line": 145,
+            "line": 143,
             "column": 22,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Course/CourseSnapshot/index.jsx",
-            "line": 188,
+            "line": 186,
             "column": 24,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Course/CourseSnapshot/WeeksToComplete.jsx",
-            "line": 32,
-            "column": 4,
+            "line": 33,
+            "column": 6,
             "version": "19.15.0"
           },
           {
@@ -19759,8 +19781,8 @@
           },
           {
             "filePath": "src/components/CourseCurriculum/index.jsx",
-            "line": 94,
-            "column": 10,
+            "line": 95,
+            "column": 12,
             "version": "19.15.0"
           },
           {
@@ -19825,25 +19847,25 @@
           },
           {
             "filePath": "src/components/Search/Refinements/FacetList.jsx",
-            "line": 181,
+            "line": 179,
             "column": 22,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Search/Refinements/FacetList.jsx",
-            "line": 182,
+            "line": 180,
             "column": 23,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Search/Refinements/LearningTypeRadioSelect.jsx",
-            "line": 107,
+            "line": 105,
             "column": 22,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Search/Refinements/LearningTypeRadioSelect.jsx",
-            "line": 108,
+            "line": 106,
             "column": 23,
             "version": "19.15.0"
           },
@@ -19935,8 +19957,8 @@
           },
           {
             "filePath": "src/components/Badges/NewBadge.jsx",
-            "line": 9,
-            "column": 2,
+            "line": 10,
+            "column": 4,
             "version": "19.15.0"
           },
           {
@@ -19977,7 +19999,7 @@
           },
           {
             "filePath": "src/components/Search/Refinements/FacetList.jsx",
-            "line": 208,
+            "line": 206,
             "column": 33,
             "version": "19.15.0"
           }
@@ -20053,14 +20075,14 @@
           },
           {
             "filePath": "src/components/Course/Instructors/index.jsx",
-            "line": 77,
+            "line": 81,
             "column": 10,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/CourseCurriculum/index.jsx",
-            "line": 88,
-            "column": 8,
+            "line": 89,
+            "column": 10,
             "version": "19.15.0"
           },
           {
@@ -20077,7 +20099,7 @@
           },
           {
             "filePath": "src/components/Overlays/SaveForLaterOverlay.jsx",
-            "line": 317,
+            "line": 318,
             "column": 14,
             "version": "19.15.0"
           },
@@ -20121,26 +20143,26 @@
         "Container": [
           {
             "filePath": "src/components/CardPanels/CardListPanel.jsx",
-            "line": 183,
+            "line": 182,
             "column": 6,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Careers/Hero.jsx",
-            "line": 38,
-            "column": 4,
+            "line": 39,
+            "column": 6,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Certificate/index.jsx",
-            "line": 23,
-            "column": 4,
+            "line": 24,
+            "column": 6,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Course/2U/AboutCourse.jsx",
-            "line": 8,
-            "column": 2,
+            "line": 9,
+            "column": 4,
             "version": "19.15.0"
           },
           {
@@ -20151,8 +20173,8 @@
           },
           {
             "filePath": "src/components/Course/2U/Factoid.jsx",
-            "line": 7,
-            "column": 2,
+            "line": 8,
+            "column": 4,
             "version": "19.15.0"
           },
           {
@@ -20175,32 +20197,32 @@
           },
           {
             "filePath": "src/components/Course/BusinessBlock/index.jsx",
-            "line": 28,
-            "column": 2,
-            "version": "19.15.0"
-          },
-          {
-            "filePath": "src/components/Course/BusinessBlock/indexMobile.jsx",
-            "line": 22,
-            "column": 2,
-            "version": "19.15.0"
-          },
-          {
-            "filePath": "src/components/Course/CourseHeader/index.jsx",
-            "line": 26,
+            "line": 29,
             "column": 4,
             "version": "19.15.0"
           },
           {
+            "filePath": "src/components/Course/BusinessBlock/indexMobile.jsx",
+            "line": 23,
+            "column": 4,
+            "version": "19.15.0"
+          },
+          {
+            "filePath": "src/components/Course/CourseHeader/index.jsx",
+            "line": 27,
+            "column": 6,
+            "version": "19.15.0"
+          },
+          {
             "filePath": "src/components/Course/CourseMain/index.jsx",
-            "line": 95,
+            "line": 93,
             "column": 4,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Course/CourseMain/indexMobile.jsx",
-            "line": 20,
-            "column": 2,
+            "line": 19,
+            "column": 4,
             "version": "19.15.0"
           },
           {
@@ -20211,14 +20233,14 @@
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 74,
+            "line": 75,
             "column": 8,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Course/CourseRecommendations/CourseRecommendationsExp.jsx",
-            "line": 17,
-            "column": 2,
+            "line": 16,
+            "column": 4,
             "version": "19.15.0"
           },
           {
@@ -20229,7 +20251,7 @@
           },
           {
             "filePath": "src/components/Course/CourseSnapshot/index.jsx",
-            "line": 79,
+            "line": 77,
             "column": 12,
             "version": "19.15.0"
           },
@@ -20241,8 +20263,8 @@
           },
           {
             "filePath": "src/components/Course/Instructors/indexMobile.jsx",
-            "line": 9,
-            "column": 2,
+            "line": 10,
+            "column": 4,
             "version": "19.15.0"
           },
           {
@@ -20253,20 +20275,20 @@
           },
           {
             "filePath": "src/components/EdX/AboutEdx.jsx",
-            "line": 7,
-            "column": 2,
-            "version": "19.15.0"
-          },
-          {
-            "filePath": "src/components/EdX/EdxStatistics.jsx",
-            "line": 12,
-            "column": 2,
-            "version": "19.15.0"
-          },
-          {
-            "filePath": "src/components/EdX/EdxStatistics.jsx",
-            "line": 13,
+            "line": 8,
             "column": 4,
+            "version": "19.15.0"
+          },
+          {
+            "filePath": "src/components/EdX/EdxStatistics.jsx",
+            "line": 22,
+            "column": 4,
+            "version": "19.15.0"
+          },
+          {
+            "filePath": "src/components/EdX/EdxStatistics.jsx",
+            "line": 23,
+            "column": 6,
             "version": "19.15.0"
           },
           {
@@ -20289,26 +20311,26 @@
           },
           {
             "filePath": "src/components/Home/EdxVision.jsx",
-            "line": 8,
-            "column": 4,
+            "line": 9,
+            "column": 6,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Home/Hero.jsx",
-            "line": 12,
+            "line": 18,
+            "column": 8,
+            "version": "19.15.0"
+          },
+          {
+            "filePath": "src/components/Home/MarketingTakeover.jsx",
+            "line": 21,
             "column": 6,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Home/MarketingTakeover.jsx",
-            "line": 20,
-            "column": 4,
-            "version": "19.15.0"
-          },
-          {
-            "filePath": "src/components/Home/MarketingTakeover.jsx",
-            "line": 49,
-            "column": 4,
+            "line": 50,
+            "column": 6,
             "version": "19.15.0"
           },
           {
@@ -20331,14 +20353,14 @@
           },
           {
             "filePath": "src/components/Home/Trustbar.jsx",
-            "line": 10,
-            "column": 2,
+            "line": 11,
+            "column": 4,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Home/UniversalDesignOfLearning.jsx",
-            "line": 6,
-            "column": 2,
+            "line": 7,
+            "column": 4,
             "version": "19.15.0"
           },
           {
@@ -20349,56 +20371,56 @@
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 394,
+            "line": 431,
             "column": 8,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 395,
+            "line": 432,
             "column": 10,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 396,
+            "line": 433,
             "column": 12,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 629,
+            "line": 659,
             "column": 12,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 637,
+            "line": 667,
             "column": 12,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 656,
+            "line": 686,
             "column": 8,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 841,
+            "line": 858,
             "column": 10,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 842,
+            "line": 859,
             "column": 12,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Quotation/index.jsx",
-            "line": 12,
-            "column": 4,
+            "line": 13,
+            "column": 6,
             "version": "19.15.0"
           },
           {
@@ -20409,14 +20431,14 @@
           },
           {
             "filePath": "src/components/Search/BaseHeader/TitleSection.jsx",
-            "line": 12,
-            "column": 4,
+            "line": 13,
+            "column": 6,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Search/BaseHeader/TitleSection.jsx",
-            "line": 19,
-            "column": 4,
+            "line": 20,
+            "column": 6,
             "version": "19.15.0"
           },
           {
@@ -20433,7 +20455,7 @@
           },
           {
             "filePath": "src/components/Search/Refinements/Filters.jsx",
-            "line": 104,
+            "line": 102,
             "column": 4,
             "version": "19.15.0"
           },
@@ -20445,7 +20467,7 @@
           },
           {
             "filePath": "src/components/Search/Results/OverviewProductHits.jsx",
-            "line": 27,
+            "line": 25,
             "column": 4,
             "version": "19.15.0"
           },
@@ -20487,25 +20509,25 @@
           },
           {
             "filePath": "src/templates/aboutEdX.jsx",
-            "line": 392,
+            "line": 394,
             "column": 12,
             "version": "19.15.0"
           },
           {
             "filePath": "src/templates/aboutEdX.jsx",
-            "line": 416,
+            "line": 418,
             "column": 12,
             "version": "19.15.0"
           },
           {
             "filePath": "src/templates/aboutEdX.jsx",
-            "line": 509,
+            "line": 511,
             "column": 14,
             "version": "19.15.0"
           },
           {
             "filePath": "src/templates/aboutEdX.jsx",
-            "line": 522,
+            "line": 524,
             "column": 14,
             "version": "19.15.0"
           },
@@ -20535,14 +20557,14 @@
           },
           {
             "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 456,
+            "line": 463,
             "column": 14,
             "version": "19.15.0"
           },
           {
             "filePath": "src/templates/products2U.jsx",
-            "line": 14,
-            "column": 4,
+            "line": 15,
+            "column": 6,
             "version": "19.15.0"
           }
         ],
@@ -20605,13 +20627,13 @@
           },
           {
             "filePath": "src/components/CourseCurriculum/index.jsx",
-            "line": 80,
-            "column": 6,
+            "line": 81,
+            "column": 8,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Overlays/SaveForLaterOverlay.jsx",
-            "line": 296,
+            "line": 297,
             "column": 6,
             "version": "19.15.0"
           },
@@ -20649,8 +20671,8 @@
           },
           {
             "filePath": "src/components/CourseCurriculum/index.jsx",
-            "line": 83,
-            "column": 10,
+            "line": 84,
+            "column": 12,
             "version": "19.15.0"
           },
           {
@@ -20663,16 +20685,16 @@
         "ModalDialog": [
           {
             "filePath": "src/components/Course/2U/CourseVideoDialog.jsx",
-            "line": 9,
-            "column": 2,
+            "line": 10,
+            "column": 4,
             "version": "19.15.0"
           }
         ],
         "ModalDialog.Body": [
           {
             "filePath": "src/components/Course/2U/CourseVideoDialog.jsx",
-            "line": 19,
-            "column": 4,
+            "line": 20,
+            "column": 6,
             "version": "19.15.0"
           }
         ],
@@ -20773,19 +20795,19 @@
           },
           {
             "filePath": "src/components/Home/SubcategoriesList.jsx",
-            "line": 39,
-            "column": 12,
+            "line": 38,
+            "column": 10,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Home/SubcategoriesList.jsx",
-            "line": 55,
-            "column": 12,
+            "line": 54,
+            "column": 10,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Overlays/SaveForLaterOverlay.jsx",
-            "line": 334,
+            "line": 335,
             "column": 14,
             "version": "19.15.0"
           }
@@ -20793,49 +20815,49 @@
         "Collapsible": [
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 59,
-            "column": 4,
-            "version": "19.15.0"
-          },
-          {
-            "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 73,
+            "line": 60,
             "column": 6,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 81,
-            "column": 4,
-            "version": "19.15.0"
-          },
-          {
-            "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 92,
+            "line": 74,
             "column": 6,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 104,
+            "line": 82,
             "column": 6,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 116,
+            "line": 93,
             "column": 6,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 126,
+            "line": 105,
             "column": 6,
             "version": "19.15.0"
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 136,
+            "line": 117,
+            "column": 6,
+            "version": "19.15.0"
+          },
+          {
+            "filePath": "src/components/Course/CoursePageMobile.jsx",
+            "line": 127,
+            "column": 6,
+            "version": "19.15.0"
+          },
+          {
+            "filePath": "src/components/Course/CoursePageMobile.jsx",
+            "line": 137,
             "column": 6,
             "version": "19.15.0"
           },
@@ -20875,8 +20897,8 @@
           },
           {
             "filePath": "src/components/MemberList/MemberListItemStatic.jsx",
-            "line": 18,
-            "column": 6,
+            "line": 19,
+            "column": 8,
             "version": "19.15.0"
           }
         ],
@@ -20889,7 +20911,7 @@
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 401,
+            "line": 438,
             "column": 20,
             "version": "19.15.0"
           }
@@ -20935,15 +20957,15 @@
           },
           {
             "filePath": "src/components/Home/SubcategoriesList.jsx",
-            "line": 77,
-            "column": 16,
+            "line": 76,
+            "column": 14,
             "version": "19.15.0"
           }
         ],
         "MarketingModal": [
           {
             "filePath": "src/components/MarketingModal/SaveForLaterModal.jsx",
-            "line": 50,
+            "line": 54,
             "column": 6,
             "version": "19.15.0"
           }
@@ -20951,7 +20973,7 @@
         "ModalDialog.Hero": [
           {
             "filePath": "src/components/MarketingModal/SaveForLaterModal.jsx",
-            "line": 56,
+            "line": 60,
             "column": 10,
             "version": "19.15.0"
           }
@@ -20959,7 +20981,7 @@
         "ModalDialog.Title": [
           {
             "filePath": "src/components/MarketingModal/SaveForLaterModal.jsx",
-            "line": 61,
+            "line": 66,
             "column": 14,
             "version": "19.15.0"
           }
@@ -21017,7 +21039,7 @@
         "Toast": [
           {
             "filePath": "src/components/Overlays/SaveForLaterOverlay.jsx",
-            "line": 288,
+            "line": 289,
             "column": 8,
             "version": "19.15.0"
           }
@@ -21025,7 +21047,7 @@
         "Popover": [
           {
             "filePath": "src/components/Overlays/SaveForLaterOverlay.jsx",
-            "line": 300,
+            "line": 301,
             "column": 10,
             "version": "19.15.0"
           }
@@ -21063,8 +21085,8 @@
           },
           {
             "filePath": "src/components/Search/Results/NoResultsBlurb.jsx",
-            "line": 13,
-            "column": 2,
+            "line": 14,
+            "column": 4,
             "version": "19.15.0"
           },
           {
@@ -21085,7 +21107,7 @@
         "Menu": [
           {
             "filePath": "src/components/Search/Refinements/FacetList.jsx",
-            "line": 197,
+            "line": 195,
             "column": 10,
             "version": "19.15.0"
           }
@@ -21093,7 +21115,7 @@
         "MenuItem": [
           {
             "filePath": "src/components/Search/Refinements/FacetList.jsx",
-            "line": 199,
+            "line": 197,
             "column": 16,
             "version": "19.15.0"
           }
