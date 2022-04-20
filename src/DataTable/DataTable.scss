@@ -1,9 +1,9 @@
 $data-table-border: 1px solid $gray-200 !default;
 $data-table-box-shadow: $box-shadow-sm !default;
-$data-table-padding-x: 0.75rem !default;
-$data-table-padding-y: 0.75rem !default;
-$data-table-padding-small: 0.5rem !default;
-$data-table-cell-padding: 0.5rem 0.75rem !default;
+$data-table-padding-x: .75rem !default;
+$data-table-padding-y: .75rem !default;
+$data-table-padding-small: .5rem !default;
+$data-table-cell-padding: .5rem .75rem !default;
 $data-table-footer-position: center !default;
 $data-table-pagination-dropdown-max-height: 60vh !default;
 $data-table-pagination-dropdown-min-width: 6rem !default;
@@ -32,10 +32,13 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
 .pgn__table-actions {
   display: flex;
 
+  // stylelint-disable-next-line selector-class-pattern
   .pgn__datatable__visible-actions {
     margin-inline-start: map_get($spacers, 2);
+
     .btn {
       margin-inline-start: map_get($spacers, 2);
+
       &:first-child {
         margin-inline-start: 0;
       }
@@ -65,6 +68,7 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
     margin-top: map_get($spacers, 4);
   }
 
+  // stylelint-disable-next-line selector-class-pattern
   .pgn__icon-button-toggle__container {
     justify-content: flex-end;
   }
@@ -77,7 +81,7 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
   -webkit-overflow-scrolling: touch;
   position: relative;
 
-  &.is-loading:before {
+  &.is-loading::before {
     content: "";
     position: absolute;
     top: 0;
@@ -92,6 +96,7 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
 .pgn__data-table-layout-wrapper {
   display: flex;
   align-items: flex-start;
+
   .pgn__data-table-layout-sidebar {
     border-radius: $border-radius;
     box-shadow: $data-table-box-shadow;
@@ -105,6 +110,7 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
       margin-bottom: map_get($spacers, 3);
       text-align: start;
     }
+
     .pgn__data-table-side-filters-status {
       margin-bottom: map_get($spacers, 2);
       display: flex;
@@ -123,16 +129,19 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
   &.is-striped tr:nth-child(even) {
     background-color: $light-200;
   }
+
   th {
     background-color: $light-300;
     padding: $data-table-cell-padding;
     text-align: start;
   }
+
   td {
     padding: $table-cell-padding;
     line-height: 24px;
     text-align: start;
   }
+
   & tr.is-selected {
     background-color: $info-100 !important;
   }
@@ -195,6 +204,7 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
 
 .pgn__data-table-pagination {
   display: flex;
+
   .pgn__page-count {
     align-self: $data-table-footer-position;
   }
@@ -216,8 +226,9 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
 
 .pgn__checkbox-filter {
   display: flex;
+
   input .form-check-input {
-    margin-top: 0.36rem;
+    margin-top: .36rem;
   }
 
   .form-check {
@@ -236,10 +247,11 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
 }
 
 .pgn__dropdown-filter-checkbox-group {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
+  margin-left: .75rem;
+  margin-right: .75rem;
+
   input .form-check-input {
-    margin-top: 0.36rem;
+    margin-top: .36rem;
   }
 }
 
@@ -247,6 +259,7 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
   padding: 0 $data-table-padding-x;
 }
 
+// stylelint-disable-next-line selector-class-pattern
 .pgn__data-table__action-btn {
   margin-left: map_get($spacers, 2);
 
@@ -263,8 +276,9 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
   z-index: 2;
 }
 
+// stylelint-disable-next-line selector-class-pattern
 .pgn__datatable__overflow-actions-menu {
-  background: #ffffff;
+  background: #FFFFFF;
   padding: map_get($spacers, 2);
   box-shadow: $level-1-box-shadow;
   border-radius: 4px;

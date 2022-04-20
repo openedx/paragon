@@ -2,17 +2,21 @@
   transition: height 300ms ease;
   text-align: start;
 }
+
 .pgn__transition-replace-enter {
   opacity: 0;
 }
+
 .pgn__transition-replace-enter-active {
   opacity: 1;
   z-index: 1;
   transition: opacity 300ms ease;
 }
+
 .pgn__transition-replace-exit {
   opacity: 1;
 }
+
 .pgn__transition-replace-exit-active {
   opacity: 0;
   transition: opacity 300ms ease;

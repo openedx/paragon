@@ -30,6 +30,7 @@
     "commit": "commit",
     "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage",
     "lint": "eslint --ext .js --ext .jsx . && npm run generate-component-lint",
+    "stylelint": "stylelint \"src/**/*.scss\" \"scss/**/*.scss\" \"www/src/**/*.scss\" --config .stylelintrc.json",
     "prepublishOnly": "npm run build",
     "semantic-release": "semantic-release",
     "snapshot": "jest --updateSnapshot",
@@ -101,7 +102,9 @@
     "react-test-renderer": "^17.0.0",
     "regenerator-runtime": "^0.13.9",
     "sass": "^1.32.13",
-    "semantic-release": "^17.0.0"
+    "semantic-release": "^17.0.0",
+    "stylelint": "^14.7.1",
+    "stylelint-config-standard-scss": "^3.0.0"
   },
   "jest": {
     "transform": {

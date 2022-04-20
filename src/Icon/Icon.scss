@@ -7,21 +7,25 @@
   width: 1.5rem; // 24px, Assumes base font size to be 16px
   flex-shrink: 0;
 
+  // stylelint-disable-next-line selector-class-pattern
   &.pgn__icon__inline {
     width: $icon-inline;
     height: $icon-inline;
   }
 
+  // stylelint-disable-next-line selector-class-pattern
   &.pgn__icon__sm {
     width: $icon-sm;
     height: $icon-sm;
   }
 
+  // stylelint-disable-next-line selector-class-pattern
   &.pgn__icon__md {
     width: $icon-md;
     height: $icon-md;
   }
 
+  // stylelint-disable-next-line selector-class-pattern
   &.pgn__icon__lg {
     width: $icon-lg;
     height: $icon-lg;

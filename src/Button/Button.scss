@@ -1,7 +1,12 @@
 @import "variables";
 @import "~bootstrap/scss/button-group";
 
-@mixin button-variant($background, $border, $hover-background: darken($background, 7.5%), $hover-border: darken($border, 10%), $active-background: darken($background, 10%), $active-border: darken($border, 12.5%), $color: color-yiq($background), $hover-color: color-yiq($hover-background), $active-color: color-yiq($active-background)) {
+@mixin button-variant(
+  $background, $border, $hover-background: darken($background, 7.5%),
+  $hover-border: darken($border, 10%), $active-background: darken($background, 10%),
+  $active-border: darken($border, 12.5%), $color: color-yiq($background), $hover-color: color-yiq($hover-background),
+  $active-color: color-yiq($active-background)
+) {
   color: $color;
 
   @include gradient-bg($background);
@@ -24,6 +29,7 @@
     color: color-yiq($background);
     background-color: $background;
     border-color: $border;
+
     // Remove CSS gradients if they're enabled
     @if $enable-gradients {
       background-image: none;
@@ -46,7 +52,9 @@
 
 // OVERRIDE FROM BOOTSTRAP
 // We do this to better control active and focus states.
-@mixin button-outline-variant($color, $color-hover: color-yiq($color), $active-background: $color, $active-border: $color) {
+@mixin button-outline-variant(
+  $color, $color-hover: color-yiq($color), $active-background: $color, $active-border: $color
+) {
   color: $color;
   border-color: $color;
 
@@ -81,20 +89,21 @@
   @include font-size($font-size);
 
   line-height: $line-height;
+
   // Manually declare to provide an override to the browser default
   @include border-radius($border-radius, 0);
 }
-
 
 // ------------------------
 // BELOW ARE EDX EXTENSIONS
 // ------------------------
 
-
 //
 // A new variant of button (inverse)
 //
-@mixin button-inverse-variant($color, $background: color-yiq($color), $active-background: $color, $active-border: $color) {
+@mixin button-inverse-variant(
+  $color, $background: color-yiq($color), $active-background: $color, $active-border: $color
+) {
   color: $color;
   border-color: transparent;
   background-color: $background;
@@ -115,7 +124,7 @@
   &:not(:disabled):not(.disabled).active,
   .show > &.dropdown-toggle {
     color: darken($color, 10%);
-    background: #eee;
+    background: #EEEEEE;
   }
 }
 
@@ -130,7 +139,7 @@
     $distance-include-btn-border: $distance + $btn-border-width;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: -1 * $distance-include-btn-border;
       right: -1 * $distance-include-btn-border;
@@ -151,7 +160,7 @@
     &:active,
     &.active {
       &::before {
-        opacity: 0.75;
+        opacity: .75;
       }
     }
 
@@ -202,6 +211,28 @@
   &:disabled {
     opacity: $btn-disabled-opacity;
   }
+
+  // Button Icon Sizes
+
+  .btn-icon-before {
+    margin-inline-end: .5rem;
+    margin-left: -.25em;
+
+    [dir="rtl"] & {
+      margin-right: -.25em;
+      margin-left: .5rem;
+    }
+  }
+
+  .btn-icon-after {
+    margin-inline-start: .5rem;
+    margin-right: -.25em;
+
+    [dir="rtl"] & {
+      margin-right: .5rem;
+      margin-left: -.25em;
+    }
+  }
 }
 
 // Future-proof disabling of clicks on `<a>` elements
@@ -209,7 +240,6 @@ a.btn.disabled,
 fieldset:disabled a.btn {
   pointer-events: none;
 }
-
 
 //
 // Alternate buttons
@@ -388,19 +418,21 @@ fieldset:disabled a.btn {
   @include button-focus(theme-color("primary", "focus"));
 }
 
-
 //
 // Button Sizes
 //
 
 .btn-lg {
-  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+  @include button-size(
+    $btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg
+  );
 }
 
 .btn-sm {
-  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+  @include button-size(
+    $btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm
+  );
 }
-
 
 //
 // Block button
@@ -420,7 +452,7 @@ fieldset:disabled a.btn {
   line-height: calc(#{$line-height-base}em - #{2 * $btn-border-width});
   font-size: inherit;
   vertical-align: bottom;
-  padding: 0 0.25em;
+  padding: 0 .25em;
 }
 
 // Specificity overrides
@@ -429,32 +461,6 @@ input[type="reset"],
 input[type="button"] {
   &.btn-block {
     width: 100%;
-  }
-}
-
-//
-// Button Icon Sizes
-//
-
-.btn {
-  .btn-icon-before {
-    margin-inline-end: 0.5rem;
-    margin-left: -0.25em;
-
-    [dir="rtl"] & {
-      margin-right: -0.25em;
-      margin-left: 0.5rem;
-    }
-  }
-
-  .btn-icon-after {
-    margin-inline-start: 0.5rem;
-    margin-right: -0.25em;
-
-    [dir="rtl"] & {
-      margin-right: 0.5rem;
-      margin-left: -0.25em;
-    }
   }
 }
 

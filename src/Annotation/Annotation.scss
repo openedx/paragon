@@ -4,7 +4,7 @@
   height: 0;
   width: 0;
   position: absolute;
-  content: '';
+  content: "";
   border: solid transparent;
 
   @if $direction == top {
@@ -81,12 +81,16 @@ $arrow-directions: top, right, bottom, left;
           @if $direction == left {
             left: initial;
             right: -$annotation-arrow-border-width;
-            border-width: $annotation-arrow-border-width 0 $annotation-arrow-border-width $annotation-arrow-border-width;
+            border-width:
+              $annotation-arrow-border-width 0 $annotation-arrow-border-width
+              $annotation-arrow-border-width;
             border-left-color: map-get($colors, "background-color");
           } @else if $direction == right {
             right: initial;
             left: -$annotation-arrow-border-width;
-            border-width: $annotation-arrow-border-width $annotation-arrow-border-width $annotation-arrow-border-width 0;
+            border-width:
+              $annotation-arrow-border-width $annotation-arrow-border-width
+              $annotation-arrow-border-width 0;
             border-right-color: map-get($colors, "background-color");
           }
         }

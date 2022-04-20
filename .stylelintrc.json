@@ -1,0 +1,31 @@
+{
+  "extends": ["stylelint-config-standard-scss"],
+  "rules": {
+    "selector-pseudo-class-no-unknown": [true, {
+      "ignorePseudoClasses": ["export"]
+    }],
+    "unit-no-unknown": [true, {
+      "ignoreUnits": ["\\.5"]
+    }],
+    "property-no-vendor-prefix": [true, {
+      "ignoreProperties": ["animation", "filter"]
+    }],
+    "value-no-vendor-prefix": [true, {
+      "ignoreValues": ["fill-available"]
+    }],
+    "number-leading-zero": "never",
+    "no-descending-specificity": null,
+    "selector-class-pattern": "^(pgn__|pgn-doc__)?([a-z][a-z0-9]*)(-{1,2}[a-z0-9]+)*$",
+    "selector-id-pattern": "^(pgn__|pgn-doc__)?([a-z][a-z0-9]*)(-{1,2}[a-z0-9]+)*$",
+    "scss/no-global-function-names": null,
+    "color-hex-case": "upper",
+    "color-hex-length": "long",
+    "scss/dollar-variable-empty-line-before": null,
+    "scss/dollar-variable-colon-space-after": "at-least-one-space",
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true,
+    "string-quotes": "double",
+    "scss/at-import-partial-extension": "never",
+    "scss/comment-no-empty": null
+  }
+}

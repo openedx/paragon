@@ -1,5 +1,7 @@
+// stylelint-disable-next-line selector-class-pattern
 .pgn__icon-button-toggle__container {
   display: flex;
+
   .btn-icon + .btn-icon {
     margin-inline-start: map_get($spacers, 1);
   }
