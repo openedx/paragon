@@ -2,6 +2,7 @@ import React from 'react';
 import BaseTabs from 'react-bootstrap/Tabs';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
 import TabsDeprecated from './deprecated';
 import Bubble from '../Bubble';
 
@@ -10,8 +11,10 @@ const Tabs = ({
   className,
   ...props
 }) => {
-  const childrenList = [];
-  React.Children.forEach(children, child => {
+  const newChildren = [];
+  React.Children.forEach(children, (child) => {
+    if (!child) { return; }
+
     const { title, notification, ...rest } = child.props;
 
     const newTitle = notification ? (
@@ -20,13 +23,13 @@ const Tabs = ({
         <Bubble variant="error" className="pgn__tab-notification">{notification}</Bubble>
       </>
     ) : title;
-    const modifiedTab = React.createElement(child.type, { ...rest, title: newTitle });
-    childrenList.push(modifiedTab);
+    const modifiedTab = React.createElement(child.type, { ...rest, title: newTitle, key: uuidv4() });
+    newChildren.push(modifiedTab);
   });
 
   return (
     <BaseTabs {...props} className={classNames(className, 'pgn__tabs')}>
-      {childrenList.map(child => child)}
+      {newChildren}
     </BaseTabs>
   );
 };
