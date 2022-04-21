@@ -9,27 +9,29 @@ const Tabs = ({
   children,
   className,
   ...props
-}) => {
-  const childrenList = [];
-  React.Children.forEach(children, child => {
-    const { title, notification, ...rest } = child.props;
-
-    const newTitle = notification ? (
-      <>
-        {title}
-        <Bubble variant="error" className="pgn__tab-notification">{notification}</Bubble>
-      </>
-    ) : title;
-    const modifiedTab = React.createElement(child.type, { ...rest, title: newTitle });
-    childrenList.push(modifiedTab);
-  });
-
-  return (
-    <BaseTabs {...props} className={classNames(className, 'pgn__tabs')}>
-      {childrenList.map(child => child)}
-    </BaseTabs>
-  );
-};
+}) => (
+  <BaseTabs {...props} className={classNames(className, 'pgn__tabs')}>
+    {React.Children.map(children, (child) => {
+      if (!React.isValidElement(child)) {
+        return child;
+      }
+      const { title, notification, ...rest } = child.props;
+      let newTitle;
+      if (notification) {
+        newTitle = (
+          <>
+            {title}
+            <Bubble variant="error" className="pgn__tab-notification">{notification}</Bubble>
+          </>
+        );
+      } else {
+        newTitle = title;
+      }
+      const modifiedTab = React.cloneElement(child, { ...rest, title: newTitle });
+      return modifiedTab;
+    })}
+  </BaseTabs>
+);
 
 Tabs.propTypes = {
   /** Specifies elements that is processed to create tabs. */
