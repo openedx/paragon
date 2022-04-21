@@ -1,5 +1,5 @@
 {
-  "lastModified": 1650463720603,
+  "lastModified": 1650550162893,
   "projectUsages": [
     {
       "version": "19.18.1",
@@ -9295,9 +9295,9 @@
             "version": "19.10.1"
           },
           {
-            "filePath": "src/discussions/learners/LearnersContentView.jsx",
-            "line": 39,
-            "column": 12,
+            "filePath": "src/discussions/learners/LearnerPageHeader.jsx",
+            "line": 28,
+            "column": 8,
             "version": "19.10.1"
           },
           {
@@ -9351,9 +9351,9 @@
             "version": "19.10.1"
           },
           {
-            "filePath": "src/discussions/learners/LearnersContentView.jsx",
-            "line": 58,
-            "column": 20,
+            "filePath": "src/discussions/learners/LearnerPageHeader.jsx",
+            "line": 43,
+            "column": 18,
             "version": "19.10.1"
           },
           {
@@ -9432,7 +9432,7 @@
           },
           {
             "filePath": "src/discussions/learners/LearnersContentView.jsx",
-            "line": 98,
+            "line": 42,
             "column": 12,
             "version": "19.10.1"
           },
@@ -9460,18 +9460,6 @@
             "filePath": "src/discussions/common/ActionsDropdown.jsx",
             "line": 37,
             "column": 8,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/discussions/learners/learner/LearnerCard.jsx",
-            "line": 66,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/discussions/learners/LearnersContentView.jsx",
-            "line": 44,
-            "column": 14,
             "version": "19.10.1"
           },
           {
@@ -9717,41 +9705,11 @@
             "version": "19.10.1"
           }
         ],
-        "Card": [
-          {
-            "filePath": "src/discussions/learners/LearnersContentView.jsx",
-            "line": 36,
-            "column": 6,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 47,
-            "column": 6,
-            "version": "19.10.1"
-          }
-        ],
-        "Card.Body": [
-          {
-            "filePath": "src/discussions/learners/LearnersContentView.jsx",
-            "line": 37,
-            "column": 8,
-            "version": "19.10.1"
-          }
-        ],
-        "Card.Footer": [
-          {
-            "filePath": "src/discussions/learners/LearnersContentView.jsx",
-            "line": 48,
-            "column": 8,
-            "version": "19.10.1"
-          }
-        ],
         "ButtonGroup": [
           {
-            "filePath": "src/discussions/learners/LearnersContentView.jsx",
-            "line": 49,
-            "column": 10,
+            "filePath": "src/discussions/learners/LearnerPageHeader.jsx",
+            "line": 34,
+            "column": 8,
             "version": "19.10.1"
           }
         ],
@@ -9812,6 +9770,14 @@
             "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
             "line": 27,
             "column": 4,
+            "version": "19.10.1"
+          }
+        ],
+        "Card": [
+          {
+            "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
+            "line": 47,
+            "column": 6,
             "version": "19.10.1"
           }
         ],
@@ -11134,7 +11100,7 @@
           },
           {
             "filePath": "src/components/site-header/SiteHeader.jsx",
-            "line": 65,
+            "line": 60,
             "column": 6,
             "version": "17.5.0"
           },
@@ -11300,13 +11266,13 @@
           },
           {
             "filePath": "src/components/site-header/SiteHeader.jsx",
-            "line": 125,
+            "line": 120,
             "column": 6,
             "version": "17.5.0"
           },
           {
             "filePath": "src/components/site-header/SiteHeader.jsx",
-            "line": 128,
+            "line": 123,
             "column": 6,
             "version": "17.5.0"
           }
@@ -12913,12 +12879,6 @@
             "version": "19.15.1"
           },
           {
-            "filePath": "src/course-home/outline-tab/SequenceLink.jsx",
-            "line": 48,
-            "column": 8,
-            "version": "19.15.1"
-          },
-          {
             "filePath": "src/course-home/progress-tab/credit-information/CreditInformation.jsx",
             "line": 29,
             "column": 4,
@@ -14438,7 +14398,7 @@
         "Toast": [
           {
             "filePath": "src/tab-page/TabPage.jsx",
-            "line": 69,
+            "line": 65,
             "column": 8,
             "version": "19.15.1"
           }
@@ -15889,18 +15849,6 @@
             "version": "16.14.4"
           },
           {
-            "filePath": "src/containers/CourseHeader/AnonymousUserMenu.jsx",
-            "line": 18,
-            "column": 4,
-            "version": "16.14.4"
-          },
-          {
-            "filePath": "src/containers/CourseHeader/AnonymousUserMenu.jsx",
-            "line": 25,
-            "column": 4,
-            "version": "16.14.4"
-          },
-          {
             "filePath": "src/containers/ListView/EmptySubmission.jsx",
             "line": 21,
             "column": 6,
@@ -15916,6 +15864,12 @@
             "filePath": "src/containers/ListView/ListError.jsx",
             "line": 27,
             "column": 6,
+            "version": "16.14.4"
+          },
+          {
+            "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
+            "line": 90,
+            "column": 20,
             "version": "16.14.4"
           },
           {
@@ -16158,7 +16112,7 @@
           },
           {
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
-            "line": 28,
+            "line": 40,
             "column": 6,
             "version": "16.14.4"
           },
@@ -16230,38 +16184,6 @@
             "filePath": "src/components/StatusBadge.jsx",
             "line": 25,
             "column": 4,
-            "version": "16.14.4"
-          }
-        ],
-        "Dropdown": [
-          {
-            "filePath": "src/containers/CourseHeader/AuthenticatedUserDropdown/index.jsx",
-            "line": 21,
-            "column": 4,
-            "version": "16.14.4"
-          }
-        ],
-        "Dropdown.Toggle": [
-          {
-            "filePath": "src/containers/CourseHeader/AuthenticatedUserDropdown/UserAvatar.jsx",
-            "line": 10,
-            "column": 2,
-            "version": "16.14.4"
-          }
-        ],
-        "Dropdown.Item": [
-          {
-            "filePath": "src/containers/CourseHeader/AuthenticatedUserDropdown/UserMenu.jsx",
-            "line": 13,
-            "column": 6,
-            "version": "16.14.4"
-          }
-        ],
-        "Dropdown.Menu": [
-          {
-            "filePath": "src/containers/CourseHeader/AuthenticatedUserDropdown/UserMenu.jsx",
-            "line": 23,
-            "column": 6,
             "version": "16.14.4"
           }
         ],
@@ -16362,14 +16284,20 @@
           },
           {
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
-            "line": 35,
+            "line": 47,
             "column": 18,
             "version": "16.14.4"
           },
           {
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
-            "line": 38,
+            "line": 50,
             "column": 18,
+            "version": "16.14.4"
+          },
+          {
+            "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
+            "line": 88,
+            "column": 20,
             "version": "16.14.4"
           }
         ],
@@ -16382,7 +16310,7 @@
           },
           {
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
-            "line": 43,
+            "line": 55,
             "column": 18,
             "version": "16.14.4"
           }
@@ -16404,7 +16332,7 @@
           },
           {
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
-            "line": 67,
+            "line": 79,
             "column": 20,
             "version": "16.14.4"
           }
@@ -16448,7 +16376,7 @@
         "Collapsible.Advanced": [
           {
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
-            "line": 31,
+            "line": 43,
             "column": 12,
             "version": "16.14.4"
           }
@@ -16456,7 +16384,7 @@
         "Collapsible.Trigger": [
           {
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
-            "line": 32,
+            "line": 44,
             "column": 14,
             "version": "16.14.4"
           }
@@ -16464,13 +16392,13 @@
         "Collapsible.Visible": [
           {
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
-            "line": 34,
+            "line": 46,
             "column": 16,
             "version": "16.14.4"
           },
           {
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
-            "line": 37,
+            "line": 49,
             "column": 16,
             "version": "16.14.4"
           }
@@ -16478,7 +16406,7 @@
         "Collapsible.Body": [
           {
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
-            "line": 41,
+            "line": 53,
             "column": 14,
             "version": "16.14.4"
           }
@@ -16486,7 +16414,7 @@
         "Card.Footer": [
           {
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
-            "line": 72,
+            "line": 84,
             "column": 12,
             "version": "16.14.4"
           }
@@ -20557,8 +20485,8 @@
           },
           {
             "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 463,
-            "column": 14,
+            "line": 464,
+            "column": 16,
             "version": "19.15.0"
           },
           {
