@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FocusOn } from 'react-focus-on';
 import { Link } from 'gatsby';
 import Menu from './Menu';
+import Search from './Seach';
 import {
   useToggle,
   Nav,
@@ -35,6 +36,7 @@ const Navbar = ({
           Menu
         </Button>
       </Col>
+      <Col as={Search} />
       <Col className="mb-2 mb-sm-0" sm={4}>
         <Link
           to="/"
