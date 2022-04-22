@@ -29,7 +29,7 @@
     "build-docs:with-theme": "cd ./www && \"$npm_execpath\" install && \"$npm_execpath\" run build:with-theme",
     "commit": "commit",
     "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage",
-    "lint": "eslint --ext .js --ext .jsx . && npm run generate-component-lint",
+    "lint": "eslint --ext .js --ext .jsx . && npm run generate-component-lint && npm run stylelint",
     "stylelint": "stylelint \"src/**/*.scss\" \"scss/**/*.scss\" \"www/src/**/*.scss\" --config .stylelintrc.json",
     "prepublishOnly": "npm run build",
     "semantic-release": "semantic-release",
