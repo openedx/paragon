@@ -20,6 +20,8 @@ export const VARIANTS = {
 class Sheet extends React.Component {
   constructor(props) {
     super(props);
+
+    this.wrapperRef = React.createRef();
     this.renderSheet = this.renderSheet.bind(this);
   }
 
@@ -47,6 +49,7 @@ class Sheet extends React.Component {
     const {
       blocking,
       show,
+      onClose,
     } = this.props;
     if (!show) {
       return null;
@@ -60,7 +63,11 @@ class Sheet extends React.Component {
           )}
           role="presentation"
         />
-        <FocusOn enabled={this.props.blocking}>
+        <FocusOn
+          onClickOutside={blocking ? () => {} : onClose}
+          onEscapeKey={blocking ? () => {} : onClose}
+          shards={[this.wrapperRef]}
+        >
           {this.renderSheet()}
         </FocusOn>
       </SheetContainer>
@@ -82,6 +89,8 @@ Sheet.propTypes = {
   ]),
   /** Boolean used to control whether the Sheet shows. */
   show: PropTypes.bool,
+  /** Specifies function that controls `show` value. */
+  onClose: PropTypes.func,
   /** a string designating which version of the sheet to show (light vs dark) */
   variant: PropTypes.oneOf([VARIANTS.light, VARIANTS.dark]),
 };
@@ -91,6 +100,7 @@ Sheet.defaultProps = {
   children: undefined,
   position: POSITIONS.bottom,
   show: true,
+  onClose: () => {},
   variant: VARIANTS.light,
 };
 

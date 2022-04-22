@@ -44,9 +44,10 @@ describe('<Sheet />', () => {
       ).toMatchSnapshot();
     });
   });
-
-  it('returns empty render iff show is false', () => {
-    expect(renderJSON(<Sheet show={false} />)).toEqual(null);
-    expect(renderJSON(<Sheet />)).not.toEqual(null);
+  describe('correct rendering', () => {
+    it('returns empty render if show is false', () => {
+      expect(renderJSON(<Sheet show={false} />)).toEqual(null);
+      expect(renderJSON(<Sheet />)).not.toEqual(null);
+    });
   });
 });
