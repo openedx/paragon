@@ -35,8 +35,8 @@ notes: |
           <Dropdown.Item eventKey={position}>{position}</Dropdown.Item>
         ))}
       </DropdownButton><br />
-      <Button onClick={() => setShow(!show)}>
-        {show ? "Hide" : "Show"} the Sheet
+      <Button onClick={() => setShow(true)}>
+        Show the Sheet
       </Button>{' '}
       <Button onClick={() => setBlocking(!blocking)}>
         {blocking ? "Disable": "Enable"} blocking content
@@ -50,6 +50,7 @@ notes: |
         show={show}
         blocking={blocking}
         variant={dark ? 'dark' : 'light'}
+        onClose={() => setShow(false)}
       >
         This is a Sheet component <br />
         <Button
