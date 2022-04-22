@@ -4,6 +4,7 @@ import React, {
 import PropTypes from 'prop-types';
 import { useTable } from 'react-table';
 
+import classNames from 'classnames';
 import Table from './Table';
 import getVisibleColumns from './utils/getVisibleColumns';
 import { requiredWhen, requiredWhenNot } from '../utils/propTypesUtils';
@@ -47,6 +48,7 @@ function DataTable({
   manualSelectColumn,
   showFiltersInSidebar,
   dataViewToggleOptions,
+  disableElevation,
   isLoading,
   children,
   ...props
@@ -127,6 +129,7 @@ function DataTable({
     showFiltersInSidebar,
     dataViewToggleOptions,
     renderRowSubComponent,
+    disableElevation,
     isLoading,
     ...selectionProps,
     ...selectionActions,
@@ -136,7 +139,10 @@ function DataTable({
   return (
     <DataTableContext.Provider value={enhancedInstance}>
       <DataTableLayout>
-        <div className="pgn__data-table-wrapper">
+        <div className={classNames('pgn__data-table-wrapper', {
+          hideShadow: !!disableElevation,
+        })}
+        >
           {children || (
           <>
             <TableControlBar />
@@ -180,6 +186,7 @@ DataTable.defaultProps = {
     defaultActiveStateValue: 'card',
     togglePlacement: 'left',
   },
+  disableElevation: false,
   renderRowSubComponent: undefined,
   isExpandable: false,
   isLoading: false,
@@ -341,6 +348,8 @@ DataTable.propTypes = {
      * actions section. Only 'left' and 'bottom' are supported */
     togglePlacement: PropTypes.string,
   }),
+  /** remove the default box shadow on the component */
+  disableElevation: PropTypes.bool,
   /** A function that will render contents of expanded row, accepts `row` as a prop. */
   renderRowSubComponent: PropTypes.func,
   /** Indicates whether table supports expandable rows. */
