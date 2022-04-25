@@ -1,0 +1,16 @@
+{
+  "name": "component-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "commander": "^9.2.0",
+    "dotenv": "^16.0.0"
+  }
+}

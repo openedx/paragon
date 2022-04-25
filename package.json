@@ -32,7 +32,7 @@
     "start": "echo 'To start the Paragon documentation site: cd www/ && npm i && npm start'",
     "test": "jest --coverage",
     "test:watch": "npm run test -- --watch",
-    "generate-component": "node component-generator/index.js"
+    "generate-component": "cd component-generator && npm start"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -76,8 +76,6 @@
     "babel-jest": "^24.5.0",
     "babel-loader": "^8.2.4",
     "commander": "^7.2.0",
-    "axios": "^0.26.1",
-    "dotenv": "^16.0.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "eslint": "^7.32.0",

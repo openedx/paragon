@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 const { exec } = require('child_process');
-require('dotenv').config({ path: path.resolve(__dirname, '../www/.env.development') });
+require('dotenv').config();
 
 /**
  * Helper function to validate component name when the command is invoked.
@@ -12,21 +12,21 @@ require('dotenv').config({ path: path.resolve(__dirname, '../www/.env.developmen
  * @param {string} value - component name
  */
 function validateComponentName(value) {
-  if (fs.existsSync(`./src/${value}`)) {
+  if (fs.existsSync(path.resolve(__dirname, `../src/${value}`))) {
     throw new InvalidOptionArgumentError('The component already exists.');
   }
   return value;
 }
 
 /**
- * Sends request to the Netify function to inform about generate-component usage.
+ * Sends request to the Netlify function to inform about generate-component usage.
  * @param {string} componentName - component name
  */
 function sendTrackInfo(componentName) {
   const { BASE_URL, TRACK_ANONYMOUS_ANALYTICS } = process.env;
   if (TRACK_ANONYMOUS_ANALYTICS) {
-    const url = `${BASE_URL}/.netlify/functions/track-generate-component`;
-    axios.get(url, { params: { componentName } })
+    const url = `${BASE_URL}/.netlify/functions/trackGenerateComponent`;
+    axios.post(url, { componentName })
       .then(result => {
         // eslint-disable-next-line no-console
         console.log(`Track info is successfully sent (status ${result.status})`);
@@ -59,8 +59,14 @@ function createFile(targetPath, templatePath, componentName) {
  * @param {string} componentName - name of the component to add to the exports
  */
 function addComponentToExports(componentName) {
-  fs.appendFileSync('./src/index.js', `export { default as ${componentName} } from './${componentName}';\n`);
-  fs.appendFileSync('./src/index.scss', `@import './${componentName}/${componentName}.scss';\n`);
+  fs.appendFileSync(
+    path.resolve(__dirname, '../src/index.js'),
+    `export { default as ${componentName} } from './${componentName}';\n`,
+  );
+  fs.appendFileSync(
+    path.resolve(__dirname, '../src/index.scss'),
+    `@import './${componentName}/${componentName}.scss';\n`,
+  );
 }
 
 /**

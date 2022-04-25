@@ -11,7 +11,7 @@ const {
 } = require('./utils');
 
 program
-  .requiredOption('--componentName <name>', 'Component must have a name', validateComponentName)
+  .argument('<ComponentName>', 'Component must have a name', validateComponentName)
   .action((options) => {
     const { componentName } = options;
     // send data to analytics
