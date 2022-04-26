@@ -12,8 +12,7 @@ const {
 
 program
   .argument('<ComponentName>', 'Component must have a name', validateComponentName)
-  .action((options) => {
-    const { componentName } = options;
+  .action((componentName) => {
     // send data to analytics
     sendTrackInfo(componentName);
     const componentDir = path.resolve(__dirname, `../src/${componentName}`);

@@ -6,12 +6,24 @@ const { exec } = require('child_process');
 require('dotenv').config();
 
 /**
+ * Transforms PascalCase to kebab-case.
+ * @param {string} componentName - name of the component
+ */
+function generateCssClass(componentName) {
+  return componentName.replace(/[A-Z]+/g,
+    (capital, index) => (index ? `-${capital}` : capital).toLowerCase());
+}
+
+/**
  * Helper function to validate component name when the command is invoked.
  * Checks that component does not exists in Paragon and returns
  * component name, otherwise throws an error.
  * @param {string} value - component name
  */
 function validateComponentName(value) {
+  if (!/^([A-Z][a-z]*)([A-Z][a-z]*)*$/g.test(value)) {
+    throw new InvalidOptionArgumentError('Name should match Pascal case. Example: MyComponent.');
+  }
   if (fs.existsSync(path.resolve(__dirname, `../src/${value}`))) {
     throw new InvalidOptionArgumentError('The component already exists.');
   }
@@ -47,10 +59,12 @@ function sendTrackInfo(componentName) {
  * @param {string} componentName - name of the component
  */
 function createFile(targetPath, templatePath, componentName) {
+  const cssClass = generateCssClass(componentName);
   const actualPath = targetPath.replace(/componentName/g, componentName);
   const fileContent = fs
     .readFileSync(templatePath, 'utf-8')
-    .replace(/componentName/g, componentName);
+    .replace(/componentName/g, componentName)
+    .replace(/css-class/g, cssClass);
   fs.writeFileSync(actualPath, fileContent);
 }
 
