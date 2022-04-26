@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "lint": "eslint --ext .js --ext .jsx ."
   },
   "author": "",
   "license": "ISC",
@@ -12,5 +13,13 @@
     "axios": "^0.26.1",
     "commander": "^9.2.0",
     "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.0.0"
   }
 }
