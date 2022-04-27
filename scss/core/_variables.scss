@@ -672,12 +672,15 @@ $display2-size:               4.875rem !default;
 $display3-size:               5.625rem !default;
 $display4-size:               7.5rem !default;
 
+$display-mobile-size:         3.25rem !default;
+
 $display1-weight:             700 !default;
 $display2-weight:             700 !default;
 $display3-weight:             700 !default;
 $display4-weight:             700 !default;
 
 $display-line-height:         1.0 !default;
+$display-mobile-line-height:  3.5rem !default;
 
 $lead-font-size:              $font-size-base * 1.25 !default;
 $lead-font-weight:            null !default;
