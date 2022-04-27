@@ -32,6 +32,7 @@
     "start": "echo 'To start the Paragon documentation site: cd www/ && npm i && npm start'",
     "test": "jest --coverage",
     "test:watch": "npm run test -- --watch",
+    "generate-component-install": "cd component-generator && npm сi",
     "generate-component": "cd component-generator && npm start",
     "generate-component-lint": "cd component-generator && npm run lint"
   },
