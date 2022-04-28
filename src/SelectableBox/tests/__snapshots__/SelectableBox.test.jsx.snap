@@ -13,7 +13,6 @@ exports[`<SelectableBox /> correct rendering renders without props 1`] = `
     className="pgn__form-radio"
   >
     <input
-      aria-label="checkbox"
       checked={false}
       className="pgn__form-radio-input"
       hidden={true}

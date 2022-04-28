@@ -82,8 +82,7 @@ function CodeBlock({ children, className, live }) {
         getLineProps,
         getTokenProps,
       }) => (
-        // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-        <pre className={preClassName} style={{ ...style, padding: '1rem', overflowY: 'auto' }} tabIndex="0">
+        <pre className={preClassName} style={{ ...style, padding: '1rem', overflowY: 'auto' }}>
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (

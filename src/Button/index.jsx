@@ -12,9 +12,11 @@ const WrappedButton = React.forwardRef(({
   children,
   iconAfter,
   iconBefore,
+  screenReaderText,
   ...props
 }, ref) => (
   <Button
+    aria-label={screenReaderText}
     {...props}
     className={classNames(props.className)}
     ref={ref}
@@ -37,6 +39,8 @@ WrappedButton.propTypes = {
   /** An icon component to render.
    * Example import of a Paragon icon component: `import { Check } from '@edx/paragon/icons';` */
   iconAfter: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+  /** specifies the screen reader text for both the clear and submit buttons (e.g., for i18n translations). */
+  screenReaderText: PropTypes.string,
 };
 
 WrappedButton.defaultProps = {
@@ -45,6 +49,7 @@ WrappedButton.defaultProps = {
   className: undefined,
   iconBefore: undefined,
   iconAfter: undefined,
+  screenReaderText: undefined,
 };
 
 WrappedButton.Deprecated = ButtonDeprecated;

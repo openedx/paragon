@@ -21,6 +21,7 @@ const SelectableBox = React.forwardRef(({
   onClick,
   onFocus,
   inputHidden,
+  screenReaderText,
   className,
 }, ref) => {
   const inputType = getInputType('SelectableBox', type);
@@ -43,7 +44,7 @@ const SelectableBox = React.forwardRef(({
     hidden: inputHidden,
     ref: inputRef,
     tabIndex: -1,
-    'aria-label': 'checkbox',
+    'aria-label': screenReaderText,
     onChange: () => {},
     ...(type === 'checkbox' && { isIndeterminate }),
   }, null);
@@ -94,6 +95,7 @@ SelectableBox.propTypes = {
   isInvalid: PropTypes.bool,
   /** A class that is appended to the base element. */
   className: PropTypes.string,
+  screenReaderText: PropTypes.string,
 };
 
 SelectableBox.defaultProps = {
@@ -106,6 +108,7 @@ SelectableBox.defaultProps = {
   isIndeterminate: false,
   isInvalid: false,
   className: undefined,
+  screenReaderText: undefined,
 };
 
 SelectableBox.Set = SelectableBoxSet;

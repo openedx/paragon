@@ -385,7 +385,7 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
       <DataTable.TableControlBar />
 
       {/* which kind of body content to show */}
-      { currentView === "card" && <CardView CardComponent={MiyazakiCard} srcAlt="Card image" /> }
+      { currentView === "card" && <CardView CardComponent={MiyazakiCard} /> }
       { currentView === "list" && <DataTable.Table /> }
 
       <DataTable.EmptyTable content="No results found" />
