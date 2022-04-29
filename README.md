@@ -67,7 +67,7 @@ npm start
 To create new component run
 
 ```
-npm run generate-component -- --componentName=MyComponent
+npm run generate-component MyComponent
 ```
 
 where `MyComponent` is your new component's name.
