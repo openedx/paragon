@@ -1,2 +1,4 @@
 [context.deploy-preview]
   environment = { SEGMENT_KEY = "" }
+[functions]
+  directory = "www/netlify/functions"
