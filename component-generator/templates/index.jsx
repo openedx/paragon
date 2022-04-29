@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const componentName = React.forwardRef(({ className, children }, ref) => (
-  <div ref={ref} className={classNames('pgn__componentName', className)}>
+  <div ref={ref} className={classNames('pgn__css-class', className)}>
     {children}
   </div>
 ));

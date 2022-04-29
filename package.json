@@ -25,14 +25,16 @@
     "build-docs:with-theme": "cd ./www && \"$npm_execpath\" install && \"$npm_execpath\" run build:with-theme",
     "commit": "commit",
     "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage",
-    "lint": "eslint --ext .js --ext .jsx .",
+    "lint": "eslint --ext .js --ext .jsx . && npm run generate-component-lint",
     "prepublishOnly": "npm run build",
     "semantic-release": "semantic-release",
     "snapshot": "jest --updateSnapshot",
     "start": "echo 'To start the Paragon documentation site: cd www/ && npm i && npm start'",
     "test": "jest --coverage",
     "test:watch": "npm run test -- --watch",
-    "generate-component": "node component-generator/index.js"
+    "generate-component-install": "cd component-generator && npm install",
+    "generate-component": "cd component-generator && npm start",
+    "generate-component-lint": "cd component-generator && npm run lint"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
