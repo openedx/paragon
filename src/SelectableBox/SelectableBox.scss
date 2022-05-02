@@ -1,6 +1,5 @@
 @import "variables";
 
-// stylelint-disable-next-line selector-class-pattern
 .pgn__selectable_box-set {
   display: grid;
   grid-auto-rows: 1fr;
@@ -17,7 +16,6 @@
   }
 }
 
-// stylelint-disable-next-line selector-class-pattern
 .pgn__selectable_box {
   position: relative;
   height: 100%;
@@ -46,12 +44,10 @@
   }
 }
 
-// stylelint-disable-next-line selector-class-pattern
 .pgn__selectable_box-active {
   outline: 2px solid $primary-500;
 }
 
-// stylelint-disable-next-line selector-class-pattern
 .pgn__selectable_box-invalid {
   outline: 2px solid $danger-300;
 }

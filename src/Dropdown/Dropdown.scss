@@ -28,7 +28,6 @@
   display: flex;
   align-items: center;
 
-  // stylelint-disable-next-line selector-class-pattern
   .pgn__dropdown-item__icon-before {
     margin-inline-end: .5rem;
     margin-left: -.25em;
@@ -39,7 +38,6 @@
     }
   }
 
-  // stylelint-disable-next-line selector-class-pattern
   .pgn__dropdown-item__icon-after {
     margin-inline-start: .5rem;
     margin-right: -.25em;

@@ -73,7 +73,6 @@ $btn-icon-accent-color: white !default;
     padding: 1em;
     vertical-align: middle;
 
-    // stylelint-disable-next-line selector-class-pattern
     .btn-icon__icon-container {
       height: 100%;
       width: 100%;
@@ -82,19 +81,16 @@ $btn-icon-accent-color: white !default;
     }
   }
 
-  // stylelint-disable-next-line selector-class-pattern
   .btn-icon__icon-container {
     display: inline-flex;
     align-self: center;
 
-    // stylelint-disable-next-line selector-class-pattern
     .pgn__icon.btn-icon__icon {
       height: 1.5rem;
       width: 1.5rem;
     }
   }
 
-  // stylelint-disable-next-line selector-class-pattern
   .btn-icon__icon {
     height: 1em;
     width: 1em;

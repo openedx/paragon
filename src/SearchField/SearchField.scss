@@ -13,7 +13,6 @@
   &.has-focus {
     box-shadow: 0 0 0 $search-border-width $search-border-color-interaction;
 
-    // stylelint-disable-next-line selector-class-pattern
     .pgn__searchfield_wrapper {
       box-shadow: 0 0 0 $search-border-width $search-border-color-interaction;
     }
@@ -84,7 +83,6 @@
     }
   }
 
-  // stylelint-disable-next-line selector-class-pattern
   .pgn__searchfield_wrapper {
     display: flex;
     align-items: center;
@@ -98,7 +96,6 @@
   }
 }
 
-// stylelint-disable-next-line selector-class-pattern
 .pgn__searchfield__button.btn[type="submit"] {
   border-radius: 0;
   margin-inline-start: $search-button-margin;

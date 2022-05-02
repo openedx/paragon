@@ -42,7 +42,6 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
     content: "";
   }
 
-  // stylelint-disable-next-line selector-class-pattern
   .pgn__checkpoint-button_dismiss {
     margin-inline-end: map_get($spacers, 2);
   }
@@ -52,12 +51,10 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
     width: 6px;
     border-radius: 50%;
 
-    // stylelint-disable-next-line selector-class-pattern
     &.pgn__checkpoint-breadcrumb_active {
       background: $checkpoint-breadcrumb-color;
     }
 
-    // stylelint-disable-next-line selector-class-pattern
     &.pgn__checkpoint-breadcrumb_inactive {
       border: 1px solid $checkpoint-breadcrumb-color;
       background: transparent;

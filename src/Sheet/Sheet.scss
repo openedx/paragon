@@ -37,7 +37,6 @@
   background-color: white;
   z-index: $zindex-sheet;
 
-  // stylelint-disable-next-line selector-class-pattern
   &.pgn__sheet__dark {
     background-color: $dark-500;
     color: $light-300;
