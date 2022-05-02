@@ -94,9 +94,9 @@
     line-height: $pagination-line-height;
   }
 
-  &.active .page-link:focus {
-    background-color: $pagination-focus-color !important;
-    color: $pagination-bg !important;
+  &.active .page-link.btn-primary:not(:disabled):not(.disabled):focus {
+    background-color: $pagination-focus-color;
+    color: $pagination-bg;
   }
 }
 
