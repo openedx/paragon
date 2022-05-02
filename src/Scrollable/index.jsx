@@ -7,7 +7,7 @@ import useIsVisible from '../hooks/useIsVisible';
 export const CLASSNAME_SCROLL_TOP = 'pgn__scrollable-body-scroll-top';
 export const CLASSNAME_SCROLL_BOTTOM = 'pgn__scrollable-body-scroll-bottom';
 
-const Scrollable = ({ children, ...props }) => {
+const Scrollable = ({ children, ariaValue, ...props }) => {
   const [isScrolledToTop, topSentinelRef] = useIsVisible();
   const [isScrolledToBottom, bottomSentinelRef] = useIsVisible();
   const className = classNames(
@@ -19,8 +19,7 @@ const Scrollable = ({ children, ...props }) => {
     },
   );
   return (
-    // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-    <div {...props} className={className} tabIndex="0">
+    <div {...props} className={className} role="scrollbar" aria-valuenow={ariaValue} aria-controls="scrollbar" tabIndex="0">
       <div ref={topSentinelRef} />
       <div className="pgn__scrollable-body-content">
         {children}
@@ -35,10 +34,13 @@ Scrollable.propTypes = {
   children: PropTypes.node.isRequired,
   /** Additional classnames for this component. */
   className: PropTypes.string,
+  /** The aria-valuenow attribute defines the current value for range widgets. */
+  ariaValue: PropTypes.string,
 };
 
 Scrollable.defaultProps = {
   className: undefined,
+  ariaValue: null,
 };
 
 export default Scrollable;
