@@ -56,9 +56,8 @@ See the [code of conduct](https://github.com/edx/.github/blob/master/CODE_OF_CON
 The Paragon documentation site serves both as documentation and as a workbench to create your component within. To see your component in action, you need to run the documentation site locally. (Note you need to install dependencies both in the project root and the `www` directory)
 
 ```
-npm install
+npm run install-all
 cd www
-npm install
 npm start
 ```
 
