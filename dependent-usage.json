@@ -1,5 +1,5 @@
 {
-  "lastModified": 1651500574562,
+  "lastModified": 1651586934628,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -1591,6 +1591,12 @@
             "version": "19.18.3"
           },
           {
+            "filePath": "src/components/ConfirmationModal/index.jsx",
+            "line": 56,
+            "column": 8,
+            "version": "19.18.3"
+          },
+          {
             "filePath": "src/components/CouponDetails/ActionButton.jsx",
             "line": 80,
             "column": 4,
@@ -3067,6 +3073,12 @@
             "version": "19.18.3"
           },
           {
+            "filePath": "src/components/ConfirmationModal/index.jsx",
+            "line": 55,
+            "column": 6,
+            "version": "19.18.3"
+          },
+          {
             "filePath": "src/components/settings/ConfigError.jsx",
             "line": 21,
             "column": 6,
@@ -3255,6 +3267,12 @@
             "version": "19.18.3"
           },
           {
+            "filePath": "src/components/ConfirmationModal/index.jsx",
+            "line": 28,
+            "column": 2,
+            "version": "19.18.3"
+          },
+          {
             "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
             "line": 13,
             "column": 2,
@@ -3311,6 +3329,12 @@
             "version": "19.18.3"
           },
           {
+            "filePath": "src/components/ConfirmationModal/index.jsx",
+            "line": 35,
+            "column": 4,
+            "version": "19.18.3"
+          },
+          {
             "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
             "line": 19,
             "column": 4,
@@ -3361,6 +3385,12 @@
             "version": "19.18.3"
           },
           {
+            "filePath": "src/components/ConfirmationModal/index.jsx",
+            "line": 36,
+            "column": 6,
+            "version": "19.18.3"
+          },
+          {
             "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
             "line": 20,
             "column": 6,
@@ -3408,6 +3438,12 @@
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentStepper.jsx",
             "line": 64,
             "column": 8,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/ConfirmationModal/index.jsx",
+            "line": 51,
+            "column": 4,
             "version": "19.18.3"
           },
           {
@@ -3502,6 +3538,12 @@
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentStepper.jsx",
             "line": 80,
             "column": 8,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/ConfirmationModal/index.jsx",
+            "line": 54,
+            "column": 4,
             "version": "19.18.3"
           },
           {
@@ -3719,6 +3761,12 @@
             "version": "19.18.3"
           },
           {
+            "filePath": "src/components/ConfirmationModal/index.jsx",
+            "line": 40,
+            "column": 8,
+            "version": "19.18.3"
+          },
+          {
             "filePath": "src/components/ErrorPage/index.jsx",
             "line": 27,
             "column": 10,
@@ -3898,6 +3946,12 @@
             "filePath": "src/components/CodeModal/ModalError.jsx",
             "line": 14,
             "column": 8,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/ConfirmationModal/index.jsx",
+            "line": 44,
+            "column": 10,
             "version": "19.18.3"
           },
           {
@@ -4132,13 +4186,13 @@
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/index.jsx",
-            "line": 50,
+            "line": 52,
             "column": 6,
             "version": "19.18.3"
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/index.jsx",
-            "line": 55,
+            "line": 57,
             "column": 6,
             "version": "19.18.3"
           },
@@ -4218,6 +4272,12 @@
             "filePath": "src/components/IconWithTooltip/index.jsx",
             "line": 13,
             "column": 4,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessConfiguredSubsidyType.jsx",
+            "line": 16,
+            "column": 6,
             "version": "19.18.3"
           },
           {
@@ -4378,19 +4438,19 @@
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 69,
-            "column": 8,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 82,
+            "line": 70,
             "column": 10,
             "version": "19.18.3"
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 88,
+            "line": 84,
+            "column": 10,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/settings/SettingsTabs.jsx",
+            "line": 90,
             "column": 10,
             "version": "19.18.3"
           },
@@ -4458,6 +4518,128 @@
             "filePath": "src/components/CodeSearchResults/index.jsx",
             "line": 86,
             "column": 6,
+            "version": "19.18.3"
+          }
+        ],
+        "StatefulButton": [
+          {
+            "filePath": "src/components/ConfirmationModal/index.jsx",
+            "line": 59,
+            "column": 8,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
+            "line": 236,
+            "column": 12,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
+            "line": 219,
+            "column": 12,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/LmsConfigurations/CornerstoneIntegrationConfigForm.jsx",
+            "line": 219,
+            "column": 10,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
+            "line": 319,
+            "column": 10,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
+            "line": 270,
+            "column": 12,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
+            "line": 294,
+            "column": 12,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
+            "line": 344,
+            "column": 12,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
+            "line": 314,
+            "column": 12,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
+            "line": 163,
+            "column": 14,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/SaveTemplateButton/index.jsx",
+            "line": 141,
+            "column": 6,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAccessTab/DisableLinkManagementAlertModal.jsx",
+            "line": 39,
+            "column": 10,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAccessTab/LinkDeactivationAlertModal.jsx",
+            "line": 59,
+            "column": 10,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessGenerateLinkButton.jsx",
+            "line": 49,
+            "column": 4,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/subscriptions/buttons/DownloadCsvButton.jsx",
+            "line": 42,
+            "column": 4,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/subscriptions/licenses/LicenseManagementModals/LicenseManagementRemindModal.jsx",
+            "line": 204,
+            "column": 10,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/subscriptions/licenses/LicenseManagementModals/LicenseManagementRevokeModal.jsx",
+            "line": 181,
+            "column": 10,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
+            "line": 166,
+            "column": 12,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/subsidy-request-modals/ApproveLicenseRequestModal.jsx",
+            "line": 165,
+            "column": 12,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/subsidy-request-modals/DeclineSubsidyRequestModal.jsx",
+            "line": 105,
+            "column": 10,
             "version": "19.18.3"
           }
         ],
@@ -4570,7 +4752,7 @@
         "MediaQuery": [
           {
             "filePath": "src/components/EnterpriseApp/index.jsx",
-            "line": 133,
+            "line": 142,
             "column": 10,
             "version": "19.18.3"
           }
@@ -5151,6 +5333,12 @@
             "version": "19.18.3"
           },
           {
+            "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessConfiguredSubsidyType.jsx",
+            "line": 20,
+            "column": 10,
+            "version": "19.18.3"
+          },
+          {
             "filePath": "src/components/subscriptions/licenses/LicenseManagementTable/LicenseManagementTableActionColumn.jsx",
             "line": 113,
             "column": 10,
@@ -5591,122 +5779,6 @@
             "version": "19.18.3"
           }
         ],
-        "StatefulButton": [
-          {
-            "filePath": "src/components/LmsConfigurations/BlackboardIntegrationConfigForm.jsx",
-            "line": 236,
-            "column": 12,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/LmsConfigurations/CanvasIntegrationConfigForm.jsx",
-            "line": 219,
-            "column": 12,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/LmsConfigurations/CornerstoneIntegrationConfigForm.jsx",
-            "line": 219,
-            "column": 10,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/LmsConfigurations/DegreedIntegrationConfigForm.jsx",
-            "line": 319,
-            "column": 10,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/LmsConfigurations/MoodleIntegrationConfigForm.jsx",
-            "line": 270,
-            "column": 12,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/LmsConfigurations/SuccessFactorsIntegrationConfigForm.jsx",
-            "line": 294,
-            "column": 12,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 344,
-            "column": 12,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/SamlProviderConfiguration/SamlProviderConfigForm.jsx",
-            "line": 314,
-            "column": 12,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/SamlProviderConfiguration/SamlProviderDataForm.jsx",
-            "line": 163,
-            "column": 14,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/SaveTemplateButton/index.jsx",
-            "line": 141,
-            "column": 6,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/settings/SettingsAccessTab/DisableLinkManagementAlertModal.jsx",
-            "line": 39,
-            "column": 10,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/settings/SettingsAccessTab/LinkDeactivationAlertModal.jsx",
-            "line": 59,
-            "column": 10,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessGenerateLinkButton.jsx",
-            "line": 49,
-            "column": 4,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/subscriptions/buttons/DownloadCsvButton.jsx",
-            "line": 42,
-            "column": 4,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/subscriptions/licenses/LicenseManagementModals/LicenseManagementRemindModal.jsx",
-            "line": 204,
-            "column": 10,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/subscriptions/licenses/LicenseManagementModals/LicenseManagementRevokeModal.jsx",
-            "line": 181,
-            "column": 10,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
-            "line": 166,
-            "column": 12,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/subsidy-request-modals/ApproveLicenseRequestModal.jsx",
-            "line": 165,
-            "column": 12,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/subsidy-request-modals/DeclineSubsidyRequestModal.jsx",
-            "line": 105,
-            "column": 10,
-            "version": "19.18.3"
-          }
-        ],
         "Collapsible": [
           {
             "filePath": "src/components/LmsConfigurations/index.jsx",
@@ -5920,7 +5992,7 @@
         "ProductTour": [
           {
             "filePath": "src/components/ProductTours/BrowseAndRequestTour.jsx",
-            "line": 78,
+            "line": 77,
             "column": 4,
             "version": "19.18.3"
           }
@@ -5960,19 +6032,19 @@
         "Col": [
           {
             "filePath": "src/components/settings/SettingsAccessTab/index.jsx",
-            "line": 51,
+            "line": 53,
             "column": 8,
             "version": "19.18.3"
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/index.jsx",
-            "line": 56,
+            "line": 58,
             "column": 8,
             "version": "19.18.3"
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/index.jsx",
-            "line": 62,
+            "line": 64,
             "column": 8,
             "version": "19.18.3"
           },
@@ -6056,6 +6128,76 @@
             "filePath": "src/components/SubsidyRequestManagementTable/SubsidyRequestManagementTable.jsx",
             "line": 92,
             "column": 8,
+            "version": "19.18.3"
+          }
+        ],
+        "Form.RadioSet": [
+          {
+            "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessSubsidyTypeSelection.jsx",
+            "line": 58,
+            "column": 6,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 196,
+            "column": 10,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigIDPStep.jsx",
+            "line": 23,
+            "column": 10,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
+            "line": 122,
+            "column": 16,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/subsidy-request-modals/ApproveLicenseRequestModal.jsx",
+            "line": 121,
+            "column": 16,
+            "version": "19.18.3"
+          }
+        ],
+        "Form.Radio": [
+          {
+            "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessSubsidyTypeSelection.jsx",
+            "line": 66,
+            "column": 12,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 205,
+            "column": 12,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
+            "line": 206,
+            "column": 12,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigIDPStep.jsx",
+            "line": 28,
+            "column": 12,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
+            "line": 127,
+            "column": 20,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/subsidy-request-modals/ApproveLicenseRequestModal.jsx",
+            "line": 126,
+            "column": 20,
             "version": "19.18.3"
           }
         ],
@@ -6312,64 +6454,6 @@
             "filePath": "src/components/subsidy-request-modals/ApproveLicenseRequestModal.jsx",
             "line": 91,
             "column": 6,
-            "version": "19.18.3"
-          }
-        ],
-        "Form.RadioSet": [
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 196,
-            "column": 10,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigIDPStep.jsx",
-            "line": 23,
-            "column": 10,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
-            "line": 122,
-            "column": 16,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/subsidy-request-modals/ApproveLicenseRequestModal.jsx",
-            "line": 121,
-            "column": 16,
-            "version": "19.18.3"
-          }
-        ],
-        "Form.Radio": [
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 205,
-            "column": 12,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/SAPConfig.jsx",
-            "line": 206,
-            "column": 12,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigIDPStep.jsx",
-            "line": 28,
-            "column": 12,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
-            "line": 127,
-            "column": 20,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/subsidy-request-modals/ApproveLicenseRequestModal.jsx",
-            "line": 126,
-            "column": 20,
             "version": "19.18.3"
           }
         ],
@@ -11012,13 +11096,13 @@
           },
           {
             "filePath": "src/components/enterprise-page/EnterprisePage.jsx",
-            "line": 27,
+            "line": 38,
             "column": 6,
             "version": "17.5.0"
           },
           {
             "filePath": "src/components/enterprise-subsidy-requests/SubsidyRequestsContextProvider.jsx",
-            "line": 45,
+            "line": 63,
             "column": 6,
             "version": "17.5.0"
           },
@@ -11910,7 +11994,7 @@
         "Modal": [
           {
             "filePath": "src/components/course/EnrollModal.jsx",
-            "line": 43,
+            "line": 50,
             "column": 4,
             "version": "17.5.0"
           },
@@ -19606,7 +19690,7 @@
       }
     },
     {
-      "version": "19.19.0",
+      "version": "19.20.0",
       "name": "@edx/frontend-template-application",
       "repository": {
         "type": "git",
