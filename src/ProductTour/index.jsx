@@ -5,49 +5,51 @@ import Checkpoint from './Checkpoint';
 
 const ProductTour = React.forwardRef(({ tours }, ref) => {
   const tourValue = tours.filter((tour) => tour.enabled)[0];
-
-  const [currentCheckpointData, setCurrentCheckpointData] = useState(null);
+  const {
+    enabled, checkpoints = [], startingIndex, onEscape, onEnd, onDismiss: tourOnDismiss,
+    advanceButtonText: tourAdvanceButtonText, dismissButtonText: tourDismissButtonText,
+    endButtonText: tourEndButtonText,
+  } = tourValue || {};
+  const [currentCheckpointData, setCurrentCheckpointData] = useState([]);
   const [index, setIndex] = useState(0);
-  const [isTourEnabled, setIsTourEnabled] = useState(!!tourValue);
+  const [isTourEnabled, setIsTourEnabled] = useState(false);
   const [prunedCheckpoints, setPrunedCheckpoints] = useState([]);
+  const {
+    title, body, onAdvance, onDismiss, advanceButtonText, dismissButtonText,
+    endButtonText, placement, target, showDismissButton,
+  } = currentCheckpointData || {};
 
   /**
    * Takes a list of checkpoints and verifies that each target string provided is
    * an element in the DOM.
    */
-  const pruneCheckpoints = (checkpoints) => {
-    const checkpointsWithRenderedTargets = checkpoints.filter(
+  const pruneCheckpoints = (checkpointList) => {
+    const checkpointsWithRenderedTargets = checkpointList.filter(
       (checkpoint) => !!document.querySelector(checkpoint.target),
     );
     setPrunedCheckpoints(checkpointsWithRenderedTargets);
   };
 
   useEffect(() => {
-    if (tourValue) {
-      if (!isTourEnabled) {
-        setIsTourEnabled(tourValue.enabled);
-      }
-      pruneCheckpoints(tourValue.checkpoints);
-      setIndex(tourValue.startingIndex || 0);
+    if (enabled && checkpoints) {
+      setIsTourEnabled(enabled);
+      pruneCheckpoints(checkpoints);
+      setIndex(startingIndex || 0);
     }
-  }, [tourValue]);
+  }, [enabled, checkpoints, startingIndex]);
 
   useEffect(() => {
-    if (isTourEnabled) {
-      if (prunedCheckpoints) {
-        setCurrentCheckpointData(prunedCheckpoints[index]);
-      } else {
-        pruneCheckpoints(tourValue.checkpoints);
-      }
+    if (isTourEnabled && prunedCheckpoints.length) {
+      setCurrentCheckpointData(prunedCheckpoints[index]);
     }
   }, [index, isTourEnabled, prunedCheckpoints]);
 
   useEffect(() => {
     const handleEsc = (event) => {
-      if (isTourEnabled && event.keyCode === 27) {
+      if (event.keyCode === 27) {
         setIsTourEnabled(false);
-        if (tourValue.onEscape) {
-          tourValue.onEscape();
+        if (onEscape) {
+          onEscape();
         }
       }
     };
@@ -56,7 +58,7 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
     return () => {
       global.removeEventListener('keydown', handleEsc);
     };
-  }, [currentCheckpointData]);
+  }, [onEscape]);
 
   if (!tourValue || !currentCheckpointData || !isTourEnabled) {
     return null;
@@ -64,18 +66,18 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
 
   const handleAdvance = () => {
     setIndex(index + 1);
-    if (currentCheckpointData.onAdvance) {
-      currentCheckpointData.onAdvance();
+    if (onAdvance) {
+      onAdvance();
     }
   };
 
   const handleDismiss = () => {
     setIndex(0);
     setIsTourEnabled(false);
-    if (currentCheckpointData.onDismiss) {
-      currentCheckpointData.onDismiss();
+    if (onDismiss) {
+      onDismiss();
     } else {
-      tourValue.onDismiss();
+      tourOnDismiss();
     }
     setCurrentCheckpointData(null);
   };
@@ -83,28 +85,28 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
   const handleEnd = () => {
     setIndex(0);
     setIsTourEnabled(false);
-    if (tourValue.onEnd) {
-      tourValue.onEnd();
+    if (onEnd) {
+      onEnd();
     }
     setCurrentCheckpointData(null);
   };
 
   return (
     <Checkpoint
-      advanceButtonText={currentCheckpointData.advanceButtonText || tourValue.advanceButtonText}
-      body={currentCheckpointData.body}
+      advanceButtonText={advanceButtonText || tourAdvanceButtonText}
+      body={body}
       currentCheckpointData={currentCheckpointData}
-      dismissButtonText={currentCheckpointData.dismissButtonText || tourValue.dismissButtonText}
-      endButtonText={currentCheckpointData.endButtonText || tourValue.endButtonText}
+      dismissButtonText={dismissButtonText || tourDismissButtonText}
+      endButtonText={endButtonText || tourEndButtonText}
       index={index}
       onAdvance={handleAdvance}
       onDismiss={handleDismiss}
       onEnd={handleEnd}
-      placement={currentCheckpointData.placement}
-      target={currentCheckpointData.target}
-      title={currentCheckpointData.title}
+      placement={placement}
+      target={target}
+      title={title}
       totalCheckpoints={prunedCheckpoints.length}
-      showDismissButton={currentCheckpointData.showDismissButton}
+      showDismissButton={showDismissButton}
       ref={ref}
     />
   );

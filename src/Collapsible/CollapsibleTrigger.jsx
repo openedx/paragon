@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import { CollapsibleContext } from './CollapsibleAdvanced';
 
 function CollapsibleTrigger({
-  tag, children, openOnly, closeOnly, ...props
+  tag, children, openOnly, closeOnly, onClick, onKeyDown, ...props
 }) {
   const {
     isOpen, open, close, toggle,
   } = useContext(CollapsibleContext);
 
-  const handleToggle = (e) => {
+  const handleToggle = useCallback((e) => {
     if (openOnly) {
       open(e);
     } else if (closeOnly) {
@@ -18,23 +18,23 @@ function CollapsibleTrigger({
     } else {
       toggle(e);
     }
-  };
+  }, [openOnly, open, closeOnly, close, toggle]);
 
   const handleClick = useCallback((e) => {
-    if (props.onClick) {
-      props.onClick(e);
+    if (onClick) {
+      onClick(e);
     }
     handleToggle(e);
-  });
+  }, [onClick, handleToggle]);
 
   const handleKeyDown = useCallback((e) => {
-    if (props.onKeyDown) {
-      props.onKeyDown(e);
+    if (onKeyDown) {
+      onKeyDown(e);
     }
     if (e.key === 'Enter') {
       handleToggle(e);
     }
-  });
+  }, [onKeyDown, handleToggle]);
 
   return React.createElement(
     tag,

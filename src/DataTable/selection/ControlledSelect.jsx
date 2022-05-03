@@ -16,6 +16,8 @@ const ControlledSelect = ({ row }) => {
     controlledTableSelections: [, dispatch],
   } = useContext(DataTableContext);
 
+  const { getToggleRowSelectedProps } = row || {};
+
   const toggleSelected = useCallback(
     () => {
       if (row.isSelected) {
@@ -24,10 +26,10 @@ const ControlledSelect = ({ row }) => {
         dispatch(addSelectedRowAction(row, itemCount));
       }
     },
-    [itemCount, row],
+    [itemCount, row, dispatch],
   );
 
-  const toggleRowSelectedProps = useMemo(() => row.getToggleRowSelectedProps(), [row.getToggleRowSelectedProps]);
+  const toggleRowSelectedProps = useMemo(() => getToggleRowSelectedProps(), [getToggleRowSelectedProps]);
   const updatedProps = useConvertIndeterminateProp(toggleRowSelectedProps);
 
   return (

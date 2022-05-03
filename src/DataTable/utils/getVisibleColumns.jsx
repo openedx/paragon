@@ -32,7 +32,8 @@ export const selectColumn = {
   // Proptypes disabled as this prop is passed in separately
   /* eslint-disable react/prop-types */
   Cell: ({ row }) => {
-    const toggleRowSelectedProps = useMemo(() => row.getToggleRowSelectedProps(), [row.getToggleRowSelectedProps]);
+    const { getToggleRowSelectedProps } = row || {};
+    const toggleRowSelectedProps = useMemo(() => getToggleRowSelectedProps(), [getToggleRowSelectedProps]);
     const updatedProps = useConvertIndeterminateProp(toggleRowSelectedProps);
 
     return (

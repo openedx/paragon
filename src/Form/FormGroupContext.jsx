@@ -63,6 +63,7 @@ const FormGroupContextProvider = ({
   ]);
 
   const getLabelProps = (labelProps) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const id = useRegisteredLabellerId(labelProps?.id);
     if (isControlGroup) {
       return { ...labelProps, id };
@@ -71,6 +72,7 @@ const FormGroupContextProvider = ({
   };
 
   const getDescriptorProps = (descriptorProps) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const id = useRegisteredDescriptorId(descriptorProps?.id);
     return { ...descriptorProps, id };
   };

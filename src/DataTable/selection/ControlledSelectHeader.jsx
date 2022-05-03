@@ -31,7 +31,7 @@ const ControlledSelectHeader = ({ rows }) => {
         dispatch(setSelectedRowsAction(rows, itemCount));
       }
     },
-    [rows, selectedPageRowIds, isAllPageRowsSelected],
+    [rows, selectedPageRowIds, isAllPageRowsSelected, dispatch, itemCount],
   );
 
   const toggleAllPageRowsSelectedProps = getToggleAllPageRowsSelectedProps();

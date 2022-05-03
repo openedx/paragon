@@ -41,10 +41,11 @@ const Sticky = React.forwardRef(({
       observer.observe(resolvedRef.current);
 
       return () => {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         observer.unobserve(resolvedRef.current);
       };
     }
-  }, []);
+  }, [position, resolvedRef]);
 
   return (
     <div

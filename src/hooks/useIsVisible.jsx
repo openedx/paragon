@@ -25,7 +25,7 @@ const useIsVisible = (defaultIsVisible = true) => {
       // Do nothing if an intersection observer can't be created.
     }
     return () => {};
-  }, [sentinelRef.current]);
+  }, []);
 
   return [isVisible, sentinelRef];
 };
