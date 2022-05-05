@@ -1,5 +1,5 @@
 {
-  "lastModified": 1651673342116,
+  "lastModified": 1651759746578,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -7510,20 +7510,26 @@
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 131,
+            "line": 169,
             "column": 8,
             "version": "19.18.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 150,
+            "line": 178,
             "column": 8,
             "version": "19.18.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 191,
+            "line": 190,
             "column": 8,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/ScheduleEmailForm.jsx",
+            "line": 14,
+            "column": 4,
             "version": "19.18.3"
           }
         ],
@@ -7536,13 +7542,25 @@
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 132,
+            "line": 170,
             "column": 10,
             "version": "19.18.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 151,
+            "line": 179,
+            "column": 10,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/ScheduleEmailForm.jsx",
+            "line": 17,
+            "column": 10,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/ScheduleEmailForm.jsx",
+            "line": 34,
             "column": 10,
             "version": "19.18.3"
           }
@@ -7591,12 +7609,18 @@
             "line": 84,
             "column": 14,
             "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
+            "line": 193,
+            "column": 14,
+            "version": "19.18.3"
           }
         ],
         "Form": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 117,
+            "line": 161,
             "column": 6,
             "version": "19.18.3"
           }
@@ -7604,7 +7628,19 @@
         "Form.Control": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 139,
+            "line": 171,
+            "column": 10,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/ScheduleEmailForm.jsx",
+            "line": 24,
+            "column": 10,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/ScheduleEmailForm.jsx",
+            "line": 41,
             "column": 10,
             "version": "19.18.3"
           }
@@ -7612,8 +7648,8 @@
         "StatefulButton": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 192,
-            "column": 10,
+            "line": 217,
+            "column": 12,
             "version": "19.18.3"
           },
           {
@@ -7632,26 +7668,50 @@
         "Icon": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 201,
-            "column": 23,
+            "line": 225,
+            "column": 46,
             "version": "19.18.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 202,
-            "column": 23,
+            "line": 226,
+            "column": 47,
             "version": "19.18.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 203,
-            "column": 24,
+            "line": 227,
+            "column": 46,
             "version": "19.18.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 204,
-            "column": 21,
+            "line": 228,
+            "column": 47,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
+            "line": 229,
+            "column": 56,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
+            "line": 230,
+            "column": 44,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/ScheduleEmailForm.jsx",
+            "line": 26,
+            "column": 29,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/bulk-email-form/ScheduleEmailForm.jsx",
+            "line": 43,
+            "column": 29,
             "version": "19.18.3"
           },
           {
@@ -19783,13 +19843,13 @@
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 103,
+            "line": 122,
             "column": 14,
             "version": "19.19.1"
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 170,
+            "line": 200,
             "column": 22,
             "version": "19.19.1"
           },
@@ -20113,25 +20173,25 @@
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 135,
+            "line": 154,
             "column": 27,
             "version": "19.19.1"
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 164,
+            "line": 194,
             "column": 20,
             "version": "19.19.1"
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 180,
+            "line": 210,
             "column": 16,
             "version": "19.19.1"
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 200,
+            "line": 230,
             "column": 16,
             "version": "19.19.1"
           },
@@ -20161,7 +20221,7 @@
           },
           {
             "filePath": "src/components/Course/Instructors/index.jsx",
-            "line": 81,
+            "line": 85,
             "column": 10,
             "version": "19.19.1"
           },
@@ -20253,7 +20313,7 @@
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 96,
+            "line": 115,
             "column": 6,
             "version": "19.19.1"
           },
@@ -20349,7 +20409,7 @@
           },
           {
             "filePath": "src/components/Course/Instructors/indexMobile.jsx",
-            "line": 10,
+            "line": 11,
             "column": 4,
             "version": "19.19.1"
           },
@@ -20681,13 +20741,13 @@
         "Breadcrumb": [
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 100,
+            "line": 119,
             "column": 14,
             "version": "19.19.1"
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 104,
+            "line": 123,
             "column": 14,
             "version": "19.19.1"
           },
@@ -20713,7 +20773,7 @@
         "OverlayTrigger": [
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 156,
+            "line": 186,
             "column": 18,
             "version": "19.19.1"
           },
@@ -20757,7 +20817,7 @@
         "Tooltip": [
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 159,
+            "line": 189,
             "column": 22,
             "version": "19.19.1"
           },
