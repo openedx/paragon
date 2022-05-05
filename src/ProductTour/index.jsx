@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Checkpoint from './Checkpoint';
 
 const ProductTour = React.forwardRef(({ tours }, ref) => {
-  const tourValue = tours.filter((tour) => tour.enabled)[0];
+  const tourValue = tours.find((tour) => tour.enabled);
   const {
     enabled, checkpoints = [], startingIndex, onEscape, onEnd, onDismiss: tourOnDismiss,
     advanceButtonText: tourAdvanceButtonText, dismissButtonText: tourDismissButtonText,
