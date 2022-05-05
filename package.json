@@ -34,12 +34,17 @@
     "test:watch": "npm run test -- --watch",
     "generate-component-install": "cd component-generator && npm install",
     "generate-component": "cd component-generator && npm start",
-    "generate-component-lint": "cd component-generator && npm run lint"
+    "generate-component-lint": "cd component-generator && npm run lint",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "build-types": "tsc --emitDeclarationOnly"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/react-fontawesome": "^0.1.18",
     "@popperjs/core": "^2.11.4",
+    "@types/enzyme": "^3.10.12",
+    "@types/react-test-renderer": "^18.0.0",
     "airbnb-prop-types": "^2.12.0",
     "bootstrap": "^4.6.1",
     "classnames": "^2.3.1",
@@ -47,7 +52,7 @@
     "font-awesome": "^4.7.0",
     "lodash.uniqby": "^4.7.0",
     "mailto-link": "^1.0.0",
-    "prop-types": "^15.8.1",
+    "prop-types": "^15.7.2",
     "react-bootstrap": "^1.6.4",
     "react-focus-on": "^3.5.4",
     "react-popper": "^2.2.5",
@@ -70,10 +75,16 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.16.7",
     "@babel/preset-env": "^7.16.8",
     "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
     "@edx/eslint-config": "^2.0.0",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.0",
+    "@types/react": "17.0.0",
+    "@types/react-dom": "17.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^24.5.0",
     "babel-loader": "^8.2.4",
@@ -82,27 +93,31 @@
     "enzyme-adapter-react-16": "^1.15.6",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.0.0",
     "husky": "^2.0.0",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^25.0.0",
-    "jest-cli": "^25.0.0",
+    "jest": "^26.0.0",
+    "jest-cli": "^26.0.0",
     "markdown-loader-jest": "^0.1.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-test-renderer": "^16.14.0",
     "regenerator-runtime": "^0.13.9",
     "sass": "^1.32.13",
-    "semantic-release": "^17.0.0"
+    "semantic-release": "^17.0.0",
+    "ts-jest": "^26.0.0",
+    "typescript": "^4.6.4"
   },
   "jest": {
     "transform": {
       "^.+\\.md?$": "markdown-loader-jest",
       "^.+\\.jsx?$": "babel-jest",
-      "^icons/index.js$": "babel-jest"
+      "^icons/index.js$": "babel-jest",
+      "^.+\\.tsx?$": "ts-jest"
     },
     "setupFiles": [
       "./src/setupTest.js"
@@ -112,7 +127,7 @@
       "\\.(css|scss)$": "identity-obj-proxy"
     },
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
+      "src/**/*.{js,jsx,ts,tsx}"
     ],
     "coveragePathIgnorePatterns": [
       "/node_modules/",

@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import newId from '../utils/newId';
 import ValidationMessage from '../ValidationMessage/index';
 import Variant from '../utils/constants';
-import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
+import withDeprecatedProps, { DeprTypes } from '../withDeprecatedProps';
 
 export const getDisplayName = WrappedComponent => WrappedComponent.displayName || WrappedComponent.name || 'Component';
 
@@ -300,13 +300,13 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
 
   return withDeprecatedProps(NewComponent, 'asInput', {
     className: {
-      deprType: DEPR_TYPES.FORMAT,
+      deprType: DeprTypes.FORMAT,
       expect: value => typeof value === 'string',
       transform: value => (Array.isArray(value) ? value.join(' ') : value),
       message: 'It should be a string.',
     },
     ariaLabel: {
-      deprType: DEPR_TYPES.MOVED,
+      deprType: DeprTypes.MOVED,
       newName: 'aria-label',
     },
   });

@@ -7,7 +7,7 @@ import mailtoLink from 'mailto-link';
 import classNames from 'classnames';
 
 import Hyperlink from '../Hyperlink';
-import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
+import withDeprecatedProps, { DeprTypes } from '../withDeprecatedProps';
 
 export const MAIL_TO_LINK_EXTERNAL_LINK_ALTERNATIVE_TEXT = 'Dismiss';
 export const MAIL_TO_LINK_EXTERNAL_LINK_TITLE = 'Opens in a new tab';
@@ -97,7 +97,7 @@ MailtoLink.propTypes = {
 
 export default withDeprecatedProps(MailtoLink, 'MailtoLink', {
   content: {
-    deprType: DEPR_TYPES.MOVED,
+    deprType: DeprTypes.MOVED,
     newName: 'children',
   },
 });
