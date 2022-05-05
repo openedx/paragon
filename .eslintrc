@@ -1,7 +1,20 @@
 {
-  "extends": "@edx/eslint-config",
+  "extends": [
+    "@edx/eslint-config",
+    "plugin:import/typescript"
+  ],
   "parser": "babel-eslint",
   "rules": {
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
     "import/no-extraneous-dependencies": [
       "error",
       {
@@ -35,5 +48,14 @@
   },
   "globals": {
     "newrelic": false
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "extends": "airbnb-typescript",
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      }
+    }
+  ]
 }

@@ -1,12 +1,13 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { act } from 'react-dom/test-utils';
 
 import MultiSelectDropdownFilter from '../MultiSelectDropdownFilter';
 import Badge from '../../../Badge';
 
 const setFilterMock = jest.fn();
-const roan = { name: 'roan', number: 3, value: 10 };
-const palomino = { name: 'palomino', value: 2 };
+const roan = { name: 'roan', number: 3, value: '10' };
+const palomino = { name: 'palomino', value: '2' };
 const props = {
   column: {
     filterValue: [],
@@ -15,7 +16,7 @@ const props = {
     filterChoices: [
       roan,
       palomino,
-      { name: 'dappled grey', number: 4, value: 7 },
+      { name: 'dappled grey', number: 4, value: '7' },
     ],
     getHeaderProps: () => ({ key: 'foo' }),
   },
@@ -35,25 +36,31 @@ describe('<MultiSelectDropdownFilter />', () => {
     const wrapper = mount(<MultiSelectDropdownFilter {...props} />);
     expect(wrapper.text()).toContain(props.column.Header);
   });
-  it('sets a filter - no initial filters', () => {
+  it('sets a filter - no initial filters', async () => {
     const wrapper = mount(<MultiSelectDropdownFilter {...props} />);
     wrapper.find('button').simulate('click');
     const checkbox = wrapper.find({ type: 'checkbox' }).find('input').at(1);
-    checkbox.simulate('change');
+    await act(async () => {
+      checkbox.simulate('change');
+    });
     expect(setFilterMock).toHaveBeenCalledWith([palomino.value]);
   });
-  it('sets a filter - initial filters', () => {
+  it('sets a filter - initial filters', async () => {
     const wrapper = mount(<MultiSelectDropdownFilter column={{ ...props.column, filterValue: [roan.value] }} />);
     wrapper.find('button').simulate('click');
     const checkbox = wrapper.find({ type: 'checkbox' }).find('input').at(1);
-    checkbox.simulate('change');
+    await act(async () => {
+      checkbox.simulate('change');
+    });
     expect(setFilterMock).toHaveBeenCalledWith([roan.value, palomino.value]);
   });
-  it('removes a filter', () => {
+  it('removes a filter', async () => {
     const wrapper = mount(<MultiSelectDropdownFilter column={{ ...props.column, filterValue: [palomino.value] }} />);
     wrapper.find('button').simulate('click');
     const checkbox = wrapper.find({ type: 'checkbox' }).find('input').at(1);
-    checkbox.simulate('change');
+    await act(async () => {
+      checkbox.simulate('change');
+    });
     expect(setFilterMock).toHaveBeenCalledWith([]);
   });
   it('renders checkbox label with filter name', () => {

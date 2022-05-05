@@ -5,7 +5,7 @@ import isRequiredIf from 'react-proptype-conditional-require';
 import Icon from '../Icon';
 import { Launch } from '../../icons';
 
-import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
+import withDeprecatedProps, { DeprTypes } from '../withDeprecatedProps';
 
 export const HYPER_LINK_EXTERNAL_LINK_ALT_TEXT = 'in a new tab';
 export const HYPER_LINK_EXTERNAL_LINK_TITLE = 'Opens in a new tab';
@@ -128,7 +128,7 @@ Hyperlink.propTypes = {
 export default withDeprecatedProps(Hyperlink, 'Hyperlink', {
   /** specifies the text or element that a URL should be associated with */
   content: {
-    deprType: DEPR_TYPES.MOVED,
+    deprType: DeprTypes.MOVED,
     newName: 'children',
   },
 });
