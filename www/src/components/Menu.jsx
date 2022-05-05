@@ -98,7 +98,7 @@ const MenuComponentListCategory = ({ children, title }) => (
   </div>
 );
 
-const handleButtonClick = () => {
+const handlePlaygroundClick = () => {
   global.analytics.track('Visit playground',
     { event: 'openedx.paragon.menu.playground.visit_playground.clicked' });
 };
@@ -183,7 +183,7 @@ const Menu = () => {
                 <Button
                   className="mr-2 mb-2"
                   variant="outline-primary"
-                  onClick={handleButtonClick}
+                  onClick={handlePlaygroundClick}
                 >
                   Visit playground
                 </Button>
