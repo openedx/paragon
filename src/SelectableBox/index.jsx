@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import SelectableBoxSet from './SelectableBoxSet';
@@ -47,16 +47,17 @@ const SelectableBox = React.forwardRef(({
     ...(type === 'checkbox' && { isIndeterminate }),
   }, null);
 
-  const onClickHandler = () => {
-    inputRef.current.click();
-    if (onClick) { onClick(inputRef.current); }
-  };
+  useEffect(() => {
+    if (onClick && inputRef.current) {
+      inputRef.current.onclick = () => onClick(inputRef.current);
+    }
+  }, [inputRef.current]);
 
   return (
     <div
       role="button"
-      onKeyPress={onClickHandler}
-      onClick={onClickHandler}
+      onKeyPress={() => inputRef.current.click()}
+      onClick={() => inputRef.current.click()}
       onFocus={onFocus}
       className={classNames('pgn__selectable_box', className, {
         'pgn__selectable_box-active': isChecked() || checked,
