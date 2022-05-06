@@ -42,6 +42,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       .split('README')[0]
       .toLowerCase()
 
+    const isChangelogNode = node.fileAbsolutePath && node.fileAbsolutePath.endsWith('CHANGELOG.md');
+
     createNodeField({
       // Name of the field you are adding
       name: 'slug',
@@ -50,7 +52,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       // Generated value based on filepath with 'components' prefix. you
       // don't need a separating '/' before the value because
       // createFilePath returns a path with the leading '/'.
-      value: `/components${value}`,
+      value: isChangelogNode ? 'changelog' : `/components${value}`,
     })
   }
 }
