@@ -14,7 +14,8 @@
           "*.config.js",
           "*.config.*.js",
           "**/*.config.js",
-          "component-generator/**"
+          "component-generator/**",
+          "generate-changelog.js"
         ]
       }
     ],

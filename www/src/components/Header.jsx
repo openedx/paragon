@@ -70,12 +70,13 @@ const Navbar = ({
             alt="npm_version"
           />
           <Nav.Item>
-            <Nav.Link
+            <Link
+              style={{ textDecoration: 'none' }}
               className="text-white"
-              href="https://github.com/edx/paragon/releases"
+              to="/changelog"
             >
               Changelog
-            </Nav.Link>
+            </Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link
