@@ -56,9 +56,8 @@ See the [code of conduct](https://github.com/edx/.github/blob/master/CODE_OF_CON
 The Paragon documentation site serves both as documentation and as a workbench to create your component within. To see your component in action, you need to run the documentation site locally. (Note you need to install dependencies both in the project root and the `www` directory)
 
 ```
-npm install
+npm run install-all
 cd www
-npm install
 npm start
 ```
 
@@ -252,6 +251,17 @@ If the snapshot tests fail, it's generally pretty easy to tell whether it's happ
 ### Coverage
 
 Paragon measures code coverage using Jest's built-in `--coverage` flag and report it via [Codecov](https://codecov.io/gh/edx/paragon). Shoot for 100% test coverage on your PRs, but use your best judgment if you're really struggling to cover those last few lines. At the very least, don't *reduce* total coverage. Codecov will fail your build if your PR reduces coverage.
+
+### Example app
+
+Paragon components can have different behavior in the MFE environment. `example` app in the project root allows you to test new changes inside the MFE environment.
+
+Steps to install the `example` app.
+
+1. `cd example && npm install` to install dependencies.
+2. Launch any devstack. It is required for MFE to login into the system and set up configs.
+3. `npm start` to start the app.
+4. Go to the `example/src/MyComponent.jsx` and use Paragon components inside the MFE environment.
 
 ## Semantic Release
 
