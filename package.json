@@ -20,6 +20,10 @@
   ],
   "sideEffects": false,
   "scripts": {
+    "generate-component-install": "cd component-generator && npm install",
+    "consumer-app-install": "cd example && npm install",
+    "doc-site-install": "cd www && npm install",
+    "install-all": "npm install && npm run generate-component-install && npm run consumer-app-install && npm run doc-site-install",
     "build": "make build",
     "build-docs": "cd ./www && \"$npm_execpath\" install && \"$npm_execpath\" run build",
     "build-docs:with-theme": "cd ./www && \"$npm_execpath\" install && \"$npm_execpath\" run build:with-theme",
@@ -32,7 +36,6 @@
     "start": "echo 'To start the Paragon documentation site: cd www/ && npm i && npm start'",
     "test": "jest --coverage",
     "test:watch": "npm run test -- --watch",
-    "generate-component-install": "cd component-generator && npm install",
     "generate-component": "cd component-generator && npm start",
     "generate-component-lint": "cd component-generator && npm run lint",
     "generate-changelog": "node generate-changelog.js"

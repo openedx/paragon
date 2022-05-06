@@ -1,0 +1,28 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "fedx-scripts webpack",
+    "i18n_extract": "BABEL_ENV=i18n fedx-scripts babel src --quiet > /dev/null",
+    "lint": "fedx-scripts eslint --ext .jsx,.js .",
+    "precommit": "npm run lint",
+    "snapshot": "fedx-scripts jest --updateSnapshot",
+    "start": "fedx-scripts webpack-dev-server --progress",
+    "test": "fedx-scripts jest --coverage --passWithNoTests"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "@edx/brand-openedx": "^1.1.0",
+    "@edx/frontend-platform": "^1.15.6",
+    "core-js": "^3.22.2",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "devDependencies": {
+    "@edx/frontend-build": "9.2.0"
+  }
+}
