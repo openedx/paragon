@@ -10,7 +10,7 @@ import theme from 'prism-react-renderer/themes/duotoneDark';
 import {
   LiveProvider, LiveEditor, LiveError, LivePreview,
 } from 'react-live';
-import { FormattedMessage, injectIntl } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import * as ParagonReact from '~paragon-react'; // eslint-disable-line
 import * as ParagonIcons from '~paragon-icons'; // eslint-disable-line
 import MiyazakiCard from './exampleComponents/MiyazakiCard';
@@ -46,8 +46,8 @@ function CodeBlock({
   children,
   className,
   live,
-  intl,
 }) {
+  const intl = useIntl();
   const language = className ? className.replace(/language-/, '') : 'jsx';
 
   if (live) {
@@ -108,7 +108,6 @@ CodeBlock.propTypes = {
   children: PropTypes.string.isRequired,
   className: PropTypes.string,
   live: PropTypes.bool,
-  intl: PropTypes.shape({}).isRequired,
 };
 
 CodeBlock.defaultProps = {
@@ -116,4 +115,4 @@ CodeBlock.defaultProps = {
   className: '',
 };
 
-export default injectIntl(CodeBlock);
+export default CodeBlock;

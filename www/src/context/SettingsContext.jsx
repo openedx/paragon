@@ -1,42 +1,10 @@
 import React, { createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
+import { IntlProvider } from 'react-intl';
 import { messages } from '~paragon-react';
 
-import { IntlProvider, addLocaleData } from 'react-intl';
-import arLocale from 'react-intl/locale-data/ar';
-import enLocale from 'react-intl/locale-data/en';
-import esLocale from 'react-intl/locale-data/es';
-import frLocale from 'react-intl/locale-data/fr';
-import zhLocale from 'react-intl/locale-data/zh';
-import caLocale from 'react-intl/locale-data/ca';
-import heLocale from 'react-intl/locale-data/he';
-import idLocale from 'react-intl/locale-data/id';
-import koLocale from 'react-intl/locale-data/ko';
-import plLocale from 'react-intl/locale-data/pl';
-import ptLocale from 'react-intl/locale-data/pt';
-import ruLocale from 'react-intl/locale-data/ru';
-import thLocale from 'react-intl/locale-data/th';
-import ukLocale from 'react-intl/locale-data/uk';
-
 import { THEMES } from '../../theme-config';
-
-addLocaleData([
-  ...arLocale,
-  ...caLocale,
-  ...heLocale,
-  ...idLocale,
-  ...plLocale,
-  ...ruLocale,
-  ...thLocale,
-  ...ukLocale,
-  ...enLocale,
-  ...esLocale,
-  ...frLocale,
-  ...zhLocale,
-  ...koLocale,
-  ...ptLocale,
-]);
 
 const defaultValue = {
   settings: {},

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 import BaseToast from 'react-bootstrap/Toast';
-import { injectIntl } from 'react-intl';
+import { useIntl } from 'react-intl';
 
 import ToastContainer from './ToastContainer';
 import { Button, IconButton, Icon } from '..';
@@ -13,8 +13,9 @@ export const TOAST_CLOSE_LABEL_TEXT = 'Close';
 export const TOAST_DELAY = 5000;
 
 function Toast({
-  action, children, className, closeLabel, onClose, show, intl, ...rest
+  action, children, className, closeLabel, onClose, show, ...rest
 }) {
+  const intl = useIntl();
   const [autoHide, setAutoHide] = useState(true);
   const intlCloseLabel = closeLabel || intl.formatMessage({
     id: 'pgn.Toast.closeLabel',
@@ -103,9 +104,6 @@ Toast.propTypes = {
   delay: PropTypes.number,
   /** Class names for the `BaseToast` component */
   className: PropTypes.string,
-  intl: PropTypes.shape({
-    formatMessage: PropTypes.func,
-  }).isRequired,
 };
 
-export default injectIntl(Toast);
+export default Toast;

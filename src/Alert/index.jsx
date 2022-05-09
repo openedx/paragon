@@ -70,7 +70,7 @@ const Alert = React.forwardRef(({
                 {closeLabel || (
                   <FormattedMessage
                     id="pgn.Alert.closeLabel"
-                    defaultMessage="Dismiss"
+                    defaultMessage={ALERT_CLOSE_LABEL_TEXT}
                     description="Label of a close button on Alert component"
                   />
                 )}
