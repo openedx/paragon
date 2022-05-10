@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { IntlProvider } from 'react-intl';
 
 import RowStatus from '../RowStatus';
 import DataTableContext from '../DataTableContext';
@@ -14,7 +15,12 @@ const statusProps = {
 
 // eslint-disable-next-line react/prop-types
 const RowStatusWrapper = ({ value = instance, props = statusProps }) => (
-  <DataTableContext.Provider value={value}><RowStatus {...props} /></DataTableContext.Provider>);
+  <IntlProvider locale="en" messages={{}}>
+    <DataTableContext.Provider value={value}>
+      <RowStatus {...props} />
+    </DataTableContext.Provider>
+  </IntlProvider>
+);
 
 describe('<RowStatus />', () => {
   it('returns null if there is no pageSize', () => {

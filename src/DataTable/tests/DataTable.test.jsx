@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { act } from 'react-dom/test-utils';
 import { mount } from 'enzyme';
 import * as reactTable from 'react-table';
+import { IntlProvider } from 'react-intl';
 
 import DataTable from '..';
 import TableControlBar from '../TableControlBar';
@@ -97,43 +98,52 @@ const DataTableContextProviderChild = ({ children }) => {
   );
 };
 
+// eslint-disable-next-line react/prop-types
+const DataTableWrapper = ({ children, ...tableProps }) => (
+  <IntlProvider locale="en" messages={{}}>
+    <DataTable {...tableProps}>
+      {children}
+    </DataTable>
+  </IntlProvider>
+);
+
 describe('<DataTable />', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
   it('displays the empty table component if empty', () => {
-    const wrapper = mount(<DataTable {...props} data={[]} />);
+    const wrapper = mount(<DataTableWrapper {...props} data={[]} />);
     expect(wrapper.find(EmptyTable).length).toEqual(1);
   });
   it('accepts an empty table component', () => {
-    const wrapper = mount(<DataTable {...props} data={[]} EmptyTableComponent={EmptyTest} />);
+    const wrapper = mount(<DataTableWrapper {...props} data={[]} EmptyTableComponent={EmptyTest} />);
     expect(wrapper.find(EmptyTable).length).toEqual(0);
     expect(wrapper.find(EmptyTest).length).toEqual(1);
   });
   it('displays a control bar', () => {
-    const wrapper = mount(<DataTable {...props} />);
+    const wrapper = mount(<DataTableWrapper {...props} />);
     const controlBar = wrapper.find(TableControlBar);
     expect(controlBar.length).toEqual(1);
     expect(controlBar.text()).toEqual('Showing 7 of 7.');
   });
   it('displays a table', () => {
-    const wrapper = mount(<DataTable {...props} />);
+    const wrapper = mount(<DataTableWrapper {...props} />);
     const table = wrapper.find(Table);
     expect(table.length).toEqual(1);
     expect(table.find('th').length).toEqual(3);
     expect(table.find('tr').length).toEqual(8);
   });
   it('displays a table footer', () => {
-    const wrapper = mount(<DataTable {...props} />);
+    const wrapper = mount(<DataTableWrapper {...props} />);
     expect(wrapper.find(TableFooter).length).toEqual(1);
   });
   it('adds a column when table is selectable', () => {
-    const wrapper = mount(<DataTable {...props} isSelectable />);
+    const wrapper = mount(<DataTableWrapper {...props} isSelectable />);
     const tableHeaders = wrapper.find(Table).find('th');
     expect(tableHeaders.length).toEqual(props.columns.length + 1);
   });
   it('adds additional columns', () => {
-    const wrapper = mount(<DataTable {...props} additionalColumns={additionalColumns} />);
+    const wrapper = mount(<DataTableWrapper {...props} additionalColumns={additionalColumns} />);
     const tableHeaders = wrapper.find(Table).find('th');
     expect(tableHeaders.length).toEqual(props.columns.length + additionalColumns.length);
     expect(wrapper.text()).toContain(additionalColumns[0].Header);
@@ -141,7 +151,7 @@ describe('<DataTable />', () => {
   });
   test('calls useTable with the data and columns', () => {
     const spy = jest.spyOn(reactTable, 'useTable');
-    mount(<DataTable {...props} />);
+    mount(<DataTableWrapper {...props} />);
     expect(spy).toHaveBeenCalledTimes(1);
     expect(spy.mock.calls[0][0].columns).toEqual(props.columns);
     expect(spy.mock.calls[0][0].data).toEqual(props.data);
@@ -157,7 +167,7 @@ describe('<DataTable />', () => {
     [{ manualSortBy: true, manualFilters: true, manualPagination: true, pageCount: 1 }, { manualFilters: true, manualPagination: true, manualSortBy: true }],
   ])('calls useTable with the correct manual settings %#', (additionalProps, expected) => {
     const spy = jest.spyOn(reactTable, 'useTable');
-    mount(<DataTable {...props} {...additionalProps} />);
+    mount(<DataTableWrapper {...props} {...additionalProps} />);
     expect(spy.mock.calls[0][0].manualFilters).toEqual(expected.manualFilters);
     expect(spy.mock.calls[0][0].manualPagination).toEqual(expected.manualPagination);
     expect(spy.mock.calls[0][0].manualSortBy).toEqual(expected.manualSortBy);
@@ -165,11 +175,11 @@ describe('<DataTable />', () => {
   it('passes the initial state to useTable', () => {
     const spy = jest.spyOn(reactTable, 'useTable');
     const initialState = { foo: 'bar' };
-    mount(<DataTable {...props} initialState={initialState} />);
+    mount(<DataTableWrapper {...props} initialState={initialState} />);
     expect(spy.mock.calls[0][0].initialState).toEqual(initialState);
   });
   it('displays loading state', () => {
-    const wrapper = mount(<DataTable {...props} isLoading />);
+    const wrapper = mount(<DataTableWrapper {...props} isLoading />);
     const tableContainer = wrapper.find('.pgn__data-table-container');
     const spinner = wrapper.find('.pgn__data-table-spinner');
     expect(tableContainer.hasClass('is-loading')).toEqual(true);
@@ -182,9 +192,9 @@ describe('<DataTable />', () => {
   describe('controlled table selections', () => {
     it('passes initial controlledTableSelections to context', () => {
       const wrapper = mount(
-        <DataTable {...props}>
+        <DataTableWrapper {...props}>
           <DataTableContextProviderChild />
-        </DataTable>,
+        </DataTableWrapper>,
       );
       const contextValue = wrapper.find('div.context-value').prop('data-contextvalue');
       const { controlledTableSelections } = contextValue;
@@ -195,7 +205,7 @@ describe('<DataTable />', () => {
     });
     it('passes appropriate selection props to context with active selections', () => {
       const wrapper = mount(
-        <DataTable {...props}><DataTableContextProviderChild /></DataTable>,
+        <DataTableWrapper {...props}><DataTableContextProviderChild /></DataTableWrapper>,
       );
 
       // verify there are no current selections
