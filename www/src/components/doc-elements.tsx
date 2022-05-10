@@ -1,8 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// eslint-disable-next-line import/prefer-default-export
-export function ComponentStatus({ status, noLeftMargin }) {
+export type ComponentStatusProps = {
+  status: string,
+  noLeftMargin?: string,
+};
+
+export function ComponentStatus({ status, noLeftMargin }: ComponentStatusProps) {
   if (!status) { return null; }
   return (
     <span

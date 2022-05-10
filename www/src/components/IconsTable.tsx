@@ -1,6 +1,8 @@
 import React from 'react';
-import { Icon } from '~paragon-react'; // eslint-disable-line
-import * as IconComponents from '~paragon-icons'; // eslint-disable-line
+// @ts-ignore
+import { Icon } from '~paragon-react';
+// @ts-ignore
+import * as IconComponents from '~paragon-icons';
 
 function IconsTable() {
   return (

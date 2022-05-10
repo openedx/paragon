@@ -12,9 +12,19 @@ import {
   Button,
   Icon,
   IconButton,
-} from '~paragon-react'; // eslint-disable-line
-import { Menu as MenuIcon, Close, Settings } from '~paragon-icons'; // eslint-disable-line
-import SettingsContext from '../context/SettingsContext';
+  // @ts-ignore
+} from '~paragon-react';
+// @ts-ignore
+import { Menu as MenuIcon, Close, Settings } from '~paragon-icons';
+import SettingsContext from '../context/SettingsContext'; // eslint-disable-line import/no-named-as-default
+
+export interface NavbarPropsTypes {
+  siteTitle: string,
+  onMenuClick: React.MouseEventHandler,
+  onSettingsClick: Function | undefined,
+  menuIsOpen?: boolean,
+  showMinimizedTitle?: boolean,
+}
 
 const Navbar = ({
   siteTitle,
@@ -22,7 +32,7 @@ const Navbar = ({
   menuIsOpen,
   showMinimizedTitle,
   onSettingsClick,
-}) => (
+}: NavbarPropsTypes) => (
   <Container as="header" className="py-3 bg-dark text-white sticky-top">
     <Row className="align-items-center text-center text-sm-left">
       <Col className="mb-2 mb-sm-0" sm={4}>
@@ -113,7 +123,12 @@ Navbar.defaultProps = {
   showMinimizedTitle: false,
 };
 
-const Header = ({ siteTitle, showMinimizedTitle }) => {
+export interface HeaderPropsTypes {
+  siteTitle: string,
+  showMinimizedTitle?: boolean,
+}
+
+const Header = ({ siteTitle, showMinimizedTitle }: HeaderPropsTypes) => {
   // eslint-disable-next-line no-unused-vars
   const [isOpen, open, close, toggle] = useToggle(false, {
     handleToggleOn: () => {

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button } from '~paragon-react'; // eslint-disable-line
+// @ts-ignore
+import { Button } from '~paragon-react';
 import Menu from '../components/Menu';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';

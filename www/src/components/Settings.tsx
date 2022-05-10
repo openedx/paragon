@@ -4,9 +4,12 @@ import {
   Form,
   Icon,
   IconButton,
+// @ts-ignore
 } from '~paragon-react';
+// @ts-ignore
 import { Close } from '~paragon-icons';
 
+// eslint-disable-next-line import/no-named-as-default
 import SettingsContext from '../context/SettingsContext';
 import { THEMES } from '../../theme-config';
 

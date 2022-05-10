@@ -1,12 +1,27 @@
-import React, { useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Input } from '~paragon-react'; // eslint-disable-line
+// @ts-ignore
+import { Input } from '~paragon-react';
 import CodeBlock from './CodeBlock';
+
+export interface ColumnPropsTypes {
+  index: number,
+  width?: any,
+  onChangeWidth: Function,
+  offset?: any,
+  onChangeOffset: Function
+}
+
+export type InputOnChangeEventType = {
+  target: {
+    value: React.SetStateAction<number>
+  }
+};
 
 const Column = ({
   index, width, onChangeWidth, offset, onChangeOffset,
-}) => (
+}: ColumnPropsTypes) => (
   <div
     className={classNames('col mb-4', {
       [`col-${width}`]: width > 0,
@@ -31,7 +46,7 @@ const Column = ({
           min={0}
           step={1}
           max={12}
-          onChange={e => onChangeWidth(index, e.target.value)}
+          onChange={(e: InputOnChangeEventType) => onChangeWidth(index, e.target.value)}
         />
       </div>
       <div className="form-inline m-2">
@@ -51,7 +66,7 @@ const Column = ({
           min={0}
           step={1}
           max={11}
-          onChange={e => onChangeOffset(index, e.target.value)}
+          onChange={(e: InputOnChangeEventType) => onChangeOffset(index, e.target.value)}
         />
       </div>
     </div>
@@ -71,12 +86,16 @@ Column.defaultProps = {
   offset: 0,
 };
 
+export type StateKeyTypes = {
+  [key: number]: number
+};
+
 function LayoutGenerator() {
   const [numColumns, setColumns] = useState(3);
-  const [columnWidths, setColumnWidths] = useState({ 0: 3, 1: 6, 2: 3 });
-  const [columnOffsets, setColumnOffsets] = useState({});
+  const [columnWidths, setColumnWidths] = useState<StateKeyTypes>({ 0: 3, 1: 6, 2: 3 });
+  const [columnOffsets, setColumnOffsets] = useState<StateKeyTypes>({});
 
-  const columns = [];
+  const columns: Array<ReactNode> = [];
 
   for (let i = 0; i < numColumns; i++) {
     // eslint-disable-line no-plusplus
@@ -85,11 +104,11 @@ function LayoutGenerator() {
         key={i}
         index={i}
         width={columnWidths[i]}
-        onChangeWidth={(_index, _width) => {
+        onChangeWidth={(_index: number, _width: number) => {
           setColumnWidths({ ...columnWidths, [_index]: _width });
         }}
         offset={columnOffsets[i]}
-        onChangeOffset={(_index, _offset) => {
+        onChangeOffset={(_index: number, _offset: number) => {
           setColumnOffsets({ ...columnOffsets, [_index]: _offset });
         }}
       />,
@@ -137,7 +156,7 @@ ${columnsString.join('')}
           min={1}
           step={1}
           max={12}
-          onChange={e => setColumns(e.target.value)}
+          onChange={(e: InputOnChangeEventType) => setColumns(e.target.value)}
         />
       </div>
       <div className="row">{columns}</div>

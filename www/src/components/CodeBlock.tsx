@@ -10,20 +10,26 @@ import theme from 'prism-react-renderer/themes/duotoneDark';
 import {
   LiveProvider, LiveEditor, LiveError, LivePreview,
 } from 'react-live';
-import * as ParagonReact from '~paragon-react'; // eslint-disable-line
-import * as ParagonIcons from '~paragon-icons'; // eslint-disable-line
+// @ts-ignore
+import * as ParagonReact from '~paragon-react';
+// @ts-ignore
+import * as ParagonIcons from '~paragon-icons';
 import MiyazakiCard from './exampleComponents/MiyazakiCard';
 import HipsterIpsum from './exampleComponents/HipsterIpsum';
 
 const { Button, Collapsible } = ParagonReact;
 
-function CollapsibleLiveEditor({ children }) {
+export type CollapsibleLiveEditorPropsTypes = {
+  children: React.ReactNode,
+};
+
+function CollapsibleLiveEditor({ children }: CollapsibleLiveEditorPropsTypes) {
   const [collapseIsOpen, setCollapseIsOpen] = useState(false);
   return (
     <div className="pgn-doc__collapsible-live-editor">
       <Collapsible.Advanced
         open={collapseIsOpen}
-        onToggle={(isOpen) => setCollapseIsOpen(isOpen)}
+        onToggle={(isOpen: boolean) => setCollapseIsOpen(isOpen)}
       >
         <Collapsible.Trigger tag={Button} variant="link">
           <Collapsible.Visible whenClosed>Show code example</Collapsible.Visible>
@@ -41,8 +47,14 @@ CollapsibleLiveEditor.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-function CodeBlock({ children, className, live }) {
-  const language = className ? className.replace(/language-/, '') : 'jsx';
+export interface CodeBlockPropsTypes {
+  children: string,
+  className?: string,
+  live?: boolean,
+}
+
+function CodeBlock({ children, className, live }:CodeBlockPropsTypes) {
+  const language: any = className ? className.replace(/language-/, '') : 'jsx';
 
   if (live) {
     return (
@@ -74,7 +86,11 @@ function CodeBlock({ children, className, live }) {
 
   /* eslint-disable react/no-array-index-key */
   return (
-    <Highlight {...defaultProps} code={children} language={language}>
+    <Highlight
+      {...defaultProps}
+      code={children}
+      language={language}
+    >
       {({
         className: preClassName,
         style,

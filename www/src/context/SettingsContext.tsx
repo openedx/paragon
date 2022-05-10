@@ -1,38 +1,60 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, {
+  createContext, useState, useEffect,
+} from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { THEMES } from '../../theme-config';
 
-const defaultValue = {
-  theme: 'openedx-theme',
-  onThemeChange: () => {},
-  direction: 'ltr',
-  onDirectionChange: () => {},
+export type DefaultValueTypes = {
+  theme: string,
+  onThemeChange: Function,
+  direction: string,
+  onDirectionChange: Function,
+  openSettings?: Function,
+  showSettings?: React.SyntheticEvent | React.ReactNode,
+  closeSettings?: React.SyntheticEvent | React.ReactNode,
 };
 
-export const SettingsContext = createContext(defaultValue);
+const defaultValue = {
+  theme: 'openedx-theme',
+  onThemeChange: (): void => {},
+  direction: 'ltr',
+  onDirectionChange: (): void => {},
+};
 
-const SettingsContextProvider = ({ children }) => {
+export type HandleThemeChangeType = {
+  value: React.SetStateAction<string>
+};
+
+export const SettingsContext = createContext<DefaultValueTypes>(defaultValue);
+
+const SettingsContextProvider: React.FC = ({ children }) => {
   // gatsby does not have access to the localStorage during the build (and first render)
   // so sadly we cannot initialize theme with value from localStorage
   const [theme, setTheme] = useState('openedx-theme');
   const [showSettings, setShowSettings] = useState(false);
   const [direction, setDirection] = useState('ltr');
 
-  const handleDirectionChange = (e) => {
-    document.body.setAttribute('dir', e.target.value);
+  const handleDirectionChange = (e: { target: HandleThemeChangeType }) => {
+    if (typeof e.target.value === 'string') {
+      document.body.setAttribute('dir', e.target.value);
+    }
     setDirection(e.target.value);
-    global.localStorage.setItem('pgn__direction', e.target.value);
+    if (typeof e.target.value === 'string') {
+      global.localStorage.setItem('pgn__direction', e.target.value);
+    }
     global.analytics.track('Direction change', { direction: e.target.value });
   };
 
-  const handleThemeChange = (e) => {
+  const handleThemeChange = (e: { target: HandleThemeChangeType; }) => {
     setTheme(e.target.value);
-    global.localStorage.setItem('pgn__theme', e.target.value);
+    if (typeof e.target.value === 'string') {
+      global.localStorage.setItem('pgn__theme', e.target.value);
+    }
     global.analytics.track('Theme change', { theme: e.target.value });
   };
 
-  const handleSettingsChange = (value) => {
+  const handleSettingsChange = (value: boolean) => {
     setShowSettings(value);
     global.analytics.track('Toggle Settings', { value: value ? 'show' : 'hide' });
   };
@@ -60,8 +82,8 @@ const SettingsContextProvider = ({ children }) => {
     showSettings,
     onThemeChange: handleThemeChange,
     onDirectionChange: handleDirectionChange,
-    closeSettings: () => handleSettingsChange(false),
-    openSettings: () => handleSettingsChange(true),
+    closeSettings: (): void => handleSettingsChange(false),
+    openSettings: (): void => handleSettingsChange(true),
   };
 
   return (

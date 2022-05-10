@@ -8,6 +8,9 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.16",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-helmet": "^6.1.5",
     "analytics-node": "^6.0.0",
     "classnames": "^2.3.1",
     "color": "^3.2.1",
@@ -52,6 +55,7 @@
     "build-themes": "node build-themes.js"
   },
   "devDependencies": {
+    "@types/node": "^17.0.31",
     "babel-eslint": "^10.0.1",
     "css": "^3.0.0",
     "eslint": "^7.6.0",
