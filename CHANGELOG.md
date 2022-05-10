@@ -1,3 +1,17 @@
+# [19.21.0](https://github.com/openedx/paragon/compare/v19.20.0...v19.21.0) (2022-05-10)
+
+
+### Bug Fixes
+
+* force publish release ([448f419](https://github.com/openedx/paragon/commit/448f41910cb5529faed15bdae3b3ceb29a13cf0a))
+* force release ([bc5b53a](https://github.com/openedx/paragon/commit/bc5b53a43fc5d25b17b29ea6719f2f27357127d1))
+
+
+### Features
+
+* [BD-46] add support for React 17 ([#1248](https://github.com/openedx/paragon/issues/1248)) ([1e0cfd9](https://github.com/openedx/paragon/commit/1e0cfd9531d075782fa6aaf8a48964bfd69fc678))
+* [BD-46] create consumer app ([#1257](https://github.com/openedx/paragon/issues/1257)) ([a750d88](https://github.com/openedx/paragon/commit/a750d88c57b74895ab59cc86238edf53e8512b6a))
+
 ## [v19.20.0](https://github.com/openedx/paragon/compare/v19.19.1...v19.20.0) (2022-04-29)
 
 ### Features
@@ -2792,6 +2806,3 @@ Modal now renders through a Portal, this may cause failures in tests or styling 
 
 
 ## [v0.1.0](https://github.com/openedx/paragon/compare/v0.0.1...v0.1.0) (2017-10-16)
-
-
-
