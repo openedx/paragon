@@ -1,3 +1,10 @@
+## [19.21.2](https://github.com/openedx/paragon/compare/v19.21.1...v19.21.2) (2022-05-10)
+
+
+### Bug Fixes
+
+* create Playground in menu ([#1264](https://github.com/openedx/paragon/issues/1264)) ([9394b0b](https://github.com/openedx/paragon/commit/9394b0b34099dae0eb3155ec72c869a589b89783))
+
 ## [19.21.1](https://github.com/openedx/paragon/compare/v19.21.0...v19.21.1) (2022-05-10)
 
 
