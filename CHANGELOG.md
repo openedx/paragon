@@ -1,3 +1,10 @@
+## [19.21.1](https://github.com/openedx/paragon/compare/v19.21.0...v19.21.1) (2022-05-10)
+
+
+### Bug Fixes
+
+* another force release ([eb34f80](https://github.com/openedx/paragon/commit/eb34f808ec13b7f0cf1db8be843a78947988a749))
+
 # [19.21.0](https://github.com/openedx/paragon/compare/v19.20.0...v19.21.0) (2022-05-10)
 
 
