@@ -1,3 +1,10 @@
+# [19.22.0](https://github.com/openedx/paragon/compare/v19.21.2...v19.22.0) (2022-05-11)
+
+
+### Features
+
+* Add package-lock file version check ([#1277](https://github.com/openedx/paragon/issues/1277)) ([abe4121](https://github.com/openedx/paragon/commit/abe41214f0bbc9c1fa5efc5e0b8d916adfec1751))
+
 ## [19.21.2](https://github.com/openedx/paragon/compare/v19.21.1...v19.21.2) (2022-05-10)
 
 
