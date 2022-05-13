@@ -7,8 +7,15 @@ import { Container } from '~paragon-react'; // eslint-disable-line
 import CodeBlock from '../components/CodeBlock';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
+import LinkedHeading from '../components/LinkedHeading';
 
 const shortcodes = {
+  h1: (props) => <LinkedHeading h="1" {...props} />,
+  h2: (props) => <LinkedHeading h="2" {...props} />,
+  h3: (props) => <LinkedHeading h="3" {...props} />,
+  h4: (props) => <LinkedHeading h="4" {...props} />,
+  h5: (props) => <LinkedHeading h="5" {...props} />,
+  h6: (props) => <LinkedHeading h="6" {...props} />,
   pre: props => <div {...props} />,
   code: CodeBlock,
   Link,
