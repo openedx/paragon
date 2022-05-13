@@ -17,3 +17,29 @@
 // export const FEATURES = {
 //   EXAMPLE_FEATURE: process.env.EXAMPLE_FEATURE || hasFeatureFlagEnabled(EXAMPLE_FEATURE),
 // };
+
+const INSIGHTS_TABS = Object.freeze({
+  SUMMARY: 'Summary',
+  PROJECTS: 'Projects',
+  COMPONENTS: 'Components',
+});
+
+const INSIGHTS_PAGES = [
+  {
+    tab: INSIGHTS_TABS.SUMMARY,
+    path: '/insights',
+  },
+  {
+    tab: INSIGHTS_TABS.PROJECTS,
+    path: '/insights/projects',
+  },
+  {
+    tab: INSIGHTS_TABS.COMPONENTS,
+    path: '/insights/components',
+  },
+];
+
+module.exports = {
+  INSIGHTS_TABS,
+  INSIGHTS_PAGES,
+};
