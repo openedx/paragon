@@ -1,3 +1,10 @@
+## [19.22.1](https://github.com/openedx/paragon/compare/v19.22.0...v19.22.1) (2022-05-13)
+
+
+### Bug Fixes
+
+* fix select popup styles ([#1281](https://github.com/openedx/paragon/issues/1281)) ([f409171](https://github.com/openedx/paragon/commit/f409171435e81fd252e5136e4ab9c9cae07b1ce3))
+
 # [19.22.0](https://github.com/openedx/paragon/compare/v19.21.2...v19.22.0) (2022-05-11)
 
 
