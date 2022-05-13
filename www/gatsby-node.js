@@ -10,6 +10,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 const sass = require('sass')
 const css = require('css')
 const fs = require(`fs`)
+const { INSIGHTS_PAGES } = require('./src/config');
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -113,6 +114,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: { id: node.id, components: node.frontmatter.components || [], cssVariables },
     })
   })
+
+  INSIGHTS_PAGES.forEach(({ path, tab }) => {
+    createPage({
+      path,
+      component: require.resolve('./src/pages/insights.jsx'),
+      context: { tab },
+    });
+  })
+
 }
 
 function createCssUtilityClassNodes({
