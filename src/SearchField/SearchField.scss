@@ -1,103 +1,102 @@
 @import "variables";
 
 .pgn__searchfield {
-    transition: $input-transition;
-    border: $search-border-width solid $search-border-color;
+  transition: $input-transition;
+  border: $search-border-width solid $search-border-color;
 
-    &.disabled,
-    &:disabled {
-        opacity: $search-disabled-opacity;
-        pointer-events: none;
+  &.disabled,
+  &:disabled {
+    opacity: $search-disabled-opacity;
+    pointer-events: none;
+  }
+
+  &.has-focus {
+    box-shadow: 0 0 0 $search-border-width $search-border-color-interaction;
+
+    .pgn__searchfield_wrapper {
+      box-shadow: 0 0 0 $search-border-width $search-border-color-interaction;
+    }
+  }
+
+  &:hover,
+  &:active {
+    border-color: $search-border-color-interaction;
+  }
+
+  .form-control {
+    border: none;
+    border-radius: $search-border-radius;
+    height: $input-height-search;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    // clear browser 'x' from Internet Explorer
+    &::-ms-clear,
+    &::-ms-reveal {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+
+    // clear browser 'x' from Chrome
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
+
+    .form-control:hover,
+    .form-control:focus,
+    .form-control:active {
+      border: none;
+    }
+  }
+
+  label.has-label-text {
+    padding-inline-start: .75rem;
+  }
+
+  &.pgn__searchfield--external {
+    border: none;
+
+    .btn-primary {
+      background: map-get($search-btn-variants, "light");
+    }
+
+    .btn-brand {
+      background: map-get($search-btn-variants, "dark");
     }
 
     &.has-focus {
-        box-shadow: 0 0 0 $search-border-width $search-border-color-interaction;
+      box-shadow: none;
 
-        .pgn__searchfield_wrapper {
-            box-shadow: 0 0 0 $search-border-width $search-border-color-interaction;
-        }
+      .btn-primary {
+        background: map-get($search-btn-variants, "light");
+      }
+
+      .btn-brand {
+        background: map-get($search-btn-variants, "dark");
+      }
     }
+  }
+
+  .pgn__searchfield_wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: $search-border-width solid $search-border-color;
 
     &:hover,
     &:active {
-        border-color: $search-border-color-interaction;
+      border-color: $search-border-color-interaction;
     }
-
-    .form-control {
-        border: none;
-        border-radius: $search-border-radius;
-        height: $input-height-search;
-
-        &:focus {
-            box-shadow: none;
-        }
-
-        // clear browser 'x' from Internet Explorer
-        &::-ms-clear,
-        &::-ms-reveal {
-            display: none;
-            width : 0;
-            height: 0;
-        }
-  
-        // clear browser 'x' from Chrome
-        &::-webkit-search-decoration,
-        &::-webkit-search-cancel-button,
-        &::-webkit-search-results-button,
-        &::-webkit-search-results-decoration {
-            display: none;
-        }
-
-        .form-control:hover,
-        .form-control:focus,
-        .form-control:active {
-            border: none;
-        }
-    }
-
-    label.has-label-text {
-        padding-inline-start: 0.75rem;
-    }
-
-    &.pgn__searchfield--external {
-        border: none;
-
-        .btn-primary {
-            background: map-get($search-btn-variants, 'light');
-        }
-
-        .btn-brand {
-            background: map-get($search-btn-variants, 'dark');
-        }
-
-        &.has-focus {
-            box-shadow: none;
-
-            .btn-primary {
-                background: map-get($search-btn-variants, 'light');
-            }
-
-            .btn-brand {
-                background: map-get($search-btn-variants, 'dark');
-            }
-        }
-    }
-
-    .pgn__searchfield_wrapper {
-        display: flex;
-        align-items: center;
-        width: 100%;
-
-        border: $search-border-width solid $search-border-color;
-
-        &:hover,
-        &:active {
-            border-color: $search-border-color-interaction;
-        }
-    }
+  }
 }
 
-.pgn__searchfield__button.btn[type='submit'] {
-    border-radius: 0;
-    margin-inline-start: $search-button-margin;
+.pgn__searchfield__button.btn[type="submit"] {
+  border-radius: 0;
+  margin-inline-start: $search-button-margin;
 }

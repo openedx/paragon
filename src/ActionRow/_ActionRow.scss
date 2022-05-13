@@ -5,26 +5,32 @@
   flex-grow: 1;
   align-items: center;
   justify-content: flex-end;
+
   & > * {
     margin: 0;
   }
+
   & > * + * {
     margin-inline-start: $action-row-gap-x;
   }
 }
+
 .pgn__action-row-stacked {
   display: flex;
   flex-grow: 1;
   align-items: center;
   flex-direction: column-reverse;
   justify-content: center;
+
   & > * {
     margin: 0;
   }
+
   & > * + * {
     margin-bottom: $action-row-gap-y;
   }
 }
+
 .pgn__action-row-spacer {
   flex-grow: 1;
 }

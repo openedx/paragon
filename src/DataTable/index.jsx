@@ -140,7 +140,7 @@ function DataTable({
     <DataTableContext.Provider value={enhancedInstance}>
       <DataTableLayout>
         <div className={classNames('pgn__data-table-wrapper', {
-          hideShadow: !!disableElevation,
+          'hide-shadow': !!disableElevation,
         })}
         >
           {children || (

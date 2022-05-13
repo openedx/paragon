@@ -1,24 +1,34 @@
 .pgn__sheet-skrim {
   width: 100%;
   height: 100%;
-  background-color: rgba(196,196,196,0.5);
+  background-color: rgb(196 196 196 / 50%);
   position: fixed;
   top: 0;
   left: 0;
+
   &.hidden {
     display: none;
   }
+
   z-index: $zindex-sheet-backdrop;
 }
 
-.pgn__sheet-component-left {
+%component-left {
   left: 0;
-  box-shadow: 8px 0 16px 0 rgba(0,0,0,0.15);
+  box-shadow: 8px 0 16px 0 rgb(0 0 0 / 15%);
+}
+
+%component-right {
+  right: 0;
+  box-shadow: -8px 0 16px 0 rgb(0 0 0 / 15%);
+}
+
+.pgn__sheet-component-left {
+  @extend %component-left;
 }
 
 .pgn__sheet-component-right {
-  right: 0;
-  box-shadow: -8px 0 16px 0 rgba(0,0,0,0.15);
+  @extend %component-right;
 }
 
 .pgn__sheet-component {
@@ -26,41 +36,51 @@
   padding: 1.25rem;
   background-color: white;
   z-index: $zindex-sheet;
+
   &.pgn__sheet__dark {
     background-color: $dark-500;
     color: $light-300;
   }
+
   &.bottom {
     bottom: 0;
-    box-shadow: 0 -8px 16px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 -8px 16px 0 rgb(0 0 0 / 15%);
   }
+
   &.top {
     top: 0;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 15%);
   }
+
   &.left {
-    @extend .pgn__sheet-component-left;
+    @extend %component-left;
 
     [dir="rtl"] & {
-      @extend .pgn__sheet-component-right;
+      @extend %component-right;
+
       left: auto;
     }
   }
+
   &.right {
-    @extend .pgn__sheet-component-right;
+    @extend %component-right;
 
     [dir="rtl"] & {
-      @extend .pgn__sheet-component-left;
+      @extend %component-left;
+
       right: auto;
     }
   }
 
-  &.bottom, &.top {
+  &.bottom,
+  &.top {
     width: 100%;
     left: 0;
     max-height: 50%;
   }
-  &.left, &.right {
+
+  &.left,
+  &.right {
     max-width: 272px;
     height: 100%;
     top: 0;

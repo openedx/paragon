@@ -3,8 +3,7 @@
 .pgn__selectable_box-set {
   display: grid;
   grid-auto-rows: 1fr;
-  grid-column-gap: $selectable-box-space;
-  grid-row-gap: $selectable-box-space;
+  grid-gap: $selectable-box-space;
 
   @for $i from $min-cols-number through $max-cols-number {
     &.pgn__selectable_box-set--#{$i} {

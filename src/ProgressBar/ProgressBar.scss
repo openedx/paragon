@@ -1,87 +1,87 @@
 @import "variables";
 @import "~bootstrap/scss/progress";
 
-.progress { 
-    border: $progress-bar-border-width solid $progress-bar-border-color;
+.progress {
+  border: $progress-bar-border-width solid $progress-bar-border-color;
 }
-.progress-bar { 
-    background-color: $progress-bar-bg;
+
+.progress-bar {
+  background-color: $progress-bar-bg;
 }
 
 .pgn__progress-annotated {
-    width: 100%;
-    position: relative;
+  width: 100%;
+  position: relative;
+  overflow: visible;
+
+  .progress {
     overflow: visible;
+    background-color: $light-300;
+    height: $annotated-progress-height;
+    border: none;
 
-    .progress {
-        overflow: visible;
-        background-color: $light-300;
-        height: $annotated-progress-height;
-        border: none;
-
-        .progress-bar {
-            background-color: $annotated-progress-bar-bg;
-            overflow: visible;
-            position: relative;
-        }
-
-        .pgn__progress-tick--white::after,
-        .pgn__progress-tick--black::after {
-            content: '';
-            position: absolute;
-            height: $annotated-progress-height;
-            width: 1px;
-            right: 0;
-        }
-
-        .pgn__progress-tick--white::after {
-            background: $light-300;
-        }
-
-        .pgn__progress-tick--black::after {
-            background: $primary-500;
-        }
-
-        @each $name, $color in $progress-colors {
-            .pgn__progress-bar--#{$name} {
-                background-color: $color;
-            }
-
-            .pgn__progress-threshold-dot--#{$name} {
-                background: $color;
-                position: absolute;
-                margin-top: -(calc($progress-threshold-circle / 2) - calc($annotated-progress-height / 2));
-                margin-left: -(calc($progress-threshold-circle / 2));
-                width: $progress-threshold-circle;
-                height: $progress-threshold-circle;
-                border-radius: calc($progress-threshold-circle / 2);
-                z-index: 1;
-            }
-        }
+    .progress-bar {
+      background-color: $annotated-progress-bar-bg;
+      overflow: visible;
+      position: relative;
     }
 
-    .progress::before,
-    .progress::after {
+    .pgn__progress-tick--white::after,
+    .pgn__progress-tick--black::after {
+      content: "";
+      position: absolute;
+      height: $annotated-progress-height;
+      width: 1px;
+      right: 0;
+    }
+
+    .pgn__progress-tick--white::after {
+      background: $light-300;
+    }
+
+    .pgn__progress-tick--black::after {
+      background: $primary-500;
+    }
+
+    @each $name, $color in $progress-colors {
+      .pgn__progress-bar--#{$name} {
+        background-color: $color;
+      }
+
+      .pgn__progress-threshold-dot--#{$name} {
+        background: $color;
         position: absolute;
-        content: '';
-        height: $annotated-progress-height;
-        width: 1px;
-        background: $primary-500;
+        margin-top: -(calc($progress-threshold-circle / 2) - calc($annotated-progress-height / 2));
+        margin-left: -(calc($progress-threshold-circle / 2));
+        width: $progress-threshold-circle;
+        height: $progress-threshold-circle;
+        border-radius: calc($progress-threshold-circle / 2);
+        z-index: 1;
+      }
     }
+  }
 
-    .progress::after {
-        right: 0;
-    }
+  .progress::before,
+  .progress::after {
+    position: absolute;
+    content: "";
+    height: $annotated-progress-height;
+    width: 1px;
+    background: $primary-500;
+  }
 
-    .pgn__progress-info {
-        display: inline-block;
-        position: relative;
-    }
+  .progress::after {
+    right: 0;
+  }
 
-    .pgn__progress-hint {
-        box-sizing: border-box;
-        padding: 0 $progress-hint-annotation-gap;
-        font-size: $small-font-size;
-    }
+  .pgn__progress-info {
+    display: inline-block;
+    position: relative;
+  }
+
+  .pgn__progress-hint {
+    box-sizing: border-box;
+    padding: 0 $progress-hint-annotation-gap;
+    font-size: $small-font-size;
+  }
 }
-  

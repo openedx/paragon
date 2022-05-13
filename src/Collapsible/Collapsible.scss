@@ -2,10 +2,12 @@
 @import "variables";
 
 // TODO: Remove this dependency
-@import "../Card/Card.scss";
+@import "../Card/Card";
 
 .collapsible-card {
+  // stylelint-disable-next-line
   @extend .card;
+
   border-radius: 0;
 
   .collapsible-trigger {
@@ -33,7 +35,9 @@
   }
 
   .collapsible-body {
+    // stylelint-disable-next-line
     @extend .card-body;
+
     padding: $collapsible-card-spacer-y $collapsible-card-spacer-x;
     padding-left: $collapsible-card-body-spacer-left;
     text-align: start;
@@ -49,6 +53,7 @@
 }
 
 .collapsible-card-lg {
+  // stylelint-disable-next-line
   @extend .collapsible-card;
 
   .collapsible-trigger {
@@ -66,8 +71,8 @@
     cursor: pointer;
     align-items: center;
     text-decoration: underline;
-    color: theme-color('primary', 'default');
-    padding: $collapsible-basic-spacer-y $collapsible-basic-spacer-x; 
+    color: theme-color("primary", "default");
+    padding: $collapsible-basic-spacer-y $collapsible-basic-spacer-x;
   }
 
   .collapsible-body {
@@ -76,6 +81,6 @@
   }
 
   .collapsible-icon {
-    margin-left: $collapsible-basic-spacer-icon
+    margin-left: $collapsible-basic-spacer-icon;
   }
 }
