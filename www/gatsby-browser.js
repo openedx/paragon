@@ -4,13 +4,13 @@ const { SettingsContextProvider } = require('./src/context/SettingsContext');
 // wrap whole app in settings context
 exports.wrapRootElement = ({ element }) => <SettingsContextProvider>{element}</SettingsContextProvider>;
 
-exports.onRouteUpdate = ({ location }) => {
-  if (location.hash) {
+exports.onRouteUpdate = ({ location: { hash, pathname, href } }) => {
+  if (hash) {
     setTimeout(() => {
-      const id = location.href.split('#')[1];
+      const id = href.split('#')[1];
       const element = document.getElementById(id);
       if (element) {
-        window.scrollTo({ top: element.offsetTop })
+        window.scrollTo({ top: pathname.startsWith('/components/') ? element.offsetTop : element.offsetTop - 75 })
       }
     }, 0);
   }
