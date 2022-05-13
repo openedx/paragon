@@ -2,59 +2,59 @@
 @import "~bootstrap/scss/breadcrumb";
 
 .pgn__breadcrumb {
+  .list-inline-item {
+    &.active {
+      color: $breadcrumb-active-color;
+    }
+
+    a.link-muted {
+      color: $breadcrumb-color;
+    }
+
+    [dir="rtl"] & {
+      margin-right: 0;
+      margin-left: $breadcrumb-margin-left;
+    }
+
+    .pgn__icon {
+      [dir="rtl"] & {
+        transform: scale(-1);
+      }
+    }
+  }
+
+  &-dark {
     .list-inline-item {
-        &.active {
-            color: $breadcrumb-active-color;
-        }
+      &.active {
+        color: $breadcrumb-inverse-active;
+      }
 
-        a.link-muted {
-            color: $breadcrumb-color;
-        }
-        
-        [dir="rtl"] & {
-            margin-right: 0;
-            margin-left: $breadcrumb-margin-left;
-        }
-
-        .pgn__icon {
-            [dir="rtl"] & {
-                transform: scale(-1);
-            }
-        }
+      a.link-muted {
+        color: $breadcrumb-inverse-color;
+      }
     }
 
-    &-dark {
-        .list-inline-item {
-            &.active {
-                color: $breadcrumb-inverse-active;
-            }
+    .pgn__icon,
+    .custom-spacer {
+      color: $breadcrumb-inverse-spacer;
+    }
+  }
 
-            a.link-muted {
-                color: $breadcrumb-inverse-color;
-            }
-        }
+  ol.is-mobile {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
 
-        .pgn__icon,
-        .custom-spacer {
-            color: $breadcrumb-inverse-spacer;
-        }
+    .list-inline-item:not(:last-child) {
+      margin-right: 0;
+      margin-left: $breadcrumb-margin-left;
     }
 
-    ol.is-mobile {
-        flex-direction: row-reverse;
-        justify-content: flex-end;
+    .pgn__icon {
+      transform: scale(-1);
 
-        .list-inline-item:not(:last-child) {
-            margin-right: 0;
-            margin-left: $breadcrumb-margin-left;
-        }
-
-        .pgn__icon {
-            transform: scale(-1);
-
-            [dir="rtl"] & {
-                transform: scale(1);
-            }
-        }
+      [dir="rtl"] & {
+        transform: scale(1);
+      }
     }
+  }
 }

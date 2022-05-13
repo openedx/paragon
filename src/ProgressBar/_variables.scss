@@ -1,4 +1,3 @@
-
 // Progress bars
 
 $progress-height:                   1rem !default;
@@ -17,8 +16,8 @@ $progress-bar-border-color:         $gray-500 !default;
 $progress-threshold-circle:         .5625rem !default;
 $progress-hint-annotation-gap:      .5rem !default;
 $progress-colors: (
-        'dark':    $primary-500,
-        'success': $success-500,
-        'error':   $danger-500,
-        'warning': $accent-b,
+  "dark":    $primary-500,
+  "success": $success-500,
+  "error":   $danger-500,
+  "warning": $accent-b,
 ) !default;

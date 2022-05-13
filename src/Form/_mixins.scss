@@ -6,6 +6,7 @@
   $border-width
 ) {
   padding: 0 $padding-x;
+
   .pgn__form-control-floating-label-content {
     padding-top: $padding-y;
     line-height: $line-height;
@@ -21,8 +22,9 @@
   $border-width
 ) {
   .pgn__form-control-floating-label-text {
-    $half-leading: calc(($line-height - 0.8) / 2);
+    $half-leading: calc(($line-height - .8) / 2);
     $percent-height-minus-no-bottom-leading: calc((($line-height - $half-leading) / $line-height) * 100%);
+
     transform: translateY(-$padding-y) scale(.75)  translateY(-$percent-height-minus-no-bottom-leading);
   }
 }

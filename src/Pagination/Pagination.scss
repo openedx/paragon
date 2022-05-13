@@ -9,14 +9,22 @@
   }
 }
 
-.pagination-icon-button-right {
+%pagination-icon-button-right {
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
 }
 
-.pagination-icon-button-left {
+%pagination-icon-button-left {
   border-top-left-radius: 50%;
   border-bottom-left-radius: 50%;
+}
+
+.pagination-icon-button-right {
+  @extend %pagination-icon-button-right;
+}
+
+.pagination-icon-button-left {
+  @extend %pagination-icon-button-left;
 }
 
 .pagination-default {
@@ -25,7 +33,7 @@
       margin-inline-start: 0;
       margin-inline-end: $pagination-margin-x;
     }
-    
+
     &.next .pgn__icon {
       margin-inline-start: $pagination-margin-x;
       margin-inline-end: 0;
@@ -60,8 +68,8 @@
     }
   }
 
-  &:focus:before,
-  &.focus:before {
+  &:focus::before,
+  &.focus::before {
     border-radius: 0;
   }
 }
@@ -118,23 +126,27 @@
   }
 
   .page-item:first-child .page-link {
-    @extend .pagination-icon-button-left;
+    @extend %pagination-icon-button-left;
   }
 
   .page-item:last-child .page-link {
-    @extend .pagination-icon-button-right;
+    @extend %pagination-icon-button-right;
   }
 }
 
 .pagination-inverse {
-  .pgn__dark-styles {
+  %dark-styles {
     background-color: transparent;
     color: $white;
   }
 
+  .pgn__dark-styles {
+    @extend %dark-styles;
+  }
+
   .page-item {
     &.disabled .page-link {
-      @extend .pgn__dark-styles;
+      @extend %dark-styles;
     }
 
     &.active button.page-link {
@@ -143,7 +155,7 @@
     }
 
     button.page-link {
-      @extend .pgn__dark-styles;
+      @extend %dark-styles;
 
       &:focus {
         box-shadow: none;
@@ -156,8 +168,8 @@
   }
 
   .page-link {
-    &:focus:before,
-    &.focus:before {
+    &:focus::before,
+    &.focus::before {
       display: none;
     }
   }
@@ -165,16 +177,16 @@
   .dropdown {
     .btn-tertiary {
       color: $pagination-color-inverse;
-    
-      &:after {
+
+      &::after {
         border-top: $pagination-toggle-border solid $pagination-color-inverse;
       }
-    
+
       &:active,
       &:hover {
         background-color: transparent;
       }
-    
+
       &:not(:disabled):not(.disabled):active {
         color: $pagination-color-inverse;
       }
@@ -197,7 +209,7 @@
 }
 
 .pagination-reduced {
-  .dropdown-toggle:after {
+  .dropdown-toggle::after {
     width: 0;
     height: 0;
     border-left: $pagination-toggle-border solid transparent;
@@ -219,7 +231,7 @@
     .btn.dropdown-toggle {
       font-size: $pagination-font-size-sm;
 
-      &:after {
+      &::after {
         border-left-width: $pagination-toggle-border-sm;
         border-right-width: $pagination-toggle-border-sm;
         border-top-width: $pagination-toggle-border-sm;
@@ -234,11 +246,11 @@
   }
 
   .page-item:first-child .page-link {
-    @extend .pagination-icon-button-left;
+    @extend %pagination-icon-button-left;
   }
 
   .page-item:last-child .page-link {
-    @extend .pagination-icon-button-right;
+    @extend %pagination-icon-button-right;
   }
 }
 
@@ -262,10 +274,10 @@
   }
 
   .page-item:first-child .page-link {
-    @extend .pagination-icon-button-left;
+    @extend %pagination-icon-button-left;
   }
 
   .page-item:last-child .page-link {
-    @extend .pagination-icon-button-right;
+    @extend %pagination-icon-button-right;
   }
 }

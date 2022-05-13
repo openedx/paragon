@@ -1,11 +1,13 @@
 .menu-component-list {
   columns: 3;
 }
+
 .menu-component-list-category {
   -webkit-column-break-inside: avoid;
   page-break-inside: avoid;
   break-inside: avoid;
 }
+
 .menu-all-components {
   .menu-component-list {
     columns: 4;

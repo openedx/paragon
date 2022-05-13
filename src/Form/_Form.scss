@@ -13,10 +13,12 @@ $select-icon-padding: .5625rem !default;
 // we can remove this when they are deleted.
 .form-control.is-invalid.is-invalid-nodanger {
   @include form-control-focus(true);
+
   border-color: $input-border-color;
 }
+
 .form-control:hover {
-  border : solid $input-hover-width $dark-700;
+  border: solid $input-hover-width $dark-700;
 }
 
 .pgn__form-group {
@@ -44,7 +46,7 @@ $select-icon-padding: .5625rem !default;
   flex-grow: 1;
   align-items: flex-start;
 
-  @media (min-width: map-get($grid-breakpoints, 'sm')) {
+  @media (min-width: map-get($grid-breakpoints, "sm")) {
     margin-inline-end: $custom-control-gutter;
   }
 
@@ -56,9 +58,11 @@ $select-icon-padding: .5625rem !default;
         background-position: left $select-icon-padding center;
       }
     }
+
     .form-control-lg {
       padding-inline-start: calc(#{$input-padding-x-lg} + #{$form-control-icon-width});
     }
+
     .form-control-sm {
       padding-inline-start: calc(#{$input-padding-x-sm} + #{$form-control-icon-width});
     }
@@ -68,9 +72,11 @@ $select-icon-padding: .5625rem !default;
     .form-control {
       padding-inline-end: calc(#{$input-padding-x} + #{$form-control-icon-width});
     }
+
     .form-control-lg {
       padding-inline-end: calc(#{$input-padding-x-lg} + #{$form-control-icon-width});
     }
+
     .form-control-sm {
       padding-inline-end: calc(#{$input-padding-x-sm} + #{$form-control-icon-width});
     }
@@ -78,10 +84,12 @@ $select-icon-padding: .5625rem !default;
 
   font-size: $input-font-size;
   line-height: $input-line-height;
+
   &.pgn__form-control-decorator-group-sm {
     font-size: $input-font-size-sm;
     line-height: $input-line-height-sm;
   }
+
   &.pgn__form-control-decorator-group-lg {
     font-size: $input-font-size-lg;
     line-height: $input-line-height-lg;
@@ -93,9 +101,11 @@ $select-icon-padding: .5625rem !default;
 .pgn__form-control-decorator {
   position: absolute;
   pointer-events: none;
+
   button {
     pointer-events: initial;
   }
+
   height: $input-height;
   min-width: $input-height;
   line-height: inherit;
@@ -103,11 +113,13 @@ $select-icon-padding: .5625rem !default;
   justify-content: center;
   align-items: center;
   font-size: inherit;
+
   &.pgn__form-control-decorator-leading {
     inset-inline-start: 0;
     padding-inline-start: $input-padding-x;
     padding-inline-end: calc($input-padding-x / 2);
   }
+
   &.pgn__form-control-decorator-trailing {
     inset-inline-end: 0;
     padding-inline-start: calc($input-padding-x / 2);
@@ -117,10 +129,12 @@ $select-icon-padding: .5625rem !default;
   .pgn__form-control-decorator-group-lg & {
     height: $input-height-lg;
     min-width: $input-height-lg;
+
     &.pgn__form-control-decorator-leading {
       padding-left: $input-padding-x-lg;
       padding-right: calc($input-padding-x-lg / 2);
     }
+
     &.pgn__form-control-decorator-trailing {
       padding-left: calc($input-padding-x-lg / 2);
       padding-right: calc(#{$input-padding-y} - #{2 * $input-border-width});
@@ -130,10 +144,12 @@ $select-icon-padding: .5625rem !default;
   .pgn__form-control-decorator-group-sm & {
     height: $input-height-sm;
     min-width: $input-height-lg;
+
     &.pgn__form-control-decorator-leading {
       padding-left: $input-padding-x-sm;
       padding-right: calc($input-padding-x-sm / 2);
     }
+
     &.pgn__form-control-decorator-trailing {
       padding-left: calc($input-padding-x-sm / 2);
       padding-right: calc(#{$input-padding-y-sm} - #{2 * $input-border-width});
@@ -142,10 +158,12 @@ $select-icon-padding: .5625rem !default;
 
   .btn-icon {
     color: $gray-500 !important;
+
     &:hover {
       background-color: $gray-500 !important;
       color: $white !important;
     }
+
     &:focus {
       background-color: $white !important;
       color: $gray-500 !important;
@@ -168,16 +186,18 @@ $select-icon-padding: .5625rem !default;
   .pgn__form-control-floating-label-content {
     border-top: solid 2px transparent;
     position: relative;
-    inset-inline-start: -0.5em;
+    inset-inline-start: -.5em;
   }
+
   .pgn__form-control-floating-label-text {
     transform-origin: left top;
-    padding: 0 0.5em;
+    padding: 0 .5em;
     transition: transform 150ms ease, background-color 150ms linear;
+
     // Prevent background-color from being output as "transparent"
     // Firefox doesn't handle the first animation well from transparent to
     // a color. Adding an alpha channel smooths it out.
-    background-color: rgba($input-bg, 0.01);
+    background-color: rgba($input-bg, .01);
     white-space: nowrap;
     max-width: 75vw;
     display: block;
@@ -206,6 +226,7 @@ $select-icon-padding: .5625rem !default;
     $input-font-size,
     $input-border-width
   );
+
   .pgn__form-control-decorator-group-lg & {
     @include form-control-floating-label-initial(
       $input-padding-x-lg,
@@ -215,6 +236,7 @@ $select-icon-padding: .5625rem !default;
       $input-border-width
     );
   }
+
   .pgn__form-control-decorator-group-sm & {
     @include form-control-floating-label-initial(
       $input-padding-x-sm,
@@ -231,6 +253,7 @@ $select-icon-padding: .5625rem !default;
     .pgn__form-control-floating-label-text {
       background-color: $input-bg;
     }
+
     @include form-control-floating-label-float(
       $input-padding-x,
       $input-padding-y,
@@ -239,6 +262,7 @@ $select-icon-padding: .5625rem !default;
       $input-border-width
     );
   }
+
   .float-label.pgn__form-control-decorator-group-lg & {
     @include form-control-floating-label-float(
       $input-padding-x-lg,
@@ -248,6 +272,7 @@ $select-icon-padding: .5625rem !default;
       $input-border-width
     );
   }
+
   .float-label.pgn__form-control-decorator-group-sm & {
     @include form-control-floating-label-float(
       $input-padding-x-sm,
@@ -260,9 +285,8 @@ $select-icon-padding: .5625rem !default;
 }
 
 .pgn__form-control-decorator-group.has-floating-label {
-
-  input[type='date'],
-  input[type='time'] {
+  input[type="date"],
+  input[type="time"] {
     [dir="rtl"] & {
       text-align: right;
     }
@@ -278,12 +302,14 @@ $select-icon-padding: .5625rem !default;
       }
     }
   }
+
   .form-control:not(:focus):not(.has-value) {
     &::placeholder,
     &::-webkit-datetime-edit {
       opacity: 0;
     }
   }
+
   select.form-control:not(.has-value):not(:focus) {
     // color: rgba(0,0,0,0); Force the rgba syntax to appear in the output rather
     // than transparent. IE11 does not understand color: transparent here.
@@ -309,7 +335,8 @@ select.form-control {
 .pgn__form-label {
   font-size: $input-font-size;
   display: inline-block;
-  margin-bottom: 0.5rem;
+  margin-bottom: .5rem;
+
   &.pgn__form-label-inline {
     display: inline-block;
     margin: 0 1em 0 0;
@@ -318,9 +345,11 @@ select.form-control {
       margin: 0 0 0 1em;
     }
   }
+
   &.pgn__form-label-lg {
     font-size: $input-font-size-lg;
   }
+
   &.pgn__form-label-sm {
     font-size: $input-font-size-sm;
   }
@@ -339,15 +368,19 @@ select.form-control {
   border-radius: $custom-checkbox-indicator-border-radius;
   margin-inline-end: $custom-control-gutter;
   background-position: center;
+
   &:not(:disabled) {
     cursor: pointer;
   }
+
   &:not(:disabled):hover {
     box-shadow: $custom-control-indicator-focus-box-shadow;
   }
+
   &:disabled {
     opacity: .3;
   }
+
   &:checked {
     border-color: $custom-control-indicator-checked-border-color;
   }
@@ -357,6 +390,7 @@ select.form-control {
   &:checked {
     background-image: escape-svg($custom-checkbox-indicator-icon-checked);
   }
+
   &:indeterminate {
     background-image: escape-svg($custom-checkbox-indicator-icon-indeterminate);
   }
@@ -369,11 +403,13 @@ select.form-control {
   background-position: left center;
   background-repeat: no-repeat;
   transition: background 150ms ease;
+
   &:checked {
     background-position: right center;
     background-color: $custom-switch-indicator-checked-bg;
     background-image: escape-svg($custom-switch-indicator-icon-on);
   }
+
   &:indeterminate {
     background-position: center;
     background-image: escape-svg($custom-switch-indicator-icon-off);
@@ -383,11 +419,12 @@ select.form-control {
 .pgn__form-switch-helper-text {
   color: $gray-500;
   font-size: $font-size-xs;
-  margin-top: 0.25rem;
+  margin-top: .25rem;
 }
 
 .pgn__form-radio-input {
   border-radius: $custom-radio-indicator-border-radius;
+
   &:checked {
     background-image: escape-svg($custom-radio-indicator-icon-checked);
   }
@@ -399,7 +436,6 @@ select.form-control {
   display: inline-flex;
 
   .pgn__form-label {
-    display: block;
     display: flex;
     align-items: center;
     margin-bottom: 0;
@@ -413,9 +449,11 @@ select.form-control {
   &.pgn__form-control-invalid input {
     border-color: $form-feedback-invalid-color;
   }
+
   &.pgn__form-control-valid input {
     border-color: $form-feedback-valid-color;
   }
+
   &.pgn__form-control-label-left {
     .pgn__form-label {
       order: 1;

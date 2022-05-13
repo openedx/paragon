@@ -1,10 +1,13 @@
 @import "variables";
 
 @function get-color($element, $color, $type) {
-  @return map-get($chip-theme-colors, "#{$color}-#{$element}-#{$type}")
+  @return map-get($chip-theme-colors, "#{$color}-#{$element}-#{$type}");
 }
 
-@mixin chip-variant($background, $border, $hover-background, $hover-border, $active-background, $active-border, $color, $hover-color, $active-color) {
+@mixin chip-variant(
+  $background, $border, $hover-background, $hover-border, $active-background,
+  $active-border, $color, $hover-color, $active-color
+) {
   background-color: $background;
   color: $color;
   border-color: $border;
@@ -31,6 +34,7 @@
     border-color: $border;
     opacity: $chip-disable-opacity;
     pointer-events: none;
+
     &::before {
       display: none;
     }
@@ -58,22 +62,22 @@
   }
 
   .chip-icon-before {
-    margin-inline-end: 0.5rem;
-    margin-left: -0.25em;
+    margin-inline-end: .5rem;
+    margin-left: -.25em;
 
     [dir="rtl"] & {
-      margin-right: -0.25em;
-      margin-left: 0.5rem;
+      margin-right: -.25em;
+      margin-left: .5rem;
     }
   }
 
   .chip-icon-after {
-    margin-inline-start: 0.5rem;
-    margin-right: -0.25em;
+    margin-inline-start: .5rem;
+    margin-right: -.25em;
 
     [dir="rtl"] & {
-      margin-right: 0.5rem;
-      margin-left: -0.25em;
+      margin-right: .5rem;
+      margin-left: -.25em;
     }
   }
 }

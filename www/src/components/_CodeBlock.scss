@@ -1,6 +1,6 @@
-
 .pgn-doc__code-block {
   margin: 1rem 0 2rem;
+
   // border: solid 2px $light-300;
   border-radius: $border-radius;
 }
@@ -13,6 +13,7 @@
 .prism-code {
   font-size: $font-size-base;
   font-family: monospace;
+
   // box-shadow: 1px 0 0 0 #282632, -1px 0 0 0 #282632;
   border-radius: $input-border-radius;
 }

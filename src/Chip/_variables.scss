@@ -1,4 +1,3 @@
-
 // Chip
 
 $chip-padding-y:                    .125rem !default;
@@ -11,25 +10,24 @@ $chip-font-weight:                  400 !default;
 $chip-line-height:                  1.5rem !default;
 $chip-disable-opacity:              .3 !default;
 
-$chip-theme-variants: ('light', 'dark') !default;
+$chip-theme-variants: ("light", "dark") !default;
 $chip-theme-colors: (
-        "light-background-inactive": $white,
-        "light-text-inactive":       $primary-700,
-        "light-border-inactive":     $light-300,
-        "light-background-hover":    $primary-500,
-        "light-text-hover":          $white,
-        "light-border-hover":        $white,
-        "light-background-selected": $white,
-        "light-text-selected":       $primary-700,
-        "light-border-selected":     $primary-700,
-
-        "dark-background-inactive":  $primary-300,
-        "dark-text-inactive":        $white,
-        "dark-border-inactive":      $primary-300,
-        "dark-background-hover":     $white,
-        "dark-text-hover":           $primary-700,
-        "dark-border-hover":         $primary-300,
-        "dark-background-selected":  $primary-300,
-        "dark-text-selected":        $white,
-        "dark-border-selected":      $white,
+  "light-background-inactive": $white,
+  "light-text-inactive":       $primary-700,
+  "light-border-inactive":     $light-300,
+  "light-background-hover":    $primary-500,
+  "light-text-hover":          $white,
+  "light-border-hover":        $white,
+  "light-background-selected": $white,
+  "light-text-selected":       $primary-700,
+  "light-border-selected":     $primary-700,
+  "dark-background-inactive":  $primary-300,
+  "dark-text-inactive":        $white,
+  "dark-border-inactive":      $primary-300,
+  "dark-background-hover":     $white,
+  "dark-text-hover":           $primary-700,
+  "dark-border-hover":         $primary-300,
+  "dark-background-selected":  $primary-300,
+  "dark-text-selected":        $white,
+  "dark-border-selected":      $white,
 ) !default;

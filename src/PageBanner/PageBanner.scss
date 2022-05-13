@@ -1,3 +1,4 @@
+// stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner-component {
   width: 100%;
   min-height: 36px;
@@ -10,35 +11,41 @@
   }
 }
 
+// stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner__dark {
   background-color: $dark-500;
   color: white;
 }
 
+// stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner__light {
   background-color: $light-400;
   color: black;
 }
 
+// stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner__accentA {
   background-color: $accent-a;
   color: black;
 }
 
+// stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner__warning {
   background-color: $warning-100;
   color: black;
 }
 
+// stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner-content {
   display: flex;
   flex-grow: 1;
   justify-content: center;
   align-items: center;
-  padding: map_get($spacers, 2) map_get($spacers, 2.5);
+  padding: map_get($spacers, 2) map_get($spacers, 2\.5);
   text-align: center;
 }
 
+// stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner-dismissButtonContainer {
   min-width: 32px;
   min-height: 32px;

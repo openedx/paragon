@@ -14,11 +14,12 @@
     display: flex;
     flex-direction: column;
   }
-  
+
   .toast-header-btn-container {
     margin: -.25rem -.5rem;
     align-self: flex-start;
   }
+
   .btn {
     margin-top: .75rem;
     align-self: flex-start;
@@ -35,6 +36,7 @@
       margin: 0;
       padding-right: .75rem;
     }
+
     & + .btn {
       margin-top: 1rem;
     }
