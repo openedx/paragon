@@ -72,6 +72,13 @@ const plugins = [
       ],
     },
   },
+  {
+    resolve: 'gatsby-plugin-page-creator',
+    options: {
+      path: `${__dirname}/src/pages`,
+      ignore: ['insights.jsx'],
+    },
+  },
 ];
 
 if (process.env && process.env.SEGMENT_KEY) {

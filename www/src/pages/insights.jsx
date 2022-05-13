@@ -14,6 +14,7 @@ import ProjectUsageExamples from '../components/insights/ProjectUsageExamples';
 import ComponentUsageExamples from '../components/insights/ComponentUsageExamples';
 import getGithubProjectUrl from '../utils/getGithubProjectUrl';
 import dependentProjectsAnalysis from '../../../dependent-usage.json';
+import { INSIGHTS_TABS, INSIGHTS_PAGES } from '../config';
 
 const {
   lastModified: analysisLastUpdated,
@@ -173,22 +174,11 @@ const ComponentsUsage = () => (
   </div>
 );
 
-export default function InsightsPage() {
-  const tabs = ['/insights', '/insights/?tab=projects', '/insights/?tab=components'];
-
+export default function InsightsPage({ pageContext: { tab } }) {
   const handleOnSelect = (value) => {
-    switch (value) {
-      case tabs[0]:
-        global.analytics.track('Usage Insights', { tab: 'Summary' });
-        break;
-      case tabs[1]:
-        global.analytics.track('Usage Insights', { tab: 'Projects' });
-        break;
-      case tabs[2]:
-        global.analytics.track('Usage Insights', { tab: 'Components' });
-        break;
-      default:
-        break;
+    if (value !== tab) {
+      global.analytics.track('Usage Insights', { tab: value });
+      navigate(INSIGHTS_PAGES.find(item => item.tab === value).path);
     }
   };
 
@@ -202,17 +192,17 @@ export default function InsightsPage() {
           <p>Last updated: {new Date(analysisLastUpdated).toLocaleDateString()}</p>
         </header>
         <Tabs
-          defaultKey={tabs[0]}
+          activeKey={tab}
           id="uncontrolled-tab-example"
           onSelect={handleOnSelect}
         >
-          <Tab eventKey={tabs[0]} title="Summary">
+          <Tab eventKey={INSIGHTS_TABS.SUMMARY} title="Summary">
             <SummaryUsage />
           </Tab>
-          <Tab eventKey={tabs[1]} title="Projects">
+          <Tab eventKey={INSIGHTS_TABS.PROJECTS} title="Projects">
             <ProjectsUsage />
           </Tab>
-          <Tab eventKey={tabs[2]} title="Components">
+          <Tab eventKey={INSIGHTS_TABS.COMPONENTS} title="Components">
             <ComponentsUsage />
           </Tab>
         </Tabs>
@@ -222,8 +212,7 @@ export default function InsightsPage() {
 }
 
 InsightsPage.propTypes = {
-  location: PropTypes.shape({
-    pathname: PropTypes.string,
-    search: PropTypes.string,
+  pageContext: PropTypes.shape({
+    tab: PropTypes.oneOf(Object.values(INSIGHTS_TABS)),
   }).isRequired,
 };
