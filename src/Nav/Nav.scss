@@ -20,7 +20,7 @@
   color: $nav-link-color;
   font-weight: $nav-link-font-weight;
 
-  @include hover-focus() {
+  @include hover-focus {
     text-decoration: none;
     color: $nav-link-color;
   }
@@ -49,7 +49,7 @@
 
     @include border-top-radius($nav-tabs-border-radius);
 
-    @include hover-focus() {
+    @include hover-focus {
       border-color: $nav-tabs-link-hover-border-color;
       background-color: $nav-tabs-link-hover-bg;
     }
@@ -71,11 +71,11 @@
   .dropdown-menu {
     // Make dropdown border overlap tab border
     margin-top: -$nav-tabs-border-width;
+
     // Remove the top rounded corners here since there is a hard edge above the menu
     @include border-top-radius(0);
   }
 }
-
 
 //
 // Pills
@@ -100,6 +100,7 @@
 .nav-button-group {
   .nav-link {
     border: solid 1px $nav-tabs-border-color;
+
     &:first-child {
       @include border-left-radius($nav-pills-border-radius);
 
@@ -111,6 +112,7 @@
         border-left: 0;
       }
     }
+
     &:last-child {
       @include border-right-radius($nav-pills-border-radius);
 
@@ -121,9 +123,11 @@
         border-bottom-right-radius: 0;
       }
     }
+
     &:hover {
       background: $nav-tabs-link-hover-bg;
     }
+
     & + .nav-link {
       margin-left: -1px;
     }
@@ -136,7 +140,6 @@
     border-color: transparent;
   }
 }
-
 
 //
 // Justified variants
@@ -159,7 +162,6 @@
   }
 }
 
-
 // Tabbable tabs
 //
 // Hide tabbable panes to start, show them when `.active`
@@ -169,6 +171,7 @@
     display: none;
     text-align: start;
   }
+
   > .active {
     display: block;
   }

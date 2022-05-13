@@ -1,43 +1,53 @@
 .pgn__form-text {
   font-size: $small-font-size;
   align-items: center;
+
   .pgn__icon {
     height: 1em;
     margin-inline-end: .25em;
     width: 1em;
     display: inline-block;
   }
+
   & ~ .pgn__form-text {
     margin-top: .25rem;
   }
+
   .form-control + &,
   .pgn__form-control-set + &,
   .pgn__form-control-decorator-group + & {
     margin-top: .25rem;
   }
 }
+
 .pgn__form-text-default {
   color: $text-muted;
 }
+
 .pgn__form-text-valid {
   color: $form-feedback-valid-color;
 }
+
 .pgn__form-text-invalid {
   color: $form-feedback-invalid-color;
 }
+
 .pgn__form-text-warning {
   color: $gray-900;
 }
+
 .pgn__form-text-criteria-empty {
   .pgn__icon {
     color: $text-muted;
   }
 }
+
 .pgn__form-text-criteria-valid {
   .pgn__icon {
     color: $form-feedback-valid-color;
   }
 }
+
 .pgn__form-text-criteria-invalid {
   .pgn__icon {
     color: $form-feedback-invalid-color;

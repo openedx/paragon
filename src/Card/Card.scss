@@ -26,32 +26,44 @@
     overflow: auto;
     text-align: start;
     width: 100%;
-  } 
+  }
 
-  .pgn__card-header-title {
+  %header-title {
     color: $black;
     font-weight: $font-weight-bold;
     text-align: start;
   }
+
+  .pgn__card-header-title,
+  .pgn__card-header-title-sm,
+  .pgn__card-header-title-md {
+    @extend %header-title;
+  }
+
   .pgn__card-header-title-sm {
-    @extend .pgn__card-header-title;
     font-size: $h4-font-size;
   }
+
   .pgn__card-header-title-md {
-    @extend .pgn__card-header-title;
     font-size: $h3-font-size;
   }
 
-  .pgn__card-header-subtitle {
+  %header-subtitle {
     color: $gray-700;
     margin-top: map_get($spacers, 1);
   }
+
+  .pgn__card-header-subtitle,
+  .pgn__card-header-subtitle-sm,
+  .pgn__card-header-subtitle-md {
+    @extend %header-subtitle;
+  }
+
   .pgn__card-header-subtitle-sm {
-    @extend .pgn__card-header-subtitle;
     font-size: $h5-font-size;
   }
+
   .pgn__card-header-subtitle-md {
-    @extend .pgn__card-header-subtitle;
     font-size: $h4-font-size;
   }
 

@@ -30,8 +30,8 @@ $btn-tertiary-hover-bg:       $light-500 !default;
 $btn-tertiary-active-bg:      $light-500 !default;
 $btn-inverse-tertiary-color:          $white !default;
 $btn-inverse-tertiary-bg:             transparent !default;
-$btn-inverse-tertiary-hover-bg:       rgba(255,255,255,.1) !default;
-$btn-inverse-tertiary-active-bg:      rgba(255,255,255,.1) !default;
+$btn-inverse-tertiary-hover-bg:       rgb(255 255 255 / 10%) !default;
+$btn-inverse-tertiary-active-bg:      rgb(255 255 255 / 10%) !default;
 
 $btn-link-disabled-color:     theme-color("gray", "light-text") !default;
 

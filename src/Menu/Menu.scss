@@ -53,47 +53,47 @@
   }
 
   &.focus,
-  &:focus{
-      font-weight: $font-weight-bolder;
-      color: $btn-tertiary-color;
-      background-color: $active-background;
-      border-color: $active-border;
+  &:focus {
+    font-weight: $font-weight-bolder;
+    color: $btn-tertiary-color;
+    background-color: $active-background;
+    border-color: $active-border;
   }
 
   .btn-icon-before {
-    margin-inline-end: 0.5rem;
-    margin-left: -0.25em;
+    margin-inline-end: .5rem;
+    margin-left: -.25em;
 
     [dir="rtl"] & {
-      margin-right: -0.25em;
-      margin-left: 0.5rem;
+      margin-right: -.25em;
+      margin-left: .5rem;
     }
   }
 
   .btn-icon-after {
-    margin-inline-start: 0.5rem;
-    margin-right: -0.25em;
+    margin-inline-start: .5rem;
+    margin-right: -.25em;
 
     [dir="rtl"] & {
-      margin-right: 0.5rem;
-      margin-left: -0.25em;
+      margin-right: .5rem;
+      margin-left: -.25em;
     }
   }
 }
 
-.pgn__menu{
-  border-radius: 0.25em;
+.pgn__menu {
+  border-radius: .25em;
   box-shadow: $box-shadow;
   background-color: $white;
   overflow: auto;
   max-height: 264px;
 }
 
-.pgn__menu-select-popup{
+.pgn__menu-select-popup {
   color: $btn-tertiary-bg;
 }
 
-.pgn__menu-select-trigger-btn{
+.pgn__menu-select-trigger-btn {
   max-width: 450px;
   white-space: nowrap;
   overflow: hidden;

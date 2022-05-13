@@ -1,23 +1,20 @@
 // Variables
-// Variables
 //
 // Variables should follow the `$component-state-property-size` formula for
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
-
 // Color system
-
-$white:    #fff !default;
-$gray-100: #ebebeb !default;
-$gray-200: #cccccc !default;
-$gray-300: #adadad !default;
-$gray-400: #8f8f8f !default;
+$white:    #FFFFFF !default;
+$gray-100: #EBEBEB !default;
+$gray-200: #CCCCCC !default;
+$gray-300: #ADADAD !default;
+$gray-400: #8F8F8F !default;
 $gray-500: #707070 !default;
-$gray-600: #5c5c5c !default;
+$gray-600: #5C5C5C !default;
 $gray-700: #454545 !default;
 $gray-800: #333333 !default;
 $gray-900: #212529 !default;
-$black:    #000 !default;
+$black:    #000000 !default;
 
 $grays: () !default;
 $grays: map-merge(
@@ -35,10 +32,9 @@ $grays: map-merge(
   $grays
 );
 
-
-$blue: #23419f !default;
+$blue: #23419F !default;
 $red: #C32D3A !default;
-$yellow: #ffd900 !default;
+$yellow: #FFD900 !default;
 $green: #178253 !default;
 $teal: #006DAA !default;
 
@@ -88,204 +84,193 @@ $theme-colors: map-merge(
   $theme-colors
 );
 
-$primary-100: mix(white, $primary,  94%) !default;
-$primary-200: mix(white, $primary,  75%) !default;
-$primary-300: mix(white, $primary,  50%) !default;
-$primary-400: mix(white, $primary,  25%) !default;
+$primary-100: mix(white, $primary, 94%) !default;
+$primary-200: mix(white, $primary, 75%) !default;
+$primary-300: mix(white, $primary, 50%) !default;
+$primary-400: mix(white, $primary, 25%) !default;
 $primary-500: $primary !default;
-$primary-600: mix(black, $primary,  10%) !default;
-$primary-700: mix(black, $primary,  20%) !default;
-$primary-800: mix(black, $primary,  25%) !default;
-$primary-900: mix(black, $primary,  30%) !default;
+$primary-600: mix(black, $primary, 10%) !default;
+$primary-700: mix(black, $primary, 20%) !default;
+$primary-800: mix(black, $primary, 25%) !default;
+$primary-900: mix(black, $primary, 30%) !default;
 
-$secondary-100: mix(white, $secondary,  94%) !default;
-$secondary-200: mix(white, $secondary,  75%) !default;
-$secondary-300: mix(white, $secondary,  50%) !default;
-$secondary-400: mix(white, $secondary,  25%) !default;
+$secondary-100: mix(white, $secondary, 94%) !default;
+$secondary-200: mix(white, $secondary, 75%) !default;
+$secondary-300: mix(white, $secondary, 50%) !default;
+$secondary-400: mix(white, $secondary, 25%) !default;
 $secondary-500: $secondary !default;
-$secondary-600: mix(black, $secondary,  10%) !default;
-$secondary-700: mix(black, $secondary,  20%) !default;
-$secondary-800: mix(black, $secondary,  25%) !default;
-$secondary-900: mix(black, $secondary,  30%) !default;
+$secondary-600: mix(black, $secondary, 10%) !default;
+$secondary-700: mix(black, $secondary, 20%) !default;
+$secondary-800: mix(black, $secondary, 25%) !default;
+$secondary-900: mix(black, $secondary, 30%) !default;
 
-$brand-100: mix(white, $brand,  94%) !default;
-$brand-200: mix(white, $brand,  75%) !default;
-$brand-300: mix(white, $brand,  50%) !default;
-$brand-400: mix(white, $brand,  25%) !default;
+$brand-100: mix(white, $brand, 94%) !default;
+$brand-200: mix(white, $brand, 75%) !default;
+$brand-300: mix(white, $brand, 50%) !default;
+$brand-400: mix(white, $brand, 25%) !default;
 $brand-500: $brand !default;
-$brand-600: mix(black, $brand,  10%) !default;
-$brand-700: mix(black, $brand,  20%) !default;
-$brand-800: mix(black, $brand,  25%) !default;
-$brand-900: mix(black, $brand,  30%) !default;
+$brand-600: mix(black, $brand, 10%) !default;
+$brand-700: mix(black, $brand, 20%) !default;
+$brand-800: mix(black, $brand, 25%) !default;
+$brand-900: mix(black, $brand, 30%) !default;
 
-$success-100: mix(white, $success,  94%) !default;
-$success-200: mix(white, $success,  75%) !default;
-$success-300: mix(white, $success,  50%) !default;
-$success-400: mix(white, $success,  25%) !default;
+$success-100: mix(white, $success, 94%) !default;
+$success-200: mix(white, $success, 75%) !default;
+$success-300: mix(white, $success, 50%) !default;
+$success-400: mix(white, $success, 25%) !default;
 $success-500: $success !default;
-$success-600: mix(black, $success,  10%) !default;
-$success-700: mix(black, $success,  20%) !default;
-$success-800: mix(black, $success,  25%) !default;
-$success-900: mix(black, $success,  30%) !default;
+$success-600: mix(black, $success, 10%) !default;
+$success-700: mix(black, $success, 20%) !default;
+$success-800: mix(black, $success, 25%) !default;
+$success-900: mix(black, $success, 30%) !default;
 
-$info-100: mix(white, $info,  94%) !default;
-$info-200: mix(white, $info,  75%) !default;
-$info-300: mix(white, $info,  50%) !default;
-$info-400: mix(white, $info,  25%) !default;
+$info-100: mix(white, $info, 94%) !default;
+$info-200: mix(white, $info, 75%) !default;
+$info-300: mix(white, $info, 50%) !default;
+$info-400: mix(white, $info, 25%) !default;
 $info-500: $info !default;
-$info-600: mix(black, $info,  10%) !default;
-$info-700: mix(black, $info,  20%) !default;
-$info-800: mix(black, $info,  25%) !default;
-$info-900: mix(black, $info,  30%) !default;
+$info-600: mix(black, $info, 10%) !default;
+$info-700: mix(black, $info, 20%) !default;
+$info-800: mix(black, $info, 25%) !default;
+$info-900: mix(black, $info, 30%) !default;
 
-$warning-100: mix(white, $warning,  94%) !default;
-$warning-200: mix(white, $warning,  75%) !default;
-$warning-300: mix(white, $warning,  50%) !default;
-$warning-400: mix(white, $warning,  25%) !default;
+$warning-100: mix(white, $warning, 94%) !default;
+$warning-200: mix(white, $warning, 75%) !default;
+$warning-300: mix(white, $warning, 50%) !default;
+$warning-400: mix(white, $warning, 25%) !default;
 $warning-500: $warning !default;
-$warning-600: mix(black, $warning,  10%) !default;
-$warning-700: mix(black, $warning,  20%) !default;
-$warning-800: mix(black, $warning,  25%) !default;
-$warning-900: mix(black, $warning,  30%) !default;
+$warning-600: mix(black, $warning, 10%) !default;
+$warning-700: mix(black, $warning, 20%) !default;
+$warning-800: mix(black, $warning, 25%) !default;
+$warning-900: mix(black, $warning, 30%) !default;
 
-$danger-100: mix(white, $danger,  94%) !default;
-$danger-200: mix(white, $danger,  75%) !default;
-$danger-300: mix(white, $danger,  50%) !default;
-$danger-400: mix(white, $danger,  25%) !default;
+$danger-100: mix(white, $danger, 94%) !default;
+$danger-200: mix(white, $danger, 75%) !default;
+$danger-300: mix(white, $danger, 50%) !default;
+$danger-400: mix(white, $danger, 25%) !default;
 $danger-500: $danger !default;
-$danger-600: mix(black, $danger,  10%) !default;
-$danger-700: mix(black, $danger,  20%) !default;
-$danger-800: mix(black, $danger,  25%) !default;
-$danger-900: mix(black, $danger,  30%) !default;
+$danger-600: mix(black, $danger, 10%) !default;
+$danger-700: mix(black, $danger, 20%) !default;
+$danger-800: mix(black, $danger, 25%) !default;
+$danger-900: mix(black, $danger, 30%) !default;
 
-$light-100: mix(white, $light,  94%) !default;
-$light-200: mix(white, $light,  75%) !default;
-$light-300: mix(white, $light,  50%) !default;
-$light-400: mix(white, $light,  25%) !default;
+$light-100: mix(white, $light, 94%) !default;
+$light-200: mix(white, $light, 75%) !default;
+$light-300: mix(white, $light, 50%) !default;
+$light-400: mix(white, $light, 25%) !default;
 $light-500: $light !default;
-$light-600: mix(black, $light,  10%) !default;
-$light-700: mix(black, $light,  20%) !default;
-$light-800: mix(black, $light,  25%) !default;
-$light-900: mix(black, $light,  30%) !default;
+$light-600: mix(black, $light, 10%) !default;
+$light-700: mix(black, $light, 20%) !default;
+$light-800: mix(black, $light, 25%) !default;
+$light-900: mix(black, $light, 30%) !default;
 
-$dark-100: mix(white, $dark,  94%) !default;
-$dark-200: mix(white, $dark,  75%) !default;
-$dark-300: mix(white, $dark,  50%) !default;
-$dark-400: mix(white, $dark,  25%) !default;
+$dark-100: mix(white, $dark, 94%) !default;
+$dark-200: mix(white, $dark, 75%) !default;
+$dark-300: mix(white, $dark, 50%) !default;
+$dark-400: mix(white, $dark, 25%) !default;
 $dark-500: $dark !default;
-$dark-600: mix(black, $dark,  10%) !default;
-$dark-700: mix(black, $dark,  20%) !default;
-$dark-800: mix(black, $dark,  25%) !default;
-$dark-900: mix(black, $dark,  30%) !default;
-
+$dark-600: mix(black, $dark, 10%) !default;
+$dark-700: mix(black, $dark, 20%) !default;
+$dark-800: mix(black, $dark, 25%) !default;
+$dark-900: mix(black, $dark, 30%) !default;
 
 $theme-color-levels: () !default;
 
 $theme-color-levels: map-merge(
   (
-  "gray-100": $gray-100,
-  "gray-200": $gray-200,
-  "gray-300": $gray-300,
-  "gray-400": $gray-400,
-  "gray-500": $gray-500,
-  "gray-600": $gray-600,
-  "gray-700": $gray-700,
-  "gray-800": $gray-800,
-  "gray-900": $gray-900,
-
-  "primary-100": $primary-100,
-  "primary-200": $primary-200,
-  "primary-300": $primary-300,
-  "primary-400": $primary-400,
-  "primary-500": $primary-500,
-  "primary-600": $primary-600,
-  "primary-700": $primary-700,
-  "primary-800": $primary-800,
-  "primary-900": $primary-900,
-
-  "secondary-100": $secondary-100,
-  "secondary-200": $secondary-200,
-  "secondary-300": $secondary-300,
-  "secondary-400": $secondary-400,
-  "secondary-500": $secondary-500,
-  "secondary-600": $secondary-600,
-  "secondary-700": $secondary-700,
-  "secondary-800": $secondary-800,
-  "secondary-900": $secondary-900,
-
-  "brand-100": $brand-100,
-  "brand-200": $brand-200,
-  "brand-300": $brand-300,
-  "brand-400": $brand-400,
-  "brand-500": $brand-500,
-  "brand-600": $brand-600,
-  "brand-700": $brand-700,
-  "brand-800": $brand-800,
-  "brand-900": $brand-900,
-
-  "success-100": $success-100,
-  "success-200": $success-200,
-  "success-300": $success-300,
-  "success-400": $success-400,
-  "success-500": $success-500,
-  "success-600": $success-600,
-  "success-700": $success-700,
-  "success-800": $success-800,
-  "success-900": $success-900,
-
-  "info-100": $info-100,
-  "info-200": $info-200,
-  "info-300": $info-300,
-  "info-400": $info-400,
-  "info-500": $info-500,
-  "info-600": $info-600,
-  "info-700": $info-700,
-  "info-800": $info-800,
-  "info-900": $info-900,
-
-  "warning-100": $warning-100,
-  "warning-200": $warning-200,
-  "warning-300": $warning-300,
-  "warning-400": $warning-400,
-  "warning-500": $warning-500,
-  "warning-600": $warning-600,
-  "warning-700": $warning-700,
-  "warning-800": $warning-800,
-  "warning-900": $warning-900,
-
-  "danger-100": $danger-100,
-  "danger-200": $danger-200,
-  "danger-300": $danger-300,
-  "danger-400": $danger-400,
-  "danger-500": $danger-500,
-  "danger-600": $danger-600,
-  "danger-700": $danger-700,
-  "danger-800": $danger-800,
-  "danger-900": $danger-900,
-
-  "light-100": $light-100,
-  "light-200": $light-200,
-  "light-300": $light-300,
-  "light-400": $light-400,
-  "light-500": $light-500,
-  "light-600": $light-600,
-  "light-700": $light-700,
-  "light-800": $light-800,
-  "light-900": $light-900,
-
-  "dark-100": $dark-100,
-  "dark-200": $dark-200,
-  "dark-300": $dark-300,
-  "dark-400": $dark-400,
-  "dark-500": $dark-500,
-  "dark-600": $dark-600,
-  "dark-700": $dark-700,
-  "dark-800": $dark-800,
-  "dark-900": $dark-900,
+    "gray-100": $gray-100,
+    "gray-200": $gray-200,
+    "gray-300": $gray-300,
+    "gray-400": $gray-400,
+    "gray-500": $gray-500,
+    "gray-600": $gray-600,
+    "gray-700": $gray-700,
+    "gray-800": $gray-800,
+    "gray-900": $gray-900,
+    "primary-100": $primary-100,
+    "primary-200": $primary-200,
+    "primary-300": $primary-300,
+    "primary-400": $primary-400,
+    "primary-500": $primary-500,
+    "primary-600": $primary-600,
+    "primary-700": $primary-700,
+    "primary-800": $primary-800,
+    "primary-900": $primary-900,
+    "secondary-100": $secondary-100,
+    "secondary-200": $secondary-200,
+    "secondary-300": $secondary-300,
+    "secondary-400": $secondary-400,
+    "secondary-500": $secondary-500,
+    "secondary-600": $secondary-600,
+    "secondary-700": $secondary-700,
+    "secondary-800": $secondary-800,
+    "secondary-900": $secondary-900,
+    "brand-100": $brand-100,
+    "brand-200": $brand-200,
+    "brand-300": $brand-300,
+    "brand-400": $brand-400,
+    "brand-500": $brand-500,
+    "brand-600": $brand-600,
+    "brand-700": $brand-700,
+    "brand-800": $brand-800,
+    "brand-900": $brand-900,
+    "success-100": $success-100,
+    "success-200": $success-200,
+    "success-300": $success-300,
+    "success-400": $success-400,
+    "success-500": $success-500,
+    "success-600": $success-600,
+    "success-700": $success-700,
+    "success-800": $success-800,
+    "success-900": $success-900,
+    "info-100": $info-100,
+    "info-200": $info-200,
+    "info-300": $info-300,
+    "info-400": $info-400,
+    "info-500": $info-500,
+    "info-600": $info-600,
+    "info-700": $info-700,
+    "info-800": $info-800,
+    "info-900": $info-900,
+    "warning-100": $warning-100,
+    "warning-200": $warning-200,
+    "warning-300": $warning-300,
+    "warning-400": $warning-400,
+    "warning-500": $warning-500,
+    "warning-600": $warning-600,
+    "warning-700": $warning-700,
+    "warning-800": $warning-800,
+    "warning-900": $warning-900,
+    "danger-100": $danger-100,
+    "danger-200": $danger-200,
+    "danger-300": $danger-300,
+    "danger-400": $danger-400,
+    "danger-500": $danger-500,
+    "danger-600": $danger-600,
+    "danger-700": $danger-700,
+    "danger-800": $danger-800,
+    "danger-900": $danger-900,
+    "light-100": $light-100,
+    "light-200": $light-200,
+    "light-300": $light-300,
+    "light-400": $light-400,
+    "light-500": $light-500,
+    "light-600": $light-600,
+    "light-700": $light-700,
+    "light-800": $light-800,
+    "light-900": $light-900,
+    "dark-100": $dark-100,
+    "dark-200": $dark-200,
+    "dark-300": $dark-300,
+    "dark-400": $dark-400,
+    "dark-500": $dark-500,
+    "dark-600": $dark-600,
+    "dark-700": $dark-700,
+    "dark-800": $dark-800,
+    "dark-900": $dark-900,
   ),
   $theme-color-levels
 );
-
 
 $element-color-levels: () !default;
 
@@ -308,11 +293,11 @@ $element-color-levels: map-merge(
   $element-color-levels
 );
 
-
 // Set a specific jump point for requesting color jumps
 $theme-color-interval:      8% !default;
 
-// The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
+// The yiq lightness value that determines when the lightness
+// of color changes from "dark" to "light". Acceptable values are between 0 and 255.
 $yiq-contrasted-threshold:  150 !default;
 
 // Customize the light and dark text colors for use in our YIQ color contrast function.
@@ -327,7 +312,6 @@ $escaped-characters: (
   ("(", "%28"),
   (")", "%29"),
 ) !default;
-
 
 // Options
 //
@@ -346,7 +330,6 @@ $enable-print-styles:                         true !default;
 $enable-responsive-font-sizes:                false !default;
 $enable-validation-icons:                     false !default;
 $enable-deprecation-messages:                 true !default;
-
 
 // Spacing
 //
@@ -389,14 +372,12 @@ $sizes: map-merge(
   $sizes
 );
 
-
 // Body
 //
 // Settings for the `<body>` element.
 
 $body-bg:                   $white !default;
 $body-color:                $gray-700 !default;
-
 
 // Links
 //
@@ -444,7 +425,6 @@ $emphasized-link-hover-darken-percentage: 15% !default;
 
 $paragraph-margin-bottom:   1rem !default;
 
-
 // Grid breakpoints
 //
 // Define the minimum dimensions at which your layout will change,
@@ -460,7 +440,6 @@ $grid-breakpoints: (
 
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
 @include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
-
 
 // Grid containers
 //
@@ -483,7 +462,6 @@ $grid-columns:                12 !default;
 $grid-gutter-width:           24px !default;
 $grid-row-columns:            6 !default;
 
-
 $max-width-xs: 464px !default;
 $max-width-sm: 708px !default;
 $max-width-md: 952px !default;
@@ -500,103 +478,103 @@ $line-height-sm:              1.5 !default;
 $border-width:                1px !default;
 $border-color:                theme-color("gray", "border") !default;
 
-$border-radius:               0.375rem !default;
-$border-radius-lg:            0.425rem !default;
-$border-radius-sm:            0.25rem !default;
+$border-radius:               .375rem !default;
+$border-radius-lg:            .425rem !default;
+$border-radius-sm:            .25rem !default;
 
 $rounded-pill:                50rem !default;
 
-$level-1-box-shadow:          0 .0625rem .125rem rgba(0, 0, 0, 0.15), 0 .0625rem .25rem rgba(0, 0, 0, 0.15) !default;
-$level-2-box-shadow:          0 .125rem .25rem rgba(0, 0, 0, 0.15), 0 .125rem .5rem rgba(0, 0, 0, 0.15) !default;
-$level-3-box-shadow:          0 0 .625rem rgba(0, 0, 0, 0.15), 0 0 1rem rgba(0, 0, 0, 0.15) !default;
-$level-4-box-shadow:          0 .625rem 1.25rem rgba(0, 0, 0, 0.15), 0 .5rem 1.25rem rgba(0, 0, 0, 0.15) !default;
-$level-5-box-shadow:          0 1.25px 2.5rem rgba(0, 0, 0, 0.15), 0 .5rem 2.5rem rgba(0, 0, 0, 0.15) !default;
+$level-1-box-shadow:          0 .0625rem .125rem rgb(0 0 0 / 15%), 0 .0625rem .25rem rgb(0 0 0 / 15%) !default;
+$level-2-box-shadow:          0 .125rem .25rem rgb(0 0 0 / 15%), 0 .125rem .5rem rgb(0 0 0 / 15%) !default;
+$level-3-box-shadow:          0 0 .625rem rgb(0 0 0 / 15%), 0 0 1rem rgb(0 0 0 / 15%) !default;
+$level-4-box-shadow:          0 .625rem 1.25rem rgb(0 0 0 / 15%), 0 .5rem 1.25rem rgb(0 0 0 / 15%) !default;
+$level-5-box-shadow:          0 1.25px 2.5rem rgb(0 0 0 / 15%), 0 .5rem 2.5rem rgb(0 0 0 / 15%) !default;
 
-@mixin pgn-box-shadow ($level, $side) {
-  @if $side == 'down' {
+@mixin pgn-box-shadow($level, $side) {
+  @if $side == "down" {
     @if $level == 1 {
-      box-shadow: 0 .0625rem .125rem rgba(0, 0, 0, .15), 0 .0625rem .25rem rgba(0, 0, 0, .15);
+      box-shadow: 0 .0625rem .125rem rgb(0 0 0 / 15%), 0 .0625rem .25rem rgb(0 0 0 / 15%);
     } @else if $level == 2 {
-      box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .15), 0 .125rem .5rem rgba(0, 0, 0, .15);
+      box-shadow: 0 .125rem .25rem rgb(0 0 0 / 15%), 0 .125rem .5rem rgb(0 0 0 / 15%);
     } @else if $level == 3 {
-      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15), 0 .25rem .625rem rgba(0, 0, 0, .15);
+      box-shadow: 0 .5rem 1rem rgb(0 0 0 / 15%), 0 .25rem .625rem rgb(0 0 0 / 15%);
     } @else if $level == 4 {
-      box-shadow: 0 .625rem 1.25rem rgba(0, 0, 0, .15), 0 .5rem 1.25rem rgba(0, 0, 0, .15);
+      box-shadow: 0 .625rem 1.25rem rgb(0 0 0 / 15%), 0 .5rem 1.25rem rgb(0 0 0 / 15%);
     } @else if $level == 5 {
-      box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, .15), 0 .5rem 3rem rgba(0, 0, 0, .15);
+      box-shadow: 0 1.25rem 2.5rem rgb(0 0 0 / 15%), 0 .5rem 3rem rgb(0 0 0 / 15%);
     } @else {
       @error "Box-shadow level #{$level} does not exist";
     }
   }
 
-  @if $side == 'left' {
+  @if $side == "left" {
     @if $level == 1 {
-      box-shadow: -.0625rem 0 .125rem rgba(0, 0, 0, .15), -.0625rem 0 .25rem rgba(0, 0, 0, .15);
+      box-shadow: -.0625rem 0 .125rem rgb(0 0 0 / 15%), -.0625rem 0 .25rem rgb(0 0 0 / 15%);
     } @else if $level == 2 {
-      box-shadow: -.125rem 0 .25rem rgba(0, 0, 0, .15), -.125rem 0 .5rem rgba(0, 0, 0, .15);
+      box-shadow: -.125rem 0 .25rem rgb(0 0 0 / 15%), -.125rem 0 .5rem rgb(0 0 0 / 15%);
     } @else if $level == 3 {
-      box-shadow: -.5rem 0 1rem rgba(0, 0, 0, .15), -.25rem 0 .625rem rgba(0, 0, 0,.15);
+      box-shadow: -.5rem 0 1rem rgb(0 0 0 / 15%), -.25rem 0 .625rem rgb(0 0 0 / 15%);
     } @else if $level == 4 {
-      box-shadow: -.625rem 0 1.25rem rgba(0, 0, 0, .15), -.5rem 0 1.25rem rgba(0, 0, 0, .15);
+      box-shadow: -.625rem 0 1.25rem rgb(0 0 0 / 15%), -.5rem 0 1.25rem rgb(0 0 0 / 15%);
     } @else if $level == 5 {
-      box-shadow: -1.25rem 0 2.5rem rgba(0, 0, 0, .15), -.5rem 0 3rem rgba(0, 0, 0, .15);
+      box-shadow: -1.25rem 0 2.5rem rgb(0 0 0 / 15%), -.5rem 0 3rem rgb(0 0 0 / 15%);
     } @else {
       @error "Box-shadow level #{$level} does not exist";
     }
   }
 
-  @if $side == 'up' {
+  @if $side == "up" {
     @if $level == 1 {
-      box-shadow: 0 -.0625rem .125rem rgba(0, 0, 0, .15), 0 -.0625rem .25rem rgba(0, 0, 0, .15);
+      box-shadow: 0 -.0625rem .125rem rgb(0 0 0 / 15%), 0 -.0625rem .25rem rgb(0 0 0 / 15%);
     } @else if $level == 2 {
-      box-shadow: 0 -.125rem .25rem rgba(0, 0, 0, .15), 0 -.125rem .5rem rgba(0, 0, 0, .15);
+      box-shadow: 0 -.125rem .25rem rgb(0 0 0 / 15%), 0 -.125rem .5rem rgb(0 0 0 / 15%);
     } @else if $level == 3 {
-      box-shadow: 0 -.5rem 1rem rgba(0, 0, 0, .15), 0 -.25rem .625rem rgba(0, 0, 0, .15);
+      box-shadow: 0 -.5rem 1rem rgb(0 0 0 / 15%), 0 -.25rem .625rem rgb(0 0 0 / 15%);
     } @else if $level == 4 {
-      box-shadow: 0 -.625rem 1.25rem rgba(0, 0, 0, .15), 0 -.5rem 1.25rem rgba(0, 0, 0, .15);
+      box-shadow: 0 -.625rem 1.25rem rgb(0 0 0 / 15%), 0 -.5rem 1.25rem rgb(0 0 0 / 15%);
     } @else if $level == 5 {
-      box-shadow: 0 -1.25rem 2.5rem rgba(0, 0, 0, .15), 0 -.5rem 3rem rgba(0, 0, 0, .15);
+      box-shadow: 0 -1.25rem 2.5rem rgb(0 0 0 / 15%), 0 -.5rem 3rem rgb(0 0 0 / 15%);
     } @else {
       @error "Box-shadow level #{$level} does not exist";
     }
   }
 
-  @if $side == 'right' {
+  @if $side == "right" {
     @if $level == 1 {
-      box-shadow: .0625rem 0 .125rem rgba(0, 0, 0, .15), .0625rem 0 .25rem rgba(0, 0, 0, .15);
+      box-shadow: .0625rem 0 .125rem rgb(0 0 0 / 15%), .0625rem 0 .25rem rgb(0 0 0 / 15%);
     } @else if $level == 2 {
-      box-shadow: .125rem 0 .25rem rgba(0, 0, 0, 0.15), .125rem 0 .5rem rgba(0, 0, 0, .15);
+      box-shadow: .125rem 0 .25rem rgb(0 0 0 / 15%), .125rem 0 .5rem rgb(0 0 0 / 15%);
     } @else if $level == 3 {
-      box-shadow: .5rem 0 1rem rgba(0, 0, 0, .15), .25rem 0 .625rem rgba(0, 0, 0, .15);
+      box-shadow: .5rem 0 1rem rgb(0 0 0 / 15%), .25rem 0 .625rem rgb(0 0 0 / 15%);
     } @else if $level == 4 {
-      box-shadow: .625rem 0 1.25rem rgba(0, 0, 0, .15), .5rem 0 1.25rem rgba(0, 0, 0, .15);
+      box-shadow: .625rem 0 1.25rem rgb(0 0 0 / 15%), .5rem 0 1.25rem rgb(0 0 0 / 15%);
     } @else if $level == 5 {
-      box-shadow: 1.25rem 0 2.5rem rgba(0, 0, 0, .15), .5rem 0 3rem rgba(0, 0, 0, .15);
+      box-shadow: 1.25rem 0 2.5rem rgb(0 0 0 / 15%), .5rem 0 3rem rgb(0 0 0 / 15%);
     } @else {
       @error "Box-shadow level #{$level} does not exist";
     }
   }
 
-  @if $side == 'centered' {
+  @if $side == "centered" {
     @if $level == 1 {
-      box-shadow: 0 0 .125rem rgba(0, 0, 0, .15), 0 0 .25rem rgba(0, 0, 0, .15);
+      box-shadow: 0 0 .125rem rgb(0 0 0 / 15%), 0 0 .25rem rgb(0 0 0 / 15%);
     } @else if $level == 2 {
-      box-shadow: 0 0 .25rem rgba(0, 0, 0, .15), 0 0 .5rem rgba(0, 0, 0, .15);
+      box-shadow: 0 0 .25rem rgb(0 0 0 / 15%), 0 0 .5rem rgb(0 0 0 / 15%);
     } @else if $level == 3 {
-      box-shadow: 0 0 .625rem rgba(0, 0, 0, .15), 0 0 1rem rgba(0, 0, 0, .15);
+      box-shadow: 0 0 .625rem rgb(0 0 0 / 15%), 0 0 1rem rgb(0 0 0 / 15%);
     } @else if $level == 4 {
-      box-shadow: 0 0 1.25rem rgba(0, 0, 0, .15), 0 0 1.25rem rgba(0, 0, 0, .15);
+      box-shadow: 0 0 1.25rem rgb(0 0 0 / 15%), 0 0 1.25rem rgb(0 0 0 / 15%);
     } @else if $level == 5 {
-      box-shadow: 0 0 2.5rem rgba(0, 0, 0, .15), 0 0 3rem rgba(0, 0, 0, .15);
+      box-shadow: 0 0 2.5rem rgb(0 0 0 / 15%), 0 0 3rem rgb(0 0 0 / 15%);
     } @else {
       @error "Box-shadow level #{$level} does not exist";
     }
   }
 }
 
-$box-shadow-sm:               0 0.0625rem 0.125rem rgba($black, 0.2) !default;
-$box-shadow:                  0 0.125rem 0.25rem rgba($black, 0.3) !default;
-$box-shadow-lg:               0 0.25rem 0.5rem rgba($black, 0.3) !default;
+$box-shadow-sm:               0 .0625rem .125rem rgba($black, .2) !default;
+$box-shadow:                  0 .125rem .25rem rgba($black, .3) !default;
+$box-shadow-lg:               0 .25rem .5rem rgba($black, .3) !default;
 
 $component-active-color:      $white !default;
 $component-active-bg:         theme-color("primary") !default;
@@ -626,16 +604,19 @@ $embed-responsive-aspect-ratios: join(
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-serif:           serif !default;
-$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+  "Courier New", monospace !default;
 $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
 
 $font-size-base:              1.125rem !default; // Assumes the browser default, typically `16px`
 $font-size-lg:                $font-size-base * 1.25 !default;
-$font-size-sm:                0.875rem !default;
-$font-size-xs:                0.75rem !default;
+$font-size-sm:                .875rem !default;
+$font-size-xs:                .75rem !default;
 
 $font-weight-lighter:         lighter !default;
 $font-weight-light:           300 !default;
@@ -645,7 +626,7 @@ $font-weight-bold:            700 !default;
 $font-weight-bolder:          bolder !default;
 
 $font-weight-base:            $font-weight-normal !default;
-$line-height-base:            1.55555555555555 !default;
+$line-height-base:            1.5556 !default;
 
 $h1-font-size:                2.5rem !default;
 $h2-font-size:                2rem !default;
@@ -679,7 +660,7 @@ $display2-weight:             700 !default;
 $display3-weight:             700 !default;
 $display4-weight:             700 !default;
 
-$display-line-height:         1.0 !default;
+$display-line-height:         1 !default;
 $display-mobile-line-height:  3.5rem !default;
 
 $lead-font-size:              $font-size-base * 1.25 !default;
@@ -688,8 +669,8 @@ $lead-font-weight:            null !default;
 $small-font-size:             87.5% !default;
 $x-small-font-size:             75% !default;
 
-$micro-font-size:        0.688rem;
-$micro-line-height:      0.938rem;
+$micro-font-size:        .688rem;
+$micro-line-height:      .938rem;
 
 $text-muted:                  theme-color("gray", "light-text") !default;
 
@@ -706,7 +687,7 @@ $dt-font-weight:              $font-weight-bold !default;
 
 $list-inline-padding:         .5rem !default;
 
-$mark-bg:                     #fff243 !default;
+$mark-bg:                     #FFF243 !default;
 
 $hr-margin-y:                 $spacer !default;
 
@@ -733,12 +714,11 @@ $zindex-modal:                      1050 !default;
 $zindex-popover:                    1060 !default;
 $zindex-tooltip:                    1070 !default;
 
-
 // Buttons + Forms
 //
 // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
 
-$input-btn-padding-y:         0.5625rem !default;
+$input-btn-padding-y:         .5625rem !default;
 $input-btn-padding-x:         1rem !default;
 $input-btn-font-family:       null !default;
 $input-btn-font-size:         1.125rem !default;
@@ -748,12 +728,12 @@ $input-btn-focus-width:       1px !default;
 $input-btn-focus-color:       $component-active-bg !default;
 $input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-color !default;
 
-$input-btn-padding-y-sm:         0.4375rem !default;
-$input-btn-padding-x-sm:         0.75rem !default;
-$input-btn-font-size-sm:         0.875rem !default;
-$input-btn-line-height-sm:       1.42858 !default;
+$input-btn-padding-y-sm:         .4375rem !default;
+$input-btn-padding-x-sm:         .75rem !default;
+$input-btn-font-size-sm:         .875rem !default;
+$input-btn-line-height-sm:       1.4286 !default;
 
-$input-btn-padding-y-lg:      0.6875rem !default;
+$input-btn-padding-y-lg:      .6875rem !default;
 $input-btn-padding-x-lg:      1.25rem !default;
 $input-btn-font-size-lg:      1.325rem !default;
 $input-btn-line-height-lg:    $line-height-lg !default;
@@ -764,7 +744,8 @@ $input-btn-border-width:      $border-width !default;
 
 // $spinner-width:           2rem !default;
 // $spinner-height:          $spinner-width !default;
-$spinner-vertical-align:  -.125em !default;
+$spinner-vertical-align:      -.125em !default;
+
 // $spinner-border-width:    .25em !default;
 
 // $spinner-width-sm:        1rem !default;
@@ -782,7 +763,6 @@ $user-selects: all, auto, none !default;
 
 $print-page-size:                   a3 !default;
 $print-body-min-width:              map-get($grid-breakpoints, "lg") !default;
-
 
 // List group
 

@@ -45,14 +45,14 @@ $color-levels: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 }
 
 .icon-spin {
-  animation: spinner-border 0.75s linear infinite;
-  -webkit-animation: spinner-border 0.75s linear infinite;
+  animation: spinner-border .75s linear infinite;
+  -webkit-animation: spinner-border .75s linear infinite;
 }
 
 // Define breakpoints for `.w-*` class (e.g. `.w-md-100`)
 @each $breakpoint-name, $breakpoint-value in $grid-breakpoints {
   @each $size-name, $size-value in $sizes {
-    @media(min-width: $breakpoint-value) {
+    @media (min-width: $breakpoint-value) {
       .w-#{$breakpoint-name}-#{$size-name} {
         width: $size-value !important;
       }

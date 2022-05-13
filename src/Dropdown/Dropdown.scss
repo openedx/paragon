@@ -2,16 +2,15 @@
 @import "~bootstrap/scss/dropdown";
 
 .dropdown-toggle::after {
-  border: 0;
   border-style: solid;
-  border-width: 0.15rem 0.15rem 0 0;
-  content: '';
-  height: 0.45rem;
-  margin-inline-start: 0.5em;
+  border-width: .15rem .15rem 0 0;
+  content: "";
+  height: .45rem;
+  margin-inline-start: .5em;
   position: relative;
-  top: -0.05rem;
+  top: -.05rem;
   transform: rotate(135deg);
-  width: 0.45rem;
+  width: .45rem;
 }
 
 [dir="rtl"] .dropdown-item {
@@ -30,22 +29,22 @@
   align-items: center;
 
   .pgn__dropdown-item__icon-before {
-    margin-inline-end: 0.5rem;
-    margin-left: -0.25em;
+    margin-inline-end: .5rem;
+    margin-left: -.25em;
 
     [dir="rtl"] & {
-      margin-right: -0.25em;
-      margin-left: 0.5rem;
+      margin-right: -.25em;
+      margin-left: .5rem;
     }
   }
 
   .pgn__dropdown-item__icon-after {
-    margin-inline-start: 0.5rem;
-    margin-right: -0.25em;
+    margin-inline-start: .5rem;
+    margin-right: -.25em;
 
     [dir="rtl"] & {
-      margin-right: 0.5rem;
-      margin-left: -0.25em;
+      margin-right: .5rem;
+      margin-left: -.25em;
     }
   }
 }

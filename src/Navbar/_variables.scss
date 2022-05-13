@@ -1,4 +1,3 @@
-
 // Navbar
 
 $navbar-padding-y:                  calc($spacer / 2) !default;
@@ -7,6 +6,7 @@ $navbar-padding-x:                  $spacer !default;
 $navbar-nav-link-padding-x:         .5rem !default;
 
 $navbar-brand-font-size:            $font-size-lg !default;
+
 // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
 // The default for $nav-link-padding-y is .5rem. Copied here for modularization
 $nav-link-height:                   $font-size-base * $line-height-base + .5rem * 2 !default;
