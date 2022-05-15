@@ -405,6 +405,7 @@ select.form-control {
     text-decoration: none;
     border-color: $input-focus-border-color;
   }
+
   &:focus::before {
     content: "";
     position: absolute;
@@ -449,6 +450,7 @@ select.form-control {
   &:checked {
     background-image: escape-svg($custom-radio-indicator-icon-checked);
   }
+
   &:focus {
     border-color: $black;
 
@@ -487,6 +489,7 @@ select.form-control {
       order: 1;
       margin-inline-end: $custom-control-gutter;
     }
+
     input {
       order: 2;
     }

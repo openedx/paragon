@@ -7,34 +7,26 @@
       color: $breadcrumb-active-color;
     }
 
-        a.link-muted {
-            color: $breadcrumb-color;
-
-            &:focus {
-                position: relative;
-                outline: none;
-                box-shadow: none;
-                text-decoration: none;
-            }
-
-            &:focus::before {
-                content: '';
-                position: absolute;
-                top: -$breadcrumb-border-focus-axis-y;
-                right: -$breadcrumb-border-focus-axis-x;
-                bottom: -$breadcrumb-border-focus-axis-y;
-                left: -$breadcrumb-border-focus-axis-x;
-                border: $breadcrumb-border-focus-width solid $breadcrumb-color;
-                border-radius: $breadcrumb-focus-border-radius;
-            }
-        }
-        
-        [dir="rtl"] & {
-            margin-right: 0;
-            margin-left: $breadcrumb-margin-left;
-        }
     a.link-muted {
       color: $breadcrumb-color;
+
+      &:focus {
+        position: relative;
+        outline: none;
+        box-shadow: none;
+        text-decoration: none;
+      }
+
+      &:focus::before {
+        content: "";
+        position: absolute;
+        top: -$breadcrumb-border-focus-axis-y;
+        right: -$breadcrumb-border-focus-axis-x;
+        bottom: -$breadcrumb-border-focus-axis-y;
+        left: -$breadcrumb-border-focus-axis-x;
+        border: $breadcrumb-border-focus-width solid $breadcrumb-color;
+        border-radius: $breadcrumb-focus-border-radius;
+      }
     }
 
     [dir="rtl"] & {
@@ -55,14 +47,14 @@
         color: $breadcrumb-inverse-active;
       }
 
-            a.link-muted {
-                color: $breadcrumb-inverse-color;
+      a.link-muted {
+        color: $breadcrumb-inverse-color;
 
-                &:focus::before {
-                    border: $breadcrumb-border-focus-width solid $breadcrumb-inverse-color;
-                }
-            }
+        &:focus::before {
+          border: $breadcrumb-border-focus-width solid $breadcrumb-inverse-color;
         }
+      }
+    }
 
     .pgn__icon,
     .custom-spacer {
