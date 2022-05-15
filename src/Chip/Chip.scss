@@ -4,10 +4,9 @@
   @return map-get($chip-theme-colors, "#{$color}-#{$element}-#{$type}");
 }
 
-@mixin chip-variant(
-  $background, $border, $hover-background, $hover-border, $active-background,
-  $active-border, $color, $hover-color, $active-color, $focus-border
-) {
+@mixin chip-variant($background, $border, $hover-background,
+$hover-border, $active-background, $active-border, $color,
+$hover-color, $active-color, $focus-border) {
   background-color: $background;
   color: $color;
   border-color: $border;
@@ -28,7 +27,7 @@
   }
 
   &:focus::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -$chip-position-axis;
     right: -$chip-position-axis;

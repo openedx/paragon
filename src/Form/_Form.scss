@@ -406,7 +406,7 @@ select.form-control {
     border-color: $input-focus-border-color;
   }
   &:focus::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -$form-check-position-axis;
     right: -$form-check-position-axis;
@@ -487,7 +487,6 @@ select.form-control {
       order: 1;
       margin-inline-end: $custom-control-gutter;
     }
-
     input {
       order: 2;
     }
