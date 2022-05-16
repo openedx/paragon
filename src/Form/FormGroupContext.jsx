@@ -36,8 +36,8 @@ const FormGroupContextProvider = ({
   size,
 }) => {
   const controlId = useMemo(() => explicitControlId || newId('form-field'), [explicitControlId]);
-  const [describedByIds, useRegisteredDescriptorId] = useIdList(controlId);
-  const [labelledByIds, useRegisteredLabellerId] = useIdList(controlId);
+  const [describedByIds, registerDescriptorId] = useIdList(controlId);
+  const [labelledByIds, registerLabelerId] = useIdList(controlId);
   const [isControlGroup, useSetIsControlGroupEffect] = useStateEffect(false);
 
   const getControlProps = useCallback((controlProps) => {
@@ -63,8 +63,7 @@ const FormGroupContextProvider = ({
   ]);
 
   const getLabelProps = (labelProps) => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const id = useRegisteredLabellerId(labelProps?.id);
+    const id = registerLabelerId(labelProps?.id);
     if (isControlGroup) {
       return { ...labelProps, id };
     }
@@ -72,8 +71,7 @@ const FormGroupContextProvider = ({
   };
 
   const getDescriptorProps = (descriptorProps) => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const id = useRegisteredDescriptorId(descriptorProps?.id);
+    const id = registerDescriptorId(descriptorProps?.id);
     return { ...descriptorProps, id };
   };
 
