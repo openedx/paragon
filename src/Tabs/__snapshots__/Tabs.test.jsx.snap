@@ -1,14 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Tabs /> correct rendering renders successfully 1`] = `
-Array [
+<div>
   <nav
     className="pgn__tabs nav nav-tabs"
     onKeyDown={[Function]}
     role="tablist"
   >
     <a
-      className="nav-item nav-link"
+      className="pgn__tab_more nav-item nav-link"
+      data-rb-event-key={null}
+      href="#"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="tab"
+    >
+      <div
+        className="dropdown"
+        data-testid="dropdown"
+      >
+        <button
+          aria-expanded={false}
+          aria-haspopup={true}
+          className="nav-link dropdown-toggle btn btn-link"
+          disabled={false}
+          id="pgn__tab-toggle"
+          onClick={[Function]}
+          type="button"
+        >
+          More...
+        </button>
+      </div>
+    </a>
+    <a
+      className="pgn__tab_invisible nav-item nav-link"
       data-rb-event-key={null}
       href="#"
       onClick={[Function]}
@@ -18,7 +43,7 @@ Array [
       Tab 1
     </a>
     <a
-      className="nav-item nav-link"
+      className="pgn__tab_invisible nav-item nav-link"
       data-rb-event-key={null}
       href="#"
       onClick={[Function]}
@@ -27,7 +52,7 @@ Array [
     >
       Tab 2
     </a>
-  </nav>,
+  </nav>
   <div
     className="tab-content"
   >
@@ -45,6 +70,13 @@ Array [
       id={null}
       role="tabpanel"
     />
-  </div>,
-]
+    <div
+      aria-hidden={true}
+      aria-labelledby={null}
+      className="fade tab-pane"
+      id={null}
+      role="tabpanel"
+    />
+  </div>
+</div>
 `;

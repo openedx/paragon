@@ -26,7 +26,6 @@ const Tabs = ({
   );
   const indexOfOverflowStart = indexOfLastVisibleChild + 1;
 
-  // eslint-disable-next-line consistent-return
   useEffect(() => {
     if (containerElementRef.current) {
       const observer = new MutationObserver((mutations => {
@@ -46,6 +45,7 @@ const Tabs = ({
       });
       return () => observer.disconnect();
     }
+    return undefined;
   }, [containerElementRef.current]);
 
   useEffect(() => {

@@ -5,6 +5,13 @@ import renderer from 'react-test-renderer';
 import Tabs from './index';
 import Tab from './Tab';
 
+window.ResizeObserver = window.ResizeObserver
+  || jest.fn().mockImplementation(() => ({
+    disconnect: jest.fn(),
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+  }));
+
 describe('<Tabs />', () => {
   describe('correct rendering', () => {
     it('renders successfully', () => {

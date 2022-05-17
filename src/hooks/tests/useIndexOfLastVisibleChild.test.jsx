@@ -4,6 +4,13 @@ import { useIndexOfLastVisibleChild } from '../..';
 
 const dropdownId = 'dropdown';
 
+window.ResizeObserver = window.ResizeObserver
+  || jest.fn().mockImplementation(() => ({
+    disconnect: jest.fn(),
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+  }));
+
 const TestComponent = () => {
   const containerElementRef = React.useRef(null);
   const overflowElementRef = React.useRef(null);
