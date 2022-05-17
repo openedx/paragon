@@ -53,7 +53,7 @@ const SelectableBox = React.forwardRef(({
     if (onClick && inputRef.current) {
       inputRef.current.onclick = () => onClick(inputRef.current);
     }
-  }, [inputRef.current]);
+  }, [onClick]);
 
   return (
     <div
