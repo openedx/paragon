@@ -8,6 +8,22 @@ exports[`<Tabs /> correct rendering renders successfully 1`] = `
     role="tablist"
   >
     <a
+      aria-selected={true}
+      className="nav-item nav-link active"
+      data-rb-event-key="tab_1"
+      href="#"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="tab"
+    >
+      Tab 1
+      <div
+        className="pgn__bubble pgn__bubble-error pgn__tab-notification"
+      >
+        4
+      </div>
+    </a>
+    <a
       className="pgn__tab_more nav-item nav-link"
       data-rb-event-key={null}
       href="#"
@@ -33,18 +49,9 @@ exports[`<Tabs /> correct rendering renders successfully 1`] = `
       </div>
     </a>
     <a
+      aria-selected={false}
       className="pgn__tab_invisible nav-item nav-link"
-      data-rb-event-key={null}
-      href="#"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      role="tab"
-    >
-      Tab 1
-    </a>
-    <a
-      className="pgn__tab_invisible nav-item nav-link"
-      data-rb-event-key={null}
+      data-rb-event-key="tab_2"
       href="#"
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -52,10 +59,29 @@ exports[`<Tabs /> correct rendering renders successfully 1`] = `
     >
       Tab 2
     </a>
+    <a
+      aria-selected={false}
+      className="pgn__tab_invisible nav-item nav-link"
+      data-rb-event-key="tab_3"
+      href="#"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="tab"
+    >
+      Tab 3
+    </a>
   </nav>
   <div
     className="tab-content"
   >
+    <div
+      aria-hidden={false}
+      aria-labelledby={null}
+      className="fade tab-pane active show"
+      id={null}
+      notification={4}
+      role="tabpanel"
+    />
     <div
       aria-hidden={true}
       aria-labelledby={null}

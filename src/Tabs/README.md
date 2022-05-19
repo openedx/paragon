@@ -115,6 +115,43 @@ notes: |
 </Tabs>
 ```
 
+### Responsive support
+
+```jsx live
+<Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+  <Tab eventKey="home" title="Home">
+    Hello I am the first panel.
+  </Tab>
+  <Tab eventKey="dashboard" title="Dashboard">
+    Hello I am the second panel.
+  </Tab>
+  <Tab eventKey="profile" title="Profile" notification={1}>
+    Hello I am the third panel.
+  </Tab>
+  <Tab eventKey="products" title="Products">
+    Hello I am the fourth panel.
+  </Tab>
+  <Tab eventKey="help" title="Help">
+    Hello I am the fifth panel.
+  </Tab>
+  <Tab eventKey="about" title="About">
+    Hello I am the sixth panel.
+  </Tab>
+  <Tab eventKey="updates" title="Updates">
+    Hello I am the seventh panel.
+  </Tab>
+  <Tab eventKey="forum" title="Forum">
+    Hello I am the eights panel.
+  </Tab>
+  <Tab eventKey="job" title="Job">
+    Hello I am the ninth panel.
+  </Tab>
+  <Tab eventKey="team" title="Our team">
+    Hello I am the tenth panel.
+  </Tab>
+</Tabs>
+```
+
 ***
 
 ## Tabs.Deprecated

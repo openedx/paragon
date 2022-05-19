@@ -24,7 +24,6 @@ const Tabs = ({
     containerElementRef.current?.children[0],
     overflowElementRef.current?.parentNode,
   );
-  const indexOfOverflowStart = indexOfLastVisibleChild + 1;
 
   useEffect(() => {
     if (containerElementRef.current) {
@@ -46,7 +45,7 @@ const Tabs = ({
       return () => observer.disconnect();
     }
     return undefined;
-  }, [containerElementRef.current]);
+  }, []);
 
   useEffect(() => {
     if (overflowElementRef.current?.parentNode) {
@@ -60,6 +59,7 @@ const Tabs = ({
   };
 
   const tabsChildren = useMemo(() => {
+    const indexOfOverflowStart = indexOfLastVisibleChild + 1;
     const childrenList = React.Children.map(children, (child, index) => {
       if (!React.isValidElement(child)) {
         return child;
@@ -90,6 +90,7 @@ const Tabs = ({
     const overflowChildren = childrenList.slice(indexOfOverflowStart)
       .map(overflowChild => (
         <Dropdown.Item
+          key={`${overflowChild.props.eventKey}overflow`}
           onClick={() => handleDropdownTabClick(overflowChild.props.eventKey)}
           disabled={overflowChild.props.disabled}
           datakey={overflowChild.props.eventKey}
@@ -103,6 +104,7 @@ const Tabs = ({
 
     childrenList.splice(indexOfOverflowStart, 0, (
       <Tab
+        key="moreTabKey"
         tabClassName={classNames(!overflowChildren.length && 'pgn__tab_invisible', 'pgn__tab_more')}
         title={(
           <Dropdown ref={overflowElementRef}>
@@ -119,7 +121,7 @@ const Tabs = ({
       />
     ));
     return childrenList;
-  }, [children, indexOfLastVisibleChild]);
+  }, [activeKey, children, defaultActiveKey, indexOfLastVisibleChild, moreTabText]);
 
   return (
     <div ref={containerElementRef}>
