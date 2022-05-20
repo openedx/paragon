@@ -40,7 +40,7 @@ const ProgressBarAnnotated = ({
   useEffect(() => {
     placeInfoAtZero(progressInfoRef, isProgressHintAfter, ANNOTATION_CLASS);
     placeInfoAtZero(thresholdInfoRef, isThresholdHintAfter, ANNOTATION_CLASS);
-  }, []);
+  }, [isProgressHintAfter, isThresholdHintAfter]);
 
   const getHint = (text) => (
     <span className="pgn__progress-hint">

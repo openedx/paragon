@@ -1,4 +1,4 @@
-import React, { useContext, useCallback, useMemo } from 'react';
+import React, { useContext, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 import { CheckboxControl } from '../../Form';
@@ -24,11 +24,10 @@ const ControlledSelect = ({ row }) => {
         dispatch(addSelectedRowAction(row, itemCount));
       }
     },
-    [itemCount, row],
+    [itemCount, row, dispatch],
   );
 
-  const toggleRowSelectedProps = useMemo(() => row.getToggleRowSelectedProps(), [row.getToggleRowSelectedProps]);
-  const updatedProps = useConvertIndeterminateProp(toggleRowSelectedProps);
+  const updatedProps = useConvertIndeterminateProp(row.getToggleRowSelectedProps());
 
   return (
     <div className="d-flex align-content-center p-1">

@@ -23,7 +23,7 @@ export default function StepperStep({
       hasError,
     });
     return () => removeStep(eventKey);
-  }, [title, eventKey, description, hasError]);
+  }, [title, eventKey, description, hasError, index, registerStep, removeStep]);
 
   const isActive = activeKey === eventKey;
 

@@ -32,7 +32,7 @@ const ControlledSelectionStatus = ({ className, clearSelectionText }) => {
         }
       }
     },
-    [isEntireTableSelected, selectedRows, itemCount, rows],
+    [isEntireTableSelected, selectedRows, itemCount, rows, dispatch],
   );
 
   const numSelectedRows = isEntireTableSelected ? itemCount : selectedRows.length;

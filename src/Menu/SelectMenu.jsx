@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Button from '../Button/index';
@@ -18,18 +18,20 @@ const SelectMenu = ({
   const triggerTarget = React.useRef(null);
   const itemsCollection = React.useMemo(
     () => Array.from({ length: children.length }).map(() => React.createRef()),
-    [],
+    [children.length],
   );
 
   const className = classNames(props.className, 'pgn__menu-select');
-  function defaultIndex() {
+
+  const defaultIndex = useCallback(() => {
     for (let i = 0; i < children.length; i++) {
       if (children[i].props && children[i].props.defaultSelected) {
         return i;
       }
     }
     return undefined;
-  }
+  }, [children]);
+
   const [selected, setSelected] = useState(defaultIndex());
   const [isOpen, open, close] = useToggle(false);
   const [vertOffset, setOffset] = useState(0);
@@ -105,7 +107,7 @@ const SelectMenu = ({
       itemsCollection[selected].current.children[0].focus({ preventScroll: (defaultIndex() === selected) });
     }
     prevOpenRef.current = isOpen;
-  }, [isOpen]);
+  }, [isOpen, children.length, defaultIndex, itemsCollection, selected]);
 
   return React.createElement(
     className,
