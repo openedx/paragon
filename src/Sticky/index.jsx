@@ -21,9 +21,10 @@ const Sticky = React.forwardRef(({
   // eslint-disable-next-line consistent-return
   useLayoutEffect(() => {
     if (resolvedRef.current) {
+      const stickyElement = resolvedRef.current;
       // getComputedStyle is used to get real top/bottom
       // values on the page for proper shadows display
-      const elementStyles = window.getComputedStyle(resolvedRef.current);
+      const elementStyles = window.getComputedStyle(stickyElement);
       const elementOffset = elementStyles[position || 'top'];
       // Margin calculations according to the offset.
       // 1 pixel above/bellow + offset pixels that determines
@@ -38,13 +39,13 @@ const Sticky = React.forwardRef(({
             : `-${elementWithOffset}px 0px 0px 0px`,
         },
       );
-      observer.observe(resolvedRef.current);
+      observer.observe(stickyElement);
 
       return () => {
-        observer.unobserve(resolvedRef.current);
+        observer.unobserve(stickyElement);
       };
     }
-  }, []);
+  }, [position, resolvedRef]);
 
   return (
     <div

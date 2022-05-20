@@ -49,7 +49,7 @@ const useIdList = (uniqueIdPrefix, initialList) => {
         setRegisteredId(getNewId(uniqueIdPrefix));
       }
       return () => removeId(registeredId);
-    }, [registeredId]);
+    }, [registeredId, explicitlyRegisteredId]);
     return registeredId;
   };
 

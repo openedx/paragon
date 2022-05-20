@@ -32,8 +32,7 @@ export const selectColumn = {
   // Proptypes disabled as this prop is passed in separately
   /* eslint-disable react/prop-types */
   Cell: ({ row }) => {
-    const toggleRowSelectedProps = useMemo(() => row.getToggleRowSelectedProps(), [row.getToggleRowSelectedProps]);
-    const updatedProps = useConvertIndeterminateProp(toggleRowSelectedProps);
+    const updatedProps = useConvertIndeterminateProp(row.getToggleRowSelectedProps());
 
     return (
       <div className="d-flex align-content-center p-1">

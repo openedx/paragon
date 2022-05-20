@@ -24,15 +24,17 @@ const SelectableBox = React.forwardRef(({
   className,
 }, ref) => {
   const inputType = getInputType('SelectableBox', type);
+  const { value: radioValue } = useRadioSetContext();
+  const { value: checkboxValues = [] } = useCheckboxSetContext();
 
   const isChecked = () => {
     switch (type) {
       case 'radio':
-        return useRadioSetContext().value === value;
+        return radioValue === value;
       case 'checkbox':
-        return useCheckboxSetContext().value?.includes(value);
+        return checkboxValues.includes(value);
       default:
-        return useRadioSetContext().value === value;
+        return radioValue === value;
     }
   };
 
@@ -51,7 +53,7 @@ const SelectableBox = React.forwardRef(({
     if (onClick && inputRef.current) {
       inputRef.current.onclick = () => onClick(inputRef.current);
     }
-  }, [inputRef.current]);
+  }, [onClick]);
 
   return (
     <div
