@@ -167,7 +167,7 @@ const Menu = () => {
               <OverlayTrigger
                 trigger="focus"
                 overlay={(
-                  <Popover>
+                  <Popover id="playground-popover">
                     <Popover.Title as="h3">
                       <Icon src={Issue} />
                       Сoming soon

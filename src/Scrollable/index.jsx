@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -10,6 +10,7 @@ export const CLASSNAME_SCROLL_BOTTOM = 'pgn__scrollable-body-scroll-bottom';
 const Scrollable = ({ children, ariaValue, ...props }) => {
   const [isScrolledToTop, topSentinelRef] = useIsVisible();
   const [isScrolledToBottom, bottomSentinelRef] = useIsVisible();
+  const [valueNow, setValueNow] = useState(0);
   const className = classNames(
     'pgn__scrollable-body',
     props.className,
@@ -18,8 +19,24 @@ const Scrollable = ({ children, ariaValue, ...props }) => {
       [CLASSNAME_SCROLL_BOTTOM]: isScrolledToBottom,
     },
   );
+
+  const handleScroll = (e) => {
+    const maxScrollHeight = e.currentTarget.scrollHeight - e.currentTarget.clientHeight;
+    setValueNow(Math.ceil((100 * e.currentTarget.scrollTop) / maxScrollHeight));
+  };
+
   return (
-    <div {...props} className={className} role="scrollbar" aria-valuenow={ariaValue} aria-controls="scrollbar" tabIndex="0">
+    <div
+      {...props}
+      className={className}
+      role="scrollbar"
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-valuenow={valueNow}
+      aria-controls="scrollbar"
+      tabIndex="0"
+      onScroll={handleScroll}
+    >
       <div ref={topSentinelRef} />
       <div className="pgn__scrollable-body-content">
         {children}

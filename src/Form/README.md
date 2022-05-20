@@ -168,19 +168,19 @@ notes: |
   <Form.Group controlId="formSwitch-2">
     <Form.Check
       type="switch"
-      id="custom-switch"
+      id="custom-switch-2"
       label="Check this switch"
     />
     <Form.Check
       disabled
       type="switch"
       label="disabled switch"
-      id="disabled-custom-switch"
+      id="disabled-custom-switch-2"
     />
   </Form.Group>
 
   <Form.Group id="formGridCheckbox-2">
-    <Form.Check type="checkbox" id="formGridCheckboxCheck" label="Check me out" />
+    <Form.Check type="checkbox" id="formGridCheckboxCheck-2" label="Check me out" />
   </Form.Group>
   <div className="d-flex">
     <Button variant="primary" type="submit">

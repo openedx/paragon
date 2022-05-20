@@ -28,7 +28,7 @@ underlying `input` node. See MDN for documentation on available
   const [isChecked, setChecked] = useState(false);
   const handleChange = e => setChecked(e.target.checked);
   return (
-    <Form.Checkbox checked={isChecked} onChange={handleChange} screenReaderText="Checkbox">
+    <Form.Checkbox checked={isChecked} onChange={handleChange}>
       I want pizza.
     </Form.Checkbox>
   );
@@ -45,7 +45,7 @@ underlying `input` node. See MDN for documentation on available
     <CheckboxControl
       checked={isChecked}
       onChange={handleChange}
-      screenReaderText="Checkbox"
+      aria-label="Checkbox"
     />
   );
 }
@@ -77,10 +77,10 @@ underlying `input` node. See MDN for documentation on available
         onChange={handleChange}
         value={colorValues}
       >
-        <Form.Checkbox value="red" screenReaderText="Checkbox">Red</Form.Checkbox>
-        <Form.Checkbox value="green" screenReaderText="Checkbox">Green</Form.Checkbox>
-        <Form.Checkbox value="blue" screenReaderText="Checkbox">Blue</Form.Checkbox>
-        <Form.Checkbox value="cyan" screenReaderText="Checkbox" disabled>Cyan</Form.Checkbox>
+        <Form.Checkbox value="red">Red</Form.Checkbox>
+        <Form.Checkbox value="green">Green</Form.Checkbox>
+        <Form.Checkbox value="blue">Blue</Form.Checkbox>
+        <Form.Checkbox value="cyan" disabled>Cyan</Form.Checkbox>
       </Form.CheckboxSet>
     </Form.Group>
   );
@@ -99,10 +99,10 @@ underlying `input` node. See MDN for documentation on available
     onChange={(e) => console.log(e.target.value)}
     defaultValue={['green']}
   >
-    <Form.Checkbox value="red" screenReaderText="Checkbox">Red</Form.Checkbox>
-    <Form.Checkbox value="green" screenReaderText="Checkbox">Green</Form.Checkbox>
-    <Form.Checkbox value="blue" screenReaderText="Checkbox">Blue</Form.Checkbox>
-    <Form.Checkbox value="cyan" screenReaderText="Checkbox" disabled>Cyan</Form.Checkbox>
+    <Form.Checkbox value="red">Red</Form.Checkbox>
+    <Form.Checkbox value="green">Green</Form.Checkbox>
+    <Form.Checkbox value="blue">Blue</Form.Checkbox>
+    <Form.Checkbox value="cyan" disabled>Cyan</Form.Checkbox>
   </Form.CheckboxSet>
 </Form.Group>
 ```
@@ -133,19 +133,19 @@ underlying `input` node. See MDN for documentation on available
           checked={allChecked}
           isIndeterminate={isIndeterminate}
           onChange={handleCheckAllChange}
-          screenReaderText="Checkbox"
         >
           All the cheese
         </Form.Checkbox>
       </div>
       <Form.CheckboxSet
+      	name="color-six"
         className="p-2"
         value={checkedCheeses}
         onChange={handleChange}
       >
-        <Form.Checkbox value="swiss" screenReaderText="Checkbox">Swiss</Form.Checkbox>
-        <Form.Checkbox value="cheddar" screenReaderText="Checkbox">Cheddar</Form.Checkbox>
-        <Form.Checkbox value="pepperjack" screenReaderText="Checkbox">Pepperjack</Form.Checkbox>
+        <Form.Checkbox value="swiss">Swiss</Form.Checkbox>
+        <Form.Checkbox value="cheddar">Cheddar</Form.Checkbox>
+        <Form.Checkbox value="pepperjack">Pepperjack</Form.Checkbox>
       </Form.CheckboxSet>
     </>
   );
@@ -163,10 +163,10 @@ underlying `input` node. See MDN for documentation on available
     defaultValue={['green']}
     isInline
   >
-    <Form.Checkbox value="red" screenReaderText="Checkbox">Red</Form.Checkbox>
-    <Form.Checkbox value="green" screenReaderText="Checkbox">Green</Form.Checkbox>
-    <Form.Checkbox value="blue" screenReaderText="Checkbox">Blue</Form.Checkbox>
-    <Form.Checkbox value="cyan" screenReaderText="Checkbox" disabled>Cyan</Form.Checkbox>
+    <Form.Checkbox value="red">Red</Form.Checkbox>
+    <Form.Checkbox value="green">Green</Form.Checkbox>
+    <Form.Checkbox value="blue">Blue</Form.Checkbox>
+    <Form.Checkbox value="cyan" disabled>Cyan</Form.Checkbox>
   </Form.CheckboxSet>
 </Form.Group>
 ```
@@ -182,10 +182,10 @@ underlying `input` node. See MDN for documentation on available
     name="color-five"
     onChange={(e) => console.log(e.target.value)}
   >
-    <Form.Checkbox value="red" screenReaderText="Checkbox">Red</Form.Checkbox>
-    <Form.Checkbox value="green" screenReaderText="Checkbox">Green</Form.Checkbox>
-    <Form.Checkbox value="blue" screenReaderText="Checkbox">Blue</Form.Checkbox>
-    <Form.Checkbox value="cyan" screenReaderText="Checkbox" disabled>Cyan</Form.Checkbox>
+    <Form.Checkbox value="red">Red</Form.Checkbox>
+    <Form.Checkbox value="green">Green</Form.Checkbox>
+    <Form.Checkbox value="blue">Blue</Form.Checkbox>
+    <Form.Checkbox value="cyan" disabled>Cyan</Form.Checkbox>
   </Form.CheckboxSet>
   <Form.Control.Feedback>
     Please choose an option.
@@ -202,7 +202,6 @@ underlying `input` node. See MDN for documentation on available
     <Form.Checkbox
       value="red"
       description="Red's cool"
-      screenReaderText="Checkbox"
     >
       Red
     </Form.Checkbox>
@@ -210,7 +209,6 @@ underlying `input` node. See MDN for documentation on available
       value="green"
       description="Excellent choice"
       isValid
-      screenReaderText="Checkbox"
     >
       Green
     </Form.Checkbox>
@@ -218,14 +216,12 @@ underlying `input` node. See MDN for documentation on available
       value="blue"
       description="Poor choice"
       isInvalid
-      screenReaderText="Checkbox"
     >
       Blue
     </Form.Checkbox>
     <Form.Checkbox
       value="cyan"
       disabled
-      screenReaderText="Checkbox"
     >
       Cyan
     </Form.Checkbox>
@@ -240,8 +236,8 @@ by passing the `floatLabelLeft` prop.
 
 ```jsx live
 <Form.Group>
-  <Form.CheckboxSet>
-    <Form.Checkbox value="red" screenReaderText="Checkbox" floatLabelLeft>Red</Form.Checkbox>
+  <Form.CheckboxSet name="color-single">
+    <Form.Checkbox value="red" floatLabelLeft>Red</Form.Checkbox>
   </Form.CheckboxSet>
 </Form.Group>
 ```

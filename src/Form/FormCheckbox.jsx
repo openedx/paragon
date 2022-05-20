@@ -7,7 +7,7 @@ import FormLabel from './FormLabel';
 import FormControlFeedback from './FormControlFeedback';
 
 const CheckboxControl = React.forwardRef(
-  ({ isIndeterminate, screenReaderText, ...props }, ref) => {
+  ({ isIndeterminate, ...props }, ref) => {
     const defaultRef = React.useRef();
     const resolvedRef = ref || defaultRef;
     const { getControlProps } = useFormGroupContext();
@@ -25,7 +25,6 @@ const CheckboxControl = React.forwardRef(
     return (
       <input
         type="checkbox"
-        aria-label={screenReaderText}
         {...checkboxProps}
         ref={resolvedRef}
       />
@@ -38,14 +37,11 @@ CheckboxControl.propTypes = {
   isIndeterminate: PropTypes.bool,
   /** Specifies class name to append to the base element. */
   className: PropTypes.string,
-  /** specifies the screen reader text for both the clear and submit buttons (e.g., for i18n translations). */
-  screenReaderText: PropTypes.string,
 };
 
 CheckboxControl.defaultProps = {
   isIndeterminate: false,
   className: undefined,
-  screenReaderText: undefined,
 };
 
 const FormCheckbox = React.forwardRef(({
