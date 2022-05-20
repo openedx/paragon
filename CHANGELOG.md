@@ -1,3 +1,10 @@
+## [19.23.1](https://github.com/openedx/paragon/compare/v19.23.0...v19.23.1) (2022-05-20)
+
+
+### Bug Fixes
+
+* add border: 0 to dropdown toggle ([#1310](https://github.com/openedx/paragon/issues/1310)) ([45887c9](https://github.com/openedx/paragon/commit/45887c9b213e44bbc0b1ad0ccbe24df519a360c6))
+
 # [19.23.0](https://github.com/openedx/paragon/compare/v19.22.2...v19.23.0) (2022-05-20)
 
 
