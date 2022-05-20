@@ -84,7 +84,7 @@ export default function useArrowKeyNavigation(props) {
     };
     document.addEventListener('keydown', eventHandler);
     return () => document.removeEventListener('keydown', eventHandler);
-  }, []);
+  }, [selectors]);
 
   return parentNode;
 }

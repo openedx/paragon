@@ -56,7 +56,7 @@ const Checkpoint = React.forwardRef(({
         checkpointPopper.forceUpdate();
       }
     }
-  }, [target, isMobile]);
+  }, [target, isMobile, placement]);
 
   useEffect(() => {
     if (checkpointVisible) {
@@ -81,7 +81,7 @@ const Checkpoint = React.forwardRef(({
       const button = document.querySelector('.pgn__checkpoint-button_advance');
       button.focus();
     }
-  }, [target, checkpointVisible]);
+  }, [target, checkpointVisible, placement]);
 
   const isLastCheckpoint = index + 1 === totalCheckpoints;
   const isOnlyCheckpoint = totalCheckpoints === 1;

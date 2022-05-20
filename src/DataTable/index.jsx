@@ -66,7 +66,7 @@ function DataTable({
     manualSortBy,
     initialState,
     ...initialTableOptions,
-  }), [columns, data, defaultColumn, manualFilters, manualPagination, initialState, initialTableOptions]);
+  }), [columns, data, defaultColumn, manualFilters, manualPagination, initialState, initialTableOptions, manualSortBy]);
 
   const [selections, selectionsDispatch] = useReducer(selectionsReducer, initialSelectionsState);
 
@@ -111,10 +111,12 @@ function DataTable({
   // any state changes to current row selections as we don't want to re-fetch data whenever row(s) are selected.
   const tableStateWithoutSelections = { ...instance.state };
   delete tableStateWithoutSelections.selectedRowIds;
+
   useEffect(() => {
     if (fetchData) {
       fetchData(tableStateWithoutSelections);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fetchData, JSON.stringify(tableStateWithoutSelections)]);
 
   const selectionActions = useSelectionActions(instance, controlledTableSelections);

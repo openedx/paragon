@@ -51,7 +51,7 @@ const SearchFieldAdvanced = (props) => {
     } else {
       onChange(value);
     }
-  }, [value]);
+  }, [value, onChange]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
