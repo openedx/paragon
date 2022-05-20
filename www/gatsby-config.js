@@ -13,7 +13,16 @@ const segmentPlugin = {
 };
 
 const plugins = [
-  "gatsby-plugin-sass",
+  {
+    resolve: `gatsby-plugin-sass`,
+    options: {
+     cssLoaderOptions: {
+       modules: {
+         namedExport: false,
+       },
+     },
+   },
+  },
   `gatsby-plugin-react-helmet`,
   {
     resolve: `gatsby-plugin-manifest`,
