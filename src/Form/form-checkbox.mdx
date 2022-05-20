@@ -45,6 +45,7 @@ underlying `input` node. See MDN for documentation on available
     <CheckboxControl
       checked={isChecked}
       onChange={handleChange}
+      aria-label="Checkbox"
     />
   );
 }
@@ -137,6 +138,7 @@ underlying `input` node. See MDN for documentation on available
         </Form.Checkbox>
       </div>
       <Form.CheckboxSet
+      	name="color-six"
         className="p-2"
         value={checkedCheeses}
         onChange={handleChange}
@@ -234,7 +236,7 @@ by passing the `floatLabelLeft` prop.
 
 ```jsx live
 <Form.Group>
-  <Form.CheckboxSet>
+  <Form.CheckboxSet name="color-single">
     <Form.Checkbox value="red" floatLabelLeft>Red</Form.Checkbox>
   </Form.CheckboxSet>
 </Form.Group>

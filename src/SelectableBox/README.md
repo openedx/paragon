@@ -40,13 +40,13 @@ As ``Checkbox``
       onChange={handleChange}
       name="cheeses"
     >
-      <SelectableBox value="swiss" type={type}>
+      <SelectableBox value="swiss" type={type} aria-label="checkbox">
         <div>
           <h3>It is my first SelectableBox</h3>
           <p>Swiss</p>
         </div>
       </SelectableBox>
-      <SelectableBox value="cheddar" inputHidden={false} type={type}>
+      <SelectableBox value="cheddar" inputHidden={false} type={type} aria-label="checkbox">
         Cheddar
       </SelectableBox>
       <SelectableBox
@@ -54,6 +54,7 @@ As ``Checkbox``
         inputHidden={false}
         type={type}
         isInvalid={isInvalid()}
+        aria-label="checkbox"
       >
         <h3>Pepperjack</h3>
       </SelectableBox>
@@ -78,17 +79,17 @@ As ``Radio``
       name="colors"
       columns={3}
     >
-      <SelectableBox value="red" type={type}>
+      <SelectableBox value="red" type={type} aria-label="checkbox">
         <div>
           <h3>It is Red color</h3>
           <p>Select me</p>
         </div>
       </SelectableBox>
-      <SelectableBox value="green" inputHidden={false} type={type}>
+      <SelectableBox value="green" inputHidden={false} type={type} aria-label="checkbox">
         <h3>Green</h3>
         <p>Leaves and grass</p>
       </SelectableBox>
-      <SelectableBox value="blue" inputHidden={false} type={type}>
+      <SelectableBox value="blue" inputHidden={false} type={type} aria-label="checkbox">
         <h3>Blue</h3>
         <p>The sky</p>
       </SelectableBox>
@@ -126,6 +127,7 @@ As ``Checkbox`` with ``isIndeterminate``
           onClick={handleCheckAllChange}
           inputHidden={false}
           type={type}
+          aria-label="checkbox"
         >
           All the cheese
         </SelectableBox>
@@ -137,16 +139,16 @@ As ``Checkbox`` with ``isIndeterminate``
         name="cheeses"
         columns={3}
       >
-        <SelectableBox value="swiss" type={type}>
+        <SelectableBox value="swiss" type={type} aria-label="checkbox">
           <div>
             <h3>It is my first SelectableBox</h3>
             <p>Swiss</p>
           </div>
         </SelectableBox>
-        <SelectableBox value="cheddar" inputHidden={false} type={type}>
+        <SelectableBox value="cheddar" inputHidden={false} type={type} aria-label="checkbox">
           Cheddar
         </SelectableBox>
-        <SelectableBox value="pepperjack" inputHidden={false} type={type}>
+        <SelectableBox value="pepperjack" inputHidden={false} type={type} aria-label="checkbox">
           <h3>Pepperjack</h3>
         </SelectableBox>
       </SelectableBox.Set>

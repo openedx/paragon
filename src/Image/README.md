@@ -26,16 +26,19 @@ notes: |
     className="mr-2"
     src="https://source.unsplash.com/100x100/?nature,flower"
     rounded
+    alt="Image description"
   />
   <Image
     className="mr-2"
     src="https://source.unsplash.com/100x100/?nature,flower"
     roundedCircle
+    alt="Image description"
   />
   <Image
     className="mr-2"
     src="https://source.unsplash.com/100x100/?nature,flower"
     thumbnail
+    alt="Image description"
   />
 </>
 ```
@@ -43,7 +46,7 @@ notes: |
 ### Fluid Sizing
 
 ```jsx live
-<Image src="https://source.unsplash.com/1600x800/?nature,flower" fluid />
+<Image src="https://source.unsplash.com/1600x800/?nature,flower" fluid alt="Image description" />
 ```
 
 

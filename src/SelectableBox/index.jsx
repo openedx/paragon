@@ -22,6 +22,7 @@ const SelectableBox = React.forwardRef(({
   onFocus,
   inputHidden,
   className,
+  ...props
 }, ref) => {
   const inputType = getInputType('SelectableBox', type);
   const { value: radioValue } = useRadioSetContext();
@@ -46,7 +47,7 @@ const SelectableBox = React.forwardRef(({
     ref: inputRef,
     tabIndex: -1,
     onChange: () => {},
-    ...(type === 'checkbox' && { isIndeterminate }),
+    ...(type === 'checkbox' ? { ...props, isIndeterminate } : { ...props }),
   }, null);
 
   useEffect(() => {
@@ -67,6 +68,7 @@ const SelectableBox = React.forwardRef(({
       })}
       tabIndex={0}
       ref={ref}
+      {...props}
     >
       {input}
       {children}
