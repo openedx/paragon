@@ -7,7 +7,7 @@ import useIsVisible from '../hooks/useIsVisible';
 export const CLASSNAME_SCROLL_TOP = 'pgn__scrollable-body-scroll-top';
 export const CLASSNAME_SCROLL_BOTTOM = 'pgn__scrollable-body-scroll-bottom';
 
-const Scrollable = ({ children, ariaValue, ...props }) => {
+const Scrollable = ({ children, ...props }) => {
   const [isScrolledToTop, topSentinelRef] = useIsVisible();
   const [isScrolledToBottom, bottomSentinelRef] = useIsVisible();
   const [valueNow, setValueNow] = useState(0);
@@ -51,13 +51,10 @@ Scrollable.propTypes = {
   children: PropTypes.node.isRequired,
   /** Additional classnames for this component. */
   className: PropTypes.string,
-  /** The aria-valuenow attribute defines the current value for range widgets. */
-  ariaValue: PropTypes.string,
 };
 
 Scrollable.defaultProps = {
   className: undefined,
-  ariaValue: null,
 };
 
 export default Scrollable;
