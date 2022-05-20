@@ -2,6 +2,7 @@
 @import "~bootstrap/scss/dropdown";
 
 .dropdown-toggle::after {
+  border: 0;
   border-style: solid;
   border-width: .15rem .15rem 0 0;
   content: "";
