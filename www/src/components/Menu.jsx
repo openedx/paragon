@@ -154,6 +154,9 @@ const Menu = () => {
             <li className="mr-3">
               <Link to="/foundations/css-utilities">CSS Utility Classes</Link>
             </li>
+            <li className="mr-3">
+              <Link to="/foundations/responsive">Responsive</Link>
+            </li>
           </ul>
           <h3 className="mb-4">
             Playground
@@ -167,7 +170,7 @@ const Menu = () => {
               <OverlayTrigger
                 trigger="focus"
                 overlay={(
-                  <Popover>
+                  <Popover id="playground-popover">
                     <Popover.Title as="h3">
                       <Icon src={Issue} />
                       Сoming soon
