@@ -7,7 +7,7 @@ const MiyazakiCard = ({ className, original }) => {
 
   return (
     <Card className={className}>
-      <Card.ImageCap src="https://source.unsplash.com/360x200/?nature,flower" />
+      <Card.ImageCap src="https://source.unsplash.com/360x200/?nature,flower" srcAlt="Card image" />
       <Card.Header title={title} />
       <Card.Section>
         <dl>

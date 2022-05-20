@@ -121,22 +121,22 @@ Use inline size buttons for when a button sits with a line of text.
 ### With a Spinner
 ```jsx live
 <>
-  <Button variant="primary" className="mr-2">
-    <Spinner animation="border" screenReaderText="loading some stuff" />
-  </Button>
-  <Button variant="brand" className="mr-2">
+  <Button variant="primary" className="mr-2" aria-label="Loading some stuff">
     <Spinner animation="border" />
   </Button>
-  <Button variant="outline-primary" className="mr-2">
+  <Button variant="brand" className="mr-2" aria-label="Loading some stuff">
     <Spinner animation="border" />
   </Button>
-  <Button variant="outline-brand" className="mr-2">
+  <Button variant="outline-primary" className="mr-2" aria-label="Loading some stuff">
     <Spinner animation="border" />
   </Button>
-  <Button variant="inverse-primary" className="mr-2">
+  <Button variant="outline-brand" className="mr-2" aria-label="Loading some stuff">
     <Spinner animation="border" />
   </Button>
-  <Button variant="inverse-brand" className="mr-2">
+  <Button variant="inverse-primary" className="mr-2" aria-label="Loading some stuff">
+    <Spinner animation="border" />
+  </Button>
+  <Button variant="inverse-brand" className="mr-2" aria-label="Loading some stuff">
     <Spinner animation="border" />
   </Button>
 </>
