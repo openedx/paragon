@@ -9,11 +9,7 @@ const Toc = ({ data }) => {
         {headings.items.map(heading => (
           <li key={heading.url}>
             <a href={heading.url}>{heading.title}</a>
-            {!!heading.items && (
-              <ul className="pgn-doc__toc-list">
-                {generateTree(heading)}
-              </ul>
-            )}
+            {!!heading.items && generateTree(heading)}
           </li>
         ))}
       </ul>

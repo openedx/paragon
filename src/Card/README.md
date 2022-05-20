@@ -31,6 +31,7 @@ This component uses a `Card` from react-bootstrap as a base component and extend
 <Card style={{ width: '18rem' }}>
   <Card.ImageCap 
     src="https://source.unsplash.com/360x200/?nature,flower"
+    srcAlt="Card image"
   />
   <Card.Header
     title="Card Title"
@@ -52,6 +53,7 @@ You use `isClickable` prop to add additional `hover` and `focus` styling to the 
 <Card style={{ width: '18rem' }} isClickable>
   <Card.ImageCap 
     src="https://source.unsplash.com/360x200/?nature,flower"
+    srcAlt="Card image"
   />
   <Card.Header
     title="Card Title"
@@ -252,7 +254,9 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
 <Card style={{width: '40%'}}>
   <Card.ImageCap 
     src="https://source.unsplash.com/360x200/?nature,flower"
+    srcAlt="Card image"
     logoSrc="https://via.placeholder.com/150"
+    logoAlt="Card logo"
   />
   <Card.Header
     title="Title"
@@ -278,7 +282,9 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
   <Card orientation="horizontal" className="mb-4">
     <Card.ImageCap 
       src="https://source.unsplash.com/360x200/?nature,flower"
+      srcAlt="Card image"
       logoSrc="https://via.placeholder.com/150"
+      logoAlt="Card logo"
     />
     <Card.Body>
       <Card.Header
@@ -299,7 +305,9 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
   <Card orientation="horizontal" className="mb-4">
     <Card.ImageCap 
       src="https://source.unsplash.com/360x200/?nature,flower"
+      srcAlt="Card image"
       logoSrc="https://via.placeholder.com/150"
+      logoAlt="Card logo"
     />
     <Card.Section 
       title="Section title"
@@ -314,7 +322,9 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
   <Card orientation="horizontal">
     <Card.ImageCap 
       src="https://source.unsplash.com/360x200/?nature,flower"
+      srcAlt="Card image"
       logoSrc="https://via.placeholder.com/150"
+      logoAlt="Card logo"
     />
     <Card.Body>
       <Card.Header
@@ -339,7 +349,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
 
 ```jsx live
 <Card style={{ width: '25rem' }}>
-  <Card.ImageCap src="https://source.unsplash.com/360x200/?nature,flower" />
+  <Card.ImageCap src="https://source.unsplash.com/360x200/?nature,flower" srcAlt="Card image"/>
   <Card.Section className="text-center">
     <h2>Headline</h2>
     <p>This is an optional text description.</p>
@@ -364,7 +374,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
 
 ```jsx live
 <Card orientation="horizontal">
-  <Card.ImageCap src="https://source.unsplash.com/360x200/?nature,flower" />
+  <Card.ImageCap src="https://source.unsplash.com/360x200/?nature,flower" srcAlt="Card image"/>
   <Card.Section>
     <h2>Headline</h2>
     <p>This is an optional text description.</p>
@@ -406,6 +416,7 @@ behavior.
   <Card>
     <Card.ImageCap 
       src="https://source.unsplash.com/360x200/?nature,flower"
+      srcAlt="Card image"
     />
     <Card.Header
       title="Card title"
@@ -424,6 +435,7 @@ behavior.
   <Card>
     <Card.ImageCap 
       src="https://source.unsplash.com/360x200/?nature,flower"
+      srcAlt="Card image"
     />
     <Card.Header
       title="Card title"
@@ -441,6 +453,7 @@ behavior.
   <Card>
     <Card.ImageCap 
       src="https://source.unsplash.com/360x200/?nature,flower"
+      srcAlt="Card image"
     />
     <Card.Header
       title="Card title"
@@ -459,6 +472,7 @@ behavior.
   <Card>
     <Card.ImageCap 
       src="https://source.unsplash.com/360x200/?nature,flower"
+      srcAlt="Card image"
     />
     <Card.Header
       title="Card title"
@@ -477,6 +491,7 @@ behavior.
   <Card>
     <Card.ImageCap 
       src="https://source.unsplash.com/360x200/?nature,flower"
+      srcAlt="Card image"
     />
     <Card.Header
       title="Card title"
@@ -494,6 +509,7 @@ behavior.
   <Card>
     <Card.ImageCap 
       src="https://source.unsplash.com/360x200/?nature,flower"
+      srcAlt="Card image"
     />
     <Card.Header
       title="Card title"
@@ -522,6 +538,7 @@ it is meant to be used as a single horizontal row of Cards, not as a grid. See C
   <Card>
     <Card.ImageCap 
       src="https://source.unsplash.com/360x200/?nature,flower"
+      srcAlt="Card image"
     />
     <Card.Header
       title="Card title"
@@ -540,6 +557,7 @@ it is meant to be used as a single horizontal row of Cards, not as a grid. See C
   <Card>
     <Card.ImageCap 
       src="https://source.unsplash.com/360x200/?nature,flower"
+      srcAlt="Card image"
     />
     <Card.Header
       title="Card title"
@@ -557,6 +575,7 @@ it is meant to be used as a single horizontal row of Cards, not as a grid. See C
   <Card>
     <Card.ImageCap 
       src="https://source.unsplash.com/360x200/?nature,flower"
+      srcAlt="Card image"
     />
     <Card.Header
       title="Card title"
