@@ -1,3 +1,10 @@
+## [19.22.2](https://github.com/openedx/paragon/compare/v19.22.1...v19.22.2) (2022-05-20)
+
+
+### Bug Fixes
+
+* [BD-46] eslint config upgrade, refactor ([#1263](https://github.com/openedx/paragon/issues/1263)) ([fff81a9](https://github.com/openedx/paragon/commit/fff81a97d79a47877a1cedf6daae089b9d0afd70))
+
 ## [19.22.1](https://github.com/openedx/paragon/compare/v19.22.0...v19.22.1) (2022-05-13)
 
 
