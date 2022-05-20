@@ -1,3 +1,10 @@
+# [19.23.0](https://github.com/openedx/paragon/compare/v19.22.2...v19.23.0) (2022-05-20)
+
+
+### Features
+
+* installation, setting up @axe-core/react module, Paragon components accessibility refactoring ([#1218](https://github.com/openedx/paragon/issues/1218)) ([68d2f82](https://github.com/openedx/paragon/commit/68d2f82688c88d83314b007ce02c7c6a9c652733))
+
 ## [19.22.2](https://github.com/openedx/paragon/compare/v19.22.1...v19.22.2) (2022-05-20)
 
 
