@@ -229,12 +229,12 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
 
 ```jsx live
 <Card style={{width: '40%'}}>
-  <Card.Footer orientation="horizontal">
+  <Card.Footer className="pgn__card-wrapper" orientation="horizontal">
     <Button>Action 1</Button>
     <Button>Action 2</Button>
   </Card.Footer>
   <Card.Divider />
-  <Card.Footer orientation="horizontal" textElement="Optional footer text to display">
+  <Card.Footer className="pgn__card-wrapper" orientation="horizontal" textElement="Optional footer text to display">
     <Button>Action 1</Button>
     <Button>Action 2</Button>
   </Card.Footer>
@@ -409,6 +409,7 @@ behavior.
 <CardGrid
   columnSizes={{
     xs: 12,
+    sm: 6,
     lg: 6,
     xl: 4,
   }}
