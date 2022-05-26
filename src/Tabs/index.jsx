@@ -29,11 +29,22 @@ const Tabs = ({
     if (containerElementRef.current) {
       const observer = new MutationObserver((mutations => {
         mutations.forEach(mutation => {
+          // React-Bootstrap attribute 'data-rb-event-key' is responsible for the tab identification
           const eventKey = mutation.target.getAttribute('data-rb-event-key');
+          // React-Bootstrap attribute 'aria-selected' is responsible for selected/unselected state
           const isActive = mutation.target.getAttribute('aria-selected') === 'true';
+          // datakey attribute is added manually to the dropdown
+          // elements so that they correspond to the native tabs' eventKey
           const element = containerElementRef.current.querySelector(`[datakey='${eventKey}']`);
+          const moreTab = containerElementRef.current.querySelector('.pgn__tab_more');
           if (isActive) {
             element?.classList.add('active');
+            // Here we add active class to the 'More Tab' if element exists in the dropdown
+            if (element) {
+              moreTab.classList.add('active');
+            } else {
+              moreTab.classList.remove('active');
+            }
           } else {
             element?.classList.remove('active');
           }
@@ -86,21 +97,26 @@ const Tabs = ({
       });
       return modifiedTab;
     });
-
+    let moreTabHasNotification = false;
     const overflowChildren = childrenList.slice(indexOfOverflowStart)
-      .map(overflowChild => (
-        <Dropdown.Item
-          key={`${overflowChild.props.eventKey}overflow`}
-          onClick={() => handleDropdownTabClick(overflowChild.props.eventKey)}
-          disabled={overflowChild.props.disabled}
-          datakey={overflowChild.props.eventKey}
-          className={classNames({
-            active: overflowChild.props.eventKey === defaultActiveKey || overflowChild.props.eventKey === activeKey,
-          }, 'pgn__tabs__dropdown-item')}
-        >
-          {overflowChild.props.title}
-        </Dropdown.Item>
-      ));
+      .map(overflowChild => {
+        if (!moreTabHasNotification && overflowChild.props.notification) {
+          moreTabHasNotification = true;
+        }
+        return (
+          <Dropdown.Item
+            key={`${overflowChild.props.eventKey}overflow`}
+            onClick={() => handleDropdownTabClick(overflowChild.props.eventKey)}
+            disabled={overflowChild.props.disabled}
+            datakey={overflowChild.props.eventKey}
+            className={classNames({
+              active: overflowChild.props.eventKey === defaultActiveKey || overflowChild.props.eventKey === activeKey,
+            }, 'pgn__tabs__dropdown-item')}
+          >
+            {overflowChild.props.title}
+          </Dropdown.Item>
+        );
+      });
 
     childrenList.splice(indexOfOverflowStart, 0, (
       <Tab
@@ -114,6 +130,9 @@ const Tabs = ({
               id="pgn__tab-toggle"
             >
               {moreTabText}
+              {moreTabHasNotification && (
+                <Bubble variant="error" className="pgn__tab-notification" />
+              )}
             </Dropdown.Toggle>
             <Dropdown.Menu className="dropdown-menu-right">{overflowChildren}</Dropdown.Menu>
           </Dropdown>

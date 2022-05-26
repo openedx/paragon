@@ -141,7 +141,7 @@ notes: |
     Hello I am the seventh panel.
   </Tab>
   <Tab eventKey="forum" title="Forum">
-    Hello I am the eights panel.
+    Hello I am the eighth panel.
   </Tab>
   <Tab eventKey="job" title="Job">
     Hello I am the ninth panel.
