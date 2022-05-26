@@ -65,7 +65,7 @@ const useIndexOfLastVisibleChild = (containerElementRef, overflowElementRef) => 
       });
 
     setIndexOfLastVisibleChild(nextIndexOfLastVisibleChild);
-  }, [windowSize, containerWidth]);
+  }, [windowSize, containerWidth, containerElementRef, overflowElementRef]);
 
   return indexOfLastVisibleChild;
 };
