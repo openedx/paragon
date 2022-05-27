@@ -1,3 +1,10 @@
+# [19.24.0](https://github.com/openedx/paragon/compare/v19.23.1...v19.24.0) (2022-05-27)
+
+
+### Features
+
+* [BD-46] exports useIndexOfLastVisibleChild, responsive tabs ([#1287](https://github.com/openedx/paragon/issues/1287)) ([75311f6](https://github.com/openedx/paragon/commit/75311f69d37f7016b08956f7c63a9194b9c63269))
+
 ## [19.23.1](https://github.com/openedx/paragon/compare/v19.23.0...v19.23.1) (2022-05-20)
 
 
