@@ -5,7 +5,7 @@ const fs = require('fs');
  */
 const muiIcons = fs.readdirSync('./node_modules/@material-icons/svg/svg/');
 muiIcons.forEach((iconName) => {
-  if (!fs.existsSync(`./svg/${iconName}.svg`)) {
+  if (!fs.existsSync(`./svg/${iconName}.svg`) && !fs.existsSync(`./svg/${iconName.replaceAll('-', '').replaceAll('_', '')}.svg`)) {
     fs.copyFileSync(`./node_modules/@material-icons/svg/svg/${iconName}/sharp.svg`, `./svg/${iconName}.svg`);
   }
 })
