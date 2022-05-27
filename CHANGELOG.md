@@ -1,3 +1,10 @@
+# [19.25.0](https://github.com/openedx/paragon/compare/v19.24.0...v19.25.0) (2022-05-27)
+
+
+### Features
+
+* [BD-46] add all MUI icons ([#1313](https://github.com/openedx/paragon/issues/1313)) ([404692e](https://github.com/openedx/paragon/commit/404692eef7c7aa140a96bb5272d5f143c44abb72))
+
 # [19.24.0](https://github.com/openedx/paragon/compare/v19.23.1...v19.24.0) (2022-05-27)
 
 
