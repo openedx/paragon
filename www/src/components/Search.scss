@@ -1,7 +1,4 @@
 .DocSearch.DocSearch-Button {
-    // position: absolute;
-    // top: 0;
-    // right: 0;
     border-radius: 0;
     background-color: $white;
     border: $border-width solid $gray-500;
@@ -19,28 +16,21 @@
         padding: .625rem .75rem;
     }
 
-    // @media (max-width: map-get($grid-breakpoints, "lg")) {
-    //     position: absolute;
-    //     top: -40px;
-    //     right: 30px;
-    // }
-
-    // @media (max-width: map-get($grid-breakpoints, "sm")) {
-    //     top: -40px;
-    //     right: 30px;
-    // }
-
     &:active, 
-    &:focus, 
-    &:hover {
+    &:focus {
         background: $white;
         box-shadow: none;
         outline: none;
         border-radius: 0;
+        outline: auto;
 
         @media (max-width: $max-width-xl) {
             border-radius: 50%;
         }
+    }
+
+    &:hover {
+        box-shadow: none;
     }
 
     .DocSearch-Search-Icon {
@@ -120,7 +110,7 @@
     
             .DocSearch-Label {
                 font-size: .5rem;
-                line-height: $display-line-height;
+                line-height: 1.1875rem;
                 font-weight: $font-weight-normal;
                 color: $gray-500;
             }
@@ -144,6 +134,18 @@
                 max-height: calc(var(--docsearch-vh, 1vh)*100 - var(--docsearch-searchbox-height) - var(--docsearch-spacing) - var(--docsearch-footer-height));
             }
 
+            .DocSearch-StartScreen {
+                padding: 0 0 1.4375rem 0;
+
+                .DocSearch-Help {
+                    font-size: .6875rem;
+                    line-height: .9375rem;
+                    font-weight: $font-weight-normal;
+                    color: $dark;
+                    text-align: center;
+                }
+            }
+
             .DocSearch-Hit-source,
             .DocSearch-Title {
                 font-size: .6875rem;
@@ -151,8 +153,7 @@
                 font-weight: $font-weight-normal;
                 background: $white;
                 color: $dark;
-                padding: 0;
-                margin: 0 0 .5rem;
+                padding: 0 0 .5rem 0;
                 overflow: hidden;
             }
 
@@ -166,6 +167,11 @@
                 border-radius: $border-radius;
                 padding: 0;
                 margin-bottom: .375rem;
+            }
+
+            .DocSearch-Hit a:focus {
+                border: $border-width solid $dark;
+                outline: none;
             }
 
             .DocSearch-Hit:last-child {
@@ -219,6 +225,23 @@
                 height: auto;
             }
 
+            .DocSearch-Hit-Container .DocSearch-Hit-Select-Icon {
+                display: block;
+            }
+
+            .DocSearch-Hit-action-button:focus,
+            .DocSearch-Hit-action-button:hover {
+                background: transparent;
+                border: $border-width solid $dark;
+                outline: none;
+                color: $dark;
+            }
+
+            .DocSearch-Hit[aria-selected=true] .DocSearch-Hit-action-button:focus {
+                border: $border-width solid $white;
+                color: $white;
+            }
+
             .DocSearch-Hit-Container .DocSearch-Hit-action {
                 width: 1.5rem;
                 height: 1.5rem;
@@ -256,6 +279,11 @@
                 right: $spacer;
             }
 
+            .DocSearch-LoadingIndicator {
+                position: absolute;
+                left: .625rem;
+            }
+
             .DocSearch-MagnifierLabel .DocSearch-Search-Icon {
                 width: 1.125rem;
                 height: 1.125rem;
@@ -275,14 +303,17 @@
                 position: absolute;
                 right: .875rem;
                 z-index: 1;
-                width: 1.25rem;
-                height: 1.5rem;
+                width: 1.5625rem;
+                height: 1.5625rem;
                 background-color: $white;
             }
 
+            .DocSearch-Reset:focus {
+                border: $border-width solid $dark;
+                border-radius: 50%;
+            }
+
             .DocSearch-Reset svg {
-                width: .875rem;
-                height: .875rem;
                 color: $gray-500;
             }
             
@@ -290,6 +321,10 @@
     }
 
     .DocSearch-Cancel {
+
+        &:focus {
+            text-decoration: underline;
+        }
 
         @media (max-width: map-get($grid-breakpoints, "md")) {
             font-size: $font-size-base;
