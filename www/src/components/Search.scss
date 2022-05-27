@@ -1,0 +1,305 @@
+.DocSearch.DocSearch-Button {
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    border-radius: 0;
+    background-color: $white;
+    border: $border-width solid $gray-500;
+    width: 13.25rem;
+    height: 2.75rem;
+    margin-left: $spacer;
+    padding: .625rem $spacer;
+    transition: $transition-base;
+
+    @media (max-width: $max-width-xl) {
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 50%;
+        overflow: hidden;
+        padding: .625rem .75rem;
+    }
+
+    // @media (max-width: map-get($grid-breakpoints, "lg")) {
+    //     position: absolute;
+    //     top: -40px;
+    //     right: 30px;
+    // }
+
+    // @media (max-width: map-get($grid-breakpoints, "sm")) {
+    //     top: -40px;
+    //     right: 30px;
+    // }
+
+    &:active, 
+    &:focus, 
+    &:hover {
+        background: $white;
+        box-shadow: none;
+        outline: none;
+        border-radius: 0;
+
+        @media (max-width: $max-width-xl) {
+            border-radius: 50%;
+        }
+    }
+
+    .DocSearch-Search-Icon {
+        width: 1.125rem;
+        height: 1.125rem;
+        color: $gray-500;
+    }
+
+    .DocSearch-Button-Placeholder {
+        font-weight: $font-weight-normal;
+        font-size: $font-size-sm;
+        line-height: $line-height-base;
+        color: $gray-500;
+        padding-left: .6875rem;
+    }
+
+    .DocSearch-Button-Keys {
+        background-color: $light-300;
+        border-radius: $border-width;
+        width: 2.4375rem;
+        height: 1.5rem;
+        min-width: auto;
+        padding: .375rem;
+
+        .DocSearch-Button-Key {
+            font-size: $font-size-xs;
+            line-height: .75rem;
+            font-weight: $font-weight-light;
+            display: block;
+            height: initial;
+            position: static;
+            margin-right: 0;
+            padding: 0;
+            color: $gray-800;
+            border-radius: 0;
+            background: $light-300;
+            box-shadow: none;
+            width: .75rem;
+            height: .75rem;
+
+            &:not(:last-child) {
+                margin-right: .3125rem;
+            }
+        }
+    }
+}
+
+.DocSearch {
+    &.DocSearch-Container {
+        z-index: $zindex-modal;
+        background: rgba(125, 125, 125, .65);
+    }
+
+    .DocSearch-Modal {
+        max-width: 31.25rem;
+        background-color: $white;
+        margin: 6.875rem auto auto;
+        cursor: auto;
+
+        @media (max-width: map-get($grid-breakpoints, "md")) {
+            max-width: 100%;
+            margin: auto;
+            border-radius: 0;
+            height: 100vh;
+        }
+    
+        .DocSearch-Footer {
+            box-shadow: none;
+            border-top: $border-width solid $light-400;
+            padding: 0 1.625rem;
+
+            @media (max-width: map-get($grid-breakpoints, "md")) {
+                position: absolute;
+                border-radius: 0;
+                bottom: 0;
+            }
+    
+            .DocSearch-Label {
+                font-size: .5rem;
+                line-height: $display-line-height;
+                font-weight: $font-weight-normal;
+                color: $gray-500;
+            }
+    
+            .DocSearch-Logo svg {
+                margin-left: .5625rem;
+            }
+    
+            .DocSearch-Commands {
+                display: none;
+            }
+        }
+
+        .DocSearch-Dropdown {
+            background-color: $white;
+            padding: 0 1.625rem;
+            max-height: 20.9375rem;
+
+            @media (max-width: map-get($grid-breakpoints, "md")) {
+                height: 100%;
+                max-height: calc(var(--docsearch-vh, 1vh)*100 - var(--docsearch-searchbox-height) - var(--docsearch-spacing) - var(--docsearch-footer-height));
+            }
+
+            .DocSearch-Hit-source,
+            .DocSearch-Title {
+                font-size: .6875rem;
+                line-height: $line-height-sm;
+                font-weight: $font-weight-normal;
+                background: $white;
+                color: $dark;
+                padding: 0;
+                margin: 0 0 .5rem;
+                overflow: hidden;
+            }
+
+            .DocSearch-Hits mark {
+                color: $red;
+                padding: 0;
+            }
+
+            .DocSearch-Hit {
+                border: $border-width solid $light-400;
+                border-radius: $border-radius;
+                padding: 0;
+                margin-bottom: .375rem;
+            }
+
+            .DocSearch-Hit:last-child {
+                margin-bottom: 10.75rem;
+
+                @media (max-width: map-get($grid-breakpoints, "md")) {
+                    margin-bottom: 0;
+                }
+            }
+
+            .DocSearch-Hit[aria-selected=true] a {
+                background: $dark;
+            }
+
+            .DocSearch-Hit[aria-selected=true] mark {
+                text-decoration: none;
+                color: $red !important;
+                padding: 0;
+            }
+
+            .DocSearch-Hit[aria-selected=true] .DocSearch-Hit-icon svg {
+                color: $white;
+            }
+
+            .DocSearch-Screen-Icon svg {
+                width: 1.25rem;
+                height: 1.25rem;
+            }
+
+            .DocSearch-NoResults-Prefill-List {
+                display: none;
+            }
+
+            .DocSearch-Hit .DocSearch-Hit-icon {
+                position: relative;
+            }
+
+            .DocSearch-Hit .DocSearch-Hit-icon svg {
+                color: lighten($color: $dark, $amount: .5);
+                position: absolute;
+            }
+
+            .DocSearch-Hit a {
+                background: $light-200;
+                padding: $spacer 1.625rem $spacer 1.875rem;
+                box-shadow: none;
+            }
+
+            .DocSearch-Hit-Container {
+                padding: 0;
+                height: auto;
+            }
+
+            .DocSearch-Hit-Container .DocSearch-Hit-action {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+
+            .DocSearch-Hit a .DocSearch-Hit-content-wrapper {
+                margin: 0 1.125rem;
+            }
+
+            .DocSearch-Hit a .DocSearch-Hit-title {
+                font-size: $spacer;
+                line-height: $line-height-base;
+                font-weight: $font-weight-semi-bold;
+            }
+        }
+    }
+
+    .DocSearch-SearchBar {
+        padding: 1.625rem;
+    
+        .DocSearch-Form {
+            font-size: $font-size-sm;
+            line-height: $line-height-base;
+            font-weight: $font-weight-normal;
+            border: .125rem solid $black;
+            border-radius: 0;
+            box-shadow: none;
+            color: $gray-500;
+            height: 3.0625rem;
+            padding: .125rem;
+            position: relative;
+    
+            .DocSearch-MagnifierLabel {
+                position: absolute;
+                right: $spacer;
+            }
+
+            .DocSearch-MagnifierLabel .DocSearch-Search-Icon {
+                width: 1.125rem;
+                height: 1.125rem;
+                color: $gray-500;
+            }
+    
+            .DocSearch-Input {
+                font-size: $font-size-sm;
+                line-height: $line-height-base;
+                font-weight: $font-weight-normal;
+                padding: 0 2.8125rem 0 .625rem;
+                z-index: 1;
+                border: $border-width solid $black;
+            }
+
+            .DocSearch-Reset {
+                position: absolute;
+                right: .875rem;
+                z-index: 1;
+                width: 1.25rem;
+                height: 1.5rem;
+                background-color: $white;
+            }
+
+            .DocSearch-Reset svg {
+                width: .875rem;
+                height: .875rem;
+                color: $gray-500;
+            }
+            
+        }
+    }
+
+    .DocSearch-Cancel {
+
+        @media (max-width: map-get($grid-breakpoints, "md")) {
+            font-size: $font-size-base;
+            line-height: $line-height-base;
+            font-weight: $font-weight-semi-bold;
+            color: $gray-700;
+            margin-left: 1.1875rem;
+            display: block;
+            background: none;
+            border: none;
+        }
+    }
+}
