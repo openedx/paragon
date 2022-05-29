@@ -695,12 +695,13 @@ $table-th-font-weight:        null !default;
 $zindex-dropdown:                   1000 !default;
 $zindex-sticky:                     1020 !default;
 $zindex-fixed:                      1030 !default;
-$zindex-sheet-backdrop:             1031 !default;
-$zindex-sheet:                      1032 !default;
 $zindex-modal-backdrop:             1040 !default;
 $zindex-modal:                      1050 !default;
 $zindex-popover:                    1060 !default;
 $zindex-tooltip:                    1070 !default;
+$zindex-header:                     1075 !default;
+$zindex-sheet-backdrop:             1076 !default;
+$zindex-sheet:                      1077 !default;
 
 // Buttons + Forms
 //

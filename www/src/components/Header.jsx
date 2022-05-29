@@ -138,7 +138,7 @@ const Header = ({ siteTitle, showMinimizedTitle }) => {
       enabled={isOpen}
       onClickOutside={close}
       onEscapeKey={close}
-      className="sticky-top"
+      className="pgn-doc-header sticky-top"
     >
       <div
         className="bg-white"
