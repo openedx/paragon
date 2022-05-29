@@ -1,5 +1,9 @@
 .menu-component-list {
   columns: 3;
+
+  @media (max-width: $max-width-xs) {
+    columns: 2;
+  }
 }
 
 .menu-component-list-category {
@@ -11,5 +15,13 @@
 .menu-all-components {
   .menu-component-list {
     columns: 4;
+
+    @media (max-width: $max-width-sm) {
+      columns: 3;
+    }
+
+    @media (max-width: $max-width-xs) {
+      columns: 2;
+    }
   }
 }
