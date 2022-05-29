@@ -35,13 +35,13 @@ notes: |
           <Dropdown.Item eventKey={position}>{position}</Dropdown.Item>
         ))}
       </DropdownButton><br />
-      <Button onClick={() => setShow(true)}>
+      <Button onClick={() => setShow(true)} className="mb-2 mb-md-0">
         Show the Sheet
       </Button>{' '}
-      <Button onClick={() => setBlocking(!blocking)}>
+      <Button onClick={() => setBlocking(!blocking)} className="mb-2 mb-md-0">
         {blocking ? "Disable": "Enable"} blocking content
       </Button>{' '}
-      <Button onClick={() => setDark(!dark)}>
+      <Button onClick={() => setDark(!dark)} className="mb-2 mb-md-0">
         Set {dark ? "Light": "Dark"} mode
       </Button>
 
