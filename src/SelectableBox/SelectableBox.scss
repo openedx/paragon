@@ -4,12 +4,7 @@
   display: grid;
   grid-auto-rows: 1fr;
   grid-gap: $selectable-box-space;
-
-  @for $i from $min-cols-number through $max-cols-number {
-    &.pgn__selectable_box-set--#{$i} {
-      grid-template-columns: repeat(#{$i}, 1fr);
-    }
-  }
+  grid-template-columns: repeat(auto-fill, minmax($selectable-box-min-width, $selectable-box-max-width));
 
   & > * + * {
     margin: 0;
