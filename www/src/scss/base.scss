@@ -1,3 +1,11 @@
+@import "../components/CodeBlock";
+@import "../components/LinkedHeading";
+@import "../components/Menu";
+@import "../components/doc-elements";
+@import "../components/Settings";
+@import "../components/Toc";
+@import "../components/Search";
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -7,11 +15,3 @@ body {
 .container-fluid {
   max-width: none;
 }
-
-@import "../components/CodeBlock";
-@import "../components/LinkedHeading";
-@import "../components/Menu";
-@import "../components/doc-elements";
-@import "../components/Settings";
-@import "../components/Toc";
-@import "../components/Search";
