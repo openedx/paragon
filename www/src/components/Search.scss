@@ -8,12 +8,24 @@
     padding: .625rem $spacer;
     transition: $transition-base;
 
+     @media (max-width: map-get($grid-breakpoints, "xl")) {
+         position: absolute;
+         top: -2.625rem;
+         right: 1.875rem;
+         margin-left: 0;
+     }
+
     @media (max-width: $max-width-xl) {
         width: 2.75rem;
         height: 2.75rem;
         border-radius: 50%;
         overflow: hidden;
         padding: .625rem .75rem;
+    }
+
+    @media (max-width: $max-width-sm) {
+        top: -3.125rem;
+        right: 2.5rem;
     }
 
     &:active, 
