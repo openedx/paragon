@@ -1,3 +1,7 @@
+$zindex-header:                     1075 !default;
+$zindex-sheet-backdrop:             1076 !default;
+$zindex-sheet:                      1077 !default;
+
 .pgn-doc-header {
   z-index: $zindex-header;
 }
