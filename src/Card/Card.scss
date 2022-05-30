@@ -250,10 +250,6 @@
 }
 
 @media (max-width: map-get($grid-breakpoints, "sm")) {
-  .pgn__card {
-    width: 100% !important;
-  }
-
   .pgn__card.horizontal {
     flex-direction: column;
   }
@@ -270,17 +266,13 @@
   .pgn__card-footer {
     flex-direction: column;
 
-    &.horizontal > :not(:last-child) {
-      margin-inline-end: 0;
-    }
-
     .pgn__card-footer-text {
-      margin-top: 10px;
+      margin-top: .625rem;
     }
 
     .btn {
       width: 100%;
-      margin: 10px 0 0;
+      margin: .625rem 0 0;
     }
   }
 
@@ -296,7 +288,7 @@
     flex-direction: column;
 
     .btn:not(:last-child) {
-      margin-bottom: 5px;
+      margin-bottom: .3125rem;
     }
 
     & > * + * {
@@ -310,7 +302,7 @@
     flex-flow: column wrap;
 
     .card {
-      margin: 0 0 12px;
+      margin: 0 0 .75rem;
     }
   }
 
@@ -329,16 +321,20 @@
 }
 
 @media (max-width: map-get($grid-breakpoints, "xl")) {
-  .pgn__card-wrapper.pgn__card-footer {
+  .pgn__card-footer {
     &.horizontal {
       flex-direction: column;
 
       & button {
-        margin: 0 0 5px;
+        margin: 0 0 .3125rem;
+      }
+
+      & > :not(:last-child) {
+        margin-inline-end: 0;
       }
     }
 
-    &-text.horizontal {
+    .pgn__card-footer-text.horizontal {
       margin-top: 1.5rem;
     }
   }

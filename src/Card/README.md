@@ -28,21 +28,22 @@ This component uses a `Card` from react-bootstrap as a base component and extend
 ### Basic Usage
 
 ```jsx live
-<Card style={{ width: '18rem' }}>
-  <Card.ImageCap 
-    src="https://source.unsplash.com/360x200/?nature,flower"
-    srcAlt="Card image"
-  />
-  <Card.Header
-    title="Card Title"
-  />
-  <Card.Section>
-    This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
-  </Card.Section>
-  <Card.Footer>
-    <Button>Action 1</Button>
-  </Card.Footer>
-</Card>
+
+  <Card className="w-100 w-sm-50">
+    <Card.ImageCap 
+      src="https://source.unsplash.com/360x200/?nature,flower"
+      srcAlt="Card image"
+    />
+    <Card.Header
+      title="Card Title"
+    />
+    <Card.Section>
+      This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+    </Card.Section>
+    <Card.Footer>
+      <Button>Action 1</Button>
+    </Card.Footer>
+  </Card>
 ```
 
 ### Clickable variant
@@ -50,7 +51,7 @@ This component uses a `Card` from react-bootstrap as a base component and extend
 You use `isClickable` prop to add additional `hover` and `focus` styling to the `Card`.
 
 ```jsx live
-<Card style={{ width: '18rem' }} isClickable>
+<Card className="w-100 w-sm-50" isClickable>
   <Card.ImageCap 
     src="https://source.unsplash.com/360x200/?nature,flower"
     srcAlt="Card image"
@@ -214,7 +215,7 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
           <Button>Action 2</Button>
         </Card.Footer>
       </Card>
-      <Card style={{width: '40%'}}>
+      <Card className="w-50 w-sm-25">
         <Card.Footer textElement="Stacked vertical variant" isStacked>
           <Button>Action 1</Button>
           <Button>Action 2</Button>
@@ -228,13 +229,13 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
 #### Horizontal variant
 
 ```jsx live
-<Card style={{width: '40%'}}>
-  <Card.Footer className="pgn__card-wrapper" orientation="horizontal">
+<Card className="w-100 w-sm-50">
+  <Card.Footer orientation="horizontal">
     <Button>Action 1</Button>
     <Button>Action 2</Button>
   </Card.Footer>
   <Card.Divider />
-  <Card.Footer className="pgn__card-wrapper" orientation="horizontal" textElement="Optional footer text to display">
+  <Card.Footer orientation="horizontal" textElement="Optional footer text to display">
     <Button>Action 1</Button>
     <Button>Action 2</Button>
   </Card.Footer>
@@ -251,7 +252,7 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
 `ImageCap` is an image that sits on the top or the left edge of a `Card`. Can contain an optional logo image.
 
 ```jsx live
-<Card style={{width: '40%'}}>
+<Card className="w-100 w-sm-50">
   <Card.ImageCap 
     src="https://source.unsplash.com/360x200/?nature,flower"
     srcAlt="Card image"
@@ -279,7 +280,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
 
 ```jsx live
 <>
-  <Card orientation="horizontal" className="mb-4">
+  <Card orientation="horizontal" className="mb-4 w-100 w-sm-75 w-md-100">
     <Card.ImageCap 
       src="https://source.unsplash.com/360x200/?nature,flower"
       srcAlt="Card image"
@@ -302,7 +303,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
       <Button>Action 2</Button>
     </Card.Footer>
   </Card>
-  <Card orientation="horizontal" className="mb-4">
+  <Card orientation="horizontal" className="mb-4 w-100 w-sm-75 w-md-100">
     <Card.ImageCap 
       src="https://source.unsplash.com/360x200/?nature,flower"
       srcAlt="Card image"
@@ -319,7 +320,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
       <Button>Action 2</Button>
     </Card.Footer>
   </Card>
-  <Card orientation="horizontal">
+  <Card orientation="horizontal" className="w-100 w-sm-75 w-md-100">
     <Card.ImageCap 
       src="https://source.unsplash.com/360x200/?nature,flower"
       srcAlt="Card image"
@@ -348,7 +349,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
 #### With image
 
 ```jsx live
-<Card style={{ width: '25rem' }}>
+<Card className="w-100 w-sm-50">
   <Card.ImageCap src="https://source.unsplash.com/360x200/?nature,flower" srcAlt="Card image"/>
   <Card.Section className="text-center">
     <h2>Headline</h2>
@@ -361,7 +362,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
 #### Without image
 
 ```jsx live
-<Card style={{ width: '25rem' }}>
+<Card className="w-100 w-sm-50">
   <Card.Section className="text-center">
     <h2>Headline</h2>
     <p>This is an optional text description.</p>
