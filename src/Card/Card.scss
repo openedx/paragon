@@ -321,21 +321,7 @@
 }
 
 @media (max-width: map-get($grid-breakpoints, "xl")) {
-  .pgn__card-footer {
-    &.horizontal {
-      flex-direction: column;
-
-      & button {
-        margin: 0 0 .3125rem;
-      }
-
-      & > :not(:last-child) {
-        margin-inline-end: 0;
-      }
-    }
-
-    .pgn__card-footer-text.horizontal {
-      margin-top: 1.5rem;
-    }
+  .pgn__card-footer-text.horizontal {
+    margin-top: 1.5rem;
   }
 }
