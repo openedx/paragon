@@ -241,8 +241,11 @@
         display: block;
       }
 
-      .DocSearch-Hit-action-button:focus,
       .DocSearch-Hit-action-button:hover {
+        background: transparent;
+      }
+
+      .DocSearch-Hit-action-button:focus {
         background: transparent;
         border: $border-width solid $dark;
         outline: none;
@@ -257,6 +260,10 @@
       .DocSearch-Hit-Container .DocSearch-Hit-action {
         width: 1.5rem;
         height: 1.5rem;
+      }
+
+      .DocSearch-Hit a:hover {
+        text-decoration: none;
       }
 
       .DocSearch-Hit a .DocSearch-Hit-content-wrapper {
@@ -345,6 +352,33 @@
       display: block;
       background: none;
       border: none;
+    }
+  }
+}
+
+[dir="rtl"] .DocSearch.DocSearch-Button {
+  margin-right: $spacer;
+
+  @media (max-width: map-get($grid-breakpoints, "xl")) {
+    left: 1.875rem;
+    right: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+[dir="rtl"] .DocSearch {
+  .DocSearch-Logo svg {
+    margin-right: .5625rem;
+  }
+
+  .DocSearch-Hit-action {
+    margin-left: .375rem;
+  }
+
+  .DocSearch-Cancel {
+    @media (max-width: map-get($grid-breakpoints, "md")) {
+      margin-right: 1.1875rem;
     }
   }
 }
