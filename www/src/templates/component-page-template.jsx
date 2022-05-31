@@ -12,7 +12,6 @@ import LinkedHeading from '../components/LinkedHeading';
 import { useMediaQuery } from 'react-responsive';
 import { breakpoints } from '../../../src';
 
-
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
   pageContext: { cssVariables },

@@ -1,7 +1,4 @@
-// We use 'stylelint-disable-next-line' because we are using
-// a third party search library Algolia where we cannot edit
-// the class names of the DOM elements
-// stylelint-disable-next-line
+// stylelint-disable selector-class-pattern
 .DocSearch.DocSearch-Button {
   border-radius: 0;
   background-color: $white;
@@ -47,13 +44,13 @@
   &:hover {
     box-shadow: none;
   }
-  // stylelint-disable-next-line
-  .DocSearch-Search-Icon {
+
+  .DocSearch {
     width: 1.125rem;
     height: 1.125rem;
     color: $gray-500;
   }
-  // stylelint-disable-next-line
+
   .DocSearch-Button-Placeholder {
     font-weight: $font-weight-normal;
     font-size: $font-size-sm;
@@ -61,7 +58,7 @@
     color: $gray-500;
     padding-left: .6875rem;
   }
-  // stylelint-disable-next-line
+
   .DocSearch-Button-Keys {
     background-color: $light-300;
     border-radius: $border-width;
@@ -69,7 +66,7 @@
     height: 1.5rem;
     min-width: auto;
     padding: .375rem;
-    // stylelint-disable-next-line
+
     .DocSearch-Button-Key {
       font-size: $font-size-xs;
       line-height: .75rem;
@@ -91,14 +88,13 @@
     }
   }
 }
-// stylelint-disable-next-line
+
 .DocSearch {
-  // stylelint-disable-next-line
   &.DocSearch-Container {
     z-index: $zindex-modal;
     background: rgb(125 125 125 / 65%);
   }
-  // stylelint-disable-next-line
+
   .DocSearch-Modal {
     max-width: 31.25rem;
     background-color: $white;
@@ -111,7 +107,7 @@
       border-radius: 0;
       height: 100vh;
     }
-    // stylelint-disable-next-line
+
     .DocSearch-Footer {
       box-shadow: none;
       border-top: $border-width solid $light-400;
@@ -122,23 +118,23 @@
         border-radius: 0;
         bottom: 0;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Label {
         font-size: .5rem;
         line-height: 1.1875rem;
         font-weight: $font-weight-normal;
         color: $gray-500;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Logo svg {
         margin-left: .5625rem;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Commands {
         display: none;
       }
     }
-    // stylelint-disable-next-line
+
     .DocSearch-Dropdown {
       background-color: $white;
       padding: 0 1.625rem;
@@ -146,13 +142,13 @@
 
       @media (max-width: map-get($grid-breakpoints, "md")) {
         height: 100%;
-        // stylelint-disable-next-line
+        // stylelint-disable-next-line max-line-length
         max-height: calc(var(--docsearch-vh, 1vh) * 100 - var(--docsearch-searchbox-height) - var(--docsearch-spacing) - var(--docsearch-footer-height));
       }
-      // stylelint-disable-next-line
+
       .DocSearch-StartScreen {
         padding: 0 0 1.4375rem;
-        // stylelint-disable-next-line
+
         .DocSearch-Help {
           font-size: .6875rem;
           line-height: .9375rem;
@@ -161,8 +157,8 @@
           text-align: center;
         }
       }
-      // stylelint-disable-next-line
-      .DocSearch-Hit-source, // stylelint-disable-next-line
+
+      .DocSearch-Hit-source,
       .DocSearch-Title {
         font-size: .6875rem;
         line-height: $line-height-sm;
@@ -172,24 +168,24 @@
         padding: 0 0 .5rem;
         overflow: hidden;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Hits mark {
         color: $red;
         padding: 0;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Hit {
         border: $border-width solid $light-400;
         border-radius: $border-radius;
         padding: 0;
         margin-bottom: .375rem;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Hit a:focus {
         border: $border-width solid $dark;
         outline: none;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Hit:last-child {
         margin-bottom: 10.75rem;
 
@@ -197,76 +193,76 @@
           margin-bottom: 0;
         }
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Hit[aria-selected="true"] a {
         background: $dark;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Hit[aria-selected="true"] mark {
         text-decoration: none;
         color: $red !important;
         padding: 0;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-icon svg {
         color: $white;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Screen-Icon svg {
         width: 1.25rem;
         height: 1.25rem;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-NoResults-Prefill-List {
         display: none;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Hit .DocSearch-Hit-icon {
         position: relative;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Hit .DocSearch-Hit-icon svg {
         color: lighten($color: $dark, $amount: .5);
         position: absolute;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Hit a {
         background: $light-200;
         padding: $spacer 1.625rem $spacer 1.875rem;
         box-shadow: none;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Hit-Container {
         padding: 0;
         height: auto;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Hit-Container .DocSearch-Hit-Select-Icon {
         display: block;
       }
-      // stylelint-disable-next-line
-      .DocSearch-Hit-action-button:focus, // stylelint-disable-next-line
+
+      .DocSearch-Hit-action-button:focus,
       .DocSearch-Hit-action-button:hover {
         background: transparent;
         border: $border-width solid $dark;
         outline: none;
         color: $dark;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-action-button:focus {
         border: $border-width solid $white;
         color: $white;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Hit-Container .DocSearch-Hit-action {
         width: 1.5rem;
         height: 1.5rem;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Hit a .DocSearch-Hit-content-wrapper {
         margin: 0 1.125rem;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Hit a .DocSearch-Hit-title {
         font-size: $spacer;
         line-height: $line-height-base;
@@ -274,10 +270,10 @@
       }
     }
   }
-  // stylelint-disable-next-line
+
   .DocSearch-SearchBar {
     padding: 1.625rem;
-    // stylelint-disable-next-line
+
     .DocSearch-Form {
       font-size: $font-size-sm;
       line-height: $line-height-base;
@@ -289,23 +285,23 @@
       height: 3.0625rem;
       padding: .125rem;
       position: relative;
-      // stylelint-disable-next-line
+
       .DocSearch-MagnifierLabel {
         position: absolute;
         right: $spacer;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-LoadingIndicator {
         position: absolute;
         left: .625rem;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-MagnifierLabel .DocSearch-Search-Icon {
         width: 1.125rem;
         height: 1.125rem;
         color: $gray-500;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Input {
         font-size: $font-size-sm;
         line-height: $line-height-base;
@@ -314,7 +310,7 @@
         z-index: 1;
         border: $border-width solid $black;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Reset {
         position: absolute;
         right: .875rem;
@@ -323,18 +319,18 @@
         height: 1.5625rem;
         background-color: $white;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Reset:focus {
         border: $border-width solid $dark;
         border-radius: 50%;
       }
-      // stylelint-disable-next-line
+
       .DocSearch-Reset svg {
         color: $gray-500;
       }
     }
   }
-  // stylelint-disable-next-line
+
   .DocSearch-Cancel {
     &:focus {
       text-decoration: underline;
