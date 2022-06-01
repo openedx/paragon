@@ -118,3 +118,111 @@
     }
   }
 }
+
+.pgn-doc__box-shadow-cells {
+  &:not(:last-child) {
+    margin-right: 66px;
+  }
+}
+
+.pgn-doc__box-shadow-cell {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 60px;
+}
+
+.pgn-doc__box-shadow-level-titles {
+  margin-right: 66px;
+}
+
+.pgn-doc__box-shadow-level-title {
+  width: 100px;
+  height: 100px;
+  text-align: right;
+  margin-bottom: 60px;
+}
+
+.pgn-doc__box-shadow-side-title {
+  width: 100px;
+  height: 100px;
+
+  &:not(:last-child) {
+    margin-right: 66px;
+  }
+}
+
+.pgn-doc__box-shadow-generator {
+  display: flex;
+  flex-direction: column;
+
+  .pgn-doc__box-shadow-generator--preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+    padding: 50px 0;
+
+    .pgn-doc__box-shadow-generator--preview-box {
+      height: 150px;
+      width: 150px;
+      background-color: $white;
+      border-radius: 10px;
+    }
+  }
+
+  .pgn-doc__box-shadow-generator--toolkit {
+    padding: 1rem;
+
+    .pgn-doc__box-shadow-generator--toolkit-code {
+      overflow-x: scroll;
+      max-width: 80%;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      padding: 10px 10px 0;
+
+      .pgn-doc__box-shadow-generator--toolkit-code-prop-code {
+        color: $red;
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  .pgn-doc__box-shadow-toolkit--controls-box {
+    width: 100%;
+    background-color: $dark;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0 0 0 / 50%);
+    color: $white;
+    margin-bottom: 1rem;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+
+    input[type="range"],
+    input[type="color"] {
+      width: 100%;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .form-control {
+      padding: 0;
+      border: none;
+      transition: none;
+      border-radius: 0;
+      height: auto;
+
+      &:focus {
+        box-shadow: 0 0 0 1px rgba($white, .5);
+        border-radius: 5px;
+      }
+
+      &[type="color"] {
+        height: 25px;
+      }
+    }
+  }
+}

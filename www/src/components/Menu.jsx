@@ -140,6 +140,9 @@ const Menu = () => {
               <Link to="/foundations/colors">Colors</Link>
             </li>
             <li className="mr-3">
+              <Link to="/foundations/elevation">Elevation</Link>
+            </li>
+            <li className="mr-3">
               <Link to="/foundations/typography">Typography</Link>
             </li>
             <li className="mr-3">

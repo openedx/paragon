@@ -560,6 +560,30 @@ $level-5-box-shadow:          0 1.25px 2.5rem rgb(0 0 0 / 15%), 0 .5rem 2.5rem r
   }
 }
 
+$levels: (
+  1,
+  2,
+  3,
+  4,
+  5
+) !default;
+
+$sides: (
+  "down",
+  "up",
+  "right",
+  "left",
+  "centered"
+) !default;
+
+@each $level in $levels {
+  @each $side in $sides {
+    .box-shadow-#{$side}-#{$level} {
+      @include pgn-box-shadow($level, $side);
+    }
+  }
+}
+
 $box-shadow-sm:               0 .0625rem .125rem rgba($black, .2) !default;
 $box-shadow:                  0 .125rem .25rem rgba($black, .3) !default;
 $box-shadow-lg:               0 .25rem .5rem rgba($black, .3) !default;
