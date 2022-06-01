@@ -12,19 +12,19 @@ notes: |
   Replaced by Input and ValidationFormGroup
 ---
 
-### minimal usage
+## minimal usage
 
 ```jsx live
 <InputText name="name" label="First Name" value="Foo Bar" />
 ```
 
-### read only
+## read only
 
 ```jsx live
 <InputText name="inputState" label="Input State" value="Read Only" readOnly />
 ```
 
-### validation
+## validation
 
 ```jsx live
 <InputText

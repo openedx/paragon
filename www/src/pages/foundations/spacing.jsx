@@ -83,7 +83,7 @@ export default function SpacingPage() {
         {/* eslint-disable-next-line react/jsx-pascal-case */}
         <SEO title="Spacing" />
         <h1>Spacing</h1>
-        <h3>Spacing according to pixels</h3>
+        <h2>Spacing according to pixels</h2>
         <DataTable
           className="pgn-doc__spacing-table"
           data={spacerValuesTableData}
@@ -104,7 +104,7 @@ export default function SpacingPage() {
         </p>
         <div className="border p-4">
           <div className="d-flex flex-column align-items-center">
-            <h6>Direction</h6>
+            <h4>Direction</h4>
             <div className="mb-2">
               {directions.map(({ key, name }) => (
                 <label

@@ -17,7 +17,7 @@ A box that has selection states. It can be used as an alternative to a radio but
 
 The ``SelectableBox`` can contain any kind of content as long as it is not clickable. In other words, there should be no clickable targets distinct from selection.
 
-### Basic Usage
+## Basic Usage
 
 As ``Checkbox``
 

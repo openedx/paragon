@@ -13,9 +13,9 @@ notes: |
 
 Makes elements remain at the top or bottom of the viewport, like a sticky navbar.
 
-### Basic Usage
+## Basic Usage
 
-#### Top positioning
+### Top positioning
 
 ```jsx live
 <div style={{ display: 'flex', width: '100%', height: '400px', border: '2px dashed grey' }}>
@@ -27,7 +27,7 @@ Makes elements remain at the top or bottom of the viewport, like a sticky navbar
 </div>
 ```
 
-#### Bottom positioning
+### Bottom positioning
 
 ```jsx live
 <div style={{ display: 'flex', width: '100%', height: '400px', border: '2px dashed grey' }}>
@@ -39,7 +39,7 @@ Makes elements remain at the top or bottom of the viewport, like a sticky navbar
 </div>
 ```
 
-#### With offset
+### With offset
 
 Valid `offset` values are the same as for [the spacing classes](/foundations/spacing).
 

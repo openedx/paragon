@@ -13,7 +13,7 @@ notes: |
   Use React.forwardRef for ref forwarding.
 ---
 
-### minimal usage
+## minimal usage
 
 ```jsx live
 <Hyperlink destination="https://www.edx.org">
@@ -21,7 +21,7 @@ notes: |
 </Hyperlink>
 ```
 
-### with blank target
+## with blank target
 
 ```jsx live
 <Hyperlink destination="https://www.edx.org" target="_blank">
@@ -29,7 +29,7 @@ notes: |
 </Hyperlink>
 ```
 
-### blank target without Icon
+## blank target without Icon
 
 ```jsx live
 <Hyperlink destination="https://www.edx.org" target="_blank" showLaunchIcon={false}>
@@ -37,7 +37,7 @@ notes: |
 </Hyperlink>
 ```
 
-### with onClick
+## with onClick
 
 ```jsx live
 <Hyperlink
@@ -52,7 +52,7 @@ notes: |
 </Hyperlink>
 ```
 
-### with icon
+## with icon
 
 ```jsx live
 <Hyperlink destination="https://www.edx.org">
@@ -64,7 +64,7 @@ notes: |
 </Hyperlink>
 ```
 
-### color variants
+## color variants
 
 ```jsx live
 <div className="d-flex flex-column">
@@ -82,7 +82,7 @@ notes: |
 </div>
 ```
 
-### link variants
+## link variants
 
 ```jsx live
 <div className="row">

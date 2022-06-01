@@ -35,7 +35,7 @@ const Responsive = () => {
         {/* eslint-disable-next-line react/jsx-pascal-case */}
         <SEO title="Responsive" />
         <h1>Responsive</h1>
-        <h3>Available breakpoints</h3>
+        <h2>Available breakpoints</h2>
         <p>
           Define the minimum and maximum dimensions at which your layout will change,
           adapting to different screen sizes, for use in media queries.

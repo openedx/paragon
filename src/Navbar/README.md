@@ -23,7 +23,7 @@ A powerful, responsive navigation header, the navbar. Includes support for brand
   </a>
 </p>
 
-### Basic Usage
+## Basic Usage
 
 ```jsx live
 <Navbar bg="light" expand="lg">

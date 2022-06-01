@@ -14,7 +14,7 @@ notes: |
 
 `Tooltips` display informative text when users hover over, focus on, or tap an element.
 
-### Basic Usage
+## Basic Usage
 
 ```jsx live
 <>
@@ -34,7 +34,7 @@ notes: |
 </>
 ```
 
-### Light version
+## Light version
 
 ```jsx live
 <div className="bg-dark-700 p-4">

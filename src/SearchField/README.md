@@ -19,7 +19,7 @@ notes:
 
 Search allows users to quickly find content. The ``Search field`` is made up of the ``Text field`` component and an optional ``Button`` component.
 
-### Basic Usage
+## Basic Usage
 
 ```jsx live
 <SearchField
@@ -27,7 +27,7 @@ Search allows users to quickly find content. The ``Search field`` is made up of 
 />
 ```
 
-### With an initial value
+## With an initial value
 
 ```jsx live
 <SearchField
@@ -36,7 +36,7 @@ Search allows users to quickly find content. The ``Search field`` is made up of 
 />
 ```
 
-### With a placeholder
+## With a placeholder
 
 ```jsx live
 <SearchField
@@ -45,7 +45,7 @@ Search allows users to quickly find content. The ``Search field`` is made up of 
 />
 ```
 
-### With callbacks
+## With callbacks
 
 ```jsx live
 <SearchField
@@ -57,7 +57,7 @@ Search allows users to quickly find content. The ``Search field`` is made up of 
 />
 ```
 
-### With a custom label
+## With a custom label
 
 ```jsx live
 <SearchField
@@ -66,7 +66,7 @@ Search allows users to quickly find content. The ``Search field`` is made up of 
 />
 ```
 
-### With custom screenreader text
+## With custom screenreader text
 
 ```jsx live
 <SearchField
@@ -79,7 +79,7 @@ Search allows users to quickly find content. The ``Search field`` is made up of 
 />
 ```
 
-### With the submit button outside the input
+## With the submit button outside the input
 
 ```jsx live
 <SearchField
@@ -88,11 +88,11 @@ Search allows users to quickly find content. The ``Search field`` is made up of 
 />
 ```
 
-### Advanced Usage
+## Advanced Usage
 
 For needs that deviate from the basic usage above, use `<SearchField.Advanced />`. The `children` elements must contain the `SearchField.Label` and `SearchField.Input` components at a minimum.
 
-### With a custom label
+## With a custom label
 
 ```jsx live
 <SearchField.Advanced
@@ -105,7 +105,7 @@ For needs that deviate from the basic usage above, use `<SearchField.Advanced />
 </SearchField.Advanced>
 ```
 
-### With an initial value
+## With an initial value
 
 ```jsx live
 <SearchField.Advanced
@@ -119,7 +119,7 @@ For needs that deviate from the basic usage above, use `<SearchField.Advanced />
 </SearchField.Advanced>
 ```
 
-### With a placeholder
+## With a placeholder
 
 ```jsx live
 <SearchField.Advanced
@@ -132,7 +132,7 @@ For needs that deviate from the basic usage above, use `<SearchField.Advanced />
 </SearchField.Advanced>
 ```
 
-### With no clear button
+## With no clear button
 
 ```jsx live
 <SearchField.Advanced
@@ -144,7 +144,7 @@ For needs that deviate from the basic usage above, use `<SearchField.Advanced />
 </SearchField.Advanced>
 ```
 
-### With no submit or clear buttons
+## With no submit or clear buttons
 
 ```jsx live
 <SearchField.Advanced
@@ -155,7 +155,7 @@ For needs that deviate from the basic usage above, use `<SearchField.Advanced />
 </SearchField.Advanced>
 ```
 
-### Advanced usage with the submit button outside the input
+## Advanced usage with the submit button outside the input
 
 Use class `pgn__searchfield_wrapper` to group input elements apart from the submit button.
 

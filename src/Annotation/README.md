@@ -17,7 +17,7 @@ Display informative text related to an object on screen. Unlike the tooltip an a
 - Don't put links or interactive elements in annotations - use [Popover](/components/popover) instead
 - Don’t use annotations if trigger is needed - use [Tooltips](/components/tooltip) instead
 
-### Basic Usage
+## Basic Usage
 
 ```jsx live
 <>
@@ -54,7 +54,7 @@ Display informative text related to an object on screen. Unlike the tooltip an a
 </>
 ```
 
-### Referring to other elements
+## Referring to other elements
 
 ```jsx live
 <>

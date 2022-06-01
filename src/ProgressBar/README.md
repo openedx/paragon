@@ -22,7 +22,7 @@ A bar to indicate the completed progress of a task.
   </a>
 </p>
 
-### Basic Usage
+## Basic Usage
 
 ```jsx live
 <>
@@ -36,7 +36,7 @@ A bar to indicate the completed progress of a task.
 </>
 ```
 
-### Basic Usage (Inverse Pallete)
+## Basic Usage (Inverse Pallete)
 
 ```jsx live
 <div className="bg-dark-700 p-4">
@@ -50,7 +50,7 @@ A bar to indicate the completed progress of a task.
 </div>
 ```
 
-### Annotated variant
+## Annotated variant
 
 ```jsx live
 <>

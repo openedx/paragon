@@ -13,7 +13,7 @@ notes: |
   and refresh checkbox designs
 ---
 
-### unselected minimal usage
+## unselected minimal usage
 
 ```jsx live
 <RadioButtonGroup
@@ -31,7 +31,7 @@ notes: |
 </RadioButtonGroup>
 ```
 
-### selected minimal usage
+## selected minimal usage
 
 ```jsx live
 <RadioButtonGroup

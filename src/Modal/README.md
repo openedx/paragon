@@ -12,7 +12,7 @@ notes: |
   Replaced by ModalDialog.
 ---
 
-### Example Usage
+## Example Usage
 
 ```jsx live
 class ModalWrapper extends React.Component {
@@ -66,7 +66,7 @@ class ModalWrapper extends React.Component {
 }
 ```
 
-### configurable buttons
+## configurable buttons
 
 ```jsx
 <Modal
@@ -85,7 +85,7 @@ class ModalWrapper extends React.Component {
 />
 ```
 
-### configurable title and body
+## configurable title and body
 
 ```jsx
 <Modal
@@ -99,7 +99,7 @@ class ModalWrapper extends React.Component {
 />
 ```
 
-### configurable buttons that perform actions
+## configurable buttons that perform actions
 
 ```jsx
 <Modal
@@ -118,7 +118,7 @@ class ModalWrapper extends React.Component {
 />
 ```
 
-### configurable close button string
+## configurable close button string
 
 ```jsx
 <Modal
@@ -130,7 +130,7 @@ class ModalWrapper extends React.Component {
 />
 ```
 
-### configurable close button element
+## configurable close button element
 
 ```jsx
 <Modal

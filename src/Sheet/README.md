@@ -12,7 +12,7 @@ notes: |
   Window-level edge-anchored content container with elevation shadow, with option to block content.
 ---
 
-### Basic Usage
+## Basic Usage
 
 ```jsx live
 

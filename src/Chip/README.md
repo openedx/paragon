@@ -13,7 +13,7 @@ notes: |
 
 ``Chips`` are compact elements that represent an input, attribute, or action. Similar to the [Badge](/components/badge) component, but interactive.
 
-### Basic Usage
+## Basic Usage
 
 ```jsx live
 <div>
@@ -24,7 +24,7 @@ notes: |
 </div>
 ```
 
-### With icon before and remove icon
+## With icon before and remove icon
 
 ```jsx live
 <div>

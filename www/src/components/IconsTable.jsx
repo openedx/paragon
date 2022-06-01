@@ -12,7 +12,7 @@ function IconsTable() {
             key={iconName}
             src={IconComponents[iconName]}
           />
-          <h6 className="mb-0 mr-3 flex-grow-1">{iconName}</h6>
+          <h3 className="mb-0 mr-3 flex-grow-1">{iconName}</h3>
           <code className="bg-light px-2 py-1 rounded">
             <small>
               {`import {${iconName}} from '@edx/paragon/icons';`}

@@ -75,12 +75,12 @@ export default function PageTemplate({
         </MDXProvider>
         {cssVariables && (
           <div className="mb-5">
-            <h3 className="mb-4 pgn-doc__heading" id={cssVariablesUrl}>
+            <h2 className="mb-4 pgn-doc__heading" id={cssVariablesUrl}>
               {cssVariablesTitle}
               <a href={`#${cssVariablesUrl}`} aria-label="Jump to SCSS variables">
                 <span className="pgn-doc__anchor">#</span>
               </a>
-            </h3>
+            </h2>
             <CodeBlock className="language-scss">{cssVariables}</CodeBlock>
           </div>
         )}

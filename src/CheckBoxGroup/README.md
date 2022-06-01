@@ -12,7 +12,7 @@ notes: |
   Refactor to use Input component and refresh checkbox designs
 ---
 
-### Basic Usage
+## Basic Usage
 
 ```jsx live
 <CheckBoxGroup>

@@ -17,7 +17,7 @@ notes: |
 
 Navigation between multiple pages of some set of results. Controls are provided to navigate through multiple pages of related data.
 
-### Basic usage (Default Size)
+## Basic usage (Default Size)
 
 ```jsx live
 <Pagination
@@ -27,7 +27,7 @@ Navigation between multiple pages of some set of results. Controls are provided 
 />
 ```
 
-### Secondary
+## Secondary
 
 ```jsx live
 <Pagination
@@ -38,7 +38,7 @@ Navigation between multiple pages of some set of results. Controls are provided 
 />
 ```
 
-### Reduced
+## Reduced
 
 ```jsx live
 <Pagination
@@ -49,7 +49,7 @@ Navigation between multiple pages of some set of results. Controls are provided 
 />
 ```
 
-### Minimal
+## Minimal
 
 ```jsx live
 <Pagination
@@ -60,7 +60,7 @@ Navigation between multiple pages of some set of results. Controls are provided 
 />
 ```
 
-### Basic usage (Small Size)
+## Basic usage (Small Size)
 
 ```jsx live
 <Pagination
@@ -71,7 +71,7 @@ Navigation between multiple pages of some set of results. Controls are provided 
 />
 ```
 
-### Secondary
+## Secondary
 
 ```jsx live
 <Pagination
@@ -83,7 +83,7 @@ Navigation between multiple pages of some set of results. Controls are provided 
 />
 ```
 
-### Reduced
+## Reduced
 
 ```jsx live
 <Pagination
@@ -95,7 +95,7 @@ Navigation between multiple pages of some set of results. Controls are provided 
 />
 ```
 
-### Minimal
+## Minimal
 
 ```jsx live
 <Pagination
@@ -107,7 +107,7 @@ Navigation between multiple pages of some set of results. Controls are provided 
 />
 ```
 
-### Inverse Pallete (Default Size)
+## Inverse Pallete (Default Size)
 
 ```jsx live
 <div className="bg-dark-700 p-4">
@@ -134,7 +134,7 @@ Navigation between multiple pages of some set of results. Controls are provided 
 </div>
 ```
 
-### Inverse Pallete (Small Size)
+## Inverse Pallete (Small Size)
 
 ```jsx live
 <div className="bg-dark-700 p-4">

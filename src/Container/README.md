@@ -14,7 +14,7 @@ notes: |
 
 The base container to contain, pad, and center content in the viewport. This component extends the React-Bootstrap `Container`.<br/> <a href="https://react-bootstrap.github.io/layout/grid/" target="_blank" rel="noopener noreferrer">See React-Bootstrap for more documentation.</a>
 
-### Basic Usage
+## Basic Usage
 
 ```jsx live
 <div style={{ overflowX: 'auto' }}>

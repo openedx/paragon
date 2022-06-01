@@ -12,7 +12,7 @@ notes: |
   Unneeded. Used in one place (studio-frontend/src/components/EditImageModal/index.jsx)
 ---
 
-### basic usage
+## basic usage
 
 ```jsx live
 <form>
@@ -31,7 +31,7 @@ notes: |
 </form>
 ```
 
-### invalid
+## invalid
 
 ```jsx live
 <form>
@@ -50,7 +50,7 @@ notes: |
 </form>
 ```
 
-### invalid with danger theme
+## invalid with danger theme
 
 ```jsx live
 <form>
@@ -77,7 +77,7 @@ notes: |
 </form>
 ```
 
-### Validated Form
+## Validated Form
 
 ```jsx live
 class ValidatedForm extends React.Component {

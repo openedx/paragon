@@ -17,7 +17,7 @@ notes: |
   </a>
 </p>
 
-### Basic Usage
+## Basic Usage
 
 ```jsx live
 <Figure>

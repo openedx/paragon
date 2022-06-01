@@ -92,7 +92,7 @@ MenuComponentList.propTypes = {
 
 const MenuComponentListCategory = ({ children, title }) => (
   <div className="menu-component-list-category">
-    <h5>{title}</h5>
+    <h3>{title}</h3>
     {children}
   </div>
 );
@@ -114,7 +114,7 @@ const Menu = () => {
     <Container size="xl" className="py-5">
       <Row className="mb-5">
         <Col sm={3}>
-          <h3 className="mb-4">Guides</h3>
+          <h2 className="mb-4">Guides</h2>
           <ul className="list-unstyled small mb-5">
             <li>
               <Link to="/guides/installation-and-usage">

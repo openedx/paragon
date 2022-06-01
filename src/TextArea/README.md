@@ -12,7 +12,7 @@ notes: |
   Replaced by Input and ValidationFormGroup
 ---
 
-### minimal usage
+## minimal usage
 
 ```jsx live
 <TextArea
@@ -22,7 +22,7 @@ notes: |
 />
 ```
 
-### scrollable
+## scrollable
 
 ```jsx live
 <TextArea
@@ -32,7 +32,7 @@ notes: |
 />
 ```
 
-### validation
+## validation
 
 ```jsx live
 <TextArea
@@ -52,7 +52,7 @@ notes: |
 />
 ```
 
-### label as element
+## label as element
 
 ```jsx live
 <TextArea

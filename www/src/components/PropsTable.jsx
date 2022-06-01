@@ -28,7 +28,7 @@ const Prop = ({
   <li className="px-4 border-top border-light-300">
     <div className="my-3">
       <div className="mb-2">
-        <h5 className="d-inline mb-0 mr-1">{`${name} `}</h5>
+        <h1 className="d-inline mb-0 mr-1">{`${name} `}</h1>
         <PropType {...type} />
         {required && (
           <>

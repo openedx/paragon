@@ -16,7 +16,7 @@ notes: |
 
 Popovers are small overlays that present additional content and actions without cluttering the page.
 
-### Basic Usage
+## Basic Usage
 
 ```jsx live
 <>
@@ -40,7 +40,7 @@ Popovers are small overlays that present additional content and actions without 
 </>
 ```
 
-### State variants
+## State variants
 
 ```jsx live
 <>

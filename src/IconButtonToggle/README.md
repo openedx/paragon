@@ -17,7 +17,7 @@ The IconButton with a value matching the 'activeValue' is set to be in the activ
 When one presses on one of the buttons, that button is set to active state, and the callback passed to ``onChange`` is called with that value.
 You can pass a tooltip if you use the ``IconButtonWithTooltip`` subcomponent.
 
-### Basic Usage
+## Basic Usage
 ```jsx live
     () => {
       const [activeValue, setActiveValue] = React.useState('card');
@@ -33,7 +33,7 @@ You can pass a tooltip if you use the ``IconButtonWithTooltip`` subcomponent.
     }
 ```
 
-### Basic Usage (with tooltips)
+## Basic Usage (with tooltips)
 ```jsx live
     () => {
       const [activeValue, setActiveValue] = React.useState('card');

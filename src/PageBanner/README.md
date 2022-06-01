@@ -13,7 +13,7 @@ notes: |
 
 A ``Page Banner`` displays an important, succinct message, and provides actions for users to address (or dismiss the banner). It requires a user action to be dismissed.
 
-### Basic Usage
+## Basic Usage
 
 ```jsx live
 () => {
@@ -33,7 +33,7 @@ A ``Page Banner`` displays an important, succinct message, and provides actions 
 }
 ```
 
-### Variants
+## Variants
 
 The system warning banner is similar to the ``Alert Banner`` banner in styling, except that the text is always default body (14px) and padding has been modified in order to accommodate the ``Page Banner`` component. It cannot be dismissed.
 
