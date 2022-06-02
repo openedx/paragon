@@ -119,6 +119,7 @@
   }
 }
 
+// ELEVATION
 .pgn-doc__box-shadow-cells {
   &:not(:last-child) {
     margin-right: 66px;
@@ -190,6 +191,7 @@
 
   .pgn-doc__box-shadow-toolkit--controls-box {
     width: 100%;
+    min-width: 250px;
     background-color: $dark;
     padding: 1rem;
     border-radius: 10px;

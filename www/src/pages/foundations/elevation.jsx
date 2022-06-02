@@ -7,9 +7,17 @@ import { Button, Form, Container, Input } from '~paragon-react'; // eslint-disab
 const boxShadowSides = ['down', 'up', 'right', 'left', 'centered'];
 const boxShadowLevels = ['0 (None)', 1, 2, 3, 4, 5];
 
+const controlsProps = [
+  { key: 'x', name: 'Offset X' },
+  { key: 'y', name: 'Offset Y' },
+  { key: 'blur', name: 'Blur' },
+  { key: 'spread', name: 'Spread' },
+  { key: 'color', name: 'Color' },
+];
+
 const BoxShadowNode = ({ side }) => {
   const boxShadowElement = boxShadowLevels.map(
-    level => <div className={`pgn-doc__box-shadow-cell box-shadow-${side}-${level}`} />,
+    level => <div key={level} className={`pgn-doc__box-shadow-cell box-shadow-${side}-${level}`} />,
   );
   return (
     <div className="pgn-doc__box-shadow-cells">
@@ -44,56 +52,32 @@ const BoxShadowToolkit = ({ updateBoxShadow, id }) => {
   }, [boxShadowModel]); // eslint-disable-line
 
   return (
-    <aside className="pgn-doc__box-shadow-toolkit--controls-box" style={{ minWidth: '250px' }}>
-      <Form.Label>Offset X</Form.Label>
-      <Input
-        type="range"
-        min="-100"
-        max="100"
-        defaultValue="0"
-        onChange={(e) => updateBoxShadowModel('x', e.target.value)}
-      />
-      <Form.Label>Offset Y</Form.Label>
-      <Input
-        type="range"
-        min="-100"
-        max="100"
-        defaultValue="0"
-        onChange={(e) => updateBoxShadowModel('y', e.target.value)}
-      />
-      <Form.Label>Blur</Form.Label>
-      <Input
-        type="range"
-        min="0"
-        max="100"
-        defaultValue="0"
-        onChange={(e) => updateBoxShadowModel('blur', e.target.value)}
-      />
-      <Form.Label>Spread</Form.Label>
-      <Input
-        type="range"
-        min="0"
-        max="100"
-        defaultValue="0"
-        onChange={(e) => updateBoxShadowModel('spread', e.target.value)}
-      />
-      <Form.Label>Color</Form.Label>
-      <Input
-        type="color"
-        min="0"
-        max="100"
-        defaultValue="0"
-        onChange={(e) => updateBoxShadowModel('color', e.target.value)}
-      />
-      <p>
-        <Form.Checkbox
-          onChange={() => updateBoxShadowModel('inset', !boxShadowModel.inset)}
-          value="Inset"
-          floatLabelLeft
+    <aside className="pgn-doc__box-shadow-toolkit--controls-box">
+      {controlsProps.map(({ key, name }) => (
+        <Form.Label
+          className="d-block"
+          key={key}
+          htmlFor={`toolkit-control-${key}`}
         >
-          Inset:
-        </Form.Checkbox>
-      </p>
+          {name}
+          <Input
+            id={`toolkit-control-${key}`}
+            key={key}
+            min={key === 'x' || key === 'y' ? '-100' : '0'}
+            max="100"
+            type={key === 'color' ? 'color' : 'range'}
+            defaultValue="0"
+            onChange={(e) => updateBoxShadowModel(key, e.target.value)}
+          />
+        </Form.Label>
+      ))}
+      <Form.Checkbox
+        onChange={() => updateBoxShadowModel('inset', !boxShadowModel.inset)}
+        value="Inset"
+        floatLabelLeft
+      >
+        Inset:
+      </Form.Checkbox>
     </aside>
   );
 };
@@ -104,14 +88,14 @@ BoxShadowToolkit.propTypes = {
 };
 
 const BoxShadowGenerator = () => {
-  const [boxShadows, setShadows] = useState([]);
+  const [boxShadows, setBoxShadows] = useState([]);
   const [controls, setControls] = useState([{ index: 0 }]);
 
   const updateBoxShadow = (shadow, id) => {
     const boxShadow = [...boxShadows];
     boxShadow[id] = shadow.inset ? `inset ${shadow.x}px ${shadow.y}px ${shadow.blur}px ${shadow.spread}px ${shadow.color}`
       : `${shadow.x}px ${shadow.y}px ${shadow.blur}px ${shadow.spread}px ${shadow.color}`;
-    setShadows(boxShadow);
+    setBoxShadows(boxShadow);
   };
 
   const addBoxShadow = () => {
@@ -123,7 +107,10 @@ const BoxShadowGenerator = () => {
   return (
     <section className="pgn-doc__box-shadow-generator">
       <div className="pgn-doc__box-shadow-generator--preview">
-        <div className="pgn-doc__box-shadow-generator--preview-box border" style={{ boxShadow: boxShadows.join(',') }} />
+        <div
+          className="pgn-doc__box-shadow-generator--preview-box border"
+          style={{ boxShadow: boxShadows.join(',') }}
+        />
       </div>
       <div className="pgn-doc__box-shadow-generator--toolkit">
         <div className="d-flex overflow-auto mb-2">
@@ -139,7 +126,7 @@ const BoxShadowGenerator = () => {
           <code className="pgn-doc__box-shadow-generator--toolkit-code d-block bg-gray-100">
             box-shadow: {boxShadows.join(', ')};
           </code>
-          <Button onClick={addBoxShadow} variant="dark">Add Layer</Button>
+          <Button onClick={addBoxShadow} variant="dark">Add New Layer</Button>
         </div>
       </div>
     </section>
@@ -147,10 +134,15 @@ const BoxShadowGenerator = () => {
 };
 
 export default function ElevationPage() {
-  const levelTitle = boxShadowLevels.map(level => <h4 className="pgn-doc__box-shadow-level-title">Level {level}</h4>);
-  const sideTitle = boxShadowSides.map(side => <h4 className="pgn-doc__box-shadow-side-title">{side.charAt(0).toUpperCase() + side.substring(1)}</h4>);
+  const levelTitle = boxShadowLevels
+    .map(level => <h4 key={level} className="pgn-doc__box-shadow-level-title">Level {level}</h4>);
+  const sideTitle = boxShadowSides.map(side => (
+    <h4 key={side} className="pgn-doc__box-shadow-side-title">
+      {side.charAt(0).toUpperCase() + side.substring(1)}
+    </h4>
+  ));
 
-  const boxShadowItem = boxShadowSides.map(side => <BoxShadowNode side={side} />);
+  const boxShadowItem = boxShadowSides.map(side => <BoxShadowNode key={side} side={side} />);
   return (
     <Layout>
       <Container size="md" className="py-5">
@@ -236,7 +228,7 @@ export default function ElevationPage() {
           @include <strong>pgn-box-shadow(4, &ldquo;left&rdquo;)</strong>;
         </code>
         <code className="d-block mb-2 bg-gray-100 p-3">
-          @include <strong>pgn-box-shadow(4, &ldquo;centered&rdquo;)</strong>;
+          @include <strong>pgn-box-shadow(5, &ldquo;centered&rdquo;)</strong>;
         </code>
         <br />
 
