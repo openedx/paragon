@@ -1,3 +1,10 @@
+## [19.25.1](https://github.com/openedx/paragon/compare/v19.25.0...v19.25.1) (2022-06-02)
+
+
+### Bug Fixes
+
+* `useWindowSize` to use `useLayoutEffect` instead of `useEffect` ([#1343](https://github.com/openedx/paragon/issues/1343)) ([80481ba](https://github.com/openedx/paragon/commit/80481ba7a9a1ff2396eb2f91c3ac9a0f15a92d30))
+
 # [19.25.0](https://github.com/openedx/paragon/compare/v19.24.0...v19.25.0) (2022-05-27)
 
 
