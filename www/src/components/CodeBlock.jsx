@@ -5,6 +5,7 @@ import React, {
   useMemo,
 } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/duotoneDark';
 import {
@@ -67,6 +68,8 @@ function CodeBlock({
             FormattedMessage,
             formatMessage: intl.formatMessage,
             MenuIcon: ParagonIcons.Menu,
+            Image: children.includes('Dropzone') && typeof window !== 'undefined' ? window.Image : ParagonReact.Image,
+            axios,
           }}
           theme={theme}
         >

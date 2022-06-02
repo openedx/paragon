@@ -1,0 +1,38 @@
+@import "variables";
+
+.pgn__dropzone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  padding: $dropzone-padding;
+  border: $dropzone-border-default;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &:hover {
+    border: $dropzone-border-hover;
+  }
+
+  &:focus {
+    border: $dropzone-border-focus;
+  }
+
+  &.pgn__dropzone-validation-error {
+    border: $dropzone-border-error;
+  }
+
+  &.pgn__dropzone-active {
+    border: $dropzone-border-active;
+  }
+}
+
+.pgn__dropzone-error-wrapper {
+  text-align: center;
+  color: $dropzone-error-wrapper-color;
+}
+
+.pgn__dropzone-generic-alert {
+  width: 100%;
+  margin-bottom: 24px;
+}
