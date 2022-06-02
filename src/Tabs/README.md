@@ -105,11 +105,33 @@ notes: |
 ### With notification
 
 ```jsx live
-<Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+<Tabs defaultActiveKey="profile" id="tab-example-with-notification">
   <Tab eventKey="home" title="Home">
     Hello I am the first panel.
   </Tab>
   <Tab eventKey="profile" title="Profile" notification={1}>
+    Hello I am the second panel.
+  </Tab>
+</Tabs>
+```
+
+### With screen reader text in notification
+
+```jsx live
+<Tabs defaultActiveKey="profile" id="tab-example-with-sr-notification">
+  <Tab eventKey="home" title="Home">
+    Hello I am the first panel.
+  </Tab>
+  <Tab
+    eventKey="profile" 
+    title="Profile" 
+    notification={(
+      <span>
+        1
+        <span className="sr-only">notification</span>
+      </span>
+    )}
+  >
     Hello I am the second panel.
   </Tab>
 </Tabs>
