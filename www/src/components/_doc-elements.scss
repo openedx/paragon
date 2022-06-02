@@ -121,6 +121,8 @@
 
 // ELEVATION
 .pgn-doc__box-shadow-cells {
+  cursor: pointer;
+
   &:not(:last-child) {
     margin-right: 66px;
   }
@@ -181,11 +183,6 @@
       display: flex;
       align-items: center;
       padding: 10px 10px 0;
-
-      .pgn-doc__box-shadow-generator--toolkit-code-prop-code {
-        color: $red;
-        margin-left: 1rem;
-      }
     }
   }
 
@@ -195,7 +192,6 @@
     background-color: $dark;
     padding: 1rem;
     border-radius: 10px;
-    box-shadow: 0 3px 6px rgba(0 0 0 / 50%);
     color: $white;
     margin-bottom: 1rem;
 
@@ -226,5 +222,13 @@
         height: 25px;
       }
     }
+  }
+}
+
+.toast-click {
+  background-color: $dark;
+
+  .toast-header {
+    background-color: $dark;
   }
 }

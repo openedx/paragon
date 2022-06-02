@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
-import { Button, Form, Container, Input } from '~paragon-react'; // eslint-disable-line
+import {
+  Button, Form, Container, Input, Toast,
+} from '~paragon-react'; // eslint-disable-line
 
 const boxShadowSides = ['down', 'up', 'right', 'left', 'centered'];
-const boxShadowLevels = ['0 (None)', 1, 2, 3, 4, 5];
+const boxShadowLevels = [0, 1, 2, 3, 4, 5];
 
 const controlsProps = [
   { key: 'x', name: 'Offset X' },
@@ -16,12 +19,29 @@ const controlsProps = [
 ];
 
 const BoxShadowNode = ({ side }) => {
+  const [show, setShow] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleCopy = () => {
+    setIsCopied(true);
+    setShow(true);
+  };
+
   const boxShadowElement = boxShadowLevels.map(
-    level => <div key={level} className={`pgn-doc__box-shadow-cell box-shadow-${side}-${level}`} />,
+    level => (
+      <CopyToClipboard text={`@include pgn-box-shadow(${level}, "${side}");`} onCopy={handleCopy}>
+        <div key={level} className={`pgn-doc__box-shadow-cell box-shadow-${side}-${level}`} />
+      </CopyToClipboard>
+    ),
   );
   return (
     <div className="pgn-doc__box-shadow-cells">
       { boxShadowElement }
+      {isCopied && (
+      <Toast className="toast-click" onClose={() => setShow(false)} show={show} delay={2000}>
+        Box-shadow copied to clipboard!
+      </Toast>
+      )}
     </div>
   );
 };
@@ -147,7 +167,7 @@ export default function ElevationPage() {
     <Layout>
       <Container size="md" className="py-5">
         <SEO title="Elevation" />
-        <h1>Elevation & Shadow</h1>
+        <h1 className="mb-5">Elevation & Shadow</h1>
         <div className="d-flex">
           <div className="pgn-doc__box-shadow-level-titles">
             {levelTitle}
@@ -160,9 +180,6 @@ export default function ElevationPage() {
           </h4>
           {sideTitle}
         </div>
-
-        <h2>Box-shadow generator</h2>
-        <BoxShadowGenerator />
 
         <h3>Box-shadow Usage</h3>
         <p>Include these box-shadows colors in scss files in one of two ways:</p>
@@ -245,9 +262,12 @@ export default function ElevationPage() {
         <code className="d-block mb-2 bg-gray-100 p-3">
           box-shadow: <strong>$level-4-box-shadow</strong>;
         </code>
-        <code className="d-block mb-2 bg-gray-100 p-3">
+        <code className="d-block mb-5 bg-gray-100 p-3">
           box-shadow: <strong>$level-5-box-shadow</strong>;
         </code>
+
+        <h3>Box-shadow generator</h3>
+        <BoxShadowGenerator />
       </Container>
     </Layout>
   );
