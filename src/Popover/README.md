@@ -14,7 +14,11 @@ notes: |
 
 ---
 
-Popovers are small overlays that present additional content and actions without cluttering the page.
+Popovers are small overlays that present additional content without cluttering the page.
+
+Note that from accessibility perspective `Popover` is treated as a tooltip (the element has `role="tooltip"`) which means that it
+shouldn't contain interactive elements (e.g, buttons, links, etc.), you can read more about tooltip specifications [here](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tooltip_role).
+Try using <Link to="/components/modal/modal-popup/">ModalPopup</Link> instead if you want `Popover`'s behaviour with interactive elements.
 
 ### Basic Usage
 
