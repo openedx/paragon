@@ -65,13 +65,13 @@ A ``Menu`` can be implemented to appear inside a `modalpopup` for a wide variety
 ```jsx live
 () => {
   const [isOpen, open, close] = useToggle(false);
-  const target = React.useRef(null);
+  const [target, setTarget] = React.useState(null);
   const [selected, setSelected] = useState('...');
 
   return (
     <>
       <Badge variant="secondary">I like {selected}</Badge>
-      <Button ref={target} variant="primary" size="inline" onClick={open}>Click Me To Pick:</Button>
+      <Button ref={setTarget} variant="primary" size="inline" onClick={open}>Click Me To Pick:</Button>
       <ModalPopup positionRef={target} isOpen={isOpen} onClose={close} style={{
         width: 500, height: 50
       }}>
