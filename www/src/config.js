@@ -1,6 +1,6 @@
-import hasFeatureFlagEnabled from './utils/hasFeatureFlagEnabled';
+const hasFeatureFlagEnabled = require('./utils/hasFeatureFlagEnabled');
 
-export const FEATURE_LANGUAGE_SWITCHER = 'LANGUAGE_SWITCHER';
+const FEATURE_LANGUAGE_SWITCHER = 'LANGUAGE_SWITCHER';
 
 // Feature flags used throughout the site should be configured here.
 // You should generally allow two ways of enabling a feature flag:
@@ -11,13 +11,13 @@ export const FEATURE_LANGUAGE_SWITCHER = 'LANGUAGE_SWITCHER';
 //    See DIRECTION_SWITCHER feature for example of configuring feature flags this way.
 // 2. As a query parameter in the URL, using hasFeatureFlagEnabled util function.
 //    This will allow to enable feature flag by providing its name as a feature?
-//    query parameter in the URL. (e.g. to enable DIRECTION_SWITCHER feature you would append
-//    '?feature=DIRECTION_SWITCHER' to the URL)
-export const FEATURES = {
+//    query parameter in the URL. (e.g. to enable LANGUAGE_SWITCHER feature you would append
+//    '?feature=LANGUAGE_SWITCHER' to the URL)
+const FEATURES = {
   LANGUAGE_SWITCHER: process.env.FEATURE_LANGUAGE_SWITCHER || hasFeatureFlagEnabled(FEATURE_LANGUAGE_SWITCHER),
 };
 
-export const LANGUAGES = [
+const LANGUAGES = [
   {
     label: 'English',
     code: 'en',
@@ -100,4 +100,7 @@ const INSIGHTS_PAGES = [
 module.exports = {
   INSIGHTS_TABS,
   INSIGHTS_PAGES,
+  FEATURES,
+  LANGUAGES,
+  FEATURE_LANGUAGE_SWITCHER,
 };
