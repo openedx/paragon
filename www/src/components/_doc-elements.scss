@@ -121,8 +121,6 @@
 
 // ELEVATION
 .pgn-doc__box-shadow-cells {
-  cursor: pointer;
-
   &:not(:last-child) {
     margin-right: 66px;
   }
@@ -132,6 +130,17 @@
   width: 100px;
   height: 100px;
   margin-bottom: 60px;
+  cursor: copy !important;
+
+  &:focus,
+  &:hover,
+  &:focus-visible {
+    border: 1px solid $dark;
+  }
+}
+
+.pgn-doc__box-shadow-level--wrapper {
+  overflow-x: scroll;
 }
 
 .pgn-doc__box-shadow-level-titles {
@@ -139,18 +148,37 @@
 }
 
 .pgn-doc__box-shadow-level-title {
-  width: 100px;
+  width: 65px;
   height: 100px;
-  text-align: right;
+  text-align: left;
   margin-bottom: 60px;
+  white-space: nowrap;
+}
+
+.pgn-doc__box-shadow-side-titles {
+  .pgn-doc__box-shadow-side-title:nth-child(1) {
+    margin-right: 44px;
+
+    @media (max-width: 900px) {
+      margin-right: 52px;
+    }
+  }
 }
 
 .pgn-doc__box-shadow-side-title {
-  width: 100px;
-  height: 100px;
+  width: 88px;
+  height: 60px;
 
   &:not(:last-child) {
-    margin-right: 66px;
+    margin-right: 78px;
+
+    @media (max-width: 900px) {
+      margin-right: 135px;
+
+      &:nth-child(2) {
+        margin-right: 120px;
+      }
+    }
   }
 }
 
@@ -183,6 +211,10 @@
       display: flex;
       align-items: center;
       padding: 10px 10px 0;
+
+      @media (max-width: $max-width-sm) {
+        max-width: 100%;
+      }
     }
   }
 
@@ -225,7 +257,11 @@
   }
 }
 
-.toast-click {
+.table-wrapper {
+  overflow-x: scroll;
+}
+
+.pgn-doc__box-shadow--toast {
   background-color: $dark;
 
   .toast-header {

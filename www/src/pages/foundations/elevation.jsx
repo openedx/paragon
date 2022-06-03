@@ -8,7 +8,7 @@ import {
 } from '~paragon-react'; // eslint-disable-line
 
 const boxShadowSides = ['down', 'up', 'right', 'left', 'centered'];
-const boxShadowLevels = [0, 1, 2, 3, 4, 5];
+const boxShadowLevels = [1, 2, 3, 4, 5];
 
 const controlsProps = [
   { key: 'x', name: 'Offset X' },
@@ -19,18 +19,27 @@ const controlsProps = [
 ];
 
 const BoxShadowNode = ({ side }) => {
-  const [show, setShow] = useState(false);
+  const [showToast, setShowToast] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
 
-  const handleCopy = () => {
+  const handleBoxShadowCopy = () => {
     setIsCopied(true);
-    setShow(true);
+    setShowToast(true);
   };
 
   const boxShadowElement = boxShadowLevels.map(
     level => (
-      <CopyToClipboard text={`@include pgn-box-shadow(${level}, "${side}");`} onCopy={handleCopy}>
-        <div key={level} className={`pgn-doc__box-shadow-cell box-shadow-${side}-${level}`} />
+      <CopyToClipboard
+        key={level}
+        text={`@include pgn-box-shadow(${level}, "${side}");`}
+        onCopy={handleBoxShadowCopy}
+      >
+        <div
+          className={`pgn-doc__box-shadow-cell box-shadow-${side}-${level}`}
+          /* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */
+          tabIndex={0}
+          aria-label="Box-shadow cell"
+        />
       </CopyToClipboard>
     ),
   );
@@ -38,9 +47,14 @@ const BoxShadowNode = ({ side }) => {
     <div className="pgn-doc__box-shadow-cells">
       { boxShadowElement }
       {isCopied && (
-      <Toast className="toast-click" onClose={() => setShow(false)} show={show} delay={2000}>
-        Box-shadow copied to clipboard!
-      </Toast>
+        <Toast
+          className="pgn-doc__box-shadow--toast"
+          onClose={() => setShowToast(false)}
+          show={showToast}
+          delay={2000}
+        >
+          Box-shadow copied to clipboard!
+        </Toast>
       )}
     </div>
   );
@@ -72,7 +86,7 @@ const BoxShadowToolkit = ({ updateBoxShadow, id }) => {
   }, [boxShadowModel]); // eslint-disable-line
 
   return (
-    <aside className="pgn-doc__box-shadow-toolkit--controls-box">
+    <section className="pgn-doc__box-shadow-toolkit--controls-box">
       {controlsProps.map(({ key, name }) => (
         <Form.Label
           className="d-block"
@@ -93,12 +107,11 @@ const BoxShadowToolkit = ({ updateBoxShadow, id }) => {
       ))}
       <Form.Checkbox
         onChange={() => updateBoxShadowModel('inset', !boxShadowModel.inset)}
-        value="Inset"
         floatLabelLeft
       >
         Inset:
       </Form.Checkbox>
-    </aside>
+    </section>
   );
 };
 
@@ -142,8 +155,8 @@ const BoxShadowGenerator = () => {
             />
           ))}
         </div>
-        <div className="d-flex justify-content-between">
-          <code className="pgn-doc__box-shadow-generator--toolkit-code d-block bg-gray-100">
+        <div className="d-flex justify-content-between flex-column flex-md-row">
+          <code className="pgn-doc__box-shadow-generator--toolkit-code d-block bg-gray-100 p-3 mb-3 mb-md-0">
             box-shadow: {boxShadows.join(', ')};
           </code>
           <Button onClick={addBoxShadow} variant="dark">Add New Layer</Button>
@@ -161,30 +174,38 @@ export default function ElevationPage() {
       {side.charAt(0).toUpperCase() + side.substring(1)}
     </h4>
   ));
-
   const boxShadowItem = boxShadowSides.map(side => <BoxShadowNode key={side} side={side} />);
+
   return (
     <Layout>
-      <Container size="md" className="py-5">
+      <Container className="py-5" size="md">
+        {/* eslint-disable-next-line react/jsx-pascal-case */}
         <SEO title="Elevation" />
-        <h1 className="mb-5">Elevation & Shadow</h1>
-        <div className="d-flex">
-          <div className="pgn-doc__box-shadow-level-titles">
-            {levelTitle}
+        <h1 className="mb-3">Elevation & Shadow</h1>
+        <h3>Clickable Box-Shadow Grid</h3>
+        <p className="mb-5">
+          You can quickly add a <code>box-shadow</code> with the Clickable Box-Shadow Grid.
+          Click on the <code>box-shadow</code> you like and it will be copied to your clipboard.
+        </p>
+        <div className="pgn-doc__box-shadow-level--wrapper">
+          <div className="d-flex pt-1">
+            <div className="pgn-doc__box-shadow-level-titles">
+              {levelTitle}
+            </div>
+            {boxShadowItem}
           </div>
-          {boxShadowItem}
-        </div>
-        <div className="d-flex">
-          <h4 className="pgn-doc__box-shadow-side-title">
-            Direction
-          </h4>
-          {sideTitle}
+          <div className="d-flex pgn-doc__box-shadow-side-titles">
+            <h4 className="pgn-doc__box-shadow-side-title">
+              Direction
+            </h4>
+            {sideTitle}
+          </div>
         </div>
 
         <h3>Box-shadow Usage</h3>
         <p>Include these box-shadows colors in scss files in one of two ways:</p>
 
-        <h6>Variable name</h6>
+        <h4>Variable name</h4>
         <code className="d-block mb-4 lead bg-gray-100 p-3">
           {'// $level_number-box-shadow '}
           <br />
@@ -199,39 +220,40 @@ export default function ElevationPage() {
           $level-5-box-shadow
         </code>
 
-        <h6>Mixin</h6>
+        <h4>Mixin</h4>
         <code className="d-block mb-4 lead bg-gray-100 p-3">
           pgn-box-shadow($level, $side)
         </code>
+        <div className="table-wrapper">
+          <table className="table pgn-doc__table">
+            <tbody>
+              <tr>
+                <td>
+                  <strong>Direction name</strong>
+                </td>
+                <td>
+                  {boxShadowSides.map(side => (
+                    <code key={side} className="mr-2">{side}</code>
+                  ))}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Levels</strong>
+                  <br />
+                  <p>Box-shadows elevation levels</p>
+                </td>
+                <td>
+                  {boxShadowLevels.map(level => (
+                    <code key={level} className="mr-2">{level}</code>
+                  ))}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-        <table className="table pgn-doc__table">
-          <tbody>
-            <tr>
-              <td>
-                <strong>Direction name</strong>
-              </td>
-              <td>
-                {boxShadowSides.map(side => (
-                  <code key={side} className="mr-2">{side}</code>
-                ))}
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <strong>Levels</strong>
-                <br />
-                <p>Box-shadows elevation levels</p>
-              </td>
-              <td>
-                {boxShadowLevels.map(level => (
-                  <code key={level} className="mr-2">{level}</code>
-                ))}
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h6>Example mixin usage</h6>
+        <h4>Example mixin usage</h4>
         <code className="d-block mb-2 bg-gray-100 p-3">
           @include <strong>pgn-box-shadow(1, &ldquo;down&rdquo;)</strong>;
         </code>
@@ -249,7 +271,7 @@ export default function ElevationPage() {
         </code>
         <br />
 
-        <h6>Example variables usage</h6>
+        <h4>Example variables usage</h4>
         <code className="d-block mb-2 bg-gray-100 p-3">
           box-shadow: <strong>$level-1-box-shadow</strong>;
         </code>
@@ -267,6 +289,13 @@ export default function ElevationPage() {
         </code>
 
         <h3>Box-shadow generator</h3>
+        <p>
+          Use the sliders and the color picker to set the values and watch the live preview until you reach the
+          desired effect. Select the <code>right-down shift</code>, <code>spread</code>, <code>blur</code>,
+          and <code>color</code>. Pick a custom color for
+          the preview background and your object. Web browsers allow us to add more than one shadow to our design
+          and so does this online tool. Use the Add New Layer button to save the current line and set up a new one.
+        </p>
         <BoxShadowGenerator />
       </Container>
     </Layout>
