@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FocusOn } from 'react-focus-on';
 import { Link } from 'gatsby';
 import Menu from './Menu';
+import Search from './Seach';
 import {
   useToggle,
   Nav,
@@ -25,7 +26,7 @@ const Navbar = ({
 }) => (
   <Container as="header" className="py-3 bg-dark text-white sticky-top">
     <Row className="align-items-center text-center text-sm-left">
-      <Col className="mb-2 mb-sm-0" sm={4}>
+      <Col className="mb-2 mb-sm-0 col-4" sm={5}>
         <Button
           className="d-inline-flex align-items-center"
           variant="inverse-tertiary"
@@ -35,7 +36,7 @@ const Navbar = ({
           Menu
         </Button>
       </Col>
-      <Col className="mb-2 mb-sm-0" sm={4}>
+      <Col className="mb-2 mb-sm-0 col-4" sm={2}>
         <Link
           to="/"
           style={{ textDecoration: 'none' }}
@@ -62,8 +63,8 @@ const Navbar = ({
           )}
         </Link>
       </Col>
-      <Col className="small" sm={4}>
-        <Nav className="justify-content-center justify-content-sm-end align-items-center">
+      <Col className="small" sm={12} xl={5}>
+        <Nav className="justify-content-center justify-content-xl-end align-items-center">
           <img
             className="d-inline-block mr-2"
             src="https://img.shields.io/npm/v/@edx/paragon.svg"
@@ -96,6 +97,7 @@ const Navbar = ({
               size="sm"
             />
           </Nav.Item>
+          <Col as={Search} />
         </Nav>
       </Col>
     </Row>
