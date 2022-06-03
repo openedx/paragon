@@ -15,15 +15,18 @@ notes: |
 
 A generic component for creating accessible modal popup objects.
 
+Note that `ModalPopup` expects DOM node, not ref, in order to be able to update when the node changes.
+A proper way to implement this is to use [callback refs](https://reactjs.org/docs/refs-and-the-dom.html#callback-refs) with `useState` hook as in the example below.
+
 ```jsx live
 () => {
   const [isOpen, open, close] = useToggle(false);
-  const target = React.useRef(null);
+  const [target, setTarget] = React.useState(null);
 
   return (
     <>
       <div className="d-flex">
-        <Button ref={target} variant="outline-primary" onClick={open}>Open modal popup</Button>
+        <Button ref={setTarget} variant="outline-primary" onClick={open}>Open modal popup</Button>
       </div>
       <ModalPopup positionRef={target} isOpen={isOpen} onClose={close}>
         <div className="bg-white p-3 rounded shadow" style={{textAlign: 'start'}}>
