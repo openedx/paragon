@@ -77,6 +77,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.16.7",
     "@babel/preset-env": "^7.16.8",
     "@babel/preset-react": "^7.16.7",
+    "@edx/browserslist-config": "1.1.0",
     "@edx/eslint-config": "^3.0.0",
     "@formatjs/cli": "^4.8.4",
     "@semantic-release/changelog": "^5.0.1",
@@ -146,8 +147,7 @@
     ]
   },
   "browserslist": [
-    "last 2 versions",
-    "not ie < 11"
+    "extends @edx/browserslist-config"
   ],
   "husky": {
     "hooks": {
