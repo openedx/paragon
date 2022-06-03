@@ -97,7 +97,7 @@ const Navbar = ({
               size="sm"
             />
           </Nav.Item>
-          <Col as={Search} />
+          <Search />
         </Nav>
       </Col>
     </Row>
