@@ -88,3 +88,7 @@ Display informative text related to an object on screen. Unlike the tooltip an a
   </div>
 </>
 ```
+
+<testguide
+  selectors="`pgn__annotation`"
+/>

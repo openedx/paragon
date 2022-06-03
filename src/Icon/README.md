@@ -29,3 +29,8 @@ HTML attributes can be passed to this component allowing for customization of th
   <Icon src={Add} className="text-white" style={{ height: '48px', width: '48px' }} />
 </div>
 ```
+
+<testguide
+  dataTestId
+  selectors="`pgn__icon`"
+/>

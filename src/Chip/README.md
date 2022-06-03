@@ -33,3 +33,9 @@ notes: |
   <Chip variant="dark" iconBefore={Person} iconAfter={CloseSmall} disabled>New</Chip>
 </div>
 ```
+
+<testguide
+  events="`onClick`"
+  dataTestId
+  selectors="`pgn__chip`"
+/>

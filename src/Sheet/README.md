@@ -64,3 +64,7 @@ notes: |
   )
 }
 ```
+
+<testguide
+  selectors='`pgn__sheet-component`, `role="presentation"`'
+/>

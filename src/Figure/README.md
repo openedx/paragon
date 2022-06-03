@@ -30,3 +30,7 @@ notes: |
   </Figure.Caption>
 </Figure>
 ```
+
+<testguide
+  selectors="`figure`"
+/>

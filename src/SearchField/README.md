@@ -171,3 +171,10 @@ Use class `pgn__searchfield_wrapper` to group input elements apart from the subm
   <SearchField.SubmitButton submitButtonLocation="external" />
 </SearchField.Advanced>
 ```
+
+<testguide
+  defaultText="`label: 'search'`, `submitButton: 'submit search'`, `clearButton: 'clear search'`, `buttonText: 'Search'`"
+  events="`onSubmit`, `onChange`, `onClear`"
+  dataTestId
+  selectors="`pgn__searchfield_wrapper`"
+/>

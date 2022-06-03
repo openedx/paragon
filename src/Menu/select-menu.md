@@ -42,3 +42,10 @@ The ``Modal`` brings focus to the first menu element upon the click of the trigg
   <MenuItem>M. Hortens</MenuItem>
 </SelectMenu>
 ```
+
+<testguide
+  defaultText="`defaultMessage: 'Select...'`"
+  events="`onClick`"
+  dataTestId
+  selectors="`pgn__menu-select`"
+/>

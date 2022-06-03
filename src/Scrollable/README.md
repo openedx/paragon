@@ -112,3 +112,8 @@ If you don't specify height you will get a default height per the Scrollable com
   </div>
 </Scrollable>
 ```
+
+<testguide
+  dataTestId
+  selectors="`pgn__scrollable-body`"
+/>

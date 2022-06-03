@@ -275,3 +275,8 @@ also required for steps to rerender correctly here.
   )
 }
 ```
+
+<testguide
+  dataTestId
+  selectors="`pgn__stepper-step`"
+/>

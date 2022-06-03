@@ -41,3 +41,8 @@ The base container to contain, pad, and center content in the viewport. This com
     </div>
 </div>
 ```
+
+<testguide
+  dataTestId
+  selectors="`container-fluid`"
+/>

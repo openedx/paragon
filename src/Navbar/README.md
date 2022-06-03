@@ -48,3 +48,10 @@ A powerful, responsive navigation header, the navbar. Includes support for brand
   </Navbar.Collapse>
 </Navbar>
 ```
+
+<testguide
+  defaultText="`role: 'navigation'`"
+  events="`onToggle`, `onSelect`"
+  dataTestId
+  selectors="`navbar`"
+/>

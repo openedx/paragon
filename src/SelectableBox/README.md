@@ -156,3 +156,8 @@ As ``Checkbox`` with ``isIndeterminate``
   );
 }
 ```
+
+<testguide
+  events="`onChange`, `onClick`, `onKeyPress`"
+  selectors="`pgn__selectable_box`"
+/>

@@ -88,3 +88,9 @@ A ``Menu`` can be implemented to appear inside a `modalpopup` for a wide variety
   )
 }
 ```
+
+<testguide
+  events="`onClick`"
+  dataTestId
+  selectors="`pgn__menu`"
+/>

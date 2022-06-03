@@ -58,3 +58,9 @@ Navigation bits in Bootstrap all share a general ``Nav`` component and styles. S
   );
 }
 ```
+
+<testguide
+  events="`onKeyDown`, `onClick`"
+  dataTestId
+  selectors="`nav`, `nav-pills`"
+/>

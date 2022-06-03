@@ -94,3 +94,9 @@ notes: ''
   );
 }
 ```
+
+<testguide
+  defaultText="`closeLabel: 'Close'`, `delay: 5000`"
+  events="`onClose`, `onClick`, `onMouseOut`,`onMouseOver`"
+  selectors="`toast`, `toast-header`"
+/>

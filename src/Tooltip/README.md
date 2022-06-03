@@ -53,3 +53,8 @@ notes: |
   ))}
 </div>
 ```
+
+<testguide
+  defaultText="`bsPrefix: 'tooltip'`"
+  dataTestId
+/>

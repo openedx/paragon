@@ -62,3 +62,9 @@ notes: |
   </Carousel.Item>
 </Carousel>
 ```
+
+<testguide
+  defaultText="`nextLabel: 'Next'`, `prevLabel: 'Previous'`"
+  events="`onSelect`, `onSlid`, `onSlide`"
+  selectors="`carousel`"
+/>

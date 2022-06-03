@@ -71,3 +71,7 @@ The checkpoint objects themselves have additional props that can override the pr
     );
 }
 ```
+
+<testguide
+  events="`onAdvance`, `onDismiss`, `onEnd`, `keydown`"
+/>

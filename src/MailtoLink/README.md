@@ -75,3 +75,10 @@ notes: |
   edx@example.com
 </MailtoLink>
 ```
+
+<testguide
+  defaultText="`alternativeText: 'in a new tab'`, `title: 'Opens in a new tab'`"
+  events="`onClick`"
+  dataTestId
+  selectors="`pgn__mailtolink`"
+/>

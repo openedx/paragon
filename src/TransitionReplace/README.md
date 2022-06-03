@@ -130,3 +130,8 @@ function DemoTransitionReplace() {
   );
 }
 ```
+
+<testguide
+  events="`onChildEnter`, `onChildEntering`, `onChildEntered`, `onChildExit`, `onChildExiting`, `onChildExited`"
+  selectors="`pgn-transition-replace-group`"
+/>

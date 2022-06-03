@@ -39,3 +39,8 @@ It is used in the global navigation’s user menu and may also be used to indica
   <Avatar size="huge" />
 </>
 ```
+
+<testguide
+  dataTestId
+  selectors="`btn-avatar`"
+/>

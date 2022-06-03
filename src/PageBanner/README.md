@@ -70,3 +70,9 @@ The system warning banner is similar to the ``Alert Banner`` banner in styling, 
   )
 }
 ```
+
+<testguide
+  defaultText="`dismissAltText: 'Dismiss'`"
+  events="`onClick`"
+  selectors="`pgn__pageBanner-component`"
+/>

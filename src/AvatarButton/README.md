@@ -104,3 +104,8 @@ For use in mobile viewports or constrained views.
 ```
 
 CSS overrides can be applied to this component through the `.btn-avatar` class name.
+
+<testguide
+  dataTestId
+  selectors="`btn-avatar`, `pgn__avatar-button-avatar`"
+/>

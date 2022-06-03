@@ -79,3 +79,8 @@ Use as a secondary navigation pattern to help convey hierarchy and enable naviga
   spacer={<span className="custom-spacer">/</span>}
 />
 ```
+
+<testguide
+  events="`clickHandler`"
+  selectors="`pgn__breadcrumb`"
+/>

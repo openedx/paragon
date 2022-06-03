@@ -195,3 +195,5 @@ notes: |
   <div>Hello I am the third panel</div>
 </Tabs.Deprecated>
 ```
+
+<testguide />

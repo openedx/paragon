@@ -89,3 +89,9 @@ The stateful button is a button used to display an actionable icon.
   );
 };
 ```
+
+<testguide
+  events="`onClick`"
+  dataTestId
+  selectors="`pgn__stateful-btn`"
+/>
