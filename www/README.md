@@ -67,7 +67,7 @@ A feature flag may be enabled in two ways:
 2. Query parameter. Adding `?feature=` to the URL as a query parameter, you can temporarily enable one or more features.
 
 ### Feature Flags information
-Listed features bellow are set up in the doc site. Some features can be enabled by default. To disable a specific feature, don't pass anything to the corresponding variable.
+Listed features below are set up in the doc site. Some features can be enabled by default. To disable a specific feature, don't pass anything to the corresponding variable.
 
 #### Axe
 [Axe](https://www.npmjs.com/package/axe-core) is an accessibility testing engine for websites and other HTML-based user interfaces. By default, it is enabled and controlled by `FEATURE_ENABLE_AXE`. Open the console on a particular page on the site to see warning and errors from this package.
