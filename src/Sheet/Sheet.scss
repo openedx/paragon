@@ -1,3 +1,5 @@
+$zindex-sheet-value:                     1077 !default;
+
 .pgn__sheet-skrim {
   width: 100%;
   height: 100%;
@@ -35,7 +37,7 @@
   position: fixed;
   padding: 1.25rem;
   background-color: white;
-  z-index: $zindex-sheet;
+  z-index: $zindex-sheet-value;
 
   &.pgn__sheet__dark {
     background-color: $dark-500;
