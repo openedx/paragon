@@ -576,14 +576,6 @@ $sides: (
   "centered"
 ) !default;
 
-@each $level in $levels {
-  @each $side in $sides {
-    .box-shadow-#{$side}-#{$level} {
-      @include pgn-box-shadow($level, $side);
-    }
-  }
-}
-
 $box-shadow-sm:               0 .0625rem .125rem rgba($black, .2) !default;
 $box-shadow:                  0 .125rem .25rem rgba($black, .3) !default;
 $box-shadow-lg:               0 .25rem .5rem rgba($black, .3) !default;

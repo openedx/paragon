@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 import {
   Button, Form, Container, Input, Toast,
-} from '~paragon-react'; // eslint-disable-line
+} from '~paragon-react'; // eslint-disable-line import/no-unresolved
 
 const boxShadowSides = ['down', 'up', 'right', 'left', 'centered'];
 const boxShadowLevels = [1, 2, 3, 4, 5];
@@ -18,7 +18,7 @@ const controlsProps = [
   { key: 'color', name: 'Color' },
 ];
 
-const BoxShadowNode = ({ side }) => {
+const BoxShadowNode = () => {
   const [showToast, setShowToast] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
 
@@ -27,10 +27,10 @@ const BoxShadowNode = ({ side }) => {
     setShowToast(true);
   };
 
-  const boxShadowElement = boxShadowLevels.map(
-    level => (
+  const boxShadowCells = boxShadowLevels.map(level => (
+    boxShadowSides.map(side => (
       <CopyToClipboard
-        key={level}
+        key={side}
         text={`@include pgn-box-shadow(${level}, "${side}");`}
         onCopy={handleBoxShadowCopy}
       >
@@ -41,11 +41,12 @@ const BoxShadowNode = ({ side }) => {
           aria-label="Box-shadow cell"
         />
       </CopyToClipboard>
-    ),
-  );
+    ))
+  ));
+
   return (
     <div className="pgn-doc__box-shadow-cells">
-      { boxShadowElement }
+      { boxShadowCells }
       {isCopied && (
         <Toast
           className="pgn-doc__box-shadow--toast"
@@ -60,10 +61,6 @@ const BoxShadowNode = ({ side }) => {
   );
 };
 
-BoxShadowNode.propTypes = {
-  side: PropTypes.string.isRequired,
-};
-
 const BoxShadowToolkit = ({ updateBoxShadow, id }) => {
   const [boxShadowModel, setBoxShadowModel] = useState({
     x: 10,
@@ -74,16 +71,16 @@ const BoxShadowToolkit = ({ updateBoxShadow, id }) => {
     inset: false,
   });
 
-  const updateBoxShadowModel = (props, value) => {
+  const updateBoxShadowModel = (property, value) => {
     setBoxShadowModel({
       ...boxShadowModel,
-      [props]: value,
+      [property]: value,
     });
   };
 
   useEffect(() => {
     updateBoxShadow(boxShadowModel, id);
-  }, [boxShadowModel]); // eslint-disable-line
+  }, [boxShadowModel]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <section className="pgn-doc__box-shadow-toolkit--controls-box">
@@ -156,7 +153,7 @@ const BoxShadowGenerator = () => {
           ))}
         </div>
         <div className="d-flex justify-content-between flex-column flex-md-row">
-          <code className="pgn-doc__box-shadow-generator--toolkit-code d-block bg-gray-100 p-3 mb-3 mb-md-0">
+          <code className="pgn-doc__box-shadow-generator--toolkit-code mb-3 mb-md-0">
             box-shadow: {boxShadows.join(', ')};
           </code>
           <Button onClick={addBoxShadow} variant="dark">Add New Layer</Button>
@@ -167,14 +164,17 @@ const BoxShadowGenerator = () => {
 };
 
 export default function ElevationPage() {
-  const levelTitle = boxShadowLevels
-    .map(level => <h4 key={level} className="pgn-doc__box-shadow-level-title">Level {level}</h4>);
-  const sideTitle = boxShadowSides.map(side => (
-    <h4 key={side} className="pgn-doc__box-shadow-side-title">
-      {side.charAt(0).toUpperCase() + side.substring(1)}
-    </h4>
+  const levelTitle = boxShadowLevels.map(level => (
+    <h3 key={level} className="pgn-doc__box-shadow-level-title">
+      Level {level}
+    </h3>
   ));
-  const boxShadowItem = boxShadowSides.map(side => <BoxShadowNode key={side} side={side} />);
+
+  const sideTitle = boxShadowSides.map(side => (
+    <h3 key={side} className="pgn-doc__box-shadow-side-title">
+      {side.charAt(0).toUpperCase() + side.substring(1)}
+    </h3>
+  ));
 
   return (
     <Layout>
@@ -182,22 +182,22 @@ export default function ElevationPage() {
         {/* eslint-disable-next-line react/jsx-pascal-case */}
         <SEO title="Elevation" />
         <h1 className="mb-3">Elevation & Shadow</h1>
-        <h3>Clickable Box-Shadow Grid</h3>
+        <h2 className="pgn-doc__box-shadow--title">Clickable Box-Shadow Grid</h2>
         <p className="mb-5">
           You can quickly add a <code>box-shadow</code> with the Clickable Box-Shadow Grid.
           Click on the <code>box-shadow</code> you like and it will be copied to your clipboard.
         </p>
-        <div className="pgn-doc__box-shadow-level--wrapper">
+        <div className="pgn-doc__box-shadow-wrapper">
           <div className="d-flex pt-1">
             <div className="pgn-doc__box-shadow-level-titles">
               {levelTitle}
             </div>
-            {boxShadowItem}
+            <BoxShadowNode />
           </div>
-          <div className="d-flex pgn-doc__box-shadow-side-titles">
-            <h4 className="pgn-doc__box-shadow-side-title">
+          <div className="pgn-doc__box-shadow-side-titles">
+            <h3 className="pgn-doc__box-shadow-side-title">
               Direction
-            </h4>
+            </h3>
             {sideTitle}
           </div>
         </div>
@@ -207,25 +207,20 @@ export default function ElevationPage() {
 
         <h4>Variable name</h4>
         <code className="d-block mb-4 lead bg-gray-100 p-3">
-          {'// $level_number-box-shadow '}
-          <br />
-          $level-1-box-shadow
-          <br />
-          $level-2-box-shadow
-          <br />
-          $level-3-box-shadow
-          <br />
-          $level-4-box-shadow
-          <br />
-          $level-5-box-shadow
+          <ul className="pgn-doc__level-number__box-shadow-variables">
+            <li>{'// $level_number-box-shadow '}</li>
+            {boxShadowLevels.map(level => (
+              <li key={level}>$level-{level}-box-shadow</li>
+            ))}
+          </ul>
         </code>
 
         <h4>Mixin</h4>
         <code className="d-block mb-4 lead bg-gray-100 p-3">
           pgn-box-shadow($level, $side)
         </code>
-        <div className="table-wrapper">
-          <table className="table pgn-doc__table">
+        <div className="pgn-doc__box-shadow--table-wrapper">
+          <table className="pgn-doc__table table">
             <tbody>
               <tr>
                 <td>
@@ -254,41 +249,23 @@ export default function ElevationPage() {
         </div>
 
         <h4>Example mixin usage</h4>
-        <code className="d-block mb-2 bg-gray-100 p-3">
-          @include <strong>pgn-box-shadow(1, &ldquo;down&rdquo;)</strong>;
-        </code>
-        <code className="d-block mb-2 bg-gray-100 p-3">
-          @include <strong>pgn-box-shadow(2, &ldquo;up&rdquo;)</strong>;
-        </code>
-        <code className="d-block mb-2 bg-gray-100 p-3">
-          @include <strong>pgn-box-shadow(3, &ldquo;right&rdquo;)</strong>;
-        </code>
-        <code className="d-block mb-2 bg-gray-100 p-3">
-          @include <strong>pgn-box-shadow(4, &ldquo;left&rdquo;)</strong>;
-        </code>
-        <code className="d-block mb-2 bg-gray-100 p-3">
-          @include <strong>pgn-box-shadow(5, &ldquo;centered&rdquo;)</strong>;
-        </code>
+        {boxShadowLevels.map(level => (
+          boxShadowSides.map(side => (
+            <code className="d-block mb-2 bg-gray-100 p-3">
+              @include <strong>pgn-box-shadow({level}, &ldquo;{side}&rdquo;)</strong>;
+            </code>
+          ))
+        ))}
         <br />
 
         <h4>Example variables usage</h4>
-        <code className="d-block mb-2 bg-gray-100 p-3">
-          box-shadow: <strong>$level-1-box-shadow</strong>;
-        </code>
-        <code className="d-block mb-2 bg-gray-100 p-3">
-          box-shadow: <strong>$level-2-box-shadow</strong>;
-        </code>
-        <code className="d-block mb-2 bg-gray-100 p-3">
-          box-shadow: <strong>$level-3-box-shadow</strong>;
-        </code>
-        <code className="d-block mb-2 bg-gray-100 p-3">
-          box-shadow: <strong>$level-4-box-shadow</strong>;
-        </code>
-        <code className="d-block mb-5 bg-gray-100 p-3">
-          box-shadow: <strong>$level-5-box-shadow</strong>;
-        </code>
+        {boxShadowLevels.map(level => (
+          <code key={level} className="d-block mb-2 bg-gray-100 p-3">
+            box-shadow: <strong>$level-{level}-box-shadow</strong>;
+          </code>
+        ))}
 
-        <h3>Box-shadow generator</h3>
+        <h3 className="mt-5">Box-shadow generator</h3>
         <p>
           Use the sliders and the color picker to set the values and watch the live preview until you reach the
           desired effect. Select the <code>right-down shift</code>, <code>spread</code>, <code>blur</code>,
