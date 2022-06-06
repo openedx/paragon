@@ -119,14 +119,6 @@
   }
 }
 
-@each $level in $levels {
-  @each $side in $sides {
-    .box-shadow-#{$side}-#{$level} {
-      @include pgn-box-shadow($level, $side);
-    }
-  }
-}
-
 .pgn-doc__box-shadow--title {
   font-size: 1.375rem;
   line-height: 1.25;

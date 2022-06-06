@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 import {
@@ -20,34 +19,34 @@ const controlsProps = [
 
 const BoxShadowNode = () => {
   const [showToast, setShowToast] = useState(false);
-  const [isCopied, setIsCopied] = useState(false);
 
-  const handleBoxShadowCopy = () => {
-    setIsCopied(true);
+  const isBoxShadowCopied = (level, side) => {
+    navigator.clipboard.writeText(`@include pgn-box-shadow(${level}, "${side}");`);
     setShowToast(true);
   };
 
   const boxShadowCells = boxShadowLevels.map(level => (
     boxShadowSides.map(side => (
-      <CopyToClipboard
+      <div
         key={side}
-        text={`@include pgn-box-shadow(${level}, "${side}");`}
-        onCopy={handleBoxShadowCopy}
-      >
-        <div
-          className={`pgn-doc__box-shadow-cell box-shadow-${side}-${level}`}
-          /* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */
-          tabIndex={0}
-          aria-label="Box-shadow cell"
-        />
-      </CopyToClipboard>
+        role="button"
+        className={`pgn-doc__box-shadow-cell box-shadow-${side}-${level}`}
+        tabIndex={0}
+        aria-label="Box-shadow cell"
+        onClick={() => isBoxShadowCopied(level, side)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            isBoxShadowCopied(level, side);
+          }
+        }}
+      />
     ))
   ));
 
   return (
     <div className="pgn-doc__box-shadow-cells">
       { boxShadowCells }
-      {isCopied && (
+      {(
         <Toast
           className="pgn-doc__box-shadow--toast"
           onClose={() => setShowToast(false)}
@@ -251,7 +250,7 @@ export default function ElevationPage() {
         <h4>Example mixin usage</h4>
         {boxShadowLevels.map(level => (
           boxShadowSides.map(side => (
-            <code className="d-block mb-2 bg-gray-100 p-3">
+            <code key={side} className="d-block mb-2 bg-gray-100 p-3">
               @include <strong>pgn-box-shadow({level}, &ldquo;{side}&rdquo;)</strong>;
             </code>
           ))

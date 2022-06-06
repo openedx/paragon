@@ -103,3 +103,11 @@ $indexes: map-merge(
     z-index: $size !important;
   }
 }
+
+@each $level in $levels {
+  @each $side in $sides {
+    .box-shadow-#{$side}-#{$level} {
+      @include pgn-box-shadow($level, $side);
+    }
+  }
+}
