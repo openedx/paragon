@@ -109,3 +109,43 @@
 .modal-footer {
   flex: 0 0 auto;
 }
+
+.pgn__modal-popup__tooltip {
+  margin: .5rem 0;
+  border: $border-width solid rgba(0 0 0 / 20%);
+}
+
+.pgn__modal-popup__arrow {
+  position: absolute;
+  left: 5.438rem;
+  width: 1rem;
+  height: .5rem;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border-color: transparent;
+    border-style: solid;
+    border-width: .5rem .5rem 0;
+  }
+}
+
+.pgn__modal-popup__arrow::before {
+  border-top-color: rgba(0 0 0 / 20%);
+}
+
+[data-popper-placement^="bottom-start"] .pgn__modal-popup__arrow {
+  transform: rotate(180deg);
+  top: 0;
+}
+
+[data-popper-placement^="top-start"] .pgn__modal-popup__arrow {
+  bottom: 0;
+}
+
+.pgn__modal-popup__arrow::after,
+[data-popper-placement^="top-start"] .pgn__modal-popup__arrow::after {
+  bottom: $border-width;
+  border-top-color: $white;
+}

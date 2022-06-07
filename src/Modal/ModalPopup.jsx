@@ -30,6 +30,7 @@ const ModalPopup = ({
             {isOpen && (
               <>
                 {children}
+                <div id="arrow" className="pgn__modal-popup__arrow" data-popper-arrow="" />
               </>
             )}
           </FocusOn>
