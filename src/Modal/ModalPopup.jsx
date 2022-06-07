@@ -28,9 +28,10 @@ const ModalPopup = ({
             onClickOutside={onClose}
           >
             {isOpen && (
-              <>
+              <div id="too">
                 {children}
-              </>
+                <div id="arrow" className="pgn__modal-popup__arrow" data-popper-arrow="" />
+              </div>
             )}
           </FocusOn>
         </PopperElement>
