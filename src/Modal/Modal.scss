@@ -2,6 +2,8 @@
 @import "~bootstrap/scss/modal";
 @import "ModalDialog";
 
+$zindex-modal-layer:                      1077 !default;
+
 .pgn__modal-layer {
   height: 100%;
   left: 0;
@@ -9,7 +11,7 @@
   position: fixed;
   top: 0;
   width: 100vw;
-  z-index: $zindex-modal;
+  z-index: $zindex-modal-layer;
   -webkit-overflow-scrolling: touch;
 }
 

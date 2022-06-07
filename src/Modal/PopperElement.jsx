@@ -17,7 +17,7 @@ const PopperElement = ({
   }
 
   return (
-    <div ref={setPopperElement} style={{ ...styles.popper, zIndex: 2000 }} {...attributes.popper}>
+    <div ref={setPopperElement} style={{ ...styles.popper, zIndex: 1074 }} {...attributes.popper}>
       {children}
     </div>
   );
