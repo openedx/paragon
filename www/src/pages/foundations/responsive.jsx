@@ -52,7 +52,7 @@ const Responsive = () => {
         >
           <DataTable.Table />
         </DataTable>
-        <h3 className="mt-3">Basic usage</h3>
+        <h2 className="mt-3">Basic usage</h2>
         <p>
           To access or change the breakpoints in the scss use <code>$grid-breakpoints</code> variable.
         </p>

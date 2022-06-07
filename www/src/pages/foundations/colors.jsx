@@ -84,7 +84,7 @@ const renderColorRamp = (themeName, unusedLevels) => (
     key={`${themeName}`}
     style={{ flexBasis: '24%', marginRight: '1%', marginBottom: '2rem' }}
   >
-    <h2>{themeName}</h2>
+    <h2 className="h5">{themeName}</h2>
     {levels.map(level => (
       <Swatch
         key={`$${themeName}-${level}`}
@@ -117,7 +117,7 @@ export default function ColorsPage({ data }) {
               marginBottom: '2rem',
             }}
           >
-            <h2>accents</h2>
+            <h2 className="h5">accents</h2>
 
             <Swatch name="$accent-a" colorClassName="bg-accent-a" />
             <Swatch name="$accent-b" colorClassName="bg-accent-b" />
@@ -144,7 +144,7 @@ export default function ColorsPage({ data }) {
           $brand-200
         </code>
 
-        <h3>Mixin (deprecated)</h3>
+        <h4>Mixin (deprecated)</h4>
         <code className="d-block mb-4 lead bg-gray-100 p-3">
           theme-color($color-name, $variant)
         </code>

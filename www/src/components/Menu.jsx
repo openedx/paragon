@@ -114,7 +114,7 @@ const Menu = () => {
     <Container size="xl" className="py-5">
       <Row className="mb-5">
         <Col sm={3}>
-          <h2 className="mb-4">Guides</h2>
+          <h2 className="mb-4 h3">Guides</h2>
           <ul className="list-unstyled small mb-5">
             <li>
               <Link to="/guides/installation-and-usage">
@@ -134,7 +134,7 @@ const Menu = () => {
               <Link to="/insights">Usage insights</Link>
             </li>
           </ul>
-          <h3 className="mb-4">Foundations</h3>
+          <h2 className="mb-4 h3">Foundations</h2>
           <ul className="list-unstyled small foundations-list mb-5">
             <li className="mr-3">
               <Link to="/foundations/colors">Colors</Link>
@@ -158,10 +158,10 @@ const Menu = () => {
               <Link to="/foundations/responsive">Responsive</Link>
             </li>
           </ul>
-          <h3 className="mb-4">
+          <h2 className="mb-4 h3">
             Playground
             <Badge className="ml-1 align-bottom" variant="info">Beta</Badge>
-          </h3>
+          </h2>
           <ul className="list-unstyled small mb-5">
             <li className="mr-3 mb-3">
               A drag-and-drop UI builder for prototyping with Paragon components.
@@ -194,7 +194,7 @@ const Menu = () => {
           </ul>
         </Col>
         <Col sm={9}>
-          <h3 className="mb-4">Components</h3>
+          <h2 className="mb-4 h3">Components</h2>
           <MenuComponentList>
             {categories.map(({ fieldValue, nodes }) => (
               <MenuComponentListCategory key={fieldValue} title={fieldValue}>

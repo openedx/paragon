@@ -29,7 +29,7 @@ notes: |
 </Hyperlink>
 ```
 
-## blank target without Icon
+### blank target without Icon
 
 ```jsx live
 <Hyperlink destination="https://www.edx.org" target="_blank" showLaunchIcon={false}>
