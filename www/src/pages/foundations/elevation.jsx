@@ -202,17 +202,7 @@ export default function ElevationPage() {
         </div>
 
         <h3>Box-shadow Usage</h3>
-        <p>Include these box-shadows colors in scss files in one of two ways:</p>
-
-        <h4>Variable name</h4>
-        <code className="d-block mb-4 lead bg-gray-100 p-3">
-          <ul className="pgn-doc__level-number__box-shadow-variables">
-            <li>{'// $level_number-box-shadow '}</li>
-            {boxShadowLevels.map(level => (
-              <li key={level}>$level-{level}-box-shadow</li>
-            ))}
-          </ul>
-        </code>
+        <p>Include these box-shadows colors in scss files in this ways:</p>
 
         <h4>Mixin</h4>
         <code className="d-block mb-4 lead bg-gray-100 p-3">
