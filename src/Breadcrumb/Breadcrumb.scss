@@ -1,6 +1,16 @@
 @import "variables";
 @import "~bootstrap/scss/breadcrumb";
 
+.pgn-doc__code-block-preview {
+  .pgn__breadcrumb {
+    overflow-x: scroll;
+
+    .list-inline-item {
+      white-space: nowrap;
+    }
+  }
+}
+
 .pgn__breadcrumb {
   .list-inline-item {
     &.active {
