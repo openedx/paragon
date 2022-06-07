@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
@@ -9,11 +9,16 @@ import GenericPropsTable from '../components/PropsTable';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
 import LinkedHeading from '../components/LinkedHeading';
+import { useMediaQuery } from 'react-responsive';
+import { breakpoints } from '../../../src';
 
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
   pageContext: { cssVariables },
 }) {
+  const isMobile = useMediaQuery({ maxWidth: breakpoints.large.maxWidth});
+  const [showMinimizedTitle, setShowMinimizedTitle] = useState(false);
+
   const components = componentNodes.nodes.reduce((acc, currentValue) => {
     acc[currentValue.displayName] = currentValue;
     return acc;
@@ -58,8 +63,14 @@ export default function PageTemplate({
 
   const isDeprecated = mdx.frontmatter?.status?.toLowerCase().includes('deprecate') || false;
 
+  useEffect(() => setShowMinimizedTitle(!!isMobile), [isMobile]);
+
   return (
-    <Layout isMdx tocData={getTocData()}>
+    <Layout
+      showMinimizedTitle={showMinimizedTitle}
+      isMdx 
+      tocData={getTocData()}
+    >
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title={mdx.frontmatter.title} />
       <Container size="md" className="py-5">
