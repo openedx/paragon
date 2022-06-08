@@ -13,10 +13,11 @@ const ModalPopup = ({
   isBlocking,
   withPortal,
   placement,
+  hasArrow,
   ...popperProps
 }) => {
   const RootComponent = withPortal ? Portal : React.Fragment;
-
+  // debugger;
   return (
     <ModalContextProvider onClose={onClose} isOpen={isOpen} isBlocking={isBlocking}>
       <RootComponent>
@@ -28,10 +29,12 @@ const ModalPopup = ({
             onClickOutside={onClose}
           >
             {isOpen && (
-              <div id="too">
+              <>
                 {children}
-                <div id="arrow" className="pgn__modal-popup__arrow" data-popper-arrow="" />
-              </div>
+                {hasArrow ? (
+                  <div id="arrow" className="pgn__modal-popup__arrow" data-popper-arrow="" />
+                ) : null}
+              </>
             )}
           </FocusOn>
         </PopperElement>
@@ -59,6 +62,7 @@ ModalPopup.propTypes = {
   ]),
   /** Specifies position according to the element that the ``positionRef`` prop points to */
   placement: PopperElement.propTypes.placement,
+  hasArrow: PropTypes.bool,
 };
 
 ModalPopup.defaultProps = {
@@ -66,6 +70,7 @@ ModalPopup.defaultProps = {
   withPortal: false,
   placement: 'bottom-start',
   positionRef: null,
+  hasArrow: false,
 };
 
 export default ModalPopup;

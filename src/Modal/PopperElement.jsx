@@ -11,6 +11,7 @@ const PopperElement = ({
     styles,
     attributes,
   } = usePopper(target, popperElement, popperOptions);
+  console.log(styles)
 
   if (!target) {
     return null;
