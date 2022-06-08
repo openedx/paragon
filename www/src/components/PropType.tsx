@@ -1,8 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// @ts-ignore
 import { Badge } from '~paragon-react'; // eslint-disable-line
 
-const RequiredBadge = ({ isRequired }) => {
+export type RequiredBadgeTypes = {
+  isRequired?: boolean,
+};
+
+const RequiredBadge = ({ isRequired }: RequiredBadgeTypes) => {
   if (!isRequired) { return null; }
   return (
     <>
@@ -20,7 +25,12 @@ RequiredBadge.defaultProps = {
   isRequired: false,
 };
 
-const SimplePropType = ({ name, isRequired }) => (
+export interface SimplePropTypeInterface {
+  name: string,
+  isRequired?: boolean,
+}
+
+const SimplePropType = ({ name, isRequired }: SimplePropTypeInterface) => (
   <span>
     <code>{name}</code>
     <RequiredBadge isRequired={isRequired} />
@@ -36,7 +46,13 @@ SimplePropType.defaultProps = {
   isRequired: false,
 };
 
-const PropTypeEnum = ({ name, value: enumValue, isRequired }) => (
+export interface PropTypeEnumInterface {
+  name: string,
+  value: Array<any>,
+  isRequired?: boolean,
+}
+
+const PropTypeEnum = ({ name, value: enumValue, isRequired }: PropTypeEnumInterface) => (
   <span>
     <code>{name}</code>
     <RequiredBadge isRequired={isRequired} />
@@ -58,7 +74,12 @@ PropTypeEnum.defaultProps = {
   isRequired: false,
 };
 
-const PropTypeUnion = ({ value, isRequired }) => (
+export interface PropTypeUnionInterface {
+  value: Array<any>,
+  isRequired?: boolean,
+}
+
+const PropTypeUnion = ({ value, isRequired }: PropTypeUnionInterface) => (
   <span>
     {value
       .map(propType => <PropType key={propType.name} {...propType} />)
@@ -77,7 +98,12 @@ PropTypeUnion.defaultProps = {
   isRequired: false,
 };
 
-const PropTypeInstanceOf = ({ value, isRequired }) => (
+export interface PropTypeInstanceOfInterface {
+  value: Array<any>,
+  isRequired?: boolean,
+}
+
+const PropTypeInstanceOf = ({ value, isRequired }: PropTypeInstanceOfInterface) => (
   <span>
     <code>{value}</code>
     <RequiredBadge isRequired={isRequired} />
@@ -93,7 +119,12 @@ PropTypeInstanceOf.defaultProps = {
   isRequired: false,
 };
 
-const PropTypeArrayOf = ({ value, isRequired }) => (
+export interface PropTypeArrayOfInterface {
+  value: Array<any>,
+  isRequired?: boolean,
+}
+
+const PropTypeArrayOf = ({ value, isRequired }: PropTypeArrayOfInterface) => (
   <span>
     <PropType {...value} />
     <code>[]</code>
@@ -110,7 +141,12 @@ PropTypeArrayOf.defaultProps = {
   isRequired: false,
 };
 
-const PropTypeObjectOf = ({ value, isRequired }) => (
+export interface PropTypeObjectOfInterface {
+  value: Array<any>,
+  isRequired?: boolean,
+}
+
+const PropTypeObjectOf = ({ value, isRequired }: PropTypeObjectOfInterface) => (
   <span>
     <code>
       Object.{'<'}
@@ -130,7 +166,13 @@ PropTypeObjectOf.defaultProps = {
   isRequired: false,
 };
 
-const PropTypeShape = ({ name, value, isRequired }) => (
+export interface PropTypeShapeInterface {
+  value: Array<any>,
+  isRequired?: boolean,
+  name: string,
+}
+
+const PropTypeShape = ({ name, value, isRequired }: PropTypeShapeInterface) => (
   <span className="small">
     <code>{name}</code>
     <RequiredBadge isRequired={isRequired} />
@@ -154,7 +196,13 @@ PropTypeShape.defaultProps = {
   isRequired: false,
 };
 
-const PropTypeExact = ({ name, value, isRequired }) => (
+export interface PropTypeExactInterface {
+  value: Array<any>,
+  isRequired?: boolean,
+  name: string,
+}
+
+const PropTypeExact = ({ name, value, isRequired }: PropTypeExactInterface) => (
   <span className="small">
     <code>{name}</code>
     <RequiredBadge isRequired={isRequired} />
@@ -178,7 +226,12 @@ PropTypeExact.defaultProps = {
   isRequired: false,
 };
 
-const CustomPropType = ({ raw, isRequired }) => (
+export interface CustomPropTypeInterface {
+  raw?: string
+  isRequired?: boolean,
+}
+
+const CustomPropType = ({ raw, isRequired }: CustomPropTypeInterface) => (
   <span>
     <code>{raw}</code>
     <RequiredBadge isRequired={isRequired} />
@@ -217,9 +270,17 @@ const PROP_TYPE_COMPONENTS = {
   custom: CustomPropType,
 };
 
+export interface PropTypeInterface {
+  value: any,
+  name: 'arrayOf' | 'custom' | 'enum' | 'array' | 'bool' | 'func' | 'number' | 'object' | 'string' | 'any' |
+  'element' | 'node' | 'symbol' | 'objectOf' | 'shape' | 'exact' | 'union' | 'elementType',
+  required: boolean,
+  raw: string,
+}
+
 const PropType = ({
   name, value, required, raw,
-}) => {
+}: PropTypeInterface) => {
   const PropTypeComponent = PROP_TYPE_COMPONENTS[name];
 
   if (PropTypeComponent) {
@@ -237,6 +298,7 @@ const PropType = ({
 };
 
 PropType.propTypes = {
+  // eslint-disable-next-line react/require-default-props
   name: PropTypes.oneOf([
     'arrayOf',
     'custom',
