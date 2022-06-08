@@ -230,6 +230,8 @@
 }
 
 .pgn__card {
+  @include pgn-box-shadow(1, "down");
+
   &.clickable {
     &:hover {
       box-shadow: $level-1-box-shadow;
