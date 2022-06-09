@@ -13,7 +13,7 @@ import SummaryUsageExamples from '../components/insights/SummaryUsageExamples';
 import ProjectUsageExamples from '../components/insights/ProjectUsageExamples';
 import ComponentUsageExamples from '../components/insights/ComponentUsageExamples';
 import getGithubProjectUrl from '../utils/getGithubProjectUrl';
-import dependentProjectsAnalysis from '../../../dependent-usage.json';
+import dependentProjectsAnalysis from '../../../dependent-usage-test.json';
 import { INSIGHTS_TABS, INSIGHTS_PAGES } from '../config';
 import { default as TextFilter } from '../../../src/DataTable/filters/TextFilter';
 import { default as CheckboxFilter } from '../../../src/DataTable/filters/CheckboxFilter';
