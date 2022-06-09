@@ -17,11 +17,38 @@ const ModalPopup = ({
   ...popperProps
 }) => {
   const RootComponent = withPortal ? Portal : React.Fragment;
-  // debugger;
+
+  const popperParams = [
+    {
+      name: 'eventListeners',
+      options: { scroll: false },
+    },
+    {
+      name: 'offset',
+      options: {
+        offset: () => {
+          switch (placement) {
+            case 'right':
+              return [-2, 10];
+            case 'left':
+              return [-2, 10];
+            default:
+              return [0, 10];
+          }
+        },
+      },
+    },
+  ];
+
   return (
     <ModalContextProvider onClose={onClose} isOpen={isOpen} isBlocking={isBlocking}>
       <RootComponent>
-        <PopperElement target={positionRef} placement={placement} {...popperProps}>
+        <PopperElement
+          modifiers={hasArrow ? popperParams : null}
+          target={positionRef}
+          placement={placement}
+          {...popperProps}
+        >
           <FocusOn
             scrollLock={false}
             enabled={isOpen}
@@ -32,7 +59,11 @@ const ModalPopup = ({
               <>
                 {children}
                 {hasArrow ? (
-                  <div id="arrow" className="pgn__modal-popup__arrow" data-popper-arrow="" />
+                  <div
+                    id="arrow"
+                    className="pgn__modal-popup__arrow"
+                    data-popper-arrow=""
+                  />
                 ) : null}
               </>
             )}
@@ -62,6 +93,7 @@ ModalPopup.propTypes = {
   ]),
   /** Specifies position according to the element that the ``positionRef`` prop points to */
   placement: PopperElement.propTypes.placement,
+  /** Caret to the modal window pointing to the button */
   hasArrow: PropTypes.bool,
 };
 
