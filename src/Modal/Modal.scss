@@ -153,8 +153,8 @@
   border-top-color: $white;
 }
 
-[data-popper-placement^="right"] .pgn__modal-popup__arrow,
-[data-popper-placement^="right-start"] .pgn__modal-popup__arrow {
+[data-popper-placement^="right-start"] .pgn__modal-popup__arrow,
+[data-popper-placement^="right"] .pgn__modal-popup__arrow {
   left: -1.25rem;
   top: 50%;
   transform: rotate(90deg);
