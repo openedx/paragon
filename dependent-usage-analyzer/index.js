@@ -97,11 +97,17 @@ function getComponentUsagesInFiles(files, rootDir) {
       paragonImportsInFile[local.name] = imported ? imported.name : local.name;
     };
 
-    const addComponentUsage = (fullComponentName, startLocation) => {
+    const addComponentUsage = (fullComponentName, startLocation, type) => {
       if (!usagesAccumulator[fullComponentName]) {
-        usagesAccumulator[fullComponentName] = [];
+        usagesAccumulator[fullComponentName] = {};
       }
-      usagesAccumulator[fullComponentName].push({
+      if (!usagesAccumulator[fullComponentName]["type"]) {
+        usagesAccumulator[fullComponentName]["type"] = type;
+      }
+      if (!usagesAccumulator[fullComponentName]["usages"]) {
+        usagesAccumulator[fullComponentName]["usages"] = [];
+      }
+      usagesAccumulator[fullComponentName]["usages"].push({
         filePath: filePath.substring(rootDir.length + 1),
         ...startLocation,
       });
@@ -123,9 +129,23 @@ function getComponentUsagesInFiles(files, rootDir) {
           const paragonName = paragonImportsInFile[componentName];
           const subComponentName = node.name.object ? node.name.property.name : null;
           const fullComponentName = subComponentName ? `${paragonName}.${subComponentName}` : paragonName;
-          addComponentUsage(fullComponentName, node.loc.start);
+          addComponentUsage(fullComponentName, node.loc.start, "Component");
         }
       },
+      functionExpression(node) {
+        const componentName = node.name.object ? node.name.object.name : node.name.name;
+        const paragonName = paragonImportsInFile[componentName];
+        const subComponentName = node.name.object ? node.name.property.name : null;
+        const fullComponentName = subComponentName ? `${paragonName}.${subComponentName}` : paragonName;
+        addComponentUsage(fullComponentName, node.loc.start, "Function");
+      },
+      functionDeclaration(node) {
+        const componentName = node.name.object ? node.name.object.name : node.name.name;
+        const paragonName = paragonImportsInFile[componentName];
+        const subComponentName = node.name.object ? node.name.property.name : null;
+        const fullComponentName = subComponentName ? `${paragonName}.${subComponentName}` : paragonName;
+        addComponentUsage(fullComponentName, node.loc.start, "functionDeclaration");
+      }
     })(ast);
 
     return usagesAccumulator;
@@ -139,7 +159,7 @@ function analyzeProject(dir, options = {}) {
 
   // Add Paragon version to each component usage
   Object.keys(usages).forEach(componentName => {
-    usages[componentName] = usages[componentName].map(usage => ({
+    usages[componentName]["usages"] = usages[componentName]["usages"].map(usage => ({
       ...usage,
       version: packageInfo.version,
     }));
