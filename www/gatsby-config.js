@@ -12,6 +12,14 @@ const segmentPlugin = {
   }
 };
 
+const axePlugin = {
+  resolve: 'gatsby-plugin-react-axe',
+  options: {
+    debounce: 1000,
+    showInProduction: false,
+  },
+};
+
 const plugins = [
   {
     resolve: `gatsby-plugin-sass`,
@@ -29,13 +37,6 @@ const plugins = [
     options: {
       start_url: `/`,
       icon: `src/images/paragon-icon.png`, // This path is relative to the root of the site.
-    },
-  },
-  {
-    resolve: 'gatsby-plugin-react-axe',
-    options: {
-      debounce: 1000,
-      showInProduction: false,
     },
   },
   {
@@ -98,7 +99,11 @@ const plugins = [
 ];
 
 if (process.env && process.env.SEGMENT_KEY) {
-  plugins.push(segmentPlugin)
+  plugins.push(segmentPlugin);
+}
+
+if (process.env && process.env.FEATURE_ENABLE_AXE) {
+  plugins.push(axePlugin);
 }
 
 module.exports = {
