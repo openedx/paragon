@@ -12,3 +12,7 @@
     text-decoration: none;
   }
 }
+
+[dir="rtl"] .pgn-doc__header-button--menu {
+  text-align: right;
+}

@@ -26,7 +26,7 @@ const Navbar = ({
 }) => (
   <Container as="header" className="py-3 bg-dark text-white sticky-top">
     <Row className="align-items-center text-center text-sm-left">
-      <Col className="mb-2 mb-sm-0 col-4" sm={5}>
+      <Col className="pgn-doc__header-button--menu mb-2 mb-sm-0 col-4" sm={5}>
         <Button
           className="d-inline-flex align-items-center"
           variant="inverse-tertiary"
@@ -73,7 +73,7 @@ const Navbar = ({
           <Nav.Item>
             <Link
               style={{ textDecoration: 'none' }}
-              className="text-white"
+              className="text-white nav-link"
               to="/changelog"
             >
               Changelog
