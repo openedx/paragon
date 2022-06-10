@@ -22,7 +22,7 @@ A spinning animation that indicates loading.
   </a>
 </p>
 
-### Basic Usage
+## Basic Usage
 
 ```jsx live
 <>
@@ -30,7 +30,7 @@ A spinning animation that indicates loading.
   <Spinner animation="grow" className="mie-3" screenReaderText="loading" />
 </>
 ```
-### Color Variants
+## Color Variants
 
 ```jsx live
 () => {

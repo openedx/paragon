@@ -16,7 +16,7 @@ tours are enabled, `ProductTour` will only render the first enabled in the `tour
 `Checkpoints` are rendered in the order they're listed in the checkpoint array.
 The checkpoint objects themselves have additional props that can override the props defined in `ProductTour`.
 
-### Basic Usage
+## Basic Usage
 
 ```jsx live
 () => {

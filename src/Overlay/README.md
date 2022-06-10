@@ -24,7 +24,7 @@ This component is used to power Tooltips and Popovers.
   </a>
 </p>
 
-### Basic usage
+## Basic usage
 
 ```jsx live
 () => {

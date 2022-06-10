@@ -13,7 +13,7 @@ notes: |
 
 Represents the filled circle with a number of an icon, supporting the usual color variants
 
-### Basic Usage
+## Basic Usage
 
 ```jsx live
 () => {
@@ -52,7 +52,7 @@ Represents the filled circle with a number of an icon, supporting the usual colo
 }
 ```
 
-### Disabled variant
+## Disabled variant
 
 ```jsx live
 () => {

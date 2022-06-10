@@ -12,7 +12,7 @@ devStatus: 'Done'
 notes: ''
 ---
 
-### Basic Usage with Paragon Icon
+## Basic Usage with Paragon Icon
 
 ```jsx live
 () => {
@@ -27,7 +27,7 @@ notes: ''
 }
 ```
 
-### With tooltips
+## With tooltips
 
 ```jsx live
 () => {
@@ -52,7 +52,7 @@ notes: ''
 }
 ```
 
-### Active State
+## Active State
 
 ```jsx live
 () => {
@@ -76,7 +76,7 @@ notes: ''
 }
 ```
 
-#### isActive=true with inverted colors
+### isActive=true with inverted colors
 
 ```jsx live
 () => {
@@ -102,7 +102,7 @@ notes: ''
 ```
 
 
-### Inverted Colors
+## Inverted Colors
 
 ```jsx live
 <div className="d-flex">
@@ -189,7 +189,7 @@ notes: ''
 </div>
 ```
 
-### Sizes
+## Sizes
 
 ```jsx live
 <>

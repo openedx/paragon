@@ -84,7 +84,7 @@ const renderColorRamp = (themeName, unusedLevels) => (
     key={`${themeName}`}
     style={{ flexBasis: '24%', marginRight: '1%', marginBottom: '2rem' }}
   >
-    <h5>{themeName}</h5>
+    <h2 className="h5">{themeName}</h2>
     {levels.map(level => (
       <Swatch
         key={`$${themeName}-${level}`}
@@ -117,7 +117,7 @@ export default function ColorsPage({ data }) {
               marginBottom: '2rem',
             }}
           >
-            <h6>accents</h6>
+            <h2 className="h5">accents</h2>
 
             <Swatch name="$accent-a" colorClassName="bg-accent-a" />
             <Swatch name="$accent-b" colorClassName="bg-accent-b" />
@@ -131,7 +131,7 @@ export default function ColorsPage({ data }) {
         <h3>SCSS Color Usage</h3>
         <p>Include these colors in scss files in one of two ways:</p>
 
-        <h6>Variable name</h6>
+        <h4>Variable name</h4>
         <code className="d-block mb-4 lead bg-gray-100 p-3">
           {'// $color_name-level '}
           <br />
@@ -144,7 +144,7 @@ export default function ColorsPage({ data }) {
           $brand-200
         </code>
 
-        <h6>Mixin (deprecated)</h6>
+        <h4>Mixin (deprecated)</h4>
         <code className="d-block mb-4 lead bg-gray-100 p-3">
           theme-color($color-name, $variant)
         </code>
@@ -203,7 +203,7 @@ export default function ColorsPage({ data }) {
           </tbody>
         </table>
 
-        <h6>Example</h6>
+        <h4>Example</h4>
         <code className="d-block mb-2 bg-gray-100 p-3">
           border: solid 1px <strong>$gray-300</strong>;
         </code>
@@ -325,9 +325,9 @@ export default function ColorsPage({ data }) {
           backgrounds.
         </p>
         <div className="d-flex rounded overflow-hidden mb-3">
-          <h6 className="mb-0 w-100">Lighter Text</h6>
-          <h6 className="mb-0 w-100">Regular Text</h6>
-          <h6 className="mb-0 w-100">Darker Text</h6>
+          <h4 className="mb-0 w-100">Lighter Text</h4>
+          <h4 className="mb-0 w-100">Regular Text</h4>
+          <h4 className="mb-0 w-100">Darker Text</h4>
         </div>
         <div className="d-flex">
           {[500, 700, 900].map(level => (
@@ -355,13 +355,13 @@ export default function ColorsPage({ data }) {
         <div>
           <div className="d-flex rounded overflow-hidden mb-3">
             <div className="w-100">
-              <h6 className="mb-0">Default State</h6>
+              <h4 className="mb-0">Default State</h4>
             </div>
             <div className="w-100">
-              <h6 className="mb-0">Hover State</h6>
+              <h4 className="mb-0">Hover State</h4>
             </div>
             <div className="w-100">
-              <h6 className="mb-0">Active State</h6>
+              <h4 className="mb-0">Active State</h4>
             </div>
           </div>
           {colors.map(({ themeName }) => {

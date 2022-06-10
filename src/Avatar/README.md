@@ -18,7 +18,7 @@ The Avatar component represents a user’s identity in the UI.
 It is used in the global navigation’s user menu and may also be used to indicate ownership of user generated content such as a discussion post or open response submission.
 
 
-### Basic Usage
+## Basic Usage
 
 ```jsx live
 <div className="bg-light p-2">
@@ -32,7 +32,7 @@ It is used in the global navigation’s user menu and may also be used to indica
 ```
 
 
-### Huge
+## Huge
 
 ```jsx live
 <>

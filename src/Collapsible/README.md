@@ -22,7 +22,7 @@ When to use:
 - To shorten pages and reduce scrolling when content is not crucial to read in full.
 - When space is at a premium and long content cannot be displayed all at once.
 
-### Basic Usage
+## Basic Usage
 
 The `styling` prop at the top level `<Collapsible />` component determines if the collapsible has basic styling, card, or card with heading.
 
@@ -55,7 +55,7 @@ This is the default style if no `styling` prop is supplied.
 ```jsx live
 <Collapsible
   styling="card-lg"
-  title={<h5>Toggle Collapsible</h5>}
+  title={<h4>Toggle Collapsible</h4>}
 >
   <p>Your stuff goes here.</p>
 </Collapsible>
@@ -97,7 +97,7 @@ This is the default style if no `styling` prop is supplied.
 
 <hr/>
 
-### Advanced Usage
+## Advanced Usage
 
 For needs that deviate from the three styles above, use `<Collapsible.Advanced />`
 
@@ -163,7 +163,7 @@ See the developer console for logging.
   onClose={() => console.log('Collapsible closed.')}
 >
   <Collapsible.Trigger className="collapsible-trigger">
-    <h5 className="flex-grow-1">I'm a heading</h5>
+    <h4 className="flex-grow-1">I'm a heading</h4>
 
       <Collapsible.Visible whenClosed>
         +
@@ -197,7 +197,7 @@ function() {
       className="collapsible-card"
     >
       <Collapsible.Trigger className="collapsible-trigger">
-        <h5 className="flex-grow-1">I'm a heading</h5>
+        <h4 className="flex-grow-1">I'm a heading</h4>
 
           <Collapsible.Visible whenClosed>
             +
@@ -220,7 +220,7 @@ function() {
 }
 ```
 
-### Imperative methods
+## Imperative methods
 
 If you need to open or close the Collapsible intermittently due to an event,
 such as loading the page or clicking a link, you can open or close

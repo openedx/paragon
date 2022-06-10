@@ -14,7 +14,7 @@ notes: |
 
 This component utilizes `Button` from React-Bootstrap and extends it with an ability to add icons before and after button label, see [below](#with-icons-before-or-after) for usage example.<br/> <a href="https://react-bootstrap.github.io/components/buttons/" target="_blank" rel="noopener noreferrer"> See React-Bootstrap for additional documentation. </a>
 
-### Core Buttons
+## Core Buttons
 ```jsx live
 <>
   <Button variant="brand">Brand</Button>{' '}
@@ -24,7 +24,7 @@ This component utilizes `Button` from React-Bootstrap and extends it with an abi
   <Button variant="tertiary">Tertiary</Button>{' '}
 </>
 ```
-### Core Buttons (Inverse Pallete)
+## Core Buttons (Inverse Pallete)
 ```jsx live
 <div className="bg-dark-700 p-4">
   <Button variant="inverse-brand">Brand</Button>{' '}
@@ -35,7 +35,7 @@ This component utilizes `Button` from React-Bootstrap and extends it with an abi
 </div>
 ```
 
-### Utility Buttons
+## Utility Buttons
 ```jsx live
 <>
   <div className="mb-2">
@@ -53,7 +53,7 @@ This component utilizes `Button` from React-Bootstrap and extends it with an abi
 </>
 ```
 
-### Size
+## Size
 
 ```jsx live
 <>
@@ -80,7 +80,7 @@ This component utilizes `Button` from React-Bootstrap and extends it with an abi
 </>
 ```
 
-#### When to use the inline size
+### When to use the inline size
 
 Use inline size buttons for when a button sits with a line of text.
 
@@ -94,7 +94,7 @@ Use inline size buttons for when a button sits with a line of text.
 </>
 ```
 
-### Block Buttons
+## Block Buttons
 
 ```jsx live
 <>

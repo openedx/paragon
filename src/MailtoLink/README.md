@@ -14,7 +14,7 @@ notes: |
   Use React.forwardRef for ref forwarding
 ---
 
-### minimal usage
+## minimal usage
 
 ```jsx live
 <MailtoLink to="edx@example.com">
@@ -22,7 +22,7 @@ notes: |
 </MailtoLink>
 ```
 
-### with blank target
+## with blank target
 
 ```jsx live
 <MailtoLink to="edx@example.com" target="_blank">
@@ -30,7 +30,7 @@ notes: |
 </MailtoLink>
 ```
 
-### with onClick
+## with onClick
 
 ```jsx live
 <MailtoLink
@@ -42,7 +42,7 @@ notes: |
 </MailtoLink>
 ```
 
-### with subject and body
+## with subject and body
 
 ```jsx live
 <MailtoLink
@@ -54,7 +54,7 @@ notes: |
 </MailtoLink>
 ```
 
-### with cc and bcc
+## with cc and bcc
 
 ```jsx live
 <MailtoLink
@@ -65,7 +65,7 @@ notes: |
 </MailtoLink>
 ```
 
-### with multiple cc and bcc
+## with multiple cc and bcc
 
 ```jsx live
 <MailtoLink

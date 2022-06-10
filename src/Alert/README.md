@@ -23,7 +23,7 @@ Alerts offer four severity levels that set a distinctive icon and color:
 
 This component utilizes and extends the `Alert` component from react-bootstrap.<br/> <a href="https://react-bootstrap.github.io/components/alerts/" target="_blank" rel="noopener noreferrer"> See React-Bootstrap for additional documentation.</a>
 
-### Basic Usage
+## Basic Usage
 
 ```jsx live
 <>

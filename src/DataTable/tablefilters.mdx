@@ -17,14 +17,14 @@ devStatus: 'In progress'
 The ``DataTable`` component is a wrapper that uses the <a href="https://react-table.tanstack.com/docs">react-table</a> library to
 create tables. It can be used as is, or its subcomponents can be used on their own, allowing the developer full control.
 
-### Filtering and sorting
+## Filtering and sorting
 Paragon currently provides a variety of filter types, and you can also define your own filter types.
 
 In the example below, a default ``TextFilter`` component is used as the default filter for all columns. A default filter can be passed in,
 or a filter component can be defined on the column using the ``Filter`` attribute. See <a href="https://react-table.tanstack.com/docs/api/useFilters">react-table filters documentation</a>
 for more information.
 
-### Available filter functions
+## Available filter functions
 A filtering function can be defined on the column as well as the filter component. Custom filtering functions can also be defined, see <a href="https://react-table.tanstack.com/docs/api/useFilters#column-options">react-table filters documentation</a>
 for more information.
 Filter functions are defined on the column as the ``filter`` attribute.
@@ -41,11 +41,11 @@ Filter functions are defined on the column as the ``filter`` attribute.
 <dt>between</dt><dd>Expects an array with a min and max value as the search term. Checks that the row value is between the min and max</dd>
 </dl>
 
-### Using Filter components with filter functions
+## Using Filter components with filter functions
 The `MultiSelectDropdownFilter` and `CheckboxFilter` components expect an array of values. It is best to use them with the `includesValue` filter function.
 The `TextFilter` and `DropdownFilter` components can be used with a variety of the above `filter` functions.
 
-### TextFilter, MultiSelectDropdownFilter, CheckboxFilter
+## TextFilter, MultiSelectDropdownFilter, CheckboxFilter
 
 The checkbox filter is used in the dropdown.
 A CheckboxFilter is used on the coat color column. Filters can be defined on the columns themselves.

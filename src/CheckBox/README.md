@@ -12,7 +12,7 @@ notes: |
   Replaced by Input and ValidationFormGroup
 ---
 
-### Basic usage
+## Basic usage
 
 ```jsx live
 <CheckBox
@@ -21,7 +21,7 @@ notes: |
 />
 ```
 
-### Disabled
+## Disabled
 
 ```jsx live
 <CheckBox
@@ -31,7 +31,7 @@ notes: |
 />
 ```
 
-### Default checked
+## Default checked
 
 ```jsx live
 <CheckBox
@@ -41,7 +41,7 @@ notes: |
 />
 ```
 
-### Call a function
+## Call a function
 
 ```jsx live
 <CheckBox
@@ -51,7 +51,7 @@ notes: |
 />
 ```
 
-### Controlled example
+## Controlled example
 
 ```jsx live
 class CheckBoxWrapper extends React.Component {
