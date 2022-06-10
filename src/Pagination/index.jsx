@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
-import { between } from 'airbnb-prop-types';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import MediaQuery from 'react-responsive';
 
+import { greaterThan } from '../utils/propTypes';
 import { Button, Dropdown, IconButton } from '..';
 import Icon from '../Icon';
 import breakpoints from '../utils/breakpoints';
@@ -463,7 +463,7 @@ Pagination.propTypes = {
    * Also, to ensure that at least one clickable page button is shown when both ellipses
    * are displayed, this value must be greater than `4`. The default is `7`.
    */
-  maxPagesDisplayed: between({ gt: 4 }),
+  maxPagesDisplayed: greaterThan(4),
   /**
    * Specifies icons used to indicate previous and next page. Can be an element,
    * string, symbol, etc. Default is chevrons rendered using fa-css.

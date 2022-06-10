@@ -4,7 +4,7 @@
  * If the conditional is false and the associated prop is not included, raise an error,
  * giving the provided filterString as the explanation for the failure.
  * @param {func} targetType - target PropType method
- * @param {func} isRequiredFn - function taking the props object and returning whether or
+ * @param {func} conditionFn - function taking the props object and returning whether or
  *   not the associated prop should be required
  * @param {string} filterString - string explanation of the isRequiredFn condition for error
  *   messages.
