@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { useMediaQuery } from 'react-responsive';
 import { getInputType } from './utils';
-import { breakpoints } from '../index';
 
 const INPUT_TYPES = [
   'radio',
@@ -11,7 +9,6 @@ const INPUT_TYPES = [
 ];
 
 const DEFAULT_COLUMNS_NUMBER = 2;
-const DEFAULT_MOBILE_COLUMNS_NUMBER = 1;
 
 const SelectableBoxSet = React.forwardRef(({
   children,
@@ -21,11 +18,9 @@ const SelectableBoxSet = React.forwardRef(({
   onChange,
   type,
   columns,
-  mobileColumns,
   className,
 }, ref) => {
   const inputType = getInputType('SelectableBoxSet', type);
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
 
   return React.createElement(inputType, {
     name,
@@ -35,7 +30,7 @@ const SelectableBoxSet = React.forwardRef(({
     ref,
     className: classNames(
       'pgn__selectable_box-set',
-      `pgn__selectable_box-set--${isExtraSmall ? mobileColumns || DEFAULT_MOBILE_COLUMNS_NUMBER : columns || DEFAULT_COLUMNS_NUMBER}`,
+      `pgn__selectable_box-set--${columns || DEFAULT_COLUMNS_NUMBER}`,
       className,
     ),
   },
@@ -64,7 +59,6 @@ SelectableBoxSet.propTypes = {
   columns: PropTypes.number,
   /** A class that is be appended to the base element. */
   className: PropTypes.string,
-  mobileColumns: PropTypes.number,
 };
 
 SelectableBoxSet.defaultProps = {
@@ -74,7 +68,6 @@ SelectableBoxSet.defaultProps = {
   defaultValue: undefined,
   type: 'radio',
   columns: DEFAULT_COLUMNS_NUMBER,
-  mobileColumns: DEFAULT_MOBILE_COLUMNS_NUMBER,
   className: undefined,
 };
 
