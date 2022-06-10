@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { requiredWhenNot } from '../utils/propTypesUtils';
+import { requiredWhenNot } from '../utils/propTypes';
 import ModalDialog from './ModalDialog';
 
 const MarketingModal = ({
