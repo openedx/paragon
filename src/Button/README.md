@@ -17,21 +17,21 @@ This component utilizes `Button` from React-Bootstrap and extends it with an abi
 ## Core Buttons
 ```jsx live
 <>
-  <Button variant="brand">Brand</Button>{' '}
-  <Button variant="outline-brand">Outline Brand</Button>{' '}
-  <Button variant="primary">Primary</Button>{' '}
-  <Button variant="outline-primary">Outline Primary</Button>{' '}
-  <Button variant="tertiary">Tertiary</Button>{' '}
+  <Button variant="brand" className="mb-2 mb-sm-0">Brand</Button>{' '}
+  <Button variant="outline-brand" className="mb-2 mb-sm-0">Outline Brand</Button>{' '}
+  <Button variant="primary" className="mb-2 mb-sm-0">Primary</Button>{' '}
+  <Button variant="outline-primary" className="mb-2 mb-sm-0">Outline Primary</Button>{' '}
+  <Button variant="tertiary" className="mb-2 mb-sm-0">Tertiary</Button>{' '}
 </>
 ```
 ## Core Buttons (Inverse Pallete)
 ```jsx live
 <div className="bg-dark-700 p-4">
-  <Button variant="inverse-brand">Brand</Button>{' '}
-  <Button variant="inverse-outline-brand">Outline Brand</Button>{' '}
-  <Button variant="inverse-primary">Primary</Button>{' '}
-  <Button variant="inverse-outline-primary">Outline Primary</Button>{' '}
-  <Button variant="inverse-tertiary">Tertiary</Button>{' '}
+  <Button variant="inverse-brand" className="mb-2 mb-sm-0">Brand</Button>{' '}
+  <Button variant="inverse-outline-brand" className="mb-2 mb-sm-0">Outline Brand</Button>{' '}
+  <Button variant="inverse-primary" className="mb-2 mb-sm-0">Primary</Button>{' '}
+  <Button variant="inverse-outline-primary" className="mb-2 mb-sm-0">Outline Primary</Button>{' '}
+  <Button variant="inverse-tertiary" className="mb-2 mb-sm-0">Tertiary</Button>{' '}
 </div>
 ```
 
@@ -39,16 +39,16 @@ This component utilizes `Button` from React-Bootstrap and extends it with an abi
 ```jsx live
 <>
   <div className="mb-2">
-    <Button variant="success">Success</Button>{' '}
-    <Button variant="danger">Danger</Button>{' '}
-    <Button variant="outline-success">Success</Button>{' '}
-    <Button variant="outline-danger">Danger</Button>{' '}
+    <Button variant="success" className="mb-2 mb-sm-0">Success</Button>{' '}
+    <Button variant="danger" className="mb-2 mb-sm-0">Danger</Button>{' '}
+    <Button variant="outline-success" className="mb-2 mb-sm-0">Success</Button>{' '}
+    <Button variant="outline-danger" className="mb-2 mb-sm-0">Danger</Button>{' '}
   </div>
   <div className="mb-2">
-    <Button variant="link">Link</Button>{' '}
-    <Button variant="light">Light</Button> <Button variant="dark">Dark</Button>{' '}
-    <Button variant="outline-light">Light</Button>{' '}
-    <Button variant="outline-dark">Dark</Button>
+    <Button variant="link" className="mb-2 mb-sm-0">Link</Button>{' '}
+    <Button variant="light" className="mb-2 mb-sm-0">Light</Button> <Button variant="dark">Dark</Button>{' '}
+    <Button variant="outline-light" className="mb-2 mb-sm-0">Light</Button>{' '}
+    <Button variant="outline-dark" className="mb-2 mb-sm-0">Dark</Button>
   </div>
 </>
 ```
@@ -58,24 +58,24 @@ This component utilizes `Button` from React-Bootstrap and extends it with an abi
 ```jsx live
 <>
   <div className="mb-2">
-    <Button variant="primary" size="lg">
+    <Button variant="primary" size="lg" className="mb-2 mb-sm-0">
       Large button
     </Button>{' '}
-    <Button variant="outline-primary" size="lg">
+    <Button variant="outline-primary" size="lg" className="mb-2 mb-sm-0">
       Large button
     </Button>
   </div>
   <div className="mb-2">
-    <Button variant="primary" size="sm">
+    <Button variant="primary" size="sm" className="mb-2 mb-sm-0">
       Small button
     </Button>{' '}
-    <Button variant="outline-primary" size="sm">
+    <Button variant="outline-primary" size="sm" className="mb-2 mb-sm-0">
       Small button
     </Button>
   </div>
   <div className="mb-2">
-    <Button variant="link" size="inline">Inline button</Button>
-    <Button variant="link" size="inline">Inline button</Button>
+    <Button variant="link" size="inline" className="mb-2 mb-sm-0">Inline button</Button>
+    <Button variant="link" size="inline" className="mb-2 mb-sm-0">Inline button</Button>
   </div>
 </>
 ```
@@ -110,33 +110,43 @@ Use inline size buttons for when a button sits with a line of text.
 ### With Icons before or after
 ```jsx live
 <>
-  <Button variant="brand" iconBefore={ArrowBack}>Brand</Button>{' '}
-  <Button variant="outline-brand" iconAfter={ArrowDropDown}>Outline Brand</Button>{' '}
-  <Button variant="primary" iconBefore={Remove} iconAfter={Add}>Primary</Button>{' '}
-  <Button variant="outline-primary" iconBefore={Highlight}>Outline Primary</Button>{' '}
-  <Button variant="tertiary" iconAfter={Add}>Tertiary</Button>{' '}
+  <Button variant="brand" iconBefore={ArrowBack} className="mb-2 mb-sm-0">
+    Brand
+  </Button>{' '}
+  <Button variant="outline-brand" iconAfter={ArrowDropDown} className="mb-2 mb-sm-0">
+    Outline Brand
+  </Button>{' '}
+  <Button variant="primary" iconBefore={Remove} iconAfter={Add} className="mb-2 mb-sm-0">
+    Primary
+  </Button>{' '}
+  <Button variant="outline-primary" iconBefore={Highlight} className="mb-2 mb-sm-0">
+    Outline Primary
+  </Button>{' '}
+  <Button variant="tertiary" iconAfter={Add} className="mb-2 mb-sm-0">
+    Tertiary
+  </Button>{' '}
 </>
 ```
 
 ### With a Spinner
 ```jsx live
 <>
-  <Button variant="primary" className="mr-2" aria-label="Loading some stuff">
+  <Button variant="primary" className="mb-2 mr-2 mb-sm-0" aria-label="Loading some stuff">
     <Spinner animation="border" />
   </Button>
-  <Button variant="brand" className="mr-2" aria-label="Loading some stuff">
+  <Button variant="brand" className="mb-2 mr-2 mb-sm-0" aria-label="Loading some stuff">
     <Spinner animation="border" />
   </Button>
-  <Button variant="outline-primary" className="mr-2" aria-label="Loading some stuff">
+  <Button variant="outline-primary" className="mb-2 mr-2 mb-sm-0" aria-label="Loading some stuff">
     <Spinner animation="border" />
   </Button>
-  <Button variant="outline-brand" className="mr-2" aria-label="Loading some stuff">
+  <Button variant="outline-brand" className="mb-2 mr-2 mb-sm-0" aria-label="Loading some stuff">
     <Spinner animation="border" />
   </Button>
-  <Button variant="inverse-primary" className="mr-2" aria-label="Loading some stuff">
+  <Button variant="inverse-primary" className="mb-2 mr-2 mb-sm-0" aria-label="Loading some stuff">
     <Spinner animation="border" />
   </Button>
-  <Button variant="inverse-brand" className="mr-2" aria-label="Loading some stuff">
+  <Button variant="inverse-brand" className="mb-2 mr-2 mb-sm-0" aria-label="Loading some stuff">
     <Spinner animation="border" />
   </Button>
 </>
