@@ -24,7 +24,7 @@ For children of type input, textarea, and select:
 - Appends bootstrap validation class names
 - Appends aria-describedby attributes (for help text and feedback)
 
-### basic usage
+## basic usage
 
 ```jsx live
 <ValidationFormGroup
@@ -42,7 +42,7 @@ For children of type input, textarea, and select:
 </ValidationFormGroup>
 ```
 
-### invalid message
+## invalid message
 
 ```jsx live
 <ValidationFormGroup
@@ -61,7 +61,7 @@ For children of type input, textarea, and select:
 </ValidationFormGroup>
 ```
 
-### valid message
+## valid message
 
 ```jsx live
 <ValidationFormGroup
@@ -80,7 +80,7 @@ For children of type input, textarea, and select:
 </ValidationFormGroup>
 ```
 
-### with any kind of input
+## with any kind of input
 
 ```jsx live
 <>

@@ -16,13 +16,13 @@ A component for all user input. It is responsible for rendering select, textarea
 
 Extra props supplied to Input will be passed through to the html node.
 
-### Text
+## Text
 
 ```jsx live
 <Input type="text" defaultValue="Some text input" />
 ```
 
-### Select
+## Select
 
 ```jsx live
 <Input
@@ -46,7 +46,7 @@ Extra props supplied to Input will be passed through to the html node.
 />
 ```
 
-### Textarea
+## Textarea
 
 ```jsx live
 <Input
@@ -55,7 +55,7 @@ Extra props supplied to Input will be passed through to the html node.
 />
 ```
 
-### Date
+## Date
 
 ```jsx live
 <Input type="date" />

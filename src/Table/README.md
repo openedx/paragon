@@ -12,7 +12,7 @@ notes: |
   Potentially does too much work. Consider if should be multiple components: Table, TableHeader, SortableTable, etc.
 ---
 
-### unstyled
+## unstyled
 
 ```jsx live
 <Table
@@ -77,7 +77,7 @@ notes: |
 />
 ```
 
-### table-striped
+## table-striped
 
 ```jsx live
 <Table
@@ -143,7 +143,7 @@ notes: |
 />
 ```
 
-### default heading
+## default heading
 
 ```jsx live
 <Table
@@ -209,7 +209,7 @@ notes: |
 />
 ```
 
-### responsive
+## responsive
 
 ```jsx live
 <Table
@@ -275,7 +275,7 @@ notes: |
 />
 ```
 
-### sortable
+## sortable
 
 ```jsx live
 () => {
@@ -373,7 +373,7 @@ notes: |
 };
 ```
 
-### fixed
+## fixed
 
 ```jsx live
 <Table
@@ -439,7 +439,7 @@ notes: |
 />
 ```
 
-### row header
+## row header
 
 ```jsx live
 <Table

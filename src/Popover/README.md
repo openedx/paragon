@@ -20,7 +20,7 @@ Note that from accessibility perspective `Popover` is treated as a tooltip (the 
 shouldn't contain interactive elements (e.g, buttons, links, etc.), you can read more about tooltip specifications [here](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tooltip_role).
 Try using <Link to="/components/modal/modal-popup/">ModalPopup</Link> instead if you want `Popover`'s behaviour with interactive elements.
 
-### Basic Usage
+## Basic Usage
 
 ```jsx live
 <>
@@ -44,7 +44,7 @@ Try using <Link to="/components/modal/modal-popup/">ModalPopup</Link> instead if
 </>
 ```
 
-### State variants
+## State variants
 
 ```jsx live
 <>

@@ -9,7 +9,7 @@ const SidebarFilters = () => {
   const filtersApplied = state?.filters && state.filters.length > 0;
   return (
     <div className="pgn__data-table-side-filters">
-      <h4 className="pgn__data-table-side-filters-title">Filters</h4>
+      <h3 className="pgn__data-table-side-filters-title">Filters</h3>
       <hr />
       {availableFilters.map(column => (
         <div
