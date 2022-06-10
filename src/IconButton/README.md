@@ -18,7 +18,7 @@ notes: ''
 () => {
   const variants = ["brand", "primary", "secondary", "success", "warning", "danger", "light", "dark", "black"];
   return (
-    <div className="d-flex">
+    <div className="d-flex flex-wrap">
       {variants.map((variant) => (
         <IconButton key={variant} src={Close} iconAs={Icon} alt="Close" onClick={() => {}} variant={variant} className="mr-2" />
       ))}
@@ -68,7 +68,7 @@ notes: ''
           alt="Close"
           onClick={() => {}}
           variant={variant}
-          className="mr-2"
+          className="mr-2 mb-2"
         />
       ))}
     </div>
