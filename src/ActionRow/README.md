@@ -36,7 +36,7 @@ ActionRow can also be used with a helper component ``ActionRow.Spacer`` to inser
 
 ```jsx live
 <ActionRow>
-  <Form.Checkbox>Don't ask me again.</Form.Checkbox>
+  <Form.Checkbox className="flex-column flex-sm-row">Don't ask me again.</Form.Checkbox>
   <ActionRow.Spacer />
   <Button variant="tertiary">
     Cancel
