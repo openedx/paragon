@@ -12,7 +12,7 @@ devStatus: 'To Do'
 notes: 'Not used anywhere in code on Github. Consult design.'
 ---
 
-### basic usage
+## basic usage
 
 ```jsx live
 <ListBox>
@@ -31,7 +31,7 @@ notes: 'Not used anywhere in code on Github. Consult design.'
 </ListBox>
 ```
 
-### using tag prop
+## using tag prop
 
 ```jsx live
 <React.Fragment>
@@ -53,7 +53,7 @@ notes: 'Not used anywhere in code on Github. Consult design.'
 </React.Fragment>
 ```
 
-### using onSelect prop
+## using onSelect prop
 
 ```jsx live
 class ListBoxWrapperForOnSelect extends React.Component {
@@ -122,7 +122,7 @@ class ListBoxWrapperForOnSelect extends React.Component {
 }
 ```
 
-### using selectedOptionIndex prop
+## using selectedOptionIndex prop
 
 ```jsx live
 class ListBoxWrapperForSelectedOptionIndex extends React.Component {

@@ -17,7 +17,7 @@ notes: |
 
 ---
 
-### Floating Labels
+## Floating Labels
 
 ```jsx live
 <Form>
@@ -115,7 +115,7 @@ notes: |
 
 
 
-### Regular Labels
+## Regular Labels
 
 ```jsx live
 <Form>

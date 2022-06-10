@@ -15,7 +15,7 @@ notes: ''
 
 ``Toasts`` sit fixed to the bottom left of the window.
 
-### Behaviors
+## Behaviors
 
 <ul>
   <li>Auto-dismiss: Toast automatically dismisses after 5 seconds by default.</li>
@@ -24,7 +24,7 @@ notes: ''
   <li>Auto-dismiss timer: 5 - 15 second range.</li>
 </ul>
 
-### Basic Usage
+## Basic Usage
 
 ```jsx live
 () => {
@@ -45,7 +45,7 @@ notes: ''
 }
 ```
 
-### With Button
+## With Button
 
 ```jsx live
 () => {
@@ -70,7 +70,7 @@ notes: ''
 }
 ```
 
-### With Link
+## With Link
 
 ```jsx live
 () => {

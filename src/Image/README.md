@@ -18,7 +18,7 @@ notes: |
   </a>
 </p>
 
-### Basic Styles
+## Basic Styles
 
 ```jsx live
 <>
@@ -43,7 +43,7 @@ notes: |
 </>
 ```
 
-### Fluid Sizing
+## Fluid Sizing
 
 ```jsx live
 <Image src="https://source.unsplash.com/1600x800/?nature,flower" fluid alt="Image description" />

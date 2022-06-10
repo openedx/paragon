@@ -23,7 +23,7 @@ notes: |
   </a>
 </p>
 
-### Basic Usage
+## Basic Usage
 ```jsx live
 <DropdownButton id="dropdown-basic-button" title="Dropdown button">
   <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
@@ -32,7 +32,7 @@ notes: |
 </DropdownButton>
 ```
 
-### Advanced Usage
+## Advanced Usage
 
 ```jsx live
 <>
@@ -79,7 +79,7 @@ notes: |
 </>
 ```
 
-### With IconButton
+## With IconButton
 
 You can use `Dropdown.Toggle` with [IconButton](/components/iconbutton) component, note that all props you provide to `Dropdown.Toggle` will get passed down to the `IconButton`.
 
@@ -102,7 +102,7 @@ You can use `Dropdown.Toggle` with [IconButton](/components/iconbutton) componen
 
 ***
 
-### Dropdown.Deprecated
+## Dropdown.Deprecated
 
 ```jsx live
 <Dropdown.Deprecated>

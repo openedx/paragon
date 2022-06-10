@@ -14,7 +14,7 @@ notes: |
 
 Use as a secondary navigation pattern to help convey hierarchy and enable navigation.
 
-### Basic Usage
+## Basic Usage
 
 ```jsx live
 <Breadcrumb ariaLabel="Breadcrumb basic"
@@ -54,7 +54,7 @@ Use as a secondary navigation pattern to help convey hierarchy and enable naviga
 </div>
 ```
 
-### With active label
+## With active label
 
 ```jsx live
 <Breadcrumb ariaLabel="Breadcrumb is active"
@@ -67,7 +67,7 @@ Use as a secondary navigation pattern to help convey hierarchy and enable naviga
 />
 ```
 
-### With custom spacer
+## With custom spacer
 
 ```jsx live
 <Breadcrumb ariaLabel="Breadcrumb custom spacer"

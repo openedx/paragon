@@ -20,7 +20,7 @@ notes: |
   </a>
 </p>
 
-### Uncontrolled usage
+## Uncontrolled usage
 
 ```jsx live
 <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
@@ -36,7 +36,7 @@ notes: |
 </Tabs>
 ```
 
-### Controlled usage
+## Controlled usage
 
 ```jsx live
 () => {
@@ -62,7 +62,7 @@ notes: |
 }
 ```
 
-### Button group usage
+## Button group usage
 
 ```jsx live
 <Tabs
@@ -82,7 +82,7 @@ notes: |
 </Tabs>
 ```
 
-### Pills usage
+## Pills usage
 
 ```jsx live
 <Tabs
@@ -102,7 +102,7 @@ notes: |
 </Tabs>
 ```
 
-### With notification
+## With notification
 
 ```jsx live
 <Tabs defaultActiveKey="profile" id="tab-example-with-notification">

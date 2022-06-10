@@ -15,7 +15,7 @@ notes: |
 
 A button that contains the user’s Avatar.
 
-### Basic Usage
+## Basic Usage
 
 ```jsx live
 <>
@@ -32,7 +32,7 @@ A button that contains the user’s Avatar.
 ```
 
 
-### With Dropdown
+## With Dropdown
 
 ```jsx live
 <Dropdown>
@@ -70,7 +70,7 @@ Props set on Dropdown.Toggle get passed through to the "as" component
 </Dropdown>
 ```
 
-### No label
+## No label
 
 For use in mobile viewports or constrained views.
 

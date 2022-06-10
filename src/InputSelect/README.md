@@ -12,7 +12,7 @@ notes: |
   Replaced by Input and ValidationFormGroup
 ---
 
-### basic usage
+## basic usage
 
 ```jsx live
 <InputSelect
@@ -28,7 +28,7 @@ notes: |
 />
 ```
 
-### separate labels and values
+## separate labels and values
 
 ```jsx live
 <InputSelect
@@ -46,7 +46,7 @@ notes: |
 />
 ```
 
-### separate option groups
+## separate option groups
 
 ```jsx live
 <InputSelect
@@ -82,7 +82,7 @@ notes: |
 />
 ```
 
-### with validation
+## with validation
 
 ```jsx live
 <InputSelect
@@ -102,7 +102,7 @@ notes: |
 />
 ```
 
-### disabled usage
+## disabled usage
 
 ```jsx live
 <InputSelect
@@ -120,7 +120,7 @@ notes: |
 />
 ```
 
-### with disabled option
+## with disabled option
 
 ```jsx live
 <InputSelect

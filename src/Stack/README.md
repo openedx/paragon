@@ -13,9 +13,9 @@ notes: |
 
 Shorthand helpers that build on top of our flexbox utilities to make component layout faster and easier than ever. Similar to the [Boostrap Stack](https://react-bootstrap.github.io/layout/stack/) component.
 
-### Basic Usage
+## Basic Usage
 
-### Vertical direction
+## Vertical direction
 
 Stacks are vertical by default and stacked items are full-width by default. Watch this pull request to see more details about the [auto stretching behavior](https://github.com/openedx/paragon/pull/1188).
 
@@ -27,7 +27,7 @@ Stacks are vertical by default and stacked items are full-width by default. Watc
 </Stack>
 ```
 
-### Horizontal direction
+## Horizontal direction
 
 ```jsx live
 <Stack direction="horizontal" gap={3}>

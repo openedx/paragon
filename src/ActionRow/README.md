@@ -17,7 +17,7 @@ A layout utility for the common use case of aligning buttons, links or text
 in a row in a control bar or nav.
 
 ActionRow assumes that its last child is the primary action and lays out actions so that the last item is in a primary location. If horizontal, the primary action sits on the right. If stacked, the primary action sits at the top of the stack (this is done via `flex-direction: column-reverse;`).
-### Basic Usage
+## Basic Usage
 
 ```jsx live
 <ActionRow>
@@ -30,7 +30,7 @@ ActionRow assumes that its last child is the primary action and lays out actions
 </ActionRow>
 ```
 
-### Usage with a Spacer
+## Usage with a Spacer
 
 ActionRow can also be used with a helper component ``ActionRow.Spacer`` to insert empty space between children
 
@@ -47,7 +47,7 @@ ActionRow can also be used with a helper component ``ActionRow.Spacer`` to inser
 </ActionRow>
 ```
 
-### Stacked Usage
+## Stacked Usage
 
 
 ```jsx live

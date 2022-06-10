@@ -15,7 +15,7 @@ Manages a transition when replacing content. By default, this component will tra
 
 TransitionReplace expects only one child at any time. Swap content inside the component (usually based on some state).
 
-### Basic usage
+## Basic usage
 
 ```jsx live
 () => {
@@ -47,7 +47,7 @@ TransitionReplace expects only one child at any time. Swap content inside the co
 
 **IMPORTANT NOTE: You must provide the `key` prop for all children**, even when only rendering a single item. This is how React will determine that a child is new rather than just updated.
 
-### Custom Transition
+## Custom Transition
 
 TransitionReplace uses [CSSTransition from the ReactTransitionGroup package](http://reactcommunity.org/react-transition-group/css-transition). The `transitionClassNames` prop is a pass-through to CSSTransitions's `classNames` prop. You can use this to change the crossfade animation. By default this value is `pgn__transition-replace` and the cross-fade is defined as below:
 
@@ -71,11 +71,11 @@ TransitionReplace uses [CSSTransition from the ReactTransitionGroup package](htt
 
 If you change the timing in CSS you should also match it using the `enterDuration` and `exitDuration` props.
 
-### Note:
+## Note:
 
 Children are not required. When this component is empty, the a child inserted into it will not transition the height (from zero). No "replacement" transition will occur and new content will pop in like a normal insert. This behaviour makes it easier to work with asyncronously loaded content (for example: during the first load you don't have to do any special handling).
 
-### Example
+## Example
 
 ```jsx live
 function DemoTransitionReplace() {

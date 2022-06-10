@@ -14,7 +14,7 @@ notes: |
 
 ---
 
-### Scrollable area adorned with top and bottom drop shadows on scroll detection
+## Scrollable area adorned with top and bottom drop shadows on scroll detection
 
 <span>
 Shadow is shown on top if you scroll upwards
@@ -23,7 +23,7 @@ Shadow is shown on bottom if you scroll downwards
 If you don't specify height you will get a default height per the Scrollable component (subject to change)
 </span>
 
-### Basic usage of scrollable with provided height
+## Basic usage of scrollable with provided height
 
 ```jsx live
 <Scrollable id="test" style={{'height': '40vh'}}>
@@ -67,7 +67,7 @@ If you don't specify height you will get a default height per the Scrollable com
 </Scrollable>
 ```
 
-### With padding used by consumer
+## With padding used by consumer
 
 ```jsx live
 <Scrollable style={{'height': '40vh'}}>

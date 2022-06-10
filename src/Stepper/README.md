@@ -21,13 +21,13 @@ Steppers display progress through a sequence of separate steps towards a particu
 
 This stepper can be used not only for initial setup, but also for future configuration changes over time by linking to the relevant step.
 
-#### Steps
+## Steps
 
 On page load, all steps will display a number and short label to help the user understand the sequence of actions towards setup or creation.
 Steppers should follow a linear progression, requiring the user to navigate between all steps in chronological order for initial setup
 Incomplete and active steps will always display a number. Completed steps will display a checkmark icon. Steps missing required input from the user will display the step error state.
 
-#### Navigation
+## Navigation
 
 The "Next" button, positioned on the right side of the footer, is used to progress to the next step in the process. This button should be active and available at all times. On the final workflow step, this button can display a contextual label related to the action (ex: 'FINISH', or 'APPLY').
 When the user has moved past the first step, display a Secondary outline button with a 'Back' label all the way to the left in the footer to allow them to move backwards in a linear progression.
@@ -35,13 +35,13 @@ The user can navigate back a single step, or multiple, but can only move forward
 The user may move back a step if they have not completed the active step without validation being required for the current step. Any actions that have been taken on the current step should be retained (data should not be cleared unless the user is warned.
 Note: Future use cases may require a third action button, positioned directly before the “Next” button, on the right. Examples include saving a draft or launching a preview within the flow.
 
-#### Errors and warnings
+## Errors and warnings
 
 Display the step error state and do not allow the user to move ahead on any step missing required input from the user. The error state should display a contextual label related to the active step.
 Request confirmation from users who choose to exit and discontinue before completing all steps in the workflow. The user should understand that all edits and changes will be lost if they do so.
 Display a browser confirmation dialog when closing the tab or navigating with the browser back button before completing all steps in the workflow. The user should understand that all edits and changes will be lost if they proceed.
 
-### Basic Usage
+## Basic Usage
 
 A ``Stepper`` must wrap a set of composed subcomponents:
 - ``Stepper.Header``
@@ -108,7 +108,7 @@ The order of steps is dictated by the order of ``Stepper.Step`` components in th
 }
 ```
 
-### In a modal
+## In a modal
 
 A composition of a stepper with a `FullscreenModal`.
 
@@ -179,7 +179,7 @@ A composition of a stepper with a `FullscreenModal`.
 }
 ```
 
-### Error State
+## Error State
 
 A composition of a stepper with the `hasError` prop. Note that the `index` prop is
 also required for steps to rerender correctly here.

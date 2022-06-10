@@ -25,7 +25,7 @@ notes: |
 
 This component uses a `Card` from react-bootstrap as a base component and extends it with additional subcomponents. <br/> <a href="https://react-bootstrap.github.io/components/cards/" target="_blank" rel="noopener noreferrer">See React-Bootstrap for additional documentation.</a>
 
-### Basic Usage
+## Basic Usage
 
 ```jsx live
 <Card style={{ width: '18rem' }}>
@@ -45,7 +45,7 @@ This component uses a `Card` from react-bootstrap as a base component and extend
 </Card>
 ```
 
-### Clickable variant
+## Clickable variant
 
 You use `isClickable` prop to add additional `hover` and `focus` styling to the `Card`.
 
@@ -67,7 +67,7 @@ You use `isClickable` prop to add additional `hover` and `focus` styling to the 
 </Card>
 ```
 
-### Header
+## Header
 You may add a header by adding a ``Card.Header`` component.
 This header displays a title, subtitle, and may contain actions.
 
@@ -87,7 +87,7 @@ This header displays a title, subtitle, and may contain actions.
 </div>
 ```
 
-#### Actions
+### Actions
 The `Card.Header` supports custom actions via the actions prop and renders them on the top right of the header.
 
 ```jsx live
@@ -130,7 +130,7 @@ The `Card.Header` supports custom actions via the actions prop and renders them 
 </div>
 ```
 
-#### Sizes
+### Sizes
 The `Card.Header` supports two size variants, ``"sm"`` and ``"md"``. 
 Add ``size="sm"`` for smaller header content and actions.
 
@@ -149,7 +149,7 @@ Add ``size="sm"`` for smaller header content and actions.
 </Card>
 ```
 
-### Section
+## Section
 `Card.Section` is the main block to display card content. Can include its own title and actions separate from other card components. Multiple sections have a `Card.Divider` between them.
 
 ```jsx live
@@ -185,12 +185,12 @@ Add ``size="sm"`` for smaller header content and actions.
 </Card>
 ```
 
-### Footer
+## Footer
 
 `Card.Footer` is the bottom part of the card. Usually used to outline actions that can be taken on the card object.
 Note that `Card.Footer` has a separate `orientation` prop which will override the value from `CardContext`, this was implemented because there are some use cases where you would want to display `Card` with horizontal orientation containing footer with vertical orientation.
 
-#### Vertical variant
+### Vertical variant
 
 ```jsx live
 () => {
@@ -225,7 +225,7 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
 }
 ```
 
-#### Horizontal variant
+### Horizontal variant
 
 ```jsx live
 <Card style={{width: '40%'}}>
@@ -246,7 +246,7 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
 </Card>
 ```
 
-### With Image Cap
+## With Image Cap
 
 `ImageCap` is an image that sits on the top or the left edge of a `Card`. Can contain an optional logo image.
 
@@ -273,7 +273,7 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
 </Card>
 ```
 
-### Horizontal variant
+## Horizontal variant
 
 When using horizontal variant Paragon provides additional component `Card.Body` which acts as a wrapper for content you want to display between `ImageCap` and `Footer`. Use it if content contains multiple components.
 
@@ -344,8 +344,8 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
 </>
 ```
 
-### Card Content Block Empty
-#### With image
+## Card Content Block Empty
+### With image
 
 ```jsx live
 <Card style={{ width: '25rem' }}>
@@ -358,7 +358,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
 </Card>
 ```
 
-#### Without image
+### Without image
 
 ```jsx live
 <Card style={{ width: '25rem' }}>
@@ -370,7 +370,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
 </Card>
 ```
 
-#### Horizontal variant with image
+### Horizontal variant with image
 
 ```jsx live
 <Card orientation="horizontal">
@@ -385,7 +385,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
 </Card>
 ```
 
-#### Horizontal variant without image
+### Horizontal variant without image
 
 ```jsx live
 <Card orientation="horizontal">
@@ -399,7 +399,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
 </Card>
 ```
 
-### CardGrid
+## CardGrid
 
 This component displays a collection of Cards as a grid (with customizable responsive behavior), where
 all cards in a given row have equal height. Try shrinking the width of your browser to view the responsive
@@ -528,7 +528,7 @@ behavior.
 </CardGrid>
 ```
 
-### CardDeck
+## CardDeck
 
 This component gives any child Card components equal height with an appropriate gutter between cards. However,
 it is meant to be used as a single horizontal row of Cards, not as a grid. See CardGrid for more details.

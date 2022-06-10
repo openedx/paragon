@@ -12,7 +12,7 @@ notes: |
   Alert replaces this component
 ---
 
-### basic usage
+## basic usage
 
 ```jsx live
 <StatusAlert
@@ -22,7 +22,7 @@ notes: |
 />
 ```
 
-### success alert
+## success alert
 
 ```jsx live
 <StatusAlert
@@ -33,7 +33,7 @@ notes: |
 />
 ```
 
-### danger alert
+## danger alert
 
 ```jsx live
 <StatusAlert
@@ -44,7 +44,7 @@ notes: |
 />
 ```
 
-### informational alert
+## informational alert
 
 ```jsx live
 <StatusAlert
@@ -55,7 +55,7 @@ notes: |
 />
 ```
 
-### alert with a custom aria-label on the close button
+## alert with a custom aria-label on the close button
 
 ```jsx live
 <StatusAlert
@@ -67,7 +67,7 @@ notes: |
 />
 ```
 
-### Non-dismissible alert
+## Non-dismissible alert
 
 ```jsx live
 <StatusAlert
@@ -78,7 +78,7 @@ notes: |
 />
 ```
 
-### alert invoked via a button
+## alert invoked via a button
 
 ```jsx live
 class StatusAlertWrapper extends React.Component {
@@ -126,7 +126,7 @@ class StatusAlertWrapper extends React.Component {
 }
 ```
 
-### alert with a link
+## alert with a link
 
 ```jsx live
 <StatusAlert
