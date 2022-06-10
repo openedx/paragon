@@ -61,7 +61,7 @@ const ModalPopup = ({
                 {hasArrow ? (
                   <div
                     id="arrow"
-                    className="pgn__modal-popup__arrow"
+                    className={`pgn__modal-popup__arrow pgn__modal-popup__arrow-${placement}`}
                     data-popper-arrow=""
                   />
                 ) : null}
