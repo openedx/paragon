@@ -66,6 +66,12 @@ A feature flag may be enabled in two ways:
 1. Environment variable. This will allow you to persist the state of a feature flag at build time, with no way to disable it.
 2. Query parameter. Adding `?feature=` to the URL as a query parameter, you can temporarily enable one or more features.
 
+### Feature Flags information
+Listed features below are set up in the doc site. Some features can be enabled by default. To disable a specific feature, don't pass anything to the corresponding variable.
+
+#### Axe
+[Axe](https://www.npmjs.com/package/axe-core) is an accessibility testing engine for websites and other HTML-based user interfaces. By default, it is enabled and controlled by `FEATURE_ENABLE_AXE`. Open the console on a particular page on the site to see warning and errors from this package.
+
 ## A note about .mdx files
 
 MDX is a flavor of Markdown that affords writing JSX directly inside markdown files. For more information visit the website: [https://mdxjs.com/](https://mdxjs.com/).
