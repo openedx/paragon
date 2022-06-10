@@ -17,13 +17,20 @@ Use as a secondary navigation pattern to help convey hierarchy and enable naviga
 ## Basic Usage
 
 ```jsx live
-<Breadcrumb ariaLabel="Breadcrumb basic"
-  links={[
-    { label: 'Link 1', url: '#link-1' },
-    { label: 'Link 2', url: '#link-2' },
-    { label: 'Link 3', url: '#link-3' },
-  ]}
-/>
+() => {
+  const isExtraSmall = useMediaQuery({maxWidth: breakpoints.extraSmall.maxWidth});
+
+  return (
+    <Breadcrumb ariaLabel="Breadcrumb basic"
+      links={[
+        { label: 'Link 1', url: '#link-1' },
+        { label: 'Link 2', url: '#link-2' },
+        { label: 'Link 3', url: '#link-3' },
+      ]}
+      isMobile={isExtraSmall}
+    />
+  )
+}
 ```
 
 ### Basic Usage (Mobile View)
@@ -42,40 +49,61 @@ Use as a secondary navigation pattern to help convey hierarchy and enable naviga
 ### Basic Usage (Inverse Pallete)
 
 ```jsx live
-<div className="bg-dark-700 p-4">
-  <Breadcrumb ariaLabel="Breadcrumb inverse pallete"
-    links={[
-      { label: 'Link 1', url: '/link-1' },
-      { label: 'Link 2', url: '/link-2' },
-      { label: 'Link 3', url: '/link-3' },
-    ]}
-    variant="dark"
-  />
-</div>
+() => {
+  const isExtraSmall = useMediaQuery({maxWidth: breakpoints.extraSmall.maxWidth});
+
+  return (
+    <div className="bg-dark-700 p-4">
+      <Breadcrumb ariaLabel="Breadcrumb inverse pallete"
+        links={[
+          {label: 'Link 1', url: '/link-1'},
+          {label: 'Link 2', url: '/link-2'},
+          {label: 'Link 3', url: '/link-3'},
+        ]}
+        variant="dark"
+        isMobile={isExtraSmall}
+      />
+    </div>
+  )
+}
 ```
 
 ## With active label
 
 ```jsx live
-<Breadcrumb ariaLabel="Breadcrumb is active"
-  links={[
-    { label: 'Link 1', url: '#link-1' },
-    { label: 'Link 2', url: '#link-2' },
-    { label: 'Link 3', url: '#link-3' },
-  ]}
-  activeLabel="Link 4"
-/>
+() => {
+  const isExtraSmall = useMediaQuery({maxWidth: breakpoints.extraSmall.maxWidth});
+
+  return (
+    <Breadcrumb ariaLabel="Breadcrumb is active"
+      links={[
+        { label: 'Link 1', url: '#link-1' },
+        { label: 'Link 2', url: '#link-2' },
+        { label: 'Link 3', url: '#link-3' },
+      ]}
+      activeLabel="Link 4"
+      isMobile={isExtraSmall}
+    />
+  )
+}
 ```
 
 ## With custom spacer
 
 ```jsx live
-<Breadcrumb ariaLabel="Breadcrumb custom spacer"
-  links={[
-    { label: 'Link 1', url: '#link-1' },
-    { label: 'Link 2', url: '#link-2' },
-    { label: 'Link 3', url: '#link-3' },
-  ]}
-  spacer={<span className="custom-spacer">/</span>}
-/>
+() => {
+  const isExtraSmall = useMediaQuery({maxWidth: breakpoints.extraSmall.maxWidth});
+
+  return (
+    <Breadcrumb ariaLabel="Breadcrumb custom spacer"
+      links={[
+        { label: 'Link 1', url: '#link-1' },
+        { label: 'Link 2', url: '#link-2' },
+        { label: 'Link 3', url: '#link-3' },
+      ]}
+      spacer={<span className="custom-spacer">/</span>}
+      isMobile={isExtraSmall}
+    />
+  )
+}
 ```
