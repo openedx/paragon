@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 import classNames from 'classnames';
-import { nonNegativeInteger } from 'airbnb-prop-types';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { nonNegativeInteger } from '../utils/propTypes';
 
 export default class ListBox extends React.Component {
   constructor(props) {
