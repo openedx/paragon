@@ -105,9 +105,9 @@ $indexes: map-merge(
 }
 
 @each $level in $levels {
-  @each $side in $sides {
-    .box-shadow-#{$side}-#{$level} {
-      @include pgn-box-shadow($level, $side);
+  @each $box-shadow-side in $box-shadow-sides {
+    .box-shadow-#{$box-shadow-side}-#{$level} {
+      @include pgn-box-shadow($level, $box-shadow-side);
     }
   }
 }

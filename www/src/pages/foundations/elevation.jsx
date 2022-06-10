@@ -32,7 +32,7 @@ const BoxShadowNode = () => {
         role="button"
         className={`pgn-doc__box-shadow-cell box-shadow-${side}-${level}`}
         tabIndex={0}
-        aria-label="Box-shadow cell"
+        aria-label={`Box-shadow cell ${side}-${level}`}
         onClick={() => isBoxShadowCopied(level, side)}
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
@@ -71,6 +71,7 @@ const BoxShadowToolkit = ({ updateBoxShadow, id }) => {
   });
 
   const updateBoxShadowModel = (property, value) => {
+    global.analytics.track('openedx.paragon.elevation.generator.updated', { property, value });
     setBoxShadowModel({
       ...boxShadowModel,
       [property]: value,
@@ -128,6 +129,7 @@ const BoxShadowGenerator = () => {
   };
 
   const addBoxShadow = () => {
+    global.analytics.track('openedx.paragon.elevation.generator.layer.added');
     setControls([...controls, {
       index: controls.length,
     }]);
@@ -135,9 +137,9 @@ const BoxShadowGenerator = () => {
 
   return (
     <section className="pgn-doc__box-shadow-generator">
-      <div className="pgn-doc__box-shadow-generator--preview">
+      <div className="pgn-doc__box-shadow-generator__preview">
         <div
-          className="pgn-doc__box-shadow-generator--preview-box border"
+          className="pgn-doc__box-shadow-generator__preview-box border"
           style={{ boxShadow: boxShadows.join(',') }}
         />
       </div>
@@ -181,7 +183,6 @@ export default function ElevationPage() {
         {/* eslint-disable-next-line react/jsx-pascal-case */}
         <SEO title="Elevation" />
         <h1 className="mb-3">Elevation & Shadow</h1>
-        <h2 className="pgn-doc__box-shadow--title">Clickable Box-Shadow Grid</h2>
         <p className="mb-5">
           You can quickly add a <code>box-shadow</code> with the Clickable Box-Shadow Grid.
           Click on the <code>box-shadow</code> you like and it will be copied to your clipboard.
@@ -236,6 +237,17 @@ export default function ElevationPage() {
             </tbody>
           </table>
         </div>
+
+        <h4>Example classes usage</h4>
+        <p>All classes names are available for use</p>
+        {boxShadowLevels.map(level => (
+          boxShadowSides.map(side => (
+            <code key={side} className="d-block mb-2 bg-gray-100 p-3">
+              .box-shadow-{side}-{level}
+            </code>
+          ))
+        ))}
+        <br />
 
         <h4>Example mixin usage</h4>
         {boxShadowLevels.map(level => (

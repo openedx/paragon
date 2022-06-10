@@ -207,14 +207,14 @@
   display: flex;
   flex-direction: column;
 
-  .pgn-doc__box-shadow-generator--preview {
+  .pgn-doc__box-shadow-generator__preview {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 3.125rem 0;
     padding: 3.125rem 0;
 
-    .pgn-doc__box-shadow-generator--preview-box {
+    .pgn-doc__box-shadow-generator__preview-box {
       height: 9.375rem;
       width: 9.375rem;
       background-color: $white;
