@@ -56,7 +56,7 @@ const ModalPopup = ({
             onClickOutside={onClose}
           >
             {isOpen && (
-              <>
+              <div className="pgn__modal-popup__tooltip">
                 {children}
                 {hasArrow ? (
                   <div
@@ -65,7 +65,7 @@ const ModalPopup = ({
                     data-popper-arrow=""
                   />
                 ) : null}
-              </>
+              </div>
             )}
           </FocusOn>
         </PopperElement>
