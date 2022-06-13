@@ -1,0 +1,84 @@
+.pgn-doc__icons-table {
+  margin-top: 1rem;
+  height: 902px;
+  width: 100%;
+
+  > div {
+    display: inline;
+  }
+
+  .pgn__icon {
+    height: 3rem;
+    width: 3rem;
+    margin: 0 auto;
+  }
+}
+
+.pgn-doc-icons-table__grid {
+  margin: 0 auto;
+}
+
+.pgn-doc__icons-table__cell {
+  @include pgn-box-shadow(1, "centered");
+
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1px;
+  border-radius: 10px;
+
+  .pgn-doc__icons-table__cell-text {
+    font-size: $font-size-xs;
+    padding: 0 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 140px;
+    text-align: center;
+  }
+
+  &:hover {
+    outline: 1px inset $primary-500;
+    cursor: pointer;
+  }
+}
+
+.pgn-doc__icons-table__preview {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h3 {
+    padding: 0 .25rem;
+
+    &:hover {
+      color: $white;
+      background: $info-300;
+      cursor: pointer;
+    }
+  }
+
+  code {
+    margin: 10px auto;
+    background: $danger-100;
+    padding: 0 .25rem;
+
+    &:hover {
+      color: $white;
+      background: $info-300;
+      cursor: pointer;
+    }
+  }
+
+  .pgn__icon {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+.pgn-doc__icons-table__not-found {
+  display: table;
+  margin: 1rem auto;
+}
