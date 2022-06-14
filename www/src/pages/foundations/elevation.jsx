@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
@@ -8,6 +8,7 @@ import {
 
 const boxShadowSides = ['down', 'up', 'right', 'left', 'centered'];
 const boxShadowLevels = [1, 2, 3, 4, 5];
+const DEFAULT_BOX_SHADOW = '10px 10px 20px #000';
 
 const controlsProps = [
   { key: 'x', name: 'Offset X' },
@@ -62,9 +63,9 @@ const BoxShadowNode = () => {
 
 const BoxShadowToolkit = ({ updateBoxShadow, id }) => {
   const [boxShadowModel, setBoxShadowModel] = useState({
-    x: 10,
-    y: 10,
-    blur: 25,
+    x: 0,
+    y: 0,
+    blur: 0,
     spread: 0,
     color: '#000',
     inset: false,
@@ -72,15 +73,15 @@ const BoxShadowToolkit = ({ updateBoxShadow, id }) => {
 
   const updateBoxShadowModel = (property, value) => {
     global.analytics.track('openedx.paragon.elevation.generator.updated', { property, value });
-    setBoxShadowModel({
+
+    const newBoxShadowModel = {
       ...boxShadowModel,
       [property]: value,
-    });
-  };
+    };
 
-  useEffect(() => {
-    updateBoxShadow(boxShadowModel, id);
-  }, [boxShadowModel]); // eslint-disable-line react-hooks/exhaustive-deps
+    setBoxShadowModel(newBoxShadowModel);
+    updateBoxShadow(newBoxShadowModel, id);
+  };
 
   return (
     <section className="pgn-doc__box-shadow-toolkit--controls-box">
@@ -92,7 +93,7 @@ const BoxShadowToolkit = ({ updateBoxShadow, id }) => {
         >
           {name}
           <Input
-            id={`toolkit-control-${key}`}
+            id={`toolkit-control-${key}-${id}`}
             key={key}
             min={key === 'x' || key === 'y' ? '-100' : '0'}
             max="100"
@@ -118,8 +119,7 @@ BoxShadowToolkit.propTypes = {
 };
 
 const BoxShadowGenerator = () => {
-  const [boxShadows, setBoxShadows] = useState([]);
-  const [controls, setControls] = useState([{ index: 0 }]);
+  const [boxShadows, setBoxShadows] = useState([DEFAULT_BOX_SHADOW]);
 
   const updateBoxShadow = (shadow, id) => {
     const boxShadow = [...boxShadows];
@@ -128,11 +128,9 @@ const BoxShadowGenerator = () => {
     setBoxShadows(boxShadow);
   };
 
-  const addBoxShadow = () => {
+  const addNewBoxShadowLayer = () => {
     global.analytics.track('openedx.paragon.elevation.generator.layer.added');
-    setControls([...controls, {
-      index: controls.length,
-    }]);
+    setBoxShadows([...boxShadows, DEFAULT_BOX_SHADOW]);
   };
 
   return (
@@ -145,10 +143,11 @@ const BoxShadowGenerator = () => {
       </div>
       <div className="pgn-doc__box-shadow-generator--toolkit">
         <div className="d-flex overflow-auto mb-2">
-          {controls.map(control => (
+          {boxShadows.map((boxShadow, index) => (
             <BoxShadowToolkit
-              key={control.index}
-              id={control.index}
+              /* eslint-disable-next-line react/no-array-index-key */
+              key={index}
+              id={index}
               updateBoxShadow={updateBoxShadow}
             />
           ))}
@@ -157,7 +156,7 @@ const BoxShadowGenerator = () => {
           <code className="pgn-doc__box-shadow-generator--toolkit-code mb-3 mb-md-0">
             box-shadow: {boxShadows.join(', ')};
           </code>
-          <Button onClick={addBoxShadow} variant="dark">Add New Layer</Button>
+          <Button onClick={addNewBoxShadowLayer} variant="dark">Add New Layer</Button>
         </div>
       </div>
     </section>

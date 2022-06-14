@@ -143,6 +143,11 @@
   }
 }
 
+[dir="rtl"] .pgn-doc__box-shadow-toolkit--controls-box {
+  margin-right: 0 !important;
+  margin-left: 1rem;
+}
+
 [dir="rtl"] .pgn-doc__box-shadow-wrapper {
   .pgn-doc__box-shadow-level-titles {
     .pgn-doc__box-shadow-level-title {
