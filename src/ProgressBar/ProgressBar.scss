@@ -76,6 +76,19 @@
     right: 0;
   }
 
+  @each $name, $color in $progress-colors {
+    .pgn__progress-threshold-dot--#{$name} {
+      background: $color;
+      position: absolute;
+      margin-top: -(calc(($progress-threshold-circle + $annotated-progress-height) / 2));
+      margin-left: -(calc($progress-threshold-circle / 2));
+      width: $progress-threshold-circle;
+      height: $progress-threshold-circle;
+      border-radius: calc($progress-threshold-circle / 2);
+      z-index: 1;
+    }
+  }
+
   .pgn__progress-info {
     display: inline-block;
     position: relative;
