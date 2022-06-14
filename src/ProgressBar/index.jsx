@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import ProgressBarBase from 'react-bootstrap/ProgressBar';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -37,10 +37,20 @@ const ProgressBarAnnotated = ({
   const progressColor = VARIANTS.includes(variant) ? variant : PROGRESS_DEFAULT_VARIANT;
   const thresholdColor = VARIANTS.includes(thresholdVariant) ? thresholdVariant : THRESHOLD_DEFAULT_VARIANT;
 
-  useEffect(() => {
+  const positionAnnotations = useCallback(() => {
     placeInfoAtZero(progressInfoRef, isProgressHintAfter, ANNOTATION_CLASS);
     placeInfoAtZero(thresholdInfoRef, isThresholdHintAfter, ANNOTATION_CLASS);
   }, [isProgressHintAfter, isThresholdHintAfter]);
+
+  useEffect(() => {
+    positionAnnotations();
+    const observer = new ResizeObserver(() => {
+      positionAnnotations();
+    });
+    const progressInfoEl = progressInfoRef.current;
+    observer.observe(progressInfoEl);
+    return () => progressInfoEl && progressInfoEl.unobserve(progressInfoEl);
+  }, [positionAnnotations]);
 
   const getHint = (text) => (
     <span className="pgn__progress-hint">
@@ -81,14 +91,6 @@ const ProgressBarAnnotated = ({
           />
         )}
       </ProgressBarBase>
-      {!!threshold && (
-        <div className="d-flex">
-          <div
-            className={`pgn__progress-threshold-dot--${thresholdColor}`}
-            style={{ left: `${threshold}%` }}
-          />
-        </div>
-      )}
       {(!!threshold && !!thresholdLabel) && (
         <div
           className="pgn__progress-info"
