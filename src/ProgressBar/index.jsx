@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import ProgressBarBase from 'react-bootstrap/ProgressBar';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -37,10 +37,20 @@ const ProgressBarAnnotated = ({
   const progressColor = VARIANTS.includes(variant) ? variant : PROGRESS_DEFAULT_VARIANT;
   const thresholdColor = VARIANTS.includes(thresholdVariant) ? thresholdVariant : THRESHOLD_DEFAULT_VARIANT;
 
-  useEffect(() => {
+  const positionAnnotations = useCallback(() => {
     placeInfoAtZero(progressInfoRef, isProgressHintAfter, ANNOTATION_CLASS);
     placeInfoAtZero(thresholdInfoRef, isThresholdHintAfter, ANNOTATION_CLASS);
   }, [isProgressHintAfter, isThresholdHintAfter]);
+
+  useEffect(() => {
+    positionAnnotations();
+    const observer = new ResizeObserver(() => {
+      positionAnnotations();
+    });
+    const progressInfoEl = progressInfoRef.current;
+    observer.observe(progressInfoEl);
+    return () => progressInfoEl && observer.unobserve(progressInfoEl);
+  }, [positionAnnotations]);
 
   const getHint = (text) => (
     <span className="pgn__progress-hint">
@@ -80,12 +90,6 @@ const ProgressBarAnnotated = ({
             srOnly
           />
         )}
-        {!!threshold && (
-          <div
-            className={`pgn__progress-threshold-dot--${thresholdColor}`}
-            style={{ left: `${threshold}%` }}
-          />
-        )}
       </ProgressBarBase>
       {(!!threshold && !!thresholdLabel) && (
         <div
@@ -116,8 +120,6 @@ ProgressBarAnnotated.propTypes = {
   variant: PropTypes.oneOf(VARIANTS),
   /** Specifies an additional `className` to add to the base element. */
   className: PropTypes.string,
-  /** Hide's the label visually. */
-  visuallyHidden: PropTypes.bool,
   /** Threshold current value. */
   threshold: PropTypes.number,
   /** Specifies label for `threshold`. */
@@ -135,7 +137,6 @@ ProgressBarAnnotated.defaultProps = {
   label: undefined,
   variant: PROGRESS_DEFAULT_VARIANT,
   className: undefined,
-  visuallyHidden: false,
   threshold: undefined,
   thresholdLabel: undefined,
   thresholdVariant: THRESHOLD_DEFAULT_VARIANT,
