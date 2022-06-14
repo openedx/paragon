@@ -7,8 +7,30 @@
   width: 100%;
 }
 
-.pgn__card-loader {
-  width: 50%;
+.pgn__card-footer__loader {
+  width: 100%;
+}
+
+.pgn__card-header__loading {
+  width: 100%;
+
+  .react-loading-skeleton {
+    margin-top: 45px;
+  }
+}
+
+.pgn__card-section__loading {
+  .react-loading-skeleton {
+    margin-bottom: 16px;
+  }
+}
+
+.pgn__card-image-cap-loading {
+  .react-loading-skeleton {
+    margin-bottom: 20px;
+    position: relative;
+    top: -5px;
+  }
 }
 
 .pgn__card-grid {

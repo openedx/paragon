@@ -19,9 +19,11 @@ const CardFooter = React.forwardRef(({
   return (
     <div className={classNames(className, wrapperClassName)} ref={ref}>
       {isLoading
-        ? <Skeleton containerClassName="pgn__card-loader" />
-        : textElement && <div className={textElementClassName}>{textElement}</div>}
-      {isLoading ? <Skeleton containerClassName="pgn__card-loader" /> : children}
+        ? <Skeleton containerClassName="pgn__card-footer__loader" height={44} />
+        : (
+          textElement && <div className={textElementClassName}>{textElement}</div>
+        )}
+      {isLoading ? <Skeleton /> : children}
     </div>
   );
 });

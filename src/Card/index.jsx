@@ -12,11 +12,12 @@ import CardBody from './CardBody';
 
 const Card = React.forwardRef(({
   orientation,
+  isLoading,
   className,
   isClickable,
   ...props
 }, ref) => (
-  <CardContextProvider orientation={orientation} isLoading>
+  <CardContextProvider orientation={orientation} isLoading={isLoading}>
     <BaseCard
       {...props}
       className={classNames(className, 'pgn__card', {

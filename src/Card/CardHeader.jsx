@@ -1,6 +1,8 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import Skeleton from 'react-loading-skeleton';
+import CardContext from './CardContext';
 
 const CardHeader = React.forwardRef(({
   actions,
@@ -9,6 +11,7 @@ const CardHeader = React.forwardRef(({
   subtitle,
   title,
 }, ref) => {
+  const { isLoading } = useContext(CardContext);
   const cloneActions = useCallback(
     (Action) => {
       if (React.isValidElement(Action)) {
@@ -27,15 +30,22 @@ const CardHeader = React.forwardRef(({
 
   return (
     <div className={classNames('pgn__card-header', className)} ref={ref}>
-      <div className="pgn__card-header-content">
-        {title && <div className={`pgn__card-header-title-${size}`}>{title}</div>}
-        {subtitle && <div className={`pgn__card-header-subtitle-${size}`}>{subtitle}</div>}
-      </div>
-      {actions && (
-        <div className="pgn__card-header-actions">
-          {size !== 'md' ? cloneActions(actions) : actions}
-        </div>
-      )}
+      {isLoading
+        ? <Skeleton containerClassName="pgn__card-header__loading" height={20} />
+        : (
+          <>
+            <div className="pgn__card-header-content">
+              {title && <div className={`pgn__card-header-title-${size}`}>{title}</div>}
+              {subtitle && <div className={`pgn__card-header-subtitle-${size}`}>{subtitle}</div>}
+            </div>
+            {actions && (
+            <div className="pgn__card-header-actions">
+              {size !== 'md' ? cloneActions(actions) : actions}
+            </div>
+            )}
+          </>
+        )}
+
     </div>
   );
 });

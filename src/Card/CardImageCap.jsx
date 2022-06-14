@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import Skeleton from 'react-loading-skeleton';
 import CardContext from './CardContext';
 
 const CardImageCap = React.forwardRef(({
@@ -10,13 +11,19 @@ const CardImageCap = React.forwardRef(({
   logoAlt,
   className,
 }, ref) => {
-  const { orientation } = useContext(CardContext);
+  const { orientation, isLoading } = useContext(CardContext);
   const wrapperClassName = `pgn__card-wrapper-image-cap ${orientation}`;
 
   return (
     <div className={classNames(className, wrapperClassName)} ref={ref}>
-      <img className="pgn__card-image-cap" src={src} alt={srcAlt} />
-      {!!logoSrc && <img className="pgn__card-logo-cap" src={logoSrc} alt={logoAlt} />}
+      {isLoading
+        ? <Skeleton containerClassName="pgn__card-image-cap-loading" height={140} />
+        : (
+          <>
+            <img className="pgn__card-image-cap" src={src} alt={srcAlt} />
+            {!!logoSrc && <img className="pgn__card-logo-cap" src={logoSrc} alt={logoAlt} />}
+          </>
+        )}
     </div>
   );
 });

@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import Skeleton from 'react-loading-skeleton';
+import CardContext from './CardContext';
 
 const CardSection = React.forwardRef(({
   className,
@@ -8,16 +10,26 @@ const CardSection = React.forwardRef(({
   title,
   actions,
   muted,
-}, ref) => (
-  <div
-    className={classNames('pgn__card-section', className, { 'is-muted': muted })}
-    ref={ref}
-  >
-    {title && <div className="pgn__card-section-title">{title}</div>}
-    {children}
-    {actions && <div className="pgn__card-section-actions">{actions}</div>}
-  </div>
-));
+}, ref) => {
+  const { isLoading } = useContext(CardContext);
+
+  return (
+    <div
+      className={classNames('pgn__card-section', className, { 'is-muted': muted })}
+      ref={ref}
+    >
+      {isLoading
+        ? <Skeleton containerClassName="pgn__card-section__loading" height={100} />
+        : (
+          <>
+            {title && <div className="pgn__card-section-title">{title}</div>}
+            {children}
+            {actions && <div className="pgn__card-section-actions">{actions}</div>}
+          </>
+        )}
+    </div>
+  );
+});
 
 CardSection.propTypes = {
   /** Specifies class name to append to the base element. */
