@@ -80,13 +80,15 @@ const ProgressBarAnnotated = ({
             srOnly
           />
         )}
-        {!!threshold && (
+      </ProgressBarBase>
+      {!!threshold && (
+        <div className="d-flex">
           <div
             className={`pgn__progress-threshold-dot--${thresholdColor}`}
             style={{ left: `${threshold}%` }}
           />
-        )}
-      </ProgressBarBase>
+        </div>
+      )}
       {(!!threshold && !!thresholdLabel) && (
         <div
           className="pgn__progress-info"
@@ -116,8 +118,6 @@ ProgressBarAnnotated.propTypes = {
   variant: PropTypes.oneOf(VARIANTS),
   /** Specifies an additional `className` to add to the base element. */
   className: PropTypes.string,
-  /** Hide's the label visually. */
-  visuallyHidden: PropTypes.bool,
   /** Threshold current value. */
   threshold: PropTypes.number,
   /** Specifies label for `threshold`. */
@@ -135,7 +135,6 @@ ProgressBarAnnotated.defaultProps = {
   label: undefined,
   variant: PROGRESS_DEFAULT_VARIANT,
   className: undefined,
-  visuallyHidden: false,
   threshold: undefined,
   thresholdLabel: undefined,
   thresholdVariant: THRESHOLD_DEFAULT_VARIANT,
