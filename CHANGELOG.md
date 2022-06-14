@@ -1,3 +1,10 @@
+## [19.25.2](https://github.com/openedx/paragon/compare/v19.25.1...v19.25.2) (2022-06-14)
+
+
+### Bug Fixes
+
+* remove prop type warning and use only CSS for threshold dot in ProgressBar ([#1380](https://github.com/openedx/paragon/issues/1380)) ([81cae2e](https://github.com/openedx/paragon/commit/81cae2e716f5fe0b40f57216487fcd0db8d3d487))
+
 ## [19.25.1](https://github.com/openedx/paragon/compare/v19.25.0...v19.25.1) (2022-06-02)
 
 
