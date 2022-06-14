@@ -49,7 +49,7 @@ const ProgressBarAnnotated = ({
     });
     const progressInfoEl = progressInfoRef.current;
     observer.observe(progressInfoEl);
-    return () => progressInfoEl?.unobserve(progressInfoEl);
+    return () => progressInfoEl && observer.unobserve(progressInfoEl);
   }, [positionAnnotations]);
 
   const getHint = (text) => (
