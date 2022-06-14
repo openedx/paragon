@@ -219,7 +219,6 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
 ```jsx live
 () => {
   const footerLink = <a href='#link'>Footer text as a link</a>;
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
 
   return (
     <>

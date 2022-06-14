@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import Skeleton from 'react-loading-skeleton';
 import CardContext from './CardContext';
 
 const CardFooter = React.forwardRef(({
@@ -10,15 +11,17 @@ const CardFooter = React.forwardRef(({
   textElement,
   orientation,
 }, ref) => {
-  const { orientation: cardOrientation } = useContext(CardContext);
+  const { orientation: cardOrientation, isLoading } = useContext(CardContext);
   const footerOrientation = orientation || cardOrientation;
   const wrapperClassName = `pgn__card-footer ${footerOrientation}${isStacked ? '-stacked' : ''}`;
   const textElementClassName = `pgn__card-footer-text ${footerOrientation}${isStacked ? '-stacked' : ''}`;
 
   return (
     <div className={classNames(className, wrapperClassName)} ref={ref}>
-      {textElement && <div className={textElementClassName}>{textElement}</div>}
-      {children}
+      {isLoading
+        ? <Skeleton containerClassName="pgn__card-loader" />
+        : textElement && <div className={textElementClassName}>{textElement}</div>}
+      {isLoading ? <Skeleton containerClassName="pgn__card-loader" /> : children}
     </div>
   );
 });

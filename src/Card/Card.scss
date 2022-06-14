@@ -1,9 +1,14 @@
 @import "variables";
 @import "~bootstrap/scss/card";
+@import "~react-loading-skeleton/dist/skeleton";
 
 .pgn__card,
 .pgn__card-body {
   width: 100%;
+}
+
+.pgn__card-loader {
+  width: 50%;
 }
 
 .pgn__card-grid {
