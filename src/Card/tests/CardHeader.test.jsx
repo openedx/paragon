@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 import Button from '../../Button';
 import CardHeader from '../CardHeader';
 import CardContext from '../CardContext';
@@ -36,10 +37,14 @@ describe('<CardHeader />', () => {
     )).toJSON();
     expect(tree).toMatchSnapshot();
   });
-  it('renders with loading state', () => {
-    const tree = renderer.create((
-      <CardHeaderWrapper isLoading />
-    )).toJSON();
-    expect(tree).toMatchSnapshot();
+  it('render without loading state', () => {
+    const wrapper = mount(<CardHeaderWrapper />);
+    expect(wrapper.exists('.pgn__card-header-loader')).toBe(false);
+    expect(wrapper.props().isLoading).toBeUndefined();
+  });
+  it('render with loading state', () => {
+    const wrapper = mount(<CardHeaderWrapper isLoading />);
+    expect(wrapper.exists('.pgn__card-header-loader')).toBe(true);
+    expect(wrapper.props().isLoading).toBe(true);
   });
 });

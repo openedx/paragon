@@ -16,16 +16,18 @@ const CardFooter = React.forwardRef(({
   const wrapperClassName = `pgn__card-footer ${footerOrientation}${isStacked ? '-stacked' : ''}`;
   const textElementClassName = `pgn__card-footer-text ${footerOrientation}${isStacked ? '-stacked' : ''}`;
 
+  if (isLoading) {
+    return (
+      <div className={classNames(className, wrapperClassName)}>
+        <Skeleton containerClassName="pgn__card-footer-loader" />
+      </div>
+    );
+  }
+
   return (
     <div className={classNames(className, wrapperClassName)} ref={ref}>
-      {isLoading
-        ? <Skeleton containerClassName="pgn__card-footer-loader" />
-        : (
-          <>
-            {textElement && <div className={textElementClassName}>{textElement}</div>}
-            {children}
-          </>
-        )}
+      {textElement && <div className={textElementClassName}>{textElement}</div>}
+      {children}
     </div>
   );
 });

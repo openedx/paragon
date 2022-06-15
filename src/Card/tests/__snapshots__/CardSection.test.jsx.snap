@@ -68,27 +68,3 @@ exports[`<CardSection /> renders with default props 1`] = `
   Section content
 </div>
 `;
-
-exports[`<CardSection /> renders with loading state 1`] = `
-<div
-  className="pgn__card-section"
->
-  <span
-    aria-busy={true}
-    aria-live="polite"
-    className="pgn__card-section-loader"
-  >
-    <span
-      className="react-loading-skeleton"
-      style={
-        Object {
-          "height": 100,
-        }
-      }
-    >
-      ‌
-    </span>
-    <br />
-  </span>
-</div>
-`;

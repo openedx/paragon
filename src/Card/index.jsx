@@ -17,7 +17,7 @@ const Card = React.forwardRef(({
   isClickable,
   ...props
 }, ref) => (
-  <CardContextProvider orientation={orientation} isLoading={isLoading}>
+  <CardContextProvider orientation={orientation} isLoading>
     <BaseCard
       {...props}
       className={classNames(className, 'pgn__card', {

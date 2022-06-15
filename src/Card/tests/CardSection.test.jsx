@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 import Button from '../../Button';
 import CardSection from '../CardSection';
 import CardContext from '../CardContext';
@@ -41,11 +42,15 @@ describe('<CardSection />', () => {
     )).toJSON();
     expect(tree).toMatchSnapshot();
   });
-  it('renders with loading state', () => {
-    const tree = renderer.create((
-      <CardSectionWrapper isLoading />
-    )).toJSON();
-    expect(tree).toMatchSnapshot();
+  it('render without loading state', () => {
+    const wrapper = mount(<CardSectionWrapper />);
+    expect(wrapper.exists('.pgn__card-section-loader')).toBe(false);
+    expect(wrapper.props().isLoading).toBeUndefined();
+  });
+  it('render with loading state', () => {
+    const wrapper = mount(<CardSectionWrapper isLoading />);
+    expect(wrapper.exists('.pgn__card-section-loader')).toBe(true);
+    expect(wrapper.props().isLoading).toBe(true);
   });
   it('renders muted variant', () => {
     const tree = renderer.create((

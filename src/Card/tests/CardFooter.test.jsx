@@ -64,8 +64,14 @@ describe('<CardFooter />', () => {
     expect(link.prop('children')).toEqual('Link text here');
     expect(link.prop('href')).toEqual('https://example.com');
   });
-  it('loading state render', () => {
-    const tree = renderer.create((<CardFooterWrapper isLoading orientation="horizontal" isStacked />)).toJSON();
-    expect(tree).toMatchSnapshot();
+  it('render without loading state', () => {
+    const wrapper = mount(<CardFooterWrapper />);
+    expect(wrapper.exists('.pgn__card-footer-loader')).toBe(false);
+    expect(wrapper.props().isLoading).toBeUndefined();
+  });
+  it('render with loading state', () => {
+    const wrapper = mount(<CardFooterWrapper isLoading />);
+    expect(wrapper.exists('.pgn__card-footer-loader')).toBe(true);
+    expect(wrapper.props().isLoading).toBe(true);
   });
 });

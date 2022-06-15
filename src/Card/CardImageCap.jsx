@@ -14,16 +14,18 @@ const CardImageCap = React.forwardRef(({
   const { orientation, isLoading } = useContext(CardContext);
   const wrapperClassName = `pgn__card-wrapper-image-cap ${orientation}`;
 
+  if (isLoading) {
+    return (
+      <div className={classNames(className, wrapperClassName)}>
+        <Skeleton containerClassName="pgn__card-image-cap-loader" height="100%" />
+      </div>
+    );
+  }
+
   return (
     <div className={classNames(className, wrapperClassName)} ref={ref}>
-      {isLoading
-        ? <Skeleton containerClassName="pgn__card-image-cap-loader" height="100%" />
-        : (
-          <>
-            <img className="pgn__card-image-cap" src={src} alt={srcAlt} />
-            {!!logoSrc && <img className="pgn__card-logo-cap" src={logoSrc} alt={logoAlt} />}
-          </>
-        )}
+      <img className="pgn__card-image-cap" src={src} alt={srcAlt} />
+      {!!logoSrc && <img className="pgn__card-logo-cap" src={logoSrc} alt={logoAlt} />}
     </div>
   );
 });

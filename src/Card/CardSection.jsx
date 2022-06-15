@@ -13,20 +13,22 @@ const CardSection = React.forwardRef(({
 }, ref) => {
   const { isLoading } = useContext(CardContext);
 
+  if (isLoading) {
+    return (
+      <div className={classNames('pgn__card-section', className, { 'is-muted': muted })}>
+        <Skeleton containerClassName="pgn__card-section-loader" height={100} />
+      </div>
+    );
+  }
+
   return (
     <div
       className={classNames('pgn__card-section', className, { 'is-muted': muted })}
       ref={ref}
     >
-      {isLoading
-        ? <Skeleton containerClassName="pgn__card-section-loader" height={100} />
-        : (
-          <>
-            {title && <div className="pgn__card-section-title">{title}</div>}
-            {children}
-            {actions && <div className="pgn__card-section-actions">{actions}</div>}
-          </>
-        )}
+      {title && <div className="pgn__card-section-title">{title}</div>}
+      {children}
+      {actions && <div className="pgn__card-section-actions">{actions}</div>}
     </div>
   );
 });

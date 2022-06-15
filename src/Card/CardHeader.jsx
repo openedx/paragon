@@ -28,23 +28,25 @@ const CardHeader = React.forwardRef(({
     [size],
   );
 
+  if (isLoading) {
+    return (
+      <div className={classNames('pgn__card-header', className)}>
+        <Skeleton containerClassName="pgn__card-header-loader" height={20} />
+      </div>
+    );
+  }
+
   return (
     <div className={classNames('pgn__card-header', className)} ref={ref}>
-      {isLoading
-        ? <Skeleton containerClassName="pgn__card-header-loader" height={20} />
-        : (
-          <>
-            <div className="pgn__card-header-content">
-              {title && <div className={`pgn__card-header-title-${size}`}>{title}</div>}
-              {subtitle && <div className={`pgn__card-header-subtitle-${size}`}>{subtitle}</div>}
-            </div>
-            {actions && (
-            <div className="pgn__card-header-actions">
-              {size !== 'md' ? cloneActions(actions) : actions}
-            </div>
-            )}
-          </>
-        )}
+      <div className="pgn__card-header-content">
+        {title && <div className={`pgn__card-header-title-${size}`}>{title}</div>}
+        {subtitle && <div className={`pgn__card-header-subtitle-${size}`}>{subtitle}</div>}
+      </div>
+      {actions && (
+        <div className="pgn__card-header-actions">
+          {size !== 'md' ? cloneActions(actions) : actions}
+        </div>
+      )}
     </div>
   );
 });
