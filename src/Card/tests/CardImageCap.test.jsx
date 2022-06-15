@@ -5,8 +5,8 @@ import CardImageCap from '../CardImageCap';
 import CardContext from '../CardContext';
 
 // eslint-disable-next-line react/prop-types
-const CardImageCapWrapper = ({ orientation = 'vertical', ...props }) => (
-  <CardContext.Provider value={{ orientation }}><CardImageCap {...props} /></CardContext.Provider>);
+const CardImageCapWrapper = ({ orientation = 'vertical', isLoading, ...props }) => (
+  <CardContext.Provider value={{ orientation, isLoading }}><CardImageCap {...props} /></CardContext.Provider>);
 
 describe('<CardImageCap />', () => {
   it('renders with scr prop and srcAlt', () => {
@@ -56,5 +56,11 @@ describe('<CardImageCap />', () => {
     expect(imgInstances.length).toEqual(2);
     expect(imgInstances.at(0).props().alt).toBe('Src alt text');
     expect(imgInstances.at(1).props().alt).toBe('Logo alt text');
+  });
+  it('loading state render', () => {
+    const tree = renderer.create((
+      <CardImageCapWrapper isLoading orientation="horizontal" src="http://fake.image" logoSrc="http://fake.image" />
+    )).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

@@ -1,5 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<CardFooter /> loading state render 1`] = `
+<div
+  className="pgn__card-footer horizontal-stacked"
+>
+  <span
+    aria-busy={true}
+    aria-live="polite"
+    className="pgn__card-footer__loader"
+  >
+    <span
+      className="react-loading-skeleton"
+      style={Object {}}
+    >
+      ‌
+    </span>
+    <br />
+  </span>
+</div>
+`;
+
 exports[`<CardFooter /> renders horizontal orientation with footer text 1`] = `
 <div
   className="pgn__card-footer horizontal"

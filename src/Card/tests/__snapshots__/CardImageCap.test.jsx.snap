@@ -1,5 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<CardImageCap /> loading state render 1`] = `
+<div
+  className="pgn__card-wrapper-image-cap horizontal"
+>
+  <span
+    aria-busy={true}
+    aria-live="polite"
+    className="pgn__card-image-cap-loader"
+  >
+    <span
+      className="react-loading-skeleton"
+      style={
+        Object {
+          "height": "100%",
+        }
+      }
+    >
+      ‌
+    </span>
+    <br />
+  </span>
+</div>
+`;
+
 exports[`<CardImageCap /> renders with scr prop and srcAlt 1`] = `
 <div
   className="pgn__card-wrapper-image-cap vertical"
