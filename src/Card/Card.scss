@@ -248,3 +248,23 @@
     flex-direction: row;
   }
 }
+
+@media (max-width: map-get($grid-breakpoints, "sm")) {
+  .pgn__card-footer {
+    .btn {
+      width: 100%;
+      margin: .625rem 0 0;
+      margin-inline-end: 0 !important;
+    }
+  }
+
+  .pgn__action-row {
+    .btn:not(:last-child) {
+      margin-bottom: .3125rem;
+    }
+
+    & > * + * {
+      margin-inline-start: 0;
+    }
+  }
+}
