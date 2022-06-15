@@ -4,6 +4,20 @@
   transition: $input-transition;
   border: $search-border-width solid $search-border-color;
 
+  .btn:focus-visible {
+    outline: none;
+    position: relative;
+    transition: $input-transition;
+
+    &::after {
+      content: "";
+      border: $search-border-focus-width double $search-border-focus-color;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   &.disabled,
   &:disabled {
     opacity: $search-disabled-opacity;
