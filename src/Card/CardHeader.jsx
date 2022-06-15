@@ -31,7 +31,7 @@ const CardHeader = React.forwardRef(({
   return (
     <div className={classNames('pgn__card-header', className)} ref={ref}>
       {isLoading
-        ? <Skeleton containerClassName="pgn__card-header__loading" height={20} />
+        ? <Skeleton containerClassName="pgn__card-header__loader" height={20} />
         : (
           <>
             <div className="pgn__card-header-content">
@@ -45,7 +45,6 @@ const CardHeader = React.forwardRef(({
             )}
           </>
         )}
-
     </div>
   );
 });

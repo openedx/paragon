@@ -1,5 +1,5 @@
 import React, { createContext } from 'react';
-import PropTypes, { bool } from 'prop-types';
+import PropTypes from 'prop-types';
 
 const CardContext = createContext({});
 
@@ -15,7 +15,7 @@ CardContextProvider.propTypes = {
   /** Specifies which orientation to use. */
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
   /** Specifies loading state. */
-  isLoading: bool,
+  isLoading: PropTypes.bool,
   /** Specifies content of the component. */
   children: PropTypes.node,
 };

@@ -17,7 +17,7 @@ const CardImageCap = React.forwardRef(({
   return (
     <div className={classNames(className, wrapperClassName)} ref={ref}>
       {isLoading
-        ? <Skeleton containerClassName="pgn__card-image-cap-loading" height={140} />
+        ? <Skeleton containerClassName="pgn__card-image-cap-loader" height="100%" />
         : (
           <>
             <img className="pgn__card-image-cap" src={src} alt={srcAlt} />

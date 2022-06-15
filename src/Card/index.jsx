@@ -44,6 +44,8 @@ Card.propTypes = {
   orientation: PropTypes.oneOf(['vertical', 'horizontal']),
   /** Specifies whether the `Card` is clickable, if `true` appropriate `hover` and `focus` styling will be added. */
   isClickable: PropTypes.bool,
+  /** Specifies loading state. */
+  isLoading: PropTypes.bool,
 };
 
 Card.defaultProps = {
@@ -51,6 +53,7 @@ Card.defaultProps = {
   className: undefined,
   orientation: 'vertical',
   isClickable: false,
+  isLoading: false,
 };
 
 Card.Header = CardHeader;
