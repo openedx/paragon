@@ -1,3 +1,10 @@
+## [19.25.3](https://github.com/openedx/paragon/compare/v19.25.2...v19.25.3) (2022-06-15)
+
+
+### Bug Fixes
+
+* [BD-46] added default elevation on Card component per Figma spec ([#1364](https://github.com/openedx/paragon/issues/1364)) ([0765840](https://github.com/openedx/paragon/commit/076584097475327eaa2d4e64bf2149efbb85882d))
+
 ## [19.25.2](https://github.com/openedx/paragon/compare/v19.25.1...v19.25.2) (2022-06-14)
 
 
