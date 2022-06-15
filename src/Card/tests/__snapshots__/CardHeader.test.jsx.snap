@@ -32,6 +32,30 @@ exports[`<CardHeader /> renders with actions 1`] = `
 </div>
 `;
 
+exports[`<CardHeader /> renders with loading state 1`] = `
+<div
+  className="pgn__card-header"
+>
+  <span
+    aria-busy={true}
+    aria-live="polite"
+    className="pgn__card-header__loader"
+  >
+    <span
+      className="react-loading-skeleton"
+      style={
+        Object {
+          "height": 20,
+        }
+      }
+    >
+      ‌
+    </span>
+    <br />
+  </span>
+</div>
+`;
+
 exports[`<CardHeader /> renders with title and subtitle prop 1`] = `
 <div
   className="pgn__card-header"

@@ -2,6 +2,14 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Button from '../../Button';
 import CardHeader from '../CardHeader';
+import CardContext from '../CardContext';
+
+// eslint-disable-next-line react/prop-types
+const CardHeaderWrapper = ({ isLoading }) => (
+  <CardContext.Provider value={{ isLoading }}>
+    <CardHeader />
+  </CardContext.Provider>
+);
 
 describe('<CardHeader />', () => {
   it('renders with title prop', () => {
@@ -25,6 +33,12 @@ describe('<CardHeader />', () => {
           <Button>Action</Button>
       }
       />
+    )).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it('renders with loading state', () => {
+    const tree = renderer.create((
+      <CardHeaderWrapper isLoading />
     )).toJSON();
     expect(tree).toMatchSnapshot();
   });
