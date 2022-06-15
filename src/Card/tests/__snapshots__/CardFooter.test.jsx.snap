@@ -7,7 +7,7 @@ exports[`<CardFooter /> loading state render 1`] = `
   <span
     aria-busy={true}
     aria-live="polite"
-    className="pgn__card-footer__loader"
+    className="pgn__card-footer-loader"
   >
     <span
       className="react-loading-skeleton"

@@ -74,7 +74,7 @@
     flex-shrink: 0;
   }
 
-  .pgn__card-header__loader {
+  .pgn__card-header-loader {
     width: 100%;
 
     .react-loading-skeleton {
@@ -117,7 +117,7 @@
     }
   }
 
-  .pgn__card-section__loader {
+  .pgn__card-section-loader {
     .react-loading-skeleton {
       margin-bottom: 1rem;
     }
@@ -140,7 +140,7 @@
     }
   }
 
-  .pgn__card-footer__loader {
+  .pgn__card-footer-loader {
     width: 100%;
     margin-inline-start: 0 !important;
   }

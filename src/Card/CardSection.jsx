@@ -19,7 +19,7 @@ const CardSection = React.forwardRef(({
       ref={ref}
     >
       {isLoading
-        ? <Skeleton containerClassName="pgn__card-section__loader" height={100} />
+        ? <Skeleton containerClassName="pgn__card-section-loader" height={100} />
         : (
           <>
             {title && <div className="pgn__card-section-title">{title}</div>}

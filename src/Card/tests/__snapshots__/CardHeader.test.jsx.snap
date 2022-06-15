@@ -39,7 +39,7 @@ exports[`<CardHeader /> renders with loading state 1`] = `
   <span
     aria-busy={true}
     aria-live="polite"
-    className="pgn__card-header__loader"
+    className="pgn__card-header-loader"
   >
     <span
       className="react-loading-skeleton"

@@ -76,7 +76,7 @@ exports[`<CardSection /> renders with loading state 1`] = `
   <span
     aria-busy={true}
     aria-live="polite"
-    className="pgn__card-section__loader"
+    className="pgn__card-section-loader"
   >
     <span
       className="react-loading-skeleton"
