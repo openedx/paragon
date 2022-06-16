@@ -185,6 +185,10 @@ export {
   useAbsoluteLayout,
   useFlexLayout,
 } from 'react-table';
+export {
+  Skeleton,
+  SkeletonTheme,
+} from 'react-loading-skeleton';
 export { default as Bubble } from './Bubble';
 
 export { default as messages } from './i18n';
