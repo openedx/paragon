@@ -32,6 +32,24 @@ const Dialog = () => (
 
 const mockPositionRef = { current: null };
 
+const arrowPlacements = [
+  'auto',
+  'auto-start',
+  'auto-end',
+  'top',
+  'top-start',
+  'top-end',
+  'bottom',
+  'bottom-start',
+  'bottom-end',
+  'right',
+  'right-start',
+  'right-end',
+  'left',
+  'left-start',
+  'left-end',
+];
+
 describe('<ModalPopup />', () => {
   describe('when isOpen', () => {
     const isOpen = true;
@@ -95,128 +113,29 @@ describe('<ModalPopup />', () => {
     });
   });
   describe('withArrow', () => {
+    const popupArrowModalClass = '.pgn__modal-popup__arrow';
+    arrowPlacements.forEach((side) => {
+      it(`renders with placement ${side}`, () => {
+        const wrapperPopup = shallow((
+          <ModalPopup hasArrow placement={side} isOpen onClose={jest.fn()}>
+            <Dialog />
+          </ModalPopup>));
+        expect(wrapperPopup.exists(`${popupArrowModalClass}-${side}`)).toBe(true);
+      });
+    });
     it('renders without arrow', () => {
       const wrapperPopup = shallow((
         <ModalPopup isOpen onClose={jest.fn()}>
           <Dialog />
         </ModalPopup>));
-      expect(wrapperPopup.exists('.pgn__modal-popup__arrow')).toBe(false);
+      expect(wrapperPopup.exists(popupArrowModalClass)).toBe(false);
     });
     it('renders with arrow', () => {
       const wrapperPopup = shallow((
         <ModalPopup hasArrow isOpen onClose={jest.fn()}>
           <Dialog />
         </ModalPopup>));
-      expect(wrapperPopup.exists('.pgn__modal-popup__arrow')).toBe(true);
-    });
-    it('renders with placement auto', () => {
-      const wrapperPopup = shallow((
-        <ModalPopup hasArrow placement="auto" isOpen onClose={jest.fn()}>
-          <Dialog />
-        </ModalPopup>));
-      expect(wrapperPopup.exists('.pgn__modal-popup__arrow-auto')).toBe(true);
-    });
-    it('renders with placement auto-start', () => {
-      const wrapperPopup = shallow((
-        <ModalPopup hasArrow placement="auto-start" isOpen onClose={jest.fn()}>
-          <Dialog />
-        </ModalPopup>));
-      expect(wrapperPopup.exists('.pgn__modal-popup__arrow-auto-start')).toBe(true);
-    });
-    it('renders with placement auto-end', () => {
-      const wrapperPopup = shallow((
-        <ModalPopup hasArrow placement="auto-end" isOpen onClose={jest.fn()}>
-          <Dialog />
-        </ModalPopup>));
-      expect(wrapperPopup.exists('.pgn__modal-popup__arrow-auto-end')).toBe(true);
-    });
-    it('renders with placement right', () => {
-      const wrapperPopup = shallow((
-        <ModalPopup hasArrow placement="right" isOpen onClose={jest.fn()}>
-          <Dialog />
-        </ModalPopup>));
-      expect(wrapperPopup.exists('.pgn__modal-popup__arrow-right')).toBe(true);
-    });
-    it('renders with placement right-start', () => {
-      const wrapperPopup = shallow((
-        <ModalPopup hasArrow placement="right-start" isOpen onClose={jest.fn()}>
-          <Dialog />
-        </ModalPopup>));
-      expect(wrapperPopup.exists('.pgn__modal-popup__arrow-right-start')).toBe(true);
-    });
-    it('renders with placement right-end', () => {
-      const wrapperPopup = shallow((
-        <ModalPopup hasArrow placement="right-end" isOpen onClose={jest.fn()}>
-          <Dialog />
-        </ModalPopup>));
-      expect(wrapperPopup.exists('.pgn__modal-popup__arrow-right-end')).toBe(true);
-    });
-    it('renders with placement left', () => {
-      const wrapperPopup = shallow((
-        <ModalPopup hasArrow placement="left" isOpen onClose={jest.fn()}>
-          <Dialog />
-        </ModalPopup>));
-      expect(wrapperPopup.exists('.pgn__modal-popup__arrow-left')).toBe(true);
-    });
-    it('renders with placement left-start', () => {
-      const isOpen = true;
-      const closeFn = jest.fn();
-      const wrapperPopup = shallow((
-        <ModalPopup hasArrow placement="left-start" isOpen={isOpen} onClose={closeFn}>
-          <Dialog />
-        </ModalPopup>));
-      expect(wrapperPopup.exists('.pgn__modal-popup__arrow-left-start')).toBe(true);
-    });
-    it('renders with placement left-end', () => {
-      const isOpen = true;
-      const closeFn = jest.fn();
-      const wrapperPopup = shallow((
-        <ModalPopup hasArrow placement="left-end" isOpen={isOpen} onClose={closeFn}>
-          <Dialog />
-        </ModalPopup>));
-      expect(wrapperPopup.exists('.pgn__modal-popup__arrow-left-end')).toBe(true);
-    });
-    it('renders with placement top', () => {
-      const wrapperPopup = shallow((
-        <ModalPopup hasArrow placement="top" isOpen onClose={jest.fn()}>
-          <Dialog />
-        </ModalPopup>));
-      expect(wrapperPopup.exists('.pgn__modal-popup__arrow-top')).toBe(true);
-    });
-    it('renders with placement top-start', () => {
-      const wrapperPopup = shallow((
-        <ModalPopup hasArrow placement="top-start" isOpen onClose={jest.fn()}>
-          <Dialog />
-        </ModalPopup>));
-      expect(wrapperPopup.exists('.pgn__modal-popup__arrow-top-start')).toBe(true);
-    });
-    it('renders with placement top-end', () => {
-      const wrapperPopup = shallow((
-        <ModalPopup hasArrow placement="top-end" isOpen onClose={jest.fn()}>
-          <Dialog />
-        </ModalPopup>));
-      expect(wrapperPopup.exists('.pgn__modal-popup__arrow-top-end')).toBe(true);
-    });
-    it('renders with placement bottom', () => {
-      const wrapperPopup = shallow((
-        <ModalPopup hasArrow placement="bottom" isOpen onClose={jest.fn()}>
-          <Dialog />
-        </ModalPopup>));
-      expect(wrapperPopup.exists('.pgn__modal-popup__arrow-bottom')).toBe(true);
-    });
-    it('renders with placement bottom-start', () => {
-      const wrapperPopup = shallow((
-        <ModalPopup hasArrow placement="bottom-start" isOpen onClose={jest.fn()}>
-          <Dialog />
-        </ModalPopup>));
-      expect(wrapperPopup.exists('.pgn__modal-popup__arrow-bottom-start')).toBe(true);
-    });
-    it('renders with placement bottom-end', () => {
-      const wrapperPopup = shallow((
-        <ModalPopup hasArrow placement="bottom-end" isOpen onClose={jest.fn()}>
-          <Dialog />
-        </ModalPopup>));
-      expect(wrapperPopup.exists('.pgn__modal-popup__arrow-bottom-end')).toBe(true);
+      expect(wrapperPopup.exists(popupArrowModalClass)).toBe(true);
     });
   });
 });
