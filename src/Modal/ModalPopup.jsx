@@ -5,6 +5,8 @@ import Portal from './Portal';
 import PopperElement from './PopperElement';
 import { ModalContextProvider } from './ModalContext';
 
+const PLACEMENT_OFFSET = { right: [-2, 10], left: [-2, 10] };
+
 const ModalPopup = ({
   children,
   onClose,
@@ -26,16 +28,7 @@ const ModalPopup = ({
     {
       name: 'offset',
       options: {
-        offset: () => {
-          switch (placement) {
-            case 'right':
-              return [-2, 10];
-            case 'left':
-              return [-2, 10];
-            default:
-              return [0, 10];
-          }
-        },
+        offset: () => PLACEMENT_OFFSET[placement] || [0, 10],
       },
     },
   ];
