@@ -5,7 +5,7 @@ import Portal from './Portal';
 import PopperElement from './PopperElement';
 import { ModalContextProvider } from './ModalContext';
 
-const PLACEMENT_OFFSET = { right: [-2, 10], left: [-2, 10] };
+const PLACEMENT_OFFSETS = { right: [-2, 10], left: [-2, 10] };
 
 const ModalPopup = ({
   children,
@@ -19,6 +19,7 @@ const ModalPopup = ({
   ...popperProps
 }) => {
   const RootComponent = withPortal ? Portal : React.Fragment;
+  const placementOffsetValue = PLACEMENT_OFFSETS[placement] || [0, 10];
 
   const popperParams = [
     {
@@ -28,7 +29,7 @@ const ModalPopup = ({
     {
       name: 'offset',
       options: {
-        offset: () => PLACEMENT_OFFSET[placement] || [0, 10],
+        offset: () => placementOffsetValue,
       },
     },
   ];
