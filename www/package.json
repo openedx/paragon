@@ -3,8 +3,8 @@
   "description": "Paragon Pattern Library Documentation",
   "version": "1.0.0",
   "dependencies": {
-    "@edx/brand-edx.org": "^2.0.6",
     "@docsearch/react": "^3.0.0",
+    "@edx/brand-edx.org": "^2.0.6",
     "@edx/brand-openedx": "^1.1.0",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@mdx-js/mdx": "^1.6.22",
@@ -29,6 +29,7 @@
     "react-focus-on": "^3.5.4",
     "react-helmet": "^6.1.0",
     "react-live": "^2.4.0",
+    "react-intl": "^5.25.0",
     "rehype-autolink-headings": "^5.1.0",
     "rehype-slug": "^4.0.1",
     "sass": "^1.32.13",

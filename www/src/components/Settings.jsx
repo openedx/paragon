@@ -18,8 +18,6 @@ const Settings = () => {
     handleSettingsChange,
     showSettings,
     closeSettings,
-    direction,
-    onDirectionChange,
   } = useContext(SettingsContext);
 
   return (
@@ -61,8 +59,8 @@ const Settings = () => {
         <Form.Group>
           <Form.Control
             as="select"
-            value={direction}
-            onChange={onDirectionChange}
+            value={settings.direction}
+            onChange={(e) => handleSettingsChange('direction', e.target.value)}
             floatingLabel="Direction"
           >
             <option value="ltr">Left to right</option>

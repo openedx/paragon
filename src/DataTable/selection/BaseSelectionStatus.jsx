@@ -51,7 +51,7 @@ const BaseSelectionStatus = ({
             <FormattedMessage
               id="pgn.DataTable.BaseSelectionStatus.selectAllText"
               defaultMessage="Select all {itemCount}"
-              description="Clear selection button label"
+              description="A label for select all button."
               values={{ itemCount }}
             />
           )}
@@ -68,7 +68,7 @@ const BaseSelectionStatus = ({
             <FormattedMessage
               id="pgn.DataTable.BaseSelectionStatus.clearSelectionText"
               defaultMessage="Clear selection"
-              description="Clear selection button label"
+              description="A label of clear all selection button."
             />
           )}
         </Button>

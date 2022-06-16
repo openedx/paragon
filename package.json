@@ -55,7 +55,6 @@
     "prop-types": "^15.8.1",
     "react-bootstrap": "^1.6.4",
     "react-focus-on": "^3.5.4",
-    "react-intl": "^5.25.0",
     "react-popper": "^2.2.5",
     "react-proptype-conditional-require": "^1.0.4",
     "react-responsive": "^8.2.0",
@@ -66,7 +65,8 @@
   },
   "peerDependencies": {
     "react": "^16.8.6 || ^17.0.0",
-    "react-dom": "^16.8.6 || ^17.0.0"
+    "react-dom": "^16.8.6 || ^17.0.0",
+    "react-intl": "^5.25.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.8",

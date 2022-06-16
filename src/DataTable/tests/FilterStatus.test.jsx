@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { IntlProvider } from 'react-intl';
 
 import FilterStatus from '../FilterStatus';
 import { Button } from '../..';
@@ -25,7 +26,11 @@ const filterPropsNoFiltered = {
 
 // eslint-disable-next-line react/prop-types
 const FilterStatusWrapper = ({ value, props }) => (
-  <DataTableContext.Provider value={value}><FilterStatus {...props} /></DataTableContext.Provider>
+  <IntlProvider locale="en" messages={{}}>
+    <DataTableContext.Provider value={value}>
+      <FilterStatus {...props} />
+    </DataTableContext.Provider>
+  </IntlProvider>
 );
 
 describe('<FilterStatus />', () => {

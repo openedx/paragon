@@ -10,7 +10,7 @@ const ExpandAll = ({ getToggleAllRowsExpandedProps, isAllRowsExpanded }) => (
         <FormattedMessage
           id="pgn.DataTable.ExpandAll.collapseAllLabel"
           defaultMessage="Collapse all"
-          description="Title of the filters components"
+          description="Label of an action button that collapses all expandable rows of DataTable."
         />
       </Button>
     ) : (
@@ -18,7 +18,7 @@ const ExpandAll = ({ getToggleAllRowsExpandedProps, isAllRowsExpanded }) => (
         <FormattedMessage
           id="pgn.DataTable.ExpandAll.expandAllLabel"
           defaultMessage="Expand all"
-          description="Title of the filters components"
+          description="Label of an action button that expands all expandable rows of DataTable."
         />
       </Button>
     )}
