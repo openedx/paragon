@@ -37,7 +37,11 @@ describe('<ModalPopup />', () => {
     const isOpen = true;
     const closeFn = jest.fn();
     const wrapper = shallow((
-      <ModalPopup positionRef={mockPositionRef} isOpen={isOpen} onClose={closeFn}>
+      <ModalPopup
+        positionRef={mockPositionRef}
+        isOpen={isOpen}
+        onClose={closeFn}
+      >
         <Dialog />
       </ModalPopup>
     ));
@@ -89,5 +93,54 @@ describe('<ModalPopup />', () => {
       ));
       expect(wrapper.find(Portal).length).toBe(1);
     });
+  });
+  it('myTest', () => {
+    const isOpen = true;
+    const closeFn = jest.fn();
+    const wrapperPopup = shallow((
+      <ModalPopup isOpen={isOpen} onClose={closeFn}>
+        <Dialog />
+      </ModalPopup>));
+    expect(wrapperPopup.exists('.pgn__modal-popup__arrow')).toBe(false);
+  });
+
+  it('myTest 2', () => {
+    const isOpen = true;
+    const closeFn = jest.fn();
+    const wrapperPopup = shallow((
+      <ModalPopup hasArrow isOpen={isOpen} onClose={closeFn}>
+        <Dialog />
+      </ModalPopup>));
+    expect(wrapperPopup.exists('.pgn__modal-popup__arrow')).toBe(true);
+  });
+
+  it('myTest 3', () => {
+    const isOpen = true;
+    const closeFn = jest.fn();
+    const wrapperPopup = shallow((
+      <ModalPopup hasArrow placement="right" isOpen={isOpen} onClose={closeFn}>
+        <Dialog />
+      </ModalPopup>));
+    expect(wrapperPopup.exists('.pgn__modal-popup__arrow-right')).toBe(true);
+  });
+
+  it('myTest 4', () => {
+    const isOpen = true;
+    const closeFn = jest.fn();
+    const wrapperPopup = shallow((
+      <ModalPopup hasArrow placement="left" isOpen={isOpen} onClose={closeFn}>
+        <Dialog />
+      </ModalPopup>));
+    expect(wrapperPopup.exists('.pgn__modal-popup__arrow-left')).toBe(true);
+  });
+
+  it('myTest 4', () => {
+    const isOpen = true;
+    const closeFn = jest.fn();
+    const wrapperPopup = shallow((
+      <ModalPopup hasArrow placement="left-start" isOpen={isOpen} onClose={closeFn}>
+        <Dialog />
+      </ModalPopup>));
+    expect(wrapperPopup.exists('.pgn__modal-popup__arrow-left-start')).toBe(true);
   });
 });
