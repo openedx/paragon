@@ -271,4 +271,11 @@
       margin-inline-start: 0;
     }
   }
+
+  .pgn__action-row-stacked,
+  .pgn__card-section {
+    .btn {
+      width: 100%;
+    }
+  }
 }

@@ -110,11 +110,11 @@ The `Card.Header` supports custom actions via the actions prop and renders them 
         <Card.Header
           title="Title"
           subtitle="Subtitle"
-          style={{ flexDirection: isExtraSmall ? "column-reverse" : "row" }}
+          isStacked={!!isExtraSmall}
           actions={
             <ActionRow 
-              style={{ flexDirection: isExtraSmall ? "column" : "row", 
-              marginBottom: isExtraSmall ? ".5rem" : 0 }}
+            isStacked={!!isExtraSmall}
+              style={{  marginBottom: isExtraSmall ? ".5rem" : 0 }}
             >
               <Button variant="tertiary">Action 1</Button>
               <Button>Action 2</Button>
@@ -180,7 +180,7 @@ Add ``size="sm"`` for smaller header content and actions.
       <Card.Section 
         title="Section title"
         actions={
-          <ActionRow style={{ flexDirection: isExtraSmall ? "column" : "row" }}>
+          <ActionRow isStacked={!!isExtraSmall}>
             <Button>Action 1</Button>
             <Button>Action 2</Button>
           </ActionRow>
@@ -192,7 +192,7 @@ Add ``size="sm"`` for smaller header content and actions.
       <Card.Section 
         title="Muted section"
         actions={
-          <ActionRow style={{ flexDirection: isExtraSmall ? "column" : "row"  }}>
+          <ActionRow isStacked={!!isExtraSmall}>
             <Button>Action 1</Button>
             <Button>Action 2</Button>
           </ActionRow>
