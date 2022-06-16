@@ -251,10 +251,14 @@
 
 @media (max-width: map-get($grid-breakpoints, "sm")) {
   .pgn__card-footer {
+    &.horizontal > :not(:last-child) {
+      margin-inline-end: 0;
+    }
+
     .btn {
       width: 100%;
       margin: .625rem 0 0;
-      margin-inline-end: 0 !important;
+      margin-inline-end: 0;
     }
   }
 
