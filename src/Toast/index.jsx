@@ -3,6 +3,8 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 import BaseToast from 'react-bootstrap/Toast';
+import { useIntl } from 'react-intl';
+
 import ToastContainer from './ToastContainer';
 import { Button, IconButton, Icon } from '..';
 import { Close } from '../../icons';
@@ -13,7 +15,13 @@ export const TOAST_DELAY = 5000;
 function Toast({
   action, children, className, closeLabel, onClose, show, ...rest
 }) {
+  const intl = useIntl();
   const [autoHide, setAutoHide] = useState(true);
+  const intlCloseLabel = closeLabel || intl.formatMessage({
+    id: 'pgn.Toast.closeLabel',
+    defaultMessage: 'Close',
+    description: 'Close label for Toast component',
+  });
   return (
     <ToastContainer>
       <BaseToast
@@ -34,7 +42,7 @@ function Toast({
           <div className="toast-header-btn-container">
             <IconButton
               iconAs={Icon}
-              alt={closeLabel}
+              alt={intlCloseLabel}
               className="align-self-start"
               src={Close}
               onClick={onClose}
@@ -61,7 +69,7 @@ function Toast({
 
 Toast.defaultProps = {
   action: null,
-  closeLabel: TOAST_CLOSE_LABEL_TEXT,
+  closeLabel: undefined,
   delay: TOAST_DELAY,
   className: undefined,
 };
@@ -89,8 +97,7 @@ Toast.propTypes = {
     onClick: PropTypes.func,
   }),
   /**
-   * Alt text for the `Toast`'s dismiss button. The recommended use is an i18n value.
-   * The default is an English string.
+   * Alt text for the `Toast`'s dismiss button. Defaults to 'Close'.
    */
   closeLabel: PropTypes.string,
   /** Time in milliseconds for which the `Toast` will display. */

@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { IntlProvider } from 'react-intl';
 
 import SmartStatus from '../SmartStatus';
 import DataTableContext from '../DataTableContext';
@@ -25,7 +26,12 @@ const instance = {
 
 // eslint-disable-next-line react/prop-types
 const SmartStatusWrapper = ({ value, props }) => (
-  <DataTableContext.Provider value={value}><SmartStatus {...props} /></DataTableContext.Provider>);
+  <IntlProvider locale="en" messages={{}}>
+    <DataTableContext.Provider value={value}>
+      <SmartStatus {...props} />
+    </DataTableContext.Provider>
+  </IntlProvider>
+);
 
 describe('<SmartStatus />', () => {
   it('Shows the selection status if rows are selected', () => {

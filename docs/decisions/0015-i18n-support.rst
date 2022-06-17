@@ -56,10 +56,10 @@ Consequences
     ReactDOM.render(
       <AppProvider>
         <App />
-      </IntlProvider>,
+      </AppProvider>,
       document.getElementById('root')
     )
-  )
+  })
 
   initialize({
     // this will add your app's messages as well as Paragon's messages to your app

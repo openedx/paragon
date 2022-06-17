@@ -4,20 +4,20 @@ import {
   Form,
   Icon,
   IconButton,
+  Stack,
 } from '~paragon-react';
 import { Close } from '~paragon-icons';
 
+import { FEATURES, LANGUAGES } from '../config';
 import SettingsContext from '../context/SettingsContext';
 import { THEMES } from '../../theme-config';
 
 const Settings = () => {
   const {
-    theme: currentTheme,
-    onThemeChange,
+    settings,
+    handleSettingsChange,
     showSettings,
     closeSettings,
-    direction,
-    onDirectionChange,
   } = useContext(SettingsContext);
 
   return (
@@ -38,12 +38,12 @@ const Settings = () => {
           size="sm"
         />
       </div>
-      <div className="pgn__settings-form-wrapper">
+      <Stack gap={3}>
         <Form.Group>
           <Form.Control
             as="select"
-            value={currentTheme}
-            onChange={onThemeChange}
+            value={settings.theme}
+            onChange={(e) => handleSettingsChange('theme', e.target.value)}
             floatingLabel="Theme"
           >
             {THEMES.map(theme => (
@@ -59,15 +59,34 @@ const Settings = () => {
         <Form.Group>
           <Form.Control
             as="select"
-            value={direction}
-            onChange={onDirectionChange}
+            value={settings.direction}
+            onChange={(e) => handleSettingsChange('direction', e.target.value)}
             floatingLabel="Direction"
           >
             <option value="ltr">Left to right</option>
             <option value="rtl">Right to left</option>
           </Form.Control>
         </Form.Group>
-      </div>
+        {FEATURES.LANGUAGE_SWITCHER && (
+          <Form.Group>
+            <Form.Control
+              as="select"
+              value={settings.language}
+              onChange={(e) => handleSettingsChange('language', e.target.value)}
+              floatingLabel="Component Language"
+            >
+              {LANGUAGES.map(lang => (
+                <option
+                  key={lang.code}
+                  value={lang.code}
+                >
+                  {lang.label}
+                </option>
+              ))}
+            </Form.Control>
+          </Form.Group>
+        )}
+      </Stack>
     </Sheet>
   );
 };

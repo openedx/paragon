@@ -167,6 +167,140 @@ JSX code blocks in the markdown file can be made interactive with the live attri
 
 Visit the documentation at [http://localhost:8000](http://localhost:8000) and navigate to see your README.md powered page and workbench. Changes to the README.md file will auto refresh the page.
 
+### Internationalization
+
+Paragon supports internationalization for its components out of the box with the support of [react-intl](https://formatjs.io/docs/react-intl/). You can view translated strings for each component on the docs site after switching language on a settings tab.
+
+#### For consumers
+
+Since we are using ``react-intl`` that means that your whole app needs to be wrapped in its context, e.g.
+```javascript
+  import { IntlProvider } from 'react-intl';
+  import { messages as paragonMessages } from '@edx/paragon';
+
+  ReactDOM.render(
+    <IntlProvider locale={usersLocale} messages={paragonMessages[usersLocale]}>
+      <App />
+    </IntlProvider>,
+    document.getElementById('root')
+  )
+```
+
+Note that if you are using ``@edx/frontend-platform``'s ``AppProvider`` component you don't need a separate context,
+you would only need to add Paragon's messages like this
+
+```javascript
+  import { APP_READY, subscribe, initialize } from '@edx/frontend-platform';
+  import { AppProvider } from '@edx/frontend-platform/react';
+  import { messages as paragonMessages } from '@edx/paragon';
+  import App from './App';
+  // this is your app's i18n messages
+  import appMessages from './i18n';
+
+  subscribe(APP_READY, () => {
+    ReactDOM.render(
+      <AppProvider>
+        <App />
+      </AppProvider>,
+      document.getElementById('root')
+    )
+  })
+
+  initialize({
+    // this will add your app's messages as well as Paragon's messages to your app
+    messages: [
+      appMessages,
+      paragonMessages,
+    ],
+    // here you will typically provide other configurations for you app
+    ...
+  });
+```
+
+#### For developers
+
+When developing a new component you should generally follow three rules:
+1. The component should not have **any** hardcoded strings as it would be impossible for consumers to translate it
+2. Internationalize all default values of props that expect strings, i.e.
+   
+   - For places where you need to display a string, and it's okay if it is a React element use ``FormattedMessage``, e.g. (see [Alert](src/Alert/index.jsx) component for a full example)
+   
+      ```javascript
+      import { FormattedMessage } from 'react-intl';
+      
+      <FormattedMessage 
+        id="pgn.Alert.closeLabel"
+        defaultMessage="Dismiss"
+        description="Label of a close button on Alert component"
+      />
+      ```
+     
+   - For places where the display string has to be a plain JavaScript string use ``formatMessage``, this would require access to ``intl`` object from ``react-intl``, e.g.
+      
+      - For class components use ``injectIntl`` HOC
+
+          ```javascript
+          import { injectIntl } from 'react-intl';
+          
+          class MyClassComponent extends React.Component {
+            render() {
+              const { altText, intl } = this.props;
+              const intlAltText = altText || intl.formatMessage({
+                id: 'pgn.MyComponent.altText',
+                defaultMessage: 'Close',
+                description: 'Close label for Toast component',
+              });
+              
+              return (
+                <IconButton
+                  alt={intlCloseLabel}
+                  onClick={() => {}}
+                  variant="primary"
+                />
+              )
+            }
+          }
+          
+          export default injectIntl(MyClassComponent);
+          ```
+
+      - For functional components use ``useIntl`` hook
+
+          ```javascript 
+          import { useIntl } from 'react-intl';
+    
+          const MyFunctionComponent = ({ altText }) => {
+            const intls = useIntl();
+            const intlAltText = altText || intl.formatMessage({
+              id: 'pgn.MyComponent.altText',
+              defaultMessage: 'Close',
+              description: 'Close label for Toast component',
+            });
+    
+            return (
+              <IconButton
+                alt={intlCloseLabel}
+                onClick={() => {}}
+                variant="primary"
+              />
+            )
+          
+          export default MyFunctionComponent;
+          ```
+      
+   **Notes on the format above**:
+   - `id` is required and must be a dot-separated string of the format `pgn.<componentName>.<subcomponentName>.<propName>`
+   - The `defaultMessage` is required, and should be the English display string.
+   - The `description` is optional, but highly recommended, this text gives context to translators about the string.
+
+
+3. If your component expects a string as a prop, allow the prop to also be an element since consumers may want to also pass instance of their own translated string, for example you might define a string prop like this:
+   ```javascript
+   MyComponent.PropTypes = {
+     myProp: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+   };
+   ```
+
 ### Developing locally against MFE
 
 If you want to test the changes with local MFE setup, you need to create a "module.config.js" file in your MFE's directory containing local module overrides. After that the webpack build for your application will automatically pick your local version of Paragon and use it. The example of module.config.js file looks like this (for more details about module.config.js, refer to the [frontend-build documentation](https://github.com/edx/frontend-build#local-module-configuration-for-webpack).):

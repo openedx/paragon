@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import BaseAlert from 'react-bootstrap/Alert';
 import divWithClassName from 'react-bootstrap/divWithClassName';
+import { FormattedMessage } from 'react-intl';
 import { useMediaQuery } from 'react-responsive';
 import { Icon } from '..';
 import breakpoints from '../utils/breakpoints';
@@ -66,7 +67,13 @@ const Alert = React.forwardRef(({
                 variant="tertiary"
                 onClick={onClose}
               >
-                {closeLabel}
+                {closeLabel || (
+                  <FormattedMessage
+                    id="pgn.Alert.closeLabel"
+                    defaultMessage="Dismiss"
+                    description="Label of a close button on Alert component"
+                  />
+                )}
               </Button>
             )}
             {actions && actions.map(cloneActionElement)}
@@ -122,8 +129,8 @@ Alert.propTypes = {
   actions: PropTypes.arrayOf(PropTypes.element),
   /** Position of the dismiss and call-to-action buttons. Defaults to ``false``. */
   stacked: PropTypes.bool,
-  /** Sets the text for alert close button. */
-  closeLabel: PropTypes.string,
+  /** Sets the text for alert close button, defaults to 'Dismiss'. */
+  closeLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };
 
 Alert.defaultProps = {
@@ -133,7 +140,7 @@ Alert.defaultProps = {
   actions: undefined,
   dismissible: false,
   onClose: () => {},
-  closeLabel: ALERT_CLOSE_LABEL_TEXT,
+  closeLabel: undefined,
   show: true,
   stacked: false,
 };
