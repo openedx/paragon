@@ -1,1 +1,46 @@
-{}
+{
+  "pgn.Alert.closeLabel": {
+    "developer_comment": "Label of a close button on Alert component",
+    "string": "Dismiss"
+  },
+  "pgn.DataTable.BaseSelectionStatus.allSelectedText": {
+    "developer_comment": "Text for all selected label",
+    "string": "All {numSelectedRows} selected"
+  },
+  "pgn.DataTable.BaseSelectionStatus.clearSelectionText": {
+    "developer_comment": "A label of clear all selection button.",
+    "string": "Clear selection"
+  },
+  "pgn.DataTable.BaseSelectionStatus.selectAllText": {
+    "developer_comment": "A label for select all button.",
+    "string": "Select all {itemCount}"
+  },
+  "pgn.DataTable.BaseSelectionStatus.selectedText": {
+    "developer_comment": "Text for selected label",
+    "string": "{numSelectedRows} selected"
+  },
+  "pgn.DataTable.ExpandAll.collapseAllLabel": {
+    "developer_comment": "Label of an action button that collapses all expandable rows of DataTable.",
+    "string": "Collapse all"
+  },
+  "pgn.DataTable.ExpandAll.expandAllLabel": {
+    "developer_comment": "Label of an action button that expands all expandable rows of DataTable.",
+    "string": "Expand all"
+  },
+  "pgn.DataTable.FilterStatus.clearFiltersText": {
+    "developer_comment": "A text that appears on the `Clear filters` button",
+    "string": "Clear filters"
+  },
+  "pgn.DataTable.RowStatus.statusText": {
+    "developer_comment": "A text describing how many rows is shown in the table",
+    "string": "Showing {pageSize} of {itemCount}."
+  },
+  "pgn.DataTable.SidebarFilters.title": {
+    "developer_comment": "Title for the sidebar filters component",
+    "string": "Filters"
+  },
+  "pgn.Toast.closeLabel": {
+    "developer_comment": "Close label for Toast component",
+    "string": "Close"
+  }
+}
