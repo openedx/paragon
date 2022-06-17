@@ -29,6 +29,9 @@ $pagination-border-color:           theme-color("gray", "border") !default;
 
 $pagination-focus-box-shadow:       $input-btn-focus-box-shadow !default;
 $pagination-focus-outline:          0 !default;
+$pagination-focus-border-width:     .125rem !default;
+$pagination-focus-color:            $primary-500 !default;
+$pagination-focus-color-text:       $black !default;
 
 $pagination-hover-color:            $link-hover-color !default;
 $pagination-hover-bg:               theme-color("gray", "background") !default;

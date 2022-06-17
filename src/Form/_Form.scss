@@ -396,6 +396,28 @@ select.form-control {
   }
 }
 
+.pgn__form-checkbox-input,
+.pgn__form-radio-input {
+  &:focus {
+    position: relative;
+    outline: none;
+    box-shadow: none;
+    text-decoration: none;
+    border-color: $input-focus-border-color;
+  }
+
+  &:focus::before {
+    content: "";
+    position: absolute;
+    top: -$form-check-position-axis;
+    right: -$form-check-position-axis;
+    bottom: -$form-check-position-axis;
+    left: -$form-check-position-axis;
+    border: $form-check-border-width solid $input-focus-border-color;
+    border-radius: $form-check-focus-border-radius;
+  }
+}
+
 .pgn__form-switch-input {
   width: $custom-switch-width;
   border-radius: $custom-switch-indicator-border-radius;
@@ -427,6 +449,14 @@ select.form-control {
 
   &:checked {
     background-image: escape-svg($custom-radio-indicator-icon-checked);
+  }
+
+  &:focus {
+    border-color: $black;
+
+    &::before {
+      border-radius: $custom-radio-indicator-border-radius;
+    }
   }
 }
 

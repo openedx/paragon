@@ -9,6 +9,11 @@ $breadcrumb-item-padding:           .5rem !default;
 $breadcrumb-margin-bottom:          1rem !default;
 $breadcrumb-margin-left:           .5rem !default;
 
+$breadcrumb-border-focus-axis-x:    .25rem !default;
+$breadcrumb-border-focus-axis-y:    .5rem !default;
+
+$breadcrumb-border-focus-width:     .0625rem !default;
+
 $breadcrumb-bg:                     $gray-200 !default;
 $breadcrumb-divider-color:          $gray-600 !default;
 $breadcrumb-active-color:           $gray-500 !default;
@@ -19,3 +24,4 @@ $breadcrumb-inverse-color:          $white !default;
 $breadcrumb-divider:                "/" !default;
 
 $breadcrumb-border-radius:          $border-radius !default;
+$breadcrumb-focus-border-radius:          .125rem !default;
