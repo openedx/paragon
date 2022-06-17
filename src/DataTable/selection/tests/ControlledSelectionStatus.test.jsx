@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { IntlProvider } from 'react-intl';
 
 import ControlledSelectionStatus from '../ControlledSelectionStatus';
 import { clearSelectionAction, setSelectAllRowsAllPagesAction, setSelectedRowsAction } from '../data/actions';
@@ -24,7 +25,11 @@ const instance = {
 
 // eslint-disable-next-line react/prop-types
 const ControlledSelectionStatusWrapper = ({ value, props = {} }) => (
-  <DataTableContext.Provider value={value}><ControlledSelectionStatus {...props} /></DataTableContext.Provider>
+  <IntlProvider locale="en" messages={{}}>
+    <DataTableContext.Provider value={value}>
+      <ControlledSelectionStatus {...props} />
+    </DataTableContext.Provider>
+  </IntlProvider>
 );
 
 describe('<ControlledSelectionStatus />', () => {

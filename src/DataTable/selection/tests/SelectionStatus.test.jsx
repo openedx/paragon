@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { IntlProvider } from 'react-intl';
 
 import SelectionStatus from '../SelectionStatus';
 import DataTableContext from '../../DataTableContext';
@@ -17,7 +18,11 @@ const instance = {
 
 // eslint-disable-next-line react/prop-types
 const SelectionStatusWrapper = ({ value, props = {} }) => (
-  <DataTableContext.Provider value={value}><SelectionStatus {...props} /></DataTableContext.Provider>
+  <IntlProvider locale="en" messages={{}}>
+    <DataTableContext.Provider value={value}>
+      <SelectionStatus {...props} />
+    </DataTableContext.Provider>
+  </IntlProvider>
 );
 
 describe('<SelectionStatus />', () => {

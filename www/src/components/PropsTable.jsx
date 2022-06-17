@@ -4,6 +4,8 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import PropType from './PropType';
 import { Badge, Card } from '~paragon-react'; // eslint-disable-line
 
+const IGNORED_COMPONENT_PROPS = ['intl'];
+
 const DefaultValue = ({ value }) => {
   if (!value || value === 'undefined') { return null; }
   return (
@@ -69,7 +71,9 @@ const PropsTable = ({ props: componentProps, displayName, content }) => (
     {content && <div className="small mb-3">{content}</div>}
     {componentProps.length > 0 ? (
       <ul className="list-unstyled">
-        {componentProps.map(metadata => <Prop key={metadata.name} {...metadata} />)}
+        {componentProps
+          .filter(metadata => !IGNORED_COMPONENT_PROPS.includes(metadata.name))
+          .map(metadata => <Prop key={metadata.name} {...metadata} />)}
       </ul>
     ) : <div className="pb-3 pl-4">This component does not receive any props.</div>}
   </Card>

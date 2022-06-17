@@ -1,12 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 import { Button } from '..';
 
 const ExpandAll = ({ getToggleAllRowsExpandedProps, isAllRowsExpanded }) => (
   <span {...getToggleAllRowsExpandedProps()}>
-    {isAllRowsExpanded
-      ? <Button variant="link" size="inline">Collapse all</Button>
-      : <Button variant="link" size="inline">Expand all</Button>}
+    {isAllRowsExpanded ? (
+      <Button variant="link" size="inline">
+        <FormattedMessage
+          id="pgn.DataTable.ExpandAll.collapseAllLabel"
+          defaultMessage="Collapse all"
+          description="Label of an action button that collapses all expandable rows of DataTable."
+        />
+      </Button>
+    ) : (
+      <Button variant="link" size="inline">
+        <FormattedMessage
+          id="pgn.DataTable.ExpandAll.expandAllLabel"
+          defaultMessage="Expand all"
+          description="Label of an action button that expands all expandable rows of DataTable."
+        />
+      </Button>
+    )}
   </span>
 );
 
