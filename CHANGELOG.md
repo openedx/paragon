@@ -1,3 +1,16 @@
+# [20.0.0](https://github.com/openedx/paragon/compare/v19.25.3...v20.0.0) (2022-06-17)
+
+
+* feat!: implement i18n in Paragon components and in docs site (#1100) ([53e0ac6](https://github.com/openedx/paragon/commit/53e0ac632b45b045c0932741b05c2251ee056c47)), closes [#1100](https://github.com/openedx/paragon/issues/1100)
+
+
+### BREAKING CHANGES
+
+* By adding i18n support to the Paragon design system, we are introducing a peer dependency on `react-intl@5.25.0` or greater. This may be a breaking change for some consumers, if your repository:
+* Uses v1 of `@edx/frontend-platform`
+* Uses older version of `react-intl` than v5.25.0 directly.
+* Does not use `react-intl`.
+
 ## [19.25.3](https://github.com/openedx/paragon/compare/v19.25.2...v19.25.3) (2022-06-15)
 
 
