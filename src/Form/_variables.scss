@@ -64,6 +64,10 @@ $form-check-input-margin-x:             .25rem !default;
 $form-check-inline-margin-x:            .75rem !default;
 $form-check-inline-input-margin-x:      .3125rem !default;
 
+$form-check-position-axis:              .375rem !default;
+$form-check-focus-border-radius:        .0625rem !default;
+$form-check-border-width:               .125rem !default;
+
 $form-grid-gutter-width:                10px !default;
 $form-group-margin-bottom:              1rem !default;
 
@@ -87,7 +91,6 @@ $custom-control-indicator-border-color: $gray-700 !default;
 $custom-control-indicator-border-width: 2px !default;
 
 $custom-control-label-color:            null !default;
-
 $custom-control-indicator-disabled-bg:          $input-disabled-bg !default;
 $custom-control-label-disabled-color:           theme-color("gray", "light-text") !default;
 

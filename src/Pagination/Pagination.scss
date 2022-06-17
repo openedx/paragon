@@ -58,6 +58,21 @@
 .page-link {
   border: none;
 
+  &.btn-primary:not(:disabled):not(.disabled):focus {
+    background-color: $pagination-bg;
+    color: $pagination-focus-color-text;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  &.btn-primary:focus::before {
+    border: $pagination-focus-border-width solid $pagination-focus-color;
+
+    @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+  }
+
   div {
     display: flex;
   }
@@ -78,6 +93,11 @@
   > .btn {
     transition: none;
     line-height: $pagination-line-height;
+  }
+
+  &.active .page-link.btn-primary:not(:disabled):not(.disabled):focus {
+    background-color: $pagination-focus-color;
+    color: $pagination-bg;
   }
 }
 
