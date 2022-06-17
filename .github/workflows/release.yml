@@ -31,7 +31,7 @@ jobs:
     - name: Build Docs
       run: npm run build-docs
     - name: Coverage
-      uses: codecov/codecov-action@v2
+      uses: codecov/codecov-action@v3
     - name: Release
       env:
         GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
