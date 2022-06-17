@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import LinesEllipsis from 'react-lines-ellipsis';
+
+const TITLE_LINES_COUNT = 1;
 
 const CardSection = React.forwardRef(({
   className,
@@ -8,14 +11,27 @@ const CardSection = React.forwardRef(({
   title,
   actions,
   muted,
+  maxLineTitle,
 }, ref) => (
   <div
     className={classNames('pgn__card-section', className, { 'is-muted': muted })}
     ref={ref}
   >
-    {title && <div className="pgn__card-section-title">{title}</div>}
-    {children}
-    {actions && <div className="pgn__card-section-actions">{actions}</div>}
+    {title
+    && (
+    <LinesEllipsis
+      className="pgn__card-section-title"
+      text={`${title}`}
+      maxLine={maxLineTitle}
+    />
+    )}
+    <LinesEllipsis
+      className="pgn__card-section-title"
+      text={`${children}`}
+      maxLine={maxLineTitle}
+    />
+    {/* {children} */}
+    {actions && (<div className="pgn__card-section-actions">{actions}</div>)}
   </div>
 ));
 
@@ -30,6 +46,8 @@ CardSection.propTypes = {
   actions: PropTypes.node,
   /** Specifies whether to display `Section` with muted styling. */
   muted: PropTypes.bool,
+  /** Max count of lines allowed */
+  maxLineTitle: PropTypes.string,
 };
 
 CardSection.defaultProps = {
@@ -37,6 +55,7 @@ CardSection.defaultProps = {
   title: undefined,
   actions: undefined,
   muted: false,
+  maxLineTitle: TITLE_LINES_COUNT,
 };
 
 export default CardSection;

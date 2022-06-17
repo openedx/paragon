@@ -1,6 +1,13 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import LinesEllipsis from 'react-lines-ellipsis';
+// import responsiveHOC from 'react-lines-ellipsis/lib/responsiveHOC';
+
+// const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis);
+
+const TITLE_LINES_COUNT = 2;
+const SUBTITLE_LINES_COUNT = TITLE_LINES_COUNT;
 
 const CardHeader = React.forwardRef(({
   actions,
@@ -8,6 +15,8 @@ const CardHeader = React.forwardRef(({
   size,
   subtitle,
   title,
+  maxLineTitle,
+  maxLineSubTitle,
 }, ref) => {
   const cloneActions = useCallback(
     (Action) => {
@@ -28,8 +37,24 @@ const CardHeader = React.forwardRef(({
   return (
     <div className={classNames('pgn__card-header', className)} ref={ref}>
       <div className="pgn__card-header-content">
-        {title && <div className={`pgn__card-header-title-${size}`}>{title}</div>}
-        {subtitle && <div className={`pgn__card-header-subtitle-${size}`}>{subtitle}</div>}
+        {title
+        && (
+        <LinesEllipsis
+          basedOn="letters"
+          className={`pgn__card-header-title-${size}`}
+          text={`${title}`}
+          maxLine={maxLineTitle}
+        />
+        )}
+        {subtitle
+        && (
+        <LinesEllipsis
+          basedOn="letters"
+          className={`pgn__card-header-subtitle-${size}`}
+          text={`${subtitle}`}
+          maxLine={maxLineSubTitle}
+        />
+        )}
       </div>
       {actions && (
         <div className="pgn__card-header-actions">
@@ -53,6 +78,10 @@ CardHeader.propTypes = {
   size: PropTypes.oneOf(['sm', 'md']),
   /** The subtitle of the CardHeader component */
   subtitle: PropTypes.node,
+  /** Max count of lines allowed for Title */
+  maxLineTitle: PropTypes.string,
+  /** Max count of lines allowed for SubTitle */
+  maxLineSubTitle: PropTypes.string,
 };
 
 CardHeader.defaultProps = {
@@ -61,6 +90,8 @@ CardHeader.defaultProps = {
   size: 'md',
   title: null,
   subtitle: null,
+  maxLineTitle: TITLE_LINES_COUNT,
+  maxLineSubTitle: SUBTITLE_LINES_COUNT,
 };
 
 export default CardHeader;

@@ -399,6 +399,60 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
 </Card>
 ```
 
+## Truncated text
+
+### Vertical variant
+
+```jsx live
+<Card style={{ width: '18rem' }}>
+  <Card.ImageCap 
+    src="https://source.unsplash.com/360x200/?nature,flower"
+    srcAlt="Card image"
+  />
+  <Card.Header
+    title="This is a card header. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them."
+    subtitle="Multiple sections have a card divider between them."
+    maxLineSubTitle={2}
+  />
+  <Card.Section
+    title="This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them."
+    maxLineTitle={2}
+  >
+    This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+  </Card.Section>
+  <Card.Footer>
+    <Button>Action 1</Button>
+  </Card.Footer>
+</Card>
+```
+### Horizontal variant
+
+```jsx live
+  <Card orientation="horizontal">
+    <Card.ImageCap 
+      src="https://source.unsplash.com/360x200/?nature,flower"
+      srcAlt="Card image"
+      logoSrc="https://via.placeholder.com/150"
+      logoAlt="Card logo"
+    />
+    <Card.Body>
+      <Card.Header
+        title="This is a special case where we want to have Footer with vertical orientation in the Card with horizontal orientation. This is a special case where we want to have Footer with vertical orientation in the Card with horizontal orientation."
+      />
+      <Card.Section 
+        title="This is a special case where we want to have Footer with vertical orientation in the Card with horizontal orientation. This is a special case where we want to have Footer with vertical orientation in the Card with horizontal orientation."
+      >
+        This is a special case where we want to have Footer with vertical orientation in the Card with horizontal orientation.
+      </Card.Section>
+      <Card.Footer orientation="vertical" textElement="This is a special case where we want to have Footer with vertical orientation in the Card with horizontal orientation. This is a special case where we want to have Footer with vertical orientation in the Card with horizontal orientation."
+      >
+        <Button>Action 1</Button>
+        <Button>Action 2</Button>
+      </Card.Footer>
+    </Card.Body>
+  </Card>
+```
+
 ## CardGrid
 
 This component displays a collection of Cards as a grid (with customizable responsive behavior), where

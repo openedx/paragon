@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import LinesEllipsis from 'react-lines-ellipsis';
 import CardContext from './CardContext';
 
 const CardFooter = React.forwardRef(({
@@ -9,6 +10,7 @@ const CardFooter = React.forwardRef(({
   isStacked,
   textElement,
   orientation,
+  maxLine,
 }, ref) => {
   const { orientation: cardOrientation } = useContext(CardContext);
   const footerOrientation = orientation || cardOrientation;
@@ -17,7 +19,14 @@ const CardFooter = React.forwardRef(({
 
   return (
     <div className={classNames(className, wrapperClassName)} ref={ref}>
-      {textElement && <div className={textElementClassName}>{textElement}</div>}
+      {textElement
+      && (
+      <LinesEllipsis
+        className={textElementClassName}
+        text={`${textElement}`}
+        maxLine={maxLine}
+      />
+      )}
       {children}
     </div>
   );
@@ -34,6 +43,8 @@ CardFooter.propTypes = {
   isStacked: PropTypes.bool,
   /** Specifies which orientation to use. This prop will override context value if provided. */
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
+  /** Max count of lines allowed */
+  maxLine: PropTypes.string,
 };
 
 CardFooter.defaultProps = {
@@ -41,6 +52,7 @@ CardFooter.defaultProps = {
   textElement: undefined,
   isStacked: false,
   orientation: undefined,
+  maxLine: undefined,
 };
 
 export default CardFooter;
