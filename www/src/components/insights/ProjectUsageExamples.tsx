@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // @ts-ignore
-import { Hyperlink } from '~paragon-react';
+import { Hyperlink } from '~paragon-react'; // eslint-disable-line
 
 export interface IProjectUsageExamples {
   row: {
@@ -13,31 +13,32 @@ export interface IProjectUsageExamples {
   },
 }
 
+interface IProjectUsages {
+  filePath: string,
+  line: number,
+}
+
 const ProjectUsageExamples = ({ row }: IProjectUsageExamples) => {
-  const componentUsages: { [key: string]: [] } = row.original.usages;
-
-  const orderedComponentUsages = Object.keys(componentUsages).sort().reduce(
-  (obj, key) => {
-    obj[key] = componentUsages[key];
-    return obj;
-  }, {});
-
+  const { repositoryUrl, usages } = row.original;
   const repositoryUrl = row.original;
 
-  interface IProjectUsages {
-    filePath: string,
-    line: number,
-  }
+  const orderedComponentUsages = Object.keys(usages).sort().reduce(
+    (obj, key) => {
+      obj[key] = usages[key];
+      return obj;
+    }, {}
+  );
+
   return (
     <>
-      {Object.keys(orderedComponentUsages).length === 0 && (
+      {Object.keys(usages).length === 0 && (
         <p>This project does not import any Paragon components, but may still use its SCSS styles.</p>
       )}
-      {Object.entries(orderedComponentUsages).map(([componentName, orderedComponentUsages]) => (
+      {Object.entries(usages).map(([componentName, usages]) => (
         <div className="pgn-doc__usages-modal mb-4" key={componentName}>
           <h5 className="font-weight-bold">{componentName}</h5>
           <ul className="list-unstyled">
-            {orderedComponentUsages["usages"].map(({
+            {usages.map(({
               filePath,
               line,
             }: IProjectUsages) => (

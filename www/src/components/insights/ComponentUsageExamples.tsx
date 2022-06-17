@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // @ts-ignore
-import { Hyperlink } from '~paragon-react';
+import { Hyperlink } from '~paragon-react'; // eslint-disable-line
 
 export interface IComponentUsageExamples {
   row: {
@@ -25,7 +25,7 @@ const ComponentUsageExamples = ({ row }: IComponentUsageExamples) => {
   return (
     <div className="pgn-doc__component-usage__project">
       <ul className="list-unstyled">
-        {projectUsages.map(({
+        {usages.map(({
           filePath,
           line,
         }: ProjectUsagesTypes) => (

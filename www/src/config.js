@@ -78,6 +78,8 @@ const INSIGHTS_TABS = Object.freeze({
   SUMMARY: 'Summary',
   PROJECTS: 'Projects',
   COMPONENTS: 'Components',
+  HOOKS: 'Hooks',
+  UTILS: 'Utils',
 });
 
 const INSIGHTS_PAGES = [
@@ -92,6 +94,14 @@ const INSIGHTS_PAGES = [
   {
     tab: INSIGHTS_TABS.COMPONENTS,
     path: '/insights/components',
+  },
+  {
+    tab: INSIGHTS_TABS.HOOKS,
+    path: '/insights/hooks',
+  },
+  {
+    tab: INSIGHTS_TABS.UTILS,
+    path: '/insights/utils',
   },
 ];
 

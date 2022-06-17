@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { navigate } from 'gatsby';
 import PropTypes from 'prop-types';
 import {
@@ -6,6 +6,10 @@ import {
   Tabs,
   Tab,
   Container,
+  TextFilter,
+  CheckboxFilter,
+  useMediaQuery,
+  breakpoints,
 } from '~paragon-react'; // eslint-disable-line
 import SEO from '../components/SEO';
 import Layout from '../components/PageLayout';
@@ -13,10 +17,9 @@ import SummaryUsageExamples from '../components/insights/SummaryUsageExamples';
 import ProjectUsageExamples from '../components/insights/ProjectUsageExamples';
 import ComponentUsageExamples from '../components/insights/ComponentUsageExamples';
 import getGithubProjectUrl from '../utils/getGithubProjectUrl';
-import dependentProjectsAnalysis from '../../../dependent-usage-test.json';
+import dependentProjectsAnalysis from '../../../dependent-usage.json';
 import { INSIGHTS_TABS, INSIGHTS_PAGES } from '../config';
-import { default as TextFilter } from '../../../src/DataTable/filters/TextFilter';
-import { default as CheckboxFilter } from '../../../src/DataTable/filters/CheckboxFilter';
+import SettingsContext from '../context/SettingsContext';
 
 const {
   lastModified: analysisLastUpdated,
@@ -26,7 +29,7 @@ const {
 const dependentProjects = dependentProjectsUsages.map(dependentUsage => ({
   ...dependentUsage,
   repositoryUrl: getGithubProjectUrl(dependentUsage.repository),
-  count: Object.values(dependentUsage.usages).reduce((accumulator, usage) => accumulator += usage["usages"].length, 0),
+  count: Object.values(dependentUsage.usages).reduce((accumulator, usage) => accumulator + usage.length, 0),
 }));
 
 const componentsUsage = dependentProjectsUsages.reduce((accumulator, project) => {
@@ -39,49 +42,54 @@ const componentsUsage = dependentProjectsUsages.reduce((accumulator, project) =>
       folderName: project.folderName,
       version: project.version,
       repositoryUrl: getGithubProjectUrl(project.repository),
-      componentUsageCount: project.usages[componentName]["usages"].length,
-      usages: project.usages[componentName]["usages"],
+      componentUsageCount: project.usages[componentName].length,
+      usages: project.usages[componentName],
     });
   });
   return accumulator;
 }, {});
 
-const componentType = dependentProjectsUsages.reduce((accumulator, project) => {
-  Object.keys(project.usages).forEach(componentName => {
-    accumulator[componentName] = project.usages[componentName]["type"]
-  });
-  return accumulator;
-}, {});
+const round = (n) => Math.round(n * 10) / 10;
 
-const typeCount = dependentProjectsUsages.reduce((accumulator, project) => {
-  Object.keys(project.usages).forEach(componentName => {
-    accumulator[project.usages[componentName]["type"]] = (accumulator[project.usages[componentName]["type"]] || 0) + 1;
-   });
-   return accumulator;
-}, {});
-
-const filterValues = Object.keys(componentType).map(function(key){
-    return componentType[key];
-}).filter((v, i, a) => a.indexOf(v) === i).map(type => ({name:type, number:typeCount[type], value:type}));
-
-const summaryComponentsUsage = Object.entries(componentsUsage).map(([componentName, usages]) => {
-  const componentUsageCounts = usages.reduce((accumulator, project) => accumulator += project.componentUsageCount, 0);
-  return {
-    name: componentName,
-    count: componentUsageCounts,
-    usages: componentsUsage[componentName],
-    type: componentType[componentName],
-  };
-});
+const getEmptyMessage = (text) => `Currently there are no ${text} usage yet`;
 
 const SummaryUsage = () => {
+  const { paragonTypes } = useContext(SettingsContext);
+  const isMedium = useMediaQuery({ minWidth: breakpoints.large.minWidth });
+
+  const summaryComponentsUsage = Object.entries(componentsUsage).map(([componentName, usages]) => {
+    const componentUsageCounts = usages.reduce((accumulator, project) => accumulator + project.componentUsageCount, 0);
+    return {
+      name: componentName,
+      count: componentUsageCounts,
+      usages: componentsUsage[componentName],
+      type: paragonTypes[componentName],
+    };
+  });
+
+  const typeCount = dependentProjectsUsages.reduce((accumulator, project) => {
+    Object.keys(project.usages).forEach(componentName => {
+      const type = paragonTypes[componentName];
+      accumulator[type] = (accumulator[type] || 0) + 1;
+    });
+    return accumulator;
+  }, {});
+
+  const filterValues = Object.keys(paragonTypes)
+    .map((key) => paragonTypes[key])
+    .filter((v, i, a) => a.indexOf(v) === i)
+    .map(type => ({ name: type, number: typeCount[type], value: type }));
+
   const summaryTableData = summaryComponentsUsage.sort((a, b) => {
     const nameA = a.name.toUpperCase();
     const nameB = b.name.toUpperCase();
-    return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
+    return nameA < nameB ? -1 : 1;
   });
-  const round = (n) => Math.round(n * 10) / 10;
-  const averageComponentsUsedPerProject = dependentProjects.reduce((accumulator, project) => accumulator += project.count, 0) / dependentProjects.length;
+
+  const averageComponentsUsedPerProject = dependentProjects.reduce(
+    (accumulator, project) => accumulator + project.count, 0,
+  ) / dependentProjects.length;
+
   return (
     <div className="pt-5 mb-5">
       <div className="mb-5">
@@ -95,7 +103,7 @@ const SummaryUsage = () => {
       <DataTable
         isExpandable
         isSortable
-        showFiltersInSidebar
+        showFiltersInSidebar={isMedium}
         isFilterable
         defaultColumnValues={{ Filter: TextFilter }}
         itemCount={summaryTableData.length}
@@ -117,7 +125,7 @@ const SummaryUsage = () => {
             accessor: 'type',
             Filter: CheckboxFilter,
             filter: 'includesValue',
-            filterChoices: filterValues
+            filterChoices: filterValues,
           },
         ]}
       >
@@ -193,19 +201,57 @@ const ComponentUsage = ({ name, componentUsageInProjects }) => (
 );
 
 // Usage info for all components
-const ComponentsUsage = () => (
+const ComponentsUsage = ({ data }) => (
   <div className="pt-5 mb-5">
-    {Object.keys(componentsUsage).sort().map(name => (
+    {data.length ? data.sort().map(name => (
       <ComponentUsage
         key={name}
         name={name}
         componentUsageInProjects={componentsUsage[name]}
       />
-    ))}
+    )) : getEmptyMessage('components')}
+  </div>
+);
+
+// Usage info for all hooks
+const HooksUsage = ({ data }) => (
+  <div className="pt-5 mb-5">
+    {data.length ? data.sort().map(name => (
+      <ComponentUsage
+        key={name}
+        name={name}
+        componentUsageInProjects={componentsUsage[name]}
+      />
+    )) : getEmptyMessage('hooks')}
+  </div>
+);
+
+// Usage info for all utils
+const UtilsUsage = ({ data }) => (
+  <div className="pt-5 mb-5">
+    {data.length ? data.sort().map(name => (
+      <ComponentUsage
+        key={name}
+        name={name}
+        componentUsageInProjects={componentsUsage[name]}
+      />
+    )) : getEmptyMessage('utils')}
   </div>
 );
 
 export default function InsightsPage({ pageContext: { tab } }) {
+  const { paragonTypes } = useContext(SettingsContext);
+  const { components, hooks, utils } = Object.keys(componentsUsage).reduce((acc, usage) => {
+    if (paragonTypes[usage] === 'Component') {
+      acc.components.push(usage);
+    } else if (paragonTypes[usage] === 'Hook') {
+      acc.hooks.push(usage);
+    } else if (['Text', 'Function', 'Object'].includes(paragonTypes[usage])) {
+      acc.utils.push(usage);
+    }
+    return acc;
+  }, { components: [], hooks: [], utils: [] });
+
   const handleOnSelect = (value) => {
     if (value !== tab) {
       global.analytics.track('Usage Insights', { tab: value });
@@ -234,7 +280,13 @@ export default function InsightsPage({ pageContext: { tab } }) {
             <ProjectsUsage />
           </Tab>
           <Tab eventKey={INSIGHTS_TABS.COMPONENTS} title="Components">
-            <ComponentsUsage />
+            <ComponentsUsage data={components} />
+          </Tab>
+          <Tab eventKey={INSIGHTS_TABS.HOOKS} title="Hooks">
+            <HooksUsage data={hooks} />
+          </Tab>
+          <Tab eventKey={INSIGHTS_TABS.UTILS} title="Utils">
+            <UtilsUsage data={utils} />
           </Tab>
         </Tabs>
       </Container>
@@ -247,3 +299,23 @@ InsightsPage.propTypes = {
     tab: PropTypes.oneOf(Object.values(INSIGHTS_TABS)),
   }).isRequired,
 };
+
+ComponentUsage.propTypes = {
+  name: PropTypes.string.isRequired,
+  componentUsageInProjects: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    folderName: PropTypes.string,
+    version: PropTypes.string,
+    repositoryUrl: PropTypes.string,
+    componentUsageCount: PropTypes.number,
+    usages: PropTypes.arrayOf(PropTypes.shape({})),
+  })).isRequired,
+};
+
+const usagePropTypes = {
+  data: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+
+ComponentsUsage.propTypes = usagePropTypes;
+HooksUsage.propTypes = usagePropTypes;
+UtilsUsage.propTypes = usagePropTypes;
