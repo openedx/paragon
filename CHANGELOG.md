@@ -1,3 +1,10 @@
+## [20.0.1](https://github.com/openedx/paragon/compare/v20.0.0...v20.0.1) (2022-06-17)
+
+
+### Bug Fixes
+
+* added/updated focus state styling in some components ([#1202](https://github.com/openedx/paragon/issues/1202)) ([74f9ce9](https://github.com/openedx/paragon/commit/74f9ce991f4ed997c19c69f5f010951b8592b358))
+
 # [20.0.0](https://github.com/openedx/paragon/compare/v19.25.3...v20.0.0) (2022-06-17)
 
 
