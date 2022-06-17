@@ -8,7 +8,7 @@ build:
 	rm -rf dist/setupTest.js
 	node build-scss.js
 
-transifex_langs = "ar,fr,es_419,zh_CN"
+transifex_langs = "ar,ca,es_419,fr,he,id,ko_KR,pl,pt_BR,ru,th,uk,zh_CN"
 i18n = ./src/i18n
 transifex_input = $(i18n)/transifex_input.json
 
