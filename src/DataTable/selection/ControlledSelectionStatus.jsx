@@ -13,7 +13,6 @@ import {
   getUnselectedPageRows,
   getRowIds,
 } from './data/helpers';
-import { CLEAR_SELECTION_TEXT } from './data/constants';
 
 const ControlledSelectionStatus = ({ className, clearSelectionText }) => {
   const {
@@ -49,12 +48,14 @@ const ControlledSelectionStatus = ({ className, clearSelectionText }) => {
 
 ControlledSelectionStatus.defaultProps = {
   className: undefined,
-  clearSelectionText: CLEAR_SELECTION_TEXT,
+  clearSelectionText: undefined,
 };
 
 ControlledSelectionStatus.propTypes = {
+  /** A class name to append to the base element */
   className: PropTypes.string,
-  clearSelectionText: PropTypes.string,
+  /** A text that appears on the `Clear selection` button, defaults to 'Clear Selection' */
+  clearSelectionText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };
 
 export default ControlledSelectionStatus;

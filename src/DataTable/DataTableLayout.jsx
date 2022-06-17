@@ -6,6 +6,7 @@ import SidebarFilters from './SidebarFilters';
 import DataTableContext from './DataTableContext';
 
 const DataTableLayout = ({
+  filtersTitle,
   className,
   children,
 }) => {
@@ -15,7 +16,7 @@ const DataTableLayout = ({
     <div className={classNames('pgn__data-table-layout-wrapper', className)}>
       {(showFiltersInSidebar && setFilter) && (
         <div className="pgn__data-table-layout-sidebar">
-          <SidebarFilters />
+          <SidebarFilters title={filtersTitle} />
         </div>
       )}
       <div className="pgn__data-table-layout-main">
@@ -27,11 +28,13 @@ const DataTableLayout = ({
 
 DataTableLayout.defaultProps = {
   className: null,
+  filtersTitle: undefined,
 };
 
 DataTableLayout.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
+  filtersTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };
 
 export default DataTableLayout;

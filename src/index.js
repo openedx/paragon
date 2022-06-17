@@ -186,3 +186,5 @@ export {
   useFlexLayout,
 } from 'react-table';
 export { default as Bubble } from './Bubble';
+
+export { default as messages } from './i18n';

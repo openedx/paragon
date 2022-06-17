@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import DataTableContext from '../DataTableContext';
 import BaseSelectionStatus from './BaseSelectionStatus';
-import { CLEAR_SELECTION_TEXT } from './data/constants';
 
 const SelectionStatus = ({ className, clearSelectionText }) => {
   const { toggleAllRowsSelected, selectedFlatRows } = useContext(DataTableContext);
@@ -21,13 +20,13 @@ const SelectionStatus = ({ className, clearSelectionText }) => {
 SelectionStatus.propTypes = {
   /** A class name to append to the base element */
   className: PropTypes.string,
-  /** A text that appears on the `Clear selection` button */
-  clearSelectionText: PropTypes.string,
+  /** A text that appears on the `Clear selection` button, defaults to 'Clear Selection' */
+  clearSelectionText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };
 
 SelectionStatus.defaultProps = {
   className: undefined,
-  clearSelectionText: CLEAR_SELECTION_TEXT,
+  clearSelectionText: undefined,
 };
 
 export default SelectionStatus;

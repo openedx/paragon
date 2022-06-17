@@ -1,6 +1,16 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { IntlProvider } from 'react-intl';
 import Toast from './index';
+
+/* eslint-disable-next-line react/prop-types */
+const ToastWrapper = ({ children, ...props }) => (
+  <IntlProvider>
+    <Toast {...props}>
+      {children}
+    </Toast>
+  </IntlProvider>
+);
 
 describe('<Toast />', () => {
   const onCloseHandler = () => {};
@@ -10,7 +20,7 @@ describe('<Toast />', () => {
   };
   it('renders optional action as link', () => {
     const wrapper = mount((
-      <Toast
+      <ToastWrapper
         {...props}
         action={{
           label: 'Optional action',
@@ -18,13 +28,13 @@ describe('<Toast />', () => {
         }}
       >
         Success message.
-      </Toast>));
+      </ToastWrapper>));
     const toastLink = wrapper.find('a.btn');
     expect(toastLink).toHaveLength(1);
   });
   it('renders optional action as button', () => {
     const wrapper = mount((
-      <Toast
+      <ToastWrapper
         {...props}
         action={{
           label: 'Optional action',
@@ -32,17 +42,17 @@ describe('<Toast />', () => {
         }}
       >
         Success message.
-      </Toast>));
+      </ToastWrapper>));
     const toastButton = wrapper.find('button.btn');
     expect(toastButton).toHaveLength(1);
   });
   it('autohide is set to false on onMouseOver and true on onMouseLeave', () => {
     const wrapper = mount((
-      <Toast
+      <ToastWrapper
         {...props}
       >
         Success message.
-      </Toast>));
+      </ToastWrapper>));
     wrapper.prop('onMouseOver');
     setTimeout(() => {
       const toast = wrapper.find(Toast);
@@ -58,11 +68,11 @@ describe('<Toast />', () => {
   });
   it('autohide is set to false onFocus and true onBlur', () => {
     const wrapper = mount((
-      <Toast
+      <ToastWrapper
         {...props}
       >
         Success message.
-      </Toast>));
+      </ToastWrapper>));
     wrapper.prop('onFocus');
     setTimeout(() => {
       const toast = wrapper.find(Toast);

@@ -39,7 +39,8 @@
     "test:watch": "npm run test -- --watch",
     "generate-component": "cd component-generator && npm start",
     "generate-component-lint": "cd component-generator && npm run lint",
-    "generate-changelog": "node generate-changelog.js"
+    "generate-changelog": "node generate-changelog.js",
+    "i18n_extract": "formatjs extract 'src/**/*.jsx' --out-file ./src/i18n/transifex_input.json --format transifex"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -64,7 +65,8 @@
   },
   "peerDependencies": {
     "react": "^16.8.6 || ^17.0.0",
-    "react-dom": "^16.8.6 || ^17.0.0"
+    "react-dom": "^16.8.6 || ^17.0.0",
+    "react-intl": "^5.25.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.8",
@@ -74,6 +76,7 @@
     "@babel/preset-env": "^7.16.8",
     "@babel/preset-react": "^7.16.7",
     "@edx/eslint-config": "^3.0.0",
+    "@formatjs/cli": "^4.8.4",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.1",
     "@testing-library/jest-dom": "^5.16.3",

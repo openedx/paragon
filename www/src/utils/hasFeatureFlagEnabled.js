@@ -4,7 +4,7 @@
  * @param {string} featureFlag
  * @returns true if feature flag is in `?feature` query parameter
  */
-export default function hasFeatureFlagEnabled(featureFlag) {
+function hasFeatureFlagEnabled(featureFlag) {
   const { location } = global;
   if (!location) {
     return false;
@@ -13,3 +13,5 @@ export default function hasFeatureFlagEnabled(featureFlag) {
   const features = searchParams.getAll('feature');
   return features.includes(featureFlag);
 }
+
+module.exports = hasFeatureFlagEnabled;
