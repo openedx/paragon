@@ -1,0 +1,57 @@
+[
+  {
+    "defaultMessage": "Dismiss",
+    "description": "Label of a close button on Alert component",
+    "id": "pgn.Alert.closeLabel"
+  },
+  {
+    "defaultMessage": "Collapse all",
+    "description": "Label of an action button that collapses all expandable rows of DataTable.",
+    "id": "pgn.DataTable.ExpandAll.collapseAllLabel"
+  },
+  {
+    "defaultMessage": "Expand all",
+    "description": "Label of an action button that expands all expandable rows of DataTable.",
+    "id": "pgn.DataTable.ExpandAll.expandAllLabel"
+  },
+  {
+    "defaultMessage": "Clear filters",
+    "description": "A text that appears on the `Clear filters` button",
+    "id": "pgn.DataTable.FilterStatus.clearFiltersText"
+  },
+  {
+    "defaultMessage": "Showing {pageSize} of {itemCount}.",
+    "description": "A text describing how many rows is shown in the table",
+    "id": "pgn.DataTable.RowStatus.statusText"
+  },
+  {
+    "defaultMessage": "Filters",
+    "description": "Title for the sidebar filters component",
+    "id": "pgn.DataTable.SidebarFilters.title"
+  },
+  {
+    "defaultMessage": "Close",
+    "description": "Close label for Toast component",
+    "id": "pgn.Toast.closeLabel"
+  },
+  {
+    "defaultMessage": "All {numSelectedRows} selected",
+    "description": "Text for all selected label",
+    "id": "pgn.DataTable.BaseSelectionStatus.allSelectedText"
+  },
+  {
+    "defaultMessage": "{numSelectedRows} selected",
+    "description": "Text for selected label",
+    "id": "pgn.DataTable.BaseSelectionStatus.selectedText"
+  },
+  {
+    "defaultMessage": "Select all {itemCount}",
+    "description": "A label for select all button.",
+    "id": "pgn.DataTable.BaseSelectionStatus.selectAllText"
+  },
+  {
+    "defaultMessage": "Clear selection",
+    "description": "A label of clear all selection button.",
+    "id": "pgn.DataTable.BaseSelectionStatus.clearSelectionText"
+  }
+]
