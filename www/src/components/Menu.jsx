@@ -92,7 +92,7 @@ MenuComponentList.propTypes = {
 
 const MenuComponentListCategory = ({ children, title }) => (
   <div className="menu-component-list-category">
-    <h3>{title}</h3>
+    <h3 className="h4">{title}</h3>
     {children}
   </div>
 );
