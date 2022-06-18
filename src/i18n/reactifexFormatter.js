@@ -1,11 +1,11 @@
 /**
  * Returns messages in the following structure:
  *
- * {
+ * [{
  *   id: 'pgn.Alert.closeLabel',
  *   defaultMessage: 'Dismiss',
  *   description: 'Label of a close button on Alert component',
- * }
+ * }]
  *
  */
 const format = msgs => (
