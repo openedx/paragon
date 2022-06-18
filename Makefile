@@ -50,7 +50,7 @@ push_translations:
 	tx push -s
 	# Pushing comments...
 	./node_modules/@edx/reactifex/bash_scripts/get_hashed_strings.sh $(tx_url1)
-	$(i18n)/transifex_utils.js $(i18n)/temp
+	node $(i18n)/transifex_utils.js $(i18n)/temp
 	./node_modules/@edx/reactifex/bash_scripts/put_comments.sh $(tx_url2)
 
 # Pulls translations from Transifex.
