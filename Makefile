@@ -34,7 +34,7 @@ i18n.extract:
 	npm run-script i18n_extract
 
 i18n.extract_comments:
-	# Pulling comments for display string from .jsx files into json.files...
+	# Pulling comments from display strings in .jsx files into .json files...
 	npm run-script i18n_extract_comments
 
 extract_translations: | requirements i18n.extract i18n.extract_comments
