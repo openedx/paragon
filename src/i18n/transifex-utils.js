@@ -55,6 +55,8 @@ const hashFile = `${bashScriptsPath}/hashmap.json`;
 process.stdout.write(`${loggingPrefix}: reading hash file ${hashFile}\n`);
 const messageInfo = JSON.parse(fs.readFileSync(hashFile));
 
+process.stdout.write(`${loggingPrefix}: hash file contents from @edx/reactifex: ${JSON.stringify(messageInfo, null, 2)}`);
+
 const outputFile = `${bashScriptsPath}/hashed_data.txt`;
 process.stdout.write(`${loggingPrefix}: writing to output file ${outputFile}\n`);
 fs.writeFileSync(outputFile, '');
