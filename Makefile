@@ -9,9 +9,6 @@ build:
 	node build-scss.js
 
 export TRANSIFEX_RESOURCE = paragon
-transifex_resource = paragon
-tx_url1 = https://www.transifex.com/api/2/project/edx-platform/resource/$(transifex_resource)/translation/en/strings/
-tx_url2 = https://www.transifex.com/api/2/project/edx-platform/resource/$(transifex_resource)/source/
 transifex_langs = "ar,ca,es_419,fr,he,id,ko_KR,pl,pt_BR,ru,th,uk,zh_CN
 i18n = ./src/i18n
 transifex_utils = $(i18n)/transifex-utils.js
@@ -59,9 +56,9 @@ push_translations:
 	tx push -s
 
 	# Pushing comments to Transifex...
-	./node_modules/@edx/reactifex/bash_scripts/get_hashed_strings.sh $(tx_url1)
+	./node_modules/@edx/reactifex/bash_scripts/get_hashed_strings_v3.sh
 	$(transifex_utils) $(transifex_temp)
-	./node_modules/@edx/reactifex/bash_scripts/put_comments.sh $(tx_url2)
+	./node_modules/@edx/reactifex/bash_scripts/put_comments_v3.sh
 
 # Pulls translations from Transifex.
 pull_translations:
