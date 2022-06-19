@@ -15,7 +15,7 @@ transifex_utils = $(i18n)/transifex-utils.js
 transifex_input = $(i18n)/transifex_input.json
 transifex_temp = $(i18n)/temp
 
-NPM_TESTS=build i18n_extract lint test
+NPM_TESTS=build i18n_extract i18n_extract_comments lint test
 
 .PHONY: test
 test: $(addprefix test.npm.,$(NPM_TESTS))  ## validate ci suite
@@ -52,8 +52,8 @@ push_translations:
 	# Displaying extracted strings...
 	cat $(transifex_input)
 
-	# Pushing strings to Transifex...
-	tx push -s
+	# Pushing strings to Transifex, temporarily with force...
+	tx push -s -f
 
 	# Pushing comments to Transifex...
 	./node_modules/@edx/reactifex/bash_scripts/get_hashed_strings_v3.sh

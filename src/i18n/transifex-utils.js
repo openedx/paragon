@@ -11,6 +11,8 @@ const fs = require('fs');
 const glob = require('glob');
 const path = require('path');
 
+const loggingPrefix = path.basename(`${__filename}`); // the name of this JS file
+
 /*
  * See the Makefile for how the required hash file is downloaded from Transifex.
  */
@@ -42,20 +44,21 @@ function escapeDots(messageId) {
 const jsonDir = process.argv[2];
 const messageObjects = gatherJson(jsonDir);
 
+process.stdout.write(`${loggingPrefix}: message object contents: ${JSON.stringify(messageObjects, null, 2)}`);
+
 if (messageObjects.length === 0) {
   process.exitCode = 1;
   throw new Error('Found no messages');
 }
 
 // prepare to handle the translator notes
-const loggingPrefix = path.basename(`${__filename}`); // the name of this JS file
 const bashScriptsPath = './node_modules/@edx/reactifex/bash_scripts';
 
 const hashFile = `${bashScriptsPath}/hashmap.json`;
 process.stdout.write(`${loggingPrefix}: reading hash file ${hashFile}\n`);
 const messageInfo = JSON.parse(fs.readFileSync(hashFile));
 
-process.stdout.write(`${loggingPrefix}: hash file contents from @edx/reactifex: ${JSON.stringify(messageInfo, null, 2)}`);
+process.stdout.write(`${loggingPrefix}: hash file contents: ${JSON.stringify(messageInfo, null, 2)}`);
 
 const outputFile = `${bashScriptsPath}/hashed_data.txt`;
 process.stdout.write(`${loggingPrefix}: writing to output file ${outputFile}\n`);
