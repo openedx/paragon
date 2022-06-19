@@ -8,11 +8,13 @@ build:
 	rm -rf dist/setupTest.js
 	node build-scss.js
 
+export TRANSIFEX_RESOURCE = paragon
 transifex_resource = paragon
 tx_url1 = https://www.transifex.com/api/2/project/edx-platform/resource/$(transifex_resource)/translation/en/strings/
 tx_url2 = https://www.transifex.com/api/2/project/edx-platform/resource/$(transifex_resource)/source/
-transifex_langs = "ar,ca,es_419,fr,he,id,ko_KR,pl,pt_BR,ru,th,uk,zh_CN"
+transifex_langs = "ar,ca,es_419,fr,he,id,ko_KR,pl,pt_BR,ru,th,uk,zh_CN
 i18n = ./src/i18n
+transifex_utils = $(i18n)/transifex-utils.js
 transifex_input = $(i18n)/transifex_input.json
 
 NPM_TESTS=build i18n_extract lint test
@@ -50,7 +52,7 @@ push_translations:
 	tx push -s
 	# Pushing comments...
 	./node_modules/@edx/reactifex/bash_scripts/get_hashed_strings.sh $(tx_url1)
-	$(i18n)/transifex-utils.js $(i18n)/temp
+	$(transifex_utils) $(i18n)/temp
 	./node_modules/@edx/reactifex/bash_scripts/put_comments.sh $(tx_url2)
 
 # Pulls translations from Transifex.
