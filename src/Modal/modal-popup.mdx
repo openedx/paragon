@@ -29,8 +29,7 @@ A proper way to implement this is to use [callback refs](https://reactjs.org/doc
         <Button
           ref={setTarget}
           variant="outline-primary"
-          onClick={open}
-        >
+          onClick={open}>
           Open modal popup
         </Button>
       </div>
@@ -40,6 +39,44 @@ A proper way to implement this is to use [callback refs](https://reactjs.org/doc
         onClose={close}>
         <div
           className="bg-white p-3 rounded shadow"
+          style={{textAlign: 'start'}}>
+          <p>This could be a menu or tray.</p>
+
+          <Button variant="primary" className="mie-2">Action</Button>
+          <ModalCloseButton variant="outline-primary">Close</ModalCloseButton>
+        </div>
+      </ModalPopup>
+    </>
+  )
+}
+```
+### With arrow
+
+The arrow modifier positions an inner element of the modal popup so it appears centered relative to the reference.
+
+```jsx live
+() => {
+  const [isOpen, open, close] = useToggle(false);
+  const [target, setTarget] = React.useState(null);
+
+  return (
+    <>
+      <div className="d-flex">
+        <Button
+          ref={setTarget}
+          variant="outline-primary"
+          onClick={open}>
+          Open modal popup
+        </Button>
+      </div>
+      <ModalPopup
+        hasArrow
+        placement="right"
+        positionRef={target}
+        isOpen={isOpen}
+        onClose={close}>
+        <div
+          className="bg-white p-3 rounded shadow border"
           style={{textAlign: 'start'}}>
           <p>This could be a menu or tray.</p>
 

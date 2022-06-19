@@ -52,13 +52,13 @@ const ModalPopup = ({
             {isOpen && (
               <div className="pgn__modal-popup__tooltip">
                 {children}
-                {hasArrow ? (
+                {hasArrow && (
                   <div
                     id="arrow"
                     className={`pgn__modal-popup__arrow pgn__modal-popup__arrow-${placement}`}
                     data-popper-arrow=""
                   />
-                ) : null}
+                )}
               </div>
             )}
           </FocusOn>
@@ -87,7 +87,7 @@ ModalPopup.propTypes = {
   ]),
   /** Specifies position according to the element that the ``positionRef`` prop points to */
   placement: PopperElement.propTypes.placement,
-  /** Caret to the modal window pointing to the button */
+  /** Caret to the modal popup pointing to the target */
   hasArrow: PropTypes.bool,
 };
 
