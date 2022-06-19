@@ -52,9 +52,13 @@ detect_changed_source_translations:
 
 # Pushes translations to Transifex.  You must run make extract_translations first.
 push_translations:
+	# Displaying extracted strings...
+	cat $(transifex_input)
+
 	# Pushing strings to Transifex...
 	tx push -s
-	# Pushing comments...
+
+	# Pushing comments to Transifex...
 	./node_modules/@edx/reactifex/bash_scripts/get_hashed_strings.sh $(tx_url1)
 	$(transifex_utils) $(transifex_temp)
 	./node_modules/@edx/reactifex/bash_scripts/put_comments.sh $(tx_url2)
