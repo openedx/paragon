@@ -252,6 +252,21 @@
   }
 }
 
+.pgn__card-status {
+  box-shadow: none;
+  margin-bottom: 0;
+
+  &.alert-dark {
+    color: $white;
+    background-color: $primary-500;
+    border-color: $white;
+
+    .alert-icon {
+      color: $white;
+    }
+  }
+}
+
 @media (max-width: map-get($grid-breakpoints, "sm")) {
   .pgn__card-footer {
     &.horizontal > :not(:last-child) {

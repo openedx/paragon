@@ -9,6 +9,7 @@ import CardSection from './CardSection';
 import CardFooter from './CardFooter';
 import CardImageCap from './CardImageCap';
 import CardBody from './CardBody';
+import CardStatus from './CardStatus';
 
 const Card = React.forwardRef(({
   orientation,
@@ -52,6 +53,7 @@ Card.defaultProps = {
   isClickable: false,
 };
 
+Card.Status = CardStatus;
 Card.Header = CardHeader;
 Card.Divider = CardDivider;
 Card.Section = CardSection;
