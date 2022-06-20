@@ -30,6 +30,9 @@ exports[`<CardFooter /> renders horizontal orientation without footer text 1`] =
 <div
   className="pgn__card-footer horizontal"
 >
+  <div
+    className="pgn__card-footer-text horizontal"
+  />
   <button
     className="btn btn-primary"
     disabled={false}
@@ -77,6 +80,9 @@ exports[`<CardFooter /> renders stacked horizontal orientation without footer te
 <div
   className="pgn__card-footer horizontal-stacked"
 >
+  <div
+    className="pgn__card-footer-text horizontal-stacked"
+  />
   <button
     className="btn btn-primary"
     disabled={false}
@@ -124,6 +130,9 @@ exports[`<CardFooter /> renders stacked vertical orientation without footer text
 <div
   className="pgn__card-footer vertical-stacked"
 >
+  <div
+    className="pgn__card-footer-text vertical-stacked"
+  />
   <button
     className="btn btn-primary"
     disabled={false}
@@ -171,6 +180,9 @@ exports[`<CardFooter /> renders vertical orientation without footer text 1`] = `
 <div
   className="pgn__card-footer vertical"
 >
+  <div
+    className="pgn__card-footer-text vertical"
+  />
   <button
     className="btn btn-primary"
     disabled={false}

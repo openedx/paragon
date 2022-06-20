@@ -28,4 +28,16 @@ describe('<CardHeader />', () => {
     )).toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('renders with hasClamp prop', () => {
+    const tree = renderer.create((
+      <CardHeader hasClamp />
+    )).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it('renders with maxLines prop', () => {
+    const tree = renderer.create((
+      <CardHeader hasClamp maxLines={2} />
+    )).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
