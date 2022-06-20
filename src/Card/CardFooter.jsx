@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import TextClamp from 'react-string-clamp';
 import CardContext from './CardContext';
 
 const CardFooter = React.forwardRef(({
@@ -9,6 +10,8 @@ const CardFooter = React.forwardRef(({
   isStacked,
   textElement,
   orientation,
+  hasClamp,
+  maxLines,
 }, ref) => {
   const { orientation: cardOrientation } = useContext(CardContext);
   const footerOrientation = orientation || cardOrientation;
@@ -17,7 +20,17 @@ const CardFooter = React.forwardRef(({
 
   return (
     <div className={classNames(className, wrapperClassName)} ref={ref}>
-      {textElement && <div className={textElementClassName}>{textElement}</div>}
+      {textElement
+        && hasClamp
+        ? (
+          <TextClamp
+            text={textElement}
+            lines={maxLines}
+            className={textElementClassName}
+          />
+        ) : (
+          <div className={textElementClassName}>{textElement}</div>
+        )}
       {children}
     </div>
   );
@@ -34,6 +47,10 @@ CardFooter.propTypes = {
   isStacked: PropTypes.bool,
   /** Specifies which orientation to use. This prop will override context value if provided. */
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
+  /** The switcher limiting the number of rows  */
+  hasClamp: PropTypes.bool,
+  /** The maximum number of lines  */
+  maxLines: PropTypes.number,
 };
 
 CardFooter.defaultProps = {
@@ -41,6 +58,8 @@ CardFooter.defaultProps = {
   textElement: undefined,
   isStacked: false,
   orientation: undefined,
+  hasClamp: false,
+  maxLines: undefined,
 };
 
 export default CardFooter;

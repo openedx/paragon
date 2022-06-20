@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import TextClamp from 'react-string-clamp';
 
 const CardHeader = React.forwardRef(({
   actions,
@@ -8,6 +9,8 @@ const CardHeader = React.forwardRef(({
   size,
   subtitle,
   title,
+  maxLines,
+  hasClamp,
 }, ref) => {
   const cloneActions = useCallback(
     (Action) => {
@@ -28,8 +31,18 @@ const CardHeader = React.forwardRef(({
   return (
     <div className={classNames('pgn__card-header', className)} ref={ref}>
       <div className="pgn__card-header-content">
-        {title && <div className={`pgn__card-header-title-${size}`}>{title}</div>}
-        {subtitle && <div className={`pgn__card-header-subtitle-${size}`}>{subtitle}</div>}
+        {title
+          && hasClamp
+          ? (
+            <TextClamp
+              text={title}
+              lines={maxLines}
+              className={`pgn__card-header-title-${size}`}
+            />
+          ) : (
+            <div className={`pgn__card-header-title-${size}`}>{title}</div>
+          )}
+        {subtitle && <TextClamp text={subtitle} lines={2} className={`pgn__card-header-subtitle-${size}`}>{subtitle}</TextClamp>}
       </div>
       {actions && (
         <div className="pgn__card-header-actions">
@@ -53,6 +66,10 @@ CardHeader.propTypes = {
   size: PropTypes.oneOf(['sm', 'md']),
   /** The subtitle of the CardHeader component */
   subtitle: PropTypes.node,
+  /** The switcher limiting the number of rows  */
+  hasClamp: PropTypes.bool,
+  /** The maximum number of lines  */
+  maxLines: PropTypes.number,
 };
 
 CardHeader.defaultProps = {
@@ -61,6 +78,8 @@ CardHeader.defaultProps = {
   size: 'md',
   title: null,
   subtitle: null,
+  hasClamp: false,
+  maxLines: null,
 };
 
 export default CardHeader;

@@ -399,6 +399,59 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
 </Card>
 ```
 
+## With clamp
+
+### Vertical variant without clamp
+
+```jsx live
+<Card style={{ width: '18rem' }}>
+  <Card.ImageCap 
+    src="https://source.unsplash.com/360x200/?nature,flower"
+    srcAlt="Card image"
+  />
+  <Card.Header
+    hasClamp
+    maxLines={2}
+    title="Card Title Card Title Card Title Card Title Card Title Card Title Card Title Card Title"
+  />
+  <Card.Section>
+    This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+  </Card.Section>
+  <Card.Footer
+    hasClamp
+    maxLines={2}
+    textElement="This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them."
+  >
+    <Button style={{ width: '100%' }}>Action 1</Button>
+  </Card.Footer>
+</Card>
+```
+
+### Horizontal variant without clamp
+
+```jsx live
+<Card>
+  <Card.Section
+    hasClamp
+    maxLines={2}
+    title="This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them."
+    actions={
+      <ActionRow>
+        <Button>Action 1</Button>
+        <Button>Action 2</Button>
+      </ActionRow>
+    }
+  >
+    This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+  </Card.Section>
+  <Card.Footer
+    hasClamp
+    maxLines={2} 
+    textElement="This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them. This is a card section. It can contain anything but usually text, a list, or list of links." 
+  />
+</Card>
+```
+
 ## CardGrid
 
 This component displays a collection of Cards as a grid (with customizable responsive behavior), where
