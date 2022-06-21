@@ -1,5 +1,5 @@
 {
-  "lastModified": 1655561327966,
+  "lastModified": 1655820507650,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -266,18 +266,6 @@
             "version": "2.6.4"
           },
           {
-            "filePath": "common/lib/xmodule/xmodule/js/common_static/common/js/components/BlockBrowser/components/BlockBrowser/BlockBrowser.jsx",
-            "line": 8,
-            "column": 2,
-            "version": "2.6.4"
-          },
-          {
-            "filePath": "common/lib/xmodule/xmodule/js/common_static/common/js/components/BlockBrowser/components/BlockBrowser/BlockBrowser.jsx",
-            "line": 15,
-            "column": 2,
-            "version": "2.6.4"
-          },
-          {
             "filePath": "common/static/common/js/components/BlockBrowser/components/BlockBrowser/BlockBrowser.jsx",
             "line": 8,
             "column": 2,
@@ -330,6 +318,18 @@
             "line": 15,
             "column": 2,
             "version": "2.6.4"
+          },
+          {
+            "filePath": "xmodule/js/common_static/common/js/components/BlockBrowser/components/BlockBrowser/BlockBrowser.jsx",
+            "line": 8,
+            "column": 2,
+            "version": "2.6.4"
+          },
+          {
+            "filePath": "xmodule/js/common_static/common/js/components/BlockBrowser/components/BlockBrowser/BlockBrowser.jsx",
+            "line": 15,
+            "column": 2,
+            "version": "2.6.4"
           }
         ],
         "Button": [
@@ -365,24 +365,6 @@
           },
           {
             "filePath": "cms/static/xmodule_js/common_static/common/js/components/BlockBrowser/components/BlockBrowser/BlockBrowser.jsx",
-            "line": 76,
-            "column": 8,
-            "version": "2.6.4"
-          },
-          {
-            "filePath": "common/lib/xmodule/xmodule/js/common_static/common/js/components/BlockBrowser/components/BlockBrowser/BlockBrowser.jsx",
-            "line": 43,
-            "column": 8,
-            "version": "2.6.4"
-          },
-          {
-            "filePath": "common/lib/xmodule/xmodule/js/common_static/common/js/components/BlockBrowser/components/BlockBrowser/BlockBrowser.jsx",
-            "line": 49,
-            "column": 8,
-            "version": "2.6.4"
-          },
-          {
-            "filePath": "common/lib/xmodule/xmodule/js/common_static/common/js/components/BlockBrowser/components/BlockBrowser/BlockBrowser.jsx",
             "line": 76,
             "column": 8,
             "version": "2.6.4"
@@ -571,6 +553,24 @@
             "filePath": "openedx/features/announcements/static/announcements/jsx/Announcements.jsx",
             "line": 108,
             "column": 10,
+            "version": "2.6.4"
+          },
+          {
+            "filePath": "xmodule/js/common_static/common/js/components/BlockBrowser/components/BlockBrowser/BlockBrowser.jsx",
+            "line": 43,
+            "column": 8,
+            "version": "2.6.4"
+          },
+          {
+            "filePath": "xmodule/js/common_static/common/js/components/BlockBrowser/components/BlockBrowser/BlockBrowser.jsx",
+            "line": 49,
+            "column": 8,
+            "version": "2.6.4"
+          },
+          {
+            "filePath": "xmodule/js/common_static/common/js/components/BlockBrowser/components/BlockBrowser/BlockBrowser.jsx",
+            "line": 76,
+            "column": 8,
             "version": "2.6.4"
           }
         ],
@@ -9543,18 +9543,6 @@
             "version": "19.10.1"
           },
           {
-            "filePath": "src/discussions/learners/learner/CommentsTabContent.jsx",
-            "line": 33,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/discussions/learners/learner/PostsTabContent.jsx",
-            "line": 39,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
             "line": 55,
             "column": 6,
@@ -9577,6 +9565,12 @@
           {
             "filePath": "src/discussions/comments/comment/CommentEditor.jsx",
             "line": 86,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/learners/learner/LearnerFilterBar.jsx",
+            "line": 82,
             "column": 8,
             "version": "19.10.1"
           },
@@ -9721,12 +9715,6 @@
             "version": "19.10.1"
           },
           {
-            "filePath": "src/discussions/learners/LearnerPageHeader.jsx",
-            "line": 28,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
             "filePath": "src/discussions/posts/post/PostHeader.jsx",
             "line": 35,
             "column": 6,
@@ -9759,27 +9747,39 @@
             "version": "19.10.1"
           },
           {
+            "filePath": "src/discussions/learners/learner/LearnerFilterBar.jsx",
+            "line": 28,
+            "column": 4,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/learners/learner/LearnerFilterBar.jsx",
+            "line": 75,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/learners/learner/LearnerFilterBar.jsx",
+            "line": 78,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
             "filePath": "src/discussions/learners/learner/LearnerFooter.jsx",
             "line": 20,
-            "column": 6,
+            "column": 8,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/learners/learner/LearnerFooter.jsx",
             "line": 24,
-            "column": 6,
+            "column": 8,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/learners/learner/LearnerFooter.jsx",
-            "line": 48,
-            "column": 14,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/discussions/learners/LearnerPageHeader.jsx",
-            "line": 43,
-            "column": 18,
+            "line": 46,
+            "column": 12,
             "version": "19.10.1"
           },
           {
@@ -9814,7 +9814,7 @@
           },
           {
             "filePath": "src/discussions/posts/post/PostLink.jsx",
-            "line": 53,
+            "line": 55,
             "column": 10,
             "version": "19.10.1"
           },
@@ -9845,14 +9845,14 @@
             "version": "19.10.1"
           },
           {
-            "filePath": "src/discussions/learners/LearnersContentView.jsx",
-            "line": 42,
+            "filePath": "src/discussions/learners/LearnerPostsView.jsx",
+            "line": 88,
             "column": 12,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/learners/LearnersView.jsx",
-            "line": 64,
+            "line": 65,
             "column": 12,
             "version": "19.10.1"
           },
@@ -9870,7 +9870,7 @@
           },
           {
             "filePath": "src/discussions/posts/PostsView.jsx",
-            "line": 80,
+            "line": 84,
             "column": 10,
             "version": "19.10.1"
           }
@@ -9879,6 +9879,12 @@
           {
             "filePath": "src/discussions/common/ActionsDropdown.jsx",
             "line": 37,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/learners/LearnerPostsView.jsx",
+            "line": 69,
             "column": 8,
             "version": "19.10.1"
           },
@@ -10049,11 +10055,137 @@
             "version": "19.10.1"
           }
         ],
+        "Form.Radio": [
+          {
+            "filePath": "src/discussions/learners/learner/LearnerFilterBar.jsx",
+            "line": 29,
+            "column": 4,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
+            "line": 50,
+            "column": 6,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
+            "line": 40,
+            "column": 4,
+            "version": "19.10.1"
+          }
+        ],
+        "Collapsible.Advanced": [
+          {
+            "filePath": "src/discussions/learners/learner/LearnerFilterBar.jsx",
+            "line": 63,
+            "column": 4,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
+            "line": 112,
+            "column": 4,
+            "version": "19.10.1"
+          }
+        ],
+        "Collapsible.Trigger": [
+          {
+            "filePath": "src/discussions/learners/learner/LearnerFilterBar.jsx",
+            "line": 68,
+            "column": 6,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
+            "line": 117,
+            "column": 6,
+            "version": "19.10.1"
+          }
+        ],
+        "Collapsible.Visible": [
+          {
+            "filePath": "src/discussions/learners/learner/LearnerFilterBar.jsx",
+            "line": 74,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/learners/learner/LearnerFilterBar.jsx",
+            "line": 77,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
+            "line": 128,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
+            "line": 131,
+            "column": 8,
+            "version": "19.10.1"
+          }
+        ],
+        "Collapsible.Body": [
+          {
+            "filePath": "src/discussions/learners/learner/LearnerFilterBar.jsx",
+            "line": 81,
+            "column": 6,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
+            "line": 135,
+            "column": 6,
+            "version": "19.10.1"
+          }
+        ],
+        "Form.RadioSet": [
+          {
+            "filePath": "src/discussions/learners/learner/LearnerFilterBar.jsx",
+            "line": 84,
+            "column": 12,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
+            "line": 236,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
+            "line": 138,
+            "column": 12,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
+            "line": 163,
+            "column": 12,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
+            "line": 202,
+            "column": 12,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
+            "line": 237,
+            "column": 18,
+            "version": "19.10.1"
+          }
+        ],
         "OverlayTrigger": [
           {
             "filePath": "src/discussions/learners/learner/LearnerFooter.jsx",
-            "line": 30,
-            "column": 10,
+            "line": 28,
+            "column": 8,
             "version": "19.10.1"
           },
           {
@@ -10072,8 +10204,8 @@
         "Tooltip": [
           {
             "filePath": "src/discussions/learners/learner/LearnerFooter.jsx",
-            "line": 32,
-            "column": 14,
+            "line": 30,
+            "column": 12,
             "version": "19.10.1"
           },
           {
@@ -10086,14 +10218,6 @@
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
             "line": 105,
             "column": 16,
-            "version": "19.10.1"
-          }
-        ],
-        "ButtonGroup": [
-          {
-            "filePath": "src/discussions/learners/LearnerPageHeader.jsx",
-            "line": 34,
-            "column": 8,
             "version": "19.10.1"
           }
         ],
@@ -10143,20 +10267,6 @@
             "version": "19.10.1"
           }
         ],
-        "Form.Radio": [
-          {
-            "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 50,
-            "column": 6,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
-            "line": 40,
-            "column": 4,
-            "version": "19.10.1"
-          }
-        ],
         "Card": [
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
@@ -10173,38 +10283,6 @@
             "version": "19.10.1"
           }
         ],
-        "Form.RadioSet": [
-          {
-            "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 236,
-            "column": 10,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
-            "line": 138,
-            "column": 12,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
-            "line": 163,
-            "column": 12,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
-            "line": 202,
-            "column": 12,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
-            "line": 237,
-            "column": 18,
-            "version": "19.10.1"
-          }
-        ],
         "Form.Checkbox": [
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
@@ -10216,44 +10294,6 @@
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 386,
             "column": 22,
-            "version": "19.10.1"
-          }
-        ],
-        "Collapsible.Advanced": [
-          {
-            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
-            "line": 112,
-            "column": 4,
-            "version": "19.10.1"
-          }
-        ],
-        "Collapsible.Trigger": [
-          {
-            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
-            "line": 117,
-            "column": 6,
-            "version": "19.10.1"
-          }
-        ],
-        "Collapsible.Visible": [
-          {
-            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
-            "line": 128,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
-            "line": 131,
-            "column": 8,
-            "version": "19.10.1"
-          }
-        ],
-        "Collapsible.Body": [
-          {
-            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
-            "line": 135,
-            "column": 6,
             "version": "19.10.1"
           }
         ],
@@ -10300,13 +10340,13 @@
           },
           {
             "filePath": "src/discussions/posts/post/PostLink.jsx",
-            "line": 80,
+            "line": 82,
             "column": 16,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post/PostLink.jsx",
-            "line": 87,
+            "line": 89,
             "column": 16,
             "version": "19.10.1"
           }
@@ -11390,13 +11430,13 @@
           },
           {
             "filePath": "src/components/course/CoursePage.jsx",
-            "line": 111,
+            "line": 112,
             "column": 6,
             "version": "19.22.0"
           },
           {
             "filePath": "src/components/course/CoursePage.jsx",
-            "line": 130,
+            "line": 138,
             "column": 10,
             "version": "19.22.0"
           },
@@ -11684,7 +11724,7 @@
           },
           {
             "filePath": "src/components/course/CoursePage.jsx",
-            "line": 131,
+            "line": 139,
             "column": 12,
             "version": "19.22.0"
           },
@@ -11900,7 +11940,7 @@
           },
           {
             "filePath": "src/components/course/CoursePage.jsx",
-            "line": 135,
+            "line": 143,
             "column": 14,
             "version": "19.22.0"
           },
@@ -17241,7 +17281,7 @@
       }
     },
     {
-      "version": "19.25.1",
+      "version": "19.25.3",
       "name": "@edx/frontend-app-profile",
       "repository": {
         "type": "git",
@@ -17254,19 +17294,19 @@
             "filePath": "src/profile/AgeMessage.jsx",
             "line": 9,
             "column": 4,
-            "version": "19.25.1"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/profile/forms/SocialLinks.jsx",
             "line": 168,
             "column": 36,
-            "version": "19.25.1"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/profile/ProfilePage.jsx",
             "line": 159,
             "column": 10,
-            "version": "19.25.1"
+            "version": "19.25.3"
           }
         ],
         "ValidationFormGroup": [
@@ -17274,25 +17314,25 @@
             "filePath": "src/profile/forms/Bio.jsx",
             "line": 59,
             "column": 16,
-            "version": "19.25.1"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/profile/forms/Country.jsx",
             "line": 70,
             "column": 16,
-            "version": "19.25.1"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/profile/forms/Education.jsx",
             "line": 66,
             "column": 16,
-            "version": "19.25.1"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/profile/forms/PreferredLanguage.jsx",
             "line": 80,
             "column": 16,
-            "version": "19.25.1"
+            "version": "19.25.3"
           }
         ],
         "Hyperlink": [
@@ -17300,13 +17340,13 @@
             "filePath": "src/profile/forms/Certificates.jsx",
             "line": 106,
             "column": 14,
-            "version": "19.25.1"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/profile/ProfilePage.jsx",
             "line": 127,
             "column": 6,
-            "version": "19.25.1"
+            "version": "19.25.3"
           }
         ],
         "Button": [
@@ -17314,19 +17354,19 @@
             "filePath": "src/profile/forms/elements/EditButton.jsx",
             "line": 14,
             "column": 4,
-            "version": "19.25.1"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/profile/forms/elements/FormControls.jsx",
             "line": 54,
             "column": 8,
-            "version": "19.25.1"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 59,
             "column": 8,
-            "version": "19.25.1"
+            "version": "19.25.3"
           }
         ],
         "StatefulButton": [
@@ -17334,7 +17374,7 @@
             "filePath": "src/profile/forms/elements/FormControls.jsx",
             "line": 32,
             "column": 8,
-            "version": "19.25.1"
+            "version": "19.25.3"
           }
         ],
         "TransitionReplace": [
@@ -17342,7 +17382,7 @@
             "filePath": "src/profile/forms/elements/SwitchContent.jsx",
             "line": 44,
             "column": 4,
-            "version": "19.25.1"
+            "version": "19.25.3"
           }
         ],
         "Dropdown": [
@@ -17350,7 +17390,7 @@
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 75,
             "column": 6,
-            "version": "19.25.1"
+            "version": "19.25.3"
           }
         ],
         "Dropdown.Toggle": [
@@ -17358,7 +17398,7 @@
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 76,
             "column": 8,
-            "version": "19.25.1"
+            "version": "19.25.3"
           }
         ],
         "Dropdown.Menu": [
@@ -17366,7 +17406,7 @@
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 79,
             "column": 8,
-            "version": "19.25.1"
+            "version": "19.25.3"
           }
         ],
         "Dropdown.Item": [
@@ -17374,13 +17414,13 @@
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 80,
             "column": 10,
-            "version": "19.25.1"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 87,
             "column": 10,
-            "version": "19.25.1"
+            "version": "19.25.3"
           }
         ],
         "Icon": [
@@ -17388,7 +17428,7 @@
             "filePath": "src/profile/UsernameDescription.jsx",
             "line": 10,
             "column": 6,
-            "version": "19.25.1"
+            "version": "19.25.3"
           }
         ]
       }
@@ -17794,7 +17834,13 @@
           },
           {
             "filePath": "src/users/SingleSignOnRecordCard.jsx",
-            "line": 48,
+            "line": 85,
+            "column": 10,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/users/SingleSignOnRecordCard.jsx",
+            "line": 98,
             "column": 10,
             "version": "12.8.0"
           },
@@ -17862,13 +17908,13 @@
           },
           {
             "filePath": "src/users/SingleSignOnRecordCard.jsx",
-            "line": 49,
+            "line": 86,
             "column": 12,
             "version": "12.8.0"
           },
           {
             "filePath": "src/users/SingleSignOnRecordCard.jsx",
-            "line": 54,
+            "line": 91,
             "column": 12,
             "version": "12.8.0"
           },
@@ -17894,7 +17940,7 @@
           },
           {
             "filePath": "src/users/SingleSignOnRecordCard.jsx",
-            "line": 43,
+            "line": 80,
             "column": 6,
             "version": "12.8.0"
           }
@@ -17914,7 +17960,7 @@
           },
           {
             "filePath": "src/users/SingleSignOnRecordCard.jsx",
-            "line": 44,
+            "line": 81,
             "column": 8,
             "version": "12.8.0"
           }
@@ -17940,13 +17986,13 @@
           },
           {
             "filePath": "src/users/SingleSignOnRecordCard.jsx",
-            "line": 45,
+            "line": 82,
             "column": 10,
             "version": "12.8.0"
           },
           {
             "filePath": "src/users/SingleSignOnRecordCard.jsx",
-            "line": 61,
+            "line": 110,
             "column": 10,
             "version": "12.8.0"
           }
@@ -18194,6 +18240,12 @@
             "filePath": "src/users/LearnerCredentials.jsx",
             "line": 45,
             "column": 10,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/users/SingleSignOnRecordCard.jsx",
+            "line": 100,
+            "column": 14,
             "version": "12.8.0"
           },
           {
@@ -18563,6 +18615,12 @@
             "version": "12.8.0"
           },
           {
+            "filePath": "src/users/SingleSignOnRecordCard.jsx",
+            "line": 64,
+            "column": 6,
+            "version": "12.8.0"
+          },
+          {
             "filePath": "src/users/VerifiedName.jsx",
             "line": 149,
             "column": 6,
@@ -18650,13 +18708,13 @@
           },
           {
             "filePath": "src/users/SingleSignOnRecordCard.jsx",
-            "line": 50,
+            "line": 87,
             "column": 14,
             "version": "12.8.0"
           },
           {
             "filePath": "src/users/SingleSignOnRecordCard.jsx",
-            "line": 55,
+            "line": 92,
             "column": 14,
             "version": "12.8.0"
           }
@@ -18826,7 +18884,7 @@
       }
     },
     {
-      "version": "19.25.1",
+      "version": "19.25.3",
       "name": "@edx/frontend-component-header",
       "repository": {
         "type": "git",
@@ -18839,13 +18897,13 @@
             "filePath": "src/learning-header/AnonymousUserMenu.jsx",
             "line": 13,
             "column": 6,
-            "version": "19.25.1"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/learning-header/AnonymousUserMenu.jsx",
             "line": 20,
             "column": 6,
-            "version": "19.25.1"
+            "version": "19.25.3"
           }
         ],
         "Dropdown.Item": [
@@ -18853,31 +18911,31 @@
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 15,
             "column": 4,
-            "version": "19.25.1"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 32,
             "column": 10,
-            "version": "19.25.1"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 35,
             "column": 10,
-            "version": "19.25.1"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 39,
             "column": 12,
-            "version": "19.25.1"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 43,
             "column": 10,
-            "version": "19.25.1"
+            "version": "19.25.3"
           }
         ],
         "Dropdown": [
@@ -18885,7 +18943,7 @@
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 23,
             "column": 6,
-            "version": "19.25.1"
+            "version": "19.25.3"
           }
         ],
         "Dropdown.Toggle": [
@@ -18893,7 +18951,7 @@
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 24,
             "column": 8,
-            "version": "19.25.1"
+            "version": "19.25.3"
           }
         ],
         "Dropdown.Menu": [
@@ -18901,7 +18959,7 @@
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 30,
             "column": 8,
-            "version": "19.25.1"
+            "version": "19.25.3"
           }
         ]
       }
