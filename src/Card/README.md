@@ -412,15 +412,21 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
   <Card.Header
     hasClamp
     maxLines={2}
-    title="Card Title Card Title Card Title Card Title Card Title Card Title Card Title Card Title"
+    title="Long Card Title. It is a long established fact that a reader will 
+    be distracted by the readable content of a page when looking at its layout."
   />
   <Card.Section>
-    This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+    This is a card section. It can contain anything but usually text, a list, 
+    or list of links. Multiple sections have a card divider between them.
   </Card.Section>
   <Card.Footer
     hasClamp
     maxLines={2}
-    textElement="This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them."
+    textElement="Long footer Title. It is a long established fact that a reader will 
+    be distracted by the readable content of a page when looking at its layout. Many desktop publishing packages 
+    and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' 
+    will uncover many web sites still in their infancy. Various versions have evolved over the years, 
+    sometimes by accident, sometimes on purpose (injected humour and the like)."
   >
     <Button style={{ width: '100%' }}>Action 1</Button>
   </Card.Footer>
@@ -434,7 +440,8 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
   <Card.Section
     hasClamp
     maxLines={2}
-    title="This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them."
+    title="Long Card Title. It is a long established fact that a reader will 
+    be distracted by the readable content of a page when looking at its layout."
     actions={
       <ActionRow>
         <Button>Action 1</Button>
@@ -442,12 +449,18 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
       </ActionRow>
     }
   >
-    This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+    This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections 
+    have a card divider between them.This is a card section. It can contain anything but usually text, a list, or 
+    list of links. Multiple sections have a card divider between them.
   </Card.Section>
   <Card.Footer
     hasClamp
     maxLines={2} 
-    textElement="This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them. This is a card section. It can contain anything but usually text, a list, or list of links." 
+    textElement="Long footer Title. It is a long established fact that a reader will 
+    be distracted by the readable content of a page when looking at its layout. Many desktop publishing packages 
+    and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' 
+    will uncover many web sites still in their infancy. Various versions have evolved over the years, 
+    sometimes by accident, sometimes on purpose (injected humour and the like)." 
   />
 </Card>
 ```
