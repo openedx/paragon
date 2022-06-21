@@ -55,6 +55,18 @@ describe('<CardFooter />', () => {
     const tree = renderer.create((<CardFooterWrapper orientation="horizontal" isStacked textElement={footerText} />)).toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('renders footer text without clamp', () => {
+    const wrapper = mount(<CardFooter>{actions}</CardFooter>);
+    expect(wrapper.prop('hasClamp')).toEqual(false);
+  });
+  it('renders footer text with clamp', () => {
+    const wrapper = mount(<CardFooter hasClamp>{actions}</CardFooter>);
+    expect(wrapper.prop('hasClamp')).toEqual(true);
+  });
+  it('renders footer text without clamp max lines', () => {
+    const wrapper = mount(<CardFooter hasClamp maxLines={2}>{actions}</CardFooter>);
+    expect(wrapper.prop('maxLines')).toEqual(2);
+  });
   it('renders footer text as element', () => {
     const textElement = <a href="https://example.com">Link text here</a>;
     const wrapper = mount(<CardFooterWrapper textElement={textElement} />);
