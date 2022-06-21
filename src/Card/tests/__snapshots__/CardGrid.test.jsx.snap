@@ -30,17 +30,30 @@ exports[`<CardGrid /> Controlled Rendering renders with controlled columnSizes 1
           >
             <div
               className="pgn__card-header-content"
+            >
+              <div
+                className="pgn__card-header-title-md"
+              />
+              <div
+                className="pgn__card-header-subtitle-md"
               />
             </div>
+          </div>
           <div
             className="pgn__card-section"
           >
+            <div
+              className="pgn__card-section-title"
+            />
             This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
           </div>
         </div>
         <div
           className="pgn__card-footer vertical"
         >
+          <div
+            className="pgn__card-footer-text vertical"
+          />
           <small
             className="text-muted"
           >
@@ -83,17 +96,30 @@ exports[`<CardGrid /> Uncontrolled Rendering renders default columnSizes 1`] = `
           >
             <div
               className="pgn__card-header-content"
+            >
+              <div
+                className="pgn__card-header-title-md"
+              />
+              <div
+                className="pgn__card-header-subtitle-md"
               />
             </div>
+          </div>
           <div
             className="pgn__card-section"
           >
+            <div
+              className="pgn__card-section-title"
+            />
             This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
           </div>
         </div>
         <div
           className="pgn__card-footer vertical"
         >
+          <div
+            className="pgn__card-footer-text vertical"
+          />
           <small
             className="text-muted"
           >

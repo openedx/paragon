@@ -15,6 +15,7 @@ exports[`<CardHeader /> renders with actions 1`] = `
     <div
       className="pgn__card-header-subtitle-md"
     >
+      Subtitle
     </div>
   </div>
   <div
@@ -30,6 +31,7 @@ exports[`<CardHeader /> renders with actions 1`] = `
   </div>
 </div>
 `;
+
 exports[`<CardHeader /> renders with title and subtitle prop 1`] = `
 <div
   className="pgn__card-header"
@@ -45,6 +47,7 @@ exports[`<CardHeader /> renders with title and subtitle prop 1`] = `
     <div
       className="pgn__card-header-subtitle-md"
     >
+      Subtitle
     </div>
   </div>
 </div>
@@ -62,6 +65,9 @@ exports[`<CardHeader /> renders with title prop 1`] = `
     >
       Title
     </div>
+    <div
+      className="pgn__card-header-subtitle-md"
+    />
   </div>
 </div>
 `;
