@@ -38,7 +38,7 @@ describe('<CardHeader />', () => {
     expect(wrapper.prop('hasClamp')).toEqual(true);
   });
   it('renders card header text with clamp max lines', () => {
-    const wrapper = mount(<CardHeader hasClamp maxLines={2} />);
-    expect(wrapper.prop('maxLines')).toEqual(2);
+    const wrapper = mount(<CardHeader hasClamp maxLines={3} />);
+    expect(wrapper.prop('maxLines')).toEqual(3);
   });
 });

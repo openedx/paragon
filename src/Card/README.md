@@ -404,65 +404,64 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
 ### Vertical variant without clamp
 
 ```jsx live
-<Card style={{ width: '18rem' }}>
-  <Card.ImageCap 
-    src="https://source.unsplash.com/360x200/?nature,flower"
-    srcAlt="Card image"
-  />
-  <Card.Header
-    hasClamp
-    maxLines={2}
-    title="Long Card Title. It is a long established fact that a reader will 
-    be distracted by the readable content of a page when looking at its layout."
-  />
-  <Card.Section>
-    This is a card section. It can contain anything but usually text, a list, 
-    or list of links. Multiple sections have a card divider between them.
-  </Card.Section>
-  <Card.Footer
-    hasClamp
-    maxLines={2}
-    textElement="Long footer Title. It is a long established fact that a reader will 
-    be distracted by the readable content of a page when looking at its layout. Many desktop publishing packages 
-    and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' 
-    will uncover many web sites still in their infancy. Various versions have evolved over the years, 
-    sometimes by accident, sometimes on purpose (injected humour and the like)."
-  >
-    <Button style={{ width: '100%' }}>Action 1</Button>
-  </Card.Footer>
-</Card>
-```
+() => {
+  const isMobile = useMediaQuery({ maxWidth: breakpoints.small.maxWidth });
 
+  return (
+    <Card style={{ width: isMobile ? '100%' : '18rem' }}>
+      <Card.ImageCap 
+        src="https://source.unsplash.com/360x200/?nature,flower"
+        srcAlt="Card image"
+      />
+      <Card.Header
+        hasClamp
+        maxLines={2}
+        title="Long Card Title. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+      />
+      <Card.Section>
+        This is a card section. It can contain anything but usually text, a list, 
+        or list of links. Multiple sections have a card divider between them.
+      </Card.Section>
+      <Card.Footer
+        hasClamp
+        maxLines={2}
+        textElement="Long footer Title. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
+      >
+        <Button style={{ width: '100%' }}>Action 1</Button>
+      </Card.Footer>
+    </Card>
+)};
+```
 ### Horizontal variant without clamp
 
 ```jsx live
-<Card>
-  <Card.Section
-    hasClamp
-    maxLines={2}
-    title="Long Card Title. It is a long established fact that a reader will 
-    be distracted by the readable content of a page when looking at its layout."
-    actions={
-      <ActionRow>
-        <Button>Action 1</Button>
-        <Button>Action 2</Button>
-      </ActionRow>
-    }
-  >
-    This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections 
-    have a card divider between them.This is a card section. It can contain anything but usually text, a list, or 
-    list of links. Multiple sections have a card divider between them.
-  </Card.Section>
-  <Card.Footer
-    hasClamp
-    maxLines={2} 
-    textElement="Long footer Title. It is a long established fact that a reader will 
-    be distracted by the readable content of a page when looking at its layout. Many desktop publishing packages 
-    and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' 
-    will uncover many web sites still in their infancy. Various versions have evolved over the years, 
-    sometimes by accident, sometimes on purpose (injected humour and the like)." 
-  />
-</Card>
+() => {
+  const isMobile = useMediaQuery({ maxWidth: breakpoints.small.maxWidth });
+
+  return (
+    <Card>
+      <Card.Section
+        hasClamp
+        maxLines={2}
+        title="Long Card Title. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+        actions={
+          <ActionRow isStacked={isMobile}>
+            <Button>Action 1</Button>
+            <Button>Action 2</Button>
+          </ActionRow>
+        }
+      >
+        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections 
+        have a card divider between them.This is a card section. It can contain anything but usually text, a list, or 
+        list of links. Multiple sections have a card divider between them.
+      </Card.Section>
+      <Card.Footer
+        hasClamp
+        maxLines={2} 
+        textElement="Long footer Title. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)." 
+      />
+    </Card>
+)};
 ```
 
 ## CardGrid
