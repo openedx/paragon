@@ -14,15 +14,7 @@ exports[`<CardHeader /> renders with actions 1`] = `
     </div>
     <div
       className="pgn__card-header-subtitle-md"
-      onClick={[Function]}
-      style={
-        Object {
-          "display": "block",
-          "width": "100%",
-        }
-      }
     >
-      
     </div>
   </div>
   <div
@@ -38,35 +30,6 @@ exports[`<CardHeader /> renders with actions 1`] = `
   </div>
 </div>
 `;
-
-exports[`<CardHeader /> renders with hasClamp prop 1`] = `
-<div
-  className="pgn__card-header"
->
-  <div
-    className="pgn__card-header-content"
-  >
-    <div
-      className="pgn__card-header-title-md"
-    />
-  </div>
-</div>
-`;
-
-exports[`<CardHeader /> renders with maxLines prop 1`] = `
-<div
-  className="pgn__card-header"
->
-  <div
-    className="pgn__card-header-content"
-  >
-    <div
-      className="pgn__card-header-title-md"
-    />
-  </div>
-</div>
-`;
-
 exports[`<CardHeader /> renders with title and subtitle prop 1`] = `
 <div
   className="pgn__card-header"
@@ -81,15 +44,7 @@ exports[`<CardHeader /> renders with title and subtitle prop 1`] = `
     </div>
     <div
       className="pgn__card-header-subtitle-md"
-      onClick={[Function]}
-      style={
-        Object {
-          "display": "block",
-          "width": "100%",
-        }
-      }
     >
-      
     </div>
   </div>
 </div>

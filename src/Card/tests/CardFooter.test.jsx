@@ -63,7 +63,7 @@ describe('<CardFooter />', () => {
     const wrapper = mount(<CardFooter hasClamp>{actions}</CardFooter>);
     expect(wrapper.prop('hasClamp')).toEqual(true);
   });
-  it('renders footer text without clamp max lines', () => {
+  it('renders footer text with clamp max lines', () => {
     const wrapper = mount(<CardFooter hasClamp maxLines={2}>{actions}</CardFooter>);
     expect(wrapper.prop('maxLines')).toEqual(2);
   });

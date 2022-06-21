@@ -42,7 +42,17 @@ const CardHeader = React.forwardRef(({
           ) : (
             <div className={`pgn__card-header-title-${size}`}>{title}</div>
           )}
-        {subtitle && <TextClamp text={subtitle} lines={2} className={`pgn__card-header-subtitle-${size}`}>{subtitle}</TextClamp>}
+        {subtitle
+          && hasClamp
+          ? (
+            <TextClamp
+              text={subtitle}
+              lines={maxLines}
+              className={`pgn__card-header-subtitle-${size}`}
+            />
+          ) : (
+            <div className={`pgn__card-header-subtitle-${size}`}>{subtitle}</div>
+          )}
       </div>
       {actions && (
         <div className="pgn__card-header-actions">

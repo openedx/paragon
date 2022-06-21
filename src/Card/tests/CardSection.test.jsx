@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 import Button from '../../Button';
 import CardSection from '../CardSection';
 
@@ -46,5 +47,17 @@ describe('<CardSection />', () => {
       </CardSection>
     )).toJSON();
     expect(tree).toMatchSnapshot();
+  });
+  it('renders card section text without clamp', () => {
+    const wrapper = mount(<CardSection>Section content</CardSection>);
+    expect(wrapper.prop('hasClamp')).toEqual(false);
+  });
+  it('renders card section text with clamp', () => {
+    const wrapper = mount(<CardSection hasClamp>Section content</CardSection>);
+    expect(wrapper.prop('hasClamp')).toEqual(true);
+  });
+  it('renders card section text with clamp max lines', () => {
+    const wrapper = mount(<CardSection hasClamp maxLines={2}>Section content</CardSection>);
+    expect(wrapper.prop('maxLines')).toEqual(2);
   });
 });
