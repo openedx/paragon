@@ -1,3 +1,10 @@
+# [20.1.0](https://github.com/openedx/paragon/compare/v20.0.1...v20.1.0) (2022-06-22)
+
+
+### Features
+
+* [BD-46] adding optional arrow for ModalPopup component ([#1363](https://github.com/openedx/paragon/issues/1363)) ([ab0b164](https://github.com/openedx/paragon/commit/ab0b164b7c1adcad7918fda307e0b84f23a873bc))
+
 ## [20.0.1](https://github.com/openedx/paragon/compare/v20.0.0...v20.0.1) (2022-06-17)
 
 
