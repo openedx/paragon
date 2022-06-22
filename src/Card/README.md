@@ -443,7 +443,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
       <Card.Section
         hasClamp
         maxLines={2}
-        title="Long Card Title. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+        title="Long Card Title. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. "
         actions={
           <ActionRow isStacked={isMobile}>
             <Button>Action 1</Button>

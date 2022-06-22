@@ -34,11 +34,24 @@ describe('<CardHeader />', () => {
     expect(wrapper.prop('hasClamp')).toEqual(false);
   });
   it('renders card header text with clamp', () => {
-    const wrapper = mount(<CardHeader hasClamp />);
+    const wrapper = mount(
+      <CardHeader
+        hasClamp
+        title="Long Card Title"
+        subtitle="Long Card subtitle"
+      />,
+    );
     expect(wrapper.prop('hasClamp')).toEqual(true);
   });
   it('renders card header text with clamp max lines', () => {
-    const wrapper = mount(<CardHeader hasClamp maxLines={3} />);
+    const wrapper = mount(
+      <CardHeader
+        hasClamp
+        maxLines={3}
+        title="Long Card Title"
+        subtitle="Long Card subtitle"
+      />,
+    );
     expect(wrapper.prop('maxLines')).toEqual(3);
   });
 });

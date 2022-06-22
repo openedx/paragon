@@ -17,7 +17,7 @@ const CardSection = React.forwardRef(({
     ref={ref}
   >
     {title
-      && hasClamp ? (
+      && (hasClamp ? (
         <TextClamp
           text={title}
           lines={maxLines}
@@ -25,7 +25,7 @@ const CardSection = React.forwardRef(({
         />
       ) : (
         <div className="pgn__card-section-title">{title}</div>
-      )}
+      ))}
     {children}
     {actions && <div className="pgn__card-section-actions">{actions}</div>}
   </div>

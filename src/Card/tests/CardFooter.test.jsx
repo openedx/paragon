@@ -60,11 +60,19 @@ describe('<CardFooter />', () => {
     expect(wrapper.prop('hasClamp')).toEqual(false);
   });
   it('renders footer text with clamp', () => {
-    const wrapper = mount(<CardFooter hasClamp>{actions}</CardFooter>);
+    const wrapper = mount(
+      <CardFooter hasClamp text="Long footer Title">
+        {actions}
+      </CardFooter>,
+    );
     expect(wrapper.prop('hasClamp')).toEqual(true);
   });
   it('renders footer text with clamp max lines', () => {
-    const wrapper = mount(<CardFooter hasClamp maxLines={2}>{actions}</CardFooter>);
+    const wrapper = mount(
+      <CardFooter hasClamp maxLines={2} text="Long footer Title">
+        {actions}
+      </CardFooter>,
+    );
     expect(wrapper.prop('maxLines')).toEqual(2);
   });
   it('renders footer text as element', () => {

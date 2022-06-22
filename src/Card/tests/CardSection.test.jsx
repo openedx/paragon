@@ -53,11 +53,19 @@ describe('<CardSection />', () => {
     expect(wrapper.prop('hasClamp')).toEqual(false);
   });
   it('renders card section text with clamp', () => {
-    const wrapper = mount(<CardSection hasClamp>Section content</CardSection>);
+    const wrapper = mount(
+      <CardSection hasClamp title="Section title">
+        Section content
+      </CardSection>,
+    );
     expect(wrapper.prop('hasClamp')).toEqual(true);
   });
   it('renders card section text with clamp max lines', () => {
-    const wrapper = mount(<CardSection hasClamp maxLines={2}>Section content</CardSection>);
+    const wrapper = mount(
+      <CardSection hasClamp maxLines={2} title="Section title">
+        Section content
+      </CardSection>,
+    );
     expect(wrapper.prop('maxLines')).toEqual(2);
   });
 });

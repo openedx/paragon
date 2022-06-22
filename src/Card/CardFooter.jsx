@@ -21,16 +21,16 @@ const CardFooter = React.forwardRef(({
   return (
     <div className={classNames(className, wrapperClassName)} ref={ref}>
       {textElement
-        && hasClamp
-        ? (
-          <TextClamp
-            text={textElement}
-            lines={maxLines}
-            className={textElementClassName}
-          />
-        ) : (
-          <div className={textElementClassName}>{textElement}</div>
-        )}
+        && (hasClamp
+          ? (
+            <TextClamp
+              text={textElement}
+              lines={maxLines}
+              className={textElementClassName}
+            />
+          ) : (
+            <div className={textElementClassName}>{textElement}</div>
+          ))}
       {children}
     </div>
   );

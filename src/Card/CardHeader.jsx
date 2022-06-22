@@ -31,28 +31,28 @@ const CardHeader = React.forwardRef(({
   return (
     <div className={classNames('pgn__card-header', className)} ref={ref}>
       <div className="pgn__card-header-content">
-        {title
-          && hasClamp
-          ? (
-            <TextClamp
-              text={title}
-              lines={maxLines}
-              className={`pgn__card-header-title-${size}`}
-            />
-          ) : (
-            <div className={`pgn__card-header-title-${size}`}>{title}</div>
-          )}
+        {title && (
+          hasClamp
+            ? (
+              <TextClamp
+                text={title}
+                lines={maxLines}
+                className={`pgn__card-header-title-${size}`}
+              />
+            ) : (
+              <div className={`pgn__card-header-title-${size}`}>{title}</div>
+            ))}
         {subtitle
-          && hasClamp
-          ? (
-            <TextClamp
-              text={subtitle}
-              lines={maxLines}
-              className={`pgn__card-header-subtitle-${size}`}
-            />
-          ) : (
-            <div className={`pgn__card-header-subtitle-${size}`}>{subtitle}</div>
-          )}
+          && (hasClamp
+            ? (
+              <TextClamp
+                text={subtitle}
+                lines={maxLines}
+                className={`pgn__card-header-subtitle-${size}`}
+              />
+            ) : (
+              <div className={`pgn__card-header-subtitle-${size}`}>{subtitle}</div>
+            ))}
       </div>
       {actions && (
         <div className="pgn__card-header-actions">
