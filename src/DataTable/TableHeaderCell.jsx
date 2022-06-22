@@ -10,10 +10,10 @@ export const SortIndicator = ({ isSorted, isSortedDesc }) => {
   }
 
   if (isSortedDesc) {
-    return <Icon src={ArrowDropUp} />;
+    return <Icon src={ArrowDropDown} />;
   }
 
-  return <Icon src={ArrowDropDown} />;
+  return <Icon src={ArrowDropUp} />;
 };
 
 SortIndicator.propTypes = {
