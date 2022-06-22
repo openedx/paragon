@@ -1,13 +1,13 @@
 {
-  "pgn.Alert.closeLabel": "",
-  "pgn.DataTable.BaseSelectionStatus.allSelectedText": "",
-  "pgn.DataTable.BaseSelectionStatus.clearSelectionText": "",
-  "pgn.DataTable.BaseSelectionStatus.selectAllText": "",
-  "pgn.DataTable.BaseSelectionStatus.selectedText": "",
-  "pgn.DataTable.ExpandAll.collapseAllLabel": "",
-  "pgn.DataTable.ExpandAll.expandAllLabel": "",
-  "pgn.DataTable.FilterStatus.clearFiltersText": "",
-  "pgn.DataTable.RowStatus.statusText": "",
-  "pgn.DataTable.SidebarFilters.title": "",
-  "pgn.Toast.closeLabel": ""
+  "pgn.Alert.closeLabel": "Dismiss",
+  "pgn.DataTable.BaseSelectionStatus.allSelectedText": "All {numSelectedRows} selected",
+  "pgn.DataTable.BaseSelectionStatus.clearSelectionText": "Clear selection",
+  "pgn.DataTable.BaseSelectionStatus.selectAllText": "Select all {itemCount}",
+  "pgn.DataTable.BaseSelectionStatus.selectedText": "{numSelectedRows} selected",
+  "pgn.DataTable.ExpandAll.collapseAllLabel": "Collapse all",
+  "pgn.DataTable.ExpandAll.expandAllLabel": "Expand all",
+  "pgn.DataTable.FilterStatus.clearFiltersText": "Clear filters",
+  "pgn.DataTable.RowStatus.statusText": "Showing {pageSize} of {itemCount}.",
+  "pgn.DataTable.SidebarFilters.title": "Filters",
+  "pgn.Toast.closeLabel": "Close"
 }
