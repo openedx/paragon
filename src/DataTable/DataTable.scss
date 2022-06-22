@@ -1,3 +1,4 @@
+$data-table-background-color: $white !default;
 $data-table-border: 1px solid $gray-200 !default;
 $data-table-box-shadow: $box-shadow-sm !default;
 $data-table-padding-x: .75rem !default;
@@ -11,6 +12,7 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
 .pgn__data-table-wrapper {
   font-size: $font-size-sm;
   border-radius: $border-radius;
+  background-color: $data-table-background-color;
   box-shadow: $data-table-box-shadow;
 
   &.hide-shadow {
@@ -96,6 +98,7 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
   align-items: flex-start;
 
   .pgn__data-table-layout-sidebar {
+    background-color: $data-table-background-color;
     border-radius: $border-radius;
     box-shadow: $data-table-box-shadow;
     padding: $data-table-padding-small;
