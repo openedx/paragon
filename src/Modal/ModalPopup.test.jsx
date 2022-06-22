@@ -32,12 +32,34 @@ const Dialog = () => (
 
 const mockPositionRef = { current: null };
 
+const arrowPlacements = [
+  'auto',
+  'auto-start',
+  'auto-end',
+  'top',
+  'top-start',
+  'top-end',
+  'bottom',
+  'bottom-start',
+  'bottom-end',
+  'right',
+  'right-start',
+  'right-end',
+  'left',
+  'left-start',
+  'left-end',
+];
+
 describe('<ModalPopup />', () => {
   describe('when isOpen', () => {
     const isOpen = true;
     const closeFn = jest.fn();
     const wrapper = shallow((
-      <ModalPopup positionRef={mockPositionRef} isOpen={isOpen} onClose={closeFn}>
+      <ModalPopup
+        positionRef={mockPositionRef}
+        isOpen={isOpen}
+        onClose={closeFn}
+      >
         <Dialog />
       </ModalPopup>
     ));
@@ -88,6 +110,32 @@ describe('<ModalPopup />', () => {
         </ModalPopup>
       ));
       expect(wrapper.find(Portal).length).toBe(1);
+    });
+  });
+  describe('withArrow', () => {
+    const popupArrowModalClass = '.pgn__modal-popup__arrow';
+    arrowPlacements.forEach((side) => {
+      it(`renders with placement ${side}`, () => {
+        const wrapperPopup = shallow((
+          <ModalPopup hasArrow placement={side} isOpen onClose={jest.fn()}>
+            <Dialog />
+          </ModalPopup>));
+        expect(wrapperPopup.exists(`${popupArrowModalClass}-${side}`)).toBe(true);
+      });
+    });
+    it('renders without arrow', () => {
+      const wrapperPopup = shallow((
+        <ModalPopup isOpen onClose={jest.fn()}>
+          <Dialog />
+        </ModalPopup>));
+      expect(wrapperPopup.exists(popupArrowModalClass)).toBe(false);
+    });
+    it('renders with arrow', () => {
+      const wrapperPopup = shallow((
+        <ModalPopup hasArrow isOpen onClose={jest.fn()}>
+          <Dialog />
+        </ModalPopup>));
+      expect(wrapperPopup.exists(popupArrowModalClass)).toBe(true);
     });
   });
 });
