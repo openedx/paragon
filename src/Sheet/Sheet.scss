@@ -1,7 +1,7 @@
 .pgn__sheet-skrim {
   width: 100%;
   height: 100%;
-  background-color: rgb(196 196 196 / 50%);
+  background-color: rgba(196, 196, 196, .5);
   position: fixed;
   top: 0;
   left: 0;
@@ -15,12 +15,12 @@
 
 %component-left {
   left: 0;
-  box-shadow: 8px 0 16px 0 rgb(0 0 0 / 15%);
+  box-shadow: 8px 0 16px 0 rgba(0, 0, 0, .15);
 }
 
 %component-right {
   right: 0;
-  box-shadow: -8px 0 16px 0 rgb(0 0 0 / 15%);
+  box-shadow: -8px 0 16px 0 rgba(0, 0, 0, .15);
 }
 
 .pgn__sheet-component-left {
@@ -44,12 +44,12 @@
 
   &.bottom {
     bottom: 0;
-    box-shadow: 0 -8px 16px 0 rgb(0 0 0 / 15%);
+    box-shadow: 0 -8px 16px 0 rgba(0, 0, 0, .15);
   }
 
   &.top {
     top: 0;
-    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 15%);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .15);
   }
 
   &.left {

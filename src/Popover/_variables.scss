@@ -7,8 +7,8 @@ $popover-border-width:              $border-width !default;
 $popover-border-color:              rgba($black, .2) !default;
 $popover-border-radius:             $border-radius-sm !default;
 $popover-inner-border-radius:       subtract($popover-border-radius, $popover-border-width) !default;
-$popover-box-shadow:                drop-shadow(0 2px 4px rgb(0 0 0 / 15%))
-  drop-shadow(0 2px 8px rgb(0 0 0 / 15%)) !default;
+$popover-box-shadow:                drop-shadow(0 2px 4px rgba(0, 0, 0, .15))
+  drop-shadow(0 2px 8px rgba(0, 0, 0, .15)) !default;
 $popover-icon-margin-right:         .5rem;
 $popover-icon-height:               1rem;
 $popover-icon-width:                1rem;

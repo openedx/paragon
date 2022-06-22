@@ -1,6 +1,6 @@
 $annotation-padding:               .5rem !default;
-$annotation-box-shadow:            drop-shadow(0 2px 4px rgb(0 0 0 / 15%))
-  drop-shadow(0 2px 8px rgb(0 0 0 / 15%)) !default;
+$annotation-box-shadow:            drop-shadow(0 2px 4px rgba(0, 0, 0, .15))
+  drop-shadow(0 2px 8px rgba(0, 0, 0, .15)) !default;
 $annotation-border-radius:         .25rem !default;
 $annotation-max-width:             18.75rem !default;
 $annotation-font-size:             $font-size-sm !default;
