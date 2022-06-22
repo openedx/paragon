@@ -6,7 +6,7 @@ const UploadProgress = ({
   percent, variant, name, onCancel,
 }) => {
   if (variant === 'spinner') {
-    return <Spinner animation="border" screenReaderText="Uploading file" />;
+    return <Spinner animation="border" screenReaderText={`Uploading ${name}`} />;
   }
 
   return (

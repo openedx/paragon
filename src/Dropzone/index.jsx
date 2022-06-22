@@ -177,6 +177,7 @@ const Dropzone = ({
   return (
     <section>
       <div
+        data-testid="dropzone-container"
         {...getRootProps({
           className: classNames('pgn__dropzone', {
             className,
