@@ -15,7 +15,7 @@ transifex_utils = $(i18n)/transifex-utils.js
 transifex_input = $(i18n)/transifex_input.json
 transifex_temp = $(i18n)/temp
 
-NPM_TESTS=build i18n_extract i18n_extract_comments lint test
+NPM_TESTS=build i18n_extract lint test
 
 .PHONY: test
 test: $(addprefix test.npm.,$(NPM_TESTS))  ## validate ci suite
@@ -36,11 +36,7 @@ i18n.extract:
 	# Pulling display strings from .jsx files into .json files...
 	npm run-script i18n_extract
 
-i18n.extract_comments:
-	# Pulling comments from display strings in .jsx files into .json files...
-	npm run-script i18n_extract_comments
-
-extract_translations: | requirements i18n.clean i18n.extract i18n.extract_comments
+extract_translations: | requirements i18n.clean i18n.extract
 
 # Despite the name, we actually need this target to detect changes in the incoming translated message files as well.
 detect_changed_source_translations:
@@ -56,7 +52,7 @@ push_translations:
 	tx push -s -f
 
 # Pulls translations from Transifex.
-pull_translations:
+pull_translations: | requirements
 	tx pull -f --mode onlyreviewed --languages=$(transifex_langs)
 	# compile files with translated strings to KEYVALUEJSON format which react-intl understands...
 	npm run-script i18n_compile
