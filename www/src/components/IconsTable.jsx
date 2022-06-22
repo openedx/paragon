@@ -1,28 +1,22 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, {
+  useCallback, useEffect, useMemo, useState,
+} from 'react';
 import PropTypes from 'prop-types';
-import { FixedSizeGrid as Grid } from 'react-window';
-import AutoSizer from 'react-virtualized-auto-sizer';
 import debounce from 'lodash.debounce';
 import { Icon, SearchField, Toast } from '~paragon-react'; // eslint-disable-line
 import * as IconComponents from '~paragon-icons'; // eslint-disable-line
 
 const ICON_NAMES = Object.keys(IconComponents);
+const WINDOW_HEIGHT = 2400;
 const ROW_HEIGHT = 100;
+const ROWS_PER_WINDOW = WINDOW_HEIGHT / ROW_HEIGHT;
 const COLUMN_WIDTH = 150;
-const SCROLL_OFFSET = 17;
 
-const Cell = ({
-  columnIndex,
-  rowIndex,
-  data,
-  style,
+const TableCell = ({
+  iconName,
+  setCurrentIcon,
+  previewRef,
 }) => {
-  const {
-    iconsList, previewRef, setCurrentIcon, columnCount,
-  } = data;
-  const index = rowIndex * columnCount + columnIndex;
-  const iconName = iconsList[index];
-
   const handleClick = () => {
     setCurrentIcon(iconName);
     if (previewRef.current) {
@@ -35,50 +29,102 @@ const Cell = ({
   }
 
   return (
-    <>
-      <div
-        role="button"
+    <div
+      role="button"
+      key={iconName}
+      className="pgn-doc__icons-table__cell"
+      onKeyPress={handleClick}
+      onClick={handleClick}
+      tabIndex={0}
+    >
+      <Icon
         key={iconName}
-        className="pgn-doc__icons-table__cell"
-        style={style}
-        onKeyPress={handleClick}
-        onClick={handleClick}
-        tabIndex={0}
-      >
-        <Icon
-          key={iconName}
-          src={IconComponents[iconName]}
-        />
-        <span className="pgn-doc__icons-table__cell-text">{iconName}</span>
-      </div>
-    </>
+        src={IconComponents[iconName]}
+      />
+      <span className="pgn-doc__icons-table__cell-text">{iconName}</span>
+    </div>
   );
+};
+
+const TableRow = ({
+  rowIndex, columnsCount, iconsList, data,
+}) => {
+  const startIndex = rowIndex * columnsCount;
+  const endIndex = startIndex + columnsCount;
+  if (startIndex > iconsList.length) {
+    return null;
+  }
+  const icons = iconsList.slice(startIndex, endIndex);
+
+  return icons.map(iconName => (
+    <TableCell key={iconName} iconName={iconName} setCurrentIcon={data.setCurrentIcon} previewRef={data.previewRef} />
+  ));
 };
 
 const IconsTable = () => {
   const previewRef = React.useRef(null);
+  const tableRef = React.useRef(null);
+  const tableBottom = React.useRef(null);
   const [searchValue, setSearchValue] = useState('');
-  const [iconsList, setIconsList] = useState(ICON_NAMES);
+  const [tableWidth, setTableWidth] = useState(0);
+  const [data, setData] = useState({ iconsList: ICON_NAMES, rowsCount: ROWS_PER_WINDOW });
   const [currentIcon, setCurrentIcon] = useState(ICON_NAMES[0]);
   const [showToast, setShowToast] = useState(false);
   const currentIconImport = `import { ${currentIcon} } from '@edx/paragon/icons';`;
+  const { rowsCount, iconsList } = data;
+
+  const columnsCount = useMemo(() => Math.floor(tableWidth / COLUMN_WIDTH), [tableWidth]);
 
   const copyToClipboard = (content) => {
     navigator.clipboard.writeText(content);
     setShowToast(true);
+    global.analytics.track('openedx.paragon.icons-table.selected-icon.copied', { name: currentIcon });
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const debouncedSetIconsList = useCallback(
-    debounce(setIconsList, 250, { leading: true }),
+    debounce((list) => {
+      global.analytics.track('openedx.paragon.icons-table.search', { value: searchValue });
+      setData({ rowsCount: ROWS_PER_WINDOW, iconsList: list });
+    },
+    250, { leading: false }),
     [],
   );
+
+  useEffect(() => {
+    if (tableRef.current) {
+      const intersectionObserver = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.intersectionRatio > 0) {
+            setData((prev) => (
+              { ...prev, rowsCount: prev.rowsCount + ROWS_PER_WINDOW }
+            ));
+          }
+        },
+        { root: null, rootMargin: '0px', threshold: [1] },
+      );
+      const resizeObserver = new ResizeObserver(entries => {
+        for (let i = 0; i < entries.length; i++) {
+          setTableWidth(entries[i].contentRect.width);
+        }
+      });
+      intersectionObserver.observe(tableBottom.current);
+      resizeObserver.observe(tableRef.current);
+      return () => {
+        intersectionObserver.disconnect();
+        resizeObserver.disconnect();
+      };
+    }
+    return undefined;
+  }, []);
 
   useEffect(() => {
     debouncedSetIconsList(
       ICON_NAMES.filter(name => name.toLowerCase().includes(searchValue.toLowerCase())),
     );
-  }, [searchValue, iconsList, debouncedSetIconsList]);
+  }, [searchValue, debouncedSetIconsList]);
+
+  const rowsIndices = useMemo(() => [...Array(rowsCount).keys()], [rowsCount]);
 
   return (
     <>
@@ -89,55 +135,55 @@ const IconsTable = () => {
       />
       {currentIcon && (
         <div className="pgn-doc__icons-table__preview" ref={previewRef}>
-          <h3
+          <div
             role="presentation"
-            className="rounded"
+            className="pgn-doc__icons-table__preview-title"
             onClick={() => copyToClipboard(currentIcon)}
           >
-            {currentIcon}
-          </h3>
+            <h3 className="rounded">{currentIcon}</h3>
+            <Icon
+              key="ContentCopy"
+              src={IconComponents.ContentCopy}
+            />
+          </div>
           <Icon
             key={currentIcon}
             src={IconComponents[currentIcon]}
           />
-          <code
+          <div
             role="presentation"
-            className="rounded"
+            className="pgn-doc__icons-table__preview-footer"
             onClick={() => copyToClipboard(currentIconImport)}
           >
-            <small>
-              {currentIconImport}
-            </small>
-          </code>
+            <code className="rounded">
+              <small>
+                {currentIconImport}
+              </small>
+            </code>
+            <Icon
+              key="ContentCopy"
+              src={IconComponents.ContentCopy}
+            />
+          </div>
         </div>
       )}
-      {iconsList.length ? (
-        <div className="pgn-doc__icons-table">
-          <AutoSizer>
-            {({ height, width }) => {
-              const columnCount = Math.floor(width / COLUMN_WIDTH);
-              const currentWidth = columnCount * COLUMN_WIDTH + SCROLL_OFFSET;
+      <div className="pgn-doc__icons-table" ref={tableRef}>
+        {iconsList.length ? (
+          <>
+            {rowsIndices.map(row => (
+              <TableRow
+                key={`row${row}`}
+                columnsCount={columnsCount}
+                rowIndex={row}
+                iconsList={iconsList}
+                data={{ setCurrentIcon, previewRef }}
+              />
+            ))}
+          </>
+        ) : <span className="pgn-doc__icons-table__not-found">No result for {`"${searchValue}"`}</span>}
+      </div>
 
-              return (
-                <Grid
-                  className="pgn-doc-icons-table__grid"
-                  width={currentWidth}
-                  height={height}
-                  columnWidth={COLUMN_WIDTH}
-                  columnCount={columnCount}
-                  rowCount={Math.ceil(iconsList.length / columnCount)}
-                  rowHeight={ROW_HEIGHT}
-                  itemData={{
-                    iconsList, columnCount, setCurrentIcon, previewRef,
-                  }}
-                >
-                  {Cell}
-                </Grid>
-              );
-            }}
-          </AutoSizer>
-        </div>
-      ) : <span className="pgn-doc__icons-table__not-found">No result for {`"${searchValue}"`}</span>}
+      <div ref={tableBottom} />
       <Toast
         onClose={() => setShowToast(false)}
         show={showToast}
@@ -149,29 +195,28 @@ const IconsTable = () => {
   );
 };
 
-Cell.propTypes = {
-  columnIndex: PropTypes.number.isRequired,
-  rowIndex: PropTypes.number.isRequired,
-  data: PropTypes.shape({
-    iconsList: PropTypes.arrayOf(PropTypes.string).isRequired,
-    columnCount: PropTypes.number.isRequired,
-    setCurrentIcon: PropTypes.func.isRequired,
-    previewRef: PropTypes.shape({
-      // eslint-disable-next-line react/forbid-prop-types
-      current: PropTypes.object,
+TableCell.propTypes = {
+  iconName: PropTypes.string.isRequired,
+  setCurrentIcon: PropTypes.func.isRequired,
+  previewRef: PropTypes.shape({
+    current: PropTypes.shape({
+      scrollIntoView: PropTypes.func,
     }),
   }).isRequired,
-  style: PropTypes.shape({
-    width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  }),
 };
 
-Cell.defaultProps = {
-  style: {
-    height: 0,
-    width: 0,
-  },
+TableRow.propTypes = {
+  rowIndex: PropTypes.number,
+  columnsCount: PropTypes.number,
+  iconsList: PropTypes.arrayOf(PropTypes.string),
+  data: PropTypes.shape({
+    setCurrentIcon: PropTypes.func,
+    previewRef: PropTypes.shape({
+      current: PropTypes.shape({
+        scrollIntoView: PropTypes.func,
+      }),
+    }),
+  }).isRequired,
 };
 
 export default IconsTable;
