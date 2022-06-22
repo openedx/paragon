@@ -41,7 +41,8 @@
     "generate-component-lint": "cd component-generator && npm run lint",
     "generate-changelog": "node generate-changelog.js",
     "i18n_extract": "formatjs extract 'src/**/*.jsx' --out-file ./src/i18n/transifex_input.json --format simple",
-    "i18n_extract_comments": "formatjs extract 'src/**/*.jsx' --out-file ./src/i18n/temp/reactifex_input.json --format ./src/i18n/reactifexFormatter"
+    "i18n_extract_comments": "formatjs extract 'src/**/*.jsx' --out-file ./src/i18n/temp/reactifex_input.json --format ./src/i18n/reactifexFormatter",
+    "build_tokens": "node build-tokens.js"
   },
   "dependencies": {
     "@edx/reactifex": "^2.1.0",
@@ -53,8 +54,10 @@
     "email-prop-type": "^3.0.0",
     "font-awesome": "^4.7.0",
     "glob": "^8.0.3",
+    "i": "^0.3.7",
     "lodash.uniqby": "^4.7.0",
     "mailto-link": "^1.0.0",
+    "npm": "^8.12.2",
     "prop-types": "^15.8.1",
     "react-bootstrap": "^1.6.4",
     "react-focus-on": "^3.5.4",
@@ -63,6 +66,7 @@
     "react-responsive": "^8.2.0",
     "react-table": "^7.7.0",
     "react-transition-group": "^4.4.2",
+    "style-dictionary": "^3.7.1",
     "tabbable": "^4.0.0",
     "uncontrollable": "^7.2.1"
   },
