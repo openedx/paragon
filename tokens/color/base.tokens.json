@@ -1,0 +1,392 @@
+{
+  "color": {
+    "primary": {
+      "100": {
+        "value": "#F0F2F2",
+        "themeable": true
+      },
+      "200": {
+        "value": "#BFC9CA",
+        "themeable": true
+      },
+      "300": {
+        "value": "#2D494E",
+        "themeable": true
+      },
+      "400": {
+        "value": "#0E3639",
+        "themeable": true
+      },
+      "500": {
+        "value": "#00262B",
+        "themeable": true
+      },
+      "600": {
+        "value": "#002326",
+        "themeable": true
+      },
+      "700": {
+        "value": "#002121",
+        "themeable": true
+      },
+      "800": {
+        "value": "#001D20",
+        "themeable": true
+      },
+      "900": {
+        "value": "#001B1E",
+        "themeable": true
+      },
+      "base": {
+        "value": "{color.primary.500}",
+        "themeable": true
+      }
+    },
+    "brand": {
+      "100": {
+        "value": "#FCF3F2",
+        "themeable": true
+      },
+      "200": {
+        "value": "#F4CCC9",
+        "themeable": true
+      },
+      "300": {
+        "value": "#E99994",
+        "themeable": true
+      },
+      "400": {
+        "value": "#DD655E",
+        "themeable": true
+      },
+      "500": {
+        "value": "#D23228",
+        "themeable": true
+      },
+      "600": {
+        "value": "#BD2D24",
+        "themeable": true
+      },
+      "700": {
+        "value": "#921108",
+        "themeable": true
+      },
+      "800": {
+        "value": "#9E261E",
+        "themeable": true
+      },
+      "900": {
+        "value": "#93231C",
+        "themeable": true
+      },
+      "base": {
+        "value": "{color.brand.500}",
+        "themeable": true
+      }
+    },
+    "accents": {
+      "accent-a": {
+        "value": "#03C7E8",
+        "themeable": true
+      },
+      "accent-b": {
+        "value": "#F0CC00",
+        "themeable": true
+      }
+    },
+    "gray": {
+      "100": {
+        "value": "#EBEBEB",
+        "themeable": true
+      },
+      "200": {
+        "value": "#CCCCCC",
+        "themeable": true
+      },
+      "300": {
+        "value": "#ADADAD",
+        "themeable": true
+      },
+      "400": {
+        "value": "#8F8F8F",
+        "themeable": true
+      },
+      "500": {
+        "value": "#707070",
+        "themeable": true
+      },
+      "600": {
+        "value": "#5C5C5C",
+        "themeable": true
+      },
+      "700": {
+        "value": "#454545",
+        "themeable": true
+      },
+      "800": {
+        "value": "#333333",
+        "themeable": true
+      },
+      "900": {
+        "value": "#212529",
+        "themeable": true
+      },
+      "base": {
+        "value": "{color.gray.500}",
+        "themeable": true
+      }
+    },
+    "light": {
+      "100": {
+        "value": "#FDFDFD",
+        "themeable": true
+      },
+      "200": {
+        "value": "#FBFAF9",
+        "themeable": true
+      },
+      "300": {
+        "value": "#F2F0EF",
+        "themeable": true
+      },
+      "400": {
+        "value": "#EAE6E5",
+        "themeable": true
+      },
+      "500": {
+        "value": "#E1DDDB",
+        "themeable": true
+      },
+      "600": {
+        "value": "#D7D3D1",
+        "themeable": true
+      },
+      "700": {
+        "value": "#CBC7C5",
+        "themeable": true
+      },
+      "800": {
+        "value": "#A9A6A4",
+        "themeable": true
+      },
+      "900": {
+        "value": "#9E9B99",
+        "themeable": true
+      },
+      "base": {
+        "value": "{color.light.500}",
+        "themeable": true
+      }
+    },
+    "dark": {
+      "100": {
+        "value": "#F0F2F2",
+        "themeable": true
+      },
+      "200": {
+        "value": "#475B65",
+        "themeable": true
+      },
+      "300": {
+        "value": "#2D494E",
+        "themeable": true
+      },
+      "400": {
+        "value": "#0E3639",
+        "themeable": true
+      },
+      "500": {
+        "value": "#00262B",
+        "themeable": true
+      },
+      "600": {
+        "value": "#002326",
+        "themeable": true
+      },
+      "700": {
+        "value": "#002121",
+        "themeable": true
+      },
+      "800": {
+        "value": "#001D20",
+        "themeable": true
+      },
+      "900": {
+        "value": "#001B1E",
+        "themeable": true
+      },
+      "base": {
+        "value": "{color.dark.500}",
+        "themeable": true
+      }
+    },
+    "success": {
+      "100": {
+        "value": "#F2FAF7",
+        "themeable": true
+      },
+      "200": {
+        "value": "#BBE6D7",
+        "themeable": true
+      },
+      "300": {
+        "value": "#30A171",
+        "themeable": true
+      },
+      "400": {
+        "value": "#4A9E7A",
+        "themeable": true
+      },
+      "500": {
+        "value": "#0D7D4D",
+        "themeable": true
+      },
+      "600": {
+        "value": "#0C7145",
+        "themeable": true
+      },
+      "700": {
+        "value": "#175B3C",
+        "themeable": true
+      },
+      "800": {
+        "value": "#0A5E3A",
+        "themeable": true
+      },
+      "900": {
+        "value": "#0F4D0F",
+        "themeable": true
+      },
+      "base": {
+        "value": "{color.success.500}",
+        "themeable": true
+      }
+    },
+    "info": {
+      "100": {
+        "value": "#EFF8FA",
+        "themeable": true
+      },
+      "200": {
+        "value": "#9CD2E6",
+        "themeable": true
+      },
+      "300": {
+        "value": "#1C8DBE",
+        "themeable": true
+      },
+      "400": {
+        "value": "#408EAA",
+        "themeable": true
+      },
+      "500": {
+        "value": "#00688D",
+        "themeable": true
+      },
+      "600": {
+        "value": "#005E7F",
+        "themeable": true
+      },
+      "700": {
+        "value": "#004972",
+        "themeable": true
+      },
+      "800": {
+        "value": "#004E6A",
+        "themeable": true
+      },
+      "900": {
+        "value": "#002F4A",
+        "themeable": true
+      },
+      "base": {
+        "value": "{color.info.500}",
+        "themeable": true
+      }
+    },
+    "danger": {
+      "100": {
+        "value": "#FCF1F4",
+        "themeable": true
+      },
+      "200": {
+        "value": "#F3AEA9",
+        "themeable": true
+      },
+      "300": {
+        "value": "#CA3A2F",
+        "themeable": true
+      },
+      "400": {
+        "value": "#C04A41",
+        "themeable": true
+      },
+      "500": {
+        "value": "#AB0D02",
+        "themeable": true
+      },
+      "600": {
+        "value": "#9A0C02",
+        "themeable": true
+      },
+      "700": {
+        "value": "#951C13",
+        "themeable": true
+      },
+      "800": {
+        "value": "#800A02",
+        "themeable": true
+      },
+      "900": {
+        "value": "#690E07",
+        "themeable": true
+      },
+      "base": {
+        "value": "{color.danger.500}",
+        "themeable": true
+      }
+    },
+    "warning": {
+      "100": {
+        "value": "#FFFADB",
+        "themeable": true
+      },
+      "200": {
+        "value": "#FFEA75",
+        "themeable": true
+      },
+      "300": {
+        "value": "#F0CC00",
+        "themeable": true
+      },
+      "400": {
+        "value": "#E0C840",
+        "themeable": true
+      },
+      "500": {
+        "value": "#D6B600",
+        "themeable": true
+      },
+      "600": {
+        "value": "#C1A400",
+        "themeable": true
+      },
+      "700": {
+        "value": "#A18900",
+        "themeable": true
+      },
+      "800": {
+        "value": "#998200",
+        "themeable": true
+      },
+      "900": {
+        "value": "#7A6800",
+        "themeable": true
+      },
+      "base": {
+        "value": "{color.warning.500}",
+        "themeable": true
+      }
+    }
+  }
+}
