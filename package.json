@@ -40,7 +40,8 @@
     "generate-component": "cd component-generator && npm start",
     "generate-component-lint": "cd component-generator && npm run lint",
     "generate-changelog": "node generate-changelog.js",
-    "i18n_extract": "formatjs extract 'src/**/*.jsx' --out-file ./src/i18n/transifex_input.json --format simple",
+    "i18n_compile": "formatjs compile-folder --format transifex ./src/i18n/messages ./src/i18n/messages",
+    "i18n_extract": "formatjs extract 'src/**/*.jsx' --out-file ./src/i18n/transifex_input.json --format transifex",
     "i18n_extract_comments": "formatjs extract 'src/**/*.jsx' --out-file ./src/i18n/temp/reactifex_input.json --format ./src/i18n/reactifexFormatter"
   },
   "dependencies": {
