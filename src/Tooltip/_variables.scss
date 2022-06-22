@@ -9,8 +9,8 @@ $tooltip-opacity:                   1 !default;
 $tooltip-padding-y:                 .5rem !default;
 $tooltip-padding-x:                 .5rem !default;
 $tooltip-margin:                    0 !default;
-$tooltip-box-shadow:                drop-shadow(0 2px 4px rgb(0 0 0 / 15%))
-  drop-shadow(0 2px 8px rgb(0 0 0 / 15%)) !default;
+$tooltip-box-shadow:                drop-shadow(0 2px 4px rgba(0, 0, 0, .15))
+  drop-shadow(0 2px 8px rgba(0, 0, 0, .15)) !default;
 
 $tooltip-arrow-width:               .8rem !default;
 $tooltip-arrow-height:              .4rem !default;

@@ -9,7 +9,7 @@ $alert-border-radius:               $border-radius !default;
 $alert-link-font-weight:            $font-weight-normal !default;
 $alert-border-width:                0 !default;
 $alert-title-color:                 #000000 !default;
-$alert-box-shadow:                  0 1px 2px rgb(0 0 0 / 15%), 0 1px 4px rgb(0 0 0 / 15%) !default;
+$alert-box-shadow:                  0 1px 2px rgba(0, 0, 0, .15), 0 1px 4px rgba(0, 0, 0, .15) !default;
 
 $alert-bg-level:                    -10 !default;
 $alert-border-level:                -9 !default;

@@ -29,6 +29,8 @@
     "scss/comment-no-empty": null,
     "property-no-unknown": [true, {
       "ignoreProperties": ["xs", "sm", "md", "lg", "xl", "xxl"]
-    }]
+    }],
+    "alpha-value-notation": "number",
+    "color-function-notation": "legacy"
   }
 }
