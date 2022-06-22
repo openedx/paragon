@@ -1,3 +1,10 @@
+## [20.1.1](https://github.com/openedx/paragon/compare/v20.1.0...v20.1.1) (2022-06-22)
+
+
+### Bug Fixes
+
+* flip sort direction icons in TableHeaderCell and add white bg color ([#1404](https://github.com/openedx/paragon/issues/1404)) ([957bd0a](https://github.com/openedx/paragon/commit/957bd0ab8e65cd2ebd6b37791bfd7c5b35fa21b4))
+
 # [20.1.0](https://github.com/openedx/paragon/compare/v20.0.1...v20.1.0) (2022-06-22)
 
 
