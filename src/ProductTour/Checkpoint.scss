@@ -10,7 +10,7 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
   border-top: $checkpoint-border-width solid $checkpoint-border-color;
   border-radius: $border-radius;
   padding: map_get($spacers, 4);
-  box-shadow: 0 .25rem .5rem rgb(0 0 0 / 30%);
+  box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .3);
   z-index: $checkpoint-z-index;
   max-width: $checkpoint-max-width;
 
@@ -111,8 +111,8 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
     border-top: $checkpoint-arrow-default-color;
     border-left: $checkpoint-arrow-transparent;
     border-right: $checkpoint-arrow-transparent;
-    filter: drop-shadow(0 4px 2px rgb(0 0 0 / 10%));
-    -webkit-filter: drop-shadow(0 4px 2px rgb(0 0 0 / 10%));
+    filter: drop-shadow(0 4px 2px rgba(0, 0, 0, .1));
+    -webkit-filter: drop-shadow(0 4px 2px rgba(0, 0, 0, .1));
   }
 }
 
@@ -137,7 +137,7 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
     border-top: $checkpoint-arrow-transparent;
     border-left: $checkpoint-arrow-default-color;
     border-right: $checkpoint-arrow-transparent;
-    filter: drop-shadow(3px 1px 2px rgb(0 0 0 / 10%));
+    filter: drop-shadow(3px 1px 2px rgba(0, 0, 0, .1));
   }
 }
 
@@ -151,6 +151,6 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
     border-top: $checkpoint-arrow-transparent;
     border-left: $checkpoint-arrow-transparent;
     border-right: $checkpoint-arrow-default-color;
-    filter: drop-shadow(-3px 1px 2px rgb(0 0 0 / 10%));
+    filter: drop-shadow(-3px 1px 2px rgba(0, 0, 0, .1));
   }
 }

@@ -92,7 +92,7 @@
 .DocSearch {
   &.DocSearch-Container {
     z-index: $zindex-modal;
-    background: rgb(125 125 125 / 65%);
+    background: rgba(125, 125, 125, .65);
   }
 
   .DocSearch-Modal {
