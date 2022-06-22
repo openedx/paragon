@@ -32,13 +32,15 @@ As ``Checkbox``
   };
   
   const isInvalid = () => checkedCheeses.includes('swiss');
-
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+  
   return (
     <SelectableBox.Set
       value={checkedCheeses}
       type={type}
       onChange={handleChange}
       name="cheeses"
+      columns={isExtraSmall ? 1 : 2}
     >
       <SelectableBox value="swiss" type={type} aria-label="checkbox">
         <div>
@@ -70,6 +72,7 @@ As ``Radio``
   const type = 'radio';
   const [value, setValue] = useState('green');
   const handleChange = e => setValue(e.target.value);
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
 
   return (
     <SelectableBox.Set
@@ -77,7 +80,7 @@ As ``Radio``
       value={value}
       onChange={handleChange}
       name="colors"
-      columns={3}
+      columns={isExtraSmall ? 1 : 3}
     >
       <SelectableBox value="red" type={type} aria-label="checkbox">
         <div>
@@ -109,6 +112,7 @@ As ``Checkbox`` with ``isIndeterminate``
   const allChecked = allCheeseOptions.every(value => checkedCheeses.includes(value));
   const someChecked = allCheeseOptions.some(value => checkedCheeses.includes(value));
   const isIndeterminate = someChecked && !allChecked;
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.small.maxWidth });
 
   const handleChange = e => {
     e.target.checked ? add(e.target.value) : remove(e.target.value);
@@ -137,7 +141,7 @@ As ``Checkbox`` with ``isIndeterminate``
         type={type}
         onChange={handleChange}
         name="cheeses"
-        columns={3}
+        columns={isExtraSmall ? 1 : 3}
       >
         <SelectableBox value="swiss" type={type} aria-label="checkbox">
           <div>
