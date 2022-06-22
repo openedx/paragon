@@ -5,6 +5,8 @@ import Portal from './Portal';
 import PopperElement from './PopperElement';
 import { ModalContextProvider } from './ModalContext';
 
+const PLACEMENT_OFFSETS = { right: [-2, 10], left: [-2, 10] };
+
 const ModalPopup = ({
   children,
   onClose,
@@ -13,14 +15,34 @@ const ModalPopup = ({
   isBlocking,
   withPortal,
   placement,
+  hasArrow,
   ...popperProps
 }) => {
   const RootComponent = withPortal ? Portal : React.Fragment;
+  const placementOffsetValue = PLACEMENT_OFFSETS[placement] || [0, 10];
+
+  const popperParams = [
+    {
+      name: 'eventListeners',
+      options: { scroll: false },
+    },
+    {
+      name: 'offset',
+      options: {
+        offset: () => placementOffsetValue,
+      },
+    },
+  ];
 
   return (
     <ModalContextProvider onClose={onClose} isOpen={isOpen} isBlocking={isBlocking}>
       <RootComponent>
-        <PopperElement target={positionRef} placement={placement} {...popperProps}>
+        <PopperElement
+          modifiers={hasArrow ? popperParams : null}
+          target={positionRef}
+          placement={placement}
+          {...popperProps}
+        >
           <FocusOn
             scrollLock={false}
             enabled={isOpen}
@@ -28,9 +50,16 @@ const ModalPopup = ({
             onClickOutside={onClose}
           >
             {isOpen && (
-              <>
+              <div className="pgn__modal-popup__tooltip">
                 {children}
-              </>
+                {hasArrow && (
+                  <div
+                    id="arrow"
+                    className={`pgn__modal-popup__arrow pgn__modal-popup__arrow-${placement}`}
+                    data-popper-arrow=""
+                  />
+                )}
+              </div>
             )}
           </FocusOn>
         </PopperElement>
@@ -58,6 +87,8 @@ ModalPopup.propTypes = {
   ]),
   /** Specifies position according to the element that the ``positionRef`` prop points to */
   placement: PopperElement.propTypes.placement,
+  /** Caret to the modal popup pointing to the target */
+  hasArrow: PropTypes.bool,
 };
 
 ModalPopup.defaultProps = {
@@ -65,6 +96,7 @@ ModalPopup.defaultProps = {
   withPortal: false,
   placement: 'bottom-start',
   positionRef: null,
+  hasArrow: false,
 };
 
 export default ModalPopup;
