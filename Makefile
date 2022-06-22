@@ -9,7 +9,7 @@ build:
 	node build-scss.js
 
 export TRANSIFEX_RESOURCE = paragon
-transifex_langs = "ar,ca,es_419,fr,he,id,ko_KR,pl,pt_BR,ru,th,uk,zh_CN
+transifex_langs = "ar,ca,es_419,fr,he,id,ko_KR,pl,pt_BR,ru,th,uk,zh_CN"
 i18n = ./src/i18n
 transifex_utils = $(i18n)/transifex-utils.js
 transifex_input = $(i18n)/transifex_input.json
@@ -55,14 +55,11 @@ push_translations:
 	# Pushing strings to Transifex, temporarily with force...
 	tx push -s -f
 
-	# Pushing comments to Transifex...
-	./node_modules/@edx/reactifex/bash_scripts/get_hashed_strings_v3.sh
-	$(transifex_utils) $(transifex_temp)
-	./node_modules/@edx/reactifex/bash_scripts/put_comments_v3.sh
-
 # Pulls translations from Transifex.
 pull_translations:
-	tx pull -f --mode reviewed --languages=$(transifex_langs)
+	tx pull -f --mode onlyreviewed --languages=$(transifex_langs)
+	# compile files with translated strings to KEYVALUEJSON format which react-intl understands...
+	npm run-script i18n_compile
 
 # This target is used by Travis.
 validate-no-uncommitted-package-lock-changes:
