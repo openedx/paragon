@@ -11,9 +11,7 @@ build:
 export TRANSIFEX_RESOURCE = paragon
 transifex_langs = "ar,ca,es_419,fr,he,id,ko_KR,pl,pt_BR,ru,th,uk,zh_CN"
 i18n = ./src/i18n
-transifex_utils = $(i18n)/transifex-utils.js
 transifex_input = $(i18n)/transifex_input.json
-transifex_temp = $(i18n)/temp
 
 NPM_TESTS=build i18n_extract lint test
 
@@ -29,14 +27,11 @@ test.npm.%: validate-no-uncommitted-package-lock-changes
 requirements:  ## install ci requirements
 	npm ci
 
-i18n.clean:
-	rm -rf $(transifex_temp)
-
 i18n.extract:
 	# Pulling display strings from .jsx files into .json files...
 	npm run-script i18n_extract
 
-extract_translations: | requirements i18n.clean i18n.extract
+extract_translations: | requirements i18n.extract
 
 # Despite the name, we actually need this target to detect changes in the incoming translated message files as well.
 detect_changed_source_translations:
@@ -45,15 +40,12 @@ detect_changed_source_translations:
 
 # Pushes translations to Transifex.  You must run make extract_translations first.
 push_translations:
-	# Displaying extracted strings...
-	cat $(transifex_input)
-
-	# Pushing strings to Transifex, temporarily with force...
-	tx push -s -f
+	# Pushing strings to Transifex...
+	tx push -s
 
 # Pulls translations from Transifex.
 pull_translations: | requirements
-	tx pull -f --mode onlyreviewed --languages=$(transifex_langs)
+	tx pull -f --mode reviewed --languages=$(transifex_langs)
 	# compile files with translated strings to KEYVALUEJSON format which react-intl understands...
 	npm run-script i18n_compile
 
