@@ -61,7 +61,7 @@ describe('<CardFooter />', () => {
   });
   it('renders footer text with clamp', () => {
     const wrapper = mount(
-      <CardFooter hasClamp text="Long footer Title">
+      <CardFooter hasClamp textElement="Long footer Title">
         {actions}
       </CardFooter>,
     );
@@ -69,11 +69,11 @@ describe('<CardFooter />', () => {
   });
   it('renders footer text with clamp max lines', () => {
     const wrapper = mount(
-      <CardFooter hasClamp maxLines={2} text="Long footer Title">
+      <CardFooter hasClamp maxLines={3} textElement="Long footer Title">
         {actions}
       </CardFooter>,
     );
-    expect(wrapper.prop('maxLines')).toEqual(2);
+    expect(wrapper.prop('maxLines')).toEqual(3);
   });
   it('renders footer text as element', () => {
     const textElement = <a href="https://example.com">Link text here</a>;
