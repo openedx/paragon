@@ -1,3 +1,10 @@
+## [20.1.2](https://github.com/openedx/paragon/compare/v20.1.1...v20.1.2) (2022-06-23)
+
+
+### Bug Fixes
+
+* update linting to support paver sass compile ([e7704c0](https://github.com/openedx/paragon/commit/e7704c0def94cc123fb90ac1e5ad2f60efbf7084))
+
 ## [20.1.1](https://github.com/openedx/paragon/compare/v20.1.0...v20.1.1) (2022-06-22)
 
 
