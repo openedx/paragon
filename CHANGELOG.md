@@ -1,3 +1,10 @@
+## [20.1.3](https://github.com/openedx/paragon/compare/v20.1.2...v20.1.3) (2022-06-24)
+
+
+### Bug Fixes
+
+* [BD-46] refactoring Card component on the mobile page styles [#1314](https://github.com/openedx/paragon/issues/1314) ([#1381](https://github.com/openedx/paragon/issues/1381)) ([5177354](https://github.com/openedx/paragon/commit/5177354e6c6685d8e3946a4329ff1b8b3d52055e))
+
 ## [20.1.2](https://github.com/openedx/paragon/compare/v20.1.1...v20.1.2) (2022-06-23)
 
 
