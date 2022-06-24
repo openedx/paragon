@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import {
   Check, Close, Cancel, CheckCircle, RadioButtonUnchecked, WarningFilled,
-} from 'icons';
+} from '../../icons';
 import { Icon } from '..';
 
 import { FORM_TEXT_TYPES } from './constants';

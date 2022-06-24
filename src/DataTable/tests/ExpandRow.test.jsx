@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { ExpandLess, ExpandMore } from 'icons';
+import { ExpandLess, ExpandMore } from '../../../icons';
 import ExpandRow from '../ExpandRow';
 import { IconButton } from '../..';
 

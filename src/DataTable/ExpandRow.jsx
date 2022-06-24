@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ExpandLess, ExpandMore } from 'icons';
+import { ExpandLess, ExpandMore } from '../../icons';
 import { Icon, IconButton } from '..';
 
 const EXPAND_COLLAPSE_ICON_SIZE = 'inline';

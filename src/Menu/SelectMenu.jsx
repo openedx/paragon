@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { ExpandMore } from 'icons';
+import { ExpandMore } from '../../icons';
 import Button from '../Button/index';
 import ModalPopup from '../Modal/ModalPopup';
 import useToggle from '../hooks/useToggle';

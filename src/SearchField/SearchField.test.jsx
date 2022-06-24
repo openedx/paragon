@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { Search, Close } from 'icons';
+import { Search, Close } from '../../icons';
 import Icon from '../Icon';
 
 import SearchField from './index';

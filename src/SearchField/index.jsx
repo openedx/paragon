@@ -2,7 +2,7 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 
-import { Search, Close } from 'icons';
+import { Search, Close } from '../../icons';
 import SearchFieldAdvanced, { SearchFieldContext } from './SearchFieldAdvanced';
 import SearchFieldLabel from './SearchFieldLabel';
 import SearchFieldInput from './SearchFieldInput';

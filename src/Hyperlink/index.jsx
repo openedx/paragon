@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import isRequiredIf from 'react-proptype-conditional-require';
-import { Launch } from 'icons';
+import { Launch } from '../../icons';
 import Icon from '../Icon';
 
 import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';

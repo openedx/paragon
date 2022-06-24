@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import { IntlProvider } from 'react-intl';
 import renderer, { act } from 'react-test-renderer';
 import { Context as ResponsiveContext } from 'react-responsive';
-import { Info } from 'icons';
+import { Info } from '../../icons';
 import breakpoints from '../utils/breakpoints';
 import Button from '../Button';
 import Alert from './index';

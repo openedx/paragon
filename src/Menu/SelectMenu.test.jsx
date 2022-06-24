@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
-import { Add, Check } from 'icons';
+import { Add, Check } from '../../icons';
 import { MenuItem, SelectMenu } from '..';
 import Hyperlink from '../Hyperlink';
 import Button from '../Button';

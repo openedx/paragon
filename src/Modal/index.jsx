@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { FocusOn } from 'react-focus-on';
 import tabbable from 'tabbable';
 
-import { Close } from 'icons';
+import { Close } from '../../icons';
 import { Button } from '..';
 import Icon from '../Icon';
 import newId from '../utils/newId';

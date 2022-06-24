@@ -22,7 +22,7 @@
         ]
       }
     ],
-    "import/no-unresolved": [2, { "ignore": ["icons", "axios"] }],
+    "import/no-relative-packages": 0,
     "react/jsx-no-constructed-context-values": 0,
     "no-restricted-exports": [0, { "restrictedNamedExports": ["default"] }],
     // https://github.com/evcohen/eslint-plugin-jsx-a11y/issues/340#issuecomment-338424908

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { Check, Error } from 'icons';
+import { Check, Error } from '../../icons';
 import { StepperContext } from './StepperContext';
 import { Icon, Bubble } from '..';
 

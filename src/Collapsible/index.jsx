@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import { ExpandLess, ExpandMore } from 'icons';
+import { ExpandLess, ExpandMore } from '../../icons';
 import CollapsibleAdvanced, { CollapsibleContext } from './CollapsibleAdvanced';
 import CollapsibleBody from './CollapsibleBody';
 import CollapsibleTrigger from './CollapsibleTrigger';

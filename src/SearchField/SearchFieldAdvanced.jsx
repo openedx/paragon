@@ -4,7 +4,7 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Search, Close } from 'icons';
+import { Search, Close } from '../../icons';
 import newId from '../utils/newId';
 
 import Icon from '../Icon';
