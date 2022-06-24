@@ -22,7 +22,7 @@
         ]
       }
     ],
-    "import/no-relative-packages": 0,
+    "import/no-relative-packages": [2, { "ignore": ["icons"] }],
     "import/no-unresolved": [2, { "ignore": ["axios"] }],
     "react/jsx-no-constructed-context-values": 0,
     "no-restricted-exports": [0, { "restrictedNamedExports": ["default"] }],
