@@ -528,10 +528,12 @@ behavior.
 </CardGrid>
 ```
 
-## CardDeck
+## CardDeck (Deprecated)
 
 This component gives any child Card components equal height with an appropriate gutter between cards. However,
 it is meant to be used as a single horizontal row of Cards, not as a grid. See CardGrid for more details.
+
+**Note**: this component is deprecated and is going to be removed soon.
 
 ```jsx live
 <CardDeck>
