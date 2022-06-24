@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 import SearchFieldAdvanced, { SearchFieldContext } from './SearchFieldAdvanced';
@@ -37,9 +37,12 @@ const SearchField = (props) => {
     ...others
   } = props;
 
-  const Wrapper = (wrapperProps) => (submitButtonLocation === 'external'
-    ? <div className="pgn__searchfield_wrapper">{wrapperProps.children}</div>
-    : <>{wrapperProps.children}</>);
+  const Wrapper = useCallback(
+    (wrapperProps) => (submitButtonLocation === 'external'
+      ? <div className="pgn__searchfield_wrapper">{wrapperProps.children}</div>
+      : <>{wrapperProps.children}</>),
+    [submitButtonLocation],
+  );
 
   return (
     <>
