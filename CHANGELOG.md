@@ -1,3 +1,10 @@
+# [20.2.0](https://github.com/openedx/paragon/compare/v20.1.3...v20.2.0) (2022-06-24)
+
+
+### Features
+
+* added BigBlueButton bbb icon in repo ([#1414](https://github.com/openedx/paragon/issues/1414)) ([7c846ad](https://github.com/openedx/paragon/commit/7c846ada9edd3562c5410bebab2a4bc10e99e56d))
+
 ## [20.1.3](https://github.com/openedx/paragon/compare/v20.1.2...v20.1.3) (2022-06-24)
 
 
