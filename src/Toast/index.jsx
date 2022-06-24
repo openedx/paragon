@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import BaseToast from 'react-bootstrap/Toast';
 import { useIntl } from 'react-intl';
 
-import { Close } from '../../icons';
+import { Close } from 'icons';
 import ToastContainer from './ToastContainer';
 import { Button, IconButton, Icon } from '..';
 

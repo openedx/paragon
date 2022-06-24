@@ -1,7 +1,7 @@
 import React, { useContext, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { MoreVert } from '../../icons';
+import { MoreVert } from 'icons';
 import {
   useWindowSize,
   useToggle,

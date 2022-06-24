@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { GridView, ListView } from '../../icons';
+import { GridView, ListView } from 'icons';
 import {
   DataTableContext, Icon, IconButtonToggle, IconButtonWithTooltip,
 } from '..';

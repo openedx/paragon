@@ -6,7 +6,7 @@ import MediaQuery from 'react-responsive';
 
 import {
   ChevronLeft, ChevronRight, ArrowBackIos, ArrowForwardIos,
-} from '../../icons';
+} from 'icons';
 import { greaterThan } from '../utils/propTypes';
 import { Button, Dropdown, IconButton } from '..';
 import Icon from '../Icon';

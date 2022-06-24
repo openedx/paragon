@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useMediaQuery } from 'react-responsive';
-import { Close } from '../../icons';
+import { Close } from 'icons';
 import ModalLayer from './ModalLayer';
 import { Icon, IconButton } from '..';
 import ModalCloseButton from './ModalCloseButton';

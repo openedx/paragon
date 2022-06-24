@@ -5,7 +5,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import userEvent from '@testing-library/user-event';
 
-import { Info, Home } from '../../icons';
+import { Info, Home } from 'icons';
 import { IconButton, IconButtonToggle, Icon } from '..';
 
 describe('IconButtonToggle tests', () => {

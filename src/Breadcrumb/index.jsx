@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { ChevronRight } from '../../icons';
+import { ChevronRight } from 'icons';
 import Icon from '../Icon';
 
 function Breadcrumb({
