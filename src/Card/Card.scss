@@ -251,3 +251,34 @@
     flex-direction: row;
   }
 }
+
+@media (max-width: map-get($grid-breakpoints, "sm")) {
+  .pgn__card-footer {
+    &.horizontal > :not(:last-child) {
+      margin-inline-end: 0;
+    }
+
+    .btn {
+      width: 100%;
+      margin: .625rem 0 0;
+      margin-inline-end: 0;
+    }
+  }
+
+  .pgn__action-row {
+    .btn:not(:last-child) {
+      margin-bottom: .3125rem;
+    }
+
+    & > * + * {
+      margin-inline-start: 0;
+    }
+  }
+
+  .pgn__action-row-stacked,
+  .pgn__card-section {
+    .btn {
+      width: 100%;
+    }
+  }
+}
