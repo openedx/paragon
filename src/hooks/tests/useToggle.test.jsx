@@ -24,7 +24,7 @@ const expectToggleToBeOff = (wrapper) => {
 };
 
 // eslint-disable-next-line react/prop-types
-const FakeComponent = ({ defaultIsOn, handlers }) => {
+function FakeComponent({ defaultIsOn, handlers }) {
   const [isOn, setOn, setOff, toggle] = useToggle(defaultIsOn, handlers);
 
   return (
@@ -35,7 +35,7 @@ const FakeComponent = ({ defaultIsOn, handlers }) => {
       <button id="toggle" onClick={toggle}>toggle</button>
     </div>
   );
-};
+}
 
 describe('useToggle hook', () => {
   beforeEach(() => {

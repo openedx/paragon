@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import Icon from '../Icon';
 import { ChevronRight } from '../../icons';
+import Icon from '../Icon';
 
-const Breadcrumb = ({
+function Breadcrumb({
   links, activeLabel, spacer, clickHandler, variant, isMobile, ariaLabel,
-}) => {
+}) {
   const linkCount = links.length;
   const displayLinks = isMobile ? [links[linkCount - 1]] : links;
 
@@ -31,7 +31,7 @@ const Breadcrumb = ({
       </ol>
     </nav>
   );
-};
+}
 
 Breadcrumb.propTypes = {
   /** an array of objects with the properties `label` and `url` as strings. */

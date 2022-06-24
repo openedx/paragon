@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FormControlDecorator = ({ children, location }) => (
-  <div className={`pgn__form-control-decorator pgn__form-control-decorator-${location}`}>
-    {children}
-  </div>
-);
+function FormControlDecorator({ children, location }) {
+  return (
+    <div className={`pgn__form-control-decorator pgn__form-control-decorator-${location}`}>
+      {children}
+    </div>
+  );
+}
 
 FormControlDecorator.propTypes = {
   children: PropTypes.node.isRequired,

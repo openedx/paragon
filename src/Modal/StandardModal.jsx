@@ -4,23 +4,25 @@ import ModalDialog from './ModalDialog';
 
 export const STANDARD_MODAL_CLOSE_LABEL = 'Close';
 
-const StandardModal = ({
+function StandardModal({
   children,
   footerNode,
   beforeBodyNode,
   afterBodyNode,
   ...props
-}) => (
-  <ModalDialog {...props}>
-    <ModalDialog.Header>
-      <ModalDialog.Title>{props.title}</ModalDialog.Title>
-    </ModalDialog.Header>
-    {beforeBodyNode}
-    <ModalDialog.Body>{children}</ModalDialog.Body>
-    {afterBodyNode}
-    {footerNode && <ModalDialog.Footer>{footerNode}</ModalDialog.Footer>}
-  </ModalDialog>
-);
+}) {
+  return (
+    <ModalDialog {...props}>
+      <ModalDialog.Header>
+        <ModalDialog.Title>{props.title}</ModalDialog.Title>
+      </ModalDialog.Header>
+      {beforeBodyNode}
+      <ModalDialog.Body>{children}</ModalDialog.Body>
+      {afterBodyNode}
+      {footerNode && <ModalDialog.Footer>{footerNode}</ModalDialog.Footer>}
+    </ModalDialog>
+  );
+}
 
 StandardModal.propTypes = {
   /** Specifies the content of the `Modal` */

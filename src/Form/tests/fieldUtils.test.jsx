@@ -48,7 +48,7 @@ describe('callAllHandlers', () => {
 });
 
 // eslint-disable-next-line react/prop-types
-const IdListExample = ({ prefix, initialList }) => {
+function IdListExample({ prefix, initialList }) {
   const [ids, useRegisteredId] = useIdList(prefix, initialList);
   const id1 = useRegisteredId();
   const id2 = useRegisteredId('explicit-id');
@@ -59,7 +59,7 @@ const IdListExample = ({ prefix, initialList }) => {
       <span id="second">{id2}</span>
     </div>
   );
-};
+}
 describe('useIdList', () => {
   describe('with default', () => {
     const wrapper = mount(<IdListExample prefix="prefix" initialList={['id-0']} />);
@@ -97,7 +97,7 @@ describe('mergeAttributeValues', () => {
 });
 
 // eslint-disable-next-line react/prop-types
-const HasValueExample = ({ defaultValue, value }) => {
+function HasValueExample({ defaultValue, value }) {
   const [hasValue, handleInputEvent] = useHasValue({ defaultValue, value });
   return (
     <div>
@@ -105,7 +105,7 @@ const HasValueExample = ({ defaultValue, value }) => {
       <input type="text" onBlur={handleInputEvent} />
     </div>
   );
-};
+}
 
 describe('useHasValue', () => {
   describe('uncontrolled input with no default', () => {

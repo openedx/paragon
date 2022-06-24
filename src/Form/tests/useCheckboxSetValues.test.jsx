@@ -3,7 +3,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import useCheckboxSetValues from '../useCheckboxSetValues';
 
-const Example = () => {
+function Example() {
   const [values, {
     add, remove, set, clear,
   }] = useCheckboxSetValues(['cheddar']);
@@ -16,7 +16,7 @@ const Example = () => {
       <button id="clear" onClick={() => clear()}>Add</button>
     </>
   );
-};
+}
 
 describe('useCheckboxSetValues', () => {
   const wrapper = mount(<Example />);

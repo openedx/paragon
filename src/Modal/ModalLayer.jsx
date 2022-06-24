@@ -6,14 +6,10 @@ import Portal from './Portal';
 import { ModalContextProvider } from './ModalContext';
 
 // istanbul ignore next
-const ModalBackdrop = ({ onClick }) => (
-
-  // Focus lock is handling the keyboard eventfor us. Though adding a role="button"
-  // would be appropriate, modal dialogs provide their own close button and this
-  // would create a duplicative control.
-  // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
-  <div className="pgn__modal-backdrop" onClick={onClick} />
-);
+function ModalBackdrop({ onClick }) {
+  // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+  return <div className="pgn__modal-backdrop" onClick={onClick} onKeyDown={onClick} />;
+}
 
 ModalBackdrop.propTypes = {
   onClick: PropTypes.func,
@@ -24,9 +20,9 @@ ModalBackdrop.defaultProps = {
 };
 
 // istanbul ignore next
-const ModalContentContainer = ({ children }) => (
-  <div className="pgn__modal-content-container">{children}</div>
-);
+function ModalContentContainer({ children }) {
+  return <div className="pgn__modal-content-container">{children}</div>;
+}
 
 ModalContentContainer.propTypes = {
   children: PropTypes.node,
@@ -42,9 +38,9 @@ ModalContentContainer.defaultProps = {
  * rest of the application is made non-interactive. The assumption made by this
  * component is that if a modal object is visible then it is "enabled"
  */
-const ModalLayer = ({
+function ModalLayer({
   children, onClose, isOpen, isBlocking, zIndex,
-}) => {
+}) {
   if (!isOpen) {
     return null;
   }
@@ -73,7 +69,7 @@ const ModalLayer = ({
       </Portal>
     </ModalContextProvider>
   );
-};
+}
 
 ModalLayer.propTypes = {
   /** Specifies the contents of the modal */

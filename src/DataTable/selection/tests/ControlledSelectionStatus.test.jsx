@@ -24,13 +24,15 @@ const instance = {
 };
 
 // eslint-disable-next-line react/prop-types
-const ControlledSelectionStatusWrapper = ({ value, props = {} }) => (
-  <IntlProvider locale="en" messages={{}}>
-    <DataTableContext.Provider value={value}>
-      <ControlledSelectionStatus {...props} />
-    </DataTableContext.Provider>
-  </IntlProvider>
-);
+function ControlledSelectionStatusWrapper({ value, props = {} }) {
+  return (
+    <IntlProvider locale="en" messages={{}}>
+      <DataTableContext.Provider value={value}>
+        <ControlledSelectionStatus {...props} />
+      </DataTableContext.Provider>
+    </IntlProvider>
+  );
+}
 
 describe('<ControlledSelectionStatus />', () => {
   it('accepts a class name', () => {

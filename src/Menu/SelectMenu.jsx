@@ -1,20 +1,20 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { ExpandMore } from '../../icons';
 import Button from '../Button/index';
 import ModalPopup from '../Modal/ModalPopup';
 import useToggle from '../hooks/useToggle';
 import Menu from '.';
-import { ExpandMore } from '../../icons';
 
 export const SELECT_MENU_DEFAULT_MESSAGE = 'Select...';
 
-const SelectMenu = ({
+function SelectMenu({
   defaultMessage,
   isLink,
   children,
   ...props
-}) => {
+}) {
   const triggerTarget = React.useRef(null);
   const itemsCollection = React.useMemo(
     () => Array.from({ length: children.length }).map(() => React.createRef()),
@@ -160,7 +160,7 @@ const SelectMenu = ({
       </div>
     </>,
   );
-};
+}
 
 SelectMenu.propTypes = {
   /** String that is displayed for default value of the ``SelectMenu`` */

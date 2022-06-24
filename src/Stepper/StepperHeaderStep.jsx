@@ -2,18 +2,18 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import { Check, Error } from '../../icons';
 import { StepperContext } from './StepperContext';
 import { Icon, Bubble } from '..';
-import { Check, Error } from '../../icons';
 
-const StepperHeaderStep = ({
+function StepperHeaderStep({
   eventKey,
   title,
   isActive,
   hasError,
   description,
   index,
-}) => {
+}) {
   const { getIsComplete } = useContext(StepperContext);
   const isComplete = getIsComplete(eventKey);
   const stepIcon = isComplete ? <Icon src={Check} /> : <span>{index + 1}</span>;
@@ -39,7 +39,7 @@ const StepperHeaderStep = ({
       </div>
     </li>
   );
-};
+}
 
 StepperHeaderStep.propTypes = {
   /**

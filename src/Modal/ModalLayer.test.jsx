@@ -5,7 +5,7 @@ import ModalLayer, { ModalBackdrop } from './ModalLayer';
 import { ModalContextProvider } from './ModalContext';
 
 /* eslint-disable react/prop-types */
-jest.mock('./Portal', () => (props) => {
+jest.mock('./Portal', () => function (props) {
   const { children, ...otherProps } = props;
   return (
     <paragon-portal {...otherProps}>
@@ -23,11 +23,13 @@ jest.mock('react-focus-on', () => ({
   },
 }));
 
-const Dialog = () => (
-  <div role="dialog" aria-label="A dialog">
-    A dialog.
-  </div>
-);
+function Dialog() {
+  return (
+    <div role="dialog" aria-label="A dialog">
+      A dialog.
+    </div>
+  );
+}
 
 describe('<ModalLayer />', () => {
   describe('when isOpen', () => {

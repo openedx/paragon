@@ -17,10 +17,10 @@ import {
 export const ACTION_OVERFLOW_BUTTON_TEXT = 'More actions';
 export const SMALL_SCREEN_ACTION_OVERFLOW_BUTTON_TEXT = 'Actions';
 
-const CollapsibleButtonGroup = ({
+function CollapsibleButtonGroup({
   className,
   actions,
-}) => {
+}) {
   const [isOverflowMenuOpen, openOverflowMenu, closeOverflowMenu] = useToggle(false);
   const [overflowMenuTarget, setOverflowMenuTarget] = useState(null);
   const {
@@ -92,7 +92,7 @@ const CollapsibleButtonGroup = ({
       </div>
     </div>
   );
-};
+}
 
 CollapsibleButtonGroup.defaultProps = {
   className: null,

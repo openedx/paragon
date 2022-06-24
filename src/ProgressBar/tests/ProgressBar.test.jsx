@@ -26,15 +26,17 @@ const ref = {
   },
 };
 
-const ProgressBarElement = (props) => (
-  <ProgressBar.Annotated
-    now={20}
-    label="20%"
-    threshold={50}
-    thresholdLabel="50%"
-    {...props}
-  />
-);
+function ProgressBarElement(props) {
+  return (
+    <ProgressBar.Annotated
+      now={20}
+      label="20%"
+      threshold={50}
+      thresholdLabel="50%"
+      {...props}
+    />
+  );
+}
 
 describe('<ProgressBar.Annotated />', () => {
   describe('correct rendering', () => {

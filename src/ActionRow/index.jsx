@@ -2,22 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const ActionRow = ({
+function ActionRow({
   as,
   isStacked,
   children,
   ...props
-}) => React.createElement(
-  as,
-  {
-    ...props,
-    className: classNames(props.className, {
-      'pgn__action-row': !isStacked,
-      'pgn__action-row-stacked': isStacked,
-    }),
-  },
-  children,
-);
+}) {
+  return React.createElement(
+    as,
+    {
+      ...props,
+      className: classNames(props.className, {
+        'pgn__action-row': !isStacked,
+        'pgn__action-row-stacked': isStacked,
+      }),
+    },
+    children,
+  );
+}
 
 ActionRow.propTypes = {
   /** Specifies the base element */
@@ -37,7 +39,9 @@ ActionRow.defaultProps = {
   isStacked: false,
 };
 
-const ActionRowSpacer = () => <span className="pgn__action-row-spacer" />;
+function ActionRowSpacer() {
+  return <span className="pgn__action-row-spacer" />;
+}
 
 ActionRow.Spacer = ActionRowSpacer;
 

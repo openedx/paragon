@@ -112,9 +112,9 @@ IconButton.propTypes = {
  * @param { React.Component } args.tooltipContent any content to pass to tooltip content area
  * @returns { IconButton } a button wrapped in overlaytrigger
  */
-const IconButtonWithTooltip = ({
+function IconButtonWithTooltip({
   tooltipPlacement, tooltipContent, variant, invertColors, ...props
-}) => {
+}) {
   const invert = invertColors ? 'inverse-' : '';
   return (
     <OverlayTrigger
@@ -131,7 +131,7 @@ const IconButtonWithTooltip = ({
       <IconButton variant={variant} invertColors={invertColors} {...props} />
     </OverlayTrigger>
   );
-};
+}
 
 IconButtonWithTooltip.defaultProps = {
   tooltipPlacement: 'top',

@@ -5,22 +5,24 @@ import classNames from 'classnames';
 import { requiredWhenNot } from '../utils/propTypes';
 import ModalDialog from './ModalDialog';
 
-const AlertModal = ({
+function AlertModal({
   children,
   footerNode,
   ...props
-}) => (
-  <ModalDialog
-    {...props}
-    className={classNames('pgn__alert-modal', props.className)}
-  >
-    <ModalDialog.Header>
-      <ModalDialog.Title>{props.title}</ModalDialog.Title>
-    </ModalDialog.Header>
-    <ModalDialog.Body>{children}</ModalDialog.Body>
-    {footerNode && <ModalDialog.Footer>{footerNode}</ModalDialog.Footer>}
-  </ModalDialog>
-);
+}) {
+  return (
+    <ModalDialog
+      {...props}
+      className={classNames('pgn__alert-modal', props.className)}
+    >
+      <ModalDialog.Header>
+        <ModalDialog.Title>{props.title}</ModalDialog.Title>
+      </ModalDialog.Header>
+      <ModalDialog.Body>{children}</ModalDialog.Body>
+      {footerNode && <ModalDialog.Footer>{footerNode}</ModalDialog.Footer>}
+    </ModalDialog>
+  );
+}
 
 AlertModal.propTypes = {
   children: PropTypes.node.isRequired,

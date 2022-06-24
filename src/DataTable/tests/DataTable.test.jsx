@@ -85,10 +85,12 @@ const props = {
 };
 
 const emptyTestText = 'We love bears';
-const EmptyTest = () => <div>{emptyTestText}</div>;
+function EmptyTest() {
+  return <div>{emptyTestText}</div>;
+}
 
 // eslint-disable-next-line react/prop-types
-const DataTableContextProviderChild = ({ children }) => {
+function DataTableContextProviderChild({ children }) {
   const contextValue = useContext(DataTableContext);
   return (
     <>
@@ -96,16 +98,18 @@ const DataTableContextProviderChild = ({ children }) => {
       {children}
     </>
   );
-};
+}
 
 // eslint-disable-next-line react/prop-types
-const DataTableWrapper = ({ children, ...tableProps }) => (
-  <IntlProvider locale="en" messages={{}}>
-    <DataTable {...tableProps}>
-      {children}
-    </DataTable>
-  </IntlProvider>
-);
+function DataTableWrapper({ children, ...tableProps }) {
+  return (
+    <IntlProvider locale="en" messages={{}}>
+      <DataTable {...tableProps}>
+        {children}
+      </DataTable>
+    </IntlProvider>
+  );
+}
 
 describe('<DataTable />', () => {
   beforeEach(() => {

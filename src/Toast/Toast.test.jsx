@@ -4,13 +4,15 @@ import { IntlProvider } from 'react-intl';
 import Toast from './index';
 
 /* eslint-disable-next-line react/prop-types */
-const ToastWrapper = ({ children, ...props }) => (
-  <IntlProvider>
-    <Toast {...props}>
-      {children}
-    </Toast>
-  </IntlProvider>
-);
+function ToastWrapper({ children, ...props }) {
+  return (
+    <IntlProvider>
+      <Toast {...props}>
+        {children}
+      </Toast>
+    </IntlProvider>
+  );
+}
 
 describe('<Toast />', () => {
   const onCloseHandler = () => {};

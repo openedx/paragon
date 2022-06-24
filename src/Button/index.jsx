@@ -49,8 +49,12 @@ WrappedButton.defaultProps = {
 
 WrappedButton.Deprecated = ButtonDeprecated;
 
-const ButtonGroup = (props) => <BaseButtonGroup {...props} />;
-const ButtonToolbar = (props) => <BaseButtonToolbar {...props} />;
+function ButtonGroup(props) {
+  return <BaseButtonGroup {...props} />;
+}
+function ButtonToolbar(props) {
+  return <BaseButtonToolbar {...props} />;
+}
 
 ButtonGroup.propTypes = {
   /** Specifies element type for this component. */

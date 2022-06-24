@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const DropdownItem = (props) => {
+function DropdownItem(props) {
   const {
     type, children, className, ...other
   } = props;
@@ -17,7 +17,7 @@ const DropdownItem = (props) => {
     },
     children,
   );
-};
+}
 
 DropdownItem.propTypes = {
   type: PropTypes.string,

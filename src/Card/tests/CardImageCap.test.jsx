@@ -5,8 +5,9 @@ import CardImageCap from '../CardImageCap';
 import CardContext from '../CardContext';
 
 // eslint-disable-next-line react/prop-types
-const CardImageCapWrapper = ({ orientation = 'vertical', ...props }) => (
-  <CardContext.Provider value={{ orientation }}><CardImageCap {...props} /></CardContext.Provider>);
+function CardImageCapWrapper({ orientation = 'vertical', ...props }) {
+  return <CardContext.Provider value={{ orientation }}><CardImageCap {...props} /></CardContext.Provider>;
+}
 
 describe('<CardImageCap />', () => {
   it('renders with scr prop and srcAlt', () => {

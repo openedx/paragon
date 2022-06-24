@@ -3,7 +3,7 @@ import { DropdownButton, useWindowSize, breakpoints } from '..';
 import DataTableContext from './DataTableContext';
 
 /** The first filter will be as an input, additional filters will be available in a dropdown.  */
-const DropdownFilters = () => {
+function DropdownFilters() {
   const { width } = useWindowSize();
   const { columns, numBreakoutFilters } = useContext(DataTableContext);
 
@@ -44,6 +44,6 @@ const DropdownFilters = () => {
       )}
     </div>
   );
-};
+}
 
 export default DropdownFilters;

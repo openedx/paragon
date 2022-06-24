@@ -7,7 +7,7 @@ import useIsVisible from '../hooks/useIsVisible';
 export const CLASSNAME_SCROLL_TOP = 'pgn__scrollable-body-scroll-top';
 export const CLASSNAME_SCROLL_BOTTOM = 'pgn__scrollable-body-scroll-bottom';
 
-const Scrollable = ({ children, ...props }) => {
+function Scrollable({ children, ...props }) {
   const [isScrolledToTop, topSentinelRef] = useIsVisible();
   const [isScrolledToBottom, bottomSentinelRef] = useIsVisible();
   const [valueNow, setValueNow] = useState(0);
@@ -44,7 +44,7 @@ const Scrollable = ({ children, ...props }) => {
       <div ref={bottomSentinelRef} />
     </div>
   );
-};
+}
 
 Scrollable.propTypes = {
   /** Specifies the content of the `Scrollable`. */

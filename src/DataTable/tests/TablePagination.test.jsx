@@ -12,8 +12,9 @@ const instance = {
 };
 
 // eslint-disable-next-line react/prop-types
-const PaginationWrapper = ({ value }) => (
-  <DataTableContext.Provider value={value}><TablePagination /></DataTableContext.Provider>);
+function PaginationWrapper({ value }) {
+  return <DataTableContext.Provider value={value}><TablePagination /></DataTableContext.Provider>;
+}
 
 describe('<TablePagination />', () => {
   it('returns null if pagination is not possible', () => {

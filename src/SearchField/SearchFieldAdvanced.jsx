@@ -4,10 +4,10 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { Search, Close } from '../../icons';
 import newId from '../utils/newId';
 
 import Icon from '../Icon';
-import { Search, Close } from '../../icons';
 
 export const SearchFieldContext = createContext();
 
@@ -16,7 +16,7 @@ const BUTTON_LOCATION_VARIANTS = [
   'external',
 ];
 
-const SearchFieldAdvanced = (props) => {
+function SearchFieldAdvanced(props) {
   const {
     children,
     className,
@@ -86,7 +86,8 @@ const SearchFieldAdvanced = (props) => {
   return (
     <div
       className={classNames(
-        'pgn__searchfield', 'd-flex',
+        'pgn__searchfield',
+        'd-flex',
         {
           'has-focus': hasFocus,
           disabled,
@@ -123,7 +124,7 @@ const SearchFieldAdvanced = (props) => {
       </form>
     </div>
   );
-};
+}
 
 SearchFieldAdvanced.propTypes = {
   /** specifies the nested child elements. At a minimum, `SearchField.Label` and `SearchField.Input` are required. */

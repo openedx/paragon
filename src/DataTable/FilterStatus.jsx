@@ -4,9 +4,9 @@ import { FormattedMessage } from 'react-intl';
 import { Button } from '..';
 import DataTableContext from './DataTableContext';
 
-const FilterStatus = ({
+function FilterStatus({
   className, variant, size, clearFiltersText, buttonClassName, showFilteredFields,
-}) => {
+}) {
   const { state, setAllFilters } = useContext(DataTableContext);
   if (!setAllFilters) {
     return null;
@@ -36,7 +36,7 @@ const FilterStatus = ({
       </Button>
     </div>
   );
-};
+}
 
 FilterStatus.defaultProps = {
   /** Specifies class name to append to the base element. */

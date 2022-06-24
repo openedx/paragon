@@ -14,13 +14,15 @@ const statusProps = {
 };
 
 // eslint-disable-next-line react/prop-types
-const RowStatusWrapper = ({ value = instance, props = statusProps }) => (
-  <IntlProvider locale="en" messages={{}}>
-    <DataTableContext.Provider value={value}>
-      <RowStatus {...props} />
-    </DataTableContext.Provider>
-  </IntlProvider>
-);
+function RowStatusWrapper({ value = instance, props = statusProps }) {
+  return (
+    <IntlProvider locale="en" messages={{}}>
+      <DataTableContext.Provider value={value}>
+        <RowStatus {...props} />
+      </DataTableContext.Provider>
+    </IntlProvider>
+  );
+}
 
 describe('<RowStatus />', () => {
   it('returns null if there is no pageSize', () => {

@@ -36,11 +36,13 @@ const contextValue = {
 };
 
 /* eslint-disable-next-line react/prop-types */
-const TableRowWrapper = ({ value, row }) => (
-  <DataTableContext.Provider value={value}>
-    <table><tbody><TableRow row={row} /></tbody></table>
-  </DataTableContext.Provider>
-);
+function TableRowWrapper({ value, row }) {
+  return (
+    <DataTableContext.Provider value={value}>
+      <table><tbody><TableRow row={row} /></tbody></table>
+    </DataTableContext.Provider>
+  );
+}
 
 describe('<TableRow />', () => {
   const wrapper = mount(<TableRowWrapper value={contextValue} row={props} />);

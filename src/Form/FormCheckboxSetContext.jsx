@@ -11,7 +11,7 @@ const FormCheckboxSetContext = React.createContext({
 
 const useCheckboxSetContext = () => useContext(FormCheckboxSetContext);
 
-const FormCheckboxSetContextProvider = ({
+function FormCheckboxSetContextProvider({
   children,
   name,
   onBlur,
@@ -19,7 +19,7 @@ const FormCheckboxSetContextProvider = ({
   onChange,
   value,
   defaultValue,
-}) => {
+}) {
   const isControlled = !defaultValue && Array.isArray(value);
   const getCheckboxControlProps = (checkboxProps) => ({
     ...checkboxProps,
@@ -48,7 +48,7 @@ const FormCheckboxSetContextProvider = ({
       {children}
     </FormCheckboxSetContext.Provider>
   );
-};
+}
 
 FormCheckboxSetContextProvider.propTypes = {
   children: PropTypes.node.isRequired,

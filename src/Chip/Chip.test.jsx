@@ -2,9 +2,8 @@ import React from 'react';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
-import Chip from './index';
-
 import { Close } from '../../icons';
+import Chip from './index';
 
 describe('<Chip />', () => {
   describe('correct rendering', () => {

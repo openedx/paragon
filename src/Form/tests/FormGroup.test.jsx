@@ -7,7 +7,7 @@ import FormLabel from '../FormLabel';
 import FormControlFeedback from '../FormControlFeedback';
 
 /* eslint-disable react/prop-types */
-jest.mock('react-bootstrap/FormControl', () => (props) => {
+jest.mock('react-bootstrap/FormControl', () => function (props) {
   const { children, ...otherProps } = props;
   return (
     <form-control {...otherProps}>

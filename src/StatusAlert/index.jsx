@@ -49,6 +49,7 @@ class StatusAlert extends React.Component {
     this.props.onClose();
   }
 
+  // eslint-disable-next-line react/no-unused-class-component-methods
   focus() {
     if (this.xButton) {
       this.xButton.focus();

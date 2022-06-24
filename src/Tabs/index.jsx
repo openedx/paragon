@@ -10,14 +10,14 @@ import Tab from './Tab';
 
 export const MORE_TAB_TEXT = 'More...';
 
-const Tabs = ({
+function Tabs({
   children,
   className,
   moreTabText = MORE_TAB_TEXT,
   defaultActiveKey,
   activeKey,
   ...props
-}) => {
+}) {
   const containerElementRef = useRef(null);
   const overflowElementRef = useRef(null);
   const indexOfLastVisibleChild = useIndexOfLastVisibleChild(
@@ -118,27 +118,30 @@ const Tabs = ({
         );
       });
 
-    childrenList.splice(indexOfOverflowStart, 0, (
-      <Tab
-        key="moreTabKey"
-        tabClassName={classNames(!overflowChildren.length && 'pgn__tab_invisible', 'pgn__tab_more')}
-        title={(
-          <Dropdown ref={overflowElementRef}>
-            <Dropdown.Toggle
-              variant="link"
-              className="nav-link"
-              id="pgn__tab-toggle"
-            >
-              {moreTabText}
-              {moreTabHasNotification && (
+    childrenList.splice(
+      indexOfOverflowStart,
+      0, (
+        <Tab
+          key="moreTabKey"
+          tabClassName={classNames(!overflowChildren.length && 'pgn__tab_invisible', 'pgn__tab_more')}
+          title={(
+            <Dropdown ref={overflowElementRef}>
+              <Dropdown.Toggle
+                variant="link"
+                className="nav-link"
+                id="pgn__tab-toggle"
+              >
+                {moreTabText}
+                {moreTabHasNotification && (
                 <Bubble variant="error" className="pgn__tab-notification" />
-              )}
-            </Dropdown.Toggle>
-            <Dropdown.Menu className="dropdown-menu-right">{overflowChildren}</Dropdown.Menu>
-          </Dropdown>
+                )}
+              </Dropdown.Toggle>
+              <Dropdown.Menu className="dropdown-menu-right">{overflowChildren}</Dropdown.Menu>
+            </Dropdown>
         )}
-      />
-    ));
+        />
+      ),
+    );
     return childrenList;
   }, [activeKey, children, defaultActiveKey, indexOfLastVisibleChild, moreTabText]);
 
@@ -154,7 +157,7 @@ const Tabs = ({
       </BaseTabs>
     </div>
   );
-};
+}
 
 Tabs.propTypes = {
   /** Specifies elements that is processed to create tabs. */

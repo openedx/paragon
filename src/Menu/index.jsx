@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import useArrowKeyNavigation from '../hooks/useArrowKeyNavigation';
 
-const Menu = ({
+function Menu({
   as,
   arrowKeyNavigationSelector,
   children,
   ...props
-}) => {
+}) {
   const parentRef = useArrowKeyNavigation({ selectors: arrowKeyNavigationSelector });
   const className = classNames(props.className, 'pgn__menu');
 
@@ -19,13 +19,9 @@ const Menu = ({
       ref: parentRef,
       className,
     },
-    (
-      <>
-        {children}
-      </>
-    ),
+    (children),
   );
-};
+}
 
 Menu.propTypes = {
   /** Specifies class name to append to the base element */

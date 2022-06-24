@@ -6,11 +6,13 @@ import RowStatus from './RowStatus';
 import TablePagination from './TablePagination';
 import TablePaginationMinimal from './TablePaginationMinimal';
 
-const TableFooter = ({ className, children }) => (
-  <div className={classNames(className, 'pgn__data-table-footer')}>
-    {children}
-  </div>
-);
+function TableFooter({ className, children }) {
+  return (
+    <div className={classNames(className, 'pgn__data-table-footer')}>
+      {children}
+    </div>
+  );
+}
 
 TableFooter.propTypes = {
   /** Specifies the content of the `TableFooter` */

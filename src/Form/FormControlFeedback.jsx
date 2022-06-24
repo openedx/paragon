@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { useFormGroupContext } from './FormGroupContext';
 import FormText, { resolveTextType } from './FormText';
 
-const FormControlFeedback = ({ children, ...props }) => {
+function FormControlFeedback({ children, ...props }) {
   const { getDescriptorProps, isInvalid, isValid } = useFormGroupContext();
   const descriptorProps = getDescriptorProps(props);
   const className = classNames('pgn__form-control-description', props.className);
@@ -18,7 +18,7 @@ const FormControlFeedback = ({ children, ...props }) => {
       {children}
     </FormText>
   );
-};
+}
 
 const FEEDBACK_TYPES = [
   'default',

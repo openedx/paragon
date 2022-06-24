@@ -14,7 +14,7 @@ import {
   getRowIds,
 } from './data/helpers';
 
-const ControlledSelectionStatus = ({ className, clearSelectionText }) => {
+function ControlledSelectionStatus({ className, clearSelectionText }) {
   const {
     itemCount,
     rows,
@@ -44,7 +44,7 @@ const ControlledSelectionStatus = ({ className, clearSelectionText }) => {
     onClear: () => dispatch(clearSelectionAction()),
   };
   return <BaseSelectionStatus {...selectionStatusProps} />;
-};
+}
 
 ControlledSelectionStatus.defaultProps = {
   className: undefined,

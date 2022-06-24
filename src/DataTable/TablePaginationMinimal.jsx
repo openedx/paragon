@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Pagination } from '..';
 import DataTableContext from './DataTableContext';
 
-const TablePaginationMinimal = () => {
+function TablePaginationMinimal() {
   const {
     nextPage, pageCount, gotoPage, state,
   } = useContext(DataTableContext);
@@ -23,6 +23,6 @@ const TablePaginationMinimal = () => {
       onPageSelect={(pageNum) => gotoPage(pageNum - 1)}
     />
   );
-};
+}
 
 export default TablePaginationMinimal;

@@ -7,7 +7,7 @@ import { ModalContextProvider } from './ModalContext';
 
 const PLACEMENT_OFFSETS = { right: [-2, 10], left: [-2, 10] };
 
-const ModalPopup = ({
+function ModalPopup({
   children,
   onClose,
   isOpen,
@@ -17,7 +17,7 @@ const ModalPopup = ({
   placement,
   hasArrow,
   ...popperProps
-}) => {
+}) {
   const RootComponent = withPortal ? Portal : React.Fragment;
   const placementOffsetValue = PLACEMENT_OFFSETS[placement] || [0, 10];
 
@@ -66,7 +66,7 @@ const ModalPopup = ({
       </RootComponent>
     </ModalContextProvider>
   );
-};
+}
 
 ModalPopup.propTypes = {
   /** Specifies the contents of the modal */

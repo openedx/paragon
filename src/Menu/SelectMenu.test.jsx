@@ -1,34 +1,36 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
-import { MenuItem, SelectMenu } from '..';
 import { Add, Check } from '../../icons';
+import { MenuItem, SelectMenu } from '..';
 import Hyperlink from '../Hyperlink';
 import Button from '../Button';
 
 const app = document.createElement('div');
 document.body.appendChild(app);
-const selectMenu = mount((
-  <SelectMenu>
-    <MenuItem>A Menu Item</MenuItem>
-    <MenuItem iconBefore={Add}>A Menu Item With an Icon Before</MenuItem>
-    <MenuItem iconAfter={Check}>A Menu Item With an Icon After </MenuItem>
-    <MenuItem disabled>A Disabled Menu Item</MenuItem>
-    <MenuItem as={Hyperlink} href="https://en.wikipedia.org/wiki/Hyperlink">A Link Menu Item</MenuItem>
-    <MenuItem>Falstaff</MenuItem>
-    <MenuItem>Scipio</MenuItem>
-    <MenuItem>Faustus</MenuItem>
-    <MenuItem>Cordelia</MenuItem>
-    <MenuItem>Renfrancine</MenuItem>
-    <MenuItem>Stovern</MenuItem>
-    <MenuItem>Kainian</MenuItem>
-    <MenuItem>M. Hortens</MenuItem>
-  </SelectMenu>
-), { attachTo: app });
-
-const DefaultSelectMenu = (props) => (
-  <SelectMenu {...props}><MenuItem>A Menu Item</MenuItem></SelectMenu>
+const selectMenu = mount(
+  (
+    <SelectMenu>
+      <MenuItem>A Menu Item</MenuItem>
+      <MenuItem iconBefore={Add}>A Menu Item With an Icon Before</MenuItem>
+      <MenuItem iconAfter={Check}>A Menu Item With an Icon After </MenuItem>
+      <MenuItem disabled>A Disabled Menu Item</MenuItem>
+      <MenuItem as={Hyperlink} href="https://en.wikipedia.org/wiki/Hyperlink">A Link Menu Item</MenuItem>
+      <MenuItem>Falstaff</MenuItem>
+      <MenuItem>Scipio</MenuItem>
+      <MenuItem>Faustus</MenuItem>
+      <MenuItem>Cordelia</MenuItem>
+      <MenuItem>Renfrancine</MenuItem>
+      <MenuItem>Stovern</MenuItem>
+      <MenuItem>Kainian</MenuItem>
+      <MenuItem>M. Hortens</MenuItem>
+    </SelectMenu>
+  ), { attachTo: app },
 );
+
+function DefaultSelectMenu(props) {
+  return <SelectMenu {...props}><MenuItem>A Menu Item</MenuItem></SelectMenu>;
+}
 const menuTrigger = selectMenu.find(Button);
 
 const menuOpen = (isOpen, wrapper) => {

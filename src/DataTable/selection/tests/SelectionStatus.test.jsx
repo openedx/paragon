@@ -17,13 +17,15 @@ const instance = {
 };
 
 // eslint-disable-next-line react/prop-types
-const SelectionStatusWrapper = ({ value, props = {} }) => (
-  <IntlProvider locale="en" messages={{}}>
-    <DataTableContext.Provider value={value}>
-      <SelectionStatus {...props} />
-    </DataTableContext.Provider>
-  </IntlProvider>
-);
+function SelectionStatusWrapper({ value, props = {} }) {
+  return (
+    <IntlProvider locale="en" messages={{}}>
+      <DataTableContext.Provider value={value}>
+        <SelectionStatus {...props} />
+      </DataTableContext.Provider>
+    </IntlProvider>
+  );
+}
 
 describe('<SelectionStatus />', () => {
   it('Shows the number of rows selected', () => {

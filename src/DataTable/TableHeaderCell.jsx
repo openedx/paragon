@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Icon } from '..';
 import { ArrowDropDown, ArrowDropUp, ArrowDropUpDown } from '../../icons';
+import { Icon } from '..';
 
-export const SortIndicator = ({ isSorted, isSortedDesc }) => {
+export function SortIndicator({ isSorted, isSortedDesc }) {
   if (!isSorted) {
     return <Icon style={{ opacity: 0.5 }} src={ArrowDropUpDown} />;
   }
@@ -14,16 +14,16 @@ export const SortIndicator = ({ isSorted, isSortedDesc }) => {
   }
 
   return <Icon src={ArrowDropUp} />;
-};
+}
 
 SortIndicator.propTypes = {
   isSorted: PropTypes.bool.isRequired,
   isSortedDesc: PropTypes.bool.isRequired,
 };
 
-const TableHeaderCell = ({
+function TableHeaderCell({
   getHeaderProps, render, canSort, getSortByToggleProps, isSorted, isSortedDesc, headerClassName,
-}) => {
+}) {
   const toggleProps = canSort && getSortByToggleProps ? getSortByToggleProps() : {};
 
   return (
@@ -34,7 +34,7 @@ const TableHeaderCell = ({
       </span>
     </th>
   );
-};
+}
 
 TableHeaderCell.defaultProps = {
   headerClassName: null,

@@ -58,9 +58,9 @@ const instance = {
 };
 
 // eslint-disable-next-line react/prop-types
-const TableWrapper = ({ value = instance, props }) => (
-  <DataTableContext.Provider value={value}><Table {...props} /></DataTableContext.Provider>
-);
+function TableWrapper({ value = instance, props }) {
+  return <DataTableContext.Provider value={value}><Table {...props} /></DataTableContext.Provider>;
+}
 
 describe('DataTable <Table />', () => {
   it('renders a table header', () => {

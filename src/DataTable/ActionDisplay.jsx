@@ -4,7 +4,7 @@ import TableActions from './TableActions';
 import DataTableContext from './DataTableContext';
 
 // handles display logic for actions
-const ActionDisplay = () => {
+function ActionDisplay() {
   const { bulkActions, tableActions, selectedFlatRows } = useContext(DataTableContext);
   const noBulkActions = typeof bulkActions !== 'function' && bulkActions?.length < 1;
   const noTableActions = typeof tableActions !== 'function' && tableActions?.length < 1;
@@ -19,6 +19,6 @@ const ActionDisplay = () => {
     return <BulkActions />;
   }
   return <TableActions />;
-};
+}
 
 export default ActionDisplay;

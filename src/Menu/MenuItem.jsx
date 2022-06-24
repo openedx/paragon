@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Icon } from '..';
 
-const MenuItem = ({
+function MenuItem({
   as,
   children,
   defaultSelected,
   iconAfter,
   iconBefore,
   ...props
-}) => {
+}) {
   const className = classNames(props.className, 'pgn__menu-item');
 
   return React.createElement(
@@ -28,7 +28,7 @@ const MenuItem = ({
       </>
     ),
   );
-};
+}
 
 MenuItem.propTypes = {
   /** Specifies that this ``MenuItem`` is selected inside the ``SelectMenu`` */

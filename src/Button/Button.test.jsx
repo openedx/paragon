@@ -2,9 +2,8 @@ import React from 'react';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
-import Button from './index';
-
 import { Close } from '../../icons';
+import Button from './index';
 
 describe('<Button />', () => {
   describe('correct rendering', () => {

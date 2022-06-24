@@ -11,7 +11,7 @@ window.ResizeObserver = window.ResizeObserver
     unobserve: jest.fn(),
   }));
 
-const TestComponent = () => {
+function TestComponent() {
   const containerElementRef = React.useRef(null);
   const overflowElementRef = React.useRef(null);
   const indexOfLastVisibleChild = useIndexOfLastVisibleChild(containerElementRef.current, overflowElementRef.current);
@@ -24,7 +24,7 @@ const TestComponent = () => {
       <div ref={overflowElementRef} id={dropdownId}>{indexOfLastVisibleChild}</div>
     </div>
   );
-};
+}
 
 describe('useIndexOfLastVisibleChild hook', () => {
   it('hooks display correct index', () => {

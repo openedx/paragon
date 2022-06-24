@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Input from '../Input';
 import { SearchFieldContext } from './SearchFieldAdvanced';
 
-const SearchFieldInput = (props) => {
+function SearchFieldInput(props) {
   const {
     inputId, value, handleChange, handleFocus, handleBlur, refs, disabled,
   } = useContext(SearchFieldContext);
@@ -24,7 +24,7 @@ const SearchFieldInput = (props) => {
       disabled={disabled}
     />
   );
-};
+}
 
 SearchFieldInput.propTypes = {
   /** specifies a custom class name. */

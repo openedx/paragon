@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import DataTableContext from './DataTableContext';
 import Actions from './CollapsibleButtonGroup';
 
-const BulkActions = ({ className }) => {
+function BulkActions({ className }) {
   const tableInstance = useContext(DataTableContext);
   const {
     bulkActions,
@@ -31,7 +31,7 @@ const BulkActions = ({ className }) => {
       actions={actions}
     />
   );
-};
+}
 
 BulkActions.defaultProps = {
   className: null,

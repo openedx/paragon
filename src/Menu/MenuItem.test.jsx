@@ -1,9 +1,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
+import { Add, Check } from '../../icons';
 import { MenuItem } from '..';
 import Button from '../Button';
-import { Add, Check } from '../../icons';
 
 const children = 'Hello World';
 

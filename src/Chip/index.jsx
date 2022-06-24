@@ -8,7 +8,7 @@ const STYLE_VARIANTS = [
   'dark',
 ];
 
-const Chip = ({
+function Chip({
   as,
   children,
   className,
@@ -17,7 +17,7 @@ const Chip = ({
   iconBefore,
   iconAfter,
   ...props
-}) => {
+}) {
   const elementProps = {
     ...props,
     className: classNames(
@@ -35,7 +35,7 @@ const Chip = ({
     </>
   );
   return React.createElement(props.href ? 'a' : as, elementProps, elementContent);
-};
+}
 
 Chip.propTypes = {
   /** Specifies the base HTML element. */

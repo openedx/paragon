@@ -29,8 +29,9 @@ const instance = {
 };
 
 // eslint-disable-next-line react/prop-types
-const DropdownFiltersWrapper = ({ value = instance, props }) => (
-  <DataTableContext.Provider value={value}><DropdownFilters {...props} /></DataTableContext.Provider>);
+function DropdownFiltersWrapper({ value = instance, props }) {
+  return <DataTableContext.Provider value={value}><DropdownFilters {...props} /></DataTableContext.Provider>;
+}
 
 describe('<DropdownFilters />', () => {
   afterAll(() => {

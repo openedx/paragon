@@ -27,8 +27,12 @@ const WrapperPopover = React.forwardRef(({
   </Popover>
 ));
 
-const PopoverTitle = (props) => <BasePopoverTitle {...props} />;
-const PopoverContent = (props) => <BasePopoverContent {...props} />;
+function PopoverTitle(props) {
+  return <BasePopoverTitle {...props} />;
+}
+function PopoverContent(props) {
+  return <BasePopoverContent {...props} />;
+}
 
 const commonPropTypes = {
   /** Specifies the base element */

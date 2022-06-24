@@ -1,6 +1,9 @@
 {
   "extends": "@edx/eslint-config",
   "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false
+  },
   "rules": {
     "import/no-extraneous-dependencies": [
       "error",
@@ -19,6 +22,9 @@
         ]
       }
     ],
+    "import/no-relative-packages": 0,
+    "react/jsx-no-constructed-context-values": 0,
+    "no-restricted-exports": [0, { "restrictedNamedExports": ["default"] }],
     // https://github.com/evcohen/eslint-plugin-jsx-a11y/issues/340#issuecomment-338424908
     "jsx-a11y/anchor-is-valid": [ "error", {
       "components": [ "Link" ],
