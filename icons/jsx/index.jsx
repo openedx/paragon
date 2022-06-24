@@ -255,6 +255,7 @@ export { default as BatteryFull } from './BatteryFull';
 export { default as BatterySaver } from './BatterySaver';
 export { default as BatteryStd } from './BatteryStd';
 export { default as BatteryUnknown } from './BatteryUnknown';
+export { default as Bbb } from './Bbb';
 export { default as BeachAccess } from './BeachAccess';
 export { default as Bed } from './Bed';
 export { default as BedroomBaby } from './BedroomBaby';
