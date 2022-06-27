@@ -27,4 +27,5 @@ InsightsContextProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
+export { InsightsContextProvider };
 export default InsightsContext;
