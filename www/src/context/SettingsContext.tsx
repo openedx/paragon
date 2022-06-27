@@ -2,13 +2,11 @@ import React, { createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 // @ts-ignore
 import { Helmet } from 'react-helmet';
-import * as Components from '~paragon-react'; // eslint-disable-line
 import { IntlProvider } from 'react-intl';
 // @ts-ignore
-import { messages } from '~paragon-react';
+import { messages } from '~paragon-react'; // eslint-disable-line
 
 import { THEMES } from '../../theme-config';
-import getParagonComponentsTypes from '../utils/getParagonComponentsTypes';
 
 export interface IDefaultValue {
   settings: {
@@ -39,7 +37,6 @@ const SettingsContextProvider: React.FC = ({ children }) => {
     language: 'en',
   });
   const [showSettings, setShowSettings] = useState(false);
-  const [paragonTypes, setParagonTypes] = useState({});
 
   const handleSettingsChange = (key: string, value: string) => {
     if (key === 'direction') {
@@ -67,13 +64,11 @@ const SettingsContextProvider: React.FC = ({ children }) => {
       global.analytics = {};
       global.analytics.track = () => {};
     }
-    setParagonTypes(getParagonComponentsTypes(Components));
   }, []);
 
   const contextValue = {
     settings,
     showSettings,
-    paragonTypes,
     handleSettingsChange,
     closeSettings: () => toggleSettings(false),
     openSettings: () => toggleSettings(true),

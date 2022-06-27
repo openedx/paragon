@@ -1,13 +1,11 @@
-const MANUALLY_INCLUDED_COMPONENTS = {
-  'Card.Img': 'Component',
-  'Card.Subtitle': 'Component',
-  'Card.Title': 'Component',
-};
-
 const getParagonComponentsTypes = (components) => {
-  const componentsWithTypes = { ...MANUALLY_INCLUDED_COMPONENTS };
+  const componentsWithTypes = {};
   Object.keys(components).forEach(componentName => {
     const component = components[componentName];
+    const isFunctionComponent = typeof component === 'function' && componentName[0] === componentName[0].toUpperCase();
+    // Case for React.forwardRef() returns an object
+    const isObjectComponent = component.constructor.name === 'Object' && !!component.render;
+    const isContext = !!component.Consumer && !!component.Provider;
     let componentType;
     switch (true) {
       case typeof component === 'string' || typeof component === 'number':
@@ -16,9 +14,7 @@ const getParagonComponentsTypes = (components) => {
       case component.name?.startsWith('use'):
         componentType = 'Hook';
         break;
-      case (typeof component === 'function' && componentName[0] === componentName[0].toUpperCase())
-            || (component.constructor.name === 'Object' && !!component.render)
-            || (!!component.Consumer && !!component.Provider):
+      case isFunctionComponent || isObjectComponent || isContext:
         componentType = 'Component';
         break;
       case component.constructor.name === 'Object':
@@ -36,11 +32,13 @@ const getParagonComponentsTypes = (components) => {
     if (componentType === 'Component') {
       Object.keys(component).forEach(subcomponentName => {
         const subcomponent = component[subcomponentName];
+        const isFunctionSubcomponent = typeof subcomponent === 'function'
+          && subcomponentName[0] === subcomponentName[0].toUpperCase();
+        // Case for React.forwardRef() returns an object
+        const isObjectSubcomponent = subcomponent.constructor.name === 'Object' && !!subcomponent.render;
+        const isContextSubcomponent = subcomponentName === 'Consumer' || subcomponentName === 'Provider';
 
-        if (subcomponent && ((typeof subcomponent === 'function'
-        && subcomponentName[0] === subcomponentName[0].toUpperCase())
-        || (subcomponent.constructor.name === 'Object' && !!subcomponent.render)
-        || (subcomponentName === 'Consumer' || subcomponentName === 'Provider'))) {
+        if (subcomponent && (isFunctionSubcomponent || isObjectSubcomponent || isContextSubcomponent)) {
           componentsWithTypes[`${componentName}.${subcomponentName}`] = componentType;
         }
       });

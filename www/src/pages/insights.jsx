@@ -19,20 +19,22 @@ import ComponentUsageExamples from '../components/insights/ComponentUsageExample
 import getGithubProjectUrl from '../utils/getGithubProjectUrl';
 import dependentProjectsAnalysis from '../../../dependent-usage.json';
 import { INSIGHTS_TABS, INSIGHTS_PAGES } from '../config';
-import SettingsContext from '../context/SettingsContext';
+import InsightsContext from '../context/InsightsContext';
 
 const {
   lastModified: analysisLastUpdated,
   projectUsages: dependentProjectsUsages,
 } = dependentProjectsAnalysis;
 
-const dependentProjects = dependentProjectsUsages.map(dependentUsage => ({
-  ...dependentUsage,
-  repositoryUrl: getGithubProjectUrl(dependentUsage.repository),
-  count: Object.values(dependentUsage.usages).reduce((accumulator, usage) => accumulator + usage.length, 0),
-}));
+const dependentProjects = [];
 
 const componentsUsage = dependentProjectsUsages.reduce((accumulator, project) => {
+  dependentProjects.push({
+    ...project,
+    repositoryUrl: getGithubProjectUrl(project.repository),
+    count: Object.values(project.usages).reduce((acc, usage) => acc + usage.length, 0),
+  });
+
   Object.keys(project.usages).forEach(componentName => {
     if (!accumulator[componentName]) {
       accumulator[componentName] = [];
@@ -48,13 +50,14 @@ const componentsUsage = dependentProjectsUsages.reduce((accumulator, project) =>
   });
   return accumulator;
 }, {});
+const componentsInUsage = Object.keys(componentsUsage);
 
 const round = (n) => Math.round(n * 10) / 10;
 
 const getEmptyMessage = (text) => `Currently there are no ${text} usage yet`;
 
 const SummaryUsage = () => {
-  const { paragonTypes } = useContext(SettingsContext);
+  const { paragonTypes } = useContext(InsightsContext);
   const isMedium = useMediaQuery({ minWidth: breakpoints.large.minWidth });
 
   const summaryComponentsUsage = Object.entries(componentsUsage).map(([componentName, usages]) => {
@@ -67,11 +70,11 @@ const SummaryUsage = () => {
     };
   });
 
-  const typeCount = dependentProjectsUsages.reduce((accumulator, project) => {
-    Object.keys(project.usages).forEach(componentName => {
-      const type = paragonTypes[componentName];
+  const typeCount = Object.keys(paragonTypes).reduce((accumulator, componentName) => {
+    const type = paragonTypes[componentName];
+    if (componentsInUsage.includes(componentName)) {
       accumulator[type] = (accumulator[type] || 0) + 1;
-    });
+    }
     return accumulator;
   }, {});
 
@@ -119,7 +122,11 @@ const SummaryUsage = () => {
             Header: 'Component Name',
             accessor: 'name',
           },
-          { Header: 'Instance Count', accessor: 'count' },
+          {
+            Header: 'Instance Count',
+            accessor: 'count',
+            disableFilters: true,
+          },
           {
             Header: 'Type',
             accessor: 'type',
@@ -177,7 +184,7 @@ const ComponentUsage = ({ name, componentUsageInProjects }) => (
     <DataTable
       isExpandable
       isSortable
-      itemCount={componentUsageInProjects.length} // eslint-disable-line
+        itemCount={componentUsageInProjects.length} // eslint-disable-line
       data={componentUsageInProjects}
       renderRowSubComponent={({ row }) => <ComponentUsageExamples row={row} />}
       columns={[
@@ -240,7 +247,7 @@ const UtilsUsage = ({ data }) => (
 );
 
 export default function InsightsPage({ pageContext: { tab } }) {
-  const { paragonTypes } = useContext(SettingsContext);
+  const { paragonTypes } = useContext(InsightsContext);
   const { components, hooks, utils } = Object.keys(componentsUsage).reduce((acc, usage) => {
     if (paragonTypes[usage] === 'Component') {
       acc.components.push(usage);
@@ -308,7 +315,12 @@ ComponentUsage.propTypes = {
     version: PropTypes.string,
     repositoryUrl: PropTypes.string,
     componentUsageCount: PropTypes.number,
-    usages: PropTypes.arrayOf(PropTypes.shape({})),
+    usages: PropTypes.arrayOf(PropTypes.shape({
+      column: PropTypes.number,
+      filePath: PropTypes.string,
+      line: PropTypes.number,
+      version: PropTypes.string,
+    })),
   })).isRequired,
 };
 
