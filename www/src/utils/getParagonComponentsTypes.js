@@ -35,10 +35,10 @@ const getParagonComponentsTypes = (components) => {
         const isFunctionSubcomponent = typeof subcomponent === 'function'
           && subcomponentName[0] === subcomponentName[0].toUpperCase();
         // Case for React.forwardRef() returns an object
-        const isObjectSubcomponent = subcomponent.constructor.name === 'Object' && !!subcomponent.render;
+        const isObjectSubcomponent = subcomponent?.constructor.name === 'Object' && subcomponent?.render;
         const isContextSubcomponent = subcomponentName === 'Consumer' || subcomponentName === 'Provider';
 
-        if (subcomponent && (isFunctionSubcomponent || isObjectSubcomponent || isContextSubcomponent)) {
+        if (isFunctionSubcomponent || isObjectSubcomponent || isContextSubcomponent) {
           componentsWithTypes[`${componentName}.${subcomponentName}`] = componentType;
         }
       });
