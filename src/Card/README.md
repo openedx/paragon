@@ -219,6 +219,7 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
 ```jsx live
 () => {
   const footerLink = <a href='#link'>Footer text as a link</a>;
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
 
   return (
     <>
@@ -418,43 +419,54 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
 ### Vertical variant
 
 ```jsx live
-<Card isLoading style={{ width: '18rem' }}>
-  <Card.ImageCap 
-    src="https://source.unsplash.com/360x200/?nature,flower"
-    srcAlt="Card image"
-  />
-  <Card.Header title="Card Title" />
-  <Card.Section>
-    This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
-  </Card.Section>
-  <Card.Footer>
-    <Button>Action 1</Button>
-  </Card.Footer>
-</Card>
+() => {
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+
+  return (
+    <Card isLoading style={{ width: isExtraSmall ? "100%" : "18rem" }}>
+      <Card.ImageCap 
+        src="https://source.unsplash.com/360x200/?nature,flower"
+        srcAlt="Card image"
+      />
+      <Card.Header title="Card Title" />
+      <Card.Section>
+        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+      </Card.Section>
+      <Card.Footer>
+        <Button>Action 1</Button>
+      </Card.Footer>
+    </Card>
+)}
 ```
 
 ### Horizontal variant
 
 ```jsx live
-<Card isLoading orientation="horizontal">
-  <Card.ImageCap
-    src="https://source.unsplash.com/360x200/?nature,flower"
-    srcAlt="Card image"
-    logoSrc="https://via.placeholder.com/150"
-    logoAlt="Card logo"
-  />
-  <Card.Body>
-    <Card.Header title="Title" />
-    <Card.Section title="Section title">
-      This is a special case where we want to have Footer with vertical 
-      orientation in the Card with horizontal orientation.
-    </Card.Section>
-    <Card.Footer orientation="vertical" textElement="Some footer text">
-      <Button>Action 1</Button>
-      <Button>Action 2</Button>
-    </Card.Footer>
-  </Card.Body>
-</Card>
+() => {
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+
+  return (
+    <Card isLoading orientation={isExtraSmall ? "vertical" : "horizontal"}>
+      <Card.ImageCap
+        isLoadingHeight={isExtraSmall ? 140 : 268}
+        src="https://source.unsplash.com/360x200/?nature,flower"
+        srcAlt="Card image"
+        logoSrc="https://via.placeholder.com/150"
+        logoAlt="Card logo"
+      />
+      <Card.Body>
+        <Card.Header title="Title" />
+        <Card.Section title="Section title">
+          This is a special case where we want to have Footer with vertical 
+          orientation in the Card with horizontal orientation.
+        </Card.Section>
+        <Card.Footer orientation="vertical" textElement="Some footer text">
+          <Button>Action 1</Button>
+          <Button>Action 2</Button>
+        </Card.Footer>
+      </Card.Body>
+    </Card>
+)}
 ```
 
 ### Without image
