@@ -4,11 +4,15 @@ import classNames from 'classnames';
 import Skeleton from 'react-loading-skeleton';
 import CardContext from './CardContext';
 
+const IS_LOADING_HEIGHT_VALUE = 18;
+
 const CardFooter = React.forwardRef(({
   children,
   className,
   isStacked,
   textElement,
+  isLoadingHeight,
+  isLoadingWidth,
   orientation,
 }, ref) => {
   const { orientation: cardOrientation, isLoading } = useContext(CardContext);
@@ -19,7 +23,11 @@ const CardFooter = React.forwardRef(({
   if (isLoading) {
     return (
       <div className={classNames(className, wrapperClassName)}>
-        <Skeleton containerClassName="pgn__card-footer-loader" />
+        <Skeleton
+          containerClassName="pgn__card-footer-loader"
+          height={isLoadingHeight}
+          width={isLoadingWidth}
+        />
       </div>
     );
   }
@@ -43,6 +51,10 @@ CardFooter.propTypes = {
   isStacked: PropTypes.bool,
   /** Specifies which orientation to use. This prop will override context value if provided. */
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
+  /** Specifies height skeleton line. */
+  isLoadingHeight: PropTypes.number,
+  /** Specifies width skeleton line. */
+  isLoadingWidth: PropTypes.number,
 };
 
 CardFooter.defaultProps = {
@@ -50,6 +62,8 @@ CardFooter.defaultProps = {
   textElement: undefined,
   isStacked: false,
   orientation: undefined,
+  isLoadingHeight: IS_LOADING_HEIGHT_VALUE,
+  isLoadingWidth: undefined,
 };
 
 export default CardFooter;

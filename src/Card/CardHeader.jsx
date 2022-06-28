@@ -4,12 +4,16 @@ import classNames from 'classnames';
 import Skeleton from 'react-loading-skeleton';
 import CardContext from './CardContext';
 
+const IS_LOADING_HEIGHT_VALUE = 20;
+
 const CardHeader = React.forwardRef(({
   actions,
   className,
   size,
   subtitle,
   title,
+  isLoadingHeight,
+  isLoadingWidth,
 }, ref) => {
   const { isLoading } = useContext(CardContext);
   const cloneActions = useCallback(
@@ -31,7 +35,11 @@ const CardHeader = React.forwardRef(({
   if (isLoading) {
     return (
       <div className={classNames('pgn__card-header', className)}>
-        <Skeleton containerClassName="pgn__card-header-loader" height={20} />
+        <Skeleton
+          containerClassName="pgn__card-header-loader"
+          height={isLoadingHeight}
+          width={isLoadingWidth}
+        />
       </div>
     );
   }
@@ -64,6 +72,10 @@ CardHeader.propTypes = {
   size: PropTypes.oneOf(['sm', 'md']),
   /** The subtitle of the CardHeader component */
   subtitle: PropTypes.node,
+  /** Specifies height skeleton line. */
+  isLoadingHeight: PropTypes.number,
+  /** Specifies width skeleton line. */
+  isLoadingWidth: PropTypes.number,
 };
 
 CardHeader.defaultProps = {
@@ -72,6 +84,8 @@ CardHeader.defaultProps = {
   size: 'md',
   title: null,
   subtitle: null,
+  isLoadingHeight: IS_LOADING_HEIGHT_VALUE,
+  isLoadingWidth: null,
 };
 
 export default CardHeader;
