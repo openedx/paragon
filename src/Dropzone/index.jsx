@@ -11,7 +11,6 @@ import UploadProgress from './UploadProgress';
 import DefaultContent from './DefaultContent';
 import messages from './messages';
 import { getTypesString, isMultipleTypes, formatBytes } from './utils';
-import { nonNegativeInteger } from '../utils/propTypes';
 
 const Dropzone = ({
   className, accept, minSize, maxSize, validator,
@@ -27,7 +26,8 @@ const Dropzone = ({
 
   const {
     uploadError: uploadErrorMsg,
-    invalidSize: invalidSizeMsg,
+    invalidSizeLess: invalidSizeLessMsg,
+    invalidSizeMore: invalidSizeMoreMsg,
     invalidType: invalidTypeMsg,
     multipleDragged: multipleDraggedMsg,
   } = errorMessages;
@@ -53,16 +53,16 @@ const Dropzone = ({
       setErrors(files[0].errors.map(error => {
         switch (error.code) {
           case ErrorCode.FileTooLarge:
-            return invalidSizeMsg || intl.formatMessage(messages.invalidSizeMore, { size: formatBytes(maxSize) });
+            return invalidSizeMoreMsg || intl.formatMessage(messages.invalidSizeMore, { size: formatBytes(maxSize) });
           case ErrorCode.FileTooSmall:
-            return invalidSizeMsg || intl.formatMessage(messages.invalidSizeLess, { size: formatBytes(minSize) });
+            return invalidSizeLessMsg || intl.formatMessage(messages.invalidSizeLess, { size: formatBytes(minSize) });
           case ErrorCode.FileInvalidType:
             return invalidTypeMsg || intl.formatMessage(
               messages.invalidType,
               { count: isMultipleTypes(accept) ? 2 : 1, typeString: getTypesString(accept) },
             );
           default:
-            return error.message;
+            return intl.formatMessage(messages.unexpectedValidationError);
         }
       }));
     } else {
@@ -79,6 +79,7 @@ const Dropzone = ({
   const handleUploadError = (error) => {
     // check if request has been canceled before treating the exception as an upload error
     if (error.code !== 'ERR_CANCELED') {
+      setProgress(0);
       setErrors([uploadErrorMsg || intl.formatMessage(messages.uploadError)]);
     }
   };
@@ -100,10 +101,6 @@ const Dropzone = ({
   };
 
   const onDropAccepted = async (files) => {
-    if (isMultipleDragged) {
-      return;
-    }
-
     const file = files[0];
     if (validator) {
       const customValidationError = await validator(file);
@@ -204,7 +201,8 @@ Dropzone.defaultProps = {
   onUploadCancel: () => {},
   errorMessages: {
     invalidType: undefined,
-    invalidSize: undefined,
+    invalidSizeLess: undefined,
+    invalidSizeMore: undefined,
     multipleDragged: undefined,
     uploadError: undefined,
   },
@@ -224,9 +222,9 @@ Dropzone.propTypes = {
    */
   accept: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)),
   /** Maximum file size (in bytes). */
-  maxSize: nonNegativeInteger,
+  maxSize: PropTypes.number,
   /** Minimum file size (in bytes). */
-  minSize: nonNegativeInteger,
+  minSize: PropTypes.number,
   /**
    * A callback fired each time an upload progress event happens,
    * receives (percentageUploaded, progressEvent) as arguments.
@@ -247,16 +245,19 @@ Dropzone.propTypes = {
   onProcessUpload: PropTypes.func.isRequired,
   /**
    * An object containing error messages, following are supported:
-   * 1) invalidType - A message to display when file of invalid type is dragged over `Dropzone`.
-   * Defaults to `react-dropzone`'s message.
-   * 2) invalidSize - A message to display when file of invalid size is dragged over `Dropzone`.
-   * Defaults to `react-dropzone`'s message.
-   * 3) multipleDragged - A message to display when multiple files are dragged over `Dropzone`.
-   * 4) uploadError - A message to display in case upload results in an error
+   * 1) invalidType - A message to display when file of invalid type is dropped into `Dropzone`.
+   * Defaults to 'The file type must be {filType} file / one of {fileTypes} files.'.
+   * 2) invalidSizeLess - A message to display when file of size less than minSize value is dropped into `Dropzone`.
+   * Defaults to 'File must be larger than {minSize}.'.
+   * 3) invalidSizeMore - A message to display when file of size greater than maxSize value is dropped into `Dropzone`.
+   * Defaults to 'File must be less than {maxSize}.'.
+   * 4) multipleDragged - A message to display when multiple files are dragged over `Dropzone`.
+   * 5) uploadError - A message to display in case upload results in an error
    */
   errorMessages: PropTypes.shape({
     invalidType: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-    invalidSize: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+    invalidSizeLess: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+    invalidSizeMore: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     multipleDragged: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     uploadError: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   }),

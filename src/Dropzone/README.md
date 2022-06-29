@@ -172,7 +172,7 @@ Accepts only .png files with size between 1MB and 20MB, renders custom validatio
       onUploadProgress={(percent) => console.log(percent)}
       onUploadCancel={() => console.log('UPLOAD CANCEL')}
       errorMessages={{
-        invalidType: 'Ivalid file type, only images allowed.',
+        invalidType: 'Invalid file type, only images allowed.',
         invalidSize: 'The file size must be between 1MB and 20MB.',
         multipleDragged: 'Cannot upload more than one file.',
       }}
@@ -193,7 +193,7 @@ Use `inputComponent` prop to override default view of `Dropzone`.
 
 ```jsx live
 () => {
-  const MyInputComponent = <p>Hey! You can render here anythinng you want ;)</p>;
+  const MyInputComponent = <p>Hey! You can render here anything you want ;)</p>;
 
   async function handleProcessUpload({
     fileData, requestConfig, handleError
