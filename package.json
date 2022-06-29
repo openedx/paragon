@@ -41,7 +41,7 @@
     "generate-component-lint": "cd component-generator && npm run lint",
     "generate-changelog": "node generate-changelog.js",
     "i18n_compile": "formatjs compile-folder --format transifex ./src/i18n/messages ./src/i18n/messages",
-    "i18n_extract": "formatjs extract 'src/**/*.jsx' --out-file ./src/i18n/transifex_input.json --format transifex"
+    "i18n_extract": "formatjs extract 'src/**/*.{jsx,js}' --out-file ./src/i18n/transifex_input.json --format transifex"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",

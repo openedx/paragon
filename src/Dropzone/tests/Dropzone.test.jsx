@@ -1,13 +1,21 @@
 import React from 'react';
 import axios from 'axios';
+import { IntlProvider } from 'react-intl';
 import renderer from 'react-test-renderer';
-import Dropzone from '../index';
-import { render, act, fireEvent, screen } from '@testing-library/react';
+import { render, act, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-const defaultAxiosConfig = {
-  uploadUrl: 'https://httpbin.org/post',
-  client: axios.create({}),
+import Dropzone from '../index';
+
+const handleProcessUpload = async ({
+  fileData, requestConfig, handleError,
+}) => {
+  const uploadUrl = 'https://httpbin.org/post';
+  try {
+    await axios.post(uploadUrl, fileData, requestConfig);
+  } catch (error) {
+    handleError(error);
+  }
 };
 
 function createFile(name, size, type) {
@@ -38,14 +46,21 @@ function createDtWithFiles(files = []) {
 const imageFile = createFile('image.pgn', 111, 'image/png');
 const pdfFile = createFile('something.pdf', 111, 'application/pdf');
 
+// eslint-disable-next-line react/prop-types
+const DropzoneWrapper = ({ children, ...props }) => (
+  <IntlProvider locale="en" messages={{}}>
+    <Dropzone onProcessUpload={handleProcessUpload} {...props} />
+  </IntlProvider>
+);
+
 describe('<Dropzone />', () => {
   it('successfully renders', () => {
-    const tree = renderer.create(<Dropzone axiosConfig={defaultAxiosConfig} />).toJSON();
+    const tree = renderer.create(<DropzoneWrapper />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('renders warning if multiple files are dragged', async () => {
-    const { findByTestId, getByText } = render(<Dropzone axiosConfig={defaultAxiosConfig} />);
+    const { findByTestId, getByText } = render(<DropzoneWrapper />);
     const dropzoneContainer = await findByTestId('dropzone-container');
     const dt = createDtWithFiles([imageFile, pdfFile]);
     await act(async () => {

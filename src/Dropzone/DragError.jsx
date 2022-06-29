@@ -8,7 +8,7 @@ const DragError = ({ message }) => (
 );
 
 DragError.propTypes = {
-  message: PropTypes.string.isRequired,
+  message: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
 };
 
 export default DragError;

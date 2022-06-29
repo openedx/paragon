@@ -1,12 +1,13 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { IntlProvider } from 'react-intl';
 import GenericError from '../GenericError';
 import { Alert } from '../..';
 
 describe('<Dropzone.GenericError />', () => {
   it('renders Alert component with messages', () => {
     const messages = ['First error message', 'Second error message'];
-    const wrapper = mount(<GenericError errorMsgs={messages} />);
+    const wrapper = mount(<IntlProvider locale="en" messages={{}}><GenericError errorMsgs={messages} /></IntlProvider>);
     const alert = wrapper.find(Alert);
     expect(alert.exists()).toEqual(true);
     expect(alert.hasClass('pgn__dropzone-generic-alert')).toEqual(true);

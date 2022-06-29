@@ -68,7 +68,6 @@ function CodeBlock({
             FormattedMessage,
             formatMessage: intl.formatMessage,
             MenuIcon: ParagonIcons.Menu,
-            Image: children.includes('Dropzone') && typeof window !== 'undefined' ? window.Image : ParagonReact.Image,
             axios,
           }}
           theme={theme}

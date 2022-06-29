@@ -10,10 +10,7 @@ const GenericError = ({ errorMsgs }) => (
     className="pgn__dropzone-generic-alert"
   >
     {errorMsgs.map(msg => (
-      <React.Fragment key={msg}>
-        <span>{msg}</span>
-        <br />
-      </React.Fragment>
+      <span key={msg}>{msg}</span>
     ))}
   </Alert>
 );

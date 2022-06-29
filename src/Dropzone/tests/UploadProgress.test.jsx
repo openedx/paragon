@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { IntlProvider } from 'react-intl';
 import UploadProgress from '../UploadProgress';
 import { Spinner, ProgressBar, Button } from '../..';
 
@@ -11,15 +12,25 @@ const defaultProps = {
   onCancel,
 };
 
+// eslint-disable-next-line react/prop-types
+const UploadProgressWrapper = ({ children, ...props }) => (
+  <IntlProvider locale="en" messages={{}}>
+    <UploadProgress
+      {...defaultProps}
+      {...props}
+    />
+  </IntlProvider>
+);
+
 describe('<Dropzone.UploadProgress />', () => {
   it('renders spinner if receives "spinner" as a variant prop', () => {
-    const wrapper = mount(<UploadProgress {...defaultProps} variant="spinner" />);
+    const wrapper = mount(<UploadProgressWrapper variant="spinner" />);
     const spinner = wrapper.find(Spinner);
     expect(spinner.exists()).toEqual(true);
-    expect(spinner.props().screenReaderText).toEqual(`Uploading ${defaultProps.name}`);
+    expect(spinner.props().screenReaderText).toEqual(`Uploading ${defaultProps.name}, ${defaultProps.percent}% done.`);
   });
   it('renders progress bar if receives "bar" as a variant prop', () => {
-    const wrapper = mount(<UploadProgress {...defaultProps} variant="bar" />);
+    const wrapper = mount(<UploadProgressWrapper variant="bar" />);
     const bar = wrapper.find(ProgressBar);
     expect(bar.exists()).toEqual(true);
     expect(bar.props().now).toEqual(defaultProps.percent);
@@ -30,5 +41,3 @@ describe('<Dropzone.UploadProgress />', () => {
     expect(onCancel).toHaveBeenCalledTimes(1);
   });
 });
-
-// 36-41,46-47,52-64,69-71,75-89,95-122,126-128,151,155,164

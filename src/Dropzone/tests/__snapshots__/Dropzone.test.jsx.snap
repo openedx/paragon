@@ -1,64 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Dropzone /> successfully renders 1`] = `
-<section>
-  <div
-    className="pgn__dropzone"
-    onBlur={[Function]}
+<div
+  className="pgn__dropzone"
+  data-testid="dropzone-container"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onDragEnter={[Function]}
+  onDragLeave={[Function]}
+  onDragOver={[Function]}
+  onDrop={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  role="presentation"
+  tabIndex={0}
+>
+  <input
+    multiple={false}
+    onChange={[Function]}
     onClick={[Function]}
-    onDragEnter={[Function]}
-    onDragLeave={[Function]}
-    onDragOver={[Function]}
-    onDrop={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    role="presentation"
-    tabIndex={0}
-  >
-    <input
-      multiple={false}
-      onChange={[Function]}
-      onClick={[Function]}
-      style={
-        Object {
-          "display": "none",
-        }
+    style={
+      Object {
+        "display": "none",
       }
-      tabIndex={-1}
-      type="file"
-    />
+    }
+    tabIndex={-1}
+    type="file"
+  />
+  <div
+    className="d-flex flex-column justify-content-around align-items-center w-100"
+  >
     <div
-      className="d-flex flex-column justify-content-around align-items-center w-100"
+      className="pgn__dropzone-upload-icon-wrapper"
     >
-      <div>
-        <span
-          className="pgn__icon"
-          style={
-            Object {
-              "height": "48px",
-              "width": "48px",
-            }
-          }
+      <span
+        className="pgn__icon pgn__dropzone-upload-icon"
+      >
+        <svg
+          aria-hidden={true}
+          focusable={false}
+          height={24}
+          role="img"
+          viewBox="0 0 24 24"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
-            aria-hidden={true}
-            focusable={false}
-            height={24}
-            role="img"
-            viewBox="0 0 24 24"
-            width={24}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M5 10h4v6h6v-6h4l-7-7-7 7zm0 8v2h14v-2H5z"
-            />
-          </svg>
-        </span>
-      </div>
-      <p>
-        Drag and drop your file here or click to upload.
-      </p>
+          <path
+            d="M5 10h4v6h6v-6h4l-7-7-7 7zm0 8v2h14v-2H5z"
+          />
+        </svg>
+      </span>
     </div>
+    <p>
+      Drag and drop your file here or click to upload.
+    </p>
   </div>
-</section>
+</div>
 `;

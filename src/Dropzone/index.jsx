@@ -1,30 +1,30 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useDropzone, ErrorCode } from 'react-dropzone';
 import { fromEvent } from 'file-selector';
+import { useIntl } from 'react-intl';
 
 import DragError from './DragError';
 import GenericError from './GenericError';
 import UploadProgress from './UploadProgress';
 import DefaultContent from './DefaultContent';
+import messages from './messages';
+import { getTypesString, isMultipleTypes, formatBytes } from './utils';
+import { nonNegativeInteger } from '../utils/propTypes';
 
 const Dropzone = ({
-  className, accept, minSize, maxSize, validator, progressVariant,
-  uploadCallbacks, errorMessages, axiosConfig, inputComponent,
+  className, accept, minSize, maxSize, validator,
+  errorMessages, progressVariant, inputComponent, onProcessUpload,
+  onUploadProgress, onUploadCancel,
 }) => {
   const [isMultipleDragged, setIsMultipleDragged] = useState(false);
   const [errors, setErrors] = useState([]);
   const [progress, setProgress] = useState(0);
   const [fileName, setFileName] = useState(undefined);
   const [controller, setController] = useState(undefined);
+  const intl = useIntl();
 
-  const {
-    onUploadProgress = () => {},
-    onUploadSuccess = () => {},
-    onUploadCancel = () => {},
-    onUploadError = () => {},
-  } = uploadCallbacks;
   const {
     uploadError: uploadErrorMsg,
     invalidSize: invalidSizeMsg,
@@ -32,7 +32,7 @@ const Dropzone = ({
     multipleDragged: multipleDraggedMsg,
   } = errorMessages;
 
-  const onDragEnter = useCallback(async (e) => {
+  const onDragEnter = async (e) => {
     if (errors) {
       setErrors([]);
     }
@@ -40,22 +40,27 @@ const Dropzone = ({
     if (files && files.length > 1) {
       setIsMultipleDragged(true);
     }
-  }, [errors]);
+  };
 
-  const onDragLeave = useCallback(() => {
+  const onDragLeave = () => {
     if (isMultipleDragged) {
       setIsMultipleDragged(false);
     }
-  }, [isMultipleDragged]);
+  };
 
   const onDropRejected = (files) => {
     if (!isMultipleDragged) {
       setErrors(files[0].errors.map(error => {
         switch (error.code) {
           case ErrorCode.FileTooLarge:
-            return invalidSizeMsg || error.message;
+            return invalidSizeMsg || intl.formatMessage(messages.invalidSizeMore, { size: formatBytes(maxSize) });
+          case ErrorCode.FileTooSmall:
+            return invalidSizeMsg || intl.formatMessage(messages.invalidSizeLess, { size: formatBytes(minSize) });
           case ErrorCode.FileInvalidType:
-            return invalidTypeMsg || error.message;
+            return invalidTypeMsg || intl.formatMessage(
+              messages.invalidType,
+              { count: isMultipleTypes(accept) ? 2 : 1, typeString: getTypesString(accept) },
+            );
           default:
             return error.message;
         }
@@ -71,24 +76,27 @@ const Dropzone = ({
     onUploadProgress(percentValue, progressEvent);
   };
 
-  const processUpload = (client, uploadUrl, data) => {
+  const handleUploadError = (error) => {
+    // check if request has been canceled before treating the exception as an upload error
+    if (error.code !== 'ERR_CANCELED') {
+      setErrors([uploadErrorMsg || intl.formatMessage(messages.uploadError)]);
+    }
+  };
+
+  const processUpload = (fileData) => {
     const newController = new AbortController();
     setController(newController);
 
-    const config = {
+    const requestConfig = {
       onUploadProgress: handleProgressUpload,
       signal: newController.signal,
     };
 
-    client.post(uploadUrl, data, config)
-      .then(response => onUploadSuccess(response))
-      .catch(error => {
-        // check if request has been canceled before treating the exception as an upload error
-        if (error.code !== 'ERR_CANCELED') {
-          setErrors([uploadErrorMsg]);
-          onUploadError(error);
-        }
-      });
+    onProcessUpload({
+      fileData,
+      requestConfig,
+      handleError: handleUploadError,
+    });
   };
 
   const onDropAccepted = async (files) => {
@@ -109,17 +117,11 @@ const Dropzone = ({
       setErrors([]);
     }
 
-    const { uploadUrl, client } = axiosConfig || {};
-
-    if (!client || !uploadUrl) {
-      return;
-    }
-
     const formData = new FormData();
     formData.append('file', file);
     setFileName(file.name);
 
-    processUpload(client, uploadUrl, formData);
+    processUpload(formData);
   };
 
   const handleUploadCancel = () => {
@@ -148,7 +150,7 @@ const Dropzone = ({
 
   const renderContent = () => {
     if (isMultipleDragged) {
-      return <DragError message={multipleDraggedMsg} />;
+      return <DragError message={multipleDraggedMsg || intl.formatMessage(messages.multipleDragged)} />;
     }
 
     if (errors.length > 0) {
@@ -175,23 +177,21 @@ const Dropzone = ({
   };
 
   return (
-    <section>
-      <div
-        data-testid="dropzone-container"
-        {...getRootProps({
-          className: classNames('pgn__dropzone', {
-            className,
-            'pgn__dropzone-validation-error': isMultipleDragged || errors.length > 0 || isDragReject,
-            'pgn__dropzone-active': isDragActive && !isDragReject,
-          }),
-        })}
-      >
-        <input {...getInputProps()} />
-        <div className="d-flex flex-column justify-content-around align-items-center w-100">
-          {renderContent()}
-        </div>
+    <div
+      data-testid="dropzone-container"
+      {...getRootProps({
+        className: classNames('pgn__dropzone', {
+          className,
+          'pgn__dropzone-validation-error': isMultipleDragged || errors.length > 0 || isDragReject,
+          'pgn__dropzone-active': isDragActive && !isDragReject,
+        }),
+      })}
+    >
+      <input {...getInputProps()} />
+      <div className="d-flex flex-column justify-content-around align-items-center w-100">
+        {renderContent()}
       </div>
-    </section>
+    </div>
   );
 };
 
@@ -200,17 +200,13 @@ Dropzone.defaultProps = {
   accept: undefined,
   maxSize: Infinity,
   minSize: 0,
-  uploadCallbacks: {
-    onUploadProgress: () => {},
-    onUploadSuccess: () => {},
-    onUploadCancel: () => {},
-    onUploadError: () => {},
-  },
+  onUploadProgress: () => {},
+  onUploadCancel: () => {},
   errorMessages: {
     invalidType: undefined,
     invalidSize: undefined,
-    multipleDragged: 'Only one upload permitted.',
-    uploadError: 'A problem occured while uploading your file. Please try again.',
+    multipleDragged: undefined,
+    uploadError: undefined,
   },
   progressVariant: 'spinner',
   validator: undefined,
@@ -228,23 +224,27 @@ Dropzone.propTypes = {
    */
   accept: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)),
   /** Maximum file size (in bytes). */
-  maxSize: PropTypes.number,
+  maxSize: nonNegativeInteger,
   /** Minimum file size (in bytes). */
-  minSize: PropTypes.number,
+  minSize: nonNegativeInteger,
   /**
-   * An object containing callbacks for upload events, currently four events are supported:
-   * 1) onUploadProgress - A callback fired each time an upload progress event happens,
+   * A callback fired each time an upload progress event happens,
    * receives (percentageUploaded, progressEvent) as arguments.
-   * 2) onUploadSuccess - A callback fired upon successful upload, receives Response object as a single argument.
-   * 3) onUploadCancel - A callback fired upon cancelling an upload, receives no arguments.
-   * 4) onUploadError - A callback fired if upload was not successful, receives Error object as a single argument.
    */
-  uploadCallbacks: PropTypes.shape({
-    onUploadProgress: PropTypes.func,
-    onUploadSuccess: PropTypes.func,
-    onUploadCancel: PropTypes.func,
-    onUploadError: PropTypes.func,
-  }),
+  onUploadProgress: PropTypes.func,
+  /** A callback fired upon successful upload, receives Response object as a single argument. */
+  onUploadCancel: PropTypes.func,
+  /**
+   * A function responsible for uploading the file.
+   * Receives following object as its only argument
+   * {
+   *   @param {object} fileData - Metadata about the uploaded file.
+   *   @param {object} requestConfig - Config to pass to `axios` call.
+   *   @param {function} handleError - Function to communicate to `Dropzone` that file upload resulted in failure,
+   *   expects `Error` object to be passed as its only argument.
+   * }
+   */
+  onProcessUpload: PropTypes.func.isRequired,
   /**
    * An object containing error messages, following are supported:
    * 1) invalidType - A message to display when file of invalid type is dragged over `Dropzone`.
@@ -260,7 +260,7 @@ Dropzone.propTypes = {
     multipleDragged: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     uploadError: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   }),
-  /** Specifies how the upload progress should be displayed, component shows eiter spinner or a progress bar. */
+  /** Specifies how the upload progress should be displayed, component shows either spinner or a progress bar. */
   progressVariant: PropTypes.oneOf(['spinner', 'bar']),
   /**
    * Custom validation function, receives `File` object as its only argument.
@@ -269,15 +269,6 @@ Dropzone.propTypes = {
   validator: PropTypes.func,
   /** A component to display initial state of the `Dropzone`. */
   inputComponent: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
-  /**
-   * Axios config that consists of two items:
-   * 1) uploadUrl - specifies the URL to where the file should be uploaded.
-   * 2) client - axios instance that will be used to send POST request to the uploadUrl with file data.
-   */
-  axiosConfig: PropTypes.shape({
-    uploadUrl: PropTypes.string.isRequired,
-    client: PropTypes.func.isRequired,
-  }).isRequired,
 };
 
 export default Dropzone;
