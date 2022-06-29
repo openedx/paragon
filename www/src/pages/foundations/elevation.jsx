@@ -7,17 +7,13 @@ import {
 // eslint-disable-next-line import/no-unresolved
 } from '~paragon-react';
 // eslint-disable-next-line
-import { Close, WbSunny } from '../../../../icons/index';
+import { Close, WbSunny, DoDisturb } from '../../../../icons/index';
 
 import { Icon, IconButtonWithTooltip } from '../../../../src'; // eslint-disable-line import/no-unresolved
 
 const boxShadowSides = ['down', 'up', 'right', 'left', 'centered'];
 const boxShadowLevels = [1, 2, 3, 4, 5];
 const DEFAULT_BOX_SHADOW = '10px 10px 20px #000';
-// const fruits = ['Банан', 'Апельсин', 'Лимон', 'Яблоко', 'Манго'];
-// const citrus = fruits.slice(2, 3);
-// console.log('citrus', citrus);
-// console.log('fruits', fruits);
 
 const controlsProps = [
   { key: 'x', name: 'Offset X' },
@@ -70,7 +66,9 @@ const BoxShadowNode = () => {
   );
 };
 
-const BoxShadowToolkit = ({ updateBoxShadow, id, removeBoxShadowLayer, disabledBoxShadowLayer }) => {
+const BoxShadowToolkit = ({
+  updateBoxShadow, id, removeBoxShadowLayer, disabledBoxShadowLayer, enableBoxShadowLayer,
+}) => {
   const [boxShadowModel, setBoxShadowModel] = useState({
     x: 0,
     y: 0,
@@ -123,10 +121,20 @@ const BoxShadowToolkit = ({ updateBoxShadow, id, removeBoxShadowLayer, disabledB
           <IconButtonWithTooltip
             tooltipPlacement="top"
             tooltipContent={<div>Remove layer</div>}
-            src={WbSunny}
+            src={DoDisturb}
             iconAs={Icon}
             alt="Close"
             onClick={() => disabledBoxShadowLayer(id)}
+            variant="dark"
+            className="pgn-doc__box-shadow-toolkit--controls-box--disable-btn"
+          />
+          <IconButtonWithTooltip
+            tooltipPlacement="top"
+            tooltipContent={<div>Enable layer</div>}
+            src={WbSunny}
+            iconAs={Icon}
+            alt="Close"
+            onClick={() => enableBoxShadowLayer(id)}
             variant="dark"
             className="pgn-doc__box-shadow-toolkit--controls-box--disable-btn"
           />
@@ -149,6 +157,9 @@ const BoxShadowToolkit = ({ updateBoxShadow, id, removeBoxShadowLayer, disabledB
 BoxShadowToolkit.propTypes = {
   updateBoxShadow: PropTypes.func.isRequired,
   id: PropTypes.number.isRequired,
+  removeBoxShadowLayer: PropTypes.func.isRequired,
+  disabledBoxShadowLayer: PropTypes.func.isRequired,
+  enableBoxShadowLayer: PropTypes.func.isRequired,
 };
 
 const BoxShadowGenerator = () => {
@@ -164,21 +175,22 @@ const BoxShadowGenerator = () => {
   const addNewBoxShadowLayer = () => {
     global.analytics.track('openedx.paragon.elevation.generator.layer.added');
     setBoxShadows([...boxShadows, DEFAULT_BOX_SHADOW]);
-    console.log('addNewBoxShadowLayer', boxShadows.length);
   };
 
-  const removeBoxShadowLayer = (index) => {
+  const removeBoxShadowLayer = (toolkitIndex) => {
     global.analytics.track('openedx.paragon.elevation.shadow-generator.layer.removed');
-    setBoxShadows(boxShadows.splice(index - 1, index));
-    console.log('Removed item', index);
-    console.log('boxShadows.length', boxShadows);
+    const newBoxShadows = boxShadows.filter((shadow, shadowIndex) => shadowIndex !== toolkitIndex);
+    setBoxShadows(newBoxShadows);
   };
 
-  const disabledBoxShadowLayer = (index) => {
+  const disabledBoxShadowLayer = (toolkitIndex) => {
     global.analytics.track('openedx.paragon.elevation.shadow-generator.layer.disabled');
-    setBoxShadows(boxShadows.slice(index - 1, index));
-    console.log('Removed item', index);
-    console.log('boxShadows.length', [...boxShadows]);
+    const newBoxShadows = boxShadows.filter((shadow, shadowIndex) => shadowIndex !== toolkitIndex);
+    setBoxShadows(newBoxShadows);
+  };
+
+  const enableBoxShadowLayer = () => {
+    global.analytics.track('openedx.paragon.elevation.shadow-generator.layer.enabled');
   };
 
   return (
@@ -199,6 +211,7 @@ const BoxShadowGenerator = () => {
               updateBoxShadow={updateBoxShadow}
               removeBoxShadowLayer={removeBoxShadowLayer}
               disabledBoxShadowLayer={disabledBoxShadowLayer}
+              enableBoxShadowLayer={enableBoxShadowLayer}
             />
           ))}
         </div>
