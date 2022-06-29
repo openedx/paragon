@@ -1,5 +1,5 @@
 {
-  "lastModified": 1656425386160,
+  "lastModified": 1656511750879,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -3160,7 +3160,7 @@
           },
           {
             "filePath": "src/components/Sidebar/index.jsx",
-            "line": 107,
+            "line": 108,
             "column": 14,
             "version": "19.25.3"
           },
@@ -6593,8 +6593,8 @@
         ],
         "ProductTour": [
           {
-            "filePath": "src/components/ProductTours/BrowseAndRequestTour.jsx",
-            "line": 77,
+            "filePath": "src/components/ProductTours/ProductTours.jsx",
+            "line": 37,
             "column": 4,
             "version": "19.25.3"
           }
@@ -19623,7 +19623,7 @@
           },
           {
             "filePath": "src/editors/containers/TextEditor/index.jsx",
-            "line": 68,
+            "line": 95,
             "column": 8,
             "version": "19.6.0"
           }
@@ -19753,7 +19753,7 @@
           },
           {
             "filePath": "src/editors/containers/TextEditor/index.jsx",
-            "line": 75,
+            "line": 102,
             "column": 14,
             "version": "19.6.0"
           },
@@ -19966,6 +19966,12 @@
           {
             "filePath": "src/editors/containers/TextEditor/components/ErrorAlerts/ErrorAlert.jsx",
             "line": 41,
+            "column": 4,
+            "version": "19.6.0"
+          },
+          {
+            "filePath": "src/editors/containers/TextEditor/components/RawEditor/index.jsx",
+            "line": 10,
             "column": 4,
             "version": "19.6.0"
           }
@@ -20645,7 +20651,7 @@
       }
     },
     {
-      "version": "19.20.0",
+      "version": "20.2.0",
       "name": "@edx/frontend-platform",
       "repository": {
         "type": "git",
@@ -20658,7 +20664,7 @@
             "filePath": "src/react/ErrorPage.jsx",
             "line": 25,
             "column": 6,
-            "version": "19.20.0"
+            "version": "20.2.0"
           }
         ],
         "Row": [
@@ -20666,7 +20672,7 @@
             "filePath": "src/react/ErrorPage.jsx",
             "line": 26,
             "column": 8,
-            "version": "19.20.0"
+            "version": "20.2.0"
           }
         ],
         "Col": [
@@ -20674,7 +20680,7 @@
             "filePath": "src/react/ErrorPage.jsx",
             "line": 27,
             "column": 10,
-            "version": "19.20.0"
+            "version": "20.2.0"
           }
         ],
         "Button": [
@@ -20682,7 +20688,7 @@
             "filePath": "src/react/ErrorPage.jsx",
             "line": 40,
             "column": 12,
-            "version": "19.20.0"
+            "version": "20.2.0"
           }
         ]
       }
