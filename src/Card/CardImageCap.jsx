@@ -4,16 +4,13 @@ import classNames from 'classnames';
 import Skeleton from 'react-loading-skeleton';
 import CardContext from './CardContext';
 
-const IS_LOADING_HEIGHT_VALUE = 140;
-const CAP_LOGO_SKELETON_HEIGHT_VALUE = 41;
-
 const CardImageCap = React.forwardRef(({
   src,
   srcAlt,
   logoSrc,
   logoAlt,
-  isLoadingHeight,
-  isLoadingWidth,
+  skeletonHeight,
+  skeletonWidth,
   capLogoSkeleton,
   capLogoSkeletonHeight,
   capLogoSkeletonWidth,
@@ -27,8 +24,8 @@ const CardImageCap = React.forwardRef(({
       <div className={classNames(className, wrapperClassName)}>
         <Skeleton
           containerClassName="pgn__card-image-cap-loader"
-          height={isLoadingHeight}
-          width={isLoadingWidth}
+          height={skeletonHeight}
+          width={skeletonWidth}
         />
         {capLogoSkeleton
           && !!logoSrc
@@ -63,13 +60,13 @@ CardImageCap.propTypes = {
   /** Specifies logo image alt text. */
   logoAlt: PropTypes.string,
   /** Specifies height skeleton line. */
-  isLoadingHeight: PropTypes.number,
+  skeletonHeight: PropTypes.number,
   /** Specifies whether the cap should be displayed during loading. */
   capLogoSkeleton: PropTypes.bool,
   /** Specifies height skeleton line cap. */
   capLogoSkeletonHeight: PropTypes.number,
   /** Specifies width skeleton line. */
-  isLoadingWidth: PropTypes.number,
+  skeletonWidth: PropTypes.number,
   capLogoSkeletonWidth: PropTypes.number,
 };
 
@@ -79,10 +76,10 @@ CardImageCap.defaultProps = {
   className: undefined,
   srcAlt: undefined,
   logoAlt: undefined,
-  isLoadingHeight: IS_LOADING_HEIGHT_VALUE,
+  skeletonHeight: undefined,
   capLogoSkeleton: true,
-  capLogoSkeletonHeight: CAP_LOGO_SKELETON_HEIGHT_VALUE,
-  isLoadingWidth: undefined,
+  capLogoSkeletonHeight: undefined,
+  skeletonWidth: undefined,
   capLogoSkeletonWidth: undefined,
 };
 

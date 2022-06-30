@@ -12,8 +12,8 @@ const CardSection = React.forwardRef(({
   title,
   actions,
   muted,
-  isLoadingHeight,
-  isLoadingWidth,
+  skeletonHeight,
+  skeletonWidth,
 }, ref) => {
   const { isLoading } = useContext(CardContext);
 
@@ -22,8 +22,8 @@ const CardSection = React.forwardRef(({
       <div className={classNames('pgn__card-section', className, { 'is-muted': muted })}>
         <Skeleton
           containerClassName="pgn__card-section-loader"
-          height={isLoadingHeight}
-          width={isLoadingWidth}
+          height={skeletonHeight}
+          width={skeletonWidth}
         />
       </div>
     );
@@ -53,9 +53,9 @@ CardSection.propTypes = {
   /** Specifies whether to display `Section` with muted styling. */
   muted: PropTypes.bool,
   /** Specifies height skeleton line. */
-  isLoadingHeight: PropTypes.number,
+  skeletonHeight: PropTypes.number,
   /** Specifies width skeleton line. */
-  isLoadingWidth: PropTypes.number,
+  skeletonWidth: PropTypes.number,
 };
 
 CardSection.defaultProps = {
@@ -63,8 +63,8 @@ CardSection.defaultProps = {
   title: undefined,
   actions: undefined,
   muted: false,
-  isLoadingHeight: IS_LOADING_HEIGHT_VALUE,
-  isLoadingWidth: undefined,
+  skeletonHeight: IS_LOADING_HEIGHT_VALUE,
+  skeletonWidth: undefined,
 };
 
 export default CardSection;
