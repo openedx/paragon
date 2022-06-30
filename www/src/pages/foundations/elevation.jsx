@@ -164,6 +164,7 @@ BoxShadowToolkit.propTypes = {
 
 const BoxShadowGenerator = () => {
   const [boxShadows, setBoxShadows] = useState([DEFAULT_BOX_SHADOW]);
+  const [disabledBoxShadows, setDisabledBoxShadows] = useState([]);
 
   const updateBoxShadow = (shadow, id) => {
     const boxShadow = [...boxShadows];
@@ -185,12 +186,21 @@ const BoxShadowGenerator = () => {
 
   const disabledBoxShadowLayer = (toolkitIndex) => {
     global.analytics.track('openedx.paragon.elevation.shadow-generator.layer.disabled');
-    const newBoxShadows = boxShadows.filter((shadow, shadowIndex) => shadowIndex !== toolkitIndex);
-    setBoxShadows(newBoxShadows);
+    const newBoxShadows = boxShadows.filter((shadow, shadowIndex) => shadowIndex === toolkitIndex);
+    setDisabledBoxShadows([...disabledBoxShadows, ...newBoxShadows]);
+    const newBoxShadows2 = boxShadows.filter((shadow, shadowIndex) => shadowIndex !== toolkitIndex);
+    setBoxShadows(newBoxShadows2);
   };
 
-  const enableBoxShadowLayer = () => {
+  // console.log('disabledBoxShadows', disabledBoxShadows);
+  // console.log('boxShadows', boxShadows);
+
+  const enableBoxShadowLayer = (toolkitIndex) => {
     global.analytics.track('openedx.paragon.elevation.shadow-generator.layer.enabled');
+    const newBoxShadows = disabledBoxShadows.filter((shadow, shadowIndex) => shadowIndex === toolkitIndex);
+    setBoxShadows([...boxShadows, ...newBoxShadows]);
+    const newBoxShadows2 = disabledBoxShadows.filter((shadow, shadowIndex) => shadowIndex !== toolkitIndex);
+    setBoxShadows(newBoxShadows2);
   };
 
   return (
@@ -204,6 +214,17 @@ const BoxShadowGenerator = () => {
       <div className="pgn-doc__box-shadow-generator--toolkit">
         <div className="d-flex overflow-auto mb-2">
           {boxShadows.map((boxShadow, index) => (
+            <BoxShadowToolkit
+              /* eslint-disable-next-line react/no-array-index-key */
+              key={index}
+              id={index}
+              updateBoxShadow={updateBoxShadow}
+              removeBoxShadowLayer={removeBoxShadowLayer}
+              disabledBoxShadowLayer={disabledBoxShadowLayer}
+              enableBoxShadowLayer={enableBoxShadowLayer}
+            />
+          ))}
+          {disabledBoxShadows.map((boxShadow, index) => (
             <BoxShadowToolkit
               /* eslint-disable-next-line react/no-array-index-key */
               key={index}
