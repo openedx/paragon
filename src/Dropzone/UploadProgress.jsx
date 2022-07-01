@@ -27,7 +27,12 @@ const UploadProgress = ({
         />
       </p>
       <div className="d-flex justify-content-between align-items-center w-100">
-        <ProgressBar now={percent} label={`${percent}%`} variant="success" className="flex-grow-1" />
+        <ProgressBar
+          now={percent}
+          label={`${percent}%`}
+          variant="success"
+          className="flex-grow-1"
+        />
         <Button variant="tertiary" className="ml-3" onClick={onCancel}>
           <FormattedMessage
             id="pgn.Dropzone.UploadProgress.cancelLabel"

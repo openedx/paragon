@@ -5,8 +5,8 @@ import { FileUpload } from '../../icons';
 
 const DefaultContent = () => (
   <>
-    <div className="pgn__dropzone-upload-icon-wrapper">
-      <Icon src={FileUpload} className="pgn__dropzone-upload-icon" />
+    <div className="pgn__dropzone__upload-icon-wrapper">
+      <Icon src={FileUpload} className="pgn__dropzone__upload-icon" />
     </div>
     <p>
       <FormattedMessage

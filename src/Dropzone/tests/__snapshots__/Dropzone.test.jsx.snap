@@ -31,10 +31,10 @@ exports[`<Dropzone /> successfully renders 1`] = `
     className="d-flex flex-column justify-content-around align-items-center w-100"
   >
     <div
-      className="pgn__dropzone-upload-icon-wrapper"
+      className="pgn__dropzone__upload-icon-wrapper"
     >
       <span
-        className="pgn__icon pgn__dropzone-upload-icon"
+        className="pgn__icon pgn__dropzone__upload-icon"
       >
         <svg
           aria-hidden={true}

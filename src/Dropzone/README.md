@@ -83,6 +83,11 @@ Display upload progress as a progress bar with the ability to cancel the upload.
 Accepts only .png files with size between 1MB and 20MB. The file sizes are specified in bytes.
 `accept` prop should be an object with the keys set to the [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types) and the values to an array of file extensions.
 
+For example:
+- to allow only PNG images (as in this example) you should pass `{ 'image/*': ['.png'] }` object as `accept` prop;
+- to allow both PNG and JPG images you should pass `{ 'image/*': ['.png', '.jpg'] }` object as `accept` prop;
+- to allow arbitrary images you should pass `{ 'image/*': [] }` object as `accept` prop
+
 ```jsx live
 () => {
   async function handleProcessUpload({
@@ -113,6 +118,7 @@ Accepts only .png files with size between 1MB and 20MB. The file sizes are speci
 ```
 
 ## With file preview
+
 Shows image after successful upload.
 
 ```jsx live

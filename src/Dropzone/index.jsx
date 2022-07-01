@@ -14,8 +14,9 @@ import { getTypesString, isMultipleTypes, formatBytes } from './utils';
 
 const Dropzone = ({
   className, accept, minSize, maxSize, validator,
-  errorMessages, progressVariant, inputComponent, onProcessUpload,
-  onUploadProgress, onUploadCancel,
+  errorMessages, progressVariant, inputComponent,
+  onProcessUpload, onUploadProgress, onUploadCancel,
+  ...props
 }) => {
   const [isMultipleDragged, setIsMultipleDragged] = useState(false);
   const [errors, setErrors] = useState([]);
@@ -183,6 +184,7 @@ const Dropzone = ({
           'pgn__dropzone-active': isDragActive && !isDragReject,
         }),
       })}
+      {...props}
     >
       <input {...getInputProps()} />
       <div className="d-flex flex-column justify-content-around align-items-center w-100">
