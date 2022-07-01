@@ -1,3 +1,10 @@
+# [20.3.0](https://github.com/openedx/paragon/compare/v20.2.0...v20.3.0) (2022-07-01)
+
+
+### Features
+
+* [BD-46] add `Dropzone` component ([#1342](https://github.com/openedx/paragon/issues/1342)) ([facda6b](https://github.com/openedx/paragon/commit/facda6b97e73ce79ecc0db27d83a0d2787da4fc3))
+
 # [20.2.0](https://github.com/openedx/paragon/compare/v20.1.3...v20.2.0) (2022-06-24)
 
 
