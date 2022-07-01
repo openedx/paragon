@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dropzone.DefaultContent /> successfully renders 1`] = `
+Array [
+  <div
+    className="pgn__dropzone__upload-icon-wrapper"
+  >
+    <span
+      className="pgn__icon pgn__dropzone__upload-icon"
+    >
+      <svg
+        aria-hidden={true}
+        focusable={false}
+        height={24}
+        role="img"
+        viewBox="0 0 24 24"
+        width={24}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 10h4v6h6v-6h4l-7-7-7 7zm0 8v2h14v-2H5z"
+        />
+      </svg>
+    </span>
+  </div>,
+  <p>
+    Drag and drop your file here or click to upload.
+  </p>,
+]
+`;
