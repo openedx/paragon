@@ -13,7 +13,7 @@ import { Icon, IconButtonWithTooltip } from '../../../../src'; // eslint-disable
 
 const boxShadowSides = ['down', 'up', 'right', 'left', 'centered'];
 const boxShadowLevels = [1, 2, 3, 4, 5];
-const DEFAULT_BOX_SHADOW = '10px 10px 20px #000';
+const DEFAULT_BOX_SHADOW = '0px 0px 0px #000';
 
 const controlsProps = [
   { key: 'x', name: 'Offset X' },
@@ -67,7 +67,12 @@ const BoxShadowNode = () => {
 };
 
 const BoxShadowToolkit = ({
-  updateBoxShadow, id, removeBoxShadowLayer, disabledBoxShadowLayer, enableBoxShadowLayer,
+  id,
+  updateBoxShadow,
+  removeBoxShadowLayer,
+  disabledBoxShadowLayer,
+  enableBoxShadowLayer,
+  hasDisabled,
 }) => {
   const [boxShadowModel, setBoxShadowModel] = useState({
     x: 0,
@@ -107,6 +112,7 @@ const BoxShadowToolkit = ({
             type={key === 'color' ? 'color' : 'range'}
             defaultValue="0"
             onChange={(e) => updateBoxShadowModel(key, e.target.value)}
+            disabled={!!hasDisabled}
           />
         </Form.Label>
       ))}
@@ -114,30 +120,34 @@ const BoxShadowToolkit = ({
         <Form.Checkbox
           onChange={() => updateBoxShadowModel('inset', !boxShadowModel.inset)}
           floatLabelLeft
+          disabled={!!hasDisabled}
         >
           Inset:
         </Form.Checkbox>
         <div>
-          <IconButtonWithTooltip
-            tooltipPlacement="top"
-            tooltipContent={<div>Remove layer</div>}
-            src={DoDisturb}
-            iconAs={Icon}
-            alt="Close"
-            onClick={() => disabledBoxShadowLayer(id)}
-            variant="dark"
-            className="pgn-doc__box-shadow-toolkit--controls-box--disable-btn"
-          />
-          <IconButtonWithTooltip
-            tooltipPlacement="top"
-            tooltipContent={<div>Enable layer</div>}
-            src={WbSunny}
-            iconAs={Icon}
-            alt="Close"
-            onClick={() => enableBoxShadowLayer(id)}
-            variant="dark"
-            className="pgn-doc__box-shadow-toolkit--controls-box--disable-btn"
-          />
+          {hasDisabled ? (
+            <IconButtonWithTooltip
+              tooltipPlacement="top"
+              tooltipContent={<div>Enable layer</div>}
+              src={WbSunny}
+              iconAs={Icon}
+              alt="Enable layer"
+              onClick={() => enableBoxShadowLayer(id)}
+              variant="success"
+              className="pgn-doc__box-shadow-toolkit--controls-box--disable-btn"
+            />
+          ) : (
+            <IconButtonWithTooltip
+              tooltipPlacement="top"
+              tooltipContent={<div>Disable layer</div>}
+              src={DoDisturb}
+              iconAs={Icon}
+              alt="Disable layer"
+              onClick={() => disabledBoxShadowLayer(id)}
+              variant="secondary"
+              className="pgn-doc__box-shadow-toolkit--controls-box--disable-btn"
+            />
+          )}
           <IconButtonWithTooltip
             tooltipPlacement="top"
             tooltipContent={<div>Remove layer</div>}
@@ -160,6 +170,11 @@ BoxShadowToolkit.propTypes = {
   removeBoxShadowLayer: PropTypes.func.isRequired,
   disabledBoxShadowLayer: PropTypes.func.isRequired,
   enableBoxShadowLayer: PropTypes.func.isRequired,
+  hasDisabled: PropTypes.bool,
+};
+
+BoxShadowToolkit.defaultProps = {
+  hasDisabled: false,
 };
 
 const BoxShadowGenerator = () => {
@@ -192,15 +207,12 @@ const BoxShadowGenerator = () => {
     setBoxShadows(newBoxShadows2);
   };
 
-  // console.log('disabledBoxShadows', disabledBoxShadows);
-  // console.log('boxShadows', boxShadows);
-
   const enableBoxShadowLayer = (toolkitIndex) => {
     global.analytics.track('openedx.paragon.elevation.shadow-generator.layer.enabled');
     const newBoxShadows = disabledBoxShadows.filter((shadow, shadowIndex) => shadowIndex === toolkitIndex);
     setBoxShadows([...boxShadows, ...newBoxShadows]);
     const newBoxShadows2 = disabledBoxShadows.filter((shadow, shadowIndex) => shadowIndex !== toolkitIndex);
-    setBoxShadows(newBoxShadows2);
+    setDisabledBoxShadows(newBoxShadows2);
   };
 
   return (
@@ -233,6 +245,7 @@ const BoxShadowGenerator = () => {
               removeBoxShadowLayer={removeBoxShadowLayer}
               disabledBoxShadowLayer={disabledBoxShadowLayer}
               enableBoxShadowLayer={enableBoxShadowLayer}
+              hasDisabled
             />
           ))}
         </div>
