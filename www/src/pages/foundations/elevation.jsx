@@ -195,24 +195,29 @@ const BoxShadowGenerator = () => {
 
   const removeBoxShadowLayer = (toolkitIndex) => {
     global.analytics.track('openedx.paragon.elevation.shadow-generator.layer.removed');
-    const newBoxShadows = boxShadows.filter((shadow, shadowIndex) => shadowIndex !== toolkitIndex);
-    setBoxShadows(newBoxShadows);
+    const filteredBoxShadows = boxShadows
+      .filter((shadow, shadowIndex) => shadowIndex !== toolkitIndex);
+    setBoxShadows(filteredBoxShadows);
   };
 
   const disabledBoxShadowLayer = (toolkitIndex) => {
     global.analytics.track('openedx.paragon.elevation.shadow-generator.layer.disabled');
-    const newBoxShadows = boxShadows.filter((shadow, shadowIndex) => shadowIndex === toolkitIndex);
-    setDisabledBoxShadows([...disabledBoxShadows, ...newBoxShadows]);
-    const newBoxShadows2 = boxShadows.filter((shadow, shadowIndex) => shadowIndex !== toolkitIndex);
-    setBoxShadows(newBoxShadows2);
+    const newDisabledBoxShadow = boxShadows
+      .filter((shadow, shadowIndex) => shadowIndex === toolkitIndex);
+    setDisabledBoxShadows([...disabledBoxShadows, ...newDisabledBoxShadow]);
+    const filteredBoxShadows = boxShadows
+      .filter((shadow, shadowIndex) => shadowIndex !== toolkitIndex);
+    setBoxShadows(filteredBoxShadows);
   };
 
   const enableBoxShadowLayer = (toolkitIndex) => {
     global.analytics.track('openedx.paragon.elevation.shadow-generator.layer.enabled');
-    const newBoxShadows = disabledBoxShadows.filter((shadow, shadowIndex) => shadowIndex === toolkitIndex);
-    setBoxShadows([...boxShadows, ...newBoxShadows]);
-    const newBoxShadows2 = disabledBoxShadows.filter((shadow, shadowIndex) => shadowIndex !== toolkitIndex);
-    setDisabledBoxShadows(newBoxShadows2);
+    const disabledBoxShadow = disabledBoxShadows
+      .filter((shadow, shadowIndex) => shadowIndex === toolkitIndex);
+    boxShadows.splice(toolkitIndex, 0, ...disabledBoxShadow);
+    const filteredBoxShadows = disabledBoxShadows
+      .filter((shadow, shadowIndex) => shadowIndex !== toolkitIndex);
+    setDisabledBoxShadows(filteredBoxShadows);
   };
 
   return (
