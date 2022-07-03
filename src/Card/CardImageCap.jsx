@@ -4,6 +4,9 @@ import classNames from 'classnames';
 import Skeleton from 'react-loading-skeleton';
 import CardContext from './CardContext';
 
+const SKELETON_HEIGHT_VALUE = 140;
+const LOGO_SKELETON_HEIGHT_VALUE = 41;
+
 const CardImageCap = React.forwardRef(({
   src,
   srcAlt,
@@ -11,9 +14,9 @@ const CardImageCap = React.forwardRef(({
   logoAlt,
   skeletonHeight,
   skeletonWidth,
-  capLogoSkeleton,
-  capLogoSkeletonHeight,
-  capLogoSkeletonWidth,
+  logoSkeleton,
+  logoSkeletonHeight,
+  logoSkeletonWidth,
   className,
 }, ref) => {
   const { orientation, isLoading } = useContext(CardContext);
@@ -27,13 +30,12 @@ const CardImageCap = React.forwardRef(({
           height={skeletonHeight}
           width={skeletonWidth}
         />
-        {capLogoSkeleton
-          && !!logoSrc
+        {logoSkeleton
           && (
           <Skeleton
             containerClassName="pgn__card-logo-cap"
-            height={capLogoSkeletonHeight}
-            width={capLogoSkeletonWidth}
+            height={logoSkeletonHeight}
+            width={logoSkeletonWidth}
           />
           )}
       </div>
@@ -62,12 +64,13 @@ CardImageCap.propTypes = {
   /** Specifies height skeleton line. */
   skeletonHeight: PropTypes.number,
   /** Specifies whether the cap should be displayed during loading. */
-  capLogoSkeleton: PropTypes.bool,
+  logoSkeleton: PropTypes.bool,
   /** Specifies height skeleton line cap. */
-  capLogoSkeletonHeight: PropTypes.number,
+  logoSkeletonHeight: PropTypes.number,
   /** Specifies width skeleton line. */
   skeletonWidth: PropTypes.number,
-  capLogoSkeletonWidth: PropTypes.number,
+  /** Specifies width skeleton line cap. */
+  logoSkeletonWidth: PropTypes.number,
 };
 
 CardImageCap.defaultProps = {
@@ -76,11 +79,11 @@ CardImageCap.defaultProps = {
   className: undefined,
   srcAlt: undefined,
   logoAlt: undefined,
-  skeletonHeight: undefined,
-  capLogoSkeleton: true,
-  capLogoSkeletonHeight: undefined,
+  skeletonHeight: SKELETON_HEIGHT_VALUE,
+  logoSkeleton: false,
+  logoSkeletonHeight: LOGO_SKELETON_HEIGHT_VALUE,
   skeletonWidth: undefined,
-  capLogoSkeletonWidth: undefined,
+  logoSkeletonWidth: undefined,
 };
 
 export default CardImageCap;

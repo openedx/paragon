@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import Skeleton from 'react-loading-skeleton';
 import CardContext from './CardContext';
 
-const IS_LOADING_HEIGHT_VALUE = 20;
+const SKELETON_HEIGHT_VALUE = 20;
 
 const CardHeader = React.forwardRef(({
   actions,
@@ -84,7 +84,7 @@ CardHeader.defaultProps = {
   size: 'md',
   title: null,
   subtitle: null,
-  skeletonHeight: IS_LOADING_HEIGHT_VALUE,
+  skeletonHeight: SKELETON_HEIGHT_VALUE,
   skeletonWidth: null,
 };
 

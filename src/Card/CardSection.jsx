@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import Skeleton from 'react-loading-skeleton';
 import CardContext from './CardContext';
 
-const IS_LOADING_HEIGHT_VALUE = 100;
+const SKELETON_HEIGHT_VALUE = 100;
 
 const CardSection = React.forwardRef(({
   className,
@@ -63,7 +63,7 @@ CardSection.defaultProps = {
   title: undefined,
   actions: undefined,
   muted: false,
-  skeletonHeight: IS_LOADING_HEIGHT_VALUE,
+  skeletonHeight: SKELETON_HEIGHT_VALUE,
   skeletonWidth: undefined,
 };
 
