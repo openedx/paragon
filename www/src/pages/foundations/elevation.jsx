@@ -70,9 +70,10 @@ const BoxShadowToolkit = ({
   id,
   updateBoxShadow,
   removeBoxShadowLayer,
-  disabledBoxShadowLayer,
+  disableBoxShadowLayer,
   enableBoxShadowLayer,
-  hasDisabled,
+  isDisabled,
+  canDelete,
 }) => {
   const [boxShadowModel, setBoxShadowModel] = useState({
     x: 0,
@@ -112,7 +113,7 @@ const BoxShadowToolkit = ({
             type={key === 'color' ? 'color' : 'range'}
             defaultValue="0"
             onChange={(e) => updateBoxShadowModel(key, e.target.value)}
-            disabled={!!hasDisabled}
+            disabled={isDisabled}
           />
         </Form.Label>
       ))}
@@ -120,15 +121,15 @@ const BoxShadowToolkit = ({
         <Form.Checkbox
           onChange={() => updateBoxShadowModel('inset', !boxShadowModel.inset)}
           floatLabelLeft
-          disabled={!!hasDisabled}
+          disabled={isDisabled}
         >
           Inset:
         </Form.Checkbox>
         <div>
-          {hasDisabled ? (
+          {isDisabled ? (
             <IconButtonWithTooltip
               tooltipPlacement="top"
-              tooltipContent={<div>Enable layer</div>}
+              tooltipContent="Enable layer"
               src={WbSunny}
               iconAs={Icon}
               alt="Enable layer"
@@ -139,25 +140,27 @@ const BoxShadowToolkit = ({
           ) : (
             <IconButtonWithTooltip
               tooltipPlacement="top"
-              tooltipContent={<div>Disable layer</div>}
+              tooltipContent="Disable layer"
               src={DoDisturb}
               iconAs={Icon}
               alt="Disable layer"
-              onClick={() => disabledBoxShadowLayer(id)}
+              onClick={() => disableBoxShadowLayer(id)}
               variant="secondary"
               className="pgn-doc__box-shadow-toolkit--controls-box--disable-btn"
             />
           )}
-          <IconButtonWithTooltip
-            tooltipPlacement="top"
-            tooltipContent={<div>Remove layer</div>}
-            src={Close}
-            iconAs={Icon}
-            alt="Close"
-            onClick={() => removeBoxShadowLayer(id)}
-            variant="danger"
-            className="pgn-doc__box-shadow-toolkit--controls-box--remove-btn"
-          />
+          {canDelete && (
+            <IconButtonWithTooltip
+              tooltipPlacement="top"
+              tooltipContent="Remove layer"
+              src={Close}
+              iconAs={Icon}
+              alt="Remove layer"
+              onClick={() => removeBoxShadowLayer(id)}
+              variant="danger"
+              className="pgn-doc__box-shadow-toolkit--controls-box--remove-btn"
+            />
+          )}
         </div>
       </div>
     </section>
@@ -168,56 +171,64 @@ BoxShadowToolkit.propTypes = {
   updateBoxShadow: PropTypes.func.isRequired,
   id: PropTypes.number.isRequired,
   removeBoxShadowLayer: PropTypes.func.isRequired,
-  disabledBoxShadowLayer: PropTypes.func.isRequired,
+  disableBoxShadowLayer: PropTypes.func.isRequired,
   enableBoxShadowLayer: PropTypes.func.isRequired,
-  hasDisabled: PropTypes.bool,
-};
-
-BoxShadowToolkit.defaultProps = {
-  hasDisabled: false,
+  isDisabled: PropTypes.bool.isRequired,
+  canDelete: PropTypes.bool.isRequired,
 };
 
 const BoxShadowGenerator = () => {
-  const [boxShadows, setBoxShadows] = useState([DEFAULT_BOX_SHADOW]);
-  const [disabledBoxShadows, setDisabledBoxShadows] = useState([]);
+  const [boxShadows, setBoxShadows] = useState([{ id: 1, enabled: true, style: DEFAULT_BOX_SHADOW }]);
 
   const updateBoxShadow = (shadow, id) => {
-    const boxShadow = [...boxShadows];
-    boxShadow[id] = shadow.inset ? `inset ${shadow.x}px ${shadow.y}px ${shadow.blur}px ${shadow.spread}px ${shadow.color}`
-      : `${shadow.x}px ${shadow.y}px ${shadow.blur}px ${shadow.spread}px ${shadow.color}`;
-    setBoxShadows(boxShadow);
+    setBoxShadows(boxShadows.map(item => {
+      if (id === item.id) {
+        return {
+          ...item,
+          style: shadow.inset
+            ? `inset ${shadow.x}px ${shadow.y}px ${shadow.blur}px ${shadow.spread}px ${shadow.color}`
+            : `${shadow.x}px ${shadow.y}px ${shadow.blur}px ${shadow.spread}px ${shadow.color}`,
+        };
+      }
+      return { ...item };
+    }));
   };
 
   const addNewBoxShadowLayer = () => {
     global.analytics.track('openedx.paragon.elevation.generator.layer.added');
-    setBoxShadows([...boxShadows, DEFAULT_BOX_SHADOW]);
+    setBoxShadows([
+      ...boxShadows,
+      { id: boxShadows[boxShadows.length - 1].id + 1, enabled: true, style: DEFAULT_BOX_SHADOW },
+    ]);
   };
 
-  const removeBoxShadowLayer = (toolkitIndex) => {
+  const removeBoxShadowLayer = (toolkitId) => {
     global.analytics.track('openedx.paragon.elevation.shadow-generator.layer.removed');
-    const filteredBoxShadows = boxShadows
-      .filter((shadow, shadowIndex) => shadowIndex !== toolkitIndex);
-    setBoxShadows(filteredBoxShadows);
+    setBoxShadows(boxShadows.filter((shadow) => shadow.id !== toolkitId));
   };
 
-  const disabledBoxShadowLayer = (toolkitIndex) => {
+  const disableBoxShadowLayer = (toolkitId) => {
     global.analytics.track('openedx.paragon.elevation.shadow-generator.layer.disabled');
-    const newDisabledBoxShadow = boxShadows
-      .filter((shadow, shadowIndex) => shadowIndex === toolkitIndex);
-    setDisabledBoxShadows([...disabledBoxShadows, ...newDisabledBoxShadow]);
-    const filteredBoxShadows = boxShadows
-      .filter((shadow, shadowIndex) => shadowIndex !== toolkitIndex);
-    setBoxShadows(filteredBoxShadows);
+    const updatedBoxShadows = boxShadows
+      .map((shadow) => {
+        if (shadow.id === toolkitId) {
+          return { ...shadow, enabled: false };
+        }
+        return shadow;
+      });
+    setBoxShadows(updatedBoxShadows);
   };
 
-  const enableBoxShadowLayer = (toolkitIndex) => {
+  const enableBoxShadowLayer = (toolkitId) => {
     global.analytics.track('openedx.paragon.elevation.shadow-generator.layer.enabled');
-    const disabledBoxShadow = disabledBoxShadows
-      .filter((shadow, shadowIndex) => shadowIndex === toolkitIndex);
-    boxShadows.splice(toolkitIndex, 0, ...disabledBoxShadow);
-    const filteredBoxShadows = disabledBoxShadows
-      .filter((shadow, shadowIndex) => shadowIndex !== toolkitIndex);
-    setDisabledBoxShadows(filteredBoxShadows);
+    const updatedBoxShadows = boxShadows
+      .map((shadow) => {
+        if (shadow.id === toolkitId) {
+          return { ...shadow, enabled: true };
+        }
+        return shadow;
+      });
+    setBoxShadows(updatedBoxShadows);
   };
 
   return (
@@ -225,38 +236,29 @@ const BoxShadowGenerator = () => {
       <div className="pgn-doc__box-shadow-generator__preview">
         <div
           className="pgn-doc__box-shadow-generator__preview-box border"
-          style={{ boxShadow: boxShadows.join(',') }}
+          style={{ boxShadow: boxShadows.filter(shadow => shadow.enabled).map(shadow => shadow.style).join(',') }}
         />
       </div>
       <div className="pgn-doc__box-shadow-generator--toolkit">
         <div className="d-flex overflow-auto mb-2">
-          {boxShadows.map((boxShadow, index) => (
+          {boxShadows.map((boxShadow) => (
             <BoxShadowToolkit
-              /* eslint-disable-next-line react/no-array-index-key */
-              key={index}
-              id={index}
+              key={boxShadow.id}
+              id={boxShadow.id}
               updateBoxShadow={updateBoxShadow}
               removeBoxShadowLayer={removeBoxShadowLayer}
-              disabledBoxShadowLayer={disabledBoxShadowLayer}
+              disableBoxShadowLayer={disableBoxShadowLayer}
               enableBoxShadowLayer={enableBoxShadowLayer}
-            />
-          ))}
-          {disabledBoxShadows.map((boxShadow, index) => (
-            <BoxShadowToolkit
-              /* eslint-disable-next-line react/no-array-index-key */
-              key={index}
-              id={index}
-              updateBoxShadow={updateBoxShadow}
-              removeBoxShadowLayer={removeBoxShadowLayer}
-              disabledBoxShadowLayer={disabledBoxShadowLayer}
-              enableBoxShadowLayer={enableBoxShadowLayer}
-              hasDisabled
+              isDisabled={!boxShadow.enabled}
+              canDelete={boxShadows.length > 1}
             />
           ))}
         </div>
         <div className="d-flex justify-content-between flex-column flex-md-row">
           <code className="pgn-doc__box-shadow-generator--toolkit-code mb-3 mb-md-0">
-            box-shadow: {boxShadows.join(', ')};
+            {boxShadows.filter(shadow => shadow.enabled).length > 0
+              ? `box-shadow: ${boxShadows.filter(shadow => shadow.enabled).map(shadow => shadow.style).join(',')};`
+              : 'No styles applied'}
           </code>
           <Button onClick={addNewBoxShadowLayer} variant="dark">Add New Layer</Button>
         </div>
