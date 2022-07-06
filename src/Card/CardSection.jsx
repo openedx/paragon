@@ -52,9 +52,9 @@ CardSection.propTypes = {
   actions: PropTypes.node,
   /** Specifies whether to display `Section` with muted styling. */
   muted: PropTypes.bool,
-  /** Specifies height skeleton line. */
+  /** Specifies height of skeleton in loading state. */
   skeletonHeight: PropTypes.number,
-  /** Specifies width skeleton line. */
+  /** Specifies width of skeleton in loading state. */
   skeletonWidth: PropTypes.number,
 };
 

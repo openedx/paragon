@@ -51,9 +51,9 @@ CardFooter.propTypes = {
   isStacked: PropTypes.bool,
   /** Specifies which orientation to use. This prop will override context value if provided. */
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
-  /** Specifies height skeleton line. */
+  /** Specifies height of skeleton in loading state. */
   skeletonHeight: PropTypes.number,
-  /** Specifies width skeleton line. */
+  /** Specifies width of skeleton in loading state. */
   skeletonWidth: PropTypes.number,
 };
 

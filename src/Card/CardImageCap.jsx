@@ -61,15 +61,15 @@ CardImageCap.propTypes = {
   logoSrc: PropTypes.string,
   /** Specifies logo image alt text. */
   logoAlt: PropTypes.string,
-  /** Specifies height skeleton line. */
+  /** Specifies height of Image skeleton in loading state. */
   skeletonHeight: PropTypes.number,
+  /** Specifies width of Image skeleton in loading state. */
+  skeletonWidth: PropTypes.number,
   /** Specifies whether the cap should be displayed during loading. */
   logoSkeleton: PropTypes.bool,
-  /** Specifies height skeleton line cap. */
+  /** Specifies height of Logo skeleton in loading state. */
   logoSkeletonHeight: PropTypes.number,
-  /** Specifies width skeleton line. */
-  skeletonWidth: PropTypes.number,
-  /** Specifies width skeleton line cap. */
+  /** Specifies width of Logo skeleton in loading state. */
   logoSkeletonWidth: PropTypes.number,
 };
 

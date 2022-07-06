@@ -72,9 +72,9 @@ CardHeader.propTypes = {
   size: PropTypes.oneOf(['sm', 'md']),
   /** The subtitle of the CardHeader component */
   subtitle: PropTypes.node,
-  /** Specifies height skeleton line. */
+  /** Specifies height of skeleton in loading state. */
   skeletonHeight: PropTypes.number,
-  /** Specifies width skeleton line. */
+  /** Specifies width of  skeleton in loading state. */
   skeletonWidth: PropTypes.number,
 };
 
