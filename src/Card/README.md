@@ -674,7 +674,7 @@ it is meant to be used as a single horizontal row of Cards, not as a grid. See C
 
 ### Card status
 
-Note that in the example below, the content of `Card` is wrapped inside `Card.Body`. The `d-flex` class is added for the `horizontal` orientation to achieve horizontal variant. The `flex-column` class is added t for the main `Card` component.
+Note that in the example below, the content of `Card` is wrapped inside `Card.Body`. The `d-flex` class is added for the `horizontal` orientation to achieve horizontal variant. The `flex-column` class is added for the main `Card` component.
 
 ```jsx live
 () => {
