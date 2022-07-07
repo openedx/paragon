@@ -52,7 +52,7 @@ Represents the filled circle with a number of an icon, supporting the usual colo
 }
 ```
 
-## Disabled variant
+### Disabled variant
 
 ```jsx live
 () => {
@@ -65,6 +65,36 @@ Represents the filled circle with a number of an icon, supporting the usual colo
         <Icon src={Check} />
       </Bubble>
     </Stack>
+  );
+}
+```
+
+### Expandable
+
+In the case of long content use `expandable` prop. It adds padding to `Bubble`. Padding value is configurable through `scss` variables.
+
+```jsx live
+() => {
+  const [isExpandable, setIsExpandable] = useState(true);
+  const handleExpandableChange = (e) => setIsExpandable(e.target.value === 'true');
+
+  return (
+    <>
+      <Form.Group>
+        <Form.Label><code>expandable</code> prop is:</Form.Label>
+        <Form.RadioSet
+          name="expandable"
+          onChange={handleExpandableChange}
+          value={isExpandable.toString()}
+        >
+          <Form.Radio value="true">On</Form.Radio>
+          <Form.Radio value="false">Off</Form.Radio>
+        </Form.RadioSet>
+      </Form.Group>
+      <Bubble variant="error" expandable={isExpandable}>
+        1234
+      </Bubble>
+    </>
   );
 }
 ```
