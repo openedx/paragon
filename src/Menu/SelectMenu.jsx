@@ -9,6 +9,8 @@ import { ExpandMore } from '../../icons';
 
 export const SELECT_MENU_DEFAULT_MESSAGE = 'Select...';
 
+// this variable is used to focus the menu open button after any menu option is clicked.
+// triggerTarget.current.focus() inside the onCLick() function didn't guarantee element focus.
 let focusMenu = false;
 
 const SelectMenu = ({
