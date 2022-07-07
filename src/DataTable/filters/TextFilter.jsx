@@ -3,13 +3,24 @@ import PropTypes from 'prop-types';
 import { Form, FormLabel, Input } from '../..';
 import { newId } from '../../utils';
 
+const formatHeaderForLabel = (header) => {
+  if (typeof header === 'function') {
+    return header();
+  }
+  if (typeof header === 'string') {
+    return header.toLowerCase();
+  }
+  return header;
+};
+
 function TextFilter({
   column: {
     filterValue, setFilter, Header, getHeaderProps,
   },
 }) {
   const ariaLabel = useRef(newId(`text-filter-label-${getHeaderProps().key}-`));
-  const inputText = `Search ${Header}`;
+  const formattedHeader = formatHeaderForLabel(Header);
+  const inputText = React.isValidElement(formattedHeader) ? formattedHeader : `Search ${formattedHeader}`;
   return (
     <Form.Group>
       <FormLabel id={ariaLabel.current} className="sr-only">{inputText}</FormLabel>
