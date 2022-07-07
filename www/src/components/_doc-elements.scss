@@ -303,3 +303,17 @@
     list-style: none;
   }
 }
+
+.pgn-doc__box-shadow-toolkit--controls-box--disable-btn-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pgn-doc__box-shadow-toolkit--controls-box--disable-btn svg {
+  fill: $white;
+}
+
+.pgn-doc__box-shadow-toolkit--controls-box--remove-btn svg {
+  color: $white;
+}
