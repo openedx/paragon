@@ -1,3 +1,10 @@
+## [20.3.1](https://github.com/openedx/paragon/compare/v20.3.0...v20.3.1) (2022-07-07)
+
+
+### Bug Fixes
+
+* TextFilter component Header prop usage only handles string, not components (functions)  ([#1441](https://github.com/openedx/paragon/issues/1441)) ([a241c8b](https://github.com/openedx/paragon/commit/a241c8b196a4c2a224366565961b45de2e5756e1))
+
 # [20.3.0](https://github.com/openedx/paragon/compare/v20.2.0...v20.3.0) (2022-07-01)
 
 
