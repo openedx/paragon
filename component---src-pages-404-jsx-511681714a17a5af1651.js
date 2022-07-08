@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkparagon_pattern_library_documentation=self.webpackChunkparagon_pattern_library_documentation||[]).push([[256],{91657:function(e,t,n){n.r(t);var a=n(67294),l=n(77918),r=n(14959);t.default=()=>a.createElement(l.Z,null,a.createElement(r.Z,{title:"404: Not found"}),a.createElement("h1",null,"404: Not Found"),a.createElement("p",null,"You just hit a route that doesn't exist... the sadness."))}}]);
+//# sourceMappingURL=component---src-pages-404-jsx-511681714a17a5af1651.js.map
