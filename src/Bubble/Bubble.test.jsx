@@ -24,5 +24,10 @@ describe('<Bubble />', () => {
       const bubble = wrapper.find('.pgn__bubble');
       expect(bubble.hasClass('disabled')).toEqual(true);
     });
+    it('renders with disabled variant', () => {
+      const wrapper = mount(<Bubble expandable>1</Bubble>);
+      const bubble = wrapper.find('.pgn__bubble');
+      expect(bubble.hasClass('expandable')).toEqual(true);
+    });
   });
 });
