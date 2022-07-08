@@ -1,7 +1,16 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 import Button from '../../Button';
 import CardSection from '../CardSection';
+import CardContext from '../CardContext';
+
+// eslint-disable-next-line react/prop-types
+const CardSectionWrapper = ({ isLoading }) => (
+  <CardContext.Provider value={{ isLoading }}>
+    <CardSection />
+  </CardContext.Provider>
+);
 
 describe('<CardSection />', () => {
   it('renders with default props', () => {
@@ -32,6 +41,16 @@ describe('<CardSection />', () => {
       </CardSection>
     )).toJSON();
     expect(tree).toMatchSnapshot();
+  });
+  it('render without loading state', () => {
+    const wrapper = mount(<CardSectionWrapper />);
+    expect(wrapper.exists('.pgn__card-section-loader')).toBe(false);
+    expect(wrapper.props().isLoading).toBeUndefined();
+  });
+  it('render with loading state', () => {
+    const wrapper = mount(<CardSectionWrapper isLoading />);
+    expect(wrapper.exists('.pgn__card-section-loader')).toBe(true);
+    expect(wrapper.props().isLoading).toBe(true);
   });
   it('renders muted variant', () => {
     const tree = renderer.create((
