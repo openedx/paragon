@@ -1,3 +1,10 @@
+# [20.4.0](https://github.com/openedx/paragon/compare/v20.3.2...v20.4.0) (2022-07-08)
+
+
+### Features
+
+* support automatic loading skeleton states on Card with isLoading prop  ([#1379](https://github.com/openedx/paragon/issues/1379)) ([38bbde1](https://github.com/openedx/paragon/commit/38bbde125468b3a3d0cbc5d7a9896809d634f220))
+
 ## [20.3.2](https://github.com/openedx/paragon/compare/v20.3.1...v20.3.2) (2022-07-08)
 
 
