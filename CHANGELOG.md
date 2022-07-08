@@ -1,3 +1,10 @@
+## [20.4.1](https://github.com/openedx/paragon/compare/v20.4.0...v20.4.1) (2022-07-08)
+
+
+### Bug Fixes
+
+* export default export from react-loading-skeleton as Skeleton ([#1462](https://github.com/openedx/paragon/issues/1462)) ([d0f6dea](https://github.com/openedx/paragon/commit/d0f6dea0d60aef22f48dd91074b74453fea25620))
+
 # [20.4.0](https://github.com/openedx/paragon/compare/v20.3.2...v20.4.0) (2022-07-08)
 
 
