@@ -1,3 +1,10 @@
+## [20.3.2](https://github.com/openedx/paragon/compare/v20.3.1...v20.3.2) (2022-07-08)
+
+
+### Bug Fixes
+
+* add expandable bubble ([#1448](https://github.com/openedx/paragon/issues/1448)) ([86f9ca7](https://github.com/openedx/paragon/commit/86f9ca7536c11bfb1214f8c34a334e078cc5c36d))
+
 ## [20.3.1](https://github.com/openedx/paragon/compare/v20.3.0...v20.3.1) (2022-07-07)
 
 
