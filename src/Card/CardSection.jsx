@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import Skeleton from 'react-loading-skeleton';
+import CardContext from './CardContext';
+
+const SKELETON_HEIGHT_VALUE = 100;
 
 const CardSection = React.forwardRef(({
   className,
@@ -8,16 +12,34 @@ const CardSection = React.forwardRef(({
   title,
   actions,
   muted,
-}, ref) => (
-  <div
-    className={classNames('pgn__card-section', className, { 'is-muted': muted })}
-    ref={ref}
-  >
-    {title && <div className="pgn__card-section-title">{title}</div>}
-    {children}
-    {actions && <div className="pgn__card-section-actions">{actions}</div>}
-  </div>
-));
+  skeletonHeight,
+  skeletonWidth,
+}, ref) => {
+  const { isLoading } = useContext(CardContext);
+
+  if (isLoading) {
+    return (
+      <div className={classNames('pgn__card-section', className, { 'is-muted': muted })}>
+        <Skeleton
+          containerClassName="pgn__card-section-loader"
+          height={skeletonHeight}
+          width={skeletonWidth}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className={classNames('pgn__card-section', className, { 'is-muted': muted })}
+      ref={ref}
+    >
+      {title && <div className="pgn__card-section-title">{title}</div>}
+      {children}
+      {actions && <div className="pgn__card-section-actions">{actions}</div>}
+    </div>
+  );
+});
 
 CardSection.propTypes = {
   /** Specifies class name to append to the base element. */
@@ -30,6 +52,10 @@ CardSection.propTypes = {
   actions: PropTypes.node,
   /** Specifies whether to display `Section` with muted styling. */
   muted: PropTypes.bool,
+  /** Specifies height of skeleton in loading state. */
+  skeletonHeight: PropTypes.number,
+  /** Specifies width of skeleton in loading state. */
+  skeletonWidth: PropTypes.number,
 };
 
 CardSection.defaultProps = {
@@ -37,6 +63,8 @@ CardSection.defaultProps = {
   title: undefined,
   actions: undefined,
   muted: false,
+  skeletonHeight: SKELETON_HEIGHT_VALUE,
+  skeletonWidth: undefined,
 };
 
 export default CardSection;
