@@ -33,7 +33,7 @@ This component uses a `Card` from react-bootstrap as a base component and extend
 
   return (
     <Card style={{ width: isExtraSmall ? "100%" : "18rem" }}>
-      <Card.ImageCap 
+      <Card.ImageCap
         src="https://source.unsplash.com/360x200/?nature,flower"
         srcAlt="Card image"
       />
@@ -58,9 +58,9 @@ You use `isClickable` prop to add additional `hover` and `focus` styling to the 
 () => {
   const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
 
-  return(
+  return (
     <Card style={{ width: isExtraSmall ? "100%" : "18rem" }} isClickable>
-      <Card.ImageCap 
+      <Card.ImageCap
         src="https://source.unsplash.com/360x200/?nature,flower"
         srcAlt="Card image"
       />
@@ -84,9 +84,7 @@ This header displays a title, subtitle, and may contain actions.
 ```jsx live
 <div>
   <Card className="mb-2">
-    <Card.Header
-      title="Title"
-    />
+    <Card.Header title="Title" />
   </Card>
   <Card>
     <Card.Header 
@@ -113,7 +111,7 @@ The `Card.Header` supports custom actions via the actions prop and renders them 
           isStacked={!!isExtraSmall}
           actions={
             <ActionRow 
-            isStacked={!!isExtraSmall}
+              isStacked={!!isExtraSmall}
               style={{  marginBottom: isExtraSmall ? ".5rem" : 0 }}
             >
               <Button variant="tertiary">Action 1</Button>
@@ -293,7 +291,7 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
 
   return (
     <Card style={{ width: isExtraSmall ? "100%" : "40%" }}>
-      <Card.ImageCap 
+      <Card.ImageCap
         src="https://source.unsplash.com/360x200/?nature,flower"
         srcAlt="Card image"
         logoSrc="https://via.placeholder.com/150"
@@ -331,7 +329,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
         className="mb-4" 
         orientation={isSmall ? "vertical" : "horizontal"}
       >
-        <Card.ImageCap 
+        <Card.ImageCap
           src="https://source.unsplash.com/360x200/?nature,flower"
           srcAlt="Card image"
           logoSrc="https://via.placeholder.com/150"
@@ -354,7 +352,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
         </Card.Footer>
       </Card>
       <Card className="mb-4" orientation={isSmall ? "vertical" : "horizontal"}>
-        <Card.ImageCap 
+        <Card.ImageCap
           src="https://source.unsplash.com/360x200/?nature,flower"
           srcAlt="Card image"
           logoSrc="https://via.placeholder.com/150"
@@ -371,7 +369,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
         </Card.Footer>
       </Card>
       <Card orientation={isSmall ? "vertical" : "horizontal"}>
-        <Card.ImageCap 
+        <Card.ImageCap
           src="https://source.unsplash.com/360x200/?nature,flower"
           srcAlt="Card image"
           logoSrc="https://via.placeholder.com/150"
@@ -405,7 +403,10 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
 
   return (
     <Card style={{ width: isExtraSmall ? "100%" : "25rem" }}>
-      <Card.ImageCap src="https://source.unsplash.com/360x200/?nature,flower" srcAlt="Card image"/>
+      <Card.ImageCap
+        src="https://source.unsplash.com/360x200/?nature,flower" 
+        srcAlt="Card image"
+      />
       <Card.Section className="text-center">
         <h2>Headline</h2>
         <p>This is an optional text description.</p>
@@ -441,7 +442,10 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
 
   return (
     <Card orientation={isSmall ? "vertical" : "horizontal"}>
-      <Card.ImageCap src="https://source.unsplash.com/360x200/?nature,flower" srcAlt="Card image"/>
+      <Card.ImageCap
+        src="https://source.unsplash.com/360x200/?nature,flower" 
+        srcAlt="Card image"
+      />
       <Card.Body>
         <Card.Section>
           <h2>Headline</h2>
@@ -474,6 +478,60 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
 )}
 ```
 
+## With loading state
+### Vertical variant
+
+```jsx live
+() => {
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+
+  return (
+    <Card isLoading style={{ width: isExtraSmall ? "100%" : "18rem" }}>
+      <Card.ImageCap
+        src="https://source.unsplash.com/360x200/?nature,flower"
+        srcAlt="Card image"
+      />
+      <Card.Header title="Card Title" />
+      <Card.Section>
+        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+      </Card.Section>
+      <Card.Footer>
+        <Button>Action 1</Button>
+      </Card.Footer>
+    </Card>
+)}
+```
+
+### Horizontal variant
+
+```jsx live
+() => {
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+
+  return (
+    <Card isLoading orientation={isExtraSmall ? "vertical" : "horizontal"}>
+      <Card.ImageCap
+        skeletonHeight={isExtraSmall && 140}
+        src="https://source.unsplash.com/360x200/?nature,flower"
+        srcAlt="Card image"
+        logoSrc="https://via.placeholder.com/150"
+        logoAlt="Card logo"
+      />
+      <Card.Body>
+        <Card.Header title="Title" />
+        <Card.Section title="Section title">
+          This is a special case where we want to have Footer with vertical 
+          orientation in the Card with horizontal orientation.
+        </Card.Section>
+        <Card.Footer orientation="vertical" textElement="Some footer text">
+          <Button>Action 1</Button>
+          <Button>Action 2</Button>
+        </Card.Footer>
+      </Card.Body>
+    </Card>
+)}
+```
+
 ## CardGrid
 
 This component displays a collection of Cards as a grid (with customizable responsive behavior), where
@@ -489,7 +547,7 @@ behavior.
   }}
 >
   <Card>
-    <Card.ImageCap 
+    <Card.ImageCap
       src="https://source.unsplash.com/360x200/?nature,flower"
       srcAlt="Card image"
     />
@@ -508,7 +566,7 @@ behavior.
     </Card.Footer>
   </Card>
   <Card>
-    <Card.ImageCap 
+    <Card.ImageCap
       src="https://source.unsplash.com/360x200/?nature,flower"
       srcAlt="Card image"
     />
@@ -526,7 +584,7 @@ behavior.
     </Card.Footer>
   </Card>
   <Card>
-    <Card.ImageCap 
+    <Card.ImageCap
       src="https://source.unsplash.com/360x200/?nature,flower"
       srcAlt="Card image"
     />
@@ -545,7 +603,7 @@ behavior.
     </Card.Footer>
   </Card>
   <Card>
-    <Card.ImageCap 
+    <Card.ImageCap
       src="https://source.unsplash.com/360x200/?nature,flower"
       srcAlt="Card image"
     />
@@ -564,7 +622,7 @@ behavior.
     </Card.Footer>
   </Card>
   <Card>
-    <Card.ImageCap 
+    <Card.ImageCap
       src="https://source.unsplash.com/360x200/?nature,flower"
       srcAlt="Card image"
     />
@@ -582,7 +640,7 @@ behavior.
     </Card.Footer>
   </Card>
   <Card>
-    <Card.ImageCap 
+    <Card.ImageCap
       src="https://source.unsplash.com/360x200/?nature,flower"
       srcAlt="Card image"
     />
@@ -613,7 +671,7 @@ it is meant to be used as a single horizontal row of Cards, not as a grid. See C
 ```jsx live
 <CardDeck>
   <Card>
-    <Card.ImageCap 
+    <Card.ImageCap
       src="https://source.unsplash.com/360x200/?nature,flower"
       srcAlt="Card image"
     />
@@ -632,7 +690,7 @@ it is meant to be used as a single horizontal row of Cards, not as a grid. See C
     </Card.Footer>
   </Card>
   <Card>
-    <Card.ImageCap 
+    <Card.ImageCap
       src="https://source.unsplash.com/360x200/?nature,flower"
       srcAlt="Card image"
     />
@@ -650,7 +708,7 @@ it is meant to be used as a single horizontal row of Cards, not as a grid. See C
     </Card.Footer>
   </Card>
   <Card>
-    <Card.ImageCap 
+    <Card.ImageCap
       src="https://source.unsplash.com/360x200/?nature,flower"
       srcAlt="Card image"
     />

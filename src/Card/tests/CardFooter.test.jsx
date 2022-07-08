@@ -14,8 +14,8 @@ const actions = (
 );
 
 // eslint-disable-next-line react/prop-types
-const CardFooterWrapper = ({ orientation = 'vertical', ...props }) => (
-  <CardContext.Provider value={{ orientation }}>
+const CardFooterWrapper = ({ orientation = 'vertical', isLoading, ...props }) => (
+  <CardContext.Provider value={{ orientation, isLoading }}>
     <CardFooter {...props}>
       {actions}
     </CardFooter>
@@ -63,5 +63,15 @@ describe('<CardFooter />', () => {
     expect(link.exists()).toEqual(true);
     expect(link.prop('children')).toEqual('Link text here');
     expect(link.prop('href')).toEqual('https://example.com');
+  });
+  it('render without loading state', () => {
+    const wrapper = mount(<CardFooterWrapper />);
+    expect(wrapper.exists('.pgn__card-footer-loader')).toBe(false);
+    expect(wrapper.props().isLoading).toBeUndefined();
+  });
+  it('render with loading state', () => {
+    const wrapper = mount(<CardFooterWrapper isLoading />);
+    expect(wrapper.exists('.pgn__card-footer-loader')).toBe(true);
+    expect(wrapper.props().isLoading).toBe(true);
   });
 });
