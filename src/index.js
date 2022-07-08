@@ -186,7 +186,7 @@ export {
   useFlexLayout,
 } from 'react-table';
 export {
-  Skeleton,
+  default as Skeleton,
   SkeletonTheme,
 } from 'react-loading-skeleton';
 export { default as Bubble } from './Bubble';
