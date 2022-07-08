@@ -21,4 +21,8 @@
   &.disabled {
     background: $gray-500;
   }
+
+  &.expandable {
+    padding: $bubble-expandable-padding-y $bubble-expandable-padding-x;
+  }
 }

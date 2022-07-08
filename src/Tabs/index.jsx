@@ -83,7 +83,13 @@ const Tabs = ({
         newTitle = (
           <>
             {title}
-            <Bubble variant="error" className="pgn__tab-notification">{notification}</Bubble>
+            <Bubble
+              variant="error"
+              className="pgn__tab-notification"
+              expandable
+            >
+              {notification}
+            </Bubble>
           </>
         );
       } else {
