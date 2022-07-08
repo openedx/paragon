@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FocusOn } from 'react-focus-on';
 import { Link } from 'gatsby';
 import Menu from './Menu';
-import Search from './Seach';
+import Search from './Search';
 import {
   useToggle,
   Nav,
