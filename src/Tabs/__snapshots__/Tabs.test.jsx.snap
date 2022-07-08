@@ -18,7 +18,7 @@ exports[`<Tabs /> correct rendering renders successfully 1`] = `
     >
       Tab 1
       <div
-        className="pgn__bubble pgn__bubble-error pgn__tab-notification"
+        className="pgn__bubble pgn__bubble-error pgn__tab-notification expandable"
       >
         4
       </div>

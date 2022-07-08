@@ -14,6 +14,7 @@ const Bubble = React.forwardRef(({
   className,
   children,
   disabled,
+  expandable,
   ...props
 }, ref) => (
   <div
@@ -22,7 +23,7 @@ const Bubble = React.forwardRef(({
       'pgn__bubble',
       `pgn__bubble-${variant}`,
       className,
-      { disabled },
+      { disabled, expandable },
     )}
     {...props}
   >
@@ -39,12 +40,15 @@ Bubble.propTypes = {
   disabled: PropTypes.bool,
   /** A class name to append to the base element. */
   className: PropTypes.string,
+  /** Specifies whether to add padding to the `Bubble` or not. */
+  expandable: PropTypes.bool,
 };
 
 Bubble.defaultProps = {
   variant: 'primary',
   disabled: false,
   className: undefined,
+  expandable: false,
 };
 
 export default Bubble;
