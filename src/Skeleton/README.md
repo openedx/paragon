@@ -8,18 +8,16 @@ categories:
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'
-notes: |
-  Something special about this component
 ---
 
-``React Skeleton`` component should be used directly in your components in place of content that is loading. 
+``Skeleton`` component should be used directly in your components in place of content that is loading. 
 This tool has the ability to customize loading state your component.
-Сan read more about ``React Skeleton`` on the [official documentation repository](https://github.com/dvtng/react-loading-skeleton).
+Сan read more about ``Skeleton`` on the [official documentation repository](https://github.com/dvtng/react-loading-skeleton).
 
 ## Basic Usage
 
 For convenient customization of the loading component, **width** and **height** properties are available, 
-you can also set the number of columns in the displayed ``React Skeleton``.
+you can also set the number of columns in the displayed ``Skeleton``.
 
 ```jsx live
 () => {
@@ -49,7 +47,7 @@ you can also set the number of columns in the displayed ``React Skeleton``.
 
 ## With image
 
-``React Skeleton`` is convenient to use with images, including those in a **circle** format.
+``Skeleton`` is convenient to use with images, including those in a **circle** format.
 
 ```jsx live
 () => {
@@ -84,8 +82,9 @@ you can also set the number of columns in the displayed ``React Skeleton``.
 
 ## With color theme
 
-``React Skeleton`` allows you to customize the **background color** and **animation loading color** of your component.
-The animation speed can also be adjusted using the parameter **duration** and the animation direction using the property **direction**.
+``Skeleton`` allows you to customize the **background color** and **animation loading color** of your component.
+The animation speed can also be adjusted using the parameter **duration** and the animation direction using the 
+property **direction**.
 
 ```jsx live
 () => {
@@ -133,7 +132,7 @@ The animation speed can also be adjusted using the parameter **duration** and th
 
 ## With custom wrapper
 
-By wrapping the ``React Skeleton`` in a container, you can flexibly customize the elements of the skeleton.
+By wrapping the ``Skeleton`` in a container, you can flexibly customize the elements of the skeleton.
 
 ```jsx live
 () => {
