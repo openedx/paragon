@@ -54,6 +54,9 @@ exports[`<Dropzone /> successfully renders 1`] = `
     <p>
       Drag and drop your file here or click to upload.
     </p>
+    <p
+      className="x-small text-gray-500"
+    />
   </div>
 </div>
 `;
