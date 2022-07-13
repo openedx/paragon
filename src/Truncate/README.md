@@ -10,14 +10,62 @@ notes: |
   Something special about this component
 ---
 
-Describe your component here and give usage examples.
+A Truncate component can help you crop multiline text. There will be three dots at the end of the text.
 
 ### Basic Usage
 
 ```jsx live
   <Truncate lines={2}>
-    edX Demonstration Course with A Really Long Title That Never Seems To End edX Demonstration Course with 
-    A Really Long Title That Never Seems To End edX Demonstration Course with A Really Long Title That Never 
-    Seems To End edX Demonstration Course with A Really Long Title That Never Seems To End
+    Learners, course teams, researchers, developers: the edX community includes groups with a range of reasons 
+    for using the platform and objectives to accomplish. To help members of each group learn about what edX 
+    offers, reach goals, and solve problems, edX provides a variety of information resources.
   </Truncate>
+```
+
+### With the custom ellipsis
+
+```jsx live
+  <Truncate lines={3} ellipsis="🎉🎉🎉" whiteSpace>
+    Learners, course teams, researchers, developers: the edX community includes groups with a range of reasons 
+    for using the platform and objectives to accomplish. To help members of each group learn about what edX 
+    offers, reach goals, and solve problems, edX provides a variety of information resources.
+  </Truncate>
+```
+
+### Usage in component properties
+
+```jsx live
+() => {
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+  
+  return (
+    <Card style={{ width: isExtraSmall ? "100%" : "18rem" }} isClickable>
+      <Card.ImageCap
+        src="https://source.unsplash.com/360x200/?nature,flower"
+        srcAlt="Card image"
+      />
+      <Card.Header
+        title={
+          <Truncate lines={2}>
+            Using Enhanced Capabilities In Your Course
+          </Truncate>}
+      />
+      <Card.Section>
+        <Truncate lines={4}>
+          Learners, course teams, researchers, developers: the edX community includes groups with a range of reasons
+          for using the platform and objectives to accomplish. To help members of each group learn about what edX
+          offers, reach goals, and solve problems, edX provides a variety of information resources.
+        </Truncate>
+      </Card.Section>
+      <Card.Footer 
+        textElement={
+          <Truncate lines={2}>
+            Using Enhanced Capabilities In Your Course
+          </Truncate>}
+      >
+        <Button>Action 1</Button>
+      </Card.Footer>
+    </Card>
+  )
+}
 ```

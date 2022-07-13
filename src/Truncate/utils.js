@@ -9,12 +9,9 @@ const createCopyElement = (source, styles) => {
   newElement.style.cssText = sourceStyles.cssText;
   newElement.style.maxWidth = sourceStyles.width;
 
-  // eslint-disable-next-line no-restricted-syntax
-  for (const property in styles) {
-    if (styles) {
-      newElement.style[property] = styles[property];
-    }
-  }
+  Object.keys(styles).forEach(property => {
+    newElement.style[property] = styles[property];
+  });
 
   return newElement;
 };
@@ -41,7 +38,7 @@ const clampLines = (text, element, { lines, whiteSpace, ellipsis }) => {
     position: 'absolute',
     opacity: '0',
     left: '-1px',
-    width: `${element.scrollWidth - 1}px`,
+    width: `${element.scrollWidth}px`,
     paddingTop: DEFAULT_PADDING_VALUE,
     paddingBottom: DEFAULT_PADDING_VALUE,
   });
