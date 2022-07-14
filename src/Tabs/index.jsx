@@ -85,6 +85,7 @@ const Tabs = ({
             {title}
             <Bubble
               variant="error"
+              role="status"
               className="pgn__tab-notification"
               expandable
             >
@@ -137,7 +138,7 @@ const Tabs = ({
             >
               {moreTabText}
               {moreTabHasNotification && (
-                <Bubble variant="error" className="pgn__tab-notification" />
+                <Bubble variant="error" role="status" className="pgn__tab-notification" />
               )}
             </Dropdown.Toggle>
             <Dropdown.Menu className="dropdown-menu-right">{overflowChildren}</Dropdown.Menu>
