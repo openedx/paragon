@@ -1,30 +1,25 @@
 const createTextClamp = (text, coefficient) => {
+  const startIndex = 0;
   const sliceIndex = Math.floor(text.length * coefficient);
-  return text.slice(0, sliceIndex);
+  return text.slice(startIndex, sliceIndex);
 };
 
-const createCopyElement = (source, styles) => {
-  const newElement = document.createElement(source.tagName);
-  const sourceStyles = window.getComputedStyle(source);
+const createCopyElement = (sourceElement, sourceElementStyles) => {
+  const newElement = document.createElement(sourceElement.tagName);
+  const sourceStyles = window.getComputedStyle(sourceElement);
   newElement.style.cssText = sourceStyles.cssText;
   newElement.style.maxWidth = sourceStyles.width;
 
-  Object.keys(styles).forEach(property => {
-    newElement.style[property] = styles[property];
+  Object.keys(sourceElementStyles).forEach(property => {
+    newElement.style[property] = sourceElementStyles[property];
   });
 
   return newElement;
 };
 
 const constructString = (string, whiteSpace, ellipsis) => {
-  if (string === '') {
-    return '';
-  }
-  let space = '';
-  if (whiteSpace) {
-    space = ' ';
-  }
-  return `${string.trim()}${space}${ellipsis}`;
+  const spacer = whiteSpace ? ' ' : '';
+  return `${string.trim()}${spacer}${ellipsis}`;
 };
 
 const clampLines = (text, element, { lines, whiteSpace, ellipsis }) => {
@@ -48,7 +43,7 @@ const clampLines = (text, element, { lines, whiteSpace, ellipsis }) => {
   let clampedText = text;
   ellipsisElement.innerHTML = constructString(clampedText, whiteSpace, ellipsis);
 
-  let ellipsisElementHeight = Math.ceil(ellipsisElement.scrollHeight) - 1;
+  let ellipsisElementHeight = Math.ceil(ellipsisElement.scrollHeight);
   if (ellipsisElementHeight <= maxHeight) {
     ellipsisElement.parentNode.removeChild(ellipsisElement);
 

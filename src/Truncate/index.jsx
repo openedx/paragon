@@ -7,42 +7,26 @@ import StringClampUtils from './utils';
 const DEFAULT_TRUNCATE_LINES = 1;
 
 const Truncate = ({
-  children, lines, ellipsis, htmlElement, className, whiteSpace,
+  children, lines, ellipsis, typeElement, className, whiteSpace,
 }) => {
   const [clampedText, setClampedText] = useState('');
-  const [latestWidth, setLatestWidth] = useState();
   const textContainer = useRef();
 
-  const clampText = () => {
-    const newClampText = StringClampUtils.clampLines(children, textContainer.current, {
-      ellipsis,
-      whiteSpace,
-      lines,
-    });
-
-    setClampedText(newClampText);
-  };
-
-  const observerResize = () => {
-    if (!textContainer.current) { return; }
-
-    const textContainerScrollWidth = Math.round(textContainer.current.scrollWidth);
-    if (latestWidth !== textContainerScrollWidth) {
-      setLatestWidth({
-        textContainerScrollWidth,
-      });
-      setTimeout(clampText, 0);
-    }
-    window.requestAnimationFrame(observerResize);
-  };
-
   useEffect(() => {
-    clampText();
-    setTimeout(observerResize, 0);
-    // eslint-disable-next-line
-  }, []);
+    const clampText = () => {
+      const newClampText = StringClampUtils.clampLines(children, textContainer.current, {
+        ellipsis,
+        whiteSpace,
+        lines,
+      });
 
-  return React.createElement(htmlElement, {
+      setClampedText(newClampText);
+    };
+
+    clampText();
+  }, [children, ellipsis, lines, whiteSpace]);
+
+  return React.createElement(typeElement, {
     ref: textContainer,
     className,
   }, clampedText);
@@ -58,7 +42,7 @@ Truncate.propTypes = {
   /** The whitespace from before the ellipsis. */
   whiteSpace: PropTypes.bool,
   /** Custom html element for truncated text. */
-  htmlElement: PropTypes.string,
+  typeElement: PropTypes.string,
   /** Specifies class name to append to the base element. */
   className: PropTypes.string,
 };
@@ -67,7 +51,7 @@ Truncate.defaultProps = {
   lines: DEFAULT_TRUNCATE_LINES,
   ellipsis: '...',
   whiteSpace: false,
-  htmlElement: 'div',
+  typeElement: 'div',
   className: null,
 };
 

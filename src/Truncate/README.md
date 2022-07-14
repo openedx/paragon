@@ -25,7 +25,7 @@ A Truncate component can help you crop multiline text. There will be three dots 
 ### With the custom ellipsis
 
 ```jsx live
-  <Truncate lines={3} ellipsis="🎉🎉🎉" whiteSpace>
+  <Truncate lines={2} ellipsis="🎉🎉🎉" whiteSpace>
     Learners, course teams, researchers, developers: the edX community includes groups with a range of reasons 
     for using the platform and objectives to accomplish. To help members of each group learn about what edX 
     offers, reach goals, and solve problems, edX provides a variety of information resources.
@@ -63,7 +63,7 @@ A Truncate component can help you crop multiline text. There will be three dots 
             Using Enhanced Capabilities In Your Course
           </Truncate>}
       >
-        <Button>Action 1</Button>
+        <Button style={{ width: '100%' }}>Action 1</Button>
       </Card.Footer>
     </Card>
   )
