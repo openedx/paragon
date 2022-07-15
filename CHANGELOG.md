@@ -1,3 +1,16 @@
+# [20.5.0](https://github.com/openedx/paragon/compare/v20.4.2...v20.5.0) (2022-07-15)
+
+
+### Bug Fixes
+
+* update script for copying mui-icons and add additional docs ([#1449](https://github.com/openedx/paragon/issues/1449)) ([0a8ce7f](https://github.com/openedx/paragon/commit/0a8ce7f4e2ddd62d61ba104fbed55011d83c1ff4))
+
+
+### Features
+
+* add autoResize for textarea Form.Control [BD-46] ([#1461](https://github.com/openedx/paragon/issues/1461)) ([6bc5320](https://github.com/openedx/paragon/commit/6bc53200b2d99c1a1e6e60b25800e3cf1ea1fe8e))
+* add box shadow variables for all levels and sides ([#1443](https://github.com/openedx/paragon/issues/1443)) ([90d0316](https://github.com/openedx/paragon/commit/90d031604e0b46fb0b9ace31e8a46912b952059a))
+
 ## [20.4.2](https://github.com/openedx/paragon/compare/v20.4.1...v20.4.2) (2022-07-15)
 
 
