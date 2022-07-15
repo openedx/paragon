@@ -15,6 +15,8 @@ const FormControl = React.forwardRef(({
   leadingElement,
   trailingElement,
   floatingLabel,
+  autoResize,
+  onChange,
   ...props
 }, ref) => {
   const {
@@ -23,6 +25,8 @@ const FormControl = React.forwardRef(({
     getControlProps,
     ...formGroupContext
   } = useFormGroupContext();
+  const inputRef = React.useRef();
+  const resolvedRef = ref || inputRef;
   const size = props.size || formGroupContext.size;
 
   const [hasValue, checkInputEventValue] = useHasValue({
@@ -36,6 +40,20 @@ const FormControl = React.forwardRef(({
     onBlur: callAllHandlers(checkInputEventValue, props.onBlur),
   });
 
+  const handleOnChange = (e) => {
+    if (as === 'textarea' && autoResize) {
+      if (!resolvedRef.current.initialHeight && !resolvedRef.current.offsets) {
+        resolvedRef.current.initialHeight = resolvedRef.current.offsetHeight;
+        resolvedRef.current.offsets = resolvedRef.current.offsetHeight - resolvedRef.current.clientHeight;
+      }
+      resolvedRef.current.style.height = `${resolvedRef.current.initialHeight}px`;
+      resolvedRef.current.style.height = `${resolvedRef.current.scrollHeight + resolvedRef.current.offsets}px`;
+    }
+    if (onChange) {
+      onChange(e);
+    }
+  };
+
   return (
     <FormControlDecoratorGroup
       size={size}
@@ -46,13 +64,14 @@ const FormControl = React.forwardRef(({
     >
       <RBFormControl
         as={as}
-        ref={ref}
+        ref={resolvedRef}
         size={size}
         isInvalid={isInvalid}
         isValid={isValid}
         className={classNames(controlClassName, {
           'has-value': hasValue,
         })}
+        onChange={handleOnChange}
         {...controlProps}
       />
     </FormControlDecoratorGroup>
@@ -69,6 +88,8 @@ FormControl.propTypes = {
   className: PropTypes.string,
   /** Specifies base element for the control component. */
   as: PropTypes.elementType,
+  /** Specifies function that is triggered on input value change. */
+  onChange: PropTypes.func,
   /** Specifies default value of the input component. */
   defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Specifies current value of the input component. */
@@ -91,6 +112,8 @@ FormControl.propTypes = {
   isValid: PropTypes.bool,
   /** Specifies whether to display control in invalid state, this affects styling. */
   isInvalid: PropTypes.bool,
+  /** Only for `as="textarea"`. Specifies whether the input can be resized according to the height of content. */
+  autoResize: PropTypes.bool,
 };
 
 FormControl.defaultProps = {
@@ -98,6 +121,7 @@ FormControl.defaultProps = {
   className: undefined,
   id: undefined,
   controlClassName: undefined,
+  onChange: undefined,
   defaultValue: undefined,
   value: undefined,
   size: undefined,
@@ -107,6 +131,7 @@ FormControl.defaultProps = {
   plaintext: false,
   isValid: undefined,
   isInvalid: undefined,
+  autoResize: false,
 };
 
 export default FormControl;
