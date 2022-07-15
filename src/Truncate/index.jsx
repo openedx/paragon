@@ -9,7 +9,7 @@ const DEFAULT_TRUNCATE_LINES = 1;
 const Truncate = ({
   children, lines, ellipsis, typeElement, className, whiteSpace,
 }) => {
-  const [clampedText, setClampedText] = useState('');
+  const [clampedText, setClampedText] = useState(children);
   const textContainer = useRef();
 
   useEffect(() => {

@@ -7,6 +7,7 @@ const createTextClamp = (text, coefficient) => {
 const createCopyElement = (sourceElement, sourceElementStyles) => {
   const newElement = document.createElement(sourceElement.tagName);
   const sourceStyles = window.getComputedStyle(sourceElement);
+  console.log('sourceElement', sourceElement);
   newElement.style.cssText = sourceStyles.cssText;
   newElement.style.maxWidth = sourceStyles.width;
 
