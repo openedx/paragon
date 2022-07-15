@@ -77,6 +77,34 @@ You use `isClickable` prop to add additional `hover` and `focus` styling to the 
 )};
 ```
 
+## As link
+The ability to place a Card inside the link is also available. To reset the default link styles, you need to add 
+your CSS class or available CSS classes of the Bootstrap library for link.
+
+```jsx live
+() => {
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+
+  return (
+    <Hyperlink className="text-decoration-none text-gray-700" destination="https://www.edx.org">
+      <Card style={{ width: isExtraSmall ? "100%" : "18rem" }}>
+        <Card.ImageCap
+          src="https://source.unsplash.com/360x200/?nature,flower"
+          srcAlt="Card image"
+        />
+        <Card.Header title="Card Title"/>
+        <Card.Section>
+          This is a card section. It can contain anything but usually text, a list, or list of links. 
+          Multiple sections have a card divider between them.
+        </Card.Section>
+        <Card.Footer>
+          <Button>Action 1</Button>
+        </Card.Footer>
+      </Card>
+    </Hyperlink>
+)}
+```
+
 ## Header
 You may add a header by adding a ``Card.Header`` component.
 This header displays a title, subtitle, and may contain actions.
