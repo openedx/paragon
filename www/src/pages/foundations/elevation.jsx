@@ -238,32 +238,46 @@ export default function ElevationPage() {
         </div>
 
         <h4>Example classes usage</h4>
-        <p>All classes names are available for use</p>
-        {boxShadowLevels.map(level => (
-          boxShadowSides.map(side => (
-            <code key={side} className="d-block mb-2 bg-gray-100 p-3">
-              .box-shadow-{side}-{level}
-            </code>
-          ))
-        ))}
+        <p>Classes are available with following pattern: </p>
+        <code className="d-block mb-2 bg-gray-100 p-3">
+          {'.box-shadow-{direction}-{level}'}
+        </code>
+        <p>For example:</p>
+        <code className="d-block mb-2 bg-gray-100 p-3">
+          .box-shadow-right-2
+        </code>
+        <code className="d-block mb-2 bg-gray-100 p-3">
+          .box-shadow-up-3
+        </code>
         <br />
 
         <h4>Example mixin usage</h4>
-        {boxShadowLevels.map(level => (
-          boxShadowSides.map(side => (
-            <code key={side} className="d-block mb-2 bg-gray-100 p-3">
-              @include <strong>pgn-box-shadow({level}, &ldquo;{side}&rdquo;)</strong>;
-            </code>
-          ))
-        ))}
+        <p>Mixin can be used as follows: </p>
+        <code className="d-block mb-2 bg-gray-100 p-3">
+          @include pgn-box-shadow(level, side);
+        </code>
+        <p>For example:</p>
+        <code className="d-block mb-2 bg-gray-100 p-3">
+          @include pgn-box-shadow(1, &quot;down&quot;);
+        </code>
+        <code className="d-block mb-2 bg-gray-100 p-3">
+          @include pgn-box-shadow(3, &quot;left&quot;);
+        </code>
         <br />
 
         <h4>Example variables usage</h4>
-        {boxShadowLevels.map(level => (
-          <code key={level} className="d-block mb-2 bg-gray-100 p-3">
-            box-shadow: <strong>$level-{level}-box-shadow</strong>;
-          </code>
-        ))}
+        <p>Variables are available with following pattern: </p>
+        <code className="d-block mb-2 bg-gray-100 p-3">
+          {'$box-shadow-{direction}-{level}'}
+        </code>
+        <p>For example:</p>
+        <code className="d-block mb-2 bg-gray-100 p-3">
+          $box-shadow-right-2
+        </code>
+        <code className="d-block mb-2 bg-gray-100 p-3">
+          $box-shadow-up-3
+        </code>
+        <br />
 
         <h3 className="mt-5">Box-shadow generator</h3>
         <p>

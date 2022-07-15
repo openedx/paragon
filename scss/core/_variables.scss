@@ -478,18 +478,48 @@ $level-3-box-shadow:          0 0 .625rem rgba(0, 0, 0, .15), 0 0 1rem rgba(0, 0
 $level-4-box-shadow:          0 .625rem 1.25rem rgba(0, 0, 0, .15), 0 .5rem 1.25rem rgba(0, 0, 0, .15) !default;
 $level-5-box-shadow:          0 1.25px 2.5rem rgba(0, 0, 0, .15), 0 .5rem 2.5rem rgba(0, 0, 0, .15) !default;
 
+$box-shadow-down-1:           0 .0625rem .125rem rgba(0, 0, 0, .15), 0 .0625rem .25rem rgba(0, 0, 0, .15) !default;
+$box-shadow-down-2:           0 .125rem .25rem rgba(0, 0, 0, .15), 0 .125rem .5rem rgba(0, 0, 0, .15) !default;
+$box-shadow-down-3:           0 .5rem 1rem rgba(0, 0, 0, .15), 0 .25rem .625rem rgba(0, 0, 0, .15) !default;
+$box-shadow-down-4:           0 .625rem 1.25rem rgba(0, 0, 0, .15), 0 .5rem 1.25rem rgba(0, 0, 0, .15) !default;
+$box-shadow-down-5:           0 1.25px 2.5rem rgba(0, 0, 0, .15), 0 .5rem 2.5rem rgba(0, 0, 0, .15) !default;
+
+$box-shadow-left-1:           -.0625rem 0 .125rem rgba(0, 0, 0, .15), -.0625rem 0 .25rem rgba(0, 0, 0, .15) !default;
+$box-shadow-left-2:           -.125rem 0 .25rem rgba(0, 0, 0, .15), -.125rem 0 .5rem rgba(0, 0, 0, .15) !default;
+$box-shadow-left-3:           -.5rem 0 1rem rgba(0, 0, 0, .15), -.25rem 0 .625rem rgba(0, 0, 0, .15) !default;
+$box-shadow-left-4:           -.625rem 0 1.25rem rgba(0, 0, 0, .15), -.5rem 0 1.25rem rgba(0, 0, 0, .15) !default;
+$box-shadow-left-5:           -1.25rem 0 2.5rem rgba(0, 0, 0, .15), -.5rem 0 3rem rgba(0, 0, 0, .15) !default;
+
+$box-shadow-up-1:             0 -.0625rem .125rem rgba(0, 0, 0, .15), 0 -.0625rem .25rem rgba(0, 0, 0, .15) !default;
+$box-shadow-up-2:             0 -.125rem .25rem rgba(0, 0, 0, .15), 0 -.125rem .5rem rgba(0, 0, 0, .15) !default;
+$box-shadow-up-3:             0 -.5rem 1rem rgba(0, 0, 0, .15), 0 -.25rem .625rem rgba(0, 0, 0, .15) !default;
+$box-shadow-up-4:             0 -.625rem 1.25rem rgba(0, 0, 0, .15), 0 -.5rem 1.25rem rgba(0, 0, 0, .15) !default;
+$box-shadow-up-5:             0 -1.25rem 2.5rem rgba(0, 0, 0, .15), 0 -.5rem 3rem rgba(0, 0, 0, .15) !default;
+
+$box-shadow-right-1:          .0625rem 0 .125rem rgba(0, 0, 0, .15), .0625rem 0 .25rem rgba(0, 0, 0, .15) !default;
+$box-shadow-right-2:          .125rem 0 .25rem rgba(0, 0, 0, .15), .125rem 0 .5rem rgba(0, 0, 0, .15) !default;
+$box-shadow-right-3:          .5rem 0 1rem rgba(0, 0, 0, .15), .25rem 0 .625rem rgba(0, 0, 0, .15) !default;
+$box-shadow-right-4:          .625rem 0 1.25rem rgba(0, 0, 0, .15), .5rem 0 1.25rem rgba(0, 0, 0, .15) !default;
+$box-shadow-right-5:          1.25rem 0 2.5rem rgba(0, 0, 0, .15), .5rem 0 3rem rgba(0, 0, 0, .15) !default;
+
+$box-shadow-centered-1:       0 0 .125rem rgba(0, 0, 0, .15), 0 0 .25rem rgba(0, 0, 0, .15) !default;
+$box-shadow-centered-2:       0 0 .25rem rgba(0, 0, 0, .15), 0 0 .5rem rgba(0, 0, 0, .15) !default;
+$box-shadow-centered-3:       0 0 .625rem rgba(0, 0, 0, .15), 0 0 1rem rgba(0, 0, 0, .15) !default;
+$box-shadow-centered-4:       0 0 1.25rem rgba(0, 0, 0, .15), 0 0 1.25rem rgba(0, 0, 0, .15) !default;
+$box-shadow-centered-5:       0 0 2.5rem rgba(0, 0, 0, .15), 0 0 3rem rgba(0, 0, 0, .15) !default;
+
 @mixin pgn-box-shadow($level, $side) {
   @if $side == "down" {
     @if $level == 1 {
-      box-shadow: 0 .0625rem .125rem rgba(0, 0, 0, .15), 0 .0625rem .25rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-down-1;
     } @else if $level == 2 {
-      box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .15), 0 .125rem .5rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-down-2;
     } @else if $level == 3 {
-      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15), 0 .25rem .625rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-down-3;
     } @else if $level == 4 {
-      box-shadow: 0 .625rem 1.25rem rgba(0, 0, 0, .15), 0 .5rem 1.25rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-down-4;
     } @else if $level == 5 {
-      box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, .15), 0 .5rem 3rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-down-5;
     } @else {
       @error "Box-shadow level #{$level} does not exist";
     }
@@ -497,15 +527,15 @@ $level-5-box-shadow:          0 1.25px 2.5rem rgba(0, 0, 0, .15), 0 .5rem 2.5rem
 
   @if $side == "left" {
     @if $level == 1 {
-      box-shadow: -.0625rem 0 .125rem rgba(0, 0, 0, .15), -.0625rem 0 .25rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-left-1;
     } @else if $level == 2 {
-      box-shadow: -.125rem 0 .25rem rgba(0, 0, 0, .15), -.125rem 0 .5rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-left-2;
     } @else if $level == 3 {
-      box-shadow: -.5rem 0 1rem rgba(0, 0, 0, .15), -.25rem 0 .625rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-left-3;
     } @else if $level == 4 {
-      box-shadow: -.625rem 0 1.25rem rgba(0, 0, 0, .15), -.5rem 0 1.25rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-left-4;
     } @else if $level == 5 {
-      box-shadow: -1.25rem 0 2.5rem rgba(0, 0, 0, .15), -.5rem 0 3rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-left-5;
     } @else {
       @error "Box-shadow level #{$level} does not exist";
     }
@@ -513,15 +543,15 @@ $level-5-box-shadow:          0 1.25px 2.5rem rgba(0, 0, 0, .15), 0 .5rem 2.5rem
 
   @if $side == "up" {
     @if $level == 1 {
-      box-shadow: 0 -.0625rem .125rem rgba(0, 0, 0, .15), 0 -.0625rem .25rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-up-1;
     } @else if $level == 2 {
-      box-shadow: 0 -.125rem .25rem rgba(0, 0, 0, .15), 0 -.125rem .5rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-up-2;
     } @else if $level == 3 {
-      box-shadow: 0 -.5rem 1rem rgba(0, 0, 0, .15), 0 -.25rem .625rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-up-3;
     } @else if $level == 4 {
-      box-shadow: 0 -.625rem 1.25rem rgba(0, 0, 0, .15), 0 -.5rem 1.25rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-up-4;
     } @else if $level == 5 {
-      box-shadow: 0 -1.25rem 2.5rem rgba(0, 0, 0, .15), 0 -.5rem 3rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-up-5;
     } @else {
       @error "Box-shadow level #{$level} does not exist";
     }
@@ -529,15 +559,15 @@ $level-5-box-shadow:          0 1.25px 2.5rem rgba(0, 0, 0, .15), 0 .5rem 2.5rem
 
   @if $side == "right" {
     @if $level == 1 {
-      box-shadow: .0625rem 0 .125rem rgba(0, 0, 0, .15), .0625rem 0 .25rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-right-1;
     } @else if $level == 2 {
-      box-shadow: .125rem 0 .25rem rgba(0, 0, 0, .15), .125rem 0 .5rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-right-2;
     } @else if $level == 3 {
-      box-shadow: .5rem 0 1rem rgba(0, 0, 0, .15), .25rem 0 .625rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-right-3;
     } @else if $level == 4 {
-      box-shadow: .625rem 0 1.25rem rgba(0, 0, 0, .15), .5rem 0 1.25rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-right-4;
     } @else if $level == 5 {
-      box-shadow: 1.25rem 0 2.5rem rgba(0, 0, 0, .15), .5rem 0 3rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-right-5;
     } @else {
       @error "Box-shadow level #{$level} does not exist";
     }
@@ -545,15 +575,15 @@ $level-5-box-shadow:          0 1.25px 2.5rem rgba(0, 0, 0, .15), 0 .5rem 2.5rem
 
   @if $side == "centered" {
     @if $level == 1 {
-      box-shadow: 0 0 .125rem rgba(0, 0, 0, .15), 0 0 .25rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-centered-1;
     } @else if $level == 2 {
-      box-shadow: 0 0 .25rem rgba(0, 0, 0, .15), 0 0 .5rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-centered-2;
     } @else if $level == 3 {
-      box-shadow: 0 0 .625rem rgba(0, 0, 0, .15), 0 0 1rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-centered-3;
     } @else if $level == 4 {
-      box-shadow: 0 0 1.25rem rgba(0, 0, 0, .15), 0 0 1.25rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-centered-4;
     } @else if $level == 5 {
-      box-shadow: 0 0 2.5rem rgba(0, 0, 0, .15), 0 0 3rem rgba(0, 0, 0, .15);
+      box-shadow: $box-shadow-centered-5;
     } @else {
       @error "Box-shadow level #{$level} does not exist";
     }
