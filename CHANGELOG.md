@@ -1,3 +1,10 @@
+## [20.4.2](https://github.com/openedx/paragon/compare/v20.4.1...v20.4.2) (2022-07-15)
+
+
+### Bug Fixes
+
+* added role=status for Bubble notification in Tabs ([#1477](https://github.com/openedx/paragon/issues/1477)) ([f491acb](https://github.com/openedx/paragon/commit/f491acb23a1a6212cd79480a9ee0e55d948d0a65))
+
 ## [20.4.1](https://github.com/openedx/paragon/compare/v20.4.0...v20.4.1) (2022-07-08)
 
 
