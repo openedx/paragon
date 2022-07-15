@@ -1,1 +1,1 @@
-export { default } from 'react-loading-skeleton';
+export { default, SkeletonTheme } from 'react-loading-skeleton';

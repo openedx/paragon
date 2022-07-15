@@ -21,7 +21,7 @@ you can also set the number of columns in the displayed ``Skeleton``.
 
 ```jsx live
 () => {
-  const [isChecked, setChecked] = useState(false);
+  const [isChecked, setChecked] = useState(true);
   const handleChange = e => setChecked(e.target.checked);
 
   const exampleTitle = 'Example title';
@@ -39,7 +39,7 @@ you can also set the number of columns in the displayed ``Skeleton``.
       >
         Show loading state
       </Form.Checkbox>
-      <h3>{isChecked ? <Skeleton height={30} /> : exampleTitle}</h3>
+      <h3>{isChecked ? <Skeleton /> : exampleTitle}</h3>
       {isChecked ? <Skeleton count={4} /> : exampleDescription}
     </>
 )}
@@ -51,7 +51,7 @@ you can also set the number of columns in the displayed ``Skeleton``.
 
 ```jsx live
 () => {
-  const [isChecked, setChecked] = useState(false);
+  const [isChecked, setChecked] = useState(true);
   const handleChange = e => setChecked(e.target.checked);
 
   return (
@@ -80,15 +80,14 @@ you can also set the number of columns in the displayed ``Skeleton``.
 )}
 ```
 
-## With color theme
+## With custom theme
 
-``Skeleton`` allows you to customize the **background color** and **animation loading color** of your component.
-The animation speed can also be adjusted using the parameter **duration** and the animation direction using the 
-property **direction**.
+``Skeleton Theme`` allows you to customize the styles of your nested components in a flexible way. 
+Settings will be passed on to the rest of the ``Skeleton`` components in the hierarchy.
 
 ```jsx live
 () => {
-  const [isChecked, setChecked] = useState(false);
+  const [isChecked, setChecked] = useState(true);
   const handleChange = e => setChecked(e.target.checked);
 
   const exampleTitle = 'Example title with color theme';
@@ -106,26 +105,19 @@ property **direction**.
       >
         Show loading state
       </Form.Checkbox>
-      <h3>
-        {isChecked ? 
-          <Skeleton 
-            baseColor="lightgrey" 
-            highlightColor="darkslategrey" 
-            height={30}
-            duration={5}
-            direction="rtl"
-          /> 
-          : exampleTitle}
-      </h3>
-      {isChecked ? 
-        <Skeleton 
-          baseColor="lightgrey" 
-          highlightColor="darkslategrey" 
-          count={4}
-          duration={5}
-          direction="rtl"
-        /> 
-        : exampleDescription}
+      <SkeletonTheme
+        baseColor="lightgrey"
+        highlightColor="darkslategrey"
+        duration={5}
+        direction="rtl"
+      >
+        <h3>
+          {isChecked ? <Skeleton /> : exampleTitle}
+        </h3>
+        <div>
+          {isChecked ? <Skeleton count={4} /> : exampleDescription}
+        </div>
+      </SkeletonTheme>
     </>
 )}
 ```
@@ -136,7 +128,7 @@ By wrapping the ``Skeleton`` in a container, you can flexibly customize the elem
 
 ```jsx live
 () => {
-  const [isChecked, setChecked] = useState(false);
+  const [isChecked, setChecked] = useState(true);
   const handleChange = e => setChecked(e.target.checked);
 
   const exampleTitle = 'Example title with custom wrapper';
@@ -170,7 +162,7 @@ By wrapping the ``Skeleton`` in a container, you can flexibly customize the elem
         Show loading state
       </Form.Checkbox>
       <h3>{isChecked ? <Skeleton wrapper={customWrapper} /> : exampleTitle}</h3>
-      {isChecked ? <Skeleton wrapper={customWrapper} count={3} /> : exampleDescription}
+      <div>{isChecked ? <Skeleton wrapper={customWrapper} count={3} /> : exampleDescription}</div>
     </>
 )}
 ```
