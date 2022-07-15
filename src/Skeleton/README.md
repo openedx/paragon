@@ -10,9 +10,9 @@ designStatus: 'Done'
 devStatus: 'Done'
 ---
 
-``Skeleton`` component should be used directly in your components in place of content that is loading. 
-This tool has the ability to customize loading state your component.
-Сan read more about ``Skeleton`` on the [official documentation repository](https://github.com/dvtng/react-loading-skeleton).
+``Skeleton`` component can be used directly in your components in place of content that is loading. 
+This tool has the ability to customize loading state of you component.
+You can read more about ``Skeleton`` on the [official documentation repository](https://github.com/dvtng/react-loading-skeleton).
 
 ## Basic Usage
 
