@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function SvgQrCode(props) {
+function SvgQrcode(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -14,4 +14,4 @@ function SvgQrCode(props) {
   );
 }
 
-export default SvgQrCode;
+export default SvgQrcode;
