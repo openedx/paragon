@@ -1,5 +1,5 @@
 {
-  "lastModified": 1657894763040,
+  "lastModified": 1657980505206,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -16971,7 +16971,7 @@
       }
     },
     {
-      "version": "16.14.4",
+      "version": "19.9.0",
       "name": "@edx/frontend-app-ora-grading",
       "repository": {
         "type": "git",
@@ -16984,13 +16984,13 @@
             "filePath": "src/components/ConfirmModal.jsx",
             "line": 16,
             "column": 2,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/DemoAlert/index.jsx",
             "line": 18,
             "column": 2,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "ActionRow": [
@@ -16998,25 +16998,25 @@
             "filePath": "src/components/ConfirmModal.jsx",
             "line": 22,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/DemoAlert/index.jsx",
             "line": 23,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
             "line": 51,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ReviewActions/index.jsx",
             "line": 27,
             "column": 4,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Button": [
@@ -17024,91 +17024,103 @@
             "filePath": "src/components/ConfirmModal.jsx",
             "line": 23,
             "column": 8,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/ConfirmModal.jsx",
             "line": 29,
             "column": 8,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/DemoAlert/index.jsx",
             "line": 24,
             "column": 8,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/FilePreview/Banners/ErrorBanner.jsx",
             "line": 15,
             "column": 4,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/FilePreview/FileInfo.jsx",
             "line": 28,
             "column": 4,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ListView/EmptySubmission.jsx",
             "line": 21,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ListView/FilterStatusComponent.jsx",
             "line": 37,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ListView/ListError.jsx",
             "line": 27,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
+          },
+          {
+            "filePath": "src/containers/ListView/SelectedBulkAction.jsx",
+            "line": 10,
+            "column": 2,
+            "version": "19.9.0"
+          },
+          {
+            "filePath": "src/containers/ListView/TableAction.jsx",
+            "line": 10,
+            "column": 2,
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
             "line": 90,
             "column": 20,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ReviewActions/components/StartGradingButton/index.jsx",
             "line": 27,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ReviewActions/index.jsx",
             "line": 45,
             "column": 12,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ReviewModal/ReviewErrors/ReviewError.jsx",
             "line": 26,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ReviewModal/ReviewErrors/ReviewError.jsx",
             "line": 33,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ReviewModal/ReviewErrors/ReviewError.test.jsx",
             "line": 34,
             "column": 2,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ReviewModal/ReviewErrors/ReviewError.test.jsx",
             "line": 40,
             "column": 2,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Alert": [
@@ -17116,31 +17128,31 @@
             "filePath": "src/components/FilePreview/Banners/ErrorBanner.jsx",
             "line": 20,
             "column": 4,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/FilePreview/Banners/LoadingBanner.jsx",
             "line": 6,
             "column": 2,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/DemoWarning/index.jsx",
             "line": 18,
             "column": 4,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ListView/ListError.jsx",
             "line": 23,
             "column": 2,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ReviewModal/ReviewErrors/ReviewError.jsx",
             "line": 39,
             "column": 4,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Alert.Heading": [
@@ -17148,25 +17160,25 @@
             "filePath": "src/components/FilePreview/Banners/ErrorBanner.jsx",
             "line": 21,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/DemoWarning/index.jsx",
             "line": 23,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ListView/ListError.jsx",
             "line": 32,
             "column": 4,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ReviewModal/ReviewErrors/ReviewError.jsx",
             "line": 45,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Spinner": [
@@ -17174,19 +17186,19 @@
             "filePath": "src/components/FilePreview/Banners/LoadingBanner.jsx",
             "line": 7,
             "column": 4,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/LoadingMessage.jsx",
             "line": 12,
             "column": 4,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ListView/index.jsx",
             "line": 47,
             "column": 12,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "IconButton": [
@@ -17194,31 +17206,31 @@
             "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
             "line": 52,
             "column": 8,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
             "line": 71,
             "column": 8,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/InfoPopover/index.jsx",
             "line": 31,
             "column": 4,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ReviewActions/components/SubmissionNavigation.jsx",
             "line": 26,
             "column": 4,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ReviewActions/components/SubmissionNavigation.jsx",
             "line": 41,
             "column": 4,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Form.Group": [
@@ -17226,25 +17238,25 @@
             "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
             "line": 60,
             "column": 8,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/CriterionContainer/CriterionFeedback.jsx",
             "line": 50,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/CriterionContainer/index.jsx",
             "line": 23,
             "column": 4,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/Rubric/RubricFeedback.jsx",
             "line": 46,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Form.Label": [
@@ -17252,31 +17264,31 @@
             "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
             "line": 61,
             "column": 10,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
             "line": 69,
             "column": 10,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/CriterionContainer/index.jsx",
             "line": 24,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/CriterionContainer/ReviewCriterion.jsx",
             "line": 19,
             "column": 10,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/Rubric/RubricFeedback.jsx",
             "line": 47,
             "column": 8,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Form.Control": [
@@ -17284,19 +17296,19 @@
             "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
             "line": 62,
             "column": 10,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/CriterionContainer/CriterionFeedback.jsx",
             "line": 51,
             "column": 8,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/Rubric/RubricFeedback.jsx",
             "line": 55,
             "column": 8,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Card": [
@@ -17304,25 +17316,25 @@
             "filePath": "src/components/FilePreview/FileCard.jsx",
             "line": 14,
             "column": 2,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ResponseDisplay/index.jsx",
             "line": 50,
             "column": 12,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
             "line": 40,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/Rubric/index.jsx",
             "line": 31,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Collapsible": [
@@ -17330,7 +17342,7 @@
             "filePath": "src/components/FilePreview/FileCard.jsx",
             "line": 15,
             "column": 4,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "OverlayTrigger": [
@@ -17338,13 +17350,13 @@
             "filePath": "src/components/FilePreview/FileInfo.jsx",
             "line": 18,
             "column": 2,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/InfoPopover/index.jsx",
             "line": 21,
             "column": 2,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Popover": [
@@ -17352,13 +17364,13 @@
             "filePath": "src/components/FilePreview/FileInfo.jsx",
             "line": 23,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/InfoPopover/index.jsx",
             "line": 26,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Popover.Content": [
@@ -17366,19 +17378,19 @@
             "filePath": "src/components/FilePreview/FileInfo.jsx",
             "line": 24,
             "column": 8,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/FilePreview/FileInfo.test.jsx",
             "line": 22,
             "column": 45,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/components/InfoPopover/index.jsx",
             "line": 27,
             "column": 8,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Badge": [
@@ -17386,7 +17398,7 @@
             "filePath": "src/components/StatusBadge.jsx",
             "line": 33,
             "column": 4,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Form.RadioSet": [
@@ -17394,7 +17406,7 @@
             "filePath": "src/containers/CriterionContainer/RadioCriterion.jsx",
             "line": 37,
             "column": 8,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Form.Radio": [
@@ -17402,7 +17414,7 @@
             "filePath": "src/containers/CriterionContainer/RadioCriterion.jsx",
             "line": 39,
             "column": 12,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "FormControlFeedback": [
@@ -17410,7 +17422,7 @@
             "filePath": "src/containers/CriterionContainer/ReviewCriterion.jsx",
             "line": 20,
             "column": 10,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "PageBanner": [
@@ -17418,7 +17430,7 @@
             "filePath": "src/containers/CTA/index.jsx",
             "line": 12,
             "column": 2,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Hyperlink": [
@@ -17426,31 +17438,31 @@
             "filePath": "src/containers/CTA/index.jsx",
             "line": 15,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ListView/EmptySubmission.jsx",
             "line": 20,
             "column": 4,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ListView/ListError.jsx",
             "line": 40,
             "column": 12,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ListView/ListViewBreadcrumb.jsx",
             "line": 19,
             "column": 4,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ListView/ListViewBreadcrumb.jsx",
             "line": 25,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Container": [
@@ -17458,7 +17470,7 @@
             "filePath": "src/containers/ListView/index.jsx",
             "line": 34,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Icon": [
@@ -17466,99 +17478,99 @@
             "filePath": "src/containers/ListView/ListViewBreadcrumb.jsx",
             "line": 20,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ListView/ListViewBreadcrumb.jsx",
             "line": 26,
             "column": 8,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ResponseDisplay/FileDownload.jsx",
             "line": 29,
             "column": 15,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ResponseDisplay/FileDownload.jsx",
             "line": 30,
             "column": 15,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ResponseDisplay/FileDownload.jsx",
             "line": 31,
             "column": 16,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ResponseDisplay/FileDownload.jsx",
             "line": 32,
             "column": 14,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
             "line": 47,
             "column": 18,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
             "line": 50,
             "column": 18,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
             "line": 88,
             "column": 20,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "DataTable": [
           {
             "filePath": "src/containers/ListView/SubmissionsTable.jsx",
-            "line": 92,
-            "column": 6,
-            "version": "16.14.4"
+            "line": 76,
+            "column": 8,
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
             "line": 55,
             "column": 18,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "DataTable.TableControlBar": [
           {
             "filePath": "src/containers/ListView/SubmissionsTable.jsx",
-            "line": 141,
-            "column": 8,
-            "version": "16.14.4"
+            "line": 120,
+            "column": 10,
+            "version": "19.9.0"
           }
         ],
         "DataTable.Table": [
           {
             "filePath": "src/containers/ListView/SubmissionsTable.jsx",
-            "line": 142,
-            "column": 8,
-            "version": "16.14.4"
+            "line": 121,
+            "column": 10,
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
             "line": 79,
             "column": 20,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "DataTable.TableFooter": [
           {
             "filePath": "src/containers/ListView/SubmissionsTable.jsx",
-            "line": 143,
-            "column": 8,
-            "version": "16.14.4"
+            "line": 122,
+            "column": 10,
+            "version": "19.9.0"
           }
         ],
         "StatefulButton": [
@@ -17566,13 +17578,13 @@
             "filePath": "src/containers/ResponseDisplay/FileDownload.jsx",
             "line": 25,
             "column": 2,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/Rubric/index.jsx",
             "line": 41,
             "column": 12,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Card.Body": [
@@ -17580,13 +17592,13 @@
             "filePath": "src/containers/ResponseDisplay/index.jsx",
             "line": 51,
             "column": 14,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/Rubric/index.jsx",
             "line": 32,
             "column": 8,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Collapsible.Advanced": [
@@ -17594,7 +17606,7 @@
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
             "line": 43,
             "column": 12,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Collapsible.Trigger": [
@@ -17602,7 +17614,7 @@
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
             "line": 44,
             "column": 14,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Collapsible.Visible": [
@@ -17610,13 +17622,13 @@
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
             "line": 46,
             "column": 16,
-            "version": "16.14.4"
+            "version": "19.9.0"
           },
           {
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
             "line": 49,
             "column": 16,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Collapsible.Body": [
@@ -17624,7 +17636,7 @@
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
             "line": 53,
             "column": 14,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Card.Footer": [
@@ -17632,7 +17644,7 @@
             "filePath": "src/containers/ResponseDisplay/SubmissionFiles.jsx",
             "line": 84,
             "column": 12,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "FullscreenModal": [
@@ -17640,7 +17652,7 @@
             "filePath": "src/containers/ReviewModal/index.jsx",
             "line": 31,
             "column": 4,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Row": [
@@ -17648,7 +17660,7 @@
             "filePath": "src/containers/ReviewModal/ReviewContent.jsx",
             "line": 22,
             "column": 4,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ],
         "Col": [
@@ -17656,7 +17668,7 @@
             "filePath": "src/containers/ReviewModal/ReviewContent.jsx",
             "line": 23,
             "column": 6,
-            "version": "16.14.4"
+            "version": "19.9.0"
           }
         ]
       }
