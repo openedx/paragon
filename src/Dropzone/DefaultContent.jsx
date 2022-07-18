@@ -56,7 +56,7 @@ const DefaultContent = ({ accept, minSize, maxSize }) => {
         />
       </p>
       {[accept, minSize, maxSize].some(value => value) && (
-        <p className="x-small text-gray-500">
+        <p className="pgn__dropzone__upload-restriction-message">
           {getFileRestrictionMessage()}
         </p>
       )}
