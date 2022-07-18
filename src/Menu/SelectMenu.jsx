@@ -9,10 +9,6 @@ import { ExpandMore } from '../../icons';
 
 export const SELECT_MENU_DEFAULT_MESSAGE = 'Select...';
 
-// this variable is used to focus the menu open button after any menu option is clicked.
-// triggerTarget.current.focus() inside the onCLick() function didn't guarantee element focus.
-let focusMenu = false;
-
 const SelectMenu = ({
   defaultMessage,
   isLink,
@@ -21,6 +17,9 @@ const SelectMenu = ({
   ...props
 }) => {
   const triggerTarget = React.useRef(null);
+  // this ref is used to focus the menu open button after any menu option is clicked.
+  // triggerTarget.current.focus() inside the onCLick() function didn't guarantee element focus.
+  const focusMenuRef = React.useRef(false);
   const itemsCollection = React.useMemo(
     () => Array.from({ length: children.length }).map(() => React.createRef()),
     [children.length],
@@ -47,7 +46,7 @@ const SelectMenu = ({
         }
         setSelected(index);
         close();
-        focusMenu = true;
+        focusMenuRef.current = true;
       },
       id: `${index.toString()}_pgn__menu-item`,
       role: 'link',
@@ -103,9 +102,9 @@ const SelectMenu = ({
     if (isOpen && !prevOpenRef.current && selected) {
       itemsCollection[selected].current.children[0].focus({ preventScroll: (defaultIndex() === selected) });
     }
-    if (focusMenu) {
+    if (focusMenuRef.current) {
       triggerTarget.current.focus();
-      focusMenu = false;
+      focusMenuRef.current = false;
     }
     prevOpenRef.current = isOpen;
   }, [isOpen, children.length, defaultIndex, itemsCollection, selected]);
