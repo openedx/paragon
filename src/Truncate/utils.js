@@ -22,6 +22,13 @@ const constructString = (string, whiteSpace, ellipsis) => {
   return `${string.trim()}${spacer}${ellipsis}`;
 };
 
+const calculateDecrementCoefficient = (lineHeight, ellipsisHeight) => {
+  const RIGHT_OFFSET = 0.35;
+  return (lineHeight / ellipsisHeight) + RIGHT_OFFSET;
+};
+
+const calculateEllipsisElementHeight = (ellipsisElement) => Math.ceil(ellipsisElement.scrollHeight);
+
 const clampLines = (text, element, { lines, whiteSpace, ellipsis }) => {
   const lineHeightValue = 200;
   const maxHeight = lineHeightValue * Number(lines);
@@ -33,7 +40,7 @@ const clampLines = (text, element, { lines, whiteSpace, ellipsis }) => {
     position: 'absolute',
     opacity: '0',
     left: '-1px',
-    width: `${element.scrollWidth}px`,
+    width: '100%',
     paddingTop: DEFAULT_PADDING_VALUE,
     paddingBottom: DEFAULT_PADDING_VALUE,
   });
@@ -43,19 +50,19 @@ const clampLines = (text, element, { lines, whiteSpace, ellipsis }) => {
   let clampedText = text;
   ellipsisElement.innerHTML = constructString(clampedText, whiteSpace, ellipsis);
 
-  let ellipsisElementHeight = Math.ceil(ellipsisElement.scrollHeight);
+  let ellipsisElementHeight = calculateEllipsisElementHeight(ellipsisElement);
 
   if (ellipsisElementHeight <= maxHeight) {
     ellipsisElement.parentNode.removeChild(ellipsisElement);
     return clampedText;
   }
 
-  let decrementCoefficient = (maxHeight / ellipsisElementHeight) + 0.35;
+  let decrementCoefficient = calculateDecrementCoefficient(maxHeight, ellipsisElementHeight);
 
   while (ellipsisElementHeight > maxHeight && clampedText.length) {
     clampedText = createTextClamp(text, decrementCoefficient);
     ellipsisElement.innerHTML = constructString(clampedText, whiteSpace, ellipsis);
-    ellipsisElementHeight = Math.ceil(ellipsisElement.scrollHeight) - 1;
+    ellipsisElementHeight = calculateEllipsisElementHeight(ellipsisElement);
     decrementCoefficient -= text.length > maxWidth ? 0.011 : 0.018;
   }
 
@@ -64,6 +71,8 @@ const clampLines = (text, element, { lines, whiteSpace, ellipsis }) => {
 };
 
 module.exports = {
+  calculateDecrementCoefficient,
+  calculateEllipsisElementHeight,
   createTextClamp,
   clampLines,
   createCopyElement,

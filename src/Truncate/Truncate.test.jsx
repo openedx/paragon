@@ -14,3 +14,15 @@ describe('<Truncate />', () => {
     expect(tree).toMatchSnapshot();
   });
 });
+
+describe('<Truncate />', () => {
+  it('Component successfully renders without lines', () => {
+    const tree = renderer.create(
+      <Truncate>
+        Learners, course teams, researchers, developers: the edX community includes groups with a range of reasons
+        for using the platform and objectives to accomplish.
+      </Truncate>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+});

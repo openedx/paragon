@@ -1,5 +1,10 @@
 import {
-  constructString, createTextClamp, createCopyElement, clampLines,
+  constructString,
+  createTextClamp,
+  createCopyElement,
+  clampLines,
+  calculateDecrementCoefficient,
+  calculateEllipsisElementHeight,
 } from './utils';
 
 describe('utils', () => {
@@ -37,6 +42,19 @@ describe('utils', () => {
       const whiteSpace = false;
       const ellipsis = '...';
       expect(clampLines(text, element, { lines, whiteSpace, ellipsis })).not.toBeUndefined();
+    });
+  });
+  describe('calculatedDecrementCoefficient', () => {
+    it('returned string is not undefined', () => {
+      const lineHeight = 5;
+      const ellipsisHeight = 5;
+      expect(calculateDecrementCoefficient(lineHeight, ellipsisHeight)).toEqual(1.35);
+    });
+  });
+  describe('calculateEllipsisElementHeight', () => {
+    it('returned string is not undefined', () => {
+      const ellipsisElement = document.createElement('span');
+      expect(calculateEllipsisElementHeight(ellipsisElement)).not.toBeUndefined();
     });
   });
 });
