@@ -44,9 +44,9 @@ const clampLines = (text, element, { lines, whiteSpace, ellipsis }) => {
   ellipsisElement.innerHTML = constructString(clampedText, whiteSpace, ellipsis);
 
   let ellipsisElementHeight = Math.ceil(ellipsisElement.scrollHeight);
+
   if (ellipsisElementHeight <= maxHeight) {
     ellipsisElement.parentNode.removeChild(ellipsisElement);
-
     return clampedText;
   }
 

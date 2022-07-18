@@ -1,4 +1,6 @@
-import { constructString, createTextClamp } from './utils';
+import {
+  constructString, createTextClamp, createCopyElement, clampLines,
+} from './utils';
 
 describe('utils', () => {
   describe('createTextClamp', () => {
@@ -16,6 +18,25 @@ describe('utils', () => {
       const ellipsis = '...';
       const finalString = constructString(string, whiteSpace, ellipsis);
       expect(finalString).toEqual('Lorem Ipsum is simply dummy text...');
+    });
+  });
+  describe('createCopyElement', () => {
+    it('returned element is not undefined', () => {
+      const sourceElement = document.createElement('span');
+      const sourceElementStyles = {
+        color: 'red',
+      };
+      expect(createCopyElement(sourceElement, sourceElementStyles)).not.toBeUndefined();
+    });
+  });
+  describe('clampLines', () => {
+    it('returned string is not undefined', () => {
+      const text = 'Hello world';
+      const element = document.createElement('span');
+      const lines = 2;
+      const whiteSpace = false;
+      const ellipsis = '...';
+      expect(clampLines(text, element, { lines, whiteSpace, ellipsis })).not.toBeUndefined();
     });
   });
 });
