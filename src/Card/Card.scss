@@ -256,14 +256,9 @@
   box-shadow: none;
   margin-bottom: 0;
 
-  &.alert-dark {
-    color: $white;
-    background-color: $primary-500;
-    border-color: $white;
-
-    .alert-icon {
-      color: $white;
-    }
+  &.alert {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
 }
 

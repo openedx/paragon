@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Alert from '../Alert';
+import { Icon } from '..';
 
 const CardStatus = React.forwardRef(({
   className,
@@ -9,14 +9,15 @@ const CardStatus = React.forwardRef(({
   variant,
   icon,
 }, ref) => (
-  <Alert
-    className={classNames('pgn__card-status', className)}
+  <div
+    className={classNames('pgn__card-status',
+      `alert-${variant}`, 'alert', 'alert-content',
+      className)}
     ref={ref}
-    icon={icon}
-    variant={variant}
   >
+    {icon && <Icon src={icon} className="alert-icon" />}
     {children}
-  </Alert>
+  </div>
 ));
 
 CardStatus.propTypes = {

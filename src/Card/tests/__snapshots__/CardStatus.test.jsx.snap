@@ -2,17 +2,8 @@
 
 exports[`correct rendering renders CardStatus element 1`] = `
 <div
-  className="fade alert-content pgn__card-status alert alert-warning show"
-  role="alert"
+  className="pgn__card-status alert-warning alert alert-content"
 >
-  <div
-    className="pgn__alert-message-wrapper"
-  >
-    <div
-      className="alert-message-content"
-    >
-      Text
-    </div>
-  </div>
+  Text
 </div>
 `;
