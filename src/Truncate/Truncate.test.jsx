@@ -5,22 +5,10 @@ import Truncate from './index';
 describe('<Truncate />', () => {
   it('Component successfully renders', () => {
     const tree = renderer.create(
-      <Truncate lines={2}>
+      <Truncate lines={2} ellipsis="___" whiteSpace typeElement="span">
         Learners, course teams, researchers, developers: the edX community includes groups with a range of reasons
         for using the platform and objectives to accomplish. To help members of each group learn about what edX
         offers, reach goals, and solve problems, edX provides a variety of information resources.
-      </Truncate>,
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-});
-
-describe('<Truncate />', () => {
-  it('Component successfully renders without lines', () => {
-    const tree = renderer.create(
-      <Truncate>
-        Learners, course teams, researchers, developers: the edX community includes groups with a range of reasons
-        for using the platform and objectives to accomplish.
       </Truncate>,
     ).toJSON();
     expect(tree).toMatchSnapshot();
