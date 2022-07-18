@@ -22,7 +22,7 @@ const constructString = (string, whiteSpace, ellipsis) => {
   return `${string.trim()}${spacer}${ellipsis}`;
 };
 
-const calculateDecrementCoefficient = (lineHeight, ellipsisHeight) => {
+const calculateLineHeightDecrementCoefficient = (lineHeight, ellipsisHeight) => {
   const RIGHT_OFFSET = 0.35;
   return (lineHeight / ellipsisHeight) + RIGHT_OFFSET;
 };
@@ -34,6 +34,8 @@ const clampLines = (text, element, { lines, whiteSpace, ellipsis }) => {
   const maxHeight = lineHeightValue * Number(lines);
   const maxWidth = 1500;
   const DEFAULT_PADDING_VALUE = 0;
+  const EXTRA_SMALL_OFFSET = 0.011;
+  const SMALL_OFFSET = 0.018;
   const ellipsisElement = createCopyElement(element, {
     lineHeight: `${lineHeightValue}px`,
     height: 'auto',
@@ -57,13 +59,13 @@ const clampLines = (text, element, { lines, whiteSpace, ellipsis }) => {
     return clampedText;
   }
 
-  let decrementCoefficient = calculateDecrementCoefficient(maxHeight, ellipsisElementHeight);
+  let decrementCoefficient = calculateLineHeightDecrementCoefficient(maxHeight, ellipsisElementHeight);
 
   while (ellipsisElementHeight > maxHeight && clampedText.length) {
     clampedText = createTextClamp(text, decrementCoefficient);
     ellipsisElement.innerHTML = constructString(clampedText, whiteSpace, ellipsis);
     ellipsisElementHeight = calculateEllipsisElementHeight(ellipsisElement);
-    decrementCoefficient -= text.length > maxWidth ? 0.011 : 0.018;
+    decrementCoefficient -= text.length > maxWidth ? EXTRA_SMALL_OFFSET : SMALL_OFFSET;
   }
 
   ellipsisElement.parentNode.removeChild(ellipsisElement);
@@ -71,7 +73,7 @@ const clampLines = (text, element, { lines, whiteSpace, ellipsis }) => {
 };
 
 module.exports = {
-  calculateDecrementCoefficient,
+  calculateLineHeightDecrementCoefficient,
   calculateEllipsisElementHeight,
   createTextClamp,
   clampLines,
