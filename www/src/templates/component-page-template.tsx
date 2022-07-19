@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
+// @ts-ignore
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+// @ts-ignore
 import { Container, Alert } from '~paragon-react'; // eslint-disable-line
 import CodeBlock from '../components/CodeBlock';
 import GenericPropsTable from '../components/PropsTable';
@@ -10,17 +12,44 @@ import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
 import LinkedHeading from '../components/LinkedHeading';
 
+export type PageTemplateTypes = {
+  data: {
+    mdx: {
+      frontmatter: {
+        title: string,
+        status: string,
+        components: string,
+        notes: string,
+      },
+      tableOfContents: {
+        items: Array<{}>,
+      },
+      body: string,
+    },
+    components: {
+      nodes: any,
+    }
+  },
+  pageContext: {
+    cssVariables: string,
+  }
+};
+
+export interface ShortCodesTypes {
+  displayName: string,
+}
+
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
   pageContext: { cssVariables },
-}) {
-  const components = componentNodes.nodes.reduce((acc, currentValue) => {
-    acc[currentValue.displayName] = currentValue;
-    return acc;
-  }, {});
-
+}: PageTemplateTypes) {
+  const components = componentNodes
+    .nodes.reduce((acc: { [x: string]: any; }, currentValue: { displayName: string | number; }) => {
+      acc[currentValue.displayName] = currentValue;
+      return acc;
+    }, {});
   const shortcodes = React.useMemo(() => {
-    const PropsTable = ({ displayName, ...props }) => { // eslint-disable-line react/prop-types
+    const PropsTable = ({ displayName, ...props }: ShortCodesTypes) => { // eslint-disable-line react/prop-types
       if (components[displayName]) {
         return <GenericPropsTable {...components[displayName]} {...props} />;
       }
@@ -28,12 +57,14 @@ export default function PageTemplate({
     };
     // Provide common components here
     return {
-      h2: (props) => <LinkedHeading h="2" {...props} />,
-      h3: (props) => <LinkedHeading h="3" {...props} />,
-      h4: (props) => <LinkedHeading h="4" {...props} />,
-      h5: (props) => <LinkedHeading h="5" {...props} />,
-      h6: (props) => <LinkedHeading h="6" {...props} />,
-      pre: props => <div {...props} />,
+      h2: (props: HTMLElement) => <LinkedHeading h="2" {...props} />,
+      h3: (props: HTMLElement) => <LinkedHeading h="3" {...props} />,
+      h4: (props: HTMLElement) => <LinkedHeading h="4" {...props} />,
+      h5: (props: HTMLElement) => <LinkedHeading h="5" {...props} />,
+      h6: (props: HTMLElement) => <LinkedHeading h="6" {...props} />,
+      pre: (props:
+      JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> &
+      React.HTMLAttributes<HTMLDivElement>) => <div {...props} />,
       code: CodeBlock,
       Link,
       PropsTable,
@@ -84,7 +115,7 @@ export default function PageTemplate({
             <CodeBlock className="language-scss">{cssVariables}</CodeBlock>
           </div>
         )}
-        {sortedComponentNames.map(componentName => {
+        {typeof sortedComponentNames !== 'string' && sortedComponentNames?.map(componentName => {
           const node = components[componentName];
           if (!node) {
             return null;

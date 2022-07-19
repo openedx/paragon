@@ -7,23 +7,25 @@ import PropTypes from 'prop-types';
  * @param  {Array} array The array to shuffle
  * @return {String}      The first item in the shuffled array
  */
- const shuffle = (array) => {
-	let currentIndex = array.length;
-	let temporaryValue, randomIndex;
+const shuffle = (array: []): [] => {
+  let currentIndex: number = array.length;
+  let temporaryValue; let
+    randomIndex;
 
-	// While there remain elements to shuffle...
-	while (0 !== currentIndex) {
-		// Pick a remaining element...
-		randomIndex = Math.floor(Math.random() * currentIndex);
-		currentIndex -= 1;
+  // While there remain elements to shuffle...
+  while (currentIndex !== 0) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
 
-		// And swap it with the current element.
-		temporaryValue = array[currentIndex];
-		array[currentIndex] = array[randomIndex];
-		array[randomIndex] = temporaryValue;
-	}
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    /* eslint-disable no-param-reassign */
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
 
-	return array;
+  return array;
 };
 
 const paragraphs = [
@@ -39,20 +41,34 @@ const paragraphs = [
   'Vice post-ironic etsy health goth kogi aesthetic, wolf tilde tofu man bun gluten-free venmo. Yuccie kogi celiac distillery, four loko adaptogen yr mixtape bushwick vinyl pabst messenger bag. Trust fund glossier hell of selfies pop-up marfa. Pitchfork woke listicle humblebrag adaptogen enamel pin trust fund butcher helvetica cred succulents try-hard raw denim seitan. Keffiyeh tumeric slow-carb, chillwave drinking vinegar af austin pabst paleo squid prism enamel pin.',
 ];
 
-const HipsterIpsum = ({ numParagraphs }) => {
-  const shuffledParagraphs = React.useMemo(() => {
-    return shuffle(paragraphs);
-  }, []);
+export type HipsterIpsumTypes = {
+  numParagraphs: number,
+};
+
+const HipsterIpsum = ({ numParagraphs }: HipsterIpsumTypes) => {
+  // @ts-ignore
+  const shuffledParagraphs = React.useMemo(() => shuffle(paragraphs), []);
   const content = shuffledParagraphs
     .slice(0, numParagraphs)
-    .map((text, index) => <p key={index}>{text}</p>)
+    .map((
+      text: boolean |
+      React.ReactChild |
+      React.ReactFragment |
+      React.ReactPortal |
+      null |
+      undefined,
+      index: React.Key |
+      null |
+      undefined,
+      // eslint-disable-next-line react/no-array-index-key
+    ) => <p key={index}>{text}</p>);
 
   return (
     <>
       {content}
       <p className="x-small">Sourced with love from <a href="https://hipsum.co/">https://hipsum.co/</a></p>
     </>
-  )
+  );
 };
 
 HipsterIpsum.propTypes = {

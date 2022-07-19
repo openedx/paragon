@@ -4,7 +4,7 @@
  * @param {string} featureFlag
  * @returns true if feature flag is in `?feature` query parameter
  */
-export default function hasFeatureFlagEnabled(featureFlag) {
+export default function hasFeatureFlagEnabled(featureFlag: string) {
   const { location } = global;
   if (!location) {
     return false;

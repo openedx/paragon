@@ -2,16 +2,18 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+// @ts-ignore
 import Color from 'color';
 import SEO from '../../components/SEO';
 import MeasuredItem from '../../components/MeasuredItem';
 import Layout from '../../components/PageLayout';
+// @ts-ignore
 import { Container } from '~paragon-react'; // eslint-disable-line
 
 const utilityClasses = {
-  bg: (color, level) => (level ? `bg-${color}-${level}` : `bg-${color}`),
-  border: (color, level) => (level ? `border-${color}-${level}` : `border-${color}`),
-  text: (color, level) => (level ? `text-${color}-${level}` : `text-${color}`),
+  bg: (color: string, level: number) => (level ? `bg-${color}-${level}` : `bg-${color}`),
+  border: (color: string, level: number) => (level ? `border-${color}-${level}` : `border-${color}`),
+  text: (color: string, level: number) => (level ? `text-${color}-${level}` : `text-${color}`),
 };
 
 const colors = [
@@ -28,9 +30,13 @@ const colors = [
 
 const levels = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
-const selectorColors = {};
+export interface ParseColorsInterface {
+  [key: string]: string | null;
+}
 
-function parseColors(cssSelectors) {
+const selectorColors: ParseColorsInterface = {};
+
+function parseColors(cssSelectors: { selector: string; declarations: string; }[]) {
   const colorsAreParsed = Object.keys(selectorColors).length !== 0;
   if (colorsAreParsed) { return; }
 
@@ -43,11 +49,17 @@ function parseColors(cssSelectors) {
   });
 }
 
-const Swatch = ({ name, colorClassName, isUnused }) => (
+export interface SwatchTypeInterface {
+  name: string,
+  colorClassName: string,
+  isUnused?: boolean,
+}
+
+const Swatch = ({ name, colorClassName, isUnused }: SwatchTypeInterface) => (
   <div className="d-flex align-items-center mb-2">
     <MeasuredItem
       properties={['background-color']}
-      renderAfter={measurements => (
+      renderAfter={(measurements: { [x: string]: any; }) => (
         <div style={{ lineHeight: 1 }} className="small">
           <code className="mb-0 d-block text-lowercase text-dark-700">
             {name}
@@ -79,7 +91,7 @@ Swatch.defaultProps = {
   isUnused: false,
 };
 
-const renderColorRamp = (themeName, unusedLevels) => (
+const renderColorRamp = (themeName: string, unusedLevels: number[]) => (
   <div
     key={`${themeName}`}
     style={{ flexBasis: '24%', marginRight: '1%', marginBottom: '2rem' }}
@@ -96,8 +108,16 @@ const renderColorRamp = (themeName, unusedLevels) => (
   </div>
 );
 
+export type ColorsPageTypes = {
+  data: {
+    allCssUtilityClasses: {
+      nodes: any,
+    },
+  },
+};
+
 // eslint-disable-next-line react/prop-types
-export default function ColorsPage({ data }) {
+export default function ColorsPage({ data }: ColorsPageTypes) {
   parseColors(data.allCssUtilityClasses.nodes); // eslint-disable-line react/prop-types
 
   return (
@@ -333,6 +353,7 @@ export default function ColorsPage({ data }) {
           {[500, 700, 900].map(level => (
             <div key={level} style={{ flexBasis: '33%' }}>
               {colors.map(({ themeName, unusedLevels }) => {
+                // @ts-ignore
                 if (unusedLevels.includes(level)) { return null; }
                 return (
                   <code
