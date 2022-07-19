@@ -4,6 +4,7 @@ import {
   Tabs,
   Tab,
   Container,
+  // @ts-ignore
 } from '~paragon-react'; // eslint-disable-line
 import SEO from '../components/SEO';
 import Layout from '../components/PageLayout';
@@ -42,7 +43,9 @@ const componentsUsage = dependentProjectsUsages.reduce((accumulator, project) =>
 }, {});
 
 const summaryComponentsUsage = Object.entries(componentsUsage).map(([componentName, usages]) => {
-  const componentUsageCounts = usages.reduce((accumulator, project) => accumulator += project.componentUsageCount, 0);
+  const componentUsageCounts = usages
+    .reduce((accumulator: any, project: { componentUsageCount: number; }) =>
+        accumulator += project.componentUsageCount, 0);
   return {
     name: componentName,
     count: componentUsageCounts,
