@@ -14,15 +14,13 @@ const actions = (
 );
 
 // eslint-disable-next-line react/prop-types
-function CardFooterWrapper({ orientation = 'vertical', ...props }) {
-  return (
-    <CardContext.Provider value={{ orientation }}>
-      <CardFooter {...props}>
-        {actions}
-      </CardFooter>
-    </CardContext.Provider>
-  );
-}
+const CardFooterWrapper = ({ orientation = 'vertical', isLoading, ...props }) => (
+  <CardContext.Provider value={{ orientation, isLoading }}>
+    <CardFooter {...props}>
+      {actions}
+    </CardFooter>
+  </CardContext.Provider>
+);
 
 describe('<CardFooter />', () => {
   it('renders vertical orientation without footer text', () => {
@@ -65,5 +63,15 @@ describe('<CardFooter />', () => {
     expect(link.exists()).toEqual(true);
     expect(link.prop('children')).toEqual('Link text here');
     expect(link.prop('href')).toEqual('https://example.com');
+  });
+  it('render without loading state', () => {
+    const wrapper = mount(<CardFooterWrapper />);
+    expect(wrapper.exists('.pgn__card-footer-loader')).toBe(false);
+    expect(wrapper.props().isLoading).toBeUndefined();
+  });
+  it('render with loading state', () => {
+    const wrapper = mount(<CardFooterWrapper isLoading />);
+    expect(wrapper.exists('.pgn__card-footer-loader')).toBe(true);
+    expect(wrapper.props().isLoading).toBe(true);
   });
 });

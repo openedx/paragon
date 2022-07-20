@@ -12,11 +12,12 @@ import CardBody from './CardBody';
 
 const Card = React.forwardRef(({
   orientation,
+  isLoading,
   className,
   isClickable,
   ...props
 }, ref) => (
-  <CardContextProvider orientation={orientation}>
+  <CardContextProvider orientation={orientation} isLoading={isLoading}>
     <BaseCard
       {...props}
       className={classNames(className, 'pgn__card', {
@@ -43,6 +44,8 @@ Card.propTypes = {
   orientation: PropTypes.oneOf(['vertical', 'horizontal']),
   /** Specifies whether the `Card` is clickable, if `true` appropriate `hover` and `focus` styling will be added. */
   isClickable: PropTypes.bool,
+  /** Specifies loading state. */
+  isLoading: PropTypes.bool,
 };
 
 Card.defaultProps = {
@@ -50,6 +53,7 @@ Card.defaultProps = {
   className: undefined,
   orientation: 'vertical',
   isClickable: false,
+  isLoading: false,
 };
 
 Card.Header = CardHeader;

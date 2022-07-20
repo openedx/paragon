@@ -83,7 +83,14 @@ function Tabs({
         newTitle = (
           <>
             {title}
-            <Bubble variant="error" className="pgn__tab-notification">{notification}</Bubble>
+            <Bubble
+              variant="error"
+              role="status"
+              className="pgn__tab-notification"
+              expandable
+            >
+              {notification}
+            </Bubble>
           </>
         );
       } else {
@@ -118,26 +125,28 @@ function Tabs({
         );
       });
 
-    childrenList.splice(
-      indexOfOverflowStart,
-      0, (
-        <Tab
-          key="moreTabKey"
-          tabClassName={classNames(!overflowChildren.length && 'pgn__tab_invisible', 'pgn__tab_more')}
-          title={(
-            <Dropdown ref={overflowElementRef}>
-              <Dropdown.Toggle
-                variant="link"
-                className="nav-link"
-                id="pgn__tab-toggle"
-              >
-                {moreTabText}
-                {moreTabHasNotification && (
-                <Bubble variant="error" className="pgn__tab-notification" />
-                )}
-              </Dropdown.Toggle>
-              <Dropdown.Menu className="dropdown-menu-right">{overflowChildren}</Dropdown.Menu>
-            </Dropdown>
+    childrenList.splice(indexOfOverflowStart, 0, (
+      <Tab
+        key="moreTabKey"
+        tabClassName={classNames(!overflowChildren.length && 'pgn__tab_invisible', 'pgn__tab_more')}
+        title={(
+          <Dropdown ref={overflowElementRef}>
+            <Dropdown.Toggle
+              variant="link"
+              className="nav-link"
+              id="pgn__tab-toggle"
+            >
+              {moreTabText}
+              {moreTabHasNotification && (
+                <Bubble
+                  variant="error"
+                  role="status"
+                  className="pgn__tab-notification"
+                />
+              )}
+            </Dropdown.Toggle>
+            <Dropdown.Menu className="dropdown-menu-right">{overflowChildren}</Dropdown.Menu>
+          </Dropdown>
         )}
         />
       ),

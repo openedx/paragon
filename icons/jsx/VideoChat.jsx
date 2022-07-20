@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function SvgAddChart(props) {
+function SvgVideoChat(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,10 +9,9 @@ function SvgAddChart(props) {
       viewBox="0 0 24 24"
       {...props}
     >
-      <path d="M19 19H5V5h9V3H3v18h18V10h-2z" />
-      <path d="M11 7h2v10h-2zm4 6h2v4h-2zm-8-3h2v7H7zm12-5V3h-2v2h-2v2h2v2h2V7h2V5z" />
+      <path d="M2 2v20l4-4h16V2H2zm15 11l-2-1.99V14H7V6h8v2.99L17 7v6z" />
     </svg>
   );
 }
 
-export default SvgAddChart;
+export default SvgVideoChat;

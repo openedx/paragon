@@ -52,6 +52,7 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
   const handleChange = (e) => setValue(e.target.value);
   return (
     <>
+      <h3>Default</h3>
       <Form.Group>
         <Form.Control
           value={value}
@@ -61,6 +62,7 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
         />
       </Form.Group>
 
+      <h3>Textarea</h3>
       <Form.Group>
         <Form.Control
           as="textarea"
@@ -71,6 +73,7 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
         />
       </Form.Group>
 
+      <h3>Select</h3>
       <Form.Group>
         <Form.Control
           as="select"
@@ -87,6 +90,7 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
         </Form.Control>
       </Form.Group>
 
+      <h3>Password</h3>
       <Form.Group>
         <Form.Control
           type="password"
@@ -97,6 +101,7 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
         />
       </Form.Group>
 
+      <h3>Date picker</h3>
       <Form.Group>
         <Form.Control
           type="date"
@@ -107,6 +112,7 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
         />
       </Form.Group>
 
+      <h3>Number</h3>
       <Form.Group>
         <Form.Control
           type="number"
@@ -117,6 +123,7 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
         />
       </Form.Group>
 
+      <h3>Time picker</h3>
       <Form.Group>
         <Form.Control
           type="time"
@@ -131,7 +138,17 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 }
 ```
 
+## Textarea autoResize
 
+`autoResize` prop allows input to be resized according to the content height.
+
+```jsx live
+<Form.Control
+  as="textarea"
+  autoResize
+  floatingLabel="Write something long"
+/>
+```
 
 ## Validation
 

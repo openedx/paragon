@@ -1,3 +1,65 @@
+# [20.5.0](https://github.com/openedx/paragon/compare/v20.4.2...v20.5.0) (2022-07-15)
+
+
+### Bug Fixes
+
+* update script for copying mui-icons and add additional docs ([#1449](https://github.com/openedx/paragon/issues/1449)) ([0a8ce7f](https://github.com/openedx/paragon/commit/0a8ce7f4e2ddd62d61ba104fbed55011d83c1ff4))
+
+
+### Features
+
+* add autoResize for textarea Form.Control [BD-46] ([#1461](https://github.com/openedx/paragon/issues/1461)) ([6bc5320](https://github.com/openedx/paragon/commit/6bc53200b2d99c1a1e6e60b25800e3cf1ea1fe8e))
+* add box shadow variables for all levels and sides ([#1443](https://github.com/openedx/paragon/issues/1443)) ([90d0316](https://github.com/openedx/paragon/commit/90d031604e0b46fb0b9ace31e8a46912b952059a))
+
+## [20.4.2](https://github.com/openedx/paragon/compare/v20.4.1...v20.4.2) (2022-07-15)
+
+
+### Bug Fixes
+
+* added role=status for Bubble notification in Tabs ([#1477](https://github.com/openedx/paragon/issues/1477)) ([f491acb](https://github.com/openedx/paragon/commit/f491acb23a1a6212cd79480a9ee0e55d948d0a65))
+
+## [20.4.1](https://github.com/openedx/paragon/compare/v20.4.0...v20.4.1) (2022-07-08)
+
+
+### Bug Fixes
+
+* export default export from react-loading-skeleton as Skeleton ([#1462](https://github.com/openedx/paragon/issues/1462)) ([d0f6dea](https://github.com/openedx/paragon/commit/d0f6dea0d60aef22f48dd91074b74453fea25620))
+
+# [20.4.0](https://github.com/openedx/paragon/compare/v20.3.2...v20.4.0) (2022-07-08)
+
+
+### Features
+
+* support automatic loading skeleton states on Card with isLoading prop  ([#1379](https://github.com/openedx/paragon/issues/1379)) ([38bbde1](https://github.com/openedx/paragon/commit/38bbde125468b3a3d0cbc5d7a9896809d634f220))
+
+## [20.3.2](https://github.com/openedx/paragon/compare/v20.3.1...v20.3.2) (2022-07-08)
+
+
+### Bug Fixes
+
+* add expandable bubble ([#1448](https://github.com/openedx/paragon/issues/1448)) ([86f9ca7](https://github.com/openedx/paragon/commit/86f9ca7536c11bfb1214f8c34a334e078cc5c36d))
+
+## [20.3.1](https://github.com/openedx/paragon/compare/v20.3.0...v20.3.1) (2022-07-07)
+
+
+### Bug Fixes
+
+* TextFilter component Header prop usage only handles string, not components (functions)  ([#1441](https://github.com/openedx/paragon/issues/1441)) ([a241c8b](https://github.com/openedx/paragon/commit/a241c8b196a4c2a224366565961b45de2e5756e1))
+
+# [20.3.0](https://github.com/openedx/paragon/compare/v20.2.0...v20.3.0) (2022-07-01)
+
+
+### Features
+
+* [BD-46] add `Dropzone` component ([#1342](https://github.com/openedx/paragon/issues/1342)) ([facda6b](https://github.com/openedx/paragon/commit/facda6b97e73ce79ecc0db27d83a0d2787da4fc3))
+
+# [20.2.0](https://github.com/openedx/paragon/compare/v20.1.3...v20.2.0) (2022-06-24)
+
+
+### Features
+
+* added BigBlueButton bbb icon in repo ([#1414](https://github.com/openedx/paragon/issues/1414)) ([7c846ad](https://github.com/openedx/paragon/commit/7c846ada9edd3562c5410bebab2a4bc10e99e56d))
+
 ## [20.1.3](https://github.com/openedx/paragon/compare/v20.1.2...v20.1.3) (2022-06-24)
 
 

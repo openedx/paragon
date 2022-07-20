@@ -1,6 +1,10 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import Skeleton from 'react-loading-skeleton';
+import CardContext from './CardContext';
+
+const SKELETON_HEIGHT_VALUE = 20;
 
 const CardHeader = React.forwardRef(({
   actions,
@@ -8,7 +12,10 @@ const CardHeader = React.forwardRef(({
   size,
   subtitle,
   title,
+  skeletonHeight,
+  skeletonWidth,
 }, ref) => {
+  const { isLoading } = useContext(CardContext);
   const cloneActions = useCallback(
     (Action) => {
       if (React.isValidElement(Action)) {
@@ -24,6 +31,18 @@ const CardHeader = React.forwardRef(({
     },
     [size],
   );
+
+  if (isLoading) {
+    return (
+      <div className={classNames('pgn__card-header', className)}>
+        <Skeleton
+          containerClassName="pgn__card-header-loader"
+          height={skeletonHeight}
+          width={skeletonWidth}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className={classNames('pgn__card-header', className)} ref={ref}>
@@ -53,6 +72,10 @@ CardHeader.propTypes = {
   size: PropTypes.oneOf(['sm', 'md']),
   /** The subtitle of the CardHeader component */
   subtitle: PropTypes.node,
+  /** Specifies height of skeleton in loading state. */
+  skeletonHeight: PropTypes.number,
+  /** Specifies width of  skeleton in loading state. */
+  skeletonWidth: PropTypes.number,
 };
 
 CardHeader.defaultProps = {
@@ -61,6 +84,8 @@ CardHeader.defaultProps = {
   size: 'md',
   title: null,
   subtitle: null,
+  skeletonHeight: SKELETON_HEIGHT_VALUE,
+  skeletonWidth: null,
 };
 
 export default CardHeader;
