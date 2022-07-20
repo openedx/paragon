@@ -3,7 +3,8 @@ import {
   createTextClamp,
   createCopyElement,
   clampLines,
-  calculateLineHeightDecrementCoefficient,
+  calcLineHeightRightOffset,
+  calcEllipsisElementHeight,
 } from './utils';
 
 describe('utils', () => {
@@ -51,20 +52,20 @@ describe('utils', () => {
       const ellipsis = '...';
       expect(clampLines(text, element, { lines, whiteSpace, ellipsis })).not.toBeUndefined();
     });
-    it('my test', () => {
-      const text = 'Lorem Ipsum is simply dummy text';
-      const element = document.createElement('div');
-      const lines = 2;
-      const whiteSpace = false;
-      const ellipsis = '...';
-      expect(clampLines(text, element, { lines, whiteSpace, ellipsis })).toEqual('Lorem Ipsum is simply dummy text');
-    });
   });
-  describe('calculatedDecrementCoefficient', () => {
-    it('returned string isn`t undefined', () => {
+
+  describe('calcLineHeightRightOffset', () => {
+    it('returned offset value', () => {
       const maxHeight = 1500;
       const ellipsisElementHeight = 1500;
-      expect(calculateLineHeightDecrementCoefficient(maxHeight, ellipsisElementHeight)).toEqual(1.35);
+      expect(calcLineHeightRightOffset(maxHeight, ellipsisElementHeight)).toEqual(2);
+    });
+  });
+
+  describe('calcEllipsisElementHeight', () => {
+    it('returned value isn`t undefined', () => {
+      const ellipsisElement = document.createElement('div');
+      expect(calcEllipsisElementHeight(ellipsisElement)).not.toBeUndefined();
     });
   });
 });

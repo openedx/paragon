@@ -5,11 +5,13 @@ import PropTypes from 'prop-types';
 import StringClampUtils from './utils';
 
 const DEFAULT_TRUNCATE_LINES = 1;
+const DEFAULT_TRUNCATE_ELLIPSIS = '...';
+const DEFAULT_TRUNCATE_TYPE_ELEMENT = 'div';
 
 const Truncate = ({
   children, lines, ellipsis, typeElement, className, whiteSpace,
 }) => {
-  const [clampedText, setClampedText] = useState(children);
+  const [clampedText, setClampedText] = useState();
   const textContainer = useRef();
 
   useEffect(() => {
@@ -19,7 +21,6 @@ const Truncate = ({
         whiteSpace,
         lines,
       });
-
       setClampedText(newClampText);
     };
 
@@ -49,9 +50,9 @@ Truncate.propTypes = {
 
 Truncate.defaultProps = {
   lines: DEFAULT_TRUNCATE_LINES,
-  ellipsis: '...',
+  ellipsis: DEFAULT_TRUNCATE_ELLIPSIS,
   whiteSpace: false,
-  typeElement: 'div',
+  typeElement: DEFAULT_TRUNCATE_TYPE_ELEMENT,
   className: null,
 };
 

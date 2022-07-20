@@ -1,7 +1,14 @@
+const LINE_HEIGHT_VALUE = 200;
+const MAX_WIDTH = 1500;
+const DEFAULT_PADDING_VALUE = 0;
+const EXTRA_SMALL_OFFSET = 0.011;
+const SMALL_OFFSET = 0.018;
+const START_INDEX = 0;
+const RIGHT_OFFSET = 0.35;
+
 const createTextClamp = (text, coefficient) => {
-  const startIndex = 0;
   const sliceIndex = Math.floor(text.length * coefficient);
-  return text.slice(startIndex, sliceIndex);
+  return text.slice(START_INDEX, sliceIndex);
 };
 
 const createCopyElement = (sourceElement, sourceElementStyles) => {
@@ -22,22 +29,17 @@ const constructString = (string, whiteSpace, ellipsis) => {
   return `${string.trim()}${spacer}${ellipsis}`;
 };
 
-const calculateLineHeightDecrementCoefficient = (lineHeight, ellipsisHeight) => {
-  const RIGHT_OFFSET = 0.35;
-  return (lineHeight / ellipsisHeight) + RIGHT_OFFSET;
+const calcLineHeightRightOffset = (lineHeight, ellipsisHeight) => {
+  const lineHeightDecrement = (lineHeight / ellipsisHeight) + RIGHT_OFFSET;
+  return Math.ceil(lineHeightDecrement);
 };
 
-const calculateEllipsisElementHeight = (ellipsisElement) => Math.ceil(ellipsisElement.scrollHeight);
+const calcEllipsisElementHeight = (ellipsisElement) => Math.ceil(ellipsisElement.scrollHeight);
 
 const clampLines = (text, element, { lines, whiteSpace, ellipsis }) => {
-  const lineHeightValue = 200;
-  const maxHeight = lineHeightValue * Number(lines);
-  const maxWidth = 1500;
-  const DEFAULT_PADDING_VALUE = 0;
-  const EXTRA_SMALL_OFFSET = 0.011;
-  const SMALL_OFFSET = 0.018;
+  const maxHeight = LINE_HEIGHT_VALUE * Number(lines);
   const ellipsisElement = createCopyElement(element, {
-    lineHeight: `${lineHeightValue}px`,
+    lineHeight: `${LINE_HEIGHT_VALUE}px`,
     height: 'auto',
     position: 'absolute',
     opacity: '0',
@@ -46,26 +48,25 @@ const clampLines = (text, element, { lines, whiteSpace, ellipsis }) => {
     paddingTop: DEFAULT_PADDING_VALUE,
     paddingBottom: DEFAULT_PADDING_VALUE,
   });
+  let clampedText = text;
 
   element.appendChild(ellipsisElement);
-
-  let clampedText = text;
   ellipsisElement.innerHTML = constructString(clampedText, whiteSpace, ellipsis);
 
-  let ellipsisElementHeight = calculateEllipsisElementHeight(ellipsisElement);
+  let ellipsisElementHeight = calcEllipsisElementHeight(ellipsisElement);
 
   if (ellipsisElementHeight <= maxHeight) {
     ellipsisElement.parentNode.removeChild(ellipsisElement);
     return clampedText;
   }
 
-  let decrementCoefficient = calculateLineHeightDecrementCoefficient(maxHeight, ellipsisElementHeight);
+  let rightOffset = calcLineHeightRightOffset(maxHeight, ellipsisElementHeight);
 
   while (ellipsisElementHeight > maxHeight && clampedText.length) {
-    clampedText = createTextClamp(text, decrementCoefficient);
+    clampedText = createTextClamp(text, rightOffset);
     ellipsisElement.innerHTML = constructString(clampedText, whiteSpace, ellipsis);
-    ellipsisElementHeight = calculateEllipsisElementHeight(ellipsisElement);
-    decrementCoefficient -= text.length > maxWidth ? EXTRA_SMALL_OFFSET : SMALL_OFFSET;
+    ellipsisElementHeight = calcEllipsisElementHeight(ellipsisElement);
+    rightOffset -= text.length > MAX_WIDTH ? EXTRA_SMALL_OFFSET : SMALL_OFFSET;
   }
 
   ellipsisElement.parentNode.removeChild(ellipsisElement);
@@ -73,8 +74,8 @@ const clampLines = (text, element, { lines, whiteSpace, ellipsis }) => {
 };
 
 module.exports = {
-  calculateLineHeightDecrementCoefficient,
-  calculateEllipsisElementHeight,
+  calcLineHeightRightOffset,
+  calcEllipsisElementHeight,
   createTextClamp,
   clampLines,
   createCopyElement,
