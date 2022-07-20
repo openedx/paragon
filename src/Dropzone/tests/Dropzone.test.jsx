@@ -58,11 +58,13 @@ const imageFile = createFile('image.png', 111, 'image/png');
 const pdfFile = createFile('something.pdf', 10000, 'application/pdf');
 
 // eslint-disable-next-line react/prop-types
-const DropzoneWrapper = ({ children, ...props }) => (
-  <IntlProvider locale="en" messages={{}}>
-    <Dropzone onProcessUpload={handleProcessUpload} {...props} />
-  </IntlProvider>
-);
+function DropzoneWrapper({ children, ...props }) {
+  return (
+    <IntlProvider locale="en" messages={{}}>
+      <Dropzone onProcessUpload={handleProcessUpload} {...props} />
+    </IntlProvider>
+  );
+}
 
 describe('<Dropzone />', () => {
   it('successfully renders', () => {

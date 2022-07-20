@@ -6,11 +6,13 @@ import CardSection from '../CardSection';
 import CardContext from '../CardContext';
 
 // eslint-disable-next-line react/prop-types
-const CardSectionWrapper = ({ isLoading }) => (
-  <CardContext.Provider value={{ isLoading }}>
-    <CardSection />
-  </CardContext.Provider>
-);
+function CardSectionWrapper({ isLoading }) {
+  return (
+    <CardContext.Provider value={{ isLoading }}>
+      <CardSection />
+    </CardContext.Provider>
+  );
+}
 
 describe('<CardSection />', () => {
   it('renders with default props', () => {

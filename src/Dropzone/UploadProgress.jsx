@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Button, ProgressBar, Spinner } from '..';
 
-const UploadProgress = ({
+function UploadProgress({
   percent, variant, name, onCancel,
-}) => {
+}) {
   if (variant === 'spinner') {
     return (
       <Spinner
@@ -43,7 +43,7 @@ const UploadProgress = ({
       </div>
     </div>
   );
-};
+}
 
 UploadProgress.propTypes = {
   variant: PropTypes.oneOf(['spinner', 'bar']).isRequired,
