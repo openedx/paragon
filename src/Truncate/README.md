@@ -6,8 +6,6 @@ components:
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'
-notes: |
-  Something special about this component
 ---
 
 A Truncate component can help you crop multiline text. There will be three dots at the end of the text.
@@ -15,7 +13,7 @@ A Truncate component can help you crop multiline text. There will be three dots 
 ### Basic Usage
 
 ```jsx live
-  <Truncate lines={2} elementType="p" className="FFF">
+  <Truncate lines={2}>
     Learners, course teams, researchers, developers: the edX community includes groups with a range of reasons 
     for using the platform and objectives to accomplish. To help members of each group learn about what edX 
     offers, reach goals, and solve problems, edX provides a variety of information resources.

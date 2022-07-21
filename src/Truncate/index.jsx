@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import { truncateLines } from './utils';
+import { useWindowSize } from '../index';
 
 const DEFAULT_TRUNCATE_LINES = 1;
 const DEFAULT_TRUNCATE_ELLIPSIS = '...';
@@ -13,7 +14,8 @@ const Truncate = ({
 }) => {
   const [truncateText, setTruncateText] = useState('');
   const textContainer = useRef();
-
+  const { width } = useWindowSize();
+  // console.log(textContainer.current);
   useEffect(() => {
     const newTruncateText = truncateLines(children, textContainer.current, {
       ellipsis,
@@ -21,7 +23,7 @@ const Truncate = ({
       lines,
     });
     setTruncateText(newTruncateText);
-  }, [children, ellipsis, lines, whiteSpace]);
+  }, [children, ellipsis, lines, whiteSpace, width]);
 
   return React.createElement(elementType, {
     ref: textContainer,
