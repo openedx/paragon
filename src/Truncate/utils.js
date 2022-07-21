@@ -1,83 +1,56 @@
-const LINE_HEIGHT_VALUE = 200;
-const MAX_WIDTH = 1500;
-const DEFAULT_PADDING_VALUE = 0;
-const EXTRA_SMALL_OFFSET = 0.011;
-const SMALL_OFFSET = 0.018;
-const START_INDEX = 0;
-const RIGHT_OFFSET = 0.35;
+const LINE_HEIGHT_VALUE = 40;
+const TRIM_COEFFICIENT = 0.01;
 
-const createTextClamp = (text, coefficient) => {
-  const sliceIndex = Math.floor(text.length * coefficient);
-  return text.slice(START_INDEX, sliceIndex);
-};
-
-const createCopyElement = (sourceElement, sourceElementStyles) => {
-  const newElement = document.createElement(sourceElement.tagName);
-  const sourceStyles = window.getComputedStyle(sourceElement);
-  newElement.style.cssText = sourceStyles.cssText;
-  newElement.style.maxWidth = sourceStyles.width;
-
-  Object.keys(sourceElementStyles).forEach(property => {
-    newElement.style[property] = sourceElementStyles[property];
-  });
-
+const createCopyElement = (element) => {
+  const elementStyles = window.getComputedStyle(element);
+  const newElement = document.createElement(element.tagName);
+  newElement.setAttribute(
+    'style',
+    `line-height: ${LINE_HEIGHT_VALUE}px; 
+    // width: ${elementStyles.width}`,
+  );
   return newElement;
 };
 
-const constructString = (string, whiteSpace, ellipsis) => {
+const constructString = (text, whiteSpace, ellipsis) => {
   const spacer = whiteSpace ? ' ' : '';
-  return `${string.trim()}${spacer}${ellipsis}`;
+  return `${text.trim()}${spacer}${ellipsis}`;
 };
 
-const calcLineHeightRightOffset = (lineHeight, ellipsisHeight) => {
-  const lineHeightDecrement = (lineHeight / ellipsisHeight) + RIGHT_OFFSET;
-  return Math.ceil(lineHeightDecrement);
+const cropText = (text, rightOffset) => {
+  const sliceIndex = Math.floor(text.length * rightOffset);
+  return text.slice(0, sliceIndex);
 };
 
-const calcEllipsisElementHeight = (ellipsisElement) => Math.ceil(ellipsisElement.scrollHeight);
+const truncateLines = (text, element, { lines, whiteSpace, ellipsis }) => {
+  const visibilityArea = LINE_HEIGHT_VALUE * Number(lines);
+  const newElement = createCopyElement(element);
+  let truncateText = text;
+  let rightOffset = 1;
 
-const clampLines = (text, element, { lines, whiteSpace, ellipsis }) => {
-  const maxHeight = LINE_HEIGHT_VALUE * Number(lines);
-  const ellipsisElement = createCopyElement(element, {
-    lineHeight: `${LINE_HEIGHT_VALUE}px`,
-    height: 'auto',
-    position: 'absolute',
-    opacity: '0',
-    left: '-1px',
-    width: '100%',
-    paddingTop: DEFAULT_PADDING_VALUE,
-    paddingBottom: DEFAULT_PADDING_VALUE,
-  });
-  let clampedText = text;
+  element.append(newElement);
+  newElement.innerHTML = constructString(text, whiteSpace, ellipsis);
 
-  element.appendChild(ellipsisElement);
-  ellipsisElement.innerHTML = constructString(clampedText, whiteSpace, ellipsis);
+  let newElementTextHeight = newElement.scrollHeight;
 
-  let ellipsisElementHeight = calcEllipsisElementHeight(ellipsisElement);
-
-  if (ellipsisElementHeight <= maxHeight) {
-    ellipsisElement.parentNode.removeChild(ellipsisElement);
-    return clampedText;
+  if (visibilityArea > newElementTextHeight) {
+    newElement.parentNode.removeChild(newElement);
+    return truncateText;
   }
 
-  let rightOffset = calcLineHeightRightOffset(maxHeight, ellipsisElementHeight);
-
-  while (ellipsisElementHeight > maxHeight && clampedText.length) {
-    clampedText = createTextClamp(text, rightOffset);
-    ellipsisElement.innerHTML = constructString(clampedText, whiteSpace, ellipsis);
-    ellipsisElementHeight = calcEllipsisElementHeight(ellipsisElement);
-    rightOffset -= text.length > MAX_WIDTH ? EXTRA_SMALL_OFFSET : SMALL_OFFSET;
+  while (newElementTextHeight > visibilityArea) {
+    rightOffset -= TRIM_COEFFICIENT;
+    truncateText = cropText(text, rightOffset);
+    newElement.innerHTML = constructString(truncateText, whiteSpace, ellipsis);
+    newElementTextHeight = newElement.scrollHeight;
   }
 
-  ellipsisElement.parentNode.removeChild(ellipsisElement);
-  return constructString(clampedText, whiteSpace, ellipsis);
+  return constructString(truncateText, whiteSpace, ellipsis);
 };
 
 module.exports = {
-  calcLineHeightRightOffset,
-  calcEllipsisElementHeight,
-  createTextClamp,
-  clampLines,
-  createCopyElement,
+  cropText,
+  truncateLines,
   constructString,
+  createCopyElement,
 };

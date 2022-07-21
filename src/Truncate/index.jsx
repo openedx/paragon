@@ -2,35 +2,31 @@ import React, {
   useEffect, useRef, useState,
 } from 'react';
 import PropTypes from 'prop-types';
-import StringClampUtils from './utils';
+import { truncateLines } from './utils';
 
 const DEFAULT_TRUNCATE_LINES = 1;
 const DEFAULT_TRUNCATE_ELLIPSIS = '...';
-const DEFAULT_TRUNCATE_TYPE_ELEMENT = 'div';
+const DEFAULT_TRUNCATE_ELEMENT_TYPE = 'div';
 
 const Truncate = ({
-  children, lines, ellipsis, typeElement, className, whiteSpace,
+  children, lines, ellipsis, elementType, className, whiteSpace,
 }) => {
-  const [clampedText, setClampedText] = useState();
+  const [truncateText, setTruncateText] = useState('');
   const textContainer = useRef();
 
   useEffect(() => {
-    const clampText = () => {
-      const newClampText = StringClampUtils.clampLines(children, textContainer.current, {
-        ellipsis,
-        whiteSpace,
-        lines,
-      });
-      setClampedText(newClampText);
-    };
-
-    clampText();
+    const newTruncateText = truncateLines(children, textContainer.current, {
+      ellipsis,
+      whiteSpace,
+      lines,
+    });
+    setTruncateText(newTruncateText);
   }, [children, ellipsis, lines, whiteSpace]);
 
-  return React.createElement(typeElement, {
+  return React.createElement(elementType, {
     ref: textContainer,
     className,
-  }, clampedText);
+  }, truncateText);
 };
 
 Truncate.propTypes = {
@@ -43,7 +39,7 @@ Truncate.propTypes = {
   /** The whitespace from before the ellipsis. */
   whiteSpace: PropTypes.bool,
   /** Custom html element for truncated text. */
-  typeElement: PropTypes.string,
+  elementType: PropTypes.string,
   /** Specifies class name to append to the base element. */
   className: PropTypes.string,
 };
@@ -52,7 +48,7 @@ Truncate.defaultProps = {
   lines: DEFAULT_TRUNCATE_LINES,
   ellipsis: DEFAULT_TRUNCATE_ELLIPSIS,
   whiteSpace: false,
-  typeElement: DEFAULT_TRUNCATE_TYPE_ELEMENT,
+  elementType: DEFAULT_TRUNCATE_ELEMENT_TYPE,
   className: null,
 };
 
