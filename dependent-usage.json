@@ -1,5 +1,5 @@
 {
-  "lastModified": 1658412650827,
+  "lastModified": 1658498909976,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -7693,7 +7693,7 @@
         "TransitionReplace": [
           {
             "filePath": "src/common-components/FormGroup.jsx",
-            "line": 45,
+            "line": 46,
             "column": 6,
             "version": "19.10.2"
           },
@@ -8047,7 +8047,7 @@
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 757,
+            "line": 759,
             "column": 14,
             "version": "19.10.2"
           },
@@ -8099,7 +8099,7 @@
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 771,
+            "line": 773,
             "column": 12,
             "version": "19.10.2"
           },
@@ -8385,18 +8385,6 @@
             "version": "19.18.3"
           },
           {
-            "filePath": "src/components/bulk-email-tool/bulk-email-form/TaskAlertModal.jsx",
-            "line": 26,
-            "column": 10,
-            "version": "19.18.3"
-          },
-          {
-            "filePath": "src/components/bulk-email-tool/bulk-email-form/TaskAlertModal.jsx",
-            "line": 33,
-            "column": 10,
-            "version": "19.18.3"
-          },
-          {
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/BulkEmailContentHistory.jsx",
             "line": 110,
             "column": 10,
@@ -8405,6 +8393,18 @@
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/ViewEmailModal.jsx",
             "line": 46,
+            "column": 10,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/task-alert-modal/TaskAlertModal.jsx",
+            "line": 26,
+            "column": 10,
+            "version": "19.18.3"
+          },
+          {
+            "filePath": "src/components/bulk-email-tool/task-alert-modal/TaskAlertModal.jsx",
+            "line": 33,
             "column": 10,
             "version": "19.18.3"
           },
@@ -8493,26 +8493,10 @@
             "version": "19.18.3"
           }
         ],
-        "AlertModal": [
-          {
-            "filePath": "src/components/bulk-email-tool/bulk-email-form/TaskAlertModal.jsx",
-            "line": 19,
-            "column": 4,
-            "version": "19.18.3"
-          }
-        ],
-        "ActionRow": [
-          {
-            "filePath": "src/components/bulk-email-tool/bulk-email-form/TaskAlertModal.jsx",
-            "line": 25,
-            "column": 8,
-            "version": "19.18.3"
-          }
-        ],
         "Alert": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/bulk-email-scheduled-emails-table/BulkEmailScheduledEmailsTable.jsx",
-            "line": 64,
+            "line": 67,
             "column": 8,
             "version": "19.18.3"
           },
@@ -8532,7 +8516,7 @@
         "Alert.Heading": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/bulk-email-scheduled-emails-table/BulkEmailScheduledEmailsTable.jsx",
-            "line": 65,
+            "line": 68,
             "column": 10,
             "version": "19.18.3"
           }
@@ -8540,7 +8524,7 @@
         "DataTable": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/bulk-email-scheduled-emails-table/BulkEmailScheduledEmailsTable.jsx",
-            "line": 129,
+            "line": 148,
             "column": 8,
             "version": "19.18.3"
           },
@@ -8554,19 +8538,19 @@
         "IconButton": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/bulk-email-scheduled-emails-table/BulkEmailScheduledEmailsTable.jsx",
-            "line": 167,
+            "line": 186,
             "column": 18,
             "version": "19.18.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/bulk-email-scheduled-emails-table/BulkEmailScheduledEmailsTable.jsx",
-            "line": 168,
+            "line": 187,
             "column": 18,
             "version": "19.18.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/bulk-email-scheduled-emails-table/BulkEmailScheduledEmailsTable.jsx",
-            "line": 174,
+            "line": 198,
             "column": 18,
             "version": "19.18.3"
           }
@@ -8606,6 +8590,22 @@
             "filePath": "src/components/bulk-email-tool/BulkEmailTool.jsx",
             "line": 24,
             "column": 12,
+            "version": "19.18.3"
+          }
+        ],
+        "AlertModal": [
+          {
+            "filePath": "src/components/bulk-email-tool/task-alert-modal/TaskAlertModal.jsx",
+            "line": 19,
+            "column": 4,
+            "version": "19.18.3"
+          }
+        ],
+        "ActionRow": [
+          {
+            "filePath": "src/components/bulk-email-tool/task-alert-modal/TaskAlertModal.jsx",
+            "line": 25,
+            "column": 8,
             "version": "19.18.3"
           }
         ],
@@ -10092,13 +10092,13 @@
           },
           {
             "filePath": "src/discussions/comments/comment/Comment.jsx",
-            "line": 96,
+            "line": 97,
             "column": 10,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/comments/comment/Comment.jsx",
-            "line": 120,
+            "line": 121,
             "column": 16,
             "version": "19.10.1"
           },
@@ -10116,8 +10116,8 @@
           },
           {
             "filePath": "src/discussions/comments/CommentsView.jsx",
-            "line": 80,
-            "column": 8,
+            "line": 81,
+            "column": 10,
             "version": "19.10.1"
           },
           {
@@ -10282,8 +10282,8 @@
           },
           {
             "filePath": "src/discussions/posts/post/PostLink.jsx",
-            "line": 55,
-            "column": 10,
+            "line": 95,
+            "column": 16,
             "version": "19.10.1"
           },
           {
@@ -10462,13 +10462,13 @@
         "Spinner": [
           {
             "filePath": "src/discussions/comments/CommentsView.jsx",
-            "line": 93,
+            "line": 94,
             "column": 12,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/comments/CommentsView.jsx",
-            "line": 114,
+            "line": 119,
             "column": 6,
             "version": "19.10.1"
           },
@@ -10954,13 +10954,13 @@
           },
           {
             "filePath": "src/discussions/posts/post/PostLink.jsx",
-            "line": 82,
+            "line": 77,
             "column": 16,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post/PostLink.jsx",
-            "line": 89,
+            "line": 84,
             "column": 16,
             "version": "19.10.1"
           }
@@ -22291,6 +22291,12 @@
             "filePath": "src/components/Course/CourseModes/index.jsx",
             "line": 292,
             "column": 26,
+            "version": "19.19.1"
+          },
+          {
+            "filePath": "src/components/Header/SiteNavLink.jsx",
+            "line": 89,
+            "column": 10,
             "version": "19.19.1"
           },
           {
