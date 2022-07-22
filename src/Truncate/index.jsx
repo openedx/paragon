@@ -15,7 +15,7 @@ const Truncate = ({
   const [truncateText, setTruncateText] = useState('');
   const textContainer = useRef();
   const { width } = useWindowSize();
-  // console.log(textContainer.current);
+
   useEffect(() => {
     const newTruncateText = truncateLines(children, textContainer.current, {
       ellipsis,

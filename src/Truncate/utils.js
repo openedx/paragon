@@ -1,12 +1,11 @@
 const LINE_HEIGHT_VALUE = 40;
-const ONE_PERCENT = 0.01;
+const CROP_DECREMENT_STEP = 0.01;
 
 const createCopyElement = (element) => {
   const newElement = document.createElement(element.tagName);
   newElement.setAttribute(
     'style',
-    `line-height: ${LINE_HEIGHT_VALUE}px;
-    display: inline-block;`,
+    `line-height: ${LINE_HEIGHT_VALUE}px; display: inline-block;`,
   );
   return newElement;
 };
@@ -38,7 +37,7 @@ const truncateLines = (text, element, { lines, whiteSpace, ellipsis }) => {
   }
 
   while (newElementTextHeight > visibilityArea) {
-    cropDecrement -= ONE_PERCENT;
+    cropDecrement -= CROP_DECREMENT_STEP;
     truncateText = cropText(text, cropDecrement);
     newElement.innerHTML = constructString(truncateText, whiteSpace, ellipsis);
     newElementTextHeight = newElement.scrollHeight;

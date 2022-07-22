@@ -4,9 +4,9 @@ describe('utils', () => {
   describe('cropText', () => {
     it('return the contents of the sliced text', () => {
       const text = 'Learners, course teams, researchers, developers';
-      const coefficient = 0.70;
-      const textClump = cropText(text, coefficient);
-      expect(textClump).toEqual('Learners, course teams, research');
+      const cropDecrement = 0.70;
+      const croppedText = cropText(text, cropDecrement);
+      expect(croppedText).toEqual('Learners, course teams, research');
     });
   });
 
