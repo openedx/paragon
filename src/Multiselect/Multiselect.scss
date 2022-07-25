@@ -64,7 +64,7 @@
   }
 }
 
-.pgn__multiselect__control {
+div.pgn__multiselect__control {
   border-radius: 0;
   border-color: $gray-500;
   box-shadow: none;
@@ -100,17 +100,17 @@
   }
 }
 
-.pgn__multiselect__chip {
+div.pgn__multiselect__chip {
   background: $light-500;
   border-radius: 4px;
 }
 
-.pgn__multiselect__chip-label {
+div.pgn__multiselect__chip-label {
   font-size: $font-size-sm;
   padding: 2px 2px 2px 8px;
 }
 
-.pgn__multiselect__chip-remove {
+div.pgn__multiselect__chip-remove {
   border-radius: 0 4px 4px 0;
 
   .pgn__icon {
