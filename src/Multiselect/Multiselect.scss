@@ -1,0 +1,126 @@
+// Put styles related to your component here
+
+@import "variables";
+
+.pgn__multiselect {
+  .pgn__multiselect__floating-label {
+    color: $gray-500;
+    background: transparent;
+    font-size: $font-size-base;
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: left top;
+    transition: all .15s ease-in-out;
+    top: calc(50% - $multiselect-placeholder-height / 2);
+    left: $multiselect-padding-x;
+    line-height: $multiselect-placeholder-height;
+    grid-area: auto;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &.show {
+      z-index: $multiselect-floating-label-zindex;
+      padding: 0 .5em;
+      background: $white;
+      line-height: normal;
+      font-size: $font-size-sm;
+      left: $multiselect-padding-x / 2;
+      top: -1rem;
+    }
+  }
+
+  &.dark {
+    .pgn__multiselect__floating-label {
+      &.show {
+        padding: 0;
+        color: $light-700;
+        background: transparent;
+        top: -1.25rem;
+        left: 0;
+      }
+    }
+
+    .pgn__multiselect__chip {
+      background: $dark-200;
+
+      * {
+        color: $white;
+      }
+    }
+  }
+
+  &.disabled {
+    opacity: .3;
+  }
+
+  &.error {
+    .pgn__multiselect__control {
+      border-color: $danger-300;
+      box-shadow: 0 0 0 1px $danger-300;
+    }
+  }
+}
+
+.pgn__multiselect__control {
+  border-radius: 0;
+  border-color: $gray-500;
+  box-shadow: none;
+
+  & > div {
+    padding-right: $multiselect-padding-x / 2;
+  }
+
+  & > div:nth-child(2) {
+    padding-left: $multiselect-padding-x;
+  }
+
+  &:hover {
+    border-color: $black;
+  }
+
+  &.is-focus {
+    box-shadow: 0 0 0 1px $primary-500;
+  }
+}
+
+.pgn__multiselect__error-message {
+  color: $brand-500;
+  font-size: $font-size-sm;
+}
+
+.pgn__multiselect__menu {
+  z-index: $multiselect-menu-zindex;
+  margin-top: $multiselect-menu-offset-top;
+
+  .is-focus {
+    background: $light-300;
+  }
+}
+
+.pgn__multiselect__chip {
+  background: $light-500;
+  border-radius: 4px;
+}
+
+.pgn__multiselect__chip-label {
+  font-size: $font-size-sm;
+  padding: 2px 2px 2px 8px;
+}
+
+.pgn__multiselect__chip-remove {
+  border-radius: 0 4px 4px 0;
+
+  .pgn__icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  &:hover,
+  &:focus {
+    color: $white;
+    background: $black;
+  }
+}

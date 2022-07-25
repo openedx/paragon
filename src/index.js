@@ -188,6 +188,7 @@ export {
 export { default as Skeleton, SkeletonTheme } from './Skeleton/index';
 export { default as Bubble } from './Bubble';
 export { default as Dropzone } from './Dropzone';
+export { default as Multiselect } from './Multiselect';
 
 export { default as messages } from './i18n';
 export { default as Truncate } from './Truncate';
