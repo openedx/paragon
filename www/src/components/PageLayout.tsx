@@ -17,7 +17,7 @@ import Menu from './Menu';
 import Settings from './Settings';
 import Toc from './Toc';
 
-export interface LayoutPropsTypes {
+export interface ILayout {
   children: React.ReactNode,
   showMinimizedTitle: boolean,
   hideFooterComponentMenu: boolean,
@@ -31,7 +31,7 @@ const Layout = ({
   hideFooterComponentMenu,
   isMdx,
   tocData,
-}: LayoutPropsTypes) => {
+}: ILayout) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {

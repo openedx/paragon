@@ -12,7 +12,7 @@ import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
 import LinkedHeading from '../components/LinkedHeading';
 
-export type PageTemplateTypes = {
+export interface IPageTemplate {
   data: {
     mdx: {
       frontmatter: {
@@ -35,21 +35,21 @@ export type PageTemplateTypes = {
   }
 };
 
-export interface ShortCodesTypes {
+export type ShortCodesTypes = {
   displayName: string,
-}
+};
 
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
   pageContext: { cssVariables },
-}: PageTemplateTypes) {
+}: IPageTemplate) {
   const components = componentNodes
     .nodes.reduce((acc: { [x: string]: any; }, currentValue: { displayName: string | number; }) => {
       acc[currentValue.displayName] = currentValue;
       return acc;
     }, {});
   const shortcodes = React.useMemo(() => {
-    const PropsTable = ({ displayName, ...props }: ShortCodesTypes) => { // eslint-disable-line react/prop-types
+    const PropsTable = ({ displayName, ...props }: ShortCodesTypes) => {
       if (components[displayName]) {
         return <GenericPropsTable {...components[displayName]} {...props} />;
       }

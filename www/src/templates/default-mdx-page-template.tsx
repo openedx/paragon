@@ -18,7 +18,7 @@ const shortcodes = {
   Link,
 };
 
-export interface PageTemplateTypeInterface {
+export interface IPageTemplateType {
   children: React.ReactNode,
   pageContext: {
     frontmatter: {
@@ -27,7 +27,7 @@ export interface PageTemplateTypeInterface {
   },
 }
 
-export default function PageTemplate({ children, pageContext }: PageTemplateTypeInterface) {
+export default function PageTemplate({ children, pageContext }: IPageTemplateType) {
   return (
     <Layout>
       {/* eslint-disable-next-line react/jsx-pascal-case */}

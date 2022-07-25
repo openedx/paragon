@@ -1,4 +1,4 @@
-const getGithubProjectUrl = (repository: string | { type: string; url: any; } | undefined) => {
+const getGithubProjectUrl = (repository: string | { type: string; url: string; } | undefined) => {
   let repositoryUrl;
   // @ts-ignore
   if (repository === Object(repository) && repository?.url) {

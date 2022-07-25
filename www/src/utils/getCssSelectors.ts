@@ -3,7 +3,8 @@
  * correspond to that file. This function exists to simplify the Thumbprint Atomic MDX.
  */
 const getCssSelectors = (
-  nodes: Array<any>, regExpStr: RegExp,
+  nodes: Array<any>,
+  regExpStr: RegExp,
 ) => {
   // return Object.keys(props.data, fileName);
   if (!regExpStr) {

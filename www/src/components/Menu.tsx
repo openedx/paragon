@@ -52,15 +52,16 @@ const menuQuery = graphql`
   }
 `;
 
-export interface ComponentNavItemPropsTypes {
-  id: string,
+export interface IComponentNavItem {
+  id: number,
+  key: number,
   fields: PropTypes.InferProps<{ slug: string }>,
   frontmatter: PropTypes.InferProps<{ title: string, status?: string }>
 }
 
 const ComponentNavItem = ({
   id, fields, frontmatter, ...props
-}: ComponentNavItemPropsTypes) => {
+}: IComponentNavItem) => {
   const isDeprecated = frontmatter?.status?.toLowerCase().includes('deprecate') || false;
   const linkNode = isDeprecated ? (
     <OverlayTrigger
@@ -78,9 +79,9 @@ const ComponentNavItem = ({
     </li>
   );
 };
-
+// value: { id: number; key: number; }, index: number, array: { id: number; key: number; }[]) => Element
 ComponentNavItem.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   fields: PropTypes.shape({
     slug: PropTypes.string.isRequired,
   }).isRequired,
@@ -98,12 +99,12 @@ MenuComponentList.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export type MenuComponentListCategoryPropsTypes = {
+export interface IMenuComponentListCategory {
   children: React.ReactNode,
-  title: string
-};
+  title: string,
+}
 
-const MenuComponentListCategory = ({ children, title }: MenuComponentListCategoryPropsTypes) => (
+const MenuComponentListCategory = ({ children, title }: IMenuComponentListCategory) => (
   <div className="menu-component-list-category">
     <h5>{title}</h5>
     {children}
@@ -121,7 +122,10 @@ const Menu = () => {
 
   type MenuComponentListTypes = {
     fieldValue: string,
-    nodes: any,
+    nodes: Array<{
+      id: number,
+      key: number;
+    }>,
   };
 
   return (
@@ -178,6 +182,7 @@ const Menu = () => {
                 <ul className="list-unstyled small mb-4">
                   {nodes
                     .map((node: { id: number; }) => ({ key: node.id, ...node }))
+                  // @ts-ignore
                     .map(ComponentNavItem)}
                 </ul>
               </MenuComponentListCategory>

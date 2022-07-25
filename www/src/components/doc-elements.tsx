@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export type ComponentStatusProps = {
+export type ComponentStatusTypes = {
   status: string,
   noLeftMargin?: string,
 };
 
-export function ComponentStatus({ status, noLeftMargin }: ComponentStatusProps) {
+export function ComponentStatus({ status, noLeftMargin }: ComponentStatusTypes) {
   if (!status) { return null; }
   return (
     <span

@@ -76,13 +76,13 @@ Prop.defaultProps = {
   description: undefined,
 };
 
-export interface PropsTableTypes {
+export interface IPropsTable {
   props: Array<Function>,
   displayName: string,
   content: string,
 }
 
-const PropsTable = ({ props: componentProps, displayName, content }: PropsTableTypes) => (
+const PropsTable = ({ props: componentProps, displayName, content }: IPropsTable) => (
   <Card className="mb-5" id={`props-api-table-${displayName}`}>
     <Card.Header as="h3" title={`${displayName} Props API`} className="pb-1" />
     {content && <div className="small mb-3">{content}</div>}

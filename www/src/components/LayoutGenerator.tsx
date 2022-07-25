@@ -5,15 +5,15 @@ import classNames from 'classnames';
 import { Input } from '~paragon-react';
 import CodeBlock from './CodeBlock';
 
-export interface ColumnPropsTypes {
+export interface IColumn {
   index: number,
-  width?: any,
+  width?: number,
   onChangeWidth: Function,
-  offset?: any,
-  onChangeOffset: Function
+  offset?: number,
+  onChangeOffset: Function,
 }
 
-export type InputOnChangeEventType = {
+export type InputOnChangeEventTypes = {
   target: {
     value: React.SetStateAction<number>
   }
@@ -21,10 +21,12 @@ export type InputOnChangeEventType = {
 
 const Column = ({
   index, width, onChangeWidth, offset, onChangeOffset,
-}: ColumnPropsTypes) => (
+}: IColumn) => (
   <div
     className={classNames('col mb-4', {
+      // @ts-ignore
       [`col-${width}`]: width > 0,
+      // @ts-ignore
       [`offset-${offset}`]: offset > 0,
     })}
   >
@@ -46,7 +48,7 @@ const Column = ({
           min={0}
           step={1}
           max={12}
-          onChange={(e: InputOnChangeEventType) => onChangeWidth(index, e.target.value)}
+          onChange={(e: InputOnChangeEventTypes) => onChangeWidth(index, e.target.value)}
         />
       </div>
       <div className="form-inline m-2">
@@ -66,7 +68,7 @@ const Column = ({
           min={0}
           step={1}
           max={11}
-          onChange={(e: InputOnChangeEventType) => onChangeOffset(index, e.target.value)}
+          onChange={(e: InputOnChangeEventTypes) => onChangeOffset(index, e.target.value)}
         />
       </div>
     </div>
@@ -156,7 +158,7 @@ ${columnsString.join('')}
           min={1}
           step={1}
           max={12}
-          onChange={(e: InputOnChangeEventType) => setColumns(e.target.value)}
+          onChange={(e: InputOnChangeEventTypes) => setColumns(e.target.value)}
         />
       </div>
       <div className="row">{columns}</div>

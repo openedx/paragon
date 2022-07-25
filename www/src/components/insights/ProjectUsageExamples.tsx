@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 // @ts-ignore
 import { Hyperlink } from '~paragon-react';
 
-export type ProjectUsageExamplesTypes = {
+export interface IProjectUsageExamples {
   row: {
     original: {
       name: string,
@@ -11,16 +11,16 @@ export type ProjectUsageExamplesTypes = {
       usages: {},
     },
   },
-};
+}
 
-const ProjectUsageExamples = ({ row }: ProjectUsageExamplesTypes) => {
+const ProjectUsageExamples = ({ row }: IProjectUsageExamples) => {
   const componentUsages: any = row.original.usages;
   const { repositoryUrl } = row.original;
 
-  type ProjectUsagesTypes = {
+  interface IProjectUsages {
     filePath: string,
     line: number,
-  };
+  }
 
   return (
     <>
@@ -36,7 +36,7 @@ const ProjectUsageExamples = ({ row }: ProjectUsageExamplesTypes) => {
             {componentUsages.map(({
               filePath,
               line,
-            }: ProjectUsagesTypes) => (
+            }: IProjectUsages) => (
               <li key={`${filePath}L#${line}`}>
                 {repositoryUrl ? (
                   <>

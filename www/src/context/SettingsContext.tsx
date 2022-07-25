@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { THEMES } from '../../theme-config';
 
-export type DefaultValueTypes = {
+export interface IDefaultValue {
   theme: string,
   onThemeChange: Function,
   direction: string,
@@ -13,20 +13,20 @@ export type DefaultValueTypes = {
   openSettings?: Function,
   showSettings?: React.SyntheticEvent | React.ReactNode,
   closeSettings?: React.SyntheticEvent | React.ReactNode,
-};
+}
 
 const defaultValue = {
   theme: 'openedx-theme',
-  onThemeChange: (): void => {},
+  onThemeChange: () => {},
   direction: 'ltr',
-  onDirectionChange: (): void => {},
+  onDirectionChange: () => {},
 };
 
 export type HandleThemeChangeType = {
   value: React.SetStateAction<string>
 };
 
-export const SettingsContext = createContext<DefaultValueTypes>(defaultValue);
+export const SettingsContext = createContext<IDefaultValue>(defaultValue);
 
 const SettingsContextProvider: React.FC = ({ children }) => {
   // gatsby does not have access to the localStorage during the build (and first render)

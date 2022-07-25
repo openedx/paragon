@@ -19,11 +19,11 @@ import HipsterIpsum from './exampleComponents/HipsterIpsum';
 
 const { Button, Collapsible } = ParagonReact;
 
-export type CollapsibleLiveEditorPropsTypes = {
+export type CollapsibleLiveEditorTypes = {
   children: React.ReactNode,
 };
 
-function CollapsibleLiveEditor({ children }: CollapsibleLiveEditorPropsTypes) {
+function CollapsibleLiveEditor({ children }: CollapsibleLiveEditorTypes) {
   const [collapseIsOpen, setCollapseIsOpen] = useState(false);
   return (
     <div className="pgn-doc__collapsible-live-editor">
@@ -47,13 +47,13 @@ CollapsibleLiveEditor.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export interface CodeBlockPropsTypes {
+export interface ICodeBlock {
   children: string,
   className?: string,
   live?: boolean,
 }
 
-function CodeBlock({ children, className, live }:CodeBlockPropsTypes) {
+function CodeBlock({ children, className, live }: ICodeBlock) {
   const language: any = className ? className.replace(/language-/, '') : 'jsx';
 
   if (live) {

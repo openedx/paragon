@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 // @ts-ignore
 import { Sticky } from '~paragon-react';
 
-export interface TocPropsTypes {
+export interface IToc {
   data: {
     items?: Array<{
       url?: string | undefined;
-      title?: string | undefined }>
+      title?: string | undefined;
+    }>
   }
 }
 
-const Toc = ({ data }: TocPropsTypes) => {
+const Toc = ({ data }: IToc) => {
   const generateTree = (headings: { items?: Array<any>; }) => (headings?.items?.length
     ? (
       <ul className="pgn-doc__toc-list">

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 // @ts-ignore
 import { Hyperlink } from '~paragon-react';
 
-export type ComponentUsageExamplesTypes = {
+export interface IComponentUsageExamples {
   row: {
     original: {
       name: string,
@@ -11,9 +11,9 @@ export type ComponentUsageExamplesTypes = {
       usages: {},
     },
   },
-};
+}
 
-const ComponentUsageExamples = ({ row }: ComponentUsageExamplesTypes) => {
+const ComponentUsageExamples = ({ row }: IComponentUsageExamples) => {
   const { repositoryUrl } = row.original;
   const projectUsages: { [key: string]: any } = row.original.usages;
 

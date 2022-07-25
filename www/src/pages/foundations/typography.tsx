@@ -6,11 +6,11 @@ import SEO from '../../components/SEO';
 import MeasuredItem from '../../components/MeasuredItem';
 import Layout from '../../components/PageLayout';
 
-export interface WeightLabelsInterface {
+export type WeightLabelsTypes = {
   [key: number]: string,
-}
+};
 
-const weightLabels: WeightLabelsInterface = {
+const weightLabels: WeightLabelsTypes = {
   200: 'Light',
   300: 'Light',
   400: 'Regular',

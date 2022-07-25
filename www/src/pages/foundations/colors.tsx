@@ -30,11 +30,11 @@ const colors = [
 
 const levels = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
-export interface ParseColorsInterface {
+export interface IParseColors {
   [key: string]: string | null;
 }
 
-const selectorColors: ParseColorsInterface = {};
+const selectorColors: IParseColors = {};
 
 function parseColors(cssSelectors: { selector: string; declarations: string; }[]) {
   const colorsAreParsed = Object.keys(selectorColors).length !== 0;
@@ -49,13 +49,13 @@ function parseColors(cssSelectors: { selector: string; declarations: string; }[]
   });
 }
 
-export interface SwatchTypeInterface {
+export interface ISwatch {
   name: string,
   colorClassName: string,
   isUnused?: boolean,
 }
 
-const Swatch = ({ name, colorClassName, isUnused }: SwatchTypeInterface) => (
+const Swatch = ({ name, colorClassName, isUnused }: ISwatch) => (
   <div className="d-flex align-items-center mb-2">
     <MeasuredItem
       properties={['background-color']}
@@ -108,7 +108,7 @@ const renderColorRamp = (themeName: string, unusedLevels: number[]) => (
   </div>
 );
 
-export type ColorsPageTypes = {
+export interface IColorsPage {
   data: {
     allCssUtilityClasses: {
       nodes: any,
@@ -117,7 +117,7 @@ export type ColorsPageTypes = {
 };
 
 // eslint-disable-next-line react/prop-types
-export default function ColorsPage({ data }: ColorsPageTypes) {
+export default function ColorsPage({ data }: IColorsPage) {
   parseColors(data.allCssUtilityClasses.nodes); // eslint-disable-line react/prop-types
 
   return (

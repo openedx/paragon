@@ -18,7 +18,7 @@ import {
 import { Menu as MenuIcon, Close, Settings } from '~paragon-icons';
 import SettingsContext from '../context/SettingsContext'; // eslint-disable-line import/no-named-as-default
 
-export interface NavbarPropsTypes {
+export interface INavbar {
   siteTitle: string,
   onMenuClick: React.MouseEventHandler,
   onSettingsClick: Function | undefined,
@@ -32,7 +32,7 @@ const Navbar = ({
   menuIsOpen,
   showMinimizedTitle,
   onSettingsClick,
-}: NavbarPropsTypes) => (
+}: INavbar) => (
   <Container as="header" className="py-3 bg-dark text-white sticky-top">
     <Row className="align-items-center text-center text-sm-left">
       <Col className="mb-2 mb-sm-0" sm={4}>
@@ -123,12 +123,12 @@ Navbar.defaultProps = {
   showMinimizedTitle: false,
 };
 
-export interface HeaderPropsTypes {
+export interface IHeaderProps {
   siteTitle: string,
   showMinimizedTitle?: boolean,
 }
 
-const Header = ({ siteTitle, showMinimizedTitle }: HeaderPropsTypes) => {
+const Header = ({ siteTitle, showMinimizedTitle }: IHeaderProps) => {
   // eslint-disable-next-line no-unused-vars
   const [isOpen, open, close, toggle] = useToggle(false, {
     handleToggleOn: () => {

@@ -3,12 +3,15 @@ import PropTypes from 'prop-types';
 // @ts-ignore
 import { Table } from '~paragon-react';
 
-export type CSSUtilitiesTablePropsTypes = {
-  selectors: [{ selector: string, declarations: Array<string> }],
+export type CSSUtilitiesTableTypes = {
+  selectors: [{
+    selector: string,
+    declarations: Array<string>,
+  }],
   showExample: Array<string>,
 };
 
-function CSSUtilitiesTable({ selectors, showExample }: CSSUtilitiesTablePropsTypes) {
+function CSSUtilitiesTable({ selectors, showExample }: CSSUtilitiesTableTypes) {
   return (
     <Table
       className="pgn-doc__status-table"

@@ -6,7 +6,7 @@ import { ComponentStatus } from '../components/doc-elements';
 import SEO from '../components/SEO';
 import Layout from '../components/PageLayout';
 
-export interface ComponentTypeInterface {
+export interface IComponentType {
   frontmatter?: string,
   title?: string,
 }
@@ -38,10 +38,10 @@ export default function StatusPage() {
           }`}
           render={({ allMdx }) => {
             if (!allMdx || !allMdx.nodes) { return null; }
-            const components = allMdx.nodes.map(({ frontmatter }: ComponentTypeInterface) => frontmatter)
-              .filter(({ title }: ComponentTypeInterface) => title !== 'My Component');
+            const components = allMdx.nodes.map(({ frontmatter }: IComponentType) => frontmatter)
+              .filter(({ title }: IComponentType) => title !== 'My Component');
 
-            interface TableTypeInterface {
+            interface ITableType {
               title: string,
               status: string,
               designStatus: string,
@@ -54,7 +54,7 @@ export default function StatusPage() {
                 className="pgn-doc__status-table"
                 data={components.map(({
                   title, status, designStatus, devStatus, notes,
-                }: TableTypeInterface) => ({
+                }: ITableType) => ({
                   name: (
                     <div>
                       <h6>{title} <ComponentStatus status={status} /></h6>

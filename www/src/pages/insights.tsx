@@ -22,6 +22,7 @@ const {
 const dependentProjects = dependentProjectsUsages.map(dependentUsage => ({
   ...dependentUsage,
   repositoryUrl: getGithubProjectUrl(dependentUsage.repository),
+  // eslint-disable-next-line no-return-assign
   count: Object.values(dependentUsage.usages).reduce((accumulator, usage) => accumulator += usage.length, 0),
 }));
 
@@ -44,8 +45,8 @@ const componentsUsage = dependentProjectsUsages.reduce((accumulator, project) =>
 
 const summaryComponentsUsage = Object.entries(componentsUsage).map(([componentName, usages]) => {
   const componentUsageCounts = usages
-    .reduce((accumulator: any, project: { componentUsageCount: number; }) =>
-        accumulator += project.componentUsageCount, 0);
+  // eslint-disable-next-line max-len
+    .reduce((accumulator: any, project: { componentUsageCount: number; }) => accumulator += project.componentUsageCount, 0);
   return {
     name: componentName,
     count: componentUsageCounts,
@@ -57,10 +58,27 @@ const SummaryUsage = () => {
   const summaryTableData = summaryComponentsUsage.sort((a, b) => {
     const nameA = a.name.toUpperCase();
     const nameB = b.name.toUpperCase();
+    // eslint-disable-next-line no-nested-ternary
     return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
   });
-  const round = (n) => Math.round(n * 10) / 10;
-  const averageComponentsUsedPerProject = dependentProjects.reduce((accumulator, project) => accumulator += project.count, 0) / dependentProjects.length;
+  const round = (n: number) => Math.round(n * 10) / 10;
+  const averageComponentsUsedPerProject = dependentProjects
+  // eslint-disable-next-line no-return-assign
+    .reduce((accumulator, project) => accumulator += project.count, 0) / dependentProjects.length;
+
+  type RowType = {
+    row: {
+      original: {
+        name: string,
+        repositoryUrl: string,
+        usages: Array<{
+          filePath: string,
+          line: number,
+        }>
+      }
+    }
+  };
+
   return (
     <div className="pt-5 mb-5">
       <div className="mb-5">
@@ -76,7 +94,7 @@ const SummaryUsage = () => {
         isSortable
         itemCount={summaryTableData.length}
         data={summaryTableData}
-        renderRowSubComponent={({ row }) => <SummaryUsageExamples row={row} />}
+        renderRowSubComponent={({ row }: RowType) => <SummaryUsageExamples row={row} />}
         columns={[
           {
             id: 'expander',
@@ -100,66 +118,99 @@ const SummaryUsage = () => {
 };
 
 // Paragon version in all projects
-const ProjectsUsage = () => (
-  <div className="pt-5 mb-5">
-    <h3 className="mb-4">Projects in Open edX consuming Paragon</h3>
-    <DataTable
-      isExpandable
-      isSortable
-      itemCount={dependentProjects.length}
-      data={dependentProjects}
-      renderRowSubComponent={({ row }) => <ProjectUsageExamples row={row} />}
-      columns={[
-        {
-          id: 'expander',
-          Header: DataTable.ExpandAll,
-          Cell: DataTable.ExpandRow,
-        },
-        {
-          Header: 'Project Name',
-          accessor: 'folderName',
-        },
-        { Header: 'Paragon Version', accessor: 'version' },
-        { Header: 'Instance Count', accessor: 'count' },
-      ]}
-    >
-      <DataTable.TableControlBar />
-      <DataTable.Table />
-      <DataTable.EmptyTable content="No projects" />
-      <DataTable.TableFooter />
-    </DataTable>
-  </div>
-);
+const ProjectsUsage = () => {
+    type RowType = {
+      row: {
+        original: {
+          name: string,
+          repositoryUrl: string,
+          usages: Array<{
+            filePath: string,
+            line: number,
+          }>
+        }
+      }
+    };
+    return (
+      <div className="pt-5 mb-5">
+        <h3 className="mb-4">Projects in Open edX consuming Paragon</h3>
+        <DataTable
+          isExpandable
+          isSortable
+          itemCount={dependentProjects.length}
+          data={dependentProjects}
+          renderRowSubComponent={({ row }: RowType) => <ProjectUsageExamples row={row} />}
+          columns={[
+            {
+              id: 'expander',
+              Header: DataTable.ExpandAll,
+              Cell: DataTable.ExpandRow,
+            },
+            {
+              Header: 'Project Name',
+              accessor: 'folderName',
+            },
+            { Header: 'Paragon Version', accessor: 'version' },
+            { Header: 'Instance Count', accessor: 'count' },
+          ]}
+        >
+          <DataTable.TableControlBar />
+          <DataTable.Table />
+          <DataTable.EmptyTable content="No projects" />
+          <DataTable.TableFooter />
+        </DataTable>
+      </div>
+    );
+};
+
+export interface IComponentUsage {
+  name: string,
+  componentUsageInProjects: Function,
+}
 
 // Usage info about a single component
-const ComponentUsage = ({ name, componentUsageInProjects }) => (
-  <div className="mb-5">
-    <h3 className="mb-4">{name}</h3>
-    <DataTable
-      isExpandable
-      isSortable
-      itemCount={componentUsageInProjects.length} // eslint-disable-line
-      data={componentUsageInProjects}
-      renderRowSubComponent={({ row }) => <ComponentUsageExamples row={row} />}
-      columns={[
-        {
-          id: 'expander',
-          Header: DataTable.ExpandAll,
-          Cell: DataTable.ExpandRow,
-        },
-        {
-          Header: 'Project Name',
-          accessor: 'folderName',
-        },
-        { Header: 'Paragon Version', accessor: 'version' },
-        { Header: 'Instance Count', accessor: 'componentUsageCount' },
-      ]}
-    >
-      <DataTable.Table />
-      <DataTable.EmptyTable content="No usages" />
-    </DataTable>
-  </div>
-);
+const ComponentUsage = ({ name, componentUsageInProjects }: IComponentUsage) => {
+    type RowType = {
+      row: {
+        original: {
+          name: string,
+          repositoryUrl: string,
+          usages: Array<{
+            filePath: string,
+            line: number,
+          }>
+        }
+      }
+    };
+    return (
+      <div className="mb-5">
+        <h3 className="mb-4">{name}</h3>
+        <DataTable
+          isExpandable
+          isSortable
+          itemCount={componentUsageInProjects.length}
+          data={componentUsageInProjects}
+          renderRowSubComponent={({ row }: RowType) => <ComponentUsageExamples row={row} />}
+          columns={[
+            {
+              id: 'expander',
+              Header: DataTable.ExpandAll,
+              Cell: DataTable.ExpandRow,
+            },
+            {
+              Header: 'Project Name',
+              accessor: 'folderName',
+            },
+            { Header: 'Paragon Version', accessor: 'version' },
+            { Header: 'Instance Count', accessor: 'componentUsageCount' },
+          ]}
+        >
+          <DataTable.Table />
+          <DataTable.EmptyTable content="No usages" />
+        </DataTable>
+      </div>
+    );
+};
 
 // Usage info for all components
 const ComponentsUsage = () => (
@@ -177,7 +228,7 @@ const ComponentsUsage = () => (
 export default function InsightsPage() {
   const tabs = ['/insights', '/insights/?tab=projects', '/insights/?tab=components'];
 
-  const handleOnSelect = (value) => {
+  const handleOnSelect = (value: any) => {
     switch (value) {
       case tabs[0]:
         global.analytics.track('Usage Insights', { tab: 'Summary' });
