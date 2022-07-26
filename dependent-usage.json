@@ -1,5 +1,5 @@
 {
-  "lastModified": 1658758258029,
+  "lastModified": 1658844522390,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -10,7 +10,7 @@
       },
       "folderName": "credentials",
       "usages": {
-        "Table": [
+        "DataTable": [
           {
             "filePath": "credentials/static/components/FoldingTable.jsx",
             "line": 26,
@@ -1048,7 +1048,7 @@
         "Form.Checkbox": [
           {
             "filePath": "src/account-settings/certificate-preference/CertificatePreference.jsx",
-            "line": 94,
+            "line": 95,
             "column": 6,
             "version": "19.20.0"
           }
@@ -1056,7 +1056,7 @@
         "ModalDialog": [
           {
             "filePath": "src/account-settings/certificate-preference/CertificatePreference.jsx",
-            "line": 98,
+            "line": 99,
             "column": 6,
             "version": "19.20.0"
           },
@@ -1070,7 +1070,7 @@
         "Form": [
           {
             "filePath": "src/account-settings/certificate-preference/CertificatePreference.jsx",
-            "line": 106,
+            "line": 107,
             "column": 8,
             "version": "19.20.0"
           },
@@ -1090,7 +1090,7 @@
         "ModalDialog.Header": [
           {
             "filePath": "src/account-settings/certificate-preference/CertificatePreference.jsx",
-            "line": 107,
+            "line": 108,
             "column": 10,
             "version": "19.20.0"
           },
@@ -1104,7 +1104,7 @@
         "ModalDialog.Title": [
           {
             "filePath": "src/account-settings/certificate-preference/CertificatePreference.jsx",
-            "line": 108,
+            "line": 109,
             "column": 12,
             "version": "19.20.0"
           },
@@ -1118,7 +1118,7 @@
         "ModalDialog.Body": [
           {
             "filePath": "src/account-settings/certificate-preference/CertificatePreference.jsx",
-            "line": 113,
+            "line": 114,
             "column": 10,
             "version": "19.20.0"
           },
@@ -1132,7 +1132,7 @@
         "Form.Group": [
           {
             "filePath": "src/account-settings/certificate-preference/CertificatePreference.jsx",
-            "line": 114,
+            "line": 115,
             "column": 12,
             "version": "19.20.0"
           },
@@ -1158,7 +1158,7 @@
         "Form.Label": [
           {
             "filePath": "src/account-settings/certificate-preference/CertificatePreference.jsx",
-            "line": 115,
+            "line": 116,
             "column": 14,
             "version": "19.20.0"
           },
@@ -1178,7 +1178,7 @@
         "Form.RadioSet": [
           {
             "filePath": "src/account-settings/certificate-preference/CertificatePreference.jsx",
-            "line": 118,
+            "line": 119,
             "column": 14,
             "version": "19.20.0"
           }
@@ -1186,13 +1186,13 @@
         "Form.Radio": [
           {
             "filePath": "src/account-settings/certificate-preference/CertificatePreference.jsx",
-            "line": 123,
+            "line": 124,
             "column": 16,
             "version": "19.20.0"
           },
           {
             "filePath": "src/account-settings/certificate-preference/CertificatePreference.jsx",
-            "line": 127,
+            "line": 128,
             "column": 16,
             "version": "19.20.0"
           }
@@ -1200,7 +1200,7 @@
         "ModalDialog.Footer": [
           {
             "filePath": "src/account-settings/certificate-preference/CertificatePreference.jsx",
-            "line": 135,
+            "line": 136,
             "column": 10,
             "version": "19.20.0"
           },
@@ -1214,7 +1214,7 @@
         "ActionRow": [
           {
             "filePath": "src/account-settings/certificate-preference/CertificatePreference.jsx",
-            "line": 136,
+            "line": 137,
             "column": 12,
             "version": "19.20.0"
           },
@@ -1228,7 +1228,7 @@
         "ModalDialog.CloseButton": [
           {
             "filePath": "src/account-settings/certificate-preference/CertificatePreference.jsx",
-            "line": 137,
+            "line": 138,
             "column": 14,
             "version": "19.20.0"
           },
@@ -1242,7 +1242,7 @@
         "StatefulButton": [
           {
             "filePath": "src/account-settings/certificate-preference/CertificatePreference.jsx",
-            "line": 140,
+            "line": 141,
             "column": 14,
             "version": "19.20.0"
           },
@@ -3390,7 +3390,7 @@
           },
           {
             "filePath": "src/components/Sidebar/index.jsx",
-            "line": 108,
+            "line": 111,
             "column": 14,
             "version": "20.4.1"
           },
@@ -5026,7 +5026,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 63,
+            "line": 119,
             "column": 6,
             "version": "20.4.1"
           },
@@ -5052,20 +5052,20 @@
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 70,
-            "column": 10,
+            "line": 50,
+            "column": 8,
             "version": "20.4.1"
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 83,
-            "column": 10,
+            "line": 65,
+            "column": 8,
             "version": "20.4.1"
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 91,
-            "column": 10,
+            "line": 75,
+            "column": 8,
             "version": "20.4.1"
           },
           {
@@ -5102,7 +5102,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 62,
+            "line": 118,
             "column": 4,
             "version": "20.4.1"
           },
@@ -5372,7 +5372,7 @@
         "MediaQuery": [
           {
             "filePath": "src/components/EnterpriseApp/index.jsx",
-            "line": 131,
+            "line": 134,
             "column": 10,
             "version": "20.4.1"
           }
@@ -7347,13 +7347,13 @@
           },
           {
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
-            "line": 131,
+            "line": 157,
             "column": 18,
             "version": "19.10.2"
           },
           {
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
-            "line": 144,
+            "line": 170,
             "column": 22,
             "version": "19.10.2"
           },
@@ -7371,7 +7371,7 @@
           },
           {
             "filePath": "src/login/LoginPage.jsx",
-            "line": 144,
+            "line": 168,
             "column": 10,
             "version": "19.10.2"
           },
@@ -7517,19 +7517,19 @@
           },
           {
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
-            "line": 99,
+            "line": 125,
             "column": 16,
             "version": "19.10.2"
           },
           {
             "filePath": "src/login/LoginPage.jsx",
-            "line": 225,
+            "line": 249,
             "column": 10,
             "version": "19.10.2"
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 687,
+            "line": 768,
             "column": 10,
             "version": "19.10.2"
           },
@@ -7761,19 +7761,19 @@
           },
           {
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
-            "line": 60,
+            "line": 82,
             "column": 6,
             "version": "19.10.2"
           },
           {
             "filePath": "src/login/LoginPage.jsx",
-            "line": 145,
+            "line": 169,
             "column": 12,
             "version": "19.10.2"
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 492,
+            "line": 573,
             "column": 26,
             "version": "19.10.2"
           },
@@ -7817,7 +7817,7 @@
           },
           {
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
-            "line": 68,
+            "line": 90,
             "column": 8,
             "version": "19.10.2"
           },
@@ -7849,7 +7849,7 @@
           },
           {
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
-            "line": 69,
+            "line": 91,
             "column": 10,
             "version": "19.10.2"
           },
@@ -7947,7 +7947,7 @@
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 483,
+            "line": 564,
             "column": 8,
             "version": "19.10.2"
           },
@@ -8047,7 +8047,7 @@
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 759,
+            "line": 840,
             "column": 14,
             "version": "19.10.2"
           },
@@ -8073,13 +8073,13 @@
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 486,
+            "line": 567,
             "column": 12,
             "version": "19.10.2"
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 501,
+            "line": 582,
             "column": 10,
             "version": "19.10.2"
           }
@@ -8087,19 +8087,19 @@
         "StatefulButton": [
           {
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
-            "line": 117,
+            "line": 143,
             "column": 18,
             "version": "19.10.2"
           },
           {
             "filePath": "src/login/LoginPage.jsx",
-            "line": 243,
+            "line": 269,
             "column": 12,
             "version": "19.10.2"
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 773,
+            "line": 856,
             "column": 12,
             "version": "19.10.2"
           },
@@ -8254,19 +8254,19 @@
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 238,
+            "line": 264,
             "column": 8,
             "version": "19.18.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 247,
+            "line": 273,
             "column": 8,
             "version": "19.18.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 259,
+            "line": 285,
             "column": 8,
             "version": "19.18.3"
           },
@@ -8286,13 +8286,13 @@
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 239,
+            "line": 265,
             "column": 10,
             "version": "19.18.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 248,
+            "line": 274,
             "column": 10,
             "version": "19.18.3"
           }
@@ -8344,7 +8344,7 @@
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 262,
+            "line": 288,
             "column": 14,
             "version": "19.18.3"
           }
@@ -8352,7 +8352,7 @@
         "Form": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 231,
+            "line": 257,
             "column": 6,
             "version": "19.18.3"
           }
@@ -8360,7 +8360,7 @@
         "Form.Control": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 240,
+            "line": 266,
             "column": 10,
             "version": "19.18.3"
           },
@@ -8380,7 +8380,7 @@
         "Button": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 286,
+            "line": 312,
             "column": 32,
             "version": "19.18.3"
           },
@@ -8418,7 +8418,7 @@
         "StatefulButton": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 287,
+            "line": 313,
             "column": 12,
             "version": "19.18.3"
           }
@@ -8426,43 +8426,43 @@
         "Icon": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 296,
+            "line": 322,
             "column": 46,
             "version": "19.18.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 297,
+            "line": 323,
             "column": 47,
             "version": "19.18.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 298,
+            "line": 324,
             "column": 49,
             "version": "19.18.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 299,
+            "line": 325,
             "column": 46,
             "version": "19.18.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 300,
+            "line": 326,
             "column": 47,
             "version": "19.18.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 301,
+            "line": 327,
             "column": 56,
             "version": "19.18.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 302,
+            "line": 328,
             "column": 44,
             "version": "19.18.3"
           },
@@ -8488,7 +8488,7 @@
         "Toast": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
-            "line": 321,
+            "line": 347,
             "column": 12,
             "version": "19.18.3"
           }
@@ -10276,7 +10276,7 @@
           },
           {
             "filePath": "src/discussions/posts/post/PostHeader.jsx",
-            "line": 35,
+            "line": 46,
             "column": 8,
             "version": "19.10.1"
           },
@@ -10454,7 +10454,7 @@
           },
           {
             "filePath": "src/discussions/posts/post/PostHeader.jsx",
-            "line": 46,
+            "line": 53,
             "column": 6,
             "version": "19.10.1"
           }
@@ -10948,7 +10948,7 @@
           },
           {
             "filePath": "src/discussions/posts/post/PostHeader.jsx",
-            "line": 94,
+            "line": 104,
             "column": 21,
             "version": "19.10.1"
           },
@@ -14798,7 +14798,7 @@
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 115,
+            "line": 134,
             "column": 14,
             "version": "19.18.3"
           },
@@ -15092,7 +15092,7 @@
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 69,
+            "line": 88,
             "column": 4,
             "version": "19.18.3"
           },
@@ -15118,7 +15118,7 @@
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 74,
+            "line": 93,
             "column": 6,
             "version": "19.18.3"
           },
@@ -15158,13 +15158,13 @@
         "Card.Section": [
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 79,
+            "line": 98,
             "column": 6,
             "version": "19.18.3"
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 112,
+            "line": 131,
             "column": 8,
             "version": "19.18.3"
           },
@@ -15184,7 +15184,7 @@
         "Form.Switch": [
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 102,
+            "line": 121,
             "column": 10,
             "version": "19.18.3"
           }
@@ -18888,13 +18888,13 @@
           },
           {
             "filePath": "src/users/enrollments/Certificates.jsx",
-            "line": 146,
+            "line": 157,
             "column": 24,
             "version": "12.8.0"
           },
           {
             "filePath": "src/users/enrollments/Certificates.jsx",
-            "line": 156,
+            "line": 167,
             "column": 24,
             "version": "12.8.0"
           },
@@ -19118,7 +19118,7 @@
           },
           {
             "filePath": "src/users/enrollments/Certificates.jsx",
-            "line": 106,
+            "line": 117,
             "column": 20,
             "version": "12.8.0"
           },
@@ -19290,7 +19290,7 @@
           },
           {
             "filePath": "src/users/enrollments/Certificates.jsx",
-            "line": 178,
+            "line": 189,
             "column": 4,
             "version": "12.8.0"
           },
@@ -22867,13 +22867,13 @@
           },
           {
             "filePath": "src/components/AssetsStatusAlert/index.jsx",
-            "line": 174,
+            "line": 169,
             "column": 6,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/EditImageModal/index.jsx",
-            "line": 580,
+            "line": 558,
             "column": 4,
             "version": "3.4.8"
           }
@@ -22893,19 +22893,19 @@
           },
           {
             "filePath": "src/components/EditImageModal/index.jsx",
-            "line": 375,
+            "line": 352,
             "column": 6,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/EditImageModal/index.jsx",
-            "line": 456,
+            "line": 433,
             "column": 10,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/EditImageModal/index.jsx",
-            "line": 473,
+            "line": 450,
             "column": 10,
             "version": "3.4.8"
           }
@@ -22913,7 +22913,7 @@
         "TextArea": [
           {
             "filePath": "src/components/AccessibilityPolicyForm/index.jsx",
-            "line": 280,
+            "line": 279,
             "column": 10,
             "version": "3.4.8"
           }
@@ -22921,55 +22921,55 @@
         "Button": [
           {
             "filePath": "src/components/AccessibilityPolicyForm/index.jsx",
-            "line": 292,
-            "column": 15,
+            "line": 290,
+            "column": 14,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/AssetsClearFiltersButton/index.jsx",
             "line": 10,
-            "column": 2,
+            "column": 4,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/AssetsClearSearchButton/index.jsx",
             "line": 10,
-            "column": 2,
+            "column": 4,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/AssetsDropZone/index.jsx",
             "line": 84,
-            "column": 22,
+            "column": 20,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/AssetsTable/index.jsx",
-            "line": 148,
-            "column": 11,
+            "line": 151,
+            "column": 10,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/AssetsTable/index.jsx",
-            "line": 170,
-            "column": 11,
+            "line": 173,
+            "column": 10,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/AssetsTable/index.jsx",
-            "line": 286,
-            "column": 13,
+            "line": 290,
+            "column": 12,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/AssetsTable/index.jsx",
-            "line": 372,
+            "line": 378,
             "column": 12,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/BackendStatusBanner/index.jsx",
-            "line": 49,
+            "line": 42,
             "column": 10,
             "version": "3.4.8"
           },
@@ -22981,19 +22981,19 @@
           },
           {
             "filePath": "src/components/EditImageModal/index.jsx",
-            "line": 742,
+            "line": 720,
             "column": 4,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/EditImageModal/index.jsx",
-            "line": 755,
+            "line": 733,
             "column": 4,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/EditImageModal/index.jsx",
-            "line": 768,
+            "line": 746,
             "column": 4,
             "version": "3.4.8"
           }
@@ -23001,33 +23001,33 @@
         "CheckBoxGroup": [
           {
             "filePath": "src/components/AssetsFilters/index.jsx",
-            "line": 19,
-            "column": 6,
+            "line": 20,
+            "column": 8,
             "version": "3.4.8"
           }
         ],
         "CheckBox": [
           {
             "filePath": "src/components/AssetsFilters/index.jsx",
-            "line": 21,
-            "column": 10,
+            "line": 22,
+            "column": 12,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/AssetsImagePreviewFilter/index.jsx",
-            "line": 9,
-            "column": 2,
+            "line": 10,
+            "column": 4,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/EditImageModal/index.jsx",
-            "line": 396,
+            "line": 373,
             "column": 6,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/EditImageModal/index.jsx",
-            "line": 487,
+            "line": 464,
             "column": 6,
             "version": "3.4.8"
           }
@@ -23043,21 +23043,21 @@
         "Modal": [
           {
             "filePath": "src/components/AssetsTable/index.jsx",
-            "line": 360,
+            "line": 364,
             "column": 8,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/EditImageModal/index.jsx",
-            "line": 911,
-            "column": 6,
+            "line": 890,
+            "column": 8,
             "version": "3.4.8"
           }
         ],
         "Table": [
           {
             "filePath": "src/components/AssetsTable/index.jsx",
-            "line": 426,
+            "line": 432,
             "column": 8,
             "version": "3.4.8"
           }
@@ -23065,31 +23065,31 @@
         "Icon": [
           {
             "filePath": "src/components/CourseChecklist/index.jsx",
-            "line": 98,
+            "line": 94,
             "column": 12,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/CourseChecklist/index.jsx",
-            "line": 160,
+            "line": 156,
             "column": 10,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/CourseChecklist/index.jsx",
-            "line": 207,
+            "line": 203,
             "column": 6,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/CourseOutlineStatus/index.jsx",
-            "line": 187,
+            "line": 203,
             "column": 10,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/EditImageModal/index.jsx",
-            "line": 470,
+            "line": 447,
             "column": 10,
             "version": "3.4.8"
           }
@@ -23097,25 +23097,25 @@
         "Hyperlink": [
           {
             "filePath": "src/components/CourseChecklist/index.jsx",
-            "line": 147,
+            "line": 143,
             "column": 6,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/CourseChecklist/index.jsx",
-            "line": 261,
+            "line": 256,
             "column": 16,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/CourseOutlineStatus/index.jsx",
-            "line": 135,
-            "column": 12,
+            "line": 150,
+            "column": 14,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/CourseOutlineStatus/index.jsx",
-            "line": 213,
+            "line": 229,
             "column": 6,
             "version": "3.4.8"
           }
@@ -23123,13 +23123,13 @@
         "Fieldset": [
           {
             "filePath": "src/components/EditImageModal/index.jsx",
-            "line": 365,
+            "line": 342,
             "column": 4,
             "version": "3.4.8"
           },
           {
             "filePath": "src/components/EditImageModal/index.jsx",
-            "line": 444,
+            "line": 421,
             "column": 4,
             "version": "3.4.8"
           }
@@ -23137,8 +23137,8 @@
         "Pagination": [
           {
             "filePath": "src/components/Pagination/index.jsx",
-            "line": 31,
-            "column": 12,
+            "line": 30,
+            "column": 10,
             "version": "3.4.8"
           }
         ]
