@@ -7,5 +7,33 @@
 </head>
 <body>
     <div id="root"></div>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js" crossorigin></script>
+
+    <script src="../../out/umd/paragon.min.js"></script>
+
+    <link rel="stylesheet" href="../../dist/paragon.css">
+
+    <script type="text/babel">
+        class LikeButton extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = { liked: false };
+            }
+
+            render() {
+                if (this.state.liked) {
+                return 'You liked comment number ' + this.props.commentID;
+                }
+
+                return <Paragon.Button>test</Paragon.Button>
+            }
+        }
+
+        ReactDOM.render(
+            <LikeButton />,
+            document.getElementById('root'))
+    </script>
 </body>
 </html>

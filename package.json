@@ -41,7 +41,8 @@
     "generate-component-lint": "cd component-generator && npm run lint",
     "generate-changelog": "node generate-changelog.js",
     "i18n_compile": "formatjs compile-folder --format transifex ./src/i18n/messages ./src/i18n/messages",
-    "i18n_extract": "formatjs extract 'src/**/*.{jsx,js}' --out-file ./src/i18n/transifex_input.json --format transifex"
+    "i18n_extract": "formatjs extract 'src/**/*.{jsx,js}' --out-file ./src/i18n/transifex_input.json --format transifex",
+    "rollup": "rollup -c"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -83,6 +84,12 @@
     "@edx/browserslist-config": "1.1.0",
     "@edx/eslint-config": "^3.0.0",
     "@formatjs/cli": "^4.8.4",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-image": "^2.1.1",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-replace": "^4.0.0",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.1",
     "@testing-library/jest-dom": "^5.16.3",
@@ -111,6 +118,10 @@
     "react-dom": "^17.0.0",
     "react-test-renderer": "^17.0.0",
     "regenerator-runtime": "^0.13.9",
+    "rollup": "^2.77.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.32.13",
     "semantic-release": "^17.0.0",
     "stylelint": "^14.7.1",
