@@ -1,10 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// @ts-ignore
 import { Hyperlink } from '~paragon-react';
 
-const ProjectUsageExamples = ({ row }) => {
-  const componentUsages = row.original.usages;
-  const repositoryUrl = row.original.repositoryUrl;
+export interface IProjectUsageExamples {
+  row: {
+    original: {
+      name: string,
+      repositoryUrl?: string,
+      usages: {},
+    },
+  },
+}
+
+const ProjectUsageExamples = ({ row }: IProjectUsageExamples) => {
+  const componentUsages: { [key: string]: any } = row.original.usages;
+  const repositoryUrl = row.original;
+
+  interface IProjectUsages {
+    filePath: string,
+    line: number,
+  }
+
   return (
     <>
       {Object.keys(componentUsages).length === 0 && (
@@ -17,7 +34,7 @@ const ProjectUsageExamples = ({ row }) => {
             {componentUsages.map(({
               filePath,
               line,
-            }) => (
+            }: IProjectUsages) => (
               <li key={`${filePath}L#${line}`}>
                 {repositoryUrl ? (
                   <>

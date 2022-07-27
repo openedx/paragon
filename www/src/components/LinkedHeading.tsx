@@ -1,12 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+export type LinkedHeadingPropsTypes = {
+  h: string,
+  children: React.ReactNode,
+  id: string,
+};
+
 const LinkedHeading = ({
   h,
   children,
   id,
-}) => {
-  const H = `h${h}`;
+}: LinkedHeadingPropsTypes) => {
+  const H: any = `h${h}`;
 
   return (
     <H id={id} className="pgn-doc__heading">

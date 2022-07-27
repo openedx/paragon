@@ -1,4 +1,4 @@
-const getGithubProjectUrl = (repository) => {
+const getGithubProjectUrl = (repository: any) => {
   let repositoryUrl;
   if (repository === Object(repository) && repository.url) {
     repositoryUrl = repository.url;
@@ -9,7 +9,7 @@ const getGithubProjectUrl = (repository) => {
     return;
   }
   const parts = repositoryUrl.split('/');
-  const githubDomainIndex = parts.findIndex(part => part === 'github.com');
+  const githubDomainIndex = parts.findIndex((part: string) => part === 'github.com');
   parts.splice(0, githubDomainIndex);
   const parsedRepositoryUrl = parts.join('/').replace('.git', '');
   return `https://${parsedRepositoryUrl}/blob/master`;

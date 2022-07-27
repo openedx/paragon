@@ -109,7 +109,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       // (or `node.frontmatter.slug`)
       path: node.fields.slug,
       // This component will wrap our MDX content
-      component: path.resolve(`./src/templates/component-page-template.jsx`),
+      component: path.resolve(`./src/templates/component-page-template.tsx`),
       // You can use the values in this context in
       // our page layout component
       context: { id: node.id, components: node.frontmatter.components || [], cssVariables },
