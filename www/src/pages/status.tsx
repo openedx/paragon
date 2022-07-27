@@ -1,9 +1,15 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
+// @ts-ignore
 import { Table, Container } from '~paragon-react'; // eslint-disable-line
 import { ComponentStatus } from '../components/doc-elements';
 import SEO from '../components/SEO';
 import Layout from '../components/PageLayout';
+
+export interface IComponents {
+  frontmatter?: string,
+  title?: string,
+}
 
 export default function StatusPage() {
   return (
@@ -32,15 +38,23 @@ export default function StatusPage() {
           }`}
           render={({ allMdx }) => {
             if (!allMdx || !allMdx.nodes) { return null; }
-            const components = allMdx.nodes.map(({ frontmatter }) => frontmatter)
-              .filter(({ title }) => title !== 'My Component');
+            const components = allMdx.nodes.map(({ frontmatter }: IComponents) => frontmatter)
+              .filter(({ title }: IComponents) => title !== 'My Component');
+
+            interface ITable {
+              title: string,
+              status: string,
+              designStatus: string,
+              devStatus: string,
+              notes: string,
+            }
 
             return (
               <Table
                 className="pgn-doc__status-table"
                 data={components.map(({
                   title, status, designStatus, devStatus, notes,
-                }) => ({
+                }: ITable) => ({
                   name: (
                     <div>
                       <h6>{title} <ComponentStatus status={status} /></h6>

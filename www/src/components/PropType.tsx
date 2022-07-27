@@ -1,8 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// @ts-ignore
 import { Badge } from '~paragon-react'; // eslint-disable-line
 
-const RequiredBadge = ({ isRequired }) => {
+export type RequiredBadgeTypes = {
+  isRequired?: boolean,
+};
+
+const RequiredBadge = ({ isRequired }: RequiredBadgeTypes) => {
   if (!isRequired) { return null; }
   return (
     <>
@@ -20,7 +25,12 @@ RequiredBadge.defaultProps = {
   isRequired: false,
 };
 
-const SimplePropType = ({ name, isRequired }) => (
+export interface ISimplePropType {
+  name: string,
+  isRequired?: boolean,
+}
+
+const SimplePropType = ({ name, isRequired }: ISimplePropType) => (
   <span>
     <code>{name}</code>
     <RequiredBadge isRequired={isRequired} />
@@ -36,7 +46,13 @@ SimplePropType.defaultProps = {
   isRequired: false,
 };
 
-const PropTypeEnum = ({ name, value: enumValue, isRequired }) => (
+export interface IPropTypeEnum {
+  name: string,
+  value: Array<any>,
+  isRequired?: boolean,
+}
+
+const PropTypeEnum = ({ name, value: enumValue, isRequired }: IPropTypeEnum) => (
   <span>
     <code>{name}</code>
     <RequiredBadge isRequired={isRequired} />
@@ -58,11 +74,16 @@ PropTypeEnum.defaultProps = {
   isRequired: false,
 };
 
-const PropTypeUnion = ({ value, isRequired }) => (
+export interface IPropTypeUnion {
+  value: any,
+  isRequired?: boolean,
+}
+
+const PropTypeUnion = ({ value, isRequired }: IPropTypeUnion) => (
   <span>
     {value
-      .map(propType => <PropType key={propType.name} {...propType} />)
-      .reduce((prev, curr) => [prev, ' | ', curr])}
+      .map((propType: any) => <PropType key={propType.name} {...propType} />)
+      .reduce((prev: string, curr: string) => [prev, ' | ', curr])}
     <RequiredBadge isRequired={isRequired} />
   </span>
 );
@@ -77,7 +98,12 @@ PropTypeUnion.defaultProps = {
   isRequired: false,
 };
 
-const PropTypeInstanceOf = ({ value, isRequired }) => (
+export interface IPropTypeInstanceOf {
+  isRequired?: boolean,
+  value: string,
+}
+
+const PropTypeInstanceOf = ({ value, isRequired }: IPropTypeInstanceOf) => (
   <span>
     <code>{value}</code>
     <RequiredBadge isRequired={isRequired} />
@@ -93,7 +119,12 @@ PropTypeInstanceOf.defaultProps = {
   isRequired: false,
 };
 
-const PropTypeArrayOf = ({ value, isRequired }) => (
+export interface IPropTypeArrayOf {
+  isRequired?: boolean,
+  value: Array<{}>,
+}
+
+const PropTypeArrayOf = ({ value, isRequired }: IPropTypeArrayOf) => (
   <span>
     <PropType {...value} />
     <code>[]</code>
@@ -110,7 +141,12 @@ PropTypeArrayOf.defaultProps = {
   isRequired: false,
 };
 
-const PropTypeObjectOf = ({ value, isRequired }) => (
+export interface IPropTypeObjectOf {
+  value: Array<{}>,
+  isRequired?: boolean,
+}
+
+const PropTypeObjectOf = ({ value, isRequired }: IPropTypeObjectOf) => (
   <span>
     <code>
       Object.{'<'}
@@ -130,7 +166,13 @@ PropTypeObjectOf.defaultProps = {
   isRequired: false,
 };
 
-const PropTypeShape = ({ name, value, isRequired }) => (
+export interface IPropTypeShape {
+  isRequired?: boolean,
+  name: string,
+  value: Array<{}>,
+}
+
+const PropTypeShape = ({ name, value, isRequired }: IPropTypeShape) => (
   <span className="small">
     <code>{name}</code>
     <RequiredBadge isRequired={isRequired} />
@@ -154,7 +196,13 @@ PropTypeShape.defaultProps = {
   isRequired: false,
 };
 
-const PropTypeExact = ({ name, value, isRequired }) => (
+export interface IPropTypeExact {
+  isRequired?: boolean,
+  name: string,
+  value: {},
+}
+
+const PropTypeExact = ({ name, value, isRequired }: IPropTypeExact) => (
   <span className="small">
     <code>{name}</code>
     <RequiredBadge isRequired={isRequired} />
@@ -178,7 +226,12 @@ PropTypeExact.defaultProps = {
   isRequired: false,
 };
 
-const CustomPropType = ({ raw, isRequired }) => (
+export interface ICustomPropType {
+  isRequired?: boolean,
+  raw?: string
+}
+
+const CustomPropType = ({ raw, isRequired }: ICustomPropType) => (
   <span>
     <code>{raw}</code>
     <RequiredBadge isRequired={isRequired} />
@@ -195,7 +248,11 @@ CustomPropType.defaultProps = {
   raw: '',
 };
 
-const PROP_TYPE_COMPONENTS = {
+type Test = {
+  [key: string]: Function,
+};
+
+const PROP_TYPE_COMPONENTS: Test = {
   array: SimplePropType,
   bool: SimplePropType,
   func: SimplePropType,
@@ -217,9 +274,16 @@ const PROP_TYPE_COMPONENTS = {
   custom: CustomPropType,
 };
 
+export interface IPropType {
+  name: any,
+  value?: any,
+  raw?: string,
+  required?: boolean,
+}
+
 const PropType = ({
   name, value, required, raw,
-}) => {
+}: IPropType) => {
   const PropTypeComponent = PROP_TYPE_COMPONENTS[name];
 
   if (PropTypeComponent) {

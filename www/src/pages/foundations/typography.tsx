@@ -1,11 +1,16 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+// @ts-ignore
 import { Container } from '~paragon-react'; // eslint-disable-line
 import SEO from '../../components/SEO';
 import MeasuredItem from '../../components/MeasuredItem';
 import Layout from '../../components/PageLayout';
 
-const weightLabels = {
+export type WeightLabelsTypes = {
+  [key: string]: string,
+};
+
+const weightLabels: WeightLabelsTypes = {
   200: 'Light',
   300: 'Light',
   400: 'Regular',
@@ -17,7 +22,7 @@ const weightLabels = {
 
 const measuredTypeProps = {
   properties: ['font-size', 'line-height', 'font-family', 'font-weight'],
-  renderAfter: measurements => {
+  renderAfter: (measurements: { [x: string]: string; }) => {
     const fontFamily = measurements['font-family']
       ? measurements['font-family'].split(',')[0]
       : null;
@@ -47,7 +52,7 @@ export default function TypographyPage() {
         <table className="w-100 table pgn-doc__status-table">
           <tbody>
             <tr>
-              <th colSpan="3">
+              <th colSpan={3}>
                 <h2 className="mt-3">Headings</h2>
               </th>
             </tr>
@@ -78,7 +83,7 @@ export default function TypographyPage() {
               </tr>
             ))}
             <tr>
-              <td colSpan="2">
+              <td colSpan={2}>
                 <MeasuredItem {...measuredTypeProps}>
                   <p className="heading-label">Heading Label</p>
                 </MeasuredItem>
@@ -91,16 +96,16 @@ export default function TypographyPage() {
           </tbody>
           <tbody>
             <tr>
-              <th colSpan="3">
+              <th colSpan={3}>
                 <h2 className="mt-3">Body</h2>
               </th>
             </tr>
             <tr>
-              <th colSpan="2">Desktop & Mobile</th>
+              <th colSpan={2}>Desktop & Mobile</th>
               <th>CSS Class</th>
             </tr>
             <tr>
-              <td colSpan="2">
+              <td colSpan={2}>
                 <MeasuredItem {...measuredTypeProps}>
                   <p className="lead m-0">Large Body</p>
                 </MeasuredItem>
@@ -110,14 +115,14 @@ export default function TypographyPage() {
               </td>
             </tr>
             <tr>
-              <td colSpan="3">
+              <td colSpan={3}>
                 <MeasuredItem {...measuredTypeProps}>
                   <p className="m-0">Body</p>
                 </MeasuredItem>
               </td>
             </tr>
             <tr>
-              <td colSpan="2">
+              <td colSpan={2}>
                 <MeasuredItem {...measuredTypeProps}>
                   <p className="small m-0">Small Body</p>
                 </MeasuredItem>
@@ -127,7 +132,7 @@ export default function TypographyPage() {
               </td>
             </tr>
             <tr>
-              <td colSpan="2">
+              <td colSpan={2}>
                 <MeasuredItem {...measuredTypeProps}>
                   <p className="x-small m-0">Extra Small Body</p>
                 </MeasuredItem>
@@ -137,7 +142,7 @@ export default function TypographyPage() {
               </td>
             </tr>
             <tr>
-              <td colSpan="2">
+              <td colSpan={2}>
                 <MeasuredItem {...measuredTypeProps}>
                   <p className="micro m-0">Micro Body</p>
                 </MeasuredItem>
@@ -149,7 +154,7 @@ export default function TypographyPage() {
           </tbody>
           <tbody>
             <tr>
-              <th colSpan="3">
+              <th colSpan={3}>
                 <h2 className="mt-3">Display</h2>
               </th>
             </tr>
@@ -182,12 +187,12 @@ export default function TypographyPage() {
           </tbody>
           <tbody>
             <tr>
-              <th colSpan="3">
+              <th colSpan={3}>
                 <h2 className="mt-3">Links</h2>
               </th>
             </tr>
             <tr>
-              <td colSpan="2">
+              <td colSpan={2}>
                 <a href="#">Standalone Link</a>
               </td>
               <td>
@@ -198,7 +203,7 @@ export default function TypographyPage() {
               </td>
             </tr>
             <tr>
-              <td colSpan="2">
+              <td colSpan={2}>
                 <p>
                   An{' '}
                   <a className="inline-link" href="#">
@@ -215,7 +220,7 @@ export default function TypographyPage() {
               </td>
             </tr>
             <tr>
-              <td colSpan="2">
+              <td colSpan={2}>
                 <a className="muted-link" href="#">
                   Muted, Standalone Link
                 </a>
@@ -227,7 +232,7 @@ export default function TypographyPage() {
               </td>
             </tr>
             <tr>
-              <td colSpan="2">
+              <td colSpan={2}>
                 <p>
                   An{' '}
                   <a className="muted-link inline-link" href="#">
@@ -249,7 +254,7 @@ export default function TypographyPage() {
         <table className="w-100 table pgn-doc__status-table">
           <tbody>
             <tr>
-              <th colSpan="2">
+              <th colSpan={2}>
                 <h2>Decoration and Emphasis</h2>
               </th>
             </tr>
@@ -321,7 +326,7 @@ export default function TypographyPage() {
         <table className="w-100 table pgn-doc__status-table">
           <tbody>
             <tr>
-              <th colSpan="2">
+              <th colSpan={2}>
                 <h2>Alignment</h2>
               </th>
             </tr>

@@ -13,9 +13,20 @@ import {
   Button,
   Icon,
   IconButton,
+  // @ts-ignore
 } from '~paragon-react'; // eslint-disable-line
+// @ts-ignore
 import { Menu as MenuIcon, Close, Settings } from '~paragon-icons'; // eslint-disable-line
+// eslint-disable-next-line import/no-named-as-default
 import SettingsContext from '../context/SettingsContext';
+
+export interface INavbar {
+  siteTitle: string,
+  onMenuClick: React.MouseEventHandler,
+  onSettingsClick: Function | undefined,
+  menuIsOpen?: boolean,
+  showMinimizedTitle?: boolean,
+}
 
 const Navbar = ({
   siteTitle,
@@ -23,7 +34,7 @@ const Navbar = ({
   menuIsOpen,
   showMinimizedTitle,
   onSettingsClick,
-}) => (
+}: INavbar) => (
   <Container as="header" className="py-3 bg-dark text-white sticky-top">
     <Row className="align-items-center text-center text-sm-left">
       <Col className="pgn-doc__header-button--menu mb-2 mb-sm-0 col-4" sm={5}>
@@ -116,7 +127,12 @@ Navbar.defaultProps = {
   showMinimizedTitle: false,
 };
 
-const Header = ({ siteTitle, showMinimizedTitle }) => {
+export interface IHeaderProps {
+  siteTitle: string,
+  showMinimizedTitle?: boolean,
+}
+
+const Header = ({ siteTitle, showMinimizedTitle }: IHeaderProps) => {
   // eslint-disable-next-line no-unused-vars
   const [isOpen, open, close, toggle] = useToggle(false, {
     handleToggleOn: () => {
@@ -127,6 +143,7 @@ const Header = ({ siteTitle, showMinimizedTitle }) => {
     },
   });
 
+  // @ts-ignore
   const { openSettings } = useContext(SettingsContext);
 
   // returned function will be called on component unmount
