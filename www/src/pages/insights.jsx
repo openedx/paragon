@@ -60,7 +60,7 @@ const round = (n) => Math.round(n * 10) / 10;
 const getEmptyMessage = (text) => `Currently there are no ${text} usage yet`;
 
 const SummaryUsage = () => {
-  const { paragonTypes = {}, isParagonIcon } = useContext(InsightsContext);
+  const { paragonTypes = {}, isParagonIcon = () => false } = useContext(InsightsContext);
   const isMedium = useMediaQuery({ minWidth: breakpoints.large.minWidth });
 
   const typeCount = Object.keys(paragonTypes).reduce((accumulator, componentName) => {
@@ -274,7 +274,7 @@ const IconsUsage = ({ data }) => (
 );
 
 export default function InsightsPage({ pageContext: { tab } }) {
-  const { paragonTypes = {}, isParagonIcon } = useContext(InsightsContext);
+  const { paragonTypes = {}, isParagonIcon = () => false } = useContext(InsightsContext);
   const {
     components, hooks, utils, icons,
   } = Object.keys(componentsUsage).reduce((acc, usage) => {
