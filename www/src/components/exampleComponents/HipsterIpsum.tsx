@@ -7,26 +7,28 @@ import PropTypes from 'prop-types';
  * @param  {Array} array The array to shuffle
  * @return {String}      The first item in the shuffled array
  */
- const shuffle = (array) => {
-	let currentIndex = array.length;
-	let temporaryValue, randomIndex;
+const shuffle = (array: []) => {
+  let currentIndex: number = array.length;
+  let temporaryValue; let
+    randomIndex;
 
-	// While there remain elements to shuffle...
-	while (0 !== currentIndex) {
-		// Pick a remaining element...
-		randomIndex = Math.floor(Math.random() * currentIndex);
-		currentIndex -= 1;
+  // While there remain elements to shuffle...
+  while (currentIndex !== 0) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
 
-		// And swap it with the current element.
-		temporaryValue = array[currentIndex];
-		array[currentIndex] = array[randomIndex];
-		array[randomIndex] = temporaryValue;
-	}
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    /* eslint-disable no-param-reassign */
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
 
-	return array;
+  return array;
 };
 
-const paragraphs = [
+const paragraphs: [any][number] = [
   'Yuccie pabst four loko flexitarian activated charcoal viral health goth craft beer dreamcatcher subway tile meditation microdosing. Hashtag raw denim health goth hoodie, adaptogen chambray pabst roof party seitan tattooed truffaut mlkshk mustache normcore cliche. DIY pug cold-pressed irony enamel pin, viral squid kale chips. Umami flexitarian hot chicken put a bird on it, 90s YOLO waistcoat intelligentsia selvage affogato 3 wolf moon. Truffaut wayfarers affogato, cardigan distillery YOLO chicharrones literally direct trade gastropub stumptown neutra semiotics whatever. Vaporware XOXO plaid portland helvetica quinoa flannel tumeric taiyaki fixie snackwave. Banh mi migas drinking vinegar bicycle rights cardigan, vexillologist cliche ennui pok pok four loko fashion axe keffiyeh brooklyn literally.',
   'Pinterest tote bag synth, tattooed echo park cronut flannel kombucha kickstarter viral. Lo-fi microdosing activated charcoal jean shorts ramps. Scenester copper mug swag farm-to-table PBR&B ramps hell of tousled mumblecore af trust fund lo-fi. Enamel pin put a bird on it hella vinyl flannel pickled bespoke. Cred williamsburg irony, squid portland fixie unicorn mumblecore direct trade. Irony tumblr freegan meditation blog.',
   'Wolf DIY typewriter food truck readymade man braid shaman adaptogen coloring book. Ugh kitsch microdosing, leggings copper mug seitan messenger bag intelligentsia 8-bit disrupt wayfarers banjo. Swag stumptown XOXO, shaman enamel pin franzen lo-fi blog sriracha celiac wolf. Normcore actually 8-bit, before they sold out celiac kickstarter pok pok af street art pour-over coloring book swag meggings truffaut iPhone. Coloring book artisan bespoke organic ugh neutra pug.',
@@ -39,20 +41,22 @@ const paragraphs = [
   'Vice post-ironic etsy health goth kogi aesthetic, wolf tilde tofu man bun gluten-free venmo. Yuccie kogi celiac distillery, four loko adaptogen yr mixtape bushwick vinyl pabst messenger bag. Trust fund glossier hell of selfies pop-up marfa. Pitchfork woke listicle humblebrag adaptogen enamel pin trust fund butcher helvetica cred succulents try-hard raw denim seitan. Keffiyeh tumeric slow-carb, chillwave drinking vinegar af austin pabst paleo squid prism enamel pin.',
 ];
 
-const HipsterIpsum = ({ numParagraphs }) => {
-  const shuffledParagraphs = React.useMemo(() => {
-    return shuffle(paragraphs);
-  }, []);
+export type HipsterIpsumTypes = {
+  numParagraphs: number,
+};
+
+const HipsterIpsum = ({ numParagraphs }: HipsterIpsumTypes) => {
+  const shuffledParagraphs = React.useMemo(() => shuffle(paragraphs), []);
   const content = shuffledParagraphs
     .slice(0, numParagraphs)
-    .map((text, index) => <p key={index}>{text}</p>)
+    .map((text, index) => <p key={index}>{text}</p>);
 
   return (
     <>
       {content}
       <p className="x-small">Sourced with love from <a href="https://hipsum.co/">https://hipsum.co/</a></p>
     </>
-  )
+  );
 };
 
 HipsterIpsum.propTypes = {

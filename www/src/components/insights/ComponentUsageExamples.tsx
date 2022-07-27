@@ -1,17 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// @ts-ignore
 import { Hyperlink } from '~paragon-react';
 
-const ComponentUsageExamples = ({ row }) => {
-  const repositoryUrl = row.original.repositoryUrl;
-  const projectUsages = row.original.usages;
+export interface IComponentUsageExamples {
+  row: {
+    original: {
+      name: string,
+      repositoryUrl?: string,
+      usages: {},
+    },
+  },
+}
+
+const ComponentUsageExamples = ({ row }: IComponentUsageExamples) => {
+  const repositoryUrl = row.original;
+  const projectUsages: { [key: string]: any } = row.original.usages;
+
+  type ProjectUsagesTypes = {
+    filePath: string,
+    line: number,
+  };
+
   return (
-  <div className="pgn-doc__component-usage__project">
+    <div className="pgn-doc__component-usage__project">
       <ul className="list-unstyled">
         {projectUsages.map(({
           filePath,
           line,
-        }) => (
+        }: ProjectUsagesTypes) => (
           <li key={`${filePath}#L${line}`}>
             {repositoryUrl ? (
               <>

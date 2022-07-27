@@ -8,11 +8,20 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql, Link } from 'gatsby';
+// @ts-ignore
 import { Container, Nav, Row, Col } from '~paragon-react'; // eslint-disable-line
 import Header from './Header';
 import Menu from './Menu';
 import Settings from './Settings';
 import Toc from './Toc';
+
+export interface ILayout {
+  children: React.ReactNode,
+  showMinimizedTitle: boolean,
+  hideFooterComponentMenu: boolean,
+  isMdx: boolean,
+  tocData: Array<number>,
+}
 
 const Layout = ({
   children,
@@ -20,7 +29,7 @@ const Layout = ({
   hideFooterComponentMenu,
   isMdx,
   tocData,
-}) => {
+}: ILayout) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -111,6 +120,7 @@ const Layout = ({
 const itemsShape = {
   url: PropTypes.string,
   title: PropTypes.string,
+  items: PropTypes.array,
 };
 itemsShape.items = PropTypes.arrayOf(PropTypes.shape(itemsShape));
 
