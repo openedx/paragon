@@ -21,6 +21,9 @@ import dependentProjectsAnalysis from '../../../dependent-usage.json';
 import { INSIGHTS_TABS, INSIGHTS_PAGES } from '../config';
 import InsightsContext from '../context/InsightsContext';
 
+const ICON_TYPE = 'Icon';
+const TABLE_PAGE_SIZE = 10;
+
 const {
   lastModified: analysisLastUpdated,
   projectUsages: dependentProjectsUsages,
@@ -57,21 +60,11 @@ const round = (n) => Math.round(n * 10) / 10;
 const getEmptyMessage = (text) => `Currently there are no ${text} usage yet`;
 
 const SummaryUsage = () => {
-  const { paragonTypes = {} } = useContext(InsightsContext);
+  const { paragonTypes = {}, isParagonIcon } = useContext(InsightsContext);
   const isMedium = useMediaQuery({ minWidth: breakpoints.large.minWidth });
 
-  const summaryComponentsUsage = Object.entries(componentsUsage).map(([componentName, usages]) => {
-    const componentUsageCounts = usages.reduce((accumulator, project) => accumulator + project.componentUsageCount, 0);
-    return {
-      name: componentName,
-      count: componentUsageCounts,
-      usages: componentsUsage[componentName],
-      type: paragonTypes[componentName],
-    };
-  });
-
   const typeCount = Object.keys(paragonTypes).reduce((accumulator, componentName) => {
-    const type = paragonTypes[componentName];
+    const type = paragonTypes[componentName] || (isParagonIcon(componentName) && ICON_TYPE);
     if (componentsInUsage.includes(componentName)) {
       accumulator[type] = (accumulator[type] || 0) + 1;
     }
@@ -82,6 +75,25 @@ const SummaryUsage = () => {
     .map((key) => paragonTypes[key])
     .filter((v, i, a) => a.indexOf(v) === i)
     .map(type => ({ name: type, number: typeCount[type], value: type }));
+  // Number of Icons is calculated in the statement below. Initialized as `undefined` to not display '0'.
+  const iconsType = { name: ICON_TYPE, number: undefined, value: ICON_TYPE };
+
+  const summaryComponentsUsage = Object.entries(componentsUsage).map(([componentName, usages]) => {
+    const componentUsageCounts = usages.reduce((accumulator, project) => accumulator + project.componentUsageCount, 0);
+    let type = paragonTypes[componentName];
+    if (!type && isParagonIcon(componentName)) {
+      type = ICON_TYPE;
+      iconsType.number = (iconsType.number || 0) + 1;
+    }
+    return {
+      name: componentName,
+      count: componentUsageCounts,
+      usages: componentsUsage[componentName],
+      type,
+    };
+  });
+  filterValues.push(iconsType);
+  typeCount[ICON_TYPE] = iconsType.number;
 
   const summaryTableData = summaryComponentsUsage.sort((a, b) => {
     const nameA = a.name.toUpperCase();
@@ -104,6 +116,7 @@ const SummaryUsage = () => {
       </div>
       <h3>Overall usage</h3>
       <DataTable
+        isPaginated
         isExpandable
         isSortable
         showFiltersInSidebar={isMedium}
@@ -112,6 +125,7 @@ const SummaryUsage = () => {
         itemCount={summaryTableData.length}
         data={summaryTableData}
         renderRowSubComponent={({ row }) => <SummaryUsageExamples row={row} />}
+        initialState={{ pageSize: TABLE_PAGE_SIZE }}
         columns={[
           {
             id: 'expander',
@@ -184,7 +198,7 @@ const ComponentUsage = ({ name, componentUsageInProjects }) => (
     <DataTable
       isExpandable
       isSortable
-        itemCount={componentUsageInProjects.length} // eslint-disable-line
+      itemCount={componentUsageInProjects.length} // eslint-disable-line
       data={componentUsageInProjects}
       renderRowSubComponent={({ row }) => <ComponentUsageExamples row={row} />}
       columns={[
@@ -246,18 +260,37 @@ const UtilsUsage = ({ data }) => (
   </div>
 );
 
+// Usage info for all utils
+const IconsUsage = ({ data }) => (
+  <div className="pt-5 mb-5">
+    {data.length ? data.sort().map(name => (
+      <ComponentUsage
+        key={name}
+        name={name}
+        componentUsageInProjects={componentsUsage[name]}
+      />
+    )) : getEmptyMessage('utils')}
+  </div>
+);
+
 export default function InsightsPage({ pageContext: { tab } }) {
-  const { paragonTypes = {} } = useContext(InsightsContext);
-  const { components, hooks, utils } = Object.keys(componentsUsage).reduce((acc, usage) => {
+  const { paragonTypes = {}, isParagonIcon } = useContext(InsightsContext);
+  const {
+    components, hooks, utils, icons,
+  } = Object.keys(componentsUsage).reduce((acc, usage) => {
     if (paragonTypes[usage] === 'Component') {
       acc.components.push(usage);
     } else if (paragonTypes[usage] === 'Hook') {
       acc.hooks.push(usage);
     } else if (['Text', 'Function', 'Object'].includes(paragonTypes[usage])) {
       acc.utils.push(usage);
+    } else if (isParagonIcon(usage)) {
+      acc.icons.push(usage);
     }
     return acc;
-  }, { components: [], hooks: [], utils: [] });
+  }, {
+    components: [], hooks: [], utils: [], icons: [],
+  });
 
   const handleOnSelect = (value) => {
     if (value !== tab) {
@@ -295,6 +328,9 @@ export default function InsightsPage({ pageContext: { tab } }) {
           <Tab eventKey={INSIGHTS_TABS.UTILS} title="Utils">
             <UtilsUsage data={utils} />
           </Tab>
+          <Tab eventKey={INSIGHTS_TABS.ICONS} title="Icons">
+            <IconsUsage data={icons} />
+          </Tab>
         </Tabs>
       </Container>
     </Layout>
@@ -331,3 +367,4 @@ const usagePropTypes = {
 ComponentsUsage.propTypes = usagePropTypes;
 HooksUsage.propTypes = usagePropTypes;
 UtilsUsage.propTypes = usagePropTypes;
+IconsUsage.propTypes = usagePropTypes;

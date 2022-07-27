@@ -111,8 +111,8 @@ function getComponentUsagesInFiles(files, rootDir) {
     walk.simple({
       // ImportDeclaration nodes contains data about imports in the files
       ImportDeclaration(node) {
-        // Ignore icons and direct imports for now
-        if (node.source.value === '@edx/paragon') {
+        // Ignore direct imports for now
+        if (node.source.value === '@edx/paragon' || node.source.value === '@edx/paragon/icons') {
           node.specifiers.forEach(addParagonImport);
         }
       },
@@ -128,6 +128,17 @@ function getComponentUsagesInFiles(files, rootDir) {
           const subComponentName = node.name.object ? node.name.property.name : null;
           const fullComponentName = subComponentName ? `${paragonName}.${subComponentName}` : paragonName;
           addComponentUsage(fullComponentName, node.loc.start);
+        }
+      },
+      // JSXExpressionContainer nodes contains data about each JSX props expressions in the file.
+      // where Paragon component can be found through node.expression.name
+      // Example: `<Icon src={Add} />`
+      JSXExpressionContainer(node) {
+        const componentName = node.expression.name;
+        const isParagonComponent = paragonImportsInFile.hasOwnProperty(componentName);
+
+        if (isParagonComponent) {
+          addComponentUsage(componentName, node.expression.loc.start);
         }
       },
       // AssignmentExpression contains data about each assignment in the file,

@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import * as Components from '~paragon-react'; // eslint-disable-line
+import * as Icons from '~paragon-icons'; // eslint-disable-line
 import getParagonComponentsTypes from '../utils/getParagonComponentsTypes';
 
 const InsightsContext = createContext({});
@@ -12,8 +13,11 @@ const InsightsContextProvider = ({ children }) => {
     setParagonTypes(getParagonComponentsTypes(Components));
   }, []);
 
+  const isParagonIcon = (name) => name in Icons;
+
   const contextValue = {
     paragonTypes,
+    isParagonIcon,
   };
 
   return (
