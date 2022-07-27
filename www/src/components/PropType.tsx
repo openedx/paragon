@@ -248,11 +248,11 @@ CustomPropType.defaultProps = {
   raw: '',
 };
 
-type Test = {
+export type PropTypeComponentsTypes = {
   [key: string]: Function,
 };
 
-const PROP_TYPE_COMPONENTS: Test = {
+const PROP_TYPE_COMPONENTS: PropTypeComponentsTypes = {
   array: SimplePropType,
   bool: SimplePropType,
   func: SimplePropType,
