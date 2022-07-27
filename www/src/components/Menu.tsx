@@ -50,7 +50,7 @@ const menuQuery = graphql`
     }
   }
 `;
-// (value: { id: number; key: number; }, index: number, array: { id: number; key: number; }[]) => Element
+
 export interface IComponentNavItem {
   id: number,
   key: number,
@@ -79,16 +79,16 @@ const ComponentNavItem = ({
   );
 };
 
-// ComponentNavItem.propTypes = {
-//   id: PropTypes.string.isRequired,
-//   fields: PropTypes.shape({
-//     slug: PropTypes.string.isRequired,
-//   }).isRequired,
-//   frontmatter: PropTypes.shape({
-//     title: PropTypes.string.isRequired,
-//     status: PropTypes.string,
-//   }).isRequired,
-// };
+ComponentNavItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  fields: PropTypes.shape({
+    slug: PropTypes.string.isRequired,
+  }).isRequired,
+  frontmatter: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    status: PropTypes.string,
+  }).isRequired,
+};
 
 const MenuComponentList: React.FC = ({ children }) => (
   <div className="menu-component-list">{children}</div>

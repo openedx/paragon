@@ -18,12 +18,6 @@ export interface IDefaultValue {
   handleSettingsChange: Function,
   showSettings?: React.SyntheticEvent | React.ReactNode,
   closeSettings?: React.SyntheticEvent | React.ReactNode,
-  // onThemeChange: Function,
-  // direction: string,
-  // onDirectionChange: Function,
-  // openSettings?: Function,
-  // showSettings?: React.SyntheticEvent | React.ReactNode,
-  // closeSettings?: React.SyntheticEvent | React.ReactNode,
 }
 
 const defaultValue = {
@@ -59,7 +53,6 @@ const SettingsContextProvider: React.FC = ({ children }) => {
 
   // this hook will be called after the first render, so we can safely access localStorage
   useEffect(() => {
-    // @ts-ignore
     const savedSettings = JSON.parse(global.localStorage.getItem('pgn__settings'));
     if (savedSettings) {
       setSettings(savedSettings);
