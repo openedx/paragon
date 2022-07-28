@@ -6,7 +6,7 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import Highlight, {defaultProps} from 'prism-react-renderer';
+import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/duotoneDark';
 import {
   LiveProvider, LiveEditor, LiveError, LivePreview,
@@ -62,10 +62,6 @@ function CodeBlock({
   live,
 }: ICodeBlock) {
   const intl = useIntl();
-  // interface PersonWithoutAge extends Omit<Language, 'Language'> {
-  //   language: string;
-  // }
-  //   type WithoutAge = Omit<HighlightProps, 'language'>;
   const language: any = className ? className.replace(/language-/, '') : 'jsx';
 
   if (live) {

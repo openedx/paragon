@@ -142,8 +142,8 @@ export interface IPropTypeUnion {
 const PropTypeUnion = ({ value, isRequired }: IPropTypeUnion) => (
   <span>
     {value
-      .map((propType: any) => <PropType key={propType.name} {...propType} />)
-      .reduce((prev: string, curr: string) => [prev, ' | ', curr])}
+      .map((propType: { name: string }) => <PropType key={propType.name} {...propType} />)
+      .reduce((prev: Element, curr: Element) => [prev, ' | ', curr])}
     <RequiredBadge isRequired={isRequired} />
   </span>
 );

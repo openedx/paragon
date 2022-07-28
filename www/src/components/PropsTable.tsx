@@ -71,11 +71,11 @@ Prop.propTypes = {
   name: PropTypes.string.isRequired,
   type: PropTypes.shape({}).isRequired,
   required: PropTypes.bool,
-  defaultValue: PropTypes.shape({}), // eslint-disable-line react/forbid-prop-types
+  defaultValue: PropTypes.shape({}),
   description: PropTypes.shape({
     childMdx: PropTypes.shape({
       body: PropTypes.string,
-    }), // eslint-disable-line react/forbid-prop-types
+    }),
   }),
 };
 Prop.defaultProps = {
