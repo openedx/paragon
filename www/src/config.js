@@ -15,7 +15,7 @@ const hasFeatureFlagEnabled = require('./utils/hasFeatureFlagEnabled');
 //    '?feature=LANGUAGE_SWITCHER' to the URL)
 const FEATURES = {};
 
-export const LANGUAGES = [
+const LANGUAGES = [
   {
     label: 'English',
     code: 'en',
@@ -74,13 +74,13 @@ export const LANGUAGES = [
   // },
 ];
 
-export const INSIGHTS_TABS = Object.freeze({
+const INSIGHTS_TABS = Object.freeze({
   SUMMARY: 'Summary',
   PROJECTS: 'Projects',
   COMPONENTS: 'Components',
 });
 
-export const INSIGHTS_PAGES: any = [
+const INSIGHTS_PAGES = [
   {
     tab: INSIGHTS_TABS.SUMMARY,
     path: '/insights',
@@ -95,7 +95,7 @@ export const INSIGHTS_PAGES: any = [
   },
 ];
 
-export default {
+module.exports = {
   INSIGHTS_TABS,
   INSIGHTS_PAGES,
   FEATURES,
