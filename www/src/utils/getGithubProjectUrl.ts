@@ -1,9 +1,9 @@
-const getGithubProjectUrl = (repository: any) => {
+const getGithubProjectUrl = (repository?: string | { type: string, url: string }): string | undefined => {
   let repositoryUrl;
-  if (repository === Object(repository) && repository.url) {
-    repositoryUrl = repository.url;
-  } else if (typeof repository === 'string') {
+  if (typeof repository === 'string') {
     repositoryUrl = repository;
+  } else if (repository?.url) {
+    repositoryUrl = repository.url;
   } else {
     // unsupported repository field
     return;

@@ -3,28 +3,27 @@ import PropTypes from 'prop-types';
 // @ts-ignore
 import { Hyperlink } from '~paragon-react';
 
-export interface IProjectUsages {
-  filePath: string,
-  line: number,
-}
-
 export interface ISummaryUsageExamples {
   row: {
     original: {
       usages: [],
     },
-  },
-}
-
-export interface IComponentUsages {
-  name: string,
-  usages: [IProjectUsages],
-  repositoryUrl: string,
+  }
 }
 
 const SummaryUsageExamples = ({ row }: ISummaryUsageExamples) => {
+  interface IProjectUsages {
+    filePath: string,
+    line: number,
+  }
+
+  interface IComponentUsages {
+    name: string,
+    usages: [IProjectUsages],
+    repositoryUrl: string,
+  }
   const componentUsages = row.original.usages;
-  return componentUsages.map(({
+  const componentUsagesExample = componentUsages.map(({
     name: projectName,
     usages: projectUsages,
     repositoryUrl,
@@ -55,6 +54,8 @@ const SummaryUsageExamples = ({ row }: ISummaryUsageExamples) => {
       </ul>
     </div>
   ));
+
+  return <>{componentUsagesExample}</>;
 };
 
 SummaryUsageExamples.propTypes = {

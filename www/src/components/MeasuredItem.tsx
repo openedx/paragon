@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import { SettingsContext } from '../context/SettingsContext';
 
 export interface IMeasuredItem {
-  properties: Array<any>,
+  properties: [string] | string[],
   renderBefore?: Function,
   renderAfter?: Function,
   children: React.ReactNode,
@@ -31,11 +31,11 @@ const MeasuredItem = ({
     () => {
       const measure = () => {
         const computedStyle = getComputedStyle(itemRef.current as Element);
-        const measurements = properties.reduce((acc, property) => {
+        const measurementsItems = properties.reduce((acc: { [x: string]: string; }, property: string) => {
           acc[property] = computedStyle.getPropertyValue(property);
           return acc;
         }, {});
-        setMeasurements(measurements);
+        setMeasurements(measurementsItems);
       };
       // Needs a moment to finish switching theme and re-render children to DOM first.
       setMeasurements(initialMeasurements);

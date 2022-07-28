@@ -6,14 +6,14 @@ import { Sticky } from '~paragon-react'; // eslint-disable-line
 export interface IToc {
   data: {
     items?: Array<{
-      url?: string | undefined;
-      title?: string | undefined;
+      url?: string;
+      title?: string;
     }>
   }
 }
 
 const Toc = ({ data }: IToc) => {
-  const generateTree = (headings: { items?: Array<any>; }) => (headings?.items?.length
+  const generateTree = (headings: { items?: Array<any> }) => (headings?.items?.length
     ? (
       <ul className="pgn-doc__toc-list">
         {headings.items.map(heading => (

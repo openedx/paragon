@@ -25,6 +25,66 @@ RequiredBadge.defaultProps = {
   isRequired: false,
 };
 
+export interface IPropType {
+  name: string,
+  value?: any,
+  raw?: string,
+  required?: boolean,
+}
+
+const PropType = ({
+  name, value, required, raw,
+}: IPropType) => {
+  // eslint-disable-next-line @typescript-eslint/no-use-before-define
+  const PropTypeComponent = PROP_TYPE_COMPONENTS[name];
+
+  if (PropTypeComponent) {
+    return (
+      <PropTypeComponent
+        value={value}
+        name={name}
+        isRequired={required}
+        raw={raw}
+      />
+    );
+  }
+
+  return <>unknown type</>;
+};
+
+PropType.propTypes = {
+  name: PropTypes.oneOf([
+    'arrayOf',
+    'custom',
+    'enum',
+    'array',
+    'bool',
+    'func',
+    'number',
+    'object',
+    'string',
+    'any',
+    'element',
+    'node',
+    'symbol',
+    'objectOf',
+    'shape',
+    'exact',
+    'union',
+    'elementType',
+  ]),
+  value: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+  raw: PropTypes.string,
+  required: PropTypes.bool,
+};
+
+PropType.defaultProps = {
+  name: 'any',
+  value: null,
+  raw: '',
+  required: true,
+};
+
 export interface ISimplePropType {
   name: string,
   isRequired?: boolean,
@@ -199,7 +259,9 @@ PropTypeShape.defaultProps = {
 export interface IPropTypeExact {
   isRequired?: boolean,
   name: string,
-  value: {},
+  value: {
+    propType: JSX.Element,
+  },
 }
 
 const PropTypeExact = ({ name, value, isRequired }: IPropTypeExact) => (
@@ -272,59 +334,6 @@ const PROP_TYPE_COMPONENTS: PropTypeComponentsTypes = {
   shape: PropTypeShape,
   exact: PropTypeExact,
   custom: CustomPropType,
-};
-
-export interface IPropType {
-  name: any,
-  value?: any,
-  raw?: string,
-  required?: boolean,
-}
-
-const PropType = ({
-  name, value, required, raw,
-}: IPropType) => {
-  const PropTypeComponent = PROP_TYPE_COMPONENTS[name];
-
-  if (PropTypeComponent) {
-    return (
-      <PropTypeComponent
-        value={value}
-        name={name}
-        isRequired={required}
-        raw={raw}
-      />
-    );
-  }
-
-  return 'unknown type';
-};
-
-PropType.propTypes = {
-  name: PropTypes.oneOf([
-    'arrayOf',
-    'custom',
-    'enum',
-    'array',
-    'bool',
-    'func',
-    'number',
-    'object',
-    'string',
-    'any',
-    'element',
-    'node',
-    'symbol',
-    'objectOf',
-    'shape',
-    'exact',
-    'union',
-    'elementType',
-  ]),
-  value: PropTypes.any, // eslint-disable-line react/forbid-prop-types
-  raw: PropTypes.string,
-  computed: PropTypes.bool,
-  required: PropTypes.bool,
 };
 
 export default PropType;

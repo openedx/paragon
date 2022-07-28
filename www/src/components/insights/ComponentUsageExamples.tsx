@@ -15,7 +15,7 @@ export interface IComponentUsageExamples {
 
 const ComponentUsageExamples = ({ row }: IComponentUsageExamples) => {
   const repositoryUrl = row.original;
-  const projectUsages: { [key: string]: any } = row.original.usages;
+  const projectUsages: { [key: string]: Function } = row.original.usages;
 
   type ProjectUsagesTypes = {
     filePath: string,
@@ -51,7 +51,6 @@ const ComponentUsageExamples = ({ row }: IComponentUsageExamples) => {
 };
 
 ComponentUsageExamples.propTypes = {
-  componentName: PropTypes.string.isRequired,
   row: PropTypes.shape({
     original: PropTypes.shape({
       name: PropTypes.string.isRequired,

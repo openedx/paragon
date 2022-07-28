@@ -8,7 +8,7 @@ import { Badge, Card } from '~paragon-react'; // eslint-disable-line
 const IGNORED_COMPONENT_PROPS = ['intl'];
 
 export type DefaultValueTypes = {
-  value: string | undefined
+  value: string | undefined,
 };
 
 const DefaultValue = ({ value }: DefaultValueTypes) => {

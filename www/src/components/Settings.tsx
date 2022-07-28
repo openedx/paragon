@@ -11,8 +11,7 @@ import {
 import { Close } from '~paragon-icons';
 
 import { FEATURES, LANGUAGES } from '../config';
-// eslint-disable-next-line import/no-named-as-default
-import SettingsContext from '../context/SettingsContext';
+import { SettingsContext } from '../context/SettingsContext';
 import { THEMES } from '../../theme-config';
 
 const Settings = () => {
@@ -46,7 +45,7 @@ const Settings = () => {
           <Form.Control
             as="select"
             value={settings.theme}
-            onChange={(e: { target: { value: string; }; }) => handleSettingsChange('theme', e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSettingsChange('theme', e.target.value)}
             floatingLabel="Theme"
           >
             {THEMES.map(theme => (
@@ -63,7 +62,7 @@ const Settings = () => {
           <Form.Control
             as="select"
             value={settings.direction}
-            onChange={(e: { target: { value: string; }; }) => handleSettingsChange('direction', e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSettingsChange('direction', e.target.value)}
             floatingLabel="Direction"
           >
             <option value="ltr">Left to right</option>
@@ -75,7 +74,7 @@ const Settings = () => {
             <Form.Control
               as="select"
               value={settings.language}
-              onChange={(e: { target: { value: string; }; }) => handleSettingsChange('language', e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSettingsChange('language', e.target.value)}
               floatingLabel="Component Language"
             >
               {LANGUAGES.map(lang => (
