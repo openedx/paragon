@@ -242,6 +242,7 @@ export default function InsightsPage({ pageContext: { tab } }: InsightsPageTypes
   const handleOnSelect = (value: string) => {
     if (value !== tab) {
       global.analytics.track('Usage Insights', { tab: value });
+      // @ts-ignore
       navigate(INSIGHTS_PAGES.find((item: { tab: string; }) => item.tab === value).path);
     }
   };
