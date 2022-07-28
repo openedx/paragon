@@ -14,7 +14,7 @@ export interface IProjectUsageExamples {
 }
 
 const ProjectUsageExamples = ({ row }: IProjectUsageExamples) => {
-  const componentUsages: { [key: string]: any } = row.original.usages;
+  const componentUsages: { [key: string]: [] } = row.original.usages;
   const repositoryUrl = row.original;
 
   interface IProjectUsages {

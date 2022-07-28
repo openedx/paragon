@@ -14,7 +14,6 @@ import GenericPropsTable from '../components/PropsTable';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
 import LinkedHeading from '../components/LinkedHeading';
-// @ts-ignore
 import { breakpoints } from '../../../src';
 
 export interface IPageTemplate {
@@ -32,7 +31,7 @@ export interface IPageTemplate {
       body: string,
     },
     components: {
-      nodes: any,
+      nodes: [],
     }
   },
   pageContext: {
@@ -52,7 +51,7 @@ export default function PageTemplate({
   const [showMinimizedTitle, setShowMinimizedTitle] = useState(false);
 
   const components = componentNodes.nodes
-    .reduce((acc: { [x: string]: any; }, currentValue: { displayName: string | number; }) => {
+    .reduce((acc: { [x: string]: { displayName: string }; }, currentValue: { displayName: string; }) => {
       acc[currentValue.displayName] = currentValue;
       return acc;
     }, {});
@@ -132,7 +131,7 @@ export default function PageTemplate({
         )}
         {typeof sortedComponentNames !== 'string'
             && sortedComponentNames?.map((componentName: string | number) => {
-              const node = components[componentName];
+              const node: { displayName: string } = components[componentName];
               if (!node) {
                 return null;
               }
@@ -152,7 +151,7 @@ PageTemplate.propTypes = {
       }),
       body: PropTypes.any, // eslint-disable-line react/forbid-prop-types
       tableOfContents: PropTypes.shape({
-        items: PropTypes.arrayOf(PropTypes.object),
+        items: PropTypes.arrayOf(PropTypes.object), // eslint-disable-line react/forbid-prop-types
       }),
     }),
     components: PropTypes.shape({
@@ -162,6 +161,10 @@ PageTemplate.propTypes = {
   pageContext: PropTypes.shape({
     cssVariables: PropTypes.string,
   }),
+};
+
+PageTemplate.defaultProps = {
+  pageContext: null,
 };
 
 export const pageQuery = graphql`

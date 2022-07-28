@@ -27,7 +27,6 @@ const Settings = () => {
     <Sheet
       position="right"
       show={showSettings}
-      onClose={closeSettings}
       variant="light"
     >
       <div className="d-flex align-items-center justify-content-between mb-3">
@@ -45,7 +44,7 @@ const Settings = () => {
           <Form.Control
             as="select"
             value={settings.theme}
-            onChange={(e: { target: { value: string; }; }) => handleSettingsChange('theme', e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSettingsChange('theme', e.target.value)}
             floatingLabel="Theme"
           >
             {THEMES.map(theme => (
@@ -62,7 +61,7 @@ const Settings = () => {
           <Form.Control
             as="select"
             value={settings.direction}
-            onChange={(e: { target: { value: string; }; }) => handleSettingsChange('direction', e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSettingsChange('direction', e.target.value)}
             floatingLabel="Direction"
           >
             <option value="ltr">Left to right</option>

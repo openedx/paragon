@@ -15,51 +15,51 @@ const hasFeatureFlagEnabled = require('./utils/hasFeatureFlagEnabled');
 //    '?feature=LANGUAGE_SWITCHER' to the URL)
 const FEATURES = {};
 
-const LANGUAGES = [
+export const LANGUAGES = [
   {
     label: 'English',
     code: 'en',
   },
-  // {
-  //   label: 'Arabic',
-  //   code: 'ar',
-  // },
-  // {
-  //   label: 'Catalan',
-  //   code: 'ca',
-  // },
-  // {
-  //   label: 'Chinese',
-  //   code: 'zh-cn',
-  // },
-  // {
-  //   label: 'French',
-  //   code: 'fr',
-  // },
-  // {
-  //   label: 'Hebrew',
-  //   code: 'he',
-  // },
-  // {
-  //   label: 'Indonesian',
-  //   code: 'id',
-  // },
-  // {
-  //   label: 'Polish',
-  //   code: 'pl',
-  // },
-  // {
-  //   label: 'Russian',
-  //   code: 'ru',
-  // },
-  // {
-  //   label: 'Thai',
-  //   code: 'th',
-  // },
-  // {
-  //   label: 'Ukrainian',
-  //   code: 'uk',
-  // },
+  {
+    label: 'Arabic',
+    code: 'ar',
+  },
+  {
+    label: 'Catalan',
+    code: 'ca',
+  },
+  {
+    label: 'Chinese',
+    code: 'zh-cn',
+  },
+  {
+    label: 'French',
+    code: 'fr',
+  },
+  {
+    label: 'Hebrew',
+    code: 'he',
+  },
+  {
+    label: 'Indonesian',
+    code: 'id',
+  },
+  {
+    label: 'Polish',
+    code: 'pl',
+  },
+  {
+    label: 'Russian',
+    code: 'ru',
+  },
+  {
+    label: 'Thai',
+    code: 'th',
+  },
+  {
+    label: 'Ukrainian',
+    code: 'uk',
+  },
   {
     label: 'Spanish',
     code: 'es-419',
@@ -74,13 +74,13 @@ const LANGUAGES = [
   // },
 ];
 
-const INSIGHTS_TABS = Object.freeze({
+export const INSIGHTS_TABS = Object.freeze({
   SUMMARY: 'Summary',
   PROJECTS: 'Projects',
   COMPONENTS: 'Components',
 });
 
-const INSIGHTS_PAGES = [
+export const INSIGHTS_PAGES: any = [
   {
     tab: INSIGHTS_TABS.SUMMARY,
     path: '/insights',
@@ -95,7 +95,7 @@ const INSIGHTS_PAGES = [
   },
 ];
 
-module.exports = {
+export default {
   INSIGHTS_TABS,
   INSIGHTS_PAGES,
   FEATURES,

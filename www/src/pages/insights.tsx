@@ -22,10 +22,18 @@ const {
   projectUsages: dependentProjectsUsages,
 } = dependentProjectsAnalysis;
 
-const dependentProjects = dependentProjectsUsages.map(dependentUsage => ({
+interface IDependentUsage {
+  version?: string,
+  name?: string,
+  repository?: { type: string, url: string } | string,
+  folderName?: string,
+  usages: { [key: string]: any } | ArrayLike<any>,
+}
+
+const dependentProjects = dependentProjectsUsages.map((dependentUsage: IDependentUsage) => ({
   ...dependentUsage,
   repositoryUrl: getGithubProjectUrl(dependentUsage.repository),
-  count: Object.values(dependentUsage.usages).reduce((accumulator, usage) => accumulator += usage.length, 0),
+  count: Object.values(dependentUsage.usages).reduce((accumulator, usage) => accumulator + usage.length, 0),
 }));
 
 const componentsUsage = dependentProjectsUsages.reduce((accumulator: any, project: any) => {
@@ -45,15 +53,9 @@ const componentsUsage = dependentProjectsUsages.reduce((accumulator: any, projec
   return accumulator;
 }, {});
 
-type UsageType = {
-  name: string;
-  count: number;
-  usages: any;
-};
-
-const summaryComponentsUsage = Object.entries(componentsUsage).map(([componentName, usages]): UsageType => {
+const summaryComponentsUsage = Object.entries(componentsUsage).map(([componentName, usages]: [string, any]) => {
   const componentUsageCounts = usages
-    .reduce((accumulator: any, project: any) => accumulator += project.componentUsageCount, 0);
+    .reduce((accumulator: number, project: any) => accumulator + project.componentUsageCount, 0);
   return {
     name: componentName,
     count: componentUsageCounts,
@@ -65,21 +67,19 @@ const SummaryUsage = () => {
   const summaryTableData = summaryComponentsUsage.sort((a, b) => {
     const nameA = a.name.toUpperCase();
     const nameB = b.name.toUpperCase();
+    // eslint-disable-next-line no-nested-ternary
     return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
   });
   const round = (n: number) => Math.round(n * 10) / 10;
   const averageComponentsUsedPerProject = dependentProjects
-    .reduce((accumulator, project) => accumulator += project.count, 0) / dependentProjects.length;
+    .reduce((accumulator, project) => accumulator + project.count, 0) / dependentProjects.length;
 
     type RowType = {
       row: {
         original: {
           name: string,
           repositoryUrl: string,
-          usages: Array<{
-            filePath: string,
-            line: number,
-          }>
+          usages: [],
         }
       }
     };
@@ -197,7 +197,7 @@ const ComponentUsage = ({ name, componentUsageInProjects }: IComponentUsage) => 
           isSortable
                 itemCount={componentUsageInProjects.length} // eslint-disable-line
           data={componentUsageInProjects}
-          renderRowSubComponent={({ row }: RowType) => <ComponentUsageExamples row={row} componentName="" />}
+          renderRowSubComponent={({ row }: RowType) => <ComponentUsageExamples row={row} />}
           columns={[
             {
               id: 'expander',
@@ -234,7 +234,7 @@ const ComponentsUsage = () => (
 
 export type InsightsPageTypes = {
   pageContext: {
-    tab: any,
+    tab: string,
   }
 };
 
@@ -242,7 +242,7 @@ export default function InsightsPage({ pageContext: { tab } }: InsightsPageTypes
   const handleOnSelect = (value: string) => {
     if (value !== tab) {
       global.analytics.track('Usage Insights', { tab: value });
-      navigate(INSIGHTS_PAGES.find(item => item.tab === value).path);
+      navigate(INSIGHTS_PAGES.find((item: { tab: string; }) => item.tab === value).path);
     }
   };
 

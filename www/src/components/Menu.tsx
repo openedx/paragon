@@ -52,8 +52,8 @@ const menuQuery = graphql`
 `;
 
 export interface IComponentNavItem {
-  id: number,
-  key: number,
+  id: string,
+  // value: { id: number; key: number; }, index: number, array: { id: number; key: number; },
   fields: { slug: string },
   frontmatter: { title: string, status?: string },
 }
@@ -79,16 +79,16 @@ const ComponentNavItem = ({
   );
 };
 
-ComponentNavItem.propTypes = {
-  id: PropTypes.string.isRequired,
-  fields: PropTypes.shape({
-    slug: PropTypes.string.isRequired,
-  }).isRequired,
-  frontmatter: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    status: PropTypes.string,
-  }).isRequired,
-};
+// ComponentNavItem.propTypes = {
+//   id: PropTypes.string.isRequired,
+//   fields: PropTypes.shape({
+//     slug: PropTypes.string.isRequired,
+//   }).isRequired,
+//   frontmatter: PropTypes.shape({
+//     title: PropTypes.string.isRequired,
+//     status: PropTypes.string,
+//   }).isRequired,
+// };
 
 const MenuComponentList: React.FC = ({ children }) => (
   <div className="menu-component-list">{children}</div>
@@ -125,10 +125,7 @@ const Menu = () => {
 
   type MenuComponentListTypes = {
     fieldValue: string,
-    nodes: Array<{
-      id: number,
-      key: number;
-    }>,
+    nodes: any,
   };
 
   return (
@@ -224,8 +221,7 @@ const Menu = () => {
               <MenuComponentListCategory key={fieldValue} title={fieldValue}>
                 <ul className="list-unstyled small mb-4">
                   {nodes
-                    .map((node: { id: number; }) => ({ key: node.id, ...node }))
-                    // @ts-ignore
+                    .map((node: { id: number }) => ({ key: node.id, ...node }))
                     .map(ComponentNavItem)}
                 </ul>
               </MenuComponentListCategory>
