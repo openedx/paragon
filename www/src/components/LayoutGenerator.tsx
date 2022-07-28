@@ -87,7 +87,7 @@ Column.defaultProps = {
 };
 
 export type StateKeyTypes = {
-  [key: number]: number
+  [key: number]: number,
 };
 
 function LayoutGenerator() {

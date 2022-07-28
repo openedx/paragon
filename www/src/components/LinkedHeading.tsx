@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export type LinkedHeadingPropsTypes = {
+export interface ILinkedHeading {
   h: string,
   children: React.ReactNode,
   id: string,
-};
+}
 
 const LinkedHeading = ({
   h,
   children,
   id,
-}: LinkedHeadingPropsTypes) => {
+}: ILinkedHeading) => {
   const H: any = `h${h}`;
 
   return (
