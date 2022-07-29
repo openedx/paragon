@@ -1,5 +1,5 @@
 {
-  "lastModified": 1659017442988,
+  "lastModified": 1659103700117,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -10207,21 +10207,37 @@
             "version": "19.10.1"
           }
         ],
-        "SearchField": [
+        "SearchField.Advanced": [
           {
             "filePath": "src/components/Search.jsx",
-            "line": 40,
-            "column": 4,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/discussions/topics/topic-search-bar/TopicSearchBar.jsx",
-            "line": 15,
+            "line": 47,
             "column": 6,
             "version": "19.10.1"
           }
         ],
+        "SearchField.Label": [
+          {
+            "filePath": "src/components/Search.jsx",
+            "line": 53,
+            "column": 8,
+            "version": "19.10.1"
+          }
+        ],
+        "SearchField.Input": [
+          {
+            "filePath": "src/components/Search.jsx",
+            "line": 54,
+            "column": 8,
+            "version": "19.10.1"
+          }
+        ],
         "Icon": [
+          {
+            "filePath": "src/components/Search.jsx",
+            "line": 59,
+            "column": 10,
+            "version": "19.10.1"
+          },
           {
             "filePath": "src/components/SearchInfo.jsx",
             "line": 18,
@@ -10248,7 +10264,7 @@
           },
           {
             "filePath": "src/discussions/common/AuthorLabel.jsx",
-            "line": 51,
+            "line": 54,
             "column": 8,
             "version": "19.10.1"
           },
@@ -11000,6 +11016,14 @@
             "filePath": "src/discussions/posts/post/PostLink.jsx",
             "line": 84,
             "column": 16,
+            "version": "19.10.1"
+          }
+        ],
+        "SearchField": [
+          {
+            "filePath": "src/discussions/topics/topic-search-bar/TopicSearchBar.jsx",
+            "line": 15,
+            "column": 6,
             "version": "19.10.1"
           }
         ]
