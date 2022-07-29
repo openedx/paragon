@@ -60,3 +60,8 @@
   height: 32px;
   width: 32px;
 }
+
+.pgn__dropzone__upload-restriction-message {
+  font-size: $dropzone-restriction-msg-font-size;
+  color: $dropzone-restriction-msg-color;
+}

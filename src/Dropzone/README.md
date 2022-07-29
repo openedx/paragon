@@ -88,6 +88,8 @@ For example:
 - to allow both PNG and JPG images you should pass `{ 'image/*': ['.png', '.jpg'] }` object as `accept` prop;
 - to allow arbitrary images you should pass `{ 'image/*': [] }` object as `accept` prop
 
+The component will render a helpful message about size and type restrictions based on the values you pass to `accept`, `minSize` and `maxSize` props.
+
 ```jsx live
 () => {
   async function handleProcessUpload({
