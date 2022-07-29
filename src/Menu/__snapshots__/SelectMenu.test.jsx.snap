@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`correct rendering renders as expected 1`] = `
-<pgn__menu-select
+<div
   className="pgn__menu-select"
 >
   <button
@@ -86,5 +86,5 @@ exports[`correct rendering renders as expected 1`] = `
       />
     </div>
   </div>
-</pgn__menu-select>
+</div>
 `;
