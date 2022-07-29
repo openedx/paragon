@@ -102,7 +102,7 @@ describe('<ControlledSelectionStatus />', () => {
     it('shows the number of rows selected', () => {
       const wrapper = mount(<ControlledSelectionStatusWrapper value={instance} />);
       const [selections] = instance.controlledTableSelections;
-      expect(wrapper.text()).toContain(selections.selectedRows.length);
+      expect(wrapper.text()).toContain(selections.selectedRows.length.toString());
     });
     it('renders default selection text', () => {
       const wrapper = mount(<ControlledSelectionStatusWrapper value={instance} />);

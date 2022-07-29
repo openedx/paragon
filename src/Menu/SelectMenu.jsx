@@ -13,15 +13,17 @@ const SelectMenu = ({
   defaultMessage,
   isLink,
   children,
+  className,
   ...props
 }) => {
   const triggerTarget = React.useRef(null);
+  // this ref is used to focus the menu open button after any menu option is clicked.
+  // triggerTarget.current.focus() inside the onCLick() function didn't guarantee element focus.
+  const focusMenuRef = React.useRef(false);
   const itemsCollection = React.useMemo(
     () => Array.from({ length: children.length }).map(() => React.createRef()),
     [children.length],
   );
-
-  const className = classNames(props.className, 'pgn__menu-select');
 
   const defaultIndex = useCallback(() => {
     for (let i = 0; i < children.length; i++) {
@@ -36,30 +38,24 @@ const SelectMenu = ({
   const [isOpen, open, close] = useToggle(false);
   const [vertOffset, setOffset] = useState(0);
 
-  const createMenuItems = () => {
-    const elements = [];
-    React.Children.map(children, (child, index) => {
-      const newProps = {
-        onClick(e) {
-          if (child.props.onClick) {
-            child.props.onClick(e);
-          }
-          setSelected(index);
-          close();
-          triggerTarget.current.focus();
-        },
-        id: `${index.toString()}_pgn__menu-item`,
-        role: 'link',
-      };
-      if (selected === index) {
-        newProps['aria-current'] = 'page';
-      }
-      elements.push(
-        React.cloneElement(child, newProps),
-      );
-    });
-    return elements;
-  };
+  const createMenuItems = () => React.Children.map(children, (child, index) => {
+    const newProps = {
+      onClick(e) {
+        if (child.props.onClick) {
+          child.props.onClick(e);
+        }
+        setSelected(index);
+        close();
+        focusMenuRef.current = true;
+      },
+      id: `${index.toString()}_pgn__menu-item`,
+      role: 'link',
+    };
+    if (selected === index) {
+      newProps['aria-current'] = 'page';
+    }
+    return React.cloneElement(child, newProps);
+  });
 
   const link = isLink; // allow inline link styling
   const prevOpenRef = React.useRef();
@@ -106,16 +102,15 @@ const SelectMenu = ({
     if (isOpen && !prevOpenRef.current && selected) {
       itemsCollection[selected].current.children[0].focus({ preventScroll: (defaultIndex() === selected) });
     }
+    if (focusMenuRef.current) {
+      triggerTarget.current.focus();
+      focusMenuRef.current = false;
+    }
     prevOpenRef.current = isOpen;
   }, [isOpen, children.length, defaultIndex, itemsCollection, selected]);
 
-  return React.createElement(
-    className,
-    {
-      ...props,
-      className,
-    },
-    <>
+  return (
+    <div className={classNames('pgn__menu-select', className)} {...props}>
       <Button
         aria-haspopup="true"
         aria-expanded={isOpen}
@@ -158,7 +153,7 @@ const SelectMenu = ({
           </Menu>
         </ModalPopup>
       </div>
-    </>,
+    </div>
   );
 };
 
