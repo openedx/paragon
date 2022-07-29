@@ -155,7 +155,7 @@ const Dropzone = ({
       return (
         <>
           <GenericError errorMsgs={errors} />
-          <DefaultContent />
+          {inputComponent || <DefaultContent minSize={minSize} maxSize={maxSize} accept={accept} />}
         </>
       );
     }
@@ -171,7 +171,7 @@ const Dropzone = ({
       );
     }
 
-    return inputComponent;
+    return inputComponent || <DefaultContent minSize={minSize} maxSize={maxSize} accept={accept} />;
   };
 
   return (
@@ -210,7 +210,7 @@ Dropzone.defaultProps = {
   },
   progressVariant: 'spinner',
   validator: undefined,
-  inputComponent: <DefaultContent />,
+  inputComponent: undefined,
 };
 
 Dropzone.propTypes = {
