@@ -22,15 +22,7 @@ const {
   projectUsages: dependentProjectsUsages,
 } = dependentProjectsAnalysis;
 
-interface IDependentUsage {
-  version?: string,
-  name?: string,
-  repository?: { type: string, url: string } | string,
-  folderName?: string,
-  usages: { [key: string]: any } | ArrayLike<any>,
-}
-
-const dependentProjects = dependentProjectsUsages.map((dependentUsage: IDependentUsage) => ({
+const dependentProjects = dependentProjectsUsages.map(dependentUsage => ({
   ...dependentUsage,
   repositoryUrl: getGithubProjectUrl(dependentUsage.repository),
   count: Object.values(dependentUsage.usages).reduce((accumulator, usage) => accumulator + usage.length, 0),
@@ -243,7 +235,7 @@ export default function InsightsPage({ pageContext: { tab } }: InsightsPageTypes
     if (value !== tab) {
       global.analytics.track('Usage Insights', { tab: value });
       // @ts-ignore
-      navigate(INSIGHTS_PAGES.find((item: { tab: string; }) => item.tab === value).path);
+      navigate(INSIGHTS_PAGES.find(item => item.tab === value).path);
     }
   };
 
