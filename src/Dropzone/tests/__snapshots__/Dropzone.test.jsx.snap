@@ -54,6 +54,9 @@ exports[`<Dropzone /> successfully renders 1`] = `
     <p>
       Drag and drop your file here or click to upload.
     </p>
+    <p
+      className="pgn__dropzone__upload-restriction-message"
+    />
   </div>
 </div>
 `;
