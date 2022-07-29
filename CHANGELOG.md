@@ -1,3 +1,17 @@
+# [20.6.0](https://github.com/openedx/paragon/compare/v20.5.0...v20.6.0) (2022-07-29)
+
+
+### Bug Fixes
+
+* incorrect display of responsive tables in the DataTable component ([#1332](https://github.com/openedx/paragon/issues/1332)) ([d112c31](https://github.com/openedx/paragon/commit/d112c311f0f93ce2fe1dfd72adb5da7669821e05))
+* update dependencies and fix vulnerabilities ([#1431](https://github.com/openedx/paragon/issues/1431)) ([c442bb0](https://github.com/openedx/paragon/commit/c442bb01b28f3dd0f63f0648dcdbeb5dcb87d0d2))
+
+
+### Features
+
+* add message about file restrictions to default state of `Dropzone` ([#1470](https://github.com/openedx/paragon/issues/1470)) ([a4027b8](https://github.com/openedx/paragon/commit/a4027b880b59aa7e9a6c601e64d994680f2d9188))
+* muted prop for card to give light gray background ([#1455](https://github.com/openedx/paragon/issues/1455)) ([5f1645d](https://github.com/openedx/paragon/commit/5f1645d6c2d9d7260dcbc5788e1c09549f529e3a))
+
 # [20.5.0](https://github.com/openedx/paragon/compare/v20.4.2...v20.5.0) (2022-07-15)
 
 
