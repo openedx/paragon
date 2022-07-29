@@ -50,6 +50,33 @@ This component uses a `Card` from react-bootstrap as a base component and extend
 )}
 ```
 
+## With muted styling
+
+Use `muted` prop to show `Card` in inactive state.
+
+```jsx live
+() => {
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+
+  return (
+    <Card style={{ width: isExtraSmall ? "100%" : "18rem" }} muted>
+      <Card.ImageCap 
+        src="https://source.unsplash.com/360x200/?nature,flower"
+        srcAlt="Card image"
+      />
+      <Card.Header
+        title="Card Title"
+      />
+      <Card.Section>
+        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+      </Card.Section>
+      <Card.Footer>
+        <Button>Action 1</Button>
+      </Card.Footer>
+    </Card>
+)}
+```
+
 ## Clickable variant
 
 You use `isClickable` prop to add additional `hover` and `focus` styling to the `Card`.

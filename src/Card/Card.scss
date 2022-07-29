@@ -4,6 +4,10 @@
 .pgn__card,
 .pgn__card-body {
   width: 100%;
+
+  &.is-muted {
+    background-color: $light-200;
+  }
 }
 
 .pgn__card-grid {
