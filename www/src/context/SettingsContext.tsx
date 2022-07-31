@@ -54,7 +54,8 @@ const SettingsContextProvider: React.FC = ({ children }) => {
 
   // this hook will be called after the first render, so we can safely access localStorage
   useEffect(() => {
-    const savedSettings = JSON.parse(global.localStorage.getItem('pgn__settings') || '');
+    // @ts-ignore
+    const savedSettings = JSON.parse(global.localStorage.getItem('pgn__settings'));
     if (savedSettings) {
       setSettings(savedSettings);
       document.body.setAttribute('dir', savedSettings.direction);
