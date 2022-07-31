@@ -22,14 +22,22 @@ const {
   projectUsages: dependentProjectsUsages,
 } = dependentProjectsAnalysis;
 
-const dependentProjects = dependentProjectsUsages.map(dependentUsage => ({
+interface IDependentUsage {
+  version?: string,
+  name?: string,
+  repository?: { type: string, url: string } | string,
+  folderName?: string,
+  usages: { [key: string]: any } | ArrayLike<any>,
+}
+
+const dependentProjects = dependentProjectsUsages.map((dependentUsage: IDependentUsage) => ({
   ...dependentUsage,
   repositoryUrl: getGithubProjectUrl(dependentUsage.repository),
   count: Object.values(dependentUsage.usages).reduce((accumulator, usage) => accumulator + usage.length, 0),
 }));
 
 const componentsUsage = dependentProjectsUsages.reduce((accumulator: any, project: any) => {
-  Object.keys(project.usages).forEach((componentName: string) => {
+  Object.keys(project.usages).forEach((componentName) => {
     if (!accumulator[componentName]) {
       accumulator[componentName] = [];
     }
@@ -65,7 +73,6 @@ const SummaryUsage = () => {
   const round = (n: number) => Math.round(n * 10) / 10;
   const averageComponentsUsedPerProject = dependentProjects
     .reduce((accumulator, project) => accumulator + project.count, 0) / dependentProjects.length;
-
     type RowType = {
       row: {
         original: {
@@ -75,7 +82,6 @@ const SummaryUsage = () => {
         }
       }
     };
-
     return (
       <div className="pt-5 mb-5">
         <div className="mb-5">
@@ -128,7 +134,6 @@ const ProjectsUsage = () => {
         }
       }
     };
-
     return (
       <div className="pt-5 mb-5">
         <h3 className="mb-4">Projects in Open edX consuming Paragon</h3>
@@ -180,7 +185,6 @@ const ComponentUsage = ({ name, componentUsageInProjects }: IComponentUsage) => 
         }
       }
     };
-
     return (
       <div className="mb-5">
         <h3 className="mb-4">{name}</h3>
