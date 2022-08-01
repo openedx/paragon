@@ -256,9 +256,24 @@
   box-shadow: none;
   margin-bottom: 0;
 
+  p {
+    margin-bottom: 0;
+  }
+
   &.alert {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+
+    &.alert-primary {
+      color: $white;
+      background-color: $primary-500;
+      border-color: $primary-500;
+      box-shadow: 0 0 0 1px $primary-500;
+
+      .alert-icon {
+        color: $white;
+      }
+    }
   }
 }
 

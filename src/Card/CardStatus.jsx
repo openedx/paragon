@@ -8,6 +8,7 @@ const CardStatus = React.forwardRef(({
   children,
   variant,
   icon,
+  title,
 }, ref) => (
   <div
     className={classNames('pgn__card-status',
@@ -16,7 +17,10 @@ const CardStatus = React.forwardRef(({
     ref={ref}
   >
     {icon && <Icon src={icon} className="alert-icon" />}
-    {children}
+    <div className="alert-message-content">
+      {title && <div className="alert-heading h4">{title}</div>}
+      {children && <p>{children}</p>}
+    </div>
   </div>
 ));
 
@@ -30,14 +34,12 @@ CardStatus.propTypes = {
   /** Specifies variant to use. */
   variant: PropTypes.oneOf([
     'primary',
-    'secondary',
     'success',
     'danger',
     'warning',
-    'info',
-    'light',
-    'dark',
   ]),
+  /** Specifies title for the `Card.Status`. */
+  title: PropTypes.element,
 };
 
 CardStatus.defaultProps = {
@@ -45,6 +47,7 @@ CardStatus.defaultProps = {
   className: undefined,
   icon: undefined,
   variant: 'warning',
+  title: undefined,
 };
 
 export default CardStatus;

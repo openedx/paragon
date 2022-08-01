@@ -397,6 +397,77 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
 )}
 ```
 
+## Card status
+
+Note that in the example below, the content of `Card` is wrapped inside `Card.Body`. The `d-flex` class is added for the `horizontal` orientation to achieve horizontal variant. The `flex-column` class is added for the main `Card` component.
+
+```jsx live
+() => {
+  const [orientation, setOrientation] = useState('vertical');
+  const [variant, setVariant] = useState('warning');
+  
+  const handleChangeOrientation = (e) => setOrientation(e.target.value);
+  const handleChangeVariant = (e) => setVariant(e.target.value);
+  const isVertical = orientation === 'vertical';
+  
+  return (
+    <>
+      {/* Example props form start */}
+      <Form.Group>
+        <Form.Label>Choose orientation</Form.Label>
+        <Form.RadioSet
+          name="orientation"
+          onChange={handleChangeOrientation}
+          value={orientation}
+        >
+          <Form.Radio value="vertical">Vertical</Form.Radio>
+          <Form.Radio value="horizontal">Horizontal</Form.Radio>
+        </Form.RadioSet>
+      </Form.Group>
+      <Form.Group>
+        <Form.Control
+          as="select"
+          name="variant"
+          onChange={handleChangeVariant}
+          value={variant}
+          floatingLabel="Variant"
+        >
+          <option value="">Select a variant</option>
+          <option value="primary">Primary</option>
+          <option value="warning">Warning</option>
+          <option value="danger">Danger</option>
+          <option value="success">Success</option>
+        </Form.Control>
+      </Form.Group>
+      {/* Example props form end */}
+      
+      <Card orientation={orientation} className={`flex-column ${isVertical ? 'w-50' : ''}`}>
+        <Card.Header
+          title="Card title"
+        />
+        <Card.Body className={!isVertical ? 'd-flex' : ''}>
+          <Card.Section
+            title="Section title"
+          >
+            This is a wider card with supporting text below as a natural lead-in to
+            additional content. This card has even longer content than the first to
+            show that equal height action.
+          </Card.Section>
+          <Card.Footer className={!isVertical ? 'justify-content-end' : ''}>
+            <Button>Save</Button>
+            <Button variant="danger">Remove</Button>
+          </Card.Footer>
+        </Card.Body>
+        
+        <Card.Status icon={Warning} variant={variant}>
+          Warning lorem ipsum dolor sit amet
+        </Card.Status>
+      </Card>
+    </>
+  );
+};
+```
+
 ## Card Content Block Empty
 ### With image
 
@@ -670,54 +741,4 @@ it is meant to be used as a single horizontal row of Cards, not as a grid. See C
     </Card.Footer>
   </Card>
 </CardDeck>
-```
-
-### Card status
-
-Note that in the example below, the content of `Card` is wrapped inside `Card.Body`. The `d-flex` class is added for the `horizontal` orientation to achieve horizontal variant. The `flex-column` class is added for the main `Card` component.
-
-```jsx live
-() => {
-  const [orientation, setOrientation] = useState('vertical');
-  
-  const handleChangeOrientation = (e) => setOrientation(e.target.value);
-  
-  return (
-    <>
-      <Form.Group>
-        <Form.Label>Choose orientation</Form.Label>
-        <Form.RadioSet
-          name="orientation"
-          onChange={handleChangeOrientation}
-          value={orientation}
-        >
-          <Form.Radio value="vertical">Vertical</Form.Radio>
-          <Form.Radio value="horizontal">Horizontal</Form.Radio>
-        </Form.RadioSet>
-      </Form.Group>
-      <Card orientation={orientation} className="flex-column">
-        <Card.Body className={orientation === 'horizontal' ? 'd-flex' : ''}>
-          <Card.Header
-            title="Card title"
-          />
-          <Card.Section
-            title="Section title"
-          >
-            This is a wider card with supporting text below as a natural lead-in to
-            additional content. This card has even longer content than the first to
-            show that equal height action.
-          </Card.Section>
-          <Card.Footer className="justify-content-end">
-            <Button>Save</Button>
-            <Button variant="danger">Remove</Button>
-          </Card.Footer>
-        </Card.Body>
-        
-        <Card.Status icon={Warning}>
-          Warning lorem ipsum dolor sit amet
-        </Card.Status>
-      </Card>
-    </>
-  );
-};
 ```
