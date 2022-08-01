@@ -20,6 +20,9 @@ const cropText = (text, cropDecrement) => {
   return text.slice(0, sliceIndex);
 };
 
+// This function truncates the original line of text by adding ellipsis,
+// arbitrating the user's expected number of show lines, HTML element type,
+// and whitespaces between the text and the ellipsis.
 const truncateLines = (text, element, { lines, whiteSpace, ellipsis }) => {
   const visibilityArea = LINE_HEIGHT_VALUE * Number(lines);
   const newElement = createCopyElement(element);

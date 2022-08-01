@@ -58,13 +58,13 @@ A Truncate component can help you crop multiline text. There will be three dots 
           offers, reach goals, and solve problems, edX provides a variety of information resources.
         </Truncate>
       </Card.Section>
-      <Card.Footer 
+      <Card.Footer
         textElement={
           <Truncate lines={2}>
             Using Enhanced Capabilities In Your Course
           </Truncate>}
       >
-        <Button style={{ width: '100%' }}>Action 1</Button>
+        <Button style={{ minWidth: 100 }}>Action 1</Button>
       </Card.Footer>
     </Card>
   )

@@ -1,5 +1,5 @@
 import React, {
-  useEffect, useRef, useState,
+  useLayoutEffect, useRef, useState,
 } from 'react';
 import PropTypes from 'prop-types';
 import { truncateLines } from './utils';
@@ -16,7 +16,7 @@ const Truncate = ({
   const textContainer = useRef();
   const { width } = useWindowSize();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const newTruncateText = truncateLines(children, textContainer.current, {
       ellipsis,
       whiteSpace,
@@ -38,7 +38,7 @@ Truncate.propTypes = {
   lines: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Text content for the ellipsis - will appear after the truncated lines. */
   ellipsis: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.node]),
-  /** The whitespace from before the ellipsis. */
+  /** Adds the whitespace from before the ellipsis. */
   whiteSpace: PropTypes.bool,
   /** Custom html element for truncated text. */
   elementType: PropTypes.string,
@@ -51,7 +51,7 @@ Truncate.defaultProps = {
   ellipsis: DEFAULT_TRUNCATE_ELLIPSIS,
   whiteSpace: false,
   elementType: DEFAULT_TRUNCATE_ELEMENT_TYPE,
-  className: null,
+  className: undefined,
 };
 
 export default Truncate;
