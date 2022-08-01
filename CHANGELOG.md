@@ -1,3 +1,10 @@
+## [20.6.1](https://github.com/openedx/paragon/compare/v20.6.0...v20.6.1) (2022-08-01)
+
+
+### Bug Fixes
+
+* filter break style is not align correctly ([f719510](https://github.com/openedx/paragon/commit/f7195106cb601058af16952eb6e3b7bf36c05264))
+
 # [20.6.0](https://github.com/openedx/paragon/compare/v20.5.0...v20.6.0) (2022-07-29)
 
 
