@@ -6,6 +6,10 @@
   width: 100%;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .pgn__card-grid {
   .row > div[class*="col-"] {
     margin-bottom: $card-grid-margin;
@@ -129,6 +133,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  a:hover {
+    text-decoration: underline;
+  }
 
   &.vertical {
     justify-content: flex-end;
