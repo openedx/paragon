@@ -13,6 +13,7 @@
     "value-no-vendor-prefix": [true, {
       "ignoreValues": ["fill-available"]
     }],
+    "function-no-unknown": null,
     "number-leading-zero": "never",
     "no-descending-specificity": null,
     "selector-class-pattern": "^(pgn__|pgn-doc__)?([a-z0-9-]+)(__([a-z0-9-]+))?(_([a-z0-9-]+)){0,2}$",
