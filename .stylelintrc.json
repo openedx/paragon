@@ -1,5 +1,5 @@
 {
-  "extends": ["stylelint-config-standard-scss"],
+  "extends": ["@edx/stylelint-config-edx"],
   "rules": {
     "selector-pseudo-class-no-unknown": [true, {
       "ignorePseudoClasses": ["export"]
