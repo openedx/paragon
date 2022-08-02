@@ -1,5 +1,3 @@
-// Put styles related to your component here
-
 @import "variables";
 
 .pgn__multiselect {
@@ -23,7 +21,7 @@
 
     &.show {
       z-index: $multiselect-floating-label-zindex;
-      padding: 0 .5em;
+      padding: 0 .5rem;
       background: $white;
       line-height: normal;
       font-size: $font-size-sm;
@@ -54,6 +52,7 @@
 
   &.disabled {
     opacity: .3;
+    pointer-events: none;
   }
 
   &.error {
@@ -91,7 +90,7 @@ div.pgn__multiselect__control {
   font-size: $font-size-sm;
 }
 
-.pgn__multiselect__menu {
+div.pgn__multiselect__menu {
   z-index: $multiselect-menu-zindex;
   margin-top: $multiselect-menu-offset-top;
 
@@ -123,4 +122,19 @@ div.pgn__multiselect__chip-remove {
     color: $white;
     background: $black;
   }
+}
+
+.pgn__multiselect__indicator {
+  width: auto;
+  height: auto;
+  padding: 8px;
+
+  &:hover {
+    fill: $white;
+  }
+}
+
+div.pgn__multiselect__input {
+  padding-top: 0;
+  padding-bottom: 0;
 }

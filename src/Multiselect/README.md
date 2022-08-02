@@ -76,14 +76,14 @@ A text input that allows the user to select multiple options. `Multiselect` is a
 
   return (
     <Stack direction="vertical">
-      <div className="w-100 p-4">
+      <div className="py-4">
         <Multiselect
           onChange={handleChange}
           placeholder="Select colour"
           options={colourOptions}
         />
       </div>
-      <div className="w-100 p-4">
+      <div className="py-4">
         <Multiselect
           disabled
           onChange={handleChange}
@@ -91,7 +91,7 @@ A text input that allows the user to select multiple options. `Multiselect` is a
           options={colourOptions}
         />
       </div>
-      <div className="bg-dark w-100 p-4">
+      <div className="bg-dark p-4">
         <Multiselect
           onChange={handleChange}
           variant="dark"

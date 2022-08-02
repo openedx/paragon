@@ -43,8 +43,21 @@ describe('<Multiselect />', () => {
       expect(wrapper.find('.is-focus').length).toBeTruthy();
     });
     it('MultiValueContainer has base class', () => {
-      const wrapper = mount(<multiselectComponents.MultiValueContainer innerProps={{}} getStyles={() => {}} />);
+      const wrapper = mount((
+        <multiselectComponents.MultiValueContainer innerProps={{}} getStyles={() => {}}>
+          1
+        </multiselectComponents.MultiValueContainer>
+      ));
       expect(wrapper.find('.pgn__multiselect__chip').length).toBeTruthy();
+    });
+    it('MultiValueContainer has base class', () => {
+      const wrapper = mount((
+        <multiselectComponents.MultiValueContainer innerProps={{}} getStyles={() => {}}>
+          <multiselectComponents.MultiValueLabel innerProps={{}} getStyles={() => {}} />
+          <multiselectComponents.MultiValueRemove innerProps={{}} getStyles={() => {}} />
+        </multiselectComponents.MultiValueContainer>
+      ));
+      expect(wrapper.find('[role="button"]').length).toBeTruthy();
     });
     it('MultiValueLabel has base class', () => {
       const wrapper = mount(<multiselectComponents.MultiValueLabel innerProps={{}} getStyles={() => {}} />);
@@ -53,6 +66,10 @@ describe('<Multiselect />', () => {
     it('MultiValueRemove has base class', () => {
       const wrapper = mount(<multiselectComponents.MultiValueRemove innerProps={{}} getStyles={() => {}} />);
       expect(wrapper.find('.pgn__multiselect__chip-remove').length).toBeTruthy();
+    });
+    it('ClearIndicator has base class', () => {
+      const wrapper = mount(<multiselectComponents.ClearIndicator innerProps={{ onMouseDown: () => {} }} />);
+      expect(wrapper.find('.pgn__multiselect__indicator').length).toBeTruthy();
     });
   });
 });

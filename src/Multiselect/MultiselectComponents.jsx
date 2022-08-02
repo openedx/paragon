@@ -4,17 +4,36 @@ import { components } from 'react-select';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
 import { Close, KeyboardArrowDown } from '../../icons';
+import IconButton from '../IconButton';
 
-const ClearIndicator = (props) => (
-  <components.ClearIndicator {...props}>
-    <Icon src={Close} />
-  </components.ClearIndicator>
+const ClearIndicator = ({ isDisabled, innerProps }) => (
+  <IconButton
+    src={Close}
+    iconAs={Icon}
+    alt="Clear"
+    variant="primary"
+    className="pgn__multiselect__indicator"
+    tabIndex={isDisabled ? -1 : 0}
+    onKeyPress={innerProps.onMouseDown}
+    {...innerProps}
+  />
 );
 
-const DropdownIndicator = (props) => (
-  <components.DropdownIndicator {...props}>
-    <Icon src={KeyboardArrowDown} />
-  </components.DropdownIndicator>
+const DropdownIndicator = ({ isDisabled, innerProps }) => (
+  <IconButton
+    src={KeyboardArrowDown}
+    iconAs={Icon}
+    alt="Open"
+    variant="primary"
+    className="pgn__multiselect__indicator"
+    tabIndex={isDisabled ? -1 : 0}
+    onKeyPress={innerProps.onMouseDown}
+    {...innerProps}
+  />
+);
+
+const Input = (props) => (
+  <components.Input className="pgn__multiselect__input" {...props} />
 );
 
 const ValueContainer = ({ children, ...props }) => (
@@ -57,10 +76,25 @@ const Option = (props) => (
   <components.Option className={classNames({ 'is-focus': props.isFocused })} {...props} />
 );
 
-const MultiValueContainer = ({ innerProps, ...props }) => {
+const MultiValueContainer = ({ innerProps, children, ...props }) => {
+  const newChildren = React.Children.map(children, (child, index) => {
+    if (index === 1) {
+      // index === 1 corresponds to MultiValueRemove
+      // It can be focused and Enter key activates onClick
+      return React.cloneElement(child, {
+        ...child.props,
+        innerProps: {
+          ...child.props.innerProps, role: 'button', onKeyPress: child.props.innerProps.onClick, tabIndex: 0,
+        },
+      });
+    }
+    return child;
+  });
   const newInnerProps = { className: classNames('pgn__multiselect__chip', innerProps.className) };
   return (
-    <components.MultiValueContainer innerProps={newInnerProps} {...props} />
+    <components.MultiValueContainer innerProps={newInnerProps} {...props}>
+      {newChildren}
+    </components.MultiValueContainer>
   );
 };
 
@@ -80,10 +114,28 @@ const MultiValueRemove = ({ innerProps, ...props }) => {
     className: classNames('pgn__multiselect__chip-remove', innerProps.className),
   };
   return (
-    <components.MultiValueRemove innerProps={newInnerProps} {...props}>
+    <components.MultiValueRemove role="button" innerProps={newInnerProps} {...props}>
       <Icon src={Close} />
     </components.MultiValueRemove>
   );
+};
+
+const indicatorPropTypes = {
+  isDisabled: PropTypes.bool,
+  innerProps: PropTypes.shape({
+    onMouseDown: PropTypes.func.isRequired,
+  }).isRequired,
+};
+
+ClearIndicator.propTypes = indicatorPropTypes;
+DropdownIndicator.propTypes = indicatorPropTypes;
+
+ClearIndicator.defaultProps = {
+  isDisabled: false,
+};
+
+DropdownIndicator.defaultProps = {
+  isDisabled: false,
 };
 
 ValueContainer.propTypes = {
@@ -105,6 +157,7 @@ Option.propTypes = {
 };
 
 MultiValueContainer.propTypes = {
+  children: PropTypes.node.isRequired,
   innerProps: PropTypes.shape({
     className: PropTypes.string,
   }).isRequired,
@@ -132,5 +185,6 @@ const multiselectComponents = {
   MultiValueContainer,
   MultiValueLabel,
   MultiValueRemove,
+  Input,
 };
 export default multiselectComponents;

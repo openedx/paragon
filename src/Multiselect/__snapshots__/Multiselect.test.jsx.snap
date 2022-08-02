@@ -31,7 +31,7 @@ exports[`<Multiselect /> successfully renders 1`] = `
       className=" css-319lph-ValueContainer"
     >
       <div
-        className=" css-6j8wv5-Input"
+        className="pgn__multiselect__input css-6j8wv5-Input"
         data-value=""
       >
         <input
@@ -78,30 +78,39 @@ exports[`<Multiselect /> successfully renders 1`] = `
       <span
         className=" css-1okebmr-indicatorSeparator"
       />
-      <div
+      <button
         aria-hidden="true"
-        className=" css-tlfecz-indicatorContainer"
+        aria-label="Open"
+        className="btn-icon btn-icon-primary btn-icon-md pgn__multiselect__indicator"
+        onClick={[Function]}
+        onKeyPress={[Function]}
         onMouseDown={[Function]}
         onTouchEnd={[Function]}
+        tabIndex={0}
+        type="button"
       >
         <span
-          className="pgn__icon"
+          className="btn-icon__icon-container"
         >
-          <svg
-            aria-hidden={true}
-            focusable={false}
-            height={24}
-            role="img"
-            viewBox="0 0 24 24"
-            width={24}
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            className="pgn__icon btn-icon__icon"
           >
-            <path
-              d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
-            />
-          </svg>
+            <svg
+              aria-hidden={true}
+              focusable={false}
+              height={24}
+              role="img"
+              viewBox="0 0 24 24"
+              width={24}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+              />
+            </svg>
+          </span>
         </span>
-      </div>
+      </button>
     </div>
   </div>
 </div>
