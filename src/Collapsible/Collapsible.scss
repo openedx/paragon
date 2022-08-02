@@ -78,6 +78,10 @@
   .collapsible-body {
     padding: $collapsible-basic-spacer-y $collapsible-basic-spacer-x;
     text-align: start;
+
+    &.collapsing {
+      transition: height 300ms ease;
+    }
   }
 
   .collapsible-icon {

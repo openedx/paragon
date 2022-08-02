@@ -107,7 +107,7 @@ CollapsibleAdvanced.propTypes = {
   onOpen: PropTypes.func,
   /** Callback fired when `Collapsible` closes. */
   onClose: PropTypes.func,
-  /** Unmount the component (remove it from the DOM) when it is collapsed */
+  /** Unmount the component (remove it from the DOM) when it is collapsed. */
   unmountOnExit: PropTypes.bool,
 };
 
