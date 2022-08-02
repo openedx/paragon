@@ -6,8 +6,13 @@
   width: 100%;
 }
 
-a:hover {
-  text-decoration: none;
+.link {
+  color: $black;
+
+  &:hover {
+    text-decoration: none;
+    color: $black;
+  }
 }
 
 .pgn__card-grid {
