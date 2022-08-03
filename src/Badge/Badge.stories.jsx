@@ -11,6 +11,6 @@ export const BadgeExample = Template.bind({});
 BadgeExample.args = {
   as: 'span',
   variant: 'primary',
-  pill: false,
   bsPrefix: 'badge',
+  pill: false,
 };
