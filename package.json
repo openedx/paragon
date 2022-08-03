@@ -89,6 +89,14 @@
     "@formatjs/cli": "^5.0.2",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-interactions": "^6.5.9",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/builder-webpack5": "^6.5.9",
+    "@storybook/manager-webpack5": "^6.5.9",
+    "@storybook/react": "^6.5.9",
+    "@storybook/testing-library": "^0.0.13",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
@@ -105,6 +113,7 @@
     "babel-eslint": "^10.1.0",
     "babel-jest": "^28.1.2",
     "babel-loader": "^8.2.4",
+    "chromatic": "^6.7.3",
     "commander": "^9.3.0",
     "enzyme": "^3.9.0",
     "eslint": "^7.32.0",
@@ -175,5 +184,11 @@
     "hooks": {
       "pre-commit": "npm run lint"
     }
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/openedx/paragon/issues"
+  },
+  "readme": "ERROR: No README data found!",
+  "homepage": "https://github.com/openedx/paragon#readme",
+  "_id": "@edx/paragon@20.6.1"
 }
