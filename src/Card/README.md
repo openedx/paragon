@@ -86,7 +86,7 @@ your CSS class or available CSS classes of the Bootstrap library for link.
   const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
 
   return (
-    <Hyperlink className="link" destination="https://www.edx.org">
+    <Hyperlink destination="https://www.edx.org">
       <Card style={{ width: isExtraSmall ? "100%" : "18rem" }} isClickable>
         <Card.ImageCap
           src="https://source.unsplash.com/360x200/?nature,flower"

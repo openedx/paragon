@@ -6,13 +6,9 @@
   width: 100%;
 }
 
-.link {
-  color: $black;
-
-  &:hover {
-    text-decoration: none;
-    color: $black;
-  }
+a .pgn__card {
+  color: $gray-700;
+  display: inline-block;
 }
 
 .pgn__card-grid {
@@ -138,10 +134,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  a:hover {
-    text-decoration: underline;
-  }
 
   &.vertical {
     justify-content: flex-end;
