@@ -1,5 +1,5 @@
 {
-  "lastModified": 1659535726290,
+  "lastModified": 1659622127764,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -10109,6 +10109,30 @@
             "version": "19.10.1"
           }
         ],
+        "Dropdown": [
+          {
+            "filePath": "src/components/NavigationBar/tabs/Tabs.jsx",
+            "line": 41,
+            "column": 8,
+            "version": "19.10.1"
+          }
+        ],
+        "Dropdown.Toggle": [
+          {
+            "filePath": "src/components/NavigationBar/tabs/Tabs.jsx",
+            "line": 42,
+            "column": 10,
+            "version": "19.10.1"
+          }
+        ],
+        "Dropdown.Menu": [
+          {
+            "filePath": "src/components/NavigationBar/tabs/Tabs.jsx",
+            "line": 49,
+            "column": 10,
+            "version": "19.10.1"
+          }
+        ],
         "Button": [
           {
             "filePath": "src/components/PostPreviewPane.jsx",
@@ -10616,20 +10640,20 @@
         "Alert": [
           {
             "filePath": "src/discussions/common/AlertBanner.jsx",
-            "line": 26,
+            "line": 28,
             "column": 8,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/common/AlertBanner.jsx",
-            "line": 31,
-            "column": 8,
+            "line": 35,
+            "column": 12,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/common/AlertBanner.jsx",
-            "line": 42,
-            "column": 8,
+            "line": 46,
+            "column": 12,
             "version": "19.10.1"
           },
           {
@@ -12164,7 +12188,7 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/CourseEnrollmentsContextProvider.jsx",
-            "line": 71,
+            "line": 74,
             "column": 6,
             "version": "19.22.0"
           },
@@ -12238,6 +12262,18 @@
             "filePath": "src/components/NotFoundPage/index.jsx",
             "line": 16,
             "column": 4,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/pathway-progress/PathwayProgressPage.jsx",
+            "line": 38,
+            "column": 6,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/pathway-progress/PathwayProgressPage.jsx",
+            "line": 50,
+            "column": 10,
             "version": "19.22.0"
           },
           {
@@ -12392,6 +12428,12 @@
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/move-to-in-progress-modal/ModalError.jsx",
             "line": 10,
             "column": 4,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
+            "line": 77,
+            "column": 8,
             "version": "19.22.0"
           },
           {
@@ -12629,6 +12671,12 @@
             "version": "19.22.0"
           },
           {
+            "filePath": "src/components/pathway-progress/PathwayProgressHeader.jsx",
+            "line": 21,
+            "column": 10,
+            "version": "19.22.0"
+          },
+          {
             "filePath": "src/components/program/ProgramHeader.jsx",
             "line": 82,
             "column": 18,
@@ -12720,6 +12768,18 @@
             "filePath": "src/components/dashboard/sidebar/SidebarCard.jsx",
             "line": 11,
             "column": 2,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/pathway-progress/PathwayNode.jsx",
+            "line": 9,
+            "column": 8,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/pathway-progress/SubscriptionStatusCard.jsx",
+            "line": 25,
+            "column": 6,
             "version": "19.22.0"
           },
           {
@@ -12987,6 +13047,18 @@
             "version": "19.22.0"
           },
           {
+            "filePath": "src/components/pathway-progress/PathwayNode.jsx",
+            "line": 10,
+            "column": 10,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/pathway-progress/SubscriptionStatusCard.jsx",
+            "line": 26,
+            "column": 8,
+            "version": "19.22.0"
+          },
+          {
             "filePath": "src/components/pathway/SearchPathwayCard.jsx",
             "line": 100,
             "column": 6,
@@ -13188,7 +13260,7 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 324,
+            "line": 405,
             "column": 24,
             "version": "19.22.0"
           },
@@ -13214,6 +13286,12 @@
             "filePath": "src/components/dashboard/sidebar/SubscriptionSummaryCard.jsx",
             "line": 124,
             "column": 18,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/pathway-progress/SubscriptionStatusCard.jsx",
+            "line": 31,
+            "column": 12,
             "version": "19.22.0"
           },
           {
@@ -13347,6 +13425,12 @@
             "line": 71,
             "column": 10,
             "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
+            "line": 65,
+            "column": 10,
+            "version": "19.22.0"
           }
         ],
         "Tabs": [
@@ -13374,7 +13458,7 @@
         "Dropdown": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 168,
+            "line": 249,
             "column": 10,
             "version": "19.22.0"
           },
@@ -13406,7 +13490,7 @@
         "Dropdown.Toggle": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 169,
+            "line": 250,
             "column": 12,
             "version": "19.22.0"
           },
@@ -13438,7 +13522,7 @@
         "Dropdown.Menu": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 175,
+            "line": 256,
             "column": 12,
             "version": "19.22.0"
           },
@@ -13470,7 +13554,7 @@
         "Dropdown.Item": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 177,
+            "line": 258,
             "column": 16,
             "version": "19.22.0"
           },
@@ -13557,7 +13641,41 @@
             "version": "19.22.0"
           }
         ],
+        "AlertModal": [
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
+            "line": 53,
+            "column": 4,
+            "version": "19.22.0"
+          }
+        ],
+        "ActionRow": [
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
+            "line": 58,
+            "column": 8,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/program-progress/CouponCodesWarningModal.jsx",
+            "line": 50,
+            "column": 8,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/program-progress/SubscriptionExpiringWarningModal.jsx",
+            "line": 58,
+            "column": 8,
+            "version": "19.22.0"
+          }
+        ],
         "Button": [
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
+            "line": 59,
+            "column": 10,
+            "version": "19.22.0"
+          },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/UpcomingCourseCard.jsx",
             "line": 10,
@@ -13687,6 +13805,12 @@
             "version": "19.22.0"
           },
           {
+            "filePath": "src/components/pathway-progress/PathwayStep.jsx",
+            "line": 14,
+            "column": 4,
+            "version": "19.22.0"
+          },
+          {
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 155,
             "column": 10,
@@ -13802,20 +13926,6 @@
             "filePath": "src/components/program-progress/SubscriptionExpiringWarningModal.jsx",
             "line": 52,
             "column": 4,
-            "version": "19.22.0"
-          }
-        ],
-        "ActionRow": [
-          {
-            "filePath": "src/components/program-progress/CouponCodesWarningModal.jsx",
-            "line": 50,
-            "column": 8,
-            "version": "19.22.0"
-          },
-          {
-            "filePath": "src/components/program-progress/SubscriptionExpiringWarningModal.jsx",
-            "line": 58,
-            "column": 8,
             "version": "19.22.0"
           }
         ],
@@ -19828,13 +19938,13 @@
         "Dropdown.Menu": [
           {
             "filePath": "src/FacetDropdown.jsx",
-            "line": 26,
+            "line": 27,
             "column": 6,
             "version": "19.25.1"
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 36,
+            "line": 37,
             "column": 8,
             "version": "19.25.1"
           }
@@ -19848,25 +19958,25 @@
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 37,
+            "line": 38,
             "column": 10,
             "version": "19.25.1"
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 49,
+            "line": 50,
             "column": 10,
             "version": "19.25.1"
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 61,
+            "line": 62,
             "column": 10,
             "version": "19.25.1"
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 75,
+            "line": 76,
             "column": 14,
             "version": "19.25.1"
           }
@@ -19880,25 +19990,25 @@
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 38,
+            "line": 39,
             "column": 12,
             "version": "19.25.1"
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 50,
+            "line": 51,
             "column": 12,
             "version": "19.25.1"
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 62,
+            "line": 63,
             "column": 12,
             "version": "19.25.1"
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 76,
+            "line": 77,
             "column": 16,
             "version": "19.25.1"
           },
