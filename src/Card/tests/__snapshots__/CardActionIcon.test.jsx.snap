@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardActionIcon /> renders with "overflow" option for actionIcon prop 1`] = `
+<div
+  className="d-flex flex-wrap pgn__card-close-container"
+>
+  <button
+    aria-label="See more"
+    className="btn-icon btn-icon-inverse-dark btn-icon-md mr-2"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="btn-icon__icon-container"
+    >
+      <span
+        className="pgn__icon btn-icon__icon"
+      >
+        <svg
+          aria-hidden={true}
+          fill="none"
+          focusable={false}
+          height={24}
+          role="img"
+          viewBox="0 0 24 24"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+    </span>
+  </button>
+</div>
+`;
+
+exports[`<CardActionIcon /> renders without props 1`] = `
+<div
+  className="d-flex flex-wrap pgn__card-close-container"
+>
+  <button
+    aria-label="Close"
+    className="btn-icon btn-icon-inverse-dark btn-icon-md mr-2"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="btn-icon__icon-container"
+    >
+      <span
+        className="pgn__icon btn-icon__icon"
+      >
+        <svg
+          aria-hidden={true}
+          fill="none"
+          focusable={false}
+          height={24}
+          role="img"
+          viewBox="0 0 24 24"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+    </span>
+  </button>
+</div>
+`;

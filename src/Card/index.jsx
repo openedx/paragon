@@ -9,13 +9,16 @@ import CardSection from './CardSection';
 import CardFooter from './CardFooter';
 import CardImageCap from './CardImageCap';
 import CardBody from './CardBody';
+import CardActionIcon from './CardActionIcon';
 
 const Card = React.forwardRef(({
   orientation,
+  actionIcon,
   isLoading,
   className,
   isClickable,
   muted,
+  children,
   ...props
 }, ref) => (
   <CardContextProvider orientation={orientation} isLoading={isLoading}>
@@ -28,7 +31,10 @@ const Card = React.forwardRef(({
       })}
       ref={ref}
       tabIndex={isClickable ? '0' : '-1'}
-    />
+    >
+      {actionIcon ? <CardActionIcon actionIcon={actionIcon} variant="dark" /> : undefined}
+      {children}
+    </BaseCard>
   </CardContextProvider>
 ));
 
@@ -37,6 +43,7 @@ export { default as CardDeck } from 'react-bootstrap/CardDeck';
 export { default as CardImg } from 'react-bootstrap/CardImg';
 export { default as CardGroup } from 'react-bootstrap/CardGroup';
 export { default as CardGrid } from './CardGrid';
+export { default as CardActionIcon } from './CardActionIcon';
 
 Card.propTypes = {
   ...BaseCard.propTypes,
@@ -46,6 +53,8 @@ Card.propTypes = {
   orientation: PropTypes.oneOf(['vertical', 'horizontal']),
   /** Specifies whether the `Card` is clickable, if `true` appropriate `hover` and `focus` styling will be added. */
   isClickable: PropTypes.bool,
+  /** Optional interactive icon positioned in the top right of the card. */
+  actionIcon: PropTypes.oneOf(['overflow', 'dismiss']),
   /** Specifies loading state. */
   isLoading: PropTypes.bool,
   /** Specifies whether to display `Card` in muted styling. */
@@ -58,6 +67,7 @@ Card.defaultProps = {
   orientation: 'vertical',
   isClickable: false,
   muted: false,
+  actionIcon: undefined,
   isLoading: false,
 };
 

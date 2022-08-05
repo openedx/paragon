@@ -86,6 +86,13 @@
   }
 }
 
+.pgn__card-close-container {
+  position: absolute;
+  z-index: 10;
+  top: .5rem;
+  inset-inline-end: .25rem;
+}
+
 .pgn__card-divider {
   border-top: 1px solid $card-divider-bg;
   height: 0;

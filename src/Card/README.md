@@ -32,7 +32,7 @@ This component uses a `Card` from react-bootstrap as a base component and extend
   const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
 
   return (
-    <Card style={{ width: isExtraSmall ? "100%" : "18rem" }}>
+    <Card actionIcon="dismiss" style={{ width: isExtraSmall ? "100%" : "18rem" }}>
       <Card.ImageCap
         src="https://source.unsplash.com/360x200/?nature,flower"
         srcAlt="Card image"
