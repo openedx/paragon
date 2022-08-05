@@ -73,6 +73,8 @@ Collapsible.propTypes = {
   styling: PropTypes.oneOf(['basic', 'card', 'card-lg']),
   /** Specifies title. */
   title: PropTypes.node.isRequired,
+  /** Unmount the component (remove it from the DOM) when it is collapsed */
+  unmountOnExit: PropTypes.bool,
 };
 Collapsible.defaultProps = {
   className: undefined,
@@ -84,6 +86,7 @@ Collapsible.defaultProps = {
   onToggle: undefined,
   open: undefined,
   styling: 'card',
+  unmountOnExit: true,
 };
 
 Collapsible.Advanced = CollapsibleAdvanced;
