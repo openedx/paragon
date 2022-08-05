@@ -1,3 +1,10 @@
+# [20.7.0](https://github.com/openedx/paragon/compare/v20.6.1...v20.7.0) (2022-08-05)
+
+
+### Features
+
+* add unmountOnExit ([#1502](https://github.com/openedx/paragon/issues/1502)) ([fbcd1ba](https://github.com/openedx/paragon/commit/fbcd1ba6d2c6fd4be0d6d62362bf2aa4905560fa))
+
 ## [20.6.1](https://github.com/openedx/paragon/compare/v20.6.0...v20.6.1) (2022-08-01)
 
 
