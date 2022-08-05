@@ -484,39 +484,10 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
 
 Can be used to show the loading state when ``DataTable`` is asynchronously fetching new data.
 
-### Without existing data (e.g, on page load)
-
 ```jsx live
 () => {
-  const data = [];
-  return (
-    <DataTable
-      isLoading
-      itemCount={data.length}
-      data={data}
-      columns={[
-        {
-          Header: 'Title',
-          accessor: 'title',
-        },
-        {
-          Header: 'Director',
-          accessor: 'director',
-        },
-        {
-          Header: 'Release date',
-          accessor: 'release_date',
-        },
-      ]}
-    />
-  );
-}
-```
-
-### With existing data (e.g, paginating table after page load)
-
-```jsx live
-() => {
+  {/* start example state */}
+  const [hasData, setHasData] = useState(false)
   const data = [
     {
       id: '2baf70d1-42bb-4437-b551-e5fed5a87abe',
@@ -542,27 +513,38 @@ Can be used to show the loading state when ``DataTable`` is asynchronously fetch
       rt_score: 93,
     },
   ];
-
+  {/* end example state */}
+  
   return (
-    <DataTable
-      isLoading
-      itemCount={data.length}
-      data={data}
-      columns={[
-        {
-          Header: 'Title',
-          accessor: 'title',
-        },
-        {
-          Header: 'Director',
-          accessor: 'director',
-        },
-        {
-          Header: 'Release date',
-          accessor: 'release_date',
-        },
-      ]}
-    />
+    <>
+      {/* start example form block */}
+      <ExamplePropsForm
+        inputs={[
+          { value: hasData, setValue: () => setHasData(!hasData), name: 'data' },
+        ]}
+      />
+      {/* end example form block */}
+
+      <DataTable
+        isLoading
+        itemCount={data.length}
+        data={hasData ? data : []}
+        columns={[
+          {
+            Header: 'Title',
+            accessor: 'title',
+          },
+          {
+            Header: 'Director',
+            accessor: 'director',
+          },
+          {
+            Header: 'Release date',
+            accessor: 'release_date',
+          },
+        ]}
+      />
+    </>
   );
 }
 ```
