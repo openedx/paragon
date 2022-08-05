@@ -1,3 +1,15 @@
+# [20.8.0](https://github.com/openedx/paragon/compare/v20.7.0...v20.8.0) (2022-08-05)
+
+
+### Bug Fixes
+
+* fixed Card import ([#1522](https://github.com/openedx/paragon/issues/1522)) ([ebcf090](https://github.com/openedx/paragon/commit/ebcf0905e04404df8a389e7ba393fcd484664bfe))
+
+
+### Features
+
+* add typescript support ([#1267](https://github.com/openedx/paragon/issues/1267)) ([a31591e](https://github.com/openedx/paragon/commit/a31591e51d39ce157ca5a5701057419b8da63465))
+
 # [20.7.0](https://github.com/openedx/paragon/compare/v20.6.1...v20.7.0) (2022-08-05)
 
 
