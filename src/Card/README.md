@@ -78,8 +78,8 @@ You use `isClickable` prop to add additional `hover` and `focus` styling to the 
 ```
 
 ## As link
-The ability to place a Card inside the link is also available. To reset the default link styles, you need to add 
-your CSS class or available CSS classes of the Bootstrap library for link.
+You can also use `Card` as a link by wrapping it into appropriate component, note that `Card` will override default 
+link styling to make its content appear as a regular text.
 
 ```jsx live
 () => {
