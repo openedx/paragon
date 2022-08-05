@@ -1,8 +1,11 @@
 build:
 	rm -rf ./dist
-	./node_modules/.bin/babel src --config-file ./babel.config.json --out-dir dist --source-maps --ignore **/*.test.jsx,**/__mocks__,**/__snapshots__,**/setupTest.js --copy-files
+	tsc --emitDeclarationOnly
+	./node_modules/.bin/babel src --config-file ./babel.config.json --out-dir dist --source-maps --ignore **/*.test.jsx,**/*.test.tsx,**/__mocks__,**/__snapshots__,**/setupTest.js --copy-files --extensions ".tsx,.jsx"
 	# --copy-files will bring in everything else that wasn't processed by babel. Remove what we don't want.
-	rm -rf dist/**/*.test.jsx
+	find ./dist -name "tests" -type d -prune -exec rm -rf "{}" \; # delete tests directories
+	find ./dist -name "*.test.*" -delete # delete other tests files that weren't in tests directories
+	find ./dist \( -name "*.md" -o -name "*.mdx" \) -delete # delete markdown file
 	rm -rf dist/**/__snapshots__
 	rm -rf dist/__mocks__
 	rm -rf dist/setupTest.js

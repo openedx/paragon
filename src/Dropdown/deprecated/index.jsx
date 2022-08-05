@@ -7,7 +7,7 @@ import DropdownButton from './DropdownButton';
 import DropdownMenu from './DropdownMenu';
 import DropdownItem from './DropdownItem';
 
-import withDeprecatedProps, { DEPR_TYPES } from '../../withDeprecatedProps';
+import withDeprecatedProps, { DeprTypes } from '../../withDeprecatedProps';
 
 const { Provider, Consumer } = React.createContext();
 
@@ -170,7 +170,7 @@ Dropdown.Menu = DropdownMenu;
 
 const DropdownWithDeprecatedProps = withDeprecatedProps(Dropdown, 'Dropdown', {
   menuItems: {
-    deprType: DEPR_TYPES.MOVED_AND_FORMAT,
+    deprType: DeprTypes.MOVED_AND_FORMAT,
     message: 'They should be components sent as children.',
     newName: 'children',
     transform: (menuItems, allProps) => {
@@ -199,15 +199,15 @@ const DropdownWithDeprecatedProps = withDeprecatedProps(Dropdown, 'Dropdown', {
     },
   },
   title: {
-    deprType: DEPR_TYPES.REMOVED,
+    deprType: DeprTypes.REMOVED,
     message: 'It should be specified inside the Dropdown.Button component',
   },
   buttonType: {
-    deprType: DEPR_TYPES.REMOVED,
+    deprType: DeprTypes.REMOVED,
     message: 'It should be specified as a className prop',
   },
   iconElement: {
-    deprType: DEPR_TYPES.REMOVED,
+    deprType: DeprTypes.REMOVED,
     message: 'It should be specified inside the buttonContent prop.',
   },
 });

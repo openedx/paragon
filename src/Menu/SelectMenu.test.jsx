@@ -66,7 +66,7 @@ describe('mouse behavior & keyboard behavior', () => {
   });
   it('returns focus to trigger on close', () => {
     menuItems.at(7).simulate('click');
-    expect(menuTrigger.is(':focus')).toBe(true);
+    expect(menuTrigger === document.activeElement);
   });
 });
 

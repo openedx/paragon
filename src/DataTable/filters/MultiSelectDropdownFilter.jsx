@@ -68,7 +68,7 @@ MultiSelectDropdownFilter.propTypes = {
     })).isRequired,
     /** Generates a key unique to the column being filtered */
     getHeaderProps: PropTypes.func.isRequired,
-    filterValue: PropTypes.string,
+    filterValue: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
 };
 
