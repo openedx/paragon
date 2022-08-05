@@ -2,14 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const STYLE_VARIANTS = [
-  'primary',
-  'success',
-  'error',
-  'warning',
-];
+const STYLE_VARIANTS = ['primary', 'success', 'error', 'warning'] as const;
 
-const Bubble = React.forwardRef(({
+export type BubbleVariant = typeof STYLE_VARIANTS[number];
+
+export interface BubbleProps {
+  children: React.ReactNode;
+  variant?: BubbleVariant;
+  disabled?: boolean;
+  className?: string;
+  expandable?: boolean;
+}
+
+const Bubble = React.forwardRef<HTMLDivElement, BubbleProps>(({
   variant,
   className,
   children,

@@ -23,7 +23,7 @@ describe('<Stack />', () => {
       expect(wrapper.find('.pgn__hstack').length).toBeGreaterThan(0);
     });
     it('renders with the correct gap', () => {
-      const gap = 3.5;
+      const gap = 3;
       const wrapper = mount(<Stack gap={gap}>Content</Stack>);
       expect(wrapper.find('.pgn__vstack').hasClass(`pgn__stack-gap--${gap}`)).toEqual(true);
     });
