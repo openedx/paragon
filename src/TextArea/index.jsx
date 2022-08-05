@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import asInput from '../asInput';
-import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
+import withDeprecatedProps, { DeprTypes } from '../withDeprecatedProps';
 
 function Text(props) {
   const {
@@ -38,7 +38,7 @@ Text.defaultProps = {
 
 const TextArea = asInput(withDeprecatedProps(Text, 'TextArea', {
   className: {
-    deprType: DEPR_TYPES.FORMAT,
+    deprType: DeprTypes.FORMAT,
     expect: value => typeof value === 'string',
     transform: value => (Array.isArray(value) ? value.join(' ') : value),
     message: 'It should be a string.',

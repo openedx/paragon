@@ -33,7 +33,7 @@ describe('<Sticky />', () => {
       expect(sticky.hasClass('pgn__sticky-bottom')).toEqual(true);
     });
     it('renders with offset', () => {
-      const offset = 3.5;
+      const offset = 3;
       const wrapper = mount(<Sticky offset={offset}>content</Sticky>);
       const sticky = wrapper.find('.pgn__sticky');
       expect(sticky.hasClass(`pgn__sticky-offset--${offset}`)).toEqual(true);

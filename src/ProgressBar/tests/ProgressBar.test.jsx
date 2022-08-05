@@ -60,7 +60,7 @@ describe('<ProgressBar.Annotated />', () => {
       expect(wrapper.find(`.pgn__progress-bar--${thresholdVariant}`).length).toBeGreaterThan(0);
     });
     it('renders default variant for progress bar and annotation', () => {
-      const wrapper = mount(<ProgressBarElement variant="wrongVariant" thresholdVariant="wrongVariant" />);
+      const wrapper = mount(<ProgressBarElement />);
       expect(wrapper.find('.pgn__annotation-warning-bottom').length).toBeGreaterThan(0);
       expect(wrapper.find('.pgn__progress-bar--warning').length).toBeGreaterThan(0);
       expect(wrapper.find('.pgn__annotation-dark-top').length).toBeGreaterThan(0);
