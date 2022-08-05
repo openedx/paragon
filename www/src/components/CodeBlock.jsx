@@ -24,6 +24,7 @@ function CollapsibleLiveEditor({ children }) {
   return (
     <div className="pgn-doc__collapsible-live-editor">
       <Collapsible.Advanced
+        unmountOnExit={false}
         open={collapseIsOpen}
         onToggle={(isOpen) => setCollapseIsOpen(isOpen)}
       >
