@@ -89,6 +89,29 @@ describe('<Collapsible />', () => {
       wrapper.update();
       collapsibleIsClosed(wrapper);
     });
+    it('correct behavior with unmountOnExit', () => {
+      let i = 0;
+      const Comp = () => {
+        i += 1;
+        return <h1>Hello world</h1>;
+      };
+      const component = mount((
+        <Collapsible.Advanced unmountOnExit={false}>
+          <Collapsible.Body>
+            <Comp />
+          </Collapsible.Body>
+        </Collapsible.Advanced>
+      ));
+      const instance = component.instance();
+      instance.open();
+      component.update();
+      expect(i).toEqual(1);
+      instance.close();
+      component.update();
+      instance.open();
+      component.update();
+      expect(i).toEqual(1);
+    });
   });
 
   describe('Mouse Interactions', () => {
