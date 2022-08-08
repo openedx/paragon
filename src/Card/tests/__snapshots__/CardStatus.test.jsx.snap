@@ -2,14 +2,12 @@
 
 exports[`correct rendering renders CardStatus element 1`] = `
 <div
-  className="pgn__card-status alert-warning alert alert-content"
+  className="pgn__card-status pgn__card-status__warning"
 >
   <div
-    className="alert-message-content"
+    className="pgn__card-status__message-content"
   >
-    <p>
-      Text
-    </p>
+    Text
   </div>
 </div>
 `;

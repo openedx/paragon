@@ -12,24 +12,23 @@ const CardStatus = React.forwardRef(({
 }, ref) => (
   <div
     className={classNames('pgn__card-status',
-      `alert-${variant}`, 'alert', 'alert-content',
-      className)}
+      `pgn__card-status__${variant}`, className)}
     ref={ref}
   >
-    {icon && <Icon src={icon} className="alert-icon" />}
-    <div className="alert-message-content">
-      {title && <div className="alert-heading h4">{title}</div>}
-      {children && <p>{children}</p>}
+    {icon && <Icon src={icon} />}
+    <div className="pgn__card-status__message-content">
+      {title && <div className="pgn__card-status__heading">{title}</div>}
+      {children}
     </div>
   </div>
 ));
 
 CardStatus.propTypes = {
   /** Specifies the content of the component. */
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
   /** The class to append to the base element. */
   className: PropTypes.string,
-  /** Icon that will be shown in the alert */
+  /** Icon that will be shown in the top-left corner. */
   icon: PropTypes.func,
   /** Specifies variant to use. */
   variant: PropTypes.oneOf([
@@ -39,11 +38,10 @@ CardStatus.propTypes = {
     'warning',
   ]),
   /** Specifies title for the `Card.Status`. */
-  title: PropTypes.element,
+  title: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
 };
 
 CardStatus.defaultProps = {
-  children: undefined,
   className: undefined,
   icon: undefined,
   variant: 'warning',

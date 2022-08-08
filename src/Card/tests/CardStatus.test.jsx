@@ -24,11 +24,11 @@ describe('correct rendering', () => {
   it('renders with correct variant', () => {
     const variant = 'dark';
     const status = mount(<CardStatus variant={variant} />);
-    expect(status.find('.alert-dark').length).toBeGreaterThan(0);
+    expect(status.find('.pgn__card-status__dark').length).toBeGreaterThan(0);
   });
   it('renders with icon', () => {
     const icon = WarningFilled;
     const status = mount(<CardStatus icon={icon} />);
-    expect(status.find('.alert-icon').length).toBeGreaterThan(0);
+    expect(status.find('.pgn__icon').length).toBeGreaterThan(0);
   });
 });
