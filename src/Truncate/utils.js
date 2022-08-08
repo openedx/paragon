@@ -31,10 +31,9 @@ const truncateLines = (text, element, { lines, whiteSpace, ellipsis }) => {
 
   element.append(newElement);
   newElement.innerHTML = constructString(text, whiteSpace, ellipsis);
-
   let newElementTextHeight = newElement.scrollHeight;
 
-  if (visibilityArea > newElementTextHeight) {
+  if (visibilityArea >= newElementTextHeight) {
     newElement.parentNode.removeChild(newElement);
     return truncateText;
   }
