@@ -45,6 +45,7 @@
     "build_tokens": "node build-tokens.js"
   },
   "dependencies": {
+    "@divriots/style-dictionary-to-figma": "^0.3.0",
     "@edx/reactifex": "^2.1.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/react-fontawesome": "^0.1.18",
