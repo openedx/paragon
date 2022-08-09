@@ -5,7 +5,6 @@ components:
 - MultiSelect
 categories:
 - Forms
-- Content
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'
@@ -19,11 +18,10 @@ A dropdown menu that enables selection of multiple values.
 ```jsx live
 <MultiSelect
   data={[
-    { value: 'Calico', label: 'Calico Cat', },
-    { value: 'Norwegian', label: 'Norwegian Forest Cat', },
-    { value: 'Scottish Fold', label: 'Scottish Fold', selected: true },
+    { value: 'Calico', label: 'Calico Cat' },
+    { value: 'Norwegian', label: 'Norwegian Forest Cat' },
+    { value: 'Scottish Fold', label: 'Scottish Fold' },
   ]}
-  value="Scottish Fold"
-  disabled={false}
+  values={["Scottish Fold"]}
 />
 ```
