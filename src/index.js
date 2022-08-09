@@ -190,3 +190,4 @@ export { default as Bubble } from './Bubble';
 export { default as Dropzone } from './Dropzone';
 
 export { default as messages } from './i18n';
+export { default as MultiSelect } from './MultiSelect';
