@@ -21,7 +21,7 @@ import { SettingsContext } from '../context/SettingsContext';
 
 export interface INavbar {
   siteTitle: string,
-  onMenuClick: React.MouseEventHandler,
+  onMenuClick: Function,
   onSettingsClick: Function | undefined,
   menuIsOpen?: boolean,
   showMinimizedTitle?: boolean,
@@ -132,7 +132,7 @@ export interface IHeaderProps {
 }
 
 const Header = ({ siteTitle, showMinimizedTitle }: IHeaderProps) => {
-  const [isOpen, close, toggle] = useToggle(false, {
+  const [isOpen, , close, toggle] = useToggle(false, {
     handleToggleOn: () => {
       document.body.style.overflow = 'hidden';
     },
@@ -145,8 +145,7 @@ const Header = ({ siteTitle, showMinimizedTitle }: IHeaderProps) => {
 
   useEffect(() => () => {
     document.body.style.overflow = 'initial';
-  },
-  []);
+  }, []);
 
   return (
     <FocusOn

@@ -3,17 +3,20 @@ import PropTypes from 'prop-types';
 // @ts-ignore
 import { Sticky } from '~paragon-react'; // eslint-disable-line
 
+interface IItems {
+  url?: string,
+  title?: string,
+  items?: Array<IItems>,
+}
+
 export interface IToc {
   data: {
-    items?: Array<{
-      url?: string;
-      title?: string;
-    }>
+    items?: Array<IItems>
   }
 }
 
 const Toc = ({ data }: IToc) => {
-  const generateTree = (headings: { items?: Array<any> }) => (headings?.items?.length
+  const generateTree = (headings: { items?: Array<IItems> }) => (headings?.items?.length
     ? (
       <ul className="pgn-doc__toc-list">
         {headings.items.map(heading => (
