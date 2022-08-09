@@ -88,5 +88,4 @@ const paragonStyleDictionary = StyleDictionary.extend({
   },
 });
 
-console.log(paragonStyleDictionary.allTokens.length);
 paragonStyleDictionary.buildAllPlatforms();
