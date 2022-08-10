@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/openedx/paragon.git"
+    "url": "git+https://github.com/openedx/paragon.git"
   },
   "files": [
     "/dist",
@@ -46,7 +46,8 @@
     "type-check:watch": "npm run type-check -- --watch",
     "build-types": "tsc --emitDeclarationOnly",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token dffe151c1071"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -116,6 +117,7 @@
     "axios-mock-adapter": "^1.21.1",
     "babel-jest": "^28.1.2",
     "babel-loader": "^8.2.4",
+    "chromatic": "^6.7.3",
     "commander": "^9.3.0",
     "enzyme": "^3.9.0",
     "eslint": "8.18.0",
@@ -140,7 +142,8 @@
     "stylelint": "^14.7.1",
     "stylelint-config-standard-scss": "^4.0.0",
     "ts-jest": "^28.0.7",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "webpack": "^5.74.0"
   },
   "jest": {
     "testEnvironment": "jsdom",
@@ -186,5 +189,11 @@
     "hooks": {
       "pre-commit": "npm run lint"
     }
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/openedx/paragon/issues"
+  },
+  "readme": "ERROR: No README data found!",
+  "homepage": "https://github.com/openedx/paragon#readme",
+  "_id": "@edx/paragon@20.8.0"
 }
