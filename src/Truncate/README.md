@@ -26,11 +26,25 @@ A Truncate component can help you crop multiline text. There will be three dots 
 ### With the custom ellipsis
 
 ```jsx live
-  <Truncate lines={2} ellipsis="🎉🎉🎉" whiteSpace>
-    Learners, course teams, researchers, developers: the edX community includes groups with a range of reasons 
-    for using the platform and objectives to accomplish. To help members of each group learn about what edX 
-    offers, reach goals, and solve problems, edX provides a variety of information resources.
-  </Truncate>
+() => {
+    const [isShow, setShow] = useState(false);
+
+    return (
+        <>
+            {isShow && <Annotation>This text truncated...</Annotation>}
+            <Truncate 
+                lines={2}
+                ellipsis="🎉🎉🎉"
+                whiteSpace
+                onTruncate={() => setShow(true)}
+            >
+                Learners, course teams, researchers, developers: the edX community includes groups with a range of reasons
+                for using the platform and objectives to accomplish. To help members of each group learn about what edX
+                offers, reach goals, and solve problems, edX provides a variety of information resources.
+            </Truncate>
+        </>
+    )
+}
 ```
 
 ### Usage in component properties

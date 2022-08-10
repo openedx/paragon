@@ -12,4 +12,9 @@ describe('<Truncate />', () => {
     wrapper.setProps({ className: 'pgn__truncate' });
     expect(wrapper.hasClass('pgn__truncate')).toEqual(true);
   });
+  it('render with onTruncate', () => {
+    const mockFn = jest.fn();
+    wrapper.setProps({ onTruncate: mockFn });
+    expect(mockFn.mock.calls.length).toBe(1);
+  });
 });

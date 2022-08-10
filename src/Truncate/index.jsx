@@ -10,7 +10,7 @@ const DEFAULT_TRUNCATE_ELLIPSIS = '...';
 const DEFAULT_TRUNCATE_ELEMENT_TYPE = 'div';
 
 const Truncate = ({
-  children, lines, ellipsis, elementType, className, whiteSpace,
+  children, lines, ellipsis, elementType, className, whiteSpace, onTruncate,
 }) => {
   const [truncateText, setTruncateText] = useState('');
   const textContainer = useRef();
@@ -23,7 +23,10 @@ const Truncate = ({
       lines,
     });
     setTruncateText(newTruncateText);
-  }, [children, ellipsis, lines, whiteSpace, width]);
+    if (onTruncate) {
+      onTruncate(truncateText);
+    }
+  }, [children, ellipsis, lines, onTruncate, truncateText, whiteSpace, width]);
 
   return React.createElement(elementType, {
     ref: textContainer,
@@ -44,6 +47,8 @@ Truncate.propTypes = {
   elementType: PropTypes.string,
   /** Specifies class name to append to the base element. */
   className: PropTypes.string,
+  /** Callback fired when a text truncating */
+  onTruncate: PropTypes.func,
 };
 
 Truncate.defaultProps = {
@@ -52,6 +57,7 @@ Truncate.defaultProps = {
   whiteSpace: false,
   elementType: DEFAULT_TRUNCATE_ELEMENT_TYPE,
   className: undefined,
+  onTruncate: undefined,
 };
 
 export default Truncate;
