@@ -1,0 +1,49 @@
+---
+title: 'Form.Autosuggest'
+type: 'component'
+components:
+- FormCheckbox
+- CheckboxControl
+- FormCheckboxSet
+categories:
+- Forms
+status: 'New'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: |
+
+---
+
+Descriptions content
+
+
+## Controlled Standalone Usage
+
+```jsx live
+() => {
+    const [data, setData] = useState({
+        title: 'I am title',
+    });
+    const options = ['Charlie Brown', 'Charlotte White', 'Chloe Jones', 'Cooper King'];
+
+  return (
+    <Form.Autosuggest
+        disabled
+        type="text"
+        name="org"
+        readOnly={false}
+        value={data.title}
+        options={options}
+        controlClassName="has-value"
+        handleChange={
+            (value) => setData(prevState => ({ data: { ...prevState.data, org: value } }))
+        }
+        floatingLabel="This is floating label"
+        placeholder="This is placeholder"
+        hasFieldError="This is has field error"
+        errorMessage="This is error message"
+        helpMessage="This is help message"
+    />
+  );
+}
+```
