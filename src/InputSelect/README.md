@@ -81,6 +81,22 @@ notes: |
   ]}
 />
 ```
+## select multiple
+
+```jsx live
+<InputSelect
+  name="fruits"
+  label="Fruits"
+  options={[
+    'apple',
+    'orange',
+    'strawberry',
+    'banana',
+  ]}
+  multiple
+  value={["strawberry", "apple"]}
+/>
+```
 
 ## with validation
 
@@ -110,8 +126,8 @@ notes: |
   label="Fruits"
   aria-label="Fruits"
   value="strawberry"
-  options={['
-    apple',
+  options={[
+    'apple',
     'orange',
     'strawberry',
     'banana',

@@ -5,7 +5,7 @@ import asInput from '../asInput';
 import withDeprecatedProps, { DeprTypes } from '../withDeprecatedProps';
 
 class Select extends React.Component {
-  static getOption(option, i) {
+  static getOption(option, i, multiple, multiselectDefaultValues) {
     const { disabled } = option;
     let { label, value } = option;
 
@@ -14,11 +14,21 @@ class Select extends React.Component {
       value = option;
     }
 
+    let componentProps = {
+      key: `option-${i}`,
+      value: value,
+      disabled: disabled,
+    }
+
+    if (multiple && multiselectDefaultValues && Array.isArray(multiselectDefaultValues)) {
+      if (multiselectDefaultValues.includes(value)) {
+        componentProps.selected = true;
+      }
+    }
+
     return (
       <option
-        key={`option-${i}`}
-        value={value}
-        disabled={disabled}
+        {...componentProps}
       >
         {label}
       </option>
@@ -26,17 +36,18 @@ class Select extends React.Component {
   }
 
   getOptions() {
-    return this.props.options.map((option, i) => {
+    const { multiple, value, options } = this.props;
+    return options.map((option, i) => {
       let section;
       if (option.options) {
-        const groupOpts = option.options.map((opt, j) => Select.getOption(opt, j));
+        const groupOpts = option.options.map((opt, j) => Select.getOption(opt, j, multiple, value));
         section = (
           <optgroup label={option.label} key={option.label}>
             {groupOpts}
           </optgroup>
         );
       } else {
-        section = Select.getOption(option, i);
+        section = Select.getOption(option, i, multiple, value);
       }
       return section;
     });
@@ -46,9 +57,14 @@ class Select extends React.Component {
     const {
       className,
       inputRef,
+      multiple,
       ...others
     } = this.props;
     const options = this.getOptions();
+
+    if (multiple || !others.value) {
+      delete others.value;
+    }
 
     return (
       <select
@@ -56,6 +72,7 @@ class Select extends React.Component {
         className={className}
         type="select"
         ref={inputRef}
+        multiple={multiple}
       >
         {options}
       </select>
@@ -73,11 +90,15 @@ Select.propTypes = {
     PropTypes.arrayOf(PropTypes.string),
     PropTypes.arrayOf(PropTypes.shape({})),
   ]).isRequired,
+  multiple: PropTypes.bool,
+  value: PropTypes.oneOf(PropTypes.string, PropTypes.arrayOf(PropTypes.string)),
 };
 
 Select.defaultProps = {
   className: undefined,
   inputRef: undefined,
+  multiple: false,
+  value: undefined,
 };
 
 const InputSelect = asInput(withDeprecatedProps(Select, 'InputSelect', {
