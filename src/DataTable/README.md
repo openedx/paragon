@@ -1322,3 +1322,81 @@ You can create your own custom expander column and use it, see code example belo
   );
 }
 ```
+
+## Custom cell content
+
+You can create your own cell content by passing the `Cell` property to a specific column.
+
+```jsx live
+() => {
+  const variants = ['primary', 'warning', 'success', 'danger'];
+  const [cellColors, setCellColors] = useState([0, 1, 2]);
+
+  const handleColorChange = (index) => {
+    const newColors = cellColors.slice();
+    newColors[index] = cellColors[index] < 3 ? cellColors[index] + 1 : 0;
+    setCellColors(newColors);
+  };
+  
+  return (
+    <DataTable
+      isExpandable
+      itemCount={3}
+      data={[
+        {
+          name: 'Lil Bub',
+          color: 'brown tabby',
+          famous_for: 'weird tongue',
+        },
+        {
+          name: 'Grumpy Cat',
+          color: 'siamese',
+          famous_for: 'serving moods',
+        },
+        {
+          name: 'Smoothie', 
+          color: 'orange tabby',
+          famous_for: 'modeling',
+        },
+      ]}
+      columns={[
+        {
+          Header: 'Name',
+          Cell: ({ row }) => (
+            <Badge variant={variants[cellColors[row.id] % 4]}>
+              {row.original.name}
+            </Badge>
+          ),
+        },
+        {
+          Header: 'Famous For',
+          Cell: ({ row }) => (
+            <Badge variant={variants[(cellColors[row.id] + 1) % 4]}>
+              {row.original.famous_for}
+            </Badge>
+          ),
+        },
+        {
+          Header: 'Coat Color',
+          Cell: ({ row }) => (
+            <Badge variant={variants[(cellColors[row.id] + 2) % 4]}>
+              {row.original.color}
+            </Badge>
+          ),
+        },
+      ]}
+      additionalColumns={[
+        {
+          id: 'action',
+          Header: 'Action',
+          Cell: ({ row }) => <Button variant="link" size="sm" onClick={() => handleColorChange(row.id)}>Change</Button>,
+        }
+      ]}
+    >
+      <DataTable.TableControlBar/>
+      <DataTable.Table/>
+      <DataTable.TableFooter/>
+    </DataTable>
+  );
+}
+```
