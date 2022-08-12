@@ -105,6 +105,34 @@ You use `isClickable` prop to add additional `hover` and `focus` styling to the 
 )};
 ```
 
+## As link
+You can also use `Card` as a link by wrapping it into appropriate component, note that `Card` will override default 
+link styling to make its content appear as a regular text.
+
+```jsx live
+() => {
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+
+  return (
+    <Hyperlink destination="https://www.edx.org">
+      <Card style={{ width: isExtraSmall ? "100%" : "18rem" }} isClickable>
+        <Card.ImageCap
+          src="https://source.unsplash.com/360x200/?nature,flower"
+          srcAlt="Card image"
+        />
+        <Card.Header title="Card Title"/>
+        <Card.Section>
+          This is a card section. It can contain anything but usually text, a list, or list of links. 
+          Multiple sections have a card divider between them.
+        </Card.Section>
+        <Card.Footer>
+          <Button>Action 1</Button>
+        </Card.Footer>
+      </Card>
+    </Hyperlink>
+)}
+```
+
 ## Header
 You may add a header by adding a ``Card.Header`` component.
 This header displays a title, subtitle, and may contain actions.
