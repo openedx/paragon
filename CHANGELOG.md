@@ -1,3 +1,15 @@
+# [20.9.0](https://github.com/openedx/paragon/compare/v20.8.0...v20.9.0) (2022-08-12)
+
+
+### Bug Fixes
+
+* begin using shared stylelint-config-edx ([#1517](https://github.com/openedx/paragon/issues/1517)) ([7a35814](https://github.com/openedx/paragon/commit/7a35814ad4474e0562e470a54f26fc70b34314e4))
+
+
+### Features
+
+* [BD-46] add Card.Status ([#1439](https://github.com/openedx/paragon/issues/1439)) ([aa5a4a4](https://github.com/openedx/paragon/commit/aa5a4a4f3da931804a44e3da7a51b6b233f093d8))
+
 # [20.8.0](https://github.com/openedx/paragon/compare/v20.7.0...v20.8.0) (2022-08-05)
 
 
