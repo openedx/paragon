@@ -12,12 +12,12 @@ import SEO from '../components/SEO';
 import LinkedHeading from '../components/LinkedHeading';
 
 const shortcodes = {
-  h1: (props: HTMLElement) => <LinkedHeading h="1" {...props} />,
-  h2: (props: HTMLElement) => <LinkedHeading h="2" {...props} />,
-  h3: (props: HTMLElement) => <LinkedHeading h="3" {...props} />,
-  h4: (props: HTMLElement) => <LinkedHeading h="4" {...props} />,
-  h5: (props: HTMLElement) => <LinkedHeading h="5" {...props} />,
-  h6: (props: HTMLElement) => <LinkedHeading h="6" {...props} />,
+  h1: (props: HTMLHeadingElement) => <LinkedHeading h="1" {...props} />,
+  h2: (props: HTMLHeadingElement) => <LinkedHeading h="2" {...props} />,
+  h3: (props: HTMLHeadingElement) => <LinkedHeading h="3" {...props} />,
+  h4: (props: HTMLHeadingElement) => <LinkedHeading h="4" {...props} />,
+  h5: (props: HTMLHeadingElement) => <LinkedHeading h="5" {...props} />,
+  h6: (props: HTMLHeadingElement) => <LinkedHeading h="6" {...props} />,
   pre: (props:
   JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> &
   React.HTMLAttributes<HTMLDivElement>) => <div {...props} />,

@@ -6,7 +6,7 @@ const getGithubProjectUrl = (repository?: string | { type: string, url: string }
     repositoryUrl = repository.url;
   } else {
     // unsupported repository field
-    return;
+    return undefined;
   }
   const parts = repositoryUrl.split('/');
   const githubDomainIndex = parts.findIndex((part: string) => part === 'github.com');
