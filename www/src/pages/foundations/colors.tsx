@@ -19,19 +19,19 @@ const utilityClasses = {
 export interface IColors {
   themeName: string,
   color: string,
-  unusedLevels: [number],
+  unusedLevels: number[],
 }
 
 const colors: IColors[] = [
-  { themeName: 'gray', color: 'gray', unusedLevels: [0] },
-  { themeName: 'primary', color: 'blue', unusedLevels: [0] },
-  { themeName: 'brand', color: 'blue', unusedLevels: [0] },
-  { themeName: 'light', color: 'light', unusedLevels: [0] },
-  { themeName: 'dark', color: 'dark', unusedLevels: [0] },
-  { themeName: 'success', color: 'green', unusedLevels: [0] },
-  { themeName: 'info', color: 'teal', unusedLevels: [0] },
-  { themeName: 'danger', color: 'red', unusedLevels: [0] },
-  { themeName: 'warning', color: 'yellow', unusedLevels: [0] },
+  { themeName: 'gray', color: 'gray', unusedLevels: [] },
+  { themeName: 'primary', color: 'blue', unusedLevels: [] },
+  { themeName: 'brand', color: 'blue', unusedLevels: [] },
+  { themeName: 'light', color: 'light', unusedLevels: [] },
+  { themeName: 'dark', color: 'dark', unusedLevels: [] },
+  { themeName: 'success', color: 'green', unusedLevels: [] },
+  { themeName: 'info', color: 'teal', unusedLevels: [] },
+  { themeName: 'danger', color: 'red', unusedLevels: [] },
+  { themeName: 'warning', color: 'yellow', unusedLevels: [] },
 ];
 
 const levels = [100, 200, 300, 400, 500, 600, 700, 800, 900];
@@ -97,7 +97,7 @@ Swatch.defaultProps = {
   isUnused: false,
 };
 
-const renderColorRamp = (themeName: string, unusedLevels: [number]) => (
+const renderColorRamp = (themeName: string, unusedLevels: number[]) => (
   <div
     key={`${themeName}`}
     style={{ flexBasis: '24%', marginRight: '1%', marginBottom: '2rem' }}
