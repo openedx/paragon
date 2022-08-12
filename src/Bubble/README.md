@@ -75,22 +75,19 @@ In the case of long content use `expandable` prop. It adds padding to `Bubble`. 
 
 ```jsx live
 () => {
+  {/* start example state */}
   const [isExpandable, setIsExpandable] = useState(true);
-  const handleExpandableChange = (e) => setIsExpandable(e.target.value === 'true');
+  {/* end example state */}
 
   return (
     <>
-      <Form.Group>
-        <Form.Label><code>expandable</code> prop is:</Form.Label>
-        <Form.RadioSet
-          name="expandable"
-          onChange={handleExpandableChange}
-          value={isExpandable.toString()}
-        >
-          <Form.Radio value="true">On</Form.Radio>
-          <Form.Radio value="false">Off</Form.Radio>
-        </Form.RadioSet>
-      </Form.Group>
+      {/* start example form block */}
+      <ExamplePropsForm
+        inputs={[
+          { value: isExpandable, setValue: () => setIsExpandable(!isExpandable), name: 'isExpandable' },
+        ]}
+      />
+      {/* end example form block */}
       <Bubble variant="error" expandable={isExpandable}>
         1234
       </Bubble>
