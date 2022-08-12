@@ -1,3 +1,10 @@
+## [20.9.1](https://github.com/openedx/paragon/compare/v20.9.0...v20.9.1) (2022-08-12)
+
+
+### Bug Fixes
+
+* added support for making `Card` a hyperlink ([#1478](https://github.com/openedx/paragon/issues/1478)) ([f0a0768](https://github.com/openedx/paragon/commit/f0a07687e6608fadf6b7eab0af505c9d0bcc0d7c))
+
 # [20.9.0](https://github.com/openedx/paragon/compare/v20.8.0...v20.9.0) (2022-08-12)
 
 
