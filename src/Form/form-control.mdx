@@ -48,20 +48,25 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 
 ```jsx live
 () => {
-  const [value, setValue] = useState('');
-  const handleChange = (e) => setValue(e.target.value);
-  return (
-    <>
-      <h3>Default</h3>
-      <Form.Group>
-        <Form.Control
-          value={value}
-          onChange={handleChange}
-          leadingElement={<Icon src={FavoriteBorder} />}
-          floatingLabel="What kind of cats?"
-        />
-      </Form.Group>
+  {/* start example state */}
+  const [type, setType] = useState('default');
+  {/* end example state */}
 
+  const inputs = {
+    default: (
+      <>
+        <h3>Default</h3>
+        <Form.Group>
+          <Form.Control
+            value={value}
+            onChange={handleChange}
+            leadingElement={<Icon src={FavoriteBorder} />}
+            floatingLabel="What kind of cats?"
+          />
+        </Form.Group>
+      </>
+    ),
+    textarea: (<>
       <h3>Textarea</h3>
       <Form.Group>
         <Form.Control
@@ -72,7 +77,8 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
           floatingLabel="What kind of cats?"
         />
       </Form.Group>
-
+    </>),
+    select: (<>
       <h3>Select</h3>
       <Form.Group>
         <Form.Control
@@ -89,7 +95,8 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
           <option>Siamese cat</option>
         </Form.Control>
       </Form.Group>
-
+    </>),
+    password: (<>
       <h3>Password</h3>
       <Form.Group>
         <Form.Control
@@ -100,7 +107,8 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
           floatingLabel="Password cats?"
         />
       </Form.Group>
-
+    </>),
+    date: (<>
       <h3>Date picker</h3>
       <Form.Group>
         <Form.Control
@@ -111,7 +119,8 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
           floatingLabel="When cats?"
         />
       </Form.Group>
-
+    </>),
+    number: (<>
       <h3>Number</h3>
       <Form.Group>
         <Form.Control
@@ -122,7 +131,8 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
           floatingLabel="How many cats?"
         />
       </Form.Group>
-
+    </>),
+    time: (<>
       <h3>Time picker</h3>
       <Form.Group>
         <Form.Control
@@ -133,6 +143,21 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
           floatingLabel="Time cats?"
         />
       </Form.Group>
+    </>),
+  };
+  const [value, setValue] = useState('');
+  const handleChange = (e) => setValue(e.target.value);
+  return (
+    <>
+      {/* start example form block */}
+      <ExamplePropsForm
+        inputs={[
+          { value: type, setValue: setType, options: Object.keys(inputs), name: 'Input type' },
+        ]}
+      />
+      {/* end example form block */}
+      
+      {inputs[type]}
     </>
   );
 }
