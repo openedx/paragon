@@ -21,7 +21,9 @@
 
   @if type-of($variant) == "number" {
     $color-level: $variant;
-  } @else if map-has-key($element-color-levels, $variant) {
+  }
+
+  @else if map-has-key($element-color-levels, $variant) {
     $color-level: map-get($element-color-levels, $variant);
   }
 
