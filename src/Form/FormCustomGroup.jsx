@@ -3,15 +3,20 @@ import PropTypes from 'prop-types';
 
 import { Form } from '../index';
 
-const FormGroup = () => {
-  const handleFocus = (e) => {
-    if (props.handleFocus) { props.handleFocus(e); }
+const FormCustomGroup = ({
+  handleFocus,
+  handleClick,
+  handleBlur,
+  ...props
+}) => {
+  const handleOnFocus = (e) => {
+    if (handleFocus) { handleFocus(e); }
   };
-  const handleClick = (e) => {
-    if (props.handleClick) { props.handleClick(e); }
+  const handleOnClick = (e) => {
+    if (handleClick) { handleClick(e); }
   };
   const handleOnBlur = (e) => {
-    if (props.handleBlur) { props.handleBlur(e); }
+    if (handleBlur) { handleBlur(e); }
   };
 
   return (
@@ -20,9 +25,9 @@ const FormGroup = () => {
         aria-invalid={props.errorMessage}
         autoComplete={props.autoComplete ? 'on' : 'off'}
         onChange={props.handleChange}
-        onFocus={handleFocus}
+        onFocus={handleOnFocus}
         onBlur={handleOnBlur}
-        onClick={handleClick}
+        onClick={handleOnClick}
         {...props}
       >
         {props.options ? props.options() : null}
@@ -45,7 +50,7 @@ const FormGroup = () => {
   );
 };
 
-FormGroup.defaultProps = {
+FormCustomGroup.defaultProps = {
   as: 'input',
   errorMessage: '',
   autoComplete: null,
@@ -64,7 +69,7 @@ FormGroup.defaultProps = {
   controlClassName: '',
 };
 
-FormGroup.propTypes = {
+FormCustomGroup.propTypes = {
   as: PropTypes.string,
   errorMessage: PropTypes.string,
   autoComplete: PropTypes.string,
@@ -86,4 +91,4 @@ FormGroup.propTypes = {
   controlClassName: PropTypes.string,
 };
 
-export default FormGroup;
+export default FormCustomGroup;
