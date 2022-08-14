@@ -22,13 +22,12 @@ Descriptions content
 ```jsx live
 () => {
     const [data, setData] = useState({
-        title: 'I am title',
+        title: '',
     });
-    const options = ['Charlie Brown', 'Charlotte White', 'Chloe Jones', 'Cooper King'];
+    const options = ['Charlie Brown', 'Charlotte White', 'Chloe Jones', 'Cooper King', 'Chloe Jones', 'Charlotte White', 'Chloe Jones', 'Cooper King', 'Chloe Jones',];
 
   return (
     <Form.Autosuggest
-        disabled
         type="text"
         name="org"
         readOnly={false}
@@ -39,7 +38,7 @@ Descriptions content
             (value) => setData(prevState => ({ data: { ...prevState.data, org: value } }))
         }
         floatingLabel="This is floating label"
-        placeholder="This is placeholder"
+        // placeholder="This is placeholder"
         hasFieldError="This is has field error"
         errorMessage="This is error message"
         helpMessage="This is help message"
