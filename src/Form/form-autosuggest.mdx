@@ -14,8 +14,7 @@ notes: |
 
 ---
 
-Descriptions content
-
+Form auto-suggest enables users to manually select or type to find matching options to partial text input.
 
 ## Controlled Standalone Usage
 
@@ -27,22 +26,6 @@ Descriptions content
     const options = ['Green', 'Red', 'Blue', 'Black', 'White', 'Purple', 'Orange', 'Grey'];
 
   return (
-    // <Form.Autosuggest
-    //     type="text"
-    //     name="org"
-    //     readOnly={false}
-    //     value={data.title}
-    //     options={options}
-    //     controlClassName="has-value"
-    //     handleChange={
-    //         (value) => setData(prevState => ({ data: { ...prevState.data, org: value } }))
-    //     }
-    //     floatingLabel="This is floating label"
-    //     // placeholder="This is placeholder"
-    //     hasFieldError="This is has field error"
-    //     errorMessage="This is error message"
-    //     helpMessage="This is help message"
-    // />
     <Form.Autosuggest
         // disabled
         options={options}
@@ -53,9 +36,8 @@ Descriptions content
         }
         placeholder="This is placeholder"
         floatingLabel="This is floating label"
-        // hasFieldError="This is has field error"
         // helpMessage="This is help message"
-        // errorMessage="This is error message"
+        errorMessage="This is error message"
         name="org"
     />
   );
