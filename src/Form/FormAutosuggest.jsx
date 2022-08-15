@@ -231,9 +231,7 @@ const FormAutosuggest = ({
           onFocus={handleFocus}
           onBlur={handleBlur}
           onClick={handleClick}
-          helpMessage={helpMessage}
           trailingElement={state.icon}
-          errorMessage={state.errorMessage}
           {...props}
         >
           {/* {options || null} */}
