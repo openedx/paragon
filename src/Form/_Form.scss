@@ -524,6 +524,36 @@ select.form-control {
 .dropdown-group-wrapper {
   position: relative;
 
+  .form-control {
+    font-size: 14px;
+    line-height: 24px;
+    min-height: 44px;
+
+    &.is-invalid {
+      border: 2px solid #CA3A2F;
+    }
+
+    &::placeholder {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+
+  .pgn__form-text-invalid {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .pgn__form-control-floating-label .pgn__form-control-floating-label-content {
+    font-size: 14px;
+    line-height: 24px;
+    color: #707070;
+  }
+
+  .form-control:focus ~ .pgn__form-control-floating-label .pgn__form-control-floating-label-text {
+    color: $black;
+  }
+
   .pgn__icon.btn-icon__icon {
     height: 2.4rem;
     width: 2.4rem;
@@ -532,6 +562,10 @@ select.form-control {
 
 .dropdown-container {
   @include pgn-box-shadow(2, "centered");
+
+  @media (min-width: map-get($grid-breakpoints, "sm")) {
+    margin-inline-end: $custom-control-gutter;
+  }
 
   border-radius: 4px;
   max-height: 240px;
@@ -550,9 +584,26 @@ select.form-control {
     line-height: 28px;
     padding: 10px 16px;
     margin-inline-end: .5rem;
+    color: #454545;
+
+    &:active {
+      color: $white;
+    }
   }
 }
 
 .wrapper .list-inline-item:not(:last-child) {
   margin-right: .3rem;
+}
+
+.dropdown-container__loading {
+  padding: 100px 0;
+  text-align: center;
+
+  .spinner-border {
+    width: 20px;
+    height: 20px;
+    border: 2px solid $black;
+    border-right-color: transparent;
+  }
 }

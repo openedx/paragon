@@ -1,34 +1,105 @@
-import React, { useState, useCallback } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-// eslint-disable-next-line import/no-extraneous-dependencies
-// import listenForOutsideClicks from 'react-onclickoutside';
-import { ExpandLess, ExpandMore } from '../../icons';
+import { KeyboardArrowUp, KeyboardArrowDown } from '../../icons';
 import Icon from '../Icon';
-import { IconButton } from '../index';
-// eslint-disable-next-line import/no-cycle
-import { FormCustomGroup } from './index';
+import { Form, IconButton, Spinner } from '../index';
 
-const FormAutosuggest = (props, { value, handleChange }) => {
+const FormAutosuggest = ({
+  value,
+  isLoading,
+  handleChange,
+  name,
+  errorMessage,
+  helpMessage,
+  autoComplete,
+  controlClassName,
+  className,
+  // options,
+  handleBlur,
+  handleFocus,
+  ...props
+}) => {
+  const dropDownItemsRef = useRef(null);
   const [state, setState] = useState({
     displayValue: '',
+    // eslint-disable-next-line no-use-before-define
     icon: expandMoreButton(),
     errorMessage: '',
     dropDownItems: [],
   });
 
-  function shouldComponentUpdate(nextProps) {
-    if (value !== nextProps.value && nextProps.value !== null) {
-      const opt = options.find((o) => o === nextProps.value);
-      if (opt && opt !== state.displayValue) {
-        setState(prevState => ({
-          ...prevState,
-          displayValue: opt,
-        }));
-      }
-      return false;
+  function expandMoreButton() {
+    return (
+      <IconButton
+        className="expand-more"
+        src={KeyboardArrowDown}
+        iconAs={Icon}
+        size="sm"
+        variant="secondary"
+        alt="expand-more"
+        /* eslint-disable-next-line no-use-before-define */
+        onClick={(e) => { handleExpandMore(e); }}
+      />
+    );
+  }
+
+  function expandLessButton() {
+    return (
+      <IconButton
+        className="expand-less"
+        src={KeyboardArrowUp}
+        iconAs={Icon}
+        size="sm"
+        variant="secondary"
+        alt="expand-less"
+        /* eslint-disable-next-line no-use-before-define */
+        onClick={(e) => { handleExpandLess(e); }}
+      />
+    );
+  }
+
+  const handleClickOutside = (e) => {
+    if (dropDownItemsRef.current && !dropDownItemsRef.current.contains(e.target) && state.dropDownItems.length > 0) {
+      const msg = state.displayValue === '' ? errorMessage : '';
+      setState(() => ({
+        icon: expandMoreButton(),
+        dropDownItems: '',
+        errorMessage: msg,
+      }));
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside, true);
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true);
+    };
+  });
+
+  function setValue(valueItem) {
+    if (value === valueItem) { return; }
+
+    if (handleChange) {
+      handleChange(valueItem);
     }
 
-    return true;
+    const opt = props.options.find((o) => o === valueItem);
+    if (opt && opt !== state.displayValue) {
+      setState(prevState => ({
+        ...prevState,
+        displayValue: opt,
+      }));
+    }
+  }
+
+  function handleItemClick(e) {
+    setValue(e.target.value);
+    setState(prevState => ({
+      ...prevState,
+      dropDownItems: '',
+      // eslint-disable-next-line no-use-before-define
+      icon: expandMoreButton(),
+    }));
   }
 
   // eslint-disable-next-line react/sort-comp
@@ -39,6 +110,7 @@ const FormAutosuggest = (props, { value, handleChange }) => {
     }
 
     return options.map((opt) => {
+      // eslint-disable-next-line no-shadow
       let value = opt;
       if (value.length > 30) {
         value = value.substring(0, 30).concat('...');
@@ -56,24 +128,6 @@ const FormAutosuggest = (props, { value, handleChange }) => {
         </button>
       );
     });
-  }
-
-  function setValue(valueItem) {
-    if (value === valueItem) {
-      return;
-    }
-
-    if (handleChange) {
-      handleChange(valueItem);
-    }
-
-    const opt = props.options.find((o) => o === valueItem);
-    if (opt && opt !== state.displayValue) {
-      setState(prevState => ({
-        ...prevState,
-        displayValue: opt,
-      }));
-    }
   }
 
   function setDisplayValue(valueItem) {
@@ -131,22 +185,11 @@ const FormAutosuggest = (props, { value, handleChange }) => {
         ...prevState,
         dropDownItems: '',
         icon: expandMoreButton(),
-        errorMessage: props.errorMessage,
+        errorMessage,
       }));
     }
 
     setDisplayValue(e.target.value);
-  };
-
-  const handleClickOutside = () => {
-    if (state.dropDownItems.length > 0) {
-      const msg = state.displayValue === '' ? props.errorMessage : '';
-      setState(() => ({
-        icon: expandMoreButton(),
-        dropDownItems: '',
-        errorMessage: msg,
-      }));
-    }
   };
 
   function handleExpandLess() {
@@ -167,76 +210,54 @@ const FormAutosuggest = (props, { value, handleChange }) => {
     }));
   }
 
-  const handleFocus = useCallback((e) => {
-    if (props.handleFocus) {
-      props.handleFocus(e);
-    }
-  }, [props]);
-
-  const handleOnBlur = useCallback((e) => {
-    if (props.handleBlur) {
-      props.handleBlur(e);
-    }
-  }, [props]);
-
-  function handleItemClick(e) {
-    setValue(e.target.value);
-    setState(prevState => ({
-      ...prevState,
-      dropDownItems: '',
-      // eslint-disable-next-line no-use-before-define
-      icon: expandMoreButton(),
-    }));
+  if (handleFocus) {
+    handleFocus();
   }
 
-  function expandMoreButton() {
-    return (
-      <IconButton
-        className="expand-more"
-        src={ExpandMore}
-        iconAs={Icon}
-        size="sm"
-        variant="secondary"
-        alt="expand-more"
-        onClick={(e) => { handleExpandMore(e); }}
-      />
-    );
-  }
-
-  function expandLessButton() {
-    return (
-      <IconButton
-        className="expand-less"
-        src={ExpandLess}
-        iconAs={Icon}
-        size="sm"
-        variant="secondary"
-        alt="expand-less"
-        onClick={(e) => { handleExpandLess(e); }}
-      />
-    );
+  if (handleBlur) {
+    handleBlur();
   }
 
   return (
     <div className="dropdown-group-wrapper">
-      <FormCustomGroup
-        name={props.name}
-        type="text"
-        value={state.displayValue}
-        readOnly={props.readOnly}
-        controlClassName={props.controlClassName}
-        errorMessage={state.errorMessage}
-        trailingElement={state.icon}
-        floatingLabel={props.floatingLabel}
-        placeholder={props.placeholder}
-        helpText={props.helpMessage}
-        handleChange={handleOnChange}
-        handleClick={handleClick}
-        handleBlur={handleOnBlur}
-        handleFocus={handleFocus}
-      />
-      <div className="dropdown-container">
-        { state.dropDownItems.length > 0 ? state.dropDownItems : null }
+      <Form.Group isInvalid={!!errorMessage} className={className}>
+        <Form.Control
+          name={name}
+          type="text"
+          value={state.displayValue}
+          aria-invalid={errorMessage}
+          autoComplete={autoComplete ? 'on' : 'off'}
+          onChange={handleOnChange}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          onClick={handleClick}
+          helpMessage={helpMessage}
+          trailingElement={state.icon}
+          errorMessage={state.errorMessage}
+          {...props}
+        >
+          {/* {options || null} */}
+        </Form.Control>
+
+        {helpMessage && !errorMessage && (
+          <Form.Control.Feedback type="default" key="help-text">
+            {helpMessage}
+          </Form.Control.Feedback>
+        )}
+
+        {errorMessage && (
+          <Form.Control.Feedback type="invalid" key="error" feedback-for={name}>
+            {errorMessage}
+          </Form.Control.Feedback>
+        )}
+      </Form.Group>
+
+      <div className="dropdown-container" ref={dropDownItemsRef}>
+        {isLoading ? (
+          <div className="dropdown-container__loading">
+            <Spinner animation="border" variant="dark" screenReaderText="loading" />
+          </div>
+        ) : state.dropDownItems.length > 0 && state.dropDownItems}
       </div>
     </div>
   );
@@ -254,9 +275,15 @@ FormAutosuggest.defaultProps = {
   errorMessage: null,
   readOnly: false,
   controlClassName: '',
+  className: null,
+  autoComplete: null,
+  isLoading: false,
 };
 
 FormAutosuggest.propTypes = {
+  isLoading: PropTypes.bool,
+  className: PropTypes.string,
+  autoComplete: PropTypes.string,
   options: PropTypes.arrayOf(PropTypes.string),
   floatingLabel: PropTypes.string,
   handleFocus: PropTypes.func,
