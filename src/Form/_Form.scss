@@ -521,89 +521,94 @@ select.form-control {
   }
 }
 
-.dropdown-group-wrapper {
+.pgn__form-autosuggest__wrapper {
   position: relative;
 
+  .pgn__form-control-decorator .btn-icon {
+    &:hover {
+      fill: $white;
+    }
+
+    &:focus {
+      fill: $gray-500;
+    }
+  }
+
   .form-control {
-    font-size: 14px;
-    line-height: 24px;
-    min-height: 44px;
+    font-size: $font-size-sm;
+    line-height: $line-height-base;
+    min-height: 2.75rem;
 
     &.is-invalid {
-      border: 2px solid #CA3A2F;
+      border: $form-autosuggest-border-width solid $danger-500;
     }
 
     &::placeholder {
-      font-size: 14px;
-      line-height: 24px;
+      font-size: $font-size-sm;
+      line-height: $line-height-base;
+    }
+
+    &:focus ~ .pgn__form-control-floating-label .pgn__form-control-floating-label-text {
+      color: $black;
     }
   }
 
   .pgn__form-text-invalid {
-    font-size: 12px;
-    line-height: 20px;
+    font-size: $font-size-xs;
+    line-height: $line-height-base;
   }
 
   .pgn__form-control-floating-label .pgn__form-control-floating-label-content {
-    font-size: 14px;
-    line-height: 24px;
-    color: #707070;
-  }
-
-  .form-control:focus ~ .pgn__form-control-floating-label .pgn__form-control-floating-label-text {
-    color: $black;
+    font-size: $font-size-sm;
+    line-height: 1.5rem;
+    color: $gray-500;
   }
 
   .pgn__icon.btn-icon__icon {
-    height: 2.4rem;
-    width: 2.4rem;
-  }
-}
-
-.dropdown-container {
-  @include pgn-box-shadow(2, "centered");
-
-  @media (min-width: map-get($grid-breakpoints, "sm")) {
-    margin-inline-end: $custom-control-gutter;
+    height: $form-autosuggest-icon-height;
+    width: $form-autosuggest-icon-width;
   }
 
-  border-radius: 4px;
-  max-height: 240px;
-  font-size: 1rem;
-  font-weight: normal;
-  line-height: 1.25rem;
-  overflow-y: scroll;
-  position: absolute;
-  background-color: $white;
-  width: 100%;
-  z-index: 99999999;
-  top: 50px;
+  .pgn__form-autosuggest__container {
+    @include pgn-box-shadow(1, "centered");
 
-  .dropdown-item {
-    font-size: 18px;
-    line-height: 28px;
-    padding: 10px 16px;
-    margin-inline-end: .5rem;
-    color: #454545;
-
-    &:active {
-      color: $white;
+    @media (min-width: map-get($grid-breakpoints, "sm")) {
+      margin-inline-end: $custom-control-gutter;
     }
-  }
-}
 
-.wrapper .list-inline-item:not(:last-child) {
-  margin-right: .3rem;
-}
+    border-radius: $border-radius-sm;
+    max-height: 15rem;
+    font-size: 1rem;
+    font-weight: $font-weight-normal;
+    line-height: 1.25rem;
+    overflow-y: scroll;
+    position: absolute;
+    background-color: $white;
+    width: calc(100% - .5rem);
+    z-index: $zindex-dropdown;
+    top: 3.125rem;
 
-.dropdown-container__loading {
-  padding: 100px 0;
-  text-align: center;
+    .dropdown-item {
+      font-size: $font-size-base;
+      line-height: $line-height-lg;
+      padding: .625rem 1rem;
+      color: $gray-700;
 
-  .spinner-border {
-    width: 20px;
-    height: 20px;
-    border: 2px solid $black;
-    border-right-color: transparent;
+      &:active {
+        color: $white;
+      }
+    }
+
+    .pgn__form-autosuggest__container-loading {
+      padding: 6.25rem 0;
+      text-align: center;
+
+      .spinner-border {
+        width: $form-autosuggest-spinner-width;
+        height: $form-autosuggest-spinner-height;
+        border: $form-autosuggest-border-width solid $black;
+        border-right-color: transparent;
+      }
+    }
   }
 }

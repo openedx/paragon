@@ -11,10 +11,8 @@ const FormAutosuggest = ({
   name,
   errorMessage,
   helpMessage,
-  autoComplete,
   controlClassName,
   className,
-  // options,
   handleBlur,
   handleFocus,
   ...props
@@ -219,23 +217,20 @@ const FormAutosuggest = ({
   }
 
   return (
-    <div className="dropdown-group-wrapper">
+    <div className="pgn__form-autosuggest__wrapper">
       <Form.Group isInvalid={!!errorMessage} className={className}>
         <Form.Control
           name={name}
           type="text"
           value={state.displayValue}
           aria-invalid={errorMessage}
-          autoComplete={autoComplete ? 'on' : 'off'}
           onChange={handleOnChange}
           onFocus={handleFocus}
           onBlur={handleBlur}
           onClick={handleClick}
           trailingElement={state.icon}
           {...props}
-        >
-          {/* {options || null} */}
-        </Form.Control>
+        />
 
         {helpMessage && !errorMessage && (
           <Form.Control.Feedback type="default" key="help-text">
@@ -250,9 +245,9 @@ const FormAutosuggest = ({
         )}
       </Form.Group>
 
-      <div className="dropdown-container" ref={dropDownItemsRef}>
+      <div className="pgn__form-autosuggest__container" ref={dropDownItemsRef}>
         {isLoading ? (
-          <div className="dropdown-container__loading">
+          <div className="pgn__form-autosuggest__container-loading">
             <Spinner animation="border" variant="dark" screenReaderText="loading" />
           </div>
         ) : state.dropDownItems.length > 0 && state.dropDownItems}
@@ -274,14 +269,12 @@ FormAutosuggest.defaultProps = {
   readOnly: false,
   controlClassName: '',
   className: null,
-  autoComplete: null,
   isLoading: false,
 };
 
 FormAutosuggest.propTypes = {
   isLoading: PropTypes.bool,
   className: PropTypes.string,
-  autoComplete: PropTypes.string,
   options: PropTypes.arrayOf(PropTypes.string),
   floatingLabel: PropTypes.string,
   handleFocus: PropTypes.func,
