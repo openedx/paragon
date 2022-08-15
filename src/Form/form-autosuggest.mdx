@@ -24,24 +24,39 @@ Descriptions content
     const [data, setData] = useState({
         title: '',
     });
-    const options = ['Charlie Brown', 'Charlotte White', 'Chloe Jones', 'Cooper King', 'Chloe Jones', 'Charlotte White', 'Chloe Jones', 'Cooper King', 'Chloe Jones',];
+    const options = ['Green', 'Red', 'Blue', 'Black', 'White', 'Purple', 'Orange', 'Grey'];
 
   return (
+    // <Form.Autosuggest
+    //     type="text"
+    //     name="org"
+    //     readOnly={false}
+    //     value={data.title}
+    //     options={options}
+    //     controlClassName="has-value"
+    //     handleChange={
+    //         (value) => setData(prevState => ({ data: { ...prevState.data, org: value } }))
+    //     }
+    //     floatingLabel="This is floating label"
+    //     // placeholder="This is placeholder"
+    //     hasFieldError="This is has field error"
+    //     errorMessage="This is error message"
+    //     helpMessage="This is help message"
+    // />
     <Form.Autosuggest
-        type="text"
-        name="org"
-        readOnly={false}
-        value={data.title}
+        // disabled
         options={options}
-        controlClassName="has-value"
+        value={data.title}
+        readOnly={false}
         handleChange={
             (value) => setData(prevState => ({ data: { ...prevState.data, org: value } }))
         }
+        placeholder="This is placeholder"
         floatingLabel="This is floating label"
-        // placeholder="This is placeholder"
-        hasFieldError="This is has field error"
-        errorMessage="This is error message"
-        helpMessage="This is help message"
+        // hasFieldError="This is has field error"
+        // helpMessage="This is help message"
+        // errorMessage="This is error message"
+        name="org"
     />
   );
 }

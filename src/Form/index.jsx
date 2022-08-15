@@ -9,7 +9,6 @@ import FormRadio from './FormRadio';
 import FormRadioSet from './FormRadioSet';
 import FormRadioSetContext from './FormRadioSetContext';
 import FormAutosuggest from './FormAutosuggest';
-import FormCustomGroup from './FormCustomGroup';
 import FormCheckbox, { CheckboxControl } from './FormCheckbox';
 import FormSwitch, { SwitchControl } from './FormSwitch';
 import FormCheckboxSet from './FormCheckboxSet';
@@ -21,7 +20,6 @@ Form.Control = FormControl;
 Form.Radio = FormRadio;
 Form.RadioSet = FormRadioSet;
 Form.Autosuggest = FormAutosuggest;
-Form.CustomGroup = FormCustomGroup;
 Form.Checkbox = FormCheckbox;
 Form.CheckboxSet = FormCheckboxSet;
 Form.Switch = FormSwitch;
@@ -40,7 +38,6 @@ export {
   FormCheckbox,
   FormSwitch,
   FormAutosuggest,
-  FormCustomGroup,
   FormCheckboxSet,
   FormCheckboxSetContext,
   FormGroup,
