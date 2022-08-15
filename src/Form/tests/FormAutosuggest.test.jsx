@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { act } from 'react-dom/test-utils';
 import FormAutosuggest from '../FormAutosuggest';
 
 const createDocumentListenersMock = () => {
@@ -17,17 +18,18 @@ const createDocumentListenersMock = () => {
   };
 };
 
+const mockHandleChange = jest.fn();
+
 const props = {
   as: 'input',
   name: 'FormAutosuggest',
   floatingLabel: 'floatingLabel text',
   options: null,
   handleFocus: null,
-  handleChange: null,
+  handleChange: mockHandleChange,
   handleBlur: null,
   value: null,
   errorMessage: null,
-  errorCode: null,
   readOnly: false,
 };
 
@@ -62,11 +64,19 @@ describe('FormAutosuggest', () => {
   });
 
   it('selects option', () => {
-    const newProps = { ...props, options: ['opt1', 'opt2'] };
+    const newProps = { ...props, options: ['option1', 'option2'] };
     const container = mount(<FormAutosuggest {...newProps} />);
     container.find('input').simulate('click');
     container.find('.pgn__form-autosuggest__container').find('button').at(0).simulate('click');
     expect(container.find('input').instance().value).toEqual(newProps.options[0]);
+  });
+
+  it('shows options list depends on field value', () => {
+    const newProps = { ...props, options: ['option1', 'option2'] };
+    const container = mount(<FormAutosuggest {...newProps} />);
+
+    container.find('input').simulate('change', { target: { value: '' } });
+    expect(container.find('input').instance().value).toEqual('');
   });
 
   it('toggles options list', () => {
@@ -90,13 +100,19 @@ describe('FormAutosuggest', () => {
 
   it('closes options list on click outside', () => {
     const fireEvent = createDocumentListenersMock();
-    const newProps = { ...props, options: ['opt1', 'opt2'] };
+    const newProps = { ...props, options: ['option1', 'option2'] };
     const container = mount(<FormAutosuggest {...newProps} />);
     container.find('input').simulate('click');
     expect(container.find('.pgn__form-autosuggest__container').find('button').length).toEqual(2);
-    fireEvent.click(document.body);
+    act(() => { fireEvent.click(document.body); });
     container.update();
     expect(container.find('.dropdown-container').find('button').length).toEqual(0);
+  });
+  it('closes options list on click outside', () => {
+    const newProps = { ...props, options: ['option1', 'option2'] };
+    const container = mount(<FormAutosuggest {...newProps} />);
+    container.find('input').at(0).simulate('click');
+    expect(mockHandleChange).toHaveBeenCalled();
   });
 });
 //

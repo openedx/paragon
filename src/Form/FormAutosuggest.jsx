@@ -26,6 +26,8 @@ const FormAutosuggest = ({
     dropDownItems: [],
   });
 
+  console.log('dropDownItems', state.dropDownItems);
+
   function expandMoreButton() {
     return (
       <IconButton
@@ -74,14 +76,14 @@ const FormAutosuggest = ({
     };
   });
 
-  function setValue(valueItem) {
-    if (value === valueItem) { return; }
+  function setValue(itemValue) {
+    if (value === itemValue) { return; }
 
     if (handleChange) {
-      handleChange(valueItem);
+      handleChange(itemValue);
     }
 
-    const opt = props.options.find((o) => o === valueItem);
+    const opt = props.options.find((o) => o === itemValue);
     if (opt && opt !== state.displayValue) {
       setState(prevState => ({
         ...prevState,
@@ -273,19 +275,33 @@ FormAutosuggest.defaultProps = {
 };
 
 FormAutosuggest.propTypes = {
+  /** Specifies loading state. */
   isLoading: PropTypes.bool,
+  /** Specifies class name to append to the base element. */
   className: PropTypes.string,
+  /** Specifies array list elements. */
   options: PropTypes.arrayOf(PropTypes.string),
+  /** Specifies floating label to display for the input component. */
   floatingLabel: PropTypes.string,
+  /** Specifies onFocus event handler. */
   handleFocus: PropTypes.func,
+  /** Specifies onChange event handler. */
   handleChange: PropTypes.func,
+  /** Specifies onBlur event handler. */
   handleBlur: PropTypes.func,
+  /** Specifies help information for the user. */
   helpMessage: PropTypes.string,
+  /** Specifies the placeholder text for the input. */
   placeholder: PropTypes.string,
+  /** Specifies values for the input. */
   value: PropTypes.string,
+  /** Informs user has errors. */
   errorMessage: PropTypes.string,
+  /** Specifies the name of the base input element. */
   name: PropTypes.string.isRequired,
+  /** Selected list item is read-only. */
   readOnly: PropTypes.bool,
+  /** Specifies class name for the control component. */
   controlClassName: PropTypes.string,
 };
 

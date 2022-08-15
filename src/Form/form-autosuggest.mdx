@@ -2,14 +2,12 @@
 title: 'Form.Autosuggest'
 type: 'component'
 components:
-- FormCheckbox
-- CheckboxControl
-- FormCheckboxSet
+- FormAutosuggest
 categories:
 - Forms
 status: 'New'
 designStatus: 'Done'
-devStatus: 'Done'
+devStatus: 'In progress'
 notes: |
 
 ---
@@ -20,25 +18,65 @@ Form auto-suggest enables users to manually select or type to find matching opti
 
 ```jsx live
 () => {
-    const [data, setData] = useState({
-        title: '',
-    });
-    const options = ['Green', 'Red', 'Blue', 'Black', 'White', 'Purple', 'Orange', 'Grey'];
+    const [data, setData] = useState({ title: '' });
+    const colors = ['Green', 'Red', 'Blue', 'Black', 'White', 'Purple', 'Orange', 'Grey'];
 
   return (
     <Form.Autosuggest
-        // disabled
-        options={options}
+        name="color library"
+        floatingLabel="This is floating label"
+        helpMessage="This is help message"
+        options={colors}
         value={data.title}
-        readOnly={false}
         handleChange={
             (value) => setData(prevState => ({ data: { ...prevState.data, org: value } }))
         }
+    />
+  );
+}
+```
+
+## With error message
+
+```jsx live
+() => {
+    const [data, setData] = useState({ title: '' });
+    const colors = ['Green', 'Red', 'Blue', 'Black', 'White', 'Purple', 'Orange', 'Grey'];
+
+  return (
+    <Form.Autosuggest
+        name="color library"
         placeholder="This is placeholder"
         floatingLabel="This is floating label"
-        // helpMessage="This is help message"
         errorMessage="This is error message"
-        name="org"
+        options={colors}
+        value={data.title}
+        handleChange={
+            (value) => setData(prevState => ({ data: { ...prevState.data, org: value } }))
+        }
+    />
+  );
+}
+```
+
+## Loading state
+
+```jsx live
+() => {
+    const [data, setData] = useState({ title: '' });
+    const colors = ['Green', 'Red', 'Blue', 'Black', 'White', 'Purple', 'Orange', 'Grey'];
+
+  return (
+    <Form.Autosuggest
+        isLoading
+        name="color library"
+        placeholder="This is placeholder"
+        floatingLabel="This is floating label"
+        options={colors}
+        value={data.title}
+        handleChange={
+            (value) => setData(prevState => ({ data: { ...prevState.data, org: value } }))
+        }
     />
   );
 }
