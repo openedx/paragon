@@ -535,33 +535,7 @@ select.form-control {
   }
 
   .form-control {
-    font-size: $font-size-sm;
-    line-height: $line-height-base;
     min-height: 2.75rem;
-
-    &.is-invalid {
-      border: $form-autosuggest-border-width solid $danger-500;
-    }
-
-    &::placeholder {
-      font-size: $font-size-sm;
-      line-height: $line-height-base;
-    }
-
-    &:focus ~ .pgn__form-control-floating-label .pgn__form-control-floating-label-text {
-      color: $black;
-    }
-  }
-
-  .pgn__form-text-invalid {
-    font-size: $font-size-xs;
-    line-height: $line-height-base;
-  }
-
-  .pgn__form-control-floating-label .pgn__form-control-floating-label-content {
-    font-size: $font-size-sm;
-    line-height: 1.5rem;
-    color: $gray-500;
   }
 
   .pgn__icon.btn-icon__icon {
@@ -569,7 +543,7 @@ select.form-control {
     width: $form-autosuggest-icon-width;
   }
 
-  .pgn__form-autosuggest__container {
+  .pgn__form-autosuggest__dropdown {
     @include pgn-box-shadow(1, "centered");
 
     @media (min-width: map-get($grid-breakpoints, "sm")) {
@@ -578,9 +552,6 @@ select.form-control {
 
     border-radius: $border-radius-sm;
     max-height: 15rem;
-    font-size: 1rem;
-    font-weight: $font-weight-normal;
-    line-height: 1.25rem;
     overflow-y: scroll;
     position: absolute;
     background-color: $white;
@@ -589,17 +560,14 @@ select.form-control {
     top: 3.125rem;
 
     .dropdown-item {
-      font-size: $font-size-base;
-      line-height: $line-height-lg;
       padding: .625rem 1rem;
-      color: $gray-700;
 
       &:active {
         color: $white;
       }
     }
 
-    .pgn__form-autosuggest__container-loading {
+    .pgn__form-autosuggest__dropdown-loading {
       padding: 6.25rem 0;
       text-align: center;
 

@@ -21,18 +21,18 @@ Form auto-suggest enables users to manually select or type to find matching opti
     const [data, setData] = useState({ title: '' });
     const colors = ['Green', 'Red', 'Blue', 'Black', 'White', 'Purple', 'Orange', 'Grey'];
 
-  return (
-    <Form.Autosuggest
-        name="color library"
-        floatingLabel="This is floating label"
-        helpMessage="This is help message"
-        options={colors}
-        value={data.title}
-        handleChange={
-            (value) => setData(prevState => ({ data: { ...prevState.data, org: value } }))
-        }
-    />
-  );
+    return (
+        <Form.Autosuggest
+            name="color library"
+            floatingLabel="This is floating label"
+            helpMessage="This is help message"
+            options={colors}
+            value={data.title}
+            handleChange={
+                (value) => setData(prevState => ({ data: { ...prevState.data, org: value } }))
+            }
+        />
+    );
 }
 ```
 
@@ -43,19 +43,19 @@ Form auto-suggest enables users to manually select or type to find matching opti
     const [data, setData] = useState({ title: '' });
     const colors = ['Green', 'Red', 'Blue', 'Black', 'White', 'Purple', 'Orange', 'Grey'];
 
-  return (
-    <Form.Autosuggest
-        name="color library"
-        placeholder="This is placeholder"
-        floatingLabel="This is floating label"
-        errorMessage="This is error message"
-        options={colors}
-        value={data.title}
-        handleChange={
-            (value) => setData(prevState => ({ data: { ...prevState.data, org: value } }))
-        }
-    />
-  );
+    return (
+        <Form.Autosuggest
+            name="color library"
+            placeholder="This is placeholder"
+            floatingLabel="This is floating label"
+            errorMessage="This is error message"
+            options={colors}
+            value={data.title}
+            handleChange={
+                (value) => setData(prevState => ({ data: { ...prevState.data, org: value } }))
+            }
+        />
+    );
 }
 ```
 
@@ -63,21 +63,17 @@ Form auto-suggest enables users to manually select or type to find matching opti
 
 ```jsx live
 () => {
-    const [data, setData] = useState({ title: '' });
-    const colors = ['Green', 'Red', 'Blue', 'Black', 'White', 'Purple', 'Orange', 'Grey'];
+    const colors = ['Green', 'Red'];
 
-  return (
-    <Form.Autosuggest
-        isLoading
-        name="color library"
-        placeholder="This is placeholder"
-        floatingLabel="This is floating label"
-        options={colors}
-        value={data.title}
-        handleChange={
-            (value) => setData(prevState => ({ data: { ...prevState.data, org: value } }))
-        }
-    />
-  );
+    return (
+        <Form.Autosuggest
+            style={{ marginBottom: '14rem' }}
+            isLoading
+            name="color library"
+            placeholder="This is placeholder"
+            floatingLabel="This is floating label"
+            options={colors}
+        />
+    );
 }
 ```
