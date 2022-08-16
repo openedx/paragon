@@ -1,3 +1,10 @@
+## [20.9.2](https://github.com/openedx/paragon/compare/v20.9.1...v20.9.2) (2022-08-16)
+
+
+### Bug Fixes
+
+* bootstrap update with additional variable ([#1562](https://github.com/openedx/paragon/issues/1562)) ([ae1f06f](https://github.com/openedx/paragon/commit/ae1f06f29992d955ca1772a6e8937841b4904baf))
+
 ## [20.9.1](https://github.com/openedx/paragon/compare/v20.9.0...v20.9.1) (2022-08-12)
 
 
