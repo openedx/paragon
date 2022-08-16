@@ -18,121 +18,125 @@ const FormAutosuggest = ({
   ...props
 }) => {
   const dropDownItemsRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
   const [state, setState] = useState({
     displayValue: '',
-    // eslint-disable-next-line no-use-before-define
-    icon: expandMoreButton(),
     errorMessage: '',
     dropDownItems: [],
   });
 
-  console.log('dropDownItems', state.dropDownItems);
+  const handleExpandLess = (e) => {
+    if (isOpen) {
+      setState(prevState => ({
+        ...prevState,
+        dropDownItems: '',
+      }));
+    } else {
+      // eslint-disable-next-line no-use-before-define
+      const dropDownItems = getItems(e.target.value);
 
-  function expandMoreButton() {
-    return (
-      <IconButton
-        className="expand-more"
-        src={KeyboardArrowDown}
-        iconAs={Icon}
-        size="sm"
-        variant="secondary"
-        alt="expand-more"
-        /* eslint-disable-next-line no-use-before-define */
-        onClick={(e) => { handleExpandMore(e); }}
-      />
-    );
-  }
+      setState(prevState => ({
+        ...prevState,
+        dropDownItems,
+        errorMessage: '',
+      }));
+    }
+  };
 
-  function expandLessButton() {
-    return (
-      <IconButton
-        className="expand-less"
-        src={KeyboardArrowUp}
-        iconAs={Icon}
-        size="sm"
-        variant="secondary"
-        alt="expand-less"
-        /* eslint-disable-next-line no-use-before-define */
-        onClick={(e) => { handleExpandLess(e); }}
-      />
-    );
-  }
+  const iconToggle = () => (
+    <IconButton
+      className="pgn__form-autosuggest__icon-button"
+      src={isOpen ? KeyboardArrowUp : KeyboardArrowDown}
+      iconAs={Icon}
+      size="sm"
+      variant="secondary"
+      alt="icon toggle"
+      onClick={(e) => {
+        setIsOpen(!isOpen);
+        handleExpandLess(e);
+      }}
+    />
+  );
 
   const handleClickOutside = (e) => {
     if (dropDownItemsRef.current && !dropDownItemsRef.current.contains(e.target) && state.dropDownItems.length > 0) {
       const msg = state.displayValue === '' ? errorMessage : '';
-      setState(() => ({
-        icon: expandMoreButton(),
+
+      setState(prevState => ({
+        ...prevState,
         dropDownItems: '',
         errorMessage: msg,
       }));
+
+      setIsOpen(false);
     }
   };
 
   useEffect(() => {
     document.addEventListener('click', handleClickOutside, true);
+
     return () => {
       document.removeEventListener('click', handleClickOutside, true);
     };
   });
 
-  function setValue(itemValue) {
+  const setValue = (itemValue) => {
     if (value === itemValue) { return; }
 
-    if (handleChange) {
-      handleChange(itemValue);
-    }
+    if (handleChange) { handleChange(itemValue); }
 
     const opt = props.options.find((o) => o === itemValue);
+
     if (opt && opt !== state.displayValue) {
       setState(prevState => ({
         ...prevState,
         displayValue: opt,
       }));
     }
-  }
+  };
 
-  function handleItemClick(e) {
+  const handleItemClick = (e) => {
     setValue(e.target.value);
+
     setState(prevState => ({
       ...prevState,
       dropDownItems: '',
-      // eslint-disable-next-line no-use-before-define
-      icon: expandMoreButton(),
     }));
-  }
 
-  // eslint-disable-next-line react/sort-comp
+    setIsOpen(false);
+  };
+
   function getItems(strToFind = '') {
     let { options } = props;
+
     if (strToFind.length > 0) {
       options = options.filter((option) => (option.toLowerCase().includes(strToFind.toLowerCase())));
     }
 
     return options.map((opt) => {
-      // eslint-disable-next-line no-shadow
-      let value = opt;
-      if (value.length > 30) {
-        value = value.substring(0, 30).concat('...');
+      let optValue = opt;
+      if (optValue.length > 30) {
+        optValue = optValue.substring(0, 30).concat('...');
       }
 
       return (
         <button
           type="button"
           className="dropdown-item data-hj-suppress"
-          value={value}
-          key={value}
+          value={optValue}
+          key={optValue}
           onClick={(e) => { handleItemClick(e); }}
         >
-          {value}
+          {optValue}
         </button>
       );
     });
   }
 
-  function setDisplayValue(valueItem) {
-    const normalized = valueItem.toLowerCase();
+  const setDisplayValue = (itemValue) => {
+    const normalized = itemValue.toLowerCase();
     const opt = props.options.find((o) => o.toLowerCase() === normalized);
+
     if (opt) {
       setValue(opt);
       setState(prevState => ({
@@ -143,29 +147,32 @@ const FormAutosuggest = ({
       setValue(null);
       setState(prevState => ({
         ...prevState,
-        displayValue: valueItem,
+        displayValue: itemValue,
       }));
     }
-  }
+  };
 
   const handleClick = (e) => {
     const dropDownItems = getItems(e.target.value);
+
     if (dropDownItems.length > 1) {
       setState(prevState => ({
         ...prevState,
         dropDownItems,
-        icon: expandLessButton(),
         errorMessage: '',
       }));
+
+      setIsOpen(true);
     }
 
     if (state.dropDownItems.length > 0) {
       setState(prevState => ({
         ...prevState,
         dropDownItems: '',
-        icon: expandMoreButton(),
         errorMessage: '',
       }));
+
+      setIsOpen(false);
     }
   };
 
@@ -177,46 +184,26 @@ const FormAutosuggest = ({
       setState(prevState => ({
         ...prevState,
         dropDownItems: filteredItems,
-        icon: expandLessButton(),
         errorMessage: '',
       }));
+
+      setIsOpen(true);
     } else {
       setState(prevState => ({
         ...prevState,
         dropDownItems: '',
-        icon: expandMoreButton(),
         errorMessage,
       }));
+
+      setIsOpen(false);
     }
 
     setDisplayValue(e.target.value);
   };
 
-  function handleExpandLess() {
-    setState(prevState => ({
-      ...prevState,
-      dropDownItems: '',
-      icon: expandMoreButton(),
-    }));
-  }
+  if (handleFocus) { handleFocus(); }
 
-  function handleExpandMore(e) {
-    const dropDownItems = getItems(e.target.value);
-    setState(prevState => ({
-      ...prevState,
-      dropDownItems,
-      icon: expandLessButton(),
-      errorMessage: '',
-    }));
-  }
-
-  if (handleFocus) {
-    handleFocus();
-  }
-
-  if (handleBlur) {
-    handleBlur();
-  }
+  if (handleBlur) { handleBlur(); }
 
   return (
     <div className="pgn__form-autosuggest__wrapper">
@@ -230,7 +217,7 @@ const FormAutosuggest = ({
           onFocus={handleFocus}
           onBlur={handleBlur}
           onClick={handleClick}
-          trailingElement={state.icon}
+          trailingElement={iconToggle()}
           {...props}
         />
 
@@ -247,9 +234,9 @@ const FormAutosuggest = ({
         )}
       </Form.Group>
 
-      <div className="pgn__form-autosuggest__container" ref={dropDownItemsRef}>
+      <div className="pgn__form-autosuggest__dropdown" ref={dropDownItemsRef}>
         {isLoading ? (
-          <div className="pgn__form-autosuggest__container-loading">
+          <div className="pgn__form-autosuggest__dropdown-loading">
             <Spinner animation="border" variant="dark" screenReaderText="loading" />
           </div>
         ) : state.dropDownItems.length > 0 && state.dropDownItems}
