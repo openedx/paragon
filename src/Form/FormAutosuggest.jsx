@@ -13,8 +13,6 @@ const FormAutosuggest = ({
   helpMessage,
   controlClassName,
   className,
-  handleBlur,
-  handleFocus,
   ...props
 }) => {
   const dropDownItemsRef = useRef(null);
@@ -23,61 +21,6 @@ const FormAutosuggest = ({
     displayValue: '',
     errorMessage: '',
     dropDownItems: [],
-  });
-
-  const handleExpandLess = (e) => {
-    if (isOpen) {
-      setState(prevState => ({
-        ...prevState,
-        dropDownItems: '',
-      }));
-    } else {
-      // eslint-disable-next-line no-use-before-define
-      const dropDownItems = getItems(e.target.value);
-
-      setState(prevState => ({
-        ...prevState,
-        dropDownItems,
-        errorMessage: '',
-      }));
-    }
-  };
-
-  const iconToggle = () => (
-    <IconButton
-      className="pgn__form-autosuggest__icon-button"
-      src={isOpen ? KeyboardArrowUp : KeyboardArrowDown}
-      iconAs={Icon}
-      size="sm"
-      variant="secondary"
-      alt="icon toggle"
-      onClick={(e) => {
-        setIsOpen(!isOpen);
-        handleExpandLess(e);
-      }}
-    />
-  );
-
-  const handleClickOutside = (e) => {
-    if (dropDownItemsRef.current && !dropDownItemsRef.current.contains(e.target) && state.dropDownItems.length > 0) {
-      const msg = state.displayValue === '' ? errorMessage : '';
-
-      setState(prevState => ({
-        ...prevState,
-        dropDownItems: '',
-        errorMessage: msg,
-      }));
-
-      setIsOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('click', handleClickOutside, true);
-
-    return () => {
-      document.removeEventListener('click', handleClickOutside, true);
-    };
   });
 
   const setValue = (itemValue) => {
@@ -132,6 +75,60 @@ const FormAutosuggest = ({
       );
     });
   }
+
+  const handleExpandLess = (e) => {
+    if (isOpen) {
+      setState(prevState => ({
+        ...prevState,
+        dropDownItems: '',
+      }));
+    } else {
+      const dropDownItems = getItems(e.target.value);
+
+      setState(prevState => ({
+        ...prevState,
+        dropDownItems,
+        errorMessage: '',
+      }));
+    }
+  };
+
+  const iconToggle = () => (
+    <IconButton
+      className="pgn__form-autosuggest__icon-button"
+      src={isOpen ? KeyboardArrowUp : KeyboardArrowDown}
+      iconAs={Icon}
+      size="sm"
+      variant="secondary"
+      alt="icon toggle"
+      onClick={(e) => {
+        setIsOpen(!isOpen);
+        handleExpandLess(e);
+      }}
+    />
+  );
+
+  const handleClickOutside = (e) => {
+    if (dropDownItemsRef.current && !dropDownItemsRef.current.contains(e.target) && state.dropDownItems.length > 0) {
+      const msg = state.displayValue === '' ? errorMessage : '';
+
+      setState(prevState => ({
+        ...prevState,
+        dropDownItems: '',
+        errorMessage: msg,
+      }));
+
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside, true);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true);
+    };
+  });
 
   const setDisplayValue = (itemValue) => {
     const normalized = itemValue.toLowerCase();
@@ -201,10 +198,6 @@ const FormAutosuggest = ({
     setDisplayValue(e.target.value);
   };
 
-  if (handleFocus) { handleFocus(); }
-
-  if (handleBlur) { handleBlur(); }
-
   return (
     <div className="pgn__form-autosuggest__wrapper">
       <Form.Group isInvalid={!!errorMessage} className={className}>
@@ -214,8 +207,6 @@ const FormAutosuggest = ({
           value={state.displayValue}
           aria-invalid={errorMessage}
           onChange={handleOnChange}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
           onClick={handleClick}
           trailingElement={iconToggle()}
           {...props}
@@ -248,9 +239,7 @@ const FormAutosuggest = ({
 FormAutosuggest.defaultProps = {
   options: null,
   floatingLabel: null,
-  handleFocus: null,
   handleChange: null,
-  handleBlur: null,
   helpMessage: '',
   placeholder: '',
   value: null,
@@ -270,12 +259,8 @@ FormAutosuggest.propTypes = {
   options: PropTypes.arrayOf(PropTypes.string),
   /** Specifies floating label to display for the input component. */
   floatingLabel: PropTypes.string,
-  /** Specifies onFocus event handler. */
-  handleFocus: PropTypes.func,
   /** Specifies onChange event handler. */
   handleChange: PropTypes.func,
-  /** Specifies onBlur event handler. */
-  handleBlur: PropTypes.func,
   /** Specifies help information for the user. */
   helpMessage: PropTypes.string,
   /** Specifies the placeholder text for the input. */
