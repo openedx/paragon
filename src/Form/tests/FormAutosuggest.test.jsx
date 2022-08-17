@@ -26,9 +26,7 @@ const props = {
   name: 'FormAutosuggest',
   floatingLabel: 'floatingLabel text',
   options: null,
-  handleFocus: null,
   handleChange: null,
-  handleBlur: null,
   value: null,
   errorMessage: null,
   readOnly: false,
@@ -37,24 +35,6 @@ const props = {
 describe('FormAutosuggest', () => {
   it('renders component without error', () => {
     mount(<FormAutosuggest {...props} />);
-  });
-
-  it('handles element focus', () => {
-    const mockHandleFocus = jest.fn();
-    const newProps = { ...props, handleFocus: mockHandleFocus };
-    const container = mount(<FormAutosuggest {...newProps} />);
-
-    container.find('input').simulate('focus');
-    expect(mockHandleFocus).toHaveBeenCalled();
-  });
-
-  it('handles element blur', () => {
-    const mockHandleBlur = jest.fn();
-    const newProps = { ...props, handleBlur: mockHandleBlur };
-    const container = mount(<FormAutosuggest {...newProps} />);
-
-    container.find('input').simulate('blur');
-    expect(mockHandleBlur).toHaveBeenCalled();
   });
 
   it('renders component with options', () => {
