@@ -1,7 +1,10 @@
 const path = require('path');
 
 module.exports = {
-  extends: '@edx/eslint-config',
+  extends: [
+    '@edx/eslint-config',
+    'plugin:import/typescript',
+  ],
   parser: '@babel/eslint-parser',
   parserOptions: {
     requireConfigFile: true,
@@ -10,6 +13,16 @@ module.exports = {
     },
   },
   rules: {
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
     'import/no-extraneous-dependencies': [
       'error',
       {
@@ -48,4 +61,13 @@ module.exports = {
   globals: {
     newrelic: false,
   },
+  overrides: [
+    {
+      files: ['**/*.ts', '**/*.tsx'],
+      extends: 'airbnb-typescript',
+      parserOptions: {
+        project: './tsconfig.json',
+      },
+    },
+  ],
 };

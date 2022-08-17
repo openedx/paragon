@@ -11,8 +11,11 @@ const CardStatus = React.forwardRef(({
   title,
 }, ref) => (
   <div
-    className={classNames('pgn__card-status',
-      `pgn__card-status__${variant}`, className)}
+    className={classNames(
+      'pgn__card-status',
+      `pgn__card-status__${variant}`,
+      className,
+    )}
     ref={ref}
   >
     {icon && <Icon src={icon} />}
