@@ -160,9 +160,9 @@
 
       .DocSearch-Hit-source,
       .DocSearch-Title {
-        font-size: .6875rem;
-        line-height: $line-height-sm;
-        font-weight: $font-weight-normal;
+        font-size: $font-size-base;
+        line-height: $line-height-base;
+        font-weight: $font-weight-bold;
         background: $white;
         color: $dark;
         padding: 0 0 .5rem;
@@ -187,11 +187,7 @@
       }
 
       .DocSearch-Hit:last-child {
-        margin-bottom: 10.75rem;
-
-        @media (max-width: map-get($grid-breakpoints, "md")) {
-          margin-bottom: 0;
-        }
+        margin-bottom: 1rem;
       }
 
       .DocSearch-Hit[aria-selected="true"] a {
