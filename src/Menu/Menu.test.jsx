@@ -20,7 +20,7 @@ describe('Menu Item renders correctly', () => {
         <MenuItem iconBefore={Add} stoven>A Menu Item With an Icon Before</MenuItem>
         <MenuItem iconAfter={Check}>A Menu Item With an Icon After </MenuItem>
         <MenuItem disabled>A Disabled Menu Item</MenuItem>
-        <MenuItem as={Hyperlink} href="https://en.wikipedia.org/wiki/Hyperlink">A Link Menu Item</MenuItem>
+        <MenuItem as={Hyperlink} destination="https://en.wikipedia.org/wiki/Hyperlink">A Link Menu Item</MenuItem>
         <MenuItem as={Button} variant="primary" size="inline">A Button Menu Item</MenuItem>
         <MenuItem as={Form.Checkbox}>A Checkbox Menu Item</MenuItem>
       </Menu>

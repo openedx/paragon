@@ -1,0 +1,61 @@
+{
+  "extends": [
+    "@edx/eslint-config",
+    "plugin:import/typescript"
+  ],
+  "parser": "babel-eslint",
+  "rules": {
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.stories.jsx",
+          "src/setupTest.js",
+          "**/*.test.jsx",
+          "**/*.test.js",
+          "config/*.js",
+          "*.config.js",
+          "*.config.*.js",
+          "**/*.config.js",
+          "component-generator/**",
+          "generate-changelog.js"
+        ]
+      }
+    ],
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/issues/340#issuecomment-338424908
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "specialLink": [ "to" ]
+    }],
+    "jsx-a11y/label-has-for": [ 2, {
+      "components": [ "label" ],
+      "required": "id",
+      "allowChildren": false
+    }]
+  },
+  "env": {
+    "jest": true
+  },
+  "globals": {
+    "newrelic": false
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "extends": "airbnb-typescript",
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      }
+    }
+  ]
+}

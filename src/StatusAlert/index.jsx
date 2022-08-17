@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import isRequiredIf from 'react-proptype-conditional-require';
 
 import { Button } from '..';
-import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
+import withDeprecatedProps, { DeprTypes } from '../withDeprecatedProps';
 
 class StatusAlert extends React.Component {
   constructor(props) {
@@ -134,7 +134,7 @@ StatusAlert.defaultProps = {
 
 export default withDeprecatedProps(StatusAlert, 'StatusAlert', {
   className: {
-    deprType: DEPR_TYPES.FORMAT,
+    deprType: DeprTypes.FORMAT,
     expect: value => typeof value === 'string',
     transform: value => (Array.isArray(value) ? value.join(' ') : value),
     message: 'It should be a string.',

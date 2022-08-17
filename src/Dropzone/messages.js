@@ -31,6 +31,26 @@ const messages = defineMessages({
     defaultMessage: 'An unexpected problem occured during file validation. Please try again.',
     description: 'A message shown in case file validation in Dropzone component for unknown reason.',
   },
+  fileSizeBetween: {
+    id: 'pgn.Dropzone.DefaultContent.fileSizeBetween',
+    defaultMessage: 'Between {sizeMin} and {sizeMax}',
+    description: "A message shown when uploaded file's size must be in given range.",
+  },
+  fileSizeMax: {
+    id: 'pgn.Dropzone.DefaultContent.fileSizeMax',
+    defaultMessage: 'Max {sizeMax}',
+    description: "A message shown when uploaded file's size must be more than some value.",
+  },
+  fileSizeMin: {
+    id: 'pgn.Dropzone.DefaultContent.fileSizeMin',
+    defaultMessage: 'Min {sizeMin}',
+    description: "A message shown when uploaded file's size must be more than some value.",
+  },
+  fileTypeRestriction: {
+    id: 'pgn.Dropzone.DefaultContent.fileTypeRestriction',
+    defaultMessage: 'Upload {count, plural, one {{firstPart} files} other {{firstPart} or {secondPart} files}}',
+    description: 'A message shown when uploaded file must be of certain type(s).',
+  },
 });
 
 export default messages;

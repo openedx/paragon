@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { FocusOn } from 'react-focus-on';
-import tabbable from 'tabbable';
+import { tabbable } from 'tabbable';
 
 import { Close } from '../../icons';
 import { Button } from '..';

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import newId from '../utils/newId';
-import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
+import withDeprecatedProps, { DeprTypes } from '../withDeprecatedProps';
 
 /**
  * An svg with an "img" role must satisfy the following a11y requirements
@@ -103,7 +103,7 @@ Icon.defaultProps = {
 
 export default withDeprecatedProps(Icon, 'Icon', {
   className: {
-    deprType: DEPR_TYPES.FORMAT,
+    deprType: DeprTypes.FORMAT,
     expect: value => typeof value === 'string',
     transform: value => (Array.isArray(value) ? value.join(' ') : value),
     message: 'It should be a string.',

@@ -94,11 +94,11 @@ describe('Checkpoint', () => {
     });
 
     it('only renders end button (i.e. neither advance nor dismiss buttons)', () => {
-      expect(screen.getByRole('button', { name: 'End' })).toBeInTheDocument();
+      expect(screen.getByText('End', { selector: 'button' })).toBeInTheDocument();
     });
 
     it('end button onClick calls handleEnd', () => {
-      const endButton = screen.getByRole('button', { name: 'End' });
+      const endButton = screen.getByText('End', { selector: 'button' });
       fireEvent.click(endButton);
       expect(handleEnd).toHaveBeenCalledTimes(1);
     });
@@ -127,7 +127,7 @@ describe('Checkpoint', () => {
     });
 
     it('only renders end button (i.e. neither advance nor dismiss buttons)', () => {
-      expect(screen.getByRole('button', { name: 'End' })).toBeInTheDocument();
+      expect(screen.getByText('End', { selector: 'button' })).toBeInTheDocument();
     });
 
     it('does not render breadcrumbs', () => {
@@ -157,8 +157,8 @@ describe('Checkpoint', () => {
           />
         </>,
       );
-      expect(screen.getByRole('button', { name: 'Dismiss' })).toBeInTheDocument();
-      expect(screen.getByRole('button', { name: 'End' })).toBeInTheDocument();
+      expect(screen.getByText('Dismiss', { selector: 'button' })).toBeInTheDocument();
+      expect(screen.getByText('End', { selector: 'button' })).toBeInTheDocument();
     });
   });
 });

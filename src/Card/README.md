@@ -10,6 +10,7 @@ components:
 - CardFooter
 - CardBody
 - CardImageCap
+- CardStatus
 categories:
 - Content
 status: 'Stable'
@@ -34,6 +35,33 @@ This component uses a `Card` from react-bootstrap as a base component and extend
   return (
     <Card style={{ width: isExtraSmall ? "100%" : "18rem" }}>
       <Card.ImageCap
+        src="https://source.unsplash.com/360x200/?nature,flower"
+        srcAlt="Card image"
+      />
+      <Card.Header
+        title="Card Title"
+      />
+      <Card.Section>
+        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+      </Card.Section>
+      <Card.Footer>
+        <Button>Action 1</Button>
+      </Card.Footer>
+    </Card>
+)}
+```
+
+## With muted styling
+
+Use `muted` prop to show `Card` in inactive state.
+
+```jsx live
+() => {
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+
+  return (
+    <Card style={{ width: isExtraSmall ? "100%" : "18rem" }} muted>
+      <Card.ImageCap 
         src="https://source.unsplash.com/360x200/?nature,flower"
         srcAlt="Card image"
       />
@@ -75,6 +103,34 @@ You use `isClickable` prop to add additional `hover` and `focus` styling to the 
       </Card.Footer>
     </Card>
 )};
+```
+
+## As link
+You can also use `Card` as a link by wrapping it into appropriate component, note that `Card` will override default 
+link styling to make its content appear as a regular text.
+
+```jsx live
+() => {
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+
+  return (
+    <Hyperlink destination="https://www.edx.org">
+      <Card style={{ width: isExtraSmall ? "100%" : "18rem" }} isClickable>
+        <Card.ImageCap
+          src="https://source.unsplash.com/360x200/?nature,flower"
+          srcAlt="Card image"
+        />
+        <Card.Header title="Card Title"/>
+        <Card.Section>
+          This is a card section. It can contain anything but usually text, a list, or list of links. 
+          Multiple sections have a card divider between them.
+        </Card.Section>
+        <Card.Footer>
+          <Button>Action 1</Button>
+        </Card.Footer>
+      </Card>
+    </Hyperlink>
+)}
 ```
 
 ## Header
@@ -392,6 +448,77 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
       </Card>
     </>
 )}
+```
+
+## Card status
+
+Note that in the example below, the content of `Card` is wrapped inside `Card.Body`. The `d-flex` class is added for the `horizontal` orientation to achieve horizontal variant. The `flex-column` class is added for the main `Card` component.
+
+```jsx live
+() => {
+  const [orientation, setOrientation] = useState('vertical');
+  const [variant, setVariant] = useState('warning');
+  
+  const handleChangeOrientation = (e) => setOrientation(e.target.value);
+  const handleChangeVariant = (e) => setVariant(e.target.value);
+  const isVertical = orientation === 'vertical';
+  
+  return (
+    <>
+      {/* Example props form start */}
+      <Form.Group>
+        <Form.Label>Choose orientation</Form.Label>
+        <Form.RadioSet
+          name="orientation"
+          onChange={handleChangeOrientation}
+          value={orientation}
+        >
+          <Form.Radio value="vertical">Vertical</Form.Radio>
+          <Form.Radio value="horizontal">Horizontal</Form.Radio>
+        </Form.RadioSet>
+      </Form.Group>
+      <Form.Group>
+        <Form.Control
+          as="select"
+          name="variant"
+          onChange={handleChangeVariant}
+          value={variant}
+          floatingLabel="Variant"
+        >
+          <option value="">Select a variant</option>
+          <option value="primary">Primary</option>
+          <option value="warning">Warning</option>
+          <option value="danger">Danger</option>
+          <option value="success">Success</option>
+        </Form.Control>
+      </Form.Group>
+      {/* Example props form end */}
+      
+      <Card orientation={orientation} className={`flex-column ${isVertical ? 'w-50' : ''}`}>
+        <Card.Header
+          title="Card title"
+        />
+        <Card.Body className={!isVertical ? 'd-flex' : ''}>
+          <Card.Section
+            title="Section title"
+          >
+            This is a wider card with supporting text below as a natural lead-in to
+            additional content. This card has even longer content than the first to
+            show that equal height action.
+          </Card.Section>
+          <Card.Footer className={!isVertical ? 'justify-content-end' : ''}>
+            <Button>Save</Button>
+            <Button variant="danger">Remove</Button>
+          </Card.Footer>
+        </Card.Body>
+        
+        <Card.Status icon={Warning} variant={variant}>
+          Warning lorem ipsum dolor sit amet
+        </Card.Status>
+      </Card>
+    </>
+  );
+};
 ```
 
 ## Card Content Block Empty

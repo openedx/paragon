@@ -1,3 +1,69 @@
+## [20.9.2](https://github.com/openedx/paragon/compare/v20.9.1...v20.9.2) (2022-08-16)
+
+
+### Bug Fixes
+
+* bootstrap update with additional variable ([#1562](https://github.com/openedx/paragon/issues/1562)) ([ae1f06f](https://github.com/openedx/paragon/commit/ae1f06f29992d955ca1772a6e8937841b4904baf))
+
+## [20.9.1](https://github.com/openedx/paragon/compare/v20.9.0...v20.9.1) (2022-08-12)
+
+
+### Bug Fixes
+
+* added support for making `Card` a hyperlink ([#1478](https://github.com/openedx/paragon/issues/1478)) ([f0a0768](https://github.com/openedx/paragon/commit/f0a07687e6608fadf6b7eab0af505c9d0bcc0d7c))
+
+# [20.9.0](https://github.com/openedx/paragon/compare/v20.8.0...v20.9.0) (2022-08-12)
+
+
+### Bug Fixes
+
+* begin using shared stylelint-config-edx ([#1517](https://github.com/openedx/paragon/issues/1517)) ([7a35814](https://github.com/openedx/paragon/commit/7a35814ad4474e0562e470a54f26fc70b34314e4))
+
+
+### Features
+
+* [BD-46] add Card.Status ([#1439](https://github.com/openedx/paragon/issues/1439)) ([aa5a4a4](https://github.com/openedx/paragon/commit/aa5a4a4f3da931804a44e3da7a51b6b233f093d8))
+
+# [20.8.0](https://github.com/openedx/paragon/compare/v20.7.0...v20.8.0) (2022-08-05)
+
+
+### Bug Fixes
+
+* fixed Card import ([#1522](https://github.com/openedx/paragon/issues/1522)) ([ebcf090](https://github.com/openedx/paragon/commit/ebcf0905e04404df8a389e7ba393fcd484664bfe))
+
+
+### Features
+
+* add typescript support ([#1267](https://github.com/openedx/paragon/issues/1267)) ([a31591e](https://github.com/openedx/paragon/commit/a31591e51d39ce157ca5a5701057419b8da63465))
+
+# [20.7.0](https://github.com/openedx/paragon/compare/v20.6.1...v20.7.0) (2022-08-05)
+
+
+### Features
+
+* add unmountOnExit ([#1502](https://github.com/openedx/paragon/issues/1502)) ([fbcd1ba](https://github.com/openedx/paragon/commit/fbcd1ba6d2c6fd4be0d6d62362bf2aa4905560fa))
+
+## [20.6.1](https://github.com/openedx/paragon/compare/v20.6.0...v20.6.1) (2022-08-01)
+
+
+### Bug Fixes
+
+* filter break style is not align correctly ([f719510](https://github.com/openedx/paragon/commit/f7195106cb601058af16952eb6e3b7bf36c05264))
+
+# [20.6.0](https://github.com/openedx/paragon/compare/v20.5.0...v20.6.0) (2022-07-29)
+
+
+### Bug Fixes
+
+* incorrect display of responsive tables in the DataTable component ([#1332](https://github.com/openedx/paragon/issues/1332)) ([d112c31](https://github.com/openedx/paragon/commit/d112c311f0f93ce2fe1dfd72adb5da7669821e05))
+* update dependencies and fix vulnerabilities ([#1431](https://github.com/openedx/paragon/issues/1431)) ([c442bb0](https://github.com/openedx/paragon/commit/c442bb01b28f3dd0f63f0648dcdbeb5dcb87d0d2))
+
+
+### Features
+
+* add message about file restrictions to default state of `Dropzone` ([#1470](https://github.com/openedx/paragon/issues/1470)) ([a4027b8](https://github.com/openedx/paragon/commit/a4027b880b59aa7e9a6c601e64d994680f2d9188))
+* muted prop for card to give light gray background ([#1455](https://github.com/openedx/paragon/issues/1455)) ([5f1645d](https://github.com/openedx/paragon/commit/5f1645d6c2d9d7260dcbc5788e1c09549f529e3a))
+
 # [20.5.0](https://github.com/openedx/paragon/compare/v20.4.2...v20.5.0) (2022-07-15)
 
 

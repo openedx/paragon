@@ -44,7 +44,7 @@ describe('<DropdownFilters />', () => {
       const wrapper = mount(<DropdownFiltersWrapper />);
       expect(wrapper.text()).toContain('Bears filter');
     });
-    it('renders additional filters in a dropdown', () => {
+    it('renders additional filters in a dropdown', async () => {
       useWindowSize.mockReturnValue({ width: 800 });
       const wrapper = mount(<DropdownFiltersWrapper />);
       // filter should be rendered in the dropdown, so should not be present before
@@ -52,17 +52,19 @@ describe('<DropdownFilters />', () => {
       expect(wrapper.text()).not.toContain('Occupation filter');
       const filtersButton = wrapper.find(DropdownButton);
       expect(filtersButton).toHaveLength(1);
-      act(() => {
+      await act(async () => {
         filtersButton.find('button').simulate('click');
       });
       expect(wrapper.text()).toContain('Occupation filter');
     });
-    it('should not render filters for non-filterable rows', () => {
+    it('should not render filters for non-filterable rows', async () => {
       useWindowSize.mockReturnValue({ width: 800 });
       const wrapper = mount(<DropdownFiltersWrapper />);
       expect(wrapper.text()).not.toContain('DOB filter');
       const filtersButton = wrapper.find('button');
-      filtersButton.simulate('click');
+      await act(async () => {
+        filtersButton.simulate('click');
+      });
       expect(wrapper.text()).not.toContain('DOB filter');
     });
     it('does not render a dropdown if there is only one filter', () => {
@@ -78,11 +80,13 @@ describe('<DropdownFilters />', () => {
       const wrapper = mount(<DropdownFiltersWrapper />);
       expect(wrapper.text()).not.toContain('Bears filter');
     });
-    it('renders all filters in the dropdown', () => {
+    it('renders all filters in the dropdown', async () => {
       useWindowSize.mockReturnValue({ width: 500 });
       const wrapper = mount(<DropdownFiltersWrapper />);
       const filtersButton = wrapper.find('button');
-      filtersButton.simulate('click');
+      await act(async () => {
+        filtersButton.simulate('click');
+      });
       expect(wrapper.text()).toContain('Bears filter');
       expect(wrapper.text()).toContain('Occupation filter');
     });

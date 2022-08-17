@@ -4,6 +4,16 @@
 .pgn__card,
 .pgn__card-body {
   width: 100%;
+
+  &.is-muted {
+    background-color: $light-200;
+  }
+}
+
+a .pgn__card {
+  color: $gray-700;
+  display: inline-block;
+  margin-right: 100%;
 }
 
 .pgn__card-grid {
@@ -279,6 +289,65 @@
 
   &.horizontal {
     flex-direction: row;
+  }
+}
+
+.pgn__card-status {
+  box-shadow: none;
+  margin-bottom: 0;
+  display: flex;
+  font-size: $font-size-sm;
+  line-height: 1.5rem;
+  text-align: start;
+  position: relative;
+  padding: 1.5rem;
+  border: 0 solid transparent;
+  border-radius: 0 0 .375rem .375rem;
+
+  .pgn__card-status__message-content {
+    & > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .pgn__card-status__heading {
+    font-size: $h4-font-size;
+    color: $black;
+    display: flex;
+    font-weight: $font-weight-bold;
+    line-height: 1.5rem;
+    margin-bottom: .5rem;
+  }
+
+  .pgn__icon {
+    float: left;
+    margin-inline-end: .8rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  @each $color, $value in $theme-colors {
+    &.pgn__card-status__#{$color} {
+      color: inherit;
+      background-color: theme-color($color, "background");
+      border-color: theme-color($color, "border");
+
+      .pgn__icon {
+        color: theme-color($color, "default");
+      }
+    }
+  }
+
+  &.pgn__card-status__primary {
+    color: $white;
+    background-color: $primary-500;
+    border-color: $primary-500;
+    box-shadow: 0 0 0 1px $primary-500;
+
+    .pgn__icon {
+      color: $white;
+    }
   }
 }
 

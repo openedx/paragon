@@ -9,12 +9,14 @@ import CardSection from './CardSection';
 import CardFooter from './CardFooter';
 import CardImageCap from './CardImageCap';
 import CardBody from './CardBody';
+import CardStatus from './CardStatus';
 
 const Card = React.forwardRef(({
   orientation,
   isLoading,
   className,
   isClickable,
+  muted,
   ...props
 }, ref) => (
   <CardContextProvider orientation={orientation} isLoading={isLoading}>
@@ -23,6 +25,7 @@ const Card = React.forwardRef(({
       className={classNames(className, 'pgn__card', {
         horizontal: orientation === 'horizontal',
         clickable: isClickable,
+        'is-muted': muted,
       })}
       ref={ref}
       tabIndex={isClickable ? '0' : '-1'}
@@ -46,6 +49,8 @@ Card.propTypes = {
   isClickable: PropTypes.bool,
   /** Specifies loading state. */
   isLoading: PropTypes.bool,
+  /** Specifies whether to display `Card` in muted styling. */
+  muted: PropTypes.bool,
 };
 
 Card.defaultProps = {
@@ -53,9 +58,11 @@ Card.defaultProps = {
   className: undefined,
   orientation: 'vertical',
   isClickable: false,
+  muted: false,
   isLoading: false,
 };
 
+Card.Status = CardStatus;
 Card.Header = CardHeader;
 Card.Divider = CardDivider;
 Card.Section = CardSection;

@@ -16,6 +16,7 @@ import * as ParagonReact from '~paragon-react'; // eslint-disable-line
 import * as ParagonIcons from '~paragon-icons'; // eslint-disable-line
 import MiyazakiCard from './exampleComponents/MiyazakiCard';
 import HipsterIpsum from './exampleComponents/HipsterIpsum';
+import ExamplePropsForm from './exampleComponents/ExamplePropsForm';
 
 const { Button, Collapsible } = ParagonReact;
 
@@ -24,6 +25,7 @@ function CollapsibleLiveEditor({ children }) {
   return (
     <div className="pgn-doc__collapsible-live-editor">
       <Collapsible.Advanced
+        unmountOnExit={false}
         open={collapseIsOpen}
         onToggle={(isOpen) => setCollapseIsOpen(isOpen)}
       >
@@ -63,6 +65,7 @@ function CodeBlock({
             useEffect,
             useState,
             useMemo,
+            ExamplePropsForm,
             MiyazakiCard,
             HipsterIpsum,
             FormattedMessage,

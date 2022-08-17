@@ -14,28 +14,36 @@
     left: 0;
     top: -$annotation-arrow-border-width;
     margin: 0 auto;
-  } @else if $direction == right {
+  }
+
+  @else if $direction == right {
     border-left-color: $color;
     border-width: $annotation-arrow-border-width 0 $annotation-arrow-border-width $annotation-arrow-border-width;
     top: 0;
     bottom: 0;
     right: -$annotation-arrow-border-width;
     margin: auto 0;
-  } @else if $direction == bottom {
+  }
+
+  @else if $direction == bottom {
     border-top-color: $color;
     border-width: $annotation-arrow-border-width $annotation-arrow-border-width 0;
     right: 0;
     left: 0;
     bottom: -$annotation-arrow-border-width;
     margin: 0 auto;
-  } @else if $direction == left {
+  }
+
+  @else if $direction == left {
     border-right-color: $color;
     border-width: $annotation-arrow-border-width $annotation-arrow-border-width $annotation-arrow-border-width 0;
     top: 0;
     bottom: 0;
     left: -$annotation-arrow-border-width;
     margin: auto 0;
-  } @else {
+  }
+
+  @else {
     @error "Unknown direction #{$direction}.";
   }
 }
@@ -68,7 +76,9 @@ $arrow-directions: top, right, bottom, left;
         @if $direction == left {
           margin-left: 0;
           margin-right: $annotation-arrow-border-width + $annotation-arrow-side-margin;
-        } @else if $direction == right {
+        }
+
+        @else if $direction == right {
           margin-right: 0;
           margin-left: $annotation-arrow-border-width + $annotation-arrow-side-margin;
         }
@@ -85,7 +95,9 @@ $arrow-directions: top, right, bottom, left;
               $annotation-arrow-border-width 0 $annotation-arrow-border-width
               $annotation-arrow-border-width;
             border-left-color: map-get($colors, "background-color");
-          } @else if $direction == right {
+          }
+
+          @else if $direction == right {
             right: initial;
             left: -$annotation-arrow-border-width;
             border-width:

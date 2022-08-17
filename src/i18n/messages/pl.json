@@ -1,6 +1,6 @@
 {
-  "dropzone.Dropzone.invalidSizeLessError": "File must be larger than {size}.",
-  "dropzone.Dropzone.invalidSizeMoreError": "File must be less than {size}.",
+  "dropzone.Dropzone.invalidSizeLessError": "Plik musi być większy niż {size}.",
+  "dropzone.Dropzone.invalidSizeMoreError": "Plik musi być mniejszy niż {size}.",
   "dropzone.Dropzone.invalidType": "The file type must be {count, plural, one {{typeString} file} other {one of {typeString} files}}.",
   "dropzone.Dropzone.multipleDraggedError": "Only one upload permitted.",
   "dropzone.Dropzone.unexpectedValidationError": "An unexpected problem occured during file validation. Please try again.",
@@ -12,11 +12,11 @@
   "pgn.DataTable.BaseSelectionStatus.selectedText": "{numSelectedRows} selected",
   "pgn.DataTable.ExpandAll.collapseAllLabel": "Collapse all",
   "pgn.DataTable.ExpandAll.expandAllLabel": "Expand all",
-  "pgn.DataTable.FilterStatus.clearFiltersText": "Clear filters",
+  "pgn.DataTable.FilterStatus.clearFiltersText": "Wyczyść filtry",
   "pgn.DataTable.RowStatus.statusText": "Showing {pageSize} of {itemCount}.",
-  "pgn.DataTable.SidebarFilters.title": "Filters",
+  "pgn.DataTable.SidebarFilters.title": "Filtry",
   "pgn.Dropzone.DefaultContent.label": "Drag and drop your file here or click to upload.",
   "pgn.Dropzone.UploadProgress.cancelLabel": "Cancel",
   "pgn.Dropzone.UploadProgress.uploadLabel": "Uploading {filename}.",
-  "pgn.Toast.closeLabel": "Close"
+  "pgn.Toast.closeLabel": "Zamknij"
 }

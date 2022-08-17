@@ -30,7 +30,7 @@ function SelectionStatusWrapper({ value, props = {} }) {
 describe('<SelectionStatus />', () => {
   it('Shows the number of rows selected', () => {
     const wrapper = mount(<SelectionStatusWrapper value={instance} />);
-    expect(wrapper.text()).toContain(instance.selectedFlatRows.length);
+    expect(wrapper.text()).toContain(instance.selectedFlatRows.length.toString());
   });
   it('Shows that all rows are selected', () => {
     const wrapper = mount(

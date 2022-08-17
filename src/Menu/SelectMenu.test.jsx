@@ -66,9 +66,9 @@ describe('mouse behavior & keyboard behavior', () => {
   it('should focus on the first item after opening', () => {
     expect(menuItems.first().is(':focus')).toBe(true);
   });
-  it(' returns focus to trigger on close', () => {
+  it('returns focus to trigger on close', () => {
     menuItems.at(7).simulate('click');
-    expect(menuTrigger.is(':focus')).toBe(true);
+    expect(menuTrigger === document.activeElement);
   });
 });
 

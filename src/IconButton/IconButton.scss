@@ -40,7 +40,9 @@ $btn-icon-accent-color: white !default;
       background-color: $icon-color;
       color: $accent-color;
     }
-  } @else {
+  }
+
+  @else {
     background-color: $btn-icon-bg;
     color: $icon-color;
 

@@ -1,8 +1,4 @@
-@import "../Card/variables"; // TODO: Remove this dependency
 @import "variables";
-
-// TODO: Remove this dependency
-@import "../Card/Card";
 
 .collapsible-card {
   // stylelint-disable-next-line
@@ -78,6 +74,10 @@
   .collapsible-body {
     padding: $collapsible-basic-spacer-y $collapsible-basic-spacer-x;
     text-align: start;
+
+    &.collapsing {
+      transition: height 300ms ease;
+    }
   }
 
   .collapsible-icon {

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import asInput from '../asInput';
-import withDeprecatedProps, { DEPR_TYPES } from '../withDeprecatedProps';
+import withDeprecatedProps, { DeprTypes } from '../withDeprecatedProps';
 
 class Check extends React.Component {
   constructor(props) {
@@ -70,7 +70,7 @@ Check.defaultProps = {
 
 const CheckBox = asInput(withDeprecatedProps(Check, 'Checkbox', {
   className: {
-    deprType: DEPR_TYPES.FORMAT,
+    deprType: DeprTypes.FORMAT,
     expect: value => typeof value === 'string',
     transform: value => (Array.isArray(value) ? value.join(' ') : value),
     message: 'It should be a string.',
