@@ -1,0 +1,7 @@
+{
+  "$transition": {
+    "base": { "value": "all .2s ease-in-out", "themeable": true, "var": "transition-base" },
+    "fade": { "value": "opacity .15s linear", "themeable": true, "var": "transition-fade" },
+    "collapse": { "value": "height .35s ease", "themeable": true, "var": "transition-collapse" }
+  }
+}
