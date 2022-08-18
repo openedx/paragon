@@ -1,5 +1,6 @@
 const StyleDictionary = require('style-dictionary');
 
+const PGN_PREFIX = 'pgn';
 const STYLE_DICTIONARY_BUILD_PATH = 'style-dictionary-build';
 
 const paragonStyleDictionary = StyleDictionary.extend({
@@ -7,6 +8,7 @@ const paragonStyleDictionary = StyleDictionary.extend({
   platforms: {
     scss: {
       transformGroup: 'scss',
+      prefix: PGN_PREFIX,
       buildPath: `${STYLE_DICTIONARY_BUILD_PATH}/scss/`,
       files: [{
         destination: '_variables.scss',
@@ -18,6 +20,7 @@ const paragonStyleDictionary = StyleDictionary.extend({
     },
     css: {
       transformGroup: 'css',
+      prefix: PGN_PREFIX,
       buildPath: `${STYLE_DICTIONARY_BUILD_PATH}/css/`,
       files: [{
         format: 'css/variables',
