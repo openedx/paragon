@@ -1,3 +1,10 @@
+## [20.9.3](https://github.com/openedx/paragon/compare/v20.9.2...v20.9.3) (2022-08-18)
+
+
+### Bug Fixes
+
+* correct missing interpolation ([#1568](https://github.com/openedx/paragon/issues/1568)) ([88fe9fd](https://github.com/openedx/paragon/commit/88fe9fd73da90ab4b5e71807875324702b3e9148))
+
 ## [20.9.2](https://github.com/openedx/paragon/compare/v20.9.1...v20.9.2) (2022-08-16)
 
 
