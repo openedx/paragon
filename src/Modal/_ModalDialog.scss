@@ -129,7 +129,7 @@
 
 .pgn__modal-body {
   flex-grow: 1;
-  padding: $modal-inner-padding $modal-inner-padding calc($modal-inner-padding / 2);
+  padding: $modal-inner-padding $modal-inner-padding calc(#{$modal-inner-padding} / 2);
   overflow: auto;
   position: relative;
 
@@ -161,7 +161,7 @@
     display: block;
     height: 20px;
     position: sticky;
-    bottom: calc($modal-inner-padding / 2 * -1);
+    bottom: calc(#{$modal-inner-padding} / 2 * -1);
     margin-bottom: -$modal-inner-padding;
     margin-left: -$modal-inner-padding;
     margin-right: -$modal-inner-padding;
@@ -225,7 +225,7 @@
   background-color: $modal-content-bg;
   transition: box-shadow 150ms ease;
   padding: $modal-footer-padding;
-  padding-top: calc($modal-inner-padding / 2);
+  padding-top: calc(#{$modal-inner-padding} / 2);
 }
 
 // Color Variants
@@ -234,14 +234,14 @@
   // Default style modals don't have a background on the header which
   // ends up looking spaced too far away from the body content.
   .pgn__modal-header {
-    padding-bottom: calc($modal-inner-padding / 2);
+    padding-bottom: calc(#{$modal-inner-padding} / 2);
   }
 
   .pgn__modal-body {
-    padding: calc($modal-inner-padding / 2) $modal-inner-padding;
+    padding: calc(#{$modal-inner-padding} / 2) $modal-inner-padding;
 
     &::before {
-      top: calc($modal-inner-padding / 2 * -1);
+      top: calc(#{$modal-inner-padding} / 2 * -1);
     }
   }
 }
