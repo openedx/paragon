@@ -1,35 +1,19 @@
-// Chip
-
-$chip-padding-y:                    .125rem !default;
 $chip-padding-x:                    .5rem !default;
-$chip-margin-inline:                .5rem !default;
-$chip-border-radius:                .4375rem !default;
-$chip-focus-border-radius:          .5rem !default;
-$chip-position-axis:                .125rem !default;
-$chip-border-width:                 .0625rem !default;
-$chip-font-size:                    .75rem !default;
-$chip-font-weight:                  400 !default;
-$chip-line-height:                  1.5rem !default;
+$chip-padding-y:                    .125rem !default;
+$chip-padding-to-icon:              .125rem !default;
+$chip-icon-padding:                 .25rem !default;
+$chip-margin:                       .125rem !default;
+$chip-border-radius:                .25rem !default;
 $chip-disable-opacity:              .3 !default;
+$chip-icon-size:                    1.25rem !default;
 
-$chip-theme-variants: ("light", "dark") !default;
-$chip-theme-colors: (
-  "light-background-inactive": $white,
-  "light-text-inactive":       $primary-700,
-  "light-border-inactive":     $light-300,
-  "light-background-hover":    $primary-500,
-  "light-text-hover":          $white,
-  "light-border-hover":        $white,
-  "light-background-selected": $white,
-  "light-text-selected":       $primary-700,
-  "light-border-selected":     $primary-700,
-  "dark-background-inactive":  $primary-300,
-  "dark-text-inactive":        $white,
-  "dark-border-inactive":      $primary-300,
-  "dark-background-hover":     $white,
-  "dark-text-hover":           $primary-700,
-  "dark-border-hover":         $primary-300,
-  "dark-background-selected":  $primary-300,
-  "dark-text-selected":        $white,
-  "dark-border-selected":      $white,
+$chip-theme-variants: (
+  "light": (
+    "background": $light-500,
+    "color": $black,
+  ),
+  "dark": (
+    "background": $dark-200,
+    "color": $white,
+  )
 ) !default;

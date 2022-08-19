@@ -18,18 +18,32 @@ notes: |
 ```jsx live
 <div>
   <Chip>New</Chip>
-  <Chip active>New</Chip>
   <Chip disabled>New</Chip>
   <Chip variant="dark">New</Chip>
 </div>
 ```
 
-## With icon before and remove icon
+## With icon before and after
 
 ```jsx live
 <div>
   <Chip iconBefore={Person}>New</Chip>
-  <Chip variant="dark" iconBefore={Person} iconAfter={CloseSmall}>New</Chip>
-  <Chip variant="dark" iconBefore={Person} iconAfter={CloseSmall} disabled>New</Chip>
+  <Chip
+    variant="dark"
+    iconBefore={Person}
+    iconAfter={Close}
+    onIconAfterClick={() => console.log('Remove Chip')}
+  >
+    New
+  </Chip>
+  <Chip
+    variant="dark"
+    iconBefore={Person}
+    iconAfter={Close}
+    onIconAfterClick={() => console.log('Remove Chip')}
+    disabled
+  >
+    New
+  </Chip>
 </div>
 ```
