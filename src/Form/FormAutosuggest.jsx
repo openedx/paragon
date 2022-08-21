@@ -7,7 +7,7 @@ import { Form, IconButton, Spinner } from '../index';
 const FormAutosuggest = ({
   value,
   isLoading,
-  handleChange,
+  onChange,
   name,
   errorMessage,
   helpMessage,
@@ -26,7 +26,7 @@ const FormAutosuggest = ({
   const setValue = (itemValue) => {
     if (value === itemValue) { return; }
 
-    if (handleChange) { handleChange(itemValue); }
+    if (onChange) { onChange(itemValue); }
 
     const opt = props.options.find((o) => o === itemValue);
 
@@ -239,7 +239,7 @@ const FormAutosuggest = ({
 FormAutosuggest.defaultProps = {
   options: null,
   floatingLabel: null,
-  handleChange: null,
+  onChange: null,
   helpMessage: '',
   placeholder: '',
   value: null,
@@ -260,7 +260,7 @@ FormAutosuggest.propTypes = {
   /** Specifies floating label to display for the input component. */
   floatingLabel: PropTypes.string,
   /** Specifies onChange event handler. */
-  handleChange: PropTypes.func,
+  onChange: PropTypes.func,
   /** Specifies help information for the user. */
   helpMessage: PropTypes.string,
   /** Specifies the placeholder text for the input. */
