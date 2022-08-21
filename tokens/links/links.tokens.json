@@ -15,19 +15,15 @@
         "decoration": { "value": "underline", "themeable": true, "source": "$inline-link-hover-decoration" },
         "decoration-color": { "value": "#003C5E", "themeable": true, "source": "$inline-link-hover-decoration-color" }
       }
-    }
-  },
-  "muted": {
-    "link": {
+    },
+    "muted": {
       "color": { "value": "{color.primary.500.value}", "themeable": true, "source": "$muted-link-color" },
       "decoration": { "value": "none", "themeable": true, "source": "$muted-link-decoration" },
       "hover": {
         "color": { "value": "#020911", "themeable": true, "source": "$muted-link-hover-color" },
         "decoration": { "value": "underline", "themeable": true, "source": "$muted-link-hover-decoration" }
-      }
-    },
-    "inline": {
-      "link": {
+      },
+      "inline": {
         "color": { "value": "{color.primary.500.value}", "themeable": true, "source": "$muted-inline-link-color" },
         "decoration": { "value": "underline", "themeable": true, "source": "$muted-inline-link-decoration" },
         "decoration-color": { "value": "rgba(10, 48, 85, 0.3)", "themeable": true, "source": "$muted-inline-link-decoration-color" },
@@ -37,19 +33,15 @@
           "decoration-color": { "value": "#020911", "themeable": true, "source": "$muted-inline-link-hover-decoration-color" }
         }
       }
-    }
-  },
-  "brand": {
-    "link": {
+    },
+    "brand": {
       "color": { "value": "{color.brand.500.value}", "themeable": true, "source": "$brand-link-color" },
       "decoration": { "value": "none", "themeable": true, "source": "$brand-link-decoration" },
       "hover": {
         "color": { "value": "#51002B", "themeable": true, "source": "$brand-link-color" },
         "decoration": { "value": "underline", "themeable": true, "source": "$brand-link-decoration" }
-      }
-    },
-    "inline": {
-      "link": {
+      },
+      "inline": {
         "color": { "value": "{color.brand.500.value}", "themeable": true, "source": "$inline-link-color" },
         "decoration": { "value": "underline", "themeable": true, "source": "$inline-link-decoration" },
         "decoration-color": { "value": "rgba(0, 109, 170, 0.3)", "themeable": true, "source": "$inline-link-decoration-color" },
