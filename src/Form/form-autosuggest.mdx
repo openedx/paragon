@@ -28,7 +28,7 @@ Form auto-suggest enables users to manually select or type to find matching opti
             helpMessage="This is help message"
             options={colors}
             value={data.title}
-            handleChange={
+            onChange={
                 (value) => setData(prevState => ({ data: { ...prevState.data, org: value } }))
             }
         />
@@ -51,7 +51,7 @@ Form auto-suggest enables users to manually select or type to find matching opti
             errorMessage="This is error message"
             options={colors}
             value={data.title}
-            handleChange={
+            onChange={
                 (value) => setData(prevState => ({ data: { ...prevState.data, org: value } }))
             }
         />
