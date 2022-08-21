@@ -2,14 +2,14 @@
   "compilerOptions": {
     "disableSourceOfProjectReferenceRedirect": true,
     "disableSolutionSearching": true,
-    "target": "esnext",
+    "target": "es6",
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "es6"
     ],
     "jsx": "react",
-    "module": "esnext",
+    "module": "es6",
     "moduleResolution": "node",
     "preserveSymlinks": true,
     "allowJs": true,

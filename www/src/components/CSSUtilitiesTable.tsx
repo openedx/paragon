@@ -8,7 +8,7 @@ export type CSSUtilitiesTableTypes = {
     selector: string,
     declarations: Array<string>,
   }],
-  showExample: Array<string>,
+  showExample: boolean,
 };
 
 function CSSUtilitiesTable({ selectors, showExample }: CSSUtilitiesTableTypes) {
