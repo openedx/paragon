@@ -13,12 +13,6 @@ export interface IColumn {
   onChangeOffset: Function,
 }
 
-export type InputOnChangeEventTypes = {
-  target: {
-    value: React.SetStateAction<number>
-  }
-};
-
 const Column = ({
   index, width, onChangeWidth, offset, onChangeOffset,
 }: IColumn) => (
@@ -46,7 +40,7 @@ const Column = ({
           min={0}
           step={1}
           max={12}
-          onChange={(e: InputOnChangeEventTypes) => onChangeWidth(index, e.target.value)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeWidth(index, e.target.value)}
         />
       </div>
       <div className="form-inline m-2">
@@ -66,7 +60,7 @@ const Column = ({
           min={0}
           step={1}
           max={11}
-          onChange={(e: InputOnChangeEventTypes) => onChangeOffset(index, e.target.value)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeOffset(index, e.target.value)}
         />
       </div>
     </div>
@@ -91,7 +85,7 @@ export type StateKeyTypes = {
 };
 
 function LayoutGenerator() {
-  const [numColumns, setColumns] = useState(3);
+  const [numColumns, setColumns] = useState<number>(3);
   const [columnWidths, setColumnWidths] = useState<StateKeyTypes>({ 0: 3, 1: 6, 2: 3 });
   const [columnOffsets, setColumnOffsets] = useState<StateKeyTypes>({});
 
@@ -156,7 +150,7 @@ ${columnsString.join('')}
           min={1}
           step={1}
           max={12}
-          onChange={(e: InputOnChangeEventTypes) => setColumns(e.target.value)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setColumns(parseInt(e.target.value, 10))}
         />
       </div>
       <div className="row">{columns}</div>

@@ -47,7 +47,7 @@ const SettingsContextProvider: React.FC = ({ children }) => {
     global.analytics.track(`${key[0].toUpperCase() + key.slice(1)} change`, { [key]: value });
   };
 
-  const toggleSettings = (value: React.SetStateAction<boolean>) => {
+  const toggleSettings = (value: boolean) => {
     setShowSettings(value);
     global.analytics.track('Toggle Settings', { value: value ? 'show' : 'hide' });
   };
