@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { KeyboardArrowUp, KeyboardArrowDown } from '../../icons';
 import Icon from '../Icon';
 import { Form, IconButton, Spinner } from '../index';
+import FormAutosuggestOptions from './FormAutosuggestOptions';
 
 const FormAutosuggest = ({
   value,
@@ -13,6 +14,7 @@ const FormAutosuggest = ({
   helpMessage,
   controlClassName,
   className,
+  ariaLabel,
   ...props
 }) => {
   const dropDownItemsRef = useRef(null);
@@ -63,7 +65,7 @@ const FormAutosuggest = ({
       }
 
       return (
-        <button
+        <FormAutosuggestOptions
           type="button"
           className="dropdown-item data-hj-suppress"
           value={optValue}
@@ -71,7 +73,7 @@ const FormAutosuggest = ({
           onClick={(e) => { handleItemClick(e); }}
         >
           {optValue}
-        </button>
+        </FormAutosuggestOptions>
       );
     });
   }
@@ -122,11 +124,27 @@ const FormAutosuggest = ({
     }
   };
 
+  const keyDownHandler = e => {
+    const msg = state.displayValue === '' ? errorMessage : '';
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      setState(prevState => ({
+        ...prevState,
+        dropDownItems: '',
+        errorMessage: msg,
+      }));
+
+      setIsOpen(false);
+    }
+  };
+
   useEffect(() => {
+    document.addEventListener('keydown', keyDownHandler);
     document.addEventListener('click', handleClickOutside, true);
 
     return () => {
       document.removeEventListener('click', handleClickOutside, true);
+      document.removeEventListener('keydown', keyDownHandler);
     };
   });
 
@@ -205,6 +223,7 @@ const FormAutosuggest = ({
           name={name}
           type="text"
           value={state.displayValue}
+          aria-label={ariaLabel}
           aria-invalid={errorMessage}
           onChange={handleOnChange}
           onClick={handleClick}
@@ -248,6 +267,7 @@ FormAutosuggest.defaultProps = {
   controlClassName: '',
   className: null,
   isLoading: false,
+  ariaLabel: null,
 };
 
 FormAutosuggest.propTypes = {
@@ -275,6 +295,7 @@ FormAutosuggest.propTypes = {
   readOnly: PropTypes.bool,
   /** Specifies class name for the control component. */
   controlClassName: PropTypes.string,
+  ariaLabel: PropTypes.string,
 };
 
 export default FormAutosuggest;
