@@ -80,8 +80,8 @@ SpaceBlock.defaultProps = {
 };
 
 export default function SpacingPage() {
-  const [size, setSize] = useState(3);
-  const [direction, setDirection] = useState('r');
+  const [size, setSize] = useState<number>(3);
+  const [direction, setDirection] = useState<string>('r');
 
   const utilityClassName = getUtilityClassName('m', direction, size);
 
@@ -132,9 +132,7 @@ export default function SpacingPage() {
                     name="direction"
                     value={key}
                     checked={key === direction}
-                    onChange={(e: {
-                      target: { value: React.SetStateAction<string>;
-                      }; }) => setDirection(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setDirection(e.target.value)}
                   />
                   {name}
                 </label>
@@ -155,9 +153,7 @@ export default function SpacingPage() {
                   step={0.5}
                   max={6}
                   value={size}
-                  onChange={(e: {
-                    target: { value: React.SetStateAction<number>;
-                    }; }) => setSize(e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSize(parseInt(e.target.value, 10))}
                 />
                 6
               </div>
