@@ -314,22 +314,34 @@ export default function InsightsPage({ pageContext: { tab } }) {
           onSelect={handleOnSelect}
         >
           <Tab eventKey={INSIGHTS_TABS.SUMMARY} title="Summary">
-            <SummaryUsage />
+            {tab === INSIGHTS_TABS.SUMMARY && (
+              <SummaryUsage />
+            )}
           </Tab>
           <Tab eventKey={INSIGHTS_TABS.PROJECTS} title="Projects">
-            <ProjectsUsage />
+            {tab === INSIGHTS_TABS.PROJECTS && (
+              <ProjectsUsage />
+            )}
           </Tab>
           <Tab eventKey={INSIGHTS_TABS.COMPONENTS} title="Components">
-            <ComponentsUsage data={components} />
+            {tab === INSIGHTS_TABS.COMPONENTS && (
+              <ComponentsUsage data={components} />
+            )}
           </Tab>
           <Tab eventKey={INSIGHTS_TABS.HOOKS} title="Hooks">
-            <HooksUsage data={hooks} />
+            {tab === INSIGHTS_TABS.HOOKS && (
+              <HooksUsage data={hooks} />
+            )}
           </Tab>
           <Tab eventKey={INSIGHTS_TABS.UTILS} title="Utils">
-            <UtilsUsage data={utils} />
+            {tab === INSIGHTS_TABS.UTILS && (
+              <UtilsUsage data={utils} />
+            )}
           </Tab>
           <Tab eventKey={INSIGHTS_TABS.ICONS} title="Icons">
-            <IconsUsage data={icons} />
+            {tab === INSIGHTS_TABS.ICONS && (
+              <IconsUsage data={icons} />
+            )}
           </Tab>
         </Tabs>
       </Container>
