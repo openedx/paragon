@@ -1,3 +1,43 @@
+# [20.10.0](https://github.com/openedx/paragon/compare/v20.9.3...v20.10.0) (2022-08-19)
+
+
+### Features
+
+* [BD-46] add Truncate component ([#1472](https://github.com/openedx/paragon/issues/1472)) ([da3a247](https://github.com/openedx/paragon/commit/da3a247db3aa6e0358430bd2fd7daabaf130a737))
+
+## [20.9.3](https://github.com/openedx/paragon/compare/v20.9.2...v20.9.3) (2022-08-18)
+
+
+### Bug Fixes
+
+* correct missing interpolation ([#1568](https://github.com/openedx/paragon/issues/1568)) ([88fe9fd](https://github.com/openedx/paragon/commit/88fe9fd73da90ab4b5e71807875324702b3e9148))
+
+## [20.9.2](https://github.com/openedx/paragon/compare/v20.9.1...v20.9.2) (2022-08-16)
+
+
+### Bug Fixes
+
+* bootstrap update with additional variable ([#1562](https://github.com/openedx/paragon/issues/1562)) ([ae1f06f](https://github.com/openedx/paragon/commit/ae1f06f29992d955ca1772a6e8937841b4904baf))
+
+## [20.9.1](https://github.com/openedx/paragon/compare/v20.9.0...v20.9.1) (2022-08-12)
+
+
+### Bug Fixes
+
+* added support for making `Card` a hyperlink ([#1478](https://github.com/openedx/paragon/issues/1478)) ([f0a0768](https://github.com/openedx/paragon/commit/f0a07687e6608fadf6b7eab0af505c9d0bcc0d7c))
+
+# [20.9.0](https://github.com/openedx/paragon/compare/v20.8.0...v20.9.0) (2022-08-12)
+
+
+### Bug Fixes
+
+* begin using shared stylelint-config-edx ([#1517](https://github.com/openedx/paragon/issues/1517)) ([7a35814](https://github.com/openedx/paragon/commit/7a35814ad4474e0562e470a54f26fc70b34314e4))
+
+
+### Features
+
+* [BD-46] add Card.Status ([#1439](https://github.com/openedx/paragon/issues/1439)) ([aa5a4a4](https://github.com/openedx/paragon/commit/aa5a4a4f3da931804a44e3da7a51b6b233f093d8))
+
 # [20.8.0](https://github.com/openedx/paragon/compare/v20.7.0...v20.8.0) (2022-08-05)
 
 

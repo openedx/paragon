@@ -1,5 +1,5 @@
 {
-  "lastModified": 1660140510685,
+  "lastModified": 1661090941493,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -842,19 +842,19 @@
         "Alert": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 217,
+            "line": 204,
             "column": 8,
             "version": "19.20.0"
           },
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 239,
+            "line": 226,
             "column": 8,
             "version": "19.20.0"
           },
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 332,
+            "line": 319,
             "column": 4,
             "version": "19.20.0"
           },
@@ -884,7 +884,7 @@
           },
           {
             "filePath": "src/id-verification/panels/SummaryPanel.jsx",
-            "line": 149,
+            "line": 150,
             "column": 8,
             "version": "19.20.0"
           }
@@ -892,7 +892,7 @@
         "Hyperlink": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 247,
+            "line": 234,
             "column": 16,
             "version": "19.20.0"
           },
@@ -904,14 +904,14 @@
           },
           {
             "filePath": "src/account-settings/coaching/CoachingConsent.jsx",
-            "line": 31,
-            "column": 4,
+            "line": 30,
+            "column": 6,
             "version": "19.20.0"
           },
           {
             "filePath": "src/account-settings/coaching/CoachingConsentForm.jsx",
-            "line": 75,
-            "column": 10,
+            "line": 78,
+            "column": 12,
             "version": "19.20.0"
           },
           {
@@ -922,7 +922,7 @@
           },
           {
             "filePath": "src/account-settings/delete-account/DeleteAccount.jsx",
-            "line": 99,
+            "line": 101,
             "column": 10,
             "version": "19.20.0"
           },
@@ -966,7 +966,7 @@
         "Button": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 317,
+            "line": 304,
             "column": 16,
             "version": "19.20.0"
           },
@@ -978,8 +978,8 @@
           },
           {
             "filePath": "src/account-settings/coaching/CoachingConsentForm.jsx",
-            "line": 70,
-            "column": 10,
+            "line": 73,
+            "column": 12,
             "version": "19.20.0"
           },
           {
@@ -990,25 +990,31 @@
           },
           {
             "filePath": "src/account-settings/delete-account/DeleteAccount.jsx",
-            "line": 104,
+            "line": 106,
             "column": 10,
             "version": "19.20.0"
           },
           {
+            "filePath": "src/account-settings/DOBForm.jsx",
+            "line": 65,
+            "column": 6,
+            "version": "19.20.0"
+          },
+          {
             "filePath": "src/account-settings/EditableField.jsx",
-            "line": 71,
+            "line": 72,
             "column": 13,
             "version": "19.20.0"
           },
           {
             "filePath": "src/account-settings/EditableField.jsx",
-            "line": 153,
+            "line": 154,
             "column": 16,
             "version": "19.20.0"
           },
           {
             "filePath": "src/account-settings/EditableField.jsx",
-            "line": 169,
+            "line": 170,
             "column": 16,
             "version": "19.20.0"
           },
@@ -1050,7 +1056,7 @@
           },
           {
             "filePath": "src/id-verification/panels/SummaryPanel.jsx",
-            "line": 90,
+            "line": 91,
             "column": 6,
             "version": "19.20.0"
           }
@@ -1058,7 +1064,7 @@
         "Alert.Heading": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 336,
+            "line": 323,
             "column": 6,
             "version": "19.20.0"
           },
@@ -1072,13 +1078,13 @@
         "Icon": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 393,
+            "line": 380,
             "column": 16,
             "version": "19.20.0"
           },
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 395,
+            "line": 382,
             "column": 16,
             "version": "19.20.0"
           }
@@ -1095,6 +1101,12 @@
           {
             "filePath": "src/account-settings/certificate-preference/CertificatePreference.jsx",
             "line": 99,
+            "column": 6,
+            "version": "19.20.0"
+          },
+          {
+            "filePath": "src/account-settings/DOBForm.jsx",
+            "line": 68,
             "column": 6,
             "version": "19.20.0"
           },
@@ -1133,6 +1145,12 @@
             "version": "19.20.0"
           },
           {
+            "filePath": "src/account-settings/DOBForm.jsx",
+            "line": 77,
+            "column": 10,
+            "version": "19.20.0"
+          },
+          {
             "filePath": "src/account-settings/name-change/NameChange.jsx",
             "line": 164,
             "column": 8,
@@ -1143,6 +1161,12 @@
           {
             "filePath": "src/account-settings/certificate-preference/CertificatePreference.jsx",
             "line": 109,
+            "column": 12,
+            "version": "19.20.0"
+          },
+          {
+            "filePath": "src/account-settings/DOBForm.jsx",
+            "line": 78,
             "column": 12,
             "version": "19.20.0"
           },
@@ -1161,6 +1185,12 @@
             "version": "19.20.0"
           },
           {
+            "filePath": "src/account-settings/DOBForm.jsx",
+            "line": 83,
+            "column": 10,
+            "version": "19.20.0"
+          },
+          {
             "filePath": "src/account-settings/name-change/NameChange.jsx",
             "line": 170,
             "column": 8,
@@ -1171,6 +1201,18 @@
           {
             "filePath": "src/account-settings/certificate-preference/CertificatePreference.jsx",
             "line": 115,
+            "column": 12,
+            "version": "19.20.0"
+          },
+          {
+            "filePath": "src/account-settings/DOBForm.jsx",
+            "line": 85,
+            "column": 12,
+            "version": "19.20.0"
+          },
+          {
+            "filePath": "src/account-settings/DOBForm.jsx",
+            "line": 98,
             "column": 12,
             "version": "19.20.0"
           },
@@ -1197,6 +1239,18 @@
           {
             "filePath": "src/account-settings/certificate-preference/CertificatePreference.jsx",
             "line": 116,
+            "column": 14,
+            "version": "19.20.0"
+          },
+          {
+            "filePath": "src/account-settings/DOBForm.jsx",
+            "line": 86,
+            "column": 14,
+            "version": "19.20.0"
+          },
+          {
+            "filePath": "src/account-settings/DOBForm.jsx",
+            "line": 99,
             "column": 14,
             "version": "19.20.0"
           },
@@ -1243,6 +1297,12 @@
             "version": "19.20.0"
           },
           {
+            "filePath": "src/account-settings/DOBForm.jsx",
+            "line": 114,
+            "column": 10,
+            "version": "19.20.0"
+          },
+          {
             "filePath": "src/account-settings/name-change/NameChange.jsx",
             "line": 174,
             "column": 8,
@@ -1253,6 +1313,12 @@
           {
             "filePath": "src/account-settings/certificate-preference/CertificatePreference.jsx",
             "line": 137,
+            "column": 12,
+            "version": "19.20.0"
+          },
+          {
+            "filePath": "src/account-settings/DOBForm.jsx",
+            "line": 115,
             "column": 12,
             "version": "19.20.0"
           },
@@ -1271,6 +1337,12 @@
             "version": "19.20.0"
           },
           {
+            "filePath": "src/account-settings/DOBForm.jsx",
+            "line": 116,
+            "column": 14,
+            "version": "19.20.0"
+          },
+          {
             "filePath": "src/account-settings/name-change/NameChange.jsx",
             "line": 176,
             "column": 12,
@@ -1285,8 +1357,14 @@
             "version": "19.20.0"
           },
           {
+            "filePath": "src/account-settings/DOBForm.jsx",
+            "line": 119,
+            "column": 14,
+            "version": "19.20.0"
+          },
+          {
             "filePath": "src/account-settings/EditableField.jsx",
-            "line": 134,
+            "line": 135,
             "column": 16,
             "version": "19.20.0"
           },
@@ -1318,20 +1396,20 @@
         "Input": [
           {
             "filePath": "src/account-settings/coaching/CoachingConsentForm.jsx",
-            "line": 43,
-            "column": 10,
+            "line": 46,
+            "column": 12,
             "version": "19.20.0"
           },
           {
             "filePath": "src/account-settings/coaching/CoachingConsentForm.jsx",
-            "line": 56,
-            "column": 10,
+            "line": 59,
+            "column": 12,
             "version": "19.20.0"
           },
           {
             "filePath": "src/account-settings/coaching/CoachingToggle.jsx",
-            "line": 47,
-            "column": 6,
+            "line": 48,
+            "column": 8,
             "version": "19.20.0"
           },
           {
@@ -1354,7 +1432,7 @@
           },
           {
             "filePath": "src/account-settings/EditableField.jsx",
-            "line": 121,
+            "line": 122,
             "column": 16,
             "version": "19.20.0"
           },
@@ -1366,7 +1444,7 @@
           },
           {
             "filePath": "src/id-verification/panels/SummaryPanel.jsx",
-            "line": 210,
+            "line": 211,
             "column": 10,
             "version": "19.20.0"
           }
@@ -1374,8 +1452,8 @@
         "ValidationFormGroup": [
           {
             "filePath": "src/account-settings/coaching/CoachingToggle.jsx",
-            "line": 40,
-            "column": 4,
+            "line": 41,
+            "column": 6,
             "version": "19.20.0"
           },
           {
@@ -1386,7 +1464,7 @@
           },
           {
             "filePath": "src/account-settings/EditableField.jsx",
-            "line": 114,
+            "line": 115,
             "column": 14,
             "version": "19.20.0"
           },
@@ -1427,6 +1505,18 @@
         ],
         "Form.Control": [
           {
+            "filePath": "src/account-settings/DOBForm.jsx",
+            "line": 89,
+            "column": 14,
+            "version": "19.20.0"
+          },
+          {
+            "filePath": "src/account-settings/DOBForm.jsx",
+            "line": 102,
+            "column": 14,
+            "version": "19.20.0"
+          },
+          {
             "filePath": "src/account-settings/name-change/NameChange.jsx",
             "line": 122,
             "column": 8,
@@ -1464,7 +1554,7 @@
           },
           {
             "filePath": "src/id-verification/panels/SummaryPanel.jsx",
-            "line": 239,
+            "line": 240,
             "column": 23,
             "version": "19.20.0"
           }
@@ -1506,7 +1596,7 @@
         "Alert.Link": [
           {
             "filePath": "src/id-verification/panels/SummaryPanel.jsx",
-            "line": 131,
+            "line": 132,
             "column": 12,
             "version": "19.20.0"
           }
@@ -7409,7 +7499,7 @@
           },
           {
             "filePath": "src/login/LoginPage.jsx",
-            "line": 168,
+            "line": 172,
             "column": 10,
             "version": "19.10.2"
           },
@@ -7439,7 +7529,7 @@
           },
           {
             "filePath": "src/welcome/ProgressiveProfiling.jsx",
-            "line": 150,
+            "line": 152,
             "column": 14,
             "version": "19.10.2"
           },
@@ -7561,13 +7651,13 @@
           },
           {
             "filePath": "src/login/LoginPage.jsx",
-            "line": 249,
+            "line": 253,
             "column": 10,
             "version": "19.10.2"
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 768,
+            "line": 771,
             "column": 10,
             "version": "19.10.2"
           },
@@ -7579,7 +7669,7 @@
           },
           {
             "filePath": "src/welcome/ProgressiveProfiling.jsx",
-            "line": 147,
+            "line": 149,
             "column": 10,
             "version": "19.10.2"
           },
@@ -7805,13 +7895,13 @@
           },
           {
             "filePath": "src/login/LoginPage.jsx",
-            "line": 169,
+            "line": 173,
             "column": 12,
             "version": "19.10.2"
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 573,
+            "line": 576,
             "column": 26,
             "version": "19.10.2"
           },
@@ -7913,13 +8003,13 @@
           },
           {
             "filePath": "src/register/CountryDropdown.jsx",
-            "line": 153,
+            "line": 149,
             "column": 6,
             "version": "19.10.2"
           },
           {
             "filePath": "src/register/CountryDropdown.jsx",
-            "line": 167,
+            "line": 163,
             "column": 6,
             "version": "19.10.2"
           },
@@ -7985,7 +8075,7 @@
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 564,
+            "line": 567,
             "column": 8,
             "version": "19.10.2"
           },
@@ -8003,7 +8093,7 @@
           },
           {
             "filePath": "src/welcome/ProgressiveProfiling.jsx",
-            "line": 142,
+            "line": 144,
             "column": 12,
             "version": "19.10.2"
           },
@@ -8059,7 +8149,7 @@
           },
           {
             "filePath": "src/welcome/ProgressiveProfiling.jsx",
-            "line": 143,
+            "line": 145,
             "column": 14,
             "version": "19.10.2"
           },
@@ -8085,7 +8175,7 @@
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 840,
+            "line": 842,
             "column": 14,
             "version": "19.10.2"
           },
@@ -8111,13 +8201,13 @@
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 567,
+            "line": 570,
             "column": 12,
             "version": "19.10.2"
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 582,
+            "line": 585,
             "column": 10,
             "version": "19.10.2"
           }
@@ -8131,13 +8221,13 @@
           },
           {
             "filePath": "src/login/LoginPage.jsx",
-            "line": 270,
+            "line": 273,
             "column": 12,
             "version": "19.10.2"
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 856,
+            "line": 858,
             "column": 12,
             "version": "19.10.2"
           },
@@ -8149,13 +8239,13 @@
           },
           {
             "filePath": "src/welcome/ProgressiveProfiling.jsx",
-            "line": 162,
+            "line": 164,
             "column": 14,
             "version": "19.10.2"
           },
           {
             "filePath": "src/welcome/ProgressiveProfiling.jsx",
-            "line": 174,
+            "line": 176,
             "column": 14,
             "version": "19.10.2"
           },
@@ -8506,7 +8596,7 @@
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/BulkEmailContentHistory.jsx",
-            "line": 146,
+            "line": 147,
             "column": 12,
             "version": "19.18.3"
           },
@@ -8596,7 +8686,7 @@
         "Collapsible": [
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/BulkEmailContentHistory.jsx",
-            "line": 129,
+            "line": 130,
             "column": 8,
             "version": "19.18.3"
           },
@@ -8674,7 +8764,7 @@
         "Spinner": [
           {
             "filePath": "src/components/page-container/PageContainer.jsx",
-            "line": 77,
+            "line": 79,
             "column": 6,
             "version": "19.18.3"
           }
@@ -10133,10 +10223,42 @@
             "version": "19.10.1"
           }
         ],
+        "IconButton": [
+          {
+            "filePath": "src/components/PostPreviewPane.jsx",
+            "line": 23,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/common/ActionsDropdown.jsx",
+            "line": 36,
+            "column": 6,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/discussions-home/DiscussionContent.jsx",
+            "line": 34,
+            "column": 10,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/learners/LearnerPostsView.jsx",
+            "line": 67,
+            "column": 8,
+            "version": "19.10.1"
+          },
+          {
+            "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
+            "line": 51,
+            "column": 10,
+            "version": "19.10.1"
+          }
+        ],
         "Button": [
           {
             "filePath": "src/components/PostPreviewPane.jsx",
-            "line": 27,
+            "line": 38,
             "column": 10,
             "version": "19.10.1"
           },
@@ -10214,7 +10336,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 401,
+            "line": 409,
             "column": 12,
             "version": "19.10.1"
           },
@@ -10226,7 +10348,7 @@
           },
           {
             "filePath": "src/discussions/posts/PostsList.jsx",
-            "line": 82,
+            "line": 85,
             "column": 10,
             "version": "19.10.1"
           }
@@ -10288,7 +10410,7 @@
           },
           {
             "filePath": "src/discussions/common/AuthorLabel.jsx",
-            "line": 54,
+            "line": 57,
             "column": 8,
             "version": "19.10.1"
           },
@@ -10361,7 +10483,7 @@
           {
             "filePath": "src/discussions/posts/post/PostLink.jsx",
             "line": 101,
-            "column": 14,
+            "column": 16,
             "version": "19.10.1"
           },
           {
@@ -10392,7 +10514,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 230,
+            "line": 237,
             "column": 8,
             "version": "19.10.1"
           },
@@ -10412,38 +10534,38 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 260,
+            "line": 267,
             "column": 12,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 285,
+            "line": 293,
             "column": 12,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 305,
+            "line": 314,
             "column": 12,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 324,
+            "line": 334,
             "column": 14,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 372,
-            "column": 18,
+            "line": 381,
+            "column": 16,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 385,
-            "column": 20,
+            "line": 393,
+            "column": 18,
             "version": "19.10.1"
           },
           {
@@ -10462,25 +10584,25 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 261,
+            "line": 268,
             "column": 14,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 286,
+            "line": 294,
             "column": 14,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 312,
+            "line": 321,
             "column": 14,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 331,
+            "line": 341,
             "column": 16,
             "version": "19.10.1"
           },
@@ -10500,7 +10622,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 407,
+            "line": 415,
             "column": 12,
             "version": "19.10.1"
           }
@@ -10564,7 +10686,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 173,
+            "line": 180,
             "column": 8,
             "version": "19.10.1"
           },
@@ -10576,33 +10698,7 @@
           },
           {
             "filePath": "src/discussions/posts/PostsList.jsx",
-            "line": 78,
-            "column": 10,
-            "version": "19.10.1"
-          }
-        ],
-        "IconButton": [
-          {
-            "filePath": "src/discussions/common/ActionsDropdown.jsx",
-            "line": 36,
-            "column": 6,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/discussions/discussions-home/DiscussionContent.jsx",
-            "line": 34,
-            "column": 10,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/discussions/learners/LearnerPostsView.jsx",
-            "line": 67,
-            "column": 8,
-            "version": "19.10.1"
-          },
-          {
-            "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
-            "line": 51,
+            "line": 81,
             "column": 10,
             "version": "19.10.1"
           }
@@ -10664,7 +10760,7 @@
           },
           {
             "filePath": "src/discussions/common/EndorsedAlertBanner.jsx",
-            "line": 26,
+            "line": 28,
             "column": 6,
             "version": "19.10.1"
           }
@@ -10776,7 +10872,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 50,
+            "line": 51,
             "column": 6,
             "version": "19.10.1"
           },
@@ -10864,7 +10960,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 236,
+            "line": 243,
             "column": 10,
             "version": "19.10.1"
           },
@@ -10968,7 +11064,7 @@
         "Card": [
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 51,
+            "line": 52,
             "column": 6,
             "version": "19.10.1"
           }
@@ -10976,7 +11072,7 @@
         "Card.Section": [
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 52,
+            "line": 59,
             "column": 8,
             "version": "19.10.1"
           }
@@ -10984,14 +11080,14 @@
         "Form.Checkbox": [
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 373,
-            "column": 20,
+            "line": 382,
+            "column": 18,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 386,
-            "column": 22,
+            "line": 394,
+            "column": 20,
             "version": "19.10.1"
           }
         ],
@@ -11032,20 +11128,20 @@
           },
           {
             "filePath": "src/discussions/posts/post/PostHeader.jsx",
-            "line": 107,
+            "line": 109,
             "column": 21,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post/PostLink.jsx",
             "line": 83,
-            "column": 14,
+            "column": 16,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post/PostLink.jsx",
             "line": 90,
-            "column": 14,
+            "column": 16,
             "version": "19.10.1"
           }
         ],
@@ -11095,7 +11191,7 @@
       }
     },
     {
-      "version": "20.4.1",
+      "version": "20.8.0",
       "name": "@edx/frontend-app-enterprise-public-catalog",
       "repository": {
         "type": "git",
@@ -11108,13 +11204,13 @@
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 50,
             "column": 6,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 202,
             "column": 6,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "ModalDialog.Body": [
@@ -11122,13 +11218,13 @@
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 59,
             "column": 8,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 211,
             "column": 8,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "ModalDialog.Hero": [
@@ -11136,13 +11232,13 @@
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 60,
             "column": 10,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 212,
             "column": 10,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "Image": [
@@ -11150,31 +11246,31 @@
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 63,
             "column": 10,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 157,
             "column": 8,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 215,
             "column": 10,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/hero/Hero.jsx",
             "line": 18,
             "column": 4,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/hero/Hero.jsx",
             "line": 33,
             "column": 4,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "ModalDialog.Title": [
@@ -11182,25 +11278,25 @@
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 66,
             "column": 12,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 71,
             "column": 12,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 218,
             "column": 12,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 223,
             "column": 12,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "ModalDialog.Footer": [
@@ -11208,13 +11304,13 @@
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 98,
             "column": 8,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 254,
             "column": 8,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "ActionRow": [
@@ -11222,13 +11318,13 @@
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 99,
             "column": 10,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 255,
             "column": 10,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "Hyperlink": [
@@ -11236,13 +11332,13 @@
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 101,
             "column": 14,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 256,
             "column": 12,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "Button": [
@@ -11250,31 +11346,31 @@
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 108,
             "column": 16,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 263,
             "column": 14,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogSearchResults/associatedComponents/downloadCsvButton/DownloadCsvButton.jsx",
             "line": 40,
             "column": 6,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogSearchResults/associatedComponents/titleButton/TitleButton.jsx",
             "line": 7,
             "column": 4,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 289,
             "column": 10,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "Icon": [
@@ -11282,55 +11378,55 @@
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 111,
             "column": 18,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
             "line": 266,
             "column": 16,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogModalBanner/CatalogCourseModalBanner.jsx",
             "line": 46,
             "column": 10,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogModalBanner/CatalogCourseModalBanner.jsx",
             "line": 58,
             "column": 10,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogModalBanner/CatalogCourseModalBanner.jsx",
             "line": 69,
             "column": 10,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogModalBanner/CatalogProgramModalBanner.jsx",
             "line": 28,
             "column": 12,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogModalBanner/CatalogProgramModalBanner.jsx",
             "line": 42,
             "column": 12,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogModalBanner/CatalogProgramModalBanner.jsx",
             "line": 55,
             "column": 10,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
             "line": 56,
             "column": 12,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "Alert": [
@@ -11338,13 +11434,13 @@
             "filePath": "src/components/catalogNoResultsDeck/CatalogNoResultsDeck.jsx",
             "line": 60,
             "column": 6,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 249,
             "column": 6,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "Alert.Heading": [
@@ -11352,7 +11448,7 @@
             "filePath": "src/components/catalogNoResultsDeck/CatalogNoResultsDeck.jsx",
             "line": 61,
             "column": 8,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "Alert.Link": [
@@ -11360,7 +11456,7 @@
             "filePath": "src/components/catalogNoResultsDeck/CatalogNoResultsDeck.jsx",
             "line": 63,
             "column": 8,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "DataTable": [
@@ -11368,13 +11464,13 @@
             "filePath": "src/components/catalogNoResultsDeck/CatalogNoResultsDeck.jsx",
             "line": 70,
             "column": 6,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 302,
             "column": 8,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "CardView": [
@@ -11382,13 +11478,13 @@
             "filePath": "src/components/catalogNoResultsDeck/CatalogNoResultsDeck.jsx",
             "line": 83,
             "column": 8,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 314,
             "column": 12,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "Badge": [
@@ -11396,67 +11492,67 @@
             "filePath": "src/components/catalogSearchResults/associatedComponents/catalogBadges/CatalogBadges.jsx",
             "line": 15,
             "column": 8,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogSearchResults/associatedComponents/catalogBadges/CatalogBadges.jsx",
             "line": 22,
             "column": 8,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogSearchResults/associatedComponents/catalogBadges/CatalogBadges.jsx",
             "line": 29,
             "column": 8,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
             "line": 48,
             "column": 12,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/courseCard/CourseCard.jsx",
             "line": 43,
             "column": 12,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/courseCard/CourseCard.jsx",
             "line": 50,
             "column": 12,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/courseCard/CourseCard.jsx",
             "line": 60,
             "column": 12,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
             "line": 50,
             "column": 10,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
             "line": 63,
             "column": 12,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
             "line": 68,
             "column": 12,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
             "line": 73,
             "column": 12,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "Toast": [
@@ -11464,7 +11560,7 @@
             "filePath": "src/components/catalogSearchResults/associatedComponents/downloadCsvButton/DownloadCsvButton.jsx",
             "line": 36,
             "column": 7,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "DataTable.TableControlBar": [
@@ -11472,7 +11568,7 @@
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 312,
             "column": 10,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "DataTable.Table": [
@@ -11480,7 +11576,7 @@
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 325,
             "column": 25,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "DataTable.TableFooter": [
@@ -11488,7 +11584,7 @@
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 328,
             "column": 10,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "DataTable.RowStatus": [
@@ -11496,7 +11592,7 @@
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 329,
             "column": 12,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "Form.Radio": [
@@ -11504,7 +11600,7 @@
             "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
             "line": 19,
             "column": 4,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "Card": [
@@ -11512,19 +11608,19 @@
             "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
             "line": 44,
             "column": 4,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/courseCard/CourseCard.jsx",
             "line": 26,
             "column": 4,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
             "line": 33,
             "column": 4,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "Card.Header": [
@@ -11532,19 +11628,19 @@
             "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
             "line": 45,
             "column": 6,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/courseCard/CourseCard.jsx",
             "line": 33,
             "column": 6,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
             "line": 40,
             "column": 6,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "Card.Section": [
@@ -11552,19 +11648,19 @@
             "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
             "line": 57,
             "column": 6,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/courseCard/CourseCard.jsx",
             "line": 35,
             "column": 6,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
             "line": 44,
             "column": 6,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "Container": [
@@ -11572,25 +11668,25 @@
             "filePath": "src/components/catalogSelectionDeck/CatalogSelectionDeck.jsx",
             "line": 18,
             "column": 6,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/hero/Hero.jsx",
             "line": 74,
             "column": 6,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/PageWrapper.jsx",
             "line": 12,
             "column": 4,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/subheader/subheader.jsx",
             "line": 12,
             "column": 6,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "CardDeck": [
@@ -11598,7 +11694,7 @@
             "filePath": "src/components/catalogSelectionDeck/CatalogSelectionDeck.jsx",
             "line": 20,
             "column": 8,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ],
         "Card.ImageCap": [
@@ -11606,13 +11702,13 @@
             "filePath": "src/components/courseCard/CourseCard.jsx",
             "line": 27,
             "column": 6,
-            "version": "20.4.1"
+            "version": "20.8.0"
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
             "line": 34,
             "column": 6,
-            "version": "20.4.1"
+            "version": "20.8.0"
           }
         ]
       }
@@ -12095,6 +12191,18 @@
             "version": "19.22.0"
           },
           {
+            "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
+            "line": 133,
+            "column": 20,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
+            "line": 153,
+            "column": 16,
+            "version": "19.22.0"
+          },
+          {
             "filePath": "src/components/program/ProgramCourses.jsx",
             "line": 73,
             "column": 20,
@@ -12217,9 +12325,9 @@
             "version": "19.22.0"
           },
           {
-            "filePath": "src/components/error-page/ErrorPage.jsx",
-            "line": 24,
-            "column": 6,
+            "filePath": "src/components/error-page/ErrorPageContent.jsx",
+            "line": 14,
+            "column": 2,
             "version": "19.22.0"
           },
           {
@@ -12230,7 +12338,7 @@
           },
           {
             "filePath": "src/components/executive-education-2u/ExecutiveEducation2UPage.jsx",
-            "line": 84,
+            "line": 57,
             "column": 4,
             "version": "19.22.0"
           },
@@ -12481,6 +12589,42 @@
             "version": "19.22.0"
           },
           {
+            "filePath": "src/components/executive-education-2u/ExecutiveEducation2UError.jsx",
+            "line": 22,
+            "column": 6,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/executive-education-2u/ExecutiveEducation2UPage.jsx",
+            "line": 82,
+            "column": 14,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
+            "line": 80,
+            "column": 10,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
+            "line": 119,
+            "column": 10,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
+            "line": 149,
+            "column": 10,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
+            "line": 160,
+            "column": 10,
+            "version": "19.22.0"
+          },
+          {
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 21,
             "column": 4,
@@ -12586,8 +12730,50 @@
           },
           {
             "filePath": "src/components/error-page/ErrorPage.jsx",
-            "line": 25,
+            "line": 29,
             "column": 8,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/executive-education-2u/ExecutiveEducation2UError.jsx",
+            "line": 23,
+            "column": 8,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/executive-education-2u/ExecutiveEducation2UPage.jsx",
+            "line": 83,
+            "column": 16,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
+            "line": 81,
+            "column": 12,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
+            "line": 100,
+            "column": 12,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
+            "line": 120,
+            "column": 12,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
+            "line": 150,
+            "column": 12,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
+            "line": 161,
+            "column": 12,
             "version": "19.22.0"
           },
           {
@@ -13427,12 +13613,6 @@
             "line": 84,
             "column": 8,
             "version": "19.22.0"
-          },
-          {
-            "filePath": "src/components/executive-education-2u/ExecutiveEducation2UPage.jsx",
-            "line": 92,
-            "column": 8,
-            "version": "19.22.0"
           }
         ],
         "Tab": [
@@ -13446,30 +13626,6 @@
             "filePath": "src/components/dashboard/DashboardPage.jsx",
             "line": 88,
             "column": 10,
-            "version": "19.22.0"
-          },
-          {
-            "filePath": "src/components/executive-education-2u/ExecutiveEducation2UPage.jsx",
-            "line": 45,
-            "column": 8,
-            "version": "19.22.0"
-          },
-          {
-            "filePath": "src/components/executive-education-2u/ExecutiveEducation2UPage.jsx",
-            "line": 53,
-            "column": 8,
-            "version": "19.22.0"
-          },
-          {
-            "filePath": "src/components/executive-education-2u/ExecutiveEducation2UPage.jsx",
-            "line": 61,
-            "column": 8,
-            "version": "19.22.0"
-          },
-          {
-            "filePath": "src/components/executive-education-2u/ExecutiveEducation2UPage.jsx",
-            "line": 69,
-            "column": 8,
             "version": "19.22.0"
           }
         ],
@@ -13725,6 +13881,18 @@
             "version": "19.22.0"
           },
           {
+            "filePath": "src/components/executive-education-2u/ExecutiveEducation2UError.jsx",
+            "line": 32,
+            "column": 12,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
+            "line": 162,
+            "column": 14,
+            "version": "19.22.0"
+          },
+          {
             "filePath": "src/components/integration-warning-modal/IntegrationWarningModal.jsx",
             "line": 38,
             "column": 10,
@@ -13857,6 +14025,60 @@
             "version": "19.22.0"
           }
         ],
+        "Form.Group": [
+          {
+            "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
+            "line": 82,
+            "column": 14,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
+            "line": 101,
+            "column": 14,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
+            "line": 121,
+            "column": 14,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/program-progress/ProgramProgressCourses.jsx",
+            "line": 182,
+            "column": 28,
+            "version": "19.22.0"
+          }
+        ],
+        "Form.Control": [
+          {
+            "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
+            "line": 86,
+            "column": 16,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
+            "line": 104,
+            "column": 16,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/program-progress/ProgramProgressCourses.jsx",
+            "line": 184,
+            "column": 30,
+            "version": "19.22.0"
+          }
+        ],
+        "CheckboxControl": [
+          {
+            "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
+            "line": 123,
+            "column": 18,
+            "version": "19.22.0"
+          }
+        ],
         "Image": [
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
@@ -13975,26 +14197,10 @@
             "version": "19.22.0"
           }
         ],
-        "Form.Group": [
-          {
-            "filePath": "src/components/program-progress/ProgramProgressCourses.jsx",
-            "line": 182,
-            "column": 28,
-            "version": "19.22.0"
-          }
-        ],
         "Form.Label": [
           {
             "filePath": "src/components/program-progress/ProgramProgressCourses.jsx",
             "line": 183,
-            "column": 30,
-            "version": "19.22.0"
-          }
-        ],
-        "Form.Control": [
-          {
-            "filePath": "src/components/program-progress/ProgramProgressCourses.jsx",
-            "line": 184,
             "column": 30,
             "version": "19.22.0"
           }
@@ -14252,39 +14458,39 @@
         "Modal": [
           {
             "filePath": "src/components/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
-            "line": 118,
+            "line": 117,
             "column": 6,
             "version": "19.19.0"
           }
         ],
-        "StatusAlert": [
+        "Alert": [
           {
             "filePath": "src/components/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
-            "line": 123,
+            "line": 122,
             "column": 14,
             "version": "19.19.0"
           },
           {
             "filePath": "src/components/course-enrollments/CourseEnrollments.jsx",
-            "line": 53,
+            "line": 52,
             "column": 4,
             "version": "19.19.0"
           },
           {
             "filePath": "src/components/course-enrollments/CourseEnrollments.jsx",
-            "line": 73,
+            "line": 67,
             "column": 6,
             "version": "19.19.0"
           },
           {
             "filePath": "src/components/program/ProgramPage.jsx",
-            "line": 81,
+            "line": 80,
             "column": 6,
             "version": "19.19.0"
           },
           {
             "filePath": "src/components/programs-list/ProgramListPage.jsx",
-            "line": 82,
+            "line": 81,
             "column": 4,
             "version": "19.19.0"
           }
@@ -14292,7 +14498,7 @@
         "Input": [
           {
             "filePath": "src/components/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
-            "line": 144,
+            "line": 132,
             "column": 14,
             "version": "19.19.0"
           }
@@ -14300,7 +14506,7 @@
         "StatefulButton": [
           {
             "filePath": "src/components/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
-            "line": 163,
+            "line": 151,
             "column": 10,
             "version": "19.19.0"
           }
@@ -14324,6 +14530,14 @@
             "filePath": "src/components/course-enrollments/CourseSection.jsx",
             "line": 83,
             "column": 8,
+            "version": "19.19.0"
+          }
+        ],
+        "Alert.Link": [
+          {
+            "filePath": "src/components/program/ProgramPage.jsx",
+            "line": 91,
+            "column": 10,
             "version": "19.19.0"
           }
         ],
@@ -15972,7 +16186,7 @@
       }
     },
     {
-      "version": "19.9.0",
+      "version": "19.25.3",
       "name": "@edx/frontend-app-library-authoring",
       "repository": {
         "type": "git",
@@ -15985,313 +16199,313 @@
             "filePath": "src/generic/LoadingPage.jsx",
             "line": 6,
             "column": 2,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 339,
             "column": 6,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 343,
             "column": 6,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 354,
             "column": 6,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 357,
             "column": 6,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 363,
             "column": 18,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 371,
             "column": 18,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 382,
             "column": 14,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 397,
             "column": 18,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 409,
             "column": 18,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 421,
             "column": 14,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 436,
             "column": 20,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 439,
             "column": 20,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 474,
             "column": 6,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 477,
             "column": 12,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 484,
             "column": 12,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 488,
             "column": 20,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 493,
             "column": 20,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 498,
             "column": 20,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/ErrorAlert.jsx",
             "line": 11,
             "column": 4,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 40,
             "column": 6,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 45,
             "column": 6,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 62,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 72,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 77,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 82,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 92,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 97,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 102,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 112,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 117,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 122,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 132,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 137,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 144,
             "column": 6,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 148,
             "column": 6,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/SuccessAlert.jsx",
             "line": 10,
             "column": 4,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportListItem.jsx",
             "line": 50,
             "column": 8,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportListItem.jsx",
             "line": 53,
             "column": 8,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportTaskListItem.jsx",
             "line": 33,
             "column": 8,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/LibraryAccessPage.jsx",
             "line": 98,
             "column": 16,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/LibraryAccessPage.jsx",
             "line": 107,
             "column": 16,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/LibraryAccessPage.jsx",
             "line": 111,
             "column": 16,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
             "line": 26,
             "column": 2,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
             "line": 34,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
             "line": 43,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
             "line": 46,
             "column": 14,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
             "line": 51,
             "column": 14,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
             "line": 80,
             "column": 14,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
             "line": 88,
             "column": 18,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
             "line": 93,
             "column": 18,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
             "line": 101,
             "column": 14,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "Navbar": [
@@ -16299,7 +16513,7 @@
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 79,
             "column": 4,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "Navbar.Brand": [
@@ -16307,7 +16521,7 @@
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 80,
             "column": 6,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "Navbar.Collapse": [
@@ -16315,7 +16529,7 @@
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 81,
             "column": 6,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "Button": [
@@ -16323,229 +16537,241 @@
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 84,
             "column": 12,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 91,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 97,
             "column": 8,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 118,
             "column": 8,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 271,
             "column": 4,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 275,
             "column": 4,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 423,
             "column": 16,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 457,
             "column": 22,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 460,
             "column": 22,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 463,
             "column": 22,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 494,
             "column": 22,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 499,
             "column": 22,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 41,
             "column": 8,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 46,
             "column": 8,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
             "line": 317,
             "column": 18,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
             "line": 49,
             "column": 14,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
             "line": 203,
             "column": 16,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
-            "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
-            "line": 263,
-            "column": 10,
-            "version": "19.9.0"
+            "filePath": "src/library-authoring/create-library/LibraryCreatePage.jsx",
+            "line": 280,
+            "column": 18,
+            "version": "19.25.3"
+          },
+          {
+            "filePath": "src/library-authoring/create-library/LibraryCreatePage.jsx",
+            "line": 315,
+            "column": 14,
+            "version": "19.25.3"
+          },
+          {
+            "filePath": "src/library-authoring/create-library/LibraryCreatePage.jsx",
+            "line": 318,
+            "column": 14,
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/edit-block/LibraryBlockAssets.jsx",
             "line": 29,
             "column": 15,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/edit-block/LibraryBlockOlx.jsx",
             "line": 56,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/edit-block/LibraryBlockOlx.jsx",
             "line": 57,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/edit-block/LibraryBlockOlx.jsx",
             "line": 64,
             "column": 8,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/edit-block/LibraryBlockPage.jsx",
             "line": 213,
             "column": 14,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/edit-block/LibraryBlockPage.jsx",
             "line": 331,
             "column": 24,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/edit-block/LibraryBlockPage.jsx",
             "line": 342,
             "column": 24,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/edit-block/LibraryBlockPage.jsx",
             "line": 353,
             "column": 24,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/LibraryAccessForm.jsx",
             "line": 83,
             "column": 12,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/LibraryAccessPage.jsx",
             "line": 52,
             "column": 16,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/LibraryAccessPage.jsx",
             "line": 112,
             "column": 18,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
             "line": 52,
             "column": 16,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
             "line": 70,
             "column": 20,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
             "line": 81,
             "column": 16,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
             "line": 89,
             "column": 20,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
             "line": 94,
             "column": 20,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
             "line": 102,
             "column": 16,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
             "line": 127,
             "column": 20,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 186,
+            "line": 177,
             "column": 18,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 254,
+            "line": 243,
             "column": 24,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "Modal": [
@@ -16553,19 +16779,19 @@
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 106,
             "column": 4,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
             "line": 55,
             "column": 16,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
             "line": 112,
             "column": 16,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "Card": [
@@ -16573,37 +16799,37 @@
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 126,
             "column": 6,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 358,
             "column": 8,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 485,
             "column": 14,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/LibraryAccessForm.jsx",
             "line": 31,
             "column": 8,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/LibraryAccessForm.jsx",
             "line": 65,
             "column": 8,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
             "line": 27,
             "column": 4,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "Card.Body": [
@@ -16611,25 +16837,25 @@
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 127,
             "column": 8,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 359,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 486,
             "column": 16,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
             "line": 28,
             "column": 6,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "Container": [
@@ -16637,7 +16863,7 @@
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 337,
             "column": 2,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "Row": [
@@ -16645,109 +16871,109 @@
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 338,
             "column": 4,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 360,
             "column": 12,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 435,
             "column": 18,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 476,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 487,
             "column": 18,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 39,
             "column": 4,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 61,
             "column": 8,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 81,
             "column": 8,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 101,
             "column": 8,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 121,
             "column": 8,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 143,
             "column": 4,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportListItem.jsx",
             "line": 49,
             "column": 6,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportTaskListItem.jsx",
             "line": 32,
             "column": 6,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/LibraryAccessForm.jsx",
             "line": 29,
             "column": 4,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/LibraryAccessPage.jsx",
             "line": 85,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/LibraryAccessPage.jsx",
             "line": 106,
             "column": 14,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
             "line": 33,
             "column": 8,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
             "line": 44,
             "column": 12,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "SearchField": [
@@ -16755,7 +16981,7 @@
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 364,
             "column": 20,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "Input": [
@@ -16763,97 +16989,73 @@
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 372,
             "column": 20,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 63,
             "column": 12,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 83,
             "column": 12,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 103,
             "column": 12,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
             "line": 123,
             "column": 12,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
             "line": 216,
             "column": 24,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
             "line": 237,
             "column": 24,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
             "line": 259,
             "column": 26,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
             "line": 218,
             "column": 14,
-            "version": "19.9.0"
-          },
-          {
-            "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
-            "line": 163,
-            "column": 16,
-            "version": "19.9.0"
-          },
-          {
-            "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
-            "line": 184,
-            "column": 16,
-            "version": "19.9.0"
-          },
-          {
-            "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
-            "line": 205,
-            "column": 16,
-            "version": "19.9.0"
-          },
-          {
-            "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
-            "line": 226,
-            "column": 16,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/LibraryAccessForm.jsx",
             "line": 50,
             "column": 22,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 269,
+            "line": 258,
             "column": 22,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 283,
+            "line": 272,
             "column": 22,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "Pagination": [
@@ -16861,25 +17063,25 @@
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 410,
             "column": 20,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
             "line": 118,
             "column": 12,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
             "line": 282,
             "column": 12,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 213,
+            "line": 202,
             "column": 18,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "Dropdown": [
@@ -16887,19 +17089,19 @@
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 441,
             "column": 24,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
             "line": 46,
             "column": 18,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
             "line": 80,
             "column": 16,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "Dropdown.Toggle": [
@@ -16907,19 +17109,19 @@
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 442,
             "column": 26,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
             "line": 47,
             "column": 20,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
             "line": 81,
             "column": 18,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "Dropdown.Menu": [
@@ -16927,19 +17129,19 @@
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 445,
             "column": 26,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
             "line": 51,
             "column": 20,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
             "line": 85,
             "column": 18,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "Dropdown.Item": [
@@ -16947,43 +17149,43 @@
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 447,
             "column": 30,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
             "line": 52,
             "column": 22,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
             "line": 53,
             "column": 22,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
             "line": 54,
             "column": 22,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
             "line": 86,
             "column": 20,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
             "line": 87,
             "column": 20,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
             "line": 88,
             "column": 20,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "Alert": [
@@ -16991,43 +17193,121 @@
             "filePath": "src/library-authoring/common/ErrorAlert.jsx",
             "line": 12,
             "column": 6,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/SuccessAlert.jsx",
             "line": 11,
             "column": 6,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
             "line": 194,
             "column": 14,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
             "line": 367,
             "column": 18,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
-            "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
-            "line": 143,
-            "column": 10,
-            "version": "19.9.0"
+            "filePath": "src/library-authoring/create-library/LibraryCreatePage.jsx",
+            "line": 203,
+            "column": 12,
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/edit-block/LibraryBlockPage.jsx",
             "line": 227,
             "column": 14,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/LibraryAccessPage.jsx",
             "line": 70,
             "column": 12,
-            "version": "19.9.0"
+            "version": "19.25.3"
+          }
+        ],
+        "Form.Group": [
+          {
+            "filePath": "src/library-authoring/common/FormGroup.jsx",
+            "line": 18,
+            "column": 4,
+            "version": "19.25.3"
+          },
+          {
+            "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
+            "line": 270,
+            "column": 22,
+            "version": "19.25.3"
+          },
+          {
+            "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
+            "line": 193,
+            "column": 12,
+            "version": "19.25.3"
+          },
+          {
+            "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
+            "line": 214,
+            "column": 12,
+            "version": "19.25.3"
+          },
+          {
+            "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
+            "line": 232,
+            "column": 20,
+            "version": "19.25.3"
+          },
+          {
+            "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
+            "line": 254,
+            "column": 20,
+            "version": "19.25.3"
+          },
+          {
+            "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
+            "line": 268,
+            "column": 20,
+            "version": "19.25.3"
+          }
+        ],
+        "Form.Control": [
+          {
+            "filePath": "src/library-authoring/common/FormGroup.jsx",
+            "line": 19,
+            "column": 6,
+            "version": "19.25.3"
+          },
+          {
+            "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
+            "line": 198,
+            "column": 16,
+            "version": "19.25.3"
+          },
+          {
+            "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
+            "line": 237,
+            "column": 24,
+            "version": "19.25.3"
+          }
+        ],
+        "IconButton": [
+          {
+            "filePath": "src/library-authoring/common/OrganizationDropdown.jsx",
+            "line": 150,
+            "column": 6,
+            "version": "19.25.3"
+          },
+          {
+            "filePath": "src/library-authoring/common/OrganizationDropdown.jsx",
+            "line": 164,
+            "column": 6,
+            "version": "19.25.3"
           }
         ],
         "Form": [
@@ -17035,19 +17315,19 @@
             "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
             "line": 202,
             "column": 14,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
             "line": 191,
             "column": 8,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 241,
+            "line": 230,
             "column": 16,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "ValidationFormGroup": [
@@ -17055,87 +17335,25 @@
             "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
             "line": 206,
             "column": 22,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
             "line": 227,
             "column": 22,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
             "line": 249,
             "column": 24,
-            "version": "19.9.0"
-          },
-          {
-            "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
-            "line": 153,
-            "column": 14,
-            "version": "19.9.0"
-          },
-          {
-            "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
-            "line": 174,
-            "column": 14,
-            "version": "19.9.0"
-          },
-          {
-            "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
-            "line": 195,
-            "column": 14,
-            "version": "19.9.0"
-          },
-          {
-            "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
-            "line": 216,
-            "column": 14,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/LibraryAccessForm.jsx",
             "line": 40,
             "column": 20,
-            "version": "19.9.0"
-          }
-        ],
-        "Form.Group": [
-          {
-            "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
-            "line": 270,
-            "column": 22,
-            "version": "19.9.0"
-          },
-          {
-            "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
-            "line": 193,
-            "column": 12,
-            "version": "19.9.0"
-          },
-          {
-            "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
-            "line": 214,
-            "column": 12,
-            "version": "19.9.0"
-          },
-          {
-            "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 243,
-            "column": 20,
-            "version": "19.9.0"
-          },
-          {
-            "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 265,
-            "column": 20,
-            "version": "19.9.0"
-          },
-          {
-            "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 279,
-            "column": 20,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "Form.Check": [
@@ -17143,13 +17361,13 @@
             "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
             "line": 271,
             "column": 24,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
             "line": 280,
             "column": 24,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "StatefulButton": [
@@ -17157,25 +17375,25 @@
             "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
             "line": 302,
             "column": 18,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportListItem.jsx",
             "line": 54,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
-            "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
-            "line": 249,
-            "column": 10,
-            "version": "19.9.0"
+            "filePath": "src/library-authoring/create-library/LibraryCreatePage.jsx",
+            "line": 288,
+            "column": 18,
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/LibraryAccessForm.jsx",
             "line": 67,
             "column": 12,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "Icon": [
@@ -17183,31 +17401,31 @@
             "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
             "line": 312,
             "column": 31,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
-            "filePath": "src/library-authoring/create-library/LibraryCreateForm.jsx",
-            "line": 257,
-            "column": 23,
-            "version": "19.9.0"
+            "filePath": "src/library-authoring/create-library/LibraryCreatePage.jsx",
+            "line": 296,
+            "column": 31,
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/LibraryAccessForm.jsx",
             "line": 78,
             "column": 25,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
             "line": 49,
             "column": 22,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/studio-header/StudioHeader.jsx",
             "line": 83,
             "column": 20,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "Form.Row": [
@@ -17215,31 +17433,31 @@
             "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
             "line": 192,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
             "line": 213,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 242,
+            "line": 231,
             "column": 18,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 264,
+            "line": 253,
             "column": 18,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 278,
+            "line": 267,
             "column": 18,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "Form.Label": [
@@ -17247,45 +17465,31 @@
             "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
             "line": 194,
             "column": 14,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
             "line": 215,
             "column": 14,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 244,
+            "line": 233,
             "column": 22,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 266,
+            "line": 255,
             "column": 22,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 280,
+            "line": 269,
             "column": 22,
-            "version": "19.9.0"
-          }
-        ],
-        "Form.Control": [
-          {
-            "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
-            "line": 198,
-            "column": 16,
-            "version": "19.9.0"
-          },
-          {
-            "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 248,
-            "column": 24,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "Badge": [
@@ -17293,13 +17497,45 @@
             "filePath": "src/library-authoring/course-import/CourseImportTaskListItem.jsx",
             "line": 41,
             "column": 12,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
             "line": 29,
             "column": 8,
-            "version": "19.9.0"
+            "version": "19.25.3"
+          }
+        ],
+        "Alert.Heading": [
+          {
+            "filePath": "src/library-authoring/create-library/LibraryCreatePage.jsx",
+            "line": 208,
+            "column": 29,
+            "version": "19.25.3"
+          }
+        ],
+        "Breadcrumb": [
+          {
+            "filePath": "src/library-authoring/create-library/LibraryCreatePage.jsx",
+            "line": 212,
+            "column": 10,
+            "version": "19.25.3"
+          }
+        ],
+        "AlertModal": [
+          {
+            "filePath": "src/library-authoring/create-library/LibraryCreatePage.jsx",
+            "line": 310,
+            "column": 8,
+            "version": "19.25.3"
+          }
+        ],
+        "ActionRow": [
+          {
+            "filePath": "src/library-authoring/create-library/LibraryCreatePage.jsx",
+            "line": 314,
+            "column": 12,
+            "version": "19.25.3"
           }
         ],
         "Spinner": [
@@ -17307,7 +17543,7 @@
             "filePath": "src/library-authoring/edit-block/LibraryBlockPage.jsx",
             "line": 263,
             "column": 22,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "Card.Header": [
@@ -17315,7 +17551,7 @@
             "filePath": "src/library-authoring/library-access/LibraryAccessForm.jsx",
             "line": 32,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ],
         "Card.Section": [
@@ -17323,13 +17559,13 @@
             "filePath": "src/library-authoring/library-access/LibraryAccessForm.jsx",
             "line": 35,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/library-access/LibraryAccessForm.jsx",
             "line": 66,
             "column": 10,
-            "version": "19.9.0"
+            "version": "19.25.3"
           }
         ]
       }
@@ -18155,7 +18391,7 @@
       },
       "folderName": "frontend-app-profile",
       "usages": {
-        "StatusAlert": [
+        "Alert": [
           {
             "filePath": "src/profile/AgeMessage.jsx",
             "line": 9,
@@ -18164,8 +18400,8 @@
           },
           {
             "filePath": "src/profile/forms/SocialLinks.jsx",
-            "line": 168,
-            "column": 36,
+            "line": 170,
+            "column": 22,
             "version": "19.25.3"
           },
           {
@@ -18175,7 +18411,23 @@
             "version": "19.25.3"
           }
         ],
-        "ValidationFormGroup": [
+        "Alert.Heading": [
+          {
+            "filePath": "src/profile/AgeMessage.jsx",
+            "line": 14,
+            "column": 6,
+            "version": "19.25.3"
+          }
+        ],
+        "Alert.Link": [
+          {
+            "filePath": "src/profile/AgeMessage.jsx",
+            "line": 26,
+            "column": 6,
+            "version": "19.25.3"
+          }
+        ],
+        "Form.Group": [
           {
             "filePath": "src/profile/forms/Bio.jsx",
             "line": 59,
@@ -18407,7 +18659,7 @@
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
-            "line": 109,
+            "line": 112,
             "column": 8,
             "version": "19.14.0"
           },
@@ -18529,13 +18781,13 @@
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
-            "line": 132,
+            "line": 135,
             "column": 10,
             "version": "19.14.0"
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
-            "line": 146,
+            "line": 149,
             "column": 10,
             "version": "19.14.0"
           },
@@ -18639,6 +18891,30 @@
             "filePath": "src/components/SidePanes/UsersPane.jsx",
             "line": 148,
             "column": 16,
+            "version": "19.14.0"
+          }
+        ],
+        "Form.Group": [
+          {
+            "filePath": "src/components/RenderSelectField/updated-paragon-component.jsx",
+            "line": 22,
+            "column": 2,
+            "version": "19.14.0"
+          }
+        ],
+        "Form.Label": [
+          {
+            "filePath": "src/components/RenderSelectField/updated-paragon-component.jsx",
+            "line": 23,
+            "column": 4,
+            "version": "19.14.0"
+          }
+        ],
+        "Form.Control": [
+          {
+            "filePath": "src/components/RenderSelectField/updated-paragon-component.jsx",
+            "line": 26,
+            "column": 4,
             "version": "19.14.0"
           }
         ],
@@ -21521,13 +21797,13 @@
           },
           {
             "filePath": "src/components/Course/CourseModes/index.jsx",
-            "line": 333,
+            "line": 328,
             "column": 48,
             "version": "19.19.1"
           },
           {
             "filePath": "src/components/Course/CourseModes/index.jsx",
-            "line": 342,
+            "line": 337,
             "column": 48,
             "version": "19.19.1"
           },
@@ -21551,7 +21827,7 @@
           },
           {
             "filePath": "src/components/Course/CourseSnapshot/WeeksToComplete.jsx",
-            "line": 33,
+            "line": 27,
             "column": 6,
             "version": "19.19.1"
           },
@@ -21569,7 +21845,7 @@
           },
           {
             "filePath": "src/components/DiscoveryCard/DiscoveryProgramCard.jsx",
-            "line": 298,
+            "line": 294,
             "column": 24,
             "version": "19.19.1"
           },
@@ -21629,13 +21905,13 @@
           },
           {
             "filePath": "src/components/Search/Refinements/LearningTypeRadioSelect.jsx",
-            "line": 104,
+            "line": 106,
             "column": 22,
             "version": "19.19.1"
           },
           {
             "filePath": "src/components/Search/Refinements/LearningTypeRadioSelect.jsx",
-            "line": 105,
+            "line": 107,
             "column": 23,
             "version": "19.19.1"
           },
@@ -21673,7 +21949,7 @@
           },
           {
             "filePath": "src/templates/allTopics.jsx",
-            "line": 91,
+            "line": 86,
             "column": 12,
             "version": "19.19.1"
           }
@@ -21693,7 +21969,7 @@
           },
           {
             "filePath": "src/templates/allTopics.jsx",
-            "line": 92,
+            "line": 87,
             "column": 14,
             "version": "19.19.1"
           }
@@ -21707,7 +21983,7 @@
           },
           {
             "filePath": "src/components/Badges/NewBadge.jsx",
-            "line": 10,
+            "line": 21,
             "column": 4,
             "version": "19.19.1"
           },
@@ -21725,13 +22001,13 @@
           },
           {
             "filePath": "src/components/DiscoveryCard/DiscoveryProgramCard.jsx",
-            "line": 202,
+            "line": 198,
             "column": 20,
             "version": "19.19.1"
           },
           {
             "filePath": "src/components/DiscoveryCard/DiscoveryProgramCard.jsx",
-            "line": 288,
+            "line": 284,
             "column": 22,
             "version": "19.19.1"
           },
@@ -21843,7 +22119,7 @@
           },
           {
             "filePath": "src/components/Learn/StickyNav.jsx",
-            "line": 88,
+            "line": 93,
             "column": 10,
             "version": "19.19.1"
           },
@@ -21873,7 +22149,7 @@
           },
           {
             "filePath": "src/components/Search/PreQuery/PopularSearchLinks.jsx",
-            "line": 67,
+            "line": 42,
             "column": 10,
             "version": "19.19.1"
           },
@@ -21941,7 +22217,7 @@
           },
           {
             "filePath": "src/components/Course/BusinessBlock/index.jsx",
-            "line": 29,
+            "line": 17,
             "column": 4,
             "version": "19.19.1"
           },
@@ -21971,7 +22247,7 @@
           },
           {
             "filePath": "src/components/Course/CourseModes/index.jsx",
-            "line": 192,
+            "line": 187,
             "column": 4,
             "version": "19.19.1"
           },
@@ -21989,7 +22265,7 @@
           },
           {
             "filePath": "src/components/Course/CourseRunSelector/index.jsx",
-            "line": 115,
+            "line": 135,
             "column": 4,
             "version": "19.19.1"
           },
@@ -22031,8 +22307,8 @@
           },
           {
             "filePath": "src/components/Hero/Bootcamp.jsx",
-            "line": 44,
-            "column": 6,
+            "line": 52,
+            "column": 8,
             "version": "19.19.1"
           },
           {
@@ -22093,6 +22369,18 @@
             "filePath": "src/components/Home/UniversalDesignOfLearning.jsx",
             "line": 7,
             "column": 4,
+            "version": "19.19.1"
+          },
+          {
+            "filePath": "src/components/Learn/DynamicProductList.jsx",
+            "line": 97,
+            "column": 6,
+            "version": "19.19.1"
+          },
+          {
+            "filePath": "src/components/Learn/Hero.jsx",
+            "line": 47,
+            "column": 6,
             "version": "19.19.1"
           },
           {
@@ -22181,7 +22469,7 @@
           },
           {
             "filePath": "src/components/Search/PreQuery/PopularSearchLinks.jsx",
-            "line": 63,
+            "line": 36,
             "column": 4,
             "version": "19.19.1"
           },
@@ -22211,7 +22499,7 @@
           },
           {
             "filePath": "src/components/Section/index.jsx",
-            "line": 18,
+            "line": 20,
             "column": 6,
             "version": "19.19.1"
           },
@@ -22259,13 +22547,13 @@
           },
           {
             "filePath": "src/templates/allTopics.jsx",
-            "line": 75,
+            "line": 70,
             "column": 10,
             "version": "19.19.1"
           },
           {
             "filePath": "src/templates/allTopics.jsx",
-            "line": 86,
+            "line": 81,
             "column": 8,
             "version": "19.19.1"
           },
@@ -22377,13 +22665,13 @@
           },
           {
             "filePath": "src/components/Course/CourseModes/index.jsx",
-            "line": 267,
+            "line": 262,
             "column": 24,
             "version": "19.19.1"
           },
           {
             "filePath": "src/components/Course/CourseModes/index.jsx",
-            "line": 284,
+            "line": 279,
             "column": 24,
             "version": "19.19.1"
           },
@@ -22421,13 +22709,13 @@
           },
           {
             "filePath": "src/components/Course/CourseModes/index.jsx",
-            "line": 270,
+            "line": 265,
             "column": 28,
             "version": "19.19.1"
           },
           {
             "filePath": "src/components/Course/CourseModes/index.jsx",
-            "line": 287,
+            "line": 282,
             "column": 28,
             "version": "19.19.1"
           },
@@ -22557,13 +22845,13 @@
         "IconButton": [
           {
             "filePath": "src/components/Course/CourseModes/index.jsx",
-            "line": 275,
+            "line": 270,
             "column": 26,
             "version": "19.19.1"
           },
           {
             "filePath": "src/components/Course/CourseModes/index.jsx",
-            "line": 292,
+            "line": 287,
             "column": 26,
             "version": "19.19.1"
           },
@@ -22713,13 +23001,13 @@
           },
           {
             "filePath": "src/components/Search/PreQuery/SearchBox.jsx",
-            "line": 77,
+            "line": 73,
             "column": 10,
             "version": "19.19.1"
           },
           {
             "filePath": "src/components/Search/SearchBox.jsx",
-            "line": 83,
+            "line": 80,
             "column": 10,
             "version": "19.19.1"
           }
@@ -22739,13 +23027,13 @@
           },
           {
             "filePath": "src/components/Search/PreQuery/SearchBox.jsx",
-            "line": 93,
+            "line": 89,
             "column": 14,
             "version": "19.19.1"
           },
           {
             "filePath": "src/components/Search/SearchBox.jsx",
-            "line": 94,
+            "line": 91,
             "column": 14,
             "version": "19.19.1"
           }
@@ -22765,13 +23053,13 @@
           },
           {
             "filePath": "src/components/Search/PreQuery/SearchBox.jsx",
-            "line": 104,
+            "line": 100,
             "column": 14,
             "version": "19.19.1"
           },
           {
             "filePath": "src/components/Search/SearchBox.jsx",
-            "line": 105,
+            "line": 102,
             "column": 14,
             "version": "19.19.1"
           }
@@ -22797,13 +23085,13 @@
           },
           {
             "filePath": "src/components/Search/PreQuery/SearchBox.jsx",
-            "line": 106,
+            "line": 102,
             "column": 12,
             "version": "19.19.1"
           },
           {
             "filePath": "src/components/Search/SearchBox.jsx",
-            "line": 107,
+            "line": 104,
             "column": 12,
             "version": "19.19.1"
           }
@@ -22967,7 +23255,7 @@
           },
           {
             "filePath": "src/templates/appUpgrade.jsx",
-            "line": 77,
+            "line": 104,
             "column": 8,
             "version": "19.19.1"
           }

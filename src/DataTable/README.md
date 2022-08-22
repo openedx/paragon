@@ -484,39 +484,10 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
 
 Can be used to show the loading state when ``DataTable`` is asynchronously fetching new data.
 
-### Without existing data (e.g, on page load)
-
 ```jsx live
 () => {
-  const data = [];
-  return (
-    <DataTable
-      isLoading
-      itemCount={data.length}
-      data={data}
-      columns={[
-        {
-          Header: 'Title',
-          accessor: 'title',
-        },
-        {
-          Header: 'Director',
-          accessor: 'director',
-        },
-        {
-          Header: 'Release date',
-          accessor: 'release_date',
-        },
-      ]}
-    />
-  );
-}
-```
-
-### With existing data (e.g, paginating table after page load)
-
-```jsx live
-() => {
+  {/* start example state */}
+  const [hasData, setHasData] = useState(false)
   const data = [
     {
       id: '2baf70d1-42bb-4437-b551-e5fed5a87abe',
@@ -542,27 +513,38 @@ Can be used to show the loading state when ``DataTable`` is asynchronously fetch
       rt_score: 93,
     },
   ];
-
+  {/* end example state */}
+  
   return (
-    <DataTable
-      isLoading
-      itemCount={data.length}
-      data={data}
-      columns={[
-        {
-          Header: 'Title',
-          accessor: 'title',
-        },
-        {
-          Header: 'Director',
-          accessor: 'director',
-        },
-        {
-          Header: 'Release date',
-          accessor: 'release_date',
-        },
-      ]}
-    />
+    <>
+      {/* start example form block */}
+      <ExamplePropsForm
+        inputs={[
+          { value: hasData, setValue: () => setHasData(!hasData), name: 'data' },
+        ]}
+      />
+      {/* end example form block */}
+
+      <DataTable
+        isLoading
+        itemCount={data.length}
+        data={hasData ? data : []}
+        columns={[
+          {
+            Header: 'Title',
+            accessor: 'title',
+          },
+          {
+            Header: 'Director',
+            accessor: 'director',
+          },
+          {
+            Header: 'Release date',
+            accessor: 'release_date',
+          },
+        ]}
+      />
+    </>
   );
 }
 ```
@@ -1313,6 +1295,84 @@ You can create your own custom expander column and use it, see code example belo
           Header: 'Coat Color',
           accessor: 'color',
         },
+      ]}
+    >
+      <DataTable.TableControlBar/>
+      <DataTable.Table/>
+      <DataTable.TableFooter/>
+    </DataTable>
+  );
+}
+```
+
+## Custom cell content
+
+You can create your own cell content by passing the `Cell` property to a specific column.
+
+```jsx live
+() => {
+  const variants = ['primary', 'warning', 'success', 'danger'];
+  const [cellColors, setCellColors] = useState([0, 1, 2]);
+
+  const handleColorChange = (index) => {
+    const newColors = cellColors.slice();
+    newColors[index] = cellColors[index] < 3 ? cellColors[index] + 1 : 0;
+    setCellColors(newColors);
+  };
+  
+  return (
+    <DataTable
+      isExpandable
+      itemCount={3}
+      data={[
+        {
+          name: 'Lil Bub',
+          color: 'brown tabby',
+          famous_for: 'weird tongue',
+        },
+        {
+          name: 'Grumpy Cat',
+          color: 'siamese',
+          famous_for: 'serving moods',
+        },
+        {
+          name: 'Smoothie', 
+          color: 'orange tabby',
+          famous_for: 'modeling',
+        },
+      ]}
+      columns={[
+        {
+          Header: 'Name',
+          Cell: ({ row }) => (
+            <Badge variant={variants[cellColors[row.id] % 4]}>
+              {row.original.name}
+            </Badge>
+          ),
+        },
+        {
+          Header: 'Famous For',
+          Cell: ({ row }) => (
+            <Badge variant={variants[(cellColors[row.id] + 1) % 4]}>
+              {row.original.famous_for}
+            </Badge>
+          ),
+        },
+        {
+          Header: 'Coat Color',
+          Cell: ({ row }) => (
+            <Badge variant={variants[(cellColors[row.id] + 2) % 4]}>
+              {row.original.color}
+            </Badge>
+          ),
+        },
+      ]}
+      additionalColumns={[
+        {
+          id: 'action',
+          Header: 'Action',
+          Cell: ({ row }) => <Button variant="link" size="sm" onClick={() => handleColorChange(row.id)}>Change</Button>,
+        }
       ]}
     >
       <DataTable.TableControlBar/>
