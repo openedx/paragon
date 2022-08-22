@@ -45,7 +45,7 @@ const Settings = () => {
           <Form.Control
             as="select"
             value={settings.theme}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSettingsChange('theme', e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleSettingsChange('theme', e.target.value)}
             floatingLabel="Theme"
           >
             {THEMES.map(theme => (
@@ -62,7 +62,7 @@ const Settings = () => {
           <Form.Control
             as="select"
             value={settings.direction}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSettingsChange('direction', e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleSettingsChange('direction', e.target.value)}
             floatingLabel="Direction"
           >
             <option value="ltr">Left to right</option>
@@ -74,7 +74,7 @@ const Settings = () => {
             <Form.Control
               as="select"
               value={settings.language}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSettingsChange('language', e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleSettingsChange('language', e.target.value)}
               floatingLabel="Component Language"
             >
               {LANGUAGES.map(lang => (

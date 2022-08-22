@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import { SettingsContext } from '../context/SettingsContext';
 
 export interface IMeasuredItem {
-  properties: [string] | string[],
+  properties: string[],
   renderBefore?: Function,
   renderAfter?: Function,
   children: React.ReactNode,
@@ -25,12 +25,15 @@ const MeasuredItem = ({
 }: IMeasuredItem) => {
   const { theme } = useContext(SettingsContext);
   const [measurements, setMeasurements] = useState(initialMeasurements);
-  const itemRef = useRef<Element>();
+  const itemRef = useRef();
 
   useEffect(
     () => {
       const measure = () => {
-        const computedStyle = getComputedStyle(itemRef.current as Element);
+        if (!itemRef.current) {
+          return;
+        }
+        const computedStyle = getComputedStyle(itemRef.current);
         const measurementsItems = properties.reduce((acc: { [x: string]: string; }, property: string) => {
           acc[property] = computedStyle.getPropertyValue(property);
           return acc;

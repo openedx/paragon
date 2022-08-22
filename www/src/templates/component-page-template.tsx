@@ -5,16 +5,12 @@ import { graphql, Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 // @ts-ignore
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { useMediaQuery } from 'react-responsive';
-// @ts-ignore
-import { Container, Alert } from '~paragon-react'; // eslint-disable-line
+import { Container, Alert, breakpoints, useMediaQuery } from '~paragon-react'; // eslint-disable-line
 import CodeBlock from '../components/CodeBlock';
 import GenericPropsTable from '../components/PropsTable';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
 import LinkedHeading from '../components/LinkedHeading';
-import { breakpoints } from '../../../src';
 
 export interface IPageTemplate {
   data: {

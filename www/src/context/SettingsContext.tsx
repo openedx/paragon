@@ -47,15 +47,15 @@ const SettingsContextProvider: React.FC = ({ children }) => {
     global.analytics.track(`${key[0].toUpperCase() + key.slice(1)} change`, { [key]: value });
   };
 
-  const toggleSettings = (value: React.SetStateAction<boolean>) => {
+  const toggleSettings = (value: boolean) => {
     setShowSettings(value);
     global.analytics.track('Toggle Settings', { value: value ? 'show' : 'hide' });
   };
 
   // this hook will be called after the first render, so we can safely access localStorage
   useEffect(() => {
-    // @ts-ignore
-    const savedSettings = JSON.parse(global.localStorage.getItem('pgn__settings'));
+    const storageSettings = global.localStorage.getItem('pgn__settings');
+    const savedSettings = storageSettings ? JSON.parse(storageSettings) : null;
     if (savedSettings) {
       setSettings(savedSettings);
       document.body.setAttribute('dir', savedSettings.direction);

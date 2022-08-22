@@ -22,18 +22,27 @@ const {
   projectUsages: dependentProjectsUsages,
 } = dependentProjectsAnalysis;
 
+interface IUsage {
+  filePath: string,
+  line: number,
+  column: number,
+  version: string
+}
+
 interface IDependentUsage {
   version?: string,
   name?: string,
   repository?: { type: string, url: string } | string,
   folderName?: string,
-  usages: { [key: string]: any } | ArrayLike<any>,
+  usages: {
+    [key: string]: IUsage[] | undefined,
+  },
 }
 
 const dependentProjects = dependentProjectsUsages.map((dependentUsage: IDependentUsage) => ({
   ...dependentUsage,
   repositoryUrl: getGithubProjectUrl(dependentUsage.repository),
-  count: Object.values(dependentUsage.usages).reduce((accumulator, usage) => accumulator + usage.length, 0),
+  count: Object.values(dependentUsage.usages).reduce((accumulator, usage) => accumulator + usage!.length, 0),
 }));
 
 const componentsUsage = dependentProjectsUsages.reduce((accumulator: any, project: any) => {
@@ -168,7 +177,7 @@ const ProjectsUsage = () => {
 
 export interface IComponentUsage {
   name: string,
-  componentUsageInProjects: Function,
+  componentUsageInProjects: IUsage[],
 }
 
 // Usage info about a single component
@@ -191,7 +200,7 @@ const ComponentUsage = ({ name, componentUsageInProjects }: IComponentUsage) => 
         <DataTable
           isExpandable
           isSortable
-                itemCount={componentUsageInProjects.length} // eslint-disable-line
+          itemCount={componentUsageInProjects!.length}
           data={componentUsageInProjects}
           renderRowSubComponent={({ row }: RowType) => <ComponentUsageExamples row={row} />}
           columns={[
