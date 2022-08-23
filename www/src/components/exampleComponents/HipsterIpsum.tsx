@@ -9,8 +9,8 @@ import PropTypes from 'prop-types';
  */
 const shuffle = (array: Array<string>) => {
   let currentIndex: number = array.length;
-  let temporaryValue; let
-    randomIndex;
+  let temporaryValue;
+  let randomIndex;
 
   // While there remain elements to shuffle...
   while (currentIndex !== 0) {
