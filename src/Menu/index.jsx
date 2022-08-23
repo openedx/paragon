@@ -19,7 +19,12 @@ function Menu({
       ref: parentRef,
       className,
     },
-    (children),
+    (
+      // eslint-disable-next-line react/jsx-no-useless-fragment
+      <>
+        {children}
+      </>
+    ),
   );
 }
 

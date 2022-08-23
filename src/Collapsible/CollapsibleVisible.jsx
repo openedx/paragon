@@ -12,7 +12,8 @@ function CollapsibleVisible({
   const isVisible = (isOpen && visibleWhenOpen) || (!isOpen && visibleWhenClosed);
 
   if (isVisible) {
-    return children;
+    // eslint-disable-next-line react/jsx-no-useless-fragment
+    return <>{children}</>;
   }
   return null;
 }
