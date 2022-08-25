@@ -1,18 +1,26 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {
+  useEffect, useRef, useState,
+} from 'react';
 import PropTypes from 'prop-types';
 import { KeyboardArrowUp, KeyboardArrowDown } from '../../icons';
 import Icon from '../Icon';
 import { Form, IconButton, Spinner } from '../index';
 import FormAutosuggestOptions from './FormAutosuggestOptions';
+import useArrowKeyNavigation from '../hooks/useArrowKeyNavigation';
 
 const FormAutosuggest = ({
+  children,
+  arrowKeyNavigationSelector,
+  optionsRole,
+  optionsType,
+  optionClassName,
+  name,
   value,
   isLoading,
   onChange,
-  name,
+  ariaAutoComplete,
   errorMessage,
   helpMessage,
-  controlClassName,
   className,
   ariaLabel,
   ...props
@@ -24,24 +32,23 @@ const FormAutosuggest = ({
     errorMessage: '',
     dropDownItems: [],
   });
+  const parentRef = useArrowKeyNavigation({ selectors: arrowKeyNavigationSelector });
 
-  const setValue = (itemValue) => {
+  const setValue = (itemValue, optValue) => {
     if (value === itemValue) { return; }
 
     if (onChange) { onChange(itemValue); }
 
-    const opt = props.options.find((o) => o === itemValue);
-
-    if (opt && opt !== state.displayValue) {
+    if (optValue !== state.displayValue) {
       setState(prevState => ({
         ...prevState,
-        displayValue: opt,
+        displayValue: optValue,
       }));
     }
   };
 
-  const handleItemClick = (e) => {
-    setValue(e.target.value);
+  const handleItemClick = (e, optValue) => {
+    setValue(e.target.value, optValue);
 
     setState(prevState => ({
       ...prevState,
@@ -52,25 +59,31 @@ const FormAutosuggest = ({
   };
 
   function getItems(strToFind = '') {
-    let { options } = props;
+    let optItems = children;
 
     if (strToFind.length > 0) {
-      options = options.filter((option) => (option.toLowerCase().includes(strToFind.toLowerCase())));
+      optItems = optItems
+        .filter((opt) => (opt.props.children.toLowerCase().includes(strToFind.toLowerCase())));
     }
 
-    return options.map((opt) => {
-      let optValue = opt;
+    return optItems.map((opt) => {
+      // eslint-disable-next-line no-shadow
+      const { children } = opt.props;
+
+      let optValue = children;
       if (optValue.length > 30) {
         optValue = optValue.substring(0, 30).concat('...');
       }
 
       return (
         <FormAutosuggestOptions
-          type="button"
-          className="dropdown-item data-hj-suppress"
+          role={optionsRole}
+          type={optionsType}
+          className={optionClassName}
           value={optValue}
+          /* eslint-disable-next-line react/no-array-index-key */
           key={optValue}
-          onClick={(e) => { handleItemClick(e); }}
+          onClick={(e) => { handleItemClick(e, optValue); }}
         >
           {optValue}
         </FormAutosuggestOptions>
@@ -86,7 +99,6 @@ const FormAutosuggest = ({
       }));
     } else {
       const dropDownItems = getItems(e.target.value);
-
       setState(prevState => ({
         ...prevState,
         dropDownItems,
@@ -149,8 +161,14 @@ const FormAutosuggest = ({
   });
 
   const setDisplayValue = (itemValue) => {
+    const optValue = [];
+
+    children.forEach(opt => {
+      optValue.push(opt.props.children);
+    });
+
     const normalized = itemValue.toLowerCase();
-    const opt = props.options.find((o) => o.toLowerCase() === normalized);
+    const opt = optValue.find((o) => o.toLowerCase() === normalized);
 
     if (opt) {
       setValue(opt);
@@ -176,7 +194,6 @@ const FormAutosuggest = ({
         dropDownItems,
         errorMessage: '',
       }));
-
       setIsOpen(true);
     }
 
@@ -192,10 +209,10 @@ const FormAutosuggest = ({
   };
 
   const handleOnChange = (e) => {
-    const findstr = e.target.value;
+    const findStr = e.target.value;
 
-    if (findstr.length) {
-      const filteredItems = getItems(findstr);
+    if (findStr.length) {
+      const filteredItems = getItems(findStr);
       setState(prevState => ({
         ...prevState,
         dropDownItems: filteredItems,
@@ -217,11 +234,11 @@ const FormAutosuggest = ({
   };
 
   return (
-    <div className="pgn__form-autosuggest__wrapper">
+    <div className="pgn__form-autosuggest__wrapper" ref={parentRef}>
       <Form.Group isInvalid={!!errorMessage} className={className}>
         <Form.Control
-          name={name}
-          type="text"
+          aria-expanded={state.dropDownItems.length > 0 ? 'true' : 'false'}
+          aria-autocomplete={ariaAutoComplete}
           value={state.displayValue}
           aria-label={ariaLabel}
           aria-invalid={errorMessage}
@@ -256,7 +273,7 @@ const FormAutosuggest = ({
 };
 
 FormAutosuggest.defaultProps = {
-  options: null,
+  optionsType: null,
   floatingLabel: null,
   onChange: null,
   helpMessage: '',
@@ -264,19 +281,29 @@ FormAutosuggest.defaultProps = {
   value: null,
   errorMessage: null,
   readOnly: false,
-  controlClassName: '',
+  optionClassName: 'dropdown-item',
   className: null,
   isLoading: false,
   ariaLabel: null,
+  children: null,
+  optionsRole: null,
+  ariaAutoComplete: null,
+  arrowKeyNavigationSelector: 'a:not(:disabled),button:not(:disabled, .btn-icon),input:not(:disabled)',
 };
 
 FormAutosuggest.propTypes = {
+  arrowKeyNavigationSelector: PropTypes.string,
+  /** The ariaAutoComplete property reflects the value of the aria-autocomplete attribute, which indicates
+   * whether inputting text could trigger display of one or more predictions of the user's  */
+  ariaAutoComplete: PropTypes.string,
+  optionsType: PropTypes.string,
+  /** ARIA role for the `FormControl`, in the context of a `FormAutosuggest`,
+   * the default will be set to "list", but can be overridden by the `FormControl` when set explicitly. */
+  optionsRole: PropTypes.string,
   /** Specifies loading state. */
   isLoading: PropTypes.bool,
   /** Specifies class name to append to the base element. */
   className: PropTypes.string,
-  /** Specifies array list elements. */
-  options: PropTypes.arrayOf(PropTypes.string),
   /** Specifies floating label to display for the input component. */
   floatingLabel: PropTypes.string,
   /** Specifies onChange event handler. */
@@ -294,8 +321,11 @@ FormAutosuggest.propTypes = {
   /** Selected list item is read-only. */
   readOnly: PropTypes.bool,
   /** Specifies class name for the control component. */
-  controlClassName: PropTypes.string,
+  optionClassName: PropTypes.string,
+  /** Label of the element */
   ariaLabel: PropTypes.string,
+  /** Specifies the content of the `FormAutosuggest`. */
+  children: PropTypes.node,
 };
 
 export default FormAutosuggest;
