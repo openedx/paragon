@@ -1,34 +1,40 @@
 import React from 'react';
-import MenuItem from '../Menu/MenuItem';
 import PropTypes from 'prop-types';
+import MenuItem from '../Menu/MenuItem';
 
 const FormAutosuggestOptions = ({
-  type,
-  className,
   value,
-  key,
+  optionClassName,
   onClick,
   children,
+  role,
+  ...props
 }) => (
-  <MenuItem type={type} className={className} value={value} key={key} onClick={onClick}>
+  <MenuItem
+    className={optionClassName}
+    value={value}
+    role={role}
+    onClick={onClick}
+    {...props}
+  >
     {children}
   </MenuItem>
 );
 
 FormAutosuggestOptions.propTypes = {
+  role: PropTypes.string,
   type: PropTypes.string,
-  className: PropTypes.string,
+  optionClassName: PropTypes.string,
   value: PropTypes.string,
-  key: PropTypes.string,
   onClick: PropTypes.func,
   children: PropTypes.string,
 };
 
 FormAutosuggestOptions.defaultProps = {
   type: null,
-  className: null,
+  optionClassName: 'dropdown-item',
   value: null,
-  key: null,
+  role: null,
   onClick: null,
   children: null,
 };

@@ -3,6 +3,7 @@ title: 'Form.Autosuggest'
 type: 'component'
 components:
 - FormAutosuggest
+- FormAutosuggestOptions
 categories:
 - Forms
 status: 'New'
@@ -19,20 +20,24 @@ Form auto-suggest enables users to manually select or type to find matching opti
 ```jsx live
 () => {
     const [data, setData] = useState({ title: '' });
-    const colors = ['Green', 'Red', 'Blue', 'Black', 'White', 'Purple', 'Orange', 'Grey'];
 
     return (
         <Form.Autosuggest
             name="color library"
+            role="list"
             floatingLabel="This is floating label"
             helpMessage="This is help message"
-            ariaLabel="TEST LABEL"
-            options={colors}
+            ariaLabel="INPUT LABEL"
             value={data.title}
             onChange={
                 (value) => setData(prevState => ({ data: { ...prevState.data, org: value } }))
             }
-        />
+        >
+            <Form.AutosuggestOptions type="button" optionsRole="option">Green</Form.AutosuggestOptions>
+            <Form.AutosuggestOptions type="button">Red</Form.AutosuggestOptions>
+            <Form.AutosuggestOptions type="button">Blue</Form.AutosuggestOptions>
+            <Form.AutosuggestOptions type="button">Black</Form.AutosuggestOptions>
+        </Form.Autosuggest>
     );
 }
 ```
