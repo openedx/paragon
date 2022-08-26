@@ -8,7 +8,7 @@ import {
 } from '~paragon-react';
 import { Close } from '~paragon-icons';
 
-import { FEATURES, LANGUAGES } from '../config';
+import { LANGUAGES } from '../config';
 import SettingsContext from '../context/SettingsContext';
 import { THEMES } from '../../theme-config';
 
@@ -66,25 +66,23 @@ const Settings = () => {
             <option value="rtl">Right to left</option>
           </Form.Control>
         </Form.Group>
-        {FEATURES.LANGUAGE_SWITCHER && (
-          <Form.Group>
-            <Form.Control
-              as="select"
-              value={settings.language}
-              onChange={(e) => handleSettingsChange('language', e.target.value)}
-              floatingLabel="Component Language"
-            >
-              {LANGUAGES.map(lang => (
-                <option
-                  key={lang.code}
-                  value={lang.code}
-                >
-                  {lang.label}
-                </option>
-              ))}
-            </Form.Control>
-          </Form.Group>
-        )}
+        <Form.Group>
+          <Form.Control
+            as="select"
+            value={settings.language}
+            onChange={(e) => handleSettingsChange('language', e.target.value)}
+            floatingLabel="Component Language"
+          >
+            {LANGUAGES.map(lang => (
+              <option
+                key={lang.code}
+                value={lang.code}
+              >
+                {lang.label}
+              </option>
+            ))}
+          </Form.Control>
+        </Form.Group>
       </Stack>
     </Sheet>
   );
