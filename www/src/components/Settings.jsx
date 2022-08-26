@@ -24,12 +24,11 @@ const Settings = () => {
     <Sheet
       position="right"
       show={showSettings}
+      onClose={closeSettings}
       variant="light"
     >
       <div className="d-flex align-items-center justify-content-between mb-3">
-        <div className="h3 mb-0">
-          Settings
-        </div>
+        <h3 className="mb-0">Settings</h3>
         <IconButton
           src={Close}
           iconAs={Icon}
