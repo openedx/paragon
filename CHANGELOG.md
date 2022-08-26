@@ -1,3 +1,10 @@
+## [20.10.1](https://github.com/openedx/paragon/compare/v20.10.0...v20.10.1) (2022-08-26)
+
+
+### Bug Fixes
+
+* release es-419 Spanish language translations ([#1589](https://github.com/openedx/paragon/issues/1589)) ([f7cf489](https://github.com/openedx/paragon/commit/f7cf489f55a56b944dec967a881a789bbdb850c4))
+
 # [20.10.0](https://github.com/openedx/paragon/compare/v20.9.3...v20.10.0) (2022-08-19)
 
 
