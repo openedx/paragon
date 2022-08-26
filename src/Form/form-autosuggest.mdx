@@ -3,7 +3,7 @@ title: 'Form.Autosuggest'
 type: 'component'
 components:
 - FormAutosuggest
-- FormAutosuggestOptions
+- FormAutosuggestOption
 categories:
 - Forms
 status: 'New'
@@ -23,20 +23,18 @@ Form auto-suggest enables users to manually select or type to find matching opti
 
     return (
         <Form.Autosuggest
-            name="color library"
-            role="list"
             floatingLabel="This is floating label"
             helpMessage="This is help message"
-            ariaLabel="INPUT LABEL"
+            aria-label="form autosuggest"
             value={data.title}
             onChange={
                 (value) => setData(prevState => ({ data: { ...prevState.data, org: value } }))
             }
         >
-            <Form.AutosuggestOptions type="button" optionsRole="option">Green</Form.AutosuggestOptions>
-            <Form.AutosuggestOptions type="button">Red</Form.AutosuggestOptions>
-            <Form.AutosuggestOptions type="button">Blue</Form.AutosuggestOptions>
-            <Form.AutosuggestOptions type="button">Black</Form.AutosuggestOptions>
+            <Form.AutosuggestOption>Green</Form.AutosuggestOption>
+            <Form.AutosuggestOption>Red</Form.AutosuggestOption>
+            <Form.AutosuggestOption>Blue</Form.AutosuggestOption>
+            <Form.AutosuggestOption>Black</Form.AutosuggestOption>
         </Form.Autosuggest>
     );
 }
@@ -47,20 +45,22 @@ Form auto-suggest enables users to manually select or type to find matching opti
 ```jsx live
 () => {
     const [data, setData] = useState({ title: '' });
-    const colors = ['Green', 'Red', 'Blue', 'Black', 'White', 'Purple', 'Orange', 'Grey'];
 
     return (
         <Form.Autosuggest
-            name="color library"
             placeholder="This is placeholder"
             floatingLabel="This is floating label"
             errorMessage="This is error message"
-            options={colors}
             value={data.title}
             onChange={
                 (value) => setData(prevState => ({ data: { ...prevState.data, org: value } }))
             }
-        />
+        >
+            <Form.AutosuggestOption>Green</Form.AutosuggestOption>
+            <Form.AutosuggestOption>Red</Form.AutosuggestOption>
+            <Form.AutosuggestOption>Blue</Form.AutosuggestOption>
+            <Form.AutosuggestOption>Black</Form.AutosuggestOption>
+        </Form.Autosuggest>
     );
 }
 ```
@@ -69,17 +69,18 @@ Form auto-suggest enables users to manually select or type to find matching opti
 
 ```jsx live
 () => {
-    const colors = ['Green', 'Red'];
-
     return (
         <Form.Autosuggest
             style={{ marginBottom: '14rem' }}
             isLoading
-            name="color library"
             placeholder="This is placeholder"
             floatingLabel="This is floating label"
-            options={colors}
-        />
+        >
+            <Form.AutosuggestOption>Green</Form.AutosuggestOption>
+            <Form.AutosuggestOption>Red</Form.AutosuggestOption>
+            <Form.AutosuggestOption>Blue</Form.AutosuggestOption>
+            <Form.AutosuggestOption>Black</Form.AutosuggestOption>
+        </Form.Autosuggest>
     );
 }
 ```

@@ -5,34 +5,29 @@ import PropTypes from 'prop-types';
 import { KeyboardArrowUp, KeyboardArrowDown } from '../../icons';
 import Icon from '../Icon';
 import { Form, IconButton, Spinner } from '../index';
-import FormAutosuggestOptions from './FormAutosuggestOptions';
+import FormAutosuggestOption from './FormAutosuggestOption';
 import useArrowKeyNavigation from '../hooks/useArrowKeyNavigation';
 
 const FormAutosuggest = ({
   children,
   arrowKeyNavigationSelector,
-  optionsRole,
-  optionsType,
-  optionClassName,
   name,
   value,
   isLoading,
-  onChange,
-  ariaAutoComplete,
   errorMessage,
+  onChange,
   helpMessage,
   className,
-  ariaLabel,
   ...props
 }) => {
-  const dropDownItemsRef = useRef(null);
+  const optItemsRef = useRef(null);
+  const parentRef = useArrowKeyNavigation({ selectors: arrowKeyNavigationSelector });
   const [isOpen, setIsOpen] = useState(false);
   const [state, setState] = useState({
     displayValue: '',
     errorMessage: '',
     dropDownItems: [],
   });
-  const parentRef = useArrowKeyNavigation({ selectors: arrowKeyNavigationSelector });
 
   const setValue = (itemValue, optValue) => {
     if (value === itemValue) { return; }
@@ -67,26 +62,25 @@ const FormAutosuggest = ({
     }
 
     return optItems.map((opt) => {
-      // eslint-disable-next-line no-shadow
-      const { children } = opt.props;
+      const { textContent, role, optClassName } = opt.props;
 
-      let optValue = children;
+      let optValue = textContent;
+
       if (optValue.length > 30) {
         optValue = optValue.substring(0, 30).concat('...');
       }
 
       return (
-        <FormAutosuggestOptions
-          role={optionsRole}
-          type={optionsType}
-          className={optionClassName}
+        <FormAutosuggestOption
+          role={role}
+          type="button"
+          className={optClassName}
           value={optValue}
-          /* eslint-disable-next-line react/no-array-index-key */
           key={optValue}
           onClick={(e) => { handleItemClick(e, optValue); }}
         >
           {optValue}
-        </FormAutosuggestOptions>
+        </FormAutosuggestOption>
       );
     });
   }
@@ -99,6 +93,7 @@ const FormAutosuggest = ({
       }));
     } else {
       const dropDownItems = getItems(e.target.value);
+
       setState(prevState => ({
         ...prevState,
         dropDownItems,
@@ -123,7 +118,7 @@ const FormAutosuggest = ({
   );
 
   const handleClickOutside = (e) => {
-    if (dropDownItemsRef.current && !dropDownItemsRef.current.contains(e.target) && state.dropDownItems.length > 0) {
+    if (optItemsRef.current && !optItemsRef.current.contains(e.target) && state.dropDownItems.length > 0) {
       const msg = state.displayValue === '' ? errorMessage : '';
 
       setState(prevState => ({
@@ -235,12 +230,12 @@ const FormAutosuggest = ({
 
   return (
     <div className="pgn__form-autosuggest__wrapper" ref={parentRef}>
-      <Form.Group isInvalid={!!errorMessage} className={className}>
+      <Form.Group isInvalid={!!errorMessage}>
         <Form.Control
+          className={className}
           aria-expanded={state.dropDownItems.length > 0 ? 'true' : 'false'}
-          aria-autocomplete={ariaAutoComplete}
+          name={name}
           value={state.displayValue}
-          aria-label={ariaLabel}
           aria-invalid={errorMessage}
           onChange={handleOnChange}
           onClick={handleClick}
@@ -261,7 +256,7 @@ const FormAutosuggest = ({
         )}
       </Form.Group>
 
-      <div className="pgn__form-autosuggest__dropdown" ref={dropDownItemsRef}>
+      <div className="pgn__form-autosuggest__dropdown" ref={optItemsRef}>
         {isLoading ? (
           <div className="pgn__form-autosuggest__dropdown-loading">
             <Spinner animation="border" variant="dark" screenReaderText="loading" />
@@ -273,7 +268,10 @@ const FormAutosuggest = ({
 };
 
 FormAutosuggest.defaultProps = {
-  optionsType: null,
+  arrowKeyNavigationSelector: 'a:not(:disabled),button:not(:disabled, .btn-icon),input:not(:disabled)',
+  isLoading: false,
+  role: 'list',
+  className: null,
   floatingLabel: null,
   onChange: null,
   helpMessage: '',
@@ -281,27 +279,20 @@ FormAutosuggest.defaultProps = {
   value: null,
   errorMessage: null,
   readOnly: false,
-  optionClassName: 'dropdown-item',
-  className: null,
-  isLoading: false,
-  ariaLabel: null,
   children: null,
-  optionsRole: null,
-  ariaAutoComplete: null,
-  arrowKeyNavigationSelector: 'a:not(:disabled),button:not(:disabled, .btn-icon),input:not(:disabled)',
+  name: 'form-autosuggest',
 };
 
 FormAutosuggest.propTypes = {
+  /**
+   * Specifies the CSS selector string that indicates to which elements
+   * the user can navigate using the arrow keys
+  */
   arrowKeyNavigationSelector: PropTypes.string,
-  /** The ariaAutoComplete property reflects the value of the aria-autocomplete attribute, which indicates
-   * whether inputting text could trigger display of one or more predictions of the user's  */
-  ariaAutoComplete: PropTypes.string,
-  optionsType: PropTypes.string,
-  /** ARIA role for the `FormControl`, in the context of a `FormAutosuggest`,
-   * the default will be set to "list", but can be overridden by the `FormControl` when set explicitly. */
-  optionsRole: PropTypes.string,
   /** Specifies loading state. */
   isLoading: PropTypes.bool,
+  /** An ARIA role describing the form autosuggest. */
+  role: PropTypes.string,
   /** Specifies class name to append to the base element. */
   className: PropTypes.string,
   /** Specifies floating label to display for the input component. */
@@ -317,13 +308,9 @@ FormAutosuggest.propTypes = {
   /** Informs user has errors. */
   errorMessage: PropTypes.string,
   /** Specifies the name of the base input element. */
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   /** Selected list item is read-only. */
   readOnly: PropTypes.bool,
-  /** Specifies class name for the control component. */
-  optionClassName: PropTypes.string,
-  /** Label of the element */
-  ariaLabel: PropTypes.string,
   /** Specifies the content of the `FormAutosuggest`. */
   children: PropTypes.node,
 };
