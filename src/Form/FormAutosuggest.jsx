@@ -62,9 +62,10 @@ const FormAutosuggest = ({
     }
 
     return optItems.map((opt) => {
-      const { textContent, role, optClassName } = opt.props;
+      // eslint-disable-next-line no-shadow
+      const { children, role, className } = opt.props;
 
-      let optValue = textContent;
+      let optValue = children;
 
       if (optValue.length > 30) {
         optValue = optValue.substring(0, 30).concat('...');
@@ -74,7 +75,7 @@ const FormAutosuggest = ({
         <FormAutosuggestOption
           role={role}
           type="button"
-          className={optClassName}
+          className={className}
           value={optValue}
           key={optValue}
           onClick={(e) => { handleItemClick(e, optValue); }}

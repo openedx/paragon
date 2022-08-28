@@ -4,25 +4,25 @@ import classNames from 'classnames';
 import MenuItem from '../Menu/MenuItem';
 
 const FormAutosuggestOption = ({
-  textContent,
-  optClassName,
+  children,
+  className,
   ...props
 }) => (
-  <MenuItem className={classNames(optClassName, 'dropdown-item')} {...props}>
-    {textContent}
+  <MenuItem className={classNames(className, 'dropdown-item')} {...props}>
+    {children}
   </MenuItem>
 );
 
 FormAutosuggestOption.defaultProps = {
-  optClassName: null,
-  textContent: null,
+  className: null,
+  children: null,
 };
 
 FormAutosuggestOption.propTypes = {
   /** Specifies class name to append to the base element. */
-  optClassName: PropTypes.string,
+  className: PropTypes.string,
   /** Specifies the text-content of the `FormAutosuggestOption`. */
-  textContent: PropTypes.string,
+  children: PropTypes.string,
 };
 
 export default FormAutosuggestOption;
