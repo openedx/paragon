@@ -55,6 +55,7 @@ const FormAutosuggest = ({
 
   function getItems(strToFind = '') {
     let optItems = children;
+    console.log('optItems', optItems);
 
     if (strToFind.length > 0) {
       optItems = optItems
