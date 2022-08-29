@@ -1,5 +1,5 @@
 {
-  "lastModified": 1661695682467,
+  "lastModified": 1661782193547,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -7440,39 +7440,39 @@
       "usages": {
         "Hyperlink": [
           {
-            "filePath": "src/base-component/AuthExtraLargeLayout.jsx",
-            "line": 19,
-            "column": 8,
+            "filePath": "src/base-component/AuthLargeLayout.jsx",
+            "line": 13,
+            "column": 6,
             "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/AuthMediumLayout.jsx",
-            "line": 18,
+            "line": 15,
             "column": 8,
             "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/AuthSmallLayout.jsx",
-            "line": 18,
-            "column": 6,
+            "line": 13,
+            "column": 4,
             "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/LargeLayout.jsx",
-            "line": 11,
+            "line": 12,
             "column": 6,
             "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/MediumLayout.jsx",
-            "line": 15,
+            "line": 14,
             "column": 8,
             "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/SmallLayout.jsx",
-            "line": 15,
-            "column": 8,
+            "line": 13,
+            "column": 6,
             "version": "19.10.2"
           },
           {
@@ -7550,97 +7550,39 @@
         ],
         "Image": [
           {
-            "filePath": "src/base-component/AuthExtraLargeLayout.jsx",
-            "line": 20,
-            "column": 10,
+            "filePath": "src/base-component/AuthLargeLayout.jsx",
+            "line": 14,
+            "column": 8,
             "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/AuthMediumLayout.jsx",
-            "line": 19,
+            "line": 16,
             "column": 10,
             "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/AuthSmallLayout.jsx",
-            "line": 19,
-            "column": 8,
+            "line": 14,
+            "column": 6,
             "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/LargeLayout.jsx",
-            "line": 12,
+            "line": 13,
             "column": 8,
             "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/MediumLayout.jsx",
-            "line": 16,
+            "line": 15,
             "column": 10,
             "version": "19.10.2"
           },
           {
             "filePath": "src/base-component/SmallLayout.jsx",
-            "line": 16,
-            "column": 10,
-            "version": "19.10.2"
-          }
-        ],
-        "Row": [
-          {
-            "filePath": "src/base-component/AuthExtraLargeLayout.jsx",
-            "line": 24,
-            "column": 12,
-            "version": "19.10.2"
-          },
-          {
-            "filePath": "src/base-component/AuthMediumLayout.jsx",
-            "line": 23,
-            "column": 12,
-            "version": "19.10.2"
-          },
-          {
-            "filePath": "src/base-component/AuthSmallLayout.jsx",
-            "line": 23,
-            "column": 10,
-            "version": "19.10.2"
-          }
-        ],
-        "Col": [
-          {
-            "filePath": "src/base-component/AuthExtraLargeLayout.jsx",
-            "line": 25,
-            "column": 14,
-            "version": "19.10.2"
-          },
-          {
-            "filePath": "src/base-component/AuthExtraLargeLayout.jsx",
-            "line": 41,
-            "column": 14,
-            "version": "19.10.2"
-          },
-          {
-            "filePath": "src/base-component/AuthMediumLayout.jsx",
-            "line": 24,
-            "column": 14,
-            "version": "19.10.2"
-          },
-          {
-            "filePath": "src/base-component/AuthMediumLayout.jsx",
-            "line": 34,
-            "column": 14,
-            "version": "19.10.2"
-          },
-          {
-            "filePath": "src/base-component/AuthSmallLayout.jsx",
-            "line": 24,
-            "column": 12,
-            "version": "19.10.2"
-          },
-          {
-            "filePath": "src/base-component/AuthSmallLayout.jsx",
-            "line": 40,
-            "column": 12,
+            "line": 14,
+            "column": 8,
             "version": "19.10.2"
           }
         ],
@@ -12268,19 +12210,19 @@
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
-            "line": 42,
+            "line": 44,
             "column": 6,
             "version": "19.22.0"
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
-            "line": 53,
+            "line": 55,
             "column": 6,
             "version": "19.22.0"
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
-            "line": 80,
+            "line": 82,
             "column": 6,
             "version": "19.22.0"
           },
@@ -12360,6 +12302,18 @@
             "filePath": "src/components/NotFoundPage/index.jsx",
             "line": 16,
             "column": 4,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/pathway-progress/PathwayProgressListingPage.jsx",
+            "line": 34,
+            "column": 6,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/pathway-progress/PathwayProgressListingPage.jsx",
+            "line": 42,
+            "column": 6,
             "version": "19.22.0"
           },
           {
@@ -12506,7 +12460,7 @@
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
-            "line": 43,
+            "line": 45,
             "column": 8,
             "version": "19.22.0"
           },
@@ -12586,7 +12540,7 @@
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
-            "line": 54,
+            "line": 56,
             "column": 8,
             "version": "19.22.0"
           },
@@ -12636,6 +12590,12 @@
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 235,
             "column": 10,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/pathway-progress/PathwayProgressListingPage.jsx",
+            "line": 43,
+            "column": 8,
             "version": "19.22.0"
           },
           {
@@ -12892,7 +12852,7 @@
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
-            "line": 60,
+            "line": 62,
             "column": 12,
             "version": "19.22.0"
           },
@@ -12971,6 +12931,12 @@
             "version": "19.22.0"
           },
           {
+            "filePath": "src/components/pathway-progress/PathwayProgressCard.jsx",
+            "line": 18,
+            "column": 4,
+            "version": "19.22.0"
+          },
+          {
             "filePath": "src/components/pathway-progress/SubscriptionStatusCard.jsx",
             "line": 25,
             "column": 6,
@@ -12990,7 +12956,7 @@
           },
           {
             "filePath": "src/components/program-progress/ProgramListingCard.jsx",
-            "line": 57,
+            "line": 58,
             "column": 4,
             "version": "19.22.0"
           },
@@ -13063,6 +13029,12 @@
             "version": "19.22.0"
           },
           {
+            "filePath": "src/components/pathway-progress/PathwayProgressCard.jsx",
+            "line": 23,
+            "column": 6,
+            "version": "19.22.0"
+          },
+          {
             "filePath": "src/components/pathway/SearchPathwayCard.jsx",
             "line": 87,
             "column": 6,
@@ -13070,7 +13042,7 @@
           },
           {
             "filePath": "src/components/program-progress/ProgramListingCard.jsx",
-            "line": 62,
+            "line": 63,
             "column": 6,
             "version": "19.22.0"
           },
@@ -13143,6 +13115,12 @@
             "version": "19.22.0"
           },
           {
+            "filePath": "src/components/pathway-progress/PathwayProgressCard.jsx",
+            "line": 30,
+            "column": 6,
+            "version": "19.22.0"
+          },
+          {
             "filePath": "src/components/pathway/SearchPathwayCard.jsx",
             "line": 92,
             "column": 6,
@@ -13150,7 +13128,7 @@
           },
           {
             "filePath": "src/components/program-progress/ProgramListingCard.jsx",
-            "line": 70,
+            "line": 71,
             "column": 6,
             "version": "19.22.0"
           },
@@ -13247,6 +13225,12 @@
             "version": "19.22.0"
           },
           {
+            "filePath": "src/components/pathway-progress/PathwayProgressCard.jsx",
+            "line": 38,
+            "column": 6,
+            "version": "19.22.0"
+          },
+          {
             "filePath": "src/components/pathway-progress/SubscriptionStatusCard.jsx",
             "line": 26,
             "column": 8,
@@ -13260,7 +13244,7 @@
           },
           {
             "filePath": "src/components/program-progress/ProgramListingCard.jsx",
-            "line": 97,
+            "line": 98,
             "column": 6,
             "version": "19.22.0"
           },
@@ -13636,7 +13620,7 @@
         "Tabs": [
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
-            "line": 84,
+            "line": 86,
             "column": 8,
             "version": "19.22.0"
           }
@@ -13644,14 +13628,20 @@
         "Tab": [
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
-            "line": 85,
+            "line": 87,
             "column": 10,
             "version": "19.22.0"
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
-            "line": 88,
+            "line": 90,
             "column": 10,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/dashboard/DashboardPage.jsx",
+            "line": 94,
+            "column": 12,
             "version": "19.22.0"
           }
         ],
@@ -13916,6 +13906,12 @@
             "filePath": "src/components/integration-warning-modal/IntegrationWarningModal.jsx",
             "line": 38,
             "column": 10,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/pathway-progress/PathwayProgressListingPage.jsx",
+            "line": 55,
+            "column": 16,
             "version": "19.22.0"
           },
           {
@@ -14201,34 +14197,6 @@
             "version": "19.22.0"
           }
         ],
-        "Stack": [
-          {
-            "filePath": "src/components/program-progress/ProgramListingCard.jsx",
-            "line": 98,
-            "column": 8,
-            "version": "19.22.0"
-          }
-        ],
-        "Bubble": [
-          {
-            "filePath": "src/components/program-progress/ProgramListingCard.jsx",
-            "line": 99,
-            "column": 10,
-            "version": "19.22.0"
-          },
-          {
-            "filePath": "src/components/program-progress/ProgramListingCard.jsx",
-            "line": 104,
-            "column": 10,
-            "version": "19.22.0"
-          },
-          {
-            "filePath": "src/components/program-progress/ProgramListingCard.jsx",
-            "line": 109,
-            "column": 10,
-            "version": "19.22.0"
-          }
-        ],
         "Form.Label": [
           {
             "filePath": "src/components/program-progress/ProgramProgressCourses.jsx",
@@ -14302,6 +14270,34 @@
             "filePath": "src/components/program/ProgramInstructors.jsx",
             "line": 102,
             "column": 10,
+            "version": "19.22.0"
+          }
+        ],
+        "Stack": [
+          {
+            "filePath": "src/components/progress-category-bubbles/ProgressCategoryBubbles.jsx",
+            "line": 7,
+            "column": 2,
+            "version": "19.22.0"
+          }
+        ],
+        "Bubble": [
+          {
+            "filePath": "src/components/progress-category-bubbles/ProgressCategoryBubbles.jsx",
+            "line": 8,
+            "column": 4,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/progress-category-bubbles/ProgressCategoryBubbles.jsx",
+            "line": 13,
+            "column": 4,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/progress-category-bubbles/ProgressCategoryBubbles.jsx",
+            "line": 18,
+            "column": 4,
             "version": "19.22.0"
           }
         ],
