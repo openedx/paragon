@@ -45,7 +45,7 @@
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "build-types": "tsc --emitDeclarationOnly",
-    "build_tokens": "node build-tokens.js"
+    "build_tokens": "node tokens/build-tokens.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
