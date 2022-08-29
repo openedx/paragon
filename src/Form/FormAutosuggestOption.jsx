@@ -6,9 +6,16 @@ import MenuItem from '../Menu/MenuItem';
 const FormAutosuggestOption = ({
   children,
   className,
+  role,
+  onClick,
   ...props
 }) => (
-  <MenuItem className={classNames(className, 'dropdown-item')} {...props}>
+  <MenuItem
+    onClick={(e) => onClick(e)}
+    className={classNames(className, 'dropdown-item')}
+    role={role}
+    {...props}
+  >
     {children}
   </MenuItem>
 );
@@ -16,6 +23,8 @@ const FormAutosuggestOption = ({
 FormAutosuggestOption.defaultProps = {
   className: null,
   children: null,
+  onClick: null,
+  role: 'option',
 };
 
 FormAutosuggestOption.propTypes = {
@@ -23,6 +32,10 @@ FormAutosuggestOption.propTypes = {
   className: PropTypes.string,
   /** Specifies the text-content of the `FormAutosuggestOption`. */
   children: PropTypes.string,
+  /** A click handler for the `FormAutosuggestOption` */
+  onClick: PropTypes.func,
+  /** An ARIA role describing the `FormAutosuggestOption`. */
+  role: PropTypes.string,
 };
 
 export default FormAutosuggestOption;

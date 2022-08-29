@@ -5,8 +5,9 @@ import PropTypes from 'prop-types';
 import { KeyboardArrowUp, KeyboardArrowDown } from '../../icons';
 import Icon from '../Icon';
 import { Form, IconButton, Spinner } from '../index';
-import FormAutosuggestOption from './FormAutosuggestOption';
 import useArrowKeyNavigation from '../hooks/useArrowKeyNavigation';
+
+const MAX_OPTION_LENGTH = 30;
 
 const FormAutosuggest = ({
   children,
@@ -54,54 +55,48 @@ const FormAutosuggest = ({
   };
 
   function getItems(strToFind = '') {
-    let optItems = children;
-    console.log('optItems', optItems);
+    let childrenOpt = React.Children.map(children, (child) => {
+      // eslint-disable-next-line no-shadow
+      const { children, ...rest } = child.props;
+
+      let newChildren = children;
+
+      if (newChildren.length > MAX_OPTION_LENGTH) {
+        newChildren = children.substring(0, MAX_OPTION_LENGTH).concat('...');
+      }
+
+      const modifiedOpt = React.cloneElement(child, {
+        ...rest,
+        children: newChildren,
+        value: children,
+        onClick: (e) => handleItemClick(e, children),
+      });
+
+      return modifiedOpt;
+    });
 
     if (strToFind.length > 0) {
-      optItems = optItems
+      childrenOpt = childrenOpt
         .filter((opt) => (opt.props.children.toLowerCase().includes(strToFind.toLowerCase())));
     }
 
-    return optItems.map((opt) => {
-      // eslint-disable-next-line no-shadow
-      const { children, role, className } = opt.props;
-
-      let optValue = children;
-
-      if (optValue.length > 30) {
-        optValue = optValue.substring(0, 30).concat('...');
-      }
-
-      return (
-        <FormAutosuggestOption
-          role={role}
-          type="button"
-          className={className}
-          value={optValue}
-          key={optValue}
-          onClick={(e) => { handleItemClick(e, optValue); }}
-        >
-          {optValue}
-        </FormAutosuggestOption>
-      );
-    });
+    return childrenOpt;
   }
 
-  const handleExpandLess = (e) => {
-    if (isOpen) {
-      setState(prevState => ({
-        ...prevState,
-        dropDownItems: '',
-      }));
-    } else {
-      const dropDownItems = getItems(e.target.value);
+  const handleExpand = (e) => {
+    const newState = {
+      dropDownItems: '',
+    };
 
-      setState(prevState => ({
-        ...prevState,
-        dropDownItems,
-        errorMessage: '',
-      }));
+    if (isOpen) {
+      newState.dropDownItems = getItems(e.target.value);
+      newState.errorMessage = '';
     }
+
+    setState(prevState => ({
+      ...prevState,
+      ...newState,
+    }));
   };
 
   const iconToggle = () => (
@@ -114,19 +109,17 @@ const FormAutosuggest = ({
       alt="icon toggle"
       onClick={(e) => {
         setIsOpen(!isOpen);
-        handleExpandLess(e);
+        handleExpand(e);
       }}
     />
   );
 
   const handleClickOutside = (e) => {
     if (optItemsRef.current && !optItemsRef.current.contains(e.target) && state.dropDownItems.length > 0) {
-      const msg = state.displayValue === '' ? errorMessage : '';
-
       setState(prevState => ({
         ...prevState,
         dropDownItems: '',
-        errorMessage: msg,
+        errorMessage: !state.displayValue ? errorMessage : '',
       }));
 
       setIsOpen(false);
@@ -134,13 +127,13 @@ const FormAutosuggest = ({
   };
 
   const keyDownHandler = e => {
-    const msg = state.displayValue === '' ? errorMessage : '';
     if (e.key === 'Escape') {
       e.preventDefault();
+
       setState(prevState => ({
         ...prevState,
         dropDownItems: '',
-        errorMessage: msg,
+        errorMessage: !state.displayValue ? errorMessage : '',
       }));
 
       setIsOpen(false);
@@ -235,7 +228,7 @@ const FormAutosuggest = ({
       <Form.Group isInvalid={!!errorMessage}>
         <Form.Control
           className={className}
-          aria-expanded={state.dropDownItems.length > 0 ? 'true' : 'false'}
+          aria-expanded={(state.dropDownItems.length > 0).toString()}
           name={name}
           value={state.displayValue}
           aria-invalid={errorMessage}
