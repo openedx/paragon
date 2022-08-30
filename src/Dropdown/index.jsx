@@ -1,11 +1,15 @@
 import React from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import BaseDropdown from 'react-bootstrap/Dropdown';
 import DropdownMenu from 'react-bootstrap/DropdownMenu';
 import DropdownItem from 'react-bootstrap/DropdownItem';
 import BaseDropdownToggle from 'react-bootstrap/DropdownToggle';
 import DropdownDeprecated from './deprecated';
-import { IconButton, Button } from '..';
+import {
+  Button,
+  IconButton,
+} from '..';
 
 const Dropdown = React.forwardRef(
   // eslint-disable-next-line prefer-arrow-callback
@@ -13,6 +17,8 @@ const Dropdown = React.forwardRef(
     show,
     autoClose,
     onToggle,
+    variant,
+    className,
     ...rest
   }, ref) {
     const [internalShow, setInternalShow] = React.useState(show);
@@ -48,9 +54,38 @@ const Dropdown = React.forwardRef(
       }
     };
 
-    return <BaseDropdown show={internalShow} onToggle={handleToggle} {...rest} ref={ref} data-testid="dropdown" />;
+    return (
+      <BaseDropdown
+        className={classNames(
+          `pgn__dropdown-${variant}`,
+          className,
+        )}
+        data-testid="dropdown"
+        onToggle={handleToggle}
+        ref={ref}
+        show={internalShow}
+        {...rest}
+      />
+    );
   },
 );
+Dropdown.propTypes = {
+  autoClose: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.bool,
+  ]),
+  className: PropTypes.string,
+  onToggle: PropTypes.func,
+  show: PropTypes.bool,
+  variant: PropTypes.oneOf(['light', 'dark']),
+};
+Dropdown.defaultProps = {
+  autoClose: true,
+  className: '',
+  onToggle: undefined,
+  show: false,
+  variant: 'light',
+};
 
 const DropdownToggle = React.forwardRef(
   // eslint-disable-next-line prefer-arrow-callback
@@ -65,21 +100,6 @@ const DropdownToggle = React.forwardRef(
     return <BaseDropdownToggle {...otherProps} as={as} bsPrefix={prefix} ref={ref} />;
   },
 );
-
-Dropdown.propTypes = {
-  onToggle: PropTypes.func,
-  autoClose: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.bool,
-  ]),
-  show: PropTypes.bool,
-};
-
-Dropdown.defaultProps = {
-  onToggle: undefined,
-  autoClose: true,
-  show: false,
-};
 
 DropdownToggle.propTypes = {
   /** Specifies the base element. */

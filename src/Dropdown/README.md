@@ -41,18 +41,22 @@ notes: |
       Dropdown Button
     </Dropdown.Toggle>
     <Dropdown.Menu>
+      <Dropdown.Header>Header</Dropdown.Header>
       <Dropdown.Item>Action</Dropdown.Item>
       <Dropdown.Item>Another action</Dropdown.Item>
+      <Dropdown.Divider />
       <Dropdown.Item>Something else</Dropdown.Item>
     </Dropdown.Menu>
   </Dropdown>
-  <Dropdown autoClose={false} onToggle={(isOpen, event, metadata) => console.log('debug', 'onToggle', { isOpen, event, metadata })} className="mb-3">
+  <Dropdown variant="dark" autoClose={false} onToggle={(isOpen, event, metadata) => console.log('debug', 'onToggle', { isOpen, event, metadata })} className="mb-3">
     <Dropdown.Toggle variant="success" id="dropdown-basic-2">
-      autoClose=false
+      autoClose=false variant="dark"
     </Dropdown.Toggle>
     <Dropdown.Menu>
+      <Dropdown.Header>Header</Dropdown.Header>
       <Dropdown.Item>Action</Dropdown.Item>
       <Dropdown.Item>Another action</Dropdown.Item>
+      <Dropdown.Divider />
       <Dropdown.Item>Something else</Dropdown.Item>
     </Dropdown.Menu>
   </Dropdown>

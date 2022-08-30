@@ -33,7 +33,7 @@ exports[`<Tabs /> correct rendering renders successfully 1`] = `
       role="tab"
     >
       <div
-        className="dropdown"
+        className="pgn__dropdown-light dropdown"
         data-testid="dropdown"
       >
         <button
