@@ -1,5 +1,5 @@
 {
-  "lastModified": 1661782193547,
+  "lastModified": 1661868795979,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -3526,7 +3526,7 @@
           },
           {
             "filePath": "src/components/Sidebar/index.jsx",
-            "line": 111,
+            "line": 113,
             "column": 14,
             "version": "20.4.1"
           },
@@ -4983,6 +4983,12 @@
             "version": "20.4.1"
           },
           {
+            "filePath": "src/components/InfoHover/index.jsx",
+            "line": 10,
+            "column": 4,
+            "version": "20.4.1"
+          },
+          {
             "filePath": "src/components/learner-credit-management/EmailAddressTableCell.jsx",
             "line": 16,
             "column": 6,
@@ -5162,7 +5168,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 119,
+            "line": 130,
             "column": 6,
             "version": "20.4.1"
           },
@@ -5188,19 +5194,25 @@
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 50,
+            "line": 51,
             "column": 8,
             "version": "20.4.1"
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 65,
+            "line": 66,
             "column": 8,
             "version": "20.4.1"
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 75,
+            "line": 76,
+            "column": 8,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsTabs.jsx",
+            "line": 89,
             "column": 8,
             "version": "20.4.1"
           },
@@ -5238,7 +5250,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 118,
+            "line": 129,
             "column": 4,
             "version": "20.4.1"
           },
@@ -5508,7 +5520,7 @@
         "MediaQuery": [
           {
             "filePath": "src/components/EnterpriseApp/index.jsx",
-            "line": 134,
+            "line": 136,
             "column": 10,
             "version": "20.4.1"
           }
@@ -6086,6 +6098,12 @@
             "filePath": "src/components/IconWithTooltip/index.jsx",
             "line": 18,
             "column": 8,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/InfoHover/index.jsx",
+            "line": 13,
+            "column": 15,
             "version": "20.4.1"
           },
           {
@@ -7095,6 +7113,12 @@
             "version": "20.4.1"
           },
           {
+            "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
+            "line": 52,
+            "column": 6,
+            "version": "20.4.1"
+          },
+          {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
             "line": 236,
             "column": 8,
@@ -7202,6 +7226,14 @@
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessTabSection.jsx",
             "line": 40,
             "column": 8,
+            "version": "20.4.1"
+          }
+        ],
+        "Dropzone": [
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
+            "line": 40,
+            "column": 6,
             "version": "20.4.1"
           }
         ],
@@ -8315,7 +8347,7 @@
       }
     },
     {
-      "version": "19.18.3",
+      "version": "19.25.3",
       "name": "@edx/frontend-app-communications",
       "repository": {
         "type": "git",
@@ -8328,31 +8360,31 @@
             "filePath": "src/components/bulk-email-tool/bulk-email-form/bulk-email-recipient/BulkEmailRecipient.jsx",
             "line": 19,
             "column": 4,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
             "line": 274,
             "column": 8,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
             "line": 283,
             "column": 8,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
             "line": 295,
             "column": 8,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/ScheduleEmailForm.jsx",
             "line": 13,
             "column": 4,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ],
         "Form.Label": [
@@ -8360,19 +8392,19 @@
             "filePath": "src/components/bulk-email-tool/bulk-email-form/bulk-email-recipient/BulkEmailRecipient.jsx",
             "line": 20,
             "column": 6,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
             "line": 275,
             "column": 10,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
             "line": 284,
             "column": 10,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ],
         "Form.CheckboxSet": [
@@ -8380,7 +8412,7 @@
             "filePath": "src/components/bulk-email-tool/bulk-email-form/bulk-email-recipient/BulkEmailRecipient.jsx",
             "line": 29,
             "column": 6,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ],
         "Form.Checkbox": [
@@ -8388,43 +8420,43 @@
             "filePath": "src/components/bulk-email-tool/bulk-email-form/bulk-email-recipient/BulkEmailRecipient.jsx",
             "line": 35,
             "column": 8,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/bulk-email-recipient/BulkEmailRecipient.jsx",
             "line": 42,
             "column": 8,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/bulk-email-recipient/BulkEmailRecipient.jsx",
             "line": 53,
             "column": 8,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/bulk-email-recipient/BulkEmailRecipient.jsx",
             "line": 69,
             "column": 12,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/bulk-email-recipient/BulkEmailRecipient.jsx",
             "line": 83,
             "column": 8,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/bulk-email-recipient/BulkEmailRecipient.jsx",
             "line": 95,
             "column": 8,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
             "line": 298,
             "column": 14,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ],
         "Form": [
@@ -8432,7 +8464,7 @@
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
             "line": 267,
             "column": 6,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ],
         "Form.Control": [
@@ -8440,19 +8472,19 @@
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
             "line": 276,
             "column": 10,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/ScheduleEmailForm.jsx",
             "line": 16,
             "column": 10,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/ScheduleEmailForm.jsx",
             "line": 38,
             "column": 10,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ],
         "Button": [
@@ -8460,37 +8492,37 @@
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
             "line": 322,
             "column": 32,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/BulkEmailContentHistory.jsx",
             "line": 110,
             "column": 10,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/ViewEmailModal.jsx",
             "line": 46,
             "column": 10,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/task-alert-modal/TaskAlertModal.jsx",
             "line": 26,
             "column": 10,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/task-alert-modal/TaskAlertModal.jsx",
             "line": 33,
             "column": 10,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/navigation-tabs/BackToInstructor.jsx",
             "line": 10,
             "column": 4,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ],
         "StatefulButton": [
@@ -8498,7 +8530,7 @@
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
             "line": 323,
             "column": 12,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ],
         "Icon": [
@@ -8506,61 +8538,61 @@
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
             "line": 332,
             "column": 46,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
             "line": 333,
             "column": 47,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
             "line": 334,
             "column": 49,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
             "line": 335,
             "column": 46,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
             "line": 336,
             "column": 47,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
             "line": 337,
             "column": 56,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
             "line": 338,
             "column": 44,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/BulkEmailContentHistory.jsx",
             "line": 147,
             "column": 12,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/BulkEmailTaskHistory.jsx",
             "line": 103,
             "column": 12,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/navigation-tabs/BackToInstructor.jsx",
             "line": 15,
             "column": 6,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ],
         "Toast": [
@@ -8568,7 +8600,7 @@
             "filePath": "src/components/bulk-email-tool/bulk-email-form/BulkEmailForm.jsx",
             "line": 357,
             "column": 12,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ],
         "Alert": [
@@ -8576,19 +8608,19 @@
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/bulk-email-scheduled-emails-table/BulkEmailScheduledEmailsTable.jsx",
             "line": 68,
             "column": 8,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/BulkEmailHistoryTable.jsx",
             "line": 21,
             "column": 6,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/BulkEmailPendingTasksAlert.jsx",
             "line": 11,
             "column": 6,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ],
         "Alert.Heading": [
@@ -8596,7 +8628,7 @@
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/bulk-email-scheduled-emails-table/BulkEmailScheduledEmailsTable.jsx",
             "line": 69,
             "column": 10,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ],
         "DataTable": [
@@ -8604,13 +8636,13 @@
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/bulk-email-scheduled-emails-table/BulkEmailScheduledEmailsTable.jsx",
             "line": 134,
             "column": 8,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/BulkEmailHistoryTable.jsx",
             "line": 40,
             "column": 6,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ],
         "IconButton": [
@@ -8618,19 +8650,19 @@
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/bulk-email-scheduled-emails-table/BulkEmailScheduledEmailsTable.jsx",
             "line": 172,
             "column": 18,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/bulk-email-scheduled-emails-table/BulkEmailScheduledEmailsTable.jsx",
             "line": 173,
             "column": 18,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/bulk-email-scheduled-emails-table/BulkEmailScheduledEmailsTable.jsx",
             "line": 184,
             "column": 18,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ],
         "Collapsible": [
@@ -8638,13 +8670,13 @@
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/BulkEmailContentHistory.jsx",
             "line": 130,
             "column": 8,
-            "version": "19.18.3"
+            "version": "19.25.3"
           },
           {
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/BulkEmailTaskHistory.jsx",
             "line": 89,
             "column": 8,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ],
         "Hyperlink": [
@@ -8652,7 +8684,7 @@
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/BulkEmailPendingTasksAlert.jsx",
             "line": 16,
             "column": 8,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ],
         "Modal": [
@@ -8660,7 +8692,7 @@
             "filePath": "src/components/bulk-email-tool/bulk-email-task-manager/ViewEmailModal.jsx",
             "line": 15,
             "column": 6,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ],
         "Container": [
@@ -8668,7 +8700,7 @@
             "filePath": "src/components/bulk-email-tool/BulkEmailTool.jsx",
             "line": 24,
             "column": 12,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ],
         "AlertModal": [
@@ -8676,7 +8708,7 @@
             "filePath": "src/components/bulk-email-tool/task-alert-modal/TaskAlertModal.jsx",
             "line": 19,
             "column": 4,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ],
         "ActionRow": [
@@ -8684,7 +8716,7 @@
             "filePath": "src/components/bulk-email-tool/task-alert-modal/TaskAlertModal.jsx",
             "line": 25,
             "column": 8,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ],
         "Nav": [
@@ -8692,7 +8724,7 @@
             "filePath": "src/components/navigation-tabs/NavigationTabs.jsx",
             "line": 11,
             "column": 6,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ],
         "Nav.Item": [
@@ -8700,7 +8732,7 @@
             "filePath": "src/components/navigation-tabs/NavigationTabs.jsx",
             "line": 13,
             "column": 10,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ],
         "Nav.Link": [
@@ -8708,7 +8740,7 @@
             "filePath": "src/components/navigation-tabs/NavigationTabs.jsx",
             "line": 14,
             "column": 12,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ],
         "Spinner": [
@@ -8716,7 +8748,7 @@
             "filePath": "src/components/page-container/PageContainer.jsx",
             "line": 79,
             "column": 6,
-            "version": "19.18.3"
+            "version": "19.25.3"
           }
         ]
       }
@@ -12926,7 +12958,7 @@
           },
           {
             "filePath": "src/components/pathway-progress/PathwayNode.jsx",
-            "line": 9,
+            "line": 28,
             "column": 8,
             "version": "19.22.0"
           },
@@ -13220,7 +13252,7 @@
           },
           {
             "filePath": "src/components/pathway-progress/PathwayNode.jsx",
-            "line": 10,
+            "line": 29,
             "column": 10,
             "version": "19.22.0"
           },
@@ -13524,7 +13556,7 @@
         "Modal": [
           {
             "filePath": "src/components/course/EnrollModal.jsx",
-            "line": 108,
+            "line": 85,
             "column": 4,
             "version": "19.22.0"
           },
@@ -13870,6 +13902,12 @@
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/UpcomingCourseCard.jsx",
             "line": 10,
             "column": 4,
+            "version": "19.22.0"
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/UpgradeCourseButton.jsx",
+            "line": 46,
+            "column": 6,
             "version": "19.22.0"
           },
           {
