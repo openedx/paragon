@@ -6,14 +6,12 @@ import MenuItem from '../Menu/MenuItem';
 const FormAutosuggestOption = ({
   children,
   className,
-  role,
   onClick,
   ...props
 }) => (
   <MenuItem
-    onClick={(e) => onClick(e)}
+    onClick={onClick}
     className={classNames(className, 'dropdown-item')}
-    role={role}
     {...props}
   >
     {children}

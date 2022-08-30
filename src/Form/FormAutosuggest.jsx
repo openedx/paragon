@@ -12,13 +12,11 @@ const MAX_OPTION_LENGTH = 30;
 const FormAutosuggest = ({
   children,
   arrowKeyNavigationSelector,
-  name,
   value,
   isLoading,
   errorMessageText,
   onChange,
   helpMessage,
-  className,
   ...props
 }) => {
   const optItemsRef = useRef(null);
@@ -68,8 +66,8 @@ const FormAutosuggest = ({
       const modifiedOpt = React.cloneElement(child, {
         ...rest,
         children: newChildren,
-        value: children,
-        onClick: (e) => handleItemClick(e, children),
+        value: newChildren,
+        onClick: (e) => handleItemClick(e, newChildren),
       });
 
       return modifiedOpt;
@@ -183,17 +181,8 @@ const FormAutosuggest = ({
         dropDownItems,
         errorMessage: '',
       }));
+
       setIsClose(false);
-    }
-
-    if (state.dropDownItems.length > 0) {
-      setState(prevState => ({
-        ...prevState,
-        dropDownItems: '',
-        errorMessage: '',
-      }));
-
-      setIsClose(true);
     }
   };
 
@@ -226,9 +215,7 @@ const FormAutosuggest = ({
     <div className="pgn__form-autosuggest__wrapper" ref={parentRef}>
       <Form.Group isInvalid={!!state.errorMessage}>
         <Form.Control
-          className={className}
           aria-expanded={(state.dropDownItems.length > 0).toString()}
-          name={name}
           value={state.displayValue}
           aria-invalid={state.errorMessage}
           onChange={handleOnChange}
@@ -244,7 +231,7 @@ const FormAutosuggest = ({
         )}
 
         {state.errorMessage && (
-          <Form.Control.Feedback type="invalid" key="error" feedback-for={name}>
+          <Form.Control.Feedback type="invalid" key="error" feedback-for={props.name}>
             {errorMessageText}
           </Form.Control.Feedback>
         )}
