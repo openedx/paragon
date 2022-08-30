@@ -15,7 +15,7 @@ notes: |
 
 Form auto-suggest enables users to manually select or type to find matching options to partial text input.
 
-## Controlled Standalone Usage
+## Basic Usage
 
 ```jsx live
 () => {
@@ -23,24 +23,25 @@ Form auto-suggest enables users to manually select or type to find matching opti
 
     return (
         <Form.Autosuggest
-            floatingLabel="This is floating label"
-            helpMessage="This is help message"
+            floatingLabel="Programming language"
             aria-label="form autosuggest"
+            helpMessage="Select language"
+            errorMessageText="Error, no selected value"
             value={data.title}
             onChange={
                 (value) => setData(prevState => ({ data: { ...prevState.data, org: value } }))
             }
         >
-            <Form.Autosuggest.Option>Green</Form.Autosuggest.Option>
-            <Form.Autosuggest.Option>Red</Form.Autosuggest.Option>
-            <Form.Autosuggest.Option>Blue</Form.Autosuggest.Option>
-            <Form.Autosuggest.Option>Black</Form.Autosuggest.Option>
+            <Form.AutosuggestOption>JavaScript</Form.AutosuggestOption>
+            <Form.AutosuggestOption>Python</Form.AutosuggestOption>
+            <Form.AutosuggestOption>Rube</Form.AutosuggestOption>
+            <Form.AutosuggestOption>C#</Form.AutosuggestOption>
         </Form.Autosuggest>
     );
 }
 ```
 
-## With error message
+## Search Usage
 
 ```jsx live
 () => {
@@ -48,18 +49,19 @@ Form auto-suggest enables users to manually select or type to find matching opti
 
     return (
         <Form.Autosuggest
-            placeholder="This is placeholder"
-            floatingLabel="This is floating label"
-            errorMessage="This is error message"
+            placeholder="Type 'T'"
+            aria-label="form autosuggest"
+            errorMessageText="Error, no selected value"
+            helpMessage="Select language"
             value={data.title}
             onChange={
                 (value) => setData(prevState => ({ data: { ...prevState.data, org: value } }))
             }
         >
-            <Form.Autosuggest.Option>Green</Form.Autosuggest.Option>
-            <Form.Autosuggest.Option>Red</Form.Autosuggest.Option>
-            <Form.Autosuggest.Option>Blue</Form.Autosuggest.Option>
-            <Form.Autosuggest.Option>Black</Form.Autosuggest.Option>
+            <Form.AutosuggestOption>PHP</Form.AutosuggestOption>
+            <Form.AutosuggestOption>Java</Form.AutosuggestOption>
+            <Form.AutosuggestOption>Turbo Pascal</Form.AutosuggestOption>
+            <Form.AutosuggestOption>Flask</Form.AutosuggestOption>
         </Form.Autosuggest>
     );
 }
@@ -76,10 +78,10 @@ Form auto-suggest enables users to manually select or type to find matching opti
             placeholder="This is placeholder"
             floatingLabel="This is floating label"
         >
-            <Form.Autosuggest.Option>Green</Form.Autosuggest.Option>
-            <Form.Autosuggest.Option>Red</Form.Autosuggest.Option>
-            <Form.Autosuggest.Option>Blue</Form.Autosuggest.Option>
-            <Form.Autosuggest.Option>Black</Form.Autosuggest.Option>
+            <Form.AutosuggestOption>Green</Form.AutosuggestOption>
+            <Form.AutosuggestOption>Red</Form.AutosuggestOption>
+            <Form.AutosuggestOption>Blue</Form.AutosuggestOption>
+            <Form.AutosuggestOption>Black</Form.AutosuggestOption>
         </Form.Autosuggest>
     );
 }

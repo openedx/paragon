@@ -15,7 +15,7 @@ const FormAutosuggest = ({
   name,
   value,
   isLoading,
-  errorMessage,
+  errorMessageText,
   onChange,
   helpMessage,
   className,
@@ -23,7 +23,7 @@ const FormAutosuggest = ({
 }) => {
   const optItemsRef = useRef(null);
   const parentRef = useArrowKeyNavigation({ selectors: arrowKeyNavigationSelector });
-  const [isOpen, setIsOpen] = useState(false);
+  const [isClose, setIsClose] = useState(true);
   const [state, setState] = useState({
     displayValue: '',
     errorMessage: '',
@@ -51,7 +51,7 @@ const FormAutosuggest = ({
       dropDownItems: '',
     }));
 
-    setIsOpen(false);
+    setIsClose(true);
   };
 
   function getItems(strToFind = '') {
@@ -84,11 +84,13 @@ const FormAutosuggest = ({
   }
 
   const handleExpand = (e) => {
+    setIsClose(!isClose);
+
     const newState = {
       dropDownItems: '',
     };
 
-    if (isOpen) {
+    if (isClose) {
       newState.dropDownItems = getItems(e.target.value);
       newState.errorMessage = '';
     }
@@ -102,15 +104,12 @@ const FormAutosuggest = ({
   const iconToggle = () => (
     <IconButton
       className="pgn__form-autosuggest__icon-button"
-      src={isOpen ? KeyboardArrowUp : KeyboardArrowDown}
+      src={isClose ? KeyboardArrowDown : KeyboardArrowUp}
       iconAs={Icon}
       size="sm"
       variant="secondary"
       alt="icon toggle"
-      onClick={(e) => {
-        setIsOpen(!isOpen);
-        handleExpand(e);
-      }}
+      onClick={(e) => handleExpand(e, isClose)}
     />
   );
 
@@ -119,10 +118,10 @@ const FormAutosuggest = ({
       setState(prevState => ({
         ...prevState,
         dropDownItems: '',
-        errorMessage: !state.displayValue ? errorMessage : '',
+        errorMessage: !state.displayValue ? errorMessageText : '',
       }));
 
-      setIsOpen(false);
+      setIsClose(true);
     }
   };
 
@@ -133,10 +132,10 @@ const FormAutosuggest = ({
       setState(prevState => ({
         ...prevState,
         dropDownItems: '',
-        errorMessage: !state.displayValue ? errorMessage : '',
+        errorMessage: !state.displayValue ? errorMessageText : '',
       }));
 
-      setIsOpen(false);
+      setIsClose(true);
     }
   };
 
@@ -184,7 +183,7 @@ const FormAutosuggest = ({
         dropDownItems,
         errorMessage: '',
       }));
-      setIsOpen(true);
+      setIsClose(false);
     }
 
     if (state.dropDownItems.length > 0) {
@@ -194,7 +193,7 @@ const FormAutosuggest = ({
         errorMessage: '',
       }));
 
-      setIsOpen(false);
+      setIsClose(true);
     }
   };
 
@@ -209,15 +208,15 @@ const FormAutosuggest = ({
         errorMessage: '',
       }));
 
-      setIsOpen(true);
+      setIsClose(false);
     } else {
       setState(prevState => ({
         ...prevState,
         dropDownItems: '',
-        errorMessage,
+        errorMessageText,
       }));
 
-      setIsOpen(false);
+      setIsClose(true);
     }
 
     setDisplayValue(e.target.value);
@@ -225,28 +224,28 @@ const FormAutosuggest = ({
 
   return (
     <div className="pgn__form-autosuggest__wrapper" ref={parentRef}>
-      <Form.Group isInvalid={!!errorMessage}>
+      <Form.Group isInvalid={!!state.errorMessage}>
         <Form.Control
           className={className}
           aria-expanded={(state.dropDownItems.length > 0).toString()}
           name={name}
           value={state.displayValue}
-          aria-invalid={errorMessage}
+          aria-invalid={state.errorMessage}
           onChange={handleOnChange}
           onClick={handleClick}
           trailingElement={iconToggle()}
           {...props}
         />
 
-        {helpMessage && !errorMessage && (
+        {helpMessage && !state.errorMessage && (
           <Form.Control.Feedback type="default" key="help-text">
             {helpMessage}
           </Form.Control.Feedback>
         )}
 
-        {errorMessage && (
+        {state.errorMessage && (
           <Form.Control.Feedback type="invalid" key="error" feedback-for={name}>
-            {errorMessage}
+            {errorMessageText}
           </Form.Control.Feedback>
         )}
       </Form.Group>
@@ -272,7 +271,7 @@ FormAutosuggest.defaultProps = {
   helpMessage: '',
   placeholder: '',
   value: null,
-  errorMessage: null,
+  errorMessageText: null,
   readOnly: false,
   children: null,
   name: 'form-autosuggest',
@@ -301,7 +300,7 @@ FormAutosuggest.propTypes = {
   /** Specifies values for the input. */
   value: PropTypes.string,
   /** Informs user has errors. */
-  errorMessage: PropTypes.string,
+  errorMessageText: PropTypes.string,
   /** Specifies the name of the base input element. */
   name: PropTypes.string,
   /** Selected list item is read-only. */

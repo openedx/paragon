@@ -53,6 +53,8 @@ export {
   FormLabel,
   useCheckboxSetValues,
   FormText,
+  FormAutosuggest,
+  FormAutosuggestOption,
   InputGroup,
 } from './Form';
 export { default as Hyperlink, HYPER_LINK_EXTERNAL_LINK_ALT_TEXT, HYPER_LINK_EXTERNAL_LINK_TITLE } from './Hyperlink';

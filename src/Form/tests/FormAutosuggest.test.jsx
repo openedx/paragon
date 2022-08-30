@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { act } from 'react-test-renderer';
+import { act } from 'react-dom/test-utils';
 import FormAutosuggest from '../FormAutosuggest';
 import FormAutosuggestOption from '../FormAutosuggestOption';
 
@@ -26,10 +26,8 @@ const props = {
   as: 'input',
   name: 'FormAutosuggest',
   floatingLabel: 'floatingLabel text',
-  options: null,
-  handleChange: null,
   value: null,
-  errorMessage: null,
+  errorMessageText: null,
   readOnly: false,
 };
 
@@ -91,7 +89,6 @@ describe('FormAutosuggest', () => {
     );
 
     container.find('input').simulate('change', { target: { value: 'option 1' } });
-    // expect(container.find('input').instance().value).toEqual('option 1');
     expect(container.find('.pgn__form-autosuggest__dropdown').find('button').length).toEqual(1);
   });
 
@@ -121,8 +118,7 @@ describe('FormAutosuggest', () => {
     );
 
     container.find('input').simulate('change', { target: { value: '1' } });
-    expect(container.find('.pgn__form-autosuggest__dropdown')
-      .find('button').length).toEqual(1);
+    expect(container.find('.pgn__form-autosuggest__dropdown').find('button').length).toEqual(1);
   });
 
   it('closes options list on click outside', () => {
