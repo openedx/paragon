@@ -12,15 +12,15 @@
       "b": { "value": "#FFEE88", "themeable": true, "source": "$accent-b" }
     },
     "gray": {
-      "100": { "value": "#EBEBEB", "themeable": true, "source": "gray-100" },
-      "200": { "value": "#CCCCCC", "themeable": true, "source": "gray-200" },
-      "300": { "value": "#ADADAD", "themeable": true, "source": "gray-300" },
-      "400": { "value": "#8F8F8F", "themeable": true, "source": "gray-400" },
-      "500": { "value": "#707070", "themeable": true, "source": "gray-500" },
-      "600": { "value": "#5C5C5C", "themeable": true, "source": "gray-600" },
-      "700": { "value": "#454545", "themeable": true, "source": "gray-700" },
-      "800": { "value": "#333333", "themeable": true, "source": "gray-800" },
-      "900": { "value": "#212529", "themeable": true, "source": "gray-900" }
+      "100": { "value": "#EBEBEB", "themeable": true, "source": "$gray-100" },
+      "200": { "value": "#CCCCCC", "themeable": true, "source": "$gray-200" },
+      "300": { "value": "#ADADAD", "themeable": true, "source": "$gray-300" },
+      "400": { "value": "#8F8F8F", "themeable": true, "source": "$gray-400" },
+      "500": { "value": "#707070", "themeable": true, "source": "$gray-500" },
+      "600": { "value": "#5C5C5C", "themeable": true, "source": "$gray-600" },
+      "700": { "value": "#454545", "themeable": true, "source": "$gray-700" },
+      "800": { "value": "#333333", "themeable": true, "source": "$gray-800" },
+      "900": { "value": "#212529", "themeable": true, "source": "$gray-900" }
     },
     "primary": {
       "100": { "value": "#F0F3F5", "themeable": true, "source": "$primary-100" },
