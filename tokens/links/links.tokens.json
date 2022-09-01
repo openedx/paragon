@@ -38,8 +38,8 @@
       "color": { "value": "{color.brand.500.value}", "themeable": true, "source": "$brand-link-color" },
       "decoration": { "value": "none", "themeable": true, "source": "$brand-link-decoration" },
       "hover": {
-        "color": { "value": "#51002B", "themeable": true, "source": "$brand-link-color" },
-        "decoration": { "value": "underline", "themeable": true, "source": "$brand-link-decoration" }
+        "color": { "value": "#51002B", "themeable": true, "source": "$brand-link-hover-color" },
+        "decoration": { "value": "underline", "themeable": true, "source": "$brand-link-hover-decoration" }
       },
       "inline": {
         "color": { "value": "{color.brand.500.value}", "themeable": true, "source": "$inline-link-color" },

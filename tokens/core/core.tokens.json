@@ -17,7 +17,7 @@
         "font": {
           "family": { "value": "null", "themeable": true, "source": "$input-btn-font-family" },
           "size": {
-            "base": { "value": "1.125rem", "themeable": true, "source": "$input-btn-font-family" },
+            "base": { "value": "1.125rem", "themeable": true, "source": "$input-btn-font-size" },
             "sm": { "value": ".875rem", "themeable": true, "source": "$input-btn-font-size-sm" },
             "lg": { "value": "1.325rem", "themeable": true, "source": "$input-btn-font-size-lg" }
           }
