@@ -1,5 +1,5 @@
 {
-  "lastModified": 1661954986856,
+  "lastModified": 1662041526738,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -4755,6 +4755,12 @@
             "version": "20.4.1"
           },
           {
+            "filePath": "src/components/settings/SettingsAppearanceTab/ThemeCard.jsx",
+            "line": 7,
+            "column": 4,
+            "version": "20.4.1"
+          },
+          {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingLMSCardDeck.jsx",
             "line": 106,
             "column": 4,
@@ -4838,6 +4844,12 @@
             "filePath": "src/components/learner-credit-management/LearnerCreditAggregateCards.jsx",
             "line": 109,
             "column": 10,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/ThemeCard.jsx",
+            "line": 8,
+            "column": 6,
             "version": "20.4.1"
           },
           {
@@ -7114,7 +7126,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
-            "line": 52,
+            "line": 56,
             "column": 6,
             "version": "20.4.1"
           },
@@ -7168,6 +7180,12 @@
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessSubsidyTypeSelection.jsx",
             "line": 66,
             "column": 12,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/ThemeCard.jsx",
+            "line": 13,
+            "column": 8,
             "version": "20.4.1"
           },
           {
@@ -7232,7 +7250,41 @@
         "Dropzone": [
           {
             "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
-            "line": 40,
+            "line": 44,
+            "column": 6,
+            "version": "20.4.1"
+          }
+        ],
+        "CardGrid": [
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
+            "line": 66,
+            "column": 6,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ExistingLMSCardDeck.jsx",
+            "line": 216,
+            "column": 6,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
+            "line": 206,
+            "column": 10,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
+            "line": 96,
+            "column": 8,
+            "version": "20.4.1"
+          }
+        ],
+        "Card.Footer": [
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/ThemeCard.jsx",
+            "line": 11,
             "column": 6,
             "version": "20.4.1"
           }
@@ -7294,26 +7346,6 @@
             "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
             "line": 131,
             "column": 6,
-            "version": "20.4.1"
-          }
-        ],
-        "CardGrid": [
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/ExistingLMSCardDeck.jsx",
-            "line": 216,
-            "column": 6,
-            "version": "20.4.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 206,
-            "column": 10,
-            "version": "20.4.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
-            "line": 96,
-            "column": 8,
             "version": "20.4.1"
           }
         ],
@@ -22641,7 +22673,7 @@
           },
           {
             "filePath": "src/components/Search/ManagedAutoComplete.jsx",
-            "line": 221,
+            "line": 217,
             "column": 14,
             "version": "19.19.1"
           },
@@ -22665,7 +22697,7 @@
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 52,
+            "line": 40,
             "column": 10,
             "version": "19.19.1"
           },
@@ -22847,7 +22879,7 @@
           },
           {
             "filePath": "src/components/Home/NewOnEdx.jsx",
-            "line": 85,
+            "line": 83,
             "column": 6,
             "version": "19.19.1"
           },
@@ -22877,12 +22909,12 @@
           },
           {
             "filePath": "src/components/Learn/DynamicProductList.jsx",
-            "line": 97,
+            "line": 102,
             "column": 6,
             "version": "19.19.1"
           },
           {
-            "filePath": "src/components/Learn/Hero.jsx",
+            "filePath": "src/components/Learn/LearnHero.jsx",
             "line": 49,
             "column": 6,
             "version": "19.19.1"
@@ -23485,7 +23517,7 @@
         "Input": [
           {
             "filePath": "src/components/Footer/index.jsx",
-            "line": 421,
+            "line": 431,
             "column": 20,
             "version": "19.19.1"
           }
@@ -23721,7 +23753,7 @@
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 34,
+            "line": 22,
             "column": 6,
             "version": "19.19.1"
           }
@@ -23735,19 +23767,19 @@
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 36,
+            "line": 24,
             "column": 10,
             "version": "19.19.1"
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 41,
+            "line": 29,
             "column": 10,
             "version": "19.19.1"
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 46,
+            "line": 34,
             "column": 10,
             "version": "19.19.1"
           }
@@ -23761,19 +23793,19 @@
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 38,
+            "line": 26,
             "column": 12,
             "version": "19.19.1"
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 43,
+            "line": 31,
             "column": 12,
             "version": "19.19.1"
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 48,
+            "line": 36,
             "column": 12,
             "version": "19.19.1"
           }
@@ -23905,7 +23937,7 @@
         "Form.Row": [
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 35,
+            "line": 23,
             "column": 8,
             "version": "19.19.1"
           }
@@ -23913,19 +23945,19 @@
         "Form.Label": [
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 37,
+            "line": 25,
             "column": 12,
             "version": "19.19.1"
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 42,
+            "line": 30,
             "column": 12,
             "version": "19.19.1"
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 47,
+            "line": 35,
             "column": 12,
             "version": "19.19.1"
           }
