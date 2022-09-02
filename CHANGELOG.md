@@ -1,3 +1,10 @@
+# [20.11.0](https://github.com/openedx/paragon/compare/v20.10.2...v20.11.0) (2022-09-02)
+
+
+### Features
+
+* update Chip ([#1574](https://github.com/openedx/paragon/issues/1574)) ([79d4744](https://github.com/openedx/paragon/commit/79d4744ed0be64daf5427c822c21ef8250c5cce3))
+
 ## [20.10.2](https://github.com/openedx/paragon/compare/v20.10.1...v20.10.2) (2022-09-02)
 
 
