@@ -1,8 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+export interface IComponentStatus {
+  status: string,
+  noLeftMargin?: string,
+}
+
 // eslint-disable-next-line import/prefer-default-export
-export function ComponentStatus({ status, noLeftMargin }) {
+export function ComponentStatus({ status, noLeftMargin }: IComponentStatus) {
   if (!status) { return null; }
   return (
     <span

@@ -1,31 +1,59 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
+// @ts-ignore
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { Container, Alert } from '~paragon-react'; // eslint-disable-line
+// @ts-ignore
+import { Container, Alert, breakpoints, useMediaQuery } from '~paragon-react'; // eslint-disable-line
 import CodeBlock from '../components/CodeBlock';
 import GenericPropsTable from '../components/PropsTable';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
 import LinkedHeading from '../components/LinkedHeading';
-import { useMediaQuery } from 'react-responsive';
-import { breakpoints } from '../../../src';
+
+export interface IPageTemplate {
+  data: {
+    mdx: {
+      frontmatter: {
+        title: string,
+        status: string,
+        components: string,
+        notes: string,
+      },
+      tableOfContents: {
+        items: Array<{}>,
+      },
+      body: string,
+    },
+    components: {
+      nodes: [],
+    }
+  },
+  pageContext: {
+    cssVariables: string,
+  }
+}
+
+export type ShortCodesTypes = {
+  displayName: string,
+};
 
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
   pageContext: { cssVariables },
-}) {
-  const isMobile = useMediaQuery({ maxWidth: breakpoints.large.maxWidth});
+}: IPageTemplate) {
+  const isMobile = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
   const [showMinimizedTitle, setShowMinimizedTitle] = useState(false);
 
-  const components = componentNodes.nodes.reduce((acc, currentValue) => {
-    acc[currentValue.displayName] = currentValue;
-    return acc;
-  }, {});
+  const components = componentNodes.nodes
+    .reduce((acc: { [x: string]: { displayName: string }; }, currentValue: { displayName: string; }) => {
+      acc[currentValue.displayName] = currentValue;
+      return acc;
+    }, {});
 
   const shortcodes = React.useMemo(() => {
-    const PropsTable = ({ displayName, ...props }) => { // eslint-disable-line react/prop-types
+    const PropsTable = ({ displayName, ...props }: ShortCodesTypes) => { // eslint-disable-line react/prop-types
       if (components[displayName]) {
         return <GenericPropsTable {...components[displayName]} {...props} />;
       }
@@ -33,12 +61,14 @@ export default function PageTemplate({
     };
     // Provide common components here
     return {
-      h2: (props) => <LinkedHeading h="2" {...props} />,
-      h3: (props) => <LinkedHeading h="3" {...props} />,
-      h4: (props) => <LinkedHeading h="4" {...props} />,
-      h5: (props) => <LinkedHeading h="5" {...props} />,
-      h6: (props) => <LinkedHeading h="6" {...props} />,
-      pre: props => <div {...props} />,
+      h2: (props: HTMLElement) => <LinkedHeading h="2" {...props} />,
+      h3: (props: HTMLElement) => <LinkedHeading h="3" {...props} />,
+      h4: (props: HTMLElement) => <LinkedHeading h="4" {...props} />,
+      h5: (props: HTMLElement) => <LinkedHeading h="5" {...props} />,
+      h6: (props: HTMLElement) => <LinkedHeading h="6" {...props} />,
+      pre: (props:
+      JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> &
+      React.HTMLAttributes<HTMLDivElement>) => <div {...props} />,
       code: CodeBlock,
       Link,
       PropsTable,
@@ -68,7 +98,7 @@ export default function PageTemplate({
   return (
     <Layout
       showMinimizedTitle={showMinimizedTitle}
-      isMdx 
+      isMdx
       tocData={getTocData()}
     >
       {/* eslint-disable-next-line react/jsx-pascal-case */}
@@ -95,13 +125,14 @@ export default function PageTemplate({
             <CodeBlock className="language-scss">{cssVariables}</CodeBlock>
           </div>
         )}
-        {sortedComponentNames.map(componentName => {
-          const node = components[componentName];
-          if (!node) {
-            return null;
-          }
-          return <GenericPropsTable key={node.displayName} {...node} />;
-        })}
+        {typeof sortedComponentNames !== 'string'
+            && sortedComponentNames?.map((componentName: string | number) => {
+              const node: { displayName: string } = components[componentName];
+              if (!node) {
+                return null;
+              }
+              return <GenericPropsTable key={node.displayName} {...node} />;
+            })}
       </Container>
     </Layout>
   );
@@ -116,7 +147,7 @@ PageTemplate.propTypes = {
       }),
       body: PropTypes.any, // eslint-disable-line react/forbid-prop-types
       tableOfContents: PropTypes.shape({
-        items: PropTypes.arrayOf(PropTypes.object),
+        items: PropTypes.arrayOf(PropTypes.object), // eslint-disable-line react/forbid-prop-types
       }),
     }),
     components: PropTypes.shape({
@@ -126,6 +157,10 @@ PageTemplate.propTypes = {
   pageContext: PropTypes.shape({
     cssVariables: PropTypes.string,
   }),
+};
+
+PageTemplate.defaultProps = {
+  pageContext: null,
 };
 
 export const pageQuery = graphql`

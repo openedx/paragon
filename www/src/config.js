@@ -20,46 +20,46 @@ const LANGUAGES = [
     label: 'English',
     code: 'en',
   },
-  // {
-  //   label: 'Arabic',
-  //   code: 'ar',
-  // },
-  // {
-  //   label: 'Catalan',
-  //   code: 'ca',
-  // },
-  // {
-  //   label: 'Chinese',
-  //   code: 'zh-cn',
-  // },
-  // {
-  //   label: 'French',
-  //   code: 'fr',
-  // },
-  // {
-  //   label: 'Hebrew',
-  //   code: 'he',
-  // },
-  // {
-  //   label: 'Indonesian',
-  //   code: 'id',
-  // },
-  // {
-  //   label: 'Polish',
-  //   code: 'pl',
-  // },
-  // {
-  //   label: 'Russian',
-  //   code: 'ru',
-  // },
-  // {
-  //   label: 'Thai',
-  //   code: 'th',
-  // },
-  // {
-  //   label: 'Ukrainian',
-  //   code: 'uk',
-  // },
+  {
+    label: 'Arabic',
+    code: 'ar',
+  },
+  {
+    label: 'Catalan',
+    code: 'ca',
+  },
+  {
+    label: 'Chinese',
+    code: 'zh-cn',
+  },
+  {
+    label: 'French',
+    code: 'fr',
+  },
+  {
+    label: 'Hebrew',
+    code: 'he',
+  },
+  {
+    label: 'Indonesian',
+    code: 'id',
+  },
+  {
+    label: 'Polish',
+    code: 'pl',
+  },
+  {
+    label: 'Russian',
+    code: 'ru',
+  },
+  {
+    label: 'Thai',
+    code: 'th',
+  },
+  {
+    label: 'Ukrainian',
+    code: 'uk',
+  },
   {
     label: 'Spanish',
     code: 'es-419',

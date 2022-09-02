@@ -2,11 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import PropType from './PropType';
+// @ts-ignore
 import { Badge, Card } from '~paragon-react'; // eslint-disable-line
 
 const IGNORED_COMPONENT_PROPS = ['intl'];
 
-const DefaultValue = ({ value }) => {
+export type DefaultValueTypes = {
+  value: string | undefined,
+};
+
+const DefaultValue = ({ value }: DefaultValueTypes) => {
   if (!value || value === 'undefined') { return null; }
   return (
     <>
@@ -24,9 +29,21 @@ DefaultValue.defaultProps = {
   value: undefined,
 };
 
+export interface IProp {
+  name: string,
+  type?: {},
+  required?: boolean,
+  defaultValue: {},
+  description: {
+    childMdx: {
+      body: string,
+    },
+  },
+}
+
 const Prop = ({
   name, type, required, defaultValue, description,
-}) => (
+}: IProp) => (
   <li className="px-4 border-top border-light-300">
     <div className="my-3">
       <div className="mb-2">
@@ -54,9 +71,11 @@ Prop.propTypes = {
   name: PropTypes.string.isRequired,
   type: PropTypes.shape({}).isRequired,
   required: PropTypes.bool,
-  defaultValue: PropTypes.shape({}), // eslint-disable-line react/forbid-prop-types
+  defaultValue: PropTypes.shape({}),
   description: PropTypes.shape({
-    childMdx: PropTypes.shape({}), // eslint-disable-line react/forbid-prop-types
+    childMdx: PropTypes.shape({
+      body: PropTypes.string,
+    }),
   }),
 };
 Prop.defaultProps = {
@@ -65,7 +84,13 @@ Prop.defaultProps = {
   description: undefined,
 };
 
-const PropsTable = ({ props: componentProps, displayName, content }) => (
+export interface IPropsTable {
+  props: Array<Function>,
+  displayName: string,
+  content: string,
+}
+
+const PropsTable = ({ props: componentProps, displayName, content }: IPropsTable) => (
   <Card className="mb-5" id={`props-api-table-${displayName}`}>
     <Card.Header as="h3" title={`${displayName} Props API`} className="pb-1" />
     {content && <div className="small mb-3">{content}</div>}
