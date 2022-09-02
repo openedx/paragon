@@ -1,3 +1,10 @@
+## [20.10.2](https://github.com/openedx/paragon/compare/v20.10.1...v20.10.2) (2022-09-02)
+
+
+### Bug Fixes
+
+* fixed MarketingModal/AlertModal/ModalDialog scroll ([#1594](https://github.com/openedx/paragon/issues/1594)) ([952c1de](https://github.com/openedx/paragon/commit/952c1de22b9681d99827b47bbc643fcd8d24a7db))
+
 ## [20.10.1](https://github.com/openedx/paragon/compare/v20.10.0...v20.10.1) (2022-08-26)
 
 
