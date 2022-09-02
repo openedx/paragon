@@ -162,7 +162,7 @@
     height: 20px;
     position: sticky;
     bottom: calc(#{$modal-inner-padding} / 2 * -1);
-    margin-bottom: -$modal-inner-padding;
+    margin-bottom: -$modal-inner-padding-bottom;
     margin-left: -$modal-inner-padding;
     margin-right: -$modal-inner-padding;
     opacity: .5;
