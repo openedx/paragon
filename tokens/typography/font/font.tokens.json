@@ -1,0 +1,51 @@
+{
+  "font": {
+    "family": {
+      "sans": {
+        "serif": {
+          "value": "-apple-system, BlinkMacSystemFont, \"Segoe UI\",\n  Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\",\n  \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "themeable": true,
+          "source": "$font-family-sans-serif"
+        }
+      },
+      "serif": { "value": "serif", "themeable": true, "source": "$font-family-serif" },
+      "monospace": {
+        "value": "SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\",\n  \"Courier New\", monospace",
+        "themeable": true,
+        "source": "$font-family-monospace"
+      },
+      "base": { "value": "{font.family.sans.serif.value}", "themeable": true, "source": "$font-family-base" }
+    },
+    "size": {
+      "base": { "value": "1.125rem", "themeable": true, "source": "$font-size-base" },
+      "lg": { "value": "1.40625rem", "themeable": true, "source": "$font-size-lg" },
+      "sm": { "value": ".875rem", "themeable": true, "source": "$font-size-sm" },
+      "xs": { "value": ".75rem", "themeable": true, "source": "$font-size-xs" },
+      "h1": { "value": "2.5rem", "themeable": true, "source": "$h1-font-size" },
+      "h2": { "value": "2rem", "themeable": true, "source": "$h2-font-size" },
+      "h3": { "value": "1.375rem", "themeable": true, "source": "$h3-font-size" },
+      "h4": { "value": "1.125rem", "themeable": true, "source": "$h4-font-size" },
+      "h5": { "value": ".875rem", "themeable": true, "source": "$h5-font-size" },
+      "h6": { "value": ".75rem", "themeable": true, "source": "$h6-font-size" },
+      "mobile": {
+        "h1": { "value": "2.25rem", "themeable": true, "source": "$h1-mobile-font-size" },
+        "h2": { "value": "{font.size.h2.value}", "themeable": true, "source": "$h2-mobile-font-size" },
+        "h3": { "value": "{font.size.h3.value}", "themeable": true, "source": "$h3-mobile-font-size" },
+        "h4": { "value": "{font.size.h4.value}", "themeable": true, "source": "$h4-mobile-font-size" },
+        "h5": { "value": "{font.size.h5.value}", "themeable": true, "source": "$h5-mobile-font-size" },
+        "h6": { "value": "{font.size.h6.value}", "themeable": true, "source": "$h6-mobile-font-size" }
+      }
+    },
+    "weight": {
+      "lighter": { "value": "lighter", "themeable": true, "source": "$font-weight-lighter" },
+      "light": { "value": "300", "themeable": true, "source": "$font-weight-light" },
+      "normal": { "value": "400", "themeable": true, "source": "$font-weight-normal" },
+      "semi": {
+        "bold": { "value": "500", "themeable": true, "source": "$font-weight-semi-bold" }
+      },
+      "bold": { "value": "700", "themeable": true, "source": "$font-weight-bold" },
+      "bolder": { "value": "bolder", "themeable": true, "source": "$font-weight-bolder" },
+      "base": { "value": "{font.weight.normal.value}", "themeable": true, "source": "$font-weight-base" }
+    }
+  }
+}
