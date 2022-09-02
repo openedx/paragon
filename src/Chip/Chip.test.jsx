@@ -6,57 +6,64 @@ import Chip from './index';
 
 import { Close } from '../../icons';
 
+const TestChip = (props) => (
+  <Chip {...props}>
+    Test
+  </Chip>
+);
+
 describe('<Chip />', () => {
-  describe('correct rendering', () => {
+  describe('snapshots', () => {
     it('renders without props', () => {
       const tree = renderer.create((
-        <Chip>Chip</Chip>
+        <TestChip />
       )).toJSON();
       expect(tree).toMatchSnapshot();
     });
-    it('renders with correct class when variant is added', () => {
-      const wrapper = mount(<Chip variant="dark" />);
-      const chip = wrapper.find('.pgn__chip');
-      expect(chip.hasClass('pgn__chip-dark')).toEqual(true);
-    });
     it('renders with props iconBefore', () => {
       const tree = renderer.create((
-        <Chip iconBefore={Close}>Chip</Chip>
+        <TestChip iconBefore={Close} />
       )).toJSON();
       expect(tree).toMatchSnapshot();
     });
     it('renders with props iconAfter', () => {
       const tree = renderer.create((
-        <Chip iconAfter={Close}>Chip</Chip>
+        <TestChip iconAfter={Close} />
       )).toJSON();
       expect(tree).toMatchSnapshot();
     });
     it('renders with props iconBefore and iconAfter', () => {
       const tree = renderer.create((
-        <Chip iconBefore={Close} iconAfter={Close}>Chip</Chip>
+        <TestChip iconBefore={Close} iconAfter={Close}>Chip</TestChip>
       )).toJSON();
       expect(tree).toMatchSnapshot();
     });
-    it('renders with active class when active prop is added', () => {
-      const wrapper = mount(<Chip active />);
+  });
+
+  describe('correct rendering', () => {
+    it('renders with correct class when variant is added', () => {
+      const wrapper = mount(<TestChip variant="dark" />);
       const chip = wrapper.find('.pgn__chip');
-      expect(chip.hasClass('active')).toEqual(true);
+      expect(chip.hasClass('pgn__chip-dark')).toEqual(true);
     });
-    it('renders as the button tag', () => {
-      const wrapper = mount(<Chip />);
-      const wrapperButton = mount(<Chip as="button" />);
-      const chipDefault = wrapper.find('.pgn__chip');
-      const chipAsButton = wrapperButton.find('.pgn__chip');
-      expect(chipDefault.type()).toEqual('button');
-      expect(chipAsButton.type()).toEqual('button');
+    it('renders with active class when disabled prop is added', () => {
+      const wrapper = mount(<TestChip disabled />);
+      const chip = wrapper.find('.pgn__chip');
+      expect(chip.hasClass('disabled')).toEqual(true);
     });
-    it('renders as the anchor tag', () => {
-      const wrapperHref = mount(<Chip href="#" />);
-      const wrapperA = mount(<Chip as="a" />);
-      const chipWithHref = wrapperHref.find('.pgn__chip');
-      const chipAsA = wrapperA.find('.pgn__chip');
-      expect(chipWithHref.type()).toEqual('a');
-      expect(chipAsA.type()).toEqual('a');
+    it('renders with the client\'s className', () => {
+      const className = 'testClassName';
+      const wrapper = mount(<TestChip className={className} />);
+      const chip = wrapper.find('.pgn__chip');
+      expect(chip.hasClass(className)).toEqual(true);
+    });
+    it('onIconAfterClick is triggered', () => {
+      const func = jest.fn();
+      const wrapper = mount(<TestChip iconAfter={Close} onIconAfterClick={func} />);
+      const iconAfter = wrapper.find('.pgn__chip__icon-after');
+      iconAfter.simulate('click');
+      iconAfter.simulate('keypress');
+      expect(func).toHaveBeenCalledTimes(2);
     });
   });
 });
