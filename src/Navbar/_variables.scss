@@ -9,8 +9,8 @@ $navbar-brand-font-size:            var(--pgn-font-size-lg) !default;
 
 // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
 // The default for $nav-link-padding-y is .5rem. Copied here for modularization
-$nav-link-height:                   var(--pgn-font-size-base) * var(--pgn-line-height-base) + .5rem * 2 !default;
-$navbar-brand-height:               $navbar-brand-font-size * var(--pgn-line-height-base) !default;
+$nav-link-height:                   calc(var(--pgn-font-size-base) * var(--pgn-line-height-base) + .5rem * 2) !default;
+$navbar-brand-height:               calc($navbar-brand-font-size * var(--pgn-line-height-base)) !default;
 $navbar-brand-padding-y:            calc(($nav-link-height - $navbar-brand-height) / 2) !default;
 
 $navbar-toggler-padding-y:          .25rem !default;

@@ -53,8 +53,8 @@
           background: $color;
           position: absolute;
           /* stylelint-disable max-line-length */
-          top: -(calc(var(--pgn-progress-bar-threshold-circle) / 2) - calc(var(--pgn-progress-bar-height-annotated) / 2));
-          right: -(calc(var(--pgn-progress-bar-threshold-circle) / 2));
+          top: calc(var(--pgn-progress-bar-threshold-circle) / 2 - var(--pgn-progress-bar-height-annotated) / 2);
+          right: calc(var(--pgn-progress-bar-threshold-circle) / -2);
           width: var(--pgn-progress-bar-threshold-circle);
           height: var(--pgn-progress-bar-threshold-circle);
           border-radius: calc(var(--pgn-progress-bar-threshold-circle) / 2);

@@ -4,7 +4,7 @@ $popover-font-size:                 var(--pgn-font-size-sm) !default;
 $popover-bg:                        var(--pgn-color-white) !default;
 $popover-max-width:                 480px !default;
 $popover-border-width:              var(--pgn-border-width) !default;
-$popover-border-color:              rgba(var(--pgn-color-black), .2) !default;
+$popover-border-color:              rgba($black, .2) !default;
 $popover-border-radius:             var(--pgn-border-radius-sm) !default;
 $popover-inner-border-radius:       subtract($popover-border-radius, $popover-border-width) !default;
 $popover-box-shadow:                drop-shadow(0 2px 4px rgba(0, 0, 0, .15))
@@ -13,7 +13,7 @@ $popover-icon-margin-right:         .5rem;
 $popover-icon-height:               1rem;
 $popover-icon-width:                1rem;
 
-$popover-header-bg:                 var(--pgn-color-white) !default;
+$popover-header-bg:                 $white !default;
 $popover-header-color:              var(--pgn-headings-color) !default;
 $popover-header-padding-y:          .5rem !default;
 $popover-header-padding-x:          1rem !default;

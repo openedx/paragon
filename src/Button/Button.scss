@@ -1,5 +1,5 @@
 @import "variables";
-@import "~bootstrap/scss/button-group";
+@import "button-bootstrap";
 
 @mixin button-variant(
   $btn-variant-bg, $btn-variant-border, $btn-variant-hover-bg: darken($btn-variant-bg, 7.5%),
@@ -348,7 +348,7 @@ fieldset:disabled a.btn {
 //
 
 .btn-tertiary {
-  $button-tertiary-background: var(--pgn-btn-tertiary-bg-base);
+  $button-tertiary-background: $btn-tertiary-bg;
   $button-tertiary-border: transparent;
   $hover-background: var(--pgn-btn-tertiary-bg-hover);
   $button-tertiary-hover-border: transparent;
@@ -370,7 +370,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-inverse-tertiary {
-  $button-inverse-tertiary-bg: var(--pgn-btn-tertiary-inverse-bg-base);
+  $button-inverse-tertiary-bg: $btn-tertiary-bg;
   $button-inverse-tertiary-border: transparent;
   $hover-background: var(--pgn-btn-tertiary-inverse-bg-hover);
   $button-inverse-hover-border: transparent;
@@ -439,7 +439,7 @@ fieldset:disabled a.btn {
 
 .btn-sm {
   @include button-size(
-    var(--pgn-btn-padding-y-sm-y), var(--pgn-btn-padding-y-sm-x), var(--pgn-btn-font-size-sm),
+    var(--pgn-btn-padding-y-sm), var(--pgn-btn-padding-x-sm), var(--pgn-btn-font-size-sm),
     var(--pgn-btn-line-height-sm), var(--pgn-btn-border-radius-sm)
   );
 }
@@ -459,7 +459,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-inline {
-  line-height: calc(#{var(--pgn-line-height-base)}em - #{2 * var(--pgn-btn-border-width)});
+  line-height: calc(#{var(--pgn-line-height-base)}em - 2 * #{var(--pgn-btn-border-width)});
   font-size: inherit;
   vertical-align: bottom;
   padding: 0 .25em;

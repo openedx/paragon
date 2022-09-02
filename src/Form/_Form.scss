@@ -123,7 +123,7 @@ $select-icon-padding: .5625rem !default;
   &.pgn__form-control-decorator-trailing {
     inset-inline-end: 0;
     padding-inline-start: calc(var(--pgn-form-input-padding-x-base) / 2);
-    padding-inline-end: calc(#{var(--pgn-form-input-padding-y-sm)} - #{2 * var(--pgn-form-input-border-width)});
+    padding-inline-end: calc(#{var(--pgn-form-input-padding-y-sm)} - (2 * var(--pgn-form-input-border-width)));
   }
 
   .pgn__form-control-decorator-group-lg & {
@@ -137,7 +137,7 @@ $select-icon-padding: .5625rem !default;
 
     &.pgn__form-control-decorator-trailing {
       padding-left: calc(var(--pgn-form-input-padding-x-lg) / 2);
-      padding-right: calc(#{var(--pgn-form-input-padding-y-base)} - #{2 * var(--pgn-form-input-border-width)});
+      padding-right: calc(#{var(--pgn-form-input-padding-y-base)} - (2 * var(--pgn-form-input-border-width)));
     }
   }
 
@@ -152,7 +152,7 @@ $select-icon-padding: .5625rem !default;
 
     &.pgn__form-control-decorator-trailing {
       padding-left: calc(var(--pgn-form-input-padding-x-sm) / 2);
-      padding-right: calc(#{var(--pgn-form-input-padding-y-sm)} - #{2 * var(--pgn-form-input-border-width)});
+      padding-right: calc(var(--pgn-form-input-padding-y-sm) - (2 * var(--pgn-form-input-border-width)));
     }
   }
 
@@ -318,7 +318,7 @@ $select-icon-padding: .5625rem !default;
 }
 
 select.form-control {
-  padding-inline-end: 2rem + var(--pgn-form-select-icon-padding);
+  padding-inline-end: calc(#{var(--pgn-form-select-icon-padding)} + 2rem);
   background-image: $custom-select-indicator;
   background-position: right var(--pgn-form-select-icon-padding) center;
   background-repeat: no-repeat;

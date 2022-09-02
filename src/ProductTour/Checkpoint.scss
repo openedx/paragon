@@ -148,7 +148,7 @@ $checkpoint-arrow-transparent: solid var(--pgn-product-tour-checkpoint-width-arr
   left: 1px;
 
   &::after {
-    left: -2 * var(--pgn-product-tour-checkpoint-width-arrow);
+    left: calc(-2 * var(--pgn-product-tour-checkpoint-width-arrow));
     border-bottom: var(--pgn-product-tour-checkpoint-arrow-transparent);
     border-top: var(--pgn-product-tour-checkpoint-arrow-transparent);
     border-left: var(--pgn-product-tour-checkpoint-arrow-transparent);

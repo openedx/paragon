@@ -2,7 +2,7 @@
 
 $progress-height:                   1rem !default;
 $annotated-progress-height:         .3125rem !default;
-$progress-font-size:                var(--pgn-font-size-base) * .75 !default;
+$progress-font-size:                calc(var(--pgn-font-size-base) * .75) !default;
 $progress-bg:                       transparent !default;
 $progress-border-radius:            0 !default;
 $progress-box-shadow:               none !default;

@@ -4,14 +4,12 @@
       "y": {
         "base": { "value": "{core.input.btn.padding.y.value}", "themeable": true, "source": "$btn-padding-y" },
         "lg": { "value": "{core.input.btn.padding.lg.y.value}", "themeable": true, "source": "$btn-padding-y-lg" },
-        "sm": {
-          "y": { "value": "{core.input.btn.padding.sm.y.value}", "themeable": true, "source": "$btn-padding-y-sm" },
-          "x": { "value": "{core.input.btn.padding.sm.x.value}", "themeable": true, "source": "$btn-padding-x-sm" }
-        }
+        "sm": { "value": "{core.input.btn.padding.sm.y.value}", "themeable": true, "source": "$btn-padding-y-sm" }
       },
       "x": {
         "base": { "value": "{core.input.btn.padding.x.value}", "themeable": true, "source": "$btn-padding-x" },
-        "lg": { "value": "{core.input.btn.padding.lg.x.value}", "themeable": true, "source": "$btn-padding-x-lg" }
+        "lg": { "value": "{core.input.btn.padding.lg.x.value}", "themeable": true, "source": "$btn-padding-x-lg" },
+        "sm": { "value": "{core.input.btn.padding.sm.x.value}", "themeable": true, "source": "$btn-padding-x-sm" }
       }
     },
     "font": {

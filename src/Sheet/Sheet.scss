@@ -35,7 +35,7 @@
   position: fixed;
   padding: 1.25rem;
   background-color: white;
-  z-index: var(--pgn-zindex-sheet);
+  z-index: var(--pgn-www-zindex-sheet);
 
   &.pgn__sheet__dark {
     background-color: var(--pgn-color-dark-500);

@@ -1,4 +1,8 @@
 :root {
+  --pgn-www-zindex-modal: 2503;
+  --pgn-www-zindex-sheet-backdrop: 2501;
+  --pgn-www-zindex-sheet: 2502;
+  --pgn-www-zindex-header: 2500;
   --pgn-paragraph-margin-bottom: 1rem;
   --pgn-line-height-sm: 1.5;
   --pgn-line-height-lg: 1.5;
@@ -772,12 +776,14 @@
   --pgn-btn-font-size-sm: var(--pgn-core-input-btn-font-size-sm);
   --pgn-btn-font-size-base: var(--pgn-core-input-btn-font-size-base);
   --pgn-btn-font-family: var(--pgn-core-input-btn-font-family);
+  --pgn-btn-padding-x-sm: var(--pgn-core-input-btn-padding-sm-x);
   --pgn-btn-padding-x-lg: var(--pgn-core-input-btn-padding-lg-x);
   --pgn-btn-padding-x-base: var(--pgn-core-input-btn-padding-x);
-  --pgn-btn-padding-y-sm-x: var(--pgn-core-input-btn-padding-sm-x);
-  --pgn-btn-padding-y-sm-y: var(--pgn-core-input-btn-padding-sm-y);
+  --pgn-btn-padding-y-sm: var(--pgn-core-input-btn-padding-sm-y);
   --pgn-btn-padding-y-lg: var(--pgn-core-input-btn-padding-lg-y);
   --pgn-btn-padding-y-base: var(--pgn-core-input-btn-padding-y);
+  --pgn-breadcrumb-inverse-color: var(--pgn-color-white);
+  --pgn-breadcrumb-inverse-spacer: var(--pgn-color-light-700);
   --pgn-breadcrumb-color-divider: var(--pgn-color-gray-600);
   --pgn-breadcrumb-bg: var(--pgn-color-gray-200);
   --pgn-breadcrumb-border-radius-base: var(--pgn-border-radius-base);

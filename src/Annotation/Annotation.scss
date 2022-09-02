@@ -74,17 +74,17 @@ $arrow-directions: top, right, bottom, left;
       color: map-get($colors, "color");
 
       // set additional margin to arrow side of the Annotation
-      margin-#{$direction}: var(--pgn-annotation-arrow-border-width) + var(--pgn-annotation-arrow-side-margin);
+      margin-#{$direction}: calc(var(--pgn-annotation-arrow-border-width) + var(--pgn-annotation-arrow-side-margin));
 
       [dir="rtl"] & {
         @if $direction == left {
           margin-left: 0;
-          margin-right: var(--pgn-annotation-arrow-border-width) + var(--pgn-annotation-arrow-side-margin);
+          margin-right: calc(var(--pgn-annotation-arrow-border-width) + var(--pgn-annotation-arrow-side-margin));
         }
 
         @else if $direction == right {
           margin-right: 0;
-          margin-left: var(--pgn-annotation-arrow-border-width) + var(--pgn-annotation-arrow-side-margin);
+          margin-left: calc(var(--pgn-annotation-arrow-border-width) + var(--pgn-annotation-arrow-side-margin));
         }
       }
 

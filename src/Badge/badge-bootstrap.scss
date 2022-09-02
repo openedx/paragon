@@ -1,0 +1,43 @@
+.badge {
+  display: inline-block;
+  padding: var(--pgn-badge-padding-y) var(--pgn-badge-padding-x-base);
+
+  @include font-size(var(--pgn-badge-font-size));
+
+  font-weight: var(--pgn-badge-font-weight);
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+
+  @include border-radius(var(--pgn-badge-border-radius-base));
+  @include transition(var(--pgn-badge-transition));
+
+  @at-root a#{&} {
+    @include hover-focus() {
+      text-decoration: none;
+    }
+  }
+
+  &:empty {
+    display: none;
+  }
+}
+
+.btn .badge {
+  position: relative;
+  top: -1px;
+}
+
+.badge-pill {
+  padding-right: var(--pgn-badge-padding-x-pill);
+  padding-left: var(--pgn-badge-padding-x-pill);
+
+  @include border-radius(var(--pgn-badge-border-radius-pill));
+}
+
+@each $color, $value in $theme-colors {
+  .badge-#{$color} {
+    @include badge-variant($value);
+  }
+}

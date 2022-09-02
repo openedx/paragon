@@ -70,8 +70,8 @@
   &.btn-primary:focus::before {
     border: var(--pgn-pagination-focus-border-width) solid var(--pgn-pagination-focus-color-base);
 
-    @include
-      button-size(var(--pgn-btn-padding-y-base),
+    @include button-size(
+      var(--pgn-btn-padding-y-base),
       var(--pgn-btn-padding-x-base),
       var(--pgn-btn-font-size-base),
       var(--pgn-btn-line-height-base),
