@@ -1,0 +1,13 @@
+{
+  "zindex": {
+    "dropdown": { "value": "1000", "themeable": true, "source": "$zindex-dropdown" },
+    "sticky": { "value": "1020", "themeable": true, "source": "$zindex-sticky" },
+    "fixed": { "value": "1030", "themeable": true, "source": "$zindex-fixed" },
+    "sheet-backdrop": { "value": "1031", "themeable": true, "source": "$zindex-sheet-backdrop" },
+    "sheet": { "value": "1032", "themeable": true, "source": "$zindex-sheet" },
+    "modal-backdrop": { "value": "1040", "themeable": true, "source": "$zindex-modal-backdrop" },
+    "modal": { "value": "1050", "themeable": true, "source": "$zindex-modal" },
+    "popover": { "value": "1060", "themeable": true, "source": "$zindex-popover" },
+    "tooltip": { "value": "1070", "themeable": true, "source": "$zindex-tooltip" }
+  }
+}
