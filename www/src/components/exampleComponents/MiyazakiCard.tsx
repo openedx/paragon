@@ -1,8 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// @ts-ignore
 import { Card } from '~paragon-react'; // eslint-disable-line
 
-const MiyazakiCard = ({ className, original }) => {
+export interface IMiyazakiCard {
+  className: string,
+  original: {
+    title: string,
+    director: string,
+    release_date: number,
+  },
+}
+
+const MiyazakiCard = ({ className, original }: IMiyazakiCard) => {
   const { title, director, release_date: releaseDate } = original;
 
   return (

@@ -13,9 +13,19 @@ import {
   Button,
   Icon,
   IconButton,
+  // @ts-ignore
 } from '~paragon-react'; // eslint-disable-line
+// @ts-ignore
 import { Menu as MenuIcon, Close, Settings } from '~paragon-icons'; // eslint-disable-line
-import SettingsContext from '../context/SettingsContext';
+import { SettingsContext } from '../context/SettingsContext';
+
+export interface INavbar {
+  siteTitle: string,
+  onMenuClick: Function,
+  onSettingsClick: Function | undefined,
+  menuIsOpen?: boolean,
+  showMinimizedTitle?: boolean,
+}
 
 const Navbar = ({
   siteTitle,
@@ -23,7 +33,7 @@ const Navbar = ({
   menuIsOpen,
   showMinimizedTitle,
   onSettingsClick,
-}) => (
+}: INavbar) => (
   <Container as="header" className="py-3 bg-dark text-white sticky-top">
     <Row className="align-items-center text-center text-sm-left">
       <Col className="pgn-doc__header-button--menu mb-2 mb-sm-0 col-4" sm={5}>
@@ -116,9 +126,13 @@ Navbar.defaultProps = {
   showMinimizedTitle: false,
 };
 
-const Header = ({ siteTitle, showMinimizedTitle }) => {
-  // eslint-disable-next-line no-unused-vars
-  const [isOpen, open, close, toggle] = useToggle(false, {
+export interface IHeaderProps {
+  siteTitle: string,
+  showMinimizedTitle?: boolean,
+}
+
+const Header = ({ siteTitle, showMinimizedTitle }: IHeaderProps) => {
+  const [isOpen, , close, toggle] = useToggle(false, {
     handleToggleOn: () => {
       document.body.style.overflow = 'hidden';
     },
@@ -129,11 +143,9 @@ const Header = ({ siteTitle, showMinimizedTitle }) => {
 
   const { openSettings } = useContext(SettingsContext);
 
-  // returned function will be called on component unmount
   useEffect(() => () => {
     document.body.style.overflow = 'initial';
-  },
-  []);
+  }, []);
 
   return (
     <FocusOn

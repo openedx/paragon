@@ -1,9 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// @ts-ignore
 import { Sticky } from '~paragon-react'; // eslint-disable-line
 
-const Toc = ({ data }) => {
-  const generateTree = (headings) => (headings?.items?.length
+interface IItems {
+  url?: string,
+  title?: string,
+  items?: Array<IItems>,
+}
+
+export interface IToc {
+  data: {
+    items?: Array<IItems>
+  }
+}
+
+const Toc = ({ data }: IToc) => {
+  const generateTree = (headings: { items?: Array<IItems> }) => (headings?.items?.length
     ? (
       <ul className="pgn-doc__toc-list">
         {headings.items.map(heading => (
@@ -28,6 +41,7 @@ const Toc = ({ data }) => {
 const itemsShape = {
   url: PropTypes.string,
   title: PropTypes.string,
+  items: PropTypes.array,
 };
 itemsShape.items = PropTypes.arrayOf(PropTypes.shape(itemsShape));
 

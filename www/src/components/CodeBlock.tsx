@@ -12,7 +12,9 @@ import {
   LiveProvider, LiveEditor, LiveError, LivePreview,
 } from 'react-live';
 import { FormattedMessage, useIntl } from 'react-intl';
+// @ts-ignore
 import * as ParagonReact from '~paragon-react'; // eslint-disable-line
+// @ts-ignore
 import * as ParagonIcons from '~paragon-icons'; // eslint-disable-line
 import MiyazakiCard from './exampleComponents/MiyazakiCard';
 import HipsterIpsum from './exampleComponents/HipsterIpsum';
@@ -20,14 +22,18 @@ import ExamplePropsForm from './exampleComponents/ExamplePropsForm';
 
 const { Button, Collapsible } = ParagonReact;
 
-function CollapsibleLiveEditor({ children }) {
+export type CollapsibleLiveEditorTypes = {
+  children: React.ReactNode,
+};
+
+function CollapsibleLiveEditor({ children }: CollapsibleLiveEditorTypes) {
   const [collapseIsOpen, setCollapseIsOpen] = useState(false);
   return (
     <div className="pgn-doc__collapsible-live-editor">
       <Collapsible.Advanced
         unmountOnExit={false}
         open={collapseIsOpen}
-        onToggle={(isOpen) => setCollapseIsOpen(isOpen)}
+        onToggle={(isOpen: boolean) => setCollapseIsOpen(isOpen)}
       >
         <Collapsible.Trigger tag={Button} variant="link">
           <Collapsible.Visible whenClosed>Show code example</Collapsible.Visible>
@@ -45,13 +51,19 @@ CollapsibleLiveEditor.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
+export interface ICodeBlock {
+  children: string,
+  className?: string,
+  live?: boolean,
+}
+
 function CodeBlock({
   children,
   className,
   live,
-}) {
+}: ICodeBlock) {
   const intl = useIntl();
-  const language = className ? className.replace(/language-/, '') : 'jsx';
+  const language: any = className ? className.replace(/language-/, '') : 'jsx';
 
   if (live) {
     return (
