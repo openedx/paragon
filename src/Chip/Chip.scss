@@ -1,131 +1,102 @@
 @import "variables";
 
-@function get-color($element, $color, $type) {
-  @return map-get($chip-theme-colors, "#{$color}-#{$element}-#{$type}");
-}
+.pgn__chip {
+  background: $light-500;
+  border-radius: $chip-border-radius;
+  display: inline-flex;
+  margin: $chip-margin;
+  min-width: 0;
+  box-sizing: border-box;
 
-@mixin chip-variant($background, $border, $hover-background,
-$hover-border, $active-background, $active-border, $color,
-$hover-color, $active-color, $focus-border) {
-  background-color: $background;
-  color: $color;
-  border-color: $border;
+  .pgn__chip__label {
+    font-size: $font-size-sm;
+    padding: $chip-padding-y $chip-padding-x;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+    cursor: default;
 
-  &:hover {
-    cursor: pointer;
-    text-decoration: none;
-    background-color: $hover-background;
-    color: $hover-color;
-    border-color: $hover-border;
+    &.p-before {
+      padding-left: $chip-padding-to-icon;
+
+      [dir="rtl"] & {
+        padding-left: $chip-padding-x;
+        padding-right: $chip-padding-to-icon;
+      }
+    }
+
+    &.p-after {
+      padding-right: $chip-padding-to-icon;
+
+      [dir="rtl"] & {
+        padding-right: $chip-padding-x;
+        padding-left: $chip-padding-to-icon;
+      }
+    }
   }
 
-  &.active,
-  &:active {
-    background-color: $active-background;
-    color: $active-color;
-    border-color: $active-border;
+  .pgn__chip__icon-before,
+  .pgn__chip__icon-after {
+    align-items: center;
+    display: flex;
+    padding-left: $chip-icon-padding;
+    padding-right: $chip-icon-padding;
+    box-sizing: border-box;
+    cursor: default;
+
+    .pgn__icon {
+      width: $chip-icon-size;
+      height: $chip-icon-size;
+    }
+
+    &.active:hover,
+    &.active:focus {
+      cursor: pointer;
+      background: $black;
+
+      * {
+        color: $white;
+        fill: $white;
+      }
+    }
   }
 
-  &:focus::before {
-    content: "";
-    position: absolute;
-    top: -$chip-position-axis;
-    right: -$chip-position-axis;
-    bottom: -$chip-position-axis;
-    left: -$chip-position-axis;
-    border: $chip-border-width solid $focus-border;
-    border-radius: $chip-focus-border-radius;
+  .pgn__chip__icon-before {
+    border-radius: $chip-border-radius 0 0 $chip-border-radius;
+
+    [dir="rtl"] & {
+      border-radius: 0 $chip-border-radius $chip-border-radius 0;
+    }
   }
 
+  .pgn__chip__icon-after {
+    border-radius: 0 $chip-border-radius $chip-border-radius 0;
+
+    [dir="rtl"] & {
+      border-radius: $chip-border-radius 0 0 $chip-border-radius;
+    }
+  }
+
+  @each $color, $styles in $chip-theme-variants {
+    &.pgn__chip-#{$color} {
+      background: map-get($styles, "background");
+
+      * {
+        color: map-get($styles, "color");
+        fill: map-get($styles, "color");
+      }
+    }
+  }
+
+  &.disabled,
   &:disabled {
     cursor: default;
-    background-color: $background;
-    color: $color;
-    border-color: $border;
     opacity: $chip-disable-opacity;
     pointer-events: none;
 
     &::before {
       display: none;
     }
-  }
-}
-
-.pgn__chip {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: $chip-padding-y $chip-padding-x;
-  font-size: $chip-font-size;
-  font-weight: $chip-font-weight;
-  line-height: $chip-line-height;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
-  border-radius: $chip-border-radius;
-  border: $chip-border-width solid transparent;
-  margin-inline: calc($chip-margin-inline / 2);
-
-  &:focus {
-    position: relative;
-    outline: none;
-    box-shadow: none;
-  }
-
-  // Empty chip collapse automatically
-  &:empty {
-    display: none;
-  }
-
-  .chip-icon-before {
-    margin-inline-end: .5rem;
-    margin-left: -.25em;
-
-    [dir="rtl"] & {
-      margin-right: -.25em;
-      margin-left: .5rem;
-    }
-  }
-
-  .chip-icon-after {
-    margin-inline-start: .5rem;
-    margin-right: -.25em;
-
-    [dir="rtl"] & {
-      margin-right: .5rem;
-      margin-left: -.25em;
-    }
-  }
-}
-
-@each $color in $chip-theme-variants {
-  .pgn__chip-#{$color} {
-
-    $background: get-color("background", $color, "inactive");
-    $border: get-color("border", $color, "inactive");
-    $text: get-color("text", $color, "inactive");
-
-    $hover-background: get-color("background", $color, "hover");
-    $hover-border: get-color("border", $color, "hover");
-    $hover-text: get-color("text", $color, "hover");
-
-    $active-background: get-color("background", $color, "selected");
-    $active-border: get-color("border", $color, "selected");
-    $active-text: get-color("text", $color, "selected");
-
-    $focus-border: get-color("border", $color, "focus");
-
-    @include chip-variant(
-      $background,
-      $border,
-      $hover-background,
-      $hover-border,
-      $active-background,
-      $active-border,
-      $text,
-      $hover-text,
-      $active-text,
-      $focus-border
-    );
   }
 }
