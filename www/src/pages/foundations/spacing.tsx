@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+// @ts-ignore
 import { Input, Container, DataTable } from '~paragon-react'; // eslint-disable-line
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
@@ -19,12 +20,20 @@ const directions = [
 const spacerValues = [0, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6];
 const sizes = [...spacerValues.slice(1).reverse(), ...spacerValues.map(value => -value)];
 
-const getUtilityClassName = (prefix, direction, size) => `${prefix}${direction}-${size < 0 ? 'n' : ''}${Math.abs(size)}`;
+const getUtilityClassName = (
+  prefix: string,
+  direction: string,
+  size: number,
+) => `${prefix}${direction}-${size < 0 ? 'n' : ''}${Math.abs(size)}`;
 
-const PixelCell = ({ spacer }) => (
+export type PixelCellTypes = {
+  spacer: number,
+};
+
+const PixelCell = ({ spacer }: PixelCellTypes) => (
   <MeasuredItem
     properties={['margin']}
-    renderAfter={measurements => (
+    renderAfter={(measurements: { margin: number }) => (
       <code>
         {measurements.margin}
       </code>
@@ -41,7 +50,11 @@ PixelCell.propTypes = {
   spacer: PropTypes.number.isRequired,
 };
 
-const SpaceBlock = ({ utilityClass }) => (
+export type SpaceBlockTypes = {
+  utilityClass: string,
+};
+
+const SpaceBlock = ({ utilityClass }: SpaceBlockTypes) => (
   <code
     className={classNames(utilityClass)}
     style={{
@@ -67,8 +80,8 @@ SpaceBlock.defaultProps = {
 };
 
 export default function SpacingPage() {
-  const [size, setSize] = useState(3);
-  const [direction, setDirection] = useState('r');
+  const [size, setSize] = useState<number>(3);
+  const [direction, setDirection] = useState<string>('r');
 
   const utilityClassName = getUtilityClassName('m', direction, size);
 
@@ -119,7 +132,7 @@ export default function SpacingPage() {
                     name="direction"
                     value={key}
                     checked={key === direction}
-                    onChange={e => setDirection(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setDirection(e.target.value)}
                   />
                   {name}
                 </label>
@@ -140,7 +153,7 @@ export default function SpacingPage() {
                   step={0.5}
                   max={6}
                   value={size}
-                  onChange={e => setSize(e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSize(parseInt(e.target.value, 10))}
                 />
                 6
               </div>

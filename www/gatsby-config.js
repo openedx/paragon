@@ -62,10 +62,10 @@ const plugins = [
       extensions: [`.mdx`, `.md`],
       defaultLayouts: {
         components: require.resolve(
-          "./src/templates/component-page-template.jsx"
+          "./src/templates/component-page-template.tsx"
         ),
         default: require.resolve(
-          "./src/templates/default-mdx-page-template.jsx"
+          "./src/templates/default-mdx-page-template.tsx"
         ),
       },
       rehypePlugins: [
@@ -93,7 +93,7 @@ const plugins = [
     resolve: 'gatsby-plugin-page-creator',
     options: {
       path: `${__dirname}/src/pages`,
-      ignore: ['insights.jsx'],
+      ignore: ['insights.tsx'],
     },
   },
 ];

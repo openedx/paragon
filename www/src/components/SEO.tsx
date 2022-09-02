@@ -7,12 +7,20 @@
 
 import * as React from 'react';
 import PropTypes from 'prop-types';
+// @ts-ignore
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
+export interface ISEO {
+  description?: string,
+  lang?: string,
+  meta: [],
+  title: string,
+}
+
 function SEO({
   description, lang, meta, title,
-}) {
+}: ISEO) {
   const { site } = useStaticQuery(
     graphql`
       query {

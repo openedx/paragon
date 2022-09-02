@@ -1,21 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// @ts-ignore
 import { Hyperlink } from '~paragon-react';
 
-const SummaryUsageExamples = ({ row }) => {
+export interface ISummaryUsageExamples {
+  row: {
+    original: {
+      usages: [],
+    },
+  }
+}
+
+const SummaryUsageExamples = ({ row }: ISummaryUsageExamples) => {
+  interface IProjectUsages {
+    filePath: string,
+    line: number,
+  }
+
+  interface IComponentUsages {
+    name: string,
+    usages: [IProjectUsages],
+    repositoryUrl: string,
+  }
   const componentUsages = row.original.usages;
-  return componentUsages.map(({
+  const componentUsagesExample = componentUsages.map(({
     name: projectName,
     usages: projectUsages,
     repositoryUrl,
-  }) => (
+  }: IComponentUsages) => (
     <div className="pgn-doc__summary-usages__project mb-4" key={projectName}>
       <h5 className="font-weight-bold">{projectName}</h5>
       <ul className="list-unstyled">
         {projectUsages.map(({
           filePath,
           line,
-        }) => (
+        }: IProjectUsages) => (
           <li key={`${filePath}L#${line}`}>
             {repositoryUrl ? (
               <>
@@ -35,6 +54,8 @@ const SummaryUsageExamples = ({ row }) => {
       </ul>
     </div>
   ));
+
+  return <>{componentUsagesExample}</>;
 };
 
 SummaryUsageExamples.propTypes = {

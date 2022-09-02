@@ -1,19 +1,34 @@
 import React, { createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+// @ts-ignore
 import { Helmet } from 'react-helmet';
 import { IntlProvider } from 'react-intl';
+// @ts-ignore
 import { messages } from '~paragon-react';
 
 import { THEMES } from '../../theme-config';
+
+export interface IDefaultValue {
+  settings: {
+    theme?: string,
+    direction?: string,
+    language?: string,
+  },
+  theme?: string,
+  handleSettingsChange: Function,
+  showSettings?: React.SyntheticEvent | React.ReactNode,
+  closeSettings?: React.SyntheticEvent | React.ReactNode,
+  openSettings?: Function,
+}
 
 const defaultValue = {
   settings: {},
   handleSettingsChange: () => {},
 };
 
-export const SettingsContext = createContext(defaultValue);
+export const SettingsContext = createContext<IDefaultValue>(defaultValue);
 
-const SettingsContextProvider = ({ children }) => {
+const SettingsContextProvider: React.FC = ({ children }) => {
   // gatsby does not have access to the localStorage during the build (and first render)
   // so sadly we cannot initialize theme with value from localStorage
   const [settings, setSettings] = useState({
@@ -23,7 +38,7 @@ const SettingsContextProvider = ({ children }) => {
   });
   const [showSettings, setShowSettings] = useState(false);
 
-  const handleSettingsChange = (key, value) => {
+  const handleSettingsChange = (key: string, value: string) => {
     if (key === 'direction') {
       document.body.setAttribute('dir', value);
     }
@@ -32,14 +47,15 @@ const SettingsContextProvider = ({ children }) => {
     global.analytics.track(`${key[0].toUpperCase() + key.slice(1)} change`, { [key]: value });
   };
 
-  const toggleSettings = (value) => {
+  const toggleSettings = (value: boolean) => {
     setShowSettings(value);
     global.analytics.track('Toggle Settings', { value: value ? 'show' : 'hide' });
   };
 
   // this hook will be called after the first render, so we can safely access localStorage
   useEffect(() => {
-    const savedSettings = JSON.parse(global.localStorage.getItem('pgn__settings'));
+    const storageSettings = global.localStorage.getItem('pgn__settings');
+    const savedSettings = storageSettings ? JSON.parse(storageSettings) : null;
     if (savedSettings) {
       setSettings(savedSettings);
       document.body.setAttribute('dir', savedSettings.direction);
