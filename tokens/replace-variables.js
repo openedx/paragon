@@ -1,17 +1,16 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-const { program } = require('commander');
+const { program, Option } = require('commander');
 const { replaceVariables, getFilesWithExtension } = require('./utils');
 
-const BASE_PATH = '../src/Bubble';
-
-const cssFiles = getFilesWithExtension(BASE_PATH, '.scss');
-
 program
-  .requiredOption('--direction <name>',
-    'Missing parameter "direction". Possible values: "css-to-scss" or "scss-to-css"', 'css-to-scss')
+  .description('CLI to replace SCSS variables to CSS variables and vice versa in .scss files.')
+  .requiredOption('-p, --path <filePath>', 'Path to the file or directory where to replace variables.')
+  .addOption(new Option('-d, --direction <name>', 'Map direction: css-to-scss or scss-to-css.')
+    .choices(['scss-to-css', 'css-to-scss'])
+    .default('scss-to-css'))
   .action((options) => {
-    const { direction } = options;
-    cssFiles.forEach(filePath => {
+    const { direction, path } = options;
+    const sourceFiles = getFilesWithExtension(path, '.scss');
+    sourceFiles.forEach(filePath => {
       replaceVariables(filePath, direction);
     });
   });

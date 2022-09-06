@@ -1,14 +1,15 @@
 const fs = require('fs');
+const path = require('path');
 
-function getFilesWithExtension(path, extension, files = []) {
-  const content = fs.statSync(path);
+function getFilesWithExtension(location, extension, files = []) {
+  const content = fs.statSync(location);
   if (content.isDirectory()) {
-    const contentPaths = fs.readdirSync(path);
+    const contentPaths = fs.readdirSync(location);
     contentPaths.forEach(contentPath => {
-      getFilesWithExtension(`${path}/${contentPath}`, extension, files);
+      getFilesWithExtension(path.join(location, contentPath), extension, files);
     });
-  } else if (path.endsWith(extension)) {
-    files.push(path);
+  } else if (location.endsWith(extension)) {
+    files.push(location);
   }
   return files;
 }
@@ -30,20 +31,20 @@ function cssVariableWrapper(variable) {
   return `var(${variable})`;
 }
 
-function replaceVariables(path, direction = 'css-to-scss') {
-  const targetFile = fs.readFileSync(path, 'utf-8');
-  const mapFile = fs.readFileSync('../style-dictionary-build/scss-to-css-map.json', 'utf-8');
+function replaceVariables(filePath, direction = 'css-to-scss') {
+  const targetFile = fs.readFileSync(filePath, 'utf-8');
+  const mapFile = fs.readFileSync(path.resolve(__dirname, './build/scss-to-css-map.json'), 'utf-8');
   const variables = JSON.parse(mapFile);
   let result = targetFile;
   Object.keys(variables).forEach(variable => {
     const cssVariable = cssVariableWrapper(variables[variable]);
-    if (direction === 'css-to-scss') {
+    if (direction === 'scss-to-css') {
       result = result.replaceAll(variable, cssVariable);
     } else {
       result = result.replaceAll(cssVariable, variable);
     }
   });
-  fs.writeFileSync(path, result);
+  fs.writeFileSync(filePath, result);
 }
 
 module.exports = {
