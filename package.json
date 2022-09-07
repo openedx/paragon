@@ -44,8 +44,7 @@
     "i18n_extract": "formatjs extract 'src/**/*.{jsx,js,tsx,ts}' --out-file ./src/i18n/transifex_input.json --format transifex",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
-    "build-types": "tsc --emitDeclarationOnly",
-    "build_tokens": "node tokens/build-tokens.js"
+    "build-types": "tsc --emitDeclarationOnly"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -130,7 +129,6 @@
     "semantic-release": "^19.0.3",
     "stylelint": "^14.7.1",
     "stylelint-config-standard-scss": "^4.0.0",
-    "style-dictionary": "^3.7.1",
     "ts-jest": "^28.0.7",
     "typescript": "^4.7.4"
   },
