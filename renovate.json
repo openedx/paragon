@@ -6,5 +6,12 @@
   "patch": {
     "automerge": true
   },
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["@edx"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    }
+  ],
   "rebaseStalePrs": true
 }
