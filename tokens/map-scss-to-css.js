@@ -1,7 +1,8 @@
 const fs = require('fs');
+const path = require('path');
 const { getSCSStoCSSMap, getFilesWithExtension } = require('./utils');
 
-const BASE_PATH = '../tokens';
+const BASE_PATH = path.resolve(__dirname, './source');
 const BASE_PREFIX = '--pgn';
 
 const result = {};
@@ -13,4 +14,4 @@ tokenPaths.forEach(tokenFile => {
   getSCSStoCSSMap(BASE_PREFIX, parsed, result);
 });
 
-fs.writeFileSync('../style-dictionary-build/scss-to-css-map.json', JSON.stringify(result));
+fs.writeFileSync(path.resolve(__dirname, './build/scss-to-css-map.json'), JSON.stringify(result));

@@ -1,0 +1,17 @@
+{
+  "name": "paragon-design-tokens",
+  "version": "1.0.0",
+  "description": "Paragon's design system based on Style Dictionary approach.",
+  "main": "build-tokens.js",
+  "scripts": {
+    "build-tokens": "node build-tokens.js",
+    "replace-variables": "node replace-variables.js",
+    "build-scss-to-css-map": "node map-scss-to-css.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^7.1.0",
+    "style-dictionary": "^3.7.1"
+  }
+}

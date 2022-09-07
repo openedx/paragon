@@ -35,7 +35,7 @@ StyleDictionary.registerFormat({
 });
 
 const paragonStyleDictionary = StyleDictionary.extend({
-  source: ['tokens/**/*.json'],
+  source: ['./source/**/*.json'],
   platforms: {
     scss: {
       transformGroup: 'scss',
