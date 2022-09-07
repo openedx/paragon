@@ -73,6 +73,6 @@ References
 .. _react-intl: https://github.com/yahoo/react-intl
 .. _`React context API`: https://reactjs.org/docs/context.html
 .. _`An example of issues that arise if this isn't done can be found here.`: https://github.com/matthugs/trouble-in-intl-land
-.. _getTextFromElement: https://github.com/edx/paragon/blob/9a025c7702c4ebd28a318b15f7aca90c556854ba/src/utils/getTextFromElement.js
+.. _getTextFromElement: https://github.com/openedx/paragon/blob/9a025c7702c4ebd28a318b15f7aca90c556854ba/src/utils/getTextFromElement.js
 .. _OEP-21: https://open-edx-proposals.readthedocs.io/en/latest/oep-0021-proc-deprecation.html
-.. _`Support for multiple plurals`: https://github.com/edx/paragon/pull/349#issuecomment-434395311
+.. _`Support for multiple plurals`: https://github.com/openedx/paragon/pull/349#issuecomment-434395311
