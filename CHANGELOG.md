@@ -1,3 +1,10 @@
+## [20.11.1](https://github.com/openedx/paragon/compare/v20.11.0...v20.11.1) (2022-09-07)
+
+
+### Bug Fixes
+
+* handle non-Tab component ([#1604](https://github.com/openedx/paragon/issues/1604)) ([7ab6207](https://github.com/openedx/paragon/commit/7ab6207623ae0552b037f7a7eabc694f25338932))
+
 # [20.11.0](https://github.com/openedx/paragon/compare/v20.10.2...v20.11.0) (2022-09-02)
 
 
