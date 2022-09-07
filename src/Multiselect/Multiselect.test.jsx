@@ -2,7 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import Multiselect from './index';
-import multiselectComponents from './MultiselectComponents';
+import components from './MultiselectComponents';
+
+// eslint-disable-next-line react/prop-types
+const TestComponent = (props) => <div>{props.children}</div>;
 
 describe('<Multiselect />', () => {
   it('successfully renders', () => {
@@ -35,40 +38,24 @@ describe('<Multiselect />', () => {
 
   describe('Multiselect Components', () => {
     it('Menu has base class', () => {
-      const wrapper = mount(<multiselectComponents.Menu cx={() => {}} getStyles={() => {}} />);
+      const wrapper = mount(<components.Menu cx={() => {}} getStyles={() => {}} />);
       expect(wrapper.find('.pgn__multiselect__menu').length).toBeTruthy();
     });
     it('Option gets is-focus class on hover', () => {
-      const wrapper = mount(<multiselectComponents.Option cx={() => {}} getStyles={() => {}} isFocused />);
+      const wrapper = mount(<components.Option cx={() => {}} getStyles={() => {}} isFocused />);
       expect(wrapper.find('.is-focus').length).toBeTruthy();
     });
     it('MultiValueContainer has base class', () => {
       const wrapper = mount((
-        <multiselectComponents.MultiValueContainer innerProps={{}} getStyles={() => {}}>
-          1
-        </multiselectComponents.MultiValueContainer>
+        <components.MultiValueContainer>
+          <TestComponent innerProps={{}}>1</TestComponent>
+          <TestComponent innerProps={{}}>2</TestComponent>
+        </components.MultiValueContainer>
       ));
-      expect(wrapper.find('.pgn__multiselect__chip').length).toBeTruthy();
-    });
-    it('MultiValueContainer has base class', () => {
-      const wrapper = mount((
-        <multiselectComponents.MultiValueContainer innerProps={{}} getStyles={() => {}}>
-          <multiselectComponents.MultiValueLabel innerProps={{}} getStyles={() => {}} />
-          <multiselectComponents.MultiValueRemove innerProps={{}} getStyles={() => {}} />
-        </multiselectComponents.MultiValueContainer>
-      ));
-      expect(wrapper.find('[role="button"]').length).toBeTruthy();
-    });
-    it('MultiValueLabel has base class', () => {
-      const wrapper = mount(<multiselectComponents.MultiValueLabel innerProps={{}} getStyles={() => {}} />);
-      expect(wrapper.find('.pgn__multiselect__chip-label').length).toBeTruthy();
-    });
-    it('MultiValueRemove has base class', () => {
-      const wrapper = mount(<multiselectComponents.MultiValueRemove innerProps={{}} getStyles={() => {}} />);
-      expect(wrapper.find('.pgn__multiselect__chip-remove').length).toBeTruthy();
+      expect(wrapper.find('.pgn__chip').length).toBeTruthy();
     });
     it('ClearIndicator has base class', () => {
-      const wrapper = mount(<multiselectComponents.ClearIndicator innerProps={{ onMouseDown: () => {} }} />);
+      const wrapper = mount(<components.ClearIndicator innerProps={{ onMouseDown: () => {} }} />);
       expect(wrapper.find('.pgn__multiselect__indicator').length).toBeTruthy();
     });
   });

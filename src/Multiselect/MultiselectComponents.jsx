@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { components } from 'react-select';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
+import Chip from '../Chip';
 import { Close, KeyboardArrowDown } from '../../icons';
 import IconButton from '../IconButton';
 
@@ -76,47 +77,17 @@ const Option = (props) => (
   <components.Option className={classNames({ 'is-focus': props.isFocused })} {...props} />
 );
 
-const MultiValueContainer = ({ innerProps, children, ...props }) => {
-  const newChildren = React.Children.map(children, (child, index) => {
-    if (index === 1) {
-      // index === 1 corresponds to MultiValueRemove
-      // It can be focused and Enter key activates onClick
-      return React.cloneElement(child, {
-        ...child.props,
-        innerProps: {
-          ...child.props.innerProps, role: 'button', onKeyPress: child.props.innerProps.onClick, tabIndex: 0,
-        },
-      });
-    }
-    return child;
-  });
-  const newInnerProps = { className: classNames('pgn__multiselect__chip', innerProps.className) };
+const MultiValueContainer = ({ variant, children }) => {
+  const chipLabel = children[0]?.props?.children;
+  const { onClick = () => {} } = children[1]?.props?.innerProps || {};
   return (
-    <components.MultiValueContainer innerProps={newInnerProps} {...props}>
-      {newChildren}
-    </components.MultiValueContainer>
-  );
-};
-
-const MultiValueLabel = ({ innerProps, ...props }) => {
-  const newInnerProps = {
-    ...innerProps,
-    className: classNames('pgn__multiselect__chip-label', innerProps.className),
-  };
-  return (
-    <components.MultiValueLabel innerProps={newInnerProps} {...props} />
-  );
-};
-
-const MultiValueRemove = ({ innerProps, ...props }) => {
-  const newInnerProps = {
-    ...innerProps,
-    className: classNames('pgn__multiselect__chip-remove', innerProps.className),
-  };
-  return (
-    <components.MultiValueRemove role="button" innerProps={newInnerProps} {...props}>
-      <Icon src={Close} />
-    </components.MultiValueRemove>
+    <Chip
+      variant={variant}
+      iconAfter={Close}
+      onIconAfterClick={onClick}
+    >
+      {chipLabel}
+    </Chip>
   );
 };
 
@@ -158,24 +129,14 @@ Option.propTypes = {
 
 MultiValueContainer.propTypes = {
   children: PropTypes.node.isRequired,
-  innerProps: PropTypes.shape({
-    className: PropTypes.string,
-  }).isRequired,
+  variant: PropTypes.oneOf(['light', 'dark']),
 };
 
-MultiValueLabel.propTypes = {
-  innerProps: PropTypes.shape({
-    className: PropTypes.string,
-  }).isRequired,
+MultiValueContainer.defaultProps = {
+  variant: 'light',
 };
 
-MultiValueRemove.propTypes = {
-  innerProps: PropTypes.shape({
-    className: PropTypes.string,
-  }).isRequired,
-};
-
-const multiselectComponents = {
+export const multiselectComponents = {
   ClearIndicator,
   DropdownIndicator,
   ValueContainer,
@@ -183,8 +144,6 @@ const multiselectComponents = {
   Menu,
   Option,
   MultiValueContainer,
-  MultiValueLabel,
-  MultiValueRemove,
   Input,
 };
 export default multiselectComponents;

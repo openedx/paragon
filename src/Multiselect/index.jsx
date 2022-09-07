@@ -2,7 +2,7 @@ import React from 'react';
 import Select from 'react-select';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import multiselectComponents from './MultiselectComponents';
+import components, { MultiValueContainer } from './MultiselectComponents';
 
 const Multiselect = React.forwardRef(({
   className,
@@ -16,7 +16,10 @@ const Multiselect = React.forwardRef(({
       isMulti
       isDisabled={disabled}
       ref={ref}
-      components={{ ...multiselectComponents }}
+      components={{
+        ...components,
+        MultiValueContainer: (containerProps) => <MultiValueContainer variant={variant} {...containerProps} />,
+      }}
       className={classNames('pgn__multiselect', className, { dark: variant === 'dark', disabled, error })}
       {...props}
     />

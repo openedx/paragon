@@ -104,26 +104,6 @@ div.pgn__multiselect__chip {
   border-radius: 4px;
 }
 
-div.pgn__multiselect__chip-label {
-  font-size: $font-size-sm;
-  padding: 2px 2px 2px 8px;
-}
-
-div.pgn__multiselect__chip-remove {
-  border-radius: 0 4px 4px 0;
-
-  .pgn__icon {
-    width: 1.25rem;
-    height: 1.25rem;
-  }
-
-  &:hover,
-  &:focus {
-    color: $white;
-    background: $black;
-  }
-}
-
 .pgn__multiselect__indicator {
   width: auto;
   height: auto;
