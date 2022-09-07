@@ -132,6 +132,10 @@ div.pgn__multiselect__chip-remove {
   &:hover {
     fill: $white;
   }
+
+  &:focus {
+    fill: $primary-500;
+  }
 }
 
 div.pgn__multiselect__input {
