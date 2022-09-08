@@ -1,5 +1,5 @@
 {
-  "lastModified": 1662560233125,
+  "lastModified": 1662646139657,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -1614,7 +1614,7 @@
     {
       "version": "20.4.1",
       "name": "frontend-app-admin-portal",
-      "repository": "https://github.com/edx/frontend-app-admin-portal",
+      "repository": "https://github.com/openedx/frontend-app-admin-portal",
       "folderName": "frontend-app-admin-portal",
       "usages": {
         "Button": [
@@ -12916,13 +12916,13 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
-            "line": 24,
+            "line": 25,
             "column": 6,
             "version": "19.22.0"
           },
           {
             "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
-            "line": 53,
+            "line": 57,
             "column": 6,
             "version": "19.22.0"
           },
@@ -13937,8 +13937,14 @@
             "version": "19.22.0"
           },
           {
+            "filePath": "src/components/dashboard/main-content/CourseRecommendations.jsx",
+            "line": 24,
+            "column": 10,
+            "version": "19.22.0"
+          },
+          {
             "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
-            "line": 42,
+            "line": 43,
             "column": 12,
             "version": "19.22.0"
           },
@@ -16620,7 +16626,7 @@
       "name": "@edx/frontend-app-library-authoring",
       "repository": {
         "type": "git",
-        "url": "git+https://github.com/edx/frontend-app-library-authoring.git"
+        "url": "git+https://github.com/openedx/frontend-app-library-authoring.git"
       },
       "folderName": "frontend-app-library-authoring",
       "usages": {
@@ -19049,7 +19055,7 @@
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
-            "line": 109,
+            "line": 112,
             "column": 8,
             "version": "19.14.0"
           },
@@ -19135,31 +19141,31 @@
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 564,
+            "line": 587,
             "column": 8,
             "version": "19.14.0"
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 673,
+            "line": 696,
             "column": 10,
             "version": "19.14.0"
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 683,
+            "line": 706,
             "column": 10,
             "version": "19.14.0"
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 720,
+            "line": 743,
             "column": 10,
             "version": "19.14.0"
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 753,
+            "line": 776,
             "column": 12,
             "version": "19.14.0"
           },
@@ -19257,7 +19263,7 @@
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 570,
+            "line": 593,
             "column": 10,
             "version": "19.14.0"
           },
@@ -19343,13 +19349,13 @@
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
-            "line": 132,
+            "line": 135,
             "column": 10,
             "version": "19.14.0"
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
-            "line": 146,
+            "line": 149,
             "column": 10,
             "version": "19.14.0"
           },
@@ -19453,6 +19459,30 @@
             "filePath": "src/components/SidePanes/UsersPane.jsx",
             "line": 147,
             "column": 16,
+            "version": "19.14.0"
+          }
+        ],
+        "Form.Group": [
+          {
+            "filePath": "src/components/RenderSelectField/updated-paragon-component.jsx",
+            "line": 22,
+            "column": 2,
+            "version": "19.14.0"
+          }
+        ],
+        "Form.Label": [
+          {
+            "filePath": "src/components/RenderSelectField/updated-paragon-component.jsx",
+            "line": 23,
+            "column": 4,
+            "version": "19.14.0"
+          }
+        ],
+        "Form.Control": [
+          {
+            "filePath": "src/components/RenderSelectField/updated-paragon-component.jsx",
+            "line": 26,
+            "column": 4,
             "version": "19.14.0"
           }
         ],
@@ -21290,6 +21320,12 @@
             "line": 40,
             "column": 16,
             "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
+            "line": 40,
+            "column": 22,
+            "version": "20.9.1"
           }
         ],
         "IconButton": [
@@ -21301,7 +21337,7 @@
           },
           {
             "filePath": "src/editors/containers/EditorContainer/index.jsx",
-            "line": 26,
+            "line": 27,
             "column": 12,
             "version": "20.9.1"
           },
@@ -21318,8 +21354,20 @@
             "version": "20.9.1"
           },
           {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
+            "line": 41,
+            "column": 10,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
+            "line": 47,
+            "column": 10,
+            "version": "20.9.1"
+          },
+          {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget.jsx",
-            "line": 65,
+            "line": 67,
             "column": 12,
             "version": "20.9.1"
           }
@@ -21327,7 +21375,7 @@
         "ModalDialog.Header": [
           {
             "filePath": "src/editors/containers/EditorContainer/index.jsx",
-            "line": 22,
+            "line": 23,
             "column": 6,
             "version": "20.9.1"
           },
@@ -21347,7 +21395,7 @@
         "ModalDialog.Title": [
           {
             "filePath": "src/editors/containers/EditorContainer/index.jsx",
-            "line": 23,
+            "line": 24,
             "column": 8,
             "version": "20.9.1"
           },
@@ -21418,6 +21466,12 @@
             "line": 12,
             "column": 4,
             "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ErrorSummary.jsx",
+            "line": 12,
+            "column": 2,
+            "version": "20.9.1"
           }
         ],
         "Alert.Heading": [
@@ -21425,6 +21479,12 @@
             "filePath": "src/editors/containers/TextEditor/components/ErrorAlerts/ErrorAlert.jsx",
             "line": 49,
             "column": 10,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ErrorSummary.jsx",
+            "line": 17,
+            "column": 4,
             "version": "20.9.1"
           }
         ],
@@ -21534,11 +21594,41 @@
             "version": "20.9.1"
           }
         ],
-        "Collapsible": [
+        "Collapsible.Advanced": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
-            "line": 17,
+            "line": 25,
             "column": 2,
+            "version": "20.9.1"
+          }
+        ],
+        "Collapsible.Trigger": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
+            "line": 30,
+            "column": 4,
+            "version": "20.9.1"
+          }
+        ],
+        "Collapsible.Visible": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
+            "line": 34,
+            "column": 6,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
+            "line": 44,
+            "column": 6,
+            "version": "20.9.1"
+          }
+        ],
+        "Collapsible.Body": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
+            "line": 51,
+            "column": 4,
             "version": "20.9.1"
           }
         ],
@@ -21551,7 +21641,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget.jsx",
-            "line": 38,
+            "line": 40,
             "column": 6,
             "version": "20.9.1"
           }
@@ -21571,13 +21661,13 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget.jsx",
-            "line": 41,
+            "line": 43,
             "column": 10,
             "version": "20.9.1"
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget.jsx",
-            "line": 58,
+            "line": 60,
             "column": 12,
             "version": "20.9.1"
           }
@@ -21585,19 +21675,19 @@
         "FormLabel": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget.jsx",
-            "line": 40,
+            "line": 42,
             "column": 10,
             "version": "20.9.1"
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget.jsx",
-            "line": 47,
+            "line": 49,
             "column": 8,
             "version": "20.9.1"
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget.jsx",
-            "line": 48,
+            "line": 50,
             "column": 8,
             "version": "20.9.1"
           }
@@ -21605,7 +21695,7 @@
         "FormCheck": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget.jsx",
-            "line": 74,
+            "line": 76,
             "column": 8,
             "version": "20.9.1"
           }
@@ -22201,25 +22291,25 @@
         "Icon": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 178,
+            "line": 180,
             "column": 10,
             "version": "20.10.0"
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 191,
+            "line": 193,
             "column": 10,
             "version": "20.10.0"
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 204,
+            "line": 206,
             "column": 10,
             "version": "20.10.0"
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 217,
+            "line": 219,
             "column": 10,
             "version": "20.10.0"
           },
@@ -22231,25 +22321,31 @@
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 245,
+            "line": 246,
             "column": 10,
             "version": "20.10.0"
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 258,
+            "line": 259,
             "column": 10,
             "version": "20.10.0"
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 271,
+            "line": 272,
             "column": 10,
             "version": "20.10.0"
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 403,
+            "line": 285,
+            "column": 10,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/2U/ProductCard.jsx",
+            "line": 417,
             "column": 12,
             "version": "20.10.0"
           },
@@ -22291,13 +22387,13 @@
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 160,
+            "line": 162,
             "column": 14,
             "version": "20.10.0"
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 215,
+            "line": 217,
             "column": 22,
             "version": "20.10.0"
           },
@@ -22321,7 +22417,7 @@
           },
           {
             "filePath": "src/components/Course/2U/WhyGetsmarter.jsx",
-            "line": 49,
+            "line": 50,
             "column": 14,
             "version": "20.10.0"
           },
@@ -22375,7 +22471,7 @@
           },
           {
             "filePath": "src/components/CourseCurriculum/index.jsx",
-            "line": 95,
+            "line": 96,
             "column": 12,
             "version": "20.10.0"
           },
@@ -22467,7 +22563,7 @@
         "Card": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 351,
+            "line": 365,
             "column": 8,
             "version": "20.10.0"
           },
@@ -22493,7 +22589,7 @@
         "Card.Body": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 376,
+            "line": 390,
             "column": 10,
             "version": "20.10.0"
           },
@@ -22513,7 +22609,7 @@
         "Badge": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 396,
+            "line": 410,
             "column": 14,
             "version": "20.10.0"
           },
@@ -22569,7 +22665,7 @@
         "Card.Footer": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 401,
+            "line": 415,
             "column": 10,
             "version": "20.10.0"
           }
@@ -22589,25 +22685,25 @@
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 174,
+            "line": 176,
             "column": 27,
             "version": "20.10.0"
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 209,
+            "line": 211,
             "column": 20,
             "version": "20.10.0"
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 225,
+            "line": 227,
             "column": 16,
             "version": "20.10.0"
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 245,
+            "line": 247,
             "column": 16,
             "version": "20.10.0"
           },
@@ -22643,7 +22739,7 @@
           },
           {
             "filePath": "src/components/CourseCurriculum/index.jsx",
-            "line": 89,
+            "line": 90,
             "column": 10,
             "version": "20.10.0"
           },
@@ -22735,7 +22831,7 @@
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 153,
+            "line": 155,
             "column": 6,
             "version": "20.10.0"
           },
@@ -22753,7 +22849,7 @@
           },
           {
             "filePath": "src/components/Course/2U/WhyGetsmarter.jsx",
-            "line": 11,
+            "line": 12,
             "column": 4,
             "version": "20.10.0"
           },
@@ -23155,7 +23251,7 @@
           },
           {
             "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 537,
+            "line": 568,
             "column": 20,
             "version": "20.10.0"
           },
@@ -23169,13 +23265,13 @@
         "Breadcrumb": [
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 157,
+            "line": 159,
             "column": 14,
             "version": "20.10.0"
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 161,
+            "line": 163,
             "column": 14,
             "version": "20.10.0"
           },
@@ -23201,7 +23297,7 @@
         "OverlayTrigger": [
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 201,
+            "line": 203,
             "column": 18,
             "version": "20.10.0"
           },
@@ -23225,7 +23321,7 @@
           },
           {
             "filePath": "src/components/CourseCurriculum/index.jsx",
-            "line": 81,
+            "line": 82,
             "column": 8,
             "version": "20.10.0"
           },
@@ -23245,7 +23341,7 @@
         "Tooltip": [
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 204,
+            "line": 206,
             "column": 22,
             "version": "20.10.0"
           },
@@ -23269,7 +23365,7 @@
           },
           {
             "filePath": "src/components/CourseCurriculum/index.jsx",
-            "line": 84,
+            "line": 85,
             "column": 12,
             "version": "20.10.0"
           },
