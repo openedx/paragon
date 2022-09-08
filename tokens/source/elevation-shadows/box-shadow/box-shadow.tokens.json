@@ -1,5 +1,8 @@
 {
   "box-shadow": {
+    "base": { "value": "0 .125rem .25rem rgba(0, 0, 0, .3)", "themeable": true, "source": "$box-shadow" },
+    "sm": { "value": "0 .0625rem .125rem rgba(0, 0, 0, .2)", "themeable": true, "source": "$box-shadow-sm" },
+    "lg": { "value": "0 .25rem .5rem rgba(0, 0, 0, .3)", "themeable": true, "source": "$box-shadow-lg" },
     "down": {
       "1": {
         "value": "0 .0625rem .125rem rgba(0, 0, 0, .15), 0 .0625rem .25rem rgba(0, 0, 0, .15)",
