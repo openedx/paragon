@@ -144,6 +144,16 @@
   --pgn-core-input-btn-padding-x: 1rem;
   --pgn-core-input-btn-padding-y: .5625rem;
   --pgn-core-spacer: 1rem;
+  --pgn-image-figure-caption-font-size: 90%;
+  --pgn-image-thumbnail-box-shadow: 0 1px 2px rgba(0, 0, 0, .075);
+  --pgn-image-thumbnail-padding: .25rem;
+  --pgn-icon-lg: 1.75rem;
+  --pgn-icon-md: 1.5rem;
+  --pgn-icon-sm: 1.25rem;
+  --pgn-icon-inline: .8em;
+  --pgn-icon-button-bg: transparent;
+  --pgn-icon-button-diameter-sm: 2.25rem;
+  --pgn-icon-button-diameter-md: 2.75rem;
   --pgn-form-feedback-tooltip-opacity: .9;
   --pgn-form-feedback-tooltip-padding-x: .5rem;
   --pgn-form-feedback-tooltip-padding-y: .25rem;
@@ -423,6 +433,12 @@
   --pgn-core-input-btn-border-width: var(--pgn-border-width);
   --pgn-core-input-btn-focus-box-shadow: 0 0 0 var(--pgn-core-input-btn-focus-width) var(--pgn-core-input-btn-focus-color);
   --pgn-core-input-btn-line-height-lg: var(--pgn-line-height-lg);
+  --pgn-image-figure-caption-color: var(--pgn-color-gray-500);
+  --pgn-image-thumbnail-border-radius: var(--pgn-border-radius-base);
+  --pgn-image-thumbnail-border-color: var(--pgn-color-gray-200);
+  --pgn-image-thumbnail-border-width: var(--pgn-border-width);
+  --pgn-icon-button-accent-color: var(--pgn-color-white);
+  --pgn-icon-button-diameter-inline: calc(var(--pgn-line-height-base)em + .1em);
   --pgn-form-feedback-tooltip-border-radius: var(--pgn-border-radius-base);
   --pgn-form-feedback-tooltip-line-height: var(--pgn-line-height-base);
   --pgn-form-feedback-tooltip-font-size: var(--pgn-font-size-sm);
@@ -541,6 +557,7 @@
   --pgn-table-color-border: var(--pgn-border-color);
   --pgn-table-color-caption: var(--pgn-text-muted);
   --pgn-core-input-btn-focus-color: var(--pgn-component-active-bg);
+  --pgn-image-thumbnail-bg: var(--pgn-body-bg);
   --pgn-form-custom-file-button-bg: var(--pgn-form-input-group-addon-bg);
   --pgn-form-custom-file-color: var(--pgn-form-input-color-base);
   --pgn-form-custom-file-font-family: var(--pgn-form-input-font-family);
