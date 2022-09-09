@@ -3,30 +3,30 @@ import PropTypes from 'prop-types';
 // @ts-ignore
 import { Hyperlink } from '~paragon-react'; // eslint-disable-line
 
+type IProjectUsages = {
+  filePath: string,
+  line: number,
+};
+
 export interface IProjectUsageExamples {
   row: {
     original: {
       name: string,
       repositoryUrl?: string,
-      usages: {},
+      usages: { [key: string]: Array<IProjectUsages> },
     },
   },
 }
 
-interface IProjectUsages {
-  filePath: string,
-  line: number,
-}
-
 const ProjectUsageExamples = ({ row }: IProjectUsageExamples) => {
   const { repositoryUrl, usages } = row.original;
-  const repositoryUrl = row.original;
 
-  const orderedComponentUsages = Object.keys(usages).sort().reduce(
-    (obj, key) => {
+  const orderedComponentUsages: { [key: string]: Array<IProjectUsages> } = Object.keys(usages).sort().reduce(
+    (obj: { [index: string]: any }, key) => {
+      // eslint-disable-next-line no-param-reassign
       obj[key] = usages[key];
       return obj;
-    }, {}
+    }, {},
   );
 
   return (
@@ -34,27 +34,24 @@ const ProjectUsageExamples = ({ row }: IProjectUsageExamples) => {
       {Object.keys(usages).length === 0 && (
         <p>This project does not import any Paragon components, but may still use its SCSS styles.</p>
       )}
-      {Object.entries(usages).map(([componentName, usages]) => (
+      {Object.entries(orderedComponentUsages).map(([componentName, usagesArray]) => (
         <div className="pgn-doc__usages-modal mb-4" key={componentName}>
           <h5 className="font-weight-bold">{componentName}</h5>
           <ul className="list-unstyled">
-            {usages.map(({
-              filePath,
-              line,
-            }: IProjectUsages) => (
-              <li key={`${filePath}L#${line}`}>
+            {usagesArray.map((usage) => (
+              <li key={`${usage.filePath}L#${usage.line}`}>
                 {repositoryUrl ? (
                   <>
                     <Hyperlink
-                      destination={`${repositoryUrl}/${filePath}#L${line}`}
+                      destination={`${repositoryUrl}/${usage.filePath}#L${usage.line}`}
                       target="_blank"
                     >
-                      {filePath}
+                      {usage.filePath}
                     </Hyperlink>
-                    {' '}(line {line})
+                    {' '}(line {usage.line})
                   </>
                 ) : (
-                  <>{filePath} (line {line})</>
+                  <>{usage.filePath} (line {usage.line})</>
                 )}
               </li>
             ))}
