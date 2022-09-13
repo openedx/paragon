@@ -23,7 +23,8 @@ const MeasuredItem = ({
   renderAfter,
   children,
 }: IMeasuredItem) => {
-  const { theme } = useContext(SettingsContext);
+  const { settings } = useContext(SettingsContext);
+  const { theme } = settings;
   const [measurements, setMeasurements] = useState(initialMeasurements);
   const itemRef = useRef();
 
