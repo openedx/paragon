@@ -1,7 +1,7 @@
 {
     "close-button": {
         "font": {
-            "size": { "value": "{font.size.base.value} * 1.5", "themeable": true, "source": "$close-font-size" },
+            "size": { "value": "calc({font.size.base.value} * 1.5)", "themeable": true, "source": "$close-font-size" },
             "weight": { "value": "{font.weight.bold.value}", "themeable": true, "source": "$close-font-weight" }
         },
         "color": { "value": "{color.black.value}", "themeable": true, "source": "$close-color" },

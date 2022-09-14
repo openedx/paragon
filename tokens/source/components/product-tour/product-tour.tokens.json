@@ -1,0 +1,18 @@
+{
+  "product-tour": {
+    "checkpoint": {
+      "color": {
+        "background": { "value": "{color.light.300.value}", "themeable": true, "source": "$checkpoint-background-color" },
+        "body": { "value": "{color.gray.700.value}", "themeable": true, "source": "$checkpoint-body-color" },
+        "border": { "value": "{color.brand.500.value}", "themeable": true, "source": "$checkpoint-border-color" },
+        "breadcrumb": { "value": "{color.primary.500.value}", "themeable": true, "source": "$checkpoint-breadcrumb-color" }
+      },
+      "width": {
+        "border": { "value": "8px", "themeable": true, "source": "$checkpoint-border-width" },
+        "arrow": { "value": "15px", "themeable": true, "source": "$checkpoint-arrow-width" },
+        "max": { "value": "480px", "themeable": true, "source": "$checkpoint-max-width" }
+      },
+      "zindex": { "value": "1060", "themeable": true, "source": "$checkpoint-z-index" }
+    }
+  }
+}

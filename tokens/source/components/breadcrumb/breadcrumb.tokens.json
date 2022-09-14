@@ -35,7 +35,6 @@
       "active": { "value": "{color.light.500.value}", "themeable": true, "source": "$breadcrumb-inverse-active" },
       "spacer": { "valued": "{color.light.700.value}", "themeable": true, "source": "$breadcrumb-inverse-spacer" },
       "color": { "valued": "{color.white.value}", "themeable": true, "source": "$breadcrumb-inverse-color" }
-    },
-    "divider": { "value": "/", "themeable": true, "source": "$breadcrumb-divider" }
+    }
   }
 }
