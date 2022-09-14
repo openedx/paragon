@@ -33,30 +33,35 @@ function cssVariableWrapper(variable) {
   return `var(${variable})`;
 }
 
+function regExpEscape(string) {
+  return string.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
+}
+
+function toRegExp(string) {
+  return new RegExp(`${regExpEscape(string)}(?![w-])`, 'g');
+}
+
+function replaceVariable(content, scss, css, direction) {
+  const cssVariable = cssVariableWrapper(css);
+  return direction === 'scss-to-css'
+    ? content.replaceAll(toRegExp(scss), cssVariable)
+    : content.replaceAll(toRegExp(cssVariable), scss);
+}
+
 function replaceVariables(filePath, direction = 'css-to-scss') {
   const targetFile = fs.readFileSync(filePath, 'utf-8');
   const coreMapFile = fs.readFileSync(path.resolve(__dirname, './build/scss-to-css-core.json'), 'utf-8');
+  const componentsMapFile = fs.readFileSync(path.resolve(__dirname, './build/scss-to-css-components.json'), 'utf-8');
   const coreVariables = JSON.parse(coreMapFile);
 
   let result = targetFile;
   Object.keys(coreVariables).forEach(variable => {
-    const cssVariable = cssVariableWrapper(coreVariables[variable]);
-    if (direction === 'scss-to-css') {
-      result = result.replaceAll(variable, cssVariable);
-    } else {
-      result = result.replaceAll(cssVariable, variable);
-    }
+    result = replaceVariable(result, variable, coreVariables[variable], direction);
   });
   if (!filePath.endsWith('_variables.scss')) {
-    const componentsMapFile = fs.readFileSync(path.resolve(__dirname, './build/scss-to-css-components.json'), 'utf-8');
     const componentsVariables = JSON.parse(componentsMapFile);
     Object.keys(componentsVariables).forEach(variable => {
-      const cssVariable = cssVariableWrapper(componentsVariables[variable]);
-      if (direction === 'scss-to-css') {
-        result = result.replaceAll(variable, cssVariable);
-      } else {
-        result = result.replaceAll(cssVariable, variable);
-      }
+      result = replaceVariable(result, variable, componentsVariables[variable], direction);
     });
   }
   fs.writeFileSync(filePath, result);
