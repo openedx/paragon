@@ -1,5 +1,5 @@
 {
-  "lastModified": 1663078615265,
+  "lastModified": 1663165114715,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -211,7 +211,7 @@
       "usages": {}
     },
     {
-      "version": "12.8.0",
+      "version": "20.9.2",
       "name": "edx-ora2",
       "repository": "https://github.com/openedx/edx-ora2.git",
       "folderName": "edx-ora2",
@@ -221,37 +221,53 @@
             "filePath": "openassessment/xblock/static/js/src/lms/components/WaitingStepContent.jsx",
             "line": 40,
             "column": 6,
-            "version": "12.8.0"
+            "version": "20.9.2"
           },
           {
             "filePath": "openassessment/xblock/static/js/src/lms/containers/WaitingStepDetailsContainer.jsx",
             "line": 64,
             "column": 10,
-            "version": "12.8.0"
+            "version": "20.9.2"
+          }
+        ],
+        "Button": [
+          {
+            "filePath": "openassessment/xblock/static/js/src/lms/components/WaitingStepList.jsx",
+            "line": 15,
+            "column": 4,
+            "version": "20.9.2"
           }
         ],
         "DataTable": [
           {
             "filePath": "openassessment/xblock/static/js/src/lms/components/WaitingStepList.jsx",
-            "line": 15,
+            "line": 19,
             "column": 4,
-            "version": "12.8.0"
+            "version": "20.9.2"
+          }
+        ],
+        "DataTable.TableControlBar": [
+          {
+            "filePath": "openassessment/xblock/static/js/src/lms/components/WaitingStepList.jsx",
+            "line": 53,
+            "column": 6,
+            "version": "20.9.2"
           }
         ],
         "DataTable.Table": [
           {
             "filePath": "openassessment/xblock/static/js/src/lms/components/WaitingStepList.jsx",
-            "line": 52,
+            "line": 54,
             "column": 6,
-            "version": "12.8.0"
+            "version": "20.9.2"
           }
         ],
         "DataTable.TableFooter": [
           {
             "filePath": "openassessment/xblock/static/js/src/lms/components/WaitingStepList.jsx",
-            "line": 53,
+            "line": 55,
             "column": 6,
-            "version": "12.8.0"
+            "version": "20.9.2"
           }
         ],
         "Container": [
@@ -259,7 +275,7 @@
             "filePath": "openassessment/xblock/static/js/src/lms/containers/WaitingStepDetailsContainer.jsx",
             "line": 46,
             "column": 10,
-            "version": "12.8.0"
+            "version": "20.9.2"
           }
         ],
         "Row": [
@@ -267,7 +283,7 @@
             "filePath": "openassessment/xblock/static/js/src/lms/containers/WaitingStepDetailsContainer.jsx",
             "line": 47,
             "column": 12,
-            "version": "12.8.0"
+            "version": "20.9.2"
           }
         ],
         "Spinner": [
@@ -275,7 +291,7 @@
             "filePath": "openassessment/xblock/static/js/src/lms/containers/WaitingStepDetailsContainer.jsx",
             "line": 48,
             "column": 14,
-            "version": "12.8.0"
+            "version": "20.9.2"
           }
         ]
       }
@@ -1656,7 +1672,7 @@
           },
           {
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentSubmit.jsx",
-            "line": 143,
+            "line": 145,
             "column": 8,
             "version": "20.4.1"
           },
@@ -1844,6 +1860,36 @@
             "filePath": "src/components/settings/SettingsAccessTab/LinkDeactivationAlertModal.jsx",
             "line": 58,
             "column": 10,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
+            "line": 113,
+            "column": 10,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
+            "line": 166,
+            "column": 8,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
+            "line": 180,
+            "column": 6,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/ThemeCard.jsx",
+            "line": 41,
+            "column": 8,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/ThemeCard.jsx",
+            "line": 42,
+            "column": 8,
             "version": "20.4.1"
           },
           {
@@ -2064,7 +2110,7 @@
           },
           {
             "filePath": "src/components/subscriptions/SubscriptionDetails.jsx",
-            "line": 38,
+            "line": 40,
             "column": 12,
             "version": "20.4.1"
           },
@@ -2292,6 +2338,24 @@
             "filePath": "src/components/RenderField/index.jsx",
             "line": 19,
             "column": 4,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
+            "line": 61,
+            "column": 10,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
+            "line": 73,
+            "column": 10,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
+            "line": 85,
+            "column": 10,
             "version": "20.4.1"
           },
           {
@@ -2770,6 +2834,24 @@
             "filePath": "src/components/RenderField/index.jsx",
             "line": 21,
             "column": 6,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
+            "line": 62,
+            "column": 12,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
+            "line": 74,
+            "column": 12,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
+            "line": 86,
+            "column": 12,
             "version": "20.4.1"
           },
           {
@@ -3519,6 +3601,12 @@
             "version": "20.4.1"
           },
           {
+            "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
+            "line": 99,
+            "column": 10,
+            "version": "20.4.1"
+          },
+          {
             "filePath": "src/components/settings/SettingsSSOTab/SSOConfigConfiguredCard.jsx",
             "line": 110,
             "column": 14,
@@ -3637,6 +3725,18 @@
             "version": "20.4.1"
           },
           {
+            "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
+            "line": 112,
+            "column": 8,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/ThemeCard.jsx",
+            "line": 40,
+            "column": 6,
+            "version": "20.4.1"
+          },
+          {
             "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
             "line": 28,
             "column": 6,
@@ -3712,7 +3812,7 @@
           },
           {
             "filePath": "src/components/subscriptions/licenses/LicenseManagementTable/index.jsx",
-            "line": 198,
+            "line": 200,
             "column": 6,
             "version": "20.4.1"
           },
@@ -3813,6 +3913,12 @@
             "version": "20.4.1"
           },
           {
+            "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
+            "line": 44,
+            "column": 4,
+            "version": "20.4.1"
+          },
+          {
             "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
             "line": 13,
             "column": 2,
@@ -3881,6 +3987,12 @@
             "version": "20.4.1"
           },
           {
+            "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
+            "line": 52,
+            "column": 6,
+            "version": "20.4.1"
+          },
+          {
             "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
             "line": 19,
             "column": 4,
@@ -3943,6 +4055,12 @@
             "version": "20.4.1"
           },
           {
+            "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
+            "line": 53,
+            "column": 8,
+            "version": "20.4.1"
+          },
+          {
             "filePath": "src/components/settings/SettingsLMSTab/ConfigModal.jsx",
             "line": 20,
             "column": 6,
@@ -4002,6 +4120,12 @@
             "filePath": "src/components/ConfirmationModal/index.jsx",
             "line": 51,
             "column": 4,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
+            "line": 59,
+            "column": 6,
             "version": "20.4.1"
           },
           {
@@ -4108,6 +4232,12 @@
             "filePath": "src/components/ConfirmationModal/index.jsx",
             "line": 54,
             "column": 4,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
+            "line": 111,
+            "column": 6,
             "version": "20.4.1"
           },
           {
@@ -4218,7 +4348,7 @@
           },
           {
             "filePath": "src/components/UserActivationPage/index.jsx",
-            "line": 74,
+            "line": 88,
             "column": 14,
             "version": "20.4.1"
           }
@@ -4226,7 +4356,7 @@
         "Stack": [
           {
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentSubmit.jsx",
-            "line": 135,
+            "line": 137,
             "column": 6,
             "version": "20.4.1"
           },
@@ -4276,7 +4406,7 @@
         "Form.Checkbox": [
           {
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentSubmit.jsx",
-            "line": 136,
+            "line": 138,
             "column": 8,
             "version": "20.4.1"
           },
@@ -4307,6 +4437,74 @@
           {
             "filePath": "src/components/subsidy-request-modals/DeclineSubsidyRequestModal.jsx",
             "line": 97,
+            "column": 8,
+            "version": "20.4.1"
+          }
+        ],
+        "Toast": [
+          {
+            "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentSubmit.jsx",
+            "line": 154,
+            "column": 8,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/BulkEnrollmentResultsDownloadPage/index.jsx",
+            "line": 51,
+            "column": 8,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/BulkEnrollmentResultsDownloadPage/index.jsx",
+            "line": 64,
+            "column": 8,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAccessTab/LinkCopiedToast.jsx",
+            "line": 5,
+            "column": 2,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
+            "line": 136,
+            "column": 6,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
+            "line": 236,
+            "column": 8,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/index.jsx",
+            "line": 73,
+            "column": 12,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/subscriptions/licenses/LicenseManagementTable/index.jsx",
+            "line": 304,
+            "column": 6,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/subscriptions/SubscriptionDetails.jsx",
+            "line": 100,
+            "column": 6,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/subscriptions/SubscriptionZeroStateMessage.jsx",
+            "line": 36,
+            "column": 6,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/UserActivationPage/index.jsx",
+            "line": 62,
             "column": 8,
             "version": "20.4.1"
           }
@@ -4412,6 +4610,12 @@
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessSubsidyRequestManagement.jsx",
             "line": 56,
             "column": 8,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
+            "line": 97,
+            "column": 6,
             "version": "20.4.1"
           },
           {
@@ -4530,7 +4734,7 @@
           },
           {
             "filePath": "src/components/UserActivationPage/index.jsx",
-            "line": 65,
+            "line": 79,
             "column": 10,
             "version": "20.4.1"
           }
@@ -4618,6 +4822,12 @@
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessSubsidyRequestManagement.jsx",
             "line": 57,
             "column": 10,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
+            "line": 105,
+            "column": 8,
             "version": "20.4.1"
           },
           {
@@ -4756,7 +4966,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsAppearanceTab/ThemeCard.jsx",
-            "line": 7,
+            "line": 25,
             "column": 4,
             "version": "20.4.1"
           },
@@ -4792,8 +5002,8 @@
           },
           {
             "filePath": "src/components/subscriptions/SubscriptionZeroStateMessage.jsx",
-            "line": 18,
-            "column": 4,
+            "line": 19,
+            "column": 6,
             "version": "20.4.1"
           }
         ],
@@ -4848,7 +5058,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsAppearanceTab/ThemeCard.jsx",
-            "line": 8,
+            "line": 26,
             "column": 6,
             "version": "20.4.1"
           },
@@ -4866,8 +5076,8 @@
           },
           {
             "filePath": "src/components/subscriptions/SubscriptionZeroStateMessage.jsx",
-            "line": 19,
-            "column": 6,
+            "line": 20,
+            "column": 8,
             "version": "20.4.1"
           }
         ],
@@ -4942,19 +5152,19 @@
           },
           {
             "filePath": "src/components/subscriptions/SubscriptionDetails.jsx",
-            "line": 36,
+            "line": 38,
             "column": 8,
             "version": "20.4.1"
           },
           {
             "filePath": "src/components/subscriptions/SubscriptionDetails.jsx",
-            "line": 46,
+            "line": 48,
             "column": 6,
             "version": "20.4.1"
           },
           {
             "filePath": "src/components/UserActivationPage/index.jsx",
-            "line": 63,
+            "line": 77,
             "column": 6,
             "version": "20.4.1"
           }
@@ -5180,7 +5390,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 130,
+            "line": 135,
             "column": 6,
             "version": "20.4.1"
           },
@@ -5206,25 +5416,25 @@
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 51,
+            "line": 53,
             "column": 8,
             "version": "20.4.1"
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 66,
+            "line": 68,
             "column": 8,
             "version": "20.4.1"
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 76,
+            "line": 78,
             "column": 8,
             "version": "20.4.1"
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 89,
+            "line": 91,
             "column": 8,
             "version": "20.4.1"
           },
@@ -5262,7 +5472,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 129,
+            "line": 134,
             "column": 4,
             "version": "20.4.1"
           },
@@ -5274,7 +5484,7 @@
           },
           {
             "filePath": "src/components/UserActivationPage/index.jsx",
-            "line": 62,
+            "line": 76,
             "column": 4,
             "version": "20.4.1"
           }
@@ -5443,6 +5653,12 @@
             "version": "20.4.1"
           },
           {
+            "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
+            "line": 100,
+            "column": 10,
+            "version": "20.4.1"
+          },
+          {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
             "line": 147,
             "column": 8,
@@ -5532,7 +5748,7 @@
         "MediaQuery": [
           {
             "filePath": "src/components/EnterpriseApp/index.jsx",
-            "line": 141,
+            "line": 145,
             "column": 10,
             "version": "20.4.1"
           }
@@ -6114,7 +6330,7 @@
           },
           {
             "filePath": "src/components/InfoHover/index.jsx",
-            "line": 13,
+            "line": 12,
             "column": 15,
             "version": "20.4.1"
           },
@@ -6236,13 +6452,13 @@
           },
           {
             "filePath": "src/components/subscriptions/SubscriptionDetails.jsx",
-            "line": 47,
+            "line": 49,
             "column": 8,
             "version": "20.4.1"
           },
           {
             "filePath": "src/components/UserActivationPage/index.jsx",
-            "line": 64,
+            "line": 78,
             "column": 8,
             "version": "20.4.1"
           }
@@ -6270,7 +6486,7 @@
           },
           {
             "filePath": "src/components/subscriptions/licenses/LicenseManagementTable/index.jsx",
-            "line": 224,
+            "line": 226,
             "column": 19,
             "version": "20.4.1"
           },
@@ -7117,38 +7333,6 @@
             "version": "20.4.1"
           }
         ],
-        "Toast": [
-          {
-            "filePath": "src/components/settings/SettingsAccessTab/LinkCopiedToast.jsx",
-            "line": 5,
-            "column": 2,
-            "version": "20.4.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
-            "line": 56,
-            "column": 6,
-            "version": "20.4.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 236,
-            "column": 8,
-            "version": "20.4.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsSSOTab/index.jsx",
-            "line": 73,
-            "column": 12,
-            "version": "20.4.1"
-          },
-          {
-            "filePath": "src/components/Toasts/Toasts.jsx",
-            "line": 9,
-            "column": 4,
-            "version": "20.4.1"
-          }
-        ],
         "Form.RadioSet": [
           {
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessSubsidyTypeSelection.jsx",
@@ -7184,7 +7368,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsAppearanceTab/ThemeCard.jsx",
-            "line": 13,
+            "line": 31,
             "column": 8,
             "version": "20.4.1"
           },
@@ -7247,109 +7431,13 @@
             "version": "20.4.1"
           }
         ],
-        "Dropzone": [
+        "Form": [
           {
-            "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
-            "line": 44,
-            "column": 6,
-            "version": "20.4.1"
-          }
-        ],
-        "CardGrid": [
-          {
-            "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
-            "line": 66,
-            "column": 6,
-            "version": "20.4.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/ExistingLMSCardDeck.jsx",
-            "line": 216,
-            "column": 6,
-            "version": "20.4.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 206,
-            "column": 10,
-            "version": "20.4.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
-            "line": 96,
+            "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
+            "line": 60,
             "column": 8,
             "version": "20.4.1"
-          }
-        ],
-        "Card.Footer": [
-          {
-            "filePath": "src/components/settings/SettingsAppearanceTab/ThemeCard.jsx",
-            "line": 11,
-            "column": 6,
-            "version": "20.4.1"
-          }
-        ],
-        "Card.Header": [
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/ExistingLMSCardDeck.jsx",
-            "line": 111,
-            "column": 6,
-            "version": "20.4.1"
           },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSCard.jsx",
-            "line": 12,
-            "column": 4,
-            "version": "20.4.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
-            "line": 111,
-            "column": 14,
-            "version": "20.4.1"
-          },
-          {
-            "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
-            "line": 87,
-            "column": 6,
-            "version": "20.4.1"
-          }
-        ],
-        "Image": [
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/ExistingLMSCardDeck.jsx",
-            "line": 165,
-            "column": 12,
-            "version": "20.4.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSCard.jsx",
-            "line": 15,
-            "column": 10,
-            "version": "20.4.1"
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigPage.jsx",
-            "line": 34,
-            "column": 6,
-            "version": "20.4.1"
-          }
-        ],
-        "Card.Body": [
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/ExistingLMSCardDeck.jsx",
-            "line": 175,
-            "column": 6,
-            "version": "20.4.1"
-          },
-          {
-            "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
-            "line": 131,
-            "column": 6,
-            "version": "20.4.1"
-          }
-        ],
-        "Form": [
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/BlackboardConfig.jsx",
             "line": 240,
@@ -7407,6 +7495,114 @@
           {
             "filePath": "src/components/subsidy-request-modals/ApproveLicenseRequestModal.jsx",
             "line": 91,
+            "column": 6,
+            "version": "20.4.1"
+          }
+        ],
+        "Dropzone": [
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
+            "line": 115,
+            "column": 6,
+            "version": "20.4.1"
+          }
+        ],
+        "Image": [
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
+            "line": 130,
+            "column": 8,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ExistingLMSCardDeck.jsx",
+            "line": 165,
+            "column": 12,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSCard.jsx",
+            "line": 15,
+            "column": 10,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSConfigPage.jsx",
+            "line": 34,
+            "column": 6,
+            "version": "20.4.1"
+          }
+        ],
+        "CardGrid": [
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
+            "line": 146,
+            "column": 6,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ExistingLMSCardDeck.jsx",
+            "line": 216,
+            "column": 6,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
+            "line": 206,
+            "column": 10,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
+            "line": 96,
+            "column": 8,
+            "version": "20.4.1"
+          }
+        ],
+        "Card.Footer": [
+          {
+            "filePath": "src/components/settings/SettingsAppearanceTab/ThemeCard.jsx",
+            "line": 29,
+            "column": 6,
+            "version": "20.4.1"
+          }
+        ],
+        "Card.Header": [
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ExistingLMSCardDeck.jsx",
+            "line": 111,
+            "column": 6,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/LMSCard.jsx",
+            "line": 12,
+            "column": 4,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
+            "line": 111,
+            "column": 14,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
+            "line": 87,
+            "column": 6,
+            "version": "20.4.1"
+          }
+        ],
+        "Card.Body": [
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ExistingLMSCardDeck.jsx",
+            "line": 175,
+            "column": 6,
+            "version": "20.4.1"
+          },
+          {
+            "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
+            "line": 131,
             "column": 6,
             "version": "20.4.1"
           }
@@ -11168,7 +11364,7 @@
       "name": "@edx/frontend-app-ecommerce",
       "repository": {
         "type": "git",
-        "url": "git+https://github.com/edx/frontend-app-ecommerce.git"
+        "url": "git+https://github.com/openedx/frontend-app-ecommerce.git"
       },
       "folderName": "frontend-app-ecommerce",
       "usages": {
@@ -12129,7 +12325,7 @@
       }
     },
     {
-      "version": "19.22.0",
+      "version": "20.11.1",
       "name": "frontend-app-learner-portal-enterprise",
       "repository": {
         "type": "git",
@@ -12142,91 +12338,91 @@
             "filePath": "src/components/app/AuthenticatedPage.jsx",
             "line": 40,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/course/CourseAssociatedPrograms.jsx",
             "line": 35,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/course/CourseMainContent.jsx",
             "line": 76,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/course/CourseSidebar.jsx",
             "line": 73,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/course/CourseSidebar.jsx",
             "line": 97,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/course/CreatedBy.jsx",
             "line": 38,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/course/CreatedBy.jsx",
             "line": 56,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/sidebar/SupportInformation.jsx",
             "line": 41,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/enterprise-invite/EnterpriseInvitePage.jsx",
             "line": 89,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/enterprise-invite/EnterpriseInvitePage.jsx",
             "line": 96,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 213,
             "column": 22,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 239,
             "column": 18,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramCourses.jsx",
             "line": 73,
             "column": 20,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramInstructors.jsx",
             "line": 25,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramInstructors.jsx",
             "line": 81,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Container": [
@@ -12234,235 +12430,235 @@
             "filePath": "src/components/app/LoginRefresh.jsx",
             "line": 29,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/course/CourseEnrollmentFailedAlert.jsx",
             "line": 107,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/course/CourseHeader.jsx",
             "line": 43,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/course/CoursePage.jsx",
             "line": 112,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/course/CoursePage.jsx",
             "line": 138,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/course/LicenseRequestedAlert.jsx",
             "line": 50,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
             "line": 44,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
             "line": 55,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
             "line": 82,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/CourseEnrollmentsContextProvider.jsx",
             "line": 74,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/enterprise-banner/EnterpriseBanner.jsx",
             "line": 14,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/enterprise-invite/EnterpriseInvitePage.jsx",
             "line": 81,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/enterprise-page/EnterprisePage.jsx",
             "line": 60,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/enterprise-subsidy-requests/SubsidyRequestsContextProvider.jsx",
             "line": 67,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/enterprise-user-subsidy/enterprise-offers/EnterpriseOffersBalanceAlert.jsx",
             "line": 48,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/enterprise-user-subsidy/UserSubsidy.jsx",
             "line": 107,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/error-page/ErrorPageContent.jsx",
             "line": 14,
             "column": 2,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/error-page/ErrorPageHeader.jsx",
             "line": 27,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/ExecutiveEducation2UPage.jsx",
             "line": 72,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/license-activation/LicenseActivation.jsx",
             "line": 64,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/license-activation/LicenseActivationErrorAlert.jsx",
             "line": 10,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/NotFoundPage/index.jsx",
             "line": 16,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway-progress/PathwayProgressListingPage.jsx",
             "line": 34,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway-progress/PathwayProgressListingPage.jsx",
             "line": 42,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway-progress/PathwayProgressPage.jsx",
             "line": 38,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway-progress/PathwayProgressPage.jsx",
             "line": 50,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 92,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/ProgramListingPage.jsx",
             "line": 34,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/ProgramListingPage.jsx",
             "line": 42,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/ProgramProgressPage.jsx",
             "line": 71,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/ProgramProgressPage.jsx",
             "line": 82,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramDataBar.jsx",
             "line": 24,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramPage.jsx",
             "line": 51,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramPage.jsx",
             "line": 75,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchResults.jsx",
             "line": 82,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/site-header/SiteHeader.jsx",
             "line": 19,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuiz.jsx",
             "line": 22,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 197,
+            "line": 199,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 327,
+            "line": 329,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "MailtoLink": [
@@ -12470,37 +12666,37 @@
             "filePath": "src/components/contact-admin-mailto/index.jsx",
             "line": 14,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/sidebar/SupportInformation.jsx",
             "line": 24,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/SubscriptionExpirationModal.jsx",
             "line": 46,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/enterprise-user-subsidy/enterprise-offers/EnterpriseOffersBalanceAlert.jsx",
             "line": 34,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/CouponCodesWarningModal.jsx",
             "line": 21,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/SubscriptionExpiringWarningModal.jsx",
             "line": 29,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Alert": [
@@ -12508,73 +12704,73 @@
             "filePath": "src/components/course/CourseEnrollmentFailedAlert.jsx",
             "line": 108,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/course/LicenseRequestedAlert.jsx",
             "line": 51,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
             "line": 45,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
             "line": 119,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/mark-complete-modal/ModalError.jsx",
             "line": 10,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/move-to-in-progress-modal/ModalError.jsx",
             "line": 10,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
             "line": 77,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/CourseEnrollmentsAlert.jsx",
             "line": 19,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/enterprise-user-subsidy/enterprise-offers/EnterpriseOffersBalanceAlert.jsx",
             "line": 49,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 126,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/license-activation/LicenseActivationErrorAlert.jsx",
             "line": 11,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramCourses.jsx",
             "line": 93,
             "column": 20,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Row": [
@@ -12582,151 +12778,151 @@
             "filePath": "src/components/course/CourseHeader.jsx",
             "line": 44,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/course/CoursePage.jsx",
             "line": 139,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/course/CourseSidebarListItem.jsx",
             "line": 12,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
             "line": 56,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/sidebar/EnterpriseOffersSummaryCard.jsx",
             "line": 55,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/ExecutiveEducation2UError.jsx",
             "line": 27,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/ExecutiveEducation2UPage.jsx",
             "line": 96,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 138,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 177,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 199,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 235,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 246,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway-progress/PathwayProgressListingPage.jsx",
             "line": 43,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 21,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 93,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 142,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/ProgramListingPage.jsx",
             "line": 43,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/ProgramProgressCourses.jsx",
             "line": 79,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/ProgramProgressCourses.jsx",
             "line": 90,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/ProgramProgressPage.jsx",
             "line": 84,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramPage.jsx",
             "line": 76,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramPage.jsx",
             "line": 88,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramSidebarListItem.jsx",
             "line": 12,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchResults.jsx",
             "line": 112,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuiz.jsx",
             "line": 23,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Col": [
@@ -12734,145 +12930,145 @@
             "filePath": "src/components/course/CourseHeader.jsx",
             "line": 45,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/course/CourseHeader.jsx",
             "line": 106,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/course/CourseSidebarListItem.jsx",
             "line": 13,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/course/CourseSidebarListItem.jsx",
             "line": 17,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/sidebar/EnterpriseOffersSummaryCard.jsx",
             "line": 56,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/error-page/ErrorPage.jsx",
             "line": 29,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/ExecutiveEducation2UError.jsx",
             "line": 28,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/ExecutiveEducation2UPage.jsx",
             "line": 97,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 139,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 158,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 178,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 200,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 236,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 247,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 22,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 31,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 42,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 94,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 109,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 124,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/ProgramProgressCourses.jsx",
             "line": 80,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/ProgramProgressCourses.jsx",
             "line": 91,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramSidebarListItem.jsx",
             "line": 13,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramSidebarListItem.jsx",
             "line": 17,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Breadcrumb": [
@@ -12880,19 +13076,19 @@
             "filePath": "src/components/course/CourseHeader.jsx",
             "line": 48,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway-progress/PathwayProgressHeader.jsx",
             "line": 21,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramHeader.jsx",
             "line": 82,
             "column": 18,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "MediaQuery": [
@@ -12900,61 +13096,61 @@
             "filePath": "src/components/course/CourseMainContent.jsx",
             "line": 38,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/course/CoursePage.jsx",
             "line": 143,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
             "line": 62,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
             "line": 25,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
             "line": 57,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/ProgramProgressPage.jsx",
             "line": 108,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramEndorsements.jsx",
             "line": 17,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramPage.jsx",
             "line": 80,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/site-header/SiteHeader.jsx",
             "line": 79,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/site-header/SiteHeader.jsx",
             "line": 82,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Card": [
@@ -12962,121 +13158,121 @@
             "filePath": "src/components/course/CourseRecommendationCard.jsx",
             "line": 45,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/course/CourseRunCard.jsx",
             "line": 200,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/sidebar/DashboardSidebar.jsx",
             "line": 10,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/sidebar/SidebarCard.jsx",
             "line": 11,
             "column": 2,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway-progress/PathwayNode.jsx",
             "line": 28,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway-progress/PathwayProgressCard.jsx",
             "line": 18,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway-progress/SubscriptionStatusCard.jsx",
             "line": 25,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway/SearchPathwayCard.jsx",
             "line": 70,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway/SearchPathwayCard.jsx",
             "line": 83,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/ProgramListingCard.jsx",
             "line": 58,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchCourseCard.jsx",
             "line": 49,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchCourseCard.jsx",
             "line": 85,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchProgramCard.jsx",
             "line": 79,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchProgramCard.jsx",
             "line": 118,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/CardLoadingSkeleton.jsx",
             "line": 18,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/CourseCard.jsx",
             "line": 30,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/CourseCard.jsx",
             "line": 59,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/JobCardComponent.jsx",
             "line": 20,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
             "line": 159,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
             "line": 195,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Card.ImageCap": [
@@ -13084,79 +13280,79 @@
             "filePath": "src/components/course/CourseRecommendationCard.jsx",
             "line": 59,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway-progress/PathwayProgressCard.jsx",
             "line": 23,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway/SearchPathwayCard.jsx",
             "line": 87,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/ProgramListingCard.jsx",
             "line": 63,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchCourseCard.jsx",
             "line": 50,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchCourseCard.jsx",
             "line": 89,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchProgramCard.jsx",
             "line": 80,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchProgramCard.jsx",
             "line": 122,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/CardLoadingSkeleton.jsx",
             "line": 19,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/CourseCard.jsx",
             "line": 31,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/CourseCard.jsx",
             "line": 60,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
             "line": 160,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
             "line": 196,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Card.Header": [
@@ -13164,91 +13360,91 @@
             "filePath": "src/components/course/CourseRecommendationCard.jsx",
             "line": 65,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/sidebar/SidebarCard.jsx",
             "line": 12,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway-progress/PathwayProgressCard.jsx",
             "line": 30,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway/SearchPathwayCard.jsx",
             "line": 92,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/ProgramListingCard.jsx",
             "line": 71,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchCourseCard.jsx",
             "line": 55,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchCourseCard.jsx",
             "line": 97,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchProgramCard.jsx",
             "line": 84,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchProgramCard.jsx",
             "line": 129,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/CardLoadingSkeleton.jsx",
             "line": 24,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/CourseCard.jsx",
             "line": 36,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/CourseCard.jsx",
             "line": 67,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/JobCardComponent.jsx",
             "line": 21,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
             "line": 164,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
             "line": 202,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Card.Section": [
@@ -13256,139 +13452,139 @@
             "filePath": "src/components/course/CourseRecommendationCard.jsx",
             "line": 83,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/course/CourseRunCard.jsx",
             "line": 201,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/sidebar/DashboardSidebar.jsx",
             "line": 11,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/sidebar/SidebarCard.jsx",
             "line": 13,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway-progress/PathwayNode.jsx",
             "line": 29,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway-progress/PathwayProgressCard.jsx",
             "line": 38,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway-progress/SubscriptionStatusCard.jsx",
             "line": 26,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway/SearchPathwayCard.jsx",
             "line": 100,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/ProgramListingCard.jsx",
             "line": 98,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchCourseCard.jsx",
             "line": 61,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchCourseCard.jsx",
             "line": 106,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchProgramCard.jsx",
             "line": 89,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchProgramCard.jsx",
             "line": 146,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/CardLoadingSkeleton.jsx",
             "line": 29,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/CourseCard.jsx",
             "line": 42,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/CourseCard.jsx",
             "line": 46,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/CourseCard.jsx",
             "line": 90,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/JobCardComponent.jsx",
             "line": 33,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
             "line": 169,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
             "line": 172,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
             "line": 175,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
             "line": 219,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
             "line": 237,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Card.Footer": [
@@ -13396,43 +13592,43 @@
             "filePath": "src/components/course/CourseRecommendationCard.jsx",
             "line": 85,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchCourseCard.jsx",
             "line": 65,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchCourseCard.jsx",
             "line": 120,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchProgramCard.jsx",
             "line": 92,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchProgramCard.jsx",
             "line": 161,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
             "line": 178,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
             "line": 253,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "CardGrid": [
@@ -13440,19 +13636,19 @@
             "filePath": "src/components/course/CourseRecommendations.jsx",
             "line": 16,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/course/CourseRecommendations.jsx",
             "line": 26,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/course/CourseRunCards.jsx",
             "line": 24,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "OverlayTrigger": [
@@ -13460,7 +13656,7 @@
             "filePath": "src/components/course/CourseSkills.jsx",
             "line": 27,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Popover": [
@@ -13468,7 +13664,7 @@
             "filePath": "src/components/course/CourseSkills.jsx",
             "line": 32,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Popover.Title": [
@@ -13476,7 +13672,7 @@
             "filePath": "src/components/course/CourseSkills.jsx",
             "line": 33,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Popover.Content": [
@@ -13484,7 +13680,7 @@
             "filePath": "src/components/course/CourseSkills.jsx",
             "line": 34,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Badge": [
@@ -13492,97 +13688,97 @@
             "filePath": "src/components/course/CourseSkills.jsx",
             "line": 45,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
             "line": 405,
             "column": 24,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/sidebar/CouponCodesSummaryCard.jsx",
             "line": 86,
             "column": 18,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/sidebar/EnterpriseOffersSummaryCard.jsx",
             "line": 22,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/sidebar/SubscriptionSummaryCard.jsx",
             "line": 93,
             "column": 18,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/sidebar/SubscriptionSummaryCard.jsx",
             "line": 124,
             "column": 18,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway-progress/PathwayNode.jsx",
             "line": 37,
             "column": 50,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway-progress/SubscriptionStatusCard.jsx",
             "line": 31,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway/SearchPathwayCard.jsx",
             "line": 106,
             "column": 17,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchProgramCard.jsx",
             "line": 148,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/CourseCard.jsx",
             "line": 100,
             "column": 20,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
             "line": 224,
             "column": 18,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
             "line": 239,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SelectedJobSkills.jsx",
             "line": 23,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsCourses.jsx",
             "line": 122,
             "column": 21,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsCourses.jsx",
             "line": 124,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Modal": [
@@ -13590,43 +13786,43 @@
             "filePath": "src/components/course/EnrollModal.jsx",
             "line": 85,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
             "line": 114,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/mark-complete-modal/MarkCompleteModal.jsx",
             "line": 76,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/move-to-in-progress-modal/MoveToInProgressModal.jsx",
             "line": 67,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/SubscriptionExpirationModal.jsx",
             "line": 106,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/SubscriptionExpirationModal.jsx",
             "line": 141,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/integration-warning-modal/IntegrationWarningModal.jsx",
             "line": 29,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Alert.Heading": [
@@ -13634,13 +13830,13 @@
             "filePath": "src/components/course/LicenseRequestedAlert.jsx",
             "line": 52,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/enterprise-user-subsidy/enterprise-offers/EnterpriseOffersBalanceAlert.jsx",
             "line": 55,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "StatefulButton": [
@@ -13648,37 +13844,37 @@
             "filePath": "src/components/course/SubsidyRequestButton.jsx",
             "line": 123,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
             "line": 141,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/mark-complete-modal/MarkCompleteModal.jsx",
             "line": 80,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/move-to-in-progress-modal/MoveToInProgressModal.jsx",
             "line": 71,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
             "line": 65,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 248,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Toast": [
@@ -13686,13 +13882,13 @@
             "filePath": "src/components/course/SubsidyRequestButton.jsx",
             "line": 124,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
             "line": 90,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Tabs": [
@@ -13700,7 +13896,7 @@
             "filePath": "src/components/dashboard/DashboardPage.jsx",
             "line": 86,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Tab": [
@@ -13708,19 +13904,19 @@
             "filePath": "src/components/dashboard/DashboardPage.jsx",
             "line": 87,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
             "line": 90,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
             "line": 94,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Dropdown": [
@@ -13728,31 +13924,31 @@
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
             "line": 249,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/error-page/ErrorPageHeader.jsx",
             "line": 41,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramCTA.jsx",
             "line": 106,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
             "line": 27,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/GoalDropdown.jsx",
             "line": 20,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Dropdown.Toggle": [
@@ -13760,31 +13956,31 @@
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
             "line": 250,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/error-page/ErrorPageHeader.jsx",
             "line": 42,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramCTA.jsx",
             "line": 107,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
             "line": 28,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/GoalDropdown.jsx",
             "line": 21,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Dropdown.Menu": [
@@ -13792,31 +13988,31 @@
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
             "line": 256,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/error-page/ErrorPageHeader.jsx",
             "line": 45,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramCTA.jsx",
             "line": 110,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
             "line": 31,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/GoalDropdown.jsx",
             "line": 24,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Dropdown.Item": [
@@ -13824,67 +14020,67 @@
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
             "line": 258,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/error-page/ErrorPageHeader.jsx",
             "line": 49,
             "column": 18,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramCTA.jsx",
             "line": 113,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramCTA.jsx",
             "line": 133,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
             "line": 36,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
             "line": 38,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
             "line": 50,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
             "line": 51,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
             "line": 52,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
             "line": 54,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/GoalDropdown.jsx",
             "line": 26,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Input": [
@@ -13892,7 +14088,7 @@
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
             "line": 124,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Alert.Link": [
@@ -13900,13 +14096,13 @@
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/mark-complete-modal/ModalError.jsx",
             "line": 11,
             "column": 21,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/move-to-in-progress-modal/ModalError.jsx",
             "line": 11,
             "column": 42,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "AlertModal": [
@@ -13914,7 +14110,7 @@
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
             "line": 53,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "ActionRow": [
@@ -13922,19 +14118,19 @@
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
             "line": 58,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/CouponCodesWarningModal.jsx",
             "line": 50,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/SubscriptionExpiringWarningModal.jsx",
             "line": 58,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Button": [
@@ -13942,151 +14138,151 @@
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
             "line": 59,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/UpcomingCourseCard.jsx",
             "line": 10,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/UpgradeCourseButton.jsx",
             "line": 46,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/main-content/CourseRecommendations.jsx",
             "line": 24,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
             "line": 43,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/dashboard/sidebar/SubsidiesSummary.jsx",
             "line": 67,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/enterprise-banner/EnterpriseBanner.jsx",
             "line": 21,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/enterprise-invite/EnterpriseInvitePage.jsx",
             "line": 104,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/ExecutiveEducation2UError.jsx",
             "line": 37,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/integration-warning-modal/IntegrationWarningModal.jsx",
             "line": 38,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway-progress/PathwayProgressListingPage.jsx",
             "line": 55,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 43,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/preview-expand/PreviewExpand.jsx",
             "line": 21,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/CouponCodesWarningModal.jsx",
             "line": 51,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/ProgramListingPage.jsx",
             "line": 50,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/ProgramPathwayOpportunity.jsx",
             "line": 16,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/ProgramProgressSidebar.jsx",
             "line": 76,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/SubscriptionExpiringWarningModal.jsx",
             "line": 59,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 323,
+            "line": 325,
             "column": 18,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 335,
+            "line": 337,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 339,
+            "line": 341,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 346,
+            "line": 348,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 350,
+            "line": 352,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 353,
+            "line": 355,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 357,
+            "line": 359,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Collapsible": [
@@ -14094,25 +14290,25 @@
             "filePath": "src/components/dashboard/main-content/course-enrollments/CourseSection.jsx",
             "line": 127,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway-progress/PathwayStep.jsx",
             "line": 14,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 155,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramFAQ.jsx",
             "line": 16,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Navbar": [
@@ -14120,7 +14316,7 @@
             "filePath": "src/components/error-page/ErrorPageHeader.jsx",
             "line": 26,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Navbar.Brand": [
@@ -14128,7 +14324,7 @@
             "filePath": "src/components/error-page/ErrorPageHeader.jsx",
             "line": 28,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Form.Group": [
@@ -14136,31 +14332,31 @@
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 140,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 159,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 179,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 201,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/ProgramProgressCourses.jsx",
             "line": 182,
             "column": 28,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Form.Control": [
@@ -14168,25 +14364,25 @@
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 144,
             "column": 18,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 162,
             "column": 18,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 182,
             "column": 18,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/ProgramProgressCourses.jsx",
             "line": 184,
             "column": 30,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "CheckboxControl": [
@@ -14194,7 +14390,7 @@
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 203,
             "column": 20,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Image": [
@@ -14202,7 +14398,7 @@
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 23,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "MarketingModal": [
@@ -14210,7 +14406,7 @@
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 63,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "ModalDialog.Hero": [
@@ -14218,13 +14414,13 @@
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 70,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 188,
+            "line": 190,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "ModalDialog.Title": [
@@ -14232,7 +14428,7 @@
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 87,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Icon": [
@@ -14240,37 +14436,37 @@
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 97,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 112,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 127,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchProgramCard.jsx",
             "line": 152,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
             "line": 243,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/system-wide-banner/SystemWideWarningBanner.jsx",
             "line": 8,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "StandardModal": [
@@ -14278,13 +14474,13 @@
             "filePath": "src/components/program-progress/CouponCodesWarningModal.jsx",
             "line": 44,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program-progress/SubscriptionExpiringWarningModal.jsx",
             "line": 52,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Form.Label": [
@@ -14292,7 +14488,7 @@
             "filePath": "src/components/program-progress/ProgramProgressCourses.jsx",
             "line": 183,
             "column": 30,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Collapsible.Advanced": [
@@ -14300,13 +14496,13 @@
             "filePath": "src/components/program/ProgramCourses.jsx",
             "line": 41,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramInstructors.jsx",
             "line": 90,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Collapsible.Trigger": [
@@ -14314,13 +14510,13 @@
             "filePath": "src/components/program/ProgramCourses.jsx",
             "line": 42,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramInstructors.jsx",
             "line": 91,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Collapsible.Visible": [
@@ -14328,25 +14524,25 @@
             "filePath": "src/components/program/ProgramCourses.jsx",
             "line": 45,
             "column": 18,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramCourses.jsx",
             "line": 49,
             "column": 18,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramInstructors.jsx",
             "line": 93,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramInstructors.jsx",
             "line": 97,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Collapsible.Body": [
@@ -14354,13 +14550,13 @@
             "filePath": "src/components/program/ProgramCourses.jsx",
             "line": 54,
             "column": 16,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/program/ProgramInstructors.jsx",
             "line": 102,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Stack": [
@@ -14368,7 +14564,7 @@
             "filePath": "src/components/progress-category-bubbles/ProgressCategoryBubbles.jsx",
             "line": 7,
             "column": 2,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Bubble": [
@@ -14376,19 +14572,19 @@
             "filePath": "src/components/progress-category-bubbles/ProgressCategoryBubbles.jsx",
             "line": 8,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/progress-category-bubbles/ProgressCategoryBubbles.jsx",
             "line": 13,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/progress-category-bubbles/ProgressCategoryBubbles.jsx",
             "line": 18,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "StatusAlert": [
@@ -14396,31 +14592,31 @@
             "filePath": "src/components/search/SearchError.jsx",
             "line": 28,
             "column": 4,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/search/SearchNoResults.jsx",
             "line": 31,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SearchCourseCard.jsx",
             "line": 103,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
             "line": 282,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsCourses.jsx",
             "line": 155,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Dropdown.Header": [
@@ -14428,7 +14624,7 @@
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
             "line": 35,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Dropdown.Divider": [
@@ -14436,13 +14632,13 @@
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
             "line": 49,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/site-header/AvatarDropdown.jsx",
             "line": 53,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "SelectableBox.Set": [
@@ -14450,7 +14646,7 @@
             "filePath": "src/components/skills-quiz/SelectJobCard.jsx",
             "line": 29,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "SelectableBox": [
@@ -14458,87 +14654,87 @@
             "filePath": "src/components/skills-quiz/SelectJobCard.jsx",
             "line": 37,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Stepper": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 180,
+            "line": 182,
             "column": 6,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "ModalDialog": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 181,
+            "line": 183,
             "column": 8,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "ModalDialog.Body": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 196,
+            "line": 198,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Stepper.Step": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 198,
+            "line": 200,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 302,
+            "line": 304,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 328,
+            "line": 330,
             "column": 14,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Form.Checkbox": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 264,
+            "line": 266,
             "column": 30,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "ModalDialog.Footer": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 333,
+            "line": 335,
             "column": 10,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "Stepper.ActionRow": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 334,
+            "line": 336,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 345,
+            "line": 347,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 352,
+            "line": 354,
             "column": 12,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ],
         "PageBanner": [
@@ -14546,7 +14742,7 @@
             "filePath": "src/components/system-wide-banner/SystemWideWarningBanner.jsx",
             "line": 7,
             "column": 2,
-            "version": "19.22.0"
+            "version": "20.11.1"
           }
         ]
       }
@@ -15053,7 +15249,7 @@
       "name": "@edx/frontend-app-learning",
       "repository": {
         "type": "git",
-        "url": "git+https://github.com/edx/frontend-app-learning.git"
+        "url": "git+https://github.com/openedx/frontend-app-learning.git"
       },
       "folderName": "frontend-app-learning",
       "usages": {
@@ -18970,7 +19166,7 @@
       "name": "@edx/frontend-app-program-console",
       "repository": {
         "type": "git",
-        "url": "git+https://github.com/edx/frontend-app-program-console.git"
+        "url": "git+https://github.com/openedx/frontend-app-program-console.git"
       },
       "folderName": "frontend-app-program-console",
       "usages": {
@@ -20672,7 +20868,7 @@
       "name": "@edx/frontend-component-header",
       "repository": {
         "type": "git",
-        "url": "git+https://github.com/edx/frontend-component-header.git"
+        "url": "git+https://github.com/openedx/frontend-component-header.git"
       },
       "folderName": "frontend-component-header",
       "usages": {
@@ -22434,12 +22630,6 @@
             "version": "20.10.0"
           },
           {
-            "filePath": "src/components/Collapsible/CollapsibleLink.jsx",
-            "line": 44,
-            "column": 12,
-            "version": "20.10.0"
-          },
-          {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
             "line": 162,
             "column": 14,
@@ -22536,6 +22726,12 @@
             "version": "20.10.0"
           },
           {
+            "filePath": "src/components/EdX/ParagonCollapsible.jsx",
+            "line": 71,
+            "column": 11,
+            "version": "20.10.0"
+          },
+          {
             "filePath": "src/components/Header/MobileNavigation/MenuAccordion/index.jsx",
             "line": 109,
             "column": 10,
@@ -22572,6 +22768,30 @@
             "version": "20.10.0"
           },
           {
+            "filePath": "src/components/Instructor/InstructorCard.jsx",
+            "line": 60,
+            "column": 18,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/Instructor/InstructorHeader.jsx",
+            "line": 16,
+            "column": 14,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/Instructor/InstructorOverview.jsx",
+            "line": 23,
+            "column": 13,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/Instructor/InstructorOverview.jsx",
+            "line": 25,
+            "column": 13,
+            "version": "20.10.0"
+          },
+          {
             "filePath": "src/components/Learn/DynamicProductList/ProductFilter.jsx",
             "line": 20,
             "column": 8,
@@ -22587,6 +22807,12 @@
             "filePath": "src/components/Learn/StickyNav.jsx",
             "line": 18,
             "column": 9,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/PreviewExpand/index.jsx",
+            "line": 65,
+            "column": 10,
             "version": "20.10.0"
           },
           {
@@ -22623,6 +22849,24 @@
             "filePath": "src/components/Search/SearchBreadcrumb.jsx",
             "line": 95,
             "column": 8,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/Topic/TopicRouting.jsx",
+            "line": 59,
+            "column": 20,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/templates/mastersProgramDetail.jsx",
+            "line": 356,
+            "column": 20,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/templates/mastersProgramDetail.jsx",
+            "line": 514,
+            "column": 22,
             "version": "20.10.0"
           }
         ],
@@ -22811,7 +23055,7 @@
           },
           {
             "filePath": "src/components/EdX/ParagonCollapsible.jsx",
-            "line": 94,
+            "line": 93,
             "column": 10,
             "version": "20.10.0"
           },
@@ -22859,7 +23103,7 @@
           },
           {
             "filePath": "src/components/Search/Refinements/MobileFilterMenu.jsx",
-            "line": 123,
+            "line": 117,
             "column": 14,
             "version": "20.10.0"
           },
@@ -23059,7 +23303,7 @@
           },
           {
             "filePath": "src/components/Home/SubjectList.jsx",
-            "line": 17,
+            "line": 16,
             "column": 6,
             "version": "20.10.0"
           },
@@ -23095,55 +23339,55 @@
           },
           {
             "filePath": "src/components/Program/ProgramDataBar.jsx",
-            "line": 136,
+            "line": 134,
             "column": 10,
             "version": "20.10.0"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 431,
+            "line": 425,
             "column": 8,
             "version": "20.10.0"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 432,
+            "line": 426,
             "column": 10,
             "version": "20.10.0"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 433,
+            "line": 427,
             "column": 12,
             "version": "20.10.0"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 659,
+            "line": 653,
             "column": 12,
             "version": "20.10.0"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 667,
+            "line": 661,
             "column": 12,
             "version": "20.10.0"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 686,
+            "line": 680,
             "column": 8,
             "version": "20.10.0"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 858,
+            "line": 862,
             "column": 10,
             "version": "20.10.0"
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 859,
+            "line": 863,
             "column": 12,
             "version": "20.10.0"
           },
@@ -23215,7 +23459,7 @@
           },
           {
             "filePath": "src/components/SitewideBanner/index.jsx",
-            "line": 75,
+            "line": 74,
             "column": 6,
             "version": "20.10.0"
           },
@@ -23317,7 +23561,7 @@
           },
           {
             "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 577,
+            "line": 575,
             "column": 20,
             "version": "20.10.0"
           },
@@ -23411,7 +23655,7 @@
           },
           {
             "filePath": "src/components/ProgramPathway/ProgramPathwayCourse.jsx",
-            "line": 61,
+            "line": 55,
             "column": 6,
             "version": "20.10.0"
           }
@@ -23449,7 +23693,7 @@
           },
           {
             "filePath": "src/components/ProgramPathway/ProgramPathwayCourse.jsx",
-            "line": 67,
+            "line": 61,
             "column": 10,
             "version": "20.10.0"
           }
@@ -23494,6 +23738,12 @@
             "line": 86,
             "column": 4,
             "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/Program/ProgramMain.jsx",
+            "line": 704,
+            "column": 18,
+            "version": "20.10.0"
           }
         ],
         "Collapsible.Visible": [
@@ -23520,6 +23770,18 @@
             "line": 111,
             "column": 8,
             "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/Program/ProgramMain.jsx",
+            "line": 712,
+            "column": 22,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/Program/ProgramMain.jsx",
+            "line": 713,
+            "column": 22,
+            "version": "20.10.0"
           }
         ],
         "Collapsible.Body": [
@@ -23533,6 +23795,12 @@
             "filePath": "src/components/Header/MobileNavigation/MenuAccordion/index.jsx",
             "line": 115,
             "column": 6,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/Program/ProgramMain.jsx",
+            "line": 715,
+            "column": 20,
             "version": "20.10.0"
           }
         ],
@@ -23701,7 +23969,7 @@
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 438,
+            "line": 432,
             "column": 20,
             "version": "20.10.0"
           }
@@ -24026,31 +24294,19 @@
             "version": "20.10.0"
           }
         ],
-        "Modal": [
+        "Collapsible.Trigger": [
           {
-            "filePath": "src/components/Program/ProgramTrackModal.jsx",
-            "line": 111,
-            "column": 6,
+            "filePath": "src/components/Program/ProgramMain.jsx",
+            "line": 708,
+            "column": 20,
             "version": "20.10.0"
           }
         ],
-        "StatusAlert": [
+        "Modal": [
           {
-            "filePath": "src/components/Search/ConnectedDiscoveryCardList/noResultsBlurb.jsx",
-            "line": 43,
+            "filePath": "src/components/Program/ProgramTrackModal.jsx",
+            "line": 110,
             "column": 6,
-            "version": "20.10.0"
-          },
-          {
-            "filePath": "src/components/Search/Results/NoResultsBlurb.jsx",
-            "line": 14,
-            "column": 4,
-            "version": "20.10.0"
-          },
-          {
-            "filePath": "src/templates/appUpgrade.jsx",
-            "line": 104,
-            "column": 8,
             "version": "20.10.0"
           }
         ],
@@ -24112,6 +24368,20 @@
           {
             "filePath": "src/components/Search/Results/FullProductHits.jsx",
             "line": 94,
+            "column": 8,
+            "version": "20.10.0"
+          }
+        ],
+        "StatusAlert": [
+          {
+            "filePath": "src/components/Search/Results/NoResultsBlurb.jsx",
+            "line": 14,
+            "column": 4,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/templates/appUpgrade.jsx",
+            "line": 104,
             "column": 8,
             "version": "20.10.0"
           }
