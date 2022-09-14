@@ -909,33 +909,34 @@ $list-group-action-hover-color:     $list-group-action-color !default;
 $list-group-action-active-color:    $body-color !default;
 $list-group-action-active-bg:       $gray-200 !default;
 
+
 :root {
   @each $color, $value in $colors {
-    --pgn-color-#{$color}: #{$value};
+    #{css-prop-name($color, "color")}: #{$value};
   }
 
   @each $color, $value in $theme-colors {
-    --pgn-color-#{$color}: #{$value};
+    #{css-prop-name($color, "color")}: #{$value};
   }
 
   @each $color, $value in $theme-color-levels {
-    --pgn-color-#{$color}: #{$value};
+    #{css-prop-name($color, "color")}: #{$value};
   }
 
   @each $color, $value in $element-color-levels {
-    --pgn-color-#{$color}: #{$value};
+    #{css-prop-name($color, "color")}: #{$value};
   }
 
   @each $size, $length in $spacers {
-    --png-spacer-#{$size}: #{$length};
+    #{css-prop-name($size, "spacer")}: #{$length};
   }
 
   @each $size, $value in $font-sizes {
-    --pgn-font-size-#{$size}: #{$value};
+    #{css-prop-name($size, "font-size")}: #{$value};
   }
 
   @each $weight, $value in $font-sizes {
-    --pgn-font-weight-#{$weight}: #{$value};
+    #{css-prop-name($weight, "font-weight")}: #{$value};
   }
 
   --pgn-box-shadow-sm: #{$box-shadow-sm};

@@ -33,3 +33,26 @@
 
   @return $base-color;
 }
+
+
+//
+// Constructs a valid css property name from a bootstrap sass variable name.
+//
+// Sass allows variable names like $spacer-2\.5 however this is not allowed for
+// CSS custom properties. This function automatically constructs a CSS custom
+// property name from a sass variable name.
+// It also takes an option prefix to append to the name.
+// Eg:
+//   css-prop-name(1\.5, "spacer") -> --pgn-spacer-1p5
+//   css-prop-name(1\.5, "spacer") -> --pgn-spacer-1p5
+@function css-prop-name($var-name, $prefix: "") {
+  $prefix: "--pgn-" + $prefix + "-";
+  $str: $prefix + #{$var-name};
+  $pt-idx: str-index($str, "\\.");
+
+  @if $pt-idx {
+    @return str-slice($str, 1, $pt-idx - 1) + "p" + str-slice($str, $pt-idx + 2);
+  }
+
+  @return $str;
+}
