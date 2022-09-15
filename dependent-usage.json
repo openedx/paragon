@@ -1,5 +1,5 @@
 {
-  "lastModified": 1663165114715,
+  "lastModified": 1663251382201,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -859,7 +859,7 @@
       "name": "@edx/frontend-app-account",
       "repository": {
         "type": "git",
-        "url": "git+https://github.com/edx/frontend-app-account.git"
+        "url": "git+https://github.com/openedx/frontend-app-account.git"
       },
       "folderName": "frontend-app-account",
       "usages": {
@@ -7694,7 +7694,7 @@
       "name": "@edx/frontend-app-authn",
       "repository": {
         "type": "git",
-        "url": "git+https://github.com/edx/frontend-app-authn.git"
+        "url": "git+https://github.com/openedx/frontend-app-authn.git"
       },
       "folderName": "frontend-app-authn",
       "usages": {
@@ -10540,7 +10540,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 412,
+            "line": 414,
             "column": 12,
             "version": "19.10.1"
           },
@@ -10718,7 +10718,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 240,
+            "line": 242,
             "column": 8,
             "version": "19.10.1"
           },
@@ -10738,37 +10738,37 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 270,
+            "line": 272,
             "column": 12,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 296,
+            "line": 298,
             "column": 12,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 317,
+            "line": 319,
             "column": 12,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 337,
+            "line": 339,
             "column": 14,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 384,
+            "line": 386,
             "column": 16,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 396,
+            "line": 398,
             "column": 18,
             "version": "19.10.1"
           },
@@ -10788,25 +10788,25 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 271,
+            "line": 273,
             "column": 14,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 297,
+            "line": 299,
             "column": 14,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 324,
+            "line": 326,
             "column": 14,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 344,
+            "line": 346,
             "column": 16,
             "version": "19.10.1"
           },
@@ -10826,7 +10826,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 418,
+            "line": 420,
             "column": 12,
             "version": "19.10.1"
           }
@@ -10890,7 +10890,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 183,
+            "line": 185,
             "column": 8,
             "version": "19.10.1"
           },
@@ -11076,7 +11076,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 52,
+            "line": 53,
             "column": 6,
             "version": "19.10.1"
           },
@@ -11164,7 +11164,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 246,
+            "line": 248,
             "column": 10,
             "version": "19.10.1"
           },
@@ -11268,7 +11268,7 @@
         "Card": [
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 53,
+            "line": 54,
             "column": 6,
             "version": "19.10.1"
           }
@@ -11276,7 +11276,7 @@
         "Card.Section": [
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 60,
+            "line": 61,
             "column": 8,
             "version": "19.10.1"
           }
@@ -11284,13 +11284,13 @@
         "Form.Checkbox": [
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 385,
+            "line": 387,
             "column": 18,
             "version": "19.10.1"
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 397,
+            "line": 399,
             "column": 20,
             "version": "19.10.1"
           }
@@ -13510,7 +13510,7 @@
           },
           {
             "filePath": "src/components/search/SearchCourseCard.jsx",
-            "line": 106,
+            "line": 105,
             "column": 8,
             "version": "20.11.1"
           },
@@ -13602,7 +13602,7 @@
           },
           {
             "filePath": "src/components/search/SearchCourseCard.jsx",
-            "line": 120,
+            "line": 119,
             "column": 8,
             "version": "20.11.1"
           },
@@ -20738,7 +20738,7 @@
       "name": "@edx/frontend-component-cookie-policy-banner",
       "repository": {
         "type": "git",
-        "url": "https://github.com/edx/frontend-component-cookie-policy-banner"
+        "url": "https://github.com/openedx/frontend-component-cookie-policy-banner"
       },
       "folderName": "frontend-component-cookie-policy-banner",
       "usages": {
@@ -20792,7 +20792,7 @@
         "Dropdown.Menu": [
           {
             "filePath": "src/DesktopHeader.jsx",
-            "line": 77,
+            "line": 78,
             "column": 8,
             "version": "19.9.0"
           },
@@ -20806,7 +20806,7 @@
         "Dropdown.Item": [
           {
             "filePath": "src/DesktopHeader.jsx",
-            "line": 79,
+            "line": 80,
             "column": 12,
             "version": "19.9.0"
           },
@@ -21427,13 +21427,13 @@
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/index.jsx",
-            "line": 49,
+            "line": 50,
             "column": 8,
             "version": "20.9.1"
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/index.jsx",
-            "line": 55,
+            "line": 56,
             "column": 8,
             "version": "20.9.1"
           },
@@ -21447,6 +21447,12 @@
             "filePath": "src/editors/containers/VideoEditor/components/SelectVideoModal.jsx",
             "line": 39,
             "column": 21,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 119,
+            "column": 8,
             "version": "20.9.1"
           }
         ],
@@ -21465,7 +21471,7 @@
           },
           {
             "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/index.jsx",
-            "line": 83,
+            "line": 84,
             "column": 10,
             "version": "20.9.1"
           },
@@ -21505,6 +21511,12 @@
             "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
             "line": 23,
             "column": 4,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 76,
+            "column": 10,
             "version": "20.9.1"
           },
           {
@@ -21575,6 +21587,12 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
             "line": 40,
             "column": 22,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 97,
+            "column": 16,
             "version": "20.9.1"
           }
         ],
@@ -21704,40 +21722,6 @@
             "version": "20.9.1"
           }
         ],
-        "Alert": [
-          {
-            "filePath": "src/editors/containers/TextEditor/components/ErrorAlerts/ErrorAlert.jsx",
-            "line": 41,
-            "column": 4,
-            "version": "20.9.1"
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/RawEditor/index.jsx",
-            "line": 12,
-            "column": 4,
-            "version": "20.9.1"
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ErrorSummary.jsx",
-            "line": 12,
-            "column": 2,
-            "version": "20.9.1"
-          }
-        ],
-        "Alert.Heading": [
-          {
-            "filePath": "src/editors/containers/TextEditor/components/ErrorAlerts/ErrorAlert.jsx",
-            "line": 49,
-            "column": 10,
-            "version": "20.9.1"
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ErrorSummary.jsx",
-            "line": 17,
-            "column": 4,
-            "version": "20.9.1"
-          }
-        ],
         "Form.Label": [
           {
             "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/AltTextControls.jsx",
@@ -21756,6 +21740,18 @@
             "line": 39,
             "column": 4,
             "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 84,
+            "column": 16,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 105,
+            "column": 14,
+            "version": "20.9.1"
           }
         ],
         "Form.Checkbox": [
@@ -21763,6 +21759,18 @@
             "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/AltTextControls.jsx",
             "line": 47,
             "column": 4,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 79,
+            "column": 14,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 100,
+            "column": 12,
             "version": "20.9.1"
           }
         ],
@@ -21777,6 +21785,32 @@
             "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/GalleryCard.jsx",
             "line": 14,
             "column": 6,
+            "version": "20.9.1"
+          }
+        ],
+        "Alert": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/RawEditor/index.jsx",
+            "line": 12,
+            "column": 4,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ErrorSummary.jsx",
+            "line": 12,
+            "column": 2,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 112,
+            "column": 12,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ErrorAlerts/ErrorAlert.jsx",
+            "line": 41,
+            "column": 4,
             "version": "20.9.1"
           }
         ],
@@ -21807,7 +21841,13 @@
         "Stack": [
           {
             "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/index.jsx",
-            "line": 80,
+            "line": 81,
+            "column": 6,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 74,
             "column": 6,
             "version": "20.9.1"
           }
@@ -21919,6 +21959,36 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget.jsx",
             "line": 60,
             "column": 12,
+            "version": "20.9.1"
+          }
+        ],
+        "Alert.Heading": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ErrorSummary.jsx",
+            "line": 17,
+            "column": 4,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ErrorAlerts/ErrorAlert.jsx",
+            "line": 49,
+            "column": 10,
+            "version": "20.9.1"
+          }
+        ],
+        "OverlayTrigger": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 88,
+            "column": 14,
+            "version": "20.9.1"
+          }
+        ],
+        "Tooltip": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 92,
+            "column": 18,
             "version": "20.9.1"
           }
         ],
@@ -22481,7 +22551,7 @@
       "name": "@edx/frontend-platform",
       "repository": {
         "type": "git",
-        "url": "git+https://github.com/edx/frontend-platform.git"
+        "url": "git+https://github.com/openedx/frontend-platform.git"
       },
       "folderName": "frontend-platform",
       "usages": {
@@ -22524,7 +22594,7 @@
       "name": "@edx/frontend-template-application",
       "repository": {
         "type": "git",
-        "url": "git+https://github.com/edx/frontend-template-application.git"
+        "url": "git+https://github.com/openedx/frontend-template-application.git"
       },
       "folderName": "frontend-template-application",
       "usages": {}
@@ -23561,20 +23631,26 @@
           },
           {
             "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 575,
+            "line": 574,
             "column": 20,
             "version": "20.10.0"
           },
           {
             "filePath": "src/templates/learnPage.jsx",
-            "line": 62,
+            "line": 65,
             "column": 10,
             "version": "20.10.0"
           },
           {
             "filePath": "src/templates/learnPage.jsx",
-            "line": 89,
+            "line": 92,
             "column": 12,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/templates/learnPage.jsx",
+            "line": 119,
+            "column": 10,
             "version": "20.10.0"
           },
           {
