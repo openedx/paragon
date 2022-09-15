@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Multiselect /> successfully renders 1`] = `
+<div
+  className="pgn__multiselect css-b62m3t-container"
+  onKeyDown={[Function]}
+>
+  <span
+    className="css-1f43avz-a11yText-A11yText"
+    id="react-select-2-live-region"
+  />
+  <span
+    aria-atomic="false"
+    aria-live="polite"
+    aria-relevant="additions text"
+    className="css-1f43avz-a11yText-A11yText"
+  />
+  <div
+    className="pgn__multiselect__control css-1s2u09g-control"
+    onMouseDown={[Function]}
+    onTouchEnd={[Function]}
+  >
+    <div
+      className="pgn__multiselect__floating-label css-14el2xx-placeholder"
+      onMouseDown={[Function]}
+      onTouchEnd={[Function]}
+    >
+      Select...
+    </div>
+    <div
+      className=" css-319lph-ValueContainer"
+    >
+      <div
+        className="pgn__multiselect__input css-6j8wv5-Input"
+        data-value=""
+      >
+        <input
+          aria-autocomplete="list"
+          aria-describedby="react-select-2-placeholder"
+          aria-expanded={false}
+          aria-haspopup={true}
+          autoCapitalize="none"
+          autoComplete="off"
+          autoCorrect="off"
+          className=""
+          disabled={false}
+          id="react-select-2-input"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          role="combobox"
+          spellCheck="false"
+          style={
+            Object {
+              "background": 0,
+              "border": 0,
+              "color": "inherit",
+              "font": "inherit",
+              "gridArea": "1 / 2",
+              "label": "input",
+              "margin": 0,
+              "minWidth": "2px",
+              "opacity": 1,
+              "outline": 0,
+              "padding": 0,
+              "width": "100%",
+            }
+          }
+          tabIndex={0}
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className=" css-1hb7zxy-IndicatorsContainer"
+    >
+      <span
+        className=" css-1okebmr-indicatorSeparator"
+      />
+      <button
+        aria-hidden="true"
+        aria-label="Open"
+        className="btn-icon btn-icon-primary btn-icon-md pgn__multiselect__indicator"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        onMouseDown={[Function]}
+        onTouchEnd={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="btn-icon__icon-container"
+        >
+          <span
+            className="pgn__icon btn-icon__icon"
+          >
+            <svg
+              aria-hidden={true}
+              focusable={false}
+              height={24}
+              role="img"
+              viewBox="0 0 24 24"
+              width={24}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+              />
+            </svg>
+          </span>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
