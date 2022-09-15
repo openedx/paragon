@@ -38,7 +38,7 @@ function regExpEscape(string) {
 }
 
 function toRegExp(string) {
-  return new RegExp(`${regExpEscape(string)}(?![w-])`, 'g');
+  return new RegExp(`${regExpEscape(string)}(?![\\w:-])`, 'g');
 }
 
 function replaceVariable(content, scss, css, direction) {
