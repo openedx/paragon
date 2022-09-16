@@ -3,7 +3,7 @@
   $padding-y,
   $line-height,
   $font-size,
-  $border-width
+  $label-initial-border-width
 ) {
   padding: 0 $padding-x;
 
@@ -19,7 +19,7 @@
   $padding-y,
   $line-height,
   $font-size,
-  $border-width
+  $label-float-border-width
 ) {
   .pgn__form-control-floating-label-text {
     $half-leading: calc(($line-height - .8) / 2);

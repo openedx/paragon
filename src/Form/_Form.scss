@@ -214,7 +214,7 @@ $select-icon-padding: .5625rem !default;
       transform: translateX(#{$form-control-icon-width});
 
       [dir="rtl"] & {
-        transform: translateX(#{-$form-control-icon-width});
+        transform: translateX(#{$form-control-icon-width} * -1);
       }
     }
   }
@@ -364,7 +364,9 @@ select.form-control {
   height: $custom-control-indicator-size;
   width: $custom-control-indicator-size;
   background-color: $custom-control-indicator-bg;
-  border: solid $custom-control-indicator-border-width $custom-control-indicator-border-color;
+  border:
+    solid $custom-control-indicator-border-width
+    $custom-control-indicator-border-color;
   border-radius: $custom-checkbox-indicator-border-radius;
   margin-inline-end: $custom-control-gutter;
   background-position: center;
@@ -409,10 +411,10 @@ select.form-control {
   &:focus::before {
     content: "";
     position: absolute;
-    top: -$form-check-position-axis;
-    right: -$form-check-position-axis;
-    bottom: -$form-check-position-axis;
-    left: -$form-check-position-axis;
+    top: calc(#{$form-check-position-axis} * -1);
+    right: calc(#{$form-check-position-axis} * -1);
+    bottom: calc(#{$form-check-position-axis} * -1);
+    left: calc(#{$form-check-position-axis} * -1);
     border: $form-check-border-width solid $input-focus-border-color;
     border-radius: $form-check-focus-border-radius;
   }

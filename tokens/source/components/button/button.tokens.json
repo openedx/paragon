@@ -3,15 +3,15 @@
     "padding": {
       "y": {
         "base": { "value": "{core.input.btn.padding.y.value}", "themeable": true, "source": "$btn-padding-y" },
-        "lg": { "value": "{core.input.btn.padding.lg.y.value}", "themeable": true, "source": "$btn-padding-y-lg" }
+        "lg": { "value": "{core.input.btn.padding.lg.y.value}", "themeable": true, "source": "$btn-padding-y-lg" },
+        "sm": {
+          "y": { "value": "{core.input.btn.padding.sm.y.value}", "themeable": true, "source": "$btn-padding-y-sm" },
+          "x": { "value": "{core.input.btn.padding.sm.x.value}", "themeable": true, "source": "$btn-padding-x-sm" }
+        }
       },
       "x": {
         "base": { "value": "{core.input.btn.padding.x.value}", "themeable": true, "source": "$btn-padding-x" },
         "lg": { "value": "{core.input.btn.padding.lg.x.value}", "themeable": true, "source": "$btn-padding-x-lg" }
-      },
-      "sm": {
-        "y": { "value": "{core.input.btn.padding.sm.y.value}", "themeable": true, "source": "$input-btn-padding-y-sm" },
-        "x": { "value": "{core.input.btn.padding.sm.x.value}", "themeable": true, "source": "$input-btn-padding-x-sm" }
       }
     },
     "font": {
@@ -40,7 +40,7 @@
     },
     "box-shadow": {
       "base": {
-        "value": "inset 0 1px 0 rgba({color.white}, .15), 0 1px 1px rgba({color.black}, .075)", "themeable": true, "source": "$btn-box-shadow"
+        "value": "inset 0 1px 0 rgba({color.white.value}, .15), 0 1px 1px rgba({color.black.value}, .075)", "themeable": true, "source": "$btn-box-shadow"
       },
       "active": { "value": "none", "themeable": true, "source": "$btn-active-box-shadow" }
     },
@@ -65,8 +65,16 @@
         "color": { "value": "{color.white.value}", "themeable": true, "source": "$btn-inverse-tertiary-color" },
         "bg": {
           "base": { "value": "transparent", "themeable": true, "source": "$btn-inverse-tertiary-bg" },
-          "hover": { "value": "rgba(255, 255, 255, .1)", "themeable": true, "source": "$btn-inverse-tertiary-hover-bg" },
-          "active": { "value": "{btn.tertiary.inverse.bg.hover.value}", "themeable": true, "source": "$btn-inverse-tertiary-active-bg" }
+          "hover": {
+            "value": "rgba({color.white.value}, .1)",
+            "themeable": true,
+            "source": "$btn-inverse-tertiary-hover-bg"
+          },
+          "active": {
+            "value": "{btn.tertiary.inverse.bg.hover.value}",
+            "themeable": true,
+            "source": "$btn-inverse-tertiary-active-bg"
+          }
         }
       }
     },

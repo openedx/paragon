@@ -6,7 +6,8 @@
     },
     "border": {
       "base": { "value": "transparent", "themeable": true, "source": "$border" },
-      "active": { "value": "transparent", "themeable": true, "source": "$active-border" }
+      "active": { "value": "transparent", "themeable": true, "source": "$active-border" },
+      "hover": { "value": "transparent", "themeable": true, "source": "$hover-border" }
     }
   }
 }

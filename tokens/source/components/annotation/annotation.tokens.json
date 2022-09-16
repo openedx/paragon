@@ -1,7 +1,11 @@
 {
   "annotation": {
     "padding": { "value": ".5rem", "themeable": true, "source": "$annotation-padding" },
-    "box-shadow": { "value": "drop-shadow(0 2px 4px rgba(0, 0, 0, .15))\n  drop-shadow(0 2px 8px rgba(0, 0, 0, .15))", "themeable": true, "source": "$annotation-box-shadow" },
+    "box-shadow": {
+      "value": "drop-shadow(0 2px 4px rgba(0, 0, 0, .15))\n  drop-shadow(0 2px 8px rgba(0, 0, 0, .15))",
+      "themeable": true,
+      "source": "$annotation-box-shadow"
+    },
     "border": {
       "radius": { "value": ".25rem", "themeable": true, "source": "$annotation-border-radius" }
     },

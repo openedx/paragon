@@ -4,12 +4,12 @@
   @return map-get($chip-theme-colors, "#{$color}-#{$element}-#{$type}");
 }
 
-@mixin chip-variant($background, $border, $hover-background,
-$hover-border, $active-background, $active-border, $color,
+@mixin chip-variant($chip-variant-background, $chip-variant-border, $hover-background,
+$hover-border, $chip-variant-active-background, $chip-variant-active-border, $color,
 $hover-color, $active-color, $focus-border) {
-  background-color: $background;
+  background-color: $chip-variant-background;
   color: $color;
-  border-color: $border;
+  border-color: $chip-variant-border;
 
   &:hover {
     cursor: pointer;
@@ -21,27 +21,27 @@ $hover-color, $active-color, $focus-border) {
 
   &.active,
   &:active {
-    background-color: $active-background;
+    background-color: $chip-variant-active-background;
     color: $active-color;
-    border-color: $active-border;
+    border-color: $chip-variant-active-border;
   }
 
   &:focus::before {
     content: "";
     position: absolute;
-    top: -$chip-position-axis;
-    right: -$chip-position-axis;
-    bottom: -$chip-position-axis;
-    left: -$chip-position-axis;
+    top: calc(#{$chip-position-axis} * -1);
+    right: calc(#{$chip-position-axis} * -1);
+    bottom: calc(#{$chip-position-axis} * -1);
+    left: calc(#{$chip-position-axis} * -1);
     border: $chip-border-width solid $focus-border;
     border-radius: $chip-focus-border-radius;
   }
 
   &:disabled {
     cursor: default;
-    background-color: $background;
+    background-color: $chip-variant-background;
     color: $color;
-    border-color: $border;
+    border-color: $chip-variant-border;
     opacity: $chip-disable-opacity;
     pointer-events: none;
 
@@ -100,28 +100,27 @@ $hover-color, $active-color, $focus-border) {
 
 @each $color in $chip-theme-variants {
   .pgn__chip-#{$color} {
-
-    $background: get-color("background", $color, "inactive");
-    $border: get-color("border", $color, "inactive");
+    $chip-variant-background: get-color("background", $color, "inactive");
+    $chip-variant-border: get-color("border", $color, "inactive");
     $text: get-color("text", $color, "inactive");
 
     $hover-background: get-color("background", $color, "hover");
     $hover-border: get-color("border", $color, "hover");
     $hover-text: get-color("text", $color, "hover");
 
-    $active-background: get-color("background", $color, "selected");
-    $active-border: get-color("border", $color, "selected");
+    $chip-variant-active-background: get-color("background", $color, "selected");
+    $chip-variant-active-border: get-color("border", $color, "selected");
     $active-text: get-color("text", $color, "selected");
 
     $focus-border: get-color("border", $color, "focus");
 
     @include chip-variant(
-      $background,
-      $border,
+      $chip-variant-background,
+      $chip-variant-border,
       $hover-background,
       $hover-border,
-      $active-background,
-      $active-border,
+      $chip-variant-active-background,
+      $chip-variant-active-border,
       $text,
       $hover-text,
       $active-text,

@@ -3,158 +3,58 @@
     "input": {
       "padding": {
         "y": {
-          "base": {
-            "value": "{core.input.btn.padding.y.value}",
-            "themeable": true,
-            "source": "$input-padding-y"
-          },
-          "sm": {
-            "value": "{core.input.btn.padding.sm.y.value}",
-            "themeable": true,
-            "source": "$input-padding-y-sm"
-          },
-          "lg": {
-            "value": "{core.input.btn.padding.lg.y.value}",
-            "themeable": true,
-            "source": "$input-padding-y-lg"
-          }
+          "base": { "value": "{core.input.btn.padding.y.value}", "themeable": true, "source": "$input-padding-y" },
+          "sm": { "value": "{core.input.btn.padding.sm.y.value}", "themeable": true, "source": "$input-padding-y-sm" },
+          "lg": { "value": "{core.input.btn.padding.lg.y.value}", "themeable": true, "source": "$input-padding-y-lg" }
         },
         "x": {
-          "base": {
-            "value": "{core.input.btn.padding.x.value}",
-            "themeable": true,
-            "source": "$input-padding-x"
-          },
-          "sm": {
-            "value": "{core.input.btn.padding.sm.x.value}",
-            "themeable": true,
-            "source": "$input-padding-x-sm"
-          },
-          "lg": {
-            "value": "{core.input.btn.padding.lg.x.value}",
-            "themeable": true,
-            "source": "$input-padding-x-lg"
-          }
+          "base": { "value": "{core.input.btn.padding.x.value}", "themeable": true, "source": "$input-padding-x" },
+          "sm": { "value": "{core.input.btn.padding.sm.x.value}", "themeable": true, "source": "$input-padding-x-sm" },
+          "lg": { "value": "{core.input.btn.padding.lg.x.value}", "themeable": true, "source": "$input-padding-x-lg" }
         }
       },
       "font": {
-        "family": {
-          "value": "{core.input.btn.font.family.value}",
-          "themeable": true,
-          "source": "$input-font-family"
-        },
+        "family": { "value": "{core.input.btn.font.family.value}", "themeable": true, "source": "$input-font-family" },
         "size": {
-          "base": {
-            "value": "{core.input.btn.font.size.base.value}",
-            "themeable": true,
-            "source": "$input-font-size"
-          },
-          "sm": {
-            "value": "{core.input.btn.font.size.sm.value}",
-            "themeable": true,
-            "source": "$input-font-size-sm"
-          },
-          "lg": {
-            "value": "{core.input.btn.font.size.lg.value}",
-            "themeable": true,
-            "source": "$input-font-size-lg"
-          }
+          "base": { "value": "{core.input.btn.font.size.base.value}", "themeable": true, "source": "$input-font-size" },
+          "sm": { "value": "{core.input.btn.font.size.sm.value}", "themeable": true, "source": "$input-font-size-sm" },
+          "lg": { "value": "{core.input.btn.font.size.lg.value}", "themeable": true, "source": "$input-font-size-lg" }
         },
-        "weight": {
-          "value": "{font.weight.base.value}",
-          "themeable": true,
-          "source": "$input-font-weight"
-        }
+        "weight": { "value": "{font.weight.base.value}", "themeable": true, "source": "$input-font-weight" }
       },
       "line": {
         "height": {
-          "base": {
-            "value": "{core.input.btn.line.height.base.value}",
-            "themeable": true,
-            "source": "$input-line-height"
-          },
-          "sm": {
-            "value": "{core.input.btn.line.height.sm.value}",
-            "themeable": true,
-            "source": "$input-line-height-sm"
-          },
-          "lg": {
-            "value": "{core.input.btn.line.height.lg.value}",
-            "themeable": true,
-            "source": "$input-line-height-lg"
-          }
+          "base": { "value": "{core.input.btn.line.height.base.value}", "themeable": true, "source": "$input-line-height" },
+          "sm": { "value": "{core.input.btn.line.height.sm.value}", "themeable": true, "source": "$input-line-height-sm" },
+          "lg": { "value": "{core.input.btn.line.height.lg.value}", "themeable": true, "source": "$input-line-height-lg" }
         }
       },
       "bg": {
-        "base": {
-          "value": "{color.white.value}",
-          "themeable": true,
-          "source": "$input-bg"
-        },
-        "disabled": {
-          "value": "{color.gray.100.value}",
-          "themeable": true,
-          "source": "$input-disabled-bg"
-        }
+        "base": { "value": "{color.white.value}", "themeable": true, "source": "$input-bg" },
+        "disabled": { "value": "{color.gray.100.value}", "themeable": true, "source": "$input-disabled-bg" }
       },
       "color": {
-        "base": {
-          "value": "{color.gray.700.value}",
-          "themeable": true,
-          "source": "$input-color"
-        },
-        "placeholder": {
-          "value": "{color.gray.500.value}",
-          "themeable": true,
-          "source": "$input-placeholder-color"
-        },
-        "plaintext": {
-          "value": "{body.color.value}",
-          "themeable": true,
-          "source": "$input-placeholder-color"
-        }
+        "base": { "value": "{color.gray.700.value}", "themeable": true, "source": "$input-color" },
+        "placeholder": { "value": "{color.gray.500.value}", "themeable": true, "source": "$input-placeholder-color" },
+        "plaintext": { "value": "{body.color.value}", "themeable": true, "source": "$input-placeholder-color" }
       },
       "border": {
-        "color": {
-          "value": "{color.gray.500.value}",
-          "themeable": true,
-          "source": "$input-border-color"
-        },
-        "width": {
-          "value": "{core.input.btn.border.width.value}",
-          "themeable": true,
-          "source": "$input-border-width"
-        },
+        "color": { "value": "{color.gray.500.value}", "themeable": true, "source": "$input-border-color" },
+        "width": { "value": "{core.input.btn.border.width.value}", "themeable": true, "source": "$input-border-width" },
         "height": {
           "value": "calc({form.input.border.width.value} * 2)",
           "themeable": true,
           "source": "$input-height-border"
         },
         "radius": {
-          "base": {
-            "value": "{border.radius.base.value}",
-            "themeable": true,
-            "source": "$input-border-radius"
-          },
-          "lg": {
-            "value": "{border.radius.lg.value}",
-            "themeable": true,
-            "source": "$input-border-radius-lg"
-          },
-          "sm": {
-            "value": "{border.radius.sm.value}",
-            "themeable": true,
-            "source": "$input-border-radius-sm"
-          }
+          "base": { "value": "{border.radius.base.value}", "themeable": true, "source": "$input-border-radius" },
+          "lg": { "value": "{border.radius.lg.value}", "themeable": true, "source": "$input-border-radius-lg" },
+          "sm": { "value": "{border.radius.sm.value}", "themeable": true, "source": "$input-border-radius-sm" }
         }
       },
       "box": {
         "shadow": {
-          "base": {
-            "value": "inset 0 1px 1px rgba(0, 0, 0, .075)",
-            "themeable": true,
-            "source": "$input-box-shadow"
-          },
+          "base": { "value": "inset 0 1px 1px rgba(0, 0, 0, .075)", "themeable": true, "source": "$input-box-shadow" },
           "focus": {
             "value": "{core.input.btn.focus.box.shadow.value}",
             "themeable": true,
@@ -163,28 +63,12 @@
         }
       },
       "focus": {
-        "bg": {
-          "value": "{form.input.bg.base.value}",
-          "themeable": true,
-          "source": "$input-focus-bg"
-        },
+        "bg": { "value": "{form.input.bg.base.value}", "themeable": true, "source": "$input-focus-bg" },
         "color": {
-          "base": {
-            "value": "{form.input.color.base.value}",
-            "themeable": true,
-            "source": "$input-focus-color"
-          },
-          "border": {
-            "value": "{component.active.bg.value}",
-            "themeable": true,
-            "source": "$input-focus-border-color"
-          }
+          "base": { "value": "{form.input.color.base.value}", "themeable": true, "source": "$input-focus-color" },
+          "border": { "value": "{component.active.bg.value}", "themeable": true, "source": "$input-focus-border-color" }
         },
-        "width": {
-          "value": "1px",
-          "themeable": true,
-          "source": "$input-focus-width"
-        }
+        "width": { "value": "1px", "themeable": true, "source": "$input-focus-width" }
       },
       "height": {
         "base": {
@@ -221,122 +105,66 @@
         }
       },
       "width": {
-        "hover": {
-          "value": "1px",
-          "themeable": true,
-          "source": "$input-hover-width"
-        }
+        "hover": { "value": "1px", "themeable": true, "source": "$input-hover-width" }
       },
       "transition": {
         "value": "border-color .15s ease-in-out, box-shadow .15s ease-in-out",
         "themeable": true,
-        "source": "$custom-forms-transition"
+        "source": "$input-transition"
       },
       "check": {
-        "gutter": {
-          "value": "1.25rem",
-          "themeable": true,
-          "source": "$form-check-input-gutter"
-        },
+        "gutter": { "value": "1.25rem", "themeable": true, "source": "$form-check-input-gutter" },
         "margin": {
           "x": {
-            "base": {
-              "value": ".25rem",
-              "themeable": true,
-              "source": "$form-check-input-margin-x"
-            },
-            "inline": {
-              "value": ".3125rem",
-              "themeable": true,
-              "source": "$form-check-inline-input-margin-x"
-            }
+            "base": { "value": ".25rem", "themeable": true, "source": "$form-check-input-margin-x" },
+            "inline": { "value": ".3125rem", "themeable": true, "source": "$form-check-inline-input-margin-x" }
           },
-          "y": {
-            "value": ".3rem",
-            "themeable": true,
-            "source": "$form-check-input-margin-y"
-          }
+          "y": { "value": ".3rem", "themeable": true, "source": "$form-check-input-margin-y" }
         }
       },
       "group": {
         "addon": {
           "color": {
-            "base": {
-              "value": "{form.input.color.base.value}",
-              "themeable": true,
-              "source": "$input-group-addon-color"
-            },
+            "base": { "value": "{form.input.color.base.value}", "themeable": true, "source": "$input-group-addon-color" },
             "border": {
               "value": "{form.input.border.color.value}",
               "themeable": true,
               "source": "$input-group-addon-border-color"
             }
           },
-          "bg": {
-            "value": "{color.gray.100.value}",
-            "themeable": true,
-            "source": "$input-group-addon-bg"
-          }
+          "bg": { "value": "{color.gray.100.value}", "themeable": true, "source": "$input-group-addon-bg" }
         }
       }
     },
     "text": {
       "margin": {
-        "top": {
-          "value": ".25rem",
-          "themeable": true,
-          "source": "$form-text-margin-top"
-        }
+        "top": { "value": ".25rem", "themeable": true, "source": "$form-text-margin-top" }
       }
     },
     "check": {
       "inline": {
         "margin": {
-          "x": {
-            "value": ".75rem",
-            "themeable": true,
-            "source": "$form-check-inline-margin-x"
-          }
+          "x": { "value": ".75rem", "themeable": true, "source": "$form-check-inline-margin-x" }
         }
       },
       "position": {
-        "axis": {
-          "value": ".375rem",
-          "themeable": true,
-          "source": "$form-check-position-axis"
-        }
+        "axis": { "value": ".375rem", "themeable": true, "source": "$form-check-position-axis" }
       },
       "border": {
         "radius": {
-          "focus": {
-            "value": ".0625rem",
-            "themeable": true,
-            "source": "$form-check-focus-border-radius"
-          }
+          "focus": { "value": ".0625rem", "themeable": true, "source": "$form-check-focus-border-radius" }
         },
-        "width": {
-          "value": ".125rem",
-          "themeable": true,
-          "source": "$form-check-border-width"
-        }
+        "width": { "value": ".125rem", "themeable": true, "source": "$form-check-border-width" }
       }
     },
     "grid": {
       "gutter": {
-        "width": {
-          "value": "10px",
-          "themeable": true,
-          "source": "$form-grid-gutter-width"
-        }
+        "width": { "value": "10px", "themeable": true, "source": "$form-grid-gutter-width" }
       }
     },
     "group": {
       "margin": {
-        "bottom": {
-          "value": "1rem",
-          "themeable": true,
-          "source": "$form-group-margin-bottom"
-        }
+        "bottom": { "value": "1rem", "themeable": true, "source": "$form-group-margin-bottom" }
       }
     },
     "custom": {
@@ -346,40 +174,16 @@
         "source": "$custom-forms-transition"
       },
       "control": {
-        "gutter": {
-          "value": ".5rem",
-          "themeable": true,
-          "source": "$custom-control-gutter"
-        },
+        "gutter": { "value": ".5rem", "themeable": true, "source": "$custom-control-gutter" },
         "spacer": {
-          "x": {
-            "value": "1rem",
-            "themeable": true,
-            "source": "$custom-control-spacer-x"
-          }
+          "x": { "value": "1rem", "themeable": true, "source": "$custom-control-spacer-x" }
         },
-        "cursor": {
-          "value": "null",
-          "themeable": true,
-          "source": "$custom-control-cursor"
-        },
+        "cursor": { "value": "null", "themeable": true, "source": "$custom-control-cursor" },
         "indicator": {
-          "size": {
-            "value": "1.25rem",
-            "themeable": true,
-            "source": "$custom-control-indicator-size"
-          },
+          "size": { "value": "1.25rem", "themeable": true, "source": "$custom-control-indicator-size" },
           "bg": {
-            "base": {
-              "value": "{form.input.bg.base.value}",
-              "themeable": true,
-              "source": "$custom-control-indicator-bg"
-            },
-            "size": {
-              "value": "100%",
-              "themeable": true,
-              "source": "$custom-control-indicator-bg-size"
-            }
+            "base": { "value": "{form.input.bg.base.value}", "themeable": true, "source": "$custom-control-indicator-bg" },
+            "size": { "value": "100%", "themeable": true, "source": "$custom-control-indicator-bg-size" }
           },
           "box": {
             "shadow": {
@@ -394,11 +198,7 @@
               "themeable": true,
               "source": "$custom-control-indicator-border-color"
             },
-            "width": {
-              "value": "2px",
-              "themeable": true,
-              "source": "$custom-control-indicator-border-width"
-            }
+            "width": { "value": "2px", "themeable": true, "source": "$custom-control-indicator-border-width" }
           },
           "disabled": {
             "bg": {
@@ -427,11 +227,7 @@
             },
             "box": {
               "shadow": {
-                "base": {
-                  "value": "none",
-                  "themeable": true,
-                  "source": "$custom-control-indicator-checked-box-shadow"
-                },
+                "base": { "value": "none", "themeable": true, "source": "$custom-control-indicator-checked-box-shadow" },
                 "focus": {
                   "value": "0 0 0 4px rgba(0, 0, 0, .1)",
                   "themeable": true,
@@ -473,21 +269,13 @@
               "source": "$custom-control-indicator-active-bg"
             },
             "box": {
-              "shadow": {
-                "value": "none",
-                "themeable": true,
-                "source": "$custom-control-indicator-active-box-shadow"
-              }
+              "shadow": { "value": "none", "themeable": true, "source": "$custom-control-indicator-active-box-shadow" }
             }
           }
         },
         "label": {
           "color": {
-            "base": {
-              "value": "null",
-              "themeable": true,
-              "source": "$custom-control-label-color"
-            },
+            "base": { "value": "null", "themeable": true, "source": "$custom-control-label-color" },
             "disabled": {
               "value": "{color.gray.500.value}",
               "themeable": true,
@@ -499,11 +287,7 @@
       "checkbox": {
         "indicator": {
           "border": {
-            "radius": {
-              "value": "0",
-              "themeable": true,
-              "source": "$custom-checkbox-indicator-border-radius"
-            }
+            "radius": { "value": "0", "themeable": true, "source": "$custom-checkbox-indicator-border-radius" }
           },
           "indeterminate": {
             "bg": {
@@ -568,21 +352,9 @@
       "select": {
         "padding": {
           "y": {
-            "base": {
-              "value": "{form.input.padding.y.base.value}",
-              "themeable": true,
-              "source": "$custom-select-padding-y"
-            },
-            "sm": {
-              "value": "{form.input.padding.y.sm.value}",
-              "themeable": true,
-              "source": "$custom-select-padding-y-sm"
-            },
-            "lg": {
-              "value": "{form.input.padding.y.lg.value}",
-              "themeable": true,
-              "source": "$custom-select-padding-y-lg"
-            }
+            "base": { "value": "{form.input.padding.y.base.value}", "themeable": true, "source": "$custom-select-padding-y" },
+            "sm": { "value": "{form.input.padding.y.sm.value}", "themeable": true, "source": "$custom-select-padding-y-sm" },
+            "lg": { "value": "{form.input.padding.y.lg.value}", "themeable": true, "source": "$custom-select-padding-y-lg" }
           },
           "x": {
             "base": {
@@ -651,11 +423,7 @@
           }
         },
         "indicator": {
-          "padding": {
-            "value": "1rem",
-            "themeable": true,
-            "source": "$custom-select-indicator-padding"
-          },
+          "padding": { "value": "1rem", "themeable": true, "source": "$custom-select-indicator-padding" },
           "color": {
             "value": "{color.gray.700.value}",
             "themeable": true,
@@ -685,11 +453,7 @@
             "themeable": true,
             "source": "$custom-select-disabled-bg"
           },
-          "size": {
-            "value": "24px 24px",
-            "themeable": true,
-            "source": "$custom-select-bg-size"
-          }
+          "size": { "value": "24px 24px", "themeable": true, "source": "$custom-select-bg-size" }
         },
         "feedback": {
           "icon": {
@@ -767,32 +531,12 @@
       },
       "range": {
         "track": {
-          "width": {
-            "value": "100%",
-            "themeable": true,
-            "source": "$custom-range-track-width"
-          },
-          "height": {
-            "value": ".5rem",
-            "themeable": true,
-            "source": "$custom-range-track-height"
-          },
-          "cursor": {
-            "value": "pointer",
-            "themeable": true,
-            "source": "$custom-range-track-cursor"
-          },
-          "bg": {
-            "value": "{color.gray.300.value}",
-            "themeable": true,
-            "source": "$custom-range-track-bg"
-          },
+          "width": { "value": "100%", "themeable": true, "source": "$custom-range-track-width" },
+          "height": { "value": ".5rem", "themeable": true, "source": "$custom-range-track-height" },
+          "cursor": { "value": "pointer", "themeable": true, "source": "$custom-range-track-cursor" },
+          "bg": { "value": "{color.gray.300.value}", "themeable": true, "source": "$custom-range-track-bg" },
           "border": {
-            "radius": {
-              "value": "1rem",
-              "themeable": true,
-              "source": "$custom-range-track-border-radius"
-            }
+            "radius": { "value": "1rem", "themeable": true, "source": "$custom-range-track-border-radius" }
           },
           "box": {
             "shadow": {
@@ -803,11 +547,7 @@
           }
         },
         "thumb": {
-          "width": {
-            "value": "1rem",
-            "themeable": true,
-            "source": "$custom-range-thumb-width"
-          },
+          "width": { "value": "1rem", "themeable": true, "source": "$custom-range-thumb-width" },
           "height": {
             "value": "{form.custom.range.thumb.width.value}",
             "themeable": true,
@@ -826,16 +566,8 @@
             }
           },
           "border": {
-            "base": {
-              "value": "0",
-              "themeable": true,
-              "source": "$custom-range-thumb-border"
-            },
-            "radius": {
-              "value": "1rem",
-              "themeable": true,
-              "source": "$custom-range-thumb-border-radius"
-            }
+            "base": { "value": "0", "themeable": true, "source": "$custom-range-thumb-border" },
+            "radius": { "value": "1rem", "themeable": true, "source": "$custom-range-thumb-border-radius" }
           },
           "box": {
             "shadow": {
@@ -1016,23 +748,11 @@
       },
       "tooltip": {
         "padding": {
-          "y": {
-            "value": ".25rem",
-            "themeable": true,
-            "source": "$form-feedback-tooltip-padding-y"
-          },
-          "x": {
-            "value": ".5rem",
-            "themeable": true,
-            "source": "$form-feedback-tooltip-padding-x"
-          }
+          "y": { "value": ".25rem", "themeable": true, "source": "$form-feedback-tooltip-padding-y" },
+          "x": { "value": ".5rem", "themeable": true, "source": "$form-feedback-tooltip-padding-x" }
         },
         "font": {
-          "size": {
-            "value": "{font.size.sm.value}",
-            "themeable": true,
-            "source": "$form-feedback-tooltip-font-size"
-          }
+          "size": { "value": "{font.size.sm.value}", "themeable": true, "source": "$form-feedback-tooltip-font-size" }
         },
         "line": {
           "height": {
@@ -1041,11 +761,7 @@
             "source": "$form-feedback-tooltip-line-height"
           }
         },
-        "opacity": {
-          "value": ".9",
-          "themeable": true,
-          "source": "$form-feedback-tooltip-opacity"
-        },
+        "opacity": { "value": ".9", "themeable": true, "source": "$form-feedback-tooltip-opacity" },
         "border": {
           "radius": {
             "value": "{border.radius.base.value}",
@@ -1053,6 +769,16 @@
             "source": "$form-feedback-tooltip-border-radius"
           }
         }
+      }
+    },
+    "control": {
+      "icon": {
+        "width": { "value": "32px", "themeable": true, "source": "$form-control-icon-width" }
+      }
+    },
+    "select": {
+      "icon": {
+        "padding": { "value": ".5625rem", "themeable": true, "source": "$select-icon-padding" }
       }
     }
   }

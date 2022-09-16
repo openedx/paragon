@@ -104,7 +104,11 @@
       "brand": {
         "color": {
           "base": { "value": "{navbar.light.color.active.value}", "themeable": true, "source": "$navbar-light-brand-color" },
-          "hover": { "value": "{navbar.light.color.active.value}", "themeable": true, "source": "$navbar-light-brand-hover-color" }
+          "hover": {
+            "value": "{navbar.light.color.active.value}",
+            "themeable": true,
+            "source": "$navbar-light-brand-hover-color"
+          }
         }
       }
     }

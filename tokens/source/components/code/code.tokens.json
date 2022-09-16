@@ -9,11 +9,19 @@
                 "size": { "value": "{code.font.size.value}", "themeable": true, "source": "$kbd-font-size" }
             },
             "box": {
-                "shadow": { "value": "inset 0 -.1rem 0 rgba(0, 0, 0, .25)", "themeable": true, "source": "$kbd-box-shadow" }
+                "shadow": {
+                    "value": "inset 0 -.1rem 0 rgba({color.black.value}, .25)",
+                    "themeable": true,
+                    "source": "$kbd-box-shadow"
+                }
             },
             "nested": { 
                 "font": { 
-                    "weight": { "value": "{font.weight.bold.value}", "themeable": true, "source": "$nested-kbd-font-weight" }
+                    "weight": {
+                        "value": "{font.weight.bold.value}",
+                        "themeable": true,
+                        "source": "$nested-kbd-font-weight"
+                    }
                 }
             },
             "padding": {

@@ -92,8 +92,10 @@
   "reduced": {
     "dropdown": {
       "height": {
-        "max": { "value": "60vh", "themeable": true, "source": "$pagination-reduced-dropdown-max-height" },
-        "min": { "value": "6rem", "themeable": true, "source": "$pagination-reduced-dropdown-min-height" }
+        "max": { "value": "60vh", "themeable": true, "source": "$pagination-reduced-dropdown-max-height" }
+      },
+      "width": {
+        "min": { "value": "6rem", "themeable": true, "source": "$pagination-reduced-dropdown-min-width" }
       }
     }
   }

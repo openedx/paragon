@@ -8,7 +8,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--pgn-font-size-xs);
+  font-size: $font-size-xs;
 
   @each $name, $colors in $bubble-variants {
     &.pgn__bubble-#{$name} {
@@ -19,7 +19,7 @@
 
   &:disabled,
   &.disabled {
-    background: var(--pgn-color-gray-500);
+    background: $gray-500;
   }
 
   &.expandable {

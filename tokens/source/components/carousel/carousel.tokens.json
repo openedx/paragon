@@ -32,7 +32,11 @@
     },
     "transition": {
       "duration": { "value": ".6s", "themeable": true, "source": "$carousel-transition-duration" },
-      "base": { "value": "transform {carousel.transition.duration.value} ease-in-out", "themeable": true, "source": "$carousel-transition-duration" }
+      "base": {
+        "value": "transform {carousel.transition.duration.value} ease-in-out",
+        "themeable": true,
+        "source": "$carousel-transition-duration"
+      }
     }
   }
 }

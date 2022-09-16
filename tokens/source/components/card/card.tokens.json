@@ -12,7 +12,7 @@
         "logo": { "value": ".25rem", "themeable": true, "source": "$card-logo-border-radius" }
       },
       "color": {
-        "base": { "value": "rgba(0, 0, 0, .125)", "themeable": true, "source": "$card-border-color" },
+        "base": { "value": "rgba({color.black.value}, .125)", "themeable": true, "source": "$card-border-color" },
         "focus": { "value": "rgba(0, 0, 0, .5)", "themeable": true, "source": "$card-border-focus-color" }
       }
     },
@@ -32,7 +32,11 @@
       "horizontal": {
         "width": {
           "max": { "value": "240px", "themeable": true, "source": "$card-image-horizontal-max-width" },
-          "min": { "value": "{card.image.horizontal.width.max.value}", "themeable": true, "source": "$card-image-horizontal-min-width" }
+          "min": {
+            "value": "{card.image.horizontal.width.max.value}",
+            "themeable": true,
+            "source": "$card-image-horizontal-min-width"
+          }
         }
       },
       "vertical": {

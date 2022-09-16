@@ -33,7 +33,11 @@
         "active": {
           "color": {
             "base": { "value": "{color.primary.500.value}", "themeable": true, "source": "$nav-tabs-link-active-color" },
-            "border": { "value": "transparent transparent {color.primary.500.value}", "themeable": true, "source": "$nav-tabs-link-active-border-color" }
+            "border": {
+              "value": "transparent transparent {color.primary.500.value}",
+              "themeable": true,
+              "source": "$nav-tabs-link-active-border-color"
+            }
           },
           "bg": { "value": "{body.bg.value}", "themeable": true, "source": "$nav-tabs-link-active-bg" }
         }
@@ -46,7 +50,11 @@
       "link": {
         "link": {
           "active": {
-            "color": { "value": "{component.active.color.value}", "themeable": true, "source": "$nav-pills-link-active-color" },
+            "color": {
+              "value": "{component.active.color.value}",
+              "themeable": true,
+              "source": "$nav-pills-link-active-color"
+            },
             "bg": { "value": "{component.active.bg.value}", "themeable": true, "source": "$nav-pills-link-active-bg" }
           }
         }
