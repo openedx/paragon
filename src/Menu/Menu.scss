@@ -1,3 +1,5 @@
+@import "variables";
+
 .pgn__menu-item {
   display: flex;
   align-items: center;
@@ -20,7 +22,6 @@
   font-size: $btn-font-size;
   height: 48px;
   border-radius: 0;
-  $hover-border: transparent;
 
   .pgn__menu-item-content-spacer {
     flex-grow: 1;
@@ -38,11 +39,6 @@
   &:disabled {
     opacity: $btn-disabled-opacity;
   }
-
-  $background: $btn-tertiary-bg;
-  $border: transparent;
-  $active-background: $btn-tertiary-active-bg;
-  $active-border: transparent;
 
   &:not(:disabled):not(.disabled):active,
   &:not(:disabled):not(.disabled).active,

@@ -21,6 +21,10 @@
       "lg": { "value": "1.4063rem", "themeable": true, "source": "$font-size-lg" },
       "sm": { "value": ".875rem", "themeable": true, "source": "$font-size-sm" },
       "xs": { "value": ".75rem", "themeable": true, "source": "$font-size-xs" },
+      "small": { 
+        "base": { "value": "87.5%", "themeable": true, "source": "$small-font-size" },
+        "x": { "value": "75%", "themeable": true, "source": "$x-small-font-size" }
+      },
       "h1": { "value": "2.5rem", "themeable": true, "source": "$h1-font-size" },
       "h2": { "value": "2rem", "themeable": true, "source": "$h2-font-size" },
       "h3": { "value": "1.375rem", "themeable": true, "source": "$h3-font-size" },

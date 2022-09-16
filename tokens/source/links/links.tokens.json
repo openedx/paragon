@@ -26,11 +26,19 @@
       "inline": {
         "color": { "value": "{color.primary.500.value}", "themeable": true, "source": "$muted-inline-link-color" },
         "decoration": { "value": "underline", "themeable": true, "source": "$muted-inline-link-decoration" },
-        "decoration-color": { "value": "rgba(10, 48, 85, .3)", "themeable": true, "source": "$muted-inline-link-decoration-color" },
+        "decoration-color": {
+          "value": "rgba(10, 48, 85, .3)",
+          "themeable": true,
+          "source": "$muted-inline-link-decoration-color"
+        },
         "hover": {
           "color": { "value": "#020911", "themeable": true, "source": "$muted-inline-link-hover-color" },
           "decoration": { "value": "underline", "themeable": true, "source": "$muted-inline-link-hover-decoration" },
-          "decoration-color": { "value": "#020911", "themeable": true, "source": "$muted-inline-link-hover-decoration-color" }
+          "decoration-color": {
+            "value": "#020911",
+            "themeable": true,
+            "source": "$muted-inline-link-hover-decoration-color"
+          }
         }
       }
     },
@@ -44,7 +52,11 @@
       "inline": {
         "color": { "value": "{color.brand.500.value}", "themeable": true, "source": "$inline-link-color" },
         "decoration": { "value": "underline", "themeable": true, "source": "$inline-link-decoration" },
-        "decoration-color": { "value": "rgba(0, 109, 170, .3)", "themeable": true, "source": "$inline-link-decoration-color" },
+        "decoration-color": {
+          "value": "rgba(0, 109, 170, .3)",
+          "themeable": true,
+          "source": "$inline-link-decoration-color"
+        },
         "hover": {
           "color": { "value": "#003C5E", "themeable": true, "source": "$inline-link-hover-color" },
           "decoration": { "value": "underline", "themeable": true, "source": "$inline-link-hover-decoration" },
