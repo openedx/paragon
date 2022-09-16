@@ -1,0 +1,36 @@
+name: Tokens auto-build
+
+on:
+  push:
+    paths:
+      - 'tokens/**'
+
+jobs:
+  tokens-update:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [16]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Nodejs
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: npm ci
+        working-directory: tokens
+      - name: Run build script
+        run: npm run build
+        working-directory: tokens
+      - name: Create pull request for dependent project usages
+        id: cpr
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: "docs: update tokens build"
+          title: "docs: update tokens build"
+          body: "Contains automated changes to tokens build, which provides css and scss variables generation."
+          labels: automerge
+          branch: design-tokens/update-tokens-build
+          base: zadorozhnii/auto-commit-build-tokens

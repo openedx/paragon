@@ -5,8 +5,9 @@
   "main": "build-tokens.js",
   "scripts": {
     "build-tokens": "node build-tokens.js",
+    "build-scss-to-css-map": "node map-scss-to-css.js",
     "replace-variables": "node replace-variables.js",
-    "build-scss-to-css-map": "node map-scss-to-css.js"
+    "build": "npm run build-tokens && npm run build-scss-to-css-map && npm run replace-variables -- -p ../src"
   },
   "author": "",
   "license": "ISC",
