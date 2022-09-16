@@ -214,7 +214,7 @@ $select-icon-padding: .5625rem !default;
       transform: translateX(#{$form-control-icon-width});
 
       [dir="rtl"] & {
-        transform: translateX(#{$form-control-icon-width} * -1);
+        transform: translateX(-#{$form-control-icon-width});
       }
     }
   }

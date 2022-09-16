@@ -6,7 +6,7 @@
   align-self: stretch;
   gap: $stack-gap;
 
-  @each $level, $space in var(--pgn-core-spacer)s {
+  @each $level, $space in $spacers {
     &.pgn__stack-gap--#{$level} {
       gap: $space;
     }
