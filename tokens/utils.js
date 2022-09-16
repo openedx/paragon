@@ -52,4 +52,3 @@ module.exports = {
   getSCSStoCSSMap,
   replaceVariables,
 };
-
