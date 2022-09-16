@@ -1,0 +1,25 @@
+{
+  "dropzone": {
+    "padding": { "value": "1.5rem", "themeable": true, "source": "$dropzone-padding" },
+    "border": {
+      "default": { "value": "1px dashed {color.gray.500.value}", "themeable": true, "source": "$dropzone-border-default" },
+      "hover": { "value": "2px solid {color.info.300.value}", "themeable": true, "source": "$dropzone-border-hover" },
+      "focus": { "value": "2px solid {color.info.300.value}", "themeable": true, "source": "$dropzone-border-focus" },
+      "active": { "value": "2px solid {color.primary.500.value}", "themeable": true, "source": "$dropzone-border-active" },
+      "error": { "value": "2px solid {color.danger.300.value}", "themeable": true, "source": "$dropzone-border-error" }
+    },
+    "error": {
+      "wrapper": {
+        "color": { "value": "{color.danger.500.value}", "themeable": true, "source": "$dropzone-error-wrapper-color" }
+      }
+    },
+    "restriction": {
+      "msg": {
+        "font": {
+          "size": { "value": "{font.size.small.x.value}", "themeable": true, "source": "$dropzone-restriction-msg-font-size" }
+        },
+        "color": { "value": "{color.gray.500.value}", "themeable": true, "source": "$dropzone-restriction-msg-color" }
+      }
+    }
+  }
+}

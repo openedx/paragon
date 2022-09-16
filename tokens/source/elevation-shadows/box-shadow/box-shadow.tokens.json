@@ -1,5 +1,35 @@
 {
   "box-shadow": {
+    "level": {
+      "1": {
+        "value": "0 .0625rem .125rem rgba(0, 0, 0, .15), 0 .0625rem .25rem rgba(0, 0, 0, .15)",
+        "themeable": true,
+        "source": "$level-1-box-shadow"
+      },
+      "2": {
+        "value": "0 .125rem .25rem rgba(0, 0, 0, .15), 0 .125rem .5rem rgba(0, 0, 0, .15)",
+        "themeable": true,
+        "source": "$level-2-box-shadow"
+      },
+      "3": {
+        "value": "0 0 .625rem rgba(0, 0, 0, .15), 0 0 1rem rgba(0, 0, 0, .15)",
+        "themeable": true,
+        "source": "$level-3-box-shadow"
+      },
+      "4": {
+        "value": "0 .625rem 1.25rem rgba(0, 0, 0, .15), 0 .5rem 1.25rem rgba(0, 0, 0, .15)",
+        "themeable": true,
+        "source": "$level-4-box-shadow"
+      },
+      "5": {
+        "value": "0 1.25px 2.5rem rgba(0, 0, 0, .15), 0 .5rem 2.5rem rgba(0, 0, 0, .15)",
+        "themeable": true,
+        "source": "$level-5-box-shadow"
+      }
+    },
+    "base": { "value": "0 .125rem .25rem rgba({color.black.value}, .3)", "themeable": true, "source": "$box-shadow" },
+    "sm": { "value": "0 .0625rem .125rem rgba({color.black.value}, .2)", "themeable": true, "source": "$box-shadow-sm" },
+    "lg": { "value": "0 .25rem .5rem rgba({color.black.value}, .3)", "themeable": true, "source": "$box-shadow-lg" },
     "down": {
       "1": {
         "value": "0 .0625rem .125rem rgba(0, 0, 0, .15), 0 .0625rem .25rem rgba(0, 0, 0, .15)",

@@ -12,12 +12,12 @@ const BASE_BUILD_PATH = path.resolve(__dirname, 'build');
 StyleDictionary.registerTransform({
   name: 'color/uppercase',
   type: 'value',
-  matcher: function(token) {
+  matcher(token) {
     return token.attributes.category === 'color';
   },
-  transformer: function(token) {
+  transformer(token) {
     return token.original.value.toUpperCase();
-  }
+  },
 });
 
 /**
@@ -26,12 +26,14 @@ StyleDictionary.registerTransform({
  */
 StyleDictionary.registerFormat({
   name: 'scss/variables-with-new-line',
-  formatter: function({ dictionary, options, file }) {
+  formatter({ dictionary, options, file }) {
     const { outputReferences, themeable = false } = options;
-    return fileHeader({file, commentStyle: 'short'}) +
-      formattedVariables({ format: 'sass', dictionary, outputReferences, themeable })
-      + '\n';
-  }
+    return `${fileHeader({ file, commentStyle: 'short' })
+      + formattedVariables({
+        format: 'sass', dictionary, outputReferences, themeable,
+      })
+    }\n`;
+  },
 });
 
 const paragonStyleDictionary = StyleDictionary.extend({
@@ -51,7 +53,7 @@ const paragonStyleDictionary = StyleDictionary.extend({
       transforms: StyleDictionary.transformGroup.scss.concat('color/uppercase'),
       options: {
         showFileHeader: false,
-      }
+      },
     },
     css: {
       transformGroup: 'css',
@@ -75,7 +77,7 @@ const paragonStyleDictionary = StyleDictionary.extend({
       transforms: StyleDictionary.transformGroup.css.concat('color/uppercase'),
       options: {
         showFileHeader: false,
-      }
+      },
     },
   },
 });

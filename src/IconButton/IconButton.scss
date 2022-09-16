@@ -1,20 +1,4 @@
-$icon-button-colors: (
-  "primary": $primary,
-  "secondary": $secondary,
-  "brand": $brand,
-  "success": $success,
-  "warning": $warning,
-  "danger": $danger,
-  "light": $light,
-  "dark": $dark,
-  "black": $black,
-) !default;
-$btn-icon-diameter-md: 2.75rem !default;
-$btn-icon-diameter-sm: 2.25rem !default;
-$btn-icon-diameter-inline: calc(#{$line-height-base}em + .1em) !default;
-
-$btn-icon-bg: transparent !default;
-$btn-icon-accent-color: white !default;
+@import "variables";
 
 @mixin btn-icon-size($icon-size) {
   width: $icon-size;

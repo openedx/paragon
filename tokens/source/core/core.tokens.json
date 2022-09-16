@@ -1,5 +1,6 @@
 {
   "core": {
+    "spacer": { "value": "1rem", "themeable": true, "source": "$spacer" },
     "input": {
       "btn": {
         "padding": {
@@ -30,7 +31,15 @@
           }
         },
         "focus": {
-          "width": { "value": "1px", "themeable": true, "source": "$input-btn-focus-width" }
+          "width": { "value": "1px", "themeable": true, "source": "$input-btn-focus-width" },
+          "color": { "value": "{component.active.bg.value}", "themeable": true, "source": "$input-btn-focus-color" },
+          "box": {
+            "shadow": {
+              "value": "0 0 0 {core.input.btn.focus.width.value} {core.input.btn.focus.color.value}",
+              "themeable": true,
+              "source": "$input-btn-focus-box-shadow"
+            }
+          }
         },
         "border": {
           "width": { "value": "{border.width.value}", "themeable": true, "source": "$input-btn-border-width" }

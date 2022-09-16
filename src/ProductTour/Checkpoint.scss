@@ -99,7 +99,7 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
 }
 
 .pgn__checkpoint[data-popper-placement^="top"] > #pgn__checkpoint-arrow {
-  left: -$checkpoint-arrow-width !important; // Override PopperJS arrow placement
+  left: calc($checkpoint-arrow-width * -1) !important; // Override PopperJS arrow placement
   bottom: 1px;
 
   [dir="rtl"] & {
@@ -118,7 +118,7 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
 
 .pgn__checkpoint[data-popper-placement^="bottom"] > #pgn__checkpoint-arrow {
   top: -36px;
-  left: -$checkpoint-arrow-width !important; // Override PopperJS arrow placement
+  left: calc($checkpoint-arrow-width * -1) !important; // Override PopperJS arrow placement
 
   &::after {
     border-bottom: $checkpoint-arrow-top-color;
@@ -129,7 +129,7 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
 }
 
 .pgn__checkpoint[data-popper-placement^="left"] > #pgn__checkpoint-arrow {
-  top: -$checkpoint-arrow-width !important; // Override PopperJS arrow placement
+  top: calc($checkpoint-arrow-width * -1) !important; // Override PopperJS arrow placement
   right: 1px;
 
   &::after {
@@ -142,7 +142,7 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
 }
 
 .pgn__checkpoint[data-popper-placement^="right"] > #pgn__checkpoint-arrow {
-  top: -$checkpoint-arrow-width !important; // Override PopperJS arrow placement
+  top: calc($checkpoint-arrow-width * -1) !important; // Override PopperJS arrow placement
   left: 1px;
 
   &::after {
