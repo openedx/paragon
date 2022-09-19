@@ -9,20 +9,20 @@ $modal-footer-margin-between:       .5rem !default;
 $modal-dialog-margin:               1.5rem !default;
 $modal-dialog-margin-y-sm-up:       1.75rem !default;
 
-$modal-title-line-height:           $line-height-base !default;
+$modal-title-line-height:           var(--pgn-line-height-base) !default;
 
 $modal-content-color:               null !default;
-$modal-content-bg:                  $white !default;
-$modal-content-border-color:        rgba($black, .2) !default;
+$modal-content-bg:                  var(--pgn-color-white) !default;
+$modal-content-border-color:        rgba(var(--pgn-color-black), .2) !default;
 $modal-content-border-width:        0 !default;
-$modal-content-border-radius:       $border-radius-lg !default;
+$modal-content-border-radius:       var(--pgn-border-radius-lg) !default;
 $modal-content-inner-border-radius: subtract($modal-content-border-radius, $modal-content-border-width) !default;
-$modal-content-box-shadow-xs:       0 .25rem .5rem rgba($black, .5) !default;
-$modal-content-box-shadow-sm-up:    0 10px 20px rgba($black, .15), 0 8px 20px rgba($black, .15) !default;
+$modal-content-box-shadow-xs:       0 .25rem .5rem rgba(var(--pgn-color-black), .5) !default;
+$modal-content-box-shadow-sm-up:    0 10px 20px rgba(var(--pgn-color-black), .15), 0 8px 20px rgba(var(--pgn-color-black), .15) !default;
 
-$modal-backdrop-bg:                 $black !default;
+$modal-backdrop-bg:                 var(--pgn-color-black) !default;
 $modal-backdrop-opacity:            .5 !default;
-$modal-header-border-color:         $border-color !default;
+$modal-header-border-color:         var(--pgn-border-color) !default;
 $modal-footer-border-color:         $modal-header-border-color !default;
 $modal-header-border-width:         $modal-content-border-width !default;
 $modal-footer-border-width:         $modal-header-border-width !default;

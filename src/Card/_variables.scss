@@ -2,20 +2,20 @@
 
 $card-spacer-y:                      .75rem !default;
 $card-spacer-x:                      1.25rem !default;
-$card-border-width:                  $border-width !default;
-$card-border-radius:                 $border-radius !default;
-$card-border-color:                  rgba($black, .125) !default;
-$card-border-focus-color:            rgba($black, .5) !default;
+$card-border-width:                  var(--pgn-border-width) !default;
+$card-border-radius:                 var(--pgn-border-radius-base) !default;
+$card-border-color:                  rgba(var(--pgn-color-black), .125) !default;
+$card-border-focus-color:            rgba(var(--pgn-color-black), .5) !default;
 $card-inner-border-radius:           subtract($card-border-radius, $card-border-width) !default;
-$card-cap-bg:                        rgba($black, .03) !default;
+$card-cap-bg:                        rgba(var(--pgn-color-black), .03) !default;
 $card-cap-color:                     null !default;
 $card-height:                        null !default;
 $card-color:                         null !default;
-$card-bg:                            $white !default;
+$card-bg:                            var(--pgn-color-white) !default;
 
 $card-img-overlay-padding:           1.25rem !default;
 
-$card-group-margin:                  calc($grid-gutter-width / 2) !default;
+$card-group-margin:                  calc(var(--pgn-grid-gutter-width) / 2) !default;
 $card-deck-margin:                   $card-group-margin !default;
 $card-grid-margin:                   $card-group-margin !default;
 
@@ -23,7 +23,7 @@ $card-columns-count:                 3 !default;
 $card-columns-gap:                   1.25rem !default;
 $card-columns-margin:                $card-spacer-y !default;
 
-$card-divider-bg:                    $light-400 !default;
+$card-divider-bg:                    var(--pgn-color-light-400) !default;
 $card-divider-margin-y:              $card-spacer-y !default;
 
 $card-footer-actions-gap:            .5rem !default;
@@ -39,7 +39,7 @@ $card-logo-height:                   4.125rem !default;
 $card-image-border-radius:           .3125rem !default;
 $card-logo-border-radius:            .25rem !default;
 
-$card-footer-text-font-size:         $x-small-font-size;
+$card-footer-text-font-size:         var(--pgn-font-size-small-x);
 
 $card-image-horizontal-max-width:    240px;
 $card-image-horizontal-min-width:    $card-image-horizontal-max-width;

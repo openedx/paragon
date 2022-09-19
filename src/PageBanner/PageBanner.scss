@@ -4,34 +4,34 @@
   min-height: 36px;
   display: flex;
   flex-wrap: nowrap;
-  font-size: $x-small-font-size;
+  font-size: var(--pgn-font-size-small-x);
 
   @include media-breakpoint-up(md) {
-    font-size: $small-font-size;
+    font-size: var(--pgn-font-size-small-base);
   }
 }
 
 // stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner__dark {
-  background-color: $dark-500;
+  background-color: var(--pgn-color-dark-500);
   color: white;
 }
 
 // stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner__light {
-  background-color: $light-400;
+  background-color: var(--pgn-color-light-400);
   color: black;
 }
 
 // stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner__accentA {
-  background-color: $accent-a;
+  background-color: var(--pgn-color-accent-a);
   color: black;
 }
 
 // stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner__warning {
-  background-color: $warning-100;
+  background-color: var(--pgn-color-warning-100);
   color: black;
 }
 

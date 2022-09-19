@@ -2,11 +2,11 @@
 @import "~bootstrap/scss/progress";
 
 .progress {
-  border: $progress-bar-border-width solid $progress-bar-border-color;
+  border: var(--pgn-progress-bar-border-width) solid var(--pgn-progress-bar-border-color);
 }
 
 .progress-bar {
-  background-color: $progress-bar-bg;
+  background-color: var(--pgn-progress-bar-bar-bg-base);
 }
 
 .pgn__progress-annotated {
@@ -16,12 +16,12 @@
 
   .progress {
     overflow: visible;
-    background-color: $light-300;
-    height: $annotated-progress-height;
+    background-color: var(--pgn-color-light-300);
+    height: var(--pgn-progress-bar-height-annotated);
     border: none;
 
     .progress-bar {
-      background-color: $annotated-progress-bar-bg;
+      background-color: var(--pgn-progress-bar-bar-bg-annotated);
       overflow: visible;
       position: relative;
     }
@@ -30,17 +30,17 @@
     .pgn__progress-tick--black::after {
       content: "";
       position: absolute;
-      height: $annotated-progress-height;
+      height: var(--pgn-progress-bar-height-annotated);
       width: 1px;
       right: 0;
     }
 
     .pgn__progress-tick--white::after {
-      background: $light-300;
+      background: var(--pgn-color-light-300);
     }
 
     .pgn__progress-tick--black::after {
-      background: $primary-500;
+      background: var(--pgn-color-primary-500);
     }
 
     @each $name, $color in $progress-colors {
@@ -52,11 +52,11 @@
           display: block;
           background: $color;
           position: absolute;
-          top: -(calc($progress-threshold-circle / 2) - calc($annotated-progress-height / 2));
-          right: -(calc($progress-threshold-circle / 2));
-          width: $progress-threshold-circle;
-          height: $progress-threshold-circle;
-          border-radius: calc($progress-threshold-circle / 2);
+          top: -(calc(var(--pgn-progress-bar-threshold-circle) / 2) - calc(var(--pgn-progress-bar-height-annotated) / 2));
+          right: -(calc(var(--pgn-progress-bar-threshold-circle) / 2));
+          width: var(--pgn-progress-bar-threshold-circle);
+          height: var(--pgn-progress-bar-threshold-circle);
+          border-radius: calc(var(--pgn-progress-bar-threshold-circle) / 2);
           z-index: 1;
         }
       }
@@ -67,9 +67,9 @@
   .progress::after {
     position: absolute;
     content: "";
-    height: $annotated-progress-height;
+    height: var(--pgn-progress-bar-height-annotated);
     width: 1px;
-    background: $primary-500;
+    background: var(--pgn-color-primary-500);
   }
 
   .progress::after {
@@ -83,7 +83,7 @@
 
   .pgn__progress-hint {
     box-sizing: border-box;
-    padding: 0 $progress-hint-annotation-gap;
-    font-size: $small-font-size;
+    padding: 0 var(--pgn-progress-bar-hint-annotation-gap);
+    font-size: var(--pgn-font-size-small-base);
   }
 }
