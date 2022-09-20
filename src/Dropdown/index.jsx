@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import BaseDropdown from 'react-bootstrap/Dropdown';
 import DropdownMenu from 'react-bootstrap/DropdownMenu';
-import DropdownItem from 'react-bootstrap/DropdownItem';
+import BaseDropdownItem from 'react-bootstrap/DropdownItem';
 import BaseDropdownToggle from 'react-bootstrap/DropdownToggle';
 import DropdownDeprecated from './deprecated';
 import {
@@ -57,6 +57,7 @@ const Dropdown = React.forwardRef(
     return (
       <BaseDropdown
         className={classNames(
+          'pgn__dropdown',
           `pgn__dropdown-${variant}`,
           className,
         )}
@@ -115,17 +116,23 @@ DropdownToggle.defaultProps = {
   bsPrefix: 'dropdown-toggle',
 };
 
-Dropdown.Item = ({ className, ...otherProps }) => (
-  <DropdownItem
-    className={classNames(className, 'pgn__dropdown-item')}
-    {...otherProps}
-  />
+Dropdown.Item = React.forwardRef(
+  // eslint-disable-next-line prefer-arrow-callback
+  function DropdownItem({ className, ...otherProps }, ref) {
+    return (
+      <BaseDropdownItem
+        className={classNames(className, 'pgn__dropdown-item')}
+        ref={ref}
+        {...otherProps}
+      />
+    );
+  },
 );
 Dropdown.Item.propTypes = {
   className: PropTypes.string,
 };
 Dropdown.Item.defaultProps = {
-  className: '',
+  className: undefined,
 };
 
 Dropdown.Deprecated = DropdownDeprecated;
