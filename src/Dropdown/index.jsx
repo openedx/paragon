@@ -115,10 +115,22 @@ DropdownToggle.defaultProps = {
   bsPrefix: 'dropdown-toggle',
 };
 
+Dropdown.Item = ({ className, ...otherProps }) => (
+  <DropdownItem
+    className={classNames(className, 'pgn__dropdown-item')}
+    {...otherProps}
+  />
+);
+Dropdown.Item.propTypes = {
+  className: PropTypes.string,
+};
+Dropdown.Item.defaultProps = {
+  className: '',
+};
+
 Dropdown.Deprecated = DropdownDeprecated;
 Dropdown.Toggle = DropdownToggle;
 Dropdown.Menu = DropdownMenu;
-Dropdown.Item = DropdownItem;
 Dropdown.Header = BaseDropdown.Header;
 Dropdown.Divider = BaseDropdown.Divider;
 

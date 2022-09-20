@@ -6,8 +6,8 @@
     background-color: $dark-300;
     color: $white;
 
-    .dropdown-item {
-      color: $white !important;
+    .pgn__dropdown-item {
+      color: $white;
       font-weight: 400;
 
       &:hover {
@@ -15,9 +15,9 @@
       }
 
       &.active {
-        background-color: $light-300 !important;
-        color: $primary-700 !important;
-        font-weight: 700 !important;
+        background-color: $light-300;
+        color: $primary-700;
+        font-weight: 700;
       }
 
       &:focus {
