@@ -1,6 +1,6 @@
 # Paragon
 
-[![npm_version](https://img.shields.io/npm/v/@edx/paragon.svg)](@edx/paragon) [![NPM downloads](https://img.shields.io/npm/dw/@edx/paragon)](https://www.npmjs.com/package/@edx/paragon) [![Build Status](https://github.com/edx/paragon/actions/workflows/release.yml/badge.svg)](https://github.com/edx/paragon/actions/workflows/release.yml) [![codecov](https://codecov.io/gh/edx/paragon/branch/master/graph/badge.svg?token=x1tZmNduy9)](https://codecov.io/gh/edx/paragon)
+[![npm_version](https://img.shields.io/npm/v/@edx/paragon.svg)](@edx/paragon) [![NPM downloads](https://img.shields.io/npm/dw/@edx/paragon)](https://www.npmjs.com/package/@edx/paragon) [![Build Status](https://github.com/openedx/paragon/actions/workflows/release.yml/badge.svg)](https://github.com/openedx/paragon/actions/workflows/release.yml) [![codecov](https://codecov.io/gh/edx/paragon/branch/master/graph/badge.svg?token=x1tZmNduy9)](https://codecov.io/gh/edx/paragon)
 
 Paragon is a pattern library containing [accessible](https://www.w3.org/WAI/standards-guidelines/aria/) React components and a SCSS foundation built on Twitter Bootstrap. Paragon is developed for the Open edX platform.
 
@@ -49,7 +49,7 @@ Note that including fonts will affect performance.  In some applications may cho
 
 ## Contributing & Development
 
-See the [code of conduct](https://github.com/edx/.github/blob/master/CODE_OF_CONDUCT.md).
+See the [code of conduct](https://github.com/openedx/.github/blob/master/CODE_OF_CONDUCT.md).
 
 #### 1. Start the documentation site development server
 
@@ -303,7 +303,7 @@ When developing a new component you should generally follow three rules:
 
 ### Developing locally against MFE
 
-If you want to test the changes with local MFE setup, you need to create a "module.config.js" file in your MFE's directory containing local module overrides. After that the webpack build for your application will automatically pick your local version of Paragon and use it. The example of module.config.js file looks like this (for more details about module.config.js, refer to the [frontend-build documentation](https://github.com/edx/frontend-build#local-module-configuration-for-webpack).):
+If you want to test the changes with local MFE setup, you need to create a "module.config.js" file in your MFE's directory containing local module overrides. After that the webpack build for your application will automatically pick your local version of Paragon and use it. The example of module.config.js file looks like this (for more details about module.config.js, refer to the [frontend-build documentation](https://github.com/openedx/frontend-build#local-module-configuration-for-webpack).):
 
 ```javascript
 module.exports = {
@@ -336,7 +336,7 @@ Paragon runs ESLint as a pre-commit hook. If your code fails linting, you will n
 $ npm run lint
 ```
 
-Paragon's ESLint config is based off [eslint-config-edx](https://github.com/edx/eslint-config-edx/tree/master/packages/eslint-config-edx), which itself is based off [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb). Paragon uses ESLint 3 (and will upgrade to v4 as soon as eslint-config-airbnb releases a supported version), which itself comes with a number of built-in rules. This configuration is highly opinionated and may contain some rules with which you aren't yet familiar, like [comma-dangle](http://eslint.org/docs/rules/comma-dangle), but rest assured, you're writing modern, best-practice JS 💅
+Paragon's ESLint config is based off [eslint-config-edx](https://github.com/openedx/eslint-config-edx/tree/master/packages/eslint-config-edx), which itself is based off [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb). Paragon uses ESLint 3 (and will upgrade to v4 as soon as eslint-config-airbnb releases a supported version), which itself comes with a number of built-in rules. This configuration is highly opinionated and may contain some rules with which you aren't yet familiar, like [comma-dangle](http://eslint.org/docs/rules/comma-dangle), but rest assured, you're writing modern, best-practice JS 💅
 
 One of the most powerful features of this ESLint config is its inclusion of [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y). This plugin actually enforces accessibility best practices at the _linter_ level. It will catch things reviewers might not notice, like [event handlers bound to noninteractive elements](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-noninteractive-element-interactions.md). Of course, it won't catch *all* accessibility violations, but it's a pretty good low-pass filter.
 
@@ -356,7 +356,7 @@ To run the unit tests, run:
 npm run test
 ```
 
-To add unit tests for a component, create a file in your component's directory named `<ComponentName>.test.js`. Jest will automatically pick up this file and run the tests as part of the suite. Take a look at [Dropdown.test.jsx](https://github.com/edx/paragon/blob/master/src/Dropdown/deprecated/Dropdown.test.jsx) or [CheckBox.test.jsx](https://github.com/edx/paragon/blob/master/src/CheckBox/CheckBox.test.jsx) for examples of good component unit tests.
+To add unit tests for a component, create a file in your component's directory named `<ComponentName>.test.js`. Jest will automatically pick up this file and run the tests as part of the suite. Take a look at [Dropdown.test.jsx](https://github.com/openedx/paragon/blob/master/src/Dropdown/deprecated/Dropdown.test.jsx) or [CheckBox.test.jsx](https://github.com/openedx/paragon/blob/master/src/CheckBox/CheckBox.test.jsx) for examples of good component unit tests.
 
 #### Run Unit Tests in Chrome DevTools Inspector
 
@@ -432,4 +432,4 @@ BREAKING CHANGE: The graphiteWidth option has been removed. The default graphite
 
 Paragon is distributed on npm as ES6 modules.  This means that webpack can use treeshaking on any Paragon components that a consuming app is not using, resulting in greatly reduced bundle sizes.
 
-To get treeshaking to work, your app may require some updates - most notably, Babel 7.  See this PR for an example of the changes necessary to update an app to take advantage of treeshaking with Paragon: https://github.com/edx/frontend-app-payment/pull/48
+To get treeshaking to work, your app may require some updates - most notably, Babel 7.  See this PR for an example of the changes necessary to update an app to take advantage of treeshaking with Paragon: https://github.com/openedx/frontend-app-payment/pull/48

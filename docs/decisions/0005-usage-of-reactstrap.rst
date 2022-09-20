@@ -51,5 +51,5 @@ Breaking changes to Paragon components will ideally, but not necessarily, result
 References
 ----------
 
-* https://github.com/edx/paragon
+* https://github.com/openedx/paragon
 * https://reactstrap.github.io/

@@ -78,4 +78,4 @@ Questions
 ---------
 
 1. Which languages should we support?
-2. Should we use `wrapper for react-intl <https://github.com/edx/frontend-platform/blob/master/src/i18n/index.js>`_ created in frontend-platform or features added in the wrapper are not relevant for Paragon?
+2. Should we use `wrapper for react-intl <https://github.com/openedx/frontend-platform/blob/master/src/i18n/index.js>`_ created in frontend-platform or features added in the wrapper are not relevant for Paragon?
