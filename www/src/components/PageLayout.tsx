@@ -94,7 +94,7 @@ const Layout = ({
           <Nav.Item>
             <Nav.Link
               className="muted-link"
-              href="https://github.com/edx/.github/blob/master/CODE_OF_CONDUCT.md"
+              href="https://github.com/openedx/.github/blob/master/CODE_OF_CONDUCT.md"
             >
               Code of Conduct
             </Nav.Link>

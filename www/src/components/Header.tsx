@@ -92,7 +92,7 @@ const Navbar = ({
           <Nav.Item>
             <Nav.Link
               className="text-white"
-              href="https://github.com/edx/paragon"
+              href="https://github.com/openedx/paragon"
             >
               GitHub
             </Nav.Link>
