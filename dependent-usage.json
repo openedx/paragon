@@ -1,5 +1,5 @@
 {
-  "lastModified": 1663597041332,
+  "lastModified": 1663683503016,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -3488,7 +3488,7 @@
           },
           {
             "filePath": "src/components/ReportingConfig/index.jsx",
-            "line": 145,
+            "line": 146,
             "column": 22,
             "version": "20.4.1"
           },
@@ -7044,13 +7044,13 @@
           },
           {
             "filePath": "src/components/ReportingConfig/index.jsx",
-            "line": 140,
+            "line": 141,
             "column": 16,
             "version": "20.4.1"
           },
           {
             "filePath": "src/components/ReportingConfig/index.jsx",
-            "line": 175,
+            "line": 176,
             "column": 12,
             "version": "20.4.1"
           },
@@ -7314,7 +7314,7 @@
         "ProductTour": [
           {
             "filePath": "src/components/ProductTours/ProductTours.jsx",
-            "line": 42,
+            "line": 55,
             "column": 4,
             "version": "20.4.1"
           }
@@ -11347,7 +11347,7 @@
       "name": "@edx/frontend-app-enterprise-public-catalog",
       "repository": {
         "type": "git",
-        "url": "git+https://github.com/edx/frontend-app-enterprise-public-catalog.git"
+        "url": "git+https://github.com/openedx/frontend-app-enterprise-public-catalog.git"
       },
       "folderName": "frontend-app-enterprise-public-catalog",
       "usages": {
@@ -19211,7 +19211,7 @@
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
-            "line": 112,
+            "line": 117,
             "column": 8,
             "version": "19.14.0"
           },
@@ -19297,31 +19297,31 @@
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 587,
+            "line": 649,
             "column": 8,
             "version": "19.14.0"
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 696,
+            "line": 765,
             "column": 10,
             "version": "19.14.0"
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 706,
+            "line": 775,
             "column": 10,
             "version": "19.14.0"
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 743,
+            "line": 825,
             "column": 10,
             "version": "19.14.0"
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 776,
+            "line": 862,
             "column": 12,
             "version": "19.14.0"
           },
@@ -19419,7 +19419,7 @@
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 593,
+            "line": 655,
             "column": 10,
             "version": "19.14.0"
           },
@@ -19505,13 +19505,13 @@
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
-            "line": 135,
+            "line": 140,
             "column": 10,
             "version": "19.14.0"
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
-            "line": 149,
+            "line": 154,
             "column": 10,
             "version": "19.14.0"
           },
@@ -19555,6 +19555,14 @@
             "filePath": "src/components/EditCoursePage/CourseSkills.jsx",
             "line": 29,
             "column": 10,
+            "version": "19.14.0"
+          }
+        ],
+        "Chip": [
+          {
+            "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
+            "line": 185,
+            "column": 8,
             "version": "19.14.0"
           }
         ],
@@ -22642,6 +22650,12 @@
             "version": "20.10.0"
           },
           {
+            "filePath": "src/components/ContentfulModule/FeaturedProductsModule.jsx",
+            "line": 39,
+            "column": 14,
+            "version": "20.10.0"
+          },
+          {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
             "line": 162,
             "column": 14,
@@ -23006,6 +23020,12 @@
             "version": "20.10.0"
           },
           {
+            "filePath": "src/components/ContentfulModule/FeaturedProductsModule.jsx",
+            "line": 37,
+            "column": 12,
+            "version": "20.10.0"
+          },
+          {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
             "line": 176,
             "column": 27,
@@ -23143,6 +23163,12 @@
             "filePath": "src/components/Certificate/index.jsx",
             "line": 24,
             "column": 6,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/ContentfulModule/FeaturedProductsModule.jsx",
+            "line": 20,
+            "column": 4,
             "version": "20.10.0"
           },
           {
