@@ -33,6 +33,6 @@ This ownership will, of course, take up some of the architecture team's time to 
 References
 ----------
 
-* https://github.com/edx/paragon/graphs/code-frequency (Paragon is in active development)
+* https://github.com/openedx/paragon/graphs/code-frequency (Paragon is in active development)
 * https://openedx.atlassian.net/wiki/spaces/AC/pages/787087363/Architecture+Roadmap+2018-19#ArchitectureRoadmap,2018-19-ArchitectureOGSP
 * https://www.designbetter.co/design-systems-handbook
