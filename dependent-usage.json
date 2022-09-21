@@ -1,5 +1,5 @@
 {
-  "lastModified": 1663683503016,
+  "lastModified": 1663769923898,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -18939,7 +18939,7 @@
       "name": "@edx/frontend-app-profile",
       "repository": {
         "type": "git",
-        "url": "git+https://github.com/edx/frontend-app-profile.git"
+        "url": "git+https://github.com/openedx/frontend-app-profile.git"
       },
       "folderName": "frontend-app-profile",
       "usages": {
@@ -18958,7 +18958,7 @@
           },
           {
             "filePath": "src/profile/ProfilePage.jsx",
-            "line": 159,
+            "line": 157,
             "column": 10,
             "version": "19.25.3"
           }
@@ -21062,7 +21062,7 @@
           },
           {
             "filePath": "src/TypeaheadFacetDropdown.jsx",
-            "line": 28,
+            "line": 26,
             "column": 8,
             "version": "19.25.1"
           }
@@ -22830,12 +22830,6 @@
             "version": "20.10.0"
           },
           {
-            "filePath": "src/components/Learn/StickyNav.jsx",
-            "line": 18,
-            "column": 9,
-            "version": "20.10.0"
-          },
-          {
             "filePath": "src/components/PreviewExpand/index.jsx",
             "line": 65,
             "column": 10,
@@ -22881,6 +22875,12 @@
             "filePath": "src/components/Topic/TopicRouting.jsx",
             "line": 59,
             "column": 20,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/templates/learnPage.jsx",
+            "line": 30,
+            "column": 9,
             "version": "20.10.0"
           },
           {
@@ -23092,12 +23092,6 @@
             "version": "20.10.0"
           },
           {
-            "filePath": "src/components/Learn/StickyNav.jsx",
-            "line": 93,
-            "column": 10,
-            "version": "20.10.0"
-          },
-          {
             "filePath": "src/components/Overlays/SaveForLaterOverlay.jsx",
             "line": 347,
             "column": 14,
@@ -23113,6 +23107,12 @@
             "filePath": "src/components/Overlays/SocialSharePopover.jsx",
             "line": 131,
             "column": 12,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/ProductDetail/ProductDetailCurriculumModule.jsx",
+            "line": 42,
+            "column": 10,
             "version": "20.10.0"
           },
           {
@@ -23149,6 +23149,24 @@
             "filePath": "src/templates/cardsPreview.jsx",
             "line": 94,
             "column": 12,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/templates/courseDetailBootcamp.jsx",
+            "line": 111,
+            "column": 14,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/templates/learnPage.jsx",
+            "line": 108,
+            "column": 12,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/templates/programDetailDegree.jsx",
+            "line": 94,
+            "column": 14,
             "version": "20.10.0"
           }
         ],
@@ -23605,19 +23623,19 @@
           },
           {
             "filePath": "src/templates/learnPage.jsx",
-            "line": 65,
+            "line": 120,
             "column": 10,
             "version": "20.10.0"
           },
           {
             "filePath": "src/templates/learnPage.jsx",
-            "line": 92,
+            "line": 144,
             "column": 12,
             "version": "20.10.0"
           },
           {
             "filePath": "src/templates/learnPage.jsx",
-            "line": 119,
+            "line": 172,
             "column": 10,
             "version": "20.10.0"
           },
@@ -23973,6 +23991,12 @@
             "filePath": "src/components/FAQs/AccordionFAQ.jsx",
             "line": 25,
             "column": 10,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/ProductDetail/ProductDetailCurriculumModule.jsx",
+            "line": 35,
+            "column": 16,
             "version": "20.10.0"
           }
         ],
