@@ -41,8 +41,23 @@ notes: |
       Dropdown Button
     </Dropdown.Toggle>
     <Dropdown.Menu>
+      <Dropdown.Header>Header</Dropdown.Header>
       <Dropdown.Item>Action</Dropdown.Item>
       <Dropdown.Item>Another action</Dropdown.Item>
+      <Dropdown.Divider />
+      <Dropdown.Item>Something else</Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
+
+  <Dropdown variant="dark" onToggle={(isOpen, event, metadata) => console.log('debug', 'onToggle', { isOpen, event, metadata })} className="mb-3">
+    <Dropdown.Toggle variant="success" id="dropdown-basic-2">
+      Dark Variant
+    </Dropdown.Toggle>
+    <Dropdown.Menu>
+      <Dropdown.Header>Header</Dropdown.Header>
+      <Dropdown.Item>Action</Dropdown.Item>
+      <Dropdown.Item>Another action</Dropdown.Item>
+      <Dropdown.Divider />
       <Dropdown.Item>Something else</Dropdown.Item>
     </Dropdown.Menu>
   </Dropdown>
@@ -51,8 +66,10 @@ notes: |
       autoClose=false
     </Dropdown.Toggle>
     <Dropdown.Menu>
+      <Dropdown.Header>Header</Dropdown.Header>
       <Dropdown.Item>Action</Dropdown.Item>
       <Dropdown.Item>Another action</Dropdown.Item>
+      <Dropdown.Divider />
       <Dropdown.Item>Something else</Dropdown.Item>
     </Dropdown.Menu>
   </Dropdown>
@@ -61,8 +78,10 @@ notes: |
       autoClose=inside
     </Dropdown.Toggle>
     <Dropdown.Menu>
+      <Dropdown.Header>Header</Dropdown.Header>
       <Dropdown.Item>Action</Dropdown.Item>
       <Dropdown.Item>Another action</Dropdown.Item>
+      <Dropdown.Divider />
       <Dropdown.Item>Something else</Dropdown.Item>
     </Dropdown.Menu>
   </Dropdown>
@@ -71,8 +90,10 @@ notes: |
       autoClose=outside
     </Dropdown.Toggle>
     <Dropdown.Menu>
+      <Dropdown.Header>Header</Dropdown.Header>
       <Dropdown.Item>Action</Dropdown.Item>
       <Dropdown.Item>Another action</Dropdown.Item>
+      <Dropdown.Divider />
       <Dropdown.Item>Something else</Dropdown.Item>
     </Dropdown.Menu>
   </Dropdown>
