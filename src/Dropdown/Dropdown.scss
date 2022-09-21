@@ -1,6 +1,42 @@
 @import "variables";
 @import "~bootstrap/scss/dropdown";
 
+.pgn__dropdown-dark {
+  .dropdown-menu {
+    background-color: $dark-300;
+    color: $white;
+
+    .pgn__dropdown-item {
+      color: $white;
+      font-weight: 400;
+
+      &:hover {
+        background-color: $dark-200;
+      }
+
+      &.active {
+        background-color: $light-300;
+        color: $primary-700;
+        font-weight: 700;
+      }
+
+      &:focus {
+        border: 2px solid $white;
+        background-color: inherit;
+      }
+    }
+
+    .dropdown-header {
+      color: $light-700;
+    }
+
+
+    .dropdown-divider {
+      border-color: $dark-200;
+    }
+  }
+}
+
 .dropdown-toggle::after {
   border: 0;
   border-style: solid;
