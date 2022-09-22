@@ -286,13 +286,13 @@
   --pgn-image-figure-caption-font-size: 90%;
   --pgn-image-thumbnail-box-shadow: 0 1px 2px rgba(0, 0, 0, .075);
   --pgn-image-thumbnail-padding: .25rem;
+  --pgn-icon-button-bg: transparent;
+  --pgn-icon-button-diameter-sm: 2.25rem;
+  --pgn-icon-button-diameter-md: 2.75rem;
   --pgn-icon-lg: 1.75rem;
   --pgn-icon-md: 1.5rem;
   --pgn-icon-sm: 1.25rem;
   --pgn-icon-inline: .8em;
-  --pgn-icon-button-bg: transparent;
-  --pgn-icon-button-diameter-sm: 2.25rem;
-  --pgn-icon-button-diameter-md: 2.75rem;
   --pgn-form-select-icon-padding: .5625rem;
   --pgn-form-control-icon-width: 32px;
   --pgn-form-feedback-tooltip-opacity: .9;
@@ -444,6 +444,9 @@
   --pgn-badge-padding-x-pill: .6em;
   --pgn-badge-padding-x-base: .5rem;
   --pgn-badge-font-size: 75%;
+  --pgn-avatar-button-padding-left-lg: .25em;
+  --pgn-avatar-button-padding-left-sm: .25em;
+  --pgn-avatar-button-padding-left-base: .25em;
   --pgn-avatar-size-huge: 18.75rem;
   --pgn-avatar-size-xxl: 11.5rem;
   --pgn-avatar-size-xl: 6rem;
@@ -452,9 +455,6 @@
   --pgn-avatar-size-xs: 1.5rem;
   --pgn-avatar-size-base: 3rem;
   --pgn-avatar-border-radius: 100%;
-  --pgn-avatar-button-padding-left-lg: .25em;
-  --pgn-avatar-button-padding-left-sm: .25em;
-  --pgn-avatar-button-padding-left-base: .25em;
   --pgn-annotation-arrow-border-width: .5rem;
   --pgn-annotation-arrow-side-margin: .25rem;
   --pgn-annotation-max-width: 18.75rem;
