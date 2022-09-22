@@ -18,7 +18,8 @@ $modal-content-border-width:        0 !default;
 $modal-content-border-radius:       var(--pgn-border-radius-lg) !default;
 $modal-content-inner-border-radius: subtract($modal-content-border-radius, $modal-content-border-width) !default;
 $modal-content-box-shadow-xs:       0 .25rem .5rem rgba(var(--pgn-color-black), .5) !default;
-$modal-content-box-shadow-sm-up:    0 10px 20px rgba(var(--pgn-color-black), .15), 0 8px 20px rgba(var(--pgn-color-black), .15) !default;
+$modal-content-box-shadow-sm-up:    0 10px 20px rgba(var(--pgn-color-black), .15),
+  0 8px 20px rgba(var(--pgn-color-black), .15) !default;
 
 $modal-backdrop-bg:                 var(--pgn-color-black) !default;
 $modal-backdrop-opacity:            .5 !default;

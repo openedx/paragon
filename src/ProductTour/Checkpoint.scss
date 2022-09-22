@@ -1,7 +1,9 @@
 @import "variables";
 
-$checkpoint-arrow-top-color: solid var(--pgn-product-tour-checkpoint-width-arrow) var(--pgn-product-tour-checkpoint-color-border);
-$checkpoint-arrow-default-color: solid var(--pgn-product-tour-checkpoint-width-arrow) var(--pgn-product-tour-checkpoint-color-background);
+$checkpoint-arrow-top-color: solid var(--pgn-product-tour-checkpoint-width-arrow)
+  var(--pgn-product-tour-checkpoint-color-border);
+$checkpoint-arrow-default-color: solid var(--pgn-product-tour-checkpoint-width-arrow)
+  var(--pgn-product-tour-checkpoint-color-background);
 $checkpoint-arrow-transparent: solid var(--pgn-product-tour-checkpoint-width-arrow) transparent;
 
 .pgn__checkpoint {

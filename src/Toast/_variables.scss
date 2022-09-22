@@ -9,7 +9,8 @@ $toast-background-color:            var(--pgn-color-gray-700) !default;
 $toast-border-width:                1px !default;
 $toast-border-color:                rgba(0, 0, 0, .1) !default;
 $toast-border-radius:               .25rem !default;
-$toast-box-shadow:                  0 1.25rem 2.5rem rgba(var(--pgn-color-black), .15), 0 .5rem 3rem rgba(var(--pgn-color-black), .15) !default;
+$toast-box-shadow:                  0 1.25rem 2.5rem rgba(var(--pgn-color-black), .15),
+  0 .5rem 3rem rgba(var(--pgn-color-black), .15) !default;
 
 $toast-header-color:                var(--pgn-color-white) !default;
 $toast-header-background-color:     var(--pgn-color-gray-700) !default;

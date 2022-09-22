@@ -17,7 +17,8 @@ $btn-line-height-lg:          var(--pgn-core-input-btn-line-height-lg) !default;
 $btn-border-width:            var(--pgn-core-input-btn-border-width) !default;
 
 $btn-font-weight:             var(--pgn-font-weight-normal) !default;
-$btn-box-shadow:              inset 0 1px 0 rgba(var(--pgn-color-white), .15), 0 1px 1px rgba(var(--pgn-color-black), .075) !default;
+$btn-box-shadow:              inset 0 1px 0 rgba(var(--pgn-color-white), .15),
+  0 1px 1px rgba(var(--pgn-color-black), .075) !default;
 $btn-focus-width:             2px !default;
 $btn-focus-gap:               1px !default;
 $btn-focus-box-shadow:        var(--pgn-core-input-btn-focus-box-shadow) !default;
