@@ -5,11 +5,13 @@ import renderer from 'react-test-renderer';
 import { Close } from '../../icons';
 import Chip from './index';
 
-const TestChip = (props) => (
-  <Chip {...props}>
-    Test
-  </Chip>
-);
+function TestChip(props) {
+  return (
+    <Chip {...props}>
+      Test
+    </Chip>
+  );
+}
 
 describe('<Chip />', () => {
   describe('snapshots', () => {
