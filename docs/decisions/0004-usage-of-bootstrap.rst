@@ -32,5 +32,5 @@ Given that Paragon already has a relatively strong dependency on Bootstrap in th
 References
 ----------
 
-* https://github.com/edx/paragon
-* https://github.com/edx/edx-bootstrap
+* https://github.com/openedx/paragon
+* https://github.com/openedx/edx-bootstrap

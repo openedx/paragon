@@ -1,6 +1,6 @@
+/* eslint-disable */
 const hasFeatureFlagEnabled = require('./utils/hasFeatureFlagEnabled');
-
-const FEATURE_LANGUAGE_SWITCHER = 'LANGUAGE_SWITCHER';
+/* eslint-enable */
 
 // Feature flags used throughout the site should be configured here.
 // You should generally allow two ways of enabling a feature flag:
@@ -9,13 +9,11 @@ const FEATURE_LANGUAGE_SWITCHER = 'LANGUAGE_SWITCHER';
 //    .env.development file located at the root of docs site project (note that
 //    you will need to restart development server for the changes to take effect).
 //    See DIRECTION_SWITCHER feature for example of configuring feature flags this way.
-// 2. As a query parameter in the URL, using hasFeatureFlagEnabled util function.
+// 2. As a query parameter in the URL, using`hasFeatureFlagEnabled` util function.
 //    This will allow to enable feature flag by providing its name as a feature?
 //    query parameter in the URL. (e.g. to enable LANGUAGE_SWITCHER feature you would append
 //    '?feature=LANGUAGE_SWITCHER' to the URL)
-const FEATURES = {
-  LANGUAGE_SWITCHER: process.env.FEATURE_LANGUAGE_SWITCHER || hasFeatureFlagEnabled(FEATURE_LANGUAGE_SWITCHER),
-};
+const FEATURES = {};
 
 const LANGUAGES = [
   {
@@ -66,14 +64,14 @@ const LANGUAGES = [
     label: 'Spanish',
     code: 'es-419',
   },
-  {
-    label: 'Korean',
-    code: 'ko-kr',
-  },
-  {
-    label: 'Portuguese',
-    code: 'pt-br',
-  },
+  // {
+  //   label: 'Korean',
+  //   code: 'ko-kr',
+  // },
+  // {
+  //   label: 'Portuguese',
+  //   code: 'pt-br',
+  // },
 ];
 
 const INSIGHTS_TABS = Object.freeze({
@@ -102,5 +100,4 @@ module.exports = {
   INSIGHTS_PAGES,
   FEATURES,
   LANGUAGES,
-  FEATURE_LANGUAGE_SWITCHER,
 };

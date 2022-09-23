@@ -1,3 +1,38 @@
+# [20.12.0](https://github.com/openedx/paragon/compare/v20.11.1...v20.12.0) (2022-09-21)
+
+
+### Features
+
+* dark mode variant for dropdown ([#1613](https://github.com/openedx/paragon/issues/1613)) ([7133e21](https://github.com/openedx/paragon/commit/7133e212c50826681d4ab3acc09e0a020c853909))
+
+## [20.11.1](https://github.com/openedx/paragon/compare/v20.11.0...v20.11.1) (2022-09-07)
+
+
+### Bug Fixes
+
+* handle non-Tab component ([#1604](https://github.com/openedx/paragon/issues/1604)) ([7ab6207](https://github.com/openedx/paragon/commit/7ab6207623ae0552b037f7a7eabc694f25338932))
+
+# [20.11.0](https://github.com/openedx/paragon/compare/v20.10.2...v20.11.0) (2022-09-02)
+
+
+### Features
+
+* update Chip ([#1574](https://github.com/openedx/paragon/issues/1574)) ([79d4744](https://github.com/openedx/paragon/commit/79d4744ed0be64daf5427c822c21ef8250c5cce3))
+
+## [20.10.2](https://github.com/openedx/paragon/compare/v20.10.1...v20.10.2) (2022-09-02)
+
+
+### Bug Fixes
+
+* fixed MarketingModal/AlertModal/ModalDialog scroll ([#1594](https://github.com/openedx/paragon/issues/1594)) ([952c1de](https://github.com/openedx/paragon/commit/952c1de22b9681d99827b47bbc643fcd8d24a7db))
+
+## [20.10.1](https://github.com/openedx/paragon/compare/v20.10.0...v20.10.1) (2022-08-26)
+
+
+### Bug Fixes
+
+* release es-419 Spanish language translations ([#1589](https://github.com/openedx/paragon/issues/1589)) ([f7cf489](https://github.com/openedx/paragon/commit/f7cf489f55a56b944dec967a881a789bbdb850c4))
+
 # [20.10.0](https://github.com/openedx/paragon/compare/v20.9.3...v20.10.0) (2022-08-19)
 
 

@@ -13,4 +13,4 @@ We should opportunistically remove font-awesome and cut over to Paragon icons wh
 ## Links
 
 * See instructions here: [Iconography on the Wiki](https://openedx.atlassian.net/wiki/spaces/BPL/pages/2152661212/Iconography)
-* See README here: [paragon/icons README](https://github.com/edx/paragon/tree/master/icons)
+* See README here: [paragon/icons README](https://github.com/openedx/paragon/tree/master/icons)

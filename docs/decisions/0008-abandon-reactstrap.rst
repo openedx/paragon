@@ -32,5 +32,5 @@ We will consider adding documentation in Paragon for some raw HTML elements and 
 References
 ----------
 
-* https://github.com/edx/paragon
+* https://github.com/openedx/paragon
 * https://reactstrap.github.io/

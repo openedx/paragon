@@ -271,7 +271,7 @@ Modal.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   /** a string or an element that is rendered inside of the modal body, between the title and the footer. */
   body: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
-  /** an array of either elements or shapes that take the form of the buttonPropTypes. See the [buttonPropTypes](https://github.com/edx/paragon/blob/master/src/Button/index.jsx#L40) for a list of acceptable props to pass as part of a button. */
+  /** an array of either elements or shapes that take the form of the buttonPropTypes. See the [buttonPropTypes](https://github.com/openedx/paragon/blob/master/src/Button/index.jsx#L40) for a list of acceptable props to pass as part of a button. */
   buttons: PropTypes.arrayOf(PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.shape({}), // TODO: Only accept nodes in the future

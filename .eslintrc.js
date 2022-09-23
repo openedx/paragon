@@ -32,7 +32,7 @@ module.exports = {
           '**/*.test.jsx',
           '**/*.test.js',
           'config/*.js',
-          '*.config.js',
+          '*.config.ts',
           '*.config.*.js',
           '**/*.config.js',
           'component-generator/**',
