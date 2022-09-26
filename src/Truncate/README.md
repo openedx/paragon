@@ -10,7 +10,7 @@ devStatus: 'Done'
 
 A Truncate component can help you crop multiline text. There will be three dots at the end of the text.
 
-### Basic Usage
+## Basic Usage
 
 ```jsx live
   <Truncate lines={2}>
@@ -79,4 +79,13 @@ A Truncate component can help you crop multiline text. There will be three dots 
     </Card>
   )
 }
+```
+
+### HTML markdown support
+
+```jsx live
+<Truncate lines={1}>
+  <a href="#">Learners</a>, course teams, researchers, developers: the edX community includes groups with a range of reasons 
+  for using the <b>platform</b> and objectives to accomplish.
+</Truncate>
 ```

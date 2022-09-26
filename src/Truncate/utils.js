@@ -12,12 +12,13 @@ const createCopyElement = (element) => {
 
 const constructString = (text, whiteSpace, ellipsis, childrenData = []) => {
   const spacer = whiteSpace ? ' ' : '';
+  const contentEnd = `${spacer}${ellipsis}`;
   if (childrenData.length) {
     const newChildren = [];
     childrenData.forEach((el, index) => {
       let content = text.slice(el.start, el.end);
       if (index === childrenData.length - 1) {
-        content = content.trim();
+        content = content.trimEnd();
       }
       if (el.type) {
         const element = document.createElement(el.type);
@@ -33,10 +34,10 @@ const constructString = (text, whiteSpace, ellipsis, childrenData = []) => {
       }
       newChildren.push(document.createTextNode(content));
     });
-    newChildren.push(document.createTextNode(`${spacer}${ellipsis}`));
+    newChildren.push(document.createTextNode(contentEnd));
     return newChildren;
   }
-  return [document.createTextNode(`${text.trim()}${spacer}${ellipsis}`)];
+  return [document.createTextNode(`${text.trim()}${contentEnd}`)];
 };
 
 const cropText = (text, cropDecrement) => {
