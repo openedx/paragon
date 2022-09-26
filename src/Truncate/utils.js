@@ -10,9 +10,33 @@ const createCopyElement = (element) => {
   return newElement;
 };
 
-const constructString = (text, whiteSpace, ellipsis) => {
+const constructString = (text, whiteSpace, ellipsis, childrenData = []) => {
   const spacer = whiteSpace ? ' ' : '';
-  return `${text.trim()}${spacer}${ellipsis}`;
+  if (childrenData.length) {
+    const newChildren = [];
+    childrenData.forEach((el, index) => {
+      let content = text.slice(el.start, el.end);
+      if (index === childrenData.length - 1) {
+        content = content.trim();
+      }
+      if (el.type) {
+        const element = document.createElement(el.type);
+        element.appendChild(document.createTextNode(content));
+        Object.keys(el.props || {}).forEach(prop => {
+          if (prop === 'children') {
+            return;
+          }
+          element.setAttribute(prop, el.props[prop]);
+        });
+        newChildren.push(element);
+        return;
+      }
+      newChildren.push(document.createTextNode(content));
+    });
+    newChildren.push(document.createTextNode(`${spacer}${ellipsis}`));
+    return newChildren;
+  }
+  return [document.createTextNode(`${text.trim()}${spacer}${ellipsis}`)];
 };
 
 const cropText = (text, cropDecrement) => {
@@ -26,27 +50,49 @@ const cropText = (text, cropDecrement) => {
 const truncateLines = (text, element, { lines, whiteSpace, ellipsis }) => {
   const visibilityArea = LINE_HEIGHT_VALUE * Number(lines);
   const newElement = createCopyElement(element);
-  let truncateText = text;
+  const childrenData = [];
+  let initialText = '';
+  if (typeof text === 'string') {
+    initialText = text;
+  } else {
+    text.forEach(child => {
+      const isString = typeof child === 'string';
+      const start = initialText.length;
+      initialText += isString ? child : child.props.children;
+      const end = initialText.length;
+      childrenData.push({
+        type: isString ? null : child.type, props: child?.props, start, end,
+      });
+    });
+  }
+  let truncateText = initialText;
   let cropDecrement = 1;
 
   element.append(newElement);
-  newElement.innerHTML = constructString(text, whiteSpace, ellipsis);
+  const initialChildren = constructString(initialText, whiteSpace, ellipsis, childrenData);
+  for (let i = 0; i < initialChildren.length; i++) {
+    newElement.appendChild(initialChildren[i]);
+  }
   let newElementTextHeight = newElement.scrollHeight;
 
   if (visibilityArea >= newElementTextHeight) {
     newElement.parentNode.removeChild(newElement);
-    return truncateText;
+    return [document.createTextNode(truncateText)];
   }
 
   while (newElementTextHeight > visibilityArea) {
     cropDecrement -= CROP_DECREMENT_STEP;
-    truncateText = cropText(text, cropDecrement);
-    newElement.innerHTML = constructString(truncateText, whiteSpace, ellipsis);
+    truncateText = cropText(initialText, cropDecrement);
+    const childrenArray = constructString(truncateText, whiteSpace, ellipsis, childrenData);
+    newElement.innerHTML = '';
+    for (let i = 0; i < childrenArray.length; i++) {
+      newElement.appendChild(childrenArray[i]);
+    }
     newElementTextHeight = newElement.scrollHeight;
   }
 
   newElement.parentNode.removeChild(newElement);
-  return constructString(truncateText, whiteSpace, ellipsis);
+  return constructString(truncateText, whiteSpace, ellipsis, childrenData);
 };
 
 module.exports = {

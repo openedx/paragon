@@ -16,7 +16,22 @@ describe('utils', () => {
       const whiteSpace = true;
       const ellipsis = '...';
       const finalString = constructString(string, whiteSpace, ellipsis);
-      expect(finalString).toEqual('Learners, course teams, researchers, developers ...');
+      expect(finalString[0].textContent).toEqual('Learners, course teams, researchers, developers ...');
+    });
+    it('return new string text after constructed', () => {
+      const string = 'Learners, course teams, researchers, developers';
+      const whiteSpace = true;
+      const ellipsis = '...';
+      const childrenData = [
+        {
+          type: null, props: undefined, start: 0, end: 10,
+        },
+        {
+          type: 'a', props: { href: 'https://test.com', children: 'test' }, start: 10, end: 47,
+        },
+      ];
+      const finalString = constructString(string, whiteSpace, ellipsis, childrenData);
+      expect(finalString.length).toEqual(3);
     });
   });
 
@@ -29,6 +44,7 @@ describe('utils', () => {
         },
         scrollHeight: 220,
         setAttribute: () => {},
+        appendChild: () => {},
         set innerHTML(val) {
           this.scrollHeight -= 60;
         },
@@ -43,8 +59,8 @@ describe('utils', () => {
         lines,
         whiteSpace,
         ellipsis,
-      })).toEqual('Learners, course teams, researchers, developers: the edX community includes groups with a range of '
-        + 'reasons for using the platform and objectives to accompl___');
+      })[0].textContent).toEqual('Learners, course teams, researchers, developers: the edX community'
+        + ' includes groups with a range of reasons for using the platform and objectives to accomp___');
     });
   });
 });
