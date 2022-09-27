@@ -16,18 +16,19 @@ function Truncate({
   const { width } = useWindowSize();
 
   useLayoutEffect(() => {
-    const newTruncateText = truncateLines(children, textContainer.current, {
-      ellipsis,
-      whiteSpace,
-      lines,
-    });
-
-    textContainer.current.innerHTML = '';
-    newTruncateText.forEach(el => {
-      textContainer.current.appendChild(el);
-    });
-    if (onTruncate) {
-      onTruncate(newTruncateText);
+    if (textContainer.current) {
+      const newTruncateText = truncateLines(children, textContainer.current, {
+        ellipsis,
+        whiteSpace,
+        lines,
+      });
+      textContainer.current.innerHTML = '';
+      newTruncateText.forEach(el => {
+        textContainer.current.appendChild(el);
+      });
+      if (onTruncate) {
+        onTruncate(newTruncateText);
+      }
     }
   }, [children, ellipsis, lines, onTruncate, whiteSpace, width]);
 

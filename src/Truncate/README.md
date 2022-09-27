@@ -85,7 +85,6 @@ A Truncate component can help you crop multiline text. There will be three dots 
 
 ```jsx live
 <Truncate lines={1}>
-  <a href="#">Learners</a>, course teams, researchers, developers: the edX community includes <strong>groups with a range of reasons</strong>
-  for using the platform and objectives to accomplish.
+  <a href="#">Learners</a>, course teams, researchers, developers: the edX community includes <strong>groups with a range of reasons</strong> for using the platform and objectives to accomplish.
 </Truncate>
 ```

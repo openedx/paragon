@@ -6,6 +6,7 @@ const createElementMock = {
   },
   scrollHeight: 220,
   setAttribute: () => {},
+  append: () => {},
   appendChild: () => {},
   set innerHTML(val) {
     this.scrollHeight -= 60;
@@ -83,7 +84,7 @@ describe('utils', () => {
         lines,
         whiteSpace,
         ellipsis,
-      }).length).toEqual(4);
+      }).length).toEqual(3);
     });
   });
 });
