@@ -10,7 +10,7 @@ const createCopyElement = (element) => {
   return newElement;
 };
 
-const constructString = (text, whiteSpace, ellipsis, childrenData = []) => {
+const constructChildren = (text, whiteSpace = false, ellipsis = '', childrenData = []) => {
   const spacer = whiteSpace ? ' ' : '';
   const contentEnd = `${spacer}${ellipsis}`;
   if (childrenData.length) {
@@ -34,7 +34,9 @@ const constructString = (text, whiteSpace, ellipsis, childrenData = []) => {
       }
       newChildren.push(document.createTextNode(content));
     });
-    newChildren.push(document.createTextNode(contentEnd));
+    if (contentEnd) {
+      newChildren.push(document.createTextNode(contentEnd));
+    }
     return newChildren;
   }
   return [document.createTextNode(`${text.trim()}${contentEnd}`)];
@@ -70,7 +72,7 @@ const truncateLines = (text, element, { lines, whiteSpace, ellipsis }) => {
   let cropDecrement = 1;
 
   element.append(newElement);
-  const initialChildren = constructString(initialText, whiteSpace, ellipsis, childrenData);
+  const initialChildren = constructChildren(initialText, whiteSpace, ellipsis, childrenData);
   for (let i = 0; i < initialChildren.length; i++) {
     newElement.appendChild(initialChildren[i]);
   }
@@ -78,13 +80,13 @@ const truncateLines = (text, element, { lines, whiteSpace, ellipsis }) => {
 
   if (visibilityArea >= newElementTextHeight) {
     newElement.parentNode.removeChild(newElement);
-    return [document.createTextNode(truncateText)];
+    return constructChildren(truncateText, false, '', childrenData);
   }
 
   while (newElementTextHeight > visibilityArea) {
     cropDecrement -= CROP_DECREMENT_STEP;
     truncateText = cropText(initialText, cropDecrement);
-    const childrenArray = constructString(truncateText, whiteSpace, ellipsis, childrenData);
+    const childrenArray = constructChildren(truncateText, whiteSpace, ellipsis, childrenData);
     newElement.innerHTML = '';
     for (let i = 0; i < childrenArray.length; i++) {
       newElement.appendChild(childrenArray[i]);
@@ -93,12 +95,12 @@ const truncateLines = (text, element, { lines, whiteSpace, ellipsis }) => {
   }
 
   newElement.parentNode.removeChild(newElement);
-  return constructString(truncateText, whiteSpace, ellipsis, childrenData);
+  return constructChildren(truncateText, whiteSpace, ellipsis, childrenData);
 };
 
 module.exports = {
   cropText,
   truncateLines,
-  constructString,
+  constructChildren,
   createCopyElement,
 };
