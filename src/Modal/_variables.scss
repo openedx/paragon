@@ -15,7 +15,7 @@ $modal-content-color:               null !default;
 $modal-content-bg:                  var(--pgn-color-white) !default;
 $modal-content-border-color:        rgba(var(--pgn-color-black), .2) !default;
 $modal-content-border-width:        0 !default;
-$modal-content-border-radius:       var(--pgn-border-radius-lg) !default;
+$modal-content-border-radius:       $border-radius-lg !default;
 $modal-content-inner-border-radius: subtract($modal-content-border-radius, $modal-content-border-width) !default;
 $modal-content-box-shadow-xs:       0 .25rem .5rem rgba(var(--pgn-color-black), .5) !default;
 $modal-content-box-shadow-sm-up:    0 10px 20px rgba(var(--pgn-color-black), .15),

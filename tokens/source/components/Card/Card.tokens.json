@@ -12,7 +12,7 @@
         "logo": { "value": ".25rem", "themeable": true, "source": "$card-logo-border-radius" }
       },
       "color": {
-        "base": { "value": "rgba({color.black.value}, .125)", "themeable": true, "source": "$card-border-color" },
+        "base": { "value": "rgba(0, 0, 0, .125)", "themeable": true, "source": "$card-border-color" },
         "focus": { "value": "rgba(0, 0, 0, .5)", "themeable": true, "source": "$card-border-focus-color" }
       }
     },

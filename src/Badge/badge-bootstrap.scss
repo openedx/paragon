@@ -2,7 +2,7 @@
   display: inline-block;
   padding: var(--pgn-badge-padding-y) var(--pgn-badge-padding-x-base);
 
-  @include font-size(var(--pgn-badge-font-size));
+  @include font-size($badge-font-size);
 
   font-weight: var(--pgn-badge-font-weight);
   line-height: 1;

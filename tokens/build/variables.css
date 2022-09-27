@@ -139,7 +139,7 @@
   --pgn-core-input-btn-font-size-lg: 1.325rem;
   --pgn-core-input-btn-font-size-sm: .875rem;
   --pgn-core-input-btn-font-size-base: 1.125rem;
-  --pgn-core-input-btn-font-family: null;
+  --pgn-core-input-btn-font-family: inherit;
   --pgn-core-input-btn-padding-lg-x: 1.25rem;
   --pgn-core-input-btn-padding-lg-y: .6875rem;
   --pgn-core-input-btn-padding-sm-x: .75rem;
@@ -417,6 +417,7 @@
   --pgn-card-cap-color: null;
   --pgn-card-cap-bg: rgba(0, 0, 0, .03);
   --pgn-card-border-color-focus: rgba(0, 0, 0, .5);
+  --pgn-card-border-color-base: rgba(0, 0, 0, .125);
   --pgn-card-border-radius-logo: .25rem;
   --pgn-card-border-radius-image: .3125rem;
   --pgn-card-spacer-y: .75rem;
@@ -759,7 +760,6 @@
   --pgn-card-margin-deck: var(--pgn-card-margin-group);
   --pgn-card-image-horizontal-width-min: var(--pgn-card-image-horizontal-width-max);
   --pgn-card-bg: var(--pgn-color-white);
-  --pgn-card-border-color-base: rgba(var(--pgn-color-black), .125);
   --pgn-card-border-radius-base: var(--pgn-border-radius-base);
   --pgn-card-border-width: var(--pgn-border-width);
   --pgn-btn-tertiary-inverse-bg-hover: rgba(var(--pgn-color-white), .1);

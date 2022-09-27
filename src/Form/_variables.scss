@@ -94,7 +94,7 @@ $custom-control-label-color:            null !default;
 $custom-control-indicator-disabled-bg:          $input-disabled-bg !default;
 $custom-control-label-disabled-color:           theme-color("gray", "light-text") !default;
 
-$custom-control-indicator-checked-color:        var(--pgn-component-active-bg) !default;
+$custom-control-indicator-checked-color:        $component-active-bg !default;
 $custom-control-indicator-checked-bg:           var(--pgn-component-active-bg) !default;
 $custom-control-indicator-checked-disabled-bg:  rgba(var(--pgn-color-primary-base), .5) !default;
 $custom-control-indicator-checked-box-shadow:   none !default;
@@ -103,7 +103,7 @@ $custom-control-indicator-checked-border-color: $custom-control-indicator-checke
 $custom-control-indicator-focus-box-shadow:     0 0 0 4px rgba(0, 0, 0, .1) !default;
 $custom-control-indicator-focus-border-color:   $input-focus-border-color !default;
 
-$custom-control-indicator-active-color:         var(--pgn-component-active-color) !default;
+$custom-control-indicator-active-color:         $component-active-color !default;
 $custom-control-indicator-active-bg:            var(--pgn-component-active-bg) !default;
 $custom-control-indicator-active-box-shadow:    none !default;
 $custom-control-indicator-active-border-color:  $custom-control-indicator-active-bg !default;

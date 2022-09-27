@@ -142,8 +142,8 @@ $btn-size-line-height, $btn-size-border-radius) {
     outline: 0;
     box-shadow: none;
 
-    $distance: var(--pgn-btn-focus-width) + var(--pgn-btn-focus-gap);
-    $distance-include-btn-border: $distance + var(--pgn-btn-border-width);
+    $distance: calc(var(--pgn-btn-focus-width) + var(--pgn-btn-focus-gap));
+    $distance-include-btn-border: calc($distance + var(--pgn-btn-border-width));
 
     &::before {
       content: "";
@@ -153,7 +153,7 @@ $btn-size-line-height, $btn-size-border-radius) {
       bottom: calc(#{$distance-include-btn-border} * -1);
       left: calc(#{$distance-include-btn-border} * -1);
       border: solid var(--pgn-btn-focus-width) $ring-color;
-      border-radius: calc(#{var(--pgn-btn-border-radius-base)} + #{$distance});
+      border-radius: calc(#{$btn-border-radius} + #{$distance});
     }
 
     &.btn-lg::before {
@@ -206,7 +206,7 @@ $btn-size-line-height, $btn-size-border-radius) {
   border: var(--pgn-btn-border-width) solid transparent;
 
   @include button-size(var(--pgn-btn-padding-y-base), var(--pgn-btn-padding-x-base), var(--pgn-btn-font-size-base),
-  var(--pgn-btn-line-height-base), var(--pgn-btn-border-radius-base));
+  var(--pgn-btn-line-height-base), $btn-border-radius);
   @include transition(var(--pgn-btn-transition));
 
   @include hover {
