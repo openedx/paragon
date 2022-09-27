@@ -16,9 +16,11 @@ const VARIANTS = [
   'error',
 ];
 
-const ProgressBar = (props) => <ProgressBarBase {...props} />;
+function ProgressBar(props) {
+  return <ProgressBarBase {...props} />;
+}
 
-const ProgressBarAnnotated = ({
+function ProgressBarAnnotated({
   now,
   label,
   variant,
@@ -28,7 +30,7 @@ const ProgressBarAnnotated = ({
   progressHint,
   thresholdHint,
   ...props
-}) => {
+}) {
   const progressInfoRef = React.useRef();
   const thresholdInfoRef = React.useRef();
   const thresholdPercent = (threshold || 0) - (now || 0);
@@ -109,7 +111,7 @@ const ProgressBarAnnotated = ({
       )}
     </div>
   );
-};
+}
 
 ProgressBarAnnotated.propTypes = {
   /** Current value of progress. */

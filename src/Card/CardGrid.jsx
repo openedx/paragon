@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const CardGrid = ({
+function CardGrid({
   className,
   children,
   columnSizes,
-}) => {
+}) {
   const cards = useMemo(
     () => React.Children.map(children, card => (
       <Col {...columnSizes}>
@@ -25,7 +25,7 @@ const CardGrid = ({
       </Row>
     </div>
   );
-};
+}
 
 CardGrid.propTypes = {
   /** The class name for the CardGrid component */

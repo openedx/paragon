@@ -13,7 +13,7 @@ export const initialState = {
   isEntireTableSelected: false,
 };
 
-const selectionsReducer = (state = initialState, action) => {
+const selectionsReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case SET_SELECTED_ROWS: {
       const selectedRows = uniqBy([...state.selectedRows, ...action.rows], row => row.id);

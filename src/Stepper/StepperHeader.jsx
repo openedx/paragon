@@ -5,31 +5,33 @@ import StepperHeaderStep from './StepperHeaderStep';
 import { StepperContext } from './StepperContext';
 import { useWindowSize } from '..';
 
-const StepListSeparator = () => (
-  <li aria-hidden="true" className="pgn__stepper-header-line" />
-);
+function StepListSeparator() {
+  return <li aria-hidden="true" className="pgn__stepper-header-line" />;
+}
 
-const StepList = ({ steps, activeKey }) => (
-  <ul className="pgn__stepper-header-step-list">
-    {steps.map(({ label, ...stepProps }, index) => (
-      <React.Fragment key={stepProps.eventKey}>
+function StepList({ steps, activeKey }) {
+  return (
+    <ul className="pgn__stepper-header-step-list">
+      {steps.map(({ label, ...stepProps }, index) => (
+        <React.Fragment key={stepProps.eventKey}>
 
-        {index !== 0 && <StepListSeparator />}
-        <StepperHeaderStep
-          {...stepProps}
-          index={index}
-          isActive={activeKey === stepProps.eventKey}
-        >
-          {label}
-        </StepperHeaderStep>
-      </React.Fragment>
-    ))}
-  </ul>
-);
+          {index !== 0 && <StepListSeparator />}
+          <StepperHeaderStep
+            {...stepProps}
+            index={index}
+            isActive={activeKey === stepProps.eventKey}
+          >
+            {label}
+          </StepperHeaderStep>
+        </React.Fragment>
+      ))}
+    </ul>
+  );
+}
 
 const PageCount = ({ activeStepIndex, totalSteps }) => `Step ${activeStepIndex + 1} of ${totalSteps}`;
 
-const StepperHeader = ({ className, PageCountComponent }) => {
+function StepperHeader({ className, PageCountComponent }) {
   const { steps, activeKey } = useContext(StepperContext);
   const windowDimensions = useWindowSize();
   // assume about 200px per step
@@ -62,7 +64,7 @@ const StepperHeader = ({ className, PageCountComponent }) => {
       <StepList steps={steps} activeKey={activeKey} />
     </div>
   );
-};
+}
 
 StepperHeader.propTypes = {
   /** Specifies class name to append to the base element. */

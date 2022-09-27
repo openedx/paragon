@@ -10,8 +10,10 @@ require('dotenv').config();
  * @param {string} componentName - name of the component
  */
 function generateCssClass(componentName) {
-  return componentName.replace(/[A-Z]+/g,
-    (capital, index) => (index ? `-${capital}` : capital).toLowerCase());
+  return componentName.replace(
+    /[A-Z]+/g,
+    (capital, index) => (index ? `-${capital}` : capital).toLowerCase(),
+  );
 }
 
 /**

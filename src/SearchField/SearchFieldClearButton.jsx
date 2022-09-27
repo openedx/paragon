@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import { SearchFieldContext } from './SearchFieldAdvanced';
 
-const SearchFieldClearButton = (props) => {
+function SearchFieldClearButton(props) {
   const {
     screenReaderText, icons, value, disabled, refs,
   } = useContext(SearchFieldContext);
@@ -24,6 +24,6 @@ const SearchFieldClearButton = (props) => {
       <span className="sr-only">{screenReaderText.clearButton}</span>
     </button>
   );
-};
+}
 
 export default SearchFieldClearButton;

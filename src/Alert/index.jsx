@@ -90,8 +90,12 @@ const Alert = React.forwardRef(({
 const DivStyledAsH4 = divWithClassName('h4');
 DivStyledAsH4.displayName = 'DivStyledAsH4';
 
-const AlertHeading = (props) => <BaseAlert.Heading {...props} />;
-const AlertLink = (props) => <BaseAlert.Link {...props} />;
+function AlertHeading(props) {
+  return <BaseAlert.Heading {...props} />;
+}
+function AlertLink(props) {
+  return <BaseAlert.Link {...props} />;
+}
 
 const commonPropTypes = {
   /** Specifies the base element */

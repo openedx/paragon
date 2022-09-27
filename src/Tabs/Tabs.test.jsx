@@ -33,13 +33,15 @@ window.ResizeObserver = jest.fn(() => ({
   unobserve,
 }));
 
-const TabsTestComponent = (props) => (
-  <Tabs {...props} defaultActiveKey="tab_1">
-    <Tab title="Tab 1" notification={4} eventKey="tab_1" />
-    <Tab title="Tab 2" eventKey="tab_2" />
-    <Tab title="Tab 3" eventKey="tab_3" />
-  </Tabs>
-);
+function TabsTestComponent(props) {
+  return (
+    <Tabs {...props} defaultActiveKey="tab_1">
+      <Tab title="Tab 1" notification={4} eventKey="tab_1" />
+      <Tab title="Tab 2" eventKey="tab_2" />
+      <Tab title="Tab 3" eventKey="tab_3" />
+    </Tabs>
+  );
+}
 
 describe('<Tabs />', () => {
   afterEach(() => {

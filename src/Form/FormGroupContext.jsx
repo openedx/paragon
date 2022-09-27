@@ -28,13 +28,13 @@ const useStateEffect = (initialState) => {
   return [state, useSetStateEffect];
 };
 
-const FormGroupContextProvider = ({
+function FormGroupContextProvider({
   children,
   controlId: explicitControlId,
   isInvalid,
   isValid,
   size,
-}) => {
+}) {
   const controlId = useMemo(() => explicitControlId || newId('form-field'), [explicitControlId]);
   const [describedByIds, registerDescriptorId] = useIdList(controlId);
   const [labelledByIds, registerLabelerId] = useIdList(controlId);
@@ -93,7 +93,7 @@ const FormGroupContextProvider = ({
       {children}
     </FormGroupContext.Provider>
   );
-};
+}
 
 FormGroupContextProvider.propTypes = {
   children: PropTypes.node.isRequired,

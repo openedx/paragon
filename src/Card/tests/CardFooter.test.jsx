@@ -14,13 +14,15 @@ const actions = (
 );
 
 // eslint-disable-next-line react/prop-types
-const CardFooterWrapper = ({ orientation = 'vertical', isLoading, ...props }) => (
-  <CardContext.Provider value={{ orientation, isLoading }}>
-    <CardFooter {...props}>
-      {actions}
-    </CardFooter>
-  </CardContext.Provider>
-);
+function CardFooterWrapper({ orientation = 'vertical', isLoading, ...props }) {
+  return (
+    <CardContext.Provider value={{ orientation, isLoading }}>
+      <CardFooter {...props}>
+        {actions}
+      </CardFooter>
+    </CardContext.Provider>
+  );
+}
 
 describe('<CardFooter />', () => {
   it('renders vertical orientation without footer text', () => {

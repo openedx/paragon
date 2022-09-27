@@ -2,17 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TableHeaderCell from './TableHeaderCell';
 
-const TableHeaderRow = ({ headerGroups }) => (
-  <thead>
-    {headerGroups.map(headerGroup => (
-      <tr {...headerGroup.getHeaderGroupProps()}>
-        {headerGroup.headers.map(column => (
-          <TableHeaderCell {...column} {...column.getHeaderProps()} />
-        ))}
-      </tr>
-    ))}
-  </thead>
-);
+function TableHeaderRow({ headerGroups }) {
+  return (
+    <thead>
+      {headerGroups.map(headerGroup => (
+        <tr {...headerGroup.getHeaderGroupProps()}>
+          {headerGroup.headers.map(column => (
+            <TableHeaderCell {...column} {...column.getHeaderProps()} />
+          ))}
+        </tr>
+      ))}
+    </thead>
+  );
+}
 
 TableHeaderRow.propTypes = {
   headerGroups: PropTypes.arrayOf(PropTypes.shape({

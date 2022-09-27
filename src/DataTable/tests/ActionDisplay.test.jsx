@@ -21,23 +21,27 @@ const instance = {
 };
 
 // eslint-disable-next-line react/prop-types
-const FirstAction = ({ as: Component }) => (
-  <Component className="class1">
-    First Action
-  </Component>
-);
+function FirstAction({ as: Component }) {
+  return (
+    <Component className="class1">
+      First Action
+    </Component>
+  );
+}
 
 // eslint-disable-next-line react/prop-types
-const SecondAction = ({ as: Component }) => (
-  <Component className="class2">
-    Second Action
-  </Component>
-);
+function SecondAction({ as: Component }) {
+  return (
+    <Component className="class2">
+      Second Action
+    </Component>
+  );
+}
 
 // eslint-disable-next-line react/prop-types
-const ActionDisplayWrapper = ({ value = instance, props = {} }) => (
-  <DataTableContext.Provider value={value}><ActionDisplay {...props} /></DataTableContext.Provider>
-);
+function ActionDisplayWrapper({ value = instance, props = {} }) {
+  return <DataTableContext.Provider value={value}><ActionDisplay {...props} /></DataTableContext.Provider>;
+}
 
 describe('<ActionDisplay />', () => {
   it('renders null if there are no actions', () => {

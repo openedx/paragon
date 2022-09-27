@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import DataTableContext from './DataTableContext';
 import Actions from './CollapsibleButtonGroup';
 
-const TableActions = ({ className }) => {
+function TableActions({ className }) {
   const tableInstance = useContext(DataTableContext);
   const { tableActions } = tableInstance;
 
@@ -25,7 +25,7 @@ const TableActions = ({ className }) => {
       actions={actions}
     />
   );
-};
+}
 
 TableActions.defaultProps = {
   className: undefined,

@@ -12,12 +12,12 @@ import DefaultContent from './DefaultContent';
 import messages from './messages';
 import { getTypesString, isMultipleTypes, formatBytes } from './utils';
 
-const Dropzone = ({
+function Dropzone({
   className, accept, minSize, maxSize, validator,
   errorMessages, progressVariant, inputComponent,
   onProcessUpload, onUploadProgress, onUploadCancel,
   ...props
-}) => {
+}) {
   const [isMultipleDragged, setIsMultipleDragged] = useState(false);
   const [errors, setErrors] = useState([]);
   const [progress, setProgress] = useState(0);
@@ -192,7 +192,7 @@ const Dropzone = ({
       </div>
     </div>
   );
-};
+}
 
 Dropzone.defaultProps = {
   className: undefined,

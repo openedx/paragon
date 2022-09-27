@@ -10,19 +10,21 @@ import { toggleCheckbox } from './utils';
 import { getRowIds } from '../data/helpers';
 
 // eslint-disable-next-line react/prop-types
-const ControlledSelectHeaderWrapper = ({ tableProps, selectProps }) => (
-  <DataTable {...tableProps}>
-    <ControlledSelectHeader {...selectProps} />
-    <DataTableContextChild />
-  </DataTable>
-);
+function ControlledSelectHeaderWrapper({ tableProps, selectProps }) {
+  return (
+    <DataTable {...tableProps}>
+      <ControlledSelectHeader {...selectProps} />
+      <DataTableContextChild />
+    </DataTable>
+  );
+}
 
-const DataTableContextChild = () => {
+function DataTableContextChild() {
   const contextValue = useContext(DataTableContext);
   return (
     <div className="context-value" data-contextvalue={contextValue} />
   );
-};
+}
 
 const mockToggleAllPageRowsSelectedProps = jest.fn();
 const rows = [{ id: 1 }, { id: 2 }];

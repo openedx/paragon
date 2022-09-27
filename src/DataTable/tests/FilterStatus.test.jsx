@@ -25,13 +25,15 @@ const filterPropsNoFiltered = {
 };
 
 // eslint-disable-next-line react/prop-types
-const FilterStatusWrapper = ({ value, props }) => (
-  <IntlProvider locale="en" messages={{}}>
-    <DataTableContext.Provider value={value}>
-      <FilterStatus {...props} />
-    </DataTableContext.Provider>
-  </IntlProvider>
-);
+function FilterStatusWrapper({ value, props }) {
+  return (
+    <IntlProvider locale="en" messages={{}}>
+      <DataTableContext.Provider value={value}>
+        <FilterStatus {...props} />
+      </DataTableContext.Provider>
+    </IntlProvider>
+  );
+}
 
 describe('<FilterStatus />', () => {
   it('passes props to the button', () => {

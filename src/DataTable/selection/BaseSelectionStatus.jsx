@@ -9,7 +9,7 @@ import {
   CLEAR_SELECTION_TEST_ID,
 } from './data/constants';
 
-const BaseSelectionStatus = ({
+function BaseSelectionStatus({
   className,
   clearSelectionText,
   numSelectedRows,
@@ -18,7 +18,7 @@ const BaseSelectionStatus = ({
   selectAllText,
   allSelectedText,
   selectedText,
-}) => {
+}) {
   const { itemCount } = useContext(DataTableContext);
   const isAllRowsSelected = numSelectedRows === itemCount;
   const intlAllSelectedText = allSelectedText || (
@@ -75,7 +75,7 @@ const BaseSelectionStatus = ({
       )}
     </div>
   );
-};
+}
 
 BaseSelectionStatus.defaultProps = {
   className: undefined,

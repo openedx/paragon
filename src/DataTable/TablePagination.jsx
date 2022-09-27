@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Pagination } from '..';
 import DataTableContext from './DataTableContext';
 
-const TablePagination = () => {
+function TablePagination() {
   const {
     pageCount, state, gotoPage,
   } = useContext(DataTableContext);
@@ -20,6 +20,6 @@ const TablePagination = () => {
       pageCount={pageCount}
     />
   );
-};
+}
 
 export default TablePagination;

@@ -28,12 +28,16 @@ const TRIGGER_VARIANTS = [
   'focus',
 ];
 
-const Overlay = (props) => <BaseOverlay {...props} />;
-const OverlayTrigger = (props) => (
-  <BaseOverlayTrigger {...props}>
-    {props.children}
-  </BaseOverlayTrigger>
-);
+function Overlay(props) {
+  return <BaseOverlay {...props} />;
+}
+function OverlayTrigger(props) {
+  return (
+    <BaseOverlayTrigger {...props}>
+      {props.children}
+    </BaseOverlayTrigger>
+  );
+}
 
 const triggerType = PropTypes.oneOf(TRIGGER_VARIANTS);
 

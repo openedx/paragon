@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 import { SearchFieldContext } from './SearchFieldAdvanced';
 
-const SearchFieldLabel = ({ children, ...props }) => {
+function SearchFieldLabel({ children, ...props }) {
   const { screenReaderText, inputId } = useContext(SearchFieldContext);
 
   return (
@@ -17,7 +17,7 @@ const SearchFieldLabel = ({ children, ...props }) => {
       {children || <span className="sr-only">{screenReaderText.label}</span>}
     </label>
   );
-};
+}
 
 SearchFieldLabel.propTypes = {
   /**

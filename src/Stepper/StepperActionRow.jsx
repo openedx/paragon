@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { StepperContext } from './StepperContext';
 import { ActionRow } from '..';
 
-const StepperActionRow = ({
+function StepperActionRow({
   as,
   children,
   eventKey,
   ...props
-}) => {
+}) {
   const { activeKey } = useContext(StepperContext);
   const isActive = activeKey === eventKey;
 
@@ -17,7 +17,7 @@ const StepperActionRow = ({
   }
 
   return React.createElement(as, props, children);
-};
+}
 
 StepperActionRow.propTypes = {
   /** Specifies the content of the `ActionRow`. */

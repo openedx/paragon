@@ -4,9 +4,9 @@ import classNames from 'classnames';
 import { useRows } from './hooks';
 import { CardGrid } from '..';
 
-const CardView = ({
+function CardView({
   columnSizes, CardComponent, className,
-}) => {
+}) {
   const {
     getTableProps, prepareRow, displayRows,
   } = useRows();
@@ -30,7 +30,7 @@ const CardView = ({
       {renderCards()}
     </CardGrid>
   );
-};
+}
 
 CardView.defaultProps = {
   columnSizes: {

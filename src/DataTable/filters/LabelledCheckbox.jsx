@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { Form } from '../..';
 import { newId } from '../../utils';
 
-const LabelledCheckbox = ({
+function LabelledCheckbox({
   onChange, checked, label, id,
-}) => {
+}) {
   const idRef = useRef(newId(id));
   return (
     <div key={idRef.current} className="pgn__checkbox-filter">
@@ -17,7 +17,7 @@ const LabelledCheckbox = ({
       />
     </div>
   );
-};
+}
 
 LabelledCheckbox.propTypes = {
   checked: PropTypes.bool.isRequired,

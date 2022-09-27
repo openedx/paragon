@@ -15,7 +15,7 @@ const BUTTON_LOCATION_VARIANTS = [
   'external',
 ];
 
-const SearchFieldSubmitButton = (props) => {
+function SearchFieldSubmitButton(props) {
   const {
     variant, submitButtonLocation, buttonText, ...others
   } = props;
@@ -51,7 +51,7 @@ const SearchFieldSubmitButton = (props) => {
       <span className="sr-only">{screenReaderText.submitButton}</span>
     </button>
   );
-};
+}
 
 SearchFieldSubmitButton.propTypes = {
   /** The button style variant to use. */

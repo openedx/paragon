@@ -5,11 +5,13 @@ import StepperHeader from './StepperHeader';
 import StepperActionRow from './StepperActionRow';
 import { StepperContextProvider } from './StepperContext';
 
-const Stepper = ({ children, activeKey }) => (
-  <StepperContextProvider activeKey={activeKey}>
-    {children}
-  </StepperContextProvider>
-);
+function Stepper({ children, activeKey }) {
+  return (
+    <StepperContextProvider activeKey={activeKey}>
+      {children}
+    </StepperContextProvider>
+  );
+}
 
 Stepper.propTypes = {
   /**

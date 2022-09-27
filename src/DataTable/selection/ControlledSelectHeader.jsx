@@ -9,7 +9,7 @@ import {
   setSelectedRowsAction,
 } from './data/actions';
 
-const ControlledSelectHeader = ({ rows }) => {
+function ControlledSelectHeader({ rows }) {
   const {
     itemCount,
     controlledTableSelections: [, dispatch],
@@ -47,7 +47,7 @@ const ControlledSelectHeader = ({ rows }) => {
       />
     </div>
   );
-};
+}
 
 ControlledSelectHeader.propTypes = {
   rows: PropTypes.arrayOf(PropTypes.shape({

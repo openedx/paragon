@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import MediaQuery from 'react-responsive';
 
+import {
+  ChevronLeft, ChevronRight, ArrowBackIos, ArrowForwardIos,
+} from '../../icons';
 import { greaterThan } from '../utils/propTypes';
 import { Button, Dropdown, IconButton } from '..';
 import Icon from '../Icon';
@@ -11,9 +14,6 @@ import breakpoints from '../utils/breakpoints';
 import newId from '../utils/newId';
 import { ELLIPSIS } from './constants';
 import getPaginationRange from './getPaginationRange';
-import {
-  ChevronLeft, ChevronRight, ArrowBackIos, ArrowForwardIos,
-} from '../../icons';
 
 export const PAGINATION_BUTTON_LABEL_PREV = 'Previous';
 export const PAGINATION_BUTTON_LABEL_NEXT = 'Next';
@@ -30,20 +30,22 @@ const VARIANTS = {
   minimal: 'minimal',
 };
 
-const ReducedPagination = ({ currentPage, pageCount, handlePageSelect }) => (
-  <Dropdown>
-    <Dropdown.Toggle variant="tertiary" id="Pagination dropdown">
-      {currentPage} of {pageCount}
-    </Dropdown.Toggle>
-    <Dropdown.Menu className="pgn__reduced-pagination-dropdown">
-      {[...Array(pageCount).keys()].map(pageNum => (
-        <Dropdown.Item onClick={() => handlePageSelect(pageNum + 1)} key={pageNum}>
-          {pageNum + 1}
-        </Dropdown.Item>
-      ))}
-    </Dropdown.Menu>
-  </Dropdown>
-);
+function ReducedPagination({ currentPage, pageCount, handlePageSelect }) {
+  return (
+    <Dropdown>
+      <Dropdown.Toggle variant="tertiary" id="Pagination dropdown">
+        {currentPage} of {pageCount}
+      </Dropdown.Toggle>
+      <Dropdown.Menu className="pgn__reduced-pagination-dropdown">
+        {[...Array(pageCount).keys()].map(pageNum => (
+          <Dropdown.Item onClick={() => handlePageSelect(pageNum + 1)} key={pageNum}>
+            {pageNum + 1}
+          </Dropdown.Item>
+        ))}
+      </Dropdown.Menu>
+    </Dropdown>
+  );
+}
 
 class Pagination extends React.Component {
   constructor(props) {

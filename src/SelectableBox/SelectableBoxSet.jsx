@@ -22,19 +22,22 @@ const SelectableBoxSet = React.forwardRef(({
 }, ref) => {
   const inputType = getInputType('SelectableBoxSet', type);
 
-  return React.createElement(inputType, {
-    name,
-    value,
-    defaultValue,
-    onChange,
-    ref,
-    className: classNames(
-      'pgn__selectable_box-set',
-      `pgn__selectable_box-set--${columns || DEFAULT_COLUMNS_NUMBER}`,
-      className,
-    ),
-  },
-  children);
+  return React.createElement(
+    inputType,
+    {
+      name,
+      value,
+      defaultValue,
+      onChange,
+      ref,
+      className: classNames(
+        'pgn__selectable_box-set',
+        `pgn__selectable_box-set--${columns || DEFAULT_COLUMNS_NUMBER}`,
+        className,
+      ),
+    },
+    children,
+  );
 });
 
 SelectableBoxSet.propTypes = {

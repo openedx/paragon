@@ -25,13 +25,15 @@ const instance = {
 };
 
 // eslint-disable-next-line react/prop-types
-const SmartStatusWrapper = ({ value, props }) => (
-  <IntlProvider locale="en" messages={{}}>
-    <DataTableContext.Provider value={value}>
-      <SmartStatus {...props} />
-    </DataTableContext.Provider>
-  </IntlProvider>
-);
+function SmartStatusWrapper({ value, props }) {
+  return (
+    <IntlProvider locale="en" messages={{}}>
+      <DataTableContext.Provider value={value}>
+        <SmartStatus {...props} />
+      </DataTableContext.Provider>
+    </IntlProvider>
+  );
+}
 
 describe('<SmartStatus />', () => {
   it('Shows the selection status if rows are selected', () => {
@@ -68,7 +70,9 @@ describe('<SmartStatus />', () => {
   });
   it('shows an alternate selection status', () => {
     const altStatusText = 'horses R cool';
-    const AltStatus = () => <div>{altStatusText}</div>;
+    function AltStatus() {
+      return <div>{altStatusText}</div>;
+    }
     const wrapper = mount(<SmartStatusWrapper
       value={{
         ...instance, SelectionStatusComponent: AltStatus, state: {}, selectedFlatRows: Array(5),
@@ -78,7 +82,9 @@ describe('<SmartStatus />', () => {
   });
   it('shows an alternate row status', () => {
     const altStatusText = 'horses R cool';
-    const AltStatus = () => <div>{altStatusText}</div>;
+    function AltStatus() {
+      return <div>{altStatusText}</div>;
+    }
     const wrapper = mount(<SmartStatusWrapper
       value={{ ...instance, RowStatusComponent: AltStatus }}
     />);
@@ -86,7 +92,9 @@ describe('<SmartStatus />', () => {
   });
   it('shows an alternate filter status', () => {
     const altStatusText = 'horses R cool';
-    const AltStatus = () => <div>{altStatusText}</div>;
+    function AltStatus() {
+      return <div>{altStatusText}</div>;
+    }
     const wrapper = mount(<SmartStatusWrapper
       value={{ ...instance, FilterStatusComponent: AltStatus, state: { filters } }}
     />);

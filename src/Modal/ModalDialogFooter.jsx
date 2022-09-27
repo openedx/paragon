@@ -2,18 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const ModalDialogFooter = ({
+function ModalDialogFooter({
   as,
   children,
   ...props
-}) => React.createElement(
-  as,
-  {
-    ...props,
-    className: classNames('pgn__modal-footer', props.className),
-  },
-  children,
-);
+}) {
+  return React.createElement(
+    as,
+    {
+      ...props,
+      className: classNames('pgn__modal-footer', props.className),
+    },
+    children,
+  );
+}
 
 ModalDialogFooter.propTypes = {
   /** Specifies the base element */

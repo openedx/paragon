@@ -5,12 +5,24 @@ import BaseNavItem from 'react-bootstrap/NavItem';
 import BaseNavLink from 'react-bootstrap/NavLink';
 import PropTypes from 'prop-types';
 
-const Nav = (props) => <BaseNav {...props} />;
-const NavItem = (props) => <BaseNavItem {...props} />;
-const NavLink = (props) => <BaseNavLink {...props} />;
-const NavDropdown = (props) => <BaseNavDropdown {...props} />;
-const NavDropdownItem = (props) => <BaseNavDropdown.Item {...props} />;
-const NavDropdownDivider = (props) => <BaseNavDropdown.Divider {...props} />;
+function Nav(props) {
+  return <BaseNav {...props} />;
+}
+function NavItem(props) {
+  return <BaseNavItem {...props} />;
+}
+function NavLink(props) {
+  return <BaseNavLink {...props} />;
+}
+function NavDropdown(props) {
+  return <BaseNavDropdown {...props} />;
+}
+function NavDropdownItem(props) {
+  return <BaseNavDropdown.Item {...props} />;
+}
+function NavDropdownDivider(props) {
+  return <BaseNavDropdown.Divider {...props} />;
+}
 
 Nav.propTypes = {
   ...Nav.propTypes,

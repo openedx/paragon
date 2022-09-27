@@ -7,11 +7,13 @@ import '@testing-library/jest-dom';
 import DefaultContent from '../DefaultContent';
 
 // eslint-disable-next-line react/prop-types
-const DefaultContentWrapper = ({ children, ...props }) => (
-  <IntlProvider locale="en" messages={{}}>
-    <DefaultContent {...props} />
-  </IntlProvider>
-);
+function DefaultContentWrapper({ children, ...props }) {
+  return (
+    <IntlProvider locale="en" messages={{}}>
+      <DefaultContent {...props} />
+    </IntlProvider>
+  );
+}
 
 describe('<Dropzone.DefaultContent />', () => {
   it('successfully renders', () => {

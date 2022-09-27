@@ -3,13 +3,15 @@ import PropTypes from 'prop-types';
 
 const CardContext = createContext({});
 
-const CardContextProvider = ({
+function CardContextProvider({
   orientation, children, isLoading,
-}) => (
-  <CardContext.Provider value={{ orientation, isLoading }}>
-    {children}
-  </CardContext.Provider>
-);
+}) {
+  return (
+    <CardContext.Provider value={{ orientation, isLoading }}>
+      {children}
+    </CardContext.Provider>
+  );
+}
 
 CardContextProvider.propTypes = {
   /** Specifies which orientation to use. */

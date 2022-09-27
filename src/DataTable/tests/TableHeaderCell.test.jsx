@@ -15,7 +15,9 @@ const props = {
 };
 
 // eslint-disable-next-line react/prop-types
-const FakeTable = ({ children }) => (<table><thead><tr>{children}</tr></thead></table>);
+function FakeTable({ children }) {
+  return <table><thead><tr>{children}</tr></thead></table>;
+}
 
 describe('<TableHeaderCell />', () => {
   describe('unsorted', () => {

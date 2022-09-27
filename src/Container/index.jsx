@@ -11,17 +11,19 @@ const SIZE_CLASS_NAMES = {
   xl: 'container-mw-xl',
 };
 
-const Container = ({ size, children, ...props }) => (
-  <RBContainer
-    {...props}
-    className={classNames(
-      props.className,
-      SIZE_CLASS_NAMES[size],
-    )}
-  >
-    {children}
-  </RBContainer>
-);
+function Container({ size, children, ...props }) {
+  return (
+    <RBContainer
+      {...props}
+      className={classNames(
+        props.className,
+        SIZE_CLASS_NAMES[size],
+      )}
+    >
+      {children}
+    </RBContainer>
+  );
+}
 
 Container.propTypes = {
   ...RBContainer.propTypes,

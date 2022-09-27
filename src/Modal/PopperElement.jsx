@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { usePopper } from 'react-popper';
 
-const PopperElement = ({
+function PopperElement({
   children, target, strategy, placement, modifiers,
-}) => {
+}) {
   const [popperElement, setPopperElement] = useState(null);
   const popperOptions = { modifiers, strategy, placement };
   const {
@@ -21,7 +21,7 @@ const PopperElement = ({
       {children}
     </div>
   );
-};
+}
 
 PopperElement.defaultProps = {
   target: undefined,

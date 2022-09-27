@@ -7,22 +7,24 @@ const DIRECTION_VARIANTS = [
   'vertical',
 ];
 
-const Stack = ({
+function Stack({
   direction,
   gap,
   children,
   className,
-}) => (
-  <div
-    className={classNames(
-      direction === 'horizontal' ? 'pgn__hstack' : 'pgn__vstack',
-      gap ? `pgn__stack-gap--${gap}` : '',
-      className,
-    )}
-  >
-    {children}
-  </div>
-);
+}) {
+  return (
+    <div
+      className={classNames(
+        direction === 'horizontal' ? 'pgn__hstack' : 'pgn__vstack',
+        gap ? `pgn__stack-gap--${gap}` : '',
+        className,
+      )}
+    >
+      {children}
+    </div>
+  );
+}
 
 Stack.propTypes = {
   /** Specifies the content of the `Stack`. */
