@@ -4,22 +4,24 @@ import Button from '../Button';
 
 export const TABLE_FILTERS_BUTTON_TEXT = 'Filter';
 
-const TableFilters = ({
+function TableFilters({
   columns, manualFilters, onFilter, currentFilters,
-}) => (
-  <div>
-    <h4>Filters</h4>
-    {columns.map(column => <div key={column.Header}>{column.canFilter ? column.render('Filter') : null}</div>)}
-    {manualFilters && (
-    <Button
-      type="primary"
-      onClick={() => onFilter(currentFilters)}
-    >
-      {TABLE_FILTERS_BUTTON_TEXT}
-    </Button>
-    )}
-  </div>
-);
+}) {
+  return (
+    <div>
+      <h4>Filters</h4>
+      {columns.map(column => <div key={column.Header}>{column.canFilter ? column.render('Filter') : null}</div>)}
+      {manualFilters && (
+      <Button
+        type="primary"
+        onClick={() => onFilter(currentFilters)}
+      >
+        {TABLE_FILTERS_BUTTON_TEXT}
+      </Button>
+      )}
+    </div>
+  );
+}
 
 TableFilters.defaultProps = {
   manualFilters: false,

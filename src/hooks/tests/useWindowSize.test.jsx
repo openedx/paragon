@@ -3,11 +3,11 @@ import { mount } from 'enzyme';
 import { act } from 'react-dom/test-utils';
 import { useWindowSize } from '../..';
 
-const FakeComponent = () => {
+function FakeComponent() {
   const { width, height } = useWindowSize();
 
   return <div>{height} {width}</div>;
-};
+}
 
 describe('useWindowSize hook', () => {
   const { innerHeight, innerWidth } = global;

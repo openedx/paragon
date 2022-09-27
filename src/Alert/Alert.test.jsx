@@ -3,19 +3,21 @@ import { mount } from 'enzyme';
 import { IntlProvider } from 'react-intl';
 import renderer, { act } from 'react-test-renderer';
 import { Context as ResponsiveContext } from 'react-responsive';
+import { Info } from '../../icons';
 import breakpoints from '../utils/breakpoints';
 import Button from '../Button';
 import Alert from './index';
-import { Info } from '../../icons';
 
 // eslint-disable-next-line react/prop-types
-const AlertWrapper = ({ children, ...props }) => (
-  <IntlProvider locale="en" messages={{}}>
-    <Alert {...props}>
-      {children}
-    </Alert>
-  </IntlProvider>
-);
+function AlertWrapper({ children, ...props }) {
+  return (
+    <IntlProvider locale="en" messages={{}}>
+      <Alert {...props}>
+        {children}
+      </Alert>
+    </IntlProvider>
+  );
+}
 
 describe('<Alert />', () => {
   it('renders without any props', () => {

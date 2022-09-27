@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { requiredWhenNot } from '../utils/propTypes';
 import ModalDialog from './ModalDialog';
 
-const MarketingModal = ({
+function MarketingModal({
   children,
   footerNode,
   heroNode,
@@ -12,20 +12,22 @@ const MarketingModal = ({
   beforeBodyNode,
   afterBodyNode,
   ...props
-}) => (
-  <ModalDialog
-    {...props}
-    variant={heroIsDark ? 'dark' : 'default'}
-  >
-    {heroNode}
-    {beforeBodyNode}
-    <ModalDialog.Body>{children}</ModalDialog.Body>
-    {afterBodyNode}
-    {footerNode && (
+}) {
+  return (
+    <ModalDialog
+      {...props}
+      variant={heroIsDark ? 'dark' : 'default'}
+    >
+      {heroNode}
+      {beforeBodyNode}
+      <ModalDialog.Body>{children}</ModalDialog.Body>
+      {afterBodyNode}
+      {footerNode && (
       <ModalDialog.Footer>{footerNode}</ModalDialog.Footer>
-    )}
-  </ModalDialog>
-);
+      )}
+    </ModalDialog>
+  );
+}
 
 MarketingModal.propTypes = {
   /** Specifies the content of the modal */

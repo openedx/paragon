@@ -2,18 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const ModalDialogHeroContent = ({
+function ModalDialogHeroContent({
   as,
   children,
   ...props
-}) => React.createElement(
-  as,
-  {
-    ...props,
-    className: classNames('pgn__modal-hero-content', props.className),
-  },
-  children,
-);
+}) {
+  return React.createElement(
+    as,
+    {
+      ...props,
+      className: classNames('pgn__modal-hero-content', props.className),
+    },
+    children,
+  );
+}
 
 ModalDialogHeroContent.propTypes = {
   as: PropTypes.elementType,

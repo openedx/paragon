@@ -4,23 +4,25 @@ import ModalDialog from './ModalDialog';
 
 export const FULLSCREEN_MODAL_CLOSE_LABEL = 'Close';
 
-const FullscreenModal = ({
+function FullscreenModal({
   children,
   footerNode,
   beforeBodyNode,
   afterBodyNode,
   ...props
-}) => (
-  <ModalDialog {...props}>
-    <ModalDialog.Header>
-      <ModalDialog.Title>{props.title}</ModalDialog.Title>
-    </ModalDialog.Header>
-    {beforeBodyNode}
-    <ModalDialog.Body className={props.modalBodyClassName}>{children}</ModalDialog.Body>
-    {afterBodyNode}
-    {footerNode && <ModalDialog.Footer>{footerNode}</ModalDialog.Footer>}
-  </ModalDialog>
-);
+}) {
+  return (
+    <ModalDialog {...props}>
+      <ModalDialog.Header>
+        <ModalDialog.Title>{props.title}</ModalDialog.Title>
+      </ModalDialog.Header>
+      {beforeBodyNode}
+      <ModalDialog.Body className={props.modalBodyClassName}>{children}</ModalDialog.Body>
+      {afterBodyNode}
+      {footerNode && <ModalDialog.Footer>{footerNode}</ModalDialog.Footer>}
+    </ModalDialog>
+  );
+}
 
 FullscreenModal.propTypes = {
   /** Specifies contents of the component. */

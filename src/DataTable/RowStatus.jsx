@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import DataTableContext from './DataTableContext';
 
-const RowStatus = ({ className, statusText }) => {
+function RowStatus({ className, statusText }) {
   const { page, rows, itemCount } = useContext(DataTableContext);
   const pageSize = page?.length || rows?.length;
 
@@ -22,7 +22,7 @@ const RowStatus = ({ className, statusText }) => {
       )}
     </div>
   );
-};
+}
 
 RowStatus.propTypes = {
   /** Specifies class name to append to the base element. */

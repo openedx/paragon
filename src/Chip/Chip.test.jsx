@@ -2,15 +2,16 @@ import React from 'react';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
+import { Close } from '../../icons';
 import Chip from './index';
 
-import { Close } from '../../icons';
-
-const TestChip = (props) => (
-  <Chip {...props}>
-    Test
-  </Chip>
-);
+function TestChip(props) {
+  return (
+    <Chip {...props}>
+      Test
+    </Chip>
+  );
+}
 
 describe('<Chip />', () => {
   describe('snapshots', () => {

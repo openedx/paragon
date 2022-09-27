@@ -6,7 +6,7 @@ import SelectionStatusDefault from './selection/SelectionStatus';
 
 const SMART_STATUS_CLASS = 'pgn__smart-status';
 
-const SmartStatus = () => {
+function SmartStatus() {
   const {
     state, selectedFlatRows, SelectionStatusComponent, FilterStatusComponent, RowStatusComponent, showFiltersInSidebar,
   } = useContext(DataTableContext);
@@ -34,6 +34,6 @@ const SmartStatus = () => {
       className={SMART_STATUS_CLASS}
     />
   );
-};
+}
 
 export default SmartStatus;

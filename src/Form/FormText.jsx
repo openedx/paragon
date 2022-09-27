@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Icon } from '..';
 import {
   Check, Close, Cancel, CheckCircle, RadioButtonUnchecked, WarningFilled,
 } from '../../icons';
+import { Icon } from '..';
 
 import { FORM_TEXT_TYPES } from './constants';
 
@@ -28,7 +28,7 @@ const resolveTextType = ({ isInvalid, isValid }) => {
   return FORM_TEXT_TYPES.DEFAULT;
 };
 
-const FormTextIcon = ({ type, customIcon }) => {
+function FormTextIcon({ type, customIcon }) {
   if (customIcon) {
     return customIcon;
   }
@@ -39,7 +39,7 @@ const FormTextIcon = ({ type, customIcon }) => {
   }
 
   return null;
-};
+}
 
 FormTextIcon.propTypes = {
   type: PropTypes.oneOf(Object.values(FORM_TEXT_TYPES)),
@@ -51,9 +51,9 @@ FormTextIcon.defaultProps = {
   customIcon: undefined,
 };
 
-const FormText = ({
+function FormText({
   children, type, icon, muted, hasIcon, ...props
-}) => {
+}) {
   const className = classNames(
     props.className,
     'pgn__form-text',
@@ -69,7 +69,7 @@ const FormText = ({
       {children}
     </div>
   );
-};
+}
 
 const FORM_TEXT_TYPE_CHOICES = [
   'default',

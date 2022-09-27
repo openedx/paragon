@@ -1,5 +1,5 @@
 const isGreaterThan = (lowerBound) => (
-  (props, propName, componentName) => {
+  function (props, propName, componentName) {
     const value = props[propName];
 
     if (typeof value === 'number' && !Number.isNaN(value) && value > lowerBound) {

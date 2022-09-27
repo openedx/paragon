@@ -5,11 +5,11 @@ import classNames from 'classnames';
 import SidebarFilters from './SidebarFilters';
 import DataTableContext from './DataTableContext';
 
-const DataTableLayout = ({
+function DataTableLayout({
   filtersTitle,
   className,
   children,
-}) => {
+}) {
   const { setFilter, showFiltersInSidebar } = useContext(DataTableContext);
 
   return (
@@ -24,7 +24,7 @@ const DataTableLayout = ({
       </div>
     </div>
   );
-};
+}
 
 DataTableLayout.defaultProps = {
   className: null,

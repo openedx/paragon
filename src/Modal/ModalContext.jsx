@@ -5,9 +5,9 @@ const ModalContext = React.createContext({
   onClose: () => {},
 });
 
-const ModalContextProvider = ({
+function ModalContextProvider({
   onClose, isOpen, isBlocking, children,
-}) => {
+}) {
   const modalContextValue = useMemo(
     () => ({ onClose, isOpen, isBlocking }),
     [onClose, isOpen, isBlocking],
@@ -18,7 +18,7 @@ const ModalContextProvider = ({
       {children}
     </ModalContext.Provider>
   );
-};
+}
 
 ModalContextProvider.propTypes = {
   children: PropTypes.node,

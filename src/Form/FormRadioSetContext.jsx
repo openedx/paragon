@@ -10,7 +10,7 @@ const FormRadioSetContext = React.createContext({
 
 const useRadioSetContext = () => useContext(FormRadioSetContext);
 
-const FormRadioSetContextProvider = ({
+function FormRadioSetContextProvider({
   children,
   name,
   onBlur,
@@ -18,7 +18,7 @@ const FormRadioSetContextProvider = ({
   onChange,
   value,
   defaultValue,
-}) => {
+}) {
   const isControlled = !defaultValue && value !== undefined;
   const getRadioControlProps = (radioProps) => ({
     ...radioProps,
@@ -46,7 +46,7 @@ const FormRadioSetContextProvider = ({
       {children}
     </FormRadioSetContext.Provider>
   );
-};
+}
 
 FormRadioSetContextProvider.propTypes = {
   children: PropTypes.node.isRequired,

@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import TableCell from './TableCell';
 import DataTableContext from './DataTableContext';
 
-const TableRow = ({ row }) => {
+function TableRow({ row }) {
   const {
     getRowProps, cells, id, isSelected, isExpanded,
   } = row;
@@ -31,7 +31,7 @@ const TableRow = ({ row }) => {
       ) : null}
     </>
   );
-};
+}
 
 TableRow.propTypes = {
   /** Row data that is received from `react-table` API. */

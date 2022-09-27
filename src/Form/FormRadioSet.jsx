@@ -4,7 +4,7 @@ import { useFormGroupContext } from './FormGroupContext';
 import { FormRadioSetContextProvider } from './FormRadioSetContext';
 import FormControlSet from './FormControlSet';
 
-const FormRadioSet = ({
+function FormRadioSet({
   children,
   name,
   value,
@@ -14,7 +14,7 @@ const FormRadioSet = ({
   onFocus,
   onBlur,
   ...props
-}) => {
+}) {
   const { getControlProps, useSetIsControlGroupEffect } = useFormGroupContext();
   useSetIsControlGroupEffect(true);
   const controlProps = getControlProps(props);
@@ -32,7 +32,7 @@ const FormRadioSet = ({
       </FormControlSet>
     </FormRadioSetContextProvider>
   );
-};
+}
 
 FormRadioSet.propTypes = {
   children: PropTypes.node.isRequired,

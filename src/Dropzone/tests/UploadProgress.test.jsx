@@ -13,14 +13,16 @@ const defaultProps = {
 };
 
 // eslint-disable-next-line react/prop-types
-const UploadProgressWrapper = ({ children, ...props }) => (
-  <IntlProvider locale="en" messages={{}}>
-    <UploadProgress
-      {...defaultProps}
-      {...props}
-    />
-  </IntlProvider>
-);
+function UploadProgressWrapper({ children, ...props }) {
+  return (
+    <IntlProvider locale="en" messages={{}}>
+      <UploadProgress
+        {...defaultProps}
+        {...props}
+      />
+    </IntlProvider>
+  );
+}
 
 describe('<Dropzone.UploadProgress />', () => {
   it('renders spinner if receives "spinner" as a variant prop', () => {

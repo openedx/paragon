@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const TableCell = ({ getCellProps, render, column }) => {
+function TableCell({ getCellProps, render, column }) {
   const { className, ...rest } = getCellProps();
   return (
     <td {...rest} className={classNames('pgn__data-table-cell-wrap', className, column.cellClassName)}>
       {render('Cell')}
     </td>
   );
-};
+}
 
 TableCell.propTypes = {
   /** Props for the td element */

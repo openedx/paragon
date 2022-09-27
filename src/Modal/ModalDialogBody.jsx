@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import useIsVisible from '../hooks/useIsVisible';
 
-const ModalDialogBody = ({
+function ModalDialogBody({
   as,
   children,
   ...props
-}) => {
+}) {
   const [isScrolledToTop, topSentinelRef] = useIsVisible();
   const [isScrolledToBottom, bottomSentinelRef] = useIsVisible();
   const className = classNames(
@@ -31,7 +31,7 @@ const ModalDialogBody = ({
       </>
     ),
   );
-};
+}
 
 ModalDialogBody.propTypes = {
   /** Specifies the base element */

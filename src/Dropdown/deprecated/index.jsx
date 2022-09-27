@@ -57,7 +57,7 @@ class Dropdown extends React.Component {
     if (this.state.open) {
       this.close();
     }
-  }
+  };
 
   handleMenuKeyDown = (e) => {
     switch (e.key) {
@@ -84,7 +84,7 @@ class Dropdown extends React.Component {
       default:
         break;
     }
-  }
+  };
 
   toggle = () => {
     if (this.state.open) {
@@ -92,7 +92,7 @@ class Dropdown extends React.Component {
     } else {
       this.open();
     }
-  }
+  };
 
   close() {
     document.removeEventListener('click', this.handleDocumentClick, true);

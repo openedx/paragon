@@ -34,7 +34,7 @@ class CollapsibleAdvanced extends React.Component {
     if (this.props.onToggle) {
       this.props.onToggle(true);
     }
-  }
+  };
 
   close = () => {
     this.setState({ isOpen: false });
@@ -45,7 +45,7 @@ class CollapsibleAdvanced extends React.Component {
     if (this.props.onToggle) {
       this.props.onToggle(false);
     }
-  }
+  };
 
   toggle = () => {
     if (this.state.isOpen) {
@@ -53,7 +53,7 @@ class CollapsibleAdvanced extends React.Component {
     } else {
       this.open();
     }
-  }
+  };
 
   render() {
     const {

@@ -2,23 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const ModalDialogHeroBackground = ({
+function ModalDialogHeroBackground({
   as,
   backgroundSrc,
   children,
   ...props
-}) => React.createElement(
-  as,
-  {
-    ...props,
-    className: classNames('pgn__modal-hero-bg', props.className),
-    style: {
-      backgroundImage: backgroundSrc ? `url(${backgroundSrc})` : undefined,
-      ...props.style,
+}) {
+  return React.createElement(
+    as,
+    {
+      ...props,
+      className: classNames('pgn__modal-hero-bg', props.className),
+      style: {
+        backgroundImage: backgroundSrc ? `url(${backgroundSrc})` : undefined,
+        ...props.style,
+      },
     },
-  },
-  children,
-);
+    children,
+  );
+}
 
 ModalDialogHeroBackground.propTypes = {
   as: PropTypes.elementType,

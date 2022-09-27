@@ -91,10 +91,10 @@ describe('<Collapsible />', () => {
     });
     it('correct behavior with unmountOnExit', () => {
       let i = 0;
-      const Comp = () => {
+      function Comp() {
         i += 1;
         return <h1>Hello world</h1>;
-      };
+      }
       const component = mount((
         <Collapsible.Advanced unmountOnExit={false}>
           <Collapsible.Body>

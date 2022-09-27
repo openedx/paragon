@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import BaseTab from 'react-bootstrap/Tab';
 
-const Tab = (props) => <BaseTab {...props} />;
+function Tab(props) {
+  return <BaseTab {...props} />;
+}
 
 Tab.propTypes = {
   /** Specifies the `Tab` navigation title. */

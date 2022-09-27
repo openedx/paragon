@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
  * @param {Array<IconButton>} args.children children components expected to be IconButton
  * @returns {React.Component} A React component
  */
-const IconButtonToggle = ({ activeValue, onChange, children }) => {
+function IconButtonToggle({ activeValue, onChange, children }) {
   const iconButtons = useMemo(
     () => React.Children.map(children, iconButton => {
       const isActive = iconButton.props.value === activeValue;
@@ -25,7 +25,7 @@ const IconButtonToggle = ({ activeValue, onChange, children }) => {
     [children, activeValue, onChange],
   );
   return <div className="pgn__icon-button-toggle__container">{iconButtons}</div>;
-};
+}
 
 IconButtonToggle.defaultProps = {
   onChange: () => {},

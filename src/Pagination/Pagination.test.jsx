@@ -219,11 +219,13 @@ describe('<Pagination />', () => {
      * Responsive Context Provider is needed to mock screen
      * */
     // eslint-disable-next-line react/prop-types
-    const Proxy = ({ currentPage, width }) => (
-      <ResponsiveContext.Provider value={{ width }}>
-        <Pagination {...props} currentPage={currentPage} />
-      </ResponsiveContext.Provider>
-    );
+    function Proxy({ currentPage, width }) {
+      return (
+        <ResponsiveContext.Provider value={{ width }}>
+          <Pagination {...props} currentPage={currentPage} />
+        </ResponsiveContext.Provider>
+      );
+    }
 
     beforeEach(() => {
       props = {

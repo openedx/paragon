@@ -5,7 +5,7 @@ import { FormattedMessage } from 'react-intl';
 import DataTableContext from './DataTableContext';
 import FilterStatus from './FilterStatus';
 
-const SidebarFilters = ({ title }) => {
+function SidebarFilters({ title }) {
   const { state, columns } = useContext(DataTableContext);
   const availableFilters = useMemo(() => columns.filter((column) => column.canFilter), [columns]);
   const filtersApplied = state?.filters && state.filters.length > 0;
@@ -30,17 +30,15 @@ const SidebarFilters = ({ title }) => {
         </div>
       ))}
       {filtersApplied && (
-      <>
-        <FilterStatus
-          className="pgn__data-table-side-filters-status"
-          showFilteredFields={false}
-          variant="tertiary"
-        />
-      </>
+      <FilterStatus
+        className="pgn__data-table-side-filters-status"
+        showFilteredFields={false}
+        variant="tertiary"
+      />
       )}
     </div>
   );
-};
+}
 
 SidebarFilters.propTypes = {
   /** Specifies the title to show near the filters, default to 'Filters'. */
