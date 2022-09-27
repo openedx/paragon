@@ -9,7 +9,7 @@ import ActionDisplay from './ActionDisplay';
 import DataViewToggle from './DataViewToggle';
 
 // handles layout for filters, status, and bulk actions
-const TableControlBar = ({ className }) => {
+function TableControlBar({ className }) {
   const {
     setFilter,
     showFiltersInSidebar,
@@ -42,17 +42,15 @@ const TableControlBar = ({ className }) => {
           {togglePlacement !== 'bottom' ? <SmartStatus /> : null}
         </div>
         {(!setFilter || (setFilter && showFiltersInSidebar)) && (
-          <>
-            <div className={actionsSectionClassName}>
-              <div className="pgn__data-table-toggle">
-                {togglePlacement === 'bottom' ? <SmartStatus /> : null}
-                <DataViewToggle />
-              </div>
-              <div>
-                <ActionDisplay />
-              </div>
+          <div className={actionsSectionClassName}>
+            <div className="pgn__data-table-toggle">
+              {togglePlacement === 'bottom' ? <SmartStatus /> : null}
+              <DataViewToggle />
             </div>
-          </>
+            <div>
+              <ActionDisplay />
+            </div>
+          </div>
         )}
         {(setFilter && !showFiltersInSidebar) && (
           <div className="pgn__data-table-toggle">
@@ -62,7 +60,7 @@ const TableControlBar = ({ className }) => {
       </div>
     </div>
   );
-};
+}
 
 TableControlBar.propTypes = {
   /** Specifies class name to append to the base element */

@@ -130,8 +130,10 @@ describe('<StatusAlert />', () => {
     it('focus function changes focus', () => {
       const app = document.createElement('div');
       document.body.appendChild(app);
-      wrapper = mount(<div><Button.Deprecated label="test" /><StatusAlert {...defaultProps} /></div>,
-        { attachTo: app });
+      wrapper = mount(
+        <div><Button.Deprecated label="test" /><StatusAlert {...defaultProps} /></div>,
+        { attachTo: app },
+      );
       const buttons = wrapper.find('button');
 
       // move focus away from default StatusAlert xButton

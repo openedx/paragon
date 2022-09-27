@@ -7,10 +7,18 @@ import PropTypes from 'prop-types';
 
 export const NAVBAR_LABEL = 'Toggle navigation';
 
-const Navbar = (props) => <BaseNavbar {...props} />;
-const NavbarBrand = (props) => <BaseNavbarBrand {...props} />;
-const NavbarToggle = (props) => <BaseNavbarToggle {...props} />;
-const NavbarCollapse = (props) => <BaseNavbarCollapse {...props} />;
+function Navbar(props) {
+  return <BaseNavbar {...props} />;
+}
+function NavbarBrand(props) {
+  return <BaseNavbarBrand {...props} />;
+}
+function NavbarToggle(props) {
+  return <BaseNavbarToggle {...props} />;
+}
+function NavbarCollapse(props) {
+  return <BaseNavbarCollapse {...props} />;
+}
 
 Navbar.propTypes = {
   ...Navbar.propTypes,

@@ -11,21 +11,25 @@ const checkboxText = (text) => `SelectableCheckbox${text}`;
 const radioType = 'radio';
 const radioText = (text) => `SelectableRadio${text}`;
 
-const SelectableCheckboxSet = (props) => (
-  <SelectableBox.Set name={radioType} type={checkboxType} {...props}>
-    <SelectableBox value={1} type={checkboxType}>{checkboxText(1)}</SelectableBox>
-    <SelectableBox value={2} type={checkboxType}>{checkboxText(2)}</SelectableBox>
-    <SelectableBox value={3} type={checkboxType}>{checkboxText(3)}</SelectableBox>
-  </SelectableBox.Set>
-);
+function SelectableCheckboxSet(props) {
+  return (
+    <SelectableBox.Set name={radioType} type={checkboxType} {...props}>
+      <SelectableBox value={1} type={checkboxType}>{checkboxText(1)}</SelectableBox>
+      <SelectableBox value={2} type={checkboxType}>{checkboxText(2)}</SelectableBox>
+      <SelectableBox value={3} type={checkboxType}>{checkboxText(3)}</SelectableBox>
+    </SelectableBox.Set>
+  );
+}
 
-const SelectableRadioSet = (props) => (
-  <SelectableBox.Set name={radioType} type={radioType} {...props}>
-    <SelectableBox value={1} type={radioType}>{radioText(1)}</SelectableBox>
-    <SelectableBox value={2} type={radioType}>{radioText(2)}</SelectableBox>
-    <SelectableBox value={3} type={radioType}>{radioText(3)}</SelectableBox>
-  </SelectableBox.Set>
-);
+function SelectableRadioSet(props) {
+  return (
+    <SelectableBox.Set name={radioType} type={radioType} {...props}>
+      <SelectableBox value={1} type={radioType}>{radioText(1)}</SelectableBox>
+      <SelectableBox value={2} type={radioType}>{radioText(2)}</SelectableBox>
+      <SelectableBox value={3} type={radioType}>{radioText(3)}</SelectableBox>
+    </SelectableBox.Set>
+  );
+}
 
 describe('<SelectableBox.Set />', () => {
   describe('correct rendering', () => {

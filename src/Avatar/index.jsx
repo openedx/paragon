@@ -3,23 +3,25 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import defaultAvatar from './default-avatar.svg';
 
-const Avatar = ({
+function Avatar({
   alt,
   size,
   src,
   ...attrs
-}) => (
-  <img
-    {...attrs}
-    className={classNames(
-      'pgn__avatar',
-      `pgn__avatar-${size}`,
-      attrs.className,
-    )}
-    src={src || defaultAvatar}
-    alt={alt}
-  />
-);
+}) {
+  return (
+    <img
+      {...attrs}
+      className={classNames(
+        'pgn__avatar',
+        `pgn__avatar-${size}`,
+        attrs.className,
+      )}
+      src={src || defaultAvatar}
+      alt={alt}
+    />
+  );
+}
 
 Avatar.propTypes = {
   /** Alt text. Usually the user's name */

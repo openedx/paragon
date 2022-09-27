@@ -19,25 +19,31 @@ jest.mock('../../hooks/useWindowSize');
 useWindowSize.mockReturnValue({ width: 800 });
 
 // eslint-disable-next-line react/prop-types
-const FirstAction = ({ as: Component, onClick, className }) => (
-  <Component variant="brand" className={classNames('class1', className)} onClick={onClick}>
-    First Action
-  </Component>
-);
+function FirstAction({ as: Component, onClick, className }) {
+  return (
+    <Component variant="brand" className={classNames('class1', className)} onClick={onClick}>
+      First Action
+    </Component>
+  );
+}
 
 // eslint-disable-next-line react/prop-types
-const SecondAction = ({ onClick, className }) => (
-  <Button variant="outline-primary" className={classNames('class2', className)} onClick={onClick}>
-    Second Action
-  </Button>
-);
+function SecondAction({ onClick, className }) {
+  return (
+    <Button variant="outline-primary" className={classNames('class2', className)} onClick={onClick}>
+      Second Action
+    </Button>
+  );
+}
 
 // eslint-disable-next-line react/prop-types
-const ExtraAction = ({ text }) => (
-  <Button>
-    {`Extra Action ${text}`}
-  </Button>
-);
+function ExtraAction({ text }) {
+  return (
+    <Button>
+      {`Extra Action ${text}`}
+    </Button>
+  );
+}
 
 const selectedFlatRows = [{ id: 1 }, { id: 2 }];
 
@@ -64,11 +70,13 @@ const instance = {
 };
 
 // eslint-disable-next-line react/prop-types
-const BulkActionsWrapper = ({ value = instance }) => (
-  <DataTableContext.Provider value={value}>
-    <BulkActions />
-  </DataTableContext.Provider>
-);
+function BulkActionsWrapper({ value = instance }) {
+  return (
+    <DataTableContext.Provider value={value}>
+      <BulkActions />
+    </DataTableContext.Provider>
+  );
+}
 
 describe('<BulkActions />', () => {
   describe('with functional rendering', () => {

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { FormGroupContextProvider } from './FormGroupContext';
 
-const FormGroup = ({
+function FormGroup({
   children,
   controlId,
   isInvalid,
@@ -11,19 +11,24 @@ const FormGroup = ({
   size,
   as,
   ...props
-}) => React.createElement(as, {
-  ...props,
-  className: classNames('pgn__form-group', props.className),
-}, (
-  <FormGroupContextProvider
-    controlId={controlId}
-    isInvalid={isInvalid}
-    isValid={isValid}
-    size={size}
-  >
-    {children}
-  </FormGroupContextProvider>
-));
+}) {
+  return React.createElement(
+    as,
+    {
+      ...props,
+      className: classNames('pgn__form-group', props.className),
+    }, (
+      <FormGroupContextProvider
+        controlId={controlId}
+        isInvalid={isInvalid}
+        isValid={isValid}
+        size={size}
+      >
+        {children}
+      </FormGroupContextProvider>
+    ),
+  );
+}
 
 const SIZE_CHOICES = ['sm', 'lg'];
 

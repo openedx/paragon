@@ -9,14 +9,14 @@ import FormControlDecorator from './FormControlDecorator';
 /**
   * Decorates a textual input.
   */
-const FormControlDecoratorGroup = ({
+function FormControlDecoratorGroup({
   children,
   leadingElement,
   trailingElement,
   floatingLabel,
   className,
   ...props
-}) => {
+}) {
   const formGroupContext = useFormGroupContext(props);
   const size = props.size || formGroupContext.size;
   return (
@@ -42,7 +42,7 @@ const FormControlDecoratorGroup = ({
       {floatingLabel && <FormControlFloatingLabel>{floatingLabel}</FormControlFloatingLabel>}
     </div>
   );
-};
+}
 
 FormControlDecoratorGroup.propTypes = {
   children: PropTypes.node.isRequired,

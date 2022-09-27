@@ -10,7 +10,7 @@ import {
   addSelectedRowAction,
 } from './data/actions';
 
-const ControlledSelect = ({ row }) => {
+function ControlledSelect({ row }) {
   const {
     itemCount,
     controlledTableSelections: [, dispatch],
@@ -37,7 +37,7 @@ const ControlledSelect = ({ row }) => {
       />
     </div>
   );
-};
+}
 
 ControlledSelect.propTypes = {
   row: PropTypes.shape({

@@ -9,9 +9,9 @@ const DEFAULT_TRUNCATE_LINES = 1;
 const DEFAULT_TRUNCATE_ELLIPSIS = '...';
 const DEFAULT_TRUNCATE_ELEMENT_TYPE = 'div';
 
-const Truncate = ({
+function Truncate({
   children, lines, ellipsis, elementType, className, whiteSpace, onTruncate,
-}) => {
+}) {
   const [truncateText, setTruncateText] = useState('');
   const textContainer = useRef();
   const { width } = useWindowSize();
@@ -32,7 +32,7 @@ const Truncate = ({
     ref: textContainer,
     className,
   }, truncateText);
-};
+}
 
 Truncate.propTypes = {
   /** The expected text to which the ellipsis would be applied. */

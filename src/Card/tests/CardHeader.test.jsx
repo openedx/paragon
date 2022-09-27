@@ -6,11 +6,13 @@ import CardHeader from '../CardHeader';
 import CardContext from '../CardContext';
 
 // eslint-disable-next-line react/prop-types
-const CardHeaderWrapper = ({ isLoading }) => (
-  <CardContext.Provider value={{ isLoading }}>
-    <CardHeader />
-  </CardContext.Provider>
-);
+function CardHeaderWrapper({ isLoading }) {
+  return (
+    <CardContext.Provider value={{ isLoading }}>
+      <CardHeader />
+    </CardContext.Provider>
+  );
+}
 
 describe('<CardHeader />', () => {
   it('renders with title prop', () => {

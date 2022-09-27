@@ -1,15 +1,15 @@
 import React, { useContext, useState } from 'react';
+import { GridView, ListView } from '../../icons';
 import {
   DataTableContext, Icon, IconButtonToggle, IconButtonWithTooltip,
 } from '..';
-import { GridView, ListView } from '../../icons';
 
 export const DATA_VIEW_TOGGLE_VALUES = {
   card: { value: 'card', alt: 'Card', tooltipContent: 'Card view' },
   list: { value: 'list', alt: 'List', tooltipContent: 'List view' },
 };
 
-const DataViewToggle = () => {
+function DataViewToggle() {
   const {
     dataViewToggleOptions: {
       isDataViewToggleEnabled,
@@ -53,6 +53,6 @@ const DataViewToggle = () => {
       </IconButtonToggle>
     </div>
   );
-};
+}
 
 export default DataViewToggle;

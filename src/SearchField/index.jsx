@@ -2,6 +2,7 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 
+import { Search, Close } from '../../icons';
 import SearchFieldAdvanced, { SearchFieldContext } from './SearchFieldAdvanced';
 import SearchFieldLabel from './SearchFieldLabel';
 import SearchFieldInput from './SearchFieldInput';
@@ -9,7 +10,6 @@ import SearchFieldClearButton from './SearchFieldClearButton';
 import SearchFieldSubmitButton from './SearchFieldSubmitButton';
 
 import Icon from '../Icon';
-import { Search, Close } from '../../icons';
 
 export const SEARCH_FIELD_SCREEN_READER_TEXT_LABEL = 'search';
 export const SEARCH_FIELD_SCREEN_READER_TEXT_SUBMIT_BUTTON = 'submit search';
@@ -26,7 +26,7 @@ const BUTTON_LOCATION_VARIANTS = [
   'external',
 ];
 
-const SearchField = (props) => {
+function SearchField(props) {
   const {
     label,
     placeholder,
@@ -40,27 +40,25 @@ const SearchField = (props) => {
   const Wrapper = useCallback(
     (wrapperProps) => (submitButtonLocation === 'external'
       ? <div className="pgn__searchfield_wrapper">{wrapperProps.children}</div>
-      : <>{wrapperProps.children}</>),
+      : wrapperProps.children),
     [submitButtonLocation],
   );
 
   return (
-    <>
-      <SearchField.Advanced {...others} submitButtonLocation={submitButtonLocation}>
-        <Wrapper>
-          <SearchField.Label>{label}</SearchField.Label>
-          <SearchField.Input placeholder={placeholder} {...inputProps} />
-          <SearchField.ClearButton />
-        </Wrapper>
-        <SearchField.SubmitButton
-          variant={variant}
-          submitButtonLocation={submitButtonLocation}
-          buttonText={buttonText}
-        />
-      </SearchField.Advanced>
-    </>
+    <SearchField.Advanced {...others} submitButtonLocation={submitButtonLocation}>
+      <Wrapper>
+        <SearchField.Label>{label}</SearchField.Label>
+        <SearchField.Input placeholder={placeholder} {...inputProps} />
+        <SearchField.ClearButton />
+      </Wrapper>
+      <SearchField.SubmitButton
+        variant={variant}
+        submitButtonLocation={submitButtonLocation}
+        buttonText={buttonText}
+      />
+    </SearchField.Advanced>
   );
-};
+}
 
 SearchField.propTypes = {
   /**

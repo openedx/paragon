@@ -3,11 +3,13 @@ import { mount } from 'enzyme';
 import { IntlProvider } from 'react-intl';
 import ExpandAll from '../ExpandAll';
 
-const ExpandAllWrapper = (props) => (
-  <IntlProvider locale="en" messages={{}}>
-    <ExpandAll {...props} />
-  </IntlProvider>
-);
+function ExpandAllWrapper(props) {
+  return (
+    <IntlProvider locale="en" messages={{}}>
+      <ExpandAll {...props} />
+    </IntlProvider>
+  );
+}
 
 describe('<ExpandAll />', () => {
   it('renders expand all element if not all rows are expanded', () => {

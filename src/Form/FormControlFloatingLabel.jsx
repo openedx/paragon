@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useFormGroupContext } from './FormGroupContext';
 
-const FormControlFloatingLabel = ({ children }) => {
+function FormControlFloatingLabel({ children }) {
   const { controlId } = useFormGroupContext();
   return (
     <div className="pgn__form-control-floating-label">
@@ -16,7 +16,7 @@ const FormControlFloatingLabel = ({ children }) => {
       </div>
     </div>
   );
-};
+}
 
 FormControlFloatingLabel.propTypes = {
   children: PropTypes.node.isRequired,

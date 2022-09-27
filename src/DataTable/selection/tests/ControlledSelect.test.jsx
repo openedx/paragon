@@ -7,11 +7,13 @@ import * as selectActions from '../data/actions';
 import { toggleCheckbox } from './utils';
 
 // eslint-disable-next-line react/prop-types
-const ControlledSelectWrapper = ({ tableProps, selectProps }) => (
-  <DataTable {...tableProps}>
-    <ControlledSelect {...selectProps} />
-  </DataTable>
-);
+function ControlledSelectWrapper({ tableProps, selectProps }) {
+  return (
+    <DataTable {...tableProps}>
+      <ControlledSelect {...selectProps} />
+    </DataTable>
+  );
+}
 
 const mockGetToggleRowSelectedProps = jest.fn();
 const baseRow = {

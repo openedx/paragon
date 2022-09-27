@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import renderer from 'react-test-renderer';
+import { InfoOutline } from '../../icons';
 import IconButton from './index';
 import Icon from '../Icon';
-import { InfoOutline } from '../../icons';
 
 describe('<IconButton />', () => {
   const alt = 'alternative';

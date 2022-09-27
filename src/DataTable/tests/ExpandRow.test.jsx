@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { ExpandLess, ExpandMore } from '../../../icons';
 import ExpandRow from '../ExpandRow';
 import { IconButton } from '../..';
-import { ExpandLess, ExpandMore } from '../../../icons';
 
 const row = {
   isExpanded: false,

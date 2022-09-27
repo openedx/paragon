@@ -7,9 +7,9 @@ import TableRow from './TableRow';
 import { useRows } from './hooks';
 import DataTableContext from './DataTableContext';
 
-const Table = ({
+function Table({
   isStriped,
-}) => {
+}) {
   const {
     getTableProps, prepareRow, displayRows, headerGroups, getTableBodyProps,
   } = useRows();
@@ -44,7 +44,7 @@ const Table = ({
       </table>
     </div>
   );
-};
+}
 
 Table.defaultProps = {
   isStriped: true,

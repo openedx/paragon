@@ -6,7 +6,7 @@ import { ModalContextProvider } from './ModalContext';
 import Portal from './Portal';
 
 /* eslint-disable react/prop-types */
-jest.mock('./Portal', () => (props) => {
+jest.mock('./Portal', () => function (props) {
   const { children, ...otherProps } = props;
   return (
     <paragon-portal {...otherProps}>
@@ -24,11 +24,13 @@ jest.mock('react-focus-on', () => ({
   },
 }));
 
-const Dialog = () => (
-  <div role="dialog" aria-label="A dialog">
-    A dialog.
-  </div>
-);
+function Dialog() {
+  return (
+    <div role="dialog" aria-label="A dialog">
+      A dialog.
+    </div>
+  );
+}
 
 const mockPositionRef = { current: null };
 

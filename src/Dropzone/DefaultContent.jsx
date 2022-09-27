@@ -6,7 +6,7 @@ import messages from './messages';
 import Icon from '../Icon';
 import { FileUpload } from '../../icons';
 
-const DefaultContent = ({ accept, minSize, maxSize }) => {
+function DefaultContent({ accept, minSize, maxSize }) {
   const intl = useIntl();
 
   const getFileRestrictionMessage = () => {
@@ -62,7 +62,7 @@ const DefaultContent = ({ accept, minSize, maxSize }) => {
       )}
     </>
   );
-};
+}
 
 DefaultContent.propTypes = {
   accept: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)),

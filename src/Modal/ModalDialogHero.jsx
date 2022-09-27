@@ -4,18 +4,20 @@ import classNames from 'classnames';
 import ModalDialogHeroContent from './ModalDialogHeroContent';
 import ModalDialogHeroBackground from './ModalDialogHeroBackground';
 
-const ModalDialogHero = ({
+function ModalDialogHero({
   as,
   children,
   ...props
-}) => React.createElement(
-  as,
-  {
-    ...props,
-    className: classNames('pgn__modal-hero', props.className),
-  },
-  children,
-);
+}) {
+  return React.createElement(
+    as,
+    {
+      ...props,
+      className: classNames('pgn__modal-hero', props.className),
+    },
+    children,
+  );
+}
 
 ModalDialogHero.propTypes = {
   as: PropTypes.elementType,

@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import BaseToast from 'react-bootstrap/Toast';
 import { useIntl } from 'react-intl';
 
+import { Close } from '../../icons';
 import ToastContainer from './ToastContainer';
 import { Button, IconButton, Icon } from '..';
-import { Close } from '../../icons';
 
 export const TOAST_CLOSE_LABEL_TEXT = 'Close';
 export const TOAST_DELAY = 5000;

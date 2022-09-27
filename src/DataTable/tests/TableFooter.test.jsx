@@ -16,11 +16,13 @@ const footerInstance = {
 };
 
 // eslint-disable-next-line react/prop-types
-const TableFooterWrapper = ({ value = footerInstance, props = {}, children }) => (
-  <DataTableContext.Provider value={value}>
-    <TableFooter {...props}>{children}</TableFooter>
-  </DataTableContext.Provider>
-);
+function TableFooterWrapper({ value = footerInstance, props = {}, children }) {
+  return (
+    <DataTableContext.Provider value={value}>
+      <TableFooter {...props}>{children}</TableFooter>
+    </DataTableContext.Provider>
+  );
+}
 
 describe('<TableFooter />', () => {
   it('Renders the default footer', () => {

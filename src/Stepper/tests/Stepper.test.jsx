@@ -9,42 +9,44 @@ const mockWindowSize = { width: 1000, height: 1000 };
 jest.mock('../../hooks/useWindowSize', () => () => mockWindowSize);
 
 // eslint-disable-next-line react/prop-types
-const Example = ({ activeKey, hasStepWithError, hasFourthStep }) => (
-  <Stepper activeKey={activeKey}>
-    <Stepper.Header />
+function Example({ activeKey, hasStepWithError, hasFourthStep }) {
+  return (
+    <Stepper activeKey={activeKey}>
+      <Stepper.Header />
 
-    <Stepper.Step eventKey="welcome" title="Welcome" index={0}>
-      <span id="welcome-content">Welcome content</span>
-    </Stepper.Step>
-    <Stepper.Step
-      eventKey="cats"
-      title="Cat"
-      hasError={hasStepWithError}
-      description={hasStepWithError ? 'Im an error description' : undefined}
-      index={1}
-    >
-      <span id="cats-content">Cat content</span>
-    </Stepper.Step>
-    <Stepper.Step eventKey="review" title="Review" index={2}>
-      <span id="review-content">Review content</span>
-    </Stepper.Step>
-    {hasFourthStep && (
+      <Stepper.Step eventKey="welcome" title="Welcome" index={0}>
+        <span id="welcome-content">Welcome content</span>
+      </Stepper.Step>
+      <Stepper.Step
+        eventKey="cats"
+        title="Cat"
+        hasError={hasStepWithError}
+        description={hasStepWithError ? 'Im an error description' : undefined}
+        index={1}
+      >
+        <span id="cats-content">Cat content</span>
+      </Stepper.Step>
+      <Stepper.Step eventKey="review" title="Review" index={2}>
+        <span id="review-content">Review content</span>
+      </Stepper.Step>
+      {hasFourthStep && (
       <Stepper.Step eventKey="extra" title="Extra" index={3}>
         <span id="extra-content">Extra content</span>
       </Stepper.Step>
-    )}
+      )}
 
-    <Stepper.ActionRow eventKey="welcome">
-      <span id="welcome-actions">Welcome actions content</span>
-    </Stepper.ActionRow>
-    <Stepper.ActionRow eventKey="cats">
-      <span id="cats-actions">Cat actions content</span>
-    </Stepper.ActionRow>
-    <Stepper.ActionRow eventKey="review">
-      <span id="review-actions">Review actions content</span>
-    </Stepper.ActionRow>
-  </Stepper>
-);
+      <Stepper.ActionRow eventKey="welcome">
+        <span id="welcome-actions">Welcome actions content</span>
+      </Stepper.ActionRow>
+      <Stepper.ActionRow eventKey="cats">
+        <span id="cats-actions">Cat actions content</span>
+      </Stepper.ActionRow>
+      <Stepper.ActionRow eventKey="review">
+        <span id="review-actions">Review actions content</span>
+      </Stepper.ActionRow>
+    </Stepper>
+  );
+}
 
 describe('Stepper', () => {
   const wrapper = mount((
