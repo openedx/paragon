@@ -10,3 +10,6 @@ $collapsible-card-spacer-icon:             2.5rem !default;
 $collapsible-basic-spacer-y:               .5rem !default;
 $collapsible-basic-spacer-x:               .5rem !default;
 $collapsible-basic-spacer-icon:            .625rem !default;
+$collapsible-timing-levels: (
+  100, 200, 300, 400, 500
+) !default;

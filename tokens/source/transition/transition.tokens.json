@@ -1,7 +1,39 @@
 {
   "transition": {
-    "base": { "value": "all .2s ease-in-out", "themeable": true, "source": "$transition-base" },
-    "fade": { "value": "opacity .15s linear", "themeable": true, "source": "$transition-fade" },
-    "collapse": { "value": "height .35s ease", "themeable": true, "source": "$transition-collapse" }
+    "base": {
+      "100": { "value": "all .1s linear", "themeable": true },
+      "200": { "value": "all .2s linear", "themeable": true },
+      "300": { "value": "all .3s linear", "themeable": true, "source": "$transition-base" },
+      "400": { "value": "all .4s linear", "themeable": true },
+      "500": { "value": "all .5s linear", "themeable": true }
+    },
+    "fade": {
+      "100": { "value": "opacity .1s linear", "themeable": true },
+      "200": { "value": "opacity .2s linear", "themeable": true },
+      "300": { "value": "opacity .3s linear", "themeable": true, "source": "$transition-fade" },
+      "400": { "value": "opacity .4s linear", "themeable": true },
+      "500": { "value": "opacity .5s linear", "themeable": true }
+    },
+    "collapse": {
+      "100": { "value": "height .1s ease, padding .1s ease, margin .1s ease", "themeable": true },
+      "200": { "value": "height .2s ease, padding .2s ease, margin .2s ease", "themeable": true },
+      "300": { "value": "height .3s ease, padding .3s ease, margin .3s ease", "themeable": true, "source": "$transition-collapse" },
+      "400": { "value": "height .4s ease, padding .4s ease, margin .4s ease", "themeable": true },
+      "500": { "value": "height .5s ease, padding .5s ease, margin .5s ease", "themeable": true }
+    },
+    "scale": {
+      "100": { "value": "transform .1s ease-in-out", "themeable": true },
+      "200": { "value": "transform .2s ease-in-out", "themeable": true },
+      "300": { "value": "transform .3s ease-in-out", "themeable": true },
+      "400": { "value": "transform .4s ease-in-out", "themeable": true },
+      "500": { "value": "transform .5s ease-in-out", "themeable": true }
+    },
+    "position": {
+      "100": { "value": "margin .1s ease-in-out", "themeable": true },
+      "200": { "value": "margin .2s ease-in-out", "themeable": true },
+      "300": { "value": "margin .3s ease-in-out", "themeable": true },
+      "400": { "value": "margin .4s ease-in-out", "themeable": true },
+      "500": { "value": "margin .5s ease-in-out", "themeable": true }
+    }
   }
 }

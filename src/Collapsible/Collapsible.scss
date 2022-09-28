@@ -74,13 +74,17 @@
   .collapsible-body {
     padding: var(--pgn-collapsible-card-spacer-basic-y) var(--pgn-collapsible-card-spacer-basic-x);
     text-align: start;
-
-    &.collapsing {
-      transition: height 300ms ease;
-    }
   }
 
   .collapsible-icon {
     margin-left: var(--pgn-collapsible-card-spacer-basic-icon);
+  }
+}
+
+.pgn_collapsible {
+  @each $timing in $collapsible-timing-levels {
+    .pgn__collapsible-time#{$timing}.collapsing {
+      transition: var(--pgn-transition-collapse-#{$timing});
+    }
   }
 }

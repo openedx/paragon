@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 
+import classNames from 'classnames';
 import Collapse from '../Collapse';
 import { CollapsibleContext } from './CollapsibleAdvanced';
-import TransitionReplace from '../TransitionReplace';
 
 function CollapsibleBody({
   children, transitionWrapper, tag, ...props
 }) {
-  const { isOpen, unmountOnExit } = useContext(CollapsibleContext);
+  const { isOpen, unmountOnExit, transitionTime } = useContext(CollapsibleContext);
 
   // Keys are added to these elements so that TransitionReplace
   // will recognize them as unique components and perform the
@@ -19,10 +19,16 @@ function CollapsibleBody({
   if (transitionWrapper) {
     return React.cloneElement(transitionWrapper, {}, transitionBody);
   }
-  /* istanbul ignore next */
-  return unmountOnExit
-    ? <TransitionReplace>{transitionBody}</TransitionReplace>
-    : <Collapse in={isOpen}>{content}</Collapse>;
+
+  return (
+    <Collapse
+      className={classNames(`pgn__collapsible-time${transitionTime}`)}
+      unmountOnExit={unmountOnExit}
+      in={isOpen}
+    >
+      {content}
+    </Collapse>
+  );
 }
 
 CollapsibleBody.propTypes = {

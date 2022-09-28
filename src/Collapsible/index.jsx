@@ -75,6 +75,8 @@ Collapsible.propTypes = {
   title: PropTypes.node.isRequired,
   /** Unmount the component (remove it from the DOM) when it is collapsed */
   unmountOnExit: PropTypes.bool,
+  /** Specifies collapse transition time in milliseconds. */
+  transitionTime: PropTypes.oneOf([100, 200, 300, 400, 500]),
 };
 Collapsible.defaultProps = {
   className: undefined,
@@ -87,6 +89,7 @@ Collapsible.defaultProps = {
   open: undefined,
   styling: 'card',
   unmountOnExit: true,
+  transitionTime: 300,
 };
 
 Collapsible.Advanced = CollapsibleAdvanced;

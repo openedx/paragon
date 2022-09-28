@@ -60,6 +60,7 @@ class CollapsibleAdvanced extends React.Component {
       children,
       className,
       unmountOnExit,
+      transitionTime,
       ...props
     } = this.props;
 
@@ -82,6 +83,7 @@ class CollapsibleAdvanced extends React.Component {
             open: this.open,
             close: this.close,
             toggle: this.toggle,
+            transitionTime,
             unmountOnExit,
           }}
         >
@@ -109,6 +111,8 @@ CollapsibleAdvanced.propTypes = {
   onClose: PropTypes.func,
   /** Unmount the component (remove it from the DOM) when it is collapsed. */
   unmountOnExit: PropTypes.bool,
+  /** Specifies collapse transition time in milliseconds. */
+  transitionTime: PropTypes.oneOf([100, 200, 300, 400, 500]),
 };
 
 CollapsibleAdvanced.defaultProps = {
@@ -120,6 +124,7 @@ CollapsibleAdvanced.defaultProps = {
   onOpen: undefined,
   onClose: undefined,
   unmountOnExit: true,
+  transitionTime: 300,
 };
 
 export default CollapsibleAdvanced;
