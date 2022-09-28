@@ -1,5 +1,5 @@
 {
-  "lastModified": 1664288452955,
+  "lastModified": 1664375293323,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -17229,19 +17229,19 @@
           },
           {
             "filePath": "src/library-authoring/create-library/LibraryCreatePage.jsx",
-            "line": 281,
+            "line": 323,
             "column": 18,
             "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/create-library/LibraryCreatePage.jsx",
-            "line": 316,
+            "line": 358,
             "column": 14,
             "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/create-library/LibraryCreatePage.jsx",
-            "line": 319,
+            "line": 361,
             "column": 14,
             "version": "19.25.3"
           },
@@ -17809,7 +17809,7 @@
           },
           {
             "filePath": "src/library-authoring/create-library/LibraryCreatePage.jsx",
-            "line": 203,
+            "line": 247,
             "column": 12,
             "version": "19.25.3"
           },
@@ -17869,13 +17869,13 @@
         "IconButton": [
           {
             "filePath": "src/library-authoring/common/OrganizationDropdown.jsx",
-            "line": 156,
+            "line": 151,
             "column": 6,
             "version": "19.25.3"
           },
           {
             "filePath": "src/library-authoring/common/OrganizationDropdown.jsx",
-            "line": 170,
+            "line": 165,
             "column": 6,
             "version": "19.25.3"
           }
@@ -17949,7 +17949,7 @@
           },
           {
             "filePath": "src/library-authoring/create-library/LibraryCreatePage.jsx",
-            "line": 289,
+            "line": 331,
             "column": 18,
             "version": "19.25.3"
           },
@@ -17969,7 +17969,7 @@
           },
           {
             "filePath": "src/library-authoring/create-library/LibraryCreatePage.jsx",
-            "line": 297,
+            "line": 339,
             "column": 31,
             "version": "19.25.3"
           },
@@ -18043,7 +18043,7 @@
         "Alert.Heading": [
           {
             "filePath": "src/library-authoring/create-library/LibraryCreatePage.jsx",
-            "line": 208,
+            "line": 252,
             "column": 29,
             "version": "19.25.3"
           }
@@ -18051,7 +18051,7 @@
         "Breadcrumb": [
           {
             "filePath": "src/library-authoring/create-library/LibraryCreatePage.jsx",
-            "line": 212,
+            "line": 256,
             "column": 10,
             "version": "19.25.3"
           },
@@ -18065,7 +18065,7 @@
         "AlertModal": [
           {
             "filePath": "src/library-authoring/create-library/LibraryCreatePage.jsx",
-            "line": 311,
+            "line": 353,
             "column": 8,
             "version": "19.25.3"
           }
@@ -18073,7 +18073,7 @@
         "ActionRow": [
           {
             "filePath": "src/library-authoring/create-library/LibraryCreatePage.jsx",
-            "line": 315,
+            "line": 357,
             "column": 12,
             "version": "19.25.3"
           },
@@ -21401,8 +21401,20 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 119,
+            "line": 118,
             "column": 8,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
+            "line": 39,
+            "column": 16,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
+            "line": 42,
+            "column": 16,
             "version": "20.9.1"
           }
         ],
@@ -21465,8 +21477,14 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 76,
+            "line": 70,
             "column": 10,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelect.jsx",
+            "line": 29,
+            "column": 4,
             "version": "20.9.1"
           },
           {
@@ -21512,6 +21530,12 @@
             "line": 24,
             "column": 6,
             "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelect.jsx",
+            "line": 30,
+            "column": 6,
+            "version": "20.9.1"
           }
         ],
         "Icon": [
@@ -21541,7 +21565,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 97,
+            "line": 96,
             "column": 16,
             "version": "20.9.1"
           }
@@ -21693,13 +21717,13 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 84,
+            "line": 83,
             "column": 16,
             "version": "20.9.1"
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 105,
+            "line": 104,
             "column": 14,
             "version": "20.9.1"
           }
@@ -21713,13 +21737,13 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 79,
+            "line": 78,
             "column": 14,
             "version": "20.9.1"
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 100,
+            "line": 99,
             "column": 12,
             "version": "20.9.1"
           }
@@ -21753,13 +21777,13 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 112,
+            "line": 111,
             "column": 12,
             "version": "20.9.1"
           },
           {
             "filePath": "src/editors/sharedComponents/ErrorAlerts/ErrorAlert.jsx",
-            "line": 41,
+            "line": 43,
             "column": 4,
             "version": "20.9.1"
           }
@@ -21797,7 +21821,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 74,
+            "line": 67,
             "column": 6,
             "version": "20.9.1"
           }
@@ -21808,6 +21832,12 @@
             "line": 46,
             "column": 4,
             "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
+            "line": 53,
+            "column": 16,
+            "version": "20.9.1"
           }
         ],
         "Dropdown.Toggle": [
@@ -21815,6 +21845,12 @@
             "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
             "line": 47,
             "column": 6,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
+            "line": 54,
+            "column": 18,
             "version": "20.9.1"
           }
         ],
@@ -21824,6 +21860,12 @@
             "line": 50,
             "column": 6,
             "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
+            "line": 62,
+            "column": 18,
+            "version": "20.9.1"
           }
         ],
         "Dropdown.Item": [
@@ -21831,6 +21873,24 @@
             "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
             "line": 52,
             "column": 10,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
+            "line": 63,
+            "column": 20,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
+            "line": 69,
+            "column": 20,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
+            "line": 72,
+            "column": 20,
             "version": "20.9.1"
           }
         ],
@@ -21921,7 +21981,7 @@
           },
           {
             "filePath": "src/editors/sharedComponents/ErrorAlerts/ErrorAlert.jsx",
-            "line": 49,
+            "line": 51,
             "column": 10,
             "version": "20.9.1"
           }
@@ -21929,7 +21989,7 @@
         "OverlayTrigger": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 88,
+            "line": 87,
             "column": 14,
             "version": "20.9.1"
           }
@@ -21937,8 +21997,54 @@
         "Tooltip": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 92,
+            "line": 91,
             "column": 18,
+            "version": "20.9.1"
+          }
+        ],
+        "Card": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
+            "line": 30,
+            "column": 6,
+            "version": "20.9.1"
+          }
+        ],
+        "Card.Header": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
+            "line": 33,
+            "column": 12,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
+            "line": 50,
+            "column": 12,
+            "version": "20.9.1"
+          }
+        ],
+        "Card.Body": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
+            "line": 34,
+            "column": 12,
+            "version": "20.9.1"
+          }
+        ],
+        "Card.Section": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
+            "line": 35,
+            "column": 14,
+            "version": "20.9.1"
+          }
+        ],
+        "Card.Footer": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
+            "line": 38,
+            "column": 14,
             "version": "20.9.1"
           }
         ],
@@ -23021,7 +23127,7 @@
         "Collapsible": [
           {
             "filePath": "src/components/BootCamp/BootCampCurriculumModule.jsx",
-            "line": 36,
+            "line": 58,
             "column": 16,
             "version": "20.10.0"
           },
@@ -23075,7 +23181,7 @@
           },
           {
             "filePath": "src/components/FAQs/AccordionFAQ.jsx",
-            "line": 25,
+            "line": 26,
             "column": 10,
             "version": "20.10.0"
           }
@@ -23083,7 +23189,7 @@
         "Button": [
           {
             "filePath": "src/components/BootCamp/BootCampCurriculumModule.jsx",
-            "line": 43,
+            "line": 65,
             "column": 10,
             "version": "20.10.0"
           },
@@ -23155,7 +23261,7 @@
           },
           {
             "filePath": "src/components/Course/EnrollButton/EnrollButtonLink.jsx",
-            "line": 313,
+            "line": 338,
             "column": 20,
             "version": "20.10.0"
           },
@@ -23178,6 +23284,12 @@
             "version": "20.10.0"
           },
           {
+            "filePath": "src/components/EnterpriseEnrolmentModal/EnterpriseEnrollmentInformModal.jsx",
+            "line": 64,
+            "column": 10,
+            "version": "20.10.0"
+          },
+          {
             "filePath": "src/components/Overlays/SaveForLaterOverlay.jsx",
             "line": 347,
             "column": 14,
@@ -23193,6 +23305,12 @@
             "filePath": "src/components/Overlays/SocialSharePopover.jsx",
             "line": 131,
             "column": 12,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/ProductDetail/ProductDetailHero.jsx",
+            "line": 86,
+            "column": 10,
             "version": "20.10.0"
           },
           {
@@ -23233,13 +23351,13 @@
           },
           {
             "filePath": "src/templates/courseDetailBootcamp.jsx",
-            "line": 131,
+            "line": 137,
             "column": 14,
             "version": "20.10.0"
           },
           {
             "filePath": "src/templates/learnPage.jsx",
-            "line": 104,
+            "line": 103,
             "column": 12,
             "version": "20.10.0"
           },
@@ -23261,6 +23379,12 @@
             "filePath": "src/components/Certificate/index.jsx",
             "line": 24,
             "column": 6,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/ContentfulModule/AboutTheProgramModule.jsx",
+            "line": 77,
+            "column": 4,
             "version": "20.10.0"
           },
           {
@@ -23481,7 +23605,7 @@
           },
           {
             "filePath": "src/components/Learn/LearnHero.jsx",
-            "line": 49,
+            "line": 48,
             "column": 6,
             "version": "20.10.0"
           },
@@ -23489,6 +23613,12 @@
             "filePath": "src/components/Learn/RelatedTopics.jsx",
             "line": 24,
             "column": 6,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/ProductDetail/ProductDetailHero.jsx",
+            "line": 65,
+            "column": 4,
             "version": "20.10.0"
           },
           {
@@ -23721,19 +23851,19 @@
           },
           {
             "filePath": "src/templates/learnPage.jsx",
-            "line": 116,
+            "line": 115,
             "column": 10,
             "version": "20.10.0"
           },
           {
             "filePath": "src/templates/learnPage.jsx",
-            "line": 140,
+            "line": 137,
             "column": 12,
             "version": "20.10.0"
           },
           {
             "filePath": "src/templates/learnPage.jsx",
-            "line": 168,
+            "line": 165,
             "column": 10,
             "version": "20.10.0"
           },
@@ -23866,6 +23996,12 @@
             "version": "20.10.0"
           },
           {
+            "filePath": "src/components/EnterpriseEnrolmentModal/EnterpriseEnrollmentInformModal.jsx",
+            "line": 32,
+            "column": 4,
+            "version": "20.10.0"
+          },
+          {
             "filePath": "src/templates/cardsPreview.jsx",
             "line": 58,
             "column": 6,
@@ -23876,6 +24012,12 @@
           {
             "filePath": "src/components/Course/2U/CourseVideoDialog.jsx",
             "line": 20,
+            "column": 6,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/EnterpriseEnrolmentModal/EnterpriseEnrollmentInformModal.jsx",
+            "line": 49,
             "column": 6,
             "version": "20.10.0"
           },
@@ -24078,6 +24220,64 @@
             "version": "20.10.0"
           }
         ],
+        "ModalDialog.Header": [
+          {
+            "filePath": "src/components/EnterpriseEnrolmentModal/EnterpriseEnrollmentInformModal.jsx",
+            "line": 39,
+            "column": 6,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/templates/cardsPreview.jsx",
+            "line": 65,
+            "column": 8,
+            "version": "20.10.0"
+          }
+        ],
+        "ModalDialog.Title": [
+          {
+            "filePath": "src/components/EnterpriseEnrolmentModal/EnterpriseEnrollmentInformModal.jsx",
+            "line": 40,
+            "column": 8,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/MarketingModal/SaveForLaterModal.jsx",
+            "line": 66,
+            "column": 14,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/templates/cardsPreview.jsx",
+            "line": 66,
+            "column": 10,
+            "version": "20.10.0"
+          }
+        ],
+        "ModalDialog.Footer": [
+          {
+            "filePath": "src/components/EnterpriseEnrolmentModal/EnterpriseEnrollmentInformModal.jsx",
+            "line": 59,
+            "column": 6,
+            "version": "20.10.0"
+          }
+        ],
+        "ActionRow": [
+          {
+            "filePath": "src/components/EnterpriseEnrolmentModal/EnterpriseEnrollmentInformModal.jsx",
+            "line": 60,
+            "column": 8,
+            "version": "20.10.0"
+          }
+        ],
+        "ModalDialog.CloseButton": [
+          {
+            "filePath": "src/components/EnterpriseEnrolmentModal/EnterpriseEnrollmentInformModal.jsx",
+            "line": 61,
+            "column": 10,
+            "version": "20.10.0"
+          }
+        ],
         "Input": [
           {
             "filePath": "src/components/Footer/index.jsx",
@@ -24270,20 +24470,6 @@
           {
             "filePath": "src/components/MarketingModal/SaveForLaterModal.jsx",
             "line": 60,
-            "column": 10,
-            "version": "20.10.0"
-          }
-        ],
-        "ModalDialog.Title": [
-          {
-            "filePath": "src/components/MarketingModal/SaveForLaterModal.jsx",
-            "line": 66,
-            "column": 14,
-            "version": "20.10.0"
-          },
-          {
-            "filePath": "src/templates/cardsPreview.jsx",
-            "line": 66,
             "column": 10,
             "version": "20.10.0"
           }
@@ -24655,14 +24841,6 @@
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
             "line": 125,
             "column": 12,
-            "version": "20.10.0"
-          }
-        ],
-        "ModalDialog.Header": [
-          {
-            "filePath": "src/templates/cardsPreview.jsx",
-            "line": 65,
-            "column": 8,
             "version": "20.10.0"
           }
         ]
