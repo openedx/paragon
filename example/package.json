@@ -6,7 +6,7 @@
   "scripts": {
     "build": "fedx-scripts webpack",
     "i18n_extract": "BABEL_ENV=i18n fedx-scripts babel src --quiet > /dev/null",
-    "lint": "fedx-scripts eslint --ext .jsx,.js .",
+    "lint": "fedx-scripts eslint --resolve-plugins-relative-to . --ext .jsx,.js .",
     "precommit": "npm run lint",
     "snapshot": "fedx-scripts jest --updateSnapshot",
     "start": "fedx-scripts webpack-dev-server --progress",
@@ -15,14 +15,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
     "@edx/brand-openedx": "^1.1.0",
     "@edx/frontend-platform": "^2.0.0",
     "core-js": "^3.22.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "regenerator-runtime": "^0.13.9"
   },
   "devDependencies": {
-    "@edx/frontend-build": "9.2.0"
+    "@edx/frontend-build": "^12.0.5"
   }
 }
