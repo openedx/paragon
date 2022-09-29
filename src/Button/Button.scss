@@ -55,30 +55,31 @@
 // OVERRIDE FROM BOOTSTRAP
 // We do this to better control active and focus states.
 @mixin button-outline-variant(
-  $btn-outline-variant-color, $btn-outline-variant-color-hover: color-yiq($btn-outline-variant-color),
-  $btn-outline-variant-active-bg: $btn-outline-variant-color,
-  $btn-outline-variant-active-border: $btn-outline-variant-color
+  $color-val,
+  $color-val-hover: color-yiq($color-val),
+  $color-val-active-bg: $color-val,
+  $btn-outline-variant-active-border: $color-val
 ) {
-  color: $btn-outline-variant-color;
-  border-color: $btn-outline-variant-color;
+  color: $color-val;
+  border-color: $color-val;
 
   @include hover {
-    color: $btn-outline-variant-color-hover;
-    background-color: $btn-outline-variant-active-bg;
+    color: $color-val-hover;
+    background-color: $color-val-active-bg;
     border-color: $btn-outline-variant-active-border;
   }
 
   &.disabled,
   &:disabled {
-    color: $btn-outline-variant-color;
+    color: $color-val;
     background-color: transparent;
   }
 
   &:not(:disabled):not(.disabled):active,
   &:not(:disabled):not(.disabled).active,
   .show > &.dropdown-toggle {
-    color: color-yiq($btn-outline-variant-active-bg);
-    background-color: $btn-outline-variant-active-bg;
+    color: color-yiq($color-val-active-bg);
+    background-color: $color-val-active-bg;
     border-color: $btn-outline-variant-active-border;
   }
 }
@@ -325,19 +326,19 @@ fieldset:disabled a.btn {
     $text-and-border: var(--pgn-color-white);
 
     $color-hover: theme-color($color, "hover");
-    $active-background: theme-color($color, "background");
-    $active-border: transparent;
+    $active-bg-color: theme-color($color, "background");
+    $active-border-color: transparent;
 
     // Defaults
     $color-hover: color-yiq($value) !default;
-    $btn-inverse-outline-active-bg: $value !default;
-    $btn-inverse-outline-active-border: $value !default;
+    $active-bg-color: $value !default;
+    $active-border-color: $value !default;
 
     @include button-outline-variant(
       $text-and-border,
       $color-hover,
-      $btn-inverse-outline-active-bg,
-      $btn-inverse-outline-active-border,
+      $active-bg-color,
+      $active-border-color,
     );
     @include button-focus(var(--pgn-color-white));
   }

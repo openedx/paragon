@@ -63,6 +63,13 @@
           "decoration-color": { "value": "#003C5E", "themeable": true, "source": "$inline-link-hover-decoration-color" }
         }
       }
+    },
+    "emphasized": {
+      "hover": {
+        "darken": {
+          "percentage": { "value": "15%", "themeable": true, "source": "$emphasized-link-hover-darken-percentage" }
+        }
+      }
     }
   }
 }

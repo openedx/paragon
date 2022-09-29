@@ -43,6 +43,11 @@
     "level": {
       "bg": { "value": "-9", "themeable": true, "source": "$table-bg-level" },
       "border": { "value": "-6", "themeable": true, "source": "$table-border-level" }
+    },
+    "th": {
+      "font": {
+        "weight": { "value": "null", "themeable": true, "source": "$table-th-font-weight" }
+      }
     }
   }
 }

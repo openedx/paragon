@@ -129,7 +129,7 @@
 
 .pgn__modal-body {
   flex-grow: 1;
-  padding: var(--pgn-modal-inner-padding) var(--pgn-modal-inner-padding) calc(#{var(--pgn-modal-inner-padding)} / 2);
+  padding: var(--pgn-modal-inner-padding-base) var(--pgn-modal-inner-padding-base) calc(#{var(--pgn-modal-inner-padding-base)} / 2);
   overflow: auto;
   position: relative;
 
@@ -140,10 +140,10 @@
     display: block;
     height: 20px;
     position: sticky;
-    top: calc(var(--pgn-modal-inner-padding) * -1);
-    margin-top: calc(var(--pgn-modal-inner-padding) * -1);
-    margin-left: calc(var(--pgn-modal-inner-padding) * -1);
-    margin-right: calc(var(--pgn-modal-inner-padding) * -1);
+    top: calc(var(--pgn-modal-inner-padding-base) * -1);
+    margin-top: calc(var(--pgn-modal-inner-padding-base) * -1);
+    margin-left: calc(var(--pgn-modal-inner-padding-base) * -1);
+    margin-right: calc(var(--pgn-modal-inner-padding-base) * -1);
     opacity: .5;
     z-index: 2;
   }
@@ -161,10 +161,10 @@
     display: block;
     height: 20px;
     position: sticky;
-    bottom: calc(#{var(--pgn-modal-inner-padding)} / 2 * -1);
-    margin-bottom: calc(var(--pgn-modal-inner-padding) * -1);
-    margin-left: calc(var(--pgn-modal-inner-padding) * -1);
-    margin-right: calc(var(--pgn-modal-inner-padding) * -1);
+    bottom: calc(#{var(--pgn-modal-inner-padding-base)} / 2 * -1);
+    margin-bottom: calc(var(--pgn-modal-inner-padding-bottom) * -1);
+    margin-left: calc(var(--pgn-modal-inner-padding-base) * -1);
+    margin-right: calc(var(--pgn-modal-inner-padding-base) * -1);
     opacity: .5;
   }
 
@@ -225,7 +225,7 @@
   background-color: var(--pgn-modal-content-bg);
   transition: box-shadow 150ms ease;
   padding: var(--pgn-modal-footer-padding-base);
-  padding-top: calc(#{var(--pgn-modal-inner-padding)} / 2);
+  padding-top: calc(#{var(--pgn-modal-inner-padding-base)} / 2);
 }
 
 // Color Variants
@@ -234,14 +234,14 @@
   // Default style modals don't have a background on the header which
   // ends up looking spaced too far away from the body content.
   .pgn__modal-header {
-    padding-bottom: calc(#{var(--pgn-modal-inner-padding)} / 2);
+    padding-bottom: calc(#{var(--pgn-modal-inner-padding-base)} / 2);
   }
 
   .pgn__modal-body {
-    padding: calc(#{var(--pgn-modal-inner-padding)} / 2) var(--pgn-modal-inner-padding);
+    padding: calc(#{var(--pgn-modal-inner-padding-base)} / 2) var(--pgn-modal-inner-padding-base);
 
     &::before {
-      top: calc(#{var(--pgn-modal-inner-padding)} / 2 * -1);
+      top: calc(#{var(--pgn-modal-inner-padding-base)} / 2 * -1);
     }
   }
 }

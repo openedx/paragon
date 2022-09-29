@@ -1,7 +1,10 @@
 {
   "modal": {
     "inner": {
-      "padding": { "value": "1.5rem", "themeable": true, "source": "$modal-inner-padding" }
+      "padding": {
+        "base": { "value": "1.5rem", "themeable": true, "source": "$modal-inner-padding" },
+        "bottom": { "value": ".7rem", "themeable": true, "source": "$modal-inner-padding-bottom" }
+      }
     },
     "footer": {
       "margin": {
@@ -17,7 +20,7 @@
       },
       "padding": {
         "base": {
-          "value": "{modal.footer.padding.y.value} {modal.footer.padding.x.value}",
+          "value": "{modal.footer.padding.x.value} {modal.footer.padding.y.value}",
           "themeable": true,
           "source": "$modal-footer-padding"
         },

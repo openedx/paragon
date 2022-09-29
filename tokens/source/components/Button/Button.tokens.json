@@ -38,7 +38,9 @@
     },
     "box-shadow": {
       "base": {
-        "value": "inset 0 1px 0 rgba({color.white.value}, .15), 0 1px 1px rgba({color.black.value}, .075)", "themeable": true, "source": "$btn-box-shadow"
+        "value": "inset 0 1px 0 rgba({color.white.value}, .15), 0 1px 1px rgba({color.black.value}, .075)",
+        "themeable": true,
+        "source": "$btn-box-shadow"
       },
       "active": { "value": "none", "themeable": true, "source": "$btn-active-box-shadow" }
     },
@@ -64,7 +66,7 @@
         "bg": {
           "base": { "value": "transparent", "themeable": true, "source": "$btn-inverse-tertiary-bg" },
           "hover": {
-            "value": "rgba({color.white.value}, .1)",
+            "value": "rgba(255, 255, 255, .1)",
             "themeable": true,
             "source": "$btn-inverse-tertiary-hover-bg"
           },

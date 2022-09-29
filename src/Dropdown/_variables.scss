@@ -9,7 +9,7 @@ $dropdown-spacer:                   .125rem !default;
 $dropdown-font-size:                var(--pgn-font-size-base) !default;
 $dropdown-color:                    var(--pgn-body-color) !default;
 $dropdown-bg:                       var(--pgn-color-white) !default;
-$dropdown-border-color:             rgba(var(--pgn-color-black), .15) !default;
+$dropdown-border-color:             rgba($black, .15) !default;
 $dropdown-border-radius:            var(--pgn-border-radius-base) !default;
 $dropdown-border-width:             var(--pgn-border-width) !default;
 $dropdown-inner-border-radius:      calc(#{$dropdown-border-radius} - #{$dropdown-border-width}) !default;

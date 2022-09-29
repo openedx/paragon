@@ -9,7 +9,7 @@
   position: fixed;
   top: 0;
   width: 100vw;
-  z-index: var(--pgn-zindex-modal);
+  z-index: var(--pgn-www-zindex-modal);
   -webkit-overflow-scrolling: touch;
 }
 
@@ -125,7 +125,7 @@
   }
 
   &::before {
-    border-top-color: rgba(var(--pgn-color-black), 20%);
+    border-top-color: rgba($black, 20%);
   }
 }
 

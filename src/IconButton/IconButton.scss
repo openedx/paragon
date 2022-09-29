@@ -54,7 +54,7 @@
   }
 
   &.btn-icon-inline {
-    @include btn-icon-size(var(--pgn-icon-button-diameter-inline));
+    @include btn-icon-size($btn-icon-diameter-inline);
 
     padding: 1em;
     vertical-align: middle;
