@@ -131,7 +131,6 @@
 //
 // Add an ordered list with the following class and add a list item for each
 // slide your carousel holds.
-
 .carousel-indicators {
   position: absolute;
   right: 0;
@@ -140,8 +139,7 @@
   z-index: 15;
   display: flex;
   justify-content: center;
-  padding-left: 0; // override <ol> default
-  // Use the .carousel-control's width as margin so we don't overlay those
+  padding-left: 0;
   margin-right: var(--pgn-carousel-control-width-base);
   margin-left: var(--pgn-carousel-control-width-base);
   list-style: none;
@@ -157,7 +155,6 @@
     cursor: pointer;
     background-color: var(--pgn-carousel-indicator-active-bg);
     background-clip: padding-box;
-    // Use transparent borders to increase the hit area by 10px on top and bottom.
     border-top: var(--pgn-carousel-indicator-height-area-hit) solid transparent;
     border-bottom: var(--pgn-carousel-indicator-height-area-hit) solid transparent;
     opacity: .5;
@@ -171,9 +168,6 @@
 }
 
 // Optional captions
-//
-//
-
 .carousel-caption {
   position: absolute;
   right: calc((calc(100% - var(--pgn-carousel-caption-width))) * .5);

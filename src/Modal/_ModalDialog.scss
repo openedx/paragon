@@ -129,7 +129,9 @@
 
 .pgn__modal-body {
   flex-grow: 1;
-  padding: var(--pgn-modal-inner-padding-base) var(--pgn-modal-inner-padding-base) calc(#{var(--pgn-modal-inner-padding-base)} / 2);
+  padding:
+    var(--pgn-modal-inner-padding-base)
+    var(--pgn-modal-inner-padding-base) calc(#{var(--pgn-modal-inner-padding-base)} / 2);
   overflow: auto;
   position: relative;
 

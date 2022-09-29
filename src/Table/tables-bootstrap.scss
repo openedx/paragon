@@ -2,7 +2,7 @@
   width: 100%;
   margin-bottom: var(--pgn-core-spacer);
   color: var(--pgn-table-color-base);
-  background-color: var(--pgn-table-bg-base); // Reset for nesting within parents with `background-color`.
+  background-color: var(--pgn-table-bg-base);
 
   th,
   td {
@@ -159,7 +159,6 @@
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
 
-        // Prevent double border on horizontal scroll due to use of `display: block;`
         > .table-bordered {
           border: 0;
         }
