@@ -1,5 +1,5 @@
 {
-  "lastModified": 1664375293323,
+  "lastModified": 1664461443593,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -225,8 +225,8 @@
           },
           {
             "filePath": "openassessment/xblock/static/js/src/lms/containers/WaitingStepDetailsContainer.jsx",
-            "line": 64,
-            "column": 10,
+            "line": 68,
+            "column": 12,
             "version": "20.9.2"
           }
         ],
@@ -273,24 +273,24 @@
         "Container": [
           {
             "filePath": "openassessment/xblock/static/js/src/lms/containers/WaitingStepDetailsContainer.jsx",
-            "line": 46,
-            "column": 10,
+            "line": 50,
+            "column": 12,
             "version": "20.9.2"
           }
         ],
         "Row": [
           {
             "filePath": "openassessment/xblock/static/js/src/lms/containers/WaitingStepDetailsContainer.jsx",
-            "line": 47,
-            "column": 12,
+            "line": 51,
+            "column": 14,
             "version": "20.9.2"
           }
         ],
         "Spinner": [
           {
             "filePath": "openassessment/xblock/static/js/src/lms/containers/WaitingStepDetailsContainer.jsx",
-            "line": 48,
-            "column": 14,
+            "line": 52,
+            "column": 16,
             "version": "20.9.2"
           }
         ]
@@ -13790,7 +13790,7 @@
         "StatefulButton": [
           {
             "filePath": "src/components/course/SubsidyRequestButton.jsx",
-            "line": 123,
+            "line": 119,
             "column": 4,
             "version": "19.22.0"
           },
@@ -21416,6 +21416,12 @@
             "line": 42,
             "column": 16,
             "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 120,
+            "column": 6,
+            "version": "20.9.1"
           }
         ],
         "Spinner": [
@@ -21488,6 +21494,12 @@
             "version": "20.9.1"
           },
           {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 56,
+            "column": 6,
+            "version": "20.9.1"
+          },
+          {
             "filePath": "www/src/Gallery.jsx",
             "line": 29,
             "column": 8,
@@ -21536,6 +21548,18 @@
             "line": 30,
             "column": 6,
             "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 58,
+            "column": 10,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 73,
+            "column": 12,
+            "version": "20.9.1"
           }
         ],
         "Icon": [
@@ -21567,6 +21591,12 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
             "line": 96,
             "column": 16,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 116,
+            "column": 12,
             "version": "20.9.1"
           }
         ],
@@ -21608,9 +21638,9 @@
             "version": "20.9.1"
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget.jsx",
-            "line": 67,
-            "column": 12,
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 88,
+            "column": 14,
             "version": "20.9.1"
           }
         ],
@@ -21726,6 +21756,18 @@
             "line": 104,
             "column": 14,
             "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 65,
+            "column": 8,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 103,
+            "column": 12,
+            "version": "20.9.1"
           }
         ],
         "Form.Checkbox": [
@@ -21745,6 +21787,12 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
             "line": 99,
             "column": 12,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 98,
+            "column": 10,
             "version": "20.9.1"
           }
         ],
@@ -21938,12 +21986,6 @@
             "line": 27,
             "column": 6,
             "version": "20.9.1"
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget.jsx",
-            "line": 40,
-            "column": 6,
-            "version": "20.9.1"
           }
         ],
         "FormControl": [
@@ -21957,18 +21999,6 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
             "line": 36,
             "column": 10,
-            "version": "20.9.1"
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget.jsx",
-            "line": 43,
-            "column": 10,
-            "version": "20.9.1"
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget.jsx",
-            "line": 60,
-            "column": 12,
             "version": "20.9.1"
           }
         ],
@@ -21992,6 +22022,18 @@
             "line": 87,
             "column": 14,
             "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 79,
+            "column": 12,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 107,
+            "column": 10,
+            "version": "20.9.1"
           }
         ],
         "Tooltip": [
@@ -21999,6 +22041,18 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
             "line": 91,
             "column": 18,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 83,
+            "column": 16,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 111,
+            "column": 14,
             "version": "20.9.1"
           }
         ],
@@ -22048,30 +22102,24 @@
             "version": "20.9.1"
           }
         ],
-        "FormLabel": [
+        "Form.Text": [
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget.jsx",
-            "line": 42,
-            "column": 10,
-            "version": "20.9.1"
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget.jsx",
-            "line": 49,
-            "column": 8,
-            "version": "20.9.1"
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget.jsx",
-            "line": 50,
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 68,
             "column": 8,
             "version": "20.9.1"
           }
         ],
-        "FormCheck": [
+        "Form.Row": [
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget.jsx",
-            "line": 76,
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 72,
+            "column": 10,
+            "version": "20.9.1"
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 97,
             "column": 8,
             "version": "20.9.1"
           }
@@ -23383,7 +23431,7 @@
           },
           {
             "filePath": "src/components/ContentfulModule/AboutTheProgramModule.jsx",
-            "line": 77,
+            "line": 85,
             "column": 4,
             "version": "20.10.0"
           },
@@ -23527,7 +23575,7 @@
           },
           {
             "filePath": "src/components/Form/StandaloneHubspotCaptureForm.jsx",
-            "line": 42,
+            "line": 43,
             "column": 6,
             "version": "20.10.0"
           },
@@ -23613,6 +23661,12 @@
             "filePath": "src/components/Learn/RelatedTopics.jsx",
             "line": 24,
             "column": 6,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/PlacementAboutSection/PlacementAboutSection.jsx",
+            "line": 26,
+            "column": 4,
             "version": "20.10.0"
           },
           {
