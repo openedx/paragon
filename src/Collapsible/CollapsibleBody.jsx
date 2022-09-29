@@ -8,6 +8,7 @@ import { CollapsibleContext } from './CollapsibleAdvanced';
 function CollapsibleBody({
   children, transitionWrapper, tag, ...props
 }) {
+  const [padding, setPadding] = React.useState(null);
   const { isOpen, unmountOnExit, transitionTime } = useContext(CollapsibleContext);
 
   // Keys are added to these elements so that TransitionReplace
@@ -22,9 +23,17 @@ function CollapsibleBody({
 
   return (
     <Collapse
+      onExiting={() => {
+        setPadding(null);
+      }}
+      onExited={(e) => {
+        const style = window.getComputedStyle(e);
+        setPadding({ top: style.paddingTop, bottom: style.paddingBottom });
+      }}
       className={classNames(`pgn__collapsible-time${transitionTime}`)}
       unmountOnExit={unmountOnExit}
       in={isOpen}
+      style={padding ? { paddingTop: padding.top, paddingBottom: padding.bottom } : {}}
     >
       {content}
     </Collapse>
