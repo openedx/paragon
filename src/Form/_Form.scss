@@ -187,6 +187,7 @@ $select-icon-padding: .5625rem !default;
     border-top: solid 2px transparent;
     position: relative;
     inset-inline-start: -.5em;
+    max-width: 100%;
   }
 
   .pgn__form-control-floating-label-text {
