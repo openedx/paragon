@@ -4,11 +4,11 @@
 .pgn__breadcrumb {
   .list-inline-item {
     &.active {
-      color: $breadcrumb-active-color;
+      color: var(--pgn-breadcrumb-color-active);
     }
 
     a.link-muted {
-      color: $breadcrumb-color;
+      color: var(--pgn-breadcrumb-color-base);
 
       &:focus {
         position: relative;
@@ -20,18 +20,18 @@
       &:focus::before {
         content: "";
         position: absolute;
-        top: calc(#{$breadcrumb-border-focus-axis-y} * -1);
-        right: calc(#{$breadcrumb-border-focus-axis-x} * -1);
-        bottom: calc(#{$breadcrumb-border-focus-axis-y} * -1);
-        left: calc(#{$breadcrumb-border-focus-axis-x} * -1);
-        border: $breadcrumb-border-focus-width solid $breadcrumb-color;
-        border-radius: $breadcrumb-focus-border-radius;
+        top: calc(#{var(--pgn-breadcrumb-border-focus-axis-y)} * -1);
+        right: calc(#{var(--pgn-breadcrumb-border-focus-axis-x)} * -1);
+        bottom: calc(#{var(--pgn-breadcrumb-border-focus-axis-y)} * -1);
+        left: calc(#{var(--pgn-breadcrumb-border-focus-axis-x)} * -1);
+        border: var(--pgn-breadcrumb-border-focus-width) solid var(--pgn-breadcrumb-color-base);
+        border-radius: var(--pgn-breadcrumb-border-radius-focus);
       }
     }
 
     [dir="rtl"] & {
       margin-right: 0;
-      margin-left: $breadcrumb-margin-left;
+      margin-left: var(--pgn-breadcrumb-margin-left);
     }
 
     .pgn__icon {
@@ -44,21 +44,21 @@
   &-dark {
     .list-inline-item {
       &.active {
-        color: $breadcrumb-inverse-active;
+        color: var(--pgn-breadcrumb-inverse-active);
       }
 
       a.link-muted {
-        color: $breadcrumb-inverse-color;
+        color: var(--pgn-breadcrumb-inverse-color);
 
         &:focus::before {
-          border: $breadcrumb-border-focus-width solid $breadcrumb-inverse-color;
+          border: var(--pgn-breadcrumb-border-focus-width) solid var(--pgn-breadcrumb-inverse-color);
         }
       }
     }
 
     .pgn__icon,
     .custom-spacer {
-      color: $breadcrumb-inverse-spacer;
+      color: var(--pgn-breadcrumb-inverse-spacer);
     }
   }
 
@@ -68,7 +68,7 @@
 
     .list-inline-item:not(:last-child) {
       margin-right: 0;
-      margin-left: $breadcrumb-margin-left;
+      margin-left: var(--pgn-breadcrumb-margin-left);
     }
 
     .pgn__icon {

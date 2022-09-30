@@ -16,7 +16,7 @@
           }
         },
         "font": {
-          "family": { "value": "null", "themeable": true, "source": "$input-btn-font-family" },
+          "family": { "value": "inherit", "themeable": true, "source": "$input-btn-font-family" },
           "size": {
             "base": { "value": "1.125rem", "themeable": true, "source": "$input-btn-font-size" },
             "sm": { "value": ".875rem", "themeable": true, "source": "$input-btn-font-size-sm" },
@@ -44,6 +44,34 @@
         "border": {
           "width": { "value": "{border.width.value}", "themeable": true, "source": "$input-btn-border-width" }
         }
+      }
+    },
+    "blockquote": {
+      "small": {
+        "font": {
+          "size": {
+            "value": "{font.size.small.base.value}", "themeable": true, "source": "$blockquote-small-font-size"
+          }
+        }
+      },
+      "font": {
+        "size": {
+          "value": "calc({font.size.base.value} * 1.25)", "themeable": true, "source": "$blockquote-font-size"
+        }
+      }
+    },
+    "mark": {
+      "padding": { "value": ".2em", "themeable": true, "source": "$mark-padding" },
+      "bg": { "value": "#FFF243", "themeable": true, "source": "$mark-bg" }
+    },
+    "dt": {
+      "font": {
+        "weight": { "value": "{font.weight.bold.value}", "themeable": true, "source": "$dt-font-weight" }
+      }
+    },
+    "list": {
+      "inline": {
+        "padding": { "value": ".5rem", "themeable": true, "source": "$list-inline-padding" }
       }
     }
   }

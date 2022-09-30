@@ -5,7 +5,7 @@
 }
 
 @mixin chip-variant($chip-variant-background, $chip-variant-border, $hover-background,
-$hover-border, $chip-variant-active-background, $chip-variant-active-border, $color,
+$chip-variant-hover-border, $chip-variant-active-background, $chip-variant-active-border, $color,
 $hover-color, $active-color, $focus-border) {
   background-color: $chip-variant-background;
   color: $color;
@@ -16,7 +16,7 @@ $hover-color, $active-color, $focus-border) {
     text-decoration: none;
     background-color: $hover-background;
     color: $hover-color;
-    border-color: $hover-border;
+    border-color: var(--pgn-menu-border-hover);
   }
 
   &.active,
@@ -29,12 +29,12 @@ $hover-color, $active-color, $focus-border) {
   &:focus::before {
     content: "";
     position: absolute;
-    top: calc(#{$chip-position-axis} * -1);
-    right: calc(#{$chip-position-axis} * -1);
-    bottom: calc(#{$chip-position-axis} * -1);
-    left: calc(#{$chip-position-axis} * -1);
-    border: $chip-border-width solid $focus-border;
-    border-radius: $chip-focus-border-radius;
+    top: calc(#{var(--pgn-chip-position-axis)} * -1);
+    right: calc(#{var(--pgn-chip-position-axis)} * -1);
+    bottom: calc(#{var(--pgn-chip-position-axis)} * -1);
+    left: calc(#{var(--pgn-chip-position-axis)} * -1);
+    border: var(--pgn-chip-border-width) solid $focus-border;
+    border-radius: var(--pgn-chip-border-radius-focus);
   }
 
   &:disabled {
@@ -55,16 +55,16 @@ $hover-color, $active-color, $focus-border) {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: $chip-padding-y $chip-padding-x;
-  font-size: $chip-font-size;
-  font-weight: $chip-font-weight;
-  line-height: $chip-line-height;
+  padding: var(--pgn-chip-padding-y) var(--pgn-chip-padding-x);
+  font-size: var(--pgn-chip-font-size);
+  font-weight: var(--pgn-chip-font-weight);
+  line-height: var(--pgn-chip-line-height);
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: $chip-border-radius;
-  border: $chip-border-width solid transparent;
-  margin-inline: calc($chip-margin-inline / 2);
+  border-radius: var(--pgn-chip-border-radius-base);
+  border: var(--pgn-chip-border-width) solid transparent;
+  margin-inline: calc(var(--pgn-chip-margin-inline) / 2);
 
   &:focus {
     position: relative;
@@ -105,7 +105,7 @@ $hover-color, $active-color, $focus-border) {
     $text: get-color("text", $color, "inactive");
 
     $hover-background: get-color("background", $color, "hover");
-    $hover-border: get-color("border", $color, "hover");
+    $chip-variant-hover-border: get-color("border", $color, "hover");
     $hover-text: get-color("text", $color, "hover");
 
     $chip-variant-active-background: get-color("background", $color, "selected");
@@ -118,7 +118,7 @@ $hover-color, $active-color, $focus-border) {
       $chip-variant-background,
       $chip-variant-border,
       $hover-background,
-      $hover-border,
+      $chip-variant-hover-border,
       $chip-variant-active-background,
       $chip-variant-active-border,
       $text,

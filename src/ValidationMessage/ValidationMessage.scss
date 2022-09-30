@@ -1,5 +1,5 @@
 .form-control.is-invalid ~ .invalid-feedback-nodanger {
-  color: $body-color;
+  color: var(--pgn-body-color);
 }
 
 .fa-icon-spacing {

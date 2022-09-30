@@ -27,21 +27,21 @@
   }
 
   @else {
-    background-color: $btn-icon-bg;
+    background-color: var(--pgn-icon-button-bg);
     color: $icon-color;
 
     &.focus,
     &:focus {
       outline: 2px transparent;
-      background-color: $btn-icon-bg;
+      background-color: var(--pgn-icon-button-bg);
       color: $icon-color;
-      box-shadow: inset 0 0 0 $btn-focus-width $icon-color;
+      box-shadow: inset 0 0 0 var(--pgn-btn-focus-width) $icon-color;
     }
   }
 }
 
 .btn-icon {
-  @include btn-icon-size($btn-icon-diameter-md);
+  @include btn-icon-size(var(--pgn-icon-button-diameter-md));
 
   border-radius: 50%;
   padding: 0;
@@ -50,7 +50,7 @@
   border: none;
 
   &.btn-icon-sm {
-    @include btn-icon-size($btn-icon-diameter-sm);
+    @include btn-icon-size(var(--pgn-icon-button-diameter-sm));
   }
 
   &.btn-icon-inline {
@@ -84,25 +84,25 @@
 
   &.disabled,
   &:disabled {
-    opacity: $btn-disabled-opacity;
+    opacity: var(--pgn-btn-disabled-opacity);
     pointer-events: none;
   }
 
   @each $name, $color in $icon-button-colors {
     &.btn-icon-#{$name} {
-      @include btn-icon-variant($color, $btn-icon-accent-color);
+      @include btn-icon-variant($color, var(--pgn-icon-button-accent-color));
     }
 
     &.btn-icon-inverse-#{$name} {
-      @include btn-icon-variant($btn-icon-accent-color, $color);
+      @include btn-icon-variant(var(--pgn-icon-button-accent-color), $color);
     }
 
     &.btn-icon-#{$name}-active {
-      @include btn-icon-variant($color, $btn-icon-accent-color, true);
+      @include btn-icon-variant($color, var(--pgn-icon-button-accent-color), true);
     }
 
     &.btn-icon-inverse-#{$name}-active {
-      @include btn-icon-variant($btn-icon-accent-color, $color, true);
+      @include btn-icon-variant(var(--pgn-icon-button-accent-color), $color, true);
     }
   }
 }

@@ -9,41 +9,41 @@
 
   @if $triangle-direction == top {
     border-bottom-color: $triangle-color;
-    border-width: 0 $annotation-arrow-border-width $annotation-arrow-border-width;
+    border-width: 0 var(--pgn-annotation-arrow-border-width) var(--pgn-annotation-arrow-border-width);
     right: 0;
     left: 0;
-    top: calc(#{$annotation-arrow-border-width} * -1);
+    top: calc(#{var(--pgn-annotation-arrow-border-width)} * -1);
     margin: 0 auto;
   }
 
   @else if $triangle-direction == right {
     border-left-color: $triangle-color;
     border-width:
-      $annotation-arrow-border-width 0 $annotation-arrow-border-width
-      $annotation-arrow-border-width;
+      var(--pgn-annotation-arrow-border-width) 0 var(--pgn-annotation-arrow-border-width)
+      var(--pgn-annotation-arrow-border-width);
     top: 0;
     bottom: 0;
-    right: calc(#{$annotation-arrow-border-width} * -1);
+    right: calc(#{var(--pgn-annotation-arrow-border-width)} * -1);
     margin: auto 0;
   }
 
   @else if $triangle-direction == bottom {
     border-top-color: $triangle-color;
-    border-width: $annotation-arrow-border-width $annotation-arrow-border-width 0;
+    border-width: var(--pgn-annotation-arrow-border-width) var(--pgn-annotation-arrow-border-width) 0;
     right: 0;
     left: 0;
-    bottom: calc(#{$annotation-arrow-border-width} * -1);
+    bottom: calc(#{var(--pgn-annotation-arrow-border-width)} * -1);
     margin: 0 auto;
   }
 
   @else if $triangle-direction == left {
     border-right-color: $triangle-color;
     border-width:
-      $annotation-arrow-border-width $annotation-arrow-border-width
-      $annotation-arrow-border-width 0;
+      var(--pgn-annotation-arrow-border-width) var(--pgn-annotation-arrow-border-width)
+      var(--pgn-annotation-arrow-border-width) 0;
     top: 0;
     bottom: 0;
-    left: calc(#{$annotation-arrow-border-width} * -1);
+    left: calc(#{var(--pgn-annotation-arrow-border-width)} * -1);
     margin: auto 0;
   }
 
@@ -53,15 +53,15 @@
 }
 
 .pgn__annotation {
-  padding: $annotation-padding;
-  border-radius: $annotation-border-radius;
-  max-width: $annotation-max-width;
-  filter: $annotation-box-shadow;
+  padding: var(--pgn-annotation-padding);
+  border-radius: var(--pgn-annotation-border-radius);
+  max-width: var(--pgn-annotation-max-width);
+  filter: var(--pgn-annotation-box-shadow);
   word-wrap: break-word;
   position: relative;
   display: inline-block;
-  font-size: $annotation-font-size;
-  line-height: $annotation-line-height;
+  font-size: var(--pgn-annotation-font-size);
+  line-height: var(--pgn-annotation-line-height);
   text-align: center;
 }
 
@@ -74,17 +74,17 @@ $arrow-directions: top, right, bottom, left;
       color: map-get($colors, "color");
 
       // set additional margin to arrow side of the Annotation
-      margin-#{$direction}: $annotation-arrow-border-width + $annotation-arrow-side-margin;
+      margin-#{$direction}: calc(var(--pgn-annotation-arrow-border-width) + var(--pgn-annotation-arrow-side-margin));
 
       [dir="rtl"] & {
         @if $direction == left {
           margin-left: 0;
-          margin-right: $annotation-arrow-border-width + $annotation-arrow-side-margin;
+          margin-right: calc(var(--pgn-annotation-arrow-border-width) + var(--pgn-annotation-arrow-side-margin));
         }
 
         @else if $direction == right {
           margin-right: 0;
-          margin-left: $annotation-arrow-border-width + $annotation-arrow-side-margin;
+          margin-left: calc(var(--pgn-annotation-arrow-border-width) + var(--pgn-annotation-arrow-side-margin));
         }
       }
 
@@ -94,19 +94,19 @@ $arrow-directions: top, right, bottom, left;
         [dir="rtl"] & {
           @if $direction == left {
             left: initial;
-            right: calc(#{$annotation-arrow-border-width} * -1);
+            right: calc(#{var(--pgn-annotation-arrow-border-width)} * -1);
             border-width:
-              $annotation-arrow-border-width 0 $annotation-arrow-border-width
-              $annotation-arrow-border-width;
+              var(--pgn-annotation-arrow-border-width) 0 var(--pgn-annotation-arrow-border-width)
+              var(--pgn-annotation-arrow-border-width);
             border-left-color: map-get($colors, "background-color");
           }
 
           @else if $direction == right {
             right: initial;
-            left: calc(#{$annotation-arrow-border-width} * -1);
+            left: calc(#{var(--pgn-annotation-arrow-border-width)} * -1);
             border-width:
-              $annotation-arrow-border-width $annotation-arrow-border-width
-              $annotation-arrow-border-width 0;
+              var(--pgn-annotation-arrow-border-width) var(--pgn-annotation-arrow-border-width)
+              var(--pgn-annotation-arrow-border-width) 0;
             border-right-color: map-get($colors, "background-color");
           }
         }

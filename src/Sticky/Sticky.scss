@@ -7,7 +7,7 @@
 
   &.pgn__sticky-top {
     align-self: self-start;
-    top: $sticky-offset;
+    top: var(--pgn-sticky-offset);
 
     @each $level, $offset in $spacers {
       &.pgn__sticky-offset--#{$level} {
@@ -16,13 +16,13 @@
     }
 
     &.pgn__sticky-shadow {
-      box-shadow: $sticky-shadow-bottom;
+      box-shadow: var(--pgn-sticky-shadow-bottom);
     }
   }
 
   &.pgn__sticky-bottom {
     align-self: self-end;
-    bottom: $sticky-offset;
+    bottom: var(--pgn-sticky-offset);
 
     @each $level, $offset in $spacers {
       &.pgn__sticky-offset--#{$level} {
@@ -31,7 +31,7 @@
     }
 
     &.pgn__sticky-shadow {
-      box-shadow: $sticky-shadow-top;
+      box-shadow: var(--pgn-sticky-shadow-top);
     }
   }
 }

@@ -7,9 +7,9 @@
   border-radius: 0;
 
   .collapsible-trigger {
-    padding: $collapsible-card-spacer-y $collapsible-card-spacer-x;
+    padding: var(--pgn-collapsible-card-spacer-y-base) var(--pgn-collapsible-card-spacer-x-base);
     border-radius: $card-inner-border-radius;
-    border-bottom: $card-border-width solid transparent;
+    border-bottom: var(--pgn-card-border-width) solid transparent;
     transition: border-color 100ms ease 150ms;
     cursor: pointer;
     display: flex;
@@ -24,7 +24,7 @@
 
     &[aria-expanded="true"] {
       border-radius: $card-inner-border-radius $card-inner-border-radius 0 0;
-      border-color: $card-border-color;
+      border-color: var(--pgn-card-border-color-base);
       transition: none;
       text-align: start;
     }
@@ -34,8 +34,8 @@
     // stylelint-disable-next-line
     @extend .card-body;
 
-    padding: $collapsible-card-spacer-y $collapsible-card-spacer-x;
-    padding-left: $collapsible-card-body-spacer-left;
+    padding: var(--pgn-collapsible-card-spacer-y-base) var(--pgn-collapsible-card-spacer-x-base);
+    padding-left: var(--pgn-collapsible-card-spacer-left-body);
     text-align: start;
 
     & > *:last-child {
@@ -44,7 +44,7 @@
   }
 
   .collapsible-icon {
-    margin-inline-start: $collapsible-card-spacer-icon;
+    margin-inline-start: var(--pgn-collapsible-card-spacer-icon);
   }
 }
 
@@ -53,11 +53,11 @@
   @extend .collapsible-card;
 
   .collapsible-trigger {
-    padding: $collapsible-card-spacer-y-lg $collapsible-card-spacer-x-lg;
+    padding: var(--pgn-collapsible-card-spacer-y-lg) var(--pgn-collapsible-card-spacer-x-lg);
   }
 
   .collapsible-body {
-    padding: $collapsible-card-spacer-y-lg $collapsible-card-spacer-x-lg;
+    padding: var(--pgn-collapsible-card-spacer-y-lg) var(--pgn-collapsible-card-spacer-x-lg);
   }
 }
 
@@ -68,11 +68,11 @@
     align-items: center;
     text-decoration: underline;
     color: theme-color("primary", "default");
-    padding: $collapsible-basic-spacer-y $collapsible-basic-spacer-x;
+    padding: var(--pgn-collapsible-card-spacer-basic-y) var(--pgn-collapsible-card-spacer-basic-x);
   }
 
   .collapsible-body {
-    padding: $collapsible-basic-spacer-y $collapsible-basic-spacer-x;
+    padding: var(--pgn-collapsible-card-spacer-basic-y) var(--pgn-collapsible-card-spacer-basic-x);
     text-align: start;
 
     &.collapsing {
@@ -81,6 +81,6 @@
   }
 
   .collapsible-icon {
-    margin-left: $collapsible-basic-spacer-icon;
+    margin-left: var(--pgn-collapsible-card-spacer-basic-icon);
   }
 }

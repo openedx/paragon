@@ -1,0 +1,56 @@
+code {
+  @include font-size(var(--pgn-code-font-size));
+
+  color: var(--pgn-code-color);
+  word-wrap: break-word;
+
+  a > & {
+    color: inherit;
+  }
+}
+
+// User input typically entered via keyboard
+kbd {
+  padding: var(--pgn-code-kbd-padding-y) var(--pgn-code-kbd-padding-x);
+
+  @include font-size(var(--pgn-code-kbd-font-size));
+
+  color: var(--pgn-code-kbd-color);
+  background-color: var(--pgn-code-kbd-bg);
+
+  @include border-radius(var(--pgn-border-radius-sm));
+  @include box-shadow(var(--pgn-code-kbd-box-shadow));
+
+  kbd {
+    padding: 0;
+
+    @include font-size(100%);
+
+    font-weight: var(--pgn-code-kbd-nested-font-weight);
+
+    @include box-shadow(none);
+  }
+}
+
+// Blocks of code
+pre {
+  display: block;
+
+  @include font-size(var(--pgn-code-font-size));
+
+  color: var(--pgn-code-pre-color);
+
+  // Account for some code outputs that place code tags in pre tags
+  code {
+    @include font-size(inherit);
+
+    color: inherit;
+    word-break: normal;
+  }
+}
+
+// Enable scrollable blocks of code
+.pre-scrollable {
+  max-height: var(--pgn-code-pre-scrollable-max-height);
+  overflow-y: scroll;
+}

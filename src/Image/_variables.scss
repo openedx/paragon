@@ -1,11 +1,11 @@
 // Image thumbnails
 
 $thumbnail-padding:                 .25rem !default;
-$thumbnail-bg:                      $body-bg !default;
-$thumbnail-border-width:            $border-width !default;
+$thumbnail-bg:                      var(--pgn-body-bg) !default;
+$thumbnail-border-width:            var(--pgn-border-width) !default;
 $thumbnail-border-color:            theme-color("gray", "border") !default;
-$thumbnail-border-radius:           $border-radius !default;
-$thumbnail-box-shadow:              0 1px 2px rgba($black, .075) !default;
+$thumbnail-border-radius:           var(--pgn-border-radius-base) !default;
+$thumbnail-box-shadow:              0 1px 2px rgba(var(--pgn-color-black), .075) !default;
 
 // Figures
 
