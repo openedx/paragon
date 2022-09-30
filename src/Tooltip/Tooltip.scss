@@ -2,36 +2,36 @@
 @import "~bootstrap/scss/tooltip";
 
 .tooltip {
-  filter: $tooltip-box-shadow;
+  filter: var(--pgn-tooltip-box-shadow);
 }
 
 .tooltip-light {
   .tooltip-inner {
-    color: $tooltip-color-light;
-    background-color: $tooltip-bg-light;
+    color: var(--pgn-tooltip-color-light);
+    background-color: var(--pgn-tooltip-bg-light);
   }
 
   &.bs-tooltip-top .arrow {
     &::before {
-      border-top-color: $tooltip-arrow-color-light;
+      border-top-color: var(--pgn-tooltip-arrow-color-light);
     }
   }
 
   &.bs-tooltip-right .arrow {
     &::before {
-      border-right-color: $tooltip-arrow-color-light;
+      border-right-color: var(--pgn-tooltip-arrow-color-light);
     }
   }
 
   &.bs-tooltip-bottom .arrow {
     &::before {
-      border-bottom-color: $tooltip-arrow-color-light;
+      border-bottom-color: var(--pgn-tooltip-arrow-color-light);
     }
   }
 
   &.bs-tooltip-left .arrow {
     &::before {
-      border-left-color: $tooltip-arrow-color-light;
+      border-left-color: var(--pgn-tooltip-arrow-color-light);
     }
   }
 }

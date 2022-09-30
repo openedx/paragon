@@ -6,23 +6,23 @@ $dropdown-min-width:                18rem !default;
 $dropdown-padding-x:                0 !default;
 $dropdown-padding-y:                .5rem !default;
 $dropdown-spacer:                   .125rem !default;
-$dropdown-font-size:                $font-size-base !default;
-$dropdown-color:                    $body-color !default;
-$dropdown-bg:                       $white !default;
+$dropdown-font-size:                var(--pgn-font-size-base) !default;
+$dropdown-color:                    var(--pgn-body-color) !default;
+$dropdown-bg:                       var(--pgn-color-white) !default;
 $dropdown-border-color:             rgba($black, .15) !default;
-$dropdown-border-radius:            $border-radius !default;
-$dropdown-border-width:             $border-width !default;
+$dropdown-border-radius:            var(--pgn-border-radius-base) !default;
+$dropdown-border-width:             var(--pgn-border-width) !default;
 $dropdown-inner-border-radius:      calc(#{$dropdown-border-radius} - #{$dropdown-border-width}) !default;
 $dropdown-divider-bg:               theme-color("gray", "background") !default;
-$dropdown-divider-margin-y:         calc($spacer / 2) !default;
-$dropdown-box-shadow:               0 .5rem 1rem rgba($black, .175) !default;
+$dropdown-divider-margin-y:         calc(var(--pgn-core-spacer) / 2) !default;
+$dropdown-box-shadow:               0 .5rem 1rem rgba(var(--pgn-color-black), .175) !default;
 
 $dropdown-link-color:               theme-color("gray", "dark-text") !default;
 $dropdown-link-hover-color:         darken(theme-color("gray", "dark-text"), 5%) !default;
-$dropdown-link-hover-bg:            $light-300 !default;
+$dropdown-link-hover-bg:            var(--pgn-color-light-300) !default;
 
-$dropdown-link-active-color:        $component-active-color !default;
-$dropdown-link-active-bg:           $component-active-bg !default;
+$dropdown-link-active-color:        var(--pgn-component-active-color) !default;
+$dropdown-link-active-bg:           var(--pgn-component-active-bg) !default;
 
 $dropdown-link-disabled-color:      theme-color("gray", "light-text") !default;
 

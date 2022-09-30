@@ -13,15 +13,15 @@
   position: fixed;
   top: 0;
   width: 100vw;
-  z-index: $zindex-modal;
+  z-index: var(--pgn-www-zindex-modal);
   -webkit-overflow-scrolling: touch;
 }
 
 .pgn__modal-backdrop {
-  background: $modal-backdrop-bg;
+  background: var(--pgn-modal-backdrop-bg);
   bottom: 0;
   left: 0;
-  opacity: $modal-backdrop-opacity;
+  opacity: var(--pgn-modal-backdrop-opacity);
   position: fixed;
   right: 0;
   top: 0;
@@ -86,15 +86,15 @@
 .modal-dialog {
   height: 100%;
   margin: auto;
-  padding: calc($spacer / 2);
+  padding: calc(var(--pgn-core-spacer) / 2);
 
   @media (min-width: map-get($grid-breakpoints, "sm")) {
-    padding: $spacer;
+    padding: var(--pgn-core-spacer);
   }
 }
 
 .modal-content {
-  max-height: calc(100vh - (#{$spacer} * 2));
+  max-height: calc(100vh - (#{var(--pgn-core-spacer)} * 2));
 
   &:focus {
     outline: 1px dotted;
@@ -164,8 +164,8 @@
 .pgn__modal-popup__arrow::after,
 .pgn__modal-popup__arrow-top-start::after,
 .pgn__modal-popup__arrow-top::after {
-  bottom: $border-width;
-  border-top-color: $white;
+  bottom: var(--pgn-border-width);
+  border-top-color: var(--pgn-color-white);
 }
 
 [data-popper-placement^="right"] .pgn__modal-popup__arrow-auto,

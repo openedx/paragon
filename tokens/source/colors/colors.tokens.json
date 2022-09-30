@@ -11,6 +11,9 @@
       "a": { "value": "#00BBF9", "themeable": true, "source": "$accent-a" },
       "b": { "value": "#FFEE88", "themeable": true, "source": "$accent-b" }
     },
+    "theme": {
+      "interval": { "value": "8%", "themeable": true, "source": "$theme-color-interval" }
+    },
     "gray": {
       "base": { "value": "#707070", "themeable": true, "source": "$gray" },
       "100": { "value": "#EBEBEB", "themeable": true, "source": "$gray-100" },

@@ -14,14 +14,14 @@ $breadcrumb-border-focus-axis-y:    .5rem !default;
 
 $breadcrumb-border-focus-width:     .0625rem !default;
 
-$breadcrumb-bg:                     $gray-200 !default;
-$breadcrumb-divider-color:          $gray-600 !default;
-$breadcrumb-active-color:           $gray-500 !default;
-$breadcrumb-inverse-active:         $light-500 !default;
-$breadcrumb-inverse-spacer:         $light-700 !default;
-$breadcrumb-color:                  $primary-500 !default;
-$breadcrumb-inverse-color:          $white !default;
+$breadcrumb-bg:                     var(--pgn-color-gray-200) !default;
+$breadcrumb-divider-color:          var(--pgn-color-gray-600) !default;
+$breadcrumb-active-color:           var(--pgn-color-gray-500) !default;
+$breadcrumb-inverse-active:         var(--pgn-color-light-500) !default;
+$breadcrumb-inverse-spacer:         var(--pgn-color-light-700) !default;
+$breadcrumb-color:                  var(--pgn-color-primary-500) !default;
+$breadcrumb-inverse-color:          var(--pgn-color-white) !default;
 $breadcrumb-divider:                "/" !default;
 
-$breadcrumb-border-radius:          $border-radius !default;
+$breadcrumb-border-radius:          var(--pgn-border-radius-base) !default;
 $breadcrumb-focus-border-radius:          .125rem !default;

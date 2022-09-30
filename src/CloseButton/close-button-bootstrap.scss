@@ -1,0 +1,32 @@
+.close {
+  float: right;
+
+  @include font-size(var(--pgn-close-button-font-size));
+
+  font-weight: var(--pgn-close-button-font-weight);
+  line-height: 1;
+  color: var(--pgn-close-button-color);
+  text-shadow: var(--pgn-close-button-text-shadow);
+  opacity: .5;
+
+  @include hover() {
+    color: var(--pgn-close-button-color);
+    text-decoration: none;
+  }
+
+  &:not(:disabled):not(.disabled) {
+    @include hover-focus() {
+      opacity: .75;
+    }
+  }
+}
+
+button.close {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+}
+
+a.close.disabled {
+  pointer-events: none;
+}
