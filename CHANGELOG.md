@@ -1,3 +1,11 @@
+## [20.12.1](https://github.com/openedx/paragon/compare/v20.12.0...v20.12.1) (2022-09-30)
+
+
+### Bug Fixes
+
+* floating label expand beyond input field ([#1605](https://github.com/openedx/paragon/issues/1605)) ([2f89035](https://github.com/openedx/paragon/commit/2f89035e741858b2c97e1b2542a137c1b116a1a8))
+* update styles for Chip ([#1606](https://github.com/openedx/paragon/issues/1606)) ([df4583f](https://github.com/openedx/paragon/commit/df4583fd5fd6d056ddd8be2c11b1ad87733d353e))
+
 # [20.12.0](https://github.com/openedx/paragon/compare/v20.11.1...v20.12.0) (2022-09-21)
 
 
