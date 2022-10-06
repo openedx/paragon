@@ -7,11 +7,10 @@ import Icon from '../Icon';
 import { Form, IconButton, Spinner } from '../index';
 import useArrowKeyNavigation from '../hooks/useArrowKeyNavigation';
 
-const MAX_OPTION_LENGTH = 30;
-
 const FormAutosuggest = ({
   children,
   arrowKeyNavigationSelector,
+  screenReaderText,
   value,
   isLoading,
   errorMessageText,
@@ -21,7 +20,7 @@ const FormAutosuggest = ({
 }) => {
   const optItemsRef = useRef(null);
   const parentRef = useArrowKeyNavigation({ selectors: arrowKeyNavigationSelector });
-  const [isClose, setIsClose] = useState(true);
+  const [isMenuClosed, setIsMenuClosed] = useState(true);
   const [state, setState] = useState({
     displayValue: '',
     errorMessage: '',
@@ -49,7 +48,7 @@ const FormAutosuggest = ({
       dropDownItems: '',
     }));
 
-    setIsClose(true);
+    setIsMenuClosed(true);
   };
 
   function getItems(strToFind = '') {
@@ -57,17 +56,11 @@ const FormAutosuggest = ({
       // eslint-disable-next-line no-shadow
       const { children, ...rest } = child.props;
 
-      let newChildren = children;
-
-      if (newChildren.length > MAX_OPTION_LENGTH) {
-        newChildren = children.substring(0, MAX_OPTION_LENGTH).concat('...');
-      }
-
       const modifiedOpt = React.cloneElement(child, {
         ...rest,
-        children: newChildren,
-        value: newChildren,
-        onClick: (e) => handleItemClick(e, newChildren),
+        children,
+        value: children,
+        onClick: (e) => handleItemClick(e, children),
       });
 
       return modifiedOpt;
@@ -82,13 +75,13 @@ const FormAutosuggest = ({
   }
 
   const handleExpand = (e) => {
-    setIsClose(!isClose);
+    setIsMenuClosed(!isMenuClosed);
 
     const newState = {
-      dropDownItems: '',
+      dropDownItems: [],
     };
 
-    if (isClose) {
+    if (isMenuClosed) {
       newState.dropDownItems = getItems(e.target.value);
       newState.errorMessage = '';
     }
@@ -99,15 +92,15 @@ const FormAutosuggest = ({
     }));
   };
 
-  const iconToggle = () => (
+  const iconToggle = (
     <IconButton
       className="pgn__form-autosuggest__icon-button"
-      src={isClose ? KeyboardArrowDown : KeyboardArrowUp}
+      src={isMenuClosed ? KeyboardArrowDown : KeyboardArrowUp}
       iconAs={Icon}
       size="sm"
       variant="secondary"
-      alt="icon toggle"
-      onClick={(e) => handleExpand(e, isClose)}
+      alt={isMenuClosed ? 'Open the options menu' : 'Close the options menu'}
+      onClick={(e) => handleExpand(e, isMenuClosed)}
     />
   );
 
@@ -119,7 +112,7 @@ const FormAutosuggest = ({
         errorMessage: !state.displayValue ? errorMessageText : '',
       }));
 
-      setIsClose(true);
+      setIsMenuClosed(true);
     }
   };
 
@@ -133,7 +126,7 @@ const FormAutosuggest = ({
         errorMessage: !state.displayValue ? errorMessageText : '',
       }));
 
-      setIsClose(true);
+      setIsMenuClosed(true);
     }
   };
 
@@ -182,7 +175,7 @@ const FormAutosuggest = ({
         errorMessage: '',
       }));
 
-      setIsClose(false);
+      setIsMenuClosed(false);
     }
   };
 
@@ -197,7 +190,7 @@ const FormAutosuggest = ({
         errorMessage: '',
       }));
 
-      setIsClose(false);
+      setIsMenuClosed(false);
     } else {
       setState(prevState => ({
         ...prevState,
@@ -205,7 +198,7 @@ const FormAutosuggest = ({
         errorMessageText,
       }));
 
-      setIsClose(true);
+      setIsMenuClosed(true);
     }
 
     setDisplayValue(e.target.value);
@@ -216,31 +209,36 @@ const FormAutosuggest = ({
       <Form.Group isInvalid={!!state.errorMessage}>
         <Form.Control
           aria-expanded={(state.dropDownItems.length > 0).toString()}
+          aria-owns="pgn__form-autosuggest__dropdown-box"
           value={state.displayValue}
           aria-invalid={state.errorMessage}
           onChange={handleOnChange}
           onClick={handleClick}
-          trailingElement={iconToggle()}
+          trailingElement={iconToggle}
           {...props}
         />
 
         {helpMessage && !state.errorMessage && (
-          <Form.Control.Feedback type="default" key="help-text">
+          <Form.Control.Feedback type="default">
             {helpMessage}
           </Form.Control.Feedback>
         )}
 
         {state.errorMessage && (
-          <Form.Control.Feedback type="invalid" key="error" feedback-for={props.name}>
+          <Form.Control.Feedback type="invalid" feedback-for={props.name}>
             {errorMessageText}
           </Form.Control.Feedback>
         )}
       </Form.Group>
 
-      <div className="pgn__form-autosuggest__dropdown" ref={optItemsRef}>
+      <div
+        id="pgn__form-autosuggest__dropdown-box"
+        className="pgn__form-autosuggest__dropdown"
+        ref={optItemsRef}
+      >
         {isLoading ? (
           <div className="pgn__form-autosuggest__dropdown-loading">
-            <Spinner animation="border" variant="dark" screenReaderText="loading" />
+            <Spinner animation="border" variant="dark" screenReaderText={screenReaderText} />
           </div>
         ) : state.dropDownItems.length > 0 && state.dropDownItems}
       </div>
@@ -249,7 +247,7 @@ const FormAutosuggest = ({
 };
 
 FormAutosuggest.defaultProps = {
-  arrowKeyNavigationSelector: 'a:not(:disabled),button:not(:disabled, .btn-icon),input:not(:disabled)',
+  arrowKeyNavigationSelector: 'a:not(:disabled),button:not(:disabled, .btn-icon)',
   isLoading: false,
   role: 'list',
   className: null,
@@ -262,6 +260,7 @@ FormAutosuggest.defaultProps = {
   readOnly: false,
   children: null,
   name: 'form-autosuggest',
+  screenReaderText: 'loading',
 };
 
 FormAutosuggest.propTypes = {
@@ -294,6 +293,8 @@ FormAutosuggest.propTypes = {
   readOnly: PropTypes.bool,
   /** Specifies the content of the `FormAutosuggest`. */
   children: PropTypes.node,
+  /** Specifies the screen reader text */
+  screenReaderText: PropTypes.string,
 };
 
 export default FormAutosuggest;

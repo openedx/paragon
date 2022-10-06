@@ -560,8 +560,12 @@ select.form-control {
     top: 3.125rem;
 
     .dropdown-item {
+      display: block;
+      text-align: start;
       max-width: 100%;
       padding: .625rem 1rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
 
       &:active {
         color: $white;

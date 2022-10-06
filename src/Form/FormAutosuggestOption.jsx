@@ -22,7 +22,6 @@ FormAutosuggestOption.defaultProps = {
   className: null,
   children: null,
   onClick: null,
-  role: 'option',
 };
 
 FormAutosuggestOption.propTypes = {
@@ -32,8 +31,6 @@ FormAutosuggestOption.propTypes = {
   children: PropTypes.string,
   /** A click handler for the `FormAutosuggestOption` */
   onClick: PropTypes.func,
-  /** An ARIA role describing the `FormAutosuggestOption`. */
-  role: PropTypes.string,
 };
 
 export default FormAutosuggestOption;
