@@ -24,6 +24,9 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
     justify-content: flex-end;
   }
 
+  [dir="rtl"] .pgn__checkpoint-action-row{
+    justify-content: flex-start;
+}
   #pgn__checkpoint-arrow,
   #pgn__checkpoint-arrow::before,
   #pgn__checkpoint-arrow::after {
