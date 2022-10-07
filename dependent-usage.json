@@ -1,5 +1,5 @@
 {
-  "lastModified": 1665066064304,
+  "lastModified": 1665152455979,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -7905,7 +7905,7 @@
           },
           {
             "filePath": "src/login/LoginPage.jsx",
-            "line": 172,
+            "line": 181,
             "column": 10,
             "version": "19.10.2"
           },
@@ -7993,7 +7993,7 @@
           },
           {
             "filePath": "src/login/LoginPage.jsx",
-            "line": 253,
+            "line": 262,
             "column": 10,
             "version": "19.10.2"
           },
@@ -8195,7 +8195,7 @@
           },
           {
             "filePath": "src/login/LoginPage.jsx",
-            "line": 173,
+            "line": 182,
             "column": 12,
             "version": "19.10.2"
           },
@@ -8491,7 +8491,7 @@
           },
           {
             "filePath": "src/login/LoginPage.jsx",
-            "line": 273,
+            "line": 282,
             "column": 12,
             "version": "19.10.2"
           },
@@ -10740,14 +10740,20 @@
           },
           {
             "filePath": "src/discussions/topics/topic-group/topic/Topic.jsx",
-            "line": 49,
-            "column": 14,
+            "line": 70,
+            "column": 16,
             "version": "20.12.1"
           },
           {
             "filePath": "src/discussions/topics/topic-group/topic/Topic.jsx",
-            "line": 59,
-            "column": 12,
+            "line": 86,
+            "column": 16,
+            "version": "20.12.1"
+          },
+          {
+            "filePath": "src/discussions/topics/topic-group/topic/Topic.jsx",
+            "line": 110,
+            "column": 18,
             "version": "20.12.1"
           }
         ],
@@ -11299,6 +11305,24 @@
             "line": 108,
             "column": 12,
             "version": "20.12.1"
+          },
+          {
+            "filePath": "src/discussions/topics/topic-group/topic/Topic.jsx",
+            "line": 58,
+            "column": 12,
+            "version": "20.12.1"
+          },
+          {
+            "filePath": "src/discussions/topics/topic-group/topic/Topic.jsx",
+            "line": 74,
+            "column": 12,
+            "version": "20.12.1"
+          },
+          {
+            "filePath": "src/discussions/topics/topic-group/topic/Topic.jsx",
+            "line": 91,
+            "column": 14,
+            "version": "20.12.1"
           }
         ],
         "Tooltip": [
@@ -11330,6 +11354,24 @@
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
             "line": 110,
             "column": 16,
+            "version": "20.12.1"
+          },
+          {
+            "filePath": "src/discussions/topics/topic-group/topic/Topic.jsx",
+            "line": 60,
+            "column": 16,
+            "version": "20.12.1"
+          },
+          {
+            "filePath": "src/discussions/topics/topic-group/topic/Topic.jsx",
+            "line": 76,
+            "column": 16,
+            "version": "20.12.1"
+          },
+          {
+            "filePath": "src/discussions/topics/topic-group/topic/Topic.jsx",
+            "line": 93,
+            "column": 18,
             "version": "20.12.1"
           }
         ],
@@ -20317,6 +20359,12 @@
             "version": "12.8.0"
           },
           {
+            "filePath": "src/users/LearnerRecords.jsx",
+            "line": 67,
+            "column": 18,
+            "version": "12.8.0"
+          },
+          {
             "filePath": "src/users/SingleSignOnRecordCard.jsx",
             "line": 100,
             "column": 14,
@@ -20350,7 +20398,7 @@
           },
           {
             "filePath": "src/users/LearnerInformation.jsx",
-            "line": 16,
+            "line": 19,
             "column": 6,
             "version": "12.8.0"
           }
@@ -20388,26 +20436,32 @@
           },
           {
             "filePath": "src/users/LearnerInformation.jsx",
-            "line": 20,
+            "line": 23,
             "column": 8,
             "version": "12.8.0"
           },
           {
             "filePath": "src/users/LearnerInformation.jsx",
-            "line": 28,
+            "line": 31,
             "column": 8,
             "version": "12.8.0"
           },
           {
             "filePath": "src/users/LearnerInformation.jsx",
-            "line": 33,
+            "line": 36,
             "column": 8,
             "version": "12.8.0"
           },
           {
             "filePath": "src/users/LearnerInformation.jsx",
-            "line": 44,
+            "line": 47,
             "column": 8,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/users/LearnerInformation.jsx",
+            "line": 52,
+            "column": 10,
             "version": "12.8.0"
           }
         ],
@@ -20508,6 +20562,12 @@
             "filePath": "src/users/LearnerCredentials.jsx",
             "line": 119,
             "column": 16,
+            "version": "12.8.0"
+          },
+          {
+            "filePath": "src/users/LearnerRecords.jsx",
+            "line": 136,
+            "column": 14,
             "version": "12.8.0"
           }
         ],
@@ -22985,14 +23045,8 @@
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 171,
+            "line": 155,
             "column": 14,
-            "version": "20.10.0"
-          },
-          {
-            "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 226,
-            "column": 22,
             "version": "20.10.0"
           },
           {
@@ -23005,12 +23059,6 @@
             "filePath": "src/components/Course/2U/MobileCollapsibleSection.jsx",
             "line": 24,
             "column": 10,
-            "version": "20.10.0"
-          },
-          {
-            "filePath": "src/components/Course/2U/StickyNav2U.jsx",
-            "line": 228,
-            "column": 26,
             "version": "20.10.0"
           },
           {
@@ -23065,12 +23113,6 @@
             "filePath": "src/components/Course/Instructors/InstructorCard.jsx",
             "line": 56,
             "column": 18,
-            "version": "20.10.0"
-          },
-          {
-            "filePath": "src/components/CourseCurriculum/index.jsx",
-            "line": 96,
-            "column": 12,
             "version": "20.10.0"
           },
           {
@@ -23429,25 +23471,13 @@
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 185,
+            "line": 169,
             "column": 27,
             "version": "20.10.0"
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 220,
-            "column": 20,
-            "version": "20.10.0"
-          },
-          {
-            "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 236,
-            "column": 16,
-            "version": "20.10.0"
-          },
-          {
-            "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 253,
+            "line": 192,
             "column": 16,
             "version": "20.10.0"
           },
@@ -23478,12 +23508,6 @@
           {
             "filePath": "src/components/Course/Instructors/index.jsx",
             "line": 85,
-            "column": 10,
-            "version": "20.10.0"
-          },
-          {
-            "filePath": "src/components/CourseCurriculum/index.jsx",
-            "line": 90,
             "column": 10,
             "version": "20.10.0"
           },
@@ -23560,8 +23584,14 @@
             "version": "20.10.0"
           },
           {
+            "filePath": "src/templates/courseDetail2U.jsx",
+            "line": 477,
+            "column": 6,
+            "version": "20.10.0"
+          },
+          {
             "filePath": "src/templates/courseDetailBootcamp.jsx",
-            "line": 201,
+            "line": 176,
             "column": 18,
             "version": "20.10.0"
           },
@@ -23573,7 +23603,7 @@
           },
           {
             "filePath": "src/templates/programDetailDegree.jsx",
-            "line": 143,
+            "line": 153,
             "column": 16,
             "version": "20.10.0"
           }
@@ -23629,7 +23659,7 @@
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 164,
+            "line": 148,
             "column": 6,
             "version": "20.10.0"
           },
@@ -23641,7 +23671,7 @@
           },
           {
             "filePath": "src/components/Course/2U/StickyNav2U.jsx",
-            "line": 160,
+            "line": 157,
             "column": 12,
             "version": "20.10.0"
           },
@@ -24061,7 +24091,7 @@
           },
           {
             "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 592,
+            "line": 604,
             "column": 20,
             "version": "20.10.0"
           },
@@ -24093,13 +24123,13 @@
         "Breadcrumb": [
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 168,
+            "line": 152,
             "column": 14,
             "version": "20.10.0"
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 172,
+            "line": 156,
             "column": 14,
             "version": "20.10.0"
           },
@@ -24119,88 +24149,6 @@
             "filePath": "src/components/Search/SearchBreadcrumb.jsx",
             "line": 98,
             "column": 8,
-            "version": "20.10.0"
-          }
-        ],
-        "OverlayTrigger": [
-          {
-            "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 212,
-            "column": 18,
-            "version": "20.10.0"
-          },
-          {
-            "filePath": "src/components/Course/2U/StickyNav2U.jsx",
-            "line": 215,
-            "column": 16,
-            "version": "20.10.0"
-          },
-          {
-            "filePath": "src/components/Course/CourseModes/index.jsx",
-            "line": 262,
-            "column": 24,
-            "version": "20.10.0"
-          },
-          {
-            "filePath": "src/components/Course/CourseModes/index.jsx",
-            "line": 279,
-            "column": 24,
-            "version": "20.10.0"
-          },
-          {
-            "filePath": "src/components/CourseCurriculum/index.jsx",
-            "line": 82,
-            "column": 8,
-            "version": "20.10.0"
-          },
-          {
-            "filePath": "src/components/Overlays/SaveForLaterOverlay.jsx",
-            "line": 326,
-            "column": 6,
-            "version": "20.10.0"
-          },
-          {
-            "filePath": "src/components/ProgramPathway/ProgramPathwayCourse.jsx",
-            "line": 55,
-            "column": 6,
-            "version": "20.10.0"
-          }
-        ],
-        "Tooltip": [
-          {
-            "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 215,
-            "column": 22,
-            "version": "20.10.0"
-          },
-          {
-            "filePath": "src/components/Course/2U/StickyNav2U.jsx",
-            "line": 218,
-            "column": 20,
-            "version": "20.10.0"
-          },
-          {
-            "filePath": "src/components/Course/CourseModes/index.jsx",
-            "line": 265,
-            "column": 28,
-            "version": "20.10.0"
-          },
-          {
-            "filePath": "src/components/Course/CourseModes/index.jsx",
-            "line": 282,
-            "column": 28,
-            "version": "20.10.0"
-          },
-          {
-            "filePath": "src/components/CourseCurriculum/index.jsx",
-            "line": 85,
-            "column": 12,
-            "version": "20.10.0"
-          },
-          {
-            "filePath": "src/components/ProgramPathway/ProgramPathwayCourse.jsx",
-            "line": 61,
-            "column": 10,
             "version": "20.10.0"
           }
         ],
@@ -24325,7 +24273,7 @@
         "DropdownButton": [
           {
             "filePath": "src/components/Course/2U/StickyNav2U.jsx",
-            "line": 169,
+            "line": 166,
             "column": 16,
             "version": "20.10.0"
           },
@@ -24339,7 +24287,7 @@
         "Dropdown.Item": [
           {
             "filePath": "src/components/Course/2U/StickyNav2U.jsx",
-            "line": 181,
+            "line": 178,
             "column": 20,
             "version": "20.10.0"
           },
@@ -24352,6 +24300,52 @@
           {
             "filePath": "src/components/Learn/DynamicProductList/ProductFilter.jsx",
             "line": 31,
+            "column": 10,
+            "version": "20.10.0"
+          }
+        ],
+        "OverlayTrigger": [
+          {
+            "filePath": "src/components/Course/CourseModes/index.jsx",
+            "line": 262,
+            "column": 24,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/Course/CourseModes/index.jsx",
+            "line": 279,
+            "column": 24,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/Overlays/SaveForLaterOverlay.jsx",
+            "line": 326,
+            "column": 6,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/ProgramPathway/ProgramPathwayCourse.jsx",
+            "line": 55,
+            "column": 6,
+            "version": "20.10.0"
+          }
+        ],
+        "Tooltip": [
+          {
+            "filePath": "src/components/Course/CourseModes/index.jsx",
+            "line": 265,
+            "column": 28,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/Course/CourseModes/index.jsx",
+            "line": 282,
+            "column": 28,
+            "version": "20.10.0"
+          },
+          {
+            "filePath": "src/components/ProgramPathway/ProgramPathwayCourse.jsx",
+            "line": 61,
             "column": 10,
             "version": "20.10.0"
           }
