@@ -465,34 +465,14 @@ Note that in the example below, the content of `Card` is wrapped inside `Card.Bo
   
   return (
     <>
-      {/* Example props form start */}
-      <Form.Group>
-        <Form.Label>Choose orientation</Form.Label>
-        <Form.RadioSet
-          name="orientation"
-          onChange={handleChangeOrientation}
-          value={orientation}
-        >
-          <Form.Radio value="vertical">Vertical</Form.Radio>
-          <Form.Radio value="horizontal">Horizontal</Form.Radio>
-        </Form.RadioSet>
-      </Form.Group>
-      <Form.Group>
-        <Form.Control
-          as="select"
-          name="variant"
-          onChange={handleChangeVariant}
-          value={variant}
-          floatingLabel="Variant"
-        >
-          <option value="">Select a variant</option>
-          <option value="primary">Primary</option>
-          <option value="warning">Warning</option>
-          <option value="danger">Danger</option>
-          <option value="success">Success</option>
-        </Form.Control>
-      </Form.Group>
-      {/* Example props form end */}
+      {/* start example form block */}
+      <ExamplePropsForm
+        inputs={[
+          { value: orientation, setValue: setOrientation, options: ['horizontal', 'vertical'], name: 'orientation' },
+          { value: variant, setValue: setVariant, options: ['primary', 'warning', 'danger', 'success'], name: 'variant' },
+        ]}
+      />
+      {/* end example form block */}
       
       <Card orientation={orientation} className={`flex-column ${isVertical ? 'w-50' : ''}`}>
         <Card.Header

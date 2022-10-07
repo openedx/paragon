@@ -57,34 +57,38 @@ Display informative text related to an object on screen. Unlike the tooltip an a
 ## Referring to other elements
 
 ```jsx live
-<>
-  <div className="d-flex justify-content-around mb-4">
-    <div className="d-flex flex-column align-items-center">
-      <Annotation>
-        Annotation on top
-      </Annotation>
-      <Button>This is an example button</Button>
-    </div>
-    <div className="d-flex align-items-center">	
-      <Button>This is an example button</Button>
-      <Annotation arrowPlacement='left'>
-        Annotation on right
-      </Annotation>
-    </div>
-  </div>
-  <div className="d-flex justify-content-around">
-    <div className="d-flex align-items-center">
-      <Annotation arrowPlacement='right'>
-        Annotation on left
-      </Annotation>
-      <Button>This is an example button</Button>
-    </div>
-    <div className="d-flex flex-column align-items-center">
-      <Button>This is an example button</Button>
-      <Annotation arrowPlacement='top'>
-        Annotation on bottom
-      </Annotation>
-    </div>
-  </div>
-</>
+() => {
+  const [arrowPlacement, setArrowPlacement] = useState('left')
+  const wrapperClass = arrowPlacement === 'top' || arrowPlacement === 'bottom' ? 'flex-column' : '';
+  return (
+    <>
+      {/* start example form block */}
+      <ExamplePropsForm
+        inputs={[
+          { value: arrowPlacement, setValue: setArrowPlacement, options: [
+            { name: 'left', value: 'right' },
+            { name: 'top', value: 'bottom' },
+            { name: 'right', value: 'left' },
+            { name: 'bottom', value: 'top' }
+          ], name: 'arrowPlacement' },
+        ]}
+      />
+      {/* end example form block */}
+      <div className={`d-flex align-items-center justify-content-center ${wrapperClass}`}>
+        {(arrowPlacement === 'bottom' || arrowPlacement === 'right') && (
+          <Annotation arrowPlacement={arrowPlacement}>
+            Annotation on top
+          </Annotation>
+        )}
+        <Button>This is an example button</Button>
+        {(arrowPlacement === 'left' || arrowPlacement === 'top') && (
+          <Annotation arrowPlacement={arrowPlacement}>
+            Annotation on top
+          </Annotation>
+        )}
+      </div>
+    </>
+  )
+}
+
 ```
