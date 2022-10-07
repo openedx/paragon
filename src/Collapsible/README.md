@@ -26,7 +26,7 @@ When to use:
 
 The `styling` prop at the top level `<Collapsible />` component determines if the collapsible has basic styling, card, or card with heading.
 
-### Basic Style `<Collapsible styling="basic" />`
+### Basic Style
 
 ```jsx live
 <Collapsible
@@ -37,41 +37,39 @@ The `styling` prop at the top level `<Collapsible />` component determines if th
 </Collapsible>
 ```
 
-### Card Style `<Collapsible styling="card" />`
+### Card Style
 
 This is the default style if no `styling` prop is supplied.
 
 ```jsx live
-<Collapsible
-  styling="card"
-  title={<p><strong>Toggle Collapsible</strong></p>}
->
-  <p>Your stuff goes here.</p>
-</Collapsible>
-```
-
-### Large Card Style `<Collapsible styling="card-lg" />`
-
-```jsx live
-<Collapsible
-  styling="card-lg"
-  title={<h4>Toggle Collapsible</h4>}
->
-  <p>Your stuff goes here.</p>
-</Collapsible>
-```
-
-### Card with custom icons `<Collapsible styling="card-lg" />`
-
-```jsx live
-<Collapsible
-  styling="card"
-  title={<p><strong>Toggle Collapsible</strong></p>}
-  iconWhenOpen={<span>CLOSE SESAME</span>}
-  iconWhenClosed={<span>OPEN SESAME</span>}
->
-  <p>Your stuff goes here.</p>
-</Collapsible>
+() => {
+  const [styling, setStyling] = useState('card');
+  const [withIcon, setWithIcon] = useState(false);
+  const iconProps = {
+    iconWhenOpen: <span>CLOSE SESAME</span>,
+    iconWhenClosed: <span>OPEN SESAME</span>,
+  };
+  
+  return (
+    <>
+      {/* start example form block */}
+      <ExamplePropsForm
+        inputs={[
+          { value: styling, setValue: setStyling, options: ['card', 'card-lg'], name: 'styling' },
+          { value: withIcon, setValue: () => setWithIcon(!withIcon), name: 'with icon' },
+        ]}
+      />
+      {/* end example form block */}
+      <Collapsible
+        styling={styling}
+        title={<p><strong>Toggle Collapsible</strong></p>}
+        {...withIcon ? iconProps : {}}
+      >
+        <p>Your stuff goes here.</p>
+      </Collapsible>
+    </>
+  );
+}
 ```
 
 ### Default Open

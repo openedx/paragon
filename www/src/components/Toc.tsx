@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 // @ts-ignore
 import { Sticky } from '~paragon-react'; // eslint-disable-line
 
@@ -12,10 +13,11 @@ interface IItems {
 export interface IToc {
   data: {
     items?: Array<IItems>
-  }
+  },
+  className?: string,
 }
 
-const Toc = ({ data }: IToc) => {
+const Toc = ({ data, className }: IToc) => {
   const generateTree = (headings: { items?: Array<IItems> }) => (headings?.items?.length
     ? (
       <ul className="pgn-doc__toc-list">
@@ -31,7 +33,10 @@ const Toc = ({ data }: IToc) => {
   const tocTree = generateTree(data);
 
   return tocTree ? (
-    <Sticky className="pgn-doc__toc">
+    <Sticky
+      offset={6}
+      className={classNames('pgn-doc__toc', className)}
+    >
       <p className="pgn-doc__toc-header">Contents</p>
       {tocTree}
     </Sticky>
@@ -49,6 +54,11 @@ Toc.propTypes = {
   data: PropTypes.shape({
     items: PropTypes.arrayOf(PropTypes.shape(itemsShape)),
   }).isRequired,
+  className: PropTypes.string,
+};
+
+Toc.defaultProps = {
+  className: undefined,
 };
 
 export default Toc;
