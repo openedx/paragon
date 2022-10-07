@@ -15,6 +15,7 @@ const FormAutosuggest = ({
   isLoading,
   errorMessageText,
   onChange,
+  onSelected,
   helpMessage,
   ...props
 }) => {
@@ -30,7 +31,7 @@ const FormAutosuggest = ({
   const setValue = (itemValue, optValue) => {
     if (value === itemValue) { return; }
 
-    if (onChange) { onChange(itemValue); }
+    if (onSelected) { onSelected(itemValue); }
 
     if (optValue !== state.displayValue) {
       setState(prevState => ({
@@ -182,6 +183,8 @@ const FormAutosuggest = ({
   const handleOnChange = (e) => {
     const findStr = e.target.value;
 
+    if (onChange) { onChange(findStr); }
+
     if (findStr.length) {
       const filteredItems = getItems(findStr);
       setState(prevState => ({
@@ -253,6 +256,7 @@ FormAutosuggest.defaultProps = {
   className: null,
   floatingLabel: null,
   onChange: null,
+  onSelected: null,
   helpMessage: '',
   placeholder: '',
   value: null,
@@ -295,6 +299,7 @@ FormAutosuggest.propTypes = {
   children: PropTypes.node,
   /** Specifies the screen reader text */
   screenReaderText: PropTypes.string,
+  onSelected: PropTypes.func,
 };
 
 export default FormAutosuggest;

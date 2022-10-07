@@ -19,7 +19,7 @@ Form auto-suggest enables users to manually select or type to find matching opti
 
 ```jsx live
 () => {
-    const [data, setData] = useState({ title: '' });
+    const [selected, setSelected] = useState({ title: '' });
 
     return (
         <Form.Autosuggest
@@ -27,9 +27,9 @@ Form auto-suggest enables users to manually select or type to find matching opti
             aria-label="form autosuggest"
             helpMessage="Select language"
             errorMessageText="Error, no selected value"
-            value={data.title}
-            onChange={
-                (value) => setData(prevState => ({ data: { ...prevState.data, org: value } }))
+            value={selected.title}
+            onSelected={
+                (value) => setSelected(prevState => ({ selected: { ...prevState.selected, title: value } }))
             }
         >
             <Form.AutosuggestOption>JavaScript</Form.AutosuggestOption>
@@ -45,7 +45,7 @@ Form auto-suggest enables users to manually select or type to find matching opti
 
 ```jsx live
 () => {
-    const [data, setData] = useState({ title: '' });
+    const [selected, setSelected] = useState({ title: '' });
 
     return (
         <Form.Autosuggest
@@ -53,9 +53,9 @@ Form auto-suggest enables users to manually select or type to find matching opti
             aria-label="form autosuggest"
             errorMessageText="Error, no selected value"
             helpMessage="Select language"
-            value={data.title}
-            onChange={
-                (value) => setData(prevState => ({ data: { ...prevState.data, org: value } }))
+            value={selected.title}
+            onSelected={
+                (value) => setSelected(prevState => ({ selected: { ...prevState.selected, title: value } }))
             }
         >
             <Form.AutosuggestOption>PHP</Form.AutosuggestOption>
@@ -71,17 +71,54 @@ Form auto-suggest enables users to manually select or type to find matching opti
 
 ```jsx live
 () => {
+    const [data, setData] = useState([]);
+    const [showLoading, setShowLoading] = useState(false);
+
+    useEffect(() => {
+        const dataPromise = new Promise((resolve) => {
+            setShowLoading(true);
+
+            fetch('https://api.sampleapis.com/coffee/hot')
+            .then(data => data.json())
+            .then(items => {
+                setTimeout(() => resolve(items), 1500);
+                setShowLoading(false);
+            });
+        });
+
+        dataPromise.then((items) => {
+            setShowLoading(false);
+            setData(items);
+        });
+    }, [])
+
+    const searchCoffee = (title) => {
+        return new Promise((resolve) => {
+            setShowLoading(true);
+            setTimeout(() => {
+                return fetch('https://api.sampleapis.com/coffee/hot')
+                    .then(data => data.json())
+                    .then(items => {
+                        setShowLoading(false);
+                        const filteredCoffee = items.filter(res => res.title.toLowerCase().includes(title.toLowerCase()));
+
+                        if (filteredCoffee) { resolve(filteredCoffee) }
+
+                        return { ...title, filteredCoffee }
+                    });
+            }, 2000);
+        });
+    };
+
     return (
         <Form.Autosuggest
-            style={{ marginBottom: '14rem' }}
-            isLoading
+            isLoading={showLoading}
             placeholder="This is placeholder"
             floatingLabel="This is floating label"
+            screenReaderText="Loading..."
+            onChange={searchCoffee}
         >
-            <Form.AutosuggestOption>Green</Form.AutosuggestOption>
-            <Form.AutosuggestOption>Red</Form.AutosuggestOption>
-            <Form.AutosuggestOption>Blue</Form.AutosuggestOption>
-            <Form.AutosuggestOption>Black</Form.AutosuggestOption>
+            {data.map((item, index) => <Form.AutosuggestOption key={index}>{item.title}</Form.AutosuggestOption>)}
         </Form.Autosuggest>
     );
 }
