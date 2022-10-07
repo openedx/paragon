@@ -1,3 +1,15 @@
+# [20.13.0](https://github.com/openedx/paragon/compare/v20.12.1...v20.13.0) (2022-10-07)
+
+
+### Bug Fixes
+
+* remove body width jumping on open ([#1644](https://github.com/openedx/paragon/issues/1644)) ([0d1f4d7](https://github.com/openedx/paragon/commit/0d1f4d73f6c4a8435b9eb3ea3e66febfb0f5ba0f))
+
+
+### Features
+
+* truncate v2 supports inner tags ([#1642](https://github.com/openedx/paragon/issues/1642)) ([8aa2fa6](https://github.com/openedx/paragon/commit/8aa2fa66ccfc60857faf580a8dfc8007eaa9efa3))
+
 ## [20.12.1](https://github.com/openedx/paragon/compare/v20.12.0...v20.12.1) (2022-09-30)
 
 
