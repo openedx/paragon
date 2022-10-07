@@ -1,5 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Button /> correct rendering renders as a link disable with href 1`] = `
+<a
+  aria-disabled={true}
+  className="btn btn-primary disabled"
+  href="https://edx.org"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  tabIndex={-1}
+>
+  Button
+</a>
+`;
+
+exports[`<Button /> correct rendering renders as a link with href 1`] = `
+<a
+  className="btn btn-primary"
+  href="https://edx.org"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+>
+  Button
+</a>
+`;
+
 exports[`<Button /> correct rendering renders with props iconAfter 1`] = `
 <button
   className="btn btn-primary"

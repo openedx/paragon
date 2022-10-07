@@ -36,5 +36,40 @@ describe('<Button />', () => {
       )).toJSON();
       expect(tree).toMatchSnapshot();
     });
+    describe('renders as a link', () => {
+      test('with href', () => {
+        const tree = renderer.create((
+          <Button href="https://edx.org">Button</Button>
+        )).toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+      test('disable with href', () => {
+        const tree = renderer.create((
+          <Button as="a" href="https://edx.org" disabled>Button</Button>
+        )).toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+      test('cannot click if disabled', () => {
+        const onClick = jest.fn();
+        const wrapper = mount((
+          <Button as="a" href="https://edx.org" disabled onClick={onClick}>Button</Button>
+        ));
+        wrapper.simulate('click');
+        expect(onClick).not.toHaveBeenCalled();
+      });
+      test('invalid disabled if without href', () => {
+        const onClick = jest.fn();
+        const noHref = mount((
+          <Button as="a" disabled onClick={onClick}>Button</Button>
+        ));
+        noHref.simulate('click');
+        expect(onClick).toHaveBeenCalled();
+        const emptyHref = mount((
+          <Button as="a" href="" disabled onClick={onClick}>Button</Button>
+        ));
+        emptyHref.simulate('click');
+        expect(onClick).toHaveBeenCalled();
+      });
+    });
   });
 });
