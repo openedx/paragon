@@ -3,20 +3,22 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import MenuItem from '../Menu/MenuItem';
 
-const FormAutosuggestOption = ({
+function FormAutosuggestOption({
   children,
   className,
   onClick,
   ...props
-}) => (
-  <MenuItem
-    onClick={onClick}
-    className={classNames(className, 'dropdown-item')}
-    {...props}
-  >
-    {children}
-  </MenuItem>
-);
+}) {
+  return (
+    <MenuItem
+      onClick={onClick}
+      className={classNames(className, 'dropdown-item')}
+      {...props}
+    >
+      {children}
+    </MenuItem>
+  );
+}
 
 FormAutosuggestOption.defaultProps = {
   className: null,

@@ -7,7 +7,7 @@ import Icon from '../Icon';
 import { Form, IconButton, Spinner } from '../index';
 import useArrowKeyNavigation from '../hooks/useArrowKeyNavigation';
 
-const FormAutosuggest = ({
+function FormAutosuggest({
   children,
   arrowKeyNavigationSelector,
   screenReaderText,
@@ -18,7 +18,7 @@ const FormAutosuggest = ({
   onSelected,
   helpMessage,
   ...props
-}) => {
+}) {
   const optItemsRef = useRef(null);
   const parentRef = useArrowKeyNavigation({ selectors: arrowKeyNavigationSelector });
   const [isMenuClosed, setIsMenuClosed] = useState(true);
@@ -247,7 +247,7 @@ const FormAutosuggest = ({
       </div>
     </div>
   );
-};
+}
 
 FormAutosuggest.defaultProps = {
   arrowKeyNavigationSelector: 'a:not(:disabled),button:not(:disabled, .btn-icon)',

@@ -79,11 +79,11 @@ Form auto-suggest enables users to manually select or type to find matching opti
         fetch('https://api.sampleapis.com/coffee/hot')
             .then(data => data.json())
             .then(items => {
-            setTimeout(() => {
-              setData(items);
-              setShowLoading(false);
-            }, 1500);
-        });
+                setTimeout(() => {
+                  setData(items);
+                  setShowLoading(false);
+                }, 1500);
+            });
     }, [])
 
     const searchCoffee = (title) => {
