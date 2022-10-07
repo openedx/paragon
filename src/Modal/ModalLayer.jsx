@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { FocusOn } from 'react-focus-on';
@@ -41,6 +41,17 @@ ModalContentContainer.defaultProps = {
 function ModalLayer({
   children, onClose, isOpen, isBlocking, zIndex,
 }) {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('pgn__hidden-scroll-padding-right');
+    } else {
+      document.body.classList.remove('pgn__hidden-scroll-padding-right');
+    }
+    return () => {
+      document.body.classList.remove('pgn__hidden-scroll-padding-right');
+    };
+  }, [isOpen]);
+
   if (!isOpen) {
     return null;
   }
