@@ -1,5 +1,5 @@
 import React, {
-  useLayoutEffect, useRef, useState,
+  useLayoutEffect, useRef,
 } from 'react';
 import PropTypes from 'prop-types';
 import { truncateLines } from './utils';
@@ -12,26 +12,30 @@ const DEFAULT_TRUNCATE_ELEMENT_TYPE = 'div';
 function Truncate({
   children, lines, ellipsis, elementType, className, whiteSpace, onTruncate,
 }) {
-  const [truncateText, setTruncateText] = useState('');
   const textContainer = useRef();
   const { width } = useWindowSize();
 
   useLayoutEffect(() => {
-    const newTruncateText = truncateLines(children, textContainer.current, {
-      ellipsis,
-      whiteSpace,
-      lines,
-    });
-    setTruncateText(newTruncateText);
-    if (onTruncate) {
-      onTruncate(truncateText);
+    if (textContainer.current) {
+      const newTruncateText = truncateLines(children, textContainer.current, {
+        ellipsis,
+        whiteSpace,
+        lines,
+      });
+      textContainer.current.innerHTML = '';
+      newTruncateText.forEach(el => {
+        textContainer.current.appendChild(el);
+      });
+      if (onTruncate) {
+        onTruncate(newTruncateText);
+      }
     }
-  }, [children, ellipsis, lines, onTruncate, truncateText, whiteSpace, width]);
+  }, [children, ellipsis, lines, onTruncate, whiteSpace, width]);
 
   return React.createElement(elementType, {
     ref: textContainer,
     className,
-  }, truncateText);
+  });
 }
 
 Truncate.propTypes = {
