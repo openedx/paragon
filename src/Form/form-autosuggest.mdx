@@ -75,39 +75,27 @@ Form auto-suggest enables users to manually select or type to find matching opti
     const [showLoading, setShowLoading] = useState(false);
 
     useEffect(() => {
-        const dataPromise = new Promise((resolve) => {
-            setShowLoading(true);
-
-            fetch('https://api.sampleapis.com/coffee/hot')
+        setShowLoading(true);
+        fetch('https://api.sampleapis.com/coffee/hot')
             .then(data => data.json())
             .then(items => {
-                setTimeout(() => resolve(items), 1500);
-                setShowLoading(false);
-            });
-        });
-
-        dataPromise.then((items) => {
-            setShowLoading(false);
-            setData(items);
+            setTimeout(() => {
+              setData(items);
+              setShowLoading(false);
+            }, 1500);
         });
     }, [])
 
     const searchCoffee = (title) => {
-        return new Promise((resolve) => {
-            setShowLoading(true);
-            setTimeout(() => {
-                return fetch('https://api.sampleapis.com/coffee/hot')
-                    .then(data => data.json())
-                    .then(items => {
-                        setShowLoading(false);
-                        const filteredCoffee = items.filter(res => res.title.toLowerCase().includes(title.toLowerCase()));
-
-                        if (filteredCoffee) { resolve(filteredCoffee) }
-
-                        return { ...title, filteredCoffee }
-                    });
-            }, 2000);
-        });
+        setShowLoading(true);
+        fetch('https://api.sampleapis.com/coffee/hot')
+            .then(data => data.json())
+            .then(items => setTimeout(() => {
+                const filteredCoffee = items.filter(res => res.title.toLowerCase().includes(title.toLowerCase()));
+                setShowLoading(false);
+                if (filteredCoffee) { return filteredCoffee }
+                return { ...title, filteredCoffee }
+        }, 1500));
     };
 
     return (
