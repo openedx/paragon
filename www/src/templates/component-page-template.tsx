@@ -85,7 +85,7 @@ export default function PageTemplate({
 
   const getTocData = () => {
     const tableOfContents = JSON.parse(JSON.stringify(mdx.tableOfContents));
-    if (scssVariablesData && !tableOfContents.items?.includes()) {
+    if (Object.values(scssVariablesData).some(data => data) && !tableOfContents.items?.includes()) {
       tableOfContents.items?.push({
         title: scssVariablesTitle,
         url: `#${scssVariablesUrl}`,
@@ -160,7 +160,10 @@ PageTemplate.propTypes = {
     }),
   }).isRequired,
   pageContext: PropTypes.shape({
-    scssVariablesData: PropTypes.shape({}),
+    scssVariablesData: PropTypes.shape({
+      openedx: PropTypes.string,
+      edxorg: PropTypes.string,
+    }),
   }),
 };
 
