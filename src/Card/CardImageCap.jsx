@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Skeleton from 'react-loading-skeleton';
@@ -9,8 +9,10 @@ const LOGO_SKELETON_HEIGHT_VALUE = 41;
 
 const CardImageCap = React.forwardRef(({
   src,
+  fallbackSrc,
   srcAlt,
   logoSrc,
+  fallbackLogoSrc,
   logoAlt,
   skeletonHeight,
   skeletonWidth,
@@ -20,6 +22,7 @@ const CardImageCap = React.forwardRef(({
   className,
 }, ref) => {
   const { orientation, isLoading } = useContext(CardContext);
+  const [errorFlag, setErrorFlag] = useState(true);
   const wrapperClassName = `pgn__card-wrapper-image-cap ${orientation}`;
 
   if (isLoading) {
@@ -42,10 +45,31 @@ const CardImageCap = React.forwardRef(({
     );
   }
 
+  const hasFallbackSrc = (currentTarget, altSrc) => {
+    if (errorFlag) {
+      // This flag breaks the infinite loop if the fallback source src fails.
+      setErrorFlag(false);
+      currentTarget.src = altSrc; // eslint-disable-line no-param-reassign
+    }
+  };
+
   return (
     <div className={classNames(className, wrapperClassName)} ref={ref}>
-      <img className="pgn__card-image-cap" src={src} alt={srcAlt} />
-      {!!logoSrc && <img className="pgn__card-logo-cap" src={logoSrc} alt={logoAlt} />}
+      <img
+        className="pgn__card-image-cap"
+        src={src}
+        onError={(e) => hasFallbackSrc(e.currentTarget, fallbackSrc)}
+        alt={srcAlt}
+      />
+      {!!logoSrc
+          && (
+          <img
+            className="pgn__card-logo-cap"
+            src={logoSrc}
+            onError={(e) => hasFallbackSrc(e.currentTarget, fallbackLogoSrc)}
+            alt={logoAlt}
+          />
+          )}
     </div>
   );
 });
@@ -55,10 +79,14 @@ CardImageCap.propTypes = {
   className: PropTypes.string,
   /** Specifies image src. */
   src: PropTypes.string,
+  /** Specifies fallback image src. */
+  fallbackSrc: PropTypes.string,
   /** Specifies image alt text. */
   srcAlt: PropTypes.string,
   /** Specifies logo src to put on top of the image. */
   logoSrc: PropTypes.string,
+  /** Specifies fallback image logo src. */
+  fallbackLogoSrc: PropTypes.string,
   /** Specifies logo image alt text. */
   logoAlt: PropTypes.string,
   /** Specifies height of Image skeleton in loading state. */
@@ -75,7 +103,9 @@ CardImageCap.propTypes = {
 
 CardImageCap.defaultProps = {
   src: undefined,
+  fallbackSrc: undefined,
   logoSrc: undefined,
+  fallbackLogoSrc: undefined,
   className: undefined,
   srcAlt: undefined,
   logoAlt: undefined,

@@ -399,7 +399,8 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
           <Card.Section 
             title="Section title"
           >
-            Here we want to display both Header and Section between ImageCap and Footer components, so we use Card.Body to accomplish that. 
+            Here we want to display both Header and Section between ImageCap and Footer components, so we use Card.
+            Body to accomplish that. 
           </Card.Section>
         </Card.Body>
         <Card.Footer orientation={isExtraSmall ? "horizontal" : "vertical"}>
@@ -585,56 +586,37 @@ Note that in the example below, the content of `Card` is wrapped inside `Card.Bo
 )}
 ```
 
-## With loading state
-### Vertical variant
+## With Fallback Image
+If your main `src` fails to was loaded, the `fallbackSrc` will allow the user to show fallback the image. 
+A fallback source is available for both the main `ImageCap` component image and the logo.
 
 ```jsx live
 () => {
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.small.maxWidth });
 
   return (
-    <Card isLoading style={{ width: isExtraSmall ? "100%" : "18rem" }}>
+    <Card style={{ width: isExtraSmall ? "100%" : "40%" }}>
       <Card.ImageCap
         src="https://source.unsplash.com/360x200/?nature,flower"
+        fallbackSrc="https://source.unsplash.com/360x200/?ocean"
         srcAlt="Card image"
+        logoSrc="https://via.placeholder.com/150"
+        fallbackLogoSrc="https://www.edx.org/images/logos/edx-logo-elm.svg"
+        logoAlt="Card logo"
       />
-      <Card.Header title="Card Title" />
-      <Card.Section>
-        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+      <Card.Header
+        title="Title"
+        subtitle="Subtitle"
+      />
+      <Card.Section 
+        title="Section title"
+      >
+        This is a card section. It can contain anything but usually text, a list, or list of links. 
+        Multiple sections have a card divider between them.
       </Card.Section>
       <Card.Footer>
         <Button>Action 1</Button>
       </Card.Footer>
-    </Card>
-)}
-```
-
-### Horizontal variant
-
-```jsx live
-() => {
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
-
-  return (
-    <Card isLoading orientation={isExtraSmall ? "vertical" : "horizontal"}>
-      <Card.ImageCap
-        skeletonHeight={isExtraSmall && 140}
-        src="https://source.unsplash.com/360x200/?nature,flower"
-        srcAlt="Card image"
-        logoSrc="https://via.placeholder.com/150"
-        logoAlt="Card logo"
-      />
-      <Card.Body>
-        <Card.Header title="Title" />
-        <Card.Section title="Section title">
-          This is a special case where we want to have Footer with vertical 
-          orientation in the Card with horizontal orientation.
-        </Card.Section>
-        <Card.Footer orientation="vertical" textElement="Some footer text">
-          <Button>Action 1</Button>
-          <Button>Action 2</Button>
-        </Card.Footer>
-      </Card.Body>
     </Card>
 )}
 ```
