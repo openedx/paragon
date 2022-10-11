@@ -587,7 +587,7 @@ Note that in the example below, the content of `Card` is wrapped inside `Card.Bo
 ```
 
 ## With Fallback Image
-If your main `src` fails to was loaded, the `fallbackSrc` will allow the user to show fallback the image.
+You can specify `fallbackSrc` image to show in case your main `src` fails to load.
 A fallback source is available for both the main `ImageCap` component image and the logo.
 
 ```jsx live

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Skeleton from 'react-loading-skeleton';
@@ -22,7 +22,6 @@ const CardImageCap = React.forwardRef(({
   className,
 }, ref) => {
   const { orientation, isLoading } = useContext(CardContext);
-  const [errorFlag, setErrorFlag] = useState(true);
   const wrapperClassName = `pgn__card-wrapper-image-cap ${orientation}`;
 
   if (isLoading) {
@@ -45,11 +44,10 @@ const CardImageCap = React.forwardRef(({
     );
   }
 
-  const hasFallbackSrc = (currentTarget, altSrc) => {
-    if (errorFlag) {
-      // This flag breaks the infinite loop if the fallback source src fails.
-      setErrorFlag(false);
-      currentTarget.src = altSrc; // eslint-disable-line no-param-reassign
+  const handleSrcFallback = (currentTarget, altSrc) => {
+    const tagImg = currentTarget;
+    if (tagImg.src !== altSrc) {
+      tagImg.src = altSrc;
     }
   };
 
@@ -58,18 +56,17 @@ const CardImageCap = React.forwardRef(({
       <img
         className="pgn__card-image-cap"
         src={src}
-        onError={(e) => hasFallbackSrc(e.currentTarget, fallbackSrc)}
+        onError={(e) => handleSrcFallback(e.currentTarget, fallbackSrc)}
         alt={srcAlt}
       />
-      {!!logoSrc
-          && (
-          <img
-            className="pgn__card-logo-cap"
-            src={logoSrc}
-            onError={(e) => hasFallbackSrc(e.currentTarget, fallbackLogoSrc)}
-            alt={logoAlt}
-          />
-          )}
+      {!!logoSrc && (
+        <img
+          className="pgn__card-logo-cap"
+          src={logoSrc}
+          onError={(e) => handleSrcFallback(e.currentTarget, fallbackLogoSrc)}
+          alt={logoAlt}
+        />
+      )}
     </div>
   );
 });

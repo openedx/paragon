@@ -17,15 +17,9 @@ describe('<CardImageCap />', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders with src, logoSrc, logoAlt, fallbackSrc, fallbackLogoSrc props', () => {
+  it('renders with src, logoSrc and logoAlt props', () => {
     const tree = renderer.create((
-      <CardImageCapWrapper
-        src="http://fake.image"
-        fallbackSrc="http://fake.image"
-        logoSrc="http://fake.image"
-        fallbackLogoSrc="http://fake.image"
-        logoAlt="Logo alt"
-      />
+      <CardImageCapWrapper src="http://fake.image" logoSrc="http://fake.image" logoAlt="Logo alt" />
     )).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -37,15 +31,9 @@ describe('<CardImageCap />', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders with src, logoSrc, fallbackSrc, fallbackLogoSrc prop in horizontal orientation', () => {
+  it('renders with src and logoSrc prop in horizontal orientation', () => {
     const tree = renderer.create((
-      <CardImageCapWrapper
-        orientation="horizontal"
-        src="http://fake.image"
-        fallbackSrc="http://fake.image"
-        logoSrc="http://fake.image"
-        fallbackLogoSrc="http://fake.image"
-      />
+      <CardImageCapWrapper orientation="horizontal" src="http://fake.image" logoSrc="http://fake.image" />
     )).toJSON();
     expect(tree).toMatchSnapshot();
   });

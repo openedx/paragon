@@ -3,65 +3,65 @@ import PropTypes from 'prop-types';
 import { Form, Badge } from '~paragon-react'; // eslint-disable-line
 
 const ExamplePropsForm = ({ inputs }) => (
-  <div className="pgn-doc__example-props-form">
-    <h4>Props panel</h4>
-    {inputs.map(input => {
-      if (input.options) {
+    <div className="pgn-doc__example-props-form">
+      <h4>Props panel</h4>
+      {inputs.map(input => {
+        if (input.options) {
+          return (
+              <Form.Group>
+                <Form.Label>
+                  <Badge variant="light">{input.name}</Badge>
+                </Form.Label>
+                <Form.RadioSet
+                    isInline
+                    name={input.name}
+                    onChange={(e) => input.setValue(e.target.value)}
+                    value={input.value}
+                >
+                  {input.options.map(option => (
+                      <Form.Radio value={option.value || option}>{option.name || option.value || option}</Form.Radio>
+                  ))}
+                </Form.RadioSet>
+              </Form.Group>
+          );
+        }
+        if (input.range) {
+          return (
+              <Form.Group>
+                <Form.Label>
+                  <Badge variant="light">{input.name}: {input.value}</Badge>
+                </Form.Label>
+                <div className="d-flex align-items-center">
+                  <Form.Label>{input.range.min}</Form.Label>
+                  <Form.Control
+                      type="range"
+                      className="mx-2"
+                      min={input.range.min}
+                      step={input.range.step || 1}
+                      max={input.range.max}
+                      value={input.value}
+                      onChange={e => input.setValue(e.target.value)}
+                  />
+                  <Form.Label>{input.range.max}</Form.Label>
+                </div>
+              </Form.Group>
+          );
+        }
         return (
-          <Form.Group>
-            <Form.Label>
-              <Badge variant="light">{input.name}</Badge>
-            </Form.Label>
-            <Form.RadioSet
-              isInline
-              name={input.name}
-              onChange={(e) => input.setValue(e.target.value)}
-              value={input.value}
-            >
-              {input.options.map(option => (
-                <Form.Radio value={option.value || option}>{option.name || option.value || option}</Form.Radio>
-              ))}
-            </Form.RadioSet>
-          </Form.Group>
+            <Form.Group>
+              <Form.Switch
+                  checked={input.value}
+                  onChange={(e) => input.setValue(e.target.value)}
+                  name={input.name}
+              >
+                <Badge variant="light">
+                  {input.name}: {(!!input.value).toString()}
+                </Badge>
+              </Form.Switch>
+            </Form.Group>
         );
-      }
-      if (input.range) {
-        return (
-          <Form.Group>
-            <Form.Label>
-              <Badge variant="light">{input.name}: {input.value}</Badge>
-            </Form.Label>
-            <div className="d-flex align-items-center">
-              <Form.Label>{input.range.min}</Form.Label>
-              <Form.Control
-                type="range"
-                className="mx-2"
-                min={input.range.min}
-                step={input.range.step || 1}
-                max={input.range.max}
-                value={input.value}
-                onChange={e => input.setValue(e.target.value)}
-              />
-              <Form.Label>{input.range.max}</Form.Label>
-            </div>
-          </Form.Group>
-        );
-      }
-      return (
-        <Form.Group>
-          <Form.Switch
-            checked={input.value}
-            onChange={(e) => input.setValue(e.target.value)}
-            name={input.name}
-          >
-            <Badge variant="light">
-              {input.name}: {(!!input.value).toString()}
-            </Badge>
-          </Form.Switch>
-        </Form.Group>
-      );
-    })}
-  </div>
+      })}
+    </div>
 );
 
 ExamplePropsForm.propTypes = {
