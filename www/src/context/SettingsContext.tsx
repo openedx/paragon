@@ -6,7 +6,7 @@ import { IntlProvider } from 'react-intl';
 // @ts-ignore
 import { messages } from '~paragon-react';
 
-import { THEMES } from '../../theme-config';
+import { THEMES, DEFAULT_THEME } from '../../theme-config';
 
 export interface IDefaultValue {
   settings: {
@@ -32,7 +32,7 @@ const SettingsContextProvider: React.FC = ({ children }) => {
   // gatsby does not have access to the localStorage during the build (and first render)
   // so sadly we cannot initialize theme with value from localStorage
   const [settings, setSettings] = useState({
-    theme: 'openedx-theme',
+    theme: DEFAULT_THEME,
     direction: 'ltr',
     language: 'en',
   });
@@ -83,11 +83,11 @@ const SettingsContextProvider: React.FC = ({ children }) => {
             if you simply change href of the stylesheet there is a small window of time when the previous
             theme gets unapplied and new one loaded which leaves whose site without styles.
          */}
-        {THEMES.map(themeInfo => themeInfo.stylesheet !== 'openedx-theme' && (
+        {THEMES.map(({ stylesheet, id }) => id !== DEFAULT_THEME && (
           <link
-            key={themeInfo.stylesheet}
-            href={`/static/${themeInfo.stylesheet}.css`}
-            rel={`stylesheet${settings.theme === themeInfo.stylesheet ? '' : ' alternate'}`}
+            key={id}
+            href={`/static/${stylesheet}.css`}
+            rel={`stylesheet${settings.theme === id ? '' : ' alternate'}`}
             type="text/css"
           />
         ))}
