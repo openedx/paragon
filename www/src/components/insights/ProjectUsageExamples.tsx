@@ -18,16 +18,15 @@ export interface IProjectUsageExamples {
   },
 }
 
-const ProjectUsageExamples = ({ row }: IProjectUsageExamples) => {
+function ProjectUsageExamples({ row }: IProjectUsageExamples) {
   const { repositoryUrl, usages } = row.original;
 
-  const orderedComponentUsages: { [key: string]: Array<IProjectUsages> } = Object.keys(usages).sort().reduce(
-    (obj: { [index: string]: any }, key) => {
-      // eslint-disable-next-line no-param-reassign
+  const orderedComponentUsages: { [key: string]: Array<IProjectUsages> } = Object.keys(usages)
+    .sort().reduce((obj: { [index: string]: any }, key) => {
+    // eslint-disable-next-line no-param-reassign
       obj[key] = usages[key];
       return obj;
-    }, {},
-  );
+    }, {});
 
   return (
     <>
@@ -60,7 +59,7 @@ const ProjectUsageExamples = ({ row }: IProjectUsageExamples) => {
       ))}
     </>
   );
-};
+}
 
 ProjectUsageExamples.propTypes = {
   row: PropTypes.shape({
