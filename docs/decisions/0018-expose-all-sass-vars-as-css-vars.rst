@@ -29,7 +29,7 @@ SCSS/SASS still offers a number of other advantages such as nested classes,
 mixins, functions, and utilities that are currently not available with CSS.
 
 All Open edX MFEs use Bootstrap via Paragon for styling. Each MFE builds its
-own stylesheet which is a combination Bootstrap, Paragon, and some MFE-specific
+own stylesheet which is a combination of Bootstrap, Paragon, and some MFE-specific
 styling.
 
 Currently the SCSS code is structured as follows:
