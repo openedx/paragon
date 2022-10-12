@@ -63,7 +63,7 @@ runtime rather then build time.
 Bootstrap already exports a number of CSS variables (these can be found in
 `this document for Bootstrap 4.x`_), however they don't cover all usecases. For
 instance, usage of colour variables like `primary-400`, or `light-300` are
-abundant in MFEs, however these are not expored by Bootstrap even though they
+abundant in MFEs, however these are not exported by Bootstrap even though they
 are available as SCSS variables.
 
 Decision
