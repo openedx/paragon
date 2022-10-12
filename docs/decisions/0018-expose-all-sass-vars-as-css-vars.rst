@@ -58,7 +58,7 @@ used by all MFEs and deployed independently of MFEs, then MFEs cannot use any
 SCSS variables from Paragon + Bootstrap since in that case any changes to the
 core theme will require a rebuild of each MFE, and as such these variables
 should instead be used as CSS variables so that they can be looked up at
-runtime rather then build time.
+runtime rather than build time.
 
 Bootstrap already exports a number of CSS variables (these can be found in
 `this document for Bootstrap 4.x`_), however they don't cover all usecases. For
