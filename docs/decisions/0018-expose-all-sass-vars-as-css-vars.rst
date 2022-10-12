@@ -34,7 +34,7 @@ styling.
 
 Currently the SCSS code is structured as follows:
 
-- At the code we have Bootstrap
+- At the core we have Bootstrap
 - Then we have Paragon, which uses Bootstrap and react-bootstrap
 - Then we have the branding package which has SCSS files that can override
   Paragon defaults and add additional SCSS code
