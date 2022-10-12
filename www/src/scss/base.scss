@@ -9,6 +9,13 @@
 @import "../components/IconsTable";
 @import "../components/exampleComponents/ExamplePropsForm";
 
+:root {
+  --pgn-zindex-modal: 2503;
+  --pgn-zindex-sheet-backdrop: 2501;
+  --pgn-zindex-sheet: 2502;
+  --pgn-www-zindex-header: 2500;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
