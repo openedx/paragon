@@ -10,6 +10,11 @@ describe('<PageBanner />', () => {
       const pageBanner = wrapper.find('.pgn__pageBanner-component');
       expect(pageBanner.hasClass('pgn__pageBanner__accentA')).toEqual(true);
     });
+    it('renders with correct class for default variant (accentB)', () => {
+      const wrapper = mount(<PageBanner variant="accentB" />);
+      const pageBanner = wrapper.find('.pgn__pageBanner-component');
+      expect(pageBanner.hasClass('pgn__pageBanner__accentB')).toEqual(true);
+    });
     it('renders with correct class for variant warning', () => {
       const wrapper = mount(<PageBanner variant="warning" />);
       const pageBanner = wrapper.find('.pgn__pageBanner-component');
