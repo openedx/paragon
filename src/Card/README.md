@@ -649,7 +649,7 @@ A fallback source is available for both the main `ImageCap` component image and 
   return (
     <Card isLoading orientation={isExtraSmall ? "vertical" : "horizontal"}>
       <Card.ImageCap
-        skeletonHeight={isExtraSmall && 140}
+        skeletonHeight={isExtraSmall ? 140 : undefined}
         src="https://source.unsplash.com/360x200/?nature,flower"
         srcAlt="Card image"
         logoSrc="https://via.placeholder.com/150"

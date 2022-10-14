@@ -45,9 +45,8 @@ const CardImageCap = React.forwardRef(({
   }
 
   const handleSrcFallback = (currentTarget, altSrc) => {
-    const tagImg = currentTarget;
-    if (tagImg.src !== altSrc) {
-      tagImg.src = altSrc;
+    if (currentTarget.src !== altSrc) {
+      currentTarget.src = altSrc;
     }
   };
 
