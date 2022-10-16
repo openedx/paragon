@@ -26,7 +26,7 @@ const CardImageCap = React.forwardRef(({
 
   if (isLoading) {
     return (
-      <div className={classNames(className, wrapperClassName)}>
+      <div className={classNames(className, wrapperClassName)} data-testid="image-loader-wrapper">
         <Skeleton
           containerClassName="pgn__card-image-cap-loader"
           height={skeletonHeight}
@@ -44,7 +44,8 @@ const CardImageCap = React.forwardRef(({
     );
   }
 
-  const handleSrcFallback = (currentTarget, altSrc) => {
+  const handleSrcFallback = (event, altSrc) => {
+    const { currentTarget } = event;
     if (currentTarget.src !== altSrc) {
       currentTarget.src = altSrc;
     }
@@ -55,14 +56,14 @@ const CardImageCap = React.forwardRef(({
       <img
         className="pgn__card-image-cap"
         src={src}
-        onError={(e) => handleSrcFallback(e.currentTarget, fallbackSrc)}
+        onError={(event) => handleSrcFallback(event, fallbackSrc)}
         alt={srcAlt}
       />
       {!!logoSrc && (
         <img
           className="pgn__card-logo-cap"
           src={logoSrc}
-          onError={(e) => handleSrcFallback(e.currentTarget, fallbackLogoSrc)}
+          onError={(event) => handleSrcFallback(event, fallbackLogoSrc)}
           alt={logoAlt}
         />
       )}

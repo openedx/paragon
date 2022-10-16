@@ -1,6 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
+import { render, fireEvent, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import CardImageCap from '../CardImageCap';
 import CardContext from '../CardContext';
 
@@ -38,45 +39,65 @@ describe('<CardImageCap />', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders with correct horizontal class', () => {
-    const wrapper = mount(<CardImageCapWrapper orientation="horizontal" src="http://fake.image" />);
+  it('renders with correct horizontal class', async () => {
+    const { container } = render(<CardImageCapWrapper orientation="horizontal" src="http://fake.image" />);
 
-    expect(wrapper.exists('.horizontal')).toBe(true);
+    expect(container.firstChild).toHaveClass('pgn__card-wrapper-image-cap horizontal');
   });
 
-  it('renders with correct alt texts', () => {
-    const wrapper = mount(
+  it('renders with correct alt texts', async () => {
+    render(
+      <CardImageCapWrapper
+        src="http://src.image/"
+        logoSrc="http://logo.image/"
+        srcAlt="Src alt text"
+        logoAlt="Logo alt text"
+      />,
+    );
+
+    expect(screen.getByAltText('Src alt text').src).toEqual('http://src.image/');
+    expect(screen.getByAltText('Logo alt text').src).toEqual('http://logo.image/');
+  });
+
+  it('render with loading state', () => {
+    render(
       <CardImageCapWrapper
         src="http://fake.image"
         logoSrc="http://fake.image"
         srcAlt="Src alt text"
         logoAlt="Logo alt text"
-      />,
-    );
-    const imgInstances = wrapper.find('img');
-    expect(imgInstances.length).toEqual(2);
-    expect(imgInstances.at(0).props().alt).toBe('Src alt text');
-    expect(imgInstances.at(1).props().alt).toBe('Logo alt text');
-  });
-  it('render without loading state', () => {
-    const wrapper = mount(
-      <CardImageCapWrapper
-        src="http://fake.image"
-        logoSrc="http://fake.image"
-      />,
-    );
-    expect(wrapper.exists('.pgn__card-image-cap-loader')).toBe(false);
-    expect(wrapper.props().isLoading).toBeUndefined();
-  });
-  it('render with loading state', () => {
-    const wrapper = mount(
-      <CardImageCapWrapper
-        src="http://fake.image"
-        logoSrc="http://fake.image"
         isLoading
+        logoSkeleton
       />,
     );
-    expect(wrapper.exists('.pgn__card-image-cap-loader')).toBe(true);
-    expect(wrapper.props().isLoading).toBe(true);
+
+    expect(screen.queryByAltText('Src alt text')).toBeNull();
+    expect(screen.queryByAltText('Logo alt text')).toBeNull();
+
+    expect(screen.getByTestId('image-loader-wrapper')).toBeInTheDocument();
+    expect(screen.getByTestId('image-loader-wrapper').firstChild).toHaveClass('pgn__card-image-cap-loader');
+    expect(screen.getByTestId('image-loader-wrapper').lastChild).toHaveClass('pgn__card-logo-cap');
+  });
+
+  it('replaces image with fallback one in case of error', () => {
+    render(
+      <CardImageCapWrapper
+        src="http://src.image/"
+        srcAlt="Src alt text"
+        fallbackSrc="http://src.image.fallback/"
+        logoSrc="http://logo.image/"
+        fallbackLogoSrc="http://logo.image.fallback/"
+        logoAlt="Logo alt text"
+      />,
+    );
+    const srcImg = screen.getByAltText('Src alt text');
+    expect(srcImg.src).toEqual('http://src.image/');
+    fireEvent.error(srcImg);
+    expect(srcImg.src).toEqual('http://src.image.fallback/');
+
+    const logoImg = screen.getByAltText('Logo alt text');
+    expect(logoImg.src).toEqual('http://logo.image/');
+    fireEvent.error(logoImg);
+    expect(logoImg.src).toEqual('http://logo.image.fallback/');
   });
 });
