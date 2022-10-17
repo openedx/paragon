@@ -5,11 +5,11 @@ import Layout from './index';
 function TestLayout(props) {
   return (
     <Layout
-      lg={{ span: [4, 4, 4], offset: [0, 0, 0] }}
-      md={{ span: ['auto', 'auto', 'auto'], offset: [0, 0, 0] }}
-      sm={{ span: [8, 4, 6], offset: [0, 0, 6] }}
-      xs={{ span: [4, 4, 4], offset: [0, 0, 0] }}
-      xl={{ span: [3, 6, 3] }}
+      lg={[{ span: 4, offset: 0 }, { span: 4, offset: 0 }, { span: 4, offset: 0 }]}
+      md={[{ span: 'auto', offset: 0 }, { span: 'auto', offset: 0 }, { span: 'auto', offset: 0 }]}
+      sm={[{ span: 8, offset: 0 }, { span: 4, offset: 0 }, { span: 6, offset: 6 }]}
+      xs={[{ span: 4, offset: 0 }, { span: 4, offset: 0 }, { span: 4, offset: 0 }]}
+      xl={[{ span: 3 }, { span: 6 }, { span: 3 }]}
       {...props}
     >
       <Layout.Element>first block</Layout.Element>
@@ -34,7 +34,7 @@ describe('<Layout />', () => {
       )).toEqual(true);
     });
     it('renders although dimensions are incorrect', () => {
-      const wrapper = mount(<TestLayout lg={{ span: [6, 6], offset: [0, 0] }} />);
+      const wrapper = mount(<TestLayout lg={[{ span: 6, offset: 0 }, { span: 6, offset: 0 }]} />);
       const children = wrapper.find('.row div');
       expect(children.length).not.toEqual(0);
     });

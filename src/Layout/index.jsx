@@ -17,18 +17,17 @@ const Layout = React.forwardRef(({ children, ...props }, ref) => {
   const layout = React.Children.map(children, (child, index) => {
     const newProps = { ...child.props };
     SIZES.forEach(size => {
-      const spanArray = props[size]?.span;
-      const offsetArray = props[size]?.offset;
+      const sizeProps = props[size];
+      const { span = 0, offset = 0 } = (sizeProps && sizeProps[index]) || {};
       if (errors[size] === undefined) {
         errors[size] = false;
-        if (!isValidDimensions(spanArray, childrenLength) || !isValidDimensions(offsetArray, childrenLength)) {
-          errors[size] = `Length of span and offset arrays for breakpoint ${size} must be equal to the number of children`;
+        if (!isValidDimensions(sizeProps, childrenLength)) {
+          errors[size] = `${size} prop accepts array which length must be equal to the number of children.`;
         }
       }
-      const sizeValue = (spanArray && spanArray[index]) || 0;
-      const offsetValue = (offsetArray && offsetArray[index]) || 0;
-      newProps[size] = { span: sizeValue, offset: offsetValue, ref: child.ref };
+      newProps[size] = { span, offset };
     });
+    newProps.ref = child.ref;
     return React.createElement(Col, newProps, child.props.children);
   });
 
@@ -56,26 +55,26 @@ Layout.defaultProps = {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  xs: PropTypes.shape({
-    span: PropTypes.arrayOf(PropTypes.oneOf(COL_VALUES)).isRequired,
-    offset: PropTypes.arrayOf(PropTypes.oneOf(COL_VALUES)),
-  }),
-  sm: PropTypes.shape({
-    span: PropTypes.arrayOf(PropTypes.oneOf(COL_VALUES)).isRequired,
-    offset: PropTypes.arrayOf(PropTypes.oneOf(COL_VALUES)),
-  }),
-  md: PropTypes.shape({
-    span: PropTypes.arrayOf(PropTypes.oneOf(COL_VALUES)).isRequired,
-    offset: PropTypes.arrayOf(PropTypes.oneOf(COL_VALUES)),
-  }),
-  lg: PropTypes.shape({
-    span: PropTypes.arrayOf(PropTypes.oneOf(COL_VALUES)).isRequired,
-    offset: PropTypes.arrayOf(PropTypes.oneOf(COL_VALUES)).isRequired,
-  }),
-  xl: PropTypes.shape({
-    span: PropTypes.arrayOf(PropTypes.oneOf(COL_VALUES)).isRequired,
-    offset: PropTypes.arrayOf(PropTypes.oneOf(COL_VALUES)),
-  }),
+  xs: PropTypes.arrayOf(PropTypes.shape({
+    span: PropTypes.oneOf(COL_VALUES).isRequired,
+    offset: PropTypes.oneOf(COL_VALUES),
+  })),
+  sm: PropTypes.arrayOf(PropTypes.shape({
+    span: PropTypes.oneOf(COL_VALUES).isRequired,
+    offset: PropTypes.oneOf(COL_VALUES),
+  })),
+  md: PropTypes.arrayOf(PropTypes.shape({
+    span: PropTypes.oneOf(COL_VALUES).isRequired,
+    offset: PropTypes.oneOf(COL_VALUES),
+  })),
+  lg: PropTypes.arrayOf(PropTypes.shape({
+    span: PropTypes.oneOf(COL_VALUES).isRequired,
+    offset: PropTypes.oneOf(COL_VALUES),
+  })),
+  xl: PropTypes.arrayOf(PropTypes.shape({
+    span: PropTypes.oneOf(COL_VALUES).isRequired,
+    offset: PropTypes.oneOf(COL_VALUES),
+  })),
 };
 
 const sizeDefaultProps = { span: [], offset: [] };
