@@ -19,6 +19,8 @@ const createDocumentListenersMock = () => {
 const props = {
   name: 'FormAutosuggest',
   floatingLabel: 'floatingLabel text',
+  helpMessage: 'Example help message',
+  errorMessageText: 'Example error message',
 };
 
 describe('FormAutosuggest', () => {
@@ -27,12 +29,24 @@ describe('FormAutosuggest', () => {
   });
 
   const container = mount(
-    <FormAutosuggest>
-      <FormAutosuggestOption>option 1</FormAutosuggestOption>
-      <FormAutosuggestOption>option 2</FormAutosuggestOption>
-      <FormAutosuggestOption>learn from more than 160 member universities</FormAutosuggestOption>
+    <FormAutosuggest {...props}>
+      <FormAutosuggestOption>Option 1</FormAutosuggestOption>
+      <FormAutosuggestOption>Option 2</FormAutosuggestOption>
+      <FormAutosuggestOption>Learn from more than 160 member universities</FormAutosuggestOption>
     </FormAutosuggest>,
   );
+
+  it('render without loading state', () => {
+    expect(container.exists('.pgn__form-autosuggest__dropdown-loading')).toBe(false);
+    expect(container.props().isLoading).toBe(false);
+  });
+
+  it('render with loading state', () => {
+    const wrapper = mount(<FormAutosuggest isLoading />);
+
+    expect(wrapper.exists('.pgn__form-autosuggest__dropdown-loading')).toBe(true);
+    expect(wrapper.props().isLoading).toBe(true);
+  });
 
   it('renders component with options', () => {
     container.find('input').simulate('click');
@@ -46,7 +60,7 @@ describe('FormAutosuggest', () => {
     container.find('.pgn__form-autosuggest__dropdown').find('button')
       .at(0).simulate('click');
 
-    expect(container.find('input').instance().value).toEqual('option 1');
+    expect(container.find('input').instance().value).toEqual('Option 1');
   });
 
   it('options list depends on empty field value', () => {
@@ -62,13 +76,15 @@ describe('FormAutosuggest', () => {
   });
 
   it('toggles options list', () => {
-    expect(container.find('.pgn__form-autosuggest__dropdown').find('button').length).toEqual(1);
+    const dropdownContainer = '.pgn__form-autosuggest__dropdown';
+
+    expect(container.find(dropdownContainer).find('button').length).toEqual(1);
 
     container.find('button.pgn__form-autosuggest__icon-button').simulate('click');
-    expect(container.find('.pgn__form-autosuggest__dropdown').find('button').length).toEqual(0);
+    expect(container.find(dropdownContainer).find('button').length).toEqual(0);
 
     container.find('button.pgn__form-autosuggest__icon-button').simulate('click');
-    expect(container.find('.pgn__form-autosuggest__dropdown').find('button').length).toEqual(3);
+    expect(container.find(dropdownContainer).find('button').length).toEqual(3);
   });
 
   it('shows options list depends on field value', () => {

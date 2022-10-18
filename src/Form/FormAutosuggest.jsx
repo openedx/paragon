@@ -1,5 +1,5 @@
 import React, {
-  useEffect, useRef, useState,
+  useEffect, useState,
 } from 'react';
 import PropTypes from 'prop-types';
 import { KeyboardArrowUp, KeyboardArrowDown } from '../../icons';
@@ -10,6 +10,7 @@ import useArrowKeyNavigation from '../hooks/useArrowKeyNavigation';
 function FormAutosuggest({
   children,
   arrowKeyNavigationSelector,
+  ignoredArrowKeysNames,
   screenReaderText,
   value,
   isLoading,
@@ -19,8 +20,10 @@ function FormAutosuggest({
   helpMessage,
   ...props
 }) {
-  const optItemsRef = useRef(null);
-  const parentRef = useArrowKeyNavigation({ selectors: arrowKeyNavigationSelector });
+  const parentRef = useArrowKeyNavigation({
+    selectors: arrowKeyNavigationSelector,
+    ignoredKeys: ignoredArrowKeysNames,
+  });
   const [isMenuClosed, setIsMenuClosed] = useState(true);
   const [state, setState] = useState({
     displayValue: '',
@@ -106,7 +109,7 @@ function FormAutosuggest({
   );
 
   const handleClickOutside = (e) => {
-    if (optItemsRef.current && !optItemsRef.current.contains(e.target) && state.dropDownItems.length > 0) {
+    if (parentRef.current && !parentRef.current.contains(e.target) && state.dropDownItems.length > 0) {
       setState(prevState => ({
         ...prevState,
         dropDownItems: '',
@@ -237,7 +240,6 @@ function FormAutosuggest({
       <div
         id="pgn__form-autosuggest__dropdown-box"
         className="pgn__form-autosuggest__dropdown"
-        ref={optItemsRef}
       >
         {isLoading ? (
           <div className="pgn__form-autosuggest__dropdown-loading">
@@ -250,7 +252,8 @@ function FormAutosuggest({
 }
 
 FormAutosuggest.defaultProps = {
-  arrowKeyNavigationSelector: 'a:not(:disabled),button:not(:disabled, .btn-icon)',
+  arrowKeyNavigationSelector: 'a:not(:disabled),button:not(:disabled, .btn-icon),input:not(:disabled)',
+  ignoredArrowKeysNames: ['ArrowRight', 'ArrowLeft'],
   isLoading: false,
   role: 'list',
   className: null,
@@ -273,6 +276,8 @@ FormAutosuggest.propTypes = {
    * the user can navigate using the arrow keys
   */
   arrowKeyNavigationSelector: PropTypes.string,
+  /** Specifies ignored hook keys. */
+  ignoredArrowKeysNames: PropTypes.arrayOf(PropTypes.string),
   /** Specifies loading state. */
   isLoading: PropTypes.bool,
   /** An ARIA role describing the form autosuggest. */
@@ -299,6 +304,7 @@ FormAutosuggest.propTypes = {
   children: PropTypes.node,
   /** Specifies the screen reader text */
   screenReaderText: PropTypes.string,
+  /** Function that receives the selected value. */
   onSelected: PropTypes.func,
 };
 
