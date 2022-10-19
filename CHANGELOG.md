@@ -1,3 +1,10 @@
+# [20.14.0](https://github.com/openedx/paragon/compare/v20.13.0...v20.14.0) (2022-10-19)
+
+
+### Features
+
+* Added fallback image src props to Card component ([#1682](https://github.com/openedx/paragon/issues/1682)) ([c0a1f6c](https://github.com/openedx/paragon/commit/c0a1f6cd80b4aaf66cbff2af35770f9d0901fc2c))
+
 # [20.13.0](https://github.com/openedx/paragon/compare/v20.12.1...v20.13.0) (2022-10-07)
 
 
