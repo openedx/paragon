@@ -1,3 +1,10 @@
+# [20.15.0](https://github.com/openedx/paragon/compare/v20.14.0...v20.15.0) (2022-10-19)
+
+
+### Features
+
+* added accentB background for page banner ([#1688](https://github.com/openedx/paragon/issues/1688)) ([0942daa](https://github.com/openedx/paragon/commit/0942daa1f23ae5880c6e8278f97d4c777f60ed08))
+
 # [20.14.0](https://github.com/openedx/paragon/compare/v20.13.0...v20.14.0) (2022-10-19)
 
 
