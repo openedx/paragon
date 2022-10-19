@@ -399,7 +399,8 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
           <Card.Section 
             title="Section title"
           >
-            Here we want to display both Header and Section between ImageCap and Footer components, so we use Card.Body to accomplish that. 
+            Here we want to display both Header and Section between ImageCap and Footer components, so we use Card.
+            Body to accomplish that. 
           </Card.Section>
         </Card.Body>
         <Card.Footer orientation={isExtraSmall ? "horizontal" : "vertical"}>
@@ -585,6 +586,36 @@ Note that in the example below, the content of `Card` is wrapped inside `Card.Bo
 )}
 ```
 
+## With Fallback Image
+You can specify `fallbackSrc` image to show in case your main `src` fails to load.
+A fallback source is available for both the main `ImageCap` component image and the logo.
+
+```jsx live
+() => {
+  const isExtraSmall = useMediaQuery({maxWidth: breakpoints.small.maxWidth});
+
+  return (
+    <Card style={{width: isExtraSmall ? "100%" : "40%"}}>
+        <Card.ImageCap
+            src="https://source.unsplash.com/360x200/?nature,flower"
+            fallbackSrc="https://source.unsplash.com/360x200/?ocean"
+            srcAlt="Card image"
+            logoSrc="https://via.placeholder.com/150"
+            fallbackLogoSrc="https://www.edx.org/images/logos/edx-logo-elm.svg"
+            logoAlt="Card logo"
+        />
+        <Card.Header title="Title" subtitle="Subtitle" />
+        <Card.Section title="Section title">
+            This is a card section. It can contain anything but usually text, a list, or list of links.
+            Multiple sections have a card divider between them.
+        </Card.Section>
+        <Card.Footer>
+            <Button>Action 1</Button>
+        </Card.Footer>
+    </Card>
+)}
+```
+
 ## With loading state
 ### Vertical variant
 
@@ -618,7 +649,7 @@ Note that in the example below, the content of `Card` is wrapped inside `Card.Bo
   return (
     <Card isLoading orientation={isExtraSmall ? "vertical" : "horizontal"}>
       <Card.ImageCap
-        skeletonHeight={isExtraSmall && 140}
+        skeletonHeight={isExtraSmall ? 140 : undefined}
         src="https://source.unsplash.com/360x200/?nature,flower"
         srcAlt="Card image"
         logoSrc="https://via.placeholder.com/150"

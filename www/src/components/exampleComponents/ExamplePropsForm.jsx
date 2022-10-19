@@ -8,7 +8,7 @@ const ExamplePropsForm = ({ inputs }) => (
     {inputs.map(input => {
       if (input.options) {
         return (
-          <Form.Group>
+          <Form.Group key={input.name}>
             <Form.Label>
               <Badge variant="light">{input.name}</Badge>
             </Form.Label>
@@ -19,7 +19,12 @@ const ExamplePropsForm = ({ inputs }) => (
               value={input.value}
             >
               {input.options.map(option => (
-                <Form.Radio value={option.value || option}>{option.name || option.value || option}</Form.Radio>
+                <Form.Radio
+                  value={option.value || option}
+                  key={option.value || option}
+                >
+                  {option.name || option.value || option}
+                </Form.Radio>
               ))}
             </Form.RadioSet>
           </Form.Group>
@@ -27,7 +32,7 @@ const ExamplePropsForm = ({ inputs }) => (
       }
       if (input.range) {
         return (
-          <Form.Group>
+          <Form.Group key={input.name}>
             <Form.Label>
               <Badge variant="light">{input.name}: {input.value}</Badge>
             </Form.Label>
@@ -48,7 +53,7 @@ const ExamplePropsForm = ({ inputs }) => (
         );
       }
       return (
-        <Form.Group>
+        <Form.Group key={input.name}>
           <Form.Switch
             checked={input.value}
             onChange={(e) => input.setValue(e.target.value)}
