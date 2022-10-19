@@ -11,6 +11,7 @@ export const VARIANTS = {
   dark: 'dark',
   warning: 'warning',
   accentA: 'accentA',
+  accentB: 'accentB',
 };
 
 function PageBanner({
@@ -61,7 +62,7 @@ PageBanner.propTypes = {
   /** Boolean used to control whether the Page Banner shows. */
   show: PropTypes.bool,
   /** A string designating which color variant of the `Page Banner` to display */
-  variant: PropTypes.oneOf([VARIANTS.light, VARIANTS.dark, VARIANTS.warning, VARIANTS.accentA]),
+  variant: PropTypes.oneOf([VARIANTS.light, VARIANTS.dark, VARIANTS.warning, VARIANTS.accentA, VARIANTS.accentB]),
 };
 
 PageBanner.defaultProps = {
