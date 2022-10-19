@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import ModalDialog from '../ModalDialog';
 
 /* eslint-disable react/prop-types */
-jest.mock('../ModalLayer', () => function (props) {
+jest.mock('../ModalLayer', () => function ModalLayerMock(props) {
   const { children, ...otherProps } = props;
   return (
     <modal-layer {...otherProps}>
