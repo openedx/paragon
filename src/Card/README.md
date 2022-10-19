@@ -15,9 +15,9 @@ categories:
 - Content
 status: 'Stable'
 designStatus: 'Done'
-devStatus: 'In Progress'
+devStatus: 'Done'
 notes: |
-  A pass through from react-bootstrap
+  Partially a pass-thru from react-bootstrap, with custom subcomponents.
 ---
 
 `Card` is a box of related content usually describing a single object. It can be composed of several subcomponents, we give full overview of those subcomponents below.
@@ -587,6 +587,7 @@ Note that in the example below, the content of `Card` is wrapped inside `Card.Bo
 ```
 
 ## With Fallback Image
+
 You can specify `fallbackSrc` image to show in case your main `src` fails to load.
 A fallback source is available for both the main `ImageCap` component image and the logo.
 
@@ -596,23 +597,23 @@ A fallback source is available for both the main `ImageCap` component image and 
 
   return (
     <Card style={{width: isExtraSmall ? "100%" : "40%"}}>
-        <Card.ImageCap
-            src="https://source.unsplash.com/360x200/?nature,flower"
-            fallbackSrc="https://source.unsplash.com/360x200/?ocean"
-            srcAlt="Card image"
-            logoSrc="https://via.placeholder.com/150"
-            fallbackLogoSrc="https://www.edx.org/images/logos/edx-logo-elm.svg"
-            logoAlt="Card logo"
-        />
-        <Card.Header title="Title" subtitle="Subtitle" />
-        <Card.Section title="Section title">
-            This is a card section. It can contain anything but usually text, a list, or list of links.
-            Multiple sections have a card divider between them.
-        </Card.Section>
-        <Card.Footer>
-            <Button>Action 1</Button>
-        </Card.Footer>
-    </Card>
+      <Card.ImageCap
+          src="fakeURL"
+          fallbackSrc="https://source.unsplash.com/360x200/?ocean"
+          srcAlt="Card image"
+          logoSrc="fakeURL"
+          fallbackLogoSrc="https://www.edx.org/images/logos/edx-logo-elm.svg"
+          logoAlt="Card logo"
+      />
+      <Card.Header title="Title" subtitle="Subtitle" />
+      <Card.Section title="Section title">
+          This is a card section. It can contain anything but usually text, a list, or list of links.
+          Multiple sections have a card divider between them.
+      </Card.Section>
+      <Card.Footer>
+          <Button>Action 1</Button>
+      </Card.Footer>
+  </Card>
 )}
 ```
 
