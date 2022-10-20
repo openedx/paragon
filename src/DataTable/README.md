@@ -314,6 +314,26 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
 () => {
   const [currentView, setCurrentView] = useState('card');
   const togglePlacement = 'left'; // 'bottom' is the only other supported value
+
+  const ExampleCard = ({ className, original }) => {
+    const { name, color, famous_for: famousFor } = original;
+
+    return (
+      <Card className={className}>
+        <Card.ImageCap src="https://source.unsplash.com/360x200/?nature,flower" srcAlt="Card image" />
+        <Card.Header title={name} />
+        <Card.Section>
+          <dl>
+            <dt>Color</dt>
+            <dd>{color}</dd>
+            <dt>Famous For</dt>
+            <dd>{famousFor}</dd>
+          </dl>
+        </Card.Section>
+      </Card>
+    );
+  };
+
   // memoize data, otherwise the filters will get reset after switching view
   const data = useMemo(() => [
     {
@@ -335,6 +355,7 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
   return (
     <DataTable
       isFilterable
+      isSelectable
       dataViewToggleOptions={{
         isDataViewToggleEnabled: true,
         onDataViewToggle: val => setCurrentView(val),
@@ -342,13 +363,12 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
       }}
       isSortable
       defaultColumnValues={{ Filter: TextFilter }}
-      itemCount={7}
+      itemCount={3}
       data={data}
       columns={[
         {
           Header: 'Name',
           accessor: 'name',
-
         },
         {
           Header: 'Famous For',
@@ -385,7 +405,7 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
       <DataTable.TableControlBar />
 
       {/* which kind of body content to show */}
-      { currentView === "card" && <CardView CardComponent={MiyazakiCard} /> }
+      { currentView === "card" && <CardView CardComponent={ExampleCard} /> }
       { currentView === "list" && <DataTable.Table /> }
 
       <DataTable.EmptyTable content="No results found" />
