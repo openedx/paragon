@@ -1,6 +1,6 @@
 import Avatar from './index';
 
-export default { title: 'Avatar', component: Avatar };
+export default { title: 'Components/Avatar', component: Avatar };
 
 const Template = (args) => <Avatar {...args} />;
 

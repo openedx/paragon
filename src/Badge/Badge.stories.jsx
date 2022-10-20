@@ -1,6 +1,8 @@
 import Badge from './index';
 
-export default { title: 'Badge', component: Badge };
+import '../../www/public/static/edxorg-theme.css';
+
+export default { title: 'Components/Badge', component: Badge };
 
 const Template = (args) => <Badge {...args} />;
 
