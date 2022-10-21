@@ -14,11 +14,13 @@ export default {
   },
 };
 
-const Template = (args) => (
-  <Bubble {...args}>
-    <Icon src={Check} />
-  </Bubble>
-);
+function Template(args) {
+  return (
+    <Bubble {...args}>
+      <Icon src={Check} />
+    </Bubble>
+  );
+}
 
 export const Primary = Template.bind({});
 Primary.args = { variant: 'primary' };

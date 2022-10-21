@@ -2,7 +2,9 @@ import Button from '../index';
 
 export default { title: 'Components/Button/Variant', component: Button };
 
-const Template = (args) => <Button {...args} />;
+function Template(args) {
+  return <Button {...args} />;
+}
 
 // Core buttons
 export const Brand = Template.bind({});

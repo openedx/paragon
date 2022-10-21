@@ -3,11 +3,13 @@ import Spinner from '../../Spinner/index';
 
 export default { title: 'Components/Button/WithSpinner', component: Button };
 
-const Template = (args) => (
-  <Button {...args}>
-    <Spinner animation="border" />
-  </Button>
-);
+function Template(args) {
+  return (
+    <Button {...args}>
+      <Spinner animation="border" />
+    </Button>
+  );
+}
 
 export const Primary = Template.bind({});
 Primary.args = { variant: 'primary' };

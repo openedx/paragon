@@ -17,7 +17,9 @@ export default {
   },
 };
 
-const Template = (args) => <Annotation {...args} />;
+function Template(args) {
+  return <Annotation {...args} />;
+}
 
 export const Error = Template.bind({});
 Error.args = { children: 'Error variant', variant: 'error' };

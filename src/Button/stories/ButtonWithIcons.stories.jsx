@@ -9,7 +9,9 @@ import {
 
 export default { title: 'Components/Button/WithIcons', component: Button };
 
-const Template = (args) => <Button {...args} />;
+function Template(args) {
+  return <Button {...args} />;
+}
 
 export const Brand = Template.bind({});
 Brand.args = {

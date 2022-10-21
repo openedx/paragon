@@ -1,15 +1,16 @@
-import Button from '../index';
-import { ButtonGroup } from '../index';
+import Button, { ButtonGroup } from '../index';
 
 export default { title: 'Components/Button/Group', component: ButtonGroup };
 
-const Template = (args) => (
-  <ButtonGroup {...args}>
-    <Button variant="primary">Left</Button>
-    <Button variant="primary">Middle</Button>
-    <Button variant="primary">Right</Button>
-  </ButtonGroup>
-);
+function Template(args) {
+  return (
+    <ButtonGroup {...args}>
+      <Button variant="primary">Left</Button>
+      <Button variant="primary">Middle</Button>
+      <Button variant="primary">Right</Button>
+    </ButtonGroup>
+  );
+}
 
 export const Lg = Template.bind({});
 Lg.args = { size: 'lg' };

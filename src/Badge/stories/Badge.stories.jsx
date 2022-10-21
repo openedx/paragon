@@ -2,7 +2,9 @@ import Badge from '../index';
 
 export default { title: 'Components/Badge', component: Badge };
 
-const Template = (args) => <Badge {...args} />;
+function Template(args) {
+  return <Badge {...args} />;
+}
 
 export const Primary = Template.bind({});
 Primary.args = { children: 'Primary', variant: 'primary' };

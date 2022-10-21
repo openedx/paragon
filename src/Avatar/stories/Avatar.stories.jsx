@@ -2,7 +2,9 @@ import Avatar from '../index';
 
 export default { title: 'Components/Avatar', component: Avatar };
 
-const Template = (args) => <Avatar {...args} />;
+function Template(args) {
+  return <Avatar {...args} />;
+}
 
 export const Xs = Template.bind({});
 Xs.args = { size: 'xs' };

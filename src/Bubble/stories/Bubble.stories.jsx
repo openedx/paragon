@@ -5,7 +5,9 @@ export default {
   component: Bubble,
 };
 
-const Template = (args) => <Bubble {...args} />;
+function Template(args) {
+  return <Bubble {...args} />;
+}
 
 export const Primary = Template.bind({});
 Primary.args = { children: '1', variant: 'primary' };

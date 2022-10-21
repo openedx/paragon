@@ -2,7 +2,9 @@ import Button from '../index';
 
 export default { title: 'Components/Button/Size', component: Button };
 
-const Template = (args) => <Button {...args} />;
+function Template(args) {
+  return <Button {...args} />;
+}
 
 // Lg
 export const LgPrimary = Template.bind({});

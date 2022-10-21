@@ -2,7 +2,9 @@ import Button from '../../index';
 
 export default { title: 'Components/Button/Deprecated/Variant', component: Button };
 
-const Template = (args) => <Button.Deprecated {...args} />;
+function Template(args) {
+  return <Button.Deprecated {...args} />;
+}
 
 // Base button deprecated
 export const Basic = Template.bind({});
