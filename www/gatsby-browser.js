@@ -1,8 +1,16 @@
 const React = require('react');
 const { SettingsContextProvider } = require('./src/context/SettingsContext');
+const { InsightsContextProvider } = require('./src/context/InsightsContext');
+
 
 // wrap whole app in settings context
-exports.wrapRootElement = ({ element }) => <SettingsContextProvider>{element}</SettingsContextProvider>;
+exports.wrapRootElement = ({ element }) => (
+  <SettingsContextProvider>
+    <InsightsContextProvider>
+      {element}
+    </InsightsContextProvider>
+  </SettingsContextProvider>
+);
 
 exports.onRouteUpdate = ({ location: { hash, pathname, href } }) => {
   if (hash) {
