@@ -24,7 +24,7 @@ export { default as CheckBoxGroup } from './CheckBoxGroup';
 export { default as Chip } from './Chip';
 export { default as CloseButton } from './CloseButton';
 export { default as Container } from './Container';
-export { Col, Row } from './Layout';
+export { default as Layout, Col, Row } from './Layout';
 export { default as Collapse } from './Collapse';
 export { default as Collapsible } from './Collapsible';
 export { default as Scrollable } from './Scrollable';
