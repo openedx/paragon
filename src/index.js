@@ -159,6 +159,7 @@ export { default as Variant } from './utils/constants';
 export { default as useWindowSize } from './hooks/useWindowSize';
 export { default as useToggle } from './hooks/useToggle';
 export { default as useIndexOfLastVisibleChild } from './hooks/useIndexOfLastVisibleChild';
+export { default as useIsVisible } from './hooks/useIsVisible';
 
 // Pass through any needed whole third-party library functionality
 // useTable for example is needed to use the DataTable component seamlessly
