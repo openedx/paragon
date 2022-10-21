@@ -1,3 +1,10 @@
+# [20.16.0](https://github.com/openedx/paragon/compare/v20.15.0...v20.16.0) (2022-10-21)
+
+
+### Features
+
+* [BD-46] add Layout component ([#1659](https://github.com/openedx/paragon/issues/1659)) ([f8cddda](https://github.com/openedx/paragon/commit/f8cddda5a96a6fed24fcca97a8d641501ebb7865))
+
 # [20.15.0](https://github.com/openedx/paragon/compare/v20.14.0...v20.15.0) (2022-10-19)
 
 
