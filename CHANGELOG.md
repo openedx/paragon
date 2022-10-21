@@ -1,3 +1,10 @@
+# [20.17.0](https://github.com/openedx/paragon/compare/v20.16.0...v20.17.0) (2022-10-21)
+
+
+### Features
+
+* FormAutosuggest component ([#1586](https://github.com/openedx/paragon/issues/1586)) ([7fbf86d](https://github.com/openedx/paragon/commit/7fbf86de5110bdf3e26a17c0848337f8be0b2b23))
+
 # [20.16.0](https://github.com/openedx/paragon/compare/v20.15.0...v20.16.0) (2022-10-21)
 
 
