@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 
 /**
- * A react hook to enable arrow key navigation on a component.
+ * A React hook to enable arrow key navigation on a component.
  */
 
 function handleEnter({ event, currentIndex, activeElement }) {
@@ -42,13 +42,16 @@ function handleArrowKey({ event, currentIndex, availableElements }) {
  */
 function handleEvents({
   event,
+  ignoredKeys = [],
   parentNode,
   selectors = 'a,button,input',
 }) {
   if (!parentNode) { return; }
 
   const { key } = event;
-  if (!['ArrowUp', 'ArrowDown', 'ArrowRight', 'ArrowLeft', 'Enter', 'Home', 'End'].includes(key)) {
+
+  if (!['ArrowUp', 'ArrowDown', 'ArrowRight', 'ArrowLeft', 'Enter', 'Home', 'End'].includes(key)
+      || ignoredKeys.includes(key)) {
     return;
   }
 
@@ -75,16 +78,20 @@ function handleEvents({
 }
 
 export default function useArrowKeyNavigation(props) {
-  const { selectors } = props || {};
+  const { selectors, ignoredKeys } = props || {};
   const parentNode = useRef();
 
   useEffect(() => {
     const eventHandler = (event) => {
-      handleEvents({ event, parentNode: parentNode.current, selectors });
+      handleEvents({
+        event, ignoredKeys, parentNode: parentNode.current, selectors,
+      });
     };
+
     document.addEventListener('keydown', eventHandler);
+
     return () => document.removeEventListener('keydown', eventHandler);
-  }, [selectors]);
+  }, [ignoredKeys, selectors]);
 
   return parentNode;
 }
