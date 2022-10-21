@@ -4,6 +4,11 @@ export default {
   title: 'Components/Annotation',
   component: Annotation,
   argTypes: {
+    variant: {
+      control: {
+        type: 'select',
+      },
+    },
     arrowPlacement: {
       control: {
         type: 'select',

@@ -1,5 +1,8 @@
 import { addParameters } from '@storybook/react';
 
+// This import is needed for visual testing of Chromatic.
+import '../www/public/static/edxorg-theme.css';
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
@@ -10,6 +13,7 @@ export const parameters = {
   },
 }
 
+// Storybook addon that adds the ability to switch themes.
 addParameters({
   stylesheetToggle: {
     stylesheets: [

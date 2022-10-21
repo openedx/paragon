@@ -1,10 +1,13 @@
-import Button from 'react-bootstrap/Button';
+import Button from '../index';
 import { ButtonGroup, ButtonToolbar } from '../index';
 
-export default { title: 'Components/Button/Toolbar', component: ButtonGroup };
+export default {
+  title: 'Components/Button/Toolbar',
+  component: ButtonGroup,
+};
 
 const Template = (args) => (
-  <ButtonToolbar aria-label="Toolbar with button groups" {...args}>
+  <ButtonToolbar {...args}>
     <ButtonGroup className="mie-2" aria-label="First group">
       <Button variant="primary">1</Button>
       <Button variant="primary">2</Button>

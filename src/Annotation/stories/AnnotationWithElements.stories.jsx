@@ -4,6 +4,18 @@ import Button from '../../Button/index';
 export default {
   title: 'Components/Annotation/WithElements',
   component: Annotation,
+  argTypes: {
+    variant: {
+      control: {
+        type: 'select',
+      },
+    },
+    arrowPlacement: {
+      control: {
+        type: null,
+      },
+    },
+  },
 };
 
 const OnTop = (args) => (

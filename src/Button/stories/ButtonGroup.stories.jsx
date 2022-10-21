@@ -1,4 +1,4 @@
-import Button from 'react-bootstrap/Button';
+import Button from '../index';
 import { ButtonGroup } from '../index';
 
 export default { title: 'Components/Button/Group', component: ButtonGroup };

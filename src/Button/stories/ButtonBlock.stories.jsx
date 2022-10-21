@@ -15,7 +15,7 @@ BlockButtonPrimary.args = {
 export const BlockButtonSecondary = Template.bind({});
 BlockButtonSecondary.args = {
   children: 'Block level button',
-  variant: 'primary',
+  variant: 'secondary',
   size: 'lg',
   block: true,
 };

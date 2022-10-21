@@ -1,6 +1,4 @@
-import Badge from './index';
-
-import '../../www/public/static/edxorg-theme.css';
+import Badge from '../index';
 
 export default { title: 'Components/Badge', component: Badge };
 
