@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { IntlProvider } from 'react-intl';
 // @ts-ignore
-import { messages } from '~paragon-react';
+import { messages } from '~paragon-react'; // eslint-disable-line
 
 import { THEMES, DEFAULT_THEME } from '../../theme-config';
 
