@@ -1,5 +1,5 @@
 {
-  "lastModified": 1666362253051,
+  "lastModified": 1666447915047,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -22155,6 +22155,11 @@
             "column": 20
           },
           {
+            "filePath": "src/templates/learnIndexPage/Hero.jsx",
+            "line": 16,
+            "column": 9
+          },
+          {
             "filePath": "src/templates/learnPage.jsx",
             "line": 34,
             "column": 9
@@ -22309,12 +22314,12 @@
           },
           {
             "filePath": "src/components/Search/AutoCompleteDropdownItem.jsx",
-            "line": 57,
+            "line": 63,
             "column": 14
           },
           {
             "filePath": "src/components/Search/AutoCompleteDropdownItem.jsx",
-            "line": 61,
+            "line": 67,
             "column": 12
           },
           {
@@ -22365,7 +22370,7 @@
         "Collapsible": [
           {
             "filePath": "src/components/BootCamp/BootCampCurriculumModule.jsx",
-            "line": 58,
+            "line": 59,
             "column": 16
           },
           {
@@ -22422,8 +22427,8 @@
         "Button": [
           {
             "filePath": "src/components/BootCamp/BootCampCurriculumModule.jsx",
-            "line": 65,
-            "column": 10
+            "line": 73,
+            "column": 12
           },
           {
             "filePath": "src/components/Card/index.jsx",
@@ -22434,6 +22439,11 @@
             "filePath": "src/components/Card/index.jsx",
             "line": 180,
             "column": 16
+          },
+          {
+            "filePath": "src/components/ContentfulModule/DynamicProductModule.jsx",
+            "line": 40,
+            "column": 12
           },
           {
             "filePath": "src/components/ContentfulModule/FeaturedProductsModule.jsx",
@@ -22517,7 +22527,7 @@
           },
           {
             "filePath": "src/components/Search/ManagedAutoComplete.jsx",
-            "line": 227,
+            "line": 235,
             "column": 14
           },
           {
@@ -22554,6 +22564,11 @@
             "filePath": "src/templates/courseDetailBootcamp.jsx",
             "line": 186,
             "column": 18
+          },
+          {
+            "filePath": "src/templates/learnIndexPage/Hero.jsx",
+            "line": 37,
+            "column": 10
           },
           {
             "filePath": "src/templates/learnPage.jsx",
@@ -22837,7 +22852,7 @@
           },
           {
             "filePath": "src/components/Course/StickyNav/index.jsx",
-            "line": 187,
+            "line": 191,
             "column": 12
           },
           {
@@ -22907,7 +22922,7 @@
           },
           {
             "filePath": "src/components/Learn/DynamicProductList/DynamicProductList.jsx",
-            "line": 201,
+            "line": 203,
             "column": 6
           },
           {
@@ -23094,6 +23109,16 @@
             "filePath": "src/templates/courseDetail2U.jsx",
             "line": 604,
             "column": 20
+          },
+          {
+            "filePath": "src/templates/learnIndexPage/Hero.jsx",
+            "line": 22,
+            "column": 6
+          },
+          {
+            "filePath": "src/templates/learnIndexPage/index.jsx",
+            "line": 40,
+            "column": 8
           },
           {
             "filePath": "src/templates/learnPage.jsx",
@@ -23377,7 +23402,7 @@
           },
           {
             "filePath": "src/components/Course/StickyNav/index.jsx",
-            "line": 196,
+            "line": 200,
             "column": 16
           }
         ],
@@ -23389,7 +23414,7 @@
           },
           {
             "filePath": "src/components/Course/StickyNav/index.jsx",
-            "line": 208,
+            "line": 212,
             "column": 20
           },
           {
@@ -24335,6 +24360,11 @@
           }
         ],
         "Search": [
+          {
+            "filePath": "src/templates/learnIndexPage/Hero.jsx",
+            "line": 16,
+            "column": 20
+          },
           {
             "filePath": "src/templates/learnPage.jsx",
             "line": 34,
