@@ -9,9 +9,9 @@ program
     .default('scss-to-css'))
   .action((options) => {
     const { direction, path } = options;
-    const sourceFiles = getFilesWithExtension(path, '.scss');
-    sourceFiles.forEach(filePath => {
-      replaceVariables(filePath, direction);
+    const sourceFiles = getFilesWithExtension(path, '.scss', [], ['Table']);
+    sourceFiles.forEach(async (filePath) => {
+      await replaceVariables(filePath, direction);
     });
   });
 

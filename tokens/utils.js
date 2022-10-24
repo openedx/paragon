@@ -1,4 +1,5 @@
 const fs = require('fs');
+const readline = require('readline');
 const path = require('path');
 
 function getFilesWithExtension(location, extension, files = [], excludeDirectories = []) {
@@ -23,47 +24,48 @@ function getSCSStoCSSMap(prefix, key, result) {
       getSCSStoCSSMap(newPrefix, key[node], result);
     } else if (node === 'source') {
       // eslint-disable-next-line no-param-reassign
-      result[key[node]] = prefix;
+      result[key[node]] = `var(${prefix})`;
     }
   });
   return result;
 }
 
-function cssVariableWrapper(variable) {
-  return `var(${variable})`;
-}
+async function replaceVariables(filePath, direction = 'scss-to-css') {
+  const mapFile = fs.readFileSync(path.resolve(__dirname,`./build/${direction}.json`), 'utf-8');
+  const variablesMap = JSON.parse(mapFile);
+  let variableRegex;
+  let result = '';
 
-function regExpEscape(string) {
-  return string.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
-}
-
-function toRegExp(string) {
-  return new RegExp(`${regExpEscape(string)}(?![\\w:-])`, 'g');
-}
-
-function replaceVariable(content, scss, css, direction) {
-  const cssVariable = cssVariableWrapper(css);
-  return direction === 'scss-to-css'
-    ? content.replaceAll(toRegExp(scss), cssVariable)
-    : content.replaceAll(toRegExp(cssVariable), scss);
-}
-
-function replaceVariables(filePath, direction = 'css-to-scss') {
-  const targetFile = fs.readFileSync(filePath, 'utf-8');
-  const coreMapFile = fs.readFileSync(path.resolve(__dirname, './build/scss-to-css-core.json'), 'utf-8');
-  const componentsMapFile = fs.readFileSync(path.resolve(__dirname, './build/scss-to-css-components.json'), 'utf-8');
-  const coreVariables = JSON.parse(coreMapFile);
-
-  let result = targetFile;
-  Object.keys(coreVariables).forEach(variable => {
-    result = replaceVariable(result, variable, coreVariables[variable], direction);
-  });
-  if (!filePath.endsWith('_variables.scss')) {
-    const componentsVariables = JSON.parse(componentsMapFile);
-    Object.keys(componentsVariables).forEach(variable => {
-      result = replaceVariable(result, variable, componentsVariables[variable], direction);
-    });
+  if (direction === 'css-to-scss') {
+    variableRegex = /var\((\w|-|_)*\)/g;
+  } else if (direction === 'scss-to-css') {
+    variableRegex = /\$(\w|-|_)*(,|;|\)|\s|}|$)/g;
   }
+
+  const fileStream = fs.createReadStream(path.resolve(__dirname, filePath));
+
+  const rl = readline.createInterface({
+    input: fileStream,
+    crlfDelay: Infinity,
+  });
+
+  for await (const line of rl) {
+    let parsedLine = line;
+    const variables = [...parsedLine.matchAll(variableRegex)];
+
+    variables.forEach(variableData => {
+      let variable = variableData[0];
+      if (direction === 'scss-to-css' && [',', ';', ')', ' ', '}'].includes(variable.slice(-1))) {
+        variable = variable.slice(0, -1);
+      }
+      if (variable in variablesMap) {
+        parsedLine = parsedLine.replaceAll(variable, variablesMap[variable]);
+      }
+    });
+
+    result += `${parsedLine}\n`;
+  }
+
   fs.writeFileSync(filePath, result);
 }
 
