@@ -10,7 +10,7 @@
     display: none;
   }
 
-  z-index: var(--pgn-zindex-sheet-backdrop);
+  z-index: var(--pgn-sheet-zindex-backdrop);
 }
 
 %component-left {
@@ -35,7 +35,7 @@
   position: fixed;
   padding: 1.25rem;
   background-color: white;
-  z-index: var(--pgn-zindex-sheet);
+  z-index: var(--pgn-sheet-zindex-main);
 
   &.pgn__sheet__dark {
     background-color: var(--pgn-color-dark-500);

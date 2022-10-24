@@ -78,8 +78,8 @@ a .pgn__card {
   }
 
   .pgn__card-header-actions {
-    margin-top: var(--pgn-core-spacer);
-    margin-inline-start: var(--pgn-core-spacer);
+    margin-top: var(--pgn-spacer-base);
+    margin-inline-start: var(--pgn-spacer-base);
     flex-shrink: 0;
   }
 

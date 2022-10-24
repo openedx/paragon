@@ -6,7 +6,7 @@ $card-border-width:                  var(--pgn-border-width) !default;
 $card-border-radius:                 var(--pgn-border-radius-base) !default;
 $card-border-color:                  rgba(var(--pgn-color-black), .125) !default;
 $card-border-focus-color:            rgba(var(--pgn-color-black), .5) !default;
-$card-inner-border-radius:           subtract($card-border-radius, $card-border-width) !default;
+$card-inner-border-radius:           subtract(var(--pgn-card-border-radius-base), var(--pgn-card-border-width)) !default;
 $card-cap-bg:                        rgba(var(--pgn-color-black), .03) !default;
 $card-cap-color:                     null !default;
 $card-height:                        null !default;
@@ -16,15 +16,15 @@ $card-bg:                            var(--pgn-color-white) !default;
 $card-img-overlay-padding:           1.25rem !default;
 
 $card-group-margin:                  calc(var(--pgn-grid-gutter-width) / 2) !default;
-$card-deck-margin:                   $card-group-margin !default;
-$card-grid-margin:                   $card-group-margin !default;
+$card-deck-margin:                   var(--pgn-card-margin-group) !default;
+$card-grid-margin:                   var(--pgn-card-margin-group) !default;
 
 $card-columns-count:                 3 !default;
 $card-columns-gap:                   1.25rem !default;
-$card-columns-margin:                $card-spacer-y !default;
+$card-columns-margin:                var(--pgn-card-spacer-y) !default;
 
 $card-divider-bg:                    var(--pgn-color-light-400) !default;
-$card-divider-margin-y:              $card-spacer-y !default;
+$card-divider-margin-y:              var(--pgn-card-spacer-y) !default;
 
 $card-footer-actions-gap:            .5rem !default;
 
@@ -42,6 +42,6 @@ $card-logo-border-radius:            .25rem !default;
 $card-footer-text-font-size:         var(--pgn-font-size-small-x);
 
 $card-image-horizontal-max-width:    240px;
-$card-image-horizontal-min-width:    $card-image-horizontal-max-width;
+$card-image-horizontal-min-width:    var(--pgn-card-image-horizontal-width-max);
 $card-image-vertical-max-height:     140px;
 $loading-skeleton-spacer:            .313rem;

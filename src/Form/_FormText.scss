@@ -25,11 +25,11 @@
 }
 
 .pgn__form-text-valid {
-  color: var(--pgn-form-feedback-color-valid);
+  color: $form-feedback-valid-color;
 }
 
 .pgn__form-text-invalid {
-  color: var(--pgn-form-feedback-color-invalid);
+  color: $form-feedback-invalid-color;
 }
 
 .pgn__form-text-warning {
@@ -44,12 +44,12 @@
 
 .pgn__form-text-criteria-valid {
   .pgn__icon {
-    color: var(--pgn-form-feedback-color-valid);
+    color: $form-feedback-valid-color;
   }
 }
 
 .pgn__form-text-criteria-invalid {
   .pgn__icon {
-    color: var(--pgn-form-feedback-color-invalid);
+    color: $form-feedback-invalid-color;
   }
 }

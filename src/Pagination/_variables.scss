@@ -27,7 +27,7 @@ $pagination-bg:                     var(--pgn-color-white) !default;
 $pagination-border-width:           var(--pgn-border-width) !default;
 $pagination-border-color:           theme-color("gray", "border") !default;
 
-$pagination-focus-box-shadow:       var(--pgn-core-input-btn-focus-box-shadow) !default;
+$pagination-focus-box-shadow:       var(--pgn-input-btn-focus-box-shadow) !default;
 $pagination-focus-outline:          0 !default;
 $pagination-focus-border-width:     .125rem !default;
 $pagination-focus-color:            var(--pgn-color-primary-500) !default;
@@ -39,7 +39,7 @@ $pagination-hover-border-color:     theme-color("gray", "border") !default;
 
 $pagination-active-color:           var(--pgn-component-active-color) !default;
 $pagination-active-bg:              var(--pgn-component-active-bg) !default;
-$pagination-active-border-color:    $pagination-active-bg !default;
+$pagination-active-border-color:    var(--pgn-pagination-bg-active) !default;
 
 $pagination-disabled-color:         theme-color("gray", "light-text") !default;
 $pagination-disabled-bg:            var(--pgn-color-white) !default;

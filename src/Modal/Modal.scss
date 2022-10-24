@@ -13,7 +13,7 @@
   position: fixed;
   top: 0;
   width: 100vw;
-  z-index: var(--pgn-zindex-modal);
+  z-index: var(--pgn-modal-zindex);
   -webkit-overflow-scrolling: touch;
 }
 
@@ -86,15 +86,15 @@
 .modal-dialog {
   height: 100%;
   margin: auto;
-  padding: calc(var(--pgn-core-spacer) / 2);
+  padding: calc(var(--pgn-spacer-base) / 2);
 
   @media (min-width: map-get($grid-breakpoints, "sm")) {
-    padding: var(--pgn-core-spacer);
+    padding: var(--pgn-spacer-base);
   }
 }
 
 .modal-content {
-  max-height: calc(100vh - (#{var(--pgn-core-spacer)} * 2));
+  max-height: calc(100vh - (#{var(--pgn-spacer-base)} * 2));
 
   &:focus {
     outline: 1px dotted;
@@ -129,7 +129,7 @@
   }
 
   &::before {
-    border-top-color: rgba($black, 20%);
+    border-top-color: rgba(var(--pgn-color-black), 20%);
   }
 }
 

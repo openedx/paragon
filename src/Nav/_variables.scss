@@ -9,7 +9,7 @@ $nav-link-font-weight:              500 !default;
 $nav-tabs-border-color:             var(--pgn-color-light-400) !default;
 $nav-tabs-border-width:             2px !default;
 $nav-tabs-border-radius:            0 !default;
-$nav-tabs-link-hover-border-color:  transparent transparent $nav-tabs-border-color !default;
+$nav-tabs-link-hover-border-color:  transparent transparent var(--pgn-nav-tabs-border-color) !default;
 $nav-tabs-link-hover-bg:            var(--pgn-color-light-400) !default;
 $nav-tabs-link-active-color:        var(--pgn-color-primary-500) !default;
 $nav-tabs-link-active-bg:           var(--pgn-body-bg) !default;
@@ -20,4 +20,4 @@ $nav-pills-link-active-color:       var(--pgn-component-active-color) !default;
 $nav-pills-link-active-bg:          var(--pgn-component-active-bg) !default;
 
 $nav-divider-color:                 theme-color("gray", "background") !default;
-$nav-divider-margin-y:              calc(var(--pgn-core-spacer) / 2) !default;
+$nav-divider-margin-y:              calc(var(--pgn-spacer-base) / 2) !default;

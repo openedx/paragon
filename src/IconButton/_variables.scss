@@ -11,7 +11,7 @@ $icon-button-colors: (
 ) !default;
 $btn-icon-diameter-md: 2.75rem !default;
 $btn-icon-diameter-sm: 2.25rem !default;
-$btn-icon-diameter-inline: calc(#{$line-height-base}em + .1em) !default;
+$btn-icon-diameter-inline: calc(#{var(--pgn-line-height-base)}em + .1em) !default;
 
 $btn-icon-bg: transparent !default;
 $btn-icon-accent-color: white !default;

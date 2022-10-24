@@ -1,55 +1,55 @@
-$input-padding-y:                       var(--pgn-core-input-btn-padding-y) !default;
-$input-padding-x:                       var(--pgn-core-input-btn-padding-x) !default;
-$input-font-family:                     var(--pgn-core-input-btn-font-family) !default;
-$input-font-size:                       var(--pgn-core-input-btn-font-size-base) !default;
+$input-padding-y:                       var(--pgn-input-btn-padding-y) !default;
+$input-padding-x:                       var(--pgn-input-btn-padding-x) !default;
+$input-font-family:                     var(--pgn-input-btn-font-family) !default;
+$input-font-size:                       var(--pgn-input-btn-font-size-base) !default;
 $input-font-weight:                     var(--pgn-font-weight-base) !default;
-$input-line-height:                     var(--pgn-core-input-btn-line-height-base) !default;
+$input-line-height:                     var(--pgn-input-btn-line-height-base) !default;
 
-$input-padding-y-sm:                    var(--pgn-core-input-btn-padding-sm-y) !default;
-$input-padding-x-sm:                    var(--pgn-core-input-btn-padding-sm-x) !default;
-$input-font-size-sm:                    var(--pgn-core-input-btn-font-size-sm) !default;
-$input-line-height-sm:                  var(--pgn-core-input-btn-line-height-sm) !default;
+$input-padding-y-sm:                    var(--pgn-input-btn-padding-sm-y) !default;
+$input-padding-x-sm:                    var(--pgn-input-btn-padding-sm-x) !default;
+$input-font-size-sm:                    var(--pgn-input-btn-font-size-sm) !default;
+$input-line-height-sm:                  var(--pgn-input-btn-line-height-sm) !default;
 
-$input-padding-y-lg:                    var(--pgn-core-input-btn-padding-lg-y) !default;
-$input-padding-x-lg:                    var(--pgn-core-input-btn-padding-lg-x) !default;
-$input-font-size-lg:                    var(--pgn-core-input-btn-font-size-lg) !default;
-$input-line-height-lg:                  var(--pgn-core-input-btn-line-height-lg) !default;
+$input-padding-y-lg:                    var(--pgn-input-btn-padding-lg-y) !default;
+$input-padding-x-lg:                    var(--pgn-input-btn-padding-lg-x) !default;
+$input-font-size-lg:                    var(--pgn-input-btn-font-size-lg) !default;
+$input-line-height-lg:                  var(--pgn-input-btn-line-height-lg) !default;
 
 $input-bg:                              var(--pgn-color-white) !default;
 $input-disabled-bg:                     theme-color("gray", "background") !default;
 
 $input-color:                           theme-color("gray", "text") !default;
 $input-border-color:                    var(--pgn-color-gray-500) !default;
-$input-border-width:                    var(--pgn-core-input-btn-border-width) !default;
+$input-border-width:                    var(--pgn-input-btn-border-width) !default;
 $input-box-shadow:                      inset 0 1px 1px rgba(var(--pgn-color-black), .075) !default;
 
 $input-border-radius:                   var(--pgn-border-radius-base) !default;
 $input-border-radius-lg:                var(--pgn-border-radius-lg) !default;
 $input-border-radius-sm:                var(--pgn-border-radius-sm) !default;
 
-$input-focus-bg:                        $input-bg !default;
+$input-focus-bg:                        var(--pgn-form-input-bg-base) !default;
 $input-focus-border-color:              var(--pgn-component-active-bg) !default;
-$input-focus-color:                     $input-color !default;
+$input-focus-color:                     var(--pgn-form-input-color-base) !default;
 $input-focus-width:                     1px !default;
-$input-focus-box-shadow:                var(--pgn-core-input-btn-focus-box-shadow) !default;
+$input-focus-box-shadow:                var(--pgn-input-btn-focus-box-shadow) !default;
 
 $input-placeholder-color:               theme-color("gray", "light-text") !default;
 $input-plaintext-color:                 var(--pgn-body-color) !default;
 
-$input-height-border:                   calc($input-border-width * 2) !default;
+$input-height-border:                   calc(var(--pgn-form-input-border-width) * 2) !default;
 
-$input-height-inner:                    calc($input-line-height * 1em + $input-padding-y * 2) !default;
-$input-height-inner-half:               calc($input-line-height * .5em + $input-padding-y) !default;
-$input-height-inner-quarter:            calc($input-line-height * .25em + calc($input-padding-y / 2)) !default;
+$input-height-inner:                    calc(var(--pgn-form-input-line-height-base) * 1em + var(--pgn-form-input-padding-y-base) * 2) !default;
+$input-height-inner-half:               calc(var(--pgn-form-input-line-height-base) * .5em + var(--pgn-form-input-padding-y-base)) !default;
+$input-height-inner-quarter:            calc(var(--pgn-form-input-line-height-base) * .25em + calc(var(--pgn-form-input-padding-y-base) / 2)) !default;
 
 $input-height:                          calc(
-  ($input-line-height * 1em) + ($input-padding-y * 2) + ($input-height-border)
+  (var(--pgn-form-input-line-height-base) * 1em) + (var(--pgn-form-input-padding-y-base) * 2) + (var(--pgn-form-input-border-height))
 ) !default;
 $input-height-sm:                       calc(
-  ($input-line-height-sm * 1em) + (var(--pgn-core-input-btn-padding-sm-y) * 2) + $input-height-border
+  (var(--pgn-form-input-line-height-sm) * 1em) + (var(--pgn-input-btn-padding-sm-y) * 2) + var(--pgn-form-input-border-height)
 ) !default;
 $input-height-lg:                       calc(
-  ($input-line-height-lg * 1em) + (var(--pgn-core-input-btn-padding-lg-y) * 2) + ($input-height-border)
+  (var(--pgn-form-input-line-height-lg) * 1em) + (var(--pgn-input-btn-padding-lg-y) * 2) + (var(--pgn-form-input-border-height))
 ) !default;
 
 $input-hover-width:                     1px !default;
@@ -71,9 +71,9 @@ $form-check-border-width:               .125rem !default;
 $form-grid-gutter-width:                10px !default;
 $form-group-margin-bottom:              1rem !default;
 
-$input-group-addon-color:               $input-color !default;
+$input-group-addon-color:               var(--pgn-form-input-color-base) !default;
 $input-group-addon-bg:                  theme-color("gray", "background") !default;
-$input-group-addon-border-color:        $input-border-color !default;
+$input-group-addon-border-color:        var(--pgn-form-input-border-color) !default;
 
 $custom-forms-transition:               background-color .15s ease-in-out,
   border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
@@ -83,28 +83,30 @@ $custom-control-spacer-x:               1rem !default;
 $custom-control-cursor:                 null !default;
 
 $custom-control-indicator-size:         1.25rem !default;
-$custom-control-indicator-bg:           $input-bg !default;
+$custom-control-indicator-bg:           var(--pgn-form-input-bg-base) !default;
 
 $custom-control-indicator-bg-size:      100% !default;
-$custom-control-indicator-box-shadow:   $input-box-shadow !default;
+$custom-control-indicator-box-shadow:   var(--pgn-form-input-box-shadow-base) !default;
 $custom-control-indicator-border-color: var(--pgn-color-gray-700) !default;
 $custom-control-indicator-border-width: 2px !default;
 
 $custom-control-label-color:            null !default;
-$custom-control-indicator-disabled-bg:          $input-disabled-bg !default;
+$custom-control-indicator-disabled-bg:          var(--pgn-form-input-bg-disabled) !default;
 $custom-control-label-disabled-color:           theme-color("gray", "light-text") !default;
 
-$custom-control-indicator-checked-color:        $component-active-bg !default;
-$custom-control-indicator-checked-bg:           var(--pgn-component-active-bg) !default;
+// TODO switch to css variable
+$custom-control-indicator-checked-color:        #0A3055 !default;
+$custom-control-indicator-checked-bg:           #0A3055 !default;
 $custom-control-indicator-checked-disabled-bg:  rgba(var(--pgn-color-primary-base), .5) !default;
 $custom-control-indicator-checked-box-shadow:   none !default;
-$custom-control-indicator-checked-border-color: $custom-control-indicator-checked-bg !default;
+$custom-control-indicator-checked-border-color: var(--pgn-form-custom-control-indicator-checked-bg-base) !default;
 
 $custom-control-indicator-focus-box-shadow:     0 0 0 4px rgba(0, 0, 0, .1) !default;
-$custom-control-indicator-focus-border-color:   $input-focus-border-color !default;
+$custom-control-indicator-focus-border-color:   var(--pgn-form-input-focus-color-border) !default;
 
-$custom-control-indicator-active-color:         $component-active-color !default;
-$custom-control-indicator-active-bg:            var(--pgn-component-active-bg) !default;
+// TODO switch to css variable
+$custom-control-indicator-active-color:         #FFFFFF !default;
+$custom-control-indicator-active-bg:            #0A3055 !default;
 $custom-control-indicator-active-box-shadow:    none !default;
 $custom-control-indicator-active-border-color:  $custom-control-indicator-active-bg !default;
 $custom-checkbox-indicator-border-radius:       0 !default;
@@ -114,33 +116,33 @@ $custom-checkbox-indicator-indeterminate-bg:           var(--pgn-component-activ
 $custom-checkbox-indicator-indeterminate-color:        $custom-control-indicator-checked-color !default;
 $custom-checkbox-indicator-icon-indeterminate:         str-replace(url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM17 13H7V11H17V13Z' fill='#{$custom-checkbox-indicator-indeterminate-color}'/></svg>"), "#", "%23") !default;
 $custom-checkbox-indicator-indeterminate-box-shadow:   none !default;
-$custom-checkbox-indicator-indeterminate-border-color: $custom-checkbox-indicator-indeterminate-bg !default;
+$custom-checkbox-indicator-indeterminate-border-color: var(--pgn-form-custom-checkbox-indicator-indeterminate-bg) !default;
 
 $custom-radio-indicator-border-radius:          50% !default;
 $custom-radio-indicator-icon-checked:           str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-bg}'/%3e%3c/svg%3e"), "#", "%23") !default;
 
 $custom-switch-indicator-icon-off:              str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-bg}'/%3e%3c/svg%3e"), "#", "%23") !default;
 $custom-switch-indicator-icon-on:               str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-active-color}'/%3e%3c/svg%3e"), "#", "%23") !default;
-$custom-switch-width:                           $custom-control-indicator-size * 1.75 !default;
-$custom-switch-indicator-border-radius:         calc($custom-control-indicator-size / 2) !default;
+$custom-switch-width:                           calc(var(--pgn-form-custom-control-indicator-size) * 1.75) !default;
+$custom-switch-indicator-border-radius:         calc(var(--pgn-form-custom-control-indicator-size) / 2) !default;
 $custom-switch-indicator-size:                  calc(
-  #{$custom-control-indicator-size} - #{$custom-control-indicator-border-width * 4}
+  #{var(--pgn-form-custom-control-indicator-size)} - calc(#{var(--pgn-form-custom-control-indicator-border-width)} * 4)
 ) !default;
 $custom-switch-indicator-checked-bg:            theme-color("success") !default;
 
-$custom-select-padding-y:           $input-padding-y !default;
-$custom-select-padding-x:           $input-padding-x !default;
-$custom-select-font-family:         $input-font-family !default;
-$custom-select-font-size:           $input-font-size !default;
-$custom-select-height:              $input-height !default;
+$custom-select-padding-y:           var(--pgn-form-input-padding-y-base) !default;
+$custom-select-padding-x:           var(--pgn-form-input-padding-x-base) !default;
+$custom-select-font-family:         var(--pgn-form-input-font-family) !default;
+$custom-select-font-size:           var(--pgn-form-input-font-size-base) !default;
+$custom-select-height:              var(--pgn-form-input-height-base) !default;
 
 // Extra padding to account for the presence of the background-image based indicator
 $custom-select-indicator-padding:   1rem !default;
-$custom-select-font-weight:         $input-font-weight !default;
-$custom-select-line-height:         $input-line-height !default;
-$custom-select-color:               $input-color !default;
+$custom-select-font-weight:         var(--pgn-form-input-font-weight) !default;
+$custom-select-line-height:         var(--pgn-form-input-line-height-base) !default;
+$custom-select-color:               var(--pgn-form-input-color-base) !default;
 $custom-select-disabled-color:      theme-color("gray", "light-text") !default;
-$custom-select-bg:                  $input-bg !default;
+$custom-select-bg:                  var(--pgn-form-input-bg-base) !default;
 $custom-select-disabled-bg:         theme-color("gray", "background") !default;
 $custom-select-bg-size:             24px 24px !default; // In pixels because image dimensions
 $custom-select-indicator-color:     theme-color("gray", "hover") !default;
@@ -149,33 +151,33 @@ $custom-select-indicator:           str-replace(url('data:image/svg+xml,<svg wid
 
 // Used so we can have multiple background elements (e.g., arrow and feedback icon)
 $custom-select-background:          $custom-select-indicator no-repeat right
-  $input-padding-y center / $custom-select-bg-size !default;
+  var(--pgn-form-input-padding-y-base) center / var(--pgn-form-custom-select-bg-size) !default;
 
 $custom-select-feedback-icon-padding-right: calc(
-  (1em + (2 * $custom-select-padding-y)) * 3 / 4 + ($custom-select-padding-x + $custom-select-indicator-padding)
+  (1em + (2 * var(--pgn-form-custom-select-padding-y-base))) * 3 / 4 + (var(--pgn-form-custom-select-padding-x-base) + var(--pgn-form-custom-select-indicator-padding))
 ) !default;
 $custom-select-feedback-icon-position:      center right
-  ($custom-select-padding-x + $custom-select-indicator-padding) !default;
-$custom-select-feedback-icon-size:          $input-height-inner-half $input-height-inner-half !default;
+  (var(--pgn-form-custom-select-padding-x-base) + var(--pgn-form-custom-select-indicator-padding)) !default;
+$custom-select-feedback-icon-size:          var(--pgn-form-input-height-inner-half) var(--pgn-form-input-height-inner-half) !default;
 
-$custom-select-border-width:        $input-border-width !default;
-$custom-select-border-color:        $input-border-color !default;
+$custom-select-border-width:        var(--pgn-form-input-border-width) !default;
+$custom-select-border-color:        var(--pgn-form-input-border-color) !default;
 $custom-select-border-radius:       var(--pgn-border-radius-base) !default;
 $custom-select-box-shadow:          inset 0 1px 2px rgba(var(--pgn-color-black), .075) !default;
 
-$custom-select-focus-border-color:  $input-focus-border-color !default;
-$custom-select-focus-width:         $input-focus-width !default;
-$custom-select-focus-box-shadow:    var(--pgn-core-input-btn-focus-box-shadow) !default;
+$custom-select-focus-border-color:  var(--pgn-form-input-focus-color-border) !default;
+$custom-select-focus-width:         var(--pgn-form-input-focus-width) !default;
+$custom-select-focus-box-shadow:    var(--pgn-input-btn-focus-box-shadow) !default;
 
-$custom-select-padding-y-sm:        $input-padding-y-sm !default;
-$custom-select-padding-x-sm:        $input-padding-x-sm !default;
-$custom-select-font-size-sm:        $input-font-size-sm !default;
-$custom-select-height-sm:           $input-height-sm !default;
+$custom-select-padding-y-sm:        var(--pgn-form-input-padding-y-sm) !default;
+$custom-select-padding-x-sm:        var(--pgn-form-input-padding-x-sm) !default;
+$custom-select-font-size-sm:        var(--pgn-form-input-font-size-sm) !default;
+$custom-select-height-sm:           var(--pgn-form-input-height-sm) !default;
 
-$custom-select-padding-y-lg:        $input-padding-y-lg !default;
-$custom-select-padding-x-lg:        $input-padding-x-lg !default;
-$custom-select-font-size-lg:        $input-font-size-lg !default;
-$custom-select-height-lg:           $input-height-lg !default;
+$custom-select-padding-y-lg:        var(--pgn-form-input-padding-y-lg) !default;
+$custom-select-padding-x-lg:        var(--pgn-form-input-padding-x-lg) !default;
+$custom-select-font-size-lg:        var(--pgn-form-input-font-size-lg) !default;
+$custom-select-height-lg:           var(--pgn-form-input-height-lg) !default;
 
 $custom-range-track-width:          100% !default;
 $custom-range-track-height:         .5rem !default;
@@ -185,43 +187,45 @@ $custom-range-track-border-radius:  1rem !default;
 $custom-range-track-box-shadow:     inset 0 .25rem .25rem rgba(var(--pgn-color-black), .1) !default;
 
 $custom-range-thumb-width:                   1rem !default;
-$custom-range-thumb-height:                  $custom-range-thumb-width !default;
+$custom-range-thumb-height:                  var(--pgn-form-custom-range-thumb-width) !default;
 $custom-range-thumb-bg:                      var(--pgn-component-active-bg) !default;
 $custom-range-thumb-border:                  0 !default;
 $custom-range-thumb-border-radius:           1rem !default;
 $custom-range-thumb-box-shadow:              0 .1rem .25rem rgba(var(--pgn-color-black), .1) !default;
-$custom-range-thumb-focus-box-shadow:        0 0 0 1px var(--pgn-body-bg), $input-focus-box-shadow !default;
-$custom-range-thumb-focus-box-shadow-width:  $input-focus-width !default; // For focus box shadow issue in IE/Edge
-$custom-range-thumb-active-bg:               lighten($component-active-bg, 35%) !default;
+$custom-range-thumb-focus-box-shadow:        0 0 0 1px var(--pgn-body-bg), var(--pgn-form-input-box-shadow-focus) !default;
+$custom-range-thumb-focus-box-shadow-width:  var(--pgn-form-input-focus-width) !default; // For focus box shadow issue in IE/Edge
+// TODO replace with CSS variable var(--pgn-component-active-bg)
+$custom-range-thumb-active-bg:               lighten(#0A3055, 35%) !default;
 $custom-range-thumb-disabled-bg:             theme-color("gray", "default") !default;
 
-$custom-file-height:                $input-height !default;
-$custom-file-height-inner:          $input-height-inner !default;
-$custom-file-focus-border-color:    $input-focus-border-color !default;
-$custom-file-focus-box-shadow:      $input-focus-box-shadow !default;
-$custom-file-disabled-bg:           $input-disabled-bg !default;
+$custom-file-height:                var(--pgn-form-input-height-base) !default;
+$custom-file-height-inner:          var(--pgn-form-input-height-inner-base) !default;
+$custom-file-focus-border-color:    var(--pgn-form-input-focus-color-border) !default;
+$custom-file-focus-box-shadow:      var(--pgn-form-input-box-shadow-focus) !default;
+$custom-file-disabled-bg:           var(--pgn-form-input-bg-disabled) !default;
 
-$custom-file-padding-y:             $input-padding-y !default;
-$custom-file-padding-x:             $input-padding-x !default;
-$custom-file-line-height:           $input-line-height !default;
-$custom-file-font-family:           $input-font-family !default;
-$custom-file-font-weight:           $input-font-weight !default;
-$custom-file-color:                 $input-color !default;
-$custom-file-bg:                    $input-bg !default;
-$custom-file-border-width:          $input-border-width !default;
-$custom-file-border-color:          $input-border-color !default;
-$custom-file-border-radius:         $input-border-radius !default;
-$custom-file-box-shadow:            $input-box-shadow !default;
-$custom-file-button-color:          $custom-file-color !default;
-$custom-file-button-bg:             $input-group-addon-bg !default;
+$custom-file-padding-y:             var(--pgn-form-input-padding-y-base) !default;
+$custom-file-padding-x:             var(--pgn-form-input-padding-x-base) !default;
+$custom-file-line-height:           var(--pgn-form-input-line-height-base) !default;
+$custom-file-font-family:           var(--pgn-form-input-font-family) !default;
+$custom-file-font-weight:           var(--pgn-form-input-font-weight) !default;
+$custom-file-color:                 var(--pgn-form-input-color-base) !default;
+$custom-file-bg:                    var(--pgn-form-input-bg-base) !default;
+$custom-file-border-width:          var(--pgn-form-input-border-width) !default;
+$custom-file-border-color:          var(--pgn-form-input-border-color) !default;
+$custom-file-border-radius:         var(--pgn-form-input-border-radius-base) !default;
+$custom-file-box-shadow:            var(--pgn-form-input-box-shadow-base) !default;
+$custom-file-button-color:          var(--pgn-form-custom-file-color) !default;
+$custom-file-button-bg:             var(--pgn-form-input-group-addon-bg) !default;
 $custom-file-text: (
   en: "Browse"
 ) !default;
 
 // Form validation
 
-$form-feedback-margin-top:          $form-text-margin-top !default;
+$form-feedback-margin-top:          var(--pgn-form-text-margin-top) !default;
 $form-feedback-font-size:           var(--pgn-font-size-small-base) !default;
+// TODO can't use css variables due to conflict with SCSS functions
 $form-feedback-valid-color:         theme-color("success") !default;
 $form-feedback-invalid-color:       theme-color("danger") !default;
 

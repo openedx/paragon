@@ -9,7 +9,7 @@ $nested-kbd-font-weight:            var(--pgn-font-weight-bold) !default;
 // HTML Keyboard Input element (<kbd>) styles
 $kbd-padding-y:                     .2rem !default;
 $kbd-padding-x:                     .4rem !default;
-$kbd-font-size:                     $code-font-size !default;
+$kbd-font-size:                     var(--pgn-code-font-size) !default;
 $kbd-color:                         var(--pgn-color-white) !default;
 $kbd-bg:                            theme-color("gray", "hover") !default;
 

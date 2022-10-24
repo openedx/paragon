@@ -14,7 +14,7 @@ $tooltip-box-shadow:                drop-shadow(0 2px 4px rgba(0, 0, 0, .15))
 
 $tooltip-arrow-width:               .8rem !default;
 $tooltip-arrow-height:              .4rem !default;
-$tooltip-arrow-color:               $tooltip-bg !default;
+$tooltip-arrow-color:               var(--pgn-tooltip-bg-base) !default;
 
 $tooltip-color-light:               var(--pgn-color-black) !default;
 $tooltip-bg-light:                  var(--pgn-color-white) !default;

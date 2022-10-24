@@ -1,9 +1,9 @@
 @import "variables";
-@import "tables-bootstrap";
+@import "~bootstrap/scss/tables";
 
 .btn-header {
   padding: 0;
-  font-weight: var(--pgn-font-weight-bold);
+  font-weight: $font-weight-bold;
 }
 
 .table th,

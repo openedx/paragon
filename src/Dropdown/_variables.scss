@@ -9,12 +9,13 @@ $dropdown-spacer:                   .125rem !default;
 $dropdown-font-size:                var(--pgn-font-size-base) !default;
 $dropdown-color:                    var(--pgn-body-color) !default;
 $dropdown-bg:                       var(--pgn-color-white) !default;
-$dropdown-border-color:             rgba($black, .15) !default;
+// TODO use css variable
+$dropdown-border-color:             rgba(#000000, .15) !default;
 $dropdown-border-radius:            var(--pgn-border-radius-base) !default;
 $dropdown-border-width:             var(--pgn-border-width) !default;
-$dropdown-inner-border-radius:      calc(#{$dropdown-border-radius} - #{$dropdown-border-width}) !default;
+$dropdown-inner-border-radius:      calc(#{var(--pgn-dropdown-border-radius-base)} - #{var(--pgn-dropdown-border-width)}) !default;
 $dropdown-divider-bg:               theme-color("gray", "background") !default;
-$dropdown-divider-margin-y:         calc(var(--pgn-core-spacer) / 2) !default;
+$dropdown-divider-margin-y:         calc(var(--pgn-spacer-base) / 2) !default;
 $dropdown-box-shadow:               0 .5rem 1rem rgba(var(--pgn-color-black), .175) !default;
 
 $dropdown-link-color:               theme-color("gray", "dark-text") !default;
@@ -30,4 +31,4 @@ $dropdown-item-padding-y:           .25rem !default;
 $dropdown-item-padding-x:           1rem !default;
 
 $dropdown-header-color:             theme-color("gray", "light-text") !default;
-$dropdown-header-padding:           $dropdown-padding-y $dropdown-item-padding-x !default;
+$dropdown-header-padding:           var(--pgn-dropdown-padding-y-base) var(--pgn-dropdown-padding-x-item) !default;
