@@ -6,6 +6,7 @@ import StepperActionRow from './StepperActionRow';
 import { StepperContextProvider } from './StepperContext';
 
 function Stepper({ children, activeKey }) {
+  // console.log('activeKey', activeKey);
   return (
     <StepperContextProvider activeKey={activeKey}>
       {children}

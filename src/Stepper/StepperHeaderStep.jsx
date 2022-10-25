@@ -13,14 +13,19 @@ function StepperHeaderStep({
   hasError,
   description,
   index,
+  onClick,
 }) {
   const { getIsComplete } = useContext(StepperContext);
   const isComplete = getIsComplete(eventKey);
   const stepIcon = isComplete ? <Icon src={Check} /> : <span>{index + 1}</span>;
   const errorIcon = <Icon src={Error} />;
 
+  if (onClick) {
+    onClick();
+  }
+
   return (
-    <li
+    <button
       className={classNames(
         'pgn__stepper-header-step',
         {
@@ -29,6 +34,8 @@ function StepperHeaderStep({
           'pgn__stepper-header-step-complete': isComplete,
         },
       )}
+      onClick={onClick}
+      type="button"
     >
       <Bubble variant={hasError ? 'error' : 'primary'} disabled={!isActive}>
         {hasError ? errorIcon : stepIcon}
@@ -37,7 +44,7 @@ function StepperHeaderStep({
         <div className="pgn__stepper-header-step-title">{title}</div>
         <div className="pgn__stepper-header-step-description">{description}</div>
       </div>
-    </li>
+    </button>
   );
 }
 
@@ -57,6 +64,7 @@ StepperHeaderStep.propTypes = {
   description: PropTypes.string,
   /** A number that will be display in the icon of the `HeaderStep`.  */
   index: PropTypes.number,
+  onClick: PropTypes.func,
 };
 
 StepperHeaderStep.defaultProps = {
@@ -64,6 +72,7 @@ StepperHeaderStep.defaultProps = {
   hasError: false,
   description: undefined,
   index: 0,
+  onClick: null,
 };
 
 export default StepperHeaderStep;

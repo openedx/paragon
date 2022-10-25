@@ -1,30 +1,47 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import StepperHeaderStep from './StepperHeaderStep';
 import { StepperContext } from './StepperContext';
 import { useWindowSize } from '..';
+import { constructChildren } from '../Truncate/utils';
 
 function StepListSeparator() {
   return <li aria-hidden="true" className="pgn__stepper-header-line" />;
 }
 
 function StepList({ steps, activeKey }) {
+  // const [state, setState] = useState(steps);
+  console.log('steps', steps);
+  console.log('activeKey', activeKey);
+
   return (
     <ul className="pgn__stepper-header-step-list">
-      {steps.map(({ label, ...stepProps }, index) => (
-        <React.Fragment key={stepProps.eventKey}>
+      {steps.map(({ label, ...stepProps }, index) => {
+        console.log('index', index);
 
-          {index !== 0 && <StepListSeparator />}
-          <StepperHeaderStep
-            {...stepProps}
-            index={index}
-            isActive={activeKey === stepProps.eventKey}
-          >
-            {label}
-          </StepperHeaderStep>
-        </React.Fragment>
-      ))}
+        const handleClick = () => {
+          console.log('I am Click!', stepProps.eventKey);
+          // if (stepProps.eventKey !== activeKey) {
+
+          // }
+        };
+
+        return (
+          <React.Fragment key={stepProps.eventKey}>
+
+            {index !== 0 && <StepListSeparator />}
+            <StepperHeaderStep
+              {...stepProps}
+              index={index}
+              isActive={activeKey === stepProps.eventKey}
+              onClick={handleClick}
+            >
+              {label}
+            </StepperHeaderStep>
+          </React.Fragment>
+        );
+      })}
     </ul>
   );
 }
