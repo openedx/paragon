@@ -20,22 +20,22 @@ function StepperHeaderStep({
   const stepIcon = isComplete ? <Icon src={Check} /> : <span>{index + 1}</span>;
   const errorIcon = <Icon src={Error} />;
 
-  if (onClick) {
-    onClick();
-  }
-
   return (
-    <button
+  // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+    <li
+      /* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */
+      tabIndex={onClick && isComplete ? 0 : -1}
       className={classNames(
         'pgn__stepper-header-step',
         {
           'pgn__stepper-header-step-active': isActive,
           'pgn__stepper-header-step-has-error': hasError,
           'pgn__stepper-header-step-complete': isComplete,
+          'pgn__stepper-header-step-clickable': onClick && isComplete && !hasError,
         },
       )}
-      onClick={onClick}
-      type="button"
+      onClick={isComplete ? onClick : null}
+      onKeyPress={isComplete ? onClick : null}
     >
       <Bubble variant={hasError ? 'error' : 'primary'} disabled={!isActive}>
         {hasError ? errorIcon : stepIcon}
@@ -44,7 +44,7 @@ function StepperHeaderStep({
         <div className="pgn__stepper-header-step-title">{title}</div>
         <div className="pgn__stepper-header-step-description">{description}</div>
       </div>
-    </button>
+    </li>
   );
 }
 
@@ -64,6 +64,7 @@ StepperHeaderStep.propTypes = {
   description: PropTypes.string,
   /** A number that will be display in the icon of the `HeaderStep`.  */
   index: PropTypes.number,
+  /** Callback fired when element gets clicked. */
   onClick: PropTypes.func,
 };
 

@@ -41,7 +41,7 @@ export function StepperContextProvider({ children, activeKey }) {
   const getIsComplete = (eventKey) => {
     const activeIndex = steps.findIndex(step => step.eventKey === activeKey);
     const thisIndex = steps.findIndex(step => step.eventKey === eventKey);
-    return thisIndex < activeIndex;
+    return thisIndex <= activeIndex;
   };
 
   return (

@@ -49,6 +49,7 @@ A ``Stepper`` must wrap a set of composed subcomponents:
 - ``Stepper.ActionRow``
 
 The order of steps is dictated by the order of ``Stepper.Step`` components in the code.
+Using ``isClickable`` prop you can switch ``Stepper.Step`` components by clicking on ``Stepper.Header`` titles.
 
 ``Stepper.Step`` and ``Stepper.ActionRow`` are hidden until their ``eventKey`` props match the ``activeKey`` on ``Stepper``.
 
@@ -59,7 +60,7 @@ The order of steps is dictated by the order of ``Stepper.Step`` components in th
 
   return (
     <Stepper activeKey={currentStep}>
-      <Stepper.Header />
+      <Stepper.Header isClickable={setCurrentStep} />
 
       <Container size="sm" className="py-5">
         <Stepper.Step eventKey="welcome" title="Welcome">
