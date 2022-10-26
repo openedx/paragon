@@ -1,3 +1,10 @@
+# [20.18.0](https://github.com/openedx/paragon/compare/v20.17.0...v20.18.0) (2022-10-26)
+
+
+### Features
+
+* add creative common icons ([#1716](https://github.com/openedx/paragon/issues/1716)) ([3fac8c4](https://github.com/openedx/paragon/commit/3fac8c4e27b19a26997ccbf5c35ca5ae7e8cf247))
+
 # [20.17.0](https://github.com/openedx/paragon/compare/v20.16.0...v20.17.0) (2022-10-21)
 
 
