@@ -56,7 +56,6 @@ export { default as Pgn8Mp } from './8Mp';
 export { default as Pgn9K } from './9K';
 export { default as Pgn9KPlus } from './9KPlus';
 export { default as Pgn9Mp } from './9Mp';
-export { default as By } from './By';
 export { default as Cc } from './Cc';
 export { default as Nc } from './Nc';
 export { default as Nd } from './Nd';
