@@ -1,4 +1,6 @@
-import React, { useCallback, useReducer } from 'react';
+import React, {
+  useCallback, useEffect, useReducer, useState,
+} from 'react';
 import PropTypes from 'prop-types';
 
 export const StepperContext = React.createContext({
@@ -10,6 +12,8 @@ const stepsReducer = (stepsState, action) => {
   switch (action.type) {
     case 'remove':
       return stepsState.filter(step => step.eventKey !== action.eventKey);
+    case 'checked':
+      return;
     case 'register':
     default:
       // If is existing step
@@ -36,12 +40,18 @@ const stepsReducer = (stepsState, action) => {
 
 export function StepperContextProvider({ children, activeKey }) {
   const [steps, dispatch] = useReducer(stepsReducer, []);
+  const [checked, setChecked] = useState([]);
   const registerStep = useCallback((step) => dispatch({ step, type: 'register' }), []);
   const removeStep = useCallback((eventKey) => dispatch({ eventKey, type: 'remove' }), []);
+  const getIsChecked = (index) => checked.includes(index + 1);
   const getIsComplete = (eventKey) => {
     const activeIndex = steps.findIndex(step => step.eventKey === activeKey);
     const thisIndex = steps.findIndex(step => step.eventKey === eventKey);
-    return thisIndex <= activeIndex;
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useEffect(() => setChecked([...checked, activeIndex]), [activeIndex]);
+
+    return thisIndex < activeIndex;
   };
 
   return (
@@ -52,6 +62,7 @@ export function StepperContextProvider({ children, activeKey }) {
         steps,
         removeStep,
         getIsComplete,
+        getIsChecked,
       }}
     >
       {children}

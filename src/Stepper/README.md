@@ -60,7 +60,7 @@ Using ``isClickable`` prop you can switch ``Stepper.Step`` components by clickin
 
   return (
     <Stepper activeKey={currentStep}>
-      <Stepper.Header isClickable={setCurrentStep} />
+      <Stepper.Header clickHandler={setCurrentStep} />
 
       <Container size="sm" className="py-5">
         <Stepper.Step eventKey="welcome" title="Welcome">

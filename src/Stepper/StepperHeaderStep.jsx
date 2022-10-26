@@ -15,27 +15,28 @@ function StepperHeaderStep({
   index,
   onClick,
 }) {
-  const { getIsComplete } = useContext(StepperContext);
+  const { getIsComplete, getIsChecked } = useContext(StepperContext);
   const isComplete = getIsComplete(eventKey);
-  const stepIcon = isComplete ? <Icon src={Check} /> : <span>{index + 1}</span>;
+  const isChecked = getIsChecked(index);
+  const stepIcon = isComplete || isChecked ? <Icon src={Check} /> : <span>{index + 1}</span>;
   const errorIcon = <Icon src={Error} />;
 
   return (
-  // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <li
       /* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */
       tabIndex={onClick && isComplete ? 0 : -1}
+      role="presentation"
       className={classNames(
         'pgn__stepper-header-step',
         {
           'pgn__stepper-header-step-active': isActive,
           'pgn__stepper-header-step-has-error': hasError,
           'pgn__stepper-header-step-complete': isComplete,
-          'pgn__stepper-header-step-clickable': onClick && isComplete && !hasError,
+          'pgn__stepper-header-step-clickable': onClick && (isComplete || isChecked),
         },
       )}
-      onClick={isComplete ? onClick : null}
-      onKeyPress={isComplete ? onClick : null}
+      onClick={isChecked ? onClick : undefined}
+      onKeyPress={isChecked ? onClick : undefined}
     >
       <Bubble variant={hasError ? 'error' : 'primary'} disabled={!isActive}>
         {hasError ? errorIcon : stepIcon}
@@ -73,7 +74,7 @@ StepperHeaderStep.defaultProps = {
   hasError: false,
   description: undefined,
   index: 0,
-  onClick: null,
+  onClick: undefined,
 };
 
 export default StepperHeaderStep;

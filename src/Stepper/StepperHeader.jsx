@@ -9,34 +9,30 @@ function StepListSeparator() {
   return <li aria-hidden="true" className="pgn__stepper-header-line" />;
 }
 
-function StepList({ steps, activeKey, isClickable }) {
+function StepList({ steps, activeKey, clickHandler }) {
   return (
     <ul className="pgn__stepper-header-step-list">
-      {steps.map(({ label, ...stepProps }, index) => {
-        const handleClick = () => isClickable(stepProps.eventKey);
+      {steps.map(({ label, ...stepProps }, index) => (
+        <React.Fragment key={stepProps.eventKey}>
 
-        return (
-          <React.Fragment key={stepProps.eventKey}>
-
-            {index !== 0 && <StepListSeparator />}
-            <StepperHeaderStep
-              {...stepProps}
-              index={index}
-              isActive={activeKey === stepProps.eventKey}
-              onClick={isClickable && handleClick}
-            >
-              {label}
-            </StepperHeaderStep>
-          </React.Fragment>
-        );
-      })}
+          {index !== 0 && <StepListSeparator />}
+          <StepperHeaderStep
+            {...stepProps}
+            index={index}
+            isActive={activeKey === stepProps.eventKey}
+            onClick={clickHandler ? () => clickHandler(stepProps.eventKey) : undefined}
+          >
+            {label}
+          </StepperHeaderStep>
+        </React.Fragment>
+      ))}
     </ul>
   );
 }
 
 const PageCount = ({ activeStepIndex, totalSteps }) => `Step ${activeStepIndex + 1} of ${totalSteps}`;
 
-function StepperHeader({ className, PageCountComponent, isClickable }) {
+function StepperHeader({ className, PageCountComponent, clickHandler }) {
   const { steps, activeKey } = useContext(StepperContext);
   const windowDimensions = useWindowSize();
   // assume about 200px per step
@@ -66,7 +62,7 @@ function StepperHeader({ className, PageCountComponent, isClickable }) {
   // Show all steps
   return (
     <div className={classNames('pgn__stepper-header', className)}>
-      <StepList steps={steps} isClickable={isClickable} activeKey={activeKey} />
+      <StepList steps={steps} clickHandler={clickHandler} activeKey={activeKey} />
     </div>
   );
 }
@@ -78,13 +74,13 @@ StepperHeader.propTypes = {
   PageCountComponent: PropTypes.elementType,
   /** Specifies whether the `Stepper` headers is clickable, if `true` appropriate `hover` and `focus` styling
    * will be added and opportunities toggle content. */
-  isClickable: PropTypes.func,
+  clickHandler: PropTypes.func,
 };
 
 StepperHeader.defaultProps = {
   className: null,
   PageCountComponent: PageCount,
-  isClickable: null,
+  clickHandler: null,
 };
 
 StepList.propTypes = {
@@ -95,12 +91,12 @@ StepList.propTypes = {
     hasError: PropTypes.bool,
   })),
   activeKey: PropTypes.string.isRequired,
-  isClickable: PropTypes.func,
+  clickHandler: PropTypes.func,
 };
 
 StepList.defaultProps = {
   steps: [],
-  isClickable: null,
+  clickHandler: null,
 };
 
 StepperHeader.Step = StepperHeaderStep;
