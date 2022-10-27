@@ -12,11 +12,9 @@ const stepsReducer = (stepsState, action) => {
   switch (action.type) {
     case 'remove':
       return stepsState.filter(step => step.eventKey !== action.eventKey);
-    case 'checked':
-      return;
     case 'register':
     default:
-      // If is existing step
+      // If it is existing step
       if (stepsState.some(step => step.eventKey === action.step.eventKey)) {
         newStepsState = stepsState.map(step => {
           if (step.eventKey === action.step.eventKey) {
@@ -40,19 +38,16 @@ const stepsReducer = (stepsState, action) => {
 
 export function StepperContextProvider({ children, activeKey }) {
   const [steps, dispatch] = useReducer(stepsReducer, []);
-  const [checked, setChecked] = useState([]);
+  const [currentBoundary, setCurrentBoundary] = useState(0);
   const registerStep = useCallback((step) => dispatch({ step, type: 'register' }), []);
   const removeStep = useCallback((eventKey) => dispatch({ eventKey, type: 'remove' }), []);
-  const getIsChecked = (index) => checked.includes(index + 1);
-  const getIsComplete = (eventKey) => {
+
+  const getIsViewed = (index) => index <= currentBoundary;
+
+  useEffect(() => {
     const activeIndex = steps.findIndex(step => step.eventKey === activeKey);
-    const thisIndex = steps.findIndex(step => step.eventKey === eventKey);
-
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    useEffect(() => setChecked([...checked, activeIndex]), [activeIndex]);
-
-    return thisIndex < activeIndex;
-  };
+    setCurrentBoundary((prevState) => (activeIndex >= prevState ? activeIndex : prevState));
+  }, [activeKey, steps]);
 
   return (
     <StepperContext.Provider
@@ -61,8 +56,7 @@ export function StepperContextProvider({ children, activeKey }) {
         registerStep,
         steps,
         removeStep,
-        getIsComplete,
-        getIsChecked,
+        getIsViewed,
       }}
     >
       {children}

@@ -96,7 +96,7 @@ StepList.propTypes = {
 
 StepList.defaultProps = {
   steps: [],
-  clickHandler: null,
+  clickHandler: undefined,
 };
 
 StepperHeader.Step = StepperHeaderStep;
