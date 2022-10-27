@@ -49,7 +49,6 @@ A ``Stepper`` must wrap a set of composed subcomponents:
 - ``Stepper.ActionRow``
 
 The order of steps is dictated by the order of ``Stepper.Step`` components in the code.
-Using ``isClickable`` prop you can switch ``Stepper.Step`` components by clicking on ``Stepper.Header`` titles.
 
 ``Stepper.Step`` and ``Stepper.ActionRow`` are hidden until their ``eventKey`` props match the ``activeKey`` on ``Stepper``.
 
@@ -60,7 +59,7 @@ Using ``isClickable`` prop you can switch ``Stepper.Step`` components by clickin
 
   return (
     <Stepper activeKey={currentStep}>
-      <Stepper.Header clickHandler={setCurrentStep} />
+      <Stepper.Header />
 
       <Container size="sm" className="py-5">
         <Stepper.Step eventKey="welcome" title="Welcome">
@@ -98,6 +97,65 @@ Using ``isClickable`` prop you can switch ``Stepper.Step`` components by clickin
 
         <Stepper.ActionRow eventKey="review">
           <Button variant="outline-primary" onClick={() => setCurrentStep('choose-cats')}>
+            Previous
+          </Button>
+          <Stepper.ActionRow.Spacer />
+          <Button onClick={() => alert('Completed')}>Apply</Button>
+        </Stepper.ActionRow>
+      </div>
+    </Stepper>
+  )
+}
+```
+
+## Clickable Header
+Using ``handleStepClick`` prop you can switch ``Stepper.Step`` components by clicking on ``Stepper.Header`` titles.
+
+```jsx live
+() => {
+  const steps = ['introduction', 'benefits', 'finally'];
+  const [currentStep, setCurrentStep] = useState(steps[0]);
+
+  return (
+    <Stepper activeKey={currentStep}>
+      <Stepper.Header handleStepClick={setCurrentStep} />
+
+      <Container size="sm" className="py-5">
+        <Stepper.Step eventKey="introduction" title="Introduction">
+          <h2>Introduction</h2>
+          <HipsterIpsum numParagraphs={1} />
+        </Stepper.Step>
+
+        <Stepper.Step eventKey="benefits" title="Benefits">
+          <h2>Benefits</h2>
+          <HipsterIpsum numParagraphs={1} />
+        </Stepper.Step>
+
+        <Stepper.Step eventKey="finally" title="Finally!">
+          <h2>Finally</h2>
+          <HipsterIpsum numParagraphs={1} />
+        </Stepper.Step>
+      </Container>
+
+      <div className="py-3">
+        <Stepper.ActionRow eventKey="introduction">
+          <Button variant="outline-primary" onClick={() => alert('Cancel')}>
+            Cancel
+          </Button>
+          <Stepper.ActionRow.Spacer />
+          <Button onClick={() => setCurrentStep('benefits')}>Next</Button>
+        </Stepper.ActionRow>
+
+        <Stepper.ActionRow eventKey="benefits">
+          <Button variant="outline-primary" onClick={() => setCurrentStep('introduction')}>
+            Previous
+          </Button>
+          <Stepper.ActionRow.Spacer />
+          <Button onClick={() => setCurrentStep('finally')}>Next</Button>
+        </Stepper.ActionRow>
+
+        <Stepper.ActionRow eventKey="finally">
+          <Button variant="outline-primary" onClick={() => setCurrentStep('benefits')}>
             Previous
           </Button>
           <Stepper.ActionRow.Spacer />
