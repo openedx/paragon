@@ -289,15 +289,22 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
 .pgn__data-table__selectable-card {
   display: flex;
   align-items: flex-start;
-
-  > :first-child {
-    margin-right: map_get($spacers, 2);
-  }
+  flex-grow: 1;
 
   &.is-selected {
     > :first-child {
       @extend %pgn__card-focused;
     }
+  }
+
+  &.selection-right {
+    > :first-child {
+      margin-right: map_get($spacers, 2);
+    }
+  }
+
+  &.selection-left {
+    flex-direction: row-reverse;
   }
 }
 

@@ -11,13 +11,22 @@ function CardItem({
   isSelectable,
   SelectionComponent,
   CardComponent,
+  selectionPlacement,
 }) {
   prepareRow(row);
   const { isSelected } = row;
 
   if (isSelectable && SelectionComponent) {
     return (
-      <div className={classNames('pgn__data-table__selectable-card', { 'is-selected': isSelected })}>
+      <div className={classNames(
+        'pgn__data-table__selectable-card',
+        {
+          'is-selected': isSelected,
+          'selection-right': selectionPlacement === 'right',
+          'selection-left': selectionPlacement !== 'right',
+        },
+      )}
+      >
         <CardComponent {...row} />
         <SelectionComponent row={row} />
       </div>
@@ -28,7 +37,7 @@ function CardItem({
 }
 
 function CardView({
-  columnSizes, CardComponent, className,
+  columnSizes, CardComponent, className, selectionPlacement,
 }) {
   const {
     getTableProps, prepareRow, displayRows,
@@ -55,6 +64,7 @@ function CardView({
           isSelectable={isSelectable}
           row={row}
           prepareRow={prepareRow}
+          selectionPlacement={selectionPlacement}
         />
       ))}
     </CardGrid>
@@ -74,6 +84,7 @@ CardItem.propTypes = {
   isSelectable: PropTypes.bool.isRequired,
   CardComponent: PropTypes.func.isRequired,
   SelectionComponent: PropTypes.func,
+  selectionPlacement: PropTypes.oneOf(['right', 'left']).isRequired,
 };
 
 CardView.defaultProps = {
@@ -83,6 +94,7 @@ CardView.defaultProps = {
     xl: 4,
   },
   className: '',
+  selectionPlacement: 'right',
 };
 
 CardView.propTypes = {
@@ -102,6 +114,8 @@ CardView.propTypes = {
   /** Your card component must be individualized to your table.
    * It will be called with props from the "row" of data it will display */
   CardComponent: PropTypes.func.isRequired,
+  /** If the Cards are selectable this prop determines from which side of the Card to show selection component. */
+  selectionPlacement: PropTypes.oneOf(['left', 'right']),
 };
 
 export default CardView;
