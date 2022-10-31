@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import {
   Sheet,
   Form,
@@ -13,7 +14,11 @@ import { LANGUAGES } from '../config';
 import SettingsContext from '../context/SettingsContext';
 import { THEMES } from '../../theme-config';
 
-function Settings() {
+export interface ISetting {
+  showMinimizedTitle?: string,
+}
+
+function Settings({ showMinimizedTitle }: ISetting) {
   const {
     settings,
     handleSettingsChange,
@@ -84,9 +89,31 @@ function Settings() {
             ))}
           </Form.Control>
         </Form.Group>
+        {!showMinimizedTitle && (
+          <Form.Group>
+            <Form.Control
+              as="select"
+              value={settings.containerWidth}
+              onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleSettingsChange('containerWidth', e.target.value)}
+              floatingLabel="Container width"
+            >
+              <option value="xl">xl</option>
+              <option value="lg">lg</option>
+              <option value="md">md</option>
+            </Form.Control>
+          </Form.Group>
+        )}
       </Stack>
     </Sheet>
   );
 }
+
+Settings.propTypes = {
+  showMinimizedTitle: PropTypes.bool,
+};
+
+Settings.defaultProps = {
+  showMinimizedTitle: false,
+};
 
 export default Settings;
