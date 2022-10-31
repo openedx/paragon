@@ -1,7 +1,7 @@
 code {
-  @include font-size(var(--pgn-code-font-size));
+  @include font-size($code-font-size);
 
-  color: var(--pgn-code-color);
+  color: $code-color;
   word-wrap: break-word;
 
   a > & {
@@ -11,22 +11,22 @@ code {
 
 // User input typically entered via keyboard
 kbd {
-  padding: var(--pgn-code-kbd-padding-y) var(--pgn-code-kbd-padding-x);
+  padding: $kbd-padding-y $kbd-padding-x;
 
-  @include font-size(var(--pgn-code-kbd-font-size));
+  @include font-size($kbd-font-size);
 
-  color: var(--pgn-code-kbd-color);
-  background-color: var(--pgn-code-kbd-bg);
+  color: $kbd-color;
+  background-color: $kbd-bg;
 
-  @include border-radius(var(--pgn-border-radius-sm));
-  @include box-shadow(var(--pgn-code-kbd-box-shadow));
+  @include border-radius($border-radius-sm);
+  @include box-shadow($kbd-box-shadow);
 
   kbd {
     padding: 0;
 
     @include font-size(100%);
 
-    font-weight: var(--pgn-code-kbd-nested-font-weight);
+    font-weight: $nested-kbd-font-weight;
 
     @include box-shadow(none);
   }
@@ -36,9 +36,9 @@ kbd {
 pre {
   display: block;
 
-  @include font-size(var(--pgn-code-font-size));
+  @include font-size($code-font-size);
 
-  color: var(--pgn-code-pre-color);
+  color: $pre-color;
 
   // Account for some code outputs that place code tags in pre tags
   code {
@@ -51,6 +51,6 @@ pre {
 
 // Enable scrollable blocks of code
 .pre-scrollable {
-  max-height: var(--pgn-code-pre-scrollable-max-height);
+  max-height: $pre-scrollable-max-height;
   overflow-y: scroll;
 }

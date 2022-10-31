@@ -15,7 +15,7 @@
 
   border-color: $btn-variant-border;
 
-  @include box-shadow(var(--pgn-btn-box-shadow-base));
+  @include box-shadow($btn-box-shadow);
 
   @include hover {
     color: $btn-variant-hover-color;
@@ -88,8 +88,10 @@
 // No changes made. We do this to keep all button related mixins together,
 //
 // Button sizes
-@mixin button-size($btn-size-padding-y, $btn-size-padding-x, $btn-size-font-size,
-$btn-size-line-height, $btn-size-border-radius) {
+@mixin button-size(
+  $btn-size-padding-y, $btn-size-padding-x, $btn-size-font-size,
+  $btn-size-line-height, $btn-size-border-radius
+) {
   padding: $btn-size-padding-y $btn-size-padding-x;
 
   @include font-size($btn-size-font-size);
@@ -143,8 +145,8 @@ $btn-size-line-height, $btn-size-border-radius) {
     outline: 0;
     box-shadow: none;
 
-    $distance: calc(var(--pgn-btn-focus-width) + var(--pgn-btn-focus-gap));
-    $distance-include-btn-border: calc(#{$distance} + var(--pgn-btn-border-width));
+    $distance: calc($btn-focus-width + $btn-focus-gap);
+    $distance-include-btn-border: calc(#{$distance} + $btn-border-width);
 
     &::before {
       content: "";
@@ -153,16 +155,16 @@ $btn-size-line-height, $btn-size-border-radius) {
       right: calc(#{$distance-include-btn-border} * -1);
       bottom: calc(#{$distance-include-btn-border} * -1);
       left: calc(#{$distance-include-btn-border} * -1);
-      border: solid var(--pgn-btn-focus-width) $ring-color;
-      border-radius: calc(#{var(--pgn-btn-border-radius-base)} + #{$distance});
+      border: solid $btn-focus-width $ring-color;
+      border-radius: calc(#{$btn-border-radius} + #{$distance});
     }
 
     &.btn-lg::before {
-      border-radius: calc(#{var(--pgn-btn-border-radius-lg)} + #{$distance});
+      border-radius: calc(#{$btn-border-radius-lg} + #{$distance});
     }
 
     &.btn-sm::before {
-      border-radius: calc(#{var(--pgn-btn-border-radius-sm)} + #{$distance});
+      border-radius: calc(#{$btn-border-radius-sm} + #{$distance});
     }
 
     &:active,
@@ -197,28 +199,28 @@ $btn-size-line-height, $btn-size-border-radius) {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--pgn-btn-font-family);
-  font-weight: var(--pgn-btn-font-width);
-  color: var(--pgn-body-color);
+  font-family: $btn-font-family;
+  font-weight: $btn-font-weight;
+  color: $body-color;
   text-align: center;
   vertical-align: middle;
   user-select: none;
   background-color: transparent;
-  border: var(--pgn-btn-border-width) solid transparent;
+  border: $btn-border-width solid transparent;
 
-  @include button-size(var(--pgn-btn-padding-y-base), var(--pgn-btn-padding-x-base), var(--pgn-btn-font-size-base),
-  var(--pgn-btn-line-height-base), var(--pgn-btn-border-radius-base));
-  @include transition(var(--pgn-btn-transition));
+  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size,
+  $btn-line-height, $btn-border-radius);
+  @include transition($btn-transition);
 
   @include hover {
-    color: var(--pgn-body-color);
+    color: $body-color;
     text-decoration: none;
   }
 
   // Disabled comes first so active can properly restyle
   &.disabled,
   &:disabled {
-    opacity: var(--pgn-btn-disabled-opacity);
+    opacity: $btn-disabled-opacity;
   }
 
   // Button Icon Sizes
@@ -319,11 +321,11 @@ fieldset:disabled a.btn {
       $btn-inverse-active-bg,
       $btn-inverse-active-border,
     );
-    @include button-focus(var(--pgn-color-white));
+    @include button-focus($white);
   }
 
   .btn-inverse-outline-#{$color} {
-    $text-and-border: var(--pgn-color-white);
+    $text-and-border: $white;
 
     $color-hover: theme-color($color, "hover");
     $active-bg-color: theme-color($color, "background");
@@ -340,7 +342,7 @@ fieldset:disabled a.btn {
       $active-bg-color,
       $active-border-color,
     );
-    @include button-focus(var(--pgn-color-white));
+    @include button-focus($white);
   }
 }
 
@@ -351,9 +353,9 @@ fieldset:disabled a.btn {
 .btn-tertiary {
   $button-tertiary-background: $btn-tertiary-bg;
   $button-tertiary-border: transparent;
-  $hover-background: var(--pgn-btn-tertiary-bg-hover);
+  $hover-background: $btn-tertiary-hover-bg;
   $button-tertiary-hover-border: transparent;
-  $button-tertiary-active-bg: var(--pgn-btn-tertiary-bg-active);
+  $button-tertiary-active-bg: $btn-tertiary-active-bg;
   $button-tertiary-active-border: transparent;
 
   @include button-variant(
@@ -363,9 +365,9 @@ fieldset:disabled a.btn {
     $button-tertiary-hover-border,
     $button-tertiary-active-bg,
     $button-tertiary-active-border,
-    var(--pgn-btn-tertiary-color),
-    var(--pgn-btn-tertiary-color),
-    var(--pgn-btn-tertiary-color)
+    $btn-tertiary-color,
+    $btn-tertiary-color,
+    $btn-tertiary-color
   );
   @include button-focus(theme-color("primary", "focus"));
 }
@@ -373,9 +375,9 @@ fieldset:disabled a.btn {
 .btn-inverse-tertiary {
   $button-inverse-tertiary-bg: $btn-tertiary-bg;
   $button-inverse-tertiary-border: transparent;
-  $hover-background: var(--pgn-btn-tertiary-inverse-bg-hover);
+  $hover-background: $btn-inverse-tertiary-hover-bg;
   $button-inverse-hover-border: transparent;
-  $button-inverse-tertiary-active-bg: var(--pgn-btn-tertiary-inverse-bg-active);
+  $button-inverse-tertiary-active-bg: $btn-inverse-tertiary-active-bg;
   $button-inverse-tertiary-active-border: transparent;
 
   @include button-variant(
@@ -385,11 +387,11 @@ fieldset:disabled a.btn {
     $button-inverse-hover-border,
     $button-inverse-tertiary-active-bg,
     $button-inverse-tertiary-active-border,
-    var(--pgn-btn-tertiary-inverse-color),
-    var(--pgn-btn-tertiary-inverse-color),
-    var(--pgn-btn-tertiary-inverse-color)
+    $btn-inverse-tertiary-color,
+    $btn-inverse-tertiary-color,
+    $btn-inverse-tertiary-color
   );
-  @include button-focus(var(--pgn-color-white));
+  @include button-focus($white);
 }
 
 //
@@ -398,24 +400,24 @@ fieldset:disabled a.btn {
 
 // Make a button look and behave like a link
 .btn-link {
-  font-weight: var(--pgn-font-weight-normal);
-  color: var(--pgn-link-color);
-  text-decoration: var(--pgn-link-decoration);
+  font-weight: $font-weight-normal;
+  color: $link-color;
+  text-decoration: $link-decoration;
 
   @include hover {
-    color: var(--pgn-link-hover-color);
-    text-decoration: var(--pgn-link-hover-decoration);
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
   }
 
   &:focus,
   &.focus {
-    text-decoration: var(--pgn-link-hover-decoration);
+    text-decoration: $link-hover-decoration;
     box-shadow: none;
   }
 
   &:disabled,
   &.disabled {
-    color: var(--pgn-btn-disabled-link-color);
+    color: $btn-link-disabled-color;
     pointer-events: none;
   }
 
@@ -433,15 +435,15 @@ fieldset:disabled a.btn {
 
 .btn-lg {
   @include button-size(
-    var(--pgn-btn-padding-y-lg), var(--pgn-btn-padding-x-lg), var(--pgn-btn-font-size-lg),
-    var(--pgn-btn-line-height-lg), var(--pgn-btn-border-radius-lg)
+    $btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg,
+    $btn-line-height-lg, $btn-border-radius-lg
   );
 }
 
 .btn-sm {
   @include button-size(
-    var(--pgn-btn-padding-y-sm), var(--pgn-btn-padding-x-sm), var(--pgn-btn-font-size-sm),
-    var(--pgn-btn-line-height-sm), var(--pgn-btn-border-radius-sm)
+    $btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm,
+    $btn-line-height-sm, $btn-border-radius-sm
   );
 }
 
@@ -455,12 +457,12 @@ fieldset:disabled a.btn {
 
   // Vertically space out multiple block buttons
   + .btn-block {
-    margin-top: var(--pgn-btn-block-spacing-y);
+    margin-top: $btn-block-spacing-y;
   }
 }
 
 .btn-inline {
-  line-height: calc(#{var(--pgn-line-height-base)}em - 2 * #{var(--pgn-btn-border-width)});
+  line-height: calc(#{$line-height-base}em - 2 * #{$btn-border-width});
   font-size: inherit;
   vertical-align: bottom;
   padding: 0 .25em;
@@ -483,11 +485,11 @@ input[type="button"] {
 
 [dir="rtl"] .btn-group > .btn:not(:first-child),
 [dir="rtl"] .btn-group > .btn-group:not(:first-child) > .btn {
-  border-radius: var(--pgn-btn-border-radius-base) 0 0 var(--pgn-btn-border-radius-base);
+  border-radius: $btn-border-radius 0 0 $btn-border-radius;
 }
 
 [dir="rtl"] .btn-group > .btn:first-child,
 [dir="rtl"] .btn-group > .btn-group:first-child > .btn {
-  border-top-right-radius: var(--pgn-btn-border-radius-base);
-  border-bottom-right-radius: var(--pgn-btn-border-radius-base);
+  border-top-right-radius: $btn-border-radius;
+  border-bottom-right-radius: $btn-border-radius;
 }

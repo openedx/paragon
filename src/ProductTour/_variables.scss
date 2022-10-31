@@ -1,15 +1,19 @@
 // Checkpoints
 
-$checkpoint-background-color:       var(--pgn-color-light-300) !default;
+$checkpoint-background-color:       $light-300 !default;
 
-$checkpoint-body-color:             var(--pgn-color-gray-700);
+$checkpoint-body-color:             $gray-700;
 
-$checkpoint-border-color:           var(--pgn-color-brand-base) !default;
+$checkpoint-border-color:           $brand !default;
 $checkpoint-border-width:           8px !default;
 
-$checkpoint-breadcrumb-color:       var(--pgn-color-primary-base) !default;
+$checkpoint-breadcrumb-color:       $primary !default;
 
 $checkpoint-arrow-width:            15px !default;
 $checkpoint-max-width:              480px !default;
 
 $checkpoint-z-index:                1060 !default;
+
+$checkpoint-arrow-top-color: solid $checkpoint-arrow-width $checkpoint-border-color;
+$checkpoint-arrow-default-color: solid $checkpoint-arrow-width $checkpoint-background-color;
+$checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;

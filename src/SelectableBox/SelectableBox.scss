@@ -3,7 +3,7 @@
 .pgn__selectable_box-set {
   display: grid;
   grid-auto-rows: 1fr;
-  grid-gap: var(--pgn-selectable-box-box-space);
+  grid-gap: $selectable-box-space;
 
   @for $i from $min-cols-number through $max-cols-number {
     &.pgn__selectable_box-set--#{$i} {
@@ -19,20 +19,20 @@
 .pgn__selectable_box {
   position: relative;
   height: 100%;
-  padding: var(--pgn-selectable-box-padding);
-  box-shadow: var(--pgn-box-shadow-level-1);
-  border-radius: var(--pgn-selectable-box-border-radius);
+  padding: $selectable-box-padding;
+  box-shadow: $level-1-box-shadow;
+  border-radius: $selectable-box-border-radius;
   text-align: start;
 
   &:focus-visible {
-    outline: 1px solid var(--pgn-color-primary-700);
+    outline: 1px solid $primary-700;
   }
 
   .pgn__form-radio,
   .pgn__form-checkbox {
     position: absolute;
-    top: var(--pgn-selectable-box-padding);
-    inset-inline-end: var(--pgn-selectable-box-padding);
+    top: $selectable-box-padding;
+    inset-inline-end: $selectable-box-padding;
 
     input {
       margin-inline-end: 0;
@@ -45,9 +45,9 @@
 }
 
 .pgn__selectable_box-active {
-  outline: 2px solid var(--pgn-color-primary-500);
+  outline: 2px solid $primary-500;
 }
 
 .pgn__selectable_box-invalid {
-  outline: 2px solid var(--pgn-color-danger-300);
+  outline: 2px solid $danger-300;
 }

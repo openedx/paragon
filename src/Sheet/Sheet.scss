@@ -10,7 +10,7 @@
     display: none;
   }
 
-  z-index: var(--pgn-sheet-zindex-backdrop);
+  z-index: $zindex-sheet-backdrop;
 }
 
 %component-left {
@@ -35,11 +35,11 @@
   position: fixed;
   padding: 1.25rem;
   background-color: white;
-  z-index: var(--pgn-sheet-zindex-main);
+  z-index: $zindex-sheet;
 
   &.pgn__sheet__dark {
-    background-color: var(--pgn-color-dark-500);
-    color: var(--pgn-color-light-300);
+    background-color: $dark-500;
+    color: $light-300;
   }
 
   &.bottom {

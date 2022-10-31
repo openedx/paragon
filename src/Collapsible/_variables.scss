@@ -2,8 +2,8 @@
 
 $collapsible-card-spacer-y:               .5rem !default;
 $collapsible-card-spacer-x:               .5rem !default;
-$collapsible-card-spacer-y-lg:         var(--pgn-card-spacer-y) !default;
-$collapsible-card-spacer-x-lg:         var(--pgn-card-spacer-x) !default;
+$collapsible-card-spacer-y-lg:         $card-spacer-y !default;
+$collapsible-card-spacer-x-lg:         $card-spacer-x !default;
 $collapsible-card-body-spacer-left:        .75rem !default;
 $collapsible-card-spacer-icon:             2.5rem !default;
 

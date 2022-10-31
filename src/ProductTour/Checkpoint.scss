@@ -1,20 +1,14 @@
 @import "variables";
 
-$checkpoint-arrow-top-color: solid var(--pgn-product-tour-checkpoint-width-arrow)
-  var(--pgn-product-tour-checkpoint-color-border);
-$checkpoint-arrow-default-color: solid var(--pgn-product-tour-checkpoint-width-arrow)
-  var(--pgn-product-tour-checkpoint-color-background);
-$checkpoint-arrow-transparent: solid var(--pgn-product-tour-checkpoint-width-arrow) transparent;
-
 .pgn__checkpoint {
   position: absolute;
-  background: var(--pgn-product-tour-checkpoint-color-background);
-  border-top: var(--pgn-product-tour-checkpoint-width-border) solid var(--pgn-product-tour-checkpoint-color-border);
-  border-radius: var(--pgn-border-radius-base);
+  background: $checkpoint-background-color;
+  border-top: $checkpoint-border-width solid $checkpoint-border-color;
+  border-radius: $border-radius;
   padding: map_get($spacers, 4);
   box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .3);
-  z-index: var(--pgn-product-tour-checkpoint-zindex);
-  max-width: var(--pgn-product-tour-checkpoint-width-max);
+  z-index: $checkpoint-z-index;
+  max-width: $checkpoint-max-width;
 
   @media (max-width: map-get($grid-breakpoints, "md")) {
     min-width: 90%;
@@ -54,11 +48,11 @@ $checkpoint-arrow-transparent: solid var(--pgn-product-tour-checkpoint-width-arr
     border-radius: 50%;
 
     &.pgn__checkpoint-breadcrumb_active {
-      background: var(--pgn-product-tour-checkpoint-color-breadcrumb);
+      background: $checkpoint-breadcrumb-color;
     }
 
     &.pgn__checkpoint-breadcrumb_inactive {
-      border: 1px solid var(--pgn-product-tour-checkpoint-color-breadcrumb);
+      border: 1px solid $checkpoint-breadcrumb-color;
       background: transparent;
     }
 
@@ -82,7 +76,7 @@ $checkpoint-arrow-transparent: solid var(--pgn-product-tour-checkpoint-width-arr
   }
 
   .pgn__checkpoint-body {
-    color: var(--pgn-product-tour-checkpoint-color-body);
+    color: $checkpoint-body-color;
     margin-bottom: map_get($spacers, 3\.5);
     text-align: start;
   }
@@ -94,25 +88,25 @@ $checkpoint-arrow-transparent: solid var(--pgn-product-tour-checkpoint-width-arr
   }
 
   #pgn__checkpoint-title {
-    font-size: var(--pgn-font-size-h3);
+    font-size: $h3-font-size;
     margin-inline-end: map_get($spacers, 2\.5);
     margin-bottom: 0;
   }
 }
 
 .pgn__checkpoint[data-popper-placement^="top"] > #pgn__checkpoint-arrow {
-  left: calc(var(--pgn-product-tour-checkpoint-width-arrow) * -1) !important; // Override PopperJS arrow placement
+  left: calc($checkpoint-arrow-width * -1) !important; // Override PopperJS arrow placement
   bottom: 1px;
 
   [dir="rtl"] & {
-    left: var(--pgn-product-tour-checkpoint-width-arrow) !important;
+    left: $checkpoint-arrow-width !important;
   }
 
   &::after {
-    border-bottom: var(--pgn-product-tour-checkpoint-arrow-transparent);
-    border-top: var(--pgn-product-tour-checkpoint-arrow-color-default);
-    border-left: var(--pgn-product-tour-checkpoint-arrow-transparent);
-    border-right: var(--pgn-product-tour-checkpoint-arrow-transparent);
+    border-bottom: $checkpoint-arrow-transparent;
+    border-top: $checkpoint-arrow-default-color;
+    border-left: $checkpoint-arrow-transparent;
+    border-right: $checkpoint-arrow-transparent;
     filter: drop-shadow(0 4px 2px rgba(0, 0, 0, .1));
     -webkit-filter: drop-shadow(0 4px 2px rgba(0, 0, 0, .1));
   }
@@ -120,39 +114,39 @@ $checkpoint-arrow-transparent: solid var(--pgn-product-tour-checkpoint-width-arr
 
 .pgn__checkpoint[data-popper-placement^="bottom"] > #pgn__checkpoint-arrow {
   top: -36px;
-  left: calc(var(--pgn-product-tour-checkpoint-width-arrow) * -1) !important; // Override PopperJS arrow placement
+  left: calc($checkpoint-arrow-width * -1) !important; // Override PopperJS arrow placement
 
   &::after {
-    border-bottom: var(--pgn-product-tour-checkpoint-arrow-color-top);
-    border-top: var(--pgn-product-tour-checkpoint-arrow-transparent);
-    border-left: var(--pgn-product-tour-checkpoint-arrow-transparent);
-    border-right: var(--pgn-product-tour-checkpoint-arrow-transparent);
+    border-bottom: $checkpoint-arrow-top-color;
+    border-top: $checkpoint-arrow-transparent;
+    border-left: $checkpoint-arrow-transparent;
+    border-right: $checkpoint-arrow-transparent;
   }
 }
 
 .pgn__checkpoint[data-popper-placement^="left"] > #pgn__checkpoint-arrow {
-  top: calc(var(--pgn-product-tour-checkpoint-width-arrow) * -1) !important; // Override PopperJS arrow placement
+  top: calc($checkpoint-arrow-width * -1) !important; // Override PopperJS arrow placement
   right: 1px;
 
   &::after {
-    border-bottom: var(--pgn-product-tour-checkpoint-arrow-transparent);
-    border-top: var(--pgn-product-tour-checkpoint-arrow-transparent);
-    border-left: var(--pgn-product-tour-checkpoint-arrow-color-default);
-    border-right: var(--pgn-product-tour-checkpoint-arrow-transparent);
+    border-bottom: $checkpoint-arrow-transparent;
+    border-top: $checkpoint-arrow-transparent;
+    border-left: $checkpoint-arrow-default-color;
+    border-right: $checkpoint-arrow-transparent;
     filter: drop-shadow(3px 1px 2px rgba(0, 0, 0, .1));
   }
 }
 
 .pgn__checkpoint[data-popper-placement^="right"] > #pgn__checkpoint-arrow {
-  top: calc(var(--pgn-product-tour-checkpoint-width-arrow) * -1) !important; // Override PopperJS arrow placement
+  top: calc($checkpoint-arrow-width * -1) !important; // Override PopperJS arrow placement
   left: 1px;
 
   &::after {
-    left: calc(-2 * var(--pgn-product-tour-checkpoint-width-arrow));
-    border-bottom: var(--pgn-product-tour-checkpoint-arrow-transparent);
-    border-top: var(--pgn-product-tour-checkpoint-arrow-transparent);
-    border-left: var(--pgn-product-tour-checkpoint-arrow-transparent);
-    border-right: var(--pgn-product-tour-checkpoint-arrow-color-default);
+    left: calc(-2 * $checkpoint-arrow-width);
+    border-bottom: $checkpoint-arrow-transparent;
+    border-top: $checkpoint-arrow-transparent;
+    border-left: $checkpoint-arrow-transparent;
+    border-right: $checkpoint-arrow-default-color;
     filter: drop-shadow(-3px 1px 2px rgba(0, 0, 0, .1));
   }
 }

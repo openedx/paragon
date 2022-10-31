@@ -1,16 +1,16 @@
 .close {
   float: right;
 
-  @include font-size(var(--pgn-close-button-font-size));
+  @include font-size($close-font-size);
 
-  font-weight: var(--pgn-close-button-font-weight);
+  font-weight: $close-font-weight;
   line-height: 1;
-  color: var(--pgn-close-button-color);
-  text-shadow: var(--pgn-close-button-text-shadow);
+  color: $close-color;
+  text-shadow: $close-text-shadow;
   opacity: .5;
 
   @include hover() {
-    color: var(--pgn-close-button-color);
+    color: $close-color;
     text-decoration: none;
   }
 

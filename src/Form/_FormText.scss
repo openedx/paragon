@@ -1,5 +1,5 @@
 .pgn__form-text {
-  font-size: var(--pgn-font-size-small-base);
+  font-size: $small-font-size;
   align-items: center;
 
   .pgn__icon {
@@ -21,7 +21,7 @@
 }
 
 .pgn__form-text-default {
-  color: var(--pgn-text-muted);
+  color: $text-muted;
 }
 
 .pgn__form-text-valid {
@@ -33,12 +33,12 @@
 }
 
 .pgn__form-text-warning {
-  color: var(--pgn-color-gray-900);
+  color: $gray-900;
 }
 
 .pgn__form-text-criteria-empty {
   .pgn__icon {
-    color: var(--pgn-text-muted);
+    color: $text-muted;
   }
 }
 

@@ -21,32 +21,32 @@ $pagination-toggle-border-sm:       .25rem !default;
 $pagination-secondary-height:       2.75rem !default;
 $pagination-secondary-height-sm:    2.25rem !default;
 
-$pagination-color:                  var(--pgn-link-color) !default;
-$pagination-color-inverse:          var(--pgn-color-white) !default;
-$pagination-bg:                     var(--pgn-color-white) !default;
-$pagination-border-width:           var(--pgn-border-width) !default;
+$pagination-color:                  $link-color !default;
+$pagination-color-inverse:          $white !default;
+$pagination-bg:                     $white !default;
+$pagination-border-width:           $border-width !default;
 $pagination-border-color:           theme-color("gray", "border") !default;
 
-$pagination-focus-box-shadow:       var(--pgn-input-btn-focus-box-shadow) !default;
+$pagination-focus-box-shadow:       $input-btn-focus-box-shadow !default;
 $pagination-focus-outline:          0 !default;
 $pagination-focus-border-width:     .125rem !default;
-$pagination-focus-color:            var(--pgn-color-primary-500) !default;
-$pagination-focus-color-text:       var(--pgn-color-black) !default;
+$pagination-focus-color:            $primary-500 !default;
+$pagination-focus-color-text:       $black !default;
 
-$pagination-hover-color:            var(--pgn-link-hover-color) !default;
+$pagination-hover-color:            $link-hover-color !default;
 $pagination-hover-bg:               theme-color("gray", "background") !default;
 $pagination-hover-border-color:     theme-color("gray", "border") !default;
 
-$pagination-active-color:           var(--pgn-component-active-color) !default;
-$pagination-active-bg:              var(--pgn-component-active-bg) !default;
-$pagination-active-border-color:    var(--pgn-pagination-bg-active) !default;
+$pagination-active-color:           $component-active-color !default;
+$pagination-active-bg:              $component-active-bg !default;
+$pagination-active-border-color:    $pagination-active-bg !default;
 
 $pagination-disabled-color:         theme-color("gray", "light-text") !default;
-$pagination-disabled-bg:            var(--pgn-color-white) !default;
+$pagination-disabled-bg:            $white !default;
 $pagination-disabled-border-color:  theme-color("gray", "disabled-border") !default;
 
-$pagination-border-radius-sm:       var(--pgn-border-radius-sm) !default;
-$pagination-border-radius-lg:       var(--pgn-border-radius-lg) !default;
+$pagination-border-radius-sm:       $border-radius-sm !default;
+$pagination-border-radius-lg:       $border-radius-lg !default;
 
 $pagination-reduced-dropdown-max-height: 60vh !default;
 $pagination-reduced-dropdown-min-width: 6rem !default;

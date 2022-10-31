@@ -11,11 +11,11 @@ $carousel-indicator-width:           30px !default;
 $carousel-indicator-height:          3px !default;
 $carousel-indicator-hit-area-height: 10px !default;
 $carousel-indicator-spacer:          3px !default;
-$carousel-indicator-active-bg:       var(--pgn-color-white) !default;
+$carousel-indicator-active-bg:       $white !default;
 $carousel-indicator-transition:      opacity .6s ease !default;
 
 $carousel-caption-width:             70% !default;
-$carousel-caption-color:             var(--pgn-color-white) !default;
+$carousel-caption-color:             $white !default;
 
 $carousel-control-icon-width:        20px !default;
 

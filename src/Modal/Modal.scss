@@ -13,15 +13,15 @@
   position: fixed;
   top: 0;
   width: 100vw;
-  z-index: var(--pgn-modal-zindex);
+  z-index: $zindex-modal;
   -webkit-overflow-scrolling: touch;
 }
 
 .pgn__modal-backdrop {
-  background: var(--pgn-modal-backdrop-bg);
+  background: $modal-backdrop-bg;
   bottom: 0;
   left: 0;
-  opacity: var(--pgn-modal-backdrop-opacity);
+  opacity: $modal-backdrop-opacity;
   position: fixed;
   right: 0;
   top: 0;
@@ -86,15 +86,15 @@
 .modal-dialog {
   height: 100%;
   margin: auto;
-  padding: calc(var(--pgn-spacer-base) / 2);
+  padding: calc($spacer / 2);
 
   @media (min-width: map-get($grid-breakpoints, "sm")) {
-    padding: var(--pgn-spacer-base);
+    padding: $spacer;
   }
 }
 
 .modal-content {
-  max-height: calc(100vh - (#{var(--pgn-spacer-base)} * 2));
+  max-height: calc(100vh - (#{$spacer} * 2));
 
   &:focus {
     outline: 1px dotted;
@@ -129,7 +129,7 @@
   }
 
   &::before {
-    border-top-color: rgba(var(--pgn-color-black), 20%);
+    border-top-color: rgba($black, 20%);
   }
 }
 
@@ -164,8 +164,8 @@
 .pgn__modal-popup__arrow::after,
 .pgn__modal-popup__arrow-top-start::after,
 .pgn__modal-popup__arrow-top::after {
-  bottom: var(--pgn-border-width);
-  border-top-color: var(--pgn-color-white);
+  bottom: $border-width;
+  border-top-color: $white;
 }
 
 [data-popper-placement^="right"] .pgn__modal-popup__arrow-auto,

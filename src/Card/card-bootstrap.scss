@@ -2,14 +2,14 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-  height: var(--pgn-card-height-base);
+  height: $card-height;
   word-wrap: break-word;
-  background-color: var(--pgn-card-bg);
+  background-color: $card-bg;
   background-clip: border-box;
-  border: var(--pgn-card-border-width) solid var(--pgn-card-border-color-base);
+  border: $card-border-width solid $card-border-color;
   position: relative;
 
-  @include border-radius(var(--pgn-card-border-radius-base));
+  @include border-radius($card-border-radius);
 
   > hr {
     margin-right: 0;
@@ -42,16 +42,16 @@
 .card-body {
   flex: 1 1 auto;
   min-height: 1px;
-  padding: var(--pgn-card-spacer-x);
-  color: var(--pgn-card-color);
+  padding: $card-spacer-x;
+  color: $card-color;
 }
 
 .card-title {
-  margin-bottom: var(--pgn-card-spacer-y);
+  margin-bottom: $card-spacer-y;
 }
 
 .card-subtitle {
-  margin-top: calc(var(--pgn-card-spacer-y) * -.5);
+  margin-top: calc($card-spacer-y * -.5);
   margin-bottom: 0;
 }
 
@@ -65,17 +65,17 @@
   }
 
   + .card-link {
-    margin-left: var(--pgn-card-spacer-x);
+    margin-left: $card-spacer-x;
   }
 }
 
 // Optional textual caps
 .card-header {
-  padding: var(--pgn-card-spacer-y) var(--pgn-card-spacer-x);
+  padding: $card-spacer-y $card-spacer-x;
   margin-bottom: 0; // Removes the default margin-bottom of <hN>
-  color: var(--pgn-card-cap-color);
-  background-color: var(--pgn-card-cap-bg);
-  border-bottom: var(--pgn-card-border-width) solid var(--pgn-card-border-color-base);
+  color: $card-cap-color;
+  background-color: $card-cap-bg;
+  border-bottom: $card-border-width solid $card-border-color;
 
   &:first-child {
     @include border-radius($card-inner-border-radius $card-inner-border-radius 0 0);
@@ -83,10 +83,10 @@
 }
 
 .card-footer {
-  padding: var(--pgn-card-spacer-y) var(--pgn-card-spacer-x);
-  color: var(--pgn-card-cap-color);
-  background-color: var(--pgn-card-cap-bg);
-  border-top: var(--pgn-card-border-width) solid var(--pgn-card-border-color-base);
+  padding: $card-spacer-y $card-spacer-x;
+  color: $card-cap-color;
+  background-color: $card-cap-bg;
+  border-top: $card-border-width solid $card-border-color;
 
   &:last-child {
     @include border-radius(0 0 $card-inner-border-radius $card-inner-border-radius);
@@ -95,15 +95,15 @@
 
 // Header navs
 .card-header-tabs {
-  margin-right: calc(var(--pgn-card-spacer-x) * -.5);
-  margin-bottom: calc(var(--pgn-card-spacer-y) * -1);
-  margin-left: calc(var(--pgn-card-spacer-x) * -.5);
+  margin-right: calc($card-spacer-x * -.5);
+  margin-bottom: calc($card-spacer-y * -1);
+  margin-left: calc($card-spacer-x * -.5);
   border-bottom: 0;
 }
 
 .card-header-pills {
-  margin-right: calc(var(--pgn-card-spacer-x) * -.5);
-  margin-left: calc(var(--pgn-card-spacer-x) * .5);
+  margin-right: calc($card-spacer-x * -.5);
+  margin-left: calc($card-spacer-x * .5);
 }
 
 // Card image
@@ -113,7 +113,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  padding: var(--pgn-card-image-overlay-padding);
+  padding: $card-img-overlay-padding;
 
   @include border-radius($card-inner-border-radius);
 }
@@ -138,20 +138,20 @@
 // Card deck
 .card-deck {
   .card {
-    margin-bottom: var(--pgn-card-margin-deck);
+    margin-bottom: $card-deck-margin;
   }
 
   @include media-breakpoint-up(sm) {
     display: flex;
     flex-flow: row wrap;
-    margin-right: calc(var(--pgn-card-margin-deck) * -1);
-    margin-left: calc(var(--pgn-card-margin-deck) * -1);
+    margin-right: calc($card-deck-margin * -1);
+    margin-left: calc($card-deck-margin * -1);
 
     .card {
       flex: 1 0 0%;
-      margin-right: var(--pgn-card-margin-deck);
+      margin-right: $card-deck-margin;
       margin-bottom: 0; // Override the default
-      margin-left: var(--pgn-card-margin-deck);
+      margin-left: $card-deck-margin;
     }
   }
 }
@@ -159,7 +159,7 @@
 // Card groups
 .card-group {
   > .card {
-    margin-bottom: var(--pgn-card-margin-group);
+    margin-bottom: $card-group-margin;
   }
 
   @include media-breakpoint-up(sm) {
@@ -212,12 +212,12 @@
 // Columns
 .card-columns {
   .card {
-    margin-bottom: var(--pgn-card-columns-margin);
+    margin-bottom: $card-columns-margin;
   }
 
   @include media-breakpoint-up(sm) {
-    column-count: var(--pgn-card-columns-count);
-    column-gap: var(--pgn-card-columns-gap);
+    column-count: $card-columns-count;
+    column-gap: $card-columns-gap;
     orphans: 1;
     widows: 1;
 
@@ -248,7 +248,7 @@
     > .card-header {
       @include border-radius(0);
 
-      margin-bottom: calc(var(--pgn-card-border-width) * -1);
+      margin-bottom: calc($card-border-width * -1);
     }
   }
 }

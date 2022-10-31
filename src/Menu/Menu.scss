@@ -10,16 +10,16 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-family: var(--pgn-btn-font-family);
-  font-weight: var(--pgn-btn-font-width);
-  color: var(--pgn-body-color);
+  font-family: $btn-font-family;
+  font-weight: $btn-font-weight;
+  color: $body-color;
   text-align: center;
   vertical-align: middle;
   user-select: none;
   background-color: transparent;
-  border: var(--pgn-btn-border-width) solid transparent;
-  padding: var(--pgn-btn-padding-y-base) var(--pgn-btn-padding-x-base);
-  font-size: var(--pgn-btn-font-size-base);
+  border: $btn-border-width solid transparent;
+  padding: $btn-padding-y $btn-padding-x;
+  font-size: $btn-font-size;
   height: 48px;
   border-radius: 0;
 
@@ -29,31 +29,31 @@
 
   @include hover {
     text-decoration: none;
-    color: var(--pgn-btn-tertiary-color);
-    border-color: var(--pgn-menu-border-hover);
-    background: var(--pgn-btn-tertiary-bg-hover);
+    color: $btn-tertiary-color;
+    border-color: $hover-border;
+    background: $btn-tertiary-hover-bg;
   }
 
   // Disabled comes first so active can properly restyle
   &.disabled,
   &:disabled {
-    opacity: var(--pgn-btn-disabled-opacity);
+    opacity: $btn-disabled-opacity;
   }
 
   &:not(:disabled):not(.disabled):active,
   &:not(:disabled):not(.disabled).active,
   .show > &.dropdown-toggle {
-    color: var(--pgn-btn-tertiary-color);
-    background-color: var(--pgn-menu-background-active);
-    border-color: var(--pgn-menu-border-active);
+    color: $btn-tertiary-color;
+    background-color: $active-background;
+    border-color: $active-border;
   }
 
   &.focus,
   &:focus {
-    font-weight: var(--pgn-font-weight-bolder);
-    color: var(--pgn-btn-tertiary-color);
-    background-color: var(--pgn-menu-background-active);
-    border-color: var(--pgn-menu-border-active);
+    font-weight: $font-weight-bolder;
+    color: $btn-tertiary-color;
+    background-color: $active-background;
+    border-color: $active-border;
   }
 
   .btn-icon-before {
@@ -79,8 +79,8 @@
 
 .pgn__menu {
   border-radius: .25em;
-  box-shadow: var(--pgn-box-shadow-base);
-  background-color: var(--pgn-color-white);
+  box-shadow: $box-shadow;
+  background-color: $white;
   overflow: auto;
   max-height: 264px;
 }
@@ -95,14 +95,14 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  background: var(--pgn-color-white);
+  background: $white;
   box-sizing: border-box;
-  color: var(--pgn-color-dark-base);
+  color: $dark;
 
   @include hover {
-    color: var(--pgn-color-white);
-    background: var(--pgn-color-primary-base);
-    border: 1px solid var(--pgn-color-white);
+    color: $white;
+    background: $primary;
+    border: 1px solid $white;
     box-sizing: border-box;
   }
 }

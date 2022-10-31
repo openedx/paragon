@@ -11,7 +11,7 @@
   }
 
   & > * + * {
-    margin-inline-start: var(--pgn-action-row-gap-x);
+    margin-inline-start: $action-row-gap-x;
   }
 }
 
@@ -27,7 +27,7 @@
   }
 
   & > * + * {
-    margin-bottom: var(--pgn-action-row-gap-y);
+    margin-bottom: $action-row-gap-y;
   }
 }
 

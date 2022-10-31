@@ -76,21 +76,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--pgn-carousel-control-width-base);
+  width: $carousel-control-width;
   padding: 0;
   color: var(--pgn-carousel-control-color);
   text-align: center;
   background: none;
   border: 0;
-  opacity: var(--pgn-carousel-control-opacity-base);
+  opacity: $carousel-control-opacity;
 
-  @include transition(var(--pgn-carousel-control-transition));
+  @include transition($carousel-control-transition);
 
   @include hover-focus() {
     color: var(--pgn-carousel-control-color);
     text-decoration: none;
     outline: 0;
-    opacity: var(--pgn-carousel-control-opacity-hover);
+    opacity: $carousel-control-hover-opacity;
   }
 }
 
@@ -98,7 +98,7 @@
   left: 0;
 
   @if $enable-gradients {
-    background-image: linear-gradient(90deg, rgba(var(--pgn-color-black), .25), rgba(var(--pgn-color-black), .001));
+    background-image: linear-gradient(90deg, rgba($black, .25), rgba($black, .001));
   }
 }
 
@@ -106,7 +106,7 @@
   right: 0;
 
   @if $enable-gradients {
-    background-image: linear-gradient(270deg, rgba(var(--pgn-color-black), .25), rgba(var(--pgn-color-black), .001));
+    background-image: linear-gradient(270deg, rgba($black, .25), rgba($black, .001));
   }
 }
 
@@ -114,8 +114,8 @@
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   display: inline-block;
-  width: var(--pgn-carousel-control-width-icon);
-  height: var(--pgn-carousel-control-width-icon);
+  width: $carousel-control-icon-width;
+  height: $carousel-control-icon-width;
   background: 50% / 100% 100% no-repeat;
 }
 
@@ -140,26 +140,26 @@
   display: flex;
   justify-content: center;
   padding-left: 0;
-  margin-right: var(--pgn-carousel-control-width-base);
-  margin-left: var(--pgn-carousel-control-width-base);
+  margin-right: $carousel-control-width;
+  margin-left: $carousel-control-width;
   list-style: none;
 
   li {
     box-sizing: content-box;
     flex: 0 1 auto;
-    width: var(--pgn-carousel-indicator-width);
-    height: var(--pgn-carousel-indicator-height-base);
-    margin-right: var(--pgn-carousel-indicator-spacer);
-    margin-left: var(--pgn-carousel-indicator-spacer);
+    width: $carousel-indicator-width;
+    height: $carousel-indicator-height;
+    margin-right: $carousel-indicator-spacer;
+    margin-left: $carousel-indicator-spacer;
     text-indent: -999px;
     cursor: pointer;
-    background-color: var(--pgn-carousel-indicator-active-bg);
+    background-color: $carousel-indicator-active-bg;
     background-clip: padding-box;
-    border-top: var(--pgn-carousel-indicator-height-area-hit) solid transparent;
-    border-bottom: var(--pgn-carousel-indicator-height-area-hit) solid transparent;
+    border-top: $carousel-indicator-hit-area-height solid transparent;
+    border-bottom: $carousel-indicator-hit-area-height solid transparent;
     opacity: .5;
 
-    @include transition(var(--pgn-carousel-indicator-transition));
+    @include transition($carousel-indicator-transition);
   }
 
   .active {
@@ -170,12 +170,12 @@
 // Optional captions
 .carousel-caption {
   position: absolute;
-  right: calc((calc(100% - var(--pgn-carousel-caption-width))) * .5);
+  right: calc((calc(100% - $carousel-caption-width)) * .5);
   bottom: 20px;
-  left: calc((calc(100% - var(--pgn-carousel-caption-width))) * .5);
+  left: calc((calc(100% - $carousel-caption-width)) * .5);
   z-index: 10;
   padding-top: 20px;
   padding-bottom: 20px;
-  color: var(--pgn-carousel-caption-color);
+  color: $carousel-caption-color;
   text-align: center;
 }

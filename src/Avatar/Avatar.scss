@@ -1,46 +1,46 @@
 @import "variables";
 
 .pgn__avatar {
-  border-radius: var(--pgn-avatar-border-radius);
-  border: var(--pgn-avatar-border-base);
+  border-radius: $avatar-border-radius;
+  border: $avatar-border;
   display: inline-block;
-  height: var(--pgn-avatar-size-base);
+  height: $avatar-size;
   overflow: hidden;
-  width: var(--pgn-avatar-size-base);
+  width: $avatar-size;
   object-fit: cover;
 
   &.pgn__avatar-xs {
-    height: var(--pgn-avatar-size-xs);
-    width: var(--pgn-avatar-size-xs);
+    height: $avatar-size-xs;
+    width: $avatar-size-xs;
   }
 
   &.pgn__avatar-sm {
-    height: var(--pgn-avatar-size-sm);
-    width: var(--pgn-avatar-size-sm);
+    height: $avatar-size-sm;
+    width: $avatar-size-sm;
   }
 
   &.pgn__avatar-md {
-    height: var(--pgn-avatar-size-base);
-    width: var(--pgn-avatar-size-base);
+    height: $avatar-size;
+    width: $avatar-size;
   }
 
   &.pgn__avatar-lg {
-    height: var(--pgn-avatar-size-lg);
-    width: var(--pgn-avatar-size-lg);
+    height: $avatar-size-lg;
+    width: $avatar-size-lg;
   }
 
   &.pgn__avatar-xl {
-    height: var(--pgn-avatar-size-xl);
-    width: var(--pgn-avatar-size-xl);
+    height: $avatar-size-xl;
+    width: $avatar-size-xl;
   }
 
   &.pgn__avatar-xxl {
-    height: var(--pgn-avatar-size-xxl);
-    width: var(--pgn-avatar-size-xxl);
+    height: $avatar-size-xxl;
+    width: $avatar-size-xxl;
   }
 
   &.pgn__avatar-huge {
-    height: var(--pgn-avatar-size-huge);
-    width: var(--pgn-avatar-size-huge);
+    height: $avatar-size-huge;
+    width: $avatar-size-huge;
   }
 }

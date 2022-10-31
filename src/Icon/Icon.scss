@@ -8,23 +8,23 @@
   flex-shrink: 0;
 
   &.pgn__icon__inline {
-    width: var(--pgn-icon-inline);
-    height: var(--pgn-icon-inline);
+    width: $icon-inline;
+    height: $icon-inline;
   }
 
   &.pgn__icon__sm {
-    width: var(--pgn-icon-sm);
-    height: var(--pgn-icon-sm);
+    width: $icon-sm;
+    height: $icon-sm;
   }
 
   &.pgn__icon__md {
-    width: var(--pgn-icon-md);
-    height: var(--pgn-icon-md);
+    width: $icon-md;
+    height: $icon-md;
   }
 
   &.pgn__icon__lg {
-    width: var(--pgn-icon-lg);
-    height: var(--pgn-icon-lg);
+    width: $icon-lg;
+    height: $icon-lg;
   }
 }
 

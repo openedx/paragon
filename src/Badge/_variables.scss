@@ -1,13 +1,13 @@
 // Badges
 
 $badge-font-size:                   75% !default;
-$badge-font-weight:                 var(--pgn-font-weight-bold) !default;
+$badge-font-weight:                 $font-weight-bold !default;
 $badge-padding-y:                   .125rem !default;
 $badge-padding-x:                   .5rem !default;
 $badge-border-radius:               .25rem !default;
 
 $badge-transition:                  none !default;
-$badge-focus-width:                 var(--pgn-input-btn-focus-width) !default;
+$badge-focus-width:                 $input-btn-focus-width !default;
 
 $badge-pill-padding-x:              .6em !default;
 

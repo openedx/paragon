@@ -1,17 +1,17 @@
 .badge {
   display: inline-block;
-  padding: var(--pgn-badge-padding-y) var(--pgn-badge-padding-x-base);
+  padding: $badge-padding-y $badge-padding-x;
 
-  @include font-size(var(--pgn-badge-font-size));
+  @include font-size($badge-font-size);
 
-  font-weight: var(--pgn-badge-font-weight);
+  font-weight: $badge-font-weight;
   line-height: 1;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
 
-  @include border-radius(var(--pgn-badge-border-radius-base));
-  @include transition(var(--pgn-badge-transition));
+  @include border-radius($badge-border-radius);
+  @include transition($badge-transition);
 
   @at-root a#{&} {
     @include hover-focus() {
@@ -30,10 +30,10 @@
 }
 
 .badge-pill {
-  padding-right: var(--pgn-badge-padding-x-pill);
-  padding-left: var(--pgn-badge-padding-x-pill);
+  padding-right: $badge-pill-padding-x;
+  padding-left: $badge-pill-padding-x;
 
-  @include border-radius(var(--pgn-badge-border-radius-pill));
+  @include border-radius($badge-pill-border-radius);
 }
 
 @each $color, $value in $theme-colors {

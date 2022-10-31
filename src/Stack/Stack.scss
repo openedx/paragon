@@ -4,7 +4,7 @@
 .pgn__hstack {
   display: flex;
   align-self: stretch;
-  gap: var(--pgn-stack-gap);
+  gap: $stack-gap;
 
   @each $level, $space in $spacers {
     &.pgn__stack-gap--#{$level} {

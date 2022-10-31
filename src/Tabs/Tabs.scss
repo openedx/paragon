@@ -11,9 +11,9 @@
     position: absolute;
     top: 0;
     right: 0;
-    min-height: var(--pgn-tabs-notification-height);
-    min-width: var(--pgn-tabs-notification-width);
-    font-size: var(--pgn-tabs-notification-font-size);
+    min-height: $tab-notification-height;
+    min-width: $tab-notification-width;
+    font-size: $tab-notification-font-size;
   }
 }
 
