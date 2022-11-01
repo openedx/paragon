@@ -113,7 +113,6 @@
         "source": "$input-transition"
       },
       "check": {
-        "gutter": { "value": "1.25rem", "themeable": true, "source": "$form-check-input-gutter" },
         "margin": {
           "x": {
             "base": { "value": ".25rem", "themeable": true, "source": "$form-check-input-margin-x" },
@@ -155,11 +154,6 @@
           "focus": { "value": ".0625rem", "themeable": true, "source": "$form-check-focus-border-radius" }
         },
         "width": { "value": ".125rem", "themeable": true, "source": "$form-check-border-width" }
-      }
-    },
-    "grid": {
-      "gutter": {
-        "width": { "value": "10px", "themeable": true, "source": "$form-grid-gutter-width" }
       }
     },
     "group": {

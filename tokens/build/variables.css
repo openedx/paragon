@@ -111,7 +111,6 @@
   --pgn-border-radius-base: .375rem;
   --pgn-border-width: 1px;
   --pgn-tooltip-arrow-height: .4rem;
-  --pgn-tooltip-arrow-width: .8rem;
   --pgn-tooltip-box-shadow: drop-shadow(0 2px 4px rgba(0, 0, 0, .15)) drop-shadow(0 2px 8px rgba(0, 0, 0, .15));
   --pgn-tooltip-margin: 0;
   --pgn-tooltip-padding-x: .5rem;
@@ -230,11 +229,8 @@
   --pgn-modal-content-border-width: 0;
   --pgn-modal-content-border-color: rgba(0, 0, 0, .2);
   --pgn-modal-content-color: null;
-  --pgn-modal-dialog-margin-y-sm-up: 1.75rem;
-  --pgn-modal-dialog-margin-base: 1.5rem;
   --pgn-modal-footer-padding-y: 1.5rem;
   --pgn-modal-footer-padding-x: 1rem;
-  --pgn-modal-footer-margin-between: .5rem;
   --pgn-modal-inner-padding-bottom: .7rem;
   --pgn-modal-inner-padding-base: 1.5rem;
   --pgn-menu-border-hover: transparent;
@@ -334,7 +330,6 @@
   --pgn-form-custom-control-gutter: .5rem;
   --pgn-form-custom-transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   --pgn-form-group-margin-bottom: 1rem;
-  --pgn-form-grid-gutter-width: 10px;
   --pgn-form-check-border-width: .125rem;
   --pgn-form-check-border-radius-focus: .0625rem;
   --pgn-form-check-position-axis: .375rem;
@@ -343,7 +338,6 @@
   --pgn-form-input-check-margin-y: .3rem;
   --pgn-form-input-check-margin-x-inline: .3125rem;
   --pgn-form-input-check-margin-x-base: .25rem;
-  --pgn-form-input-check-gutter: 1.25rem;
   --pgn-form-input-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   --pgn-form-input-width-hover: 1px;
   --pgn-form-input-focus-width: 1px;

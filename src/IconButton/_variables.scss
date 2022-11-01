@@ -9,9 +9,9 @@ $icon-button-colors: (
   "dark": $dark,
   "black": $black,
 ) !default;
-$btn-icon-diameter-md: 2.75rem !default;
-$btn-icon-diameter-sm: 2.25rem !default;
-$btn-icon-diameter-inline: calc(#{$line-height-base}em + .1em) !default;
+$btn-icon-diameter-md: var(--pgn-icon-button-diameter-md) !default;
+$btn-icon-diameter-sm: var(--pgn-icon-button-diameter-sm) !default;
+$btn-icon-diameter-inline: var(--pgn-icon-button-diameter-inline) !default;
 
-$btn-icon-bg: transparent !default;
-$btn-icon-accent-color: white !default;
+$btn-icon-bg: var(--pgn-icon-button-bg) !default;
+$btn-icon-accent-color: var(--pgn-icon-button-accent-color) !default;

@@ -31,7 +31,6 @@
       }
     },
     "arrow": {
-      "width": { "value": ".8rem", "themeable": true, "source": "$tooltip-arrow-width" },
       "height": { "value": ".4rem", "themeable": true, "source": "$tooltip-arrow-height" },
       "color": {
         "base": { "value": "{tooltip.bg.base.value}", "themeable": true, "source": "$tooltip-arrow-color" },

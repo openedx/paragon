@@ -5,7 +5,8 @@
   "main": "build-tokens.js",
   "scripts": {
     "build-tokens": "node build-tokens.js",
-    "replace-variables": "node replace-variables.js -p ../src/",
+    "replace-variables-usage": "node replace-variables.js -p ../src/ -t usage",
+    "replace-variables-definition": "node replace-variables.js -p ../src -t definition",
     "build-scss-to-css-map": "node map-scss-to-css.js"
   },
   "author": "",

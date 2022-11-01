@@ -7,9 +7,6 @@
       }
     },
     "footer": {
-      "margin": {
-        "between": { "value": ".5rem", "themeable": true, "source": "$modal-footer-margin-between" }
-      },
       "border": {
         "color": {
           "value": "{modal.header.border.color.value}", "themeable": true, "source": "$modal-footer-border-color"
@@ -26,16 +23,6 @@
         },
         "x": { "value": "1rem", "themeable": true, "source": "$modal-footer-padding-x" },
         "y": { "value": "1.5rem", "themeable": true, "source": "$modal-footer-padding-y" }
-      }
-    },
-    "dialog": {
-      "margin": {
-        "base": { "value": "1.5rem", "themeable": true, "source": "$modal-dialog-margin" },
-        "y": {
-          "sm": {
-            "up": { "value": "1.75rem", "themeable": true, "source": "$modal-dialog-margin-y-sm-up" }
-          }
-        }
       }
     },
     "title": {

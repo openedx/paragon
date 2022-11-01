@@ -1,5 +1,5 @@
 $background: $btn-tertiary-bg;
-$border: transparent;
-$active-background: $btn-tertiary-active-bg;
-$active-border: transparent;
-$hover-border: transparent;
+$border: var(--pgn-menu-border-base) !default;
+$active-background: var(--pgn-menu-background-active) !default;
+$active-border: var(--pgn-menu-border-active) !default;
+$hover-border: var(--pgn-menu-border-hover) !default;

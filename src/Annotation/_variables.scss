@@ -1,10 +1,9 @@
-$annotation-padding:               .5rem !default;
-$annotation-box-shadow:            drop-shadow(0 2px 4px rgba(0, 0, 0, .15))
-  drop-shadow(0 2px 8px rgba(0, 0, 0, .15)) !default;
-$annotation-border-radius:         .25rem !default;
-$annotation-max-width:             18.75rem !default;
-$annotation-font-size:             $font-size-sm !default;
-$annotation-line-height:           $line-height-sm !default;
+$annotation-padding: var(--pgn-annotation-padding) !default;
+$annotation-box-shadow: var(--pgn-annotation-box-shadow) !default;
+$annotation-border-radius: var(--pgn-annotation-border-radius) !default;
+$annotation-max-width: var(--pgn-annotation-max-width) !default;
+$annotation-font-size: var(--pgn-annotation-font-size) !default;
+$annotation-line-height: var(--pgn-annotation-line-height) !default;
 
 $annotation-variants: (
   "success": ( "background-color": $success, "color": $white ),
@@ -14,5 +13,5 @@ $annotation-variants: (
   "dark":    ( "background-color": $dark, "color": $white ),
 ) !default;
 
-$annotation-arrow-side-margin:     .25rem !default;
-$annotation-arrow-border-width:    .5rem !default;
+$annotation-arrow-side-margin: var(--pgn-annotation-arrow-side-margin) !default;
+$annotation-arrow-border-width: var(--pgn-annotation-arrow-border-width) !default;
