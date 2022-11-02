@@ -30,7 +30,7 @@
         }
       },
       "bg": {
-        "base": { "value": "{color.white.value}", "themeable": true, "source": "$input-bg" },
+        "base": { "value": "{color.background.base.value}", "themeable": true, "source": "$input-bg" },
         "disabled": { "value": "{color.gray.100.value}", "themeable": true, "source": "$input-disabled-bg" }
       },
       "color": {
@@ -66,7 +66,7 @@
         "bg": { "value": "{form.input.bg.base.value}", "themeable": true, "source": "$input-focus-bg" },
         "color": {
           "base": { "value": "{form.input.color.base.value}", "themeable": true, "source": "$input-focus-color" },
-          "border": { "value": "{component.active.bg.value}", "themeable": true, "source": "$input-focus-border-color" }
+          "border": { "value": "{color.input.focus.value}", "themeable": true, "source": "$input-focus-border-color" }
         },
         "width": { "value": "1px", "themeable": true, "source": "$input-focus-width" }
       },
@@ -222,7 +222,7 @@
             "border": {
               "color": {
                 "base": {
-                  "value": "{component.active.bg.value}",
+                  "value": "{color.primary.500.value}",
                   "themeable": true,
                   "source": "$custom-control-indicator-checked-border-color"
                 },
@@ -244,7 +244,7 @@
           "color": {
             "base": { "value": "null", "themeable": true, "source": "$custom-control-label-color" },
             "disabled": {
-              "value": "{color.gray.500.value}",
+              "value": "{color.disabled.value}",
               "themeable": true,
               "source": "$custom-control-label-disabled-color"
             }
@@ -258,7 +258,7 @@
           },
           "indeterminate": {
             "bg": {
-              "value": "{component.active.bg.value}",
+              "value": "{color.background.active.value}",
               "themeable": true,
               "source": "$custom-checkbox-indicator-indeterminate-bg"
             },
@@ -394,7 +394,7 @@
             "source": "$custom-select-color"
           },
           "disabled": {
-            "value": "{color.gray.500.value}",
+            "value": "{color.disabled.value}",
             "themeable": true,
             "source": "$custom-select-disabled-color"
           }
@@ -512,12 +512,12 @@
           },
           "bg": {
             "base": {
-              "value": "{component.active.bg.value}",
+              "value": "{color.background.active.value}",
               "themeable": true,
               "source": "$custom-range-thumb-bg"
             },
             "disabled": {
-              "value": "{color.gray.500.value}",
+              "value": "{color.disabled.value}",
               "themeable": true,
               "source": "$custom-range-thumb-disabled-bg"
             }

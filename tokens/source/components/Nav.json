@@ -51,11 +51,11 @@
         "link": {
           "active": {
             "color": {
-              "value": "{component.active.color.value}",
+              "value": "{color.active.value}",
               "themeable": true,
               "source": "$nav-pills-link-active-color"
             },
-            "bg": { "value": "{component.active.bg.value}", "themeable": true, "source": "$nav-pills-link-active-bg" }
+            "bg": { "value": "{color.background.active.value}", "themeable": true, "source": "$nav-pills-link-active-bg" }
           }
         }
       }

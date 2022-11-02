@@ -3,7 +3,7 @@
     "font": {
       "size": { "value": "{font.size.sm.value}", "themeable": true, "source": "$popover-font-size" }
     },
-    "bg": { "value": "{color.white.value}", "themeable": true, "source": "$popover-bg" },
+    "bg": { "value": "{color.background.base.value}", "themeable": true, "source": "$popover-bg" },
     "max": {
       "width": { "value": "480px", "themeable": true, "source": "$popover-max-width" }
     },

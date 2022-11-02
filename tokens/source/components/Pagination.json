@@ -48,16 +48,16 @@
       }
     },
     "color": {
-      "base": { "value": "{link.color.value}", "themeable": true, "source": "$pagination-color" },
+      "base": { "value": "{color.link.value}", "themeable": true, "source": "$pagination-color" },
       "inverse": { "value": "{color.white.value}", "themeable": true, "source": "$pagination-color-inverse" },
       "hover": { "value": "{link.hover.color.value}", "themeable": true, "source": "$pagination-hover-color" },
-      "active": { "value": "{component.active.color.value}", "themeable": true, "source": "$pagination-active-color" },
-      "disabled": { "value": "{color.gray.500.value}", "themeable": true, "source": "$pagination-disabled-color" }
+      "active": { "value": "{color.active.value}", "themeable": true, "source": "$pagination-active-color" },
+      "disabled": { "value": "{color.disabled.value}", "themeable": true, "source": "$pagination-disabled-color" }
     },
     "bg": {
-      "base": { "value": "{color.white.value}", "themeable": true, "source": "$pagination-bg" },
+      "base": { "value": "{color.background.base.value}", "themeable": true, "source": "$pagination-bg" },
       "hover": { "value": "{color.gray.100.value}", "themeable": true, "source": "$pagination-hover-bg" },
-      "active": { "value": "{component.active.bg.value}", "themeable": true, "source": "$pagination-active-bg" },
+      "active": { "value": "{color.background.active.value}", "themeable": true, "source": "$pagination-active-bg" },
       "disabled": { "value": "{color.white.value}", "themeable": true, "source": "$pagination-disabled-bg" }
     },
     "border": {

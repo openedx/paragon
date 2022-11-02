@@ -1,8 +1,0 @@
-{
-  "component": {
-    "active": {
-      "color": { "value": "{color.white.value}", "themeable": true, "source": "$component-active-color" },
-      "bg": { "value": "{color.primary.500.value}", "themeable": true, "source": "$component-active-bg" }
-    }
-  }
-}

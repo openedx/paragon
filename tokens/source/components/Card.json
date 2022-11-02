@@ -24,7 +24,7 @@
       "base": { "value": "null", "themeable": true, "source": "$card-height" }
     },
     "color": { "value": "null", "themeable": true, "source": "$card-color" },
-    "bg": { "value": "{color.white.value}", "themeable": true, "source": "$card-bg" },
+    "bg": { "value": "{color.background.base.value}", "themeable": true, "source": "$card-bg" },
     "image": {
       "overlay": {
         "padding": { "value": "1.25rem", "themeable": true, "source": "$card-img-overlay-padding" }

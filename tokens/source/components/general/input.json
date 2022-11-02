@@ -30,7 +30,7 @@
       },
       "focus": {
         "width": { "value": "1px", "themeable": true, "source": "$input-btn-focus-width" },
-        "color": { "value": "{component.active.bg.value}", "themeable": true, "source": "$input-btn-focus-color" },
+        "color": { "value": "{color.input.focus.value}", "themeable": true, "source": "$input-btn-focus-color" },
         "box": {
           "shadow": {
             "value": "0 0 0 {input.btn.focus.width.value} {input.btn.focus.color.value}",

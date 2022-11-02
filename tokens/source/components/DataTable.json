@@ -1,7 +1,7 @@
 {
   "data-table": {
     "background": {
-      "color": { "value": "{color.white.value}", "themeable": true, "source": "$data-table-background-color"
+      "color": { "value": "{color.background.base.value}", "themeable": true, "source": "$data-table-background-color"
       }
     },
     "border": { "value": "1px solid {color.gray.200.value}", "themeable": true, "source": "$data-table-border" },

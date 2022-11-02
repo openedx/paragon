@@ -32,7 +32,7 @@
     },
     "content": {
       "color": { "value": "null", "themeable": true, "source": "$modal-content-color" },
-      "bg": { "value": "{color.white.value}", "themeable": true, "source": "$modal-content-bg" },
+      "bg": { "value": "{color.background.base.value}", "themeable": true, "source": "$modal-content-bg" },
       "border": {
         "color": { "value": "rgba(0, 0, 0, .2)", "themeable": true, "source": "$modal-content-border-color" },
         "width": { "value": "0", "themeable": true, "source": "$modal-content-border-width" },

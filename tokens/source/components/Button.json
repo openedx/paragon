@@ -51,7 +51,7 @@
     "disabled": {
       "opacity": { "value": ".65", "themeable": true, "source": "$btn-disabled-opacity" },
       "link": {
-        "color": { "value": "{color.gray.500.value}", "themeable": true, "source": "$btn-link-disabled-color" }
+        "color": { "value": "{color.disabled.value}", "themeable": true, "source": "$btn-link-disabled-color" }
       }
     },
     "tertiary": {

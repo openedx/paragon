@@ -62,7 +62,7 @@
           "value": "rgba({color.white.value}, .75)", "themeable": true, "source": "$navbar-dark-hover-color"
         },
         "active": {
-          "value": "{color.white.value}", "themeable": true, "source": "$navbar-dark-active-color"
+          "value": "{color.active.value}", "themeable": true, "source": "$navbar-dark-active-color"
         },
         "disabled": {
           "value": "rgba({color.white.value}, .25)", "themeable": true, "source": "$navbar-dark-disabled-color"

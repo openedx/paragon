@@ -12,7 +12,7 @@
   "list-group": {
     "color": { "value": "null", "themeable": true, "source": "$list-group-color" },
     "bg": {
-      "base": { "value": "{color.white.value}", "themeable": true, "source": "$list-group-bg" },
+      "base": { "value": "{color.background.base.value}", "themeable": true, "source": "$list-group-bg" },
       "hover": { "value": "{color.gray.100.value}", "themeable": true, "source": "$list-group-hover-bg" }
     },
     "border": {
@@ -29,7 +29,7 @@
     "active": {
       "color": {
         "base": {
-          "value": "{component.active.color.value}", "themeable": true, "source": "$list-group-active-color"
+          "value": "{color.active.value}", "themeable": true, "source": "$list-group-active-color"
         },
         "border": {
           "value": "{list-group.active.bg.value}",
@@ -37,7 +37,7 @@
           "source": "$list-group-active-border-color"
         }
       },
-      "bg": { "value": "{component.active.bg.value}", "themeable": true, "source": "$list-group-active-bg" }
+      "bg": { "value": "{color.background.active.value}", "themeable": true, "source": "$list-group-active-bg" }
     },
     "disabled": {
       "color": { "value": "{color.gray.600.value}", "themeable": true, "source": "$list-group-disabled-color" },
