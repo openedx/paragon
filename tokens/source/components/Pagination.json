@@ -44,7 +44,7 @@
     "secondary": {
       "height": {
         "base": { "value": "2.75rem", "themeable": true, "source": "$pagination-secondary-height" },
-        "sm": { "value": "2.75rem", "themeable": true, "source": "$pagination-secondary-height-sm" }
+        "sm": { "value": "2.25rem", "themeable": true, "source": "$pagination-secondary-height-sm" }
       }
     },
     "color": {

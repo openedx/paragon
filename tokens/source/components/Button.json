@@ -19,7 +19,7 @@
         "sm": { "value": "{input.btn.font.size.sm.value}", "themeable": true, "source": "$btn-font-size-sm" },
         "lg": { "value": "{input.btn.font.size.lg.value}", "themeable": true, "source": "$btn-font-size-lg" }
       },
-      "width": { "value": "{font.weight.normal.value}", "themeable": true, "source": "$btn-font-weight" }
+      "weight": { "value": "{font.weight.normal.value}", "themeable": true, "source": "$btn-font-weight" }
     },
     "line": {
       "height": {
