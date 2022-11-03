@@ -47,6 +47,7 @@ async function replaceVariablesUsage(filePath, variablesMap, direction = 'scss-t
     crlfDelay: Infinity,
   });
 
+  // eslint-disable-next-line no-restricted-syntax
   for await (const line of rl) {
     let parsedLine = line;
     const variables = [...parsedLine.matchAll(variableRegex)];
