@@ -10,7 +10,7 @@ designStatus: 'Done'
 devStatus: 'Done'
 ---
 
-A wrapper component that allows to control the size of child blocks on different screen sizes.
+A wrapper component that allows to control the size of child blocks on different screen sizes. It is a shorthand for the grid system (12 columns). Also see [Layout](/foundations/layout) foundations.
 
 ## Basic usage
 
