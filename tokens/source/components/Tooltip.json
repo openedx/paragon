@@ -36,6 +36,7 @@
         "base": { "value": "{tooltip.bg.base.value}", "themeable": true, "source": "$tooltip-arrow-color" },
         "light": { "value": "{color.white.value}", "themeable": true, "source": "$tooltip-arrow-color-light" }
       }
-    }
+    },
+    "zindex": { "value": 1070, "themeable": true, "source": "$zindex-tooltip" }
   }
 }

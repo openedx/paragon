@@ -110,6 +110,7 @@
   --pgn-border-radius-lg: .425rem;
   --pgn-border-radius-base: .375rem;
   --pgn-border-width: 1px;
+  --pgn-tooltip-zindex: 1070;
   --pgn-tooltip-arrow-height: .4rem;
   --pgn-tooltip-box-shadow: drop-shadow(0 2px 4px rgba(0, 0, 0, .15)) drop-shadow(0 2px 8px rgba(0, 0, 0, .15));
   --pgn-tooltip-margin: 0;
