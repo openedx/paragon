@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { act } from 'react-dom/test-utils';
+import { IntlProvider } from 'react-intl';
 import FormAutosuggest from '../FormAutosuggest';
 import FormAutosuggestOption from '../FormAutosuggestOption';
 
@@ -16,33 +17,39 @@ const createDocumentListenersMock = () => {
   };
 };
 
-const props = {
-  name: 'FormAutosuggest',
-  floatingLabel: 'floatingLabel text',
-  helpMessage: 'Example help message',
-  errorMessageText: 'Example error message',
-};
+function FormAutosuggestWrapper(props) {
+  return (
+    <IntlProvider locale="en" messages={{}}>
+      <FormAutosuggest {...props} />
+    </IntlProvider>
+  );
+}
 
 describe('FormAutosuggest', () => {
   it('renders component without error', () => {
-    mount(<FormAutosuggest {...props} />);
+    mount(<FormAutosuggestWrapper />);
   });
 
   const container = mount(
-    <FormAutosuggest {...props}>
+    <FormAutosuggestWrapper
+      name="FormAutosuggest"
+      floatingLabel="floatingLabel text"
+      helpMessage="Example help message"
+      errorMessageText="Example error message"
+    >
       <FormAutosuggestOption>Option 1</FormAutosuggestOption>
       <FormAutosuggestOption>Option 2</FormAutosuggestOption>
       <FormAutosuggestOption>Learn from more than 160 member universities</FormAutosuggestOption>
-    </FormAutosuggest>,
+    </FormAutosuggestWrapper>,
   );
 
   it('render without loading state', () => {
     expect(container.exists('.pgn__form-autosuggest__dropdown-loading')).toBe(false);
-    expect(container.props().isLoading).toBe(false);
+    expect(container.props().isLoading).toBeUndefined();
   });
 
   it('render with loading state', () => {
-    const wrapper = mount(<FormAutosuggest isLoading />);
+    const wrapper = mount(<FormAutosuggestWrapper isLoading />);
 
     expect(wrapper.exists('.pgn__form-autosuggest__dropdown-loading')).toBe(true);
     expect(wrapper.props().isLoading).toBe(true);
