@@ -41,6 +41,7 @@ const Dropdown = React.forwardRef(
     const handleToggle = (isOpen, event, metadata) => {
       if (isOpen) {
         setInternalShow(true);
+        onToggle?.(isOpen, event, metadata);
         return;
       }
       let { source } = { ...metadata };
