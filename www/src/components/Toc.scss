@@ -30,13 +30,9 @@
     color: $gray-500;
 
     &:hover,
-    &:focus {
-      font-weight: 500;
-      color: $primary-500;
-    }
-
+    &:focus,
     &.active {
-      font-weight: 500;
+      font-weight: $font-weight-semi-bold;
       color: $primary-500;
     }
   }
