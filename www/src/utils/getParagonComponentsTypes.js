@@ -11,7 +11,7 @@ const getParagonComponentsTypes = (components) => {
       case typeof component === 'string' || typeof component === 'number':
         componentType = 'Text';
         break;
-      case component.name?.startsWith('use'):
+      case componentName.startsWith('use'):
         componentType = 'Hook';
         break;
       case isFunctionComponent || isObjectComponent || isContext:
