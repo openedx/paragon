@@ -91,10 +91,13 @@ $custom-control-label-disabled-color: var(--pgn-form-custom-control-label-color-
 $custom-control-indicator-checked-color:        #0A3055 !default;
 $custom-control-indicator-checked-bg:           #0A3055 !default;
 $custom-control-indicator-checked-disabled-bg: var(--pgn-form-custom-control-indicator-checked-bg-disabled) !default;
+// stylelint-disable-next-line max-line-length
 $custom-control-indicator-checked-box-shadow: var(--pgn-form-custom-control-indicator-checked-box-shadow-base) !default;
+// stylelint-disable-next-line max-line-length
 $custom-control-indicator-checked-border-color: var(--pgn-form-custom-control-indicator-checked-border-color-base) !default;
 
 $custom-control-indicator-focus-box-shadow: var(--pgn-form-custom-control-indicator-checked-box-shadow-focus) !default;
+// stylelint-disable-next-line max-line-length
 $custom-control-indicator-focus-border-color: var(--pgn-form-custom-control-indicator-checked-border-color-focus) !default;
 
 // TODO switch to css variable
@@ -108,7 +111,9 @@ $custom-checkbox-indicator-icon-checked:        str-replace(url("data:image/svg+
 $custom-checkbox-indicator-indeterminate-bg: var(--pgn-form-custom-checkbox-indicator-indeterminate-bg) !default;
 $custom-checkbox-indicator-indeterminate-color:        $custom-control-indicator-checked-color !default;
 $custom-checkbox-indicator-icon-indeterminate:         str-replace(url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM17 13H7V11H17V13Z' fill='#{$custom-checkbox-indicator-indeterminate-color}'/></svg>"), "#", "%23") !default;
+// stylelint-disable-next-line max-line-length
 $custom-checkbox-indicator-indeterminate-box-shadow: var(--pgn-form-custom-checkbox-indicator-indeterminate-box-shadow) !default;
+// stylelint-disable-next-line max-line-length
 $custom-checkbox-indicator-indeterminate-border-color: var(--pgn-form-custom-checkbox-indicator-indeterminate-border-color) !default;
 
 $custom-radio-indicator-border-radius: var(--pgn-form-custom-radio-indicator-border-radius) !default;

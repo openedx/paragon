@@ -28,7 +28,8 @@ $popover-arrow-width: var(--pgn-popover-arrow-width) !default;
 $popover-arrow-height: var(--pgn-popover-arrow-height) !default;
 $popover-arrow-color: var(--pgn-popover-arrow-color) !default;
 
-// TODO can't use css variable due to conflict with SCSS functions, should use var(--pgn-popover-border-color) instead of #000000
+// TODO can't use css variable due to conflict with SCSS functions,
+// should use var(--pgn-popover-border-color) instead of #000000.
 $popover-arrow-outer-color:         fade-in($popover-border-color, .05) !default;
 
 $popover-success-bg: var(--pgn-popover-success-bg) !default;

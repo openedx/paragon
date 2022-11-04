@@ -180,7 +180,7 @@
   --pgn-reduced-dropdown-height-max: 60vh;
   --pgn-pagination-focus-border-width: .125rem;
   --pgn-pagination-focus-box-outline: 0;
-  --pgn-pagination-secondary-height-sm: 2.75rem;
+  --pgn-pagination-secondary-height-sm: 2.25rem;
   --pgn-pagination-secondary-height-base: 2.75rem;
   --pgn-pagination-toggle-border-sm: .25rem;
   --pgn-pagination-toggle-border-base: .3125rem;
@@ -760,7 +760,7 @@
   --pgn-btn-border-radius-base: var(--pgn-border-radius-base);
   --pgn-btn-line-height-sm: var(--pgn-input-btn-line-height-sm);
   --pgn-btn-line-height-base: var(--pgn-input-btn-line-height-base);
-  --pgn-btn-font-width: var(--pgn-font-weight-normal);
+  --pgn-btn-font-weight: var(--pgn-font-weight-normal);
   --pgn-btn-font-size-lg: var(--pgn-input-btn-font-size-lg);
   --pgn-btn-font-size-sm: var(--pgn-input-btn-font-size-sm);
   --pgn-btn-font-size-base: var(--pgn-input-btn-font-size-base);
