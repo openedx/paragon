@@ -35,6 +35,8 @@ the user can navigate.
 
 ## Ignored arrow keys
 To disable listening for keystrokes, use `ignoreKeys` to add ignored keys to the array.
+For example, you have the ability to navigate through the inputs using the `arrowUp` and `arrowDown` keys;
+the `arrowUp` and `arrowLeft` keys can be ignored for convenient editing of the text in the inputs.
 
 ```jsx live
 () => {
@@ -63,7 +65,7 @@ To disable listening for keystrokes, use `ignoreKeys` to add ignored keys to the
           <Form.Check type="checkbox" label="Confirm the entered data" />
         </Form.Group>
 
-        <Button variant="primary" onClick={() => alert('Submited!')}>
+        <Button variant="primary" onClick={() => alert('Submitted!')}>
           Submit
         </Button>
     </Form>
