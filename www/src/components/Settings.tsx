@@ -15,7 +15,7 @@ import SettingsContext from '../context/SettingsContext';
 import { THEMES } from '../../theme-config';
 
 export interface ISetting {
-  showMinimizedTitle?: string,
+  showMinimizedTitle?: boolean,
 }
 
 function Settings({ showMinimizedTitle }: ISetting) {
@@ -89,20 +89,20 @@ function Settings({ showMinimizedTitle }: ISetting) {
             ))}
           </Form.Control>
         </Form.Group>
-        {!showMinimizedTitle && (
           <Form.Group>
             <Form.Control
               as="select"
               value={settings.containerWidth}
               onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleSettingsChange('containerWidth', e.target.value)}
-              floatingLabel="Container width"
+              floatingLabel="Container Width"
             >
-              <option value="xl">xl</option>
-              <option value="lg">lg</option>
+              <option value="xs">xs</option>
+              <option value="sm">sm</option>
               <option value="md">md</option>
+              <option value="lg">lg</option>
+              <option value="xl">xl</option>
             </Form.Control>
           </Form.Group>
-        )}
       </Stack>
     </Sheet>
   );

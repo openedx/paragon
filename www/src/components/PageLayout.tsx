@@ -60,9 +60,9 @@ function Layout({
       />
       <Settings showMinimizedTitle={showMinimizedTitle} />
       {isMdx ? (
-        <Container fluid>
+        <Container size={settings.containerWidth} fluid>
           <Row className="flex-xl-nowrap">
-            <Col className="d-none d-xl-block" xl={settings.containerWidth === 'xl' ? 1 : 2} />
+            <Col className="d-none d-xl-block" xl={settings.containerWidth === 'xl' ? 'auto' : 2} />
             <Col
               xl={settings.containerWidth === 'xl' ? 10 : 8}
               lg={9}
@@ -73,7 +73,7 @@ function Layout({
               {children}
             </Col>
             <Col
-              xl={settings.containerWidth === 'xl' ? 1 : 2}
+              xl={2}
               lg={3}
               as={Toc}
               data={tocData}
