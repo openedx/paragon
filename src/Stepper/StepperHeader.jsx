@@ -14,13 +14,13 @@ function StepList({ steps, activeKey, handleStepClick }) {
     <ul className="pgn__stepper-header-step-list">
       {steps.map(({ label, ...stepProps }, index) => (
         <React.Fragment key={stepProps.eventKey}>
-
           {index !== 0 && <StepListSeparator />}
           <StepperHeaderStep
             {...stepProps}
             index={index}
             isActive={activeKey === stepProps.eventKey}
-            onClick={handleStepClick ? () => handleStepClick(stepProps.eventKey) : undefined}
+            onClick={handleStepClick && steps.every((step) => !step.hasError)
+              ? () => handleStepClick(stepProps.eventKey) : undefined}
           >
             {label}
           </StepperHeaderStep>

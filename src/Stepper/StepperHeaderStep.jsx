@@ -25,7 +25,8 @@ function StepperHeaderStep({
     <li
       /* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */
       tabIndex={isClickable ? 0 : -1}
-      role="presentation"
+      /* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */
+      role="button"
       className={classNames(
         'pgn__stepper-header-step',
         {
