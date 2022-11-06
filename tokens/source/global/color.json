@@ -28,15 +28,103 @@
     },
     "primary": {
       "base": { "value": "#0A3055", "themeable": true, "source": "$primary" },
-      "100": { "value": "#F0F3F5", "themeable": true, "source": "$primary-100" },
-      "200": { "value": "#C2CBD5", "themeable": true, "source": "$primary-200" },
-      "300": { "value": "#8598AA", "themeable": true, "source": "$primary-300" },
-      "400": { "value": "#476480", "themeable": true, "source": "$primary-400" },
+      "100": {
+        "value": "{color.primary.base.value}",
+        "themeable": true,
+        "source": "$primary-100",
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "white",
+            "amount": "0.94"
+          }
+        ]
+      },
+      "200": {
+        "value": "{color.primary.base.value}",
+        "themeable": true,
+        "source": "$primary-200",
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "white",
+            "amount": "0.75"
+          }
+        ]
+      },
+      "300": {
+        "value": "{color.primary.base.value}",
+        "themeable": true,
+        "source": "$primary-300",
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "white",
+            "amount": "0.50"
+          }
+        ]
+      },
+      "400": {
+        "value": "{color.primary.base.value}",
+        "themeable": true,
+        "source": "$primary-400",
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "white",
+            "amount": "0.25"
+          }
+        ]
+      },
       "500": { "value": "{color.primary.base.value}", "themeable": true, "source": "$primary-500" },
-      "600": { "value": "#092B4D", "themeable": true, "source": "$primary-600" },
-      "700": { "value": "#082644", "themeable": true, "source": "$primary-700" },
-      "800": { "value": "#082440", "themeable": true, "source": "$primary-800" },
-      "900": { "value": "#07223C", "themeable": true, "source": "$primary-900" }
+      "600": {
+        "value": "{color.primary.base.value}",
+        "themeable": true,
+        "source": "$primary-600",
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "black",
+            "amount": "0.10"
+          }
+        ]
+      },
+      "700": {
+        "value": "{color.primary.base.value}",
+        "themeable": true,
+        "source": "$primary-700",
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "black",
+            "amount": "0.20"
+          }
+        ]
+      },
+      "800": {
+        "value": "{color.primary.base.value}",
+        "themeable": true,
+        "source": "$primary-800",
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "black",
+            "amount": "0.25"
+          }
+        ]
+      },
+      "900": {
+        "value": "{color.primary.base.value}",
+        "themeable": true,
+        "source": "$primary-900",
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "black",
+            "amount": "0.30"
+          }
+        ]
+      }
     },
     "secondary": {
       "base": { "value": "{color.gray.700.value}", "themeable": true, "source": "$secondary" },
