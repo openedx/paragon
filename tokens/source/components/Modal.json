@@ -34,7 +34,15 @@
       "color": { "value": "null", "themeable": true, "source": "$modal-content-color" },
       "bg": { "value": "{color.background.base.value}", "themeable": true, "source": "$modal-content-bg" },
       "border": {
-        "color": { "value": "rgba(0, 0, 0, .2)", "themeable": true, "source": "$modal-content-border-color" },
+        "color": { 
+          "value": "{color.black.value}", 
+          "themeable": true, 
+          "source": "$modal-content-border-color",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.2
+          }]
+        },
         "width": { "value": "0", "themeable": true, "source": "$modal-content-border-width" },
         "radius": { "value": "{border.radius.lg.value}", "themeable": true, "source": "$modal-content-border-radius" }
       },

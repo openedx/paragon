@@ -16,7 +16,15 @@
     },
     "border": {
       "width": { "value": "1px", "themeable": true, "source": "$toast-border-width" },
-      "color": { "value": "rgba(0, 0, 0, .1)", "themeable": true, "source": "$toast-border-color" },
+      "color": { 
+        "value": "{color.black.value}", 
+        "themeable": true, 
+        "source": "$toast-border-color",
+        "modify": [{
+          "type": "alpha",
+          "amount": 0.1
+        }]
+      },
       "radius": { "value": ".25rem", "themeable": true, "source": "$toast-border-radius" }
     },
     "box": {
@@ -30,7 +38,15 @@
       "color": {
         "base": { "value": "{color.white.value}", "themeable": true, "source": "$toast-header-color" },
         "background": { "value": "{color.gray.700.value}", "themeable": true, "source": "$toast-header-background-color" },
-        "border": { "value": "rgba(0, 0, 0, .5)", "themeable": true, "source": "$toast-header-border-color" }
+        "border": { 
+          "value": "{color.black.value}", 
+          "themeable": true, 
+          "source": "$toast-header-border-color",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.5
+          }]
+        }
       }
     },
     "container": {

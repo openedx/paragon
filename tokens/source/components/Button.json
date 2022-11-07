@@ -38,7 +38,7 @@
     },
     "box-shadow": {
       "base": {
-        "value": "inset 0 1px 0 rgba({color.white.value}, .15), 0 1px 1px rgba({color.black.value}, .075)",
+        "value": "inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075)",
         "themeable": true,
         "source": "$btn-box-shadow"
       },
@@ -65,9 +65,13 @@
         "bg": {
           "base": { "value": "transparent", "themeable": true, "source": "$btn-inverse-tertiary-bg" },
           "hover": {
-            "value": "rgba(255, 255, 255, .1)",
+            "value": "{color.black.value}",
             "themeable": true,
-            "source": "$btn-inverse-tertiary-hover-bg"
+            "source": "$btn-inverse-tertiary-hover-bg",
+            "modify": [{
+              "type": "alpha",
+              "amount": 0.1
+            }]
           },
           "active": {
             "value": "{btn.tertiary.inverse.bg.hover.value}",

@@ -204,9 +204,13 @@
           "checked": {
             "bg": {
               "disabled": {
-                "value": "rgba(10, 48, 85, .5)",
+                "value": "{color.primary.500.value}",
                 "themeable": true,
-                "source": "$custom-control-indicator-checked-disabled-bg"
+                "source": "$custom-control-indicator-checked-disabled-bg",
+                "modify": [{
+                  "type": "alpha",
+                  "amount": 0.5
+                }]
               }
             },
             "box": {
@@ -520,6 +524,15 @@
               "value": "{color.disabled.value}",
               "themeable": true,
               "source": "$custom-range-thumb-disabled-bg"
+            },
+            "active": {
+              "value": "{color.background.active.value}",
+              "themeable": true,
+              "source": "$custom-range-thumb-active-bg",
+              "modify": [{
+                "type": "lighten",
+                "amount": 0.35
+              }]
             }
           },
           "border": {
