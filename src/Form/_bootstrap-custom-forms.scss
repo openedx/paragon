@@ -195,9 +195,9 @@
 
     &::after {
       // stylelint-disable-next-line max-line-length
-      top: add(calc((#{$font-size-base} * #{$line-height-base} - #{$custom-control-indicator-size}) * .5), calc(#{$custom-control-indicator-border-width} * 2));
+      top: calc(calc((#{$font-size-base} * #{$line-height-base} - #{$custom-control-indicator-size}) * .5) + calc(#{$custom-control-indicator-border-width} * 2));
       // stylelint-disable-next-line max-line-length
-      left: add(calc(-1 * (#{$custom-switch-width} + #{$custom-control-gutter})), calc(#{$custom-control-indicator-border-width} * 2));
+      left: calc(calc(-1 * (#{$custom-switch-width} + #{$custom-control-gutter})) + calc(#{$custom-control-indicator-border-width} * 2));
       width: $custom-switch-indicator-size;
       height: $custom-switch-indicator-size;
       background-color: $custom-control-indicator-border-color;
@@ -404,7 +404,7 @@
 
 .custom-range {
   width: 100%;
-  height: add($custom-range-thumb-height, calc(#{$custom-range-thumb-focus-box-shadow-width} * 2));
+  height: calc($custom-range-thumb-height + calc(#{$custom-range-thumb-focus-box-shadow-width} * 2));
   padding: 0; // Need to reset padding
   background-color: transparent;
   appearance: none;

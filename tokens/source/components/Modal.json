@@ -43,7 +43,7 @@
             "amount": 0.2
           }]
         },
-        "width": { "value": "0", "themeable": true, "source": "$modal-content-border-width" },
+        "width": { "value": "0rem", "themeable": true, "source": "$modal-content-border-width" },
         "radius": { "value": "{border.radius.lg.value}", "themeable": true, "source": "$modal-content-border-radius" }
       },
       "box": {

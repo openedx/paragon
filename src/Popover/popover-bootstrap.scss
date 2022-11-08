@@ -39,7 +39,7 @@
   margin-bottom: $popover-arrow-height;
 
   > .arrow {
-    bottom: subtract(calc($popover-arrow-height * -1), $popover-border-width);
+    bottom: calc(calc(#{$popover-arrow-height} * -1) + $popover-border-width);
 
     &::before {
       bottom: 0;
@@ -59,7 +59,7 @@
   margin-left: $popover-arrow-height;
 
   > .arrow {
-    left: subtract(calc($popover-arrow-height * -1), $popover-border-width);
+    left: calc(calc(#{$popover-arrow-height} * -1) + $popover-border-width);
     width: $popover-arrow-height;
     height: $popover-arrow-width;
     margin: $popover-border-radius 0;
@@ -82,7 +82,7 @@
   margin-top: $popover-arrow-height;
 
   > .arrow {
-    top: subtract(calc($popover-arrow-height * -1), $popover-border-width);
+    top: calc(calc(#{$popover-arrow-height} * -1) + $popover-border-width);
 
     &::before {
       top: 0;
@@ -114,7 +114,7 @@
   margin-right: $popover-arrow-height;
 
   > .arrow {
-    right: subtract(calc($popover-arrow-height * -1), $popover-border-width);
+    right: calc(calc(#{$popover-arrow-height} * -1) + $popover-border-width);
     width: $popover-arrow-height;
     height: $popover-arrow-width;
     margin: $popover-border-radius 0;

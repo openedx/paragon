@@ -530,8 +530,8 @@
               "themeable": true,
               "source": "$custom-range-thumb-active-bg",
               "modify": [{
-                "type": "lighten",
-                "amount": 0.35
+                "type": "brighten",
+                "amount": "0.35"
               }]
             }
           },
