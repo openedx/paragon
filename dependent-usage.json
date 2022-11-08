@@ -1,5 +1,5 @@
 {
-  "lastModified": 1667830353035,
+  "lastModified": 1667916696459,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -739,17 +739,17 @@
         "Alert": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 204,
+            "line": 205,
             "column": 8
           },
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 226,
+            "line": 227,
             "column": 8
           },
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 319,
+            "line": 320,
             "column": 4
           },
           {
@@ -781,7 +781,7 @@
         "Hyperlink": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 234,
+            "line": 235,
             "column": 16
           },
           {
@@ -843,31 +843,31 @@
         "CheckCircle": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 280,
+            "line": 281,
             "column": 14
           },
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 380,
+            "line": 381,
             "column": 27
           },
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 510,
+            "line": 511,
             "column": 20
           }
         ],
         "Error": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 295,
+            "line": 296,
             "column": 14
           }
         ],
         "Button": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 304,
+            "line": 305,
             "column": 16
           },
           {
@@ -882,7 +882,7 @@
           },
           {
             "filePath": "src/account-settings/delete-account/ConfirmationModal.jsx",
-            "line": 122,
+            "line": 124,
             "column": 10
           },
           {
@@ -897,17 +897,32 @@
           },
           {
             "filePath": "src/account-settings/EditableField.jsx",
-            "line": 72,
+            "line": 65,
             "column": 13
           },
           {
             "filePath": "src/account-settings/EditableField.jsx",
-            "line": 154,
+            "line": 137,
             "column": 16
           },
           {
             "filePath": "src/account-settings/EditableField.jsx",
-            "line": 170,
+            "line": 153,
+            "column": 16
+          },
+          {
+            "filePath": "src/account-settings/EditableSelectField.jsx",
+            "line": 66,
+            "column": 13
+          },
+          {
+            "filePath": "src/account-settings/EditableSelectField.jsx",
+            "line": 153,
+            "column": 16
+          },
+          {
+            "filePath": "src/account-settings/EditableSelectField.jsx",
+            "line": 169,
             "column": 16
           },
           {
@@ -949,19 +964,19 @@
         "WarningFilled": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 321,
+            "line": 322,
             "column": 12
           },
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 382,
+            "line": 383,
             "column": 27
           }
         ],
         "Alert.Heading": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 323,
+            "line": 324,
             "column": 6
           },
           {
@@ -973,12 +988,12 @@
         "Icon": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 380,
+            "line": 381,
             "column": 16
           },
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 382,
+            "line": 383,
             "column": 16
           }
         ],
@@ -987,6 +1002,11 @@
             "filePath": "src/account-settings/certificate-preference/CertificatePreference.jsx",
             "line": 95,
             "column": 6
+          },
+          {
+            "filePath": "src/account-settings/demographics/Checkboxes.jsx",
+            "line": 43,
+            "column": 8
           }
         ],
         "ModalDialog": [
@@ -1081,6 +1101,16 @@
             "column": 12
           },
           {
+            "filePath": "src/account-settings/coaching/CoachingToggle.jsx",
+            "line": 40,
+            "column": 4
+          },
+          {
+            "filePath": "src/account-settings/delete-account/ConfirmationModal.jsx",
+            "line": 103,
+            "column": 12
+          },
+          {
             "filePath": "src/account-settings/DOBForm.jsx",
             "line": 85,
             "column": 12
@@ -1088,6 +1118,21 @@
           {
             "filePath": "src/account-settings/DOBForm.jsx",
             "line": 98,
+            "column": 12
+          },
+          {
+            "filePath": "src/account-settings/EditableField.jsx",
+            "line": 99,
+            "column": 14
+          },
+          {
+            "filePath": "src/account-settings/EditableSelectField.jsx",
+            "line": 112,
+            "column": 14
+          },
+          {
+            "filePath": "src/account-settings/EmailField.jsx",
+            "line": 109,
             "column": 12
           },
           {
@@ -1113,6 +1158,11 @@
             "column": 14
           },
           {
+            "filePath": "src/account-settings/delete-account/ConfirmationModal.jsx",
+            "line": 107,
+            "column": 14
+          },
+          {
             "filePath": "src/account-settings/DOBForm.jsx",
             "line": 86,
             "column": 14
@@ -1120,6 +1170,21 @@
           {
             "filePath": "src/account-settings/DOBForm.jsx",
             "line": 99,
+            "column": 14
+          },
+          {
+            "filePath": "src/account-settings/EditableField.jsx",
+            "line": 103,
+            "column": 16
+          },
+          {
+            "filePath": "src/account-settings/EditableSelectField.jsx",
+            "line": 116,
+            "column": 16
+          },
+          {
+            "filePath": "src/account-settings/EmailField.jsx",
+            "line": 113,
             "column": 14
           },
           {
@@ -1216,7 +1281,12 @@
           },
           {
             "filePath": "src/account-settings/EditableField.jsx",
-            "line": 135,
+            "line": 118,
+            "column": 16
+          },
+          {
+            "filePath": "src/account-settings/EditableSelectField.jsx",
+            "line": 134,
             "column": 16
           },
           {
@@ -1240,7 +1310,7 @@
             "column": 8
           }
         ],
-        "Input": [
+        "Form.Control": [
           {
             "filePath": "src/account-settings/coaching/CoachingConsentForm.jsx",
             "line": 41,
@@ -1252,13 +1322,8 @@
             "column": 10
           },
           {
-            "filePath": "src/account-settings/coaching/CoachingToggle.jsx",
-            "line": 47,
-            "column": 6
-          },
-          {
             "filePath": "src/account-settings/delete-account/ConfirmationModal.jsx",
-            "line": 111,
+            "line": 110,
             "column": 14
           },
           {
@@ -1272,14 +1337,39 @@
             "column": 16
           },
           {
+            "filePath": "src/account-settings/DOBForm.jsx",
+            "line": 89,
+            "column": 14
+          },
+          {
+            "filePath": "src/account-settings/DOBForm.jsx",
+            "line": 102,
+            "column": 14
+          },
+          {
             "filePath": "src/account-settings/EditableField.jsx",
-            "line": 122,
+            "line": 104,
+            "column": 16
+          },
+          {
+            "filePath": "src/account-settings/EditableSelectField.jsx",
+            "line": 117,
             "column": 16
           },
           {
             "filePath": "src/account-settings/EmailField.jsx",
-            "line": 116,
+            "line": 114,
             "column": 14
+          },
+          {
+            "filePath": "src/account-settings/name-change/NameChange.jsx",
+            "line": 122,
+            "column": 8
+          },
+          {
+            "filePath": "src/id-verification/panels/GetNameIdPanel.jsx",
+            "line": 57,
+            "column": 10
           },
           {
             "filePath": "src/id-verification/panels/SummaryPanel.jsx",
@@ -1287,26 +1377,11 @@
             "column": 10
           }
         ],
-        "ValidationFormGroup": [
+        "Form.Switch": [
           {
             "filePath": "src/account-settings/coaching/CoachingToggle.jsx",
-            "line": 40,
-            "column": 4
-          },
-          {
-            "filePath": "src/account-settings/delete-account/ConfirmationModal.jsx",
-            "line": 103,
-            "column": 12
-          },
-          {
-            "filePath": "src/account-settings/EditableField.jsx",
-            "line": 115,
-            "column": 14
-          },
-          {
-            "filePath": "src/account-settings/EmailField.jsx",
-            "line": 109,
-            "column": 12
+            "line": 44,
+            "column": 6
           }
         ],
         "Modal": [
@@ -1326,13 +1401,6 @@
             "column": 8
           }
         ],
-        "CheckBox": [
-          {
-            "filePath": "src/account-settings/demographics/Checkboxes.jsx",
-            "line": 43,
-            "column": 8
-          }
-        ],
         "useToggle": [
           {
             "filePath": "src/account-settings/DOBForm.jsx",
@@ -1340,25 +1408,25 @@
             "column": 40
           }
         ],
-        "Form.Control": [
+        "Form.Text": [
           {
-            "filePath": "src/account-settings/DOBForm.jsx",
-            "line": 89,
-            "column": 14
+            "filePath": "src/account-settings/EditableField.jsx",
+            "line": 113,
+            "column": 31
           },
           {
-            "filePath": "src/account-settings/DOBForm.jsx",
-            "line": 102,
-            "column": 14
+            "filePath": "src/account-settings/EditableSelectField.jsx",
+            "line": 129,
+            "column": 31
           },
           {
-            "filePath": "src/account-settings/name-change/NameChange.jsx",
+            "filePath": "src/account-settings/EmailField.jsx",
             "line": 122,
-            "column": 8
+            "column": 29
           },
           {
-            "filePath": "src/id-verification/panels/GetNameIdPanel.jsx",
-            "line": 57,
+            "filePath": "src/id-verification/Camera.jsx",
+            "line": 296,
             "column": 10
           }
         ],
@@ -1407,13 +1475,6 @@
             "filePath": "src/id-verification/panels/SummaryPanel.jsx",
             "line": 240,
             "column": 23
-          }
-        ],
-        "Form.Text": [
-          {
-            "filePath": "src/id-verification/Camera.jsx",
-            "line": 296,
-            "column": 10
           }
         ],
         "Collapsible": [
@@ -10683,53 +10744,53 @@
         "ModalDialog": [
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 50,
+            "line": 52,
             "column": 6
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 202,
+            "line": 219,
             "column": 6
           }
         ],
         "ModalDialog.Body": [
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 59,
+            "line": 61,
             "column": 8
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 211,
+            "line": 228,
             "column": 8
           }
         ],
         "ModalDialog.Hero": [
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 60,
+            "line": 62,
             "column": 10
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 212,
+            "line": 229,
             "column": 10
           }
         ],
         "Image": [
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 63,
+            "line": 68,
             "column": 10
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 157,
+            "line": 172,
             "column": 8
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 215,
+            "line": 235,
             "column": 10
           },
           {
@@ -10746,70 +10807,70 @@
         "ModalDialog.Title": [
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 66,
-            "column": 12
+            "line": 75,
+            "column": 14
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 71,
-            "column": 12
+            "line": 80,
+            "column": 14
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 218,
-            "column": 12
+            "line": 242,
+            "column": 14
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 223,
-            "column": 12
+            "line": 247,
+            "column": 14
           }
         ],
         "ModalDialog.Footer": [
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 98,
+            "line": 111,
             "column": 8
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 254,
+            "line": 289,
             "column": 8
           }
         ],
         "ActionRow": [
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 99,
+            "line": 112,
             "column": 10
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 255,
+            "line": 290,
             "column": 10
           }
         ],
         "Hyperlink": [
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 101,
+            "line": 114,
             "column": 14
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 256,
+            "line": 291,
             "column": 12
           }
         ],
         "Button": [
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 108,
+            "line": 121,
             "column": 16
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 263,
+            "line": 298,
             "column": 14
           },
           {
@@ -10824,154 +10885,154 @@
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 290,
-            "column": 10
+            "line": 353,
+            "column": 12
           }
         ],
         "Icon": [
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 111,
+            "line": 126,
             "column": 18
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 266,
+            "line": 303,
             "column": 16
           },
           {
             "filePath": "src/components/catalogModalBanner/CatalogCourseModalBanner.jsx",
-            "line": 46,
+            "line": 49,
             "column": 10
           },
           {
             "filePath": "src/components/catalogModalBanner/CatalogCourseModalBanner.jsx",
-            "line": 58,
-            "column": 10
+            "line": 62,
+            "column": 12
           },
           {
             "filePath": "src/components/catalogModalBanner/CatalogCourseModalBanner.jsx",
-            "line": 69,
+            "line": 77,
             "column": 10
           },
           {
             "filePath": "src/components/catalogModalBanner/CatalogProgramModalBanner.jsx",
-            "line": 28,
-            "column": 12
+            "line": 22,
+            "column": 14
           },
           {
             "filePath": "src/components/catalogModalBanner/CatalogProgramModalBanner.jsx",
-            "line": 42,
-            "column": 12
+            "line": 38,
+            "column": 14
           },
           {
             "filePath": "src/components/catalogModalBanner/CatalogProgramModalBanner.jsx",
-            "line": 55,
-            "column": 10
+            "line": 53,
+            "column": 12
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 56,
+            "line": 63,
             "column": 12
           }
         ],
         "Launch": [
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 111,
+            "line": 126,
             "column": 56
           },
           {
             "filePath": "src/components/catalogInfoModal/CatalogInfoModal.jsx",
-            "line": 266,
+            "line": 303,
             "column": 54
           }
         ],
         "MoneyOutline": [
           {
             "filePath": "src/components/catalogModalBanner/CatalogCourseModalBanner.jsx",
-            "line": 46,
+            "line": 49,
             "column": 38
           },
           {
             "filePath": "src/components/catalogModalBanner/CatalogProgramModalBanner.jsx",
-            "line": 28,
-            "column": 40
+            "line": 22,
+            "column": 42
           }
         ],
         "BookOpen": [
           {
             "filePath": "src/components/catalogModalBanner/CatalogCourseModalBanner.jsx",
-            "line": 58,
-            "column": 38
+            "line": 62,
+            "column": 40
           },
           {
             "filePath": "src/components/catalogModalBanner/CatalogProgramModalBanner.jsx",
-            "line": 55,
-            "column": 38
+            "line": 53,
+            "column": 40
           }
         ],
         "EventNote": [
           {
             "filePath": "src/components/catalogModalBanner/CatalogCourseModalBanner.jsx",
-            "line": 69,
+            "line": 77,
             "column": 38
           }
         ],
         "Assignment": [
           {
             "filePath": "src/components/catalogModalBanner/CatalogProgramModalBanner.jsx",
-            "line": 42,
-            "column": 40
+            "line": 38,
+            "column": 42
           }
         ],
         "Alert": [
           {
             "filePath": "src/components/catalogNoResultsDeck/CatalogNoResultsDeck.jsx",
-            "line": 66,
+            "line": 83,
             "column": 6
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 250,
+            "line": 311,
             "column": 6
           }
         ],
         "Alert.Heading": [
           {
             "filePath": "src/components/catalogNoResultsDeck/CatalogNoResultsDeck.jsx",
-            "line": 67,
+            "line": 84,
             "column": 8
           }
         ],
         "Alert.Link": [
           {
             "filePath": "src/components/catalogNoResultsDeck/CatalogNoResultsDeck.jsx",
-            "line": 69,
+            "line": 90,
             "column": 8
           }
         ],
         "DataTable": [
           {
             "filePath": "src/components/catalogNoResultsDeck/CatalogNoResultsDeck.jsx",
-            "line": 76,
+            "line": 101,
             "column": 6
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 304,
+            "line": 371,
             "column": 8
           }
         ],
         "CardView": [
           {
             "filePath": "src/components/catalogNoResultsDeck/CatalogNoResultsDeck.jsx",
-            "line": 89,
+            "line": 114,
             "column": 8
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 316,
+            "line": 383,
             "column": 12
           }
         ],
@@ -10993,49 +11054,49 @@
           },
           {
             "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
+            "line": 45,
+            "column": 12
+          },
+          {
+            "filePath": "src/components/courseCard/CourseCard.jsx",
             "line": 48,
             "column": 12
           },
           {
             "filePath": "src/components/courseCard/CourseCard.jsx",
-            "line": 43,
+            "line": 55,
             "column": 12
           },
           {
             "filePath": "src/components/courseCard/CourseCard.jsx",
-            "line": 50,
-            "column": 12
-          },
-          {
-            "filePath": "src/components/courseCard/CourseCard.jsx",
-            "line": 60,
+            "line": 65,
             "column": 12
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 50,
+            "line": 59,
             "column": 10
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 63,
+            "line": 72,
             "column": 12
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 68,
+            "line": 77,
             "column": 12
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 73,
+            "line": 82,
             "column": 12
           }
         ],
         "useToggle": [
           {
             "filePath": "src/components/catalogSearchResults/associatedComponents/downloadCsvButton/DownloadCsvButton.jsx",
-            "line": 12,
+            "line": 10,
             "column": 32
           }
         ],
@@ -11043,55 +11104,55 @@
           {
             "filePath": "src/components/catalogSearchResults/associatedComponents/downloadCsvButton/DownloadCsvButton.jsx",
             "line": 36,
-            "column": 7
+            "column": 8
           }
         ],
         "Download": [
           {
             "filePath": "src/components/catalogSearchResults/associatedComponents/downloadCsvButton/DownloadCsvButton.jsx",
-            "line": 40,
-            "column": 59
+            "line": 42,
+            "column": 20
           }
         ],
         "DataTable.TableControlBar": [
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 314,
+            "line": 381,
             "column": 10
           }
         ],
         "DataTable.Table": [
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 327,
-            "column": 25
+            "line": 394,
+            "column": 24
           }
         ],
         "DataTable.TableFooter": [
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 330,
-            "column": 10
+            "line": 397,
+            "column": 12
           }
         ],
         "DataTable.RowStatus": [
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 331,
-            "column": 12
+            "line": 398,
+            "column": 14
           }
         ],
         "Form.Radio": [
           {
             "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
-            "line": 19,
+            "line": 20,
             "column": 4
           }
         ],
         "Card": [
           {
             "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
-            "line": 44,
+            "line": 41,
             "column": 4
           },
           {
@@ -11101,53 +11162,53 @@
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 33,
+            "line": 37,
             "column": 4
           }
         ],
         "Card.Header": [
           {
             "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
-            "line": 45,
+            "line": 42,
             "column": 6
           },
           {
             "filePath": "src/components/courseCard/CourseCard.jsx",
-            "line": 33,
+            "line": 38,
             "column": 6
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 40,
+            "line": 49,
             "column": 6
           }
         ],
         "Card.Section": [
           {
             "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
-            "line": 57,
+            "line": 54,
             "column": 6
           },
           {
             "filePath": "src/components/courseCard/CourseCard.jsx",
-            "line": 35,
+            "line": 40,
             "column": 6
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 44,
+            "line": 57,
             "column": 6
           }
         ],
         "Container": [
           {
             "filePath": "src/components/catalogSelectionDeck/CatalogSelectionDeck.jsx",
-            "line": 18,
+            "line": 21,
             "column": 6
           },
           {
             "filePath": "src/components/hero/Hero.jsx",
-            "line": 74,
+            "line": 77,
             "column": 6
           },
           {
@@ -11157,26 +11218,26 @@
           },
           {
             "filePath": "src/components/subheader/subheader.jsx",
-            "line": 12,
+            "line": 8,
             "column": 6
           }
         ],
         "CardDeck": [
           {
             "filePath": "src/components/catalogSelectionDeck/CatalogSelectionDeck.jsx",
-            "line": 20,
+            "line": 23,
             "column": 8
           }
         ],
         "Card.ImageCap": [
           {
             "filePath": "src/components/courseCard/CourseCard.jsx",
-            "line": 27,
+            "line": 32,
             "column": 6
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 34,
+            "line": 43,
             "column": 6
           }
         ],
@@ -11200,19 +11261,19 @@
           },
           {
             "filePath": "src/components/hero/Hero.jsx",
-            "line": 58,
-            "column": 45
+            "line": 59,
+            "column": 14
           },
           {
             "filePath": "src/components/hero/Hero.jsx",
-            "line": 58,
-            "column": 84
+            "line": 60,
+            "column": 14
           }
         ],
         "Program": [
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 56,
+            "line": 63,
             "column": 23
           }
         ]
@@ -11760,7 +11821,7 @@
           },
           {
             "filePath": "src/components/enterprise-user-subsidy/enterprise-offers/EnterpriseOffersBalanceAlert.jsx",
-            "line": 48,
+            "line": 49,
             "column": 4
           },
           {
@@ -11964,7 +12025,7 @@
           },
           {
             "filePath": "src/components/enterprise-user-subsidy/enterprise-offers/EnterpriseOffersBalanceAlert.jsx",
-            "line": 49,
+            "line": 50,
             "column": 6
           },
           {
@@ -12038,8 +12099,8 @@
           },
           {
             "filePath": "src/components/dashboard/sidebar/EnterpriseOffersSummaryCard.jsx",
-            "line": 55,
-            "column": 6
+            "line": 63,
+            "column": 8
           },
           {
             "filePath": "src/components/executive-education-2u/ExecutiveEducation2UError.jsx",
@@ -12165,8 +12226,8 @@
           },
           {
             "filePath": "src/components/dashboard/sidebar/EnterpriseOffersSummaryCard.jsx",
-            "line": 56,
-            "column": 8
+            "line": 64,
+            "column": 10
           },
           {
             "filePath": "src/components/error-page/ErrorPage.jsx",
@@ -12277,7 +12338,7 @@
           },
           {
             "filePath": "src/components/pathway-progress/PathwayProgressHeader.jsx",
-            "line": 21,
+            "line": 19,
             "column": 10
           },
           {
@@ -12438,7 +12499,7 @@
           },
           {
             "filePath": "src/components/pathway-progress/PathwayNode.jsx",
-            "line": 28,
+            "line": 35,
             "column": 8
           },
           {
@@ -12684,7 +12745,7 @@
           },
           {
             "filePath": "src/components/pathway-progress/PathwayNode.jsx",
-            "line": 29,
+            "line": 36,
             "column": 10
           },
           {
@@ -12878,8 +12939,8 @@
           },
           {
             "filePath": "src/components/dashboard/sidebar/EnterpriseOffersSummaryCard.jsx",
-            "line": 22,
-            "column": 10
+            "line": 31,
+            "column": 12
           },
           {
             "filePath": "src/components/dashboard/sidebar/SubscriptionSummaryCard.jsx",
@@ -12893,7 +12954,7 @@
           },
           {
             "filePath": "src/components/pathway-progress/PathwayNode.jsx",
-            "line": 37,
+            "line": 44,
             "column": 50
           },
           {
@@ -12987,7 +13048,7 @@
           },
           {
             "filePath": "src/components/enterprise-user-subsidy/enterprise-offers/EnterpriseOffersBalanceAlert.jsx",
-            "line": 55,
+            "line": 56,
             "column": 8
           }
         ],
@@ -15027,12 +15088,12 @@
           },
           {
             "filePath": "src/product-tours/newUserCourseHomeTour/NewUserCourseHomeTourModal.jsx",
-            "line": 45,
+            "line": 46,
             "column": 10
           },
           {
             "filePath": "src/product-tours/newUserCourseHomeTour/NewUserCourseHomeTourModal.jsx",
-            "line": 51,
+            "line": 52,
             "column": 10
           }
         ],
@@ -15783,7 +15844,7 @@
         "DataTable": [
           {
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/DetailedGradesTable.jsx",
-            "line": 40,
+            "line": 43,
             "column": 10
           },
           {
@@ -15800,7 +15861,7 @@
         "DataTable.Table": [
           {
             "filePath": "src/course-home/progress-tab/grades/detailed-grades/DetailedGradesTable.jsx",
-            "line": 58,
+            "line": 61,
             "column": 12
           },
           {
@@ -16004,7 +16065,7 @@
           },
           {
             "filePath": "src/product-tours/newUserCourseHomeTour/NewUserCourseHomeTourModal.jsx",
-            "line": 44,
+            "line": 45,
             "column": 8
           }
         ],
@@ -16189,14 +16250,14 @@
         "ModalDialog.Hero": [
           {
             "filePath": "src/product-tours/newUserCourseHomeTour/NewUserCourseHomeTourModal.jsx",
-            "line": 25,
+            "line": 26,
             "column": 8
           }
         ],
         "ModalDialog.Title": [
           {
             "filePath": "src/product-tours/newUserCourseHomeTour/NewUserCourseHomeTourModal.jsx",
-            "line": 30,
+            "line": 31,
             "column": 12
           },
           {
@@ -18851,7 +18912,7 @@
         "SearchField": [
           {
             "filePath": "src/components/CourseTable/index.jsx",
-            "line": 169,
+            "line": 170,
             "column": 12
           }
         ],
@@ -18875,7 +18936,7 @@
         "Hyperlink": [
           {
             "filePath": "src/components/EditCoursePage/CollapsibleCourseRun.jsx",
-            "line": 78,
+            "line": 79,
             "column": 12
           },
           {
@@ -18890,14 +18951,14 @@
           },
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 35,
+            "line": 36,
             "column": 12
           }
         ],
         "OverlayTrigger": [
           {
             "filePath": "src/components/EditCoursePage/CollapsibleCourseRun.jsx",
-            "line": 84,
+            "line": 85,
             "column": 12
           },
           {
@@ -18909,7 +18970,7 @@
         "Tooltip": [
           {
             "filePath": "src/components/EditCoursePage/CollapsibleCourseRun.jsx",
-            "line": 86,
+            "line": 87,
             "column": 23
           },
           {
@@ -18942,35 +19003,35 @@
         "Dropdown": [
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 59,
+            "line": 60,
             "column": 14
           }
         ],
         "Dropdown.Toggle": [
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 60,
+            "line": 61,
             "column": 16
           }
         ],
         "AvatarButton": [
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 60,
+            "line": 61,
             "column": 37
           }
         ],
         "Dropdown.Menu": [
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 64,
+            "line": 65,
             "column": 16
           }
         ],
         "Dropdown.Item": [
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 65,
+            "line": 66,
             "column": 18
           }
         ],
@@ -23711,18 +23772,13 @@
           },
           {
             "filePath": "src/templates/aboutEdX.jsx",
-            "line": 379,
+            "line": 376,
             "column": 12
           },
           {
             "filePath": "src/templates/aboutEdX.jsx",
-            "line": 403,
+            "line": 400,
             "column": 12
-          },
-          {
-            "filePath": "src/templates/aboutEdX.jsx",
-            "line": 496,
-            "column": 14
           },
           {
             "filePath": "src/templates/allTopics.jsx",
@@ -24340,7 +24396,7 @@
         "Input": [
           {
             "filePath": "src/components/Footer/index.jsx",
-            "line": 464,
+            "line": 474,
             "column": 18
           }
         ],
