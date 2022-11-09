@@ -17,7 +17,7 @@ $modal-content-bg: var(--pgn-modal-content-bg) !default;
 $modal-content-border-color: var(--pgn-modal-content-border-color) !default;
 $modal-content-border-width: var(--pgn-modal-content-border-width) !default;
 $modal-content-border-radius: var(--pgn-modal-content-border-radius) !default;
-$modal-content-inner-border-radius: calc(#{$modal-content-border-radius} + #{$modal-content-border-width}) !default;
+$modal-content-inner-border-radius: calc(#{$modal-content-border-radius} - #{$modal-content-border-width}) !default;
 $modal-content-box-shadow-xs: var(--pgn-modal-content-box-shadow-xs) !default;
 $modal-content-box-shadow-sm-up: var(--pgn-modal-content-box-shadow-sm-up) !default;
 

@@ -7,7 +7,7 @@ $popover-border-width: var(--pgn-popover-border-border) !default;
 $popover-border-color:              rgba(#000000, .2) !default;
 
 $popover-border-radius: var(--pgn-popover-border-radius) !default;
-$popover-inner-border-radius: calc(#{$popover-border-radius} + #{$popover-border-width}) !default;
+$popover-inner-border-radius: calc(#{$popover-border-radius} - #{$popover-border-width}) !default;
 $popover-box-shadow: var(--pgn-popover-box-shadow) !default;
 $popover-icon-margin-right: var(--pgn-popover-icon-margin-right) !default;
 $popover-icon-height: var(--pgn-popover-icon-height) !default;

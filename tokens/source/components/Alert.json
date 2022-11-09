@@ -22,8 +22,7 @@
       "content": { "value": "{color.gray.700.value}", "themeable": true, "source": "$alert-content-color" }
     },
     "box-shadow": {
-      "value": 
-      "0 1px 2px rgba(0, 0, 0, .15), 0 1px 4px rgba(0, 0, 0, .15)", 
+      "value": "0 1px 2px rgba(0, 0, 0, .15), 0 1px 4px rgba(0, 0, 0, .15)", 
       "themeable": true, 
       "source": "$alert-box-shadow"
     },

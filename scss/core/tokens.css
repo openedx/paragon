@@ -616,6 +616,7 @@
   --pgn-form-input-padding-y-lg: var(--pgn-input-btn-padding-lg-y);
   --pgn-form-input-padding-y-sm: var(--pgn-input-btn-padding-sm-y);
   --pgn-form-input-padding-y-base: var(--pgn-input-btn-padding-y);
+  --pgn-dropzone-upload-icon-wrapper-margin-bottom: var(--pgn-spacing-base-4);
   --pgn-dropzone-restriction-msg-font-size: var(--pgn-font-size-small-x);
   --pgn-dropdown-link-hover-color: var(--pgn-color-gray-900);
   --pgn-dropdown-link-color: var(--pgn-color-gray-900);
@@ -641,6 +642,7 @@
   --pgn-close-button-font-size: calc(var(--pgn-font-size-base) * 1.5);
   --pgn-carousel-caption-color: var(--pgn-color-white);
   --pgn-carousel-indicator-active-bg: var(--pgn-color-white);
+  --pgn-card-loading-skeleton-margin-top: var(--pgn-spacing-base-4);
   --pgn-card-footer-text-font-size: var(--pgn-font-size-small-x);
   --pgn-card-divider-margin-y: var(--pgn-card-spacer-y);
   --pgn-card-columns-margin: var(--pgn-card-spacer-y);
@@ -652,7 +654,7 @@
   --pgn-card-border-color-base: #00000020;
   --pgn-card-border-radius-base: var(--pgn-border-radius-base);
   --pgn-card-border-width: var(--pgn-border-width);
-  --pgn-btn-tertiary-inverse-bg-hover: #0000001A;
+  --pgn-btn-tertiary-inverse-bg-hover: #FFFFFF1A;
   --pgn-btn-tertiary-inverse-color: var(--pgn-color-white);
   --pgn-btn-tertiary-color: var(--pgn-color-gray-700);
   --pgn-btn-border-radius-sm: var(--pgn-border-radius-sm);
@@ -679,7 +681,7 @@
   --pgn-badge-font-weight: var(--pgn-font-weight-bold);
   --pgn-annotation-line-height: var(--pgn-line-height-sm);
   --pgn-annotation-font-size: var(--pgn-font-size-sm);
-  --pgn-alert-action-gap: var(--pgn-spacing-base-3);
+  --pgn-alert-actions-gap: var(--pgn-spacing-base-3);
   --pgn-alert-color-content: var(--pgn-color-gray-700);
   --pgn-alert-color-title: var(--pgn-color-black);
   --pgn-alert-font-weight-link: var(--pgn-font-weight-normal);
@@ -730,6 +732,8 @@
   --pgn-color-background-base: var(--pgn-color-white);
   --pgn-tooltip-arrow-color-base: var(--pgn-tooltip-bg-base);
   --pgn-search-field-input-height-search: calc(var(--pgn-form-input-line-height-base) * 1em + var(--pgn-form-input-padding-y-base) * 2);
+  --pgn-search-field-button-variants-dark: var(--pgn-color-brand-500);
+  --pgn-search-field-button-variants-light: var(--pgn-color-primary-500);
   --pgn-search-field-border-color-base: var(--pgn-color-gray-500);
   --pgn-progress-bar-bar-bg-annotated: var(--pgn-color-dark-500);
   --pgn-progress-bar-border-color: var(--pgn-color-gray-500);
@@ -877,6 +881,8 @@
   --pgn-color-input-focus: var(--pgn-color-primary-500);
   --pgn-color-disabled: var(--pgn-color-gray-500);
   --pgn-color-background-active: var(--pgn-color-primary-500);
+  --pgn-search-field-button-external-brand: var(--pgn-search-field-button-variants-dark);
+  --pgn-search-field-button-external-primary: var(--pgn-search-field-button-variants-light);
   --pgn-popover-danger-icon-color: var(--pgn-color-warning-500);
   --pgn-popover-danger-bg: var(--pgn-color-danger-100);
   --pgn-popover-warning-icon-color: var(--pgn-color-warning-500);
