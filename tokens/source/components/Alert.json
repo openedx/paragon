@@ -36,7 +36,7 @@
     },
     "line-height": { "value": "1.5rem", "themeable": true, "source": "$alert-line-height" },
     "actions": {
-      "gap": { "value": "{spacing.base.3.value}", "themeable": true, "source": "$alert-actions-gap" }
+      "gap": { "value": "{spacer.3.value}", "themeable": true, "source": "$alert-actions-gap" }
     }
   }
 }

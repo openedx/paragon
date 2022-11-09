@@ -39,7 +39,7 @@
   margin-bottom: $popover-arrow-height;
 
   > .arrow {
-    bottom: calc(calc(#{$popover-arrow-height} * -1) - $popover-border-width);
+    bottom: calc(#{$popover-border-width} - #{$popover-arrow-height});
 
     &::before {
       bottom: 0;
@@ -59,7 +59,7 @@
   margin-left: $popover-arrow-height;
 
   > .arrow {
-    left: calc(calc(#{$popover-arrow-height} * -1) - $popover-border-width);
+    left: calc(#{$popover-border-width} - #{$popover-arrow-height});
     width: $popover-arrow-height;
     height: $popover-arrow-width;
     margin: $popover-border-radius 0;
@@ -82,7 +82,7 @@
   margin-top: $popover-arrow-height;
 
   > .arrow {
-    top: calc(calc(#{$popover-arrow-height} * -1) - $popover-border-width);
+    top: calc(#{$popover-border-width} - #{$popover-arrow-height});
 
     &::before {
       top: 0;
@@ -99,13 +99,13 @@
 
   // This will remove the popover-header's border just below the arrow
   .popover-header::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 50%;
     display: block;
     width: $popover-arrow-width;
     margin-left: calc($popover-arrow-width * -.5);
-    content: "";
     border-bottom: $popover-border-width solid $popover-header-bg;
   }
 }
@@ -114,7 +114,7 @@
   margin-right: $popover-arrow-height;
 
   > .arrow {
-    right: calc(calc(#{$popover-arrow-height} * -1) - $popover-border-width);
+    right: calc(#{$popover-border-width} - #{$popover-arrow-height});
     width: $popover-arrow-height;
     height: $popover-arrow-width;
     margin: $popover-border-radius 0;

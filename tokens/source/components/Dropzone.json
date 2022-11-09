@@ -26,7 +26,7 @@
         "wrapper": {
           "margin": {
             "bottom": { 
-              "value": "{spacing.base.4.value}", 
+              "value": "{spacer.4.value}", 
               "themeable": true, 
               "source": "$dropzone-upload-icon-wrapper-margin-bottom" 
             }

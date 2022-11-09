@@ -192,7 +192,7 @@ $custom-range-thumb-border-radius: var(--pgn-form-custom-range-thumb-border-radi
 $custom-range-thumb-box-shadow: var(--pgn-form-custom-range-thumb-box-shadow-base) !default;
 $custom-range-thumb-focus-box-shadow: var(--pgn-form-custom-range-thumb-box-shadow-focus-base) !default;
 $custom-range-thumb-focus-box-shadow-width: var(--pgn-form-custom-range-thumb-box-shadow-focus-width) !default;
-$custom-range-thumb-active-bg:               lighten(#0A3055, 35%) !default;
+$custom-range-thumb-active-bg: var(--pgn-form-custom-range-thumb-bg-active) !default;
 $custom-range-thumb-disabled-bg: var(--pgn-form-custom-range-thumb-bg-disabled) !default;
 
 $custom-file-height: var(--pgn-form-custom-file-height-base) !default;

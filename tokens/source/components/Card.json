@@ -116,7 +116,7 @@
        "spacer": { "value": ".313rem", "themeable": true, "source": "$loading-skeleton-spacer" },
        "margin": {
         "top": { 
-          "value": "{spacing.base.4.value}", 
+          "value": "{spacer.4.value}", 
           "themeable": true, 
           "source": "$loading-skeleton-spacer-margin-top" 
         }

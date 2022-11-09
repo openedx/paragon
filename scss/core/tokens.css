@@ -32,18 +32,7 @@
   --pgn-transition-fade: opacity .15s linear;
   --pgn-transition-base: all .2s ease-in-out;
   --pgn-spacer-base: 1rem;
-  --pgn-spacing-base-5-5: 4rem;
-  --pgn-spacing-base-4-5: 2rem;
-  --pgn-spacing-base-3-5: 1.25rem;
-  --pgn-spacing-base-2-5: .75rem;
-  --pgn-spacing-base-1-5: .375rem;
-  --pgn-spacing-base-6: 5rem;
-  --pgn-spacing-base-5: 3rem;
-  --pgn-spacing-base-4: 1.5rem;
-  --pgn-spacing-base-3: 1rem;
-  --pgn-spacing-base-2: .5rem;
-  --pgn-spacing-base-1: .25rem;
-  --pgn-spacing-base-0: 0;
+  --pgn-spacer-0: 0;
   --pgn-grid-row-columns: 6;
   --pgn-grid-gutter-width: 24px;
   --pgn-grid-columns: 12;
@@ -489,6 +478,17 @@
   --pgn-font-size-mobile-h3: var(--pgn-font-size-h3);
   --pgn-font-size-mobile-h2: var(--pgn-font-size-h2);
   --pgn-font-family-base: var(--pgn-font-family-sans-serif);
+  --pgn-spacer-5-5: calc(var(--pgn-spacer-base) * 4rem);
+  --pgn-spacer-4-5: calc(var(--pgn-spacer-base) * 2rem);
+  --pgn-spacer-3-5: calc(var(--pgn-spacer-base) * 1.25rem);
+  --pgn-spacer-2-5: calc(var(--pgn-spacer-base) * .75rem);
+  --pgn-spacer-1-5: calc(var(--pgn-spacer-base) * .375rem);
+  --pgn-spacer-6: calc(var(--pgn-spacer-base) * 5rem);
+  --pgn-spacer-5: calc(var(--pgn-spacer-base) * 3rem);
+  --pgn-spacer-4: calc(var(--pgn-spacer-base) * 1.5rem);
+  --pgn-spacer-3: var(--pgn-spacer-base);
+  --pgn-spacer-2: calc(var(--pgn-spacer-base) * .5rem);
+  --pgn-spacer-1: calc(var(--pgn-spacer-base) * .25rem);
   --pgn-display-weight-4: var(--pgn-font-weight-bold);
   --pgn-display-weight-3: var(--pgn-font-weight-bold);
   --pgn-display-weight-2: var(--pgn-font-weight-bold);
@@ -616,7 +616,6 @@
   --pgn-form-input-padding-y-lg: var(--pgn-input-btn-padding-lg-y);
   --pgn-form-input-padding-y-sm: var(--pgn-input-btn-padding-sm-y);
   --pgn-form-input-padding-y-base: var(--pgn-input-btn-padding-y);
-  --pgn-dropzone-upload-icon-wrapper-margin-bottom: var(--pgn-spacing-base-4);
   --pgn-dropzone-restriction-msg-font-size: var(--pgn-font-size-small-x);
   --pgn-dropdown-link-hover-color: var(--pgn-color-gray-900);
   --pgn-dropdown-link-color: var(--pgn-color-gray-900);
@@ -642,7 +641,6 @@
   --pgn-close-button-font-size: calc(var(--pgn-font-size-base) * 1.5);
   --pgn-carousel-caption-color: var(--pgn-color-white);
   --pgn-carousel-indicator-active-bg: var(--pgn-color-white);
-  --pgn-card-loading-skeleton-margin-top: var(--pgn-spacing-base-4);
   --pgn-card-footer-text-font-size: var(--pgn-font-size-small-x);
   --pgn-card-divider-margin-y: var(--pgn-card-spacer-y);
   --pgn-card-columns-margin: var(--pgn-card-spacer-y);
@@ -681,7 +679,6 @@
   --pgn-badge-font-weight: var(--pgn-font-weight-bold);
   --pgn-annotation-line-height: var(--pgn-line-height-sm);
   --pgn-annotation-font-size: var(--pgn-font-size-sm);
-  --pgn-alert-actions-gap: var(--pgn-spacing-base-3);
   --pgn-alert-color-content: var(--pgn-color-gray-700);
   --pgn-alert-color-title: var(--pgn-color-black);
   --pgn-alert-font-weight-link: var(--pgn-font-weight-normal);
@@ -811,6 +808,7 @@
   --pgn-form-input-bg-base: var(--pgn-color-background-base);
   --pgn-form-input-line-height-lg: var(--pgn-input-btn-line-height-lg);
   --pgn-form-input-font-weight: var(--pgn-font-weight-base);
+  --pgn-dropzone-upload-icon-wrapper-margin-bottom: var(--pgn-spacer-4);
   --pgn-dropzone-restriction-msg-color: var(--pgn-color-gray-500);
   --pgn-dropzone-border-active: 2px solid var(--pgn-color-primary-500);
   --pgn-dropzone-border-default: 1px dashed var(--pgn-color-gray-500);
@@ -821,6 +819,7 @@
   --pgn-dropdown-color-header: var(--pgn-color-gray-500);
   --pgn-dropdown-color-base: var(--pgn-body-color);
   --pgn-data-table-background-color: var(--pgn-color-background-base);
+  --pgn-card-loading-skeleton-margin-top: var(--pgn-spacer-4);
   --pgn-card-divider-bg: var(--pgn-color-light-400);
   --pgn-card-bg: var(--pgn-color-background-base);
   --pgn-btn-tertiary-inverse-bg-active: var(--pgn-btn-tertiary-inverse-bg-hover);
@@ -833,6 +832,7 @@
   --pgn-breadcrumb-color-active: var(--pgn-color-gray-500);
   --pgn-breadcrumb-color-base: var(--pgn-color-primary-500);
   --pgn-avatar-border-base: solid 1px var(--pgn-color-light-300);
+  --pgn-alert-actions-gap: var(--pgn-spacer-3);
   --pgn-color-danger-900: #892029FF;
   --pgn-color-danger-800: #92222CFF;
   --pgn-color-danger-700: #9C242EFF;
