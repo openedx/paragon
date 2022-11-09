@@ -113,7 +113,14 @@
     },
     "loading": {
       "skeleton": {
-       "spacer": { "value": ".313rem", "themeable": true, "source": "$loading-skeleton-spacer" }
+       "spacer": { "value": ".313rem", "themeable": true, "source": "$loading-skeleton-spacer" },
+       "margin": {
+        "top": { 
+          "value": "{spacing.base.4.value}", 
+          "themeable": true, 
+          "source": "$loading-skeleton-spacer-margin-top" 
+        }
+       }
       }
     }
   }

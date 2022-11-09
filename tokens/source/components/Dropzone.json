@@ -20,6 +20,19 @@
         },
         "color": { "value": "{color.gray.500.value}", "themeable": true, "source": "$dropzone-restriction-msg-color" }
       }
+    },
+    "upload": {
+      "icon": {
+        "wrapper": {
+          "margin": {
+            "bottom": { 
+              "value": "{spacing.base.4.value}", 
+              "themeable": true, 
+              "source": "$dropzone-upload-icon-wrapper-margin-bottom" 
+            }
+          }
+        }
+      }
     }
   }
 }
