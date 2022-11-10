@@ -486,7 +486,6 @@
   --pgn-spacer-5-5: calc(var(--pgn-spacer-base) * 4rem);
   --pgn-spacer-4-5: calc(var(--pgn-spacer-base) * 2rem);
   --pgn-spacer-3-5: calc(var(--pgn-spacer-base) * 1.25rem);
-  --pgn-spacer-2-5: calc(var(--pgn-spacer-base) * .75rem);
   --pgn-spacer-1-5: calc(var(--pgn-spacer-base) * .375rem);
   --pgn-spacer-6: calc(var(--pgn-spacer-base) * 5rem);
   --pgn-spacer-5: calc(var(--pgn-spacer-base) * 3rem);
@@ -740,6 +739,7 @@
   --pgn-color-gray-500: var(--pgn-color-gray-base);
   --pgn-color-active: var(--pgn-color-white);
   --pgn-color-background-base: var(--pgn-color-white);
+  --pgn-spacer-2-5: calc(var(--pgn-spacer-1-5) * .75rem);
   --pgn-tooltip-arrow-color-base: var(--pgn-tooltip-bg-base);
   --pgn-search-field-input-height-search: calc(var(--pgn-form-input-line-height-base) * 1em + var(--pgn-form-input-padding-y-base) * 2);
   --pgn-search-field-button-variants-dark: var(--pgn-color-brand-500);
@@ -830,7 +830,6 @@
   --pgn-dropdown-bg: var(--pgn-color-background-base);
   --pgn-dropdown-color-header: var(--pgn-color-gray-500);
   --pgn-dropdown-color-base: var(--pgn-body-color);
-  --pgn-data-table-margin-left-btn-action: var(--pgn-spacer-2);
   --pgn-data-table-background-color: var(--pgn-color-background-base);
   --pgn-card-divider-bg: var(--pgn-color-light-400);
   --pgn-card-bg: var(--pgn-color-background-base);

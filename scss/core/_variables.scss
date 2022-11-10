@@ -348,7 +348,7 @@ $spacers: map-merge(
     1\.5: ($spacer * .375),
     2: ($spacer * .5),
     2\.5: ($spacer * .75),
-    3: var(--pgn-spacer-base),
+    3: $spacer,
     3\.5: ($spacer * 1.25),
     4: ($spacer * 1.5),
     4\.5: ($spacer * 2),

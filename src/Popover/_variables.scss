@@ -15,7 +15,7 @@ $popover-icon-height: var(--pgn-popover-icon-height) !default;
 $popover-icon-width: var(--pgn-popover-icon-width) !default;
 
 // TODO can't use css variable due to conflict with SCSS functions, should use #FFFFFF instead
-$popover-header-bg:#FFFFFF !default;
+$popover-header-bg: #FFFFFF !default;
 $popover-header-bg-dark: var(--pgn-popover-header-bg-darken) !default;
 
 $popover-header-color: var(--pgn-popover-header-color) !default;

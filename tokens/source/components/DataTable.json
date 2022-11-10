@@ -26,13 +26,6 @@
       "cell": { "value": ".75rem", "themeable": true, "source": "$data-table-cell-padding" },
       "head-cell": { "value": ".5rem .75rem", "themeable": true, "source": "$data-table-head-cell-padding" }
     },
-    "margin": {
-      "left": {
-        "btn": {
-          "action": { "value": "{spacer.2.value}", "themeable": true, "source": "$data-table-action-btn-margin-left" }
-        }
-      }
-    },
     "footer": {
       "position": { "value": "center", "themeable": true, "source": "$data-table-footer-position" }
     },

@@ -21,4 +21,4 @@ $alert-font-size: var(--pgn-alert-font-size) !default;
 $alert-line-height: var(--pgn-alert-line-height) !default;
 $alert-content-color: var(--pgn-alert-color-content) !default;
 
-$alert-actions-gap: map-get($spacers, 3) !default;
+$alert-actions-gap: map-get($spacers, 3);
