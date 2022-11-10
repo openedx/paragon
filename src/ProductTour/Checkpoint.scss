@@ -107,7 +107,6 @@
     border-top: $checkpoint-arrow-default-color;
     border-left: $checkpoint-arrow-transparent;
     border-right: $checkpoint-arrow-transparent;
-    // TODO need to create a CSS variable
     filter: drop-shadow(0 4px 2px rgba(0, 0, 0, .1));
     -webkit-filter: drop-shadow(0 4px 2px rgba(0, 0, 0, .1));
   }
@@ -134,7 +133,6 @@
     border-top: $checkpoint-arrow-transparent;
     border-left: $checkpoint-arrow-default-color;
     border-right: $checkpoint-arrow-transparent;
-    // TODO need to create a CSS variable
     filter: drop-shadow(3px 1px 2px rgba(0, 0, 0, .1));
   }
 }
@@ -149,7 +147,6 @@
     border-top: $checkpoint-arrow-transparent;
     border-left: $checkpoint-arrow-transparent;
     border-right: $checkpoint-arrow-default-color;
-    // TODO need to create a CSS variable
     filter: drop-shadow(-3px 1px 2px rgba(0, 0, 0, .1));
   }
 }

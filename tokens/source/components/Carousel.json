@@ -29,6 +29,9 @@
     "caption": {
       "width": { "value": "70%", "themeable": true, "source": "$carousel-caption-width" },
       "color": { "value": "{color.white.value}", "themeable": true, "source": "$carousel-caption-color" }
+    },
+    "transition": {
+      "duration": { "value": ".6s", "themeable": true, "source": "$carousel-transition-duration" }
     }
   }
 }

@@ -129,8 +129,7 @@
   }
 
   &::before {
-    // TODO need to create a CSS variable
-    border-top-color: rgba(var(--pgn-color-black), 20%);
+    border-top-color: rgba(0, 0, 0, 20%);
   }
 }
 

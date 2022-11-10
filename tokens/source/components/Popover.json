@@ -34,6 +34,17 @@
             "amount": 0.5
           }]
         }
+      },
+      "border": {
+        "darken": {
+          "value": "{color.white.value}", 
+          "themeable": true, 
+          "source": "$popover-header-border-bottom-darken",
+          "modify": [{
+            "type": "darken",
+            "amount": 0.5
+          }]
+        }
       }
     },
     "body": {

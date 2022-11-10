@@ -165,8 +165,7 @@
 
   color: $popover-header-color;
   background-color: $popover-header-bg;
-  // TODO need to create a CSS variable
-  border-bottom: $popover-border-width solid darken($popover-header-bg, 5%);
+  border-bottom: $popover-border-width solid $popover-header-border-bottom-darken;
 
   @include border-top-radius($popover-inner-border-radius);
 

@@ -289,9 +289,12 @@
   --pgn-form-custom-checkbox-indicator-indeterminate-box-shadow: none;
   --pgn-form-custom-checkbox-indicator-border-radius: 0;
   --pgn-form-custom-control-label-color-base: null;
+  --pgn-form-custom-control-indicator-active-bg: #0A3055FF;
   --pgn-form-custom-control-indicator-active-box-shadow: none;
+  --pgn-form-custom-control-indicator-checked-color: #0A3055FF;
   --pgn-form-custom-control-indicator-checked-box-shadow-focus: 0 0 0 4px rgba(0, 0, 0, .1);
   --pgn-form-custom-control-indicator-checked-box-shadow-base: none;
+  --pgn-form-custom-control-indicator-checked-bg-base: #0A3055FF;
   --pgn-form-custom-control-indicator-border-width: 2px;
   --pgn-form-custom-control-indicator-bg-size: 100%;
   --pgn-form-custom-control-indicator-size: 1.25rem;
@@ -362,6 +365,7 @@
   --pgn-chip-padding-icon-base: .25rem;
   --pgn-chip-padding-x: .5rem;
   --pgn-chip-padding-y: .125rem;
+  --pgn-carousel-transition-duration: .6s;
   --pgn-carousel-caption-width: 70%;
   --pgn-carousel-indicator-transition: opacity .6s ease;
   --pgn-carousel-indicator-spacer: 3px;
@@ -486,6 +490,7 @@
   --pgn-spacer-5-5: calc(var(--pgn-spacer-base) * 4rem);
   --pgn-spacer-4-5: calc(var(--pgn-spacer-base) * 2rem);
   --pgn-spacer-3-5: calc(var(--pgn-spacer-base) * 1.25rem);
+  --pgn-spacer-2-5: calc(var(--pgn-spacer-base) * .75rem);
   --pgn-spacer-1-5: calc(var(--pgn-spacer-base) * .375rem);
   --pgn-spacer-6: calc(var(--pgn-spacer-base) * 5rem);
   --pgn-spacer-5: calc(var(--pgn-spacer-base) * 3rem);
@@ -528,6 +533,7 @@
   --pgn-product-tour-checkpoint-color-body: var(--pgn-color-gray-700);
   --pgn-popover-body-padding-x: var(--pgn-popover-header-padding-x);
   --pgn-popover-body-padding-y: var(--pgn-popover-header-padding-y);
+  --pgn-popover-header-border-darken: #E5E5E5FF;
   --pgn-popover-header-bg-darken: #E5E5E5FF;
   --pgn-popover-border-width: var(--pgn-border-width);
   --pgn-popover-border-radius: var(--pgn-border-radius-sm);
@@ -607,6 +613,7 @@
   --pgn-form-custom-switch-indicator-size: calc(var(--pgn-form-custom-control-indicator-size) - var(--pgn-form-custom-control-indicator-border-width) * 4);
   --pgn-form-custom-switch-indicator-border-radius: calc(var(--pgn-form-custom-control-indicator-size) / 2);
   --pgn-form-custom-switch-width: calc(var(--pgn-form-custom-control-indicator-size) * 1.75);
+  --pgn-form-custom-control-indicator-active-color: var(--pgn-color-white);
   --pgn-form-custom-control-indicator-border-color: var(--pgn-color-gray-700);
   --pgn-form-custom-control-indicator-box-shadow: var(--pgn-form-input-box-shadow-base);
   --pgn-form-input-group-addon-bg: var(--pgn-color-gray-100);
@@ -739,7 +746,6 @@
   --pgn-color-gray-500: var(--pgn-color-gray-base);
   --pgn-color-active: var(--pgn-color-white);
   --pgn-color-background-base: var(--pgn-color-white);
-  --pgn-spacer-2-5: calc(var(--pgn-spacer-1-5) * .75rem);
   --pgn-tooltip-arrow-color-base: var(--pgn-tooltip-bg-base);
   --pgn-search-field-input-height-search: calc(var(--pgn-form-input-line-height-base) * 1em + var(--pgn-form-input-padding-y-base) * 2);
   --pgn-search-field-button-variants-dark: var(--pgn-color-brand-500);

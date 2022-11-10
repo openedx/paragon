@@ -203,6 +203,7 @@
           },
           "checked": {
             "bg": {
+              "base": { "value": "#0A3055", "themeable": true, "source": "$custom-control-indicator-checked-bg" },
               "disabled": {
                 "value": "{color.primary.500.value}",
                 "themeable": true,
@@ -236,12 +237,17 @@
                   "source": "$custom-control-indicator-focus-border-color"
                 }
               }
+            },
+            "color": {
+              "value": "#0A3055", "themeable": true, "source": "$custom-control-indicator-checked-color"
             }
           },
           "active": {
             "box": {
               "shadow": { "value": "none", "themeable": true, "source": "$custom-control-indicator-active-box-shadow" }
-            }
+            },
+            "color": { "value": "{color.white.value}", "themeable": true, "source": "$custom-control-indicator-active-color" },
+            "bg": { "value": "#0A3055", "themeable": true, "source": "$custom-control-indicator-active-color" }
           }
         },
         "label": {

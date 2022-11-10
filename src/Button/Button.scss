@@ -147,7 +147,7 @@
     box-shadow: none;
 
     $distance: calc($btn-focus-width + $btn-focus-gap);
-    $distance-include-btn-border: calc(#{$distance} + $btn-border-width);
+    $distance-include-btn-border: calc(#{$distance} + #{$btn-border-width});
 
     &::before {
       content: "";
