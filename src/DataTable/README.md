@@ -1066,7 +1066,7 @@ Use `columnSizes` prop of `CardView` component to define how many `Cards` are sh
 
 ```jsx live
 () => {
-  const columnSizes = {xs: 12, sm: 6, lg: 3};
+  const columnSizes = { xs: 12, sm: 6, lg: 3 };
 
   const ExampleCard = ({ className, original }) => {
     const { name, color, famous_for: famousFor } = original;
@@ -1094,7 +1094,7 @@ Use `columnSizes` prop of `CardView` component to define how many `Cards` are sh
       itemCount={5}
       defaultColumnValues={{ Filter: TextFilter }}
       isFilterable
-			isSortable
+      isSortable
       data={[
         {
           name: 'Lil Bub',
@@ -1150,7 +1150,7 @@ You can also display `Cards` with horizontal view. If the table is selectable co
 
 ```jsx live
 () => {
-  const columnSizes = {xs: 12};
+  const columnSizes = { xs: 12 };
 
   const ExampleCard = ({ className, original }) => {
     const { name, color, famous_for: famousFor } = original;

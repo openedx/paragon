@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import DataTableContext from './DataTableContext';
 import { useRows } from './hooks';
+import { selectColumn } from './utils/getVisibleColumns';
 import { CardGrid } from '..';
 
 function CardItem({
@@ -42,10 +43,10 @@ function CardView({
   const {
     getTableProps, prepareRow, displayRows,
   } = useRows();
-  const { isSelectable, visibleColumns } = useContext(DataTableContext);
+  const { isSelectable, manualSelectColumn } = useContext(DataTableContext);
   // use the same component for card selection that is used for row selection
   // otherwise view switching might break if row selection uses component that supports backend filtering / sorting
-  const selectionComponent = isSelectable ? visibleColumns.find((col) => col.id === 'selection')?.Cell : undefined;
+  const selectionComponent = manualSelectColumn?.Cell || selectColumn.Cell;
 
   if (!getTableProps) {
     return null;
