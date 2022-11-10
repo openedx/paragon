@@ -27,12 +27,10 @@
       },
       "radius": { "value": ".25rem", "themeable": true, "source": "$toast-border-radius" }
     },
-    "box": {
-      "shadow": {
-        "value": "0 1.25rem 2.5rem rgba(0, 0, 0, .15), 0 .5rem 3rem rgba(0, 0, 0, .15)",
-        "themeable": true,
-        "source": "$toast-box-shadow"
-      }
+    "box-shadow": {
+      "value": "0 1.25rem 2.5rem rgba(0, 0, 0, .15), 0 .5rem 3rem rgba(0, 0, 0, .15)",
+      "themeable": true,
+      "source": "$toast-box-shadow"
     },
     "header": {
       "color": {

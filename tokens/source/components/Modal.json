@@ -46,15 +46,13 @@
         "width": { "value": "0rem", "themeable": true, "source": "$modal-content-border-width" },
         "radius": { "value": "{border.radius.lg.value}", "themeable": true, "source": "$modal-content-border-radius" }
       },
-      "box": {
-        "shadow": {
-          "xs": { "value": "0 .25rem .5rem rgba(0, 0, 0, .5)", "themeable": true, "source": "$modal-content-box-shadow-xs" },
-          "sm": {
-            "up": {
-              "value": "0 10px 20px rgba(0, 0, 0, .15), 0 8px 20px rgba(0, 0, 0, .15)",
-              "themeable": true,
-              "source": "$modal-content-box-shadow-sm-up"
-            }
+      "box-shadow": {
+        "xs": { "value": "0 .25rem .5rem rgba(0, 0, 0, .5)", "themeable": true, "source": "$modal-content-box-shadow-xs" },
+        "sm": {
+          "up": {
+            "value": "0 10px 20px rgba(0, 0, 0, .15), 0 8px 20px rgba(0, 0, 0, .15)",
+            "themeable": true,
+            "source": "$modal-content-box-shadow-sm-up"
           }
         }
       }

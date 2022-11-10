@@ -6,16 +6,14 @@
         "body": { "value": "{color.gray.700.value}", "themeable": true, "source": "$checkpoint-body-color" },
         "border": { "value": "{color.brand.500.value}", "themeable": true, "source": "$checkpoint-border-color" },
         "breadcrumb": { "value": "{color.primary.500.value}", "themeable": true, "source": "$checkpoint-breadcrumb-color" },
-        "box": {
-          "shadow": {
-            "value": "{color.black.value}", 
-            "themeable": true, 
-            "source": "$checkpoint-box-shadow-color",
-            "modify": [{
-              "type": "alpha",
-              "amount": 0.3
-            }]
-          }
+        "box-shadow": {
+          "value": "{color.black.value}", 
+          "themeable": true, 
+          "source": "$checkpoint-box-shadow-color",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.3
+          }]
         }
       },
       "width": {

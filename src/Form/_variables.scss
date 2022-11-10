@@ -87,8 +87,9 @@ $custom-control-label-color: var(--pgn-form-custom-control-label-color-base) !de
 $custom-control-indicator-disabled-bg: var(--pgn-form-custom-control-indicator-disabled-bg) !default;
 $custom-control-label-disabled-color: var(--pgn-form-custom-control-label-color-disabled) !default;
 
-$custom-control-indicator-checked-color: var(--pgn-form-custom-control-indicator-checked-color) !default;
-$custom-control-indicator-checked-bg: var(--pgn-form-custom-control-indicator-checked-bg-base) !default;
+// TODO can't use css variables due to conflict with str-replace function.
+$custom-control-indicator-checked-color: #0A3055 !default;
+$custom-control-indicator-checked-bg: #0A3055 !default;
 $custom-control-indicator-checked-disabled-bg: var(--pgn-form-custom-control-indicator-checked-bg-disabled) !default;
 
 // stylelint-disable-next-line max-line-length
@@ -102,7 +103,8 @@ $custom-control-indicator-focus-box-shadow: var(--pgn-form-custom-control-indica
 // stylelint-disable-next-line max-line-length
 $custom-control-indicator-focus-border-color: var(--pgn-form-custom-control-indicator-checked-border-color-focus) !default;
 
-$custom-control-indicator-active-color: var(--pgn-form-custom-control-indicator-active-color) !default;
+// TODO can't use css variable due to conflict with str-replace function.
+$custom-control-indicator-active-color: #FFFFFF !default;
 $custom-control-indicator-active-bg: var(--pgn-form-custom-control-indicator-active-bg) !default;
 $custom-control-indicator-active-box-shadow: var(--pgn-form-custom-control-indicator-active-box-shadow) !default;
 $custom-control-indicator-active-border-color: $custom-control-indicator-active-bg !default;

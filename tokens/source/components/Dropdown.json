@@ -53,9 +53,7 @@
         "y": { "value": "calc({spacer.base.value} / 2)", "themeable": true, "source": "$dropdown-divider-margin-y" }
       }
     },
-    "box": {
-      "shadow": { "value": "0 .5rem 1rem rgba(0, 0, 0, .175)", "themeable": true, "source": "$dropdown-box-shadow" }
-    },
+    "box-shadow": { "value": "0 .5rem 1rem rgba(0, 0, 0, .175)", "themeable": true, "source": "$dropdown-box-shadow" },
     "link": {
       "color": { "value": "{color.gray.900.value}", "themeable": true, "source": "$dropdown-link-color" },
       "hover": {

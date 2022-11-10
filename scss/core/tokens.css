@@ -166,7 +166,7 @@
   --pgn-reduced-dropdown-width-min: 6rem;
   --pgn-reduced-dropdown-height-max: 60vh;
   --pgn-pagination-focus-border-width: .125rem;
-  --pgn-pagination-focus-box-outline: 0;
+  --pgn-pagination-focus-outline: 0;
   --pgn-pagination-secondary-height-sm: 2.25rem;
   --pgn-pagination-secondary-height-base: 2.75rem;
   --pgn-pagination-toggle-border-sm: .25rem;
@@ -646,6 +646,7 @@
   --pgn-dropdown-padding-header: var(--pgn-dropdown-padding-y-base) var(--pgn-dropdown-padding-x-item);
   --pgn-data-table-box-shadow: var(--pgn-box-shadow-sm);
   --pgn-data-table-border: 1px solid var(--pgn-color-gray-200);
+  --pgn-data-table-background-is-loading: #FFFFFFB3;
   --pgn-collapsible-card-spacer-x-lg: var(--pgn-card-spacer-x);
   --pgn-collapsible-card-spacer-y-lg: var(--pgn-card-spacer-y);
   --pgn-code-pre-color: var(--pgn-color-gray-900);

@@ -114,13 +114,13 @@
   &.pgn__form-control-decorator-leading {
     inset-inline-start: 0;
     padding-inline-start: $input-padding-x;
-    padding-inline-end: calc($input-padding-x / 2);
+    padding-inline-end: calc(#{$input-padding-x} / 2);
   }
 
   &.pgn__form-control-decorator-trailing {
     inset-inline-end: 0;
-    padding-inline-start: calc($input-padding-x / 2);
-    padding-inline-end: calc(#{$input-padding-y-sm} - (2 * $input-border-width));
+    padding-inline-start: calc(#{$input-padding-x} / 2);
+    padding-inline-end: calc(#{$input-padding-y-sm} - calc(2 * #{$input-border-width}));
   }
 
   .pgn__form-control-decorator-group-lg & {
@@ -311,7 +311,6 @@
   select.form-control:not(.has-value):not(:focus) {
     // color: rgba(0,0,0,0); Force the rgba syntax to appear in the output rather
     // than transparent. IE11 does not understand color: transparent here.
-    // TODO needs a decision
     color: unquote("rgba(0,0,0,0)");
   }
 }
