@@ -32,7 +32,7 @@ a .pgn__card {
   .pgn__card-header-content {
     display: flex;
     flex-direction: column;
-    margin-top: $card-header-content-margin-top;
+    margin-top: map_get($spacers, 4\.5);
     overflow: auto;
     text-align: start;
     width: 100%;
@@ -60,7 +60,7 @@ a .pgn__card {
 
   %header-subtitle {
     color: $gray-700;
-    margin-top: $card-header-subtitle-margin-top;
+    margin-top: map_get($spacers, 1);
   }
 
   .pgn__card-header-subtitle,
@@ -87,7 +87,7 @@ a .pgn__card {
     width: 100%;
 
     .react-loading-skeleton {
-      margin-top: $card-loading-skeleton-margin-top;
+      margin-top: map-get($spacers, 4);
     }
   }
 }
@@ -174,7 +174,7 @@ a .pgn__card {
 
   &.horizontal-stacked {
     flex-direction: column-reverse;
-    padding-top: $card-spacer-x - $card-footer-actions-gap;
+    padding-top: calc(#{$card-spacer-x} - #{$card-footer-actions-gap});
 
     & > * {
       margin-top: $card-footer-actions-gap;
@@ -265,7 +265,7 @@ a .pgn__card {
   border-radius: $card-logo-border-radius;
   box-shadow: $level-1-box-shadow;
   z-index: 1;
-  padding: $card-logo-cap-padding;
+  padding: map_get($spacers, 2);
   background-color: $white;
 }
 

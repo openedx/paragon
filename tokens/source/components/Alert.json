@@ -34,9 +34,6 @@
     "icon": {
       "space": { "value": ".8rem", "themeable": true, "source": "$alert-icon-space" }
     },
-    "line-height": { "value": "1.5rem", "themeable": true, "source": "$alert-line-height" },
-    "actions": {
-      "gap": { "value": "{spacer.3.value}", "themeable": true, "source": "$alert-actions-gap" }
-    }
+    "line-height": { "value": "1.5rem", "themeable": true, "source": "$alert-line-height" }
   }
 }

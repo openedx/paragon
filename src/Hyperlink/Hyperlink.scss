@@ -1,11 +1,9 @@
-@import "variables";
-
 .pgn__hyperlink {
   text-align: start;
 
   &__external-icon {
     display: inline-block;
     vertical-align: middle;
-    margin-inline-start: $hyperlink-external-icon-margin-start;
+    margin-inline-start: map_get($spacers, 2);
   }
 }

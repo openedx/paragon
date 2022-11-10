@@ -24,18 +24,6 @@
       "variants": {
         "light": { "value": "{color.primary.500.value}", "themeable": true },
         "dark": { "value": "{color.brand.500.value}", "themeable": true }
-      },
-      "external": {
-        "primary": { 
-          "value": "{search-field.button.variants.light.value}", 
-          "themeable": true, 
-          "source": "$searchfield-external-btn-primary" 
-        },
-        "brand": { 
-          "value": "{search-field.button.variants.dark.value}", 
-          "themeable": true, 
-          "source": "$searchfield-external-btn-brand" 
-        }
       }
     },
     "input": {

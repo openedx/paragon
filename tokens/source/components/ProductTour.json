@@ -42,55 +42,7 @@
           "source": "$checkpoint-arrow-transparent"
         }
       },
-      "zindex": { "value": "1060", "themeable": true, "source": "$checkpoint-z-index" },
-      "padding": { "value": "{spacer.4.value}", "themeable": true, "source": "$checkpoint-padding" },
-      "button": {
-        "dismiss": {
-          "margin": {
-            "end": { 
-              "value": "{spacer.2.value}", 
-              "themeable": true, 
-              "source": "$checkpoint-button-dismiss-margin-end" 
-            }
-          }
-        }
-      },
-      "breadcrumb": {
-        "margin": {
-          "right": {
-            "value": "{spacer.1/5.value}", 
-            "themeable": true, 
-            "source": "$checkpoint-breadcrumb-margin-right" 
-          }
-        }
-      },
-      "body": {
-        "margin": {
-          "bottom": {
-            "value": "{spacer.3/5.value}", 
-            "themeable": true, 
-            "source": "$checkpoint-body-margin-bottom" 
-          }
-        }
-      },
-      "header": {
-        "margin": {
-          "bottom": {
-            "value": "{spacer.2/5.value}", 
-            "themeable": true, 
-            "source": "$checkpoint-header-margin-bottom" 
-          }
-        }
-      },
-      "title": {
-        "margin": {
-          "end": {
-            "value": "{spacer.2/5.value}", 
-            "themeable": true, 
-            "source": "$checkpoint-title-margin-end" 
-          }
-        }
-      }
+      "zindex": { "value": "1060", "themeable": true, "source": "$checkpoint-z-index" }
     }
   }
 }

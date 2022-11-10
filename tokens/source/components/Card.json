@@ -95,19 +95,6 @@
         }
       }
     },
-    "header": {
-      "margin": {
-        "top": {
-          "content": { "value": "{spacer.4/5.value}", "themeable": true, "source": "$card-header-content-margin-top" },
-          "subtitle": { "value": "{spacer.1.value}", "themeable": true, "source": "$card-header-subtitle-margin-top" },
-          "skeleton": {
-            "loading": {
-              "value": "{spacer.4.value}", "themeable": true, "source": "$card-loading-skeleton-margin-top"
-            }
-          }
-        }
-      }
-    },
     "logo": {
       "left": {
         "offset": {
@@ -122,10 +109,7 @@
         }
       },
       "width": { "value": "7.25rem", "themeable": true, "source": "$card-logo-width" },
-      "height": { "value": "4.125rem", "themeable": true, "source": "$card-logo-height" },
-      "cap": {
-        "padding": { "value": "{spacer.2.value}", "themeable": true, "source": "$card-logo-cap-padding" }
-      }
+      "height": { "value": "4.125rem", "themeable": true, "source": "$card-logo-height" }
     },
     "loading": {
       "skeleton": {

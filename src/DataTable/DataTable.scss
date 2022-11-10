@@ -26,10 +26,10 @@
   display: flex;
 
   .pgn__datatable__visible-actions {
-    margin-inline-start: $data-table-visible-actions-margin-start;
+    margin-inline-start: map_get($spacers, 2);
 
     .btn {
-      margin-inline-start: $data-table-visible-actions-margin-start;
+      margin-inline-start: map_get($spacers, 2);
 
       &:first-child {
         margin-inline-start: 0;
@@ -57,7 +57,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    margin-top: $data-table-toggle-margin-top;
+    margin-top: map_get($spacers, 4);
   }
 
   .pgn__icon-button-toggle__container {
@@ -98,18 +98,18 @@
     border-radius: $border-radius;
     box-shadow: $data-table-box-shadow;
     padding: $data-table-padding-small;
-    margin-right: $data-table-layout-sidebar-margin-right;
+    margin-right: map_get($spacers, 4);
     flex-grow: 0;
   }
 
   .pgn__data-table-side-filters {
     .pgn__data-table-side-filters-title {
-      margin-bottom: $data-table-side-filters-title-margin-bottom;
+      margin-bottom: map_get($spacers, 3);
       text-align: start;
     }
 
     .pgn__data-table-side-filters-status {
-      margin-bottom: $data-table-side-filters-status-margin-bottom;
+      margin-bottom: map_get($spacers, 2);
       display: flex;
       justify-content: flex-end;
     }
@@ -170,7 +170,7 @@
 }
 
 .pgn__data-table-filters-breakout-filter {
-  margin-inline-end: $data-table-side-filters-breakout-filter-margin-end;
+  margin-inline-end: map_get($spacers, 2);
 }
 
 .pgn__data-table-filters-dropdown-item {
@@ -256,7 +256,7 @@
 }
 
 .pgn__data-table__action-btn {
-  margin-left: $data-table-action-btn-margin-left;
+  margin-left: map_get($spacers, 2);
 
   &:first-child {
     margin-left: 0;
@@ -273,7 +273,7 @@
 
 .pgn__data-table__overflow-actions-menu {
   background: $white;
-  padding: $data-table-overflow-actions-menu-padding;
+  padding: map_get($spacers, 2);
   box-shadow: $level-1-box-shadow;
   border-radius: 4px;
 }

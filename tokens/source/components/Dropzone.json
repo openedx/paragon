@@ -20,30 +20,6 @@
         },
         "color": { "value": "{color.gray.500.value}", "themeable": true, "source": "$dropzone-restriction-msg-color" }
       }
-    },
-    "upload": {
-      "icon": {
-        "wrapper": {
-          "margin": {
-            "bottom": { 
-              "value": "{spacer.4.value}", 
-              "themeable": true, 
-              "source": "$dropzone-upload-icon-wrapper-margin-bottom" 
-            }
-          }
-        }
-      }
-    },
-    "generic": {
-      "alert": {
-        "margin": {
-          "bottom": {
-            "value": "{spacer.4.value}", 
-            "themeable": true, 
-            "source": "$dropzone-generic-alert-margin-bottom" 
-          }
-        }
-      }
     }
   }
 }
