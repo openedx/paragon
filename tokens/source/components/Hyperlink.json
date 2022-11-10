@@ -1,11 +1,15 @@
 {
-	"hyperlink": {
-  	"margin": {
-    	"start": {
-      	"external": {
-        	"icon": { "value": "{spacer.2.value}", "themeable":  true, "source": "$hyperlink-external-icon-margin-start" }
-      	}
-    	}
-		}
-	}
+  "hyperlink": {
+    "margin": {
+      "start": {
+        "external": {
+          "icon": {
+            "value": "{spacer.2.value}",
+            "themeable": true,
+            "source": "$hyperlink-external-icon-margin-start"
+          }
+        }
+      }
+    }
+  }
 }
