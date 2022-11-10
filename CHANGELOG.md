@@ -1,3 +1,13 @@
+## [20.18.1](https://github.com/openedx/paragon/compare/v20.18.0...v20.18.1) (2022-11-10)
+
+
+### Bug Fixes
+
+* added translations English strings in FormAutosuggest component ([#1711](https://github.com/openedx/paragon/issues/1711)) ([782cfb8](https://github.com/openedx/paragon/commit/782cfb8147aef728a85eeee8c91551dd0eebf4b4))
+* fixed close button positioning in modal components ([#1733](https://github.com/openedx/paragon/issues/1733)) ([9d24187](https://github.com/openedx/paragon/commit/9d24187f5ee02159caed517c238dc8e4b2c704c9))
+* fixed onToggle prop ([#1719](https://github.com/openedx/paragon/issues/1719)) ([fe21655](https://github.com/openedx/paragon/commit/fe216550f3b5326304d1230eb5ee3d6119ee9bb7))
+* hooks are displayed in production ([#1715](https://github.com/openedx/paragon/issues/1715)) ([d726ad1](https://github.com/openedx/paragon/commit/d726ad10ad5e176ae6d4a83ddc4a645a9b08b024))
+
 # [20.18.0](https://github.com/openedx/paragon/compare/v20.17.0...v20.18.0) (2022-10-26)
 
 
