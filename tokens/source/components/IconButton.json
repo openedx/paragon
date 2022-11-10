@@ -12,6 +12,17 @@
     "bg": { "value": "transparent", "themeable": true, "source": "$btn-icon-bg" },
     "accent": {
       "color": { "value": "{color.white.value}", "themeable": true, "source": "$btn-icon-accent-color" }
+    },
+    "toggle": {
+      "btn": {
+        "icon": {
+          "margin": {
+            "start": {
+              "value": "{spacer.1.value}", "themeable": true, "source": "$icon-button-toggle-btn-icon-margin-start"
+            }
+          }
+        }
+      }
     }
   }
 }

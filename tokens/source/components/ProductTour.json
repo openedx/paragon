@@ -5,7 +5,18 @@
         "background": { "value": "{color.light.300.value}", "themeable": true, "source": "$checkpoint-background-color" },
         "body": { "value": "{color.gray.700.value}", "themeable": true, "source": "$checkpoint-body-color" },
         "border": { "value": "{color.brand.500.value}", "themeable": true, "source": "$checkpoint-border-color" },
-        "breadcrumb": { "value": "{color.primary.500.value}", "themeable": true, "source": "$checkpoint-breadcrumb-color" }
+        "breadcrumb": { "value": "{color.primary.500.value}", "themeable": true, "source": "$checkpoint-breadcrumb-color" },
+        "box": {
+          "shadow": {
+            "value": "{color.black.value}", 
+            "themeable": true, 
+            "source": "$checkpoint-box-shadow-color",
+            "modify": [{
+              "type": "alpha",
+              "amount": 0.3
+            }]
+          }
+        }
       },
       "width": {
         "border": { "value": "8px", "themeable": true, "source": "$checkpoint-border-width" },
@@ -31,7 +42,55 @@
           "source": "$checkpoint-arrow-transparent"
         }
       },
-      "zindex": { "value": "1060", "themeable": true, "source": "$checkpoint-z-index" }
+      "zindex": { "value": "1060", "themeable": true, "source": "$checkpoint-z-index" },
+      "padding": { "value": "{spacer.4.value}", "themeable": true, "source": "$checkpoint-padding" },
+      "button": {
+        "dismiss": {
+          "margin": {
+            "end": { 
+              "value": "{spacer.2.value}", 
+              "themeable": true, 
+              "source": "$checkpoint-button-dismiss-margin-end" 
+            }
+          }
+        }
+      },
+      "breadcrumb": {
+        "margin": {
+          "right": {
+            "value": "{spacer.1/5.value}", 
+            "themeable": true, 
+            "source": "$checkpoint-breadcrumb-margin-right" 
+          }
+        }
+      },
+      "body": {
+        "margin": {
+          "bottom": {
+            "value": "{spacer.3/5.value}", 
+            "themeable": true, 
+            "source": "$checkpoint-body-margin-bottom" 
+          }
+        }
+      },
+      "header": {
+        "margin": {
+          "bottom": {
+            "value": "{spacer.2/5.value}", 
+            "themeable": true, 
+            "source": "$checkpoint-header-margin-bottom" 
+          }
+        }
+      },
+      "title": {
+        "margin": {
+          "end": {
+            "value": "{spacer.2/5.value}", 
+            "themeable": true, 
+            "source": "$checkpoint-title-margin-end" 
+          }
+        }
+      }
     }
   }
 }

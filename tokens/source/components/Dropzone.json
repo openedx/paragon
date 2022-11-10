@@ -33,6 +33,17 @@
           }
         }
       }
+    },
+    "generic": {
+      "alert": {
+        "margin": {
+          "bottom": {
+            "value": "{spacer.4.value}", 
+            "themeable": true, 
+            "source": "$dropzone-generic-alert-margin-bottom" 
+          }
+        }
+      }
     }
   }
 }

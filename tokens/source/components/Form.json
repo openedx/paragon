@@ -252,6 +252,17 @@
               "themeable": true,
               "source": "$custom-control-label-disabled-color"
             }
+          },
+          "floating": {
+            "text": { 
+              "value": "{form.input.bg.base.value}", 
+              "themeable": true, 
+              "source": "$form-control-floating-label-text-bg",
+              "modify": [{
+                "type": "alpha",
+                "amount": 0.1
+              }]
+            }
           }
         }
       },

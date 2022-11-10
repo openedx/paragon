@@ -6,11 +6,11 @@ $annotation-font-size: var(--pgn-annotation-font-size) !default;
 $annotation-line-height: var(--pgn-annotation-line-height) !default;
 
 $annotation-variants: (
-  "success": ( "background-color": $success, "color": $white ),
-  "warning": ( "background-color": $accent-b, "color": $black ),
-  "error":   ( "background-color": $danger, "color": $white ),
-  "light":   ( "background-color": $white, "color": $primary-500 ),
-  "dark":    ( "background-color": $dark, "color": $white ),
+  "success": ( "background-color": var(--pgn-color-success-base), "color": var(--pgn-color-white) ),
+  "warning": ( "background-color": var(--pgn-color-accent-b), "color": var(--pgn-color-black) ),
+  "error":   ( "background-color": var(--pgn-color-danger-base), "color": var(--pgn-color-white) ),
+  "light":   ( "background-color": var(--pgn-color-white), "color": var(--pgn-color-primary-500) ),
+  "dark":    ( "background-color": var(--pgn-color-dark-base), "color": var(--pgn-color-white) ),
 ) !default;
 
 $annotation-arrow-side-margin: var(--pgn-annotation-arrow-side-margin) !default;

@@ -34,7 +34,7 @@
 
 .pgn__dropzone-generic-alert {
   width: 100%;
-  margin-bottom: map_get($spacers, 4);
+  margin-bottom: $dropzone-generic-alert-margin-bottom;
 
   .pgn__alert-message-wrapper .alert-message-content {
     > span {
@@ -49,7 +49,7 @@
   background: $light-300;
   border-radius: 50%;
   position: relative;
-  margin-bottom: map-get($spacers, 4);
+  margin-bottom: $dropzone-upload-icon-wrapper-margin-bottom;
 }
 
 .pgn__dropzone__upload-icon {

@@ -2,9 +2,18 @@
   "chip": {
     "padding": {
       "y": { "value": ".125rem", "themeable": true, "source": "$chip-padding-y" },
-      "x": { "value": ".5rem", "themeable": true, "source": "$chip-padding-x" }
+      "x": { "value": ".5rem", "themeable": true, "source": "$chip-padding-x" },
+      "icon": { 
+        "base": {
+          "value": ".25rem", "themeable": true, "source": "$chip-icon-padding" 
+        },
+        "to": {
+          "value": "3px", "themeable": true, "source": "$chip-padding-to-icon"
+        }
+      }
     },
     "margin": {
+      "base": { "value": ".125rem", "themeable": true, "source": "$chip-margin" },
       "inline": { "value": ".5rem", "themeable": true, "source": "$chip-margin-inline" }
     },
     "border": {
@@ -23,6 +32,12 @@
     },
     "line": {
       "height": { "value": "1.5rem", "themeable": true, "source": "$chip-line-height" }
+    },
+    "disabled": {
+      "opacity": { "value": ".3", "themeable": true, "source": "$chip-disable-opacity" }
+    },
+    "icon": {
+      "size": { "value": "1.25rem", "themeable": true, "source": "$chip-icon-size" }
     }
   }
 }

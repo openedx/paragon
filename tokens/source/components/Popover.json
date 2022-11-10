@@ -9,7 +9,7 @@
     },
     "border": {
       "radius": { "value": "{border.radius.sm.value}", "themeable": true, "source": "$popover-border-radius" },
-      "border": { "value": "{border.width.value}", "themeable": true, "source": "$popover-border-width" }
+      "width": { "value": "{border.width.value}", "themeable": true, "source": "$popover-border-width" }
     },
     "box": {
       "shadow": {
@@ -23,6 +23,17 @@
       "padding": {
         "y": { "value": ".5rem", "themeable": true, "source": "$popover-header-padding-y" },
         "x": { "value": "1rem", "themeable": true, "source": "$popover-header-padding-x" }
+      },
+      "bg": {
+        "darken": {
+          "value": "{color.white.value}", 
+          "themeable": true, 
+          "source": "$popover-header-bg-dark",
+          "modify": [{
+            "type": "darken",
+            "amount": 0.5
+          }]
+        }
       }
     },
     "body": {

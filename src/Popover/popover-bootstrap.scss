@@ -26,9 +26,9 @@
 
     &::before,
     &::after {
+      content: "";
       position: absolute;
       display: block;
-      content: "";
       border-color: transparent;
       border-style: solid;
     }
@@ -165,6 +165,7 @@
 
   color: $popover-header-color;
   background-color: $popover-header-bg;
+  // TODO need to create a CSS variable
   border-bottom: $popover-border-width solid darken($popover-header-bg, 5%);
 
   @include border-top-radius($popover-inner-border-radius);

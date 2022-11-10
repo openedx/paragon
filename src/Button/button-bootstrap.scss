@@ -53,8 +53,8 @@
 .btn-group-lg > .btn { @extend .btn-lg; }
 
 .dropdown-toggle-split {
-  padding-right: calc(var(--pgn-btn-padding-x) * .75);
-  padding-left: calc(var(--pgn-btn-padding-x) * .75);
+  padding-right: calc($btn-padding-x * .75);
+  padding-left: calc($btn-padding-x * .75);
 
   &::after,
   .dropup &::after,

@@ -1,7 +1,18 @@
 {
   "data-table": {
     "background": {
-      "color": { "value": "{color.background.base.value}", "themeable": true, "source": "$data-table-background-color"
+      "color": { "value": "{color.background.base.value}", "themeable": true, "source": "$data-table-background-color",
+      "is": {
+        "loading": { 
+          "value": "{color.white.value}", 
+          "themeable": true, 
+          "source": "$data-table-is-loading-bg",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.7
+          }]
+        }
+      }
       }
     },
     "border": { "value": "1px solid {color.gray.200.value}", "themeable": true, "source": "$data-table-border" },
@@ -13,7 +24,65 @@
       "y": { "value": ".75rem", "themeable": true, "source": "$data-table-padding-y" },
       "small": { "value": ".5rem", "themeable": true, "source": "$data-table-padding-small" },
       "cell": { "value": ".75rem", "themeable": true, "source": "$data-table-cell-padding" },
-      "head-cell": { "value": ".5rem .75rem", "themeable": true, "source": "$data-table-head-cell-padding" }
+      "head-cell": { "value": ".5rem .75rem", "themeable": true, "source": "$data-table-head-cell-padding" },
+      "overflow": {
+        "actions": {
+          "menu": { 
+            "value": "{spacer.2.value}", 
+            "themeable": true, 
+            "source": "$data-table-overflow-actions-menu-padding" 
+          }
+        }
+      }
+    },
+    "margin": {
+      "start": {
+        "visible": {
+          "actions": { 
+            "value": "{spacer.2.value}", 
+            "themeable": true, 
+            "source": "$data-table-visible-actions-margin-start" 
+          }
+        }
+      },
+      "top": {
+        "toogle": { "value": "{spacer.4.value}", "themeable": true, "source": "$data-table-toggle-margin-top" }
+      },
+      "right": {
+        "layout": {
+          "sidebar": { "value": "{spacer.4.value}", "themeable": true, "source": "$data-table-layout-sidebar-margin-right" }
+        }
+      },
+      "left": {
+        "btn": {
+          "action": { "value": "{spacer.2.value}", "themeable": true, "source": "$data-table-action-btn-margin-left" }
+        }
+      },
+      "bottom": {
+        "side": {
+          "filters": {
+            "status": { 
+              "value": "{spacer.2.value}", 
+              "themeable": true, 
+              "source": "$data-table-side-filters-status-margin-bottom" 
+            },
+            "title": { 
+              "value": "{spacer.3.value}", 
+              "themeable": true, 
+              "source": "$data-table-side-filters-title-margin-bottom" 
+            }
+          }
+        }
+      },
+      "end": {
+        "breakout": { 
+          "filters": {
+            "value": "{spacer.2.value}", 
+            "themeable": true, 
+            "source": "$data-table-side-filters-breakout-filter-margin-end" 
+          }
+        }
+      }
     },
     "footer": {
       "position": { "value": "center", "themeable": true, "source": "$data-table-footer-position" }

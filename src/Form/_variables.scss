@@ -34,7 +34,7 @@ $input-focus-width: var(--pgn-form-input-focus-width) !default;
 $input-focus-box-shadow: var(--pgn-form-input-box-shadow-focus) !default;
 
 $input-placeholder-color: var(--pgn-form-input-color-plaintext) !default;
-$input-plaintext-color:                 $body-color !default;
+$input-plaintext-color:                 var(--pgn-body-color) !default;
 
 $input-height-border: var(--pgn-form-input-border-height) !default;
 
@@ -104,7 +104,7 @@ $custom-control-indicator-focus-box-shadow: var(--pgn-form-custom-control-indica
 $custom-control-indicator-focus-border-color: var(--pgn-form-custom-control-indicator-checked-border-color-focus) !default;
 
 // TODO switch to css variable
-$custom-control-indicator-active-color:         #FFFFFF !default;
+$custom-control-indicator-active-color:         $white !default;
 $custom-control-indicator-active-bg:            #0A3055 !default;
 $custom-control-indicator-active-box-shadow: var(--pgn-form-custom-control-indicator-active-box-shadow) !default;
 $custom-control-indicator-active-border-color:  $custom-control-indicator-active-bg !default;
@@ -152,7 +152,7 @@ $custom-select-indicator:           str-replace(url('data:image/svg+xml,<svg wid
 
 // Used so we can have multiple background elements (e.g., arrow and feedback icon)
 $custom-select-background:          $custom-select-indicator no-repeat right
-  $input-padding-y center / $custom-select-bg-size !default;
+  var(--pgn-form-input-padding-y-base) center / var(--pgn-form-custom-select-bg-size) !default;
 
 $custom-select-feedback-icon-padding-right: var(--pgn-form-custom-select-feedback-icon-padding-right) !default;
 $custom-select-feedback-icon-position: var(--pgn-form-custom-select-feedback-icon-position) !default;
@@ -262,3 +262,4 @@ $form-autosuggest-icon-height: $form-autosuggest-icon-width;
 $form-autosuggest-spinner-width: 1.25rem;
 $form-autosuggest-spinner-height: $form-autosuggest-spinner-width;
 $form-autosuggest-border-width: .125rem;
+$form-control-floating-label-text-bg: var(--pgn-form-custom-control-label-floating-text) !default;

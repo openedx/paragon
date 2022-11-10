@@ -86,6 +86,7 @@
 
   // Background-color and (when enabled) gradient
   &::before {
+    content: "";
     position: absolute;
     top: calc((#{$font-size-base} * #{$line-height-base} - #{$custom-control-indicator-size}) * .5);
     left: -($custom-control-gutter + $custom-control-indicator-size);
@@ -93,7 +94,6 @@
     width: $custom-control-indicator-size;
     height: $custom-control-indicator-size;
     pointer-events: none;
-    content: "";
     background-color: $custom-control-indicator-bg;
     border: $custom-control-indicator-border-width solid $custom-control-indicator-border-color;
 
@@ -102,13 +102,13 @@
 
   // Foreground (icon)
   &::after {
+    content: "";
     position: absolute;
     top: calc((#{$font-size-base} * #{$line-height-base} - #{$custom-control-indicator-size}) * .5);
     left: -($custom-control-gutter + $custom-control-indicator-size);
     display: block;
     width: $custom-control-indicator-size;
     height: $custom-control-indicator-size;
-    content: "";
     background: 50% / #{$custom-control-indicator-bg-size} no-repeat;
   }
 }
@@ -378,6 +378,7 @@
   @include box-shadow($custom-file-box-shadow);
 
   &::after {
+    content: "Browse";
     position: absolute;
     top: 0;
     right: 0;
@@ -388,7 +389,6 @@
     padding: $custom-file-padding-y $custom-file-padding-x;
     line-height: $custom-file-line-height;
     color: $custom-file-button-color;
-    content: "Browse";
     border-left: inherit;
 
     @include gradient-bg($custom-file-button-bg);
