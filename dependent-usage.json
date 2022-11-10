@@ -1,5 +1,5 @@
 {
-  "lastModified": 1668003163502,
+  "lastModified": 1668089838047,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -1612,8 +1612,8 @@
           },
           {
             "filePath": "src/components/ContentHighlights/CurrentContentHighlightHeader.jsx",
-            "line": 10,
-            "column": 4
+            "line": 19,
+            "column": 8
           },
           {
             "filePath": "src/components/ContentHighlights/CurrentContentHighlightItemsHeader.jsx",
@@ -1621,9 +1621,54 @@
             "column": 8
           },
           {
-            "filePath": "src/components/ContentHighlights/ZeroStateHighlights.jsx",
-            "line": 23,
-            "column": 8
+            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
+            "line": 58,
+            "column": 16
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
+            "line": 59,
+            "column": 16
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
+            "line": 65,
+            "column": 16
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
+            "line": 66,
+            "column": 16
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
+            "line": 72,
+            "column": 16
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
+            "line": 73,
+            "column": 16
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
+            "line": 79,
+            "column": 16
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
+            "line": 80,
+            "column": 16
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/tests/ContentHighlightStepper.test.jsx",
+            "line": 18,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/ContentHighlights/ZeroState/ZeroStateHighlights.jsx",
+            "line": 30,
+            "column": 12
           },
           {
             "filePath": "src/components/CouponDetails/ActionButton.jsx",
@@ -2105,6 +2150,11 @@
             "column": 14
           },
           {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
+            "line": 31,
+            "column": 8
+          },
+          {
             "filePath": "src/components/CouponDetails/CouponBulkActions.jsx",
             "line": 46,
             "column": 6
@@ -2524,6 +2574,11 @@
             "column": 16
           },
           {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
+            "line": 32,
+            "column": 10
+          },
+          {
             "filePath": "src/components/CouponDetails/CouponBulkActions.jsx",
             "line": 47,
             "column": 8
@@ -2921,6 +2976,11 @@
             "column": 8
           },
           {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
+            "line": 13,
+            "column": 10
+          },
+          {
             "filePath": "src/components/Coupon/index.jsx",
             "line": 91,
             "column": 6
@@ -3118,14 +3178,39 @@
             "column": 6
           },
           {
+            "filePath": "src/components/ContentHighlights/ContentHighlightsDashboard.jsx",
+            "line": 16,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/ContentHighlights/ContentHighlightsDashboard.jsx",
+            "line": 24,
+            "column": 4
+          },
+          {
             "filePath": "src/components/ContentHighlights/ContentHighlightSet.jsx",
             "line": 7,
             "column": 4
           },
           {
-            "filePath": "src/components/ContentHighlights/CourseHighlightRoutes.jsx",
-            "line": 16,
-            "column": 6
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperConfirmCourses.jsx",
+            "line": 6,
+            "column": 2
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperConfirmHighlight.jsx",
+            "line": 6,
+            "column": 2
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectCourses.jsx",
+            "line": 6,
+            "column": 2
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
+            "line": 9,
+            "column": 2
           },
           {
             "filePath": "src/components/learner-credit-management/LearnerCreditManagement.jsx",
@@ -3247,8 +3332,8 @@
           },
           {
             "filePath": "src/components/ContentHighlights/CurrentContentHighlightHeader.jsx",
-            "line": 5,
-            "column": 2
+            "line": 14,
+            "column": 6
           },
           {
             "filePath": "src/components/ContentHighlights/CurrentContentHighlightItemsHeader.jsx",
@@ -3481,6 +3566,11 @@
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentStepper.jsx",
             "line": 49,
             "column": 4
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
+            "line": 42,
+            "column": 6
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/SSOStepper.jsx",
@@ -3758,6 +3848,26 @@
             "column": 10
           },
           {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
+            "line": 85,
+            "column": 10
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
+            "line": 89,
+            "column": 10
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
+            "line": 93,
+            "column": 10
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
+            "line": 97,
+            "column": 10
+          },
+          {
             "filePath": "src/components/settings/SettingsSSOTab/SSOStepper.jsx",
             "line": 140,
             "column": 10
@@ -3855,6 +3965,26 @@
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentStepper.jsx",
             "line": 90,
             "column": 10
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
+            "line": 53,
+            "column": 14
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
+            "line": 62,
+            "column": 14
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
+            "line": 69,
+            "column": 14
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
+            "line": 76,
+            "column": 14
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/SSOStepper.jsx",
@@ -4023,9 +4153,39 @@
             "column": 4
           },
           {
+            "filePath": "src/components/ContentHighlights/ContentHighlightSetCard.jsx",
+            "line": 38,
+            "column": 6
+          },
+          {
             "filePath": "src/components/ContentHighlights/CurrentContentHighlights.jsx",
-            "line": 9,
+            "line": 10,
             "column": 2
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperConfirmCourses.jsx",
+            "line": 7,
+            "column": 4
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperConfirmHighlight.jsx",
+            "line": 7,
+            "column": 4
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectCourses.jsx",
+            "line": 7,
+            "column": 4
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
+            "line": 10,
+            "column": 4
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
+            "line": 12,
+            "column": 8
           },
           {
             "filePath": "src/components/learner-credit-management/EmailAddressTableCell.jsx",
@@ -4541,18 +4701,18 @@
           },
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightCardItem.jsx",
-            "line": 6,
+            "line": 7,
             "column": 2
           },
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightSetCard.jsx",
-            "line": 13,
+            "line": 34,
             "column": 4
           },
           {
-            "filePath": "src/components/ContentHighlights/ZeroStateHighlights.jsx",
-            "line": 14,
-            "column": 4
+            "filePath": "src/components/ContentHighlights/ZeroState/ZeroStateHighlights.jsx",
+            "line": 21,
+            "column": 8
           },
           {
             "filePath": "src/components/learner-credit-management/LearnerCreditAggregateCards.jsx",
@@ -4633,11 +4793,11 @@
           },
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightCardItem.jsx",
-            "line": 15,
+            "line": 16,
             "column": 4
           },
           {
-            "filePath": "src/components/ContentHighlights/ZeroStateCardText.jsx",
+            "filePath": "src/components/ContentHighlights/ZeroState/ZeroStateCardText.jsx",
             "line": 6,
             "column": 2
           },
@@ -4751,6 +4911,11 @@
             "filePath": "src/components/BulkEnrollmentPage/stepper/ReviewStep.jsx",
             "line": 37,
             "column": 6
+          },
+          {
+            "filePath": "src/components/ContentHighlights/ZeroState/ZeroStateHighlights.jsx",
+            "line": 19,
+            "column": 4
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/index.jsx",
@@ -5265,6 +5430,11 @@
             "column": 4
           },
           {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperFooterHelpLink.jsx",
+            "line": 8,
+            "column": 4
+          },
+          {
             "filePath": "src/components/settings/ConfigError.jsx",
             "line": 24,
             "column": 10
@@ -5343,13 +5513,18 @@
         "CardGrid": [
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightCardContainer.jsx",
-            "line": 7,
+            "line": 8,
             "column": 2
           },
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightsCardItemsContainer.jsx",
-            "line": 18,
+            "line": 20,
             "column": 4
+          },
+          {
+            "filePath": "src/components/ContentHighlights/ContentHighlightSetCardContainer.jsx",
+            "line": 8,
+            "column": 2
           },
           {
             "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
@@ -5380,11 +5555,11 @@
         "Card.ImageCap": [
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightCardItem.jsx",
-            "line": 7,
+            "line": 8,
             "column": 4
           },
           {
-            "filePath": "src/components/ContentHighlights/ZeroStateCardImage.jsx",
+            "filePath": "src/components/ContentHighlights/ZeroState/ZeroStateCardImage.jsx",
             "line": 7,
             "column": 4
           }
@@ -5392,13 +5567,13 @@
         "Card.Header": [
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightCardItem.jsx",
-            "line": 13,
+            "line": 14,
             "column": 4
           },
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightSetCard.jsx",
-            "line": 17,
-            "column": 6
+            "line": 39,
+            "column": 8
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
@@ -5424,11 +5599,11 @@
         "Card.Footer": [
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightCardItem.jsx",
-            "line": 18,
+            "line": 19,
             "column": 4
           },
           {
-            "filePath": "src/components/ContentHighlights/ZeroStateCardFooter.jsx",
+            "filePath": "src/components/ContentHighlights/ZeroState/ZeroStateCardFooter.jsx",
             "line": 6,
             "column": 2
           },
@@ -5443,11 +5618,73 @@
             "column": 8
           }
         ],
+        "Badge": [
+          {
+            "filePath": "src/components/ContentHighlights/ContentHighlightSetCard.jsx",
+            "line": 43,
+            "column": 8
+          },
+          {
+            "filePath": "src/components/learner-credit-management/LearnerCreditManagement.jsx",
+            "line": 76,
+            "column": 14
+          },
+          {
+            "filePath": "src/components/learner-credit-management/LearnerCreditManagement.jsx",
+            "line": 78,
+            "column": 14
+          },
+          {
+            "filePath": "src/components/settings/SettingsAccessTab/StatusTableCell.jsx",
+            "line": 8,
+            "column": 4
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
+            "line": 243,
+            "column": 20
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
+            "line": 248,
+            "column": 16
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
+            "line": 172,
+            "column": 45
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
+            "line": 173,
+            "column": 65
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
+            "line": 174,
+            "column": 66
+          },
+          {
+            "filePath": "src/components/subscriptions/licenses/LicenseManagementTable/LicenseManagementUserBadge.jsx",
+            "line": 18,
+            "column": 11
+          },
+          {
+            "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
+            "line": 76,
+            "column": 10
+          },
+          {
+            "filePath": "src/components/SubsidyRequestManagementTable/RequestStatusCell.jsx",
+            "line": 23,
+            "column": 4
+          }
+        ],
         "ActionRow.Spacer": [
           {
             "filePath": "src/components/ContentHighlights/CurrentContentHighlightHeader.jsx",
-            "line": 9,
-            "column": 4
+            "line": 18,
+            "column": 8
           },
           {
             "filePath": "src/components/ContentHighlights/CurrentContentHighlightItemsHeader.jsx",
@@ -5460,11 +5697,50 @@
             "column": 8
           }
         ],
+        "FullscreenModal": [
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
+            "line": 43,
+            "column": 8
+          }
+        ],
+        "Stepper.Header": [
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
+            "line": 50,
+            "column": 26
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/SSOStepper.jsx",
+            "line": 137,
+            "column": 8
+          }
+        ],
         "Col": [
           {
-            "filePath": "src/components/ContentHighlights/ZeroStateHighlights.jsx",
-            "line": 13,
-            "column": 2
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperConfirmCourses.jsx",
+            "line": 9,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectCourses.jsx",
+            "line": 9,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
+            "line": 11,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
+            "line": 14,
+            "column": 10
+          },
+          {
+            "filePath": "src/components/ContentHighlights/ZeroState/ZeroStateHighlights.jsx",
+            "line": 20,
+            "column": 6
           },
           {
             "filePath": "src/components/learner-credit-management/LearnerCreditAggregateCards.jsx",
@@ -5552,11 +5828,23 @@
             "column": 8
           }
         ],
+        "AddCircle": [
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
+            "line": 13,
+            "column": 21
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/SSOConfigConfiguredCard.jsx",
+            "line": 110,
+            "column": 25
+          }
+        ],
         "Add": [
           {
-            "filePath": "src/components/ContentHighlights/ZeroStateHighlights.jsx",
-            "line": 23,
-            "column": 28
+            "filePath": "src/components/ContentHighlights/ZeroState/ZeroStateHighlights.jsx",
+            "line": 30,
+            "column": 69
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
@@ -5953,63 +6241,6 @@
             "filePath": "src/components/SubsidyRequestManagementTable/SubsidyRequestManagementTable.jsx",
             "line": 92,
             "column": 8
-          }
-        ],
-        "Badge": [
-          {
-            "filePath": "src/components/learner-credit-management/LearnerCreditManagement.jsx",
-            "line": 76,
-            "column": 14
-          },
-          {
-            "filePath": "src/components/learner-credit-management/LearnerCreditManagement.jsx",
-            "line": 78,
-            "column": 14
-          },
-          {
-            "filePath": "src/components/settings/SettingsAccessTab/StatusTableCell.jsx",
-            "line": 8,
-            "column": 4
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 243,
-            "column": 20
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 248,
-            "column": 16
-          },
-          {
-            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
-            "line": 172,
-            "column": 45
-          },
-          {
-            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
-            "line": 173,
-            "column": 65
-          },
-          {
-            "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
-            "line": 174,
-            "column": 66
-          },
-          {
-            "filePath": "src/components/subscriptions/licenses/LicenseManagementTable/LicenseManagementUserBadge.jsx",
-            "line": 18,
-            "column": 11
-          },
-          {
-            "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
-            "line": 76,
-            "column": 10
-          },
-          {
-            "filePath": "src/components/SubsidyRequestManagementTable/RequestStatusCell.jsx",
-            "line": 23,
-            "column": 4
           }
         ],
         "Search": [
@@ -6638,20 +6869,6 @@
             "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
             "line": 165,
             "column": 24
-          }
-        ],
-        "AddCircle": [
-          {
-            "filePath": "src/components/settings/SettingsSSOTab/SSOConfigConfiguredCard.jsx",
-            "line": 110,
-            "column": 25
-          }
-        ],
-        "Stepper.Header": [
-          {
-            "filePath": "src/components/settings/SettingsSSOTab/SSOStepper.jsx",
-            "line": 137,
-            "column": 8
           }
         ],
         "ArrowForward": [
@@ -20656,6 +20873,11 @@
             "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
             "line": 34,
             "column": 6
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
+            "line": 65,
+            "column": 10
           }
         ],
         "ActionRow.Spacer": [
@@ -20673,6 +20895,11 @@
             "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
             "line": 45,
             "column": 4
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
+            "line": 67,
+            "column": 12
           }
         ],
         "Button": [
@@ -20723,7 +20950,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 99,
+            "line": 98,
             "column": 10
           },
           {
@@ -20733,7 +20960,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 101,
+            "line": 110,
             "column": 10
           },
           {
@@ -20811,6 +21038,16 @@
             "column": 4
           },
           {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
+            "line": 53,
+            "column": 8
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
+            "line": 64,
+            "column": 8
+          },
+          {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
             "line": 34,
             "column": 6
@@ -20873,6 +21110,16 @@
             "column": 6
           },
           {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
+            "line": 54,
+            "column": 10
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
+            "line": 65,
+            "column": 10
+          },
+          {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseSelector.jsx",
             "line": 36,
             "column": 8
@@ -20925,7 +21172,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 82,
+            "line": 91,
             "column": 12
           }
         ],
@@ -20989,8 +21236,8 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 74,
-            "column": 26
+            "line": 73,
+            "column": 24
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseBlurb.jsx",
@@ -21049,7 +21296,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 86,
+            "line": 95,
             "column": 22
           },
           {
@@ -21130,8 +21377,8 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 72,
-            "column": 22
+            "line": 71,
+            "column": 20
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
@@ -21325,7 +21572,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 73,
+            "line": 82,
             "column": 10
           }
         ],
@@ -21337,7 +21584,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 67,
+            "line": 76,
             "column": 8
           },
           {
@@ -21402,7 +21649,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 97,
+            "line": 64,
+            "column": 8
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
+            "line": 96,
             "column": 8
           },
           {
@@ -21422,12 +21674,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 72,
+            "line": 81,
             "column": 8
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 93,
+            "line": 102,
             "column": 8
           },
           {
@@ -21451,8 +21703,8 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 69,
-            "column": 14
+            "line": 68,
+            "column": 12
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
@@ -21468,8 +21720,8 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 70,
-            "column": 16
+            "line": 69,
+            "column": 14
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
@@ -21485,8 +21737,8 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 78,
-            "column": 16
+            "line": 77,
+            "column": 14
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
@@ -21502,18 +21754,18 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 79,
-            "column": 18
+            "line": 78,
+            "column": 16
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 85,
-            "column": 18
+            "line": 84,
+            "column": 16
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 88,
-            "column": 18
+            "line": 87,
+            "column": 16
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
@@ -21608,153 +21860,38 @@
         "Row": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
-            "line": 51,
-            "column": 6
-          }
-        ],
-        "FormGroup": [
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
             "line": 52,
-            "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
-            "line": 63,
-            "column": 8
+            "column": 6
           }
         ],
         "Col": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
-            "line": 52,
-            "column": 23
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
-            "line": 63,
-            "column": 23
-          }
-        ],
-        "FormControl": [
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
             "line": 53,
-            "column": 10
+            "column": 24
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
             "line": 64,
-            "column": 10
-          }
-        ],
-        "FormControl.Feedback": [
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
-            "line": 59,
-            "column": 10
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
-            "line": 70,
-            "column": 10
-          }
-        ],
-        "Card": [
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 64,
-            "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 50,
-            "column": 14
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 65,
-            "column": 14
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 99,
-            "column": 14
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 135,
-            "column": 14
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDisplay.jsx",
-            "line": 29,
-            "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
-            "line": 30,
-            "column": 6
-          }
-        ],
-        "Card.Header": [
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 65,
-            "column": 10
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 51,
-            "column": 16
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 74,
-            "column": 16
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 109,
-            "column": 16
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 145,
-            "column": 16
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDisplay.jsx",
-            "line": 30,
-            "column": 10
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
-            "line": 33,
-            "column": 12
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
-            "line": 50,
-            "column": 12
+            "column": 24
           }
         ],
         "MoreHoriz": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 73,
-            "column": 23
+            "line": 72,
+            "column": 21
           }
         ],
         "FileUpload": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 99,
+            "line": 98,
             "column": 30
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 101,
+            "line": 110,
             "column": 30
           },
           {
@@ -21857,6 +21994,75 @@
             "column": 33
           }
         ],
+        "Card": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 50,
+            "column": 14
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 65,
+            "column": 14
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 99,
+            "column": 14
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 135,
+            "column": 14
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDisplay.jsx",
+            "line": 29,
+            "column": 8
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
+            "line": 30,
+            "column": 6
+          }
+        ],
+        "Card.Header": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 51,
+            "column": 16
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 74,
+            "column": 16
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 109,
+            "column": 16
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 145,
+            "column": 16
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDisplay.jsx",
+            "line": 30,
+            "column": 10
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
+            "line": 33,
+            "column": 12
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
+            "line": 50,
+            "column": 12
+          }
+        ],
         "Card.Section": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
@@ -21921,7 +22127,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 87,
+            "line": 96,
             "column": 19
           },
           {
@@ -23282,7 +23488,7 @@
           },
           {
             "filePath": "src/templates/programDetailDegree.jsx",
-            "line": 189,
+            "line": 192,
             "column": 16
           }
         ],
@@ -23311,7 +23517,7 @@
           },
           {
             "filePath": "src/components/ContentfulModule/AboutTheProgramModule.jsx",
-            "line": 79,
+            "line": 80,
             "column": 14
           },
           {
