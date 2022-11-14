@@ -9,7 +9,6 @@
         "base": { "value": ".5", "themeable": true, "source": "$carousel-control-opacity" },
         "hover": { "value": ".9", "themeable": true, "source": "$carousel-control-hover-opacity" }
       },
-      "color": { "value": "{color.white.value}", "themeable": true, "source": "$carousel-control-color" },
       "transition": { "value": "opacity .15s ease", "themeable": true, "source": "$carousel-control-transition" }
     },
     "indicator": {

@@ -291,10 +291,8 @@
   --pgn-form-custom-control-label-color-base: null;
   --pgn-form-custom-control-indicator-active-bg: #0A3055FF;
   --pgn-form-custom-control-indicator-active-box-shadow: none;
-  --pgn-form-custom-control-indicator-checked-color: #0A3055FF;
   --pgn-form-custom-control-indicator-checked-box-shadow-focus: 0 0 0 4px rgba(0, 0, 0, .1);
   --pgn-form-custom-control-indicator-checked-box-shadow-base: none;
-  --pgn-form-custom-control-indicator-checked-bg-base: #0A3055FF;
   --pgn-form-custom-control-indicator-border-width: 2px;
   --pgn-form-custom-control-indicator-bg-size: 100%;
   --pgn-form-custom-control-indicator-size: 1.25rem;
@@ -613,7 +611,6 @@
   --pgn-form-custom-switch-indicator-size: calc(var(--pgn-form-custom-control-indicator-size) - var(--pgn-form-custom-control-indicator-border-width) * 4);
   --pgn-form-custom-switch-indicator-border-radius: calc(var(--pgn-form-custom-control-indicator-size) / 2);
   --pgn-form-custom-switch-width: calc(var(--pgn-form-custom-control-indicator-size) * 1.75);
-  --pgn-form-custom-control-indicator-active-color: var(--pgn-color-white);
   --pgn-form-custom-control-indicator-border-color: var(--pgn-color-gray-700);
   --pgn-form-custom-control-indicator-box-shadow: var(--pgn-form-input-box-shadow-base);
   --pgn-form-input-group-addon-bg: var(--pgn-color-gray-100);
@@ -660,7 +657,6 @@
   --pgn-close-button-font-size: calc(var(--pgn-font-size-base) * 1.5);
   --pgn-carousel-caption-color: var(--pgn-color-white);
   --pgn-carousel-indicator-active-bg: var(--pgn-color-white);
-  --pgn-carousel-control-color: var(--pgn-color-white);
   --pgn-card-footer-text-font-size: var(--pgn-font-size-small-x);
   --pgn-card-divider-margin-y: var(--pgn-card-spacer-y);
   --pgn-card-columns-margin: var(--pgn-card-spacer-y);
@@ -850,6 +846,7 @@
   --pgn-breadcrumb-color-active: var(--pgn-color-gray-500);
   --pgn-breadcrumb-color-base: var(--pgn-color-primary-500);
   --pgn-avatar-border-base: solid 1px var(--pgn-color-light-300);
+  --pgn-alert-actions-gap: var(--pgn-spacer-3);
   --pgn-color-danger-900: #892029FF;
   --pgn-color-danger-800: #92222CFF;
   --pgn-color-danger-700: #9C242EFF;
