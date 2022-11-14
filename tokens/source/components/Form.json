@@ -52,15 +52,13 @@
           "sm": { "value": "{border.radius.sm.value}", "themeable": true, "source": "$input-border-radius-sm" }
         }
       },
-      "box": {
-        "shadow": {
+      "box-shadow": {
           "base": { "value": "inset 0 1px 1px rgba(0, 0, 0, .075)", "themeable": true, "source": "$input-box-shadow" },
           "focus": {
-            "value": "{input.btn.focus.box.shadow.value}",
+            "value": "{input.btn.focus.box-shadow.value}",
             "themeable": true,
             "source": "$input-focus-box-shadow"
           }
-        }
       },
       "focus": {
         "bg": { "value": "{form.input.bg.base.value}", "themeable": true, "source": "$input-focus-bg" },
@@ -179,12 +177,10 @@
             "base": { "value": "{form.input.bg.base.value}", "themeable": true, "source": "$custom-control-indicator-bg" },
             "size": { "value": "100%", "themeable": true, "source": "$custom-control-indicator-bg-size" }
           },
-          "box": {
-            "shadow": {
-              "value": "{form.input.box.shadow.base.value}",
+          "box-shadow": {
+              "value": "{form.input.box-shadow.base.value}",
               "themeable": true,
               "source": "$custom-control-indicator-box-shadow"
-            }
           },
           "border": {
             "color": {
@@ -204,19 +200,21 @@
           "checked": {
             "bg": {
               "disabled": {
-                "value": "rgba(10, 48, 85, .5)",
+                "value": "{color.primary.500.value}",
                 "themeable": true,
-                "source": "$custom-control-indicator-checked-disabled-bg"
+                "source": "$custom-control-indicator-checked-disabled-bg",
+                "modify": [{
+                  "type": "alpha",
+                  "amount": 0.5
+                }]
               }
             },
-            "box": {
-              "shadow": {
-                "base": { "value": "none", "themeable": true, "source": "$custom-control-indicator-checked-box-shadow" },
-                "focus": {
-                  "value": "0 0 0 4px rgba(0, 0, 0, .1)",
-                  "themeable": true,
-                  "source": "$custom-control-indicator-focus-box-shadow"
-                }
+            "box-shadow": {
+              "base": { "value": "none", "themeable": true, "source": "$custom-control-indicator-checked-box-shadow" },
+              "focus": {
+                "value": "0 0 0 4px rgba(0, 0, 0, .1)",
+                "themeable": true,
+                "source": "$custom-control-indicator-focus-box-shadow"
               }
             },
             "border": {
@@ -235,9 +233,8 @@
             }
           },
           "active": {
-            "box": {
-              "shadow": { "value": "none", "themeable": true, "source": "$custom-control-indicator-active-box-shadow" }
-            }
+            "box-shadow": {"value": "none", "themeable": true, "source": "$custom-control-indicator-active-box-shadow" },
+            "bg": { "value": "#0A3055", "themeable": true, "source": "$custom-control-indicator-active-bg" }
           }
         },
         "label": {
@@ -247,6 +244,17 @@
               "value": "{color.disabled.value}",
               "themeable": true,
               "source": "$custom-control-label-disabled-color"
+            }
+          },
+          "floating": {
+            "text": { 
+              "value": "{form.input.bg.base.value}", 
+              "themeable": true, 
+              "source": "$form-control-floating-label-text-bg",
+              "modify": [{
+                "type": "alpha",
+                "amount": 0.1
+              }]
             }
           }
         }
@@ -262,12 +270,10 @@
               "themeable": true,
               "source": "$custom-checkbox-indicator-indeterminate-bg"
             },
-            "box": {
-              "shadow": {
-                "value": "none",
-                "themeable": true,
-                "source": "$custom-checkbox-indicator-indeterminate-box-shadow"
-              }
+            "box-shadow": {
+              "value": "none",
+              "themeable": true,
+              "source": "$custom-checkbox-indicator-indeterminate-box-shadow"
             },
             "border": {
               "color": {
@@ -463,18 +469,16 @@
             "themeable": true,
             "source": "$custom-select-border-radius"
           },
-          "box": {
-            "shadow": {
-              "base": {
-                "value": "inset 0 1px 2px rgba(0, 0, 0, .075)",
-                "themeable": true,
-                "source": "$custom-select-box-shadow"
-              },
-              "focus": {
-                "value": "{input.btn.focus.box.shadow.value}",
-                "themeable": true,
-                "source": "$custom-select-focus-box-shadow"
-              }
+          "box-shadow": {
+            "base": {
+              "value": "inset 0 1px 2px rgba(0, 0, 0, .075)",
+              "themeable": true,
+              "source": "$custom-select-box-shadow"
+            },
+            "focus": {
+              "value": "{input.btn.focus.box-shadow.value}",
+              "themeable": true,
+              "source": "$custom-select-focus-box-shadow"
             }
           }
         },
@@ -495,12 +499,10 @@
           "border": {
             "radius": { "value": "1rem", "themeable": true, "source": "$custom-range-track-border-radius" }
           },
-          "box": {
-            "shadow": {
-              "value": "inset 0 .25rem .25rem rgba(0, 0, 0, .1)",
-              "themeable": true,
-              "source": "$custom-range-track-box-shadow"
-            }
+          "box-shadow": {
+            "value": "inset 0 .25rem .25rem rgba(0, 0, 0, .1)",
+            "themeable": true,
+            "source": "$custom-range-track-box-shadow"
           }
         },
         "thumb": {
@@ -520,30 +522,37 @@
               "value": "{color.disabled.value}",
               "themeable": true,
               "source": "$custom-range-thumb-disabled-bg"
+            },
+            "active": {
+              "value": "{color.background.active.value}",
+              "themeable": true,
+              "source": "$custom-range-thumb-active-bg",
+              "modify": [{
+                "type": "brighten",
+                "amount": "0.35"
+              }]
             }
           },
           "border": {
             "base": { "value": "0", "themeable": true, "source": "$custom-range-thumb-border" },
             "radius": { "value": "1rem", "themeable": true, "source": "$custom-range-thumb-border-radius" }
           },
-          "box": {
-            "shadow": {
+          "box-shadow": {
+            "base": {
+              "value": "0 .1rem .25rem rgba(0, 0, 0, .1)",
+              "themeable": true,
+              "source": "$custom-range-thumb-box-shadow"
+            },
+            "focus": {
               "base": {
-                "value": "0 .1rem .25rem rgba(0, 0, 0, .1)",
+                "value": "0 0 0 1px {body.bg.value}, {form.input.box-shadow.focus.value}",
                 "themeable": true,
-                "source": "$custom-range-thumb-box-shadow"
+                "source": "$custom-range-thumb-focus-box-shadow"
               },
-              "focus": {
-                "base": {
-                  "value": "0 0 0 1px {body.bg.value}, {form.input.box.shadow.focus.value}",
-                  "themeable": true,
-                  "source": "$custom-range-thumb-focus-box-shadow"
-                },
-                "width": {
-                  "value": "{form.input.focus.width.value}",
-                  "themeable": true,
-                  "source": "$custom-range-thumb-focus-box-shadow-width"
-                }
+              "width": {
+                "value": "{form.input.focus.width.value}",
+                "themeable": true,
+                "source": "$custom-range-thumb-focus-box-shadow-width"
               }
             }
           }
@@ -586,18 +595,16 @@
             "source": "$custom-file-border-width"
           }
         },
-        "box": {
-          "shadow": {
-            "base": {
-              "value": "{form.input.box.shadow.base.value}",
-              "themeable": true,
-              "source": "$custom-file-box-shadow"
-            },
-            "focus": {
-              "value": "{form.input.box.shadow.focus.value}",
-              "themeable": true,
-              "source": "$custom-file-focus-box-shadow"
-            }
+        "box-shadow": {
+          "base": {
+            "value": "{form.input.box-shadow.base.value}",
+            "themeable": true,
+            "source": "$custom-file-box-shadow"
+          },
+          "focus": {
+            "value": "{form.input.box-shadow.focus.value}",
+            "themeable": true,
+            "source": "$custom-file-focus-box-shadow"
           }
         },
         "bg": {

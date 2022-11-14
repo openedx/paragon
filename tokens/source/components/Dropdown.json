@@ -28,7 +28,15 @@
     },
     "bg": { "value": "{color.background.base.value}", "themeable": true, "source": "$dropdown-bg" },
     "border": {
-      "color": { "value": "rgba(0, 0, 0, .15)", "themeable": true, "source": "$dropdown-border-color" },
+      "color": { 
+        "value": "{color.black.value}", 
+        "themeable": true, 
+        "source": "$dropdown-border-color",
+        "modify": [{
+          "type": "alpha",
+          "amount": 0.15
+        }]
+      },
       "width": { "value": "{border.width.value}", "themeable": true, "source": "$dropdown-border-width" },
       "radius": {
         "base": { "value": "{border.radius.base.value}", "themeable": true, "source": "$dropdown-border-radius" },
@@ -45,9 +53,7 @@
         "y": { "value": "calc({spacer.base.value} / 2)", "themeable": true, "source": "$dropdown-divider-margin-y" }
       }
     },
-    "box": {
-      "shadow": { "value": "0 .5rem 1rem rgba({color.black.value}, .175)", "themeable": true, "source": "$dropdown-box-shadow" }
-    },
+    "box-shadow": { "value": "0 .5rem 1rem rgba(0, 0, 0, .175)", "themeable": true, "source": "$dropdown-box-shadow" },
     "link": {
       "color": { "value": "{color.gray.900.value}", "themeable": true, "source": "$dropdown-link-color" },
       "hover": {

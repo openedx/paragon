@@ -1,6 +1,7 @@
 @import "variables";
 @import "button-bootstrap";
 
+// TODO Pending decision on usage with CSS variables.
 @mixin button-variant(
   $btn-variant-bg, $btn-variant-border, $btn-variant-hover-bg: darken($btn-variant-bg, 7.5%),
   $btn-variant-hover-border: darken($btn-variant-border, 10%),
@@ -146,7 +147,7 @@
     box-shadow: none;
 
     $distance: calc($btn-focus-width + $btn-focus-gap);
-    $distance-include-btn-border: calc(#{$distance} + $btn-border-width);
+    $distance-include-btn-border: calc(#{$distance} + #{$btn-border-width});
 
     &::before {
       content: "";

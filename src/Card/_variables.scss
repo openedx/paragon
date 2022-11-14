@@ -6,7 +6,7 @@ $card-border-width: var(--pgn-card-border-width) !default;
 $card-border-radius: var(--pgn-card-border-radius-base) !default;
 $card-border-color: var(--pgn-card-border-color-base) !default;
 $card-border-focus-color: var(--pgn-card-border-color-focus) !default;
-$card-inner-border-radius:           subtract($card-border-radius, $card-border-width) !default;
+$card-inner-border-radius: calc(#{$card-border-radius} - #{$card-border-width}) !default;
 $card-cap-bg: var(--pgn-card-cap-bg) !default;
 $card-cap-color: var(--pgn-card-cap-color) !default;
 $card-height: var(--pgn-card-height-base) !default;

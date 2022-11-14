@@ -19,7 +19,7 @@ const colorTransform = (token) => {
   if (modify.length > 0) {
     // iterate over the modify array (see tokens/color.json)
     // and apply each modification in order
-    modify.forEach(({type, amount, otherColor}) => {
+    modify.forEach(({ type, amount, otherColor }) => {
       // modifier type must match a method name in chromajs
       // https://gka.github.io/chroma.js/
       // chroma methods can be chained, so each time we override the color variable
@@ -34,7 +34,7 @@ const colorTransform = (token) => {
   }
 
   return color.hex('rgba').toUpperCase();
-}
+};
 
 /**
  * Transforms color values to be in uppercase format to be compatible with our stylelint rules.

@@ -16,8 +16,8 @@ $progress-bar-border-color: var(--pgn-progress-bar-border-color) !default;
 $progress-threshold-circle: var(--pgn-progress-bar-threshold-circle) !default;
 $progress-hint-annotation-gap: var(--pgn-progress-bar-hint-annotation-gap) !default;
 $progress-colors: (
-  "dark":    $primary-500,
-  "success": $success-500,
-  "error":   $danger-500,
-  "warning": $accent-b,
+  "dark":    var(--pgn-color-primary-500),
+  "success": var(--pgn-color-success-500),
+  "error":   var(--pgn-color-danger-500),
+  "warning": var(--pgn-color-accent-b),
 ) !default;

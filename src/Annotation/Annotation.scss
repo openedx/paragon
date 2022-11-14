@@ -1,10 +1,10 @@
 @import "variables";
 
 @mixin triangle($triangle-color, $triangle-direction) {
+  content: "";
   height: 0;
   width: 0;
   position: absolute;
-  content: "";
   border: solid transparent;
 
   @if $triangle-direction == top {

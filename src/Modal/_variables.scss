@@ -4,10 +4,13 @@
 $modal-inner-padding: var(--pgn-modal-inner-padding-base) !default;
 $modal-inner-padding-bottom: var(--pgn-modal-inner-padding-bottom) !default;
 
-// Margin between elements in footer, must be lower than or equal to 2 * $modal-inner-padding
+// TODO can't use css variables due to conflict with SCSS functions
+// Margin between elements in footer, must be lower than or equal to 2 * var(--pgn-modal-inner-padding-base)
 $modal-footer-margin-between:       .5rem !default;
 
+// TODO can't use css variables due to conflict with SCSS functions
 $modal-dialog-margin:               1.5rem !default;
+// TODO can't use css variables due to conflict with SCSS functions
 $modal-dialog-margin-y-sm-up:       1.75rem !default;
 
 $modal-title-line-height: var(--pgn-modal-title-line-height) !default;
@@ -17,7 +20,9 @@ $modal-content-bg: var(--pgn-modal-content-bg) !default;
 $modal-content-border-color: var(--pgn-modal-content-border-color) !default;
 $modal-content-border-width: var(--pgn-modal-content-border-width) !default;
 $modal-content-border-radius: var(--pgn-modal-content-border-radius) !default;
-$modal-content-inner-border-radius: subtract($modal-content-border-radius, $modal-content-border-width) !default;
+
+// stylelint-disable-next-line max-line-length
+$modal-content-inner-border-radius: calc(#{var(--pgn-modal-content-border-radius)} - #{var(--pgn-modal-content-border-width)}) !default;
 $modal-content-box-shadow-xs: var(--pgn-modal-content-box-shadow-xs) !default;
 $modal-content-box-shadow-sm-up: var(--pgn-modal-content-box-shadow-sm-up) !default;
 

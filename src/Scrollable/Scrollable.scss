@@ -1,3 +1,5 @@
+@import "variables";
+
 .pgn__scrollable-body {
   display: flex;
   flex-direction: column;
@@ -9,7 +11,7 @@
   &::before {
     content: "";
     background-color: transparent;
-    box-shadow: 5px 0 7px 2px rgba(0, 0, 0, .55);
+    box-shadow: 5px 0 7px 2px $scrollable-body-box-shadow;
     display: block;
     height: 2px;
     position: sticky;
@@ -21,7 +23,7 @@
   &::after {
     content: "";
     background-color: transparent;
-    box-shadow: 5px 0 7px 2px rgba(0, 0, 0, .55);
+    box-shadow: 5px 0 7px 2px $scrollable-body-box-shadow;
     display: block;
     height: 2px;
     position: sticky;

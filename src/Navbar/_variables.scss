@@ -8,7 +8,7 @@ $navbar-nav-link-padding-x: var(--pgn-navbar-padding-x-nav-link) !default;
 $navbar-brand-font-size: var(--pgn-navbar-brand-font-size) !default;
 
 // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
-// The default for $nav-link-padding-y is .5rem. Copied here for modularization
+// The default for var(--pgn-nav-link-padding-y) is .5rem. Copied here for modularization
 $nav-link-height: var(--pgn-navbar-nav-link-height) !default;
 $navbar-brand-height: var(--pgn-navbar-brand-height) !default;
 $navbar-brand-padding-y: var(--pgn-navbar-brand-padding-y) !default;
@@ -20,19 +20,18 @@ $navbar-toggler-border-radius: var(--pgn-navbar-toggler-border-radius) !default;
 
 $navbar-nav-scroll-max-height: var(--pgn-navbar-nav-scroll-max-height) !default;
 
-// TODO use css variable
-$navbar-dark-color:                 rgba(#FFFFFF, .5) !default;
+$navbar-dark-color: var(--pgn-nav-color-dark) !default;
 $navbar-dark-hover-color: var(--pgn-navbar-dark-color-hover) !default;
 $navbar-dark-active-color: var(--pgn-navbar-dark-color-active) !default;
 $navbar-dark-disabled-color: var(--pgn-navbar-dark-color-disabled) !default;
-$navbar-dark-toggler-icon-bg:       str-replace(url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"), "#", "%23") !default;
+$navbar-dark-toggler-icon-bg: str-replace(url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"), "#", "%23") !default;
 $navbar-dark-toggler-border-color: var(--pgn-navbar-dark-toggler-border-color) !default;
 
-$navbar-light-color:                rgba(#000000, .5) !default;
+$navbar-light-color: var(--pgn-nav-color-light) !default;
 $navbar-light-hover-color: var(--pgn-navbar-light-color-hover) !default;
 $navbar-light-active-color: var(--pgn-navbar-light-color-active) !default;
 $navbar-light-disabled-color: var(--pgn-navbar-light-color-disabled) !default;
-$navbar-light-toggler-icon-bg:      str-replace(url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"), "#", "%23") !default;
+$navbar-light-toggler-icon-bg: str-replace(url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"), "#", "%23") !default;
 $navbar-light-toggler-border-color: var(--pgn-navbar-light-toggler-border-color) !default;
 
 $navbar-light-brand-color: var(--pgn-navbar-light-brand-color-base) !default;

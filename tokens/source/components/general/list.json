@@ -16,7 +16,15 @@
       "hover": { "value": "{color.gray.100.value}", "themeable": true, "source": "$list-group-hover-bg" }
     },
     "border": {
-      "color": { "value": "rgba({color.black.value}, .125)", "themeable": true, "source": "$list-group-border-color" },
+      "color": { 
+        "value": "{color.black.value}", 
+        "themeable": true, 
+        "source": "$list-group-border-color",
+        "modify": [{
+          "type": "alpha",
+          "amount": 0.125
+        }]
+      },
       "width": { "value": "{border.width.value}", "themeable": true, "source": "$list-group-border-width" },
       "radius": { "value": "{border.radius.base.value}", "themeable": true, "source": "$list-group-border-radius" }
     },

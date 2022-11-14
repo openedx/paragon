@@ -65,6 +65,26 @@
       "margin": {
         "y": { "value": "calc({spacer.base.value} / 2)", "themeable": true, "source": "$nav-divider-margin-y" }
       }
+    },
+    "color": {
+      "dark": {
+        "value": "{color.white.value}",
+        "themeable": true,
+        "source": "$navbar-dark-color",
+        "modify": [{
+          "type": "alpha",
+          "amount": 0.5
+        }]
+      },
+      "light": {
+        "value": "{color.black.value}",
+        "themeable": true,
+        "source": "$navbar-light-color",
+        "modify": [{
+          "type": "alpha",
+          "amount": 0.5
+        }]
+      }
     }
   }
 }

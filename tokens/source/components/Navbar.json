@@ -59,19 +59,37 @@
     "dark": {
       "color": {
         "hover": {
-          "value": "rgba({color.white.value}, .75)", "themeable": true, "source": "$navbar-dark-hover-color"
+          "value": "{color.white.value}", 
+          "themeable": true, 
+          "source": "$navbar-dark-hover-color",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.75
+          }]
         },
         "active": {
           "value": "{color.active.value}", "themeable": true, "source": "$navbar-dark-active-color"
         },
         "disabled": {
-          "value": "rgba({color.white.value}, .25)", "themeable": true, "source": "$navbar-dark-disabled-color"
+          "value": "{color.white.value}", 
+          "themeable": true, 
+          "source": "$navbar-dark-disabled-color",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.25
+          }]
         }
       },
       "toggler": {
         "border": {
           "color": {
-            "value": "rgba({color.white.value}, .1)", "themeable": true, "source": "$navbar-dark-toggler-border-color"
+            "value": "{color.white.value}", 
+            "themeable": true, 
+            "source": "$navbar-dark-toggler-border-color",
+            "modify": [{
+              "type": "alpha",
+              "amount": 0.1
+            }]
           }
         }
       },
@@ -88,13 +106,45 @@
     },
     "light": {
       "color": {
-        "hover": { "value": "rgba(0, 0, 0, .7)", "themeable": true, "source": "$navbar-light-hover-color" },
-        "active": { "value": "rgba(0, 0, 0, .9)", "themeable": true, "source": "$navbar-light-active-color" },
-        "disabled": { "value": "rgba(0, 0, 0, .3)", "themeable": true, "source": "$navbar-light-disabled-color" }
+        "hover": { 
+          "value": "{color.black.value}", 
+          "themeable": true, 
+          "source": "$navbar-light-hover-color",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.7
+          }]
+        },
+        "active": { 
+          "value": "{color.black.value}", 
+          "themeable": true, 
+          "source": "$navbar-light-active-color",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.9
+          }]
+        },
+        "disabled": { 
+          "value": "{color.black.value}", 
+          "themeable": true, 
+          "source": "$navbar-light-disabled-color",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.3
+          }]
+        }
       },
       "toggler": {
         "border": {
-          "color": { "value": "rgba(0, 0, 0, .1)", "themeable": true, "source": "$navbar-light-toggler-border-color" }
+          "color": { 
+            "value": "{color.black.value}", 
+            "themeable": true, 
+            "source": "$navbar-light-toggler-border-color",
+            "modify": [{
+              "type": "alpha",
+              "amount": 0.1
+            }]
+          }
         }
       },
       "brand": {

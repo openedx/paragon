@@ -6,7 +6,7 @@
   border-top: $checkpoint-border-width solid $checkpoint-border-color;
   border-radius: $border-radius;
   padding: map_get($spacers, 4);
-  box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .3);
+  box-shadow: 0 .25rem .5rem $checkpoint-box-shadow-color;
   z-index: $checkpoint-z-index;
   max-width: $checkpoint-max-width;
 
@@ -34,8 +34,8 @@
 
   #pgn__checkpoint-arrow::before,
   #pgn__checkpoint-arrow::after {
-    visibility: visible;
     content: "";
+    visibility: visible;
   }
 
   .pgn__checkpoint-button_dismiss {

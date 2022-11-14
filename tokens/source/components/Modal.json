@@ -34,19 +34,25 @@
       "color": { "value": "null", "themeable": true, "source": "$modal-content-color" },
       "bg": { "value": "{color.background.base.value}", "themeable": true, "source": "$modal-content-bg" },
       "border": {
-        "color": { "value": "rgba(0, 0, 0, .2)", "themeable": true, "source": "$modal-content-border-color" },
-        "width": { "value": "0", "themeable": true, "source": "$modal-content-border-width" },
+        "color": { 
+          "value": "{color.black.value}", 
+          "themeable": true, 
+          "source": "$modal-content-border-color",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.2
+          }]
+        },
+        "width": { "value": "0rem", "themeable": true, "source": "$modal-content-border-width" },
         "radius": { "value": "{border.radius.lg.value}", "themeable": true, "source": "$modal-content-border-radius" }
       },
-      "box": {
-        "shadow": {
-          "xs": { "value": "0 .25rem .5rem rgba(0, 0, 0, .5)", "themeable": true, "source": "$modal-content-box-shadow-xs" },
-          "sm": {
-            "up": {
-              "value": "0 10px 20px rgba(0, 0, 0, .15), 0 8px 20px rgba(0, 0, 0, .15)",
-              "themeable": true,
-              "source": "$modal-content-box-shadow-sm-up"
-            }
+      "box-shadow": {
+        "xs": { "value": "0 .25rem .5rem rgba(0, 0, 0, .5)", "themeable": true, "source": "$modal-content-box-shadow-xs" },
+        "sm": {
+          "up": {
+            "value": "0 10px 20px rgba(0, 0, 0, .15), 0 8px 20px rgba(0, 0, 0, .15)",
+            "themeable": true,
+            "source": "$modal-content-box-shadow-sm-up"
           }
         }
       }

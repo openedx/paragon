@@ -74,12 +74,10 @@
       }
     },
     "focus": {
-      "box": {
-        "shadow": {
-          "value": "{input.btn.focus.box.shadow.value}", "themeable": true, "source": "$pagination-focus-box-shadow"
-        },
-        "outline": { "value": "0", "themeable": true, "source": "$pagination-focus-outline" }
+      "box-shadow": {
+        "value": "{input.btn.focus.box-shadow.value}", "themeable": true, "source": "$pagination-focus-box-shadow"
       },
+      "outline": { "value": "0", "themeable": true, "source": "$pagination-focus-outline" },
       "border": {
         "width": { "value": ".125rem", "themeable": true, "source": "$pagination-focus-border-width" }
       },

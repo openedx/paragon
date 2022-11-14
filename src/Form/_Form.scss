@@ -114,13 +114,13 @@
   &.pgn__form-control-decorator-leading {
     inset-inline-start: 0;
     padding-inline-start: $input-padding-x;
-    padding-inline-end: calc($input-padding-x / 2);
+    padding-inline-end: calc(#{$input-padding-x} / 2);
   }
 
   &.pgn__form-control-decorator-trailing {
     inset-inline-end: 0;
-    padding-inline-start: calc($input-padding-x / 2);
-    padding-inline-end: calc(#{$input-padding-y-sm} - (2 * $input-border-width));
+    padding-inline-start: calc(#{$input-padding-x} / 2);
+    padding-inline-end: calc(#{$input-padding-y-sm} - calc(2 * #{$input-border-width}));
   }
 
   .pgn__form-control-decorator-group-lg & {
@@ -195,7 +195,7 @@
     // Prevent background-color from being output as "transparent"
     // Firefox doesn't handle the first animation well from transparent to
     // a color. Adding an alpha channel smooths it out.
-    background-color: rgba($input-bg, .01);
+    background-color: $form-control-floating-label-text-bg;
     white-space: nowrap;
     max-width: 75vw;
     display: block;

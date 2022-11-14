@@ -1,6 +1,6 @@
 $search-btn-variants: (
-  "light":  $primary-500,
-  "dark":   $brand-500,
+  "light":  var(--pgn-color-primary-500),
+  "dark":   var(--pgn-color-brand-500),
 );
 $search-border-radius: var(--pgn-search-field-border-radius) !default;
 $search-line-height: var(--pgn-search-field-line-height) !default;

@@ -15,9 +15,7 @@
       "width": { "value": "1px", "themeable": true, "source": "$progress-bar-border-width" },
       "color": { "value": "{color.gray.500.value}", "themeable": true, "source": "$progress-bar-border-color" }
     },
-    "box": {
-      "shadow": { "value": "none", "themeable": true, "source": "$progress-box-shadow" }
-    },
+    "box-shadow": { "value": "none", "themeable": true, "source": "$progress-box-shadow" },
     "bar": {
       "color": { "value": "{color.white.value}", "themeable": true, "source": "$progress-bar-color" },
       "bg": {
