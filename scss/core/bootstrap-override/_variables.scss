@@ -10,7 +10,7 @@ $table-border-level: -6 !default;
 $table-active-bg: $table-hover-bg !default;
 $table-dark-color: $white !default;
 $table-dark-bg: $gray-800 !default;
-// TODO: need to create a token.
+// TODO: need to create a token. 
 $table-dark-border-color: lighten($table-dark-bg, 7.5%) !default;
 $table-head-color: $gray-700 !default;
 $table-head-bg: $gray-200 !default;
