@@ -5,7 +5,8 @@
 @import "exports.module.scss";
 
 // Color system
-$white:    var(--pgn-color-white) !default;
+// TODO: does not work with SCSS functions.
+$white:    #FFFFFF !default;
 $gray-100: #EBEBEB !default;
 $gray-200: var(--pgn-color-gray-200) !default;
 $gray-300: var(--pgn-color-gray-300) !default;
@@ -13,8 +14,7 @@ $gray-400: var(--pgn-color-gray-400) !default;
 $gray-500: #707070 !default;
 $gray-600: var(--pgn-color-gray-600) !default;
 $gray-700: #454545 !default;
-// TODO: with this variable, you can find a solution
-$gray-800: #333333 !default;
+$gray-800: var(--pgn-color-gray-800) !default;
 $gray-900: #212529 !default;
 $black:    #000000 !default;
 
@@ -55,6 +55,7 @@ $colors: map-merge(
   $colors
 );
 
+// TODO: does not work with SCSS functions.
 $primary: #0A3055 !default;
 $secondary: $gray-700 !default;
 $brand: #9D0054 !default;
@@ -340,23 +341,23 @@ $enable-deprecation-messages:                 true !default;
 // variables. Mostly focused on spacing.
 // You can add more entries to the $spacers map, should you need more variation.
 
-$spacer: 1rem !default;
+$spacer: var(--pgn-spacer-base) !default;
 $spacers: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $spacers: map-merge(
   (
     0: 0,
-    1: ($spacer * .25),
-    1\.5: ($spacer * .375),
-    2: ($spacer * .5),
-    2\.5: ($spacer * .75),
+    1: calc(#{$spacer} * .25),
+    1\.5: calc(#{$spacer} * .375),
+    2: calc(#{$spacer} * .5),
+    2\.5: calc(#{$spacer} * .75),
     3: $spacer,
-    3\.5: ($spacer * 1.25),
-    4: ($spacer * 1.5),
-    4\.5: ($spacer * 2),
-    5: ($spacer * 3),
-    5\.5: ($spacer * 4),
-    6: ($spacer * 5),
+    3\.5: calc(#{$spacer} * 1.25),
+    4: calc(#{$spacer} * 1.5),
+    4\.5: calc(#{$spacer} * 2),
+    5: calc(#{$spacer} * 3),
+    5\.5: calc(#{$spacer} * 4),
+    6: calc(#{$spacer} * 5),
   ),
   $spacers
 );
@@ -390,8 +391,8 @@ $link-color: var(--pgn-link-color) !default;
 $link-decoration: var(--pgn-link-decoration) !default;
 $link-hover-color: var(--pgn-link-hover-color) !default;
 $link-hover-decoration: var(--pgn-link-hover-decoration) !default;
-$inline-link-color: var(--pgn-link-brand-inline-color) !default;
-$inline-link-decoration: var(--pgn-link-brand-inline-decoration) !default;
+$inline-link-color: var(--pgn-link-inline-color) !default;
+$inline-link-decoration: var(--pgn-link-inline-decoration) !default;
 $inline-link-decoration-color: var(--pgn-link-inline-decoration-color) !default;
 $inline-link-hover-color: var(--pgn-link-inline-hover-color) !default;
 $inline-link-hover-decoration: var(--pgn-link-inline-hover-decoration) !default;
