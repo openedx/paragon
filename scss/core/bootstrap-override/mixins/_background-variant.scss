@@ -9,9 +9,8 @@
   a#{$parent},
   button#{$parent} {
     @include hover-focus() {
-      // TODO: need to create a token.
-      // background-color: darken($color, 10%) !important;
       background-color: $color !important;
+      filter: brightness(10%);
     }
   }
   @include deprecate("The `bg-variant` mixin", "v4.4.0", "v5", $ignore-warning);

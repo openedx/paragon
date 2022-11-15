@@ -15,7 +15,7 @@
       "decoration": { "value": "underline", "themeable": true, "source": "$link-hover-decoration" }
     },
     "inline": {
-      "color": { "value": "{color.link.value}", "themeable": true, "source": "$inline-link-color" },
+      "color": { "value": "{color.info.500.value}", "themeable": true, "source": "$inline-link-color" },
       "decoration": { "value": "underline", "themeable": true, "source": "$inline-link-decoration" },
       "decoration-color": {
         "value": "{link.inline.color.value}",
@@ -114,8 +114,8 @@
         "decoration": { "value": "underline", "themeable": true, "source": "$brand-link-hover-decoration" }
       },
       "inline": {
-        "color": { "value": "{color.brand.500.value}", "themeable": true, "source": "$inline-link-color" },
-        "decoration": { "value": "underline", "themeable": true, "source": "$inline-link-decoration" },
+        "color": { "value": "{color.brand.500.value}", "themeable": true, "source": "$brand-inline-link-color" },
+        "decoration": { "value": "underline", "themeable": true, "source": "$brand-inline-link-decoration" },
         "decoration-color": {
           "value": "{link.brand.inline.color.value}",
           "themeable": true,

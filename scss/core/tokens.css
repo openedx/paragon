@@ -263,7 +263,7 @@
   --pgn-input-btn-padding-x: 1rem;
   --pgn-input-btn-padding-y: .5625rem;
   --pgn-headings-line-height: 1.25;
-  --pgn-headings-font-family: null;
+  --pgn-headings-font-family: inherit;
   --pgn-headings-margin-bottom: .5rem;
   --pgn-caret-spacing: .255em;
   --pgn-caret-vertical-align: .255em;
@@ -920,6 +920,7 @@
   --pgn-link-muted-inline-hover-color: #002A4FFF;
   --pgn-link-muted-inline-decoration-color: #0A30554D;
   --pgn-link-muted-hover-color: #002A4FFF;
+  --pgn-link-inline-color: var(--pgn-color-info-500);
   --pgn-input-btn-focus-color: var(--pgn-color-input-focus);
   --pgn-form-custom-file-button-color: var(--pgn-form-custom-file-color);
   --pgn-form-custom-file-font-weight: var(--pgn-form-input-font-weight);
@@ -965,7 +966,8 @@
   --pgn-list-group-active-color-border: var(--pgn-list-group-active-bg);
   --pgn-link-brand-inline-hover-decoration-color: var(--pgn-link-brand-inline-hover-color);
   --pgn-link-muted-inline-hover-decoration-color: var(--pgn-link-muted-inline-hover-color);
-  --pgn-link-inline-color: var(--pgn-color-link);
+  --pgn-link-inline-hover-color: #0066A3FF;
+  --pgn-link-inline-decoration-color: #006DAA4D;
   --pgn-link-hover-color: #0066A3FF;
   --pgn-link-color: var(--pgn-color-link);
   --pgn-form-custom-file-border-color-focus: var(--pgn-form-input-focus-color-border);
@@ -974,7 +976,5 @@
   --pgn-form-custom-checkbox-indicator-indeterminate-border-color: var(--pgn-form-custom-checkbox-indicator-indeterminate-bg);
   --pgn-form-custom-control-indicator-checked-border-color-focus: var(--pgn-form-input-focus-color-border);
   --pgn-pagination-color-hover: var(--pgn-link-hover-color);
-  --pgn-link-inline-hover-color: #0066A3FF;
-  --pgn-link-inline-decoration-color: #006DAA4D;
   --pgn-link-inline-hover-decoration-color: var(--pgn-link-inline-hover-color);
 }

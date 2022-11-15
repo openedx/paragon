@@ -4,7 +4,7 @@
       "bottom": { "value": ".5rem", "themeable": true, "source": "$headings-margin-bottom" }
     },
     "font": {
-      "family": { "value": "null", "themeable": true, "source": "$headings-font-family" },
+      "family": { "value": "inherit", "themeable": true, "source": "$headings-font-family" },
       "weight": { "value": "{font.weight.bold}", "themeable": true, "source": "$headings-font-weight" }
     },
     "line": {
