@@ -8,8 +8,8 @@
     &.list-group-item-action {
       @include hover-focus() {
         color: $color;
-        // background-color: darken($background, 5%);
         background-color: $background;
+        filter: opacity(.9);
       }
 
       &.active {
