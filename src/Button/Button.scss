@@ -120,8 +120,9 @@
   background-color: $btn-inverse-variant-bg;
 
   @include hover {
-    color: darken($btn-inverse-variant-color, 7.5%);
-    background-color: darken($btn-inverse-variant-bg, 7.5%);
+    color: $btn-inverse-variant-color;
+    background-color: $btn-inverse-variant-bg;
+    filter: opacity(.9);
     border-color: transparent;
   }
 
