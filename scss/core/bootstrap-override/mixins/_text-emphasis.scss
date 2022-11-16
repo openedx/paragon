@@ -9,7 +9,6 @@
   @if $emphasized-link-hover-darken-percentage != 0 {
     a#{$parent} {
       @include hover-focus() {
-        // TODO: need to discus.
         color: $color !important;
         filter: brightness($emphasized-link-hover-darken-percentage);
       }
