@@ -6,7 +6,7 @@
 
 // Color system
 $white:    var(--pgn-color-white) !default;
-// TODO: does not work with SCSS functions.
+// TODO: can't use css variables due to conflict with SCSS function.
 $gray-100: #EBEBEB !default;
 $gray-200: var(--pgn-color-gray-200) !default;
 $gray-300: var(--pgn-color-gray-300) !default;
@@ -55,7 +55,7 @@ $colors: map-merge(
   $colors
 );
 
-// TODO: does not work with SCSS functions.
+// TODO: can't use css variables due to conflict with SCSS function.
 $primary: #0A3055 !default;
 $secondary: $gray-700 !default;
 $brand: #9D0054 !default;
@@ -297,7 +297,7 @@ $element-color-levels: map-merge(
 );
 
 // Set a specific jump point for requesting color jumps
-// TODO: can't use css variables due to conflict with bootstrap function.
+// TODO: can't use css variables due to conflict with SCSS function.
 $theme-color-interval:      8% !default;
 
 // The yiq lightness value that determines when the lightness

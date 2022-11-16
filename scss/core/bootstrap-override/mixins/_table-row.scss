@@ -1,15 +1,17 @@
 // Tables
 
 @mixin table-row-variant($state, $background, $border: null) {
+
   // Exact selectors below required to override `.table-striped` and prevent
   // inheritance to nested tables.
   .table-#{$state} {
     &,
-    > th,
-    > td {
+    >th,
+    >td {
       background-color: $background;
     }
 
+    // stylelint-disable-next-line scss/at-if-no-null
     @if $border != null {
       th,
       td,
@@ -24,14 +26,15 @@
   // Note: this is not available for cells or rows within `thead` or `tfoot`.
   .table-hover {
     $hover-background: $background;
+
     filter: opacity(.9);
 
     .table-#{$state} {
       @include hover() {
         background-color: $hover-background;
 
-        > td,
-        > th {
+        >td,
+        >th {
           background-color: $hover-background;
         }
       }
