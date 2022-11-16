@@ -1,5 +1,5 @@
 {
-  "lastModified": 1668521342195,
+  "lastModified": 1668607760122,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -8432,7 +8432,7 @@
           },
           {
             "filePath": "src/pages-and-resources/live/Settings.jsx",
-            "line": 113,
+            "line": 110,
             "column": 26
           },
           {
@@ -9581,14 +9581,14 @@
         "SelectableBox.Set": [
           {
             "filePath": "src/pages-and-resources/live/Settings.jsx",
-            "line": 102,
+            "line": 99,
             "column": 18
           }
         ],
         "SelectableBox": [
           {
             "filePath": "src/pages-and-resources/live/Settings.jsx",
-            "line": 111,
+            "line": 108,
             "column": 22
           }
         ],
@@ -18560,7 +18560,7 @@
       }
     },
     {
-      "version": "19.25.3",
+      "version": "20.18.2",
       "name": "@edx/frontend-app-payment",
       "repository": {
         "type": "git",
@@ -20965,17 +20965,17 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 117,
-            "column": 8
+            "line": 161,
+            "column": 10
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
-            "line": 39,
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
+            "line": 55,
             "column": 16
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
-            "line": 42,
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
+            "line": 58,
             "column": 16
           },
           {
@@ -21039,12 +21039,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
-            "line": 53,
+            "line": 49,
             "column": 8
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
-            "line": 64,
+            "line": 61,
             "column": 8
           },
           {
@@ -21059,13 +21059,13 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 69,
+            "line": 112,
             "column": 10
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelect.jsx",
-            "line": 29,
-            "column": 4
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
+            "line": 60,
+            "column": 6
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
@@ -21111,12 +21111,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
-            "line": 54,
+            "line": 50,
             "column": 10
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
-            "line": 65,
+            "line": 62,
             "column": 10
           },
           {
@@ -21125,9 +21125,9 @@
             "column": 8
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelect.jsx",
-            "line": 30,
-            "column": 6
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
+            "line": 61,
+            "column": 8
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
@@ -21196,7 +21196,7 @@
           },
           {
             "filePath": "src/editors/containers/EditorContainer/components/TitleHeader/index.jsx",
-            "line": 54,
+            "line": 53,
             "column": 16
           },
           {
@@ -21301,13 +21301,18 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 95,
+            "line": 138,
             "column": 16
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
-            "line": 58,
-            "column": 28
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
+            "line": 82,
+            "column": 24
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
+            "line": 41,
+            "column": 16
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
@@ -21381,9 +21386,14 @@
             "column": 20
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
-            "line": 56,
-            "column": 24
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
+            "line": 80,
+            "column": 14
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
+            "line": 39,
+            "column": 12
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
@@ -21491,12 +21501,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 82,
+            "line": 125,
             "column": 16
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 103,
+            "line": 146,
             "column": 14
           },
           {
@@ -21538,12 +21548,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 77,
+            "line": 120,
             "column": 14
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 98,
+            "line": 141,
             "column": 12
           },
           {
@@ -21589,7 +21599,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 110,
+            "line": 153,
             "column": 12
           },
           {
@@ -21634,6 +21644,11 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/index.jsx",
             "line": 75,
             "column": 26
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 162,
+            "column": 24
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
@@ -21684,8 +21699,13 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 66,
+            "line": 109,
             "column": 6
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 160,
+            "column": 8
           }
         ],
         "Search": [
@@ -21707,9 +21727,9 @@
             "column": 12
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
-            "line": 53,
-            "column": 16
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
+            "line": 36,
+            "column": 4
           }
         ],
         "Dropdown.Toggle": [
@@ -21724,9 +21744,9 @@
             "column": 14
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
-            "line": 54,
-            "column": 18
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
+            "line": 37,
+            "column": 6
           }
         ],
         "Dropdown.Menu": [
@@ -21741,9 +21761,9 @@
             "column": 14
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
-            "line": 62,
-            "column": 18
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
+            "line": 45,
+            "column": 6
           }
         ],
         "Dropdown.Item": [
@@ -21768,19 +21788,19 @@
             "column": 16
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
-            "line": 63,
-            "column": 20
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
+            "line": 46,
+            "column": 8
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
-            "line": 69,
-            "column": 20
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
+            "line": 52,
+            "column": 8
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
-            "line": 72,
-            "column": 20
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
+            "line": 55,
+            "column": 8
           }
         ],
         "Collapsible.Advanced": [
@@ -21817,7 +21837,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 95,
+            "line": 138,
             "column": 59
           },
           {
@@ -21857,22 +21877,37 @@
             "column": 4
           }
         ],
-        "Row": [
+        "Form.Row": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
-            "line": 52,
+            "line": 48,
             "column": 6
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseSelector.jsx",
+            "line": 35,
+            "column": 6
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 71,
+            "column": 10
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 96,
+            "column": 8
           }
         ],
         "Col": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
-            "line": 53,
+            "line": 49,
             "column": 24
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
-            "line": 64,
+            "line": 61,
             "column": 24
           }
         ],
@@ -21881,6 +21916,11 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
             "line": 72,
             "column": 21
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
+            "line": 40,
+            "column": 13
           }
         ],
         "FileUpload": [
@@ -21893,11 +21933,6 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
             "line": 110,
             "column": 30
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 117,
-            "column": 28
           }
         ],
         "Form.Text": [
@@ -22021,9 +22056,9 @@
             "column": 8
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
-            "line": 30,
-            "column": 6
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
+            "line": 48,
+            "column": 10
           }
         ],
         "Card.Header": [
@@ -22053,13 +22088,8 @@
             "column": 10
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
-            "line": 33,
-            "column": 12
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
-            "line": 50,
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
+            "line": 49,
             "column": 12
           }
         ],
@@ -22090,8 +22120,8 @@
             "column": 10
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
-            "line": 35,
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
+            "line": 51,
             "column": 14
           }
         ],
@@ -22100,23 +22130,6 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDisplay.jsx",
             "line": 34,
             "column": 10
-          }
-        ],
-        "Form.Row": [
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseSelector.jsx",
-            "line": 35,
-            "column": 6
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 71,
-            "column": 10
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 96,
-            "column": 8
           }
         ],
         "Delete": [
@@ -22131,6 +22144,11 @@
             "column": 19
           },
           {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
+            "line": 83,
+            "column": 21
+          },
+          {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
             "line": 90,
             "column": 21
@@ -22139,7 +22157,7 @@
         "OverlayTrigger": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 86,
+            "line": 129,
             "column": 14
           },
           {
@@ -22156,7 +22174,7 @@
         "Tooltip": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 90,
+            "line": 133,
             "column": 18
           },
           {
@@ -22172,23 +22190,23 @@
         ],
         "Card.Body": [
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
-            "line": 34,
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
+            "line": 50,
             "column": 12
           }
         ],
         "Card.Footer": [
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
-            "line": 38,
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
+            "line": 54,
             "column": 14
           }
         ],
-        "MoreVert": [
+        "Row": [
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptListItem.jsx",
-            "line": 57,
-            "column": 25
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
+            "line": 74,
+            "column": 10
           }
         ],
         "Alert.Heading": [
@@ -23473,7 +23491,7 @@
           },
           {
             "filePath": "src/templates/courseDetailBootcamp.jsx",
-            "line": 186,
+            "line": 187,
             "column": 18
           },
           {
@@ -23488,7 +23506,7 @@
           },
           {
             "filePath": "src/templates/programDetailDegree.jsx",
-            "line": 210,
+            "line": 215,
             "column": 16
           }
         ],
@@ -24013,7 +24031,7 @@
           },
           {
             "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 611,
+            "line": 612,
             "column": 20
           },
           {
