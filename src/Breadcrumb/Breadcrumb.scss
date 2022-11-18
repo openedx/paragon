@@ -19,10 +19,10 @@
       &:focus::before {
         content: "";
         position: absolute;
-        top: -$breadcrumb-border-focus-axis-y;
-        right: -$breadcrumb-border-focus-axis-x;
-        bottom: -$breadcrumb-border-focus-axis-y;
-        left: -$breadcrumb-border-focus-axis-x;
+        top: calc(#{$breadcrumb-border-focus-axis-y} * -1);
+        right: calc(#{$breadcrumb-border-focus-axis-x} * -1);
+        bottom: calc(#{$breadcrumb-border-focus-axis-y} * -1);
+        left: calc(#{$breadcrumb-border-focus-axis-x} * -1);
         border: $breadcrumb-border-focus-width solid $breadcrumb-color;
         border-radius: $breadcrumb-focus-border-radius;
       }

@@ -1,15 +1,20 @@
 // Checkpoints
 
-$checkpoint-background-color:       $light-300 !default;
+$checkpoint-background-color: var(--pgn-product-tour-checkpoint-color-background) !default;
 
-$checkpoint-body-color:             $gray-700;
+$checkpoint-body-color: var(--pgn-product-tour-checkpoint-color-body) !default;
 
-$checkpoint-border-color:           $brand !default;
-$checkpoint-border-width:           8px !default;
+$checkpoint-border-color: var(--pgn-product-tour-checkpoint-color-border) !default;
+$checkpoint-border-width: var(--pgn-product-tour-checkpoint-width-border) !default;
 
-$checkpoint-breadcrumb-color:       $primary !default;
+$checkpoint-breadcrumb-color: var(--pgn-product-tour-checkpoint-color-breadcrumb) !default;
 
-$checkpoint-arrow-width:            15px !default;
-$checkpoint-max-width:              480px !default;
+$checkpoint-arrow-width: var(--pgn-product-tour-checkpoint-width-arrow) !default;
+$checkpoint-max-width: var(--pgn-product-tour-checkpoint-width-max) !default;
 
-$checkpoint-z-index:                1060 !default;
+$checkpoint-z-index: var(--pgn-product-tour-checkpoint-zindex) !default;
+
+$checkpoint-arrow-top-color: var(--pgn-product-tour-checkpoint-arrow-color-top) !default;
+$checkpoint-arrow-default-color: var(--pgn-product-tour-checkpoint-arrow-color-default) !default;
+$checkpoint-arrow-transparent: var(--pgn-product-tour-checkpoint-arrow-transparent) !default;
+$checkpoint-box-shadow-color: var(--pgn-product-tour-checkpoint-color-box-shadow) !default;

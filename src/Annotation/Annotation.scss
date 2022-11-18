@@ -1,50 +1,54 @@
 @import "variables";
 
-@mixin triangle($color, $direction) {
+@mixin triangle($triangle-color, $triangle-direction) {
+  content: "";
   height: 0;
   width: 0;
   position: absolute;
-  content: "";
   border: solid transparent;
 
-  @if $direction == top {
-    border-bottom-color: $color;
+  @if $triangle-direction == top {
+    border-bottom-color: $triangle-color;
     border-width: 0 $annotation-arrow-border-width $annotation-arrow-border-width;
     right: 0;
     left: 0;
-    top: -$annotation-arrow-border-width;
+    top: calc(#{$annotation-arrow-border-width} * -1);
     margin: 0 auto;
   }
 
-  @else if $direction == right {
-    border-left-color: $color;
-    border-width: $annotation-arrow-border-width 0 $annotation-arrow-border-width $annotation-arrow-border-width;
+  @else if $triangle-direction == right {
+    border-left-color: $triangle-color;
+    border-width:
+      $annotation-arrow-border-width 0 $annotation-arrow-border-width
+      $annotation-arrow-border-width;
     top: 0;
     bottom: 0;
-    right: -$annotation-arrow-border-width;
+    right: calc(#{$annotation-arrow-border-width} * -1);
     margin: auto 0;
   }
 
-  @else if $direction == bottom {
-    border-top-color: $color;
+  @else if $triangle-direction == bottom {
+    border-top-color: $triangle-color;
     border-width: $annotation-arrow-border-width $annotation-arrow-border-width 0;
     right: 0;
     left: 0;
-    bottom: -$annotation-arrow-border-width;
+    bottom: calc(#{$annotation-arrow-border-width} * -1);
     margin: 0 auto;
   }
 
-  @else if $direction == left {
-    border-right-color: $color;
-    border-width: $annotation-arrow-border-width $annotation-arrow-border-width $annotation-arrow-border-width 0;
+  @else if $triangle-direction == left {
+    border-right-color: $triangle-color;
+    border-width:
+      $annotation-arrow-border-width $annotation-arrow-border-width
+      $annotation-arrow-border-width 0;
     top: 0;
     bottom: 0;
-    left: -$annotation-arrow-border-width;
+    left: calc(#{$annotation-arrow-border-width} * -1);
     margin: auto 0;
   }
 
   @else {
-    @error "Unknown direction #{$direction}.";
+    @error "Unknown direction #{$triangle-direction}.";
   }
 }
 
@@ -70,17 +74,17 @@ $arrow-directions: top, right, bottom, left;
       color: map-get($colors, "color");
 
       // set additional margin to arrow side of the Annotation
-      margin-#{$direction}: $annotation-arrow-border-width + $annotation-arrow-side-margin;
+      margin-#{$direction}: calc($annotation-arrow-border-width + $annotation-arrow-side-margin);
 
       [dir="rtl"] & {
         @if $direction == left {
           margin-left: 0;
-          margin-right: $annotation-arrow-border-width + $annotation-arrow-side-margin;
+          margin-right: calc($annotation-arrow-border-width + $annotation-arrow-side-margin);
         }
 
         @else if $direction == right {
           margin-right: 0;
-          margin-left: $annotation-arrow-border-width + $annotation-arrow-side-margin;
+          margin-left: calc($annotation-arrow-border-width + $annotation-arrow-side-margin);
         }
       }
 
@@ -90,7 +94,7 @@ $arrow-directions: top, right, bottom, left;
         [dir="rtl"] & {
           @if $direction == left {
             left: initial;
-            right: -$annotation-arrow-border-width;
+            right: calc(#{$annotation-arrow-border-width} * -1);
             border-width:
               $annotation-arrow-border-width 0 $annotation-arrow-border-width
               $annotation-arrow-border-width;
@@ -99,7 +103,7 @@ $arrow-directions: top, right, bottom, left;
 
           @else if $direction == right {
             right: initial;
-            left: -$annotation-arrow-border-width;
+            left: calc(#{$annotation-arrow-border-width} * -1);
             border-width:
               $annotation-arrow-border-width $annotation-arrow-border-width
               $annotation-arrow-border-width 0;

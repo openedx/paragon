@@ -79,7 +79,7 @@ function CollapsibleButtonGroup({
             placement="bottom-end"
             isOpen={isOverflowMenuOpen}
           >
-            <div className="pgn__datatable__overflow-actions-menu">
+            <div className="pgn__data-table__overflow-actions-menu">
               <Stack gap={2}>
                 {dropdownActions.map(cloneAction)}
               </Stack>
@@ -87,7 +87,7 @@ function CollapsibleButtonGroup({
           </ModalPopup>
         </>
       )}
-      <div className="pgn__datatable__visible-actions">
+      <div className="pgn__data-table__visible-actions">
         {visibleActions.map(cloneAction)}
       </div>
     </div>

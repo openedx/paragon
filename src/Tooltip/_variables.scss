@@ -1,21 +1,20 @@
 // Tooltips
 
-$tooltip-font-size:                 $font-size-sm !default;
-$tooltip-max-width:                 200px !default;
-$tooltip-color:                     $white !default;
-$tooltip-bg:                        $black !default;
-$tooltip-border-radius:             $border-radius !default;
-$tooltip-opacity:                   1 !default;
-$tooltip-padding-y:                 .5rem !default;
-$tooltip-padding-x:                 .5rem !default;
-$tooltip-margin:                    0 !default;
-$tooltip-box-shadow:                drop-shadow(0 2px 4px rgba(0, 0, 0, .15))
-  drop-shadow(0 2px 8px rgba(0, 0, 0, .15)) !default;
+$tooltip-font-size: var(--pgn-tooltip-font-size) !default;
+$tooltip-max-width: var(--pgn-tooltip-max-width) !default;
+$tooltip-color: var(--pgn-tooltip-color-base) !default;
+$tooltip-bg: var(--pgn-tooltip-bg-base) !default;
+$tooltip-border-radius: var(--pgn-tooltip-border-radius) !default;
+$tooltip-opacity: var(--pgn-tooltip-opacity) !default;
+$tooltip-padding-y: var(--pgn-tooltip-padding-y) !default;
+$tooltip-padding-x: var(--pgn-tooltip-padding-x) !default;
+$tooltip-margin: var(--pgn-tooltip-margin) !default;
+$tooltip-box-shadow: var(--pgn-tooltip-box-shadow) !default;
 
-$tooltip-arrow-width:               .8rem !default;
-$tooltip-arrow-height:              .4rem !default;
-$tooltip-arrow-color:               $tooltip-bg !default;
+$tooltip-arrow-width: .8rem !default;
+$tooltip-arrow-height: var(--pgn-tooltip-arrow-height) !default;
+$tooltip-arrow-color: var(--pgn-tooltip-arrow-color-base) !default;
 
-$tooltip-color-light:               $black !default;
-$tooltip-bg-light:                  $white !default;
-$tooltip-arrow-color-light:         $white !default;
+$tooltip-color-light: var(--pgn-tooltip-color-light) !default;
+$tooltip-bg-light: var(--pgn-tooltip-bg-light) !default;
+$tooltip-arrow-color-light: var(--pgn-tooltip-arrow-color-light) !default;
