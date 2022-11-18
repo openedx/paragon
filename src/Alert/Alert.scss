@@ -68,7 +68,7 @@
 
 // Baking in $close-font-size: $font-size-base * 1.5 !default; to avoid any dependency
 .alert-dismissible {
-  padding-right: ($font-size-base * 1.5) + $alert-padding-x * 2;
+  padding-right: calc(($font-size-base * 1.5) + $alert-padding-x * 2);
 
   // Adjust close link position
   .close {

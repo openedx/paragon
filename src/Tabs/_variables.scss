@@ -1,3 +1,3 @@
-$tab-notification-height:       1rem !default;
-$tab-notification-width:        1rem !default;
-$tab-notification-font-size:    $font-size-xs !default;
+$tab-notification-height: var(--pgn-tabs-notification-height) !default;
+$tab-notification-width: var(--pgn-tabs-notification-width) !default;
+$tab-notification-font-size: var(--pgn-tabs-notification-font-size) !default;

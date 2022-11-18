@@ -1,12 +1,12 @@
 // Collapsible
 
-$collapsible-card-spacer-y:               .5rem !default;
-$collapsible-card-spacer-x:               .5rem !default;
-$collapsible-card-spacer-y-lg:         $card-spacer-y !default;
-$collapsible-card-spacer-x-lg:         $card-spacer-x !default;
-$collapsible-card-body-spacer-left:        .75rem !default;
-$collapsible-card-spacer-icon:             2.5rem !default;
+$collapsible-card-spacer-y: var(--pgn-collapsible-card-spacer-y-base) !default;
+$collapsible-card-spacer-x: var(--pgn-collapsible-card-spacer-x-base) !default;
+$collapsible-card-spacer-y-lg: var(--pgn-collapsible-card-spacer-y-lg) !default;
+$collapsible-card-spacer-x-lg: var(--pgn-collapsible-card-spacer-x-lg) !default;
+$collapsible-card-body-spacer-left: var(--pgn-collapsible-card-spacer-left-body) !default;
+$collapsible-card-spacer-icon: var(--pgn-collapsible-card-spacer-icon) !default;
 
-$collapsible-basic-spacer-y:               .5rem !default;
-$collapsible-basic-spacer-x:               .5rem !default;
-$collapsible-basic-spacer-icon:            .625rem !default;
+$collapsible-basic-spacer-y: var(--pgn-collapsible-card-spacer-basic-y) !default;
+$collapsible-basic-spacer-x: var(--pgn-collapsible-card-spacer-basic-x) !default;
+$collapsible-basic-spacer-icon: var(--pgn-collapsible-card-spacer-basic-icon) !default;

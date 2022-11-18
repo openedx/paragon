@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "link": {
+      "padding": {
+        "y": { "value": ".5rem", "themeable": true, "source": "$nav-link-padding-y" },
+        "x": { "value": "1rem", "themeable": true, "source": "$nav-link-padding-x" }
+      },
+      "color": {
+        "base": { "value": "{color.gray.700.value}", "themeable": true, "source": "$nav-link-color" },
+        "disabled": { "value": "{color.gray.300.value}", "themeable": true, "source": "$nav-link-disabled-color" }
+      },
+      "font": {
+        "weight": { "value": "500", "themeable": true, "source": "$nav-link-font-weight" }
+      }
+    },
+    "tabs": {
+      "border": {
+        "color": { "value": "{color.light.400.value}", "themeable": true, "source": "$nav-tabs-border-color" },
+        "width": { "value": "2px", "themeable": true, "source": "$nav-tabs-border-width" },
+        "radius": { "value": "0", "themeable": true, "source": "$nav-tabs-border-radius" }
+      },
+      "link": {
+        "hover": {
+          "border": {
+            "color": {
+              "value": "transparent transparent {nav.tabs.border.color.value}",
+              "themeable": true,
+              "source": "$nav-tabs-link-hover-border-color"
+            }
+          },
+          "bg": { "value": "{color.light.400.value}", "themeable": true, "source": "$nav-tabs-link-hover-bg" }
+        },
+        "active": {
+          "color": {
+            "base": { "value": "{color.primary.500.value}", "themeable": true, "source": "$nav-tabs-link-active-color" },
+            "border": {
+              "value": "transparent transparent {color.primary.500.value}",
+              "themeable": true,
+              "source": "$nav-tabs-link-active-border-color"
+            }
+          },
+          "bg": { "value": "{body.bg.value}", "themeable": true, "source": "$nav-tabs-link-active-bg" }
+        }
+      }
+    },
+    "pills": {
+      "border": {
+        "radius": { "value": "{border.radius.base.value}", "themeable": true, "source": "$nav-pills-border-radius" }
+      },
+      "link": {
+        "link": {
+          "active": {
+            "color": {
+              "value": "{color.active.value}",
+              "themeable": true,
+              "source": "$nav-pills-link-active-color"
+            },
+            "bg": { "value": "{color.background.active.value}", "themeable": true, "source": "$nav-pills-link-active-bg" }
+          }
+        }
+      }
+    },
+    "divider": {
+      "color": { "value": "{color.gray.100.value}", "themeable": true, "source": "$nav-divider-color" },
+      "margin": {
+        "y": { "value": "calc({spacer.base.value} / 2)", "themeable": true, "source": "$nav-divider-margin-y" }
+      }
+    },
+    "color": {
+      "dark": {
+        "value": "{color.white.value}",
+        "themeable": true,
+        "source": "$navbar-dark-color",
+        "modify": [{
+          "type": "alpha",
+          "amount": 0.5
+        }]
+      },
+      "light": {
+        "value": "{color.black.value}",
+        "themeable": true,
+        "source": "$navbar-light-color",
+        "modify": [{
+          "type": "alpha",
+          "amount": 0.5
+        }]
+      }
+    }
+  }
+}
