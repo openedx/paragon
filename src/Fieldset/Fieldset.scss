@@ -1,0 +1,12 @@
+.paragon-fieldset {
+  margin-bottom: calc($spacer * 1.5);
+
+  .form-control {
+    height: auto;
+  }
+
+  fieldset legend {
+    width: auto;
+    margin-bottom: 0;
+  }
+}
