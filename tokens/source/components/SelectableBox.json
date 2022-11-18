@@ -1,0 +1,11 @@
+{
+  "selectable-box": {
+    "padding": { "value": "1rem", "themeable": true, "source": "$selectable-box-padding" },
+    "border": {
+      "radius": { "value": ".25rem", "themeable": true, "source": "$selectable-box-border-radius" }
+    },
+    "box": {
+      "space": { "value": ".75rem", "themeable": true, "source": "$selectable-box-space" }
+    }
+  }
+}

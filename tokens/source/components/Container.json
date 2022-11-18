@@ -1,0 +1,13 @@
+{
+  "container": {
+    "max": {
+      "width": {
+        "xs": { "value": "464px", "themeable": true, "source": "$max-width-xs" },
+        "sm": { "value": "708px", "themeable": true, "source": "$max-width-sm" },
+        "md": { "value": "952px", "themeable": true, "source": "$max-width-md" },
+        "lg": { "value": "1192px", "themeable": true, "source": "$max-width-lg" },
+        "xl": { "value": "1440px", "themeable": true, "source": "$max-width-xl" }
+      }
+    }
+  }
+}
