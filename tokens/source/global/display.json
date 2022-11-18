@@ -1,0 +1,21 @@
+{
+  "display": {
+    "size": {
+      "1": { "value": "3.75rem", "themeable": true, "source": "$display1-size" },
+      "2": { "value": "4.875rem", "themeable": true, "source": "$display2-size" },
+      "3": { "value": "5.625rem", "themeable": true, "source": "$display3-size" },
+      "4": { "value": "7.5rem", "themeable": true, "source": "$display4-size" },
+      "mobile": { "value": "3.25rem", "themeable": true, "source": "$display-mobile-size" }
+    },
+    "weight": {
+      "1": { "value": "{font.weight.bold}", "themeable": true, "source": "$display1-weight" },
+      "2": { "value": "{font.weight.bold}", "themeable": true, "source": "$display2-weight" },
+      "3": { "value": "{font.weight.bold}", "themeable": true, "source": "$display3-weight" },
+      "4": { "value": "{font.weight.bold}", "themeable": true, "source": "$display4-weight" }
+    },
+    "line-height": {
+      "base": { "value": "1", "themeable": true, "source": "$display-line-height" },
+      "mobile": { "value": "3.5rem", "themeable": true, "source": "$display-mobile-line-height" }
+    }
+  }
+}

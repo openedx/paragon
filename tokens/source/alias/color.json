@@ -1,0 +1,14 @@
+{
+  "color": {
+    "background": {
+      "base": { "value": "{color.white.value}", "themeable": true } ,
+      "active": { "value": "{color.primary.500.value}", "themeable": true, "source": "$component-active-bg" }
+    },
+    "active": { "value": "{color.white.value}", "themeable": true, "source": "$component-active-color" },
+    "disabled": { "value": "{color.gray.500.value}", "themeable": true },
+    "link": { "value": "{color.info.500.value}", "themeable": true },
+    "input": {
+      "focus": { "value": "{color.primary.500.value}", "themeable": true }
+    }
+  }
+}

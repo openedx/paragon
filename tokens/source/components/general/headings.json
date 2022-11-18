@@ -1,0 +1,15 @@
+{
+  "headings": {
+    "margin": {
+      "bottom": { "value": ".5rem", "themeable": true, "source": "$headings-margin-bottom" }
+    },
+    "font": {
+      "family": { "value": "null", "themeable": true, "source": "$headings-font-family" },
+      "weight": { "value": "{font.weight.bold}", "themeable": true, "source": "$headings-font-weight" }
+    },
+    "line": {
+      "height": { "value": "1.25", "themeable": true, "source": "$headings-line-height" }
+    },
+    "color": { "value": "{color.black}", "themeable": true, "source": "$headings-color" }
+  }
+}
