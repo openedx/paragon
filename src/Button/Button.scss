@@ -1,34 +1,37 @@
 @import "variables";
-@import "~bootstrap/scss/button-group";
+@import "button-bootstrap";
 
+// TODO Pending decision on usage with CSS variables.
 @mixin button-variant(
-  $background, $border, $hover-background: darken($background, 7.5%),
-  $hover-border: darken($border, 10%), $active-background: darken($background, 10%),
-  $active-border: darken($border, 12.5%), $color: color-yiq($background), $hover-color: color-yiq($hover-background),
-  $active-color: color-yiq($active-background)
+  $btn-variant-bg, $btn-variant-border, $btn-variant-hover-bg: darken($btn-variant-bg, 7.5%),
+  $btn-variant-hover-border: darken($btn-variant-border, 10%),
+  $btn-variant-active-bg: darken($btn-variant-bg, 10%),
+  $btn-variant-active-border: darken($btn-variant-border, 12.5%),
+  $btn-variant-color: color-yiq($btn-variant-bg), $btn-variant-hover-color: color-yiq($btn-variant-hover-bg),
+  $btn-variant-active-color: color-yiq($btn-variant-active-bg)
 ) {
-  color: $color;
+  color: $btn-variant-color;
 
-  @include gradient-bg($background);
+  @include gradient-bg($btn-variant-bg);
 
-  border-color: $border;
+  border-color: $btn-variant-border;
 
   @include box-shadow($btn-box-shadow);
 
   @include hover {
-    color: $hover-color;
+    color: $btn-variant-hover-color;
 
-    @include gradient-bg($hover-background);
+    @include gradient-bg($btn-variant-hover-bg);
 
-    border-color: $hover-border;
+    border-color: $btn-variant-hover-border;
   }
 
   // Disabled comes first so active can properly restyle
   &.disabled,
   &:disabled {
-    color: $color;
-    background-color: $background;
-    border-color: $border;
+    color: $btn-variant-color;
+    background-color: $btn-variant-bg;
+    border-color: $btn-variant-border;
 
     // Remove CSS gradients if they're enabled
     @if $enable-gradients {
@@ -39,44 +42,47 @@
   &:not(:disabled):not(.disabled):active,
   &:not(:disabled):not(.disabled).active,
   .show > &.dropdown-toggle {
-    color: $active-color;
-    background-color: $active-background;
+    color: $btn-variant-active-color;
+    background-color: $btn-variant-active-bg;
 
     @if $enable-gradients {
       background-image: none; // Remove the gradient for the pressed/active state
     }
 
-    border-color: $active-border;
+    border-color: $btn-variant-active-border;
   }
 }
 
 // OVERRIDE FROM BOOTSTRAP
 // We do this to better control active and focus states.
 @mixin button-outline-variant(
-  $color, $color-hover: color-yiq($color), $active-background: $color, $active-border: $color
+  $color-val,
+  $color-val-hover: color-yiq($color-val),
+  $color-val-active-bg: $color-val,
+  $btn-outline-variant-active-border: $color-val
 ) {
-  color: $color;
-  border-color: $color;
+  color: $color-val;
+  border-color: $color-val;
 
   @include hover {
-    color: $color-hover;
-    background-color: $active-background;
-    border-color: $active-border;
+    color: $color-val-hover;
+    background-color: $color-val-active-bg;
+    border-color: $btn-outline-variant-active-border;
   }
 
   &.disabled,
   &:disabled {
-    color: $color;
+    color: $color-val;
     background-color: transparent;
-    border-color: $color;
+    border-color: $color-val;
   }
 
   &:not(:disabled):not(.disabled):active,
   &:not(:disabled):not(.disabled).active,
   .show > &.dropdown-toggle {
-    color: color-yiq($active-background);
-    background-color: $active-background;
-    border-color: $active-border;
+    color: color-yiq($color-val-active-bg);
+    background-color: $color-val-active-bg;
+    border-color: $btn-outline-variant-active-border;
   }
 }
 
@@ -84,15 +90,18 @@
 // No changes made. We do this to keep all button related mixins together,
 //
 // Button sizes
-@mixin button-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
-  padding: $padding-y $padding-x;
+@mixin button-size(
+  $btn-size-padding-y, $btn-size-padding-x, $btn-size-font-size,
+  $btn-size-line-height, $btn-size-border-radius
+) {
+  padding: $btn-size-padding-y $btn-size-padding-x;
 
-  @include font-size($font-size);
+  @include font-size($btn-size-font-size);
 
-  line-height: $line-height;
+  line-height: $btn-size-line-height;
 
   // Manually declare to provide an override to the browser default
-  @include border-radius($border-radius, 0);
+  @include border-radius($btn-size-border-radius, 0);
 }
 
 // ------------------------
@@ -103,30 +112,32 @@
 // A new variant of button (inverse)
 //
 @mixin button-inverse-variant(
-  $color, $background: color-yiq($color), $active-background: $color, $active-border: $color
+  $btn-inverse-variant-color, $btn-inverse-variant-bg: color-yiq($btn-inverse-variant-color),
+  $btn-inverse-variant-active-bg: $btn-inverse-variant-color,
+  $btn-inverse-variant-active-border: $btn-inverse-variant-color
 ) {
-  color: $color;
+  color: $btn-inverse-variant-color;
   border-color: transparent;
-  background-color: $background;
+  background-color: $btn-inverse-variant-bg;
 
   &:not(:disabled):not(.disabled) {
     @include hover {
-      color: darken($color, 7.5%);
-      background-color: darken($background, 7.5%);
+      color: darken($btn-inverse-variant-color, 7.5%);
+      background-color: darken($btn-inverse-variant-bg, 7.5%);
       border-color: transparent;
     }
   }
 
   &.disabled,
   &:disabled {
-    color: $color;
-    background-color: $background;
+    color: $btn-inverse-variant-color;
+    background-color: $btn-inverse-variant-bg;
   }
 
   &:not(:disabled):not(.disabled):active,
   &:not(:disabled):not(.disabled).active,
   .show > &.dropdown-toggle {
-    color: darken($color, 10%);
+    color: darken($btn-inverse-variant-color, 10%);
     background: #EEEEEE;
   }
 }
@@ -141,10 +152,10 @@
     &::before {
       content: "";
       position: absolute;
-      top: -1 * $btn-focus-distance-to-border;
-      right: -1 * $btn-focus-distance-to-border;
-      bottom: -1 * $btn-focus-distance-to-border;
-      left: -1 * $btn-focus-distance-to-border;
+      top: calc(#{$btn-focus-distance-to-border} * -1);
+      right: calc(#{$btn-focus-distance-to-border} * -1);
+      bottom: calc(#{$btn-focus-distance-to-border} * -1);
+      left: calc(#{$btn-focus-distance-to-border} * -1);
       border: solid $btn-focus-width $ring-color;
       border-radius: $btn-focus-border-radius;
     }
@@ -198,7 +209,8 @@
   background-color: transparent;
   border: $btn-border-width solid transparent;
 
-  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size,
+  $btn-line-height, $btn-border-radius);
   @include transition($btn-transition);
 
   @include hover {
@@ -247,27 +259,27 @@ fieldset:disabled a.btn {
 
 @each $color, $value in $theme-colors {
   .btn-#{$color} {
-    $background: $value;
-    $border: $value;
+    $theme-color-bg: $value;
+    $theme-color-border: $value;
 
-    $hover-background: theme-color($color, "hover");
-    $hover-border: theme-color($color, "hover");
-    $active-background: theme-color($color, "active");
-    $active-border: theme-color($color, "active");
+    $theme-color-hover-bg: theme-color($color, "hover");
+    $theme-color-hover-border: theme-color($color, "hover");
+    $theme-color-hover-border-active-bg: theme-color($color, "active");
+    $theme-color-active-border: theme-color($color, "active");
 
     // Defaults
-    $hover-background: darken($background, 7.5%) !default;
-    $hover-border: darken($border, 10%) !default;
-    $active-background: darken($background, 10%) !default;
-    $active-border: darken($border, 12.5%) !default;
+    $theme-color-hover-bg: darken($theme-color-bg, 7.5%) !default;
+    $theme-color-hover-border: darken($theme-color-border, 10%) !default;
+    $theme-color-hover-border-active-bg: darken($theme-color-bg, 10%) !default;
+    $theme-color-active-border: darken($theme-color-border, 12.5%) !default;
 
     @include button-variant(
-      $background,
-      $border,
-      $hover-background,
-      $hover-border,
-      $active-background,
-      $active-border
+      $theme-color-bg,
+      $theme-color-border,
+      $theme-color-hover-bg,
+      $theme-color-hover-border,
+      $theme-color-hover-border-active-bg,
+      $theme-color-active-border
     );
     @include button-focus(theme-color($color, "focus"));
   }
@@ -275,20 +287,20 @@ fieldset:disabled a.btn {
   .btn-outline-#{$color} {
     $text-and-border: $value;
 
-    $color-hover: theme-color($color, "hover");
-    $active-background: theme-color($color, "background");
-    $active-border: theme-color($color, "active");
+    $btn-outline-color-hover: theme-color($color, "hover");
+    $btn-outline-active-background: theme-color($color, "background");
+    $btn-outline-active-border: theme-color($color, "active");
 
     // Defaults
     $color-hover: color-yiq($value) !default;
     $active-background: $value !default;
-    $active-border: $value !default;
+    $btn-outline-active-border: $value !default;
 
     @include button-outline-variant(
       $text-and-border,
-      $color-hover,
-      $active-background,
-      $active-border,
+      $btn-outline-color-hover,
+      $btn-outline-active-background,
+      $btn-outline-active-border,
     );
     @include button-focus(theme-color($color, "focus"));
   }
@@ -300,15 +312,15 @@ fieldset:disabled a.btn {
     $active-border: theme-color($color, "active");
 
     // Defaults
-    $background: color-yiq($value) !default;
-    $active-background: $value !default;
-    $active-border: $value !default;
+    $btn-inverse-bg: color-yiq($value) !default;
+    $btn-inverse-active-bg: $value !default;
+    $btn-inverse-active-border: $value !default;
 
     @include button-inverse-variant(
       $text,
-      $background,
-      $active-background,
-      $active-border,
+      $btn-inverse-bg,
+      $btn-inverse-active-bg,
+      $btn-inverse-active-border,
     );
     @include button-focus($white);
   }
@@ -317,19 +329,19 @@ fieldset:disabled a.btn {
     $text-and-border: $white;
 
     $color-hover: theme-color($color, "hover");
-    $active-background: theme-color($color, "background");
-    $active-border: transparent;
+    $active-bg-color: theme-color($color, "background");
+    $active-border-color: transparent;
 
     // Defaults
     $color-hover: color-yiq($value) !default;
-    $active-background: $value !default;
-    $active-border: $value !default;
+    $active-bg-color: $value !default;
+    $active-border-color: $value !default;
 
     @include button-outline-variant(
       $text-and-border,
       $color-hover,
-      $active-background,
-      $active-border,
+      $active-bg-color,
+      $active-border-color,
     );
     @include button-focus($white);
   }
@@ -340,20 +352,20 @@ fieldset:disabled a.btn {
 //
 
 .btn-tertiary {
-  $background: $btn-tertiary-bg;
-  $border: transparent;
+  $button-tertiary-background: $btn-tertiary-bg;
+  $button-tertiary-border: transparent;
   $hover-background: $btn-tertiary-hover-bg;
-  $hover-border: transparent;
-  $active-background: $btn-tertiary-active-bg;
-  $active-border: transparent;
+  $button-tertiary-hover-border: transparent;
+  $button-tertiary-active-bg: $btn-tertiary-active-bg;
+  $button-tertiary-active-border: transparent;
 
   @include button-variant(
-    $background,
-    $border,
+    $button-tertiary-background,
+    $button-tertiary-border,
     $hover-background,
-    $hover-border,
-    $active-background,
-    $active-border,
+    $button-tertiary-hover-border,
+    $button-tertiary-active-bg,
+    $button-tertiary-active-border,
     $btn-tertiary-color,
     $btn-tertiary-color,
     $btn-tertiary-color
@@ -362,20 +374,20 @@ fieldset:disabled a.btn {
 }
 
 .btn-inverse-tertiary {
-  $background: $btn-inverse-tertiary-bg;
-  $border: transparent;
+  $button-inverse-tertiary-bg: $btn-tertiary-bg;
+  $button-inverse-tertiary-border: transparent;
   $hover-background: $btn-inverse-tertiary-hover-bg;
-  $hover-border: transparent;
-  $active-background: $btn-inverse-tertiary-active-bg;
-  $active-border: transparent;
+  $button-inverse-hover-border: transparent;
+  $button-inverse-tertiary-active-bg: $btn-inverse-tertiary-active-bg;
+  $button-inverse-tertiary-active-border: transparent;
 
   @include button-variant(
-    $background,
-    $border,
+    $button-inverse-tertiary-bg,
+    $button-inverse-tertiary-border,
     $hover-background,
-    $hover-border,
-    $active-background,
-    $active-border,
+    $button-inverse-hover-border,
+    $button-inverse-tertiary-active-bg,
+    $button-inverse-tertiary-active-border,
     $btn-inverse-tertiary-color,
     $btn-inverse-tertiary-color,
     $btn-inverse-tertiary-color
@@ -424,13 +436,15 @@ fieldset:disabled a.btn {
 
 .btn-lg {
   @include button-size(
-    $btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg
+    $btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg,
+    $btn-line-height-lg, $btn-border-radius-lg
   );
 }
 
 .btn-sm {
   @include button-size(
-    $btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm
+    $btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm,
+    $btn-line-height-sm, $btn-border-radius-sm
   );
 }
 
@@ -449,7 +463,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-inline {
-  line-height: calc(#{$line-height-base}em - #{2 * $btn-border-width});
+  line-height: calc(#{$line-height-base}em - 2 * #{$btn-border-width});
   font-size: inherit;
   vertical-align: bottom;
   padding: 0 .25em;

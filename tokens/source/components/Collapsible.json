@@ -1,0 +1,25 @@
+{
+  "collapsible": {
+    "card": {
+      "spacer": {
+        "y": {
+          "base": { "value": ".5rem", "themeable": true, "source": "$collapsible-card-spacer-y" },
+          "lg": { "value": "{card.spacer.y.value}", "themeable": true, "source": "$collapsible-card-spacer-y-lg" }
+        },
+        "x": {
+          "base": { "value": ".5rem", "themeable": true, "source": "$collapsible-card-spacer-x" },
+          "lg": { "value": "{card.spacer.x.value}", "themeable": true, "source": "$collapsible-card-spacer-x-lg" }
+        },
+        "left": {
+          "body": { "value": ".75rem", "themeable": true, "source": "$collapsible-card-body-spacer-left" }
+        },
+        "icon": { "value": "2.5rem", "themeable": true, "source": "$collapsible-card-spacer-icon" },
+        "basic": {
+          "y": { "value": ".5rem", "themeable": true, "source": "$collapsible-basic-spacer-y" },
+          "x": { "value": ".5rem", "themeable": true, "source": "$collapsible-basic-spacer-x" },
+          "icon": { "value": ".625rem", "themeable": true, "source": "$collapsible-basic-spacer-icon" }
+        }
+      }
+    }
+  }
+}

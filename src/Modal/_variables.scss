@@ -1,50 +1,56 @@
 // Modals
 
 // Padding applied to the modal body
-$modal-inner-padding:               1.5rem !default;
-$modal-inner-padding-bottom:        .7rem !default;
+$modal-inner-padding: var(--pgn-modal-inner-padding-base) !default;
+$modal-inner-padding-bottom: var(--pgn-modal-inner-padding-bottom) !default;
 
-// Margin between elements in footer, must be lower than or equal to 2 * $modal-inner-padding
+// TODO can't use css variables due to conflict with SCSS functions
+// Margin between elements in footer, must be lower than or equal to 2 * var(--pgn-modal-inner-padding-base)
 $modal-footer-margin-between:       .5rem !default;
 
+// TODO can't use css variables due to conflict with SCSS functions
 $modal-dialog-margin:               1.5rem !default;
+// TODO can't use css variables due to conflict with SCSS functions
 $modal-dialog-margin-y-sm-up:       1.75rem !default;
 
-$modal-title-line-height:           $line-height-base !default;
+$modal-title-line-height: var(--pgn-modal-title-line-height) !default;
 
-$modal-content-color:               null !default;
-$modal-content-bg:                  $white !default;
-$modal-content-border-color:        rgba($black, .2) !default;
-$modal-content-border-width:        0 !default;
-$modal-content-border-radius:       $border-radius-lg !default;
-$modal-content-inner-border-radius: subtract($modal-content-border-radius, $modal-content-border-width) !default;
-$modal-content-box-shadow-xs:       0 .25rem .5rem rgba($black, .5) !default;
-$modal-content-box-shadow-sm-up:    0 10px 20px rgba($black, .15), 0 8px 20px rgba($black, .15) !default;
+$modal-content-color: var(--pgn-modal-content-color) !default;
+$modal-content-bg: var(--pgn-modal-content-bg) !default;
+$modal-content-border-color: var(--pgn-modal-content-border-color) !default;
+$modal-content-border-width: var(--pgn-modal-content-border-width) !default;
+$modal-content-border-radius: var(--pgn-modal-content-border-radius) !default;
 
-$modal-backdrop-bg:                 $black !default;
-$modal-backdrop-opacity:            .5 !default;
-$modal-header-border-color:         $border-color !default;
-$modal-footer-border-color:         $modal-header-border-color !default;
-$modal-header-border-width:         $modal-content-border-width !default;
-$modal-footer-border-width:         $modal-header-border-width !default;
-$modal-header-padding-y:            1rem !default;
-$modal-header-padding-x:            1.5rem !default;
+// stylelint-disable-next-line max-line-length
+$modal-content-inner-border-radius: calc(#{var(--pgn-modal-content-border-radius)} - #{var(--pgn-modal-content-border-width)}) !default;
+$modal-content-box-shadow-xs: var(--pgn-modal-content-box-shadow-xs) !default;
+$modal-content-box-shadow-sm-up: var(--pgn-modal-content-box-shadow-sm-up) !default;
+
+$modal-backdrop-bg: var(--pgn-modal-backdrop-bg) !default;
+$modal-backdrop-opacity: var(--pgn-modal-backdrop-opacity) !default;
+$modal-header-border-color: var(--pgn-modal-header-border-color) !default;
+$modal-footer-border-color: var(--pgn-modal-footer-border-color) !default;
+$modal-header-border-width: var(--pgn-modal-header-border-width) !default;
+$modal-footer-border-width: var(--pgn-modal-footer-border-width) !default;
+$modal-header-padding-y: var(--pgn-modal-header-padding-y) !default;
+$modal-header-padding-x: var(--pgn-modal-header-padding-x) !default;
 $modal-close-container-top:         .625rem !default;
 
-// Keep this for backwards compatibility
-$modal-header-padding:              $modal-header-padding-y $modal-header-padding-x !default;
-$modal-footer-padding-y:            1rem !default;
-$modal-footer-padding-x:            1.5rem !default;
 
 // Keep this for backwards compatibility
-$modal-footer-padding:              $modal-footer-padding-y $modal-footer-padding-x !default;
+$modal-header-padding: var(--pgn-modal-header-padding-base) !default;
+$modal-footer-padding-y: var(--pgn-modal-footer-padding-y) !default;
+$modal-footer-padding-x: var(--pgn-modal-footer-padding-x) !default;
 
-$modal-xl:                          1140px !default;
-$modal-lg:                          800px !default;
-$modal-md:                          500px !default;
-$modal-sm:                          400px !default;
+// Keep this for backwards compatibility
+$modal-footer-padding: var(--pgn-modal-footer-padding-base) !default;
 
-$modal-fade-transform:              translate(0, -50px) !default;
-$modal-show-transform:              none !default;
-$modal-transition:                  transform .3s ease-out !default;
-$modal-scale-transform:             scale(1.02) !default;
+$modal-xl: var(--pgn-modal-xl) !default;
+$modal-lg: var(--pgn-modal-lg) !default;
+$modal-md: var(--pgn-modal-md) !default;
+$modal-sm: var(--pgn-modal-sm) !default;
+
+$modal-fade-transform: var(--pgn-modal-transform-fade) !default;
+$modal-show-transform: var(--pgn-modal-transform-show) !default;
+$modal-transition: var(--pgn-modal-transform-base) !default;
+$modal-scale-transform: var(--pgn-modal-transform-scale) !default;

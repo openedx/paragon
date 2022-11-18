@@ -1,0 +1,12 @@
+{
+    "close-button": {
+        "font": {
+            "size": { "value": "calc({font.size.base.value} * 1.5)", "themeable": true, "source": "$close-font-size" },
+            "weight": { "value": "{font.weight.bold.value}", "themeable": true, "source": "$close-font-weight" }
+        },
+        "color": { "value": "{color.black.value}", "themeable": true, "source": "$close-color" },
+        "text": {
+            "shadow": { "value": "0 1px 0 {color.white.value}", "themeable": true, "source": "$close-text-shadow" }
+        }
+    }
+}

@@ -1,5 +1,5 @@
 .paragon-fieldset {
-  margin-bottom: $spacer * 1.5;
+  margin-bottom: calc($spacer * 1.5);
 
   .form-control {
     height: auto;

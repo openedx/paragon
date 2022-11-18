@@ -1,0 +1,39 @@
+{
+  "progress-bar": {
+    "height": {
+      "base": { "value": "1rem", "themeable": true, "source": "$progress-height" },
+      "annotated": { "value": ".3125rem", "themeable": true, "source": "$annotated-progress-height" }
+    },
+    "font": {
+      "size": {
+        "value": "calc({font.size.base.value} * .75)", "themeable": true, "source": "$progress-font-size"
+      }
+    },
+    "bg": { "value": "transparent", "themeable": true, "source": "$progress-bg" },
+    "border": {
+      "radius": { "value": "0", "themeable": true, "source": "$progress-border-radius" },
+      "width": { "value": "1px", "themeable": true, "source": "$progress-bar-border-width" },
+      "color": { "value": "{color.gray.500.value}", "themeable": true, "source": "$progress-bar-border-color" }
+    },
+    "box-shadow": { "value": "none", "themeable": true, "source": "$progress-box-shadow" },
+    "bar": {
+      "color": { "value": "{color.white.value}", "themeable": true, "source": "$progress-bar-color" },
+      "bg": {
+        "base": { "value": "{color.accent.a.value}", "themeable": true, "source": "$progress-bar-bg" },
+        "annotated": { "value": "{color.dark.500.value}", "themeable": true, "source": "$annotated-progress-bar-bg" }
+      },
+      "animation": {
+        "timing": { "value": "1s linear infinite", "themeable": true, "source": "$progress-bar-animation-timing" }
+      },
+      "transition": { "value": "width .6s ease", "themeable": true, "source": "$progress-bar-transition" }
+    },
+    "threshold": {
+      "circle": { "value": ".5625rem", "themeable": true, "source": "$progress-threshold-circle" }
+    },
+    "hint": {
+      "annotation": {
+        "gap": { "value": ".5rem", "themeable": true, "source": "$progress-hint-annotation-gap" }
+      }
+    }
+  }
+}
