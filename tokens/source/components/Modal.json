@@ -1,0 +1,92 @@
+{
+  "modal": {
+    "inner": {
+      "padding": {
+        "base": { "value": "1.5rem", "themeable": true, "source": "$modal-inner-padding" },
+        "bottom": { "value": ".7rem", "themeable": true, "source": "$modal-inner-padding-bottom" }
+      }
+    },
+    "footer": {
+      "border": {
+        "color": {
+          "value": "{modal.header.border.color.value}", "themeable": true, "source": "$modal-footer-border-color"
+        },
+        "width": {
+          "value": "{modal.header.border.width.value}", "themeable": true, "source": "$modal-footer-border-width"
+        }
+      },
+      "padding": {
+        "base": {
+          "value": "{modal.footer.padding.x.value} {modal.footer.padding.y.value}",
+          "themeable": true,
+          "source": "$modal-footer-padding"
+        },
+        "x": { "value": "1rem", "themeable": true, "source": "$modal-footer-padding-x" },
+        "y": { "value": "1.5rem", "themeable": true, "source": "$modal-footer-padding-y" }
+      }
+    },
+    "title": {
+      "line": {
+        "height": { "value": "{line-height.base.value}", "themeable": true, "source": "$modal-title-line-height" }
+      }
+    },
+    "content": {
+      "color": { "value": "null", "themeable": true, "source": "$modal-content-color" },
+      "bg": { "value": "{color.background.base.value}", "themeable": true, "source": "$modal-content-bg" },
+      "border": {
+        "color": { 
+          "value": "{color.black.value}", 
+          "themeable": true, 
+          "source": "$modal-content-border-color",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.2
+          }]
+        },
+        "width": { "value": "0rem", "themeable": true, "source": "$modal-content-border-width" },
+        "radius": { "value": "{border.radius.lg.value}", "themeable": true, "source": "$modal-content-border-radius" }
+      },
+      "box-shadow": {
+        "xs": { "value": "0 .25rem .5rem rgba(0, 0, 0, .5)", "themeable": true, "source": "$modal-content-box-shadow-xs" },
+        "sm": {
+          "up": {
+            "value": "0 10px 20px rgba(0, 0, 0, .15), 0 8px 20px rgba(0, 0, 0, .15)",
+            "themeable": true,
+            "source": "$modal-content-box-shadow-sm-up"
+          }
+        }
+      }
+    },
+    "backdrop": {
+      "bg": { "value": "{color.black.value}", "themeable": true, "source": "$modal-backdrop-bg" },
+      "opacity": { "value": ".5", "themeable": true, "source": "$modal-backdrop-opacity" },
+      "zindex": { "value": "1040", "themeable": true, "source": "$zindex-modal-backdrop" }
+    },
+    "header": {
+      "border": {
+        "color": { "value": "{border.color.value}", "themeable": true, "source": "$modal-header-border-color" },
+        "width": { "value": "{modal.content.border.width.value}", "themeable": true, "source": "$modal-header-border-width" }
+      },
+      "padding": {
+        "base": {
+          "value": "{modal.header.padding.y.value} {modal.header.padding.x.value}",
+          "themeable": true,
+          "source": "$modal-header-padding"
+        },
+        "y": { "value": "1rem", "themeable": true, "source": "$modal-header-padding-y" },
+        "x": { "value": "1.5rem", "themeable": true, "source": "$modal-header-padding-x" }
+      }
+    },
+    "xl": { "value": "1140px", "themeable": true, "source": "$modal-xl" },
+    "lg": { "value": "800px", "themeable": true, "source": "$modal-lg" },
+    "md": { "value": "500px", "themeable": true, "source": "$modal-md" },
+    "sm": { "value": "500px", "themeable": true, "source": "$modal-sm" },
+    "transform": {
+      "base": { "value": "transform .3s ease-out", "themeable": true, "source": "$modal-transition" },
+      "fade": { "value": "translate(0, -50px)", "themeable": true, "source": "$modal-fade-transform" },
+      "show": { "value": "none", "themeable": true, "source": "$modal-show-transform" },
+      "scale": { "value": "scale(1.02)", "themeable": true, "source": "$modal-scale-transform" }
+    },
+    "zindex": { "value": "1050", "themeable": true, "source": "$zindex-modal" }
+  }
+}

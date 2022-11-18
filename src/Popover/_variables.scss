@@ -1,36 +1,42 @@
 // Popovers
 
-$popover-font-size:                 $font-size-sm !default;
-$popover-bg:                        $white !default;
-$popover-max-width:                 480px !default;
-$popover-border-width:              $border-width !default;
-$popover-border-color:              rgba($black, .2) !default;
-$popover-border-radius:             $border-radius-sm !default;
-$popover-inner-border-radius:       subtract($popover-border-radius, $popover-border-width) !default;
-$popover-box-shadow:                drop-shadow(0 2px 4px rgba(0, 0, 0, .15))
-  drop-shadow(0 2px 8px rgba(0, 0, 0, .15)) !default;
-$popover-icon-margin-right:         .5rem;
-$popover-icon-height:               1rem;
-$popover-icon-width:                1rem;
+$popover-font-size: var(--pgn-popover-font-size) !default;
+$popover-bg: var(--pgn-popover-bg) !default;
+$popover-max-width: var(--pgn-popover-max-width) !default;
+$popover-border-width: var(--pgn-popover-border-width) !default;
+$popover-border-color: rgba(0, 0, 0, .2) !default;
 
-$popover-header-bg:                 $white !default;
-$popover-header-color:              $headings-color !default;
-$popover-header-padding-y:          .5rem !default;
-$popover-header-padding-x:          1rem !default;
+$popover-border-radius: var(--pgn-popover-border-radius) !default;
+$popover-inner-border-radius: calc(#{var(--pgn-popover-border-radius)} - #{var(--pgn-popover-border-border)}) !default;
+$popover-box-shadow: var(--pgn-popover-box-shadow) !default;
+$popover-icon-margin-right: var(--pgn-popover-icon-margin-right) !default;
+$popover-icon-height: var(--pgn-popover-icon-height) !default;
+$popover-icon-width: var(--pgn-popover-icon-width) !default;
 
-$popover-body-color:                $body-color !default;
-$popover-body-padding-y:            $popover-header-padding-y !default;
-$popover-body-padding-x:            $popover-header-padding-x !default;
+// TODO can't use css variable due to conflict with SCSS functions, should use #FFFFFF instead
+$popover-header-bg: #FFFFFF !default;
+$popover-header-bg-dark: var(--pgn-popover-header-bg-darken) !default;
 
-$popover-arrow-width:               1rem !default;
-$popover-arrow-height:              .5rem !default;
-$popover-arrow-color:               $popover-bg !default;
+$popover-header-color: var(--pgn-popover-header-color) !default;
+$popover-header-padding-y: var(--pgn-popover-header-padding-y) !default;
+$popover-header-padding-x: var(--pgn-popover-header-padding-x) !default;
 
-$popover-arrow-outer-color:         fade-in($popover-border-color, .05) !default;
+$popover-body-color: var(--pgn-popover-body-color) !default;
+$popover-body-padding-y: var(--pgn-popover-body-padding-y) !default;
+$popover-body-padding-x: var(--pgn-popover-body-padding-x) !default;
 
-$popover-success-bg:                $success-100 !default;
-$popover-success-icon-color:        $success-500 !default;
-$popover-warning-bg:                $warning-100 !default;
-$popover-warning-icon-color:        $warning-500 !default;
-$popover-danger-bg:                 $danger-100 !default;
-$popover-danger-icon-color:         $danger-500 !default;
+$popover-arrow-width: var(--pgn-popover-arrow-width) !default;
+$popover-arrow-height: var(--pgn-popover-arrow-height) !default;
+$popover-arrow-color: var(--pgn-popover-arrow-color) !default;
+
+// TODO can't use css variable due to conflict with SCSS functions,
+// should use var(--pgn-popover-border-color) instead of #000000.
+$popover-arrow-outer-color: fade-in($popover-border-color, .05) !default;
+
+$popover-success-bg: var(--pgn-popover-success-bg) !default;
+$popover-success-icon-color: var(--pgn-popover-success-icon-color) !default;
+$popover-warning-bg: var(--pgn-popover-warning-bg) !default;
+$popover-warning-icon-color: var(--pgn-popover-warning-icon-color) !default;
+$popover-danger-bg: var(--pgn-popover-danger-bg) !default;
+$popover-danger-icon-color: var(--pgn-popover-danger-icon-color) !default;
+$popover-header-border-bottom-darken: var(--pgn-popover-header-border-darken) !default;

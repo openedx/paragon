@@ -1,17 +1,17 @@
 // Code
 
-$code-font-size:                    87.5% !default;
-$code-color:                        #E83E8C !default;
+$code-font-size: var(--pgn-code-font-size) !default;
+$code-color: var(--pgn-code-color) !default;
 
-$kbd-box-shadow:              inset 0 -.1rem 0 rgba($black, .25) !default;
-$nested-kbd-font-weight:      $font-weight-bold !default;
+$kbd-box-shadow: var(--pgn-code-kbd-box-shadow) !default;
+$nested-kbd-font-weight: var(--pgn-code-kbd-nested-font-weight) !default;
 
 // HTML Keyboard Input element (<kbd>) styles
-$kbd-padding-y:                     .2rem !default;
-$kbd-padding-x:                     .4rem !default;
-$kbd-font-size:                     $code-font-size !default;
-$kbd-color:                         $white !default;
-$kbd-bg:                            theme-color("gray", "hover") !default;
+$kbd-padding-y: var(--pgn-code-kbd-padding-y) !default;
+$kbd-padding-x: var(--pgn-code-kbd-padding-x) !default;
+$kbd-font-size: var(--pgn-code-kbd-font-size) !default;
+$kbd-color: var(--pgn-code-kbd-color) !default;
+$kbd-bg: var(--pgn-code-kbd-bg) !default;
 
-$pre-color:                         theme-color("gray", "dark-text") !default;
-$pre-scrollable-max-height:         340px !default;
+$pre-color: var(--pgn-code-pre-color) !default;
+$pre-scrollable-max-height: var(--pgn-code-pre-scrollable-max-height) !default;
