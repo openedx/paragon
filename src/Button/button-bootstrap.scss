@@ -1,0 +1,126 @@
+.btn-group,
+.btn-group-vertical {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+
+  > .btn {
+    position: relative;
+    flex: 1 1 auto;
+
+    @include hover() {
+      z-index: 1;
+    }
+
+    &:focus,
+    &:active,
+    &.active {
+      z-index: 1;
+    }
+  }
+}
+
+.btn-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  .input-group {
+    width: auto;
+  }
+}
+
+.btn-group {
+  > .btn:not(:first-child),
+  > .btn-group:not(:first-child) {
+    margin-left: calc($btn-border-width * -1);
+  }
+
+  > .btn:not(:last-child):not(.dropdown-toggle),
+  > .btn-group:not(:last-child) > .btn {
+    @include border-right-radius(0);
+  }
+
+  > .btn:not(:first-child),
+  > .btn-group:not(:first-child) > .btn {
+    @include border-left-radius(0);
+  }
+}
+
+/* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
+.btn-group-sm > .btn { @extend .btn-sm; }
+/* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
+.btn-group-lg > .btn { @extend .btn-lg; }
+
+.dropdown-toggle-split {
+  padding-right: calc($btn-padding-x * .75);
+  padding-left: calc($btn-padding-x * .75);
+
+  &::after,
+  .dropup &::after,
+  .dropright &::after {
+    margin-left: 0;
+  }
+
+  .dropleft &::before {
+    margin-right: 0;
+  }
+}
+
+.btn-sm + .dropdown-toggle-split {
+  padding-right: calc($btn-padding-x-sm * .75);
+  padding-left: calc($btn-padding-x-sm * .75);
+}
+
+.btn-lg + .dropdown-toggle-split {
+  padding-right: calc($btn-padding-x-lg * .75);
+  padding-left: calc($btn-padding-x-lg * .75);
+}
+
+.btn-group.show .dropdown-toggle {
+  @include box-shadow($btn-active-box-shadow);
+
+  &.btn-link {
+    @include box-shadow(none);
+  }
+}
+
+.btn-group-vertical {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  > .btn,
+  > .btn-group {
+    width: 100%;
+  }
+
+  > .btn:not(:first-child),
+  > .btn-group:not(:first-child) {
+    margin-top: calc($btn-border-width * -1);
+  }
+
+  > .btn:not(:last-child):not(.dropdown-toggle),
+  > .btn-group:not(:last-child) > .btn {
+    @include border-bottom-radius(0);
+  }
+
+  > .btn:not(:first-child),
+  > .btn-group:not(:first-child) > .btn {
+    @include border-top-radius(0);
+  }
+}
+
+.btn-group-toggle {
+  > .btn,
+  > .btn-group > .btn {
+    margin-bottom: 0;
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      position: absolute;
+      clip: rect(0, 0, 0, 0);
+      pointer-events: none;
+    }
+  }
+}

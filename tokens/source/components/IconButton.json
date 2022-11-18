@@ -1,0 +1,17 @@
+{
+  "icon-button": {
+    "diameter": {
+      "md": { "value": "2.75rem", "themeable": true, "source": "$btn-icon-diameter-md" },
+      "sm": { "value": "2.25rem", "themeable": true, "source": "$btn-icon-diameter-sm" },
+      "inline": {
+        "value": "calc({line-height.base.value} + .1em)",
+        "themeable": true,
+        "source": "$btn-icon-diameter-inline"
+      }
+    },
+    "bg": { "value": "transparent", "themeable": true, "source": "$btn-icon-bg" },
+    "accent": {
+      "color": { "value": "{color.white.value}", "themeable": true, "source": "$btn-icon-accent-color" }
+    }
+  }
+}
