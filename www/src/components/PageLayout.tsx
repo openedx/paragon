@@ -60,7 +60,7 @@ function Layout({
       />
       <Settings showMinimizedTitle={showMinimizedTitle} />
       {isMdx ? (
-        <Container size={settings.containerWidth} fluid>
+        <Container fluid>
           <Row className="flex-xl-nowrap">
             <Col className="d-none d-xl-block" xl={settings.containerWidth === 'xl' ? 'auto' : 2} />
             <Col

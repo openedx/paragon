@@ -98,7 +98,7 @@ function Settings({ showMinimizedTitle }: ISetting) {
             >
               <option value="xs">xs</option>
               <option value="sm">sm</option>
-              <option value="md">md</option>
+              <option value="md">md (default)</option>
               <option value="lg">lg</option>
               <option value="xl">xl</option>
             </Form.Control>
