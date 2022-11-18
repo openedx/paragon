@@ -1,0 +1,30 @@
+{
+  "annotation": {
+    "padding": { "value": ".5rem", "themeable": true, "source": "$annotation-padding" },
+    "box-shadow": {
+      "value": "drop-shadow(0 2px 4px rgba(0, 0, 0, .15))\n  drop-shadow(0 2px 8px rgba(0, 0, 0, .15))",
+      "themeable": true,
+      "source": "$annotation-box-shadow"
+    },
+    "border": {
+      "radius": { "value": ".25rem", "themeable": true, "source": "$annotation-border-radius" }
+    },
+    "max": {
+      "width": { "value": "18.75rem", "themeable": true, "source": "$annotation-max-width" }
+    },
+    "font": {
+      "size": { "value": "{font.size.sm.value}", "themeable": true, "source": "$annotation-font-size" }
+    },
+    "line": {
+      "height": { "value": "{line-height.sm.value}", "themeable": true, "source": "$annotation-line-height" }
+    },
+    "arrow": {
+      "side": {
+        "margin": { "value": ".25rem", "themeable": true, "source": "$annotation-arrow-side-margin" }
+      },
+      "border": {
+        "width": { "value": ".5rem", "themeable": true, "source": "$annotation-arrow-border-width" }
+      }
+    }
+  }
+}

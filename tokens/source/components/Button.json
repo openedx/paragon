@@ -1,0 +1,91 @@
+{
+  "btn": {
+    "padding": {
+      "y": {
+        "base": { "value": "{input.btn.padding.y.value}", "themeable": true, "source": "$btn-padding-y" },
+        "lg": { "value": "{input.btn.padding.lg.y.value}", "themeable": true, "source": "$btn-padding-y-lg" },
+        "sm": { "value": "{input.btn.padding.sm.y.value}", "themeable": true, "source": "$btn-padding-y-sm" }
+      },
+      "x": {
+        "base": { "value": "{input.btn.padding.x.value}", "themeable": true, "source": "$btn-padding-x" },
+        "lg": { "value": "{input.btn.padding.lg.x.value}", "themeable": true, "source": "$btn-padding-x-lg" },
+        "sm": { "value": "{input.btn.padding.sm.x.value}", "themeable": true, "source": "$btn-padding-x-sm" }
+      }
+    },
+    "font": {
+      "family": { "value": "{input.btn.font.family.value}", "themeable": true, "source": "$btn-font-family" },
+      "size": {
+        "base": { "value": "{input.btn.font.size.base.value}", "themeable": true, "source": "$btn-font-size" },
+        "sm": { "value": "{input.btn.font.size.sm.value}", "themeable": true, "source": "$btn-font-size-sm" },
+        "lg": { "value": "{input.btn.font.size.lg.value}", "themeable": true, "source": "$btn-font-size-lg" }
+      },
+      "weight": { "value": "{font.weight.normal.value}", "themeable": true, "source": "$btn-font-weight" }
+    },
+    "line": {
+      "height": {
+        "base": { "value": "{input.btn.line.height.base.value}", "themeable": true, "source": "$btn-line-height" },
+        "sm": { "value": "{input.btn.line.height.sm.value}", "themeable": true, "source": "$btn-line-height-sm" },
+        "lg": { "value": "{input.btn.line.height.lg.value}", "themeable": true, "source": "$btn-line-height-lg" }
+      }
+    },
+    "border": {
+      "width": { "value": "{input.btn.border.width.value}", "themeable": true, "source": "$btn-border-width" },
+      "radius": {
+        "base": { "value": "{border.radius.base.value}", "themeable": true, "source": "$btn-border-radius" },
+        "lg": { "value": "{border.radius.lg.value}", "themeable": true, "source": "$btn-border-radius-lg" },
+        "sm": { "value": "{border.radius.sm.value}", "themeable": true, "source": "$btn-border-radius-sm" }
+      }
+    },
+    "box-shadow": {
+      "base": {
+        "value": "inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075)",
+        "themeable": true,
+        "source": "$btn-box-shadow"
+      },
+      "active": { "value": "none", "themeable": true, "source": "$btn-active-box-shadow" }
+    },
+    "focus": {
+      "width": { "value": "2px", "themeable": true, "source": "$btn-focus-width" },
+      "gap": { "value": "1px", "themeable": true, "source": "$btn-focus-gap" }
+    },
+    "disabled": {
+      "opacity": { "value": ".65", "themeable": true, "source": "$btn-disabled-opacity" },
+      "link": {
+        "color": { "value": "{color.disabled.value}", "themeable": true, "source": "$btn-link-disabled-color" }
+      }
+    },
+    "tertiary": {
+      "color": { "value": "{color.gray.700.value}", "themeable": true, "source": "$btn-tertiary-color" },
+      "bg": {
+        "hover": { "value": "{color.light.500.value}", "themeable": true, "source": "$btn-tertiary-hover-bg" },
+        "active": { "value": "{color.light.500.value}", "themeable": true, "source": "$btn-tertiary-active-bg" }
+      },
+      "inverse": {
+        "color": { "value": "{color.white.value}", "themeable": true, "source": "$btn-inverse-tertiary-color" },
+        "bg": {
+          "base": { "value": "transparent", "themeable": true, "source": "$btn-inverse-tertiary-bg" },
+          "hover": {
+            "value": "{color.white.value}",
+            "themeable": true,
+            "source": "$btn-inverse-tertiary-hover-bg",
+            "modify": [{
+              "type": "alpha",
+              "amount": 0.1
+            }]
+          },
+          "active": {
+            "value": "{btn.tertiary.inverse.bg.hover.value}",
+            "themeable": true,
+            "source": "$btn-inverse-tertiary-active-bg"
+          }
+        }
+      }
+    },
+    "block": {
+      "spacing": {
+        "y": { "value": ".5rem", "themeable": true, "source": "$btn-block-spacing-y" }
+      }
+    },
+    "transition": { "value": "null", "themeable": true, "source": "$btn-transition" }
+  }
+}

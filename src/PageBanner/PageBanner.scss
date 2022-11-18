@@ -14,30 +14,30 @@
 // stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner__dark {
   background-color: $dark-500;
-  color: white;
+  color: $white;
 }
 
 // stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner__light {
   background-color: $light-400;
-  color: black;
+  color: $black;
 }
 
 // stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner__accentA {
   background-color: $accent-a;
-  color: black;
+  color: $black;
 }
 // stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner__accentB {
   background-color: $accent-b;
-  color: black;
+  color: $black;
 }
 
 // stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner__warning {
   background-color: $warning-100;
-  color: black;
+  color: $black;
 }
 
 // stylelint-disable-next-line selector-class-pattern

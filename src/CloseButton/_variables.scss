@@ -1,6 +1,6 @@
 // Close
 
-$close-font-size:                   $font-size-base * 1.5 !default;
-$close-font-weight:                 $font-weight-bold !default;
-$close-color:                       $black !default;
-$close-text-shadow:                 0 1px 0 $white !default;
+$close-font-size: var(--pgn-close-button-font-size) !default;
+$close-font-weight: var(--pgn-close-button-font-weight) !default;
+$close-color: var(--pgn-close-button-color) !default;
+$close-text-shadow: var(--pgn-close-button-text-shadow) !default;
