@@ -1,0 +1,54 @@
+@import "variables";
+@import "popover-bootstrap";
+
+.popover {
+  filter: $popover-box-shadow;
+
+  .popover-header {
+    display: flex;
+    align-items: center;
+    font-size: $h5-font-size;
+  }
+
+  .pgn__icon {
+    margin-inline-end: $popover-icon-margin-right;
+    height: $popover-icon-height;
+    width: $popover-icon-width;
+  }
+}
+
+.popover-success {
+  background: $popover-success-bg;
+
+  .popover-header {
+    background: $popover-success-bg;
+  }
+
+  .pgn__icon {
+    color: $popover-success-icon-color;
+  }
+}
+
+.popover-warning {
+  background: $popover-warning-bg;
+
+  .popover-header {
+    background: $popover-warning-bg;
+  }
+
+  .pgn__icon {
+    color: $popover-warning-icon-color;
+  }
+}
+
+.popover-danger {
+  background: $popover-danger-bg;
+
+  .popover-header {
+    background: $popover-danger-bg;
+  }
+
+  .pgn__icon {
+    color: $popover-danger-icon-color;
+  }
+}

@@ -22,3 +22,8 @@ $menu-item-border:                               $menu-item-border-width solid $
 $menu-select-btn-link-color:                     $primary-500 !default;
 $menu-select-btn-link-text-decoration-line:      underline !default;
 $menu-select-btn-link-text-decoration-thickness: .125rem !default;
+$background: $btn-tertiary-bg;
+$border: var(--pgn-menu-border-base) !default;
+$active-background: var(--pgn-menu-background-active) !default;
+$active-border: var(--pgn-menu-border-active) !default;
+$hover-border: var(--pgn-menu-border-hover) !default;

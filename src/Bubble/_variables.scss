@@ -1,8 +1,8 @@
 $bubble-variants: (
-  "success":    ( "background-color": $success, "color": $white ),
-  "warning":    ( "background-color": $warning, "color": $white ),
-  "error":      ( "background-color": $danger, "color": $white ),
-  "primary":    ( "background-color": $primary, "color": $white ),
+  "success":    ( "background-color": var(--pgn-color-success-base), "color": var(--pgn-color-white) ),
+  "warning":    ( "background-color": var(--pgn-color-warning-base), "color": var(--pgn-color-white) ),
+  "error":      ( "background-color": var(--pgn-color-danger-base), "color": var(--pgn-color-white) ),
+  "primary":    ( "background-color": var(--pgn-color-primary-base), "color": var(--pgn-color-white) ),
 ) !default;
-$bubble-expandable-padding-x:              .25rem !default;
-$bubble-expandable-padding-y:              0 !default;
+$bubble-expandable-padding-x: var(--pgn-bubble-expandable-padding-x) !default;
+$bubble-expandable-padding-y: var(--pgn-bubble-expandable-padding-y) !default;

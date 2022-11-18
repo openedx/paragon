@@ -1,0 +1,108 @@
+@import "variables";
+
+.pgn__menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-width: 288px;
+  max-width: 450px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: $btn-font-family;
+  font-weight: $btn-font-weight;
+  color: $body-color;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border: $btn-border-width solid transparent;
+  padding: $btn-padding-y $btn-padding-x;
+  font-size: $btn-font-size;
+  height: 48px;
+  border-radius: 0;
+
+  .pgn__menu-item-content-spacer {
+    flex-grow: 1;
+  }
+
+  @include hover {
+    text-decoration: none;
+    color: $btn-tertiary-color;
+    border-color: $hover-border;
+    background: $btn-tertiary-hover-bg;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    opacity: $btn-disabled-opacity;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: $btn-tertiary-color;
+    background-color: $active-background;
+    border-color: $active-border;
+  }
+
+  &.focus,
+  &:focus {
+    font-weight: $font-weight-bolder;
+    color: $btn-tertiary-color;
+    background-color: $active-background;
+    border-color: $active-border;
+  }
+
+  .btn-icon-before {
+    margin-inline-end: .5rem;
+    margin-left: -.25em;
+
+    [dir="rtl"] & {
+      margin-right: -.25em;
+      margin-left: .5rem;
+    }
+  }
+
+  .btn-icon-after {
+    margin-inline-start: .5rem;
+    margin-right: -.25em;
+
+    [dir="rtl"] & {
+      margin-right: .5rem;
+      margin-left: -.25em;
+    }
+  }
+}
+
+.pgn__menu {
+  border-radius: .25em;
+  box-shadow: $box-shadow;
+  background-color: $white;
+  overflow: auto;
+  max-height: 264px;
+}
+
+.pgn__menu-select-popup {
+  color: $btn-tertiary-bg;
+  position: relative;
+}
+
+.pgn__menu-select-trigger-btn {
+  max-width: 450px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: $white;
+  box-sizing: border-box;
+  color: $dark;
+
+  @include hover {
+    color: $white;
+    background: $primary;
+    border: 1px solid $white;
+    box-sizing: border-box;
+  }
+}

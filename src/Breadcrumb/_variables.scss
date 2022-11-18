@@ -1,27 +1,27 @@
 // Breadcrumbs
 
-$breadcrumb-font-size:              null !default;
+$breadcrumb-font-size: var(--pgn-breadcrumb-font-size) !default;
 
-$breadcrumb-padding-y:              .75rem !default;
-$breadcrumb-padding-x:              1rem !default;
-$breadcrumb-item-padding:           .5rem !default;
+$breadcrumb-padding-y: var(--pgn-breadcrumb-padding-y) !default;
+$breadcrumb-padding-x: var(--pgn-breadcrumb-padding-x) !default;
+$breadcrumb-item-padding: var(--pgn-breadcrumb-padding-item) !default;
 
-$breadcrumb-margin-bottom:          1rem !default;
-$breadcrumb-margin-left:           .5rem !default;
+$breadcrumb-margin-bottom: var(--pgn-breadcrumb-margin-bottom) !default;
+$breadcrumb-margin-left: var(--pgn-breadcrumb-margin-left) !default;
 
-$breadcrumb-border-focus-axis-x:    .25rem !default;
-$breadcrumb-border-focus-axis-y:    .5rem !default;
+$breadcrumb-border-focus-axis-x: var(--pgn-breadcrumb-border-focus-axis-x) !default;
+$breadcrumb-border-focus-axis-y: var(--pgn-breadcrumb-border-focus-axis-y) !default;
 
-$breadcrumb-border-focus-width:     .0625rem !default;
+$breadcrumb-border-focus-width: var(--pgn-breadcrumb-border-focus-width) !default;
 
-$breadcrumb-bg:                     $gray-200 !default;
-$breadcrumb-divider-color:          $gray-600 !default;
-$breadcrumb-active-color:           $gray-500 !default;
-$breadcrumb-inverse-active:         $light-500 !default;
-$breadcrumb-inverse-spacer:         $light-700 !default;
-$breadcrumb-color:                  $primary-500 !default;
-$breadcrumb-inverse-color:          $white !default;
-$breadcrumb-divider:                "/" !default;
+$breadcrumb-bg: var(--pgn-breadcrumb-bg) !default;
+$breadcrumb-divider-color: var(--pgn-breadcrumb-color-divider) !default;
+$breadcrumb-active-color: var(--pgn-breadcrumb-color-active) !default;
+$breadcrumb-inverse-active: var(--pgn-breadcrumb-inverse-active) !default;
+$breadcrumb-inverse-spacer: var(--pgn-breadcrumb-inverse-spacer) !default;
+$breadcrumb-color: var(--pgn-breadcrumb-color-base) !default;
+$breadcrumb-inverse-color: var(--pgn-breadcrumb-inverse-color) !default;
+$breadcrumb-divider: "/" !default;
 
-$breadcrumb-border-radius:          $border-radius !default;
-$breadcrumb-focus-border-radius:          .125rem !default;
+$breadcrumb-border-radius: var(--pgn-breadcrumb-border-radius-base) !default;
+$breadcrumb-focus-border-radius: var(--pgn-breadcrumb-border-radius-focus) !default;

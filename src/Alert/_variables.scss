@@ -2,23 +2,23 @@
 //
 // Define alert colors, border radius, and padding.
 
-$alert-padding-y:                   1.5rem !default;
-$alert-padding-x:                   1.5rem !default;
-$alert-margin-bottom:               1rem !default;
-$alert-border-radius:               $border-radius !default;
-$alert-link-font-weight:            $font-weight-normal !default;
-$alert-border-width:                0 !default;
-$alert-title-color:                 #000000 !default;
-$alert-box-shadow:                  0 1px 2px rgba(0, 0, 0, .15), 0 1px 4px rgba(0, 0, 0, .15) !default;
+$alert-padding-y: var(--pgn-alert-padding-y) !default;
+$alert-padding-x: var(--pgn-alert-padding-x) !default;
+$alert-margin-bottom: var(--pgn-alert-margin-bottom) !default;
+$alert-border-radius: var(--pgn-alert-border-radius) !default;
+$alert-link-font-weight: var(--pgn-alert-font-weight-link) !default;
+$alert-border-width: var(--pgn-alert-border-width) !default;
+$alert-title-color: var(--pgn-alert-color-title) !default;
+$alert-box-shadow: var(--pgn-alert-box-shadow) !default;
 
-$alert-bg-level:                    -10 !default;
-$alert-border-level:                -9 !default;
-$alert-color-level:                 6 !default;
+$alert-bg-level: var(--pgn-alert-level-bg) !default;
+$alert-border-level: var(--pgn-alert-level-border) !default;
+$alert-color-level: var(--pgn-alert-level-color) !default;
 
-$alert-icon-space:                  .8rem !default;
+$alert-icon-space: var(--pgn-alert-icon-space) !default;
 
-$alert-font-size:                   .875rem !default;
-$alert-line-height:                 1.5rem !default;
-$alert-content-color:               $gray-700 !default;
+$alert-font-size: var(--pgn-alert-font-size) !default;
+$alert-line-height: var(--pgn-alert-line-height) !default;
+$alert-content-color: var(--pgn-alert-color-content) !default;
 
-$alert-actions-gap:                 map-get($spacers, 3);
+$alert-actions-gap: var(--pgn-alert-actions-gap) !default;

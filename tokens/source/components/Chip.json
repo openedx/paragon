@@ -1,0 +1,43 @@
+{
+  "chip": {
+    "padding": {
+      "y": { "value": ".125rem", "themeable": true, "source": "$chip-padding-y" },
+      "x": { "value": ".5rem", "themeable": true, "source": "$chip-padding-x" },
+      "icon": { 
+        "base": {
+          "value": ".25rem", "themeable": true, "source": "$chip-icon-padding" 
+        },
+        "to": {
+          "value": "3px", "themeable": true, "source": "$chip-padding-to-icon"
+        }
+      }
+    },
+    "margin": {
+      "base": { "value": ".125rem", "themeable": true, "source": "$chip-margin" },
+      "inline": { "value": ".5rem", "themeable": true, "source": "$chip-margin-inline" }
+    },
+    "border": {
+      "radius": {
+        "base": { "value": ".4375rem", "themeable": true, "source": "$chip-border-radius" },
+        "focus": { "value": ".5rem", "themeable": true, "source": "$chip-focus-border-radius" }
+      },
+      "width": { "value": ".0625rem", "themeable": true, "source": "$chip-border-width" }
+    },
+    "position": {
+      "axis": { "value": ".125rem", "themeable": true, "source": "$chip-position-axis" }
+    },
+    "font": {
+      "size": { "value": ".75rem", "themeable": true, "source": "$chip-font-size" },
+      "weight": { "value": "400", "themeable": true, "source": "$chip-font-weight" }
+    },
+    "line": {
+      "height": { "value": "1.5rem", "themeable": true, "source": "$chip-line-height" }
+    },
+    "disabled": {
+      "opacity": { "value": ".3", "themeable": true, "source": "$chip-disable-opacity" }
+    },
+    "icon": {
+      "size": { "value": "1.25rem", "themeable": true, "source": "$chip-icon-size" }
+    }
+  }
+}

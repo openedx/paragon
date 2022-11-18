@@ -1,19 +1,19 @@
 // Toasts
 
-$toast-max-width:                   400px !default;
-$toast-padding-x:                   .75rem !default;
-$toast-padding-y:                   .25rem !default;
-$toast-font-size:                   .875rem !default;
-$toast-color:                       null !default;
-$toast-background-color:            $gray-700 !default;
-$toast-border-width:                1px !default;
-$toast-border-color:                rgba(0, 0, 0, .1) !default;
-$toast-border-radius:               .25rem !default;
-$toast-box-shadow:                  0 1.25rem 2.5rem rgba($black, .15), 0 .5rem 3rem rgba($black, .15) !default;
+$toast-max-width: var(--pgn-toast-max-width) !default;
+$toast-padding-x: var(--pgn-toast-padding-x) !default;
+$toast-padding-y: var(--pgn-toast-padding-y) !default;
+$toast-font-size: var(--pgn-toast-font-size) !default;
+$toast-color: var(--pgn-toast-color-base) !default;
+$toast-background-color: var(--pgn-toast-color-background) !default;
+$toast-border-width: var(--pgn-toast-border-width) !default;
+$toast-border-color: var(--pgn-toast-border-color) !default;
+$toast-border-radius: var(--pgn-toast-border-radius) !default;
+$toast-box-shadow: var(--pgn-toast-box-shadow) !default;
 
-$toast-header-color:                $white !default;
-$toast-header-background-color:     $gray-700 !default;
-$toast-header-border-color:         rgba(0, 0, 0, .5) !default;
+$toast-header-color: var(--pgn-toast-header-color-base) !default;
+$toast-header-background-color: var(--pgn-toast-header-color-background) !default;
+$toast-header-border-color: var(--pgn-toast-header-color-border) !default;
 
-$toast-container-gutter-lg:         1.25rem !default;
-$toast-container-gutter-sm:         .625rem !default;
+$toast-container-gutter-lg: var(--pgn-toast-container-gutter-lg) !default;
+$toast-container-gutter-sm: var(--pgn-toast-container-gutter-sm) !default;

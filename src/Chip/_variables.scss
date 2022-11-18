@@ -1,19 +1,19 @@
-$chip-padding-x:                    .5rem !default;
-$chip-padding-y:                    .125rem !default;
-$chip-padding-to-icon:              3px !default;
-$chip-icon-padding:                 .25rem !default;
-$chip-margin:                       .125rem !default;
-$chip-border-radius:                .25rem !default;
-$chip-disable-opacity:              .3 !default;
-$chip-icon-size:                    1.25rem !default;
+$chip-padding-x: var(--pgn-chip-padding-x) !default;
+$chip-padding-y: var(--pgn-chip-padding-y) !default;
+$chip-padding-to-icon: var(--pgn-chip-padding-icon-to) !default;
+$chip-icon-padding: var(--pgn-chip-padding-icon-base) !default;
+$chip-margin: var(--pgn-chip-margin-base) !default;
+$chip-border-radius: var(--pgn-chip-border-radius-base) !default;
+$chip-disable-opacity: var(--pgn-chip-disabled-opacity) !default;
+$chip-icon-size: var(--pgn-chip-icon-size) !default;
 
 $chip-theme-variants: (
   "light": (
-    "background": $light-500,
-    "color": $black,
+    "background": var(--pgn-color-light-500),
+    "color": var(--pgn-color-black),
   ),
   "dark": (
-    "background": $dark-200,
-    "color": $white,
+    "background": var(--pgn-color-dark-200),
+    "color": var(--pgn-color-white),
   )
 ) !default;

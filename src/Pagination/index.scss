@@ -70,7 +70,12 @@
   &.btn-primary:focus::before {
     border: $pagination-focus-border-width solid $pagination-focus-color;
 
-    @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+    @include button-size(
+      $btn-padding-y,
+      $btn-padding-x,
+      $btn-font-size,
+      $btn-line-height,
+      $btn-border-radius);
   }
 
   div {

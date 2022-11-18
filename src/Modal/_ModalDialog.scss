@@ -129,21 +129,24 @@
 
 .pgn__modal-body {
   flex-grow: 1;
-  padding: $modal-inner-padding $modal-inner-padding calc(#{$modal-inner-padding} / 2);
+  padding:
+    $modal-inner-padding
+    $modal-inner-padding calc(#{$modal-inner-padding} / 2);
   overflow: auto;
   position: relative;
 
   &::before {
     content: "";
     background-color: transparent;
+    // TODO needs a decision
     background-image: linear-gradient(#605C5C, #B8BEBE, transparent 50%);
     display: block;
     height: 20px;
     position: sticky;
-    top: -$modal-inner-padding;
-    margin-top: -$modal-inner-padding;
-    margin-left: -$modal-inner-padding;
-    margin-right: -$modal-inner-padding;
+    top: calc($modal-inner-padding * -1);
+    margin-top: calc($modal-inner-padding * -1);
+    margin-left: calc($modal-inner-padding * -1);
+    margin-right: calc($modal-inner-padding * -1);
     opacity: .5;
     z-index: 2;
   }
@@ -151,6 +154,7 @@
   &::after {
     content: "";
     background-color: transparent;
+    // TODO needs a decision
     background-image:
       linear-gradient(
         360deg,
@@ -162,9 +166,9 @@
     height: 20px;
     position: sticky;
     bottom: calc(#{$modal-inner-padding} / 2 * -1);
-    margin-bottom: -$modal-inner-padding-bottom;
-    margin-left: -$modal-inner-padding;
-    margin-right: -$modal-inner-padding;
+    margin-bottom: calc($modal-inner-padding-bottom * -1);
+    margin-left: calc($modal-inner-padding * -1);
+    margin-right: calc($modal-inner-padding * -1);
     opacity: .5;
   }
 

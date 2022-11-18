@@ -1,0 +1,25 @@
+{
+  "badge": {
+    "font": {
+      "size": { "value": "75%", "themeable": true, "source": "$badge-font-size" },
+      "weight": { "value": "{font.weight.bold.value}", "themeable": true, "source": "$badge-font-weight" }
+    },
+    "padding": {
+      "x": {
+        "base": { "value": ".5rem", "themeable": true, "source": "$badge-padding-x" },
+        "pill": { "value": ".6em", "themeable": true, "source": "$badge-pill-padding-x" }
+      },
+      "y": { "value": ".125rem", "themeable": true, "source": "$badge-padding-y" }
+    },
+    "border": {
+      "radius": {
+        "base": { "value": ".25rem", "themeable": true, "source": "$badge-border-radius" },
+        "pill": { "value": "10rem", "themeable": true, "source": "$badge-pill-border-radius" }
+      }
+    },
+    "transition": { "value": "none", "themeable": true, "source": "$badge-transition" },
+    "focus": {
+      "width": { "value": "{input.btn.focus.width.value}", "themeable": true, "source": "$badge-focus-width" }
+    }
+  }
+}
