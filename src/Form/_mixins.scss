@@ -3,7 +3,7 @@
   $padding-y,
   $line-height,
   $font-size,
-  $border-width
+  $label-initial-border-width
 ) {
   padding: 0 $padding-x;
 
@@ -19,12 +19,14 @@
   $padding-y,
   $line-height,
   $font-size,
-  $border-width
+  $label-float-border-width
 ) {
   .pgn__form-control-floating-label-text {
     $half-leading: calc(($line-height - .8) / 2);
     $percent-height-minus-no-bottom-leading: calc((($line-height - $half-leading) / $line-height) * 100%);
 
-    transform: translateY(-$padding-y) scale(.75)  translateY(-$percent-height-minus-no-bottom-leading);
+    transform:
+      translateY(calc($padding-y * -1)) scale(.75)
+      translateY(calc($percent-height-minus-no-bottom-leading * -1));
   }
 }

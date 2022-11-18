@@ -688,7 +688,6 @@ $embed-responsive-aspect-ratios: join(
 //
 // Font, line-height, and color for body text, headings, and more.
 
-// stylelint-disable value-keyword-case
 $font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI",
   Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
   "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
@@ -696,7 +695,6 @@ $font-family-serif:           serif !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
   "Courier New", monospace !default;
 $font-family-base:            $font-family-sans-serif !default;
-// stylelint-enable value-keyword-case
 
 $font-size-base:              1.125rem !default; // Assumes the browser default, typically `16px`
 $font-size-lg:                $font-size-base * 1.25 !default;
@@ -789,15 +787,15 @@ $table-th-font-weight:        null !default;
 // Warning: Avoid customizing these values. They're used for a bird's eye view
 // of components dependent on the z-axis and are designed to all work together.
 
-$zindex-dropdown:                   1000 !default;
-$zindex-sticky:                     1020 !default;
-$zindex-fixed:                      1030 !default;
-$zindex-sheet-backdrop:             1031 !default;
-$zindex-sheet:                      1032 !default;
-$zindex-modal-backdrop:             1040 !default;
-$zindex-modal:                      1050 !default;
-$zindex-popover:                    1060 !default;
-$zindex-tooltip:                    1070 !default;
+$zindex-dropdown:                   var(--pgn-dropdown-zindex) !default;
+$zindex-sticky:                     var(--pgn-zindex-sticky) !default;
+$zindex-fixed:                      var(--pgn-zindex-fixed) !default;
+$zindex-sheet-backdrop:             var(--pgn-sheet-zindex-backdrop) !default;
+$zindex-sheet:                      var(--pgn-sheet-zindex-main) !default;
+$zindex-modal-backdrop:             var(--pgn-modal-backdrop-zindex) !default;
+$zindex-modal:                      var(--pgn-modal-zindex) !default;
+$zindex-popover:                    var(--pgn-popover-zindex) !default;
+$zindex-tooltip:                    var(--pgn-tooltip-zindex) !default;
 
 // Buttons + Forms
 //

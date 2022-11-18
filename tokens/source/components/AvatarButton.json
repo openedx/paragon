@@ -1,0 +1,11 @@
+{
+  "avatar-button": {
+    "padding": {
+      "left": {
+        "base": { "value": ".25em", "themeable": true, "source": "$avatar-button-padding-left" },
+        "sm": { "value": ".25em", "themeable": true, "source": "$avatar-button-padding-left-sm" },
+        "lg": { "value": ".25em", "themeable": true, "source": "$avatar-button-padding-left-lg" }
+      }
+    }
+  }
+}

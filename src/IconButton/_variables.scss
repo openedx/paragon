@@ -1,0 +1,17 @@
+$icon-button-colors: (
+  "primary": var(--pgn-color-primary-base),
+  "secondary": var(--pgn-color-secondary-base),
+  "brand": var(--pgn-color-brand-base),
+  "success": var(--pgn-color-success-base),
+  "warning": var(--pgn-color-warning-base),
+  "danger": var(--pgn-color-danger-base),
+  "light": var(--pgn-color-light-base),
+  "dark": var(--pgn-color-dark-base),
+  "black": var(--pgn-color-black),
+) !default;
+$btn-icon-diameter-md: var(--pgn-icon-button-diameter-md) !default;
+$btn-icon-diameter-sm: var(--pgn-icon-button-diameter-sm) !default;
+$btn-icon-diameter-inline: var(--pgn-icon-button-diameter-inline) !default;
+
+$btn-icon-bg: var(--pgn-icon-button-bg) !default;
+$btn-icon-accent-color: var(--pgn-icon-button-accent-color) !default;

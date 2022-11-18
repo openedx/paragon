@@ -256,6 +256,9 @@ function Menu() {
                 Usage Insights
               </Link>
             </li>
+            <li className="mr-3">
+              <Link to="/foundations/design-tokens">Design Tokens</Link>
+            </li>
             <li>
               <Link to="/playground" onClick={handlePlaygroundClick}>
                 Playground

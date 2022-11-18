@@ -1,0 +1,162 @@
+{
+  "navbar": {
+    "padding": {
+      "y": { "value": "calc({spacer.base.value} / 2)", "themeable": true, "source": "$navbar-padding-y" },
+      "x": {
+        "base": { "value": "{spacer.base.value}", "themeable": true, "source": "$navbar-padding-x" },
+        "nav": {
+          "link": { "value": ".5rem", "themeable": true, "source": "$navbar-nav-link-padding-x" }
+        }
+      }
+    },
+    "nav": {
+      "link": {
+        "height": {
+          "value": "calc({font.size.base.value} * {line-height.base.value} + .5rem * 2)",
+          "themeable": true,
+          "source": "$nav-link-height"
+        }
+      },
+      "scroll": {
+        "max": {
+          "height": { "value": "75vh", "themeable": true, "source": "$navbar-nav-scroll-max-height" }
+        }
+      }
+    },
+    "brand": {
+      "font": {
+        "size": {
+          "value": "{font.size.lg.value}", "themeable": true, "source": "$navbar-brand-font-size"
+        }
+      },
+      "height": {
+        "value": "calc({navbar.brand.font.size.value} * {line-height.base.value})",
+        "themeable": true,
+        "source": "$navbar-brand-height"
+      },
+      "padding": {
+        "y": {
+          "value": "calc(({navbar.nav.link.height.value} - {navbar.brand.height.value}) / 2)",
+          "themeable": true,
+          "source": "$navbar-brand-padding-y"
+        }
+      }
+    },
+    "toggler": {
+      "padding": {
+        "y": { "value": ".25rem", "themeable": true, "source": "$navbar-toggler-padding-y" },
+        "x": { "value": ".75rem", "themeable": true, "source": "$navbar-toggler-padding-x" }
+      },
+      "font": {
+        "size": { "value": "{font.size.lg.value}", "themeable": true, "source": "$navbar-toggler-font-size" }
+      },
+      "border": {
+        "radius": {
+          "value": "{btn.border.radius.base.value}", "themeable": true, "source": "$navbar-toggler-border-radius"
+        }
+      }
+    },
+    "dark": {
+      "color": {
+        "hover": {
+          "value": "{color.white.value}", 
+          "themeable": true, 
+          "source": "$navbar-dark-hover-color",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.75
+          }]
+        },
+        "active": {
+          "value": "{color.active.value}", "themeable": true, "source": "$navbar-dark-active-color"
+        },
+        "disabled": {
+          "value": "{color.white.value}", 
+          "themeable": true, 
+          "source": "$navbar-dark-disabled-color",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.25
+          }]
+        }
+      },
+      "toggler": {
+        "border": {
+          "color": {
+            "value": "{color.white.value}", 
+            "themeable": true, 
+            "source": "$navbar-dark-toggler-border-color",
+            "modify": [{
+              "type": "alpha",
+              "amount": 0.1
+            }]
+          }
+        }
+      },
+      "brand": {
+        "color": {
+          "base": {
+            "value": "{navbar.dark.color.active.value}", "themeable": true, "source": "$navbar-dark-brand-color"
+          },
+          "hover": {
+            "value": "{navbar.dark.color.active.value}", "themeable": true, "source": "$navbar-dark-brand-hover-color"
+          }
+        }
+      }
+    },
+    "light": {
+      "color": {
+        "hover": { 
+          "value": "{color.black.value}", 
+          "themeable": true, 
+          "source": "$navbar-light-hover-color",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.7
+          }]
+        },
+        "active": { 
+          "value": "{color.black.value}", 
+          "themeable": true, 
+          "source": "$navbar-light-active-color",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.9
+          }]
+        },
+        "disabled": { 
+          "value": "{color.black.value}", 
+          "themeable": true, 
+          "source": "$navbar-light-disabled-color",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.3
+          }]
+        }
+      },
+      "toggler": {
+        "border": {
+          "color": { 
+            "value": "{color.black.value}", 
+            "themeable": true, 
+            "source": "$navbar-light-toggler-border-color",
+            "modify": [{
+              "type": "alpha",
+              "amount": 0.1
+            }]
+          }
+        }
+      },
+      "brand": {
+        "color": {
+          "base": { "value": "{navbar.light.color.active.value}", "themeable": true, "source": "$navbar-light-brand-color" },
+          "hover": {
+            "value": "{navbar.light.color.active.value}",
+            "themeable": true,
+            "source": "$navbar-light-brand-hover-color"
+          }
+        }
+      }
+    }
+  }
+}

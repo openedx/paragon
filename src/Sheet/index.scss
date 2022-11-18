@@ -1,7 +1,9 @@
+@import "variables";
+
 .pgn__sheet-skrim {
   width: 100%;
   height: 100%;
-  background-color: rgba(196, 196, 196, .5);
+  background-color: $sheet-skrim-bg;
   position: fixed;
   top: 0;
   left: 0;
@@ -15,12 +17,12 @@
 
 %component-left {
   left: 0;
-  box-shadow: 8px 0 16px 0 rgba(0, 0, 0, .15);
+  box-shadow: 8px 0 16px 0 $sheet-skrim-component-box-shadow;
 }
 
 %component-right {
   right: 0;
-  box-shadow: -8px 0 16px 0 rgba(0, 0, 0, .15);
+  box-shadow: -8px 0 16px 0 $sheet-skrim-component-box-shadow;
 }
 
 .pgn__sheet-component-left {
@@ -34,7 +36,7 @@
 .pgn__sheet-component {
   position: fixed;
   padding: 1.25rem;
-  background-color: white;
+  background-color: $white;
   z-index: $zindex-sheet;
 
   &.pgn__sheet__dark {
@@ -44,12 +46,12 @@
 
   &.bottom {
     bottom: 0;
-    box-shadow: 0 -8px 16px 0 rgba(0, 0, 0, .15);
+    box-shadow: 0 -8px 16px 0 $sheet-skrim-component-box-shadow;
   }
 
   &.top {
     top: 0;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .15);
+    box-shadow: 0 8px 16px 0 $sheet-skrim-component-box-shadow;
   }
 
   &.left {

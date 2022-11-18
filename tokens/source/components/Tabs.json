@@ -1,0 +1,13 @@
+{
+  "tabs": {
+    "notification": {
+      "height": { "value": "1rem", "themeable": true, "source": "$tab-notification-height" },
+      "width": { "value": "1rem", "themeable": true, "source": "$tab-notification-width" },
+      "font": {
+        "size": {
+          "value": "{font.size.xs.value}", "themeable": true, "source": "$tab-notification-font-size"
+        }
+      }
+    }
+  }
+}

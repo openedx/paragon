@@ -1,7 +1,6 @@
 // Icons sizes
 
-$icon-inline: .8em !default;
-$icon-xs: 1rem !default;
-$icon-sm: 1.25rem !default;
-$icon-md: 1.5rem !default;
-$icon-lg: 1.75rem !default;
+$icon-inline: var(--pgn-icon-inline) !default;
+$icon-sm: var(--pgn-icon-sm) !default;
+$icon-md: var(--pgn-icon-md) !default;
+$icon-lg: var(--pgn-icon-lg) !default;

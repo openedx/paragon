@@ -1,0 +1,69 @@
+{
+  "dt": {
+    "font": {
+      "weight": { "value": "{font.weight.bold.value}", "themeable": true, "source": "$dt-font-weight" }
+    }
+  },
+  "list": {
+    "inline": {
+      "padding": { "value": ".5rem", "themeable": true, "source": "$list-inline-padding" }
+    }
+  },
+  "list-group": {
+    "color": { "value": "null", "themeable": true, "source": "$list-group-color" },
+    "bg": {
+      "base": { "value": "{color.background.base.value}", "themeable": true, "source": "$list-group-bg" },
+      "hover": { "value": "{color.gray.100.value}", "themeable": true, "source": "$list-group-hover-bg" }
+    },
+    "border": {
+      "color": { 
+        "value": "{color.black.value}", 
+        "themeable": true, 
+        "source": "$list-group-border-color",
+        "modify": [{
+          "type": "alpha",
+          "amount": 0.125
+        }]
+      },
+      "width": { "value": "{border.width.value}", "themeable": true, "source": "$list-group-border-width" },
+      "radius": { "value": "{border.radius.base.value}", "themeable": true, "source": "$list-group-border-radius" }
+    },
+    "item": {
+      "padding": {
+        "y": { "value": ".75rem", "themeable": true, "source": "$list-group-item-padding-y" },
+        "x": { "value": "1.25rem", "themeable": true, "source": "$list-group-item-padding-x" }
+      }
+    },
+    "active": {
+      "color": {
+        "base": {
+          "value": "{color.active.value}", "themeable": true, "source": "$list-group-active-color"
+        },
+        "border": {
+          "value": "{list-group.active.bg.value}",
+          "themeable": true,
+          "source": "$list-group-active-border-color"
+        }
+      },
+      "bg": { "value": "{color.background.active.value}", "themeable": true, "source": "$list-group-active-bg" }
+    },
+    "disabled": {
+      "color": { "value": "{color.gray.600.value}", "themeable": true, "source": "$list-group-disabled-color" },
+      "bg": { "value": "{list-group.bg.base.value}", "themeable": true, "source": "$list-group-disabled-bg" }
+    },
+    "action": {
+      "color": {
+        "base": { "value": "{color.gray.700.value}", "themeable": true, "source": "$list-group-action-color" },
+        "hover": {
+          "value": "{list-group.action.color.base.value}",
+          "themeable": true,
+          "source": "$list-group-action-hover-color"
+        }
+      },
+      "active": {
+        "color": { "value": "{body.color.value}", "themeable": true, "source": "$list-group-action-active-color" },
+        "bg": { "value": "{color.gray.200.value}", "themeable": true, "source": "$list-group-action-active-bg" }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "breadcrumb": {
+    "font": {
+      "size": { "value": "null", "themeable": true, "source": "$breadcrumb-font-size" }
+    },
+    "padding": {
+      "y": { "value": ".75rem", "themeable": true, "source": "$breadcrumb-padding-y" },
+      "x": { "value": "1rem", "themeable": true, "source": "$breadcrumb-padding-x" },
+      "item": { "value": ".5rem", "themeable": true, "source": "$breadcrumb-item-padding" }
+    },
+    "margin": {
+      "bottom": { "value": "1rem", "themeable": true, "source": "$breadcrumb-margin-bottom" },
+      "left": { "value": ".5rem", "themeable": true, "source": "$breadcrumb-margin-left" }
+    },
+    "border": {
+      "focus": {
+        "axis": {
+          "y": { "value": ".5rem", "themeable": true, "source": "$breadcrumb-border-focus-axis-y" },
+          "x": { "value": ".25rem", "themeable": true, "source": "$breadcrumb-border-focus-axis-x" }
+        },
+        "width": { "value": ".0625rem", "themeable": true, "source": "$breadcrumb-border-focus-width" }
+      },
+      "radius": {
+        "base": { "value": "{border.radius.base.value}", "themeable": true, "source": "$breadcrumb-border-radius" },
+        "focus": { "value": ".125rem", "themeable": true, "source": "$breadcrumb-focus-border-radius" }
+      }
+    },
+    "bg": { "value": "{color.gray.200.value}", "themeable": true, "source": "$breadcrumb-bg" },
+    "color": {
+      "base": { "value": "{color.primary.500.value}", "themeable": true, "source": "$breadcrumb-color" },
+      "divider": { "value": "{color.gray.600.value}", "themeable": true, "source": "$breadcrumb-divider-color" },
+      "active": { "value": "{color.gray.500.value}", "themeable": true, "source": "$breadcrumb-active-color" }
+    },
+    "inverse": {
+      "active": { "value": "{color.light.500.value}", "themeable": true, "source": "$breadcrumb-inverse-active" },
+      "spacer": { "value": "{color.light.700.value}", "themeable": true, "source": "$breadcrumb-inverse-spacer" },
+      "color": { "value": "{color.white.value}", "themeable": true, "source": "$breadcrumb-inverse-color" }
+    }
+  }
+}
