@@ -1,5 +1,5 @@
 @import "variables";
-@import "~bootstrap/scss/card";
+@import "card-bootstrap";
 
 .pgn__card,
 .pgn__card-body {
@@ -261,7 +261,7 @@ a .pgn__card {
 
   &.horizontal-stacked {
     flex-direction: column-reverse;
-    padding-top: $card-spacer-x - $card-footer-actions-gap;
+    padding-top: calc(#{$card-spacer-x} - #{$card-footer-actions-gap});
 
     & > * {
       margin-top: $card-footer-actions-gap;
@@ -327,9 +327,9 @@ a .pgn__card {
 
   .pgn__card-image-cap-loader {
     .react-loading-skeleton {
-      margin-bottom: -$loading-skeleton-spacer;
+      margin-bottom: calc(#{$loading-skeleton-spacer} * -1);
       position: relative;
-      top: -$loading-skeleton-spacer;
+      top: calc(#{$loading-skeleton-spacer} * -1);
       height: 100%;
     }
   }
@@ -346,7 +346,7 @@ a .pgn__card {
 .pgn__card-logo-cap {
   position: absolute;
   inset-inline-start: $card-logo-left-offset;
-  bottom: #{-$card-logo-bottom-offset};
+  bottom: #{calc(#{$card-logo-bottom-offset} * -1)};
   width: $card-logo-width;
   height: $card-logo-height;
   border-radius: $card-logo-border-radius;

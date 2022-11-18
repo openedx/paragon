@@ -1,16 +1,16 @@
 // Badges
 
-$badge-font-size:                   75% !default;
-$badge-font-weight:                 $font-weight-bold !default;
-$badge-padding-y:                   .125rem !default;
-$badge-padding-x:                   .5rem !default;
-$badge-border-radius:               .25rem !default;
+$badge-font-size: var(--pgn-badge-font-size) !default;
+$badge-font-weight: var(--pgn-badge-font-weight) !default;
+$badge-padding-y: var(--pgn-badge-padding-y) !default;
+$badge-padding-x: var(--pgn-badge-padding-x-base) !default;
+$badge-border-radius: var(--pgn-badge-border-radius-base) !default;
 
-$badge-transition:                  none !default;
-$badge-focus-width:                 $input-btn-focus-width !default;
+$badge-transition: var(--pgn-badge-transition) !default;
+$badge-focus-width: var(--pgn-badge-focus-width) !default;
 
-$badge-pill-padding-x:              .6em !default;
+$badge-pill-padding-x: var(--pgn-badge-padding-x-pill) !default;
 
 // Use a higher than normal value to ensure completely rounded edges when
 // customizing padding or font-size on labels.
-$badge-pill-border-radius:          10rem !default;
+$badge-pill-border-radius: var(--pgn-badge-border-radius-pill) !default;
