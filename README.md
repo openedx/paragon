@@ -433,3 +433,21 @@ BREAKING CHANGE: The graphiteWidth option has been removed. The default graphite
 Paragon is distributed on npm as ES6 modules.  This means that webpack can use treeshaking on any Paragon components that a consuming app is not using, resulting in greatly reduced bundle sizes.
 
 To get treeshaking to work, your app may require some updates - most notably, Babel 7.  See this PR for an example of the changes necessary to update an app to take advantage of treeshaking with Paragon: https://github.com/openedx/frontend-app-payment/pull/48
+
+## Design Tokens
+
+Design tokens are all the values needed to build and maintain a design system — spacing, color, typography, object styles, etc. They can represent anything defined by the design: color as an RGB value, opacity as a number, spacing as a REM value. They are used instead of hard-coded values to provide flexibility and uniformity across the application.
+
+### Design Tokens in Paragon
+
+Folder `tokens` in the project root contains split by categories `json` files. They consist of `JSON` objects that store information about the variable name and its value. Scripts that also reside in the `tokens` folder provide following facilities: build tokens into `css`, `scss` variables, map `scss` to `css` variables and replace old `scss` to new `css` variables.
+
+### Usage
+
+```
+cd tokens
+npm install
+npm run build-tokens # creates "build" folder with scss and css variables based on json tokens
+npm run build-scss-to-css-map # creats scss-to-css-core.json and scss-to-css-components.json 
+npm run replace-variables -- --path ../src # this will replace all scss variables in the project with the new css variables based on the "scss-to-css-core.json" and "scss-to-css-components.json" files
+```
