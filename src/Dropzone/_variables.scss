@@ -1,9 +1,9 @@
-$dropzone-padding:                          1.5rem !default;
-$dropzone-border-default:                   1px dashed $gray-500 !default;
-$dropzone-border-hover:                     2px solid $info-300 !default;
-$dropzone-border-focus:                     2px solid $info-300 !default;
-$dropzone-border-active:                    2px solid $primary-500 !default;
-$dropzone-border-error:                     2px solid $danger-300 !default;
-$dropzone-error-wrapper-color:              $danger-500 !default;
-$dropzone-restriction-msg-font-size:        $x-small-font-size !default;
-$dropzone-restriction-msg-color:            $gray-500 !default;
+$dropzone-padding: var(--pgn-dropzone-padding) !default;
+$dropzone-border-default: var(--pgn-dropzone-border-default) !default;
+$dropzone-border-hover: var(--pgn-dropzone-border-hover) !default;
+$dropzone-border-focus: var(--pgn-dropzone-border-focus) !default;
+$dropzone-border-active: var(--pgn-dropzone-border-active) !default;
+$dropzone-border-error: var(--pgn-dropzone-border-error) !default;
+$dropzone-error-wrapper-color: var(--pgn-dropzone-error-wrapper-color) !default;
+$dropzone-restriction-msg-font-size: var(--pgn-dropzone-restriction-msg-font-size) !default;
+$dropzone-restriction-msg-color: var(--pgn-dropzone-restriction-msg-color) !default;

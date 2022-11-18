@@ -2,32 +2,32 @@
 //
 // Dropdown menu container and contents.
 
-$dropdown-min-width:                18rem !default;
-$dropdown-padding-x:                0 !default;
-$dropdown-padding-y:                .5rem !default;
-$dropdown-spacer:                   .125rem !default;
-$dropdown-font-size:                $font-size-base !default;
-$dropdown-color:                    $body-color !default;
-$dropdown-bg:                       $white !default;
-$dropdown-border-color:             rgba($black, .15) !default;
-$dropdown-border-radius:            $border-radius !default;
-$dropdown-border-width:             $border-width !default;
-$dropdown-inner-border-radius:      calc(#{$dropdown-border-radius} - #{$dropdown-border-width}) !default;
-$dropdown-divider-bg:               theme-color("gray", "background") !default;
-$dropdown-divider-margin-y:         calc($spacer / 2) !default;
-$dropdown-box-shadow:               0 .5rem 1rem rgba($black, .175) !default;
+$dropdown-min-width: var(--pgn-dropdown-min-width) !default;
+$dropdown-padding-x: var(--pgn-dropdown-padding-x-base) !default;
+$dropdown-padding-y: var(--pgn-dropdown-padding-y-base) !default;
+$dropdown-spacer: var(--pgn-dropdown-spacer) !default;
+$dropdown-font-size: var(--pgn-dropdown-font-size) !default;
+$dropdown-color: var(--pgn-dropdown-color-base) !default;
+$dropdown-bg: var(--pgn-dropdown-bg) !default;
+$dropdown-border-color: var(--pgn-dropdown-border-color) !default;
+$dropdown-border-radius: var(--pgn-dropdown-border-radius-base) !default;
+$dropdown-border-width: var(--pgn-dropdown-border-width) !default;
+$dropdown-inner-border-radius: var(--pgn-dropdown-border-radius-inner) !default;
+$dropdown-divider-bg: var(--pgn-dropdown-divider-bg) !default;
+$dropdown-divider-margin-y: var(--pgn-dropdown-divider-margin-y) !default;
+$dropdown-box-shadow: var(--pgn-dropdown-box-shadow) !default;
 
-$dropdown-link-color:               theme-color("gray", "dark-text") !default;
-$dropdown-link-hover-color:         darken(theme-color("gray", "dark-text"), 5%) !default;
-$dropdown-link-hover-bg:            $light-300 !default;
+$dropdown-link-color: var(--pgn-dropdown-link-color) !default;
+$dropdown-link-hover-color: var(--pgn-dropdown-link-hover-color) !default;
+$dropdown-link-hover-bg: var(--pgn-dropdown-link-hover-bg) !default;
 
-$dropdown-link-active-color:        $component-active-color !default;
-$dropdown-link-active-bg:           $component-active-bg !default;
+$dropdown-link-active-color: var(--pgn-dropdown-link-active-color) !default;
+$dropdown-link-active-bg: var(--pgn-dropdown-link-active-bg) !default;
 
-$dropdown-link-disabled-color:      theme-color("gray", "light-text") !default;
+$dropdown-link-disabled-color: var(--pgn-dropdown-link-disabled-color) !default;
 
-$dropdown-item-padding-y:           .25rem !default;
-$dropdown-item-padding-x:           1rem !default;
+$dropdown-item-padding-y: var(--pgn-dropdown-padding-y-item) !default;
+$dropdown-item-padding-x: var(--pgn-dropdown-padding-x-item) !default;
 
-$dropdown-header-color:             theme-color("gray", "light-text") !default;
-$dropdown-header-padding:           $dropdown-padding-y $dropdown-item-padding-x !default;
+$dropdown-header-color: var(--pgn-dropdown-color-header) !default;
+$dropdown-header-padding: var(--pgn-dropdown-padding-header) !default;

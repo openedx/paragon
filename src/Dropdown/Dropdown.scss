@@ -38,10 +38,10 @@
 }
 
 .dropdown-toggle::after {
+  content: "";
   border: 0;
   border-style: solid;
   border-width: .15rem .15rem 0 0;
-  content: "";
   height: .45rem;
   margin-inline-start: .5em;
   position: relative;
