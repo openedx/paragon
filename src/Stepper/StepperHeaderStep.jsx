@@ -22,18 +22,17 @@ function StepperHeaderStep({
   const isClickable = onClick && isViewed && !isActive;
 
   return (
+    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <li
-      /* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={isClickable ? 0 : -1}
-      /* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */
-      role="button"
+      role={isClickable ? 'button' : undefined}
       className={classNames(
         'pgn__stepper-header-step',
         {
           'pgn__stepper-header-step-active': isActive,
           'pgn__stepper-header-step-has-error': hasError,
           'pgn__stepper-header-step-complete': isComplete,
-          'pgn__stepper-header-step-clickable': isClickable,
         },
       )}
       onClick={isClickable ? onClick : undefined}

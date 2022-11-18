@@ -70,18 +70,5 @@
         color: $danger;
       }
     }
-
-    &.pgn__stepper-header-step-clickable {
-      cursor: pointer;
-
-      &:hover,
-      &:focus {
-        color: $primary;
-
-        .pgn__bubble {
-          background-color: $primary;
-        }
-      }
-    }
   }
 }
