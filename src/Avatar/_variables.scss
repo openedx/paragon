@@ -1,10 +1,10 @@
-$avatar-border-radius:               100% !default;
-$avatar-border:                      solid 1px $light-300 !default;
+$avatar-border-radius: var(--pgn-avatar-border-radius) !default;
+$avatar-border: var(--pgn-avatar-border-base) !default;
 
-$avatar-size-xs:                     1.5rem !default;
-$avatar-size-sm:                     2.25rem !default;
-$avatar-size:                        3rem !default;
-$avatar-size-lg:                     4rem !default;
-$avatar-size-xl:                     6rem !default;
-$avatar-size-xxl:                    11.5rem !default;
-$avatar-size-huge:                   18.75rem !default;
+$avatar-size-xs: var(--pgn-avatar-size-xs) !default;
+$avatar-size-sm: var(--pgn-avatar-size-sm) !default;
+$avatar-size: var(--pgn-avatar-size-base) !default;
+$avatar-size-lg: var(--pgn-avatar-size-lg) !default;
+$avatar-size-xl: var(--pgn-avatar-size-xl) !default;
+$avatar-size-xxl: var(--pgn-avatar-size-xxl) !default;
+$avatar-size-huge: var(--pgn-avatar-size-huge) !default;

@@ -1,5 +1,5 @@
-$max-width-xs: 464px !default;
-$max-width-sm: 708px !default;
-$max-width-md: 952px !default;
-$max-width-lg: 1192px !default;
-$max-width-xl: 1440px !default;
+$max-width-xs: var(--pgn-container-max-width-xs) !default;
+$max-width-sm: var(--pgn-container-max-width-sm) !default;
+$max-width-md: var(--pgn-container-max-width-md) !default;
+$max-width-lg: var(--pgn-container-max-width-lg) !default;
+$max-width-xl: var(--pgn-container-max-width-xl) !default;

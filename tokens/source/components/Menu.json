@@ -1,0 +1,12 @@
+{
+  "menu": {
+    "background": {
+      "active": { "value": "{btn.tertiary.bg.active.value}", "themeable": true, "source": "$active-background" }
+    },
+    "border": {
+      "base": { "value": "transparent", "themeable": true, "source": "$border" },
+      "active": { "value": "transparent", "themeable": true, "source": "$active-border" },
+      "hover": { "value": "transparent", "themeable": true, "source": "$hover-border" }
+    }
+  }
+}

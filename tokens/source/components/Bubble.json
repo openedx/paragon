@@ -1,0 +1,10 @@
+{
+  "bubble": {
+    "expandable": {
+      "padding": {
+        "y": { "value": "0", "themeable": true, "source": "$bubble-expandable-padding-y" },
+        "x": { "value": ".25rem", "themeable": true, "source": "$bubble-expandable-padding-x" }
+      }
+    }
+  }
+}

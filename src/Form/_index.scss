@@ -1,13 +1,10 @@
 @import "variables";
 @import "~bootstrap/scss/forms";
 @import "~bootstrap/scss/input-group";
-@import "~bootstrap/scss/custom-forms";
+@import "bootstrap-custom-forms";
 @import "mixins";
 @import "FormText";
 @import "FormControlSet";
-
-$form-control-icon-width: 32px !default;
-$select-icon-padding: .5625rem !default;
 
 // A form input state used by the now deprecate Fieldset and asInput
 // we can remove this when they are deleted.
@@ -131,13 +128,13 @@ $select-icon-padding: .5625rem !default;
   &.pgn__form-control-decorator-leading {
     inset-inline-start: 0;
     padding-inline-start: $input-padding-x;
-    padding-inline-end: calc($input-padding-x / 2);
+    padding-inline-end: calc(#{$input-padding-x} / 2);
   }
 
   &.pgn__form-control-decorator-trailing {
     inset-inline-end: 0;
-    padding-inline-start: calc($input-padding-x / 2);
-    padding-inline-end: calc(#{$input-padding-y-sm} - #{2 * $input-border-width});
+    padding-inline-start: calc(#{$input-padding-x} / 2);
+    padding-inline-end: calc(#{$input-padding-y-sm} - calc(2 * #{$input-border-width}));
   }
 
   .pgn__form-control-decorator-group-lg & {
@@ -151,7 +148,7 @@ $select-icon-padding: .5625rem !default;
 
     &.pgn__form-control-decorator-trailing {
       padding-left: calc($input-padding-x-lg / 2);
-      padding-right: calc(#{$input-padding-y} - #{2 * $input-border-width});
+      padding-right: calc(#{$input-padding-y} - (2 * $input-border-width));
     }
   }
 
@@ -166,7 +163,7 @@ $select-icon-padding: .5625rem !default;
 
     &.pgn__form-control-decorator-trailing {
       padding-left: calc($input-padding-x-sm / 2);
-      padding-right: calc(#{$input-padding-y-sm} - #{2 * $input-border-width});
+      padding-right: calc($input-padding-y-sm - (2 * $input-border-width));
     }
   }
 
@@ -212,7 +209,7 @@ $select-icon-padding: .5625rem !default;
     // Prevent background-color from being output as "transparent"
     // Firefox doesn't handle the first animation well from transparent to
     // a color. Adding an alpha channel smooths it out.
-    background-color: rgba($input-bg, .01);
+    background-color: $form-control-floating-label-text-bg;
     white-space: nowrap;
     max-width: 75vw;
     display: block;
@@ -229,7 +226,7 @@ $select-icon-padding: .5625rem !default;
       transform: translateX(#{$form-control-icon-width});
 
       [dir="rtl"] & {
-        transform: translateX(#{-$form-control-icon-width});
+        transform: translateX(calc(-1 * #{$form-control-icon-width}));
       }
     }
   }
@@ -333,7 +330,7 @@ $select-icon-padding: .5625rem !default;
 }
 
 select.form-control {
-  padding-inline-end: 2rem + $select-icon-padding;
+  padding-inline-end: calc(#{$select-icon-padding} + 2rem);
   background-image: $custom-select-indicator;
   background-position: right $select-icon-padding center;
   background-repeat: no-repeat;
@@ -379,7 +376,9 @@ select.form-control {
   height: $custom-control-indicator-size;
   width: $custom-control-indicator-size;
   background-color: $custom-control-indicator-bg;
-  border: solid $custom-control-indicator-border-width $custom-control-indicator-border-color;
+  border:
+    solid $custom-control-indicator-border-width
+    $custom-control-indicator-border-color;
   border-radius: $custom-checkbox-indicator-border-radius;
   margin-inline-end: $custom-control-gutter;
   background-position: center;
@@ -424,10 +423,10 @@ select.form-control {
   &:focus::before {
     content: "";
     position: absolute;
-    top: -$form-check-position-axis;
-    right: -$form-check-position-axis;
-    bottom: -$form-check-position-axis;
-    left: -$form-check-position-axis;
+    top: calc(#{$form-check-position-axis} * -1);
+    right: calc(#{$form-check-position-axis} * -1);
+    bottom: calc(#{$form-check-position-axis} * -1);
+    left: calc(#{$form-check-position-axis} * -1);
     border: $form-check-border-width solid $input-focus-border-color;
     border-radius: $form-check-focus-border-radius;
   }

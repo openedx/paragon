@@ -1,54 +1,55 @@
 // Card
 
-$card-spacer-y:                      .75rem !default;
-$card-spacer-x:                      1.25rem !default;
-$card-border-width:                  $border-width !default;
-$card-border-radius:                 $border-radius !default;
-$card-border-color:                  rgba($black, .125) !default;
-$card-border-focus-color:            $primary-500 !default;
+$card-spacer-y: var(--pgn-card-spacer-y) !default;
+$card-spacer-x: var(--pgn-card-spacer-x) !default;
+$card-border-width: var(--pgn-card-border-width) !default;
+$card-border-radius: var(--pgn-card-border-radius-base) !default;
+$card-border-color: var(--pgn-card-border-color-base) !default;
+$card-border-focus-color: var(--pgn-card-border-color-focus) !default;
 $card-border-focus-color-dark:       theme-color("primary", "focus") !default;
-$card-inner-border-radius:           subtract($card-border-radius, $card-border-width) !default;
-$card-cap-bg:                        rgba($black, .03) !default;
-$card-cap-color:                     null !default;
-$card-height:                        null !default;
-$card-color:                         null !default;
-$card-bg:                            $white !default;
+$card-inner-border-radius: calc(#{$card-border-radius} - #{$card-border-width}) !default;
+$card-cap-bg: var(--pgn-card-cap-bg) !default;
+$card-cap-color: var(--pgn-card-cap-color) !default;
+$card-height: var(--pgn-card-height-base) !default;
+$card-color: var(--pgn-card-color) !default;
+$card-bg: var(--pgn-card-bg) !default;
 $card-bg-dark:                       $primary-500 !default;
 $card-bg-muted:                      $light-200 !default;
 
-$card-img-overlay-padding:           1.25rem !default;
+$card-img-overlay-padding: var(--pgn-card-image-overlay-padding) !default;
 
-$card-group-margin:                  calc($grid-gutter-width / 2) !default;
-$card-deck-margin:                   $card-group-margin !default;
-$card-grid-margin:                   $card-group-margin !default;
+$card-group-margin: var(--pgn-card-margin-group) !default;
+$card-deck-margin: var(--pgn-card-margin-deck) !default;
+$card-grid-margin: var(--pgn-card-margin-grid) !default;
 $card-deck-margin-bottom:            map_get($spacers, 3) !default;
 $card-grid-margin-bottom:            map_get($spacers, 3) !default;
 
-$card-columns-count:                 3 !default;
-$card-columns-gap:                   1.25rem !default;
-$card-columns-margin:                $card-spacer-y !default;
+$card-columns-count: var(--pgn-card-columns-count) !default;
+$card-columns-gap: var(--pgn-card-columns-gap) !default;
+$card-columns-margin: var(--pgn-card-columns-margin) !default;
 
-$card-divider-bg:                    $light-400 !default;
+$card-divider-bg: var(--pgn-card-divider-bg) !default;
+$card-divider-margin-y: var(--pgn-card-divider-margin-y) !default;
 
-$card-footer-actions-gap:            .5rem !default;
+$card-footer-actions-gap: var(--pgn-card-footer-action-gap) !default;
 
-$card-logo-left-offset:              1.5rem !default;
-$card-logo-bottom-offset:            1rem !default;
-$card-logo-left-offset-horizontal:   .4375rem !default;
-$card-logo-bottom-offset-horizontal: .4375rem !default;
+$card-logo-left-offset: var(--pgn-card-logo-left-offset-base) !default;
+$card-logo-bottom-offset: var(--pgn-card-logo-bottom-offset-base) !default;
+$card-logo-left-offset-horizontal: var(--pgn-card-logo-left-offset-horizontal) !default;
+$card-logo-bottom-offset-horizontal: var(--pgn-card-logo-bottom-offset-horizontal) !default;
 
-$card-logo-width:                    7.25rem !default;
-$card-logo-height:                   4.125rem !default;
+$card-logo-width: var(--pgn-card-logo-width) !default;
+$card-logo-height: var(--pgn-card-logo-height) !default;
 
-$card-image-border-radius:           $card-border-radius !default;
-$card-logo-border-radius:            .25rem !default;
+$card-image-border-radius: var(--pgn-card-border-radius-image) !default;
+$card-logo-border-radius: var(--pgn-card-border-radius-logo) !default;
 
-$card-footer-text-font-size:         $x-small-font-size;
+$card-footer-text-font-size: var(--pgn-card-footer-text-font-size) !default;
 
-$card-image-horizontal-max-width:    240px !default;
-$card-image-horizontal-min-width:    $card-image-horizontal-max-width !default;
-$card-image-vertical-max-height:     140px !default;
-$loading-skeleton-spacer:            .313rem !default;
+$card-image-horizontal-max-width: var(--pgn-card-image-horizontal-width-max) !default;
+$card-image-horizontal-min-width: var(--pgn-card-image-horizontal-width-min) !default;
+$card-image-vertical-max-height: var(--pgn-card-image-vertical-height-max) !default;
+$loading-skeleton-spacer: var(--pgn-card-loading-skeleton-spacer) !default;
 
 $card-focus-border-offset:           5px !default;
 $card-focus-border-width:            2px !default;

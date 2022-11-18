@@ -1,23 +1,23 @@
 // Progress bars
 
-$progress-height:                   1rem !default;
-$annotated-progress-height:         .3125rem !default;
-$progress-font-size:                $font-size-base * .75 !default;
-$progress-bg:                       transparent !default;
-$progress-border-radius:            0 !default;
-$progress-box-shadow:               none !default;
-$progress-bar-color:                $white !default;
-$progress-bar-bg:                   theme-color("accent-a") !default;
-$annotated-progress-bar-bg:         theme-color("dark") !default;
-$progress-bar-animation-timing:     1s linear infinite !default;
-$progress-bar-transition:           width .6s ease !default;
-$progress-bar-border-width:         1px !default;
-$progress-bar-border-color:         $gray-500 !default;
-$progress-threshold-circle:         .5625rem !default;
-$progress-hint-annotation-gap:      .5rem !default;
+$progress-height: var(--pgn-progress-bar-height-base) !default;
+$annotated-progress-height: var(--pgn-progress-bar-height-annotated) !default;
+$progress-font-size: var(--pgn-progress-bar-font-size) !default;
+$progress-bg: var(--pgn-progress-bar-bg) !default;
+$progress-border-radius: var(--pgn-progress-bar-border-radius) !default;
+$progress-box-shadow: var(--pgn-progress-bar-box-shadow) !default;
+$progress-bar-color: var(--pgn-progress-bar-bar-color) !default;
+$progress-bar-bg: var(--pgn-progress-bar-bar-bg-base) !default;
+$annotated-progress-bar-bg: var(--pgn-progress-bar-bar-bg-annotated) !default;
+$progress-bar-animation-timing: var(--pgn-progress-bar-bar-animation-timing) !default;
+$progress-bar-transition: var(--pgn-progress-bar-bar-transition) !default;
+$progress-bar-border-width: var(--pgn-progress-bar-border-width) !default;
+$progress-bar-border-color: var(--pgn-progress-bar-border-color) !default;
+$progress-threshold-circle: var(--pgn-progress-bar-threshold-circle) !default;
+$progress-hint-annotation-gap: var(--pgn-progress-bar-hint-annotation-gap) !default;
 $progress-colors: (
-  "dark":    $primary-500,
-  "success": $success-500,
-  "error":   $danger-500,
-  "warning": $accent-b,
+  "dark":    var(--pgn-color-primary-500),
+  "success": var(--pgn-color-success-500),
+  "error":   var(--pgn-color-danger-500),
+  "warning": var(--pgn-color-accent-b),
 ) !default;

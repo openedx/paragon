@@ -1,19 +1,52 @@
 // Pagination
 
-$pagination-padding-y:              .625rem !default;
-$pagination-margin-x:               .5rem !default;
-$pagination-line-height:            1.5rem !default;
-$pagination-font-size-sm:           .875rem !default;
+$pagination-padding-y: var(--pgn-pagination-padding-y-base) !default;
+$pagination-padding-x: var(--pgn-pagination-padding-x-base) !default;
+$pagination-padding-y-sm: var(--pgn-pagination-padding-y-sm) !default;
+$pagination-padding-x-sm: var(--pgn-pagination-padding-x-sm) !default;
+$pagination-padding-y-lg: var(--pgn-pagination-padding-y-lg) !default;
+$pagination-padding-x-lg: var(--pgn-pagination-padding-x-lg) !default;
+$pagination-margin-x: var(--pgn-pagination-margin-x) !default;
+$pagination-margin-y: var(--pgn-pagination-margin-y) !default;
+$pagination-line-height: var(--pgn-pagination-line-height) !default;
+$pagination-font-size-sm: var(--pgn-pagination-font-size-sm) !default;
 
-$pagination-icon-width:             2.25rem !default;
-$pagination-icon-height:            2.25rem !default;
-$pagination-toggle-border:          .3125rem !default;
-$pagination-toggle-border-sm:       .25rem !default;
-$pagination-secondary-height:       2.75rem !default;
-$pagination-secondary-height-sm:    2.25rem !default;
+$pagination-icon-size: var(--pgn-pagination-icon-size-base) !default;
+$pagination-icon-size-sm: var(--pgn-pagination-icon-size-sm) !default;
+$pagination-icon-width: var(--pgn-pagination-icon-width) !default;
+$pagination-icon-height: var(--pgn-pagination-icon-height) !default;
+$pagination-padding-icon: var(--pgn-pagination-padding-icon) !default;
+$pagination-toggle-border: var(--pgn-pagination-toggle-border-base) !default;
+$pagination-toggle-border-sm: var(--pgn-pagination-toggle-border-sm) !default;
+$pagination-secondary-height: var(--pgn-pagination-secondary-height-base) !default;
+$pagination-secondary-height-sm: var(--pgn-pagination-secondary-height-sm) !default;
 
-$pagination-dropdown-color-inverse: $white !default;
-$pagination-border-width:           $border-width !default;
+$pagination-color: var(--pgn-pagination-color-base) !default;
+$pagination-color-inverse: var(--pgn-pagination-color-inverse) !default;
+$pagination-bg: var(--pgn-pagination-bg-base) !default;
+$pagination-border-width: var(--pgn-pagination-border-width) !default;
+$pagination-border-color: var(--pgn-pagination-border-color-base) !default;
 
-$pagination-reduced-dropdown-max-height: 60vh !default;
-$pagination-reduced-dropdown-min-width: 6rem !default;
+$pagination-focus-box-shadow: var(--pgn-pagination-focus-box-shadow) !default;
+$pagination-focus-outline: var(--pgn-pagination-focus-outline) !default;
+$pagination-focus-border-width: var(--pgn-pagination-focus-border-width) !default;
+$pagination-focus-color: var(--pgn-pagination-focus-color-base) !default;
+$pagination-focus-color-text: var(--pgn-pagination-focus-color-text) !default;
+
+$pagination-hover-color: var(--pgn-pagination-color-hover) !default;
+$pagination-hover-bg: var(--pgn-pagination-bg-hover) !default;
+$pagination-hover-border-color: var(--pgn-pagination-border-color-hover) !default;
+
+$pagination-active-color: var(--pgn-pagination-color-active) !default;
+$pagination-active-bg: var(--pgn-pagination-bg-active) !default;
+$pagination-active-border-color: var(--pgn-pagination-border-color-active) !default;
+
+$pagination-disabled-color: var(--pgn-pagination-color-disabled) !default;
+$pagination-disabled-bg: var(--pgn-pagination-bg-disabled) !default;
+$pagination-disabled-border-color: var(--pgn-pagination-border-color-disabled) !default;
+
+$pagination-border-radius-sm: var(--pgn-pagination-border-radius-sm) !default;
+$pagination-border-radius-lg: var(--pgn-pagination-border-radius-lg) !default;
+
+$pagination-reduced-dropdown-max-height: var(--pgn-reduced-dropdown-height-max) !default;
+$pagination-reduced-dropdown-min-width: var(--pgn-reduced-dropdown-width-min) !default;
