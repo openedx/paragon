@@ -34,6 +34,8 @@ $modal-header-border-width: var(--pgn-modal-header-border-width) !default;
 $modal-footer-border-width: var(--pgn-modal-footer-border-width) !default;
 $modal-header-padding-y: var(--pgn-modal-header-padding-y) !default;
 $modal-header-padding-x: var(--pgn-modal-header-padding-x) !default;
+$modal-close-container-top:         .625rem !default;
+
 
 // Keep this for backwards compatibility
 $modal-header-padding: var(--pgn-modal-header-padding-base) !default;
