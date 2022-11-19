@@ -4,7 +4,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: 'Paragon'
+  name: 'paragon'
   description: "The design system and React component library for Open edX"
   links:
     - url: "https://paragon-openedx.netlify.app"
@@ -12,13 +12,15 @@ metadata:
       # Backstage uses the MaterialUI Icon Set.
       # https://mui.com/material-ui/material-icons/
       # The value will be the name of the icon.
-      icon: "Web"
+      icon: "web"
+    - url: "http://github.com/openedx/paragon"
+      title: "Source Code"
+      icon: "code"
+    - url: "https://www.figma.com/file/eGmDp94FlqEr4iSqy1Uc1K/Paragon-2021"
+      title: "Figma"
+      icon: "gesture"
   annotations:
-    # (Optional) Annotation keys and values can be whatever you want.
-    # We use it in Open edX repos to have a comma-separated list of GitHub user
-    # names that might be interested in changes to the architecture of this
-    # component.
-    openedx.org/arch-interest-groups: "feanil"
+    openedx.org/arch-interest-groups: "adamstankiewicz"
 spec:
   owner: group:paragon-working-group
   type: 'library'
