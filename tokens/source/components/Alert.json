@@ -26,11 +26,6 @@
       "themeable": true, 
       "source": "$alert-box-shadow"
     },
-    "level": {
-      "bg": { "value": "-10", "themeable": true, "source": "$alert-bg-level" },
-      "border": { "value": "-9", "themeable": true, "source": "$alert-border-level" },
-      "color": { "value": "6", "themeable": true, "source": "$alert-color-level" }
-    },
     "icon": {
       "space": { "value": ".8rem", "themeable": true, "source": "$alert-icon-space" }
     },

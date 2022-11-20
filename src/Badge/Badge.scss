@@ -1,2 +1,121 @@
 @import "variables";
-@import "badge-bootstrap";
+
+$badge-variants: (
+  "primary": (
+    "color": $badge-primary-color,
+    "background-color": $badge-primary-bg,
+    "focus-color": $badge-primary-focus-color,
+    "focus-background-color": $badge-primary-focus-bg,
+    "focus-box-shadow-color": $badge-primary-focus-box-shadow-color,
+  ),
+  "secondary": (
+    "color": $badge-secondary-color,
+    "background-color": $badge-secondary-bg,
+    "focus-color": $badge-secondary-focus-color,
+    "focus-background-color": $badge-secondary-focus-bg,
+    "focus-box-shadow-color": $badge-secondary-focus-box-shadow-color,
+  ),
+  "success": (
+    "color": $badge-success-color,
+    "background-color": $badge-success-bg,
+    "focus-color": $badge-success-focus-color,
+    "focus-background-color": $badge-success-focus-bg,
+    "focus-box-shadow-color": $badge-success-focus-box-shadow-color,
+  ),
+  "danger": (
+    "color": $badge-danger-color,
+    "background-color": $badge-danger-bg,
+    "focus-color": $badge-danger-focus-color,
+    "focus-background-color": $badge-danger-focus-bg,
+    "focus-box-shadow-color": $badge-danger-focus-box-shadow-color,
+  ),
+  "warning": (
+    "color": $badge-warning-color,
+    "background-color": $badge-warning-bg,
+    "focus-color": $badge-warning-focus-color,
+    "focus-background-color": $badge-warning-focus-bg,
+    "focus-box-shadow-color": $badge-warning-focus-box-shadow-color,
+  ),
+  "info": (
+    "color": $badge-info-color,
+    "background-color": $badge-info-bg,
+    "focus-color": $badge-info-focus-color,
+    "focus-background-color": $badge-info-focus-bg,
+    "focus-box-shadow-color": $badge-info-focus-box-shadow-color,
+  ),
+  "light": (
+    "color": $badge-light-color,
+    "background-color": $badge-light-bg,
+    "focus-color": $badge-light-focus-color,
+    "focus-background-color": $badge-light-focus-bg,
+    "focus-box-shadow-color": $badge-light-focus-box-shadow-color,
+  ),
+  "dark": (
+    "color": $badge-dark-color,
+    "background-color": $badge-dark-bg,
+    "focus-color": $badge-dark-focus-color,
+    "focus-background-color": $badge-dark-focus-bg,
+    "focus-box-shadow-color": $badge-dark-focus-box-shadow-color,
+  ),
+) !default;
+
+
+.badge {
+  display: inline-block;
+  padding: $badge-padding-y $badge-padding-x;
+
+  @include font-size($badge-font-size);
+
+  font-weight: $badge-font-weight;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+
+  @include border-radius($badge-border-radius);
+  @include transition($badge-transition);
+
+  @at-root a#{&} {
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &:empty {
+    display: none;
+  }
+}
+
+.btn .badge {
+  position: relative;
+  top: -1px;
+}
+
+.badge-pill {
+  padding-right: $badge-pill-padding-x;
+  padding-left: $badge-pill-padding-x;
+
+  @include border-radius($badge-pill-border-radius);
+}
+
+@each $color, $colors-map in $badge-variants {
+  .badge-#{$color} {
+    color: map-get($colors-map, "color");
+    background-color: map-get($colors-map, "background-color");
+
+    @at-root a#{&} {
+      &:hover,
+      &:focus {
+        color: map-get($colors-map, "focus-color");
+        background-color: map-get($colors-map, "focus-background-color");
+      }
+
+      &:focus,
+      &.focus {
+        outline: 0;
+        box-shadow: 0 0 0 $badge-focus-width map-get($colors-map, "focus-box-shadow-color");
+      }
+    }
+  }
+}

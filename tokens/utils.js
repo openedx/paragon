@@ -1,6 +1,7 @@
 const fs = require('fs');
 const readline = require('readline');
 const path = require('path');
+const chroma = require('chroma-js');
 
 function getFilesWithExtension(location, extension, files = [], excludeDirectories = []) {
   const content = fs.statSync(location);
@@ -151,8 +152,43 @@ async function transformInPath(location, variablesMap, transformType = 'definiti
   }
 }
 
+/**
+ * Javascript version of bootstrap's color-yiq function. Decides whether to return light color variant or dark one
+ * based on contrast value of the input color
+ *
+ * @param color - chroma-js color instance
+ * @param {String} [light] - light color variant, defaults to 'yiq-text-light' from ./source/global/other.json
+ * @param {String} [dark] - dark color variant, defaults to 'yiq-text-dark' from ./source/global/other.json
+ * @param {Number} [threshold] - contrast threshold, defaults to 'yiq-contrasted-threshold'
+ * from ./source/global/other.json
+ * @return chroma-js color instance (one of dark or light variants)
+ */
+function colorYiq(color, light, dark, threshold) {
+  const defaultsFile = fs.readFileSync(path.resolve(__dirname, 'source', 'global', 'other.json'), 'utf8');
+  const defaults = JSON.parse(defaultsFile);
+  const {
+    'yiq-text-dark': defaultDark,
+    'yiq-text-light': defaultLight,
+    'yiq-contrasted-threshold': defaultThreshold,
+  } = defaults;
+
+  const contrastThreshold = threshold || defaultThreshold;
+  const lightColor = light || defaultLight;
+  const darkColor = dark || defaultDark;
+
+  const [r, g, b] = color.rgb();
+  const yiq = ((r * 299) + (g * 587) + (b * 114)) * 0.001;
+
+  if (yiq >= contrastThreshold) {
+    return chroma(darkColor);
+  }
+
+  return chroma(lightColor);
+}
+
 module.exports = {
   getFilesWithExtension,
   getSCSStoCSSMap,
   transformInPath,
+  colorYiq,
 };

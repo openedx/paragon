@@ -104,10 +104,6 @@
   @return map-get($colors, $key);
 }
 
-@function theme-color($key: "primary") {
-  @return map-get($theme-colors, $key);
-}
-
 @function gray($key: "100") {
   @return map-get($grays, $key);
 }

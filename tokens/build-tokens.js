@@ -1,6 +1,7 @@
 const StyleDictionary = require('style-dictionary');
 const path = require('path');
 const chroma = require('chroma-js');
+const { colorYiq } = require('./utils');
 
 const { formattedVariables, fileHeader } = StyleDictionary.formatHelpers;
 
@@ -8,25 +9,17 @@ const PGN_PREFIX = 'pgn';
 const BASE_BUILD_PATH = path.resolve(__dirname, 'build');
 
 const colorTransform = (token) => {
-  const { value, modify = [], original } = token;
-
-  if (original.value.endsWith('%')) {
-    return original.value;
-  }
-
+  const { value, modify = [] } = token;
   let color = chroma(value);
 
   if (modify.length > 0) {
-    // iterate over the modify array (see tokens/color.json)
-    // and apply each modification in order
-    modify.forEach(({ type, amount, otherColor }) => {
-      // modifier type must match a method name in chromajs
-      // https://gka.github.io/chroma.js/
-      // chroma methods can be chained, so each time we override the color variable
-      // we can still call other chroma methods, similar to
-      // chroma(value).brighten(1).darken(1).hex();
+    modify.forEach((modifier) => {
+      const {type, amount, otherColor} = modifier;
       if (type === 'mix') {
         color = color[type](otherColor, amount, 'rgb');
+      } else if (type === 'color-yiq') {
+        const { light, dark, threshold } = modifier;
+        color = colorYiq(color, light, dark, threshold);
       } else {
         color = color[type](amount);
       }
@@ -44,7 +37,7 @@ StyleDictionary.registerTransform({
   transitive: true,
   type: 'value',
   matcher(token) {
-    return token.attributes.category === 'color' || token.value.toString().startsWith('#');
+    return token.attributes.category === 'color' || token.value?.toString().startsWith('#');
   },
   transformer: colorTransform,
 });
