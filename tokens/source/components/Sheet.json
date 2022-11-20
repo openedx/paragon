@@ -1,13 +1,12 @@
 {
   "sheet": {
     "zindex": {
-      "backdrop": { "value": "1031", "themeable": true, "source": "$zindex-sheet-backdrop" },
-      "main": { "value": "1032", "themeable": true, "source": "$zindex-sheet" }
+      "backdrop": { "value": "1031", "source": "$zindex-sheet-backdrop" },
+      "main": { "value": "1032", "source": "$zindex-sheet" }
     },
     "skrim": {
       "bg": { 
-        "value": "{color.gray.300.value}", 
-        "themeable": true, 
+        "value": "{color.gray.300.value}",
         "source": "$sheet-skrim-bg",
         "modify": [{
           "type": "alpha",
@@ -16,8 +15,7 @@
       },
       "component": {
         "box-shadow": {
-          "value": "{color.black.value}", 
-          "themeable": true, 
+          "value": "{color.black.value}",
           "source": "$sheet-skrim-component-box-shadow",
           "modify": [{
             "type": "alpha",

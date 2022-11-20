@@ -70,6 +70,7 @@ const paragonStyleDictionary = StyleDictionary.extend({
         format: 'scss/variables-with-new-line',
         options: {
           outputReferences: true,
+          themeable: true,
         },
       }],
       transforms: StyleDictionary.transformGroup.scss.concat('color/sass-functions'),
