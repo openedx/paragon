@@ -1,5 +1,5 @@
 {
-  "lastModified": 1668953317911,
+  "lastModified": 1669039706756,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -8534,6 +8534,11 @@
             "column": 16
           },
           {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
+            "line": 73,
+            "column": 6
+          },
+          {
             "filePath": "src/pages-and-resources/discussions/DiscussionsSettings.jsx",
             "line": 126,
             "column": 18
@@ -8821,12 +8826,12 @@
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
-            "line": 71,
+            "line": 90,
             "column": 6
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
-            "line": 84,
+            "line": 103,
             "column": 12
           },
           {
@@ -8843,7 +8848,7 @@
           },
           {
             "filePath": "src/generic/FormSwitchGroup.jsx",
-            "line": 23,
+            "line": 24,
             "column": 4
           },
           {
@@ -8878,7 +8883,7 @@
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
-            "line": 90,
+            "line": 109,
             "column": 22
           },
           {
@@ -9002,7 +9007,7 @@
           },
           {
             "filePath": "src/generic/FormSwitchGroup.jsx",
-            "line": 41,
+            "line": 43,
             "column": 8
           },
           {
@@ -9054,7 +9059,7 @@
         "Form.Label": [
           {
             "filePath": "src/generic/FormSwitchGroup.jsx",
-            "line": 29,
+            "line": 30,
             "column": 10
           },
           {
@@ -9116,7 +9121,7 @@
         "SwitchControl": [
           {
             "filePath": "src/generic/FormSwitchGroup.jsx",
-            "line": 32,
+            "line": 33,
             "column": 10
           }
         ],
@@ -9261,6 +9266,11 @@
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/AppExternalLinks.jsx",
             "line": 30,
             "column": 16
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
+            "line": 75,
+            "column": 8
           },
           {
             "filePath": "src/pages-and-resources/live/BBBSettings.jsx",
@@ -9466,14 +9476,14 @@
         "Form.CheckboxSet": [
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
-            "line": 91,
+            "line": 110,
             "column": 24
           }
         ],
         "Form.Checkbox": [
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
-            "line": 99,
+            "line": 118,
             "column": 30
           }
         ],
@@ -9814,13 +9824,8 @@
           },
           {
             "filePath": "src/discussions/comments/comment/CommentHeader.jsx",
-            "line": 54,
-            "column": 18
-          },
-          {
-            "filePath": "src/discussions/comments/comment/CommentHeader.jsx",
-            "line": 55,
-            "column": 18
+            "line": 70,
+            "column": 10
           },
           {
             "filePath": "src/discussions/comments/CommentsView.jsx",
@@ -9839,7 +9844,7 @@
           },
           {
             "filePath": "src/discussions/common/AuthorLabel.jsx",
-            "line": 58,
+            "line": 59,
             "column": 8
           },
           {
@@ -9924,12 +9929,12 @@
           },
           {
             "filePath": "src/discussions/posts/post/PostLink.jsx",
-            "line": 96,
+            "line": 97,
             "column": 18
           },
           {
             "filePath": "src/discussions/posts/post/PostLink.jsx",
-            "line": 113,
+            "line": 114,
             "column": 16
           },
           {
@@ -10469,7 +10474,7 @@
         "Avatar": [
           {
             "filePath": "src/discussions/comments/comment/CommentHeader.jsx",
-            "line": 33,
+            "line": 50,
             "column": 8
           },
           {
@@ -10491,25 +10496,6 @@
             "filePath": "src/discussions/posts/post/PostHeader.jsx",
             "line": 54,
             "column": 6
-          }
-        ],
-        "CheckCircle": [
-          {
-            "filePath": "src/discussions/comments/comment/CommentHeader.jsx",
-            "line": 54,
-            "column": 29
-          },
-          {
-            "filePath": "src/discussions/posts/post/PostLink.jsx",
-            "line": 96,
-            "column": 29
-          }
-        ],
-        "Verified": [
-          {
-            "filePath": "src/discussions/comments/comment/CommentHeader.jsx",
-            "line": 55,
-            "column": 29
           }
         ],
         "ArrowBack": [
@@ -10599,14 +10585,14 @@
         "Institution": [
           {
             "filePath": "src/discussions/common/AuthorLabel.jsx",
-            "line": 30,
+            "line": 31,
             "column": 4
           }
         ],
         "School": [
           {
             "filePath": "src/discussions/common/AuthorLabel.jsx",
-            "line": 34,
+            "line": 35,
             "column": 4
           }
         ],
@@ -10941,7 +10927,7 @@
           },
           {
             "filePath": "src/discussions/posts/post/PostLink.jsx",
-            "line": 102,
+            "line": 103,
             "column": 16
           }
         ],
@@ -10950,6 +10936,20 @@
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
             "line": 116,
             "column": 21
+          }
+        ],
+        "Truncate": [
+          {
+            "filePath": "src/discussions/posts/post/PostLink.jsx",
+            "line": 78,
+            "column": 16
+          }
+        ],
+        "CheckCircle": [
+          {
+            "filePath": "src/discussions/posts/post/PostLink.jsx",
+            "line": 97,
+            "column": 29
           }
         ],
         "PostOutline": [
@@ -22790,7 +22790,7 @@
       }
     },
     {
-      "version": "20.18.1",
+      "version": "20.18.2",
       "name": "@edx/frontend-platform",
       "repository": {
         "type": "git",
