@@ -285,3 +285,37 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
   box-shadow: $level-1-box-shadow;
   border-radius: 4px;
 }
+
+.pgn__data-table__selectable-card {
+  display: flex;
+  align-items: flex-start;
+  flex-grow: 1;
+
+  &.is-selected {
+    > :first-child {
+      @extend %pgn__card-focused;
+    }
+  }
+
+  &.selection-right {
+    > :first-child {
+      [dir="rtl"] & {
+        margin-left: map_get($spacers, 2);
+      }
+
+      [dir="ltr"] & {
+        margin-right: map_get($spacers, 2);
+      }
+    }
+  }
+
+  &.selection-left {
+    flex-direction: row-reverse;
+  }
+}
+
+.pgn__data-table__controlled-select {
+  display: flex;
+  align-content: center;
+  padding: map_get($spacers, 1);
+}
