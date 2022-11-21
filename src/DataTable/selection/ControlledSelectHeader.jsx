@@ -40,7 +40,7 @@ function ControlledSelectHeader({ rows }) {
   delete toggleAllPageRowsSelectedProps.indeterminate;
 
   return (
-    <div className="d-flex align-content-center p-1">
+    <div className="pgn__data-table__controlled-select">
       <CheckboxControl
         {...toggleAllPageRowsSelectedProps}
         onChange={toggleAllPageRowsSelected}

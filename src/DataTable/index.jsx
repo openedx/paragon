@@ -133,6 +133,7 @@ function DataTable({
     renderRowSubComponent,
     disableElevation,
     isLoading,
+    isSelectable,
     ...selectionProps,
     ...selectionActions,
     ...props,
