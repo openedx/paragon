@@ -191,6 +191,16 @@ jobs:
       with:
         repository: edx/studio-frontend
         path: dependent-usage-analyzer/.projects/studio-frontend
+    - name: Checkout edx/frontend-app-communications
+      uses: actions/checkout@v2
+      with:
+        repository: edx/frontend-app-communications
+        path: dependent-usage-analyzer/.projects/frontend-app-communications
+    - name: Checkout edx/frontend-app-learner-dashboard
+      uses: actions/checkout@v2
+      with:
+        repository: edx/frontend-app-learner-dashboard
+        path: dependent-usage-analyzer/.projects/frontend-app-learner-dashboard
     - name: Verify checkouts
       working-directory: dependent-usage-analyzer
       run: ls -la .projects
