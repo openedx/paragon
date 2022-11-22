@@ -11,21 +11,27 @@ import CardImageCap from './CardImageCap';
 import CardBody from './CardBody';
 import CardStatus from './CardStatus';
 
+export const CARD_VARIANTS = ['light', 'dark', 'muted'];
+
 const Card = React.forwardRef(({
   orientation,
   isLoading,
   className,
   isClickable,
-  muted,
+  variant,
   ...props
 }, ref) => (
-  <CardContextProvider orientation={orientation} isLoading={isLoading}>
+  <CardContextProvider
+    orientation={orientation}
+    isLoading={isLoading}
+    variant={variant}
+  >
     <BaseCard
       {...props}
       className={classNames(className, 'pgn__card', {
         horizontal: orientation === 'horizontal',
         clickable: isClickable,
-        'is-muted': muted,
+        [`pgn__card-${variant}`]: variant,
       })}
       ref={ref}
       tabIndex={isClickable ? '0' : '-1'}
@@ -49,8 +55,8 @@ Card.propTypes = {
   isClickable: PropTypes.bool,
   /** Specifies loading state. */
   isLoading: PropTypes.bool,
-  /** Specifies whether to display `Card` in muted styling. */
-  muted: PropTypes.bool,
+  /** Specifies `Card` style variant. */
+  variant: PropTypes.oneOf(CARD_VARIANTS),
 };
 
 Card.defaultProps = {
@@ -58,7 +64,7 @@ Card.defaultProps = {
   className: undefined,
   orientation: 'vertical',
   isClickable: false,
-  muted: false,
+  variant: 'light',
   isLoading: false,
 };
 

@@ -1,29 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CardSection /> renders muted variant 1`] = `
-<div
-  className="pgn__card-section is-muted"
->
-  <div
-    className="pgn__card-section-title"
-  >
-    Custom title
-  </div>
-  Section content
-  <div
-    className="pgn__card-section-actions"
-  >
-    <button
-      className="btn btn-primary"
-      disabled={false}
-      type="button"
-    >
-      Action
-    </button>
-  </div>
-</div>
-`;
-
 exports[`<CardSection /> renders with custom actions prop 1`] = `
 <div
   className="pgn__card-section"

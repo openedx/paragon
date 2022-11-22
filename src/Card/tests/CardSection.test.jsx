@@ -54,18 +54,4 @@ describe('<CardSection />', () => {
     expect(wrapper.exists('.pgn__card-section-loader')).toBe(true);
     expect(wrapper.props().isLoading).toBe(true);
   });
-  it('renders muted variant', () => {
-    const tree = renderer.create((
-      <CardSection
-        title="Custom title"
-        muted
-        actions={
-          <Button>Action</Button>
-        }
-      >
-        Section content
-      </CardSection>
-    )).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
 });

@@ -51,34 +51,45 @@ This component uses a `Card` from react-bootstrap as a base component and extend
 )}
 ```
 
-## With muted styling
+## Card variants
 
-Use `muted` prop to show `Card` in inactive state.
+Use `variant` prop to use `Card` specific style variant.
 
 ```jsx live
 () => {
+  const [variant, setVariant] = useState('light');
   const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
 
   return (
-    <Card style={{ width: isExtraSmall ? "100%" : "18rem" }} muted>
-      <Card.ImageCap 
-        src="https://picsum.photos/360/200/"
-        srcAlt="Card image"
+    <>
+      {/* start example form block */}
+      <ExamplePropsForm
+        inputs={[
+          { value: variant, setValue: setVariant, options: ['light', 'dark', 'muted'], name: 'variant' },
+        ]}
       />
-      <Card.Header
-        title="Card Title"
-      />
-      <Card.Section>
-        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
-      </Card.Section>
-      <Card.Footer>
-        <Button>Action 1</Button>
-      </Card.Footer>
-    </Card>
+      {/* end example form block */}
+      
+      <Card style={{ width: isExtraSmall ? "100%" : "18rem" }} variant={variant}>
+        <Card.ImageCap 
+          src="https://picsum.photos/360/200/"
+          srcAlt="Card image"
+        />
+        <Card.Header
+          title="Card Title"
+        />
+        <Card.Section>
+          This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+        </Card.Section>
+        <Card.Footer>
+          <Button>Action 1</Button>
+        </Card.Footer>
+      </Card>
+    </>
 )}
 ```
 
-## Clickable variant
+## Clickable card
 
 You use `isClickable` prop to add additional `hover` and `focus` styling to the `Card`.
 
@@ -244,16 +255,15 @@ Add ``size="sm"`` for smaller header content and actions.
       </Card.Section>
       <Card.Divider />
       <Card.Section 
-        title="Muted section"
+        title="Section"
         actions={
           <ActionRow isStacked={!!isExtraSmall}>
             <Button>Action 1</Button>
             <Button>Action 2</Button>
           </ActionRow>
         }
-        muted
       >
-        This is a muted variant.
+        This is another section variant.
       </Card.Section>
       <Card.Divider />
       <Card.Section>
@@ -867,3 +877,4 @@ it is meant to be used as a single horizontal row of Cards, not as a grid. See C
   </Card>
 </CardDeck>
 ```
+

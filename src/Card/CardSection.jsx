@@ -11,7 +11,6 @@ const CardSection = React.forwardRef(({
   children,
   title,
   actions,
-  muted,
   skeletonHeight,
   skeletonWidth,
 }, ref) => {
@@ -19,7 +18,7 @@ const CardSection = React.forwardRef(({
 
   if (isLoading) {
     return (
-      <div className={classNames('pgn__card-section', className, { 'is-muted': muted })}>
+      <div className={classNames('pgn__card-section', className)}>
         <Skeleton
           containerClassName="pgn__card-section-loader"
           height={skeletonHeight}
@@ -31,7 +30,7 @@ const CardSection = React.forwardRef(({
 
   return (
     <div
-      className={classNames('pgn__card-section', className, { 'is-muted': muted })}
+      className={classNames('pgn__card-section', className)}
       ref={ref}
     >
       {title && <div className="pgn__card-section-title">{title}</div>}
@@ -50,8 +49,6 @@ CardSection.propTypes = {
   title: PropTypes.node,
   /** Specifies node to render on the bottom right of the `Section` (i.e. `ActionRow`). */
   actions: PropTypes.node,
-  /** Specifies whether to display `Section` with muted styling. */
-  muted: PropTypes.bool,
   /** Specifies height of skeleton in loading state. */
   skeletonHeight: PropTypes.number,
   /** Specifies width of skeleton in loading state. */
@@ -63,7 +60,6 @@ CardSection.defaultProps = {
   className: undefined,
   title: undefined,
   actions: undefined,
-  muted: false,
   skeletonHeight: SKELETON_HEIGHT_VALUE,
   skeletonWidth: undefined,
 };

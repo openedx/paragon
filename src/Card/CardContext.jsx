@@ -4,10 +4,13 @@ import PropTypes from 'prop-types';
 const CardContext = createContext({});
 
 function CardContextProvider({
-  orientation, children, isLoading,
+  orientation,
+  children,
+  isLoading,
+  variant,
 }) {
   return (
-    <CardContext.Provider value={{ orientation, isLoading }}>
+    <CardContext.Provider value={{ orientation, isLoading, variant }}>
       {children}
     </CardContext.Provider>
   );
@@ -20,12 +23,15 @@ CardContextProvider.propTypes = {
   isLoading: PropTypes.bool,
   /** Specifies content of the component. */
   children: PropTypes.node,
+  /** Specifies `Card` style variant */
+  variant: PropTypes.oneOf(['light', 'dark', 'muted']),
 };
 
 CardContextProvider.defaultProps = {
   orientation: 'vertical',
   isLoading: false,
   children: null,
+  variant: 'light',
 };
 
 export { CardContextProvider };

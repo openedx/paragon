@@ -5,7 +5,30 @@
 .pgn__card-body {
   width: 100%;
 
-  &.is-muted {
+  &.pgn__card-dark {
+    background-color: $primary-500;
+    color: $white;
+
+    .pgn__card-header {
+      .pgn__card-header-title,
+      .pgn__card-header-title-sm,
+      .pgn__card-header-title-md {
+        color: $white;
+      }
+
+      .pgn__card-header-subtitle,
+      .pgn__card-header-subtitle-sm,
+      .pgn__card-header-subtitle-md {
+        color: $white;
+      }
+    }
+
+    .pgn__card-section .pgn__card-section-title {
+      color: $white;
+    }
+  }
+
+  &.pgn__card-muted {
     background-color: $light-200;
   }
 }
@@ -101,10 +124,6 @@ a .pgn__card {
   padding: $card-spacer-x;
   flex-grow: 1;
   text-align: start;
-
-  &.is-muted {
-    background-color: $light-200;
-  }
 
   .pgn__card-section-title {
     color: $black;
