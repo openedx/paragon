@@ -1,7 +1,7 @@
 const StyleDictionary = require('style-dictionary');
 const path = require('path');
 const chroma = require('chroma-js');
-const { colorYiq } = require('./utils');
+const { colorYiq, darken, lighten } = require('./color-helpers');
 
 const { formattedVariables, fileHeader } = StyleDictionary.formatHelpers;
 
@@ -15,13 +15,22 @@ const colorTransform = (token) => {
   if (modify.length > 0) {
     modify.forEach((modifier) => {
       const {type, amount, otherColor} = modifier;
-      if (type === 'mix') {
-        color = color[type](otherColor, amount, 'rgb');
-      } else if (type === 'color-yiq') {
-        const { light, dark, threshold } = modifier;
-        color = colorYiq(color, light, dark, threshold);
-      } else {
-        color = color[type](amount);
+      switch (type) {
+        case 'mix':
+          color = color.mix(otherColor, amount, 'rgb');
+          break;
+        case 'color-yiq':
+          const { light, dark, threshold } = modifier;
+          color = colorYiq(color, light, dark, threshold);
+          break;
+        case 'darken':
+          color = darken(color, amount);
+          break;
+        case 'lighten':
+          color = lighten(color, amount);
+          break;
+        default:
+          color = color[type](amount);
       }
     });
   }

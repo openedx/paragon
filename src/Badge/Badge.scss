@@ -1,68 +1,10 @@
 @import "variables";
 
-$badge-variants: (
-  "primary": (
-    "color": $badge-primary-color,
-    "background-color": $badge-primary-bg,
-    "focus-color": $badge-primary-focus-color,
-    "focus-background-color": $badge-primary-focus-bg,
-    "focus-box-shadow-color": $badge-primary-focus-box-shadow-color,
-  ),
-  "secondary": (
-    "color": $badge-secondary-color,
-    "background-color": $badge-secondary-bg,
-    "focus-color": $badge-secondary-focus-color,
-    "focus-background-color": $badge-secondary-focus-bg,
-    "focus-box-shadow-color": $badge-secondary-focus-box-shadow-color,
-  ),
-  "success": (
-    "color": $badge-success-color,
-    "background-color": $badge-success-bg,
-    "focus-color": $badge-success-focus-color,
-    "focus-background-color": $badge-success-focus-bg,
-    "focus-box-shadow-color": $badge-success-focus-box-shadow-color,
-  ),
-  "danger": (
-    "color": $badge-danger-color,
-    "background-color": $badge-danger-bg,
-    "focus-color": $badge-danger-focus-color,
-    "focus-background-color": $badge-danger-focus-bg,
-    "focus-box-shadow-color": $badge-danger-focus-box-shadow-color,
-  ),
-  "warning": (
-    "color": $badge-warning-color,
-    "background-color": $badge-warning-bg,
-    "focus-color": $badge-warning-focus-color,
-    "focus-background-color": $badge-warning-focus-bg,
-    "focus-box-shadow-color": $badge-warning-focus-box-shadow-color,
-  ),
-  "info": (
-    "color": $badge-info-color,
-    "background-color": $badge-info-bg,
-    "focus-color": $badge-info-focus-color,
-    "focus-background-color": $badge-info-focus-bg,
-    "focus-box-shadow-color": $badge-info-focus-box-shadow-color,
-  ),
-  "light": (
-    "color": $badge-light-color,
-    "background-color": $badge-light-bg,
-    "focus-color": $badge-light-focus-color,
-    "focus-background-color": $badge-light-focus-bg,
-    "focus-box-shadow-color": $badge-light-focus-box-shadow-color,
-  ),
-  "dark": (
-    "color": $badge-dark-color,
-    "background-color": $badge-dark-bg,
-    "focus-color": $badge-dark-focus-color,
-    "focus-background-color": $badge-dark-focus-bg,
-    "focus-box-shadow-color": $badge-dark-focus-box-shadow-color,
-  ),
-) !default;
-
-
 .badge {
   display: inline-block;
   padding: $badge-padding-y $badge-padding-x;
+  color: var(--pgn-badge-color, #{$badge-primary-color});
+  background-color: var(--pgn-badge-bg-color, #{$badge-primary-bg});
 
   @include font-size($badge-font-size);
 
@@ -79,6 +21,14 @@ $badge-variants: (
     &:hover,
     &:focus {
       text-decoration: none;
+      color: var(--pgn-badge-focus-color, #{$badge-primary-focus-color});
+      background-color: var(--pgn-badge-focus-bg-color, #{$badge-primary-focus-bg});
+    }
+
+    &:focus,
+    &.focus {
+      outline: 0;
+      box-shadow: 0 0 0 $badge-focus-width var(--pgn-badge-focus-box-shadow-color, #{$badge-primary-focus-box-shadow-color});
     }
   }
 
@@ -99,23 +49,66 @@ $badge-variants: (
   @include border-radius($badge-pill-border-radius);
 }
 
-@each $color, $colors-map in $badge-variants {
-  .badge-#{$color} {
-    color: map-get($colors-map, "color");
-    background-color: map-get($colors-map, "background-color");
+.badge-primary {
+  --pgn-badge-color: #{$badge-primary-color};
+  --pgn-badge-bg-color: #{$badge-primary-bg};
+  --pgn-badge-focus-color: #{$badge-primary-focus-color};
+  --pgn-badge-focus-bg-color: #{$badge-primary-focus-bg};
+  --pgn-badge-focus-box-shadow-color: #{$badge-primary-focus-box-shadow-color};
+}
 
-    @at-root a#{&} {
-      &:hover,
-      &:focus {
-        color: map-get($colors-map, "focus-color");
-        background-color: map-get($colors-map, "focus-background-color");
-      }
+.badge-secondary {
+  --pgn-badge-color: #{$badge-secondary-color};
+  --pgn-badge-bg-color: #{$badge-secondary-bg};
+  --pgn-badge-focus-color: #{$badge-secondary-focus-color};
+  --pgn-badge-focus-bg-color: #{$badge-secondary-focus-bg};
+  --pgn-badge-focus-box-shadow-color: #{$badge-secondary-focus-box-shadow-color};
+}
 
-      &:focus,
-      &.focus {
-        outline: 0;
-        box-shadow: 0 0 0 $badge-focus-width map-get($colors-map, "focus-box-shadow-color");
-      }
-    }
-  }
+.badge-success {
+  --pgn-badge-color: #{$badge-success-color};
+  --pgn-badge-bg-color: #{$badge-success-bg};
+  --pgn-badge-focus-color: #{$badge-success-focus-color};
+  --pgn-badge-focus-bg-color: #{$badge-success-focus-bg};
+  --pgn-badge-focus-box-shadow-color: #{$badge-success-focus-box-shadow-color};
+}
+
+.badge-danger {
+  --pgn-badge-color: #{$badge-danger-color};
+  --pgn-badge-bg-color: #{$badge-danger-bg};
+  --pgn-badge-focus-color: #{$badge-danger-focus-color};
+  --pgn-badge-focus-bg-color: #{$badge-danger-focus-bg};
+  --pgn-badge-focus-box-shadow-color: #{$badge-danger-focus-box-shadow-color};
+}
+
+.badge-warning {
+  --pgn-badge-color: #{$badge-warning-color};
+  --pgn-badge-bg-color: #{$badge-warning-bg};
+  --pgn-badge-focus-color: #{$badge-warning-focus-color};
+  --pgn-badge-focus-bg-color: #{$badge-warning-focus-bg};
+  --pgn-badge-focus-box-shadow-color: #{$badge-warning-focus-box-shadow-color};
+}
+
+.badge-info {
+  --pgn-badge-color: #{$badge-info-color};
+  --pgn-badge-bg-color: #{$badge-info-bg};
+  --pgn-badge-focus-color: #{$badge-info-focus-color};
+  --pgn-badge-focus-bg-color: #{$badge-info-focus-bg};
+  --pgn-badge-focus-box-shadow-color: #{$badge-info-focus-box-shadow-color};
+}
+
+.badge-light {
+  --pgn-badge-color: #{$badge-light-color};
+  --pgn-badge-bg-color: #{$badge-light-bg};
+  --pgn-badge-focus-color: #{$badge-light-focus-color};
+  --pgn-badge-focus-bg-color: #{$badge-light-focus-bg};
+  --pgn-badge-focus-box-shadow-color: #{$badge-light-focus-box-shadow-color};
+}
+
+.badge-dark {
+  --pgn-badge-color: #{$badge-dark-color};
+  --pgn-badge-bg-color: #{$badge-dark-bg};
+  --pgn-badge-focus-color: #{$badge-dark-focus-color};
+  --pgn-badge-focus-bg-color: #{$badge-dark-focus-bg};
+  --pgn-badge-focus-box-shadow-color: #{$badge-dark-focus-box-shadow-color};
 }

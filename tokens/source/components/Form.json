@@ -344,7 +344,7 @@
               "value": "{color.background.active.value}",
               "source": "$custom-range-thumb-active-bg",
               "modify": [{
-                "type": "brighten",
+                "type": "lighten",
                 "amount": "0.35"
               }]
             }
