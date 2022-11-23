@@ -48,7 +48,7 @@ push_translations:
 
 # Pulls translations from Transifex.
 pull_translations: | requirements
-	tx pull -f --mode reviewed --languages=$(transifex_langs)
+	tx pull -t -f --mode reviewed --languages=$(transifex_langs)
 	# compile files with translated strings to KEYVALUEJSON format which react-intl understands...
 	npm run-script i18n_compile
 
