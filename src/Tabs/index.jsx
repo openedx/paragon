@@ -72,7 +72,7 @@ function Tabs({
   const tabsChildren = useMemo(() => {
     const indexOfOverflowStart = indexOfLastVisibleChild + 1;
     const childrenList = React.Children.map(children, (child, index) => {
-      if (child?.type?.name !== 'Tab') {
+      if (child?.type?.name !== 'Tab' && process.env.NODE_ENV === 'development') {
         // eslint-disable-next-line no-console
         console.error(
           `Tabs children can only be of type Tab. ${children[index]} was passed instead.`,
