@@ -82,7 +82,7 @@ PropType.defaultProps = {
   name: 'any',
   value: null,
   raw: '',
-  required: true,
+  required: false,
 };
 
 export interface ISimplePropType {
