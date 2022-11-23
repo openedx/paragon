@@ -160,6 +160,7 @@ export { default as breakpoints } from './utils/breakpoints';
 export { default as Variant } from './utils/constants';
 export { default as useWindowSize } from './hooks/useWindowSize';
 export { default as useToggle } from './hooks/useToggle';
+export { default as useArrowKeyNavigation } from './hooks/useArrowKeyNavigation';
 export { default as useIndexOfLastVisibleChild } from './hooks/useIndexOfLastVisibleChild';
 export { default as useIsVisible } from './hooks/useIsVisible';
 
