@@ -21,12 +21,35 @@ function StepperHeaderStep({
   const errorIcon = <Icon src={Error} />;
   const isClickable = onClick && isViewed && !isActive;
 
+  if (isClickable) {
+    return (
+      <button
+        type="button"
+        aria-label={`${title} step`}
+        className={classNames(
+          'pgn__stepper-header-step',
+          {
+            'pgn__stepper-header-step-active': isActive,
+            'pgn__stepper-header-step-has-error': hasError,
+            'pgn__stepper-header-step-complete': isComplete,
+          },
+        )}
+        onClick={isClickable ? onClick : undefined}
+        onKeyPress={isClickable ? onClick : undefined}
+      >
+        <Bubble variant={hasError ? 'error' : 'primary'} disabled={!isActive}>
+          {hasError ? errorIcon : stepIcon}
+        </Bubble>
+        <div className="pgn__stepper-header-step-title-description">
+          <div className="pgn__stepper-header-step-title">{title}</div>
+          <div className="pgn__stepper-header-step-description">{description}</div>
+        </div>
+      </button>
+    );
+  }
+
   return (
-    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <li
-      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-      tabIndex={isClickable ? 0 : -1}
-      role={isClickable ? 'button' : undefined}
       className={classNames(
         'pgn__stepper-header-step',
         {
@@ -35,8 +58,6 @@ function StepperHeaderStep({
           'pgn__stepper-header-step-complete': isComplete,
         },
       )}
-      onClick={isClickable ? onClick : undefined}
-      onKeyPress={isClickable ? onClick : undefined}
     >
       <Bubble variant={hasError ? 'error' : 'primary'} disabled={!isActive}>
         {hasError ? errorIcon : stepIcon}
@@ -50,7 +71,7 @@ function StepperHeaderStep({
 }
 
 StepperHeaderStep.propTypes = {
-  /** A number that will be display in the icon of the `HeaderStep`.  */
+  /** A number that will be display in the icon of the `HeaderStep`. */
   index: PropTypes.number.isRequired,
   /** A text of the `HeaderStep`. */
   title: PropTypes.string.isRequired,

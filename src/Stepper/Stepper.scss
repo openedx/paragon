@@ -22,6 +22,11 @@
       flex-basis: 80px;
       margin: 0 .5rem;
     }
+
+    button.pgn__stepper-header-step {
+      border: none;
+      background-color: transparent;
+    }
   }
 
   .pgn__stepper-header-step {
