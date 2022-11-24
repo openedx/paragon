@@ -8,11 +8,13 @@ const mockWindowSize = { width: 1000, height: 1000 };
 
 jest.mock('../../hooks/useWindowSize', () => () => mockWindowSize);
 
+function Example({
 // eslint-disable-next-line react/prop-types
-function Example({ activeKey, hasStepWithError, hasFourthStep }) {
+  activeKey, hasStepWithError, hasFourthStep, handleStepClick,
+}) {
   return (
     <Stepper activeKey={activeKey}>
-      <Stepper.Header />
+      <Stepper.Header handleStepClick={handleStepClick} />
 
       <Stepper.Step eventKey="welcome" title="Welcome" index={0}>
         <span id="welcome-content">Welcome content</span>
@@ -74,6 +76,32 @@ describe('Stepper', () => {
     expect(wrapper.exists('#welcome-actions')).toBe(false);
     expect(wrapper.exists('#cats-actions')).toBe(true);
     expect(wrapper.exists('#review-actions')).toBe(false);
+  });
+
+  describe('handleStepClick usage', () => {
+    it('function call and render button tag', () => {
+      wrapper.setProps({ activeKey: 'welcome', handleStepClick: jest.fn() });
+      wrapper.update();
+      expect(wrapper.exists('#welcome-content')).toBe(true);
+
+      wrapper.setProps({ activeKey: 'cats' });
+      expect(wrapper.exists('#welcome-content')).toBe(false);
+
+      const headerStepTitle = wrapper.find('button');
+      expect(headerStepTitle.exists('.pgn__stepper-header-step')).toEqual(true);
+    });
+
+    it('undefined function and the absence of a button tag', () => {
+      wrapper.setProps({ activeKey: 'welcome', handleStepClick: undefined });
+      wrapper.update();
+      expect(wrapper.exists('#welcome-content')).toBe(true);
+
+      wrapper.setProps({ activeKey: 'cats' });
+      expect(wrapper.exists('#welcome-content')).toBe(false);
+
+      const headerStepTitle = wrapper.find('button');
+      expect(headerStepTitle.exists('.pgn__stepper-header-step')).toBe(false);
+    });
   });
 
   describe('tab updates', () => {
