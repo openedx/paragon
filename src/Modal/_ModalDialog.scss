@@ -138,7 +138,6 @@
   &::before {
     content: "";
     background-color: transparent;
-    // TODO needs a decision
     background-image: linear-gradient(#605C5C, #B8BEBE, transparent 50%);
     display: block;
     height: 20px;
@@ -154,7 +153,6 @@
   &::after {
     content: "";
     background-color: transparent;
-    // TODO needs a decision
     background-image:
       linear-gradient(
         360deg,
