@@ -9,13 +9,8 @@
   align-items: center;
   justify-content: center;
   font-size: $font-size-xs;
-
-  @each $name, $colors in $bubble-variants {
-    &.pgn__bubble-#{$name} {
-      background-color: map-get($colors, "background-color");
-      color: map-get($colors, "color");
-    }
-  }
+  color: var(--pgn-bubble-color, inherit);
+  background-color: var(--pgn-bubble-bg, transparent);
 
   &:disabled,
   &.disabled {
@@ -25,4 +20,24 @@
   &.expandable {
     padding: $bubble-expandable-padding-y $bubble-expandable-padding-x;
   }
+}
+
+.pgn__bubble-primary {
+  --pgn-bubble-color: #{$bubble-primary-color};
+  --pgn-bubble-bg: #{$bubble-primary-bg};
+}
+
+.pgn__bubble-success {
+  --pgn-bubble-color: #{$bubble-success-color};
+  --pgn-bubble-bg: #{$bubble-success-bg};
+}
+
+.pgn__bubble-warning {
+  --pgn-bubble-color: #{$bubble-warning-color};
+  --pgn-bubble-bg: #{$bubble-warning-bg};
+}
+
+.pgn__bubble-error {
+  --pgn-bubble-color: #{$bubble-error-color};
+  --pgn-bubble-bg: #{$bubble-error-bg};
 }
