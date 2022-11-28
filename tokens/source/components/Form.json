@@ -3,205 +3,172 @@
     "input": {
       "padding": {
         "y": {
-          "base": { "value": "{input.btn.padding.y.value}", "themeable": true, "source": "$input-padding-y" },
-          "sm": { "value": "{input.btn.padding.sm.y.value}", "themeable": true, "source": "$input-padding-y-sm" },
-          "lg": { "value": "{input.btn.padding.lg.y.value}", "themeable": true, "source": "$input-padding-y-lg" }
+          "base": { "value": "{input.btn.padding.y.value}", "source": "$input-padding-y" },
+          "sm": { "value": "{input.btn.padding.sm.y.value}", "source": "$input-padding-y-sm" },
+          "lg": { "value": "{input.btn.padding.lg.y.value}", "source": "$input-padding-y-lg" }
         },
         "x": {
-          "base": { "value": "{input.btn.padding.x.value}", "themeable": true, "source": "$input-padding-x" },
-          "sm": { "value": "{input.btn.padding.sm.x.value}", "themeable": true, "source": "$input-padding-x-sm" },
-          "lg": { "value": "{input.btn.padding.lg.x.value}", "themeable": true, "source": "$input-padding-x-lg" }
+          "base": { "value": "{input.btn.padding.x.value}", "source": "$input-padding-x" },
+          "sm": { "value": "{input.btn.padding.sm.x.value}", "source": "$input-padding-x-sm" },
+          "lg": { "value": "{input.btn.padding.lg.x.value}", "source": "$input-padding-x-lg" }
         }
       },
       "font": {
-        "family": { "value": "{input.btn.font.family.value}", "themeable": true, "source": "$input-font-family" },
+        "family": { "value": "{input.btn.font.family.value}", "source": "$input-font-family" },
         "size": {
-          "base": { "value": "{input.btn.font.size.base.value}", "themeable": true, "source": "$input-font-size" },
-          "sm": { "value": "{input.btn.font.size.sm.value}", "themeable": true, "source": "$input-font-size-sm" },
-          "lg": { "value": "{input.btn.font.size.lg.value}", "themeable": true, "source": "$input-font-size-lg" }
+          "base": { "value": "{input.btn.font.size.base.value}", "source": "$input-font-size" },
+          "sm": { "value": "{input.btn.font.size.sm.value}", "source": "$input-font-size-sm" },
+          "lg": { "value": "{input.btn.font.size.lg.value}", "source": "$input-font-size-lg" }
         },
-        "weight": { "value": "{font.weight.base.value}", "themeable": true, "source": "$input-font-weight" }
+        "weight": { "value": "{font.weight.base.value}", "source": "$input-font-weight" }
       },
       "line": {
         "height": {
-          "base": { "value": "{input.btn.line.height.base.value}", "themeable": true, "source": "$input-line-height" },
-          "sm": { "value": "{input.btn.line.height.sm.value}", "themeable": true, "source": "$input-line-height-sm" },
-          "lg": { "value": "{input.btn.line.height.lg.value}", "themeable": true, "source": "$input-line-height-lg" }
+          "base": { "value": "{input.btn.line.height.base.value}", "source": "$input-line-height" },
+          "sm": { "value": "{input.btn.line.height.sm.value}", "source": "$input-line-height-sm" },
+          "lg": { "value": "{input.btn.line.height.lg.value}", "source": "$input-line-height-lg" }
         }
       },
       "bg": {
-        "base": { "value": "{color.background.base.value}", "themeable": true, "source": "$input-bg" },
-        "disabled": { "value": "{color.gray.100.value}", "themeable": true, "source": "$input-disabled-bg" }
+        "base": { "value": "{color.background.base.value}", "source": "$input-bg" },
+        "disabled": { "value": "{color.gray.100.value}", "source": "$input-disabled-bg" }
       },
       "color": {
-        "base": { "value": "{color.gray.700.value}", "themeable": true, "source": "$input-color" },
-        "placeholder": { "value": "{color.gray.500.value}", "themeable": true, "source": "$input-placeholder-color" },
-        "plaintext": { "value": "{body.color.value}", "themeable": true, "source": "$input-placeholder-color" }
+        "base": { "value": "{color.gray.700.value}", "source": "$input-color" },
+        "placeholder": { "value": "{color.gray.500.value}", "source": "$input-placeholder-color" },
+        "plaintext": { "value": "{body.color.value}", "source": "$input-placeholder-color" }
       },
       "border": {
-        "color": { "value": "{color.gray.500.value}", "themeable": true, "source": "$input-border-color" },
-        "width": { "value": "{input.btn.border.width.value}", "themeable": true, "source": "$input-border-width" },
-        "height": {
-          "value": "calc({form.input.border.width.value} * 2)",
-          "themeable": true,
-          "source": "$input-height-border"
-        },
+        "color": { "value": "{color.gray.500.value}", "source": "$input-border-color" },
+        "width": { "value": "{input.btn.border.width.value}", "source": "$input-border-width" },
+        "height": { "value": "calc({form.input.border.width.value} * 2)", "source": "$input-height-border"},
         "radius": {
-          "base": { "value": "{border.radius.base.value}", "themeable": true, "source": "$input-border-radius" },
-          "lg": { "value": "{border.radius.lg.value}", "themeable": true, "source": "$input-border-radius-lg" },
-          "sm": { "value": "{border.radius.sm.value}", "themeable": true, "source": "$input-border-radius-sm" }
+          "base": { "value": "{border.radius.base.value}", "source": "$input-border-radius" },
+          "lg": { "value": "{border.radius.lg.value}", "source": "$input-border-radius-lg" },
+          "sm": { "value": "{border.radius.sm.value}", "source": "$input-border-radius-sm" }
         }
       },
       "box-shadow": {
-          "base": { "value": "inset 0 1px 1px rgba(0, 0, 0, .075)", "themeable": true, "source": "$input-box-shadow" },
-          "focus": {
-            "value": "{input.btn.focus.box-shadow.value}",
-            "themeable": true,
-            "source": "$input-focus-box-shadow"
-          }
+          "base": { "value": "inset 0 1px 1px rgba(0, 0, 0, .075)", "source": "$input-box-shadow" },
+          "focus": { "value": "{input.btn.focus.box-shadow.value}", "source": "$input-focus-box-shadow" }
       },
       "focus": {
-        "bg": { "value": "{form.input.bg.base.value}", "themeable": true, "source": "$input-focus-bg" },
+        "bg": { "value": "{form.input.bg.base.value}", "source": "$input-focus-bg" },
         "color": {
-          "base": { "value": "{form.input.color.base.value}", "themeable": true, "source": "$input-focus-color" },
-          "border": { "value": "{color.input.focus.value}", "themeable": true, "source": "$input-focus-border-color" }
+          "base": { "value": "{form.input.color.base.value}", "source": "$input-focus-color" },
+          "border": { "value": "{color.input.focus.value}", "source": "$input-focus-border-color" }
         },
-        "width": { "value": "1px", "themeable": true, "source": "$input-focus-width" }
+        "width": { "value": "1px", "source": "$input-focus-width" }
       },
       "height": {
         "base": {
           "value": "calc({form.input.line.height.base.value} * 1em + {form.input.padding.y.base.value} * 2 + {form.input.border.height.value})",
-          "themeable": true,
           "source": "$input-height"
         },
         "sm": {
           "value": "calc({form.input.line.height.sm.value} * 1em + {input.btn.padding.sm.y.value} * 2 + {form.input.border.height.value})",
-          "themeable": true,
           "source": "$input-height-sm"
         },
         "lg": {
           "value": "calc({form.input.line.height.lg.value} * 1em + {input.btn.padding.lg.y.value} * 2 + {form.input.border.height.value})",
-          "themeable": true,
           "source": "$input-height-lg"
         },
         "inner": {
           "base": {
             "value": "calc({form.input.line.height.base.value} * 1em + {form.input.padding.y.base.value} * 2)",
-            "themeable": true,
             "source": "$input-height-inner"
           },
           "half": {
             "value": "calc({form.input.line.height.base.value} * .5em + {form.input.padding.y.base.value})",
-            "themeable": true,
             "source": "$input-height-inner-half"
           },
           "quarter": {
             "value": "calc({form.input.line.height.base.value} * .25em + calc({form.input.padding.y.base.value} / 2))",
-            "themeable": true,
             "source": "$input-height-inner-quarter"
           }
         }
       },
       "width": {
-        "hover": { "value": "1px", "themeable": true, "source": "$input-hover-width" }
+        "hover": { "value": "1px", "source": "$input-hover-width" }
       },
       "transition": {
         "value": "border-color .15s ease-in-out, box-shadow .15s ease-in-out",
-        "themeable": true,
         "source": "$input-transition"
       },
       "check": {
         "margin": {
           "x": {
-            "base": { "value": ".25rem", "themeable": true, "source": "$form-check-input-margin-x" },
-            "inline": { "value": ".3125rem", "themeable": true, "source": "$form-check-inline-input-margin-x" }
+            "base": { "value": ".25rem", "source": "$form-check-input-margin-x" },
+            "inline": { "value": ".3125rem", "source": "$form-check-inline-input-margin-x" }
           },
-          "y": { "value": ".3rem", "themeable": true, "source": "$form-check-input-margin-y" }
+          "y": { "value": ".3rem", "source": "$form-check-input-margin-y" }
         }
       },
       "group": {
         "addon": {
           "color": {
-            "base": { "value": "{form.input.color.base.value}", "themeable": true, "source": "$input-group-addon-color" },
-            "border": {
-              "value": "{form.input.border.color.value}",
-              "themeable": true,
-              "source": "$input-group-addon-border-color"
-            }
+            "base": { "value": "{form.input.color.base.value}", "source": "$input-group-addon-color" },
+            "border": { "value": "{form.input.border.color.value}", "source": "$input-group-addon-border-color" }
           },
-          "bg": { "value": "{color.gray.100.value}", "themeable": true, "source": "$input-group-addon-bg" }
+          "bg": { "value": "{color.gray.100.value}", "source": "$input-group-addon-bg" }
         }
       }
     },
     "text": {
       "margin": {
-        "top": { "value": ".25rem", "themeable": true, "source": "$form-text-margin-top" }
+        "top": { "value": ".25rem", "source": "$form-text-margin-top" }
       }
     },
     "check": {
       "inline": {
         "margin": {
-          "x": { "value": ".75rem", "themeable": true, "source": "$form-check-inline-margin-x" }
+          "x": { "value": ".75rem", "source": "$form-check-inline-margin-x" }
         }
       },
       "position": {
-        "axis": { "value": ".375rem", "themeable": true, "source": "$form-check-position-axis" }
+        "axis": { "value": ".375rem", "source": "$form-check-position-axis" }
       },
       "border": {
         "radius": {
-          "focus": { "value": ".0625rem", "themeable": true, "source": "$form-check-focus-border-radius" }
+          "focus": { "value": ".0625rem", "source": "$form-check-focus-border-radius" }
         },
-        "width": { "value": ".125rem", "themeable": true, "source": "$form-check-border-width" }
+        "width": { "value": ".125rem", "source": "$form-check-border-width" }
       }
     },
     "group": {
       "margin": {
-        "bottom": { "value": "1rem", "themeable": true, "source": "$form-group-margin-bottom" }
+        "bottom": { "value": "1rem", "source": "$form-group-margin-bottom" }
       }
     },
     "custom": {
       "transition": {
         "value": "background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out",
-        "themeable": true,
         "source": "$custom-forms-transition"
       },
       "control": {
-        "gutter": { "value": ".5rem", "themeable": true, "source": "$custom-control-gutter" },
+        "gutter": { "value": ".5rem", "source": "$custom-control-gutter" },
         "spacer": {
-          "x": { "value": "1rem", "themeable": true, "source": "$custom-control-spacer-x" }
+          "x": { "value": "1rem", "source": "$custom-control-spacer-x" }
         },
-        "cursor": { "value": "null", "themeable": true, "source": "$custom-control-cursor" },
+        "cursor": { "value": "null", "source": "$custom-control-cursor" },
         "indicator": {
-          "size": { "value": "1.25rem", "themeable": true, "source": "$custom-control-indicator-size" },
+          "size": { "value": "1.25rem", "source": "$custom-control-indicator-size" },
           "bg": {
-            "base": { "value": "{form.input.bg.base.value}", "themeable": true, "source": "$custom-control-indicator-bg" },
-            "size": { "value": "100%", "themeable": true, "source": "$custom-control-indicator-bg-size" }
+            "base": { "value": "{form.input.bg.base.value}", "source": "$custom-control-indicator-bg" },
+            "size": { "value": "100%", "source": "$custom-control-indicator-bg-size" }
           },
-          "box-shadow": {
-              "value": "{form.input.box-shadow.base.value}",
-              "themeable": true,
-              "source": "$custom-control-indicator-box-shadow"
-          },
+          "box-shadow": { "value": "{form.input.box-shadow.base.value}", "source": "$custom-control-indicator-box-shadow" },
           "border": {
-            "color": {
-              "value": "{color.gray.700.value}",
-              "themeable": true,
-              "source": "$custom-control-indicator-border-color"
-            },
-            "width": { "value": "2px", "themeable": true, "source": "$custom-control-indicator-border-width" }
+            "color": { "value": "{color.gray.700.value}", "source": "$custom-control-indicator-border-color" },
+            "width": { "value": "2px", "source": "$custom-control-indicator-border-width" }
           },
           "disabled": {
-            "bg": {
-              "value": "{form.input.bg.disabled.value}",
-              "themeable": true,
-              "source": "$custom-control-indicator-disabled-bg"
-            }
+            "bg": { "value": "{form.input.bg.disabled.value}", "source": "$custom-control-indicator-disabled-bg" }
           },
           "checked": {
             "bg": {
               "disabled": {
                 "value": "{color.primary.500.value}",
-                "themeable": true,
                 "source": "$custom-control-indicator-checked-disabled-bg",
                 "modify": [{
                   "type": "alpha",
@@ -210,46 +177,29 @@
               }
             },
             "box-shadow": {
-              "base": { "value": "none", "themeable": true, "source": "$custom-control-indicator-checked-box-shadow" },
-              "focus": {
-                "value": "0 0 0 4px rgba(0, 0, 0, .1)",
-                "themeable": true,
-                "source": "$custom-control-indicator-focus-box-shadow"
-              }
+              "base": { "value": "none", "source": "$custom-control-indicator-checked-box-shadow" },
+              "focus": { "value": "0 0 0 4px rgba(0, 0, 0, .1)", "source": "$custom-control-indicator-focus-box-shadow" }
             },
             "border": {
               "color": {
-                "base": {
-                  "value": "{color.primary.500.value}",
-                  "themeable": true,
-                  "source": "$custom-control-indicator-checked-border-color"
-                },
-                "focus": {
-                  "value": "{form.input.focus.color.border.value}",
-                  "themeable": true,
-                  "source": "$custom-control-indicator-focus-border-color"
-                }
+                "base": { "value": "{color.primary.500.value}", "source": "$custom-control-indicator-checked-border-color" },
+                "focus": { "value": "{form.input.focus.color.border.value}", "source": "$custom-control-indicator-focus-border-color" }
               }
             }
           },
           "active": {
-            "box-shadow": {"value": "none", "themeable": true, "source": "$custom-control-indicator-active-box-shadow" },
-            "bg": { "value": "#0A3055", "themeable": true, "source": "$custom-control-indicator-active-bg" }
+            "box-shadow": {"value": "none", "source": "$custom-control-indicator-active-box-shadow" },
+            "bg": { "value": "#0A3055", "source": "$custom-control-indicator-active-bg" }
           }
         },
         "label": {
           "color": {
-            "base": { "value": "null", "themeable": true, "source": "$custom-control-label-color" },
-            "disabled": {
-              "value": "{color.disabled.value}",
-              "themeable": true,
-              "source": "$custom-control-label-disabled-color"
-            }
+            "base": { "value": "null", "source": "$custom-control-label-color" },
+            "disabled": { "value": "{color.disabled.value}", "source": "$custom-control-label-disabled-color" }
           },
           "floating": {
             "text": { 
-              "value": "{form.input.bg.base.value}", 
-              "themeable": true, 
+              "value": "{form.input.bg.base.value}",
               "source": "$form-control-floating-label-text-bg",
               "modify": [{
                 "type": "alpha",
@@ -262,23 +212,14 @@
       "checkbox": {
         "indicator": {
           "border": {
-            "radius": { "value": "0", "themeable": true, "source": "$custom-checkbox-indicator-border-radius" }
+            "radius": { "value": "0", "source": "$custom-checkbox-indicator-border-radius" }
           },
           "indeterminate": {
-            "bg": {
-              "value": "{color.background.active.value}",
-              "themeable": true,
-              "source": "$custom-checkbox-indicator-indeterminate-bg"
-            },
-            "box-shadow": {
-              "value": "none",
-              "themeable": true,
-              "source": "$custom-checkbox-indicator-indeterminate-box-shadow"
-            },
+            "bg": { "value": "{color.background.active.value}", "source": "$custom-checkbox-indicator-indeterminate-bg" },
+            "box-shadow": { "value": "none", "source": "$custom-checkbox-indicator-indeterminate-box-shadow" },
             "border": {
               "color": {
                 "value": "{form.custom.checkbox.indicator.indeterminate.bg.value}",
-                "themeable": true,
                 "source": "$custom-checkbox-indicator-indeterminate-border-color"
               }
             }
@@ -288,31 +229,18 @@
       "radio": {
         "indicator": {
           "border": {
-            "radius": {
-              "value": "50%",
-              "themeable": true,
-              "source": "$custom-radio-indicator-border-radius"
-            }
+            "radius": { "value": "50%", "source": "$custom-radio-indicator-border-radius" }
           }
         }
       },
       "switch": {
-        "width": {
-          "value": "calc({form.custom.control.indicator.size.value} * 1.75)",
-          "themeable": true,
-          "source": "$custom-switch-width"
-        },
+        "width": { "value": "calc({form.custom.control.indicator.size.value} * 1.75)", "source": "$custom-switch-width" },
         "indicator": {
           "border": {
-            "radius": {
-              "value": "calc({form.custom.control.indicator.size.value} / 2)",
-              "themeable": true,
-              "source": "$custom-switch-indicator-border-radius"
-            }
+            "radius": { "value": "calc({form.custom.control.indicator.size.value} / 2)", "source": "$custom-switch-indicator-border-radius" }
           },
           "size": {
             "value": "calc({form.custom.control.indicator.size.value} - {form.custom.control.indicator.border.width.value} * 4)",
-            "themeable": true,
             "source": "$custom-switch-indicator-size"
           }
         }
@@ -320,238 +248,120 @@
       "select": {
         "padding": {
           "y": {
-            "base": { "value": "{form.input.padding.y.base.value}", "themeable": true, "source": "$custom-select-padding-y" },
-            "sm": { "value": "{form.input.padding.y.sm.value}", "themeable": true, "source": "$custom-select-padding-y-sm" },
-            "lg": { "value": "{form.input.padding.y.lg.value}", "themeable": true, "source": "$custom-select-padding-y-lg" }
+            "base": { "value": "{form.input.padding.y.base.value}", "source": "$custom-select-padding-y" },
+            "sm": { "value": "{form.input.padding.y.sm.value}", "source": "$custom-select-padding-y-sm" },
+            "lg": { "value": "{form.input.padding.y.lg.value}", "source": "$custom-select-padding-y-lg" }
           },
           "x": {
-            "base": {
-              "value": "{form.input.padding.x.base.value}",
-              "themeable": true,
-              "source": "$custom-select-padding-x"
-            },
-            "sm": {
-              "value": "{form.input.padding.x.sm.value}",
-              "themeable": true,
-              "source": "$custom-select-padding-x-sm"
-            },
-            "lg": {
-              "value": "{form.input.padding.x.lg.value}",
-              "themeable": true,
-              "source": "$custom-select-padding-x-lg"
-            }
+            "base": { "value": "{form.input.padding.x.base.value}", "source": "$custom-select-padding-x" },
+            "sm": { "value": "{form.input.padding.x.sm.value}", "source": "$custom-select-padding-x-sm" },
+            "lg": { "value": "{form.input.padding.x.lg.value}", "source": "$custom-select-padding-x-lg" }
           }
         },
         "font": {
-          "family": {
-            "value": "{form.input.font.family.value}",
-            "themeable": true,
-            "source": "$custom-select-font-family"
-          },
+          "family": { "value": "{form.input.font.family.value}", "source": "$custom-select-font-family" },
           "size": {
-            "base": {
-              "value": "{form.input.font.size.base.value}",
-              "themeable": true,
-              "source": "$custom-select-font-size"
-            },
-            "sm": {
-              "value": "{form.input.font.size.sm.value}",
-              "themeable": true,
-              "source": "$custom-select-font-size-sm"
-            },
-            "lg": {
-              "value": "{form.input.font.size.lg.value}",
-              "themeable": true,
-              "source": "$custom-select-font-size-lg"
-            }
+            "base": { "value": "{form.input.font.size.base.value}", "source": "$custom-select-font-size" },
+            "sm": { "value": "{form.input.font.size.sm.value}", "source": "$custom-select-font-size-sm" },
+            "lg": { "value": "{form.input.font.size.lg.value}", "source": "$custom-select-font-size-lg" }
           },
           "height": {
-            "base": {
-              "value": "{form.input.height.base.value}",
-              "themeable": true,
-              "source": "$custom-select-height"
-            },
-            "lg": {
-              "value": "{form.input.height.lg.value}",
-              "themeable": true,
-              "source": "$custom-select-height-lg"
-            }
+            "base": { "value": "{form.input.height.base.value}", "source": "$custom-select-height" },
+            "lg": { "value": "{form.input.height.lg.value}", "source": "$custom-select-height-lg" }
           },
-          "weight": {
-            "value": "{form.input.font.weight.value}",
-            "themeable": true,
-            "source": "$custom-select-font-weight"
-          }
+          "weight": { "value": "{form.input.font.weight.value}", "source": "$custom-select-font-weight" }
         },
         "line": {
-          "height": {
-            "value": "{form.input.line.height.base.value}",
-            "themeable": true,
-            "source": "$custom-select-line-height"
-          }
+          "height": { "value": "{form.input.line.height.base.value}", "source": "$custom-select-line-height" }
         },
         "indicator": {
-          "padding": { "value": "1rem", "themeable": true, "source": "$custom-select-indicator-padding" }
+          "padding": { "value": "1rem", "source": "$custom-select-indicator-padding" }
         },
         "color": {
-          "base": {
-            "value": "{form.input.color.base.value}",
-            "themeable": true,
-            "source": "$custom-select-color"
-          },
-          "disabled": {
-            "value": "{color.disabled.value}",
-            "themeable": true,
-            "source": "$custom-select-disabled-color"
-          }
+          "base": { "value": "{form.input.color.base.value}", "source": "$custom-select-color" },
+          "disabled": { "value": "{color.disabled.value}", "source": "$custom-select-disabled-color" }
         },
         "bg": {
-          "base": {
-            "value": "{form.input.bg.base.value}",
-            "themeable": true,
-            "source": "$custom-select-bg"
-          },
-          "disabled": {
-            "value": "{color.gray.100.value}",
-            "themeable": true,
-            "source": "$custom-select-disabled-bg"
-          },
-          "size": { "value": "24px 24px", "themeable": true, "source": "$custom-select-bg-size" }
+          "base": { "value": "{form.input.bg.base.value}", "source": "$custom-select-bg" },
+          "disabled": { "value": "{color.gray.100.value}", "source": "$custom-select-disabled-bg" },
+          "size": { "value": "24px 24px", "source": "$custom-select-bg-size" }
         },
         "feedback": {
           "icon": {
             "padding": {
               "right": {
                 "value": "calc((1em + 2 * {form.custom.select.padding.y.base.value}) * 3 / 4 + {form.custom.select.padding.x.base.value} + {form.custom.select.indicator.padding.value})",
-                "themeable": true,
                 "source": "$custom-select-feedback-icon-padding-right"
               }
             },
             "position": {
               "value": "center right calc({form.custom.select.padding.x.base.value} + {form.custom.select.indicator.padding.value})",
-              "themeable": true,
               "source": "$custom-select-feedback-icon-position"
             },
             "size": {
               "value": "{form.input.height.inner.half.value} {form.input.height.inner.half.value}",
-              "themeable": true,
               "source": "$custom-select-feedback-icon-size"
             }
           }
         },
         "border": {
           "width": {
-            "base": {
-              "value": "{form.input.border.width.value}",
-              "themeable": true,
-              "source": "$custom-select-border-width"
-            },
-            "focus": {
-              "value": "{form.input.focus.width.value}",
-              "themeable": true,
-              "source": "$custom-select-focus-width"
-            }
+            "base": { "value": "{form.input.border.width.value}", "source": "$custom-select-border-width" },
+            "focus": { "value": "{form.input.focus.width.value}", "source": "$custom-select-focus-width" }
           },
           "color": {
-            "base": {
-              "value": "{form.input.border.color.value}",
-              "themeable": true,
-              "source": "$custom-select-border-color"
-            },
-            "focus": {
-              "value": "{form.input.focus.color.border.value}",
-              "themeable": true,
-              "source": "$custom-select-focus-border-color"
-            }
+            "base": { "value": "{form.input.border.color.value}", "source": "$custom-select-border-color" },
+            "focus": { "value": "{form.input.focus.color.border.value}", "source": "$custom-select-focus-border-color" }
           },
-          "radius": {
-            "value": "{border.radius.base.value}",
-            "themeable": true,
-            "source": "$custom-select-border-radius"
-          },
+          "radius": { "value": "{border.radius.base.value}", "source": "$custom-select-border-radius" },
           "box-shadow": {
-            "base": {
-              "value": "inset 0 1px 2px rgba(0, 0, 0, .075)",
-              "themeable": true,
-              "source": "$custom-select-box-shadow"
-            },
-            "focus": {
-              "value": "{input.btn.focus.box-shadow.value}",
-              "themeable": true,
-              "source": "$custom-select-focus-box-shadow"
-            }
+            "base": { "value": "inset 0 1px 2px rgba(0, 0, 0, .075)", "source": "$custom-select-box-shadow" },
+            "focus": { "value": "{input.btn.focus.box-shadow.value}", "source": "$custom-select-focus-box-shadow" }
           }
         },
         "height": {
-          "sm": {
-            "value": "{form.input.height.sm.value}",
-            "themeable": true,
-            "source": "$custom-select-height-sm"
-          }
+          "sm": { "value": "{form.input.height.sm.value}", "source": "$custom-select-height-sm" }
         }
       },
       "range": {
         "track": {
-          "width": { "value": "100%", "themeable": true, "source": "$custom-range-track-width" },
-          "height": { "value": ".5rem", "themeable": true, "source": "$custom-range-track-height" },
-          "cursor": { "value": "pointer", "themeable": true, "source": "$custom-range-track-cursor" },
-          "bg": { "value": "{color.gray.300.value}", "themeable": true, "source": "$custom-range-track-bg" },
+          "width": { "value": "100%", "source": "$custom-range-track-width" },
+          "height": { "value": ".5rem", "source": "$custom-range-track-height" },
+          "cursor": { "value": "pointer", "source": "$custom-range-track-cursor" },
+          "bg": { "value": "{color.gray.300.value}", "source": "$custom-range-track-bg" },
           "border": {
-            "radius": { "value": "1rem", "themeable": true, "source": "$custom-range-track-border-radius" }
+            "radius": { "value": "1rem", "source": "$custom-range-track-border-radius" }
           },
-          "box-shadow": {
-            "value": "inset 0 .25rem .25rem rgba(0, 0, 0, .1)",
-            "themeable": true,
-            "source": "$custom-range-track-box-shadow"
-          }
+          "box-shadow": { "value": "inset 0 .25rem .25rem rgba(0, 0, 0, .1)", "source": "$custom-range-track-box-shadow" }
         },
         "thumb": {
-          "width": { "value": "1rem", "themeable": true, "source": "$custom-range-thumb-width" },
-          "height": {
-            "value": "{form.custom.range.thumb.width.value}",
-            "themeable": true,
-            "source": "$custom-range-thumb-height"
-          },
+          "width": { "value": "1rem", "source": "$custom-range-thumb-width" },
+          "height": { "value": "{form.custom.range.thumb.width.value}", "source": "$custom-range-thumb-height" },
           "bg": {
-            "base": {
-              "value": "{color.background.active.value}",
-              "themeable": true,
-              "source": "$custom-range-thumb-bg"
-            },
-            "disabled": {
-              "value": "{color.disabled.value}",
-              "themeable": true,
-              "source": "$custom-range-thumb-disabled-bg"
-            },
+            "base": { "value": "{color.background.active.value}", "source": "$custom-range-thumb-bg" },
+            "disabled": { "value": "{color.disabled.value}", "source": "$custom-range-thumb-disabled-bg" },
             "active": {
               "value": "{color.background.active.value}",
-              "themeable": true,
               "source": "$custom-range-thumb-active-bg",
               "modify": [{
-                "type": "brighten",
+                "type": "lighten",
                 "amount": "0.35"
               }]
             }
           },
           "border": {
-            "base": { "value": "0", "themeable": true, "source": "$custom-range-thumb-border" },
-            "radius": { "value": "1rem", "themeable": true, "source": "$custom-range-thumb-border-radius" }
+            "base": { "value": "0", "source": "$custom-range-thumb-border" },
+            "radius": { "value": "1rem", "source": "$custom-range-thumb-border-radius" }
           },
           "box-shadow": {
-            "base": {
-              "value": "0 .1rem .25rem rgba(0, 0, 0, .1)",
-              "themeable": true,
-              "source": "$custom-range-thumb-box-shadow"
-            },
+            "base": { "value": "0 .1rem .25rem rgba(0, 0, 0, .1)", "source": "$custom-range-thumb-box-shadow" },
             "focus": {
               "base": {
                 "value": "0 0 0 1px {body.bg.value}, {form.input.box-shadow.focus.value}",
-                "themeable": true,
                 "source": "$custom-range-thumb-focus-box-shadow"
               },
               "width": {
                 "value": "{form.input.focus.width.value}",
-                "themeable": true,
                 "source": "$custom-range-thumb-focus-box-shadow-width"
               }
             }
@@ -560,163 +370,75 @@
       },
       "file": {
         "height": {
-          "base": {
-            "value": "{form.input.height.base.value}",
-            "themeable": true,
-            "source": "$custom-file-height"
-          },
-          "inner": {
-            "value": "{form.input.height.inner.base.value}",
-            "themeable": true,
-            "source": "$custom-file-height-inner"
-          }
+          "base": { "value": "{form.input.height.base.value}",  "source": "$custom-file-height" },
+          "inner": { "value": "{form.input.height.inner.base.value}", "source": "$custom-file-height-inner" }
         },
         "border": {
           "color": {
-            "base": {
-              "value": "{form.input.border.color.value}",
-              "themeable": true,
-              "source": "$custom-file-border-color"
-            },
-            "focus": {
-              "value": "{form.input.focus.color.border.value}",
-              "themeable": true,
-              "source": "$custom-file-focus-border-color"
-            },
-            "radius": {
-              "value": "{form.input.border.radius.base.value}",
-              "themeable": true,
-              "source": "$custom-file-border-radius"
-            }
+            "base": { "value": "{form.input.border.color.value}", "source": "$custom-file-border-color" },
+            "focus": { "value": "{form.input.focus.color.border.value}", "source": "$custom-file-focus-border-color" },
+            "radius": { "value": "{form.input.border.radius.base.value}", "source": "$custom-file-border-radius" }
           },
-          "width": {
-            "value": "{form.input.border.width.value}",
-            "themeable": true,
-            "source": "$custom-file-border-width"
-          }
+          "width": { "value": "{form.input.border.width.value}", "source": "$custom-file-border-width" }
         },
         "box-shadow": {
-          "base": {
-            "value": "{form.input.box-shadow.base.value}",
-            "themeable": true,
-            "source": "$custom-file-box-shadow"
-          },
-          "focus": {
-            "value": "{form.input.box-shadow.focus.value}",
-            "themeable": true,
-            "source": "$custom-file-focus-box-shadow"
-          }
+          "base": { "value": "{form.input.box-shadow.base.value}", "source": "$custom-file-box-shadow" },
+          "focus": { "value": "{form.input.box-shadow.focus.value}", "source": "$custom-file-focus-box-shadow" }
         },
         "bg": {
-          "base": {
-            "value": "{form.input.bg.base.value}",
-            "themeable": true,
-            "source": "$custom-file-bg"
-          },
-          "disabled": {
-            "value": "{form.input.bg.disabled.value}",
-            "themeable": true,
-            "source": "$custom-file-disabled-bg"
-          }
+          "base": { "value": "{form.input.bg.base.value}", "source": "$custom-file-bg" },
+          "disabled": { "value": "{form.input.bg.disabled.value}", "source": "$custom-file-disabled-bg" }
         },
         "padding": {
-          "y": {
-            "value": "{form.input.padding.y.base.value}",
-            "themeable": true,
-            "source": "$custom-file-padding-y"
-          },
-          "x": {
-            "value": "{form.input.padding.x.base.value}",
-            "themeable": true,
-            "source": "$custom-file-padding-x"
-          }
+          "y": { "value": "{form.input.padding.y.base.value}", "source": "$custom-file-padding-y" },
+          "x": { "value": "{form.input.padding.x.base.value}", "source": "$custom-file-padding-x" }
         },
         "line": {
-          "height": {
-            "value": "{form.input.line.height.base.value}",
-            "themeable": true,
-            "source": "$custom-file-line-height"
-          }
+          "height": { "value": "{form.input.line.height.base.value}", "source": "$custom-file-line-height" }
         },
         "font": {
-          "family": {
-            "value": "{form.input.font.family.value}",
-            "themeable": true,
-            "source": "$custom-file-font-family"
-          },
-          "weight": {
-            "value": "{form.input.font.weight.value}",
-            "themeable": true,
-            "source": "$custom-file-font-weight"
-          }
+          "family": { "value": "{form.input.font.family.value}", "source": "$custom-file-font-family" },
+          "weight": { "value": "{form.input.font.weight.value}", "source": "$custom-file-font-weight" }
         },
-        "color": {
-          "value": "{form.input.color.base.value}",
-          "themeable": true,
-          "source": "$custom-file-color"
-        },
+        "color": { "value": "{form.input.color.base.value}", "source": "$custom-file-color"},
         "button": {
-          "color": {
-            "value": "{form.custom.file.color.value}",
-            "themeable": true,
-            "source": "$custom-file-button-color"
-          },
-          "bg": {
-            "value": "{form.input.group.addon.bg.value}",
-            "themeable": true,
-            "source": "$custom-file-button-bg"
-          }
+          "color": { "value": "{form.custom.file.color.value}", "source": "$custom-file-button-color" },
+          "bg": { "value": "{form.input.group.addon.bg.value}", "source": "$custom-file-button-bg" }
         }
       }
     },
     "feedback": {
       "margin": {
-        "top": {
-          "value": "{form.text.margin.top.value}",
-          "themeable": true,
-          "source": "$form-feedback-margin-top"
-        }
+        "top": { "value": "{form.text.margin.top.value}", "source": "$form-feedback-margin-top" }
       },
       "font": {
-        "size": {
-          "value": "{font.size.small.base.value}",
-          "themeable": true,
-          "source": "$form-feedback-font-size"
-        }
+        "size": { "value": "{font.size.small.base.value}", "source": "$form-feedback-font-size" }
       },
       "tooltip": {
         "padding": {
-          "y": { "value": ".25rem", "themeable": true, "source": "$form-feedback-tooltip-padding-y" },
-          "x": { "value": ".5rem", "themeable": true, "source": "$form-feedback-tooltip-padding-x" }
+          "y": { "value": ".25rem", "source": "$form-feedback-tooltip-padding-y" },
+          "x": { "value": ".5rem", "source": "$form-feedback-tooltip-padding-x" }
         },
         "font": {
-          "size": { "value": "{font.size.sm.value}", "themeable": true, "source": "$form-feedback-tooltip-font-size" }
+          "size": { "value": "{font.size.sm.value}", "source": "$form-feedback-tooltip-font-size" }
         },
         "line": {
-          "height": {
-            "value": "{line-height.base.value}",
-            "themeable": true,
-            "source": "$form-feedback-tooltip-line-height"
-          }
+          "height": { "value": "{line-height.base.value}", "source": "$form-feedback-tooltip-line-height" }
         },
-        "opacity": { "value": ".9", "themeable": true, "source": "$form-feedback-tooltip-opacity" },
+        "opacity": { "value": ".9", "source": "$form-feedback-tooltip-opacity" },
         "border": {
-          "radius": {
-            "value": "{border.radius.base.value}",
-            "themeable": true,
-            "source": "$form-feedback-tooltip-border-radius"
-          }
+          "radius": { "value": "{border.radius.base.value}", "source": "$form-feedback-tooltip-border-radius" }
         }
       }
     },
     "control": {
       "icon": {
-        "width": { "value": "32px", "themeable": true, "source": "$form-control-icon-width" }
+        "width": { "value": "32px", "source": "$form-control-icon-width" }
       }
     },
     "select": {
       "icon": {
-        "padding": { "value": ".5625rem", "themeable": true, "source": "$select-icon-padding" }
+        "padding": { "value": ".5625rem", "source": "$select-icon-padding" }
       }
     }
   }

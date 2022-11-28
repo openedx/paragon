@@ -1,8 +1,10 @@
 {
   "icon": {
-    "inline": { "value": ".8em", "themeable": true, "source": "$icon-inline" },
-    "sm": { "value": "1.25rem", "themeable": true, "source": "$icon-sm" },
-    "md": { "value": "1.5rem", "themeable": true, "source": "$icon-md" },
-    "lg": { "value": "1.75rem", "themeable": true, "source": "$icon-lg" }
+    "size": {
+      "inline": { "value": ".8em", "source": "$icon-inline" },
+      "sm": { "value": "1.25rem", "source": "$icon-sm" },
+      "md": { "value": "1.5rem", "source": "$icon-md" },
+      "lg": { "value": "1.75rem", "source": "$icon-lg" }
+    }
   }
 }
