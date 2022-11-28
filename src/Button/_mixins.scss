@@ -1,0 +1,63 @@
+// OVERRIDE FROM BOOTSTRAP
+// No changes made. We do this to keep all button related mixins together,
+//
+// Button sizes
+@mixin button-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
+  padding: $padding-y $padding-x;
+
+  @include font-size($font-size);
+
+  line-height: $line-height;
+
+  // Manually declare to provide an override to the browser default
+  @include border-radius($border-radius, 0);
+}
+
+// ------------------------
+// BELOW ARE EDX EXTENSIONS
+// ------------------------
+@mixin button-focus($ring-color) {
+  &.focus,
+  &:focus {
+    position: relative;
+    outline: 0;
+    box-shadow: none;
+
+    $distance: calc(#{$btn-focus-width} + #{$btn-focus-gap});
+    $distance-include-btn-border: calc(#{$distance} + #{$btn-border-width});
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(#{$distance-include-btn-border} * -1);
+      right: calc(#{$distance-include-btn-border} * -1);
+      bottom: calc(#{$distance-include-btn-border} * -1);
+      left: calc(#{$distance-include-btn-border} * -1);
+      border: solid $btn-focus-width $ring-color;
+      border-radius: calc(#{$btn-border-radius} + #{$distance});
+    }
+
+    &.btn-lg::before {
+      border-radius: calc(#{$btn-border-radius-lg} + #{$distance});
+    }
+
+    &.btn-sm::before {
+      border-radius: calc(#{$btn-border-radius-sm} + #{$distance});
+    }
+
+    &:active,
+    &.active {
+      &::before {
+        opacity: .75;
+      }
+    }
+
+    // Disabled buttons should not have focus rings
+    &:disabled,
+    &.disabled {
+      &::before {
+        display: none;
+      }
+    }
+  }
+}

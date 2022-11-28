@@ -5,7 +5,7 @@
   grid-auto-rows: 1fr;
   grid-gap: $selectable-box-space;
 
-  @for $i from $min-cols-number through $max-cols-number {
+  @for $i from 1 through 12 {
     &.pgn__selectable_box-set--#{$i} {
       grid-template-columns: repeat(#{$i}, 1fr);
     }

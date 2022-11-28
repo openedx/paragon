@@ -1,0 +1,105 @@
+@import "variables";
+
+.pgn__chip {
+  background: var(--pgn-chip-bg, $light-500);
+  border-radius: $chip-border-radius;
+  display: inline-flex;
+  margin: $chip-margin;
+  box-sizing: border-box;
+
+  .pgn__chip__label {
+    font-size: $font-size-sm;
+    padding: $chip-padding-y $chip-padding-x;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+    cursor: default;
+
+    &.p-before {
+      padding-left: $chip-padding-to-icon;
+
+      [dir="rtl"] & {
+        padding-left: $chip-padding-x;
+        padding-right: $chip-padding-to-icon;
+      }
+    }
+
+    &.p-after {
+      padding-right: $chip-padding-to-icon;
+
+      [dir="rtl"] & {
+        padding-right: $chip-padding-x;
+        padding-left: $chip-padding-to-icon;
+      }
+    }
+  }
+
+  .pgn__chip__icon-before,
+  .pgn__chip__icon-after {
+    align-items: center;
+    display: flex;
+    padding-left: $chip-icon-padding;
+    padding-right: $chip-icon-padding;
+    box-sizing: border-box;
+    cursor: default;
+
+    .pgn__icon {
+      width: $chip-icon-size;
+      height: $chip-icon-size;
+    }
+
+    &.active:hover,
+    &.active:focus {
+      cursor: pointer;
+      background: $black;
+
+      * {
+        color: $white;
+        fill: $white;
+      }
+    }
+  }
+
+  .pgn__chip__icon-before {
+    border-radius: $chip-border-radius 0 0 $chip-border-radius;
+
+    [dir="rtl"] & {
+      border-radius: 0 $chip-border-radius $chip-border-radius 0;
+    }
+  }
+
+  .pgn__chip__icon-after {
+    border-radius: 0 $chip-border-radius $chip-border-radius 0;
+
+    [dir="rtl"] & {
+      border-radius: $chip-border-radius 0 0 $chip-border-radius;
+    }
+  }
+
+  * {
+    color: var(--pgn-chip-color, inherit);
+    fill: var(--pgn-chip-color, inherit);
+  }
+
+  &.disabled,
+  &:disabled {
+    cursor: default;
+    opacity: $chip-disable-opacity;
+    pointer-events: none;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.pgn__chip-light {
+  --pgn-chip-color: #{$chip-light-color};
+  --pgn-chip-bg: #{$chip-light-bg};
+}
+
+.pgn__chip-dark {
+  --pgn-chip-color: #{$chip-dark-color};
+  --pgn-chip-bg: #{$chip-dark-bg};
+}

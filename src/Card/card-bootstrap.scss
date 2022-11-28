@@ -46,95 +46,6 @@
   color: $card-color;
 }
 
-.card-title {
-  margin-bottom: $card-spacer-y;
-}
-
-.card-subtitle {
-  margin-top: calc($card-spacer-y * -.5);
-  margin-bottom: 0;
-}
-
-.card-text:last-child {
-  margin-bottom: 0;
-}
-
-.card-link {
-  @include hover() {
-    text-decoration: none;
-  }
-
-  + .card-link {
-    margin-left: $card-spacer-x;
-  }
-}
-
-// Optional textual caps
-.card-header {
-  padding: $card-spacer-y $card-spacer-x;
-  margin-bottom: 0; // Removes the default margin-bottom of <hN>
-  color: $card-cap-color;
-  background-color: $card-cap-bg;
-  border-bottom: $card-border-width solid $card-border-color;
-
-  &:first-child {
-    @include border-radius($card-inner-border-radius $card-inner-border-radius 0 0);
-  }
-}
-
-.card-footer {
-  padding: $card-spacer-y $card-spacer-x;
-  color: $card-cap-color;
-  background-color: $card-cap-bg;
-  border-top: $card-border-width solid $card-border-color;
-
-  &:last-child {
-    @include border-radius(0 0 $card-inner-border-radius $card-inner-border-radius);
-  }
-}
-
-// Header navs
-.card-header-tabs {
-  margin-right: calc($card-spacer-x * -.5);
-  margin-bottom: calc($card-spacer-y * -1);
-  margin-left: calc($card-spacer-x * -.5);
-  border-bottom: 0;
-}
-
-.card-header-pills {
-  margin-right: calc($card-spacer-x * -.5);
-  margin-left: calc($card-spacer-x * .5);
-}
-
-// Card image
-.card-img-overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: $card-img-overlay-padding;
-
-  @include border-radius($card-inner-border-radius);
-}
-
-.card-img,
-.card-img-top,
-.card-img-bottom {
-  flex-shrink: 0;
-  width: 100%;
-}
-
-.card-img,
-.card-img-top {
-  @include border-top-radius($card-inner-border-radius);
-}
-
-.card-img,
-.card-img-bottom {
-  @include border-bottom-radius($card-inner-border-radius);
-}
-
 // Card deck
 .card-deck {
   .card {
@@ -144,8 +55,8 @@
   @include media-breakpoint-up(sm) {
     display: flex;
     flex-flow: row wrap;
-    margin-right: calc($card-deck-margin * -1);
-    margin-left: calc($card-deck-margin * -1);
+    margin-right: calc(#{$card-deck-margin} * -1);
+    margin-left: calc(#{$card-deck-margin} * -1);
 
     .card {
       flex: 1 0 0%;
@@ -248,7 +159,7 @@
     > .card-header {
       @include border-radius(0);
 
-      margin-bottom: calc($card-border-width * -1);
+      margin-bottom: calc(#{$card-border-width} * -1);
     }
   }
 }

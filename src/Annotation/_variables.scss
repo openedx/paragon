@@ -5,12 +5,27 @@ $annotation-max-width: var(--pgn-annotation-max-width) !default;
 $annotation-font-size: var(--pgn-annotation-font-size) !default;
 $annotation-line-height: var(--pgn-annotation-line-height) !default;
 
+$annotation-success-color: var(--pgn-annotation-color-text-success) !default;
+$annotation-success-bg: var(--pgn-annotation-color-bg-success) !default;
+
+$annotation-warning-color: var(--pgn-annotation-color-text-warning) !default;
+$annotation-warning-bg: var(--pgn-annotation-color-bg-warning) !default;
+
+$annotation-error-color: var(--pgn-annotation-color-text-error) !default;
+$annotation-error-bg: var(--pgn-annotation-color-bg-error) !default;
+
+$annotation-light-color: var(--pgn-annotation-color-text-light) !default;
+$annotation-light-bg: var(--pgn-annotation-color-bg-light) !default;
+
+$annotation-dark-color: var(--pgn-annotation-color-text-dark) !default;
+$annotation-dark-bg: var(--pgn-annotation-color-bg-dark) !default;
+
 $annotation-variants: (
-  "success": ( "background-color": var(--pgn-color-success-base), "color": var(--pgn-color-white) ),
-  "warning": ( "background-color": var(--pgn-color-accent-b), "color": var(--pgn-color-black) ),
-  "error":   ( "background-color": var(--pgn-color-danger-base), "color": var(--pgn-color-white) ),
-  "light":   ( "background-color": var(--pgn-color-white), "color": var(--pgn-color-primary-500) ),
-  "dark":    ( "background-color": var(--pgn-color-dark-base), "color": var(--pgn-color-white) ),
+  "success": ( "background-color": $annotation-success-bg, "color": $annotation-success-color ),
+  "warning": ( "background-color": $annotation-warning-bg, "color": $annotation-warning-color ),
+  "error":   ( "background-color": $annotation-error-bg, "color": $annotation-error-color ),
+  "light":   ( "background-color": $annotation-light-bg, "color": $annotation-light-color ),
+  "dark":    ( "background-color": $annotation-dark-bg, "color": $annotation-dark-color ),
 ) !default;
 
 $annotation-arrow-side-margin: var(--pgn-annotation-arrow-side-margin) !default;
