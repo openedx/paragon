@@ -48,6 +48,8 @@
   display: inline-flex;
   justify-content: center;
   border: none;
+  background-color: var(--pgn-icon-button-bg, transparent);
+  color: var(--pgn-icon-button-color, inherit);
 
   &.btn-icon-sm {
     @include btn-icon-size($btn-icon-diameter-sm);

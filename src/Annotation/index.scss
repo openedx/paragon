@@ -74,17 +74,17 @@ $arrow-directions: top, right, bottom, left;
       color: map-get($colors, "color");
 
       // set additional margin to arrow side of the Annotation
-      margin-#{$direction}: calc($annotation-arrow-border-width + $annotation-arrow-side-margin);
+      margin-#{$direction}: calc(#{$annotation-arrow-border-width} + #{$annotation-arrow-side-margin});
 
       [dir="rtl"] & {
         @if $direction == left {
           margin-left: 0;
-          margin-right: calc($annotation-arrow-border-width + $annotation-arrow-side-margin);
+          margin-right: calc(#{$annotation-arrow-border-width} + #{$annotation-arrow-side-margin});
         }
 
         @else if $direction == right {
           margin-right: 0;
-          margin-left: calc($annotation-arrow-border-width + $annotation-arrow-side-margin);
+          margin-left: calc(#{$annotation-arrow-border-width} + #{$annotation-arrow-side-margin});
         }
       }
 

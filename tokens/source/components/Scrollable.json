@@ -2,8 +2,7 @@
   "scrollable": {
     "body": {
       "box-shadow": {
-        "value": "{color.black.value}", 
-        "themeable": true, 
+        "value": "{color.black.value}",
         "source": "$scrollable-body-box-shadow",
         "modify": [{
           "type": "alpha",

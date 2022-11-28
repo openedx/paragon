@@ -1,6 +1,7 @@
 @import "functions";
 @import "variables";
 @import "~bootstrap/scss/mixins";
+@import "./bootstrap-override/mixins";
 @import "grid";
 @import "~bootstrap/scss/transitions";
 @import "utilities";

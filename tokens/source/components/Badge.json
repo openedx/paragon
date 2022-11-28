@@ -1,25 +1,219 @@
 {
   "badge": {
     "font": {
-      "size": { "value": "75%", "themeable": true, "source": "$badge-font-size" },
-      "weight": { "value": "{font.weight.bold.value}", "themeable": true, "source": "$badge-font-weight" }
+      "size": { "value": "75%", "source": "$badge-font-size" },
+      "weight": { "value": "{font.weight.bold.value}", "source": "$badge-font-weight" }
     },
     "padding": {
       "x": {
-        "base": { "value": ".5rem", "themeable": true, "source": "$badge-padding-x" },
-        "pill": { "value": ".6em", "themeable": true, "source": "$badge-pill-padding-x" }
+        "base": { "value": ".5rem", "source": "$badge-padding-x" },
+        "pill": { "value": ".6em", "source": "$badge-pill-padding-x" }
       },
-      "y": { "value": ".125rem", "themeable": true, "source": "$badge-padding-y" }
+      "y": { "value": ".125rem", "source": "$badge-padding-y" }
     },
     "border": {
       "radius": {
-        "base": { "value": ".25rem", "themeable": true, "source": "$badge-border-radius" },
-        "pill": { "value": "10rem", "themeable": true, "source": "$badge-pill-border-radius" }
+        "base": { "value": ".25rem", "source": "$badge-border-radius" },
+        "pill": { "value": "10rem", "source": "$badge-pill-border-radius" }
       }
     },
-    "transition": { "value": "none", "themeable": true, "source": "$badge-transition" },
+    "transition": { "value": "none", "source": "$badge-transition" },
     "focus": {
-      "width": { "value": "{input.btn.focus.width.value}", "themeable": true, "source": "$badge-focus-width" }
+      "width": {"value": "{input.btn.focus.width.value}", "source": "$badge-focus-width"}
+    },
+    "color": {
+      "primary": { "value": "{color.primary.base.value}", "source": "$badge-primary-color", "modify": [{ "type": "color-yiq" }] },
+      "secondary": { "value": "{color.secondary.base.value}", "source": "$badge-secondary-color", "modify": [{ "type": "color-yiq" }] },
+      "success": { "value": "{color.success.base.value}", "source": "$badge-success-color", "modify": [{ "type": "color-yiq" }] },
+      "danger": { "value": "{color.danger.base.value}", "source": "$badge-danger-color", "modify": [{ "type": "color-yiq" }] },
+      "warning": { "value": "{color.warning.base.value}", "source": "$badge-warning-color", "modify": [{ "type": "color-yiq" }] },
+      "info": { "value": "{color.info.base.value}", "source": "$badge-info-color", "modify": [{ "type": "color-yiq" }] },
+      "light": { "value": "{color.light.base.value}", "source": "$badge-light-color", "modify": [{ "type": "color-yiq" }] },
+      "dark": { "value": "{color.dark.base.value}", "source": "$badge-dark-color", "modify": [{ "type": "color-yiq" }] },
+      "bg": {
+        "primary": { "value": "{color.primary.base.value}", "source": "$badge-primary-bg" },
+        "secondary": { "value": "{color.secondary.base.value}", "source": "$badge-secondary-bg" },
+        "success": { "value": "{color.success.base.value}", "source": "$badge-success-bg" },
+        "warning": { "value": "{color.warning.base.value}", "source": "$badge-warning-bg" },
+        "danger": { "value": "{color.danger.base.value}", "source": "$badge-danger-bg" },
+        "info": { "value": "{color.info.base.value}", "source": "$badge-info-bg" },
+        "light": { "value": "{color.light.base.value}", "source": "$badge-light-bg" },
+        "dark": { "value": "{color.dark.base.value}", "source": "$badge-dark-bg" }
+      },
+      "focus": {
+        "primary": { "value": "{badge.color.primary.value}", "source": "$badge-primary-focus-color" },
+        "secondary": { "value": "{badge.color.secondary.value}", "source": "$badge-secondary-focus-color" },
+        "success": { "value": "{badge.color.success.value}", "source": "$badge-success-focus-color" },
+        "warning": { "value": "{badge.color.warning.value}", "source": "$badge-warning-focus-color" },
+        "danger": { "value": "{badge.color.danger.value}", "source": "$badge-danger-focus-color" },
+        "info": { "value": "{badge.color.info.value}", "source": "$badge-info-focus-color" },
+        "light": { "value": "{badge.color.light.value}", "source": "$badge-light-focus-color" },
+        "dark": { "value": "{badge.color.dark.value}", "source": "$badge-dark-focus-color" },
+        "bg": {
+          "primary": {
+            "value": "{badge.color.bg.primary.value}",
+            "source": "$badge-primary-focus-bg",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ]
+          },
+          "secondary": {
+            "value": "{badge.color.bg.secondary.value}",
+            "source": "$badge-secondary-focus-bg",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ]
+          },
+          "success": {
+            "value": "{badge.color.bg.success.value}",
+            "source": "$badge-success-focus-bg",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ]
+          },
+          "danger": {
+            "value": "{badge.color.bg.danger.value}",
+            "source": "$badge-danger-focus-bg",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ]
+          },
+          "warning": {
+            "value": "{badge.color.bg.warning.value}",
+            "source": "$badge-warning-focus-bg",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ]
+          },
+          "info": {
+            "value": "{badge.color.bg.info.value}",
+            "source": "$badge-info-focus-bg",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ]
+          },
+          "light": {
+            "value": "{badge.color.bg.light.value}",
+            "source": "$badge-light-focus-bg",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ]
+          },
+          "dark": {
+            "value": "{badge.color.bg.dark.value}",
+            "source": "$badge-dark-focus-bg",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ]
+          }
+        },
+        "box-shadow": {
+          "primary": {
+            "value": "{badge.color.bg.primary.value}",
+            "source": "$badge-primary-focus-box-shadow-color",
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ]
+          },
+          "secondary": {
+            "value": "{badge.color.bg.secondary.value}",
+            "source": "$badge-secondary-focus-box-shadow-color",
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ]
+          },
+          "success": {
+            "value": "{badge.color.bg.success.value}",
+            "source": "$badge-success-focus-box-shadow-color",
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ]
+          },
+          "danger": {
+            "value": "{badge.color.bg.danger.value}",
+            "source": "$badge-danger-focus-box-shadow-color",
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ]
+          },
+          "warning": {
+            "value": "{badge.color.bg.warning.value}",
+            "source": "$badge-warning-focus-box-shadow-color",
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ]
+          },
+          "info": {
+            "value": "{badge.color.bg.info.value}",
+            "source": "$badge-info-focus-box-shadow-color",
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ]
+          },
+          "light": {
+            "value": "{badge.color.bg.light.value}",
+            "source": "$badge-light-focus-box-shadow-color",
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ]
+          },
+          "dark": {
+            "value": "{badge.color.bg.dark.value}",
+            "source": "$badge-dark-focus-box-shadow-color",
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ]
+          }
+        }
+      }
     }
   }
 }

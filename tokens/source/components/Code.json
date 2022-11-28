@@ -1,35 +1,34 @@
 {
   "code": {
     "font": {
-      "size": { "value": "87.5%", "themeable": true, "source": "$code-font-size" }
+      "size": { "value": "87.5%", "source": "$code-font-size" }
     },
-    "color": { "value": "#E83E8C", "themeable": true, "source": "$code-color" },
+    "color": { "value": "#E83E8C", "source": "$code-color" },
     "kbd": {
       "font": {
-        "size": { "value": "{code.font.size.value}", "themeable": true, "source": "$kbd-font-size" }
+        "size": { "value": "{code.font.size.value}", "source": "$kbd-font-size" }
       },
       "box-shadow": {
         "value": "inset 0 -.1rem 0 rgba(0, 0, 0, .25)",
-        "themeable": true,
         "source": "$kbd-box-shadow"
       },
       "nested": {
         "font": {
-          "weight": { "value": "{font.weight.bold.value}", "themeable": true, "source": "$nested-kbd-font-weight" }
+          "weight": { "value": "{font.weight.bold.value}", "source": "$nested-kbd-font-weight" }
         }
       },
       "padding": {
-        "y": { "value": ".2rem", "themeable": true, "source": "$kbd-padding-y" },
-        "x": { "value": ".4rem", "themeable": true, "source": "$kbd-padding-x" }
+        "y": { "value": ".2rem", "source": "$kbd-padding-y" },
+        "x": { "value": ".4rem", "source": "$kbd-padding-x" }
       },
-      "color": { "value": "{color.white.value}", "themeable": true, "source": "$kbd-color" },
-      "bg": { "value": "{color.gray.700.value}", "themeable": true, "source": "$kbd-bg" }
+      "color": { "value": "{color.white.value}", "source": "$kbd-color" },
+      "bg": { "value": "{color.gray.700.value}", "source": "$kbd-bg" }
     },
     "pre": {
-      "color": { "value": "{color.gray.900.value}", "themeable": true, "source": "$pre-color" },
+      "color": { "value": "{color.gray.900.value}", "source": "$pre-color" },
       "scrollable": {
         "max": {
-          "height": { "value": "340px", "themeable": true, "source": "$pre-scrollable-max-height" }
+          "height": { "value": "340px", "source": "$pre-scrollable-max-height" }
         }
       }
     }
