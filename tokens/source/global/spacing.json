@@ -1,17 +1,17 @@
 {
   "spacer": {
-    "base": { "value": "1rem", "themeable": true, "source": "$spacer" },
-    "0": { "value": "0", "themeable": true },
-    "1": { "value": "calc({spacer.base.value} * .25rem)", "themeable": true },
-    "1,5": { "value": "calc({spacer.base.value} * .375rem)", "themeable": true },
-    "2": { "value": "calc({spacer.base.value} * .5rem)", "themeable": true },
-    "2,5": { "value": "calc({spacer.base.value} * .75rem)", "themeable": true },
-    "3": { "value": "{spacer.base.value}", "themeable": true },
-    "3,5": { "value": "calc({spacer.base.value} * 1.25rem)", "themeable": true },
-    "4": { "value": "calc({spacer.base.value} * 1.5rem)", "themeable": true },
-    "4,5": { "value": "calc({spacer.base.value} * 2rem)", "themeable": true },
-    "5": { "value": "calc({spacer.base.value} * 3rem)", "themeable": true },
-    "5,5": { "value": "calc({spacer.base.value} * 4rem)", "themeable": true },
-    "6": { "value": "calc({spacer.base.value} * 5rem)", "themeable": true }
+    "base": { "value": "1rem", "source": "$spacer" },
+    "0": { "value": "0" },
+    "1": { "value": "calc({spacer.base.value} * .25rem)" },
+    "1,5": { "value": "calc({spacer.base.value} * .375rem)" },
+    "2": { "value": "calc({spacer.base.value} * .5rem)" },
+    "2,5": { "value": "calc({spacer.base.value} * .75rem)" },
+    "3": { "value": "{spacer.base.value}" },
+    "3,5": { "value": "calc({spacer.base.value} * 1.25rem)" },
+    "4": { "value": "calc({spacer.base.value} * 1.5rem)" },
+    "4,5": { "value": "calc({spacer.base.value} * 2rem)" },
+    "5": { "value": "calc({spacer.base.value} * 3rem)" },
+    "5,5": { "value": "calc({spacer.base.value} * 4rem)" },
+    "6": { "value": "calc({spacer.base.value} * 5rem)" }
   }
 }
