@@ -1,43 +1,26 @@
 {
   "chip": {
     "padding": {
-      "y": { "value": ".125rem", "themeable": true, "source": "$chip-padding-y" },
-      "x": { "value": ".5rem", "themeable": true, "source": "$chip-padding-x" },
-      "icon": { 
-        "base": {
-          "value": ".25rem", "themeable": true, "source": "$chip-icon-padding" 
-        },
-        "to": {
-          "value": "3px", "themeable": true, "source": "$chip-padding-to-icon"
-        }
-      }
+      "y": { "value": ".125rem", "source": "$chip-padding-y" },
+      "x": { "value": ".5rem", "source": "$chip-padding-x" },
+      "icon": { "value": ".25rem", "source": "$chip-icon-padding" },
+      "to-icon": { "value": "3px", "source": "$chip-padding-to-icon" }
     },
-    "margin": {
-      "base": { "value": ".125rem", "themeable": true, "source": "$chip-margin" },
-      "inline": { "value": ".5rem", "themeable": true, "source": "$chip-margin-inline" }
+    "margin": { "value": ".125rem", "source": "$chip-margin" },
+    "border-radius": { "value": ".25rem", "source": "$chip-border-radius" },
+    "opacity": {
+      "disabled": { "value": ".3", "source": "$chip-disable-opacity" }
     },
-    "border": {
-      "radius": {
-        "base": { "value": ".4375rem", "themeable": true, "source": "$chip-border-radius" },
-        "focus": { "value": ".5rem", "themeable": true, "source": "$chip-focus-border-radius" }
+    "icon-size": { "value": "1.25rem", "source": "$chip-icon-size" },
+    "color": {
+      "text": {
+        "light": { "value": "{color.black.value}", "source": "$chip-light-color" },
+        "dark": { "value": "{color.white.value}", "source": "$chip-dark-color" }
       },
-      "width": { "value": ".0625rem", "themeable": true, "source": "$chip-border-width" }
-    },
-    "position": {
-      "axis": { "value": ".125rem", "themeable": true, "source": "$chip-position-axis" }
-    },
-    "font": {
-      "size": { "value": ".75rem", "themeable": true, "source": "$chip-font-size" },
-      "weight": { "value": "400", "themeable": true, "source": "$chip-font-weight" }
-    },
-    "line": {
-      "height": { "value": "1.5rem", "themeable": true, "source": "$chip-line-height" }
-    },
-    "disabled": {
-      "opacity": { "value": ".3", "themeable": true, "source": "$chip-disable-opacity" }
-    },
-    "icon": {
-      "size": { "value": "1.25rem", "themeable": true, "source": "$chip-icon-size" }
+      "bg": {
+        "light": { "value": "{color.light.500.value}", "source": "$chip-light-bg" },
+        "dark": { "value": "{color.dark.200.value}", "source": "$chip-dark-bg" }
+      }
     }
   }
 }

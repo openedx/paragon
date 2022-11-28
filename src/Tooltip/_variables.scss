@@ -11,7 +11,7 @@ $tooltip-padding-x: var(--pgn-tooltip-padding-x) !default;
 $tooltip-margin: var(--pgn-tooltip-margin) !default;
 $tooltip-box-shadow: var(--pgn-tooltip-box-shadow) !default;
 
-$tooltip-arrow-width: .8rem !default;
+$tooltip-arrow-width: var(--pgn-tooltip-arrow-width) !default;
 $tooltip-arrow-height: var(--pgn-tooltip-arrow-height) !default;
 $tooltip-arrow-color: var(--pgn-tooltip-arrow-color-base) !default;
 

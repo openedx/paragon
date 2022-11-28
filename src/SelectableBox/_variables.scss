@@ -1,7 +1,3 @@
 $selectable-box-padding: var(--pgn-selectable-box-padding) !default;
 $selectable-box-border-radius: var(--pgn-selectable-box-border-radius) !default;
 $selectable-box-space: var(--pgn-selectable-box-box-space) !default;
-
-// TODO can't use css variables due to conflict with SCSS functions
-$min-cols-number:                          1 !default;
-$max-cols-number:                          12 !default;

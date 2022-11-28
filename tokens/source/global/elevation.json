@@ -3,182 +3,152 @@
     "level": {
       "1": {
         "value": "0 .0625rem .125rem rgba(0, 0, 0, .15), 0 .0625rem .25rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$level-1-box-shadow"
       },
       "2": {
         "value": "0 .125rem .25rem rgba(0, 0, 0, .15), 0 .125rem .5rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$level-2-box-shadow"
       },
       "3": {
         "value": "0 0 .625rem rgba(0, 0, 0, .15), 0 0 1rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$level-3-box-shadow"
       },
       "4": {
         "value": "0 .625rem 1.25rem rgba(0, 0, 0, .15), 0 .5rem 1.25rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$level-4-box-shadow"
       },
       "5": {
         "value": "0 1.25px 2.5rem rgba(0, 0, 0, .15), 0 .5rem 2.5rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$level-5-box-shadow"
       }
     },
-    "base": { "value": "0 .125rem .25rem rgba(0, 0, 0, .3)", "themeable": true, "source": "$box-shadow" },
-    "sm": { "value": "0 .0625rem .125rem rgba(0, 0, 0, .2)", "themeable": true, "source": "$box-shadow-sm" },
-    "lg": { "value": "0 .25rem .5rem rgba(0, 0, 0, .3)", "themeable": true, "source": "$box-shadow-lg" },
+    "base": { "value": "0 .125rem .25rem rgba(0, 0, 0, .3)", "source": "$box-shadow" },
+    "sm": { "value": "0 .0625rem .125rem rgba(0, 0, 0, .2)", "source": "$box-shadow-sm" },
+    "lg": { "value": "0 .25rem .5rem rgba(0, 0, 0, .3)", "source": "$box-shadow-lg" },
     "down": {
       "1": {
         "value": "0 .0625rem .125rem rgba(0, 0, 0, .15), 0 .0625rem .25rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-down-1"
       },
       "2": {
         "value": "0 .125rem .25rem rgba(0, 0, 0, .15), 0 .125rem .5rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-down-2"
       },
       "3": {
         "value": "0 .5rem 1rem rgba(0, 0, 0, .15), 0 .25rem .625rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-down-3"
       },
       "4": {
         "value": "0 .625rem 1.25rem rgba(0, 0, 0, .15), 0 .5rem 1.25rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-down-4"
       },
       "5": {
         "value": "0 1.25px 2.5rem rgba(0, 0, 0, .15), 0 .5rem 2.5rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-down-5"
       }
     },
     "left": {
       "1": {
         "value": "-.0625rem 0 .125rem rgba(0, 0, 0, .15), -.0625rem 0 .25rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-left-1"
       },
       "2": {
         "value": "-.125rem 0 .25rem rgba(0, 0, 0, .15), -.125rem 0 .5rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-left-2"
       },
       "3": {
         "value": "-.5rem 0 1rem rgba(0, 0, 0, .15), -.25rem 0 .625rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-left-3"
       },
       "4": {
         "value": "-.625rem 0 1.25rem rgba(0, 0, 0, .15), -.5rem 0 1.25rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-left-4"
       },
       "5": {
         "value": "-1.25rem 0 2.5rem rgba(0, 0, 0, .15), -.5rem 0 3rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-left-5"
       }
     },
     "up": {
       "1": {
         "value": "0 -.0625rem .125rem rgba(0, 0, 0, .15), 0 -.0625rem .25rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-up-1"
       },
       "2": {
         "value": "0 -.125rem .25rem rgba(0, 0, 0, .15), 0 -.125rem .5rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-up-2"
       },
       "3": {
         "value": "0 -.5rem 1rem rgba(0, 0, 0, .15), 0 -.25rem .625rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-up-3"
       },
       "4": {
         "value": "0 -.625rem 1.25rem rgba(0, 0, 0, .15), 0 -.5rem 1.25rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-up-4"
       },
       "5": {
         "value": "0 -1.25rem 2.5rem rgba(0, 0, 0, .15), 0 -.5rem 3rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-up-5"
       }
     },
     "right": {
       "1": {
         "value": ".0625rem 0 .125rem rgba(0, 0, 0, .15), .0625rem 0 .25rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-right-1"
       },
       "2": {
         "value": ".125rem 0 .25rem rgba(0, 0, 0, .15), .125rem 0 .5rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-right-2"
       },
       "3": {
         "value": ".5rem 0 1rem rgba(0, 0, 0, .15), .25rem 0 .625rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-right-3"
       },
       "4": {
         "value": ".625rem 0 1.25rem rgba(0, 0, 0, .15), .5rem 0 1.25rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-right-4"
       },
       "5": {
         "value": "1.25rem 0 2.5rem rgba(0, 0, 0, .15), .5rem 0 3rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-right-5"
       }
     },
     "centered": {
       "1": {
         "value": "0 0 .125rem rgba(0, 0, 0, .15), 0 0 .25rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-centered-1"
       },
       "2": {
         "value": "0 0 .25rem rgba(0, 0, 0, .15), 0 0 .5rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-centered-2"
       },
       "3": {
         "value": "0 0 .625rem rgba(0, 0, 0, .15), 0 0 1rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-centered-3"
       },
       "4": {
         "value": "0 0 1.25rem rgba(0, 0, 0, .15), 0 0 1.25rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-centered-4"
       },
       "5": {
         "value": "0 0 2.5rem rgba(0, 0, 0, .15), 0 0 3rem rgba(0, 0, 0, .15)",
-        "themeable": true,
         "source": "$box-shadow-centered-5"
       }
     }
   },
   "zindex": {
-    "0": {"value": 0, "themeable":  true},
-    "200": {"value": 200, "themeable":  true},
-    "400": {"value": 400, "themeable":  true},
-    "600": {"value": 600, "themeable":  true},
-    "800": {"value": 800, "themeable":  true},
-    "1000": {"value": 1000, "themeable":  true},
-    "1200": {"value": 1200, "themeable":  true},
-    "1400": {"value": 1400, "themeable":  true},
-    "1600": {"value": 1600, "themeable":  true},
-    "1800": {"value": 1800, "themeable":  true},
-    "2000": {"value": 2000, "themeable":  true},
-    "sticky": {"value": 1020, "themeable":  true, "source": "$zindex-sticky"},
-    "fixed": {"value": 1030, "themeable":  true, "source": "$zindex-fixed"}
+    "0": { "value": 0 },
+    "200": { "value": 200 },
+    "400": { "value": 400 },
+    "600": { "value": 600 },
+    "800": { "value": 800 },
+    "1000": { "value": 1000 },
+    "1200": { "value": 1200 },
+    "1400": { "value": 1400 },
+    "1600": { "value": 1600 },
+    "1800": { "value": 1800 },
+    "2000": { "value": 2000 },
+    "sticky": { "value": 1020, "source": "$zindex-sticky" },
+    "fixed": { "value": 1030, "source": "$zindex-fixed" }
   }
 }

@@ -2,43 +2,42 @@
   "input": {
     "btn": {
       "padding": {
-        "y": { "value": ".5625rem", "themeable": true, "source": "$input-btn-padding-y" },
-        "x": { "value": "1rem", "themeable": true, "source": "$input-btn-padding-x" },
+        "y": { "value": ".5625rem", "source": "$input-btn-padding-y" },
+        "x": { "value": "1rem", "source": "$input-btn-padding-x" },
         "sm": {
-          "y": { "value": ".4375rem", "themeable": true, "source": "$input-btn-padding-y-sm" },
-          "x": { "value": ".75rem", "themeable": true, "source": "$input-btn-padding-x-sm" }
+          "y": { "value": ".4375rem", "source": "$input-btn-padding-y-sm" },
+          "x": { "value": ".75rem", "source": "$input-btn-padding-x-sm" }
         },
         "lg": {
-          "y": { "value": ".6875rem", "themeable": true, "source": "$input-btn-padding-y-lg" },
-          "x": { "value": "1.25rem", "themeable": true, "source": "$input-btn-padding-x-lg" }
+          "y": { "value": ".6875rem", "source": "$input-btn-padding-y-lg" },
+          "x": { "value": "1.25rem", "source": "$input-btn-padding-x-lg" }
         }
       },
       "font": {
-        "family": { "value": "inherit", "themeable": true, "source": "$input-btn-font-family" },
+        "family": { "value": "inherit", "source": "$input-btn-font-family" },
         "size": {
-          "base": { "value": "1.125rem", "themeable": true, "source": "$input-btn-font-size" },
-          "sm": { "value": ".875rem", "themeable": true, "source": "$input-btn-font-size-sm" },
-          "lg": { "value": "1.325rem", "themeable": true, "source": "$input-btn-font-size-lg" }
+          "base": { "value": "1.125rem", "source": "$input-btn-font-size" },
+          "sm": { "value": ".875rem", "source": "$input-btn-font-size-sm" },
+          "lg": { "value": "1.325rem", "source": "$input-btn-font-size-lg" }
         }
       },
       "line": {
         "height": {
-          "base": { "value": "1.3333", "themeable": true, "source": "$input-btn-line-height" },
-          "sm": { "value": "1.4286", "themeable": true, "source": "$input-btn-line-height-sm" },
-          "lg": { "value": "{line-height.lg.value}", "themeable": true, "source": "$input-btn-line-height-lg" }
+          "base": { "value": "1.3333", "source": "$input-btn-line-height" },
+          "sm": { "value": "1.4286", "source": "$input-btn-line-height-sm" },
+          "lg": { "value": "{line-height.lg.value}", "source": "$input-btn-line-height-lg" }
         }
       },
       "focus": {
-        "width": { "value": "1px", "themeable": true, "source": "$input-btn-focus-width" },
-        "color": { "value": "{color.input.focus.value}", "themeable": true, "source": "$input-btn-focus-color" },
+        "width": { "value": "1px", "source": "$input-btn-focus-width" },
+        "color": { "value": "{color.input.focus.value}", "source": "$input-btn-focus-color" },
         "box-shadow": {
           "value": "0 0 0 {input.btn.focus.width.value} {input.btn.focus.color.value}",
-          "themeable": true,
           "source": "$input-btn-focus-box-shadow"
         }
       },
       "border": {
-        "width": { "value": "{border.width.value}", "themeable": true, "source": "$input-btn-border-width" }
+        "width": { "value": "{border.width.value}", "source": "$input-btn-border-width" }
       }
     }
   }
