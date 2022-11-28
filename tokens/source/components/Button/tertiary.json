@@ -1,0 +1,59 @@
+{
+  "color": {
+    "btn": {
+      "text": {
+        "tertiary": { "value": "{color.gray.700.value}", "source": "$btn-tertiary-color" },
+        "inverse-tertiary": { "value": "{color.white.value}", "source": "$btn-inverse-tertiary-color" }
+      },
+      "bg": {
+        "tertiary": { "value": "transparent", "source": "$btn-tertiary-bg" },
+        "inverse-tertiary": { "value": "transparent", "source": "$btn-inverse-tertiary-bg" }
+      },
+      "border": {
+        "tertiary": { "value": "transparent", "source": "$btn-tertiary-border-color" },
+        "inverse-tertiary": { "value": "transparent", "source": "$btn-inverse-tertiary-border-color" }
+      },
+      "hover": {
+        "text": {
+          "tertiary": { "value": "{color.gray.700.value}", "source": "$btn-tertiary-hover-color" },
+          "inverse-tertiary": { "value": "{color.white.value}", "source": "$btn-inverse-tertiary-hover-color" }
+        },
+        "bg": {
+          "tertiary": { "value": "{color.light.500.value}", "source": "$btn-tertiary-hover-bg" },
+          "inverse-tertiary": {
+            "value": "{color.white.value}",
+            "source": "$btn-inverse-tertiary-hover-bg",
+            "modify": [{
+              "type": "alpha",
+              "amount": 0.1
+            }]
+          }
+        },
+        "border": {
+          "tertiary": { "value": "transparent", "source": "$btn-tertiary-hover-border-color" },
+          "inverse-tertiary": { "value": "transparent", "source": "$btn-inverse-tertiary-hover-border-color" }
+        }
+      },
+      "active": {
+        "text": {
+          "tertiary": { "value": "{color.gray.700.value}", "source": "$btn-tertiary-active-color" },
+          "inverse-tertiary": { "value": "{color.white.value}", "source": "$btn-inverse-tertiary-active-color" }
+        },
+        "bg": {
+          "tertiary": { "value": "{color.light.500.value}", "source": "$btn-tertiary-active-bg" },
+          "inverse-tertiary":  { "value": "{color.btn.hover.bg.inverse-tertiary.value}", "source": "$btn-inverse-tertiary-active-bg" }
+        },
+        "border": {
+          "tertiary": { "value": "transparent", "source": "$btn-tertiary-active-border-color" },
+          "inverse-tertiary": { "value": "transparent", "source": "$btn-inverse-tertiary-active-border-color" }
+        }
+      },
+      "focus": {
+        "border": {
+          "tertiary": { "value": "{color.theme.focus.primary.value}", "source": "$btn-tertiary-focus-border-color" },
+          "inverse-tertiary": { "value": "{color.white.value}", "source": "$btn-tertiary-inverse-focus-border-color" }
+        }
+      }
+    }
+  }
+}
