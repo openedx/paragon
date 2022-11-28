@@ -2,17 +2,16 @@
   "hr": {
     "border": {
       "color": { 
-        "value": "{color.black.value}", 
-        "themeable": true, 
+        "value": "{color.black.value}",
         "source": "$hr-border-color",
         "modify": [{
           "type": "alpha",
           "amount": 0.1
         }]
       },
-      "width": { "value": "{border.width.value}", "themeable": true, "source": "$hr-border-width" },
+      "width": { "value": "{border.width.value}", "source": "$hr-border-width" },
       "margin": {
-        "y": { "value": "{spacer.base.value}", "themeable": true, "source": "$hr-margin-y" }
+        "y": { "value": "{spacer.base.value}", "source": "$hr-margin-y" }
       }
     }
   }

@@ -1,5 +1,5 @@
 @import "variables";
-@import "~bootstrap/scss/modal";
+@import "bootstrap-modal";
 @import "ModalDialog";
 
 .pgn__hidden-scroll-padding-right {
@@ -59,7 +59,7 @@
 
   &:focus {
     .modal-dialog {
-      box-shadow: $btn-focus-box-shadow;
+      box-shadow: $input-btn-focus-box-shadow;
     }
   }
 }

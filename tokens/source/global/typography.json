@@ -1,62 +1,60 @@
 {
   "font": {
     "family": {
-      "base": { "value": "{font.family.sans.serif.value}", "themeable": true, "source": "$font-family-base" },
+      "base": { "value": "{font.family.sans.serif.value}", "source": "$font-family-base" },
       "sans": {
         "serif": {
           "value": "-apple-system, BlinkMacSystemFont, \"Segoe UI\",\n  Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\",\n  \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
-          "themeable": true,
           "source": "$font-family-sans-serif"
         }
       },
-      "serif": { "value": "serif", "themeable": true, "source": "$font-family-serif" },
+      "serif": { "value": "serif", "source": "$font-family-serif" },
       "monospace": {
         "value": "SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\",\n  \"Courier New\", monospace",
-        "themeable": true,
         "source": "$font-family-monospace"
       }
     },
     "size": {
-      "base": { "value": "1.125rem", "themeable": true, "source": "$font-size-base" },
-      "lg": { "value": "1.4063rem", "themeable": true, "source": "$font-size-lg" },
-      "sm": { "value": ".875rem", "themeable": true, "source": "$font-size-sm" },
-      "xs": { "value": ".75rem", "themeable": true, "source": "$font-size-xs" },
+      "base": { "value": "1.125rem", "source": "$font-size-base" },
+      "lg": { "value": "1.4063rem", "source": "$font-size-lg" },
+      "sm": { "value": ".875rem", "source": "$font-size-sm" },
+      "xs": { "value": ".75rem", "source": "$font-size-xs" },
       "small": { 
-        "base": { "value": "87.5%", "themeable": true, "source": "$small-font-size" },
-        "x": { "value": "75%", "themeable": true, "source": "$x-small-font-size" }
+        "base": { "value": "87.5%", "source": "$small-font-size" },
+        "x": { "value": "75%", "source": "$x-small-font-size" }
       },
-      "h1": { "value": "2.5rem", "themeable": true, "source": "$h1-font-size" },
-      "h2": { "value": "2rem", "themeable": true, "source": "$h2-font-size" },
-      "h3": { "value": "1.375rem", "themeable": true, "source": "$h3-font-size" },
-      "h4": { "value": "1.125rem", "themeable": true, "source": "$h4-font-size" },
-      "h5": { "value": ".875rem", "themeable": true, "source": "$h5-font-size" },
-      "h6": { "value": ".75rem", "themeable": true, "source": "$h6-font-size" },
+      "h1": { "value": "2.5rem", "source": "$h1-font-size" },
+      "h2": { "value": "2rem", "source": "$h2-font-size" },
+      "h3": { "value": "1.375rem", "source": "$h3-font-size" },
+      "h4": { "value": "1.125rem", "source": "$h4-font-size" },
+      "h5": { "value": ".875rem", "source": "$h5-font-size" },
+      "h6": { "value": ".75rem", "source": "$h6-font-size" },
       "mobile": {
-        "h1": { "value": "2.25rem", "themeable": true, "source": "$h1-mobile-font-size" },
-        "h2": { "value": "{font.size.h2.value}", "themeable": true, "source": "$h2-mobile-font-size" },
-        "h3": { "value": "{font.size.h3.value}", "themeable": true, "source": "$h3-mobile-font-size" },
-        "h4": { "value": "{font.size.h4.value}", "themeable": true, "source": "$h4-mobile-font-size" },
-        "h5": { "value": "{font.size.h5.value}", "themeable": true, "source": "$h5-mobile-font-size" },
-        "h6": { "value": "{font.size.h6.value}", "themeable": true, "source": "$h6-mobile-font-size" }
+        "h1": { "value": "2.25rem", "source": "$h1-mobile-font-size" },
+        "h2": { "value": "{font.size.h2.value}", "source": "$h2-mobile-font-size" },
+        "h3": { "value": "{font.size.h3.value}", "source": "$h3-mobile-font-size" },
+        "h4": { "value": "{font.size.h4.value}", "source": "$h4-mobile-font-size" },
+        "h5": { "value": "{font.size.h5.value}", "source": "$h5-mobile-font-size" },
+        "h6": { "value": "{font.size.h6.value}", "source": "$h6-mobile-font-size" }
       },
-      "lead": { "value": "calc({font.size.base.value} * 1.25)", "themeable": true, "source": "$lead-font-size" }
+      "lead": { "value": "calc({font.size.base.value} * 1.25)", "source": "$lead-font-size" }
     },
     "weight": {
-      "lighter": { "value": "lighter", "themeable": true, "source": "$font-weight-lighter" },
-      "light": { "value": "300", "themeable": true, "source": "$font-weight-light" },
-      "normal": { "value": "400", "themeable": true, "source": "$font-weight-normal" },
+      "lighter": { "value": "lighter", "source": "$font-weight-lighter" },
+      "light": { "value": "300", "source": "$font-weight-light" },
+      "normal": { "value": "400", "source": "$font-weight-normal" },
       "semi": {
-        "bold": { "value": "500", "themeable": true, "source": "$font-weight-semi-bold" }
+        "bold": { "value": "500", "source": "$font-weight-semi-bold" }
       },
-      "bold": { "value": "700", "themeable": true, "source": "$font-weight-bold" },
-      "bolder": { "value": "bolder", "themeable": true, "source": "$font-weight-bolder" },
-      "base": { "value": "{font.weight.normal.value}", "themeable": true, "source": "$font-weight-base" },
-      "lead": { "value": "null", "themeable": true, "source": "$lead-font-weight" }
+      "bold": { "value": "700", "source": "$font-weight-bold" },
+      "bolder": { "value": "bolder", "source": "$font-weight-bolder" },
+      "base": { "value": "{font.weight.normal.value}", "source": "$font-weight-base" },
+      "lead": { "value": "null", "source": "$lead-font-weight" }
     }
   },
   "line-height": {
-    "base": { "value": "1.5556", "themeable": true, "source": "$line-height-base" },
-    "lg": { "value": "1.5", "themeable": true, "source": "$line-height-lg" },
-    "sm": { "value": "1.5", "themeable": true, "source": "$line-height-sm" }
+    "base": { "value": "1.5556", "source": "$line-height-base" },
+    "lg": { "value": "1.5", "source": "$line-height-lg" },
+    "sm": { "value": "1.5", "source": "$line-height-sm" }
   }
 }

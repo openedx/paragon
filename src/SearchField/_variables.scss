@@ -1,7 +1,3 @@
-$search-btn-variants: (
-  "light":  var(--pgn-color-primary-500),
-  "dark":   var(--pgn-color-brand-500),
-);
 $search-border-radius: var(--pgn-search-field-border-radius) !default;
 $search-line-height: var(--pgn-search-field-line-height) !default;
 $search-border-color: var(--pgn-search-field-border-color-base) !default;
@@ -13,3 +9,6 @@ $search-button-margin: var(--pgn-search-field-button-margin) !default;
 $input-height-search: var(--pgn-search-field-input-height-search) !default;
 $search-border-focus-color: var(--pgn-search-field-border-color-focus) !default;
 $search-border-focus-width: var(--pgn-search-field-border-width-focus) !default;
+
+$search-btn-primary-bg: var(--pgn-search-field-button-color-bg-primary) !default;
+$search-btn-brand-bg: var(--pgn-search-field-button-color-bg-brand) !default;
