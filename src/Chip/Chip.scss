@@ -1,7 +1,7 @@
 @import "variables";
 
 .pgn__chip {
-  background: $light-500;
+  background: var(--pgn-chip-bg, $light-500);
   border-radius: $chip-border-radius;
   display: inline-flex;
   margin: $chip-margin;
@@ -77,15 +77,9 @@
     }
   }
 
-  @each $color, $styles in $chip-theme-variants {
-    &.pgn__chip-#{$color} {
-      background: map-get($styles, "background");
-
-      * {
-        color: map-get($styles, "color");
-        fill: map-get($styles, "color");
-      }
-    }
+  * {
+    color: var(--pgn-chip-color, inherit);
+    fill: var(--pgn-chip-color, inherit);
   }
 
   &.disabled,
@@ -98,4 +92,14 @@
       display: none;
     }
   }
+}
+
+.pgn__chip-light {
+  --pgn-chip-color: #{$chip-light-color};
+  --pgn-chip-bg: #{$chip-light-bg};
+}
+
+.pgn__chip-dark {
+  --pgn-chip-color: #{$chip-dark-color};
+  --pgn-chip-bg: #{$chip-dark-bg};
 }
