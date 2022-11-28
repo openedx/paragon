@@ -277,7 +277,7 @@
       }
 
       &[type="color"] {
-        height: $spacer * 1.5;
+        height: calc(#{$spacer} * 1.5);
       }
     }
   }

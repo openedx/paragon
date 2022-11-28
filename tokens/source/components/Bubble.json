@@ -2,8 +2,22 @@
   "bubble": {
     "expandable": {
       "padding": {
-        "y": { "value": "0", "themeable": true, "source": "$bubble-expandable-padding-y" },
-        "x": { "value": ".25rem", "themeable": true, "source": "$bubble-expandable-padding-x" }
+        "y": { "value": "0", "source": "$bubble-expandable-padding-y" },
+        "x": { "value": ".25rem", "source": "$bubble-expandable-padding-x" }
+      }
+    },
+    "color": {
+      "text": {
+        "success": {"value": "{color.white.value}", "source": "$bubble-success-color"},
+        "warning": {"value": "{color.white.value}", "source": "$bubble-warning-color"},
+        "error": {"value": "{color.white.value}", "source": "$bubble-error-color"},
+        "primary": {"value": "{color.white.value}", "source": "$bubble-primary-color"}
+      },
+      "bg": {
+        "success": {"value": "{color.success.base.value}", "source": "$bubble-success-bg"},
+        "warning": {"value": "{color.warning.base.value}", "source": "$bubble-warning-bg"},
+        "error": {"value": "{color.danger.base.value}", "source": "$bubble-error-bg"},
+        "primary": {"value": "{color.primary.base.value}", "source": "$bubble-primary-bg"}
       }
     }
   }

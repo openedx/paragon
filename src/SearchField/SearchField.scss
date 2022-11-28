@@ -85,11 +85,11 @@
     border: none;
 
     .btn-primary {
-      background: map-get($search-btn-variants, "light");
+      background: $search-btn-primary-bg;
     }
 
     .btn-brand {
-      background: map-get($search-btn-variants, "dark");
+      background: $search-btn-brand-bg;
     }
 
     &.has-focus {
@@ -108,11 +108,11 @@
       }
 
       .btn-primary {
-        background: map-get($search-btn-variants, "light");
+        background: $search-btn-primary-bg;
       }
 
       .btn-brand {
-        background: map-get($search-btn-variants, "dark");
+        background: $search-btn-brand-bg;
       }
     }
   }
