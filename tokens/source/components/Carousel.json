@@ -2,35 +2,35 @@
   "carousel": {
     "control": {
       "width": {
-        "base": { "value": "15%", "themeable": true, "source": "$carousel-control-width" },
-        "icon": { "value": "20px", "themeable": true, "source": "$carousel-control-icon-width" }
+        "base": { "value": "15%", "source": "$carousel-control-width" },
+        "icon": { "value": "20px", "source": "$carousel-control-icon-width" }
       },
       "opacity": {
-        "base": { "value": ".5", "themeable": true, "source": "$carousel-control-opacity" },
-        "hover": { "value": ".9", "themeable": true, "source": "$carousel-control-hover-opacity" }
+        "base": { "value": ".5", "source": "$carousel-control-opacity" },
+        "hover": { "value": ".9", "source": "$carousel-control-hover-opacity" }
       },
-      "transition": { "value": "opacity .15s ease", "themeable": true, "source": "$carousel-control-transition" }
+      "transition": { "value": "opacity .15s ease", "source": "$carousel-control-transition" }
     },
     "indicator": {
-      "width": { "value": "30px", "themeable": true, "source": "$carousel-indicator-width" },
+      "width": { "value": "30px", "source": "$carousel-indicator-width" },
       "height": {
-        "base": { "value": "3px", "themeable": true, "source": "$carousel-indicator-height" },
+        "base": { "value": "3px", "source": "$carousel-indicator-height" },
         "area": {
-          "hit": { "value": "3px", "themeable": true, "source": "$carousel-indicator-hit-area-height" }
+          "hit": { "value": "3px", "source": "$carousel-indicator-hit-area-height" }
         }
       },
-      "spacer": { "value": "3px", "themeable": true, "source": "$carousel-indicator-spacer" },
+      "spacer": { "value": "3px", "source": "$carousel-indicator-spacer" },
       "active": {
-        "bg": { "value": "{color.white.value}", "themeable": true, "source": "$carousel-indicator-active-bg" }
+        "bg": { "value": "{color.white.value}", "source": "$carousel-indicator-active-bg" }
       },
-      "transition": { "value": "opacity .6s ease", "themeable": true, "source": "$carousel-indicator-transition" }
+      "transition": { "value": "opacity .6s ease", "source": "$carousel-indicator-transition" }
     },
     "caption": {
-      "width": { "value": "70%", "themeable": true, "source": "$carousel-caption-width" },
-      "color": { "value": "{color.white.value}", "themeable": true, "source": "$carousel-caption-color" }
+      "width": { "value": "70%", "source": "$carousel-caption-width" },
+      "color": { "value": "{color.white.value}", "source": "$carousel-caption-color" }
     },
     "transition": {
-      "duration": { "value": ".6s", "themeable": true, "source": "$carousel-transition-duration" }
+      "duration": { "value": ".6s", "source": "$carousel-transition-duration" }
     }
   }
 }

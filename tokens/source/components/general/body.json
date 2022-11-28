@@ -1,6 +1,6 @@
 {
   "body": {
-    "bg": { "value": "{color.background.base.value}", "themeable": true, "source": "$body-bg" },
-    "color": { "value": "{color.gray.700.value}", "themeable": true, "source": "$body-color" }
+    "bg": { "value": "{color.background.base.value}", "source": "$body-bg" },
+    "color": { "value": "{color.gray.700.value}", "source": "$body-color" }
   }
 }
