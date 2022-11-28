@@ -3,9 +3,7 @@
     "font": {
       "size": { "value": "{font.size.sm.value}", "source": "$tooltip-font-size" }
     },
-    "max": {
-      "width": { "value": "200px", "source": "$tooltip-max-width" }
-    },
+    "max-width": { "value": "200px", "source": "$tooltip-max-width" },
     "color": {
       "base": { "value": "{color.white.value}", "source": "$tooltip-color" },
       "light": { "value": "{color.black.value}", "source": "$tooltip-color-light" }
@@ -32,7 +30,8 @@
       "color": {
         "base": { "value": "{tooltip.bg.base.value}", "source": "$tooltip-arrow-color" },
         "light": { "value": "{color.white.value}", "source": "$tooltip-arrow-color-light" }
-      }
+      },
+      "width": { "value": ".8rem", "source": "$tooltip-arrow-width" }
     },
     "zindex": { "value": 1070, "source": "$zindex-tooltip" }
   }

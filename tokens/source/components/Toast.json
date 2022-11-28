@@ -1,8 +1,6 @@
 {
   "toast": {
-    "max": {
-      "width": { "value": "400px", "source": "$toast-max-width" }
-    },
+    "max-width": { "value": "400px", "source": "$toast-max-width" },
     "padding": {
       "x": { "value": ".75rem", "source": "$toast-padding-x" },
       "y": { "value": ".25rem", "source": "$toast-padding-y" }

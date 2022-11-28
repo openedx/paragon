@@ -8,21 +8,15 @@
     },
     "footer": {
       "border": {
-        "color": {
-          "value": "{modal.header.border.color.value}", "source": "$modal-footer-border-color"
-        },
-        "width": {
-          "value": "{modal.header.border.width.value}", "source": "$modal-footer-border-width"
-        }
+        "color": { "value": "{modal.header.border.color.value}", "source": "$modal-footer-border-color" },
+        "width": { "value": "{modal.header.border.width.value}", "source": "$modal-footer-border-width" }
       },
       "padding": {
-        "base": {
-          "value": "{modal.footer.padding.x.value} {modal.footer.padding.y.value}",
-          "source": "$modal-footer-padding"
-        },
+        "base": { "value": "{modal.footer.padding.x.value} {modal.footer.padding.y.value}", "source": "$modal-footer-padding" },
         "x": { "value": "1rem", "source": "$modal-footer-padding-x" },
         "y": { "value": "1.5rem", "source": "$modal-footer-padding-y" }
-      }
+      },
+      "margin-between": { "value": ".5rem", "source": "$modal-footer-margin-between"}
     },
     "title": {
       "line": {
@@ -46,11 +40,9 @@
       },
       "box-shadow": {
         "xs": { "value": "0 .25rem .5rem rgba(0, 0, 0, .5)", "source": "$modal-content-box-shadow-xs" },
-        "sm": {
-          "up": {
-            "value": "0 10px 20px rgba(0, 0, 0, .15), 0 8px 20px rgba(0, 0, 0, .15)",
-            "source": "$modal-content-box-shadow-sm-up"
-          }
+        "sm-up": {
+          "value": "0 10px 20px rgba(0, 0, 0, .15), 0 8px 20px rgba(0, 0, 0, .15)",
+          "source": "$modal-content-box-shadow-sm-up"
         }
       }
     },
@@ -71,6 +63,12 @@
         },
         "y": { "value": "1rem", "source": "$modal-header-padding-y" },
         "x": { "value": "1.5rem", "source": "$modal-header-padding-x" }
+      }
+    },
+    "dialog": {
+      "margin": {
+        "base": { "value": "1.5rem", "source": "$modal-dialog-margin" },
+        "y-sm-up": { "value": "1.75rem", "source": "$modal-dialog-margin-y-sm-up" }
       }
     },
     "xl": { "value": "1140px", "source": "$modal-xl" },

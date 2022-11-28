@@ -18,11 +18,13 @@
       }
     },
     "color": {
-      "success": {"value": "{color.white.value}", "source": "$annotation-success-color"},
-      "warning": {"value": "{color.black.value}", "source": "$annotation-warning-color"},
-      "error": {"value": "{color.white.value}", "source": "$annotation-error-color"},
-      "light": {"value": "{color.primary.500.value}", "source": "$annotation-light-color"},
-      "dark": {"value": "{color.white.value}", "source": "$annotation-dark-color"},
+      "text": {
+        "success": {"value": "{color.white.value}", "source": "$annotation-success-color"},
+        "warning": {"value": "{color.black.value}", "source": "$annotation-warning-color"},
+        "error": {"value": "{color.white.value}", "source": "$annotation-error-color"},
+        "light": {"value": "{color.primary.500.value}", "source": "$annotation-light-color"},
+        "dark": {"value": "{color.white.value}", "source": "$annotation-dark-color"}
+      },
       "bg": {
         "success": {"value": "{color.success.base.value}", "source": "$annotation-success-bg"},
         "warning": {"value": "{color.accent.b.value}", "source": "$annotation-warning-bg"},

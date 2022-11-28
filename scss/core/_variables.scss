@@ -5,18 +5,17 @@
 @import "exports.module.scss";
 
 // Color system
-$white:    var(--pgn-color-white) !default;
-// TODO: can't use css variables due to conflict with SCSS function.
-$gray-100: #EBEBEB !default;
+$white: var(--pgn-color-white) !default;
+$gray-100: var(--pgn-color-gray-100) !default;
 $gray-200: var(--pgn-color-gray-200) !default;
 $gray-300: var(--pgn-color-gray-300) !default;
 $gray-400: var(--pgn-color-gray-400) !default;
-$gray-500: #707070 !default;
+$gray-500: var(--pgn-color-gray-500) !default;
 $gray-600: var(--pgn-color-gray-600) !default;
-$gray-700: #454545 !default;
+$gray-700: var(--pgn-color-gray-700) !default;
 $gray-800: var(--pgn-color-gray-800) !default;
-$gray-900: #212529 !default;
-$black:    var(--pgn-color-black) !default;
+$gray-900: var(--pgn-color-gray-900) !default;
+$black: var(--pgn-color-black) !default;
 
 $grays: () !default;
 $grays: map-merge(
@@ -36,9 +35,9 @@ $grays: map-merge(
 
 $blue: var(--pgn-color-blue) !default;
 $red: #C32D3A !default;
-$yellow: #FFD900 !default;
+$yellow: var(--pgn-color-yellow) !default;
 $green: #178253 !default;
-$teal: #006DAA !default;
+$teal: var(--pgn-color-teal) !default;
 
 $colors: () !default;
 $colors: map-merge(
@@ -56,17 +55,17 @@ $colors: map-merge(
 );
 
 // TODO: can't use css variables due to conflict with SCSS function.
-$primary: #0A3055 !default;
-$secondary: $gray-700 !default;
-$brand: #9D0054 !default;
+$primary: var(--pgn-color-primary-base) !default;
+$secondary: var(--pgn-color-secondary-base) !default;
+$brand: var(--pgn-color-brand-base) !default;
 $success: $green !default;
-$info: $teal !default;
+$info: var(--pgn-color-info-base) !default;
 $danger: $red !default;
-$warning: $yellow !default;
-$light: #E1DDDB !default;
-$dark: #273F2F !default;
-$accent-a: #00BBF9 !default;
-$accent-b: #FFEE88 !default;
+$warning: var(--pgn-color-warning-base) !default;
+$light: var(--pgn-color-light-base) !default;
+$dark: var(--pgn-color-dark-base) !default;
+$accent-a: var(--pgn-color-accent-a) !default;
+$accent-b: var(--pgn-color-accent-b) !default;
 
 $theme-colors: () !default;
 $theme-colors: map-merge(
@@ -87,95 +86,95 @@ $theme-colors: map-merge(
   $theme-colors
 );
 
-$primary-100: mix(white, $primary, 94%) !default;
+$primary-100: var(--pgn-color-primary-100) !default;
 $primary-200: var(--pgn-color-primary-200) !default;
 $primary-300: var(--pgn-color-primary-300) !default;
 $primary-400: var(--pgn-color-primary-400) !default;
-$primary-500: $primary !default;
+$primary-500: var(--pgn-color-primary-500) !default;
 $primary-600: var(--pgn-color-primary-600) !default;
-$primary-700: mix(black, $primary, 20%) !default;
+$primary-700: var(--pgn-color-primary-700) !default;
 $primary-800: var(--pgn-color-primary-800) !default;
-$primary-900: mix(black, $primary, 30%) !default;
+$primary-900: var(--pgn-color-primary-900) !default;
 
-$secondary-100: mix(white, $secondary, 94%) !default;
+$secondary-100: var(--pgn-color-secondary-100) !default;
 $secondary-200: var(--pgn-color-secondary-200) !default;
 $secondary-300: var(--pgn-color-secondary-300) !default;
 $secondary-400: var(--pgn-color-secondary-400) !default;
-$secondary-500: $secondary !default;
+$secondary-500: var(--pgn-color-secondary-500) !default;
 $secondary-600: var(--pgn-color-secondary-600) !default;
-$secondary-700: mix(black, $secondary, 20%) !default;
+$secondary-700: var(--pgn-color-secondary-700) !default;
 $secondary-800: var(--pgn-color-secondary-800) !default;
-$secondary-900: mix(black, $secondary, 30%) !default;
+$secondary-900: var(--pgn-color-secondary-900) !default;
 
-$brand-100: mix(white, $brand, 94%) !default;
+$brand-100: var(--pgn-color-brand-100) !default;
 $brand-200: var(--pgn-color-brand-200) !default;
 $brand-300: var(--pgn-color-brand-300) !default;
 $brand-400: var(--pgn-color-brand-400) !default;
-$brand-500: $brand !default;
+$brand-500: var(--pgn-color-brand-500) !default;
 $brand-600: var(--pgn-color-brand-600) !default;
-$brand-700: mix(black, $brand, 20%) !default;
+$brand-700: var(--pgn-color-brand-700) !default;
 $brand-800: var(--pgn-color-brand-800) !default;
-$brand-900: mix(black, $brand, 30%) !default;
+$brand-900: var(--pgn-color-brand-900) !default;
 
-$success-100: mix(white, $success, 94%) !default;
+$success-100: var(--pgn-color-success-100) !default;
 $success-200: var(--pgn-color-success-200) !default;
 $success-300: var(--pgn-color-success-300) !default;
 $success-400: var(--pgn-color-success-400) !default;
 $success-500: $success !default;
 $success-600: var(--pgn-color-success-600) !default;
-$success-700: mix(black, $success, 20%) !default;
+$success-700: var(--pgn-color-success-700) !default;
 $success-800: var(--pgn-color-success-800) !default;
-$success-900: mix(black, $success, 30%) !default;
+$success-900: var(--pgn-color-success-900) !default;
 
-$info-100: mix(white, $info, 94%) !default;
+$info-100: var(--pgn-color-info-100) !default;
 $info-200: var(--pgn-color-info-200) !default;
 $info-300: var(--pgn-color-info-300) !default;
 $info-400: var(--pgn-color-info-400) !default;
-$info-500: $info !default;
+$info-500: var(--pgn-color-info-500) !default;
 $info-600: var(--pgn-color-info-600) !default;
-$info-700: mix(black, $info, 20%) !default;
+$info-700: var(--pgn-color-info-700) !default;
 $info-800: var(--pgn-color-info-800) !default;
-$info-900: mix(black, $info, 30%) !default;
+$info-900: var(--pgn-color-info-900) !default;
 
-$warning-100: mix(white, $warning, 94%) !default;
+$warning-100: var(--pgn-color-warning-100) !default;
 $warning-200: var(--pgn-color-warning-200) !default;
 $warning-300: var(--pgn-color-warning-300) !default;
 $warning-400: var(--pgn-color-warning-400) !default;
-$warning-500: $warning !default;
+$warning-500: var(--pgn-color-warning-500) !default;
 $warning-600: var(--pgn-color-warning-600) !default;
-$warning-700: mix(black, $warning, 20%) !default;
+$warning-700: var(--pgn-color-warning-700) !default;
 $warning-800: var(--pgn-color-warning-800) !default;
-$warning-900: mix(black, $warning, 30%) !default;
+$warning-900: var(--pgn-color-warning-900) !default;
 
-$danger-100: mix(white, $danger, 94%) !default;
+$danger-100: var(--pgn-color-danger-100) !default;
 $danger-200: var(--pgn-color-danger-200) !default;
 $danger-300: var(--pgn-color-danger-300) !default;
 $danger-400: var(--pgn-color-danger-400) !default;
 $danger-500: $danger !default;
 $danger-600: var(--pgn-color-danger-600) !default;
-$danger-700: mix(black, $danger, 20%) !default;
+$danger-700: var(--pgn-color-danger-700) !default;
 $danger-800: var(--pgn-color-danger-800) !default;
-$danger-900: mix(black, $danger, 30%) !default;
+$danger-900: var(--pgn-color-danger-900) !default;
 
-$light-100: mix(white, $light, 94%) !default;
+$light-100: var(--pgn-color-light-100) !default;
 $light-200: var(--pgn-color-light-200) !default;
 $light-300: var(--pgn-color-light-300) !default;
 $light-400: var(--pgn-color-light-400) !default;
-$light-500: $light !default;
+$light-500: var(--pgn-color-light-500) !default;
 $light-600: var(--pgn-color-light-600) !default;
-$light-700: mix(black, $light, 20%) !default;
+$light-700: var(--pgn-color-light-700) !default;
 $light-800: var(--pgn-color-light-800) !default;
-$light-900: mix(black, $light, 30%) !default;
+$light-900: var(--pgn-color-light-900) !default;
 
-$dark-100: mix(white, $dark, 94%) !default;
+$dark-100: var(--pgn-color-dark-100) !default;
 $dark-200: var(--pgn-color-dark-200) !default;
 $dark-300: var(--pgn-color-dark-300) !default;
 $dark-400: var(--pgn-color-dark-400) !default;
-$dark-500: $dark !default;
+$dark-500: var(--pgn-color-dark-500) !default;
 $dark-600: var(--pgn-color-dark-600) !default;
-$dark-700: mix(black, $dark, 20%) !default;
+$dark-700: var(--pgn-color-dark-700) !default;
 $dark-800: var(--pgn-color-dark-800) !default;
-$dark-900: mix(black, $dark, 30%) !default;
+$dark-900: var(--pgn-color-dark-900) !default;
 
 $theme-color-levels: () !default;
 
@@ -341,23 +340,23 @@ $enable-deprecation-messages:                 true !default;
 // variables. Mostly focused on spacing.
 // You can add more entries to the $spacers map, should you need more variation.
 
-$spacer: var(--pgn-spacer-base) !default;
+$spacer: 1rem !default;
 $spacers: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $spacers: map-merge(
   (
     0: 0,
-    1: calc(#{$spacer} * .25),
-    1\.5: calc(#{$spacer} * .375),
-    2: calc(#{$spacer} * .5),
-    2\.5: calc(#{$spacer} * .75),
+    1: ($spacer * .25),
+    1\.5: ($spacer * .375),
+    2: ($spacer * .5),
+    2\.5: ($spacer * .75),
     3: $spacer,
-    3\.5: calc(#{$spacer} * 1.25),
-    4: calc(#{$spacer} * 1.5),
-    4\.5: calc(#{$spacer} * 2),
-    5: calc(#{$spacer} * 3),
-    5\.5: calc(#{$spacer} * 4),
-    6: calc(#{$spacer} * 5),
+    3\.5: ($spacer * 1.25),
+    4: ($spacer * 1.5),
+    4\.5: ($spacer * 2),
+    5: ($spacer * 3),
+    5\.5: ($spacer * 4),
+    6: ($spacer * 5),
   ),
   $spacers
 );
@@ -413,24 +412,21 @@ $brand-link-color: var(--pgn-link-brand-color) !default;
 $brand-link-decoration: var(--pgn-link-brand-decoration) !default;
 $brand-link-hover-color: var(--pgn-link-brand-hover-color) !default;
 $brand-link-hover-decoration: var(--pgn-link-brand-hover-decoration) !default;
-$brand-inline-link-color:                       $brand-500 !default;
-$brand-inline-link-decoration:                  underline !default;
+$brand-inline-link-color: var(--pgn-link-brand-inline-color) !default;
+$brand-inline-link-decoration: var(--pgn-link-brand-inline-decoration) !default;
 $brand-inline-link-decoration-color: var(--pgn-link-brand-inline-decoration-color) !default;
 $brand-inline-link-hover-color: var(--pgn-link-brand-inline-hover-color) !default;
 $brand-inline-link-hover-decoration: var(--pgn-link-brand-inline-hover-decoration) !default;
 $brand-inline-link-hover-decoration-color: var(--pgn-link-brand-inline-hover-decoration-color) !default;
 
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
-$emphasized-link-hover-darken-percentage: 15% !default;
+$emphasized-link-hover-darken-percentage: var(--pgn-link-emphasized-hover-darken-percentage) !default;
 
 // Paragraphs
 //
 // Style p element.
 
 $paragraph-margin-bottom: var(--pgn-paragraph-margin-bottom) !default;
-
-@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
-@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
 
 // Grid containers
 //
@@ -442,8 +438,6 @@ $container-max-widths: (
   lg: 960px,
   xl: 1600px
 ) !default;
-
-@include _assert-ascending($container-max-widths, "$container-max-widths");
 
 // Grid columns
 //

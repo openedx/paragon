@@ -18,3 +18,19 @@ $alert-line-height: var(--pgn-alert-line-height) !default;
 $alert-content-color: var(--pgn-alert-color-content) !default;
 
 $alert-actions-gap: var(--pgn-alert-actions-gap) !default;
+
+$alert-success-border-color: var(--pgn-alert-color-border-success) !default;
+$alert-success-bg: var(--pgn-alert-color-bg-success) !default;
+$alert-success-icon-color: var(--pgn-alert-color-icon-success) !default;
+
+$alert-info-border-color: var(--pgn-alert-color-border-info) !default;
+$alert-info-bg: var(--pgn-alert-color-bg-info) !default;
+$alert-info-icon-color: var(--pgn-alert-color-icon-info) !default;
+
+$alert-danger-border-color: var(--pgn-alert-color-border-danger) !default;
+$alert-danger-bg: var(--pgn-alert-color-bg-danger) !default;
+$alert-danger-icon-color: var(--pgn-alert-color-icon-danger) !default;
+
+$alert-warning-border-color: var(--pgn-alert-color-border-warning) !default;
+$alert-warning-bg: var(--pgn-alert-color-bg-warning) !default;
+$alert-warning-icon-color: var(--pgn-alert-color-icon-warning) !default;

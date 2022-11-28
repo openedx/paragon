@@ -5,19 +5,19 @@ $annotation-max-width: var(--pgn-annotation-max-width) !default;
 $annotation-font-size: var(--pgn-annotation-font-size) !default;
 $annotation-line-height: var(--pgn-annotation-line-height) !default;
 
-$annotation-success-color: var(--pgn-annotation-color-success) !default;
+$annotation-success-color: var(--pgn-annotation-color-text-success) !default;
 $annotation-success-bg: var(--pgn-annotation-color-bg-success) !default;
 
-$annotation-warning-color: var(--pgn-annotation-color-warning) !default;
+$annotation-warning-color: var(--pgn-annotation-color-text-warning) !default;
 $annotation-warning-bg: var(--pgn-annotation-color-bg-warning) !default;
 
-$annotation-error-color: var(--pgn-annotation-color-error) !default;
+$annotation-error-color: var(--pgn-annotation-color-text-error) !default;
 $annotation-error-bg: var(--pgn-annotation-color-bg-error) !default;
 
-$annotation-light-color: var(--pgn-annotation-color-light) !default;
+$annotation-light-color: var(--pgn-annotation-color-text-light) !default;
 $annotation-light-bg: var(--pgn-annotation-color-bg-light) !default;
 
-$annotation-dark-color: var(--pgn-annotation-color-dark) !default;
+$annotation-dark-color: var(--pgn-annotation-color-text-dark) !default;
 $annotation-dark-bg: var(--pgn-annotation-color-bg-dark) !default;
 
 $annotation-variants: (

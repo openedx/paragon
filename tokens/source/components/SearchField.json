@@ -21,9 +21,11 @@
     },
     "button": {
       "margin": { "value": ".5rem", "source": "$search-button-margin" },
-      "variants": {
-        "light": { "value": "{color.primary.500.value}" },
-        "dark": { "value": "{color.brand.500.value}" }
+      "color": {
+        "bg": {
+          "primary": { "value": "{color.primary.500.value}", "source": "$search-btn-primary-bg" },
+          "brand": { "value": "{color.brand.500.value}", "source": "$search-btn-brand-bg" }
+        }
       }
     },
     "input": {

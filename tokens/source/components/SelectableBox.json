@@ -4,8 +4,6 @@
     "border": {
       "radius": { "value": ".25rem", "source": "$selectable-box-border-radius" }
     },
-    "box": {
-      "space": { "value": ".75rem", "source": "$selectable-box-space" }
-    }
+    "box-space": { "value": ".75rem", "source": "$selectable-box-space" }
   }
 }

@@ -3,8 +3,8 @@
 .badge {
   display: inline-block;
   padding: $badge-padding-y $badge-padding-x;
-  color: var(--pgn-badge-color, #{$badge-primary-color});
-  background-color: var(--pgn-badge-bg-color, #{$badge-primary-bg});
+  color: var(--pgn-badge-color, inherit);
+  background-color: var(--pgn-badge-bg-color, transparent);
 
   @include font-size($badge-font-size);
 
@@ -21,14 +21,14 @@
     &:hover,
     &:focus {
       text-decoration: none;
-      color: var(--pgn-badge-focus-color, #{$badge-primary-focus-color});
-      background-color: var(--pgn-badge-focus-bg-color, #{$badge-primary-focus-bg});
+      color: var(--pgn-badge-focus-color, inherit);
+      background-color: var(--pgn-badge-focus-bg-color, transparent);
     }
 
     &:focus,
     &.focus {
       outline: 0;
-      box-shadow: 0 0 0 $badge-focus-width var(--pgn-badge-focus-box-shadow-color, #{$badge-primary-focus-box-shadow-color});
+      box-shadow: 0 0 0 $badge-focus-width var(--pgn-badge-focus-box-shadow-color, rgba(0, 0, 0, .15));
     }
   }
 
