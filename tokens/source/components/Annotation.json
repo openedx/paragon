@@ -1,29 +1,36 @@
 {
   "annotation": {
-    "padding": { "value": ".5rem", "themeable": true, "source": "$annotation-padding" },
+    "padding": { "value": ".5rem", "source": "$annotation-padding" },
     "box-shadow": {
       "value": "drop-shadow(0 2px 4px rgba(0, 0, 0, .15))\n  drop-shadow(0 2px 8px rgba(0, 0, 0, .15))",
-      "themeable": true,
       "source": "$annotation-box-shadow"
     },
-    "border": {
-      "radius": { "value": ".25rem", "themeable": true, "source": "$annotation-border-radius" }
-    },
-    "max": {
-      "width": { "value": "18.75rem", "themeable": true, "source": "$annotation-max-width" }
-    },
-    "font": {
-      "size": { "value": "{font.size.sm.value}", "themeable": true, "source": "$annotation-font-size" }
-    },
-    "line": {
-      "height": { "value": "{line-height.sm.value}", "themeable": true, "source": "$annotation-line-height" }
-    },
+    "border-radius": { "value": ".25rem", "source": "$annotation-border-radius" },
+    "max-width": { "value": "18.75rem", "source": "$annotation-max-width" },
+    "font-size": { "value": "{font.size.sm.value}", "source": "$annotation-font-size" },
+    "line-height": { "value": "{line-height.sm.value}", "source": "$annotation-line-height" },
     "arrow": {
       "side": {
-        "margin": { "value": ".25rem", "themeable": true, "source": "$annotation-arrow-side-margin" }
+        "margin": { "value": ".25rem", "source": "$annotation-arrow-side-margin" }
       },
       "border": {
-        "width": { "value": ".5rem", "themeable": true, "source": "$annotation-arrow-border-width" }
+        "width": { "value": ".5rem", "source": "$annotation-arrow-border-width" }
+      }
+    },
+    "color": {
+      "text": {
+        "success": {"value": "{color.white.value}", "source": "$annotation-success-color"},
+        "warning": {"value": "{color.black.value}", "source": "$annotation-warning-color"},
+        "error": {"value": "{color.white.value}", "source": "$annotation-error-color"},
+        "light": {"value": "{color.primary.500.value}", "source": "$annotation-light-color"},
+        "dark": {"value": "{color.white.value}", "source": "$annotation-dark-color"}
+      },
+      "bg": {
+        "success": {"value": "{color.success.base.value}", "source": "$annotation-success-bg"},
+        "warning": {"value": "{color.accent.b.value}", "source": "$annotation-warning-bg"},
+        "error": {"value": "{color.danger.base.value}", "source": "$annotation-error-bg"},
+        "light": {"value": "{color.white.value}", "source": "$annotation-light-bg"},
+        "dark": {"value": "{color.dark.base.value}", "source": "$annotation-dark-bg"}
       }
     }
   }

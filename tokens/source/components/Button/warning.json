@@ -1,0 +1,97 @@
+{
+  "color": {
+    "btn": {
+      "text": {
+        "warning": { "value": "{color.btn.bg.warning.value}", "source": "$btn-warning-color", "modify": [{ "type": "color-yiq" }] },
+        "outline-warning": { "value": "{color.warning.base.value}", "source": "$btn-warning-outline-color" },
+        "inverse-warning": { "value": "{color.warning.base.value}", "source": "$btn-warning-inverse-color" },
+        "inverse-outline-warning": { "value": "{color.white.value}", "source": "$btn-warning-inverse-outline-color" }
+      },
+      "bg": {
+        "warning": { "value": "{color.warning.base.value}", "source": "$btn-warning-bg" },
+        "inverse-warning": {
+          "value": "{color.btn.text.inverse-warning.value}",
+          "source": "$btn-warning-inverse-bg",
+          "modify": [{ "type": "color-yiq" }]
+        }
+      },
+      "border": {
+        "warning": { "value": "{color.btn.bg.warning.value}", "source": "$btn-warning-border-color" },
+        "outline-warning": { "value": "{color.warning.base.value}", "source": "$btn-warning-outline-border-color" },
+        "inverse-outline-warning": { "value": "{color.white.value}", "source": "$btn-warning-inverse-outline-border-color" }
+      },
+      "hover": {
+        "text": {
+          "warning": {
+            "value": "{color.btn.hover.bg.warning.value}",
+            "source": "$btn-warning-hover-color",
+            "modify": [{ "type": "color-yiq" }]
+          },
+          "outline-warning": { "value": "{color.theme.hover.warning.value}", "source": "$btn-warning-outline-hover-color" },
+          "inverse-warning": {
+            "value": "{color.btn.text.inverse-warning.value}",
+            "source": "$btn-warning-inverse-hover-color",
+            "modify": [{ "type": "darken", "amount": 0.075 }]
+          },
+          "inverse-outline-warning": { "value": "{color.theme.hover.warning.value}", "source": "$btn-warning-inverse-outline-hover-color" }
+        },
+        "bg": {
+          "warning": { "value": "{color.theme.hover.warning.value}", "source": "$btn-warning-hover-bg" },
+          "outline-warning": { "value": "{color.warning.100.value}", "source": "$btn-warning-outline-hover-bg" },
+          "inverse-warning": {
+            "value": "{color.btn.bg.inverse-warning.value}",
+            "source": "$btn-warning-inverse-hover-bg",
+            "modify": [{ "type": "darken", "amount": 0.075 }]
+          },
+          "inverse-outline-warning": { "value": "{color.warning.100.value}", "source": "$btn-warning-inverse-outline-hover-bg" }
+        },
+        "border": {
+          "warning": { "value": "{color.theme.hover.warning.value}", "source": "$btn-warning-hover-border-color" },
+          "outline-warning": { "value": "{color.warning.900.value}", "source": "$btn-warning-outline-hover-border-color" },
+          "inverse-outline-warning": { "value": "transparent", "source": "$btn-warning-inverse-outline-hover-border-color" }
+        }
+      },
+      "active": {
+        "text": {
+          "warning": {
+            "value": "{color.btn.active.bg.warning.value}",
+            "source": "$btn-warning-active-color",
+            "modify": [{ "type": "color-yiq" }]
+          },
+          "outline-warning": {
+            "value": "{color.btn.active.bg.outline-warning.value}",
+            "source": "$btn-warning-outline-active-color",
+            "modify": [{ "type": "color-yiq" }]
+          },
+          "inverse-warning": {
+            "value": "{color.btn.text.inverse-warning.value}",
+            "source": "$btn-warning-inverse-active-color",
+            "modify": [{ "type": "darken", "amount": 0.1 }]
+          },
+          "inverse-outline-warning": {
+            "value": "{color.btn.active.bg.inverse-outline-warning.value}",
+            "source": "$btn-warning-inverse-outline-active-color",
+            "modify": [{ "type": "color-yiq" }] }
+        },
+        "bg": {
+          "warning": { "value": "{color.theme.active.warning.value}", "source": "$btn-warning-active-bg" },
+          "outline-warning": { "value": "{color.theme.background.warning.value}", "source": "$btn-warning-outline-active-bg" },
+          "inverse-outline-warning": { "value": "{color.theme.background.warning.value}", "source": "$btn-warning-inverse-outline-active-bg" }
+        },
+        "border": {
+          "warning": { "value": "{color.theme.active.warning.value}", "source": "$btn-warning-active-border-color" },
+          "outline-warning": { "value": "{color.theme.active.warning.value}", "source": "$btn-warning-outline-active-border-color" },
+          "inverse-outline-warning": { "value": "transparent", "source": "$btn-warning-inverse-outline-active-border-color" }
+        }
+      },
+      "focus": {
+        "border": {
+          "warning": { "value": "{color.theme.focus.warning.value}", "source": "$btn-warning-focus-border-color" },
+          "outline-warning": { "value": "{color.theme.focus.warning.value}", "source": "$btn-warning-outline-focus-border-color" },
+          "inverse-warning": { "value": "{color.white.value}", "source": "$btn-warning-inverse-focus-border-color" },
+          "inverse-outline-warning": { "value": "{color.white.value}", "source": "$btn-warning-inverse-outline-focus-border-color" }
+        }
+      }
+    }
+  }
+}

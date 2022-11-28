@@ -91,6 +91,14 @@
   &.pgn__searchfield--external {
     border: none;
 
+    .btn-primary {
+      background: $search-btn-primary-bg;
+    }
+
+    .btn-brand {
+      background: $search-btn-brand-bg;
+    }
+
     &.has-focus {
       box-shadow: none;
 
@@ -104,6 +112,14 @@
           width: 100%;
           height: 100%;
         }
+      }
+
+      .btn-primary {
+        background: $search-btn-primary-bg;
+      }
+
+      .btn-brand {
+        background: $search-btn-brand-bg;
       }
     }
   }

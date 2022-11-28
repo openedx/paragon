@@ -1,40 +1,52 @@
 {
   "alert": {
     "padding": {
-      "y": { "value": "1.5rem", "themeable": true, "source": "$alert-padding-y" },
-      "x": { "value": "1.5rem", "themeable": true, "source": "$alert-padding-x" }
+      "y": { "value": "1.5rem", "source": "$alert-padding-y" },
+      "x": { "value": "1.5rem", "source": "$alert-padding-x" }
     },
     "margin": {
-      "bottom": { "value": "1rem", "themeable": true, "source": "$alert-margin-bottom" }
+      "bottom": { "value": "1rem", "source": "$alert-margin-bottom" }
     },
     "border": {
-      "radius": { "value": "{border.radius.base}", "themeable": true, "source": "$alert-border-radius" },
-      "width": { "value": "0", "themeable": true, "source": "$alert-border-width" }
+      "radius": { "value": "{border.radius.base}", "source": "$alert-border-radius" },
+      "width": { "value": "0", "source": "$alert-border-width" }
     },
     "font": {
       "weight": {
-        "link": { "value": "{font.weight.normal.value}", "themeable": true, "source": "$alert-link-font-weight" }
+        "link": { "value": "{font.weight.normal.value}", "source": "$alert-link-font-weight" }
       },
-      "size": { "value": ".875rem", "themeable": true, "source": "$alert-font-size" }
+      "size": { "value": ".875rem", "source": "$alert-font-size" }
     },
     "color": {
-      "title": { "value": "{color.black.value}", "themeable": true, "source": "$alert-title-color" },
-      "content": { "value": "{color.gray.700.value}", "themeable": true, "source": "$alert-content-color" }
+      "title": { "value": "{color.black.value}", "source": "$alert-title-color" },
+      "content": { "value": "{color.gray.700.value}", "source": "$alert-content-color" },
+      "icon": {
+        "success": { "value": "{color.theme.default.success.value}", "source": "$alert-success-icon-color" },
+        "info": { "value": "{color.theme.default.info.value}", "source": "$alert-info-icon-color" },
+        "danger": { "value": "{color.theme.default.danger.value}", "source": "$alert-danger-icon-color" },
+        "warning": { "value": "{color.theme.default.warning.value}", "source": "$alert-warning-icon-color" }
+      },
+      "bg": {
+        "success": { "value": "{color.theme.background.success.value}", "source": "$alert-success-bg" },
+        "info": { "value": "{color.theme.background.info.value}", "source": "$alert-info-bg" },
+        "danger": { "value": "{color.theme.background.danger.value}", "source": "$alert-danger-bg" },
+        "warning": { "value": "{color.theme.background.warning.value}", "source": "$alert-warning-bg" }
+      },
+      "border": {
+        "success": { "value": "{color.theme.border.success.value}", "source": "$alert-success-border-color" },
+        "info": { "value": "{color.theme.border.info.value}", "source": "$alert-info-border-color" },
+        "danger": { "value": "{color.theme.border.danger.value}", "source": "$alert-danger-border-color" },
+        "warning": { "value": "{color.theme.border.warning.value}", "source": "$alert-warning-border-color" }
+      }
     },
     "box-shadow": {
-      "value": "0 1px 2px rgba(0, 0, 0, .15), 0 1px 4px rgba(0, 0, 0, .15)", 
-      "themeable": true, 
+      "value": "0 1px 2px rgba(0, 0, 0, .15), 0 1px 4px rgba(0, 0, 0, .15)",
       "source": "$alert-box-shadow"
     },
-    "level": {
-      "bg": { "value": "-10", "themeable": true, "source": "$alert-bg-level" },
-      "border": { "value": "-9", "themeable": true, "source": "$alert-border-level" },
-      "color": { "value": "6", "themeable": true, "source": "$alert-color-level" }
-    },
     "icon": {
-      "space": { "value": ".8rem", "themeable": true, "source": "$alert-icon-space" }
+      "space": { "value": ".8rem", "source": "$alert-icon-space" }
     },
-    "line-height": { "value": "1.5rem", "themeable": true, "source": "$alert-line-height" },
-    "actions-gap": { "value": "{spacer.3.value}", "themeable": true, "source": "$alert-actions-gap" }
+    "line-height": { "value": "1.5rem", "source": "$alert-line-height" },
+    "actions-gap": { "value": "{spacer.3.value}", "source": "$alert-actions-gap" }
   }
 }

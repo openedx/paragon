@@ -1,40 +1,38 @@
 {
   "tooltip": {
     "font": {
-      "size": { "value": "{font.size.sm.value}", "themeable": true, "source": "$tooltip-font-size" }
+      "size": { "value": "{font.size.sm.value}", "source": "$tooltip-font-size" }
     },
-    "max": {
-      "width": { "value": "200px", "themeable": true, "source": "$tooltip-max-width" }
-    },
+    "max-width": { "value": "200px", "source": "$tooltip-max-width" },
     "color": {
-      "base": { "value": "{color.white.value}", "themeable": true, "source": "$tooltip-color" },
-      "light": { "value": "{color.black.value}", "themeable": true, "source": "$tooltip-color-light" }
+      "base": { "value": "{color.white.value}", "source": "$tooltip-color" },
+      "light": { "value": "{color.black.value}", "source": "$tooltip-color-light" }
     },
     "bg": {
-      "base": { "value": "{color.black.value}", "themeable": true, "source": "$tooltip-bg" },
-      "light": { "value": "{color.white.value}", "themeable": true, "source": "$tooltip-bg-light" }
+      "base": { "value": "{color.black.value}", "source": "$tooltip-bg" },
+      "light": { "value": "{color.white.value}", "source": "$tooltip-bg-light" }
     },
     "border": {
-      "radius": { "value": "{border.radius.base.value}", "themeable": true, "source": "$tooltip-border-radius" }
+      "radius": { "value": "{border.radius.base.value}", "source": "$tooltip-border-radius" }
     },
-    "opacity": { "value": "1", "themeable": true, "source": "$tooltip-opacity" },
+    "opacity": { "value": "1", "source": "$tooltip-opacity" },
     "padding": {
-      "y": { "value": ".5rem", "themeable": true, "source": "$tooltip-padding-y" },
-      "x": { "value": ".5rem", "themeable": true, "source": "$tooltip-padding-x" }
+      "y": { "value": ".5rem", "source": "$tooltip-padding-y" },
+      "x": { "value": ".5rem", "source": "$tooltip-padding-x" }
     },
-    "margin": { "value": "0", "themeable": true, "source": "$tooltip-margin" },
+    "margin": { "value": "0", "source": "$tooltip-margin" },
     "box-shadow": {
       "value": "drop-shadow(0 2px 4px rgba(0, 0, 0, .15)) drop-shadow(0 2px 8px rgba(0, 0, 0, .15))",
-      "themeable": true,
       "source": "$tooltip-box-shadow"
     },
     "arrow": {
-      "height": { "value": ".4rem", "themeable": true, "source": "$tooltip-arrow-height" },
+      "height": { "value": ".4rem", "source": "$tooltip-arrow-height" },
       "color": {
-        "base": { "value": "{tooltip.bg.base.value}", "themeable": true, "source": "$tooltip-arrow-color" },
-        "light": { "value": "{color.white.value}", "themeable": true, "source": "$tooltip-arrow-color-light" }
-      }
+        "base": { "value": "{tooltip.bg.base.value}", "source": "$tooltip-arrow-color" },
+        "light": { "value": "{color.white.value}", "source": "$tooltip-arrow-color-light" }
+      },
+      "width": { "value": ".8rem", "source": "$tooltip-arrow-width" }
     },
-    "zindex": { "value": 1070, "themeable": true, "source": "$zindex-tooltip" }
+    "zindex": { "value": 1070, "source": "$zindex-tooltip" }
   }
 }

@@ -53,7 +53,6 @@
           display: block;
           background: $color;
           position: absolute;
-          /* stylelint-disable max-line-length */
           top: calc($progress-threshold-circle / 2 - $annotated-progress-height / 2);
           right: calc($progress-threshold-circle / -2);
           width: $progress-threshold-circle;
