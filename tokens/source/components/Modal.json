@@ -81,6 +81,9 @@
       "show": { "value": "none", "source": "$modal-show-transform" },
       "scale": { "value": "scale(1.02)", "source": "$modal-scale-transform" }
     },
-    "zindex": { "value": "1050", "source": "$zindex-modal" }
+    "zindex": { "value": "1050", "source": "$zindex-modal" },
+    "close-container": {
+      "top": { "value": ".625rem", "source": "$modal-close-container-top" }
+    }
   }
 }

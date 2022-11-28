@@ -94,15 +94,22 @@
 
 .bs-tooltip-auto {
   &[x-placement^="top"] {
+    // stylelint-disable-next-line scss/at-extend-no-missing-placeholder
     @extend .bs-tooltip-top;
   }
+
   &[x-placement^="right"] {
+    // stylelint-disable-next-line scss/at-extend-no-missing-placeholder
     @extend .bs-tooltip-right;
   }
+
   &[x-placement^="bottom"] {
+    // stylelint-disable-next-line scss/at-extend-no-missing-placeholder
     @extend .bs-tooltip-bottom;
   }
+
   &[x-placement^="left"] {
+    // stylelint-disable-next-line scss/at-extend-no-missing-placeholder
     @extend .bs-tooltip-left;
   }
 }
