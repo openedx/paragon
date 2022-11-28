@@ -1,12 +1,12 @@
 {
   "menu": {
     "background": {
-      "active": { "value": "{btn.tertiary.bg.active.value}", "themeable": true, "source": "$active-background" }
+      "active": { "value": "{color.btn.active.bg.tertiary.value}", "source": "$active-background" }
     },
     "border": {
-      "base": { "value": "transparent", "themeable": true, "source": "$border" },
-      "active": { "value": "transparent", "themeable": true, "source": "$active-border" },
-      "hover": { "value": "transparent", "themeable": true, "source": "$hover-border" }
+      "base": { "value": "transparent", "source": "$border" },
+      "active": { "value": "transparent", "source": "$active-border" },
+      "hover": { "value": "transparent", "source": "$hover-border" }
     }
   }
 }

@@ -14,3 +14,51 @@ $badge-pill-padding-x: var(--pgn-badge-padding-x-pill) !default;
 // Use a higher than normal value to ensure completely rounded edges when
 // customizing padding or font-size on labels.
 $badge-pill-border-radius: var(--pgn-badge-border-radius-pill) !default;
+
+$badge-primary-color: var(--pgn-badge-color-primary) !default;
+$badge-primary-bg: var(--pgn-badge-color-bg-primary) !default;
+$badge-primary-focus-color: var(--pgn-badge-color-focus-primary) !default;
+$badge-primary-focus-bg: var(--pgn-badge-color-focus-bg-primary) !default;
+$badge-primary-focus-box-shadow-color: var(--pgn-badge-color-focus-box-shadow-primary) !default;
+
+$badge-secondary-color: var(--pgn-badge-color-secondary) !default;
+$badge-secondary-bg: var(--pgn-badge-color-bg-secondary) !default;
+$badge-secondary-focus-color: var(--pgn-badge-color-focus-secondary) !default;
+$badge-secondary-focus-bg: var(--pgn-badge-color-focus-bg-secondary) !default;
+$badge-secondary-focus-box-shadow-color: var(--pgn-badge-color-focus-box-shadow-secondary) !default;
+
+$badge-success-color: var(--pgn-badge-color-success) !default;
+$badge-success-bg: var(--pgn-badge-color-bg-success) !default;
+$badge-success-focus-color: var(--pgn-badge-color-focus-success) !default;
+$badge-success-focus-bg: var(--pgn-badge-color-focus-bg-success) !default;
+$badge-success-focus-box-shadow-color: var(--pgn-badge-color-focus-box-shadow-success) !default;
+
+$badge-danger-color: var(--pgn-badge-color-danger) !default;
+$badge-danger-bg: var(--pgn-badge-color-bg-danger) !default;
+$badge-danger-focus-color: var(--pgn-badge-color-focus-danger) !default;
+$badge-danger-focus-bg: var(--pgn-badge-color-focus-bg-danger) !default;
+$badge-danger-focus-box-shadow-color: var(--pgn-badge-color-focus-box-shadow-danger) !default;
+
+$badge-warning-color: var(--pgn-badge-color-warning) !default;
+$badge-warning-bg: var(--pgn-badge-color-bg-warning) !default;
+$badge-warning-focus-color: var(--pgn-badge-color-focus-warning) !default;
+$badge-warning-focus-bg: var(--pgn-badge-color-focus-bg-warning) !default;
+$badge-warning-focus-box-shadow-color: var(--pgn-badge-color-focus-box-shadow-warning) !default;
+
+$badge-info-color: var(--pgn-badge-color-info) !default;
+$badge-info-bg: var(--pgn-badge-color-bg-info) !default;
+$badge-info-focus-color: var(--pgn-badge-color-focus-info) !default;
+$badge-info-focus-bg: var(--pgn-badge-color-focus-bg-info) !default;
+$badge-info-focus-box-shadow-color: var(--pgn-badge-color-focus-box-shadow-info) !default;
+
+$badge-light-color: var(--pgn-badge-color-light) !default;
+$badge-light-bg: var(--pgn-badge-color-bg-light) !default;
+$badge-light-focus-color: var(--pgn-badge-color-focus-light) !default;
+$badge-light-focus-bg: var(--pgn-badge-color-focus-bg-light) !default;
+$badge-light-focus-box-shadow-color: var(--pgn-badge-color-focus-box-shadow-light) !default;
+
+$badge-dark-color: var(--pgn-badge-color-dark) !default;
+$badge-dark-bg: var(--pgn-badge-color-bg-dark) !default;
+$badge-dark-focus-color: var(--pgn-badge-color-focus-dark) !default;
+$badge-dark-focus-bg: var(--pgn-badge-color-focus-bg-dark) !default;
+$badge-dark-focus-box-shadow-color: var(--pgn-badge-color-focus-box-shadow-dark) !default;

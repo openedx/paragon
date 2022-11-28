@@ -27,7 +27,7 @@
     flex-grow: 1;
   }
 
-  @include hover {
+  &:hover {
     text-decoration: none;
     color: $btn-tertiary-color;
     border-color: $hover-border;
@@ -99,7 +99,7 @@
   box-sizing: border-box;
   color: $dark;
 
-  @include hover {
+  &:hover {
     color: $white;
     background: $primary;
     border: 1px solid $white;
