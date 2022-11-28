@@ -1,2 +1,114 @@
 @import "variables";
-@import "badge-bootstrap";
+
+.badge {
+  display: inline-block;
+  padding: $badge-padding-y $badge-padding-x;
+  color: var(--pgn-badge-color, inherit);
+  background-color: var(--pgn-badge-bg-color, transparent);
+
+  @include font-size($badge-font-size);
+
+  font-weight: $badge-font-weight;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+
+  @include border-radius($badge-border-radius);
+  @include transition($badge-transition);
+
+  @at-root a#{&} {
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: var(--pgn-badge-focus-color, inherit);
+      background-color: var(--pgn-badge-focus-bg-color, transparent);
+    }
+
+    &:focus,
+    &.focus {
+      outline: 0;
+      box-shadow: 0 0 0 $badge-focus-width var(--pgn-badge-focus-box-shadow-color, rgba(0, 0, 0, .15));
+    }
+  }
+
+  &:empty {
+    display: none;
+  }
+}
+
+.btn .badge {
+  position: relative;
+  top: -1px;
+}
+
+.badge-pill {
+  padding-right: $badge-pill-padding-x;
+  padding-left: $badge-pill-padding-x;
+
+  @include border-radius($badge-pill-border-radius);
+}
+
+.badge-primary {
+  --pgn-badge-color: #{$badge-primary-color};
+  --pgn-badge-bg-color: #{$badge-primary-bg};
+  --pgn-badge-focus-color: #{$badge-primary-focus-color};
+  --pgn-badge-focus-bg-color: #{$badge-primary-focus-bg};
+  --pgn-badge-focus-box-shadow-color: #{$badge-primary-focus-box-shadow-color};
+}
+
+.badge-secondary {
+  --pgn-badge-color: #{$badge-secondary-color};
+  --pgn-badge-bg-color: #{$badge-secondary-bg};
+  --pgn-badge-focus-color: #{$badge-secondary-focus-color};
+  --pgn-badge-focus-bg-color: #{$badge-secondary-focus-bg};
+  --pgn-badge-focus-box-shadow-color: #{$badge-secondary-focus-box-shadow-color};
+}
+
+.badge-success {
+  --pgn-badge-color: #{$badge-success-color};
+  --pgn-badge-bg-color: #{$badge-success-bg};
+  --pgn-badge-focus-color: #{$badge-success-focus-color};
+  --pgn-badge-focus-bg-color: #{$badge-success-focus-bg};
+  --pgn-badge-focus-box-shadow-color: #{$badge-success-focus-box-shadow-color};
+}
+
+.badge-danger {
+  --pgn-badge-color: #{$badge-danger-color};
+  --pgn-badge-bg-color: #{$badge-danger-bg};
+  --pgn-badge-focus-color: #{$badge-danger-focus-color};
+  --pgn-badge-focus-bg-color: #{$badge-danger-focus-bg};
+  --pgn-badge-focus-box-shadow-color: #{$badge-danger-focus-box-shadow-color};
+}
+
+.badge-warning {
+  --pgn-badge-color: #{$badge-warning-color};
+  --pgn-badge-bg-color: #{$badge-warning-bg};
+  --pgn-badge-focus-color: #{$badge-warning-focus-color};
+  --pgn-badge-focus-bg-color: #{$badge-warning-focus-bg};
+  --pgn-badge-focus-box-shadow-color: #{$badge-warning-focus-box-shadow-color};
+}
+
+.badge-info {
+  --pgn-badge-color: #{$badge-info-color};
+  --pgn-badge-bg-color: #{$badge-info-bg};
+  --pgn-badge-focus-color: #{$badge-info-focus-color};
+  --pgn-badge-focus-bg-color: #{$badge-info-focus-bg};
+  --pgn-badge-focus-box-shadow-color: #{$badge-info-focus-box-shadow-color};
+}
+
+.badge-light {
+  --pgn-badge-color: #{$badge-light-color};
+  --pgn-badge-bg-color: #{$badge-light-bg};
+  --pgn-badge-focus-color: #{$badge-light-focus-color};
+  --pgn-badge-focus-bg-color: #{$badge-light-focus-bg};
+  --pgn-badge-focus-box-shadow-color: #{$badge-light-focus-box-shadow-color};
+}
+
+.badge-dark {
+  --pgn-badge-color: #{$badge-dark-color};
+  --pgn-badge-bg-color: #{$badge-dark-bg};
+  --pgn-badge-focus-color: #{$badge-dark-focus-color};
+  --pgn-badge-focus-bg-color: #{$badge-dark-focus-bg};
+  --pgn-badge-focus-box-shadow-color: #{$badge-dark-focus-box-shadow-color};
+}

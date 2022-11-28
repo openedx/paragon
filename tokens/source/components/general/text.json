@@ -1,28 +1,28 @@
 {
   "text": {
-    "muted": { "value": "{color.gray.500.value}", "themeable": true, "source": "$text-muted" }
+    "muted": { "value": "{color.gray.500.value}", "source": "$text-muted" }
   },
   "paragraph": {
     "margin": {
-      "bottom": { "value": "1rem", "themeable": true, "source": "$paragraph-margin-bottom" }
+      "bottom": { "value": "1rem", "source": "$paragraph-margin-bottom" }
     }
   },
   "blockquote": {
     "small": {
       "font": {
         "size": {
-          "value": "{font.size.small.base.value}", "themeable": true, "source": "$blockquote-small-font-size"
+          "value": "{font.size.small.base.value}", "source": "$blockquote-small-font-size"
         }
       }
     },
     "font": {
       "size": {
-        "value": "calc({font.size.base.value} * 1.25)", "themeable": true, "source": "$blockquote-font-size"
+        "value": "calc({font.size.base.value} * 1.25)", "source": "$blockquote-font-size"
       }
     }
   },
   "mark": {
-    "padding": { "value": ".2em", "themeable": true, "source": "$mark-padding" },
-    "bg": { "value": "#FFF243", "themeable": true, "source": "$mark-bg" }
+    "padding": { "value": ".2em", "source": "$mark-padding" },
+    "bg": { "value": "#FFF243", "source": "$mark-bg" }
   }
 }
