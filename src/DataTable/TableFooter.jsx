@@ -9,7 +9,13 @@ import TablePaginationMinimal from './TablePaginationMinimal';
 function TableFooter({ className, children }) {
   return (
     <div className={classNames(className, 'pgn__data-table-footer')}>
-      {children}
+      {children || (
+        <>
+          <RowStatus />
+          <TablePagination />
+          <TablePaginationMinimal />
+        </>
+      )}
     </div>
   );
 }
@@ -26,14 +32,8 @@ TableFooter.propTypes = {
 };
 
 TableFooter.defaultProps = {
-  children: (
-    <>
-      <RowStatus />
-      <TablePagination />
-      <TablePaginationMinimal />
-    </>
-  ),
-  className: null,
+  children: null,
+  className: undefined,
 };
 
 export default TableFooter;

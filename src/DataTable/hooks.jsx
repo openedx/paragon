@@ -1,5 +1,4 @@
-/* eslint-disable import/prefer-default-export */
-import { useContext } from 'react';
+import { useCallback, useContext } from 'react';
 import DataTableContext from './DataTableContext';
 import { clearSelectionAction } from './selection/data/actions';
 
@@ -27,14 +26,15 @@ export const useSelectionActions = (
 ) => {
   const [{ selectedRows, isEntireTableSelected }, dispatch] = controlledTableSelections;
 
-  const clearSelection = () => {
+  const clearSelection = useCallback(() => {
     // if using controlled selection component DataTable.ControlledSelectionStatus
     if (selectedRows.length > 0 || isEntireTableSelected) {
       dispatch(clearSelectionAction());
     } else {
       toggleAllRowsSelected(false);
     }
-  };
+  }, [dispatch, isEntireTableSelected, selectedRows, toggleAllRowsSelected]);
+
   return {
     clearSelection,
   };

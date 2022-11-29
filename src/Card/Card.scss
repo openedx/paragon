@@ -4,6 +4,7 @@
 .pgn__card,
 .pgn__card-body {
   width: 100%;
+  height: 100%;
 
   &.is-muted {
     background-color: $light-200;
@@ -264,7 +265,6 @@ a .pgn__card {
   height: $card-logo-height;
   border-radius: $card-logo-border-radius;
   box-shadow: $level-1-box-shadow;
-  z-index: 1;
   padding: map_get($spacers, 2);
   background-color: $white;
 }
