@@ -1,27 +1,129 @@
-.menu-component-list {
-  columns: 3;
+.pgn-doc__menu {
+  padding: $spacer 1.5rem 2rem;
+  border-right: $border-width solid $light-400;
 
-  @media (max-width: $max-width-xs) {
-    columns: 2;
+  .pgn-doc__menu-title {
+    font-size: $font-size-sm;
+    line-height: $line-height-base;
+    font-weight: $font-weight-normal;
+    color: $gray-700;
+  }
+
+  .pgn-doc__menu-btn--group {
+    padding-bottom: $spacer;
+    border-bottom: $border-width solid $light-400;
+    margin-bottom: $spacer;
+    display: flex;
+    flex-wrap: wrap;
+
+    .btn {
+      width: 50%;
+
+      @media (max-width: $max-width-xl) {
+        width: 100%;
+
+        &:first-child {
+          margin-bottom: $label-margin-bottom;
+        }
+      }
+    }
+
+    @media (max-width: $max-width-xl) {
+      flex-direction: column;
+    }
+  }
+
+  .pgn-doc__menu-component--list-category {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .pgn-doc__menu-items {
+    margin-bottom: 7.75rem;
+
+    .pgn_collapsible {
+      font-size: $font-size-xs;
+      line-height: $headings-line-height;
+      font-weight: $font-weight-normal;
+      color: $gray-700;
+      text-decoration: none;
+      margin-bottom: .25rem;
+
+      .collapsible-body {
+        padding: .25rem 1.5rem 0;
+      }
+
+      .collapsible-body ul {
+        margin-bottom: 0;
+      }
+
+      .collapsible-body ul li {
+        margin: 0;
+      }
+
+      .collapsible-body ul li a {
+        font-size: $font-size-sm;
+        line-height: $headings-line-height;
+        font-weight: $font-weight-normal;
+        color: $gray-700;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .collapsible-basic .collapsible-icon {
+      margin-left: .188rem;
+
+      .pgn__icon {
+        width: 1.125rem;
+        height: 1.125rem;
+      }
+    }
+
+    .collapsible-basic .collapsible-trigger {
+      font-size: $font-size-sm;
+      text-decoration: none;
+      justify-content: start;
+      flex-direction: row-reverse;
+      padding: 0;
+    }
+
+    .pgn_collapsible.collapsible-basic.is-open .collapsible-trigger {
+      font-weight: $font-weight-bold;
+      text-decoration: none;
+      background-color: $light-300;
+      padding-left: 0;
+    }
+  }
+
+  .pgn-doc__menu-playground {
+    .pgn-doc__menu-playground--title {
+      font-size: $font-size-base;
+      line-height: $line-height-base;
+      font-weight: $font-weight-bold;
+      color: $gray-700;
+      margin-bottom: .375rem;
+    }
+
+    .pgn__hyperlink {
+      color: $info-500;
+      text-decoration: underline;
+      margin-left: .188rem;
+    }
   }
 }
 
-.menu-component-list-category {
-  -webkit-column-break-inside: avoid;
-  page-break-inside: avoid;
-  break-inside: avoid;
-}
+.pgn-doc__menu-all-components .pgn-doc__menu-component-list {
+  columns: 3;
 
-.menu-all-components {
-  .menu-component-list {
-    columns: 4;
+  @media (max-width: $max-width-sm) {
+    columns: 2;
+  }
 
-    @media (max-width: $max-width-sm) {
-      columns: 3;
-    }
-
-    @media (max-width: $max-width-xs) {
-      columns: 2;
-    }
+  @media (max-width: $max-width-xs) {
+    columns: 1;
   }
 }

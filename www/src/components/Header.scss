@@ -1,3 +1,33 @@
-.pgn-doc-header {
+.pgn-doc__header {
   z-index: $zindex-header;
+
+  .pgn-doc__header-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:has(h1):has(.pgn-doc__header-title-heading) {
+      justify-content: start;
+    }
+
+    .pgn-doc__header-title-logo {
+      font-size: $h1-mobile-font-size;
+      line-height: $display-line-height;
+    }
+
+    .pgn-doc__header-title-heading {
+      font-size: $h3-font-size;
+      line-height: $line-height-base;
+      margin: 0;
+      color: $white;
+    }
+
+    .pgn-doc__header-title-description {
+      font-family: $font-family-sans-serif;
+      font-size: $font-size-sm;
+      line-height: $line-height-base;
+      color: $light;
+      margin: 0;
+    }
+  }
 }

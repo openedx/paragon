@@ -12,7 +12,6 @@ import { Close } from '~paragon-icons';
 import { LANGUAGES } from '../config';
 // eslint-disable-next-line import/no-named-as-default
 import SettingsContext from '../context/SettingsContext';
-import { THEMES } from '../../theme-config';
 
 export interface ISetting {
   showMinimizedTitle?: boolean,
@@ -33,7 +32,7 @@ function Settings({ showMinimizedTitle }: ISetting) {
       variant="light"
       onClose={closeSettings}
     >
-      <div className="d-flex align-items-center justify-content-between mb-3">
+      <div className="pgn__settings-title">
         <h3 className="mb-0">Settings</h3>
         <IconButton
           src={Close}
@@ -43,41 +42,24 @@ function Settings({ showMinimizedTitle }: ISetting) {
           size="sm"
         />
       </div>
-      <Stack gap={3}>
-        <Form.Group>
-          <Form.Control
-            as="select"
-            value={settings.theme}
-            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleSettingsChange('theme', e.target.value)}
-            floatingLabel="Theme"
-          >
-            {THEMES.map(theme => (
-              <option
-                key={theme.id}
-                value={theme.id}
-              >
-                {theme.label}
-              </option>
-            ))}
-          </Form.Control>
-        </Form.Group>
-        <Form.Group>
-          <Form.Control
-            as="select"
-            value={settings.direction}
+      <Stack gap={1}>
+        <Form.Group className="pgn__settings-direction">
+          <Form.Label className="setting__label">Text direction</Form.Label>
+          <Form.RadioSet
+            name="direction"
             onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleSettingsChange('direction', e.target.value)}
-            floatingLabel="Direction"
+            value={settings.direction}
           >
-            <option value="ltr">Left to right</option>
-            <option value="rtl">Right to left</option>
-          </Form.Control>
+            <Form.Radio value="ltr">Left to right</Form.Radio>
+            <Form.Radio value="rtl">Right to left</Form.Radio>
+          </Form.RadioSet>
         </Form.Group>
         <Form.Group>
+          <Form.Label className="pgn__settings-label">Language</Form.Label>
           <Form.Control
             as="select"
             value={settings.language}
             onChange={(e: { target: { value: string; }; }) => handleSettingsChange('language', e.target.value)}
-            floatingLabel="Component Language"
           >
             {LANGUAGES.map(lang => (
               <option
@@ -105,6 +87,18 @@ function Settings({ showMinimizedTitle }: ISetting) {
             </Form.Control>
           </Form.Group>
         )}
+        <Nav className="pgn__settings-nav--items">
+          <Nav.Item>
+            <Link className="nav-link" to="/changelog">
+              Changelog
+            </Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="https://github.com/openedx/paragon">
+              GitHub
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>
       </Stack>
     </Sheet>
   );

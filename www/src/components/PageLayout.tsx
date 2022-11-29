@@ -14,6 +14,9 @@ import {
   Nav,
   Row,
   Col,
+  OverlayTrigger,
+  Tooltip,
+  Sticky,
 } from '~paragon-react';
 import Header from './Header';
 import Menu from './Menu';
@@ -62,7 +65,11 @@ function Layout({
       {isMdx ? (
         <Container fluid>
           <Row className="flex-xl-nowrap">
-            <Col className="d-none d-xl-block" xl={settings.containerWidth === 'xl' ? 'auto' : 2} />
+            <Col className="d-none d-xl-block" xl={settings.containerWidth === 'xl' ? 'auto' : 2}>
+              <Sticky offset={6} className="pgn-doc__toc p-0 pt-3">
+                <Menu />
+              </Sticky>
+            </Col>
             <Col
               xl={settings.containerWidth === 'xl' ? 10 : 8}
               lg={9}
@@ -86,11 +93,7 @@ function Layout({
           {children}
         </main>
       )}
-      {!hideFooterComponentMenu && (
-        <Container className="py-3 mt-5 bg-light-200 border-top border-light-300">
-          <Menu />
-        </Container>
-      )}
+      {!hideFooterComponentMenu && <ComponentsList />}
       <Container as="footer" className="py-3 border-top border-light-300">
         <Nav className="d-flex align-items-center">
           <Nav.Item>
