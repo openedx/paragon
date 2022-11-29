@@ -11,6 +11,7 @@ import {
   Badge,
   Icon,
   Collapsible,
+  Hyperlink,
 } from '~paragon-react';
 import { SettingsContext } from '../context/SettingsContext';
 import { THEMES } from '../../theme-config';
@@ -233,14 +234,12 @@ function Menu() {
         <h3 className="pgn-doc__menu-playground--title">
           Playground
           <Badge className="ml-1 mr-1 align-bottom" variant="primary">
-            eta
+            Beta
           </Badge>
         </h3>
         <ul className="list-unstyled small mb-4">
           <li className="mr-3 mb-3">
             A drag-and-drop UI builder for prototyping with Paragon components.
-          </li>
-          <li className="mr-3">
             <OverlayTrigger
               trigger="focus"
               overlay={(
@@ -255,13 +254,13 @@ function Menu() {
                 </Popover>
                 )}
             >
-              <Button
-                size="sm"
-                variant="outline-primary"
+              <Hyperlink
+                isInline
                 onClick={handlePlaygroundClick}
+                destination="#playground"
               >
                 Visit playground
-              </Button>
+              </Hyperlink>
             </OverlayTrigger>
           </li>
         </ul>

@@ -3,7 +3,7 @@
   border-right: $border-width solid $light-400;
 
   .pgn-doc__menu-title {
-    font-size: $font-size-sm;
+    font-size: $h4-font-size;
     line-height: $line-height-base;
     font-weight: $font-weight-normal;
     color: $gray-700;
@@ -64,7 +64,7 @@
 
       .collapsible-body ul li a {
         font-size: $font-size-sm;
-        line-height: $headings-line-height;
+        line-height: $line-height-lg;
         font-weight: $font-weight-normal;
         color: $gray-700;
 
@@ -88,14 +88,18 @@
       text-decoration: none;
       justify-content: start;
       flex-direction: row-reverse;
-      padding: 0;
+      padding: .313rem .125rem;
+
+      .collapsible-icon {
+        margin-left: 0;
+      }
     }
 
     .pgn_collapsible.collapsible-basic.is-open .collapsible-trigger {
       font-weight: $font-weight-bold;
       text-decoration: none;
       background-color: $light-300;
-      padding-left: 0;
+      transition: $transition-base;
     }
   }
 
@@ -105,13 +109,19 @@
       line-height: $line-height-base;
       font-weight: $font-weight-bold;
       color: $gray-700;
-      margin-bottom: .375rem;
+      margin-bottom: .5rem;
+
+      .badge {
+        line-height: $line-height-lg;
+        padding: .125rem .5rem;
+        border-radius: .375rem;
+      }
     }
 
     .pgn__hyperlink {
       color: $info-500;
       text-decoration: underline;
-      margin-left: .188rem;
+      margin-left: .125rem;
     }
   }
 }
