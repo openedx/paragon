@@ -58,7 +58,6 @@
     "glob": "^8.0.3",
     "lodash.uniqby": "^4.7.0",
     "mailto-link": "^2.0.0",
-    "nanoid": "^4.0.0",
     "prop-types": "^15.8.1",
     "react-bootstrap": "^1.6.5",
     "react-dropzone": "^14.2.1",
@@ -70,7 +69,8 @@
     "react-table": "^7.7.0",
     "react-transition-group": "^4.4.2",
     "tabbable": "^5.3.3",
-    "uncontrollable": "^7.2.1"
+    "uncontrollable": "^7.2.1",
+    "uuid": "^9.0.0"
   },
   "peerDependencies": {
     "react": "^16.8.6 || ^17.0.0",

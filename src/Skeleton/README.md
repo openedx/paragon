@@ -73,7 +73,7 @@ you can also set the number of columns in the displayed ``Skeleton``.
         : <Image
               alt="some image"
               roundedCircle
-              src="https://source.unsplash.com/200x200/?nature,flower"
+              src="https://picsum.photos/200/200/"
           />}
       </div>
     </>

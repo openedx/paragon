@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { nanoid } from 'nanoid';
+import { v4 as uuidv4 } from 'uuid';
 import DataTableContext from './DataTableContext';
 import { useRows } from './hooks';
 import { selectColumn } from './utils/getVisibleColumns';
@@ -78,7 +78,7 @@ function CardView({
         className={classNames('pgn__data-table-card-view', className)}
         columnSizes={columnSizes}
       >
-        {[...new Array(8)].map(() => <SkeletonCardComponent key={nanoid()} />)}
+        {[...new Array(8)].map(() => <SkeletonCardComponent key={uuidv4()} />)}
       </CardGrid>
     );
   }

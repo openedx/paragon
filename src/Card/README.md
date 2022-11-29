@@ -35,7 +35,7 @@ This component uses a `Card` from react-bootstrap as a base component and extend
   return (
     <Card style={{ width: isExtraSmall ? "100%" : "18rem" }}>
       <Card.ImageCap
-        src="https://source.unsplash.com/360x200/?nature,flower"
+        src="https://picsum.photos/360/200/"
         srcAlt="Card image"
       />
       <Card.Header
@@ -62,7 +62,7 @@ Use `muted` prop to show `Card` in inactive state.
   return (
     <Card style={{ width: isExtraSmall ? "100%" : "18rem" }} muted>
       <Card.ImageCap 
-        src="https://source.unsplash.com/360x200/?nature,flower"
+        src="https://picsum.photos/360/200/"
         srcAlt="Card image"
       />
       <Card.Header
@@ -89,7 +89,7 @@ You use `isClickable` prop to add additional `hover` and `focus` styling to the 
   return (
     <Card style={{ width: isExtraSmall ? "100%" : "18rem" }} isClickable>
       <Card.ImageCap
-        src="https://source.unsplash.com/360x200/?nature,flower"
+        src="https://picsum.photos/360/200/"
         srcAlt="Card image"
       />
       <Card.Header
@@ -117,7 +117,7 @@ link styling to make its content appear as a regular text.
     <Hyperlink destination="https://www.edx.org">
       <Card style={{ width: isExtraSmall ? "100%" : "18rem" }} isClickable>
         <Card.ImageCap
-          src="https://source.unsplash.com/360x200/?nature,flower"
+          src="https://picsum.photos/360/200/"
           srcAlt="Card image"
         />
         <Card.Header title="Card Title"/>
@@ -348,7 +348,7 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
   return (
     <Card style={{ width: isExtraSmall ? "100%" : "40%" }}>
       <Card.ImageCap
-        src="https://source.unsplash.com/360x200/?nature,flower"
+        src="https://picsum.photos/360/200/"
         srcAlt="Card image"
         logoSrc="https://via.placeholder.com/150"
         logoAlt="Card logo"
@@ -386,7 +386,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
         orientation={isSmall ? "vertical" : "horizontal"}
       >
         <Card.ImageCap
-          src="https://source.unsplash.com/360x200/?nature,flower"
+          src="https://picsum.photos/360/200/"
           srcAlt="Card image"
           logoSrc="https://via.placeholder.com/150"
           logoAlt="Card logo"
@@ -410,7 +410,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
       </Card>
       <Card className="mb-4" orientation={isSmall ? "vertical" : "horizontal"}>
         <Card.ImageCap
-          src="https://source.unsplash.com/360x200/?nature,flower"
+          src="https://picsum.photos/360/200/"
           srcAlt="Card image"
           logoSrc="https://via.placeholder.com/150"
           logoAlt="Card logo"
@@ -427,7 +427,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
       </Card>
       <Card orientation={isSmall ? "vertical" : "horizontal"}>
         <Card.ImageCap
-          src="https://source.unsplash.com/360x200/?nature,flower"
+          src="https://picsum.photos/360/200/"
           srcAlt="Card image"
           logoSrc="https://via.placeholder.com/150"
           logoAlt="Card logo"
@@ -512,7 +512,7 @@ Note that in the example below, the content of `Card` is wrapped inside `Card.Bo
   return (
     <Card style={{ width: isExtraSmall ? "100%" : "25rem" }}>
       <Card.ImageCap
-        src="https://source.unsplash.com/360x200/?nature,flower" 
+        src="https://picsum.photos/360/200/" 
         srcAlt="Card image"
       />
       <Card.Section className="text-center">
@@ -551,7 +551,7 @@ Note that in the example below, the content of `Card` is wrapped inside `Card.Bo
   return (
     <Card orientation={isSmall ? "vertical" : "horizontal"}>
       <Card.ImageCap
-        src="https://source.unsplash.com/360x200/?nature,flower" 
+        src="https://picsum.photos/360/200/" 
         srcAlt="Card image"
       />
       <Card.Body>
@@ -599,7 +599,7 @@ A fallback source is available for both the main `ImageCap` component image and 
     <Card style={{width: isExtraSmall ? "100%" : "40%"}}>
       <Card.ImageCap
           src="fakeURL"
-          fallbackSrc="https://source.unsplash.com/360x200/?ocean"
+          fallbackSrc="https://picsum.photos/360/200/"
           srcAlt="Card image"
           logoSrc="fakeURL"
           fallbackLogoSrc="https://www.edx.org/images/logos/edx-logo-elm.svg"
@@ -627,7 +627,7 @@ A fallback source is available for both the main `ImageCap` component image and 
   return (
     <Card isLoading style={{ width: isExtraSmall ? "100%" : "18rem" }}>
       <Card.ImageCap
-        src="https://source.unsplash.com/360x200/?nature,flower"
+        src="https://picsum.photos/360/200/"
         srcAlt="Card image"
       />
       <Card.Header title="Card Title" />
@@ -651,7 +651,7 @@ A fallback source is available for both the main `ImageCap` component image and 
     <Card isLoading orientation={isExtraSmall ? "vertical" : "horizontal"}>
       <Card.ImageCap
         skeletonHeight={isExtraSmall ? 140 : null}
-        src="https://source.unsplash.com/360x200/?nature,flower"
+        src="https://picsum.photos/360/200/"
         srcAlt="Card image"
         logoSrc="https://via.placeholder.com/150"
         logoAlt="Card logo"
@@ -687,7 +687,7 @@ behavior.
 >
   <Card>
     <Card.ImageCap
-      src="https://source.unsplash.com/360x200/?nature,flower"
+      src="https://picsum.photos/360/200/"
       srcAlt="Card image"
     />
     <Card.Header
@@ -706,7 +706,7 @@ behavior.
   </Card>
   <Card>
     <Card.ImageCap
-      src="https://source.unsplash.com/360x200/?nature,flower"
+      src="https://picsum.photos/360/200/"
       srcAlt="Card image"
     />
     <Card.Header
@@ -724,7 +724,7 @@ behavior.
   </Card>
   <Card>
     <Card.ImageCap
-      src="https://source.unsplash.com/360x200/?nature,flower"
+      src="https://picsum.photos/360/200/"
       srcAlt="Card image"
     />
     <Card.Header
@@ -743,7 +743,7 @@ behavior.
   </Card>
   <Card>
     <Card.ImageCap
-      src="https://source.unsplash.com/360x200/?nature,flower"
+      src="https://picsum.photos/360/200/"
       srcAlt="Card image"
     />
     <Card.Header
@@ -762,7 +762,7 @@ behavior.
   </Card>
   <Card>
     <Card.ImageCap
-      src="https://source.unsplash.com/360x200/?nature,flower"
+      src="https://picsum.photos/360/200/"
       srcAlt="Card image"
     />
     <Card.Header
@@ -780,7 +780,7 @@ behavior.
   </Card>
   <Card>
     <Card.ImageCap
-      src="https://source.unsplash.com/360x200/?nature,flower"
+      src="https://picsum.photos/360/200/"
       srcAlt="Card image"
     />
     <Card.Header
@@ -811,7 +811,7 @@ it is meant to be used as a single horizontal row of Cards, not as a grid. See C
 <CardDeck>
   <Card>
     <Card.ImageCap
-      src="https://source.unsplash.com/360x200/?nature,flower"
+      src="https://picsum.photos/360/200/"
       srcAlt="Card image"
     />
     <Card.Header
@@ -830,7 +830,7 @@ it is meant to be used as a single horizontal row of Cards, not as a grid. See C
   </Card>
   <Card>
     <Card.ImageCap
-      src="https://source.unsplash.com/360x200/?nature,flower"
+      src="https://picsum.photos/360/200/"
       srcAlt="Card image"
     />
     <Card.Header
@@ -848,7 +848,7 @@ it is meant to be used as a single horizontal row of Cards, not as a grid. See C
   </Card>
   <Card>
     <Card.ImageCap
-      src="https://source.unsplash.com/360x200/?nature,flower"
+      src="https://picsum.photos/360/200/"
       srcAlt="Card image"
     />
     <Card.Header
