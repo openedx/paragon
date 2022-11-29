@@ -1,4 +1,4 @@
-import { useCallback, useContext } from 'react';
+import { useContext } from 'react';
 import DataTableContext from './DataTableContext';
 import { clearSelectionAction } from './selection/data/actions';
 
@@ -26,14 +26,14 @@ export const useSelectionActions = (
 ) => {
   const [{ selectedRows, isEntireTableSelected }, dispatch] = controlledTableSelections;
 
-  const clearSelection = useCallback(() => {
+  const clearSelection = () => {
     // if using controlled selection component DataTable.ControlledSelectionStatus
     if (selectedRows.length > 0 || isEntireTableSelected) {
       dispatch(clearSelectionAction());
     } else {
       toggleAllRowsSelected(false);
     }
-  }, [dispatch, isEntireTableSelected, selectedRows, toggleAllRowsSelected]);
+  };
 
   return {
     clearSelection,
