@@ -13,59 +13,61 @@ export interface IColumn {
   onChangeOffset: Function,
 }
 
-const Column = ({
+function Column({
   index, width, onChangeWidth, offset, onChangeOffset,
-}: IColumn) => (
-  <div
-    className={classNames('col mb-4', {
-      [`col-${width}`]: width > 0,
-      [`offset-${offset}`]: offset > 0,
-    })}
-  >
+}: IColumn) {
+  return (
     <div
-      className="text-align-center p-1"
-      style={{ background: '#eee', minHeight: '2rem' }}
+      className={classNames('col mb-4', {
+        [`col-${width}`]: width > 0,
+        [`offset-${offset}`]: offset > 0,
+      })}
     >
-      <div className="form-inline m-2">
-        <label className="font-weight-normal" htmlFor={`column-${index}-width`}>
-          Width
-        </label>
-        <Input
-          type="number"
-          id={`column-${index}-width`}
-          className="form-control-sm"
-          value={width}
-          placeholder="Width (1 - 12)"
-          style={{ width: '3rem' }}
-          min={0}
-          step={1}
-          max={12}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeWidth(index, e.target.value)}
-        />
-      </div>
-      <div className="form-inline m-2">
-        <label
-          className="font-weight-normal"
-          htmlFor={`column-${index}-offset`}
-        >
-          Offset
-        </label>
-        <Input
-          type="number"
-          id={`column-${index}-offset`}
-          className="form-control-sm"
-          value={offset}
-          placeholder="Offset (1 - 11)"
-          style={{ width: '3rem' }}
-          min={0}
-          step={1}
-          max={11}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeOffset(index, e.target.value)}
-        />
+      <div
+        className="text-align-center p-1"
+        style={{ background: '#eee', minHeight: '2rem' }}
+      >
+        <div className="form-inline m-2">
+          <label className="font-weight-normal mr-2" htmlFor={`column-${index}-width`}>
+            Width
+          </label>
+          <Input
+            type="number"
+            id={`column-${index}-width`}
+            className="form-control-sm"
+            value={width}
+            placeholder="Width (1 - 12)"
+            style={{ width: '4rem' }}
+            min={0}
+            step={1}
+            max={12}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeWidth(index, e.target.value)}
+          />
+        </div>
+        <div className="form-inline m-2">
+          <label
+            className="font-weight-normal mr-2"
+            htmlFor={`column-${index}-offset`}
+          >
+            Offset
+          </label>
+          <Input
+            type="number"
+            id={`column-${index}-offset`}
+            className="form-control-sm mr-2"
+            value={offset}
+            placeholder="Offset (1 - 11)"
+            style={{ width: '4rem' }}
+            min={0}
+            step={1}
+            max={11}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeOffset(index, e.target.value)}
+          />
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+}
 
 Column.propTypes = {
   index: PropTypes.number.isRequired,
@@ -140,7 +142,7 @@ ${columnsString.join('')}
         values for each column and see the output below.
       </p>
       <div className="form-inline mb-4">
-        <label htmlFor="num-cols-range mr-2">
+        <label className="mr-2" htmlFor="num-cols-range">
           Number of Columns {numColumns}
         </label>
         <Input

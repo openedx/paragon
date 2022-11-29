@@ -7,6 +7,8 @@ import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 import MeasuredItem from '../../components/MeasuredItem';
 
+import './spacing.scss';
+
 const directions = [
   { key: '', name: 'all' },
   { key: 't', name: 'top' },
@@ -30,21 +32,23 @@ export type PixelCellTypes = {
   spacer: number,
 };
 
-const PixelCell = ({ spacer }: PixelCellTypes) => (
-  <MeasuredItem
-    properties={['margin']}
-    renderAfter={(measurements: { margin: number }) => (
-      <code>
-        {measurements.margin}
-      </code>
-    )}
-  >
-    <div
-      style={{ display: 'none' }}
-      className={`m-${spacer}`}
-    />
-  </MeasuredItem>
-);
+function PixelCell({ spacer }: PixelCellTypes) {
+  return (
+    <MeasuredItem
+      properties={['margin']}
+      renderAfter={(measurements: { margin: number }) => (
+        <code>
+          {measurements.margin}
+        </code>
+      )}
+    >
+      <div
+        style={{ display: 'none' }}
+        className={`m-${spacer}`}
+      />
+    </MeasuredItem>
+  );
+}
 
 PixelCell.propTypes = {
   spacer: PropTypes.number.isRequired,
@@ -54,22 +58,24 @@ export type SpaceBlockTypes = {
   utilityClass: string,
 };
 
-const SpaceBlock = ({ utilityClass }: SpaceBlockTypes) => (
-  <code
-    className={classNames(utilityClass)}
-    style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: '5rem',
-      textAlign: 'center',
-      width: '10rem',
-      background: 'rgba(0,0,0,.1)',
-    }}
-  >
-    {utilityClass ? `.${utilityClass}` : null}
-  </code>
-);
+function SpaceBlock({ utilityClass }: SpaceBlockTypes) {
+  return (
+    <code
+      className={classNames(utilityClass)}
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '5rem',
+        textAlign: 'center',
+        width: '10rem',
+        background: 'rgba(0,0,0,.1)',
+      }}
+    >
+      {utilityClass ? `.${utilityClass}` : null}
+    </code>
+  );
+}
 
 SpaceBlock.propTypes = {
   utilityClass: PropTypes.string,
@@ -118,7 +124,7 @@ export default function SpacingPage() {
         <div className="border p-4">
           <div className="d-flex flex-column align-items-center">
             <h4>Direction</h4>
-            <div className="mb-2">
+            <div className="mb-2 pgn-doc__spacing-directions">
               {directions.map(({ key, name }) => (
                 <label
                   className="form-check d-inline-block mr-4"
@@ -127,7 +133,7 @@ export default function SpacingPage() {
                   <Input
                     id={`set-direction-${key}`}
                     key={key}
-                    className="mt-0"
+                    className="mt-2"
                     type="radio"
                     name="direction"
                     value={key}
