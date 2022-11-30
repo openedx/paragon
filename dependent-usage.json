@@ -1,5 +1,5 @@
 {
-  "lastModified": 1669730906749,
+  "lastModified": 1669817324076,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -11583,7 +11583,7 @@
           },
           {
             "filePath": "src/components/GradesView/EditModal/index.jsx",
-            "line": 56,
+            "line": 66,
             "column": 12
           },
           {
@@ -11723,8 +11723,8 @@
           },
           {
             "filePath": "src/components/GradesView/EditModal/index.jsx",
-            "line": 69,
-            "column": 10
+            "line": 83,
+            "column": 12
           },
           {
             "filePath": "src/components/GradesView/FilterBadges/FilterBadge.jsx",
@@ -11826,11 +11826,53 @@
             "column": 6
           }
         ],
-        "Modal": [
+        "ModalDialog": [
           {
             "filePath": "src/components/GradesView/EditModal/index.jsx",
-            "line": 49,
+            "line": 51,
             "column": 6
+          }
+        ],
+        "ModalDialog.Header": [
+          {
+            "filePath": "src/components/GradesView/EditModal/index.jsx",
+            "line": 58,
+            "column": 8
+          }
+        ],
+        "ModalDialog.Title": [
+          {
+            "filePath": "src/components/GradesView/EditModal/index.jsx",
+            "line": 59,
+            "column": 10
+          }
+        ],
+        "ModalDialog.Body": [
+          {
+            "filePath": "src/components/GradesView/EditModal/index.jsx",
+            "line": 63,
+            "column": 8
+          }
+        ],
+        "ModalDialog.Footer": [
+          {
+            "filePath": "src/components/GradesView/EditModal/index.jsx",
+            "line": 78,
+            "column": 8
+          }
+        ],
+        "ActionRow": [
+          {
+            "filePath": "src/components/GradesView/EditModal/index.jsx",
+            "line": 79,
+            "column": 10
+          }
+        ],
+        "ModalDialog.CloseButton": [
+          {
+            "filePath": "src/components/GradesView/EditModal/index.jsx",
+            "line": 80,
+            "column": 12
           }
         ],
         "DataTable.TableControlBar": [
@@ -22088,6 +22130,16 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
             "line": 65,
             "column": 10
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 119,
+            "column": 12
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 89,
+            "column": 8
           }
         ],
         "ActionRow.Spacer": [
@@ -22110,6 +22162,16 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
             "line": 67,
             "column": 12
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 137,
+            "column": 14
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 107,
+            "column": 10
           }
         ],
         "Button": [
@@ -22175,7 +22237,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 161,
+            "line": 159,
             "column": 10
           },
           {
@@ -22190,7 +22252,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 119,
+            "line": 110,
             "column": 6
           }
         ],
@@ -22384,6 +22446,21 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
             "line": 91,
             "column": 12
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 129,
+            "column": 14
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 78,
+            "column": 12
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 99,
+            "column": 10
           }
         ],
         "Check": [
@@ -22511,8 +22588,8 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 138,
-            "column": 16
+            "line": 134,
+            "column": 24
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
@@ -22526,13 +22603,13 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 89,
-            "column": 24
+            "line": 83,
+            "column": 22
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 115,
-            "column": 12
+            "line": 104,
+            "column": 20
           }
         ],
         "Close": [
@@ -22604,11 +22681,6 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
             "line": 39,
             "column": 12
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 87,
-            "column": 14
           }
         ],
         "Edit": [
@@ -22716,7 +22788,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 146,
+            "line": 144,
             "column": 14
           },
           {
@@ -22726,7 +22798,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 102,
+            "line": 95,
             "column": 12
           }
         ],
@@ -22763,12 +22835,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 141,
+            "line": 139,
             "column": 12
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 97,
+            "line": 90,
             "column": 10
           }
         ],
@@ -22809,7 +22881,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 153,
+            "line": 151,
             "column": 12
           },
           {
@@ -22857,12 +22929,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 162,
+            "line": 160,
             "column": 24
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 120,
+            "line": 111,
             "column": 20
           }
         ],
@@ -22914,7 +22986,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 160,
+            "line": 158,
             "column": 8
           }
         ],
@@ -23047,13 +23119,13 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 138,
-            "column": 59
+            "line": 133,
+            "column": 21
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 115,
-            "column": 55
+            "line": 103,
+            "column": 17
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/ErrorSummary.jsx",
@@ -23102,11 +23174,6 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
             "line": 71,
             "column": 10
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 96,
-            "column": 8
           }
         ],
         "Col": [
@@ -23360,42 +23427,8 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 90,
-            "column": 21
-          }
-        ],
-        "OverlayTrigger": [
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 129,
-            "column": 14
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 78,
-            "column": 12
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 106,
-            "column": 10
-          }
-        ],
-        "Tooltip": [
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 133,
-            "column": 18
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
             "line": 82,
-            "column": 16
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 110,
-            "column": 14
+            "column": 19
           }
         ],
         "Card.Body": [
@@ -24524,42 +24557,42 @@
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 61,
+            "line": 60,
             "column": 6
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 75,
+            "line": 74,
             "column": 6
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 83,
+            "line": 82,
             "column": 6
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 94,
+            "line": 93,
             "column": 6
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 106,
+            "line": 105,
             "column": 6
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 118,
+            "line": 117,
             "column": 6
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 128,
+            "line": 127,
             "column": 6
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 138,
+            "line": 137,
             "column": 6
           },
           {
@@ -24588,6 +24621,11 @@
             "filePath": "src/components/Card/index.jsx",
             "line": 180,
             "column": 16
+          },
+          {
+            "filePath": "src/components/CCPADialog/CCPADialog.jsx",
+            "line": 133,
+            "column": 10
           },
           {
             "filePath": "src/components/ContentfulModule/DynamicProductModule.jsx",
@@ -24971,7 +25009,7 @@
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 76,
+            "line": 75,
             "column": 8
           },
           {
@@ -25031,7 +25069,7 @@
           },
           {
             "filePath": "src/components/Home/Hero.jsx",
-            "line": 37,
+            "line": 36,
             "column": 10
           },
           {
@@ -25354,6 +25392,171 @@
             "column": 30
           }
         ],
+        "useToggle": [
+          {
+            "filePath": "src/components/CCPADialog/CCPADialog.jsx",
+            "line": 16,
+            "column": 32
+          },
+          {
+            "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
+            "line": 76,
+            "column": 32
+          }
+        ],
+        "ModalDialog": [
+          {
+            "filePath": "src/components/CCPADialog/CCPADialog.jsx",
+            "line": 65,
+            "column": 4
+          },
+          {
+            "filePath": "src/components/Course/2U/CourseVideoDialog.jsx",
+            "line": 10,
+            "column": 4
+          },
+          {
+            "filePath": "src/components/EnterpriseEnrolmentModal/EnterpriseEnrollmentInformModal.jsx",
+            "line": 32,
+            "column": 4
+          }
+        ],
+        "ModalDialog.Header": [
+          {
+            "filePath": "src/components/CCPADialog/CCPADialog.jsx",
+            "line": 74,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/EnterpriseEnrolmentModal/EnterpriseEnrollmentInformModal.jsx",
+            "line": 39,
+            "column": 6
+          }
+        ],
+        "ModalDialog.Title": [
+          {
+            "filePath": "src/components/CCPADialog/CCPADialog.jsx",
+            "line": 75,
+            "column": 8
+          },
+          {
+            "filePath": "src/components/EnterpriseEnrolmentModal/EnterpriseEnrollmentInformModal.jsx",
+            "line": 40,
+            "column": 8
+          },
+          {
+            "filePath": "src/components/MarketingModal/SaveForLaterModal.jsx",
+            "line": 66,
+            "column": 14
+          }
+        ],
+        "ModalDialog.Body": [
+          {
+            "filePath": "src/components/CCPADialog/CCPADialog.jsx",
+            "line": 83,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/Course/2U/CourseVideoDialog.jsx",
+            "line": 20,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/EnterpriseEnrolmentModal/EnterpriseEnrollmentInformModal.jsx",
+            "line": 49,
+            "column": 6
+          }
+        ],
+        "Form.Group": [
+          {
+            "filePath": "src/components/CCPADialog/CCPADialog.jsx",
+            "line": 84,
+            "column": 8
+          },
+          {
+            "filePath": "src/components/Overlays/SocialSharePopover.jsx",
+            "line": 110,
+            "column": 10
+          },
+          {
+            "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
+            "line": 75,
+            "column": 16
+          },
+          {
+            "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
+            "line": 80,
+            "column": 16
+          },
+          {
+            "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
+            "line": 85,
+            "column": 16
+          },
+          {
+            "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
+            "line": 95,
+            "column": 16
+          },
+          {
+            "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
+            "line": 99,
+            "column": 16
+          },
+          {
+            "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
+            "line": 103,
+            "column": 16
+          },
+          {
+            "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
+            "line": 124,
+            "column": 10
+          }
+        ],
+        "Form.Switch": [
+          {
+            "filePath": "src/components/CCPADialog/CCPADialog.jsx",
+            "line": 85,
+            "column": 10
+          }
+        ],
+        "ModalDialog.Footer": [
+          {
+            "filePath": "src/components/CCPADialog/CCPADialog.jsx",
+            "line": 124,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/EnterpriseEnrolmentModal/EnterpriseEnrollmentInformModal.jsx",
+            "line": 59,
+            "column": 6
+          }
+        ],
+        "ActionRow": [
+          {
+            "filePath": "src/components/CCPADialog/CCPADialog.jsx",
+            "line": 125,
+            "column": 8
+          },
+          {
+            "filePath": "src/components/EnterpriseEnrolmentModal/EnterpriseEnrollmentInformModal.jsx",
+            "line": 60,
+            "column": 8
+          }
+        ],
+        "ModalDialog.CloseButton": [
+          {
+            "filePath": "src/components/CCPADialog/CCPADialog.jsx",
+            "line": 126,
+            "column": 10
+          },
+          {
+            "filePath": "src/components/EnterpriseEnrolmentModal/EnterpriseEnrollmentInformModal.jsx",
+            "line": 61,
+            "column": 10
+          }
+        ],
         "Hyperlink": [
           {
             "filePath": "src/components/ContentfulModule/Citation.jsx",
@@ -25416,13 +25619,6 @@
             "column": 20
           }
         ],
-        "useToggle": [
-          {
-            "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 76,
-            "column": 32
-          }
-        ],
         "Breadcrumb": [
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
@@ -25482,30 +25678,6 @@
             "filePath": "src/components/Video/index.jsx",
             "line": 129,
             "column": 18
-          }
-        ],
-        "ModalDialog": [
-          {
-            "filePath": "src/components/Course/2U/CourseVideoDialog.jsx",
-            "line": 10,
-            "column": 4
-          },
-          {
-            "filePath": "src/components/EnterpriseEnrolmentModal/EnterpriseEnrollmentInformModal.jsx",
-            "line": 32,
-            "column": 4
-          }
-        ],
-        "ModalDialog.Body": [
-          {
-            "filePath": "src/components/Course/2U/CourseVideoDialog.jsx",
-            "line": 20,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/EnterpriseEnrolmentModal/EnterpriseEnrollmentInformModal.jsx",
-            "line": 49,
-            "column": 6
           }
         ],
         "Collapsible.Advanced": [
@@ -25818,50 +25990,10 @@
             "column": 35
           }
         ],
-        "ModalDialog.Header": [
-          {
-            "filePath": "src/components/EnterpriseEnrolmentModal/EnterpriseEnrollmentInformModal.jsx",
-            "line": 39,
-            "column": 6
-          }
-        ],
-        "ModalDialog.Title": [
-          {
-            "filePath": "src/components/EnterpriseEnrolmentModal/EnterpriseEnrollmentInformModal.jsx",
-            "line": 40,
-            "column": 8
-          },
-          {
-            "filePath": "src/components/MarketingModal/SaveForLaterModal.jsx",
-            "line": 66,
-            "column": 14
-          }
-        ],
-        "ModalDialog.Footer": [
-          {
-            "filePath": "src/components/EnterpriseEnrolmentModal/EnterpriseEnrollmentInformModal.jsx",
-            "line": 59,
-            "column": 6
-          }
-        ],
-        "ActionRow": [
-          {
-            "filePath": "src/components/EnterpriseEnrolmentModal/EnterpriseEnrollmentInformModal.jsx",
-            "line": 60,
-            "column": 8
-          }
-        ],
-        "ModalDialog.CloseButton": [
-          {
-            "filePath": "src/components/EnterpriseEnrolmentModal/EnterpriseEnrollmentInformModal.jsx",
-            "line": 61,
-            "column": 10
-          }
-        ],
         "Input": [
           {
             "filePath": "src/components/Footer/index.jsx",
-            "line": 469,
+            "line": 470,
             "column": 18
           }
         ],
@@ -26111,48 +26243,6 @@
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
             "line": 70,
             "column": 6
-          }
-        ],
-        "Form.Group": [
-          {
-            "filePath": "src/components/Overlays/SocialSharePopover.jsx",
-            "line": 110,
-            "column": 10
-          },
-          {
-            "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 75,
-            "column": 16
-          },
-          {
-            "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 80,
-            "column": 16
-          },
-          {
-            "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 85,
-            "column": 16
-          },
-          {
-            "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 95,
-            "column": 16
-          },
-          {
-            "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 99,
-            "column": 16
-          },
-          {
-            "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 103,
-            "column": 16
-          },
-          {
-            "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 124,
-            "column": 10
           }
         ],
         "Form.Control": [
