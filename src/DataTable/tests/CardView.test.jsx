@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { selectColumn } from '../utils/getVisibleColumns';
-import CardView from '../CardView';
+import CardView, { DEFAULT_SKELETON_CARD_COUNT } from '../CardView';
 import DataTableContext from '../DataTableContext';
 
 const instance = {
@@ -34,6 +34,11 @@ const instance = {
   }],
 };
 
+const loadingInstance = {
+  ...instance,
+  isLoading: true,
+};
+
 const selectableInstance = {
   ...instance,
   isSelectable: true,
@@ -52,10 +57,10 @@ function Card({ name }) {
 }
 
 // eslint-disable-next-line react/prop-types
-function CardViewWrapper({ value = instance }) {
+function CardViewWrapper({ value = instance, ...props }) {
   return (
     <DataTableContext.Provider value={value}>
-      <CardView CardComponent={Card} />
+      <CardView CardComponent={Card} {...props} />
     </DataTableContext.Provider>
   );
 }
@@ -85,5 +90,10 @@ describe('<CardView />', () => {
     expect(selectionComponents.length).toEqual(2);
     expect(selectionComponents[0]).not.toBeChecked();
     expect(selectionComponents[1]).toBeChecked();
+  });
+
+  it('renders card loading state', () => {
+    render(<CardViewWrapper value={loadingInstance} />);
+    expect(screen.queryAllByTestId('default-skeleton-card-component')).toHaveLength(DEFAULT_SKELETON_CARD_COUNT);
   });
 });

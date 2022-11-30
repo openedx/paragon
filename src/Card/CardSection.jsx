@@ -45,7 +45,7 @@ CardSection.propTypes = {
   /** Specifies class name to append to the base element. */
   className: PropTypes.string,
   /** Specifies contents of the component. */
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   /** Specifies title of the `Section`. */
   title: PropTypes.node,
   /** Specifies node to render on the bottom right of the `Section` (i.e. `ActionRow`). */
@@ -59,6 +59,7 @@ CardSection.propTypes = {
 };
 
 CardSection.defaultProps = {
+  children: null,
   className: undefined,
   title: undefined,
   actions: undefined,

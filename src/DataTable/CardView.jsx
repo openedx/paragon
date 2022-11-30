@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { v4 as uuidv4 } from 'uuid';
 import DataTableContext from './DataTableContext';
 import { useRows } from './hooks';
 import { selectColumn } from './utils/getVisibleColumns';
-import { CardGrid } from '..';
+import { CardGrid, Card } from '..';
 
 function CardItem({
   row,
@@ -37,19 +38,52 @@ function CardItem({
   return <CardComponent {...row} />;
 }
 
+function DefaultSkeletonCardComponent() {
+  return (
+    <Card isLoading data-testid="default-skeleton-card-component">
+      <Card.ImageCap logoSkeleton />
+      <Card.Section className="pgn__data-table-card-view-default-skeleton-card-section" />
+      <Card.Footer />
+    </Card>
+  );
+}
+
+export const DEFAULT_SKELETON_CARD_COUNT = 8;
+
 function CardView({
-  columnSizes, CardComponent, className, selectionPlacement,
+  columnSizes,
+  CardComponent,
+  className,
+  selectionPlacement,
+  SkeletonCardComponent = DefaultSkeletonCardComponent,
+  skeletonCardCount,
 }) {
   const {
     getTableProps, prepareRow, displayRows,
   } = useRows();
-  const { isSelectable, manualSelectColumn } = useContext(DataTableContext);
+  const {
+    isSelectable,
+    manualSelectColumn,
+    isLoading,
+  } = useContext(DataTableContext);
+
   // use the same component for card selection that is used for row selection
   // otherwise view switching might break if row selection uses component that supports backend filtering / sorting
-  const selectionComponent = manualSelectColumn?.Cell || selectColumn.Cell;
+  const SelectionComponent = manualSelectColumn?.Cell || selectColumn.Cell;
 
   if (!getTableProps) {
     return null;
+  }
+
+  if (isLoading) {
+    return (
+      <CardGrid
+        className={classNames('pgn__data-table-card-view', className)}
+        columnSizes={columnSizes}
+      >
+        {[...new Array(skeletonCardCount)].map(() => <SkeletonCardComponent key={uuidv4()} />)}
+      </CardGrid>
+    );
   }
 
   return (
@@ -61,7 +95,7 @@ function CardView({
         <CardItem
           key={row.id}
           CardComponent={CardComponent}
-          SelectionComponent={selectionComponent}
+          SelectionComponent={SelectionComponent}
           isSelectable={isSelectable}
           row={row}
           prepareRow={prepareRow}
@@ -94,8 +128,10 @@ CardView.defaultProps = {
     lg: 6,
     xl: 4,
   },
-  className: '',
+  className: undefined,
   selectionPlacement: 'right',
+  SkeletonCardComponent: undefined,
+  skeletonCardCount: 8,
 };
 
 CardView.propTypes = {
@@ -117,6 +153,10 @@ CardView.propTypes = {
   CardComponent: PropTypes.func.isRequired,
   /** If the Cards are selectable this prop determines from which side of the Card to show selection component. */
   selectionPlacement: PropTypes.oneOf(['left', 'right']),
+  /** Overrides default skeleton card component for loading state in CardView */
+  SkeletonCardComponent: PropTypes.func,
+  /** Customize the number of loading skeleton cards to display in CardView */
+  skeletonCardCount: PropTypes.number,
 };
 
 export default CardView;
