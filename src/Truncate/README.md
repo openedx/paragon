@@ -52,7 +52,7 @@ A Truncate component can help you crop multiline text. There will be three dots 
   return (
     <Card style={{ width: isExtraSmall ? "100%" : "18rem" }} isClickable>
       <Card.ImageCap
-        src="https://source.unsplash.com/360x200/?nature,flower"
+        src="https://picsum.photos/360/200/"
         srcAlt="Card image"
       />
       <Card.Header

@@ -320,7 +320,7 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
 
     return (
       <Card className={className}>
-        <Card.ImageCap src="https://source.unsplash.com/360x200/?nature,flower" srcAlt="Card image" />
+        <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
         <Card.Header title={name} />
         <Card.Section>
           <dl>
@@ -1073,7 +1073,7 @@ Use `columnSizes` prop of `CardView` component to define how many `Cards` are sh
 		
     return (
       <Card className={className}>
-        <Card.ImageCap src="https://source.unsplash.com/360x200/?nature,flower" srcAlt="Card image" />
+        <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
         <Card.Body>
           <Card.Header title={name} />
           <Card.Section>
@@ -1157,7 +1157,7 @@ You can also display `Cards` with horizontal view. If the table is selectable co
 
     return (
       <Card className={className} orientation="horizontal">
-        <Card.ImageCap src="https://source.unsplash.com/360x200/?nature,flower" srcAlt="Card image" />
+        <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
         <Card.Body>
           <Card.Header title={name} />
           <Card.Section>
