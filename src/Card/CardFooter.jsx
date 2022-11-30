@@ -42,7 +42,7 @@ const CardFooter = React.forwardRef(({
 
 CardFooter.propTypes = {
   /** Specifies contents of the component. */
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   /** Specifies class name to append to the base element. */
   className: PropTypes.string,
   /** Optional node to display near actions. Should be either a plain text or an element containing text (e.g. link). */
@@ -58,6 +58,7 @@ CardFooter.propTypes = {
 };
 
 CardFooter.defaultProps = {
+  children: null,
   className: undefined,
   textElement: undefined,
   isStacked: false,

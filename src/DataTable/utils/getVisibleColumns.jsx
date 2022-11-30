@@ -23,7 +23,10 @@ export const selectColumn = {
 
     return (
       <div className="pgn__data-table__controlled-select">
-        <CheckboxControl {...updatedProps} />
+        <CheckboxControl
+          {...updatedProps}
+          data-testid="datatable-select-column-checkbox-header"
+        />
       </div>
     );
   },
@@ -36,7 +39,10 @@ export const selectColumn = {
 
     return (
       <div className="pgn__data-table__controlled-select">
-        <CheckboxControl {...updatedProps} />
+        <CheckboxControl
+          {...updatedProps}
+          data-testid="datatable-select-column-checkbox-cell"
+        />
       </div>
     );
   },

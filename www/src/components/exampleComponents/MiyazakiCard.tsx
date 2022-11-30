@@ -17,7 +17,7 @@ const MiyazakiCard = ({ className, original }: IMiyazakiCard) => {
 
   return (
     <Card className={className}>
-      <Card.ImageCap src="https://source.unsplash.com/360x200/?nature,flower" srcAlt="Card image" />
+      <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
       <Card.Header title={title} />
       <Card.Section>
         <dl>

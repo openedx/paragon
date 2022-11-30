@@ -1,8 +1,11 @@
 import React, { useContext } from 'react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { act } from 'react-dom/test-utils';
 import { mount } from 'enzyme';
 import * as reactTable from 'react-table';
 import { IntlProvider } from 'react-intl';
+import '@testing-library/jest-dom';
 
 import DataTable from '..';
 import TableControlBar from '../TableControlBar';
@@ -30,37 +33,44 @@ const additionalColumns = [
 const props = {
   data: [
     {
+      uuid: '1',
       name: 'Lil Bub',
       color: 'brown tabby',
       famous_for: 'weird tongue',
     },
     {
+      uuid: '2',
       name: 'Grumpy Cat',
       color: 'siamese',
       famous_for: 'serving moods',
     },
     {
+      uuid: '3',
       name: 'Smoothie',
       color: 'orange tabby',
       famous_for: 'modeling',
     },
     {
+      uuid: '4',
       name: 'Maru',
       color: 'brown tabby',
       famous_for: 'being a lovable oaf',
     },
     {
+      uuid: '5',
       name: 'Keyboard Cat',
       color: 'orange tabby',
       famous_for: 'piano virtuoso',
     },
     {
+      uuid: '6',
       name: 'Long Cat',
       color: 'russian white',
       famous_for:
         'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
     },
     {
+      uuid: '7',
       name: 'Zeno',
       color: 'brown tabby',
       famous_for: 'getting halfway there',
@@ -82,6 +92,9 @@ const props = {
     },
   ],
   itemCount: 7,
+  initialTableOptions: {
+    getRowId: row => row.uuid,
+  },
 };
 
 const emptyTestText = 'We love bears';
@@ -193,7 +206,7 @@ describe('<DataTable />', () => {
   // TODO: test that useTable is called with the correct arguments when isPaginated, isFilterable, isSelectable are used
   // TODO: test that fetchData is called correctly
 
-  describe('controlled table selections', () => {
+  describe('[legacy] controlled table selections', () => {
     it('passes initial controlledTableSelections to context', () => {
       const wrapper = mount(
         <DataTableWrapper {...props}>
@@ -243,6 +256,50 @@ describe('<DataTable />', () => {
         }),
       );
       expect(contextValue.selectedFlatRows).toEqual([selectedRow]);
+    });
+  });
+
+  describe('controlled table selections', () => {
+    beforeEach(() => {
+      jest.clearAllMocks();
+    });
+
+    it('calls onSelectedRowsChanged when selected rows are updated', () => {
+      const mockOnSelectedRowsChange = jest.fn();
+      const propsWithSelection = {
+        ...props,
+        isSelectable: true,
+        onSelectedRowsChanged: mockOnSelectedRowsChange,
+      };
+      render(<DataTableWrapper {...propsWithSelection} />);
+
+      // select first row
+      userEvent.click(screen.getAllByTestId('datatable-select-column-checkbox-cell')[0]);
+      expect(mockOnSelectedRowsChange).toHaveBeenCalledTimes(1);
+      expect(mockOnSelectedRowsChange).toHaveBeenCalledWith(
+        expect.objectContaining({
+          1: true,
+        }),
+      );
+
+      // select third row
+      userEvent.click(screen.getAllByTestId('datatable-select-column-checkbox-cell')[2]);
+      expect(mockOnSelectedRowsChange).toHaveBeenCalledTimes(2);
+      expect(mockOnSelectedRowsChange).toHaveBeenCalledWith(
+        expect.objectContaining({
+          1: true,
+          3: true,
+        }),
+      );
+
+      // unselect third row
+      userEvent.click(screen.getAllByTestId('datatable-select-column-checkbox-cell')[2]);
+      expect(mockOnSelectedRowsChange).toHaveBeenCalledTimes(3);
+      expect(mockOnSelectedRowsChange).toHaveBeenCalledWith(
+        expect.objectContaining({
+          1: true,
+        }),
+      );
     });
   });
 });

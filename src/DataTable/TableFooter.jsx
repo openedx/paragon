@@ -1,15 +1,24 @@
-/* eslint-disable react/require-default-props */
-import React from 'react';
+import React, { useContext } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import RowStatus from './RowStatus';
+import DataTableContext from './DataTableContext';
+import RowStatusDefault from './RowStatus';
 import TablePagination from './TablePagination';
 import TablePaginationMinimal from './TablePaginationMinimal';
 
 function TableFooter({ className, children }) {
+  const { RowStatusComponent } = useContext(DataTableContext);
+  const RowStatus = RowStatusComponent || RowStatusDefault;
+
   return (
     <div className={classNames(className, 'pgn__data-table-footer')}>
-      {children}
+      {children || (
+        <>
+          <RowStatus />
+          <TablePagination />
+          <TablePaginationMinimal />
+        </>
+      )}
     </div>
   );
 }
@@ -26,14 +35,8 @@ TableFooter.propTypes = {
 };
 
 TableFooter.defaultProps = {
-  children: (
-    <>
-      <RowStatus />
-      <TablePagination />
-      <TablePaginationMinimal />
-    </>
-  ),
-  className: null,
+  children: null,
+  className: undefined,
 };
 
 export default TableFooter;
