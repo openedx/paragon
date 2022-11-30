@@ -2,7 +2,7 @@ import React, {
   useEffect, useMemo, useReducer,
 } from 'react';
 import PropTypes from 'prop-types';
-import { useTable } from 'react-table';
+import { useTable, useMountedLayoutEffect } from 'react-table';
 
 import classNames from 'classnames';
 import Table from './Table';
@@ -127,7 +127,7 @@ function DataTable({
     }
   }, [fetchData, tableStatePageSize, tableStatePageIndex, tableStateSortBy, tableStateFilters]);
 
-  useEffect(() => {
+  useMountedLayoutEffect(() => {
     if (onSelectedRowsChanged) {
       onSelectedRowsChanged(tableStateSelectedRowIds);
     }

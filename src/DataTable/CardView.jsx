@@ -40,7 +40,7 @@ function CardItem({
 
 function DefaultSkeletonCardComponent() {
   return (
-    <Card isLoading>
+    <Card isLoading data-testid="default-skeleton-card-component">
       <Card.ImageCap logoSkeleton />
       <Card.Section className="pgn__data-table-card-view-default-skeleton-card-section" />
       <Card.Footer />
@@ -48,12 +48,15 @@ function DefaultSkeletonCardComponent() {
   );
 }
 
+export const DEFAULT_SKELETON_CARD_COUNT = 8;
+
 function CardView({
   columnSizes,
   CardComponent,
   className,
   selectionPlacement,
   SkeletonCardComponent = DefaultSkeletonCardComponent,
+  skeletonCardCount,
 }) {
   const {
     getTableProps, prepareRow, displayRows,
@@ -78,7 +81,7 @@ function CardView({
         className={classNames('pgn__data-table-card-view', className)}
         columnSizes={columnSizes}
       >
-        {[...new Array(8)].map(() => <SkeletonCardComponent key={uuidv4()} />)}
+        {[...new Array(skeletonCardCount)].map(() => <SkeletonCardComponent key={uuidv4()} />)}
       </CardGrid>
     );
   }
@@ -128,6 +131,7 @@ CardView.defaultProps = {
   className: undefined,
   selectionPlacement: 'right',
   SkeletonCardComponent: undefined,
+  skeletonCardCount: 8,
 };
 
 CardView.propTypes = {
@@ -151,6 +155,8 @@ CardView.propTypes = {
   selectionPlacement: PropTypes.oneOf(['left', 'right']),
   /** Overrides default skeleton card component for loading state in CardView */
   SkeletonCardComponent: PropTypes.func,
+  /** Customize the number of loading skeleton cards to display in CardView */
+  skeletonCardCount: PropTypes.number,
 };
 
 export default CardView;

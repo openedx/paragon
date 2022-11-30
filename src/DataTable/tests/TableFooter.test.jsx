@@ -13,6 +13,7 @@ const footerInstance = {
   state: { pageIndex: 1 },
   pageCount: 3,
   itemCount: 30,
+  RowStatusComponent: undefined,
 };
 
 // eslint-disable-next-line react/prop-types
@@ -39,5 +40,13 @@ describe('<TableFooter />', () => {
     const leftText = "I'm on the left";
     const wrapper = mount(<TableFooterWrapper><div>{leftText}</div></TableFooterWrapper>);
     expect(wrapper.text()).toContain(leftText);
+  });
+  it('uses custom RowStatus component, if provided', () => {
+    const dataTableContextValue = {
+      ...footerInstance,
+      RowStatusComponent: () => <p>Hello world</p>,
+    };
+    const wrapper = mount(<TableFooterWrapper value={dataTableContextValue} />);
+    expect(wrapper.text()).toContain('Hello world');
   });
 });
