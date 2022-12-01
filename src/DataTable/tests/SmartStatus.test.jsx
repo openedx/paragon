@@ -37,8 +37,17 @@ function SmartStatusWrapper({ value, props }) {
 
 describe('<SmartStatus />', () => {
   it('Shows the selection status if rows are selected', () => {
+    const contextValue = {
+      ...instance,
+      state: {
+        selectedRowIds: {
+          0: true,
+          1: true,
+        },
+      },
+    };
     const wrapper = mount(
-      <SmartStatusWrapper value={{ ...instance, state: {}, selectedFlatRows: Array(5) }} />,
+      <SmartStatusWrapper value={contextValue} />,
     );
     expect(wrapper.find(SelectionStatus)).toHaveLength(1);
   });
@@ -73,11 +82,17 @@ describe('<SmartStatus />', () => {
     function AltStatus() {
       return <div>{altStatusText}</div>;
     }
-    const wrapper = mount(<SmartStatusWrapper
-      value={{
-        ...instance, SelectionStatusComponent: AltStatus, state: {}, selectedFlatRows: Array(5),
-      }}
-    />);
+    const contextValue = {
+      ...instance,
+      SelectionStatusComponent: AltStatus,
+      state: {
+        selectedRowIds: {
+          0: true,
+          1: true,
+        },
+      },
+    };
+    const wrapper = mount(<SmartStatusWrapper value={contextValue} />);
     expect(wrapper.text()).toContain(altStatusText);
   });
   it('shows an alternate row status', () => {
