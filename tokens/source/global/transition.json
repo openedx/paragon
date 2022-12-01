@@ -1,7 +1,0 @@
-{
-  "transition": {
-    "base": { "value": "all .2s ease-in-out", "source": "$transition-base" },
-    "fade": { "value": "opacity .15s linear", "source": "$transition-fade" },
-    "collapse": { "value": "height .35s ease", "source": "$transition-collapse" }
-  }
-}
