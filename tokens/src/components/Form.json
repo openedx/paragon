@@ -96,6 +96,7 @@
         "source": "$input-transition"
       },
       "check": {
+        "gutter" : { "value": "1.25rem", "source": "$form-check-input-gutter" },
         "margin": {
           "x": {
             "base": { "value": ".25rem", "source": "$form-check-input-margin-x" },
@@ -166,7 +167,9 @@
             "bg": { "value": "{form.input.bg.disabled.value}", "source": "$custom-control-indicator-disabled-bg" }
           },
           "checked": {
+            "color": { "value": "{color.background.active.value}", "source": "$custom-control-indicator-checked-color" },
             "bg": {
+              "text": { "value": "{color.background.active.value}", "source": "$custom-control-indicator-checked-bg" },
               "disabled": {
                 "value": "{color.primary.500.value}",
                 "source": "$custom-control-indicator-checked-disabled-bg",
@@ -188,8 +191,10 @@
             }
           },
           "active": {
+            "color": { "value": "{color.active.value}", "source": "$custom-control-indicator-active-color" },
             "box-shadow": {"value": "none", "source": "$custom-control-indicator-active-box-shadow" },
-            "bg": { "value": "#0A3055", "source": "$custom-control-indicator-active-bg" }
+            "bg": { "value": "{color.background.active.value}", "source": "$custom-control-indicator-active-bg" },
+            "border-color": { "value": "{form.custom.control.indicator.active.bg.value}", "source": "$custom-control-indicator-active-border-color" }
           }
         },
         "label": {
@@ -214,7 +219,18 @@
           "border": {
             "radius": { "value": "0", "source": "$custom-checkbox-indicator-border-radius" }
           },
+          "icon-checked": {
+            "value": "url(\"data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z' fill='{form.custom.control.indicator.checked.color.value}'/></svg>\")",
+            "source": "$custom-checkbox-indicator-icon-checked",
+            "outputReferences": false,
+            "modify": [{
+              "type": "str-replace",
+              "toReplace": "#",
+              "replaceWith": "%23"
+            }]
+          },
           "indeterminate": {
+            "color": { "value": "{form.custom.control.indicator.checked.color.value}", "source": "$custom-checkbox-indicator-indeterminate-color"},
             "bg": { "value": "{color.background.active.value}", "source": "$custom-checkbox-indicator-indeterminate-bg" },
             "box-shadow": { "value": "none", "source": "$custom-checkbox-indicator-indeterminate-box-shadow" },
             "border": {
@@ -222,6 +238,16 @@
                 "value": "{form.custom.checkbox.indicator.indeterminate.bg.value}",
                 "source": "$custom-checkbox-indicator-indeterminate-border-color"
               }
+            },
+            "icon": {
+              "value": "url(\"data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM17 13H7V11H17V13Z' fill='{form.custom.checkbox.indicator.indeterminate.color.value}'/></svg>\")",
+              "source": "$custom-checkbox-indicator-icon-indeterminate",
+              "outputReferences": false,
+              "modify": [{
+                "type": "str-replace",
+                "toReplace": "#",
+                "replaceWith": "%23"
+              }]
             }
           }
         }
@@ -230,18 +256,51 @@
         "indicator": {
           "border": {
             "radius": { "value": "50%", "source": "$custom-radio-indicator-border-radius" }
+          },
+          "icon-checked": {
+            "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='{form.custom.control.indicator.checked.bg.text.value}'/%3e%3c/svg%3e\")",
+            "source": "$custom-radio-indicator-icon-checked",
+            "outputReferences": false,
+            "modify": [{
+              "type": "str-replace",
+              "toReplace": "#",
+              "replaceWith": "%23"
+            }]
           }
         }
       },
       "switch": {
         "width": { "value": "calc({form.custom.control.indicator.size.value} * 1.75)", "source": "$custom-switch-width" },
         "indicator": {
+          "checked": {
+            "bg": { "value": "{color.success.base.value}", "source": "$custom-switch-indicator-checked-bg" }
+          },
           "border": {
             "radius": { "value": "calc({form.custom.control.indicator.size.value} / 2)", "source": "$custom-switch-indicator-border-radius" }
           },
           "size": {
             "value": "calc({form.custom.control.indicator.size.value} - {form.custom.control.indicator.border.width.value} * 4)",
             "source": "$custom-switch-indicator-size"
+          },
+          "icon-off": {
+            "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='{form.custom.control.indicator.checked.bg.text.value}'/%3e%3c/svg%3e\")",
+            "source": "$custom-switch-indicator-icon-off",
+            "outputReferences": false,
+            "modify": [{
+              "type": "str-replace",
+              "toReplace": "#",
+              "replaceWith": "%23"
+            }]
+          },
+          "icon-on": {
+            "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='{form.custom.control.indicator.active.color.value}'/%3e%3c/svg%3e\")",
+            "source": "$custom-switch-indicator-icon-on",
+            "outputReferences": false,
+            "modify": [{
+              "type": "str-replace",
+              "toReplace": "#",
+              "replaceWith": "%23"
+            }]
           }
         }
       },
@@ -275,7 +334,18 @@
           "height": { "value": "{form.input.line.height.base.value}", "source": "$custom-select-line-height" }
         },
         "indicator": {
-          "padding": { "value": "1rem", "source": "$custom-select-indicator-padding" }
+          "padding": { "value": "1rem", "source": "$custom-select-indicator-padding" },
+          "color": { "value": "{color.theme.hover.gray}", "source": "$custom-select-indicator-color" },
+          "icon": {
+            "value": "url('data:image/svg+xml,<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M16.59 8.58984L12 13.1698L7.41 8.58984L6 9.99984L12 15.9998L18 9.99984L16.59 8.58984Z\" fill=\"{form.custom.select.indicator.color}\"/></svg>')",
+            "source": "$custom-select-indicator",
+            "outputReferences": false,
+            "modify": [{
+              "type": "str-replace",
+              "toReplace": "#",
+              "replaceWith": "%23"
+            }]
+          }
         },
         "color": {
           "base": { "value": "{form.input.color.base.value}", "source": "$custom-select-color" },
@@ -408,6 +478,102 @@
       }
     },
     "feedback": {
+      "icon": {
+        "valid": {
+          "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='{form.feedback.color.icon.valid.value}' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e\")",
+          "source": "$form-feedback-icon-valid",
+          "outputReferences": false,
+          "modify": [{
+            "type": "str-replace",
+            "toReplace": "#",
+            "replaceWith": "%23"
+          }]
+        },
+        "invalid": {
+          "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='{form.feedback.color.icon.invalid.value}' viewBox='-2 -2 7 7'%3e%3cpath stroke='{form.feedback.color.icon.invalid.value}' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E\")",
+          "source": "$form-feedback-icon-invalid",
+          "outputReferences": false,
+          "modify": [{
+            "type": "str-replace",
+            "toReplace": "#",
+            "replaceWith": "%23"
+          }]
+        }
+      },
+      "color": {
+        "valid": { "value": "{color.success.base.value}", "source": "$form-feedback-valid-color" },
+        "invalid": { "value": "{color.danger.base.value}", "source": "$form-feedback-invalid-color" },
+        "icon": {
+          "valid": { "value": "{form.feedback.color.valid.value}", "source": "$form-feedback-icon-valid-color" },
+          "invalid": { "value": "{form.feedback.color.invalid.value}", "source": "$form-feedback-icon-invalid-color" }
+        },
+        "tooltip": {
+          "valid": {
+            "value": "{form.feedback.color.valid.value}",
+            "source": "$form-feedback-tooltip-valid-color",
+            "modify": [{"type": "color-yiq"}]
+          },
+          "invalid": {
+            "value": "{form.feedback.color.invalid.value}",
+            "source": "$form-feedback-tooltip-invalid-color",
+            "modify": [{"type": "color-yiq"}]
+          },
+          "bg": {
+            "valid": {
+              "value": "{form.feedback.color.valid.value}",
+              "source": "$form-feedback-tooltip-valid-bg",
+              "modify": [{
+                "type": "alpha",
+                "amount": 0.9
+              }]
+            },
+            "invalid": {
+              "value": "{form.feedback.color.invalid.value}",
+              "source": "$form-feedback-tooltip-invalid-bg",
+              "modify": [{
+                "type": "alpha",
+                "amount": 0.9
+              }]
+            }
+          }
+        },
+        "focus-box-shadow": {
+          "valid": {
+            "value": "{form.feedback.color.valid.value}",
+            "source": "$form-feedback-focus-box-shadow-valid-color",
+            "modify": [{
+              "type": "alpha",
+              "amount": 0.25
+            }]
+          },
+          "invalid": {
+            "value": "{form.feedback.color.invalid.value}",
+            "source": "$form-feedback-focus-box-shadow-invalid-color",
+            "modify": [{
+              "type": "alpha",
+              "amount": 0.25
+            }]
+          }
+        },
+        "checked": {
+          "valid": {
+            "value": "{form.feedback.color.valid.value}",
+            "source": "$form-feedback-checked-valid-color",
+            "modify": [{
+              "type": "lighten",
+              "amount": 0.1
+            }]
+          },
+          "invalid": {
+            "value": "{form.feedback.color.invalid.value}",
+            "source": "$form-feedback-checked-invalid-color",
+            "modify": [{
+              "type": "lighten",
+              "amount": 0.1
+            }]
+          }
+        }
+      },
       "margin": {
         "top": { "value": "{form.text.margin.top.value}", "source": "$form-feedback-margin-top" }
       },
@@ -440,6 +606,18 @@
       "icon": {
         "padding": { "value": ".5625rem", "source": "$select-icon-padding" }
       }
+    },
+    "grid-gutter-width": { "value": "10px", "source": "$form-grid-gutter-width" },
+    "autosuggest": {
+      "icon": {
+        "width": { "value": "2.4rem", "source": "$form-autosuggest-icon-width" },
+        "height": { "value": "{form.autosuggest.icon.width}", "source": "$form-autosuggest-icon-height" }
+      },
+      "spinner": {
+        "width": { "value": "1.25rem", "source": "$form-autosuggest-spinner-width" },
+        "height": { "value": "{form.autosuggest.spinner.width}", "source": "$form-autosuggest-spinner-height" }
+      },
+      "border-width": { "value": ".125rem", "source": "$form-autosuggest-border-width" }
     }
   }
 }
