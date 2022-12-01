@@ -272,6 +272,10 @@
   --pgn-caret-spacing: .255em;
   --pgn-caret-vertical-align: .255em;
   --pgn-caret-width: .3em;
+  --pgn-form-autosuggest-border-width: .125rem;
+  --pgn-form-autosuggest-spinner-width: 1.25rem;
+  --pgn-form-autosuggest-icon-width: 2.4rem;
+  --pgn-form-grid-gutter-width: 10px;
   --pgn-form-select-icon-padding: .5625rem;
   --pgn-form-control-icon-width: 32px;
   --pgn-form-feedback-tooltip-opacity: .9;
@@ -293,7 +297,6 @@
   --pgn-form-custom-checkbox-indicator-indeterminate-box-shadow: none;
   --pgn-form-custom-checkbox-indicator-border-radius: 0;
   --pgn-form-custom-control-label-color-base: null;
-  --pgn-form-custom-control-indicator-active-bg: #0A3055FF;
   --pgn-form-custom-control-indicator-active-box-shadow: none;
   --pgn-form-custom-control-indicator-checked-box-shadow-focus: 0 0 0 4px rgba(0, 0, 0, .1);
   --pgn-form-custom-control-indicator-checked-box-shadow-base: none;
@@ -313,6 +316,7 @@
   --pgn-form-input-check-margin-y: .3rem;
   --pgn-form-input-check-margin-x-inline: .3125rem;
   --pgn-form-input-check-margin-x-base: .25rem;
+  --pgn-form-input-check-gutter: 1.25rem;
   --pgn-form-input-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   --pgn-form-input-width-hover: 1px;
   --pgn-form-input-focus-width: 1px;
@@ -570,9 +574,11 @@
   --pgn-navbar-light-color-disabled: #0000004D;
   --pgn-navbar-light-color-active: #000000E6;
   --pgn-navbar-light-color-hover: #000000B3;
+  --pgn-navbar-light-color-text: #00000080;
   --pgn-navbar-dark-toggler-border-color: #FFFFFF1A;
   --pgn-navbar-dark-color-disabled: #FFFFFF40;
   --pgn-navbar-dark-color-hover: #FFFFFFBF;
+  --pgn-navbar-dark-color-text: #FFFFFF80;
   --pgn-navbar-toggler-font-size: var(--pgn-font-size-lg);
   --pgn-navbar-brand-font-size: var(--pgn-font-size-lg);
   --pgn-navbar-nav-link-height: calc(var(--pgn-font-size-base) * var(--pgn-line-height-base) + .5rem * 2);
@@ -621,6 +627,8 @@
   --pgn-headings-color: var(--pgn-color-black);
   --pgn-headings-font-weight: var(--pgn-font-weight-bold);
   --pgn-body-color: var(--pgn-color-gray-700);
+  --pgn-form-autosuggest-spinner-height: var(--pgn-form-autosuggest-spinner-width);
+  --pgn-form-autosuggest-icon-height: var(--pgn-form-autosuggest-icon-width);
   --pgn-form-feedback-tooltip-border-radius: var(--pgn-border-radius-base);
   --pgn-form-feedback-tooltip-line-height: var(--pgn-line-height-base);
   --pgn-form-feedback-tooltip-font-size: var(--pgn-font-size-sm);
@@ -684,6 +692,7 @@
   --pgn-chip-color-text-light: var(--pgn-color-black);
   --pgn-carousel-caption-color: var(--pgn-color-white);
   --pgn-carousel-indicator-active-bg: var(--pgn-color-white);
+  --pgn-carousel-control-color: var(--pgn-color-white);
   --pgn-card-footer-text-font-size: var(--pgn-font-size-small-x);
   --pgn-card-divider-margin-y: var(--pgn-card-spacer-y);
   --pgn-card-columns-margin: var(--pgn-card-spacer-y);
@@ -849,6 +858,8 @@
   --pgn-color-theme-border-gray: var(--pgn-color-gray-200);
   --pgn-color-theme-background-gray: var(--pgn-color-gray-100);
   --pgn-color-active: var(--pgn-color-white);
+  --pgn-color-text-50-white: #FFFFFF80;
+  --pgn-color-text-50-black: #00000080;
   --pgn-color-background-base: var(--pgn-color-white);
   --pgn-tooltip-arrow-color-base: var(--pgn-tooltip-bg-base);
   --pgn-search-field-input-height-search: calc(var(--pgn-form-input-line-height-base) * 1em + var(--pgn-form-input-padding-y-base) * 2);
@@ -869,6 +880,8 @@
   --pgn-pagination-color-active: var(--pgn-color-active);
   --pgn-navbar-light-brand-color-hover: var(--pgn-navbar-light-color-active);
   --pgn-navbar-light-brand-color-base: var(--pgn-navbar-light-color-active);
+  --pgn-navbar-light-toggler-icon-bg: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='%2300000080' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  --pgn-navbar-dark-toggler-icon-bg: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='%23FFFFFF80' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   --pgn-navbar-dark-color-active: var(--pgn-color-active);
   --pgn-navbar-toggler-border-radius: var(--pgn-btn-border-radius-base);
   --pgn-navbar-brand-padding-y: calc((var(--pgn-navbar-nav-link-height) - var(--pgn-navbar-brand-height)) / 2);
@@ -896,6 +909,8 @@
   --pgn-link-muted-inline-color: var(--pgn-color-primary-500);
   --pgn-link-muted-color: var(--pgn-color-primary-500);
   --pgn-body-bg: var(--pgn-color-background-base);
+  --pgn-form-feedback-color-invalid: var(--pgn-color-danger-base);
+  --pgn-form-feedback-color-valid: var(--pgn-color-success-base);
   --pgn-form-custom-file-button-bg: var(--pgn-form-input-group-addon-bg);
   --pgn-form-custom-file-color: var(--pgn-form-input-color-base);
   --pgn-form-custom-file-font-family: var(--pgn-form-input-font-family);
@@ -906,6 +921,7 @@
   --pgn-form-custom-file-border-color-radius: var(--pgn-form-input-border-radius-base);
   --pgn-form-custom-select-border-box-shadow-focus: var(--pgn-input-btn-focus-box-shadow);
   --pgn-form-custom-select-color-base: var(--pgn-form-input-color-base);
+  --pgn-form-custom-select-indicator-color: var(--pgn-color-theme-hover-gray);
   --pgn-form-custom-select-line-height: var(--pgn-form-input-line-height-base);
   --pgn-form-custom-select-font-size-lg: var(--pgn-form-input-font-size-lg);
   --pgn-form-custom-select-font-size-sm: var(--pgn-form-input-font-size-sm);
@@ -917,6 +933,8 @@
   --pgn-form-custom-select-padding-y-lg: var(--pgn-form-input-padding-y-lg);
   --pgn-form-custom-select-padding-y-sm: var(--pgn-form-input-padding-y-sm);
   --pgn-form-custom-select-padding-y-base: var(--pgn-form-input-padding-y-base);
+  --pgn-form-custom-switch-indicator-checked-bg: var(--pgn-color-success-base);
+  --pgn-form-custom-control-indicator-active-color: var(--pgn-color-active);
   --pgn-form-custom-control-indicator-checked-border-color-base: var(--pgn-color-primary-500);
   --pgn-form-custom-control-indicator-checked-bg-disabled: #0A305580;
   --pgn-form-custom-control-indicator-disabled-bg: var(--pgn-form-input-bg-disabled);
@@ -947,6 +965,8 @@
   --pgn-data-table-background-color: var(--pgn-color-background-base);
   --pgn-chip-color-bg-dark: var(--pgn-color-dark-200);
   --pgn-chip-color-bg-light: var(--pgn-color-light-500);
+  --pgn-carousel-control-bg-next-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFFFFFFF' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e");
+  --pgn-carousel-control-bg-prev-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFFFFFFF' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e");
   --pgn-card-divider-bg: var(--pgn-color-light-400);
   --pgn-card-bg: var(--pgn-color-background-base);
   --pgn-btn-border-width: var(--pgn-input-btn-border-width);
@@ -1137,6 +1157,16 @@
   --pgn-link-muted-hover-color: #020911FF;
   --pgn-link-inline-color: var(--pgn-color-info-500);
   --pgn-input-btn-focus-color: var(--pgn-color-input-focus);
+  --pgn-form-feedback-color-checked-invalid: #D64D59FF;
+  --pgn-form-feedback-color-checked-valid: #1FAD6FFF;
+  --pgn-form-feedback-color-focus-box-shadow-invalid: #C32D3A40;
+  --pgn-form-feedback-color-focus-box-shadow-valid: #17825340;
+  --pgn-form-feedback-color-tooltip-bg-invalid: #C32D3AE6;
+  --pgn-form-feedback-color-tooltip-bg-valid: #178253E6;
+  --pgn-form-feedback-color-tooltip-invalid: #FFFFFFFF;
+  --pgn-form-feedback-color-tooltip-valid: #FFFFFFFF;
+  --pgn-form-feedback-color-icon-invalid: var(--pgn-form-feedback-color-invalid);
+  --pgn-form-feedback-color-icon-valid: var(--pgn-form-feedback-color-valid);
   --pgn-form-custom-file-button-color: var(--pgn-form-custom-file-color);
   --pgn-form-custom-file-font-weight: var(--pgn-form-input-font-weight);
   --pgn-form-custom-file-bg-base: var(--pgn-form-input-bg-base);
@@ -1157,11 +1187,16 @@
   --pgn-form-custom-select-feedback-icon-padding-right: calc((1em + 2 * var(--pgn-form-custom-select-padding-y-base)) * 3 / 4 + var(--pgn-form-custom-select-padding-x-base) + var(--pgn-form-custom-select-indicator-padding));
   --pgn-form-custom-select-bg-base: var(--pgn-form-input-bg-base);
   --pgn-form-custom-select-color-disabled: var(--pgn-color-disabled);
+  --pgn-form-custom-select-indicator-icon: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.58984L12 13.1698L7.41 8.58984L6 9.99984L12 15.9998L18 9.99984L16.59 8.58984Z" fill="%23454545FF"/></svg>');
   --pgn-form-custom-select-font-weight: var(--pgn-form-input-font-weight);
   --pgn-form-custom-select-font-height-base: var(--pgn-form-input-height-base);
+  --pgn-form-custom-switch-indicator-icon-on: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23FFFFFFFF'/%3e%3c/svg%3e");
   --pgn-form-custom-checkbox-indicator-indeterminate-bg: var(--pgn-color-background-active);
   --pgn-form-custom-control-label-floating-text: #FFFFFF1A;
   --pgn-form-custom-control-label-color-disabled: var(--pgn-color-disabled);
+  --pgn-form-custom-control-indicator-active-bg: var(--pgn-color-background-active);
+  --pgn-form-custom-control-indicator-checked-bg-text: var(--pgn-color-background-active);
+  --pgn-form-custom-control-indicator-checked-color: var(--pgn-color-background-active);
   --pgn-form-custom-control-indicator-bg-base: var(--pgn-form-input-bg-base);
   --pgn-form-input-group-addon-color-border: var(--pgn-form-input-border-color);
   --pgn-form-input-height-lg: calc(var(--pgn-form-input-line-height-lg) * 1em + var(--pgn-input-btn-padding-lg-y) * 2 + var(--pgn-form-input-border-height));
@@ -1319,10 +1354,17 @@
   --pgn-link-inline-decoration-color: #006DAA4D;
   --pgn-link-hover-color: #003C5EFF;
   --pgn-link-color: var(--pgn-color-link);
+  --pgn-form-feedback-icon-invalid: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23C32D3AFF' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23C32D3AFF' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
+  --pgn-form-feedback-icon-valid: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23178253FF' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
   --pgn-form-custom-file-border-color-focus: var(--pgn-form-input-focus-color-border);
   --pgn-form-custom-select-border-color-focus: var(--pgn-form-input-focus-color-border);
   --pgn-form-custom-select-font-height-lg: var(--pgn-form-input-height-lg);
+  --pgn-form-custom-switch-indicator-icon-off: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%230A3055FF'/%3e%3c/svg%3e");
+  --pgn-form-custom-radio-indicator-icon-checked: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%230A3055FF'/%3e%3c/svg%3e");
   --pgn-form-custom-checkbox-indicator-indeterminate-border-color: var(--pgn-form-custom-checkbox-indicator-indeterminate-bg);
+  --pgn-form-custom-checkbox-indicator-indeterminate-color: var(--pgn-form-custom-control-indicator-checked-color);
+  --pgn-form-custom-checkbox-indicator-icon-checked: url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z' fill='%230A3055FF'/></svg>");
+  --pgn-form-custom-control-indicator-active-border-color: var(--pgn-form-custom-control-indicator-active-bg);
   --pgn-form-custom-control-indicator-checked-border-color-focus: var(--pgn-form-input-focus-color-border);
   --pgn-alert-color-border-warning: var(--pgn-color-theme-border-warning);
   --pgn-alert-color-border-danger: var(--pgn-color-theme-border-danger);
@@ -1414,6 +1456,7 @@
   --pgn-color-btn-hover-text-brand: #FFFFFFFF;
   --pgn-pagination-color-hover: var(--pgn-link-hover-color);
   --pgn-link-inline-hover-decoration-color: var(--pgn-link-inline-hover-color);
+  --pgn-form-custom-checkbox-indicator-indeterminate-icon: url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM17 13H7V11H17V13Z' fill='%230A3055FF'/></svg>");
   --pgn-color-btn-active-text-inverse-outline-warning: #454545FF;
   --pgn-color-btn-active-text-outline-warning: #454545FF;
   --pgn-color-btn-active-text-warning: #FFFFFFFF;
