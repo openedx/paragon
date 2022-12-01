@@ -35,9 +35,7 @@
     },
     "active": {
       "color": {
-        "base": {
-          "value": "{color.active.value}", "source": "$list-group-active-color"
-        },
+        "base": { "value": "{color.active.value}", "source": "$list-group-active-color" },
         "border": {
           "value": "{list-group.active.bg.value}",
           "source": "$list-group-active-border-color"
