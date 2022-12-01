@@ -1,8 +1,28 @@
 {
   "color": {
     "background": {
-      "base": { "value": "{color.white.value}" } ,
+      "base": { "value": "{color.white.value}" },
       "active": { "value": "{color.primary.500.value}", "source": "$component-active-bg" }
+    },
+    "text": {
+      "50":{
+        "black": {
+          "value": "{color.black.value}",
+          "source": "$text-black-50",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.5
+          }]
+        },
+        "white": {
+          "value": "{color.white.value}",
+          "source": "$text-white-50",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.5
+          }]
+        }
+      }
     },
     "active": { "value": "{color.white.value}", "source": "$component-active-color" },
     "disabled": { "value": "{color.gray.500.value}" },

@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { getSCSStoCSSMap, getFilesWithExtension } = require('./utils');
 
-const BASE_PATH = path.resolve(__dirname, './source');
+const BASE_PATH = path.resolve(__dirname, './src');
 const BASE_PREFIX = '--pgn';
 
 const SCSStoCSSMap = {};

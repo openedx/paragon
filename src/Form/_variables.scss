@@ -51,7 +51,7 @@ $input-transition: var(--pgn-form-input-transition) !default;
 
 $form-text-margin-top: var(--pgn-form-text-margin-top) !default;
 
-$form-check-input-gutter:               1.25rem !default;
+$form-check-input-gutter: var(--pgn-form-input-check-gutter) !default;
 $form-check-input-margin-y: var(--pgn-form-input-check-margin-y) !default;
 $form-check-input-margin-x: var(--pgn-form-input-check-margin-x-base) !default;
 
@@ -62,7 +62,7 @@ $form-check-position-axis: var(--pgn-form-check-position-axis) !default;
 $form-check-focus-border-radius: var(--pgn-form-check-border-radius-focus) !default;
 $form-check-border-width: var(--pgn-form-check-border-width) !default;
 
-$form-grid-gutter-width:                10px !default;
+$form-grid-gutter-width: var(--pgn-form-grid-gutter-width) !default;
 $form-group-margin-bottom: var(--pgn-form-group-margin-bottom) !default;
 
 $input-group-addon-color: var(--pgn-form-input-group-addon-color-base) !default;
@@ -87,9 +87,8 @@ $custom-control-label-color: var(--pgn-form-custom-control-label-color-base) !de
 $custom-control-indicator-disabled-bg: var(--pgn-form-custom-control-indicator-disabled-bg) !default;
 $custom-control-label-disabled-color: var(--pgn-form-custom-control-label-color-disabled) !default;
 
-// TODO can't use css variables due to conflict with str-replace function.
-$custom-control-indicator-checked-color: #0A3055 !default;
-$custom-control-indicator-checked-bg: #0A3055 !default;
+$custom-control-indicator-checked-color: var(--pgn-form-custom-control-indicator-checked-color) !default;
+$custom-control-indicator-checked-bg: var(--pgn-form-custom-control-indicator-checked-bg-text) !default;
 $custom-control-indicator-checked-disabled-bg: var(--pgn-form-custom-control-indicator-checked-bg-disabled) !default;
 
 // stylelint-disable-next-line max-line-length
@@ -105,19 +104,18 @@ $custom-control-indicator-focus-box-shadow: var(--pgn-form-custom-control-indica
 // stylelint-disable-next-line max-line-length
 $custom-control-indicator-focus-border-color: var(--pgn-form-custom-control-indicator-checked-border-color-focus) !default;
 
-// TODO can't use css variable due to conflict with str-replace function.
-$custom-control-indicator-active-color: #FFFFFF !default;
+$custom-control-indicator-active-color: var(--pgn-form-custom-control-indicator-active-color) !default;
 $custom-control-indicator-active-bg: var(--pgn-form-custom-control-indicator-active-bg) !default;
 $custom-control-indicator-active-box-shadow: var(--pgn-form-custom-control-indicator-active-box-shadow) !default;
-$custom-control-indicator-active-border-color: $custom-control-indicator-active-bg !default;
+$custom-control-indicator-active-border-color: var(--pgn-form-custom-control-indicator-active-border-color) !default;
 $custom-checkbox-indicator-border-radius: var(--pgn-form-custom-checkbox-indicator-border-radius) !default;
-$custom-checkbox-indicator-icon-checked: str-replace(url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z' fill='#{$custom-control-indicator-checked-color}'/></svg>"), "#", "%23") !default;
+$custom-checkbox-indicator-icon-checked: var(--pgn-form-custom-checkbox-indicator-icon-checked) !default;
 $custom-checkbox-indicator-icon-valid-checked:         str-replace(url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z' fill='#{$custom-control-indicator-checked-valid-color}'/></svg>"), "#", "%23") !default;
 $custom-checkbox-indicator-icon-invalid-checked:       str-replace(url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z' fill='#{$custom-control-indicator-checked-invalid-color}'/></svg>"), "#", "%23") !default;
 
 $custom-checkbox-indicator-indeterminate-bg: var(--pgn-form-custom-checkbox-indicator-indeterminate-bg) !default;
-$custom-checkbox-indicator-indeterminate-color:        $custom-control-indicator-checked-color !default;
-$custom-checkbox-indicator-icon-indeterminate:         str-replace(url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM17 13H7V11H17V13Z' fill='#{$custom-checkbox-indicator-indeterminate-color}'/></svg>"), "#", "%23") !default;
+$custom-checkbox-indicator-indeterminate-color: var(--pgn-form-custom-checkbox-indicator-indeterminate-color) !default;
+$custom-checkbox-indicator-icon-indeterminate: var(--pgn-form-custom-checkbox-indicator-indeterminate-icon) !default;
 
 // stylelint-disable-next-line max-line-length
 $custom-checkbox-indicator-indeterminate-box-shadow: var(--pgn-form-custom-checkbox-indicator-indeterminate-box-shadow) !default;
@@ -126,16 +124,16 @@ $custom-checkbox-indicator-indeterminate-box-shadow: var(--pgn-form-custom-check
 $custom-checkbox-indicator-indeterminate-border-color: var(--pgn-form-custom-checkbox-indicator-indeterminate-border-color) !default;
 
 $custom-radio-indicator-border-radius: var(--pgn-form-custom-radio-indicator-border-radius) !default;
-$custom-radio-indicator-icon-checked:           str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-bg}'/%3e%3c/svg%3e"), "#", "%23") !default;
+$custom-radio-indicator-icon-checked: var(--pgn-form-custom-radio-indicator-icon-checked) !default;
 $custom-radio-indicator-icon-valid-checked:     str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-valid-color}'/%3e%3c/svg%3e"), "#", "%23") !default;
 $custom-radio-indicator-icon-invalid-checked:   str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-invalid-color}'/%3e%3c/svg%3e"), "#", "%23") !default;
 
-$custom-switch-indicator-icon-off:              str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-bg}'/%3e%3c/svg%3e"), "#", "%23") !default;
-$custom-switch-indicator-icon-on:               str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-active-color}'/%3e%3c/svg%3e"), "#", "%23") !default;
+$custom-switch-indicator-icon-off: var(--pgn-form-custom-switch-indicator-icon-off) !default;
+$custom-switch-indicator-icon-on: var(--pgn-form-custom-switch-indicator-icon-on) !default;
 $custom-switch-width: var(--pgn-form-custom-switch-width) !default;
 $custom-switch-indicator-border-radius: var(--pgn-form-custom-switch-indicator-border-radius) !default;
 $custom-switch-indicator-size: var(--pgn-form-custom-switch-indicator-size) !default;
-$custom-switch-indicator-checked-bg:            theme-color("success") !default;
+$custom-switch-indicator-checked-bg: var(--pgn-form-custom-switch-indicator-checked-bg) !default;
 
 $custom-select-padding-y: var(--pgn-form-custom-select-padding-y-base) !default;
 $custom-select-padding-x: var(--pgn-form-custom-select-padding-x-base) !default;
@@ -152,9 +150,9 @@ $custom-select-disabled-color: var(--pgn-form-custom-select-color-disabled) !def
 $custom-select-bg: var(--pgn-form-custom-select-bg-base) !default;
 $custom-select-disabled-bg: var(--pgn-form-custom-select-bg-disabled) !default;
 $custom-select-bg-size: var(--pgn-form-custom-select-bg-size) !default;
-$custom-select-indicator-color:     theme-color("gray", "hover") !default;
+$custom-select-indicator-color: var(--pgn-form-custom-select-indicator-color) !default;
 
-$custom-select-indicator:           str-replace(url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.58984L12 13.1698L7.41 8.58984L6 9.99984L12 15.9998L18 9.99984L16.59 8.58984Z" fill="#{$custom-select-indicator-color}"/></svg>'), "#", "%23") !default;
+$custom-select-indicator: var(--pgn-form-custom-select-indicator-icon) !default;
 
 // Used so we can have multiple background elements (e.g., arrow and feedback icon)
 $custom-select-background:          $custom-select-indicator no-repeat right
@@ -228,13 +226,23 @@ $custom-file-text: (
 
 $form-feedback-margin-top: var(--pgn-form-feedback-margin-top) !default;
 $form-feedback-font-size: var(--pgn-form-feedback-font-size) !default;
-$form-feedback-valid-color:         theme-color("success") !default;
-$form-feedback-invalid-color:       theme-color("danger") !default;
+$form-feedback-valid-color: var(--pgn-form-feedback-color-valid) !default;
+$form-feedback-invalid-color: var(--pgn-form-feedback-color-invalid) !default;
 
-$form-feedback-icon-valid-color:    $form-feedback-valid-color !default;
-$form-feedback-icon-valid:          str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='#{$form-feedback-icon-valid-color}' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e"), "#", "%23") !default;
-$form-feedback-icon-invalid-color:  $form-feedback-invalid-color !default;
-$form-feedback-icon-invalid:        str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='#{$form-feedback-icon-invalid-color}' viewBox='-2 -2 7 7'%3e%3cpath stroke='#{$form-feedback-icon-invalid-color}' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E"), "#", "%23") !default;
+$form-feedback-tooltip-valid-color: var(--pgn-form-feedback-color-tooltip-valid) !default;
+$form-feedback-tooltip-invalid-color: var(--pgn-form-feedback-color-tooltip-invalid) !default;
+$form-feedback-tooltip-valid-bg: var(--pgn-form-feedback-color-tooltip-bg-valid) !default;
+$form-feedback-tooltip-invalid-bg: var(--pgn-form-feedback-color-tooltip-bg-invalid) !default;
+
+$form-feedback-focus-box-shadow-valid-color: var(--pgn-form-feedback-color-focus-box-shadow-valid) !default;
+$form-feedback-focus-box-shadow-invalid-color: var(--pgn-form-feedback-color-focus-box-shadow-invalid) !default;
+$form-feedback-checked-valid-color: var(--pgn-form-feedback-color-checked-valid) !default;
+$form-feedback-checked-invalid-color: var(--pgn-form-feedback-color-checked-invalid) !default;
+
+$form-feedback-icon-valid-color: var(--pgn-form-feedback-color-icon-valid) !default;
+$form-feedback-icon-valid: var(--pgn-form-feedback-icon-valid) !default;
+$form-feedback-icon-invalid-color: var(--pgn-form-feedback-color-icon-invalid) !default;
+$form-feedback-icon-invalid: var(--pgn-form-feedback-icon-invalid) !default;
 
 $form-validation-states: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -242,11 +250,18 @@ $form-validation-states: map-merge(
   (
     "valid": (
       "color": $form-feedback-valid-color,
-      "icon": $form-feedback-icon-valid
+      "icon": $form-feedback-icon-valid,
+      "tooltip-color": $form-feedback-tooltip-valid-color,
+      "tooltip-bg": $form-feedback-tooltip-valid-bg,
+      "focus-box-shadow-color": $form-feedback-focus-box-shadow-valid-color,
+      "checked-color": $form-feedback-checked-valid-color
     ),
     "invalid": (
       "color": $form-feedback-invalid-color,
-      "icon": $form-feedback-icon-invalid
+      "icon": $form-feedback-icon-invalid,
+      "tooltip-bg": $form-feedback-tooltip-invalid-bg,
+      "focus-box-shadow-color": $form-feedback-focus-box-shadow-invalid-color,
+      "checked-color": $form-feedback-checked-invalid-color
     ),
   ),
   $form-validation-states
@@ -263,9 +278,9 @@ $form-feedback-tooltip-border-radius: var(--pgn-form-feedback-tooltip-border-rad
 $form-control-icon-width: var(--pgn-form-control-icon-width) !default;
 $select-icon-padding: var(--pgn-form-select-icon-padding) !default;
 
-$form-autosuggest-icon-width: 2.4rem;
-$form-autosuggest-icon-height: $form-autosuggest-icon-width;
-$form-autosuggest-spinner-width: 1.25rem;
-$form-autosuggest-spinner-height: $form-autosuggest-spinner-width;
-$form-autosuggest-border-width: .125rem;
+$form-autosuggest-icon-width: var(--pgn-form-autosuggest-icon-width) !default;
+$form-autosuggest-icon-height: var(--pgn-form-autosuggest-icon-height) !default;
+$form-autosuggest-spinner-width: var(--pgn-form-autosuggest-spinner-width) !default;
+$form-autosuggest-spinner-height: var(--pgn-form-autosuggest-spinner-height) !default;
+$form-autosuggest-border-width: var(--pgn-form-autosuggest-border-width) !default;
 $form-control-floating-label-text-bg: var(--pgn-form-custom-control-label-floating-text) !default;
