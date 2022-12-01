@@ -34,9 +34,9 @@ $grays: map-merge(
 );
 
 $blue: var(--pgn-color-blue) !default;
-$red: #C32D3A !default;
+$red: var(--pgn-color-red) !default;
 $yellow: var(--pgn-color-yellow) !default;
-$green: #178253 !default;
+$green: var(--pgn-color-green) !default;
 $teal: var(--pgn-color-teal) !default;
 
 $colors: () !default;
@@ -54,13 +54,12 @@ $colors: map-merge(
   $colors
 );
 
-// TODO: can't use css variables due to conflict with SCSS function.
 $primary: var(--pgn-color-primary-base) !default;
 $secondary: var(--pgn-color-secondary-base) !default;
 $brand: var(--pgn-color-brand-base) !default;
-$success: $green !default;
+$success: var(--pgn-color-success-base) !default;
 $info: var(--pgn-color-info-base) !default;
-$danger: $red !default;
+$danger: var(--pgn-color-danger-base) !default;
 $warning: var(--pgn-color-warning-base) !default;
 $light: var(--pgn-color-light-base) !default;
 $dark: var(--pgn-color-dark-base) !default;
@@ -120,7 +119,7 @@ $success-100: var(--pgn-color-success-100) !default;
 $success-200: var(--pgn-color-success-200) !default;
 $success-300: var(--pgn-color-success-300) !default;
 $success-400: var(--pgn-color-success-400) !default;
-$success-500: $success !default;
+$success-500: var(--pgn-color-success-500) !default;
 $success-600: var(--pgn-color-success-600) !default;
 $success-700: var(--pgn-color-success-700) !default;
 $success-800: var(--pgn-color-success-800) !default;
@@ -150,7 +149,7 @@ $danger-100: var(--pgn-color-danger-100) !default;
 $danger-200: var(--pgn-color-danger-200) !default;
 $danger-300: var(--pgn-color-danger-300) !default;
 $danger-400: var(--pgn-color-danger-400) !default;
-$danger-500: $danger !default;
+$danger-500: var(--pgn-color-danger-500) !default;
 $danger-600: var(--pgn-color-danger-600) !default;
 $danger-700: var(--pgn-color-danger-700) !default;
 $danger-800: var(--pgn-color-danger-800) !default;
@@ -297,7 +296,7 @@ $element-color-levels: map-merge(
 
 // Set a specific jump point for requesting color jumps
 // TODO: can't use css variables due to conflict with SCSS function.
-$theme-color-interval:      8% !default;
+$theme-color-interval: var(--pgn-theme-interval) !default;
 
 // The yiq lightness value that determines when the lightness
 // of color changes from "dark" to "light". Acceptable values are between 0 and 255.
@@ -340,23 +339,23 @@ $enable-deprecation-messages:                 true !default;
 // variables. Mostly focused on spacing.
 // You can add more entries to the $spacers map, should you need more variation.
 
-$spacer: 1rem !default;
+$spacer: var(--pgn-spacer-base) !default;
 $spacers: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $spacers: map-merge(
   (
     0: 0,
-    1: ($spacer * .25),
-    1\.5: ($spacer * .375),
-    2: ($spacer * .5),
-    2\.5: ($spacer * .75),
+    1: calc(#{$spacer} * .25),
+    1\.5: calc(#{$spacer} * .375),
+    2: calc(#{$spacer} * .5),
+    2\.5: calc(#{$spacer} * .75),
     3: $spacer,
-    3\.5: ($spacer * 1.25),
-    4: ($spacer * 1.5),
-    4\.5: ($spacer * 2),
-    5: ($spacer * 3),
-    5\.5: ($spacer * 4),
-    6: ($spacer * 5),
+    3\.5: calc(#{$spacer} * 1.25),
+    4: calc(#{$spacer} * 1.5),
+    4\.5: calc(#{$spacer} * 2),
+    5: calc(#{$spacer} * 3),
+    5\.5: calc(#{$spacer} * 4),
+    6: calc(#{$spacer} * 5),
   ),
   $spacers
 );
@@ -867,3 +866,6 @@ $list-group-action-hover-color: var(--pgn-list-group-action-color-hover) !defaul
 
 $list-group-action-active-color: var(--pgn-list-group-action-active-color) !default;
 $list-group-action-active-bg: var(--pgn-list-group-action-active-bg) !default;
+
+$text-black-50: var(--pgn-color-text-50-black) !default;
+$text-white-50: var(--pgn-color-text-50-white) !default;
