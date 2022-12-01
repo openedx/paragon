@@ -5,11 +5,14 @@ import DataTableContext from '../DataTableContext';
 import BaseSelectionStatus from './BaseSelectionStatus';
 
 function SelectionStatus({ className, clearSelectionText }) {
-  const { toggleAllRowsSelected, selectedFlatRows } = useContext(DataTableContext);
-  const numSelectedRows = selectedFlatRows.length;
+  const { toggleAllRowsSelected, selectedFlatRows, state } = useContext(DataTableContext);
+  const { selectedRowIds } = state;
+  const numSelectedRows = Object.keys(selectedRowIds || {}).length;
+  const numSelectedRowsOnPage = selectedFlatRows?.length || 0;
   const selectionStatusProps = {
     className,
     numSelectedRows,
+    numSelectedRowsOnPage,
     clearSelectionText,
     onSelectAll: () => toggleAllRowsSelected(true),
     onClear: () => toggleAllRowsSelected(false),
