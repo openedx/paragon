@@ -7,14 +7,14 @@ const chroma = require('chroma-js');
  * based on contrast value of the input color
  *
  * @param color - chroma-js color instance
- * @param {String} [light] - light color variant, defaults to 'yiq-text-light' from ./source/global/other.json
- * @param {String} [dark] - dark color variant, defaults to 'yiq-text-dark' from ./source/global/other.json
+ * @param {String} [light] - light color variant, defaults to 'yiq-text-light' from ./src/global/other.json
+ * @param {String} [dark] - dark color variant, defaults to 'yiq-text-dark' from ./src/global/other.json
  * @param {Number} [threshold] - contrast threshold, defaults to 'yiq-contrasted-threshold'
- * from ./source/global/other.json
+ * from ./src/global/other.json
  * @return chroma-js color instance (one of dark or light variants)
  */
 function colorYiq(color, light, dark, threshold) {
-  const defaultsFile = fs.readFileSync(path.resolve(__dirname, 'source', 'global', 'other.json'), 'utf8');
+  const defaultsFile = fs.readFileSync(path.resolve(__dirname, 'src', 'global', 'other.json'), 'utf8');
   const defaults = JSON.parse(defaultsFile);
   const {
     'yiq-text-dark': defaultDark,

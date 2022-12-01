@@ -1,62 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // @ts-ignore
-import { Table } from '~paragon-react'; // eslint-disable-line
+import { DataTable } from '~paragon-react'; // eslint-disable-line
 
 export interface ICSSUtilitiesTable {
   selectors: Array<{
     selector: string,
     declarations: Array<string>,
   }>,
-  showExample: boolean,
 }
 
-function CSSUtilitiesTable({ selectors, showExample }: ICSSUtilitiesTable) {
+function CSSUtilitiesTable({ selectors }: ICSSUtilitiesTable) {
   return (
-    <Table
-      className="pgn-doc__status-table"
+    <DataTable
       data={selectors.map(({ selector, declarations }) => ({
-        selector: <code>.{selector}</code>,
-        example: showExample ? (
-          <p
-            style={{
-              margin: '-.25em 0',
-              display: 'inline-block',
-              padding: '.25em .5em',
-              border: 'solid 1px transparent',
-            }}
-            className={selector}
-          >
-            Aa Bb Cc
-          </p>
-        ) : null,
+        selector: <code style={{ fontSize: '14px' }}>.{selector}</code>,
         declarations: (
           <div>
             {declarations.map(declaration => (
-              <code key={declaration} className="mb-0 text-muted">
+              <code style={{ fontSize: '14px' }} key={declaration} className="mb-0 text-muted">
                 {declaration}
               </code>
             ))}
           </div>
         ),
       }))}
+      itemCount={selectors.length}
       columns={[
         {
-          label: 'Utility Class Name',
-          key: 'selector',
+          Header: 'Utility Class Name',
+          accessor: 'selector',
         },
         {
-          label: 'Example',
-          hideHeader: true,
-          key: 'example',
-        },
-        {
-          label: 'Declarations',
-          key: 'declarations',
-          hideHeader: true,
+          Header: 'Styles',
+          accessor: 'declarations',
         },
       ]}
-    />
+    >
+      <DataTable.Table />
+    </DataTable>
   );
 }
 
@@ -67,12 +49,10 @@ CSSUtilitiesTable.propTypes = {
       declarations: PropTypes.arrayOf(PropTypes.string),
     }),
   ),
-  showExample: PropTypes.bool,
 };
 
 CSSUtilitiesTable.defaultProps = {
   selectors: [],
-  showExample: false,
 };
 
 export default CSSUtilitiesTable;
