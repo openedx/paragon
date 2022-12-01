@@ -39,6 +39,7 @@ function ControlledSelectionStatus({ className, clearSelectionText }) {
   const selectionStatusProps = {
     className,
     numSelectedRows,
+    numSelectedRowsOnPage: 0,
     clearSelectionText,
     onSelectAll: () => dispatch(setSelectAllRowsAllPagesAction()),
     onClear: () => dispatch(clearSelectionAction()),
