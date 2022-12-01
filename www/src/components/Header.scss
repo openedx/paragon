@@ -31,3 +31,18 @@
     }
   }
 }
+
+.home-menu {
+  position: absolute;
+  background-color: $white;
+  width: 454px;
+  left: -50px;
+
+  @include pgn-box-shadow(2, "down");
+
+  .pgn-doc__menu-items {
+    max-height: 451px;
+    overflow-y: scroll;
+    margin-bottom: 1.75rem;
+  }
+}
