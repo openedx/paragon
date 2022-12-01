@@ -51,6 +51,11 @@ for more information.
 
 ```jsx live
   <DataTable
+    isPaginated
+    isSelectable
+    initialState={{
+      pageSize: 2,
+    }}
     isFilterable
     isSortable
     defaultColumnValues={{ Filter: TextFilter }}

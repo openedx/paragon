@@ -174,6 +174,7 @@ function DataTable({
     disableElevation,
     isLoading,
     isSelectable,
+    isPaginated,
     manualSelectColumn,
     ...selectionProps,
     ...selectionActions,

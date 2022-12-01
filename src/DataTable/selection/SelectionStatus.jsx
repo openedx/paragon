@@ -5,10 +5,12 @@ import DataTableContext from '../DataTableContext';
 import BaseSelectionStatus from './BaseSelectionStatus';
 
 function SelectionStatus({ className, clearSelectionText }) {
-  const { toggleAllRowsSelected, selectedFlatRows, state } = useContext(DataTableContext);
+  const dataTableContext = useContext(DataTableContext);
+  console.log('SelectionStatus', dataTableContext);
+  const { toggleAllRowsSelected, page, state } = useContext(DataTableContext);
   const { selectedRowIds } = state;
   const numSelectedRows = Object.keys(selectedRowIds || {}).length;
-  const numSelectedRowsOnPage = selectedFlatRows?.length || 0;
+  const numSelectedRowsOnPage = page.filter(r => r.isSelected).length;
   const selectionStatusProps = {
     className,
     numSelectedRows,

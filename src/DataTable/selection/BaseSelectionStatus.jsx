@@ -102,7 +102,7 @@ BaseSelectionStatus.propTypes = {
   /** Count of selected rows in the table. */
   numSelectedRows: PropTypes.number.isRequired,
   /** Count of selected rows on the current page */
-  numSelectedRowsOnPage: PropTypes.number,
+  numSelectedRowsOnPage: PropTypes.number.isRequired,
   /** A handler for 'Select all' button. */
   onSelectAll: PropTypes.func.isRequired,
   /** A handler for 'Clear selection' button. */
@@ -113,10 +113,6 @@ BaseSelectionStatus.propTypes = {
   allSelectedText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   /** A text that appears when some items have been selected, defaults to '{numSelectedRows} selected' */
   selectedText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-};
-
-BaseSelectionStatus.defaultProps = {
-  numSelectedRowsOnPage: 0,
 };
 
 export default BaseSelectionStatus;

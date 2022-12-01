@@ -11,7 +11,8 @@ import {
 } from '../data/constants';
 
 const instance = {
-  selectedFlatRows: [1, 2, 3, 4],
+  // represents how `react-table` passes the row data for the current page
+  page: [1, 2, 3, 4],
   toggleAllRowsSelected: () => {},
   itemCount: 101,
   state: {
@@ -38,7 +39,7 @@ function SelectionStatusWrapper({ value, props = {} }) {
 describe('<SelectionStatus />', () => {
   it('Shows the number of rows selected', () => {
     const wrapper = mount(<SelectionStatusWrapper value={instance} />);
-    expect(wrapper.text()).toContain(instance.selectedFlatRows.length.toString());
+    expect(wrapper.text()).toContain(instance.page.length.toString());
   });
   it('Shows that all rows are selected', () => {
     const selectedRowIds = {};
@@ -72,7 +73,7 @@ describe('<SelectionStatus />', () => {
   it('does not render the clear selection button if there are no selected rows', () => {
     const value = {
       ...instance,
-      selectedFlatRows: [],
+      page: [],
       state: {
         ...instance.state,
         selectedRowIds: {},
