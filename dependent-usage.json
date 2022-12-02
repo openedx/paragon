@@ -1,5 +1,5 @@
 {
-  "lastModified": 1669903718364,
+  "lastModified": 1669990136374,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -1557,7 +1557,7 @@
       }
     },
     {
-      "version": "20.19.0",
+      "version": "20.21.0",
       "name": "frontend-app-admin-portal",
       "repository": "https://github.com/openedx/frontend-app-admin-portal",
       "folderName": "frontend-app-admin-portal",
@@ -1660,8 +1660,8 @@
           },
           {
             "filePath": "src/components/ContentHighlights/CurrentContentHighlightHeader.jsx",
-            "line": 25,
-            "column": 8
+            "line": 19,
+            "column": 6
           },
           {
             "filePath": "src/components/ContentHighlights/DeleteHighlightSet.jsx",
@@ -1675,52 +1675,37 @@
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
-            "line": 57,
+            "line": 107,
             "column": 14
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
-            "line": 58,
+            "line": 113,
             "column": 14
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
-            "line": 64,
+            "line": 125,
             "column": 14
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
-            "line": 65,
+            "line": 131,
             "column": 14
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
-            "line": 71,
+            "line": 143,
             "column": 14
           },
           {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
-            "line": 72,
-            "column": 14
-          },
-          {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
-            "line": 78,
-            "column": 14
-          },
-          {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
-            "line": 79,
-            "column": 14
-          },
-          {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/tests/ContentHighlightStepper.test.jsx",
-            "line": 20,
-            "column": 6
+            "filePath": "src/components/ContentHighlights/HighlightStepper/SelectContentSelectionStatus.jsx",
+            "line": 26,
+            "column": 8
           },
           {
             "filePath": "src/components/ContentHighlights/ZeroState/ZeroStateHighlights.jsx",
-            "line": 31,
+            "line": 34,
             "column": 12
           },
           {
@@ -1845,37 +1830,37 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 103,
+            "line": 107,
             "column": 17
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 107,
+            "line": 111,
             "column": 15
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 109,
+            "line": 113,
             "column": 15
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 129,
+            "line": 144,
             "column": 12
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 136,
+            "line": 151,
             "column": 12
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 155,
+            "line": 143,
             "column": 10
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 174,
+            "line": 162,
             "column": 14
           },
           {
@@ -2142,7 +2127,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 194,
+            "line": 182,
             "column": 55
           },
           {
@@ -2203,9 +2188,9 @@
             "column": 14
           },
           {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
-            "line": 31,
-            "column": 8
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitleInput.jsx",
+            "line": 33,
+            "column": 4
           },
           {
             "filePath": "src/components/CouponDetails/CouponBulkActions.jsx",
@@ -2627,9 +2612,9 @@
             "column": 16
           },
           {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
-            "line": 32,
-            "column": 10
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitleInput.jsx",
+            "line": 36,
+            "column": 6
           },
           {
             "filePath": "src/components/CouponDetails/CouponBulkActions.jsx",
@@ -3029,8 +3014,18 @@
             "column": 8
           },
           {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperConfirmContent.jsx",
+            "line": 132,
+            "column": 10
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentHeader.jsx",
             "line": 13,
+            "column": 8
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
+            "line": 15,
             "column": 10
           },
           {
@@ -3160,8 +3155,23 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 165,
+            "line": 122,
+            "column": 51
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
+            "line": 126,
+            "column": 43
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
+            "line": 180,
             "column": 24
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
+            "line": 267,
+            "column": 12
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
@@ -3241,23 +3251,18 @@
             "column": 2
           },
           {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperConfirmCourses.jsx",
-            "line": 6,
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperConfirmContent.jsx",
+            "line": 128,
             "column": 2
           },
           {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperConfirmHighlight.jsx",
-            "line": 6,
-            "column": 2
-          },
-          {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectCourses.jsx",
-            "line": 6,
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContent.jsx",
+            "line": 9,
             "column": 2
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
-            "line": 9,
+            "line": 11,
             "column": 2
           },
           {
@@ -3336,7 +3341,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 122,
+            "line": 137,
             "column": 6
           }
         ],
@@ -3355,6 +3360,11 @@
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/utils.jsx",
             "line": 44,
             "column": 37
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
+            "line": 122,
+            "column": 101
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/LMSConfigs/BlackboardConfig.jsx",
@@ -3385,8 +3395,8 @@
           },
           {
             "filePath": "src/components/ContentHighlights/CurrentContentHighlightHeader.jsx",
-            "line": 20,
-            "column": 6
+            "line": 14,
+            "column": 4
           },
           {
             "filePath": "src/components/ContentHighlights/CurrentContentHighlightItemsHeader.jsx",
@@ -3435,12 +3445,12 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/ErrorReportingModal.jsx",
-            "line": 50,
+            "line": 52,
             "column": 8
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 128,
+            "line": 143,
             "column": 10
           },
           {
@@ -3489,6 +3499,11 @@
             "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
             "line": 134,
             "column": 6
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentDataTable.jsx",
+            "line": 92,
+            "column": 4
           },
           {
             "filePath": "src/components/learner-credit-management/LearnerCreditAllocationTable.jsx",
@@ -3543,6 +3558,11 @@
             "column": 8
           },
           {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentDataTable.jsx",
+            "line": 137,
+            "column": 6
+          },
+          {
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
             "line": 184,
             "column": 10
@@ -3568,6 +3588,11 @@
             "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
             "line": 147,
             "column": 8
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentDataTable.jsx",
+            "line": 150,
+            "column": 33
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
@@ -3597,6 +3622,11 @@
             "column": 8
           },
           {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentDataTable.jsx",
+            "line": 152,
+            "column": 6
+          },
+          {
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/ContentMetadataTable.jsx",
             "line": 120,
             "column": 8
@@ -3617,6 +3647,11 @@
             "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
             "line": 149,
             "column": 10
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentDataTable.jsx",
+            "line": 153,
+            "column": 8
           }
         ],
         "Stepper": [
@@ -3627,7 +3662,7 @@
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
-            "line": 41,
+            "line": 93,
             "column": 4
           },
           {
@@ -3659,7 +3694,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/ErrorReportingModal.jsx",
-            "line": 15,
+            "line": 17,
             "column": 4
           },
           {
@@ -3726,7 +3761,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/ErrorReportingModal.jsx",
-            "line": 23,
+            "line": 25,
             "column": 6
           },
           {
@@ -3788,7 +3823,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/ErrorReportingModal.jsx",
-            "line": 24,
+            "line": 26,
             "column": 8
           },
           {
@@ -3850,7 +3885,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/ErrorReportingModal.jsx",
-            "line": 29,
+            "line": 31,
             "column": 6
           },
           {
@@ -3907,22 +3942,17 @@
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
-            "line": 84,
+            "line": 162,
             "column": 8
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
-            "line": 88,
+            "line": 172,
             "column": 8
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
-            "line": 92,
-            "column": 8
-          },
-          {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
-            "line": 96,
+            "line": 180,
             "column": 8
           },
           {
@@ -3969,7 +3999,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/ErrorReportingModal.jsx",
-            "line": 49,
+            "line": 51,
             "column": 6
           },
           {
@@ -4026,22 +4056,17 @@
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
-            "line": 52,
+            "line": 102,
             "column": 12
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
-            "line": 61,
+            "line": 122,
             "column": 12
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
-            "line": 68,
-            "column": 12
-          },
-          {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
-            "line": 75,
+            "line": 140,
             "column": 12
           },
           {
@@ -4226,31 +4251,6 @@
             "column": 2
           },
           {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperConfirmCourses.jsx",
-            "line": 7,
-            "column": 4
-          },
-          {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperConfirmHighlight.jsx",
-            "line": 7,
-            "column": 4
-          },
-          {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectCourses.jsx",
-            "line": 7,
-            "column": 4
-          },
-          {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
-            "line": 10,
-            "column": 4
-          },
-          {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
-            "line": 12,
-            "column": 8
-          },
-          {
             "filePath": "src/components/learner-credit-management/EmailAddressTableCell.jsx",
             "line": 14,
             "column": 4
@@ -4356,7 +4356,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 230,
+            "line": 218,
             "column": 8
           },
           {
@@ -4483,7 +4483,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 168,
+            "line": 156,
             "column": 8
           },
           {
@@ -4697,7 +4697,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 178,
+            "line": 166,
             "column": 10
           },
           {
@@ -4774,8 +4774,8 @@
           },
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightCardItem.jsx",
-            "line": 7,
-            "column": 2
+            "line": 18,
+            "column": 4
           },
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightSetCard.jsx",
@@ -4783,8 +4783,13 @@
             "column": 4
           },
           {
+            "filePath": "src/components/ContentHighlights/SkeletonContentCard.jsx",
+            "line": 5,
+            "column": 2
+          },
+          {
             "filePath": "src/components/ContentHighlights/ZeroState/ZeroStateHighlights.jsx",
-            "line": 21,
+            "line": 24,
             "column": 8
           },
           {
@@ -4829,7 +4834,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 151,
+            "line": 166,
             "column": 6
           },
           {
@@ -4866,13 +4871,18 @@
           },
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightCardItem.jsx",
-            "line": 16,
-            "column": 4
+            "line": 31,
+            "column": 10
           },
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightSetCard.jsx",
             "line": 38,
             "column": 6
+          },
+          {
+            "filePath": "src/components/ContentHighlights/SkeletonContentCard.jsx",
+            "line": 7,
+            "column": 4
           },
           {
             "filePath": "src/components/ContentHighlights/ZeroState/ZeroStateCardText.jsx",
@@ -4953,7 +4963,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 163,
+            "line": 178,
             "column": 20
           },
           {
@@ -4991,8 +5001,28 @@
             "column": 6
           },
           {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperConfirmContent.jsx",
+            "line": 129,
+            "column": 4
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContent.jsx",
+            "line": 10,
+            "column": 4
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContent.jsx",
+            "line": 15,
+            "column": 4
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
+            "line": 12,
+            "column": 4
+          },
+          {
             "filePath": "src/components/ContentHighlights/ZeroState/ZeroStateHighlights.jsx",
-            "line": 19,
+            "line": 22,
             "column": 4
           },
           {
@@ -5053,6 +5083,11 @@
             "filePath": "src/components/BulkEnrollmentPage/table/BulkEnrollSelect.jsx",
             "line": 61,
             "column": 6
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/SelectContentSelectionCheckbox.jsx",
+            "line": 25,
+            "column": 6
           }
         ],
         "OverlayTrigger": [
@@ -5088,7 +5123,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 224,
+            "line": 239,
             "column": 16
           },
           {
@@ -5140,7 +5175,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 229,
+            "line": 244,
             "column": 20
           },
           {
@@ -5167,7 +5202,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 230,
+            "line": 245,
             "column": 22
           },
           {
@@ -5194,7 +5229,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 231,
+            "line": 246,
             "column": 22
           },
           {
@@ -5243,12 +5278,12 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/ErrorReportingModal.jsx",
-            "line": 36,
+            "line": 38,
             "column": 10
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/ErrorReportingModal.jsx",
-            "line": 41,
+            "line": 43,
             "column": 10
           },
           {
@@ -5290,7 +5325,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/ErrorReportingModal.jsx",
-            "line": 30,
+            "line": 32,
             "column": 8
           },
           {
@@ -5357,7 +5392,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 171,
+            "line": 159,
             "column": 16
           },
           {
@@ -5398,6 +5433,11 @@
             "column": 10
           },
           {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/SelectContentSearchPagination.jsx",
+            "line": 17,
+            "column": 4
+          },
+          {
             "filePath": "src/components/TableComponent/index.jsx",
             "line": 103,
             "column": 12
@@ -5418,6 +5458,11 @@
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/utils.jsx",
             "line": 30,
             "column": 31
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
+            "line": 126,
+            "column": 94
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/SSOConfigConfiguredCard.jsx",
@@ -5449,6 +5494,11 @@
             "filePath": "src/components/ContentHighlights/DeleteHighlightSet.jsx",
             "line": 70,
             "column": 12
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
+            "line": 149,
+            "column": 14
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
@@ -5539,7 +5589,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 146,
+            "line": 134,
             "column": 8
           },
           {
@@ -5601,13 +5651,18 @@
         "Card.ImageCap": [
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightCardItem.jsx",
-            "line": 8,
-            "column": 4
+            "line": 19,
+            "column": 6
           },
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightSetCard.jsx",
             "line": 36,
             "column": 6
+          },
+          {
+            "filePath": "src/components/ContentHighlights/SkeletonContentCard.jsx",
+            "line": 6,
+            "column": 4
           },
           {
             "filePath": "src/components/ContentHighlights/ZeroState/ZeroStateCardImage.jsx",
@@ -5618,8 +5673,8 @@
         "Card.Header": [
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightCardItem.jsx",
-            "line": 14,
-            "column": 4
+            "line": 25,
+            "column": 6
           },
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightSetCard.jsx",
@@ -5628,7 +5683,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 156,
+            "line": 171,
             "column": 8
           },
           {
@@ -5650,7 +5705,12 @@
         "Card.Footer": [
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightCardItem.jsx",
-            "line": 19,
+            "line": 32,
+            "column": 10
+          },
+          {
+            "filePath": "src/components/ContentHighlights/SkeletonContentCard.jsx",
+            "line": 8,
             "column": 4
           },
           {
@@ -5665,7 +5725,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 250,
+            "line": 265,
             "column": 8
           }
         ],
@@ -5686,6 +5746,11 @@
             "column": 6
           },
           {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperConfirmContent.jsx",
+            "line": 28,
+            "column": 6
+          },
+          {
             "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
             "line": 146,
             "column": 6
@@ -5702,7 +5767,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 200,
+            "line": 188,
             "column": 10
           },
           {
@@ -5714,8 +5779,8 @@
         "ActionRow.Spacer": [
           {
             "filePath": "src/components/ContentHighlights/CurrentContentHighlightHeader.jsx",
-            "line": 24,
-            "column": 8
+            "line": 18,
+            "column": 6
           },
           {
             "filePath": "src/components/ContentHighlights/CurrentContentHighlightItemsHeader.jsx",
@@ -5731,31 +5796,31 @@
         "Add": [
           {
             "filePath": "src/components/ContentHighlights/CurrentContentHighlightHeader.jsx",
-            "line": 26,
-            "column": 22
+            "line": 20,
+            "column": 20
           },
           {
             "filePath": "src/components/ContentHighlights/ZeroState/ZeroStateHighlights.jsx",
-            "line": 31,
-            "column": 69
+            "line": 36,
+            "column": 26
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 158,
+            "line": 146,
             "column": 24
           }
         ],
         "FullscreenModal": [
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
-            "line": 42,
+            "line": 94,
             "column": 6
           }
         ],
         "Stepper.Header": [
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/ContentHighlightStepper.jsx",
-            "line": 49,
+            "line": 99,
             "column": 24
           },
           {
@@ -5766,28 +5831,28 @@
         ],
         "Col": [
           {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperConfirmCourses.jsx",
-            "line": 9,
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperConfirmContent.jsx",
+            "line": 130,
             "column": 6
           },
           {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectCourses.jsx",
-            "line": 9,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContent.jsx",
             "line": 11,
             "column": 6
           },
           {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContent.jsx",
+            "line": 16,
+            "column": 6
+          },
+          {
             "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
-            "line": 14,
-            "column": 10
+            "line": 13,
+            "column": 6
           },
           {
             "filePath": "src/components/ContentHighlights/ZeroState/ZeroStateHighlights.jsx",
-            "line": 20,
+            "line": 23,
             "column": 6
           },
           {
@@ -5876,16 +5941,79 @@
             "column": 8
           }
         ],
+        "Assignment": [
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperConfirmContent.jsx",
+            "line": 132,
+            "column": 21
+          }
+        ],
+        "CardView": [
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentDataTable.jsx",
+            "line": 139,
+            "column": 8
+          }
+        ],
+        "DataTable.EmptyTable": [
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentDataTable.jsx",
+            "line": 151,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/learner-credit-management/LearnerCreditAllocationTable.jsx",
+            "line": 76,
+            "column": 17
+          },
+          {
+            "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
+            "line": 186,
+            "column": 28
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/ContentMetadataTable.jsx",
+            "line": 119,
+            "column": 8
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/LearnerMetadataTable.jsx",
+            "line": 124,
+            "column": 8
+          },
+          {
+            "filePath": "src/components/subscriptions/licenses/LicenseManagementTable/index.jsx",
+            "line": 227,
+            "column": 19
+          },
+          {
+            "filePath": "src/components/SubsidyRequestManagementTable/SubsidyRequestManagementTable.jsx",
+            "line": 93,
+            "column": 8
+          }
+        ],
         "AddCircle": [
           {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentHeader.jsx",
             "line": 13,
+            "column": 19
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
+            "line": 15,
             "column": 21
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/SSOConfigConfiguredCard.jsx",
             "line": 110,
             "column": 25
+          }
+        ],
+        "Pagination.Reduced": [
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/SelectContentSearchPagination.jsx",
+            "line": 12,
+            "column": 4
           }
         ],
         "CheckBox": [
@@ -6056,7 +6184,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 159,
+            "line": 174,
             "column": 12
           },
           {
@@ -6073,7 +6201,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 160,
+            "line": 175,
             "column": 14
           },
           {
@@ -6097,7 +6225,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 169,
+            "line": 184,
             "column": 14
           },
           {
@@ -6114,22 +6242,22 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 172,
+            "line": 187,
             "column": 20
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 182,
+            "line": 197,
             "column": 20
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 192,
+            "line": 207,
             "column": 20
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 203,
+            "line": 218,
             "column": 20
           },
           {
@@ -6247,38 +6375,6 @@
             "column": 25
           }
         ],
-        "DataTable.EmptyTable": [
-          {
-            "filePath": "src/components/learner-credit-management/LearnerCreditAllocationTable.jsx",
-            "line": 76,
-            "column": 17
-          },
-          {
-            "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
-            "line": 186,
-            "column": 28
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/ContentMetadataTable.jsx",
-            "line": 119,
-            "column": 8
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/LearnerMetadataTable.jsx",
-            "line": 124,
-            "column": 8
-          },
-          {
-            "filePath": "src/components/subscriptions/licenses/LicenseManagementTable/index.jsx",
-            "line": 227,
-            "column": 19
-          },
-          {
-            "filePath": "src/components/SubsidyRequestManagementTable/SubsidyRequestManagementTable.jsx",
-            "line": 93,
-            "column": 8
-          }
-        ],
         "Badge": [
           {
             "filePath": "src/components/learner-credit-management/LearnerCreditManagement.jsx",
@@ -6297,12 +6393,12 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 239,
+            "line": 254,
             "column": 20
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 244,
+            "line": 259,
             "column": 16
           },
           {
@@ -6834,7 +6930,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 215,
+            "line": 230,
             "column": 14
           },
           {
@@ -6880,7 +6976,7 @@
         "ModalDialog.CloseButton": [
           {
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/ErrorReportingModal.jsx",
-            "line": 51,
+            "line": 53,
             "column": 10
           },
           {
@@ -6914,12 +7010,17 @@
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/utils.jsx",
             "line": 31,
             "column": 34
+          },
+          {
+            "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
+            "line": 267,
+            "column": 46
           }
         ],
         "MoreVert": [
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 164,
+            "line": 179,
             "column": 21
           },
           {
@@ -9932,7 +10033,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
-            "line": 60,
+            "line": 62,
             "column": 20
           },
           {
@@ -10197,12 +10298,12 @@
           },
           {
             "filePath": "src/discussions/data/hooks.js",
-            "line": 99,
+            "line": 104,
             "column": 21
           },
           {
             "filePath": "src/discussions/data/hooks.js",
-            "line": 104,
+            "line": 109,
             "column": 21
           },
           {
@@ -10234,7 +10335,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
-            "line": 58,
+            "line": 60,
             "column": 10
           }
         ],
@@ -10246,7 +10347,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
-            "line": 59,
+            "line": 61,
             "column": 17
           }
         ],
@@ -10273,13 +10374,13 @@
           },
           {
             "filePath": "src/discussions/comments/comment/Comment.jsx",
-            "line": 136,
+            "line": 135,
             "column": 10
           },
           {
             "filePath": "src/discussions/comments/comment/Comment.jsx",
-            "line": 163,
-            "column": 20
+            "line": 162,
+            "column": 18
           },
           {
             "filePath": "src/discussions/comments/comment/CommentEditor.jsx",
@@ -10288,7 +10389,7 @@
           },
           {
             "filePath": "src/discussions/comments/comment/ResponseEditor.jsx",
-            "line": 42,
+            "line": 39,
             "column": 8
           },
           {
@@ -10328,7 +10429,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
-            "line": 45,
+            "line": 47,
             "column": 10
           },
           {
@@ -10409,12 +10510,12 @@
         "useToggle": [
           {
             "filePath": "src/discussions/comments/comment/Comment.jsx",
-            "line": 38,
+            "line": 37,
             "column": 71
           },
           {
             "filePath": "src/discussions/comments/comment/Comment.jsx",
-            "line": 39,
+            "line": 38,
             "column": 72
           },
           {
@@ -10739,12 +10840,12 @@
         "breakpoints": [
           {
             "filePath": "src/discussions/data/hooks.js",
-            "line": 100,
+            "line": 105,
             "column": 29
           },
           {
             "filePath": "src/discussions/data/hooks.js",
-            "line": 105,
+            "line": 110,
             "column": 29
           }
         ],
@@ -12350,12 +12451,12 @@
           },
           {
             "filePath": "src/containers/UnenrollConfirmModal/components/ReasonPane.jsx",
-            "line": 40,
+            "line": 41,
             "column": 8
           },
           {
             "filePath": "src/containers/UnenrollConfirmModal/components/ReasonPane.jsx",
-            "line": 43,
+            "line": 44,
             "column": 8
           },
           {
@@ -12397,7 +12498,7 @@
           },
           {
             "filePath": "src/containers/UnenrollConfirmModal/components/ReasonPane.jsx",
-            "line": 39,
+            "line": 40,
             "column": 6
           }
         ],
@@ -12755,7 +12856,7 @@
           },
           {
             "filePath": "src/containers/UnenrollConfirmModal/components/ReasonPane.jsx",
-            "line": 26,
+            "line": 27,
             "column": 6
           }
         ],
@@ -12782,12 +12883,12 @@
           },
           {
             "filePath": "src/containers/UnenrollConfirmModal/components/ReasonPane.jsx",
-            "line": 19,
+            "line": 20,
             "column": 4
           },
           {
             "filePath": "src/containers/UnenrollConfirmModal/components/ReasonPane.jsx",
-            "line": 32,
+            "line": 33,
             "column": 8
           }
         ],
@@ -12996,7 +13097,7 @@
           },
           {
             "filePath": "src/containers/UnenrollConfirmModal/index.jsx",
-            "line": 33,
+            "line": 34,
             "column": 4
           }
         ],
@@ -13152,7 +13253,7 @@
         "Form.Control": [
           {
             "filePath": "src/containers/UnenrollConfirmModal/components/ReasonPane.jsx",
-            "line": 33,
+            "line": 34,
             "column": 10
           }
         ],
@@ -22184,17 +22285,37 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 65,
+            "line": 66,
             "column": 10
           },
           {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 53,
+            "column": 18
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 72,
+            "column": 18
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 97,
+            "column": 18
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 123,
+            "column": 18
+          },
+          {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 120,
+            "line": 121,
             "column": 12
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 91,
+            "line": 92,
             "column": 8
           }
         ],
@@ -22216,17 +22337,37 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 67,
+            "line": 68,
             "column": 12
           },
           {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 58,
+            "column": 20
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 77,
+            "column": 20
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 102,
+            "column": 20
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 128,
+            "column": 20
+          },
+          {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 141,
+            "line": 142,
             "column": 14
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 112,
+            "line": 113,
             "column": 10
           }
         ],
@@ -22278,7 +22419,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 98,
+            "line": 99,
             "column": 10
           },
           {
@@ -22288,12 +22429,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 109,
+            "line": 110,
             "column": 10
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 163,
+            "line": 164,
             "column": 10
           },
           {
@@ -22308,7 +22449,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 115,
+            "line": 116,
             "column": 6
           }
         ],
@@ -22367,18 +22508,38 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
-            "line": 49,
+            "line": 50,
             "column": 8
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
-            "line": 61,
+            "line": 62,
             "column": 8
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 34,
+            "line": 35,
             "column": 6
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 52,
+            "column": 16
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 71,
+            "column": 16
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 96,
+            "column": 16
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 122,
+            "column": 16
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseSelector.jsx",
@@ -22387,7 +22548,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 113,
+            "line": 114,
             "column": 10
           },
           {
@@ -22397,7 +22558,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 57,
+            "line": 58,
             "column": 6
           },
           {
@@ -22439,12 +22600,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
-            "line": 50,
+            "line": 51,
             "column": 10
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
-            "line": 62,
+            "line": 63,
             "column": 10
           },
           {
@@ -22459,12 +22620,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 59,
+            "line": 60,
             "column": 10
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 74,
+            "line": 75,
             "column": 12
           }
         ],
@@ -22500,12 +22661,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 91,
+            "line": 92,
             "column": 12
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 80,
+            "line": 81,
             "column": 12
           }
         ],
@@ -22554,43 +22715,38 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
-            "line": 40,
+            "line": 41,
             "column": 22
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
-            "line": 41,
+            "line": 42,
             "column": 96
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
-            "line": 47,
+            "line": 48,
             "column": 98
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 73,
+            "line": 74,
             "column": 24
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseBlurb.jsx",
-            "line": 25,
+            "line": 26,
             "column": 50
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseBlurb.jsx",
-            "line": 26,
+            "line": 27,
             "column": 48
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseBlurb.jsx",
-            "line": 27,
-            "column": 27
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseBlurb.jsx",
             "line": 28,
-            "column": 29
+            "column": 27
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseBlurb.jsx",
@@ -22600,27 +22756,32 @@
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseBlurb.jsx",
             "line": 30,
+            "column": 29
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseBlurb.jsx",
+            "line": 31,
             "column": 26
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
             "line": 54,
-            "column": 22
+            "column": 20
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 77,
-            "column": 22
+            "line": 73,
+            "column": 20
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 112,
-            "column": 22
+            "line": 98,
+            "column": 20
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 148,
-            "column": 22
+            "line": 124,
+            "column": 20
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseSelector.jsx",
@@ -22629,12 +22790,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 94,
+            "line": 95,
             "column": 22
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 139,
+            "line": 140,
             "column": 16
           },
           {
@@ -22649,12 +22810,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 85,
+            "line": 86,
             "column": 22
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 110,
+            "line": 111,
             "column": 12
           }
         ],
@@ -22705,17 +22866,17 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
-            "line": 41,
+            "line": 42,
             "column": 10
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
-            "line": 47,
+            "line": 48,
             "column": 10
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 71,
+            "line": 72,
             "column": 20
           },
           {
@@ -22821,6 +22982,26 @@
             "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/DimensionControls.jsx",
             "line": 39,
             "column": 4
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 55,
+            "column": 20
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 74,
+            "column": 20
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 99,
+            "column": 20
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
+            "line": 125,
+            "column": 20
           }
         ],
         "Form.Checkbox": [
@@ -22830,38 +23011,18 @@
             "column": 4
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 58,
-            "column": 27
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 82,
-            "column": 20
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 117,
-            "column": 20
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 153,
-            "column": 20
-          },
-          {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 121,
+            "line": 122,
             "column": 14
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 143,
+            "line": 144,
             "column": 12
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 92,
+            "line": 93,
             "column": 10
           }
         ],
@@ -22885,7 +23046,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 82,
+            "line": 83,
             "column": 10
           }
         ],
@@ -22897,12 +23058,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 76,
+            "line": 77,
             "column": 8
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 155,
+            "line": 156,
             "column": 12
           },
           {
@@ -22950,12 +23111,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 166,
+            "line": 167,
             "column": 24
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 118,
+            "line": 119,
             "column": 20
           }
         ],
@@ -22967,12 +23128,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 64,
+            "line": 65,
             "column": 8
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 96,
+            "line": 97,
             "column": 8
           },
           {
@@ -22982,32 +23143,32 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 49,
+            "line": 50,
             "column": 12
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDisplay.jsx",
-            "line": 27,
+            "line": 26,
             "column": 6
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 81,
+            "line": 82,
             "column": 8
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 101,
+            "line": 102,
             "column": 8
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 110,
+            "line": 111,
             "column": 6
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 162,
+            "line": 163,
             "column": 8
           }
         ],
@@ -23026,7 +23187,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 68,
+            "line": 69,
             "column": 12
           },
           {
@@ -23043,7 +23204,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 69,
+            "line": 70,
             "column": 14
           },
           {
@@ -23060,7 +23221,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 77,
+            "line": 78,
             "column": 14
           },
           {
@@ -23077,17 +23238,17 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 78,
+            "line": 79,
             "column": 16
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 84,
+            "line": 85,
             "column": 16
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 87,
+            "line": 88,
             "column": 16
           },
           {
@@ -23109,43 +23270,43 @@
         "Collapsible.Advanced": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
-            "line": 25,
+            "line": 26,
             "column": 2
           }
         ],
         "Collapsible.Trigger": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
-            "line": 30,
+            "line": 31,
             "column": 4
           }
         ],
         "Collapsible.Visible": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
-            "line": 34,
+            "line": 35,
             "column": 6
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
-            "line": 44,
+            "line": 45,
             "column": 6
           }
         ],
         "Info": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
-            "line": 40,
+            "line": 41,
             "column": 56
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 139,
+            "line": 140,
             "column": 27
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 110,
+            "line": 111,
             "column": 23
           },
           {
@@ -23162,28 +23323,28 @@
         "ExpandMore": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
-            "line": 41,
+            "line": 42,
             "column": 76
           }
         ],
         "ExpandLess": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
-            "line": 47,
+            "line": 48,
             "column": 78
           }
         ],
         "Collapsible.Body": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
-            "line": 51,
+            "line": 52,
             "column": 4
           }
         ],
         "Form.Row": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
-            "line": 48,
+            "line": 49,
             "column": 6
           },
           {
@@ -23193,26 +23354,26 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 73,
+            "line": 74,
             "column": 10
           }
         ],
         "Col": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
-            "line": 49,
+            "line": 50,
             "column": 24
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
-            "line": 61,
+            "line": 62,
             "column": 24
           }
         ],
         "MoreHoriz": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 72,
+            "line": 73,
             "column": 21
           },
           {
@@ -23224,177 +23385,103 @@
         "FileUpload": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 101,
+            "line": 102,
             "column": 24
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 112,
+            "line": 113,
             "column": 24
           }
         ],
         "Copyright": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseBlurb.jsx",
-            "line": 25,
+            "line": 26,
             "column": 61
           }
         ],
         "Cc": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseBlurb.jsx",
-            "line": 26,
+            "line": 27,
             "column": 59
           }
         ],
         "Attribution": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseBlurb.jsx",
-            "line": 27,
+            "line": 28,
             "column": 38
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
             "line": 54,
-            "column": 33
+            "column": 60
           }
         ],
         "Nc": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseBlurb.jsx",
-            "line": 28,
+            "line": 29,
             "column": 40
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 77,
-            "column": 33
+            "line": 73,
+            "column": 31
           }
         ],
         "Nd": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseBlurb.jsx",
-            "line": 29,
+            "line": 30,
             "column": 40
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 112,
-            "column": 33
+            "line": 98,
+            "column": 31
           }
         ],
         "Sa": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseBlurb.jsx",
-            "line": 30,
+            "line": 31,
             "column": 37
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 148,
-            "column": 33
+            "line": 124,
+            "column": 31
           }
         ],
-        "Card": [
+        "CheckboxControl": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 50,
-            "column": 14
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 65,
-            "column": 14
+            "line": 59,
+            "column": 20
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 99,
-            "column": 14
+            "line": 78,
+            "column": 20
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 135,
-            "column": 14
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDisplay.jsx",
-            "line": 29,
-            "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
-            "line": 48,
-            "column": 10
-          }
-        ],
-        "Card.Header": [
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 51,
-            "column": 16
+            "line": 103,
+            "column": 20
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 74,
-            "column": 16
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 109,
-            "column": 16
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 145,
-            "column": 16
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDisplay.jsx",
-            "line": 30,
-            "column": 10
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
-            "line": 49,
-            "column": 12
-          }
-        ],
-        "Card.Section": [
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 60,
-            "column": 16
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 94,
-            "column": 16
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 130,
-            "column": 16
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
-            "line": 166,
-            "column": 16
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDisplay.jsx",
-            "line": 31,
-            "column": 10
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
-            "line": 51,
-            "column": 14
+            "line": 129,
+            "column": 20
           }
         ],
         "Hyperlink": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDisplay.jsx",
-            "line": 34,
+            "line": 33,
             "column": 10
           }
         ],
@@ -23406,7 +23493,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 95,
+            "line": 96,
             "column": 19
           },
           {
@@ -23416,32 +23503,46 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 84,
+            "line": 85,
             "column": 19
           }
         ],
         "OverlayTrigger": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 130,
+            "line": 131,
             "column": 14
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 101,
+            "line": 102,
             "column": 10
           }
         ],
         "Tooltip": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 134,
+            "line": 135,
             "column": 18
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 105,
+            "line": 106,
             "column": 14
+          }
+        ],
+        "Card": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
+            "line": 48,
+            "column": 10
+          }
+        ],
+        "Card.Header": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
+            "line": 49,
+            "column": 12
           }
         ],
         "Card.Body": [
@@ -23449,6 +23550,13 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
             "line": 50,
             "column": 12
+          }
+        ],
+        "Card.Section": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
+            "line": 51,
+            "column": 14
           }
         ],
         "Card.Footer": [
@@ -24115,11 +24223,6 @@
             "column": 14
           },
           {
-            "filePath": "src/components/ContentfulModule/FeaturedProductsModule.jsx",
-            "line": 39,
-            "column": 14
-          },
-          {
             "filePath": "src/components/ContentfulModule/FootnoteModule.jsx",
             "line": 40,
             "column": 14
@@ -24291,13 +24394,18 @@
           },
           {
             "filePath": "src/components/Learn/DynamicProductList/ProductFilter.jsx",
-            "line": 20,
-            "column": 8
+            "line": 39,
+            "column": 12
           },
           {
             "filePath": "src/components/Learn/DynamicProductList/ProductFilter.jsx",
-            "line": 21,
-            "column": 8
+            "line": 40,
+            "column": 12
+          },
+          {
+            "filePath": "src/components/Learn/DynamicProductList/ProductInformation.jsx",
+            "line": 47,
+            "column": 12
           },
           {
             "filePath": "src/components/Overlays/SaveForLaterOverlay.jsx",
@@ -24508,6 +24616,11 @@
             "column": 22
           },
           {
+            "filePath": "src/components/Learn/DynamicProductList/ProductFilter.jsx",
+            "line": 79,
+            "column": 14
+          },
+          {
             "filePath": "src/components/Search/AutoCompleteDropdownItem.jsx",
             "line": 63,
             "column": 14
@@ -24646,11 +24759,6 @@
             "column": 12
           },
           {
-            "filePath": "src/components/ContentfulModule/FeaturedProductsModule.jsx",
-            "line": 37,
-            "column": 12
-          },
-          {
             "filePath": "src/components/ContentfulModule/PartnershipModule.jsx",
             "line": 60,
             "column": 16
@@ -24747,7 +24855,7 @@
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 130,
+            "line": 123,
             "column": 10
           },
           {
@@ -24757,12 +24865,12 @@
           },
           {
             "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 497,
+            "line": 318,
             "column": 6
           },
           {
             "filePath": "src/templates/courseDetailBootcamp.jsx",
-            "line": 201,
+            "line": 208,
             "column": 18
           },
           {
@@ -24777,7 +24885,7 @@
           },
           {
             "filePath": "src/templates/programDetailDegree.jsx",
-            "line": 217,
+            "line": 236,
             "column": 16
           }
         ],
@@ -24951,6 +25059,11 @@
             "column": 4
           },
           {
+            "filePath": "src/components/ContentfulModule/FeaturedProductsModule.jsx",
+            "line": 36,
+            "column": 12
+          },
+          {
             "filePath": "src/components/ContentfulModule/MoreInfoCTAModule.jsx",
             "line": 31,
             "column": 4
@@ -25122,7 +25235,7 @@
           },
           {
             "filePath": "src/components/Learn/DynamicProductList/DynamicProductList.jsx",
-            "line": 204,
+            "line": 211,
             "column": 6
           },
           {
@@ -25147,42 +25260,42 @@
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 425,
-            "column": 8
-          },
-          {
-            "filePath": "src/components/Program/ProgramMain.jsx",
             "line": 426,
-            "column": 10
+            "column": 8
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
             "line": 427,
-            "column": 12
-          },
-          {
-            "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 653,
-            "column": 12
-          },
-          {
-            "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 661,
-            "column": 12
-          },
-          {
-            "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 680,
-            "column": 8
-          },
-          {
-            "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 862,
             "column": 10
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
+            "line": 428,
+            "column": 12
+          },
+          {
+            "filePath": "src/components/Program/ProgramMain.jsx",
+            "line": 654,
+            "column": 12
+          },
+          {
+            "filePath": "src/components/Program/ProgramMain.jsx",
+            "line": 662,
+            "column": 12
+          },
+          {
+            "filePath": "src/components/Program/ProgramMain.jsx",
+            "line": 681,
+            "column": 8
+          },
+          {
+            "filePath": "src/components/Program/ProgramMain.jsx",
             "line": 863,
+            "column": 10
+          },
+          {
+            "filePath": "src/components/Program/ProgramMain.jsx",
+            "line": 864,
             "column": 12
           },
           {
@@ -25287,23 +25400,23 @@
           },
           {
             "filePath": "src/templates/careers.jsx",
-            "line": 90,
+            "line": 104,
             "column": 10
           },
           {
             "filePath": "src/templates/careers.jsx",
-            "line": 111,
+            "line": 126,
             "column": 10
           },
           {
             "filePath": "src/templates/careers.jsx",
-            "line": 117,
+            "line": 134,
             "column": 10
           },
           {
             "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 625,
-            "column": 20
+            "line": 441,
+            "column": 18
           },
           {
             "filePath": "src/templates/learnIndexPage/Hero.jsx",
@@ -25493,37 +25606,37 @@
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 75,
+            "line": 68,
             "column": 16
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 80,
+            "line": 73,
             "column": 16
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 85,
+            "line": 78,
             "column": 16
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 95,
+            "line": 88,
             "column": 16
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 99,
+            "line": 92,
             "column": 16
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 103,
+            "line": 96,
             "column": 16
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 124,
+            "line": 117,
             "column": 10
           }
         ],
@@ -25582,18 +25695,6 @@
             "column": 12
           }
         ],
-        "CallMade": [
-          {
-            "filePath": "src/components/ContentfulModule/FeaturedProductsModule.jsx",
-            "line": 39,
-            "column": 25
-          },
-          {
-            "filePath": "src/components/ContentfulModule/MoreInfoCTAModule.jsx",
-            "line": 26,
-            "column": 17
-          }
-        ],
         "OpenInNew": [
           {
             "filePath": "src/components/ContentfulModule/FootnoteModule.jsx",
@@ -25618,6 +25719,13 @@
             "filePath": "src/components/Header/SearchBar.jsx",
             "line": 24,
             "column": 20
+          }
+        ],
+        "CallMade": [
+          {
+            "filePath": "src/components/ContentfulModule/MoreInfoCTAModule.jsx",
+            "line": 26,
+            "column": 17
           }
         ],
         "ArrowOutward": [
@@ -25706,7 +25814,7 @@
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 704,
+            "line": 705,
             "column": 18
           }
         ],
@@ -25733,12 +25841,12 @@
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 712,
+            "line": 713,
             "column": 22
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 713,
+            "line": 714,
             "column": 22
           }
         ],
@@ -25755,7 +25863,7 @@
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 715,
+            "line": 716,
             "column": 20
           }
         ],
@@ -25784,8 +25892,8 @@
           },
           {
             "filePath": "src/components/Learn/DynamicProductList/ProductFilter.jsx",
-            "line": 31,
-            "column": 10
+            "line": 50,
+            "column": 14
           }
         ],
         "OverlayTrigger": [
@@ -25925,12 +26033,12 @@
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 500,
+            "line": 501,
             "column": 26
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 524,
+            "line": 525,
             "column": 26
           }
         ],
@@ -25968,7 +26076,7 @@
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 432,
+            "line": 433,
             "column": 20
           }
         ],
@@ -25980,7 +26088,7 @@
           },
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 433,
+            "line": 434,
             "column": 22
           },
           {
@@ -26111,8 +26219,8 @@
           },
           {
             "filePath": "src/components/Learn/DynamicProductList/ProductFilter.jsx",
-            "line": 18,
-            "column": 4
+            "line": 37,
+            "column": 8
           }
         ],
         "Dropdown.Toggle": [
@@ -26123,8 +26231,8 @@
           },
           {
             "filePath": "src/components/Learn/DynamicProductList/ProductFilter.jsx",
-            "line": 19,
-            "column": 6
+            "line": 38,
+            "column": 10
           }
         ],
         "AvatarButton": [
@@ -26142,8 +26250,8 @@
           },
           {
             "filePath": "src/components/Learn/DynamicProductList/ProductFilter.jsx",
-            "line": 29,
-            "column": 6
+            "line": 48,
+            "column": 10
           }
         ],
         "Chip": [
@@ -26180,13 +26288,13 @@
         "Tune": [
           {
             "filePath": "src/components/Learn/DynamicProductList/ProductFilter.jsx",
-            "line": 20,
-            "column": 26
+            "line": 39,
+            "column": 30
           },
           {
             "filePath": "src/components/Learn/DynamicProductList/ProductFilter.jsx",
-            "line": 21,
-            "column": 26
+            "line": 40,
+            "column": 30
           }
         ],
         "MarketingModal": [
@@ -26254,7 +26362,7 @@
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 70,
+            "line": 63,
             "column": 6
           }
         ],
@@ -26266,37 +26374,37 @@
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 77,
+            "line": 70,
             "column": 18
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 82,
+            "line": 75,
             "column": 18
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 87,
+            "line": 80,
             "column": 18
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 97,
+            "line": 90,
             "column": 18
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 101,
+            "line": 94,
             "column": 18
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 105,
+            "line": 98,
             "column": 18
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 126,
+            "line": 119,
             "column": 12
           }
         ],
@@ -26310,7 +26418,7 @@
         "LibraryBooks": [
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 481,
+            "line": 482,
             "column": 24
           },
           {
@@ -26322,7 +26430,7 @@
         "AccessTime": [
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 548,
+            "line": 549,
             "column": 26
           },
           {
@@ -26334,7 +26442,7 @@
         "School": [
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 569,
+            "line": 570,
             "column": 26
           },
           {
@@ -26346,35 +26454,35 @@
         "CreditCard": [
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 594,
+            "line": 595,
             "column": 24
           }
         ],
         "Collapsible.Trigger": [
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 708,
+            "line": 709,
             "column": 20
           }
         ],
         "AddCircle": [
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 712,
+            "line": 713,
             "column": 54
           }
         ],
         "RemoveCircle": [
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 713,
+            "line": 714,
             "column": 52
           }
         ],
         "FormatQuote": [
           {
             "filePath": "src/components/Program/ProgramMain.jsx",
-            "line": 761,
+            "line": 762,
             "column": 16
           }
         ],
@@ -26528,37 +26636,37 @@
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 75,
+            "line": 68,
             "column": 32
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 80,
+            "line": 73,
             "column": 32
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 85,
+            "line": 78,
             "column": 32
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 95,
+            "line": 88,
             "column": 32
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 99,
+            "line": 92,
             "column": 32
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 103,
+            "line": 96,
             "column": 32
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 124,
+            "line": 117,
             "column": 54
           }
         ],
@@ -26572,73 +26680,73 @@
         "Tabs": [
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 71,
+            "line": 64,
             "column": 8
           }
         ],
         "Tab": [
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 72,
+            "line": 65,
             "column": 10
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 92,
+            "line": 85,
             "column": 10
           }
         ],
         "Form.Row": [
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 74,
+            "line": 67,
             "column": 14
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 94,
+            "line": 87,
             "column": 14
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 123,
+            "line": 116,
             "column": 8
           }
         ],
         "Form.Label": [
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 76,
+            "line": 69,
             "column": 18
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 81,
+            "line": 74,
             "column": 18
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 86,
+            "line": 79,
             "column": 18
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 96,
+            "line": 89,
             "column": 18
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 100,
+            "line": 93,
             "column": 18
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 104,
+            "line": 97,
             "column": 18
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 125,
+            "line": 118,
             "column": 12
           }
         ],
