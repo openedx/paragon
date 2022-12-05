@@ -301,5 +301,32 @@ describe('<DataTable />', () => {
         }),
       );
     });
+
+    it('deselects all rows across all pages when `toggleAllRowsSelected(false)` is called', () => {
+      const mockOnSelectedRowsChange = jest.fn();
+      const propsWithSelection = {
+        ...props,
+        isPaginated: true,
+        isSelectable: true,
+        onSelectedRowsChanged: mockOnSelectedRowsChange,
+        selectedFlatRows: [{
+          id: '1',
+        }],
+        initialState: {
+          pageIndex: 0,
+          pageSize: 2,
+          selectedRowIds: {
+            1: true,
+            // because `pageSize` is 2, a row id of 3 selects first row on 2nd page
+            3: true,
+          },
+        },
+      };
+      render(<DataTableWrapper {...propsWithSelection} />);
+      userEvent.click(screen.getByText('Clear selection'));
+
+      expect(mockOnSelectedRowsChange).toHaveBeenCalledTimes(1);
+      expect(mockOnSelectedRowsChange).toHaveBeenCalledWith({});
+    });
   });
 });
