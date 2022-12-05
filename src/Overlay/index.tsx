@@ -88,12 +88,12 @@ Overlay.propTypes = {
    *
    * Controls `onToggle`.
    */
-  target: PropTypes.oneOfType([PropTypes.elementType, PropTypes.func]),
+  target: PropTypes.oneOfType([PropTypes.elementType, PropTypes.instanceOf(Element), PropTypes.func]),
   /**
    * Animate the entering and exiting of the Overlay. `true` will use the `<Fade>` transition,
    * or a custom react-transition-group `<Transition>` component can be provided.
    */
-  transition: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
+  transition: PropTypes.oneOfType([PropTypes.bool, PropTypes.elementType]),
 };
 
 OverlayTrigger.propTypes = {
@@ -149,7 +149,7 @@ Overlay.defaultProps = {
   rootCloseEvent: undefined,
   show: false,
   target: undefined,
-  transition: Fade,
+  transition: true,
 };
 
 OverlayTrigger.defaultProps = {
