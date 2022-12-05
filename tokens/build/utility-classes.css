@@ -1,3 +1,51 @@
+.bg-accent-a {
+  background-color: #00BBF9FF !important;
+}
+
+a.bg-accent-a:hover,
+a.bg-accent-a:focus,
+button.bg-accent-a:hover,
+button.bg-accent-a:focus {
+  background-color: #0095C6FF !important;
+}
+
+.text-accent-a {
+  color: #00BBF9FF !important;
+}
+
+a.text-accent-a:hover,
+a.text-accent-a:focus {
+  color: #0082ADFF !important;
+}
+
+.border-accent-a {
+  border-color: #00BBF9FF !important;
+}
+
+.bg-accent-b {
+  background-color: #FFEE88FF !important;
+}
+
+a.bg-accent-b:hover,
+a.bg-accent-b:focus,
+button.bg-accent-b:hover,
+button.bg-accent-b:focus {
+  background-color: #FFE755FF !important;
+}
+
+.text-accent-b {
+  color: #FFEE88FF !important;
+}
+
+a.text-accent-b:hover,
+a.text-accent-b:focus {
+  color: #FFE33BFF !important;
+}
+
+.border-accent-b {
+  border-color: #FFEE88FF !important;
+}
+
 .bg-gray-100 {
   background-color: #EBEBEBFF !important;
 }
