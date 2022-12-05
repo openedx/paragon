@@ -1,5 +1,5 @@
-export const getUnselectedPageRows = (selectedRowsIds, currentRows) => {
-  const unselectedPageRows = currentRows.filter(row => !selectedRowsIds.includes(row.id));
+export const getUnselectedPageRows = (selectedRowsIds, currentPageRows) => {
+  const unselectedPageRows = currentPageRows.filter(row => !selectedRowsIds.includes(row.id));
   return unselectedPageRows;
 };
 
