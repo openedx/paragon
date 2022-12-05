@@ -58,16 +58,42 @@ function DataTable({
     () => (defaultColumnValues),
     [defaultColumnValues],
   );
-  const tableOptions = useMemo(() => ({
-    columns,
-    data,
-    defaultColumn,
-    manualFilters,
-    manualPagination,
-    manualSortBy,
-    initialState,
-    ...initialTableOptions,
-  }), [columns, data, defaultColumn, manualFilters, manualPagination, initialState, initialTableOptions, manualSortBy]);
+  const tableOptions = useMemo(() => {
+    const updatedTableOptions = {
+      stateReducer: (newState, action) => {
+        switch (action.type) {
+          // Note: we override the `toggleAllRowsSelected` action
+          // from react-table because it only clears the selections on the
+          // currently visible page; it does not clear the `selectedRowIds`
+          // as we would expect for selections on different pages. Instead, we
+          // force `selectedRowIds` to be cleared when `toggleAllRowsSelected(false)`
+          // is called.
+          case 'toggleAllRowsSelected': {
+            if (action.value) {
+              return newState;
+            }
+            return {
+              ...newState,
+              selectedRowIds: {},
+            };
+          }
+          default:
+            return newState;
+        }
+      },
+      ...initialTableOptions,
+    };
+    return {
+      columns,
+      data,
+      defaultColumn,
+      manualFilters,
+      manualPagination,
+      manualSortBy,
+      initialState,
+      ...updatedTableOptions,
+    };
+  }, [columns, data, defaultColumn, manualFilters, manualPagination, initialState, initialTableOptions, manualSortBy]);
 
   const [selections, selectionsDispatch] = useReducer(selectionsReducer, initialSelectionsState);
 
@@ -148,6 +174,7 @@ function DataTable({
     disableElevation,
     isLoading,
     isSelectable,
+    isPaginated,
     manualSelectColumn,
     ...selectionProps,
     ...selectionActions,
