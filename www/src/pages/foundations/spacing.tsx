@@ -139,7 +139,7 @@ export default function SpacingPage() {
                 <span className="d-block text-center">Spacing Level: {size}</span>
               </Form.Label>
               <div
-                className="d-flex align-items-center"
+                className="d-flex align-items-center mt-1"
                 style={{ maxWidth: '20rem' }}
               >
                 -6

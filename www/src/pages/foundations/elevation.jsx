@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Button, Form, Container, Input, Toast, Icon, IconButtonWithTooltip,
+  Button, Form, Container, Toast, Icon, IconButtonWithTooltip,
 } from '~paragon-react';
 import { Close, WbSunny, DoDisturb } from '~paragon-icons';
 import SEO from '../../components/SEO';
@@ -93,15 +93,15 @@ function BoxShadowToolkit({
   return (
     <section className="pgn-doc__box-shadow-toolkit--controls-box">
       {controlsProps.map(({ key, name }) => (
-        <Form.Label
-          className="d-block"
-          key={key}
-          htmlFor={`toolkit-control-${key}`}
-        >
-          {name}
-          <Input
+        <Form.Group key={key}>
+          <Form.Label
+            className="d-block"
+            htmlFor={`toolkit-control-${key}`}
+          >
+            {name}
+          </Form.Label>
+          <Form.Control
             id={`toolkit-control-${key}-${id}`}
-            key={key}
             min={key === 'x' || key === 'y' ? '-100' : '0'}
             max="100"
             type={key === 'color' ? 'color' : 'range'}
@@ -109,7 +109,7 @@ function BoxShadowToolkit({
             onChange={(e) => updateBoxShadowModel(key, e.target.value)}
             disabled={isDisabled}
           />
-        </Form.Label>
+        </Form.Group>
       ))}
       <div className="pgn-doc__box-shadow-toolkit--controls-box--disable-btn-wrapper">
         <Form.Checkbox

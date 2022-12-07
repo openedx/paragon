@@ -80,7 +80,6 @@ function LayoutGenerator() {
   const columns: Array<React.ReactNode> = [];
 
   for (let i = 0; i < numColumns; i++) {
-    // eslint-disable-line no-plusplus
     columns.push(
       <Column
         key={i}
@@ -106,18 +105,15 @@ function LayoutGenerator() {
         [`col-${width}`]: width > 0,
         [`offset-${offset}`]: offset > 0,
       });
-      return `
-  <div className="${className}">
+      return `  <div className="${className}">
     ${width || 'auto'}
   </div>
-      `;
+`;
     });
 
-    const rowString = `
-<div className="row">
-${columnsString.join('')}
-</div>
-    `;
+    const rowString = `<div className="row">
+${columnsString.join('').slice(0, -1)}
+</div>`;
     return rowString;
   };
 
