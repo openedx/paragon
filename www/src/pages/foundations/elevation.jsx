@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 import {
-  Button, Form, Container, Input, Toast,
+  Button, Form, Container,
+  Toast, Icon, IconButtonWithTooltip,
 // eslint-disable-next-line import/no-unresolved
 } from '~paragon-react';
-// eslint-disable-next-line
-import { Close, WbSunny, DoDisturb } from '../../../../icons/index';
-
-import { Icon, IconButtonWithTooltip } from '../../../../src'; // eslint-disable-line import/no-unresolved
+// eslint-disable-next-line import/no-unresolved
+import { Close, WbSunny, DoDisturb } from '~paragon-icons';
 
 const boxShadowSides = ['down', 'up', 'right', 'left', 'centered'];
 const boxShadowLevels = [1, 2, 3, 4, 5];
@@ -51,17 +50,15 @@ const BoxShadowNode = () => {
 
   return (
     <div className="pgn-doc__box-shadow-cells">
-      { boxShadowCells }
-      {(
-        <Toast
-          className="pgn-doc__box-shadow--toast"
-          onClose={() => setShowToast(false)}
-          show={showToast}
-          delay={2000}
-        >
-          Box-shadow copied to clipboard!
-        </Toast>
-      )}
+      {boxShadowCells}
+      <Toast
+        className="pgn-doc__box-shadow--toast"
+        onClose={() => setShowToast(false)}
+        show={showToast}
+        delay={2000}
+      >
+        Box-shadow copied to clipboard!
+      </Toast>
     </div>
   );
 };
@@ -99,15 +96,15 @@ const BoxShadowToolkit = ({
   return (
     <section className="pgn-doc__box-shadow-toolkit--controls-box">
       {controlsProps.map(({ key, name }) => (
-        <Form.Label
-          className="d-block"
-          key={key}
-          htmlFor={`toolkit-control-${key}`}
-        >
-          {name}
-          <Input
+        <Form.Group key={key}>
+          <Form.Label
+            className="d-block"
+            htmlFor={`toolkit-control-${key}`}
+          >
+            {name}
+          </Form.Label>
+          <Form.Control
             id={`toolkit-control-${key}-${id}`}
-            key={key}
             min={key === 'x' || key === 'y' ? '-100' : '0'}
             max="100"
             type={key === 'color' ? 'color' : 'range'}
@@ -115,7 +112,7 @@ const BoxShadowToolkit = ({
             onChange={(e) => updateBoxShadowModel(key, e.target.value)}
             disabled={isDisabled}
           />
-        </Form.Label>
+        </Form.Group>
       ))}
       <div className="pgn-doc__box-shadow-toolkit--controls-box--disable-btn-wrapper">
         <Form.Checkbox

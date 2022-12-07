@@ -41,7 +41,7 @@ function CSSUtilitiesTable({ selectors }: CSSUtilities) {
   };
 
   return (
-    <>
+    <div className="mb-4">
       <DataTable
         data={selectors.map(({ selector, declarations }) => ({
           selector: <code style={{ fontSize: '14px' }}>.{selector}</code>,
@@ -83,7 +83,7 @@ function CSSUtilitiesTable({ selectors }: CSSUtilities) {
           </Popover.Content>
         </Popover>
       </Overlay>
-    </>
+    </div>
   );
 }
 
