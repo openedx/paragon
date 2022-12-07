@@ -1,7 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 // @ts-ignore
-import { Table, Container } from '~paragon-react'; // eslint-disable-line
+import { DataTable, Container } from '~paragon-react'; // eslint-disable-line
 import { ComponentStatus } from '../components/doc-elements';
 import SEO from '../components/SEO';
 import Layout from '../components/PageLayout';
@@ -50,14 +50,13 @@ export default function StatusPage() {
             }
 
             return (
-              <Table
-                className="pgn-doc__status-table"
+              <DataTable
                 data={components.map(({
                   title, status, designStatus, devStatus, notes,
                 }: ITable) => ({
                   name: (
-                    <div>
-                      <h6>{title} <ComponentStatus status={status} /></h6>
+                    <div className="status-indicator-wrapper">
+                      <h5>{title} <ComponentStatus status={status} /></h5>
                       <pre>{notes}</pre>
                     </div>
                   ),
@@ -66,22 +65,21 @@ export default function StatusPage() {
                 }))}
                 columns={[
                   {
-                    label: 'Component',
-                    key: 'name',
-                    width: 'col-2',
+                    Header: 'Component',
+                    accessor: 'name',
                   },
                   {
-                    label: 'Design',
-                    key: 'designStatus',
-                    width: 'col-3',
+                    Header: 'Design',
+                    accessor: 'designStatus',
                   },
                   {
-                    label: 'Development',
-                    key: 'devStatus',
-                    width: 'col-3',
+                    Header: 'Development',
+                    accessor: 'devStatus',
                   },
                 ]}
-              />
+              >
+                <DataTable.Table />
+              </DataTable>
             );
           }}
         />

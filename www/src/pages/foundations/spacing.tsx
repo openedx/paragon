@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // @ts-ignore
-import { Input, Container, DataTable } from '~paragon-react'; // eslint-disable-line
+import { Form, Container, DataTable } from '~paragon-react'; // eslint-disable-line
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 import MeasuredItem from '../../components/MeasuredItem';
@@ -117,35 +117,34 @@ export default function SpacingPage() {
         </p>
         <div className="border p-4">
           <div className="d-flex flex-column align-items-center">
-            <h4>Direction</h4>
-            <div className="mb-2">
-              {directions.map(({ key, name }) => (
-                <label
-                  className="form-check d-inline-block mr-4"
-                  htmlFor={`set-direction-${key}`}
-                >
-                  <Input
+            <Form.Group className="d-flex flex-column align-items-center">
+              <Form.Label className="font-weight-bolder">Direction</Form.Label>
+              <Form.RadioSet
+                name="direction-selector"
+                value={direction}
+                isInline
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setDirection(e.target.value)}
+              >
+                {directions.map(({ key, name }) => (
+                  <Form.Radio
                     id={`set-direction-${key}`}
                     key={key}
                     className="mt-0"
-                    type="radio"
-                    name="direction"
                     value={key}
-                    checked={key === direction}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setDirection(e.target.value)}
-                  />
-                  {name}
-                </label>
-              ))}
-            </div>
+                  >
+                    {name}
+                  </Form.Radio>
+                ))}
+              </Form.RadioSet>
+            </Form.Group>
             <label className="d-block" htmlFor="set-size">
               <span className="d-block text-center">Spacing Level: {size}</span>
               <div
-                className="d-flex align-items-center"
+                className="d-flex align-items-center mt-1"
                 style={{ maxWidth: '20rem' }}
               >
                 -6
-                <Input
+                <Form.Control
                   type="range"
                   id="set-size"
                   className="mx-2"
