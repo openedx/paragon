@@ -8,9 +8,7 @@ categories:
 - Navigation
 status: 'Stable'
 designStatus: 'Done'
-devStatus: 'TO DO'
-notes: |
-  TODO: Remove subcomponent of deprecated implementation soon
+devStatus: 'Done'
 ---
 
 <p>
@@ -224,80 +222,4 @@ notes: |
     Hello I am the tenth panel.
   </Tab>
 </Tabs>
-```
-
-## Conditional rendering
-
-```jsx live
-() => {
-  const librariesEnabled = true;
-  const visibleTabs = useMemo(() => {
-    const tabs = [];
-        
-    tabs.push(
-      <Tab
-        key="courses"
-        eventKey="courses"
-        title="Courses"
-      >
-        Hello I am the courses panel.
-      </Tab>
-    );
-
-    tabs.push(
-      <Tab
-        key="programs"
-        eventKey="programs"
-        title="Programs"
-      >
-        Hello I am the programs panel.
-      </Tab>
-    );
-    
-    if (librariesEnabled) {
-      tabs.push(
-        <Tab
-          key="libraries"
-          eventKey="libraries"
-          title="Libraries"
-        >
-          Hello I am the libraries panel.
-        </Tab>
-      );   
-    }
-
-    return tabs;
-  }, [librariesEnabled]);
-
-  return (
-    <Tabs
-      id="tabs"
-      defaultActiveKey="courses"
-    >
-      {visibleTabs}
-    </Tabs>
-  );
-}
-```
-
-***
-
-## Tabs.Deprecated
-
-<br/>
-
-### (Deprecated) basic usage
-
-```jsx live
-<Tabs.Deprecated
-  labels={[
-    'Panel 1',
-    'Panel 2',
-    'Panel 3'
-  ]}
->
-  <div>Hello I am the first panel</div>
-  <div>Hello I am the second panel</div>
-  <div>Hello I am the third panel</div>
-</Tabs.Deprecated>
 ```
