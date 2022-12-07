@@ -61,7 +61,7 @@ export default function TypographyPage() {
               <th>CSS Class</th>
             </tr>
             {[1, 2, 3, 4, 5, 6].map(headingSize => (
-              <tr>
+              <tr key={headingSize}>
                 <td>
                   <MeasuredItem {...measuredTypeProps}>
                     <p className={`m-0 h${headingSize}`}>
@@ -163,7 +163,7 @@ export default function TypographyPage() {
               <th>CSS Class</th>
             </tr>
             {[1, 2, 3, 4].map(displaySize => (
-              <tr>
+              <tr key={displaySize}>
                 <td>
                   <MeasuredItem {...measuredTypeProps}>
                     <p className={`m-0 display-${displaySize}`}>
