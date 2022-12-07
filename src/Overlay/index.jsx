@@ -1,7 +1,6 @@
 import React from 'react';
 import BaseOverlay from 'react-bootstrap/Overlay';
 import BaseOverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Fade from 'react-bootstrap/Fade';
 import PropTypes from 'prop-types';
 
 const PLACEMENT_VARIANTS = [
@@ -84,7 +83,7 @@ Overlay.propTypes = {
    *
    * Controls `onToggle`.
    */
-  target: PropTypes.oneOfType([PropTypes.elementType, PropTypes.instanceOf(Element), PropTypes.func]),
+  target: PropTypes.oneOfType([PropTypes.elementType, PropTypes.func]),
   /**
    * Animate the entering and exiting of the Overlay. `true` will use the `<Fade>` transition,
    * or a custom react-transition-group `<Transition>` component can be provided.
