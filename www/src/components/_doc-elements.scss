@@ -31,80 +31,14 @@
     margin: 0;
   }
 
-  .status-indicator {
-    display: inline-flex;
-    align-items: center;
-    text-transform: uppercase;
-    font-size: .85em;
-    line-height: 1rem;
-    white-space: nowrap;
-
-    &.planned {
-      &::before {
-        background-color: gray;
-        border-color: #78D965;
-      }
-    }
-
-    &.updates-planned {
-      &::before {
-        background-color: gray;
-        border-color: #78D965;
-      }
-    }
-
-    &.green,
-    &.done,
-    &.stable {
-      &::before {
-        background-color: green;
-      }
-    }
-
-    &.needs-work,
-    &.reassessing {
-      &::before {
-        background-color: orange;
-      }
-    }
-
-    &.to-do {
-      &::before {
-        background-color: white;
-        border-color: teal;
-      }
-    }
-
-    &.in-progress {
-      font-weight: bold;
-      color: teal;
-
-      &::before {
-        background-color: teal;
-      }
-    }
-
-    &.deprecate-soon {
-      &::before {
-        background-color: red;
-      }
-    }
-
-    &::before {
-      content: " ";
-      background-color: silver;
-      display: inline-block;
-      width: .75rem;
-      margin-top: 0;
-      height: .75rem;
-      box-sizing: border-box;
-      border: solid 2px transparent;
-      margin-right: .375rem;
-      border-radius: 1rem;
-    }
-  }
-
   h6 {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.status-indicator-wrapper {
+  h5 {
     display: flex;
     align-items: center;
 
@@ -116,6 +50,79 @@
     .status-no-left-margin {
       margin-left: 0;
     }
+  }
+}
+
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: .85em;
+  line-height: 1rem;
+  white-space: nowrap;
+
+  &.planned {
+    &::before {
+      background-color: gray;
+      border-color: #78D965;
+    }
+  }
+
+  &.updates-planned {
+    &::before {
+      background-color: gray;
+      border-color: #78D965;
+    }
+  }
+
+  &.green,
+  &.done,
+  &.stable {
+    &::before {
+      background-color: green;
+    }
+  }
+
+  &.needs-work,
+  &.reassessing {
+    &::before {
+      background-color: orange;
+    }
+  }
+
+  &.to-do {
+    &::before {
+      background-color: white;
+      border-color: teal;
+    }
+  }
+
+  &.in-progress {
+    font-weight: bold;
+    color: teal;
+
+    &::before {
+      background-color: teal;
+    }
+  }
+
+  &.deprecate-soon {
+    &::before {
+      background-color: red;
+    }
+  }
+
+  &::before {
+    content: " ";
+    background-color: silver;
+    display: inline-block;
+    width: .75rem;
+    margin-top: 0;
+    height: .75rem;
+    box-sizing: border-box;
+    border: solid 2px transparent;
+    margin-right: .375rem;
+    border-radius: 1rem;
   }
 }
 
