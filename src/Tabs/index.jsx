@@ -8,7 +8,6 @@ import React, {
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import BaseTabs from 'react-bootstrap/Tabs';
-import TabsDeprecated from './deprecated';
 import Bubble from '../Bubble';
 import Dropdown from '../Dropdown';
 import useIndexOfLastVisibleChild from '../hooks/useIndexOfLastVisibleChild';
@@ -209,8 +208,6 @@ Tabs.defaultProps = {
   defaultActiveKey: undefined,
   activeKey: undefined,
 };
-
-Tabs.Deprecated = TabsDeprecated;
 
 export default Tabs;
 export { Tab };

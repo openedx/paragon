@@ -8,8 +8,6 @@ categories:
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'
-notes: |
-  TODO: Remove subcomponent of deprecated implementation soon
 ---
 
 This component utilizes `Button` from React-Bootstrap and extends it with an ability to add icons before and after button label, see [below](#with-icons-before-or-after) for usage example.<br/> <a href="https://react-bootstrap-v4.netlify.app/components/buttons/" target="_blank" rel="noopener noreferrer"> See React-Bootstrap for additional documentation. </a>
@@ -224,92 +222,4 @@ For link to be `disabled`, it must have href defined with some value.
     </Stack>
   )
 }
-```
-
-## Stateful buttons
-To implement loading state using a `Button` component, the [StatefulButton](https://paragon-openedx.netlify.app/components/statefulbutton/) component
-is available for use. <br/>
-This specialized component is designed to seamlessly manage and display boot states, providing a more efficient and 
-user-friendly experience.
-
-***
-
-## Button.Deprecated
-
-### (Deprecated) basic usage
-
-```jsx live
-<Button.Deprecated className="btn-primary">Hello World!</Button.Deprecated>
-```
-
-### (Deprecated) color variants
-
-```jsx live
-() => {
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
-
-  return (
-    <Stack
-      className="mb-2"
-      gap={2}
-      direction={ isExtraSmall ? "vertical" : "horizontal" }
-    >
-      <Button.Deprecated className="btn-primary">Primary</Button.Deprecated>
-      <Button.Deprecated className="btn-success">Success</Button.Deprecated>
-      <Button.Deprecated className="btn-danger">Danger</Button.Deprecated>
-      <Button.Deprecated className="btn-light">Light</Button.Deprecated>
-      <Button.Deprecated className="btn-dark">Dark</Button.Deprecated>
-    </Stack>
-  )
-}
-```
-
-### (Deprecated) outline variants
-
-```jsx live
-() => {
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
-
-  return (
-    <Stack
-      className="mb-2"
-      gap={2}
-      direction={ isExtraSmall ? "vertical" : "horizontal" }
-    >
-      <Button.Deprecated className="btn-outline-primary">Primary</Button.Deprecated>
-      <Button.Deprecated className="btn-outline-success">Success</Button.Deprecated>
-      <Button.Deprecated className="btn-outline-danger">Danger</Button.Deprecated>
-    </Stack>
-  )
-}
-```
-
-### (Deprecated) inverse variants
-
-```jsx live
-() => {
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
-
-  return (
-    <Stack
-      className="mb-2 p-3 bg-gray-700"
-      gap={2}
-      direction={ isExtraSmall ? "vertical" : "horizontal" }
-    >
-      <Button.Deprecated className="btn-inverse-primary">Primary</Button.Deprecated>
-      <Button.Deprecated className="btn-inverse-success">Success</Button.Deprecated>
-      <Button.Deprecated className="btn-inverse-danger">Danger</Button.Deprecated>
-    </Stack>
-  )
-}
-```
-
-### (Deprecated) link variant
-
-```jsx live
-<div className="bg-gray-200 p-3">
-  <Button.Deprecated className="btn-link">Link with button container</Button.Deprecated>
-  <br />
-  <Button.Deprecated className="btn-link px-0">Button with no horizontal padding</Button.Deprecated>
-</div>
 ```
