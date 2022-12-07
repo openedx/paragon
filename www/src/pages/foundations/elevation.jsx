@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import SEO from '../../components/SEO';
+import Layout from '../../components/PageLayout';
 import {
-  Button,
-  Form,
-  Container,
-  Input,
+  Button, Form, Container,
+
   Toast,
   Icon,
   IconButtonWithTooltip,
 } from '~paragon-react';
 import { Close, WbSunny, DoDisturb } from '~paragon-icons';
-import SEO from '../../components/SEO';
-import Layout from '../../components/PageLayout';
 
 const boxShadowSides = ['down', 'up', 'right', 'left', 'centered'];
 const boxShadowLevels = [1, 2, 3, 4, 5];
@@ -53,7 +51,7 @@ function BoxShadowNode() {
 
   return (
     <div className="pgn-doc__box-shadow-cells">
-      { boxShadowCells }
+      {boxShadowCells}
       <Toast
         className="pgn-doc__box-shadow--toast"
         onClose={() => setShowToast(false)}
@@ -99,15 +97,15 @@ function BoxShadowToolkit({
   return (
     <section className="pgn-doc__box-shadow-toolkit--controls-box">
       {controlsProps.map(({ key, name }) => (
-        <Form.Label
-          className="d-block"
-          key={key}
-          htmlFor={`toolkit-control-${key}`}
-        >
-          {name}
-          <Input
+        <Form.Group key={key}>
+          <Form.Label
+            className="d-block"
+            htmlFor={`toolkit-control-${key}`}
+          >
+            {name}
+          </Form.Label>
+          <Form.Control
             id={`toolkit-control-${key}-${id}`}
-            key={key}
             min={key === 'x' || key === 'y' ? '-100' : '0'}
             max="100"
             type={key === 'color' ? 'color' : 'range'}
@@ -115,7 +113,7 @@ function BoxShadowToolkit({
             onChange={(e) => updateBoxShadowModel(key, e.target.value)}
             disabled={isDisabled}
           />
-        </Form.Label>
+        </Form.Group>
       ))}
       <div className="pgn-doc__box-shadow-toolkit--controls-box--disable-btn-wrapper">
         <Form.Checkbox

@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import BaseButton from 'react-bootstrap/Button';
 import BaseButtonGroup from 'react-bootstrap/ButtonGroup';
 import BaseButtonToolbar from 'react-bootstrap/ButtonToolbar';
-import ButtonDeprecated from './deprecated';
 
 import Icon from '../Icon';
 

@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
-import Form, { FormLabel } from '../../Form';
-import Input from '../../Input';
+import Form, { FormLabel, FormControl } from '../../Form';
 import { newId } from '../../utils';
 
 const formatHeaderForLabel = (header) => {
@@ -25,7 +24,7 @@ function TextFilter({
   return (
     <Form.Group>
       <FormLabel id={ariaLabel.current} className="sr-only">{inputText}</FormLabel>
-      <Input
+      <FormControl
         aria-labelledby={ariaLabel.current}
         value={filterValue || ''}
         type="text"

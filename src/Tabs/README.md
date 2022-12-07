@@ -8,9 +8,7 @@ categories:
 - Navigation
 status: 'Stable'
 designStatus: 'Done'
-devStatus: 'TO DO'
-notes: |
-  TODO: Remove subcomponent of deprecated implementation soon
+devStatus: 'Done'
 ---
 
 <p>
@@ -224,26 +222,4 @@ notes: |
     Hello I am the tenth panel.
   </Tab>
 </Tabs>
-```
-
-***
-
-## Tabs.Deprecated
-
-<br/>
-
-### (Deprecated) basic usage
-
-```jsx live
-<Tabs.Deprecated
-  labels={[
-    'Panel 1',
-    'Panel 2',
-    'Panel 3'
-  ]}
->
-  <div>Hello I am the first panel</div>
-  <div>Hello I am the second panel</div>
-  <div>Hello I am the third panel</div>
-</Tabs.Deprecated>
 ```
