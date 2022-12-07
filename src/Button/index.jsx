@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import Button from 'react-bootstrap/Button';
 import BaseButtonGroup from 'react-bootstrap/ButtonGroup';
 import BaseButtonToolbar from 'react-bootstrap/ButtonToolbar';
-import ButtonDeprecated from './deprecated';
 
 import Icon from '../Icon';
 
@@ -46,8 +45,6 @@ WrappedButton.defaultProps = {
   iconBefore: undefined,
   iconAfter: undefined,
 };
-
-WrappedButton.Deprecated = ButtonDeprecated;
 
 function ButtonGroup(props) {
   return <BaseButtonGroup {...props} />;
