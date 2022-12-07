@@ -1,7 +1,6 @@
 import React from 'react';
 import BaseOverlay, { type OverlayProps, type Placement } from 'react-bootstrap/Overlay';
 import BaseOverlayTrigger, { type OverlayTriggerProps, type OverlayTriggerType } from 'react-bootstrap/OverlayTrigger';
-import Fade from 'react-bootstrap/Fade';
 import PropTypes from 'prop-types';
 
 // Note: The only thing this file adds to the base component is propTypes validation.
@@ -88,7 +87,7 @@ Overlay.propTypes = {
    *
    * Controls `onToggle`.
    */
-  target: PropTypes.oneOfType([PropTypes.elementType, PropTypes.instanceOf(Element), PropTypes.func]),
+  target: PropTypes.oneOfType([PropTypes.elementType, PropTypes.func]),
   /**
    * Animate the entering and exiting of the Overlay. `true` will use the `<Fade>` transition,
    * or a custom react-transition-group `<Transition>` component can be provided.
