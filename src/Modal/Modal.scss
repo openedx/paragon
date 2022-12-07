@@ -1,5 +1,4 @@
 @import "variables";
-@import "bootstrap-modal";
 @import "ModalDialog";
 
 .pgn__hidden-scroll-padding-right {
@@ -47,71 +46,6 @@
   p {
     text-align: start;
   }
-}
-
-// Bootstrap modal styles
-
-.modal.show {
-  position: fixed;
-  background-color: transparent;
-  max-height: 100%;
-  width: 100%;
-
-  &:focus {
-    .modal-dialog {
-      box-shadow: $input-btn-focus-box-shadow;
-    }
-  }
-}
-
-.modal.is-ie11 {
-  // fix browser that likes to do things its own way
-  overflow-y: scroll;
-  height: auto;
-
-  .modal-content {
-    height: auto;
-    max-height: none;
-  }
-}
-
-.modal-backdrop {
-  background-color: rgba(0, 0, 0, .3);
-
-  // Fade for backdrop
-  &.fade { opacity: 0; }
-  &.show { opacity: 1; }
-}
-
-.modal-dialog {
-  height: 100%;
-  margin: auto;
-  padding: calc($spacer / 2);
-
-  @media (min-width: map-get($grid-breakpoints, "sm")) {
-    padding: $spacer;
-  }
-}
-
-.modal-content {
-  max-height: calc(100vh - (#{$spacer} * 2));
-
-  &:focus {
-    outline: 1px dotted;
-    outline: 5px auto -webkit-focus-ring-color;
-  }
-}
-
-.modal-header {
-  flex: 0 0 auto;
-}
-
-.modal-body {
-  overflow: auto;
-}
-
-.modal-footer {
-  flex: 0 0 auto;
 }
 
 .pgn__modal-popup__arrow {
