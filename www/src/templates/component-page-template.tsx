@@ -17,6 +17,7 @@ import GenericPropsTable from '../components/PropsTable';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
 import LinkedHeading from '../components/LinkedHeading';
+import ComponentVariablesTable from '../components/ComponentVariablesTable';
 
 export interface IPageTemplate {
   data: {
@@ -84,8 +85,8 @@ export default function PageTemplate({
     };
   }, [components]);
 
-  const scssVariablesTitle = 'Theme Variables (SCSS)';
-  const scssVariablesUrl = 'theme-variables-scss';
+  const scssVariablesTitle = 'Theme Variables';
+  const scssVariablesUrl = 'theme-variables';
 
   const getTocData = () => {
     const tableOfContents = JSON.parse(JSON.stringify(mdx.tableOfContents));
@@ -131,7 +132,7 @@ export default function PageTemplate({
                 <span className="pgn-doc__anchor">#</span>
               </a>
             </h2>
-            <CodeBlock className="language-scss">{scssVariables}</CodeBlock>
+            <ComponentVariablesTable rawStylesheet={scssVariables} />
           </div>
         )}
         {typeof sortedComponentNames !== 'string'
