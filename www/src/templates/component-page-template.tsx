@@ -19,6 +19,7 @@ import SEO from '../components/SEO';
 import LinkedHeading from '../components/LinkedHeading';
 import ComponentsUsage from '../components/insights/ComponentsUsage';
 import LeaveFeedback from '../components/LeaveFeedback';
+import ComponentVariablesTable from '../components/ComponentVariablesTable';
 
 export interface IPageTemplate {
   data: {
@@ -87,8 +88,8 @@ export default function PageTemplate({
     };
   }, [components]);
 
-  const scssVariablesTitle = 'Theme Variables (SCSS)';
-  const scssVariablesUrl = 'theme-variables-scss';
+  const scssVariablesTitle = 'Theme Variables';
+  const scssVariablesUrl = 'theme-variables';
 
   const propsAPITitle = 'Props API';
   const propsAPIUrl = 'props-api';
@@ -152,7 +153,7 @@ export default function PageTemplate({
                 <span className="pgn-doc__anchor">#</span>
               </a>
             </h2>
-            <CodeBlock className="language-scss">{scssVariables}</CodeBlock>
+            <ComponentVariablesTable rawStylesheet={scssVariables} />
           </div>
         )}
         {components[sortedComponentNames[0]]?.props && (
