@@ -1,0 +1,95 @@
+{
+  "border": {
+    "form": {
+      "input": {
+        "color": { "value": "{color.gray.500.value}", "source": "$input-border-color" },
+        "width": { "value": "{input.btn.border.width.value}", "source": "$input-border-width" },
+        "height": { "value": "calc({form.input.border.width.value} * 2)", "source": "$input-height-border"},
+        "radius": {
+          "base": { "value": "{border.radius.base.value}", "source": "$input-border-radius" },
+          "lg": { "value": "{border.radius.lg.value}", "source": "$input-border-radius-lg" },
+          "sm": { "value": "{border.radius.sm.value}", "source": "$input-border-radius-sm" }
+        }
+      },
+      "check": {
+        "radius": {
+          "focus": { "value": ".0625rem", "source": "$form-check-focus-border-radius" }
+        },
+        "width": { "value": ".125rem", "source": "$form-check-border-width" }
+      },
+      "control": {
+        "indicator": {
+          "color": { "value": "{color.gray.700.value}", "source": "$custom-control-indicator-border-color" },
+          "width": { "value": "2px", "source": "$custom-control-indicator-border-width" },
+          "checked": {
+            "color": {
+              "base": { "value": "{color.primary.500.value}", "source": "$custom-control-indicator-checked-border-color" },
+              "focus": { "value": "{form.input.focus.color.border.value}", "source": "$custom-control-indicator-focus-border-color" }
+            }
+          },
+          "active": {
+            "color": { "value": "{form.custom.control.indicator.active.bg.value}", "source": "$custom-control-indicator-active-border-color" }
+          }
+        },
+        "checkbox": {
+          "indicator": {
+            "radius": { "value": "0", "source": "$custom-checkbox-indicator-border-radius" },
+            "indeterminate": {
+              "color": { "value": "{form.custom.checkbox.indicator.indeterminate.bg.value}", "source": "$custom-checkbox-indicator-indeterminate-border-color" }
+            }
+          }
+        },
+        "radio": {
+          "indicator": {
+            "radius": { "value": "50%", "source": "$custom-radio-indicator-border-radius" }
+          }
+        },
+        "switch": {
+          "indicator": {
+            "radius": { "value": "calc({form.custom.control.indicator.size.value} / 2)", "source": "$custom-switch-indicator-border-radius" }
+          }
+        },
+        "select": {
+          "width": {
+            "base": { "value": "{form.input.border.width.value}", "source": "$custom-select-border-width" },
+            "focus": { "value": "{form.input.focus.width.value}", "source": "$custom-select-focus-width" }
+          },
+          "color": {
+            "base": { "value": "{form.input.border.color.value}", "source": "$custom-select-border-color" },
+            "focus": { "value": "{form.input.focus.color.border.value}", "source": "$custom-select-focus-border-color" }
+          },
+          "radius": { "value": "{border.radius.base.value}", "source": "$custom-select-border-radius" },
+          "box-shadow": {
+            "base": { "value": "inset 0 1px 2px rgba(0, 0, 0, .075)", "source": "$custom-select-box-shadow" },
+            "focus": { "value": "{input.btn.focus.box-shadow.value}", "source": "$custom-select-focus-box-shadow" }
+          }
+        },
+        "range": {
+          "track": {
+            "radius": { "value": "1rem", "source": "$custom-range-track-border-radius" }
+          },
+          "thumb": {
+            "base": { "value": "0", "source": "$custom-range-thumb-border" },
+            "radius": { "value": "1rem", "source": "$custom-range-thumb-border-radius" }
+          }
+        },
+        "file": {
+          "color": {
+            "base": { "value": "{form.input.border.color.value}", "source": "$custom-file-border-color" },
+            "focus": { "value": "{form.input.focus.color.border.value}", "source": "$custom-file-focus-border-color" },
+            "radius": { "value": "{form.input.border.radius.base.value}", "source": "$custom-file-border-radius" }
+          },
+          "width": { "value": "{form.input.border.width.value}", "source": "$custom-file-border-width" }
+        }
+      },
+      "feedback": {
+        "tooltip": {
+          "radius": { "value": "{border.radius.base.value}", "source": "$form-feedback-tooltip-border-radius" }
+        }
+      },
+      "autosuggest": {
+        "width": { "value": ".125rem", "source": "$form-autosuggest-border-width" }
+      }
+    }
+  }
+}

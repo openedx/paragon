@@ -1,0 +1,101 @@
+{
+  "size": {
+    "form": {
+      "input": {
+        "height": {
+          "base": {
+            "value": "calc({form.input.line.height.base.value} * 1em + {form.input.padding.y.base.value} * 2 + {form.input.border.height.value})",
+            "source": "$input-height"
+          },
+          "sm": {
+            "value": "calc({form.input.line.height.sm.value} * 1em + {input.btn.padding.sm.y.value} * 2 + {form.input.border.height.value})",
+            "source": "$input-height-sm"
+          },
+          "lg": {
+            "value": "calc({form.input.line.height.lg.value} * 1em + {input.btn.padding.lg.y.value} * 2 + {form.input.border.height.value})",
+            "source": "$input-height-lg"
+          },
+          "inner": {
+            "base": {
+              "value": "calc({form.input.line.height.base.value} * 1em + {form.input.padding.y.base.value} * 2)",
+              "source": "$input-height-inner"
+            },
+            "half": {
+              "value": "calc({form.input.line.height.base.value} * .5em + {form.input.padding.y.base.value})",
+              "source": "$input-height-inner-half"
+            },
+            "quarter": {
+              "value": "calc({form.input.line.height.base.value} * .25em + calc({form.input.padding.y.base.value} / 2))",
+              "source": "$input-height-inner-quarter"
+            }
+          }
+        },
+        "width": {
+          "hover": { "value": "1px", "source": "$input-hover-width" },
+          "focus": { "value": "1px", "source": "$input-focus-width" }
+        }
+      },
+      "control": {
+        "indicator": { 
+          "base": { "value": "1.25rem", "source": "$custom-control-indicator-size" },
+          "bg": { "value": "100%", "source": "$custom-control-indicator-bg-size" }
+        },
+        "switch": {
+          "width": { "value": "calc({form.custom.control.indicator.size.value} * 1.75)", "source": "$custom-switch-width" },
+          "indicator": {
+            "value": "calc({form.custom.control.indicator.size.value} - {form.custom.control.indicator.border.width.value} * 4)",
+            "source": "$custom-switch-indicator-size"
+          }
+        },
+        "select": {
+          "height": {
+            "base": { "value": "{form.input.height.base.value}", "source": "$custom-select-height" },
+            "lg": { "value": "{form.input.height.lg.value}", "source": "$custom-select-height-lg" },
+            "sm": { "value": "{form.input.height.sm.value}", "source": "$custom-select-height-sm" }
+          },
+          "weight": { "value": "{form.input.font.weight.value}", "source": "$custom-select-font-weight" },
+          "feedback": {
+            "icon": { "value": "{form.input.height.inner.half.value} {form.input.height.inner.half.value}", "source": "$custom-select-feedback-icon-size" }
+          }
+        },
+        "range": {
+          "track": {
+            "width": { "value": "100%", "source": "$custom-range-track-width" },
+            "height": { "value": ".5rem", "source": "$custom-range-track-height" }
+          },
+          "thumb": {
+            "width": { "value": "1rem", "source": "$custom-range-thumb-width" },
+            "height": { "value": "{form.custom.range.thumb.width.value}", "source": "$custom-range-thumb-height" }
+          }
+        },
+        "file": {
+          "height": {
+            "base": { "value": "{form.input.height.base.value}",  "source": "$custom-file-height" },
+            "inner": { "value": "{form.input.height.inner.base.value}", "source": "$custom-file-height-inner" }
+          }
+        },
+        "icon": {
+          "width": { "value": "32px", "source": "$form-control-icon-width" }
+        }
+      },
+      "select": {
+        "icon": {
+          "padding": { "value": ".5625rem", "source": "$select-icon-padding" }
+        }
+      },
+      "grid": {
+        "gutter-width": { "value": "10px", "source": "$form-grid-gutter-width" }
+      },
+      "autosuggest": {
+        "icon": {
+          "width": { "value": "2.4rem", "source": "$form-autosuggest-icon-width" },
+          "height": { "value": "{form.autosuggest.icon.width}", "source": "$form-autosuggest-icon-height" }
+        },
+        "spinner": {
+          "width": { "value": "1.25rem", "source": "$form-autosuggest-spinner-width" },
+          "height": { "value": "{form.autosuggest.spinner.width}", "source": "$form-autosuggest-spinner-height" }
+        }
+      }
+    }
+  }
+}

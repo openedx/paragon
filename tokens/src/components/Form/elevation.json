@@ -1,0 +1,59 @@
+{
+  "elevation": {
+    "form": {
+      "input": {
+        "base": { "value": "inset 0 1px 1px rgba(0, 0, 0, .075)", "source": "$input-box-shadow" },
+        "focus": { "value": "{input.btn.focus.box-shadow.value}", "source": "$input-focus-box-shadow" }
+      },
+      "control": {
+        "indicator": {
+          "base": { "value": "{form.input.box-shadow.base.value}", "source": "$custom-control-indicator-box-shadow" },
+          "checked": {
+            "base": { "value": "none", "source": "$custom-control-indicator-checked-box-shadow" },
+            "focus": { "value": "0 0 0 4px rgba(0, 0, 0, .1)", "source": "$custom-control-indicator-focus-box-shadow" }
+          },
+          "active": { "value": "none", "source": "$custom-control-indicator-active-box-shadow" }
+        },
+        "checkbox": {
+          "indicator": {
+            "indeterminate": { "value": "none", "source": "$custom-checkbox-indicator-indeterminate-box-shadow" }
+          }
+        },
+        "range": {
+          "track": { "value": "inset 0 .25rem .25rem rgba(0, 0, 0, .1)", "source": "$custom-range-track-box-shadow" },
+          "thumb": {
+            "base": { "value": "0 .1rem .25rem rgba(0, 0, 0, .1)", "source": "$custom-range-thumb-box-shadow" },
+            "focus": {
+              "base": { "value": "0 0 0 1px {body.bg.value}, {form.input.box-shadow.focus.value}", "source": "$custom-range-thumb-focus-box-shadow" },
+              "width": { "value": "{form.input.focus.width.value}", "source": "$custom-range-thumb-focus-box-shadow-width" }
+            }
+          }
+        },
+        "file": {
+          "base": { "value": "{form.input.box-shadow.base.value}", "source": "$custom-file-box-shadow" },
+          "focus": { "value": "{form.input.box-shadow.focus.value}", "source": "$custom-file-focus-box-shadow" }
+        }
+      },
+      "tooltip": {
+        "focus": {
+          "valid": {
+            "value": "{form.feedback.color.valid.value}",
+            "source": "$form-feedback-focus-box-shadow-valid-color",
+            "modify": [{
+              "type": "alpha",
+              "amount": 0.25
+            }]
+          },
+          "invalid": {
+            "value": "{form.feedback.color.invalid.value}",
+            "source": "$form-feedback-focus-box-shadow-invalid-color",
+            "modify": [{
+              "type": "alpha",
+              "amount": 0.25
+            }]
+          }
+        }
+      }
+    }
+  }
+}
