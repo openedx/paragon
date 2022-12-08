@@ -7,24 +7,12 @@
       }
     },
     "footer": {
-      "border": {
-        "color": { "value": "{modal.header.border.color.value}", "source": "$modal-footer-border-color" },
-        "width": { "value": "{modal.header.border.width.value}", "source": "$modal-footer-border-width" }
-      },
       "padding": {
-        "base": { "value": "{modal.footer.padding.x.value} {modal.footer.padding.y.value}", "source": "$modal-footer-padding" },
-        "x": { "value": "1rem", "source": "$modal-footer-padding-x" },
-        "y": { "value": "1.5rem", "source": "$modal-footer-padding-y" }
-      },
-      "margin-between": { "value": ".5rem", "source": "$modal-footer-margin-between"}
-    },
-    "title": {
-      "line": {
-        "height": { "value": "{line-height.base.value}", "source": "$modal-title-line-height" }
+        "base": { "value": "{modal.footer.padding.y.value} 1.5rem", "source": "$modal-footer-padding" },
+        "y": { "value": "1rem", "source": "$modal-footer-padding-y" }
       }
     },
     "content": {
-      "color": { "value": "null", "source": "$modal-content-color" },
       "bg": { "value": "{color.background.base.value}", "source": "$modal-content-bg" },
       "border": {
         "color": { 
@@ -39,7 +27,6 @@
         "radius": { "value": "{border.radius.lg.value}", "source": "$modal-content-border-radius" }
       },
       "box-shadow": {
-        "xs": { "value": "0 .25rem .5rem rgba(0, 0, 0, .5)", "source": "$modal-content-box-shadow-xs" },
         "sm-up": {
           "value": "0 10px 20px rgba(0, 0, 0, .15), 0 8px 20px rgba(0, 0, 0, .15)",
           "source": "$modal-content-box-shadow-sm-up"
@@ -52,35 +39,23 @@
       "zindex": { "value": "1040", "source": "$zindex-modal-backdrop" }
     },
     "header": {
-      "border": {
-        "color": { "value": "{border.color.value}", "source": "$modal-header-border-color" },
-        "width": { "value": "{modal.content.border.width.value}", "source": "$modal-header-border-width" }
-      },
       "padding": {
         "base": {
-          "value": "{modal.header.padding.y.value} {modal.header.padding.x.value}",
+          "value": "{modal.header.padding.y.value} 1.5rem",
           "source": "$modal-header-padding"
         },
-        "y": { "value": "1rem", "source": "$modal-header-padding-y" },
-        "x": { "value": "1.5rem", "source": "$modal-header-padding-x" }
+        "y": { "value": "1rem", "source": "$modal-header-padding-y" }
       }
     },
     "dialog": {
       "margin": {
-        "base": { "value": "1.5rem", "source": "$modal-dialog-margin" },
-        "y-sm-up": { "value": "1.75rem", "source": "$modal-dialog-margin-y-sm-up" }
+        "base": { "value": "1.5rem", "source": "$modal-dialog-margin" }
       }
     },
     "xl": { "value": "1140px", "source": "$modal-xl" },
     "lg": { "value": "800px", "source": "$modal-lg" },
     "md": { "value": "500px", "source": "$modal-md" },
-    "sm": { "value": "500px", "source": "$modal-sm" },
-    "transform": {
-      "base": { "value": "transform .3s ease-out", "source": "$modal-transition" },
-      "fade": { "value": "translate(0, -50px)", "source": "$modal-fade-transform" },
-      "show": { "value": "none", "source": "$modal-show-transform" },
-      "scale": { "value": "scale(1.02)", "source": "$modal-scale-transform" }
-    },
+    "sm": { "value": "400px", "source": "$modal-sm" },
     "zindex": { "value": "1050", "source": "$zindex-modal" },
     "close-container": {
       "top": { "value": ".625rem", "source": "$modal-close-container-top" }
