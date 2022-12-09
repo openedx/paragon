@@ -18,26 +18,35 @@ const Card = React.forwardRef(({
   isLoading,
   className,
   isClickable,
+  muted,
   variant,
   ...props
-}, ref) => (
-  <CardContextProvider
-    orientation={orientation}
-    isLoading={isLoading}
-    variant={variant}
-  >
-    <BaseCard
-      {...props}
-      className={classNames(className, 'pgn__card', {
-        horizontal: orientation === 'horizontal',
-        clickable: isClickable,
-        [`pgn__card-${variant}`]: variant,
-      })}
-      ref={ref}
-      tabIndex={isClickable ? '0' : '-1'}
-    />
-  </CardContextProvider>
-));
+}, ref) => {
+  if (muted) {
+    // eslint-disable-next-line no-console
+    console.error('Prop muted is deprecated, please, use variant="muted" instead');
+  }
+  const resolvedVariant = muted ? 'muted' : variant;
+
+  return (
+    <CardContextProvider
+      orientation={orientation}
+      isLoading={isLoading}
+      variant={resolvedVariant}
+    >
+      <BaseCard
+        {...props}
+        className={classNames(className, 'pgn__card', {
+          horizontal: orientation === 'horizontal',
+          clickable: isClickable,
+          [`pgn__card-${resolvedVariant}`]: resolvedVariant,
+        })}
+        ref={ref}
+        tabIndex={isClickable ? '0' : '-1'}
+      />
+    </CardContextProvider>
+  );
+});
 
 export { default as CardColumns } from 'react-bootstrap/CardColumns';
 export { default as CardDeck } from 'react-bootstrap/CardDeck';
@@ -57,6 +66,8 @@ Card.propTypes = {
   isLoading: PropTypes.bool,
   /** Specifies `Card` style variant. */
   variant: PropTypes.oneOf(CARD_VARIANTS),
+  /** **Deprecated**. Specifies whether `Card` uses `muted` variant. Use `variant="muted"` instead. */
+  muted: PropTypes.bool,
 };
 
 Card.defaultProps = {
