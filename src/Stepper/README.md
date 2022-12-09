@@ -197,11 +197,17 @@ If an error occurs or the step condition is not met, `Stepper.Header` titles bec
     removeError();
   };
 
-  const handleStepCheckboxChecked = () => isChecked && setCurrentStep;
+  const getStepClickHandler = () => {
+    if (isChecked) {
+      return setCurrentStep;
+    }
+
+    return undefined;
+  }
 
   return (
     <Stepper activeKey={currentStep}>
-      <Stepper.Header handleStepClick={handleStepCheckboxChecked()} />
+      <Stepper.Header handleStepClick={getStepClickHandler()} />
 
       <AlertModal
         title="Confirm reset"
