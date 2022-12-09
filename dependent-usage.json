@@ -1,5 +1,5 @@
 {
-  "lastModified": 1670508504385,
+  "lastModified": 1670594936166,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -728,7 +728,7 @@
       }
     },
     {
-      "version": "19.25.3",
+      "version": "20.21.1",
       "name": "@edx/frontend-app-account",
       "repository": {
         "type": "git",
@@ -8661,6 +8661,183 @@
             "column": 4
           }
         ],
+        "Card": [
+          {
+            "filePath": "src/generic/ConfirmationPopup.jsx",
+            "line": 13,
+            "column": 2
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
+            "line": 67,
+            "column": 4
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/openedx/OpenedXConfigForm.jsx",
+            "line": 118,
+            "column": 12
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
+            "line": 73,
+            "column": 4
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-list/AppCard.jsx",
+            "line": 23,
+            "column": 4
+          },
+          {
+            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
+            "line": 60,
+            "column": 4
+          }
+        ],
+        "Card.Header": [
+          {
+            "filePath": "src/generic/ConfirmationPopup.jsx",
+            "line": 14,
+            "column": 4
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
+            "line": 74,
+            "column": 6
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-list/AppCard.jsx",
+            "line": 33,
+            "column": 6
+          },
+          {
+            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
+            "line": 66,
+            "column": 6
+          }
+        ],
+        "Card.Body": [
+          {
+            "filePath": "src/generic/ConfirmationPopup.jsx",
+            "line": 19,
+            "column": 4
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
+            "line": 79,
+            "column": 6
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-list/AppCard.jsx",
+            "line": 50,
+            "column": 6
+          },
+          {
+            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
+            "line": 76,
+            "column": 6
+          }
+        ],
+        "Card.Section": [
+          {
+            "filePath": "src/generic/ConfirmationPopup.jsx",
+            "line": 20,
+            "column": 6
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
+            "line": 80,
+            "column": 8
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-list/AppCard.jsx",
+            "line": 52,
+            "column": 10
+          },
+          {
+            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
+            "line": 77,
+            "column": 8
+          }
+        ],
+        "Card.Footer": [
+          {
+            "filePath": "src/generic/ConfirmationPopup.jsx",
+            "line": 21,
+            "column": 6
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
+            "line": 83,
+            "column": 8
+          }
+        ],
+        "Button": [
+          {
+            "filePath": "src/generic/ConfirmationPopup.jsx",
+            "line": 22,
+            "column": 8
+          },
+          {
+            "filePath": "src/generic/ConfirmationPopup.jsx",
+            "line": 25,
+            "column": 8
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/BlackoutDatesField.jsx",
+            "line": 74,
+            "column": 16
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/DiscussionTopics.jsx",
+            "line": 78,
+            "column": 16
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
+            "line": 84,
+            "column": 10
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
+            "line": 87,
+            "column": 10
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-list/AppListNextButton.jsx",
+            "line": 20,
+            "column": 4
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/DiscussionsSettings.jsx",
+            "line": 108,
+            "column": 20
+          },
+          {
+            "filePath": "src/pages-and-resources/PagesAndResources.jsx",
+            "line": 51,
+            "column": 12
+          },
+          {
+            "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
+            "line": 47,
+            "column": 14
+          },
+          {
+            "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
+            "line": 50,
+            "column": 14
+          },
+          {
+            "filePath": "src/pages-and-resources/teams/Settings.jsx",
+            "line": 147,
+            "column": 20
+          },
+          {
+            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+            "line": 406,
+            "column": 8
+          }
+        ],
         "Alert": [
           {
             "filePath": "src/generic/ConnectionErrorAlert.jsx",
@@ -8773,183 +8950,6 @@
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 485,
             "column": 14
-          }
-        ],
-        "Card": [
-          {
-            "filePath": "src/generic/DeletePopup.jsx",
-            "line": 13,
-            "column": 2
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
-            "line": 67,
-            "column": 4
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/openedx/OpenedXConfigForm.jsx",
-            "line": 118,
-            "column": 12
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
-            "line": 73,
-            "column": 4
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-list/AppCard.jsx",
-            "line": 23,
-            "column": 4
-          },
-          {
-            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
-            "line": 60,
-            "column": 4
-          }
-        ],
-        "Card.Header": [
-          {
-            "filePath": "src/generic/DeletePopup.jsx",
-            "line": 14,
-            "column": 4
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
-            "line": 74,
-            "column": 6
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-list/AppCard.jsx",
-            "line": 33,
-            "column": 6
-          },
-          {
-            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
-            "line": 66,
-            "column": 6
-          }
-        ],
-        "Card.Body": [
-          {
-            "filePath": "src/generic/DeletePopup.jsx",
-            "line": 19,
-            "column": 4
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
-            "line": 79,
-            "column": 6
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-list/AppCard.jsx",
-            "line": 50,
-            "column": 6
-          },
-          {
-            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
-            "line": 76,
-            "column": 6
-          }
-        ],
-        "Card.Section": [
-          {
-            "filePath": "src/generic/DeletePopup.jsx",
-            "line": 20,
-            "column": 6
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
-            "line": 80,
-            "column": 8
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-list/AppCard.jsx",
-            "line": 52,
-            "column": 10
-          },
-          {
-            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
-            "line": 77,
-            "column": 8
-          }
-        ],
-        "Card.Footer": [
-          {
-            "filePath": "src/generic/DeletePopup.jsx",
-            "line": 21,
-            "column": 6
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
-            "line": 83,
-            "column": 8
-          }
-        ],
-        "Button": [
-          {
-            "filePath": "src/generic/DeletePopup.jsx",
-            "line": 22,
-            "column": 8
-          },
-          {
-            "filePath": "src/generic/DeletePopup.jsx",
-            "line": 25,
-            "column": 8
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/BlackoutDatesField.jsx",
-            "line": 74,
-            "column": 16
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/DiscussionTopics.jsx",
-            "line": 78,
-            "column": 16
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
-            "line": 84,
-            "column": 10
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
-            "line": 87,
-            "column": 10
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-list/AppListNextButton.jsx",
-            "line": 20,
-            "column": 4
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/DiscussionsSettings.jsx",
-            "line": 108,
-            "column": 20
-          },
-          {
-            "filePath": "src/pages-and-resources/PagesAndResources.jsx",
-            "line": 51,
-            "column": 12
-          },
-          {
-            "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
-            "line": 47,
-            "column": 14
-          },
-          {
-            "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
-            "line": 50,
-            "column": 14
-          },
-          {
-            "filePath": "src/pages-and-resources/teams/Settings.jsx",
-            "line": 147,
-            "column": 20
-          },
-          {
-            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-            "line": 406,
-            "column": 8
           }
         ],
         "TransitionReplace": [
@@ -10258,7 +10258,7 @@
           },
           {
             "filePath": "src/discussions/posts/PostsList.jsx",
-            "line": 87,
+            "line": 94,
             "column": 10
           }
         ],
@@ -10369,7 +10369,7 @@
           },
           {
             "filePath": "src/components/TinyMCEEditor.jsx",
-            "line": 134,
+            "line": 136,
             "column": 12
           },
           {
@@ -10444,7 +10444,7 @@
           },
           {
             "filePath": "src/discussions/posts/PostsList.jsx",
-            "line": 91,
+            "line": 98,
             "column": 10
           }
         ],
@@ -10486,14 +10486,14 @@
         "AlertModal": [
           {
             "filePath": "src/components/TinyMCEEditor.jsx",
-            "line": 127,
+            "line": 129,
             "column": 6
           }
         ],
         "ActionRow": [
           {
             "filePath": "src/components/TinyMCEEditor.jsx",
-            "line": 133,
+            "line": 135,
             "column": 10
           },
           {
@@ -21689,7 +21689,7 @@
       }
     },
     {
-      "version": "19.9.0",
+      "version": "20.21.1",
       "name": "@edx/frontend-component-header-edx",
       "repository": {
         "type": "git",
@@ -21797,7 +21797,7 @@
       }
     },
     {
-      "version": "19.25.3",
+      "version": "20.20.0",
       "name": "@edx/frontend-component-header",
       "repository": {
         "type": "git",
@@ -24257,12 +24257,12 @@
           },
           {
             "filePath": "src/components/ContentfulModule/FootnoteModule.jsx",
-            "line": 40,
-            "column": 14
+            "line": 47,
+            "column": 16
           },
           {
             "filePath": "src/components/ContentfulModule/FootnoteModule.jsx",
-            "line": 72,
+            "line": 80,
             "column": 14
           },
           {
@@ -25093,7 +25093,7 @@
           },
           {
             "filePath": "src/components/ContentfulModule/BlurbModule/SlantedBlurbModule.jsx",
-            "line": 39,
+            "line": 53,
             "column": 6
           },
           {
@@ -25739,21 +25739,21 @@
           },
           {
             "filePath": "src/components/ContentfulModule/FootnoteModule.jsx",
-            "line": 71,
+            "line": 79,
             "column": 12
           }
         ],
         "OpenInNew": [
           {
             "filePath": "src/components/ContentfulModule/FootnoteModule.jsx",
-            "line": 41,
-            "column": 21
+            "line": 48,
+            "column": 23
           }
         ],
         "ArrowUpward": [
           {
             "filePath": "src/components/ContentfulModule/FootnoteModule.jsx",
-            "line": 73,
+            "line": 81,
             "column": 21
           }
         ],
