@@ -20,7 +20,8 @@ function BaseSelectionStatus({
   allSelectedText,
   selectedText,
 }) {
-  const { itemCount, isPaginated, isFilterable } = useContext(DataTableContext);
+  const { itemCount, isPaginated, state } = useContext(DataTableContext);
+  const hasAppliedFilters = state?.filters?.length > 0;
   const isAllRowsSelected = numSelectedRows === itemCount;
   const intlAllSelectedText = allSelectedText || (
     <FormattedMessage
@@ -31,7 +32,7 @@ function BaseSelectionStatus({
     />
   );
 
-  const defaultSelectedText = isPaginated || isFilterable ? (
+  const defaultSelectedText = isPaginated || hasAppliedFilters ? (
     <FormattedMessage
       id="pgn.DataTable.BaseSelectionStatus.selectedTextPaginated"
       defaultMessage="{numSelectedRows} selected ({numSelectedRowsOnPage} shown below)"

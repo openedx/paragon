@@ -175,7 +175,6 @@ function DataTable({
     isLoading,
     isSelectable,
     isPaginated,
-    isFilterable,
     manualSelectColumn,
     ...selectionProps,
     ...selectionActions,
