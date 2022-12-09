@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 
 import DataTableContext from '../DataTableContext';
 import BaseSelectionStatus from './BaseSelectionStatus';
+import { useRows } from '../hooks';
 
 function SelectionStatus({ className, clearSelectionText }) {
-  const { toggleAllRowsSelected, page, state } = useContext(DataTableContext);
+  const { toggleAllRowsSelected, state } = useContext(DataTableContext);
+  const { displayRows } = useRows();
   const { selectedRowIds } = state;
   const numSelectedRows = Object.keys(selectedRowIds || {}).length;
-  // if `DataTable` is not paginated, `page` is undefined
-  const numSelectedRowsOnPage = (page || []).filter(r => r.isSelected).length;
+  const numSelectedRowsOnPage = displayRows.filter(r => r.isSelected).length;
   const selectionStatusProps = {
     className,
     numSelectedRows,
