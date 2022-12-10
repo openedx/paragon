@@ -1,5 +1,5 @@
 {
-  "lastModified": 1670594936166,
+  "lastModified": 1670681350852,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -1557,7 +1557,7 @@
       }
     },
     {
-      "version": "20.21.0",
+      "version": "20.21.1",
       "name": "frontend-app-admin-portal",
       "repository": "https://github.com/openedx/frontend-app-admin-portal",
       "folderName": "frontend-app-admin-portal",
@@ -1580,12 +1580,12 @@
           },
           {
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentStepper.jsx",
-            "line": 82,
+            "line": 83,
             "column": 12
           },
           {
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentStepper.jsx",
-            "line": 91,
+            "line": 92,
             "column": 12
           },
           {
@@ -1610,17 +1610,12 @@
           },
           {
             "filePath": "src/components/BulkEnrollmentPage/stepper/ReviewList.jsx",
-            "line": 55,
-            "column": 12
+            "line": 66,
+            "column": 16
           },
           {
             "filePath": "src/components/BulkEnrollmentPage/table/BaseSelectionStatus.jsx",
-            "line": 27,
-            "column": 8
-          },
-          {
-            "filePath": "src/components/BulkEnrollmentPage/table/BaseSelectionStatus.jsx",
-            "line": 36,
+            "line": 23,
             "column": 8
           },
           {
@@ -1700,7 +1695,7 @@
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/SelectContentSelectionStatus.jsx",
-            "line": 26,
+            "line": 27,
             "column": 8
           },
           {
@@ -2092,8 +2087,13 @@
           },
           {
             "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
-            "line": 108,
+            "line": 132,
             "column": 8
+          },
+          {
+            "filePath": "src/components/BulkEnrollmentPage/stepper/ReviewList.jsx",
+            "line": 58,
+            "column": 10
           },
           {
             "filePath": "src/components/EnterpriseApp/EnterpriseAppSkeleton.jsx",
@@ -3497,12 +3497,12 @@
         "DataTable": [
           {
             "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
-            "line": 134,
+            "line": 158,
             "column": 6
           },
           {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentDataTable.jsx",
-            "line": 95,
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentSearch.jsx",
+            "line": 100,
             "column": 4
           },
           {
@@ -3554,12 +3554,12 @@
         "DataTable.TableControlBar": [
           {
             "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
-            "line": 146,
+            "line": 177,
             "column": 8
           },
           {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentDataTable.jsx",
-            "line": 140,
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentSearch.jsx",
+            "line": 145,
             "column": 6
           },
           {
@@ -3586,12 +3586,12 @@
         "DataTable.Table": [
           {
             "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
-            "line": 147,
+            "line": 178,
             "column": 8
           },
           {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentDataTable.jsx",
-            "line": 153,
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentSearch.jsx",
+            "line": 158,
             "column": 33
           },
           {
@@ -3618,12 +3618,12 @@
         "DataTable.TableFooter": [
           {
             "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
-            "line": 148,
+            "line": 179,
             "column": 8
           },
           {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentDataTable.jsx",
-            "line": 155,
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentSearch.jsx",
+            "line": 160,
             "column": 6
           },
           {
@@ -3645,19 +3645,19 @@
         "DataTable.RowStatus": [
           {
             "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
-            "line": 149,
+            "line": 180,
             "column": 10
           },
           {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentDataTable.jsx",
-            "line": 156,
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentSearch.jsx",
+            "line": 161,
             "column": 8
           }
         ],
         "Stepper": [
           {
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentStepper.jsx",
-            "line": 49,
+            "line": 50,
             "column": 4
           },
           {
@@ -3674,7 +3674,7 @@
         "ModalDialog": [
           {
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentStepper.jsx",
-            "line": 50,
+            "line": 51,
             "column": 6
           },
           {
@@ -3741,7 +3741,7 @@
         "ModalDialog.Header": [
           {
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentStepper.jsx",
-            "line": 59,
+            "line": 60,
             "column": 8
           },
           {
@@ -3803,7 +3803,7 @@
         "ModalDialog.Title": [
           {
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentStepper.jsx",
-            "line": 60,
+            "line": 61,
             "column": 10
           },
           {
@@ -3865,7 +3865,7 @@
         "ModalDialog.Body": [
           {
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentStepper.jsx",
-            "line": 64,
+            "line": 65,
             "column": 8
           },
           {
@@ -3932,12 +3932,12 @@
         "Stepper.Step": [
           {
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentStepper.jsx",
-            "line": 65,
+            "line": 66,
             "column": 10
           },
           {
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentStepper.jsx",
-            "line": 73,
+            "line": 74,
             "column": 10
           },
           {
@@ -3979,7 +3979,7 @@
         "ModalDialog.Footer": [
           {
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentStepper.jsx",
-            "line": 80,
+            "line": 81,
             "column": 8
           },
           {
@@ -4046,12 +4046,12 @@
         "Stepper.ActionRow": [
           {
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentStepper.jsx",
-            "line": 81,
+            "line": 82,
             "column": 10
           },
           {
             "filePath": "src/components/BulkEnrollmentPage/stepper/BulkEnrollmentStepper.jsx",
-            "line": 90,
+            "line": 91,
             "column": 10
           },
           {
@@ -4115,7 +4115,7 @@
           },
           {
             "filePath": "src/components/BulkEnrollmentPage/stepper/ReviewList.jsx",
-            "line": 39,
+            "line": 44,
             "column": 42
           },
           {
@@ -4393,8 +4393,8 @@
           },
           {
             "filePath": "src/components/BulkEnrollmentPage/stepper/ReviewList.jsx",
-            "line": 53,
-            "column": 10
+            "line": 64,
+            "column": 14
           },
           {
             "filePath": "src/components/CodeManagement/ManageCodesTab.jsx",
@@ -4997,7 +4997,7 @@
         "Row": [
           {
             "filePath": "src/components/BulkEnrollmentPage/stepper/ReviewStep.jsx",
-            "line": 37,
+            "line": 29,
             "column": 6
           },
           {
@@ -5069,19 +5069,14 @@
         "DataTableContext.Provider": [
           {
             "filePath": "src/components/BulkEnrollmentPage/table/BaseSelectionStatus.test.jsx",
-            "line": 22,
+            "line": 44,
             "column": 2
           }
         ],
         "CheckboxControl": [
           {
             "filePath": "src/components/BulkEnrollmentPage/table/BulkEnrollSelect.jsx",
-            "line": 27,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/BulkEnrollmentPage/table/BulkEnrollSelect.jsx",
-            "line": 61,
+            "line": 18,
             "column": 6
           },
           {
@@ -5948,17 +5943,34 @@
             "column": 21
           }
         ],
+        "AddCircle": [
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentHeader.jsx",
+            "line": 13,
+            "column": 19
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
+            "line": 15,
+            "column": 21
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/SSOConfigConfiguredCard.jsx",
+            "line": 110,
+            "column": 25
+          }
+        ],
         "CardView": [
           {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentDataTable.jsx",
-            "line": 142,
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentSearch.jsx",
+            "line": 147,
             "column": 8
           }
         ],
         "DataTable.EmptyTable": [
           {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentDataTable.jsx",
-            "line": 154,
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentSearch.jsx",
+            "line": 159,
             "column": 6
           },
           {
@@ -5990,23 +6002,6 @@
             "filePath": "src/components/SubsidyRequestManagementTable/SubsidyRequestManagementTable.jsx",
             "line": 93,
             "column": 8
-          }
-        ],
-        "AddCircle": [
-          {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentHeader.jsx",
-            "line": 13,
-            "column": 19
-          },
-          {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
-            "line": 15,
-            "column": 21
-          },
-          {
-            "filePath": "src/components/settings/SettingsSSOTab/SSOConfigConfiguredCard.jsx",
-            "line": 110,
-            "column": 25
           }
         ],
         "Pagination.Reduced": [
@@ -11329,7 +11324,7 @@
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 353,
+            "line": 450,
             "column": 12
           }
         ],
@@ -11433,51 +11428,51 @@
         "Alert": [
           {
             "filePath": "src/components/catalogNoResultsDeck/CatalogNoResultsDeck.jsx",
-            "line": 83,
+            "line": 86,
             "column": 6
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 311,
+            "line": 395,
             "column": 6
           }
         ],
         "Alert.Heading": [
           {
             "filePath": "src/components/catalogNoResultsDeck/CatalogNoResultsDeck.jsx",
-            "line": 84,
+            "line": 87,
             "column": 8
           }
         ],
         "Alert.Link": [
           {
             "filePath": "src/components/catalogNoResultsDeck/CatalogNoResultsDeck.jsx",
-            "line": 90,
+            "line": 93,
             "column": 8
           }
         ],
         "DataTable": [
           {
             "filePath": "src/components/catalogNoResultsDeck/CatalogNoResultsDeck.jsx",
-            "line": 101,
+            "line": 104,
             "column": 6
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 371,
-            "column": 8
+            "line": 469,
+            "column": 10
           }
         ],
         "CardView": [
           {
             "filePath": "src/components/catalogNoResultsDeck/CatalogNoResultsDeck.jsx",
-            "line": 114,
+            "line": 117,
             "column": 8
           },
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 383,
-            "column": 12
+            "line": 482,
+            "column": 14
           }
         ],
         "Badge": [
@@ -11497,23 +11492,28 @@
             "column": 8
           },
           {
+            "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
+            "line": 440,
+            "column": 12
+          },
+          {
             "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
             "line": 45,
             "column": 12
           },
           {
             "filePath": "src/components/courseCard/CourseCard.jsx",
-            "line": 48,
+            "line": 61,
             "column": 12
           },
           {
             "filePath": "src/components/courseCard/CourseCard.jsx",
-            "line": 55,
+            "line": 68,
             "column": 12
           },
           {
             "filePath": "src/components/courseCard/CourseCard.jsx",
-            "line": 65,
+            "line": 78,
             "column": 12
           },
           {
@@ -11561,29 +11561,29 @@
         "DataTable.TableControlBar": [
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 381,
-            "column": 10
+            "line": 480,
+            "column": 12
           }
         ],
         "DataTable.Table": [
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 394,
-            "column": 24
+            "line": 493,
+            "column": 26
           }
         ],
         "DataTable.TableFooter": [
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 397,
-            "column": 12
+            "line": 496,
+            "column": 14
           }
         ],
         "DataTable.RowStatus": [
           {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 398,
-            "column": 14
+            "line": 497,
+            "column": 16
           }
         ],
         "Form.Radio": [
@@ -11601,7 +11601,7 @@
           },
           {
             "filePath": "src/components/courseCard/CourseCard.jsx",
-            "line": 26,
+            "line": 39,
             "column": 4
           },
           {
@@ -11618,7 +11618,7 @@
           },
           {
             "filePath": "src/components/courseCard/CourseCard.jsx",
-            "line": 38,
+            "line": 51,
             "column": 6
           },
           {
@@ -11635,7 +11635,7 @@
           },
           {
             "filePath": "src/components/courseCard/CourseCard.jsx",
-            "line": 40,
+            "line": 53,
             "column": 6
           },
           {
@@ -11676,7 +11676,7 @@
         "Card.ImageCap": [
           {
             "filePath": "src/components/courseCard/CourseCard.jsx",
-            "line": 32,
+            "line": 45,
             "column": 6
           },
           {
@@ -12145,7 +12145,7 @@
         "Alert": [
           {
             "filePath": "src/App.jsx",
-            "line": 74,
+            "line": 87,
             "column": 14
           },
           {
@@ -12575,7 +12575,7 @@
         "Dropdown": [
           {
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
-            "line": 40,
+            "line": 45,
             "column": 6
           },
           {
@@ -12587,7 +12587,7 @@
         "Dropdown.Toggle": [
           {
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
-            "line": 41,
+            "line": 46,
             "column": 8
           },
           {
@@ -12599,21 +12599,21 @@
         "IconButton": [
           {
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
-            "line": 43,
+            "line": 48,
             "column": 14
           }
         ],
         "MoreVert": [
           {
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
-            "line": 44,
+            "line": 49,
             "column": 15
           }
         ],
         "Icon": [
           {
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
-            "line": 45,
+            "line": 50,
             "column": 18
           },
           {
@@ -12650,7 +12650,7 @@
         "Dropdown.Menu": [
           {
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
-            "line": 49,
+            "line": 54,
             "column": 8
           },
           {
@@ -12662,12 +12662,17 @@
         "Dropdown.Item": [
           {
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
-            "line": 51,
+            "line": 56,
             "column": 12
           },
           {
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
-            "line": 60,
+            "line": 65,
+            "column": 12
+          },
+          {
+            "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
+            "line": 74,
             "column": 12
           },
           {
@@ -24266,18 +24271,18 @@
             "column": 14
           },
           {
-            "filePath": "src/components/ContentfulModule/MoreInfoCTAModule.jsx",
-            "line": 26,
-            "column": 6
-          },
-          {
             "filePath": "src/components/ContentfulModule/PartnershipModule.jsx",
             "line": 29,
             "column": 9
           },
           {
+            "filePath": "src/components/ContentfulModule/StatisticIconModule.jsx",
+            "line": 27,
+            "column": 14
+          },
+          {
             "filePath": "src/components/ContentfulModule/UpcomingProgramModule.jsx",
-            "line": 36,
+            "line": 38,
             "column": 9
           },
           {
@@ -24709,14 +24714,14 @@
           },
           {
             "filePath": "src/components/Product/StickyNav.jsx",
-            "line": 74,
+            "line": 109,
             "column": 33
           }
         ],
         "Collapsible": [
           {
             "filePath": "src/components/BootCamp/BootCampCurriculumModule.jsx",
-            "line": 59,
+            "line": 61,
             "column": 16
           },
           {
@@ -24773,7 +24778,7 @@
         "Button": [
           {
             "filePath": "src/components/BootCamp/BootCampCurriculumModule.jsx",
-            "line": 73,
+            "line": 75,
             "column": 12
           },
           {
@@ -24798,8 +24803,13 @@
           },
           {
             "filePath": "src/components/ContentfulModule/FeaturedProductsModule.jsx",
-            "line": 45,
+            "line": 54,
             "column": 14
+          },
+          {
+            "filePath": "src/components/ContentfulModule/MoreInfoCTAModule.jsx",
+            "line": 38,
+            "column": 8
           },
           {
             "filePath": "src/components/ContentfulModule/PartnershipModule.jsx",
@@ -24808,7 +24818,7 @@
           },
           {
             "filePath": "src/components/ContentfulModule/UpcomingProgramModule.jsx",
-            "line": 66,
+            "line": 68,
             "column": 14
           },
           {
@@ -24873,7 +24883,7 @@
           },
           {
             "filePath": "src/components/ProductDetail/ProductDetailHero.jsx",
-            "line": 119,
+            "line": 122,
             "column": 14
           },
           {
@@ -24913,7 +24923,7 @@
           },
           {
             "filePath": "src/templates/courseDetailBootcamp.jsx",
-            "line": 208,
+            "line": 209,
             "column": 18
           },
           {
@@ -24928,7 +24938,7 @@
           },
           {
             "filePath": "src/templates/programDetailDegree.jsx",
-            "line": 236,
+            "line": 237,
             "column": 16
           }
         ],
@@ -24957,7 +24967,7 @@
           },
           {
             "filePath": "src/components/ContentfulModule/AboutTheProgramModule.jsx",
-            "line": 83,
+            "line": 84,
             "column": 14
           },
           {
@@ -24997,7 +25007,7 @@
           },
           {
             "filePath": "src/components/ProductDetail/ProductDetailHero.jsx",
-            "line": 42,
+            "line": 44,
             "column": 8
           }
         ],
@@ -25098,17 +25108,17 @@
           },
           {
             "filePath": "src/components/ContentfulModule/FeaturedProductsModule.jsx",
-            "line": 21,
+            "line": 30,
             "column": 4
           },
           {
             "filePath": "src/components/ContentfulModule/FeaturedProductsModule.jsx",
-            "line": 37,
+            "line": 45,
             "column": 10
           },
           {
             "filePath": "src/components/ContentfulModule/MoreInfoCTAModule.jsx",
-            "line": 31,
+            "line": 25,
             "column": 4
           },
           {
@@ -25118,7 +25128,7 @@
           },
           {
             "filePath": "src/components/ContentfulModule/UpcomingProgramModule.jsx",
-            "line": 52,
+            "line": 54,
             "column": 6
           },
           {
@@ -25516,11 +25526,6 @@
             "column": 58
           },
           {
-            "filePath": "src/components/ContentfulModule/FeaturedProductsModule.jsx",
-            "line": 49,
-            "column": 16
-          },
-          {
             "filePath": "src/components/Home/Audiences.jsx",
             "line": 56,
             "column": 18
@@ -25559,11 +25564,6 @@
             "filePath": "src/components/Home/StaticCallouts.jsx",
             "line": 274,
             "column": 48
-          },
-          {
-            "filePath": "src/components/ProductDetail/ProductDetailHero.jsx",
-            "line": 129,
-            "column": 30
           }
         ],
         "useToggle": [
@@ -25748,6 +25748,11 @@
             "filePath": "src/components/ContentfulModule/FootnoteModule.jsx",
             "line": 48,
             "column": 23
+          },
+          {
+            "filePath": "src/components/ContentfulModule/StatisticIconModule.jsx",
+            "line": 28,
+            "column": 21
           }
         ],
         "ArrowUpward": [
@@ -25769,18 +25774,6 @@
             "column": 20
           }
         ],
-        "CallMade": [
-          {
-            "filePath": "src/components/ContentfulModule/MoreInfoCTAModule.jsx",
-            "line": 26,
-            "column": 17
-          },
-          {
-            "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 171,
-            "column": 23
-          }
-        ],
         "ArrowOutward": [
           {
             "filePath": "src/components/ContentfulModule/PartnershipModule.jsx",
@@ -25789,8 +25782,15 @@
           },
           {
             "filePath": "src/components/ContentfulModule/UpcomingProgramModule.jsx",
-            "line": 36,
+            "line": 38,
             "column": 20
+          }
+        ],
+        "CallMade": [
+          {
+            "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
+            "line": 171,
+            "column": 23
           }
         ],
         "Breadcrumb": [
