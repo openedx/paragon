@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // @ts-ignore
-import { Input, Container, DataTable } from '~paragon-react'; // eslint-disable-line
+import { Form, Container, DataTable } from '~paragon-react'; // eslint-disable-line
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 import MeasuredItem from '../../components/MeasuredItem';
-
-import './spacing.scss';
 
 const directions = [
   { key: '', name: 'all' },
@@ -124,37 +122,31 @@ export default function SpacingPage() {
         <div className="border p-4">
           <div className="d-flex flex-column align-items-center">
             <h4>Direction</h4>
-            <div className="mb-2 pgn-doc__spacing-directions">
+            <div className="d-flex flex-wrap mt-2">
               {directions.map(({ key, name }) => (
-                <label
-                  className="form-check d-inline-block mr-4"
-                  htmlFor={`set-direction-${key}`}
+                <Form.Radio
+                  key={key}
+                  className="mx-2 mb-3"
+                  name="direction"
+                  value={key}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setDirection(e.target.value)}
                 >
-                  <Input
-                    id={`set-direction-${key}`}
-                    key={key}
-                    className="mt-2"
-                    type="radio"
-                    name="direction"
-                    value={key}
-                    checked={key === direction}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setDirection(e.target.value)}
-                  />
                   {name}
-                </label>
+                </Form.Radio>
               ))}
             </div>
-            <label className="d-block" htmlFor="set-size">
-              <span className="d-block text-center">Spacing Level: {size}</span>
+            <Form.Group>
+              <Form.Label className="d-block">
+                <span className="d-block text-center">Spacing Level: {size}</span>
+              </Form.Label>
               <div
                 className="d-flex align-items-center"
                 style={{ maxWidth: '20rem' }}
               >
                 -6
-                <Input
-                  type="range"
-                  id="set-size"
+                <Form.Control
                   className="mx-2"
+                  type="range"
                   min={-6}
                   step={0.5}
                   max={6}
@@ -163,7 +155,7 @@ export default function SpacingPage() {
                 />
                 6
               </div>
-            </label>
+            </Form.Group>
           </div>
           <div className="d-flex justify-content-center">
             <SpaceBlock />

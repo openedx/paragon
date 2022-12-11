@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // @ts-ignore
-import { Input } from '~paragon-react'; // eslint-disable-line
+import { Form } from '~paragon-react'; // eslint-disable-line
 import CodeBlock from './CodeBlock';
 
 export interface IColumn {
@@ -27,43 +27,30 @@ function Column({
         className="text-align-center p-1"
         style={{ background: '#eee', minHeight: '2rem' }}
       >
-        <div className="form-inline m-2">
-          <label className="font-weight-normal mr-2" htmlFor={`column-${index}-width`}>
-            Width
-          </label>
-          <Input
+        <Form.Group className="form-inline m-2">
+          <Form.Label>Width</Form.Label>
+          <Form.Control
+            className="mx-2"
             type="number"
-            id={`column-${index}-width`}
-            className="form-control-sm"
             value={width}
-            placeholder="Width (1 - 12)"
-            style={{ width: '4rem' }}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeWidth(index, e.target.value)}
             min={0}
             step={1}
             max={12}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeWidth(index, e.target.value)}
           />
-        </div>
-        <div className="form-inline m-2">
-          <label
-            className="font-weight-normal mr-2"
-            htmlFor={`column-${index}-offset`}
-          >
-            Offset
-          </label>
-          <Input
+        </Form.Group>
+        <Form.Group className="form-inline m-2">
+          <Form.Label>Offset</Form.Label>
+          <Form.Control
+            className="mx-2"
             type="number"
-            id={`column-${index}-offset`}
-            className="form-control-sm mr-2"
             value={offset}
-            placeholder="Offset (1 - 11)"
-            style={{ width: '4rem' }}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeOffset(index, e.target.value)}
             min={0}
             step={1}
             max={11}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeOffset(index, e.target.value)}
           />
-        </div>
+        </Form.Group>
       </div>
     </div>
   );
@@ -141,19 +128,22 @@ ${columnsString.join('')}
         Drag the slider to add or remove columns. Edit the width and offset
         values for each column and see the output below.
       </p>
-      <div className="form-inline mb-4">
-        <label className="mr-2" htmlFor="num-cols-range">
-          Number of Columns {numColumns}
-        </label>
-        <Input
-          id="num-cols-range"
-          type="range"
-          value={numColumns}
-          min={1}
-          step={1}
-          max={12}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setColumns(parseInt(e.target.value, 10))}
-        />
+      <div className="form-inline">
+        <Form.Group className="form-inline">
+          <Form.Label>
+            Number of Columns {numColumns}
+          </Form.Label>
+          <Form.Control
+            className="mx-2"
+            type="range"
+            value={numColumns}
+            size="sm"
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setColumns(parseInt(e.target.value, 10))}
+            min={1}
+            step={1}
+            max={12}
+          />
+        </Form.Group>
       </div>
       <div className="row">{columns}</div>
 
