@@ -35,6 +35,9 @@
           "margin": {
             "x": { "value": ".75rem", "source": "$form-check-inline-margin-x" }
           }
+        },
+        "position": {
+          "axis": { "value": ".375rem", "source": "$form-check-position-axis" }
         }
       },
       "group": {

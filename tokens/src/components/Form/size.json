@@ -32,8 +32,8 @@
           "border": { "value": "calc({size.form.input.width.border.value} * 2)", "source": "$input-height-border" }
         },
         "width": {
-          "hover": { "value": "1px", "source": "$input-hover-width" },
-          "focus": { "value": "1px", "source": "$input-focus-width" },
+          "hover": { "value": "0.063rem", "source": "$input-hover-width" },
+          "focus": { "value": "0.063rem", "source": "$input-focus-width" },
           "border": { "value": "{input.btn.border.width.value}", "source": "$input-border-width" }
         },
         "border": {
@@ -49,7 +49,7 @@
           "base": { "value": "1.25rem", "source": "$custom-control-indicator-size" },
           "bg": { "value": "100%", "source": "$custom-control-indicator-bg-size" },
           "border": {
-            "width": { "value": "2px", "source": "$custom-control-indicator-border-width" }
+            "width": { "value": "0.125rem", "source": "$custom-control-indicator-border-width" }
           }
         },
         "switch": {
@@ -116,7 +116,7 @@
           }
         },
         "icon": {
-          "width": { "value": "32px", "source": "$form-control-icon-width" }
+          "width": { "value": "2rem", "source": "$form-control-icon-width" }
         },
         "border": {
           "checkbox": {
@@ -137,7 +137,7 @@
         }
       },
       "grid": {
-        "gutter-width": { "value": "10px", "source": "$form-grid-gutter-width" }
+        "gutter-width": { "value": "0.625rem", "source": "$form-grid-gutter-width" }
       },
       "autosuggest": {
         "icon": {
