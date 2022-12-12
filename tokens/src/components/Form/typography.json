@@ -21,7 +21,7 @@
         "label": {
           "floating": {
             "text": { 
-              "value": "{form.input.bg.base.value}",
+              "value": "{color.form.input.bg.base.value}",
               "source": "$form-control-floating-label-text-bg",
               "modify": [{
                 "type": "alpha",
@@ -32,20 +32,20 @@
         },
         "select": {
           "font": {
-            "family": { "value": "{form.input.font.family.value}", "source": "$custom-select-font-family" },
+            "family": { "value": "{typography.form.input.font.family.value}", "source": "$custom-select-font-family" },
             "size": {
-              "base": { "value": "{form.input.font.size.base.value}", "source": "$custom-select-font-size" },
-              "sm": { "value": "{form.input.font.size.sm.value}", "source": "$custom-select-font-size-sm" },
-              "lg": { "value": "{form.input.font.size.lg.value}", "source": "$custom-select-font-size-lg" }
+              "base": { "value": "{typography.form.input.font.size.base.value}", "source": "$custom-select-font-size" },
+              "sm": { "value": "{typography.form.input.font.size.sm.value}", "source": "$custom-select-font-size-sm" },
+              "lg": { "value": "{typography.form.input.font.size.lg.value}", "source": "$custom-select-font-size-lg" }
             }
           },
-          "line-height": { "value": "{form.input.line.height.base.value}", "source": "$custom-select-line-height" }
+          "line-height": { "value": "{typography.form.input.line-height.base.value}", "source": "$custom-select-line-height" }
         },
         "file": {
-          "line-height": { "value": "{form.input.line.height.base.value}", "source": "$custom-file-line-height" },
+          "line-height": { "value": "{typography.form.input.line-height.base.value}", "source": "$custom-file-line-height" },
           "font": {
-            "family": { "value": "{form.input.font.family.value}", "source": "$custom-file-font-family" },
-            "weight": { "value": "{form.input.font.weight.value}", "source": "$custom-file-font-weight" }
+            "family": { "value": "{typography.form.input.font.family.value}", "source": "$custom-file-font-family" },
+            "weight": { "value": "{typography.form.input.font.weight.value}", "source": "$custom-file-font-weight" }
           }
         }
       },

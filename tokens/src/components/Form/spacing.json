@@ -1,5 +1,5 @@
 {
-  "space": {
+  "spacing": {
     "form": {
       "input": {
         "padding": {
@@ -50,14 +50,14 @@
         "select": {
           "padding": {
             "y": {
-              "base": { "value": "{form.input.padding.y.base.value}", "source": "$custom-select-padding-y" },
-              "sm": { "value": "{form.input.padding.y.sm.value}", "source": "$custom-select-padding-y-sm" },
-              "lg": { "value": "{form.input.padding.y.lg.value}", "source": "$custom-select-padding-y-lg" }
+              "base": { "value": "{spacing.form.input.padding.y.base.value}", "source": "$custom-select-padding-y" },
+              "sm": { "value": "{spacing.form.input.padding.y.sm.value}", "source": "$custom-select-padding-y-sm" },
+              "lg": { "value": "{spacing.form.input.padding.y.lg.value}", "source": "$custom-select-padding-y-lg" }
             },
             "x": {
-              "base": { "value": "{form.input.padding.x.base.value}", "source": "$custom-select-padding-x" },
-              "sm": { "value": "{form.input.padding.x.sm.value}", "source": "$custom-select-padding-x-sm" },
-              "lg": { "value": "{form.input.padding.x.lg.value}", "source": "$custom-select-padding-x-lg" }
+              "base": { "value": "{spacing.form.input.padding.x.base.value}", "source": "$custom-select-padding-x" },
+              "sm": { "value": "{spacing.form.input.padding.x.sm.value}", "source": "$custom-select-padding-x-sm" },
+              "lg": { "value": "{spacing.form.input.padding.x.lg.value}", "source": "$custom-select-padding-x-lg" }
             }
           },
           "indicator": {
@@ -67,17 +67,17 @@
             "icon": {
               "padding": {
                 "right": {
-                  "value": "calc((1em + 2 * {form.custom.select.padding.y.base.value}) * 3 / 4 + {form.custom.select.padding.x.base.value} + {form.custom.select.indicator.padding.value})",
+                  "value": "calc((1em + 2 * {spacing.form.control.select.padding.y.base.value}) * 3 / 4 + {spacing.form.control.select.padding.x.base.value} + {spacing.form.control.select.indicator.padding.value})",
                   "source": "$custom-select-feedback-icon-padding-right"
                 }
               },
               "position": {
-                "value": "center right calc({form.custom.select.padding.x.base.value} + {form.custom.select.indicator.padding.value})",
+                "value": "center right calc({spacing.form.control.select.padding.x.base.value} + {spacing.form.control.select.indicator.padding.value})",
                 "source": "$custom-select-feedback-icon-position"
               }
             },
             "margin": {
-              "top": { "value": "{form.text.margin.top.value}", "source": "$form-feedback-margin-top" }
+              "top": { "value": "{spacing.form.text.margin.top.value}", "source": "$form-feedback-margin-top" }
             },
             "tooltip": {
               "padding": {
@@ -89,8 +89,8 @@
         },
         "file": {
           "padding": {
-            "y": { "value": "{form.input.padding.y.base.value}", "source": "$custom-file-padding-y" },
-            "x": { "value": "{form.input.padding.x.base.value}", "source": "$custom-file-padding-x" }
+            "y": { "value": "{spacing.form.input.padding.y.base.value}", "source": "$custom-file-padding-y" },
+            "x": { "value": "{spacing.form.input.padding.x.base.value}", "source": "$custom-file-padding-x" }
           }
         }
       }
