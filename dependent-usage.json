@@ -1,5 +1,5 @@
 {
-  "lastModified": 1670767715802,
+  "lastModified": 1670940522814,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -728,7 +728,7 @@
       }
     },
     {
-      "version": "20.21.1",
+      "version": "20.21.2",
       "name": "@edx/frontend-app-account",
       "repository": {
         "type": "git",
@@ -7165,7 +7165,7 @@
       }
     },
     {
-      "version": "20.20.0",
+      "version": "20.21.2",
       "name": "@edx/frontend-app-authn",
       "repository": {
         "type": "git",
@@ -7206,7 +7206,7 @@
           },
           {
             "filePath": "src/common-components/InstitutionLogistration.jsx",
-            "line": 53,
+            "line": 59,
             "column": 18
           },
           {
@@ -7235,22 +7235,22 @@
             "column": 10
           },
           {
-            "filePath": "src/register/HonorCode.jsx",
-            "line": 26,
+            "filePath": "src/register/registrationFields/HonorCode.jsx",
+            "line": 32,
             "column": 14
           },
           {
-            "filePath": "src/register/HonorCode.jsx",
-            "line": 31,
+            "filePath": "src/register/registrationFields/HonorCode.jsx",
+            "line": 37,
             "column": 14
           },
           {
-            "filePath": "src/register/HonorCode.jsx",
-            "line": 58,
+            "filePath": "src/register/registrationFields/HonorCode.jsx",
+            "line": 64,
             "column": 14
           },
           {
-            "filePath": "src/register/TermsOfService.jsx",
+            "filePath": "src/register/registrationFields/TermsOfService.jsx",
             "line": 33,
             "column": 14
           },
@@ -7327,7 +7327,7 @@
         "Form": [
           {
             "filePath": "src/common-components/EnterpriseSSO.jsx",
-            "line": 34,
+            "line": 37,
             "column": 12
           },
           {
@@ -7337,12 +7337,12 @@
           },
           {
             "filePath": "src/login/LoginPage.jsx",
-            "line": 262,
+            "line": 259,
             "column": 10
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 769,
+            "line": 479,
             "column": 10
           },
           {
@@ -7359,22 +7359,22 @@
         "Button": [
           {
             "filePath": "src/common-components/EnterpriseSSO.jsx",
-            "line": 36,
+            "line": 39,
             "column": 14
           },
           {
             "filePath": "src/common-components/EnterpriseSSO.jsx",
-            "line": 62,
+            "line": 65,
             "column": 14
           },
           {
             "filePath": "src/common-components/InstitutionLogistration.jsx",
-            "line": 15,
+            "line": 18,
             "column": 4
           },
           {
-            "filePath": "src/register/UsernameField.jsx",
-            "line": 21,
+            "filePath": "src/register/registrationFields/UsernameField.jsx",
+            "line": 23,
             "column": 10
           },
           {
@@ -7401,17 +7401,17 @@
           },
           {
             "filePath": "src/field-renderer/FieldRenderer.jsx",
-            "line": 55,
+            "line": 56,
             "column": 8
           },
           {
             "filePath": "src/field-renderer/FieldRenderer.jsx",
-            "line": 77,
+            "line": 79,
             "column": 8
           },
           {
             "filePath": "src/field-renderer/FieldRenderer.jsx",
-            "line": 98,
+            "line": 101,
             "column": 8
           }
         ],
@@ -7433,19 +7433,19 @@
           },
           {
             "filePath": "src/field-renderer/FieldRenderer.jsx",
-            "line": 56,
+            "line": 57,
             "column": 10
           },
           {
             "filePath": "src/field-renderer/FieldRenderer.jsx",
-            "line": 78,
+            "line": 80,
             "column": 10
           }
         ],
         "TransitionReplace": [
           {
             "filePath": "src/common-components/FormGroup.jsx",
-            "line": 46,
+            "line": 45,
             "column": 6
           },
           {
@@ -7457,23 +7457,23 @@
         "Icon": [
           {
             "filePath": "src/common-components/InstitutionLogistration.jsx",
-            "line": 21,
+            "line": 24,
             "column": 6
           },
           {
             "filePath": "src/common-components/Logistration.jsx",
-            "line": 54,
+            "line": 65,
             "column": 6
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
             "line": 33,
-            "column": 112
+            "column": 102
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
             "line": 37,
-            "column": 109
+            "column": 99
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
@@ -7507,7 +7507,7 @@
           },
           {
             "filePath": "src/field-renderer/FieldRenderer.jsx",
-            "line": 34,
+            "line": 35,
             "column": 29
           },
           {
@@ -7521,28 +7521,28 @@
             "column": 12
           },
           {
-            "filePath": "src/register/CountryDropdown.jsx",
-            "line": 158,
-            "column": 16
+            "filePath": "src/register/registrationFields/CountryField.jsx",
+            "line": 101,
+            "column": 14
           },
           {
-            "filePath": "src/register/CountryDropdown.jsx",
-            "line": 175,
-            "column": 16
+            "filePath": "src/register/registrationFields/CountryField.jsx",
+            "line": 116,
+            "column": 14
           },
           {
-            "filePath": "src/register/RegistrationPage.jsx",
-            "line": 582,
+            "filePath": "src/register/registrationFields/EmailField.jsx",
+            "line": 31,
             "column": 26
           },
           {
-            "filePath": "src/register/UsernameField.jsx",
-            "line": 39,
+            "filePath": "src/register/registrationFields/UsernameField.jsx",
+            "line": 41,
             "column": 49
           },
           {
-            "filePath": "src/register/UsernameField.jsx",
-            "line": 43,
+            "filePath": "src/register/registrationFields/UsernameField.jsx",
+            "line": 45,
             "column": 49
           },
           {
@@ -7554,7 +7554,7 @@
         "Institution": [
           {
             "filePath": "src/common-components/InstitutionLogistration.jsx",
-            "line": 21,
+            "line": 24,
             "column": 17
           },
           {
@@ -7566,7 +7566,7 @@
         "ChevronLeft": [
           {
             "filePath": "src/common-components/Logistration.jsx",
-            "line": 54,
+            "line": 65,
             "column": 17
           },
           {
@@ -7583,13 +7583,13 @@
         "Tabs": [
           {
             "filePath": "src/common-components/Logistration.jsx",
-            "line": 68,
+            "line": 84,
             "column": 12
           },
           {
             "filePath": "src/common-components/Logistration.jsx",
-            "line": 75,
-            "column": 16
+            "line": 90,
+            "column": 14
           },
           {
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
@@ -7605,18 +7605,18 @@
         "Tab": [
           {
             "filePath": "src/common-components/Logistration.jsx",
-            "line": 69,
+            "line": 85,
             "column": 14
           },
           {
             "filePath": "src/common-components/Logistration.jsx",
-            "line": 76,
-            "column": 18
+            "line": 91,
+            "column": 16
           },
           {
             "filePath": "src/common-components/Logistration.jsx",
-            "line": 77,
-            "column": 18
+            "line": 92,
+            "column": 16
           },
           {
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
@@ -7653,23 +7653,23 @@
             "column": 4
           },
           {
-            "filePath": "src/register/CountryDropdown.jsx",
-            "line": 152,
-            "column": 6
+            "filePath": "src/register/registrationFields/CountryField.jsx",
+            "line": 95,
+            "column": 4
           },
           {
-            "filePath": "src/register/CountryDropdown.jsx",
-            "line": 169,
-            "column": 6
+            "filePath": "src/register/registrationFields/CountryField.jsx",
+            "line": 110,
+            "column": 4
           },
           {
-            "filePath": "src/register/UsernameField.jsx",
-            "line": 39,
+            "filePath": "src/register/registrationFields/UsernameField.jsx",
+            "line": 41,
             "column": 17
           },
           {
-            "filePath": "src/register/UsernameField.jsx",
-            "line": 43,
+            "filePath": "src/register/registrationFields/UsernameField.jsx",
+            "line": 45,
             "column": 17
           }
         ],
@@ -7677,14 +7677,14 @@
           {
             "filePath": "src/common-components/PasswordField.jsx",
             "line": 33,
-            "column": 89
+            "column": 79
           }
         ],
         "Visibility": [
           {
             "filePath": "src/common-components/PasswordField.jsx",
             "line": 37,
-            "column": 89
+            "column": 79
           }
         ],
         "Tooltip": [
@@ -7738,8 +7738,8 @@
         "Alert": [
           {
             "filePath": "src/common-components/ThirdPartyAuthAlert.jsx",
-            "line": 23,
-            "column": 4
+            "line": 28,
+            "column": 6
           },
           {
             "filePath": "src/forgot-password/ForgotPasswordAlert.jsx",
@@ -7758,12 +7758,12 @@
           },
           {
             "filePath": "src/register/RegistrationFailure.jsx",
-            "line": 38,
+            "line": 42,
             "column": 4
           },
           {
-            "filePath": "src/register/RegistrationPage.jsx",
-            "line": 573,
+            "filePath": "src/register/registrationFields/EmailField.jsx",
+            "line": 22,
             "column": 8
           },
           {
@@ -7785,8 +7785,8 @@
         "Alert.Heading": [
           {
             "filePath": "src/common-components/ThirdPartyAuthAlert.jsx",
-            "line": 25,
-            "column": 8
+            "line": 30,
+            "column": 10
           },
           {
             "filePath": "src/forgot-password/ForgotPasswordAlert.jsx",
@@ -7805,7 +7805,7 @@
           },
           {
             "filePath": "src/register/RegistrationFailure.jsx",
-            "line": 39,
+            "line": 43,
             "column": 6
           },
           {
@@ -7827,33 +7827,28 @@
         "ExpandMore": [
           {
             "filePath": "src/field-renderer/FieldRenderer.jsx",
-            "line": 34,
+            "line": 35,
             "column": 40
           },
           {
-            "filePath": "src/register/CountryDropdown.jsx",
-            "line": 157,
-            "column": 13
+            "filePath": "src/register/registrationFields/CountryField.jsx",
+            "line": 102,
+            "column": 11
           }
         ],
         "Form.Checkbox": [
           {
             "filePath": "src/field-renderer/FieldRenderer.jsx",
-            "line": 99,
+            "line": 102,
             "column": 10
           },
           {
-            "filePath": "src/register/HonorCode.jsx",
-            "line": 43,
+            "filePath": "src/register/registrationFields/HonorCode.jsx",
+            "line": 49,
             "column": 6
           },
           {
-            "filePath": "src/register/RegistrationPage.jsx",
-            "line": 841,
-            "column": 14
-          },
-          {
-            "filePath": "src/register/TermsOfService.jsx",
+            "filePath": "src/register/registrationFields/TermsOfService.jsx",
             "line": 17,
             "column": 6
           }
@@ -7870,14 +7865,14 @@
             "column": 8
           },
           {
-            "filePath": "src/register/RegistrationPage.jsx",
-            "line": 576,
+            "filePath": "src/register/registrationFields/EmailField.jsx",
+            "line": 25,
             "column": 12
           },
           {
-            "filePath": "src/register/RegistrationPage.jsx",
-            "line": 591,
-            "column": 10
+            "filePath": "src/register/registrationFields/EmailField.jsx",
+            "line": 39,
+            "column": 8
           }
         ],
         "StatefulButton": [
@@ -7888,12 +7883,12 @@
           },
           {
             "filePath": "src/login/LoginPage.jsx",
-            "line": 284,
+            "line": 281,
             "column": 12
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 857,
+            "line": 538,
             "column": 12
           },
           {
@@ -7999,13 +7994,13 @@
           },
           {
             "filePath": "src/register/RegistrationFailure.jsx",
-            "line": 38,
+            "line": 42,
             "column": 74
           },
           {
-            "filePath": "src/register/RegistrationPage.jsx",
-            "line": 573,
-            "column": 68
+            "filePath": "src/register/registrationFields/EmailField.jsx",
+            "line": 22,
+            "column": 73
           },
           {
             "filePath": "src/reset-password/ResetPasswordFailure.jsx",
@@ -8020,25 +8015,25 @@
         ],
         "ExpandLess": [
           {
-            "filePath": "src/register/CountryDropdown.jsx",
-            "line": 174,
-            "column": 13
+            "filePath": "src/register/registrationFields/CountryField.jsx",
+            "line": 117,
+            "column": 11
           }
         ],
         "Close": [
           {
-            "filePath": "src/register/RegistrationPage.jsx",
-            "line": 582,
+            "filePath": "src/register/registrationFields/EmailField.jsx",
+            "line": 31,
             "column": 37
           },
           {
-            "filePath": "src/register/UsernameField.jsx",
-            "line": 39,
+            "filePath": "src/register/registrationFields/UsernameField.jsx",
+            "line": 41,
             "column": 34
           },
           {
-            "filePath": "src/register/UsernameField.jsx",
-            "line": 43,
+            "filePath": "src/register/registrationFields/UsernameField.jsx",
+            "line": 45,
             "column": 34
           }
         ],
@@ -12145,7 +12140,7 @@
         "Alert": [
           {
             "filePath": "src/App.jsx",
-            "line": 87,
+            "line": 74,
             "column": 14
           },
           {
@@ -12575,7 +12570,7 @@
         "Dropdown": [
           {
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
-            "line": 45,
+            "line": 40,
             "column": 6
           },
           {
@@ -12587,7 +12582,7 @@
         "Dropdown.Toggle": [
           {
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
-            "line": 46,
+            "line": 41,
             "column": 8
           },
           {
@@ -12599,21 +12594,21 @@
         "IconButton": [
           {
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
-            "line": 48,
+            "line": 43,
             "column": 14
           }
         ],
         "MoreVert": [
           {
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
-            "line": 49,
+            "line": 44,
             "column": 15
           }
         ],
         "Icon": [
           {
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
-            "line": 50,
+            "line": 45,
             "column": 18
           },
           {
@@ -12650,7 +12645,7 @@
         "Dropdown.Menu": [
           {
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
-            "line": 54,
+            "line": 49,
             "column": 8
           },
           {
@@ -12662,17 +12657,12 @@
         "Dropdown.Item": [
           {
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
-            "line": 56,
+            "line": 51,
             "column": 12
           },
           {
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
-            "line": 65,
-            "column": 12
-          },
-          {
-            "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
-            "line": 74,
+            "line": 60,
             "column": 12
           },
           {
@@ -22358,7 +22348,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 92,
+            "line": 107,
             "column": 8
           }
         ],
@@ -22410,7 +22400,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 113,
+            "line": 128,
             "column": 10
           }
         ],
@@ -22472,7 +22462,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 110,
+            "line": 112,
             "column": 10
           },
           {
@@ -22492,7 +22482,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 116,
+            "line": 131,
             "column": 6
           }
         ],
@@ -22601,7 +22591,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 58,
+            "line": 61,
             "column": 6
           },
           {
@@ -22663,12 +22653,17 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 60,
+            "line": 63,
             "column": 10
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 75,
+            "line": 72,
+            "column": 10
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 90,
             "column": 12
           }
         ],
@@ -22704,12 +22699,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 92,
+            "line": 94,
             "column": 12
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 81,
+            "line": 96,
             "column": 12
           }
         ],
@@ -22833,7 +22828,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 95,
+            "line": 97,
             "column": 22
           },
           {
@@ -22853,12 +22848,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 86,
+            "line": 101,
             "column": 22
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 111,
+            "line": 126,
             "column": 12
           }
         ],
@@ -23065,7 +23060,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 93,
+            "line": 108,
             "column": 10
           }
         ],
@@ -23089,7 +23084,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 83,
+            "line": 85,
             "column": 10
           }
         ],
@@ -23101,7 +23096,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 77,
+            "line": 79,
             "column": 8
           },
           {
@@ -23154,7 +23149,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 119,
+            "line": 134,
             "column": 20
           }
         ],
@@ -23191,12 +23186,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 82,
+            "line": 84,
             "column": 8
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 102,
+            "line": 104,
             "column": 8
           },
           {
@@ -23344,7 +23339,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 111,
+            "line": 126,
             "column": 23
           },
           {
@@ -23392,7 +23387,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 74,
+            "line": 89,
             "column": 10
           }
         ],
@@ -23428,7 +23423,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 113,
+            "line": 115,
             "column": 24
           }
         ],
@@ -23531,7 +23526,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 96,
+            "line": 98,
             "column": 19
           },
           {
@@ -23541,7 +23536,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 85,
+            "line": 100,
             "column": 19
           }
         ],
@@ -23553,7 +23548,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 102,
+            "line": 117,
             "column": 10
           }
         ],
@@ -23565,7 +23560,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 106,
+            "line": 121,
             "column": 14
           }
         ],
@@ -23608,6 +23603,18 @@
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
             "line": 74,
+            "column": 10
+          }
+        ],
+        "FormControlFeedback": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 69,
+            "column": 10
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 78,
             "column": 10
           }
         ],
@@ -24127,7 +24134,7 @@
       }
     },
     {
-      "version": "20.21.0",
+      "version": "20.21.2",
       "name": "@edx/frontend-platform",
       "repository": {
         "type": "git",
@@ -24166,7 +24173,7 @@
       }
     },
     {
-      "version": "19.25.3",
+      "version": "20.20.0",
       "name": "@edx/frontend-template-application",
       "repository": {
         "type": "git",
@@ -24883,7 +24890,7 @@
           },
           {
             "filePath": "src/components/ProductDetail/ProductDetailHero.jsx",
-            "line": 122,
+            "line": 125,
             "column": 14
           },
           {
@@ -25288,7 +25295,7 @@
           },
           {
             "filePath": "src/components/Learn/DynamicProductList/DynamicProductList.jsx",
-            "line": 211,
+            "line": 219,
             "column": 6
           },
           {
