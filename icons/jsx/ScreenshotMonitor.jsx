@@ -7,6 +7,7 @@ function SvgScreenshotMonitor(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M22 3H2v16h6v2h8v-2h6V3zm-2 14H4V5h16v12z" />

@@ -7,6 +7,7 @@ function SvgAddchart(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M19 19H5V5h9V3H3v18h18V10h-2z" />

@@ -7,6 +7,7 @@ function SvgJoinFull(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <ellipse cx={12} cy={12} rx={3} ry={5.74} />

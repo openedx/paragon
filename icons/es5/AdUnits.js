@@ -7,10 +7,13 @@ function SvgAdUnits(props) {
     xmlns: "http://www.w3.org/2000/svg",
     width: 24,
     height: 24,
-    viewBox: "0 0 24 24"
+    viewBox: "0 0 24 24",
+    fill: "none"
   }, props), /*#__PURE__*/React.createElement("path", {
+    fill: "currentColor",
     d: "M19 1H5v22h14V1zm-2 18H7V5h10v14z"
   }), /*#__PURE__*/React.createElement("path", {
+    fill: "currentColor",
     d: "M8 6h8v2H8z"
   }));
 }

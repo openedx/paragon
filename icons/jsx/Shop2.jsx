@@ -7,6 +7,7 @@ function SvgShop2(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M3 9H1v13h18v-2H3z" />

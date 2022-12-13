@@ -7,6 +7,7 @@ function SvgForest(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M16 12L9 2 2 12h1.86L0 18h7v4h4v-4h7l-3.86-6z" />

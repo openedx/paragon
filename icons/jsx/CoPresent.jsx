@@ -7,6 +7,7 @@ function SvgCoPresent(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M23 3H1v10h2V5h18v16h2z" />

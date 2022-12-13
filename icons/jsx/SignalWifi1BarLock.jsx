@@ -7,6 +7,7 @@ function SvgSignalWifi1BarLock(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M23 16v-1.34c0-1.47-1.2-2.75-2.66-2.66A2.484 2.484 0 0018 14.5V16h-1v6h7v-6h-1zm-1 0h-3v-1.5c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5V16z" />

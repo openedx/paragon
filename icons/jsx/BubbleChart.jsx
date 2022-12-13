@@ -7,6 +7,7 @@ function SvgBubbleChart(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <circle cx={7.2} cy={14.4} r={3.2} />

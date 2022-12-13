@@ -7,6 +7,7 @@ function SvgElectricalServices(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M18 13h3v2h-3zm-6-1v2h-2v4h2v2h5v-8z" />

@@ -7,14 +7,17 @@ function SvgCategory(props) {
     xmlns: "http://www.w3.org/2000/svg",
     width: 24,
     height: 24,
-    viewBox: "0 0 24 24"
+    viewBox: "0 0 24 24",
+    fill: "none"
   }, props), /*#__PURE__*/React.createElement("path", {
+    fill: "currentColor",
     d: "M12 2l-5.5 9h11z"
   }), /*#__PURE__*/React.createElement("circle", {
     cx: 17.5,
     cy: 17.5,
     r: 4.5
   }), /*#__PURE__*/React.createElement("path", {
+    fill: "currentColor",
     d: "M3 13.5h8v8H3z"
   }));
 }

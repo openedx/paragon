@@ -7,6 +7,7 @@ function SvgSquare(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M3 3h18v18H3z" />

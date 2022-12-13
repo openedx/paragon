@@ -7,6 +7,7 @@ function SvgHdrAuto(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M12.04 8.04h-.09l-1.6 4.55h3.29z" />

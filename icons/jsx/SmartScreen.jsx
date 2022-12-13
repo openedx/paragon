@@ -7,6 +7,7 @@ function SvgSmartScreen(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M1 5v14h22V5H1zm17 12H6V7h12v10z" />

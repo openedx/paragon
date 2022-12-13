@@ -7,6 +7,7 @@ function SvgBattery4Bar(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M17 4v18H7V4h3V2h4v2h3zm-2 2H9v6h6V6z" />

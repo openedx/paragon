@@ -7,6 +7,7 @@ function SvgUnfoldLessDouble(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M16.58 1.41L15.16 0l-3.17 3.17L8.82 0 7.41 1.41 11.99 6z" />

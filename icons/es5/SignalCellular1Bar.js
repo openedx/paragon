@@ -7,11 +7,14 @@ function SvgSignalCellular1Bar(props) {
     xmlns: "http://www.w3.org/2000/svg",
     width: 24,
     height: 24,
-    viewBox: "0 0 24 24"
+    viewBox: "0 0 24 24",
+    fill: "none"
   }, props), /*#__PURE__*/React.createElement("path", {
+    fill: "currentColor",
     fillOpacity: 0.3,
     d: "M2 22h20V2L2 22z"
   }), /*#__PURE__*/React.createElement("path", {
+    fill: "currentColor",
     d: "M12 12L2 22h10V12z"
   }));
 }

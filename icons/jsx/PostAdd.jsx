@@ -7,6 +7,7 @@ function SvgPostAdd(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M17 19.22H5V7h7V5H3v16h16v-9h-2z" />

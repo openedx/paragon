@@ -7,6 +7,7 @@ function Svg9Mp(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M15 14h1.5v1.5H15z" />

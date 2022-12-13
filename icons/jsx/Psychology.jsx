@@ -7,6 +7,7 @@ function SvgPsychology(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M13 8.57a1.43 1.43 0 100 2.86 1.43 1.43 0 000-2.86z" />

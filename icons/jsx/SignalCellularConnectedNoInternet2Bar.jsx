@@ -7,6 +7,7 @@ function SvgSignalCellularConnectedNoInternet2Bar(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path fillOpacity={0.3} d="M22 8V2L2 22h16V8h4z" />

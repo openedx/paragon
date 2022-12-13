@@ -7,6 +7,7 @@ function SvgSportsKabaddi(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <circle cx={16.5} cy={2.38} r={2} />

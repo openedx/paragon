@@ -7,6 +7,7 @@ function SvgCategory(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M12 2l-5.5 9h11z" />

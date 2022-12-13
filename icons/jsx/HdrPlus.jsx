@@ -7,6 +7,7 @@ function SvgHdrPlus(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M8.5 14.5h2v1h-2zm6-7H16v3h-1.5z" />

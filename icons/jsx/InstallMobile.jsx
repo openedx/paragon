@@ -7,6 +7,7 @@ function SvgInstallMobile(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M17 18H7V6h7V1H5v22h14v-7h-2z" />

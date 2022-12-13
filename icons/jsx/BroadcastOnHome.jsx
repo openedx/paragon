@@ -7,6 +7,7 @@ function SvgBroadcastOnHome(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M22 9.76V4H4v2h16v2.59c.73.29 1.4.69 2 1.17zM9 9H2v11h7V9zm-2 9H4v-7h3v7zm10.75-1.03c.3-.23.5-.57.5-.97a1.25 1.25 0 00-2.5 0c0 .4.2.75.5.97V22h1.5v-5.03z" />

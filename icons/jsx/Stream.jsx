@@ -7,6 +7,7 @@ function SvgStream(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <circle cx={20} cy={12} r={2} />

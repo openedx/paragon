@@ -7,6 +7,7 @@ function SvgKeyboardDoubleArrowLeft(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M17.59 18L19 16.59 14.42 12 19 7.41 17.59 6l-6 6z" />

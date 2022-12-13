@@ -7,6 +7,7 @@ function SvgChair(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M7 13h10V7h3V3H4v4h3z" />

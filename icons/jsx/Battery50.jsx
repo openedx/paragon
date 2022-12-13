@@ -7,6 +7,7 @@ function SvgBattery50(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path fillOpacity={0.3} d="M17 4h-3V2h-4v2H7v9h10V4z" />

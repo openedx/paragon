@@ -7,6 +7,7 @@ function SvgDiscount(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M12.79 21L3 11.21v2.83l9.79 9.79 9.04-9.04-1.42-1.41z" />

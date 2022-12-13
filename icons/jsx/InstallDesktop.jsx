@@ -7,6 +7,7 @@ function SvgInstallDesktop(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M20 17H4V5h8V3H2v16h6v2h8v-2h6v-5h-2z" />

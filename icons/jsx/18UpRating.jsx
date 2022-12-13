@@ -7,6 +7,7 @@ function Svg18UpRating(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M13 12.5h1.5V14H13zm0-2.5h1.5v1.5H13z" />

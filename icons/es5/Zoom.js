@@ -11,7 +11,7 @@ function SvgZoom(props) {
     xmlns: "http://www.w3.org/2000/svg",
     xmlnsXlink: "http://www.w3.org/1999/xlink"
   }, props), /*#__PURE__*/React.createElement("path", {
-    fill: "url(#zoom_svg__pattern0)",
+    fill: "currentColor",
     d: "M.668.998h24v24.004h-24z"
   }), /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("pattern", {
     id: "zoom_svg__pattern0",

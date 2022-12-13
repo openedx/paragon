@@ -7,6 +7,7 @@ function SvgDeblur(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M12 3v18a9 9 0 000-18z" />

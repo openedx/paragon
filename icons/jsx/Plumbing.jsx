@@ -7,6 +7,7 @@ function SvgPlumbing(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M16.16 5.64l3.54 3.54a3 3 0 000-4.24L16.16 1.4l-4.24 4.24 2.12 2.12 2.12-2.12zM4.842 12.708l3.535-3.535 2.122 2.12-3.536 3.536z" />

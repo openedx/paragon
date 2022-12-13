@@ -7,6 +7,7 @@ function SvgBiotech(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M13 19v-2h5v-2h-8c-1.66 0-3-1.34-3-3 0-1.09.59-2.04 1.46-2.56C8.17 9.03 8 8.54 8 8c0-.21.04-.42.09-.62A5.01 5.01 0 005 12c0 2.76 2.24 5 5 5v2H5v2h14v-2h-6z" />

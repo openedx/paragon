@@ -7,6 +7,7 @@ function SvgBrowseGallery(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M9 3a9 9 0 10.001 18.001A9 9 0 009 3zm2.79 13.21L8 12.41V7h2v4.59l3.21 3.21-1.42 1.41z" />

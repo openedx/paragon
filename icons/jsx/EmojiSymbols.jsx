@@ -7,6 +7,7 @@ function SvgEmojiSymbols(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M3 2h8v2H3zm3 9h2V7h3V5H3v2h3zm6.404 9.182l7.778-7.778 1.414 1.414-7.778 7.778z" />

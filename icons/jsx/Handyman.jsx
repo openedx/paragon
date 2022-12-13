@@ -7,6 +7,7 @@ function SvgHandyman(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M16.37 12.87h-.99l-2.54 2.54v.99l6.01 6.01 3.54-3.54-6.02-6z" />

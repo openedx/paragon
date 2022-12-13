@@ -33,8 +33,15 @@ module.exports = {
     return exportEntries.join('\n')
   },
   svgoConfig: {
-    plugins: {
-      removeViewBox: false,
-    },
-  },
+    plugins: [
+      {
+        removeViewBox: false
+      },
+      {
+        addAttributesToSVGElement: {
+          attributes: ['fill="none"'],
+        },
+      }
+    ]
+  }
 };

@@ -7,6 +7,7 @@ function SvgPets(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <circle cx={4.5} cy={9.5} r={2.5} />

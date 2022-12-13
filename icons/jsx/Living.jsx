@@ -7,6 +7,7 @@ function SvgLiving(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M15.5 12v2.5h-7V12h-2v4.5h11V12z" />

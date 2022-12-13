@@ -7,6 +7,7 @@ function SvgSecurityUpdateWarning(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M11 15h2v2h-2zm0-8h2v6h-2z" />

@@ -7,6 +7,7 @@ function SvgAutofpsSelect(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M12.03 6.3h-.06l-1.02 2.89h2.1zM3 17h2v5H3z" />

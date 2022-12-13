@@ -7,6 +7,7 @@ function SvgMapsHomeWork(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M1 11v10h5v-6h4v6h5V11L8 6z" />

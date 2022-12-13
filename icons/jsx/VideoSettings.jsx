@@ -7,6 +7,7 @@ function SvgVideoSettings(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M3 6h18v5h2V4H1v16h11v-2H3z" />

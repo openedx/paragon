@@ -7,6 +7,7 @@ function SvgBatteryCharging20(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M11 20v-3H7v5h10v-5h-4.4L11 20z" />

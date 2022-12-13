@@ -7,6 +7,7 @@ function SvgFolderCopy(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M3 6H1v15h19v-2H3z" />

@@ -7,6 +7,7 @@ function SvgWifiCalling3(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M16.49 3c-2.21 0-4.21.9-5.66 2.34l1.06 1.06a6.47 6.47 0 019.18 0l1.06-1.06A7.932 7.932 0 0016.49 3z" />

@@ -7,6 +7,7 @@ function Svg19Mp(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M13.5 6.5H15V8h-1.5zM15 14h1.5v1.5H15z" />

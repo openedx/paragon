@@ -7,6 +7,7 @@ function SvgEmojiPeople(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <circle cx={12} cy={4} r={2} />

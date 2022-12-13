@@ -7,6 +7,7 @@ function SvgMoreTime(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M10 8v6l4.7 2.9.8-1.2-4-2.4V8z" />

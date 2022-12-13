@@ -7,6 +7,7 @@ function SvgOutbox(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M11 14h2v-3h3l-4-4-4 4h3z" />

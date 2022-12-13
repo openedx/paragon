@@ -7,6 +7,7 @@ function SvgOfflineShare(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <path d="M6 5H4v18h12v-2H6z" />

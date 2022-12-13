@@ -7,6 +7,7 @@ function SvgBlind(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
       <circle cx={11.5} cy={3.5} r={2} />
