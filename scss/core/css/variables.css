@@ -288,6 +288,7 @@
   --pgn-modal-inner-padding-base: 1.5rem;
   --pgn-modal-inner-padding-bottom: .7rem;
   --pgn-modal-footer-padding-y: 1rem;
+  --pgn-modal-content-color: null;
   --pgn-modal-content-border-width: 0rem;
   --pgn-modal-content-box-shadow-sm-up: 0 10px 20px rgba(0, 0, 0, .15), 0 8px 20px rgba(0, 0, 0, .15);
   --pgn-modal-backdrop-opacity: .5;
@@ -752,14 +753,12 @@
   --pgn-icon-button-color-black: var(--pgn-color-black);
   --pgn-image-thumbnail-border-width: var(--pgn-size-border-width);
   --pgn-image-thumbnail-border-color: var(--pgn-color-gray-200);
-  --pgn-image-thumbnail-border-radius: var(--pgn-border-radius-base);
-  --pgn-modal-footer-padding-base: var(--pgn-modal-footer-padding-y) 1.5rem;
   --pgn-image-thumbnail-border-radius: var(--pgn-size-border-radius-base);
-  --pgn-modal-footer-padding-base: var(--pgn-modal-footer-padding-x) var(--pgn-modal-footer-padding-y);
-  --pgn-modal-title-line-height: var(--pgn-line-height-base);
+  --pgn-modal-footer-padding-base: var(--pgn-modal-footer-padding-y) 1.5rem;
   --pgn-modal-content-border-color: #00000033;
   --pgn-modal-content-border-radius: var(--pgn-size-border-radius-lg);
   --pgn-modal-backdrop-bg: var(--pgn-color-black);
+  --pgn-modal-header-border-width: var(--pgn-modal-content-border-width);
   --pgn-modal-header-padding-base: var(--pgn-modal-header-padding-y) 1.5rem;
   --pgn-nav-link-color-base: var(--pgn-color-gray-700);
   --pgn-nav-link-color-disabled: var(--pgn-color-gray-300);
