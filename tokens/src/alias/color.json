@@ -30,6 +30,7 @@
     "input": {
       "focus": { "value": "{color.primary.500.value}" }
     },
+    "border": { "value": "{color.gray.200.value}", "source": "$border-color" },
     "theme": {
       "background": {
         "primary": { "value": "{color.primary.100.value}" },
@@ -44,7 +45,6 @@
         "gray": { "value": "{color.gray.100.value}" }
       },
       "border": {
-        "base": { "value": "{color.gray.200.value}", "source": "$border-color" },
         "primary": { "value": "{color.primary.200.value}" },
         "secondary": { "value": "{color.secondary.200.value}" },
         "brand": { "value": "{color.brand.200.value}" },

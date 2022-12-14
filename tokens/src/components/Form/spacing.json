@@ -88,6 +88,9 @@
                 "x": { "value": ".5rem", "source": "$form-feedback-tooltip-padding-x" }
               }
             }
+          },
+          "icon": {
+            "padding": { "value": ".5625rem", "source": "$select-icon-padding" }
           }
         },
         "file": {

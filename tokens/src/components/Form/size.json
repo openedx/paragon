@@ -72,7 +72,6 @@
             "lg": { "value": "{size.form.input.height.lg.value}", "source": "$custom-select-height-lg" },
             "sm": { "value": "{size.form.input.height.sm.value}", "source": "$custom-select-height-sm" }
           },
-          "weight": { "value": "{typography.form.input.font.weight.value}", "source": "$custom-select-font-weight" },
           "feedback": {
             "icon": { "value": "{size.form.input.height.inner.half.value} {size.form.input.height.inner.half.value}", "source": "$custom-select-feedback-icon-size" }
           },
@@ -100,6 +99,9 @@
             "border": {
               "base": { "value": "0", "source": "$custom-range-thumb-border" },
               "radius": { "value": "1rem", "source": "$custom-range-thumb-border-radius" }
+            },
+            "focus": {
+              "width": { "value": "{size.form.input.width.focus.value}", "source": "$custom-range-thumb-focus-box-shadow-width" }
             }
           }
         },
@@ -129,11 +131,6 @@
               "radius": { "value": "50%", "source": "$custom-radio-indicator-border-radius" }
             }
           }
-        }
-      },
-      "select": {
-        "icon": {
-          "padding": { "value": ".5625rem", "source": "$select-icon-padding" }
         }
       },
       "grid": {

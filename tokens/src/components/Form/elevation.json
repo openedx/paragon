@@ -23,10 +23,7 @@
           "track": { "value": "inset 0 .25rem .25rem rgba(0, 0, 0, .1)", "source": "$custom-range-track-box-shadow" },
           "thumb": {
             "base": { "value": "0 .1rem .25rem rgba(0, 0, 0, .1)", "source": "$custom-range-thumb-box-shadow" },
-            "focus": {
-              "base": { "value": "0 0 0 1px {body.bg.value}, {size.form.input.width.focus.value}", "source": "$custom-range-thumb-focus-box-shadow" },
-              "width": { "value": "{size.form.input.width.focus.value}", "source": "$custom-range-thumb-focus-box-shadow-width" }
-            }
+            "focus": { "value": "0 0 0 1px {body.bg.value}, {size.form.input.width.focus.value}", "source": "$custom-range-thumb-focus-box-shadow" }
           }
         },
         "file": {
@@ -37,26 +34,6 @@
           "border": {
             "base": { "value": "inset 0 1px 2px rgba(0, 0, 0, .075)", "source": "$custom-select-box-shadow" },
             "focus": { "value": "{input.btn.focus.box-shadow.value}", "source": "$custom-select-focus-box-shadow" }
-          }
-        }
-      },
-      "tooltip": {
-        "focus": {
-          "valid": {
-            "value": "{color.form.feedback.valid.value}",
-            "source": "$form-feedback-focus-box-shadow-valid-color",
-            "modify": [{
-              "type": "alpha",
-              "amount": 0.25
-            }]
-          },
-          "invalid": {
-            "value": "{color.form.feedback.invalid.value}",
-            "source": "$form-feedback-focus-box-shadow-invalid-color",
-            "modify": [{
-              "type": "alpha",
-              "amount": 0.25
-            }]
           }
         }
       }

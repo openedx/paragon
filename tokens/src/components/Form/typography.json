@@ -18,18 +18,6 @@
         }
       },
       "control": {
-        "label": {
-          "floating": {
-            "text": { 
-              "value": "{color.form.input.bg.base.value}",
-              "source": "$form-control-floating-label-text-bg",
-              "modify": [{
-                "type": "alpha",
-                "amount": 0.1
-              }]
-            }
-          }
-        },
         "select": {
           "font": {
             "family": { "value": "{typography.form.input.font.family.value}", "source": "$custom-select-font-family" },
@@ -37,7 +25,8 @@
               "base": { "value": "{typography.form.input.font.size.base.value}", "source": "$custom-select-font-size" },
               "sm": { "value": "{typography.form.input.font.size.sm.value}", "source": "$custom-select-font-size-sm" },
               "lg": { "value": "{typography.form.input.font.size.lg.value}", "source": "$custom-select-font-size-lg" }
-            }
+            },
+            "weight": { "value": "{typography.form.input.font.weight.value}", "source": "$custom-select-font-weight" }
           },
           "line-height": { "value": "{typography.form.input.line-height.base.value}", "source": "$custom-select-line-height" }
         },
@@ -57,8 +46,7 @@
           "font": {
             "size": { "value": "{font.size.sm.value}", "source": "$form-feedback-tooltip-font-size" }
           },
-          "line-height": { "value": "{line-height.base.value}", "source": "$form-feedback-tooltip-line-height" },
-          "opacity": { "value": ".9", "source": "$form-feedback-tooltip-opacity" }
+          "line-height": { "value": "{line-height.base.value}", "source": "$form-feedback-tooltip-line-height" }
         }
       }
     }

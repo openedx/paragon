@@ -139,7 +139,7 @@ $custom-select-height: var(--pgn-size-form-control-select-height-base) !default;
 
 // Extra padding to account for the presence of the background-image based indicator
 $custom-select-indicator-padding: var(--pgn-spacing-form-control-select-indicator-padding) !default;
-$custom-select-font-weight: var(--pgn-size-form-control-select-weight) !default;
+$custom-select-font-weight: var(--pgn-typography-form-control-select-font-weight) !default;
 $custom-select-line-height: var(--pgn-typography-form-control-select-line-height) !default;
 $custom-select-color: var(--pgn-color-form-control-select-base) !default;
 $custom-select-disabled-color: var(--pgn-color-form-control-select-disabled) !default;
@@ -190,8 +190,8 @@ $custom-range-thumb-bg: var(--pgn-color-form-control-range-thumb-bg-base) !defau
 $custom-range-thumb-border: var(--pgn-size-form-control-range-thumb-border-base) !default;
 $custom-range-thumb-border-radius: var(--pgn-size-form-control-range-thumb-border-radius) !default;
 $custom-range-thumb-box-shadow: var(--pgn-elevation-form-control-range-thumb-base) !default;
-$custom-range-thumb-focus-box-shadow: var(--pgn-elevation-form-control-range-thumb-focus-base) !default;
-$custom-range-thumb-focus-box-shadow-width: var(--pgn-elevation-form-control-range-thumb-focus-width) !default;
+$custom-range-thumb-focus-box-shadow: var(--pgn-elevation-form-control-range-thumb-focus) !default;
+$custom-range-thumb-focus-box-shadow-width: var(--pgn-size-form-control-range-thumb-focus-width) !default;
 $custom-range-thumb-active-bg: var(--pgn-color-form-control-range-thumb-bg-active) !default;
 $custom-range-thumb-disabled-bg: var(--pgn-color-form-control-range-thumb-bg-disabled) !default;
 
@@ -230,8 +230,8 @@ $form-feedback-tooltip-invalid-color: var(--pgn-color-form-feedback-tooltip-inva
 $form-feedback-tooltip-valid-bg: var(--pgn-color-form-feedback-tooltip-bg-valid) !default;
 $form-feedback-tooltip-invalid-bg: var(--pgn-color-form-feedback-tooltip-bg-invalid) !default;
 
-$form-feedback-focus-box-shadow-valid-color: var(--pgn-elevation-form-tooltip-focus-valid) !default;
-$form-feedback-focus-box-shadow-invalid-color: var(--pgn-elevation-form-tooltip-focus-invalid) !default;
+$form-feedback-focus-box-shadow-valid-color: var(--pgn-color-form-feetback-tooltip-box-shadow-focus-valid) !default;
+$form-feedback-focus-box-shadow-invalid-color: var(--pgn-color-form-feetback-tooltip-box-shadow-focus-invalid) !default;
 $form-feedback-checked-valid-color: var(--pgn-color-form-feedback-checked-valid) !default;
 $form-feedback-checked-invalid-color: var(--pgn-color-form-feedback-checked-invalid) !default;
 
@@ -268,15 +268,15 @@ $form-feedback-tooltip-padding-y: var(--pgn-spacing-form-control-select-feedback
 $form-feedback-tooltip-padding-x: var(--pgn-spacing-form-control-select-feedback-tooltip-padding-x) !default;
 $form-feedback-tooltip-font-size: var(--pgn-typography-form-feedback-tooltip-font-size) !default;
 $form-feedback-tooltip-line-height: var(--pgn-typography-form-feedback-tooltip-line-height) !default;
-$form-feedback-tooltip-opacity: var(--pgn-typography-form-feedback-tooltip-opacity) !default;
+$form-feedback-tooltip-opacity: var(--pgn-color-form-feedback-tooltip-opacity) !default;
 $form-feedback-tooltip-border-radius: var(--pgn-size-form-feedback-tooltip-border-radius) !default;
 
 $form-control-icon-width: var(--pgn-size-form-control-icon-width) !default;
-$select-icon-padding: var(--pgn-size-form-select-icon-padding) !default;
+$select-icon-padding: var(--pgn-spacing-form-control-select-icon-padding) !default;
 
 $form-autosuggest-icon-width: var(--pgn-size-form-autosuggest-icon-width) !default;
 $form-autosuggest-icon-height: var(--pgn-size-form-autosuggest-icon-height) !default;
 $form-autosuggest-spinner-width: var(--pgn-size-form-autosuggest-spinner-width) !default;
 $form-autosuggest-spinner-height: var(--pgn-size-form-autosuggest-spinner-height) !default;
 $form-autosuggest-border-width: var(--pgn-size-form-autosuggest-border-width) !default;
-$form-control-floating-label-text-bg: var(--pgn-typography-form-control-label-floating-text) !default;
+$form-control-floating-label-text-bg: var(--pgn-color-form-control-label-floating-text) !default;

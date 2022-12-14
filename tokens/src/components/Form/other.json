@@ -3,11 +3,7 @@
     "form": {
       "control": {
         "cursor": { "value": "null", "source": "$custom-control-cursor" },
-        "range": {
-          "track": {
-            "cursor": { "value": "pointer", "source": "$custom-range-track-cursor" }
-          }
-        },
+        "range-track-cursor": { "value": "pointer", "source": "$custom-range-track-cursor" },
         "checkbox": {
           "indicator": {
             "icon-checked": {

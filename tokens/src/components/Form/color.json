@@ -58,7 +58,17 @@
         },
         "label": {
           "base": { "value": "null", "source": "$custom-control-label-color" },
-          "disabled": { "value": "{color.disabled.value}", "source": "$custom-control-label-disabled-color" }
+          "disabled": { "value": "{color.disabled.value}", "source": "$custom-control-label-disabled-color" },
+          "floating": {
+            "text": { 
+              "value": "{color.form.input.bg.base.value}",
+              "source": "$form-control-floating-label-text-bg",
+              "modify": [{
+                "type": "alpha",
+                "amount": 0.1
+              }]
+            }
+          }
         },
         "checkbox": {
           "indicator": {
@@ -164,7 +174,28 @@
                 "amount": 0.9
               }]
             }
-          }
+          },
+          "box-shadow": {
+            "focus": {
+              "valid": {
+                "value": "{color.form.feedback.valid.value}",
+                "source": "$form-feedback-focus-box-shadow-valid-color",
+                "modify": [{
+                  "type": "alpha",
+                  "amount": 0.25
+                }]
+              },
+              "invalid": {
+                "value": "{color.form.feedback.invalid.value}",
+                "source": "$form-feedback-focus-box-shadow-invalid-color",
+                "modify": [{
+                  "type": "alpha",
+                  "amount": 0.25
+                }]
+              }
+            }
+          },
+          "opacity": { "value": ".9", "source": "$form-feedback-tooltip-opacity" }
         },
         "checked": {
           "valid": {
