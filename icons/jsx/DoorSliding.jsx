@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDoorSliding(props) {
   return (
     <svg
@@ -7,11 +6,14 @@ function SvgDoorSliding(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
-      <path d="M20 19V3h-7.25v16h-1.5V3H4v16H3v2h18v-2h-1zm-10-6H8v-2h2v2zm6 0h-2v-2h2v2z" />
+      <path
+        d="M20 19V3h-7.25v16h-1.5V3H4v16H3v2h18v-2h-1zm-10-6H8v-2h2v2zm6 0h-2v-2h2v2z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgDoorSliding;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCallMissedOutgoing(props) {
   return (
     <svg
@@ -7,11 +6,14 @@ function SvgCallMissedOutgoing(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
-      <path d="M3 8.41l9 9 7-7V15h2V7h-8v2h4.59L12 14.59 4.41 7 3 8.41z" />
+      <path
+        d="M3 8.41l9 9 7-7V15h2V7h-8v2h4.59L12 14.59 4.41 7 3 8.41z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgCallMissedOutgoing;

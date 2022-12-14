@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgZoom(props) {
   return (
     <svg
@@ -11,7 +10,7 @@ function SvgZoom(props) {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       {...props}
     >
-      <path fill="url(#zoom_svg__pattern0)" d="M.668.998h24v24.004h-24z" />
+      <path fill="currentColor" d="M.668.998h24v24.004h-24z" />
       <defs>
         <pattern
           id="zoom_svg__pattern0"
@@ -34,5 +33,4 @@ function SvgZoom(props) {
     </svg>
   );
 }
-
 export default SvgZoom;

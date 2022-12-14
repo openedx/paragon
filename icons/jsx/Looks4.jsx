@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLooks4(props) {
   return (
     <svg
@@ -7,11 +6,14 @@ function SvgLooks4(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
-      <path d="M21.04 3h-18v18h18V3zm-6 14h-2v-4h-4V7h2v4h2V7h2v10z" />
+      <path
+        d="M21.04 3h-18v18h18V3zm-6 14h-2v-4h-4V7h2v4h2V7h2v10z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgLooks4;

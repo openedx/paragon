@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgArrowRightAlt(props) {
   return (
     <svg
@@ -7,11 +6,11 @@ function SvgArrowRightAlt(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
-      <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4v3z" />
+      <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4v3z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgArrowRightAlt;

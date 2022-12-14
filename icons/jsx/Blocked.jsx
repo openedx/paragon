@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBlocked(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgBlocked(props) {
     </svg>
   );
 }
-
 export default SvgBlocked;
