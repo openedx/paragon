@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTurnSlightRight(props) {
   return (
     <svg
@@ -10,9 +9,11 @@ function SvgTurnSlightRight(props) {
       fill="none"
       {...props}
     >
-      <path d="M12.34 6V4H18v5.66h-2V7.41l-5 5V20H9v-8.41L14.59 6z" />
+      <path
+        d="M12.34 6V4H18v5.66h-2V7.41l-5 5V20H9v-8.41L14.59 6z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgTurnSlightRight;

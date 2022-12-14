@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgHMobiledata(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgHMobiledata(props) {
       fill="none"
       {...props}
     >
-      <path d="M15 11H9V7H7v10h2v-4h6v4h2V7h-2v4z" />
+      <path d="M15 11H9V7H7v10h2v-4h6v4h2V7h-2v4z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgHMobiledata;

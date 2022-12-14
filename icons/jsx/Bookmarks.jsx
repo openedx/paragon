@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBookmarks(props) {
   return (
     <svg
@@ -10,9 +9,11 @@ function SvgBookmarks(props) {
       fill="none"
       {...props}
     >
-      <path d="M19 18l2 1V1H7v2h12v15zM17 5H3v18l7-3 7 3V5z" />
+      <path
+        d="M19 18l2 1V1H7v2h12v15zM17 5H3v18l7-3 7 3V5z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgBookmarks;

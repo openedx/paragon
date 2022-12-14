@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgThumbUpOffAlt(props) {
   return (
     <svg
@@ -10,9 +9,11 @@ function SvgThumbUpOffAlt(props) {
       fill="none"
       {...props}
     >
-      <path d="M14.17 1L7 8.18V21h12.31L23 12.4V8h-8.31l1.12-5.38L14.17 1zM1 9h4v12H1V9z" />
+      <path
+        d="M14.17 1L7 8.18V21h12.31L23 12.4V8h-8.31l1.12-5.38L14.17 1zM1 9h4v12H1V9z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgThumbUpOffAlt;

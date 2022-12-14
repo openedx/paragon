@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMan4(props) {
   return (
     <svg
@@ -10,10 +9,9 @@ function SvgMan4(props) {
       fill="none"
       {...props}
     >
-      <path d="M7.96 7L10 22h4l2.04-15z" />
+      <path d="M7.96 7L10 22h4l2.04-15z" fill="currentColor" />
       <circle cx={12} cy={4} r={2} />
     </svg>
   );
 }
-
 export default SvgMan4;

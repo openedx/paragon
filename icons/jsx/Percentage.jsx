@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPercentage(props) {
   return (
     <svg
@@ -10,9 +9,11 @@ function SvgPercentage(props) {
       fill="none"
       {...props}
     >
-      <path d="M18.501 3.5l-15 15.001 1.996 1.996 15-15zM7.002 5a2 2 0 10-.004 4 2 2 0 00.004-4zm10 10a2 2 0 10-.004 4 2 2 0 00.004-4z" />
+      <path
+        d="M18.501 3.5l-15 15.001 1.996 1.996 15-15zM7.002 5a2 2 0 10-.004 4 2 2 0 00.004-4zm10 10a2 2 0 10-.004 4 2 2 0 00.004-4z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgPercentage;

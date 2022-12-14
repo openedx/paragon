@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBattery2Bar(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgBattery2Bar(props) {
       fill="none"
       {...props}
     >
-      <path d="M17 4v18H7V4h3V2h4v2h3zm-2 2H9v10h6V6z" />
+      <path d="M17 4v18H7V4h3V2h4v2h3zm-2 2H9v10h6V6z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgBattery2Bar;

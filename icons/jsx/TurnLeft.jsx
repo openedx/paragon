@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTurnLeft(props) {
   return (
     <svg
@@ -10,9 +9,11 @@ function SvgTurnLeft(props) {
       fill="none"
       {...props}
     >
-      <path d="M6.83 11l1.58 1.59L7 14l-4-4 4-4 1.41 1.41L6.83 9H17v11h-2v-9z" />
+      <path
+        d="M6.83 11l1.58 1.59L7 14l-4-4 4-4 1.41 1.41L6.83 9H17v11h-2v-9z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgTurnLeft;

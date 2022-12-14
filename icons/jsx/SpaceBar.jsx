@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSpaceBar(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgSpaceBar(props) {
       fill="none"
       {...props}
     >
-      <path d="M18 9v4H6V9H4v6h16V9h-2z" />
+      <path d="M18 9v4H6V9H4v6h16V9h-2z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgSpaceBar;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDoorFront(props) {
   return (
     <svg
@@ -10,9 +9,11 @@ function SvgDoorFront(props) {
       fill="none"
       {...props}
     >
-      <path d="M19 19V3H5v16H3v2h18v-2h-2zm-4-6h-2v-2h2v2z" />
+      <path
+        d="M19 19V3H5v16H3v2h18v-2h-2zm-4-6h-2v-2h2v2z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgDoorFront;

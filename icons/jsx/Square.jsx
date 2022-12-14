@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSquare(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgSquare(props) {
       fill="none"
       {...props}
     >
-      <path d="M3 3h18v18H3z" />
+      <path d="M3 3h18v18H3z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgSquare;

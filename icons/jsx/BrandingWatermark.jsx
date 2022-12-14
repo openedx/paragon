@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBrandingWatermark(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgBrandingWatermark(props) {
       fill="none"
       {...props}
     >
-      <path d="M23 3H1v18h22V3zm-2 16h-9v-6h9v6z" />
+      <path d="M23 3H1v18h22V3zm-2 16h-9v-6h9v6z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgBrandingWatermark;

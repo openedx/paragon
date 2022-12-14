@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgArrowRight(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgArrowRight(props) {
       fill="none"
       {...props}
     >
-      <path d="M10 17l5-5-5-5v10z" />
+      <path d="M10 17l5-5-5-5v10z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgArrowRight;

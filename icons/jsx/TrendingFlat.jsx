@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTrendingFlat(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgTrendingFlat(props) {
       fill="none"
       {...props}
     >
-      <path d="M22 12l-4-4v3H3v2h15v3l4-4z" />
+      <path d="M22 12l-4-4v3H3v2h15v3l4-4z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgTrendingFlat;

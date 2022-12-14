@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgVideoLabel(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgVideoLabel(props) {
       fill="none"
       {...props}
     >
-      <path d="M23 3H1v18h22V3zm-2 13H3V5h18v11z" />
+      <path d="M23 3H1v18h22V3zm-2 13H3V5h18v11z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgVideoLabel;

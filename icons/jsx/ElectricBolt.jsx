@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgElectricBolt(props) {
   return (
     <svg
@@ -10,9 +9,11 @@ function SvgElectricBolt(props) {
       fill="none"
       {...props}
     >
-      <path d="M15 2L2.5 13 13 14l-5 7 1 1 12.5-11L11 10l5-7z" />
+      <path
+        d="M15 2L2.5 13 13 14l-5 7 1 1 12.5-11L11 10l5-7z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgElectricBolt;

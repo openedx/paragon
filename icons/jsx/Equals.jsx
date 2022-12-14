@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgEquals(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgEquals(props) {
       fill="none"
       {...props}
     >
-      <path d="M19 9.998H5v-2h14zm0 6H5v-2h14z" />
+      <path d="M19 9.998H5v-2h14zm0 6H5v-2h14z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgEquals;

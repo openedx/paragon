@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSkipPrevious(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgSkipPrevious(props) {
       fill="none"
       {...props}
     >
-      <path d="M6 6h2v12H6V6zm3.5 6l8.5 6V6l-8.5 6z" />
+      <path d="M6 6h2v12H6V6zm3.5 6l8.5 6V6l-8.5 6z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgSkipPrevious;

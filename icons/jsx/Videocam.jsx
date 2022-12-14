@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgVideocam(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgVideocam(props) {
       fill="none"
       {...props}
     >
-      <path d="M17 10.5V6H3v12h14v-4.5l4 4v-11l-4 4z" />
+      <path d="M17 10.5V6H3v12h14v-4.5l4 4v-11l-4 4z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgVideocam;

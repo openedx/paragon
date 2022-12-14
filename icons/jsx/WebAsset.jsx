@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgWebAsset(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgWebAsset(props) {
       fill="none"
       {...props}
     >
-      <path d="M3 4v16h18V4H3zm16 14H5V8h14v10z" />
+      <path d="M3 4v16h18V4H3zm16 14H5V8h14v10z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgWebAsset;

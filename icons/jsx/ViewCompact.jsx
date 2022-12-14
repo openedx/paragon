@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgViewCompact(props) {
   return (
     <svg
@@ -10,9 +9,11 @@ function SvgViewCompact(props) {
       fill="none"
       {...props}
     >
-      <path d="M3 19h6v-7H3v7zm7 0h12v-7H10v7zM3 5v6h19V5H3z" />
+      <path
+        d="M3 19h6v-7H3v7zm7 0h12v-7H10v7zM3 5v6h19V5H3z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgViewCompact;

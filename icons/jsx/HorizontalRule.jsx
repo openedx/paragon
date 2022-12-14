@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgHorizontalRule(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgHorizontalRule(props) {
       fill="none"
       {...props}
     >
-      <path fillRule="evenodd" d="M4 11h16v2H4z" />
+      <path fillRule="evenodd" d="M4 11h16v2H4z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgHorizontalRule;

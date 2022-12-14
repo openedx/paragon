@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLogout(props) {
   return (
     <svg
@@ -10,10 +9,9 @@ function SvgLogout(props) {
       fill="none"
       {...props}
     >
-      <path d="M5 5h7V3H3v18h9v-2H5z" />
-      <path d="M21 12l-4-4v3H9v2h8v3z" />
+      <path d="M5 5h7V3H3v18h9v-2H5z" fill="currentColor" />
+      <path d="M21 12l-4-4v3H9v2h8v3z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgLogout;

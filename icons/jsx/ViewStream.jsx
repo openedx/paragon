@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgViewStream(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgViewStream(props) {
       fill="none"
       {...props}
     >
-      <path d="M3 19v-6h18v6H3zM3 5v6h18V5H3z" />
+      <path d="M3 19v-6h18v6H3zM3 5v6h18V5H3z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgViewStream;

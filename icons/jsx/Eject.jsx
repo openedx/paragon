@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgEject(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgEject(props) {
       fill="none"
       {...props}
     >
-      <path d="M5 17h14v2H5v-2zm7-12L5.33 15h13.34L12 5z" />
+      <path d="M5 17h14v2H5v-2zm7-12L5.33 15h13.34L12 5z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgEject;

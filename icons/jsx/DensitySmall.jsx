@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDensitySmall(props) {
   return (
     <svg
@@ -10,9 +9,11 @@ function SvgDensitySmall(props) {
       fill="none"
       {...props}
     >
-      <path d="M3 2h18v2H3zm0 18h18v2H3zm0-6h18v2H3zm0-6h18v2H3z" />
+      <path
+        d="M3 2h18v2H3zm0 18h18v2H3zm0-6h18v2H3zm0-6h18v2H3z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgDensitySmall;

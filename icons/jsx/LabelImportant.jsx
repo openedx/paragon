@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLabelImportant(props) {
   return (
     <svg
@@ -10,9 +9,11 @@ function SvgLabelImportant(props) {
       fill="none"
       {...props}
     >
-      <path d="M4 18.99h12.04L21 12l-4.97-7H4l5 7-5 6.99z" />
+      <path
+        d="M4 18.99h12.04L21 12l-4.97-7H4l5 7-5 6.99z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgLabelImportant;

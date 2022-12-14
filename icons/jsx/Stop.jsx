@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgStop(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgStop(props) {
       fill="none"
       {...props}
     >
-      <path d="M6 6h12v12H6V6z" />
+      <path d="M6 6h12v12H6V6z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgStop;

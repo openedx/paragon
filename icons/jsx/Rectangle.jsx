@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRectangle(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgRectangle(props) {
       fill="none"
       {...props}
     >
-      <path d="M2 4h20v16H2z" />
+      <path d="M2 4h20v16H2z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgRectangle;

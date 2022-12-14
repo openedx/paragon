@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPlaylistAddCheck(props) {
   return (
     <svg
@@ -10,9 +9,11 @@ function SvgPlaylistAddCheck(props) {
       fill="none"
       {...props}
     >
-      <path d="M3 10h11v2H3zm0-4h11v2H3zm0 8h7v2H3zm17.59-2.07l-4.25 4.24-2.12-2.12-1.41 1.41L16.34 19 22 13.34z" />
+      <path
+        d="M3 10h11v2H3zm0-4h11v2H3zm0 8h7v2H3zm17.59-2.07l-4.25 4.24-2.12-2.12-1.41 1.41L16.34 19 22 13.34z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgPlaylistAddCheck;

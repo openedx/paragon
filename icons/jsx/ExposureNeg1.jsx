@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgExposureNeg1(props) {
   return (
     <svg
@@ -10,9 +9,11 @@ function SvgExposureNeg1(props) {
       fill="none"
       {...props}
     >
-      <path d="M4 11v2h8v-2H4zm15 7h-2V7.38L14 8.4V6.7L18.7 5h.3v13z" />
+      <path
+        d="M4 11v2h8v-2H4zm15 7h-2V7.38L14 8.4V6.7L18.7 5h.3v13z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgExposureNeg1;

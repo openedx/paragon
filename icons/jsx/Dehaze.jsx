@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDehaze(props) {
   return (
     <svg
@@ -10,9 +9,11 @@ function SvgDehaze(props) {
       fill="none"
       {...props}
     >
-      <path d="M2 16v2h20v-2H2zm0-5v2h20v-2H2zm0-5v2h20V6H2z" />
+      <path
+        d="M2 16v2h20v-2H2zm0-5v2h20v-2H2zm0-5v2h20V6H2z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgDehaze;

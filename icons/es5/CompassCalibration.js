@@ -1,7 +1,5 @@
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 import * as React from "react";
-
 function SvgCompassCalibration(props) {
   return /*#__PURE__*/React.createElement("svg", _extends({
     xmlns: "http://www.w3.org/2000/svg",
@@ -14,9 +12,8 @@ function SvgCompassCalibration(props) {
     cy: 17,
     r: 4
   }), /*#__PURE__*/React.createElement("path", {
-    fill: "currentColor",
-    d: "M12 3C8.1 3 4.56 4.59 2 7.15l5 5a7.06 7.06 0 0110-.01l5-5C19.44 4.59 15.9 3 12 3z"
+    d: "M12 3C8.1 3 4.56 4.59 2 7.15l5 5a7.06 7.06 0 0110-.01l5-5C19.44 4.59 15.9 3 12 3z",
+    fill: "currentColor"
   }));
 }
-
 export default SvgCompassCalibration;

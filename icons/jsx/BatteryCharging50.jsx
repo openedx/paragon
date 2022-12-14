@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBatteryCharging50(props) {
   return (
     <svg
@@ -10,13 +9,16 @@ function SvgBatteryCharging50(props) {
       fill="none"
       {...props}
     >
-      <path d="M14.47 13.5L11 20v-5.5H9l.53-1H7V22h10v-8.5h-2.53z" />
+      <path
+        d="M14.47 13.5L11 20v-5.5H9l.53-1H7V22h10v-8.5h-2.53z"
+        fill="currentColor"
+      />
       <path
         fillOpacity={0.3}
         d="M17 4h-3V2h-4v2H7v9.5h2.53L13 7v5.5h2l-.53 1H17V4z"
+        fill="currentColor"
       />
     </svg>
   );
 }
-
 export default SvgBatteryCharging50;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTitle(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgTitle(props) {
       fill="none"
       {...props}
     >
-      <path d="M5 4v3h5.5v12h3V7H19V4H5z" />
+      <path d="M5 4v3h5.5v12h3V7H19V4H5z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgTitle;

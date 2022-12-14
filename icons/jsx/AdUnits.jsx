@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAdUnits(props) {
   return (
     <svg
@@ -10,10 +9,9 @@ function SvgAdUnits(props) {
       fill="none"
       {...props}
     >
-      <path d="M19 1H5v22h14V1zm-2 18H7V5h10v14z" />
-      <path d="M8 6h8v2H8z" />
+      <path d="M19 1H5v22h14V1zm-2 18H7V5h10v14z" fill="currentColor" />
+      <path d="M8 6h8v2H8z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgAdUnits;

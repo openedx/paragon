@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAmpStories(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgAmpStories(props) {
       fill="none"
       {...props}
     >
-      <path d="M7 4h10v15H7zM3 6h2v11H3zm16 0h2v11h-2z" />
+      <path d="M7 4h10v15H7zM3 6h2v11H3zm16 0h2v11h-2z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgAmpStories;

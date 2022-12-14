@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSmartphone(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgSmartphone(props) {
       fill="none"
       {...props}
     >
-      <path d="M5 1v22h14V1H5zm12 18H7V5h10v14z" />
+      <path d="M5 1v22h14V1H5zm12 18H7V5h10v14z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgSmartphone;

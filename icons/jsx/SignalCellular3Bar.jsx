@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSignalCellular3Bar(props) {
   return (
     <svg
@@ -10,10 +9,9 @@ function SvgSignalCellular3Bar(props) {
       fill="none"
       {...props}
     >
-      <path fillOpacity={0.3} d="M2 22h20V2L2 22z" />
-      <path d="M17 7L2 22h15V7z" />
+      <path fillOpacity={0.3} d="M2 22h20V2L2 22z" fill="currentColor" />
+      <path d="M17 7L2 22h15V7z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgSignalCellular3Bar;

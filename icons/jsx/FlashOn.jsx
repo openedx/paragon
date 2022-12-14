@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFlashOn(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgFlashOn(props) {
       fill="none"
       {...props}
     >
-      <path d="M7 2v11h3v9l7-12h-4l3-8z" />
+      <path d="M7 2v11h3v9l7-12h-4l3-8z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgFlashOn;

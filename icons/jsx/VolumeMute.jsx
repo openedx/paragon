@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgVolumeMute(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgVolumeMute(props) {
       fill="none"
       {...props}
     >
-      <path d="M7 9v6h4l5 5V4l-5 5H7z" />
+      <path d="M7 9v6h4l5 5V4l-5 5H7z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgVolumeMute;

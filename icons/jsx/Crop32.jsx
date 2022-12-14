@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCrop32(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgCrop32(props) {
       fill="none"
       {...props}
     >
-      <path d="M21 4H3v16h18V4zm-2 14H5V6h14v12z" />
+      <path d="M21 4H3v16h18V4zm-2 14H5V6h14v12z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgCrop32;

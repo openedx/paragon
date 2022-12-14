@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgEMobiledata(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgEMobiledata(props) {
       fill="none"
       {...props}
     >
-      <path d="M16 9V7H8v10h8v-2h-6v-2h6v-2h-6V9h6z" />
+      <path d="M16 9V7H8v10h8v-2h-6v-2h6v-2h-6V9h6z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgEMobiledata;

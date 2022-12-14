@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgClass(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgClass(props) {
     </svg>
   );
 }
-
 export default SvgClass;

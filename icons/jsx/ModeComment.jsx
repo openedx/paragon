@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgModeComment(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgModeComment(props) {
       fill="none"
       {...props}
     >
-      <path d="M22 2H2v16h16l4 4z" />
+      <path d="M22 2H2v16h16l4 4z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgModeComment;

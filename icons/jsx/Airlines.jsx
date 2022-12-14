@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAirlines(props) {
   return (
     <svg
@@ -10,9 +9,11 @@ function SvgAirlines(props) {
       fill="none"
       {...props}
     >
-      <path d="M13 4L2 20h17l3-16h-9zm1.5 10a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
+      <path
+        d="M13 4L2 20h17l3-16h-9zm1.5 10a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgAirlines;

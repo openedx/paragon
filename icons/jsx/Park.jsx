@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPark(props) {
   return (
     <svg
@@ -10,9 +9,11 @@ function SvgPark(props) {
       fill="none"
       {...props}
     >
-      <path d="M17 12h2L12 2 5.05 12H7l-3.9 6h6.92v4h3.96v-4H21z" />
+      <path
+        d="M17 12h2L12 2 5.05 12H7l-3.9 6h6.92v4h3.96v-4H21z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgPark;

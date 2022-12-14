@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgStraight(props) {
   return (
     <svg
@@ -10,9 +9,11 @@ function SvgStraight(props) {
       fill="none"
       {...props}
     >
-      <path d="M11 6.83L9.41 8.41 8 7l4-4 4 4-1.41 1.41L13 6.83V21h-2z" />
+      <path
+        d="M11 6.83L9.41 8.41 8 7l4-4 4 4-1.41 1.41L13 6.83V21h-2z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgStraight;

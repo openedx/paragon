@@ -7,22 +7,5 @@
       }
     ],
     "@babel/preset-react"
-  ],
-  "plugins": [
-    [
-      "@svgr/babel-plugin-add-jsx-attribute",
-      {
-        "elements": ["path"],
-        "attributes": [
-          {
-            "name": "fill",
-            "value": "currentColor",
-            "spread": false,
-            "literal": false,
-            "position": "start"
-          }
-        ]
-      }
-    ]
   ]
 }

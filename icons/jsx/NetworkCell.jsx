@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgNetworkCell(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgNetworkCell(props) {
       fill="none"
       {...props}
     >
-      <path d="M2 22h20V2L2 22zm18-2h-3V9.83l3-3V20z" />
+      <path d="M2 22h20V2L2 22zm18-2h-3V9.83l3-3V20z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgNetworkCell;

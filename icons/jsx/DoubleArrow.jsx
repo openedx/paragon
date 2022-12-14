@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDoubleArrow(props) {
   return (
     <svg
@@ -10,10 +9,9 @@ function SvgDoubleArrow(props) {
       fill="none"
       {...props}
     >
-      <path d="M15.5 5H11l5 7-5 7h4.5l5-7z" />
-      <path d="M8.5 5H4l5 7-5 7h4.5l5-7z" />
+      <path d="M15.5 5H11l5 7-5 7h4.5l5-7z" fill="currentColor" />
+      <path d="M8.5 5H4l5 7-5 7h4.5l5-7z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgDoubleArrow;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPlus(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgPlus(props) {
       fill="none"
       {...props}
     >
-      <path d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6z" />
+      <path d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgPlus;

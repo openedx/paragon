@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCallReceived(props) {
   return (
     <svg
@@ -10,9 +9,11 @@ function SvgCallReceived(props) {
       fill="none"
       {...props}
     >
-      <path d="M20 5.41L18.59 4 7 15.59V9H5v10h10v-2H8.41L20 5.41z" />
+      <path
+        d="M20 5.41L18.59 4 7 15.59V9H5v10h10v-2H8.41L20 5.41z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgCallReceived;

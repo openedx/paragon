@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCropPortrait(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgCropPortrait(props) {
       fill="none"
       {...props}
     >
-      <path d="M19 3H5v18h14V3zm-2 16H7V5h10v14z" />
+      <path d="M19 3H5v18h14V3zm-2 16H7V5h10v14z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgCropPortrait;

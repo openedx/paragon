@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCrop54(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgCrop54(props) {
       fill="none"
       {...props}
     >
-      <path d="M21 5H3v14h18V5zm-2 12H5V7h14v10z" />
+      <path d="M21 5H3v14h18V5zm-2 12H5V7h14v10z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgCrop54;

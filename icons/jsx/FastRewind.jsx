@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFastRewind(props) {
   return (
     <svg
@@ -10,9 +9,11 @@ function SvgFastRewind(props) {
       fill="none"
       {...props}
     >
-      <path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" />
+      <path
+        d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgFastRewind;

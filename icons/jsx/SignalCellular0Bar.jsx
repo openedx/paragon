@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSignalCellular0Bar(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgSignalCellular0Bar(props) {
       fill="none"
       {...props}
     >
-      <path d="M2 22h20V2L2 22zm18-2H6.83L20 6.83V20z" />
+      <path d="M2 22h20V2L2 22zm18-2H6.83L20 6.83V20z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgSignalCellular0Bar;

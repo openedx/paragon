@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPentagon(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgPentagon(props) {
       fill="none"
       {...props}
     >
-      <path d="M2 9l4 12h12l4-12-10-7z" />
+      <path d="M2 9l4 12h12l4-12-10-7z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgPentagon;

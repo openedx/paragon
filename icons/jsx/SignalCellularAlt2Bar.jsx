@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSignalCellularAlt2Bar(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgSignalCellularAlt2Bar(props) {
       fill="none"
       {...props}
     >
-      <path d="M5 14h3v6H5v-6zm6-5h3v11h-3V9z" />
+      <path d="M5 14h3v6H5v-6zm6-5h3v11h-3V9z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgSignalCellularAlt2Bar;

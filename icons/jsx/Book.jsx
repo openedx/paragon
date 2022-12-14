@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBook(props) {
   return (
     <svg
@@ -10,9 +9,8 @@ function SvgBook(props) {
       fill="none"
       {...props}
     >
-      <path d="M20 2H4v20h16V2zM6 4h5v8l-2.5-1.5L6 12V4z" />
+      <path d="M20 2H4v20h16V2zM6 4h5v8l-2.5-1.5L6 12V4z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgBook;
