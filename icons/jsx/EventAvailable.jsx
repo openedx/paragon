@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgEventAvailable(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgEventAvailable(props) {
     </svg>
   );
 }
-
 export default SvgEventAvailable;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDeblur(props) {
   return (
     <svg
@@ -7,9 +6,10 @@ function SvgDeblur(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
-      <path d="M12 3v18a9 9 0 000-18z" />
+      <path d="M12 3v18a9 9 0 000-18z" fill="currentColor" />
       <circle cx={6} cy={14} r={1} />
       <circle cx={6} cy={18} r={1} />
       <circle cx={6} cy={10} r={1} />
@@ -25,5 +25,4 @@ function SvgDeblur(props) {
     </svg>
   );
 }
-
 export default SvgDeblur;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMaximize(props) {
   return (
     <svg
@@ -7,11 +6,11 @@ function SvgMaximize(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
-      <path d="M3 3h18v2H3V3z" />
+      <path d="M3 3h18v2H3V3z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgMaximize;

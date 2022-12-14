@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTune(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTune(props) {
     </svg>
   );
 }
-
 export default SvgTune;

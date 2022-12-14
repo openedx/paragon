@@ -33,8 +33,36 @@ module.exports = {
     return exportEntries.join('\n')
   },
   svgoConfig: {
-    plugins: {
-      removeViewBox: false,
+    plugins: [
+      {
+        removeViewBox: false
+      },
+      {
+        addAttributesToSVGElement: {
+          attributes: ['fill="none"'],
+        },
+      },
+    ],
+  },
+  jsx: {
+    babelConfig: {
+      plugins: [
+        [
+          "@svgr/babel-plugin-add-jsx-attribute",
+          {
+            "elements": ["path"],
+            "attributes": [
+              {
+                "name": "fill",
+                "value": "currentColor",
+                "spread": false,
+                "literal": false,
+                "position": "end"
+              }
+            ]
+          }
+        ]
+      ],
     },
   },
 };

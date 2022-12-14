@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBbb(props) {
   return (
     <svg
@@ -11,7 +10,7 @@ function SvgBbb(props) {
       fill="none"
       {...props}
     >
-      <path fill="url(#bbb_svg__pattern0)" d="M.5 0h24v24.004H.5z" />
+      <path fill="currentColor" d="M.5 0h24v24.004H.5z" />
       <defs>
         <pattern
           id="bbb_svg__pattern0"
@@ -34,5 +33,4 @@ function SvgBbb(props) {
     </svg>
   );
 }
-
 export default SvgBbb;
