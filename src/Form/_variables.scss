@@ -23,9 +23,9 @@ $input-border-color: var(--pgn-color-form-input-border) !default;
 $input-border-width: var(--pgn-size-form-input-width-border) !default;
 $input-box-shadow: var(--pgn-elevation-form-input-base) !default;
 
-$input-border-radius: var(--pgn-size-form-input-border-radius-base) !default;
-$input-border-radius-lg: var(--pgn-size-form-input-border-radius-lg) !default;
-$input-border-radius-sm: var(--pgn-size-form-input-border-radius-sm) !default;
+$input-border-radius: var(--pgn-size-form-input-radius-border-base) !default;
+$input-border-radius-lg: var(--pgn-size-form-input-radius-border-lg) !default;
+$input-border-radius-sm: var(--pgn-size-form-input-radius-border-sm) !default;
 
 $input-focus-bg: var(--pgn-color-form-input-focus-bg) !default;
 $input-focus-border-color: var(--pgn-color-form-input-focus-border) !default;

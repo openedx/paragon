@@ -607,9 +607,9 @@
   --pgn-color-dark-700: #1F3226FF;
   --pgn-color-dark-800: #1D2F23FF;
   --pgn-color-dark-900: #1B2C21FF;
-  --pgn-size-form-input-border-radius-base: var(--pgn-size-border-radius-base);
-  --pgn-size-form-input-border-radius-lg: var(--pgn-size-border-radius-lg);
-  --pgn-size-form-input-border-radius-sm: var(--pgn-size-border-radius-sm);
+  --pgn-size-form-input-radius-border-base: var(--pgn-size-border-radius-base);
+  --pgn-size-form-input-radius-border-lg: var(--pgn-size-border-radius-lg);
+  --pgn-size-form-input-radius-border-sm: var(--pgn-size-border-radius-sm);
   --pgn-size-form-control-switch-width: calc(var(--pgn-size-form-control-indicator-base) * 1.75);
   --pgn-size-form-control-switch-indicator-base: calc(var(--pgn-size-form-control-indicator-base) - var(--pgn-size-form-control-indicator-border-width) * 4);
   --pgn-size-form-control-switch-indicator-border-radius: calc(var(--pgn-size-form-control-indicator-base) / 2);
@@ -1001,7 +1001,7 @@
   --pgn-size-form-input-height-inner-half: calc(var(--pgn-typography-form-input-line-height-base) * .5em + var(--pgn-spacing-form-input-padding-y-base));
   --pgn-size-form-input-height-inner-quarter: calc(var(--pgn-typography-form-input-line-height-base) * .25em + calc(var(--pgn-spacing-form-input-padding-y-base) / 2));
   --pgn-size-form-input-width-border: var(--pgn-input-btn-border-width);
-  --pgn-size-form-control-file-border-radius: var(--pgn-size-form-input-border-radius-base);
+  --pgn-size-form-control-file-border-radius: var(--pgn-size-form-input-radius-border-base);
   --pgn-alert-actions-gap: var(--pgn-spacer-3);
   --pgn-annotation-color-text-light: var(--pgn-color-primary-500);
   --pgn-annotation-color-bg-success: var(--pgn-color-success-base);

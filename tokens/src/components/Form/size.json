@@ -36,8 +36,8 @@
           "focus": { "value": "0.063rem", "source": "$input-focus-width" },
           "border": { "value": "{input.btn.border.width.value}", "source": "$input-border-width" }
         },
-        "border": {
-          "radius": {
+        "radius": {
+          "border": {
             "base": { "value": "{size.border.radius.base.value}", "source": "$input-border-radius" },
             "lg": { "value": "{size.border.radius.lg.value}", "source": "$input-border-radius-lg" },
             "sm": { "value": "{size.border.radius.sm.value}", "source": "$input-border-radius-sm" }
@@ -113,7 +113,7 @@
           },
           "border": {
             "radius": {
-              "value": "{size.form.input.border.radius.base.value}", "source": "$custom-file-border-radius"
+              "value": "{size.form.input.radius.border.base.value}", "source": "$custom-file-border-radius"
             }
           }
         },
