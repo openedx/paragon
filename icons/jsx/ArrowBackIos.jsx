@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgArrowBackIos(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgArrowBackIos(props) {
     </svg>
   );
 }
-
 export default SvgArrowBackIos;
