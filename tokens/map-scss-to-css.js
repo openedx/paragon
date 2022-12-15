@@ -19,5 +19,5 @@ Object.entries(SCSStoCSSMap).forEach(([key, value]) => {
   CSStoSCSSMap[value] = key;
 });
 
-fs.writeFileSync(path.resolve(__dirname, './build/scss-to-css.json'), JSON.stringify(SCSStoCSSMap));
-fs.writeFileSync(path.resolve(__dirname, './build/css-to-scss.json'), JSON.stringify(CSStoSCSSMap));
+fs.writeFileSync(path.resolve(__dirname, './variables-maps/scss-to-css.json'), JSON.stringify(SCSStoCSSMap));
+fs.writeFileSync(path.resolve(__dirname, './variables-maps/css-to-scss.json'), JSON.stringify(CSStoSCSSMap));
