@@ -57,7 +57,7 @@ Use `variant` prop to use `Card` specific style variant.
 
 ```jsx live
 () => {
-  const [variant, setVariant] = useState('light');
+  const [cardVariant, setCardVariant] = useState('light');
   const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
 
   return (
@@ -65,12 +65,12 @@ Use `variant` prop to use `Card` specific style variant.
       {/* start example form block */}
       <ExamplePropsForm
         inputs={[
-          { value: variant, setValue: setVariant, options: ['light', 'dark', 'muted'], name: 'variant' },
+          { value: cardVariant, setValue: setCardVariant, options: ['light', 'dark', 'muted'], name: 'variant' },
         ]}
       />
       {/* end example form block */}
       
-      <Card style={{ width: isExtraSmall ? "100%" : "18rem" }} variant={variant}>
+      <Card style={{ width: isExtraSmall ? "100%" : "18rem" }} variant={cardVariant}>
         <Card.ImageCap 
           src="https://picsum.photos/360/200/"
           srcAlt="Card image"
@@ -82,7 +82,11 @@ Use `variant` prop to use `Card` specific style variant.
           This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
         </Card.Section>
         <Card.Footer>
-          <Button>Action 1</Button>
+          <Button
+            variant={cardVariant === 'dark' ? 'inverse-primary' : 'primary'}
+          >
+            Action
+          </Button>
         </Card.Footer>
       </Card>
     </>
@@ -480,7 +484,7 @@ Note that in the example below, the content of `Card` is wrapped inside `Card.Bo
       <ExamplePropsForm
         inputs={[
           { value: orientation, setValue: setOrientation, options: ['horizontal', 'vertical'], name: 'orientation' },
-          { value: variant, setValue: setVariant, options: ['primary', 'warning', 'danger', 'success'], name: 'variant' },
+          { value: variant, setValue: setVariant, options: ['primary', 'warning', 'danger', 'success'], name: 'status-variant' },
         ]}
       />
       {/* end example form block */}

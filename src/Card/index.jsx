@@ -10,6 +10,7 @@ import CardFooter from './CardFooter';
 import CardImageCap from './CardImageCap';
 import CardBody from './CardBody';
 import CardStatus from './CardStatus';
+import withDeprecatedProps, { DeprTypes } from '../withDeprecatedProps';
 
 export const CARD_VARIANTS = ['light', 'dark', 'muted'];
 
@@ -22,10 +23,6 @@ const Card = React.forwardRef(({
   variant,
   ...props
 }, ref) => {
-  if (muted) {
-    // eslint-disable-next-line no-console
-    console.error('Prop muted is deprecated, please, use variant="muted" instead');
-  }
   const resolvedVariant = muted ? 'muted' : variant;
 
   return (
@@ -79,12 +76,20 @@ Card.defaultProps = {
   isLoading: false,
 };
 
-Card.Status = CardStatus;
-Card.Header = CardHeader;
-Card.Divider = CardDivider;
-Card.Section = CardSection;
-Card.Footer = CardFooter;
-Card.ImageCap = CardImageCap;
-Card.Context = CardContext;
-Card.Body = CardBody;
-export default Card;
+const CardWithDeprecatedProp = withDeprecatedProps(Card, 'Card', {
+  muted: {
+    deprType: DeprTypes.REMOVED,
+    message: 'Use "variant" prop instead, i.e. variant="muted"',
+  },
+});
+
+CardWithDeprecatedProp.Status = CardStatus;
+CardWithDeprecatedProp.Header = CardHeader;
+CardWithDeprecatedProp.Divider = CardDivider;
+CardWithDeprecatedProp.Section = CardSection;
+CardWithDeprecatedProp.Footer = CardFooter;
+CardWithDeprecatedProp.ImageCap = CardImageCap;
+CardWithDeprecatedProp.Context = CardContext;
+CardWithDeprecatedProp.Body = CardBody;
+
+export default CardWithDeprecatedProp;
