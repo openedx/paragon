@@ -4,9 +4,9 @@
       "padding": { "value": ".25rem", "source": "$thumbnail-padding" },
       "bg": { "value": "{body.bg.value}", "source": "$thumbnail-bg" },
       "border": {
-        "width": { "value": "{border.width.value}", "source": "$thumbnail-border-width" },
+        "width": { "value": "{size.border.width.value}", "source": "$thumbnail-border-width" },
         "color": { "value": "{color.gray.200.value}", "source": "$thumbnail-border-color" },
-        "radius": { "value": "{border.radius.base.value}", "source": "$thumbnail-border-radius"}
+        "radius": { "value": "{size.border.radius.base.value}", "source": "$thumbnail-border-radius"}
       },
       "box-shadow": { "value": "0 1px 2px rgba(0, 0, 0, .075)", "source": "$thumbnail-box-shadow" }
     },

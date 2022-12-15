@@ -31,7 +31,7 @@
     "input": {
       "height": {
         "search": {
-          "value": "calc({form.input.line.height.base.value} * 1em + {form.input.padding.y.base.value} * 2)",
+          "value": "calc({typography.form.input.line-height.base.value} * 1em + {spacing.form.input.padding.y.base.value} * 2)",
           "source": "$input-height-search"
         }
       }
