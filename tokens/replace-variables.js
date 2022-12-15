@@ -15,11 +15,11 @@ program
   .action(async (options) => {
     const { direction, filePath, replacementType } = options;
     if (replacementType === 'usage') {
-      const mapFile = fs.readFileSync(path.resolve(__dirname, `./build/${direction}.json`), 'utf-8');
+      const mapFile = fs.readFileSync(path.resolve(__dirname, `./variables-maps/${direction}.json`), 'utf-8');
       const variablesMap = JSON.parse(mapFile);
       await transformInPath(filePath, variablesMap, 'usage', ['Table'], direction);
     } else {
-      const mapFile = fs.readFileSync(path.resolve(__dirname, './build/scss-to-css.json'), 'utf-8');
+      const mapFile = fs.readFileSync(path.resolve(__dirname, './variables-maps/scss-to-css.json'), 'utf-8');
       const variablesMap = JSON.parse(mapFile);
       await transformInPath(filePath, variablesMap);
     }
