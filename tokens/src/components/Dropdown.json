@@ -36,9 +36,9 @@
           "amount": 0.15
         }]
       },
-      "width": { "value": "{border.width.value}", "source": "$dropdown-border-width" },
+      "width": { "value": "{size.border.width.value}", "source": "$dropdown-border-width" },
       "radius": {
-        "base": { "value": "{border.radius.base.value}", "source": "$dropdown-border-radius" },
+        "base": { "value": "{size.border.radius.base.value}", "source": "$dropdown-border-radius" },
         "inner": {
           "value": "calc({dropdown.border.radius.base.value} - {dropdown.border.width.value})",
           "source": "$dropdown-inner-border-radius"
