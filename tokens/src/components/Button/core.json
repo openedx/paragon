@@ -31,9 +31,9 @@
     "border": {
       "width": { "value": "{input.btn.border.width.value}", "source": "$btn-border-width" },
       "radius": {
-        "base": { "value": "{border.radius.base.value}", "source": "$btn-border-radius" },
-        "lg": { "value": "{border.radius.lg.value}", "source": "$btn-border-radius-lg" },
-        "sm": { "value": "{border.radius.sm.value}", "source": "$btn-border-radius-sm" }
+        "base": { "value": "{size.border.radius.base.value}", "source": "$btn-border-radius" },
+        "lg": { "value": "{size.border.radius.lg.value}", "source": "$btn-border-radius-lg" },
+        "sm": { "value": "{size.border.radius.sm.value}", "source": "$btn-border-radius-sm" }
       }
     },
     "box-shadow": {
